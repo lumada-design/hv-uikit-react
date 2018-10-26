@@ -1,0 +1,17 @@
+{
+  "name": "hv-ui",
+  "version": "0.1.0",
+  "description": "A collection of Themes and UI Components for the Hitachi Vantara Design System.",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.4.3"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run start --parallel",
+    "link": "lerna run link --parallel"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
