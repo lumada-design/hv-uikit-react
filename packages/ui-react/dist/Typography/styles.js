@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -7,9 +14,9 @@
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
+var styles = function styles(theme) {
+  return {};
+};
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+var _default = styles;
+exports.default = _default;

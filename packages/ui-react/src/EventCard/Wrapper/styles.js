@@ -8,8 +8,19 @@
  *  under which the software has been supplied.
  */
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+const styles = theme => ({
+  root: {
+    border: `1px solid ${"#ccc"}`
+  },
+  info: {
+    borderTop: `4px solid ${theme.palette.status.success}`
+  },
+  warning: {
+    borderTop: `4px solid ${theme.palette.status.alert}`
+  },
+  critical: {
+    borderTop: `4px solid ${theme.palette.status.error}`
+  }
+});
+
+export default styles;

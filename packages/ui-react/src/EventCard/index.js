@@ -8,4 +8,4 @@
  *  under which the software has been supplied.
  */
 
-export { default } from "./Card";
+export { default } from "./Wrapper";

@@ -5,6 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _withStyles = _interopRequireDefault(require("@material-ui/core/styles/withStyles"));
+
+var _styles = _interopRequireDefault(require("./styles"));
+
+var _Typography = _interopRequireDefault(require("./Typography"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -14,22 +22,8 @@ exports.default = void 0;
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var styles = function styles(theme) {
-  return {
-    root: {
-      border: "1px solid ".concat(theme.palette.grey.plain)
-    },
-    info: {
-      borderTop: "4px solid ".concat(theme.palette.status.success)
-    },
-    warning: {
-      borderTop: "4px solid ".concat(theme.palette.status.alert)
-    },
-    critical: {
-      borderTop: "4px solid ".concat(theme.palette.status.error)
-    }
-  };
-};
+var _default = (0, _withStyles.default)(_styles.default, {
+  withTheme: true
+})(_Typography.default);
 
-var _default = styles;
 exports.default = _default;

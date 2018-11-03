@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function get() {
-    return _Card.default;
+    return _Wrapper.default;
   }
 });
 
-var _Card = _interopRequireDefault(require("./Card"));
+var _Wrapper = _interopRequireDefault(require("./Wrapper"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

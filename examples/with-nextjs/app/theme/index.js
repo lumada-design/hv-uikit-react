@@ -8,8 +8,16 @@
  *  under which the software has been supplied.
  */
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const muiTheme = createMuiTheme({
+  shadows: Array(25).fill("none"),
+  typography: {
+    useNextVariants: true
+  },
+  overrides: {
+    MuiButton: {}
+  }
+});
+
+export default muiTheme;

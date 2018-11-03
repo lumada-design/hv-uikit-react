@@ -1,8 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Button from "../src/Button";
-import EventCard from "../src/EventCard";
-import ThemeProvider from "../src/styles/ThemeProvider";
+import { HvThemeProvider, HvButton, HvTypography, HvEventCard } from "@hv-ui/react";
 
 const event = {
   assetId: "ast-gn002",
@@ -16,9 +14,13 @@ const event = {
 };
 
 storiesOf("Button", module)
-  .addDecorator(story => <ThemeProvider>{story()}</ThemeProvider>)
-  .add("Button", () => <Button>Click!</Button>);
+  .addDecorator(story => <HvThemeProvider>{story()}</HvThemeProvider>)
+  .add("Button", () => <HvButton>Click!</HvButton>);
+
+storiesOf("Typography", module)
+  .addDecorator(story => <HvThemeProvider>{story()}</HvThemeProvider>)
+  .add("Typography", () => <HvTypography>Some typography</HvTypography>);
 
 storiesOf("Event Card", module)
-  .addDecorator(story => <ThemeProvider>{story()}</ThemeProvider>)
-  .add("EventCard", () => <EventCard event={event} />);
+  .addDecorator(story => <HvThemeProvider>{story()}</HvThemeProvider>)
+  .add("EventCard", () => <HvEventCard event={event} />);

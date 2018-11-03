@@ -10,30 +10,21 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
-const HvButton = props => {
-  const { classes, children, disabled } = props;
+const HvTypography = props => {
+  const { classes, children } = props;
 
   return (
-    <Button
-      className={classes.root}
-      disabled={disabled}
-      disableRipple
-    >
+    <Typography>
       {children}
-    </Button>
+    </Typography>
   );
 };
 
-HvButton.propTypes = {
+HvTypography.propTypes = {
   classes: PropTypes.object.isRequired,
-  children: PropTypes.string.isRequired,
-  disabled: PropTypes.bool.isRequired
+  children: PropTypes.string.isRequired
 };
 
-HvButton.defaultProps = {
-  disabled: false
-};
-
-export default HvButton;
+export default HvTypography;

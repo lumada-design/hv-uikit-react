@@ -11,13 +11,12 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import Header from "../Header";
 import Content from "../Content";
 import Footer from "../Footer";
 
-const EventCard = props => {
+const Wrapper = props => {
   const { classes, event } = props;
   const criticality = event.criticality || "";
 
@@ -26,19 +25,17 @@ const EventCard = props => {
   });
 
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <Card className={classNames(classes.root, status)}>
-        <Header event={event} />
-        <Content event={event} />
-        <Footer event={event} />
-      </Card>
-    </Grid>
+    <Card className={classNames(classes.root, status)}>
+      <Header event={event} />
+      <Content event={event} />
+      <Footer event={event} />
+    </Card>
   );
 };
 
-EventCard.propTypes = {
+Wrapper.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   event: PropTypes.instanceOf(Object).isRequired
 };
 
-export default EventCard;
+export default Wrapper;

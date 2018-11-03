@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "description": "A collection of themes for use with Hitachi Vantara Components.",
   "scripts": {
-    "start": "watch 'npm run build' ./src",
+    "dev": "watch 'npm run build' ./src",
     "build": "npm-run-all clean build:*",
     "build:to-scss": "json-to-scss ./src/*.* ./dist",
     "build:dist": "copyfiles ./src/*.json ./dist -f",
-    "clean": "del ./dist",
-    "link": "yarn link"
+    "clean": "del ./dist"
   },
   "devDependencies": {
     "copyfiles": "^2.1.0",

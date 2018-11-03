@@ -8,8 +8,17 @@
  *  under which the software has been supplied.
  */
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+const path = require('path');
+
+module.exports = {
+  webpack: (config, { buildId, dev }) => {
+    config.resolve = {
+      alias: {
+        someAlias: "alias path"
+      },
+      modules: [path.resolve(__dirname, "/app"), "node_modules"],
+      symlinks: false
+    };
+    return config;
+  }
+};

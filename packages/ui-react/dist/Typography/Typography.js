@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
+var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22,24 +22,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var HvButton = function HvButton(props) {
+var HvTypography = function HvTypography(props) {
   var classes = props.classes,
-      children = props.children,
-      disabled = props.disabled;
-  return _react.default.createElement(_Button.default, {
-    className: classes.root,
-    disabled: disabled,
-    disableRipple: true
-  }, children);
+      children = props.children;
+  return _react.default.createElement(_Typography.default, null, children);
 };
 
-HvButton.propTypes = {
+HvTypography.propTypes = {
   classes: _propTypes.default.object.isRequired,
-  children: _propTypes.default.string.isRequired,
-  disabled: _propTypes.default.bool.isRequired
+  children: _propTypes.default.string.isRequired
 };
-HvButton.defaultProps = {
-  disabled: false
-};
-var _default = HvButton;
+var _default = HvTypography;
 exports.default = _default;

@@ -8,8 +8,8 @@
  *  under which the software has been supplied.
  */
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import HomeView from "./HomeView";
+
+export default withStyles(styles, { withTheme: true })(HomeView);

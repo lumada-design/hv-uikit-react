@@ -8,19 +8,8 @@
  *  under which the software has been supplied.
  */
 
-const styles = theme => ({
-  root: {
-    border: `1px solid ${theme.palette.grey.plain}`
-  },
-  info: {
-    borderTop: `4px solid ${theme.palette.status.success}`
-  },
-  warning: {
-    borderTop: `4px solid ${theme.palette.status.alert}`
-  },
-  critical: {
-    borderTop: `4px solid ${theme.palette.status.error}`
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Wrapper from "./Wrapper";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(Wrapper);

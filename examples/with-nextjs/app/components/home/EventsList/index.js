@@ -8,8 +8,6 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Card from "./Card";
+import EventsList from "./EventsList";
 
-export default withStyles(styles, { withTheme: true })(Card);
+export default EventsList;
