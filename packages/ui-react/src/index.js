@@ -8,8 +8,15 @@
  *  under which the software has been supplied.
  */
 
-export { default as HvButton } from "./Button";
-export { default as HvTypography } from "./Typography";
-export { default as HvEventCard } from "./EventCard";
-export { default as HvThemeProvider } from "./styles/ThemeProvider";
-export { default as hvTheme } from "./styles/theme";
+ // components
+export { default as HvButton } from "./components/Button";
+export { default as HvCard } from "./components/Card";
+export { default as HvHeader } from "./components/Header";
+export { default as HvLogin } from "./components/Login";
+export { default as HvLink } from "./components/Link";
+
+// theme
+export { default as hvTheme } from "./theme";
+
+// config
+export { default as HvProvider } from "./config/Provider";

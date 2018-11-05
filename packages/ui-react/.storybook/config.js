@@ -1,8 +1,17 @@
-import { configure } from "@storybook/react";
+import React from "react";
+import { configure, addDecorator } from "@storybook/react";
+import { HvProvider } from "../src"
 
-function loadStories() {
-  require("../stories/index.js");
-  // You can require as many stories as you need.
+const req = require.context('../stories', true, /\.js$/);
+
+const loadStories = () => {
+  req.keys().forEach(filename => req(filename));
 }
+
+addDecorator((story) => (
+  <HvProvider>
+    {story()}
+  </HvProvider>
+))
 
 configure(loadStories, module);
