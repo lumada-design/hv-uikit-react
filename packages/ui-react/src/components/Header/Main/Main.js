@@ -18,7 +18,7 @@ import Menu from "../Menu";
 import User from "../User";
 
 const Main = ({ classes, menuData, userData, userLogout, useRouter }) => (
-  <AppBar color="default" positio="fixed">
+  <AppBar color="default">
     <Toolbar>
       <Logo />
       <Menu data={menuData} useRouter={useRouter}/>

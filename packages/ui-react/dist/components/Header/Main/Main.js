@@ -39,8 +39,7 @@ var Main = function Main(_ref) {
       userLogout = _ref.userLogout,
       useRouter = _ref.useRouter;
   return _react["default"].createElement(_AppBar["default"], {
-    color: "default",
-    positio: "fixed"
+    color: "default"
   }, _react["default"].createElement(_Toolbar["default"], null, _react["default"].createElement(_Logo["default"], null), _react["default"].createElement(_Menu["default"], {
     data: menuData,
     useRouter: useRouter

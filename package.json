@@ -1,6 +1,6 @@
 {
   "name": "hv-ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A collection of Themes and UI Components for the Hitachi Vantara Design System.",
   "private": true,
   "devDependencies": {
@@ -12,5 +12,9 @@
   },
   "workspaces": [
     "packages/*"
+  ],
+  "files": [
+    "packages/ui-react/",
+    "packages/ui-themes/"
   ]
 }

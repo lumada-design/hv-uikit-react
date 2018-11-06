@@ -28,6 +28,10 @@ You need to disable SSL verification for now since the git server doesn't have p
 git config --global http.sslVerify false
 ```
 
+```bash
+yarn config set "strict-ssl" false -g
+```
+
 Clone this repo:
 
 ```bash
