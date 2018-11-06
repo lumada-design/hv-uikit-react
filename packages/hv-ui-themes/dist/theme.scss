@@ -1,0 +1,133 @@
+$theme: (
+  palette: (
+    primary: (
+      main: #146BD2,
+      light: #4389DB
+    ),
+    secondary: (
+      main: #414141,
+      light: #999999
+    ),
+    hitachi: (
+      main: #CC0000,
+      light: #FF312E
+    ),
+    status: (
+      success: #1AB000,
+      alert: #FF9100,
+      error: #CC0000
+    ),
+    text: (
+      primary: #414141,
+      secondary: #999999
+    ),
+    grey: (
+      smokey: #F9F9F9,
+      foggy: #F5F5F5,
+      clear: #F0F0F0,
+      rainy: #DEDEDE,
+      plain: #BCBCBC,
+      passive: #999999,
+      inspire: #414141
+    ),
+    common: (
+      white: #FFFFFF,
+      black: #000000
+    ),
+    support: (
+      yellow: #F9DC33,
+      orange: #FFBB00,
+      redOrange: #FF5838,
+      lightTurquoise: #C3ECEC,
+      turquoise: #7CDEDC,
+      darkTurquoise: #0F8B8D,
+      plum: #7C0B2B
+    )
+  ),
+  typography: (
+    fontFamily: 'Open Sans', 'Arial', 'Helvetica', sans-serif,
+    xlargeTitle: (
+      color: #414141,
+      fontSize: 32px,
+      letterSpacing: 0.02em,
+      lineHeight: 40px,
+      fontWeight: 600
+    ),
+    largeTitle: (
+      color: #414141,
+      fontSize: 32px,
+      letterSpacing: 0.02em,
+      lineHeight: 40px,
+      fontWeight: 400
+    ),
+    mediumTitle: (
+      color: #414141,
+      fontSize: 22px,
+      letterSpacing: 0.02em,
+      lineHeight: 30px,
+      fontWeight: 600
+    ),
+    smallTitle: (
+      color: #414141,
+      fontSize: 22px,
+      letterSpacing: 0.02em,
+      lineHeight: 30px,
+      fontWeight: 400
+    ),
+    highlightText: (
+      color: #414141,
+      fontSize: 14px,
+      letterSpacing: 0.02em,
+      lineHeight: 20px,
+      fontWeight: 600
+    ),
+    normalText: (
+      color: #414141,
+      fontSize: 14px,
+      letterSpacing: 0.02em,
+      lineHeight: 20px,
+      fontWeight: 400
+    ),
+    inlineLink: (
+      color: #146BD2,
+      fontSize: 14px,
+      letterSpacing: 0.02em,
+      lineHeight: 20px,
+      fontWeight: 600
+    ),
+    labelText: (
+      color: #414141,
+      fontSize: 12px,
+      letterSpacing: 0.02em,
+      lineHeight: 16px
+    ),
+    infoText: (
+      color: #414141,
+      fontSize: 12px,
+      letterSpacing: 0.02em,
+      lineHeight: 16px,
+      fontWeight: 400
+    ),
+    disabledText: (
+      color: #999999,
+      fontSize: 12px,
+      letterSpacing: 0.02em,
+      lineHeight: 16px,
+      fontWeight: 400
+    ),
+    disabledButtonText: (
+      color: #999999,
+      fontSize: 12px,
+      letterSpacing: 0.02em,
+      lineHeight: 16px,
+      fontWeight: 600
+    )
+  ),
+  spacing: (
+    xs: 10,
+    sm: 20,
+    md: 30,
+    lg: 60,
+    xl: 90
+  )
+);
