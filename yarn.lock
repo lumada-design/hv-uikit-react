@@ -732,7 +732,7 @@
 
 "@hv-ui/themes@git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui.git":
   version "1.0.0"
-  resolved "git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui.git#c9295187b8d282d09a67380940194ce522e78bb2"
+  resolved "git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui.git#5226ea14838b8a053e9c73620d384da171edae78"
 
 "@lerna/add@^3.4.1":
   version "3.4.1"
