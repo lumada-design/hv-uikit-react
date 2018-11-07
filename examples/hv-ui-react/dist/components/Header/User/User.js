@@ -32,17 +32,18 @@ var _styles = _interopRequireDefault(require("./styles"));
  */
 var User = function User(_ref) {
   var classes = _ref.classes,
-      data = _ref.data,
+      userData = _ref.userData,
       logout = _ref.logout;
+  if (!userData) return "";
   return _react["default"].createElement("div", {
     className: classes.user
   }, _react["default"].createElement("div", {
     className: classes.userInfo
   }, _react["default"].createElement(_Typography["default"], {
     className: classes.userName
-  }, data.name), _react["default"].createElement(_Typography["default"], {
+  }, userData.name), _react["default"].createElement(_Typography["default"], {
     className: classes.userRole
-  }, data.role)), _react["default"].createElement(_IconButton["default"], {
+  }, userData.role)), _react["default"].createElement(_IconButton["default"], {
     className: classes.userButton,
     onClick: function () {
       function onClick() {
@@ -58,8 +59,12 @@ var User = function User(_ref) {
 
 User.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
-  data: _propTypes["default"].instanceOf(Object).isRequired,
-  logout: _propTypes["default"].instanceOf(Function).isRequired
+  userData: _propTypes["default"].instanceOf(Object),
+  logout: _propTypes["default"].instanceOf(Function)
+};
+User.defaultProps = {
+  userData: null,
+  logout: null
 };
 
 var _default = (0, _withStyles["default"])(_styles["default"], {

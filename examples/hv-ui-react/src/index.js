@@ -8,7 +8,7 @@
  *  under which the software has been supplied.
  */
 
- // components
+// components
 export { default as HvButton } from "./components/Button";
 export { default as HvCard } from "./components/Card";
 export { default as HvHeader } from "./components/Header";

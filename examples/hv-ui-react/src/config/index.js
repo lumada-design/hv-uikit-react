@@ -14,7 +14,7 @@ const ConfigContext = React.createContext({});
 const ConfigProvider = ConfigContext.Provider;
 const ConfigConsumer = ConfigContext.Consumer;
 
-export { ConfigProvider, ConfigConsumer }
+export { ConfigProvider, ConfigConsumer };
 
 export default {
   basePath: {

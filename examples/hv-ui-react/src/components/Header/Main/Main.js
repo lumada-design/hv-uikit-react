@@ -10,7 +10,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Logo from "../Logo";
@@ -21,8 +20,8 @@ const Main = ({ classes, menuData, userData, userLogout, useRouter }) => (
   <AppBar color="default">
     <Toolbar>
       <Logo />
-      <Menu data={menuData} useRouter={useRouter}/>
-      <User data={userData} logout={userLogout}/>
+      <Menu menuData={menuData} useRouter={useRouter} />
+      <User userData={userData} logout={userLogout} />
     </Toolbar>
   </AppBar>
 );
@@ -36,6 +35,9 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  menuData: null,
+  userData: null,
+  userLogout: null,
   useRouter: false
 };
 

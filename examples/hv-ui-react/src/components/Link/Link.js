@@ -12,8 +12,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import withConfig from "../../config/withConfig";
 
-const HvLink = (props) => {
-  const { classes, children, href, config, useRouter} = props;
+const HvLink = props => {
+  const { classes, children, href, config, useRouter } = props;
 
   const handleClick = e => {
     if (useRouter && config.router) {

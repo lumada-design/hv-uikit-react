@@ -12,30 +12,25 @@ import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
 import { MuiThemeProvider } from "@material-ui/core/styles";
-import hvDefaults, { ConfigProvider } from "./";
+import hvDefaults, { ConfigProvider } from ".";
 import hvTheme from "../theme";
 
 const HvProvider = ({ children, theme, router, defaults }) => {
   const pTheme = _.merge(hvTheme, theme);
   const pConfig = _.assign(hvDefaults, defaults, { router });
-  
+
   return (
-    <MuiThemeProvider
-      theme={pTheme}
-      sheetsManager={new Map()}
-    >
-       <ConfigProvider value={pConfig}>
-        {children}
-      </ConfigProvider>
+    <MuiThemeProvider theme={pTheme} sheetsManager={new Map()}>
+      <ConfigProvider value={pConfig}>{children}</ConfigProvider>
     </MuiThemeProvider>
-  )
+  );
 };
 
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.instanceOf(Object),
   router: PropTypes.instanceOf(Object),
-  defaults: PropTypes.instanceOf(Object),
+  defaults: PropTypes.instanceOf(Object)
 };
 
 HvProvider.defaultProps = {

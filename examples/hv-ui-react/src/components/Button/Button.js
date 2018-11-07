@@ -16,11 +16,7 @@ const HvButton = props => {
   const { classes, children, disabled } = props;
 
   return (
-    <Button
-      className={classes.root}
-      disabled={disabled}
-      disableRipple
-    >
+    <Button className={classes.root} disabled={disabled} disableRipple>
       {children}
     </Button>
   );

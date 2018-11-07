@@ -11,8 +11,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
 var _AppBar = _interopRequireDefault(require("@material-ui/core/AppBar"));
 
 var _Toolbar = _interopRequireDefault(require("@material-ui/core/Toolbar"));
@@ -41,10 +39,10 @@ var Main = function Main(_ref) {
   return _react["default"].createElement(_AppBar["default"], {
     color: "default"
   }, _react["default"].createElement(_Toolbar["default"], null, _react["default"].createElement(_Logo["default"], null), _react["default"].createElement(_Menu["default"], {
-    data: menuData,
+    menuData: menuData,
     useRouter: useRouter
   }), _react["default"].createElement(_User["default"], {
-    data: userData,
+    userData: userData,
     logout: userLogout
   })));
 };
@@ -57,6 +55,9 @@ Main.propTypes = {
   useRouter: _propTypes["default"].bool
 };
 Main.defaultProps = {
+  menuData: null,
+  userData: null,
+  userLogout: null,
   useRouter: false
 };
 var _default = Main;

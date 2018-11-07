@@ -38,9 +38,10 @@ var _styles = _interopRequireDefault(require("./styles"));
  */
 var Menu = function Menu(_ref) {
   var classes = _ref.classes,
-      data = _ref.data,
+      menuData = _ref.menuData,
       useRouter = _ref.useRouter;
-  var menu = data.map(function (elem, i) {
+  if (!menuData) return "";
+  var menu = menuData.map(function (elem, i) {
     var key = "".concat(elem.label, "_").concat(i);
     return _react["default"].createElement(_Link["default"], {
       key: key,
@@ -65,10 +66,11 @@ var Menu = function Menu(_ref) {
 
 Menu.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
-  data: _propTypes["default"].instanceOf(Array).isRequired,
+  menuData: _propTypes["default"].instanceOf(Array),
   useRouter: _propTypes["default"].bool
 };
 Menu.defaultProps = {
+  menuData: null,
   useRouter: false
 };
 

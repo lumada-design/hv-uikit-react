@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -29,7 +28,7 @@ const Main = props => {
     <Card className={classNames(classes.root, status)}>
       <Header event={event} />
       <Content event={event} />
-      <Footer event={event} useRouter={useRouter}/>
+      <Footer event={event} useRouter={useRouter} />
     </Card>
   );
 };

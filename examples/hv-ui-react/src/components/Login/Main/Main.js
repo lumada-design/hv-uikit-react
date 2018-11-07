@@ -21,7 +21,7 @@ const Container = ({ classes, login }) => (
         <Typography className={classes.logo2}>INSIGHTS</Typography>
       </div>
       <div className={classes.form}>
-        <Form login={login}/>
+        <Form login={login} />
       </div>
       <div className={classes.footer}>
         <div className={classes.footerLogo} />
