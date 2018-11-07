@@ -11,7 +11,7 @@ var _withStyles = _interopRequireDefault(require("@material-ui/core/styles/withS
 
 var _styles = _interopRequireDefault(require("./styles"));
 
-var _Container = _interopRequireDefault(require("./Container"));
+var _Main = _interopRequireDefault(require("./Main"));
 
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
@@ -24,6 +24,6 @@ var _Container = _interopRequireDefault(require("./Container"));
  */
 var _default = (0, _withStyles["default"])(_styles["default"], {
   withTheme: true
-})(_Container["default"]);
+})(_Main["default"]);
 
 exports["default"] = _default;

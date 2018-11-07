@@ -26,7 +26,7 @@ const Footer = ({ classes, event, config, useRouter }) => {
       <Button disabled>Dismiss</Button>
       <Button disabled>Assign</Button>
     </CardActions>
-  )
+  );
 };
 
 Footer.propTypes = {

@@ -11,7 +11,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ = require("./");
+var _ = require(".");
 
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.

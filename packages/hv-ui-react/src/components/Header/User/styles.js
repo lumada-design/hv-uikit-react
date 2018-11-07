@@ -1,3 +1,5 @@
+import { isAbsolute } from "path";
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -10,7 +12,9 @@
 
 const styles = theme => ({
   user: {
-    textAlign: "right"
+    position: "absolute",
+    textAlign: "right",
+    right: 20
   },
   userInfo: {
     float: "left",

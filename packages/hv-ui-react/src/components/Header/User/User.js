@@ -16,26 +16,31 @@ import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import styles from "./styles";
 
-const User = ({ classes, data, logout }) => (
-  <div className={classes.user}>
-    <div className={classes.userInfo}>
-      <Typography className={classes.userName}>
-        {data.name}
-      </Typography>
-      <Typography className={classes.userRole}>
-        {data.role}
-      </Typography>
+const User = ({ classes, userData, logout }) => {
+  if (!userData) return "";
+
+  return (
+    <div className={classes.user}>
+      <div className={classes.userInfo}>
+        <Typography className={classes.userName}>{userData.name}</Typography>
+        <Typography className={classes.userRole}>{userData.role}</Typography>
+      </div>
+      <IconButton className={classes.userButton} onClick={() => logout()}>
+        <AccountCircle className={classes.userIcon} />
+      </IconButton>
     </div>
-    <IconButton className={classes.userButton} onClick={() => logout()}>
-      <AccountCircle className={classes.userIcon} />
-    </IconButton>
-  </div>
   );
+};
 
 User.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  data: PropTypes.instanceOf(Object).isRequired,
-  logout: PropTypes.instanceOf(Function).isRequired
+  userData: PropTypes.instanceOf(Object),
+  logout: PropTypes.instanceOf(Function)
+};
+
+User.defaultProps = {
+  userData: null,
+  logout: null
 };
 
 export default withStyles(styles, { withTheme: true })(User);

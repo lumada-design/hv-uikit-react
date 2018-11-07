@@ -19,14 +19,16 @@ import Typography from "@material-ui/core/Typography";
 import Link from "../../Link";
 import styles from "./styles";
 
-const Menu = ({ classes, data, useRouter }) => {
-  const menu = data.map((elem,i) => {
+const Menu = ({ classes, menuData, useRouter }) => {
+  if (!menuData) return "";
+
+  const menu = menuData.map((elem, i) => {
     const key = `${elem.label}_${i}`;
 
     return (
       <Link key={key} href={elem.path} useRouter={useRouter}>
         <ListItem button className={classes.listItem}>
-          <div className={classnames(elem.isActive ? classes.selector : "")}/>
+          <div className={classnames(elem.isActive ? classes.selector : "")} />
           <ListItemText
             disableTypography
             className={classnames(
@@ -34,13 +36,11 @@ const Menu = ({ classes, data, useRouter }) => {
               elem.isActive ? classes.selected : ""
             )}
           >
-            <Typography className={classes.label}>
-              {elem.label}
-            </Typography>
+            <Typography className={classes.label}>{elem.label}</Typography>
           </ListItemText>
         </ListItem>
       </Link>
-    )
+    );
   });
 
   return <List className={classes.menu}>{menu}</List>;
@@ -48,11 +48,12 @@ const Menu = ({ classes, data, useRouter }) => {
 
 Menu.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  data: PropTypes.instanceOf(Array).isRequired,
+  menuData: PropTypes.instanceOf(Array),
   useRouter: PropTypes.bool
 };
 
 Menu.defaultProps = {
+  menuData: null,
   useRouter: false
 };
 

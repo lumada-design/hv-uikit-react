@@ -9,11 +9,11 @@ Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function () {
     function get() {
-      return _Container["default"];
+      return _Main["default"];
     }
 
     return get;
   }()
 });
 
-var _Container = _interopRequireDefault(require("./Container"));
+var _Main = _interopRequireDefault(require("./Main"));

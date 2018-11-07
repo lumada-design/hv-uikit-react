@@ -10,6 +10,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import Container from "./Container";
+import Main from "./Main";
 
-export default withStyles(styles, { withTheme: true })(Container);
+export default withStyles(styles, { withTheme: true })(Main);

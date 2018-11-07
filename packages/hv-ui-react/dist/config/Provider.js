@@ -17,7 +17,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _styles = require("@material-ui/core/styles");
 
-var _2 = _interopRequireWildcard(require("./"));
+var _2 = _interopRequireWildcard(require("."));
 
 var _theme = _interopRequireDefault(require("../theme"));
 

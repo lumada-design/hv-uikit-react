@@ -44,7 +44,7 @@ const muiTheme = createMuiTheme({
       root: muiInputAdornment.root,
       positionStart: muiInputAdornment.positionStart,
       positionEnd: muiInputAdornment.positionEnd
-    },
+    }
   }
 });
 

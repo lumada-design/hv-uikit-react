@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _path = require("path");
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -17,7 +19,9 @@ exports["default"] = void 0;
 var styles = function styles(theme) {
   return {
     user: {
-      textAlign: "right"
+      position: "absolute",
+      textAlign: "right",
+      right: 20
     },
     userInfo: {
       "float": "left",
