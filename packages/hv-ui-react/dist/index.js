@@ -25,6 +25,16 @@ Object.defineProperty(exports, "HvCard", {
     return get;
   }()
 });
+Object.defineProperty(exports, "HvFooter", {
+  enumerable: true,
+  get: function () {
+    function get() {
+      return _Footer["default"];
+    }
+
+    return get;
+  }()
+});
 Object.defineProperty(exports, "HvHeader", {
   enumerable: true,
   get: function () {
@@ -35,21 +45,21 @@ Object.defineProperty(exports, "HvHeader", {
     return get;
   }()
 });
-Object.defineProperty(exports, "HvLogin", {
-  enumerable: true,
-  get: function () {
-    function get() {
-      return _Login["default"];
-    }
-
-    return get;
-  }()
-});
 Object.defineProperty(exports, "HvLink", {
   enumerable: true,
   get: function () {
     function get() {
       return _Link["default"];
+    }
+
+    return get;
+  }()
+});
+Object.defineProperty(exports, "HvLogin", {
+  enumerable: true,
+  get: function () {
+    function get() {
+      return _Login["default"];
     }
 
     return get;
@@ -80,11 +90,13 @@ var _Button = _interopRequireDefault(require("./components/Button"));
 
 var _Card = _interopRequireDefault(require("./components/Card"));
 
+var _Footer = _interopRequireDefault(require("./components/Footer"));
+
 var _Header = _interopRequireDefault(require("./components/Header"));
 
-var _Login = _interopRequireDefault(require("./components/Login"));
-
 var _Link = _interopRequireDefault(require("./components/Link"));
+
+var _Login = _interopRequireDefault(require("./components/Login"));
 
 var _theme = _interopRequireDefault(require("./theme"));
 

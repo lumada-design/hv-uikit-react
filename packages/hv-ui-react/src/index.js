@@ -11,9 +11,10 @@
 // components
 export { default as HvButton } from "./components/Button";
 export { default as HvCard } from "./components/Card";
+export { default as HvFooter } from "./components/Footer";
 export { default as HvHeader } from "./components/Header";
-export { default as HvLogin } from "./components/Login";
 export { default as HvLink } from "./components/Link";
+export { default as HvLogin } from "./components/Login";
 
 // theme
 export { default as hvTheme } from "./theme";

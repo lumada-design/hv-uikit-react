@@ -11,31 +11,29 @@
 const styles = theme => ({
   root: {
     position: "absolute",
-    width: "280px",
-    margin: 0,
-    padding: 0
+    width: "100%",
+    height: 40,
+    backgroundColor: theme.palette.grey.inspire
   },
-  remember: {
-    color: "white",
-    height: 0
-  },
-  input: {
-    width: "280px",
-    margin: "0 0 15px 0"
-  },
-  label: {
-    color: "#414141",
-    fontSize: "14px",
+  labelLeft: {
+    float: "left",
+    marginTop: 10,
+    marginLeft: 20,
+    fontSize: "16px",
     letterSpacing: "0.02em",
-    lineHeight: "35px",
-    fontWeight: "400"
+    lineHeight: "20px",
+    fontWeight: "600",
+    color: theme.palette.grey.foggy
   },
-  button: {
-    width: "120px",
-    margin: 0,
-    position: "absolute",
-    right: 0,
-    top: 200
+  labelRight: {
+    float: "right",
+    marginTop: 11,
+    marginRight: 20,
+    fontSize: "12px",
+    letterSpacing: "0.02em",
+    lineHeight: "16px",
+    fontWeight: "400",
+    color: theme.palette.grey.foggy
   }
 });
 

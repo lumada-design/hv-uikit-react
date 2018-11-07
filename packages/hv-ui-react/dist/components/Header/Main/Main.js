@@ -55,8 +55,8 @@ Main.propTypes = {
   useRouter: _propTypes["default"].bool
 };
 Main.defaultProps = {
-  menuData: null,
-  userData: null,
+  menuData: [],
+  userData: {},
   userLogout: null,
   useRouter: false
 };

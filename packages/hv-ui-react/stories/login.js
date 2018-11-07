@@ -9,4 +9,13 @@ const login = () =>
     }, 500)
   );
 
-storiesOf("Login", module).add("Login", () => <HvLogin login={login} />);
+storiesOf("Login", module).add("Login", () => (
+  <div
+    style={{
+      height: "100vh",
+      display: "flex"
+    }}
+  >
+    <HvLogin login={login} />
+  </div>
+));

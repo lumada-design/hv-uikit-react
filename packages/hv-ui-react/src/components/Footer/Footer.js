@@ -11,22 +11,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
-import Form from "../Form";
 
-const Container = ({ classes, login }) => (
+const HvFooter = ({ classes }) => (
   <div className={classes.root}>
-    <div className={classes.rightContainer}>
-      <Typography className={classes.title}>Welcome</Typography>
-      <div className={classes.formContainer}>
-        <Form login={login} />
-      </div>
-    </div>
+    <Typography className={classes.labelLeft}>Hitachi Vantara</Typography>
+    <Typography className={classes.labelRight}>
+      {`© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`}
+    </Typography>
   </div>
 );
 
-Container.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
-  login: PropTypes.instanceOf(Function).isRequired
+HvFooter.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired
 };
 
-export default Container;
+export default HvFooter;
