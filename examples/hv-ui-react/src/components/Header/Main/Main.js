@@ -35,8 +35,8 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
-  menuData: null,
-  userData: null,
+  menuData: [],
+  userData: {},
   userLogout: null,
   useRouter: false
 };

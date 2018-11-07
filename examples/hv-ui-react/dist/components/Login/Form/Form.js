@@ -31,6 +31,8 @@ var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
 
 var _Input = _interopRequireDefault(require("@material-ui/core/Input"));
 
+var _InputLabel = _interopRequireDefault(require("@material-ui/core/InputLabel"));
+
 var _CircularProgress = _interopRequireDefault(require("@material-ui/core/CircularProgress"));
 
 var _InputAdornment = _interopRequireDefault(require("@material-ui/core/InputAdornment"));
@@ -170,7 +172,9 @@ function (_React$Component) {
 
             return onSubmit;
           }()
-        }, _react["default"].createElement(_Input["default"], {
+        }, _react["default"].createElement(_InputLabel["default"], {
+          className: classes.label
+        }, "Username"), _react["default"].createElement(_Input["default"], {
           autoFocus: true,
           type: "text",
           value: username,
@@ -186,7 +190,9 @@ function (_React$Component) {
               fontSize: 19
             }
           }))
-        }), _react["default"].createElement(_Input["default"], {
+        }), _react["default"].createElement(_InputLabel["default"], {
+          className: classes.label
+        }, "Password"), _react["default"].createElement(_Input["default"], {
           type: showPassword ? "text" : "password",
           value: password,
           className: classes.input,

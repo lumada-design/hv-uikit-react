@@ -7,8 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _miLoginBg = _interopRequireDefault(require("./mi-login-bg.png"));
 
 var _miHitachiLogo = _interopRequireDefault(require("./mi-hitachi-logo.png"));
@@ -25,51 +23,37 @@ var _miHitachiLogo = _interopRequireDefault(require("./mi-hitachi-logo.png"));
 var styles = function styles(theme) {
   return {
     root: {
-      position: "absolute",
-      background: "url(".concat(_miLoginBg["default"], ") 0 / cover fixed"),
-      width: "100%",
-      height: "100vh",
-      zIndex: "-1"
-    },
-    container: (0, _defineProperty2["default"])({
+      flex: 1,
       display: "flex",
-      alignItems: "center",
+      width: "100%",
+      background: "url(".concat(_miLoginBg["default"], ") 0 / cover fixed"),
+      justifyContent: "flex-end"
+    },
+    rightContainer: {
+      width: "30%",
+      display: "flex",
       justifyContent: "center",
+      alignItems: "center"
+    },
+    title: {
       position: "absolute",
-      width: "720px",
-      right: 0
-    }, theme.breakpoints.down("xs"), {
-      width: "100%"
-    }),
-    logo: {
-      position: "absolute",
-      top: "20%",
-      transform: "translateY(-20%)",
-      zIndex: "1"
+      top: "15%",
+      color: "#414141",
+      fontSize: "24px",
+      letterSpacing: "0.02em",
+      lineHeight: "30px",
+      fontWeight: "600",
+      zIndex: 1
     },
-    logo1: {
-      color: "rgb(255, 255, 255)",
-      fontSize: "23px",
-      fontWeight: 400,
-      letterSpacing: "0.1px",
-      lineHeight: "25px"
-    },
-    logo2: {
-      color: "rgb(255, 255, 255)",
-      fontSize: "33px",
-      fontWeight: "bold",
-      marginTop: "10px",
-      letterSpacing: "2px"
-    },
-    form: {
+    formContainer: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       overflow: "auto",
       position: "relative",
       width: "100%",
-      height: "100vh",
-      background: "rgba(0,0,0,0.6)",
+      height: "100%",
+      background: "rgba(249,249,249,0.8)",
       "&:before": {
         zIndex: "-1",
         content: '""',
@@ -77,22 +61,8 @@ var styles = function styles(theme) {
         height: "100%",
         background: "url(".concat(_miLoginBg["default"], ") 0 / cover fixed"),
         position: "absolute",
-        filter: "blur(8px)"
+        filter: "blur(2px)"
       }
-    },
-    footer: {
-      position: "absolute",
-      bottom: "20px",
-      zIndex: "1"
-    },
-    footerLogo: {
-      background: "url(".concat(_miHitachiLogo["default"], ") no-repeat center"),
-      backgroundSize: "106px",
-      height: "80px"
-    },
-    footerText: {
-      color: "white",
-      fontSize: "12px"
     }
   };
 };

@@ -12,6 +12,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Lock from "@material-ui/icons/Lock";
@@ -42,9 +43,9 @@ class Form extends React.Component {
 
     const { username, password } = this.state;
     const { login } = this.props;
-    
+
     this.setState({ isLogging: true });
-    
+
     try {
       await login({ username, password });
     } catch (error) {
@@ -69,6 +70,7 @@ class Form extends React.Component {
 
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
+        <InputLabel className={classes.label}>Username</InputLabel>
         <Input
           autoFocus
           type="text"
@@ -76,23 +78,24 @@ class Form extends React.Component {
           onChange={this.handleInputChange("username")}
           className={classes.input}
           inputProps={{ name: "username" }}
-          startAdornment={
+          startAdornment={(
             <InputAdornment position="start">
-              <Person style={{ fontSize: 19 }}/>
+              <Person style={{ fontSize: 19 }} />
             </InputAdornment>
-          }
+)}
         />
+        <InputLabel className={classes.label}>Password</InputLabel>
         <Input
           type={showPassword ? "text" : "password"}
           value={password}
           className={classes.input}
           onChange={this.handleInputChange("password")}
           inputProps={{ name: "password" }}
-          startAdornment={
+          startAdornment={(
             <InputAdornment position="start">
-              <Lock style={{ fontSize: 19 }}/>
+              <Lock style={{ fontSize: 19 }} />
             </InputAdornment>
-          }
+)}
         />
         <Button
           type="submit"
@@ -101,7 +104,7 @@ class Form extends React.Component {
           className={classes.button}
           disabled={this.checkInput()}
         >
-          {isLogging ? <SpinnerAdornment/> : "Log in"}
+          {isLogging ? <SpinnerAdornment /> : "Log in"}
         </Button>
       </form>
     );
