@@ -17,8 +17,8 @@ import Content from "../Content";
 import Footer from "../Footer";
 
 const Main = props => {
-  const { classes, event, useRouter } = props;
-  const criticality = event.criticality || "";
+  const { classes, data, useRouter } = props;
+  const criticality = data.criticality || "";
 
   const status = classNames({
     [classes[`${criticality.toLowerCase()}`]]: criticality
@@ -26,16 +26,16 @@ const Main = props => {
 
   return (
     <Card className={classNames(classes.root, status)}>
-      <Header event={event} />
-      <Content event={event} />
-      <Footer event={event} useRouter={useRouter} />
+      <Header data={data} />
+      <Content data={data} />
+      <Footer data={data} useRouter={useRouter} />
     </Card>
   );
 };
 
 Main.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  event: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
   useRouter: PropTypes.bool
 };
 

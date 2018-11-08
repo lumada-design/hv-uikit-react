@@ -14,28 +14,32 @@ exports["default"] = void 0;
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var styles = function styles(theme) {
-  return {
-    root: {
-      padding: "".concat(theme.spacing.sm, "px")
-    },
-    title: theme.hv.typography.mediumTitle,
-    subheader: theme.hv.typography.normalText,
-    icon: {
-      fontSize: "32px",
-      margin: "10px"
-    },
-    info: {
-      color: theme.palette.status.success
-    },
-    warning: {
-      color: theme.palette.status.alert
-    },
-    critical: {
-      color: theme.palette.status.error
-    }
-  };
-};
+var styles = function () {
+  function styles(theme) {
+    return {
+      root: {
+        padding: "".concat(theme.spacing.sm, "px")
+      },
+      title: theme.hv.typography.mediumTitle,
+      subheader: theme.hv.typography.normalText,
+      icon: {
+        fontSize: "32px",
+        margin: "10px"
+      },
+      info: {
+        color: theme.palette.status.success
+      },
+      warning: {
+        color: theme.palette.status.alert
+      },
+      critical: {
+        color: theme.palette.status.error
+      }
+    };
+  }
+
+  return styles;
+}();
 
 var _default = styles;
 exports["default"] = _default;

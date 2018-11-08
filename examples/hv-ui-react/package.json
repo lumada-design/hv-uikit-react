@@ -2,7 +2,7 @@
   "name": "@hv-ui/react",
   "version": "1.0.0",
   "description": "React components for the HV Design System.",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:watch": "watch 'npm run build' ./src",

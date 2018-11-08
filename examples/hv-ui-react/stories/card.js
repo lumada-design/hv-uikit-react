@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { HvCard } from "../src";
 
-const event = {
+const data = {
   assetId: "ast-gn002",
   assignee: "Zoe J. Le",
   createdDate: "2018-06-03T14:09:00.004Z",
@@ -13,4 +13,4 @@ const event = {
   outcome: "RESOLVED"
 };
 
-storiesOf("Card", module).add("Card", () => <HvCard event={event} />);
+storiesOf("Card", module).add("Card", () => <HvCard data={data} />);

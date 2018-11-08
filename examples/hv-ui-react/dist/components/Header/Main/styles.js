@@ -14,9 +14,13 @@ exports["default"] = void 0;
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var styles = function styles() {
-  return {};
-};
+var styles = function () {
+  function styles() {
+    return {};
+  }
+
+  return styles;
+}();
 
 var _default = styles;
 exports["default"] = _default;

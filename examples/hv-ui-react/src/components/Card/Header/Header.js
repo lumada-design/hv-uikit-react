@@ -15,9 +15,9 @@ import CardHeader from "@material-ui/core/CardHeader";
 import ErrorIcon from "@material-ui/icons/ErrorRounded";
 import CheckCircle from "@material-ui/icons/CheckCircle";
 
-const Header = ({ classes, event }) => {
-  const { name, createdDate } = event;
-  const criticality = event.criticality || "";
+const Header = ({ classes, data }) => {
+  const { name, createdDate } = data;
+  const criticality = data.criticality || "";
 
   const CriticalityIcon = () => {
     switch (criticality.toLowerCase()) {
@@ -54,7 +54,7 @@ const Header = ({ classes, event }) => {
 
 Header.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  event: PropTypes.instanceOf(Object).isRequired
+  data: PropTypes.instanceOf(Object).isRequired
 };
 
 export default Header;

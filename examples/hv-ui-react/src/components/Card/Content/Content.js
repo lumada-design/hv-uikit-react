@@ -14,8 +14,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-const Content = ({ classes, event }) => {
-  const { outcome, assignee, assetId, description } = event;
+const Content = ({ classes, data }) => {
+  const { outcome, assignee, assetId, description } = data;
 
   return (
     <CardContent className={classes.content}>
@@ -45,7 +45,7 @@ const Content = ({ classes, event }) => {
 
 Content.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  event: PropTypes.instanceOf(Object).isRequired
+  data: PropTypes.instanceOf(Object).isRequired
 };
 
 export default Content;

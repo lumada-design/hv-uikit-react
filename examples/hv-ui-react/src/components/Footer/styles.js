@@ -27,7 +27,7 @@ const styles = theme => ({
   },
   labelRight: {
     float: "right",
-    marginTop: 11,
+    marginTop: 12,
     marginRight: 20,
     fontSize: "12px",
     letterSpacing: "0.02em",
