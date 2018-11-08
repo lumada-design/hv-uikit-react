@@ -28,50 +28,58 @@ var _CheckCircle = _interopRequireDefault(require("@material-ui/icons/CheckCircl
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var Header = function Header(_ref) {
-  var classes = _ref.classes,
-      event = _ref.event;
-  var name = event.name,
-      createdDate = event.createdDate;
-  var criticality = event.criticality || "";
+var Header = function () {
+  function Header(_ref) {
+    var classes = _ref.classes,
+        data = _ref.data;
+    var name = data.name,
+        createdDate = data.createdDate;
+    var criticality = data.criticality || "";
 
-  var CriticalityIcon = function CriticalityIcon() {
-    switch (criticality.toLowerCase()) {
-      case "info":
-        return _react["default"].createElement(_CheckCircle["default"], {
-          className: (0, _classnames["default"])(classes.icon, classes.info)
-        });
+    var CriticalityIcon = function () {
+      function CriticalityIcon() {
+        switch (criticality.toLowerCase()) {
+          case "info":
+            return _react["default"].createElement(_CheckCircle["default"], {
+              className: (0, _classnames["default"])(classes.icon, classes.info)
+            });
 
-      case "warning":
-        return _react["default"].createElement(_ErrorRounded["default"], {
-          className: (0, _classnames["default"])(classes.icon, classes.warning)
-        });
+          case "warning":
+            return _react["default"].createElement(_ErrorRounded["default"], {
+              className: (0, _classnames["default"])(classes.icon, classes.warning)
+            });
 
-      case "critical":
-        return _react["default"].createElement(_ErrorRounded["default"], {
-          className: (0, _classnames["default"])(classes.icon, classes.critical)
-        });
+          case "critical":
+            return _react["default"].createElement(_ErrorRounded["default"], {
+              className: (0, _classnames["default"])(classes.icon, classes.critical)
+            });
 
-      default:
-        return null;
-    }
-  };
+          default:
+            return null;
+        }
+      }
 
-  return _react["default"].createElement(_CardHeader["default"], {
-    title: name,
-    className: classes.root,
-    subheader: createdDate,
-    action: _react["default"].createElement(CriticalityIcon, null),
-    classes: {
-      title: classes.title,
-      subheader: classes.subheader
-    }
-  });
-};
+      return CriticalityIcon;
+    }();
+
+    return _react["default"].createElement(_CardHeader["default"], {
+      title: name,
+      className: classes.root,
+      subheader: createdDate,
+      action: _react["default"].createElement(CriticalityIcon, null),
+      classes: {
+        title: classes.title,
+        subheader: classes.subheader
+      }
+    });
+  }
+
+  return Header;
+}();
 
 Header.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
-  event: _propTypes["default"].instanceOf(Object).isRequired
+  data: _propTypes["default"].instanceOf(Object).isRequired
 };
 var _default = Header;
 exports["default"] = _default;

@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
@@ -87,55 +89,65 @@ function (_React$Component) {
       password: "",
       isLogging: false
     });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])((0, _assertThisInitialized2["default"])(_this)), "handleSubmit", function () {
-      function _callee(e) {
-        var _this$state, username, password, login;
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])((0, _assertThisInitialized2["default"])(_this)), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref = (0, _asyncToGenerator2["default"])(
+      /*#__PURE__*/
+      _regenerator["default"].mark(function () {
+        function _callee(e) {
+          var _this$state, username, password, login;
 
-        return _regenerator["default"].async(function () {
-          function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  e.preventDefault();
-                  _this$state = _this.state, username = _this$state.username, password = _this$state.password;
-                  login = _this.props.login;
+          return _regenerator["default"].wrap(function () {
+            function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    e.preventDefault();
+                    _this$state = _this.state, username = _this$state.username, password = _this$state.password;
+                    login = _this.props.login;
 
-                  _this.setState({
-                    isLogging: true
-                  });
+                    _this.setState({
+                      isLogging: true
+                    });
 
-                  _context.prev = 4;
-                  _context.next = 7;
-                  return _regenerator["default"].awrap(login({
-                    username: username,
-                    password: password
-                  }));
+                    _context.prev = 4;
+                    _context.next = 7;
+                    return login({
+                      username: username,
+                      password: password
+                    });
 
-                case 7:
-                  _context.next = 11;
-                  break;
+                  case 7:
+                    _context.next = 11;
+                    break;
 
-                case 9:
-                  _context.prev = 9;
-                  _context.t0 = _context["catch"](4);
+                  case 9:
+                    _context.prev = 9;
+                    _context.t0 = _context["catch"](4);
 
-                case 11:
-                  _this.setState({
-                    isLogging: false
-                  });
+                  case 11:
+                    _this.setState({
+                      isLogging: false
+                    });
 
-                case 12:
-                case "end":
-                  return _context.stop();
+                  case 12:
+                  case "end":
+                    return _context.stop();
+                }
               }
             }
-          }
 
-          return _callee$;
-        }(), null, this, [[4, 9]]);
-      }
+            return _callee$;
+          }(), _callee, this, [[4, 9]]);
+        }
 
-      return _callee;
+        return _callee;
+      }()));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
     }());
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])((0, _assertThisInitialized2["default"])(_this)), "handleInputChange", function (name) {
       return function (event) {

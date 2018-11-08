@@ -30,32 +30,36 @@ var _styles = _interopRequireDefault(require("./styles"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var User = function User(_ref) {
-  var classes = _ref.classes,
-      userData = _ref.userData,
-      logout = _ref.logout;
-  if (!userData) return "";
-  return _react["default"].createElement("div", {
-    className: classes.user
-  }, _react["default"].createElement("div", {
-    className: classes.userInfo
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.userName
-  }, userData.name), _react["default"].createElement(_Typography["default"], {
-    className: classes.userRole
-  }, userData.role)), _react["default"].createElement(_IconButton["default"], {
-    className: classes.userButton,
-    onClick: function () {
-      function onClick() {
-        return logout();
-      }
+var User = function () {
+  function User(_ref) {
+    var classes = _ref.classes,
+        userData = _ref.userData,
+        logout = _ref.logout;
+    if (!userData) return "";
+    return _react["default"].createElement("div", {
+      className: classes.user
+    }, _react["default"].createElement("div", {
+      className: classes.userInfo
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.userName
+    }, userData.name), _react["default"].createElement(_Typography["default"], {
+      className: classes.userRole
+    }, userData.role)), _react["default"].createElement(_IconButton["default"], {
+      className: classes.userButton,
+      onClick: function () {
+        function onClick() {
+          return logout();
+        }
 
-      return onClick;
-    }()
-  }, _react["default"].createElement(_AccountCircle["default"], {
-    className: classes.userIcon
-  })));
-};
+        return onClick;
+      }()
+    }, _react["default"].createElement(_AccountCircle["default"], {
+      className: classes.userIcon
+    })));
+  }
+
+  return User;
+}();
 
 User.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,

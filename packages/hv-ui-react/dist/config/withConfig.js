@@ -22,15 +22,19 @@ var _ = require(".");
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var withConfig = function withConfig(Component) {
-  return function (props) {
-    return _react["default"].createElement(_.ConfigConsumer, null, function (config) {
-      return _react["default"].createElement(Component, (0, _extends2["default"])({}, props, {
-        config: config
-      }));
-    });
-  };
-};
+var withConfig = function () {
+  function withConfig(Component) {
+    return function (props) {
+      return _react["default"].createElement(_.ConfigConsumer, null, function (config) {
+        return _react["default"].createElement(Component, (0, _extends2["default"])({}, props, {
+          config: config
+        }));
+      });
+    };
+  }
+
+  return withConfig;
+}();
 
 var _default = withConfig;
 exports["default"] = _default;

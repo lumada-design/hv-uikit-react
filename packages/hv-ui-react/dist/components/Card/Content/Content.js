@@ -26,55 +26,59 @@ var _Typography = _interopRequireDefault(require("@material-ui/core/Typography")
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var Content = function Content(_ref) {
-  var classes = _ref.classes,
-      event = _ref.event;
-  var outcome = event.outcome,
-      assignee = event.assignee,
-      assetId = event.assetId,
-      description = event.description;
-  return _react["default"].createElement(_CardContent["default"], {
-    className: classes.content
-  }, _react["default"].createElement(_Grid["default"], {
-    container: true
-  }, _react["default"].createElement(_Grid["default"], {
-    item: true,
-    xs: 4,
-    className: classes.item
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.label
-  }, "Status"), _react["default"].createElement(_Typography["default"], {
-    className: classes.text
-  }, outcome ? outcome.toLowerCase() : "")), _react["default"].createElement(_Grid["default"], {
-    item: true,
-    xs: 8,
-    className: classes.item
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.label
-  }, "Assignee"), _react["default"].createElement(_Typography["default"], {
-    className: classes.text
-  }, assignee))), _react["default"].createElement(_Grid["default"], {
-    item: true,
-    xs: 12,
-    className: classes.item
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.label
-  }, "Related Assets"), _react["default"].createElement(_Typography["default"], {
-    className: classes.text
-  }, assetId)), _react["default"].createElement(_Grid["default"], {
-    item: true,
-    xs: 12,
-    className: classes.item
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.label
-  }, "Description"), _react["default"].createElement(_Typography["default"], {
-    className: classes.text
-  }, description)));
-};
+var Content = function () {
+  function Content(_ref) {
+    var classes = _ref.classes,
+        data = _ref.data;
+    var outcome = data.outcome,
+        assignee = data.assignee,
+        assetId = data.assetId,
+        description = data.description;
+    return _react["default"].createElement(_CardContent["default"], {
+      className: classes.content
+    }, _react["default"].createElement(_Grid["default"], {
+      container: true
+    }, _react["default"].createElement(_Grid["default"], {
+      item: true,
+      xs: 4,
+      className: classes.item
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.label
+    }, "Status"), _react["default"].createElement(_Typography["default"], {
+      className: classes.text
+    }, outcome ? outcome.toLowerCase() : "")), _react["default"].createElement(_Grid["default"], {
+      item: true,
+      xs: 8,
+      className: classes.item
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.label
+    }, "Assignee"), _react["default"].createElement(_Typography["default"], {
+      className: classes.text
+    }, assignee))), _react["default"].createElement(_Grid["default"], {
+      item: true,
+      xs: 12,
+      className: classes.item
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.label
+    }, "Related Assets"), _react["default"].createElement(_Typography["default"], {
+      className: classes.text
+    }, assetId)), _react["default"].createElement(_Grid["default"], {
+      item: true,
+      xs: 12,
+      className: classes.item
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.label
+    }, "Description"), _react["default"].createElement(_Typography["default"], {
+      className: classes.text
+    }, description)));
+  }
+
+  return Content;
+}();
 
 Content.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
-  event: _propTypes["default"].instanceOf(Object).isRequired
+  data: _propTypes["default"].instanceOf(Object).isRequired
 };
 var _default = Content;
 exports["default"] = _default;

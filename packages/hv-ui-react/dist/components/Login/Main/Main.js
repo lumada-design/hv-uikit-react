@@ -24,21 +24,25 @@ var _Form = _interopRequireDefault(require("../Form"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var Container = function Container(_ref) {
-  var classes = _ref.classes,
-      login = _ref.login;
-  return _react["default"].createElement("div", {
-    className: classes.root
-  }, _react["default"].createElement("div", {
-    className: classes.rightContainer
-  }, _react["default"].createElement(_Typography["default"], {
-    className: classes.title
-  }, "Welcome"), _react["default"].createElement("div", {
-    className: classes.formContainer
-  }, _react["default"].createElement(_Form["default"], {
-    login: login
-  }))));
-};
+var Container = function () {
+  function Container(_ref) {
+    var classes = _ref.classes,
+        login = _ref.login;
+    return _react["default"].createElement("div", {
+      className: classes.root
+    }, _react["default"].createElement("div", {
+      className: classes.rightContainer
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.title
+    }, "Welcome"), _react["default"].createElement("div", {
+      className: classes.formContainer
+    }, _react["default"].createElement(_Form["default"], {
+      login: login
+    }))));
+  }
+
+  return Container;
+}();
 
 Container.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,

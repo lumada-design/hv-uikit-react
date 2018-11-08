@@ -14,36 +14,40 @@ exports["default"] = void 0;
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var styles = function styles(theme) {
-  return {
-    root: {
-      position: "absolute",
-      width: "100%",
-      height: 40,
-      backgroundColor: theme.palette.grey.inspire
-    },
-    labelLeft: {
-      "float": "left",
-      marginTop: 10,
-      marginLeft: 20,
-      fontSize: "16px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      color: theme.palette.grey.foggy
-    },
-    labelRight: {
-      "float": "right",
-      marginTop: 11,
-      marginRight: 20,
-      fontSize: "12px",
-      letterSpacing: "0.02em",
-      lineHeight: "16px",
-      fontWeight: "400",
-      color: theme.palette.grey.foggy
-    }
-  };
-};
+var styles = function () {
+  function styles(theme) {
+    return {
+      root: {
+        position: "absolute",
+        width: "100%",
+        height: 40,
+        backgroundColor: theme.palette.grey.inspire
+      },
+      labelLeft: {
+        "float": "left",
+        marginTop: 10,
+        marginLeft: 20,
+        fontSize: "16px",
+        letterSpacing: "0.02em",
+        lineHeight: "20px",
+        fontWeight: "600",
+        color: theme.palette.grey.foggy
+      },
+      labelRight: {
+        "float": "right",
+        marginTop: 12,
+        marginRight: 20,
+        fontSize: "12px",
+        letterSpacing: "0.02em",
+        lineHeight: "16px",
+        fontWeight: "400",
+        color: theme.palette.grey.foggy
+      }
+    };
+  }
+
+  return styles;
+}();
 
 var _default = styles;
 exports["default"] = _default;
