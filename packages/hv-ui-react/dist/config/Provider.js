@@ -30,29 +30,25 @@ var _theme = _interopRequireDefault(require("../theme"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var HvProvider = function () {
-  function HvProvider(_ref) {
-    var children = _ref.children,
-        theme = _ref.theme,
-        router = _ref.router,
-        defaults = _ref.defaults;
+var HvProvider = function HvProvider(_ref) {
+  var children = _ref.children,
+      theme = _ref.theme,
+      router = _ref.router,
+      defaults = _ref.defaults;
 
-    var pTheme = _lodash["default"].merge(_theme["default"], theme);
+  var pTheme = _lodash["default"].merge(_theme["default"], theme);
 
-    var pConfig = _lodash["default"].assign(_2["default"], defaults, {
-      router: router
-    });
+  var pConfig = _lodash["default"].assign(_2["default"], defaults, {
+    router: router
+  });
 
-    return _react["default"].createElement(_styles.MuiThemeProvider, {
-      theme: pTheme,
-      sheetsManager: new Map()
-    }, _react["default"].createElement(_2.ConfigProvider, {
-      value: pConfig
-    }, children));
-  }
-
-  return HvProvider;
-}();
+  return _react["default"].createElement(_styles.MuiThemeProvider, {
+    theme: pTheme,
+    sheetsManager: new Map()
+  }, _react["default"].createElement(_2.ConfigProvider, {
+    value: pConfig
+  }, children));
+};
 
 HvProvider.propTypes = {
   children: _propTypes["default"].node.isRequired,

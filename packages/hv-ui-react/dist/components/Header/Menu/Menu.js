@@ -36,37 +36,33 @@ var _styles = _interopRequireDefault(require("./styles"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var Menu = function () {
-  function Menu(_ref) {
-    var classes = _ref.classes,
-        menuData = _ref.menuData,
-        useRouter = _ref.useRouter;
-    if (!menuData) return "";
-    var menu = menuData.map(function (elem, i) {
-      var key = "".concat(elem.label, "_").concat(i);
-      return _react["default"].createElement(_Link["default"], {
-        key: key,
-        href: elem.path,
-        useRouter: useRouter
-      }, _react["default"].createElement(_ListItem["default"], {
-        button: true,
-        className: classes.listItem
-      }, _react["default"].createElement("div", {
-        className: (0, _classnames["default"])(elem.isActive ? classes.selector : "")
-      }), _react["default"].createElement(_ListItemText["default"], {
-        disableTypography: true,
-        className: (0, _classnames["default"])(classes.listItemText, elem.isActive ? classes.selected : "")
-      }, _react["default"].createElement(_Typography["default"], {
-        className: classes.label
-      }, elem.label))));
-    });
-    return _react["default"].createElement(_List["default"], {
-      className: classes.menu
-    }, menu);
-  }
-
-  return Menu;
-}();
+var Menu = function Menu(_ref) {
+  var classes = _ref.classes,
+      menuData = _ref.menuData,
+      useRouter = _ref.useRouter;
+  if (!menuData) return "";
+  var menu = menuData.map(function (elem, i) {
+    var key = "".concat(elem.label, "_").concat(i);
+    return _react["default"].createElement(_Link["default"], {
+      key: key,
+      href: elem.path,
+      useRouter: useRouter
+    }, _react["default"].createElement(_ListItem["default"], {
+      button: true,
+      className: classes.listItem
+    }, _react["default"].createElement("div", {
+      className: (0, _classnames["default"])(elem.isActive ? classes.selector : "")
+    }), _react["default"].createElement(_ListItemText["default"], {
+      disableTypography: true,
+      className: (0, _classnames["default"])(classes.listItemText, elem.isActive ? classes.selected : "")
+    }, _react["default"].createElement(_Typography["default"], {
+      className: classes.label
+    }, elem.label))));
+  });
+  return _react["default"].createElement(_List["default"], {
+    className: classes.menu
+  }, menu);
+};
 
 Menu.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
