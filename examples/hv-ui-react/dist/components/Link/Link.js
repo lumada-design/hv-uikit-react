@@ -22,34 +22,26 @@ var _withConfig = _interopRequireDefault(require("../../config/withConfig"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var HvLink = function () {
-  function HvLink(props) {
-    var classes = props.classes,
-        children = props.children,
-        href = props.href,
-        config = props.config,
-        useRouter = props.useRouter;
+var HvLink = function HvLink(props) {
+  var classes = props.classes,
+      children = props.children,
+      href = props.href,
+      config = props.config,
+      useRouter = props.useRouter;
 
-    var handleClick = function () {
-      function handleClick(e) {
-        if (useRouter && config.router) {
-          e.preventDefault();
-          config.router.push(href);
-        }
-      }
+  var handleClick = function handleClick(e) {
+    if (useRouter && config.router) {
+      e.preventDefault();
+      config.router.push(href);
+    }
+  };
 
-      return handleClick;
-    }();
-
-    return _react["default"].createElement("a", {
-      href: href,
-      onClick: handleClick,
-      className: classes.a
-    }, children);
-  }
-
-  return HvLink;
-}();
+  return _react["default"].createElement("a", {
+    href: href,
+    onClick: handleClick,
+    className: classes.a
+  }, children);
+};
 
 HvLink.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,

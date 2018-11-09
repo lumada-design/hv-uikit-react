@@ -22,20 +22,16 @@ var _Typography = _interopRequireDefault(require("@material-ui/core/Typography")
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var HvFooter = function () {
-  function HvFooter(_ref) {
-    var classes = _ref.classes;
-    return _react["default"].createElement("div", {
-      className: classes.root
-    }, _react["default"].createElement(_Typography["default"], {
-      className: classes.labelLeft
-    }, "Hitachi Vantara"), _react["default"].createElement(_Typography["default"], {
-      className: classes.labelRight
-    }, "\xA9 Hitachi Vantara Corporation ".concat(new Date().getFullYear(), ". All Rights Reserved.")));
-  }
-
-  return HvFooter;
-}();
+var HvFooter = function HvFooter(_ref) {
+  var classes = _ref.classes;
+  return _react["default"].createElement("div", {
+    className: classes.root
+  }, _react["default"].createElement(_Typography["default"], {
+    className: classes.labelLeft
+  }, "Hitachi Vantara"), _react["default"].createElement(_Typography["default"], {
+    className: classes.labelRight
+  }, "\xA9 Hitachi Vantara Corporation ".concat(new Date().getFullYear(), ". All Rights Reserved.")));
+};
 
 HvFooter.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired
