@@ -32,10 +32,11 @@ var _Footer = _interopRequireDefault(require("../Footer"));
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-var Main = function Main(props) {
-  var classes = props.classes,
-      data = props.data,
-      useRouter = props.useRouter;
+var Main = function Main(_ref) {
+  var classes = _ref.classes,
+      data = _ref.data,
+      basePath = _ref.basePath,
+      useRouter = _ref.useRouter;
   var criticality = data.criticality || "";
   var status = (0, _classnames["default"])((0, _defineProperty2["default"])({}, classes["".concat(criticality.toLowerCase())], criticality));
   return _react["default"].createElement(_Card["default"], {
@@ -46,6 +47,7 @@ var Main = function Main(props) {
     data: data
   }), _react["default"].createElement(_Footer["default"], {
     data: data,
+    basePath: basePath,
     useRouter: useRouter
   }));
 };
@@ -53,9 +55,11 @@ var Main = function Main(props) {
 Main.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
   data: _propTypes["default"].instanceOf(Object).isRequired,
+  basePath: _propTypes["default"].string,
   useRouter: _propTypes["default"].bool
 };
 Main.defaultProps = {
+  basePath: "",
   useRouter: false
 };
 var _default = Main;

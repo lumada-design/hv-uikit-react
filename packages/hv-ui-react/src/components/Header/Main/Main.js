@@ -16,11 +16,11 @@ import Logo from "../Logo";
 import Menu from "../Menu";
 import User from "../User";
 
-const Main = ({ classes, menuData, userData, userLogout, useRouter }) => (
+const Main = ({ classes, menuData, userData, userLogout, basePath, useRouter }) => (
   <AppBar color="default">
     <Toolbar>
       <Logo />
-      <Menu menuData={menuData} useRouter={useRouter} />
+      <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
       <User userData={userData} logout={userLogout} />
     </Toolbar>
   </AppBar>
@@ -31,6 +31,7 @@ Main.propTypes = {
   menuData: PropTypes.instanceOf(Array),
   userData: PropTypes.instanceOf(Object),
   userLogout: PropTypes.instanceOf(Function),
+  basePath: PropTypes.string,
   useRouter: PropTypes.bool
 };
 
@@ -38,6 +39,7 @@ Main.defaultProps = {
   menuData: [],
   userData: {},
   userLogout: null,
+  basePath: "",
   useRouter: false
 };
 

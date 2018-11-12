@@ -31,9 +31,9 @@ var _Link = _interopRequireDefault(require("../../Link"));
 var Footer = function Footer(_ref) {
   var classes = _ref.classes,
       data = _ref.data,
-      config = _ref.config,
+      basePath = _ref.basePath,
       useRouter = _ref.useRouter;
-  var path = "".concat(config.basePath.card).concat(data.id);
+  var path = "".concat(basePath).concat(data.id);
   return _react["default"].createElement(_CardActions["default"], {
     className: classes.root
   }, _react["default"].createElement(_Link["default"], {
@@ -49,11 +49,8 @@ var Footer = function Footer(_ref) {
 Footer.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
   data: _propTypes["default"].instanceOf(Object).isRequired,
-  config: _propTypes["default"].instanceOf(Object).isRequired,
-  useRouter: _propTypes["default"].bool
-};
-Footer.defaultProps = {
-  useRouter: false
+  basePath: _propTypes["default"].string.isRequired,
+  useRouter: _propTypes["default"].bool.isRequired
 };
 
 var _default = (0, _withConfig["default"])(Footer);

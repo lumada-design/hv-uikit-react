@@ -15,8 +15,8 @@ import withConfig from "../../../config/withConfig";
 import Button from "../../Button";
 import Link from "../../Link";
 
-const Footer = ({ classes, data, config, useRouter }) => {
-  const path = `${config.basePath.card}${data.id}`;
+const Footer = ({ classes, data, basePath, useRouter }) => {
+  const path = `${basePath}${data.id}`;
 
   return (
     <CardActions className={classes.root}>
@@ -32,12 +32,8 @@ const Footer = ({ classes, data, config, useRouter }) => {
 Footer.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   data: PropTypes.instanceOf(Object).isRequired,
-  config: PropTypes.instanceOf(Object).isRequired,
-  useRouter: PropTypes.bool
-};
-
-Footer.defaultProps = {
-  useRouter: false
+  basePath: PropTypes.string.isRequired,
+  useRouter: PropTypes.bool.isRequired
 };
 
 export default withConfig(Footer);

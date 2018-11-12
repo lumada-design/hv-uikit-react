@@ -13,4 +13,4 @@ const data = {
   outcome: "RESOLVED"
 };
 
-storiesOf("Card", module).add("Card", () => <HvCard data={data} />);
+storiesOf("Card", module).add("Card", () => <HvCard data={data} basePath="events/" />);

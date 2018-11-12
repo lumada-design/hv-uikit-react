@@ -35,11 +35,13 @@ var Main = function Main(_ref) {
       menuData = _ref.menuData,
       userData = _ref.userData,
       userLogout = _ref.userLogout,
+      basePath = _ref.basePath,
       useRouter = _ref.useRouter;
   return _react["default"].createElement(_AppBar["default"], {
     color: "default"
   }, _react["default"].createElement(_Toolbar["default"], null, _react["default"].createElement(_Logo["default"], null), _react["default"].createElement(_Menu["default"], {
     menuData: menuData,
+    basePath: basePath,
     useRouter: useRouter
   }), _react["default"].createElement(_User["default"], {
     userData: userData,
@@ -52,12 +54,14 @@ Main.propTypes = {
   menuData: _propTypes["default"].instanceOf(Array),
   userData: _propTypes["default"].instanceOf(Object),
   userLogout: _propTypes["default"].instanceOf(Function),
+  basePath: _propTypes["default"].string,
   useRouter: _propTypes["default"].bool
 };
 Main.defaultProps = {
   menuData: [],
   userData: {},
   userLogout: null,
+  basePath: "",
   useRouter: false
 };
 var _default = Main;

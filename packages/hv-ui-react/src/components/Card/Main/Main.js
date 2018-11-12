@@ -16,8 +16,7 @@ import Header from "../Header";
 import Content from "../Content";
 import Footer from "../Footer";
 
-const Main = props => {
-  const { classes, data, useRouter } = props;
+const Main = ({ classes, data, basePath, useRouter }) => {
   const criticality = data.criticality || "";
 
   const status = classNames({
@@ -28,7 +27,7 @@ const Main = props => {
     <Card className={classNames(classes.root, status)}>
       <Header data={data} />
       <Content data={data} />
-      <Footer data={data} useRouter={useRouter} />
+      <Footer data={data} basePath={basePath} useRouter={useRouter} />
     </Card>
   );
 };
@@ -36,10 +35,12 @@ const Main = props => {
 Main.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   data: PropTypes.instanceOf(Object).isRequired,
+  basePath: PropTypes.string,
   useRouter: PropTypes.bool
 };
 
 Main.defaultProps = {
+  basePath: "",
   useRouter: false
 };
 

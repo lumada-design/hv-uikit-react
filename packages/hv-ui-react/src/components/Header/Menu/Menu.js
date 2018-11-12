@@ -19,14 +19,15 @@ import Typography from "@material-ui/core/Typography";
 import Link from "../../Link";
 import styles from "./styles";
 
-const Menu = ({ classes, menuData, useRouter }) => {
+const Menu = ({ classes, menuData, basePath, useRouter }) => {
   if (!menuData) return "";
 
   const menu = menuData.map((elem, i) => {
     const key = `${elem.label}_${i}`;
+    const path = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} href={elem.path} useRouter={useRouter}>
+      <Link key={key} href={path} useRouter={useRouter}>
         <ListItem button className={classes.listItem}>
           <div className={classnames(elem.isActive ? classes.selector : "")} />
           <ListItemText
@@ -49,12 +50,12 @@ const Menu = ({ classes, menuData, useRouter }) => {
 Menu.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   menuData: PropTypes.instanceOf(Array),
-  useRouter: PropTypes.bool
+  basePath: PropTypes.string.isRequired,
+  useRouter: PropTypes.bool.isRequired
 };
 
 Menu.defaultProps = {
-  menuData: null,
-  useRouter: false
+  menuData: null
 };
 
 export default withStyles(styles, { withTheme: true })(Menu);
