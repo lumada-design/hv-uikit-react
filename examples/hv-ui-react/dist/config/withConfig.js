@@ -11,7 +11,7 @@ var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends")
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ = require(".");
+var _configContext = require("./configContext");
 
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
@@ -24,7 +24,7 @@ var _ = require(".");
  */
 var withConfig = function withConfig(Component) {
   return function (props) {
-    return _react["default"].createElement(_.ConfigConsumer, null, function (config) {
+    return _react["default"].createElement(_configContext.ConfigConsumer, null, function (config) {
       return _react["default"].createElement(Component, (0, _extends2["default"])({}, props, {
         config: config
       }));

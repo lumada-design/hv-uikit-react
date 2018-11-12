@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.ConfigConsumer = exports.ConfigProvider = void 0;
+exports.ConfigConsumer = exports.ConfigProvider = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -24,9 +24,3 @@ var ConfigProvider = ConfigContext.Provider;
 exports.ConfigProvider = ConfigProvider;
 var ConfigConsumer = ConfigContext.Consumer;
 exports.ConfigConsumer = ConfigConsumer;
-var _default = {
-  basePath: {
-    card: "/events?id="
-  }
-};
-exports["default"] = _default;

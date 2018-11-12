@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -15,9 +16,3 @@ const ConfigProvider = ConfigContext.Provider;
 const ConfigConsumer = ConfigContext.Consumer;
 
 export { ConfigProvider, ConfigConsumer };
-
-export default {
-  basePath: {
-    card: "/events?id="
-  }
-};

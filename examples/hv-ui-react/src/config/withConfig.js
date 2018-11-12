@@ -9,7 +9,7 @@
  */
 
 import React from "react";
-import { ConfigConsumer } from ".";
+import { ConfigConsumer } from "./configContext";
 
 const withConfig = Component => props => (
   <ConfigConsumer>
