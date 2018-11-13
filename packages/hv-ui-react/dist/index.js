@@ -65,6 +65,16 @@ Object.defineProperty(exports, "HvLogin", {
     return get;
   }()
 });
+Object.defineProperty(exports, "HvTable", {
+  enumerable: true,
+  get: function () {
+    function get() {
+      return _Table["default"];
+    }
+
+    return get;
+  }()
+});
 Object.defineProperty(exports, "hvTheme", {
   enumerable: true,
   get: function () {
@@ -97,6 +107,8 @@ var _Header = _interopRequireDefault(require("./components/Header"));
 var _Link = _interopRequireDefault(require("./components/Link"));
 
 var _Login = _interopRequireDefault(require("./components/Login"));
+
+var _Table = _interopRequireDefault(require("./components/Table"));
 
 var _theme = _interopRequireDefault(require("./theme"));
 

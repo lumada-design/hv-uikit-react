@@ -6,13 +6,16 @@
   "module": "dist/index.es.js",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
-    "dev:watch": "watch 'npm run build' ./src",
+    "dev:watch": "watch 'npm run build' src",
     "dev:storybook": "start-storybook -p 9001 -c .storybook",
-    "build": "npm-run-all clean build:*",
+    "build": "npm-run-all build:*",
+    "build:cleandist": "del dist",
     "build:copy": "copyfiles -f src/index.js dist && move-cli dist/index.js dist/index.es.js",
     "build:babel": "npx babel src -d dist --copy-files",
-    "clean": "del ./dist",
-    "lint": "eslint ."
+    "build:cleantests": "del dist/**/tests",
+    "lint": "eslint .",
+    "test": "jest -c config/jest-config.js -u --coverage",
+    "test:watch": "jest -c config/jest-config.js -u --watch"
   },
   "dependencies": {
     "@hv-ui/themes": "git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui-themes.git",
@@ -21,6 +24,9 @@
     "@storybook/cli": "^4.0.4",
     "@storybook/react": "^4.0.4",
     "classnames": "^2.2.6",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
@@ -37,7 +43,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.4.2",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-preset-airbnb": "^3.0.1",
     "copyfiles": "^2.1.0",
@@ -60,5 +66,8 @@
   "files": [
     "dist"
   ],
-  "precommit": "build"
+  "precommit": "build",
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
