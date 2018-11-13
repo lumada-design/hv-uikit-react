@@ -1,11 +1,8 @@
 {
-  "presets": [
-      "airbnb",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-regenerator",
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-transform-runtime"
-    ]
+  "presets": ["airbnb", "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-transform-regenerator",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
+  ]
 }
