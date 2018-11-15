@@ -23,11 +23,17 @@ var _Typography = _interopRequireDefault(require("@material-ui/core/Typography")
  *  under which the software has been supplied.
  */
 var Logo = function Logo(_ref) {
-  var classes = _ref.classes;
+  var classes = _ref.classes,
+      companyLogo = _ref.companyLogo,
+      productLogo = _ref.productLogo;
   return _react["default"].createElement("div", {
     className: classes.companylogoContainer
-  }, _react["default"].createElement("div", {
-    className: classes.companyLogoImage
+  }, _react["default"].createElement("img", {
+    src: companyLogo,
+    className: classes.companyLogoImage,
+    alt: "Company logo"
+  }), _react["default"].createElement("span", {
+    className: classes.separator
   }), _react["default"].createElement("div", {
     className: classes.companyLogoText
   }, _react["default"].createElement(_Typography["default"], {
@@ -38,7 +44,13 @@ var Logo = function Logo(_ref) {
 };
 
 Logo.propTypes = {
-  classes: _propTypes["default"].instanceOf(Object).isRequired
+  classes: _propTypes["default"].instanceOf(Object).isRequired,
+  companyLogo: _propTypes["default"].string,
+  productLogo: _propTypes["default"].string
+};
+Logo.defaultProps = {
+  companyLogo: null,
+  productLogo: null
 };
 var _default = Logo;
 exports["default"] = _default;

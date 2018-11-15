@@ -13,8 +13,11 @@ import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import Form from "../Form";
 
-const Container = ({ classes, login }) => (
-  <div className={classes.root}>
+const Container = ({ classes, login, backgroundImage }) => (
+  <div
+    className={classes.root}
+    style={{ backgroundImage: `url(${  backgroundImage  })` }}
+  >
     <div className={classes.rightContainer}>
       <Typography className={classes.title}>Welcome</Typography>
       <div className={classes.formContainer}>
@@ -26,7 +29,12 @@ const Container = ({ classes, login }) => (
 
 Container.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  login: PropTypes.instanceOf(Function).isRequired
+  login: PropTypes.instanceOf(Function).isRequired,
+  backgroundImage: PropTypes.string
+};
+
+Container.defaultProps = {
+  backgroundImage: null
 };
 
 export default Container;

@@ -16,10 +16,19 @@ import Logo from "../Logo";
 import Menu from "../Menu";
 import User from "../User";
 
-const Main = ({ classes, menuData, userData, userLogout, basePath, useRouter }) => (
+const Main = ({
+  classes,
+  menuData,
+  userData,
+  userLogout,
+  basePath,
+  useRouter,
+  companyLogo,
+  productLogo
+}) => (
   <AppBar color="default">
     <Toolbar>
-      <Logo />
+      <Logo companyLogo={companyLogo} productLogo={productLogo} />
       <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
       <User userData={userData} logout={userLogout} />
     </Toolbar>
@@ -32,7 +41,9 @@ Main.propTypes = {
   userData: PropTypes.instanceOf(Object),
   userLogout: PropTypes.instanceOf(Function),
   basePath: PropTypes.string,
-  useRouter: PropTypes.bool
+  useRouter: PropTypes.bool,
+  companyLogo: PropTypes.string,
+  productLogo: PropTypes.string
 };
 
 Main.defaultProps = {
@@ -40,7 +51,9 @@ Main.defaultProps = {
   userData: {},
   userLogout: null,
   basePath: "",
-  useRouter: false
+  useRouter: false,
+  companyLogo: null,
+  productLogo: null
 };
 
 export default Main;

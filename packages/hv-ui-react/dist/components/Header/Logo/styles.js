@@ -1,15 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
-var _hitachiLogo = _interopRequireDefault(require("./hitachi-logo.png"));
-
-var _lumadaLogo = _interopRequireDefault(require("./lumada-logo.png"));
 
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
@@ -24,22 +18,18 @@ var styles = function styles(theme) {
   return {
     companylogoContainer: {
       position: "relative",
-      height: 28,
-      width: 230
+      display: "inherit"
     },
     companyLogoImage: {
-      position: "absolute",
-      background: "url(".concat(_hitachiLogo["default"], ") no-repeat"),
-      backgroundSize: "100px 28px",
-      backgroundPosition: "0",
-      width: 120,
-      height: 28,
-      borderRight: "1px solid ".concat(theme.palette.grey.rainy)
+      height: 28
     },
     companyLogoText: {
-      position: "absolute",
-      marginLeft: 140,
-      top: -4
+      height: 28
+    },
+    separator: {
+      width: 15,
+      marginRight: 15,
+      borderRight: "1px solid ".concat(theme.palette.grey.rainy)
     },
     companyLogoText1: {
       color: theme.palette.text.main,

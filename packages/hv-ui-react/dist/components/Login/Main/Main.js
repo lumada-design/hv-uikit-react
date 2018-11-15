@@ -26,9 +26,13 @@ var _Form = _interopRequireDefault(require("../Form"));
  */
 var Container = function Container(_ref) {
   var classes = _ref.classes,
-      login = _ref.login;
+      login = _ref.login,
+      backgroundImage = _ref.backgroundImage;
   return _react["default"].createElement("div", {
-    className: classes.root
+    className: classes.root,
+    style: {
+      backgroundImage: "url(".concat(backgroundImage, ")")
+    }
   }, _react["default"].createElement("div", {
     className: classes.rightContainer
   }, _react["default"].createElement(_Typography["default"], {
@@ -42,7 +46,11 @@ var Container = function Container(_ref) {
 
 Container.propTypes = {
   classes: _propTypes["default"].instanceOf(Object).isRequired,
-  login: _propTypes["default"].instanceOf(Function).isRequired
+  login: _propTypes["default"].instanceOf(Function).isRequired,
+  backgroundImage: _propTypes["default"].string
+};
+Container.defaultProps = {
+  backgroundImage: null
 };
 var _default = Container;
 exports["default"] = _default;
