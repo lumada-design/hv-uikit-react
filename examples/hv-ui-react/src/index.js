@@ -16,6 +16,7 @@ export { default as HvHeader } from "./components/Header";
 export { default as HvLink } from "./components/Link";
 export { default as HvLogin } from "./components/Login";
 export { default as HvTable } from "./components/Table";
+export { default as HvDropdown } from "./components/Dropdown";
 
 // theme
 export { default as hvTheme } from "./theme";
