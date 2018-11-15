@@ -1,15 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
-var _miLoginBg = _interopRequireDefault(require("./mi-login-bg.png"));
-
-var _miHitachiLogo = _interopRequireDefault(require("./mi-hitachi-logo.png"));
 
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
@@ -26,7 +20,7 @@ var styles = function styles(theme) {
       flex: 1,
       display: "flex",
       width: "100%",
-      background: "url(".concat(_miLoginBg["default"], ") 0 / cover fixed"),
+      background: "0 / cover fixed",
       justifyContent: "flex-end"
     },
     rightContainer: {
@@ -59,7 +53,6 @@ var styles = function styles(theme) {
         content: '""',
         width: "100%",
         height: "100%",
-        background: "url(".concat(_miLoginBg["default"], ") 0 / cover fixed"),
         position: "absolute",
         filter: "blur(2px)"
       }

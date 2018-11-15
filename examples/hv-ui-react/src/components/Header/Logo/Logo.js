@@ -12,9 +12,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
-const Logo = ({ classes }) => (
+const Logo = ({ classes, companyLogo, productLogo }) => (
   <div className={classes.companylogoContainer}>
-    <div className={classes.companyLogoImage} />
+    <img
+      src={companyLogo}
+      className={classes.companyLogoImage}
+      alt="Company logo"
+    />
+    <span className={classes.separator} />
     <div className={classes.companyLogoText}>
       <Typography className={classes.companyLogoText1}>MAINTENANCE</Typography>
       <Typography className={classes.companyLogoText2}>INSIGHTS</Typography>
@@ -23,7 +28,14 @@ const Logo = ({ classes }) => (
 );
 
 Logo.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired
+  classes: PropTypes.instanceOf(Object).isRequired,
+  companyLogo: PropTypes.string,
+  productLogo: PropTypes.string
+};
+
+Logo.defaultProps = {
+  companyLogo: null,
+  productLogo: null
 };
 
 export default Logo;

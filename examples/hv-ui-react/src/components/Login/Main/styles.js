@@ -8,15 +8,12 @@
  *  under which the software has been supplied.
  */
 
-import background from "./mi-login-bg.png";
-import logo from "./mi-hitachi-logo.png";
-
 const styles = theme => ({
   root: {
     flex: 1,
     display: "flex",
     width: "100%",
-    background: `url(${background}) 0 / cover fixed`,
+    background: `0 / cover fixed`,
     justifyContent: "flex-end"
   },
   rightContainer: {
@@ -49,7 +46,6 @@ const styles = theme => ({
       content: '""',
       width: "100%",
       height: "100%",
-      background: `url(${background}) 0 / cover fixed`,
       position: "absolute",
       filter: "blur(2px)"
     }

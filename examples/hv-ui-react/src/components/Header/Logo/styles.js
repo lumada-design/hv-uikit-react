@@ -8,29 +8,25 @@
  *  under which the software has been supplied.
  */
 
-import hitachiLogo from "./hitachi-logo.png";
-import lumadaLogo from "./lumada-logo.png";
-
 const styles = theme => ({
   companylogoContainer: {
     position: "relative",
-    height: 28,
-    width: 230
+    display: "inherit"
   },
   companyLogoImage: {
-    position: "absolute",
-    background: `url(${hitachiLogo}) no-repeat`,
-    backgroundSize: "100px 28px",
-    backgroundPosition: "0",
-    width: 120,
     height: 28,
+  },
+
+  companyLogoText: {
+    height: 28,
+  },
+
+  separator: {
+    width: 15,
+    marginRight: 15,
     borderRight: `1px solid ${theme.palette.grey.rainy}`
   },
-  companyLogoText: {
-    position: "absolute",
-    marginLeft: 140,
-    top: -4
-  },
+
   companyLogoText1: {
     color: theme.palette.text.main,
     fontSize: "12px",
