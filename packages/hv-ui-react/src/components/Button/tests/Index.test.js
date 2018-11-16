@@ -21,7 +21,7 @@ describe("Button withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<ButtonWithStyles />);
+    wrapper = shallow(<ButtonWithStyles>Click!</ButtonWithStyles>);
   });
 
   it("should be defined", () => {
