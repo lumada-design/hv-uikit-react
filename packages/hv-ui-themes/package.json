@@ -14,7 +14,7 @@
     "url": "git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui-themes.git"
   },
   "scripts": {
-    "start": "watch 'npm run build' src",
+    "dev": "watch 'npm run build' src",
     "build": "npm-run-all clean build:*",
     "build:to-scss": "json-to-scss src/*.* dist",
     "build:to-json": "copyfiles src/*.json dist -f",
