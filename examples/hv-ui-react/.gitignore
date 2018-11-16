@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Dependency directories
-node_modules/
+node_modules
 
 # cache
 .cache

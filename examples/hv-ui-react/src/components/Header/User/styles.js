@@ -1,5 +1,3 @@
-import { isAbsolute } from "path";
-
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
