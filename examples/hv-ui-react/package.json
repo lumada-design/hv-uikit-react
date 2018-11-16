@@ -1,10 +1,11 @@
 {
   "name": "@hv-ui/react",
-  "version": "1.0.1-canary.0",
+  "version": "1.0.1-canary.2",
   "description": "React components for the HV Design System.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
+    "clean": "del dist",
     "dev": "npm-run-all -p dev:*",
     "dev:bundle": "rollup -c -w",
     "dev:storybook": "start-storybook -p 9001 -c .storybook",
@@ -16,7 +17,7 @@
     "postpublish": "npm run clean"
   },
   "dependencies": {
-    "@hv-ui/themes": "^1.0.1-canary.0",
+    "@hv-ui/themes": "latest",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "lodash": "^4.17.11",
