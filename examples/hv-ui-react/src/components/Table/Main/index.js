@@ -8,4 +8,6 @@
  *  under which the software has been supplied.
  */
 
-export { default } from "./Main";
+import Main from "./Main";
+
+export default Main;
