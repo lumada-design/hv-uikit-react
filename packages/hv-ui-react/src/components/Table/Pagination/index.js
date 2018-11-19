@@ -8,8 +8,8 @@
  *  under which the software has been supplied.
  */
 
-import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Pagination from "./Pagination";
 
-const HvTable = () => <div>Table Placeholder</div>;
-
-export default HvTable;
+export default withStyles(styles, { withTheme: true })(Pagination);

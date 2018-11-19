@@ -36,7 +36,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-jss": "^8.6.1",
-    "react-select": "^2.1.1"
+    "react-select": "^2.1.1",
+    "react-table": "^6.8.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
