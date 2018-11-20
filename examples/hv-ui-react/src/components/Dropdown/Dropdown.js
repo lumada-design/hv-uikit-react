@@ -16,9 +16,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 class HvDropdown extends React.Component {
-  state = {
-    dropdownExpanded: false
-  };
+
 
   styles = {
     dropdownIndicator: (base, theme) => {
@@ -99,17 +97,34 @@ class HvDropdown extends React.Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dropdownExpanded: false,
+      selectedOption: props.value
+    };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    this.state = {
+      ...this.state,
+      selectedOption: nextProps.value
+    };
+
+    return true;
+  }
+
   render() {
     const {
       theme,
       classes,
       label,
       options,
-      defaultValue,
       disabled,
       onChange
     } = this.props;
-    const { dropdownExpanded } = this.state;
+    const { dropdownExpanded, selectedOption } = this.state;
 
     const reactSelectTheme = {
       ...defaultTheme,
@@ -159,12 +174,19 @@ class HvDropdown extends React.Component {
       [classes.selectGridContent]: label !== null
     });
 
+    const internalOnChange = (selectedValue) => {
+      this.setState({
+        "selectedOption": selectedValue
+      });
+      onChange(selectedValue);
+    };
+
     return (
       <Grid container>
         {label !== null ? getLabelText(label) : null}
         <Grid item xs={12} className={selectGridContentStyles}>
           <Select
-            defaultValue={defaultValue ? defaultValue : options[0]}
+            value={selectedOption}
             className={classes.selectGridContentElement}
             components={{ IndicatorSeparator, DropdownIndicator }}
             options={options}
@@ -174,7 +196,7 @@ class HvDropdown extends React.Component {
             theme={reactSelectTheme}
             styles={reactSelectStyles}
             isDisabled={disabled}
-            onChange={onChange}
+            onChange={internalOnChange}
           />
         </Grid>
       </Grid>
@@ -185,7 +207,7 @@ class HvDropdown extends React.Component {
 HvDropdown.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   options: PropTypes.instanceOf(Array),
-  defaultValue: PropTypes.string,
+  value: PropTypes.instanceOf(Object),
   label: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.instanceOf(Function)
@@ -194,7 +216,7 @@ HvDropdown.propTypes = {
 HvDropdown.defaultProps = {
   label: null,
   options: [],
-  defaultValue: null,
+  value: null,
   disabled: false,
   onChange: () => {}
 };
