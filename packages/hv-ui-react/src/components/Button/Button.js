@@ -13,10 +13,10 @@ import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 
 const HvButton = props => {
-  const { classes, children, disabled } = props;
+  const { classes, children, disabled, onClick } = props;
 
   return (
-    <Button className={classes.root} disabled={disabled} disableRipple>
+    <Button className={classes.root} disabled={disabled} disableRipple onClick={onClick}>
       {children}
     </Button>
   );
@@ -25,7 +25,8 @@ const HvButton = props => {
 HvButton.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   children: PropTypes.string.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  onClick: PropTypes.instanceOf(Function)
 };
 
 HvButton.defaultProps = {

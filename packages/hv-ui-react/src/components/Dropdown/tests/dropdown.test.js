@@ -94,6 +94,47 @@ describe("Dropdown", () => {
       expect(wrapper.find(components.Option)).toHaveLength(0);
     });
 
+    it("has the default value selected if it is injected as property", () => {
+      const options = [
+        { value: "open", label: "New" },
+        { value: "fixed", label: "Fixed" },
+        { value: "dismissed", label: "Dismissed" }
+      ];
+
+      wrapper = mount(
+        <DropdownComponent
+          defaultValue={options[1]}
+          classes={{}}
+          options={options}
+        />
+      );
+
+      expect(wrapper.find(components.SelectContainer).props().selectProps.defaultValue).toEqual(
+        options[1]
+      );
+    });
+
+
+    it("calls the onChange on value change", () => {
+      const options = [
+        { value: "open", label: "New" },
+        { value: "fixed", label: "Fixed" },
+        { value: "dismissed", label: "Dismissed" }
+      ];
+
+      wrapper = mount(
+        <DropdownComponent
+          defaultValue={options[1]}
+          classes={{}}
+          options={options}
+        />
+      );
+
+      expect(wrapper.find(components.SelectContainer).props().selectProps.defaultValue).toEqual(
+        options[1]
+      );
+    });
+
     it("with dropdown components are rendered with the expected props", () => {});
   });
 });
