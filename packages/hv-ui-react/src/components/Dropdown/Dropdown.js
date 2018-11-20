@@ -17,7 +17,6 @@ import Typography from "@material-ui/core/Typography";
 
 class HvDropdown extends React.Component {
 
-
   styles = {
     dropdownIndicator: (base, theme) => {
       const {
@@ -106,13 +105,11 @@ class HvDropdown extends React.Component {
     };
   }
 
-  shouldComponentUpdate(nextProps) {
-    this.state = {
-      ...this.state,
-      selectedOption: nextProps.value
-    };
-
-    return true;
+  static getDerivedStateFromProps(props, state) {
+    return {
+      ...state,
+      selectedOption: props.value
+    }
   }
 
   render() {
@@ -174,13 +171,6 @@ class HvDropdown extends React.Component {
       [classes.selectGridContent]: label !== null
     });
 
-    const internalOnChange = (selectedValue) => {
-      this.setState({
-        "selectedOption": selectedValue
-      });
-      onChange(selectedValue);
-    };
-
     return (
       <Grid container>
         {label !== null ? getLabelText(label) : null}
@@ -196,7 +186,7 @@ class HvDropdown extends React.Component {
             theme={reactSelectTheme}
             styles={reactSelectStyles}
             isDisabled={disabled}
-            onChange={internalOnChange}
+            onChange={onChange}
           />
         </Grid>
       </Grid>
