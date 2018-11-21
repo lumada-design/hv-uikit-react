@@ -7,7 +7,9 @@
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
 
 import Main from "./Main";
 
-export default Main;
+export default withStyles(styles, { withTheme: true })(Main);
