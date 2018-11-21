@@ -1,6 +1,6 @@
 {
   "name": "@hv-ui/react",
-  "version": "1.0.1-canary.4",
+  "version": "1.0.1-canary.5",
   "description": "React components for the HV Design System.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
