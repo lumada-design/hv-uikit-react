@@ -37,7 +37,11 @@ storiesOf("Table", module).add("Table", () => (
         headerText: "Title",
         accessor: "title",
         style: { justifyContent: "flex-start" },
-        headerStyle: { justifyContent: "flex-start" }
+        getHeaderProps: () => ({
+          style: {
+            justifyContent: "flex-start" 
+          }
+        }),
       },
       { headerText: "Time", accessor: "time" },
       { headerText: "Event Type", accessor: "eventType" },
@@ -62,13 +66,17 @@ storiesOf("Table", module).add("Table", () => (
         Header: "",
         Cell: () => <Popup />,
         width: 32,
-        headerStyle: { borderLeft: "solid 1px #BCBCBC" },
         sortable: false,
         style: {
           padding: 0,
           justifyContent: "space-between",
           borderLeft: "solid 1px #BCBCBC"
-        }
+        },
+        getHeaderProps: () => ({
+          style: {
+            borderLeft: "solid 1px #BCBCBC"
+          }
+        }),
       }
     ]}
   />

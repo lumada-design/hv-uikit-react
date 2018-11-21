@@ -17,7 +17,7 @@ import SortAsc from "react-icons/lib/fa/sort-asc";
 import SortDesc from "react-icons/lib/fa/sort-desc";
 
 import "react-table/react-table.css";
-import "./style.css";
+import styles from "./styles.js";
 
 class HvTable extends React.Component {
   constructor(props) {
@@ -38,6 +38,7 @@ class HvTable extends React.Component {
 
   render() {
     const {
+      classes,
       cellHeight,
       columns,
       data,
@@ -45,6 +46,8 @@ class HvTable extends React.Component {
       headerHeight,
       resizable
     } = this.props;
+
+    const composedStyles = styles(this.props.theme);
 
     const ColumnSettings = {
       ...ReactTableDefaults.column,
@@ -54,7 +57,7 @@ class HvTable extends React.Component {
         const Sorted = this.getSortedComponent(props.column.id);
         return (
           <React.Fragment>
-            {Sorted && <span className="rt-sort-icon">{Sorted}</span>}
+            {Sorted && <span className={classes.rtSortIcon}>{Sorted}</span>}
             <span>{props.column.headerText}</span>
           </React.Fragment>
         );
@@ -69,6 +72,7 @@ class HvTable extends React.Component {
 
     return (
       <ReactTable
+        {...composedStyles}
         data={data}
         onSortedChange={sorted => this.setState({ sorted })}
         columns={columns}
