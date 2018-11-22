@@ -23,7 +23,8 @@ class HvTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sorted: []
+      sorted: [],
+      pages: null
     };
   }
 
@@ -36,6 +37,13 @@ class HvTable extends React.Component {
     return false;
   };
 
+  static getDerivedStateFromProps(props, state) {
+    return {
+      ...state,
+      pages: props.pages
+    }
+  }
+
   render() {
     const {
       classes,
@@ -44,8 +52,12 @@ class HvTable extends React.Component {
       data,
       defaultPageSize,
       headerHeight,
-      resizable
+      resizable,
+      onFetchData,
+      onPageSizeChange
     } = this.props;
+
+    const { pages } = this.props;
 
     const composedStyles = styles(this.props.theme);
 
@@ -78,7 +90,10 @@ class HvTable extends React.Component {
         columns={columns}
         className="-highlight"
         PaginationComponent={ReactTablePagination}
-        pageText=""
+        manual
+        onFetchData={onFetchData}
+        onPageSizeChange={onPageSizeChange}
+        pages={pages}
       />
     );
   }
