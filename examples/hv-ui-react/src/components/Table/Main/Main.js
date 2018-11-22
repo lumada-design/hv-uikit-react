@@ -23,13 +23,24 @@ class HvTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sorted: [],
-      pages: null
+      sorted: props.defaultSorted || [],
+      pages: null,
+      initiallyLoaded: false
     };
   }
 
+  componentDidMount() {
+    const { initiallyLoaded } = this.state;
+    if (!initiallyLoaded) {
+      this.state.initiallyLoaded = true;
+    }
+  }
+
   getSortedComponent = id => {
-    let sortInfo = this.state.sorted.filter(item => item.id === id);
+    const { sorted } = this.state;
+
+    const sortInfo = sorted.filter(item => item.id === id);
+
     if (sortInfo.length) {
       if (sortInfo[0].desc === true) return <SortDesc />;
       if (sortInfo[0].desc === false) return <SortAsc />;
@@ -37,12 +48,21 @@ class HvTable extends React.Component {
     return false;
   };
 
-  static getDerivedStateFromProps(props, state) {
-    return {
-      ...state,
-      pages: props.pages
+  onFetchDataInternal = tableState => {
+    const { onFetchData } = this.props;
+    const { initiallyLoaded, sorted: sortedFromState } = this.state;
+    const { pageSize, page, sorted } = tableState;
+
+    if(initiallyLoaded) {
+      let cursor = `${page * pageSize}`;
+
+      if(sortedFromState[0] !== sorted[0]) {
+        cursor = "0";
+      }
+
+      onFetchData(cursor, pageSize, sorted);
     }
-  }
+  };
 
   render() {
     const {
@@ -51,13 +71,12 @@ class HvTable extends React.Component {
       columns,
       data,
       defaultPageSize,
+      defaultSorted,
       headerHeight,
       resizable,
-      onFetchData,
-      onPageSizeChange
+      onPageSizeChange,
+      pages
     } = this.props;
-
-    const { pages } = this.props;
 
     const composedStyles = styles(this.props.theme);
 
@@ -91,9 +110,10 @@ class HvTable extends React.Component {
         className="-highlight"
         PaginationComponent={ReactTablePagination}
         manual
-        onFetchData={onFetchData}
+        onFetchData={this.onFetchDataInternal}
         onPageSizeChange={onPageSizeChange}
         pages={pages}
+        defaultSorted={defaultSorted}
       />
     );
   }
