@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #414141;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #414141;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_22_9" data-name="Symbol 22 – 9" transform="translate(-1198 2686)">
+    <g id="Group_2227" data-name="Group 2227" transform="translate(1577.5 -1802.5) rotate(180)">
+      <path id="arrow-right" class="cls-1" d="M7.955,16a.537.537,0,0,1-.379-.916l7.135-7.138L7.68.917A.536.536,0,0,1,8.438.159l7.41,7.41a.537.537,0,0,1,0,.758L8.334,15.844A.539.539,0,0,1,7.955,16Z" transform="translate(350.581 858.998)"/>
+      <line id="Line_1469" data-name="Line 1469" class="cls-2" y2="16" transform="translate(369.5 859.5)"/>
+    </g>
+    <rect id="Rectangle_1265" data-name="Rectangle 1265" class="cls-3" width="32" height="32" transform="translate(1198 -2686)"/>
+  </g>
+</svg>
