@@ -2,12 +2,52 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { HvTable } from "../src";
 import {HvLink} from "../src";
-import Popup from "../src/components/Table/Popup";
+
+import HvPop from "../src/components/Pop";
 
 import orangeSquare from "../src/components/Table/Images/OrangeSquare.svg";
 import redTriangle from "../src/components/Table/Images/RedTriangle.svg";
+import MoreVert from "../src/components/Table/Images/MoreVert.svg";
+import MoreVertActive from "../src/components/Table/Images/MoreVertActive.svg";
 
 const data = require("./data/table_data.json");
+
+const popItems = [
+  {
+    label: "View",
+    path: "/id",
+    router: true,
+    isActive: true
+  },
+  {
+    label: "Dismiss",
+    path: "/dismiss",
+    router: false,
+    isActive: true
+  }
+];
+
+const popPosition = [
+  {
+    vertical: "top",
+    horizontal: "left"
+  },
+  {
+    vertical: "top",
+    horizontal: "right"
+  }
+];
+
+const popSvgDeactive = (
+  <img src={MoreVert} width="100%" height="100%"/>
+);
+const popSvgActive = (
+  <img src={MoreVertActive} width="100%" height="100%"/>
+);
+
+const CustomButton = ({isActive}) => {
+  return isActive ? popSvgActive : popSvgDeactive;
+}
 
 storiesOf("Table", module).add("Table", () => (
   <HvTable
@@ -64,7 +104,11 @@ storiesOf("Table", module).add("Table", () => (
       },
       {
         Header: "",
-        Cell: () => <Popup />,
+        Cell: () => <HvPop
+        popPosition={popPosition}
+        PopBtn={CustomButton}
+        popItems={popItems}
+      />,
         width: 32,
         sortable: false,
         style: {
