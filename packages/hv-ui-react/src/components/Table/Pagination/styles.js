@@ -8,6 +8,14 @@
  *  under which the software has been supplied.
  */
 import DownArrow from "../Images/ChevronDown.svg";
+import ArrowFirst from "../Images/ArrowFirst.svg";
+import ArrowLeft from "../Images/ArrowLeft.svg";
+import ArrowRight from "../Images/ArrowRight.svg";
+import ArrowLast from "../Images/ArrowLast.svg";
+import ArrowFirstDisabled from "../Images/ArrowFirstDisabled.svg";
+import ArrowLeftDisabled from "../Images/ArrowLeftDisabled.svg";
+import ArrowRightDisabled from "../Images/ArrowRightDisabled.svg";
+import ArrowLastDisabled from "../Images/ArrowLastDisabled.svg";
 
 const styles = theme => ({
   paginationContainer: {
@@ -69,6 +77,30 @@ const styles = theme => ({
     padding: "5px 0",
     borderRadius: "0",
     border: `solid 1px ${theme.palette.grey.plain}`
+  },
+  arrowFirst: {
+    background: `url(${ArrowFirst})`
+  },
+  arrowLeft: {
+    background: `url(${ArrowLeft})`
+  },
+  arrowRight: {
+    background: `url(${ArrowRight})`
+  },
+  arrowLast: {
+    background: `url(${ArrowLast})`
+  },
+  arrowFirstDisabled: {
+    background: `url(${ArrowFirstDisabled})`
+  },
+  arrowLeftDisabled: {
+    background: `url(${ArrowLeftDisabled})`
+  },
+  arrowRightDisabled: {
+    background: `url(${ArrowRightDisabled})`
+  },
+  arrowLastDisabled: {
+    background: `url(${ArrowLastDisabled})`
   }
 });
 

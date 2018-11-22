@@ -1,32 +1,6 @@
 import React, { Component } from "react";
 import classnames from "classnames";
 
-import Icons from "../Images/PaginationIcons.svg";
-
-// TODO: Extract Icon as a component?
-const Icon = ({ name, color, size, stroke }) => (
-  <svg
-    className={`icon icon-${name}`}
-    fill={color}
-    width={size}
-    height={size}
-    stroke={stroke}
-  >
-    <use xlinkHref={`${Icons}#icon-${name}`} />
-  </svg>
-);
-
-const defaultButton = ({ className, name, disabled, ...props }) => (
-  <div className={className} {...props}>
-    <Icon
-      name={name}
-      color={disabled ? "#999" : "#414141"}
-      stroke={disabled ? "#999" : "#414141"}
-      size={32}
-    />
-  </div>
-);
-
 export default class ReactTablePagination extends Component {
   constructor(props) {
     super();
@@ -70,6 +44,13 @@ export default class ReactTablePagination extends Component {
   }
 
   render() {
+    const defaultButton = ({ className, ...props }) => (
+      <div
+        className={classnames(classes.paginationBtn, className)}
+        {...props}
+      />
+    );
+
     const {
       // Computed
       pages,
@@ -114,17 +95,18 @@ export default class ReactTablePagination extends Component {
         </div>
         <div className={classes.pageNavigator}>
           <FirstPageComponent
-            className={classes.paginationBtn}
-            name="first"
+            className={
+              !canPrevious ? classes.arrowFirstDisabled : classes.arrowFirst
+            }
             onClick={() => {
               if (!canPrevious) return;
               this.changePage(0);
             }}
-            disabled={!canPrevious}
           />
           <PreviousComponent
-            className={classes.paginationBtn}
-            name="arrow-left"
+            className={
+              !canPrevious ? classes.arrowLeftDisabled : classes.arrowLeft
+            }
             onClick={() => {
               if (!canPrevious) return;
               this.changePage(page - 1);
@@ -163,22 +145,20 @@ export default class ReactTablePagination extends Component {
             <span className="-totalPages">{pages || 1}</span>
           </span>
           <NextComponent
-            className={classes.paginationBtn}
-            name="arrow-right"
+            className={
+              !canNext ? classes.arrowRightDisabled : classes.arrowRight
+            }
             onClick={() => {
               if (!canNext) return;
               this.changePage(page + 1);
             }}
-            disabled={!canNext}
           />
           <LastPageComponent
-            className={classes.paginationBtn}
-            name="last"
+            className={!canNext ? classes.arrowLastDisabled : classes.arrowLast}
             onClick={() => {
               if (!canNext) return;
               this.changePage(pages - 1);
             }}
-            disabled={!canNext}
           />
         </div>
       </div>
