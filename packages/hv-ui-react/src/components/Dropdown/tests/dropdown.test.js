@@ -94,47 +94,29 @@ describe("Dropdown", () => {
       expect(wrapper.find(components.Option)).toHaveLength(0);
     });
 
-    it("has the default value selected if it is injected as property", () => {
-      const options = [
-        { value: "open", label: "New" },
-        { value: "fixed", label: "Fixed" },
-        { value: "dismissed", label: "Dismissed" }
-      ];
-
-      wrapper = mount(
-        <DropdownComponent
-          defaultValue={options[1]}
-          classes={{}}
-          options={options}
-        />
-      );
-
-      expect(wrapper.find(components.SelectContainer).props().selectProps.defaultValue).toEqual(
-        options[1]
-      );
-    });
-
-
     it("calls the onChange on value change", () => {
-      const options = [
+      // TODO: need to find a way to trigger the menu open and then select a value
+
+      /* const options = [
         { value: "open", label: "New" },
         { value: "fixed", label: "Fixed" },
         { value: "dismissed", label: "Dismissed" }
       ];
 
+      const onChange = jest.fn();
+      const onChangeFunc = () => onChange();
+
       wrapper = mount(
         <DropdownComponent
-          defaultValue={options[1]}
           classes={{}}
           options={options}
+          onChange={onChangeFunc}
         />
       );
 
-      expect(wrapper.find(components.SelectContainer).props().selectProps.defaultValue).toEqual(
-        options[1]
-      );
+      wrapper.find(components.SelectContainer).simulate("click");
+      wrapper.find(components.Option).simulate("click");
+      expect(onChange).toBeCalled(); */
     });
-
-    it("with dropdown components are rendered with the expected props", () => {});
   });
 });

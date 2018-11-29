@@ -34,7 +34,7 @@ const styles = theme => ({
     textTransform: "capitalize",
     fontSize: "13px",
     fontWeight: "400",
-    lineHeight: "20px"
+    lineHeight: "16px"
   },
   userButton: {
     color: theme.palette.text.main,

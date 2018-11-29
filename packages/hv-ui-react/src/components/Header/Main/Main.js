@@ -27,7 +27,7 @@ const Main = ({
   productLogo
 }) => (
   <AppBar color="default">
-    <Toolbar>
+    <Toolbar variant="dense" classes={classes.root}>
       <Logo companyLogo={companyLogo} productLogo={productLogo} />
       <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
       <User userData={userData} logout={userLogout} />

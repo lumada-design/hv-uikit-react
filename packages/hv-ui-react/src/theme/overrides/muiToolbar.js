@@ -8,19 +8,26 @@
  *  under which the software has been supplied.
  */
 
-import palette from "../palette";
+import theme from "@hv-ui/themes/dist/theme";
 
-const muiAppBar = {
+const muiToolbar = {
   root: {
-    borderTop: `4px solid ${palette.hitachi.main}`,
+    alignItems: "center",
     "@media (min-width: 600px)": {
-      height: "50px"
+      minHeight: "46px"
     }
   },
-  colorDefault: {
-    backgroundColor: palette.common.white,
-    contrastText: palette.grey.inspire
+  gutters: {
+    paddingLeft: `${theme.spacing.sm}px`,
+    paddingRight: `${theme.spacing.sm}px`,
+    "@media (min-width:600px)": {
+      paddingLeft: `${theme.spacing.sm}px`,
+      paddingRight: `${theme.spacing.sm}px`,
+    }
+  },
+  dense: {
+    minHeight: "46px"
   }
 };
 
-export default muiAppBar;
+export default muiToolbar;

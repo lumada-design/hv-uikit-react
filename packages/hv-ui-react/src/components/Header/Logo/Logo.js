@@ -13,16 +13,16 @@ import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
 const Logo = ({ classes, companyLogo, productLogo }) => (
-  <div className={classes.companylogoContainer}>
+  <div className={classes.companyLogoContainer}>
     <img
       src={companyLogo}
       className={classes.companyLogoImage}
       alt="Company logo"
     />
     <span className={classes.separator} />
+    <div className={classes.companyLogoIcon} />
     <div className={classes.companyLogoText}>
-      <Typography className={classes.companyLogoText1}>MAINTENANCE</Typography>
-      <Typography className={classes.companyLogoText2}>INSIGHTS</Typography>
+      <Typography className={classes.companyLogoText1}>Maintenance Insights</Typography>
     </div>
   </div>
 );
