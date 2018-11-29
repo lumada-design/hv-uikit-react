@@ -10,6 +10,7 @@
 
 import React from "react";
 import ReactTable from "react-table";
+import PropTypes from "prop-types";
 import { ReactTableDefaults } from "react-table";
 
 import ReactTablePagination from "../Pagination";
@@ -118,5 +119,21 @@ class HvTable extends React.Component {
     );
   }
 }
+
+HvTable.propTypes = {
+  columns: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
+  defaultPageSize: PropTypes.number,
+  resizable: PropTypes.bool,
+  pageText: PropTypes.string
+};
+
+HvTable.defaultProps = {
+  columns: [],
+  data: [],
+  defaultPageSize: 10,
+  resizable: true,
+  pageText: ""
+};
 
 export default HvTable;
