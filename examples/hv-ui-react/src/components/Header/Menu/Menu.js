@@ -58,4 +58,4 @@ Menu.defaultProps = {
   menuData: null
 };
 
-export default withStyles(styles, { withTheme: true })(Menu);
+export default Menu;

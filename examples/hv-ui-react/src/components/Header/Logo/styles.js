@@ -8,10 +8,13 @@
  *  under which the software has been supplied.
  */
 
+import icon from "../../../icons/32px/miIcon.svg";
+
 const styles = theme => ({
-  companylogoContainer: {
+  companyLogoContainer: {
     position: "relative",
-    display: "inherit"
+    display: "inherit",
+    alignItems: "center"
   },
   companyLogoImage: {
     height: 28,
@@ -23,14 +26,23 @@ const styles = theme => ({
 
   separator: {
     width: 15,
-    marginRight: 15,
+    height: 28,
+    marginRight: 12,
     borderRight: `1px solid ${theme.palette.grey.rainy}`
+  },
+
+  companyLogoIcon: {
+    background: `url(${icon})`,
+    height: "32px",
+    width: "32px",
+    marginRight: "5px"
   },
 
   companyLogoText1: {
     color: theme.palette.text.main,
-    fontSize: "12px",
-    fontWeight: "200",
+    fontSize: "17px",
+    lineHeight: "28px",
+    fontWeight: "600",
     letterSpacing: "0.3px"
   },
   companyLogoText2: {
