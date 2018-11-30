@@ -15,18 +15,12 @@
   border-bottom-right-radius: 50% !important;
 }
 
-.DayPicker {
-  border-left: 1px solid #414141;
-  border-right: 1px solid #414141;
-  border-bottom: 1px solid #414141;
-}
-
 .DayPicker-NavButton--prev {
   left: 20px;
 }
 
 .DayPicker-NavButton--next {
-  left: 230px;
+  left: 215px;
 }
 
 .DayPicker-Caption {
@@ -48,43 +42,45 @@
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-  color: #f2f2f2;
-  background-color: #BCBCBC;
+  color: #414141;
+  background-color: #DEDEDE;
   border-radius: 0 !important;
 }
 
-.Selectable
-  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-  color: #414141;
-  background-color: #F0F0F0 !important;
+.DayPicker-Day.DayPicker-Day--start.DayPicker-Day--selected,
+.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected {
+  color: #DEDEDE;
+  background-color: #414141 !important;
 }
 
-.Wrapper {
+.DateWrapper {
   position: relative;
-  width: 236px;
+  width: 255px;
+  border: 1px solid #414141;
 }
 
-.Reset {
+.DateReset {
   position: absolute;
-  right: 0;
-  top: 9px;
+  right: 10px;
+  top: 5px;
   cursor: pointer;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .DateField {
-  position: absolute;
-  padding: 10px;
-  border: 1px solid #414141;
-  width: 100%;
-  font-size: 12px;
+  padding: 5px 10px;
 }
 
-.Calendar {
-  position: absolute;
+.DateInput {
+  min-width: 150px;
+  font-size: 12px;
+  line-height: 20px;
+  border: none;
+}
+
+.DatePicker {
   display: none;
-  background: white;
-  top: 36px;
+  z-index: 999;
 }
 
 .active {
