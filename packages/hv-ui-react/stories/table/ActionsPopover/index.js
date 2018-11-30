@@ -8,13 +8,8 @@
  *  under which the software has been supplied.
  */
 
-import React from "react";
-import { ConfigConsumer } from "./context";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import ActionsPopover from "./ActionsPopover";
 
-const withConfig = Component => props => (
-  <ConfigConsumer>
-    {config => <Component {...props} config={config} />}
-  </ConfigConsumer>
-);
-
-export default withConfig;
+export default withStyles(styles, { withTheme: true })(ActionsPopover);

@@ -8,13 +8,6 @@
  *  under which the software has been supplied.
  */
 
-import React from "react";
-import { ConfigConsumer } from "./context";
+const styles = () => ({});
 
-const withConfig = Component => props => (
-  <ConfigConsumer>
-    {config => <Component {...props} config={config} />}
-  </ConfigConsumer>
-);
-
-export default withConfig;
+export default styles;

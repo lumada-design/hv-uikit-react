@@ -1,6 +1,6 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
-import { HvProvider } from "../src"
+import HvProvider from "../src/Provider"
 
 const req = require.context('../stories', true, /\.js$/);
 

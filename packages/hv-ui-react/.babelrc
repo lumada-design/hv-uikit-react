@@ -1,28 +1,14 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false
-      }
-    ],
-    "@babel/preset-react"
-  ],
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     "@babel/plugin-transform-regenerator",
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-runtime"
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "modules": "commonjs"
-          }
-        ]
-      ]
-    }
-  }
+    "@babel/plugin-transform-runtime",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
+  ]
 }

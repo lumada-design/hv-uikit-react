@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvDropdown, HvButton } from "../src";
+import HvDropdown from "../src/Dropdown";
+import HvButton from "../src/Button";
 
 const data = [
   { value: 1, label: "1" },
@@ -18,13 +19,19 @@ class MyCustomDropdown extends React.Component {
     const { value } = this.state;
 
     const handleClick = () => {
-      this.setState({ value: { value: value.value + 1, label: `${value.value + 1}` } })
+      this.setState({
+        value: { value: value.value + 1, label: `${value.value + 1}` }
+      });
     };
 
     return (
       <div>
         <HvButton onClick={() => handleClick()}>Click me!</HvButton>
-        <HvDropdown value={value} onChange={v => this.setState({value: v})} options={data} />
+        <HvDropdown
+          value={value}
+          onChange={v => this.setState({ value: v })}
+          options={data}
+        />
       </div>
     );
   }
@@ -36,5 +43,7 @@ storiesOf("Dropdown", module)
   .add("with default value", () => (
     <HvDropdown value={data[1]} options={data} />
   ))
-  .add("with onChange", () => <HvDropdown onChange={(value) => console.log(value)} options={data} />)
+  .add("with onChange", () => (
+    <HvDropdown onChange={value => console.log(value)} options={data} />
+  ))
   .add("with value changed on the outside", () => <MyCustomDropdown />);

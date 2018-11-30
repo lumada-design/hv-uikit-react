@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvHeader } from "../src";
+import HvHeader from "../src/Header";
 
 const menuData = [
   {
