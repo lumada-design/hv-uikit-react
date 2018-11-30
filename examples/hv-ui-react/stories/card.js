@@ -1,12 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvCard } from "../src";
+import HvCard from "../src/Card";
 
 const data = {
   assetId: "ast-gn002",
   assignee: "Zoe J. Le",
   createdDate: "2018-06-03T14:09:00.004Z",
-  criticality: "CRITICAL",
+  severity: "CRITICAL",
   description: "Voltage Unstable",
   id: "evt-g004",
   name: "Voltage Unstable",

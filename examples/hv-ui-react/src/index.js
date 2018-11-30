@@ -9,18 +9,18 @@
  */
 
 // components
-export { default as HvButton } from "./components/Button";
-export { default as HvCard } from "./components/Card";
-export { default as HvFooter } from "./components/Footer";
-export { default as HvHeader } from "./components/Header";
-export { default as HvLink } from "./components/Link";
-export { default as HvLogin } from "./components/Login";
-export { default as HvTable } from "./components/Table";
-export { default as HvDropdown } from "./components/Dropdown";
-export { default as HvPop } from "./components/Pop";
+export { default as HvButton } from "./Button";
+export { default as HvCard } from "./Card";
+export { default as HvDatePicker } from "./DatePicker";
+export { default as HvDropdown } from "./Dropdown";
+export { default as HvFooter } from "./Footer";
+export { default as HvHeader } from "./Header";
+export { default as HvLink } from "./Link";
+export { default as HvLogin } from "./Login";
+export { default as HvTable } from "./Table";
 
 // theme
 export { default as hvTheme } from "./theme";
 
-// config
-export { default as HvProvider } from "./config/Provider";
+// provider
+export { default as HvProvider } from "./Provider";

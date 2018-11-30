@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvLogin } from "../src";
+import HvLogin from "../src/Login";
 
 const login = () =>
   new Promise(resolve =>

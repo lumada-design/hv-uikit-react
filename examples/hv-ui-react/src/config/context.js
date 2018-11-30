@@ -9,12 +9,9 @@
  */
 
 import React from "react";
-import { ConfigConsumer } from "./context";
 
-const withConfig = Component => props => (
-  <ConfigConsumer>
-    {config => <Component {...props} config={config} />}
-  </ConfigConsumer>
-);
+const ConfigContext = React.createContext({});
+const ConfigProvider = ConfigContext.Provider;
+const ConfigConsumer = ConfigContext.Consumer;
 
-export default withConfig;
+export { ConfigProvider, ConfigConsumer };

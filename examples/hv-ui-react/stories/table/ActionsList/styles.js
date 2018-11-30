@@ -8,13 +8,18 @@
  *  under which the software has been supplied.
  */
 
-import React from "react";
-import { ConfigConsumer } from "./context";
+const styles = theme => ({
+  root: {
+    display: "block",
+    padding: 10,
+    border: `solid 1px ${theme.palette.grey.plain}`
+  },
+  button: {
+    margin: 0,
+    display: "block",
+    textAlign: "left",
+    width: "100%"
+  }
+});
 
-const withConfig = Component => props => (
-  <ConfigConsumer>
-    {config => <Component {...props} config={config} />}
-  </ConfigConsumer>
-);
-
-export default withConfig;
+export default styles;
