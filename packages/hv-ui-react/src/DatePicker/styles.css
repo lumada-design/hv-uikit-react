@@ -1,41 +1,90 @@
-/* .InputFromTo
+.Selectable
   .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
   background-color: #f0f8ff !important;
   color: #4a90e2;
 }
-
-.InputFromTo .DayPicker-Day {
+.Selectable .DayPicker-Day {
   border-radius: 0 !important;
 }
-
-.InputFromTo .DayPicker-Day--start {
+.Selectable .DayPicker-Day--start {
   border-top-left-radius: 50% !important;
   border-bottom-left-radius: 50% !important;
 }
-
-.InputFromTo .DayPicker-Day--end {
+.Selectable .DayPicker-Day--end {
   border-top-right-radius: 50% !important;
   border-bottom-right-radius: 50% !important;
 }
 
-.InputFromTo .DayPickerInput-Overlay {
-  width: 550px;
+.DayPicker {
+  border-left: 1px solid #414141;
+  border-right: 1px solid #414141;
+  border-bottom: 1px solid #414141;
 }
 
-.InputFromTo-to .DayPickerInput-Overlay {
-  margin-left: -198px;
-} */
+.DayPicker-NavButton--prev {
+  left: 20px;
+}
 
-.DateField {
-  padding: 10px;
-  border: 1px solid #dadada;
-  border-radius: 2px;
-  width: 140px;
-  font-size: 12px;
+.DayPicker-NavButton--next {
+  left: 230px;
+}
+
+.DayPicker-Caption {
+  text-align: center;
+  color: #414141;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.DayPicker-Day {
+  text-align: center;
+  color: #414141;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  color: #f2f2f2;
+  background-color: #BCBCBC;
+  border-radius: 0 !important;
+}
+
+.Selectable
+  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  color: #414141;
+  background-color: #F0F0F0 !important;
 }
 
 .Wrapper {
+  position: relative;
+  width: 236px;
+}
+
+.Reset {
+  position: absolute;
+  right: 0;
+  top: 9px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.DateField {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #414141;
+  width: 100%;
+  font-size: 12px;
+}
+
+.Calendar {
+  position: absolute;
   display: none;
+  background: white;
+  top: 36px;
 }
 
 .active {

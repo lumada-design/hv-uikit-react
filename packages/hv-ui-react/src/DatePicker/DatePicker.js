@@ -8,36 +8,41 @@
  *  under which the software has been supplied.
  */
 
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import classNames from "classnames";
 import moment from "moment";
-
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import DayPickerInput, { DateUtils } from "react-day-picker";
+import "react-day-picker/lib/style.css";
 import "./styles.css";
 
-import { DateRange } from "react-date-range";
-
-class HvDatePicker extends Component {
-  state = {
-    selection: {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection"
-    },
-    isActive: false
+export default class Example extends React.Component {
+  static defaultProps = {
+    numberOfMonths: 1
   };
 
-  handleRangeChange(payload) {
-    const { selection } = payload;
-    const { handleChange } = this.props;
+  constructor(props) {
+    super(props);
+    this.handleDayClick = this.handleDayClick.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = this.getInitialState();
+  }
 
-    this.setState({
-      selection
-    });
+  getInitialState() {
+    return {
+      from: undefined,
+      to: undefined,
+      isActive: false
+    };
+  }
 
-    handleChange(selection);
+  handleDayClick(day) {
+    const range = DateUtils.addDayToRange(day, this.state);
+    this.setState(range);
+  }
+
+  handleReset() {
+    this.setState(this.getInitialState());
   }
 
   handleClick() {
@@ -47,51 +52,42 @@ class HvDatePicker extends Component {
   }
 
   render() {
-    const { selection, isActive } = this.state;
-    const { startDate, endDate } = selection;
+    const { from, to, isActive } = this.state;
+    const modifiers = { start: from, end: to };
 
-    const start = moment(startDate).format("DD/MM/YYYY");
-    const end = moment(endDate).format("DD/MM/YYYY");
+    const start = moment(from).format("MM/DD/YYYY");
+    const end = moment(to).format("MM/DD/YYYY");
     const range = `${start} - ${end}`;
 
     return (
-      <React.Fragment>
-        <div>
-          <input
-            onClick={() => this.handleClick()}
-            type="text"
-            readOnly
-            value={range}
-            className="DateField"
-          />
+      <div className="Wrapper">
+        <div className="Reset" onClick={this.handleReset}>
+          x
         </div>
-
+        <input
+          onClick={this.handleClick}
+          type="text"
+          readOnly
+          value={range}
+          className="DateField"
+        />
         <div
           className={classNames([
-            "Wrapper",
+            "Calendar",
             {
               active: isActive
             }
           ])}
         >
-          <DateRange
-            onChange={payload => this.handleRangeChange(payload)}
-            moveRangeOnFirstSelection={false}
-            ranges={[selection]}
-            showDateDisplay={false}
+          <DayPickerInput
+            className="Selectable"
+            numberOfMonths={this.props.numberOfMonths}
+            selectedDays={[from, { from, to }]}
+            modifiers={modifiers}
+            onDayClick={this.handleDayClick}
           />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
-
-HvDatePicker.propTypes = {
-  handleChange: PropTypes.func
-};
-
-HvDatePicker.defaultProps = {
-  handleChange: () => {}
-};
-
-export default HvDatePicker;
