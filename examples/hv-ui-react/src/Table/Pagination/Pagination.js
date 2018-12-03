@@ -120,7 +120,7 @@ export default class ReactTablePagination extends Component {
                 <input
                   className={classes.pageJumpInput}
                   aria-label={this.props.pageJumpText}
-                  type={this.state.page === "" ? "text" : "number"}
+                  type="text"
                   onChange={e => {
                     const val = e.target.value;
                     const page = val - 1;
