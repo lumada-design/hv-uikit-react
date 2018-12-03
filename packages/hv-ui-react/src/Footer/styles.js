@@ -13,7 +13,10 @@ const styles = theme => ({
     position: "absolute",
     width: "100%",
     height: 40,
-    backgroundColor: theme.palette.grey.inspire
+    backgroundColor: theme.palette.grey.inspire,
+    [theme.breakpoints.down("500")]: {
+      minWidth: "320px"
+    }
   },
   labelLeft: {
     float: "left",
@@ -23,7 +26,10 @@ const styles = theme => ({
     letterSpacing: "0.02em",
     lineHeight: "20px",
     fontWeight: "600",
-    color: theme.palette.grey.foggy
+    color: theme.palette.grey.foggy,
+    [theme.breakpoints.down("500")]: {
+      display: "none"
+    }
   },
   labelRight: {
     float: "right",
@@ -33,7 +39,13 @@ const styles = theme => ({
     letterSpacing: "0.02em",
     lineHeight: "16px",
     fontWeight: "400",
-    color: theme.palette.grey.foggy
+    color: theme.palette.grey.foggy,
+    [theme.breakpoints.down("500")]: {
+      minWidth: "320px",
+      float: "left",
+      marginLeft: 20,
+      fontSize: "11px"
+    }
   }
 });
 
