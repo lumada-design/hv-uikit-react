@@ -18,9 +18,14 @@ const styles = theme => ({
   },
   rightContainer: {
     width: "30%",
+    minWidth: "500px",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    [theme.breakpoints.down("500")]: {
+      minWidth: "320px",
+      width: "100%"
+    }
   },
   title: {
     position: "absolute",
