@@ -74,7 +74,7 @@ const styles = theme => ({
     width: "50px",
     textAlign: "right",
     margin: `0 ${theme.spacing.xs}px`,
-    padding: "5px 0",
+    padding: "5px",
     borderRadius: "0",
     border: `solid 1px ${theme.palette.grey.plain}`
   },
