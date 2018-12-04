@@ -12,9 +12,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import moment from "moment";
-import DayPickerInput, { DateUtils } from "react-day-picker";
+import Typography from "@material-ui/core/Typography";
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import { DateUtils } from "react-day-picker";
+
 import "react-day-picker/lib/style.css";
 import "./styles.css";
+
+const INITIAL_STATE = {
+  from: null,
+  to: null
+};
 
 class HvDatePicker extends React.Component {
   static defaultProps = {
@@ -23,87 +31,88 @@ class HvDatePicker extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleDayClick = this.handleDayClick.bind(this);
+    this.handleDayChange = this.handleDayChange.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.state = this.getInitialState();
+    this.state = INITIAL_STATE;
   }
 
-  getInitialState() {
-    return {
-      from: undefined,
-      to: undefined,
-      isActive: false
-    };
-  }
-
-  handleDayClick(day) {
-    const { handleDateChange } = this.props;
+  handleDayChange(day) {
     const range = DateUtils.addDayToRange(day, this.state);
+    const { handleDateChange } = this.props;
 
     this.setState(range);
     handleDateChange(range);
   }
 
   handleReset() {
-    this.setState(this.getInitialState());
-  }
+    const { handleDateChange } = this.props;
 
-  handleClick() {
-    this.setState(prevState => ({
-      isActive: !prevState.isActive
-    }));
+    this.setState(INITIAL_STATE);
+    handleDateChange(INITIAL_STATE);
   }
 
   render() {
-    const { from, to, isActive } = this.state;
-    const { numberOfMonths } = this.props;
+    const { from, to } = this.state;
+    const { classes, label, numberOfMonths } = this.props;
 
     const modifiers = { start: from, end: to };
+    const dateFormat = "MM/DD/YY";
 
-    const start = moment(from).format("MM/DD/YYYY");
-    const end = moment(to).format("MM/DD/YYYY");
-    const range = `${start} - ${end}`;
+    const rangeFrom = from ? moment(from).format(dateFormat) : "";
+    const rangeEnd = to ? moment(to).format(dateFormat) : "";
+    const range = from === to ? rangeFrom : `${rangeFrom} - ${rangeEnd}`;
+
+    const Label = () => (
+      <Typography variant="subtitle2" className={classNames([classes.label])}>
+        {label}
+      </Typography>
+    );
+
+    const Controls = () => (
+      <Typography
+        variant="subtitle2"
+        onClick={this.handleReset}
+        className={classNames([classes.reset])}
+      >
+        {"x"}
+      </Typography>
+    );
 
     return (
-      <div className="DateWrapper">
-        <div className="DateReset" onClick={this.handleReset}>
-          x
-        </div>
+      <div className={classes.wrapper}>
+        <Controls />
 
-        <div className="DateField">
-          <input
-            className="DateInput"
-            type="text"
-            readOnly
+        {label ? <Label label={label} /> : ""}
+
+        <div className="DayPickerWrapper">
+          <DayPickerInput
             value={range}
-            onClick={this.handleClick}
+            onDayChange={this.handleDayChange}
+            dayPickerProps={{
+              selectedDays: [from, { from, to }],
+              modifiers,
+              numberOfMonths,
+              month: new Date()
+            }}
+            hideOnDayClick={false}
+            placeholder="Select range..."
           />
         </div>
-
-        <DayPickerInput
-          className={classNames([
-            "DatePicker",
-            {
-              active: isActive
-            }
-          ])}
-          numberOfMonths={numberOfMonths}
-          selectedDays={[from, { from, to }]}
-          modifiers={modifiers}
-          onDayClick={this.handleDayClick}
-        />
       </div>
     );
   }
 }
 
 HvDatePicker.propTypes = {
-  handleDateChange: PropTypes.func
+  classes: PropTypes.instanceOf(Object).isRequired,
+  handleDateChange: PropTypes.func,
+  label: PropTypes.string,
+  numberOfMonths: PropTypes.number
 };
 
 HvDatePicker.defaultProps = {
-  handleDateChange: () => {}
+  handleDateChange: () => {},
+  label: ""
 };
 
 export default HvDatePicker;

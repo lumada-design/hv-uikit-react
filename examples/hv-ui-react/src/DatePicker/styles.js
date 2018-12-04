@@ -1,3 +1,5 @@
+import { relative } from "path";
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -8,8 +10,20 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import DatePicker from "./DatePicker";
+const styles = theme => ({
+  wrapper: {
+    width: "270px",
+    position: "relative"
+  },
+  label: {
+    marginBottom: 10
+  },
+  reset: {
+    position: "absolute",
+    top: "35px",
+    right: "10px",
+    cursor: "pointer"
+  }
+});
 
-export default withStyles(styles, { withTheme: true })(DatePicker);
+export default styles;
