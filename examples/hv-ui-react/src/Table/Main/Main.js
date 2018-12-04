@@ -71,6 +71,7 @@ class HvTable extends React.Component {
       cellHeight,
       columns,
       data,
+      pageSize,
       defaultPageSize,
       defaultSorted,
       headerHeight,
@@ -112,6 +113,7 @@ class HvTable extends React.Component {
         PaginationComponent={ReactTablePagination}
         manual
         onFetchData={this.onFetchDataInternal}
+        defaultPageSize={pageSize}
         onPageSizeChange={onPageSizeChange}
         pages={pages}
         defaultSorted={defaultSorted}
