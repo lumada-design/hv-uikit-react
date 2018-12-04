@@ -79,16 +79,20 @@ const styles = theme => ({
     border: `solid 1px ${theme.palette.grey.plain}`
   },
   arrowFirst: {
-    background: `url(${ArrowFirst})`
+    background: `url(${ArrowFirst})`,
+    cursor: "pointer"
   },
   arrowLeft: {
-    background: `url(${ArrowLeft})`
+    background: `url(${ArrowLeft})`,
+    cursor: "pointer"
   },
   arrowRight: {
-    background: `url(${ArrowRight})`
+    background: `url(${ArrowRight})`,
+    cursor: "pointer"
   },
   arrowLast: {
-    background: `url(${ArrowLast})`
+    background: `url(${ArrowLast})`,
+    cursor: "pointer"
   },
   arrowFirstDisabled: {
     background: `url(${ArrowFirstDisabled})`
