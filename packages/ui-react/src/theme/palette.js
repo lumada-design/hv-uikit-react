@@ -15,11 +15,11 @@ const palette = createPalette({
   common: theme.palette.common,
   primary: {
     light: theme.palette.primary.light,
-    main: theme.palette.primary.main,
+    main: theme.palette.primary.main
   },
   secondary: {
     light: theme.palette.secondary.light,
-    main: theme.palette.secondary.main,
+    main: theme.palette.secondary.main
   },
   hitachi: {
     light: theme.palette.hitachi.light,

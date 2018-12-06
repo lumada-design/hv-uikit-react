@@ -12,7 +12,10 @@ import palette from "../palette";
 
 const muiAppBar = {
   root: {
-    borderTop: `4px solid ${palette.hitachi.main}`
+    borderTop: `4px solid ${palette.hitachi.main}`,
+    "@media (min-width: 600px)": {
+      height: "50px"
+    }
   },
   colorDefault: {
     backgroundColor: palette.common.white,

@@ -15,5 +15,23 @@ import palette from "./palette";
 export default createTypography(palette, {
   useNextVariants: true,
   suppressDeprecationWarnings: true,
-  fontFamily: theme.typography.fontFamily
+  fontFamily: theme.typography.fontFamily,
+  body1: {
+    fontSize: theme.typography.normalText.fontSize,
+    letterSpacing: theme.typography.normalText.letterSpacing,
+    lineHeight: theme.typography.normalText.lineHeight,
+    fontWeight: theme.typography.normalText.fontWeight
+  },
+  body2: {
+
+  },
+  subtitle1: {
+
+  },
+  subtitle2: {
+    fontSize: theme.typography.labelText.fontSize,
+    letterSpacing: theme.typography.labelText.letterSpacing,
+    lineHeight: theme.typography.labelText.lineHeight,
+    fontWeight: theme.typography.labelText.fontWeight
+  }
 });

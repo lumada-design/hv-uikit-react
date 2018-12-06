@@ -21,40 +21,32 @@ It enables faster installation by preventing package duplication across Workspac
 - Lerna handles tasks that affect multiple packages (build/test/lint).
 
 ### Getting Started
-
-You need to disable SSL verification for now since the git server doesn't have proper certificates
-
-```bash
-git config --global http.sslVerify false
-```
+Make sure you have [Yarn](https://yarnpkg.com) installed
 
 ```bash
-yarn config set "strict-ssl" false -g
+npm i -g yarn
 ```
 
-Clone this repo:
-
-```bash
-git clone https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui.git
-```
-
-Install dependencies running this command:
+Install all dependencies
 
 ```bash
 yarn install
 ```
 
-Start all pacakges in dev mode (with automic build on code changes)
+### Run dev mode
 
 ```bash
-lerna run start --parallel
+yarn dev
 ```
 
-Build all packages
+It will run ui-themes and ui-react packages and startup the UI Development Environment [Storybook](https://storybook.js.org/) where you can see a list of the available components.
+
+By clicking *Show Info* you can see additional information on the usage of the component.
+
+### Run With CRA example
 
 ```bash
-lerna run build
+yarn start
 ```
 
-### TODO
-- Publish packages
+It will run the [CRA](https://facebook.github.io/create-react-app/) example where you can see a simple login page created with HV UI components.

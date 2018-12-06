@@ -13,6 +13,7 @@ import theme from "@hv-ui/themes/dist/theme";
 import muiAppBar from "./overrides/muiAppBar";
 import muiInput from "./overrides/muiInput";
 import muiInputAdornment from "./overrides/muiInputAdornment";
+import muiToolbar from "./overrides/muiToolbar";
 import typography from "./typography";
 import palette from "./palette";
 
@@ -45,6 +46,11 @@ const muiTheme = createMuiTheme({
       positionStart: muiInputAdornment.positionStart,
       positionEnd: muiInputAdornment.positionEnd
     },
+    MuiToolbar: {
+      root: muiToolbar.root,
+      gutters: muiToolbar.gutters,
+      dense: muiToolbar.dense
+    }
   }
 });
 

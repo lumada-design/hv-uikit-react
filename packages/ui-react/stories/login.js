@@ -1,10 +1,21 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvProvider, HvLogin } from "../src";
+import { HvLogin } from "../src";
 
-const login = ({ username, password }) => {
-  return new Promise((resolve) => setTimeout(() => { resolve() }, 500))
-}
+const login = () =>
+  new Promise(resolve =>
+    setTimeout(() => {
+      resolve();
+    }, 500)
+  );
 
-storiesOf("Login", module)
-  .add("Login", () => <HvLogin login={login}/>);
+storiesOf("Login", module).add("Login", () => (
+  <div
+    style={{
+      height: "100vh",
+      display: "flex"
+    }}
+  >
+    <HvLogin login={login} />
+  </div>
+));

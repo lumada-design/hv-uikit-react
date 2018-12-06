@@ -9,13 +9,11 @@
  */
 
 import React from "react";
-import { ConfigConsumer } from "./";
+import { ConfigConsumer } from "./context";
 
 const withConfig = Component => props => (
   <ConfigConsumer>
-    {config => (
-      <Component {...props} config={config} />
-    )}
+    {config => <Component {...props} config={config} />}
   </ConfigConsumer>
 );
 
