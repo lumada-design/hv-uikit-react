@@ -4,10 +4,7 @@
   "description": "React components for the HV Design System.",
   "main": "core/index.js",
   "module": "core/index.es.js",
-  "repository": {
-    "type": "git",
-    "url": "https://10.76.48.133/hv-design-system/hv-ui-react.git"
-  },
+  "private": false,
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:watch": "watch 'npm run build' src",
@@ -24,7 +21,7 @@
     "postpublish": "npm run clean"
   },
   "dependencies": {
-    "@hv-ui/themes": "link:../ui-themes",
+    "@hv-ui/themes": "1.0.1-canary.0",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "classnames": "^2.2.6",
@@ -69,20 +66,19 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.6.0",
-    "move-cli": "^1.2.0",
     "npm-run-all": "^4.1.3",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.15.2",
     "react-helmet": "^5.2.0",
     "react-test-renderer": "16.4.2"
   },
-  "files": [
-    "core"
-  ],
   "jest": {
     "testEnvironment": "node"
   },
+  "files": [
+    "core"
+  ],
   "publishConfig": {
-    "registry": "https://nexus3.pentaho.com/repository/public-npm-release/"
+    "access": "public"
   }
 }

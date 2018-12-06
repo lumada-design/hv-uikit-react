@@ -1,9 +1,11 @@
 {
-  "packages": [
-    "packages/*",
-    "examples/*"
-  ],
+  "packages": ["packages/*", "examples/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "1.0.0"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "registry": "https://nexus3.pentaho.com/repository/private-npm-release/"
+    }
+  }
 }
