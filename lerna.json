@@ -5,6 +5,7 @@
   "version": "independent",
   "command": {
     "publish": {
+      "npmClient": "npm",
       "registry": "https://nexus3.pentaho.com/repository/private-npm-release/"
     }
   }
