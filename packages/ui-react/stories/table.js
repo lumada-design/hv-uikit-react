@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTable from "../src/Table";
+import { HvTable } from "../src";
 import getColumns from "./table/columns";
 import data from "./table/data.json";
 import theme from "../src/theme";

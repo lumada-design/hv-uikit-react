@@ -1,7 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvDropdown from "../src/Dropdown";
-import HvButton from "../src/Button";
+import { HvButton, HvDropdown } from "../src";
 
 const data = [
   { value: 1, label: "1" },

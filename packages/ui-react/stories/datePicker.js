@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvDatePicker from "../src/DatePicker";
+import { HvDatePicker } from "../src";
 
 const Wrapper = () => (
   <div>

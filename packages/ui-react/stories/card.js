@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvCard from "../src/Card";
+import { HvCard } from "../src";
 
 const data = {
   assetId: "ast-gn002",
@@ -13,4 +13,6 @@ const data = {
   outcome: "RESOLVED"
 };
 
-storiesOf("Card", module).add("Card", () => <HvCard data={data} basePath="events/" />);
+storiesOf("Card", module).add("Card", () => (
+  <HvCard data={data} basePath="events/" />
+));

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hv-ui/react": "1.0.1-canary.11",
+    "@hv-ui/react": "1.0.1-canary.12",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",

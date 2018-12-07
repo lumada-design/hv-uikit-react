@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvHeader from "../src/Header";
+import { HvHeader } from "../src";
 
 const menuData = [
   {
@@ -22,9 +22,5 @@ const userData = {
 const logout = () => {};
 
 storiesOf("Header", module).add("Header", () => (
-  <HvHeader
-    menuData={menuData}
-    userData={userData}
-    userLogout={logout}
-  />
+  <HvHeader menuData={menuData} userData={userData} userLogout={logout} />
 ));
