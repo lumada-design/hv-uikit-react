@@ -6,12 +6,9 @@
   "author": {
     "name": "Hitachi Vantara IOTA Team"
   },
-  "files": [
-    "dist/"
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab-edge.eng.hitachivantara.com/hv-design-system/hv-ui-themes.git"
+    "url": "https://10.76.48.133/hv-design-system/hv-ui.git"
   },
   "scripts": {
     "dev": "watch 'npm run build' src",
@@ -30,7 +27,7 @@
     "watch": "^1.0.2",
     "prettier": "^1.15.2"
   },
-  "publishConfig": {
-    "registry": "https://nexus3.pentaho.com/repository/public-npm-release/"
-  }
+  "files": [
+    "dist/"
+  ],
 }
