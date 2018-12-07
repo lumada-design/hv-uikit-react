@@ -21,10 +21,11 @@ It enables faster installation by preventing package duplication across Workspac
 - Lerna handles tasks that affect multiple packages (build/test/lint).
 
 ### Getting Started
-Make sure you have [Yarn](https://yarnpkg.com) installed
+Make sure you have [Yarn](https://yarnpkg.com) and [Lerna](https://github.com/lerna) installed.
 
 ```bash
 npm i -g yarn
+npm i -g lerna
 ```
 
 Install all dependencies
