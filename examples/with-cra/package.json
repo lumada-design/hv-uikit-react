@@ -1,9 +1,9 @@
 {
   "name": "with-cra",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0",
   "private": true,
   "dependencies": {
-    "@hv-ui/react": "1.0.1-canary.12",
+    "@hv-ui/react": "^1.0.1-canary.13",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",

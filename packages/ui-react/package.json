@@ -1,6 +1,6 @@
 {
   "name": "@hv-ui/react",
-  "version": "1.0.1-canary.12",
+  "version": "1.0.1-canary.13",
   "description": "React components for the HV Design System.",
   "license": "LicenseRef-LICENSE",
   "author": {
@@ -28,7 +28,7 @@
     "postpublish": "npm run clean"
   },
   "dependencies": {
-    "@hv-ui/themes": "1.0.1-canary.0",
+    "@hv-ui/themes": "^1.0.1-canary.1",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "@storybook/react": "^4.0.7",
