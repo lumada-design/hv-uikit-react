@@ -19,10 +19,7 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "start": "lerna run start --parallel",
-    "dev": "lerna run dev --parallel",
-    "build": "npm-run-all build:*",
-    "build:clean": "del dist",
-    "build:lerna": "lerna run build"
+    "dev": "lerna run dev --parallel"
   },
   "workspaces": [
     "packages/*",
