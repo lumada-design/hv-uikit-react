@@ -21,5 +21,8 @@ module.exports = {
   setupTestFrameworkScriptFile: "<rootDir>/config/test-setup.js",
   testRegex: ".*\\.test\\.(js|jsx)$",
   rootDir: "../",
-  testURL: "http://localhost/"
+  testURL: "http://localhost/",
+  snapshotSerializers: [
+    "enzyme-to-json/serializer"
+  ]
 };

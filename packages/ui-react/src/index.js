@@ -18,6 +18,7 @@ export { default as HvHeader } from "./Header";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";
 export { default as HvTable } from "./Table";
+export { default as HvNavigationAnchors } from "./NavigationAnchors";
 
 // theme
 export { default as hvTheme } from "./theme";
