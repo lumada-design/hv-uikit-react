@@ -13,14 +13,14 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import MainWithStyles from "..";
-import Main from "../Main";
+import MenuWithStyles from "../index";
+import Menu from "../Menu";
 
-describe("Header withStyles", () => {
+describe("Menu withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<MainWithStyles />);
+    wrapper = shallow(<MenuWithStyles basePath="basePath" useRouter />);
   });
 
   it("should be defined", () => {
@@ -32,7 +32,23 @@ describe("Header withStyles", () => {
   });
 
   it("should render Menu component", () => {
-    const userComponent = wrapper.find(Main);
+    const userComponent = wrapper.find(Menu);
     expect(userComponent.length).toBe(1);
+  });
+
+  it("should render User component with Props", () => {
+    wrapper = shallow(
+      <MenuWithStyles
+        menuData={[
+          { path: "path1", label: "label1" },
+          { path: "path2", label: "label2" },
+          { path: "path3", label: "label3" }
+        ]}
+        basePath="basePath"
+        useRouter
+      />
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
