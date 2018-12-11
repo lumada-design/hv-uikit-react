@@ -19,10 +19,7 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "start": "lerna run start --parallel",
-    "dev": "lerna run dev --parallel"
-  },
-  "workspaces": [
-    "packages/*",
-    "examples/*"
-  ]
+    "dev": "lerna run dev --parallel",
+    "link": "lerna run link --parallel"
+  }
 }

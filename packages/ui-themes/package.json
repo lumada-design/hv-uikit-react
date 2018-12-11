@@ -17,7 +17,8 @@
     "build:to-json": "copyfiles src/*.json dist -f",
     "clean": "del dist",
     "prepublish": "npm run build",
-    "postpublish": "npm run clean"
+    "postpublish": "npm run clean",
+    "link": "npm link"
   },
   "devDependencies": {
     "copyfiles": "^2.1.0",
