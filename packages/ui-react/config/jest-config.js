@@ -1,7 +1,8 @@
 module.exports = {
   collectCoverageFrom: [
     "src/**/*.{js,jsx}",
-    "!src/**/*.test.{js,jsx}"
+    "!src/**/*.test.{js,jsx}",
+    "!core/*"
   ],
   coverageThreshold: {
     global: {
@@ -19,7 +20,7 @@ module.exports = {
       "<rootDir>/config/jest-mocks/image.js"
   },
   setupTestFrameworkScriptFile: "<rootDir>/config/test-setup.js",
-  testRegex: ".*\\.test\\.(js|jsx)$",
+  testRegex: "src/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
   testURL: "http://localhost/",
   snapshotSerializers: [

@@ -10,18 +10,17 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { shallow } from "enzyme";
 
-import ButtonWithStyles from "..";
-import Button from "../Button";
+import MainWithStyles from "../index";
+import Main from "../Main";
 
-describe("Button withStyles", () => {
+describe("Header withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<ButtonWithStyles>Click!</ButtonWithStyles>);
+    wrapper = shallow(<MainWithStyles />);
   });
 
   it("should be defined", () => {
@@ -32,8 +31,8 @@ describe("Button withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render Button component", () => {
-    const buttonComponent = wrapper.find(Button);
-    expect(buttonComponent.length).toBe(1);
+  it("should render Menu component", () => {
+    const userComponent = wrapper.find(Main);
+    expect(userComponent.length).toBe(1);
   });
 });

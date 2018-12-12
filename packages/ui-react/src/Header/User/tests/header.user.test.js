@@ -14,7 +14,7 @@ import IconButton from "@material-ui/core/IconButton";
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import UserWithStyles from "..";
+import UserWithStyles from "../index";
 import User from "../User";
 
 describe("User withStyles", () => {

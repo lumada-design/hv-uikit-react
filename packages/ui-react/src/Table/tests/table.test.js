@@ -13,10 +13,10 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
+import ReactTable from "react-table";
 
 import HvTable from "../Main/Main";
-import ReactTable from "react-table";
-import theme from "../../../theme";
+import theme from "../../theme";
 
 describe("Hv Table", () => {
   let wrapper;

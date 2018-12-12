@@ -10,17 +10,18 @@
 
 /* eslint-env jest */
 
+// import { mount } from "enzyme";
 import React from "react";
 import { shallow } from "enzyme";
 
-import MenuWithStyles from "..";
-import Menu from "../Menu";
+import ButtonWithStyles from "../index";
+import Button from "../Button";
 
-describe("Menu withStyles", () => {
+describe("Button withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<MenuWithStyles basePath="basePath" useRouter />);
+    wrapper = shallow(<ButtonWithStyles>Click!</ButtonWithStyles>);
   });
 
   it("should be defined", () => {
@@ -31,24 +32,8 @@ describe("Menu withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render Menu component", () => {
-    const userComponent = wrapper.find(Menu);
-    expect(userComponent.length).toBe(1);
-  });
-
-  it("should render User component with Props", () => {
-    wrapper = shallow(
-      <MenuWithStyles
-        menuData={[
-          { path: "path1", label: "label1" },
-          { path: "path2", label: "label2" },
-          { path: "path3", label: "label3" }
-        ]}
-        basePath="basePath"
-        useRouter
-      />
-    );
-
-    expect(wrapper).toMatchSnapshot();
+  it("should render Button component", () => {
+    const buttonComponent = wrapper.find(Button);
+    expect(buttonComponent.length).toBe(1);
   });
 });

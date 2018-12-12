@@ -14,7 +14,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import LogoWithStyles from "..";
+import LogoWithStyles from "../index";
 import Logo from "../Logo";
 
 describe("Logo withStyles", () => {
