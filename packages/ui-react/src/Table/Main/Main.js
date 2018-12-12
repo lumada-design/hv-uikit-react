@@ -77,7 +77,9 @@ class HvTable extends React.Component {
       headerHeight,
       resizable,
       onPageSizeChange,
-      pages
+      pages,
+      showPagination,
+      manual
     } = this.props;
 
     const composedStyles = styles(this.props.theme);
@@ -111,8 +113,9 @@ class HvTable extends React.Component {
         columns={columns}
         className="-highlight"
         PaginationComponent={ReactTablePagination}
-        manual
-        onFetchData={this.onFetchDataInternal}
+        showPagination={showPagination}
+        manual={manual}
+        onFetchData={manual ? this.onFetchDataInternal : () => {}}
         defaultPageSize={pageSize}
         onPageSizeChange={onPageSizeChange}
         pages={pages}
