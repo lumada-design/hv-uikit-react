@@ -12,10 +12,10 @@ Lerna calls npm install for each package inside the project and then creates sym
 Each package by default gets their own node_modules folder. 
 
 ### Getting Started
-Make sure you have [Lerna](https://github.com/lerna) installed.
+Install root dependencies ([Lerna](https://github.com/lerna)).
 
 ```bash
-npm i -g lerna
+npm install
 ```
 
 ###### *If you want to [link](https://docs.npmjs.com/cli/link.html) your packages globally you need to run this in the first place.*
