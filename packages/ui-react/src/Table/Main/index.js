@@ -8,7 +8,7 @@
  *  under which the software has been supplied.
  */
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
+import { styles } from "./styles";
 
 import Main from "./Main";
 

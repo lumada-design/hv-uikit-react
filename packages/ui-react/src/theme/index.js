@@ -9,7 +9,7 @@
  */
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv-ui/themes/dist/theme.json";
 import muiAppBar from "./overrides/muiAppBar";
 import muiInput from "./overrides/muiInput";
 import muiInputAdornment from "./overrides/muiInputAdornment";
