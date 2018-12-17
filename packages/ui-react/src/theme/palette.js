@@ -25,6 +25,13 @@ const palette = createPalette({
     light: theme.palette.hitachi.light,
     main: theme.palette.hitachi.main
   },
+  text: {
+    primary: theme.palette.text.primary,
+    disabled: theme.palette.text.secondary
+  },
+  background: {
+    default: theme.palette.grey.smokey
+  },
   status: theme.palette.status,
   support: theme.palette.support
 });
