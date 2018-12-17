@@ -8,9 +8,10 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
+const styles = theme => ({
   a: {
-    textDecoration: "none"
+    textDecoration: "none",
+    color: theme.palette.primary.main
   }
 });
 
