@@ -24,9 +24,12 @@ describe("Hv Table", () => {
   describe("index", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
-          <HvTable columns={[]} theme={theme} />
-        </MuiThemeProvider>
+        <HvTable
+          classes={{}}
+          columns={[{ headerText: "test 1", accessor: "t1" }]}
+          data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
+          theme={theme}
+        />
       );
     });
 
@@ -50,7 +53,12 @@ describe("Hv Table", () => {
     it("and if 'columns' is avaialble it is rendered", () => {
       wrapper = mount(
         <MuiThemeProvider theme={theme}>
-          <HvTable columns={[]} theme={theme} />
+          <HvTable
+            classes={{}}
+            columns={[{ headerText: "test 1", accessor: "t1" }]}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
+            theme={theme}
+          />
         </MuiThemeProvider>
       );
 
@@ -62,12 +70,14 @@ describe("Hv Table", () => {
       wrapper = mount(
         <MuiThemeProvider theme={theme}>
           <HvTable
+            classes={{}}
             theme={theme}
             columns={[
               { Header: "column 1" },
               { Header: "column 2" },
               { Header: "column 3" }
             ]}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
         </MuiThemeProvider>
       );
@@ -82,6 +92,7 @@ describe("Hv Table", () => {
       wrapper = mount(
         <MuiThemeProvider theme={theme}>
           <HvTable
+            classes={{}}
             theme={theme}
             columns={[{ headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
@@ -98,30 +109,19 @@ describe("Hv Table", () => {
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
         <MuiThemeProvider theme={theme}>
-          <HvTable theme={theme} columns={[]} data={[]} defaultPageSize={5} />
+          <HvTable
+            classes={{}}
+            theme={theme}
+            columns={[]}
+            data={[]}
+            pageSize={5}
+          />
         </MuiThemeProvider>
       );
 
       const pageSize = wrapper.find(".-pageSizeOptions select");
 
       expect(pageSize.props().value).toBe(5);
-    });
-
-    it("and if 'cellHeight' is provided, row height is set to that value in pixel", () => {
-      wrapper = mount(
-        <MuiThemeProvider theme={theme}>
-          <HvTable
-            theme={theme}
-            columns={[{ headerText: "test 1", accessor: "t1" }]}
-            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            cellHeight={32}
-          />
-        </MuiThemeProvider>
-      );
-
-      const rowStyle = wrapper.find(".rt-td").get(0).props.style;
-
-      expect(rowStyle.height).toBe(32);
     });
   });
 });
