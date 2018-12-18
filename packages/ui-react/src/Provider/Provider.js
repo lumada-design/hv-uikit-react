@@ -22,7 +22,7 @@ import hvTheme from "../theme";
  *
  * @param {Object} targetTheme - A material UI Theme to be changed.
  * @param {Object} sourceTheme - A material UI Theme to apply on top.
- * @returns {Object|undefined} - A modified material UI theme.
+ * @returns {Object} - A modified material UI theme.
  */
 const applyCustomTheme = (targetTheme, sourceTheme) => {
   const deleteDifference = "D";
@@ -38,7 +38,7 @@ const applyCustomTheme = (targetTheme, sourceTheme) => {
     });
     return targetTheme;
   }
-  return undefined;
+  return targetTheme;
 }
 
 const HvProvider = ({ children, theme, router }) => {
