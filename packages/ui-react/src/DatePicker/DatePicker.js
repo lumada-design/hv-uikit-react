@@ -25,10 +25,6 @@ const INITIAL_STATE = {
 };
 
 class HvDatePicker extends React.Component {
-  static defaultProps = {
-    numberOfMonths: 1
-  };
-
   constructor(props) {
     super(props);
     this.handleDayChange = this.handleDayChange.bind(this);
@@ -36,24 +32,35 @@ class HvDatePicker extends React.Component {
     this.state = INITIAL_STATE;
   }
 
+  static getDerivedStateFromProps(props, state) {
+    if (props.value) {
+      return {
+        ...state,
+        from: props.value.from,
+        to: props.value.to
+      };
+    }
+    return state;
+  }
+
   handleDayChange(day) {
     const range = DateUtils.addDayToRange(day, this.state);
-    const { handleDateChange } = this.props;
+    const { onChange } = this.props;
 
     this.setState(range);
-    handleDateChange(range);
+    onChange(range);
   }
 
   handleReset() {
-    const { handleDateChange } = this.props;
+    const { onChange } = this.props;
 
     this.setState(INITIAL_STATE);
-    handleDateChange(INITIAL_STATE);
+    onChange(INITIAL_STATE);
   }
 
   render() {
     const { from, to } = this.state;
-    const { classes, label, numberOfMonths } = this.props;
+    const { classes, label } = this.props;
 
     const modifiers = { start: from, end: to };
     const dateFormat = "MM/DD/YY";
@@ -91,7 +98,6 @@ class HvDatePicker extends React.Component {
             dayPickerProps={{
               selectedDays: [from, { from, to }],
               modifiers,
-              numberOfMonths,
               month: new Date()
             }}
             hideOnDayClick={false}
@@ -104,14 +110,27 @@ class HvDatePicker extends React.Component {
 }
 
 HvDatePicker.propTypes = {
+  /**
+   * Styles applied from the theme
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  handleDateChange: PropTypes.func,
-  label: PropTypes.string,
-  numberOfMonths: PropTypes.number
+  /**
+   * The value to set to the component
+   */
+  value: PropTypes.instanceOf(Object),
+  /**
+   * Callback to call every time the component value changes
+   */
+  onChange: PropTypes.func,
+  /**
+   * The label to draw on top of the date picker input
+   */
+  label: PropTypes.string
 };
 
 HvDatePicker.defaultProps = {
-  handleDateChange: () => {},
+  value: null,
+  onChange: () => {},
   label: ""
 };
 

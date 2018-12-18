@@ -42,7 +42,6 @@ const styles = theme => ({
   pageSizeOptionsSelect: {
     "-webkit-appearance": "none",
     "-webkit-border-radius": "0px",
-    background: "#fff",
     padding: "5px 7px",
     fontSize: "inherit",
     fontWeight: "normal",
@@ -66,11 +65,11 @@ const styles = theme => ({
     display: "inline-block"
   },
   rowText: {
-    ...theme.hv.typography.normalText,
+    ...theme.typography.normalText,
     marginLeft: `${theme.spacing.xs}px`
   },
   pageJumpInput: {
-    ...theme.hv.typography.normalText,
+    ...theme.typography.normalText,
     width: "50px",
     textAlign: "right",
     margin: `0 ${theme.spacing.xs}px`,
