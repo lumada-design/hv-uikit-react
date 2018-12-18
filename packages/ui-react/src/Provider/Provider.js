@@ -11,16 +11,40 @@
 import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import diff from "deep-diff";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { ConfigProvider } from "../config/context";
 import hvTheme from "../theme";
 
-const HvProvider = ({ children, theme, router }) => {
-  const pTheme = _.merge(hvTheme, theme);
-  const pConfig = { router };
 
+/**
+ * Augments the target theme with the differences found in the source theme.
+ *
+ * @param {Object} targetTheme - A material UI Theme to be changed.
+ * @param {Object} sourceTheme - A material UI Theme to apply on top.
+ * @returns {Object|undefined} - A modified material UI theme.
+ */
+const applyCustomTheme = (targetTheme, sourceTheme) => {
+  const deleteDifference = "D";
+  if(!_.isNil(targetTheme) && 
+     !_.isNil(sourceTheme) && 
+     !_.isEmpty(targetTheme) &&
+     !_.isEmpty(sourceTheme)) {
+      diff.observableDiff(createMuiTheme({}), sourceTheme, (difference) => {
+      const a = _.set({} ,difference.path,difference.rhs);
+      if(difference.kind !== deleteDifference) {// Do not include the differences of type "delete"
+        _.merge(targetTheme, a);
+      }
+    });
+    return targetTheme;
+  }
+  return undefined;
+}
+
+const HvProvider = ({ children, theme, router }) => {
+  const pConfig = { router };
   return (
-    <MuiThemeProvider theme={pTheme} sheetsManager={new Map()}>
+    <MuiThemeProvider theme={applyCustomTheme({...hvTheme}, {...theme})} sheetsManager={new Map()}>
       <ConfigProvider value={pConfig}>{children}</ConfigProvider>
     </MuiThemeProvider>
   );

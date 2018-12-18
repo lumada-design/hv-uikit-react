@@ -13,7 +13,7 @@ const loadStories = () => {
 addDecorator(withInfo);
 
 addDecorator(story => (
-  <HvProvider theme={theme} r>
+  <HvProvider r>
     {story()}
   </HvProvider>
 ));
