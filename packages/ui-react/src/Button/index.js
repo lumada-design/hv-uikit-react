@@ -11,5 +11,7 @@
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Button from "./Button";
+import buttonTypes from "./buttonTypes";
 
+export { buttonTypes };
 export default withStyles(styles, { withTheme: true })(Button);

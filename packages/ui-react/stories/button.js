@@ -1,5 +1,36 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvButton } from "../src";
+import { HvButton, buttonTypes } from "../src";
 
-storiesOf("Button", module).add("Button", () => <HvButton>Click!</HvButton>);
+const disabled = true;
+const value = 1;
+const key = 0;
+const buttonStyles = {
+  margin: "5px 0",
+}
+
+Object.entries(buttonTypes).forEach(KeyPair => {
+
+  storiesOf("Button", module).add(`${KeyPair[value]} button`, () => 
+  (
+    <>
+      <div style={buttonStyles}>
+        <HvButton type={KeyPair[value]}>{KeyPair[key]}</HvButton>
+      </div>
+
+      <div style={buttonStyles}>
+        <HvButton disabled={disabled} type={KeyPair[value]}>{KeyPair[key]}</HvButton>
+      </div>
+
+      <div style={buttonStyles}>
+        <HvButton onClick={()=>{alert("You clicked me")}} type={KeyPair[value]}>click me!</HvButton>
+      </div>
+      
+      <div style={buttonStyles}>
+        <HvButton disabled={disabled} onClick={()=>{alert("You clicked me")}} type={KeyPair[value]}>click me!</HvButton>
+      </div>
+    
+    </>
+  )
+)
+});

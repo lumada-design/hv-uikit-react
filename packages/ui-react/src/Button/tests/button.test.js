@@ -12,13 +12,17 @@
 
 // import { mount } from "enzyme";
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import ButtonWithStyles from "../index";
 import Button from "../Button";
+import buttonTypes from "../buttonTypes";
+import materialButtonConfiguration from "../materialButtonConfiguration"
 
 describe("Button withStyles", () => {
   let wrapper;
+
+  const getMaterialButtonProps = (ParentElement) => ParentElement.children().children().props();
 
   beforeEach(async () => {
     wrapper = shallow(<ButtonWithStyles>Click!</ButtonWithStyles>);
@@ -32,8 +36,26 @@ describe("Button withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render Button component", () => {
+  it("should render the Button component", () => {
     const buttonComponent = wrapper.find(Button);
     expect(buttonComponent.length).toBe(1);
+  });
+
+  it("should correctly map the primary type to the material ui configurations", () => {
+    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.primary}>Click!</ButtonWithStyles>);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.contained);
+  });
+
+  it("should correctly map the secondary type to the material ui configurations", () => {
+    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.secondary}>Click!</ButtonWithStyles>);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.outlined);
+  });
+
+  it("should correctly map the link type to the material ui configurations", () => {
+    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.link}>Click!</ButtonWithStyles>);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.text);
   });
 });

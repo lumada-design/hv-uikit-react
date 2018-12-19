@@ -101,6 +101,13 @@
       "letterSpacing": "0.02em",
       "lineHeight": "16px"
     },
+    "buttonText": {
+      "color": "#FFFFFF",
+      "fontSize": "14px",
+      "letterSpacing": "0.02em",
+      "fontWeight": "600",
+      "lineHeight": "21px"
+    },
     "infoText": {
       "color": "#414141",
       "fontSize": "12px",

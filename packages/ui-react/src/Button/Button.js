@@ -11,26 +11,92 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
+import buttonTypes from "./buttonTypes";
+import materialButtonConfiguration from "./materialButtonConfiguration";
+
+/**
+ * Receives a type of HvButton and generates an appropiate material ui configuration.
+ *
+ * @param {*} type - The button type configuration that will be generated.
+ * @returns {Object} - An Object with the color and variant values required by the material ui button.
+ */
+const generateButtonConfiguration = (type) => {
+  switch(type) {
+    default:
+    case buttonTypes.primary:
+      return {
+        color: materialButtonConfiguration.color.primary,
+        variant: materialButtonConfiguration.variant.contained
+      }
+    case buttonTypes.secondary:
+      return {
+        color: materialButtonConfiguration.color.primary,
+        variant: materialButtonConfiguration.variant.outlined
+      }
+    case buttonTypes.link:
+      return {
+        color: materialButtonConfiguration.color.primary,
+        variant: materialButtonConfiguration.variant.text
+      }
+  }
+}
 
 const HvButton = props => {
-  const { classes, children, disabled, onClick } = props;
-
+  const { classes, className, children, disabled, onClick, type, ...other } = props;
+  const buttonConfiguration = generateButtonConfiguration(type);
   return (
-    <Button className={classes.root} disabled={disabled} disableRipple onClick={onClick}>
+    <Button 
+      className={className}
+      classes={classes} 
+      variant={buttonConfiguration.variant} 
+      color={buttonConfiguration.color} 
+      disabled={disabled} 
+      disableRipple 
+      onClick={onClick}
+      {...other}
+    >
       {children}
     </Button>
   );
 };
 
 HvButton.propTypes = {
+  /** 
+   * Type of HvButton to use.
+   *  - Accepted values: 
+   *    --"primary", 
+   *    --"secondary", 
+   *    --"link"
+   *  - note: the buttonType object should be used to set this value.
+   */
+  type: PropTypes.oneOf(['primary', 'secondary', 'link']),
+  /** 
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /** 
+   * The content inside the button.
+   */
   children: PropTypes.string.isRequired,
+  /** 
+   * If set to `true` the button is disabled and the onClick function will not be called.
+   */
   disabled: PropTypes.bool,
+  /** 
+   * The function executed when the button is pressed.
+   */
   onClick: PropTypes.instanceOf(Function)
 };
 
 HvButton.defaultProps = {
-  disabled: false
+  className: "",
+  type: buttonTypes.Primary,
+  disabled: false,
+  onClick: () => {}
 };
 
 export default HvButton;
