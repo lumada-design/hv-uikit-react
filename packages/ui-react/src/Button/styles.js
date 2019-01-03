@@ -17,6 +17,7 @@ const styles = theme => ({
     padding: "0 10px",
     cursor: "pointer",
     height: "32px",
+    minHeight: "32px",
     fontWeight: theme.hv.typography.buttonText.fontWeight,
     letterSpacing: theme.hv.typography.buttonText.letterSpacing
   },
