@@ -48,7 +48,7 @@ const styles = theme => ({
     color: theme.palette.grey.inspire,
     border: `1px solid ${theme.palette.grey.plain}`,
     "&:hover": {
-      backgroundColor: theme.palette.grey.rainy,
+      backgroundColor: theme.palette.grey.plain,
       border: `1px solid ${theme.palette.grey.plain}`,
     },
     "&:active": {
