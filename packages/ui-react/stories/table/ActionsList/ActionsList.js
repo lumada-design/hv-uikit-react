@@ -10,18 +10,18 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import { HvButton, buttonTypes } from "../../../src";
 import HvLink from "../../../src/Link";
 
 const ActionsList = ({ classes, eventId, dismiss, close }) => {
   const path = `events/${eventId}`;
-
   return (
     <div className={classes.root}>
       <HvLink href={path}>
-        <Button className={classes.button}>View</Button>
+        <HvButton style={{borderBottom:"none"}} type={buttonTypes.secondary} className={classes.button}>View</HvButton>
       </HvLink>
-      <Button
+      <HvButton
+        type={buttonTypes.secondary}
         className={classes.button}
         onClick={() => {
 
@@ -36,7 +36,7 @@ const ActionsList = ({ classes, eventId, dismiss, close }) => {
         }}
       >
         Dismiss
-      </Button>
+      </HvButton>
     </div>
   );
 };

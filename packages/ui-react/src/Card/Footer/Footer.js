@@ -12,7 +12,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CardActions from "@material-ui/core/CardActions";
 import withConfig from "../../config/withConfig";
-import Button from "../../Button";
+import HvButton , { buttonTypes } from "../../Button";
 import Link from "../../Link";
 
 const Footer = ({ classes, data, basePath, useRouter }) => {
@@ -21,10 +21,10 @@ const Footer = ({ classes, data, basePath, useRouter }) => {
   return (
     <CardActions className={classes.root}>
       <Link href={path} useRouter={useRouter}>
-        <Button>View</Button>
+        <HvButton type={buttonTypes.primary}>View</HvButton>
       </Link>
-      <Button disabled>Dismiss</Button>
-      <Button disabled>Assign</Button>
+      <HvButton type={buttonTypes.secondary} disabled>Dismiss</HvButton>
+      <HvButton type={buttonTypes.secondary} disabled>Assign</HvButton>
     </CardActions>
   );
 };

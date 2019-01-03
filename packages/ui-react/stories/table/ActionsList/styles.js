@@ -9,16 +9,24 @@
  */
 
 const styles = theme => ({
-  root: {
-    display: "block",
-    padding: 10,
-    border: `solid 1px ${theme.palette.grey.plain}`
+  root:{
+    border: `1px solid ${theme.palette.grey.plain}`
   },
   button: {
     margin: 0,
     display: "block",
     textAlign: "left",
-    width: "100%"
+    minWidth: "93px",
+    border: "none",
+    "&:hover": {
+      border: "none"
+    },
+    "&:active": {
+      border: "none"
+    },
+    "&$disabled": {
+      border: "none"
+    }
   }
 });
 

@@ -10,10 +10,92 @@
 
 const styles = theme => ({
   root: {
-    color: theme.palette.primary.main,
     textTransform: "capitalize",
     "&:hover,&:focus": {},
-    "&:active": {}
+    "&:active": {},
+    minWidth: "70px",
+    padding: "0 10px",
+    cursor: "pointer",
+    height: "32px",
+    fontWeight: theme.hv.typography.buttonText.fontWeight,
+    letterSpacing: theme.hv.typography.buttonText.letterSpacing
+  },
+  containedPrimary: {
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.primary.main,
+    "&:hover": {
+      backgroundColor: theme.palette.primary.light
+    },
+    "&:active": {
+      backgroundColor: theme.palette.primary.main
+    },
+    "&$disabled": {
+      backgroundColor: theme.palette.grey.clear,
+      color: theme.palette.grey.passive,
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    },
+    "&$disabled&:hover": {
+      backgroundColor: theme.palette.grey.clear,
+      color: theme.palette.grey.passive,
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    }
+  },
+  outlinedPrimary: {
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.grey.inspire,
+    border: `1px solid ${theme.palette.grey.plain}`,
+    "&:hover": {
+      backgroundColor: theme.palette.grey.rainy,
+      border: `1px solid ${theme.palette.grey.plain}`,
+    },
+    "&:active": {
+      backgroundColor: theme.palette.common.white
+    },
+    "&$disabled": {
+      backgroundColor: theme.palette.grey.clear,
+      color: theme.palette.grey.passive,
+      border: "none",
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    },
+    "&$disabled&:hover": {
+      backgroundColor: theme.palette.grey.clear,
+      color: theme.palette.grey.passive,
+      border: "none",
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    } 
+  },
+  textPrimary: {
+    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.common.white,
+    "&:hover": {
+      backgroundColor: theme.palette.grey.foggy,
+    },
+    "&:active": {
+      backgroundColor: theme.palette.common.white
+    },
+    "&$disabled": {
+      backgroundColor: theme.palette.common.white,
+      color: theme.palette.grey.passive,
+      border: "none",
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    },
+    "&$disabled&:hover": {
+      backgroundColor: theme.palette.common.white,
+      color: theme.palette.grey.passive,
+      border: "none",
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    }
+  },
+  disabled: {
+    backgroundColor: theme.palette.grey.clear,
+    color: theme.palette.grey.passive,
+    cursor: "not-allowed",
   }
 });
 

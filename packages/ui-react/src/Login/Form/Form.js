@@ -10,7 +10,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -18,6 +17,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Lock from "@material-ui/icons/Lock";
 import Person from "@material-ui/icons/Person";
 import withStyles from "@material-ui/core/styles/withStyles";
+import HvButton , { buttonTypes } from "../../Button";
 import styles from "./styles";
 
 const SpinnerAdornment = withStyles(styles)(props => {
@@ -97,15 +97,13 @@ class Form extends React.Component {
             </InputAdornment>
 )}
         />
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
+        <HvButton
+          type={buttonTypes.primary}
           className={classes.button}
           disabled={this.checkInput()}
         >
           {isLogging ? <SpinnerAdornment /> : "Log in"}
-        </Button>
+        </HvButton>
       </form>
     );
   }
