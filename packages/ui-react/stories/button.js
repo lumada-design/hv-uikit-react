@@ -15,19 +15,19 @@ Object.entries(buttonTypes).forEach(KeyPair => {
   (
     <>
       <div style={buttonStyles}>
-        <HvButton type={KeyPair[value]}>{KeyPair[key]}</HvButton>
+        <HvButton colorType={KeyPair[value]}>{KeyPair[key]}</HvButton>
       </div>
 
       <div style={buttonStyles}>
-        <HvButton disabled={disabled} type={KeyPair[value]}>{KeyPair[key]}</HvButton>
+        <HvButton disabled={disabled} colorType={KeyPair[value]}>{KeyPair[key]}</HvButton>
       </div>
 
       <div style={buttonStyles}>
-        <HvButton onClick={()=>{alert("You clicked me")}} type={KeyPair[value]}>click me!</HvButton>
+        <HvButton onClick={()=>{alert("You clicked me")}} colorType={KeyPair[value]}>click me!</HvButton>
       </div>
       
       <div style={buttonStyles}>
-        <HvButton disabled={disabled} onClick={()=>{alert("You clicked me")}} type={KeyPair[value]}>click me!</HvButton>
+        <HvButton disabled={disabled} onClick={()=>{alert("You clicked me")}} colorType={KeyPair[value]}>click me!</HvButton>
       </div>
     
     </>

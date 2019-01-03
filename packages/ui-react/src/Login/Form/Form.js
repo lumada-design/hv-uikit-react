@@ -98,7 +98,8 @@ class Form extends React.Component {
 )}
         />
         <HvButton
-          type={buttonTypes.primary}
+          type="submit"
+          colorType={buttonTypes.primary}
           className={classes.button}
           disabled={this.checkInput()}
         >

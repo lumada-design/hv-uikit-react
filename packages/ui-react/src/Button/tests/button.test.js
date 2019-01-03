@@ -42,19 +42,19 @@ describe("Button withStyles", () => {
   });
 
   it("should correctly map the primary type to the material ui configurations", () => {
-    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.primary}>Click!</ButtonWithStyles>);
+    const mountWrapper = mount(<ButtonWithStyles colorType={buttonTypes.primary}>Click!</ButtonWithStyles>);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
     expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.contained);
   });
 
   it("should correctly map the secondary type to the material ui configurations", () => {
-    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.secondary}>Click!</ButtonWithStyles>);
+    const mountWrapper = mount(<ButtonWithStyles colorType={buttonTypes.secondary}>Click!</ButtonWithStyles>);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
     expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.outlined);
   });
 
   it("should correctly map the link type to the material ui configurations", () => {
-    const mountWrapper = mount(<ButtonWithStyles type={buttonTypes.link}>Click!</ButtonWithStyles>);
+    const mountWrapper = mount(<ButtonWithStyles colorType={buttonTypes.link}>Click!</ButtonWithStyles>);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(materialButtonConfiguration.color.primary);
     expect(getMaterialButtonProps(mountWrapper).variant).toEqual(materialButtonConfiguration.variant.text);
   });
