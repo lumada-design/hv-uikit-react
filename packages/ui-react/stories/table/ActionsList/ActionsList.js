@@ -18,10 +18,10 @@ const ActionsList = ({ classes, eventId, dismiss, close }) => {
   return (
     <div className={classes.root}>
       <HvLink href={path}>
-        <HvButton style={{borderBottom:"none"}} type={buttonTypes.secondary} className={classes.button}>View</HvButton>
+        <HvButton style={{borderBottom:"none"}} colorType={buttonTypes.secondary} className={classes.button}>View</HvButton>
       </HvLink>
       <HvButton
-        type={buttonTypes.secondary}
+        colorType={buttonTypes.secondary}
         className={classes.button}
         onClick={() => {
 

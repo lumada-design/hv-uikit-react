@@ -21,10 +21,10 @@ const Footer = ({ classes, data, basePath, useRouter }) => {
   return (
     <CardActions className={classes.root}>
       <Link href={path} useRouter={useRouter}>
-        <HvButton type={buttonTypes.primary}>View</HvButton>
+        <HvButton colorType={buttonTypes.primary}>View</HvButton>
       </Link>
-      <HvButton type={buttonTypes.secondary} disabled>Dismiss</HvButton>
-      <HvButton type={buttonTypes.secondary} disabled>Assign</HvButton>
+      <HvButton colorType={buttonTypes.secondary} disabled>Dismiss</HvButton>
+      <HvButton colorType={buttonTypes.secondary} disabled>Assign</HvButton>
     </CardActions>
   );
 };

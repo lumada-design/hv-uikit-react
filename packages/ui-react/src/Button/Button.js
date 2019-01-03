@@ -42,8 +42,9 @@ const generateButtonConfiguration = (type) => {
 }
 
 const HvButton = props => {
-  const { classes, className, children, disabled, onClick, type, ...other } = props;
-  const buttonConfiguration = generateButtonConfiguration(type);
+  const { classes, className, children, disabled, onClick, type, colorType, ...other } = props;
+  const buttonConfiguration = generateButtonConfiguration(colorType);
+
   return (
     <Button 
       className={className}
@@ -53,6 +54,7 @@ const HvButton = props => {
       disabled={disabled} 
       disableRipple 
       onClick={onClick}
+      type={type}
       {...other}
     >
       {children}
@@ -62,14 +64,22 @@ const HvButton = props => {
 
 HvButton.propTypes = {
   /** 
-   * Type of HvButton to use.
+   * Type of button to use.
+   *  - Accepted values: 
+   *    --"submit", 
+   *    --"reset", 
+   *    --"button"
+   */
+  type: PropTypes.oneOf(['submit', 'reset', 'button']),
+  /** 
+   * Type of color of HvButton to use.
    *  - Accepted values: 
    *    --"primary", 
    *    --"secondary", 
    *    --"link"
    *  - note: the buttonType object should be used to set this value.
    */
-  type: PropTypes.oneOf(['primary', 'secondary', 'link']),
+  colorType: PropTypes.oneOf(['primary', 'secondary', 'link']),
   /** 
    * Class names to be applied.
    */
@@ -94,7 +104,8 @@ HvButton.propTypes = {
 
 HvButton.defaultProps = {
   className: "",
-  type: buttonTypes.Primary,
+  type: "button",
+  colorType: buttonTypes.Primary,
   disabled: false,
   onClick: () => {}
 };
