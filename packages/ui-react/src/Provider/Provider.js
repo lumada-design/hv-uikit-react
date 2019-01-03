@@ -20,20 +20,22 @@ import hvTheme from "../theme";
 /**
  * Augments the target theme with the differences found in the source theme.
  *
- * @param {Object} targetTheme - A material UI Theme to be changed.
- * @param {Object} sourceTheme - A material UI Theme to apply on top.
- * @returns {Object} - A modified material UI theme.
+ * @param {Object} InputTargetTheme - A material UI Theme to be changed.
+ * @param {Object} InputSourceTheme - A material UI Theme to apply on top.
+ * @returns {Object} - A new modified material UI theme.
  */
-const applyCustomTheme = (targetTheme, sourceTheme) => {
+const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
+  const targetTheme = _.cloneDeep(InputTargetTheme);
+  const sourceTheme = _.cloneDeep(InputSourceTheme);
   const deleteDifference = "D";
-  if(!_.isNil(targetTheme) && 
-     !_.isNil(sourceTheme) && 
-     !_.isEmpty(targetTheme) &&
-     !_.isEmpty(sourceTheme)) {
-      diff.observableDiff(createMuiTheme({}), sourceTheme, (difference) => {
-      const a = _.set({} ,difference.path,difference.rhs);
-      if(difference.kind !== deleteDifference) {// Do not include the differences of type "delete"
-        _.merge(targetTheme, a);
+  if (!_.isNil(targetTheme) && 
+      !_.isNil(sourceTheme) && 
+      !_.isEmpty(targetTheme) &&
+      !_.isEmpty(sourceTheme)) {
+    diff.observableDiff(createMuiTheme({}), sourceTheme, (difference) => {
+      const partialCustomTheme = _.set({} ,difference.path,difference.rhs);
+      if (difference.kind !== deleteDifference) {// Do not include the differences of type "delete"
+        _.merge(targetTheme, partialCustomTheme);
       }
     });
     return targetTheme;
@@ -43,8 +45,9 @@ const applyCustomTheme = (targetTheme, sourceTheme) => {
 
 const HvProvider = ({ children, theme, router }) => {
   const pConfig = { router };
+  const customTheme = applyCustomTheme(hvTheme, theme);
   return (
-    <MuiThemeProvider theme={applyCustomTheme({...hvTheme}, {...theme})} sheetsManager={new Map()}>
+    <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
       <ConfigProvider value={pConfig}>{children}</ConfigProvider>
     </MuiThemeProvider>
   );
