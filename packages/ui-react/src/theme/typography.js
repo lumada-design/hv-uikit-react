@@ -63,5 +63,11 @@ export default createTypography(palette, {
     letterSpacing: theme.typography.labelText.letterSpacing,
     lineHeight: theme.typography.labelText.lineHeight,
     fontWeight: theme.typography.labelText.fontWeight
+  },
+  button: {
+    fontSize: theme.typography.buttonText.fontSize,
+    letterSpacing: theme.typography.buttonText.letterSpacing,
+    lineHeight: theme.typography.buttonText.lineHeight,
+    fontWeight: theme.typography.buttonText.fontWeight
   }
 });

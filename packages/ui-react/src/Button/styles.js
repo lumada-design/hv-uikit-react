@@ -18,8 +18,8 @@ const styles = theme => ({
     cursor: "pointer",
     height: "32px",
     minHeight: "32px",
-    fontWeight: theme.hv.typography.buttonText.fontWeight,
-    letterSpacing: theme.hv.typography.buttonText.letterSpacing
+    fontWeight: theme.typography.button.fontWeight,
+    letterSpacing: theme.typography.button.letterSpacing
   },
   containedPrimary: {
     color: theme.palette.common.white,
@@ -67,7 +67,7 @@ const styles = theme => ({
       border: "none",
       cursor: "not-allowed",
       pointerEvents: "auto"
-    } 
+    }
   },
   textPrimary: {
     color: theme.palette.primary.main,
