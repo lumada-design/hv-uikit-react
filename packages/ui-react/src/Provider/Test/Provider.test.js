@@ -20,6 +20,8 @@ describe("Provider", () => {
   let wrapper;
   const mockOverriden = createMuiTheme({
     typography: {
+      useNextVariants: true,
+      suppressDeprecationWarnings: true,
       h1: {
         fontSize: "4px"
       }

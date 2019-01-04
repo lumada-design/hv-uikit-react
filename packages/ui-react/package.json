@@ -22,8 +22,9 @@
     "build:clean": "del core/**/tests",
     "clean": "del core",
     "lint": "eslint .",
-    "test": "jest -c config/jest-config.js -u --coverage",
-    "test:watch": "jest -c config/jest-config.js -u --watch",
+    "test": "jest -c config/jest-config.js --coverage",
+    "test:watch": "jest -c config/jest-config.js --watch",
+    "test:update": "jest -c ./config/jest-config.js --u",
     "prepublish": "npm-run-all clean build",
     "postpublish": "npm run clean",
     "link": "npm link"

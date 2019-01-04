@@ -13,9 +13,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import diff from "deep-diff";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import createTypography from "@material-ui/core/styles/createTypography";
+import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
 import hvTheme from "../theme";
 
+const muiDefaultPalette = createPalette({});
+const muiDefaultTypography = createTypography(muiDefaultPalette, {
+  useNextVariants: true,
+  suppressDeprecationWarnings: true
+});
+
+const muiDefaultTheme = createMuiTheme({
+  palette: muiDefaultPalette,
+  typography: muiDefaultTypography
+});
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -32,7 +44,7 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
       !_.isNil(sourceTheme) && 
       !_.isEmpty(targetTheme) &&
       !_.isEmpty(sourceTheme)) {
-    diff.observableDiff(createMuiTheme({}), sourceTheme, (difference) => {
+    diff.observableDiff(muiDefaultTheme, sourceTheme, (difference) => {
       const partialCustomTheme = _.set({} ,difference.path,difference.rhs);
       if (difference.kind !== deleteDifference) {// Do not include the differences of type "delete"
         _.merge(targetTheme, partialCustomTheme);
@@ -41,7 +53,7 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
     return targetTheme;
   }
   return targetTheme;
-}
+};
 
 const HvProvider = ({ children, theme, router }) => {
   const pConfig = { router };
