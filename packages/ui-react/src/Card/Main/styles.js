@@ -16,7 +16,7 @@ const styles = theme => ({
     borderTop: `4px solid ${theme.palette.status.success}`
   },
   warning: {
-    borderTop: `4px solid ${theme.palette.status.alert}`
+    borderTop: `4px solid ${theme.palette.status.warning}`
   },
   critical: {
     borderTop: `4px solid ${theme.palette.status.error}`

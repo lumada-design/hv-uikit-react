@@ -33,7 +33,8 @@ const palette = createPalette({
     default: theme.palette.grey.smokey
   },
   status: theme.palette.status,
-  support: theme.palette.support
+  support: theme.palette.support,
+  severity: theme.palette.severity
 });
 
 palette.grey = { ...palette.grey, ...theme.palette.grey };

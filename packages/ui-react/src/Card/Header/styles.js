@@ -22,7 +22,7 @@ const styles = theme => ({
     color: theme.palette.status.success
   },
   warning: {
-    color: theme.palette.status.alert
+    color: theme.palette.status.warning
   },
   critical: {
     color: theme.palette.status.error

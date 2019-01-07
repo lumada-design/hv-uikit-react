@@ -13,9 +13,20 @@
       "light": "#FF312E"
     },
     "status": {
-      "success": "#1AB000",
-      "alert": "#FF9100",
-      "error": "#CC0000"
+      "negligible": "#DEDEDE",
+      "minor": "#72CCCB",
+      "warning": "#D9C138",
+      "critical": "#E68C17",
+      "error": "#D13F3F",
+      "success": "#63A621"
+    },
+    "severity": {
+      "negligible": "#F8F8F8",
+      "minor": "#E2F4F4",
+      "warning": "#F7F2D6",
+      "critical": "#F9E7CF",
+      "error": "#F5D8D8",
+      "success": "#DFECD1"
     },
     "text": {
       "primary": "#414141",
