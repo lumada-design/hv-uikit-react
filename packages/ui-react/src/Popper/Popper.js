@@ -8,7 +8,7 @@
  *  under which the software has been supplied.
  */
 
- import React from "react";
+import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import { HvPopperContent } from "./PopperContent";
@@ -20,11 +20,11 @@ export default function withPopper(Component, popperContent) {
       open: false
     };
 
-    togglePopper = event => {
+    togglePopper = (event, isOn) => {
       const { currentTarget } = event;
-      this.setState(state => ({
-        anchorEl: currentTarget,
-        open: !state.open
+      this.setState(() => ({
+        anchorEl: isOn ? currentTarget : null,
+        open: isOn
       }));
     };
 
@@ -36,8 +36,8 @@ export default function withPopper(Component, popperContent) {
       return (
         <div>
           <Component
-            onMouseEnter={this.togglePopper}
-            onMouseLeave={this.togglePopper}
+            onMouseEnter={e => this.togglePopper(e, true)}
+            onMouseLeave={e => this.togglePopper(e, false)}
           />
           <HvPopperContent
             id={id}

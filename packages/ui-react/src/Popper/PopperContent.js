@@ -21,9 +21,13 @@ export const HvPopperContent = ({ classes, popperContent, ...props }) => (
       <Fade {...TransitionProps} timeout={350}>
         <Paper>
           {Object.keys(popperContent).map((key, index) => (
-            <div key={index}>
-              <Typography className={classes.popperContentKey}>{`${key}:`}</Typography>
-              <Typography className={classes.popperContentValue}>{popperContent[key]}</Typography>
+            <div key={index} className="key-value">
+              <Typography
+                className={classes.popperContentKey}
+              >{`${key}:`}</Typography>
+              <Typography className={classes.popperContentValue}>
+                {popperContent[key]}
+              </Typography>
             </div>
           ))}
         </Paper>
@@ -34,5 +38,7 @@ export const HvPopperContent = ({ classes, popperContent, ...props }) => (
 
 HvPopperContent.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  popperContent: PropTypes.instanceOf(Object).isRequired,
+  popperContent: PropTypes.instanceOf(Object).isRequired
 };
+
+HvPopperContent.displayName = "HvPopperContent";
