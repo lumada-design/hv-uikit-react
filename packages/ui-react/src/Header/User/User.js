@@ -15,12 +15,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Button from "@material-ui/core/Button";
+import Link from "../../Link";
 import styles from "./styles";
 
 import SettingsButton from "@material-ui/icons/SettingsOutlined";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
 
 class User extends React.Component {
   state = {
@@ -64,8 +62,26 @@ class User extends React.Component {
   };
 
   render() {
-    const { classes, userData, logout } = this.props;
+    const {
+      classes,
+      userData,
+      logout,
+      settingsData,
+      basePath,
+      useRouter
+    } = this.props;
     if (!userData) return "";
+
+    const settingsMenu = settingsData.map((elem, i) => {
+      const key = `${elem.label}_${i}`;
+      const path = `${basePath}${elem.path}`;
+
+      return (
+        <Link key={key} href={path} useRouter={useRouter}>
+          <div className={classes.menuItem}>{elem.label}</div>
+        </Link>
+      );
+    });
 
     return (
       <div className={classes.user} ref={this.setWrapperRef}>
@@ -103,12 +119,7 @@ class User extends React.Component {
             )}
           />
           {this.state.settingsMenuOpen && (
-            <div className={classes.menuList}>
-              <div className={classes.menuItem}>Event Settings</div>
-              <div className={classes.menuItem}>Work Request Settings</div>
-              <div className={classes.menuItem}>Anaytics Settings</div>
-              <div className={classes.menuItem}>User Management</div>
-            </div>
+            <div className={classes.menuList}>{settingsMenu}</div>
           )}
         </IconButton>
       </div>
@@ -119,7 +130,8 @@ class User extends React.Component {
 User.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   userData: PropTypes.instanceOf(Object),
-  logout: PropTypes.instanceOf(Function)
+  logout: PropTypes.instanceOf(Function),
+  settingsData: PropTypes.instanceOf(Object)
 };
 
 User.defaultProps = {
