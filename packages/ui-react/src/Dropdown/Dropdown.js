@@ -69,7 +69,7 @@ class HvDropdown extends React.Component {
 
       return {
         ...base,
-        margin: spacingXs,
+        margin: `${spacingXs}`,
         padding: "0px"
       };
     },
@@ -84,7 +84,7 @@ class HvDropdown extends React.Component {
 
       return {
         ...base,
-        padding: spacingXs,
+        padding: `${spacingXs}`,
         lineHeight: "12px",
         background: state.isSelected ? greyRainy : commonWhite,
         color: greyInspire,
