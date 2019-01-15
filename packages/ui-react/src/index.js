@@ -20,7 +20,6 @@ export { default as HvLogin } from "./Login";
 export { default as HvTable } from "./Table";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
-export { default as withPopper } from "./Popper";
 
 // theme
 export { default as hvTheme } from "./theme";

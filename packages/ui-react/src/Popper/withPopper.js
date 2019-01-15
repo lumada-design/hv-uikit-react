@@ -11,10 +11,10 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
-import { HvPopperContent } from "./PopperContent";
+import Content from "./Content";
 
-export default function withPopper(Component, popperContent) {
-  class HvPopper extends React.Component {
+const withPopper = (Component, content) => {
+  class Popper extends React.Component {
     state = {
       anchorEl: null,
       open: false
@@ -39,11 +39,11 @@ export default function withPopper(Component, popperContent) {
             onMouseEnter={e => this.togglePopper(e, true)}
             onMouseLeave={e => this.togglePopper(e, false)}
           />
-          <HvPopperContent
+          <Content
             id={id}
             open={open}
             anchorEl={anchorEl}
-            popperContent={popperContent}
+            content={content}
             classes={classes}
           />
         </div>
@@ -51,5 +51,7 @@ export default function withPopper(Component, popperContent) {
     }
   }
 
-  return withStyles(styles)(HvPopper);
+  return withStyles(styles)(Popper);
 }
+
+export default withPopper;

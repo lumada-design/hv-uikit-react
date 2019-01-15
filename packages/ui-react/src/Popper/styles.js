@@ -9,19 +9,18 @@
  */
 
 const styles = theme => ({
-  popperContent: {
+  content: {
+    display: "inline-block",
     border: `solid 1px ${theme.palette.grey.plain} `,
     padding: "10px 12px",
-    maxWidth: '532px'
+    maxWidth: 532
   },
-  popperContentKey: {
-    padding: theme.spacing.unit,
+  contentKey: {
     fontWeight: 600,
     display: "inline-block",
     padding: "10px 5px 10px 8px"
   },
-  popperContentValue: {
-    padding: theme.spacing.unit,
+  contentValue: {
     display: "inline-block",
     float: "right",
     padding: "10px 8px 10px 5px"

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withPopper } from "../src";
 import Button from "@material-ui/core/Button";
+import withPopper from "../src/Popper/withPopper";
 
 storiesOf("Popper", module).add("Popper", () => {
   const btn = props => (

@@ -13,10 +13,10 @@
 import React from "react";
 import { mount } from "enzyme";
 import Popper from "@material-ui/core/Popper";
-import withPopper from "../Popper";
-import Paper from "@material-ui/core/Paper";
-import { HvPopperContent } from "../PopperContent";
 import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import withPopper from "../withPopper";
+import Content from "../Content";
 
 const data = {
   data1: "test data 1",
@@ -64,9 +64,7 @@ describe("Hv Popper", () => {
 
   describe("index", () => {
     it("should be defined", () => {
-      wrapper = mount(
-        <HvPopperContent open={false} classes={{}} popperContent={{}} />
-      );
+      wrapper = mount(<Content open={false} classes={{}} content={{}} />);
       expect(wrapper).toBeDefined();
     });
 
@@ -74,16 +72,14 @@ describe("Hv Popper", () => {
       let props = wrapper.props();
 
       expect(props.classes).toBeDefined();
-      expect(props.popperContent).toBeDefined();
+      expect(props.content).toBeDefined();
       expect(props.open).toBeDefined();
     });
   });
 
   describe("is rendered correctly and behaves as expected", () => {
     it("when set to close, no popper is shown", () => {
-      wrapper = mount(
-        <HvPopperContent open={false} classes={{}} popperContent={{}} />
-      );
+      wrapper = mount(<Content open={false} classes={{}} content={{}} />);
 
       const popperProps = wrapper.find(Popper).props();
 
@@ -92,9 +88,7 @@ describe("Hv Popper", () => {
     });
 
     it("when set to open, popper is shown", () => {
-      wrapper = mount(
-        <HvPopperContent open={true} classes={{}} popperContent={{}} />
-      );
+      wrapper = mount(<Content open={true} classes={{}} content={{}} />);
 
       const popperProps = wrapper.find(Popper).props();
 
@@ -104,7 +98,7 @@ describe("Hv Popper", () => {
 
     it("when given key-value pairs, they are displayed properly in the popper", () => {
       wrapper = mount(
-        <HvPopperContent open={true} classes={{}} popperContent={data} />
+        <Content open={true} classes={{}} content={data} />
       );
 
       const keyValuePairs = wrapper.find(".key-value");
