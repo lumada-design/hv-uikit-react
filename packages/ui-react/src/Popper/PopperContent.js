@@ -16,10 +16,10 @@ import Fade from "@material-ui/core/Fade";
 import Paper from "@material-ui/core/Paper";
 
 export const HvPopperContent = ({ classes, popperContent, ...props }) => (
-  <Popper {...props} transition>
+  <Popper placement="top" {...props} transition>
     {({ TransitionProps }) => (
-      <Fade {...TransitionProps} timeout={350}>
-        <Paper>
+      <Fade {...TransitionProps} timeout={500}>
+        <Paper className={classes.popperContent}>
           {Object.keys(popperContent).map((key, index) => (
             <div key={index} className="key-value">
               <Typography

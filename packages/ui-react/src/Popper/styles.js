@@ -9,15 +9,22 @@
  */
 
 const styles = theme => ({
+  popperContent: {
+    border: `solid 1px ${theme.palette.grey.plain} `,
+    padding: "10px 12px",
+    maxWidth: '532px'
+  },
   popperContentKey: {
     padding: theme.spacing.unit,
     fontWeight: 600,
-    display: "inline-block"
+    display: "inline-block",
+    padding: "10px 5px 10px 8px"
   },
   popperContentValue: {
     padding: theme.spacing.unit,
     display: "inline-block",
-    float: "right"
+    float: "right",
+    padding: "10px 8px 10px 5px"
   }
 });
 
