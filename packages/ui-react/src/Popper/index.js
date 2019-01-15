@@ -8,4 +8,48 @@
  *  under which the software has been supplied.
  */
 
-export { default } from "./Popper";
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+import { HvPopperContent } from "./PopperContent";
+
+export default function withPopper(Component, popperContent) {
+  class HvPopper extends React.Component {
+    state = {
+      anchorEl: null,
+      open: false
+    };
+
+    togglePopper = (event, isOn) => {
+      const { currentTarget } = event;
+      this.setState(() => ({
+        anchorEl: isOn ? currentTarget : null,
+        open: isOn
+      }));
+    };
+
+    render() {
+      const { classes } = this.props;
+      const { anchorEl, open } = this.state;
+      const id = open ? "simple-popper" : null;
+
+      return (
+        <div>
+          <Component
+            onMouseEnter={e => this.togglePopper(e, true)}
+            onMouseLeave={e => this.togglePopper(e, false)}
+          />
+          <HvPopperContent
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            popperContent={popperContent}
+            classes={classes}
+          />
+        </div>
+      );
+    }
+  }
+
+  return withStyles(styles)(HvPopper);
+}
