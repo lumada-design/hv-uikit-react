@@ -21,6 +21,7 @@ const Main = ({
   menuData,
   userData,
   userLogout,
+  settingsData,
   basePath,
   useRouter,
   companyLogo,
@@ -30,7 +31,13 @@ const Main = ({
     <Toolbar variant="dense" classes={classes.root}>
       <Logo companyLogo={companyLogo} productLogo={productLogo} />
       <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
-      <User userData={userData} logout={userLogout} />
+      <User
+        userData={userData}
+        logout={userLogout}
+        settingsData={settingsData}
+        basePath={basePath}
+        useRouter={useRouter}
+      />
     </Toolbar>
   </AppBar>
 );

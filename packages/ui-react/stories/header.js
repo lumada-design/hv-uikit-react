@@ -13,6 +13,25 @@ const menuData = [
     path: "/events"
   }
 ];
+const settingsData = [
+  {
+    label: "Event Settings",
+    path: "/settings",
+    isActive: true
+  },
+  {
+    label: "Work Request Settings",
+    path: "/"
+  },
+  {
+    label: "Anaytics Settings",
+    path: "/"
+  },
+  {
+    label: "User Management",
+    path: "/"
+  }
+];
 
 const userData = {
   name: "Andrew Jennings",
@@ -22,5 +41,10 @@ const userData = {
 const logout = () => {};
 
 storiesOf("Header", module).add("Header", () => (
-  <HvHeader menuData={menuData} userData={userData} userLogout={logout} />
+  <HvHeader
+    menuData={menuData}
+    userData={userData}
+    userLogout={logout}
+    settingsData={settingsData}
+  />
 ));
