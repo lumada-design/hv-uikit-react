@@ -9,34 +9,12 @@
  */
 
 const styles = theme => ({
-  user: {
+  settings: {
     position: "absolute",
     textAlign: "right",
-    right: 60
+    right: 10
   },
-  userInfo: {
-    float: "left",
-    marginTop: 12,
-    marginRight: 10,
-    "& p": {
-      color: theme.palette.text.main
-    }
-  },
-  userName: {
-    color: theme.palette.text.main,
-    textTransform: "capitalize",
-    fontSize: "15px",
-    fontWeight: "400",
-    lineHeight: "16px"
-  },
-  userRole: {
-    color: theme.palette.text.secondary,
-    textTransform: "capitalize",
-    fontSize: "13px",
-    fontWeight: "400",
-    lineHeight: "16px"
-  },
-  userButton: {
+  settingsButton: {
     boxSizing: "content-box",
     color: theme.palette.text.main,
     width: 50,
@@ -44,17 +22,17 @@ const styles = theme => ({
       backgroundColor: "transparent"
     }
   },
-  userIcon: {
+  settingsIcon: {
+    fontSize: 35,
     border: `solid 2px transparent`,
     borderBottomWidth: "0px",
-    fontSize: 35,
     position: "relative",
-    background: "transparent"
+    background: `${theme.palette.common.white}`
   },
   dropdown: {
     border: `solid 2px ${theme.palette.grey.passive}`,
     borderBottomWidth: "0px",
-    background: `${theme.palette.common.white}`
+    zIndex: "999"
   },
   menuList: {
     border: `solid 2px ${theme.palette.grey.passive}`,
@@ -64,7 +42,7 @@ const styles = theme => ({
     backgroundColor: `${theme.palette.common.white}`,
     top: 47,
     right: 17,
-    zIndex: "-1"
+    zIndex: "998"
   },
   menuItem: {
     display: "block",

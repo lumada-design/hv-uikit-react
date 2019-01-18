@@ -51,7 +51,31 @@ describe("User withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should logout when the click on the user happens", () => {
+  it("should render dropdown properly", () => {
+    wrapper = mount(
+      <UserWithStyles
+        userData={{ name: "UserName", role: "UserRole" }}
+        dropDown={false}
+      />
+    );
+
+    const divWithoutDropdown = wrapper.find("div");
+    expect(divWithoutDropdown.length).toBe(2);
+
+    wrapper = mount(
+      <UserWithStyles
+        userData={{ name: "UserName", role: "UserRole" }}
+        dropDown={true}
+      />
+    );
+
+    const divWithDropdown = wrapper.find("div");
+    expect(divWithDropdown.length).toBe(5);
+    expect(divWithDropdown.at(3).props().children).toBe("Profile");
+    expect(divWithDropdown.at(4).props().children).toBe("Logout");
+  });
+
+  it("should logout when the click on the Logout button", () => {
     const logout = jest.fn();
     const logoutCallback = () => logout();
 
@@ -59,10 +83,14 @@ describe("User withStyles", () => {
       <UserWithStyles
         userData={{ name: "UserName", role: "UserRole" }}
         logout={logoutCallback}
+        dropDown={true}
       />
     );
 
-    wrapper.find(IconButton).simulate("click");
+    wrapper
+      .find("div")
+      .at(4)
+      .simulate("click");
     expect(logout).toHaveBeenCalled();
   });
 });

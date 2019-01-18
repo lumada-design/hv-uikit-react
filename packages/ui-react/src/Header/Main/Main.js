@@ -15,32 +15,98 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Logo from "../Logo";
 import Menu from "../Menu";
 import User from "../User";
+import Settings from "../Settings";
 
-const Main = ({
-  classes,
-  menuData,
-  userData,
-  userLogout,
-  settingsData,
-  basePath,
-  useRouter,
-  companyLogo,
-  productLogo
-}) => (
-  <AppBar color="default">
-    <Toolbar variant="dense" classes={classes.root}>
-      <Logo companyLogo={companyLogo} productLogo={productLogo} />
-      <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
-      <User
-        userData={userData}
-        logout={userLogout}
-        settingsData={settingsData}
-        basePath={basePath}
-        useRouter={useRouter}
-      />
-    </Toolbar>
-  </AppBar>
-);
+class Main extends React.Component {
+  state = {
+    openUserMenu: false,
+    openSettingsMenu: false
+  };
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  };
+
+  setUserWrapperRef = node => {
+    this.userWrapperRef = node;
+  };
+
+  setSettingsWrapperRef = node => {
+    this.settingsWrapperRef = node;
+  };
+
+  handleClickOutside = event => {
+    if (
+      (this.userWrapperRef || this.settingsWrapperRef) &&
+      !(
+        this.userWrapperRef.contains(event.target) ||
+        this.settingsWrapperRef.contains(event.target)
+      )
+    ) {
+      this.setState({
+        openUserMenu: false,
+        openSettingsMenu: false
+      });
+    }
+  };
+
+  toggleUserMenu = () => {
+    this.setState({
+      openUserMenu: !this.state.openUserMenu,
+      openSettingsMenu: false
+    });
+  };
+
+  toggleSettingsMenu = () => {
+    this.setState({
+      openSettingsMenu: !this.state.openSettingsMenu,
+      openUserMenu: false
+    });
+  };
+
+  render() {
+    const {
+      classes,
+      menuData,
+      userData,
+      userLogout,
+      settingsData,
+      basePath,
+      useRouter,
+      companyLogo,
+      productLogo
+    } = this.props;
+
+    return (
+      <AppBar color="default">
+        <Toolbar variant="dense" classes={classes.root}>
+          <Logo companyLogo={companyLogo} productLogo={productLogo} />
+          <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
+          <User
+            userData={userData}
+            logout={userLogout}
+            onClick={this.toggleUserMenu}
+            dropDown={this.state.openUserMenu}
+            userMenuRef={this.setUserWrapperRef}
+          />
+          <Settings
+            settingsData={settingsData}
+            userData={userData}
+            basePath={basePath}
+            useRouter={useRouter}
+            dropDown={this.state.openSettingsMenu}
+            onClick={this.toggleSettingsMenu}
+            settingsMenuRef={this.setSettingsWrapperRef}
+          />
+        </Toolbar>
+      </AppBar>
+    );
+  }
+}
 
 Main.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
