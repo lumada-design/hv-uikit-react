@@ -12,7 +12,7 @@ import createTypography from "@material-ui/core/styles/createTypography";
 import theme from "@hv-ui/themes/dist/theme";
 import palette from "./palette";
 
-export default createTypography(palette, {
+const typography = createTypography(palette, {
   useNextVariants: true,
   suppressDeprecationWarnings: true,
   fontFamily: theme.typography.fontFamily,
@@ -71,3 +71,20 @@ export default createTypography(palette, {
     fontWeight: theme.typography.buttonText.fontWeight
   }
 });
+
+typography.info = {
+  color: theme.typography.infoText.color,
+  fontSize: theme.typography.infoText.fontSize,
+  letterSpacing: theme.typography.infoText.letterSpacing,
+  lineHeight: theme.typography.infoText.lineHeight,
+  fontWeight: theme.typography.infoText.fontWeight
+};
+
+typography.sliderTrack = {
+  fontSize: theme.typography.sliderTrackText.fontSize,
+  letterSpacing: theme.typography.sliderTrackText.letterSpacing,
+  lineHeight: theme.typography.sliderTrackText.lineHeight,
+  fontWeight: theme.typography.sliderTrackText.fontWeight
+};
+
+export default typography;
