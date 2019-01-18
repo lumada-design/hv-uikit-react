@@ -126,6 +126,13 @@
       "lineHeight": "16px",
       "fontWeight": "400"
     },
+    "sliderTrackText": {
+      "color": "#414141",
+      "fontSize": "10px",
+      "letterSpacing": "0.02em",
+      "lineHeight": "12px",
+      "fontWeight": "400"
+    },
     "disabledText": {
       "color": "#999999",
       "fontSize": "12px",

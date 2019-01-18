@@ -39,6 +39,8 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
+    "rc-slider": "8.6.3",
+    "rc-tooltip": "^3.7.3",	
     "react": "^16.6.3",
     "react-date-range": "^1.0.0-beta",
     "react-day-picker": "^7.2.4",
