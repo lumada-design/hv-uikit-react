@@ -110,7 +110,8 @@
       "color": "#414141",
       "fontSize": "12px",
       "letterSpacing": "0.02em",
-      "lineHeight": "16px"
+      "lineHeight": "16px",
+      "fontWeight": "600"
     },
     "buttonText": {
       "color": "#FFFFFF",
