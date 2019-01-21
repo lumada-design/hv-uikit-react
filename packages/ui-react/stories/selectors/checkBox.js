@@ -1,10 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvCheckBox } from "../../src";
+import { HvCheckBox, HvShowCase, HvShowCaseHeader } from "../../src";
 
 const style = {
   fontSize: "inherit",
-  margin: "10px 10px",
   float: "left"
 }
 
@@ -79,35 +78,34 @@ class WrapperWithState extends React.Component {
 storiesOf("Checkbox", module).add(`Checkbox`, () =>
   (
     <>
-      <div style={style}>
+      <HvShowCaseHeader reviewed date="2019/Jan/4" />
+      <HvShowCase title="Simple checkbox" description="simple checkbox with no state management">
         <HvCheckBox />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
+      <HvShowCase title="Disabled simple checkbox" description="disabled simple checkbox with no state management">
         <HvCheckBox disabled />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
-        <HvCheckBox label="disabled" disabled />
-      </div>
-
-      <div style={style}>
+      <HvShowCase title="Checkbox with label" description="checkbox with label and no state management">
         <HvCheckBox label="label" />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
+      <HvShowCase title="Disabled Checkbox with label" description="disabled checkbox with label and no state management">
+        <HvCheckBox label="disabled" disabled />
+      </HvShowCase>
+
+      <HvShowCase title="Checkbox with click action" description="checkbox with click action and no state management">
         <HvCheckBox label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
-        <HvCheckBox label="label" disabled />
-      </div>
+      <HvShowCase title="Disabled checkbox with click action" description="checkbox with click action and no state management">
+        <HvCheckBox disabled label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
+      </HvShowCase>
 
-      <div style={style}>
-        <HvCheckBox label="click me!" value="A" disabled onChange={event => alert(`my value is ${event.target.value}`)} />
-      </div>
-
-      <WrapperWithState />
+      <HvShowCase title="Checkbox wrapped with state management" description="Checkbox wrapped in a component enabling state management">
+        <WrapperWithState />
+      </HvShowCase>
 
     </>
   )

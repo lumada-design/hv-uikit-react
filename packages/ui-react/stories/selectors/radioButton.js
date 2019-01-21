@@ -1,10 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvRadio } from "../../src";
+import { HvRadio, HvShowCase, HvShowCaseHeader } from "../../src";
 
 const style = {
   fontSize: "inherit",
-  margin: "10px 10px",
   float: "left"
 }
 
@@ -54,36 +53,34 @@ class WrapperWithState extends React.Component {
 storiesOf("Radio", module).add(`Radio`, () =>
   (
     <>
-      <div style={style}>
+      <HvShowCaseHeader reviewed date="2019/Jan/4" />
+      <HvShowCase title="Simple radio" description="simple radio with no state management">
         <HvRadio />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
+      <HvShowCase title="Disabled simple radio" description="disabled simple radio with no state management">
         <HvRadio disabled />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
-        <HvRadio label="disabled" disabled />
-      </div>
-
-      <div style={style}>
+      <HvShowCase title="radio with label" description="radio with label and no state management">
         <HvRadio label="label" />
-      </div>
+      </HvShowCase>
 
-      <div style={style}>
-        <HvRadio label="click me!" value={valueA} onChange={event => alert(`my value is ${event.target.value}`)} />
-      </div>
+      <HvShowCase title="Disabled radio with label" description="disabled radio with label and no state management">
+        <HvRadio label="disabled" disabled />
+      </HvShowCase>
 
-      <div style={style}>
-        <HvRadio label="label" disabled />
-      </div>
+      <HvShowCase title="Radio with click action" description="radio with click action and no state management">
+        <HvRadio label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
+      </HvShowCase>
 
-      <div style={style}>
-        <HvRadio label="click me!" value={valueA} onChange={event => alert(`my value is ${event.target.value}`)} disabled />
-      </div>
+      <HvShowCase title="Disabled radio with click action" description="radio with click action and no state management">
+        <HvRadio disabled label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
+      </HvShowCase>
 
-
-      <WrapperWithState />
+      <HvShowCase title="Radio wrapped with state management" description="radio wrapped in a component enabling state management">
+        <WrapperWithState />
+      </HvShowCase>
 
     </>
   )

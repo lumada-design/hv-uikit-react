@@ -21,6 +21,7 @@ export { default as HvTable } from "./Table";
 export { default as HvSlider } from "./Slider";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
+export { default as HvShowCase, HvShowCaseHeader } from "./Showcase";
 
 // theme
 export { default as hvTheme } from "./theme";
