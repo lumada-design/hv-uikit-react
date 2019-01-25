@@ -1,11 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvSlider } from "../src";
-
-const buttonStyles = {
-  margin: "50px",
-  width: "500px"
-}
+import { HvSlider, HvShowCase, HvShowCaseHeader } from "../src";
 
 const knobProperties = [
   {
@@ -36,7 +31,7 @@ const knobProperties = [
   }
 ]
 
-const TwoKnobProperties = [
+const threeKnobProperties = [
   {
     color: "#72cccb",
     dragColor: "#96d9d8",
@@ -54,7 +49,7 @@ const TwoKnobProperties = [
   }
 ]
 
-const threeKnobProperties = [
+const threeKnobFixedProperties = [
   {
     color: "yellow",
     dragColor: "black",
@@ -63,7 +58,7 @@ const threeKnobProperties = [
   {
     color: "green",
     dragColor: "red",
-    defaultValue: 80
+    defaultValue: 50
   },
   {
     color: "purple",
@@ -90,30 +85,23 @@ const formatMark = (mark) => `${mark}%`
 
 storiesOf("Slider", module).add("Multi-Slider", () => (
   <>
-    <div style={buttonStyles}>
-      <h3> Mark in tooltip</h3>
-      <i>An invisible knob exists in the position 100, making impossible to choose that value (no overlapping)</i>
-      <p />
+    <HvShowCaseHeader reviewed date="2019/Jan/18" />
+    
+    <HvShowCase title="Mark in tooltip" description="An invisible knob exist in the position 100, making impossible to choose that value (no overlapping)">
       <HvSlider formatMark={formatMark} divisionQuantity={100} minPointValue={0} maxPointValue={100} markStep={10} knobProperties={knobProperties} />
-    </div>
+    </HvShowCase>
 
-    <div style={buttonStyles}>
-      <h3> Three knobs</h3>
-      <p />
-      <HvSlider markStep={10} knobProperties={TwoKnobProperties} />
-    </div>
-
-    <div style={buttonStyles}>
-      <h3> Three knobs with the last one fixed</h3>
-      <p />
+    <HvShowCase title="Three knobs" description="Shows the possibility of manipulating N quantity of knobs and a range">
       <HvSlider markStep={10} knobProperties={threeKnobProperties} />
-    </div>
+    </HvShowCase>
 
-    <div style={buttonStyles}>
-      <h3> Two knobs with overlapping</h3>
-      <i> Range from 0.10 to 0.70 with 30 points defined. Each point represents 0.02 units.</i>
-      <p />
-      <HvSlider markStep={10} knobProperties={scaledKnobProperties} minPointValue={0.1} maxPointValue={0.7} divisionQuantity={30} noOverlap={false} markDigits={2} />
-    </div>
+    <HvShowCase title="Three knobs different color" description="Shows the possibility manipulating the color of the knobs">
+      <HvSlider markStep={10} knobProperties={threeKnobFixedProperties} />
+    </HvShowCase>
+
+    <HvShowCase title="Two knobs with overlapping and a fractionary scale" description=" Range from 0.10 to 0.70 with 30 points defined. Each point represents 0.02 units.">
+      <HvSlider markStep={10} knobProperties={scaledKnobProperties} minPointValue={0.1} maxPointValue={0.7} divisionQuantity={30} noOverlap={false} markDigits={2} />  
+    </HvShowCase>
+
   </>
 ));
