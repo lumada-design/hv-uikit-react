@@ -71,22 +71,22 @@ const styles = theme => ({
   },
   textPrimary: {
     color: theme.palette.primary.main,
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: "transparent",
     "&:hover": {
       backgroundColor: theme.palette.grey.foggy,
     },
     "&:active": {
-      backgroundColor: theme.palette.common.white
+      backgroundColor: "transparent"
     },
     "&$disabled": {
-      backgroundColor: theme.palette.common.white,
+      backgroundColor: "transparent",
       color: theme.palette.grey.passive,
       border: "none",
       cursor: "not-allowed",
       pointerEvents: "auto"
     },
     "&$disabled&:hover": {
-      backgroundColor: theme.palette.common.white,
+      backgroundColor: "transparent",
       color: theme.palette.grey.passive,
       border: "none",
       cursor: "not-allowed",
