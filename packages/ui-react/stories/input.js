@@ -55,7 +55,7 @@ const HvShowCaseStyle = {
 
 storiesOf("Input", module).add(`Input`, () => (
   <>
-    <HvShowCaseHeader reviewed date="2019/Jan/4" />
+    <HvShowCaseHeader reviewed date="2019/Jan/25" />
 
     <HvShowCase title="Input" style={HvShowCaseStyle.min}>
       <HvInput inputTextConfiguration={inputTextConfiguration} />
