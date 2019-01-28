@@ -77,4 +77,14 @@ storiesOf("Table", module)
       showPagination={false}
       sortable={false}
     />
+  ))
+  .add("Table with no data",  () => (
+    <HvTable
+      data={[]}
+      columns={getColumns(theme, dismiss)}
+      pageSize={5}
+      resizable={false}
+      showPagination={false}
+      sortable={false}
+    />
   ));
