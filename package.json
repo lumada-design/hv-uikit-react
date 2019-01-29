@@ -11,13 +11,14 @@
     "url": "https://10.76.48.133/hv-design-system/hv-ui.git"
   },
   "devDependencies": {
-    "lerna": "^3.5.1"
+    "lerna": "^3.5.1",
+    "sleep-ms": "^2.0.1"
   },
   "scripts": {
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "start": "lerna run start --parallel",
-    "dev": "lerna run dev --parallel",
+    "dev": "lerna run dev --stream",
     "test": "lerna run test --parallel",
     "link": "lerna run link --parallel"
   }

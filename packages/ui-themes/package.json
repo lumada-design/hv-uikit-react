@@ -11,11 +11,11 @@
     "url": "https://10.76.48.133/hv-design-system/hv-ui.git"
   },
   "scripts": {
-    "dev": "npm run clean & watch 'npm run build' src",
+    "dev": "npm run clean & npm run build",
     "build": "npm-run-all build:*",
     "build:to-scss": "json-to-scss src/*.* dist",
     "build:to-json": "copyfiles src/*.json dist -f",
-    "clean": "del dist",
+    "clean": "npx del dist",
     "prepublish": "npm-run-all clean build",
     "postpublish": "npm run clean",
     "link": "npm link"
