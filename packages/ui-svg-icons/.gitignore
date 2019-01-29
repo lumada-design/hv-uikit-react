@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules
+
+# cache
+.cache
+.npm
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# next.js build output
+.next
+
+# OSX
+.DS_Store
+
+# tests
+coverage
+__snapshots__
+
+
+# build folder
+dist
+core
