@@ -48,7 +48,7 @@ class HvTable extends React.Component {
   };
 
   getPaginationProps = () => {
-    const { data } = this.props;
+    const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
     const { pageSize = data.length, onPageSizeChange, pages } = this.props;
 
@@ -58,7 +58,7 @@ class HvTable extends React.Component {
       ...(showPagination && onPageSizeChange && { onPageSizeChange }),
       ...(showPagination && pages && { pages }),
 
-      ...(pageSize && { defaultPageSize: pageSize }),
+      ...(propsPageSize !== undefined && {defaultPageSize: propsPageSize} || pageSize && { defaultPageSize: pageSize }),
 
       ...{ showPageSizeOptions: showPageSize }
     };
