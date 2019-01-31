@@ -14,10 +14,9 @@ import { HvButton, buttonTypes } from "../../../src";
 import HvLink from "../../../src/Link";
 
 const ActionsList = ({ classes, eventId, dismiss, close }) => {
-  const path = `events/${eventId}`;
   return (
     <div className={classes.root}>
-      <HvLink href={path}>
+      <HvLink pathname="events" query={{eventId}}>
         <HvButton style={{borderBottom:"none"}} colorType={buttonTypes.secondary} className={classes.button}>View</HvButton>
       </HvLink>
       <HvButton

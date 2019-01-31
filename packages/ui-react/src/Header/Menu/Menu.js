@@ -11,13 +11,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
+
 import Link from "../../Link";
-import styles from "./styles";
 
 const Menu = ({ classes, menuData, basePath, useRouter }) => {
   if (!menuData) return "";
@@ -27,7 +26,7 @@ const Menu = ({ classes, menuData, basePath, useRouter }) => {
     const path = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} href={path} useRouter={useRouter}>
+      <Link key={key} pathname={path} useRouter={useRouter}>
         <ListItem button className={classes.listItem}>
           <div className={classnames(elem.isActive ? classes.selector : "")} />
           <ListItemText
