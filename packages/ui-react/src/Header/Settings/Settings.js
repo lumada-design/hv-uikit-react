@@ -35,7 +35,7 @@ const Settings = ({
     const path = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} href={path} useRouter={useRouter}>
+      <Link key={key} pathname={path} useRouter={useRouter}>
         <div className={classes.menuItem}>{elem.label}</div>
       </Link>
     );

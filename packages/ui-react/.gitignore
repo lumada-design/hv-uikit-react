@@ -31,8 +31,6 @@ node_modules
 
 # tests
 coverage
-__snapshots__
-
 
 # build folder
 dist

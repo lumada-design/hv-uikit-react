@@ -16,10 +16,10 @@ const styles = theme => ({
     flex: 1,
     justifyContent: "left",
     marginLeft: `${theme.spacing.lg}px`,
-    "& > a": {
+    "& > a, > div": {
       paddingRight: `${theme.spacing.xs}px`
     },
-    "& > a:last-child": {
+    "& > a:last-child, > div:last-child": {
       paddingRight: "0px"
     }
   },
