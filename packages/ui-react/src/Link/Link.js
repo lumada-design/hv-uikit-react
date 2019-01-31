@@ -13,15 +13,12 @@ import PropTypes from "prop-types";
 import withConfig from "../config/withConfig";
 
 const HvLink = props => {
-  const { classes, children, pathname, query, config, useRouter } = props;
+  const { classes, children, route, params, options, config, useRouter } = props;
 
   const handleClick = e => {
     if (useRouter && config.router) {
       e.preventDefault();
-      config.router.push({
-        pathname,
-        query
-      });
+      config.router.Router.pushRoute(route, params, options);
     }
   };
 
@@ -30,7 +27,7 @@ const HvLink = props => {
       {children}
     </div>
   ) : (
-    <a href={pathname} className={classes.a}>
+    <a href={route} className={classes.a}>
       {children}
     </a>
   );
@@ -39,15 +36,17 @@ const HvLink = props => {
 HvLink.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   children: PropTypes.node.isRequired,
-  pathname: PropTypes.string.isRequired,
-  query: PropTypes.instanceOf(Object),
+  route: PropTypes.string.isRequired,
+  params: PropTypes.instanceOf(Object),
+  options: PropTypes.instanceOf(Object),
   config: PropTypes.instanceOf(Object).isRequired,
   useRouter: PropTypes.bool
 };
 
 HvLink.defaultProps = {
   useRouter: false,
-  query: {}
+  params: {},
+  options: {}
 };
 
 export default withConfig(HvLink);

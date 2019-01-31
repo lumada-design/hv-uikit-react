@@ -82,7 +82,7 @@ class NavigationAnchors extends React.Component {
             if (href) {
               return (
                 <HvLink
-                  pathname={`#${options[index].value}`}
+                  route={`#${options[index].value}`}
                   key={option.label}
                 >
                   {listItem}

@@ -915,7 +915,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           >
                             <WithStyles(Component)
                               key="Option1"
-                              pathname="#Value1"
+                              route="#Value1"
                             >
                               <Component
                                 classes={
@@ -923,7 +923,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value1"
+                                route="#Value1"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -1294,8 +1294,9 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value1"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value1"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
@@ -2277,7 +2278,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                             </WithStyles(Component)>
                             <WithStyles(Component)
                               key="Option2"
-                              pathname="#Value2"
+                              route="#Value2"
                             >
                               <Component
                                 classes={
@@ -2285,7 +2286,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value2"
+                                route="#Value2"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -2656,8 +2657,9 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value2"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value2"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
@@ -3639,7 +3641,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                             </WithStyles(Component)>
                             <WithStyles(Component)
                               key="Option3"
-                              pathname="#Value3"
+                              route="#Value3"
                             >
                               <Component
                                 classes={
@@ -3647,7 +3649,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value3"
+                                route="#Value3"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -4018,8 +4020,9 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value3"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value3"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
@@ -9075,7 +9078,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                           >
                             <WithStyles(Component)
                               key="Option1"
-                              pathname="#Value1"
+                              route="#Value1"
                             >
                               <Component
                                 classes={
@@ -9083,7 +9086,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value1"
+                                route="#Value1"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -9454,8 +9457,9 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value1"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value1"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
@@ -10437,7 +10441,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                             </WithStyles(Component)>
                             <WithStyles(Component)
                               key="Option2"
-                              pathname="#Value2"
+                              route="#Value2"
                             >
                               <Component
                                 classes={
@@ -10445,7 +10449,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value2"
+                                route="#Value2"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -10816,8 +10820,9 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value2"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value2"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
@@ -11799,7 +11804,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                             </WithStyles(Component)>
                             <WithStyles(Component)
                               key="Option3"
-                              pathname="#Value3"
+                              route="#Value3"
                             >
                               <Component
                                 classes={
@@ -11807,7 +11812,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     "a": "Component-a-52",
                                   }
                                 }
-                                pathname="#Value3"
+                                route="#Value3"
                                 theme={
                                   Object {
                                     "breakpoints": Object {
@@ -12178,8 +12183,9 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
-                                  pathname="#Value3"
-                                  query={Object {}}
+                                  options={Object {}}
+                                  params={Object {}}
+                                  route="#Value3"
                                   theme={
                                     Object {
                                       "breakpoints": Object {
