@@ -16,11 +16,11 @@ import HvButton , { buttonTypes } from "../../Button";
 import Link from "../../Link";
 
 const Footer = ({ classes, data, basePath, useRouter }) => {
-  const path = `${basePath}${data.id}`;
+  const route = `${basePath}${data.id}`;
 
   return (
     <CardActions className={classes.root}>
-      <Link pathname={path} useRouter={useRouter}>
+      <Link route={route} useRouter={useRouter}>
         <HvButton colorType={buttonTypes.primary}>View</HvButton>
       </Link>
       <HvButton colorType={buttonTypes.secondary} disabled>Dismiss</HvButton>

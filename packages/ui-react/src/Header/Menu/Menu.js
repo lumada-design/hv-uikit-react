@@ -23,10 +23,10 @@ const Menu = ({ classes, menuData, basePath, useRouter }) => {
 
   const menu = menuData.map((elem, i) => {
     const key = `${elem.label}_${i}`;
-    const path = `${basePath}${elem.path}`;
+    const route = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} pathname={path} useRouter={useRouter}>
+      <Link key={key} route={route} useRouter={useRouter}>
         <ListItem button className={classes.listItem}>
           <div className={classnames(elem.isActive ? classes.selector : "")} />
           <ListItemText

@@ -32,10 +32,10 @@ const Settings = ({
 
   const settingsMenu = settingsData.map((elem, i) => {
     const key = `${elem.label}_${i}`;
-    const path = `${basePath}${elem.path}`;
+    const route = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} pathname={path} useRouter={useRouter}>
+      <Link key={key} route={route} useRouter={useRouter}>
         <div className={classes.menuItem}>{elem.label}</div>
       </Link>
     );
