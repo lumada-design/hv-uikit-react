@@ -102,7 +102,7 @@ class HvTable extends React.Component {
   };
 
   render() {
-    const { classes, columns, data } = this.props;
+    const { classes, columns, data, resizable } = this.props;
 
     const tableStyles = tableStyleOverrides(classes);
 
@@ -136,7 +136,7 @@ class HvTable extends React.Component {
         data={data}
         columns={columns}
         className="-highlight"
-        resizable={false}
+        resizable={resizable}
       />
     );
   }
