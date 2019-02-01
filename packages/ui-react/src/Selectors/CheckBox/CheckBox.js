@@ -73,6 +73,7 @@ const prepareIcon = (classes, disabled) => {
 const HvCheckbox = props => {
   const {
     classes,
+    className,
     checked,
     indeterminate,
     disabled,
@@ -87,13 +88,15 @@ const HvCheckbox = props => {
   const materialPrimaryColor = "primary";
   const icons = prepareIcon(classes, disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const formClasses = classNames(labelClass, className);
+  const transformedValue = value.toString(10);
 
   return (
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={labelClass}
+      className={formClasses}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -108,7 +111,7 @@ const HvCheckbox = props => {
           disabled={disabled}
           disableRipple
           onChange={onChange}
-          value={value}
+          value={transformedValue}
           checked={checked}
           indeterminate={indeterminate}
           {...propsLabel}
@@ -124,6 +127,10 @@ HvCheckbox.propTypes = {
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /** 
+   * a classname that will be applied at the root object. 
+   */
+  className: PropTypes.string,
   /**
    * If set to `true` the checkbox is disabled and the onClick function will not be called.
    */
@@ -145,7 +152,10 @@ HvCheckbox.propTypes = {
    * the value of the checkbox.
    * this value will be returned in the event object generated for the onChange callback
    */
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   /**
    * The label to be added to the checkbox.
    */
@@ -171,6 +181,7 @@ HvCheckbox.propTypes = {
 HvCheckbox.defaultProps = {
   value: "",
   label: "",
+  className: "",
   checked: undefined,
   indeterminate: undefined,
   disabled: false,
