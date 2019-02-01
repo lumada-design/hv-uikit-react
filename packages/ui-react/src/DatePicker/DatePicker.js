@@ -15,6 +15,7 @@ import moment from "moment";
 import Typography from "@material-ui/core/Typography";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import { DateUtils } from "react-day-picker";
+import { getDayStart, getDayEnd } from "./utils";
 
 import "react-day-picker/lib/style.css";
 import "./styles.css";
@@ -45,10 +46,16 @@ class HvDatePicker extends React.Component {
 
   handleDayChange(day) {
     const range = DateUtils.addDayToRange(day, this.state);
+
+    const rangeWithFullDay = Object.assign({}, range, {
+      from: getDayStart(range.from),
+      to: getDayEnd(range.to)
+    });
+
     const { onChange } = this.props;
 
-    this.setState(range);
-    onChange(range);
+    this.setState(rangeWithFullDay);
+    onChange(rangeWithFullDay);
   }
 
   handleReset() {
