@@ -30,9 +30,8 @@
     "link": "npm link"
   },
   "dependencies": {
-    "@hv-ui/svg-icons": "^1.0.1-canary.4",
-    "@hv-ui/themes": "^1.0.1-canary.11",
-    "@kenshooui/react-multi-select": "1.0.67",
+    "@hv-ui/svg-icons": "^1.0.1-canary.3",
+    "@hv-ui/themes": "^1.0.1-canary.10",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "@storybook/react": "^4.0.7",
