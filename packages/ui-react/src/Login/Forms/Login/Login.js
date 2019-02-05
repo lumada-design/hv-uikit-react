@@ -11,12 +11,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "../../../Input";
-import HvButton, {buttonTypes} from "../../../Button";
-import HvCheckbox from "../../../Selectors/CheckBox"
+import HvButton, { buttonTypes } from "../../../Button";
+import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
 import classNames from "classnames";
-import MessageElement from "../MessageElement"
-
+import MessageElement from "../MessageElement";
 
 /**
  * Error link button element.
@@ -27,18 +26,17 @@ import MessageElement from "../MessageElement"
  */
 function RecoveryLinkButton(props) {
   return (
-      <div className={props.classes.forgotCredentials}>
-        <HvButton
-            colorType="link"
-            onClick={props.onClick}
-            classes={{textPrimary: props.classes.linkButtonTypography}}
-        >
-          Forgot your credentials?
-        </HvButton>
-      </div>
+    <div className={props.classes.forgotCredentials}>
+      <HvButton
+        colorType="link"
+        onClick={props.onClick}
+        classes={{ textPrimary: props.classes.linkButtonTypography }}
+      >
+        Forgot your credentials?
+      </HvButton>
+    </div>
   );
-};
-
+}
 
 /**
  * Login main form.
@@ -47,11 +45,20 @@ class Login extends React.Component {
   debugger;
   state = {
     password: "",
-    username: localStorage.getItem("username") != null ? localStorage.getItem("username") : "",
+    username: "",
     isLogging: false,
     rememberMe: false,
     loginError: false
   };
+
+  componentDidMount() {
+    this.setState({
+      username:
+        localStorage.getItem("username") != null
+          ? localStorage.getItem("username")
+          : ""
+    });
+  }
 
   /**
    * Submit of the Form. Asynchronous call of the passed login function.
@@ -64,20 +71,22 @@ class Login extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    const {username, password, rememberMe} = this.state;
-    const {login} = this.props;
+    const { username, password, rememberMe } = this.state;
+    const { login } = this.props;
 
-    this.setState({isLogging: true});
-    this.setState({loginError: false})
+    this.setState({ isLogging: true });
+    this.setState({ loginError: false });
 
-    rememberMe ? localStorage.setItem("username", username) : localStorage.removeItem("username");
+    rememberMe
+      ? localStorage.setItem("username", username)
+      : localStorage.removeItem("username");
 
     try {
-      await login({username, password});
+      await login({ username, password });
     } catch (error) {
-      this.setState({loginError: true})
+      this.setState({ loginError: true });
     }
-    this.setState({isLogging: false});
+    this.setState({ isLogging: false });
   };
 
   /**
@@ -85,10 +94,9 @@ class Login extends React.Component {
    *
    * @param e
    */
-  handleRememberMe = (e) => {
-    this.setState({"rememberMe": e.target.checked});
+  handleRememberMe = e => {
+    this.setState({ rememberMe: e.target.checked });
   };
-
 
   /**
    * Sets the value of the state of the passed parameter.
@@ -97,87 +105,103 @@ class Login extends React.Component {
    * @returns {function(*): *}
    */
   handleInputChange = name => value => {
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
     return value;
   };
 
-
   render() {
     const {
-      classes, logo, titleText, titleComponent, onClick, allowRecover, allowRememberMe, errorLoginIcon
+      classes,
+      logo,
+      titleText,
+      titleComponent,
+      onClick,
+      allowRecover,
+      allowRememberMe,
+      errorLoginIcon
     } = this.props;
-    const {username, password, isLogging, loginError} = this.state;
+    const { username, password, isLogging, loginError } = this.state;
 
     return (
+      <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
+        <div className={classes.title}>
+          <Title
+            titleText={titleText}
+            logo={logo}
+            titleComponent={titleComponent}
+          />
+        </div>
 
-        <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
-
-          <div className={classes.title}>
-            <Title titleText={titleText} logo={logo} titleComponent={titleComponent}/>
-          </div>
-
-          <div className={classes.errorMessageContainer}>
-            {loginError ?
-                <MessageElement
-                    iconElement={errorLoginIcon}
-                    icon={classes.icon}
-                    showMessage={classes.showMessage}
-                    message="Incorrect Username or Password. Try again."/>
-                : null}
-          </div>
-
-          <div className={classes.inputUser}>
-            <Input
-                inputTextConfiguration={{
-                  inputLabel: "Username",
-                  placeholder: "Enter text",
-                  infoText: ""
-                }}
-                name="username"
-                password={false}
-                value={username}
-                onChange={this.handleInputChange("username")}
+        <div className={classes.errorMessageContainer}>
+          {loginError ? (
+            <MessageElement
+              iconElement={errorLoginIcon}
+              icon={classes.icon}
+              showMessage={classes.showMessage}
+              message="Incorrect Username or Password. Try again."
             />
-          </div>
-          <div className={classes.inputPassword}>
-            <Input
-                inputTextConfiguration={{
-                  inputLabel: "Password",
-                  placeholder: "Enter text",
-                  infoText: ""
-                }}
-                name={"password"}
-                inputLabel="Password"
-                password={true}
-                value={password}
-                onChange={this.handleInputChange("password")}
-            />
-          </div>
+          ) : null}
+        </div>
 
-          <div className={classNames({
+        <div className={classes.inputUser}>
+          <Input
+            inputTextConfiguration={{
+              inputLabel: "Username",
+              placeholder: "Enter text",
+              infoText: ""
+            }}
+            name="username"
+            password={false}
+            value={username}
+            onChange={this.handleInputChange("username")}
+          />
+        </div>
+        <div className={classes.inputPassword}>
+          <Input
+            inputTextConfiguration={{
+              inputLabel: "Password",
+              placeholder: "Enter text",
+              infoText: ""
+            }}
+            name={"password"}
+            inputLabel="Password"
+            password={true}
+            value={password}
+            onChange={this.handleInputChange("password")}
+          />
+        </div>
+
+        <div
+          className={classNames({
             [classes.buttonsContainerWithRemember]: allowRememberMe,
             [classes.buttonsContainer]: !allowRememberMe
-          })}>
-            {allowRememberMe ?
-                <HvCheckbox classes={{labelTypography: classes.checkBoxTypography}} label={"Remember me"} onChange={this.handleRememberMe}/> : null}
-            <HvButton
-                type="submit"
-                colorType={buttonTypes.primary}
-                className={classes.button}
-            >
-              {isLogging ? "Logging in" : "Log in"}
-            </HvButton>
-          </div>
+          })}
+        >
+          {allowRememberMe ? (
+            <HvCheckbox
+              classes={{ labelTypography: classes.checkBoxTypography }}
+              label={"Remember me"}
+              onChange={this.handleRememberMe}
+            />
+          ) : null}
+          <HvButton
+            type="submit"
+            colorType={buttonTypes.primary}
+            className={classes.button}
+          >
+            {isLogging ? "Logging in" : "Log in"}
+          </HvButton>
+        </div>
 
-          {allowRecover ? <RecoveryLinkButton onClick={onClick} classes={classes}/> : null}
-
-        </form>
+        {allowRecover ? (
+          <RecoveryLinkButton onClick={onClick} classes={classes} />
+        ) : null}
+      </form>
     );
   }
 }
 
 Login.displayName = "loginForm";
-
 
 Login.propTypes = {
   /**
