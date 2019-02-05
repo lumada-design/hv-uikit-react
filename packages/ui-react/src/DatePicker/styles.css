@@ -28,9 +28,10 @@
 }
 
 .DayPickerInput input {
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   background: transparent;
   min-width: 260px;
-  font-size: 12px;
+  font-size: 11px;
   border: none;
   margin: 8px 10px;
   cursor: pointer
@@ -49,6 +50,7 @@
 }
 
 .DayPickerInput-Overlay {
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   position: absolute;
   width: 275px;
   left: -1px;
