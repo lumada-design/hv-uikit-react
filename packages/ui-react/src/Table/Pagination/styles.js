@@ -26,7 +26,7 @@ const styles = theme => ({
     alignItems: "stretch",
     flexWrap: "wrap",
     padding: "3px",
-    margin: `${theme.spacing.md}px 0`
+    margin: `30px 0`
   },
   paginationBtn: {
     width: "32px",
@@ -42,15 +42,15 @@ const styles = theme => ({
   pageSizeOptionsSelect: {
     "-webkit-appearance": "none",
     "-webkit-border-radius": "0px",
-    padding: "5px 7px",
-    fontSize: "inherit",
+    padding: "2px 7px",
+    fontSize: "14px",
     fontWeight: "normal",
     outline: "none",
-    textIndent: `${theme.spacing.sm}px`,
-    width: "78px",
+    textIndent: `${theme.spacing.xs}px`,
+    width: "60px",
     textAlign: "center",
     border: `solid 1px ${theme.palette.grey.plain}`,
-    background: `url(${DownArrow}) no-repeat right`
+    background: `url(${DownArrow}) no-repeat right white`
   },
   pageNavigator: {
     display: "flex",
@@ -72,8 +72,9 @@ const styles = theme => ({
     ...theme.typography.normalText,
     width: "50px",
     textAlign: "right",
+    fontSize: "14px",
     margin: `0 ${theme.spacing.xs}px`,
-    padding: "5px",
+    padding: "2px 5px",
     borderRadius: "0",
     border: `solid 1px ${theme.palette.grey.plain}`
   },
