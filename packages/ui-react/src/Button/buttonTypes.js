@@ -1,8 +1,7 @@
 const buttonTypes = Object.freeze({
     primary: "primary",
     secondary: "secondary",
-    link: "link",
-    inspireLink: "inspireLink"
+    link: "link"
 });
 
 export default buttonTypes;
