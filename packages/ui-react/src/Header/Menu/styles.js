@@ -36,7 +36,7 @@ const styles = theme => ({
   },
   label: {
     color: theme.palette.text.main,
-    fontSize: "17px",
+    fontSize: "14px",
     letterSpacing: "0.02em",
     lineHeight: "32px"
   },

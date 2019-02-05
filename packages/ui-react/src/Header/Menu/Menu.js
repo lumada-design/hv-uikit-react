@@ -18,7 +18,7 @@ import Typography from "@material-ui/core/Typography";
 
 import Link from "../../Link";
 
-const Menu = ({ classes, menuData, basePath, useRouter }) => {
+const Menu = ({ classes, menuData, basePath, useRouter, onClick }) => {
   if (!menuData) return "";
 
   const menu = menuData.map((elem, i) => {
@@ -26,7 +26,13 @@ const Menu = ({ classes, menuData, basePath, useRouter }) => {
     const route = `${basePath}${elem.path}`;
 
     return (
-      <Link key={key} route={route} useRouter={useRouter}>
+      <Link
+        key={key}
+        route={route}
+        params={elem.params}
+        useRouter={useRouter}
+        onClick={onClick}
+      >
         <ListItem button className={classes.listItem}>
           <div className={classnames(elem.isActive ? classes.selector : "")} />
           <ListItemText
@@ -50,11 +56,13 @@ Menu.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   menuData: PropTypes.instanceOf(Array),
   basePath: PropTypes.string.isRequired,
-  useRouter: PropTypes.bool.isRequired
+  useRouter: PropTypes.bool.isRequired,
+  onClick: PropTypes.func
 };
 
 Menu.defaultProps = {
-  menuData: null
+  menuData: null,
+  onClick: () => {}
 };
 
 export default Menu;

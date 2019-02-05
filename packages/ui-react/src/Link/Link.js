@@ -12,26 +12,46 @@ import React from "react";
 import PropTypes from "prop-types";
 import withConfig from "../config/withConfig";
 
-const HvLink = props => {
-  const { classes, children, route, params, options, config, useRouter } = props;
+class HvLink extends React.Component {
+  componentDidMount() {
+    const { config, useRouter, route, params } = this.props;
 
-  const handleClick = e => {
-    if (useRouter && config.router) {
-      e.preventDefault();
-      config.router.Router.pushRoute(route, params, options);
+    if (useRouter) {
+      config.router.Router.prefetch(route, params);
     }
-  };
+  }
 
-  return useRouter ? (
-    <div onClick={handleClick} className={classes.a}>
-      {children}
-    </div>
-  ) : (
-    <a href={route} className={classes.a}>
-      {children}
-    </a>
-  );
-};
+  render() {
+    const {
+      classes,
+      children,
+      route,
+      params,
+      options,
+      config,
+      useRouter,
+      onClick
+    } = this.props;
+
+    const handleClick = e => {
+      if (useRouter && config.router) {
+        onClick({ route, params });
+        e.preventDefault();
+        config.router.Router.pushRoute(route, params, options);
+      }
+    };
+
+    return useRouter ? (
+      <div onClick={handleClick} className={classes.a}>
+        {children}
+      </div>
+    ) : (
+      <a href={route} className={classes.a}>
+        {children}
+      </a>
+    );
+  }
+}
 
 HvLink.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
@@ -40,13 +60,15 @@ HvLink.propTypes = {
   params: PropTypes.instanceOf(Object),
   options: PropTypes.instanceOf(Object),
   config: PropTypes.instanceOf(Object).isRequired,
-  useRouter: PropTypes.bool
+  useRouter: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 HvLink.defaultProps = {
   useRouter: false,
   params: {},
-  options: {}
+  options: {},
+  onClick: () => {}
 };
 
 export default withConfig(HvLink);
