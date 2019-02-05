@@ -78,14 +78,20 @@ class Main extends React.Component {
       basePath,
       useRouter,
       companyLogo,
-      productLogo
+      productLogo,
+      onNavigationClick
     } = this.props;
 
     return (
       <AppBar color="default">
         <Toolbar variant="dense" classes={classes.root}>
           <Logo companyLogo={companyLogo} productLogo={productLogo} />
-          <Menu menuData={menuData} basePath={basePath} useRouter={useRouter} />
+          <Menu
+            menuData={menuData}
+            basePath={basePath}
+            useRouter={useRouter}
+            onClick={onNavigationClick}
+          />
           <User
             userData={userData}
             logout={userLogout}
@@ -116,7 +122,8 @@ Main.propTypes = {
   basePath: PropTypes.string,
   useRouter: PropTypes.bool,
   companyLogo: PropTypes.string,
-  productLogo: PropTypes.string
+  productLogo: PropTypes.string,
+  onNavigationClick: PropTypes.func
 };
 
 Main.defaultProps = {
@@ -126,7 +133,8 @@ Main.defaultProps = {
   basePath: "",
   useRouter: false,
   companyLogo: null,
-  productLogo: null
+  productLogo: null,
+  onNavigationClick: () => {}
 };
 
 export default Main;

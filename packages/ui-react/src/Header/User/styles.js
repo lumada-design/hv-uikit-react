@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   userInfo: {
     float: "left",
-    marginTop: 12,
+    marginTop: 15,
     marginRight: 10,
     "& p": {
       color: theme.palette.text.main
@@ -25,14 +25,14 @@ const styles = theme => ({
   userName: {
     color: theme.palette.text.main,
     textTransform: "capitalize",
-    fontSize: "15px",
-    fontWeight: "400",
+    fontSize: "14px",
+    fontWeight: "600",
     lineHeight: "16px"
   },
   userRole: {
     color: theme.palette.text.secondary,
     textTransform: "capitalize",
-    fontSize: "13px",
+    fontSize: "12px",
     fontWeight: "400",
     lineHeight: "16px"
   },
