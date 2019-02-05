@@ -10,6 +10,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import Form from "./Form";
+import Title from "./Title";
 
-export default withStyles(styles, { withTheme: true })(Form);
+export default withStyles(styles, { withTheme: true })(Title);
