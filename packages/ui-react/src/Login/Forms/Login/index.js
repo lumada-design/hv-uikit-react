@@ -10,6 +10,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import HvLogin from "./Main";
+import Login from "./Login";
 
-export default withStyles(styles, {withTheme: true})(HvLogin);
+export default withStyles(styles, { withTheme: true })(Login);

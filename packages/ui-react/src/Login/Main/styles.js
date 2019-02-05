@@ -18,7 +18,7 @@ const styles = theme => ({
   },
   rightContainer: {
     width: "30%",
-    minWidth: "500px",
+    minWidth: "380px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -27,31 +27,21 @@ const styles = theme => ({
       width: "100%"
     }
   },
-  title: {
-    position: "absolute",
-    top: "15%",
-    color: "#414141",
-    fontSize: "24px",
-    letterSpacing: "0.02em",
-    lineHeight: "30px",
-    fontWeight: "600",
-    zIndex: 1
-  },
   formContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    overflow: "auto",
     position: "relative",
+    minWidth: "380px",
     width: "100%",
     height: "100%",
-    background: "rgba(249,249,249,0.8)",
+    background: "rgba(255,255,255,0.9)",
     "&:before": {
       zIndex: "-1",
       content: '""',
       width: "100%",
       height: "100%",
-      position: "absolute",
+      position: "relative",
       filter: "blur(2px)"
     }
   }

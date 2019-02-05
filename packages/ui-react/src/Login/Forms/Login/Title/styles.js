@@ -9,33 +9,17 @@
  */
 
 const styles = theme => ({
-  root: {
-    position: "absolute",
-    width: "280px",
-    margin: 0,
-    padding: 0
+  logoContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%"
   },
-  remember: {
-    color: "white",
-    height: 0
+  logoImage: {
+    height: 28
   },
-  input: {
-    width: "280px",
-    margin: "0 0 15px 0"
-  },
-  label: {
-    color: "#414141",
-    fontSize: "14px",
-    letterSpacing: "0.02em",
-    lineHeight: "35px",
-    fontWeight: "400"
-  },
-  button: {
-    width: "120px",
-    margin: 0,
-    position: "absolute",
-    right: 0,
-    top: 200
+  separator: {
+    width: 15
   }
 });
 

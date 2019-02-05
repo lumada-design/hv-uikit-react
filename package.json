@@ -21,5 +21,8 @@
     "dev": "lerna run dev --stream",
     "test": "lerna run test --parallel",
     "link": "lerna run link --parallel"
+  },
+  "dependencies": {
+    "npx": "^10.2.0"
   }
 }

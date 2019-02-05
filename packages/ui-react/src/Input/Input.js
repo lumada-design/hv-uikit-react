@@ -348,7 +348,8 @@ class HvInput extends React.Component {
       validationType,
       maxCharQuantity,
       minCharQuantity,
-      validation
+      validation,
+      externalWarningTextOverride
     } = this.props;
 
     const { validationState, value, infoText } = this.state;
@@ -361,7 +362,7 @@ class HvInput extends React.Component {
       classNamesRoot = classes.inputRootDisabled;
     }
 
-    if (validationState === validationStates.invalid) {
+    if (validationState === validationStates.invalid || externalWarningTextOverride !== null) {
       classInfoText = classes.warningInfoText;
     }
 
@@ -410,7 +411,7 @@ class HvInput extends React.Component {
           startAdornment={adornment.startAdornment}
         />
         <Typography variant="body2" className={classInfoText}>
-          {infoText}
+          {externalWarningTextOverride ? externalWarningTextOverride : infoText}
         </Typography>
       </div>
     );
@@ -501,7 +502,7 @@ HvInput.propTypes = {
   maxCharQuantity: PropTypes.number,
   /**
    * The minimum allowed length of the characters, if this value is null no check
-   * will be perfom.
+   * will be perform.
    */
   minCharQuantity: PropTypes.number,
   /**
@@ -509,7 +510,11 @@ HvInput.propTypes = {
    * 
    * note: Is recommended you use the provided ValidationTypes object to set this value.
    */
-  validationType: PropTypes.oneOf(["none", "number", "email"])
+  validationType: PropTypes.oneOf(["none", "number", "email"]),
+  /**
+   * Overrides any validation with a specific error/warning message to set in the infoText slot.
+   */
+  externalWarningTextOverride: PropTypes.string
 };
 
 HvInput.defaultProps = {
@@ -535,7 +540,8 @@ HvInput.defaultProps = {
   isRequired: false,
   onChange: value => value,
   onBlur: () => {},
-  onFocus: () => {}
+  onFocus: () => {},
+  externalWarningTextOverride: null
 };
 
 export default HvInput;

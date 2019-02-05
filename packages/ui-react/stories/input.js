@@ -21,7 +21,7 @@ const emailInputTextConfiguration = {
   placeholder: "example@domain.com",
   infoText: "Enter your email",
   inputLabel: "Email",
-  warningText: "please add the right email format: your.name@hitachivantar.com",
+  warningText: "please add the right email format: your.name@hitachivantara.com",
   maxCharQuantityWarningText: "Max characters exceeded"
 };
 
@@ -55,7 +55,7 @@ const HvShowCaseStyle = {
 
 storiesOf("Input", module).add(`Input`, () => (
   <>
-    <HvShowCaseHeader reviewed date="2019/Jan/25" />
+    <HvShowCaseHeader reviewed date="2019/Jan/4" />
 
     <HvShowCase title="Input" style={HvShowCaseStyle.min}>
       <HvInput inputTextConfiguration={inputTextConfiguration} />
