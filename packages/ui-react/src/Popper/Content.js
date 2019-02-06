@@ -37,7 +37,7 @@ const Content = ({ classes, content, ...props }) => {
     });
 
   return (
-    <Popper placement="top" {...props} transition>
+    <Popper className={classes.popper} placement="top" {...props} transition>
       {({ TransitionProps }) => (
         <Fade {...TransitionProps} timeout={500}>
           <Paper className={classes.content}>
