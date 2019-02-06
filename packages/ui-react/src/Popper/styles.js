@@ -9,6 +9,9 @@
  */
 
 const styles = theme => ({
+  popper: {
+    zIndex: 998
+  },
   content: {
     display: "inline-block",
     border: `solid 1px ${theme.palette.grey.plain} `,
