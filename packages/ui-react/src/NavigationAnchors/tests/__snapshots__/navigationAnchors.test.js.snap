@@ -1294,6 +1294,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value1"
@@ -2657,6 +2658,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value2"
@@ -4020,6 +4022,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value3"
@@ -9457,6 +9460,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value1"
@@ -10820,6 +10824,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value2"
@@ -12183,6 +12188,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                   }
                                   config={Object {}}
+                                  onClick={[Function]}
                                   options={Object {}}
                                   params={Object {}}
                                   route="#Value3"

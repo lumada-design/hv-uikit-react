@@ -112,7 +112,7 @@ class HvInput extends React.Component {
             className={classes.iconContainer}
             onMouseDown={this.handleClear}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
             onKeyDown={this.handleClear}
           >
             <div className={classNames(classes.icon, classes.iconClear)} />

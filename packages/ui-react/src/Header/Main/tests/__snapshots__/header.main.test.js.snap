@@ -6,6 +6,7 @@ exports[`Header withStyles should render correctly 1`] = `
   classes={Object {}}
   companyLogo={null}
   menuData={Array []}
+  onNavigationClick={[Function]}
   productLogo={null}
   theme={
     Object {
