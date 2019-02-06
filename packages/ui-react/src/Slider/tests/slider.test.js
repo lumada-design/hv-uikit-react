@@ -146,7 +146,7 @@ describe("Slider ", () => {
 
     const myMount = mount(<HvProvider><SliderWithStyles divisionQuantity={87} knobProperties={knobProperties} onBeforeChange={myMock} /></HvProvider>);
 
-    const instance = myMount.children().children().children().instance();
+    const instance = myMount.find(Slider).instance();
 
     instance.onBeforeChangeHandler(["10", "20", "30", "40", "50"]);
 
@@ -159,7 +159,7 @@ describe("Slider ", () => {
 
     const myMount = mount(<HvProvider><SliderWithStyles divisionQuantity={87} knobProperties={knobProperties} onAfterChange={myMock} /></HvProvider>);
 
-    const instance = myMount.children().children().children().instance();
+    const instance = myMount.find(Slider).instance();
 
     instance.onAfterChangeHandler(["10", "20", "30", "40", "50"]);
 
@@ -191,7 +191,7 @@ describe("Slider ", () => {
 
     const myMount = mount(<HvProvider><SliderWithStyles maxPointValue={1} knobProperties={knobPropertiesScaled} markDigits={2} onChange={onChangeMock} /></HvProvider>);
 
-    const instance = myMount.children().children().children().instance();
+    const instance = myMount.find(Slider).instance();
 
     instance.onChangeHandler([11, 25, 37, 48, 70]);
 
@@ -203,7 +203,7 @@ describe("Slider ", () => {
 
     const myMount = mount(<HvProvider><SliderWithStyles knobProperties={knobProperties} onChange={onChangeMock} /></HvProvider>);
 
-    const instance = myMount.children().children().children().instance();
+    const instance = myMount.find(Slider).instance();
 
     instance.onChangeHandler([10, 20, 40, 100, 100]);
 

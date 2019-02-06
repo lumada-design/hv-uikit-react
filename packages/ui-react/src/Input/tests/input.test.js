@@ -39,8 +39,8 @@ const testState = (infoText, state, value, instance) => {
 describe("Input", () => {
   let wrapper;
 
-  const getInputProps = (ParentElement) => ParentElement.children().children().props();
-  const getInput = (ParentElement) => ParentElement.children().children().children().instance();
+  const getInputProps = (ParentElement) => ParentElement.find(InputWithStyles).props();
+  const getInput = (ParentElement) => ParentElement.find(Input).instance();
 
   beforeEach(async () => {
     wrapper = mount(<HvProvider><InputWithStyles /></HvProvider>);

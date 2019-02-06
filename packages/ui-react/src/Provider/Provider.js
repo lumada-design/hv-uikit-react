@@ -13,6 +13,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import diff from "deep-diff";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
@@ -60,6 +61,7 @@ const HvProvider = ({ children, theme, router }) => {
   const customTheme = applyCustomTheme(hvTheme, theme);
   return (
     <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
+      <CssBaseline />
       <ConfigProvider value={pConfig}>{children}</ConfigProvider>
     </MuiThemeProvider>
   );

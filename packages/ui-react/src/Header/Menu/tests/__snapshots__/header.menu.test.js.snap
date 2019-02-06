@@ -29,6 +29,7 @@ exports[`Menu withStyles should render User component with Props 1`] = `
       },
     ]
   }
+  onClick={[Function]}
   theme={
     Object {
       "breakpoints": Object {
@@ -409,6 +410,7 @@ exports[`Menu withStyles should render correctly 1`] = `
     }
   }
   menuData={null}
+  onClick={[Function]}
   theme={
     Object {
       "breakpoints": Object {

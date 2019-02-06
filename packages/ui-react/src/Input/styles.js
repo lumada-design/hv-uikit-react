@@ -117,8 +117,7 @@ const styles = theme => ({
   icon: {
     width: "16px",
     height: "16px",
-    padding: "8px",
-    backgroundSize: "16px 16px"
+    margin: "8px"
   },
   iconContainer: {
     width: "32px",
@@ -138,7 +137,8 @@ const styles = theme => ({
   },
   "@global": {
     "input:-webkit-autofill": {
-      "-webkit-box-shadow": "0 0 0px 1000px white inset"
+      "-webkit-box-shadow": "0 0 0px 1000px white inset",
+      height: 16
     }
   }
 });

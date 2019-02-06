@@ -12,42 +12,43 @@
 
 // import { mount } from "enzyme";
 import React from "react";
-import {mount} from "enzyme";
+import { mount } from "enzyme";
 import LoginWithStyles from "../Main/index";
 import HvProvider from "../../Provider";
 import HvLogin from "../Main/Main";
-import LoginForm from "../Forms/Login"
-import Recovery from "../Forms/Recovery"
+import LoginForm from "../Forms/Login";
+import Recovery from "../Forms/Recovery";
 import HvButton from "../../Button/Button";
 import Title from "../Forms/Login/Title/Title";
 
-
 describe("Login ", () => {
-
   let loginMock;
   let recoverMock;
   let wrapper;
 
-  const fakeEvent = {preventDefault: () => console.log('preventDefault')};
+  const fakeEvent = { preventDefault: () => console.log("preventDefault") };
 
   beforeEach(async () => {
-
     loginMock = jest.fn();
     recoverMock = jest.fn();
     wrapper = mount(
-        <HvProvider><LoginWithStyles login={loginMock} recovery={recoverMock} allowRecover={true}/></HvProvider>);
+      <HvProvider>
+        <LoginWithStyles
+          login={loginMock}
+          recovery={recoverMock}
+          allowRecover={true}
+        />
+      </HvProvider>
+    );
   });
-
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
   });
 
-
   it("should render correctly", () => {
     expect(wrapper).toMatchSnapshot();
   });
-
 
   it("should render the Login component", () => {
     const loginComponent = wrapper.find(HvLogin);
@@ -55,13 +56,11 @@ describe("Login ", () => {
     expect(loginComponent.length).toBe(1);
   });
 
-
   it("should render the Login form", () => {
     const loginComponent = wrapper.find(LoginForm);
 
     expect(loginComponent.length).toBe(1);
   });
-
 
   it("shouldn't render the Recovery form", () => {
     const recoverComponent = wrapper.find(Recovery);
@@ -70,66 +69,77 @@ describe("Login ", () => {
   });
 
   it("should render the Recovery component when click in the 'forgot your credentials'", () => {
-    const forgotCredentialsLink = wrapper.find(LoginForm).find(HvButton).at(1);
+    const forgotCredentialsLink = wrapper
+      .find(LoginForm)
+      .find(HvButton)
+      .at(1);
 
-    forgotCredentialsLink.simulate('click');
+    forgotCredentialsLink.simulate("click");
 
     const recoverComponent = wrapper.find(Recovery);
 
     expect(recoverComponent.length).toBe(1);
   });
 
-
   it("should call the login function )", () => {
     const loginComponent = wrapper.find(LoginForm).find("loginForm");
 
-    loginComponent.simulate('submit', fakeEvent);
+    loginComponent.simulate("submit", fakeEvent);
 
     expect(loginMock).toHaveBeenCalled();
-
   });
 
-
   it("should call the recovery function", () => {
-
-    wrapper.find(LoginForm).find(HvButton).at(1).simulate('click');
+    wrapper
+      .find(LoginForm)
+      .find(HvButton)
+      .at(1)
+      .simulate("click");
 
     const recoveryComponent = wrapper.find("recoveryForm");
 
-    recoveryComponent.simulate('submit', fakeEvent);
+    recoveryComponent.simulate("submit", fakeEvent);
 
     expect(recoverMock).toHaveBeenCalled();
-
   });
 
-
   it("it should render a component passed to the title", () => {
-
-    const TitleComponentProp = () => <div/>;
+    const TitleComponentProp = () => <div />;
 
     TitleComponentProp.displayName = "mockComponent";
 
     const wrapper2 = mount(
-        <HvProvider><LoginWithStyles login={loginMock} recovery={recoverMock} titleComponent={
-          <TitleComponentProp/>}/></HvProvider>);
+      <HvProvider>
+        <LoginWithStyles
+          login={loginMock}
+          recovery={recoverMock}
+          titleComponent={<TitleComponentProp />}
+        />
+      </HvProvider>
+    );
 
     const foundTitleComponent = wrapper2.find("mockComponent");
 
     expect(foundTitleComponent.length).toBe(1);
-
   });
-
 
   it("it should render a logo in the title", () => {
-
     const wrapper2 = mount(
-        <HvProvider><LoginWithStyles login={loginMock} recovery={recoverMock} logo={"/test)"}/></HvProvider>);
+      <HvProvider>
+        <LoginWithStyles
+          login={loginMock}
+          recovery={recoverMock}
+          logo={"/test)"}
+        />
+      </HvProvider>
+    );
 
-    const foundTitleComponent = wrapper2.find(Title).children().children().first();
+    const foundTitleComponent = wrapper2
+      .find(Title)
+      .children()
+      .children()
+      .first();
 
     expect(foundTitleComponent.type()).toBe("img");
-
   });
-
-
 });
