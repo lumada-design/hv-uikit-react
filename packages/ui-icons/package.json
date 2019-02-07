@@ -1,6 +1,6 @@
 {
-  "name": "@hv-ui/svg-icons",
-  "version": "1.0.1-canary.5",
+  "name": "@hv-ui/icons",
+  "version": "0.0.0",
   "description": "A collection of icons for use with Hitachi Vantara Components.",
   "license": "LicenseRef-LICENSE",
   "author": {
