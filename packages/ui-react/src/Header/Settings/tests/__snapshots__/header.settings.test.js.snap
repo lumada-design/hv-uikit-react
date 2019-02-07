@@ -797,13 +797,13 @@ exports[`Settings withStyles should render correctly 1`] = `
       }
     >
       <div
-        className="Settings-settings-7 WithStyles-Settings--settings-1"
+        className="Settings-settings-7 WithStyles-Settings-"
       >
         <WithStyles(IconButton)
-          className="Settings-settingsButton-8 WithStyles-Settings--settingsButton-2"
+          className="Settings-settingsButton-8 WithStyles-Settings-"
         >
           <IconButton
-            className="Settings-settingsButton-8 WithStyles-Settings--settingsButton-2"
+            className="Settings-settingsButton-8 WithStyles-Settings-"
             classes={
               Object {
                 "colorInherit": "MuiIconButton-colorInherit-14",
@@ -819,13 +819,13 @@ exports[`Settings withStyles should render correctly 1`] = `
           >
             <WithStyles(ButtonBase)
               centerRipple={true}
-              className="MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings--settingsButton-2"
+              className="MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings-"
               disabled={false}
               focusRipple={true}
             >
               <ButtonBase
                 centerRipple={true}
-                className="MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings--settingsButton-2"
+                className="MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings-"
                 classes={
                   Object {
                     "disabled": "MuiButtonBase-disabled-20",
@@ -842,7 +842,7 @@ exports[`Settings withStyles should render correctly 1`] = `
                 type="button"
               >
                 <button
-                  className="MuiButtonBase-root-19 MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings--settingsButton-2"
+                  className="MuiButtonBase-root-19 MuiIconButton-root-13 Settings-settingsButton-8 WithStyles-Settings-"
                   disabled={false}
                   onBlur={[Function]}
                   onContextMenu={[Function]}
@@ -862,16 +862,16 @@ exports[`Settings withStyles should render correctly 1`] = `
                     className="MuiIconButton-label-18"
                   >
                     <pure(SettingsOutlinedIcon)
-                      className="Settings-settingsIcon-9 WithStyles-Settings--settingsIcon-3"
+                      className="Settings-settingsIcon-9 WithStyles-Settings-"
                     >
                       <SettingsOutlinedIcon
-                        className="Settings-settingsIcon-9 WithStyles-Settings--settingsIcon-3"
+                        className="Settings-settingsIcon-9 WithStyles-Settings-"
                       >
                         <WithStyles(SvgIcon)
-                          className="Settings-settingsIcon-9 WithStyles-Settings--settingsIcon-3"
+                          className="Settings-settingsIcon-9 WithStyles-Settings-"
                         >
                           <SvgIcon
-                            className="Settings-settingsIcon-9 WithStyles-Settings--settingsIcon-3"
+                            className="Settings-settingsIcon-9 WithStyles-Settings-"
                             classes={
                               Object {
                                 "colorAction": "MuiSvgIcon-colorAction-25",
@@ -892,7 +892,7 @@ exports[`Settings withStyles should render correctly 1`] = `
                           >
                             <svg
                               aria-hidden="true"
-                              className="MuiSvgIcon-root-22 Settings-settingsIcon-9 WithStyles-Settings--settingsIcon-3"
+                              className="MuiSvgIcon-root-22 Settings-settingsIcon-9 WithStyles-Settings-"
                               focusable="false"
                               role="presentation"
                               viewBox="0 0 24 24"
