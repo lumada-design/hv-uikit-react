@@ -13,7 +13,7 @@ import Login from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
 import PropTypes from "prop-types";
 import backImg from "../resources/background.jpg"
-import {Level0Success16Color , Level5Unsuccess16Color} from "@hv-ui/svg-icons"
+import {Level0Success16Color , Level5Unsuccess16Color} from "@hv-ui/icons";
 
 
 

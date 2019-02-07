@@ -1,7 +1,7 @@
 import React from "react";
 import {storiesOf} from "@storybook/react";
 
-import {FastForward16} from "@hv-ui/svg-icons/core"
+import {FastForward16} from "@hv-ui/icons/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 import {HvShowCase, HvSnackbar} from "../src";
