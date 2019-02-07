@@ -11,6 +11,7 @@ module.exports = {
       functions: 64
     }
   },
+  reporters: [ "default", "jest-junit" ],
   coverageReporters: ["json", "lcov", "text-summary"],
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
@@ -23,7 +24,5 @@ module.exports = {
   testRegex: "src/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
   testURL: "http://localhost/",
-  snapshotSerializers: [
-    "enzyme-to-json/serializer"
-  ]
+  snapshotSerializers: ["enzyme-to-json/serializer", "jss-snapshot-serializer"]
 };
