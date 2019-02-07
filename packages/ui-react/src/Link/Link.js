@@ -16,7 +16,7 @@ class HvLink extends React.Component {
   componentDidMount() {
     const { config, useRouter, route, params } = this.props;
 
-    if (useRouter) {
+    if (useRouter && config.router) {
       config.router.Router.prefetch(route, params);
     }
   }
