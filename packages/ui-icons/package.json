@@ -13,8 +13,7 @@
     "url": "https://10.76.48.133/hv-design-system/hv-ui.git"
   },
   "scripts": {
-    "dev": "npm-run-all clean -p build",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all clean -p build:*",
     "build:copy": "copyfiles -f src/index.js core && mv core/index.js core/index.es.js",
     "build:babel": "npx babel src -d core --source-maps --copy-files",
     "clean": "npx del core",
