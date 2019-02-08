@@ -18,7 +18,7 @@ const tableStyleOverrides = classes => ({
   getTheadThProps: () => ({ className: classes.theadTh }),
   getTheadFilterProps: () => ({ className: classes.theadFilter }),
   getTheadFilterTrProps: () => ({ className: classes.theadFilterTr }),
-  getTheadFilterThProps: () => ({className: classes.theadFilterTh  }),
+  getTheadFilterThProps: () => ({ className: classes.theadFilterTh }),
   getTbodyProps: () => ({ className: classes.tbody }),
   getTrGroupProps: () => ({ className: classes.trGroups }),
   getTrProps: () => ({ className: classes.tr }),
@@ -68,7 +68,7 @@ const styles = theme => ({
     "& $td": {
       display: "flex",
       alignItems: "center",
-      justifyContent: "flex-end",
+      justifyContent: "flex-end"
     }
   },
   table: {},
@@ -79,7 +79,7 @@ const styles = theme => ({
   theadTh: {},
   theadFilter: {},
   theadFilterTr: {},
-  theadFilterTh : {},
+  theadFilterTh: {},
   tbody: {},
   trGroups: {},
   tr: {},
@@ -93,10 +93,9 @@ const styles = theme => ({
   noDate: {},
   resizer: {},
 
-
   rtSortIcon: {
     marginRight: `${theme.spacing.xs}px`
-  },
+  }
 });
 
 export { styles, tableStyleOverrides };

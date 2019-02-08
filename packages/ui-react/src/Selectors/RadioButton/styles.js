@@ -26,14 +26,14 @@ const styles = theme => ({
     letterSpacing: theme.typography.body1.letterSpacing,
     color: theme.typography.body1.color,
     fontSize: theme.typography.body1.fontSize,
-    lineHeight: theme.typography.body1.lineHeight,
+    lineHeight: theme.typography.body1.lineHeight
   },
   labelDisabled: {
     backgroundColor: "transparent",
     cursor: "not-allowed",
     "&:hover": {
       backgroundColor: "transparent",
-      cursor: "not-allowed",
+      cursor: "not-allowed"
     }
   },
   labelEnd: {
@@ -51,13 +51,13 @@ const styles = theme => ({
     backgroundSize: "16px 16px"
   },
   iconEmpty: {
-    background: `url(${empty})`,
+    background: `url(${empty})`
   },
   iconFull: {
-    background: `url(${full})`,
+    background: `url(${full})`
   },
   iconDisable: {
-    background: `url(${disable})`,
+    background: `url(${disable})`
   }
 });
 

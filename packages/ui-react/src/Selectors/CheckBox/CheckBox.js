@@ -98,7 +98,7 @@ const HvCheckbox = props => {
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
-      control={(
+      control={
         <Checkbox
           className={classes.checkBox}
           icon={icons.emptyIcon}
@@ -113,7 +113,7 @@ const HvCheckbox = props => {
           indeterminate={indeterminate}
           {...propsLabel}
         />
-      )}
+      }
       {...propsIcon}
     />
   );
@@ -174,7 +174,7 @@ HvCheckbox.defaultProps = {
   checked: undefined,
   indeterminate: undefined,
   disabled: false,
-  onChange: () => { },
+  onChange: () => {},
   propsIcon: undefined,
   propsLabel: undefined,
   labelPlacement: labelPositions.end

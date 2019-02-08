@@ -33,11 +33,11 @@ describe("CheckBox withStyles", () => {
       .children()
       .props().control.props.checkedIcon.props.className;
 
-    const getIndeterminateIconClassNames = ParentElement =>
+  const getIndeterminateIconClassNames = ParentElement =>
     ParentElement.children()
-    .children()
-    .children()
-    .props().control.props.indeterminateIcon.props.className;
+      .children()
+      .children()
+      .props().control.props.indeterminateIcon.props.className;
 
   const getLabelPositionClassNames = ParentElement =>
     ParentElement.children()
@@ -77,8 +77,10 @@ describe("CheckBox withStyles", () => {
       getCheckedIconClassNames(mountWrapper).includes(fullIconClassName)
     ).toBe(true);
     expect(
-        getIndeterminateIconClassNames(mountWrapper).includes(indeterminateIconClassName)
-      ).toBe(true);
+      getIndeterminateIconClassNames(mountWrapper).includes(
+        indeterminateIconClassName
+      )
+    ).toBe(true);
     expect(
       getCheckedIconClassNames(mountWrapper).includes(disableIconClassName)
     ).toBe(false);

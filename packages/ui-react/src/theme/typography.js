@@ -21,28 +21,28 @@ const typography = createTypography(palette, {
     fontSize: theme.typography.xlargeTitle.fontSize,
     letterSpacing: theme.typography.xlargeTitle.letterSpacing,
     lineHeight: theme.typography.xlargeTitle.lineHeight,
-    fontWeight: theme.typography.xlargeTitle.fontWeight,
+    fontWeight: theme.typography.xlargeTitle.fontWeight
   },
   h2: {
     color: theme.typography.largeTitle.color,
     fontSize: theme.typography.largeTitle.fontSize,
     letterSpacing: theme.typography.largeTitle.letterSpacing,
     lineHeight: theme.typography.largeTitle.lineHeight,
-    fontWeight: theme.typography.largeTitle.fontWeight,
+    fontWeight: theme.typography.largeTitle.fontWeight
   },
   h3: {
     color: theme.typography.mediumTitle.color,
     fontSize: theme.typography.mediumTitle.fontSize,
     letterSpacing: theme.typography.mediumTitle.letterSpacing,
     lineHeight: theme.typography.mediumTitle.lineHeight,
-    fontWeight: theme.typography.mediumTitle.fontWeight,
+    fontWeight: theme.typography.mediumTitle.fontWeight
   },
   h4: {
     color: theme.typography.smallTitle.color,
     fontSize: theme.typography.smallTitle.fontSize,
     letterSpacing: theme.typography.smallTitle.letterSpacing,
     lineHeight: theme.typography.smallTitle.lineHeight,
-    fontWeight: theme.typography.smallTitle.fontWeight,
+    fontWeight: theme.typography.smallTitle.fontWeight
   },
   body1: {
     color: theme.typography.normalText.color,
@@ -87,7 +87,7 @@ typography.disabled = {
   letterSpacing: theme.typography.disabledText.letterSpacing,
   lineHeight: theme.typography.disabledText.lineHeight,
   fontWeight: theme.typography.disabledText.fontWeight
-}
+};
 
 typography.info = {
   color: theme.typography.infoText.color,

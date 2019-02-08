@@ -97,9 +97,7 @@ describe("Hv Popper", () => {
     });
 
     it("when given key-value pairs, they are displayed properly in the popper", () => {
-      wrapper = mount(
-        <Content open={true} classes={{}} content={data} />
-      );
+      wrapper = mount(<Content open={true} classes={{}} content={data} />);
 
       const keyValuePairs = wrapper.find(".key-value");
       expect(keyValuePairs.length).toBe(3);

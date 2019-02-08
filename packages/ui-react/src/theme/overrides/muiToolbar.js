@@ -22,7 +22,7 @@ const muiToolbar = {
     paddingRight: `${theme.spacing.sm}px`,
     "@media (min-width:600px)": {
       paddingLeft: `${theme.spacing.sm}px`,
-      paddingRight: `${theme.spacing.sm}px`,
+      paddingRight: `${theme.spacing.sm}px`
     }
   },
   dense: {

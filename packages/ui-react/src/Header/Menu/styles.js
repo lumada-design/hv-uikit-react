@@ -52,7 +52,9 @@ const styles = theme => ({
     height: "100%",
     top: -7,
     left: 0,
-    borderTop: `4px solid ${theme.palette.hitachi ? theme.palette.hitachi.main : undefined}`
+    borderTop: `4px solid ${
+      theme.palette.hitachi ? theme.palette.hitachi.main : undefined
+    }`
   }
 });
 

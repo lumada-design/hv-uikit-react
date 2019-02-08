@@ -64,6 +64,5 @@ const styles = theme => ({
     background: `url(${indeterminate})`
   }
 });
-  
-  export default styles;
-  
+
+export default styles;

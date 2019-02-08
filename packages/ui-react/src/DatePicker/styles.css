@@ -1,12 +1,12 @@
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   color: #414141;
-  background-color: #DEDEDE;
+  background-color: #dedede;
   border-radius: 0 !important;
 }
 
 .DayPicker-Day.DayPicker-Day--start.DayPicker-Day--selected,
 .DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected {
-  color: #DEDEDE;
+  color: #dedede;
   background-color: #414141 !important;
 }
 
@@ -21,20 +21,20 @@
 }
 
 .DayPickerWrapper {
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   background: #fff;
-  border: 1px solid #BCBCBC;
+  border: 1px solid #bcbcbc;
   width: 275px;
 }
 
 .DayPickerInput input {
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   background: transparent;
   min-width: 260px;
   font-size: 11px;
   border: none;
   margin: 8px 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .DayPickerInput input:focus {
@@ -50,14 +50,14 @@
 }
 
 .DayPickerInput-Overlay {
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   position: absolute;
   width: 275px;
   left: -1px;
   top: 0px;
   z-index: 1;
   background: white;
-  border: 1px solid #BCBCBC;
+  border: 1px solid #bcbcbc;
   border-top: none;
   box-shadow: none !important;
 }

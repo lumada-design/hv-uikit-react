@@ -11,7 +11,7 @@ module.exports = {
       functions: 64
     }
   },
-  reporters: [ "default", "jest-junit" ],
+  reporters: ["default", "jest-junit"],
   coverageReporters: ["json", "lcov", "text-summary"],
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {

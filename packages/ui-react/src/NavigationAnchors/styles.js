@@ -54,7 +54,6 @@ const styles = theme => ({
   listItemTextSelected: {
     fontWeight: 600
   }
-
 });
 
 export default styles;

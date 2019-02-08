@@ -8,7 +8,6 @@
  *  under which the software has been supplied.
  */
 
-
 const styles = theme => ({
   container: {
     width: "500px",
@@ -19,14 +18,14 @@ const styles = theme => ({
     letterSpacing: theme.typography.body1.letterSpacing,
     color: theme.typography.body1.color,
     fontSize: theme.typography.body1.fontSize,
-    lineHeight: theme.typography.body1.lineHeight,
+    lineHeight: theme.typography.body1.lineHeight
   },
   header: {
     fontWeight: theme.typography.h3.fontWeight,
     letterSpacing: theme.typography.h3.letterSpacing,
     color: theme.typography.h3.color,
     fontSize: theme.typography.h3.fontSize,
-    lineHeight: theme.typography.h3.lineHeight,
+    lineHeight: theme.typography.h3.lineHeight
   }
 });
 

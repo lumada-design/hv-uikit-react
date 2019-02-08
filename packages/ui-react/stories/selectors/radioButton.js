@@ -5,7 +5,7 @@ import { HvRadio, HvShowCase, HvShowCaseHeader } from "../../src";
 const style = {
   fontSize: "inherit",
   float: "left"
-}
+};
 
 const styleListItem = {
   position: "relative"
@@ -30,7 +30,7 @@ class WrapperWithState extends React.Component {
               label="checked"
               checked={checkedRadio === valueA}
               onChange={() => {
-                this.setState({ checkedRadio: valueA })
+                this.setState({ checkedRadio: valueA });
               }}
             />
           </div>
@@ -40,7 +40,7 @@ class WrapperWithState extends React.Component {
               label="unchecked"
               checked={checkedRadio === valueB}
               onChange={() => {
-                this.setState({ checkedRadio: valueB })
+                this.setState({ checkedRadio: valueB });
               }}
             />
           </div>
@@ -50,38 +50,65 @@ class WrapperWithState extends React.Component {
   }
 }
 
-storiesOf("Radio", module).add(`Radio`, () =>
-  (
-    <>
-      <HvShowCaseHeader reviewed date="2019/Jan/4" />
-      <HvShowCase title="Simple radio" description="simple radio with no state management">
-        <HvRadio />
-      </HvShowCase>
+storiesOf("Radio", module).add(`Radio`, () => (
+  <>
+    <HvShowCaseHeader reviewed date="2019/Jan/4" />
+    <HvShowCase
+      title="Simple radio"
+      description="simple radio with no state management"
+    >
+      <HvRadio />
+    </HvShowCase>
 
-      <HvShowCase title="Disabled simple radio" description="disabled simple radio with no state management">
-        <HvRadio disabled />
-      </HvShowCase>
+    <HvShowCase
+      title="Disabled simple radio"
+      description="disabled simple radio with no state management"
+    >
+      <HvRadio disabled />
+    </HvShowCase>
 
-      <HvShowCase title="radio with label" description="radio with label and no state management">
-        <HvRadio label="label" />
-      </HvShowCase>
+    <HvShowCase
+      title="radio with label"
+      description="radio with label and no state management"
+    >
+      <HvRadio label="label" />
+    </HvShowCase>
 
-      <HvShowCase title="Disabled radio with label" description="disabled radio with label and no state management">
-        <HvRadio label="disabled" disabled />
-      </HvShowCase>
+    <HvShowCase
+      title="Disabled radio with label"
+      description="disabled radio with label and no state management"
+    >
+      <HvRadio label="disabled" disabled />
+    </HvShowCase>
 
-      <HvShowCase title="Radio with click action" description="radio with click action and no state management">
-        <HvRadio label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
-      </HvShowCase>
+    <HvShowCase
+      title="Radio with click action"
+      description="radio with click action and no state management"
+    >
+      <HvRadio
+        label="click me!"
+        value="A"
+        onChange={event => alert(`my value is ${event.target.value}`)}
+      />
+    </HvShowCase>
 
-      <HvShowCase title="Disabled radio with click action" description="radio with click action and no state management">
-        <HvRadio disabled label="click me!" value="A" onChange={event => alert(`my value is ${event.target.value}`)} />
-      </HvShowCase>
+    <HvShowCase
+      title="Disabled radio with click action"
+      description="radio with click action and no state management"
+    >
+      <HvRadio
+        disabled
+        label="click me!"
+        value="A"
+        onChange={event => alert(`my value is ${event.target.value}`)}
+      />
+    </HvShowCase>
 
-      <HvShowCase title="Radio wrapped with state management" description="radio wrapped in a component enabling state management">
-        <WrapperWithState />
-      </HvShowCase>
-
-    </>
-  )
-)
+    <HvShowCase
+      title="Radio wrapped with state management"
+      description="radio wrapped in a component enabling state management"
+    >
+      <WrapperWithState />
+    </HvShowCase>
+  </>
+));

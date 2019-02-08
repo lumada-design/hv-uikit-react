@@ -14,7 +14,7 @@ const styles = theme => ({
     width: "310px",
     height: "100%",
     margin: 0,
-    padding: 0,
+    padding: 0
   },
   title: {
     display: "flex",
@@ -22,7 +22,7 @@ const styles = theme => ({
     width: "100%",
     zIndex: 1,
     marginTop: "60px",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   instructions: {
     position: "relative",
@@ -35,7 +35,7 @@ const styles = theme => ({
   },
   cancelButton: {
     position: "relative",
-    width: "120px",
+    width: "120px"
   },
   submitButton: {
     position: "relative",
@@ -46,7 +46,7 @@ const styles = theme => ({
     position: "relative",
     display: "inherit",
     alignItems: "center",
-    marginTop: "20px",
+    marginTop: "20px"
   },
   buttonsContainerError: {
     position: "relative",
@@ -56,8 +56,8 @@ const styles = theme => ({
   },
   showOkMessage: {
     backgroundColor: theme.palette.severity.success,
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     height: "100%",
     paddingRight: "10px"
   },
@@ -77,7 +77,6 @@ const styles = theme => ({
     width: "100%",
     height: "52px"
   }
-
 });
 
 export default styles;

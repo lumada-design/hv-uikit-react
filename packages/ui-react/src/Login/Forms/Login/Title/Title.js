@@ -23,33 +23,29 @@ import Typography from "@material-ui/core/Typography";
  * @constructor
  */
 const Title = props => {
-  const {classes, logo, titleText, titleComponent} = props;
+  const { classes, logo, titleText, titleComponent } = props;
 
   let logoComponent = null;
   let span = null;
 
   if (titleComponent !== null) {
-    return (<div className={classes.logoContainer}>{titleComponent}</div>);
-
+    return <div className={classes.logoContainer}>{titleComponent}</div>;
   } else if (logo !== "") {
     logoComponent = (
-        <img
-            src={logo}
-            className={classes.logoImage}
-            alt="Company logo"
-        />
+      <img src={logo} className={classes.logoImage} alt="Company logo" />
     );
-    span = (<span className={classes.separator}/>);
+    span = <span className={classes.separator} />;
   }
   return (
-      <div className={classes.logoContainer}>
-        {logoComponent}
-        {span}
-        <Typography variant="h3" className={classes.root}>{titleText}</Typography>
-
-      </div>
+    <div className={classes.logoContainer}>
+      {logoComponent}
+      {span}
+      <Typography variant="h3" className={classes.root}>
+        {titleText}
+      </Typography>
+    </div>
   );
-}
+};
 
 Title.propTypes = {
   /**

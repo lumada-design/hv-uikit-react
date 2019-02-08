@@ -12,7 +12,7 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import toJson from 'enzyme-to-json';
+import toJson from "enzyme-to-json";
 
 import ListItem from "@material-ui/core/ListItem";
 
@@ -22,19 +22,25 @@ import NavigationAnchors from "../NavigationAnchors";
 describe("User withStyles", () => {
   let wrapper;
 
-  const options = [{
-    label: "Option1",
-    value: "Value1"
-  }, {
-    label: "Option2",
-    value: "Value2"
-  }, {
-    label: "Option3",
-    value: "Value3"
-  }];
+  const options = [
+    {
+      label: "Option1",
+      value: "Value1"
+    },
+    {
+      label: "Option2",
+      value: "Value2"
+    },
+    {
+      label: "Option3",
+      value: "Value3"
+    }
+  ];
 
   beforeEach(async () => {
-    wrapper = shallow(<NavigationAnchorsWithStyles classes={{}} options={options} /> );
+    wrapper = shallow(
+      <NavigationAnchorsWithStyles classes={{}} options={options} />
+    );
   });
 
   it("should be defined", () => {
@@ -55,19 +61,31 @@ describe("User withStyles", () => {
     const onClickCallback = () => onClick();
     let listItems;
 
-    wrapper = mount(<NavigationAnchors classes={{}} options={options} onClick={onClickCallback} />);
+    wrapper = mount(
+      <NavigationAnchors
+        classes={{}}
+        options={options}
+        onClick={onClickCallback}
+      />
+    );
     expect(toJson(wrapper)).toMatchSnapshot();
 
     listItems = wrapper.find(ListItem);
     listItems.first().simulate("click");
     expect(onClick).not.toHaveBeenCalled();
 
-    wrapper = mount(<NavigationAnchors classes={{}} href={false} options={options} onClick={onClickCallback} />);
+    wrapper = mount(
+      <NavigationAnchors
+        classes={{}}
+        href={false}
+        options={options}
+        onClick={onClickCallback}
+      />
+    );
     expect(toJson(wrapper)).toMatchSnapshot();
 
     listItems = wrapper.find(ListItem);
     listItems.first().simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
-
 });

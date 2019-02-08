@@ -16,14 +16,19 @@ import HvLink from "../../../src/Link";
 const ActionsList = ({ classes, eventId, dismiss, close }) => {
   return (
     <div className={classes.root}>
-      <HvLink route="events" params={{eventId}}>
-        <HvButton style={{borderBottom:"none"}} colorType={buttonTypes.secondary} className={classes.button}>View</HvButton>
+      <HvLink route="events" params={{ eventId }}>
+        <HvButton
+          style={{ borderBottom: "none" }}
+          colorType={buttonTypes.secondary}
+          className={classes.button}
+        >
+          View
+        </HvButton>
       </HvLink>
       <HvButton
         colorType={buttonTypes.secondary}
         className={classes.button}
         onClick={() => {
-
           dismiss({
             variables: {
               id: eventId,

@@ -41,13 +41,16 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   const targetTheme = _.cloneDeep(InputTargetTheme);
   const sourceTheme = _.cloneDeep(InputSourceTheme);
   const deleteDifference = "D";
-  if (!_.isNil(targetTheme) && 
-      !_.isNil(sourceTheme) && 
-      !_.isEmpty(targetTheme) &&
-      !_.isEmpty(sourceTheme)) {
-    diff.observableDiff(muiDefaultTheme, sourceTheme, (difference) => {
-      const partialCustomTheme = _.set({} ,difference.path,difference.rhs);
-      if (difference.kind !== deleteDifference) {// Do not include the differences of type "delete"
+  if (
+    !_.isNil(targetTheme) &&
+    !_.isNil(sourceTheme) &&
+    !_.isEmpty(targetTheme) &&
+    !_.isEmpty(sourceTheme)
+  ) {
+    diff.observableDiff(muiDefaultTheme, sourceTheme, difference => {
+      const partialCustomTheme = _.set({}, difference.path, difference.rhs);
+      if (difference.kind !== deleteDifference) {
+        // Do not include the differences of type "delete"
         _.merge(targetTheme, partialCustomTheme);
       }
     });

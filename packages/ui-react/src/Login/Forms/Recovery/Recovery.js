@@ -11,11 +11,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "../../../Input";
-import HvButton, {buttonTypes} from "../../../Button";
+import HvButton, { buttonTypes } from "../../../Button";
 import Typography from "@material-ui/core/Typography";
 import MessageElement from "../MessageElement";
 import classNames from "classnames";
-
 
 /**
  * The recovery password form.
@@ -30,9 +29,9 @@ class Recovery extends React.Component {
   /**
    * Sleep function.
    */
-   sleep= (ms) => {
+  sleep = ms => {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  };
 
   /**
    * Submit of the Form. Asynchronous call of the passed recovery function.
@@ -43,21 +42,21 @@ class Recovery extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    const {email} = this.state;
-    const {recovery} = this.props;
+    const { email } = this.state;
+    const { recovery } = this.props;
 
-    this.setState({isRecovering: true});
-    this.setState({recoverStatus: "processing"});
+    this.setState({ isRecovering: true });
+    this.setState({ recoverStatus: "processing" });
 
     try {
-      await recovery({email});
-      this.setState({recoverStatus: "success"});
+      await recovery({ email });
+      this.setState({ recoverStatus: "success" });
       await this.sleep(2000);
       this.props.onClick();
     } catch (error) {
-      this.setState({recoverStatus: "error"});
-    }finally {
-      this.setState({isRecovering: false});
+      this.setState({ recoverStatus: "error" });
+    } finally {
+      this.setState({ isRecovering: false });
     }
   };
 
@@ -67,63 +66,76 @@ class Recovery extends React.Component {
    * @returns {function(*=): *}
    */
   handleInputChange = () => value => {
-    this.setState({"email": value});
+    this.setState({ email: value });
     return value;
   };
 
   render() {
-    const {classes, onClick, okRecoveryIcon} = this.props;
-    const {isRecovering, recoverStatus} = this.state;
+    const { classes, onClick, okRecoveryIcon } = this.props;
+    const { isRecovering, recoverStatus } = this.state;
 
     return (
+      <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
+        <Typography className={classes.title} variant="h3">
+          {"Recover Credentials"}
+        </Typography>
 
-        <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
-
-          <Typography className={classes.title} variant="h3">{"Recover Credentials"}</Typography>
-
-          <div className={classes.messageContainer}>
-            {recoverStatus === "success" ?
-                <MessageElement iconElement={okRecoveryIcon}
-                    icon={classes.iconError}
-                    showMessage={classes.showOkMessage}
-                    message="The instructions to recover your credentials were sent." />
-                :
-                <p className={classes.instructions}>You will receive an email with instructions to recover your credentials.</p>}
-          </div>
-
-          <div className={classes.input}>
-            <Input className
-                inputTextConfiguration={{
-                  inputLabel: "Email",
-                  placeholder: "Enter text",
-                }}
-                password={false}
-                onChange={this.handleInputChange()}
-                externalWarningTextOverride={recoverStatus == "error" ? "The email you've entered doesn't match any account": null}
+        <div className={classes.messageContainer}>
+          {recoverStatus === "success" ? (
+            <MessageElement
+              iconElement={okRecoveryIcon}
+              icon={classes.iconError}
+              showMessage={classes.showOkMessage}
+              message="The instructions to recover your credentials were sent."
             />
-          </div>
+          ) : (
+            <p className={classes.instructions}>
+              You will receive an email with instructions to recover your
+              credentials.
+            </p>
+          )}
+        </div>
 
-          <div className={classNames({[classes.buttonsContainer]: recoverStatus !== "error"},
-              {[classes.buttonsContainerError]: recoverStatus === "error"})} >
+        <div className={classes.input}>
+          <Input
+            className
+            inputTextConfiguration={{
+              inputLabel: "Email",
+              placeholder: "Enter text"
+            }}
+            password={false}
+            onChange={this.handleInputChange()}
+            externalWarningTextOverride={
+              recoverStatus == "error"
+                ? "The email you've entered doesn't match any account"
+                : null
+            }
+          />
+        </div>
 
-            <HvButton
-                className={classes.submitButton}
-                type="submit"
-                colorType={buttonTypes.primary}
-            >
-              {isRecovering ? "Recovering" : "Recover"}
-            </HvButton>
-            <HvButton
-                className={classes.cancelButton}
-                type="submit"
-                onClick={onClick}
-                colorType={buttonTypes.secondary}
-            >
-              Cancel
-            </HvButton>
-          </div>
-
-        </form>
+        <div
+          className={classNames(
+            { [classes.buttonsContainer]: recoverStatus !== "error" },
+            { [classes.buttonsContainerError]: recoverStatus === "error" }
+          )}
+        >
+          <HvButton
+            className={classes.submitButton}
+            type="submit"
+            colorType={buttonTypes.primary}
+          >
+            {isRecovering ? "Recovering" : "Recover"}
+          </HvButton>
+          <HvButton
+            className={classes.cancelButton}
+            type="submit"
+            onClick={onClick}
+            colorType={buttonTypes.secondary}
+          >
+            Cancel
+          </HvButton>
+        </div>
+      </form>
     );
   }
 }

@@ -58,7 +58,7 @@ storiesOf("Table", module)
       />
     );
   })
-  .add("Table with no pagination",  () => (
+  .add("Table with no pagination", () => (
     <HvTable
       data={data}
       columns={getColumns(theme, dismiss)}
@@ -68,7 +68,7 @@ storiesOf("Table", module)
       defaultSorted={defaults.sorted}
     />
   ))
-  .add("Table with no sort",  () => (
+  .add("Table with no sort", () => (
     <HvTable
       data={data}
       columns={getColumns(theme, dismiss)}
@@ -78,7 +78,7 @@ storiesOf("Table", module)
       sortable={false}
     />
   ))
-  .add("Table with no data",  () => (
+  .add("Table with no data", () => (
     <HvTable
       data={[]}
       columns={getColumns(theme, dismiss)}

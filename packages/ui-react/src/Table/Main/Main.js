@@ -58,7 +58,8 @@ class HvTable extends React.Component {
       ...(showPagination && onPageSizeChange && { onPageSizeChange }),
       ...(showPagination && pages && { pages }),
 
-      ...(propsPageSize !== undefined && {defaultPageSize: propsPageSize} || pageSize && { defaultPageSize: pageSize }),
+      ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
+        (pageSize && { defaultPageSize: pageSize })),
 
       ...{ showPageSizeOptions: showPageSize }
     };
@@ -186,7 +187,7 @@ HvTable.propTypes = {
   /**
    * An object describing what column is sorted by default on the table
    */
-  defaultSort: PropTypes.instanceOf(Object),
+  defaultSort: PropTypes.instanceOf(Object)
 };
 
 HvTable.defaultProps = {

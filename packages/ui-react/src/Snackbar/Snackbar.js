@@ -8,15 +8,24 @@
  *  under which the software has been supplied.
  */
 
-
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
-
 const HvSnackbar = props => {
-  const {classes, open, onClose, message, anchorOrigin, autoHideDuration, variant, showIcon, customIcon, action} = props;
+  const {
+    classes,
+    open,
+    onClose,
+    message,
+    anchorOrigin,
+    autoHideDuration,
+    variant,
+    showIcon,
+    customIcon,
+    action
+  } = props;
 
   return (
     <Snackbar
@@ -66,7 +75,7 @@ HvSnackbar.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'default']),
+  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]),
   /**
    * Custom icon to replace the variant default.
    */
@@ -81,11 +90,10 @@ HvSnackbar.propTypes = {
   action: PropTypes.node
 };
 
-
 HvSnackbar.defaultProps = {
   message: "",
   open: false,
-  anchorOrigin: {vertical: 'top', horizontal: 'right'},
+  anchorOrigin: { vertical: "top", horizontal: "right" },
   onClose: null,
   autoHideDuration: 2000,
   customIcon: null,
@@ -93,6 +101,5 @@ HvSnackbar.defaultProps = {
   action: null,
   variant: "default"
 };
-
 
 export default HvSnackbar;

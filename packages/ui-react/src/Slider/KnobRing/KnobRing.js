@@ -14,11 +14,7 @@ import PropTypes from "prop-types";
 const HvButton = props => {
   const { classes } = props;
 
-  return (
-    <div
-      className={classes.knobRing}
-    />
-  );
+  return <div className={classes.knobRing} />;
 };
 
 HvButton.propTypes = {

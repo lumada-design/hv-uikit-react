@@ -52,6 +52,6 @@ const withPopper = (Component, content) => {
   }
 
   return withStyles(styles)(Popper);
-}
+};
 
 export default withPopper;
