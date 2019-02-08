@@ -34,7 +34,7 @@ class HvSlider extends React.Component {
       maxPointValue,
       minPointValue,
       divisionQuantity,
-      formatMark,
+      formatMark
     } = props;
 
     const styles = styleCreator(theme);
@@ -99,9 +99,9 @@ class HvSlider extends React.Component {
    * Transform the scaled values into knobs positions.
    *
    * @param {*} scaledValue - the value of the slider to be scaled
-   * @param {*} minPointValue - The value of the first point in 
+   * @param {*} minPointValue - The value of the first point in
    * the slider from left to right.
-   * @param {*} inverseStepValue - The inverse of calculated separation between 
+   * @param {*} inverseStepValue - The inverse of calculated separation between
    * the value of the points that compose the slider.
    */
   scaledValueToKnobsPositionValue = (
@@ -115,9 +115,9 @@ class HvSlider extends React.Component {
    *
    * @param {Object} knobProperties - The object provided by the user with the
    * desired configuration for the knobs.
-   * @param {Number} inverseStepValue - The inverse of calculated separation between 
+   * @param {Number} inverseStepValue - The inverse of calculated separation between
    * the value of the points that compose the slider.
-   * @param {Integer} minPointValue - The value of the first point in the slider from 
+   * @param {Integer} minPointValue - The value of the first point in the slider from
    * left to right.
    * @returns {Array} - The position of the knobs.
    */
@@ -140,15 +140,15 @@ class HvSlider extends React.Component {
   /**
    * Generates the inline styles used for the track of each knob, applying colors if necessary.
    *
-   * @param {Object} markProperties - The object provided by the user with 
+   * @param {Object} markProperties - The object provided by the user with
    * the desired configuration for the marks.
    * @param {Integer} markstep - The separation between marks.
    * @param {Integer} divisionQuantity - How many subdivisions there are in the slider.
-   * @param {Integer} minPointValue - The value of the first point in the slider from 
+   * @param {Integer} minPointValue - The value of the first point in the slider from
    * left to right.
    * @param {Integer} stepValue - The calculated separation between the values of the slider.
    * @param {Integer} markDigits - How many decimals the mark will show.
-   * @param {Function} formatMark - A function provided by the user that is going to 
+   * @param {Function} formatMark - A function provided by the user that is going to
    * be executed to format the mark text.
    * @param {Object} styles - the default styles for the marks.
    * @returns {Object} - An object with the for the marks.
@@ -197,7 +197,7 @@ class HvSlider extends React.Component {
   /**
    * Generates the inline styles used for the track of each knob, applying colors if necessary.
    *
-   * @param {Object} knobProperties - The object provided by the user with 
+   * @param {Object} knobProperties - The object provided by the user with
    * the desired configuration for the knobs.
    * @param {Object} styles - the default styles for the tracks.
    * @returns {Object} - An object with the style for each track.
@@ -219,7 +219,7 @@ class HvSlider extends React.Component {
   /**
    * Generates the inline styles used for each knob, applying colors if specified.
    *
-   * @param {Object} knobProperties - The object provided by the user with 
+   * @param {Object} knobProperties - The object provided by the user with
    * the desired configuration for the knobs.
    * @param {Object} styles - the default styles for the knobs.
    * @returns {Object} - An object with both the inner and outer styles for the knob.
@@ -273,7 +273,9 @@ class HvSlider extends React.Component {
 
     let duplicatedValue = null;
 
-    const findDuplicated = newKnobsPosition.filter((item, index) => newKnobsPosition.indexOf(item) !== index);
+    const findDuplicated = newKnobsPosition.filter(
+      (item, index) => newKnobsPosition.indexOf(item) !== index
+    );
 
     if (noOverlap && findDuplicated.length > 0) {
       [duplicatedValue] = findDuplicated;
@@ -372,8 +374,13 @@ class HvSlider extends React.Component {
    * @memberof HvSlider
    */
   createKnob = props => {
-
-    const { minPointValue, markDigits, knobProperties, formatMark, classes } = this.props;
+    const {
+      minPointValue,
+      markDigits,
+      knobProperties,
+      formatMark,
+      classes
+    } = this.props;
     const { stepValue } = this.state;
     const { value, dragging, index, style, ...restProps } = props;
 
@@ -397,12 +404,11 @@ class HvSlider extends React.Component {
         key={index}
         overlayClassName={classes.sliderTooltip}
       >
-        <Handle
-          value={value}
-          style={style}
-          {...restProps}
-        >
-          <KnobRing hoverColor={knobProperties[index].hoverColor} dragging={dragging} />
+        <Handle value={value} style={style} {...restProps}>
+          <KnobRing
+            hoverColor={knobProperties[index].hoverColor}
+            dragging={dragging}
+          />
         </Handle>
       </Tooltip>
     );
@@ -446,13 +452,13 @@ class HvSlider extends React.Component {
 }
 
 HvSlider.propTypes = {
-  /** 
-  * The object created by material to apply to the component. 
-  */
+  /**
+   * The object created by material to apply to the component.
+   */
   theme: PropTypes.instanceOf(Object).isRequired,
-  /** 
+  /**
    * The object used to set the knob properties,
-   * for every item in the array a new knob will be created. 
+   * for every item in the array a new knob will be created.
    */
   knobProperties: PropTypes.arrayOf(
     PropTypes.shape({
@@ -463,8 +469,8 @@ HvSlider.propTypes = {
       hoverColor: PropTypes.string
     })
   ).isRequired,
-  /** 
-   * The object used to set the mark properties individually. 
+  /**
+   * The object used to set the mark properties individually.
    */
   markProperties: PropTypes.arrayOf(
     PropTypes.shape({
@@ -472,8 +478,8 @@ HvSlider.propTypes = {
       label: PropTypes.string
     })
   ),
-  /** 
-   * the function executed before a change will ocurr in the slider. 
+  /**
+   * the function executed before a change will ocurr in the slider.
    * it will receive an object like
    * {
    *   knobsPosition: [],
@@ -481,8 +487,8 @@ HvSlider.propTypes = {
    * }
    */
   onBeforeChange: PropTypes.func,
-  /** 
-   * the function executed while a change is ocurring in the slider. 
+  /**
+   * the function executed while a change is ocurring in the slider.
    * it will receive an object like
    * {
    *   knobsPosition: [],
@@ -490,7 +496,7 @@ HvSlider.propTypes = {
    * }
    */
   onChange: PropTypes.func,
-  /** 
+  /**
    * the function executed after a change ocurred in the slider.
    * it will receive an object like
    * {
@@ -499,38 +505,38 @@ HvSlider.propTypes = {
    * }
    */
   onAfterChange: PropTypes.func,
-  /** 
+  /**
    * the separation in points between marks.
    * example: if 10 divisions and a markstep of 2 there will be 5 marks.
    */
   markStep: PropTypes.number,
-  /** 
-   * how many subdivisions there are in the slider. 
+  /**
+   * how many subdivisions there are in the slider.
    */
   divisionQuantity: PropTypes.number,
-  /** 
-   * the value of the first point in the slider from left to right. 
+  /**
+   * the value of the first point in the slider from left to right.
    */
   minPointValue: PropTypes.number,
-  /** 
-   * the value of the last point in the slider from left to right. 
+  /**
+   * the value of the last point in the slider from left to right.
    */
   maxPointValue: PropTypes.number,
-  /** 
+  /**
    * a formatting function used to add format to the marks in the track,
-   * the function receives the 
+   * the function receives the
    */
   markDigits: PropTypes.number,
   /**
    * a formatting function used to add format to the marks in the track,
-   * the function receives the 
+   * the function receives the
    */
   formatMark: PropTypes.func,
-  /** 
+  /**
    * if `true` the knobs can't have the same value, if `false` knobs can have the same value.
    */
   noOverlap: PropTypes.bool,
-  /** 
+  /**
    * the classes object to be applied into the root object.
    */
   classes: PropTypes.instanceOf(Object).isRequired
@@ -545,9 +551,9 @@ HvSlider.defaultProps = {
   divisionQuantity: 100,
   minPointValue: 0,
   maxPointValue: 100,
-  onBeforeChange: () => { },
-  onChange: () => { },
-  onAfterChange: () => { }
+  onBeforeChange: () => {},
+  onChange: () => {},
+  onAfterChange: () => {}
 };
 
 export default HvSlider;

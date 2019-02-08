@@ -12,64 +12,74 @@ import React from "react";
 import Login from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
 import PropTypes from "prop-types";
-import backImg from "../resources/background.jpg"
-import {Level0Success16Color , Level5Unsuccess16Color} from "@hv-ui/icons";
-
-
+import backImg from "../resources/background.jpg";
+import { Level0Success16Color, Level5Unsuccess16Color } from "@hv-ui/icons";
 
 /**
  * Main container for the Login component.
  */
 class HvLogin extends React.Component {
-
-  state = {inRecoveryMode: false};
+  state = { inRecoveryMode: false };
 
   /**
    * Function to switch the status inRecoveryMode. This status is used to determine which form
    * should be render (Login or Recover).
    */
   switchForms = () => {
-    this.setState({inRecoveryMode: !this.state.inRecoveryMode});
+    this.setState({ inRecoveryMode: !this.state.inRecoveryMode });
   };
-
 
   render() {
     const {
-      classes, login, recovery, backgroundImage, titleText, logo, titleComponent,
-      allowRecover, allowRememberMe, okRecoveryIcon, errorLoginIcon
+      classes,
+      login,
+      recovery,
+      backgroundImage,
+      titleText,
+      logo,
+      titleComponent,
+      allowRecover,
+      allowRememberMe,
+      okRecoveryIcon,
+      errorLoginIcon
     } = this.props;
-    const {inRecoveryMode} = this.state;
+    const { inRecoveryMode } = this.state;
 
     let form;
 
     if (inRecoveryMode) {
-      form = (<Recovery recovery={recovery} onClick={this.switchForms} okRecoveryIcon={okRecoveryIcon}/>);
+      form = (
+        <Recovery
+          recovery={recovery}
+          onClick={this.switchForms}
+          okRecoveryIcon={okRecoveryIcon}
+        />
+      );
     } else {
       form = (
-          <Login login={login}
-              titleText={titleText}
-              logo={logo}
-              titleComponent={titleComponent}
-              allowRecover={allowRecover}
-              allowRememberMe={allowRememberMe}
-              onClick={this.switchForms}
-              errorLoginIcon = {errorLoginIcon}
-          />
+        <Login
+          login={login}
+          titleText={titleText}
+          logo={logo}
+          titleComponent={titleComponent}
+          allowRecover={allowRecover}
+          allowRememberMe={allowRememberMe}
+          onClick={this.switchForms}
+          errorLoginIcon={errorLoginIcon}
+        />
       );
     }
 
     return (
-        <div
-            className={classes.root}
-            style={{backgroundImage: `url(${backgroundImage})`}}
-        >
-          <div className={classes.rightContainer}>
-            <div className={classes.formContainer}>
-              {form}
-            </div>
-          </div>
+      <div
+        className={classes.root}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <div className={classes.rightContainer}>
+          <div className={classes.formContainer}>{form}</div>
         </div>
-    )
+      </div>
+    );
   }
 }
 

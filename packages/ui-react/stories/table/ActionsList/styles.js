@@ -9,7 +9,7 @@
  */
 
 const styles = theme => ({
-  root:{
+  root: {
     border: `1px solid ${theme.palette.grey.plain}`
   },
   button: {

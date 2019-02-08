@@ -18,12 +18,11 @@ import SliderWithStyles from "../index";
 import HvProvider from "../../Provider";
 
 describe("Slider ", () => {
-
   const knobProperties = [
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      defaultValue: 10,
+      defaultValue: 10
     },
     {
       color: "#f9dc37",
@@ -48,27 +47,26 @@ describe("Slider ", () => {
     }
   ];
 
-
   const knobPropertiesScaled = [
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      defaultValue: 0.10,
+      defaultValue: 0.1
     },
     {
       color: "#f9dc37",
       dragColor: "#fbe56a",
-      defaultValue: 0.20
+      defaultValue: 0.2
     },
     {
       color: "#ff9100",
       dragColor: "#ffa733",
-      defaultValue: 0.30
+      defaultValue: 0.3
     },
     {
       color: "#cc0000",
       dragColor: "#ff0000",
-      defaultValue: 0.40
+      defaultValue: 0.4
     },
     {
       color: "#cc0000",
@@ -78,7 +76,11 @@ describe("Slider ", () => {
     }
   ];
 
-  const wrapper = mount(<HvProvider><SliderWithStyles knobProperties={knobProperties} /></HvProvider>);
+  const wrapper = mount(
+    <HvProvider>
+      <SliderWithStyles knobProperties={knobProperties} />
+    </HvProvider>
+  );
 
   let myMock;
 
@@ -100,135 +102,155 @@ describe("Slider ", () => {
   });
 
   it("should call the format mark function", () => {
-
-    mount(<HvProvider><SliderWithStyles knobProperties={knobProperties} formatMark={myMock} /></HvProvider>);
+    mount(
+      <HvProvider>
+        <SliderWithStyles knobProperties={knobProperties} formatMark={myMock} />
+      </HvProvider>
+    );
 
     expect(myMock.mock.calls.length).not.toBe(0);
-
   });
 
-
   it("shouldn't call the format mark function more than one time for each knob when the markProps exist", () => {
-
-    mount(<HvProvider><SliderWithStyles markProperties={[{ position: 2, label: "asd" }]} knobProperties={knobProperties} formatMark={myMock} /></HvProvider>);
+    mount(
+      <HvProvider>
+        <SliderWithStyles
+          markProperties={[{ position: 2, label: "asd" }]}
+          knobProperties={knobProperties}
+          formatMark={myMock}
+        />
+      </HvProvider>
+    );
 
     expect(myMock.mock.calls.length).toBe(5);
-
   });
 
   it("should define the start of the range with the passed value", () => {
-
-    mount(<HvProvider><SliderWithStyles minPointValue={15} knobProperties={knobProperties} formatMark={myMock} /></HvProvider>);
+    mount(
+      <HvProvider>
+        <SliderWithStyles
+          minPointValue={15}
+          knobProperties={knobProperties}
+          formatMark={myMock}
+        />
+      </HvProvider>
+    );
 
     expect(myMock.mock.calls[0]).toEqual(["15"]);
-
   });
 
   it("should define the end of the range with the passed value", () => {
-
-    mount(<HvProvider><SliderWithStyles maxPointValue={87} knobProperties={knobProperties} formatMark={myMock} /></HvProvider>);
+    mount(
+      <HvProvider>
+        <SliderWithStyles
+          maxPointValue={87}
+          knobProperties={knobProperties}
+          formatMark={myMock}
+        />
+      </HvProvider>
+    );
 
     expect(myMock.mock.calls[myMock.mock.calls.length - 1]).toEqual(["87"]);
-
   });
 
-
   it("should define the end of the range with the passed value", () => {
-
-    mount(<HvProvider><SliderWithStyles divisionQuantity={87} knobProperties={knobProperties} formatMark={myMock} /></HvProvider>);
+    mount(
+      <HvProvider>
+        <SliderWithStyles
+          divisionQuantity={87}
+          knobProperties={knobProperties}
+          formatMark={myMock}
+        />
+      </HvProvider>
+    );
 
     // 93 = 87 points + 5 knobs
     expect(myMock.mock.calls.length).toEqual(93);
-
   });
 
   it("should call onBefore method just once", () => {
-
-    const myMount = mount(<HvProvider><SliderWithStyles divisionQuantity={87} knobProperties={knobProperties} onBeforeChange={myMock} /></HvProvider>);
+    const myMount = mount(
+      <HvProvider>
+        <SliderWithStyles
+          divisionQuantity={87}
+          knobProperties={knobProperties}
+          onBeforeChange={myMock}
+        />
+      </HvProvider>
+    );
 
     const instance = myMount.find(Slider).instance();
 
     instance.onBeforeChangeHandler(["10", "20", "30", "40", "50"]);
 
-    expect((myMock.mock.calls.length)).toBe(1);
-
-
+    expect(myMock.mock.calls.length).toBe(1);
   });
 
   it("should call onAfter method just once", () => {
-
-    const myMount = mount(<HvProvider><SliderWithStyles divisionQuantity={87} knobProperties={knobProperties} onAfterChange={myMock} /></HvProvider>);
+    const myMount = mount(
+      <HvProvider>
+        <SliderWithStyles
+          divisionQuantity={87}
+          knobProperties={knobProperties}
+          onAfterChange={myMock}
+        />
+      </HvProvider>
+    );
 
     const instance = myMount.find(Slider).instance();
 
     instance.onAfterChangeHandler(["10", "20", "30", "40", "50"]);
 
-    expect((myMock.mock.calls.length)).toBe(1);
-
+    expect(myMock.mock.calls.length).toBe(1);
   });
 
-
   it("should call onChange method just once, adjusting the values to the scale", () => {
-
-    const onChangeMock = (rest) => {
+    const onChangeMock = rest => {
       expect(rest).toEqual({
-        "knobsPosition": [
-          11,
-          25,
-          37,
-          48,
-          100
-        ],
-        "knobsValues": [
-          0.11,
-          0.25,
-          0.37,
-          0.48,
-          0.7000000000000001
-        ]
-      })
+        knobsPosition: [11, 25, 37, 48, 100],
+        knobsValues: [0.11, 0.25, 0.37, 0.48, 0.7000000000000001]
+      });
     };
 
-    const myMount = mount(<HvProvider><SliderWithStyles maxPointValue={1} knobProperties={knobPropertiesScaled} markDigits={2} onChange={onChangeMock} /></HvProvider>);
+    const myMount = mount(
+      <HvProvider>
+        <SliderWithStyles
+          maxPointValue={1}
+          knobProperties={knobPropertiesScaled}
+          markDigits={2}
+          onChange={onChangeMock}
+        />
+      </HvProvider>
+    );
 
     const instance = myMount.find(Slider).instance();
 
     instance.onChangeHandler([11, 25, 37, 48, 70]);
-
   });
 
   it("shouldn't allow overlap. The value 100 must pass to 99", () => {
-
     const onChangeMock = jest.fn(() => "mock");
 
-    const myMount = mount(<HvProvider><SliderWithStyles knobProperties={knobProperties} onChange={onChangeMock} /></HvProvider>);
+    const myMount = mount(
+      <HvProvider>
+        <SliderWithStyles
+          knobProperties={knobProperties}
+          onChange={onChangeMock}
+        />
+      </HvProvider>
+    );
 
     const instance = myMount.find(Slider).instance();
 
     instance.onChangeHandler([10, 20, 40, 100, 100]);
 
-    expect(onChangeMock.mock.calls).toEqual(
+    expect(onChangeMock.mock.calls).toEqual([
       [
-        [
-          {
-            "knobsPosition": [
-              10,
-              20,
-              40,
-              99,
-              100
-            ],
-            "knobsValues": [
-              10,
-              20,
-              40,
-              99,
-              100
-            ]
-          }
-        ]
-      ]);
-
+        {
+          knobsPosition: [10, 20, 40, 99, 100],
+          knobsValues: [10, 20, 40, 99, 100]
+        }
+      ]
+    ]);
   });
-
 });

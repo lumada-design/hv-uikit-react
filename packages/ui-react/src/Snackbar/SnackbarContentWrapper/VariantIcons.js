@@ -1,4 +1,9 @@
-import {Level0Success16Color, Level3Alert16, Level416Color, Level5Unsuccess16Color} from "@hv-ui/icons";
+import {
+  Level0Success16Color,
+  Level3Alert16,
+  Level416Color,
+  Level5Unsuccess16Color
+} from "@hv-ui/icons";
 import React from "react";
 
 const variantIcon = Object.freeze({
@@ -8,7 +13,4 @@ const variantIcon = Object.freeze({
   info: <Level3Alert16 />
 });
 
-
 export default variantIcon;
-
-

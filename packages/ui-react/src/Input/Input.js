@@ -362,7 +362,10 @@ class HvInput extends React.Component {
       classNamesRoot = classes.inputRootDisabled;
     }
 
-    if (validationState === validationStates.invalid || externalWarningTextOverride !== null) {
+    if (
+      validationState === validationStates.invalid ||
+      externalWarningTextOverride !== null
+    ) {
       classInfoText = classes.warningInfoText;
     }
 
@@ -485,13 +488,13 @@ HvInput.propTypes = {
   value: PropTypes.string,
   /**
    * The initial state of the input.
-   * 
+   *
    * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
   /**
    * The icon position of the input.
-   * 
+   *
    * note: Is recommended you use the provided iconPositions object to set this value.
    */
   iconPosition: PropTypes.oneOf(["left", "right"]),
@@ -507,7 +510,7 @@ HvInput.propTypes = {
   minCharQuantity: PropTypes.number,
   /**
    * Which type of default validation should the input perform.
-   * 
+   *
    * note: Is recommended you use the provided ValidationTypes object to set this value.
    */
   validationType: PropTypes.oneOf(["none", "number", "email"]),

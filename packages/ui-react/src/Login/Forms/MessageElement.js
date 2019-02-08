@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
-
 /**
  * Message composes by an icon and a text message.
  *
@@ -11,15 +10,15 @@ import Typography from "@material-ui/core/Typography";
  * @constructor
  */
 function MessageElement(props) {
-  const {iconElement, showMessage, icon, message} = props;
+  const { iconElement, showMessage, icon, message } = props;
   const Icon = iconElement;
   return (
-      <div className={showMessage}>
-        <Icon className={icon}/>
-        <Typography variant="body1">{message}</Typography>
-      </div>
+    <div className={showMessage}>
+      <Icon className={icon} />
+      <Typography variant="body1">{message}</Typography>
+    </div>
   );
-};
+}
 
 MessageElement.prototype = {
   /**
@@ -38,6 +37,6 @@ MessageElement.prototype = {
    * Message to be showed.
    */
   message: PropTypes.string.isRequired
-}
+};
 
 export default MessageElement;

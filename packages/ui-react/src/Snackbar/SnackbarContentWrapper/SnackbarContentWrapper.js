@@ -8,13 +8,12 @@
  *  under which the software has been supplied.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import SnackbarContent from '@material-ui/core/SnackbarContent'
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import SnackbarContent from "@material-ui/core/SnackbarContent";
 import Typography from "@material-ui/core/Typography";
 import VariantIcons from "./VariantIcons";
-
 
 /**
  * Mapper for status/icons.
@@ -34,9 +33,9 @@ const severityIcon = severity => {
     case "info":
       icon = VariantIcons.info;
       break;
-      // case "negligible":
-      //   icon = negligible;
-      //   break;
+    // case "negligible":
+    //   icon = negligible;
+    //   break;
     default:
       icon = VariantIcons.success;
       break;
@@ -73,41 +72,53 @@ const mapSeverityToVariant = severity => {
 };
 
 function HvSnackbarContentWrapper(props) {
-  const {classes, message, showIcon, customIcon, variant, action, ...other} = props;
+  const {
+    classes,
+    message,
+    showIcon,
+    customIcon,
+    variant,
+    action,
+    ...other
+  } = props;
   let icon;
   let actionContainer;
 
   if (action !== null)
-    actionContainer = React.cloneElement(action, {className: classes.action});
+    actionContainer = React.cloneElement(action, { className: classes.action });
 
   if (customIcon !== null) {
-    icon = React.cloneElement(customIcon, {className: classes.iconVariant});
+    icon = React.cloneElement(customIcon, { className: classes.iconVariant });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {className: classes.iconVariant});
+    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
+      className: classes.iconVariant
+    });
   }
 
   return (
     <SnackbarContent
-      classes={{root:classes.root, message:classes.message}}
+      classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
-      message={(
+      message={
         <div id="client-snackbar" className={classes.messageSpan}>
           {icon}
-          <Typography className={classNames(classes.messageText,
-              {[classes.messageWithoutIcon]: !showIcon && customIcon === null},
-              {[classes.messageWithoutAction]: action === null}
-              )}
+          <Typography
+            className={classNames(
+              classes.messageText,
+              {
+                [classes.messageWithoutIcon]: !showIcon && customIcon === null
+              },
+              { [classes.messageWithoutAction]: action === null }
+            )}
           >
             {message}
           </Typography>
           {actionContainer}
         </div>
-          )}
-
+      }
       {...other}
     />
   );
-
 }
 
 HvSnackbarContentWrapper.propTypes = {
@@ -122,7 +133,8 @@ HvSnackbarContentWrapper.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'default']).isRequired,
+  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"])
+    .isRequired,
   /**
    * Controls if the associated icon to the variant should be shown.
    */

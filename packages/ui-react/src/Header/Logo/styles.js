@@ -17,11 +17,11 @@ const styles = theme => ({
     alignItems: "center"
   },
   companyLogoImage: {
-    height: 28,
+    height: 28
   },
 
   companyLogoText: {
-    height: 28,
+    height: 28
   },
 
   separator: {

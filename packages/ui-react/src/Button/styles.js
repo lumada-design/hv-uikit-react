@@ -49,7 +49,7 @@ const styles = theme => ({
     border: `1px solid ${theme.palette.grey.plain}`,
     "&:hover": {
       backgroundColor: theme.palette.grey.plain,
-      border: `1px solid ${theme.palette.grey.plain}`,
+      border: `1px solid ${theme.palette.grey.plain}`
     },
     "&:active": {
       backgroundColor: theme.palette.common.white
@@ -73,7 +73,7 @@ const styles = theme => ({
     color: theme.palette.primary.main,
     backgroundColor: "transparent",
     "&:hover": {
-      backgroundColor: theme.palette.grey.foggy,
+      backgroundColor: theme.palette.grey.foggy
     },
     "&:active": {
       backgroundColor: "transparent"
@@ -96,7 +96,7 @@ const styles = theme => ({
   disabled: {
     backgroundColor: theme.palette.grey.clear,
     color: theme.palette.grey.passive,
-    cursor: "not-allowed",
+    cursor: "not-allowed"
   }
 });
 

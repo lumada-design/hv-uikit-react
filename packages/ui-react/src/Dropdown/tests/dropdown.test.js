@@ -96,7 +96,6 @@ describe("Dropdown", () => {
 
     it("calls the onChange on value change", () => {
       // TODO: need to find a way to trigger the menu open and then select a value
-
       /* const options = [
         { value: "open", label: "New" },
         { value: "fixed", label: "Fixed" },

@@ -20,39 +20,48 @@ import materialButtonConfiguration from "./materialButtonConfiguration";
  * @param {*} type - The button type configuration that will be generated.
  * @returns {Object} - An Object with the color and variant values required by the material ui button.
  */
-const generateButtonConfiguration = (type) => {
-  switch(type) {
+const generateButtonConfiguration = type => {
+  switch (type) {
     default:
     case buttonTypes.primary:
       return {
         color: materialButtonConfiguration.color.primary,
         variant: materialButtonConfiguration.variant.contained
-      }
+      };
     case buttonTypes.secondary:
       return {
         color: materialButtonConfiguration.color.primary,
         variant: materialButtonConfiguration.variant.outlined
-      }
+      };
     case buttonTypes.link:
       return {
         color: materialButtonConfiguration.color.primary,
         variant: materialButtonConfiguration.variant.text
-      }
+      };
   }
-}
+};
 
 const HvButton = props => {
-  const { classes, className, children, disabled, onClick, type, colorType, ...other } = props;
+  const {
+    classes,
+    className,
+    children,
+    disabled,
+    onClick,
+    type,
+    colorType,
+    ...other
+  } = props;
   const buttonConfiguration = generateButtonConfiguration(colorType);
 
   return (
-    <Button 
+    <Button
       className={className}
-      classes={classes} 
-      variant={buttonConfiguration.variant} 
-      color={buttonConfiguration.color} 
-      disabled={disabled} 
-      disableRipple 
+      classes={classes}
+      variant={buttonConfiguration.variant}
+      color={buttonConfiguration.color}
+      disabled={disabled}
+      disableRipple
       onClick={onClick}
       type={type}
       {...other}
@@ -63,40 +72,40 @@ const HvButton = props => {
 };
 
 HvButton.propTypes = {
-  /** 
+  /**
    * Type of button to use.
-   *  - Accepted values: 
-   *    --"submit", 
-   *    --"reset", 
+   *  - Accepted values:
+   *    --"submit",
+   *    --"reset",
    *    --"button"
    */
-  type: PropTypes.oneOf(['submit', 'reset', 'button']),
-  /** 
+  type: PropTypes.oneOf(["submit", "reset", "button"]),
+  /**
    * Type of color of HvButton to use.
-   *  - Accepted values: 
-   *    --"primary", 
-   *    --"secondary", 
+   *  - Accepted values:
+   *    --"primary",
+   *    --"secondary",
    *    --"link"
    *  - note: the buttonType object should be used to set this value.
    */
-  colorType: PropTypes.oneOf(['primary', 'secondary', 'link']),
-  /** 
+  colorType: PropTypes.oneOf(["primary", "secondary", "link"]),
+  /**
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
-  /** 
+  /**
    * The content inside the button.
    */
   children: PropTypes.string.isRequired,
-  /** 
+  /**
    * If set to `true` the button is disabled and the onClick function will not be called.
    */
   disabled: PropTypes.bool,
-  /** 
+  /**
    * The function executed when the button is pressed.
    */
   onClick: PropTypes.instanceOf(Function)

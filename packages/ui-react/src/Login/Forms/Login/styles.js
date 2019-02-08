@@ -55,15 +55,15 @@ const styles = theme => ({
     marginTop: "20px"
   },
   separator: {
-    width: "20px",
-  //  display: "block",
-   // float: "right",
-   // position: "relative"
+    width: "20px"
+    //  display: "block",
+    // float: "right",
+    // position: "relative"
   },
   forgotCredentials: {
     marginTop: "60px",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   checkBoxTypography: {
     color: theme.typography.body2.color,
@@ -74,12 +74,12 @@ const styles = theme => ({
   },
 
   linkButtonTypography: {
-    fontSize: theme.typography.body2.fontSize,
+    fontSize: theme.typography.body2.fontSize
   },
-  showMessage:{
+  showMessage: {
     backgroundColor: theme.palette.severity.error,
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     height: "100%",
     paddingRight: "10px"
   },
@@ -95,9 +95,9 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    position:"static",
+    position: "static",
     height: "52px"
-  },
+  }
 });
 
 export default styles;

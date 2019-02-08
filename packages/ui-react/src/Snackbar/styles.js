@@ -9,29 +9,28 @@
  */
 
 const styles = () => ({
-      anchorOriginTopRight: {
-        top: "10px",
-        right: "10px"
-      },
-      anchorOriginTopLeft: {
-        top: "10px",
-        left: "10px"
-      },
-      anchorOriginTopCenter: {
-        top: "10px",
-      },
-      anchorOriginBottomCenter: {
-        bottom: "10px"
-      },
-      anchorOriginBottomLeft: {
-        bottom: "10px",
-        left: "10px"
-      },
-      anchorOriginBottomRight: {
-        bottom: "10px",
-        right: "10px"
-      }
-    }
-);
+  anchorOriginTopRight: {
+    top: "10px",
+    right: "10px"
+  },
+  anchorOriginTopLeft: {
+    top: "10px",
+    left: "10px"
+  },
+  anchorOriginTopCenter: {
+    top: "10px"
+  },
+  anchorOriginBottomCenter: {
+    bottom: "10px"
+  },
+  anchorOriginBottomLeft: {
+    bottom: "10px",
+    left: "10px"
+  },
+  anchorOriginBottomRight: {
+    bottom: "10px",
+    right: "10px"
+  }
+});
 
 export default styles;

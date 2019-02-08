@@ -16,12 +16,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 class HvDropdown extends React.Component {
-
   styles = {
     dropdownIndicator: (base, theme) => {
-      const {
-        palette: { grey: { inspire: greyInspire } } = { grey: {} }
-      } = theme || {};
+      const { palette: { grey: { inspire: greyInspire } } = { grey: {} } } =
+        theme || {};
 
       return {
         ...base,
@@ -50,9 +48,8 @@ class HvDropdown extends React.Component {
       };
     },
     menu: (base, theme) => {
-      const {
-        palette: { grey: { inspire: greyInspire } } = { grey: {} }
-      } = theme || {};
+      const { palette: { grey: { inspire: greyInspire } } = { grey: {} } } =
+        theme || {};
 
       return {
         ...base,
@@ -63,9 +60,7 @@ class HvDropdown extends React.Component {
       };
     },
     menuList: (base, theme) => {
-      const {
-        spacing: { xs: spacingXs } = {}
-      } = theme || {};
+      const { spacing: { xs: spacingXs } = {} } = theme || {};
 
       return {
         ...base,
@@ -109,18 +104,11 @@ class HvDropdown extends React.Component {
     return {
       ...state,
       selectedOption: props.value
-    }
+    };
   }
 
   render() {
-    const {
-      theme,
-      classes,
-      label,
-      options,
-      disabled,
-      onChange
-    } = this.props;
+    const { theme, classes, label, options, disabled, onChange } = this.props;
     const { dropdownExpanded, selectedOption } = this.state;
 
     const reactSelectTheme = {

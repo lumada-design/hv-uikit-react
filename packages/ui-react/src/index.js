@@ -22,7 +22,7 @@ export { default as HvSlider } from "./Slider";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvShowCase, HvShowCaseHeader } from "./Showcase";
-export {default as HvSnackbar} from "./Snackbar";
+export { default as HvSnackbar } from "./Snackbar";
 export {
   default as HvInput,
   validationStates,

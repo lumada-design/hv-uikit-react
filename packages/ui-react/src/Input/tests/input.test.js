@@ -28,22 +28,27 @@ const inputTextConfiguration = {
   maxCharQuantityWarningText: "maxCharQuantityWarningText",
   minCharQuantityWarningText: "minCharQuantityWarningText",
   requiredWarningText: "requiredWarningText"
-}
+};
 
 const testState = (infoText, state, value, instance) => {
   expect(instance.state.infoText).toBe(infoText);
   expect(instance.state.validationState).toBe(state);
   expect(instance.state.value).toBe(value);
-}
+};
 
 describe("Input", () => {
   let wrapper;
 
-  const getInputProps = (ParentElement) => ParentElement.find(InputWithStyles).props();
-  const getInput = (ParentElement) => ParentElement.find(Input).instance();
+  const getInputProps = ParentElement =>
+    ParentElement.find(InputWithStyles).props();
+  const getInput = ParentElement => ParentElement.find(Input).instance();
 
   beforeEach(async () => {
-    wrapper = mount(<HvProvider><InputWithStyles /></HvProvider>);
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -60,7 +65,11 @@ describe("Input", () => {
   });
 
   it("should disable the Input component", () => {
-    wrapper = mount(<HvProvider><InputWithStyles disabled /></HvProvider>);
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles disabled />
+      </HvProvider>
+    );
     expect(getInputProps(wrapper).disabled).toBe(true);
   });
 
@@ -73,9 +82,15 @@ describe("Input", () => {
           inputTextConfiguration={inputTextConfiguration}
           value={inputText}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
-    testState(inputTextConfiguration.infoText, validationStates.valid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should accept invalid as a default state", () => {
@@ -87,16 +102,22 @@ describe("Input", () => {
           inputTextConfiguration={inputTextConfiguration}
           value={inputText}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
-    testState(inputTextConfiguration.warningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.warningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should return the value on focus and correctly update the state", () => {
     const inputText = "test";
     const onFocus = value => {
       expect(value).toBe(inputText);
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -105,17 +126,23 @@ describe("Input", () => {
           inputTextConfiguration={inputTextConfiguration}
           iconPosition={iconPositions.left}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should return the value on focus and correctly update the state if the value is blank", () => {
     const inputText = "";
     const onFocus = value => {
       expect(value).toBe(inputText);
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -123,10 +150,16 @@ describe("Input", () => {
           onFocus={onFocus}
           inputTextConfiguration={inputTextConfiguration}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
-    testState(inputTextConfiguration.infoText, validationStates.empty, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.empty,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should return the value on change and correctly update the state", () => {
@@ -135,7 +168,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(defaultInputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -143,10 +176,18 @@ describe("Input", () => {
           onChange={onChange}
           inputTextConfiguration={inputTextConfiguration}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
-    inputInstance.onChangeHandler({ target: { name: "test", value: defaultInputText } });
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: defaultInputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should validate numbers on blur", () => {
@@ -155,7 +196,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -164,14 +205,32 @@ describe("Input", () => {
           inputTextConfiguration={inputTextConfiguration}
           validationType={validationTypes.number}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.warningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.warningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should validate emails on blur", () => {
@@ -180,7 +239,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -189,14 +248,32 @@ describe("Input", () => {
           inputTextConfiguration={inputTextConfiguration}
           validationType={validationTypes.email}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.warningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.warningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should validate use custom validations on blur", () => {
@@ -205,7 +282,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     const validate = () => false;
     wrapper = mount(
       <HvProvider>
@@ -216,10 +293,16 @@ describe("Input", () => {
           validationType={validationTypes.none}
           validation={validate}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.warningText, validationStates.invalid, defaultInputText, inputInstance);
+    testState(
+      inputTextConfiguration.warningText,
+      validationStates.invalid,
+      defaultInputText,
+      inputInstance
+    );
   });
 
   it("should check maximum number of characters on blur", () => {
@@ -229,7 +312,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -239,14 +322,32 @@ describe("Input", () => {
           validationType={validationTypes.none}
           maxCharQuantity={quantity}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.maxCharQuantityWarningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.maxCharQuantityWarningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should check minimum number of characters on blur", () => {
@@ -256,7 +357,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -267,14 +368,32 @@ describe("Input", () => {
           minCharQuantity={quantity}
           password
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.filled, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.minCharQuantityWarningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.minCharQuantityWarningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should fail validation if empty when required", () => {
@@ -284,7 +403,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -295,14 +414,32 @@ describe("Input", () => {
           minCharQuantity={quantity}
           isRequired
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.empty, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.empty,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.requiredWarningText, validationStates.invalid, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.requiredWarningText,
+      validationStates.invalid,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should pass validation if empty when not required", () => {
@@ -312,7 +449,7 @@ describe("Input", () => {
     const onChange = value => {
       expect(value).toBe(inputText);
       return inputText;
-    }
+    };
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
@@ -322,14 +459,32 @@ describe("Input", () => {
           validationType={validationTypes.none}
           minCharQuantity={quantity}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.valid, defaultInputText, inputInstance);
-    inputInstance.onChangeHandler({ target: { name: "test", value: inputText } });
-    testState(inputTextConfiguration.infoText, validationStates.empty, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.valid,
+      defaultInputText,
+      inputInstance
+    );
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: inputText }
+    });
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.empty,
+      inputText,
+      inputInstance
+    );
     inputInstance.onBlurHandler();
-    testState(inputTextConfiguration.infoText, validationStates.empty, inputText, inputInstance);
+    testState(
+      inputTextConfiguration.infoText,
+      validationStates.empty,
+      inputText,
+      inputInstance
+    );
   });
 
   it("should clear the value", () => {
@@ -341,7 +496,8 @@ describe("Input", () => {
           value={defaultInputText}
           inputTextConfiguration={inputTextConfiguration}
         />
-      </HvProvider>);
+      </HvProvider>
+    );
     const inputInstance = getInput(wrapper);
     inputInstance.handleClear();
     expect(inputInstance.state.infoText).toBe(inputTextConfiguration.infoText);

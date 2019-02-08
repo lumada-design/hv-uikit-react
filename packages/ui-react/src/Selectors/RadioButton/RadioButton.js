@@ -92,7 +92,7 @@ const HvRadio = props => {
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
-      control={(
+      control={
         <Radio
           className={classes.radio}
           icon={icons.emptyIcon}
@@ -105,7 +105,7 @@ const HvRadio = props => {
           checked={checked}
           {...propsIcon}
         />
-      )}
+      }
       {...propsLabel}
     />
   );

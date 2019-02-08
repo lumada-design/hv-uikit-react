@@ -22,7 +22,9 @@ const Logo = ({ classes, companyLogo, productLogo }) => (
     <span className={classes.separator} />
     <div className={classes.companyLogoIcon} />
     <div className={classes.companyLogoText}>
-      <Typography className={classes.companyLogoText1}>Maintenance Insights</Typography>
+      <Typography className={classes.companyLogoText1}>
+        Maintenance Insights
+      </Typography>
     </div>
   </div>
 );
