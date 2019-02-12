@@ -15,7 +15,7 @@ Each package by default gets their own node_modules folder.
 Install root dependencies ([Lerna](https://github.com/lerna)).
 
 ```bash
-npm install
+npm i
 ```
 
 ###### *If you want to [link](https://docs.npmjs.com/cli/link.html) your packages globally you need to run this in the first place.*
@@ -44,6 +44,14 @@ It will run all packages and startup the UI Development Environment [Storybook](
 By clicking *Show Info* you can see additional information on the usage of the component.
 
 #### Run With CRA example
+
+Install dependencies.
+
+```bash
+npm i
+```
+
+Run the app in development mode.
 
 ```bash
 npm run start
