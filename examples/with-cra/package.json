@@ -1,9 +1,9 @@
 {
   "name": "with-cra",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@hv-ui/react": "0.0.0",
+    "@hv-ui/react": "^0.0.1-alpha",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "react": "^16.6.3",
