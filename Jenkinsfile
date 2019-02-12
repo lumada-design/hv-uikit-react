@@ -1,6 +1,6 @@
 pipeline {
     
-    agent none
+    agent { label 'non-master' }
     tools {nodejs "node-js-11.9-auto"}
     options { 
         timestamps () 
@@ -15,12 +15,11 @@ pipeline {
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
         booleanParam(name: 'skipDeploy', defaultValue: false, description: 'when true, skip deploy to nexus.')
         choice(choices: ['prerelease', 'minor', 'major'], description: 'What type of deploy.', name: 'deploy')
-        choice(choices: ['#ui-kit-eng', '#ui-kit', 'none'], description: 'What channel to send notification.', name: 'channel')
+        choice(choices: ['#ui-kit-eng', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
    
     stages {
         stage('Build') {
-            agent { label 'non-master' } 
             when {
                 expression { !params.skipBuild }
             }
@@ -32,7 +31,6 @@ pipeline {
             }
         }
         stage('Test') {
-            agent { label 'non-master' } 
             when {
                 expression { !params.skipTest }
             }
@@ -49,7 +47,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent { label 'non-master' } 
             when {
                 expression { !params.skipDeploy }
             }
