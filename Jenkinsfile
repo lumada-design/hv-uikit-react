@@ -11,38 +11,14 @@ pipeline {
     }
     
     parameters {
-        booleanParam(name: 'skipClean', defaultValue: false, description: 'when true, skip clean of workspace.')
-        booleanParam(name: 'skipCheckout', defaultValue: false, description: 'when true, skip checkouts.')
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
         booleanParam(name: 'skipDeploy', defaultValue: false, description: 'when true, skip deploy to nexus.')
         choice(choices: ['prerelease', 'minor', 'major'], description: 'What type of deploy.', name: 'deploy')
-        choice(choices: ['#ui-kit-eng', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
+        choice(choices: ['#ui-kit-eng', '#ui-kit', 'none'], description: 'What channel to send notification.', name: 'channel')
     }
    
     stages {
-        stage('Clean') {
-            agent { label 'non-master' } 
-            when {
-                expression { !params.skipClean }
-            }
-            steps {
-                dir( WORKSPACE ){
-                    deleteDir()
-                }
-            }
-        }
-        stage('Checkout') {
-            agent { label 'non-master' } 
-            when {
-                expression { !params.skipCheckout }
-            }
-            steps {
-                sh 'git init'
-                sh 'git config http.sslVerify "false"'
-                git url: 'git@10.76.48.133:hv-design-system/hv-ui.git', credentialsId: 'buildteam-gitlab'
-            }
-        }
         stage('Build') {
             agent { label 'non-master' } 
             when {
@@ -102,6 +78,7 @@ pipeline {
                     slackSend channel: "${channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
+            cleanWS()
         }
     }
 }
