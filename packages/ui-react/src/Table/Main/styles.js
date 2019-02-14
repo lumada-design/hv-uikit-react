@@ -1,3 +1,6 @@
+import AngleDown from "@hv-ui/icons/resources/icons/XS-icons/AngleDown-12.svg";
+import AngleUp from "@hv-ui/icons/resources/icons/XS-icons/AngleUp-12.svg";
+
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -47,42 +50,118 @@ const styles = theme => ({
         textAlign: `right`,
         borderBottom: `solid 1px ${theme.palette.grey.plain}`,
         boxShadow: `none`,
+        // Needed because of the HOC for the fixed columns
+        top: "0 !important",
         "& $theadTh": {
-          height: 32,
+          outline: "none",
+          backgroundColor: theme.palette.grey.rainy,
+          minHeight: 32,
+          minWidth: 72,
+          paddingTop: 0,
+          paddingBottom: 0,
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "flex-end",
-          border: "none",
-          boxShadow: "none"
+          borderLeft: "1px solid transparent",
+          borderRight: "1px solid transparent",
+          borderTop: "none",
+          borderBottom: "none",
+          boxShadow: "none",
+          "& > div": { width: "100%" },
+          "&:hover > div > div > div ": {
+            visibility: "visible"
+          },
+          "&:hover": {
+            background: theme.palette.grey.clear
+          },
+          "&:first-child": {
+            borderLeft: "none"
+          },
+          "&:last-child": {
+            borderRight: "none"
+          },
+          "&.-sort-desc": {
+            backgroundColor: theme.palette.grey.foggy,
+            borderLeftColor: theme.palette.grey.plain,
+            borderRightColor: theme.palette.grey.plain
+          },
+          "&.-sort-asc": {
+            backgroundColor: theme.palette.grey.foggy,
+            borderLeftColor: theme.palette.grey.plain,
+            borderRightColor: theme.palette.grey.plain
+          },
+          "&.checkBox": {
+            minWidth: "32px",
+            display: "inline-table"
+          }
         }
       },
       "& $tbody": {
         "& $trGroups": {
-          borderBottom: `solid 1px ${theme.palette.grey.plain}`
+          borderBottom: `solid 1px ${theme.palette.grey.plain}`,
+          "& $tr:hover > div ": {
+            background: "white"
+          }
         },
         "& $td": {
-          border: "none"
+          border: "1px solid transparent",
+          padding: `0px ${theme.spacing.xs}px`,
+          minWidth: "72px",
+          "&.alphaNumeric": {
+            paddingLeft: "32px"
+          },
+          "&.link": {
+            paddingLeft: "32px"
+          },
+          "&:first-child": {
+            borderLeft: "none"
+          },
+          "&:last-child": {
+            borderRight: "none"
+          }
+        },
+        "& .firstExpandable": {
+          paddingLeft: "0px"
+        },
+        "& $td.sorted": {
+          backgroundColor: theme.palette.common.white,
+          border: `1px solid ${theme.palette.grey.plain}`,
+          borderTop: "none",
+          borderBottom: "none"
+        },
+        "& .checkBox": {
+          minWidth: "32px"
         }
       }
     },
     "& $td": {
       display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-end"
+      alignItems: "center"
     }
   },
   table: {},
   theadGroup: {},
   theadGroupTr: {},
   theadGroupTh: {},
-  thead: {},
+  thead: {
+    ...theme.typography.subtitle2
+  },
   theadTh: {},
+
   theadFilter: {},
   theadFilterTr: {},
   theadFilterTh: {},
   tbody: {},
   trGroups: {},
-  tr: {},
+  tr: {
+    height: "32px",
+    "& $textContainer": {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis"
+    }
+  },
+  textContainer: {},
   // th: {}, TODO: There is a bug in the component, where this prop is not used
   td: {},
   tfoot: {},
@@ -92,9 +171,97 @@ const styles = theme => ({
   loading: {},
   noDate: {},
   resizer: {},
-
   rtSortIcon: {
-    marginRight: `${theme.spacing.xs}px`
+    marginRight: `${theme.spacing.xs}px`,
+    width: "32px",
+    height: "32px",
+    position: "absolute",
+    bottom: "0",
+    left: "0"
+  },
+  sortedIconShown: {
+    visibility: "visible"
+  },
+  sortedIconHidden: {
+    visibility: "hidden"
+  },
+  pointer: {
+    cursor: "pointer"
+  },
+  tableContainer: {
+    padding: "40px 0 40px"
+  },
+  subtitle: {
+    marginTop: `${theme.spacing.xs}px`
+  },
+  title: {
+    marginBottom: `${theme.spacing.sm}px`
+  },
+  headerContainer: {
+    width: "100%",
+    minHeight: "32px"
+  },
+  headerTextContainer: {
+    padding: "8px 0",
+    minHeight: "32px",
+    overflow: "auto"
+  },
+  headerProps: {
+    width: "calc(100% - 42px)",
+    whiteSpace: "normal"
+  },
+  headerAlphaNumeric: {
+    float: "left",
+    paddingLeft: "27px",
+    textAlign: "left"
+  },
+  headerNumeric: {
+    float: "right",
+    textAlign: "right"
+  },
+
+  centered: {
+    justifyContent: "center"
+  },
+  alphaNumeric: {
+    justifyContent: "flex-start"
+  },
+  numeric: {
+    justifyContent: "flex-end",
+    textAlign: "right"
+  },
+  link: {
+    justifyContent: "flex-start",
+    "& > a": {
+      ...theme.hv.typography.inlineLink,
+      textDecoration: "none"
+    }
+  },
+  subComponentContainer: {
+    width: "100%",
+    height: "100%",
+    borderTop: `1px solid ${theme.palette.grey.plain}`,
+    padding: `${theme.spacing.md}px 32px`
+  },
+  iconContainer: {
+    width: "32px",
+    height: "32px",
+    backgroundSize: "32px 32px"
+  },
+  angleUp: {
+    backgroundImage: `url(${AngleUp})`,
+    position: "absolute",
+    top: "0",
+    left: "0"
+  },
+  angleDown: {
+    backgroundImage: `url(${AngleDown})`,
+    position: "absolute",
+    top: "0",
+    left: "0"
+  },
+  firstWithNumeric: {
+    width: "calc(100% - 32px)"
   }
 });
 

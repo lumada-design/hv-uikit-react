@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "dataCenter": "Denver",
+    "storageSegment": "Open systems",
+    "storageArray": 3,
+    "allocateVsCapability": 2.5,
+    "averageCompression": 1.62,
+    "totalIOPS": 18649,
+    "totalThroughput" : 1963.28,
+    "averageServiceTime": 1.20,
+    "averageReadTime": 1.83
+  },
+  {
+    "id": 2,
+    "dataCenter": "Virginia",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2.5,
+    "averageCompression": 1.7,
+    "totalIOPS": 8652,
+    "totalThroughput" : 1013.01,
+    "averageServiceTime": 5.16,
+    "averageReadTime": 1.45
+  },
+  {
+    "id": 3,
+    "dataCenter": "Virginia",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  }
+]

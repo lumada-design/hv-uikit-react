@@ -6,84 +6,56 @@ import ActionsList from "./ActionsList";
 
 const getColumns = (theme, dismiss) => [
   {
-    Header: "",
-    width: 32,
-    sortable: false,
-    filterable: false,
-    style: { padding: 0 },
-    Cell: data => <PriorityIcon priority={data.original.priority} />
-  },
-  {
     headerText: "Title",
-    getHeaderProps: () => ({
-      style: {
-        justifyContent: "flex-start"
-      }
-    }),
     accessor: "name",
-    style: { justifyContent: "flex-start" }
+    cellType: "alpha-numeric",
+    fixed: "left"
   },
   {
     headerText: "Time",
     accessor: "createdDate",
-    Cell: data => moment(data.original.createdDate).format("MM/DD/YYYY"),
-    width: 70
+    format: data => moment(data.original.createdDate).format("MM/DD/YYYY"),
+    cellType: "numeric",
+    fixed: "left"
   },
   {
     headerText: "Event Type",
     accessor: "eventType",
-    Cell: data => data.original.eventType.replace("_", " ").toLowerCase(),
-    style: { textTransform: "capitalize" }
+    format: data => data.original.eventType.replace("_", " ").toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric"
   },
   {
     headerText: "Status",
     accessor: "status",
-    Cell: data => data.original.status.toLowerCase(),
+    format: data => data.original.status.toLowerCase(),
     style: { textTransform: "capitalize" },
-    width: 90
+    cellType: "alpha-numeric"
   },
   {
-    headerText: "Probability/Risk Score",
+    headerText: "Probability",
     accessor: "riskScore",
-    Cell: data => `${data.original.riskScore}%`
+    format: data => `${data.original.riskScore}%`,
+    cellType: "numeric"
   },
   {
-    headerText: "Severity/Criticalness",
+    headerText: "Severity",
     accessor: "severity",
-    Cell: data => data.original.severity.toLowerCase(),
-    style: { textTransform: "capitalize" }
+    format: data => data.original.severity.toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric"
   },
   {
     headerText: "Priority",
     accessor: "priority",
-    Cell: data => data.original.priority.toLowerCase(),
+    format: data => data.original.priority.toLowerCase(),
     style: { textTransform: "capitalize" },
-    width: 100
+    cellType: "alpha-numeric"
   },
   {
     headerText: "Asset",
     accessor: "asset",
-    style: { color: `${theme.palette.primary.main}` }
-  },
-  {
-    Header: "",
-    width: 32,
-    getHeaderProps: () => ({
-      style: {
-        borderLeft: `solid 1px ${theme.palette.grey.plain}`
-      }
-    }),
-    sortable: false,
-    style: {
-      padding: 0,
-      justifyContent: "space-between",
-      borderLeft: `solid 1px ${theme.palette.grey.plain}`
-    },
-    Cell: data => (
-      <ActionsPopover>
-        <ActionsList eventId={data.original.id} dismiss={dismiss} />
-      </ActionsPopover>
-    )
+    cellType: "link"
   }
 ];
 
