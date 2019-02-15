@@ -23,6 +23,7 @@ export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvShowCase, HvShowCaseHeader } from "./Showcase";
 export { default as HvSnackbar } from "./Snackbar";
+export { Modal, ModalTitle, ModalContent, ModalActions } from "./Modal";
 export { default as HvKpi } from "./Kpi";
 export {
   default as HvInput,
