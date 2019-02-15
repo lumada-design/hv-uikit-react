@@ -20,7 +20,7 @@ const styles = theme => ({
     height: 28
   },
 
-  companyLogoText: {
+  productLogoText: {
     height: 28
   },
 
@@ -31,14 +31,13 @@ const styles = theme => ({
     borderRight: `1px solid ${theme.palette.grey.rainy}`
   },
 
-  companyLogoIcon: {
-    background: `url(${icon})`,
+  productLogoImage: {
     height: "32px",
     width: "32px",
     marginRight: "5px"
   },
 
-  companyLogoText1: {
+  productLogoText1: {
     color: theme.palette.text.main,
     fontSize: "17px",
     lineHeight: "28px",
