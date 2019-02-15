@@ -11,8 +11,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import theme from "@hv-ui/themes/dist/theme.json";
 import muiAppBar from "./overrides/muiAppBar";
-import muiInput from "./overrides/muiInput";
-import muiInputAdornment from "./overrides/muiInputAdornment";
 import muiToolbar from "./overrides/muiToolbar";
 import typography from "./typography";
 import palette from "./palette";
@@ -36,15 +34,6 @@ const muiTheme = createMuiTheme({
     MuiAppBar: {
       root: muiAppBar.root,
       colorDefault: muiAppBar.colorDefault
-    },
-    MuiInput: {
-      root: muiInput.root,
-      inputType: muiInput.inputType
-    },
-    MuiInputAdornment: {
-      root: muiInputAdornment.root,
-      positionStart: muiInputAdornment.positionStart,
-      positionEnd: muiInputAdornment.positionEnd
     },
     MuiToolbar: {
       root: muiToolbar.root,
