@@ -100,7 +100,7 @@ HvButton.propTypes = {
   /**
    * The content inside the button.
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   /**
    * If set to `true` the button is disabled and the onClick function will not be called.
    */
