@@ -26,11 +26,8 @@ export { default as HvSnackbar } from "./Snackbar";
 export { Modal, ModalTitle, ModalContent, ModalActions } from "./Modal";
 export { default as HvKpi } from "./Kpi";
 export {
-  default as HvInput,
-  validationStates,
-  validationTypes,
-  iconPositions
-} from "./Input";
+
+export { default as HvInput}  from "./Input";
 
 // theme
 export { default as hvTheme } from "./theme";

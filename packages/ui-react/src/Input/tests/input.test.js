@@ -73,6 +73,28 @@ describe("Input", () => {
     expect(getInputProps(wrapper).disabled).toBe(true);
   });
 
+  it("should not have the validation section", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles validate={false} />
+      </HvProvider>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should pass other props to the child input component", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          inputProps={{
+            maxLength: 250
+          }}
+        />
+      </HvProvider>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should accept valid as a default state", () => {
     const inputText = "test";
     wrapper = mount(
