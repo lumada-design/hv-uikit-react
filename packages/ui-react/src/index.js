@@ -24,8 +24,8 @@ export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvShowCase, HvShowCaseHeader } from "./Showcase";
 export { default as HvSnackbar } from "./Snackbar";
 export { Modal, ModalTitle, ModalContent, ModalActions } from "./Modal";
+export { default as TextArea } from "./TextArea";
 export { default as HvKpi } from "./Kpi";
-export {
 
 export { default as HvInput}  from "./Input";
 

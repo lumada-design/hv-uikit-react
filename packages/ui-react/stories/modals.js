@@ -5,7 +5,7 @@ import Modal from "../src/Modal/Main";
 import ModalTitle from "../src/Modal/ModalTitle";
 import ModalContent from "../src/Modal/ModalContent";
 import ModalActions from "../src/Modal/ModalActions";
-import TextField from "../src/TextField";
+import TextArea from "../src/TextArea";
 import Input from "../src/Input";
 import Button from "../src/Button";
 
@@ -22,7 +22,7 @@ storiesOf("Modals", module).add("Work Orders", () => (
         validate={false}
       />
 
-      <TextField
+      <TextArea
         disabled
         id="outlined-with-placeholder"
         inputTextConfiguration={{
