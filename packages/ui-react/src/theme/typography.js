@@ -105,4 +105,12 @@ typography.sliderTrack = {
   fontWeight: theme.typography.sliderTrackText.fontWeight
 };
 
+typography.visualization = {
+  color: theme.typography.visualizationText.color,
+  fontSize: theme.typography.visualizationText.fontSize,
+  letterSpacing: theme.typography.visualizationText.letterSpacing,
+  lineHeight: theme.typography.visualizationText.lineHeight,
+  fontWeight: theme.typography.visualizationText.fontWeight
+};
+
 export default typography;
