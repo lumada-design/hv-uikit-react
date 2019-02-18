@@ -12,7 +12,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
-const Logo = ({ classes, companyLogo, productLogo }) => (
+const getProductLogo = ( classes, productLogo ) => {
+  if( productLogo ) {
+    return (
+        <img
+            src={productLogo}
+            className={classes.productLogoImage}
+        />
+    );
+  }
+};
+
+const getProductName = ( classes, productName ) => {
+  if( productName ) {
+    return (
+        <div className={classes.productLogoText}>
+          <Typography className={classes.productLogoText1}>
+            { productName }
+          </Typography>
+        </div>
+    );
+  }
+};
+
+const Logo = ({ classes, companyLogo, productLogo, productName }) => (
   <div className={classes.companyLogoContainer}>
     <img
       src={companyLogo}
@@ -20,24 +43,22 @@ const Logo = ({ classes, companyLogo, productLogo }) => (
       alt="Company logo"
     />
     <span className={classes.separator} />
-    <div className={classes.companyLogoIcon} />
-    <div className={classes.companyLogoText}>
-      <Typography className={classes.companyLogoText1}>
-        Maintenance Insights
-      </Typography>
-    </div>
+    { getProductLogo(classes, productLogo) }
+    { getProductName(classes, productName) }
   </div>
 );
 
 Logo.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   companyLogo: PropTypes.string,
-  productLogo: PropTypes.string
+  productLogo: PropTypes.string,
+  productName: PropTypes.string
 };
 
 Logo.defaultProps = {
   companyLogo: null,
-  productLogo: null
+  productLogo: null,
+  productName: null
 };
 
 export default Logo;
