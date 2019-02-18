@@ -12,7 +12,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
-const getProductLogo = function( classes, productLogo ) {
+const getProductLogo = ( classes, productLogo ) => {
   if( productLogo ) {
     return (
         <img
@@ -23,7 +23,7 @@ const getProductLogo = function( classes, productLogo ) {
   }
 };
 
-const getProductName = function( classes, productName ) {
+const getProductName = ( classes, productName ) => {
   if( productName ) {
     return (
         <div className={classes.productLogoText}>
