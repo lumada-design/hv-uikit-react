@@ -646,10 +646,9 @@ exports[`ModalActions withStyles should render correctly 1`] = `
         "title": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "32px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "40px",
+          "fontSize": "1.3125rem",
+          "fontWeight": 500,
+          "lineHeight": "1.16667em",
         },
         "useNextVariants": true,
       },

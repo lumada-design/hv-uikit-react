@@ -17,6 +17,10 @@ import Dialog from "@material-ui/core/Dialog";
 import Close16 from "@hv-ui/icons/core/S-icons/Close16";
 import Button from "../../Button";
 
+const style = {
+  width: "32px"
+};
+
 const Main = ({ classes, children, open, onClose, ...others }) => (
   <Dialog
     className={classNames(classes.root)}
@@ -35,7 +39,7 @@ const Main = ({ classes, children, open, onClose, ...others }) => (
     {...others}
   >
     <Button className={classes.closeButton} colorType="link" onClick={onClose}>
-      <Close16 style={{ width: 32 }} />
+      <Close16 style={style} />
     </Button>
     {children}
   </Dialog>

@@ -275,8 +275,9 @@ HvInput.propTypes = {
    * -placeholder: the placeholder value of the input.
    * -infoText: the default value of the info text below the input.
    * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appear when there are too many characters.
-   * -minCharQuantityWarningText: the message that appear when there are too few characters.
+   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * -minCharQuantityWarningText: the message that appears when there are too few characters.
+   * -requiredWarningText: the message that appears when the input is empty and required.
    */
   inputTextConfiguration: PropTypes.shape({
     inputLabel: PropTypes.string,

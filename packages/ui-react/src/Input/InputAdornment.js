@@ -10,6 +10,7 @@
 
 import React from "react";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 import Success from "@hv-ui/icons/core/S-icons/Level0Success16Color";
 import Close from "@hv-ui/icons/core/S-icons/Close16";
@@ -31,7 +32,7 @@ const InputAdornment = ({ classes, validationState, handleClear }) => (
       onMouseDown: () => handleClear(),
       role: "button",
       tabIndex: -1,
-      onKeyDown: () => handleClear(),
+      onKeyDown: () => handleClear()
     }}
   >
     {validationState === validationStates.filled && <Close style={stl} />}
@@ -39,5 +40,27 @@ const InputAdornment = ({ classes, validationState, handleClear }) => (
     {validationState === validationStates.invalid && <Unsuccess style={stl} />}
   </div>
 );
+
+InputAdornment.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
+  classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * The initial state of the input.
+   *
+   * note: Is recommended you use the provided validationStates object to set this value.
+   */
+  validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
+  /**
+   * The function that will be executed when the icon is clicked
+   */
+  handleClear: PropTypes.func
+};
+
+InputAdornment.defaultProps = {
+  validationState: validationStates.empty,
+  handleClear: value => value
+};
 
 export default InputAdornment;

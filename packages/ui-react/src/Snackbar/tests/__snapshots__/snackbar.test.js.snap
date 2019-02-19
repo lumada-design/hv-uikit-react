@@ -222,40 +222,6 @@ exports[`Snackbcar  should render correctly 1`] = `
                   "borderTop": "4px solid #CC0000",
                 },
               },
-              "MuiInput": Object {
-                "inputType": Object {
-                  "height": 25,
-                },
-                "root": Object {
-                  "&:hover,&:focus&:active": Object {
-                    "borderColor": "#4389DB",
-                  },
-                  "background": "#F9F9F9",
-                  "border": "1px solid #999999",
-                  "fontSize": 14,
-                  "fontWeight": 400,
-                  "height": 40,
-                  "lineHeight": "14px",
-                  "margin": 10,
-                  "maxHeight": 44,
-                  "minWidth": 70,
-                },
-              },
-              "MuiInputAdornment": Object {
-                "positionEnd": Object {
-                  "margin": 7,
-                  "marginLeft": 7,
-                },
-                "positionStart": Object {
-                  "margin": 7,
-                  "marginRight": 7,
-                },
-                "root": Object {
-                  "color": "#888888",
-                  "fontSize": 8,
-                  "maxHeight": "inherit",
-                },
-              },
               "MuiToolbar": Object {
                 "dense": Object {
                   "minHeight": "46px",
@@ -3562,40 +3528,6 @@ body {
                   "borderTop": "4px solid #CC0000",
                 },
               },
-              "MuiInput": Object {
-                "inputType": Object {
-                  "height": 25,
-                },
-                "root": Object {
-                  "&:hover,&:focus&:active": Object {
-                    "borderColor": "#4389DB",
-                  },
-                  "background": "#F9F9F9",
-                  "border": "1px solid #999999",
-                  "fontSize": 14,
-                  "fontWeight": 400,
-                  "height": 40,
-                  "lineHeight": "14px",
-                  "margin": 10,
-                  "maxHeight": 44,
-                  "minWidth": 70,
-                },
-              },
-              "MuiInputAdornment": Object {
-                "positionEnd": Object {
-                  "margin": 7,
-                  "marginLeft": 7,
-                },
-                "positionStart": Object {
-                  "margin": 7,
-                  "marginRight": 7,
-                },
-                "root": Object {
-                  "color": "#888888",
-                  "fontSize": 8,
-                  "maxHeight": "inherit",
-                },
-              },
               "MuiToolbar": Object {
                 "dense": Object {
                   "minHeight": "46px",
@@ -5362,40 +5294,6 @@ body {
                     "height": "50px",
                   },
                   "borderTop": "4px solid #CC0000",
-                },
-              },
-              "MuiInput": Object {
-                "inputType": Object {
-                  "height": 25,
-                },
-                "root": Object {
-                  "&:hover,&:focus&:active": Object {
-                    "borderColor": "#4389DB",
-                  },
-                  "background": "#F9F9F9",
-                  "border": "1px solid #999999",
-                  "fontSize": 14,
-                  "fontWeight": 400,
-                  "height": 40,
-                  "lineHeight": "14px",
-                  "margin": 10,
-                  "maxHeight": 44,
-                  "minWidth": 70,
-                },
-              },
-              "MuiInputAdornment": Object {
-                "positionEnd": Object {
-                  "margin": 7,
-                  "marginLeft": 7,
-                },
-                "positionStart": Object {
-                  "margin": 7,
-                  "marginRight": 7,
-                },
-                "root": Object {
-                  "color": "#888888",
-                  "fontSize": 8,
-                  "maxHeight": "inherit",
                 },
               },
               "MuiToolbar": Object {
@@ -9363,40 +9261,6 @@ body {
               "borderTop": "4px solid #CC0000",
             },
           },
-          "MuiInput": Object {
-            "inputType": Object {
-              "height": 25,
-            },
-            "root": Object {
-              "&:hover,&:focus&:active": Object {
-                "borderColor": "#4389DB",
-              },
-              "background": "#F9F9F9",
-              "border": "1px solid #999999",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "height": 40,
-              "lineHeight": "14px",
-              "margin": 10,
-              "maxHeight": 44,
-              "minWidth": 70,
-            },
-          },
-          "MuiInputAdornment": Object {
-            "positionEnd": Object {
-              "margin": 7,
-              "marginLeft": 7,
-            },
-            "positionStart": Object {
-              "margin": 7,
-              "marginRight": 7,
-            },
-            "root": Object {
-              "color": "#888888",
-              "fontSize": 8,
-              "maxHeight": "inherit",
-            },
-          },
           "MuiToolbar": Object {
             "dense": Object {
               "minHeight": "46px",
@@ -10046,40 +9910,6 @@ body {
                     "height": "50px",
                   },
                   "borderTop": "4px solid #CC0000",
-                },
-              },
-              "MuiInput": Object {
-                "inputType": Object {
-                  "height": 25,
-                },
-                "root": Object {
-                  "&:hover,&:focus&:active": Object {
-                    "borderColor": "#4389DB",
-                  },
-                  "background": "#F9F9F9",
-                  "border": "1px solid #999999",
-                  "fontSize": 14,
-                  "fontWeight": 400,
-                  "height": 40,
-                  "lineHeight": "14px",
-                  "margin": 10,
-                  "maxHeight": 44,
-                  "minWidth": 70,
-                },
-              },
-              "MuiInputAdornment": Object {
-                "positionEnd": Object {
-                  "margin": 7,
-                  "marginLeft": 7,
-                },
-                "positionStart": Object {
-                  "margin": 7,
-                  "marginRight": 7,
-                },
-                "root": Object {
-                  "color": "#888888",
-                  "fontSize": 8,
-                  "maxHeight": "inherit",
                 },
               },
               "MuiToolbar": Object {
