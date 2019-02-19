@@ -11,10 +11,14 @@ import Typography from "@material-ui/core/Typography";
  */
 function MessageElement(props) {
   const { iconElement, showMessage, icon, message } = props;
-  const Icon = iconElement;
+
+  const iconClone = React.cloneElement(iconElement, {
+    className: icon
+  });
+
   return (
     <div className={showMessage}>
-      <Icon className={icon} />
+      {iconClone}
       <Typography variant="body1">{message}</Typography>
     </div>
   );

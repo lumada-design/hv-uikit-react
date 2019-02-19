@@ -26,7 +26,7 @@ describe("Login ", () => {
   let recoverMock;
   let wrapper;
 
-  const fakeEvent = { preventDefault: () => console.log("preventDefault") };
+  const fakeEvent = { preventDefault: () => {} };
 
   beforeEach(async () => {
     loginMock = jest.fn();
@@ -36,7 +36,7 @@ describe("Login ", () => {
         <LoginWithStyles
           login={loginMock}
           recovery={recoverMock}
-          allowRecover={true}
+          allowRecover
         />
       </HvProvider>
     );
@@ -129,7 +129,7 @@ describe("Login ", () => {
         <LoginWithStyles
           login={loginMock}
           recovery={recoverMock}
-          logo={"/test)"}
+          logo="/test)"
         />
       </HvProvider>
     );

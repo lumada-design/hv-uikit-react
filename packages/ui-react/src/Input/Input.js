@@ -150,6 +150,7 @@ class HvInput extends React.Component {
     const {
       inputTextConfiguration,
       classes,
+      theme,
       password,
       name,
       disabled,
@@ -158,6 +159,7 @@ class HvInput extends React.Component {
       iconPosition,
       validate,
       validationType,
+      validationState,
       maxCharQuantity,
       minCharQuantity,
       validation,
@@ -170,7 +172,11 @@ class HvInput extends React.Component {
       ...others
     } = this.props;
 
-    const { validationState, value: stateValue, infoText } = this.state;
+    const {
+      validationState: stateValidationState,
+      value: stateValue,
+      infoText
+    } = this.state;
 
     let label = inputTextConfiguration.inputLabel;
     if (isRequired) {
@@ -180,7 +186,7 @@ class HvInput extends React.Component {
     let adornment = (
       <InputAdornment
         classes={classes}
-        validationState={validationState}
+        validationState={stateValidationState}
         handleClear={() => this.handleClear()}
       />
     );
@@ -190,8 +196,8 @@ class HvInput extends React.Component {
     }
 
     if (
-      validationState !== validationStates.filled &&
-      (validationState === validationStates.empty ||
+      stateValidationState !== validationStates.filled &&
+      (stateValidationState === validationStates.empty ||
         (validationType === validationTypes.none &&
           maxCharQuantity === null &&
           minCharQuantity === null &&
@@ -206,9 +212,10 @@ class HvInput extends React.Component {
         <Typography
           variant="body2"
           className={classNames(classes.text, {
-            [classes.textInfo]: validationState !== validationStates.invalid,
+            [classes.textInfo]:
+              stateValidationState !== validationStates.invalid,
             [classes.textWarning]:
-              validationState === validationStates.invalid ||
+              stateValidationState === validationStates.invalid ||
               externalWarningTextOverride !== null
           })}
         >
@@ -253,8 +260,10 @@ class HvInput extends React.Component {
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}
-          {...iconPosition === "right" && iconVisible && { endAdornment: adornment }}
-          {...iconPosition === "left" && iconVisible && { startAdornment: adornment }}
+          {...iconPosition === "right" &&
+            iconVisible && { endAdornment: adornment }}
+          {...iconPosition === "left" &&
+            iconVisible && { startAdornment: adornment }}
           {...others}
         />
         {validationText}
