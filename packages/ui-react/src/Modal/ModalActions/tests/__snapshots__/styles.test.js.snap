@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalActions styles should behave correctly 1`] = `
+Object {
+  "action": Object {
+    "margin": "0px 0px 0px 10px",
+  },
+  "root": Object {
+    "height": 32,
+    "margin": "0px 0px 0px 0px",
+    "width": "100%",
+  },
+}
+`;

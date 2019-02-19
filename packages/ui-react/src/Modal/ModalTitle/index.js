@@ -8,20 +8,8 @@
  *  under which the software has been supplied.
  */
 
-const muiInputAdornment = {
-  root: {
-    fontSize: 8,
-    maxHeight: "inherit",
-    color: "#888888"
-  },
-  positionStart: {
-    marginRight: 7,
-    margin: 7
-  },
-  positionEnd: {
-    marginLeft: 7,
-    margin: 7
-  }
-};
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import ModalTitle from "./ModalTitle";
 
-export default muiInputAdornment;
+export default withStyles(styles, { withTheme: true })(ModalTitle);

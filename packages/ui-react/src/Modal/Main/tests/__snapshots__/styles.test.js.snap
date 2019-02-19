@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal styles should behave correctly 1`] = `
+Object {
+  "background": Object {
+    "background": "rgba(255, 255, 255, 0.8)",
+  },
+  "closeButton": Object {
+    "& > span": Object {
+      "width": 32,
+    },
+    "margin": "10px",
+    "minWidth": 32,
+    "padding": 0,
+    "position": "absolute",
+    "right": 0,
+    "top": 0,
+    "width": 32,
+  },
+  "paper": Object {
+    "background": "#FFFFFF",
+    "border": "solid 1px #FFFFFF",
+    "padding": "40px",
+  },
+}
+`;

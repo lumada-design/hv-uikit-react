@@ -13,187 +13,29 @@ import PropTypes from "prop-types";
 import Input from "@material-ui/core/Input";
 import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
-import iconPositions from "./iconPositions";
-import validationStates from "./validationStates";
 import validationTypes from "./validationTypes";
+import validationStates from "./validationStates";
+import { validateCharLength, validateInput } from "./validations";
 
-const valueSize = Object.freeze({
-  valid: "valid",
-  big: "big",
-  small: "small"
-});
+import InputAdornment from "./InputAdornment";
 
 class HvInput extends React.Component {
   constructor(props) {
     super(props);
-    const { validationState, value, inputTextConfiguration } = props;
-    if (validationState === validationStates.valid) {
-      this.state = {
-        validationState,
-        value,
-        infoText: inputTextConfiguration.infoText
-      };
-    } else if (validationState === validationStates.invalid) {
-      this.state = {
-        validationState,
-        value,
-        infoText: inputTextConfiguration.warningText
-      };
-    } else {
-      this.state = {
-        validationState,
-        value,
-        infoText: inputTextConfiguration.infoText
-      };
-    }
-  }
 
-  /**
-   * Chooses the correct icon to used depending on several situations like:
-   *
-   * - Is disabled.
-   * - No validation.
-   * - Is filled.
-   * - Is empty.
-   * - Is valid.
-   *
-   * @param {Object} classes - The Jss object containing the class names to be used.
-   * @param {Bool} disabled - A flag used to determine if the input is disabled.
-   * @param {String} iconPosition - Where the icon should be placed, accepted values are ´left´ and ´right´.
-   * @param {String} validationState - What is the current validation state of the input, accepted values are ´filled´, ´empty´, ´valid´, ´invalid´.
-   * @param {String} validationType - What kind of default validation is the input performing, accepted values are ´none´, ´number´, ´´email.
-   * @param {Number} maxCharQuantity - What is the maximum quantity of characters accepted.
-   * @param {Number} minCharQuantity - What is the minimum quantity of characters accepted.
-   * @param {Function} validation - The Custom validation function provided by the user.
-   * @returns
-   */
-  prepareIcon = (
-    classes,
-    disabled,
-    iconPosition,
-    validationState,
-    validationType,
-    maxCharQuantity,
-    minCharQuantity,
-    validation
-  ) => {
-    const adornment = {
-      endAdornment: null,
-      startAdornment: null
+    const {
+      validationState,
+      value,
+      inputTextConfiguration: { infoText, warningText }
+    } = props;
+
+    this.state = {
+      validationState,
+      value,
+      infoText:
+        validationState === validationStates.invalid ? warningText : infoText
     };
-
-    if (disabled) {
-      return adornment;
-    }
-
-    if (
-      validationState !== validationStates.filled &&
-      (validationState === validationStates.empty ||
-        (validationType === validationTypes.none &&
-          maxCharQuantity === null &&
-          minCharQuantity === null &&
-          !validation))
-    ) {
-      return adornment;
-    }
-
-    let icon = (
-      <div className={classes.iconContainer}>
-        <div className={classNames(classes.icon, classes.iconClear)} />
-      </div>
-    );
-
-    switch (validationState) {
-      default:
-        return adornment;
-      case validationStates.filled:
-        icon = (
-          <div
-            className={classes.iconContainer}
-            onMouseDown={this.handleClear}
-            role="button"
-            tabIndex={-1}
-            onKeyDown={this.handleClear}
-          >
-            <div className={classNames(classes.icon, classes.iconClear)} />
-          </div>
-        );
-        break;
-      case validationStates.valid:
-        icon = (
-          <div className={classes.iconContainer}>
-            <div className={classNames(classes.icon, classes.iconValid)} />
-          </div>
-        );
-        break;
-      case validationStates.invalid:
-        icon = (
-          <div className={classes.iconContainer}>
-            <div className={classNames(classes.icon, classes.iconInvalid)} />
-          </div>
-        );
-        break;
-    }
-
-    switch (iconPosition) {
-      default:
-      case iconPositions.right:
-        adornment.endAdornment = icon;
-        break;
-      case iconPositions.left:
-        adornment.startAdornment = icon;
-        break;
-    }
-
-    return adornment;
-  };
-
-  /**
-   *  Performs the validation of the inputted value the avaible validations are:
-   *
-   * -none
-   * -number
-   * -email
-   * -custom
-   *
-   * @param {String} value - the inputted value.
-   * @returns {Boolean} - true if valid false if not.
-   */
-  validateInput = value => {
-    const { validation, validationType } = this.props;
-    if (validation) {
-      return validation(value);
-    }
-    switch (validationType) {
-      default:
-      case validationTypes.none:
-        return true;
-      case validationTypes.number:
-        return this.isNumeric(value);
-      case validationTypes.email:
-        return this.isEmail(value);
-    }
-  };
-
-  /**
-   * Validates if the value is within the accepted length range.
-   *
-   * @param {String} value - the inputted value.
-   * @returns {Boolean} - true if valid false if not.
-   */
-  validateCharLength = value => {
-    const { maxCharQuantity, minCharQuantity } = this.props;
-    if (maxCharQuantity === null && minCharQuantity === null) {
-      return valueSize.valid;
-    }
-    if (minCharQuantity !== null && value.length < minCharQuantity) {
-      return valueSize.small;
-    }
-    if (maxCharQuantity !== null && value.length > maxCharQuantity) {
-      return valueSize.big;
-    }
-    return valueSize.valid;
-  };
+  }
 
   /**
    * Updates the states while the input is being entered.
@@ -202,19 +44,14 @@ class HvInput extends React.Component {
    * @param {*} infoText - the text below the input.
    */
   manageInputValueState = (value, infoText) => {
-    if (value && value !== "") {
-      this.setState({
-        validationState: validationStates.filled,
-        infoText,
-        value
-      });
-    } else {
-      this.setState({
-        validationState: validationStates.empty,
-        infoText,
-        value
-      });
-    }
+    this.setState({
+      validationState:
+        value && value !== ""
+          ? validationStates.filled
+          : validationStates.empty,
+      infoText,
+      value
+    });
   };
 
   /**
@@ -254,54 +91,48 @@ class HvInput extends React.Component {
   onBlurHandler = () => {
     const { value } = this.state;
     const { onBlur, inputTextConfiguration, isRequired } = this.props;
+    const {
+      validation,
+      validationType,
+      minCharQuantity,
+      maxCharQuantity
+    } = this.props;
+
+    let validationState;
+    let { infoText } = inputTextConfiguration;
 
     if (!value || value === "") {
       if (isRequired) {
-        this.setState({
-          validationState: validationStates.invalid,
-          infoText: inputTextConfiguration.requiredWarningText
-        });
-        onBlur(value, validationStates.invalid);
-        return;
+        validationState = validationStates.invalid;
+        infoText = inputTextConfiguration.requiredWarningText;
+      } else {
+        validationState = validationStates.empty;
       }
-      this.setState({
-        validationState: validationStates.empty,
-        infoText: inputTextConfiguration.infoText
-      });
-      onBlur(value, validationStates.empty);
-      return;
-    }
-
-    const valueSizeStatus = this.validateCharLength(value);
-    const valid = this.validateInput(value);
-
-    if (valid && valueSizeStatus === valueSize.valid) {
-      this.setState({
-        validationState: validationStates.valid,
-        infoText: inputTextConfiguration.infoText
-      });
-      onBlur(value, validationStates.valid);
-      return;
-    }
-
-    if (valueSizeStatus === valueSize.big) {
-      this.setState({
-        validationState: validationStates.invalid,
-        infoText: inputTextConfiguration.maxCharQuantityWarningText
-      });
-    } else if (valueSizeStatus === valueSize.small) {
-      this.setState({
-        validationState: validationStates.invalid,
-        infoText: inputTextConfiguration.minCharQuantityWarningText
-      });
     } else {
-      this.setState({
-        validationState: validationStates.invalid,
-        infoText: inputTextConfiguration.warningText
-      });
+      const valueSizeStatus = validateCharLength(
+        value,
+        maxCharQuantity,
+        minCharQuantity
+      );
+      const valid = validateInput(value, validation, validationType);
+
+      if (valid && valueSizeStatus) {
+        validationState = validationStates.valid;
+      } else if (!valid || !valueSizeStatus) {
+        validationState = validationStates.invalid;
+
+        if (maxCharQuantity && value.length > maxCharQuantity) {
+          infoText = inputTextConfiguration.maxCharQuantityWarningText;
+        } else if (minCharQuantity && value.length < minCharQuantity) {
+          infoText = inputTextConfiguration.minCharQuantityWarningText;
+        } else {
+          infoText = inputTextConfiguration.warningText;
+        }
+      }
     }
 
-    onBlur(value, validationStates.invalid);
+    this.setState({ validationState, infoText });
+    onBlur(value, validationState);
   };
 
   /**
@@ -315,74 +146,92 @@ class HvInput extends React.Component {
     onFocus(value);
   };
 
-  /**
-   * Checks if the value is a number.
-   *
-   * @param {Number || String} num - The value to test.
-   * @returns {Boolean} - ´true´ if the value is a number ´false´ otherwise.
-   */
-  isNumeric = num => !Number.isNaN(Number(num));
-
-  /**
-   * Checks if the value is an email
-   *
-   * @param {String} email - The value to test.
-   * @returns {Boolean} - ´true´ if the value is an email ´false´ otherwise.
-   */
-  isEmail = email => {
-    const regexp = new RegExp(
-      "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-    );
-    return regexp.test(email);
-  };
-
   render() {
     const {
       inputTextConfiguration,
       classes,
+      theme,
       password,
       name,
       disabled,
       isRequired,
+      iconVisible,
       iconPosition,
+      validate,
       validationType,
+      validationState,
       maxCharQuantity,
       minCharQuantity,
       validation,
-      externalWarningTextOverride
+      externalWarningTextOverride,
+      inputProps,
+      onChange,
+      onBlur,
+      onFocus,
+      value,
+      ...others
     } = this.props;
 
-    const { validationState, value, infoText } = this.state;
+    const {
+      validationState: stateValidationState,
+      value: stateValue,
+      infoText
+    } = this.state;
 
-    let classNamesRoot = classes.inputRoot;
-    let classInfoText = classes.infoText;
     let label = inputTextConfiguration.inputLabel;
-
-    if (disabled) {
-      classNamesRoot = classes.inputRootDisabled;
-    }
-
-    if (
-      validationState === validationStates.invalid ||
-      externalWarningTextOverride !== null
-    ) {
-      classInfoText = classes.warningInfoText;
-    }
-
     if (isRequired) {
       label = `${label}*`;
     }
 
-    const adornment = this.prepareIcon(
-      classes,
-      disabled,
-      iconPosition,
-      validationState,
-      validationType,
-      maxCharQuantity,
-      minCharQuantity,
-      validation
+    let adornment = (
+      <InputAdornment
+        classes={classes}
+        validationState={stateValidationState}
+        handleClear={() => this.handleClear()}
+      />
     );
+
+    if (disabled) {
+      adornment = null;
+    }
+
+    if (
+      stateValidationState !== validationStates.filled &&
+      (stateValidationState === validationStates.empty ||
+        (validationType === validationTypes.none &&
+          maxCharQuantity === null &&
+          minCharQuantity === null &&
+          !validation))
+    ) {
+      adornment = null;
+    }
+
+    let validationText;
+    if (validate) {
+      validationText = (
+        <Typography
+          variant="body2"
+          className={classNames(classes.text, {
+            [classes.textInfo]:
+              stateValidationState !== validationStates.invalid,
+            [classes.textWarning]:
+              stateValidationState === validationStates.invalid ||
+              externalWarningTextOverride !== null
+          })}
+        >
+          {externalWarningTextOverride ? externalWarningTextOverride : infoText}
+        </Typography>
+      );
+    }
+
+    let labelTypography;
+    if (label) {
+      labelTypography = (
+        <Typography variant="subtitle2" className={classes.label}>
+          {label}
+        </Typography>
+      );
+    }
 
     return (
       <div
@@ -391,31 +240,33 @@ class HvInput extends React.Component {
         }}
         className={classes.container}
       >
-        <Typography variant="subtitle2" className={classes.label}>
-          {label}
-        </Typography>
+        {labelTypography}
         <Input
           autoFocus
           onBlur={this.onBlurHandler}
           onFocus={this.onFocusHandler}
-          value={value}
+          value={stateValue}
           disabled={disabled}
           placeholder={inputTextConfiguration.placeholder}
           type={password ? "password" : "text"}
           classes={{
             input: classes.input,
             focused: classes.inputRootFocused,
-            disabled: classes.inputDisabled
+            disabled: classes.inputDisabled,
+            multiline: classes.multiLine
           }}
-          className={classNamesRoot}
+          className={classNames(classes.inputRoot, {
+            [classes.inputRootDisabled]: disabled
+          })}
           onChange={this.onChangeHandler}
-          inputProps={{ name }}
-          endAdornment={adornment.endAdornment}
-          startAdornment={adornment.startAdornment}
+          inputProps={inputProps}
+          {...iconPosition === "right" &&
+            iconVisible && { endAdornment: adornment }}
+          {...iconPosition === "left" &&
+            iconVisible && { startAdornment: adornment }}
+          {...others}
         />
-        <Typography variant="body2" className={classInfoText}>
-          {externalWarningTextOverride ? externalWarningTextOverride : infoText}
-        </Typography>
+        {validationText}
       </div>
     );
   }
@@ -433,8 +284,9 @@ HvInput.propTypes = {
    * -placeholder: the placeholder value of the input.
    * -infoText: the default value of the info text below the input.
    * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appear when there are too many characters.
-   * -minCharQuantityWarningText: the message that appear when there are too few characters.
+   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * -minCharQuantityWarningText: the message that appears when there are too few characters.
+   * -requiredWarningText: the message that appears when the input is empty and required.
    */
   inputTextConfiguration: PropTypes.shape({
     inputLabel: PropTypes.string,
@@ -448,7 +300,7 @@ HvInput.propTypes = {
   /**
    * The input name property in the dom.
    */
-  name: PropTypes.string,
+  inputProps: PropTypes.instanceOf(Object),
   /**
    * If ´true´ the input is disabled.
    */
@@ -477,6 +329,10 @@ HvInput.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * `true` if validation is shown, `false` otherwise.
+   */
+  validate: PropTypes.bool,
+  /**
    * The custom validation function, it receives the value and must return
    * either ´true´ for valid or ´false´ for invalid, default validations would only
    * occur if this function is null or undefined
@@ -493,6 +349,10 @@ HvInput.propTypes = {
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
   /**
+   * `true` if the icon is visible, `false` otherwise
+   */
+  iconVisible: PropTypes.bool,
+  /**
    * The icon position of the input.
    *
    * note: Is recommended you use the provided iconPositions object to set this value.
@@ -500,7 +360,7 @@ HvInput.propTypes = {
   iconPosition: PropTypes.oneOf(["left", "right"]),
   /**
    * The maximum allowed length of the characters, if this value is null no check
-   * will be perfom.
+   * will be performed.
    */
   maxCharQuantity: PropTypes.number,
   /**
@@ -531,8 +391,10 @@ HvInput.defaultProps = {
     minCharQuantityWarningText: "The value is too short",
     requiredWarningText: "The value is required"
   },
-  name: "",
+  inputProps: {},
+  iconVisible: true,
   iconPosition: "right",
+  validate: true,
   validation: null,
   maxCharQuantity: null,
   minCharQuantity: null,

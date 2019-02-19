@@ -98,7 +98,6 @@ class Recovery extends React.Component {
 
         <div className={classes.input}>
           <Input
-            className
             inputTextConfiguration={{
               inputLabel: "Email",
               placeholder: "Enter text"
@@ -106,7 +105,7 @@ class Recovery extends React.Component {
             password={false}
             onChange={this.handleInputChange()}
             externalWarningTextOverride={
-              recoverStatus == "error"
+              recoverStatus === "error"
                 ? "The email you've entered doesn't match any account"
                 : null
             }
@@ -159,6 +158,10 @@ Recovery.propTypes = {
    * Icon to be presented when the recovery occurs successfully.
    */
   okRecoveryIcon: PropTypes.node
+};
+
+Recovery.defaultProps = {
+  okRecoveryIcon: null
 };
 
 export default Recovery;

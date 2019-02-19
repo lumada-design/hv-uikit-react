@@ -13,6 +13,3 @@ import styles from "./styles";
 import Input from "./Input";
 
 export default withStyles(styles, { withTheme: true })(Input);
-export { default as validationStates } from "./validationStates";
-export { default as validationTypes } from "./validationTypes";
-export { default as iconPositions } from "./iconPositions";

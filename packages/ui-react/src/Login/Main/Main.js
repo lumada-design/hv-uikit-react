@@ -9,11 +9,13 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
+
+import { Level0Success16Color, Level5Unsuccess16Color } from "@hv-ui/icons";
+
 import Login from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
-import PropTypes from "prop-types";
 import backImg from "../resources/background.jpg";
-import { Level0Success16Color, Level5Unsuccess16Color } from "@hv-ui/icons";
 
 /**
  * Main container for the Login component.
@@ -111,7 +113,7 @@ HvLogin.propTypes = {
   /**
    * a component to replace the welcome message
    */
-  titleComponent: PropTypes.node,
+  titleComponent: PropTypes.element,
   /**
    * the component should have the recovery capability
    */
@@ -123,20 +125,20 @@ HvLogin.propTypes = {
   /**
    * Icon to be presented when the recovery occurs successfully.
    */
-  okRecoveryIcon: PropTypes.node,
+  okRecoveryIcon: PropTypes.element,
   /**
    * Icon to be presented when an error occurs in the login.
    */
-  errorLoginIcon: PropTypes.node
+  errorLoginIcon: PropTypes.element
 };
 
 HvLogin.defaultProps = {
   backgroundImage: backImg,
-  recover: true,
+  recovery: () => {},
   allowRecover: true,
   allowRememberMe: true,
-  okRecoveryIcon: Level0Success16Color,
-  errorLoginIcon: Level5Unsuccess16Color
+  okRecoveryIcon: <Level0Success16Color />,
+  errorLoginIcon: <Level5Unsuccess16Color />
 };
 
 export default HvLogin;

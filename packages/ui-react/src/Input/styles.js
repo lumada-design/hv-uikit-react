@@ -7,9 +7,6 @@
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-import close from "./assets/Close-16.svg";
-import success from "./assets/Level0-success-16-color.svg";
-import unsuccess from "./assets/Level5-unsuccess-16-color.svg";
 
 const styles = theme => ({
   container: {
@@ -18,11 +15,10 @@ const styles = theme => ({
   },
   inputRoot: {
     margin: "0",
-    height: "32px",
     width: "100%",
-    background: theme.palette.common.white,
     borderStyle: "solid",
     borderWidth: "1px",
+    background: theme.palette.common.white,
     borderColor: theme.palette.grey.plain,
     "&:hover": {
       borderStyle: "solid",
@@ -32,16 +28,9 @@ const styles = theme => ({
     }
   },
   inputRootDisabled: {
-    margin: "0",
-    height: "32px",
-    width: "100%",
-    borderStyle: "solid",
-    borderWidth: "1px",
     borderColor: theme.palette.grey.plain,
     background: theme.palette.grey.smokey,
     "&:hover": {
-      borderStyle: "solid",
-      borderWidth: "1px",
       borderColor: theme.palette.grey.plain,
       background: theme.palette.grey.smokey,
       cursor: "not-allowed"
@@ -61,11 +50,10 @@ const styles = theme => ({
     }
   },
   input: {
-    marginTop: "10px",
-    marginBottom: "10px",
+    height: 20,
     marginLeft: "10px",
     marginRight: "10px",
-    height: "19px",
+    padding: "5px 0 5px",
     fontWeight: theme.typography.body1.fontWeight,
     letterSpacing: theme.typography.body1.letterSpacing,
     color: theme.typography.body1.color,
@@ -84,6 +72,9 @@ const styles = theme => ({
   inputDisabled: {
     cursor: "not-allowed"
   },
+  multiLine: {
+    padding: 0
+  },
   label: {
     paddingTop: "30px",
     paddingBottom: "10px",
@@ -94,51 +85,37 @@ const styles = theme => ({
     fontSize: theme.typography.subtitle2.fontSize,
     lineHeight: theme.typography.subtitle2.lineHeight
   },
-  infoText: {
+  text: {
     paddingTop: "10px",
     paddingBottom: "30px",
     display: "block",
     fontWeight: theme.typography.disabled.fontWeight,
     letterSpacing: theme.typography.disabled.letterSpacing,
-    color: theme.typography.disabled.color,
     fontSize: theme.typography.disabled.fontSize,
     lineHeight: theme.typography.disabled.lineHeight
   },
-  warningInfoText: {
-    paddingTop: "10px",
-    paddingBottom: "30px",
-    display: "block",
-    fontWeight: theme.typography.disabled.fontWeight,
-    letterSpacing: theme.typography.disabled.letterSpacing,
-    color: theme.palette.status.error,
-    fontSize: theme.typography.disabled.fontSize,
-    lineHeight: theme.typography.disabled.lineHeight
+  textInfo: {
+    color: theme.typography.disabled.color
+  },
+  textWarning: {
+    color: theme.palette.status.error
   },
   icon: {
-    width: "16px",
-    height: "16px",
-    margin: "8px"
+    width: "30px",
+    height: "30px"
   },
   iconContainer: {
-    width: "32px",
-    height: "32px"
+    width: "30px",
+    height: "30px"
   },
   iconClear: {
-    background: `url(${close})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     cursor: "pointer"
   },
-  iconValid: {
-    background: `url(${success})`
-  },
-  iconInvalid: {
-    background: `url(${unsuccess})`
-  },
   "@global": {
     "input:-webkit-autofill": {
-      "-webkit-box-shadow": "0 0 0px 1000px white inset",
-      height: 16
+      "-webkit-box-shadow": "0 0 0px 1000px white inset"
     }
   }
 });

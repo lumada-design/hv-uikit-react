@@ -8,26 +8,15 @@
  *  under which the software has been supplied.
  */
 
-import palette from "../palette";
-
-const muiInput = {
+const styles = () => ({
   root: {
-    border: `1px solid ${palette.secondary.light}`,
-    background: palette.background.default,
-    height: 40,
-    maxHeight: 44,
-    minWidth: 70,
-    margin: 10,
-    fontWeight: 400,
-    fontSize: 14,
-    lineHeight: "14px",
-    "&:hover,&:focus&:active": {
-      borderColor: palette.primary.light
-    }
+    height: 32,
+    width: "100%",
+    margin: "0px 0px 0px 0px"
   },
-  inputType: {
-    height: 25
+  action: {
+    margin: "0px 0px 0px 10px"
   }
-};
+});
 
-export default muiInput;
+export default styles;

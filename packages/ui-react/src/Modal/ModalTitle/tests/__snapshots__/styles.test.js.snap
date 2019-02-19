@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalTitle styles should behave correctly 1`] = `
+Object {
+  "root": Object {
+    "margin": 0,
+    "padding": "0px 0px 30px 0px",
+  },
+}
+`;

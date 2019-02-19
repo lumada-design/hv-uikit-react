@@ -163,9 +163,8 @@ class Login extends React.Component {
               placeholder: "Enter text",
               infoText: ""
             }}
-            name={"password"}
-            inputLabel="Password"
-            password={true}
+            name="password"
+            password
             value={password}
             onChange={this.handleInputChange("password")}
           />
@@ -180,7 +179,7 @@ class Login extends React.Component {
           {allowRememberMe ? (
             <HvCheckbox
               classes={{ labelTypography: classes.checkBoxTypography }}
-              label={"Remember me"}
+              label="Remember me"
               onChange={this.handleRememberMe}
             />
           ) : null}
@@ -235,7 +234,7 @@ Login.propTypes = {
   /**
    * Icon to be presented when an error occurs in the login.
    */
-  errorLoginIcon: PropTypes.node
+  errorLoginIcon: PropTypes.element
 };
 
 export default Login;

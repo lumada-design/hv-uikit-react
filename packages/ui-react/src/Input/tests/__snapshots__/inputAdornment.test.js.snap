@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputAdornment should be defined 1`] = `
+<InputAdornment
+  classes={Object {}}
+  handleClear={[MockFunction]}
+  validationState="filled"
+>
+  <div
+    className="undefined"
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    role="button"
+    tabIndex={-1}
+  >
+    <Close16
+      style={
+        Object {
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    >
+      <svg
+        height={32}
+        style={
+          Object {
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 32 32"
+        width={32}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="Close-16"
+          transform="translate(-631.5 -882.5)"
+        >
+          <rect
+            data-name="Rectangle 976"
+            fill="none"
+            height={32}
+            id="Rectangle_976"
+            transform="translate(631.5 882.5)"
+            width={32}
+          />
+          <path
+            d="M653.5,893.2l-.7-.7-5.3,5.3-5.3-5.3-.7.7,5.3,5.3-5.3,5.3.7.7,5.3-5.3,5.3,5.3.7-.7-5.3-5.3Z"
+            data-name="Path 1904"
+            fill="#414141"
+            id="Path_1904"
+          />
+        </g>
+      </svg>
+    </Close16>
+  </div>
+</InputAdornment>
+`;

@@ -1,13 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import {
-  HvInput,
-  HvShowCase,
-  HvShowCaseHeader,
-  validationStates,
-  validationTypes,
-  iconPositions
-} from "../src";
+import { HvInput, HvShowCase, HvShowCaseHeader } from "../src";
 
 const inputTextConfiguration = {
   placeholder: "Insert text",
@@ -78,7 +71,7 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={numberInputTextConfiguration}
-        validationType={validationTypes.number}
+        validationType="number"
         maxCharQuantity={40}
       />
     </HvShowCase>
@@ -89,7 +82,7 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={numberInputTextConfiguration}
-        validationType={validationTypes.number}
+        validationType="number"
         isRequired
         maxCharQuantity={40}
       />
@@ -102,7 +95,7 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={emailInputTextConfiguration}
-        validationType={validationTypes.email}
+        validationType="email"
       />
     </HvShowCase>
 
@@ -114,7 +107,7 @@ storiesOf("Input", module).add(`Input`, () => (
       <HvInput
         inputTextConfiguration={emailInputTextConfiguration}
         disabled
-        validationType={validationTypes.email}
+        validationType="email"
       />
     </HvShowCase>
 
@@ -150,7 +143,7 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={emailInputTextConfiguration}
-        validationType={validationTypes.email}
+        validationType="email"
         value="example@exam.com"
       />
     </HvShowCase>
@@ -162,8 +155,8 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={emailInputTextConfiguration}
-        validationType={validationTypes.email}
-        validationState={validationStates.invalid}
+        validationType="email"
+        validationState="invalid"
         value="wrong"
       />
     </HvShowCase>
@@ -175,9 +168,9 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={emailInputTextConfiguration}
-        iconPosition={iconPositions.left}
-        validationType={validationTypes.email}
-        validationState={validationStates.invalid}
+        iconPosition="left"
+        validationType="email"
+        validationState="invalid"
         value="wrong"
       />
     </HvShowCase>
@@ -198,7 +191,7 @@ storiesOf("Input", module).add(`Input`, () => (
     >
       <HvInput
         inputTextConfiguration={numberInputTextConfiguration}
-        validationType={validationTypes.number}
+        validationType="number"
         onBlur={(value, validationState) => {
           alert(
             `my value is ${value} and my validation state is ${validationState}`
@@ -233,6 +226,26 @@ storiesOf("Input", module).add(`Input`, () => (
       style={HvShowCaseStyle.max}
     >
       <HvInput />
+    </HvShowCase>
+
+    <HvShowCase
+      title="Input without validation"
+      description=""
+      style={HvShowCaseStyle.max}
+    >
+      <HvInput validate={false} />
+    </HvShowCase>
+
+    <HvShowCase
+      title="Input with custom input props"
+      description="Using the input props to inject input custom props"
+      style={HvShowCaseStyle.max}
+    >
+      <HvInput
+        inputProps={{
+          maxLength: 250
+        }}
+      />
     </HvShowCase>
   </>
 ));
