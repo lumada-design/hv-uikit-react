@@ -17,7 +17,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import SortAsc from "@hv-ui/icons/core/XS-icons/SortAscending12";
 import SortDesc from "@hv-ui/icons/core/XS-icons/SortDescending12";
-import withFixedColumns from "react-table-hoc-fixed-columns";
 import expander from '../expander/expander';
 import { appendClassnames, createExpanderButton } from './columnUtils';
 import { toggleAll, isIndeterminateStatus, toggleSelection, isSelected } from "./checkBoxUtils";
@@ -47,7 +46,7 @@ class HvTable extends React.Component {
       // table component to be render
       Table: props.idForCheckbox
         ? checkboxHOC(ReactTable)
-        : withFixedColumns(ReactTable),
+        : ReactTable,
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -66,11 +65,16 @@ class HvTable extends React.Component {
    */
   componentDidMount() {
     const { initiallyLoaded } = this.state;
-    const { data } = this.props;
+    const { data, idForCheckbox } = this.props;
     if (!initiallyLoaded) {
       this.state.initiallyLoaded = true;
     }
     this.state.recordQuantity = data.length;
+
+    if(!idForCheckbox) {
+      const withFixedColumns = require("react-table-hoc-fixed-columns");
+      this.state.Table = withFixedColumns.default(ReactTable);
+    }
   }
 
   /**

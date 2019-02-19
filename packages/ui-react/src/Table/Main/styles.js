@@ -207,7 +207,7 @@ const styles = theme => ({
     overflow: "auto"
   },
   headerProps: {
-    width: "calc(100% - 42px)",
+    width: "100%",
     whiteSpace: "normal"
   },
   headerAlphaNumeric: {
