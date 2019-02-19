@@ -1,6 +1,3 @@
-import AngleDown from "@hv-ui/icons/resources/icons/XS-icons/AngleDown-12.svg";
-import AngleUp from "@hv-ui/icons/resources/icons/XS-icons/AngleUp-12.svg";
-
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -99,6 +96,9 @@ const styles = theme => ({
       "& $tbody": {
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.palette.grey.plain}`,
+          "& $tr > div ": {
+            background: "white"
+          },
           "& $tr:hover > div ": {
             background: "white"
           }
@@ -246,19 +246,9 @@ const styles = theme => ({
   iconContainer: {
     width: "32px",
     height: "32px",
-    backgroundSize: "32px 32px"
-  },
-  angleUp: {
-    backgroundImage: `url(${AngleUp})`,
     position: "absolute",
-    top: "0",
-    left: "0"
-  },
-  angleDown: {
-    backgroundImage: `url(${AngleDown})`,
-    position: "absolute",
-    top: "0",
-    left: "0"
+    bottom: 0,
+    left: 0
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"

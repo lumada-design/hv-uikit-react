@@ -11,6 +11,10 @@
 import React from "react";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
+
+import AngleDown from "@hv-ui/icons/core/XS-icons/AngleDown12";
+import AngleUp from "@hv-ui/icons/core/XS-icons/AngleUp12";
+
 import { buildLink } from "./addins";
 
 /**
@@ -108,13 +112,13 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
       <>
         <div>
           {isExpanded ? (
-            <div
-              className={classNames(classes.angleUp, classes.iconContainer)}
-            />
+            <div className={classNames(classes.iconContainer)}>
+              <AngleUp />
+            </div>
           ) : (
-            <div
-              className={classNames(classes.angleDown, classes.iconContainer)}
-            />
+            <div className={classNames(classes.iconContainer)}>
+              <AngleDown />
+            </div>
           )}
         </div>
         <div
