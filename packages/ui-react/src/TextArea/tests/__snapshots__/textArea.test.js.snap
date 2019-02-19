@@ -4,6 +4,7 @@ exports[`TextArea Component should render correctly if opened 1`] = `
 <WithStyles(HvInput)
   classes={
     Object {
+      "container": undefined,
       "input": undefined,
     }
   }

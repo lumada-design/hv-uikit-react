@@ -22,6 +22,7 @@ const TextArea = ({
 }) => (
   <Input
     classes={{
+      container: classes.container,
       input: classes.input
     }}
     inputTextConfiguration={inputTextConfiguration}
