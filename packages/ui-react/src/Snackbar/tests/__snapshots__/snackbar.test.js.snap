@@ -188,6 +188,13 @@ exports[`Snackbcar  should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -623,6 +630,13 @@ exports[`Snackbcar  should render correctly 1`] = `
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -3494,6 +3508,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -3929,6 +3950,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -5262,6 +5290,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -5697,6 +5732,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -9227,6 +9269,13 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
             },
+            "visualizationText": Object {
+              "color": "#414141",
+              "fontSize": "10px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "15px",
+            },
             "xlargeTitle": Object {
               "color": "#414141",
               "fontSize": "32px",
@@ -9662,6 +9711,13 @@ body {
             "lineHeight": "1.16667em",
           },
           "useNextVariants": true,
+          "visualization": Object {
+            "color": "#414141",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "letterSpacing": "0.02em",
+            "lineHeight": "15px",
+          },
         },
         "zIndex": Object {
           "appBar": 1100,
@@ -9877,6 +9933,13 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
                 },
                 "xlargeTitle": Object {
                   "color": "#414141",
@@ -10313,6 +10376,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,

@@ -5,16 +5,17 @@ exports[`Logo withStyles should render Logo component with Props 1`] = `
   classes={
     Object {
       "companyLogoContainer": "Logo-companyLogoContainer-1",
-      "companyLogoIcon": "Logo-companyLogoIcon-5",
       "companyLogoImage": "Logo-companyLogoImage-2",
-      "companyLogoText": "Logo-companyLogoText-3",
-      "companyLogoText1": "Logo-companyLogoText1-6",
       "companyLogoText2": "Logo-companyLogoText2-7",
+      "productLogoImage": "Logo-productLogoImage-5",
+      "productLogoText": "Logo-productLogoText-3",
+      "productLogoText1": "Logo-productLogoText1-6",
       "separator": "Logo-separator-4",
     }
   }
   companyLogo="Path/To/CompanyLogo"
   productLogo="Path/To/ProductLogo"
+  productName={null}
   theme={
     Object {
       "breakpoints": Object {
@@ -385,16 +386,17 @@ exports[`Logo withStyles should render correctly 1`] = `
   classes={
     Object {
       "companyLogoContainer": "Logo-companyLogoContainer-1",
-      "companyLogoIcon": "Logo-companyLogoIcon-5",
       "companyLogoImage": "Logo-companyLogoImage-2",
-      "companyLogoText": "Logo-companyLogoText-3",
-      "companyLogoText1": "Logo-companyLogoText1-6",
       "companyLogoText2": "Logo-companyLogoText2-7",
+      "productLogoImage": "Logo-productLogoImage-5",
+      "productLogoText": "Logo-productLogoText-3",
+      "productLogoText1": "Logo-productLogoText1-6",
       "separator": "Logo-separator-4",
     }
   }
   companyLogo={null}
   productLogo={null}
+  productName={null}
   theme={
     Object {
       "breakpoints": Object {

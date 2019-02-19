@@ -188,6 +188,13 @@ exports[`Input should not have the validation section 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -623,6 +630,13 @@ exports[`Input should not have the validation section 1`] = `
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -3494,6 +3508,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -3929,6 +3950,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -6318,6 +6346,13 @@ input:-webkit-autofill {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -6753,6 +6788,13 @@ input:-webkit-autofill {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -8878,6 +8920,13 @@ label + .MuiInput-formControl-496 {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -9313,6 +9362,13 @@ label + .MuiInput-formControl-496 {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -11152,6 +11208,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
             },
+            "visualizationText": Object {
+              "color": "#414141",
+              "fontSize": "10px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "15px",
+            },
             "xlargeTitle": Object {
               "color": "#414141",
               "fontSize": "32px",
@@ -11587,6 +11650,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
             "lineHeight": "1.16667em",
           },
           "useNextVariants": true,
+          "visualization": Object {
+            "color": "#414141",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "letterSpacing": "0.02em",
+            "lineHeight": "15px",
+          },
         },
         "zIndex": Object {
           "appBar": 1100,
@@ -11822,6 +11892,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
                 },
                 "xlargeTitle": Object {
                   "color": "#414141",
@@ -12258,6 +12335,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -12653,6 +12737,13 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -13088,6 +13179,13 @@ exports[`Input should pass other props to the child input component 1`] = `
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -15959,6 +16057,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -16394,6 +16499,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -18783,6 +18895,13 @@ input:-webkit-autofill {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -19218,6 +19337,13 @@ input:-webkit-autofill {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -21343,6 +21469,13 @@ label + .MuiInput-formControl-620 {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -21778,6 +21911,13 @@ label + .MuiInput-formControl-620 {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -23621,6 +23761,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -24056,6 +24203,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -26445,6 +26599,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
             },
+            "visualizationText": Object {
+              "color": "#414141",
+              "fontSize": "10px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "15px",
+            },
             "xlargeTitle": Object {
               "color": "#414141",
               "fontSize": "32px",
@@ -26880,6 +27041,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
             "lineHeight": "1.16667em",
           },
           "useNextVariants": true,
+          "visualization": Object {
+            "color": "#414141",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "letterSpacing": "0.02em",
+            "lineHeight": "15px",
+          },
         },
         "zIndex": Object {
           "appBar": 1100,
@@ -27123,6 +27291,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
                 },
                 "xlargeTitle": Object {
                   "color": "#414141",
@@ -27559,6 +27734,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -28027,6 +28209,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                         "letterSpacing": "0.02em",
                         "lineHeight": "30px",
                       },
+                      "visualizationText": Object {
+                        "color": "#414141",
+                        "fontSize": "10px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "15px",
+                      },
                       "xlargeTitle": Object {
                         "color": "#414141",
                         "fontSize": "32px",
@@ -28462,6 +28651,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                       "lineHeight": "1.16667em",
                     },
                     "useNextVariants": true,
+                    "visualization": Object {
+                      "color": "#414141",
+                      "fontSize": "10px",
+                      "fontWeight": "400",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "15px",
+                    },
                   },
                   "zIndex": Object {
                     "appBar": 1100,
@@ -28674,6 +28870,13 @@ exports[`Input should render correctly 1`] = `
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
                 },
                 "xlargeTitle": Object {
                   "color": "#414141",
@@ -29110,6 +29313,13 @@ exports[`Input should render correctly 1`] = `
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -31981,6 +32191,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -32416,6 +32633,13 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -34805,6 +35029,13 @@ input:-webkit-autofill {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -35240,6 +35471,13 @@ input:-webkit-autofill {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -37365,6 +37603,13 @@ label + .MuiInput-formControl-96 {
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -37800,6 +38045,13 @@ label + .MuiInput-formControl-96 {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -39643,6 +39895,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
+                },
                 "xlargeTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
@@ -40078,6 +40337,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -42467,6 +42733,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
             },
+            "visualizationText": Object {
+              "color": "#414141",
+              "fontSize": "10px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "15px",
+            },
             "xlargeTitle": Object {
               "color": "#414141",
               "fontSize": "32px",
@@ -42902,6 +43175,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
             "lineHeight": "1.16667em",
           },
           "useNextVariants": true,
+          "visualization": Object {
+            "color": "#414141",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "letterSpacing": "0.02em",
+            "lineHeight": "15px",
+          },
         },
         "zIndex": Object {
           "appBar": 1100,
@@ -43135,6 +43415,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "visualizationText": Object {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "15px",
                 },
                 "xlargeTitle": Object {
                   "color": "#414141",
@@ -43571,6 +43858,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
+              "visualization": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": "400",
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -44018,6 +44312,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                         "letterSpacing": "0.02em",
                         "lineHeight": "30px",
                       },
+                      "visualizationText": Object {
+                        "color": "#414141",
+                        "fontSize": "10px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "15px",
+                      },
                       "xlargeTitle": Object {
                         "color": "#414141",
                         "fontSize": "32px",
@@ -44453,6 +44754,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                       "lineHeight": "1.16667em",
                     },
                     "useNextVariants": true,
+                    "visualization": Object {
+                      "color": "#414141",
+                      "fontSize": "10px",
+                      "fontWeight": "400",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "15px",
+                    },
                   },
                   "zIndex": Object {
                     "appBar": 1100,

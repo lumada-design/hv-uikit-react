@@ -38,7 +38,11 @@ const Main = ({ classes, children, open, onClose, ...others }) => (
     onClose={(event, reason) => onClose(event, reason)}
     {...others}
   >
-    <Button className={classes.closeButton} colorType="link" onClick={onClose}>
+    <Button
+      className={classes.closeButton}
+      colorType="link"
+      onClick={event => onClose(event)}
+    >
       <Close16 style={style} />
     </Button>
     {children}
