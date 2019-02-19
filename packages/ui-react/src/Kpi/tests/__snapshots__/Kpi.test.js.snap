@@ -1,14 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header withStyles should render correctly 1`] = `
-<Main
-  basePath=""
-  classes={Object {}}
-  companyLogo={null}
-  menuData={Array []}
-  onNavigationClick={[Function]}
-  productLogo={null}
-  productName={null}
+exports[`Kpi withStyles should render correctly 1`] = `
+<HvKpi
+  className=""
+  classes={
+    Object {
+      "comparisons": "HvKpi-comparisons-5",
+      "indicatorUnit": "HvKpi-indicatorUnit-3",
+      "indicatorsContainer": "HvKpi-indicatorsContainer-2",
+      "infoText": "HvKpi-infoText-6",
+      "kpiContainer": "HvKpi-kpiContainer-1",
+      "spacingToTheRight": "HvKpi-spacingToTheRight-4",
+    }
+  }
+  kpiTextConfiguration={
+    Object {
+      "comparisonIndicator": "10%",
+      "comparisonIndicatorInfo": "vs last 24h.",
+      "indicator": "8.85",
+      "title": "Avg. service time",
+      "unit": "MS",
+    }
+  }
   theme={
     Object {
       "breakpoints": Object {
@@ -371,8 +384,5 @@ exports[`Header withStyles should render correctly 1`] = `
       },
     }
   }
-  useRouter={false}
-  userData={Object {}}
-  userLogout={null}
 />
 `;

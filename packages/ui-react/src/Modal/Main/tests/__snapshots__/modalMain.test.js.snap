@@ -24,7 +24,7 @@ exports[`Modal Component allows external props to be added 1`] = `
 >
   <WithStyles(HvButton)
     colorType="link"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <Close16
       style={
@@ -61,7 +61,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
   <WithStyles(HvButton)
     className="testClassCloseButton"
     colorType="link"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <Close16
       style={
@@ -97,19 +97,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
 >
   <WithStyles(HvButton)
     colorType="link"
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    onClick={[Function]}
   >
     <Close16
       style={
@@ -145,7 +133,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
 >
   <WithStyles(HvButton)
     colorType="link"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <Close16
       style={
@@ -181,7 +169,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
 >
   <WithStyles(HvButton)
     colorType="link"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <Close16
       style={
@@ -371,6 +359,13 @@ exports[`Modal withStyles should render correctly 1`] = `
             "fontWeight": "400",
             "letterSpacing": "0.02em",
             "lineHeight": "30px",
+          },
+          "visualizationText": Object {
+            "color": "#414141",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "letterSpacing": "0.02em",
+            "lineHeight": "15px",
           },
           "xlargeTitle": Object {
             "color": "#414141",
@@ -807,6 +802,13 @@ exports[`Modal withStyles should render correctly 1`] = `
           "lineHeight": "1.16667em",
         },
         "useNextVariants": true,
+        "visualization": Object {
+          "color": "#414141",
+          "fontSize": "10px",
+          "fontWeight": "400",
+          "letterSpacing": "0.02em",
+          "lineHeight": "15px",
+        },
       },
       "zIndex": Object {
         "appBar": 1100,

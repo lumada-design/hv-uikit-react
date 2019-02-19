@@ -19,3 +19,5 @@ yarn-error.log*
 
 # Editor configuration files
 *.iml
+
+packages/ui-react/junit\.xml
