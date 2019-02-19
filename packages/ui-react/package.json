@@ -54,10 +54,12 @@
     "react-date-range": "^1.0.0-beta",
     "react-day-picker": "^7.2.4",
     "react-dom": "^16.6.3",
+    "react-google-charts": "^3.0.10",
     "react-icons": "^2.2.7",
     "react-jss": "^8.6.1",
     "react-select": "^2.1.1",
-    "react-table": "6.8.6"
+    "react-table": "6.8.6",
+    "react-table-hoc-fixed-columns": "^1.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",

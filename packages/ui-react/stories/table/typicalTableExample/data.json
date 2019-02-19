@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "customer": "Blauer See Auto, Co.",
+    "dealSize": "Small",
+    "sales": "2871.0",
+    "salesGrowth": "925.7",
+    "orderNumber": "10100",
+    "color": "red"
+  },
+  {
+    "id": 2,
+    "customer": "Blauer See Auto, Co.",
+    "dealSize": "Small",
+    "sales": "2765.9",
+    "salesGrowth": "119.3",
+    "orderNumber": "10100",
+    "color": "orange"
+  },
+  {
+    "id": 3,
+    "customer": "Blauer See Auto, Co.",
+    "dealSize": "Medium",
+    "sales": "3884.3",
+    "salesGrowth": "94.7",
+    "orderNumber": "10101",
+    "color": "blue"
+  },
+  {
+    "id": 4,
+    "customer": "Online Diecast Creation",
+    "dealSize": "Medium",
+    "sales": "3746.7",
+    "salesGrowth": "30.2",
+    "orderNumber": "10102",
+    "color": "yellow"
+  },
+  {
+    "id": 5,
+    "customer": "Vitachrome Inc.",
+    "dealSize": "Small",
+    "sales": "5205.3",
+    "salesGrowth": "1000.6",
+    "orderNumber": "10102",
+    "color": "green"
+  }
+]

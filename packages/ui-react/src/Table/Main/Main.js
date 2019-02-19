@@ -10,31 +10,76 @@
 
 import React from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
+import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
+import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
-
-import SortAsc from "react-icons/lib/fa/sort-asc";
-import SortDesc from "react-icons/lib/fa/sort-desc";
+import classNames from "classnames";
+import SortAsc from "@hv-ui/icons/core/XS-icons/SortAscending12";
+import SortDesc from "@hv-ui/icons/core/XS-icons/SortDescending12";
+import withFixedColumns from "react-table-hoc-fixed-columns";
+import expander from '../expander/expander';
+import { appendClassnames, createExpanderButton } from './columnUtils';
+import { toggleAll, isIndeterminateStatus, toggleSelection, isSelected } from "./checkBoxUtils";
+import HvCheckBox from "../../Selectors/CheckBox";
 
 import ReactTablePagination from "../Pagination";
 import { tableStyleOverrides } from "./styles";
 
+/**
+ * Table component. This component offers:
+ * - A standard table;
+ * - Table with expander;
+ * - Table with checkbox.
+ *
+ * The type is defined by the existence of the properties:
+ *  - subElementTemplate: Creates a table with expander;
+ *  - idForCheckbox: Creates a table with checkboxs;
+ *  - None: Creates a simple table.
+ *
+ *   Just one of this properties should be set (or none) has it isn't possible to have a table with
+ *   expander and checkbox simultaneously.
+ */
 class HvTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // table component to be render
+      Table: props.idForCheckbox
+        ? checkboxHOC(ReactTable)
+        : withFixedColumns(ReactTable),
+      // the columns that are sorted
       sorted: props.defaultSorted || [],
-      initiallyLoaded: false
+      // flag for controlling if the component as been render before
+      initiallyLoaded: false,
+      // Controls which row is expanded.
+      expanded: {},
+      // Controls which row is selected using the checkboxes.
+      selection: [],
+      // Controls if the select all options has been used
+      selectAll: false
     };
   }
 
+  /**
+   * Change the state property initiallyLoaded to identify that it is the first load.
+   */
   componentDidMount() {
     const { initiallyLoaded } = this.state;
+    const { data } = this.props;
     if (!initiallyLoaded) {
       this.state.initiallyLoaded = true;
     }
+    this.state.recordQuantity = data.length;
   }
 
+  /**
+   *
+   * Returns the corresponding icon for the type of sorting (ascending or descending).
+   *
+   * @param id - the used to find the column.
+   * @returns {*} - 'false' if the column doesn't exist.
+   */
   getSortedComponent = id => {
     const { sorted } = this.state;
 
@@ -47,6 +92,11 @@ class HvTable extends React.Component {
     return false;
   };
 
+  /**
+   * Pagination customizations.
+   *
+   * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
+   */
   getPaginationProps = () => {
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
@@ -65,6 +115,11 @@ class HvTable extends React.Component {
     };
   };
 
+  /**
+   * Obtains server side data.
+   *
+   * @returns {Object}
+   */
   getServerSizeProps = () => {
     const { paginationServerSide } = this.props;
 
@@ -74,6 +129,24 @@ class HvTable extends React.Component {
     };
   };
 
+  /**
+   *
+   * Add the class "sorted" to the selected column.
+   *
+   * @param sortedColumn - the column representation from the user.
+   * @param col - column representation from react tables that is going to be modified.
+   */
+  highlightSortedColumn = (sortedColumn, col) => {
+    const column = col;
+    column.className = "sorted";
+    this.setState({ sorted: sortedColumn });
+  };
+
+  /**
+   * Sort properties override to set onSortedChange
+   *
+   * @returns {{sortable: HvTable.props.sortable}}
+   */
   getSortProps = () => {
     const { sortable, defaultSorted } = this.props;
 
@@ -81,11 +154,16 @@ class HvTable extends React.Component {
       sortable,
       ...(sortable && { defaultSorted }),
       ...(sortable && {
-        onSortedChange: sortedColumn => this.setState({ sorted: sortedColumn })
+        onSortedChange: this.highlightSortedColumn
       })
     };
   };
 
+  /**
+   * Function used to load data asynchronously.
+   *
+   * @param {Object} tableState - an Object containing information about the current state of the table.
+   */
   onFetchDataInternal = tableState => {
     const { onFetchData } = this.props;
     const { initiallyLoaded, sorted: sortedFromState } = this.state;
@@ -102,20 +180,142 @@ class HvTable extends React.Component {
     }
   };
 
+  /**
+   * Override of the thead th. This method is used to add properties to the entire column.
+   *
+   * @param {Object} state - The current state of the table.
+   * @param {Object} rowInfo - An object containing information about the row.
+   * @param {Object} column - An object containing information about the column.
+   * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
+   */
+  getTheadThProps = (state, rowInfo, column) => {
+    const { classes } = this.props;
+    const { sorted } = this.state;
+
+    appendClassnames(column, sorted, classes);
+
+    return { className: classes.theadTh };
+  };
+
+  /**
+   * A getter for the row provided by the React table
+   * used to add an onClick function to open the expander when the row is clicked.
+   *
+   * @param {Object} state - The current state of the table.
+   * @param {Object} rowInfo - An object containing information about the row.
+   * @returns {Object} - The object that contains the classes to be applied to the table.
+   */
+  getTrProps = (state, rowInfo) => {
+    const { classes, subElementTemplate } = this.props;
+    const { expanded } = this.state;
+    if (subElementTemplate && rowInfo && rowInfo.row) {
+      return {
+        onClick: () => {
+          this.setState({
+            expanded: { [rowInfo.viewIndex]: !expanded[rowInfo.viewIndex] }
+          });
+        },
+        className: classNames(classes.tr, classes.pointer)
+      };
+    }
+
+    return { className: classes.tr };
+  };
+
+  //  ----------- Checkbox -----------
+
+  /**
+   * Check if the row is selected based on it's key.
+   *
+   * @param {Number} key - the key that uniquely identifies the row.
+   */
+  isSelected = key => {
+    const { selection } = this.state;
+    return isSelected(key, selection);
+  };
+
+  /**
+   * Selects or unselect a row.
+   *
+   * @param {Number} key - the key that uniquely identifies the row.
+   */
+  toggleSelection = key => {
+    // start off with the existing state
+    const { selection } = this.state;
+
+    const select = toggleSelection(key, selection);
+
+    if(select.length === 0) this.setState({selectAll: false});
+
+    // update the state
+    this.setState({ selection: select });
+  };
+
+  /**
+   *  Adds the indeterminate status to the checkbox when necessary.
+   */
+  isIndeterminateStatus = () => {
+    const { selection, recordQuantity } = this.state;
+    return isIndeterminateStatus(selection, recordQuantity);
+  };
+
+  /**
+   * Selects all the avaible rows on the page.
+   */
+  toggleAll = () => {
+    const { idForCheckbox } = this.props;
+    const { selectAll } = this.state;
+
+    const stateToSet = toggleAll(idForCheckbox, selectAll, this.checkboxTable);
+    this.setState({ selectAll: stateToSet.selectAll, selection: stateToSet.selection });
+  };
+
   render() {
-    const { classes, columns, data, resizable } = this.props;
+    const {
+      classes,
+      columns,
+      data,
+      titleText,
+      subtitleText,
+      subElementTemplate,
+      idForCheckbox
+    } = this.props;
+
+    const { expanded, selectAll, Table } = this.state;
 
     const tableStyles = tableStyleOverrides(classes);
 
+    // Creates the thead with the text and the sorted icon.
     const ColumnSettings = {
       ...ReactTableDefaults.column,
       Header: props => {
         const Sorted = this.getSortedComponent(props.column.id);
+        const SortedIcon = !Sorted ? <SortAsc /> : Sorted;
+
+        const sortedIconClasses = Sorted
+          ? classes.sortedIconShown
+          : classes.sortedIconHidden;
+
         return (
-          <React.Fragment>
-            {Sorted && <span className={classes.rtSortIcon}>{Sorted}</span>}
-            <span>{props.column.headerText}</span>
-          </React.Fragment>
+          <div className={classes.headerContainer}>
+            <div className={classNames(classes.rtSortIcon, sortedIconClasses)}>
+              {SortedIcon}
+            </div>
+            {/* Setter of the styles for the header */}
+            <div className={classes.headerTextContainer}>
+              <Typography
+                variant="subtitle2"
+                className={classNames(classes.headerProps, {
+                  [classes.headerAlphaNumeric]:
+                    props.column.cellType === "alpha-numeric" ||
+                    props.column.cellType === "link",
+                  [classes.headerNumeric]: props.column.cellType === "numeric"
+                })}
+              >
+                {props.column.headerText}
+              </Typography>
+            </div>
+          </div>
         );
       }
     };
@@ -128,24 +328,84 @@ class HvTable extends React.Component {
       column: ColumnSettings
     });
 
+    // add expander button
+    const newColumn = createExpanderButton( columns, subElementTemplate, classes);
+    // add expander
+    const newSubComponent = expander( subElementTemplate, classes );
+
+    // checkbox properties
+    const checkboxProps = {
+      SelectAllInputComponent: () => (
+        <HvCheckBox
+          onChange={() => this.toggleAll()}
+          checked={selectAll}
+          indeterminate={this.isIndeterminateStatus()}
+        />
+      ),
+      SelectInputComponent: props => (
+        <HvCheckBox
+          checked={this.isSelected(props.id)}
+          onChange={() => this.toggleSelection(props.id)}
+        />
+      )
+    };
+
     return (
-      <ReactTable
-        {...tableStyles}
-        {...paginationProps}
-        {...serverSizeProps}
-        {...sortProps}
-        data={data}
-        columns={columns}
-        className="-highlight"
-        resizable={resizable}
-      />
+      <div className={classes.tableContainer}>
+        {titleText && (
+          <div className={classes.title}>
+            <div>
+              <Typography variant="h3">{titleText}</Typography>
+            </div>
+            {subtitleText && (
+              <div className={classes.subtitle}>
+                <Typography variant="body1">{subtitleText}</Typography>
+              </div>
+            )}
+          </div>
+        )}
+        <Table
+          {...tableStyles}
+          {...paginationProps}
+          {...serverSizeProps}
+          {...sortProps}
+          {...checkboxProps}
+          /* eslint no-return-assign: 0 */
+          ref={r => (this.checkboxTable = r)}
+          getTheadThProps={this.getTheadThProps}
+          getTrProps={this.getTrProps}
+          data={data}
+          columns={newColumn}
+          className="-highlight"
+          resizable={false}
+          SubComponent={newSubComponent}
+          expanded={expanded}
+          keyField={idForCheckbox}
+          isSelected={this.isSelected}
+          minRows={0}
+        />
+      </div>
     );
   }
 }
 
 HvTable.propTypes = {
   /**
+   * the classes object to be applied into the root object.
+   */
+  classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Title of the table.
+   */
+  titleText: PropTypes.string,
+  /**
+   * Subtitle of the table.
+   */
+  subtitleText: PropTypes.string,
+  /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
+   Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
+   If the type is "link", in data use the structure {displayText: {text to display} ,url: {url} }.
    */
   columns: PropTypes.instanceOf(Object).isRequired,
   /**
@@ -187,10 +447,20 @@ HvTable.propTypes = {
   /**
    * An object describing what column is sorted by default on the table
    */
-  defaultSort: PropTypes.instanceOf(Object)
+  defaultSorted: PropTypes.instanceOf(Array),
+  /**
+   * Element to be shown in the expander.
+   */
+  subElementTemplate: PropTypes.element,
+  /**
+   * Property to be uses as unique row identifier. One of the fields of the data.
+   */
+  idForCheckbox: PropTypes.string
 };
 
 HvTable.defaultProps = {
+  titleText: "",
+  subtitleText: "",
   showPagination: true,
   showPageSize: true,
   pageSize: undefined,
@@ -199,7 +469,9 @@ HvTable.defaultProps = {
   pages: undefined,
   onFetchData: () => {},
   sortable: true,
-  defaultSort: {}
+  defaultSorted: [],
+  subElementTemplate: null,
+  idForCheckbox: ""
 };
 
 export default HvTable;

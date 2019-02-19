@@ -54,12 +54,14 @@ const styles = theme => ({
   },
   pageNavigator: {
     display: "flex",
-    alignItems: "stretch"
+    alignItems: "stretch",
+    height: "32px"
   },
   pageInfo: {
     display: "inline-block",
-    margin: `3px ${theme.spacing.xs}px`,
-    whiteSpace: "nowrap"
+    margin: `0 ${theme.spacing.xs}px`,
+    whiteSpace: "nowrap",
+    height: "32px"
   },
   pageJump: {
     display: "inline-block"
@@ -73,10 +75,11 @@ const styles = theme => ({
     width: "50px",
     textAlign: "right",
     fontSize: "14px",
-    margin: `0 ${theme.spacing.xs}px`,
+    margin: `-1px ${theme.spacing.xs}px`,
     padding: "2px 5px",
     borderRadius: "0",
-    border: `solid 1px ${theme.palette.grey.plain}`
+    border: `solid 1px ${theme.palette.grey.plain}`,
+    height: "32px"
   },
   arrowFirst: {
     background: `url(${ArrowFirst})`,

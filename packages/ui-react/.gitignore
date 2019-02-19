@@ -13,6 +13,9 @@ node_modules
 .npm
 .eslintcache
 
+#Junit
+junit.xml
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -35,3 +38,4 @@ coverage
 # build folder
 dist
 core
+
