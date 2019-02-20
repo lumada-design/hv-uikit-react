@@ -6,26 +6,31 @@ const knobProperties = [
   {
     color: "#72cccb",
     dragColor: "#96d9d8",
-    defaultValue: 10
+    defaultValue: 10,
+    trackColor: "#72cccb"
   },
   {
     color: "#f9dc37",
     dragColor: "#fbe56a",
-    defaultValue: 20
+    defaultValue: 20,
+    trackColor: "#f9dc37"
   },
   {
     color: "#ff9100",
     dragColor: "#ffa733",
-    defaultValue: 30
+    defaultValue: 30,
+    trackColor: "#ff9100"
   },
   {
     color: "#cc0000",
     dragColor: "#ff0000",
-    defaultValue: 40
+    defaultValue: 40,
+    trackColor: "#cc0000"
   },
   {
     color: "#cc0000",
     defaultValue: 100,
+    trackColor: "#cc0000",
     fixed: true,
     hidden: true
   }
@@ -35,16 +40,19 @@ const threeKnobProperties = [
   {
     color: "#72cccb",
     dragColor: "#96d9d8",
+    trackColor: "#72cccb",
     defaultValue: 10
   },
   {
     color: "#f9dc37",
     dragColor: "#fbe56a",
+    trackColor: "#f9dc37",
     defaultValue: 20
   },
   {
     color: "#ff9100",
     dragColor: "#ffa733",
+    trackColor: "#ff9100",
     defaultValue: 30
   }
 ];
@@ -53,16 +61,19 @@ const threeKnobFixedProperties = [
   {
     color: "yellow",
     dragColor: "black",
+    trackColor: "red",
     defaultValue: 10
   },
   {
-    color: "green",
+    color: "red",
     dragColor: "red",
+    trackColor: "grey",
     defaultValue: 50
   },
   {
     color: "purple",
     dragColor: "#orange",
+    trackColor: "yellow",
     fixed: true,
     defaultValue: 80
   }
@@ -109,7 +120,7 @@ storiesOf("Slider", module).add("Multi-Slider", () => (
     </HvShowCase>
 
     <HvShowCase
-      title="Three knobs different color"
+      title="Three knobs different color and different tracks"
       description="Shows the possibility manipulating the color of the knobs"
     >
       <HvSlider markStep={10} knobProperties={threeKnobFixedProperties} />
