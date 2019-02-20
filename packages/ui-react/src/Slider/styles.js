@@ -78,6 +78,7 @@ const styles = theme => ({
   },
   mark: {
     color: theme.palette.grey.inspire,
+    fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sliderTrack.fontSize,
     letterSpacing: theme.typography.sliderTrack.letterSpacing,
     lineHeight: theme.typography.sliderTrack.lineHeight,
@@ -94,6 +95,7 @@ const styles = theme => ({
       height: "100%",
       padding: "20px",
       color: theme.typography.info.color,
+      fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.info.fontSize,
       letterSpacing: theme.typography.info.letterSpacing,
       fontWeight: theme.typography.info.fontWeight,
