@@ -13697,31 +13697,31 @@ body {
           trackStyle={
             Array [
               Object {
-                "backgroundColor": "#72cccb",
+                "backgroundColor": undefined,
                 "height": "3px",
                 "marginTop": "-1px",
                 "zIndex": "-1",
               },
               Object {
-                "backgroundColor": "#f9dc37",
+                "backgroundColor": undefined,
                 "height": "3px",
                 "marginTop": "-1px",
                 "zIndex": "-1",
               },
               Object {
-                "backgroundColor": "#ff9100",
+                "backgroundColor": undefined,
                 "height": "3px",
                 "marginTop": "-1px",
                 "zIndex": "-1",
               },
               Object {
-                "backgroundColor": "#cc0000",
+                "backgroundColor": undefined,
                 "height": "3px",
                 "marginTop": "-1px",
                 "zIndex": "-1",
               },
               Object {
-                "backgroundColor": "#cc0000",
+                "backgroundColor": undefined,
                 "height": "3px",
                 "marginTop": "-1px",
                 "zIndex": "-1",
@@ -13766,7 +13766,7 @@ body {
               offset={10}
               style={
                 Object {
-                  "backgroundColor": "#72cccb",
+                  "backgroundColor": undefined,
                   "height": "3px",
                   "marginTop": "-1px",
                   "zIndex": "-1",
@@ -13778,7 +13778,7 @@ body {
                 className="rc-slider-track rc-slider-track-1"
                 style={
                   Object {
-                    "backgroundColor": "#72cccb",
+                    "backgroundColor": undefined,
                     "height": "3px",
                     "left": "10%",
                     "marginTop": "-1px",
@@ -13796,7 +13796,7 @@ body {
               offset={20}
               style={
                 Object {
-                  "backgroundColor": "#f9dc37",
+                  "backgroundColor": undefined,
                   "height": "3px",
                   "marginTop": "-1px",
                   "zIndex": "-1",
@@ -13808,7 +13808,7 @@ body {
                 className="rc-slider-track rc-slider-track-2"
                 style={
                   Object {
-                    "backgroundColor": "#f9dc37",
+                    "backgroundColor": undefined,
                     "height": "3px",
                     "left": "20%",
                     "marginTop": "-1px",
@@ -13826,7 +13826,7 @@ body {
               offset={30}
               style={
                 Object {
-                  "backgroundColor": "#ff9100",
+                  "backgroundColor": undefined,
                   "height": "3px",
                   "marginTop": "-1px",
                   "zIndex": "-1",
@@ -13838,7 +13838,7 @@ body {
                 className="rc-slider-track rc-slider-track-3"
                 style={
                   Object {
-                    "backgroundColor": "#ff9100",
+                    "backgroundColor": undefined,
                     "height": "3px",
                     "left": "30%",
                     "marginTop": "-1px",
@@ -13856,7 +13856,7 @@ body {
               offset={40}
               style={
                 Object {
-                  "backgroundColor": "#cc0000",
+                  "backgroundColor": undefined,
                   "height": "3px",
                   "marginTop": "-1px",
                   "zIndex": "-1",
@@ -13868,7 +13868,7 @@ body {
                 className="rc-slider-track rc-slider-track-4"
                 style={
                   Object {
-                    "backgroundColor": "#cc0000",
+                    "backgroundColor": undefined,
                     "height": "3px",
                     "left": "40%",
                     "marginTop": "-1px",

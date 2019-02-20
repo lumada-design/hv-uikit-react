@@ -5,12 +5,17 @@ exports[`Kpi withStyles should render correctly 1`] = `
   className=""
   classes={
     Object {
-      "comparisons": "HvKpi-comparisons-5",
-      "indicatorUnit": "HvKpi-indicatorUnit-3",
-      "indicatorsContainer": "HvKpi-indicatorsContainer-2",
-      "infoText": "HvKpi-infoText-6",
+      "comparisonContainer": "HvKpi-comparisonContainer-3",
+      "comparisons": "HvKpi-comparisons-8",
+      "indicatorText": "HvKpi-indicatorText-9",
+      "indicatorUnit": "HvKpi-indicatorUnit-6",
+      "indicatorsContainer": "HvKpi-indicatorsContainer-5",
+      "infoText": "HvKpi-infoText-10",
       "kpiContainer": "HvKpi-kpiContainer-1",
-      "spacingToTheRight": "HvKpi-spacingToTheRight-4",
+      "spacingToTheRight": "HvKpi-spacingToTheRight-7",
+      "titleText": "HvKpi-titleText-11",
+      "visualComparisonContainer": "HvKpi-visualComparisonContainer-4",
+      "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-2",
     }
   }
   kpiTextConfiguration={
@@ -384,5 +389,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
       },
     }
   }
+  visualComparison={null}
+  visualIndicator={null}
 />
 `;

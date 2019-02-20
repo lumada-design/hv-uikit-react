@@ -209,7 +209,7 @@ class HvSlider extends React.Component {
       knobProperties.forEach((knobProperty, index) => {
         trackStyles[index] = { ...styles.track };
         if (knobProperty.color) {
-          trackStyles[index].backgroundColor = knobProperty.color;
+          trackStyles[index].backgroundColor = knobProperty.trackColor;
         }
       });
     }
