@@ -21,8 +21,7 @@ const KpiTextConfiguration = {
   title: "Avg. service time",
   indicator: "8.85",
   unit: "MS",
-  comparisonIndicatorInfo: "vs last 24h.",
-  comparisonIndicator: "10%",
+  comparisonIndicatorInfo: "vs last 24h."
 }
 
 describe("Kpi withStyles", () => {

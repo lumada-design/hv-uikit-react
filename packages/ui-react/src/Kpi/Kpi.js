@@ -16,18 +16,27 @@ import Typography from "@material-ui/core/Typography";
 const HvKpi = props => {
   const {
     classes,
-    kpiTextConfiguration
+    kpiTextConfiguration,
+    visualIndicator,
+    visualComparison
   } = props;
 
   return (
     <div className={classes.kpiContainer}>
-      <Typography variant="subtitle2">{kpiTextConfiguration.title}</Typography>
+      <Typography className={classes.titleText} variant="subtitle2">{kpiTextConfiguration.title}</Typography>
       <div className={classes.indicatorsContainer}>
-        <Typography className={classNames(classes.indicator, classes.spacingToTheRight)} variant="h1">{kpiTextConfiguration.indicator}</Typography>
+        { 
+          visualIndicator != null &&
+          <div className={classNames(classes.visualIndicatorContainer, classes.spacingToTheRight)}>{visualIndicator}</div>
+        }
+        <Typography className={classNames(classes.indicatorText, classes.spacingToTheRight)} variant="h1">{kpiTextConfiguration.indicator}</Typography>
         <Typography className={classes.indicatorUnit} variant="body2">{kpiTextConfiguration.unit}</Typography>
       </div>
       <div className={classes.comparisonContainer}>
-        <Typography className={classNames(classes.comparisons, classes.spacingToTheRight)}>{kpiTextConfiguration.comparisonIndicator}</Typography>
+        { 
+          visualComparison != null &&
+          <div className={classNames(classes.comparisons, classes.visualComparisonContainer, classes.spacingToTheRight)}>{visualComparison}</div>
+        }
         <Typography className={classNames(classes.comparisons, classes.infoText)}>{kpiTextConfiguration.comparisonIndicatorInfo}</Typography>
       </div>
     </div>
@@ -36,26 +45,36 @@ const HvKpi = props => {
 
 HvKpi.propTypes = {
   /**
-   * Class names to be applied.
-   */
-  className: PropTypes.string,
-  /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
-  kpiTextConfiguration: PropTypes.instanceOf(
-    PropTypes.shape({
+  /**
+   * An Element that will be rendered to the left of the kpi indicator text.
+   */
+  visualIndicator: PropTypes.node,
+  /**
+   * An Element that will be rendered below the kpi indicator text.
+   */
+  visualComparison: PropTypes.node,
+  /**
+   * The object that contains the different labels inside the kpi.
+   * 
+   * - Title: The text at the top of the kpi.
+   * - Indicator: The text in the middle of the kpi.
+   * - Unit: The text to the right of the indicator.
+   * - comparisonIndicatorInfo: the text to the right of the visual comparison.
+   */
+  kpiTextConfiguration: PropTypes.shape({
       title: PropTypes.string,
       indicator: PropTypes.string,
       unit: PropTypes.string,
       comparisonIndicatorInfo: PropTypes.string,
-      comparisonIndicator: PropTypes.string,
-    })
-  ).isRequired
+    }).isRequired
 };
 
 HvKpi.defaultProps = {
-  className: ""
+  visualIndicator: null,
+  visualComparison: null
 };
 
 export default HvKpi;

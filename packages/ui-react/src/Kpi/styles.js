@@ -14,22 +14,52 @@ const styles = theme => ({
     height: "100%",
     float: "left"
   },
+  visualIndicatorContainer: {
+    height: "40px",
+    backgroundColor: "transparent",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  comparisonContainer: {
+    minHeight: "16px",
+    display: "flex",
+    alignItems: "flex-end",
+  },
+  visualComparisonContainer: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.subtitle1
+  },
   indicatorsContainer:{
     display: "inline-flex",
-    paddingTop: `${theme.spacing.sm}px`
+    minHeight: "16px",
+    alignItems: "flex-end",
+    marginTop: `9px`,
+    marginBottom: `1px`
   },
   indicatorUnit: {
     alignSelf: "flex-end",
-    paddingBottom: "3px"
+    paddingBottom: "3px",
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.body2
   },
   spacingToTheRight: {
-    paddingRight: `${theme.spacing.xs}px`
+    marginRight: `${theme.spacing.xs}px`
   },
   comparisons:{
     float: "left"
   },
+  indicatorText: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.h1
+  },
   infoText: {
+    fontFamily: theme.typography.fontFamily,
     ...theme.typography.visualization
+  },
+  titleText: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.subtitle2
   }
 });
 

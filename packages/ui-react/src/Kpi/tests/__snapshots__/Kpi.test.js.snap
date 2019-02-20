@@ -2,7 +2,6 @@
 
 exports[`Kpi withStyles should render correctly 1`] = `
 <HvKpi
-  className=""
   classes={
     Object {
       "comparisonContainer": "HvKpi-comparisonContainer-3",
@@ -20,7 +19,6 @@ exports[`Kpi withStyles should render correctly 1`] = `
   }
   kpiTextConfiguration={
     Object {
-      "comparisonIndicator": "10%",
       "comparisonIndicatorInfo": "vs last 24h.",
       "indicator": "8.85",
       "title": "Avg. service time",
