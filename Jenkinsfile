@@ -54,7 +54,6 @@ pipeline {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
                     sshagent (credentials: ['buildteam-gitlab']) {
                         sh 'git checkout master'
-                        sh 'git update-index --assume-unchanged .npmrc'
                         sh 'cp .npmrc ~/.npmrc'
                         sh "npm run publish:${deploy}"
                     }
