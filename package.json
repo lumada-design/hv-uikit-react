@@ -21,7 +21,7 @@
     "lint:jenkins": "lerna run lint:jenkins --stream",
     "test": "lerna run --ignore with-cra test --stream",
     "link": "lerna run link --parallel",
-    "publish:prerelease": "lerna publish prerelease --yes",
+    "publish:preminor": "lerna publish preminor --yes",
     "publish:minor": "lerna publish minor --yes --force-publish=*",
     "publish:major": "lerna publish major --yes --force-publish=*"
   },
