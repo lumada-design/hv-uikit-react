@@ -466,7 +466,8 @@ HvSlider.propTypes = {
       defaultValue: PropTypes.number,
       hidden: PropTypes.bool,
       fixed: PropTypes.bool,
-      hoverColor: PropTypes.string
+      hoverColor: PropTypes.string,
+      trackColor: PropTypes.string
     })
   ).isRequired,
   /**
