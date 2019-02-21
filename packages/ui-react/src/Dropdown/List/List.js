@@ -101,7 +101,7 @@ class List extends React.Component {
       }
 
       if (elem.label === selectedElem.label) {
-        newElem.selected = !elem.selected;
+        newElem.selected = multiSelect ? !elem.selected : true;
       }
 
       return newElem;
