@@ -51,6 +51,19 @@ storiesOf("Table", module)
       subtitleText={defaults.subtitleText}
     />
   ))
+  .add("Empty Table", () => (
+    <HvTable
+      columns={getColumns(theme, dismiss)}
+      defaultPageSize={defaults.pageSize}
+      pageSize={defaults.pageSize}
+      resizable
+      data={[]}
+      pages={defaults.pages}
+      defaultSorted={defaults.sorted}
+      titleText={defaults.titleText}
+      subtitleText={defaults.subtitleText}
+    />
+  ))
   .add("Table with expander", () => (
     <HvTable
       data={data}

@@ -386,7 +386,6 @@ class HvTable extends React.Component {
           expanded={expanded}
           keyField={idForCheckbox}
           isSelected={this.isSelected}
-          minRows={0}
         />
       </div>
     );
@@ -415,7 +414,7 @@ HvTable.propTypes = {
   /**
    * Array with the data elements to show
    */
-  data: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.instanceOf(Array).isRequired,
   /**
    * Boolean to show or hide the pagination controls
    */
