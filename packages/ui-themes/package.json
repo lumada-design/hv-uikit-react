@@ -11,6 +11,8 @@
     "url": "https://10.76.48.133/hv-design-system/hv-ui.git"
   },
   "scripts": {
+    "dev_win": "npm-run-all clean -p dev_win:*",
+    "dev_win:watch": "watch \"npm run build\" src",
     "dev": "npm-run-all clean -p dev:*",
     "dev:watch": "watch 'npm run build' src",
     "build": "npm-run-all build:*",
