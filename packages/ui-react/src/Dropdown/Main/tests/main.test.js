@@ -73,7 +73,7 @@ describe("<Main />", () => {
 
       expect(onChangeMock).toBeCalledWith({ label: "Value 1" });
 
-      expect(instance.state.selection).toBe("Value 1");
+      expect(instance.state.selectionLabel).toBe("Value 1");
       expect(instance.handleToggle).not.toBeCalled();
     });
 
@@ -193,7 +193,7 @@ describe("<Main />", () => {
         true
       );
 
-      expect(instance.state.selection).toBe("Selected 2 of 3");
+      expect(instance.state.selectionLabel).toBe("Selected 2 of 3");
       expect(instance.handleToggle).not.toBeCalled();
     });
 
@@ -204,9 +204,9 @@ describe("<Main />", () => {
       instance.handleToggle = jest.fn();
       instance.handleSelection([], true, true);
 
-      expect(instance.state.selection).toBe("All");
+      expect(instance.state.selectionLabel).toBe("All");
       expect(instance.handleToggle).toBeCalled();
-      expect(instance.state.selection).toBe("All");
+      expect(instance.state.selectionLabel).toBe("All");
     });
 
     it("<Main /> handleToggle shoud do nothing if disabled", () => {

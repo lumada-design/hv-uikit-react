@@ -20,8 +20,8 @@ const defaultLabels = {
   selectAll: "All",
   cancelLabel: "Cancel",
   applyLabel: "Apply",
-  multiSelection1: "Selected",
-  multiSelection2: "of"
+  multiSelectionAction: "Selected",
+  multiSelectionConjuction: "of"
 };
 
 class Main extends React.Component {
@@ -35,7 +35,7 @@ class Main extends React.Component {
 
     this.state = {
       isOpen: props.expanded,
-      selection: props.multiSelect ? labels.selectAll : labels.select,
+      selectionLabel: props.multiSelect ? labels.selectAll : labels.select,
       labels
     };
   }
@@ -48,42 +48,62 @@ class Main extends React.Component {
     document.removeEventListener("click", this.handleClickOutside);
   }
 
+  /**
+   *  Closes the dropdown whenever there is a click outside the document.
+   *
+   * @param {Object} evt - the event produced by clicking outside.
+   */
   handleClickOutside = evt => {
     if (!this.node.contains(evt.target)) {
       this.setState({ isOpen: false });
     }
   };
 
+  /**
+   *  Opens and closes the dropdown
+   *
+   * @param {Object} evt - the event produced by the click action.
+   * @returns {undefined}
+   * @memberof Main
+   */
   handleToggle(evt) {
     const { disabled } = this.props;
+    const { isOpen } = this.state;
+
     if (evt) evt.stopPropagation();
     if (disabled) return;
-
-    const isOpen = this.state.isOpen;
 
     this.setState({
       isOpen: !isOpen
     });
   }
 
+  /**
+   * Applies the selected values to the state
+   *
+   * @param {Array} selection - An array containing the selected values.
+   * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
+   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @memberof Main
+   */
   handleSelection(selection, commitChanges, toggle) {
     const { values, multiSelect, onChange } = this.props;
     const { labels } = this.state;
     const hasSelection = selection.length > 0;
     const isSingleSelection = selection.length === 1;
 
-    let selectionText = multiSelect ? labels.selectAll : labels.select;
+    let selectionLabel = multiSelect ? labels.selectAll : labels.select;
 
     if (commitChanges) {
       if (hasSelection && isSingleSelection) {
-        selectionText = selection[0].label;
+        selectionLabel = selection[0].label;
       } else if (hasSelection && multiSelect) {
-        selectionText = `${labels.multiSelection1} ${selection.length} ${
-          labels.multiSelection2
+        selectionLabel = `${labels.multiSelectionAction} ${selection.length} ${
+          labels.multiSelectionConjuction
         } ${values.length}`;
       }
 
-      this.setState({ selection: selectionText });
+      this.setState({ selectionLabel });
     }
 
     if (toggle) this.handleToggle();
@@ -91,21 +111,17 @@ class Main extends React.Component {
     onChange(multiSelect ? selection : selection[0]);
   }
 
-  render() {
-    const {
-      classes,
-      values,
-      label,
-      multiSelect,
-      showSearch,
-      disabled
-    } = this.props;
+  renderLabel() {
+    const { classes, label } = this.props;
 
-    const { isOpen, selection, labels } = this.state;
+    return <div className={classes.label}>{label}</div>;
+  }
 
-    const renderLabel = () => <div className={classes.label}>{label}</div>;
+  renderHeader() {
+    const { classes, disabled } = this.props;
+    const { isOpen, selectionLabel } = this.state;
 
-    const renderHeader = () => (
+    return (
       <div
         id="header"
         className={classNames([
@@ -118,7 +134,7 @@ class Main extends React.Component {
         role="presentation"
       >
         <div className={classNames([classes.selection, classes.truncate])}>
-          {selection}
+          {selectionLabel}
         </div>
         {isOpen ? (
           <ArrowDown className={classes.arrow} />
@@ -127,8 +143,13 @@ class Main extends React.Component {
         )}
       </div>
     );
+  }
 
-    const renderList = () => (
+  renderList() {
+    const { classes, values, multiSelect, showSearch } = this.props;
+    const { isOpen, labels } = this.state;
+
+    return (
       <div
         className={classNames([
           classes.list,
@@ -150,10 +171,16 @@ class Main extends React.Component {
         />
       </div>
     );
+  }
+
+  render() {
+    const { classes, label, disabled } = this.props;
+
+    const { isOpen } = this.state;
 
     return (
       <React.Fragment>
-        {label ? renderLabel() : null}
+        {label ? this.renderLabel() : null}
         <div
           className={classNames([
             classes.root,
@@ -166,8 +193,8 @@ class Main extends React.Component {
             this.node = el;
           }}
         >
-          {renderHeader()}
-          {renderList()}
+          {this.renderHeader()}
+          {this.renderList()}
         </div>
       </React.Fragment>
     );
@@ -209,8 +236,22 @@ Main.propTypes = {
   onChange: PropTypes.func,
   /**
    * An object containing all the labels for the dropdown.
+   *
+   * - select: The default when there are no options avaible.
+   * - selectAll: The label used for the All checkbox action.
+   * - cancelLabel: The label used for the cancel button.
+   * - applyLabel: The label used for the apply button.
+   * - multiSelectionAction: The label used preceding the multiselection count.
+   * - multiSelectionConjuction: The label used in the middle of the multiselection count.
    */
-  labels: PropTypes.instanceOf(Object)
+  labels: PropTypes.shape({
+    select: PropTypes.string,
+    selectAll: PropTypes.string,
+    cancelLabel: PropTypes.string,
+    applyLabel: PropTypes.string,
+    multiSelectionAction: PropTypes.string,
+    multiSelectionConjuction: PropTypes.string
+  })
 };
 
 Main.defaultProps = {

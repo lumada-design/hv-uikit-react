@@ -22,12 +22,15 @@ class List extends React.Component {
   constructor(props) {
     super(props);
 
+    const { selectAll } = props.labels;
+
     this.state = {
       list: props.values || [],
       prevList: props.values || [],
       anySelected: false,
       allSelected: false,
-      searchStr: ""
+      searchStr: "",
+      selectionLabel: selectAll
     };
   }
 
@@ -43,18 +46,35 @@ class List extends React.Component {
     }
   }
 
+  /**
+   * Apply the selection to the state.
+   *
+   * @param {Boolean} commitChanges - If `true` the selection if finally committed and should be applied to the state.
+   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @memberof List
+   */
+
   setSelection(commitChanges, toggle) {
     const { list, searchStr } = this.state;
-    const { onChange } = this.props;
+    const { onChange, labels } = this.props;
+    const { selectAll, multiSelectionConjuction } = labels;
     const selection = getSelection(list);
     const hasSelection = selection.length > 0;
-    const isSameSize = selection.length === list.length;
+    const allSelected = selection.length === list.length;
 
     this.setState({
-      anySelected: hasSelection && !isSameSize,
-      allSelected: hasSelection && isSameSize,
+      anySelected: hasSelection && !allSelected,
+      allSelected: hasSelection && allSelected,
       searchStr: commitChanges ? "" : searchStr
     });
+
+    if (commitChanges) {
+      this.setState({
+        selectionLabel: !hasSelection
+          ? selectAll
+          : `${selection.length} ${multiSelectionConjuction} ${list.length}`
+      });
+    }
 
     onChange(selection, commitChanges, toggle);
   }
@@ -89,6 +109,12 @@ class List extends React.Component {
     );
   }
 
+  /**
+   * Creates the selection list based on if simple or multiple selection.
+   *
+   * @param {Object} selectedElem - The element that was selected by the user.
+   * @memberof List
+   */
   handleSelection(selectedElem) {
     const { list } = this.state;
     const { multiSelect } = this.props;
@@ -100,6 +126,8 @@ class List extends React.Component {
         newElem.selected = false;
       }
 
+      // This could cause bugs
+      // comparison by label may cause double selections in case of equal of two labels with the same value.
       if (elem.label === selectedElem.label) {
         newElem.selected = multiSelect ? !elem.selected : true;
       }
@@ -112,6 +140,11 @@ class List extends React.Component {
     );
   }
 
+  /**
+   * Select all the values inside the dropdown.
+   *
+   * @memberof List
+   */
   handleSelectAll() {
     const { list, allSelected } = this.state;
 
@@ -124,6 +157,13 @@ class List extends React.Component {
     this.setState({ list: newList }, () => this.setSelection(false));
   }
 
+  /**
+   * Sets the filtered values to the state.
+   *
+   * @param {String} str - The value that is being looked.
+   * @param {Array} results - The result set it produced.
+   * @memberof List
+   */
   handleSearch(str, results) {
     const { list } = this.state;
 
@@ -137,6 +177,11 @@ class List extends React.Component {
     this.setState({ list: newList, searchStr: str });
   }
 
+  /**
+   * Cancel the selection in case of no commit reverting the state to it's previous iteration.
+   *
+   * @memberof List
+   */
   handleCancel() {
     const { prevList } = this.state;
 
@@ -145,6 +190,11 @@ class List extends React.Component {
     );
   }
 
+  /**
+   * Commits the temporary selection to the state.
+   *
+   * @memberof List
+   */
   handleApply() {
     const { list } = this.state;
 
@@ -153,19 +203,50 @@ class List extends React.Component {
     );
   }
 
-  render() {
-    const { classes, values, multiSelect, showSearch, labels } = this.props;
-    const { list, anySelected, allSelected, searchStr } = this.state;
+  renderSearch() {
+    const { values } = this.props;
+    const { searchStr } = this.state;
 
-    const renderSearch = () => (
+    return (
       <Search
         value={searchStr}
         values={values}
         onChange={(str, results) => this.handleSearch(str, results)}
       />
     );
+  }
 
-    const renderMultiSelect = (key, elem) => (
+  renderSelectAll() {
+    const { classes } = this.props;
+    const { anySelected, allSelected, selectionLabel } = this.state;
+
+    return (
+      <HvCheckBox
+        label={selectionLabel}
+        onChange={() => this.handleSelectAll()}
+        classes={{ container: classes.selection }}
+        className={classNames([classes.selectAll])}
+        indeterminate={anySelected}
+        checked={allSelected}
+      />
+    );
+  }
+
+  renderList() {
+    const { multiSelect } = this.props;
+    const { list } = this.state;
+
+    return list.map((elem, i) =>
+      multiSelect
+        ? this.renderMultiSelect(i, elem)
+        : this.renderSingleSelect(i, elem)
+    );
+  }
+
+  renderMultiSelect(key, elem) {
+    const { classes } = this.props;
+
+    return (
       <div
         id="multi-select"
         key={key}
@@ -188,8 +269,12 @@ class List extends React.Component {
         />
       </div>
     );
+  }
 
-    const renderSingleSelect = (key, elem) => (
+  renderSingleSelect(key, elem) {
+    const { classes } = this.props;
+
+    return (
       <div
         id="single-select"
         key={key}
@@ -211,19 +296,11 @@ class List extends React.Component {
         {elem.label}
       </div>
     );
+  }
 
-    const renderSelectAll = () => (
-      <HvCheckBox
-        label={labels.selectAll}
-        onChange={() => this.handleSelectAll()}
-        classes={{ container: classes.selection }}
-        className={classNames([classes.selectAll])}
-        indeterminate={anySelected}
-        checked={allSelected}
-      />
-    );
-
-    const renderActions = () => (
+  renderActions() {
+    const { classes, labels } = this.props;
+    return (
       <div className={classes.actions}>
         <Actions
           onCancel={() => this.handleCancel()}
@@ -234,19 +311,19 @@ class List extends React.Component {
         />
       </div>
     );
+  }
 
-    const renderList = () =>
-      list.map((elem, i) =>
-        multiSelect ? renderMultiSelect(i, elem) : renderSingleSelect(i, elem)
-      );
+  render() {
+    const { classes, multiSelect, showSearch } = this.props;
+    const { list } = this.state;
 
     return (
       <div className={classes.root}>
         <div className={classes.paddingRight}>
-          {showSearch ? renderSearch() : null}
+          {showSearch ? this.renderSearch() : null}
         </div>
         <div className={classNames([classes.selectAll, classes.paddingRight])}>
-          {multiSelect ? renderSelectAll() : null}
+          {multiSelect ? this.renderSelectAll() : null}
         </div>
         <div
           className={classNames([
@@ -257,9 +334,9 @@ class List extends React.Component {
             }
           ])}
         >
-          {list ? renderList() : null}
+          {list ? this.renderList() : null}
         </div>
-        {multiSelect ? renderActions() : null}
+        {multiSelect ? this.renderActions() : null}
       </div>
     );
   }
