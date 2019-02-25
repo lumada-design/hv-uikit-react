@@ -12,49 +12,55 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import CardHeader from "@material-ui/core/CardHeader";
-import ErrorIcon from "@material-ui/icons/ErrorRounded";
-import CheckCircle from "@material-ui/icons/CheckCircle";
 
-const Header = ({ classes, data }) => {
-  const { name, createdDate } = data;
-  const severity = data.severity || "";
-
-  const SeverityIcon = () => {
-    switch (severity.toLowerCase()) {
-      case "info":
-        return (
-          <CheckCircle className={classNames(classes.icon, classes.info)} />
-        );
-      case "warning":
-        return (
-          <ErrorIcon className={classNames(classes.icon, classes.warning)} />
-        );
-      case "critical":
-        return (
-          <ErrorIcon className={classNames(classes.icon, classes.critical)} />
-        );
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <CardHeader
-      title={name}
-      className={classes.root}
-      subheader={createdDate}
-      action={<SeverityIcon />}
-      classes={{
-        title: classes.title,
-        subheader: classes.subheader
-      }}
-    />
-  );
-};
+/**
+ * The header container that possses three slots one for the icon one for the title and one for the subheader
+ *
+ * @param {*} { classes, HeaderTitle, Subheader, Icon, needsBorder }
+ */
+const Header = ({ classes, HeaderTitle, Subheader, Icon, needsBorder }) => (
+  <CardHeader
+    title={HeaderTitle}
+    className={classNames(classes.root, {
+      [classes.bottomBorder]: needsBorder
+    })}
+    subheader={Subheader}
+    action={Icon}
+    classes={{
+      title: classes.title,
+      subheader: classes.subheader,
+      action: classes.action
+    }}
+  />
+);
 
 Header.propTypes = {
+  /**
+   *  The renderable content inside the title slot of the header.
+   */
+  HeaderTitle: PropTypes.node.isRequired,
+  /**
+   *  The renderable content inside the subheader slot of the header.
+   */
+  Subheader: PropTypes.node,
+  /**
+   * If the Header requires a bottom border
+   */
+  needsBorder: PropTypes.bool,
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  data: PropTypes.instanceOf(Object).isRequired
+  /**
+   *  The renderable content inside the icon slot of the header.
+   */
+  Icon: PropTypes.node
+};
+
+Header.defaultProps = {
+  needsBorder: false,
+  Icon: null,
+  Subheader: undefined
 };
 
 export default Header;

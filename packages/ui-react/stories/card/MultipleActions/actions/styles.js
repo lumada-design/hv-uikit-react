@@ -9,19 +9,27 @@
  */
 
 const styles = theme => ({
-  content: {
-    borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`,
-    padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
+  button: {
+    color: theme.palette.grey.inspire,
+    "& span": {
+      color: theme.palette.grey.inspire
+    },
+    "&:nth-child(1)": {
+      marginRight: `${theme.spacing.xs}px`
+    }
   },
-  bottomBorder: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
-  },
-  item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
-  },
-  label: theme.hv.typography.labelText,
-  text: theme.hv.typography.normalText
+  smallButton: {
+    width: "32px",
+    minWidth: "32px",
+    padding: 0,
+    color: theme.palette.grey.inspire,
+    "& span": {
+      color: theme.palette.grey.inspire
+    },
+    "&:nth-child(1)": {
+      marginRight: `${theme.spacing.xs}px`
+    }
+  }
 });
 
 export default styles;

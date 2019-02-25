@@ -9,17 +9,17 @@
  */
 
 const styles = theme => ({
-  root: {
-    border: `1px solid ${theme.palette.grey.plain}`
-  },
   info: {
     borderTop: `4px solid ${theme.palette.status.success}`
   },
   warning: {
     borderTop: `4px solid ${theme.palette.status.warning}`
   },
-  critical: {
+  error: {
     borderTop: `4px solid ${theme.palette.status.error}`
+  },
+  none: {
+    borderTop: `1px solid ${theme.palette.grey.plain}`
   }
 });
 
