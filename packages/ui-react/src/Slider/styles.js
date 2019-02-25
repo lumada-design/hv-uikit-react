@@ -90,7 +90,6 @@ const styles = theme => ({
       background: theme.palette.common.white,
       border: `solid 1px ${theme.palette.grey.passive} `,
       borderRadius: 0,
-      wordSpacing: 10,
       maxWidth: "532px",
       height: "100%",
       padding: "20px",

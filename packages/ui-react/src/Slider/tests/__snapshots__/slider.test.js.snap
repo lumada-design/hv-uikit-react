@@ -4570,7 +4570,6 @@ body {
   box-shadow: none;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   font-weight: 400;
-  word-spacing: 10px;
   border-radius: 0;
   letter-spacing: 0.02em;
 }
@@ -4691,7 +4690,6 @@ body {
                     "letter-spacing": "0.02em",
                     "max-width": "532px",
                     "padding": "20px",
-                    "word-spacing": "10px",
                   },
                   Object {
                     "visibility": "hidden",
@@ -4784,7 +4782,6 @@ body {
                     "letter-spacing": "0.02em",
                     "max-width": "532px",
                     "padding": "20px",
-                    "word-spacing": "10px",
                   },
                   ".HvSlider-track-8": Object {
                     "background-color": "#000000",
@@ -5384,7 +5381,6 @@ body {
                     "letterSpacing": "0.02em",
                     "maxWidth": "532px",
                     "padding": "20px",
-                    "wordSpacing": 10,
                   },
                   "dot": Object {
                     "backgroundColor": "#999999",
@@ -5473,7 +5469,6 @@ body {
                       "letterSpacing": "0.02em",
                       "maxWidth": "532px",
                       "padding": "20px",
-                      "wordSpacing": 10,
                     },
                   },
                   "track": Object {
@@ -11710,6 +11705,7 @@ body {
         }
         divisionQuantity={100}
         formatMark={[Function]}
+        formatTooltip={[Function]}
         knobProperties={
           Array [
             Object {

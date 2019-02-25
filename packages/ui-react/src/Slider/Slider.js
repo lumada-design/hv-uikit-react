@@ -378,7 +378,7 @@ class HvSlider extends React.Component {
       minPointValue,
       markDigits,
       knobProperties,
-      formatMark,
+      formatTooltip,
       classes
     } = this.props;
     const { stepValue } = this.state;
@@ -398,7 +398,7 @@ class HvSlider extends React.Component {
     return (
       <Tooltip
         prefixCls="rc-slider-tooltip"
-        overlay={formatMark(knobValue)}
+        overlay={formatTooltip(knobValue)}
         visible={dragging}
         placement="top"
         key={index}
@@ -524,15 +524,19 @@ HvSlider.propTypes = {
    */
   maxPointValue: PropTypes.number,
   /**
-   * a formatting function used to add format to the marks in the track,
-   * the function receives the
+   * the nax number of decimals if no format function is applied
    */
   markDigits: PropTypes.number,
   /**
    * a formatting function used to add format to the marks in the track,
-   * the function receives the
+   * the function receives the mark text
    */
   formatMark: PropTypes.func,
+  /**
+   * a formatting function used to add format to the tooltip in the track,
+   * the function receives the mark text
+   */
+  formatTooltip: PropTypes.func,
   /**
    * if `true` the knobs can't have the same value, if `false` knobs can have the same value.
    */
@@ -548,6 +552,7 @@ HvSlider.defaultProps = {
   markDigits: 0,
   noOverlap: true,
   formatMark: mark => mark,
+  formatTooltip: mark => mark,
   markProperties: [],
   divisionQuantity: 100,
   minPointValue: 0,
