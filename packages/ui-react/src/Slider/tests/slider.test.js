@@ -111,13 +111,14 @@ describe("Slider ", () => {
     expect(myMock.mock.calls.length).not.toBe(0);
   });
 
+  // TODO: Review test on calling formatMark function
   it("shouldn't call the format mark function more than one time for each knob when the markProps exist", () => {
     mount(
       <HvProvider>
         <SliderWithStyles
           markProperties={[{ position: 2, label: "asd" }]}
           knobProperties={knobProperties}
-          formatMark={myMock}
+          formatTooltip={myMock}
         />
       </HvProvider>
     );
@@ -165,7 +166,7 @@ describe("Slider ", () => {
     );
 
     // 93 = 87 points + 5 knobs
-    expect(myMock.mock.calls.length).toEqual(93);
+    expect(myMock.mock.calls.length).toEqual(88);
   });
 
   it("should call onBefore method just once", () => {
