@@ -11657,31 +11657,35 @@ body {
       />
     </WithStyles(CssBaseline)>
     <WithStyles(HvSlider)
+      defaultValues={
+        Array [
+          10,
+          20,
+          30,
+          40,
+          100,
+        ]
+      }
       knobProperties={
         Array [
           Object {
             "color": "#72cccb",
-            "defaultValue": 10,
             "dragColor": "#96d9d8",
           },
           Object {
             "color": "#f9dc37",
-            "defaultValue": 20,
             "dragColor": "#fbe56a",
           },
           Object {
             "color": "#ff9100",
-            "defaultValue": 30,
             "dragColor": "#ffa733",
           },
           Object {
             "color": "#cc0000",
-            "defaultValue": 40,
             "dragColor": "#ff0000",
           },
           Object {
             "color": "#cc0000",
-            "defaultValue": 100,
             "fixed": true,
             "hidden": true,
           },
@@ -11703,6 +11707,15 @@ body {
             "track": "HvSlider-track-8",
           }
         }
+        defaultValues={
+          Array [
+            10,
+            20,
+            30,
+            40,
+            100,
+          ]
+        }
         divisionQuantity={100}
         formatMark={[Function]}
         formatTooltip={[Function]}
@@ -11710,27 +11723,22 @@ body {
           Array [
             Object {
               "color": "#72cccb",
-              "defaultValue": 10,
               "dragColor": "#96d9d8",
             },
             Object {
               "color": "#f9dc37",
-              "defaultValue": 20,
               "dragColor": "#fbe56a",
             },
             Object {
               "color": "#ff9100",
-              "defaultValue": 30,
               "dragColor": "#ffa733",
             },
             Object {
               "color": "#cc0000",
-              "defaultValue": 40,
               "dragColor": "#ff0000",
             },
             Object {
               "color": "#cc0000",
-              "defaultValue": 100,
               "fixed": true,
               "hidden": true,
             },
@@ -12379,6 +12387,7 @@ body {
             },
           }
         }
+        values={Array []}
       >
         <ComponentEnhancer(Range)
           activeDotStyle={Object {}}

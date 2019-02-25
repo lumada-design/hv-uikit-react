@@ -21,6 +21,54 @@ import styleCreator from "./styles";
 import KnobRing from "./KnobRing";
 import "rc-slider/assets/index.css";
 
+/**
+ * Transform the received knobs values into knob positions
+ *
+ * @param {Object} knobProperties - The object provided by the user with the
+ * desired configuration for the knobs.
+ * @param {Number} inverseStepValue - The inverse of calculated separation between
+ * the value of the points that compose the slider.
+ * @param {Integer} minPointValue - The value of the first point in the slider from
+ * left to right.
+ * @returns {Array} - The position of the knobs.
+ */
+const transformKnobsPosition = (values, inverseStepValue, minPointValue) => {
+  const knobsPositions = [];
+  values.forEach((value, index) => {
+    knobsPositions[index] = scaledValueToKnobsPositionValue(
+      value,
+      minPointValue,
+      inverseStepValue
+    );
+  });
+  return knobsPositions;
+};
+
+/**
+ * Transform the scaled values into knobs positions.
+ *
+ * @param {*} scaledValue - the value of the slider to be scaled
+ * @param {*} minPointValue - The value of the first point in
+ * the slider from left to right.
+ * @param {*} inverseStepValue - The inverse of calculated separation between
+ * the value of the points that compose the slider.
+ */
+const scaledValueToKnobsPositionValue = (
+  scaledValue,
+  minPointValue,
+  inverseStepValue
+) => Math.floor((scaledValue - minPointValue) * inverseStepValue);
+
+/**
+ * Calculates the separation between each value in the slider.
+ *
+ * @param {*} maxPointValue - The value of the last point in the slider from left to right.
+ * @param {*} minPointValue - The value of the first point in the slider from left to right.
+ * @param {*} divisionQuantity - How many subdivisions there are in the slider.
+ */
+const calculateStepValue = (maxPointValue, minPointValue, divisionQuantity) =>
+  Math.abs(maxPointValue - minPointValue) / divisionQuantity;
+
 class HvSlider extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +78,8 @@ class HvSlider extends React.Component {
       markStep,
       markDigits,
       knobProperties,
+      values,
+      defaultValues,
       theme,
       maxPointValue,
       minPointValue,
@@ -38,7 +88,7 @@ class HvSlider extends React.Component {
     } = props;
 
     const styles = styleCreator(theme);
-    const stepValue = this.calculateStepValue(
+    const stepValue = calculateStepValue(
       maxPointValue,
       minPointValue,
       divisionQuantity
@@ -46,8 +96,8 @@ class HvSlider extends React.Component {
     const inverseStepValue = 1 / stepValue;
 
     this.state = {
-      knobsPosition: this.transformDefaultKnobsPosition(
-        knobProperties,
+      knobsPositions: transformKnobsPosition(
+        values.length > 0 ? values : defaultValues,
         inverseStepValue,
         minPointValue
       ),
@@ -64,8 +114,8 @@ class HvSlider extends React.Component {
         formatMark,
         styles
       ),
-      defaultKnobsPositions: this.transformDefaultKnobsPosition(
-        knobProperties,
+      defaultKnobsPositions: transformKnobsPosition(
+        defaultValues,
         inverseStepValue,
         minPointValue
       ),
@@ -75,15 +125,25 @@ class HvSlider extends React.Component {
     };
   }
 
-  /**
-   * Calculates the separation between each value in the slider.
-   *
-   * @param {*} maxPointValue - The value of the last point in the slider from left to right.
-   * @param {*} minPointValue - The value of the first point in the slider from left to right.
-   * @param {*} divisionQuantity - How many subdivisions there are in the slider.
-   */
-  calculateStepValue = (maxPointValue, minPointValue, divisionQuantity) =>
-    Math.abs(maxPointValue - minPointValue) / divisionQuantity;
+  static getDerivedStateFromProps(props, state) {
+    const stepValue = calculateStepValue(
+      props.maxPointValue,
+      props.minPointValue,
+      props.divisionQuantity
+    );
+
+    if (props.values.length > 0) {
+      return {
+        ...state,
+        knobsPositions: transformKnobsPosition(
+          props.values.length > 0 ? props.values : props.defaultValues,
+          1 / stepValue,
+          props.minPointValue
+        )
+      };
+    }
+    return null;
+  }
 
   /**
    * Transform the scaled values into knobs positions.
@@ -94,48 +154,6 @@ class HvSlider extends React.Component {
    */
   knobsPositionToScaledValue = (sliderValue, minPointValue, stepValue) =>
     minPointValue + stepValue * sliderValue;
-
-  /**
-   * Transform the scaled values into knobs positions.
-   *
-   * @param {*} scaledValue - the value of the slider to be scaled
-   * @param {*} minPointValue - The value of the first point in
-   * the slider from left to right.
-   * @param {*} inverseStepValue - The inverse of calculated separation between
-   * the value of the points that compose the slider.
-   */
-  scaledValueToKnobsPositionValue = (
-    scaledValue,
-    minPointValue,
-    inverseStepValue
-  ) => Math.floor((scaledValue - minPointValue) * inverseStepValue);
-
-  /**
-   * Transform the received knobs values into knob positions
-   *
-   * @param {Object} knobProperties - The object provided by the user with the
-   * desired configuration for the knobs.
-   * @param {Number} inverseStepValue - The inverse of calculated separation between
-   * the value of the points that compose the slider.
-   * @param {Integer} minPointValue - The value of the first point in the slider from
-   * left to right.
-   * @returns {Array} - The position of the knobs.
-   */
-  transformDefaultKnobsPosition = (
-    knobProperties,
-    inverseStepValue,
-    minPointValue
-  ) => {
-    const defaultKnobsPositions = [];
-    knobProperties.forEach((knobProperty, index) => {
-      defaultKnobsPositions[index] = this.scaledValueToKnobsPositionValue(
-        knobProperty.defaultValue,
-        minPointValue,
-        inverseStepValue
-      );
-    });
-    return defaultKnobsPositions;
-  };
 
   /**
    * Generates the inline styles used for the track of each knob, applying colors if necessary.
@@ -269,7 +287,7 @@ class HvSlider extends React.Component {
     const newKnobsPosition = knobsCurrentPosition.slice();
     const knobsValues = [];
     const { minPointValue, noOverlap } = this.props;
-    const { stepValue, knobsPosition } = this.state;
+    const { stepValue, knobsPositions } = this.state;
 
     let duplicatedValue = null;
 
@@ -285,7 +303,7 @@ class HvSlider extends React.Component {
       let newPosition = position;
 
       if (noOverlap && newPosition === duplicatedValue) {
-        const previousValue = knobsPosition[index];
+        const previousValue = knobsPositions[index];
         if (previousValue !== newPosition) {
           newPosition += newPosition > previousValue ? -1 : 1;
           newArray[index] = newPosition;
@@ -316,12 +334,17 @@ class HvSlider extends React.Component {
    */
   onChangeHandler = knobsPosition => {
     const knobs = this.generateKnobsPositionAndValues(knobsPosition);
-    const { knobProperties, onChange, minPointValue } = this.props;
+    const {
+      knobProperties,
+      onChange,
+      minPointValue,
+      defaultValues
+    } = this.props;
     const { inverseStepValue } = this.state;
     knobProperties.forEach((knobProperty, index) => {
       if (knobProperty.fixed) {
-        knobs.knobsPosition[index] = this.scaledValueToKnobsPositionValue(
-          knobProperty.defaultValue,
+        knobs.knobsPosition[index] = scaledValueToKnobsPositionValue(
+          defaultValues[index],
           minPointValue,
           inverseStepValue
         );
@@ -331,7 +354,7 @@ class HvSlider extends React.Component {
     onChange(knobs);
 
     this.setState({
-      knobsPosition: knobs.knobsPosition
+      knobsPositions: knobs.knobsPosition
     });
   };
 
@@ -418,7 +441,7 @@ class HvSlider extends React.Component {
     const { divisionQuantity, classes } = this.props;
 
     const {
-      knobsPosition,
+      knobsPositions,
       defaultKnobsPositions,
       rangesCount,
       knobStyles,
@@ -439,7 +462,7 @@ class HvSlider extends React.Component {
         onChange={this.onChangeHandler}
         onBeforeChange={this.onBeforeChangeHandler}
         onAfterChange={this.onAfterChangeHandler}
-        value={knobsPosition}
+        value={knobsPositions.length > 0 ? knobsPositions : undefined}
         allowCross={false}
         defaultValue={defaultKnobsPositions}
         count={rangesCount}
@@ -456,6 +479,14 @@ HvSlider.propTypes = {
    * The object created by material to apply to the component.
    */
   theme: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * The values array to apply to the component
+   */
+  values: PropTypes.instanceOf(Array),
+  /**
+   * The default values array to apply to the component
+   */
+  defaultValues: PropTypes.instanceOf(Array).isRequired,
   /**
    * The object used to set the knob properties,
    * for every item in the array a new knob will be created.
@@ -551,6 +582,7 @@ HvSlider.defaultProps = {
   markStep: 1,
   markDigits: 0,
   noOverlap: true,
+  values: [],
   formatMark: mark => mark,
   formatTooltip: mark => mark,
   markProperties: [],
