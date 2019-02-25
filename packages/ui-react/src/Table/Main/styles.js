@@ -158,7 +158,8 @@ const styles = theme => ({
     "& $textContainer": {
       whiteSpace: "nowrap",
       overflow: "hidden",
-      textOverflow: "ellipsis"
+      textOverflow: "ellipsis",
+      textAlign: "left"
     }
   },
   textContainer: {},
@@ -202,7 +203,7 @@ const styles = theme => ({
     minHeight: "32px"
   },
   headerTextContainer: {
-    padding: "8px 0",
+    padding: "8px 5px 8px 0px",
     minHeight: "32px",
     overflow: "auto"
   },
