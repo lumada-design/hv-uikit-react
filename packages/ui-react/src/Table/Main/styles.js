@@ -65,12 +65,6 @@ const styles = theme => ({
           borderBottom: "none",
           boxShadow: "none",
           "& > div": { width: "100%" },
-          "&:hover > div > div > div ": {
-            visibility: "visible"
-          },
-          "&:hover": {
-            background: theme.palette.grey.clear
-          },
           "&:first-child": {
             borderLeft: "none"
           },
@@ -90,6 +84,14 @@ const styles = theme => ({
           "&.checkBox": {
             minWidth: "32px",
             display: "inline-table"
+          },
+          "&.sortable":{
+            "&:hover > div > div > div ": {
+              visibility: "visible"
+            },
+            "&:hover": {
+              background: theme.palette.grey.clear
+            },
           }
         }
       },

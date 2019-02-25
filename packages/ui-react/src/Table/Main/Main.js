@@ -17,9 +17,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import SortAsc from "@hv-ui/icons/core/XS-icons/SortAscending12";
 import SortDesc from "@hv-ui/icons/core/XS-icons/SortDescending12";
-import expander from '../expander/expander';
-import { appendClassnames, createExpanderButton } from './columnUtils';
-import { toggleAll, isIndeterminateStatus, toggleSelection, isSelected } from "./checkBoxUtils";
+import expander from "../expander/expander";
+import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
+import { toggleAll, isIndeterminateStatus, toggleSelection, isSelected} from "./checkBoxUtils";
 import HvCheckBox from "../../Selectors/CheckBox";
 
 import ReactTablePagination from "../Pagination";
@@ -198,7 +198,7 @@ class HvTable extends React.Component {
 
     appendClassnames(column, sorted, classes);
 
-    return { className: classes.theadTh };
+    return { className: setHeaderSortableClass(column.sortable, classes.theadTh )};
   };
 
   /**
