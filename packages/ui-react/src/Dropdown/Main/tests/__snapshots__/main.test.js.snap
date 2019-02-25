@@ -4517,7 +4517,7 @@ body {
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   font-weight: 600;
   line-height: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 0.02em;
 }
 .Main-header-266 {
@@ -4631,7 +4631,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   Object {
                     "cursor": "pointer",
@@ -4724,7 +4724,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   ".Main-list-270": Object {
                     "background": "#FFFFFF",
@@ -4807,7 +4807,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   "list": Object {
                     "background": "#FFFFFF",
@@ -5397,7 +5397,7 @@ body {
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "marginBottom": 15,
+                    "marginBottom": "10px",
                   },
                   "list": Object {
                     "background": "#FFFFFF",
@@ -6670,7 +6670,7 @@ body {
   display: block;
 }
 .List-selectAll-284 {
-  margin: 10px 0 5px 0;
+  margin: 10px 0 10px 0;
 }
 .List-selectAll-284 &gt; span {
   color: #414141;
@@ -6767,7 +6767,7 @@ body {
                     "display": "block",
                   },
                   Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   Object {
                     "color": "#414141",
@@ -6817,7 +6817,7 @@ body {
                     "margin": "10px 0 0 20px",
                   },
                   ".List-selectAll-284": Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   ".List-selectAll-284 > span": Object {
                     "color": "#414141",
@@ -6886,7 +6886,7 @@ body {
                     "margin": "10px 0 0 20px",
                   },
                   "selectAll": Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   "selected": Object {
                     "background": "#414141",
@@ -7463,7 +7463,7 @@ body {
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
                     },
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   "selected": Object {
                     "&:hover": Object {
@@ -35231,8 +35231,8 @@ body {
                 Object {
                   "applyLabel": "Apply",
                   "cancelLabel": "Cancel",
-                  "multiSelection1": "Selected",
-                  "multiSelection2": "of",
+                  "multiSelectionAction": "Selected",
+                  "multiSelectionConjuction": "of",
                   "select": "Select...",
                   "selectAll": "All",
                 }
@@ -35277,8 +35277,8 @@ body {
                   Object {
                     "applyLabel": "Apply",
                     "cancelLabel": "Cancel",
-                    "multiSelection1": "Selected",
-                    "multiSelection2": "of",
+                    "multiSelectionAction": "Selected",
+                    "multiSelectionConjuction": "of",
                     "select": "Select...",
                     "selectAll": "All",
                   }
@@ -36691,7 +36691,7 @@ body {
                         }
                       }
                       indeterminate={true}
-                      label="All"
+                      label="1 of 3"
                       onChange={[Function]}
                     >
                       <HvCheckbox
@@ -36714,7 +36714,7 @@ body {
                         }
                         disabled={false}
                         indeterminate={true}
-                        label="All"
+                        label="1 of 3"
                         labelPlacement="end"
                         onChange={[Function]}
                         theme={
@@ -37389,7 +37389,7 @@ body {
                             />
                           }
                           disabled={false}
-                          label="All"
+                          label="1 of 3"
                           labelPlacement="end"
                         >
                           <WithFormControlContext(FormControlLabel)
@@ -37432,7 +37432,7 @@ body {
                               />
                             }
                             disabled={false}
-                            label="All"
+                            label="1 of 3"
                             labelPlacement="end"
                           >
                             <FormControlLabel
@@ -37475,7 +37475,7 @@ body {
                                 />
                               }
                               disabled={false}
-                              label="All"
+                              label="1 of 3"
                               labelPlacement="end"
                             >
                               <label
@@ -38449,7 +38449,7 @@ body {
                                     <span
                                       className="MuiTypography-root-327 MuiTypography-body2-335 MuiFormControlLabel-label-307 HvCheckbox-labelTypography-292"
                                     >
-                                      All
+                                      1 of 3
                                     </span>
                                   </Typography>
                                 </WithStyles(Typography)>
@@ -43802,8 +43802,8 @@ body {
                         Object {
                           "applyLabel": "Apply",
                           "cancelLabel": "Cancel",
-                          "multiSelection1": "Selected",
-                          "multiSelection2": "of",
+                          "multiSelectionAction": "Selected",
+                          "multiSelectionConjuction": "of",
                           "select": "Select...",
                           "selectAll": "All",
                         }
@@ -43823,8 +43823,8 @@ body {
                           Object {
                             "applyLabel": "Apply",
                             "cancelLabel": "Cancel",
-                            "multiSelection1": "Selected",
-                            "multiSelection2": "of",
+                            "multiSelectionAction": "Selected",
+                            "multiSelectionConjuction": "of",
                             "select": "Select...",
                             "selectAll": "All",
                           }
@@ -56893,7 +56893,7 @@ body {
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   font-weight: 600;
   line-height: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 0.02em;
 }
 .Main-header-5 {
@@ -57007,7 +57007,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   Object {
                     "cursor": "pointer",
@@ -57100,7 +57100,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   ".Main-list-9": Object {
                     "background": "#FFFFFF",
@@ -57183,7 +57183,7 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "margin-bottom": "15px",
+                    "margin-bottom": "10px",
                   },
                   "list": Object {
                     "background": "#FFFFFF",
@@ -57773,7 +57773,7 @@ body {
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "marginBottom": 15,
+                    "marginBottom": "10px",
                   },
                   "list": Object {
                     "background": "#FFFFFF",
@@ -59046,7 +59046,7 @@ body {
   display: block;
 }
 .List-selectAll-23 {
-  margin: 10px 0 5px 0;
+  margin: 10px 0 10px 0;
 }
 .List-selectAll-23 &gt; span {
   color: #414141;
@@ -59143,7 +59143,7 @@ body {
                     "display": "block",
                   },
                   Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   Object {
                     "color": "#414141",
@@ -59193,7 +59193,7 @@ body {
                     "margin": "10px 0 0 20px",
                   },
                   ".List-selectAll-23": Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   ".List-selectAll-23 > span": Object {
                     "color": "#414141",
@@ -59262,7 +59262,7 @@ body {
                     "margin": "10px 0 0 20px",
                   },
                   "selectAll": Object {
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   "selected": Object {
                     "background": "#414141",
@@ -59839,7 +59839,7 @@ body {
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
                     },
-                    "margin": "10px 0 5px 0",
+                    "margin": "10px 0 10px 0",
                   },
                   "selected": Object {
                     "&:hover": Object {
@@ -63127,8 +63127,8 @@ body {
                 Object {
                   "applyLabel": "Apply",
                   "cancelLabel": "Cancel",
-                  "multiSelection1": "Selected",
-                  "multiSelection2": "of",
+                  "multiSelectionAction": "Selected",
+                  "multiSelectionConjuction": "of",
                   "select": "Select...",
                   "selectAll": "All",
                 }
@@ -63173,8 +63173,8 @@ body {
                   Object {
                     "applyLabel": "Apply",
                     "cancelLabel": "Cancel",
-                    "multiSelection1": "Selected",
-                    "multiSelection2": "of",
+                    "multiSelectionAction": "Selected",
+                    "multiSelectionConjuction": "of",
                     "select": "Select...",
                     "selectAll": "All",
                   }

@@ -53,7 +53,7 @@ const styles = theme => ({
     display: "block"
   },
   selectAll: {
-    margin: `${theme.spacing.xs}px 0 5px 0`,
+    margin: `${theme.spacing.xs}px 0 ${theme.spacing.xs}px 0`,
     "& > span": {
       ...theme.typography.subtitle1
     }

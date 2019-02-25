@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   label: {
     ...theme.typography.subtitle2,
-    marginBottom: 15
+    marginBottom: `${theme.spacing.xs}px`
   },
   header: {
     position: "relative",

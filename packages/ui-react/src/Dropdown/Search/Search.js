@@ -39,6 +39,12 @@ class Search extends React.Component {
     return state;
   }
 
+  /**
+   * filters the values based on the provided string.
+   *
+   * @param {String} str - The value that is being looked.
+   * @memberof List
+   */
   handleSearch(str) {
     const { values, onChange } = this.props;
 
@@ -67,7 +73,7 @@ class Search extends React.Component {
           value={value}
           onChange={evt => this.handleSearch(evt.target.value)}
         />
-        <SearchIcon className={classes.icon}/>
+        <SearchIcon className={classes.icon} />
       </div>
     );
   }
