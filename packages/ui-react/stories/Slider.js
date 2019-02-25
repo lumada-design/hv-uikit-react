@@ -6,78 +6,73 @@ const knobProperties = [
   {
     color: "#72cccb",
     dragColor: "#96d9d8",
-    defaultValue: 10,
     trackColor: "#72cccb"
   },
   {
     color: "#f9dc37",
     dragColor: "#fbe56a",
-    defaultValue: 20,
     trackColor: "#f9dc37"
   },
   {
     color: "#ff9100",
     dragColor: "#ffa733",
-    defaultValue: 30,
     trackColor: "#ff9100"
   },
   {
     color: "#cc0000",
     dragColor: "#ff0000",
-    defaultValue: 40,
     trackColor: "#cc0000"
   },
   {
     color: "#cc0000",
-    defaultValue: 100,
     trackColor: "#cc0000",
     fixed: true,
     hidden: true
   }
 ];
 
+const knobPropertiesDefaults = [10, 20, 30, 40, 100];
+
 const threeKnobProperties = [
   {
     color: "#72cccb",
     dragColor: "#96d9d8",
-    trackColor: "#72cccb",
-    defaultValue: 10
+    trackColor: "#72cccb"
   },
   {
     color: "#f9dc37",
     dragColor: "#fbe56a",
-    trackColor: "#f9dc37",
-    defaultValue: 20
+    trackColor: "#f9dc37"
   },
   {
     color: "#ff9100",
     dragColor: "#ffa733",
-    trackColor: "#ff9100",
-    defaultValue: 30
+    trackColor: "#ff9100"
   }
 ];
+
+const threeKnobPropertiesDefaults = [10, 20, 30];
 
 const threeKnobFixedProperties = [
   {
     color: "yellow",
     dragColor: "black",
-    trackColor: "red",
-    defaultValue: 10
+    trackColor: "red"
   },
   {
     color: "red",
     dragColor: "red",
-    trackColor: "grey",
-    defaultValue: 50
+    trackColor: "grey"
   },
   {
     color: "purple",
     dragColor: "#orange",
     trackColor: "yellow",
-    fixed: true,
-    defaultValue: 80
+    fixed: true
   }
 ];
+
+const threeKnobFixedPropertiesDefaults = [10, 50, 80];
 
 const scaledKnobProperties = [
   {
@@ -92,7 +87,46 @@ const scaledKnobProperties = [
   }
 ];
 
+const scaledKnobPropertiesDefaults = [0.3, 0.5];
+
 const formatMark = mark => `${mark}%`;
+
+class ExtendedHvSlider extends React.Component {
+  state = {
+    knobsValues: []
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state.knobsValues = threeKnobPropertiesDefaults;
+  }
+
+  render() {
+    const { knobsValues } = this.state;
+
+    return (
+      <>
+        <button
+          onClick={() =>
+            this.setState({ knobsValues: threeKnobPropertiesDefaults })
+          }
+        >
+          Reset
+        </button>
+        <HvSlider
+          markStep={10}
+          knobProperties={threeKnobProperties}
+          values={knobsValues}
+          defaultValues={threeKnobPropertiesDefaults}
+          onChange={({ knobsValues: values }) => {
+            this.setState({ knobsValues: values });
+          }}
+        />
+      </>
+    );
+  }
+}
 
 storiesOf("Slider", module).add("Multi-Slider", () => (
   <>
@@ -108,6 +142,7 @@ storiesOf("Slider", module).add("Multi-Slider", () => (
         minPointValue={0}
         maxPointValue={100}
         markStep={10}
+        defaultValues={knobPropertiesDefaults}
         knobProperties={knobProperties}
       />
     </HvShowCase>
@@ -116,14 +151,22 @@ storiesOf("Slider", module).add("Multi-Slider", () => (
       title="Three knobs"
       description="Shows the possibility of manipulating N quantity of knobs and a range"
     >
-      <HvSlider markStep={10} knobProperties={threeKnobProperties} />
+      <HvSlider
+        markStep={10}
+        knobProperties={threeKnobProperties}
+        defaultValues={threeKnobPropertiesDefaults}
+      />
     </HvShowCase>
 
     <HvShowCase
       title="Three knobs different color and different tracks"
       description="Shows the possibility manipulating the color of the knobs"
     >
-      <HvSlider markStep={10} knobProperties={threeKnobFixedProperties} />
+      <HvSlider
+        markStep={10}
+        knobProperties={threeKnobFixedProperties}
+        defaultValues={threeKnobFixedPropertiesDefaults}
+      />
     </HvShowCase>
 
     <HvShowCase
@@ -133,12 +176,20 @@ storiesOf("Slider", module).add("Multi-Slider", () => (
       <HvSlider
         markStep={10}
         knobProperties={scaledKnobProperties}
+        defaultValues={scaledKnobPropertiesDefaults}
         minPointValue={0.1}
         maxPointValue={0.7}
         divisionQuantity={30}
         noOverlap={false}
         markDigits={2}
       />
+    </HvShowCase>
+
+    <HvShowCase
+      title="Three knobs"
+      description="Shows the possibility of manipulating N quantity of knobs and a range"
+    >
+      <ExtendedHvSlider />
     </HvShowCase>
   </>
 ));

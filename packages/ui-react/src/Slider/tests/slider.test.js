@@ -21,64 +21,61 @@ describe("Slider ", () => {
   const knobProperties = [
     {
       color: "#72cccb",
-      dragColor: "#96d9d8",
-      defaultValue: 10
+      dragColor: "#96d9d8"
     },
     {
       color: "#f9dc37",
-      dragColor: "#fbe56a",
-      defaultValue: 20
+      dragColor: "#fbe56a"
     },
     {
       color: "#ff9100",
-      dragColor: "#ffa733",
-      defaultValue: 30
+      dragColor: "#ffa733"
     },
     {
       color: "#cc0000",
-      dragColor: "#ff0000",
-      defaultValue: 40
+      dragColor: "#ff0000"
     },
     {
       color: "#cc0000",
-      defaultValue: 100,
       fixed: true,
       hidden: true
     }
   ];
+
+  const knobPropertiesDefaults = [10, 20, 30, 40, 100];
 
   const knobPropertiesScaled = [
     {
       color: "#72cccb",
-      dragColor: "#96d9d8",
-      defaultValue: 0.1
+      dragColor: "#96d9d8"
     },
     {
       color: "#f9dc37",
-      dragColor: "#fbe56a",
-      defaultValue: 0.2
+      dragColor: "#fbe56a"
     },
     {
       color: "#ff9100",
-      dragColor: "#ffa733",
-      defaultValue: 0.3
+      dragColor: "#ffa733"
     },
     {
       color: "#cc0000",
-      dragColor: "#ff0000",
-      defaultValue: 0.4
+      dragColor: "#ff0000"
     },
     {
       color: "#cc0000",
-      defaultValue: 1,
       fixed: true,
       hidden: true
     }
   ];
 
+  const knobPropertiesScaledDefaults = [0.1, 0.2, 0.3, 0.4, 1];
+
   const wrapper = mount(
     <HvProvider>
-      <SliderWithStyles knobProperties={knobProperties} />
+      <SliderWithStyles
+        knobProperties={knobProperties}
+        defaultValues={knobPropertiesDefaults}
+      />
     </HvProvider>
   );
 
@@ -104,7 +101,11 @@ describe("Slider ", () => {
   it("should call the format mark function", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles knobProperties={knobProperties} formatMark={myMock} />
+        <SliderWithStyles
+          knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
+          formatMark={myMock}
+        />
       </HvProvider>
     );
 
@@ -118,6 +119,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           markProperties={[{ position: 2, label: "asd" }]}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           formatTooltip={myMock}
         />
       </HvProvider>
@@ -132,6 +134,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           minPointValue={15}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           formatMark={myMock}
         />
       </HvProvider>
@@ -146,6 +149,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           maxPointValue={87}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           formatMark={myMock}
         />
       </HvProvider>
@@ -160,6 +164,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           divisionQuantity={87}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           formatMark={myMock}
         />
       </HvProvider>
@@ -175,6 +180,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           divisionQuantity={87}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           onBeforeChange={myMock}
         />
       </HvProvider>
@@ -193,6 +199,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           divisionQuantity={87}
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           onAfterChange={myMock}
         />
       </HvProvider>
@@ -218,6 +225,7 @@ describe("Slider ", () => {
         <SliderWithStyles
           maxPointValue={1}
           knobProperties={knobPropertiesScaled}
+          defaultValues={knobPropertiesScaledDefaults}
           markDigits={2}
           onChange={onChangeMock}
         />
@@ -236,6 +244,7 @@ describe("Slider ", () => {
       <HvProvider>
         <SliderWithStyles
           knobProperties={knobProperties}
+          defaultValues={knobPropertiesDefaults}
           onChange={onChangeMock}
         />
       </HvProvider>
