@@ -22,15 +22,15 @@ import Typography from "@material-ui/core/Typography";
  * @returns {*}
  * @constructor
  */
-const Title = props => {
-  const { classes, logo, titleText, titleComponent } = props;
-
+const Title = ({ classes, logo, titleText, titleComponent }) => {
   let logoComponent = null;
   let span = null;
 
   if (titleComponent !== null) {
     return <div className={classes.logoContainer}>{titleComponent}</div>;
-  } else if (logo !== "") {
+  }
+
+  if (logo != null) {
     logoComponent = (
       <img src={logo} className={classes.logoImage} alt="Company logo" />
     );

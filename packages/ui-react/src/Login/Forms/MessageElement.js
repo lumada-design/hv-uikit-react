@@ -9,8 +9,7 @@ import Typography from "@material-ui/core/Typography";
  * @returns {*}
  * @constructor
  */
-function MessageElement(props) {
-  const { iconElement, showMessage, icon, message } = props;
+function MessageElement( { iconElement, showMessage, icon, message }) {
 
   const iconClone = React.cloneElement(iconElement, {
     className: icon
@@ -24,7 +23,7 @@ function MessageElement(props) {
   );
 }
 
-MessageElement.prototype = {
+MessageElement.propTypes = {
   /**
    * Icon component.
    */

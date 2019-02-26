@@ -10,11 +10,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Input from "../../../Input";
 import HvButton, { buttonTypes } from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
-import classNames from "classnames";
 import MessageElement from "../MessageElement";
 
 /**
@@ -24,13 +24,14 @@ import MessageElement from "../MessageElement";
  * @returns {*}
  * @constructor
  */
-function RecoveryLinkButton(props) {
+// eslint-disable-next-line react/prop-types
+function RecoveryLinkButton({ onClick, classes }) {
   return (
-    <div className={props.classes.forgotCredentials}>
+    <div className={classes.forgotCredentials}>
       <HvButton
         colorType="link"
-        onClick={props.onClick}
-        classes={{ textPrimary: props.classes.linkButtonTypography }}
+        onClick={onClick}
+        classes={{ textPrimary: classes.linkButtonTypography }}
       >
         Forgot your credentials?
       </HvButton>
@@ -42,7 +43,6 @@ function RecoveryLinkButton(props) {
  * Login main form.
  */
 class Login extends React.Component {
-  debugger;
   state = {
     password: "",
     username: "",
@@ -77,9 +77,11 @@ class Login extends React.Component {
     this.setState({ isLogging: true });
     this.setState({ loginError: false });
 
-    rememberMe
-      ? localStorage.setItem("username", username)
-      : localStorage.removeItem("username");
+    if (rememberMe) {
+      localStorage.setItem("username", username);
+    } else {
+      localStorage.removeItem("username");
+    }
 
     try {
       await login({ username, password });
@@ -120,7 +122,7 @@ class Login extends React.Component {
       allowRememberMe,
       errorLoginIcon
     } = this.props;
-    const { username, password, isLogging, loginError } = this.state;
+    const { isLogging, loginError } = this.state;
 
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
@@ -152,7 +154,6 @@ class Login extends React.Component {
             }}
             name="username"
             password={false}
-            value={username}
             onChange={this.handleInputChange("username")}
           />
         </div>
@@ -165,7 +166,6 @@ class Login extends React.Component {
             }}
             name="password"
             password
-            value={password}
             onChange={this.handleInputChange("password")}
           />
         </div>
@@ -228,6 +228,10 @@ Login.propTypes = {
    */
   allowRecover: PropTypes.bool,
   /**
+   * the component should have remember me capability.
+   */
+  allowRememberMe: PropTypes.bool,
+  /**
    * Callback function to switch between forms
    */
   onClick: PropTypes.func.isRequired,
@@ -235,6 +239,15 @@ Login.propTypes = {
    * Icon to be presented when an error occurs in the login.
    */
   errorLoginIcon: PropTypes.element
+};
+
+Login.defaultProps = {
+  titleText: null,
+  logo: null,
+  titleComponent: null,
+  allowRecover: false,
+  allowRememberMe: false,
+  errorLoginIcon: null
 };
 
 export default Login;
