@@ -26,7 +26,7 @@ const styles = theme => ({
     alignItems: "stretch",
     flexWrap: "wrap",
     padding: "3px",
-    margin: `30px 0`
+    margin: `30px 0 0 0`
   },
   paginationBtn: {
     width: "32px",

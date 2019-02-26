@@ -191,9 +191,6 @@ const styles = theme => ({
   pointer: {
     cursor: "pointer"
   },
-  tableContainer: {
-    padding: "40px 0 40px"
-  },
   subtitle: {
     marginTop: `${theme.spacing.xs}px`
   },
