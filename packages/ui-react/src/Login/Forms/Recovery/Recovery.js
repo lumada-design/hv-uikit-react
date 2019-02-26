@@ -10,11 +10,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
+import classNames from "classnames";
 import Input from "../../../Input";
 import HvButton, { buttonTypes } from "../../../Button";
-import Typography from "@material-ui/core/Typography";
 import MessageElement from "../MessageElement";
-import classNames from "classnames";
 
 /**
  * The recovery password form.
@@ -22,16 +22,13 @@ import classNames from "classnames";
 class Recovery extends React.Component {
   state = {
     email: "",
-    isLogging: false,
     recoverStatus: "processing"
   };
 
   /**
    * Sleep function.
    */
-  sleep = ms => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  };
+  sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   /**
    * Submit of the Form. Asynchronous call of the passed recovery function.
@@ -43,7 +40,7 @@ class Recovery extends React.Component {
     e.preventDefault();
 
     const { email } = this.state;
-    const { recovery } = this.props;
+    const { recovery, onClick } = this.props;
 
     this.setState({ isRecovering: true });
     this.setState({ recoverStatus: "processing" });
@@ -52,7 +49,7 @@ class Recovery extends React.Component {
       await recovery({ email });
       this.setState({ recoverStatus: "success" });
       await this.sleep(2000);
-      this.props.onClick();
+      onClick();
     } catch (error) {
       this.setState({ recoverStatus: "error" });
     } finally {

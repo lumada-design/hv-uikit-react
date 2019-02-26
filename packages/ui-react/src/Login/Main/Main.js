@@ -28,7 +28,7 @@ class HvLogin extends React.Component {
    * should be render (Login or Recover).
    */
   switchForms = () => {
-    this.setState({ inRecoveryMode: !this.state.inRecoveryMode });
+    this.setState(prevState => ({ inRecoveryMode: !prevState.inRecoveryMode }));
   };
 
   render() {
@@ -135,6 +135,9 @@ HvLogin.propTypes = {
 HvLogin.defaultProps = {
   backgroundImage: backImg,
   recovery: () => {},
+  titleText: "Welcome",
+  logo: null,
+  titleComponent: null,
   allowRecover: true,
   allowRememberMe: true,
   okRecoveryIcon: <Level0Success16Color />,
