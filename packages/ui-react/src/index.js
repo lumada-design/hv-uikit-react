@@ -29,6 +29,8 @@ export { default as HvKpi } from "./Kpi";
 export { default as HvBanner } from "./Banner";
 
 export { default as HvInput}  from "./Input";
+export { default as HvSearchBox } from "./SearchBox";
+export { default as HvEmptyState } from "./EmptyState";
 
 // theme
 export { default as hvTheme } from "./theme";

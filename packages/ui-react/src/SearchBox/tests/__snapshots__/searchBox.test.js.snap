@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> renders correctly 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+  <Search16 />
+</div>
+`;
