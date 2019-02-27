@@ -17,7 +17,7 @@ class HvLink extends React.Component {
     const { config, useRouter, route, params } = this.props;
 
     if (useRouter && config.router) {
-      config.router.Router.prefetch(route, params);
+      config.router.prefetch(route, params);
     }
   }
 
@@ -37,7 +37,7 @@ class HvLink extends React.Component {
       if (useRouter && config.router) {
         onClick({ route, params });
         e.preventDefault();
-        config.router.Router.pushRoute(route, params, options);
+        config.router.push(route, params, options);
       }
     };
 

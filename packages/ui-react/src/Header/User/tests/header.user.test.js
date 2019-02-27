@@ -10,10 +10,10 @@
 
 /* eslint-env jest */
 
-import IconButton from "@material-ui/core/IconButton";
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 
+import Help16 from "@hv-ui/icons/core/S-icons/Help16";
 import UserWithStyles from "../index";
 import User from "../User";
 
@@ -38,59 +38,47 @@ describe("User withStyles", () => {
   });
 
   it("should render User component with Props", () => {
-    const logout = jest.fn();
-    const logoutCallback = () => logout();
-
     wrapper = shallow(
-      <UserWithStyles
-        userData={{ name: "UserName", role: "UserRole" }}
-        logout={logoutCallback}
-      />
+      <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
     );
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render dropdown properly", () => {
-    wrapper = mount(
-      <UserWithStyles
-        userData={{ name: "UserName", role: "UserRole" }}
-        dropDown={false}
-      />
-    );
+  it("should render text properly", () => {
+    const typographies = mount(
+      <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+    ).find("Typography");
 
-    const divWithoutDropdown = wrapper.find("div");
-    expect(divWithoutDropdown.length).toBe(2);
-
-    wrapper = mount(
-      <UserWithStyles
-        userData={{ name: "UserName", role: "UserRole" }}
-        dropDown={true}
-      />
-    );
-
-    const divWithDropdown = wrapper.find("div");
-    expect(divWithDropdown.length).toBe(5);
-    expect(divWithDropdown.at(3).props().children).toBe("Profile");
-    expect(divWithDropdown.at(4).props().children).toBe("Logout");
+    expect(typographies.length).toBe(2);
   });
 
-  it("should logout when the click on the Logout button", () => {
-    const logout = jest.fn();
-    const logoutCallback = () => logout();
+  it("should render name text properly", () => {
+    const typographies = mount(
+      <UserWithStyles userData={{ name: "UserName" }} />
+    ).find("Typography");
 
-    wrapper = mount(
-      <UserWithStyles
-        userData={{ name: "UserName", role: "UserRole" }}
-        logout={logoutCallback}
-        dropDown={true}
-      />
-    );
+    expect(typographies.length).toBe(1);
+  });
 
-    wrapper
-      .find("div")
-      .at(4)
-      .simulate("click");
-    expect(logout).toHaveBeenCalled();
+  it("should render role text properly", () => {
+    const typographies = mount(
+      <UserWithStyles userData={{ role: "UserRole" }} />
+    ).find("Typography");
+
+    expect(typographies.length).toBe(1);
+  });
+
+  it("should render logo", () => {
+    const img = mount(<UserWithStyles userIcon={<Help16 />} />).find(Help16);
+    expect(img.length).toBe(1);
+  });
+
+  it("should render nothing if no props", () => {
+    const childComponent = mount(<UserWithStyles />)
+      .find(User)
+      .children();
+
+    expect(childComponent.length).toBe(0);
   });
 });

@@ -8,10 +8,8 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
-  root: {
-    minWidth: "1366px"
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Navigation from "./Navigation";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(Navigation);

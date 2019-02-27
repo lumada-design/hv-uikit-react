@@ -8,10 +8,6 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
-  root: {
-    minWidth: "1366px"
-  }
-});
+import ImageContainer from "./ImageContainer";
 
-export default styles;
+export default ImageContainer;

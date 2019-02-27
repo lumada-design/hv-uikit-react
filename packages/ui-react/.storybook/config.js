@@ -6,6 +6,12 @@ import theme from "@hv-ui/themes/dist/theme";
 
 const req = require.context("../stories", true, /\.js$/);
 
+const routerWrapper = {
+  push: (route, params, options) => {},
+  prefetch: (route, params) => {}
+};
+
+
 const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
@@ -13,7 +19,7 @@ const loadStories = () => {
 addDecorator(withInfo);
 
 addDecorator(story => (
-  <HvProvider r>
+  <HvProvider router={routerWrapper}>
     {story()}
   </HvProvider>
 ));

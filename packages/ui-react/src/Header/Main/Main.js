@@ -12,132 +12,151 @@ import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Logo from "../Logo";
-import Menu from "../Menu";
+import isNill from "lodash/isNil";
+import Brand from "../Brand";
+import Navigation from "../Navigation";
 import User from "../User";
-import Settings from "../Settings";
+import Actions from "../Actions";
 
-class Main extends React.Component {
-  state = {
-    openUserMenu: false,
-    openSettingsMenu: false
-  };
+/**
+ *
+ * @param classes
+ * @param navigationData
+ * @param selected
+ * @param onNavigationClick
+ * @param userData
+ * @param userIcon
+ * @param userClick
+ * @param basePath
+ * @param companyLogo
+ * @param productLogo
+ * @param productText
+ * @param itemActions
+ * @param useRouter
+ * @returns {*}
+ * @constructor
+ */
+const Main = ({
+  classes,
+  navigationData,
+  selected,
+  onNavigationClick,
+  userData,
+  userIcon,
+  userClick,
+  basePath,
+  companyLogo,
+  productLogo,
+  productText,
+  itemActions,
+  useRouter
+}) => {
+  const userExists = !(isNill(userData) && isNill(userIcon));
 
-  componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
-  }
-
-  componentWillUnmount = () => {
-    document.removeEventListener("mousedown", this.handleClickOutside);
-  };
-
-  setUserWrapperRef = node => {
-    this.userWrapperRef = node;
-  };
-
-  setSettingsWrapperRef = node => {
-    this.settingsWrapperRef = node;
-  };
-
-  handleClickOutside = event => {
-    if (
-      (this.userWrapperRef || this.settingsWrapperRef) &&
-      !(
-        this.userWrapperRef.contains(event.target) ||
-        this.settingsWrapperRef.contains(event.target)
-      )
-    ) {
-      this.setState({
-        openUserMenu: false,
-        openSettingsMenu: false
-      });
-    }
-  };
-
-  toggleUserMenu = () => {
-    this.setState({
-      openUserMenu: !this.state.openUserMenu,
-      openSettingsMenu: false
-    });
-  };
-
-  toggleSettingsMenu = () => {
-    this.setState({
-      openSettingsMenu: !this.state.openSettingsMenu,
-      openUserMenu: false
-    });
-  };
-
-  render() {
-    const {
-      classes,
-      menuData,
-      userData,
-      userLogout,
-      settingsData,
-      basePath,
-      useRouter,
-      companyLogo,
-      productLogo,
-      productName,
-      onNavigationClick
-    } = this.props;
-
-    return (
-      <AppBar color="default">
-        <Toolbar variant="dense" classes={classes.root}>
-          <Logo companyLogo={companyLogo} productLogo={productLogo} productName={productName} />
-          <Menu
-            menuData={menuData}
-            basePath={basePath}
-            useRouter={useRouter}
-            onClick={onNavigationClick}
-          />
-          <User
-            userData={userData}
-            logout={userLogout}
-            onClick={this.toggleUserMenu}
-            dropDown={this.state.openUserMenu}
-            userMenuRef={this.setUserWrapperRef}
-          />
-          <Settings
-            settingsData={settingsData}
-            userData={userData}
-            basePath={basePath}
-            useRouter={useRouter}
-            dropDown={this.state.openSettingsMenu}
-            onClick={this.toggleSettingsMenu}
-            settingsMenuRef={this.setSettingsWrapperRef}
-          />
-        </Toolbar>
-      </AppBar>
-    );
-  }
-}
+  return (
+    <AppBar color="default" className={classes.root}>
+      <Toolbar variant="dense">
+        <Brand
+          companyLogo={companyLogo}
+          productLogo={productLogo}
+          productText={productText}
+        />
+        <Navigation
+          navigationData={navigationData}
+          basePath={basePath}
+          useRouter={useRouter}
+          selected={selected}
+          onClick={onNavigationClick}
+        />
+        <User userData={userData} userIcon={userIcon} onClick={userClick} />
+        <Actions userExists={userExists} itemActions={itemActions} />
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 Main.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  menuData: PropTypes.instanceOf(Array),
-  userData: PropTypes.instanceOf(Object),
-  userLogout: PropTypes.instanceOf(Function),
+  /**
+   * Company logo. Can be a path for a image or a component.
+   */
+  companyLogo: PropTypes.node,
+  /**
+   * Product logo. Can be a path for a image or a component.
+   */
+  productLogo: PropTypes.node,
+  /**
+   * Product text.
+   */
+  productText: PropTypes.string,
+
+  /**
+   * The index of the selected navigation item.
+   */
+  selected: PropTypes.number,
+  /**
+   * The data used for creating the navigation item.
+   */
+  navigationData: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      path: PropTypes.string
+    })
+  ),
+  /**
+   * Path to be as base to be concatenated with the pat of the navigation data.
+   */
   basePath: PropTypes.string,
+  /**
+   * Indicates if the router should be used.
+   */
   useRouter: PropTypes.bool,
-  companyLogo: PropTypes.string,
-  productLogo: PropTypes.string,
-  productName: PropTypes.string,
-  onNavigationClick: PropTypes.func
+  /**
+   * Function when the navigation item is click. It returns the selected index.
+   */
+  onNavigationClick: PropTypes.func,
+
+  /**
+   * Object containing the text to be present
+   */
+  userData: PropTypes.shape({
+    name: PropTypes.string,
+    role: PropTypes.string
+  }),
+  /**
+   * Image to be render. If a path is passed an image is render, otherwise the component itself.
+   */
+  userIcon: PropTypes.node,
+  /**
+   * Function to be triggered by clicking in any point of container.
+   */
+  userClick: PropTypes.func,
+
+  /**
+   * Array with the components to be render.
+   */
+  itemActions: PropTypes.arrayOf(PropTypes.element)
 };
 
 Main.defaultProps = {
-  menuData: [],
-  userData: {},
-  userLogout: null,
-  basePath: "",
-  useRouter: false,
   companyLogo: null,
+  productText: null,
   productLogo: null,
-  productName: null,
-  onNavigationClick: () => {}
+
+  navigationData: [],
+  basePath: "",
+  onNavigationClick: () => {},
+  selected: 0,
+  useRouter: false,
+
+  userData: {},
+  userIcon: null,
+  userClick: null,
+
+  itemActions: []
 };
 
 export default Main;

@@ -4494,10 +4494,10 @@ body {
 }
 .HvSlider-dot-2 {
   width: 1px;
-  bottom: -1px;
-  height: 4px;
   border: none;
   cursor: pointer;
+  height: 4px;
+  bottom: -1px;
   z-index: -3;
   position: absolute;
   margin-left: 0px;
@@ -4561,11 +4561,11 @@ body {
 }
 .HvSlider-sliderTooltip-10 .rc-slider-tooltip-inner {
   color: #414141;
-  border: solid 1px #999999 ;
   height: 100%;
+  border: solid 1px #999999 ;
   padding: 20px;
-  max-width: 532px;
   font-size: 12px;
+  max-width: 532px;
   background: #FFFFFF;
   box-shadow: none;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
