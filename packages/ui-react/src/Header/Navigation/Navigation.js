@@ -51,7 +51,7 @@ const Navigation = ({
 
   const menu = navigationData.map((elem, i) => {
     const key = `${elem.label}_${i}`;
-    const route = `${basePath}${elem.label}`;
+    const route = `${basePath}${elem.path}`;
 
     return (
       <Link

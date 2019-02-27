@@ -15,12 +15,16 @@ const styles = theme => ({
     display: "flex",
     flexShrink: 0,
     alignItems: "center",
-    cursor: "pointer",
     marginLeft: "auto"
+  },
+  userContainerPointer: {
+    cursor: "pointer"
   },
   iconContainer: {
     display: "inherit",
-    maxHeight: "46px",
+    maxHeight: "46px"
+  },
+  iconContainerHover: {
     "&:hover": {
       backgroundColor: theme.palette.grey.clear
     }

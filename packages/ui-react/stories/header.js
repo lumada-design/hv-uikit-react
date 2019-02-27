@@ -1,9 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import UserIcon from "../../ui-icons/core/S-icons/User16";
-import SettingIcon from "../../ui-icons/core/S-icons/Settings16";
-import HelpIcon from "../../ui-icons/core/S-icons/Help16";
+import UserIcon from "@hv-ui/icons/core/S-icons/User16";
+import SettingIcon from "@hv-ui/icons/core/S-icons/Settings16";
+import HelpIcon from "@hv-ui/icons/core/S-icons/Help16";
 
 import TestLogo from "./header/resources/testlogo.svg";
 import HitachiLogo from "./header/resources/hitachi";
@@ -47,8 +47,7 @@ const navigationData = [
 
 const userClick = () => alert("user");
 
-const Hitachi = () =>
-  <HitachiLogo style={{width:"72px"}} />;
+const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
 storiesOf("Header", module)
   .add("Variant 1", () => (
@@ -78,7 +77,6 @@ storiesOf("Header", module)
       // User
       userIcon={<UserIcon />}
       userData={userData}
-      userClick={userClick}
       // Actions
       itemActions={[
         <SettingIcon />,
