@@ -10,6 +10,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Typography from "@material-ui/core/Typography";
 import ImageContainer from "../ImageContainer";
 
@@ -25,10 +26,11 @@ import ImageContainer from "../ImageContainer";
  */
 const User = ({ classes, userData, userIcon, onClick }) => {
   if (!userData && !userIcon) return "";
-
   return (
     <div
-      className={classes.userContainer}
+      className={classNames(classes.userContainer, {
+        [classes.userContainerPointer]: onClick
+      })}
       onClick={onClick}
       role="presentation"
     >
@@ -43,7 +45,9 @@ const User = ({ classes, userData, userIcon, onClick }) => {
       {userIcon && (
         <ImageContainer
           image={userIcon}
-          containerClassName={classes.iconContainer}
+          containerClassName={classNames(classes.iconContainer, {
+            [classes.iconContainerHover]: onClick
+          })}
         />
       )}
     </div>
