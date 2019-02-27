@@ -10,59 +10,72 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import styles from "./styles";
+import ImageContainer from "../ImageContainer";
 
-const User = ({
-  classes,
-  userData,
-  logout,
-  dropDown,
-  onClick,
-  userMenuRef
-}) => {
-  if (!userData) return "";
+/**
+ * User container. The render include a text area and a passed image/icon.
+ *
+ * @param classes
+ * @param userData
+ * @param userIcon
+ * @param onClick
+ * @returns {*}
+ * @constructor
+ */
+const User = ({ classes, userData, userIcon, onClick }) => {
+  if (!userData && !userIcon) return "";
 
   return (
-    <div className={classes.user} ref={userMenuRef}>
+    <div
+      className={classes.userContainer}
+      onClick={onClick}
+      role="presentation"
+    >
       <div className={classes.userInfo}>
-        <Typography className={classes.userName}>{userData.name}</Typography>
-        <Typography className={classes.userRole}>{userData.role}</Typography>
-      </div>
-      <IconButton className={classes.userButton} onClick={onClick}>
-        <AccountCircle
-          className={classNames(
-            dropDown ? classes.dropdown : "",
-            classes.userIcon
-          )}
-        />
-        {dropDown && (
-          <div className={classes.menuList}>
-            <div className={classes.menuItem}>Profile</div>
-            <div className={classes.menuItem} onClick={() => logout()}>
-              Logout
-            </div>
-          </div>
+        {userData && userData.name && (
+          <Typography variant="subtitle2">{userData.name}</Typography>
         )}
-      </IconButton>
+        {userData && userData.role && (
+          <Typography className={classes.userRole}>{userData.role}</Typography>
+        )}
+      </div>
+      {userIcon && (
+        <ImageContainer
+          image={userIcon}
+          containerClassName={classes.iconContainer}
+        />
+      )}
     </div>
   );
 };
 
 User.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  userData: PropTypes.instanceOf(Object),
-  logout: PropTypes.instanceOf(Function),
-  settingsData: PropTypes.instanceOf(Object)
+  /**
+   * Object containing the text to be present
+   */
+  userData: PropTypes.shape({
+    name: PropTypes.string,
+    role: PropTypes.string
+  }),
+  /**
+   * Image to be render. Can be a path for a image or a component.
+   */
+  userIcon: PropTypes.node,
+  /**
+   * Function to be triggered by clicking in any point of container.
+   */
+  onClick: PropTypes.func
 };
 
 User.defaultProps = {
   userData: null,
-  logout: null
+  userIcon: null,
+  onClick: null
 };
 
-export default withStyles(styles, { withTheme: true })(User);
+export default User;

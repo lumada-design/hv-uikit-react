@@ -11,10 +11,15 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
+import Settings from "@hv-ui/icons/core/S-icons/Settings16";
 import MainWithStyles from "../index";
 import Main from "../Main";
+import Brand from "../../Brand";
+import Navigation from "../../Navigation";
+import User from "../../User";
+import Actions from "../../Actions";
 
 describe("Header withStyles", () => {
   let wrapper;
@@ -31,8 +36,33 @@ describe("Header withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render Menu component", () => {
-    const userComponent = wrapper.find(Main);
-    expect(userComponent.length).toBe(1);
+  it("should render Main component", () => {
+    const mainComponent = wrapper.find(Main);
+    expect(mainComponent.length).toBe(1);
+  });
+
+  it("should render the internal component", () => {
+    wrapper = mount(
+      <MainWithStyles
+        productText="Maintenance Insights"
+        // Navigation
+        navigationData={[{ label: "label", path: "path" }]}
+        selected={0}
+        // User
+        userIcon="Text"
+        // Actions
+        itemActions={[<Settings />]}
+      />
+    );
+    const brandComponent = wrapper.exists("Brand");
+    const navigationComponent = wrapper.exists("Navigation");
+    const userComponent = wrapper.exists("User");
+    const actionsComponent = wrapper.exists("Actions");
+
+
+    expect(brandComponent).toBeTruthy();
+    expect(navigationComponent).toBeTruthy();
+    expect(userComponent).toBeTruthy();
+    expect(actionsComponent).toBeTruthy();
   });
 });

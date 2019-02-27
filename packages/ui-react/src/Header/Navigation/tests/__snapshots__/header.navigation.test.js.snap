@@ -1,20 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header withStyles should render correctly 1`] = `
-<Main
-  basePath=""
+exports[`Menu withStyles should render correctly 1`] = `
+<Navigation
+  basePath="basePath"
   classes={
     Object {
-      "root": "Main-root-1",
+      "label": "Navigation-label-4",
+      "listItem": "Navigation-listItem-2",
+      "listItemText": "Navigation-listItemText-3",
+      "menu": "Navigation-menu-1",
+      "selected": "Navigation-selected-5",
+      "selector": "Navigation-selector-6",
     }
   }
-  companyLogo={null}
-  itemActions={Array []}
-  navigationData={Array []}
-  onNavigationClick={[Function]}
-  productLogo={null}
-  productText={null}
-  selected={0}
+  navigationData={null}
+  onClick={[Function]}
+  selected={null}
   theme={
     Object {
       "breakpoints": Object {
@@ -377,9 +378,6 @@ exports[`Header withStyles should render correctly 1`] = `
       },
     }
   }
-  useRouter={false}
-  userClick={null}
-  userData={Object {}}
-  userIcon={null}
+  useRouter={true}
 />
 `;

@@ -9,34 +9,20 @@
  */
 
 const styles = theme => ({
-  userContainer: {
-    paddingLeft: `${theme.spacing.lg}px`,
-    height: "100%",
+  actionsContainer: {
     display: "flex",
-    flexShrink: 0,
-    alignItems: "center",
-    cursor: "pointer",
-    marginLeft: "auto"
+    height: "100%",
+    alignItems: "center"
+  },
+  marginLeft: {
+    marginLeft: `${theme.spacing.lg}px`
   },
   iconContainer: {
     display: "inherit",
-    maxHeight: "46px",
+    marginLeft: `${theme.spacing.xs}px`,
     "&:hover": {
       backgroundColor: theme.palette.grey.clear
     }
-  },
-  userInfo: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
-
-    marginRight: `${theme.spacing.xs}px`,
-    "& p": {
-      color: theme.palette.text.main
-    }
-  },
-  userRole: {
-    ...theme.typography.visualization
   }
 });
 

@@ -8,9 +8,13 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
+import MoreVert from "./images/MoreVert.svg";
+
+const styles = theme => ({
   root: {
-    minWidth: "1366px"
+    width: "32px",
+    height: "32px",
+    background: `url(${MoreVert}) no-repeat center`
   }
 });
 

@@ -1,16 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User withStyles should render User component with Props 1`] = `
-<User
+exports[`Brand withStyles should render Brand component with Props 1`] = `
+<Brand
   classes={
     Object {
-      "iconContainer": "User-iconContainer-2",
-      "userContainer": "User-userContainer-1",
-      "userInfo": "User-userInfo-3",
-      "userRole": "User-userRole-4",
+      "brandContainer": "Brand-brandContainer-1",
+      "companyLogoTextContainer": "Brand-companyLogoTextContainer-3",
+      "iconContainer": "Brand-iconContainer-2",
+      "paddingTextLeft": "Brand-paddingTextLeft-8",
+      "productLogoTextContainer": "Brand-productLogoTextContainer-7",
+      "separator": "Brand-separator-4",
+      "separatorBox": "Brand-separatorBox-6",
+      "separatorPadding": "Brand-separatorPadding-5",
     }
   }
-  onClick={null}
+  companyLogo="Path/To/CompanyLogo"
+  productLogo="Path/To/ProductLogo"
+  productText="productText"
   theme={
     Object {
       "breakpoints": Object {
@@ -373,27 +379,26 @@ exports[`User withStyles should render User component with Props 1`] = `
       },
     }
   }
-  userData={
-    Object {
-      "name": "UserName",
-      "role": "UserRole",
-    }
-  }
-  userIcon={null}
 />
 `;
 
-exports[`User withStyles should render correctly 1`] = `
-<User
+exports[`Brand withStyles should render correctly 1`] = `
+<Brand
   classes={
     Object {
-      "iconContainer": "User-iconContainer-2",
-      "userContainer": "User-userContainer-1",
-      "userInfo": "User-userInfo-3",
-      "userRole": "User-userRole-4",
+      "brandContainer": "Brand-brandContainer-1",
+      "companyLogoTextContainer": "Brand-companyLogoTextContainer-3",
+      "iconContainer": "Brand-iconContainer-2",
+      "paddingTextLeft": "Brand-paddingTextLeft-8",
+      "productLogoTextContainer": "Brand-productLogoTextContainer-7",
+      "separator": "Brand-separator-4",
+      "separatorBox": "Brand-separatorBox-6",
+      "separatorPadding": "Brand-separatorPadding-5",
     }
   }
-  onClick={null}
+  companyLogo={null}
+  productLogo={null}
+  productText={null}
   theme={
     Object {
       "breakpoints": Object {
@@ -756,7 +761,5 @@ exports[`User withStyles should render correctly 1`] = `
       },
     }
   }
-  userData={null}
-  userIcon={null}
 />
 `;

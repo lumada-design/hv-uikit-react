@@ -8,9 +8,25 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
+const styles = theme => ({
   root: {
-    minWidth: "1366px"
+    border: `1px solid ${theme.palette.grey.plain}`
+  },
+  button: {
+    margin: 0,
+    display: "block",
+    textAlign: "left",
+    minWidth: "93px",
+    border: "none",
+    "&:hover": {
+      border: "none"
+    },
+    "&:active": {
+      border: "none"
+    },
+    "&$disabled": {
+      border: "none"
+    }
   }
 });
 
