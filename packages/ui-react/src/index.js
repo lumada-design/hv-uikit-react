@@ -10,7 +10,7 @@
 
 // components
 export { default as HvButton, buttonTypes } from "./Button";
-export { default as HvCard } from "./Card";
+export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
 export { default as HvDatePicker } from "./DatePicker";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvFooter } from "./Footer";

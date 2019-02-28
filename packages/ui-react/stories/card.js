@@ -1,18 +1,226 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvCard } from "../src";
+import FailureIcon from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
+import IconInvalid from "@hv-ui/icons/core/S-icons/Level216Color";
+import WarningIcon from "@hv-ui/icons/core/S-icons/Level416Color";
+import Icon from "@hv-ui/icons/core/S-icons/Tool16";
+import MultipleActionsWithMedia, {
+  MultipleActionsWithMediaButtons
+} from "./card/MultipleActionsWithMedia";
+import MultipleActions, {
+  MultipleActionsButtons
+} from "./card/MultipleActions";
+import {
+  HvCard,
+  HvCardHeader,
+  HvCardFooter,
+  HvCardContent,
+  HvShowCase,
+  HvShowCaseHeader,
+  HvCardMedia,
+} from "../src";
+import Content from "./card/KPICard";
+import SingleContent from "./card/Single";
+import compressor from "./card/resources/compressor.png";
+import leaf from "./card/resources/leaf.png";
 
-const data = {
-  assetId: "ast-gn002",
-  assignee: "Zoe J. Le",
-  createdDate: "2018-06-03T14:09:00.004Z",
-  severity: "CRITICAL",
-  description: "Voltage Unstable",
-  id: "evt-g004",
-  name: "Voltage Unstable",
-  outcome: "RESOLVED"
+const configuration = {
+  title: "Leaves Appear wilted and scorched",
+  subtitleLeft: "Just now",
+  subtitleRight: "L20"
 };
 
-storiesOf("Card", module).add("Card", () => (
-  <HvCard data={data} basePath="events/" />
-));
+const configurationNoMedia = {
+  title: "Advanced Server DS120",
+  subtitle: "QTFCR27520007"
+};
+
+const separation = {
+  margin: "80px",
+  height: "600px",
+  width: "357px"
+};
+
+const subtitleLeftStyle = {
+  borderRight: "1px solid #dedede",
+  paddingRight: "10px",
+  marginRight: "10px"
+};
+
+storiesOf("Card", module)
+  .add("Single Action", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Single Action" style={separation}>
+        <HvCard
+          HeaderTitle="Asset Avatar L90"
+          Subheader="Compressor"
+          InnerCardContent={<SingleContent />}
+          mediaPath={compressor}
+          mediaHeight={186}
+        />
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/multipleActions", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard
+          Icon={<FailureIcon />}
+          HeaderTitle={configuration.title}
+          Subheader={(
+            <div>
+              <span style={subtitleLeftStyle}>
+                {configuration.subtitleLeft}
+              </span>
+              <span>{configuration.subtitleRight}</span>
+            </div>
+          )}
+          InnerCardContent={<MultipleActionsWithMedia />}
+          Actions={<MultipleActionsWithMediaButtons />}
+          cardColor="error"
+          isSelectable
+          checkboxValue="value"
+          mediaPath={leaf}
+          mediaHeight={160}
+          onSelect={event => console.log(`my value is ${event.target.value}`)}
+        />
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/composed/noHeaderNoContent", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard cardColor="error">
+          <HvCardMedia mediaPath={leaf} mediaHeight={160} />
+          <HvCardFooter
+            Actions={<MultipleActionsWithMediaButtons />}
+            isSelectable
+            onSelect={event => console.log(`my value is ${event.target.value}`)}
+          />
+        </HvCard>
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/composed/HeaderContent", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard cardColor="error">
+          <HvCardHeader
+            HeaderTitle="Asset Avatar L90"
+            Subheader="Compressor"
+          />
+          <HvCardFooter
+            Actions={<MultipleActionsWithMediaButtons />}
+            isSelectable
+            onSelect={event => console.log(`my value is ${event.target.value}`)}
+          />
+          <HvCardContent
+            InnerCardContent={<MultipleActionsWithMedia />}
+            needsBorder
+          />
+        </HvCard>
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/multipleActions/nomedia", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard
+          HeaderTitle={configurationNoMedia.title}
+          Subheader={configurationNoMedia.subtitle}
+          InnerCardContent={<MultipleActions />}
+          Actions={<MultipleActionsButtons />}
+          cardColor="none"
+          checkboxValue="value"
+          onSelect={event => console.log(`my value is ${event.target.value}`)}
+        />
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/noAction", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard
+          HeaderTitle={configurationNoMedia.title}
+          Subheader={configurationNoMedia.subtitle}
+          InnerCardContent={<MultipleActions />}
+          cardColor="none"
+          checkboxValue="value"
+          onSelect={event => console.log(`my value is ${event.target.value}`)}
+        />
+      </HvShowCase>
+    </>
+  ))
+  .add("Card/onlyTitle", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="Card with all elements" style={separation}>
+        <HvCard
+          HeaderTitle={configurationNoMedia.title}
+          cardColor="none"
+          checkboxValue="value"
+          onSelect={event => console.log(`my value is ${event.target.value}`)}
+        />
+      </HvShowCase>
+    </>
+  ))
+  .add("With KPI", () => (
+    <>
+      <HvShowCaseHeader reviewed date="2018/Dec/28" />
+      <HvShowCase title="With KPI">
+        <div
+          style={{
+            display: "flex",
+            width: "1000px",
+            justifyContent: "space-evenly"
+          }}
+        >
+          <div style={{ width: "280px" }}>
+            <HvCard
+              Icon={<Icon />}
+              HeaderTitle="Replace contaminated oil"
+              InnerCardContent={<Content value="85" icon={<IconInvalid />} />}
+              cardColor="info"
+              isSelectable
+              checkboxValue="value"
+              onSelect={event =>
+                console.log(`my value is ${event.target.value}`)
+              }
+            />
+          </div>
+          <div style={{ width: "280px" }}>
+            <HvCard
+              Icon={<Icon />}
+              HeaderTitle="Replace contaminated oil"
+              InnerCardContent={<Content value="45" icon={<WarningIcon />} />}
+              cardColor="warning"
+              isSelectable
+              checkboxValue="value"
+              onSelect={event =>
+                console.log(`my value is ${event.target.value}`)
+              }
+            />
+          </div>
+          <div style={{ width: "280px" }}>
+            <HvCard
+              Icon={<Icon />}
+              HeaderTitle="Replace contaminated oil"
+              InnerCardContent={<Content value="19" icon={<FailureIcon />} />}
+              cardColor="error"
+              isSelectable
+              checkboxValue="value"
+              onSelect={event =>
+                console.log(`my value is ${event.target.value}`)
+              }
+            />
+          </div>
+        </div>
+      </HvShowCase>
+    </>
+  ));

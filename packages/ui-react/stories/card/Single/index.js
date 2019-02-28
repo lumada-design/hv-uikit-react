@@ -7,8 +7,9 @@
  *  with the terms and conditions stipulated in the agreement/contract
  *  under which the software has been supplied.
  */
-export { default as HvCardHeader } from "./Header";
-export { default as HvCardFooter } from "./Footer";
-export { default as HvCardContent } from "./Content";
-export { default as HvCardMedia } from "./Media";
-export { default } from "./Main";
+
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Single from "./Single";
+
+export default withStyles(styles, { withTheme: true })(Single);

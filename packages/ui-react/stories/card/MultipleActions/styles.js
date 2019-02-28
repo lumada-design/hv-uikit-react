@@ -10,18 +10,29 @@
 
 const styles = theme => ({
   content: {
-    borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`,
     padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
   },
-  bottomBorder: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
-  },
   item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
+    padding: `0 0 ${theme.spacing.sm}px 0`,
   },
-  label: theme.hv.typography.labelText,
-  text: theme.hv.typography.normalText
+  label: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.subtitle2
+  },
+  text: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.body1
+  },
+  highlightText: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.h3
+  }
 });
 
 export default styles;

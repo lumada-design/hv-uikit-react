@@ -10,7 +10,17 @@
 
 const styles = theme => ({
   root: {
-    borderTop: `1px solid ${theme.palette.grey.plain}`
+    border: `1px solid ${theme.palette.grey.plain}`,
+    padding: `${theme.spacing.xs}px`,
+    backgroundColor: theme.palette.grey.foggy
+  },
+  leftContainer: {
+    alignSelf: "flex-start",
+    marginRight: "auto"
+  },
+  rightContainer: {
+    alignSelf: "flex-end",
+    marginLeft: "auto"
   }
 });
 

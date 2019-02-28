@@ -9,19 +9,16 @@
  */
 
 const styles = theme => ({
-  content: {
+  mediaContainer: {
+    width: "100%",
+    paddingBottom: `${theme.spacing.sm}px`,
     borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`,
-    padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
+    borderRight: `1px solid ${theme.palette.grey.plain}`
   },
-  bottomBorder: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
-  },
-  item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
-  },
-  label: theme.hv.typography.labelText,
-  text: theme.hv.typography.normalText
+  media: {
+    height: "100%",
+    width: "100%",
+  }
 });
 
 export default styles;

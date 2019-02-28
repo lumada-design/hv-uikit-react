@@ -10,13 +10,30 @@
 
 const styles = theme => ({
   root: {
-    padding: `${theme.spacing.sm}px`
+    padding: `${theme.spacing.sm}px`,
+    borderLeft: `1px solid ${theme.palette.grey.plain}`,
+    borderRight: `1px solid ${theme.palette.grey.plain}`
   },
-  title: theme.hv.typography.mediumTitle,
-  subheader: theme.hv.typography.normalText,
+  bottomBorder: {
+    borderBottom: `1px solid ${theme.palette.grey.plain}`
+  },
+  title: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.h3
+  },
+  subheader: {
+    fontFamily: theme.typography.fontFamily,
+    ...theme.typography.body1,
+    paddingTop: `${theme.spacing.sm}px`
+  },
+  action: {
+    marginTop: 0,
+    marginRight: "-1px",
+    paddingLeft: `${theme.spacing.xs}px`
+  },
   icon: {
     fontSize: "32px",
-    margin: "10px"
+    margin: `${theme.spacing.xs}px`
   },
   info: {
     color: theme.palette.status.success

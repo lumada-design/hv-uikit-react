@@ -12,32 +12,100 @@ import React from "react";
 import PropTypes from "prop-types";
 import CardActions from "@material-ui/core/CardActions";
 import withConfig from "../../config/withConfig";
-import HvButton, { buttonTypes } from "../../Button";
-import Link from "../../Link";
+import HvCheckBox from "../../Selectors/CheckBox";
 
-const Footer = ({ classes, data, basePath, useRouter }) => {
-  const route = `${basePath}${data.id}`;
-
-  return (
-    <CardActions className={classes.root}>
-      <Link route={route} useRouter={useRouter}>
-        <HvButton colorType={buttonTypes.primary}>View</HvButton>
-      </Link>
-      <HvButton colorType={buttonTypes.secondary} disabled>
-        Dismiss
-      </HvButton>
-      <HvButton colorType={buttonTypes.secondary} disabled>
-        Assign
-      </HvButton>
-    </CardActions>
-  );
-};
+/**
+ * The footer container contains the actions of the cards also
+ * it creates a checkbox if the card is required to be selectable positioning it to the left.
+ *
+ * @param {Object} {
+ *   classes,
+ *   Actions,
+ *   isSelectable,
+ *   onSelect,
+ *   checkboxValue,
+ *   checkboxSelected,
+ *   checkboxIndeterminate,
+ *   checkboxLabel,
+ *   ...other
+ * }
+ */
+const Footer = ({
+  classes,
+  Actions,
+  isSelectable,
+  onSelect,
+  checkboxValue,
+  checkboxSelected,
+  checkboxIndeterminate,
+  checkboxLabel,
+  ...other
+}) => (
+  <CardActions className={classes.root} {...other}>
+    {isSelectable ? (
+      <>
+        <div className={classes.leftContainer}>
+          <HvCheckBox
+            value={checkboxValue}
+            onChange={onSelect}
+            label={checkboxLabel}
+            checked={checkboxSelected}
+            indeterminate={checkboxIndeterminate}
+          />
+        </div>
+        <div className={classes.rightContainer}>{Actions}</div>
+      </>
+    ) : (
+      <div className={classes.leftContainer}>{Actions}</div>
+    )}
+  </CardActions>
+);
 
 Footer.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  data: PropTypes.instanceOf(Object).isRequired,
-  basePath: PropTypes.string.isRequired,
-  useRouter: PropTypes.bool.isRequired
+  /**
+   *  The renderable content inside the Actions slot of the footer.
+   */
+  Actions: PropTypes.node,
+  /**
+   *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
+   */
+  isSelectable: PropTypes.bool,
+  /**
+   *  The function that will be executed when the card is selected.
+   */
+  onSelect: PropTypes.func,
+  /**
+   *  The value the checkbox in the footer will return when selected.
+   */
+  checkboxValue: PropTypes.string,
+  /**
+   *  The label for the checkbox in the footer of the card.
+   */
+  checkboxLabel: PropTypes.string,
+  /**
+   *  ´true´ if the checkbox is selected or ´false´ if not selected.
+   *
+   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   */
+  checkboxSelected: PropTypes.bool,
+  /**
+   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
+   */
+  checkboxIndeterminate: PropTypes.bool
+};
+
+Footer.defaultProps = {
+  isSelectable: false,
+  onSelect: () => {},
+  checkboxValue: "",
+  checkboxLabel: "",
+  Actions: undefined,
+  checkboxSelected: undefined,
+  checkboxIndeterminate: undefined
 };
 
 export default withConfig(Footer);

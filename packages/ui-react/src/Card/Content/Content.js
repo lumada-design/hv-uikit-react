@@ -11,41 +11,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import classNames from "classnames";
 
-const Content = ({ classes, data }) => {
-  const { outcome, assignee, assetId, description } = data;
-
-  return (
-    <CardContent className={classes.content}>
-      <Grid container>
-        <Grid item xs={4} className={classes.item}>
-          <Typography className={classes.label}>Status</Typography>
-          <Typography className={classes.text}>
-            {outcome ? outcome.toLowerCase() : ""}
-          </Typography>
-        </Grid>
-        <Grid item xs={8} className={classes.item}>
-          <Typography className={classes.label}>Assignee</Typography>
-          <Typography className={classes.text}>{assignee}</Typography>
-        </Grid>
-      </Grid>
-      <Grid item xs={12} className={classes.item}>
-        <Typography className={classes.label}>Related Assets</Typography>
-        <Typography className={classes.text}>{assetId}</Typography>
-      </Grid>
-      <Grid item xs={12} className={classes.item}>
-        <Typography className={classes.label}>Description</Typography>
-        <Typography className={classes.text}>{description}</Typography>
-      </Grid>
-    </CardContent>
-  );
-};
+/**
+ * The content container.
+ *
+ * @param {Object} { classes, InnerCardContent, needsBorder, ...other }
+ */
+const Content = ({ classes, InnerCardContent, needsBorder, ...other }) => (
+  <CardContent
+    className={classNames(classes.content, {
+      [classes.bottomBorder]: needsBorder
+    })}
+    {...other}
+  >
+    {InnerCardContent}
+  </CardContent>
+);
 
 Content.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
-  data: PropTypes.instanceOf(Object).isRequired
+  /**
+   *  The renderable content inside the body of the card.
+   */
+  InnerCardContent: PropTypes.node,
+  /**
+   * If the content requires a bottom border
+   */
+  needsBorder: PropTypes.bool
+};
+
+Content.defaultProps = {
+  InnerCardContent: undefined,
+  needsBorder: false
 };
 
 export default Content;
