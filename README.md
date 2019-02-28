@@ -35,11 +35,17 @@ npm run bootstrap
 
 #### Run dev mode
 
+It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/) where you can see a list of the available components.
+
+For Windows
+```bash
+npm run dev_win
+```
+Otherwise 
 ```bash
 npm run dev
 ```
 
-It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/) where you can see a list of the available components.
 
 By clicking *Show Info* you can see additional information on the usage of the component.
 
