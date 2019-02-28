@@ -34,7 +34,10 @@ const palette = createPalette({
   },
   status: theme.palette.status,
   support: theme.palette.support,
-  severity: theme.palette.severity
+  severity: theme.palette.severity,
+  accent: theme.palette.accent,
+  atmosphere: theme.palette.atmosphere,
+  semantic: theme.palette.semantic
 });
 
 palette.grey = { ...palette.grey, ...theme.palette.grey };
