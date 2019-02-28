@@ -4,10 +4,12 @@ exports[`User withStyles should render User component with Props 1`] = `
 <User
   classes={
     Object {
-      "iconContainer": "User-iconContainer-2",
+      "iconContainer": "User-iconContainer-3",
+      "iconContainerHover": "User-iconContainerHover-4",
       "userContainer": "User-userContainer-1",
-      "userInfo": "User-userInfo-3",
-      "userRole": "User-userRole-4",
+      "userContainerPointer": "User-userContainerPointer-2",
+      "userInfo": "User-userInfo-5",
+      "userRole": "User-userRole-6",
     }
   }
   onClick={null}
@@ -387,10 +389,12 @@ exports[`User withStyles should render correctly 1`] = `
 <User
   classes={
     Object {
-      "iconContainer": "User-iconContainer-2",
+      "iconContainer": "User-iconContainer-3",
+      "iconContainerHover": "User-iconContainerHover-4",
       "userContainer": "User-userContainer-1",
-      "userInfo": "User-userInfo-3",
-      "userRole": "User-userRole-4",
+      "userContainerPointer": "User-userContainerPointer-2",
+      "userInfo": "User-userInfo-5",
+      "userRole": "User-userRole-6",
     }
   }
   onClick={null}
