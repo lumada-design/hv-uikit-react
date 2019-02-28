@@ -282,7 +282,9 @@ class HvTable extends React.Component {
       titleText,
       subtitleText,
       subElementTemplate,
-      idForCheckbox
+      idForCheckbox,
+      useRouter,
+      getTrProps
     } = this.props;
 
     const { expanded, selectAll, Table } = this.state;
@@ -354,6 +356,10 @@ class HvTable extends React.Component {
       )
     };
 
+    const checkUseRoute = useRouter 
+    ? getTrProps.bind(this.props) 
+    : getTrProps;
+
     return (
       <div className={classes.tableContainer}>
         {titleText && (
@@ -377,7 +383,7 @@ class HvTable extends React.Component {
           /* eslint no-return-assign: 0 */
           ref={r => (this.checkboxTable = r)}
           getTheadThProps={this.getTheadThProps}
-          getTrProps={this.getTrProps}
+          getTrProps={ getTrProps ? checkUseRoute : this.getTrProps }
           data={data}
           columns={newColumn}
           className="-highlight"
@@ -458,7 +464,15 @@ HvTable.propTypes = {
   /**
    * Property to be uses as unique row identifier. One of the fields of the data.
    */
-  idForCheckbox: PropTypes.string
+  idForCheckbox: PropTypes.string,
+  /**
+   * Function to overwrite the existed getTrProps
+   */
+  getTrProps: PropTypes.func,
+  /**
+   * Boolean to bind config back to function or not
+   */
+  useRouter: PropTypes.bool
 };
 
 HvTable.defaultProps = {
