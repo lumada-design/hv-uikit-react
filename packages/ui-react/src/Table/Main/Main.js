@@ -284,7 +284,8 @@ class HvTable extends React.Component {
       subElementTemplate,
       idForCheckbox,
       useRouter,
-      getTrProps
+      getTrProps,
+      ...other
     } = this.props;
 
     const { expanded, selectAll, Table } = this.state;
@@ -392,6 +393,7 @@ class HvTable extends React.Component {
           expanded={expanded}
           keyField={idForCheckbox}
           isSelected={this.isSelected}
+          {...other}
         />
       </div>
     );

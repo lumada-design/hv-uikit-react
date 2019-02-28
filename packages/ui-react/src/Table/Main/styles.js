@@ -65,6 +65,10 @@ const styles = theme => ({
           borderBottom: "none",
           boxShadow: "none",
           "& > div": { width: "100%" },
+          "& > div.rt-resizer": {
+            width: "10px",
+            right: "-8px"
+          },
           "&:first-child": {
             borderLeft: "none"
           },
