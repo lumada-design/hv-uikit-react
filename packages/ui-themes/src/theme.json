@@ -52,7 +52,36 @@
       "lightTurquoise": "#C3ECEC",
       "turquoise": "#7CDEDC",
       "darkTurquoise": "#0F8B8D",
-      "plum": "#7C0B2B"
+      "plum": "#7C0B2B",
+      "supp1": "#0F8B8D",
+      "supp2": "#734B6D",
+      "supp3": "#4E7599",
+      "supp4": "#C19C31",
+      "supp5": "#546B6B"
+    },
+    "accent": {
+      "acce1": "#146BD2",
+      "acce1H": "#4389DB",
+      "acce2": "#414141",
+      "acce2h": "#676767",
+      "acce3":"#CC0000"
+    },
+    "atmosphere": {
+      "atmo1": "#FFFFFF",
+      "atmo2": "#F9F9F9",
+      "atmo3": "#F5F5F5",
+      "atmo4": "#F0F0F0",
+      "atmo5": "#DEDEDE",
+      "atmo6": "#BCBCBC",
+      "atmo7": "#999999"
+    },
+    "semantic": {
+      "sema1": "#63A621",
+      "sema2": "#DEDEDE",
+      "sema3": "#72CCCB",
+      "sema4": "#E8C758",
+      "sema5": "#E68C17",
+      "sema6": "#D13F3F"
     }
   },
   "typography": {
