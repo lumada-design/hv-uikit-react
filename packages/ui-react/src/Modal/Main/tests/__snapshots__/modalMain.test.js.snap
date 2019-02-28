@@ -212,6 +212,22 @@ exports[`Modal withStyles should render correctly 1`] = `
       "direction": "ltr",
       "hv": Object {
         "palette": Object {
+          "accent": Object {
+            "acce1": "#146BD2",
+            "acce1H": "#4389DB",
+            "acce2": "#414141",
+            "acce2h": "#676767",
+            "acce3": "#CC0000",
+          },
+          "atmosphere": Object {
+            "atmo1": "#FFFFFF",
+            "atmo2": "#F9F9F9",
+            "atmo3": "#F5F5F5",
+            "atmo4": "#F0F0F0",
+            "atmo5": "#DEDEDE",
+            "atmo6": "#BCBCBC",
+            "atmo7": "#999999",
+          },
           "common": Object {
             "black": "#000000",
             "white": "#FFFFFF",
@@ -237,6 +253,14 @@ exports[`Modal withStyles should render correctly 1`] = `
             "light": "#999999",
             "main": "#414141",
           },
+          "semantic": Object {
+            "sema1": "#63A621",
+            "sema2": "#DEDEDE",
+            "sema3": "#72CCCB",
+            "sema4": "#E8C758",
+            "sema5": "#E68C17",
+            "sema6": "#D13F3F",
+          },
           "severity": Object {
             "critical": "#F9E7CF",
             "error": "#F5D8D8",
@@ -259,6 +283,11 @@ exports[`Modal withStyles should render correctly 1`] = `
             "orange": "#FFBB00",
             "plum": "#7C0B2B",
             "redOrange": "#FF5838",
+            "supp1": "#0F8B8D",
+            "supp2": "#734B6D",
+            "supp3": "#4E7599",
+            "supp4": "#C19C31",
+            "supp5": "#546B6B",
             "turquoise": "#7CDEDC",
             "yellow": "#F9DC33",
           },
@@ -422,6 +451,13 @@ exports[`Modal withStyles should render correctly 1`] = `
         },
       },
       "palette": Object {
+        "accent": Object {
+          "acce1": "#146BD2",
+          "acce1H": "#4389DB",
+          "acce2": "#414141",
+          "acce2h": "#676767",
+          "acce3": "#CC0000",
+        },
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
@@ -429,6 +465,15 @@ exports[`Modal withStyles should render correctly 1`] = `
           "hover": "rgba(0, 0, 0, 0.08)",
           "hoverOpacity": 0.08,
           "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "atmosphere": Object {
+          "atmo1": "#FFFFFF",
+          "atmo2": "#F9F9F9",
+          "atmo3": "#F5F5F5",
+          "atmo4": "#F0F0F0",
+          "atmo5": "#DEDEDE",
+          "atmo6": "#BCBCBC",
+          "atmo7": "#999999",
         },
         "augmentColor": [Function],
         "background": Object {
@@ -487,6 +532,14 @@ exports[`Modal withStyles should render correctly 1`] = `
           "light": "#999999",
           "main": "#414141",
         },
+        "semantic": Object {
+          "sema1": "#63A621",
+          "sema2": "#DEDEDE",
+          "sema3": "#72CCCB",
+          "sema4": "#E8C758",
+          "sema5": "#E68C17",
+          "sema6": "#D13F3F",
+        },
         "severity": Object {
           "critical": "#F9E7CF",
           "error": "#F5D8D8",
@@ -509,6 +562,11 @@ exports[`Modal withStyles should render correctly 1`] = `
           "orange": "#FFBB00",
           "plum": "#7C0B2B",
           "redOrange": "#FF5838",
+          "supp1": "#0F8B8D",
+          "supp2": "#734B6D",
+          "supp3": "#4E7599",
+          "supp4": "#C19C31",
+          "supp5": "#546B6B",
           "turquoise": "#7CDEDC",
           "yellow": "#F9DC33",
         },
