@@ -41,10 +41,10 @@ exports[`Provider should render correctly 1`] = `
             "hv": Object {
               "palette": Object {
                 "accent": Object {
-                  "acce1": "#146BD2",
-                  "acce1H": "#4389DB",
-                  "acce2": "#414141",
-                  "acce2h": "#676767",
+                  "acce1": "#414141",
+                  "acce1H": "#676767",
+                  "acce2": "#146BD2",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -280,10 +280,10 @@ exports[`Provider should render correctly 1`] = `
             },
             "palette": Object {
               "accent": Object {
-                "acce1": "#146BD2",
-                "acce1H": "#4389DB",
-                "acce2": "#414141",
-                "acce2h": "#676767",
+                "acce1": "#414141",
+                "acce1H": "#676767",
+                "acce2": "#146BD2",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -3415,10 +3415,10 @@ body {
         "hv": Object {
           "palette": Object {
             "accent": Object {
-              "acce1": "#146BD2",
-              "acce1H": "#4389DB",
-              "acce2": "#414141",
-              "acce2h": "#676767",
+              "acce1": "#414141",
+              "acce1H": "#676767",
+              "acce2": "#146BD2",
+              "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
             "atmosphere": Object {
@@ -3654,10 +3654,10 @@ body {
         },
         "palette": Object {
           "accent": Object {
-            "acce1": "#146BD2",
-            "acce1H": "#4389DB",
-            "acce2": "#414141",
-            "acce2h": "#676767",
+            "acce1": "#414141",
+            "acce1H": "#676767",
+            "acce2": "#146BD2",
+            "acce2h": "#4389DB",
             "acce3": "#CC0000",
           },
           "action": Object {
