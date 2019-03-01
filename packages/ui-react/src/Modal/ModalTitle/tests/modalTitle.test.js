@@ -10,7 +10,6 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { shallow } from "enzyme";
 

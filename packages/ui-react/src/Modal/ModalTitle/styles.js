@@ -10,8 +10,22 @@
 
 const styles = () => ({
   root: {
-    padding: `0px 0px 30px 0px`,
-    margin: 0,
+    padding: 0,
+    margin: 0
+  },
+  messageContainer: {
+    display: "flex",
+  },
+  textContainer: {
+    paddingLeft: "58px"
+  },
+  icon: {
+    position:"absolute",
+    top: "31px",
+    maxWidth: "48px",
+    maxHeight: "48px",
+    minWidth: "48px",
+    minHeight: "48px",
   }
 });
 

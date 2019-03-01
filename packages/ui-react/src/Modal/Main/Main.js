@@ -21,6 +21,17 @@ const style = {
   width: "32px"
 };
 
+/**
+ * Modal component.
+ *
+ * @param classes
+ * @param children
+ * @param open
+ * @param onClose
+ * @param others
+ * @returns {*}
+ * @constructor
+ */
 const Main = ({ classes, children, open, onClose, ...others }) => (
   <Dialog
     className={classNames(classes.root)}
@@ -50,9 +61,21 @@ const Main = ({ classes, children, open, onClose, ...others }) => (
 );
 
 Main.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Components of the modal.
+   */
   children: PropTypes.node.isRequired,
+  /**
+   * Current state of the modal.
+   */
   open: PropTypes.bool.isRequired,
+  /**
+   * Function executed on close.
+   */
   onClose: PropTypes.func.isRequired
 };
 

@@ -10,8 +10,11 @@
 
 const styles = theme => ({
   root: {
-    padding: `0px 0px 30px 0px`,
+    padding: ` ${theme.spacing.md}px 0px 0px 0px`,
     flex: "none"
+  },
+  textContent: {
+    marginLeft: "58px"
   }
 });
 
