@@ -8,6 +8,14 @@
  *  under which the software has been supplied.
  */
 
+const root = theme => ({
+  position: "relative",
+  background: theme.palette.atmosphere.atmo1,
+  height: "32px", 
+  paddingLeft: `${theme.spacing.xs}px`,
+  paddingRight: `${theme.spacing.md}px`
+});
+
 const icon = {
   position: "absolute",
   right: 0,
@@ -16,14 +24,15 @@ const icon = {
 };
 
 const styles = theme => ({
-  root: {
-    position: "relative",
-    background: theme.palette.grey.foggy,
-    borderBottom: `1px solid ${theme.palette.grey.plain}`,
-    height: "32px",
-    paddingLeft: `${theme.spacing.xs}px`,
-    paddingRight: `${theme.spacing.md}px`
+  rootWithoutInput: {
+    ...root(theme),
+    border: `1px solid ${theme.palette.atmosphere.atmo6}`,
   },
+  rootWithInput: {
+    ...root(theme),
+    border: `1px solid ${theme.palette.accent.acce1}`,
+  },
+
   input: {
     border: "none",
     height: "32px",
