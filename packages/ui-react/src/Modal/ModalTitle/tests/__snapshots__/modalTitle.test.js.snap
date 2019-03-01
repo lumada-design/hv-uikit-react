@@ -717,11 +717,15 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
 >
   <div>
     <Level0Success16Color />
-    <WithStyles(Typography)
-      variant="h4"
+    <div
+      className="undefined"
     >
-      Modal Title
-    </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="h4"
+      >
+        Modal Title
+      </WithStyles(Typography)>
+    </div>
   </div>
 </WithStyles(DialogTitle)>
 `;
@@ -733,11 +737,15 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
 >
   <div>
     <Level0Success16Color />
-    <WithStyles(Typography)
-      variant="h4"
+    <div
+      className="undefined"
     >
-      Modal Content
-    </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="h4"
+      >
+        Modal Content
+      </WithStyles(Typography)>
+    </div>
   </div>
 </WithStyles(DialogTitle)>
 `;
@@ -748,11 +756,15 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
 >
   <div>
     <Level0Success16Color />
-    <WithStyles(Typography)
-      variant="h4"
+    <div
+      className="undefined"
     >
-      Modal Content
-    </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="h4"
+      >
+        Modal Content
+      </WithStyles(Typography)>
+    </div>
   </div>
 </WithStyles(DialogTitle)>
 `;

@@ -9,6 +9,9 @@ Object {
     "& > span": Object {
       "width": 32,
     },
+    "&:hover": Object {
+      "backgroundColor": "transparent",
+    },
     "margin": "10px",
     "minWidth": 32,
     "padding": 0,
