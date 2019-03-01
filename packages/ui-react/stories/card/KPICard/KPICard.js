@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 
-import { HvKpi } from "../../src";
+import { HvKpi } from "../../../src";
 
 const data = {
   firstTitle: "Related assets",
@@ -16,19 +16,20 @@ const ThroughputKpiTextConfiguration = score => ({
   indicator: `${score}%`
 });
 
-const Content = ({ value, icon }) => (
+/* eslint react/prop-types: 0 */
+const Content = ({ value, icon, classes }) => (
   <div>
     <HvKpi
       kpiTextConfiguration={ThroughputKpiTextConfiguration(value)}
       visualIndicator={icon}
     />
     <div>
-      <Typography variant="body1">{data.firstTitle}</Typography>
-      <Typography variant="body2">{data.firstContent}</Typography>
+      <Typography variant="body1" className={classes.label}>{data.firstTitle}</Typography>
+      <Typography variant="body2" className={classes.text}>{data.firstContent}</Typography>
     </div>
-    <div style={{ marginTop: "15px", paddingBottom: "15px" }}>
-      <Typography variant="body1">{data.secondTitle}</Typography>
-      <Typography variant="body2">{data.secondContent}</Typography>
+    <div style={{ marginTop: "15px" }}>
+      <Typography variant="body1" className={classes.label}>{data.secondTitle}</Typography>
+      <Typography variant="body2" className={classes.text}>{data.secondContent}</Typography>
     </div>
   </div>
 );

@@ -8,19 +8,8 @@
  *  under which the software has been supplied.
  */
 
-const styles = theme => ({
-  info: {
-    borderTop: `4px solid ${theme.palette.semantic.sema3}`
-  },
-  warning: {
-    borderTop: `4px solid ${theme.palette.semantic.sema5}`
-  },
-  error: {
-    borderTop: `4px solid ${theme.palette.semantic.sema6}`
-  },
-  none: {
-    borderTop: `1px solid ${theme.palette.grey.plain}`
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import KPICard from "./KPICard";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(KPICard);
