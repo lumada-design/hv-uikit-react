@@ -34,7 +34,7 @@ class HvSearchBox extends React.Component {
 
   /**
    * Handles the change of the input
-   * 
+   *
    * @param {Object} event - The event that triggered the action
    */
   handleInputChange = event => {
@@ -53,17 +53,22 @@ class HvSearchBox extends React.Component {
     const { placeholder, classes } = this.props;
     const { value } = this.state;
 
-    const iconRenderer =
-      value && value !== "" ? (
-        <span onClick={this.handleInputClear}>
-          <CloseIcon className={classes.iconClear} />
-        </span>
-      ) : (
-        <SearchIcon className={classes.icon} />
-      );
+    const hasInputValue = value && value != "";
+
+    const iconRenderer = hasInputValue ? (
+      <span onClick={this.handleInputClear}>
+        <CloseIcon className={classes.iconClear} />
+      </span>
+    ) : (
+      <SearchIcon className={classes.icon} />
+    );
 
     return (
-      <div className={classes.root}>
+      <div
+        className={
+          hasInputValue ? classes.rootWithInput : classes.rootWithoutInput
+        }
+      >
         <input
           className={classes.input}
           value={value}
