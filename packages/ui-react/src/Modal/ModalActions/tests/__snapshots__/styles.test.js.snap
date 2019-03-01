@@ -6,9 +6,8 @@ Object {
     "margin": "0px 0px 0px 10px",
   },
   "root": Object {
-    "height": 32,
     "margin": "0px 0px 0px 0px",
-    "width": "100%",
+    "padding": "20px 0px 0px  0px",
   },
 }
 `;

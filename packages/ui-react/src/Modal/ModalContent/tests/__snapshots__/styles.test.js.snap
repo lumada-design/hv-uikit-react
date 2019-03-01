@@ -4,7 +4,10 @@ exports[`ModalContent styles should behave correctly 1`] = `
 Object {
   "root": Object {
     "flex": "none",
-    "padding": "0px 0px 30px 0px",
+    "padding": "0px 0px 0px 0px",
+  },
+  "textContent": Object {
+    "marginLeft": "58px",
   },
 }
 `;

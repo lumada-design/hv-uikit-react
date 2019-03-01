@@ -8,14 +8,13 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
+const styles = theme => ({
   root: {
-    height: 32,
-    width: "100%",
-    margin: "0px 0px 0px 0px"
+    margin: "0",
+    padding: `${theme.spacing.md}px 0px 0px  0px`
   },
   action: {
-    margin: "0px 0px 0px 10px"
+    margin: `0px 0px 0px ${theme.spacing.xs}px`
   }
 });
 

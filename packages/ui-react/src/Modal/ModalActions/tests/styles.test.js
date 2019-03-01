@@ -13,7 +13,14 @@
 import styles from "../styles";
 
 describe("ModalActions styles", () => {
+  const theme = {
+    spacing: {
+      xs: "10",
+      md: "20"
+    }
+  };
+
   it("should behave correctly", () => {
-    expect(styles()).toMatchSnapshot();
+    expect(styles(theme)).toMatchSnapshot();
   });
 });

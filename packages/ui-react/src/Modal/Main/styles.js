@@ -43,6 +43,9 @@ const styles = theme => {
       minWidth: 32,
       "& > span": {
         width: 32
+      },
+      "&:hover" : {
+        backgroundColor: "transparent"
       }
     }
   };

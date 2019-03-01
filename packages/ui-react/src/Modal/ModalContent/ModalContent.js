@@ -11,13 +11,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogContent from "@material-ui/core/DialogContent";
+import classNames from "classnames";
+import Typography from "@material-ui/core/Typography";
 
-const ModalContent = ({ classes, children }) => (
-  <MuiDialogContent className={classes.root}>{children}</MuiDialogContent>
-);
+/**
+ * Message container. The passed children is render in this container, creating
+ * a typography node if the children is of the string type.
+ *
+ * @param classes
+ * @param children
+ * @returns {*}
+ * @constructor
+ */
+const ModalContent = ({ classes, children }) => {
+  const isString = typeof children === "string";
 
+  return (
+    <MuiDialogContent
+      className={classNames(classes.root, {
+        [classes.textContent]: isString
+      })}
+    >
+      {!isString && children}
+      {isString && <Typography variant="body1">{children}</Typography>}
+    </MuiDialogContent>
+  );
+};
 ModalContent.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Content to be render.
+   */
   children: PropTypes.node.isRequired
 };
 

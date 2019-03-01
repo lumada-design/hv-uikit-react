@@ -2,9 +2,21 @@
 
 exports[`ModalTitle styles should behave correctly 1`] = `
 Object {
+  "icon": Object {
+    "alignSelf": "flex-start",
+    "marginRight": "10px",
+    "maxHeight": "48px",
+    "maxWidth": "48px",
+    "minHeight": "48px",
+    "minWidth": "48px",
+  },
+  "messageContainer": Object {
+    "alignItems": "center",
+    "display": "flex",
+  },
   "root": Object {
     "margin": 0,
-    "padding": "0px 0px 30px 0px",
+    "padding": "0px 0px 20px 0px",
   },
 }
 `;
