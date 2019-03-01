@@ -14,6 +14,11 @@ import styles from "../styles";
 
 describe("ModalContent styles", () => {
   it("should behave correctly", () => {
-    expect(styles()).toMatchSnapshot();
+    const theme = {
+      spacing: {
+        md: "20px"
+      } 
+    };
+    expect(styles(theme)).toMatchSnapshot();
   });
 });

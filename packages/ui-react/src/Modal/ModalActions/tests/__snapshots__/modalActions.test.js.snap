@@ -8,6 +8,7 @@ exports[`ModalActions Component allows external props to be added 1`] = `
       "root": undefined,
     }
   }
+  disableActionSpacing={true}
 >
   Modal Content
 </WithStyles(DialogActions)>

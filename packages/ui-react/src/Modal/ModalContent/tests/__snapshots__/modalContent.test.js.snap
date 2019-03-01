@@ -4,7 +4,11 @@ exports[`ModalContent Component allows external styles to be added 1`] = `
 <WithStyles(DialogContent)
   className="testClassRoot undefined"
 >
-  Modal Content
+  <WithStyles(Typography)
+    variant="body1"
+  >
+    Modal Content
+  </WithStyles(Typography)>
 </WithStyles(DialogContent)>
 `;
 
@@ -12,7 +16,11 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
 <WithStyles(DialogContent)
   className="undefined"
 >
-  Modal Content
+  <WithStyles(Typography)
+    variant="body1"
+  >
+    Modal Content
+  </WithStyles(Typography)>
 </WithStyles(DialogContent)>
 `;
 

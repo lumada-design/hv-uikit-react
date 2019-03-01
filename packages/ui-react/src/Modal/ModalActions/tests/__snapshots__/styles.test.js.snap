@@ -6,7 +6,7 @@ Object {
     "margin": "0px 0px 0px 10px",
   },
   "root": Object {
-    "margin": "0px 0px 0px 0px",
+    "margin": "0",
     "padding": "20px 0px 0px  0px",
   },
 }
