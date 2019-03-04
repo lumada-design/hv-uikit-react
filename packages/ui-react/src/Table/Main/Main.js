@@ -376,6 +376,7 @@ class HvTable extends React.Component {
           </div>
         )}
         <Table
+          {...other}
           {...tableStyles}
           {...paginationProps}
           {...serverSizeProps}
@@ -393,7 +394,6 @@ class HvTable extends React.Component {
           expanded={expanded}
           keyField={idForCheckbox}
           isSelected={this.isSelected}
-          {...other}
         />
       </div>
     );
