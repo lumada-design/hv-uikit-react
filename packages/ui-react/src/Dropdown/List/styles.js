@@ -14,7 +14,6 @@ const styles = theme => ({
   },
   list: {
     maxHeight: 320,
-    minHeight: 160,
     overflow: "auto"
   },
   hidden: {

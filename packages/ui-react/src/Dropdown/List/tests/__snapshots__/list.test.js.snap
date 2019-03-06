@@ -4613,7 +4613,6 @@ body {
 .List-list-2 {
   overflow: auto;
   max-height: 320px;
-  min-height: 160px;
 }
 .List-hidden-3 {
   display: none;
@@ -4709,7 +4708,6 @@ body {
                   },
                   Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   Object {
@@ -4784,7 +4782,6 @@ body {
                   },
                   ".List-list-2": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   ".List-marginBottom-13": Object {
@@ -4853,7 +4850,6 @@ body {
                   },
                   "list": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
@@ -5422,7 +5418,6 @@ body {
                   },
                   "list": Object {
                     "maxHeight": 320,
-                    "minHeight": 160,
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
