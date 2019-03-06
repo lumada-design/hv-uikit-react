@@ -59,13 +59,13 @@ const ContentGrid = ({ classes }) => {
           <Typography className={classes.label}>{cellCTitle}</Typography>
           <Typography className={classes.text}>{cellCContent}</Typography>
         </Grid>
-        <Grid item xs={7} className={classes.item}>
+        <Grid item xs={7} className={classes.bottomItem}>
           <Typography className={classes.label}>{cellDTitle}</Typography>
           <Typography className={classes.text}>{cellDContent}</Typography>
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={12} className={classes.item}>
+        <Grid item xs={12} className={classes.bottomItem}>
           <Typography className={classes.label}>{cellETitle}</Typography>
           <Typography className={classes.text}>{cellEContent}</Typography>
         </Grid>

@@ -15,7 +15,7 @@ const SingleContent = ({ classes }) => (
       <Typography variant="body1" className={classes.label}>{data.firstTitle}</Typography>
       <Typography variant="body2" className={classes.text}>{data.firstContent}</Typography>
     </div>
-    <div style={{ marginTop: "15px", paddingBottom: "15px" }}>
+    <div style={{ marginTop: "15px" }}>
       <Typography variant="body1" className={classes.label}>{data.secondTitle}</Typography>
       <Typography variant="body2" className={classes.text}>{data.secondContent}</Typography>
     </div>

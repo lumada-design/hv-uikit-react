@@ -15,9 +15,6 @@ const styles = theme => ({
   item: {
     padding: `0 0 ${theme.spacing.sm}px 0`,
   },
-  bottomItem: {
-    padding: "0",
-  },
   label: {
     fontFamily: theme.typography.fontFamily,
     ...theme.typography.subtitle2
