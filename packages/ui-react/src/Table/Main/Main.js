@@ -389,7 +389,6 @@ class HvTable extends React.Component {
           data={data}
           columns={newColumn}
           className="-highlight"
-          resizable={false}
           SubComponent={newSubComponent}
           expanded={expanded}
           keyField={idForCheckbox}
