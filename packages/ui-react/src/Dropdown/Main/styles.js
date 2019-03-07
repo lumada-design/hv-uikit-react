@@ -37,8 +37,7 @@ const styles = theme => ({
     position: "relative",
     height: 32,
     cursor: "pointer",
-    userSelect: "none",
-    zIndex: 999
+    userSelect: "none"
   },
   selection: {
     ...theme.typography.body1,

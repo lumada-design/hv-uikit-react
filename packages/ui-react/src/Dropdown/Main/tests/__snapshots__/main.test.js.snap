@@ -4639,7 +4639,6 @@ body {
 .Main-header-266 {
   height: 32px;
   cursor: pointer;
-  z-index: 999;
   position: relative;
   user-select: none;
 }
@@ -4754,7 +4753,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   Object {
                     "color": "#414141",
@@ -4819,7 +4817,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   ".Main-headerDisabled-269": Object {},
                   ".Main-headerDisabled-269:hover": Object {
@@ -4905,7 +4902,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   "headerDisabled": Object {},
                   "icon": Object {
@@ -5491,7 +5487,6 @@ body {
                     "height": 32,
                     "position": "relative",
                     "userSelect": "none",
-                    "zIndex": 999,
                   },
                   "headerDisabled": Object {
                     "&:hover": Object {
@@ -6801,7 +6796,6 @@ body {
 .List-list-276 {
   overflow: auto;
   max-height: 320px;
-  min-height: 160px;
 }
 .List-hidden-277 {
   display: none;
@@ -6897,7 +6891,6 @@ body {
                   },
                   Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   Object {
@@ -6972,7 +6965,6 @@ body {
                   },
                   ".List-list-276": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   ".List-marginBottom-287": Object {
@@ -7041,7 +7033,6 @@ body {
                   },
                   "list": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
@@ -7610,7 +7601,6 @@ body {
                   },
                   "list": Object {
                     "maxHeight": 320,
-                    "minHeight": 160,
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
@@ -59277,7 +59267,6 @@ body {
 .Main-header-5 {
   height: 32px;
   cursor: pointer;
-  z-index: 999;
   position: relative;
   user-select: none;
 }
@@ -59392,7 +59381,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   Object {
                     "color": "#414141",
@@ -59457,7 +59445,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   ".Main-headerDisabled-8": Object {},
                   ".Main-headerDisabled-8:hover": Object {
@@ -59543,7 +59530,6 @@ body {
                     "height": "32px",
                     "position": "relative",
                     "user-select": "none",
-                    "z-index": "999",
                   },
                   "headerDisabled": Object {},
                   "icon": Object {
@@ -60129,7 +60115,6 @@ body {
                     "height": 32,
                     "position": "relative",
                     "userSelect": "none",
-                    "zIndex": 999,
                   },
                   "headerDisabled": Object {
                     "&:hover": Object {
@@ -61439,7 +61424,6 @@ body {
 .List-list-15 {
   overflow: auto;
   max-height: 320px;
-  min-height: 160px;
 }
 .List-hidden-16 {
   display: none;
@@ -61535,7 +61519,6 @@ body {
                   },
                   Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   Object {
@@ -61610,7 +61593,6 @@ body {
                   },
                   ".List-list-15": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   ".List-marginBottom-26": Object {
@@ -61679,7 +61661,6 @@ body {
                   },
                   "list": Object {
                     "max-height": "320px",
-                    "min-height": "160px",
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
@@ -62248,7 +62229,6 @@ body {
                   },
                   "list": Object {
                     "maxHeight": 320,
-                    "minHeight": 160,
                     "overflow": "auto",
                   },
                   "marginBottom": Object {
