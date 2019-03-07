@@ -119,7 +119,7 @@ Main.propTypes = {
   /**
    *  The renderable content inside the title slot of the header.
    */
-  HeaderTitle: PropTypes.node.isRequired,
+  HeaderTitle: PropTypes.node,
   /**
    *  The renderable content inside the subheader slot of the header.
    */
@@ -186,6 +186,7 @@ Main.defaultProps = {
   children: undefined,
   Icon: undefined,
   Subheader: undefined,
+  HeaderTitle: undefined,
   InnerCardContent: undefined,
   onSelect: () => {},
   Actions: null,
