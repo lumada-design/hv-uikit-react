@@ -151,7 +151,7 @@ Main.propTypes = {
   /**
    *  The border color at the top of the card.
    */
-  cardColor: PropTypes.oneOf(["none", "info", "warning", "error"]),
+  cardColor: PropTypes.oneOf(["none", "info", "warning", "error", "alert", "neutral", "success"]),
   /**
    *  The function that will be executed when the card is selected.
    */

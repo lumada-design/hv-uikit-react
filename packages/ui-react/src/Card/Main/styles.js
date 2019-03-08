@@ -9,8 +9,17 @@
  */
 
 const styles = theme => ({
+  success: {
+    borderTop: `4px solid ${theme.palette.semantic.sema1}`
+  },
+  neutral: {
+    borderTop: `4px solid ${theme.palette.semantic.sema2}`
+  },
   info: {
     borderTop: `4px solid ${theme.palette.semantic.sema3}`
+  },
+  alert: {
+    borderTop: `4px solid ${theme.palette.semantic.sema4}`
   },
   warning: {
     borderTop: `4px solid ${theme.palette.semantic.sema5}`
