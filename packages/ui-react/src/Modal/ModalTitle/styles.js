@@ -16,7 +16,7 @@ const styles = () => ({
   messageContainer: {
     display: "flex",
   },
-  textContainer: {
+  textWithIcon: {
     paddingLeft: "58px"
   },
   icon: {

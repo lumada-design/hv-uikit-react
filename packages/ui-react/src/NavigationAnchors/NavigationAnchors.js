@@ -34,7 +34,7 @@ class NavigationAnchors extends React.Component {
   };
 
   render() {
-    const { classes, options, href } = this.props;
+    const { classes, options, href, floating } = this.props;
     const { selectedIndex } = this.state;
 
     return (
@@ -44,7 +44,7 @@ class NavigationAnchors extends React.Component {
         anchor="left"
         open
         classes={{
-          paper: classes.drawerPaper
+          paper: classNames(classes.drawerPaper,{[classes.drawerPaperPositionInherit]: !floating })
         }}
       >
         <List
@@ -123,12 +123,17 @@ NavigationAnchors.propTypes = {
   /**
    * A callback called on click of every list item, if the href is false
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /** 
+   * Wether the anchors are always in a fixed position 
+   */
+  floating: PropTypes.bool
 };
 
 NavigationAnchors.defaultProps = {
   href: true,
-  onClick: undefined
+  onClick: undefined,
+  floating: true
 };
 
 export default NavigationAnchors;

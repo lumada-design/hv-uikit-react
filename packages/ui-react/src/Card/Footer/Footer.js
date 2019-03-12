@@ -65,7 +65,20 @@ Footer.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component.
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the actions left container of the component.
+     */
+    leftContainer: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the actions right container of the component. Used when selection is active.
+     */
+    rightContainer: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    *  The renderable content inside the Actions slot of the footer.
    */
@@ -108,4 +121,4 @@ Footer.defaultProps = {
   checkboxIndeterminate: undefined
 };
 
-export default withConfig(Footer);
+export default Footer;

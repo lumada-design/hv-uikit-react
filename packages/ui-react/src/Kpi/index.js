@@ -9,7 +9,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Kpi from "./Kpi";
+import styles from "./Main/styles";
+import Kpi from "./Main/Kpi";
 
 export default withStyles(styles, { withTheme: true })(Kpi);

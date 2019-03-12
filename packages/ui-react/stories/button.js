@@ -1,6 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvButton, buttonTypes, HvShowCase, HvShowCaseHeader } from "../src";
+import HvShowCase from "./utils/Showcase";
+import HvShowCaseHeader from "./utils/ShowcaseHeader";
+import HvButton from "../src";
+import buttonTypes from "../src/Button/Main/buttonTypes";
 
 const disabled = true;
 const value = 1;

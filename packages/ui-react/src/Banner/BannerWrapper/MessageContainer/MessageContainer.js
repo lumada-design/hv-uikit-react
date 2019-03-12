@@ -49,7 +49,7 @@ MessageContainer.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.string,
+  classes: PropTypes.instanceOf(Object),
   /**
    * Icon to be presented.
    */

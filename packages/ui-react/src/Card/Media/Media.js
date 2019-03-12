@@ -31,6 +31,19 @@ const Media = ({ classes, mediaPath, mediaTitle, mediaHeight, ...other }) => (
 
 Media.propTypes = {
   /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the root of the element.
+     */
+    mediaContainer: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the root element if component="video, audio, picture, iframe, or img".
+     */
+    media: PropTypes.instanceOf(Object)
+  }).isRequired,
+  /**
    *  The title of the media.
    */
   mediaTitle: PropTypes.string,
@@ -41,11 +54,7 @@ Media.propTypes = {
   /**
    *  The height necessary to adjust the media container to the image.
    */
-  mediaHeight: PropTypes.number,
-  /**
-   * A Jss Object used to override or extend the styles applied to the button.
-   */
-  classes: PropTypes.instanceOf(Object).isRequired
+  mediaHeight: PropTypes.number
 };
 
 Media.defaultProps = {

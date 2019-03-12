@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvDatePicker } from "../src";
+import HvDatePicker from "../src/DatePicker";
 
 class WrapperWithState extends React.Component {
   state = {

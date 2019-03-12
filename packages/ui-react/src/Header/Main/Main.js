@@ -38,6 +38,7 @@ import Actions from "../Actions";
  */
 const Main = ({
   classes,
+  position,
   navigationData,
   selected,
   onNavigationClick,
@@ -54,7 +55,7 @@ const Main = ({
   const userExists = !(isNill(userData) && isNill(userIcon));
 
   return (
-    <AppBar color="default" className={classes.root}>
+    <AppBar color="default" position={position} className={classes.root}>
       <Toolbar variant="dense">
         <Brand
           companyLogo={companyLogo}
@@ -79,7 +80,22 @@ Main.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.instanceOf(Object)
+  }).isRequired,
+  /**
+   * The position property of the header.
+   */
+  position: PropTypes.PropTypes.oneOf([
+    "fixed",
+    "absolute",
+    "sticky",
+    "static",
+    "relative"
+  ]),
   /**
    * Company logo. Can be a path for a image or a component.
    */
@@ -142,6 +158,8 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  position: "fixed",
+
   companyLogo: null,
   productText: null,
   productLogo: null,

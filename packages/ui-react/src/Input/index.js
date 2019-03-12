@@ -9,7 +9,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Input from "./Input";
+import styles from "./Main/styles";
+import Input from "./Main/Input";
 
 export default withStyles(styles, { withTheme: true })(Input);

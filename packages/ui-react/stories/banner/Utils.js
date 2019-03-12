@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvBanner } from "../../src";
-import styles from "../../src/Banner/styles";
+import styles from "../../src/Banner/Main/styles";
 import HvBannerContentWrapper from "../../src/Banner/BannerWrapper";
 
 export class SimpleBanner extends React.Component {

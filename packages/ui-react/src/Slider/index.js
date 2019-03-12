@@ -9,7 +9,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Slider from "./Slider";
+import styles from "./Main/styles";
+import Slider from "./Main/Slider";
 
 export default withStyles(styles, { withTheme: true })(Slider);

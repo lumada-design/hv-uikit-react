@@ -9,7 +9,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Snackbar from "./Snackbar";
+import styles from "./Main/styles";
+import Snackbar from "./Main/Snackbar";
 
 export default withStyles(styles, { withTheme: true })(Snackbar);

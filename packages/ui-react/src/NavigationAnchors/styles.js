@@ -15,6 +15,10 @@ const styles = theme => ({
     background: "none",
     borderRight: "none"
   },
+  drawerPaperPositionInherit: {
+    position: "inherit"
+  }
+  ,
   listRoot: {
     borderLeft: `1px solid ${theme.palette.grey.plain}`
   },

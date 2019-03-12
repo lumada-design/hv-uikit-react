@@ -4,7 +4,8 @@ import { storiesOf } from "@storybook/react";
 import { FastForward16 } from "@hv-ui/icons/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
-import { HvShowCase, HvSnackbar } from "../src";
+import HvShowCase from "./utils/Showcase";
+import HvSnackbar from "../src/Snackbar";
 import HvSnackbarContentWrapper from "../src/Snackbar/SnackbarContentWrapper";
 import styles from "../src/Snackbar/SnackbarContentWrapper/styles";
 

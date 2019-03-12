@@ -69,7 +69,7 @@ const styles = theme => ({
   listClosed: {
     display: "none"
   },
-  open: {
+  listOpen: {
     display: "block"
   },
   icon: {

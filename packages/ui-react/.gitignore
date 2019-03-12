@@ -39,3 +39,6 @@ coverage
 dist
 core
 
+# exception for doc files
+!doc/samples/core
+

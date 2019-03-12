@@ -14,7 +14,10 @@ import classNames from "classnames";
 import CardHeader from "@material-ui/core/CardHeader";
 
 /**
- * The header container that possses three slots one for the icon one for the title and one for the subheader
+ * The header container that possesses three slots:
+ * - icon
+ * - title
+ * - subheader
  *
  * @param {*} { classes, HeaderTitle, Subheader, Icon, needsBorder }
  */
@@ -36,6 +39,47 @@ const Header = ({ classes, HeaderTitle, Subheader, Icon, needsBorder }) => (
 
 Header.propTypes = {
   /**
+   * A Jss Object used to override or extend the styles applied to the button.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component.
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the bottom border of the component is needed.
+     */
+    bottomBorder: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the title Typography element.
+     */
+    title: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the subheader Typography element.
+     */
+    subheader: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the action element.
+     */
+    action: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    icon: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    info: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    warning: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    critical: PropTypes.instanceOf(Object)
+  }).isRequired,
+  /**
    *  The renderable content inside the title slot of the header.
    */
   HeaderTitle: PropTypes.node.isRequired,
@@ -47,10 +91,7 @@ Header.propTypes = {
    * If the Header requires a bottom border
    */
   needsBorder: PropTypes.bool,
-  /**
-   * A Jss Object used to override or extend the styles applied to the button.
-   */
-  classes: PropTypes.instanceOf(Object).isRequired,
+
   /**
    *  The renderable content inside the icon slot of the header.
    */

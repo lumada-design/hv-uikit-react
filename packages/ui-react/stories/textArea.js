@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { TextArea } from "../src";
+import TextArea from "../src/TextArea";
 
 storiesOf("TextArea", module)
   .add("Normal", () => (

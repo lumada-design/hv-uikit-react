@@ -30,19 +30,6 @@ const styles = theme => ({
     marginTop: 0,
     marginRight: "-1px",
     paddingLeft: `${theme.spacing.xs}px`
-  },
-  icon: {
-    fontSize: "32px",
-    margin: `${theme.spacing.xs}px`
-  },
-  info: {
-    color: theme.palette.status.success
-  },
-  warning: {
-    color: theme.palette.status.warning
-  },
-  critical: {
-    color: theme.palette.status.error
   }
 });
 

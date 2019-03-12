@@ -11,5 +11,6 @@
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Footer from "./Footer";
+import withConfig from "../../config/withConfig";
 
-export default withStyles(styles, { withTheme: true })(Footer);
+export default withStyles(styles, { withTheme: true })(withConfig(Footer));
