@@ -8,6 +8,10 @@
  *  under which the software has been supplied.
  */
 
-const styles = theme => ({});
+const styles = theme => ({
+  props: {
+    marginTop: 20
+  }
+});
 
 export default styles;

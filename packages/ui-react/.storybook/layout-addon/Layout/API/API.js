@@ -13,7 +13,6 @@ import PropsTable from "../PropsTable";
 
 const HvAPI = ({ classes, propsMetaData }) => (
   <React.Fragment>
-    <h3>Prop Types</h3>
     <div className={classes.props}>
       <PropsTable propsMetaData={propsMetaData} />
     </div>

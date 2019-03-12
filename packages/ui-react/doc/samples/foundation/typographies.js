@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import theme from "@hv-ui/themes/dist/theme.json";
-import startCase from "lodash/startCase";
 import Collapse from "@material-ui/core/Collapse";
 import HvButton from "../../../src/Button";
 
@@ -10,7 +11,7 @@ const styles = () => ({
   group: {
     margin: "10px",
     padding: "10px",
-    width: "300px"
+    width: "500px"
   },
   groupName: {
     ...theme.typography.mediumTitle,
@@ -24,8 +25,7 @@ const styles = () => ({
   sentenceContainer: {
     display: "flex",
     padding: "10px",
-    backgroundColor: theme.palette.atmosphere.atmo4,
-    border: `1px solid ${theme.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.palette.atmosphere.atmo5}`
   },
   container: {
     display: "flex",
@@ -39,13 +39,6 @@ const styles = () => ({
 const text =
   "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
 
-const TypographyProp = ({ classes, name, value }) => (
-  <div className={classes.container}>
-    <Typography variant="subtitle1">{`${startCase(name)}:`}</Typography>
-    <Typography variant="body1">{`${value}`}</Typography>
-  </div>
-);
-
 const CodeButton = ({ classes, onClick }) => (
   <HvButton className={classes.iconCode} colorType="link" onClick={onClick}>
     {"< >"}
@@ -53,7 +46,6 @@ const CodeButton = ({ classes, onClick }) => (
 );
 
 const Group = ({ classes, name, typography }) => {
-  const keys = Object.keys(typography);
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
 
   return (
@@ -70,15 +62,13 @@ const Group = ({ classes, name, typography }) => {
       </div>
 
       <Collapse in={snippetIsOpen}>
-        <div className={classes.typographyInfoContainer}>
-          {keys.map(property => (
-            <TypographyProp
-              classes={classes}
-              name={property}
-              value={typography[property]}
-            />
-          ))}
-        </div>
+        <SyntaxHighlighter
+          language="css"
+          style={prism}
+          customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
+        >
+          {JSON.stringify(typography, null, 4)}
+        </SyntaxHighlighter>
       </Collapse>
     </div>
   );
@@ -99,7 +89,7 @@ const Typographies = ({ classes }) => {
             name={group}
             typography={typography[group]}
           />
-          ))}
+        ))}
     </div>
   );
 };

@@ -710,9 +710,9 @@ exports[`Card withStyles should render correctly 1`] = `
       Icon="icon"
       InnerCardContent="content"
       Subheader="subtitle"
-      cardColor="error"
       checkboxValue="value"
       isSelectable={true}
+      variant="error"
     />
   </ContextProvider>
 </MuiThemeProviderOld>
