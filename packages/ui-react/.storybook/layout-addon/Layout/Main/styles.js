@@ -36,6 +36,9 @@ const styles = theme => ({
     fontSize: 25,
     lineHeight: "50px"
   },
+  link: {
+    fontSize: 12
+  },
   description: {
     ...theme.hv.typography.normalText,
     marginBottom: 20,

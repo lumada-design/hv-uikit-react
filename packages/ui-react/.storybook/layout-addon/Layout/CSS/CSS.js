@@ -13,7 +13,6 @@ import CSSTable from "../CSSTable";
 
 const HvCSS = ({ classes, propsMetaData }) => (
   <React.Fragment>
-    <h3>Prop Types</h3>
     <div className={classes.props}>
       <CSSTable propsMetaData={propsMetaData["classes"].type.value} />
     </div>

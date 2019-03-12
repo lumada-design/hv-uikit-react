@@ -48,11 +48,18 @@ const Main = ({ classes, children, context }) => {
       <div className={classes.content}>
         {title ? (
           <>
-            <div className={classes.title}>{title}</div>
+            <div className={classes.title}>
+              {title}
+              <span className={classes.link}>
+                {designSystemLink && (
+                  <HvLink route={designSystemLink}>
+                     &nbsp;&nbsp;[DS Pattern]
+                  </HvLink>
+                )}
+              </span>
+            </div>
+
             <div className={classes.description}>{description}</div>
-            {designSystemLink && <HvLink route={designSystemLink}>
-              Design System Pattern Link
-            </HvLink>}
             <Tabs
               parameters={parameters}
               propsMetaData={getPropsMetadata(children)}
