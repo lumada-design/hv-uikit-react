@@ -19,9 +19,30 @@
 const styles = theme => ({
   input: {
     height: "auto",
-    padding: "10px 0px"
+    padding: "10px 0px",
+    overflow: "auto"
   },
-  container: {}
+  characterCounter: {
+    textAlign: "end",
+    paddingTop: `${theme.spacing.xs}px`,
+    minWidth: "150px",
+    maxWidth: "610px"
+  },
+  inline: {
+    display: "inline"
+  },
+  separator: {
+    margin: `0 3px`
+  },
+  disabled: {
+    ...theme.typography.disabled
+  },
+  maxCharacter: {
+    ...theme.typography.body2
+  },
+  currentCounter: {
+    ...theme.typography.subtitle2
+  }
 });
 
 export default styles;

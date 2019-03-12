@@ -1,32 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea Component should render correctly if opened 1`] = `
-<WithStyles(HvInput)
-  classes={
-    Object {
-      "container": undefined,
-      "input": undefined,
+<Fragment>
+  <WithStyles(HvInput)
+    classes={
+      Object {
+        "container": undefined,
+        "input": undefined,
+      }
     }
-  }
-  disabled={false}
-  iconVisible={false}
-  inputTextConfiguration={
-    Object {
-      "infoText": "",
-      "inputLabel": "",
-      "maxCharQuantityWarningText": "The value is too big",
-      "minCharQuantityWarningText": "The value is too short",
-      "placeholder": "enter value",
-      "requiredWarningText": "The value is required",
-      "warningText": "something wrong",
+    disabled={false}
+    iconVisible={false}
+    inputTextConfiguration={
+      Object {
+        "inputLabel": "",
+        "maxCharQuantityWarningText": "",
+        "minCharQuantityWarningText": "",
+        "placeholder": "",
+        "requiredWarningText": "",
+        "warningText": "",
+      }
     }
-  }
-  multiline={true}
-  onChange={[Function]}
-  rows={4}
-  validate={false}
-  value="test"
-/>
+    multiline={true}
+    onChange={[Function]}
+    rows={4}
+    validate={false}
+    value="test"
+  />
+</Fragment>
 `;
 
 exports[`TextArea withStyles should render correctly 1`] = `
@@ -60,9 +61,9 @@ exports[`TextArea withStyles should render correctly 1`] = `
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#4389DB",
+            "acce1H": "#676767",
             "acce2": "#146BD2",
-            "acce2h": "#676767",
+            "acce2h": "#4389DB",
             "acce3": "#CC0000",
           },
           "atmosphere": Object {
@@ -299,9 +300,9 @@ exports[`TextArea withStyles should render correctly 1`] = `
       "palette": Object {
         "accent": Object {
           "acce1": "#414141",
-          "acce1H": "#4389DB",
+          "acce1H": "#676767",
           "acce2": "#146BD2",
-          "acce2h": "#676767",
+          "acce2h": "#4389DB",
           "acce3": "#CC0000",
         },
         "action": Object {
@@ -733,7 +734,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(TextArea) />
+    <WithStyles(HvTextArea) />
   </ContextProvider>
 </MuiThemeProviderOld>
 `;

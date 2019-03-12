@@ -12,7 +12,7 @@
 
 // import { mount } from "enzyme";
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import HvProvider from "../../Provider";
 
@@ -46,5 +46,33 @@ describe("TextArea Component", () => {
 
   it("should render correctly if opened", () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should save the current value length on change", () => {
+    const value = "value";
+    const onChangeMock = jest.fn(() => value);
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextAreaWithStyles classes={{}} rows={4} value="test" onChange={onChangeMock} maxCharQuantity={10} />
+      </HvProvider>
+    );
+    const instance = wrapperMount.find(TextArea).instance();
+    instance.onChangeHandler(value);
+    expect(onChangeMock).toHaveBeenCalled();
+    expect(instance.state.currentValueLength).toBe(5);
+  });
+
+  it("should limit the current value length on change", () => {
+    const value = "value value value";
+    const onChangeMock = jest.fn(() => value);
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextAreaWithStyles classes={{}} rows={4} value="test" onChange={onChangeMock} maxCharQuantity={5} />
+      </HvProvider>
+    );
+    const instance = wrapperMount.find(TextArea).instance();
+    instance.onChangeHandler(value);
+    expect(onChangeMock).toHaveBeenCalled();
+    expect(instance.state.currentValueLength).toBe(5);
   });
 });
