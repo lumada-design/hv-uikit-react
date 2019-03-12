@@ -34,7 +34,7 @@ const withPopper = (Component, content) => {
       const id = open ? "simple-popper" : null;
 
       return (
-        <div>
+        <>
           <Component
             onMouseEnter={e => this.togglePopper(e, true)}
             onMouseLeave={e => this.togglePopper(e, false)}
@@ -46,7 +46,7 @@ const withPopper = (Component, content) => {
             content={content}
             classes={classes}
           />
-        </div>
+        </>
       );
     }
   }
