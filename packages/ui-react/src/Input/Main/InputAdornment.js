@@ -12,9 +12,9 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-import Success from "../../../../ui-icons/core/S-icons/Level0Success16Color";
-import Close from "../../../../ui-icons/core/S-icons/Close16";
-import Unsuccess from "../../../../ui-icons/core/S-icons/Level5Unsuccess16Color";
+import Success from "@hv-ui/icons/core/S-icons/Level0Success16Color";
+import Close from "@hv-ui/icons/core/S-icons/Close16";
+import Unsuccess from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
 
 import validationStates from "./validationStates";
 
