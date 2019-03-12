@@ -1,8 +1,6 @@
 import React from "react";
 import HvSnackbar from "@hv-ui/react/core/Snackbar";
 import Button from "@material-ui/core/Button";
-import HvShowCase from "../../../../stories/snackbar";
-
 
 class SimpleSnackbar extends React.Component {
   state = {
@@ -78,7 +76,6 @@ export default (
       <SimpleSnackbar message="error" variant="error" showIcon />
     </div>
   </div>
-
 
   //<SimpleSnackbar message="Click Me" variant="default" showIcon />
 );
