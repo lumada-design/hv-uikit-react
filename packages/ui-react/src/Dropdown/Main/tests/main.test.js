@@ -14,7 +14,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
-import HvButton from "../../../Button/Button";
+import HvButton from "../../../Button/Main/Button";
 import HvCheckBox from "../../../Selectors/CheckBox/CheckBox";
 import MainWrapper from "../index";
 import Main from "../Main";

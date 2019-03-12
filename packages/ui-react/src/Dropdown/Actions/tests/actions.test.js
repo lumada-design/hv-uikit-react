@@ -16,7 +16,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import ActionsWrapper from "../index";
 import Actions from "../Actions";
-import HvButton from "../../../Button/Button";
+import HvButton from "../../../Button/Main/Button";
 
 const mockData = [
   {

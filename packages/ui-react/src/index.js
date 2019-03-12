@@ -21,13 +21,11 @@ export { default as HvTable } from "./Table";
 export { default as HvSlider } from "./Slider";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
-export { default as HvShowCase, HvShowCaseHeader } from "./Showcase";
 export { default as HvSnackbar } from "./Snackbar";
 export { Modal, ModalTitle, ModalContent, ModalActions } from "./Modal";
 export { default as TextArea } from "./TextArea";
 export { default as HvKpi } from "./Kpi";
 export { default as HvBanner } from "./Banner";
-
 export { default as HvInput}  from "./Input";
 export { default as HvSearchBox } from "./SearchBox";
 export { default as HvEmptyState } from "./EmptyState";

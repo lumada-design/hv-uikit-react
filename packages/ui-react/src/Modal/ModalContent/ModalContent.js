@@ -41,7 +41,16 @@ ModalContent.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component (container for the content).
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Style applied when the content is a string.
+     */
+    textContent: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * Content to be render.
    */

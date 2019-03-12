@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvNavigationAnchors } from "../src";
+import HvNavigationAnchors from "../src/NavigationAnchors";
 
 const options = [
   {

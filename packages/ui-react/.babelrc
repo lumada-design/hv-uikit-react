@@ -7,7 +7,9 @@
     [
       "module-resolver",
       {
-        "root": ["./src"]
+        "alias": {
+          "@hv-ui/react/core": "./src"
+        }
       }
     ]
   ]

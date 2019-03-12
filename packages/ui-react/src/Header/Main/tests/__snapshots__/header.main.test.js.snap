@@ -12,6 +12,7 @@ exports[`Header withStyles should render correctly 1`] = `
   itemActions={Array []}
   navigationData={Array []}
   onNavigationClick={[Function]}
+  position="fixed"
   productLogo={null}
   productText={null}
   selected={0}

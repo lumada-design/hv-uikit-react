@@ -18,7 +18,7 @@ import HvProvider from "../../Provider";
 import HvLogin from "../Main/Main";
 import LoginForm from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
-import HvButton from "../../Button/Button";
+import HvButton from "../../Button/Main/Button";
 import Title from "../Forms/Login/Title/Title";
 
 describe("Login ", () => {

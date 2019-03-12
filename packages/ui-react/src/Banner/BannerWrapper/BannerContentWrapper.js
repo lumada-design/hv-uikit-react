@@ -72,7 +72,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.string,
+  classes: PropTypes.instanceOf(Object),
   /**
    * The message to display.
    */

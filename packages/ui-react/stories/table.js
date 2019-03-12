@@ -1,9 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import ActionsPopover from "./table/ActionsPopover";
-import ActionsList from "./table/ActionsList";
-import { HvTable } from "../src";
+import HvTable from "../src/Table";
 import getColumns from "./table/columns";
 import data from "./table/data.json";
 import dataTypicalExample from "./table/typicalTableExample/data";

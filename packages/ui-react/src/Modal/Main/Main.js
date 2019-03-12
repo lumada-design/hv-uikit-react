@@ -64,7 +64,20 @@ Main.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the background (outside) of the component.
+     */
+    background: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the component (root).
+     */
+    paper: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the close button.
+     */
+    closeButton: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * Components of the modal.
    */

@@ -42,9 +42,9 @@ exports[`Login  should render correctly 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -281,9 +281,9 @@ exports[`Login  should render correctly 1`] = `
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -3420,9 +3420,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -3659,9 +3659,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -5871,9 +5871,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -6110,9 +6110,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -8062,9 +8062,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -8301,9 +8301,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -9840,9 +9840,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -10079,9 +10079,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -12740,9 +12740,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -12979,9 +12979,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -13975,8 +13975,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -15636,9 +15636,9 @@ input:-webkit-autofill {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -15875,9 +15875,9 @@ input:-webkit-autofill {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -18268,9 +18268,9 @@ label + .MuiInput-formControl-241 {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -18507,9 +18507,9 @@ label + .MuiInput-formControl-241 {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -19484,8 +19484,8 @@ label + .MuiInput-formControl-241 {
 }
 .MuiInputBase-input-263 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -20618,9 +20618,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -20857,9 +20857,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -22613,9 +22613,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -22852,9 +22852,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -24492,9 +24492,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -24731,9 +24731,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -26319,9 +26319,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -26558,9 +26558,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -28144,9 +28144,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -28383,9 +28383,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -31255,9 +31255,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -31494,9 +31494,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -32424,15 +32424,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   
 .MuiButtonBase-root-303 {
   color: inherit;
-  border: 0;
-  margin: 0;
   cursor: pointer;
+  margin: 0;
+  border: 0;
   display: inline-flex;
-  outline: none;
   padding: 0;
+  outline: none;
   position: relative;
-  align-items: center;
   user-select: none;
+  align-items: center;
   border-radius: 0;
   vertical-align: middle;
   justify-content: center;
@@ -33116,9 +33116,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -33355,9 +33355,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -35285,9 +35285,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -35524,9 +35524,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -36503,11 +36503,11 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
   padding: 6px 16px;
   font-size: 14px;
   min-width: 64px;
-  box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-sizing: border-box;
+  font-weight: 600;
   line-height: 21px;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
   border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -41048,9 +41048,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1H": "#676767",
+              "acce1H": "#4389DB",
               "acce2": "#146BD2",
-              "acce2h": "#4389DB",
+              "acce2h": "#676767",
               "acce3": "#CC0000",
             },
             "atmosphere": Object {
@@ -41287,9 +41287,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#676767",
+            "acce1H": "#4389DB",
             "acce2": "#146BD2",
-            "acce2h": "#4389DB",
+            "acce2h": "#676767",
             "acce3": "#CC0000",
           },
           "action": Object {
@@ -41767,9 +41767,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1H": "#4389DB",
                   "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
+                  "acce2h": "#676767",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -42006,9 +42006,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#676767",
+                "acce1H": "#4389DB",
                 "acce2": "#146BD2",
-                "acce2h": "#4389DB",
+                "acce2h": "#676767",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -42512,9 +42512,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                         "palette": Object {
                           "accent": Object {
                             "acce1": "#414141",
-                            "acce1H": "#676767",
+                            "acce1H": "#4389DB",
                             "acce2": "#146BD2",
-                            "acce2h": "#4389DB",
+                            "acce2h": "#676767",
                             "acce3": "#CC0000",
                           },
                           "atmosphere": Object {
@@ -42751,9 +42751,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1H": "#676767",
+                          "acce1H": "#4389DB",
                           "acce2": "#146BD2",
-                          "acce2h": "#4389DB",
+                          "acce2h": "#676767",
                           "acce3": "#CC0000",
                         },
                         "action": Object {
@@ -43228,9 +43228,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "atmosphere": Object {
@@ -43467,9 +43467,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1H": "#4389DB",
                                   "acce2": "#146BD2",
-                                  "acce2h": "#4389DB",
+                                  "acce2h": "#676767",
                                   "acce3": "#CC0000",
                                 },
                                 "action": Object {
@@ -43997,9 +43997,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -44236,9 +44236,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -44759,9 +44759,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "atmosphere": Object {
@@ -44998,9 +44998,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1H": "#4389DB",
                                   "acce2": "#146BD2",
-                                  "acce2h": "#4389DB",
+                                  "acce2h": "#676767",
                                   "acce3": "#CC0000",
                                 },
                                 "action": Object {
@@ -45533,9 +45533,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -45772,9 +45772,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -46487,9 +46487,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -46726,9 +46726,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -47244,9 +47244,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "atmosphere": Object {
@@ -47483,9 +47483,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1H": "#4389DB",
                                   "acce2": "#146BD2",
-                                  "acce2h": "#4389DB",
+                                  "acce2h": "#676767",
                                   "acce3": "#CC0000",
                                 },
                                 "action": Object {
@@ -48018,9 +48018,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -48257,9 +48257,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -48972,9 +48972,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -49211,9 +49211,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -49707,9 +49707,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "atmosphere": Object {
@@ -49946,9 +49946,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1H": "#4389DB",
                                   "acce2": "#146BD2",
-                                  "acce2h": "#4389DB",
+                                  "acce2h": "#676767",
                                   "acce3": "#CC0000",
                                 },
                                 "action": Object {
@@ -50846,9 +50846,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                             "palette": Object {
                                               "accent": Object {
                                                 "acce1": "#414141",
-                                                "acce1H": "#676767",
+                                                "acce1H": "#4389DB",
                                                 "acce2": "#146BD2",
-                                                "acce2h": "#4389DB",
+                                                "acce2h": "#676767",
                                                 "acce3": "#CC0000",
                                               },
                                               "atmosphere": Object {
@@ -51085,9 +51085,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
-                                              "acce1H": "#676767",
+                                              "acce1H": "#4389DB",
                                               "acce2": "#146BD2",
-                                              "acce2h": "#4389DB",
+                                              "acce2h": "#676767",
                                               "acce3": "#CC0000",
                                             },
                                             "action": Object {
@@ -51524,7 +51524,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                           </WithStyles(WithFormControlContext(FormControlLabel))>
                         </HvCheckbox>
                       </WithStyles(HvCheckbox)>
-                      <WithStyles(HvButton)
+                      <HvButton
                         className="loginForm-button-177"
                         colorType="primary"
                         type="submit"
@@ -51571,9 +51571,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "atmosphere": Object {
@@ -51810,9 +51810,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1H": "#4389DB",
                                   "acce2": "#146BD2",
-                                  "acce2h": "#4389DB",
+                                  "acce2h": "#676767",
                                   "acce3": "#CC0000",
                                 },
                                 "action": Object {
@@ -52280,9 +52280,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
-                                      "acce1H": "#676767",
+                                      "acce1H": "#4389DB",
                                       "acce2": "#146BD2",
-                                      "acce2h": "#4389DB",
+                                      "acce2h": "#676767",
                                       "acce3": "#CC0000",
                                     },
                                     "atmosphere": Object {
@@ -52519,9 +52519,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "action": Object {
@@ -53016,9 +53016,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "atmosphere": Object {
@@ -53255,9 +53255,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
-                                      "acce1H": "#676767",
+                                      "acce1H": "#4389DB",
                                       "acce2": "#146BD2",
-                                      "acce2h": "#4389DB",
+                                      "acce2h": "#676767",
                                       "acce3": "#CC0000",
                                     },
                                     "action": Object {
@@ -53719,9 +53719,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -53958,9 +53958,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -54431,9 +54431,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
-                                            "acce1H": "#676767",
+                                            "acce1H": "#4389DB",
                                             "acce2": "#146BD2",
-                                            "acce2h": "#4389DB",
+                                            "acce2h": "#676767",
                                             "acce3": "#CC0000",
                                           },
                                           "atmosphere": Object {
@@ -54670,9 +54670,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "action": Object {
@@ -55141,9 +55141,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
-                                              "acce1H": "#676767",
+                                              "acce1H": "#4389DB",
                                               "acce2": "#146BD2",
-                                              "acce2h": "#4389DB",
+                                              "acce2h": "#676767",
                                               "acce3": "#CC0000",
                                             },
                                             "atmosphere": Object {
@@ -55380,9 +55380,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
-                                            "acce1H": "#676767",
+                                            "acce1H": "#4389DB",
                                             "acce2": "#146BD2",
-                                            "acce2h": "#4389DB",
+                                            "acce2h": "#676767",
                                             "acce3": "#CC0000",
                                           },
                                           "action": Object {
@@ -55818,7 +55818,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                             </Button>
                           </WithStyles(Button)>
                         </HvButton>
-                      </WithStyles(HvButton)>
+                      </HvButton>
                     </div>
                     <RecoveryLinkButton
                       classes={
@@ -55845,7 +55845,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       <div
                         className="loginForm-forgotCredentials-181"
                       >
-                        <WithStyles(HvButton)
+                        <HvButton
                           classes={
                             Object {
                               "textPrimary": "loginForm-linkButtonTypography-183",
@@ -55896,9 +55896,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
-                                      "acce1H": "#676767",
+                                      "acce1H": "#4389DB",
                                       "acce2": "#146BD2",
-                                      "acce2h": "#4389DB",
+                                      "acce2h": "#676767",
                                       "acce3": "#CC0000",
                                     },
                                     "atmosphere": Object {
@@ -56135,9 +56135,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
-                                    "acce1H": "#676767",
+                                    "acce1H": "#4389DB",
                                     "acce2": "#146BD2",
-                                    "acce2h": "#4389DB",
+                                    "acce2h": "#676767",
                                     "acce3": "#CC0000",
                                   },
                                   "action": Object {
@@ -56605,9 +56605,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "atmosphere": Object {
@@ -56844,9 +56844,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
-                                      "acce1H": "#676767",
+                                      "acce1H": "#4389DB",
                                       "acce2": "#146BD2",
-                                      "acce2h": "#4389DB",
+                                      "acce2h": "#676767",
                                       "acce3": "#CC0000",
                                     },
                                     "action": Object {
@@ -57341,9 +57341,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "atmosphere": Object {
@@ -57580,9 +57580,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
-                                        "acce1H": "#676767",
+                                        "acce1H": "#4389DB",
                                         "acce2": "#146BD2",
-                                        "acce2h": "#4389DB",
+                                        "acce2h": "#676767",
                                         "acce3": "#CC0000",
                                       },
                                       "action": Object {
@@ -58044,9 +58044,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
-                                            "acce1H": "#676767",
+                                            "acce1H": "#4389DB",
                                             "acce2": "#146BD2",
-                                            "acce2h": "#4389DB",
+                                            "acce2h": "#676767",
                                             "acce3": "#CC0000",
                                           },
                                           "atmosphere": Object {
@@ -58283,9 +58283,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
-                                          "acce1H": "#676767",
+                                          "acce1H": "#4389DB",
                                           "acce2": "#146BD2",
-                                          "acce2h": "#4389DB",
+                                          "acce2h": "#676767",
                                           "acce3": "#CC0000",
                                         },
                                         "action": Object {
@@ -58756,9 +58756,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
-                                              "acce1H": "#676767",
+                                              "acce1H": "#4389DB",
                                               "acce2": "#146BD2",
-                                              "acce2h": "#4389DB",
+                                              "acce2h": "#676767",
                                               "acce3": "#CC0000",
                                             },
                                             "atmosphere": Object {
@@ -58995,9 +58995,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
-                                            "acce1H": "#676767",
+                                            "acce1H": "#4389DB",
                                             "acce2": "#146BD2",
-                                            "acce2h": "#4389DB",
+                                            "acce2h": "#676767",
                                             "acce3": "#CC0000",
                                           },
                                           "action": Object {
@@ -59466,9 +59466,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                             "palette": Object {
                                               "accent": Object {
                                                 "acce1": "#414141",
-                                                "acce1H": "#676767",
+                                                "acce1H": "#4389DB",
                                                 "acce2": "#146BD2",
-                                                "acce2h": "#4389DB",
+                                                "acce2h": "#676767",
                                                 "acce3": "#CC0000",
                                               },
                                               "atmosphere": Object {
@@ -59705,9 +59705,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
-                                              "acce1H": "#676767",
+                                              "acce1H": "#4389DB",
                                               "acce2": "#146BD2",
-                                              "acce2h": "#4389DB",
+                                              "acce2h": "#676767",
                                               "acce3": "#CC0000",
                                             },
                                             "action": Object {
@@ -60143,7 +60143,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               </Button>
                             </WithStyles(Button)>
                           </HvButton>
-                        </WithStyles(HvButton)>
+                        </HvButton>
                       </div>
                     </RecoveryLinkButton>
                   </form>

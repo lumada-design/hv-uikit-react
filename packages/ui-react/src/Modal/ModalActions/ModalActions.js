@@ -37,7 +37,16 @@ ModalActions.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component (container for the actions).
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to each child action.
+     */
+    action: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * Actions of the modal.
    */

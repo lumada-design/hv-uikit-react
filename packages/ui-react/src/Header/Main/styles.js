@@ -10,7 +10,7 @@
 
 const styles = () => ({
   root: {
-    minWidth: "1366px"
+    minWidth: "1120px"
   }
 });
 

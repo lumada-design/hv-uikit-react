@@ -89,7 +89,20 @@ HvLogin.propTypes = {
   /**
    * the classes object to be applied into the root object.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the right container.
+     */
+    rightContainer: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the form, inside the right container.
+     */
+    formContainer: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * the function invoked for the log in
    */

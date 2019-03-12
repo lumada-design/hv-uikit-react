@@ -19,9 +19,7 @@ const styles = theme => ({
   },
   item: {
     padding: `0 0 ${theme.spacing.sm}px 0`
-  },
-  label: theme.hv.typography.labelText,
-  text: theme.hv.typography.normalText
+  }
 });
 
 export default styles;

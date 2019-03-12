@@ -1,6 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvInput, HvShowCase, HvShowCaseHeader } from "../src";
+import HvShowCase from "./utils/Showcase";
+import HvShowCaseHeader from "./utils/ShowcaseHeader";
+import HvInput from "../src/Input";
 
 const inputTextConfiguration = {
   placeholder: "Insert text",

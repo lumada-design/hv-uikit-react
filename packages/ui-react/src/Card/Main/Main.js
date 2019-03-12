@@ -30,7 +30,7 @@ import Media from "../Media";
  *   InnerCardContent,
  *   Actions,
  *   isSelectable,
- *   cardColor,
+ *   variant,
  *   onSelect,
  *   checkboxValue,
  *   checkboxLabel,
@@ -52,7 +52,7 @@ const Main = ({
   InnerCardContent,
   Actions,
   isSelectable,
-  cardColor,
+  variant,
   onSelect,
   checkboxValue,
   checkboxLabel,
@@ -101,7 +101,7 @@ const Main = ({
   );
 
   return (
-    <Card className={classNames(classes.root, classes[cardColor])} {...other}>
+    <Card className={classNames(classes.root, classes[variant])} {...other}>
       {children || defaultContent}
     </Card>
   );
@@ -111,7 +111,24 @@ Main.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the component when the variant is info.
+     */
+    info: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the component when the variant is warning.
+     */
+    warning: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the component when the variant is error.
+     */
+    error: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the component when the variant is none.
+     */
+    none: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * The content inside the card.
    */
@@ -181,7 +198,8 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
-  cardColor: "none",
+  variant: "none",
+  HeaderTitle: undefined,
   isSelectable: false,
   children: undefined,
   Icon: undefined,

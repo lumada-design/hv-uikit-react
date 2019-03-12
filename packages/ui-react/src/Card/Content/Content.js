@@ -33,7 +33,28 @@ Content.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root component.
+     */
+    content: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the bottom border of the component is needed.
+     */
+    bottomBorder: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    item: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    label: PropTypes.instanceOf(Object),
+    /**
+     *
+     */
+    text: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    *  The renderable content inside the body of the card.
    */

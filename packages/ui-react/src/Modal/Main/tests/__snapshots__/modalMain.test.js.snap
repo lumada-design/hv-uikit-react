@@ -22,7 +22,7 @@ exports[`Modal Component allows external props to be added 1`] = `
   onClose={[Function]}
   open={true}
 >
-  <WithStyles(HvButton)
+  <HvButton
     colorType="link"
     onClick={[Function]}
   >
@@ -33,7 +33,7 @@ exports[`Modal Component allows external props to be added 1`] = `
         }
       }
     />
-  </WithStyles(HvButton)>
+  </HvButton>
   Modal Content
 </WithStyles(Dialog)>
 `;
@@ -58,7 +58,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
   onClose={[Function]}
   open={true}
 >
-  <WithStyles(HvButton)
+  <HvButton
     className="testClassCloseButton"
     colorType="link"
     onClick={[Function]}
@@ -70,7 +70,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
         }
       }
     />
-  </WithStyles(HvButton)>
+  </HvButton>
   Modal Content
 </WithStyles(Dialog)>
 `;
@@ -95,7 +95,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
   onClose={[Function]}
   open={true}
 >
-  <WithStyles(HvButton)
+  <HvButton
     colorType="link"
     onClick={[Function]}
   >
@@ -106,7 +106,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
         }
       }
     />
-  </WithStyles(HvButton)>
+  </HvButton>
   Modal Content
 </WithStyles(Dialog)>
 `;
@@ -131,7 +131,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
   onClose={[Function]}
   open={false}
 >
-  <WithStyles(HvButton)
+  <HvButton
     colorType="link"
     onClick={[Function]}
   >
@@ -142,7 +142,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
         }
       }
     />
-  </WithStyles(HvButton)>
+  </HvButton>
   Modal Content
 </WithStyles(Dialog)>
 `;
@@ -167,7 +167,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
   onClose={[Function]}
   open={true}
 >
-  <WithStyles(HvButton)
+  <HvButton
     colorType="link"
     onClick={[Function]}
   >
@@ -178,7 +178,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
         }
       }
     />
-  </WithStyles(HvButton)>
+  </HvButton>
   Modal Content
 </WithStyles(Dialog)>
 `;
@@ -214,9 +214,9 @@ exports[`Modal withStyles should render correctly 1`] = `
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#676767",
+            "acce1H": "#4389DB",
             "acce2": "#146BD2",
-            "acce2h": "#4389DB",
+            "acce2h": "#676767",
             "acce3": "#CC0000",
           },
           "atmosphere": Object {
@@ -453,9 +453,9 @@ exports[`Modal withStyles should render correctly 1`] = `
       "palette": Object {
         "accent": Object {
           "acce1": "#414141",
-          "acce1H": "#676767",
+          "acce1H": "#4389DB",
           "acce2": "#146BD2",
-          "acce2h": "#4389DB",
+          "acce2h": "#676767",
           "acce3": "#CC0000",
         },
         "action": Object {

@@ -38,7 +38,7 @@ describe("Card withStyles", () => {
           Subheader={configuration.subtitle}
           InnerCardContent={configuration.content}
           Actions={configuration.actions}
-          cardColor="error"
+          variant="error"
           isSelectable
           checkboxValue="value"
         />
@@ -66,7 +66,7 @@ describe("Card withStyles", () => {
           InnerCardContent={configuration.content}
           Actions={configuration.actions}
           mediaPath="path"
-          cardColor="error"
+          variant="error"
           isSelectable
           checkboxValue="value"
         />

@@ -155,7 +155,7 @@ class Main extends React.Component {
           classes.list,
           classes.listClosed,
           {
-            [classes.open]: isOpen
+            [classes.listOpen]: isOpen
           }
         ])}
       >
@@ -205,7 +205,60 @@ Main.propTypes = {
   /**
    * A Jss Object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when is open.
+     */
+    rootActive: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when is disable.
+     */
+    rootDisabled: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the label.
+     */
+    label: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the header.
+     */
+    header: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the selection
+     */
+    selection: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the arrow
+     */
+    arrow: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied when the header is disable.
+     */
+    headerDisabled: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the list.
+     */
+    list: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied when the list is closed.
+     */
+    listClosed: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied when the list is open.
+     */
+    open: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied for truncating the list elements.
+     */
+    truncate: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * Label to display
    */

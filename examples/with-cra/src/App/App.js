@@ -10,7 +10,7 @@ const handleLogin = () => alert("Welcome!");
 
 const App = ({ classes }) => (
   <div>
-    <HvHeader companyLogo={companyLogo}/>
+    <HvHeader companyLogo={companyLogo} />
     <div className={classes.login}>
       <HvLogin login={handleLogin} backgroundImage={backgroundImage} />
     </div>

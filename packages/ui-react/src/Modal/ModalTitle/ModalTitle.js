@@ -49,7 +49,7 @@ const ModalTitle = ({
     <MuiDialogTitle className={classes.root} disableTypography {...others}>
       <div className={classes.messageContainer}>
         {icon}
-        <div className={classNames({[classes.textContainer]:icon})}>
+        <div className={classNames({ [classes.textWithIcon]: icon })}>
           {!isString && children}
           {isString && <Typography variant="h4">{children}</Typography>}
         </div>
@@ -62,7 +62,24 @@ ModalTitle.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component (container for the title).
+     */
+    root: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the container of the title
+     */
+    messageContainer: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the text when the icon is present.
+     */
+    textWithIcon: PropTypes.instanceOf(Object),
+    /**
+     * Style applied to the icon.
+     */
+    icon: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    * Variant of the modal.
    */

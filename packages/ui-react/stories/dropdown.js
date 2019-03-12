@@ -1,6 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvDropdown, HvShowCase, HvShowCaseHeader } from "../src";
+import HvDropdown from "../src/Dropdown";
+import HvShowCase from "./utils/Showcase";
+import HvShowCaseHeader from "./utils/ShowcaseHeader";
 
 const HvShowCaseStyle = {
   min: {

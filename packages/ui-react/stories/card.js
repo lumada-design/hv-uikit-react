@@ -79,7 +79,7 @@ storiesOf("Card", module)
           )}
           InnerCardContent={<MultipleActionsWithMedia />}
           Actions={<MultipleActionsWithMediaButtons />}
-          cardColor="error"
+          variant="error"
           isSelectable
           checkboxValue="value"
           mediaPath={leaf}
@@ -93,7 +93,7 @@ storiesOf("Card", module)
     <>
       <HvShowCaseHeader reviewed date="2018/Dec/28" />
       <HvShowCase title="Card with all elements" style={separation}>
-        <HvCard cardColor="error">
+        <HvCard variant="error">
           <HvCardMedia mediaPath={leaf} mediaHeight={160} />
           <HvCardFooter
             Actions={<MultipleActionsWithMediaButtons />}
@@ -108,7 +108,7 @@ storiesOf("Card", module)
     <>
       <HvShowCaseHeader reviewed date="2018/Dec/28" />
       <HvShowCase title="Card with all elements" style={separation}>
-        <HvCard cardColor="error">
+        <HvCard variant="error">
           <HvCardHeader
             HeaderTitle="Asset Avatar L90"
             Subheader="Compressor"
@@ -135,7 +135,7 @@ storiesOf("Card", module)
           Subheader={configurationNoMedia.subtitle}
           InnerCardContent={<MultipleActions />}
           Actions={<MultipleActionsButtons />}
-          cardColor="none"
+          variant="none"
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
         />
@@ -150,7 +150,7 @@ storiesOf("Card", module)
           HeaderTitle={configurationNoMedia.title}
           Subheader={configurationNoMedia.subtitle}
           InnerCardContent={<MultipleActions />}
-          cardColor="none"
+          variant="none"
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
         />
@@ -163,7 +163,7 @@ storiesOf("Card", module)
       <HvShowCase title="Card with all elements" style={separation}>
         <HvCard
           HeaderTitle={configurationNoMedia.title}
-          cardColor="none"
+          variant="none"
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
         />
@@ -186,7 +186,7 @@ storiesOf("Card", module)
               Icon={<Icon />}
               HeaderTitle="Replace contaminated oil"
               InnerCardContent={<Content value="85" icon={<IconInvalid />} />}
-              cardColor="info"
+              variant="info"
               isSelectable
               checkboxValue="value"
               onSelect={event =>
@@ -199,7 +199,7 @@ storiesOf("Card", module)
               Icon={<Icon />}
               HeaderTitle="Replace contaminated oil"
               InnerCardContent={<Content value="45" icon={<WarningIcon />} />}
-              cardColor="warning"
+              variant="warning"
               isSelectable
               checkboxValue="value"
               onSelect={event =>
@@ -212,7 +212,7 @@ storiesOf("Card", module)
               Icon={<Icon />}
               HeaderTitle="Replace contaminated oil"
               InnerCardContent={<Content value="19" icon={<FailureIcon />} />}
-              cardColor="error"
+              variant="error"
               isSelectable
               checkboxValue="value"
               onSelect={event =>

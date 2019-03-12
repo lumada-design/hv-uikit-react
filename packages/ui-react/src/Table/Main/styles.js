@@ -103,7 +103,8 @@ const styles = theme => ({
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.palette.grey.plain}`,
           "& $tr > div ": {
-            background: "white"
+            background: "white",
+            position: "relative"
           },
           "& $tr:hover > div ": {
             background: "white"
