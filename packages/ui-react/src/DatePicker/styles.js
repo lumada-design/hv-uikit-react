@@ -1,5 +1,3 @@
-import { relative } from "path";
-
 /**
  * Copyright (c) 2018 Hitachi Vantara Corporation.
  *
@@ -10,17 +8,17 @@ import { relative } from "path";
  *  under which the software has been supplied.
  */
 
-const styles = theme => ({
+const styles = () => ({
   wrapper: {
-    width: "270px",
-    position: "relative"
+    position: "relative",
+    width: "270px"
   },
   label: {
     marginBottom: 10
   },
   reset: {
     position: "absolute",
-    top: "35px",
+    top: "10px",
     right: "10px",
     cursor: "pointer"
   }
