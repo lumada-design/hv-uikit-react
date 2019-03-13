@@ -67,7 +67,7 @@ class HvDatePicker extends React.Component {
 
   render() {
     const { from, to } = this.state;
-    const { classes, label } = this.props;
+    const { classes, label, hideReset, disabled } = this.props;
 
     const modifiers = { start: from, end: to };
     const dateFormat = "MM/DD/YY";
@@ -82,7 +82,7 @@ class HvDatePicker extends React.Component {
       </Typography>
     );
 
-    const Controls = () => (
+    const ResetButton = () => (
       <Typography
         variant="subtitle2"
         onClick={this.handleReset}
@@ -94,7 +94,7 @@ class HvDatePicker extends React.Component {
 
     return (
       <div className={classes.wrapper}>
-        <Controls />
+        {!hideReset ? <ResetButton /> : ""}
 
         {label ? <Label label={label} /> : ""}
 
@@ -108,6 +108,7 @@ class HvDatePicker extends React.Component {
               month: new Date()
             }}
             hideOnDayClick={false}
+            inputProps={{ disabled }}
             placeholder="Select range..."
           />
         </div>
@@ -132,13 +133,23 @@ HvDatePicker.propTypes = {
   /**
    * The label to draw on top of the date picker input
    */
-  label: PropTypes.string
+  label: PropTypes.string,
+  /**
+   * Hide reset button
+   */
+  hideReset: PropTypes.bool,
+  /**
+   * Prevent from opening the overlay
+   */
+  disabled: PropTypes.bool
 };
 
 HvDatePicker.defaultProps = {
   value: null,
   onChange: () => {},
-  label: ""
+  label: "",
+  hideReset: false,
+  disabled: false
 };
 
 export default HvDatePicker;
