@@ -9,6 +9,8 @@ exports[`DatePicker withStyles should render correctly 1`] = `
       "wrapper": "HvDatePicker-wrapper-1",
     }
   }
+  disabled={false}
+  hideReset={false}
   label=""
   onChange={[Function]}
   theme={
