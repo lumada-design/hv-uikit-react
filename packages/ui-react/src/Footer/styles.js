@@ -10,9 +10,10 @@
 
 const styles = theme => ({
   root: {
-    position: "absolute",
+    position: "fixed",
     width: "100%",
     height: 40,
+    bottom: 0,
     backgroundColor: theme.palette.grey.inspire,
     [theme.breakpoints.down("500")]: {
       minWidth: "320px"

@@ -4591,6 +4591,7 @@ body {
   flex: 1;
   width: 100%;
   display: flex;
+  min-height: 580px;
   background: 0 / cover fixed;
   justify-content: flex-end;
 }
@@ -4612,7 +4613,6 @@ body {
   height: 100%;
   display: flex;
   position: relative;
-  min-width: 380px;
   background: rgba(255,255,255,0.9);
   align-items: center;
   justify-content: center;
@@ -4648,6 +4648,7 @@ body {
                     "display": "flex",
                     "flex": "1",
                     "justify-content": "flex-end",
+                    "min-height": "580px",
                     "width": "100%",
                   },
                   Object {
@@ -4944,7 +4945,6 @@ body {
                     "display": "flex",
                     "height": "100%",
                     "justify-content": "center",
-                    "min-width": "380px",
                     "position": "relative",
                     "width": "100%",
                   },
@@ -4964,7 +4964,6 @@ body {
                     "display": "flex",
                     "height": "100%",
                     "justify-content": "center",
-                    "min-width": "380px",
                     "position": "relative",
                     "width": "100%",
                   },
@@ -4988,6 +4987,7 @@ body {
                     "display": "flex",
                     "flex": "1",
                     "justify-content": "flex-end",
+                    "min-height": "580px",
                     "width": "100%",
                   },
                   "@media (max-width:499.95px)": ConditionalRule {
@@ -5277,7 +5277,6 @@ body {
                     "display": "flex",
                     "height": "100%",
                     "justify-content": "center",
-                    "min-width": "380px",
                     "position": "relative",
                     "width": "100%",
                   },
@@ -5293,6 +5292,7 @@ body {
                     "display": "flex",
                     "flex": "1",
                     "justify-content": "flex-end",
+                    "min-height": "580px",
                     "width": "100%",
                   },
                 },
@@ -5808,7 +5808,6 @@ body {
                     "display": "flex",
                     "height": "100%",
                     "justifyContent": "center",
-                    "minWidth": "380px",
                     "position": "relative",
                     "width": "100%",
                   },
@@ -5828,6 +5827,7 @@ body {
                     "display": "flex",
                     "flex": 1,
                     "justifyContent": "flex-end",
+                    "minHeight": 580,
                     "width": "100%",
                   },
                 },
@@ -7063,8 +7063,9 @@ body {
                 >
                   
 .loginForm-root-172 {
+  top: 50px;
   width: 310px;
-  height: 100%;
+  height: calc(100% - 50px);
   margin: 0;
   padding: 0;
   position: absolute;
@@ -7178,10 +7179,11 @@ body {
                 },
                 "index": Array [
                   Object {
-                    "height": "100%",
+                    "height": "calc(100% - 50px)",
                     "margin": 0,
                     "padding": 0,
                     "position": "absolute",
+                    "top": "50px",
                     "width": "310px",
                   },
                   Object {
@@ -7325,10 +7327,11 @@ body {
                     "font-size": "12px",
                   },
                   ".loginForm-root-172": Object {
-                    "height": "100%",
+                    "height": "calc(100% - 50px)",
                     "margin": 0,
                     "padding": 0,
                     "position": "absolute",
+                    "top": "50px",
                     "width": "310px",
                   },
                   ".loginForm-separator-180": Object {
@@ -7410,10 +7413,11 @@ body {
                     "font-size": "12px",
                   },
                   "root": Object {
-                    "height": "100%",
+                    "height": "calc(100% - 50px)",
                     "margin": 0,
                     "padding": 0,
                     "position": "absolute",
+                    "top": "50px",
                     "width": "310px",
                   },
                   "separator": Object {
@@ -7997,10 +8001,11 @@ body {
                     "fontSize": "12px",
                   },
                   "root": Object {
-                    "height": "100%",
+                    "height": "calc(100% - 50px)",
                     "margin": 0,
                     "padding": 0,
                     "position": "absolute",
+                    "top": 50,
                     "width": "310px",
                   },
                   "separator": Object {
