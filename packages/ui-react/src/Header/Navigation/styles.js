@@ -20,13 +20,19 @@ const styles = theme => ({
       paddingRight: "0px"
     }
   },
+  "@media (max-width: 1120px)": {
+    menu: {
+      display: "none"
+    }
+  },
   listItem: {
     position: "relative",
     width: "unset",
     maxWidth: "170px",
     padding: `0 ${theme.spacing.xs}px 0 ${theme.spacing.xs}px`,
-    "&:focus":{backgroundColor: theme.palette.common.white}
-
+    "&:focus": {
+      backgroundColor: theme.palette.common.white
+    }
   },
   listItemText: {
     color: theme.palette.text.main,
@@ -43,8 +49,7 @@ const styles = theme => ({
     "& p": {
       fontWeight: "bold",
       color: theme.palette.hitachi ? theme.palette.hitachi.main : undefined
-
-}
+    }
   },
   selector: {
     position: "absolute",
@@ -54,7 +59,7 @@ const styles = theme => ({
     left: 0,
     borderTop: `4px solid ${
       theme.palette.hitachi ? theme.palette.hitachi.main : undefined
-      }`
+    }`
   }
 });
 
