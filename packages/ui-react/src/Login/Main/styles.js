@@ -13,6 +13,7 @@ const styles = theme => ({
     flex: 1,
     display: "flex",
     width: "100%",
+    minHeight: 580,
     background: `0 / cover fixed`,
     justifyContent: "flex-end"
   },
@@ -32,7 +33,6 @@ const styles = theme => ({
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
-    minWidth: "380px",
     width: "100%",
     height: "100%",
     background: "rgba(255,255,255,0.9)",

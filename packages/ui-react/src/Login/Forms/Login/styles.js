@@ -12,9 +12,10 @@ const styles = theme => ({
   root: {
     position: "absolute",
     width: "310px",
-    height: "100%",
+    height: "calc(100% - 50px)",
     margin: 0,
-    padding: 0
+    padding: 0,
+    top: 50
   },
   title: {
     display: "flex",
