@@ -10,39 +10,151 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import isNil from "lodash/isNil";
+import classNames from "classnames";
+import Typography from "@material-ui/core/Typography";
 import Input from "../Input";
 
-const TextArea = ({
-  classes,
-  inputTextConfiguration,
-  rows,
-  value,
-  onChange,
-  disabled
-}) => (
-  <Input
-    classes={{
-      container: classes.container,
-      input: classes.input
-    }}
-    inputTextConfiguration={inputTextConfiguration}
-    value={value}
-    onChange={onChange}
-    multiline
-    rows={rows}
-    disabled={disabled}
-    validate={false}
-    iconVisible={false}
-  />
-);
+/**
+ * A text area component wrapping the input box, it allows the input of paragraph of text.
+ * alongside this it can provide a validation for the max character quantity
+ *
+ * @class HvTextArea
+ * @extends {React.Component}
+ */
+class HvTextArea extends React.Component {
+  constructor(props) {
+    super(props);
+    const { value } = this.props;
+    this.state = {
+      currentValueLength: value.length
+    };
+  }
 
-TextArea.propTypes = {
   /**
-   *  Styles applied to the Drawer Paper element
+   * Updates the length of the string while is being inputted, also executes the user onChange
+   * allowing the customization of the input if required.
+   *
+   * @param {String} value - The value provided by the HvInput
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  onChangeHandler = value => {
+    const { onChange, maxCharQuantity } = this.props;
+    const newValue = onChange(value);
+
+    const textAreaValue =
+      isNil(maxCharQuantity) || newValue.length < maxCharQuantity
+        ? newValue
+        : newValue.substring(0, maxCharQuantity);
+
+    this.setState({
+      currentValueLength: textAreaValue.length
+    });
+
+    return textAreaValue;
+  };
+
+  render() {
+    const {
+      classes,
+      inputTextConfiguration,
+      maxCharQuantity,
+      rows,
+      value,
+      disabled
+    } = this.props;
+
+    const { currentValueLength } = this.state;
+
+    return (
+      <>
+        <Input
+          classes={{
+            container: classes.container,
+            input: classes.input
+          }}
+          inputTextConfiguration={inputTextConfiguration}
+          value={value}
+          onChange={this.onChangeHandler}
+          multiline
+          rows={rows}
+          disabled={disabled}
+          validate={false}
+          iconVisible={false}
+        />
+        {maxCharQuantity ? (
+          <div className={classes.characterCounter}>
+            <Typography
+              className={classNames(classes.inline, {
+                [classes.currentCounter]: !disabled,
+                [classes.disabled]: disabled
+              })}
+              variant="subtitle2"
+            >
+              {currentValueLength}
+            </Typography>
+            <Typography
+              className={classNames(classes.inline, classes.separator, {
+                [classes.maxCharacter]: !disabled,
+                [classes.disabled]: disabled
+              })}
+              variant="body2"
+            >
+              /
+            </Typography>
+            <Typography
+              className={classNames(classes.inline, {
+                [classes.maxCharacter]: !disabled,
+                [classes.disabled]: disabled
+              })}
+              variant="body2"
+            >
+              {maxCharQuantity}
+            </Typography>
+          </div>
+        ) : null}
+      </>
+    );
+  }
+}
+
+// [classes.currentCounter]:!disabled,[classes.disabled]:disabled
+
+HvTextArea.propTypes = {
   /**
-   * An Object containing the various text associated with the input.
+   *  Styles applied to the Drawer Paper element.
+   */
+  classes: PropTypes.PropTypes.shape({
+    /**
+     * The class applied on the text area input box.
+     */
+    input: PropTypes.string,
+    /**
+     * The class applied on the character counter.
+     */
+    characterCounter: PropTypes.string,
+    /**
+     * The class controlling the layout of the counter.
+     */
+    inline: PropTypes.string,
+    /**
+     * The class applied to the separator element of the character counter.
+     */
+    separator: PropTypes.string,
+    /**
+     * The class applied to the max counter element of the character counter.
+     */
+    maxCharacter: PropTypes.string,
+    /**
+     * The class applied to the current counter element of the character counter.
+     */
+    currentCounter: PropTypes.string,
+    /**
+     * The class applied to the character counter when it is disabled.
+     */
+    disabled: PropTypes.string
+  }).isRequired,
+  /**
+   * An Object containing the various text associated with the text area.
    *
    * -inputLabel: the label on top of the input.
    * -placeholder: the placeholder value of the input.
@@ -54,19 +166,19 @@ TextArea.propTypes = {
    */
   inputTextConfiguration: PropTypes.shape({
     inputLabel: PropTypes.string,
-    placeholder: PropTypes.string,
-    infoText: PropTypes.string,
-    warningText: PropTypes.string,
-    maxCharQuantityWarningText: PropTypes.string,
-    minCharQuantityWarningText: PropTypes.string,
-    requiredWarningText: PropTypes.string
+    placeholder: PropTypes.string
   }),
   /**
-   * The number of rows of the textbox
+   * The maximum allowed length of the characters, if this value is null or undefined no check
+   * will be performed.
+   */
+  maxCharQuantity: PropTypes.number,
+  /**
+   * The number of rows of the text area
    */
   rows: PropTypes.number,
   /**
-   * The initial value of the input.
+   * The initial value of the text area.
    */
   value: PropTypes.string,
   /**
@@ -75,25 +187,25 @@ TextArea.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * If ´true´ the input is disabled.
+   * If ´true´ the text area is disabled.
    */
   disabled: PropTypes.bool
 };
 
-TextArea.defaultProps = {
+HvTextArea.defaultProps = {
   inputTextConfiguration: {
     inputLabel: "",
-    placeholder: "enter value",
-    infoText: "",
-    warningText: "something wrong",
-    maxCharQuantityWarningText: "The value is too big",
-    minCharQuantityWarningText: "The value is too short",
-    requiredWarningText: "The value is required"
+    placeholder: "",
+    warningText: "",
+    maxCharQuantityWarningText: "",
+    minCharQuantityWarningText: "",
+    requiredWarningText: ""
   },
   rows: 1,
   disabled: false,
   value: "",
+  maxCharQuantity: undefined,
   onChange: value => value
 };
 
-export default TextArea;
+export default HvTextArea;
