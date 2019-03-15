@@ -1,6 +1,6 @@
 {
   "name": "@hv-ui/react",
-  "version": "0.3.0-alpha.30",
+  "version": "0.3.0-alpha.31",
   "description": "React components for the HV Design System.",
   "license": "LicenseRef-LICENSE",
   "author": {
@@ -42,7 +42,7 @@
   ],
   "dependencies": {
     "@hv-ui/icons": "^0.3.0-alpha.2",
-    "@hv-ui/themes": "^0.3.0-alpha.4",
+    "@hv-ui/themes": "^0.3.0-alpha.5",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "@storybook/react": "^4.0.7",
