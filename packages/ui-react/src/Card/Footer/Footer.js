@@ -63,7 +63,7 @@ const Footer = ({
 
 Footer.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the styles applied to the component.
    */
   classes: PropTypes.shape({
     /**

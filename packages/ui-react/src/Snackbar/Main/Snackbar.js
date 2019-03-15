@@ -49,9 +49,34 @@ const HvSnackbar = props => {
 
 HvSnackbar.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component when define as top right.
+     */
+    anchorOriginTopRight: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when define as top left.
+     */
+    anchorOriginTopLeft: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when define as top center.
+     */
+    anchorOriginTopCenter: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when define as bottom center.
+     */
+    anchorOriginBottomCenter: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when define as bottom left.
+     */
+    anchorOriginBottomLeft: PropTypes.instanceOf(Object),
+    /**
+     * Styles applied to the component when define as bottom right.
+     */
+    anchorOriginBottomRight: PropTypes.instanceOf(Object)
+  }).isRequired,
   /**
    *  If true, Snackbar is open.
    */

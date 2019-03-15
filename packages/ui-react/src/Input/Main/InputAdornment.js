@@ -43,7 +43,7 @@ const InputAdornment = ({ classes, validationState, handleClear }) => (
 
 InputAdornment.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the component styles.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**

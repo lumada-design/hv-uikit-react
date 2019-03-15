@@ -9,7 +9,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import DropDownMenu from "./Main/DropDownMenu";
+import styles from "./styles";
+import SubMenu from "./SubMenu";
 
-export default withStyles(styles, { withTheme: true })(DropDownMenu);
+export default withStyles(styles, { withTheme: true })(SubMenu);

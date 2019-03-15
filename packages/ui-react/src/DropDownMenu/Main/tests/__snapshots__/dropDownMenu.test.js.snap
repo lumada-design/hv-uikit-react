@@ -1,44 +1,282 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropDownMenu component is rendered correctly and behaves as expected 1`] = `
-<div>
-  <ClickAwayListener
-    mouseEvent="onMouseUp"
-    onClickAway={[Function]}
-    touchEvent="onTouchEnd"
-  >
-    <div
-      className=""
+<DropDownMenu
+  classes={Object {}}
+  icon={<div />}
+  position="left"
+>
+  <div>
+    <ClickAwayListener
+      mouseEvent="onMouseUp"
+      onClickAway={[Function]}
+      touchEvent="onTouchEnd"
     >
-      <WithStyles(IconButton)
-        onClick={[Function]}
+      <div
+        className=""
       >
-        <div />
-      </WithStyles(IconButton)>
-    </div>
-  </ClickAwayListener>
-</div>
+        <WithStyles(IconButton)
+          className=""
+          onClick={[Function]}
+        >
+          <IconButton
+            className=""
+            classes={
+              Object {
+                "colorInherit": "MuiIconButton-colorInherit-12",
+                "colorPrimary": "MuiIconButton-colorPrimary-13",
+                "colorSecondary": "MuiIconButton-colorSecondary-14",
+                "disabled": "MuiIconButton-disabled-15",
+                "label": "MuiIconButton-label-16",
+                "root": "MuiIconButton-root-11",
+              }
+            }
+            color="default"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <WithStyles(ButtonBase)
+              centerRipple={true}
+              className="MuiIconButton-root-11"
+              disabled={false}
+              focusRipple={true}
+              onClick={[Function]}
+            >
+              <ButtonBase
+                centerRipple={true}
+                className="MuiIconButton-root-11"
+                classes={
+                  Object {
+                    "disabled": "MuiButtonBase-disabled-18",
+                    "focusVisible": "MuiButtonBase-focusVisible-19",
+                    "root": "MuiButtonBase-root-17",
+                  }
+                }
+                component="button"
+                disableRipple={false}
+                disableTouchRipple={false}
+                disabled={false}
+                focusRipple={true}
+                onClick={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <button
+                  className="MuiButtonBase-root-17 MuiIconButton-root-11"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex="0"
+                  type="button"
+                >
+                  <span
+                    className="MuiIconButton-label-16"
+                  >
+                    <div />
+                  </span>
+                  <NoSsr
+                    defer={false}
+                    fallback={null}
+                  >
+                    <WithStyles(TouchRipple)
+                      center={true}
+                      innerRef={[Function]}
+                    >
+                      <TouchRipple
+                        center={true}
+                        classes={
+                          Object {
+                            "child": "MuiTouchRipple-child-24",
+                            "childLeaving": "MuiTouchRipple-childLeaving-25",
+                            "childPulsate": "MuiTouchRipple-childPulsate-26",
+                            "ripple": "MuiTouchRipple-ripple-21",
+                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-23",
+                            "rippleVisible": "MuiTouchRipple-rippleVisible-22",
+                            "root": "MuiTouchRipple-root-20",
+                          }
+                        }
+                      >
+                        <TransitionGroup
+                          childFactory={[Function]}
+                          className="MuiTouchRipple-root-20"
+                          component="span"
+                          enter={true}
+                          exit={true}
+                        >
+                          <span
+                            className="MuiTouchRipple-root-20"
+                          />
+                        </TransitionGroup>
+                      </TouchRipple>
+                    </WithStyles(TouchRipple)>
+                  </NoSsr>
+                </button>
+              </ButtonBase>
+            </WithStyles(ButtonBase)>
+          </IconButton>
+        </WithStyles(IconButton)>
+      </div>
+      <EventListener
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        target="document"
+      />
+    </ClickAwayListener>
+  </div>
+</DropDownMenu>
 `;
 
 exports[`DropDownMenu component opens on click 1`] = `
-<div>
-  <ClickAwayListener
-    mouseEvent="onMouseUp"
-    onClickAway={[Function]}
-    touchEvent="onTouchEnd"
-  >
-    <div
-      className="undefined"
+<DropDownMenu
+  classes={Object {}}
+  icon={<div />}
+  position="left"
+>
+  <div>
+    <ClickAwayListener
+      mouseEvent="onMouseUp"
+      onClickAway={[Function]}
+      touchEvent="onTouchEnd"
     >
-      <WithStyles(IconButton)
-        onClick={[Function]}
+      <div
+        className="undefined"
       >
-        <div />
-        <div />
-      </WithStyles(IconButton)>
-    </div>
-  </ClickAwayListener>
-</div>
+        <WithStyles(IconButton)
+          className=""
+          onClick={[Function]}
+        >
+          <IconButton
+            className=""
+            classes={
+              Object {
+                "colorInherit": "MuiIconButton-colorInherit-12",
+                "colorPrimary": "MuiIconButton-colorPrimary-13",
+                "colorSecondary": "MuiIconButton-colorSecondary-14",
+                "disabled": "MuiIconButton-disabled-15",
+                "label": "MuiIconButton-label-16",
+                "root": "MuiIconButton-root-11",
+              }
+            }
+            color="default"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <WithStyles(ButtonBase)
+              centerRipple={true}
+              className="MuiIconButton-root-11"
+              disabled={false}
+              focusRipple={true}
+              onClick={[Function]}
+            >
+              <ButtonBase
+                centerRipple={true}
+                className="MuiIconButton-root-11"
+                classes={
+                  Object {
+                    "disabled": "MuiButtonBase-disabled-18",
+                    "focusVisible": "MuiButtonBase-focusVisible-19",
+                    "root": "MuiButtonBase-root-17",
+                  }
+                }
+                component="button"
+                disableRipple={false}
+                disableTouchRipple={false}
+                disabled={false}
+                focusRipple={true}
+                onClick={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <button
+                  className="MuiButtonBase-root-17 MuiIconButton-root-11"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex="0"
+                  type="button"
+                >
+                  <span
+                    className="MuiIconButton-label-16"
+                  >
+                    <div />
+                  </span>
+                  <NoSsr
+                    defer={false}
+                    fallback={null}
+                  >
+                    <WithStyles(TouchRipple)
+                      center={true}
+                      innerRef={[Function]}
+                    >
+                      <TouchRipple
+                        center={true}
+                        classes={
+                          Object {
+                            "child": "MuiTouchRipple-child-24",
+                            "childLeaving": "MuiTouchRipple-childLeaving-25",
+                            "childPulsate": "MuiTouchRipple-childPulsate-26",
+                            "ripple": "MuiTouchRipple-ripple-21",
+                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-23",
+                            "rippleVisible": "MuiTouchRipple-rippleVisible-22",
+                            "root": "MuiTouchRipple-root-20",
+                          }
+                        }
+                      >
+                        <TransitionGroup
+                          childFactory={[Function]}
+                          className="MuiTouchRipple-root-20"
+                          component="span"
+                          enter={true}
+                          exit={true}
+                        >
+                          <span
+                            className="MuiTouchRipple-root-20"
+                          />
+                        </TransitionGroup>
+                      </TouchRipple>
+                    </WithStyles(TouchRipple)>
+                  </NoSsr>
+                </button>
+              </ButtonBase>
+            </WithStyles(ButtonBase)>
+          </IconButton>
+        </WithStyles(IconButton)>
+        <div
+          className=""
+        >
+          <div />
+        </div>
+      </div>
+      <EventListener
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        target="document"
+      />
+    </ClickAwayListener>
+  </div>
+</DropDownMenu>
 `;
 
 exports[`DropDownMenu index should render without throwing any error 1`] = `
@@ -48,13 +286,20 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
   <DropDownMenu
     classes={
       Object {
-        "icon": "DropDownMenu-icon-1",
-        "iconButton": "DropDownMenu-iconButton-3",
-        "iconSelected": "DropDownMenu-iconSelected-2",
-        "menuList": "DropDownMenu-menuList-4",
+        "center": "DropDownMenu-center-7",
+        "icon": "DropDownMenu-icon-2",
+        "iconButton": "DropDownMenu-iconButton-4",
+        "iconSelected": "DropDownMenu-iconSelected-3",
+        "left": "DropDownMenu-left-8",
+        "leftPx": "DropDownMenu-leftPx-10",
+        "menuList": "DropDownMenu-menuList-5",
+        "right": "DropDownMenu-right-6",
+        "rightPx": "DropDownMenu-rightPx-9",
+        "root": "DropDownMenu-root-1",
       }
     }
     icon={<div />}
+    position="left"
     theme={
       Object {
         "breakpoints": Object {
@@ -418,29 +663,31 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
       }
     }
   >
-    <div>
+    <div
+      className="DropDownMenu-root-1"
+    >
       <ClickAwayListener
         mouseEvent="onMouseUp"
         onClickAway={[Function]}
         touchEvent="onTouchEnd"
       >
         <div
-          className="DropDownMenu-icon-1"
+          className="DropDownMenu-icon-2"
         >
           <WithStyles(IconButton)
-            className="DropDownMenu-iconButton-3"
+            className="DropDownMenu-iconButton-4 DropDownMenu-left-8"
             onClick={[Function]}
           >
             <IconButton
-              className="DropDownMenu-iconButton-3"
+              className="DropDownMenu-iconButton-4 DropDownMenu-left-8"
               classes={
                 Object {
-                  "colorInherit": "MuiIconButton-colorInherit-6",
-                  "colorPrimary": "MuiIconButton-colorPrimary-7",
-                  "colorSecondary": "MuiIconButton-colorSecondary-8",
-                  "disabled": "MuiIconButton-disabled-9",
-                  "label": "MuiIconButton-label-10",
-                  "root": "MuiIconButton-root-5",
+                  "colorInherit": "MuiIconButton-colorInherit-12",
+                  "colorPrimary": "MuiIconButton-colorPrimary-13",
+                  "colorSecondary": "MuiIconButton-colorSecondary-14",
+                  "disabled": "MuiIconButton-disabled-15",
+                  "label": "MuiIconButton-label-16",
+                  "root": "MuiIconButton-root-11",
                 }
               }
               color="default"
@@ -449,19 +696,19 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
             >
               <WithStyles(ButtonBase)
                 centerRipple={true}
-                className="MuiIconButton-root-5 DropDownMenu-iconButton-3"
+                className="MuiIconButton-root-11 DropDownMenu-iconButton-4 DropDownMenu-left-8"
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
               >
                 <ButtonBase
                   centerRipple={true}
-                  className="MuiIconButton-root-5 DropDownMenu-iconButton-3"
+                  className="MuiIconButton-root-11 DropDownMenu-iconButton-4 DropDownMenu-left-8"
                   classes={
                     Object {
-                      "disabled": "MuiButtonBase-disabled-12",
-                      "focusVisible": "MuiButtonBase-focusVisible-13",
-                      "root": "MuiButtonBase-root-11",
+                      "disabled": "MuiButtonBase-disabled-18",
+                      "focusVisible": "MuiButtonBase-focusVisible-19",
+                      "root": "MuiButtonBase-root-17",
                     }
                   }
                   component="button"
@@ -474,7 +721,7 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root-11 MuiIconButton-root-5 DropDownMenu-iconButton-3"
+                    className="MuiButtonBase-root-17 MuiIconButton-root-11 DropDownMenu-iconButton-4 DropDownMenu-left-8"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -492,7 +739,7 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
                     type="button"
                   >
                     <span
-                      className="MuiIconButton-label-10"
+                      className="MuiIconButton-label-16"
                     >
                       <div />
                     </span>
@@ -508,25 +755,25 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
                           center={true}
                           classes={
                             Object {
-                              "child": "MuiTouchRipple-child-18",
-                              "childLeaving": "MuiTouchRipple-childLeaving-19",
-                              "childPulsate": "MuiTouchRipple-childPulsate-20",
-                              "ripple": "MuiTouchRipple-ripple-15",
-                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-17",
-                              "rippleVisible": "MuiTouchRipple-rippleVisible-16",
-                              "root": "MuiTouchRipple-root-14",
+                              "child": "MuiTouchRipple-child-24",
+                              "childLeaving": "MuiTouchRipple-childLeaving-25",
+                              "childPulsate": "MuiTouchRipple-childPulsate-26",
+                              "ripple": "MuiTouchRipple-ripple-21",
+                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-23",
+                              "rippleVisible": "MuiTouchRipple-rippleVisible-22",
+                              "root": "MuiTouchRipple-root-20",
                             }
                           }
                         >
                           <TransitionGroup
                             childFactory={[Function]}
-                            className="MuiTouchRipple-root-14"
+                            className="MuiTouchRipple-root-20"
                             component="span"
                             enter={true}
                             exit={true}
                           >
                             <span
-                              className="MuiTouchRipple-root-14"
+                              className="MuiTouchRipple-root-20"
                             />
                           </TransitionGroup>
                         </TouchRipple>
