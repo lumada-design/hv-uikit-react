@@ -4655,8 +4655,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -10164,8 +10164,8 @@ label + .MuiInput-formControl-496 {
 }
 .MuiInputBase-input-518 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -17552,8 +17552,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -23061,8 +23061,8 @@ label + .MuiInput-formControl-620 {
 }
 .MuiInputBase-input-642 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -34150,8 +34150,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -39659,8 +39659,8 @@ label + .MuiInput-formControl-96 {
 }
 .MuiInputBase-input-118 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
