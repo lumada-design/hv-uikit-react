@@ -8,8 +8,4 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import DropDownMenu from "./Main/DropDownMenu";
-
-export default withStyles(styles, { withTheme: true })(DropDownMenu);
+export { default } from "./Main";

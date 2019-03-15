@@ -16,7 +16,7 @@ import toJson from "enzyme-to-json";
 
 import IconButton from "@material-ui/core/IconButton";
 
-import DropDownMenu from "../index";
+import DropDownMenu from "../..";
 import DropDownMenuComponent from "../DropDownMenu";
 
 describe("DropDownMenu", () => {
@@ -38,7 +38,11 @@ describe("DropDownMenu", () => {
 
   describe("component", () => {
     beforeEach(() => {
-      wrapper = shallow(<DropDownMenuComponent classes={{}} icon={<div />} />);
+      wrapper = mount(
+        <DropDownMenuComponent classes={{}} icon={<div />}>
+          <div />
+        </DropDownMenuComponent>
+      );
     });
 
     it("is rendered correctly and behaves as expected", () => {

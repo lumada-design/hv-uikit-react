@@ -29,6 +29,8 @@ export { default as HvBanner } from "./Banner";
 export { default as HvInput}  from "./Input";
 export { default as HvSearchBox } from "./SearchBox";
 export { default as HvEmptyState } from "./EmptyState";
+export { default as HvDropDownMenu } from "./DropDownMenu";
+export { default as HvBreadcrumb } from "./BreadCrumb";
 
 // theme
 export { default as hvTheme } from "./theme";

@@ -9,8 +9,14 @@
  */
 
 const styles = theme => ({
+  root:{
+    position: "relative",
+    zIndex: 10
+  },
   icon: {
-    border: `solid 1px transparent`
+    boxSizing: "content-box",
+    border: `solid 1px transparent`,
+    borderBottom: "none"
   },
   iconSelected: {
     border: `solid 1px ${theme.palette.grey.passive}`,
@@ -31,10 +37,14 @@ const styles = theme => ({
     position: "absolute",
     whiteSpace: "nowrap",
     backgroundColor: `${theme.palette.common.white}`,
-    top: 31,
-    right: -1,
-    zIndex: "-1"
-  }
+    top: 32,
+    zIndex:-1
+  },
+  right: { justifyContent: "flex-start" },
+  center: { justifyContent: "center" },
+  left: { justifyContent: "flex-end"},
+  rightPx: { left:"0px" },
+  leftPx: {  right:"0px" }
 });
 
 export default styles;

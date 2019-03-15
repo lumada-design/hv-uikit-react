@@ -1,30 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalContent Component allows external styles to be added 1`] = `
-<WithStyles(DialogContent)
-  className="testClassRoot undefined"
->
-  <WithStyles(Typography)
-    variant="body1"
-  >
-    Modal Content
-  </WithStyles(Typography)>
-</WithStyles(DialogContent)>
-`;
-
-exports[`ModalContent Component should render correctly if opened 1`] = `
-<WithStyles(DialogContent)
-  className="undefined"
->
-  <WithStyles(Typography)
-    variant="body1"
-  >
-    Modal Content
-  </WithStyles(Typography)>
-</WithStyles(DialogContent)>
-`;
-
-exports[`ModalContent withStyles should render correctly 1`] = `
+exports[`Breadcrumb withStyles should render correctly 1`] = `
 <MuiThemeProviderOld
   sheetsManager={Map {}}
   theme={
@@ -728,9 +704,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(ModalContent)>
-      Modal Content
-    </WithStyles(ModalContent)>
+    <WithStyles(BreadCrumb) />
   </ContextProvider>
 </MuiThemeProviderOld>
 `;

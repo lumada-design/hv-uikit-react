@@ -78,7 +78,7 @@ const Main = ({
 
 Main.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the styles applied to the header.
    */
   classes: PropTypes.shape({
     /**
