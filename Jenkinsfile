@@ -1,7 +1,7 @@
 pipeline {
     
     agent { label 'non-master' }
-    tools {nodejs "node-js-11.9-auto"}
+    tools {nodejs "node-js-11.10-auto"}
     options { 
         timestamps () 
         timeout(time: 20, unit: 'MINUTES') 
