@@ -27,7 +27,8 @@ class HvSearchBox extends React.Component {
    * Updates the state and fires callback
    */
   changeInputValue = value => {
-    const { onChange } = this.props;
+    const { onChange, onValidate } = this.props;
+    if (onValidate && !onValidate(value)) return;
     this.setState({ value });
     onChange(value);
   };
@@ -99,7 +100,11 @@ HvSearchBox.propTypes = {
    * The function that will be executed when the input changes,
    * it receives the input value
    */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  /**
+   * The function that use to validate input,
+   */
+  onValidate: PropTypes.func
 };
 
 HvSearchBox.defaultProps = {
