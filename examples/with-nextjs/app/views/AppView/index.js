@@ -10,6 +10,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import App from "./App";
+import AppView from "./AppView";
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(AppView);
