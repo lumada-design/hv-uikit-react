@@ -48,6 +48,7 @@ const styles = theme => ({
     outline: "none",
     textIndent: `${theme.spacing.xs}px`,
     width: "60px",
+    height: "32px",
     textAlign: "center",
     border: `solid 1px ${theme.palette.grey.plain}`,
     background: `url(${DownArrow}) no-repeat right white`
