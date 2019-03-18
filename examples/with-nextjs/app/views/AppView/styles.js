@@ -8,8 +8,12 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import App from "./App";
+const styles = () => ({
+  login: {
+    marginTop: 46,
+    height: "calc(100vh - 86px)",
+    display: "flex"
+  }
+});
 
-export default withStyles(styles)(App);
+export default styles;
