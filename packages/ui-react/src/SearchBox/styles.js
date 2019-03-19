@@ -11,7 +11,7 @@
 const root = theme => ({
   position: "relative",
   background: theme.palette.atmosphere.atmo1,
-  height: "32px", 
+  height: "34px", 
   paddingLeft: `${theme.spacing.xs}px`,
   paddingRight: `${theme.spacing.md}px`
 });
