@@ -42,9 +42,9 @@ exports[`Input should not have the validation section 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -281,9 +281,9 @@ exports[`Input should not have the validation section 1`] = `
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -3420,9 +3420,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -3659,9 +3659,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -4655,8 +4655,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -6316,9 +6316,9 @@ input:-webkit-autofill {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -6555,9 +6555,9 @@ input:-webkit-autofill {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -8948,9 +8948,9 @@ label + .MuiInput-formControl-496 {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -9187,9 +9187,9 @@ label + .MuiInput-formControl-496 {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -10164,8 +10164,8 @@ label + .MuiInput-formControl-496 {
 }
 .MuiInputBase-input-518 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -11294,9 +11294,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1H": "#4389DB",
+              "acce1H": "#676767",
               "acce2": "#146BD2",
-              "acce2h": "#676767",
+              "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
             "atmosphere": Object {
@@ -11533,9 +11533,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#4389DB",
+            "acce1H": "#676767",
             "acce2": "#146BD2",
-            "acce2h": "#676767",
+            "acce2h": "#4389DB",
             "acce3": "#CC0000",
           },
           "action": Object {
@@ -11968,6 +11968,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
       validate={false}
     >
       <HvInput
+        autoFocus={false}
         classes={
           Object {
             "container": "HvInput-container-481",
@@ -12037,9 +12038,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -12276,9 +12277,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -12711,7 +12712,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
           className="HvInput-container-481"
         >
           <WithStyles(Input)
-            autoFocus={true}
+            autoFocus={false}
             className="HvInput-inputRoot-482"
             classes={
               Object {
@@ -12732,7 +12733,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
             value=""
           >
             <Input
-              autoFocus={true}
+              autoFocus={false}
               className="HvInput-inputRoot-482"
               classes={
                 Object {
@@ -12763,7 +12764,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
               value=""
             >
               <WithStyles(WithFormControlContext(InputBase))
-                autoFocus={true}
+                autoFocus={false}
                 className="HvInput-inputRoot-482"
                 classes={
                   Object {
@@ -12796,7 +12797,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
                 value=""
               >
                 <WithFormControlContext(InputBase)
-                  autoFocus={true}
+                  autoFocus={false}
                   className="HvInput-inputRoot-482"
                   classes={
                     Object {
@@ -12833,7 +12834,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
                   value=""
                 >
                   <InputBase
-                    autoFocus={true}
+                    autoFocus={false}
                     className="HvInput-inputRoot-482"
                     classes={
                       Object {
@@ -12874,7 +12875,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-509 .MuiInputBase-input-518
                       onClick={[Function]}
                     >
                       <input
-                        autoFocus={true}
+                        autoFocus={false}
                         className="MuiInputBase-input-518 MuiInput-input-503 HvInput-input-485"
                         disabled={false}
                         onBlur={[Function]}
@@ -12939,9 +12940,9 @@ exports[`Input should pass other props to the child input component 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -13178,9 +13179,9 @@ exports[`Input should pass other props to the child input component 1`] = `
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -16317,9 +16318,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -16556,9 +16557,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -17552,8 +17553,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -19213,9 +19214,9 @@ input:-webkit-autofill {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -19452,9 +19453,9 @@ input:-webkit-autofill {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -21845,9 +21846,9 @@ label + .MuiInput-formControl-620 {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -22084,9 +22085,9 @@ label + .MuiInput-formControl-620 {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -23061,8 +23062,8 @@ label + .MuiInput-formControl-620 {
 }
 .MuiInputBase-input-642 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -24195,9 +24196,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -24434,9 +24435,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -27091,9 +27092,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1H": "#4389DB",
+              "acce1H": "#676767",
               "acce2": "#146BD2",
-              "acce2h": "#676767",
+              "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
             "atmosphere": Object {
@@ -27330,9 +27331,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#4389DB",
+            "acce1H": "#676767",
             "acce2": "#146BD2",
-            "acce2h": "#676767",
+            "acce2h": "#4389DB",
             "acce3": "#CC0000",
           },
           "action": Object {
@@ -27769,6 +27770,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
       }
     >
       <HvInput
+        autoFocus={false}
         classes={
           Object {
             "container": "HvInput-container-605",
@@ -27842,9 +27844,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -28081,9 +28083,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -28516,7 +28518,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
           className="HvInput-container-605"
         >
           <WithStyles(Input)
-            autoFocus={true}
+            autoFocus={false}
             className="HvInput-inputRoot-606"
             classes={
               Object {
@@ -28541,7 +28543,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
             value=""
           >
             <Input
-              autoFocus={true}
+              autoFocus={false}
               className="HvInput-inputRoot-606"
               classes={
                 Object {
@@ -28576,7 +28578,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
               value=""
             >
               <WithStyles(WithFormControlContext(InputBase))
-                autoFocus={true}
+                autoFocus={false}
                 className="HvInput-inputRoot-606"
                 classes={
                   Object {
@@ -28613,7 +28615,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                 value=""
               >
                 <WithFormControlContext(InputBase)
-                  autoFocus={true}
+                  autoFocus={false}
                   className="HvInput-inputRoot-606"
                   classes={
                     Object {
@@ -28654,7 +28656,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                   value=""
                 >
                   <InputBase
-                    autoFocus={true}
+                    autoFocus={false}
                     className="HvInput-inputRoot-606"
                     classes={
                       Object {
@@ -28699,7 +28701,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                       onClick={[Function]}
                     >
                       <input
-                        autoFocus={true}
+                        autoFocus={false}
                         className="MuiInputBase-input-642 MuiInput-input-627 HvInput-input-609"
                         disabled={false}
                         maxLength={250}
@@ -28817,9 +28819,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
-                        "acce1H": "#4389DB",
+                        "acce1H": "#676767",
                         "acce2": "#146BD2",
-                        "acce2h": "#676767",
+                        "acce2h": "#4389DB",
                         "acce3": "#CC0000",
                       },
                       "atmosphere": Object {
@@ -29056,9 +29058,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-633 .MuiInputBase-input-642
                   "palette": Object {
                     "accent": Object {
                       "acce1": "#414141",
-                      "acce1H": "#4389DB",
+                      "acce1H": "#676767",
                       "acce2": "#146BD2",
-                      "acce2h": "#676767",
+                      "acce2h": "#4389DB",
                       "acce3": "#CC0000",
                     },
                     "action": Object {
@@ -29537,9 +29539,9 @@ exports[`Input should render correctly 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -29776,9 +29778,9 @@ exports[`Input should render correctly 1`] = `
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -32915,9 +32917,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -33154,9 +33156,9 @@ body {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -34150,8 +34152,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  margin-left: 10px;
   font-weight: 400;
+  margin-left: 10px;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -35811,9 +35813,9 @@ input:-webkit-autofill {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -36050,9 +36052,9 @@ input:-webkit-autofill {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -38443,9 +38445,9 @@ label + .MuiInput-formControl-96 {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -38682,9 +38684,9 @@ label + .MuiInput-formControl-96 {
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -39659,8 +39661,8 @@ label + .MuiInput-formControl-96 {
 }
 .MuiInputBase-input-118 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -40793,9 +40795,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -41032,9 +41034,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -43689,9 +43691,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1H": "#4389DB",
+              "acce1H": "#676767",
               "acce2": "#146BD2",
-              "acce2h": "#676767",
+              "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
             "atmosphere": Object {
@@ -43928,9 +43930,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
-            "acce1H": "#4389DB",
+            "acce1H": "#676767",
             "acce2": "#146BD2",
-            "acce2h": "#676767",
+            "acce2h": "#4389DB",
             "acce3": "#CC0000",
           },
           "action": Object {
@@ -44361,6 +44363,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
     </WithStyles(CssBaseline)>
     <WithStyles(HvInput)>
       <HvInput
+        autoFocus={false}
         classes={
           Object {
             "container": "HvInput-container-81",
@@ -44430,9 +44433,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#4389DB",
+                  "acce1H": "#676767",
                   "acce2": "#146BD2",
-                  "acce2h": "#676767",
+                  "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
                 "atmosphere": Object {
@@ -44669,9 +44672,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
             "palette": Object {
               "accent": Object {
                 "acce1": "#414141",
-                "acce1H": "#4389DB",
+                "acce1H": "#676767",
                 "acce2": "#146BD2",
-                "acce2h": "#676767",
+                "acce2h": "#4389DB",
                 "acce3": "#CC0000",
               },
               "action": Object {
@@ -45104,7 +45107,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
           className="HvInput-container-81"
         >
           <WithStyles(Input)
-            autoFocus={true}
+            autoFocus={false}
             className="HvInput-inputRoot-82"
             classes={
               Object {
@@ -45125,7 +45128,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
             value=""
           >
             <Input
-              autoFocus={true}
+              autoFocus={false}
               className="HvInput-inputRoot-82"
               classes={
                 Object {
@@ -45156,7 +45159,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
               value=""
             >
               <WithStyles(WithFormControlContext(InputBase))
-                autoFocus={true}
+                autoFocus={false}
                 className="HvInput-inputRoot-82"
                 classes={
                   Object {
@@ -45189,7 +45192,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                 value=""
               >
                 <WithFormControlContext(InputBase)
-                  autoFocus={true}
+                  autoFocus={false}
                   className="HvInput-inputRoot-82"
                   classes={
                     Object {
@@ -45226,7 +45229,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                   value=""
                 >
                   <InputBase
-                    autoFocus={true}
+                    autoFocus={false}
                     className="HvInput-inputRoot-82"
                     classes={
                       Object {
@@ -45267,7 +45270,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                       onClick={[Function]}
                     >
                       <input
-                        autoFocus={true}
+                        autoFocus={false}
                         className="MuiInputBase-input-118 MuiInput-input-103 HvInput-input-85"
                         disabled={false}
                         onBlur={[Function]}
@@ -45384,9 +45387,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
-                        "acce1H": "#4389DB",
+                        "acce1H": "#676767",
                         "acce2": "#146BD2",
-                        "acce2h": "#676767",
+                        "acce2h": "#4389DB",
                         "acce3": "#CC0000",
                       },
                       "atmosphere": Object {
@@ -45623,9 +45626,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-109 .MuiInputBase-input-118
                   "palette": Object {
                     "accent": Object {
                       "acce1": "#414141",
-                      "acce1H": "#4389DB",
+                      "acce1H": "#676767",
                       "acce2": "#146BD2",
-                      "acce2h": "#676767",
+                      "acce2h": "#4389DB",
                       "acce3": "#CC0000",
                     },
                     "action": Object {

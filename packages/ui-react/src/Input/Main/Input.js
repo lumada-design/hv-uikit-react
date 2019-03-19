@@ -169,6 +169,7 @@ class HvInput extends React.Component {
       onBlur,
       onFocus,
       value,
+      autoFocus,
       ...others
     } = this.props;
 
@@ -219,7 +220,7 @@ class HvInput extends React.Component {
               externalWarningTextOverride !== null
           })}
         >
-          {externalWarningTextOverride ? externalWarningTextOverride : infoText}
+          {externalWarningTextOverride || infoText}
         </Typography>
       );
     }
@@ -242,7 +243,7 @@ class HvInput extends React.Component {
       >
         {labelTypography}
         <Input
-          autoFocus
+          autoFocus={autoFocus}
           onBlur={this.onBlurHandler}
           onFocus={this.onFocusHandler}
           value={stateValue}
@@ -343,6 +344,10 @@ HvInput.propTypes = {
    */
   value: PropTypes.string,
   /**
+   * `true` if should autofocus.
+   */
+  autoFocus: PropTypes.bool,
+  /**
    * The initial state of the input.
    *
    * note: Is recommended you use the provided validationStates object to set this value.
@@ -400,6 +405,7 @@ HvInput.defaultProps = {
   minCharQuantity: null,
   validationType: validationTypes.none,
   value: "",
+  autoFocus: false,
   validationState: validationStates.empty,
   disabled: false,
   isRequired: false,
