@@ -41,8 +41,8 @@
     "lint"
   ],
   "dependencies": {
-    "@hv-ui/icons": "0.3.0-alpha.1",
-    "@hv-ui/themes": "0.3.0-alpha.3",
+    "@hv-ui/icons": "^0.3.0-alpha.1",
+    "@hv-ui/themes": "^0.3.0-alpha.3",
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
     "@storybook/react": "4.1.11",
