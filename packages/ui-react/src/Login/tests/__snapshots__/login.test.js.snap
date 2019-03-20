@@ -13980,8 +13980,8 @@ body {
   padding: 5px 0 5px;
   overflow: hidden;
   font-size: 14px;
-  font-weight: 400;
   margin-left: 10px;
+  font-weight: 400;
   line-height: 20px;
   margin-right: 10px;
   text-overflow: ellipsis;
@@ -19489,8 +19489,8 @@ label + .MuiInput-formControl-241 {
 }
 .MuiInputBase-input-263 {
   font: inherit;
-  width: 100%;
   color: currentColor;
+  width: 100%;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -32429,15 +32429,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   
 .MuiButtonBase-root-303 {
   color: inherit;
-  cursor: pointer;
-  margin: 0;
   border: 0;
+  margin: 0;
+  cursor: pointer;
   display: inline-flex;
-  padding: 0;
   outline: none;
+  padding: 0;
   position: relative;
-  user-select: none;
   align-items: center;
+  user-select: none;
   border-radius: 0;
   vertical-align: middle;
   justify-content: center;
@@ -36508,11 +36508,11 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
   padding: 6px 16px;
   font-size: 14px;
   min-width: 64px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-sizing: border-box;
-  font-weight: 600;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   line-height: 21px;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-weight: 600;
   border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 0.02em;
