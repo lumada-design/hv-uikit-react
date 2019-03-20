@@ -156,12 +156,12 @@ export default (
     <HvCard
       Icon={<FailureIcon />}
       HeaderTitle={configuration.title}
-      Subheader={
+      Subheader={(
         <div>
           <span style={subtitleLeftStyle}>{configuration.subtitleLeft}</span>
           <span>{configuration.subtitleRight}</span>
         </div>
-      }
+)}
       InnerCardContent={<MultipleActionsWithMedia />}
       Actions={<MultipleActionsWithMediaButtons />}
       cardColor="error"

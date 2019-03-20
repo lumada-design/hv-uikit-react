@@ -48,7 +48,7 @@ storiesOf("Core/card", module).add("Card", () => <HvCard />, {
       src: "core/card/card7"
     },
     {
-      title: "8.  card composition with component header, footer and content",
+      title: "8.  card composition with component footer and header",
       src: "core/card/card8"
     }
   ]
