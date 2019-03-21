@@ -65,14 +65,6 @@ export default (
     </div>
     <p />
     <div>
-      <SimpleSnackbar message="info" variant="info" showIcon />
-    </div>
-    <p />
-    <div>
-      <SimpleSnackbar message="warning" variant="" showIcon />
-    </div>
-    <p />
-    <div>
       <SimpleSnackbar message="error" variant="error" showIcon />
     </div>
   </div>

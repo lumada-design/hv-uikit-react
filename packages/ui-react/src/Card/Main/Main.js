@@ -115,19 +115,19 @@ Main.propTypes = {
     /**
      * Style applied to the component when the variant is info.
      */
-    info: PropTypes.instanceOf(Object),
+    info: PropTypes.string,
     /**
      * Style applied to the component when the variant is warning.
      */
-    warning: PropTypes.instanceOf(Object),
+    warning: PropTypes.string,
     /**
      * Style applied to the component when the variant is error.
      */
-    error: PropTypes.instanceOf(Object),
+    error: PropTypes.string,
     /**
      * Style applied to the component when the variant is none.
      */
-    none: PropTypes.instanceOf(Object)
+    none: PropTypes.string
   }).isRequired,
   /**
    * The content inside the card.
@@ -168,7 +168,7 @@ Main.propTypes = {
   /**
    *  The border color at the top of the card.
    */
-  cardColor: PropTypes.oneOf(["none", "info", "warning", "error", "alert", "neutral", "success"]),
+  variant: PropTypes.oneOf(["none", "info", "warning", "error", "alert", "neutral", "success"]),
   /**
    *  The function that will be executed when the card is selected.
    */

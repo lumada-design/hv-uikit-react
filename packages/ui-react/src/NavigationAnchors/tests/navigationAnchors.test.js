@@ -18,6 +18,7 @@ import ListItem from "@material-ui/core/ListItem";
 
 import NavigationAnchorsWithStyles from "../index";
 import NavigationAnchors from "../NavigationAnchors";
+import HvProvider from "../../Provider";
 
 describe("User withStyles", () => {
   let wrapper;
@@ -39,7 +40,9 @@ describe("User withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <NavigationAnchorsWithStyles classes={{}} options={options} />
+      <HvProvider>
+        <NavigationAnchorsWithStyles classes={{}} options={options} />
+      </HvProvider>
     );
   });
 
@@ -52,7 +55,11 @@ describe("User withStyles", () => {
   });
 
   it("should render correctly with props", () => {
-    wrapper = mount(<NavigationAnchors classes={{}} options={options} />);
+    wrapper = mount(
+      <HvProvider>
+        <NavigationAnchors classes={{}} options={options} />
+      </HvProvider>
+    );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
@@ -62,11 +69,13 @@ describe("User withStyles", () => {
     let listItems;
 
     wrapper = mount(
-      <NavigationAnchors
-        classes={{}}
-        options={options}
-        onClick={onClickCallback}
-      />
+      <HvProvider>
+        <NavigationAnchors
+          classes={{}}
+          options={options}
+          onClick={onClickCallback}
+        />
+      </HvProvider>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
 

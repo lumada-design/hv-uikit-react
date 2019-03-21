@@ -43,7 +43,7 @@ const styles = theme => ({
     ...theme.typography.body2
   },
   spacingToTheRight: {
-    marginRight: `${theme.spacing.xs}px`
+    marginRight: `${theme.hv.spacing.xs}px`
   },
   comparisons:{
     float: "left"

@@ -55,27 +55,27 @@ HvSnackbar.propTypes = {
     /**
      * Styles applied to the component when define as top right.
      */
-    anchorOriginTopRight: PropTypes.instanceOf(Object),
+    anchorOriginTopRight: PropTypes.string,
     /**
      * Styles applied to the component when define as top left.
      */
-    anchorOriginTopLeft: PropTypes.instanceOf(Object),
+    anchorOriginTopLeft: PropTypes.string,
     /**
      * Styles applied to the component when define as top center.
      */
-    anchorOriginTopCenter: PropTypes.instanceOf(Object),
+    anchorOriginTopCenter: PropTypes.string,
     /**
      * Styles applied to the component when define as bottom center.
      */
-    anchorOriginBottomCenter: PropTypes.instanceOf(Object),
+    anchorOriginBottomCenter: PropTypes.string,
     /**
      * Styles applied to the component when define as bottom left.
      */
-    anchorOriginBottomLeft: PropTypes.instanceOf(Object),
+    anchorOriginBottomLeft: PropTypes.string,
     /**
      * Styles applied to the component when define as bottom right.
      */
-    anchorOriginBottomRight: PropTypes.instanceOf(Object)
+    anchorOriginBottomRight: PropTypes.string
   }).isRequired,
   /**
    *  If true, Snackbar is open.

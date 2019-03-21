@@ -10,6 +10,7 @@
 
 /* eslint-env jest */
 
+import themeHv from "@hv-ui/themes/dist/theme";
 import styles from "../styles";
 
 describe("Modal styles", () => {
@@ -22,7 +23,8 @@ describe("Modal styles", () => {
     },
     spacing: {
       xs: "10"
-    }
+    },
+    hv: themeHv
   };
 
   it("should behave correctly", () => {

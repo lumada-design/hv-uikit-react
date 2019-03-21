@@ -19,20 +19,20 @@ const styles = theme => ({
     borderStyle: "solid",
     borderWidth: "1px",
     background: theme.palette.common.white,
-    borderColor: theme.palette.grey.plain,
+    borderColor: theme.hv.palette.atmosphere.atmo6,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: "1px",
-      borderColor: theme.palette.grey.inspire,
+      borderColor: theme.hv.palette.accent.acce1,
       background: theme.palette.common.white
     }
   },
   inputRootDisabled: {
-    borderColor: theme.palette.grey.plain,
-    background: theme.palette.grey.smokey,
+    borderColor: theme.hv.palette.atmosphere.atmo6,
+    background: theme.hv.palette.atmosphere.atmo2,
     "&:hover": {
-      borderColor: theme.palette.grey.plain,
-      background: theme.palette.grey.smokey,
+      borderColor: theme.hv.palette.atmosphere.atmo6,
+      background: theme.hv.palette.atmosphere.atmo2,
       cursor: "not-allowed"
     },
     cursor: "not-allowed"
@@ -40,19 +40,19 @@ const styles = theme => ({
   inputRootFocused: {
     borderStyle: "solid",
     borderWidth: "1px",
-    borderColor: theme.palette.grey.inspire,
+    borderColor: theme.hv.palette.accent.acce1,
     background: theme.palette.common.white,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: "1px",
-      borderColor: theme.palette.grey.inspire,
+      borderColor: theme.hv.palette.accent.acce1,
       background: theme.palette.common.white
     }
   },
   input: {
     height: 20,
-    marginLeft: "10px",
-    marginRight: "10px",
+    marginLeft: `${theme.hv.spacing.xs}px`,
+    marginRight: `${theme.hv.spacing.xs}px`,
     padding: "5px 0 5px",
     fontWeight: theme.typography.body1.fontWeight,
     letterSpacing: theme.typography.body1.letterSpacing,
@@ -76,8 +76,8 @@ const styles = theme => ({
     padding: 0
   },
   label: {
-    paddingTop: "30px",
-    paddingBottom: "10px",
+    paddingTop: `${theme.hv.spacing.md}px`,
+    paddingBottom: `${theme.hv.spacing.xs}px`,
     display: "block",
     fontWeight: theme.typography.subtitle2.fontWeight,
     letterSpacing: theme.typography.subtitle2.letterSpacing,
@@ -86,8 +86,8 @@ const styles = theme => ({
     lineHeight: theme.typography.subtitle2.lineHeight
   },
   text: {
-    paddingTop: "10px",
-    paddingBottom: "30px",
+    paddingTop: `${theme.hv.spacing.xs}px`,
+    paddingBottom: `${theme.hv.spacing.md}px`,
     display: "block",
     fontWeight: theme.typography.disabled.fontWeight,
     letterSpacing: theme.typography.disabled.letterSpacing,
@@ -98,15 +98,15 @@ const styles = theme => ({
     color: theme.typography.disabled.color
   },
   textWarning: {
-    color: theme.palette.status.error
+    color: theme.hv.palette.semantic.sema6
   },
   icon: {
-    width: "30px",
-    height: "30px"
+    width: `${theme.hv.spacing.md}px`,
+    height: `${theme.hv.spacing.md}px`
   },
   iconContainer: {
-    width: "30px",
-    height: "30px"
+    width: `${theme.hv.spacing.md}px`,
+    height: `${theme.hv.spacing.md}px`
   },
   iconClear: {
     backgroundRepeat: "no-repeat",

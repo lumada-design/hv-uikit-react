@@ -8,28 +8,28 @@
  *  under which the software has been supplied.
  */
 
-const styles = () => ({
+const styles = theme => ({
   anchorOriginTopRight: {
-    top: "10px",
-    right: "10px"
+    top: `${theme.hv.spacing.xs}px`,
+    right: `${theme.hv.spacing.xs}px`
   },
   anchorOriginTopLeft: {
-    top: "10px",
-    left: "10px"
+    top: `${theme.hv.spacing.xs}px`,
+    left: `${theme.hv.spacing.xs}px`
   },
   anchorOriginTopCenter: {
-    top: "10px"
+    top: `${theme.hv.spacing.xs}px`
   },
   anchorOriginBottomCenter: {
-    bottom: "10px"
+    bottom: `${theme.hv.spacing.xs}px`
   },
   anchorOriginBottomLeft: {
-    bottom: "10px",
-    left: "10px"
+    bottom: `${theme.hv.spacing.xs}px`,
+    left: `${theme.hv.spacing.xs}px`
   },
   anchorOriginBottomRight: {
-    bottom: "10px",
-    right: "10px"
+    bottom: `${theme.hv.spacing.xs}px`,
+    right: `${theme.hv.spacing.xs}px`
   }
 });
 

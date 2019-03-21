@@ -35,14 +35,14 @@ const styles = theme => ({
     background: "transparent",
     maxWidth: "510px",
     overflow: "hidden",
-    marginLeft: `${theme.spacing.lg}px`
+    marginLeft: `${theme.hv.spacing.lg}px`
   },
   title: {
     ...theme.typography.h4,
   },
   message: {
     ...theme.typography.body1,
-    marginTop: `${theme.spacing.xs}px`,
+    marginTop: `${theme.hv.spacing.xs}px`,
   }
 });
 

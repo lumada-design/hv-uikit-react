@@ -12,10 +12,11 @@
 
 // import { mount } from "enzyme";
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
+import HvProvider from "../../../Provider";
 
 import ButtonWithStyles from "../..";
-import Button from "../Button";
+import HvButton from "../Button";
 import buttonTypes from "../buttonTypes";
 import materialButtonConfiguration from "../materialButtonConfiguration";
 
@@ -28,7 +29,11 @@ describe("Button withStyles", () => {
       .props();
 
   beforeEach(async () => {
-    wrapper = shallow(<ButtonWithStyles>Click!</ButtonWithStyles>);
+    wrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles>Click!</ButtonWithStyles>
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -40,16 +45,19 @@ describe("Button withStyles", () => {
   });
 
   it("should render the Button component", () => {
-    const buttonComponent = wrapper.find(Button);
+    const buttonComponent = wrapper.find(HvButton);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should correctly map the primary type to the material ui configurations", () => {
     const mountWrapper = mount(
-      <ButtonWithStyles colorType={buttonTypes.primary}>
-        Click!
-      </ButtonWithStyles>
-    );
+      <HvProvider>
+        <ButtonWithStyles colorType={buttonTypes.primary}>
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
       materialButtonConfiguration.color.primary
     );
@@ -60,10 +68,12 @@ describe("Button withStyles", () => {
 
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
-      <ButtonWithStyles colorType={buttonTypes.secondary}>
-        Click!
-      </ButtonWithStyles>
-    );
+      <HvProvider>
+        <ButtonWithStyles colorType={buttonTypes.secondary}>
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);;
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
       materialButtonConfiguration.color.primary
     );
@@ -74,8 +84,10 @@ describe("Button withStyles", () => {
 
   it("should correctly map the link type to the material ui configurations", () => {
     const mountWrapper = mount(
-      <ButtonWithStyles colorType={buttonTypes.link}>Click!</ButtonWithStyles>
-    );
+      <HvProvider>
+        <ButtonWithStyles colorType={buttonTypes.link}>Click!</ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);;
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
       materialButtonConfiguration.color.primary
     );

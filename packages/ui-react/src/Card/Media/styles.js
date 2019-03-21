@@ -11,9 +11,9 @@
 const styles = theme => ({
   mediaContainer: {
     width: "100%",
-    paddingBottom: `${theme.spacing.sm}px`,
-    borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`
+    paddingBottom: `${theme.hv.spacing.sm}px`,
+    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   media: {
     height: "100%",

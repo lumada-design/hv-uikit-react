@@ -29,10 +29,10 @@ const strings = {
 
 const MultipleActionsStyles = theme => ({
   content: {
-    padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
+    padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
   },
   item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
+    padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
   bottomItem: {
     padding: "0"
@@ -130,7 +130,7 @@ const MultipleActionsButtonsStyles = theme => ({
       color: theme.palette.grey.inspire
     },
     "&:nth-child(1)": {
-      marginRight: `${theme.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`
     }
   },
   smallButton: {
@@ -142,7 +142,7 @@ const MultipleActionsButtonsStyles = theme => ({
       color: theme.palette.grey.inspire
     },
     "&:nth-child(1)": {
-      marginRight: `${theme.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`
     }
   }
 });

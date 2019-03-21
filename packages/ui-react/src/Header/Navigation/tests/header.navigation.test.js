@@ -15,12 +15,17 @@ import { mount, shallow } from "enzyme";
 
 import NavigationWithStyles from "../index";
 import Navigation from "../Navigation";
+import HvProvider from "../../../Provider";
 
 describe("Menu withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<NavigationWithStyles basePath="basePath" useRouter />);
+    wrapper = shallow(
+      <HvProvider>
+        <NavigationWithStyles basePath="basePath" useRouter />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -32,38 +37,47 @@ describe("Menu withStyles", () => {
   });
 
   it("should render the Navigation component", () => {
+    wrapper = mount(
+      <HvProvider>
+        <NavigationWithStyles basePath="basePath" useRouter />
+      </HvProvider>
+    );
     const userComponent = wrapper.find(Navigation);
     expect(userComponent.length).toBe(1);
   });
 
   it("should render the Navigation list component", () => {
     const userComponent = mount(
-      <NavigationWithStyles
-        basePath="basePath"
-        useRouter={false}
-        navigationData={[
-          {
-            label: "Overview",
-            path: "/"
-          },
-          {
-            label: "events",
-            path: "/events"
-          }
-        ]}
-        selected={0}
-      />
+      <HvProvider>
+        <NavigationWithStyles
+          basePath="basePath"
+          useRouter={false}
+          navigationData={[
+            {
+              label: "Overview",
+              path: "/"
+            },
+            {
+              label: "events",
+              path: "/events"
+            }
+          ]}
+          selected={0}
+        />
+      </HvProvider>
     ).find("a");
     expect(userComponent.length).toBe(2);
   });
 
   it("shouldn't render anything in the Navigation", () => {
     const childComponents = mount(
-      <NavigationWithStyles
-        basePath="basePath"
-        useRouter={false}
-        selected={0}
-      />
+      <HvProvider>
+        <NavigationWithStyles
+          basePath="basePath"
+          useRouter={false}
+          selected={0}
+        />
+      </HvProvider>
     )
       .find(Navigation)
       .children();

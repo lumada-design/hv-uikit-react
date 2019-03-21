@@ -21,7 +21,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     zIndex: 1,
-    marginTop: "60px",
+    marginTop: `${theme.hv.spacing.lg}px`,
     justifyContent: "center"
   },
   instructions: {
@@ -46,7 +46,7 @@ const styles = theme => ({
     position: "relative",
     display: "inherit",
     alignItems: "center",
-    marginTop: "20px"
+    marginTop: `${theme.hv.spacing.sm}px`
   },
   buttonsContainerError: {
     position: "relative",
@@ -55,21 +55,21 @@ const styles = theme => ({
     marginTop: "4px"
   },
   showOkMessage: {
-    backgroundColor: theme.palette.severity.success,
+    backgroundColor: theme.hv.palette.semantic.sema1_200,
     display: "flex",
     alignItems: "center",
     height: "100%",
-    paddingRight: "10px"
+    paddingRight: `${theme.hv.spacing.xs}px`
   },
   iconError: {
-    margin: "0 10px",
+    margin: `0 ${theme.hv.spacing.xs}px`,
     maxWidth: "32px",
     maxHeight: "32px",
     minWidth: "32px",
     minHeight: "32px"
   },
   messageContainer: {
-    top: "20px",
+    top: `${theme.hv.spacing.sm}px`,
     position: "relative",
     display: "flex",
     alignItems: "center",

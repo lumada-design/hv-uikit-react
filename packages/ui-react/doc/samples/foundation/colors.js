@@ -20,7 +20,7 @@ const styles = () => ({
   colorSquare: {
     width: 150,
     height: 150,
-    border: `1px solid ${theme.palette.grey.rainy}`,
+    border: `1px solid ${theme.palette.atmosphere.atmo5}`,
     margin: "0 20px 20px 0"
   },
   colorName: {

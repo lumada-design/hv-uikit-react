@@ -45,10 +45,6 @@ export default (
     <p />
     <BannerContentWrapper message="Success" variant="success" showIcon />
     <p />
-    <BannerContentWrapper message="Info" variant="info" showIcon />
-    <p />
-    <BannerContentWrapper message="Warning" variant="warning" showIcon />
-    <p />
     <BannerContentWrapper message="Error" variant="error" showIcon />
     <p />
     Banner with custom icons
@@ -68,18 +64,6 @@ export default (
     <BannerContentWrapper
       message="Success"
       variant="success"
-      customIcon={<FastForward16 />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="Info"
-      variant="info"
-      customIcon={<FastForward16 />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="Warning"
-      variant="warning"
       customIcon={<FastForward16 />}
     />
     <p />
@@ -108,20 +92,6 @@ export default (
     <BannerContentWrapper
       message="Success"
       variant="success"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="Info"
-      variant="info"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="Warning"
-      variant="warning"
       showIcon
       actionsOnMessage={<ActionButton />}
     />
@@ -158,20 +128,6 @@ export default (
     />
     <p />
     <BannerContentWrapper
-      message="Info"
-      variant="info"
-      showIcon
-      action={<ActionButtonCollection />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="Warning"
-      variant="warning"
-      showIcon
-      action={<ActionButtonCollection />}
-    />
-    <p />
-    <BannerContentWrapper
       message="Error"
       variant="error"
       showIcon
@@ -188,10 +144,6 @@ export default (
     />
     <p />
     <BannerContentWrapper message="Success" variant="success" />
-    <p />
-    <BannerContentWrapper message="Info" variant="info" />
-    <p />
-    <BannerContentWrapper message="Warning" variant="warning" />
     <p />
     <BannerContentWrapper message="Error" variant="error" />
     <p />
@@ -212,18 +164,6 @@ export default (
     <BannerContentWrapper
       message="success"
       variant="success"
-      actionsOnMessage={<ActionButton />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="info"
-      variant="info"
-      actionsOnMessage={<ActionButton />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="warning"
-      variant="warning"
       actionsOnMessage={<ActionButton />}
     />
     <p />
@@ -250,18 +190,6 @@ export default (
     <BannerContentWrapper
       message="success"
       variant="success"
-      action={<ActionButtonCollection />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="info"
-      variant="info"
-      action={<ActionButtonCollection />}
-    />
-    <p />
-    <BannerContentWrapper
-      message="warning"
-      variant="warning"
       action={<ActionButtonCollection />}
     />
     <p />

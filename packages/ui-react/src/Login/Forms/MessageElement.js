@@ -31,11 +31,11 @@ MessageElement.propTypes = {
   /**
    * Class for the div.
    */
-  showMessage: PropTypes.instanceOf(Object).isRequired,
+  showMessage: PropTypes.string.isRequired,
   /**
    * Class for the icon.
    */
-  icon: PropTypes.instanceOf(Object).isRequired,
+  icon: PropTypes.string.isRequired,
   /**
    * Message to be showed.
    */

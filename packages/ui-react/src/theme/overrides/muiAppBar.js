@@ -8,11 +8,12 @@
  *  under which the software has been supplied.
  */
 
+import theme from "@hv-ui/themes/dist/theme";
 import palette from "../palette";
 
 const muiAppBar = {
   root: {
-    borderTop: `4px solid ${palette.hitachi.main}`,
+    borderTop: `4px solid ${theme.palette.hitachi.main}`,
     "@media (min-width: 600px)": {
       height: "50px"
     }

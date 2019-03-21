@@ -53,8 +53,6 @@ class SimpleBanner extends React.Component {
   }
 }
 
-
-
 export default (
   <div>
     <div>
@@ -71,16 +69,7 @@ export default (
     </div>
     <p />
     <div>
-      <SimpleBanner message="Info" variant="info" showIcon />
-    </div>
-    <p />
-    <div>
-      <SimpleBanner message="Warning" variant="warning" showIcon />
-    </div>
-    <p />
-    <div>
       <SimpleBanner message="Error" variant="error" showIcon />
     </div>
   </div>
-
 );

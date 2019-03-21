@@ -18,12 +18,12 @@ const styles = theme => ({
     "& th": {
       padding: "10px",
       textAlign: "left",
-      borderBottom: `1px solid ${theme.palette.grey.rainy}`,
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     },
     "& td": {
       padding: "10px",
       minWidth:"150px",
-      borderBottom: `1px solid ${theme.palette.grey.rainy}`
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
     }
   }
 });

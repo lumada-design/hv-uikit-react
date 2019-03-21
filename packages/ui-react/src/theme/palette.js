@@ -12,34 +12,21 @@ import createPalette from "@material-ui/core/styles/createPalette";
 import theme from "@hv-ui/themes/dist/theme";
 
 const palette = createPalette({
-  common: theme.palette.common,
   primary: {
-    light: theme.palette.primary.light,
-    main: theme.palette.primary.main
+    main: theme.palette.accent.acce2,
+    light: theme.palette.accent.acce2h
   },
   secondary: {
-    light: theme.palette.secondary.light,
-    main: theme.palette.secondary.main
-  },
-  hitachi: {
-    light: theme.palette.hitachi.light,
-    main: theme.palette.hitachi.main
+    main: theme.palette.accent.acce1,
+    light: theme.palette.atmosphere.atmo7
   },
   text: {
-    primary: theme.palette.text.primary,
-    disabled: theme.palette.text.secondary
+    primary: theme.palette.accent.acce1,
+    disabled: theme.palette.atmosphere.atmo7
   },
   background: {
-    default: theme.palette.grey.smokey
-  },
-  status: theme.palette.status,
-  support: theme.palette.support,
-  severity: theme.palette.severity,
-  accent: theme.palette.accent,
-  atmosphere: theme.palette.atmosphere,
-  semantic: theme.palette.semantic
+    default: theme.palette.atmosphere.atmo2,
+  }
 });
-
-palette.grey = { ...palette.grey, ...theme.palette.grey };
 
 export default palette;

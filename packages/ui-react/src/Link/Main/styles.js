@@ -11,7 +11,7 @@
 const styles = theme => ({
   a: {
     textDecoration: "none",
-    color: theme.palette.primary.main
+    color: theme.hv.palette.accent.acce2
   }
 });
 

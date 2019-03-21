@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   characterCounter: {
     textAlign: "end",
-    paddingTop: `${theme.spacing.xs}px`,
+    paddingTop: `${theme.hv.spacing.xs}px`,
     minWidth: "150px",
     maxWidth: "610px"
   },

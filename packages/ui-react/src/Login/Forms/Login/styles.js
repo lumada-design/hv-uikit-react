@@ -22,7 +22,7 @@ const styles = theme => ({
     position: "relative",
     width: "310px",
     zIndex: 1,
-    margin: "60px 0 20px",
+    margin: `${theme.hv.spacing.lg}px 0 ${theme.hv.spacing.sm}px`,
     overflow: "auto"
   },
   h3: {
@@ -30,11 +30,11 @@ const styles = theme => ({
   },
   inputUser: {
     position: "relative",
-    top: "-20px"
+    top: `-${theme.hv.spacing.sm}px`
   },
   inputPassword: {
     position: "relative",
-    marginTop: "-10px",
+    marginTop: `-${theme.hv.spacing.xs}px`,
     top: "-50px"
   },
   button: {
@@ -47,22 +47,19 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "20px"
+    marginTop: `${theme.hv.spacing.sm}px`
   },
   buttonsContainerWithRemember: {
     position: "relative",
     display: "flex",
     justifyContent: "space-between",
-    marginTop: "20px"
+    marginTop: `${theme.hv.spacing.sm}px`
   },
   separator: {
-    width: "20px"
-    //  display: "block",
-    // float: "right",
-    // position: "relative"
+    width: `${theme.hv.spacing.sm}px`
   },
   forgotCredentials: {
-    marginTop: "60px",
+    marginTop: `${theme.hv.spacing.lg}px`,
     display: "flex",
     justifyContent: "center"
   },
@@ -78,14 +75,14 @@ const styles = theme => ({
     fontSize: theme.typography.body2.fontSize
   },
   showMessage: {
-    backgroundColor: theme.palette.severity.error,
+    backgroundColor: theme.hv.palette.semantic.sema6_200,
     display: "flex",
     alignItems: "center",
     height: "100%",
-    paddingRight: "10px"
+    paddingRight: `${theme.hv.spacing.xs}px`
   },
   icon: {
-    margin: "0 10px",
+    margin: `0 ${theme.hv.spacing.xs}px`,
     maxWidth: "32px",
     maxHeight: "32px",
     minWidth: "32px",

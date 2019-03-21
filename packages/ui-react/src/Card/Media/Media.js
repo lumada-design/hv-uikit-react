@@ -37,11 +37,11 @@ Media.propTypes = {
     /**
      * Styles applied to the root of the element.
      */
-    mediaContainer: PropTypes.instanceOf(Object),
+    mediaContainer: PropTypes.string,
     /**
      * Styles applied to the root element if component="video, audio, picture, iframe, or img".
      */
-    media: PropTypes.instanceOf(Object)
+    media: PropTypes.string
   }).isRequired,
   /**
    *  The title of the media.

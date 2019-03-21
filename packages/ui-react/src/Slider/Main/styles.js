@@ -27,20 +27,20 @@ const styles = theme => ({
     height: "4px",
     border: "none",
     borderRadius: "0%",
-    backgroundColor: theme.palette.grey.passive,
+    backgroundColor: theme.hv.palette.atmosphere.atmo7,
     cursor: "pointer",
     verticalAlign: "middle",
     zIndex: "-3"
   },
   rail: {
-    backgroundColor: theme.palette.grey.passive,
+    backgroundColor: theme.hv.palette.atmosphere.atmo7,
     height: "1px",
     zIndex: "-3"
   },
   knobInner: {
     borderColor: "transparent",
     boxShadow: "none",
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.hv.palette.accent.acce1,
     width: "16px",
     height: "16px"
   },
@@ -49,7 +49,7 @@ const styles = theme => ({
     borderColor: "transparent",
     borderRadius: "50%",
     boxShadow: "none",
-    backgroundColor: theme.palette.grey.passive,
+    backgroundColor: theme.hv.palette.atmosphere.atmo7,
     width: "32px",
     height: "32px",
     top: "-80%",
@@ -72,13 +72,13 @@ const styles = theme => ({
     cursor: "default"
   },
   track: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.hv.palette.accent.acce1,
     height: "3px",
     zIndex: "-1",
     marginTop: "-1px"
   },
   mark: {
-    color: theme.palette.grey.inspire,
+    color: theme.hv.palette.accent.acce1,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sliderTrack.fontSize,
     letterSpacing: theme.typography.sliderTrack.letterSpacing,
@@ -89,11 +89,11 @@ const styles = theme => ({
   sliderTooltip: {
     "& .rc-slider-tooltip-inner": {
       background: theme.palette.common.white,
-      border: `solid 1px ${theme.palette.grey.passive} `,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo7} `,
       borderRadius: 0,
       maxWidth: "532px",
       height: "100%",
-      padding: "20px",
+      padding: `${theme.hv.spacing.sm}px`,
       color: theme.typography.info.color,
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.info.fontSize,

@@ -14,19 +14,19 @@ const styles = theme => ({
     maxWidth: 310,
     minWidth: 310,
     background: theme.palette.common.white,
-    border: `1px solid ${theme.palette.grey.plain}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     "&:hover": {
-      border: `1px solid ${theme.palette.grey.inspire}`
+      border: `1px solid ${theme.hv.palette.accent.acce1}`
     }
   },
   rootActive: {
-    border: `1px solid ${theme.palette.grey.inspire}`
+    border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
   rootDisabled: {
-    border: `1px solid ${theme.palette.grey.plain}`,
-    background: theme.palette.grey.clear,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    background: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
-      border: `1px solid ${theme.palette.grey.plain}`
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
     }
   },
   label: {
@@ -62,7 +62,7 @@ const styles = theme => ({
     maxWidth: 310,
     minWidth: 310,
     background: theme.palette.common.white,
-    border: `1px solid ${theme.palette.grey.inspire}`,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
     borderTop: "none",
     zIndex: 1000
   },

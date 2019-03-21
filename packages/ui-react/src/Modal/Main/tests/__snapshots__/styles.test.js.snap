@@ -3,7 +3,7 @@
 exports[`Modal styles should behave correctly 1`] = `
 Object {
   "background": Object {
-    "background": "rgba(255, 255, 255, 0.8)",
+    "background": "rgba(249, 249, 249, 0.8)",
   },
   "closeButton": Object {
     "& > span": Object {
@@ -21,8 +21,8 @@ Object {
     "width": 32,
   },
   "paper": Object {
-    "background": "#FFFFFF",
-    "border": "solid 1px #FFFFFF",
+    "background": "#F9F9F9",
+    "border": "solid 1px #BCBCBC",
     "padding": "40px",
   },
 }

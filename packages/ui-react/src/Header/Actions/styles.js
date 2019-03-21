@@ -15,13 +15,13 @@ const styles = theme => ({
     alignItems: "center"
   },
   marginLeft: {
-    marginLeft: `${theme.spacing.lg}px`
+    marginLeft: `${theme.hv.spacing.lg}px`
   },
   iconContainer: {
     display: "inherit",
-    marginLeft: `${theme.spacing.xs}px`,
+    marginLeft: `${theme.hv.spacing.xs}px`,
     "&:hover": {
-      backgroundColor: theme.palette.grey.clear
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     }
   }
 });

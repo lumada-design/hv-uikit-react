@@ -66,19 +66,19 @@ ModalTitle.propTypes = {
     /**
      * Style applied to the root of the component (container for the title).
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied to the container of the title
      */
-    messageContainer: PropTypes.instanceOf(Object),
+    messageContainer: PropTypes.string,
     /**
      * Style applied to the text when the icon is present.
      */
-    textWithIcon: PropTypes.instanceOf(Object),
+    textWithIcon: PropTypes.string,
     /**
      * Style applied to the icon.
      */
-    icon: PropTypes.instanceOf(Object)
+    icon: PropTypes.string
   }).isRequired,
   /**
    * Variant of the modal.

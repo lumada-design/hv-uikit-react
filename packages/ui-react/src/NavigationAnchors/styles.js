@@ -11,7 +11,7 @@
 const styles = theme => ({
   drawerPaper: {
     width: 200,
-    marginLeft: `${theme.spacing.xs}px`,
+    marginLeft: `${theme.hv.spacing.xs}px`,
     background: "none",
     borderRight: "none"
   },
@@ -20,7 +20,7 @@ const styles = theme => ({
   }
   ,
   listRoot: {
-    borderLeft: `1px solid ${theme.palette.grey.plain}`
+    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   listDense: {
     paddingTop: 0,
@@ -33,20 +33,20 @@ const styles = theme => ({
       background: "none"
     },
     "&$listItemSelected": {
-      backgroundColor: `${theme.palette.grey.foggy}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`
     },
     "&$listItemSelected:hover": {
-      backgroundColor: `${theme.palette.grey.foggy}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`
     }
   },
   listItemGutters: {
     "@media (min-width: 600px)": {
-      paddingLeft: `${theme.spacing.xs}px`
+      paddingLeft: `${theme.hv.spacing.xs}px`
     }
   },
   listItemSelected: {
     left: "-1px",
-    borderLeft: `4px solid ${theme.palette.grey.inspire}`,
+    borderLeft: `4px solid ${theme.hv.palette.accent.acce1}`,
     "@media (min-width: 600px)": {
       paddingLeft: 7
     }

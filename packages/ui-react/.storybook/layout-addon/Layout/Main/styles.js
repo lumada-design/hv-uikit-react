@@ -11,17 +11,17 @@
 const styles = theme => ({
   header: {
     height: 40,
-    backgroundColor: theme.palette.grey.rainy,
+    backgroundColor: theme.hv.palette.semantic.sema2,
     ...theme.hv.typography.normalText,
     padding: "10px 0 0 15px",
     fontSize: 16
   },
   core: {
-    backgroundColor: theme.palette.status.success,
+    backgroundColor: theme.hv.palette.semantic.sema1,
     color: theme.palette.common.white
   },
   lab: {
-    backgroundColor: theme.palette.status.warning,
+    backgroundColor: theme.hv.palette.semantic.sema5,
     color: theme.palette.common.white
   },
   content: {

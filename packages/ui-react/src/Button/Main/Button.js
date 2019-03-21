@@ -96,7 +96,28 @@ HvButton.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     *
+     */
+    containedPrimary: PropTypes.string,
+    /**
+     *
+     */
+    outlinedPrimary: PropTypes.string,
+    /**
+     *
+     */
+    textPrimary: PropTypes.string,
+    /**
+     *
+     */
+    disabled: PropTypes.string
+  }).isRequired,
   /**
    * The content inside the button.
    */

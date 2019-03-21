@@ -41,11 +41,11 @@ ModalActions.propTypes = {
     /**
      * Style applied to the root of the component (container for the actions).
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied to each child action.
      */
-    action: PropTypes.instanceOf(Object)
+    action: PropTypes.string
   }).isRequired,
   /**
    * Actions of the modal.

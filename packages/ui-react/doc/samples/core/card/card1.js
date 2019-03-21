@@ -5,10 +5,10 @@ import compressor from "./resources/compressor.png";
 
 const styles = theme => ({
   content: {
-    padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
+    padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
   },
   item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
+    padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
   label: {
     fontFamily: theme.typography.fontFamily,

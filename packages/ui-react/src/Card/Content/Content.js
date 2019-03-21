@@ -37,23 +37,11 @@ Content.propTypes = {
     /**
      * Style applied to the root component.
      */
-    content: PropTypes.instanceOf(Object),
+    content: PropTypes.string,
     /**
      * Style applied to the bottom border of the component is needed.
      */
-    bottomBorder: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    item: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    label: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    text: PropTypes.instanceOf(Object)
+    bottomBorder: PropTypes.string
   }).isRequired,
   /**
    *  The renderable content inside the body of the card.
