@@ -14,7 +14,7 @@ const styles = theme => ({
   },
   content: {
     display: "inline-block",
-    border: `solid 1px ${theme.palette.grey.plain} `,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6} `,
     padding: "10px 12px",
     maxWidth: 532
   },

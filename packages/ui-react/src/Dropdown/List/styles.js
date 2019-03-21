@@ -29,17 +29,17 @@ const styles = theme => ({
     ...theme.typography.body1,
     cursor: "pointer",
     "&:hover": {
-      background: theme.palette.grey.clear
+      background: theme.hv.palette.atmosphere.atmo4
     }
   },
   multiSelection: {
     cursor: "pointer"
   },
   selected: {
-    background: theme.palette.grey.inspire,
+    background: theme.hv.palette.accent.acce1,
     color: theme.palette.common.white,
     "&:hover": {
-      background: theme.palette.grey.inspire,
+      background: theme.hv.palette.accent.acce1,
       color: theme.palette.common.white
     }
   },

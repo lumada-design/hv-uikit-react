@@ -40,18 +40,18 @@ const styles = theme => ({
     textAlign: "right",
     border: "none",
     "& $table": {
-      border: `solid 1px ${theme.palette.grey.plain}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
       borderBottom: "none",
       "& $thead": {
-        background: theme.palette.grey.rainy,
+        background: theme.hv.palette.atmosphere.atmo5,
         textAlign: `right`,
-        borderBottom: `solid 1px ${theme.palette.grey.plain}`,
+        borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
         boxShadow: `none`,
         // Needed because of the HOC for the fixed columns
         top: "0 !important",
         "& $theadTh": {
           outline: "none",
-          backgroundColor: theme.palette.grey.rainy,
+          backgroundColor: theme.hv.palette.atmosphere.atmo5,
           minHeight: 32,
           minWidth: 72,
           paddingTop: 0,
@@ -66,7 +66,7 @@ const styles = theme => ({
           boxShadow: "none",
           "& > div": { width: "100%" },
           "& > div.rt-resizer": {
-            width: "10px",
+            width: `${theme.hv.spacing.xs}px`,
             right: "-8px"
           },
           "&:first-child": {
@@ -76,14 +76,14 @@ const styles = theme => ({
             borderRight: "none"
           },
           "&.-sort-desc": {
-            backgroundColor: theme.palette.grey.foggy,
-            borderLeftColor: theme.palette.grey.plain,
-            borderRightColor: theme.palette.grey.plain
+            backgroundColor: theme.hv.palette.atmosphere.atmo3,
+            borderLeftColor: theme.hv.palette.atmosphere.atmo6,
+            borderRightColor: theme.hv.palette.atmosphere.atmo6
           },
           "&.-sort-asc": {
-            backgroundColor: theme.palette.grey.foggy,
-            borderLeftColor: theme.palette.grey.plain,
-            borderRightColor: theme.palette.grey.plain
+            backgroundColor: theme.hv.palette.atmosphere.atmo3,
+            borderLeftColor: theme.hv.palette.atmosphere.atmo6,
+            borderRightColor: theme.hv.palette.atmosphere.atmo6
           },
           "&.checkBox": {
             minWidth: "32px",
@@ -94,14 +94,14 @@ const styles = theme => ({
               visibility: "visible"
             },
             "&:hover": {
-              background: theme.palette.grey.clear
+              background: theme.hv.palette.atmosphere.atmo4
             },
           }
         }
       },
       "& $tbody": {
         "& $trGroups": {
-          borderBottom: `solid 1px ${theme.palette.grey.plain}`,
+          borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
           "& $tr > div ": {
             background: "white",
             position: "relative"
@@ -112,7 +112,7 @@ const styles = theme => ({
         },
         "& $td": {
           border: "1px solid transparent",
-          padding: `0px ${theme.spacing.xs}px`,
+          padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
           "&.alphaNumeric": {
             paddingLeft: "32px"
@@ -132,7 +132,7 @@ const styles = theme => ({
         },
         "& $td.sorted": {
           backgroundColor: theme.palette.common.white,
-          border: `1px solid ${theme.palette.grey.plain}`,
+          border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
           borderTop: "none",
           borderBottom: "none"
         },
@@ -180,7 +180,7 @@ const styles = theme => ({
   noDate: {},
   resizer: {},
   rtSortIcon: {
-    marginRight: `${theme.spacing.xs}px`,
+    marginRight: `${theme.hv.spacing.xs}px`,
     width: "32px",
     height: "32px",
     position: "absolute",
@@ -197,10 +197,10 @@ const styles = theme => ({
     cursor: "pointer"
   },
   subtitle: {
-    marginTop: `${theme.spacing.xs}px`
+    marginTop: `${theme.hv.spacing.xs}px`
   },
   title: {
-    marginBottom: `${theme.spacing.sm}px`
+    marginBottom: `${theme.hv.spacing.sm}px`
   },
   headerContainer: {
     width: "100%",
@@ -245,8 +245,8 @@ const styles = theme => ({
   subComponentContainer: {
     width: "100%",
     height: "100%",
-    borderTop: `1px solid ${theme.palette.grey.plain}`,
-    padding: `${theme.spacing.md}px 32px`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    padding: `${theme.hv.spacing.md}px 32px`
   },
   iconContainer: {
     width: "32px",

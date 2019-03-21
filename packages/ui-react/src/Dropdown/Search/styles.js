@@ -11,8 +11,8 @@
 const styles = theme => ({
   root: {
     position: "relative",
-    background: theme.palette.grey.smokey,
-    borderBottom: `1px solid ${theme.palette.grey.rainy}`,
+    background: theme.hv.palette.atmosphere.atmo2,
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     height: 30,
     marginTop: 20
   },

@@ -68,15 +68,15 @@ Main.propTypes = {
     /**
      * Style applied to the background (outside) of the component.
      */
-    background: PropTypes.instanceOf(Object),
+    background: PropTypes.string,
     /**
      * Style applied to the component (root).
      */
-    paper: PropTypes.instanceOf(Object),
+    paper: PropTypes.string,
     /**
      * Style applied to the close button.
      */
-    closeButton: PropTypes.instanceOf(Object)
+    closeButton: PropTypes.string
   }).isRequired,
   /**
    * Components of the modal.

@@ -1,58 +1,11 @@
 {
   "palette": {
-    "primary": {
-      "main": "#146BD2",
-      "light": "#4389DB"
-    },
-    "secondary": {
-      "main": "#414141",
-      "light": "#999999"
-    },
     "hitachi": {
       "main": "#CC0000",
       "light": "#FF312E"
     },
-    "status": {
-      "negligible": "#DEDEDE",
-      "minor": "#72CCCB",
-      "warning": "#D9C138",
-      "critical": "#E68C17",
-      "error": "#D13F3F",
-      "success": "#63A621"
-    },
-    "severity": {
-      "negligible": "#F8F8F8",
-      "minor": "#E2F4F4",
-      "warning": "#F7F2D6",
-      "critical": "#F9E7CF",
-      "error": "#F5D8D8",
-      "success": "#DFECD1"
-    },
-    "text": {
-      "primary": "#414141",
-      "secondary": "#999999"
-    },
-    "grey": {
-      "smokey": "#F9F9F9",
-      "foggy": "#F5F5F5",
-      "clear": "#F0F0F0",
-      "rainy": "#DEDEDE",
-      "plain": "#BCBCBC",
-      "passive": "#999999",
-      "inspire": "#414141"
-    },
-    "common": {
-      "white": "#FFFFFF",
-      "black": "#000000"
-    },
+
     "support": {
-      "yellow": "#F9DC33",
-      "orange": "#FFBB00",
-      "redOrange": "#FF5838",
-      "lightTurquoise": "#C3ECEC",
-      "turquoise": "#7CDEDC",
-      "darkTurquoise": "#0F8B8D",
-      "plum": "#7C0B2B",
       "supp1": "#0F8B8D",
       "supp2": "#734B6D",
       "supp3": "#4E7599",
@@ -61,9 +14,10 @@
     },
     "accent": {
       "acce1": "#414141",
-      "acce1H": "#676767",
+      "acce1h": "#676767",
       "acce2": "#146BD2",
       "acce2h": "#4389DB",
+      "acce2_200": "#CFE0F5",
       "acce3": "#CC0000"
     },
     "atmosphere": {
@@ -77,11 +31,13 @@
     },
     "semantic": {
       "sema1": "#63A621",
+      "sema1_200": "#DFECD1",
       "sema2": "#DEDEDE",
       "sema3": "#72CCCB",
       "sema4": "#E8C758",
       "sema5": "#E68C17",
-      "sema6": "#D13F3F"
+      "sema6": "#D13F3F",
+      "sema6_200": "#F5D8D8"
     }
   },
   "typography": {

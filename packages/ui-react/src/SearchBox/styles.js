@@ -12,8 +12,8 @@ const root = theme => ({
   position: "relative",
   background: theme.palette.atmosphere.atmo1,
   height: "34px", 
-  paddingLeft: `${theme.spacing.xs}px`,
-  paddingRight: `${theme.spacing.md}px`
+  paddingLeft: `${theme.hv.spacing.xs}px`,
+  paddingRight: `${theme.hv.spacing.md}px`
 });
 
 const icon = {
@@ -26,11 +26,11 @@ const icon = {
 const styles = theme => ({
   rootWithoutInput: {
     ...root(theme),
-    border: `1px solid ${theme.palette.atmosphere.atmo6}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
   },
   rootWithInput: {
     ...root(theme),
-    border: `1px solid ${theme.palette.accent.acce1}`,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
   },
 
   input: {

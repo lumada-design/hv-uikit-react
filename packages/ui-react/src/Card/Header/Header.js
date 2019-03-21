@@ -45,39 +45,23 @@ Header.propTypes = {
     /**
      * Style applied to the root of the component.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied to the bottom border of the component is needed.
      */
-    bottomBorder: PropTypes.instanceOf(Object),
+    bottomBorder: PropTypes.string,
     /**
      * Styles applied to the title Typography element.
      */
-    title: PropTypes.instanceOf(Object),
+    title: PropTypes.string,
     /**
      * Styles applied to the subheader Typography element.
      */
-    subheader: PropTypes.instanceOf(Object),
+    subheader: PropTypes.string,
     /**
      * Styles applied to the action element.
      */
-    action: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    icon: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    info: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    warning: PropTypes.instanceOf(Object),
-    /**
-     *
-     */
-    critical: PropTypes.instanceOf(Object)
+    action: PropTypes.string
   }).isRequired,
   /**
    *  The renderable content inside the title slot of the header.

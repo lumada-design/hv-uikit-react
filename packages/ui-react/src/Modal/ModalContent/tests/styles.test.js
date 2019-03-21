@@ -15,9 +15,11 @@ import styles from "../styles";
 describe("ModalContent styles", () => {
   it("should behave correctly", () => {
     const theme = {
-      spacing: {
-        md: "20px"
-      } 
+      hv: {
+        spacing: {
+          md: "20px"
+        }
+      }
     };
     expect(styles(theme)).toMatchSnapshot();
   });

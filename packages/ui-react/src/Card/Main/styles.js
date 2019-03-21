@@ -10,25 +10,25 @@
 
 const styles = theme => ({
   success: {
-    borderTop: `4px solid ${theme.palette.semantic.sema1}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema1}`
   },
   neutral: {
-    borderTop: `4px solid ${theme.palette.semantic.sema2}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema2}`
   },
   info: {
-    borderTop: `4px solid ${theme.palette.semantic.sema3}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema3}`
   },
   alert: {
-    borderTop: `4px solid ${theme.palette.semantic.sema4}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema4}`
   },
   warning: {
-    borderTop: `4px solid ${theme.palette.semantic.sema5}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema5}`
   },
   error: {
-    borderTop: `4px solid ${theme.palette.semantic.sema6}`
+    borderTop: `4px solid ${theme.hv.palette.semantic.sema6}`
   },
   none: {
-    borderTop: `1px solid ${theme.palette.grey.plain}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   }
 });
 

@@ -84,7 +84,7 @@ Main.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.instanceOf(Object)
+    root: PropTypes.string
   }).isRequired,
   /**
    * The position property of the header.

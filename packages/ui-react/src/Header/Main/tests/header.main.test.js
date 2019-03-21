@@ -20,6 +20,7 @@ import Brand from "../../Brand";
 import Navigation from "../../Navigation";
 import User from "../../User";
 import Actions from "../../Actions";
+import HvProvider from "../../../Provider";
 
 describe("Header withStyles", () => {
   let wrapper;
@@ -43,22 +44,23 @@ describe("Header withStyles", () => {
 
   it("should render the internal component", () => {
     wrapper = mount(
-      <MainWithStyles
-        productText="Maintenance Insights"
-        // Navigation
-        navigationData={[{ label: "label", path: "path" }]}
-        selected={0}
-        // User
-        userIcon="Text"
-        // Actions
-        itemActions={[<Settings />]}
-      />
+      <HvProvider>
+        <MainWithStyles
+          productText="Maintenance Insights"
+          // Navigation
+          navigationData={[{ label: "label", path: "path" }]}
+          selected={0}
+          // User
+          userIcon="Text"
+          // Actions
+          itemActions={[<Settings />]}
+        />
+      </HvProvider>
     );
     const brandComponent = wrapper.exists("Brand");
     const navigationComponent = wrapper.exists("Navigation");
     const userComponent = wrapper.exists("User");
     const actionsComponent = wrapper.exists("Actions");
-
 
     expect(brandComponent).toBeTruthy();
     expect(navigationComponent).toBeTruthy();

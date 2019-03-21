@@ -10,9 +10,9 @@
 
 const styles = theme => ({
   button: {
-    color: theme.palette.grey.inspire,
+    color: theme.hv.palette.accent.acce1,
     "& span": {
-      color: theme.palette.grey.inspire
+      color: theme.hv.palette.accent.acce1
     },
     "&:nth-child(1)": {
       marginRight: `${theme.spacing.xs}px`

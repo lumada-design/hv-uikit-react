@@ -45,11 +45,11 @@ ModalContent.propTypes = {
     /**
      * Style applied to the root of the component (container for the content).
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied when the content is a string.
      */
-    textContent: PropTypes.instanceOf(Object)
+    textContent: PropTypes.string
   }).isRequired,
   /**
    * Content to be render.

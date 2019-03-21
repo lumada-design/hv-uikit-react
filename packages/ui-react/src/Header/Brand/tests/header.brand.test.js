@@ -10,18 +10,21 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { shallow, mount } from "enzyme";
-
 import BrandWithStyles from "../index";
 import Brand from "../Brand";
+import HvProvider from "../../../Provider";
 
 describe("Brand withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<BrandWithStyles />);
+    wrapper = mount(
+      <HvProvider>
+        <BrandWithStyles />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -39,32 +42,32 @@ describe("Brand withStyles", () => {
 
   it("should render Brand component with Props", () => {
     wrapper = shallow(
-      <BrandWithStyles
-        companyLogo="Path/To/CompanyLogo"
-        productLogo="Path/To/ProductLogo"
-        productText="productText"
-      />
+      <HvProvider>
+        <BrandWithStyles
+          companyLogo="Path/To/CompanyLogo"
+          productLogo="Path/To/ProductLogo"
+          productText="productText"
+        />
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-
   it("should render companyLogo", () => {
     const img = mount(
-      <BrandWithStyles
-        companyLogo="Path/To/CompanyLogo"
-      />
+      <HvProvider>
+        <BrandWithStyles companyLogo="Path/To/CompanyLogo" />
+      </HvProvider>
     ).find("img");
 
     expect(img.length).toBe(1);
-
   });
 
   it("should render productLogo", () => {
     const img = mount(
-      <BrandWithStyles
-        productLogo="Path/To/CompanyLogo"
-      />
+      <HvProvider>
+        <BrandWithStyles productLogo="Path/To/CompanyLogo" />
+      </HvProvider>
     ).find("img");
 
     expect(img.length).toBe(1);
@@ -72,14 +75,11 @@ describe("Brand withStyles", () => {
 
   it("should render the separator", () => {
     const separator = mount(
-      <BrandWithStyles
-        companyLogo="Path/To/CompanyLogo"
-        productText="Text"
-      />
+      <HvProvider>
+        <BrandWithStyles companyLogo="Path/To/CompanyLogo" productText="Text" />
+      </HvProvider>
     ).find("Separator");
 
     expect(separator.length).toBe(1);
-
   });
-
 });

@@ -16,12 +16,17 @@ import { mount, shallow } from "enzyme";
 import Help16 from "@hv-ui/icons/core/S-icons/Help16";
 import UserWithStyles from "../index";
 import User from "../User";
+import HvProvider from "../../../Provider";
 
 describe("User withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<UserWithStyles />);
+    wrapper = shallow(
+      <HvProvider>
+        <UserWithStyles />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -33,13 +38,20 @@ describe("User withStyles", () => {
   });
 
   it("should render User component", () => {
+    wrapper = mount(
+      <HvProvider>
+        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+      </HvProvider>
+    );
     const userComponent = wrapper.find(User);
     expect(userComponent.length).toBe(1);
   });
 
   it("should render User component with Props", () => {
     wrapper = shallow(
-      <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+      <HvProvider>
+        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+      </HvProvider>
     );
 
     expect(wrapper).toMatchSnapshot();
@@ -47,7 +59,9 @@ describe("User withStyles", () => {
 
   it("should render text properly", () => {
     const typographies = mount(
-      <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+      <HvProvider>
+        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+      </HvProvider>
     ).find("Typography");
 
     expect(typographies.length).toBe(2);
@@ -55,7 +69,9 @@ describe("User withStyles", () => {
 
   it("should render name text properly", () => {
     const typographies = mount(
-      <UserWithStyles userData={{ name: "UserName" }} />
+      <HvProvider>
+        <UserWithStyles userData={{ name: "UserName" }} />
+      </HvProvider>
     ).find("Typography");
 
     expect(typographies.length).toBe(1);
@@ -63,19 +79,29 @@ describe("User withStyles", () => {
 
   it("should render role text properly", () => {
     const typographies = mount(
-      <UserWithStyles userData={{ role: "UserRole" }} />
+      <HvProvider>
+        <UserWithStyles userData={{ role: "UserRole" }} />
+      </HvProvider>
     ).find("Typography");
 
     expect(typographies.length).toBe(1);
   });
 
   it("should render logo", () => {
-    const img = mount(<UserWithStyles userIcon={<Help16 />} />).find(Help16);
+    const img = mount(
+      <HvProvider>
+        <UserWithStyles userIcon={<Help16 />} />
+      </HvProvider>
+    ).find(Help16);
     expect(img.length).toBe(1);
   });
 
   it("should render nothing if no props", () => {
-    const childComponent = mount(<UserWithStyles />)
+    const childComponent = mount(
+      <HvProvider>
+        <UserWithStyles />
+      </HvProvider>
+    )
       .find(User)
       .children();
 

@@ -9,12 +9,12 @@ const threeKnobFixedProperties = [
   },
   {
     color: "red",
-    dragColor: "red",
+    dragColor: "grey",
     trackColor: "grey"
   },
   {
     color: "purple",
-    dragColor: "#orange",
+    dragColor: "orange",
     trackColor: "yellow",
     fixed: true
   }

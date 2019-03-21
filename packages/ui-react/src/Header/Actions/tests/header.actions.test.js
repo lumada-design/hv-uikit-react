@@ -15,12 +15,13 @@ import { mount } from "enzyme";
 
 import Actions from "../index";
 import ActionsComponent from "../Actions";
+import HvProvider from "../../../Provider";
 
 describe("Actions withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = mount(<Actions itemActions={[<span />, <span />]} />);
+    wrapper = mount(<HvProvider><Actions itemActions={[<span />, <span />]} /></HvProvider>);
   });
 
   it("should be defined", () => {

@@ -578,43 +578,43 @@ HvSlider.propTypes = {
     /**
      * Style applied to the root of the component.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied to the dot.
      */
-    dot: PropTypes.instanceOf(Object),
+    dot: PropTypes.string,
     /**
      * Style applied to the rail.
      */
-    rail: PropTypes.instanceOf(Object),
+    rail: PropTypes.string,
     /**
      * Style applied to the inner of the knob.
      */
-    knobInner: PropTypes.instanceOf(Object),
+    knobInner: PropTypes.string,
     /**
      * Style applied to the outside of the knob.
      */
-    knobOuter: PropTypes.instanceOf(Object),
+    knobOuter: PropTypes.string,
     /**
      * Style applied when the knob is hidden.
      */
-    knobHidden: PropTypes.instanceOf(Object),
+    knobHidden: PropTypes.string,
     /**
      * Style applied  last hidden knob.
      */
-    knobHiddenLast: PropTypes.instanceOf(Object),
+    knobHiddenLast: PropTypes.string,
     /**
      * Style applied to the track.
      */
-    track: PropTypes.instanceOf(Object),
+    track: PropTypes.string,
     /**
      * Style applied to the mark.
      */
-    mark: PropTypes.instanceOf(Object),
+    mark: PropTypes.string,
     /**
      * Style applied to the tooltip.
      */
-    sliderTooltip: PropTypes.instanceOf(Object)
+    sliderTooltip: PropTypes.string
   }).isRequired
 };
 

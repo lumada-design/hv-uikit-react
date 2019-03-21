@@ -17,22 +17,16 @@ const styles = theme => ({
     overflow: "hidden"
   },
   success: {
-    backgroundColor: theme.palette.severity.success
+    backgroundColor: theme.hv.palette.semantic.sema1_200
   },
   error: {
-    backgroundColor: theme.palette.severity.error
-  },
-  warning: {
-    backgroundColor: theme.palette.severity.critical
-  },
-  info: {
-    backgroundColor: theme.palette.severity.warning
+    backgroundColor: theme.hv.palette.semantic.sema6_200
   },
   default: {
-    backgroundColor: "#D0E1F6"
+    backgroundColor: theme.hv.palette.accent.acce2_200
   },
   iconVariant: {
-    marginLeft: "10px",
+    marginLeft: `${theme.hv.spacing.xs}px`,
     maxWidth: "32px",
     maxHeight: "32px",
     minWidth: "32px",
@@ -52,21 +46,21 @@ const styles = theme => ({
     "-webkit-box-orient": "vertical"
   },
   messageWithoutIcon: {
-    paddingLeft: "20px"
+    paddingLeft: `${theme.hv.spacing.sm}px`
   },
   messageWithoutAction: {
-    paddingRight: "20px"
+    paddingRight: `${theme.hv.spacing.sm}px`
   },
   action: {
-    marginRight: "20px",
-    marginLeft: "10px",
+    marginRight: `${theme.hv.spacing.sm}px`,
+    marginLeft: `${theme.hv.spacing.xs}px`,
     paddingLeft: "0px",
     minWidth: "fit-content"
   },
   messageSpan: {
     display: "flex",
     alignItems: "center",
-    margin: "10px 0"
+    margin: `${theme.hv.spacing.xs}px 0`
   }
 });
 

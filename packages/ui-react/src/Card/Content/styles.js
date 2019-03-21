@@ -10,15 +10,15 @@
 
 const styles = theme => ({
   content: {
-    borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`,
-    padding: `0 ${theme.spacing.sm}px ${theme.spacing.sm}px ${theme.spacing.sm}px`
+    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    padding: `0 ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`
   },
   bottomBorder: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
+    padding: `0 0 ${theme.hv.spacing.sm}px 0`
   }
 });
 

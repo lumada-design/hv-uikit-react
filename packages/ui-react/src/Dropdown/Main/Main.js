@@ -209,55 +209,55 @@ Main.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Styles applied to the component when is open.
      */
-    rootActive: PropTypes.instanceOf(Object),
+    rootActive: PropTypes.string,
     /**
      * Styles applied to the component when is disable.
      */
-    rootDisabled: PropTypes.instanceOf(Object),
+    rootDisabled: PropTypes.string,
     /**
      * Styles applied to the label.
      */
-    label: PropTypes.instanceOf(Object),
+    label: PropTypes.string,
     /**
      * Styles applied to the header.
      */
-    header: PropTypes.instanceOf(Object),
+    header: PropTypes.string,
     /**
      * Styles applied to the selection
      */
-    selection: PropTypes.instanceOf(Object),
+    selection: PropTypes.string,
     /**
      * Styles applied to the arrow
      */
-    arrow: PropTypes.instanceOf(Object),
+    arrow: PropTypes.string,
     /**
      * Styles applied when the header is disable.
      */
-    headerDisabled: PropTypes.instanceOf(Object),
+    headerDisabled: PropTypes.string,
     /**
      * Styles applied to the list.
      */
-    list: PropTypes.instanceOf(Object),
+    list: PropTypes.string,
     /**
      * Styles applied when the list is closed.
      */
-    listClosed: PropTypes.instanceOf(Object),
+    listClosed: PropTypes.string,
     /**
      * Styles applied when the list is open.
      */
-    open: PropTypes.instanceOf(Object),
+    open: PropTypes.string,
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.instanceOf(Object),
+    icon: PropTypes.string,
     /**
      * Styles applied for truncating the list elements.
      */
-    truncate: PropTypes.instanceOf(Object)
+    truncate: PropTypes.string
   }).isRequired,
   /**
    * Label to display

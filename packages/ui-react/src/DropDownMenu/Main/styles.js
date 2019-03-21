@@ -19,7 +19,7 @@ const styles = theme => ({
     borderBottom: "none"
   },
   iconSelected: {
-    border: `solid 1px ${theme.palette.grey.passive}`,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
     backgroundColor: `${theme.palette.common.white}`,
     borderBottom: "none"
   },
@@ -32,8 +32,8 @@ const styles = theme => ({
     }
   },
   menuList: {
-    border: `solid 1px ${theme.palette.grey.passive}`,
-    padding: `${theme.spacing.xs}px`,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
+    padding: `${theme.hv.spacing.xs}px`,
     position: "absolute",
     whiteSpace: "nowrap",
     backgroundColor: `${theme.palette.common.white}`,

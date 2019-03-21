@@ -10,25 +10,29 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 
 import KpiWithStyles from "../..";
 import Kpi from "../Kpi";
+import HvProvider from "../../../Provider";
 
 const KpiTextConfiguration = {
   title: "Avg. service time",
   indicator: "8.85",
   unit: "MS",
   comparisonIndicatorInfo: "vs last 24h."
-}
+};
 
 describe("Kpi withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<KpiWithStyles kpiTextConfiguration={KpiTextConfiguration} />);
+    wrapper = mount(
+      <HvProvider>
+        <KpiWithStyles kpiTextConfiguration={KpiTextConfiguration} />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {

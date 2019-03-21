@@ -19,7 +19,7 @@ const styles = theme => ({
     fontSize: "12px",
     textTransform: "capitalize",
     maxWidth: "170px",
-    padding: `0 ${theme.spacing.xs}px`,
+    padding: `0 ${theme.hv.spacing.xs}px`,
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",

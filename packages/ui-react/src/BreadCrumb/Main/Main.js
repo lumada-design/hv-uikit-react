@@ -167,15 +167,15 @@ BreadCrumb.propTypes = {
     /**
      * styles applied to the component root class.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * styles applied to the links.
      */
-    link: PropTypes.instanceOf(Object),
+    link: PropTypes.string,
     /**
      *  styles applied to the separator.
      */
-    separator: PropTypes.instanceOf(Object)
+    separator: PropTypes.string
   }).isRequired,
   /**
    * Should use the router.

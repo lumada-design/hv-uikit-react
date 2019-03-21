@@ -26,7 +26,7 @@ const styles = theme => ({
     alignItems: "stretch",
     flexWrap: "wrap",
     padding: "3px",
-    margin: `30px 0 0 0`
+    margin: `${theme.hv.spacing.md}px 0 0 0`
   },
   paginationBtn: {
     width: "32px",
@@ -46,11 +46,11 @@ const styles = theme => ({
     fontSize: "14px",
     fontWeight: "normal",
     outline: "none",
-    textIndent: `${theme.spacing.xs}px`,
-    width: "60px",
     height: "32px",
+    textIndent: `${theme.hv.spacing.xs}px`,
+    width: `${theme.hv.spacing.lg}px`,
     textAlign: "center",
-    border: `solid 1px ${theme.palette.grey.plain}`,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
     background: `url(${DownArrow}) no-repeat right white`
   },
   pageNavigator: {
@@ -60,7 +60,7 @@ const styles = theme => ({
   },
   pageInfo: {
     display: "inline-block",
-    margin: `0 ${theme.spacing.xs}px`,
+    margin: `0 ${theme.hv.spacing.xs}px`,
     whiteSpace: "nowrap",
     height: "32px"
   },
@@ -69,17 +69,17 @@ const styles = theme => ({
   },
   rowText: {
     ...theme.typography.normalText,
-    marginLeft: `${theme.spacing.xs}px`
+    marginLeft: `${theme.hv.spacing.xs}px`
   },
   pageJumpInput: {
     ...theme.typography.normalText,
     width: "50px",
     textAlign: "right",
     fontSize: "14px",
-    margin: `-1px ${theme.spacing.xs}px`,
+    margin: `-1px ${theme.hv.spacing.xs}px`,
     padding: "2px 5px",
     borderRadius: "0",
-    border: `solid 1px ${theme.palette.grey.plain}`,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
     height: "32px"
   },
   arrowFirst: {

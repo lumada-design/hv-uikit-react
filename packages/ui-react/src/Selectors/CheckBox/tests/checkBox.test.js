@@ -17,6 +17,7 @@ import { shallow, mount } from "enzyme";
 import CheckBoxWithStyles from "../index";
 import CheckBox from "../CheckBox";
 import labelPositions from "../../labelPositions";
+import HvProvider from "../../../Provider";
 
 describe("CheckBox withStyles", () => {
   let wrapper;
@@ -52,7 +53,11 @@ describe("CheckBox withStyles", () => {
   const labelEndClassName = "labelEnd";
 
   beforeEach(async () => {
-    wrapper = shallow(<CheckBoxWithStyles />);
+    wrapper = shallow(
+      <HvProvider>
+        <CheckBoxWithStyles />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -64,12 +69,21 @@ describe("CheckBox withStyles", () => {
   });
 
   it("should render the RadioButton component", () => {
+    wrapper = mount(
+      <HvProvider>
+        <CheckBoxWithStyles />
+      </HvProvider>
+    );
     const buttonComponent = wrapper.find(CheckBox);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should apply the correct icon", () => {
-    const mountWrapper = mount(<CheckBoxWithStyles />);
+    const mountWrapper = mount(
+      <HvProvider>
+        <CheckBoxWithStyles />
+      </HvProvider>
+    ).find(CheckBox);
     expect(getIconClassNames(mountWrapper).includes(emptyIconClassName)).toBe(
       true
     );
@@ -90,7 +104,11 @@ describe("CheckBox withStyles", () => {
   });
 
   it("should apply the correct icon when disabled", () => {
-    const mountWrapper = mount(<CheckBoxWithStyles disabled />);
+    const mountWrapper = mount(
+      <HvProvider>
+        <CheckBoxWithStyles disabled />
+      </HvProvider>
+    ).find(CheckBox);
     expect(getIconClassNames(mountWrapper).includes(emptyIconClassName)).toBe(
       false
     );
@@ -107,8 +125,13 @@ describe("CheckBox withStyles", () => {
 
   it("should apply the correct class name when there is a label at the start", () => {
     const mountWrapper = mount(
-      <CheckBoxWithStyles label="test" labelPlacement={labelPositions.start} />
-    );
+      <HvProvider>
+        <CheckBoxWithStyles
+          label="test"
+          labelPlacement={labelPositions.start}
+        />
+      </HvProvider>
+    ).find(CheckBox);
     expect(
       getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
     ).toBe(true);
@@ -119,8 +142,10 @@ describe("CheckBox withStyles", () => {
 
   it("should apply the correct class name when there is a label at the end", () => {
     const mountWrapper = mount(
-      <CheckBoxWithStyles label="test" labelPlacement={labelPositions.end} />
-    );
+      <HvProvider>
+        <CheckBoxWithStyles label="test" labelPlacement={labelPositions.end} />
+      </HvProvider>
+    ).find(CheckBox);
     expect(
       getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
     ).toBe(false);
@@ -131,8 +156,10 @@ describe("CheckBox withStyles", () => {
 
   it("should not apply any class name when there is no label specified", () => {
     const mountWrapper = mount(
-      <CheckBoxWithStyles labelPlacement={labelPositions.start} />
-    );
+      <HvProvider>
+        <CheckBoxWithStyles labelPlacement={labelPositions.start} />
+      </HvProvider>
+    ).find(CheckBox);
     expect(
       getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
     ).toBe(false);

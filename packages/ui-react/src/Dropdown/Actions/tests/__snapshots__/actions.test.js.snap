@@ -42,8 +42,9 @@ exports[`<Actions /> should render correctly 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -56,72 +57,26 @@ exports[`<Actions /> should render correctly 1`] = `
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -248,8 +203,8 @@ exports[`<Actions /> should render correctly 1`] = `
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -279,13 +234,6 @@ exports[`<Actions /> should render correctly 1`] = `
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -294,23 +242,14 @@ exports[`<Actions /> should render correctly 1`] = `
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -336,17 +275,6 @@ exports[`<Actions /> should render correctly 1`] = `
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -359,44 +287,6 @@ exports[`<Actions /> should render correctly 1`] = `
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -1215,7 +1105,7 @@ body {
 }
 @media print {
   body {
-    background-color: #FFFFFF;
+    background-color: #fff;
   }
 }
 
@@ -1495,12 +1385,12 @@ body {
                             "classes": Object {},
                             "index": Array [
                               Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             ],
                             "map": Object {
                               "body": Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             },
                             "options": Object {
@@ -1626,7 +1516,7 @@ body {
                             },
                             "raw": Object {
                               "body": Object {
-                                "backgroundColor": "#FFFFFF",
+                                "backgroundColor": "#fff",
                               },
                             },
                             "update": [Function],
@@ -1766,12 +1656,12 @@ body {
                             "classes": Object {},
                             "index": Array [
                               Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             ],
                             "map": Object {
                               "body": Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             },
                             "options": Object {
@@ -1897,7 +1787,7 @@ body {
                             },
                             "raw": Object {
                               "body": Object {
-                                "backgroundColor": "#FFFFFF",
+                                "backgroundColor": "#fff",
                               },
                             },
                             "update": [Function],
@@ -2038,7 +1928,7 @@ body {
                         "@media print": null,
                         "body": Object {
                           "@media print": Object {
-                            "backgroundColor": "#FFFFFF",
+                            "backgroundColor": "#fff",
                           },
                           "backgroundColor": "#F9F9F9",
                           "margin": 0,
@@ -2318,12 +2208,12 @@ body {
                             "classes": Object {},
                             "index": Array [
                               Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             ],
                             "map": Object {
                               "body": Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             },
                             "options": Object {
@@ -2449,7 +2339,7 @@ body {
                             },
                             "raw": Object {
                               "body": Object {
-                                "backgroundColor": "#FFFFFF",
+                                "backgroundColor": "#fff",
                               },
                             },
                             "update": [Function],
@@ -2589,12 +2479,12 @@ body {
                             "classes": Object {},
                             "index": Array [
                               Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             ],
                             "map": Object {
                               "body": Object {
-                                "background-color": "#FFFFFF",
+                                "background-color": "#fff",
                               },
                             },
                             "options": Object {
@@ -2720,7 +2610,7 @@ body {
                             },
                             "raw": Object {
                               "body": Object {
-                                "backgroundColor": "#FFFFFF",
+                                "backgroundColor": "#fff",
                               },
                             },
                             "update": [Function],
@@ -2861,7 +2751,7 @@ body {
                         "@media print": null,
                         "body": Object {
                           "@media print": Object {
-                            "backgroundColor": "#FFFFFF",
+                            "backgroundColor": "#fff",
                           },
                           "backgroundColor": "#F9F9F9",
                           "margin": 0,
@@ -3368,7 +3258,7 @@ body {
                     },
                     "body": Object {
                       "@media print": Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": "#fff",
                       },
                       "backgroundColor": "#F9F9F9",
                       "margin": 0,
@@ -3420,8 +3310,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -3434,72 +3325,26 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -3626,8 +3471,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -3657,13 +3502,6 @@ body {
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -3672,23 +3510,14 @@ body {
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -3714,17 +3543,6 @@ body {
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -3737,44 +3555,6 @@ body {
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -5175,8 +4955,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -5189,72 +4970,26 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -5381,8 +5116,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -5412,13 +5147,6 @@ body {
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -5427,23 +5155,14 @@ body {
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -5469,17 +5188,6 @@ body {
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -5492,44 +5200,6 @@ body {
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -6357,7 +6027,7 @@ body {
   letter-spacing: 0.02em;
 }
 .HvButton-containedPrimary-3 {
-  color: #FFFFFF;
+  color: #fff;
   background-color: #146BD2;
 }
 .HvButton-containedPrimary-3:hover {
@@ -6381,14 +6051,14 @@ body {
 .HvButton-outlinedPrimary-4 {
   color: #414141;
   border: 1px solid #BCBCBC;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 .HvButton-outlinedPrimary-4:hover {
-  border: 1px solid #BCBCBC;
-  background-color: #BCBCBC;
+  border: 1px solid #F0F0F0;
+  background-color: #F0F0F0;
 }
 .HvButton-outlinedPrimary-4:active {
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 .HvButton-outlinedPrimary-4.HvButton-disabled-6 {
   color: #999999;
@@ -6467,7 +6137,7 @@ body {
                   Object {},
                   Object {
                     "background-color": "#146BD2",
-                    "color": "#FFFFFF",
+                    "color": "#fff",
                   },
                   Object {
                     "background-color": "#4389DB",
@@ -6488,16 +6158,16 @@ body {
                     "pointer-events": "auto",
                   },
                   Object {
-                    "background-color": "#FFFFFF",
+                    "background-color": "#fff",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
                   Object {
-                    "background-color": "#BCBCBC",
-                    "border": "1px solid #BCBCBC",
+                    "background-color": "#F0F0F0",
+                    "border": "1px solid #F0F0F0",
                   },
                   Object {
-                    "background-color": "#FFFFFF",
+                    "background-color": "#fff",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -6546,7 +6216,7 @@ body {
                 "map": Object {
                   ".HvButton-containedPrimary-3": Object {
                     "background-color": "#146BD2",
-                    "color": "#FFFFFF",
+                    "color": "#fff",
                   },
                   ".HvButton-containedPrimary-3.HvButton-disabled-6": Object {
                     "background-color": "#F0F0F0",
@@ -6572,7 +6242,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   ".HvButton-outlinedPrimary-4": Object {
-                    "background-color": "#FFFFFF",
+                    "background-color": "#fff",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -6591,11 +6261,11 @@ body {
                     "pointer-events": "auto",
                   },
                   ".HvButton-outlinedPrimary-4:active": Object {
-                    "background-color": "#FFFFFF",
+                    "background-color": "#fff",
                   },
                   ".HvButton-outlinedPrimary-4:hover": Object {
-                    "background-color": "#BCBCBC",
-                    "border": "1px solid #BCBCBC",
+                    "background-color": "#F0F0F0",
+                    "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-2": Object {
                     "cursor": "pointer",
@@ -6635,7 +6305,7 @@ body {
                   },
                   "containedPrimary": Object {
                     "background-color": "#146BD2",
-                    "color": "#FFFFFF",
+                    "color": "#fff",
                   },
                   "disabled": Object {
                     "background-color": "#F0F0F0",
@@ -6643,7 +6313,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   "outlinedPrimary": Object {
-                    "background-color": "#FFFFFF",
+                    "background-color": "#fff",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -7186,11 +6856,11 @@ body {
                     "pointerEvents": "auto",
                   },
                   ".HvButton-outlinedPrimary-4:active": Object {
-                    "backgroundColor": "#FFFFFF",
+                    "backgroundColor": "#fff",
                   },
                   ".HvButton-outlinedPrimary-4:hover": Object {
-                    "backgroundColor": "#BCBCBC",
-                    "border": "1px solid #BCBCBC",
+                    "backgroundColor": "#F0F0F0",
+                    "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-2:active": Object {},
                   ".HvButton-root-2:hover, .HvButton-root-2:focus": Object {},
@@ -7234,7 +6904,7 @@ body {
                       "backgroundColor": "#4389DB",
                     },
                     "backgroundColor": "#146BD2",
-                    "color": "#FFFFFF",
+                    "color": "#fff",
                   },
                   "disabled": Object {
                     "backgroundColor": "#F0F0F0",
@@ -7257,13 +6927,13 @@ body {
                       "pointerEvents": "auto",
                     },
                     "&:active": Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": "#fff",
                     },
                     "&:hover": Object {
-                      "backgroundColor": "#BCBCBC",
-                      "border": "1px solid #BCBCBC",
+                      "backgroundColor": "#F0F0F0",
+                      "border": "1px solid #F0F0F0",
                     },
-                    "backgroundColor": "#FFFFFF",
+                    "backgroundColor": "#fff",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -7344,8 +7014,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -7358,72 +7029,26 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -7550,8 +7175,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -7581,13 +7206,6 @@ body {
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -7596,23 +7214,14 @@ body {
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -7638,17 +7247,6 @@ body {
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -7661,44 +7259,6 @@ body {
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -13111,8 +12671,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -13125,72 +12686,26 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -13317,8 +12832,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -13348,13 +12863,6 @@ body {
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -13363,23 +12871,14 @@ body {
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -13405,17 +12904,6 @@ body {
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -13428,44 +12916,6 @@ body {
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -14968,8 +14418,9 @@ body {
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1H": "#676767",
+              "acce1h": "#676767",
               "acce2": "#146BD2",
+              "acce2_200": "#CFE0F5",
               "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
@@ -14982,72 +14433,26 @@ body {
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
             },
-            "common": Object {
-              "black": "#000000",
-              "white": "#FFFFFF",
-            },
-            "grey": Object {
-              "clear": "#F0F0F0",
-              "foggy": "#F5F5F5",
-              "inspire": "#414141",
-              "passive": "#999999",
-              "plain": "#BCBCBC",
-              "rainy": "#DEDEDE",
-              "smokey": "#F9F9F9",
-            },
             "hitachi": Object {
               "light": "#FF312E",
               "main": "#CC0000",
             },
-            "primary": Object {
-              "light": "#4389DB",
-              "main": "#146BD2",
-            },
-            "secondary": Object {
-              "light": "#999999",
-              "main": "#414141",
-            },
             "semantic": Object {
               "sema1": "#63A621",
+              "sema1_200": "#DFECD1",
               "sema2": "#DEDEDE",
               "sema3": "#72CCCB",
               "sema4": "#E8C758",
               "sema5": "#E68C17",
               "sema6": "#D13F3F",
-            },
-            "severity": Object {
-              "critical": "#F9E7CF",
-              "error": "#F5D8D8",
-              "minor": "#E2F4F4",
-              "negligible": "#F8F8F8",
-              "success": "#DFECD1",
-              "warning": "#F7F2D6",
-            },
-            "status": Object {
-              "critical": "#E68C17",
-              "error": "#D13F3F",
-              "minor": "#72CCCB",
-              "negligible": "#DEDEDE",
-              "success": "#63A621",
-              "warning": "#D9C138",
+              "sema6_200": "#F5D8D8",
             },
             "support": Object {
-              "darkTurquoise": "#0F8B8D",
-              "lightTurquoise": "#C3ECEC",
-              "orange": "#FFBB00",
-              "plum": "#7C0B2B",
-              "redOrange": "#FF5838",
               "supp1": "#0F8B8D",
               "supp2": "#734B6D",
               "supp3": "#4E7599",
               "supp4": "#C19C31",
               "supp5": "#546B6B",
-              "turquoise": "#7CDEDC",
-              "yellow": "#F9DC33",
-            },
-            "text": Object {
-              "primary": "#414141",
-              "secondary": "#999999",
             },
           },
           "spacing": Object {
@@ -15174,8 +14579,8 @@ body {
         "overrides": Object {
           "MuiAppBar": Object {
             "colorDefault": Object {
-              "backgroundColor": "#FFFFFF",
-              "contrastText": "#414141",
+              "backgroundColor": "#fff",
+              "contrastText": undefined,
             },
             "root": Object {
               "@media (min-width: 600px)": Object {
@@ -15205,13 +14610,6 @@ body {
           },
         },
         "palette": Object {
-          "accent": Object {
-            "acce1": "#414141",
-            "acce1H": "#676767",
-            "acce2": "#146BD2",
-            "acce2h": "#4389DB",
-            "acce3": "#CC0000",
-          },
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
@@ -15220,23 +14618,14 @@ body {
             "hoverOpacity": 0.08,
             "selected": "rgba(0, 0, 0, 0.14)",
           },
-          "atmosphere": Object {
-            "atmo1": "#FFFFFF",
-            "atmo2": "#F9F9F9",
-            "atmo3": "#F5F5F5",
-            "atmo4": "#F0F0F0",
-            "atmo5": "#DEDEDE",
-            "atmo6": "#BCBCBC",
-            "atmo7": "#999999",
-          },
           "augmentColor": [Function],
           "background": Object {
             "default": "#F9F9F9",
             "paper": "#fff",
           },
           "common": Object {
-            "black": "#000000",
-            "white": "#FFFFFF",
+            "black": "#000",
+            "white": "#fff",
           },
           "contrastThreshold": 3,
           "divider": "rgba(0, 0, 0, 0.12)",
@@ -15262,17 +14651,6 @@ body {
             "A200": "#aaaaaa",
             "A400": "#303030",
             "A700": "#616161",
-            "clear": "#F0F0F0",
-            "foggy": "#F5F5F5",
-            "inspire": "#414141",
-            "passive": "#999999",
-            "plain": "#BCBCBC",
-            "rainy": "#DEDEDE",
-            "smokey": "#F9F9F9",
-          },
-          "hitachi": Object {
-            "light": "#FF312E",
-            "main": "#CC0000",
           },
           "primary": Object {
             "contrastText": "#fff",
@@ -15285,44 +14663,6 @@ body {
             "dark": "rgb(45, 45, 45)",
             "light": "#999999",
             "main": "#414141",
-          },
-          "semantic": Object {
-            "sema1": "#63A621",
-            "sema2": "#DEDEDE",
-            "sema3": "#72CCCB",
-            "sema4": "#E8C758",
-            "sema5": "#E68C17",
-            "sema6": "#D13F3F",
-          },
-          "severity": Object {
-            "critical": "#F9E7CF",
-            "error": "#F5D8D8",
-            "minor": "#E2F4F4",
-            "negligible": "#F8F8F8",
-            "success": "#DFECD1",
-            "warning": "#F7F2D6",
-          },
-          "status": Object {
-            "critical": "#E68C17",
-            "error": "#D13F3F",
-            "minor": "#72CCCB",
-            "negligible": "#DEDEDE",
-            "success": "#63A621",
-            "warning": "#D9C138",
-          },
-          "support": Object {
-            "darkTurquoise": "#0F8B8D",
-            "lightTurquoise": "#C3ECEC",
-            "orange": "#FFBB00",
-            "plum": "#7C0B2B",
-            "redOrange": "#FF5838",
-            "supp1": "#0F8B8D",
-            "supp2": "#734B6D",
-            "supp3": "#4E7599",
-            "supp4": "#C19C31",
-            "supp5": "#546B6B",
-            "turquoise": "#7CDEDC",
-            "yellow": "#F9DC33",
           },
           "text": Object {
             "disabled": "#999999",
@@ -15677,8 +15017,9 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1H": "#676767",
+                  "acce1h": "#676767",
                   "acce2": "#146BD2",
+                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -15691,72 +15032,26 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "common": Object {
-                  "black": "#000000",
-                  "white": "#FFFFFF",
-                },
-                "grey": Object {
-                  "clear": "#F0F0F0",
-                  "foggy": "#F5F5F5",
-                  "inspire": "#414141",
-                  "passive": "#999999",
-                  "plain": "#BCBCBC",
-                  "rainy": "#DEDEDE",
-                  "smokey": "#F9F9F9",
-                },
                 "hitachi": Object {
                   "light": "#FF312E",
                   "main": "#CC0000",
                 },
-                "primary": Object {
-                  "light": "#4389DB",
-                  "main": "#146BD2",
-                },
-                "secondary": Object {
-                  "light": "#999999",
-                  "main": "#414141",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema1_200": "#DFECD1",
                   "sema2": "#DEDEDE",
                   "sema3": "#72CCCB",
                   "sema4": "#E8C758",
                   "sema5": "#E68C17",
                   "sema6": "#D13F3F",
-                },
-                "severity": Object {
-                  "critical": "#F9E7CF",
-                  "error": "#F5D8D8",
-                  "minor": "#E2F4F4",
-                  "negligible": "#F8F8F8",
-                  "success": "#DFECD1",
-                  "warning": "#F7F2D6",
-                },
-                "status": Object {
-                  "critical": "#E68C17",
-                  "error": "#D13F3F",
-                  "minor": "#72CCCB",
-                  "negligible": "#DEDEDE",
-                  "success": "#63A621",
-                  "warning": "#D9C138",
+                  "sema6_200": "#F5D8D8",
                 },
                 "support": Object {
-                  "darkTurquoise": "#0F8B8D",
-                  "lightTurquoise": "#C3ECEC",
-                  "orange": "#FFBB00",
-                  "plum": "#7C0B2B",
-                  "redOrange": "#FF5838",
                   "supp1": "#0F8B8D",
                   "supp2": "#734B6D",
                   "supp3": "#4E7599",
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
-                  "turquoise": "#7CDEDC",
-                  "yellow": "#F9DC33",
-                },
-                "text": Object {
-                  "primary": "#414141",
-                  "secondary": "#999999",
                 },
               },
               "spacing": Object {
@@ -15883,8 +15178,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
+                  "backgroundColor": "#fff",
+                  "contrastText": undefined,
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -15914,13 +15209,6 @@ body {
               },
             },
             "palette": Object {
-              "accent": Object {
-                "acce1": "#414141",
-                "acce1H": "#676767",
-                "acce2": "#146BD2",
-                "acce2h": "#4389DB",
-                "acce3": "#CC0000",
-              },
               "action": Object {
                 "active": "rgba(0, 0, 0, 0.54)",
                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -15929,23 +15217,14 @@ body {
                 "hoverOpacity": 0.08,
                 "selected": "rgba(0, 0, 0, 0.14)",
               },
-              "atmosphere": Object {
-                "atmo1": "#FFFFFF",
-                "atmo2": "#F9F9F9",
-                "atmo3": "#F5F5F5",
-                "atmo4": "#F0F0F0",
-                "atmo5": "#DEDEDE",
-                "atmo6": "#BCBCBC",
-                "atmo7": "#999999",
-              },
               "augmentColor": [Function],
               "background": Object {
                 "default": "#F9F9F9",
                 "paper": "#fff",
               },
               "common": Object {
-                "black": "#000000",
-                "white": "#FFFFFF",
+                "black": "#000",
+                "white": "#fff",
               },
               "contrastThreshold": 3,
               "divider": "rgba(0, 0, 0, 0.12)",
@@ -15971,17 +15250,6 @@ body {
                 "A200": "#aaaaaa",
                 "A400": "#303030",
                 "A700": "#616161",
-                "clear": "#F0F0F0",
-                "foggy": "#F5F5F5",
-                "inspire": "#414141",
-                "passive": "#999999",
-                "plain": "#BCBCBC",
-                "rainy": "#DEDEDE",
-                "smokey": "#F9F9F9",
-              },
-              "hitachi": Object {
-                "light": "#FF312E",
-                "main": "#CC0000",
               },
               "primary": Object {
                 "contrastText": "#fff",
@@ -15994,44 +15262,6 @@ body {
                 "dark": "rgb(45, 45, 45)",
                 "light": "#999999",
                 "main": "#414141",
-              },
-              "semantic": Object {
-                "sema1": "#63A621",
-                "sema2": "#DEDEDE",
-                "sema3": "#72CCCB",
-                "sema4": "#E8C758",
-                "sema5": "#E68C17",
-                "sema6": "#D13F3F",
-              },
-              "severity": Object {
-                "critical": "#F9E7CF",
-                "error": "#F5D8D8",
-                "minor": "#E2F4F4",
-                "negligible": "#F8F8F8",
-                "success": "#DFECD1",
-                "warning": "#F7F2D6",
-              },
-              "status": Object {
-                "critical": "#E68C17",
-                "error": "#D13F3F",
-                "minor": "#72CCCB",
-                "negligible": "#DEDEDE",
-                "success": "#63A621",
-                "warning": "#D9C138",
-              },
-              "support": Object {
-                "darkTurquoise": "#0F8B8D",
-                "lightTurquoise": "#C3ECEC",
-                "orange": "#FFBB00",
-                "plum": "#7C0B2B",
-                "redOrange": "#FF5838",
-                "supp1": "#0F8B8D",
-                "supp2": "#734B6D",
-                "supp3": "#4E7599",
-                "supp4": "#C19C31",
-                "supp5": "#546B6B",
-                "turquoise": "#7CDEDC",
-                "yellow": "#F9DC33",
               },
               "text": Object {
                 "disabled": "#999999",
@@ -16390,8 +15620,9 @@ body {
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
-                        "acce1H": "#676767",
+                        "acce1h": "#676767",
                         "acce2": "#146BD2",
+                        "acce2_200": "#CFE0F5",
                         "acce2h": "#4389DB",
                         "acce3": "#CC0000",
                       },
@@ -16404,72 +15635,26 @@ body {
                         "atmo6": "#BCBCBC",
                         "atmo7": "#999999",
                       },
-                      "common": Object {
-                        "black": "#000000",
-                        "white": "#FFFFFF",
-                      },
-                      "grey": Object {
-                        "clear": "#F0F0F0",
-                        "foggy": "#F5F5F5",
-                        "inspire": "#414141",
-                        "passive": "#999999",
-                        "plain": "#BCBCBC",
-                        "rainy": "#DEDEDE",
-                        "smokey": "#F9F9F9",
-                      },
                       "hitachi": Object {
                         "light": "#FF312E",
                         "main": "#CC0000",
                       },
-                      "primary": Object {
-                        "light": "#4389DB",
-                        "main": "#146BD2",
-                      },
-                      "secondary": Object {
-                        "light": "#999999",
-                        "main": "#414141",
-                      },
                       "semantic": Object {
                         "sema1": "#63A621",
+                        "sema1_200": "#DFECD1",
                         "sema2": "#DEDEDE",
                         "sema3": "#72CCCB",
                         "sema4": "#E8C758",
                         "sema5": "#E68C17",
                         "sema6": "#D13F3F",
-                      },
-                      "severity": Object {
-                        "critical": "#F9E7CF",
-                        "error": "#F5D8D8",
-                        "minor": "#E2F4F4",
-                        "negligible": "#F8F8F8",
-                        "success": "#DFECD1",
-                        "warning": "#F7F2D6",
-                      },
-                      "status": Object {
-                        "critical": "#E68C17",
-                        "error": "#D13F3F",
-                        "minor": "#72CCCB",
-                        "negligible": "#DEDEDE",
-                        "success": "#63A621",
-                        "warning": "#D9C138",
+                        "sema6_200": "#F5D8D8",
                       },
                       "support": Object {
-                        "darkTurquoise": "#0F8B8D",
-                        "lightTurquoise": "#C3ECEC",
-                        "orange": "#FFBB00",
-                        "plum": "#7C0B2B",
-                        "redOrange": "#FF5838",
                         "supp1": "#0F8B8D",
                         "supp2": "#734B6D",
                         "supp3": "#4E7599",
                         "supp4": "#C19C31",
                         "supp5": "#546B6B",
-                        "turquoise": "#7CDEDC",
-                        "yellow": "#F9DC33",
-                      },
-                      "text": Object {
-                        "primary": "#414141",
-                        "secondary": "#999999",
                       },
                     },
                     "spacing": Object {
@@ -16596,8 +15781,8 @@ body {
                   "overrides": Object {
                     "MuiAppBar": Object {
                       "colorDefault": Object {
-                        "backgroundColor": "#FFFFFF",
-                        "contrastText": "#414141",
+                        "backgroundColor": "#fff",
+                        "contrastText": undefined,
                       },
                       "root": Object {
                         "@media (min-width: 600px)": Object {
@@ -16627,13 +15812,6 @@ body {
                     },
                   },
                   "palette": Object {
-                    "accent": Object {
-                      "acce1": "#414141",
-                      "acce1H": "#676767",
-                      "acce2": "#146BD2",
-                      "acce2h": "#4389DB",
-                      "acce3": "#CC0000",
-                    },
                     "action": Object {
                       "active": "rgba(0, 0, 0, 0.54)",
                       "disabled": "rgba(0, 0, 0, 0.26)",
@@ -16642,23 +15820,14 @@ body {
                       "hoverOpacity": 0.08,
                       "selected": "rgba(0, 0, 0, 0.14)",
                     },
-                    "atmosphere": Object {
-                      "atmo1": "#FFFFFF",
-                      "atmo2": "#F9F9F9",
-                      "atmo3": "#F5F5F5",
-                      "atmo4": "#F0F0F0",
-                      "atmo5": "#DEDEDE",
-                      "atmo6": "#BCBCBC",
-                      "atmo7": "#999999",
-                    },
                     "augmentColor": [Function],
                     "background": Object {
                       "default": "#F9F9F9",
                       "paper": "#fff",
                     },
                     "common": Object {
-                      "black": "#000000",
-                      "white": "#FFFFFF",
+                      "black": "#000",
+                      "white": "#fff",
                     },
                     "contrastThreshold": 3,
                     "divider": "rgba(0, 0, 0, 0.12)",
@@ -16684,17 +15853,6 @@ body {
                       "A200": "#aaaaaa",
                       "A400": "#303030",
                       "A700": "#616161",
-                      "clear": "#F0F0F0",
-                      "foggy": "#F5F5F5",
-                      "inspire": "#414141",
-                      "passive": "#999999",
-                      "plain": "#BCBCBC",
-                      "rainy": "#DEDEDE",
-                      "smokey": "#F9F9F9",
-                    },
-                    "hitachi": Object {
-                      "light": "#FF312E",
-                      "main": "#CC0000",
                     },
                     "primary": Object {
                       "contrastText": "#fff",
@@ -16707,44 +15865,6 @@ body {
                       "dark": "rgb(45, 45, 45)",
                       "light": "#999999",
                       "main": "#414141",
-                    },
-                    "semantic": Object {
-                      "sema1": "#63A621",
-                      "sema2": "#DEDEDE",
-                      "sema3": "#72CCCB",
-                      "sema4": "#E8C758",
-                      "sema5": "#E68C17",
-                      "sema6": "#D13F3F",
-                    },
-                    "severity": Object {
-                      "critical": "#F9E7CF",
-                      "error": "#F5D8D8",
-                      "minor": "#E2F4F4",
-                      "negligible": "#F8F8F8",
-                      "success": "#DFECD1",
-                      "warning": "#F7F2D6",
-                    },
-                    "status": Object {
-                      "critical": "#E68C17",
-                      "error": "#D13F3F",
-                      "minor": "#72CCCB",
-                      "negligible": "#DEDEDE",
-                      "success": "#63A621",
-                      "warning": "#D9C138",
-                    },
-                    "support": Object {
-                      "darkTurquoise": "#0F8B8D",
-                      "lightTurquoise": "#C3ECEC",
-                      "orange": "#FFBB00",
-                      "plum": "#7C0B2B",
-                      "redOrange": "#FF5838",
-                      "supp1": "#0F8B8D",
-                      "supp2": "#734B6D",
-                      "supp3": "#4E7599",
-                      "supp4": "#C19C31",
-                      "supp5": "#546B6B",
-                      "turquoise": "#7CDEDC",
-                      "yellow": "#F9DC33",
                     },
                     "text": Object {
                       "disabled": "#999999",
@@ -17099,8 +16219,9 @@ body {
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1H": "#676767",
+                          "acce1h": "#676767",
                           "acce2": "#146BD2",
+                          "acce2_200": "#CFE0F5",
                           "acce2h": "#4389DB",
                           "acce3": "#CC0000",
                         },
@@ -17113,72 +16234,26 @@ body {
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
                         },
-                        "common": Object {
-                          "black": "#000000",
-                          "white": "#FFFFFF",
-                        },
-                        "grey": Object {
-                          "clear": "#F0F0F0",
-                          "foggy": "#F5F5F5",
-                          "inspire": "#414141",
-                          "passive": "#999999",
-                          "plain": "#BCBCBC",
-                          "rainy": "#DEDEDE",
-                          "smokey": "#F9F9F9",
-                        },
                         "hitachi": Object {
                           "light": "#FF312E",
                           "main": "#CC0000",
                         },
-                        "primary": Object {
-                          "light": "#4389DB",
-                          "main": "#146BD2",
-                        },
-                        "secondary": Object {
-                          "light": "#999999",
-                          "main": "#414141",
-                        },
                         "semantic": Object {
                           "sema1": "#63A621",
+                          "sema1_200": "#DFECD1",
                           "sema2": "#DEDEDE",
                           "sema3": "#72CCCB",
                           "sema4": "#E8C758",
                           "sema5": "#E68C17",
                           "sema6": "#D13F3F",
-                        },
-                        "severity": Object {
-                          "critical": "#F9E7CF",
-                          "error": "#F5D8D8",
-                          "minor": "#E2F4F4",
-                          "negligible": "#F8F8F8",
-                          "success": "#DFECD1",
-                          "warning": "#F7F2D6",
-                        },
-                        "status": Object {
-                          "critical": "#E68C17",
-                          "error": "#D13F3F",
-                          "minor": "#72CCCB",
-                          "negligible": "#DEDEDE",
-                          "success": "#63A621",
-                          "warning": "#D9C138",
+                          "sema6_200": "#F5D8D8",
                         },
                         "support": Object {
-                          "darkTurquoise": "#0F8B8D",
-                          "lightTurquoise": "#C3ECEC",
-                          "orange": "#FFBB00",
-                          "plum": "#7C0B2B",
-                          "redOrange": "#FF5838",
                           "supp1": "#0F8B8D",
                           "supp2": "#734B6D",
                           "supp3": "#4E7599",
                           "supp4": "#C19C31",
                           "supp5": "#546B6B",
-                          "turquoise": "#7CDEDC",
-                          "yellow": "#F9DC33",
-                        },
-                        "text": Object {
-                          "primary": "#414141",
-                          "secondary": "#999999",
                         },
                       },
                       "spacing": Object {
@@ -17305,8 +16380,8 @@ body {
                     "overrides": Object {
                       "MuiAppBar": Object {
                         "colorDefault": Object {
-                          "backgroundColor": "#FFFFFF",
-                          "contrastText": "#414141",
+                          "backgroundColor": "#fff",
+                          "contrastText": undefined,
                         },
                         "root": Object {
                           "@media (min-width: 600px)": Object {
@@ -17336,13 +16411,6 @@ body {
                       },
                     },
                     "palette": Object {
-                      "accent": Object {
-                        "acce1": "#414141",
-                        "acce1H": "#676767",
-                        "acce2": "#146BD2",
-                        "acce2h": "#4389DB",
-                        "acce3": "#CC0000",
-                      },
                       "action": Object {
                         "active": "rgba(0, 0, 0, 0.54)",
                         "disabled": "rgba(0, 0, 0, 0.26)",
@@ -17351,23 +16419,14 @@ body {
                         "hoverOpacity": 0.08,
                         "selected": "rgba(0, 0, 0, 0.14)",
                       },
-                      "atmosphere": Object {
-                        "atmo1": "#FFFFFF",
-                        "atmo2": "#F9F9F9",
-                        "atmo3": "#F5F5F5",
-                        "atmo4": "#F0F0F0",
-                        "atmo5": "#DEDEDE",
-                        "atmo6": "#BCBCBC",
-                        "atmo7": "#999999",
-                      },
                       "augmentColor": [Function],
                       "background": Object {
                         "default": "#F9F9F9",
                         "paper": "#fff",
                       },
                       "common": Object {
-                        "black": "#000000",
-                        "white": "#FFFFFF",
+                        "black": "#000",
+                        "white": "#fff",
                       },
                       "contrastThreshold": 3,
                       "divider": "rgba(0, 0, 0, 0.12)",
@@ -17393,17 +16452,6 @@ body {
                         "A200": "#aaaaaa",
                         "A400": "#303030",
                         "A700": "#616161",
-                        "clear": "#F0F0F0",
-                        "foggy": "#F5F5F5",
-                        "inspire": "#414141",
-                        "passive": "#999999",
-                        "plain": "#BCBCBC",
-                        "rainy": "#DEDEDE",
-                        "smokey": "#F9F9F9",
-                      },
-                      "hitachi": Object {
-                        "light": "#FF312E",
-                        "main": "#CC0000",
                       },
                       "primary": Object {
                         "contrastText": "#fff",
@@ -17416,44 +16464,6 @@ body {
                         "dark": "rgb(45, 45, 45)",
                         "light": "#999999",
                         "main": "#414141",
-                      },
-                      "semantic": Object {
-                        "sema1": "#63A621",
-                        "sema2": "#DEDEDE",
-                        "sema3": "#72CCCB",
-                        "sema4": "#E8C758",
-                        "sema5": "#E68C17",
-                        "sema6": "#D13F3F",
-                      },
-                      "severity": Object {
-                        "critical": "#F9E7CF",
-                        "error": "#F5D8D8",
-                        "minor": "#E2F4F4",
-                        "negligible": "#F8F8F8",
-                        "success": "#DFECD1",
-                        "warning": "#F7F2D6",
-                      },
-                      "status": Object {
-                        "critical": "#E68C17",
-                        "error": "#D13F3F",
-                        "minor": "#72CCCB",
-                        "negligible": "#DEDEDE",
-                        "success": "#63A621",
-                        "warning": "#D9C138",
-                      },
-                      "support": Object {
-                        "darkTurquoise": "#0F8B8D",
-                        "lightTurquoise": "#C3ECEC",
-                        "orange": "#FFBB00",
-                        "plum": "#7C0B2B",
-                        "redOrange": "#FF5838",
-                        "supp1": "#0F8B8D",
-                        "supp2": "#734B6D",
-                        "supp3": "#4E7599",
-                        "supp4": "#C19C31",
-                        "supp5": "#546B6B",
-                        "turquoise": "#7CDEDC",
-                        "yellow": "#F9DC33",
                       },
                       "text": Object {
                         "disabled": "#999999",
@@ -17835,8 +16845,9 @@ body {
                         "palette": Object {
                           "accent": Object {
                             "acce1": "#414141",
-                            "acce1H": "#676767",
+                            "acce1h": "#676767",
                             "acce2": "#146BD2",
+                            "acce2_200": "#CFE0F5",
                             "acce2h": "#4389DB",
                             "acce3": "#CC0000",
                           },
@@ -17849,72 +16860,26 @@ body {
                             "atmo6": "#BCBCBC",
                             "atmo7": "#999999",
                           },
-                          "common": Object {
-                            "black": "#000000",
-                            "white": "#FFFFFF",
-                          },
-                          "grey": Object {
-                            "clear": "#F0F0F0",
-                            "foggy": "#F5F5F5",
-                            "inspire": "#414141",
-                            "passive": "#999999",
-                            "plain": "#BCBCBC",
-                            "rainy": "#DEDEDE",
-                            "smokey": "#F9F9F9",
-                          },
                           "hitachi": Object {
                             "light": "#FF312E",
                             "main": "#CC0000",
                           },
-                          "primary": Object {
-                            "light": "#4389DB",
-                            "main": "#146BD2",
-                          },
-                          "secondary": Object {
-                            "light": "#999999",
-                            "main": "#414141",
-                          },
                           "semantic": Object {
                             "sema1": "#63A621",
+                            "sema1_200": "#DFECD1",
                             "sema2": "#DEDEDE",
                             "sema3": "#72CCCB",
                             "sema4": "#E8C758",
                             "sema5": "#E68C17",
                             "sema6": "#D13F3F",
-                          },
-                          "severity": Object {
-                            "critical": "#F9E7CF",
-                            "error": "#F5D8D8",
-                            "minor": "#E2F4F4",
-                            "negligible": "#F8F8F8",
-                            "success": "#DFECD1",
-                            "warning": "#F7F2D6",
-                          },
-                          "status": Object {
-                            "critical": "#E68C17",
-                            "error": "#D13F3F",
-                            "minor": "#72CCCB",
-                            "negligible": "#DEDEDE",
-                            "success": "#63A621",
-                            "warning": "#D9C138",
+                            "sema6_200": "#F5D8D8",
                           },
                           "support": Object {
-                            "darkTurquoise": "#0F8B8D",
-                            "lightTurquoise": "#C3ECEC",
-                            "orange": "#FFBB00",
-                            "plum": "#7C0B2B",
-                            "redOrange": "#FF5838",
                             "supp1": "#0F8B8D",
                             "supp2": "#734B6D",
                             "supp3": "#4E7599",
                             "supp4": "#C19C31",
                             "supp5": "#546B6B",
-                            "turquoise": "#7CDEDC",
-                            "yellow": "#F9DC33",
-                          },
-                          "text": Object {
-                            "primary": "#414141",
-                            "secondary": "#999999",
                           },
                         },
                         "spacing": Object {
@@ -18041,8 +17006,8 @@ body {
                       "overrides": Object {
                         "MuiAppBar": Object {
                           "colorDefault": Object {
-                            "backgroundColor": "#FFFFFF",
-                            "contrastText": "#414141",
+                            "backgroundColor": "#fff",
+                            "contrastText": undefined,
                           },
                           "root": Object {
                             "@media (min-width: 600px)": Object {
@@ -18072,13 +17037,6 @@ body {
                         },
                       },
                       "palette": Object {
-                        "accent": Object {
-                          "acce1": "#414141",
-                          "acce1H": "#676767",
-                          "acce2": "#146BD2",
-                          "acce2h": "#4389DB",
-                          "acce3": "#CC0000",
-                        },
                         "action": Object {
                           "active": "rgba(0, 0, 0, 0.54)",
                           "disabled": "rgba(0, 0, 0, 0.26)",
@@ -18087,23 +17045,14 @@ body {
                           "hoverOpacity": 0.08,
                           "selected": "rgba(0, 0, 0, 0.14)",
                         },
-                        "atmosphere": Object {
-                          "atmo1": "#FFFFFF",
-                          "atmo2": "#F9F9F9",
-                          "atmo3": "#F5F5F5",
-                          "atmo4": "#F0F0F0",
-                          "atmo5": "#DEDEDE",
-                          "atmo6": "#BCBCBC",
-                          "atmo7": "#999999",
-                        },
                         "augmentColor": [Function],
                         "background": Object {
                           "default": "#F9F9F9",
                           "paper": "#fff",
                         },
                         "common": Object {
-                          "black": "#000000",
-                          "white": "#FFFFFF",
+                          "black": "#000",
+                          "white": "#fff",
                         },
                         "contrastThreshold": 3,
                         "divider": "rgba(0, 0, 0, 0.12)",
@@ -18129,17 +17078,6 @@ body {
                           "A200": "#aaaaaa",
                           "A400": "#303030",
                           "A700": "#616161",
-                          "clear": "#F0F0F0",
-                          "foggy": "#F5F5F5",
-                          "inspire": "#414141",
-                          "passive": "#999999",
-                          "plain": "#BCBCBC",
-                          "rainy": "#DEDEDE",
-                          "smokey": "#F9F9F9",
-                        },
-                        "hitachi": Object {
-                          "light": "#FF312E",
-                          "main": "#CC0000",
                         },
                         "primary": Object {
                           "contrastText": "#fff",
@@ -18152,44 +17090,6 @@ body {
                           "dark": "rgb(45, 45, 45)",
                           "light": "#999999",
                           "main": "#414141",
-                        },
-                        "semantic": Object {
-                          "sema1": "#63A621",
-                          "sema2": "#DEDEDE",
-                          "sema3": "#72CCCB",
-                          "sema4": "#E8C758",
-                          "sema5": "#E68C17",
-                          "sema6": "#D13F3F",
-                        },
-                        "severity": Object {
-                          "critical": "#F9E7CF",
-                          "error": "#F5D8D8",
-                          "minor": "#E2F4F4",
-                          "negligible": "#F8F8F8",
-                          "success": "#DFECD1",
-                          "warning": "#F7F2D6",
-                        },
-                        "status": Object {
-                          "critical": "#E68C17",
-                          "error": "#D13F3F",
-                          "minor": "#72CCCB",
-                          "negligible": "#DEDEDE",
-                          "success": "#63A621",
-                          "warning": "#D9C138",
-                        },
-                        "support": Object {
-                          "darkTurquoise": "#0F8B8D",
-                          "lightTurquoise": "#C3ECEC",
-                          "orange": "#FFBB00",
-                          "plum": "#7C0B2B",
-                          "redOrange": "#FF5838",
-                          "supp1": "#0F8B8D",
-                          "supp2": "#734B6D",
-                          "supp3": "#4E7599",
-                          "supp4": "#C19C31",
-                          "supp5": "#546B6B",
-                          "turquoise": "#7CDEDC",
-                          "yellow": "#F9DC33",
                         },
                         "text": Object {
                           "disabled": "#999999",
@@ -18538,8 +17438,9 @@ body {
                           "palette": Object {
                             "accent": Object {
                               "acce1": "#414141",
-                              "acce1H": "#676767",
+                              "acce1h": "#676767",
                               "acce2": "#146BD2",
+                              "acce2_200": "#CFE0F5",
                               "acce2h": "#4389DB",
                               "acce3": "#CC0000",
                             },
@@ -18552,72 +17453,26 @@ body {
                               "atmo6": "#BCBCBC",
                               "atmo7": "#999999",
                             },
-                            "common": Object {
-                              "black": "#000000",
-                              "white": "#FFFFFF",
-                            },
-                            "grey": Object {
-                              "clear": "#F0F0F0",
-                              "foggy": "#F5F5F5",
-                              "inspire": "#414141",
-                              "passive": "#999999",
-                              "plain": "#BCBCBC",
-                              "rainy": "#DEDEDE",
-                              "smokey": "#F9F9F9",
-                            },
                             "hitachi": Object {
                               "light": "#FF312E",
                               "main": "#CC0000",
                             },
-                            "primary": Object {
-                              "light": "#4389DB",
-                              "main": "#146BD2",
-                            },
-                            "secondary": Object {
-                              "light": "#999999",
-                              "main": "#414141",
-                            },
                             "semantic": Object {
                               "sema1": "#63A621",
+                              "sema1_200": "#DFECD1",
                               "sema2": "#DEDEDE",
                               "sema3": "#72CCCB",
                               "sema4": "#E8C758",
                               "sema5": "#E68C17",
                               "sema6": "#D13F3F",
-                            },
-                            "severity": Object {
-                              "critical": "#F9E7CF",
-                              "error": "#F5D8D8",
-                              "minor": "#E2F4F4",
-                              "negligible": "#F8F8F8",
-                              "success": "#DFECD1",
-                              "warning": "#F7F2D6",
-                            },
-                            "status": Object {
-                              "critical": "#E68C17",
-                              "error": "#D13F3F",
-                              "minor": "#72CCCB",
-                              "negligible": "#DEDEDE",
-                              "success": "#63A621",
-                              "warning": "#D9C138",
+                              "sema6_200": "#F5D8D8",
                             },
                             "support": Object {
-                              "darkTurquoise": "#0F8B8D",
-                              "lightTurquoise": "#C3ECEC",
-                              "orange": "#FFBB00",
-                              "plum": "#7C0B2B",
-                              "redOrange": "#FF5838",
                               "supp1": "#0F8B8D",
                               "supp2": "#734B6D",
                               "supp3": "#4E7599",
                               "supp4": "#C19C31",
                               "supp5": "#546B6B",
-                              "turquoise": "#7CDEDC",
-                              "yellow": "#F9DC33",
-                            },
-                            "text": Object {
-                              "primary": "#414141",
-                              "secondary": "#999999",
                             },
                           },
                           "spacing": Object {
@@ -18744,8 +17599,8 @@ body {
                         "overrides": Object {
                           "MuiAppBar": Object {
                             "colorDefault": Object {
-                              "backgroundColor": "#FFFFFF",
-                              "contrastText": "#414141",
+                              "backgroundColor": "#fff",
+                              "contrastText": undefined,
                             },
                             "root": Object {
                               "@media (min-width: 600px)": Object {
@@ -18775,13 +17630,6 @@ body {
                           },
                         },
                         "palette": Object {
-                          "accent": Object {
-                            "acce1": "#414141",
-                            "acce1H": "#676767",
-                            "acce2": "#146BD2",
-                            "acce2h": "#4389DB",
-                            "acce3": "#CC0000",
-                          },
                           "action": Object {
                             "active": "rgba(0, 0, 0, 0.54)",
                             "disabled": "rgba(0, 0, 0, 0.26)",
@@ -18790,23 +17638,14 @@ body {
                             "hoverOpacity": 0.08,
                             "selected": "rgba(0, 0, 0, 0.14)",
                           },
-                          "atmosphere": Object {
-                            "atmo1": "#FFFFFF",
-                            "atmo2": "#F9F9F9",
-                            "atmo3": "#F5F5F5",
-                            "atmo4": "#F0F0F0",
-                            "atmo5": "#DEDEDE",
-                            "atmo6": "#BCBCBC",
-                            "atmo7": "#999999",
-                          },
                           "augmentColor": [Function],
                           "background": Object {
                             "default": "#F9F9F9",
                             "paper": "#fff",
                           },
                           "common": Object {
-                            "black": "#000000",
-                            "white": "#FFFFFF",
+                            "black": "#000",
+                            "white": "#fff",
                           },
                           "contrastThreshold": 3,
                           "divider": "rgba(0, 0, 0, 0.12)",
@@ -18832,17 +17671,6 @@ body {
                             "A200": "#aaaaaa",
                             "A400": "#303030",
                             "A700": "#616161",
-                            "clear": "#F0F0F0",
-                            "foggy": "#F5F5F5",
-                            "inspire": "#414141",
-                            "passive": "#999999",
-                            "plain": "#BCBCBC",
-                            "rainy": "#DEDEDE",
-                            "smokey": "#F9F9F9",
-                          },
-                          "hitachi": Object {
-                            "light": "#FF312E",
-                            "main": "#CC0000",
                           },
                           "primary": Object {
                             "contrastText": "#fff",
@@ -18855,44 +17683,6 @@ body {
                             "dark": "rgb(45, 45, 45)",
                             "light": "#999999",
                             "main": "#414141",
-                          },
-                          "semantic": Object {
-                            "sema1": "#63A621",
-                            "sema2": "#DEDEDE",
-                            "sema3": "#72CCCB",
-                            "sema4": "#E8C758",
-                            "sema5": "#E68C17",
-                            "sema6": "#D13F3F",
-                          },
-                          "severity": Object {
-                            "critical": "#F9E7CF",
-                            "error": "#F5D8D8",
-                            "minor": "#E2F4F4",
-                            "negligible": "#F8F8F8",
-                            "success": "#DFECD1",
-                            "warning": "#F7F2D6",
-                          },
-                          "status": Object {
-                            "critical": "#E68C17",
-                            "error": "#D13F3F",
-                            "minor": "#72CCCB",
-                            "negligible": "#DEDEDE",
-                            "success": "#63A621",
-                            "warning": "#D9C138",
-                          },
-                          "support": Object {
-                            "darkTurquoise": "#0F8B8D",
-                            "lightTurquoise": "#C3ECEC",
-                            "orange": "#FFBB00",
-                            "plum": "#7C0B2B",
-                            "redOrange": "#FF5838",
-                            "supp1": "#0F8B8D",
-                            "supp2": "#734B6D",
-                            "supp3": "#4E7599",
-                            "supp4": "#C19C31",
-                            "supp5": "#546B6B",
-                            "turquoise": "#7CDEDC",
-                            "yellow": "#F9DC33",
                           },
                           "text": Object {
                             "disabled": "#999999",
@@ -19250,8 +18040,9 @@ body {
                             "palette": Object {
                               "accent": Object {
                                 "acce1": "#414141",
-                                "acce1H": "#676767",
+                                "acce1h": "#676767",
                                 "acce2": "#146BD2",
+                                "acce2_200": "#CFE0F5",
                                 "acce2h": "#4389DB",
                                 "acce3": "#CC0000",
                               },
@@ -19264,72 +18055,26 @@ body {
                                 "atmo6": "#BCBCBC",
                                 "atmo7": "#999999",
                               },
-                              "common": Object {
-                                "black": "#000000",
-                                "white": "#FFFFFF",
-                              },
-                              "grey": Object {
-                                "clear": "#F0F0F0",
-                                "foggy": "#F5F5F5",
-                                "inspire": "#414141",
-                                "passive": "#999999",
-                                "plain": "#BCBCBC",
-                                "rainy": "#DEDEDE",
-                                "smokey": "#F9F9F9",
-                              },
                               "hitachi": Object {
                                 "light": "#FF312E",
                                 "main": "#CC0000",
                               },
-                              "primary": Object {
-                                "light": "#4389DB",
-                                "main": "#146BD2",
-                              },
-                              "secondary": Object {
-                                "light": "#999999",
-                                "main": "#414141",
-                              },
                               "semantic": Object {
                                 "sema1": "#63A621",
+                                "sema1_200": "#DFECD1",
                                 "sema2": "#DEDEDE",
                                 "sema3": "#72CCCB",
                                 "sema4": "#E8C758",
                                 "sema5": "#E68C17",
                                 "sema6": "#D13F3F",
-                              },
-                              "severity": Object {
-                                "critical": "#F9E7CF",
-                                "error": "#F5D8D8",
-                                "minor": "#E2F4F4",
-                                "negligible": "#F8F8F8",
-                                "success": "#DFECD1",
-                                "warning": "#F7F2D6",
-                              },
-                              "status": Object {
-                                "critical": "#E68C17",
-                                "error": "#D13F3F",
-                                "minor": "#72CCCB",
-                                "negligible": "#DEDEDE",
-                                "success": "#63A621",
-                                "warning": "#D9C138",
+                                "sema6_200": "#F5D8D8",
                               },
                               "support": Object {
-                                "darkTurquoise": "#0F8B8D",
-                                "lightTurquoise": "#C3ECEC",
-                                "orange": "#FFBB00",
-                                "plum": "#7C0B2B",
-                                "redOrange": "#FF5838",
                                 "supp1": "#0F8B8D",
                                 "supp2": "#734B6D",
                                 "supp3": "#4E7599",
                                 "supp4": "#C19C31",
                                 "supp5": "#546B6B",
-                                "turquoise": "#7CDEDC",
-                                "yellow": "#F9DC33",
-                              },
-                              "text": Object {
-                                "primary": "#414141",
-                                "secondary": "#999999",
                               },
                             },
                             "spacing": Object {
@@ -19456,8 +18201,8 @@ body {
                           "overrides": Object {
                             "MuiAppBar": Object {
                               "colorDefault": Object {
-                                "backgroundColor": "#FFFFFF",
-                                "contrastText": "#414141",
+                                "backgroundColor": "#fff",
+                                "contrastText": undefined,
                               },
                               "root": Object {
                                 "@media (min-width: 600px)": Object {
@@ -19487,13 +18232,6 @@ body {
                             },
                           },
                           "palette": Object {
-                            "accent": Object {
-                              "acce1": "#414141",
-                              "acce1H": "#676767",
-                              "acce2": "#146BD2",
-                              "acce2h": "#4389DB",
-                              "acce3": "#CC0000",
-                            },
                             "action": Object {
                               "active": "rgba(0, 0, 0, 0.54)",
                               "disabled": "rgba(0, 0, 0, 0.26)",
@@ -19502,23 +18240,14 @@ body {
                               "hoverOpacity": 0.08,
                               "selected": "rgba(0, 0, 0, 0.14)",
                             },
-                            "atmosphere": Object {
-                              "atmo1": "#FFFFFF",
-                              "atmo2": "#F9F9F9",
-                              "atmo3": "#F5F5F5",
-                              "atmo4": "#F0F0F0",
-                              "atmo5": "#DEDEDE",
-                              "atmo6": "#BCBCBC",
-                              "atmo7": "#999999",
-                            },
                             "augmentColor": [Function],
                             "background": Object {
                               "default": "#F9F9F9",
                               "paper": "#fff",
                             },
                             "common": Object {
-                              "black": "#000000",
-                              "white": "#FFFFFF",
+                              "black": "#000",
+                              "white": "#fff",
                             },
                             "contrastThreshold": 3,
                             "divider": "rgba(0, 0, 0, 0.12)",
@@ -19544,17 +18273,6 @@ body {
                               "A200": "#aaaaaa",
                               "A400": "#303030",
                               "A700": "#616161",
-                              "clear": "#F0F0F0",
-                              "foggy": "#F5F5F5",
-                              "inspire": "#414141",
-                              "passive": "#999999",
-                              "plain": "#BCBCBC",
-                              "rainy": "#DEDEDE",
-                              "smokey": "#F9F9F9",
-                            },
-                            "hitachi": Object {
-                              "light": "#FF312E",
-                              "main": "#CC0000",
                             },
                             "primary": Object {
                               "contrastText": "#fff",
@@ -19567,44 +18285,6 @@ body {
                               "dark": "rgb(45, 45, 45)",
                               "light": "#999999",
                               "main": "#414141",
-                            },
-                            "semantic": Object {
-                              "sema1": "#63A621",
-                              "sema2": "#DEDEDE",
-                              "sema3": "#72CCCB",
-                              "sema4": "#E8C758",
-                              "sema5": "#E68C17",
-                              "sema6": "#D13F3F",
-                            },
-                            "severity": Object {
-                              "critical": "#F9E7CF",
-                              "error": "#F5D8D8",
-                              "minor": "#E2F4F4",
-                              "negligible": "#F8F8F8",
-                              "success": "#DFECD1",
-                              "warning": "#F7F2D6",
-                            },
-                            "status": Object {
-                              "critical": "#E68C17",
-                              "error": "#D13F3F",
-                              "minor": "#72CCCB",
-                              "negligible": "#DEDEDE",
-                              "success": "#63A621",
-                              "warning": "#D9C138",
-                            },
-                            "support": Object {
-                              "darkTurquoise": "#0F8B8D",
-                              "lightTurquoise": "#C3ECEC",
-                              "orange": "#FFBB00",
-                              "plum": "#7C0B2B",
-                              "redOrange": "#FF5838",
-                              "supp1": "#0F8B8D",
-                              "supp2": "#734B6D",
-                              "supp3": "#4E7599",
-                              "supp4": "#C19C31",
-                              "supp5": "#546B6B",
-                              "turquoise": "#7CDEDC",
-                              "yellow": "#F9DC33",
                             },
                             "text": Object {
                               "disabled": "#999999",
@@ -19960,8 +18640,9 @@ body {
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1h": "#676767",
                                   "acce2": "#146BD2",
+                                  "acce2_200": "#CFE0F5",
                                   "acce2h": "#4389DB",
                                   "acce3": "#CC0000",
                                 },
@@ -19974,72 +18655,26 @@ body {
                                   "atmo6": "#BCBCBC",
                                   "atmo7": "#999999",
                                 },
-                                "common": Object {
-                                  "black": "#000000",
-                                  "white": "#FFFFFF",
-                                },
-                                "grey": Object {
-                                  "clear": "#F0F0F0",
-                                  "foggy": "#F5F5F5",
-                                  "inspire": "#414141",
-                                  "passive": "#999999",
-                                  "plain": "#BCBCBC",
-                                  "rainy": "#DEDEDE",
-                                  "smokey": "#F9F9F9",
-                                },
                                 "hitachi": Object {
                                   "light": "#FF312E",
                                   "main": "#CC0000",
                                 },
-                                "primary": Object {
-                                  "light": "#4389DB",
-                                  "main": "#146BD2",
-                                },
-                                "secondary": Object {
-                                  "light": "#999999",
-                                  "main": "#414141",
-                                },
                                 "semantic": Object {
                                   "sema1": "#63A621",
+                                  "sema1_200": "#DFECD1",
                                   "sema2": "#DEDEDE",
                                   "sema3": "#72CCCB",
                                   "sema4": "#E8C758",
                                   "sema5": "#E68C17",
                                   "sema6": "#D13F3F",
-                                },
-                                "severity": Object {
-                                  "critical": "#F9E7CF",
-                                  "error": "#F5D8D8",
-                                  "minor": "#E2F4F4",
-                                  "negligible": "#F8F8F8",
-                                  "success": "#DFECD1",
-                                  "warning": "#F7F2D6",
-                                },
-                                "status": Object {
-                                  "critical": "#E68C17",
-                                  "error": "#D13F3F",
-                                  "minor": "#72CCCB",
-                                  "negligible": "#DEDEDE",
-                                  "success": "#63A621",
-                                  "warning": "#D9C138",
+                                  "sema6_200": "#F5D8D8",
                                 },
                                 "support": Object {
-                                  "darkTurquoise": "#0F8B8D",
-                                  "lightTurquoise": "#C3ECEC",
-                                  "orange": "#FFBB00",
-                                  "plum": "#7C0B2B",
-                                  "redOrange": "#FF5838",
                                   "supp1": "#0F8B8D",
                                   "supp2": "#734B6D",
                                   "supp3": "#4E7599",
                                   "supp4": "#C19C31",
                                   "supp5": "#546B6B",
-                                  "turquoise": "#7CDEDC",
-                                  "yellow": "#F9DC33",
-                                },
-                                "text": Object {
-                                  "primary": "#414141",
-                                  "secondary": "#999999",
                                 },
                               },
                               "spacing": Object {
@@ -20166,8 +18801,8 @@ body {
                             "overrides": Object {
                               "MuiAppBar": Object {
                                 "colorDefault": Object {
-                                  "backgroundColor": "#FFFFFF",
-                                  "contrastText": "#414141",
+                                  "backgroundColor": "#fff",
+                                  "contrastText": undefined,
                                 },
                                 "root": Object {
                                   "@media (min-width: 600px)": Object {
@@ -20197,13 +18832,6 @@ body {
                               },
                             },
                             "palette": Object {
-                              "accent": Object {
-                                "acce1": "#414141",
-                                "acce1H": "#676767",
-                                "acce2": "#146BD2",
-                                "acce2h": "#4389DB",
-                                "acce3": "#CC0000",
-                              },
                               "action": Object {
                                 "active": "rgba(0, 0, 0, 0.54)",
                                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -20212,23 +18840,14 @@ body {
                                 "hoverOpacity": 0.08,
                                 "selected": "rgba(0, 0, 0, 0.14)",
                               },
-                              "atmosphere": Object {
-                                "atmo1": "#FFFFFF",
-                                "atmo2": "#F9F9F9",
-                                "atmo3": "#F5F5F5",
-                                "atmo4": "#F0F0F0",
-                                "atmo5": "#DEDEDE",
-                                "atmo6": "#BCBCBC",
-                                "atmo7": "#999999",
-                              },
                               "augmentColor": [Function],
                               "background": Object {
                                 "default": "#F9F9F9",
                                 "paper": "#fff",
                               },
                               "common": Object {
-                                "black": "#000000",
-                                "white": "#FFFFFF",
+                                "black": "#000",
+                                "white": "#fff",
                               },
                               "contrastThreshold": 3,
                               "divider": "rgba(0, 0, 0, 0.12)",
@@ -20254,17 +18873,6 @@ body {
                                 "A200": "#aaaaaa",
                                 "A400": "#303030",
                                 "A700": "#616161",
-                                "clear": "#F0F0F0",
-                                "foggy": "#F5F5F5",
-                                "inspire": "#414141",
-                                "passive": "#999999",
-                                "plain": "#BCBCBC",
-                                "rainy": "#DEDEDE",
-                                "smokey": "#F9F9F9",
-                              },
-                              "hitachi": Object {
-                                "light": "#FF312E",
-                                "main": "#CC0000",
                               },
                               "primary": Object {
                                 "contrastText": "#fff",
@@ -20277,44 +18885,6 @@ body {
                                 "dark": "rgb(45, 45, 45)",
                                 "light": "#999999",
                                 "main": "#414141",
-                              },
-                              "semantic": Object {
-                                "sema1": "#63A621",
-                                "sema2": "#DEDEDE",
-                                "sema3": "#72CCCB",
-                                "sema4": "#E8C758",
-                                "sema5": "#E68C17",
-                                "sema6": "#D13F3F",
-                              },
-                              "severity": Object {
-                                "critical": "#F9E7CF",
-                                "error": "#F5D8D8",
-                                "minor": "#E2F4F4",
-                                "negligible": "#F8F8F8",
-                                "success": "#DFECD1",
-                                "warning": "#F7F2D6",
-                              },
-                              "status": Object {
-                                "critical": "#E68C17",
-                                "error": "#D13F3F",
-                                "minor": "#72CCCB",
-                                "negligible": "#DEDEDE",
-                                "success": "#63A621",
-                                "warning": "#D9C138",
-                              },
-                              "support": Object {
-                                "darkTurquoise": "#0F8B8D",
-                                "lightTurquoise": "#C3ECEC",
-                                "orange": "#FFBB00",
-                                "plum": "#7C0B2B",
-                                "redOrange": "#FF5838",
-                                "supp1": "#0F8B8D",
-                                "supp2": "#734B6D",
-                                "supp3": "#4E7599",
-                                "supp4": "#C19C31",
-                                "supp5": "#546B6B",
-                                "turquoise": "#7CDEDC",
-                                "yellow": "#F9DC33",
                               },
                               "text": Object {
                                 "disabled": "#999999",
@@ -20685,8 +19255,9 @@ body {
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
-                        "acce1H": "#676767",
+                        "acce1h": "#676767",
                         "acce2": "#146BD2",
+                        "acce2_200": "#CFE0F5",
                         "acce2h": "#4389DB",
                         "acce3": "#CC0000",
                       },
@@ -20699,72 +19270,26 @@ body {
                         "atmo6": "#BCBCBC",
                         "atmo7": "#999999",
                       },
-                      "common": Object {
-                        "black": "#000000",
-                        "white": "#FFFFFF",
-                      },
-                      "grey": Object {
-                        "clear": "#F0F0F0",
-                        "foggy": "#F5F5F5",
-                        "inspire": "#414141",
-                        "passive": "#999999",
-                        "plain": "#BCBCBC",
-                        "rainy": "#DEDEDE",
-                        "smokey": "#F9F9F9",
-                      },
                       "hitachi": Object {
                         "light": "#FF312E",
                         "main": "#CC0000",
                       },
-                      "primary": Object {
-                        "light": "#4389DB",
-                        "main": "#146BD2",
-                      },
-                      "secondary": Object {
-                        "light": "#999999",
-                        "main": "#414141",
-                      },
                       "semantic": Object {
                         "sema1": "#63A621",
+                        "sema1_200": "#DFECD1",
                         "sema2": "#DEDEDE",
                         "sema3": "#72CCCB",
                         "sema4": "#E8C758",
                         "sema5": "#E68C17",
                         "sema6": "#D13F3F",
-                      },
-                      "severity": Object {
-                        "critical": "#F9E7CF",
-                        "error": "#F5D8D8",
-                        "minor": "#E2F4F4",
-                        "negligible": "#F8F8F8",
-                        "success": "#DFECD1",
-                        "warning": "#F7F2D6",
-                      },
-                      "status": Object {
-                        "critical": "#E68C17",
-                        "error": "#D13F3F",
-                        "minor": "#72CCCB",
-                        "negligible": "#DEDEDE",
-                        "success": "#63A621",
-                        "warning": "#D9C138",
+                        "sema6_200": "#F5D8D8",
                       },
                       "support": Object {
-                        "darkTurquoise": "#0F8B8D",
-                        "lightTurquoise": "#C3ECEC",
-                        "orange": "#FFBB00",
-                        "plum": "#7C0B2B",
-                        "redOrange": "#FF5838",
                         "supp1": "#0F8B8D",
                         "supp2": "#734B6D",
                         "supp3": "#4E7599",
                         "supp4": "#C19C31",
                         "supp5": "#546B6B",
-                        "turquoise": "#7CDEDC",
-                        "yellow": "#F9DC33",
-                      },
-                      "text": Object {
-                        "primary": "#414141",
-                        "secondary": "#999999",
                       },
                     },
                     "spacing": Object {
@@ -20891,8 +19416,8 @@ body {
                   "overrides": Object {
                     "MuiAppBar": Object {
                       "colorDefault": Object {
-                        "backgroundColor": "#FFFFFF",
-                        "contrastText": "#414141",
+                        "backgroundColor": "#fff",
+                        "contrastText": undefined,
                       },
                       "root": Object {
                         "@media (min-width: 600px)": Object {
@@ -20922,13 +19447,6 @@ body {
                     },
                   },
                   "palette": Object {
-                    "accent": Object {
-                      "acce1": "#414141",
-                      "acce1H": "#676767",
-                      "acce2": "#146BD2",
-                      "acce2h": "#4389DB",
-                      "acce3": "#CC0000",
-                    },
                     "action": Object {
                       "active": "rgba(0, 0, 0, 0.54)",
                       "disabled": "rgba(0, 0, 0, 0.26)",
@@ -20937,23 +19455,14 @@ body {
                       "hoverOpacity": 0.08,
                       "selected": "rgba(0, 0, 0, 0.14)",
                     },
-                    "atmosphere": Object {
-                      "atmo1": "#FFFFFF",
-                      "atmo2": "#F9F9F9",
-                      "atmo3": "#F5F5F5",
-                      "atmo4": "#F0F0F0",
-                      "atmo5": "#DEDEDE",
-                      "atmo6": "#BCBCBC",
-                      "atmo7": "#999999",
-                    },
                     "augmentColor": [Function],
                     "background": Object {
                       "default": "#F9F9F9",
                       "paper": "#fff",
                     },
                     "common": Object {
-                      "black": "#000000",
-                      "white": "#FFFFFF",
+                      "black": "#000",
+                      "white": "#fff",
                     },
                     "contrastThreshold": 3,
                     "divider": "rgba(0, 0, 0, 0.12)",
@@ -20979,17 +19488,6 @@ body {
                       "A200": "#aaaaaa",
                       "A400": "#303030",
                       "A700": "#616161",
-                      "clear": "#F0F0F0",
-                      "foggy": "#F5F5F5",
-                      "inspire": "#414141",
-                      "passive": "#999999",
-                      "plain": "#BCBCBC",
-                      "rainy": "#DEDEDE",
-                      "smokey": "#F9F9F9",
-                    },
-                    "hitachi": Object {
-                      "light": "#FF312E",
-                      "main": "#CC0000",
                     },
                     "primary": Object {
                       "contrastText": "#fff",
@@ -21002,44 +19500,6 @@ body {
                       "dark": "rgb(45, 45, 45)",
                       "light": "#999999",
                       "main": "#414141",
-                    },
-                    "semantic": Object {
-                      "sema1": "#63A621",
-                      "sema2": "#DEDEDE",
-                      "sema3": "#72CCCB",
-                      "sema4": "#E8C758",
-                      "sema5": "#E68C17",
-                      "sema6": "#D13F3F",
-                    },
-                    "severity": Object {
-                      "critical": "#F9E7CF",
-                      "error": "#F5D8D8",
-                      "minor": "#E2F4F4",
-                      "negligible": "#F8F8F8",
-                      "success": "#DFECD1",
-                      "warning": "#F7F2D6",
-                    },
-                    "status": Object {
-                      "critical": "#E68C17",
-                      "error": "#D13F3F",
-                      "minor": "#72CCCB",
-                      "negligible": "#DEDEDE",
-                      "success": "#63A621",
-                      "warning": "#D9C138",
-                    },
-                    "support": Object {
-                      "darkTurquoise": "#0F8B8D",
-                      "lightTurquoise": "#C3ECEC",
-                      "orange": "#FFBB00",
-                      "plum": "#7C0B2B",
-                      "redOrange": "#FF5838",
-                      "supp1": "#0F8B8D",
-                      "supp2": "#734B6D",
-                      "supp3": "#4E7599",
-                      "supp4": "#C19C31",
-                      "supp5": "#546B6B",
-                      "turquoise": "#7CDEDC",
-                      "yellow": "#F9DC33",
                     },
                     "text": Object {
                       "disabled": "#999999",
@@ -21394,8 +19854,9 @@ body {
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1H": "#676767",
+                          "acce1h": "#676767",
                           "acce2": "#146BD2",
+                          "acce2_200": "#CFE0F5",
                           "acce2h": "#4389DB",
                           "acce3": "#CC0000",
                         },
@@ -21408,72 +19869,26 @@ body {
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
                         },
-                        "common": Object {
-                          "black": "#000000",
-                          "white": "#FFFFFF",
-                        },
-                        "grey": Object {
-                          "clear": "#F0F0F0",
-                          "foggy": "#F5F5F5",
-                          "inspire": "#414141",
-                          "passive": "#999999",
-                          "plain": "#BCBCBC",
-                          "rainy": "#DEDEDE",
-                          "smokey": "#F9F9F9",
-                        },
                         "hitachi": Object {
                           "light": "#FF312E",
                           "main": "#CC0000",
                         },
-                        "primary": Object {
-                          "light": "#4389DB",
-                          "main": "#146BD2",
-                        },
-                        "secondary": Object {
-                          "light": "#999999",
-                          "main": "#414141",
-                        },
                         "semantic": Object {
                           "sema1": "#63A621",
+                          "sema1_200": "#DFECD1",
                           "sema2": "#DEDEDE",
                           "sema3": "#72CCCB",
                           "sema4": "#E8C758",
                           "sema5": "#E68C17",
                           "sema6": "#D13F3F",
-                        },
-                        "severity": Object {
-                          "critical": "#F9E7CF",
-                          "error": "#F5D8D8",
-                          "minor": "#E2F4F4",
-                          "negligible": "#F8F8F8",
-                          "success": "#DFECD1",
-                          "warning": "#F7F2D6",
-                        },
-                        "status": Object {
-                          "critical": "#E68C17",
-                          "error": "#D13F3F",
-                          "minor": "#72CCCB",
-                          "negligible": "#DEDEDE",
-                          "success": "#63A621",
-                          "warning": "#D9C138",
+                          "sema6_200": "#F5D8D8",
                         },
                         "support": Object {
-                          "darkTurquoise": "#0F8B8D",
-                          "lightTurquoise": "#C3ECEC",
-                          "orange": "#FFBB00",
-                          "plum": "#7C0B2B",
-                          "redOrange": "#FF5838",
                           "supp1": "#0F8B8D",
                           "supp2": "#734B6D",
                           "supp3": "#4E7599",
                           "supp4": "#C19C31",
                           "supp5": "#546B6B",
-                          "turquoise": "#7CDEDC",
-                          "yellow": "#F9DC33",
-                        },
-                        "text": Object {
-                          "primary": "#414141",
-                          "secondary": "#999999",
                         },
                       },
                       "spacing": Object {
@@ -21600,8 +20015,8 @@ body {
                     "overrides": Object {
                       "MuiAppBar": Object {
                         "colorDefault": Object {
-                          "backgroundColor": "#FFFFFF",
-                          "contrastText": "#414141",
+                          "backgroundColor": "#fff",
+                          "contrastText": undefined,
                         },
                         "root": Object {
                           "@media (min-width: 600px)": Object {
@@ -21631,13 +20046,6 @@ body {
                       },
                     },
                     "palette": Object {
-                      "accent": Object {
-                        "acce1": "#414141",
-                        "acce1H": "#676767",
-                        "acce2": "#146BD2",
-                        "acce2h": "#4389DB",
-                        "acce3": "#CC0000",
-                      },
                       "action": Object {
                         "active": "rgba(0, 0, 0, 0.54)",
                         "disabled": "rgba(0, 0, 0, 0.26)",
@@ -21646,23 +20054,14 @@ body {
                         "hoverOpacity": 0.08,
                         "selected": "rgba(0, 0, 0, 0.14)",
                       },
-                      "atmosphere": Object {
-                        "atmo1": "#FFFFFF",
-                        "atmo2": "#F9F9F9",
-                        "atmo3": "#F5F5F5",
-                        "atmo4": "#F0F0F0",
-                        "atmo5": "#DEDEDE",
-                        "atmo6": "#BCBCBC",
-                        "atmo7": "#999999",
-                      },
                       "augmentColor": [Function],
                       "background": Object {
                         "default": "#F9F9F9",
                         "paper": "#fff",
                       },
                       "common": Object {
-                        "black": "#000000",
-                        "white": "#FFFFFF",
+                        "black": "#000",
+                        "white": "#fff",
                       },
                       "contrastThreshold": 3,
                       "divider": "rgba(0, 0, 0, 0.12)",
@@ -21688,17 +20087,6 @@ body {
                         "A200": "#aaaaaa",
                         "A400": "#303030",
                         "A700": "#616161",
-                        "clear": "#F0F0F0",
-                        "foggy": "#F5F5F5",
-                        "inspire": "#414141",
-                        "passive": "#999999",
-                        "plain": "#BCBCBC",
-                        "rainy": "#DEDEDE",
-                        "smokey": "#F9F9F9",
-                      },
-                      "hitachi": Object {
-                        "light": "#FF312E",
-                        "main": "#CC0000",
                       },
                       "primary": Object {
                         "contrastText": "#fff",
@@ -21711,44 +20099,6 @@ body {
                         "dark": "rgb(45, 45, 45)",
                         "light": "#999999",
                         "main": "#414141",
-                      },
-                      "semantic": Object {
-                        "sema1": "#63A621",
-                        "sema2": "#DEDEDE",
-                        "sema3": "#72CCCB",
-                        "sema4": "#E8C758",
-                        "sema5": "#E68C17",
-                        "sema6": "#D13F3F",
-                      },
-                      "severity": Object {
-                        "critical": "#F9E7CF",
-                        "error": "#F5D8D8",
-                        "minor": "#E2F4F4",
-                        "negligible": "#F8F8F8",
-                        "success": "#DFECD1",
-                        "warning": "#F7F2D6",
-                      },
-                      "status": Object {
-                        "critical": "#E68C17",
-                        "error": "#D13F3F",
-                        "minor": "#72CCCB",
-                        "negligible": "#DEDEDE",
-                        "success": "#63A621",
-                        "warning": "#D9C138",
-                      },
-                      "support": Object {
-                        "darkTurquoise": "#0F8B8D",
-                        "lightTurquoise": "#C3ECEC",
-                        "orange": "#FFBB00",
-                        "plum": "#7C0B2B",
-                        "redOrange": "#FF5838",
-                        "supp1": "#0F8B8D",
-                        "supp2": "#734B6D",
-                        "supp3": "#4E7599",
-                        "supp4": "#C19C31",
-                        "supp5": "#546B6B",
-                        "turquoise": "#7CDEDC",
-                        "yellow": "#F9DC33",
                       },
                       "text": Object {
                         "disabled": "#999999",
@@ -22130,8 +20480,9 @@ body {
                         "palette": Object {
                           "accent": Object {
                             "acce1": "#414141",
-                            "acce1H": "#676767",
+                            "acce1h": "#676767",
                             "acce2": "#146BD2",
+                            "acce2_200": "#CFE0F5",
                             "acce2h": "#4389DB",
                             "acce3": "#CC0000",
                           },
@@ -22144,72 +20495,26 @@ body {
                             "atmo6": "#BCBCBC",
                             "atmo7": "#999999",
                           },
-                          "common": Object {
-                            "black": "#000000",
-                            "white": "#FFFFFF",
-                          },
-                          "grey": Object {
-                            "clear": "#F0F0F0",
-                            "foggy": "#F5F5F5",
-                            "inspire": "#414141",
-                            "passive": "#999999",
-                            "plain": "#BCBCBC",
-                            "rainy": "#DEDEDE",
-                            "smokey": "#F9F9F9",
-                          },
                           "hitachi": Object {
                             "light": "#FF312E",
                             "main": "#CC0000",
                           },
-                          "primary": Object {
-                            "light": "#4389DB",
-                            "main": "#146BD2",
-                          },
-                          "secondary": Object {
-                            "light": "#999999",
-                            "main": "#414141",
-                          },
                           "semantic": Object {
                             "sema1": "#63A621",
+                            "sema1_200": "#DFECD1",
                             "sema2": "#DEDEDE",
                             "sema3": "#72CCCB",
                             "sema4": "#E8C758",
                             "sema5": "#E68C17",
                             "sema6": "#D13F3F",
-                          },
-                          "severity": Object {
-                            "critical": "#F9E7CF",
-                            "error": "#F5D8D8",
-                            "minor": "#E2F4F4",
-                            "negligible": "#F8F8F8",
-                            "success": "#DFECD1",
-                            "warning": "#F7F2D6",
-                          },
-                          "status": Object {
-                            "critical": "#E68C17",
-                            "error": "#D13F3F",
-                            "minor": "#72CCCB",
-                            "negligible": "#DEDEDE",
-                            "success": "#63A621",
-                            "warning": "#D9C138",
+                            "sema6_200": "#F5D8D8",
                           },
                           "support": Object {
-                            "darkTurquoise": "#0F8B8D",
-                            "lightTurquoise": "#C3ECEC",
-                            "orange": "#FFBB00",
-                            "plum": "#7C0B2B",
-                            "redOrange": "#FF5838",
                             "supp1": "#0F8B8D",
                             "supp2": "#734B6D",
                             "supp3": "#4E7599",
                             "supp4": "#C19C31",
                             "supp5": "#546B6B",
-                            "turquoise": "#7CDEDC",
-                            "yellow": "#F9DC33",
-                          },
-                          "text": Object {
-                            "primary": "#414141",
-                            "secondary": "#999999",
                           },
                         },
                         "spacing": Object {
@@ -22336,8 +20641,8 @@ body {
                       "overrides": Object {
                         "MuiAppBar": Object {
                           "colorDefault": Object {
-                            "backgroundColor": "#FFFFFF",
-                            "contrastText": "#414141",
+                            "backgroundColor": "#fff",
+                            "contrastText": undefined,
                           },
                           "root": Object {
                             "@media (min-width: 600px)": Object {
@@ -22367,13 +20672,6 @@ body {
                         },
                       },
                       "palette": Object {
-                        "accent": Object {
-                          "acce1": "#414141",
-                          "acce1H": "#676767",
-                          "acce2": "#146BD2",
-                          "acce2h": "#4389DB",
-                          "acce3": "#CC0000",
-                        },
                         "action": Object {
                           "active": "rgba(0, 0, 0, 0.54)",
                           "disabled": "rgba(0, 0, 0, 0.26)",
@@ -22382,23 +20680,14 @@ body {
                           "hoverOpacity": 0.08,
                           "selected": "rgba(0, 0, 0, 0.14)",
                         },
-                        "atmosphere": Object {
-                          "atmo1": "#FFFFFF",
-                          "atmo2": "#F9F9F9",
-                          "atmo3": "#F5F5F5",
-                          "atmo4": "#F0F0F0",
-                          "atmo5": "#DEDEDE",
-                          "atmo6": "#BCBCBC",
-                          "atmo7": "#999999",
-                        },
                         "augmentColor": [Function],
                         "background": Object {
                           "default": "#F9F9F9",
                           "paper": "#fff",
                         },
                         "common": Object {
-                          "black": "#000000",
-                          "white": "#FFFFFF",
+                          "black": "#000",
+                          "white": "#fff",
                         },
                         "contrastThreshold": 3,
                         "divider": "rgba(0, 0, 0, 0.12)",
@@ -22424,17 +20713,6 @@ body {
                           "A200": "#aaaaaa",
                           "A400": "#303030",
                           "A700": "#616161",
-                          "clear": "#F0F0F0",
-                          "foggy": "#F5F5F5",
-                          "inspire": "#414141",
-                          "passive": "#999999",
-                          "plain": "#BCBCBC",
-                          "rainy": "#DEDEDE",
-                          "smokey": "#F9F9F9",
-                        },
-                        "hitachi": Object {
-                          "light": "#FF312E",
-                          "main": "#CC0000",
                         },
                         "primary": Object {
                           "contrastText": "#fff",
@@ -22447,44 +20725,6 @@ body {
                           "dark": "rgb(45, 45, 45)",
                           "light": "#999999",
                           "main": "#414141",
-                        },
-                        "semantic": Object {
-                          "sema1": "#63A621",
-                          "sema2": "#DEDEDE",
-                          "sema3": "#72CCCB",
-                          "sema4": "#E8C758",
-                          "sema5": "#E68C17",
-                          "sema6": "#D13F3F",
-                        },
-                        "severity": Object {
-                          "critical": "#F9E7CF",
-                          "error": "#F5D8D8",
-                          "minor": "#E2F4F4",
-                          "negligible": "#F8F8F8",
-                          "success": "#DFECD1",
-                          "warning": "#F7F2D6",
-                        },
-                        "status": Object {
-                          "critical": "#E68C17",
-                          "error": "#D13F3F",
-                          "minor": "#72CCCB",
-                          "negligible": "#DEDEDE",
-                          "success": "#63A621",
-                          "warning": "#D9C138",
-                        },
-                        "support": Object {
-                          "darkTurquoise": "#0F8B8D",
-                          "lightTurquoise": "#C3ECEC",
-                          "orange": "#FFBB00",
-                          "plum": "#7C0B2B",
-                          "redOrange": "#FF5838",
-                          "supp1": "#0F8B8D",
-                          "supp2": "#734B6D",
-                          "supp3": "#4E7599",
-                          "supp4": "#C19C31",
-                          "supp5": "#546B6B",
-                          "turquoise": "#7CDEDC",
-                          "yellow": "#F9DC33",
                         },
                         "text": Object {
                           "disabled": "#999999",
@@ -22833,8 +21073,9 @@ body {
                           "palette": Object {
                             "accent": Object {
                               "acce1": "#414141",
-                              "acce1H": "#676767",
+                              "acce1h": "#676767",
                               "acce2": "#146BD2",
+                              "acce2_200": "#CFE0F5",
                               "acce2h": "#4389DB",
                               "acce3": "#CC0000",
                             },
@@ -22847,72 +21088,26 @@ body {
                               "atmo6": "#BCBCBC",
                               "atmo7": "#999999",
                             },
-                            "common": Object {
-                              "black": "#000000",
-                              "white": "#FFFFFF",
-                            },
-                            "grey": Object {
-                              "clear": "#F0F0F0",
-                              "foggy": "#F5F5F5",
-                              "inspire": "#414141",
-                              "passive": "#999999",
-                              "plain": "#BCBCBC",
-                              "rainy": "#DEDEDE",
-                              "smokey": "#F9F9F9",
-                            },
                             "hitachi": Object {
                               "light": "#FF312E",
                               "main": "#CC0000",
                             },
-                            "primary": Object {
-                              "light": "#4389DB",
-                              "main": "#146BD2",
-                            },
-                            "secondary": Object {
-                              "light": "#999999",
-                              "main": "#414141",
-                            },
                             "semantic": Object {
                               "sema1": "#63A621",
+                              "sema1_200": "#DFECD1",
                               "sema2": "#DEDEDE",
                               "sema3": "#72CCCB",
                               "sema4": "#E8C758",
                               "sema5": "#E68C17",
                               "sema6": "#D13F3F",
-                            },
-                            "severity": Object {
-                              "critical": "#F9E7CF",
-                              "error": "#F5D8D8",
-                              "minor": "#E2F4F4",
-                              "negligible": "#F8F8F8",
-                              "success": "#DFECD1",
-                              "warning": "#F7F2D6",
-                            },
-                            "status": Object {
-                              "critical": "#E68C17",
-                              "error": "#D13F3F",
-                              "minor": "#72CCCB",
-                              "negligible": "#DEDEDE",
-                              "success": "#63A621",
-                              "warning": "#D9C138",
+                              "sema6_200": "#F5D8D8",
                             },
                             "support": Object {
-                              "darkTurquoise": "#0F8B8D",
-                              "lightTurquoise": "#C3ECEC",
-                              "orange": "#FFBB00",
-                              "plum": "#7C0B2B",
-                              "redOrange": "#FF5838",
                               "supp1": "#0F8B8D",
                               "supp2": "#734B6D",
                               "supp3": "#4E7599",
                               "supp4": "#C19C31",
                               "supp5": "#546B6B",
-                              "turquoise": "#7CDEDC",
-                              "yellow": "#F9DC33",
-                            },
-                            "text": Object {
-                              "primary": "#414141",
-                              "secondary": "#999999",
                             },
                           },
                           "spacing": Object {
@@ -23039,8 +21234,8 @@ body {
                         "overrides": Object {
                           "MuiAppBar": Object {
                             "colorDefault": Object {
-                              "backgroundColor": "#FFFFFF",
-                              "contrastText": "#414141",
+                              "backgroundColor": "#fff",
+                              "contrastText": undefined,
                             },
                             "root": Object {
                               "@media (min-width: 600px)": Object {
@@ -23070,13 +21265,6 @@ body {
                           },
                         },
                         "palette": Object {
-                          "accent": Object {
-                            "acce1": "#414141",
-                            "acce1H": "#676767",
-                            "acce2": "#146BD2",
-                            "acce2h": "#4389DB",
-                            "acce3": "#CC0000",
-                          },
                           "action": Object {
                             "active": "rgba(0, 0, 0, 0.54)",
                             "disabled": "rgba(0, 0, 0, 0.26)",
@@ -23085,23 +21273,14 @@ body {
                             "hoverOpacity": 0.08,
                             "selected": "rgba(0, 0, 0, 0.14)",
                           },
-                          "atmosphere": Object {
-                            "atmo1": "#FFFFFF",
-                            "atmo2": "#F9F9F9",
-                            "atmo3": "#F5F5F5",
-                            "atmo4": "#F0F0F0",
-                            "atmo5": "#DEDEDE",
-                            "atmo6": "#BCBCBC",
-                            "atmo7": "#999999",
-                          },
                           "augmentColor": [Function],
                           "background": Object {
                             "default": "#F9F9F9",
                             "paper": "#fff",
                           },
                           "common": Object {
-                            "black": "#000000",
-                            "white": "#FFFFFF",
+                            "black": "#000",
+                            "white": "#fff",
                           },
                           "contrastThreshold": 3,
                           "divider": "rgba(0, 0, 0, 0.12)",
@@ -23127,17 +21306,6 @@ body {
                             "A200": "#aaaaaa",
                             "A400": "#303030",
                             "A700": "#616161",
-                            "clear": "#F0F0F0",
-                            "foggy": "#F5F5F5",
-                            "inspire": "#414141",
-                            "passive": "#999999",
-                            "plain": "#BCBCBC",
-                            "rainy": "#DEDEDE",
-                            "smokey": "#F9F9F9",
-                          },
-                          "hitachi": Object {
-                            "light": "#FF312E",
-                            "main": "#CC0000",
                           },
                           "primary": Object {
                             "contrastText": "#fff",
@@ -23150,44 +21318,6 @@ body {
                             "dark": "rgb(45, 45, 45)",
                             "light": "#999999",
                             "main": "#414141",
-                          },
-                          "semantic": Object {
-                            "sema1": "#63A621",
-                            "sema2": "#DEDEDE",
-                            "sema3": "#72CCCB",
-                            "sema4": "#E8C758",
-                            "sema5": "#E68C17",
-                            "sema6": "#D13F3F",
-                          },
-                          "severity": Object {
-                            "critical": "#F9E7CF",
-                            "error": "#F5D8D8",
-                            "minor": "#E2F4F4",
-                            "negligible": "#F8F8F8",
-                            "success": "#DFECD1",
-                            "warning": "#F7F2D6",
-                          },
-                          "status": Object {
-                            "critical": "#E68C17",
-                            "error": "#D13F3F",
-                            "minor": "#72CCCB",
-                            "negligible": "#DEDEDE",
-                            "success": "#63A621",
-                            "warning": "#D9C138",
-                          },
-                          "support": Object {
-                            "darkTurquoise": "#0F8B8D",
-                            "lightTurquoise": "#C3ECEC",
-                            "orange": "#FFBB00",
-                            "plum": "#7C0B2B",
-                            "redOrange": "#FF5838",
-                            "supp1": "#0F8B8D",
-                            "supp2": "#734B6D",
-                            "supp3": "#4E7599",
-                            "supp4": "#C19C31",
-                            "supp5": "#546B6B",
-                            "turquoise": "#7CDEDC",
-                            "yellow": "#F9DC33",
                           },
                           "text": Object {
                             "disabled": "#999999",
@@ -23545,8 +21675,9 @@ body {
                             "palette": Object {
                               "accent": Object {
                                 "acce1": "#414141",
-                                "acce1H": "#676767",
+                                "acce1h": "#676767",
                                 "acce2": "#146BD2",
+                                "acce2_200": "#CFE0F5",
                                 "acce2h": "#4389DB",
                                 "acce3": "#CC0000",
                               },
@@ -23559,72 +21690,26 @@ body {
                                 "atmo6": "#BCBCBC",
                                 "atmo7": "#999999",
                               },
-                              "common": Object {
-                                "black": "#000000",
-                                "white": "#FFFFFF",
-                              },
-                              "grey": Object {
-                                "clear": "#F0F0F0",
-                                "foggy": "#F5F5F5",
-                                "inspire": "#414141",
-                                "passive": "#999999",
-                                "plain": "#BCBCBC",
-                                "rainy": "#DEDEDE",
-                                "smokey": "#F9F9F9",
-                              },
                               "hitachi": Object {
                                 "light": "#FF312E",
                                 "main": "#CC0000",
                               },
-                              "primary": Object {
-                                "light": "#4389DB",
-                                "main": "#146BD2",
-                              },
-                              "secondary": Object {
-                                "light": "#999999",
-                                "main": "#414141",
-                              },
                               "semantic": Object {
                                 "sema1": "#63A621",
+                                "sema1_200": "#DFECD1",
                                 "sema2": "#DEDEDE",
                                 "sema3": "#72CCCB",
                                 "sema4": "#E8C758",
                                 "sema5": "#E68C17",
                                 "sema6": "#D13F3F",
-                              },
-                              "severity": Object {
-                                "critical": "#F9E7CF",
-                                "error": "#F5D8D8",
-                                "minor": "#E2F4F4",
-                                "negligible": "#F8F8F8",
-                                "success": "#DFECD1",
-                                "warning": "#F7F2D6",
-                              },
-                              "status": Object {
-                                "critical": "#E68C17",
-                                "error": "#D13F3F",
-                                "minor": "#72CCCB",
-                                "negligible": "#DEDEDE",
-                                "success": "#63A621",
-                                "warning": "#D9C138",
+                                "sema6_200": "#F5D8D8",
                               },
                               "support": Object {
-                                "darkTurquoise": "#0F8B8D",
-                                "lightTurquoise": "#C3ECEC",
-                                "orange": "#FFBB00",
-                                "plum": "#7C0B2B",
-                                "redOrange": "#FF5838",
                                 "supp1": "#0F8B8D",
                                 "supp2": "#734B6D",
                                 "supp3": "#4E7599",
                                 "supp4": "#C19C31",
                                 "supp5": "#546B6B",
-                                "turquoise": "#7CDEDC",
-                                "yellow": "#F9DC33",
-                              },
-                              "text": Object {
-                                "primary": "#414141",
-                                "secondary": "#999999",
                               },
                             },
                             "spacing": Object {
@@ -23751,8 +21836,8 @@ body {
                           "overrides": Object {
                             "MuiAppBar": Object {
                               "colorDefault": Object {
-                                "backgroundColor": "#FFFFFF",
-                                "contrastText": "#414141",
+                                "backgroundColor": "#fff",
+                                "contrastText": undefined,
                               },
                               "root": Object {
                                 "@media (min-width: 600px)": Object {
@@ -23782,13 +21867,6 @@ body {
                             },
                           },
                           "palette": Object {
-                            "accent": Object {
-                              "acce1": "#414141",
-                              "acce1H": "#676767",
-                              "acce2": "#146BD2",
-                              "acce2h": "#4389DB",
-                              "acce3": "#CC0000",
-                            },
                             "action": Object {
                               "active": "rgba(0, 0, 0, 0.54)",
                               "disabled": "rgba(0, 0, 0, 0.26)",
@@ -23797,23 +21875,14 @@ body {
                               "hoverOpacity": 0.08,
                               "selected": "rgba(0, 0, 0, 0.14)",
                             },
-                            "atmosphere": Object {
-                              "atmo1": "#FFFFFF",
-                              "atmo2": "#F9F9F9",
-                              "atmo3": "#F5F5F5",
-                              "atmo4": "#F0F0F0",
-                              "atmo5": "#DEDEDE",
-                              "atmo6": "#BCBCBC",
-                              "atmo7": "#999999",
-                            },
                             "augmentColor": [Function],
                             "background": Object {
                               "default": "#F9F9F9",
                               "paper": "#fff",
                             },
                             "common": Object {
-                              "black": "#000000",
-                              "white": "#FFFFFF",
+                              "black": "#000",
+                              "white": "#fff",
                             },
                             "contrastThreshold": 3,
                             "divider": "rgba(0, 0, 0, 0.12)",
@@ -23839,17 +21908,6 @@ body {
                               "A200": "#aaaaaa",
                               "A400": "#303030",
                               "A700": "#616161",
-                              "clear": "#F0F0F0",
-                              "foggy": "#F5F5F5",
-                              "inspire": "#414141",
-                              "passive": "#999999",
-                              "plain": "#BCBCBC",
-                              "rainy": "#DEDEDE",
-                              "smokey": "#F9F9F9",
-                            },
-                            "hitachi": Object {
-                              "light": "#FF312E",
-                              "main": "#CC0000",
                             },
                             "primary": Object {
                               "contrastText": "#fff",
@@ -23862,44 +21920,6 @@ body {
                               "dark": "rgb(45, 45, 45)",
                               "light": "#999999",
                               "main": "#414141",
-                            },
-                            "semantic": Object {
-                              "sema1": "#63A621",
-                              "sema2": "#DEDEDE",
-                              "sema3": "#72CCCB",
-                              "sema4": "#E8C758",
-                              "sema5": "#E68C17",
-                              "sema6": "#D13F3F",
-                            },
-                            "severity": Object {
-                              "critical": "#F9E7CF",
-                              "error": "#F5D8D8",
-                              "minor": "#E2F4F4",
-                              "negligible": "#F8F8F8",
-                              "success": "#DFECD1",
-                              "warning": "#F7F2D6",
-                            },
-                            "status": Object {
-                              "critical": "#E68C17",
-                              "error": "#D13F3F",
-                              "minor": "#72CCCB",
-                              "negligible": "#DEDEDE",
-                              "success": "#63A621",
-                              "warning": "#D9C138",
-                            },
-                            "support": Object {
-                              "darkTurquoise": "#0F8B8D",
-                              "lightTurquoise": "#C3ECEC",
-                              "orange": "#FFBB00",
-                              "plum": "#7C0B2B",
-                              "redOrange": "#FF5838",
-                              "supp1": "#0F8B8D",
-                              "supp2": "#734B6D",
-                              "supp3": "#4E7599",
-                              "supp4": "#C19C31",
-                              "supp5": "#546B6B",
-                              "turquoise": "#7CDEDC",
-                              "yellow": "#F9DC33",
                             },
                             "text": Object {
                               "disabled": "#999999",
@@ -24255,8 +22275,9 @@ body {
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
-                                  "acce1H": "#676767",
+                                  "acce1h": "#676767",
                                   "acce2": "#146BD2",
+                                  "acce2_200": "#CFE0F5",
                                   "acce2h": "#4389DB",
                                   "acce3": "#CC0000",
                                 },
@@ -24269,72 +22290,26 @@ body {
                                   "atmo6": "#BCBCBC",
                                   "atmo7": "#999999",
                                 },
-                                "common": Object {
-                                  "black": "#000000",
-                                  "white": "#FFFFFF",
-                                },
-                                "grey": Object {
-                                  "clear": "#F0F0F0",
-                                  "foggy": "#F5F5F5",
-                                  "inspire": "#414141",
-                                  "passive": "#999999",
-                                  "plain": "#BCBCBC",
-                                  "rainy": "#DEDEDE",
-                                  "smokey": "#F9F9F9",
-                                },
                                 "hitachi": Object {
                                   "light": "#FF312E",
                                   "main": "#CC0000",
                                 },
-                                "primary": Object {
-                                  "light": "#4389DB",
-                                  "main": "#146BD2",
-                                },
-                                "secondary": Object {
-                                  "light": "#999999",
-                                  "main": "#414141",
-                                },
                                 "semantic": Object {
                                   "sema1": "#63A621",
+                                  "sema1_200": "#DFECD1",
                                   "sema2": "#DEDEDE",
                                   "sema3": "#72CCCB",
                                   "sema4": "#E8C758",
                                   "sema5": "#E68C17",
                                   "sema6": "#D13F3F",
-                                },
-                                "severity": Object {
-                                  "critical": "#F9E7CF",
-                                  "error": "#F5D8D8",
-                                  "minor": "#E2F4F4",
-                                  "negligible": "#F8F8F8",
-                                  "success": "#DFECD1",
-                                  "warning": "#F7F2D6",
-                                },
-                                "status": Object {
-                                  "critical": "#E68C17",
-                                  "error": "#D13F3F",
-                                  "minor": "#72CCCB",
-                                  "negligible": "#DEDEDE",
-                                  "success": "#63A621",
-                                  "warning": "#D9C138",
+                                  "sema6_200": "#F5D8D8",
                                 },
                                 "support": Object {
-                                  "darkTurquoise": "#0F8B8D",
-                                  "lightTurquoise": "#C3ECEC",
-                                  "orange": "#FFBB00",
-                                  "plum": "#7C0B2B",
-                                  "redOrange": "#FF5838",
                                   "supp1": "#0F8B8D",
                                   "supp2": "#734B6D",
                                   "supp3": "#4E7599",
                                   "supp4": "#C19C31",
                                   "supp5": "#546B6B",
-                                  "turquoise": "#7CDEDC",
-                                  "yellow": "#F9DC33",
-                                },
-                                "text": Object {
-                                  "primary": "#414141",
-                                  "secondary": "#999999",
                                 },
                               },
                               "spacing": Object {
@@ -24461,8 +22436,8 @@ body {
                             "overrides": Object {
                               "MuiAppBar": Object {
                                 "colorDefault": Object {
-                                  "backgroundColor": "#FFFFFF",
-                                  "contrastText": "#414141",
+                                  "backgroundColor": "#fff",
+                                  "contrastText": undefined,
                                 },
                                 "root": Object {
                                   "@media (min-width: 600px)": Object {
@@ -24492,13 +22467,6 @@ body {
                               },
                             },
                             "palette": Object {
-                              "accent": Object {
-                                "acce1": "#414141",
-                                "acce1H": "#676767",
-                                "acce2": "#146BD2",
-                                "acce2h": "#4389DB",
-                                "acce3": "#CC0000",
-                              },
                               "action": Object {
                                 "active": "rgba(0, 0, 0, 0.54)",
                                 "disabled": "rgba(0, 0, 0, 0.26)",
@@ -24507,23 +22475,14 @@ body {
                                 "hoverOpacity": 0.08,
                                 "selected": "rgba(0, 0, 0, 0.14)",
                               },
-                              "atmosphere": Object {
-                                "atmo1": "#FFFFFF",
-                                "atmo2": "#F9F9F9",
-                                "atmo3": "#F5F5F5",
-                                "atmo4": "#F0F0F0",
-                                "atmo5": "#DEDEDE",
-                                "atmo6": "#BCBCBC",
-                                "atmo7": "#999999",
-                              },
                               "augmentColor": [Function],
                               "background": Object {
                                 "default": "#F9F9F9",
                                 "paper": "#fff",
                               },
                               "common": Object {
-                                "black": "#000000",
-                                "white": "#FFFFFF",
+                                "black": "#000",
+                                "white": "#fff",
                               },
                               "contrastThreshold": 3,
                               "divider": "rgba(0, 0, 0, 0.12)",
@@ -24549,17 +22508,6 @@ body {
                                 "A200": "#aaaaaa",
                                 "A400": "#303030",
                                 "A700": "#616161",
-                                "clear": "#F0F0F0",
-                                "foggy": "#F5F5F5",
-                                "inspire": "#414141",
-                                "passive": "#999999",
-                                "plain": "#BCBCBC",
-                                "rainy": "#DEDEDE",
-                                "smokey": "#F9F9F9",
-                              },
-                              "hitachi": Object {
-                                "light": "#FF312E",
-                                "main": "#CC0000",
                               },
                               "primary": Object {
                                 "contrastText": "#fff",
@@ -24572,44 +22520,6 @@ body {
                                 "dark": "rgb(45, 45, 45)",
                                 "light": "#999999",
                                 "main": "#414141",
-                              },
-                              "semantic": Object {
-                                "sema1": "#63A621",
-                                "sema2": "#DEDEDE",
-                                "sema3": "#72CCCB",
-                                "sema4": "#E8C758",
-                                "sema5": "#E68C17",
-                                "sema6": "#D13F3F",
-                              },
-                              "severity": Object {
-                                "critical": "#F9E7CF",
-                                "error": "#F5D8D8",
-                                "minor": "#E2F4F4",
-                                "negligible": "#F8F8F8",
-                                "success": "#DFECD1",
-                                "warning": "#F7F2D6",
-                              },
-                              "status": Object {
-                                "critical": "#E68C17",
-                                "error": "#D13F3F",
-                                "minor": "#72CCCB",
-                                "negligible": "#DEDEDE",
-                                "success": "#63A621",
-                                "warning": "#D9C138",
-                              },
-                              "support": Object {
-                                "darkTurquoise": "#0F8B8D",
-                                "lightTurquoise": "#C3ECEC",
-                                "orange": "#FFBB00",
-                                "plum": "#7C0B2B",
-                                "redOrange": "#FF5838",
-                                "supp1": "#0F8B8D",
-                                "supp2": "#734B6D",
-                                "supp3": "#4E7599",
-                                "supp4": "#C19C31",
-                                "supp5": "#546B6B",
-                                "turquoise": "#7CDEDC",
-                                "yellow": "#F9DC33",
                               },
                               "text": Object {
                                 "disabled": "#999999",

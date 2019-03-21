@@ -19,7 +19,7 @@ const styles = theme => ({
     marginRight: 0,
     marginLeft: 0,
     "&:hover": {
-      backgroundColor: theme.palette.grey.clear
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     }
   },
   labelTypography: {

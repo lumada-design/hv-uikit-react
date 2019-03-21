@@ -13,7 +13,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   tabsRoot: {
-    borderBottom: `1px solid ${theme.palette.grey.rainy}`
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
   },
   tabsIndicator: {
     backgroundColor: "#1890ff"

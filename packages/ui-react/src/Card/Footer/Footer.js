@@ -69,15 +69,15 @@ Footer.propTypes = {
     /**
      * Style applied to the root of the component.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Style applied to the actions left container of the component.
      */
-    leftContainer: PropTypes.instanceOf(Object),
+    leftContainer: PropTypes.string,
     /**
      * Style applied to the actions right container of the component. Used when selection is active.
      */
-    rightContainer: PropTypes.instanceOf(Object)
+    rightContainer: PropTypes.string
   }).isRequired,
   /**
    *  The renderable content inside the Actions slot of the footer.

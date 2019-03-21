@@ -18,6 +18,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 import DropDownMenu from "../..";
 import DropDownMenuComponent from "../DropDownMenu";
+import HvProvider from "../../../Provider";
 
 describe("DropDownMenu", () => {
   let wrapper;
@@ -25,9 +26,11 @@ describe("DropDownMenu", () => {
   describe("index", () => {
     beforeAll(() => {
       wrapper = mount(
-        <DropDownMenu icon={<div />}>
-          <div />
-        </DropDownMenu>
+        <HvProvider>
+          <DropDownMenu icon={<div />}>
+            <div />
+          </DropDownMenu>
+        </HvProvider>
       );
     });
 

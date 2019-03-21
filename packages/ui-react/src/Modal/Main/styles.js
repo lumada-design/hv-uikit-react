@@ -17,11 +17,9 @@ const styles = theme => {
   let convertedColor;
   if (
     theme &&
-    theme.palette &&
-    theme.palette.grey &&
-    theme.palette.grey.smokey
+    theme.hv.palette.atmosphere.atmo2
   ) {
-    convertedColor = fade(convertHexToRGB(theme.palette.grey.smokey), 0.8);
+    convertedColor = fade(convertHexToRGB(theme.hv.palette.atmosphere.atmo2), 0.8);
   }
 
   return {
@@ -29,8 +27,8 @@ const styles = theme => {
       background: convertedColor
     },
     paper: {
-      background: `${theme.palette.grey.smokey}`,
-      border: `solid 1px ${theme.palette.grey.plain}`,
+      background: `${theme.hv.palette.atmosphere.atmo2}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
       padding: "40px"
     },
     closeButton: {

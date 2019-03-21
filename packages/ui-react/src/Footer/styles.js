@@ -13,8 +13,7 @@ const styles = theme => ({
     position: "fixed",
     width: "100%",
     height: 40,
-    bottom: 0,
-    backgroundColor: theme.palette.grey.inspire,
+    backgroundColor: theme.hv.palette.accent.acce1,
     [theme.breakpoints.down("500")]: {
       minWidth: "320px"
     }
@@ -25,9 +24,9 @@ const styles = theme => ({
     marginLeft: 20,
     fontSize: "16px",
     letterSpacing: "0.02em",
-    lineHeight: "20px",
+    lineHeight: `${theme.hv.spacing.sm}px`,
     fontWeight: "600",
-    color: theme.palette.grey.foggy,
+    color: theme.hv.palette.atmosphere.atmo3,
     [theme.breakpoints.down("500")]: {
       display: "none"
     }
@@ -40,7 +39,7 @@ const styles = theme => ({
     letterSpacing: "0.02em",
     lineHeight: "16px",
     fontWeight: "400",
-    color: theme.palette.grey.foggy,
+    color: theme.hv.palette.atmosphere.atmo3,
     [theme.breakpoints.down("500")]: {
       minWidth: "320px",
       float: "left",

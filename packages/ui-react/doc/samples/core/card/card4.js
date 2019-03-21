@@ -23,10 +23,10 @@ const strings = {
 
 const MultipleActionsStyles = theme => ({
   content: {
-    padding: `0 ${theme.spacing.sm}px 0 ${theme.spacing.sm}px`
+    padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
   },
   item: {
-    padding: `0 0 ${theme.spacing.sm}px 0`
+    padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
   bottomItem: {
     padding: "0"

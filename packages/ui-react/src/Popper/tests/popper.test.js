@@ -17,6 +17,7 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import withPopper from "../withPopper";
 import Content from "../Content";
+import HvProvider from "../../Provider";
 
 const data = {
   data1: "test data 1",
@@ -27,11 +28,19 @@ const data = {
 describe("Hv Popper HOC", () => {
   let wrapper;
 
-  const btn = props => <button {...props}>popper button</button>;
+  const btn = props => (
+    <HvProvider>
+      <button {...props}>popper button</button>
+    </HvProvider>
+  );
 
   beforeEach(() => {
     const BtnWithPopper = withPopper(btn, data);
-    wrapper = mount(<BtnWithPopper />);
+    wrapper = mount(
+      <HvProvider>
+        <BtnWithPopper />
+      </HvProvider>
+    );
   });
 
   describe("index", () => {
@@ -69,7 +78,7 @@ describe("Hv Popper", () => {
     });
 
     it("mandatory and default properties are defined and received", () => {
-      let props = wrapper.props();
+      const props = wrapper.props();
 
       expect(props.classes).toBeDefined();
       expect(props.content).toBeDefined();
@@ -88,7 +97,7 @@ describe("Hv Popper", () => {
     });
 
     it("when set to open, popper is shown", () => {
-      wrapper = mount(<Content open={true} classes={{}} content={{}} />);
+      wrapper = mount(<Content open classes={{}} content={{}} />);
 
       const popperProps = wrapper.find(Popper).props();
 
@@ -97,7 +106,7 @@ describe("Hv Popper", () => {
     });
 
     it("when given key-value pairs, they are displayed properly in the popper", () => {
-      wrapper = mount(<Content open={true} classes={{}} content={data} />);
+      wrapper = mount(<Content open classes={{}} content={data} />);
 
       const keyValuePairs = wrapper.find(".key-value");
       expect(keyValuePairs.length).toBe(3);

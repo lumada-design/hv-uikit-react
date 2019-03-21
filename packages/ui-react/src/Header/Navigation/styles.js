@@ -48,8 +48,9 @@ const styles = theme => ({
   selected: {
     "& p": {
       fontWeight: "bold",
-      color: theme.palette.hitachi ? theme.palette.hitachi.main : undefined
-    }
+      color: theme.hv.palette.hitachi ? theme.hv.palette.hitachi.main : undefined
+
+}
   },
   selector: {
     position: "absolute",
@@ -58,8 +59,8 @@ const styles = theme => ({
     top: -7,
     left: 0,
     borderTop: `4px solid ${
-      theme.palette.hitachi ? theme.palette.hitachi.main : undefined
-    }`
+      theme.hv.palette.hitachi ? theme.hv.palette.hitachi.main : undefined
+      }`
   }
 });
 

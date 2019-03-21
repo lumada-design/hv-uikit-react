@@ -10,12 +10,12 @@
 
 const styles = theme => ({
   root: {
-    padding: `${theme.spacing.sm}px`,
-    borderLeft: `1px solid ${theme.palette.grey.plain}`,
-    borderRight: `1px solid ${theme.palette.grey.plain}`
+    padding: `${theme.hv.spacing.sm}px`,
+    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   bottomBorder: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   title: {
     fontFamily: theme.typography.fontFamily,
@@ -24,12 +24,12 @@ const styles = theme => ({
   subheader: {
     fontFamily: theme.typography.fontFamily,
     ...theme.typography.body1,
-    paddingTop: `${theme.spacing.sm}px`
+    paddingTop: `${theme.hv.spacing.sm}px`
   },
   action: {
     marginTop: 0,
     marginRight: "-1px",
-    paddingLeft: `${theme.spacing.xs}px`
+    paddingLeft: `${theme.hv.spacing.xs}px`
   }
 });
 

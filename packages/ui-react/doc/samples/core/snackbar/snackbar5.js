@@ -42,14 +42,6 @@ export default (
     </div>
     <p />
     <div>
-      <SnackbarContentWrapper message="Info" variant="info" showIcon />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper message="Warning" variant="warning" showIcon />
-    </div>
-    <p />
-    <div>
       <SnackbarContentWrapper message="Error" variant="error" showIcon />
     </div>
     <p />
@@ -74,22 +66,6 @@ export default (
       <SnackbarContentWrapper
         message="Success"
         variant="success"
-        customIcon={<FastForward16 />}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
-        message="Info"
-        variant="info"
-        customIcon={<FastForward16 />}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
-        message="Warning"
-        variant="warning"
         customIcon={<FastForward16 />}
       />
     </div>
@@ -133,24 +109,6 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="Info"
-        variant="info"
-        showIcon
-        action={actionComponent}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
-        message="Warning"
-        variant="warning"
-        showIcon
-        action={actionComponent}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
         message="Error"
         variant="error"
         showIcon
@@ -172,14 +130,6 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper message="Success" variant="success" />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper message="Info" variant="info" />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper message="Warning" variant="warning" />
     </div>
     <p />
     <div>
@@ -207,22 +157,6 @@ export default (
       <SnackbarContentWrapper
         message="success"
         variant="success"
-        action={actionComponent}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
-        message="info"
-        variant="info"
-        action={actionComponent}
-      />
-    </div>
-    <p />
-    <div>
-      <SnackbarContentWrapper
-        message="warning"
-        variant="warning"
         action={actionComponent}
       />
     </div>

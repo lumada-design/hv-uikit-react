@@ -106,13 +106,11 @@ describe("Modal Component", () => {
 
   it("onClose should be called when close is triggered in the dialog", () => {
     wrapper = mount(
-      <Modal
-        classes={{}}
-        open={open}
-        onClose={onCloseMock}
-      >
-        Modal Content
-      </Modal>
+      <HvProvider>
+        <Modal classes={{}} open={open} onClose={onCloseMock}>
+          Modal Content
+        </Modal>
+      </HvProvider>
     );
 
     const backdrop = wrapper.find(Backdrop);

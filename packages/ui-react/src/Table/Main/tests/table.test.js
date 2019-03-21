@@ -185,7 +185,7 @@ describe("Hv Table", () => {
           />
         </MuiThemeProvider>
       );
-      debugger;
+
       const instance = wrapper.find(HvTable).instance();
       instance.setState({ sorted: [column[0]] });
       instance.getTheadThProps("state", "rowInfo", column[0]);

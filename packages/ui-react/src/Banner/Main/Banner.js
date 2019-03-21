@@ -71,15 +71,15 @@ HvBanner.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.instanceOf(Object),
+    root: PropTypes.string,
     /**
      * Styles applied to the component when define as top.
      */
-    anchorOriginTopCenter: PropTypes.instanceOf(Object),
+    anchorOriginTopCenter: PropTypes.string,
     /**
      * Styles applied to the component when define as bottom.
      */
-    anchorOriginBottomCenter: PropTypes.instanceOf(Object)
+    anchorOriginBottomCenter: PropTypes.string
   }).isRequired,
   /**
    *  If true, Snackbar is open.

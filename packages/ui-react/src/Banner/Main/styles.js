@@ -10,13 +10,13 @@
 
 const styles = theme => ({
   root: {
-    minWidth: `calc(100% - ${theme.spacing.sm}px)`
+    minWidth: `calc(100% - ${theme.hv.spacing.sm}px)`
   },
   anchorOriginTopCenter: {
-    top: `${theme.spacing.xs}px`
+    top: `${theme.hv.spacing.xs}px`
   },
   anchorOriginBottomCenter: {
-    bottom: `${theme.spacing.xs}px`
+    bottom: `${theme.hv.spacing.xs}px`
   }
 });
 

@@ -10,8 +10,8 @@
 
 const styles = theme => ({
   paper: {
-    border: `solid 1px ${theme.palette.grey.plain}`,
-    padding: `${theme.spacing.xs}px`,
+    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+    padding: `${theme.hv.spacing.xs}px`,
     marginTop: "5px"
   },
   moreVertContainer: {
@@ -23,18 +23,18 @@ const styles = theme => ({
     minWidth: "32px",
     padding: "0",
     "&:hover": {
-      background: `${theme.palette.grey.inspire}`,
+      background: `${theme.hv.palette.accent.acce1}`,
       color: `${theme.palette.common.white}`
     }
   },
   activated: {
-    background: `${theme.palette.grey.inspire}`,
+    background: `${theme.hv.palette.accent.acce1}`,
     color: `${theme.palette.common.white}`
   },
   actionBtn: {
     display: "block",
     width: "100%",
-    color: `${theme.palette.primary.main}`
+    color: `${theme.hv.palette.accent.acce2}`
   }
 });
 

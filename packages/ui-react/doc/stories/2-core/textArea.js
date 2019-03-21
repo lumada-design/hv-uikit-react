@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvTextArea from "@hv-ui/react/core/TextArea";
 
-storiesOf("Core", module).add("textArea", () => <HvTextArea />, {
+storiesOf("Core", module).add("TextArea", () => <HvTextArea />, {
   title: "Text area",
   description:
     "A text area component to receive large inputs, still in development",

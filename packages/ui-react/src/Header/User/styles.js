@@ -10,7 +10,7 @@
 
 const styles = theme => ({
   userContainer: {
-    paddingLeft: `${theme.spacing.lg}px`,
+    paddingLeft: `${theme.hv.spacing.lg}px`,
     height: "100%",
     display: "flex",
     flexShrink: 0,
@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   iconContainerHover: {
     "&:hover": {
-      backgroundColor: theme.palette.grey.clear
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     }
   },
   userInfo: {
@@ -34,7 +34,7 @@ const styles = theme => ({
     flexDirection: "column",
     alignItems: "flex-end",
 
-    marginRight: `${theme.spacing.xs}px`,
+    marginRight: `${theme.hv.spacing.xs}px`,
     "& p": {
       color: theme.palette.text.main
     }

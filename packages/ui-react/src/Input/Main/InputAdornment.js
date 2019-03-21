@@ -11,6 +11,7 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import theme from "@hv-ui/themes/dist/theme";
 
 import Success from "@hv-ui/icons/core/S-icons/Level0Success16Color";
 import Close from "@hv-ui/icons/core/S-icons/Close16";
@@ -19,8 +20,8 @@ import Unsuccess from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
 import validationStates from "./validationStates";
 
 const stl = {
-  height: "30px",
-  width: "30px"
+  height: `${theme.spacing.md}px`,
+  width: `${theme.spacing.md}px`
 };
 
 const InputAdornment = ({ classes, validationState, handleClear }) => (

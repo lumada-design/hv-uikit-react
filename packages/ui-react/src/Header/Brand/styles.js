@@ -14,7 +14,7 @@ const styles = theme => ({
     display: "inherit",
     alignItems: "center",
     height: "100%",
-    marginRight: `${theme.spacing.lg}px`
+    marginRight: `${theme.hv.spacing.lg}px`
   },
   iconContainer: {
     display: "inherit",
@@ -26,12 +26,12 @@ const styles = theme => ({
     alignItems: "center"
   },
   separator: {
-    width: `${theme.spacing.sm}px`,
-    height: `${theme.spacing.md}px`,
-    borderRight: `1px solid ${theme.palette.grey.rainy}`
+    width: `${theme.hv.spacing.sm}px`,
+    height: `${theme.hv.spacing.md}px`,
+    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
   },
   separatorPadding: {
-    width: `${theme.spacing.sm}px`
+    width: `${theme.hv.spacing.sm}px`
   },
   separatorBox: {
     display: "flex"
@@ -41,7 +41,7 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center"
   },
-  paddingTextLeft: { paddingLeft: `${theme.spacing.xs}px` }
+  paddingTextLeft: { paddingLeft: `${theme.hv.spacing.xs}px` }
 });
 
 export default styles;

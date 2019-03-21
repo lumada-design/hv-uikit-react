@@ -10,7 +10,7 @@
 
 const styles = theme => ({
   root: {
-    borderBottom: `1px solid ${theme.palette.grey.rainy}`,
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     lineHeight: "50px",
     marginTop: 40
   },
@@ -20,7 +20,7 @@ const styles = theme => ({
     "alignItems": "center"
   },
   content: {
-    border: `1px solid ${theme.palette.grey.rainy}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     marginBottom: "30px"
   },
   component: {
