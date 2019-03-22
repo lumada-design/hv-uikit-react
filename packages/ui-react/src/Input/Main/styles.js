@@ -18,13 +18,13 @@ const styles = theme => ({
     width: "100%",
     borderStyle: "solid",
     borderWidth: "1px",
-    background: theme.palette.common.white,
+    background: theme.hv.palette.atmosphere.atmo1,
     borderColor: theme.hv.palette.atmosphere.atmo6,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: "1px",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.palette.common.white
+      background: theme.hv.palette.atmosphere.atmo1
     }
   },
   inputRootDisabled: {
@@ -41,12 +41,12 @@ const styles = theme => ({
     borderStyle: "solid",
     borderWidth: "1px",
     borderColor: theme.hv.palette.accent.acce1,
-    background: theme.palette.common.white,
+    background: theme.hv.palette.atmosphere.atmo1,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: "1px",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.palette.common.white
+      background: theme.hv.palette.atmosphere.atmo1
     }
   },
   input: {
@@ -54,19 +54,11 @@ const styles = theme => ({
     marginLeft: `${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
     padding: "5px 0 5px",
-    fontWeight: theme.typography.body1.fontWeight,
-    letterSpacing: theme.typography.body1.letterSpacing,
-    color: theme.typography.body1.color,
-    fontSize: theme.typography.body1.fontSize,
-    lineHeight: theme.typography.body1.lineHeight,
+    ...theme.hv.typography.normalText,
     overflow: "hidden",
     textOverflow: "ellipsis",
     "&::placeholder": {
-      fontWeight: theme.typography.disabled.fontWeight,
-      letterSpacing: theme.typography.disabled.letterSpacing,
-      color: theme.typography.disabled.color,
-      fontSize: theme.typography.disabled.fontSize,
-      lineHeight: theme.typography.disabled.lineHeight
+      ...theme.hv.typography.disabledText
     }
   },
   inputDisabled: {
@@ -79,23 +71,16 @@ const styles = theme => ({
     paddingTop: `${theme.hv.spacing.md}px`,
     paddingBottom: `${theme.hv.spacing.xs}px`,
     display: "block",
-    fontWeight: theme.typography.subtitle2.fontWeight,
-    letterSpacing: theme.typography.subtitle2.letterSpacing,
-    color: theme.typography.subtitle2.color,
-    fontSize: theme.typography.subtitle2.fontSize,
-    lineHeight: theme.typography.subtitle2.lineHeight
+    ...theme.hv.typography.labelText
   },
   text: {
     paddingTop: `${theme.hv.spacing.xs}px`,
     paddingBottom: `${theme.hv.spacing.md}px`,
     display: "block",
-    fontWeight: theme.typography.disabled.fontWeight,
-    letterSpacing: theme.typography.disabled.letterSpacing,
-    fontSize: theme.typography.disabled.fontSize,
-    lineHeight: theme.typography.disabled.lineHeight
+    ...theme.hv.typography.disabledText
   },
   textInfo: {
-    color: theme.typography.disabled.color
+    color: theme.hv.typography.disabledText.color
   },
   textWarning: {
     color: theme.hv.palette.semantic.sema6

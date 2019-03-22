@@ -13,14 +13,14 @@ import palette from "../palette";
 
 const muiAppBar = {
   root: {
-    borderTop: `4px solid ${theme.palette.hitachi.main}`,
+    borderTop: `4px solid ${theme.palette.accent.acce3}`,
     "@media (min-width: 600px)": {
       height: "50px"
     }
   },
   colorDefault: {
-    backgroundColor: palette.common.white,
-    contrastText: palette.grey.inspire
+    backgroundColor: theme.palette.atmosphere.atmo1,
+    contrastText: theme.palette.accent.acce1
   }
 };
 

@@ -35,7 +35,7 @@ const styles = theme => ({
     margin: `0 3px`
   },
   disabled: {
-    ...theme.typography.disabled
+    ...theme.hv.typography.disabledText
   },
   maxCharacter: {
     ...theme.typography.body2

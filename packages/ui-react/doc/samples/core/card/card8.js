@@ -29,9 +29,15 @@ const MultipleActionsWithMediaButtons = () => (
   </>
 );
 
-const headerStyles = (theme) => ({
+const headerStyles = theme => ({
   root: {
-    borderBottom: `1px solid ${theme.palette.grey.plain}`
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+  }
+});
+
+const footerStyles = () => ({
+  root: {
+    borderTop: "none"
   }
 });
 
@@ -39,10 +45,14 @@ const HeaderWithStyles = withStyles(headerStyles, {
   withTheme: true
 })(HvCardHeader);
 
+const FooterWithStyles = withStyles(footerStyles, {
+  withTheme: true
+})(HvCardFooter);
+
 export default (
   <div style={{ width: "500px" }}>
-    <HvCard variant="error">
-      <HvCardFooter
+    <HvCard>
+      <FooterWithStyles
         Actions={<MultipleActionsWithMediaButtons />}
         isSelectable
         onSelect={event => console.log(`my value is ${event.target.value}`)}

@@ -48,9 +48,8 @@ const styles = theme => ({
   selected: {
     "& p": {
       fontWeight: "bold",
-      color: theme.hv.palette.hitachi ? theme.hv.palette.hitachi.main : undefined
-
-}
+      color: theme.hv.palette.accent.acce3
+    }
   },
   selector: {
     position: "absolute",
@@ -58,9 +57,7 @@ const styles = theme => ({
     height: "100%",
     top: -7,
     left: 0,
-    borderTop: `4px solid ${
-      theme.hv.palette.hitachi ? theme.hv.palette.hitachi.main : undefined
-      }`
+    borderTop: `4px solid ${theme.hv.palette.accent.acce3}`
   }
 });
 

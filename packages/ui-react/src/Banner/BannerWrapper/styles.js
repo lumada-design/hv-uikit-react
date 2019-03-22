@@ -22,13 +22,13 @@ const styles = theme => ({
     overflow: "hidden"
   },
   success: {
-    backgroundColor: theme.hv.palette.semantic.sema1_200
+    backgroundColor: theme.hv.palette.semantic.sema8
   },
   error: {
-    backgroundColor: theme.hv.palette.semantic.sema6_200
+    backgroundColor: theme.hv.palette.semantic.sema9
   },
   default: {
-    backgroundColor: theme.hv.palette.accent.acce2_200
+    backgroundColor: theme.hv.palette.semantic.sema7
   },
   iconVariant: {
     marginLeft: `${theme.hv.spacing.xs}px`,

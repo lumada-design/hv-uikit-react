@@ -40,7 +40,7 @@ const styles = theme => ({
     }
   },
   userRole: {
-    ...theme.typography.visualization
+    ...theme.hv.typography.vizText
   }
 });
 

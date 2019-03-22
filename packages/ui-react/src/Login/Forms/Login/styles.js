@@ -75,7 +75,7 @@ const styles = theme => ({
     fontSize: theme.typography.body2.fontSize
   },
   showMessage: {
-    backgroundColor: theme.hv.palette.semantic.sema6_200,
+    backgroundColor: theme.hv.palette.semantic.sema9,
     display: "flex",
     alignItems: "center",
     height: "100%",
