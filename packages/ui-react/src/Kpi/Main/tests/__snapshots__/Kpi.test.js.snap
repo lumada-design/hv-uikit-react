@@ -42,9 +42,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1h": "#676767",
                   "acce2": "#146BD2",
-                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -57,19 +55,16 @@ exports[`Kpi withStyles should render correctly 1`] = `
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "hitachi": Object {
-                  "light": "#FF312E",
-                  "main": "#CC0000",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
-                  "sema1_200": "#DFECD1",
-                  "sema2": "#DEDEDE",
-                  "sema3": "#72CCCB",
-                  "sema4": "#E8C758",
-                  "sema5": "#E68C17",
-                  "sema6": "#D13F3F",
-                  "sema6_200": "#F5D8D8",
+                  "sema2": "#72CCCB",
+                  "sema3": "#E68C17",
+                  "sema4": "#FF5252",
+                  "sema5": "#C51162",
+                  "sema6": "#AA00FF",
+                  "sema7": "#D3E3F6",
+                  "sema8": "#DFECD1",
+                  "sema9": "#F5D8D8",
                 },
                 "support": Object {
                   "supp1": "#0F8B8D",
@@ -87,19 +82,40 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 "xs": "10",
               },
               "typography": Object {
+                "3xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "4xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
+                "5xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
                 "buttonText": Object {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "21px",
+                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
-                  "fontSize": "12px",
+                  "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
+                  "lineHeight": "20px",
                 },
                 "disabledText": Object {
                   "color": "#999999",
@@ -130,6 +146,13 @@ exports[`Kpi withStyles should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "lTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "32px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "40px",
+                },
                 "labelText": Object {
                   "color": "#414141",
                   "fontSize": "12px",
@@ -137,14 +160,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "largeTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "mediumTitle": Object {
+                "mTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "600",
@@ -158,33 +174,54 @@ exports[`Kpi withStyles should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
-                "sliderTrackText": Object {
-                  "color": "#414141",
-                  "fontSize": "10px",
+                "sLink": Object {
+                  "color": "#146BD2",
+                  "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "12px",
+                  "lineHeight": "16px",
                 },
-                "smallTitle": Object {
+                "sTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
-                "visualizationText": Object {
+                "vizText": Object {
                   "color": "#414141",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
                 },
-                "xlargeTitle": Object {
+                "xlTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "40px",
+                },
+                "xsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
+                },
+                "xxlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "xxsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
                 },
               },
             },
@@ -203,8 +240,8 @@ exports[`Kpi withStyles should render correctly 1`] = `
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#fff",
-                  "contrastText": undefined,
+                  "backgroundColor": "#FFFFFF",
+                  "contrastText": "#414141",
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -394,12 +431,12 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 "lineHeight": 1.5,
               },
               "button": Object {
-                "color": "#FFFFFF",
+                "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
-                "lineHeight": "21px",
+                "lineHeight": "20px",
                 "textTransform": "uppercase",
               },
               "buttonNext": Object {
@@ -423,13 +460,6 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
-              },
-              "disabled": Object {
-                "color": "#999999",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
@@ -470,20 +500,32 @@ exports[`Kpi withStyles should render correctly 1`] = `
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "6rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h2": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "3.75rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h3": Object {
                 "color": "#414141",
@@ -522,13 +564,6 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
-              "info": Object {
-                "color": "#414141",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
               "overline": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -539,13 +574,6 @@ exports[`Kpi withStyles should render correctly 1`] = `
               },
               "pxToRem": [Function],
               "round": [Function],
-              "sliderTrack": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "12px",
-              },
               "subheading": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -578,13 +606,6 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
-              "visualization": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "15px",
-              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -3310,9 +3331,7 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1h": "#676767",
                   "acce2": "#146BD2",
-                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -3325,19 +3344,16 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "hitachi": Object {
-                  "light": "#FF312E",
-                  "main": "#CC0000",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
-                  "sema1_200": "#DFECD1",
-                  "sema2": "#DEDEDE",
-                  "sema3": "#72CCCB",
-                  "sema4": "#E8C758",
-                  "sema5": "#E68C17",
-                  "sema6": "#D13F3F",
-                  "sema6_200": "#F5D8D8",
+                  "sema2": "#72CCCB",
+                  "sema3": "#E68C17",
+                  "sema4": "#FF5252",
+                  "sema5": "#C51162",
+                  "sema6": "#AA00FF",
+                  "sema7": "#D3E3F6",
+                  "sema8": "#DFECD1",
+                  "sema9": "#F5D8D8",
                 },
                 "support": Object {
                   "supp1": "#0F8B8D",
@@ -3355,19 +3371,40 @@ body {
                 "xs": "10",
               },
               "typography": Object {
+                "3xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "4xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
+                "5xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
                 "buttonText": Object {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "21px",
+                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
-                  "fontSize": "12px",
+                  "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
+                  "lineHeight": "20px",
                 },
                 "disabledText": Object {
                   "color": "#999999",
@@ -3398,6 +3435,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "lTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "32px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "40px",
+                },
                 "labelText": Object {
                   "color": "#414141",
                   "fontSize": "12px",
@@ -3405,14 +3449,7 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "largeTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "mediumTitle": Object {
+                "mTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "600",
@@ -3426,33 +3463,54 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
-                "sliderTrackText": Object {
-                  "color": "#414141",
-                  "fontSize": "10px",
+                "sLink": Object {
+                  "color": "#146BD2",
+                  "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "12px",
+                  "lineHeight": "16px",
                 },
-                "smallTitle": Object {
+                "sTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
-                "visualizationText": Object {
+                "vizText": Object {
                   "color": "#414141",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
                 },
-                "xlargeTitle": Object {
+                "xlTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "40px",
+                },
+                "xsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
+                },
+                "xxlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "xxsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
                 },
               },
             },
@@ -3471,8 +3529,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#fff",
-                  "contrastText": undefined,
+                  "backgroundColor": "#FFFFFF",
+                  "contrastText": "#414141",
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -3662,12 +3720,12 @@ body {
                 "lineHeight": 1.5,
               },
               "button": Object {
-                "color": "#FFFFFF",
+                "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
-                "lineHeight": "21px",
+                "lineHeight": "20px",
                 "textTransform": "uppercase",
               },
               "buttonNext": Object {
@@ -3691,13 +3749,6 @@ body {
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
-              },
-              "disabled": Object {
-                "color": "#999999",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
@@ -3738,20 +3789,32 @@ body {
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "6rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h2": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "3.75rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h3": Object {
                 "color": "#414141",
@@ -3790,13 +3853,6 @@ body {
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
-              "info": Object {
-                "color": "#414141",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
               "overline": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -3807,13 +3863,6 @@ body {
               },
               "pxToRem": [Function],
               "round": [Function],
-              "sliderTrack": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "12px",
-              },
               "subheading": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -3846,13 +3895,6 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
-              "visualization": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "15px",
-              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -4431,12 +4473,18 @@ body {
   float: left;
 }
 .HvKpi-indicatorText-56 {
+  0: #;
+  1: 4;
+  2: 1;
+  3: 4;
+  4: 1;
+  5: 4;
+  6: 1;
   color: #414141;
-  font-size: 32px;
+  font-size: 6rem;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
+  font-weight: 300;
+  line-height: 1;
 }
 .HvKpi-infoText-57 {
   color: #414141;
@@ -4528,12 +4576,18 @@ body {
                     "float": "left",
                   },
                   Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   Object {
                     "color": "#414141",
@@ -4562,12 +4616,18 @@ body {
                     "float": "left",
                   },
                   ".HvKpi-indicatorText-56": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   ".HvKpi-indicatorUnit-53": Object {
                     "align-self": "flex-end",
@@ -4633,12 +4693,18 @@ body {
                     "float": "left",
                   },
                   "indicatorText": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   "indicatorUnit": Object {
                     "align-self": "flex-end",
@@ -5202,12 +5268,18 @@ body {
                     "float": "left",
                   },
                   "indicatorText": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "32px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "40px",
+                    "fontSize": "6rem",
+                    "fontWeight": 300,
+                    "lineHeight": 1,
                   },
                   "indicatorUnit": Object {
                     "alignSelf": "flex-end",
@@ -5305,9 +5377,7 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1h": "#676767",
                   "acce2": "#146BD2",
-                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -5320,19 +5390,16 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "hitachi": Object {
-                  "light": "#FF312E",
-                  "main": "#CC0000",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
-                  "sema1_200": "#DFECD1",
-                  "sema2": "#DEDEDE",
-                  "sema3": "#72CCCB",
-                  "sema4": "#E8C758",
-                  "sema5": "#E68C17",
-                  "sema6": "#D13F3F",
-                  "sema6_200": "#F5D8D8",
+                  "sema2": "#72CCCB",
+                  "sema3": "#E68C17",
+                  "sema4": "#FF5252",
+                  "sema5": "#C51162",
+                  "sema6": "#AA00FF",
+                  "sema7": "#D3E3F6",
+                  "sema8": "#DFECD1",
+                  "sema9": "#F5D8D8",
                 },
                 "support": Object {
                   "supp1": "#0F8B8D",
@@ -5350,19 +5417,40 @@ body {
                 "xs": "10",
               },
               "typography": Object {
+                "3xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "4xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
+                "5xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
                 "buttonText": Object {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "21px",
+                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
-                  "fontSize": "12px",
+                  "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
+                  "lineHeight": "20px",
                 },
                 "disabledText": Object {
                   "color": "#999999",
@@ -5393,6 +5481,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "lTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "32px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "40px",
+                },
                 "labelText": Object {
                   "color": "#414141",
                   "fontSize": "12px",
@@ -5400,14 +5495,7 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "largeTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "mediumTitle": Object {
+                "mTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "600",
@@ -5421,33 +5509,54 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
-                "sliderTrackText": Object {
-                  "color": "#414141",
-                  "fontSize": "10px",
+                "sLink": Object {
+                  "color": "#146BD2",
+                  "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "12px",
+                  "lineHeight": "16px",
                 },
-                "smallTitle": Object {
+                "sTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
-                "visualizationText": Object {
+                "vizText": Object {
                   "color": "#414141",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
                 },
-                "xlargeTitle": Object {
+                "xlTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "40px",
+                },
+                "xsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
+                },
+                "xxlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "xxsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
                 },
               },
             },
@@ -5466,8 +5575,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#fff",
-                  "contrastText": undefined,
+                  "backgroundColor": "#FFFFFF",
+                  "contrastText": "#414141",
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -5657,12 +5766,12 @@ body {
                 "lineHeight": 1.5,
               },
               "button": Object {
-                "color": "#FFFFFF",
+                "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
-                "lineHeight": "21px",
+                "lineHeight": "20px",
                 "textTransform": "uppercase",
               },
               "buttonNext": Object {
@@ -5686,13 +5795,6 @@ body {
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
-              },
-              "disabled": Object {
-                "color": "#999999",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
@@ -5733,20 +5835,32 @@ body {
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "6rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h2": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "3.75rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h3": Object {
                 "color": "#414141",
@@ -5785,13 +5899,6 @@ body {
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
-              "info": Object {
-                "color": "#414141",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
               "overline": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -5802,13 +5909,6 @@ body {
               },
               "pxToRem": [Function],
               "round": [Function],
-              "sliderTrack": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "12px",
-              },
               "subheading": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -5841,13 +5941,6 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
-              "visualization": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "15px",
-              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -6510,29 +6603,41 @@ body {
   line-height: 1.66;
 }
 .MuiTypography-button-70 {
-  color: #FFFFFF;
+  color: #414141;
   font-size: 14px;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   font-weight: 600;
-  line-height: 21px;
+  line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 .MuiTypography-h1-71 {
+  0: #;
+  1: 4;
+  2: 1;
+  3: 4;
+  4: 1;
+  5: 4;
+  6: 1;
   color: #414141;
-  font-size: 32px;
+  font-size: 6rem;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
+  font-weight: 300;
+  line-height: 1;
 }
 .MuiTypography-h2-72 {
+  0: #;
+  1: 4;
+  2: 1;
+  3: 4;
+  4: 1;
+  5: 4;
+  6: 1;
   color: #414141;
-  font-size: 32px;
+  font-size: 3.75rem;
   font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
+  font-weight: 300;
+  line-height: 1;
 }
 .MuiTypography-h3-73 {
   color: #414141;
@@ -6771,29 +6876,41 @@ body {
                     "line-height": "1.66",
                   },
                   Object {
-                    "color": "#FFFFFF",
+                    "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "21px",
+                    "line-height": "20px",
                     "text-transform": "uppercase",
                   },
                   Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "3.75rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   Object {
                     "color": "#414141",
@@ -6930,12 +7047,12 @@ body {
                     "line-height": "16px",
                   },
                   ".MuiTypography-button-70": Object {
-                    "color": "#FFFFFF",
+                    "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "21px",
+                    "line-height": "20px",
                     "text-transform": "uppercase",
                   },
                   ".MuiTypography-caption-69": Object {
@@ -7000,20 +7117,32 @@ body {
                     "margin-bottom": "0.35em",
                   },
                   ".MuiTypography-h1-71": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   ".MuiTypography-h2-72": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "3.75rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   ".MuiTypography-h3-73": Object {
                     "color": "#414141",
@@ -7140,12 +7269,12 @@ body {
                     "line-height": "16px",
                   },
                   "button": Object {
-                    "color": "#FFFFFF",
+                    "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "21px",
+                    "line-height": "20px",
                     "text-transform": "uppercase",
                   },
                   "caption": Object {
@@ -7210,20 +7339,32 @@ body {
                     "margin-bottom": "0.35em",
                   },
                   "h1": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "6rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   "h2": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "font-size": "3.75rem",
+                    "font-weight": "300",
+                    "line-height": "1",
                   },
                   "h3": Object {
                     "color": "#414141",
@@ -7873,12 +8014,12 @@ body {
                     "lineHeight": "16px",
                   },
                   "button": Object {
-                    "color": "#FFFFFF",
+                    "color": "#414141",
                     "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "14px",
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
-                    "lineHeight": "21px",
+                    "lineHeight": "20px",
                     "textTransform": "uppercase",
                   },
                   "caption": Object {
@@ -7943,20 +8084,32 @@ body {
                     "marginBottom": "0.35em",
                   },
                   "h1": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "32px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "40px",
+                    "fontSize": "6rem",
+                    "fontWeight": 300,
+                    "lineHeight": 1,
                   },
                   "h2": Object {
+                    "0": "#",
+                    "1": "4",
+                    "2": "1",
+                    "3": "4",
+                    "4": "1",
+                    "5": "4",
+                    "6": "1",
                     "color": "#414141",
                     "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "32px",
-                    "fontWeight": "400",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "40px",
+                    "fontSize": "3.75rem",
+                    "fontWeight": 300,
+                    "lineHeight": 1,
                   },
                   "h3": Object {
                     "color": "#414141",
@@ -8091,9 +8244,7 @@ body {
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
-              "acce1h": "#676767",
               "acce2": "#146BD2",
-              "acce2_200": "#CFE0F5",
               "acce2h": "#4389DB",
               "acce3": "#CC0000",
             },
@@ -8106,19 +8257,16 @@ body {
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
             },
-            "hitachi": Object {
-              "light": "#FF312E",
-              "main": "#CC0000",
-            },
             "semantic": Object {
               "sema1": "#63A621",
-              "sema1_200": "#DFECD1",
-              "sema2": "#DEDEDE",
-              "sema3": "#72CCCB",
-              "sema4": "#E8C758",
-              "sema5": "#E68C17",
-              "sema6": "#D13F3F",
-              "sema6_200": "#F5D8D8",
+              "sema2": "#72CCCB",
+              "sema3": "#E68C17",
+              "sema4": "#FF5252",
+              "sema5": "#C51162",
+              "sema6": "#AA00FF",
+              "sema7": "#D3E3F6",
+              "sema8": "#DFECD1",
+              "sema9": "#F5D8D8",
             },
             "support": Object {
               "supp1": "#0F8B8D",
@@ -8136,19 +8284,40 @@ body {
             "xs": "10",
           },
           "typography": Object {
+            "3xlTitle": Object {
+              "color": "#414141",
+              "fontSize": "42px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "52px",
+            },
+            "4xlTitle": Object {
+              "color": "#414141",
+              "fontSize": "52px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "60px",
+            },
+            "5xlTitle": Object {
+              "color": "#414141",
+              "fontSize": "52px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "60px",
+            },
             "buttonText": Object {
               "color": "#FFFFFF",
               "fontSize": "14px",
               "fontWeight": "600",
               "letterSpacing": "0.02em",
-              "lineHeight": "21px",
+              "lineHeight": "20px",
             },
             "disabledButtonText": Object {
               "color": "#999999",
-              "fontSize": "12px",
+              "fontSize": "14px",
               "fontWeight": "600",
               "letterSpacing": "0.02em",
-              "lineHeight": "16px",
+              "lineHeight": "20px",
             },
             "disabledText": Object {
               "color": "#999999",
@@ -8179,6 +8348,13 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
             },
+            "lTitle": Object {
+              "color": "#414141",
+              "fontSize": "32px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
             "labelText": Object {
               "color": "#414141",
               "fontSize": "12px",
@@ -8186,14 +8362,7 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
             },
-            "largeTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": "400",
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "mediumTitle": Object {
+            "mTitle": Object {
               "color": "#414141",
               "fontSize": "22px",
               "fontWeight": "600",
@@ -8207,33 +8376,54 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
             },
-            "sliderTrackText": Object {
-              "color": "#414141",
-              "fontSize": "10px",
+            "sLink": Object {
+              "color": "#146BD2",
+              "fontSize": "12px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
-              "lineHeight": "12px",
+              "lineHeight": "16px",
             },
-            "smallTitle": Object {
+            "sTitle": Object {
               "color": "#414141",
               "fontSize": "22px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
             },
-            "visualizationText": Object {
+            "vizText": Object {
               "color": "#414141",
               "fontSize": "10px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
             },
-            "xlargeTitle": Object {
+            "xlTitle": Object {
               "color": "#414141",
               "fontSize": "32px",
               "fontWeight": "600",
               "letterSpacing": "0.02em",
               "lineHeight": "40px",
+            },
+            "xsTitle": Object {
+              "color": "#414141",
+              "fontSize": "18px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "28px",
+            },
+            "xxlTitle": Object {
+              "color": "#414141",
+              "fontSize": "42px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "52px",
+            },
+            "xxsTitle": Object {
+              "color": "#414141",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "28px",
             },
           },
         },
@@ -8252,8 +8442,8 @@ body {
         "overrides": Object {
           "MuiAppBar": Object {
             "colorDefault": Object {
-              "backgroundColor": "#fff",
-              "contrastText": undefined,
+              "backgroundColor": "#FFFFFF",
+              "contrastText": "#414141",
             },
             "root": Object {
               "@media (min-width: 600px)": Object {
@@ -8443,12 +8633,12 @@ body {
             "lineHeight": 1.5,
           },
           "button": Object {
-            "color": "#FFFFFF",
+            "color": "#414141",
             "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
             "fontSize": "14px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
-            "lineHeight": "21px",
+            "lineHeight": "20px",
             "textTransform": "uppercase",
           },
           "buttonNext": Object {
@@ -8472,13 +8662,6 @@ body {
             "fontSize": "0.75rem",
             "fontWeight": 400,
             "lineHeight": 1.66,
-          },
-          "disabled": Object {
-            "color": "#999999",
-            "fontSize": "12px",
-            "fontWeight": "400",
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
           },
           "display1": Object {
             "color": "rgba(0, 0, 0, 0.54)",
@@ -8519,20 +8702,32 @@ body {
           "fontWeightMedium": 500,
           "fontWeightRegular": 400,
           "h1": Object {
+            "0": "#",
+            "1": "4",
+            "2": "1",
+            "3": "4",
+            "4": "1",
+            "5": "4",
+            "6": "1",
             "color": "#414141",
             "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-            "fontSize": "32px",
-            "fontWeight": "600",
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": "6rem",
+            "fontWeight": 300,
+            "lineHeight": 1,
           },
           "h2": Object {
+            "0": "#",
+            "1": "4",
+            "2": "1",
+            "3": "4",
+            "4": "1",
+            "5": "4",
+            "6": "1",
             "color": "#414141",
             "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-            "fontSize": "32px",
-            "fontWeight": "400",
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": "3.75rem",
+            "fontWeight": 300,
+            "lineHeight": 1,
           },
           "h3": Object {
             "color": "#414141",
@@ -8571,13 +8766,6 @@ body {
             "fontWeight": 400,
             "lineHeight": "1.35417em",
           },
-          "info": Object {
-            "color": "#414141",
-            "fontSize": "12px",
-            "fontWeight": "400",
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
-          },
           "overline": Object {
             "color": "#414141",
             "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -8588,13 +8776,6 @@ body {
           },
           "pxToRem": [Function],
           "round": [Function],
-          "sliderTrack": Object {
-            "color": "#414141",
-            "fontSize": "10px",
-            "fontWeight": "400",
-            "letterSpacing": "0.02em",
-            "lineHeight": "12px",
-          },
           "subheading": Object {
             "color": "#414141",
             "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -8627,13 +8808,6 @@ body {
             "lineHeight": "1.16667em",
           },
           "useNextVariants": true,
-          "visualization": Object {
-            "color": "#414141",
-            "fontSize": "10px",
-            "fontWeight": "400",
-            "letterSpacing": "0.02em",
-            "lineHeight": "15px",
-          },
         },
         "zIndex": Object {
           "appBar": 1100,
@@ -8713,9 +8887,7 @@ body {
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
-                  "acce1h": "#676767",
                   "acce2": "#146BD2",
-                  "acce2_200": "#CFE0F5",
                   "acce2h": "#4389DB",
                   "acce3": "#CC0000",
                 },
@@ -8728,19 +8900,16 @@ body {
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
                 },
-                "hitachi": Object {
-                  "light": "#FF312E",
-                  "main": "#CC0000",
-                },
                 "semantic": Object {
                   "sema1": "#63A621",
-                  "sema1_200": "#DFECD1",
-                  "sema2": "#DEDEDE",
-                  "sema3": "#72CCCB",
-                  "sema4": "#E8C758",
-                  "sema5": "#E68C17",
-                  "sema6": "#D13F3F",
-                  "sema6_200": "#F5D8D8",
+                  "sema2": "#72CCCB",
+                  "sema3": "#E68C17",
+                  "sema4": "#FF5252",
+                  "sema5": "#C51162",
+                  "sema6": "#AA00FF",
+                  "sema7": "#D3E3F6",
+                  "sema8": "#DFECD1",
+                  "sema9": "#F5D8D8",
                 },
                 "support": Object {
                   "supp1": "#0F8B8D",
@@ -8758,19 +8927,40 @@ body {
                 "xs": "10",
               },
               "typography": Object {
+                "3xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "4xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
+                "5xlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "52px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "60px",
+                },
                 "buttonText": Object {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "21px",
+                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
-                  "fontSize": "12px",
+                  "fontSize": "14px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
+                  "lineHeight": "20px",
                 },
                 "disabledText": Object {
                   "color": "#999999",
@@ -8801,6 +8991,13 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "lTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "32px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "40px",
+                },
                 "labelText": Object {
                   "color": "#414141",
                   "fontSize": "12px",
@@ -8808,14 +9005,7 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "largeTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "mediumTitle": Object {
+                "mTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "600",
@@ -8829,33 +9019,54 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
-                "sliderTrackText": Object {
-                  "color": "#414141",
-                  "fontSize": "10px",
+                "sLink": Object {
+                  "color": "#146BD2",
+                  "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
-                  "lineHeight": "12px",
+                  "lineHeight": "16px",
                 },
-                "smallTitle": Object {
+                "sTitle": Object {
                   "color": "#414141",
                   "fontSize": "22px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
                 },
-                "visualizationText": Object {
+                "vizText": Object {
                   "color": "#414141",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
                 },
-                "xlargeTitle": Object {
+                "xlTitle": Object {
                   "color": "#414141",
                   "fontSize": "32px",
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "40px",
+                },
+                "xsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
+                },
+                "xxlTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "42px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "52px",
+                },
+                "xxsTitle": Object {
+                  "color": "#414141",
+                  "fontSize": "18px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "28px",
                 },
               },
             },
@@ -8874,8 +9085,8 @@ body {
             "overrides": Object {
               "MuiAppBar": Object {
                 "colorDefault": Object {
-                  "backgroundColor": "#fff",
-                  "contrastText": undefined,
+                  "backgroundColor": "#FFFFFF",
+                  "contrastText": "#414141",
                 },
                 "root": Object {
                   "@media (min-width: 600px)": Object {
@@ -9065,12 +9276,12 @@ body {
                 "lineHeight": 1.5,
               },
               "button": Object {
-                "color": "#FFFFFF",
+                "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
-                "lineHeight": "21px",
+                "lineHeight": "20px",
                 "textTransform": "uppercase",
               },
               "buttonNext": Object {
@@ -9094,13 +9305,6 @@ body {
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
-              },
-              "disabled": Object {
-                "color": "#999999",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
@@ -9141,20 +9345,32 @@ body {
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "6rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h2": Object {
+                "0": "#",
+                "1": "4",
+                "2": "1",
+                "3": "4",
+                "4": "1",
+                "5": "4",
+                "6": "1",
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                "fontSize": "32px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
+                "fontSize": "3.75rem",
+                "fontWeight": 300,
+                "lineHeight": 1,
               },
               "h3": Object {
                 "color": "#414141",
@@ -9193,13 +9409,6 @@ body {
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
-              "info": Object {
-                "color": "#414141",
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
               "overline": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -9210,13 +9419,6 @@ body {
               },
               "pxToRem": [Function],
               "round": [Function],
-              "sliderTrack": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "12px",
-              },
               "subheading": Object {
                 "color": "#414141",
                 "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -9249,13 +9451,6 @@ body {
                 "lineHeight": "1.16667em",
               },
               "useNextVariants": true,
-              "visualization": Object {
-                "color": "#414141",
-                "fontSize": "10px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "15px",
-              },
             },
             "zIndex": Object {
               "appBar": 1100,
@@ -9374,9 +9569,7 @@ body {
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
-                        "acce1h": "#676767",
                         "acce2": "#146BD2",
-                        "acce2_200": "#CFE0F5",
                         "acce2h": "#4389DB",
                         "acce3": "#CC0000",
                       },
@@ -9389,19 +9582,16 @@ body {
                         "atmo6": "#BCBCBC",
                         "atmo7": "#999999",
                       },
-                      "hitachi": Object {
-                        "light": "#FF312E",
-                        "main": "#CC0000",
-                      },
                       "semantic": Object {
                         "sema1": "#63A621",
-                        "sema1_200": "#DFECD1",
-                        "sema2": "#DEDEDE",
-                        "sema3": "#72CCCB",
-                        "sema4": "#E8C758",
-                        "sema5": "#E68C17",
-                        "sema6": "#D13F3F",
-                        "sema6_200": "#F5D8D8",
+                        "sema2": "#72CCCB",
+                        "sema3": "#E68C17",
+                        "sema4": "#FF5252",
+                        "sema5": "#C51162",
+                        "sema6": "#AA00FF",
+                        "sema7": "#D3E3F6",
+                        "sema8": "#DFECD1",
+                        "sema9": "#F5D8D8",
                       },
                       "support": Object {
                         "supp1": "#0F8B8D",
@@ -9419,19 +9609,40 @@ body {
                       "xs": "10",
                     },
                     "typography": Object {
+                      "3xlTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "42px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "52px",
+                      },
+                      "4xlTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "52px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "60px",
+                      },
+                      "5xlTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "52px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "60px",
+                      },
                       "buttonText": Object {
                         "color": "#FFFFFF",
                         "fontSize": "14px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "21px",
+                        "lineHeight": "20px",
                       },
                       "disabledButtonText": Object {
                         "color": "#999999",
-                        "fontSize": "12px",
+                        "fontSize": "14px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
+                        "lineHeight": "20px",
                       },
                       "disabledText": Object {
                         "color": "#999999",
@@ -9462,6 +9673,13 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "20px",
                       },
+                      "lTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "32px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "40px",
+                      },
                       "labelText": Object {
                         "color": "#414141",
                         "fontSize": "12px",
@@ -9469,14 +9687,7 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "16px",
                       },
-                      "largeTitle": Object {
-                        "color": "#414141",
-                        "fontSize": "32px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
-                      },
-                      "mediumTitle": Object {
+                      "mTitle": Object {
                         "color": "#414141",
                         "fontSize": "22px",
                         "fontWeight": "600",
@@ -9490,33 +9701,54 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "20px",
                       },
-                      "sliderTrackText": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
+                      "sLink": Object {
+                        "color": "#146BD2",
+                        "fontSize": "12px",
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "12px",
+                        "lineHeight": "16px",
                       },
-                      "smallTitle": Object {
+                      "sTitle": Object {
                         "color": "#414141",
                         "fontSize": "22px",
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
                         "lineHeight": "30px",
                       },
-                      "visualizationText": Object {
+                      "vizText": Object {
                         "color": "#414141",
                         "fontSize": "10px",
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
                         "lineHeight": "15px",
                       },
-                      "xlargeTitle": Object {
+                      "xlTitle": Object {
                         "color": "#414141",
                         "fontSize": "32px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
                         "lineHeight": "40px",
+                      },
+                      "xsTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "18px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "28px",
+                      },
+                      "xxlTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "42px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "52px",
+                      },
+                      "xxsTitle": Object {
+                        "color": "#414141",
+                        "fontSize": "18px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "28px",
                       },
                     },
                   },
@@ -9535,8 +9767,8 @@ body {
                   "overrides": Object {
                     "MuiAppBar": Object {
                       "colorDefault": Object {
-                        "backgroundColor": "#fff",
-                        "contrastText": undefined,
+                        "backgroundColor": "#FFFFFF",
+                        "contrastText": "#414141",
                       },
                       "root": Object {
                         "@media (min-width: 600px)": Object {
@@ -9726,12 +9958,12 @@ body {
                       "lineHeight": 1.5,
                     },
                     "button": Object {
-                      "color": "#FFFFFF",
+                      "color": "#414141",
                       "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "14px",
                       "fontWeight": "600",
                       "letterSpacing": "0.02em",
-                      "lineHeight": "21px",
+                      "lineHeight": "20px",
                       "textTransform": "uppercase",
                     },
                     "buttonNext": Object {
@@ -9755,13 +9987,6 @@ body {
                       "fontSize": "0.75rem",
                       "fontWeight": 400,
                       "lineHeight": 1.66,
-                    },
-                    "disabled": Object {
-                      "color": "#999999",
-                      "fontSize": "12px",
-                      "fontWeight": "400",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "16px",
                     },
                     "display1": Object {
                       "color": "rgba(0, 0, 0, 0.54)",
@@ -9802,20 +10027,32 @@ body {
                     "fontWeightMedium": 500,
                     "fontWeightRegular": 400,
                     "h1": Object {
+                      "0": "#",
+                      "1": "4",
+                      "2": "1",
+                      "3": "4",
+                      "4": "1",
+                      "5": "4",
+                      "6": "1",
                       "color": "#414141",
                       "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                      "fontSize": "32px",
-                      "fontWeight": "600",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "40px",
+                      "fontSize": "6rem",
+                      "fontWeight": 300,
+                      "lineHeight": 1,
                     },
                     "h2": Object {
+                      "0": "#",
+                      "1": "4",
+                      "2": "1",
+                      "3": "4",
+                      "4": "1",
+                      "5": "4",
+                      "6": "1",
                       "color": "#414141",
                       "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                      "fontSize": "32px",
-                      "fontWeight": "400",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "40px",
+                      "fontSize": "3.75rem",
+                      "fontWeight": 300,
+                      "lineHeight": 1,
                     },
                     "h3": Object {
                       "color": "#414141",
@@ -9854,13 +10091,6 @@ body {
                       "fontWeight": 400,
                       "lineHeight": "1.35417em",
                     },
-                    "info": Object {
-                      "color": "#414141",
-                      "fontSize": "12px",
-                      "fontWeight": "400",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "16px",
-                    },
                     "overline": Object {
                       "color": "#414141",
                       "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -9871,13 +10101,6 @@ body {
                     },
                     "pxToRem": [Function],
                     "round": [Function],
-                    "sliderTrack": Object {
-                      "color": "#414141",
-                      "fontSize": "10px",
-                      "fontWeight": "400",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "12px",
-                    },
                     "subheading": Object {
                       "color": "#414141",
                       "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -9910,13 +10133,6 @@ body {
                       "lineHeight": "1.16667em",
                     },
                     "useNextVariants": true,
-                    "visualization": Object {
-                      "color": "#414141",
-                      "fontSize": "10px",
-                      "fontWeight": "400",
-                      "letterSpacing": "0.02em",
-                      "lineHeight": "15px",
-                    },
                   },
                   "zIndex": Object {
                     "appBar": 1100,
@@ -10041,9 +10257,7 @@ body {
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1h": "#676767",
                           "acce2": "#146BD2",
-                          "acce2_200": "#CFE0F5",
                           "acce2h": "#4389DB",
                           "acce3": "#CC0000",
                         },
@@ -10056,19 +10270,16 @@ body {
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
                         },
-                        "hitachi": Object {
-                          "light": "#FF312E",
-                          "main": "#CC0000",
-                        },
                         "semantic": Object {
                           "sema1": "#63A621",
-                          "sema1_200": "#DFECD1",
-                          "sema2": "#DEDEDE",
-                          "sema3": "#72CCCB",
-                          "sema4": "#E8C758",
-                          "sema5": "#E68C17",
-                          "sema6": "#D13F3F",
-                          "sema6_200": "#F5D8D8",
+                          "sema2": "#72CCCB",
+                          "sema3": "#E68C17",
+                          "sema4": "#FF5252",
+                          "sema5": "#C51162",
+                          "sema6": "#AA00FF",
+                          "sema7": "#D3E3F6",
+                          "sema8": "#DFECD1",
+                          "sema9": "#F5D8D8",
                         },
                         "support": Object {
                           "supp1": "#0F8B8D",
@@ -10086,19 +10297,40 @@ body {
                         "xs": "10",
                       },
                       "typography": Object {
+                        "3xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "4xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
+                        "5xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
                         "buttonText": Object {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "21px",
+                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
-                          "fontSize": "12px",
+                          "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "16px",
+                          "lineHeight": "20px",
                         },
                         "disabledText": Object {
                           "color": "#999999",
@@ -10129,6 +10361,13 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
+                        "lTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "32px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "40px",
+                        },
                         "labelText": Object {
                           "color": "#414141",
                           "fontSize": "12px",
@@ -10136,14 +10375,7 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "16px",
                         },
-                        "largeTitle": Object {
-                          "color": "#414141",
-                          "fontSize": "32px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "40px",
-                        },
-                        "mediumTitle": Object {
+                        "mTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "600",
@@ -10157,33 +10389,54 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
-                        "sliderTrackText": Object {
-                          "color": "#414141",
-                          "fontSize": "10px",
+                        "sLink": Object {
+                          "color": "#146BD2",
+                          "fontSize": "12px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "12px",
+                          "lineHeight": "16px",
                         },
-                        "smallTitle": Object {
+                        "sTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "30px",
                         },
-                        "visualizationText": Object {
+                        "vizText": Object {
                           "color": "#414141",
                           "fontSize": "10px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "15px",
                         },
-                        "xlargeTitle": Object {
+                        "xlTitle": Object {
                           "color": "#414141",
                           "fontSize": "32px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "40px",
+                        },
+                        "xsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
+                        },
+                        "xxlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "xxsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
                         },
                       },
                     },
@@ -10202,8 +10455,8 @@ body {
                     "overrides": Object {
                       "MuiAppBar": Object {
                         "colorDefault": Object {
-                          "backgroundColor": "#fff",
-                          "contrastText": undefined,
+                          "backgroundColor": "#FFFFFF",
+                          "contrastText": "#414141",
                         },
                         "root": Object {
                           "@media (min-width: 600px)": Object {
@@ -10393,12 +10646,12 @@ body {
                         "lineHeight": 1.5,
                       },
                       "button": Object {
-                        "color": "#FFFFFF",
+                        "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                         "fontSize": "14px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "21px",
+                        "lineHeight": "20px",
                         "textTransform": "uppercase",
                       },
                       "buttonNext": Object {
@@ -10422,13 +10675,6 @@ body {
                         "fontSize": "0.75rem",
                         "fontWeight": 400,
                         "lineHeight": 1.66,
-                      },
-                      "disabled": Object {
-                        "color": "#999999",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
                       },
                       "display1": Object {
                         "color": "rgba(0, 0, 0, 0.54)",
@@ -10469,20 +10715,32 @@ body {
                       "fontWeightMedium": 500,
                       "fontWeightRegular": 400,
                       "h1": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "6rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h2": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "3.75rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h3": Object {
                         "color": "#414141",
@@ -10521,13 +10779,6 @@ body {
                         "fontWeight": 400,
                         "lineHeight": "1.35417em",
                       },
-                      "info": Object {
-                        "color": "#414141",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
-                      },
                       "overline": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -10538,13 +10789,6 @@ body {
                       },
                       "pxToRem": [Function],
                       "round": [Function],
-                      "sliderTrack": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "12px",
-                      },
                       "subheading": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -10577,13 +10821,6 @@ body {
                         "lineHeight": "1.16667em",
                       },
                       "useNextVariants": true,
-                      "visualization": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "15px",
-                      },
                     },
                     "zIndex": Object {
                       "appBar": 1100,
@@ -10705,9 +10942,7 @@ body {
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1h": "#676767",
                           "acce2": "#146BD2",
-                          "acce2_200": "#CFE0F5",
                           "acce2h": "#4389DB",
                           "acce3": "#CC0000",
                         },
@@ -10720,19 +10955,16 @@ body {
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
                         },
-                        "hitachi": Object {
-                          "light": "#FF312E",
-                          "main": "#CC0000",
-                        },
                         "semantic": Object {
                           "sema1": "#63A621",
-                          "sema1_200": "#DFECD1",
-                          "sema2": "#DEDEDE",
-                          "sema3": "#72CCCB",
-                          "sema4": "#E8C758",
-                          "sema5": "#E68C17",
-                          "sema6": "#D13F3F",
-                          "sema6_200": "#F5D8D8",
+                          "sema2": "#72CCCB",
+                          "sema3": "#E68C17",
+                          "sema4": "#FF5252",
+                          "sema5": "#C51162",
+                          "sema6": "#AA00FF",
+                          "sema7": "#D3E3F6",
+                          "sema8": "#DFECD1",
+                          "sema9": "#F5D8D8",
                         },
                         "support": Object {
                           "supp1": "#0F8B8D",
@@ -10750,19 +10982,40 @@ body {
                         "xs": "10",
                       },
                       "typography": Object {
+                        "3xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "4xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
+                        "5xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
                         "buttonText": Object {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "21px",
+                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
-                          "fontSize": "12px",
+                          "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "16px",
+                          "lineHeight": "20px",
                         },
                         "disabledText": Object {
                           "color": "#999999",
@@ -10793,6 +11046,13 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
+                        "lTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "32px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "40px",
+                        },
                         "labelText": Object {
                           "color": "#414141",
                           "fontSize": "12px",
@@ -10800,14 +11060,7 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "16px",
                         },
-                        "largeTitle": Object {
-                          "color": "#414141",
-                          "fontSize": "32px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "40px",
-                        },
-                        "mediumTitle": Object {
+                        "mTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "600",
@@ -10821,33 +11074,54 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
-                        "sliderTrackText": Object {
-                          "color": "#414141",
-                          "fontSize": "10px",
+                        "sLink": Object {
+                          "color": "#146BD2",
+                          "fontSize": "12px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "12px",
+                          "lineHeight": "16px",
                         },
-                        "smallTitle": Object {
+                        "sTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "30px",
                         },
-                        "visualizationText": Object {
+                        "vizText": Object {
                           "color": "#414141",
                           "fontSize": "10px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "15px",
                         },
-                        "xlargeTitle": Object {
+                        "xlTitle": Object {
                           "color": "#414141",
                           "fontSize": "32px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "40px",
+                        },
+                        "xsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
+                        },
+                        "xxlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "xxsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
                         },
                       },
                     },
@@ -10866,8 +11140,8 @@ body {
                     "overrides": Object {
                       "MuiAppBar": Object {
                         "colorDefault": Object {
-                          "backgroundColor": "#fff",
-                          "contrastText": undefined,
+                          "backgroundColor": "#FFFFFF",
+                          "contrastText": "#414141",
                         },
                         "root": Object {
                           "@media (min-width: 600px)": Object {
@@ -11057,12 +11331,12 @@ body {
                         "lineHeight": 1.5,
                       },
                       "button": Object {
-                        "color": "#FFFFFF",
+                        "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                         "fontSize": "14px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "21px",
+                        "lineHeight": "20px",
                         "textTransform": "uppercase",
                       },
                       "buttonNext": Object {
@@ -11086,13 +11360,6 @@ body {
                         "fontSize": "0.75rem",
                         "fontWeight": 400,
                         "lineHeight": 1.66,
-                      },
-                      "disabled": Object {
-                        "color": "#999999",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
                       },
                       "display1": Object {
                         "color": "rgba(0, 0, 0, 0.54)",
@@ -11133,20 +11400,32 @@ body {
                       "fontWeightMedium": 500,
                       "fontWeightRegular": 400,
                       "h1": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "6rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h2": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "3.75rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h3": Object {
                         "color": "#414141",
@@ -11185,13 +11464,6 @@ body {
                         "fontWeight": 400,
                         "lineHeight": "1.35417em",
                       },
-                      "info": Object {
-                        "color": "#414141",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
-                      },
                       "overline": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -11202,13 +11474,6 @@ body {
                       },
                       "pxToRem": [Function],
                       "round": [Function],
-                      "sliderTrack": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "12px",
-                      },
                       "subheading": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -11241,13 +11506,6 @@ body {
                         "lineHeight": "1.16667em",
                       },
                       "useNextVariants": true,
-                      "visualization": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "15px",
-                      },
                     },
                     "zIndex": Object {
                       "appBar": 1100,
@@ -11372,9 +11630,7 @@ body {
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
-                          "acce1h": "#676767",
                           "acce2": "#146BD2",
-                          "acce2_200": "#CFE0F5",
                           "acce2h": "#4389DB",
                           "acce3": "#CC0000",
                         },
@@ -11387,19 +11643,16 @@ body {
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
                         },
-                        "hitachi": Object {
-                          "light": "#FF312E",
-                          "main": "#CC0000",
-                        },
                         "semantic": Object {
                           "sema1": "#63A621",
-                          "sema1_200": "#DFECD1",
-                          "sema2": "#DEDEDE",
-                          "sema3": "#72CCCB",
-                          "sema4": "#E8C758",
-                          "sema5": "#E68C17",
-                          "sema6": "#D13F3F",
-                          "sema6_200": "#F5D8D8",
+                          "sema2": "#72CCCB",
+                          "sema3": "#E68C17",
+                          "sema4": "#FF5252",
+                          "sema5": "#C51162",
+                          "sema6": "#AA00FF",
+                          "sema7": "#D3E3F6",
+                          "sema8": "#DFECD1",
+                          "sema9": "#F5D8D8",
                         },
                         "support": Object {
                           "supp1": "#0F8B8D",
@@ -11417,19 +11670,40 @@ body {
                         "xs": "10",
                       },
                       "typography": Object {
+                        "3xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "4xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
+                        "5xlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "52px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "60px",
+                        },
                         "buttonText": Object {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "21px",
+                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
-                          "fontSize": "12px",
+                          "fontSize": "14px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "16px",
+                          "lineHeight": "20px",
                         },
                         "disabledText": Object {
                           "color": "#999999",
@@ -11460,6 +11734,13 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
+                        "lTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "32px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "40px",
+                        },
                         "labelText": Object {
                           "color": "#414141",
                           "fontSize": "12px",
@@ -11467,14 +11748,7 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "16px",
                         },
-                        "largeTitle": Object {
-                          "color": "#414141",
-                          "fontSize": "32px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "40px",
-                        },
-                        "mediumTitle": Object {
+                        "mTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "600",
@@ -11488,33 +11762,54 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
-                        "sliderTrackText": Object {
-                          "color": "#414141",
-                          "fontSize": "10px",
+                        "sLink": Object {
+                          "color": "#146BD2",
+                          "fontSize": "12px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
-                          "lineHeight": "12px",
+                          "lineHeight": "16px",
                         },
-                        "smallTitle": Object {
+                        "sTitle": Object {
                           "color": "#414141",
                           "fontSize": "22px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "30px",
                         },
-                        "visualizationText": Object {
+                        "vizText": Object {
                           "color": "#414141",
                           "fontSize": "10px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "15px",
                         },
-                        "xlargeTitle": Object {
+                        "xlTitle": Object {
                           "color": "#414141",
                           "fontSize": "32px",
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "40px",
+                        },
+                        "xsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
+                        },
+                        "xxlTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "42px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "52px",
+                        },
+                        "xxsTitle": Object {
+                          "color": "#414141",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "28px",
                         },
                       },
                     },
@@ -11533,8 +11828,8 @@ body {
                     "overrides": Object {
                       "MuiAppBar": Object {
                         "colorDefault": Object {
-                          "backgroundColor": "#fff",
-                          "contrastText": undefined,
+                          "backgroundColor": "#FFFFFF",
+                          "contrastText": "#414141",
                         },
                         "root": Object {
                           "@media (min-width: 600px)": Object {
@@ -11724,12 +12019,12 @@ body {
                         "lineHeight": 1.5,
                       },
                       "button": Object {
-                        "color": "#FFFFFF",
+                        "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                         "fontSize": "14px",
                         "fontWeight": "600",
                         "letterSpacing": "0.02em",
-                        "lineHeight": "21px",
+                        "lineHeight": "20px",
                         "textTransform": "uppercase",
                       },
                       "buttonNext": Object {
@@ -11753,13 +12048,6 @@ body {
                         "fontSize": "0.75rem",
                         "fontWeight": 400,
                         "lineHeight": 1.66,
-                      },
-                      "disabled": Object {
-                        "color": "#999999",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
                       },
                       "display1": Object {
                         "color": "rgba(0, 0, 0, 0.54)",
@@ -11800,20 +12088,32 @@ body {
                       "fontWeightMedium": 500,
                       "fontWeightRegular": 400,
                       "h1": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "6rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h2": Object {
+                        "0": "#",
+                        "1": "4",
+                        "2": "1",
+                        "3": "4",
+                        "4": "1",
+                        "5": "4",
+                        "6": "1",
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                        "fontSize": "32px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "40px",
+                        "fontSize": "3.75rem",
+                        "fontWeight": 300,
+                        "lineHeight": 1,
                       },
                       "h3": Object {
                         "color": "#414141",
@@ -11852,13 +12152,6 @@ body {
                         "fontWeight": 400,
                         "lineHeight": "1.35417em",
                       },
-                      "info": Object {
-                        "color": "#414141",
-                        "fontSize": "12px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "16px",
-                      },
                       "overline": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -11869,13 +12162,6 @@ body {
                       },
                       "pxToRem": [Function],
                       "round": [Function],
-                      "sliderTrack": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "12px",
-                      },
                       "subheading": Object {
                         "color": "#414141",
                         "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
@@ -11908,13 +12194,6 @@ body {
                         "lineHeight": "1.16667em",
                       },
                       "useNextVariants": true,
-                      "visualization": Object {
-                        "color": "#414141",
-                        "fontSize": "10px",
-                        "fontWeight": "400",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "15px",
-                      },
                     },
                     "zIndex": Object {
                       "appBar": 1100,
