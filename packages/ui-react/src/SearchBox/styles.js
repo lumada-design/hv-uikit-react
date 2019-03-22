@@ -43,7 +43,7 @@ const styles = theme => ({
       outline: "none"
     },
     "&::placeholder": {
-      ...theme.typography.disabled
+      ...theme.hv.typography.disabledText
     }
   },
   icon: {

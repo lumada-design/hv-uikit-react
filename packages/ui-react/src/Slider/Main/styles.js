@@ -78,12 +78,7 @@ const styles = theme => ({
     marginTop: "-1px"
   },
   mark: {
-    color: theme.hv.palette.accent.acce1,
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sliderTrack.fontSize,
-    letterSpacing: theme.typography.sliderTrack.letterSpacing,
-    lineHeight: theme.typography.sliderTrack.lineHeight,
-    fontWeight: theme.typography.sliderTrack.fontWeight,
+    ...theme.hv.typography.vizText,
     top: "-2px"
   },
   sliderTooltip: {
@@ -94,11 +89,7 @@ const styles = theme => ({
       maxWidth: "532px",
       height: "100%",
       padding: `${theme.hv.spacing.sm}px`,
-      color: theme.typography.info.color,
-      fontFamily: theme.typography.fontFamily,
-      fontSize: theme.typography.info.fontSize,
-      letterSpacing: theme.typography.info.letterSpacing,
-      fontWeight: theme.typography.info.fontWeight,
+      ...theme.hv.typography.infoText,
       boxShadow: "none"
     },
     "& .rc-slider-tooltip-arrow": {

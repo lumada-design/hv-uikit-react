@@ -54,7 +54,7 @@ const styles = theme => ({
   },
   infoText: {
     fontFamily: theme.typography.fontFamily,
-    ...theme.typography.visualization
+    ...theme.hv.typography.vizText
   },
   titleText: {
     fontFamily: theme.typography.fontFamily,

@@ -13,6 +13,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
+import theme from "@hv-ui/themes/dist/theme";
 import Header from "../Header";
 import Content from "../Content";
 import Footer from "../Footer";
@@ -30,7 +31,7 @@ import Media from "../Media";
  *   InnerCardContent,
  *   Actions,
  *   isSelectable,
- *   variant,
+ *   semantic,
  *   onSelect,
  *   checkboxValue,
  *   checkboxLabel,
@@ -52,7 +53,7 @@ const Main = ({
   InnerCardContent,
   Actions,
   isSelectable,
-  variant,
+  semantic,
   onSelect,
   checkboxValue,
   checkboxLabel,
@@ -101,7 +102,15 @@ const Main = ({
   );
 
   return (
-    <Card className={classNames(classes.root, classes[variant])} {...other}>
+    <Card
+      className={classNames(classes.root, classes.borderTop)}
+      style={{
+        borderTopColor: semantic && theme.palette.semantic[semantic],
+        borderTopWidth:
+          semantic !== null ? "4px" : classes.borderTop.borderTopWidth
+      }}
+      {...other}
+    >
       {children || defaultContent}
     </Card>
   );
@@ -113,21 +122,9 @@ Main.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Style applied to the component when the variant is info.
+     * Style applied to the border top.
      */
-    info: PropTypes.string,
-    /**
-     * Style applied to the component when the variant is warning.
-     */
-    warning: PropTypes.string,
-    /**
-     * Style applied to the component when the variant is error.
-     */
-    error: PropTypes.string,
-    /**
-     * Style applied to the component when the variant is none.
-     */
-    none: PropTypes.string
+    borderTop: PropTypes.string
   }).isRequired,
   /**
    * The content inside the card.
@@ -166,9 +163,19 @@ Main.propTypes = {
    */
   mediaHeight: PropTypes.number,
   /**
-   *  The border color at the top of the card.
+   *  The border color at the top of the card. Must be one of palette semantic colors. You want to set another color, the borderTop should be override.
    */
-  variant: PropTypes.oneOf(["none", "info", "warning", "error", "alert", "neutral", "success"]),
+  semantic: PropTypes.oneOf([
+    "sema1",
+    "sema2",
+    "sema3",
+    "sema4",
+    "sema5",
+    "sema6",
+    "sema7",
+    "sema8",
+    "sema9"
+  ]),
   /**
    *  The function that will be executed when the card is selected.
    */
@@ -198,8 +205,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
-  variant: "none",
-  HeaderTitle: undefined,
+  semantic: null,
   isSelectable: false,
   children: undefined,
   Icon: undefined,

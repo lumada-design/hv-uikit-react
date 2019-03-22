@@ -9,26 +9,10 @@
  */
 
 const styles = theme => ({
-  success: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema1}`
-  },
-  neutral: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema2}`
-  },
-  info: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema3}`
-  },
-  alert: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema4}`
-  },
-  warning: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema5}`
-  },
-  error: {
-    borderTop: `4px solid ${theme.hv.palette.semantic.sema6}`
-  },
-  none: {
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+  borderTop: {
+    borderTopWidth: "1px",
+    borderTopStyle: "solid",
+    borderTopColor: theme.hv.palette.atmosphere.atmo6
   }
 });
 

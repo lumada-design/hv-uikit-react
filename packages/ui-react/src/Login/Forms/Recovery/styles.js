@@ -55,7 +55,7 @@ const styles = theme => ({
     marginTop: "4px"
   },
   showOkMessage: {
-    backgroundColor: theme.hv.palette.semantic.sema1_200,
+    backgroundColor: theme.hv.palette.semantic.sema8,
     display: "flex",
     alignItems: "center",
     height: "100%",

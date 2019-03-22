@@ -55,18 +55,18 @@ const Content = ({ value, icon }) => (
       visualIndicator={icon}
     />
     <div>
-      <Typography variant="body1" className={kpiStyles.label}>
+      <Typography semantic="body1" className={kpiStyles.label}>
         {data.firstTitle}
       </Typography>
-      <Typography variant="body2" className={kpiStyles.text}>
+      <Typography semantic="body2" className={kpiStyles.text}>
         {data.firstContent}
       </Typography>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography variant="body1" className={kpiStyles.label}>
+      <Typography semantic="body1" className={kpiStyles.label}>
         {data.secondTitle}
       </Typography>
-      <Typography variant="body2" className={kpiStyles.text}>
+      <Typography semantic="body2" className={kpiStyles.text}>
         {data.secondContent}
       </Typography>
     </div>
@@ -87,7 +87,7 @@ export default (
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
           InnerCardContent={<Content value="85" icon={<IconInvalid />} />}
-          variant="info"
+          semantic="sema2"
           isSelectable
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
@@ -98,7 +98,7 @@ export default (
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
           InnerCardContent={<Content value="45" icon={<WarningIcon />} />}
-          variant="warning"
+          semantic="sema3"
           isSelectable
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
@@ -109,7 +109,7 @@ export default (
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
           InnerCardContent={<Content value="19" icon={<FailureIcon />} />}
-          variant="error"
+          semantic="sema5"
           isSelectable
           checkboxValue="value"
           onSelect={event => console.log(`my value is ${event.target.value}`)}
