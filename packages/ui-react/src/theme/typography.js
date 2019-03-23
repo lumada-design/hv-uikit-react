@@ -17,10 +17,10 @@ const typography = createTypography(palette, {
   suppressDeprecationWarnings: true,
   fontFamily: theme.typography.fontFamily,
   h1: {
-    ...theme.typography.xlTitle.color
+    ...theme.typography.xlTitle
   },
   h2: {
-    ...theme.typography.lTitle.color
+    ...theme.typography.lTitle
   },
   h3: {
     ...theme.typography.mTitle
