@@ -10,7 +10,7 @@
 
 const root = theme => ({
   position: "relative",
-  background: theme.palette.atmosphere.atmo1,
+  background: theme.hv.palette.atmosphere.atmo1,
   height: "34px", 
   paddingLeft: `${theme.hv.spacing.xs}px`,
   paddingRight: `${theme.hv.spacing.md}px`
