@@ -5,6 +5,16 @@ A collection of Themes and UI Components for the Hitachi Vantara Design System.
 Using a single repo reduces overhead from managing dependencies and the burden of writing code across packages.
 It allows moving fast and getting things done more efficiently, increasing developer productivity.
 
+## Private npm registry
+Our packages are being published to a private npm registry. If you want to use this project please make sure you have _.npmrc_ file this current directory 
+with the following line: 
+
+```
+registry = http://10.177.178.252:8081/repository/group-npm/
+```
+
+Optionally, if you want this file can be added in your home folder, but you will start using this npm registry for all your projects
+
 ### Lerna
 [Lerna](https://lernajs.io/) tries to ease the management of npm links when dealing with multi package projects hosted in a single repository. It also handles execution of tasks across multiple packages and eases the pain of versioning and publishing.
 

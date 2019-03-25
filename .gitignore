@@ -21,3 +21,5 @@ yarn-error.log*
 *.iml
 
 packages/ui-react/junit\.xml
+
+.npmrc
