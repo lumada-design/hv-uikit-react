@@ -104,23 +104,23 @@ HvButton.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * styles applied to the component root class.
+     * Styles applied to the component root class.
      */
     root: PropTypes.string,
     /**
-     *
+     * Styles applied to the component contained primary.
      */
     containedPrimary: PropTypes.string,
     /**
-     *
+     * Styles applied to the component outline primary.
      */
     outlinedPrimary: PropTypes.string,
     /**
-     *
+     * Styles applied to the component text primary.
      */
     textPrimary: PropTypes.string,
     /**
-     *
+     * Styles applied to the component when disable.
      */
     disabled: PropTypes.string
   }).isRequired,
@@ -141,7 +141,7 @@ HvButton.propTypes = {
 HvButton.defaultProps = {
   className: "",
   type: "button",
-  colorType: buttonTypes.Primary,
+  colorType: "primary",
   disabled: false,
   onClick: () => {}
 };

@@ -129,7 +129,52 @@ HvCheckbox.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to the label typography.
+     */
+    labelTypography: PropTypes.string,
+    /**
+     * Styles applied to the component when the label is disable.
+     */
+    labelDisabled: PropTypes.string,
+    /**
+     *  Styles applied to the label when the position is end.
+     */
+    labelEnd: PropTypes.string,
+    /**
+     * Styles applied to the label when the position is start.
+     */
+    labelStart: PropTypes.string,
+    /**
+     * Styles applied to the checkbox core element (material-ui).
+     */
+    checkBox: PropTypes.string,
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the icon when not selected.
+     */
+    iconEmpty: PropTypes.string,
+    /**
+     * Styles applied to the icon when selected.
+     */
+    iconFull: PropTypes.string,
+    /**
+     * Styles applied to the icon when disable.
+     */
+    iconDisable: PropTypes.string,
+    /**
+     * Styles applied to the icon when indeterminate.
+     */
+    iconIndeterminate: PropTypes.string
+  }).isRequired,
   /**
    * If set to `true` the checkbox is disabled and the onClick function will not be called.
    */
@@ -137,7 +182,7 @@ HvCheckbox.propTypes = {
   /**
    * The function executed when the checkbox is pressed.
    */
-  onChange: PropTypes.instanceOf(Function),
+  onChange: PropTypes.func,
   /**
    * If set to `true` the checkbox is selected, if set to `false` the checkbox is not selected.
    * note: if this value is specified the state of the checkbox must be managed
@@ -183,7 +228,7 @@ HvCheckbox.defaultProps = {
   onChange: () => {},
   propsIcon: undefined,
   propsLabel: undefined,
-  labelPlacement: labelPositions.end
+  labelPlacement: "end"
 };
 
 export default HvCheckbox;

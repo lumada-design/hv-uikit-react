@@ -20,7 +20,7 @@ const styles = theme => ({
     flex: 1,
     justifyContent: "left",
     "& > a, > div": {
-      paddingRight: `${theme.spacing.xs}px`
+      paddingRight: `${theme.hv.spacing.xs}px`
     },
     "& > a:last-child, > div:last-child": {
       paddingRight: "0px"
@@ -35,9 +35,9 @@ const styles = theme => ({
     position: "relative",
     width: "unset",
     maxWidth: "170px",
-    padding: `0 ${theme.spacing.xs}px 0 ${theme.spacing.xs}px`,
+    padding: `0 ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     "&:focus": {
-      backgroundColor: theme.palette.common.white
+      backgroundColor: theme.hv.palette.atmosphere.atmo1
     }
   },
   listItemText: {

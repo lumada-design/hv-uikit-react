@@ -27,7 +27,7 @@ const defaultLabels = {
   cancelLabel: "Cancel",
   applyLabel: "Apply",
   multiSelectionAction: "Selected",
-  multiSelectionConjuction: "of"
+  multiSelectionConjunction: "of"
 };
 
 class Main extends React.Component {
@@ -105,7 +105,7 @@ class Main extends React.Component {
         selectionLabel = selection[0].label;
       } else if (hasSelection && multiSelect) {
         selectionLabel = `${labels.multiSelectionAction} ${selection.length} ${
-          labels.multiSelectionConjuction
+          labels.multiSelectionConjunction
         } ${values.length}`;
       }
 
@@ -272,7 +272,12 @@ Main.propTypes = {
   /**
    * The list to be rendered by the dropdown.
    */
-  values: PropTypes.instanceOf(Array),
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      selected: PropTypes.bool
+    })
+  ),
   /**
    * If the ´true´ the dropdown is multiselect if ´false´ the dropdown is single select.
    */
@@ -301,7 +306,7 @@ Main.propTypes = {
    * - cancelLabel: The label used for the cancel button.
    * - applyLabel: The label used for the apply button.
    * - multiSelectionAction: The label used preceding the multiselection count.
-   * - multiSelectionConjuction: The label used in the middle of the multiselection count.
+   * - multiSelectionConjunction: The label used in the middle of the multiselection count.
    */
   labels: PropTypes.shape({
     select: PropTypes.string,
@@ -309,7 +314,7 @@ Main.propTypes = {
     cancelLabel: PropTypes.string,
     applyLabel: PropTypes.string,
     multiSelectionAction: PropTypes.string,
-    multiSelectionConjuction: PropTypes.string
+    multiSelectionConjunction: PropTypes.string
   })
 };
 

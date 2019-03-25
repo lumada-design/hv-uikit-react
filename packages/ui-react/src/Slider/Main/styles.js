@@ -89,7 +89,7 @@ const styles = theme => ({
   },
   sliderTooltip: {
     "& .rc-slider-tooltip-inner": {
-      background: theme.palette.common.white,
+      background: theme.hv.palette.atmosphere.atmo1,
       border: `solid 1px ${theme.hv.palette.atmosphere.atmo7} `,
       borderRadius: 0,
       maxWidth: "532px",

@@ -103,13 +103,6 @@ exports[`Login  should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -3380,13 +3373,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -5730,13 +5716,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -7825,13 +7804,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -9501,13 +9473,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -12300,13 +12265,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -15101,13 +15059,6 @@ input:-webkit-autofill {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -17632,13 +17583,6 @@ label + .MuiInput-formControl-241 {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -19881,13 +19825,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -21775,13 +21712,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -23553,13 +23483,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -25279,13 +25202,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -27002,13 +26918,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -30013,13 +29922,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -31773,13 +31675,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -32793,7 +32688,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
   letter-spacing: 0.02em;
 }
 .HvButton-containedPrimary-307 {
-  color: #fff;
+  color: #FFFFFF;
   background-color: #146BD2;
 }
 .HvButton-containedPrimary-307:hover {
@@ -32817,14 +32712,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
 .HvButton-outlinedPrimary-308 {
   color: #414141;
   border: 1px solid #BCBCBC;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-308:hover {
   border: 1px solid #F0F0F0;
   background-color: #F0F0F0;
 }
 .HvButton-outlinedPrimary-308:active {
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-308.HvButton-disabled-310 {
   color: #999999;
@@ -32903,7 +32798,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   Object {},
                   Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#4389DB",
@@ -32924,7 +32819,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "pointer-events": "auto",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -32933,7 +32828,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "border": "1px solid #F0F0F0",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -32982,7 +32877,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                 "map": Object {
                   ".HvButton-containedPrimary-307": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".HvButton-containedPrimary-307.HvButton-disabled-310": Object {
                     "background-color": "#F0F0F0",
@@ -33008,7 +32903,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "cursor": "not-allowed",
                   },
                   ".HvButton-outlinedPrimary-308": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -33027,7 +32922,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "pointer-events": "auto",
                   },
                   ".HvButton-outlinedPrimary-308:active": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-308:hover": Object {
                     "background-color": "#F0F0F0",
@@ -33071,7 +32966,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   },
                   "containedPrimary": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "background-color": "#F0F0F0",
@@ -33079,7 +32974,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "cursor": "not-allowed",
                   },
                   "outlinedPrimary": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -33622,7 +33517,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "pointerEvents": "auto",
                   },
                   ".HvButton-outlinedPrimary-308:active": Object {
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-308:hover": Object {
                     "backgroundColor": "#F0F0F0",
@@ -33670,7 +33565,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       "backgroundColor": "#4389DB",
                     },
                     "backgroundColor": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "backgroundColor": "#F0F0F0",
@@ -33693,13 +33588,13 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       "pointerEvents": "auto",
                     },
                     "&:active": Object {
-                      "backgroundColor": "#fff",
+                      "backgroundColor": "#FFFFFF",
                     },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                       "border": "1px solid #F0F0F0",
                     },
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -33840,13 +33735,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -39503,13 +39391,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               "letterSpacing": "0.02em",
               "lineHeight": "60px",
             },
-            "buttonText": Object {
-              "color": "#FFFFFF",
-              "fontSize": "14px",
-              "fontWeight": "600",
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
             "disabledButtonText": Object {
               "color": "#999999",
               "fontSize": "14px",
@@ -40138,13 +40019,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -40801,13 +40675,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
                           },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
                           "disabledButtonText": Object {
                             "color": "#999999",
                             "fontSize": "14px",
@@ -41415,13 +41282,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "fontWeight": "600",
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
-                                  },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
                                   },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
@@ -42084,13 +41944,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
                                         },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
-                                        },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
                                           "fontSize": "14px",
@@ -42745,13 +42598,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "fontWeight": "600",
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
-                                  },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
                                   },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
@@ -43418,13 +43264,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "fontWeight": "600",
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
-                                        },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
                                         },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
@@ -44272,13 +44111,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
                                         },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
-                                        },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
                                           "fontSize": "14px",
@@ -44928,13 +44760,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "fontWeight": "600",
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
-                                  },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
                                   },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
@@ -45601,13 +45426,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "fontWeight": "600",
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
-                                        },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
                                         },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
@@ -46455,13 +46273,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
                                         },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
-                                        },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
                                           "fontSize": "14px",
@@ -47088,13 +46899,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "fontWeight": "600",
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
-                                  },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
                                   },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
@@ -48127,13 +47931,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                                 "letterSpacing": "0.02em",
                                                 "lineHeight": "60px",
                                               },
-                                              "buttonText": Object {
-                                                "color": "#FFFFFF",
-                                                "fontSize": "14px",
-                                                "fontWeight": "600",
-                                                "letterSpacing": "0.02em",
-                                                "lineHeight": "20px",
-                                              },
                                               "disabledButtonText": Object {
                                                 "color": "#999999",
                                                 "fontSize": "14px",
@@ -48751,13 +48548,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
                                   },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
-                                  },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
                                     "fontSize": "14px",
@@ -49358,13 +49148,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "fontWeight": "600",
                                       "letterSpacing": "0.02em",
                                       "lineHeight": "60px",
-                                    },
-                                    "buttonText": Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": "14px",
-                                      "fontWeight": "600",
-                                      "letterSpacing": "0.02em",
-                                      "lineHeight": "20px",
                                     },
                                     "disabledButtonText": Object {
                                       "color": "#999999",
@@ -49994,13 +49777,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -50595,13 +50371,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "fontWeight": "600",
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
-                                        },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
                                         },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
@@ -51207,13 +50976,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                             "letterSpacing": "0.02em",
                                             "lineHeight": "60px",
                                           },
-                                          "buttonText": Object {
-                                            "color": "#FFFFFF",
-                                            "fontSize": "14px",
-                                            "fontWeight": "600",
-                                            "letterSpacing": "0.02em",
-                                            "lineHeight": "20px",
-                                          },
                                           "disabledButtonText": Object {
                                             "color": "#999999",
                                             "fontSize": "14px",
@@ -51815,13 +51577,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                               "fontWeight": "600",
                                               "letterSpacing": "0.02em",
                                               "lineHeight": "60px",
-                                            },
-                                            "buttonText": Object {
-                                              "color": "#FFFFFF",
-                                              "fontSize": "14px",
-                                              "fontWeight": "600",
-                                              "letterSpacing": "0.02em",
-                                              "lineHeight": "20px",
                                             },
                                             "disabledButtonText": Object {
                                               "color": "#999999",
@@ -52470,13 +52225,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       "letterSpacing": "0.02em",
                                       "lineHeight": "60px",
                                     },
-                                    "buttonText": Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": "14px",
-                                      "fontWeight": "600",
-                                      "letterSpacing": "0.02em",
-                                      "lineHeight": "20px",
-                                    },
                                     "disabledButtonText": Object {
                                       "color": "#999999",
                                       "fontSize": "14px",
@@ -53077,13 +52825,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         "fontWeight": "600",
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
-                                      },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
                                       },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
@@ -53713,13 +53454,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
                                         },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
-                                        },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
                                           "fontSize": "14px",
@@ -54314,13 +54048,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                             "fontWeight": "600",
                                             "letterSpacing": "0.02em",
                                             "lineHeight": "60px",
-                                          },
-                                          "buttonText": Object {
-                                            "color": "#FFFFFF",
-                                            "fontSize": "14px",
-                                            "fontWeight": "600",
-                                            "letterSpacing": "0.02em",
-                                            "lineHeight": "20px",
                                           },
                                           "disabledButtonText": Object {
                                             "color": "#999999",
@@ -54926,13 +54653,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                               "letterSpacing": "0.02em",
                                               "lineHeight": "60px",
                                             },
-                                            "buttonText": Object {
-                                              "color": "#FFFFFF",
-                                              "fontSize": "14px",
-                                              "fontWeight": "600",
-                                              "letterSpacing": "0.02em",
-                                              "lineHeight": "20px",
-                                            },
                                             "disabledButtonText": Object {
                                               "color": "#999999",
                                               "fontSize": "14px",
@@ -55534,13 +55254,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                                 "fontWeight": "600",
                                                 "letterSpacing": "0.02em",
                                                 "lineHeight": "60px",
-                                              },
-                                              "buttonText": Object {
-                                                "color": "#FFFFFF",
-                                                "fontSize": "14px",
-                                                "fontWeight": "600",
-                                                "letterSpacing": "0.02em",
-                                                "lineHeight": "20px",
                                               },
                                               "disabledButtonText": Object {
                                                 "color": "#999999",

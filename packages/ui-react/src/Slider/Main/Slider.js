@@ -487,11 +487,11 @@ HvSlider.propTypes = {
   /**
    * The values array to apply to the component
    */
-  values: PropTypes.instanceOf(Array),
+  values: PropTypes.arrayOf(PropTypes.number),
   /**
    * The default values array to apply to the component
    */
-  defaultValues: PropTypes.instanceOf(Array).isRequired,
+  defaultValues: PropTypes.arrayOf(PropTypes.number).isRequired,
   /**
    * The object used to set the knob properties,
    * for every item in the array a new knob will be created.

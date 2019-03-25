@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   iconSelected: {
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    backgroundColor: `${theme.palette.common.white}`,
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     borderBottom: "none"
   },
   iconButton: {
@@ -42,7 +42,7 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.xs}px`,
     position: "absolute",
     whiteSpace: "nowrap",
-    backgroundColor: `${theme.palette.common.white}`,
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     top: 32,
     zIndex:-1
   },

@@ -9,16 +9,32 @@
  */
 
 import React from "react";
-
-const parseDescription = description => {
-  return description.split("-")[0];
-};
+import {
+  EnumList,
+  ListOfShapes,
+  ListOfSomething,
+  ObjectDescription,
+  parseDescription
+} from "./Helpers";
 
 const parseType = type => {
   let typeValue;
   switch (type.name) {
     case "instanceOf":
       typeValue = type.value;
+      break;
+    case "enum":
+      typeValue = <EnumList array={type.value} />;
+      break;
+    case "arrayOf":
+      if (type.value.name === "shape") {
+        typeValue = <ListOfShapes obj={type.value.value} />;
+      } else {
+        typeValue = <ListOfSomething> {type.value.name} </ListOfSomething>;
+      }
+      break;
+    case "shape":
+      typeValue = <ObjectDescription obj={type.value} />;
       break;
     default:
       typeValue = type.name;
@@ -41,11 +57,12 @@ const PropsTable = ({ classes, propsMetaData }) => (
     <tbody>
       {Object.keys(propsMetaData).map(key => {
         const prop = propsMetaData[key];
-        console.log(prop);
+        const propType =
+          key === "classes" ? "Check the CSS tab" : parseType(prop.type);
         return (
           <tr key={key}>
             <td>{key}</td>
-            <td>{prop.type ? parseType(prop.type) : ""}</td>
+            <td>{prop.type ? propType : ""}</td>
             {prop.required ? <td>true</td> : <td>-</td>}
             {prop.defaultValue ? (
               <td>{prop.defaultValue.value}</td>

@@ -131,31 +131,31 @@ HvTextArea.propTypes = {
    */
   classes: PropTypes.PropTypes.shape({
     /**
-     * The class applied on the text area input box.
+     * Style applied on the text area input box.
      */
     input: PropTypes.string,
     /**
-     * The class applied on the character counter.
+     * Style applied on the character counter.
      */
     characterCounter: PropTypes.string,
     /**
-     * The class controlling the layout of the counter.
+     * Style controlling the layout of the counter.
      */
     inline: PropTypes.string,
     /**
-     * The class applied to the separator element of the character counter.
+     * Style applied to the separator element of the character counter.
      */
     separator: PropTypes.string,
     /**
-     * The class applied to the max counter element of the character counter.
+     * Style applied to the max counter element of the character counter.
      */
     maxCharacter: PropTypes.string,
     /**
-     * The class applied to the current counter element of the character counter.
+     * Style applied to the current counter element of the character counter.
      */
     currentCounter: PropTypes.string,
     /**
-     * The class applied to the character counter when it is disabled.
+     * Style applied to the character counter when it is disabled.
      */
     disabled: PropTypes.string
   }).isRequired,
@@ -172,7 +172,12 @@ HvTextArea.propTypes = {
    */
   inputTextConfiguration: PropTypes.shape({
     inputLabel: PropTypes.string,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    infoText: PropTypes.string,
+    warningText: PropTypes.string,
+    maxCharQuantityWarningText: PropTypes.string,
+    minCharQuantityWarningText: PropTypes.string,
+    requiredWarningText: PropTypes.string
   }),
   /**
    * The maximum allowed length of the characters, if this value is null or undefined no check

@@ -127,13 +127,6 @@
       "lineHeight": "20px",
       "fontWeight": "600"
     },
-    "buttonText": {
-      "color": "#FFFFFF",
-      "fontSize": "14px",
-      "letterSpacing": "0.02em",
-      "fontWeight": "600",
-      "lineHeight": "20px"
-    },
     "disabledButtonText": {
       "color": "#999999",
       "fontSize": "14px",

@@ -171,15 +171,15 @@ BreadCrumb.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * styles applied to the component root class.
+     * Styles applied to the component root class.
      */
     root: PropTypes.string,
     /**
-     * styles applied to the links.
+     * Styles applied to the links.
      */
     link: PropTypes.string,
     /**
-     *  styles applied to the separator.
+     *  Styles applied to the separator.
      */
     separator: PropTypes.string
   }).isRequired,

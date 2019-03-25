@@ -19,7 +19,7 @@ const styles = theme => ({
     position: "relative",
     maxWidth: 310,
     minWidth: 310,
-    background: theme.palette.common.white,
+    background: theme.hv.palette.atmosphere.atmo1,
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     "&:hover": {
       border: `1px solid ${theme.hv.palette.accent.acce1}`
@@ -37,7 +37,7 @@ const styles = theme => ({
   },
   label: {
     ...theme.typography.subtitle2,
-    marginBottom: `${theme.spacing.xs}px`
+    marginBottom: `${theme.hv.spacing.xs}px`
   },
   header: {
     position: "relative",
@@ -47,7 +47,7 @@ const styles = theme => ({
   },
   selection: {
     ...theme.typography.body1,
-    padding: `0 ${theme.spacing.md}px 0 ${theme.spacing.xs}px`,
+    padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,
     lineHeight: "32px",
     pointerEvents: "none"
   },
@@ -67,7 +67,7 @@ const styles = theme => ({
     left: -1,
     maxWidth: 310,
     minWidth: 310,
-    background: theme.palette.common.white,
+    background: theme.hv.palette.atmosphere.atmo1,
     border: `1px solid ${theme.hv.palette.accent.acce1}`,
     borderTop: "none",
     zIndex: 1000

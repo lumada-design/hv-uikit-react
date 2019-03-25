@@ -42,7 +42,7 @@ const styles = theme => {
       right: 0,
       top: 0,
       padding: 0,
-      margin: `${theme.spacing.xs}px`,
+      margin: `${theme.hv.spacing.xs}px`,
       width: 32,
       minWidth: 32,
       "& > span": {

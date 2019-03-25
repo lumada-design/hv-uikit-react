@@ -63,7 +63,7 @@ class List extends React.Component {
   setSelection(commitChanges, toggle) {
     const { list, searchStr } = this.state;
     const { onChange, labels } = this.props;
-    const { selectAll, multiSelectionConjuction } = labels;
+    const { selectAll, multiSelectionConjunction } = labels;
     const selection = getSelection(list);
     const hasSelection = selection.length > 0;
     const allSelected = selection.length === list.length;
@@ -78,7 +78,7 @@ class List extends React.Component {
       this.setState({
         selectionLabel: !hasSelection
           ? selectAll
-          : `${selection.length} ${multiSelectionConjuction} ${list.length}`
+          : `${selection.length} ${multiSelectionConjunction} ${list.length}`
       });
     }
 

@@ -17,7 +17,7 @@ const styles = theme => ({
   titleContainer: {
     marginBottom: "10px",
     display: "flex",
-    "alignItems": "center"
+    alignItems: "center"
   },
   content: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
@@ -27,8 +27,12 @@ const styles = theme => ({
     backgroundColor: theme.palette.common.white,
     padding: "20px"
   },
-  iconCode:{
-    marginLeft: "auto"
+  iconCode: {
+    marginLeft: "auto",
+    padding: 0,
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
   }
 });
 

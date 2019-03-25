@@ -129,7 +129,7 @@ HvRadio.propTypes = {
   /**
    * The function executed when the Radio button changes from unselected to selected.
    */
-  onChange: PropTypes.instanceOf(Function),
+  onChange: PropTypes.func,
   /**
    * If set to `true` the Radio button is selected, if set to `false` the Radio button is not selected.
    */

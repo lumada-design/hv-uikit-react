@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    margin: `${theme.spacing.xs}px 0 0 ${theme.spacing.sm}px`
+    margin: `${theme.hv.spacing.xs}px 0 0 ${theme.hv.spacing.sm}px`
   },
   list: {
     maxHeight: 320,
@@ -31,7 +31,7 @@ const styles = theme => ({
     cursor: "pointer"
   },
   singleSelection: {
-    padding: `6px ${theme.spacing.xs}px`,
+    padding: `6px ${theme.hv.spacing.xs}px`,
     ...theme.typography.body1,
     cursor: "pointer",
     "&:hover": {
@@ -43,10 +43,10 @@ const styles = theme => ({
   },
   selected: {
     background: theme.hv.palette.accent.acce1,
-    color: theme.palette.common.white,
+    color: theme.hv.palette.atmosphere.atmo1,
     "&:hover": {
       background: theme.hv.palette.accent.acce1,
-      color: theme.palette.common.white
+      color: theme.hv.palette.atmosphere.atmo1
     }
   },
   truncate: {
@@ -58,22 +58,22 @@ const styles = theme => ({
     display: "block"
   },
   selectAll: {
-    margin: `${theme.spacing.xs}px 0 ${theme.spacing.xs}px 0`,
+    margin: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
     "& > span": {
       ...theme.typography.subtitle1
     }
   },
   actions: {
     textAlign: "right",
-    margin: `${theme.spacing.sm}px ${theme.spacing.sm}px ${
-      theme.spacing.sm
+    margin: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${
+      theme.hv.spacing.sm
     }px 0`
   },
   paddingRight: {
-    paddingRight: `${theme.spacing.sm}px`
+    paddingRight: `${theme.hv.spacing.sm}px`
   },
   marginBottom: {
-    marginBottom: `${theme.spacing.sm}px`
+    marginBottom: `${theme.hv.spacing.sm}px`
   }
 });
 

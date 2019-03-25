@@ -20,9 +20,11 @@ import styles from "../styles";
 
 describe("ModalActions styles", () => {
   const theme = {
-    spacing: {
-      xs: "10",
-      md: "20"
+    hv: {
+      spacing: {
+        xs: "10",
+        md: "20"
+      }
     }
   };
 

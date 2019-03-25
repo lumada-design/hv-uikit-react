@@ -137,7 +137,7 @@ const styles = theme => ({
           paddingLeft: "0px"
         },
         "& $td.sorted": {
-          backgroundColor: theme.palette.common.white,
+          backgroundColor: theme.hv.palette.atmosphere.atmo1,
           border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
           borderTop: "none",
           borderBottom: "none"

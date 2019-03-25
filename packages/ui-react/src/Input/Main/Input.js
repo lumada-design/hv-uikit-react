@@ -305,7 +305,7 @@ HvInput.propTypes = {
     requiredWarningText: PropTypes.string
   }),
   /**
-   * The input name property in the dom.
+   * Attributes applied to the input element.
    */
   inputProps: PropTypes.instanceOf(Object),
   /**
