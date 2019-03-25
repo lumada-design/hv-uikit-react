@@ -11,7 +11,7 @@ exports[`Banner  should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999993,
+            "index": -99999999991,
           },
           "themingEnabled": true,
         } => Map {
@@ -976,7 +976,7 @@ exports[`Banner  should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999993,
+                "index": -99999999991,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3142,7 +3142,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999993,
+                  "index": -99999999991,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3288,7 +3288,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999994,
+            "index": -99999999992,
           },
           "themingEnabled": true,
         } => Map {
@@ -4261,7 +4261,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999994,
+                "index": -99999999992,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4812,7 +4812,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999994,
+                  "index": -99999999992,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
