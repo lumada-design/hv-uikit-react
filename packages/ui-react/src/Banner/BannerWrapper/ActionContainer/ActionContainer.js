@@ -21,18 +21,14 @@ import PropTypes from "prop-types";
  * @returns {*}
  * @constructor
  */
-const ActionContainer = props => {
-  const { classes, onClose, action } = props;
-  return (
-    <div className={classes.actionContainer}>
-      <div className={classes.closeAction} role="button" onClick={onClose}>
-        <Close16 />
-      </div>
-      <div className={classes.actionsInnerContainer}>{action}</div>
+const ActionContainer = ({ classes, onClose, action }) => (
+  <div className={classes.actionContainer}>
+    <div className={classes.closeAction} role="button" onClick={onClose}>
+      <Close16 />
     </div>
-  );
-};
-
+    <div className={classes.actionsInnerContainer}>{action}</div>
+  </div>
+);
 ActionContainer.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.

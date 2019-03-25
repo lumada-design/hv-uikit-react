@@ -23,18 +23,17 @@ import ActionContainer from "./ActionContainer";
  * @returns {*}
  * @constructor
  */
-function HvBannerContentWrapper(props) {
-  const {
-    classes,
-    message,
-    showIcon,
-    customIcon,
-    variant,
-    actionsOnMessage,
-    action,
-    onClose,
-    ...other
-  } = props;
+function HvBannerContentWrapper({
+  classes,
+  message,
+  showIcon,
+  customIcon,
+  variant,
+  actionsOnMessage,
+  action,
+  onClose,
+  ...other
+}) {
   let icon = null;
 
   // inject the correct classes to the icon
@@ -56,16 +55,11 @@ function HvBannerContentWrapper(props) {
         }}
         className={classNames(classes[variant], classes.baseVariant)}
         message=<MessageContainer
-          classes={classes}
           icon={icon}
           actionsOnMessage={actionsOnMessage}
           message={message}
         />
-        action=<ActionContainer
-          classes={classes}
-          onClose={onClose}
-          action={action}
-        />
+        action=<ActionContainer onClose={onClose} action={action} />
         {...other}
       />
     </div>
