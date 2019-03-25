@@ -15,6 +15,20 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "nowrap"
   },
+  message: {
+    ...theme.typography.body1,
+    wordBreak: "break-all",
+    maxHeight: "80px",
+    overflow: "hidden",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 3,
+    "-webkit-box-orient": "vertical"
+  },
+  action: {
+    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px 
+    ${theme.spacing.xs}px  ${theme.spacing.sm}px`,
+    flex: "0 0 auto"
+  },
   baseVariant: {
     minHeight: "52px",
     maxHeight: "92px",
@@ -39,49 +53,9 @@ const styles = theme => ({
     minHeight: "32px",
     alignSelf: "auto"
   },
-  message: {
-    ...theme.typography.body1,
-    wordBreak: "break-all",
-    maxHeight: "80px",
-    overflow: "hidden",
-    display: "-webkit-box",
-    "-webkit-line-clamp": 3,
-    "-webkit-box-orient": "vertical"
-  },
-  messageWithoutIcon: {
-    paddingLeft: `${theme.hv.spacing.sm}px`
-  },
-  messageWithoutAction: {
-    paddingRight: `${theme.hv.spacing.sm}px`
-  },
-  actionMessageContainer: {
-    padding: `${theme.hv.spacing.xs}px`,
-    flex: "0 0 auto"
-  },
-  action: {
-    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px ${
-      theme.spacing.xs
-    }px  ${theme.spacing.sm}px`,
-    flex: "0 0 auto"
-  },
-  actionContainer: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  actionsInnerContainer: {
-    flexDirection: "row",
-    paddingRight: `${theme.spacing.xs}px`
-  },
-  messageSpan: {
-    display: "flex",
-    alignItems: "center"
-  },
   outContainer: {
     width: "100%",
     position: "relative"
-  },
-  closeAction: {
-    alignSelf: "flex-end"
   }
 });
 

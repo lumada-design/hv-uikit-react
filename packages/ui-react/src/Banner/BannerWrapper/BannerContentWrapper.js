@@ -13,8 +13,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
-import MessageContainer from "./MessageContainer/MessageContainer";
-import ActionContainer from "./ActionContainer/ActionContainer";
+import MessageContainer from "./MessageContainer";
+import ActionContainer from "./ActionContainer";
 
 /**
  * Container of banner.
@@ -49,7 +49,11 @@ function HvBannerContentWrapper(props) {
   return (
     <div className={classes.outContainer}>
       <SnackbarContent
-        classes={classes}
+        classes={{
+          root: classes.root,
+          message: classes.message,
+          action: classes.action
+        }}
         className={classNames(classes[variant], classes.baseVariant)}
         message=<MessageContainer
           classes={classes}
