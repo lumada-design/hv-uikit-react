@@ -23,27 +23,23 @@ import PropTypes from "prop-types";
  * @returns {*}
  * @constructor
  */
-const MessageContainer = props => {
-  const { classes, icon, actionsOnMessage, message } = props;
-
-  return (
-    <span id="client-snackbar" className={classes.messageSpan}>
-      {icon}
-      <Typography
-        className={classNames(
-          classes.message,
-          {
-            [classes.messageWithoutIcon]: !icon
-          },
-          { [classes.messageWithoutAction]: !actionsOnMessage }
-        )}
-      >
-        {message}
-      </Typography>
-      <div className={classes.actionMessageContainer}>{actionsOnMessage}</div>
-    </span>
-  );
-};
+const MessageContainer = ({ classes, icon, actionsOnMessage, message }) => (
+  <span id="client-snackbar" className={classes.messageSpan}>
+    {icon}
+    <Typography
+      className={classNames(
+        classes.message,
+        {
+          [classes.messageWithoutIcon]: !icon
+        },
+        { [classes.messageWithoutAction]: !actionsOnMessage }
+      )}
+    >
+      {message}
+    </Typography>
+    <div className={classes.actionMessageContainer}>{actionsOnMessage}</div>
+  </span>
+);
 
 MessageContainer.propTypes = {
   /**
