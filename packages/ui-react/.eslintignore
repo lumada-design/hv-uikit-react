@@ -1,3 +1,4 @@
-node_modules
-dist
+core
 coverage
+doc
+node_modules
