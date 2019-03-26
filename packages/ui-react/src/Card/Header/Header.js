@@ -38,7 +38,8 @@ const Header = ({ classes, HeaderTitle, Subheader, Icon, needsBorder }) => (
     classes={{
       title: classes.title,
       subheader: classes.subheader,
-      action: classes.action
+      action: classes.action,
+      content: classes.content
     }}
   />
 );
