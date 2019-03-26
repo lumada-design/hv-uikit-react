@@ -2,6 +2,8 @@
   "name": "hv-ui",
   "version": "0.0.1",
   "description": "A collection of Themes and UI Components for the Hitachi Vantara Design System.",
+  "homepage": "https://10.76.48.133/hv-design-system/hv-ui",
+  "license" : "Apache-2.0",
   "private": true,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
