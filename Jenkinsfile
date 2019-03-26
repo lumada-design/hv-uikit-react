@@ -55,6 +55,7 @@ pipeline {
                     sshagent (credentials: ['buildteam-gitlab']) {
                         sh 'git checkout master'
                         sh 'cp .npmrc ~/.npmrc'
+                        sh 'git status'
                         sh "npm run publish:${deploy}"
                     }
                 }
