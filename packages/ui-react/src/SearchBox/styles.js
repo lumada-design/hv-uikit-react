@@ -35,7 +35,7 @@ const styles = theme => ({
 
   input: {
     border: "none",
-    height: "32px",
+    height: "30px",
     width: "100%",
     background: "transparent",
     ...theme.typography.body1,
