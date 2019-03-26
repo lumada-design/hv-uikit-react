@@ -1,4 +1,4 @@
-#Contribution guidelines
+# Contribution guidelines
 
 - [Setup](#setup)
 - [Bugs](#bugs)
