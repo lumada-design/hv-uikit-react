@@ -14,36 +14,27 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { forceReRender } from "@storybook/react";
+import React, { useState } from "react";
 import HvSearchBox from "@hv-ui/react/core/SearchBox";
 
-class WrapperWithList extends React.Component {
-  list = ["Adam", "Andy", "Carol"];
+const list = ["Adam", "Andy", "Carol"];
 
-  state = {
-    value: ""
-  };
+const WrapperWithList = () => {
+  const [value, setValue] = useState("");
 
-  handleChange = val => {
-    this.state.value = val;
-    forceReRender();
-  };
+  const filter = () =>
+    value !== ""
+      ? list.filter(word => word.toLowerCase().includes(value))
+      : list;
 
-  filter = () => this.state.value !== ""
-      ? this.list.filter(word => word.includes(this.state.value))
-      : this.list;
-
-  render() {
-    return (
-      <>
-        <HvSearchBox onChange={this.handleChange} {...this.props} />
-        {this.filter().map(item => (
-          <div key={item}>{item}</div>
-        ))}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <HvSearchBox onChange={val => setValue(val.toLowerCase())} />
+      {filter().map(item => (
+        <div key={item}>{item}</div>
+      ))}
+    </>
+  );
+};
 
 export default <WrapperWithList />;
