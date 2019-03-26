@@ -17,15 +17,11 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import Settings from "@hv-ui/icons/core/icons/Settings.S";
 import MainWithStyles from "../index";
 import Main from "../Main";
-import Brand from "../../Brand";
-import Navigation from "../../Navigation";
-import User from "../../User";
-import Actions from "../../Actions";
 import HvProvider from "../../../Provider";
 
 describe("Header withStyles", () => {

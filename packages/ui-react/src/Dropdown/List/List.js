@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -175,8 +174,7 @@ class List extends React.Component {
 
     const newList = list.map(elem => {
       const newElem = { ...elem };
-      const isResult = results.find(result => result.label === elem.label);
-      newElem.isResult = isResult;
+      newElem.isResult = results.find(result => result.label === elem.label);
       return newElem;
     });
 

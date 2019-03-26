@@ -31,7 +31,7 @@ const ActionButton = () => (
       letterSpacing: "0.02em",
       lineHeight: "20px",
       fontWeight: "600",
-      "text-decoration": "none"
+      textDecoration: "none"
     }}
   >
     Action
@@ -51,17 +51,33 @@ export default (
   <div>
     Banner with icons
     <p />
-    <BannerContentWrapper message="Default" variant="default" showIcon />
+    <BannerContentWrapper
+      message="Default"
+      variant="default"
+      showIcon
+      onClose={() => {}}
+    />
     <p />
     <BannerContentWrapper
       message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
       showIcon
+      onClose={() => {}}
     />
     <p />
-    <BannerContentWrapper message="Success" variant="success" showIcon />
+    <BannerContentWrapper
+      message="Success"
+      variant="success"
+      showIcon
+      onClose={() => {}}
+    />
     <p />
-    <BannerContentWrapper message="Error" variant="error" showIcon />
+    <BannerContentWrapper
+      message="Error"
+      variant="error"
+      showIcon
+      onClose={() => {}}
+    />
     <p />
     Banner with custom icons
     <p />
@@ -69,24 +85,28 @@ export default (
       message="default"
       variant="default"
       customIcon={<FastForward16 />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
       customIcon={<FastForward16 />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="Success"
       variant="success"
       customIcon={<FastForward16 />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="Error"
       variant="error"
       customIcon={<FastForward16 />}
+      onClose={() => {}}
     />
     <p />
     Banner with icons and message action
@@ -96,6 +116,7 @@ export default (
       variant="default"
       showIcon
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
@@ -103,6 +124,7 @@ export default (
       variant="default"
       showIcon
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
@@ -110,6 +132,7 @@ export default (
       variant="success"
       showIcon
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
@@ -117,6 +140,7 @@ export default (
       variant="error"
       showIcon
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     Banner with icons and action
@@ -126,6 +150,7 @@ export default (
       variant="default"
       showIcon
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
@@ -133,6 +158,7 @@ export default (
       variant="default"
       showIcon
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <p />
@@ -141,6 +167,7 @@ export default (
       variant="success"
       showIcon
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
@@ -148,20 +175,30 @@ export default (
       variant="error"
       showIcon
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     Banner without icons
     <p />
-    <BannerContentWrapper message="default" variant="default" />
+    <BannerContentWrapper
+      message="default"
+      variant="default"
+      onClose={() => {}}
+    />
     <p />
     <BannerContentWrapper
       message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
+      onClose={() => {}}
     />
     <p />
-    <BannerContentWrapper message="Success" variant="success" />
+    <BannerContentWrapper
+      message="Success"
+      variant="success"
+      onClose={() => {}}
+    />
     <p />
-    <BannerContentWrapper message="Error" variant="error" />
+    <BannerContentWrapper message="Error" variant="error" onClose={() => {}} />
     <p />
     Banner without icons and with message action
     <p />
@@ -169,24 +206,28 @@ export default (
       message="default"
       variant="default"
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="success"
       variant="success"
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="error"
       variant="error"
       actionsOnMessage={<ActionButton />}
+      onClose={() => {}}
     />
     <p />
     Banner without icons and with action
@@ -195,24 +236,28 @@ export default (
       message="default"
       variant="default"
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="success"
       variant="success"
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       message="error"
       variant="error"
       action={<ActionButtonCollection />}
+      onClose={() => {}}
     />
   </div>
 );

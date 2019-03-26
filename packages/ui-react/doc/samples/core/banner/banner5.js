@@ -78,7 +78,7 @@ const ActionButton = () => (
       letterSpacing: "0.02em",
       lineHeight: "20px",
       fontWeight: "600",
-      "text-decoration": "none"
+      "textDecoration": "none"
     }}
   >
     Action

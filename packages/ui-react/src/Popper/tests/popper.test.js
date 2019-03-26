@@ -36,7 +36,7 @@ describe("Hv Popper HOC", () => {
 
   const btn = props => (
     <HvProvider>
-      <button {...props}>popper button</button>
+      <button type="button" {...props}>popper button</button>
     </HvProvider>
   );
 

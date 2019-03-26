@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-/* eslint-env jest */
-
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import IconButton from "@material-ui/core/IconButton";

@@ -467,7 +467,7 @@ HvTable.propTypes = {
   /**
    * Element to be shown in the expander.
    */
-  subElementTemplate: PropTypes.element,
+  subElementTemplate: PropTypes.func,
   /**
    * Property to be uses as unique row identifier. One of the fields of the data.
    */

@@ -131,6 +131,7 @@ HvDatePicker.propTypes = {
   /**
    * The value to set to the component
    */
+  // eslint-disable-next-line react/no-unused-prop-types
   value: PropTypes.instanceOf(Object),
   /**
    * Callback to call every time the component value changes
