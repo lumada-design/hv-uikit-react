@@ -17,7 +17,7 @@
 const root = theme => ({
   position: "relative",
   background: theme.hv.palette.atmosphere.atmo1,
-  height: "34px", 
+  height: "32px",
   paddingLeft: `${theme.hv.spacing.xs}px`,
   paddingRight: `${theme.hv.spacing.md}px`
 });
@@ -49,7 +49,8 @@ const styles = theme => ({
       outline: "none"
     },
     "&::placeholder": {
-      ...theme.hv.typography.disabledText
+      ...theme.hv.typography.body1,
+      color: theme.hv.typography.disabledText.color
     }
   },
   icon: {

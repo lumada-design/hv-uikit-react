@@ -31,9 +31,10 @@
   font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
   background: transparent;
   min-width: 260px;
-  font-size: 11px;
+  font-size: 14px;
+  line-height: 18px;
   border: none;
-  margin: 8px 10px;
+  margin: 5px 10px;
   cursor: pointer;
 }
 

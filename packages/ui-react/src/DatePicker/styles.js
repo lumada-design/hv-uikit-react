@@ -24,7 +24,7 @@ const styles = () => ({
   },
   reset: {
     position: "absolute",
-    bottom: "10px",
+    bottom: "8px",
     right: "10px",
     cursor: "pointer"
   }
