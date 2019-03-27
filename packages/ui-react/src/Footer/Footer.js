@@ -18,9 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
-const HvFooter = ({ classes }) => (
+const HvFooter = ({ classes, labelLeftName }) => (
   <div className={classes.root}>
-    <Typography className={classes.labelLeft}>Hitachi Vantara</Typography>
+    <Typography className={classes.labelLeft}>{labelLeftName ? labelLeftName : 'Hitachi Vantara'}</Typography>
     <Typography className={classes.labelRight}>
       {`© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`}
     </Typography>
@@ -28,7 +28,8 @@ const HvFooter = ({ classes }) => (
 );
 
 HvFooter.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired
+  classes: PropTypes.instanceOf(Object).isRequired,
+  labelLeftName: PropTypes.string
 };
 
 export default HvFooter;
