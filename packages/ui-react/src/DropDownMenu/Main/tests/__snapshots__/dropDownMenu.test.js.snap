@@ -382,13 +382,6 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -3659,13 +3652,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -4690,7 +4676,7 @@ body {
 .DropDownMenu-iconSelected-3 {
   border: solid 1px #999999;
   border-bottom: none;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .DropDownMenu-iconButton-4 {
   padding: 0;
@@ -4706,7 +4692,7 @@ body {
   z-index: -1;
   position: absolute;
   white-space: nowrap;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .DropDownMenu-right-6 {
   justify-content: flex-start;
@@ -4758,7 +4744,7 @@ body {
                     "box-sizing": "content-box",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "border-bottom": "none",
                   },
@@ -4771,7 +4757,7 @@ body {
                     "background-color": "transparent",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "padding": "10px",
                     "position": "absolute",
@@ -4813,7 +4799,7 @@ body {
                     "background-color": "transparent",
                   },
                   ".DropDownMenu-iconSelected-3": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "border-bottom": "none",
                   },
@@ -4824,7 +4810,7 @@ body {
                     "right": "0px",
                   },
                   ".DropDownMenu-menuList-5": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "padding": "10px",
                     "position": "absolute",
@@ -4856,7 +4842,7 @@ body {
                     "padding": 0,
                   },
                   "iconSelected": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "border-bottom": "none",
                   },
@@ -4867,7 +4853,7 @@ body {
                     "right": "0px",
                   },
                   "menuList": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "padding": "10px",
                     "position": "absolute",
@@ -5402,7 +5388,7 @@ body {
                     "padding": 0,
                   },
                   "iconSelected": Object {
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "borderBottom": "none",
                   },
@@ -5413,7 +5399,7 @@ body {
                     "right": "0px",
                   },
                   "menuList": Object {
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                     "border": "solid 1px #999999",
                     "padding": "10px",
                     "position": "absolute",
@@ -5532,13 +5518,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -8543,13 +8522,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -10299,13 +10271,6 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "60px",
             },
-            "buttonText": Object {
-              "color": "#FFFFFF",
-              "fontSize": "14px",
-              "fontWeight": "600",
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
             "disabledButtonText": Object {
               "color": "#999999",
               "fontSize": "14px",
@@ -10915,13 +10880,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",

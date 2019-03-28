@@ -216,7 +216,6 @@ Main.defaultProps = {
   children: undefined,
   Icon: undefined,
   Subheader: undefined,
-  HeaderTitle: undefined,
   InnerCardContent: undefined,
   onSelect: () => {},
   Actions: null,

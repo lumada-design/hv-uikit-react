@@ -17,10 +17,10 @@
 const styles = theme => ({
   root: {
     margin: "0",
-    padding: `${theme.spacing.md}px 0px 0px  0px`
+    padding: `${theme.hv.spacing.md}px 0px 0px  0px`
   },
   action: {
-    margin: `0px 0px 0px ${theme.spacing.xs}px`
+    margin: `0px 0px 0px ${theme.hv.spacing.xs}px`
   }
 });
 

@@ -24,6 +24,19 @@ const styles = theme => ({
       minWidth: "150px",
       borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
     }
+  },
+  listOfSomething: {
+    paddingLeft: "10px"
+  },
+  objectDescription: {
+    listStyleType: "none",
+    paddingInlineStart: "10px",
+    margin: 0
+  },
+  enumList: {
+    listStyleType: "none",
+    paddingLeft: "10px",
+    margin: 0
   }
 });
 

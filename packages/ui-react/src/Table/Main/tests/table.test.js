@@ -391,7 +391,7 @@ describe("Hv Table", () => {
     });
 
     it("should add an expander if the subElementTemplate is defined", () => {
-      const subElementTemplate = <div />;
+      const subElementTemplate = () => <div />;
       const rowInfo = {
         row: "row",
         viewIndex: 1

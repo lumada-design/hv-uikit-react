@@ -103,13 +103,6 @@ exports[`<Actions /> should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -3380,13 +3373,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -5034,13 +5020,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -6054,7 +6033,7 @@ body {
   letter-spacing: 0.02em;
 }
 .HvButton-containedPrimary-3 {
-  color: #fff;
+  color: #FFFFFF;
   background-color: #146BD2;
 }
 .HvButton-containedPrimary-3:hover {
@@ -6078,14 +6057,14 @@ body {
 .HvButton-outlinedPrimary-4 {
   color: #414141;
   border: 1px solid #BCBCBC;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-4:hover {
   border: 1px solid #F0F0F0;
   background-color: #F0F0F0;
 }
 .HvButton-outlinedPrimary-4:active {
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-4.HvButton-disabled-6 {
   color: #999999;
@@ -6164,7 +6143,7 @@ body {
                   Object {},
                   Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#4389DB",
@@ -6185,7 +6164,7 @@ body {
                     "pointer-events": "auto",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -6194,7 +6173,7 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -6243,7 +6222,7 @@ body {
                 "map": Object {
                   ".HvButton-containedPrimary-3": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".HvButton-containedPrimary-3.HvButton-disabled-6": Object {
                     "background-color": "#F0F0F0",
@@ -6269,7 +6248,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   ".HvButton-outlinedPrimary-4": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -6288,7 +6267,7 @@ body {
                     "pointer-events": "auto",
                   },
                   ".HvButton-outlinedPrimary-4:active": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-4:hover": Object {
                     "background-color": "#F0F0F0",
@@ -6332,7 +6311,7 @@ body {
                   },
                   "containedPrimary": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "background-color": "#F0F0F0",
@@ -6340,7 +6319,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   "outlinedPrimary": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -6883,7 +6862,7 @@ body {
                     "pointerEvents": "auto",
                   },
                   ".HvButton-outlinedPrimary-4:active": Object {
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-4:hover": Object {
                     "backgroundColor": "#F0F0F0",
@@ -6931,7 +6910,7 @@ body {
                       "backgroundColor": "#4389DB",
                     },
                     "backgroundColor": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "backgroundColor": "#F0F0F0",
@@ -6954,13 +6933,13 @@ body {
                       "pointerEvents": "auto",
                     },
                     "&:active": Object {
-                      "backgroundColor": "#fff",
+                      "backgroundColor": "#FFFFFF",
                     },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                       "border": "1px solid #F0F0F0",
                     },
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -7101,13 +7080,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -12768,13 +12740,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -14524,13 +14489,6 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "60px",
             },
-            "buttonText": Object {
-              "color": "#FFFFFF",
-              "fontSize": "14px",
-              "fontWeight": "600",
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
             "disabledButtonText": Object {
               "color": "#999999",
               "fontSize": "14px",
@@ -15131,13 +15089,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -15744,13 +15695,6 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "60px",
                       },
-                      "buttonText": Object {
-                        "color": "#FFFFFF",
-                        "fontSize": "14px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "20px",
-                      },
                       "disabledButtonText": Object {
                         "color": "#999999",
                         "fontSize": "14px",
@@ -16351,13 +16295,6 @@ body {
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "60px",
-                        },
-                        "buttonText": Object {
-                          "color": "#FFFFFF",
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
@@ -16987,13 +16924,6 @@ body {
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
                           },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
                           "disabledButtonText": Object {
                             "color": "#999999",
                             "fontSize": "14px",
@@ -17588,13 +17518,6 @@ body {
                               "fontWeight": "600",
                               "letterSpacing": "0.02em",
                               "lineHeight": "60px",
-                            },
-                            "buttonText": Object {
-                              "color": "#FFFFFF",
-                              "fontSize": "14px",
-                              "fontWeight": "600",
-                              "letterSpacing": "0.02em",
-                              "lineHeight": "20px",
                             },
                             "disabledButtonText": Object {
                               "color": "#999999",
@@ -18200,13 +18123,6 @@ body {
                                 "letterSpacing": "0.02em",
                                 "lineHeight": "60px",
                               },
-                              "buttonText": Object {
-                                "color": "#FFFFFF",
-                                "fontSize": "14px",
-                                "fontWeight": "600",
-                                "letterSpacing": "0.02em",
-                                "lineHeight": "20px",
-                              },
                               "disabledButtonText": Object {
                                 "color": "#999999",
                                 "fontSize": "14px",
@@ -18808,13 +18724,6 @@ body {
                                   "fontWeight": "600",
                                   "letterSpacing": "0.02em",
                                   "lineHeight": "60px",
-                                },
-                                "buttonText": Object {
-                                  "color": "#FFFFFF",
-                                  "fontSize": "14px",
-                                  "fontWeight": "600",
-                                  "letterSpacing": "0.02em",
-                                  "lineHeight": "20px",
                                 },
                                 "disabledButtonText": Object {
                                   "color": "#999999",
@@ -19433,13 +19342,6 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "60px",
                       },
-                      "buttonText": Object {
-                        "color": "#FFFFFF",
-                        "fontSize": "14px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.02em",
-                        "lineHeight": "20px",
-                      },
                       "disabledButtonText": Object {
                         "color": "#999999",
                         "fontSize": "14px",
@@ -20040,13 +19942,6 @@ body {
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "60px",
-                        },
-                        "buttonText": Object {
-                          "color": "#FFFFFF",
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
@@ -20676,13 +20571,6 @@ body {
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
                           },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
                           "disabledButtonText": Object {
                             "color": "#999999",
                             "fontSize": "14px",
@@ -21277,13 +21165,6 @@ body {
                               "fontWeight": "600",
                               "letterSpacing": "0.02em",
                               "lineHeight": "60px",
-                            },
-                            "buttonText": Object {
-                              "color": "#FFFFFF",
-                              "fontSize": "14px",
-                              "fontWeight": "600",
-                              "letterSpacing": "0.02em",
-                              "lineHeight": "20px",
                             },
                             "disabledButtonText": Object {
                               "color": "#999999",
@@ -21889,13 +21770,6 @@ body {
                                 "letterSpacing": "0.02em",
                                 "lineHeight": "60px",
                               },
-                              "buttonText": Object {
-                                "color": "#FFFFFF",
-                                "fontSize": "14px",
-                                "fontWeight": "600",
-                                "letterSpacing": "0.02em",
-                                "lineHeight": "20px",
-                              },
                               "disabledButtonText": Object {
                                 "color": "#999999",
                                 "fontSize": "14px",
@@ -22497,13 +22371,6 @@ body {
                                   "fontWeight": "600",
                                   "letterSpacing": "0.02em",
                                   "lineHeight": "60px",
-                                },
-                                "buttonText": Object {
-                                  "color": "#FFFFFF",
-                                  "fontSize": "14px",
-                                  "fontWeight": "600",
-                                  "letterSpacing": "0.02em",
-                                  "lineHeight": "20px",
                                 },
                                 "disabledButtonText": Object {
                                   "color": "#999999",

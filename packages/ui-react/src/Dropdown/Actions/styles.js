@@ -21,7 +21,7 @@ const styles = theme => ({
       color: theme.hv.palette.accent.acce1
     },
     "&:nth-child(1)": {
-      marginRight: `${theme.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`
     }
   }
 });

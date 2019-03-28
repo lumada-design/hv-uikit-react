@@ -21,7 +21,7 @@ const styles = theme => ({
     color: theme.palette.common.white
   },
   lab: {
-    backgroundColor: theme.hv.palette.semantic.sema5,
+    backgroundColor: theme.hv.palette.semantic.sema3,
     color: theme.palette.common.white
   },
   content: {

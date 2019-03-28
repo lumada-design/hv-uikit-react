@@ -29,8 +29,8 @@ const Main = ({ classes, children, context }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
-  const isCore = kind === "Core";
-  const isLab = kind === "Lab";
+  const isCore = kind.startsWith("Core");
+  const isLab = kind.startsWith("Lab");
 
   return (
     <>

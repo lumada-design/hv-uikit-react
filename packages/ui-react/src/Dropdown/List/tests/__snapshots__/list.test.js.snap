@@ -103,13 +103,6 @@ exports[`<List /> should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -3380,13 +3373,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -4437,11 +4423,11 @@ body {
   cursor: pointer;
 }
 .List-selected-7 {
-  color: #fff;
+  color: #FFFFFF;
   background: #414141;
 }
 .List-selected-7:hover {
-  color: #fff;
+  color: #FFFFFF;
   background: #414141;
 }
 .List-truncate-8 {
@@ -4534,11 +4520,11 @@ body {
                   },
                   Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   Object {
                     "overflow": "hidden",
@@ -4610,11 +4596,11 @@ body {
                   },
                   ".List-selected-7": Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".List-selected-7:hover": Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".List-selection-4": Object {
                     "cursor": "pointer",
@@ -4670,7 +4656,7 @@ body {
                   },
                   "selected": Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "selection": Object {
                     "cursor": "pointer",
@@ -5202,7 +5188,7 @@ body {
                   },
                   ".List-selected-7:hover": Object {
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".List-singleSelection-5:hover": Object {
                     "background": "#F0F0F0",
@@ -5247,10 +5233,10 @@ body {
                   "selected": Object {
                     "&:hover": Object {
                       "background": "#414141",
-                      "color": "#fff",
+                      "color": "#FFFFFF",
                     },
                     "background": "#414141",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "selection": Object {
                     "cursor": "pointer",
@@ -5376,13 +5362,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -7138,13 +7117,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -9033,13 +9005,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -10811,13 +10776,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -12537,13 +12495,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -14260,13 +14211,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -17271,13 +17215,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -19030,13 +18967,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -21830,13 +21760,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -23484,13 +23407,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -24504,7 +24420,7 @@ body {
   letter-spacing: 0.02em;
 }
 .HvButton-containedPrimary-91 {
-  color: #fff;
+  color: #FFFFFF;
   background-color: #146BD2;
 }
 .HvButton-containedPrimary-91:hover {
@@ -24528,14 +24444,14 @@ body {
 .HvButton-outlinedPrimary-92 {
   color: #414141;
   border: 1px solid #BCBCBC;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-92:hover {
   border: 1px solid #F0F0F0;
   background-color: #F0F0F0;
 }
 .HvButton-outlinedPrimary-92:active {
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .HvButton-outlinedPrimary-92.HvButton-disabled-94 {
   color: #999999;
@@ -24614,7 +24530,7 @@ body {
                   Object {},
                   Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#4389DB",
@@ -24635,7 +24551,7 @@ body {
                     "pointer-events": "auto",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -24644,7 +24560,7 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -24693,7 +24609,7 @@ body {
                 "map": Object {
                   ".HvButton-containedPrimary-91": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   ".HvButton-containedPrimary-91.HvButton-disabled-94": Object {
                     "background-color": "#F0F0F0",
@@ -24719,7 +24635,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   ".HvButton-outlinedPrimary-92": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -24738,7 +24654,7 @@ body {
                     "pointer-events": "auto",
                   },
                   ".HvButton-outlinedPrimary-92:active": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-92:hover": Object {
                     "background-color": "#F0F0F0",
@@ -24782,7 +24698,7 @@ body {
                   },
                   "containedPrimary": Object {
                     "background-color": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "background-color": "#F0F0F0",
@@ -24790,7 +24706,7 @@ body {
                     "cursor": "not-allowed",
                   },
                   "outlinedPrimary": Object {
-                    "background-color": "#fff",
+                    "background-color": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -25333,7 +25249,7 @@ body {
                     "pointerEvents": "auto",
                   },
                   ".HvButton-outlinedPrimary-92:active": Object {
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                   },
                   ".HvButton-outlinedPrimary-92:hover": Object {
                     "backgroundColor": "#F0F0F0",
@@ -25381,7 +25297,7 @@ body {
                       "backgroundColor": "#4389DB",
                     },
                     "backgroundColor": "#146BD2",
-                    "color": "#fff",
+                    "color": "#FFFFFF",
                   },
                   "disabled": Object {
                     "backgroundColor": "#F0F0F0",
@@ -25404,13 +25320,13 @@ body {
                       "pointerEvents": "auto",
                     },
                     "&:active": Object {
-                      "backgroundColor": "#fff",
+                      "backgroundColor": "#FFFFFF",
                     },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                       "border": "1px solid #F0F0F0",
                     },
-                    "backgroundColor": "#fff",
+                    "backgroundColor": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "color": "#414141",
                   },
@@ -25551,13 +25467,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",
@@ -31214,13 +31123,6 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "60px",
             },
-            "buttonText": Object {
-              "color": "#FFFFFF",
-              "fontSize": "14px",
-              "fontWeight": "600",
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
             "disabledButtonText": Object {
               "color": "#999999",
               "fontSize": "14px",
@@ -31869,13 +31771,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -32505,13 +32400,6 @@ body {
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "60px",
-                        },
-                        "buttonText": Object {
-                          "color": "#FFFFFF",
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
@@ -33219,13 +33107,6 @@ body {
                           "fontWeight": "600",
                           "letterSpacing": "0.02em",
                           "lineHeight": "60px",
-                        },
-                        "buttonText": Object {
-                          "color": "#FFFFFF",
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
                         },
                         "disabledButtonText": Object {
                           "color": "#999999",
@@ -34271,13 +34152,6 @@ body {
                                       "letterSpacing": "0.02em",
                                       "lineHeight": "60px",
                                     },
-                                    "buttonText": Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": "14px",
-                                      "fontWeight": "600",
-                                      "letterSpacing": "0.02em",
-                                      "lineHeight": "20px",
-                                    },
                                     "disabledButtonText": Object {
                                       "color": "#999999",
                                       "fontSize": "14px",
@@ -34916,13 +34790,6 @@ body {
                             "fontWeight": "600",
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
-                          },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
                           },
                           "disabledButtonText": Object {
                             "color": "#999999",
@@ -35964,13 +35831,6 @@ body {
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -36606,13 +36466,6 @@ body {
                             "fontWeight": "600",
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
-                          },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
                           },
                           "disabledButtonText": Object {
                             "color": "#999999",
@@ -37654,13 +37507,6 @@ body {
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -38296,13 +38142,6 @@ body {
                             "fontWeight": "600",
                             "letterSpacing": "0.02em",
                             "lineHeight": "60px",
-                          },
-                          "buttonText": Object {
-                            "color": "#FFFFFF",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
                           },
                           "disabledButtonText": Object {
                             "color": "#999999",
@@ -39344,13 +39183,6 @@ body {
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -39990,13 +39822,6 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "60px",
                         },
-                        "buttonText": Object {
-                          "color": "#FFFFFF",
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
-                        },
                         "disabledButtonText": Object {
                           "color": "#999999",
                           "fontSize": "14px",
@@ -40602,13 +40427,6 @@ body {
                                 "letterSpacing": "0.02em",
                                 "lineHeight": "60px",
                               },
-                              "buttonText": Object {
-                                "color": "#FFFFFF",
-                                "fontSize": "14px",
-                                "fontWeight": "600",
-                                "letterSpacing": "0.02em",
-                                "lineHeight": "20px",
-                              },
                               "disabledButtonText": Object {
                                 "color": "#999999",
                                 "fontSize": "14px",
@@ -41209,13 +41027,6 @@ body {
                                   "fontWeight": "600",
                                   "letterSpacing": "0.02em",
                                   "lineHeight": "60px",
-                                },
-                                "buttonText": Object {
-                                  "color": "#FFFFFF",
-                                  "fontSize": "14px",
-                                  "fontWeight": "600",
-                                  "letterSpacing": "0.02em",
-                                  "lineHeight": "20px",
                                 },
                                 "disabledButtonText": Object {
                                   "color": "#999999",
@@ -41845,13 +41656,6 @@ body {
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
                                   },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
-                                  },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
                                     "fontSize": "14px",
@@ -42446,13 +42250,6 @@ body {
                                       "fontWeight": "600",
                                       "letterSpacing": "0.02em",
                                       "lineHeight": "60px",
-                                    },
-                                    "buttonText": Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": "14px",
-                                      "fontWeight": "600",
-                                      "letterSpacing": "0.02em",
-                                      "lineHeight": "20px",
                                     },
                                     "disabledButtonText": Object {
                                       "color": "#999999",
@@ -43058,13 +42855,6 @@ body {
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -43666,13 +43456,6 @@ body {
                                           "fontWeight": "600",
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
-                                        },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
                                         },
                                         "disabledButtonText": Object {
                                           "color": "#999999",
@@ -44291,13 +44074,6 @@ body {
                                 "letterSpacing": "0.02em",
                                 "lineHeight": "60px",
                               },
-                              "buttonText": Object {
-                                "color": "#FFFFFF",
-                                "fontSize": "14px",
-                                "fontWeight": "600",
-                                "letterSpacing": "0.02em",
-                                "lineHeight": "20px",
-                              },
                               "disabledButtonText": Object {
                                 "color": "#999999",
                                 "fontSize": "14px",
@@ -44898,13 +44674,6 @@ body {
                                   "fontWeight": "600",
                                   "letterSpacing": "0.02em",
                                   "lineHeight": "60px",
-                                },
-                                "buttonText": Object {
-                                  "color": "#FFFFFF",
-                                  "fontSize": "14px",
-                                  "fontWeight": "600",
-                                  "letterSpacing": "0.02em",
-                                  "lineHeight": "20px",
                                 },
                                 "disabledButtonText": Object {
                                   "color": "#999999",
@@ -45534,13 +45303,6 @@ body {
                                     "letterSpacing": "0.02em",
                                     "lineHeight": "60px",
                                   },
-                                  "buttonText": Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "14px",
-                                    "fontWeight": "600",
-                                    "letterSpacing": "0.02em",
-                                    "lineHeight": "20px",
-                                  },
                                   "disabledButtonText": Object {
                                     "color": "#999999",
                                     "fontSize": "14px",
@@ -46135,13 +45897,6 @@ body {
                                       "fontWeight": "600",
                                       "letterSpacing": "0.02em",
                                       "lineHeight": "60px",
-                                    },
-                                    "buttonText": Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": "14px",
-                                      "fontWeight": "600",
-                                      "letterSpacing": "0.02em",
-                                      "lineHeight": "20px",
                                     },
                                     "disabledButtonText": Object {
                                       "color": "#999999",
@@ -46747,13 +46502,6 @@ body {
                                         "letterSpacing": "0.02em",
                                         "lineHeight": "60px",
                                       },
-                                      "buttonText": Object {
-                                        "color": "#FFFFFF",
-                                        "fontSize": "14px",
-                                        "fontWeight": "600",
-                                        "letterSpacing": "0.02em",
-                                        "lineHeight": "20px",
-                                      },
                                       "disabledButtonText": Object {
                                         "color": "#999999",
                                         "fontSize": "14px",
@@ -47355,13 +47103,6 @@ body {
                                           "fontWeight": "600",
                                           "letterSpacing": "0.02em",
                                           "lineHeight": "60px",
-                                        },
-                                        "buttonText": Object {
-                                          "color": "#FFFFFF",
-                                          "fontSize": "14px",
-                                          "fontWeight": "600",
-                                          "letterSpacing": "0.02em",
-                                          "lineHeight": "20px",
                                         },
                                         "disabledButtonText": Object {
                                           "color": "#999999",

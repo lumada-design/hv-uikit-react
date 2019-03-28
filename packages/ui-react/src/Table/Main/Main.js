@@ -24,8 +24,17 @@ import classNames from "classnames";
 import SortAsc from "@hv-ui/icons/core/icons/SortAscending.XS";
 import SortDesc from "@hv-ui/icons/core/icons/SortDescending.XS";
 import expander from "../expander/expander";
-import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
-import { toggleAll, isIndeterminateStatus, toggleSelection, isSelected} from "./checkBoxUtils";
+import {
+  appendClassnames,
+  createExpanderButton,
+  setHeaderSortableClass
+} from "./columnUtils";
+import {
+  toggleAll,
+  isIndeterminateStatus,
+  toggleSelection,
+  isSelected
+} from "./checkBoxUtils";
 import HvCheckBox from "../../Selectors/CheckBox";
 
 import ReactTablePagination from "../Pagination";
@@ -50,9 +59,7 @@ class HvTable extends React.Component {
     super(props);
     this.state = {
       // table component to be render
-      Table: props.idForCheckbox
-        ? checkboxHOC(ReactTable)
-        : ReactTable,
+      Table: props.idForCheckbox ? checkboxHOC(ReactTable) : ReactTable,
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -77,7 +84,7 @@ class HvTable extends React.Component {
     }
     this.state.recordQuantity = data.length;
 
-    if(!idForCheckbox) {
+    if (!idForCheckbox) {
       const withFixedColumns = require("react-table-hoc-fixed-columns");
       this.state.Table = withFixedColumns.default(ReactTable);
     }
@@ -204,7 +211,9 @@ class HvTable extends React.Component {
 
     appendClassnames(column, sorted, classes);
 
-    return { className: setHeaderSortableClass(column.sortable, classes.theadTh )};
+    return {
+      className: setHeaderSortableClass(column.sortable, classes.theadTh)
+    };
   };
 
   /**
@@ -255,7 +264,7 @@ class HvTable extends React.Component {
 
     const select = toggleSelection(key, selection);
 
-    if(select.length === 0) this.setState({selectAll: false});
+    if (select.length === 0) this.setState({ selectAll: false });
 
     // update the state
     this.setState({ selection: select });
@@ -277,7 +286,10 @@ class HvTable extends React.Component {
     const { selectAll } = this.state;
 
     const stateToSet = toggleAll(idForCheckbox, selectAll, this.checkboxTable);
-    this.setState({ selectAll: stateToSet.selectAll, selection: stateToSet.selection });
+    this.setState({
+      selectAll: stateToSet.selectAll,
+      selection: stateToSet.selection
+    });
   };
 
   render() {
@@ -342,9 +354,13 @@ class HvTable extends React.Component {
     });
 
     // add expander button
-    const newColumn = createExpanderButton( columns, subElementTemplate, classes);
+    const newColumn = createExpanderButton(
+      columns,
+      subElementTemplate,
+      classes
+    );
     // add expander
-    const newSubComponent = expander( subElementTemplate, classes );
+    const newSubComponent = expander(subElementTemplate, classes);
 
     // checkbox properties
     const checkboxProps = {
@@ -363,9 +379,7 @@ class HvTable extends React.Component {
       )
     };
 
-    const checkUseRoute = useRouter 
-    ? getTrProps.bind(this.props) 
-    : getTrProps;
+    const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
 
     return (
       <div className={classes.tableContainer}>
@@ -423,11 +437,21 @@ HvTable.propTypes = {
    Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
    If the type is "link", in data use the structure {displayText: {text to display} ,url: {url} }.
    */
-  columns: PropTypes.instanceOf(Object).isRequired,
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      headerText: PropTypes.string,
+      accessor: PropTypes.string,
+      format: PropTypes.func,
+      cellType: PropTypes.string,
+      style: PropTypes.instanceOf(Object),
+      fixed: PropTypes.string,
+      Cell: PropTypes.instanceOf(Object)
+    })
+  ).isRequired,
   /**
    * Array with the data elements to show
    */
-  data: PropTypes.instanceOf(Array).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   /**
    * Boolean to show or hide the pagination controls
    */
@@ -467,7 +491,7 @@ HvTable.propTypes = {
   /**
    * Element to be shown in the expander.
    */
-  subElementTemplate: PropTypes.element,
+  subElementTemplate: PropTypes.func,
   /**
    * Property to be uses as unique row identifier. One of the fields of the data.
    */

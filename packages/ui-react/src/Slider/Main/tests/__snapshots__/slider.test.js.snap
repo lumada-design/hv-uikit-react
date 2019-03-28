@@ -103,13 +103,6 @@ exports[`Slider  should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -3380,13 +3373,6 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
                 },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
                 "disabledButtonText": Object {
                   "color": "#999999",
                   "fontSize": "14px",
@@ -4482,7 +4468,7 @@ body {
   padding: 20px;
   max-width: 532px;
   font-size: 12px;
-  background: #fff;
+  background: #FFFFFF;
   box-shadow: none;
   line-height: 16px;
   font-weight: 400;
@@ -4595,7 +4581,7 @@ body {
                   },
                   Object {},
                   Object {
-                    "background": "#fff",
+                    "background": "#FFFFFF",
                     "border": "solid 1px #999999 ",
                     "border-radius": 0,
                     "box-shadow": "none",
@@ -4688,7 +4674,7 @@ body {
                     "visibility": "hidden",
                   },
                   ".HvSlider-sliderTooltip-10 .rc-slider-tooltip-inner": Object {
-                    "background": "#fff",
+                    "background": "#FFFFFF",
                     "border": "solid 1px #999999 ",
                     "border-radius": 0,
                     "box-shadow": "none",
@@ -5288,7 +5274,7 @@ body {
                     "visibility": "hidden",
                   },
                   ".HvSlider-sliderTooltip-10 .rc-slider-tooltip-inner": Object {
-                    "background": "#fff",
+                    "background": "#FFFFFF",
                     "border": "solid 1px #999999 ",
                     "borderRadius": 0,
                     "boxShadow": "none",
@@ -5376,7 +5362,7 @@ body {
                       "visibility": "hidden",
                     },
                     "& .rc-slider-tooltip-inner": Object {
-                      "background": "#fff",
+                      "background": "#FFFFFF",
                       "border": "solid 1px #999999 ",
                       "borderRadius": 0,
                       "boxShadow": "none",
@@ -11024,13 +11010,6 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "60px",
             },
-            "buttonText": Object {
-              "color": "#FFFFFF",
-              "fontSize": "14px",
-              "fontWeight": "600",
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
             "disabledButtonText": Object {
               "color": "#999999",
               "fontSize": "14px",
@@ -11717,13 +11696,6 @@ body {
                   "fontWeight": "600",
                   "letterSpacing": "0.02em",
                   "lineHeight": "60px",
-                },
-                "buttonText": Object {
-                  "color": "#FFFFFF",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
                 },
                 "disabledButtonText": Object {
                   "color": "#999999",

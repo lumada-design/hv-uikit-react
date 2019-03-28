@@ -21,7 +21,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import theme from "@hv-ui/themes/dist/theme.json";
 import Collapse from "@material-ui/core/Collapse";
-import HvButton from "../../../src/Button";
+import Code from "@material-ui/icons/Code";
+import IconButton from "@material-ui/core/IconButton";
 
 const styles = () => ({
   group: {
@@ -48,7 +49,11 @@ const styles = () => ({
     paddingBottom: "5px"
   },
   iconCode: {
-    marginLeft: "auto"
+    marginLeft: "auto",
+    padding: 0,
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
   }
 });
 
@@ -56,9 +61,13 @@ const text =
   "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
 
 const CodeButton = ({ classes, onClick }) => (
-  <HvButton className={classes.iconCode} colorType="link" onClick={onClick}>
-    {"< >"}
-  </HvButton>
+  <IconButton
+    className={classes.iconCode}
+    aria-label="Delete"
+    onClick={onClick}
+  >
+    <Code />
+  </IconButton>
 );
 
 const Group = ({ classes, name, typography }) => {
@@ -76,7 +85,6 @@ const Group = ({ classes, name, typography }) => {
       <div className={classes.sentenceContainer}>
         <div style={{ ...theme.typography[name] }}>{text}</div>
       </div>
-
       <Collapse in={snippetIsOpen}>
         <SyntaxHighlighter
           language="css"

@@ -13,7 +13,18 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Collapse from "@material-ui/core/Collapse";
 import { Typography } from "@material-ui/core";
-import HvButton from "../../../../src/Button";
+import IconButton from "@material-ui/core/IconButton";
+import Code from "@material-ui/icons/Code";
+
+const CodeButton = ({ classes, onClick }) => (
+  <IconButton
+    className={classes.iconCode}
+    aria-label="Delete"
+    onClick={onClick}
+  >
+    <Code />
+  </IconButton>
+);
 
 class Example extends React.Component {
   constructor(props) {
@@ -63,9 +74,6 @@ class Example extends React.Component {
           </div>
         )}
         <div className={classes.content}>
-          <div className={classes.component}>
-            {isPath ? component : example.src}
-          </div>
           <Collapse in={snippetIsOpen}>
             <SyntaxHighlighter
               language="jsx"
@@ -75,17 +83,14 @@ class Example extends React.Component {
               {isPath ? snippet : example.snippet}
             </SyntaxHighlighter>
           </Collapse>
+          <div className={classes.component}>
+            {isPath ? component : example.src}
+          </div>
         </div>
       </>
     );
   }
 }
-
-const CodeButton = ({ classes, onClick }) => (
-  <HvButton className={classes.iconCode} colorType="link" onClick={onClick}>
-    {"< >"}
-  </HvButton>
-);
 
 const Examples = ({ classes, examples, basePath }) => (
   <>

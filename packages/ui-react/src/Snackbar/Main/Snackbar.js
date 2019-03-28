@@ -96,9 +96,12 @@ HvSnackbar.propTypes = {
    */
   message: PropTypes.node,
   /**
-   *  The anchor of the Snackbar.
+   *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right"
    */
-  anchorOrigin: PropTypes.instanceOf(Object),
+  anchorOrigin: PropTypes.shape({
+    vertical: PropTypes.string,
+    horizontal: PropTypes.string,
+  }),
   /**
    * The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar
    */

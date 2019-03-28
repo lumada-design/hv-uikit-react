@@ -28,7 +28,7 @@ const styles = theme => ({
     letterSpacing: theme.typography.button.letterSpacing
   },
   containedPrimary: {
-    color: theme.palette.common.white,
+    color: theme.hv.palette.atmosphere.atmo1,
     backgroundColor: theme.hv.palette.accent.acce2,
     "&:hover": {
       backgroundColor: theme.hv.palette.accent.acce2h
@@ -50,7 +50,7 @@ const styles = theme => ({
     }
   },
   outlinedPrimary: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     color: theme.hv.palette.accent.acce1,
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     "&:hover": {
@@ -58,7 +58,7 @@ const styles = theme => ({
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
     },
     "&:active": {
-      backgroundColor: theme.palette.common.white
+      backgroundColor: theme.hv.palette.atmosphere.atmo1
     },
     "&$disabled": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,

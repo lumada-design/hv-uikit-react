@@ -30,12 +30,12 @@ const styles = theme => ({
     padding: "0",
     "&:hover": {
       background: `${theme.hv.palette.accent.acce1}`,
-      color: `${theme.palette.common.white}`
+      color: `${theme.hv.palette.atmosphere.atmo1}`
     }
   },
   activated: {
     background: `${theme.hv.palette.accent.acce1}`,
-    color: `${theme.palette.common.white}`
+    color: `${theme.hv.palette.atmosphere.atmo1}`
   },
   actionBtn: {
     display: "block",

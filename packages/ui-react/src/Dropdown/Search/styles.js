@@ -26,7 +26,7 @@ const styles = theme => ({
     border: "none",
     width: "100%",
     height: 30,
-    padding: `5px ${theme.spacing.md}px 5px 5px`,
+    padding: `5px ${theme.hv.spacing.md}px 5px 5px`,
     background: "transparent",
     "&:focus": {
       outline: "none"
