@@ -17,8 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import ArrowDown from "@hv-ui/icons/core/XS-icons/AngleUp12";
-import ArrowUp from "@hv-ui/icons/core/XS-icons/AngleDown12";
+import ArrowUp from "@hv-ui/icons/core/icons/DropDown.XS";
+import ArrowDown from "@hv-ui/icons/core/icons/DropUp.XS";
 import List from "../List";
 
 const defaultLabels = {

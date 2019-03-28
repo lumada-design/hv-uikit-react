@@ -16,7 +16,7 @@
 
 import React from "react";
 import { Typography } from "@material-ui/core";
-import IconInvalid from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
+import IconInvalid from "@hv-ui/icons/core/icons/Level5.S";
 import HvKpi from "@hv-ui/react/core/Kpi";
 
 const StorageArrayKpiTextConfiguration = {
@@ -46,7 +46,7 @@ const StorageArrayComparisonVisual = () => (
   </div>
 );
 
-const invalidIcon = () => <IconInvalid />;
+const invalidIcon = () => <IconInvalid color={["none", "#D13F3F"]} />;
 
 export default (
   <HvKpi

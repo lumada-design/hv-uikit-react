@@ -16,8 +16,8 @@
 
 import React from "react";
 import { Typography } from "@material-ui/core";
-import IconValid from "@hv-ui/icons/core/S-icons/Level0Success16Color";
 import HvKpi from "@hv-ui/react/core/Kpi";
+import IconValid from "@hv-ui/icons/core/icons/Level0.S";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
 const ThroughputKpiTextConfiguration = {
@@ -61,7 +61,7 @@ const throughputComparisonVisual = () => (
   </div>
 );
 
-const icon = () => <IconValid />;
+const icon = () => <IconValid color={["none", "#63A621"]} />;
 
 export default (
   <HvKpi

@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import HvHeader from "@hv-ui/react/core/Header";
-import SettingIcon from "@hv-ui/icons/core/S-icons/Settings16";
+import SettingIcon from "@hv-ui/icons/core/icons/Settings.S";
 import HitachiLogo from "./resources/hitachi";
 import TestLogo from "./resources/testlogo.svg";
 

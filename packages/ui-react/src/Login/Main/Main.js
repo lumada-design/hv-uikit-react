@@ -17,7 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Level0Success16Color, Level5Unsuccess16Color } from "@hv-ui/icons";
+import Level0Success16Color from "@hv-ui/icons/core/icons/Level0.S";
+import Level5Unsuccess16Color from "@hv-ui/icons/core/icons/Level5.S";
 
 import Login from "../Forms/Login";
 import Recovery from "../Forms/Recovery";

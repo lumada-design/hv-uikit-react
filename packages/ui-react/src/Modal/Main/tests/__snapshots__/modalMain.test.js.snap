@@ -26,7 +26,13 @@ exports[`Modal Component allows external props to be added 1`] = `
     colorType="link"
     onClick={[Function]}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "width": "32px",
@@ -63,7 +69,13 @@ exports[`Modal Component allows external styles to be added 1`] = `
     colorType="link"
     onClick={[Function]}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "width": "32px",
@@ -99,7 +111,13 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     colorType="link"
     onClick={[Function]}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "width": "32px",
@@ -135,7 +153,13 @@ exports[`Modal Component should render correctly if closed 1`] = `
     colorType="link"
     onClick={[Function]}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "width": "32px",
@@ -171,7 +195,13 @@ exports[`Modal Component should render correctly if opened 1`] = `
     colorType="link"
     onClick={[Function]}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "width": "32px",

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="LineChart.S" transform="translate(-613.5 -918.5)">
+    <rect id="Rectangle_1003" data-name="Rectangle 1003" width="32" height="32" transform="translate(613.5 918.5)" fill="none"/>
+    <g id="Group_5881" data-name="Group 5881" transform="translate(613.5 918.5)">
+      <g id="Group_2526" data-name="Group 2526">
+        <path id="Path_3053" data-name="Path 3053" d="M9.086,19.453l-.707-.707,5.559-5.558,4.2,4.2,4.832-4.831.707.707L18.138,18.8l-4.2-4.2Z" fill="#414141"/>
+      </g>
+      <rect id="Rectangle_2265" data-name="Rectangle 2265" width="16" height="1" transform="translate(8 23)" fill="#414141"/>
+    </g>
+  </g>
+</svg>

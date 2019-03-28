@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
-import {
-  Level0Success16Color,
-  Level3Alert16,
-  Level416Color,
-  Level5Unsuccess16Color
-} from "@hv-ui/icons";
+import Level0Success16Color from "@hv-ui/icons/core/icons/Level0.S";
+import Level416Color from "@hv-ui/icons/core/icons/Level4.S";
+import Level5Unsuccess16Color from "@hv-ui/icons/core/icons/Level5.S";
+import Level3Alert16 from "@hv-ui/icons/core/icons/Level3.S";
 import React from "react";
+import theme from "@hv-ui/themes/dist/theme";
 
 const variantIcon = Object.freeze({
-  success: <Level0Success16Color />,
-  warning: <Level416Color />,
-  error: <Level5Unsuccess16Color />,
-  info: <Level3Alert16 />
+  success: <Level0Success16Color color={["none", theme.palette.semantic.sema1]} />,
+  warning: <Level416Color color={["none", theme.palette.semantic.sema5]} />,
+  error: <Level5Unsuccess16Color color={["none", theme.palette.semantic.sema6]} />,
+  info: <Level3Alert16 color={["none", theme.palette.semantic.sema4]} />
 });
 
 export default variantIcon;

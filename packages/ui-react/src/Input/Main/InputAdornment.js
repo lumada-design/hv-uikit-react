@@ -19,9 +19,9 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import theme from "@hv-ui/themes/dist/theme";
 
-import Success from "@hv-ui/icons/core/S-icons/Level0Success16Color";
-import Close from "@hv-ui/icons/core/S-icons/Close16";
-import Unsuccess from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
+import Success from "@hv-ui/icons/core/icons/Level0.S";
+import Close from "@hv-ui/icons/core/icons/Close.S";
+import Unsuccess from "@hv-ui/icons/core/icons/Level5.S";
 
 import validationStates from "./validationStates";
 
@@ -43,8 +43,8 @@ const InputAdornment = ({ classes, validationState, handleClear }) => (
     }}
   >
     {validationState === validationStates.filled && <Close style={stl} />}
-    {validationState === validationStates.valid && <Success style={stl} />}
-    {validationState === validationStates.invalid && <Unsuccess style={stl} />}
+    {validationState === validationStates.valid && <Success style={stl} color={["none", theme.palette.semantic.sema1]} />}
+    {validationState === validationStates.invalid && <Unsuccess style={stl} color={["none", theme.palette.semantic.sema6]} />}
   </div>
 );
 

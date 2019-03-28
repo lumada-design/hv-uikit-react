@@ -19,7 +19,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import AngleForwards12 from "@hv-ui/icons/core/XS-icons/AngleForwards12";
+import AngleForwards12 from "@hv-ui/icons/core/icons/DropRight.XS";
 import HvProvider from "../../Provider";
 import BreadcrumbWithStyles from "../index";
 import Breadcrumb from "../Main";

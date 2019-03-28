@@ -13,7 +13,13 @@ exports[`InputAdornment should be defined 1`] = `
     role="button"
     tabIndex={-1}
   >
-    <Close16
+    <CloseS
+      color={
+        Array [
+          "none",
+          "#414141",
+        ]
+      }
       style={
         Object {
           "height": "30px",
@@ -22,19 +28,19 @@ exports[`InputAdornment should be defined 1`] = `
       }
     >
       <svg
-        height={32}
+        height={30}
         style={
           Object {
             "height": "30px",
             "width": "30px",
           }
         }
-        viewBox="0 0 32 32"
-        width={32}
+        viewBox="1 1 30 30 "
+        width={30}
         xmlns="http://www.w3.org/2000/svg"
       >
         <g
-          id="Close-16"
+          id="Close.S"
           transform="translate(-631.5 -882.5)"
         >
           <rect
@@ -53,7 +59,7 @@ exports[`InputAdornment should be defined 1`] = `
           />
         </g>
       </svg>
-    </Close16>
+    </CloseS>
   </div>
 </InputAdornment>
 `;

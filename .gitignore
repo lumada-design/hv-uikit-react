@@ -21,5 +21,7 @@ yarn-error.log*
 *.iml
 
 packages/ui-react/junit\.xml
+packages/ui-icons/bin
+packages/ui-icons/core  
 
 .npmrc

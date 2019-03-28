@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import { FastForward16 } from "@hv-ui/icons/core";
+import FastForward16 from "@hv-ui/icons/core/icons/FastForwards.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv-ui/react/core/Snackbar/SnackbarContentWrapper/styles";
 import HvSnackbarContentWrapper from "@hv-ui/react/core/Snackbar/SnackbarContentWrapper";

@@ -33032,18 +33032,24 @@ body {
                     type="text"
                     value=""
                   />
-                  <Search16
+                  <SearchS
                     className="Search-icon-16"
+                    color={
+                      Array [
+                        "none",
+                        "#414141",
+                      ]
+                    }
                   >
                     <svg
                       className="Search-icon-16"
-                      height={32}
-                      viewBox="0 0 32 32"
-                      width={32}
+                      height={30}
+                      viewBox="1 1 30 30 "
+                      width={30}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <g
-                        id="Search-16"
+                        id="Search.S"
                         transform="translate(-450 -1614)"
                       >
                         <path
@@ -33082,7 +33088,7 @@ body {
                         />
                       </g>
                     </svg>
-                  </Search16>
+                  </SearchS>
                 </div>
               </Search>
             </WithStyles(Search)>

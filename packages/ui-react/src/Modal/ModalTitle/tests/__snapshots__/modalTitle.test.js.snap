@@ -615,7 +615,14 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
   disableTypography={true}
 >
   <div>
-    <Level0Success16Color />
+    <Level0S
+      color={
+        Array [
+          "none",
+          "#63A621",
+        ]
+      }
+    />
     <div
       className="undefined"
     >
@@ -635,7 +642,14 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
   disableTypography={true}
 >
   <div>
-    <Level0Success16Color />
+    <Level0S
+      color={
+        Array [
+          "none",
+          "#63A621",
+        ]
+      }
+    />
     <div
       className="undefined"
     >
@@ -654,7 +668,14 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
   disableTypography={true}
 >
   <div>
-    <Level0Success16Color />
+    <Level0S
+      color={
+        Array [
+          "none",
+          "#63A621",
+        ]
+      }
+    />
     <div
       className="undefined"
     >
