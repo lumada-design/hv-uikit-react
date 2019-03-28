@@ -1,4 +1,4 @@
-'use strict'
+
 
 /**
  * Creates a full component string based upon provided svg data and a component name
@@ -21,7 +21,7 @@ const {color, ...other} = props;
 }
 
 ${componentName}.propTypes = {
- color: PropTypes.array
+ color: PropTypes.instanceOf(Array)
 };
 
 ${componentName}.defaultProps = {
