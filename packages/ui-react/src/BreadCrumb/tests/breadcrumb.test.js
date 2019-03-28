@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-/* eslint-env jest */
-
 import React from "react";
 import { mount, shallow } from "enzyme";
 
@@ -23,7 +21,6 @@ import AngleForwards12 from "@hv-ui/icons/core/icons/DropRight.XS";
 import HvProvider from "../../Provider";
 import BreadcrumbWithStyles from "../index";
 import Breadcrumb from "../Main";
-import DropDownMenu from "../../DropDownMenu";
 
 const listRoute = [
   {

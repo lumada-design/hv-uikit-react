@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
+const styles = () => ({
   logoContainer: {
     display: "flex",
     alignItems: "center",

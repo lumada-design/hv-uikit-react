@@ -15,6 +15,7 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import Button from "@material-ui/core/Button";
 import Popover from "@material-ui/core/Popover";
@@ -78,5 +79,9 @@ class Popup extends React.Component {
     );
   }
 }
+
+Popup.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired
+};
 
 export default Popup;

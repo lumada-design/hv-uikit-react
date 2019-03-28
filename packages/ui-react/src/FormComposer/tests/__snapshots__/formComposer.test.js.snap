@@ -11,7 +11,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999975,
+            "index": -99999999986,
           },
           "themingEnabled": true,
         } => Map {
@@ -969,7 +969,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999975,
+                "index": -99999999986,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3135,7 +3135,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999975,
+                  "index": -99999999986,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3281,7 +3281,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999899,
+            "index": -99999999987,
           },
           "themingEnabled": true,
         } => Map {
@@ -4255,7 +4255,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999899,
+                "index": -99999999987,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4877,7 +4877,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999899,
+                  "index": -99999999987,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5031,7 +5031,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999985,
+            "index": -99999999999,
           },
           "themingEnabled": true,
         } => Map {
@@ -6063,7 +6063,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999985,
+                "index": -99999999999,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -7484,7 +7484,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999985,
+                  "index": -99999999999,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],

@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes, { shape } from "prop-types";
 
 import Typography from "@material-ui/core/Typography";
-import HvNavigationAnchors from "@hv-ui/react/core/NavigationAnchors";
+import HvNavigationAnchors from "../NavigationAnchors";
 
 class HvFormComposer extends React.Component {
   constructor(props) {
@@ -153,9 +153,7 @@ class HvFormComposer extends React.Component {
           )}
           <div className={classes.componentContainer}>{groupedComponents}</div>
         </div>
-        {hasFooter && (
-          <div className={classes.footer}>{footerElements}</div>
-        )}
+        {hasFooter && <div className={classes.footer}>{footerElements}</div>}
       </div>
     );
   }

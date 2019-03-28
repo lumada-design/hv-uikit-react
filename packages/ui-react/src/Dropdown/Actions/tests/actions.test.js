@@ -14,27 +14,12 @@
  * limitations under the License.
  */
 
-/* eslint-env jest */
-
-// import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import ActionsWrapper from "../index";
 import Actions from "../Actions";
 import HvButton from "../../../Button/Main/Button";
-
-const mockData = [
-  {
-    label: "Value 1"
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3"
-  }
-];
 
 describe("<Actions />", () => {
   let wrapper;

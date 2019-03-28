@@ -60,7 +60,7 @@ class HvSearchBox extends React.Component {
     const { placeholder, classes } = this.props;
     const { value } = this.state;
 
-    const hasInputValue = value && value != "";
+    const hasInputValue = value && value !== "";
 
     const iconRenderer = hasInputValue ? (
       <span onClick={this.handleInputClear}>
@@ -116,7 +116,8 @@ HvSearchBox.propTypes = {
 HvSearchBox.defaultProps = {
   value: "",
   placeholder: "Search",
-  onChange: () => {}
+  onChange: () => {},
+  onValidate: undefined
 };
 
 export default HvSearchBox;

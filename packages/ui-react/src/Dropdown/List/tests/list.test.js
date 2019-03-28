@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-/* eslint-env jest */
-
-// import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../../Provider";

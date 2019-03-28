@@ -17,7 +17,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CardActions from "@material-ui/core/CardActions";
-import withConfig from "../../config/withConfig";
 import HvCheckBox from "../../Selectors/CheckBox";
 
 /**

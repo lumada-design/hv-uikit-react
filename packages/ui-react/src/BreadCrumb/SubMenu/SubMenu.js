@@ -17,7 +17,7 @@
 import React from "react";
 import MoreOptions from "@hv-ui/icons/core/icons/MoreOptionsHorizontal.S";
 import PropTypes from "prop-types";
-import DropDownMenu from "@hv-ui/react/core/DropDownMenu";
+import DropDownMenu from "../../DropDownMenu";
 import Link from "../../Link";
 
 /**

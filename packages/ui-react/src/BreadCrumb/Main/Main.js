@@ -43,6 +43,10 @@ const LastPathElement = ({ label }) => (
   <Typography variant="body2">{startCase(removeExtension(label))}</Typography>
 );
 
+LastPathElement.propTypes = {
+  label: PropTypes.string.isRequired
+};
+
 /**
  * Representation of an path element. This element contains a link.
  *
@@ -61,6 +65,16 @@ const Page = ({ useRouter, elem, classes }) => (
   </Link>
 );
 
+Page.propTypes = {
+  useRouter: PropTypes.bool.isRequired,
+  elem: PropTypes.shape({
+    path: PropTypes.string,
+    params: PropTypes.instanceOf(Object),
+    label: PropTypes.string
+  }).isRequired,
+  classes: PropTypes.instanceOf(Object).isRequired
+};
+
 /**
  * Container of the intermediates path elements with the separator.
  *
@@ -77,6 +91,11 @@ const PathElement = ({ classes, children }) => (
     </div>
   </div>
 );
+
+PathElement.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+  children: PropTypes.element.isRequired
+};
 
 /**
  * Helper function to build a new path list with one element with the list for the submenu.
