@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="LocationTarget.M" transform="translate(-388 -865)">
+    <rect id="Rectangle_2086" data-name="Rectangle 2086" width="48" height="48" transform="translate(388 865)" fill="none"/>
+    <circle id="Ellipse_265" data-name="Ellipse 265" cx="12" cy="12" r="12" transform="translate(400 877)" fill="none"/>
+    <path id="Path_3065" data-name="Path 3065" d="M40.005,22.994H35.949A12.007,12.007,0,0,0,25,12.051V7.989H23v4.062A12.007,12.007,0,0,0,12.051,22.994H7.994v2H12.05A12.006,12.006,0,0,0,23,35.949V40h2V35.949A12.006,12.006,0,0,0,35.95,24.994h4.055Zm-6.056,0H25V14.051A10.017,10.017,0,0,1,33.949,22.994ZM23,14.051v8.943H14.051A10.017,10.017,0,0,1,23,14.051ZM14.05,24.994H23v8.955A10.017,10.017,0,0,1,14.05,24.994ZM25,33.949V24.994h8.95A10.018,10.018,0,0,1,25,33.949Z" transform="translate(388 865)" fill="#414141"/>
+  </g>
+</svg>

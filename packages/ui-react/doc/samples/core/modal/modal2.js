@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import Unlock from "@hv-ui/icons/core/S-icons/Unlock16";
+import Unlock from "@hv-ui/icons/core/icons/Unlock.S";
 import {
   Modal,
   ModalActions,

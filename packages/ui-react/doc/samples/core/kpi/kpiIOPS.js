@@ -16,8 +16,8 @@
 
 import React from "react";
 import { Typography } from "@material-ui/core";
-import IconInvalid from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
 import HvKpi from "@hv-ui/react/core/Kpi";
+import IconInvalid from "@hv-ui/icons/core/icons/Level5.S";
 import IconArrowDown from "./assets/arrow-red-down.svg";
 
 const IOPSKpiTextConfiguration = {
@@ -61,7 +61,7 @@ const IopsComparisonVisualAverage = () => (
   </div>
 );
 
-const invalidIcon = () => <IconInvalid />;
+const invalidIcon = () => <IconInvalid color={["none", "#D13F3F"]} />;
 
 export default (
   <HvKpi

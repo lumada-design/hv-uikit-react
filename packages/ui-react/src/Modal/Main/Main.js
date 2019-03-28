@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
 
 import Dialog from "@material-ui/core/Dialog";
 
-import Close16 from "@hv-ui/icons/core/S-icons/Close16";
+import Close16 from "@hv-ui/icons/core/icons/Close.S";
 import Button from "../../Button";
 
 const style = {

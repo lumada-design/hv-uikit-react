@@ -19,7 +19,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import Help16 from "@hv-ui/icons/core/S-icons/Help16";
+import Help16 from "@hv-ui/icons/core/icons/Help.S";
 import UserWithStyles from "../index";
 import User from "../User";
 import HvProvider from "../../../Provider";

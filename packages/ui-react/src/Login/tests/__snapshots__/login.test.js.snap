@@ -40027,10 +40027,28 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             "root": "HvLogin-root-169",
           }
         }
-        errorLoginIcon={<Level5Unsuccess16Color />}
+        errorLoginIcon={
+          <Level5S
+            color={
+              Array [
+                "none",
+                "#414141",
+              ]
+            }
+          />
+        }
         login={[MockFunction]}
         logo={null}
-        okRecoveryIcon={<Level0Success16Color />}
+        okRecoveryIcon={
+          <Level0S
+            color={
+              Array [
+                "none",
+                "#414141",
+              ]
+            }
+          />
+        }
         recovery={[MockFunction]}
         theme={
           Object {
@@ -40643,7 +40661,16 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
               <WithStyles(loginForm)
                 allowRecover={true}
                 allowRememberMe={true}
-                errorLoginIcon={<Level5Unsuccess16Color />}
+                errorLoginIcon={
+                  <Level5S
+                    color={
+                      Array [
+                        "none",
+                        "#414141",
+                      ]
+                    }
+                  />
+                }
                 login={[MockFunction]}
                 logo={null}
                 onClick={[Function]}
@@ -40672,7 +40699,16 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       "title": "loginForm-title-173",
                     }
                   }
-                  errorLoginIcon={<Level5Unsuccess16Color />}
+                  errorLoginIcon={
+                    <Level5S
+                      color={
+                        Array [
+                          "none",
+                          "#414141",
+                        ]
+                      }
+                    />
+                  }
                   login={[MockFunction]}
                   logo={null}
                   onClick={[Function]}

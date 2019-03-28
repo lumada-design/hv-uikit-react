@@ -3,21 +3,11 @@
 ##How generate the react component automatically based in the SVG files
  
 ### Getting Started
-Install the npm [svg-to-react-cli](https://www.npmjs.com/package/svg-to-react-cli)
-
-```bash
-npm install -g svg-to-react-cli
-```
+Set the desired icons into `resources` folder.
 
 #### Running
 
-Use the following command in the directory where the icons are 
-
+For converting the svg to react components the build command should be executed
 ```bash
-svgtoreact dir
+npm run build
 ```
-
-If the file are in a folder tree structure the command should be execute in each folder.
-
-### Maintenance
-The original SVG files converted should be added to the `resources` folder, to be possible to track the generated files.

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Success.sema1.S" transform="translate(-606 -2328)">
+    <rect id="Rectangle_974" data-name="Rectangle 974" width="32" height="32" transform="translate(606 2328)" fill="none"/>
+    <g id="StepCompleted-16" transform="translate(606 2328)">
+      <rect id="Rectangle_974-2" data-name="Rectangle 974-2" width="32" height="32" fill="none"/>
+      <circle id="Ellipse_236" data-name="Ellipse 236" cx="8" cy="8" r="8" transform="translate(8 8)" fill="none"/>
+    </g>
+    <path id="Path_3081" data-name="Path 3081" d="M15.034,19.74l-2.387-2.387.707-.707,1.613,1.613,4.65-5.58.768.641Z" transform="translate(606 2328)" fill="#63a621"/>
+    <g id="Group_5772" data-name="Group 5772" transform="translate(606 2328)">
+      <g id="Group_50" data-name="Group 50">
+        <g id="Path_56" data-name="Path 56">
+          <path id="Path_3082" data-name="Path 3082" d="M16,24h0a8.024,8.024,0,0,1-8-8H8a8.024,8.024,0,0,1,8-8h0a8.024,8.024,0,0,1,8,8h0A8.024,8.024,0,0,1,16,24Z" fill="none"/>
+          <path id="Path_3083" data-name="Path 3083" d="M16,23a7.023,7.023,0,1,0-4.943-2.057A6.953,6.953,0,0,0,16,23m0,1a8,8,0,1,1,8-8A8.024,8.024,0,0,1,16,24Z" fill="#63a621"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

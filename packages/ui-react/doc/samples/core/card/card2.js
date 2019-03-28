@@ -15,11 +15,12 @@
  */
 
 import React from "react";
+import theme from "@hv-ui/themes/dist/theme";
 import HvCard from "@hv-ui/react/core/Card";
-import FailureIcon from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
-import Icon from "@hv-ui/icons/core/S-icons/Upload16";
+import FailureIcon from "@hv-ui/icons/core/icons/Level5.S";
+import Icon from "@hv-ui/icons/core/icons/Up.S";
 import HvButton from "@hv-ui/react/core/Button";
-import MoreOptionsIcon from "@hv-ui/icons/core/S-icons/MoreOptionsVertical16";
+import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import leaf from "./resources/leaf.png";
@@ -170,7 +171,7 @@ const MultipleActionsWithMediaButtons = () => (
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      Icon={<FailureIcon />}
+      Icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />}
       HeaderTitle={configuration.title}
       Subheader={(
         <div>

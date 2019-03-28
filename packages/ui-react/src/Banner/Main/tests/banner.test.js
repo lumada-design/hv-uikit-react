@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Level5Unsuccess16Color from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
+import Level5Unsuccess16Color from "@hv-ui/icons/core/icons/Level5.S";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../../BannerWrapper/BannerContentWrapper";
 import BannerWithStyles from "../..";

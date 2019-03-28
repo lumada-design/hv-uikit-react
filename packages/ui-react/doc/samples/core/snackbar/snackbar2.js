@@ -17,7 +17,7 @@
 import React from "react";
 import HvSnackbar from "@hv-ui/react/core/Snackbar";
 import Button from "@material-ui/core/Button";
-import { FastForward16 } from "@hv-ui/icons/core";
+import FastForward16 from "@hv-ui/icons/core/icons/FastForwards.S";
 
 class SimpleSnackbar extends React.Component {
   state = {

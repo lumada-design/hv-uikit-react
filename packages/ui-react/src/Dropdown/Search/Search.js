@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import SearchIcon from "@hv-ui/icons/core/S-icons/Search16";
+import SearchIcon from "@hv-ui/icons/core/icons/Search.S";
 
 class Search extends React.Component {
   constructor(props) {

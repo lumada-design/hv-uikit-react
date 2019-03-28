@@ -16,12 +16,13 @@
 
 import React from "react";
 import HvCard from "@hv-ui/react/core/Card";
-import FailureIcon from "@hv-ui/icons/core/S-icons/Level5Unsuccess16Color";
-import IconInvalid from "@hv-ui/icons/core/S-icons/Level216Color";
-import WarningIcon from "@hv-ui/icons/core/S-icons/Level416Color";
-import Icon from "@hv-ui/icons/core/S-icons/Tool16";
+import FailureIcon from "@hv-ui/icons/core/icons/Level5.S";
+import IconInvalid from "@hv-ui/icons/core/icons/Level2.S";
+import WarningIcon from "@hv-ui/icons/core/icons/Level4.S";
+import Icon from "@hv-ui/icons/core/icons/Tool.S";
 import HvKpi from "@hv-ui/react/core/Kpi";
 import Typography from "@material-ui/core/Typography";
+import theme from "@hv-ui/themes/dist/theme";
 
 const kpiStyles = theme => ({
   content: {
@@ -102,7 +103,7 @@ export default (
         <HvCard
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="85" icon={<IconInvalid />} />}
+          InnerCardContent={<Content value="85" icon={<IconInvalid color={["none", theme.palette.semantic.sema3]} />} />}
           semantic="sema2"
           isSelectable
           checkboxValue="value"
@@ -113,7 +114,7 @@ export default (
         <HvCard
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="45" icon={<WarningIcon />} />}
+          InnerCardContent={<Content value="45" icon={<WarningIcon color={["none", theme.palette.semantic.sema5]} />} />}
           semantic="sema3"
           isSelectable
           checkboxValue="value"
@@ -124,7 +125,7 @@ export default (
         <HvCard
           Icon={<Icon />}
           HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="19" icon={<FailureIcon />} />}
+          InnerCardContent={<Content value="19" icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />} />}
           semantic="sema5"
           isSelectable
           checkboxValue="value"

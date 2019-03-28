@@ -34472,18 +34472,24 @@ body {
             >
               Value 1
             </div>
-            <AngleDown12
+            <DropDownXS
               className="Main-arrow-268"
+              color={
+                Array [
+                  "none",
+                  "#414141",
+                ]
+              }
             >
               <svg
                 className="Main-arrow-268"
-                height={32}
-                viewBox="0 0 32 32"
-                width={32}
+                height={30}
+                viewBox="1 1 30 30 "
+                width={30}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <g
-                  id="AngleDown-12"
+                  id="DropDown.XS"
                   transform="translate(-334 -460.5)"
                 >
                   <rect
@@ -34522,7 +34528,7 @@ body {
                   </g>
                 </g>
               </svg>
-            </AngleDown12>
+            </DropDownXS>
           </div>
           <div
             className="Main-list-270 Main-listClosed-271"
@@ -35840,18 +35846,24 @@ body {
                             type="text"
                             value=""
                           />
-                          <Search16
+                          <SearchS
                             className="Search-icon-290"
+                            color={
+                              Array [
+                                "none",
+                                "#414141",
+                              ]
+                            }
                           >
                             <svg
                               className="Search-icon-290"
-                              height={32}
-                              viewBox="0 0 32 32"
-                              width={32}
+                              height={30}
+                              viewBox="1 1 30 30 "
+                              width={30}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <g
-                                id="Search-16"
+                                id="Search.S"
                                 transform="translate(-450 -1614)"
                               >
                                 <path
@@ -35890,7 +35902,7 @@ body {
                                 />
                               </g>
                             </svg>
-                          </Search16>
+                          </SearchS>
                         </div>
                       </Search>
                     </WithStyles(Search)>
@@ -61111,18 +61123,24 @@ body {
             >
               Value 1
             </div>
-            <AngleDown12
+            <DropDownXS
               className="Main-arrow-7"
+              color={
+                Array [
+                  "none",
+                  "#414141",
+                ]
+              }
             >
               <svg
                 className="Main-arrow-7"
-                height={32}
-                viewBox="0 0 32 32"
-                width={32}
+                height={30}
+                viewBox="1 1 30 30 "
+                width={30}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <g
-                  id="AngleDown-12"
+                  id="DropDown.XS"
                   transform="translate(-334 -460.5)"
                 >
                   <rect
@@ -61161,7 +61179,7 @@ body {
                   </g>
                 </g>
               </svg>
-            </AngleDown12>
+            </DropDownXS>
           </div>
           <div
             className="Main-list-9 Main-listClosed-10"
@@ -62479,18 +62497,24 @@ body {
                             type="text"
                             value=""
                           />
-                          <Search16
+                          <SearchS
                             className="Search-icon-29"
+                            color={
+                              Array [
+                                "none",
+                                "#414141",
+                              ]
+                            }
                           >
                             <svg
                               className="Search-icon-29"
-                              height={32}
-                              viewBox="0 0 32 32"
-                              width={32}
+                              height={30}
+                              viewBox="1 1 30 30 "
+                              width={30}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <g
-                                id="Search-16"
+                                id="Search.S"
                                 transform="translate(-450 -1614)"
                               >
                                 <path
@@ -62529,7 +62553,7 @@ body {
                                 />
                               </g>
                             </svg>
-                          </Search16>
+                          </SearchS>
                         </div>
                       </Search>
                     </WithStyles(Search)>

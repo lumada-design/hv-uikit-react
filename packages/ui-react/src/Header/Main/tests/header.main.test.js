@@ -19,7 +19,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import Settings from "@hv-ui/icons/core/S-icons/Settings16";
+import Settings from "@hv-ui/icons/core/icons/Settings.S";
 import MainWithStyles from "../index";
 import Main from "../Main";
 import Brand from "../../Brand";

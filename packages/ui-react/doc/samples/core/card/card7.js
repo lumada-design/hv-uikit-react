@@ -16,10 +16,10 @@
 
 import React from "react";
 import HvCard from "@hv-ui/react/core/Card";
-import Icon from "@hv-ui/icons/core/S-icons/Upload16";
+import Icon from "@hv-ui/icons/core/icons/Upload.S";
 import HvButton from "@hv-ui/react/core/Button";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MoreOptionsIcon from "@hv-ui/icons/core/S-icons/MoreOptionsVertical16";
+import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
 import { HvCardFooter, HvCardMedia } from "@hv-ui/react/core/Card";
 import leaf from "./resources/leaf.png";
 
