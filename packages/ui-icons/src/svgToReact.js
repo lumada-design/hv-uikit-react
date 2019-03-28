@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-
-
 // Vendor includes
 const chalk = require("chalk"); // commandline styles
 const rimraf = require("rimraf");
@@ -34,18 +32,15 @@ const writeFile = (processedSVG, fileName) => {
   } else {
     file = path.resolve(process.cwd(), `${fileName}.js`);
   }
-  fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, (
-    err
-  ) => {
+  fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
     if (err) {
       if (err.code === "EEXIST") {
         printErrors(
           `Output file ${file} already exists. Use the force (--force) flag to overwrite the existing files`
         );
       } else {
-        printErrors(`Output file ${file} not writable ${  err.code}`);
+        printErrors(`Output file ${file} not writable ${err.code}`);
       }
-      
     }
   });
 };
@@ -117,7 +112,7 @@ const runUtil = (fileToRead, fileToWrite) => {
         output = formatSVG(output);
       }
 
-      const processedFileToWrite = fileToWrite.replace(/.sema(.*?.\.)/, "");
+      const processedFileToWrite = fileToWrite;
 
       // Wrap it up in a React component
       output = generateComponent(
@@ -132,7 +127,7 @@ const runUtil = (fileToRead, fileToWrite) => {
 };
 
 const runUtilForAllInDir = () => {
-  recursive(`${process.cwd()  }/${  inputPath}`, (err, files) => {
+  recursive(`${process.cwd()}/${inputPath}`, (err, files) => {
     if (err) {
       return console.log(err);
     } // GEt out early if not found
@@ -156,8 +151,6 @@ const args = yargs // reading arguments from the command line
   .option("input", { alias: "i" })
   .option("rm-style", { default: false })
   .option("force", { alias: "f", default: false }).argv;
-
-console.log(args);
 
 // Resolve arguments
 const firstArg = args._[0];
