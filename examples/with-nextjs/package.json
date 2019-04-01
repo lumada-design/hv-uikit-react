@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "3.0.0",
+  "name": "with-nextjs",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@hv-ui/react": "latest",
-    "@material-ui/core": "latest",
+    "@material-ui/core": "^3.5.1",
     "jss": "latest",
     "next": "latest",
     "prop-types": "latest",

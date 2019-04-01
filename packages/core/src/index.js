@@ -15,28 +15,22 @@
  */
 
 // components
+export { default as HvBanner } from "./Banner";
+export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvButton, buttonTypes } from "./Button";
 export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
-export { default as HvDatePicker } from "./DatePicker";
 export { default as HvDropdown } from "./Dropdown";
-export { default as HvFooter } from "./Footer";
+export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvHeader } from "./Header";
+export { default as HvInput}  from "./Input";
+export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";
-export { default as HvTable } from "./Table";
-export { default as HvSlider } from "./Slider";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
+export { default as HvModal, HvModalTitle, HvModalContent, HvModalActions } from "./Modal";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvSnackbar } from "./Snackbar";
-export { Modal, ModalTitle, ModalContent, ModalActions } from "./Modal";
+export { default as HvTable } from "./Table";
 export { default as HvTextArea } from "./TextArea";
-export { default as HvKpi } from "./Kpi";
-export { default as HvBanner } from "./Banner";
-export { default as HvInput}  from "./Input";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvDropDownMenu } from "./DropDownMenu";
-export { default as HvBreadcrumb } from "./BreadCrumb";
 
 // theme
 export { default as hvTheme } from "./theme";

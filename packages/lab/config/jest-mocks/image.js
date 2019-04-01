@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import Slider from "./Main/Slider";
-
-export default withStyles(styles, { withTheme: true })(Slider);
+module.exports = "IMAGE_MOCK";

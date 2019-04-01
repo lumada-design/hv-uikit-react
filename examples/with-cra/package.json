@@ -1,11 +1,10 @@
 {
-  "name": "ui-react-with-cra",
-  "version": "0.0.1",
+  "name": "with-cra",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@hv-ui/react": "latest",
     "@material-ui/core": "^3.5.1",
-    "@material-ui/icons": "^3.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",

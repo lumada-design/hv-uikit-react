@@ -14,19 +14,7 @@
  * limitations under the License.
  */
 
-import React from "react";
-import PropTypes from "prop-types";
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
-const HvButton = props => {
-  const { classes } = props;
-
-  return <div className={classes.knobRing} />;
-};
-
-HvButton.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
-  dragging: PropTypes.bool,
-  hoverColor: PropTypes.string
-};
-
-export default HvButton;
+configure({ adapter: new Adapter() });

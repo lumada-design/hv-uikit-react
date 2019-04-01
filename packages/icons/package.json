@@ -1,10 +1,10 @@
 {
-  "name": "@hv-ui/icons",
+  "name": "@hv/uikit-react-icons",
   "version": "0.3.0-alpha.10",
-  "description": "A collection of icons for use with Hitachi Vantara Components.",
+  "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "license": "LicenseRef-LICENSE",
   "author": {
-    "name": "Hitachi Vantara IOTA Team"
+    "name": "Hitachi Vantara UI Kit Team"
   },
   "main": "core/index.js",
   "module": "core/index.es.js",
