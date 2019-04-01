@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvSlider from "@hv-ui/react/core/Slider";
+import HvSlider from "@hv/uikit-react-lab/dist/Slider";
 
 const scaledKnobProperties = [
   {

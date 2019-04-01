@@ -17,10 +17,10 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import HvFormComposer from "@hv-ui/react/core/FormComposer";
+import HvButton from "@hv/uikit-react-core/dist/Button";
+import HvInput from "@hv/uikit-react-core/dist/Input";
+import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 
-import Input from "@hv-ui/react/core/Input";
-import HvButton from "@hv-ui/react/core/Button";
 
 const inputTextConfiguration = {
   inputLabel: "Default",
@@ -32,7 +32,7 @@ const groups = [
   {
     title: "Group1",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
@@ -41,7 +41,7 @@ const groups = [
         onChange={value => value}
         value="Some text 1"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"

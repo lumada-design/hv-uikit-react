@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvSnackbar from "@hv-ui/react/core/Snackbar";
+import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 
 storiesOf("Core", module).add("Snackbar", () => <HvSnackbar />, {
   title: "Snackbar",
   description:
     "Snackbars provide brief messages about app processes through a message - typically at the bottom of the screen",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvSnackbar from '@hv-ui/react/core/Snackbar'",
+  usage: "import HvSnackbar from '@hv/uikit-react-core/dist/Snackbar'",
   examples: [
     {
       title: "1. Snackbars with different variants",

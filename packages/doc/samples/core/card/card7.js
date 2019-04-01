@@ -15,12 +15,12 @@
  */
 
 import React from "react";
-import HvCard from "@hv-ui/react/core/Card";
+import HvCard from "@hv/uikit-react-core/dist/Card";
 import Icon from "@hv-ui/icons/core/icons/Upload.S";
-import HvButton from "@hv-ui/react/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import withStyles from "@material-ui/core/styles/withStyles";
 import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
-import { HvCardFooter, HvCardMedia } from "@hv-ui/react/core/Card";
+import { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import leaf from "./resources/leaf.png";
 
 const styles = theme => ({

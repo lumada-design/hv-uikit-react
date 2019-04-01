@@ -22,7 +22,7 @@ import {
   ModalActions,
   ModalContent,
   ModalTitle
-} from "@hv-ui/react/core/Modal";
+} from "@hv/uikit-react-core/dist/Modal";
 
 const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);

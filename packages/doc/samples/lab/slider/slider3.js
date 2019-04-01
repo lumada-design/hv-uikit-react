@@ -15,32 +15,33 @@
  */
 
 import React from "react";
-import HvSlider from "@hv-ui/react/core/Slider";
+import HvSlider from "@hv/uikit-react-lab/dist/Slider";
 
-const threeKnobProperties = [
+const threeKnobFixedProperties = [
   {
-    color: "#72cccb",
-    dragColor: "#96d9d8",
-    trackColor: "#72cccb"
+    color: "yellow",
+    dragColor: "black",
+    trackColor: "red"
   },
   {
-    color: "#f9dc37",
-    dragColor: "#fbe56a",
-    trackColor: "#f9dc37"
+    color: "red",
+    dragColor: "grey",
+    trackColor: "grey"
   },
   {
-    color: "#ff9100",
-    dragColor: "#ffa733",
-    trackColor: "#ff9100"
+    color: "purple",
+    dragColor: "orange",
+    trackColor: "yellow",
+    fixed: true
   }
 ];
 
-const threeKnobPropertiesDefaults = [10, 20, 30];
+const threeKnobFixedPropertiesDefaults = [10, 50, 80];
 
 export default (
   <HvSlider
     markStep={10}
-    knobProperties={threeKnobProperties}
-    defaultValues={threeKnobPropertiesDefaults}
+    knobProperties={threeKnobFixedProperties}
+    defaultValues={threeKnobFixedPropertiesDefaults}
   />
 );

@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import HvHeader from "@hv-ui/react/core/Header";
+import HvHeader from "@hv/uikit-react-core/dist/Header";
 import SettingIcon from "@hv-ui/icons/core/icons/Settings.S";
 import TestLogo from "./resources/testlogo.svg";
 import photo from "./resources/user.png";

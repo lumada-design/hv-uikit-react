@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvModalContent from "@hv-ui/react/core/Modal/ModalContent";
+import HvModalContent from "@hv/uikit-react-core/dist/Modal/ModalContent";
 
 
 
 storiesOf("Core/modal", module).add("Content", () => <HvModalContent />, {
   title: "Modal Actions",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvModalContent from '@hv-ui/react/core/Modal/ModalContent'",
+  usage: "import HvModalContent from '@hv/uikit-react-core/dist/Modal/ModalContent'",
   description:
     "The container for the content of the modal component"
 })

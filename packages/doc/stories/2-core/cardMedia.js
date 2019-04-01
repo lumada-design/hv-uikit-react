@@ -16,12 +16,12 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvCardMedia from "@hv-ui/react/core/Card/Media";
+import HvCardMedia from "@hv/uikit-react-core/dist/Card/Media";
 
 storiesOf("Core/card", module).add("Media", () => <HvCardMedia />, {
   title: "Media",
   description:
     "Component of the card, responsible for presenting media content.",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import {HvCardMedia} from '@hv-ui/react/core/Card'"
+  usage: "import {HvCardMedia} from '@hv/uikit-react-core/dist/Card'"
 });

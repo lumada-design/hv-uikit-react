@@ -17,7 +17,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import IconInvalid from "@hv-ui/icons/core/icons/Level5.S";
-import HvKpi from "@hv-ui/react/core/Kpi";
+import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 
 const StorageArrayKpiTextConfiguration = {
   title: "# of Storage arrays",

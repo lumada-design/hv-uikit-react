@@ -49,8 +49,8 @@ class Example extends React.Component {
 
     let component, snippet;
     if (isPath) {
-      component = require(`../../../../doc/samples/${src}`).default;
-      snippet = require(`!!raw-loader!../../../../doc/samples/${src}`);
+      component = require(`../../../../samples/${src}`).default;
+      snippet = require(`!!raw-loader!../../../../samples/${src}`);
     }
 
     return (

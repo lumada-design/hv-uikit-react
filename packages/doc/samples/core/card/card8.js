@@ -15,9 +15,9 @@
  */
 
 import React from "react";
-import HvCard, { HvCardFooter, HvCardHeader } from "@hv-ui/react/core/Card";
+import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/dist/Card";
 import Icon from "@hv-ui/icons/core/icons/Upload.S";
-import HvButton from "@hv-ui/react/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 

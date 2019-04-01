@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "npm-run-all clean -p dev:*",
     "dev:watch": "watch \"npm run build\" src",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all clean build:*",
     "build:copy": "copyfiles -f src/index.js dist && mv dist/index.js dist/index.es.js",
     "build:babel": "npx babel src -d dist --source-maps --copy-files",
     "build:clean": "npx del dist/**/tests",
@@ -27,7 +27,7 @@
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-    "prepublish": "npm-run-all clean build",
+    "prepublish": "npm-run-all build",
     "postpublish": "npm run clean",
     "link": "npm link"
   },
@@ -36,8 +36,8 @@
     "lint"
   ],
   "dependencies": {
-    "@hv-ui/icons": "^0.3.0-alpha.10",
-    "@hv-ui/themes": "^0.3.0-alpha.14",
+    "@hv-ui/icons": "latest",
+    "@hv-ui/themes": "latest",
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
     "classnames": "2.2.6",

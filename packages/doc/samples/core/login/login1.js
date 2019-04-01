@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvLogin from "@hv-ui/react/core/Login";
+import HvLogin from "@hv/uikit-react-core/dist/Login";
 
 const callSimulation = () =>
   new Promise(resolve => {

@@ -15,8 +15,8 @@
  */
 
 import React from "react";
-import Button from "@hv-ui/react/core/Button";
-import withPopper from "@hv-ui/react/core/Popper/withPopper";
+import Button from "@hv/uikit-react-core/dist/Button";
+import withPopper from "@hv/uikit-react-lab/dist/Popper/withPopper";
 
 const btn = props => (
   <Button variant="contained" {...props}>

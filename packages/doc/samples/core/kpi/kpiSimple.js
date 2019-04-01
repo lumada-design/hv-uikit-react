@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvKpi from "@hv-ui/react/core/Kpi";
+import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 
 const AverageKpiTextConfiguration = {
   title: "Title",

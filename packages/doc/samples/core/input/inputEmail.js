@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvInput from "@hv-ui/react/core/Input";
+import HvInput from "@hv/uikit-react-core/dist/Input";
 
 const emailInputTextConfiguration = {
   placeholder: "example@domain.com",

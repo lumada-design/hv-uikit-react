@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import HvHeader from "@hv-ui/react/core/Header";
+import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv-ui/icons/core/icons/User.S";
 import SettingIcon from "@hv-ui/icons/core/icons/Settings.S";
 import ActionsPopover from "./ActionsPopover";

@@ -16,10 +16,10 @@
 
 import React from "react";
 import theme from "@hv-ui/themes/dist/theme";
-import HvCard from "@hv-ui/react/core/Card";
+import HvCard from "@hv/uikit-react-core/dist/Card";
 import FailureIcon from "@hv-ui/icons/core/icons/Level5.S";
 import Icon from "@hv-ui/icons/core/icons/Up.S";
-import HvButton from "@hv-ui/react/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";

@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import HvSearchBox from "@hv-ui/react/core/SearchBox";
+import HvSearchBox from "@hv/uikit-react-lab/dist/SearchBox";
 
 const list = ["Adam", "Andy", "Carol"];
 

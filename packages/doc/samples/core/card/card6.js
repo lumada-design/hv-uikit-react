@@ -15,12 +15,12 @@
  */
 
 import React from "react";
-import HvCard from "@hv-ui/react/core/Card";
+import HvCard from "@hv/uikit-react-core/dist/Card";
 import FailureIcon from "@hv-ui/icons/core/icons/Level5.S";
 import IconInvalid from "@hv-ui/icons/core/icons/Level2.S";
 import WarningIcon from "@hv-ui/icons/core/icons/Level4.S";
 import Icon from "@hv-ui/icons/core/icons/Tool.S";
-import HvKpi from "@hv-ui/react/core/Kpi";
+import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Typography from "@material-ui/core/Typography";
 import theme from "@hv-ui/themes/dist/theme";
 

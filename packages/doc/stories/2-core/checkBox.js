@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvCheckBox from "@hv-ui/react/core/Selectors/CheckBox";
+import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
 
 storiesOf("Core", module).add("CheckBox", () => <HvCheckBox />, {
   title: "Checkbox selector",
   description:
     "A checkbox selector that allows selecting a value, it posses 3 states: empty, full or intermediate",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import { HvCheckbox } from '@hv-ui/react/core/Selectors'",
+  usage: "import { HvCheckbox } from '@hv/uikit-react-core/dist/Selectors'",
   examples: [
     {
       title: "Simple checkbox",

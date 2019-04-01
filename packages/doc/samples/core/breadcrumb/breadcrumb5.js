@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvBreadCrumb from "@hv-ui/react/core/BreadCrumb";
+import HvBreadCrumb from "@hv/uikit-react-core/dist/BreadCrumb";
 
 export default (
   <HvBreadCrumb

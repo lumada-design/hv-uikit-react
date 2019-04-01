@@ -17,8 +17,8 @@
 import React from "react";
 import FastForward16 from "@hv-ui/icons/core/icons/FastForwards.S";
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "@hv-ui/react/core/Banner/BannerWrapper/styles";
-import HvBannerContentWrapper from "@hv-ui/react/core/Banner/BannerWrapper";
+import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
+import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
 

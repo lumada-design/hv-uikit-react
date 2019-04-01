@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import HvRadio from "@hv-ui/react/core/Selectors/RadioButton";
+import HvRadio from "@hv/uikit-react-core/dist/Selectors/RadioButton";
 
 export default <HvRadio label="label" />;

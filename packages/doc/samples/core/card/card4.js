@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvCard from "@hv-ui/react/core/Card";
+import HvCard from "@hv/uikit-react-core/dist/Card";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 

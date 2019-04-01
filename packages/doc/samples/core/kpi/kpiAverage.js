@@ -17,7 +17,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import IconValid from "@hv-ui/icons/core/icons/Level0.S";
-import HvKpi from "@hv-ui/react/core/Kpi";
+import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
 const AverageKpiTextConfiguration = {

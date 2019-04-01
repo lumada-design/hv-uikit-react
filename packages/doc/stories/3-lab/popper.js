@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Content from "@hv-ui/react/core/Popper/Content"
+import Content from "@hv/uikit-react-lab/dist/Popper/Content"
 
 storiesOf("Lab", module).add("Popper", () => <Content />, {
   title: "Popper",
   description:
     "A Popper Higher order component that show itself when hovering, still in development",
-  usage: "import withPopper from '@hv-ui/react/core/Popper/withPopper'",
+  usage: "import withPopper from '@hv/uikit-react-core/dist/Popper/withPopper'",
   examples: [
     {
       title: "Simple popper",

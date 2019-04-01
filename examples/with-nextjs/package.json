@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@hv-ui/react": "latest",
+    "@hv/uikit-react-core": "file:../../../../packages/core",
     "@material-ui/core": "^3.5.1",
     "jss": "latest",
     "next": "latest",

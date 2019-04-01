@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvButton from "@hv-ui/react/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 
 storiesOf("Core", module).add("Button", () => <HvButton />, {
   title: "Button",
   description: "Button with click actions",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvButton from '@hv-ui/react/core/Button'",
+  usage: "import HvButton from '@hv/uikit-react-core/dist/Button'",
   examples: [
     {
       title: "Primary button",

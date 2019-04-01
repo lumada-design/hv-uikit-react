@@ -15,8 +15,8 @@
  */
 
 import React, { useState, useEffect } from "react";
-import HvSlider from "@hv-ui/react/core/Slider";
-import HvButton from "@hv-ui/react/core/Button";
+import HvSlider from "@hv/uikit-react-lab/dist/Slider";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const threeKnobProperties = [
   {

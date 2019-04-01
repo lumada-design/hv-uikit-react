@@ -12,7 +12,7 @@ import React from "react";
 import classNames from "classnames";
 import Tabs from "../Tabs";
 import Examples from "../Examples";
-import HvLink from "@hv-ui/react/core/Link";
+import HvLink from "@hv/uikit-react-core/dist/Link";
 
 const getPropsMetadata = children => {
   const nodes = React.Children.map(children, element => {

@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvFooter from "@hv-ui/react/core/Footer";
+import HvFooter from "@hv/uikit-react-lab/dist/Footer";
 
 storiesOf("Lab", module).add("Footer", () => <HvFooter />, {
   title: "Footer",
   description:
     "A footer component for identification, still in development",
-  usage: "import HvFooter from '@hv-ui/react/core/Footer'",
+  usage: "import HvFooter from '@hv/uikit-react-core/dist/Footer'",
   examples: [
     {
       title: "Simple footer",
