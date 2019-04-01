@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <g id="Fail.sema4.M" transform="translate(-826 -1680.6)">
-    <rect id="Rectangle_974" data-name="Rectangle 974" width="48" height="48" transform="translate(826 1680.6)" fill="none"/>
-    <g id="Ellipse_222" data-name="Ellipse 222" transform="translate(826 1680.6)">
-      <circle id="Ellipse_329" data-name="Ellipse 329" cx="16" cy="16" r="16" transform="translate(8 8)" fill="none"/>
-      <path id="Path_3108" data-name="Path 3108" d="M24,8A16,16,0,1,0,40,24,16.019,16.019,0,0,0,24,8ZM10,24a13.927,13.927,0,0,1,3.449-9.173L33.174,34.551A13.98,13.98,0,0,1,10,24Zm24.586,9.135L14.865,13.414A13.981,13.981,0,0,1,34.586,33.135Z" fill="#f13f3f"/>
-    </g>
-  </g>
-</svg>

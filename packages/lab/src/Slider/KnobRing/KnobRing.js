@@ -14,11 +14,19 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+import React from "react";
+import PropTypes from "prop-types";
+
+const HvButton = props => {
+  const { classes } = props;
+
+  return <div className={classes.knobRing} />;
+};
+
+HvButton.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+  dragging: PropTypes.bool,
+  hoverColor: PropTypes.string
+};
+
+export default HvButton;

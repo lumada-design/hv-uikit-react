@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="LocationTarget.S" transform="translate(-909 -833)">
-    <rect id="Rectangle_1007" data-name="Rectangle 1007" width="32" height="32" transform="translate(909 833)" fill="none"/>
-    <circle id="Ellipse_264" data-name="Ellipse 264" cx="6" cy="6" r="6" transform="translate(919 843)" fill="none"/>
-    <path id="Path_3064" data-name="Path 3064" d="M24,15.5H21.975A6,6,0,0,0,16.5,10.025V8h-1v2.025A6,6,0,0,0,10.025,15.5H8v1h2.025A6,6,0,0,0,15.5,21.975V24h1V21.975A6,6,0,0,0,21.975,16.5H24Zm-3.051,0H16.5V11.051A4.973,4.973,0,0,1,20.949,15.5ZM15.5,11.051V15.5H11.051A4.973,4.973,0,0,1,15.5,11.051ZM11.051,16.5H15.5v4.449A4.973,4.973,0,0,1,11.051,16.5ZM16.5,20.949V16.5h4.449A4.973,4.973,0,0,1,16.5,20.949Z" transform="translate(909 833)" fill="#414141"/>
-  </g>
-</svg>

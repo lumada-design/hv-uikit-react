@@ -8,7 +8,7 @@
       "module-resolver",
       {
         "alias": {
-          "@hv/uikit-react-core": "./src"
+          "@hv/uikit-react-lab": "./src"
         }
       }
     ]

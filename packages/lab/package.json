@@ -6,8 +6,8 @@
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "main": "core/index.js",
-  "module": "core/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "repository": {
     "type": "git",
     "url": "https://10.76.48.133/hv-design-system/ui/react"
@@ -36,7 +36,7 @@
     "lint"
   ],
   "dependencies": {
-    "@hv/uikit-react-core": "file:../core",
+    "@hv/uikit-react-core": "0.3.0",
     "@hv-ui/icons": "latest",
     "@hv-ui/themes": "latest",
     "@material-ui/core": "3.9.2",

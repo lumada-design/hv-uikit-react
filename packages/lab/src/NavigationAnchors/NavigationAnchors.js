@@ -23,7 +23,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import HvLink from "@hv/uikit-react-core/dist/dist/Link";
+import HvLink from "@hv/uikit-react-core/dist/Link";
 
 class NavigationAnchors extends React.Component {
   state = {

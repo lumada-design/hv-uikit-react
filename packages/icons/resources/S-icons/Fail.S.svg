@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="Fail.S" transform="translate(-501 -157)">
-    <rect id="Rectangle_2437" data-name="Rectangle 2437" width="32" height="32" transform="translate(501 157)" fill="none"/>
-    <circle id="Ellipse_237" data-name="Ellipse 237" cx="8" cy="8" r="8" transform="translate(509 165)" fill="none"/>
-    <path id="Path_2354" data-name="Path 2354" d="M16,8a8,8,0,1,1-8,8A8.009,8.009,0,0,1,16,8Zm7,8a6.99,6.99,0,0,0-11.577-5.284l9.861,9.861A6.963,6.963,0,0,0,23,16Zm-7,7a6.963,6.963,0,0,0,4.577-1.716l-9.861-9.861A6.99,6.99,0,0,0,16,23Z" transform="translate(501 157)" fill="#414141"/>
-  </g>
-</svg>

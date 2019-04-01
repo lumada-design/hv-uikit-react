@@ -19,9 +19,11 @@ const getPropsMetadata = children => {
     if (!React.isValidElement(element)) return;
     return element;
   });
+
   const metadata = nodes[0].type.Naked
     ? nodes[0].type.Naked.__docgenInfo.props
     : nodes[0].type.__docgenInfo.props;
+
   return metadata;
 };
 
@@ -53,7 +55,7 @@ const Main = ({ classes, children, context }) => {
               <span className={classes.link}>
                 {designSystemLink && (
                   <HvLink route={designSystemLink}>
-                     &nbsp;&nbsp;[DS Pattern]
+                    &nbsp;&nbsp;[DS Pattern]
                   </HvLink>
                 )}
               </span>

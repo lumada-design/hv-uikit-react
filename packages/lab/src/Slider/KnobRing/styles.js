@@ -14,11 +14,32 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+const styles = props => {
+  const { hoverColor, dragging } = props;
+  let borderValue = "0px solid transparent";
+  if (!dragging && hoverColor) {
+    borderValue = `9px solid ${hoverColor}`;
+  }
+
+  return {
+    knobRing: {
+      position: "relative",
+      borderColor: "transparent",
+      borderRadius: "50%",
+      boxShadow: "none",
+      backgroundColor: "transparent",
+      width: "32px",
+      height: "32px",
+      top: "-82%",
+      left: "-82%",
+      "&:hover": {
+        border: borderValue
+      },
+      "&:active": {
+        border: borderValue
+      }
+    }
+  };
+};
+
+export default styles;

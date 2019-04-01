@@ -24,4 +24,4 @@ packages/ui-react/junit\.xml
 packages/ui-icons/bin
 packages/ui-icons/core  
 
-.npmrc
+storybook-static

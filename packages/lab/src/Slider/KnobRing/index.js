@@ -14,11 +14,8 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+import withStylesProps from "../../withStyleProps";
+import styles from "./styles";
+import KnobRing from "./KnobRing";
+
+export default withStylesProps(styles)(KnobRing);
