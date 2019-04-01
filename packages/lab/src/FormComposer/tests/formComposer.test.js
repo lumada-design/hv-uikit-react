@@ -18,11 +18,11 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 import FormComposerWithStyles from "../index";
 import FormComposer from "../FormComposer";
 
-import HvProvider from "../../Provider";
 
 describe("FormComposer withStyles", () => {
   let wrapper;

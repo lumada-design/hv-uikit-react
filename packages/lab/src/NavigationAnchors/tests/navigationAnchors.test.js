@@ -21,10 +21,10 @@ import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import ListItem from "@material-ui/core/ListItem";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 import NavigationAnchorsWithStyles from "../index";
 import NavigationAnchors from "../NavigationAnchors";
-import HvProvider from "../../Provider";
 
 describe("User withStyles", () => {
   let wrapper;
