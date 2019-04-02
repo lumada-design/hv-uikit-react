@@ -3,12 +3,24 @@ const path = require("path");
 module.exports = (baseConfig, env, defaultConfig) => {
   // Extend defaultConfig as you need.
 
-  // For example, add typescript loader:
   defaultConfig.module.rules.push({
     test: /\.txt$/i,
     use: "raw-loader"
   });
-  defaultConfig.resolve.extensions.push(".ts", ".tsx");
+
+  defaultConfig.module.rules.push({
+    test: /\.js?$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"],
+          plugins: ["@babel/plugin-proposal-class-properties", "react-docgen"]
+        }
+      }
+    ]
+  });
 
   return defaultConfig;
 };
