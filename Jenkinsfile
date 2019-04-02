@@ -52,7 +52,7 @@ pipeline {
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    sshagent (credentials: ['buildteam-gitlab']) {
+                    sshagent (credentials: ['github-buildguy']) {
                         sh 'git checkout master'
                         sh 'cp .npmrc ~/.npmrc'
                         sh 'git status'
