@@ -20,7 +20,7 @@ import React from "react";
 import { mount } from "enzyme";
 import Slider from "../Slider";
 import SliderWithStyles from "../..";
-import HvProvider from "../../../Provider";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 describe("Slider ", () => {
   const knobProperties = [

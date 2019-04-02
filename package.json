@@ -1,6 +1,6 @@
 {
-  "name": "hv-ui",
-  "version": "0.1.0",
+  "name": "hv-uikit-react",
+  "version": "0.0.1",
   "description": "A collection of UI Components for the Hitachi Vantara Design System.",
   "homepage": "https://10.76.48.133/hv-design-system/hv-ui",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://10.76.48.133/hv-design-system/ui/react"
+    "url": "https://10.76.48.133/hv-design-system/ui/react.git"
   },
   "scripts": {
     "clean": "lerna clean --yes",
@@ -27,7 +27,7 @@
     "test": "lerna run --ignore with-cra test --stream",
     "link": "lerna run link --parallel",
     "publish:prerelease": "lerna publish prerelease --yes",
-    "publish:preminor": "lerna publish preminor --yes --force-publish=* ",
+    "publish:preminor": "lerna publish preminor --yes --force-publish=*",
     "publish:minor": "lerna publish minor --yes --force-publish=*",
     "publish:major": "lerna publish major --yes --force-publish=*"
   },

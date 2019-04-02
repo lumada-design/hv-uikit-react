@@ -1,27 +1,40 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# dependencies
+# Dependency directories
 node_modules
 
-# misc
-.DS_Store
+# cache
+.cache
+.npm
+.eslintcache
+
+#Junit
+junit.xml
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# OSX
+.DS_Store
 
-.cache
+# tests
+coverage
 
-# Editor configuration files
-*.iml
+# build folder
+dist
+core
+bin
 
-packages/ui-react/junit\.xml
-packages/ui-icons/bin
-packages/ui-icons/core  
-
-storybook-static
+.npmrc
