@@ -140,7 +140,6 @@ Main.propTypes = {
    * Function when the navigation item is click. It returns the selected index.
    */
   onNavigationClick: PropTypes.func,
-
   /**
    * Object containing the text to be present
    */
@@ -156,7 +155,6 @@ Main.propTypes = {
    * Function to be triggered by clicking in any point of container.
    */
   userClick: PropTypes.func,
-
   /**
    * Array with the components to be render.
    */
