@@ -1,20 +1,20 @@
 # Contribution guidelines
 
-- [Setup](#setup)
-- [Bugs](#bugs)
-- [Feature Requests](#feature-requests)
-- [Submission Guidelines](#submission-guidelines)
-  - [Submitting an Issue](#submitting-an-issue)
-  - [Submitting a Merge Request](#submitting-a-merge-request)
-- [Coding Standards](#coding-standards)
-  - [Style Guide](#style-guide)
-  - [Linting](#linting)
-- [Commit Message Guidelines](#commit-message-guidelines)
-- [Testing](#testing)
-- [Storybook](#storybook)
+- [Contribution guidelines](#contribution-guidelines)
+  - [Setup](#setup)
+  - [Bugs](#bugs)
+  - [Feature Requests](#feature-requests)
+  - [Submission Guidelines](#submission-guidelines)
+    - [Submitting an Issue](#submitting-an-issue)
+    - [Submitting a Merge Request](#submitting-a-merge-request)
+  - [Coding Standards](#coding-standards)
+    - [Style Guide](#style-guide)
+    - [Linting](#linting)
+  - [Commit Message Guidelines](#commit-message-guidelines)
+  - [Testing](#testing)
 
 ## Setup
-1. For the time being the UI Kit lives in a private GitLab repository, so the first step is to create your personal account.
+1. For the time being the UI Kit lives in a private GitLab repository, so the first step is to create your personal account on our [GitLab](https://10.76.48.133/).
 
 2. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel.
 
@@ -100,8 +100,3 @@ Test your changes by running our test commands:
   ```
   npm run test:watch
   ```
-## Storybook
-
-We recommend the use of [React Storybook](https://github.com/storybooks/react-storybook) for developing components.
-
-Coming soon.
