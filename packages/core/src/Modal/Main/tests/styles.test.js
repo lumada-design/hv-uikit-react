@@ -16,7 +16,7 @@
 
 /* eslint-env jest */
 
-import themeHv from "@hv-ui/themes/dist/theme";
+import themeHv from "@hv/uikit-common-themes/dist/theme";
 import styles from "../styles";
 
 describe("Modal styles", () => {

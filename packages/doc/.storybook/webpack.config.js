@@ -16,7 +16,11 @@ module.exports = (baseConfig, env, defaultConfig) => {
         loader: "babel-loader",
         options: {
           presets: ["@babel/preset-env", "@babel/preset-react"],
-          plugins: ["@babel/plugin-proposal-class-properties", "react-docgen"]
+          plugins: [
+            "@babel/plugin-transform-runtime",
+            "@babel/plugin-proposal-class-properties",
+            "react-docgen"
+          ]
         }
       }
     ]

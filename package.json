@@ -2,7 +2,7 @@
   "name": "hv-uikit-react",
   "version": "0.3.0",
   "description": "A collection of React Components for the Hitachi Vantara Design System.",
-  "homepage": "https://10.76.48.133/hv-design-system/hv-ui",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
   "private": true,
   "author": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://10.76.48.133/hv-design-system/ui/react.git"
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
     "clean": "lerna clean --yes",

@@ -19,7 +19,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv/uikit-common-themes/dist/theme";
 import Header from "../Header";
 import Content from "../Content";
 import Footer from "../Footer";

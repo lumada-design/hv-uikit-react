@@ -17,7 +17,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconValid from "@hv-ui/icons/core/icons/Level0.S";
+import IconValid from "@hv/uikit-react-icons/dist/Level0.S";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
 const ThroughputKpiTextConfiguration = {

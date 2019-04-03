@@ -23,7 +23,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import HvLink from "@hv/uikit-react-core/dist/Link";
+import HvLink from "../../../core/src/Link";
 
 class NavigationAnchors extends React.Component {
   state = {
@@ -50,7 +50,9 @@ class NavigationAnchors extends React.Component {
         anchor="left"
         open
         classes={{
-          paper: classNames(classes.drawerPaper,{[classes.drawerPaperPositionInherit]: !floating })
+          paper: classNames(classes.drawerPaper, {
+            [classes.drawerPaperPositionInherit]: !floating
+          })
         }}
       >
         <List
@@ -130,8 +132,8 @@ NavigationAnchors.propTypes = {
    * A callback called on click of every list item, if the href is false
    */
   onClick: PropTypes.func,
-  /** 
-   * Wether the anchors are always in a fixed position 
+  /**
+   * Wether the anchors are always in a fixed position
    */
   floating: PropTypes.bool
 };

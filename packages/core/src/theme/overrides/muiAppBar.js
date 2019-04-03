@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv/uikit-common-themes/dist/theme";
 import palette from "../palette";
 
 const muiAppBar = {

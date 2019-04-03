@@ -15,7 +15,7 @@
  */
 
 import createTypography from "@material-ui/core/styles/createTypography";
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv/uikit-common-themes/dist/theme";
 import palette from "./palette";
 
 const typography = createTypography(palette, {
