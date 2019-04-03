@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import card from "./Card";
 
+export default withStyles(styles, { withTheme: true })(card);
 export { default as HvCardHeader } from "./Header";
 export { default as HvCardFooter } from "./Footer";
 export { default as HvCardContent } from "./Content";
 export { default as HvCardMedia } from "./Media";
-export { default } from "./Main";

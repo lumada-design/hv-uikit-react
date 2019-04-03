@@ -19,12 +19,12 @@
 // import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
-import LoginWithStyles from "../Main/index";
+import LoginWithStyles from "../index";
 import HvProvider from "../../Provider";
-import HvLogin from "../Main/Main";
+import HvLogin from "../Login";
 import LoginForm from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
-import HvButton from "../../Button/Main/Button";
+import HvButton from "../../Button";
 import Title from "../Forms/Login/Title/Title";
 
 describe("Login ", () => {

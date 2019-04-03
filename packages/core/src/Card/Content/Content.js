@@ -22,16 +22,16 @@ import classNames from "classnames";
 /**
  * The content container.
  *
- * @param {Object} { classes, InnerCardContent, needsBorder, ...other }
+ * @param {Object} { classes, innerCardContent, needsBorder, ...other }
  */
-const Content = ({ classes, InnerCardContent, needsBorder, ...other }) => (
+const Content = ({ classes, innerCardContent, needsBorder, ...other }) => (
   <CardContent
     className={classNames(classes.content, {
       [classes.bottomBorder]: needsBorder
     })}
     {...other}
   >
-    {InnerCardContent}
+    {innerCardContent}
   </CardContent>
 );
 
@@ -52,7 +52,7 @@ Content.propTypes = {
   /**
    *  The renderable content inside the body of the card.
    */
-  InnerCardContent: PropTypes.node,
+  innerCardContent: PropTypes.node,
   /**
    * If the content requires a bottom border
    */
@@ -60,7 +60,7 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
-  InnerCardContent: undefined,
+  innerCardContent: undefined,
   needsBorder: false
 };
 

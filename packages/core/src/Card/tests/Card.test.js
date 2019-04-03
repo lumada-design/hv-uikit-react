@@ -21,7 +21,7 @@ import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
 import CardWithStyles from "../index";
-import Card from "../Main";
+import Card from "../Card";
 
 const configuration = {
   title: "title",
@@ -35,14 +35,14 @@ describe("Card withStyles", () => {
   let wrapper;
 
   it("should be defined", () => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
         <CardWithStyles
-          Icon={configuration.icon}
-          HeaderTitle={configuration.title}
-          Subheader={configuration.subtitle}
-          InnerCardContent={configuration.content}
-          Actions={configuration.actions}
+          icon={configuration.icon}
+          headerTitle={configuration.title}
+          subheader={configuration.subtitle}
+          innerCardContent={configuration.content}
+          actions={configuration.actions}
           variant="error"
           isSelectable
           checkboxValue="value"
@@ -65,11 +65,11 @@ describe("Card withStyles", () => {
     wrapper = mount(
       <HvProvider>
         <CardWithStyles
-          Icon={configuration.icon}
-          HeaderTitle={configuration.title}
-          Subheader={configuration.subtitle}
-          InnerCardContent={configuration.content}
-          Actions={configuration.actions}
+          icon={configuration.icon}
+          headerTitle={configuration.title}
+          subheader={configuration.subtitle}
+          innerCardContent={configuration.content}
+          actions={configuration.actions}
           mediaPath="path"
           variant="error"
           isSelectable

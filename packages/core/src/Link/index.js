@@ -15,7 +15,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import Link from "./Main/Link";
+import styles from "./styles";
+import Link from "./Link";
 
 export default withStyles(styles, { withTheme: true })(Link);

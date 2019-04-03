@@ -101,35 +101,35 @@ export default (
     >
       <div style={{ width: "280px" }}>
         <HvCard
-          Icon={<Icon />}
-          HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="85" icon={<IconInvalid color={["none", theme.palette.semantic.sema3]} />} />}
+          icon={<Icon />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={<Content value="85" icon={<IconInvalid color={["none", theme.palette.semantic.sema3]} />} />}
           semantic="sema2"
           isSelectable
           checkboxValue="value"
-          onSelect={event => console.log(`my value is ${event.target.value}`)}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
         />
       </div>
       <div style={{ width: "280px" }}>
         <HvCard
-          Icon={<Icon />}
-          HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="45" icon={<WarningIcon color={["none", theme.palette.semantic.sema5]} />} />}
+          icon={<Icon />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={<Content value="45" icon={<WarningIcon color={["none", theme.palette.semantic.sema5]} />} />}
           semantic="sema3"
           isSelectable
           checkboxValue="value"
-          onSelect={event => console.log(`my value is ${event.target.value}`)}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
         />
       </div>
       <div style={{ width: "280px" }}>
         <HvCard
-          Icon={<Icon />}
-          HeaderTitle="Replace contaminated oil"
-          InnerCardContent={<Content value="19" icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />} />}
+          icon={<Icon />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={<Content value="19" icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />} />}
           semantic="sema5"
           isSelectable
           checkboxValue="value"
-          onSelect={event => console.log(`my value is ${event.target.value}`)}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
         />
       </div>
     </div>

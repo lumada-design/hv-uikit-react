@@ -77,9 +77,9 @@ const SingleContent = ({ classes }) => (
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      HeaderTitle="Asset Avatar L90"
-      Subheader="Compressor"
-      InnerCardContent={<SingleContent classes={styles} />}
+      headerTitle="Asset Avatar L90"
+      subheader="Compressor"
+      innerCardContent={<SingleContent classes={styles} />}
       mediaPath={compressor}
       mediaHeight={186}
     />

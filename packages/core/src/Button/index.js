@@ -15,9 +15,9 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import Button from "./Main/Button";
-import buttonTypes from "./Main/buttonTypes";
+import styles from "./styles";
+import Button from "./Button";
+import buttonTypes from "./buttonTypes";
 
 export { buttonTypes };
 

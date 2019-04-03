@@ -15,7 +15,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import Banner from "./Main/Banner";
+import styles from "./styles";
+import Banner from "./Banner";
 
 export default withStyles(styles, { withTheme: true })(Banner);

@@ -25,16 +25,16 @@ import CardHeader from "@material-ui/core/CardHeader";
  * - title
  * - subheader
  *
- * @param {*} { classes, HeaderTitle, Subheader, Icon, needsBorder }
+ * @param {*} { classes, headerTitle, subheader, icon, needsBorder }
  */
-const Header = ({ classes, HeaderTitle, Subheader, Icon, needsBorder }) => (
+const Header = ({ classes, headerTitle, subheader, icon, needsBorder }) => (
   <CardHeader
-    title={HeaderTitle}
+    title={headerTitle}
     className={classNames(classes.root, {
       [classes.bottomBorder]: needsBorder
     })}
-    subheader={Subheader}
-    action={Icon}
+    subheader={subheader}
+    action={icon}
     classes={{
       title: classes.title,
       subheader: classes.subheader,
@@ -73,11 +73,11 @@ Header.propTypes = {
   /**
    *  The renderable content inside the title slot of the header.
    */
-  HeaderTitle: PropTypes.node.isRequired,
+  headerTitle: PropTypes.node.isRequired,
   /**
    *  The renderable content inside the subheader slot of the header.
    */
-  Subheader: PropTypes.node,
+  subheader: PropTypes.node,
   /**
    * If the Header requires a bottom border
    */
@@ -86,13 +86,13 @@ Header.propTypes = {
   /**
    *  The renderable content inside the icon slot of the header.
    */
-  Icon: PropTypes.node
+  icon: PropTypes.node
 };
 
 Header.defaultProps = {
   needsBorder: false,
-  Icon: null,
-  Subheader: undefined
+  icon: null,
+  subheader: undefined
 };
 
 export default Header;

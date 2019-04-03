@@ -180,13 +180,13 @@ const MultipleActionsButtons = () => (
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      HeaderTitle={configurationNoMedia.title}
-      Subheader={configurationNoMedia.subtitle}
-      InnerCardContent={<MultipleActions />}
-      Actions={<MultipleActionsButtons />}
+      headerTitle={configurationNoMedia.title}
+      subheader={configurationNoMedia.subtitle}
+      innerCardContent={<MultipleActions />}
+      actions={<MultipleActionsButtons />}
       variant="none"
       checkboxValue="value"
-      onSelect={event => console.log(`my value is ${event.target.value}`)}
+      onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>
 );
