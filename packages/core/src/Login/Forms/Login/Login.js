@@ -126,7 +126,12 @@ class Login extends React.Component {
       onClick,
       allowRecover,
       allowRememberMe,
-      errorLoginIcon
+      errorLoginIcon,
+      userNameInputLabel,
+      userNamePlaceHolder,
+      passwordInputLabel,
+      passwordPlaceHolder,
+      rememberMeLabel
     } = this.props;
     const { isLogging, loginError } = this.state;
 
@@ -154,8 +159,8 @@ class Login extends React.Component {
         <div className={classes.inputUser}>
           <Input
             inputTextConfiguration={{
-              inputLabel: "Username",
-              placeholder: "Enter text",
+              inputLabel: userNameInputLabel,
+              placeholder: userNamePlaceHolder,
               infoText: ""
             }}
             name="username"
@@ -166,8 +171,8 @@ class Login extends React.Component {
         <div className={classes.inputPassword}>
           <Input
             inputTextConfiguration={{
-              inputLabel: "Password",
-              placeholder: "Enter text",
+              inputLabel: passwordInputLabel,
+              placeholder: passwordPlaceHolder,
               infoText: ""
             }}
             name="password"
@@ -185,7 +190,7 @@ class Login extends React.Component {
           {allowRememberMe ? (
             <HvCheckbox
               classes={{ labelTypography: classes.checkBoxTypography }}
-              label="Remember me"
+              label={rememberMeLabel}
               onChange={this.handleRememberMe}
             />
           ) : null}
@@ -244,7 +249,27 @@ Login.propTypes = {
   /**
    * Icon to be presented when an error occurs in the login.
    */
-  errorLoginIcon: PropTypes.element
+  errorLoginIcon: PropTypes.element,
+  /**
+   * Input user name label
+   */
+  userNameInputLabel: PropTypes.string.isRequired,
+  /**
+   * Input user name placeholder
+   */
+  userNamePlaceHolder: PropTypes.string.isRequired,
+  /**
+   * Password label.
+   */
+  passwordInputLabel: PropTypes.string.isRequired,
+  /**
+   * Password placeholder.
+   */
+  passwordPlaceHolder: PropTypes.string.isRequired,
+  /**
+   * Remember me label.
+   */
+  rememberMeLabel: PropTypes.string.isRequired
 };
 
 Login.defaultProps = {

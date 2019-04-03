@@ -47,16 +47,14 @@ const styles = theme => ({
     left: "0"
   },
   pageSizeOptionsSelect: {
-    "-webkit-appearance": "none",
+    "-webkit-appearance": "listbox",
     "-webkit-border-radius": "0px",
     padding: "2px 7px",
     fontSize: "14px",
     fontWeight: "normal",
     outline: "none",
     height: "32px",
-    textIndent: `${theme.hv.spacing.xs}px`,
     width: `${theme.hv.spacing.lg}px`,
-    textAlign: "center",
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
     background: `url(${DownArrow}) no-repeat right white`
   },

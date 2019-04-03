@@ -29,7 +29,6 @@ import Link from "../../Link";
  * @constructor
  */
 const SubMenu = ({ classes, subMenuList, useRouter }) => {
-
   const list = subMenuList.map((elem, i) => {
     const key = `${elem.label}_${i}`;
 

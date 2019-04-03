@@ -4453,6 +4453,9 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
+.HvInput-input-485::-ms-clear {
+  display: none;
+}
 .HvInput-inputDisabled-486 {
   cursor: not-allowed;
 }
@@ -4589,6 +4592,9 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
+                  },
+                  Object {
+                    "display": "none",
                   },
                   Object {
                     "cursor": "not-allowed",
@@ -4969,6 +4975,9 @@ input:-webkit-autofill {
                     "overflow": "hidden",
                     "padding": "5px 0 5px",
                     "text-overflow": "ellipsis",
+                  },
+                  ".HvInput-input-485::-ms-clear": Object {
+                    "display": "none",
                   },
                   ".HvInput-input-485::placeholder": Object {
                     "color": "#999999",
@@ -5930,6 +5939,9 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvInput-input-485::-ms-clear": Object {
+                    "display": "none",
+                  },
                   ".HvInput-input-485::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "12px",
@@ -5977,6 +5989,9 @@ input:-webkit-autofill {
                     "width": "30px",
                   },
                   "input": Object {
+                    "&::-ms-clear": Object {
+                      "display": "none",
+                    },
                     "&::placeholder": Object {
                       "color": "#999999",
                       "fontSize": "12px",
@@ -16708,6 +16723,9 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
+.HvInput-input-609::-ms-clear {
+  display: none;
+}
 .HvInput-inputDisabled-610 {
   cursor: not-allowed;
 }
@@ -16844,6 +16862,9 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
+                  },
+                  Object {
+                    "display": "none",
                   },
                   Object {
                     "cursor": "not-allowed",
@@ -17224,6 +17245,9 @@ input:-webkit-autofill {
                     "overflow": "hidden",
                     "padding": "5px 0 5px",
                     "text-overflow": "ellipsis",
+                  },
+                  ".HvInput-input-609::-ms-clear": Object {
+                    "display": "none",
                   },
                   ".HvInput-input-609::placeholder": Object {
                     "color": "#999999",
@@ -18185,6 +18209,9 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvInput-input-609::-ms-clear": Object {
+                    "display": "none",
+                  },
                   ".HvInput-input-609::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "12px",
@@ -18232,6 +18259,9 @@ input:-webkit-autofill {
                     "width": "30px",
                   },
                   "input": Object {
+                    "&::-ms-clear": Object {
+                      "display": "none",
+                    },
                     "&::placeholder": Object {
                       "color": "#999999",
                       "fontSize": "12px",
@@ -32448,6 +32478,9 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
+.HvInput-input-85::-ms-clear {
+  display: none;
+}
 .HvInput-inputDisabled-86 {
   cursor: not-allowed;
 }
@@ -32584,6 +32617,9 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
+                  },
+                  Object {
+                    "display": "none",
                   },
                   Object {
                     "cursor": "not-allowed",
@@ -32964,6 +33000,9 @@ input:-webkit-autofill {
                     "overflow": "hidden",
                     "padding": "5px 0 5px",
                     "text-overflow": "ellipsis",
+                  },
+                  ".HvInput-input-85::-ms-clear": Object {
+                    "display": "none",
                   },
                   ".HvInput-input-85::placeholder": Object {
                     "color": "#999999",
@@ -33925,6 +33964,9 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvInput-input-85::-ms-clear": Object {
+                    "display": "none",
+                  },
                   ".HvInput-input-85::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "12px",
@@ -33972,6 +34014,9 @@ input:-webkit-autofill {
                     "width": "30px",
                   },
                   "input": Object {
+                    "&::-ms-clear": Object {
+                      "display": "none",
+                    },
                     "&::placeholder": Object {
                       "color": "#999999",
                       "fontSize": "12px",

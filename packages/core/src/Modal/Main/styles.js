@@ -21,11 +21,11 @@ import {
 
 const styles = theme => {
   let convertedColor;
-  if (
-    theme &&
-    theme.hv.palette.atmosphere.atmo2
-  ) {
-    convertedColor = fade(convertHexToRGB(theme.hv.palette.atmosphere.atmo2), 0.8);
+  if (theme && theme.hv.palette.atmosphere.atmo2) {
+    convertedColor = fade(
+      convertHexToRGB(theme.hv.palette.atmosphere.atmo2),
+      0.8
+    );
   }
 
   return {
@@ -35,7 +35,8 @@ const styles = theme => {
     paper: {
       background: `${theme.hv.palette.atmosphere.atmo2}`,
       border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-      padding: "40px"
+      padding: "40px",
+      overflow: "hidden"
     },
     closeButton: {
       position: "absolute",
@@ -48,7 +49,7 @@ const styles = theme => {
       "& > span": {
         width: 32
       },
-      "&:hover" : {
+      "&:hover": {
         backgroundColor: "transparent"
       }
     }

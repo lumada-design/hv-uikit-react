@@ -65,6 +65,9 @@ const styles = theme => ({
     textOverflow: "ellipsis",
     "&::placeholder": {
       ...theme.hv.typography.disabledText
+    },
+    "&::-ms-clear": {
+      display: "none"
     }
   },
   inputDisabled: {

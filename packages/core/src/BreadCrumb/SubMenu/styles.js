@@ -39,7 +39,7 @@ const styles = theme => ({
     position: "absolute",
     whiteSpace: "nowrap",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    top: 32,
+    top: `${theme.hv.spacing.md}px`,
     zIndex: -1
   },
   iconSelected: {

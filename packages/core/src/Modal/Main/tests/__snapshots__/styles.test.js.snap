@@ -23,6 +23,7 @@ Object {
   "paper": Object {
     "background": "#F9F9F9",
     "border": "solid 1px #BCBCBC",
+    "overflow": "hidden",
     "padding": "40px",
   },
 }

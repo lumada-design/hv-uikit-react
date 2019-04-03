@@ -50,7 +50,18 @@ class HvLogin extends React.Component {
       allowRecover,
       allowRememberMe,
       okRecoveryIcon,
-      errorLoginIcon
+      errorLoginIcon,
+      recoveryTitle,
+      messageToRecover,
+      messageAfterRecover,
+      recoveryInputLabel,
+      recoveryPlaceholder,
+      recoveryErrorMessage,
+      userNameInputLabel,
+      userNamePlaceHolder,
+      passwordInputLabel,
+      passwordPlaceHolder,
+      rememberMeLabel
     } = this.props;
     const { inRecoveryMode } = this.state;
 
@@ -62,6 +73,12 @@ class HvLogin extends React.Component {
           recovery={recovery}
           onClick={this.switchForms}
           okRecoveryIcon={okRecoveryIcon}
+          recoveryTitle={recoveryTitle}
+          messageToRecover={messageToRecover}
+          messageAfterRecover={messageAfterRecover}
+          recoveryInputLabel={recoveryInputLabel}
+          recoveryPlaceholder={recoveryPlaceholder}
+          recoveryErrorMessage={recoveryErrorMessage}
         />
       );
     } else {
@@ -75,6 +92,11 @@ class HvLogin extends React.Component {
           allowRememberMe={allowRememberMe}
           onClick={this.switchForms}
           errorLoginIcon={errorLoginIcon}
+          userNameInputLabel={userNameInputLabel}
+          userNamePlaceHolder={userNamePlaceHolder}
+          passwordInputLabel={passwordInputLabel}
+          passwordPlaceHolder={passwordPlaceHolder}
+          rememberMeLabel={rememberMeLabel}
         />
       );
     }
@@ -149,7 +171,51 @@ HvLogin.propTypes = {
   /**
    * Icon to be presented when an error occurs in the login.
    */
-  errorLoginIcon: PropTypes.element
+  errorLoginIcon: PropTypes.element,
+  /**
+   * Recovery title.
+   */
+  recoveryTitle: PropTypes.string,
+  /**
+   * Message to recover.
+   */
+  messageToRecover: PropTypes.string,
+  /**
+   * Message shown after recover.
+   */
+  messageAfterRecover: PropTypes.string,
+  /**
+   * Recovery input label.
+   */
+  recoveryInputLabel: PropTypes.string,
+  /**
+   * Recovery placeholder.
+   */
+  recoveryPlaceholder: PropTypes.string,
+  /**
+   * Message shown when an error occurs.
+   */
+  recoveryErrorMessage: PropTypes.string,
+  /**
+   * Input user name label
+   */
+  userNameInputLabel: PropTypes.string,
+  /**
+   * Input user name placeholder
+   */
+  userNamePlaceHolder: PropTypes.string,
+  /**
+   * Password label.
+   */
+  passwordInputLabel: PropTypes.string,
+  /**
+   * Password placeholder.
+   */
+  passwordPlaceHolder: PropTypes.string,
+  /**
+   * Remember me label.
+   */
+  rememberMeLabel: PropTypes.string
 };
 
 HvLogin.defaultProps = {
@@ -161,7 +227,20 @@ HvLogin.defaultProps = {
   allowRecover: true,
   allowRememberMe: true,
   okRecoveryIcon: <Level0Success16Color />,
-  errorLoginIcon: <Level5Unsuccess16Color />
+  errorLoginIcon: <Level5Unsuccess16Color />,
+  recoveryTitle: "Recover Credentials",
+  messageToRecover:
+    "You will receive an email with instructions to recover your credentials.",
+  messageAfterRecover:
+    "The instructions to recover your credentials were sent.",
+  recoveryInputLabel: "Email",
+  recoveryPlaceholder: "Enter text",
+  recoveryErrorMessage: "The email you've entered doesn't match any account",
+  userNameInputLabel: "Password",
+  userNamePlaceHolder: "Enter text",
+  passwordInputLabel: "Password",
+  passwordPlaceHolder: "Enter text",
+  rememberMeLabel: "Remember me"
 };
 
 export default HvLogin;
