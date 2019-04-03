@@ -19,7 +19,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
-import theme from "@hv-ui/themes/dist/theme.json";
+import theme from "@hv/uikit-common-themes/dist/theme.json";
 import Collapse from "@material-ui/core/Collapse";
 import Code from "@material-ui/icons/Code";
 import IconButton from "@material-ui/core/IconButton";

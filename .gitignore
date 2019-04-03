@@ -34,7 +34,7 @@ coverage
 
 # build folder
 dist
-core
 bin
 
 .npmrc
+.idea

@@ -15,12 +15,12 @@
  */
 
 import React from "react";
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv/uikit-common-themes/dist/theme";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv-ui/icons/core/icons/Level5.S";
-import Icon from "@hv-ui/icons/core/icons/Up.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/Level5.S";
+import Icon from "@hv/uikit-react-icons/dist/Up.S";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv-ui/icons/core/icons/MoreOptionsVertical.S";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import leaf from "./resources/leaf.png";

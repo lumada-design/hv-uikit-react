@@ -16,7 +16,7 @@
 
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import theme from "@hv-ui/themes/dist/theme.json";
+import theme from "@hv/uikit-common-themes/dist/theme";
 
 const styles = () => ({
   title: {

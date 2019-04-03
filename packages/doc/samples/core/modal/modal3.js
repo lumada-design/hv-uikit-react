@@ -17,11 +17,11 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import {
-  Modal,
-  ModalTitle,
-  ModalContent,
-  ModalActions
-} from "@hv/uikit-react-core/dist/Modal";
+  HvModal,
+  HvModalTitle,
+  HvModalContent,
+  HvModalActions
+} from "@hv/uikit-react-core/dist";
 import { Typography } from "@material-ui/core";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import TextArea from "@hv/uikit-react-core/dist/TextArea";
@@ -86,11 +86,11 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   return (
     <div>
       <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
         {actions}
-      </Modal>
+      </HvModal>
     </div>
   );
 };
@@ -115,25 +115,25 @@ export default (
     <SimpleModal
       buttonMessage="table"
       title={(
-        <ModalTitle variant="default">
+        <HvModalTitle variant="default">
           <div>
             <Typography variant="h6">LHR-HDIFS-03</Typography>
             <Typography variant="body1">HDI</Typography>
           </div>
-        </ModalTitle>
+        </HvModalTitle>
 )}
       content={(
-        <ModalContent>
+        <HvModalContent>
           <SimpleTable />
-        </ModalContent>
+        </HvModalContent>
 )}
     />
     <p />
     <SimpleModal
       buttonMessage="inputs"
-      title={<ModalTitle showIcon={false}>Work Request</ModalTitle>}
+      title={<HvModalTitle showIcon={false}>Work Request</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           <InputWithStyles
             inputTextConfiguration={{
               placeholder: "Enter work Order Description",
@@ -153,15 +153,15 @@ export default (
             rows="3"
             value="This is an example"
           />
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Send Work Request</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
   </div>

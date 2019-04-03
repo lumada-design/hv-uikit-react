@@ -15,7 +15,7 @@
  */
 
 import createPalette from "@material-ui/core/styles/createPalette";
-import theme from "@hv-ui/themes/dist/theme";
+import theme from "@hv/uikit-common-themes/dist/theme";
 
 const palette = createPalette({
   primary: {

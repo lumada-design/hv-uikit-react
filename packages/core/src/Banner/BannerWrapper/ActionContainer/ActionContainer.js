@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Close16 from "@hv-ui/icons/core/icons/Close.S";
+import Close16 from "@hv/uikit-react-icons/dist/Close.S";
 import PropTypes from "prop-types";
 
 /**
