@@ -1,4 +1,4 @@
-## HV UIkit - React
+## HV UIkit - React 
 #### React components for the Hitachi Vantara Design System.
 
 ### Getting started
