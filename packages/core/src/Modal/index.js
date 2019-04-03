@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import Modal from "./Main";
-import ModalTitle from "./ModalTitle";
-import ModalContent from "./ModalContent";
-import ModalActions from "./ModalActions";
+import HvModal from "./Main";
+import HvModalTitle from "./ModalTitle";
+import HvModalContent from "./ModalContent";
+import HvModalActions from "./ModalActions";
 
 export {
-  Modal,
-  ModalTitle,
-  ModalContent,
-  ModalActions
+  HvModal,
+  HvModalTitle,
+  HvModalContent,
+  HvModalActions
 };

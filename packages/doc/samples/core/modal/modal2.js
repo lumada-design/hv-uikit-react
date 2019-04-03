@@ -16,13 +16,13 @@
 
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import Unlock from "@hv-ui/icons/core/icons/Unlock.S";
+import Unlock from "@hv/uikit-react-icons/dist/Unlock.S";
 import {
-  Modal,
-  ModalActions,
-  ModalContent,
-  ModalTitle
-} from "@hv/uikit-react-core/dist/Modal";
+  HvModal,
+  HvModalActions,
+  HvModalContent,
+  HvModalTitle
+} from "@hv/uikit-react-core/dist";
 
 const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);
@@ -30,11 +30,11 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   return (
     <div>
       <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
         {actions}
-      </Modal>
+      </HvModal>
     </div>
   );
 };
@@ -42,20 +42,20 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
 export default (
   <SimpleModal
     buttonMessage="Custom icon"
-    title={<ModalTitle customIcon={<Unlock />}>Are you sure?</ModalTitle>}
+    title={<HvModalTitle customIcon={<Unlock />}>Are you sure?</HvModalTitle>}
     content={(
-      <ModalContent>
+      <HvModalContent>
         Switching to model view will clear all the fields in your visualization.
         You will need to re-select your fields.
-      </ModalContent>
+      </HvModalContent>
 )}
     actions={(
-      <ModalActions>
+      <HvModalActions>
         <Button colorType="secondary" onClick={() => {}}>
           Cancel
         </Button>
         <Button>Switch anyway</Button>
-      </ModalActions>
+      </HvModalActions>
 )}
   />
 );

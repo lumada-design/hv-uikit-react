@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Separator from "@hv-ui/icons/core/icons/DropRight.XS";
+import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
 import Typography from "@material-ui/core/Typography";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";

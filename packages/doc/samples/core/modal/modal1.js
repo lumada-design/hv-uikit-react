@@ -17,11 +17,11 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import {
-  Modal,
-  ModalActions,
-  ModalContent,
-  ModalTitle
-} from "@hv/uikit-react-core/dist/Modal";
+  HvModal,
+  HvModalActions,
+  HvModalContent,
+  HvModalTitle
+} from "@hv/uikit-react-core/dist";
 
 const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);
@@ -29,11 +29,11 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   return (
     <div>
       <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
         {actions}
-      </Modal>
+      </HvModal>
     </div>
   );
 };
@@ -42,96 +42,96 @@ export default (
   <div>
     <SimpleModal
       buttonMessage="default"
-      title={<ModalTitle variant="default">Are you sure?</ModalTitle>}
+      title={<HvModalTitle variant="default">Are you sure?</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Switch anyway</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
     <p />
     <SimpleModal
       buttonMessage="info"
-      title={<ModalTitle variant="info">Are you sure?</ModalTitle>}
+      title={<HvModalTitle variant="info">Are you sure?</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Switch anyway</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
     <p />
     <SimpleModal
       buttonMessage="success"
-      title={<ModalTitle variant="success">Are you sure?</ModalTitle>}
+      title={<HvModalTitle variant="success">Are you sure?</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Switch anyway</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
     <p />
     <SimpleModal
       buttonMessage="warning"
-      title={<ModalTitle variant="warning">Are you sure?</ModalTitle>}
+      title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Switch anyway</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
     <p />
     <SimpleModal
       buttonMessage="error"
-      title={<ModalTitle variant="error">Are you sure?</ModalTitle>}
+      title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
       content={(
-        <ModalContent>
+        <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
-        </ModalContent>
+        </HvModalContent>
 )}
       actions={(
-        <ModalActions>
+        <HvModalActions>
           <Button colorType="secondary" onClick={() => {}}>
             Cancel
           </Button>
           <Button>Switch anyway</Button>
-        </ModalActions>
+        </HvModalActions>
 )}
     />
   </div>

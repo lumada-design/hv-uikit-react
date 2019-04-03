@@ -2,17 +2,18 @@
   "name": "@hv/uikit-react-doc",
   "version": "0.3.0",
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
-  "license": "LicenseRef-LICENSE",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
+  "license": "Apache-2.0",
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
   "repository": {
     "type": "git",
-    "url": "https://10.76.48.133/hv-design-system/ui/react"
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "doc": "start-storybook -p 6006",
-    "doc:build": "build-storybook",
+    "dev": "start-storybook -p 6006",
+    "doc": "build-storybook",
     "lint": "eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",
     "lint:jenkins": "eslint -f checkstyle . > eslint.xml",
@@ -23,26 +24,26 @@
     "lint"
   ],
   "dependencies": {
-    "@hv-ui/icons": "latest",
-    "@hv-ui/themes": "latest",
+    "@hv/uikit-common-themes": "latest",
     "@hv/uikit-react-core": "0.3.0",
     "@hv/uikit-react-lab": "0.3.0",
+    "@hv/uikit-react-icons": "0.3.0",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "3.0.2",
     "classnames": "2.2.6",
-    "moment": "^2.24.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-google-charts": "^3.0.11",
-    "react-syntax-highlighter": "^10.2.1"
+    "moment": "2.24.0",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-google-charts": "3.0.11",
+    "react-syntax-highlighter": "10.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-transform-regenerator": "^7.4.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/core": "7.4.0",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-transform-regenerator": "7.4.0",
+    "@babel/plugin-transform-runtime": "7.4.0",
+    "@babel/preset-env": "7.4.2",
     "@babel/preset-react": "7.0.0",
     "@storybook/addon-actions": "4.1.16",
     "@storybook/addons": "4.1.16",
@@ -50,7 +51,7 @@
     "@storybook/react": "4.1.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "8.0.5",
     "babel-plugin-module-resolver": "3.2.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "17.1.0",
@@ -60,9 +61,9 @@
     "eslint-plugin-license-header": "0.1.2",
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "7.12.4",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "1.2.2",
     "prettier": "1.16.4",
     "raw-loader": "1.0.0",
-    "react-docgen": "^4.1.0"
+    "react-docgen": "4.1.0"
   }
 }

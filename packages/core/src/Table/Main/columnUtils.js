@@ -18,8 +18,8 @@ import React from "react";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 
-import AngleDown from "@hv-ui/icons/core/icons/DropDown.XS";
-import AngleUp from "@hv-ui/icons/core/icons/DropUp.XS";
+import AngleDown from "@hv/uikit-react-icons/dist/DropDown.XS";
+import AngleUp from "@hv/uikit-react-icons/dist/DropUp.XS";
 
 import { buildLink } from "./addins";
 

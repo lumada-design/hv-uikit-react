@@ -3,14 +3,6 @@
   "plugins": [
     "@babel/plugin-transform-regenerator",
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-runtime",
-    [
-      "module-resolver",
-      {
-        "alias": {
-          "@hv/uikit-react-lab": "./src"
-        }
-      }
-    ]
+    "@babel/plugin-transform-runtime"
   ]
 }

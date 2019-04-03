@@ -15,7 +15,7 @@
  */
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import theme from "@hv-ui/themes/dist/theme.json";
+import theme from "@hv/uikit-common-themes/dist/theme";
 import muiAppBar from "./overrides/muiAppBar";
 import muiToolbar from "./overrides/muiToolbar";
 import typography from "./typography";

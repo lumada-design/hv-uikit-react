@@ -2,7 +2,8 @@
   "name": "@hv/uikit-react-core",
   "version": "0.3.0",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
-  "license": "LicenseRef-LICENSE",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
+  "license": "Apache-2.0",
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
@@ -10,7 +11,7 @@
   "module": "dist/index.es.js",
   "repository": {
     "type": "git",
-    "url": "https://10.76.48.133/hv-design-system/ui/react.git"
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
     "dev": "npm-run-all clean -p dev:*",
@@ -36,35 +37,35 @@
     "lint"
   ],
   "dependencies": {
-    "@hv-ui/icons": "latest",
-    "@hv-ui/themes": "latest",
+    "@hv/uikit-common-themes": "latest",
+    "@hv/uikit-react-icons": "0.3.0",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "3.0.2",
     "classnames": "2.2.6",
     "deep-diff": "1.0.2",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme": "3.9.0",
+    "enzyme-adapter-react-16": "1.11.2",
     "lodash": "4.17.11",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-jss": "8.6.1",
-    "react-select": "^2.4.2",
-    "react-table": "^6.9.2",
+    "react-select": "2.3.0",
+    "react-table": "6.8.6",
     "react-table-hoc-fixed-columns": "1.0.6"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-transform-regenerator": "^7.4.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/core": "7.4.0",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-transform-regenerator": "7.4.0",
+    "@babel/plugin-transform-runtime": "7.4.0",
+    "@babel/preset-env": "7.4.2",
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "8.0.5",
     "babel-plugin-module-resolver": "3.2.0",
     "cash-mv": "0.2.0",
     "copyfiles": "2.1.0",
@@ -79,10 +80,10 @@
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "7.12.4",
     "jest": "23.6.0",
-    "jest-junit": "^6.3.0",
+    "jest-junit": "6.3.0",
     "jss-snapshot-serializer": "1.0.0",
     "npm-run-all": "4.1.5",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "1.2.2",
     "prettier": "1.16.4"
   },
   "files": [
