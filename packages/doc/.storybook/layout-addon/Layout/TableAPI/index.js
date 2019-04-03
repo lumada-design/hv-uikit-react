@@ -16,6 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import Tabs from "./Tabs";
+import TableAPI from "./TableAPI";
 
-export default withStyles(styles, { withTheme: true })(Tabs);
+export default withStyles(styles, { withTheme: true })(TableAPI);

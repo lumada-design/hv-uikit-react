@@ -14,8 +14,24 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Tabs from "./Tabs";
+const styles = theme => ({
+  table: {
+    ...theme.hv.typography.normalText,
+    fontSie: 1,
+    borderCollapse: "collapse",
+    "& tr": {
+    },
+    "& th": {
+      padding: "10px",
+      textAlign: "left",
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+    },
+    "& td": {
+      padding: "10px",
+      minWidth:"150px",
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    }
+  }
+});
 
-export default withStyles(styles, { withTheme: true })(Tabs);
+export default styles;

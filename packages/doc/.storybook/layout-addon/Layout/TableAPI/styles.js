@@ -15,27 +15,34 @@
  */
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  tabsRoot: {
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
-  },
-  tabsIndicator: {
-    backgroundColor: "#1890ff"
-  },
-  tabRoot: {
-    textTransform: "initial",
-    marginRight: theme.spacing.unit * 4,
-    "&:hover": {
-      opacity: 1
+  table: {
+    ...theme.hv.typography.normalText,
+    fontSie: 1,
+    borderCollapse: "collapse",
+    "& tr": {},
+    "& th": {
+      padding: "10px",
+      textAlign: "left",
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
     },
-    "&$tabSelected": {},
-    "&:focus": {}
+    "& td": {
+      padding: "10px",
+      minWidth: "150px",
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    }
   },
-  tabSelected: {},
-  props: {
-    marginTop: 20
+  list: {
+    paddingLeft: "10px"
+  },
+  shape: {
+    listStyleType: "none",
+    paddingInlineStart: "10px",
+    margin: 0
+  },
+  enum: {
+    listStyleType: "none",
+    paddingLeft: "10px",
+    margin: 0
   }
 });
 

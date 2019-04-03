@@ -1,6 +1,6 @@
 import React from "react";
 import { makeDecorator } from "@storybook/addons";
-import Layout from "./Layout";
+import Layout from "./Layout/Main";
 
 const withLayout = makeDecorator({
   name: "withLayout",
