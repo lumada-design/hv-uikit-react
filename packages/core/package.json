@@ -1,0 +1,94 @@
+{
+  "name": "@hv/uikit-react-core",
+  "version": "0.3.0",
+  "description": "A collection of React components for the Hitachi Vantara's Design System.",
+  "license": "LicenseRef-LICENSE",
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://10.76.48.133/hv-design-system/ui/react.git"
+  },
+  "scripts": {
+    "dev": "npm-run-all clean -p dev:*",
+    "dev:watch": "watch \"npm run build\" src",
+    "build": "npm-run-all clean build:*",
+    "build:copy": "copyfiles -f src/index.js dist && mv dist/index.js dist/index.es.js",
+    "build:babel": "npx babel src -d dist --source-maps --copy-files",
+    "build:clean": "npx del dist/**/tests",
+    "clean": "npx del dist",
+    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
+    "lint:fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",
+    "lint:jenkins": "eslint -f checkstyle . > eslint.xml",
+    "test": "jest -c config/jest-config.js --coverage",
+    "test:watch": "jest -c config/jest-config.js --watch",
+    "test:update": "jest -c ./config/jest-config.js --u",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "prepublish": "npm run build",
+    "postpublish": "npm run clean",
+    "link": "npm link"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
+  "dependencies": {
+    "@hv-ui/icons": "latest",
+    "@hv-ui/themes": "latest",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "3.0.2",
+    "classnames": "2.2.6",
+    "deep-diff": "1.0.2",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "lodash": "4.17.11",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-jss": "8.6.1",
+    "react-select": "^2.4.2",
+    "react-table": "^6.9.2",
+    "react-table-hoc-fixed-columns": "1.0.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-regenerator": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "3.2.0",
+    "cash-mv": "0.2.0",
+    "copyfiles": "2.1.0",
+    "del-cli": "1.1.0",
+    "enzyme-to-json": "3.3.5",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "2.10.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-license-header": "0.1.2",
+    "eslint-plugin-prettier": "2.7.0",
+    "eslint-plugin-react": "7.12.4",
+    "jest": "23.6.0",
+    "jest-junit": "^6.3.0",
+    "jss-snapshot-serializer": "1.0.0",
+    "npm-run-all": "4.1.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "1.16.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

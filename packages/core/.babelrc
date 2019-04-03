@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-transform-regenerator",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@hv/uikit-react-core": "./src"
+        }
+      }
+    ]
+  ]
+}
