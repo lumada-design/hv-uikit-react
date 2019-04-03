@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                expression { !params.skipDeploy }
+                expression { !params.skipDeploy && !env.CHANGE_ID }
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
