@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
 
 import Dialog from "@material-ui/core/Dialog";
 
-import Close16 from "@hv/uikit-react-icons/dist/Close.S";
+import Close16 from "@hv/uikit-react-icons/Close.S";
 import Button from "../../Button";
 
 const style = {

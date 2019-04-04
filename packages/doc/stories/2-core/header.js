@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvHeader from "@hv/uikit-react-core/dist/Header";
+import HvHeader from "@hv/uikit-react-core/Header";
 
 storiesOf("Core", module).add("Header", () => <HvHeader />, {
   title: "Header",
   description:
     "A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed. Banners should be displayed at the top of the screen, below a top app bar.",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvHeader from '@hv/uikit-react-core/dist/Header'",
+  usage: "import HvHeader from '@hv/uikit-react-core/Header'",
   examples: [
     {
       title: "Variant 1",

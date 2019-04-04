@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { HvButton, buttonTypes, HvLink } from "@hv/uikit-react-core/dist";
+import { HvButton, buttonTypes, HvLink } from "@hv/uikit-react-core";
 
 const ActionsList = ({ classes, eventId, dismiss, close }) => (
   <div className={classes.root}>

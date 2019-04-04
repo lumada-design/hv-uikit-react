@@ -20,7 +20,7 @@ import Head from "next/head";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import JssProvider from "react-jss/lib/JssProvider";
 import getPageContext from "../src/getPageContext";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import HvProvider from "@hv/uikit-react-core/Provider";
 
 class MyApp extends App {
   constructor() {

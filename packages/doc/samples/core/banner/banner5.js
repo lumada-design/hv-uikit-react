@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvBanner from "@hv/uikit-react-core/dist/Banner";
+import HvBanner from "@hv/uikit-react-core/Banner";
 import Button from "@material-ui/core/Button";
 
 class SimpleBanner extends React.Component {

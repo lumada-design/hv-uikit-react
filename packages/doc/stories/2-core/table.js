@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTable from "@hv/uikit-react-core/dist/Table/Main/Main";
+import HvTable from "@hv/uikit-react-core/Table/Main/Main";
 // We are importating the raw table because the table is wrapped inside 2 HOC
 // The Plugin generating the docs can't reach the documentation because the HOC are hiding it
 
@@ -29,7 +29,7 @@ storiesOf("Core", module).add(
     title: "Table",
     description: "A Table visualization used to show data",
     designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-    usage: "import HvTable from '@hv/uikit-react-core/dist/Table'",
+    usage: "import HvTable from '@hv/uikit-react-core/Table'",
     examples: [
       {
         title: "Simple Table",

@@ -21,7 +21,7 @@ import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import ListItem from "@material-ui/core/ListItem";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import HvProvider from "@hv/uikit-react-core/Provider";
 
 import NavigationAnchorsWithStyles from "../index";
 import NavigationAnchors from "../NavigationAnchors";

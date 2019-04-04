@@ -4,7 +4,7 @@
   "command": {
     "publish": {
       "npmClient": "npm",
-      "registry": "https://nexus3.pentaho.com/repository/private-npm-release/",
+      "registry": "https://nexus.pentaho.org/repository/public-npm-release/",
       "conventionalCommits": true
     }
   }

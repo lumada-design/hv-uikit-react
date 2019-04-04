@@ -16,7 +16,7 @@
 
 import React from "react";
 import classNames from "classnames";
-import HvLink from "@hv/uikit-react-core/dist/Link";
+import HvLink from "@hv/uikit-react-core/Link";
 import Examples from "../Examples";
 import Tabs from "../Tabs";
 

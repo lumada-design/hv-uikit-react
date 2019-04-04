@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvCard from "@hv/uikit-react-core/dist/Card";
+import HvCard from "@hv/uikit-react-core/Card";
 import Typography from "@material-ui/core/Typography";
 import compressor from "./resources/compressor.png";
 

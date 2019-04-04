@@ -21,12 +21,12 @@ import {
   HvModalTitle,
   HvModalContent,
   HvModalActions
-} from "@hv/uikit-react-core/dist";
+} from "@hv/uikit-react-core";
 import { Typography } from "@material-ui/core";
-import HvTable from "@hv/uikit-react-core/dist/Table";
-import TextArea from "@hv/uikit-react-core/dist/TextArea";
+import HvTable from "@hv/uikit-react-core/Table";
+import TextArea from "@hv/uikit-react-core/TextArea";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Input from "@hv/uikit-react-core/dist/Input";
+import Input from "@hv/uikit-react-core/Input";
 
 const getColumns = () => [
   {

@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvBreadcrumb from "@hv/uikit-react-core/dist/BreadCrumb";
+import HvBreadcrumb from "@hv/uikit-react-core/BreadCrumb";
 
 storiesOf("Core", module).add("BreadCrumb", () => <HvBreadcrumb />, {
   title: "BreadCrumb",
   description:
     "A breadcrumb is a graphical control element frequently used as a navigational aid in user interfaces and on web pages. It allows users to keep track and maintain awareness of their locations within programs, documents, or websites. " +
     "The component allows to receive an url that is decompose in the breadcrumb or a list of object (label and path)",
-  usage: "import HvBreadCrumb from '@hv/uikit-react-core/dist/BreadCrumb'",
+  usage: "import HvBreadCrumb from '@hv/uikit-react-core/BreadCrumb'",
   examples: [
     {
       title: "1. with all paths visible",

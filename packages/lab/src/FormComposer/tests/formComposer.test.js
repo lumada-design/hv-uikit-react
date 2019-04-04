@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import HvProvider from "@hv/uikit-react-core/Provider";
 
 import FormComposerWithStyles from "../index";
 import FormComposer from "../FormComposer";

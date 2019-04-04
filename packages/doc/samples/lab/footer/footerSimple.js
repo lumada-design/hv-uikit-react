@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import HvFooter from "@hv/uikit-react-lab/dist/Footer";
+import HvFooter from "@hv/uikit-react-lab/Footer";
 
 export default <HvFooter />;

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
-import Level3Alert16 from "@hv/uikit-react-icons/dist/Level3.S";
-import Level416Color from "@hv/uikit-react-icons/dist/Level4.S";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
+import Level0Success16Color from "@hv/uikit-react-icons/Level0.S";
+import Level3Alert16 from "@hv/uikit-react-icons/Level3.S";
+import Level416Color from "@hv/uikit-react-icons/Level4.S";
+import Level5Unsuccess16Color from "@hv/uikit-react-icons/Level5.S";
 import theme from "@hv/uikit-common-themes/dist/theme";
 import React from "react";
 

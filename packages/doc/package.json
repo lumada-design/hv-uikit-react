@@ -12,7 +12,7 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "start-storybook -p 6006",
+    "dev": "start-storybook -p 9001",
     "doc": "build-storybook",
     "lint": "eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",

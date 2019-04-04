@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import HvDatePicker from "@hv/uikit-react-lab/dist/DatePicker";
+import HvDatePicker from "@hv/uikit-react-lab/DatePicker";
 
 export default <HvDatePicker />;

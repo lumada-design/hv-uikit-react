@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { HvModal } from "@hv/uikit-react-core/dist/Modal";
+import { HvModal } from "@hv/uikit-react-core/Modal";
 
 storiesOf("Core/modal", module).add("HvModal", () => <HvModal />, {
   title: "HvModal",
   description:
     "The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else. It is created by the composition of ModalTitle, ModalContent and ModalActions, passed as child elements.",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import { HvModal } from '@hv/uikit-react-core/dist/Modal'",
+  usage: "import { HvModal } from '@hv/uikit-react-core/Modal'",
   examples: [
     {
       title: "with text",
