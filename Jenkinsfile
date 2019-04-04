@@ -67,13 +67,13 @@ pipeline {
         always {
             script {
                 if ( currentBuild.currentResult == "SUCCESS" ) {
-                    slackSend channel: "${channel}", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
+                    slackSend channel: "${params.channel}", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
                 }
                 else if( currentBuild.currentResult == "UNSTABLE" ) { 
-                    slackSend channel: "${channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
+                    slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
                 }
                 else { 
-                    slackSend channel: "${channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
+                    slackSend channel: "${params.channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
             cleanWs()
