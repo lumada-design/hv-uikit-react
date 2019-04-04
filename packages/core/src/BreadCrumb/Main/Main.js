@@ -130,7 +130,7 @@ const pathWithSubMenu = (classes, useRouter, listRoute, maxVisible) => {
  */
 const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
-  let listPath = listRoute;
+  let listPath = listRoute.slice();
 
   // build the listPath object list
   if (!isNil(url)) {

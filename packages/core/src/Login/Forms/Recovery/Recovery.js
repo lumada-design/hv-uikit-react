@@ -74,13 +74,23 @@ class Recovery extends React.Component {
   };
 
   render() {
-    const { classes, onClick, okRecoveryIcon } = this.props;
+    const {
+      classes,
+      onClick,
+      okRecoveryIcon,
+      recoveryTitle,
+      messageToRecover,
+      messageAfterRecover,
+      recoveryInputLabel,
+      recoveryPlaceholder,
+      recoveryErrorMessage
+    } = this.props;
     const { isRecovering, recoverStatus } = this.state;
 
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
         <Typography className={classes.title} variant="h3">
-          {"Recover Credentials"}
+          {recoveryTitle}
         </Typography>
 
         <div className={classes.messageContainer}>
@@ -89,13 +99,10 @@ class Recovery extends React.Component {
               iconElement={okRecoveryIcon}
               icon={classes.iconError}
               showMessage={classes.showOkMessage}
-              message="The instructions to recover your credentials were sent."
+              message={messageAfterRecover}
             />
           ) : (
-            <p className={classes.instructions}>
-              You will receive an email with instructions to recover your
-              credentials.
-            </p>
+            <p className={classes.instructions}>{messageToRecover}</p>
           )}
         </div>
 
@@ -108,9 +115,7 @@ class Recovery extends React.Component {
             password={false}
             onChange={this.handleInputChange()}
             externalWarningTextOverride={
-              recoverStatus === "error"
-                ? "The email you've entered doesn't match any account"
-                : null
+              recoverStatus === "error" ? recoveryErrorMessage : null
             }
           />
         </div>
@@ -160,7 +165,31 @@ Recovery.propTypes = {
   /**
    * Icon to be presented when the recovery occurs successfully.
    */
-  okRecoveryIcon: PropTypes.node
+  okRecoveryIcon: PropTypes.node,
+  /**
+   * Recovery title.
+   */
+  recoveryTitle: PropTypes.string.isRequired,
+  /**
+   * Message to recover.
+   */
+  messageToRecover: PropTypes.string.isRequired,
+  /**
+   * Message shown after recover.
+   */
+  messageAfterRecover: PropTypes.string.isRequired,
+  /**
+   * Recovery input label.
+   */
+  recoveryInputLabel: PropTypes.string.isRequired,
+  /**
+   * Recovery placeholder.
+   */
+  recoveryPlaceholder: PropTypes.string.isRequired,
+  /**
+   * Message shown when an error occurs.
+   */
+  recoveryErrorMessage: PropTypes.string.isRequired
 };
 
 Recovery.defaultProps = {

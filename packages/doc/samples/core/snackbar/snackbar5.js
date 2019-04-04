@@ -31,7 +31,7 @@ const actionComponent = (
       letterSpacing: "0.02em",
       lineHeight: "20px",
       fontWeight: "600",
-      "textDecoration": "none"
+      textDecoration: "none"
     }}
   >
     Event

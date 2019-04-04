@@ -31,7 +31,7 @@ const styles = theme => ({
     overflow: "auto"
   },
   characterCounter: {
-    textAlign: "end",
+    textAlign: "right",
     paddingTop: `${theme.hv.spacing.xs}px`,
     minWidth: "150px",
     maxWidth: "610px"

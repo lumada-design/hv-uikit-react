@@ -15,7 +15,7 @@
  */
 
 const styles = theme => ({
-  root:{
+  root: {
     position: "relative",
     zIndex: 10
   },
@@ -43,14 +43,14 @@ const styles = theme => ({
     position: "absolute",
     whiteSpace: "nowrap",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    top: 32,
-    zIndex:-1
+    top: `${theme.hv.spacing.md}px`,
+    zIndex: -1
   },
   right: { justifyContent: "flex-start" },
   center: { justifyContent: "center" },
-  left: { justifyContent: "flex-end"},
-  rightPx: { left:"0px" },
-  leftPx: {  right:"0px" }
+  left: { justifyContent: "flex-end" },
+  rightPx: { left: "0px" },
+  leftPx: { right: "0px" }
 });
 
 export default styles;

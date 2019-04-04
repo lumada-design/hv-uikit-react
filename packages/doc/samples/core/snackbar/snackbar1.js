@@ -84,6 +84,4 @@ export default (
       <SimpleSnackbar message="error" variant="error" showIcon />
     </div>
   </div>
-
-  // <SimpleSnackbar message="Click Me" variant="default" showIcon />
 );

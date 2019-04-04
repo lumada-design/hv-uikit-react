@@ -19,8 +19,7 @@ const styles = theme => ({
     width: "310px",
     minHeight: "52px",
     maxHeight: "92px",
-    padding: 0,
-    overflow: "hidden"
+    padding: 0
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8
@@ -37,25 +36,25 @@ const styles = theme => ({
     maxHeight: "32px",
     minWidth: "32px",
     minHeight: "32px",
-    alignSelf: "start"
+    alignSelf: "start",
+    display: "table-cell"
   },
   message: {
     padding: 0
   },
   messageText: {
     ...theme.typography.body1,
-    wordBreak: "break-all",
-    maxHeight: "80px",
-    overflow: "hidden",
-    display: "-webkit-box",
-    "-webkit-line-clamp": 3,
-    "-webkit-box-orient": "vertical"
+    maxHeight: "80px"
   },
   messageWithoutIcon: {
     paddingLeft: `${theme.hv.spacing.sm}px`
   },
   messageWithoutAction: {
     paddingRight: `${theme.hv.spacing.sm}px`
+  },
+  containerAlign: {
+    display: "table-cell",
+    verticalAlign: "middle"
   },
   action: {
     marginRight: `${theme.hv.spacing.sm}px`,
@@ -64,9 +63,10 @@ const styles = theme => ({
     minWidth: "fit-content"
   },
   messageSpan: {
-    display: "flex",
+    display: "table",
     alignItems: "center",
-    margin: `${theme.hv.spacing.xs}px 0`
+    margin: `${theme.hv.spacing.xs}px 0`,
+    minHeight: "32px"
   }
 });
 

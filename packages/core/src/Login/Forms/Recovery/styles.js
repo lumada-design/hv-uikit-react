@@ -19,8 +19,9 @@ const styles = theme => ({
     position: "absolute",
     width: "310px",
     height: "100%",
-    margin: 0,
-    padding: 0
+    margin: "0px 0px 0px -155px",
+    padding: 0,
+    left: "50%"
   },
   title: {
     display: "flex",

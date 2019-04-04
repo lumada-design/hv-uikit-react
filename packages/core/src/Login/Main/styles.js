@@ -35,7 +35,6 @@ const styles = theme => ({
     }
   },
   formContainer: {
-    display: "flex",
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
