@@ -43,6 +43,8 @@ const writeFile = (processedSVG, fileName) => {
       }
     }
   });
+
+  fs.appendFile(path.resolve(process.cwd(), outputPath, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
 };
 
 const runUtil = (fileToRead, fileToWrite) => {
@@ -178,6 +180,8 @@ if (args.example) {
 fs.mkdir(outputPath, { recursive: true }, err => {
   if (err) throw err;
 });
+
+fs.writeFile(path.resolve(process.cwd(), outputPath, `index.js`), "", () => {});
 
 // Main entry point
 if (firstArg === "dir") {

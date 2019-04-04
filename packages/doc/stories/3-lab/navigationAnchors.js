@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvNavigationAnchors from "@hv/uikit-react-lab/dist/NavigationAnchors";
+import HvNavigationAnchors from "@hv/uikit-react-lab/NavigationAnchors";
 
 storiesOf("Lab", module).add("Navigation Anchors", () => <HvNavigationAnchors />, {
   title: "Navigation anchors",
   description:
     "A navigation component to help in changing views, still in development",
-  usage: "import HvNavigationAnchors from '@hv/uikit-react-core/dist/NavigationAnchors'",
+  usage: "import HvNavigationAnchors from '@hv/uikit-react-core/NavigationAnchors'",
   examples: [
     {
       title: "Simple navigation anchors",

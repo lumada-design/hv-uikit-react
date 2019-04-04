@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvCard from "@hv/uikit-react-core/dist/Card";
+import HvCard from "@hv/uikit-react-core/Card";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",

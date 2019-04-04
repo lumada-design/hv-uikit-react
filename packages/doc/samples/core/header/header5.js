@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import HvHeader from "@hv/uikit-react-core/dist/Header";
+import HvHeader from "@hv/uikit-react-core/Header";
 import HitachiLogo from "./resources/hitachi";
 import photo from "./resources/user.png";
 

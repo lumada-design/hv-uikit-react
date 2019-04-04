@@ -19,9 +19,9 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import theme from "@hv/uikit-common-themes/dist/theme";
 
-import Success from "@hv/uikit-react-icons/dist/Level0.S";
-import Close from "@hv/uikit-react-icons/dist/Close.S";
-import Unsuccess from "@hv/uikit-react-icons/dist/Level5.S";
+import Success from "@hv/uikit-react-icons/Level0.S";
+import Close from "@hv/uikit-react-icons/Close.S";
+import Unsuccess from "@hv/uikit-react-icons/Level5.S";
 
 import validationStates from "./validationStates";
 

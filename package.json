@@ -20,7 +20,7 @@
     "doc": "lerna run doc",
     "lint": "lerna run lint --parallel",
     "lint:jenkins": "lerna run lint:jenkins",
-    "test": "lerna run test",
+    "test": "lerna run test --parallel",
     "link": "lerna run link",
     "publish:prerelease": "lerna publish prerelease --yes",
     "publish:preminor": "lerna publish preminor --yes --force-publish=*",

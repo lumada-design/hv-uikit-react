@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvInput from "@hv/uikit-react-core/dist/Input";
+import HvInput from "@hv/uikit-react-core/Input";
 
 const inputTextConfiguration = {
   placeholder: "Insert text",

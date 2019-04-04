@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvEmptyState from "@hv/uikit-react-lab/dist/EmptyState";
+import HvEmptyState from "@hv/uikit-react-lab/EmptyState";
 
 storiesOf("Lab", module).add("EmptyState", () => <HvEmptyState />, {
   title: "EmptyState",
   description:
     "A splash screen component for information, still in development",
-  usage: "import HvEmptyState from '@hv/uikit-react-core/dist/EmptyState'",
+  usage: "import HvEmptyState from '@hv/uikit-react-core/EmptyState'",
   examples: [
     {
       title: "Simple empty state",

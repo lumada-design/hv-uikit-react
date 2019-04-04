@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvSlider from "@hv/uikit-react-lab/dist/Slider";
+import HvSlider from "@hv/uikit-react-lab/Slider";
 
 const threeKnobFixedProperties = [
   {

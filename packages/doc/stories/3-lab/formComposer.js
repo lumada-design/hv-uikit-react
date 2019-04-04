@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
+import HvFormComposer from "@hv/uikit-react-lab/FormComposer";
 
 storiesOf("Lab", module).add("FormComposer", () => <HvFormComposer />, {
   title: "FormComposer",
   description:
     "A form composer component used to create a form dynamically",
-  usage: "import HvFormComposer from '@hv/uikit-react-core/dist/FormComposer'",
+  usage: "import HvFormComposer from '@hv/uikit-react-core/FormComposer'",
   examples: [
     {
       title: "Simple form composer",

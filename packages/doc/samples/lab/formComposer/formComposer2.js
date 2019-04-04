@@ -16,10 +16,10 @@
 
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import HvInput from "@hv/uikit-react-core/dist/Input";
-import HvButton from "@hv/uikit-react-core/dist/Button";
-import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
-import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
+import HvInput from "@hv/uikit-react-core/Input";
+import HvButton from "@hv/uikit-react-core/Button";
+import HvFormComposer from "@hv/uikit-react-lab/FormComposer";
+import HvDropdown from "@hv/uikit-react-core/Dropdown";
 
 
 const inputTextConfiguration = {

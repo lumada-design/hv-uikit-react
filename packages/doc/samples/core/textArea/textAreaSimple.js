@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
+import HvTextArea from "@hv/uikit-react-core/TextArea";
 
 export default <HvTextArea />;

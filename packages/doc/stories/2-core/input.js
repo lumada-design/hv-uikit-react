@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvInput from "@hv/uikit-react-core/dist/Input";
+import HvInput from "@hv/uikit-react-core/Input";
 
 storiesOf("Core", module).add("Input", () => <HvInput />, {
   title: "Input box",
   description:
     "A input box to introduce text with clear buttons, info messages, default validations, and custom validations",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvInput from '@hv/uikit-react-core/dist/Input'",
+  usage: "import HvInput from '@hv/uikit-react-core/Input'",
   examples: [
     {
       title: "Simple input",

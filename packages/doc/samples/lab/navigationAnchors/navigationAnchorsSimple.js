@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvNavigationAnchors from "@hv/uikit-react-lab/dist/NavigationAnchors";
+import HvNavigationAnchors from "@hv/uikit-react-lab/NavigationAnchors";
 
 const options = [
   {

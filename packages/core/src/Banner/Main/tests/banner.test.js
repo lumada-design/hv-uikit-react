@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
+import Level5Unsuccess16Color from "@hv/uikit-react-icons/Level5.S";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../../BannerWrapper/BannerContentWrapper";
 import BannerWithStyles from "../..";

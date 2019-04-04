@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvLogin from "@hv/uikit-react-core/dist/Login";
+import HvLogin from "@hv/uikit-react-core/Login";
 
 
 storiesOf("Core", module).add("Login", () => <HvLogin />, {
@@ -24,7 +24,7 @@ storiesOf("Core", module).add("Login", () => <HvLogin />, {
   description:
     "Login form with the capability for recovery of lost credentials.",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import { HvLogin } from '@hv/uikit-react-core/dist/Login'",
+  usage: "import { HvLogin } from '@hv/uikit-react-core/Login'",
   examples: [
     {
       title: "Login with successful requests",

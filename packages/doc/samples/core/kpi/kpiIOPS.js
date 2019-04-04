@@ -16,8 +16,8 @@
 
 import React from "react";
 import { Typography } from "@material-ui/core";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconInvalid from "@hv/uikit-react-icons/dist/Level5.S";
+import HvKpi from "@hv/uikit-react-core/Kpi";
+import IconInvalid from "@hv/uikit-react-icons/Level5.S";
 import IconArrowDown from "./assets/arrow-red-down.svg";
 
 const IOPSKpiTextConfiguration = {

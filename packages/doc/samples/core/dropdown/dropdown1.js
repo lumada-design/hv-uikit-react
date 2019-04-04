@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
+import HvDropdown from "@hv/uikit-react-core/Dropdown";
 
 export default <HvDropdown values={null} />;

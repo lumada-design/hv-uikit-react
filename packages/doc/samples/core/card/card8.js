@@ -15,10 +15,10 @@
  */
 
 import React from "react";
-import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Upload.S";
-import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/Card";
+import Icon from "@hv/uikit-react-icons/Upload.S";
+import HvButton from "@hv/uikit-react-core/Button";
+import MoreOptionsIcon from "@hv/uikit-react-icons/MoreOptionsVertical.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = () => ({

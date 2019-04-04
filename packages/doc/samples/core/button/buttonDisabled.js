@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvButton from "@hv/uikit-react-core/dist/Button";
+import HvButton from "@hv/uikit-react-core/Button";
 
 export default (
   <HvButton
