@@ -18,7 +18,7 @@
 
 2. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel.
 
-3. Fork the project by navigating to the main [repository]((https://10.76.48.133/hv-design-system/hv-ui)) and clicking the **Fork** button.
+3. Fork the project by navigating to the main [repository]((https://github.com/pentaho/hv-uikit-react)) and clicking the **Fork** button.
    
 ## Bugs
 
@@ -65,7 +65,9 @@ If your issue appears to be a bug, and hasn't been reported, open a new issue. H
 
 ## Coding Standards
 
-To ensure consistency throughout the source code, keep these rules in mind as you are working:
+Please follow the coding style of the project. We use eslint, so if possible, enable linting in your editor to get real-time feedback. The linting rules can be run manually with the following command npm run lint.
+
+Finally, when you submit a pull request, they are run again by Jenkins, but hopefully by then your code is already clean!
 
 ### Style Guide
 
@@ -81,7 +83,10 @@ If you decide to not install a linter addon, or cannot, you can run `npm run lin
 
 ## Commit Message Guidelines
 
-Coming soon.
+We have very precise rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use the git commit messages to generate the change log.
+
+More information about this format can be found in https://www.conventionalcommits.org/en/v1.0.0-beta.3/
+
 
 ## Testing
 
