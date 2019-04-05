@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "npm-run-all clean build:*",
-    "build:convert": "node ./src/svgToReact.js dir --input node_modules/@hv/uikit-common-icons/dist/src --output bin --force",
+    "build:convert": "node ./src/svgToReact.js dir --input node_modules/@hv/uikit-common-icons/dist --output bin --force",
     "build:babel": "npx babel bin -d dist --source-maps --copy-files",
     "clean": "npx del-cli dist bin",
     "prepublish": "npm run build",

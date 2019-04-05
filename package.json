@@ -13,24 +13,27 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "clean": "lerna clean --yes",
-    "bootstrap": "lerna bootstrap",
+    "clean": "npm-run-all clean:*",
+    "clean:package_clean": "npx lerna run clean --parallel",
+    "clean:lerna": "npx lerna clean --yes ",
+    "bootstrap": "npx lerna bootstrap",
     "dev": "npm-run-all dev:*",
-    "dev:watch": "lerna run build --scope \"@hv/uikit-react-icons\" --stream",
-    "dev:build": "lerna run dev --parallel",
-    "build": "lerna run build",
-    "doc": "lerna run doc",
-    "lint": "lerna run lint --parallel",
-    "lint:jenkins": "lerna run lint:jenkins",
-    "test": "lerna run test --parallel",
-    "link": "lerna run link",
-    "publish:prerelease": "lerna publish prerelease --yes",
-    "publish:preminor": "lerna publish preminor --yes --force-publish=*",
-    "publish:minor": "lerna publish minor --yes --force-publish=*",
-    "publish:major": "lerna publish major --yes --force-publish=*"
+    "dev:build": "npx lerna run build --scope \"@hv/uikit-react-icons\" --stream",
+    "dev:storybook": "npx lerna run dev --parallel",
+    "build": "npx lerna run build",
+    "doc": "npx lerna run doc",
+    "lint": "npx lerna run lint --parallel",
+    "lint:jenkins": "npx lerna run lint:jenkins",
+    "test": "npx lerna run test --parallel",
+    "link": "npx lerna run link",
+    "publish:prerelease": "npx lerna publish prerelease --yes",
+    "publish:preminor": "npx lerna publish preminor --yes --force-publish=*",
+    "publish:minor": "npx lerna publish minor --yes --force-publish=*",
+    "publish:major": "npx lerna publish major --yes --force-publish=*"
   },
   "dependencies": {
-    "lerna": "3.11.0",
-    "npm-run-all": "4.1.5"
+    "lerna": "3.13.1",
+    "npm-run-all": "4.1.5",
+    "npx": "10.2.0"
   }
 }
