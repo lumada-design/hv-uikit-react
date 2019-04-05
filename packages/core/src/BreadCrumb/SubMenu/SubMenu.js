@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import MoreOptions from "@hv/uikit-react-icons/MoreOptionsHorizontal.S";
+import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal.S";
 import PropTypes from "prop-types";
 import DropDownMenu from "../../DropDownMenu";
 import Link from "../../Link";

@@ -15,12 +15,12 @@
  */
 
 import React from "react";
-import HvCard from "@hv/uikit-react-core/Card";
-import FailureIcon from "@hv/uikit-react-icons/Level5.S";
-import IconInvalid from "@hv/uikit-react-icons/Level2.S";
-import WarningIcon from "@hv/uikit-react-icons/Level4.S";
-import Icon from "@hv/uikit-react-icons/Tool.S";
-import HvKpi from "@hv/uikit-react-core/Kpi";
+import HvCard from "@hv/uikit-react-core/dist/Card";
+import FailureIcon from "@hv/uikit-react-icons/dist/Level5.S";
+import IconInvalid from "@hv/uikit-react-icons/dist/Level2.S";
+import WarningIcon from "@hv/uikit-react-icons/dist/Level4.S";
+import Icon from "@hv/uikit-react-icons/dist/Tool.S";
+import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Typography from "@material-ui/core/Typography";
 import theme from "@hv/uikit-common-themes/dist/theme";
 

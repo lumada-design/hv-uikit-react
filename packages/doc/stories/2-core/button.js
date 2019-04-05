@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvButton from "@hv/uikit-react-core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 
 storiesOf("Core", module).add("Button", () => <HvButton />, {
   title: "Button",
@@ -24,7 +24,7 @@ storiesOf("Core", module).add("Button", () => <HvButton />, {
     "A button refers to a graphical control element that provides the user a simple way to trigger an event",
   designSystemLink:
     "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvButton from '@hv/uikit-react-core/Button'",
+  usage: "import HvButton from '@hv/uikit-react-core/dist/Button'",
   examples: [
     {
       title: "1. Primary",

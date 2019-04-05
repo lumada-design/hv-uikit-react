@@ -15,8 +15,8 @@
  */
 
 import React from "react";
-import HvEmptyState from "@hv/uikit-react-lab/EmptyState";
-import AlertIcon from "@hv/uikit-react-icons/Level3.M";
+import HvEmptyState from "@hv/uikit-react-lab/dist/EmptyState";
+import AlertIcon from "@hv/uikit-react-icons/dist/Level3.M";
 
 export default (
   <HvEmptyState

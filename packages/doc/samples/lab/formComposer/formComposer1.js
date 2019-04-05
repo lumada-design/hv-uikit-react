@@ -17,9 +17,9 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import HvButton from "@hv/uikit-react-core/Button";
-import HvInput from "@hv/uikit-react-core/Input";
-import HvFormComposer from "@hv/uikit-react-lab/FormComposer";
+import HvButton from "@hv/uikit-react-core/dist/Button";
+import HvInput from "@hv/uikit-react-core/dist/Input";
+import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 
 
 const inputTextConfiguration = {

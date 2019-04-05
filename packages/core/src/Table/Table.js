@@ -21,8 +21,8 @@ import "react-table/react-table.css";
 import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import SortAsc from "@hv/uikit-react-icons/SortAscending.XS";
-import SortDesc from "@hv/uikit-react-icons/SortDescending.XS";
+import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
+import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
 import expander from "./expander/expander";
 import {
   appendClassnames,
