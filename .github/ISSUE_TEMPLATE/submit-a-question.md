@@ -3,7 +3,7 @@ name: Submit a question
 about: Request clarifications about something related with this project
 title: "[QUESTION]  "
 labels: question
-assignees: ''
+assignees: diogofscmariano, francisco-guilherme, eliofreitas, tiago-ssantos
 
 ---
 
