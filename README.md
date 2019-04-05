@@ -5,8 +5,8 @@
 
 You have the following options to get UIkit:
 
-- Clone the repo to get all source files including build scripts: `git clone https://10.76.48.133/hv-design-system/ui/react.git`  
-- Install with [npm](https://npmjs.com) any of the available packages:
+- Clone the repo to get all source files including build scripts: `git clone https://github.com/pentaho/hv-uikit-react.git`  
+- Install with [npm](http://nexus.pentaho.org/) any of the available packages:
   - core - ```npm install @hv/uikit-react-core```
   - lab - ```npm install @hv/uikit-react-lab```
   - icons - ```npm install @hv/uikit-react-icons```
@@ -18,10 +18,14 @@ To always have the latest development version of UIkit, even before a release, y
 - Ex: ```npm install @hv/uikit-react-core@latest```
 
 #### npm registry
-Our packages are being published to a private npm registry. If you want to use this project please make sure you have _.npmrc_ config file with the following line:
+Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with the following line:
 
 ```
-registry = http://10.177.178.252:8081/repository/group-npm/
+If you want to use it for UI-KIT dependencies
+@hv:registry=http://nexus.pentaho.org/repository/group-npm/
+
+Of if you want to use it for all dependencies
+registry=http://nexus.pentaho.org/repository/group-npm/
 ```
 #### global link
 ###### *If you want to [link](https://docs.npmjs.com/cli/link.html) your packages globally you need to run this in the first place.*
@@ -34,7 +38,7 @@ It will create a symlink in the global folder {prefix}/lib/node_modules/<package
 
 #### Bootstrap
 
-Bootstrap the packages in the current repo. Installs all of their dependencies and links any cross-dependencies.
+Bootstrap the packages in the current repo. Installs all their dependencies and links any cross-dependencies.
 
 ```bash
 npm run bootstrap
@@ -42,12 +46,11 @@ npm run bootstrap
 
 #### Run dev mode
 
-It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/) where you can see a list of the available components.
+It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
 
 ```bash
 npm run dev
 ```
-
 ### Examples
 
 We provide bootstrap examples for several platforms:
@@ -59,4 +62,4 @@ cd examples
 #### Why monorepo and Lerna?
 Using a single repo reduces overhead from managing dependencies and the burden of writing code across packages.
 
-[Lerna](https://lernajs.io/) tries to ease the management of npm links when dealing with multi package projects hosted in a single repository. It also handles execution of tasks across multiple packages and eases the pain of versioning and publishing.
+[Lerna](https://lernajs.io/) tries to ease the management of npm links when dealing with multi package projects hosted in a single repository. It also handles execution of tasks across many packages and eases the pain of versioning and publishing.
