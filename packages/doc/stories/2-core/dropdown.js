@@ -16,14 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvDropdown from "@hv/uikit-react-core/Dropdown";
+import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
 storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
   title: "Dropdown List",
   description:
     "A drop-down list (abbreviated drop-down; also known as a drop-down menu, drop menu, pull-down list, picklist) is a graphical control element, similar to a list box, that allows the user to choose one value from a list. ",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvDropdown from '@hv/uikit-react-core/Dropdown'",
+  usage: "import HvDropdown from '@hv/uikit-react-core/dist/Dropdown'",
   examples: [
     {
       title: "1. No data and no label",

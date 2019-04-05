@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import Level0 from "@hv/uikit-react-icons/Level0.sema1.S";
-import Level4 from "@hv/uikit-react-icons/Level4.sema5.S";
-import Level5 from "@hv/uikit-react-icons/Level5.sema6.S";
-import Level3 from "@hv/uikit-react-icons/Level3.sema4.S";
+import Level0 from "@hv/uikit-react-icons/dist/Level0.sema1.S";
+import Level4 from "@hv/uikit-react-icons/dist/Level4.sema5.S";
+import Level5 from "@hv/uikit-react-icons/dist/Level5.sema6.S";
+import Level3 from "@hv/uikit-react-icons/dist/Level3.sema4.S";
 import React from "react";
 
 const variantIcon = Object.freeze({

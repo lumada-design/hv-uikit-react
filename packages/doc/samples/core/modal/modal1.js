@@ -21,7 +21,7 @@ import {
   HvModalActions,
   HvModalContent,
   HvModalTitle
-} from "@hv/uikit-react-core";
+} from "@hv/uikit-react-core/dist";
 
 const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);

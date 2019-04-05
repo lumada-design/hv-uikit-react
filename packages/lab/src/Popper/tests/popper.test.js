@@ -21,7 +21,7 @@ import { mount } from "enzyme";
 import Popper from "@material-ui/core/Popper";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
-import HvProvider from "@hv/uikit-react-core/Provider";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 import withPopper from "../withPopper";
 import Content from "../Content";

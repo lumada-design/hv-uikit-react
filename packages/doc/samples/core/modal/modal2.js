@@ -16,13 +16,13 @@
 
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import Unlock from "@hv/uikit-react-icons/Unlock.S";
+import Unlock from "@hv/uikit-react-icons/dist/Unlock.S";
 import {
   HvModal,
   HvModalActions,
   HvModalContent,
   HvModalTitle
-} from "@hv/uikit-react-core";
+} from "@hv/uikit-react-core/dist";
 
 const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);

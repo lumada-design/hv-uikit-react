@@ -1,7 +1,7 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
 import withLayout from "./layout-addon";
-import HvProvider from "@hv/uikit-react-core/Provider";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 const req = require.context("../stories", true, /\.js$/);
 

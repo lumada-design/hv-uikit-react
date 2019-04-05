@@ -16,7 +16,7 @@
 
 import React from "react";
 import Chart from "react-google-charts";
-import HvTable from "@hv/uikit-react-core/Table";
+import HvTable from "@hv/uikit-react-core/dist/Table";
 
 const data = [
   {

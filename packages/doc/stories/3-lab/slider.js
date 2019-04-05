@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvSlider from "@hv/uikit-react-lab/Slider";
+import HvSlider from "@hv/uikit-react-lab/dist/Slider";
 
 storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
   title: "Slider",
@@ -24,7 +24,7 @@ storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
     "Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.",
   designSystemLink:
     "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
-  usage: "import HvSlider from '@hv/uikit-react-lab/Slider'",
+  usage: "import HvSlider from '@hv/uikit-react-lab/dist/Slider'",
   examples: [
     {
       title: "1. Mark in tooltip",

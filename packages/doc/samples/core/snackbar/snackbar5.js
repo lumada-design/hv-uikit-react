@@ -15,10 +15,10 @@
  */
 
 import React from "react";
-import FastForward16 from "@hv/uikit-react-icons/FastForwards.S";
+import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "@hv/uikit-react-core/Snackbar/SnackbarContentWrapper/styles";
-import HvSnackbarContentWrapper from "@hv/uikit-react-core/Snackbar/SnackbarContentWrapper";
+import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
+import HvSnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
 
 const SnackbarContentWrapper = withStyles(styles)(HvSnackbarContentWrapper);
 

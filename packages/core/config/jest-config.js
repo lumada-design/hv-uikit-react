@@ -35,7 +35,7 @@ module.exports = {
       "<rootDir>/config/jest-mocks/cssModule.js",
     ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/config/jest-mocks/image.js",
-    "^@hv/uikit-react-icons(.*)$": "<rootDir>/node_modules/@hv/uikit-react-icons/dist$1"
+    "^@hv/uikit-react-icons(.*)$": "<rootDir>/node_modules/@hv/uikit-react-icons$1"
 
   },
   setupTestFrameworkScriptFile: "<rootDir>/config/test-setup.js",

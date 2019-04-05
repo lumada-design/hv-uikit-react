@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvRadio from "@hv/uikit-react-core/Selectors/RadioButton";
+import HvRadio from "@hv/uikit-react-core/dist/Selectors/RadioButton";
 
 const valueA = "a";
 const valueB = "b";

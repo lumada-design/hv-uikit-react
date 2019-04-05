@@ -23,15 +23,15 @@ module.exports = (baseConfig, env, defaultConfig) => {
               "module-resolver",
               {
                 alias: {
-                  "@hv/uikit-react-core": path.resolve(
+                  "@hv/uikit-react-core/dist": path.resolve(
                     __dirname,
                     "../../core/src"
                   ),
-                  "@hv/uikit-react-lab": path.resolve(
+                  "@hv/uikit-react-lab/dist": path.resolve(
                     __dirname,
                     "../../lab/src"
                   ),
-                  "@hv/uikit-react-icons": path.resolve(
+                  "@hv/uikit-react-icons/dist": path.resolve(
                       __dirname,
                       "../../icons/dist"
                   )

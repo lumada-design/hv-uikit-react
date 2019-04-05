@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/TextArea";
+import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 
 storiesOf("Core", module).add("TextArea", () => <HvTextArea />, {
   title: "Text area",
   description:
     "A text area component to receive large inputs",
-  usage: "import HvTextArea from '@hv/uikit-react-core/TextArea'",
+  usage: "import HvTextArea from '@hv/uikit-react-core/dist/TextArea'",
   examples: [
     {
       title: "1. Simple",

@@ -16,13 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvDatePicker from "@hv/uikit-react-lab/DatePicker";
+import HvDatePicker from "@hv/uikit-react-lab/dist/DatePicker";
 
 storiesOf("Lab", module).add("DatePicker", () => <HvDatePicker />, {
   title: "DatePicker",
   description:
     "A datepicker component used to choose dates, still in development",
-  usage: "import HvDatePicker from '@hv/uikit-react-core/DatePicker'",
+  usage: "import HvDatePicker from '@hv/uikit-react-core/dist/DatePicker'",
   examples: [
     {
       title: "1. Simple",

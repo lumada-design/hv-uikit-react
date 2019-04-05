@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import HvSlider from "@hv/uikit-react-lab/Slider";
+import HvSlider from "@hv/uikit-react-lab/dist/Slider";
 
 const knobPropertiesDefaults = [10, 20, 30, 40, 100];
 
