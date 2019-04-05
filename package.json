@@ -15,7 +15,9 @@
   "scripts": {
     "clean": "lerna clean --yes",
     "bootstrap": "lerna bootstrap",
-    "dev": "lerna run dev --parallel",
+    "dev": "npm-run-all dev:*",
+    "dev:watch": "lerna run build --scope \"@hv/uikit-react-icons\" --stream",
+    "dev:build": "lerna run dev --parallel",
     "build": "lerna run build",
     "doc": "lerna run doc",
     "lint": "lerna run lint --parallel",
@@ -28,6 +30,7 @@
     "publish:major": "lerna publish major --yes --force-publish=*"
   },
   "dependencies": {
-    "lerna": "3.11.0"
+    "lerna": "3.11.0",
+    "npm-run-all": "4.1.5"
   }
 }
