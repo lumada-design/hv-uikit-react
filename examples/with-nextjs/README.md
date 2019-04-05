@@ -2,7 +2,7 @@
 
 ## How to use
 
-Download the example [or clone the repo](https://10.76.48.133/hv-design-system/ui/react):
+Download the example [or clone the repo](https://github.com/pentaho/hv-uikit-react):
 
 Got to example folder:
 ```

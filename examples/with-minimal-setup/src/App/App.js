@@ -15,9 +15,9 @@
  */
 
 import React from "react";
-import Header from "@hv/uikit-react-core/Header";
-import Login from "@hv/uikit-react-core/Login";
-import Footer from "@hv/uikit-react-lab/Footer";
+import Header from "@hv/uikit-react-core/dist/Header";
+import Login from "@hv/uikit-react-core/dist/Login";
+import Footer from "@hv/uikit-react-lab/dist/Footer";
 
 import companyLogo from "./logo.svg";
 import backgroundImage from "./bg.png";

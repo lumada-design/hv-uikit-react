@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hv/uikit-react-core": "file:../../packages/core",
-    "@hv/uikit-react-lab": "file:../../packages/lab",
+    "@hv/uikit-react-core": "latest",
+    "@hv/uikit-react-lab": "latest",
     "@material-ui/core": "^3.5.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
