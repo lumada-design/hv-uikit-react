@@ -20,7 +20,7 @@ import { mount, shallow } from "enzyme";
 import AngleForwards12 from "@hv/uikit-react-icons/DropRight.XS";
 import HvProvider from "../../Provider";
 import BreadcrumbWithStyles from "../index";
-import Breadcrumb from "../Main";
+import Breadcrumb from "../BreadCrumb";
 
 const listRoute = [
   {
@@ -46,7 +46,7 @@ const listRoute = [
 ];
 
 describe("Breadcrumb withStyles", () => {
-  const wrapper = shallow(
+  const wrapper = mount(
     <HvProvider>
       <BreadcrumbWithStyles />
     </HvProvider>

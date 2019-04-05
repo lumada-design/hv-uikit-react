@@ -26,7 +26,7 @@ export { default as HvInput}  from "./Input";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";
-export { HvModal, HvModalTitle, HvModalContent, HvModalActions } from "./Modal";
+export { default as HvModal, HvModalTitle, HvModalContent, HvModalActions } from "./Modal";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvSnackbar } from "./Snackbar";
 export { default as HvTable } from "./Table";

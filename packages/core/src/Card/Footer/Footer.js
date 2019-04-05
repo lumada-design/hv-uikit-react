@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import CardActions from "@material-ui/core/CardActions";
+import Cardactions from "@material-ui/core/CardActions";
 import HvCheckBox from "../../Selectors/CheckBox";
 
 /**
@@ -25,9 +25,9 @@ import HvCheckBox from "../../Selectors/CheckBox";
  *
  * @param {Object} {
  *   classes,
- *   Actions,
+ *   actions,
  *   isSelectable,
- *   onSelect,
+ *   onChange,
  *   checkboxValue,
  *   checkboxSelected,
  *   checkboxIndeterminate,
@@ -37,33 +37,33 @@ import HvCheckBox from "../../Selectors/CheckBox";
  */
 const Footer = ({
   classes,
-  Actions,
+  actions,
   isSelectable,
-  onSelect,
+  onChange,
   checkboxValue,
   checkboxSelected,
   checkboxIndeterminate,
   checkboxLabel,
   ...other
 }) => (
-  <CardActions className={classes.root} {...other}>
+  <Cardactions className={classes.root} {...other}>
     {isSelectable ? (
       <>
         <div className={classes.leftContainer}>
           <HvCheckBox
             value={checkboxValue}
-            onChange={onSelect}
+            onChange={onChange}
             label={checkboxLabel}
             checked={checkboxSelected}
             indeterminate={checkboxIndeterminate}
           />
         </div>
-        <div className={classes.rightContainer}>{Actions}</div>
+        <div className={classes.rightContainer}>{actions}</div>
       </>
     ) : (
-      <div className={classes.leftContainer}>{Actions}</div>
+      <div className={classes.leftContainer}>{actions}</div>
     )}
-  </CardActions>
+  </Cardactions>
 );
 
 Footer.propTypes = {
@@ -85,9 +85,9 @@ Footer.propTypes = {
     rightContainer: PropTypes.string
   }).isRequired,
   /**
-   *  The renderable content inside the Actions slot of the footer.
+   *  The renderable content inside the actions slot of the footer.
    */
-  Actions: PropTypes.node,
+  actions: PropTypes.node,
   /**
    *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
    */
@@ -95,7 +95,7 @@ Footer.propTypes = {
   /**
    *  The function that will be executed when the card is selected.
    */
-  onSelect: PropTypes.func,
+  onChange: PropTypes.func,
   /**
    *  The value the checkbox in the footer will return when selected.
    */
@@ -118,10 +118,10 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   isSelectable: false,
-  onSelect: () => {},
+  onChange: () => {},
   checkboxValue: "",
   checkboxLabel: "",
-  Actions: undefined,
+  actions: undefined,
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined
 };

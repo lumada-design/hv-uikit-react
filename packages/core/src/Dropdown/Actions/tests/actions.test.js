@@ -19,7 +19,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import ActionsWrapper from "../index";
 import Actions from "../Actions";
-import HvButton from "../../../Button/Main/Button";
+import HvButton from "../../../Button";
 
 describe("<Actions />", () => {
   let wrapper;

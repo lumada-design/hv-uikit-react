@@ -25,10 +25,10 @@ const configurationNoMedia = {
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      HeaderTitle={configurationNoMedia.title}
+      headerTitle={configurationNoMedia.title}
       variant="none"
       checkboxValue="value"
-      onSelect={event => console.log(`my value is ${event.target.value}`)}
+      onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>
 );

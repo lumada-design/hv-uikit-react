@@ -55,9 +55,9 @@ export default (
     <HvCard variant="error">
       <CustomMedia mediaPath={leaf} mediaHeight={160} />
       <HvCardFooter
-        Actions={<MultipleActionsWithMediaButtons />}
+        actions={<MultipleActionsWithMediaButtons />}
         isSelectable
-        onSelect={event => console.log(`my value is ${event.target.value}`)}
+        onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </HvCard>
   </div>

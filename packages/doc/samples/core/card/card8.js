@@ -69,9 +69,9 @@ export default (
   <div style={{ width: "500px" }}>
     <HvCard>
       <FooterWithStyles
-        Actions={<MultipleActionsWithMediaButtons />}
+        actions={<MultipleActionsWithMediaButtons />}
         isSelectable
-        onSelect={event => console.log(`my value is ${event.target.value}`)}
+        onChange={event => console.log(`my value is ${event.target.value}`)}
       />
       <HeaderWithStyles HeaderTitle="Asset Avatar L90" Subheader="Compressor" />
     </HvCard>

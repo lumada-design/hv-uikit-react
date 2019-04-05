@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import HvModal from "./Main";
-import HvModalTitle from "./ModalTitle";
-import HvModalContent from "./ModalContent";
-import HvModalActions from "./ModalActions";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Modal from "./Modal";
+import ModalTitle from "./ModalTitle";
+import ModalContent from "./ModalContent";
+import ModalActions from "./ModalActions";
 
-export {
-  HvModal,
-  HvModalTitle,
-  HvModalContent,
-  HvModalActions
-};
+
+export default withStyles(styles, { withTheme: true })(Modal);
+export { ModalTitle as HvModalTitle , ModalContent as HvModalContent, ModalActions as HvModalActions};

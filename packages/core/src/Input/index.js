@@ -15,7 +15,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./Main/styles";
-import Input from "./Main/Input";
+import styles from "./styles";
+import Input from "./Input";
 
 export default withStyles(styles, { withTheme: true })(Input);

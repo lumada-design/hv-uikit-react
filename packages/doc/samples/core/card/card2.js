@@ -171,22 +171,22 @@ const MultipleActionsWithMediaButtons = () => (
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      Icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />}
-      HeaderTitle={configuration.title}
-      Subheader={(
+      icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />}
+      headerTitle={configuration.title}
+      subheader={(
         <div>
           <span style={subtitleLeftStyle}>{configuration.subtitleLeft}</span>
           <span>{configuration.subtitleRight}</span>
         </div>
 )}
-      InnerCardContent={<MultipleActionsWithMedia />}
-      Actions={<MultipleActionsWithMediaButtons />}
+      innerCardContent={<MultipleActionsWithMedia />}
+      actions={<MultipleActionsWithMediaButtons />}
       variant="error"
       isSelectable
       checkboxValue="value"
       mediaPath={leaf}
       mediaHeight={160}
-      onSelect={event => console.log(`my value is ${event.target.value}`)}
+      onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>
 );
