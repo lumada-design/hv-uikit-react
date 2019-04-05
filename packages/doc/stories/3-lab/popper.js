@@ -25,8 +25,8 @@ storiesOf("Lab", module).add("Popper", () => <Content />, {
   usage: "import withPopper from '@hv/uikit-react-core/Popper/withPopper'",
   examples: [
     {
-      title: "Simple popper",
-      description: "basic popper wrapping a component",
+      title: "1. Simple",
+      description: "Basic popper wrapping a component",
       src: "lab/popper/popperSimple.js"
     }
   ]

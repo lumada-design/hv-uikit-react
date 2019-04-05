@@ -84,7 +84,7 @@ const Main = ({
 
 Main.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the header.
+   * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     /**

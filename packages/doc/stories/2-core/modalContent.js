@@ -21,7 +21,7 @@ import HvModalContent from "@hv/uikit-react-core/Modal/ModalContent";
 
 
 storiesOf("Core/modal", module).add("Content", () => <HvModalContent />, {
-  title: "Modal Actions",
+  title: "Modal Content",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvModalContent from '@hv/uikit-react-core/Modal/ModalContent'",
   description:

@@ -100,7 +100,7 @@ HvButton.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     /**
@@ -129,7 +129,7 @@ HvButton.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * If set to `true` the button is disabled and the onClick function will not be called.
+   * If `true` the button is disabled and the onClick function will not be called.
    */
   disabled: PropTypes.bool,
   /**

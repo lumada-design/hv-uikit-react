@@ -20,29 +20,31 @@ import HvButton from "@hv/uikit-react-core/Button";
 
 storiesOf("Core", module).add("Button", () => <HvButton />, {
   title: "Button",
-  description: "Button with click actions",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
+  description:
+    "A button refers to a graphical control element that provides the user a simple way to trigger an event",
+  designSystemLink:
+    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvButton from '@hv/uikit-react-core/Button'",
   examples: [
     {
-      title: "Primary button",
+      title: "1. Primary",
       description: "Primary button with click action",
       src: "core/button/buttonSimple"
     },
     {
-        title: "Disabled button",
-        description: "Disabled button that doesn't allow any interation",
-        src: "core/button/buttonDisabled"
+      title: "2. Disabled",
+      description: "Disabled button that doesn't allow any interation",
+      src: "core/button/buttonDisabled"
     },
     {
-        title: "Secondary button",
-        description: "Secondary button with click action",
-        src: "core/button/buttonSecondary"
+      title: "3. Secondary",
+      description: "Secondary button with click action",
+      src: "core/button/buttonSecondary"
     },
     {
-        title: "Link button",
-        description: "Link button with click action",
-        src: "core/button/buttonLink"
+      title: "4. Link",
+      description: "Link button with click action",
+      src: "core/button/buttonLink"
     }
   ]
 });

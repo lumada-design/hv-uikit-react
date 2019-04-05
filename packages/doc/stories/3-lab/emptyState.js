@@ -25,8 +25,8 @@ storiesOf("Lab", module).add("EmptyState", () => <HvEmptyState />, {
   usage: "import HvEmptyState from '@hv/uikit-react-core/EmptyState'",
   examples: [
     {
-      title: "Simple empty state",
-      description: "basic empty state to provide information",
+      title: "1. Simple",
+      description: "Basic empty state to provide information",
       src: "lab/emptyState/emptyStateSimple.js"
     }
   ]

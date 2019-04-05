@@ -21,28 +21,29 @@ import HvBanner from "@hv/uikit-react-core/Banner";
 storiesOf("Core", module).add("Banner", () => <HvBanner />, {
   title: "Banner",
   description:
-    "A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed. Banners should be displayed at the top of the screen, below a top app bar.",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
+    "A banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner). It requires an user action to close. Banners should appear at the top of the screen, below a top app bar. ",
+  designSystemLink:
+    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvBanner from '@hv/uikit-react-core/Banner'",
   examples: [
     {
-      title: "1. with different variants",
+      title: "1. Different variants",
       src: "core/banner/banner1"
     },
     {
-      title: "2. with custom icon",
+      title: "2. Custom icon",
       src: "core/banner/banner2"
     },
     {
-      title: "3. without icon",
+      title: "3. Without icon",
       src: "core/banner/banner3"
     },
     {
-      title: "4. with actions",
-       src: "core/banner/banner4"
+      title: "4. With actions",
+      src: "core/banner/banner4"
     },
     {
-      title: "5. with message action",
+      title: "5. With message action",
       src: "core/banner/banner5"
     },
     {

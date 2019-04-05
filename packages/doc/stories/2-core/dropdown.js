@@ -26,7 +26,7 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
   usage: "import HvDropdown from '@hv/uikit-react-core/Dropdown'",
   examples: [
     {
-      title: "1. Dropdown with no data and no label",
+      title: "1. No data and no label",
       src: "core/dropdown/dropdown1"
     },
     {
@@ -60,7 +60,7 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
       src: "core/dropdown/dropdown7"
     },
     {
-      title: "8. Disabled dropdown",
+      title: "8. Disabled multi-select dropdown",
       src: "core/dropdown/dropdown8"
     },
     {

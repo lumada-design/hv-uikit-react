@@ -209,7 +209,7 @@ class Main extends React.Component {
 
 Main.propTypes = {
   /**
-   * A Jss Object used to override or extend the component styles.
+   * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.shape({
     /**
@@ -279,7 +279,7 @@ Main.propTypes = {
     })
   ),
   /**
-   * If the ´true´ the dropdown is multiselect if ´false´ the dropdown is single select.
+   * If ´true´ the dropdown is multiselect, if ´false´ the dropdown is single select.
    */
   multiSelect: PropTypes.bool,
   /**
