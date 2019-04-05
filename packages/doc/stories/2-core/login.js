@@ -27,15 +27,15 @@ storiesOf("Core", module).add("Login", () => <HvLogin />, {
   usage: "import { HvLogin } from '@hv/uikit-react-core/Login'",
   examples: [
     {
-      title: "Login with successful requests",
+      title: "1. Successful requests",
       src: "core/login/login1"
     },
     {
-      title: "Login with successful requests",
+      title: "2. unsuccessful requests",
       src: "core/login/login2"
     },
     {
-      title: "Login without Forgot Your Credentials and Remember me",
+      title: "3. without Forgot Your Credentials and Remember me",
       src: "core/login/login3"
     }
   ]

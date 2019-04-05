@@ -26,19 +26,19 @@ storiesOf("Core/modal", module).add("Modal", () => <HvModal />, {
   usage: "import { HvModal } from '@hv/uikit-react-core/Modal'",
   examples: [
     {
-      title: "with text",
+      title: "1. with text",
       description:
         "The modal allow the definition of variants, that alters the presented icon.",
       src: "core/modal/modal1"
     },
     {
-      title: "with custom icon",
+      title: "2. with custom icon",
       description:
         "The standard icon can be replaced by a custom or just removed.",
       src: "core/modal/modal2"
     },
     {
-      title: "with custom content",
+      title: "3. with custom content",
       description: "It is possible to insert any component in the modal",
       src: "core/modal/modal3"
     }

@@ -21,30 +21,30 @@ import HvBreadcrumb from "@hv/uikit-react-core/BreadCrumb";
 storiesOf("Core", module).add("BreadCrumb", () => <HvBreadcrumb />, {
   title: "BreadCrumb",
   description:
-    "A breadcrumb is a graphical control element frequently used as a navigational aid in user interfaces and on web pages. It allows users to keep track and maintain awareness of their locations within programs, documents, or websites. " +
+    "A breadcrumb is a graphical control element often used as a navigational aid in user interfaces and on web pages. It allows users to keep track and maintain awareness of their locations" +
     "The component allows to receive an url that is decompose in the breadcrumb or a list of object (label and path)",
   usage: "import HvBreadCrumb from '@hv/uikit-react-core/BreadCrumb'",
   examples: [
     {
-      title: "1. with all paths visible",
+      title: "1. All paths visible",
       src: "core/breadcrumb/breadcrumb1"
     },
     {
-      title: "2. with 5 paths visible of 7",
+      title: "2. 5 paths visible of 7",
       src: "core/breadcrumb/breadcrumb2"
     },
     {
-      title: "3. with 2 paths visible of 8",
+      title: "3. 2 paths visible of 8",
       src: "core/breadcrumb/breadcrumb3"
     },
     {
       title:
-        "4. passing url 'https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx' with all paths visible",
+        "4. Passing url 'https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx' with all paths visible",
       src: "core/breadcrumb/breadcrumb4"
     },
     {
       title:
-        "5. passing url 'https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx' with 2 paths visible",
+        "5. Passing url 'https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx' with 2 paths visible",
       src: "core/breadcrumb/breadcrumb5"
     }
   ]

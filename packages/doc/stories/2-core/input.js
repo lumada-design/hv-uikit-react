@@ -21,80 +21,80 @@ import HvInput from "@hv/uikit-react-core/Input";
 storiesOf("Core", module).add("Input", () => <HvInput />, {
   title: "Input box",
   description:
-    "A input box to introduce text with clear buttons, info messages, default validations, and custom validations",
+    "A input box that offers clear buttons, info messages, default validations, and custom validations",
   designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvInput from '@hv/uikit-react-core/Input'",
   examples: [
     {
-      title: "Simple input",
+      title: "1. Simple",
       description: "Simple input with basic labels",
       src: "core/input/inputSimple"
     },
     {
-      title: "Disabled simple input",
+      title: "2. Disabled",
       description:
         "Simple input with basic labels but disable not allowing interactions",
       src: "core/input/inputSimpleDisable"
     },
     {
-      title: "No validation input",
+      title: "3. No validation",
       description:
         "Input that disables every type of validations not showing validation icons",
       src: "core/input/inputNoValidation"
     },
     {
-      title: "Limited input",
+      title: "4. Limited",
       description:
         "input that includes validation of the max length of the string accepting up to 40 characters",
       src: "core/input/inputMax"
     },
     {
-      title: "Limited numeric input",
+      title: "5. Limited numeric",
       description:
         "input that only accepts number, includes validation of the max length of the string accepting up to 40 characters",
       src: "core/input/inputMaxNumeric"
     },
     {
-      title: "Required limited numeric input",
+      title: "6. Required limited numeric",
       description:
         "Required input, that only accepts number, includes validation of the max length of the string accepting up to 40 characters",
       src: "core/input/inputRequiredMaxNumeric"
     },
     {
-      title: "Email input",
+      title: "7. Email",
       description:
         "Email required input, that only accepts valid email addresses",
       src: "core/input/inputEmail"
     },
     {
-      title: "Password input",
+      title: "8. Password",
       description:
         "Password required input that only accepts the value ´password´, the value must be between 6 and 12 characters in length",
       src: "core/input/inputPassword"
     },
     {
-      title: "Custom validation input",
+      title: "9. Custom validation",
       description:
         "Input with a custom validation function, it validates if the input contains the value `hello`",
       src: "core/input/inputCustomValidation"
     },
     {
-      title: "Default value input",
+      title: "10. Default value",
       description: "Input with an default value already in place",
       src: "core/input/inputDefaultValue"
     },
     {
-      title: "Left icon input",
+      title: "11. Left icon",
       description: "Input with icons aligned to the left",
       src: "core/input/inputLeftIcon"
     },
     {
-      title: "Input event demostration",
+      title: "12. Event demonstration",
       description: "Input with all event functions enabled",
       src: "core/input/inputEvents"
     },
     {
-      title: "Input with custom input props",
+      title: "13. Custom input props",
       description:
         "Using the input props to inject input custom props, this input will block values when exceeding 250 characters",
       src: "core/input/inputCustomProps"

@@ -26,7 +26,7 @@ import Footer from "./Footer";
 import Media from "./Media";
 
 /**
- * Main Card container that layouts the subcomponents if there are children, the childrens are rendered instead
+ * Main Card container that layouts the subcomponents if there are children, the children are rendered instead.
  *
  * @param {Object} {
  *   classes,
@@ -124,7 +124,7 @@ const Main = ({
 
 Main.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the card.
+   * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     /**
@@ -169,7 +169,7 @@ Main.propTypes = {
    */
   mediaHeight: PropTypes.number,
   /**
-   *  The border color at the top of the card. Must be one of palette semantic colors. You want to set another color, the borderTop should be override.
+   *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
    */
   semantic: PropTypes.oneOf([
     "sema1",
@@ -187,7 +187,7 @@ Main.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
+   * ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
    */
   isSelectable: PropTypes.bool,
   /**
@@ -211,6 +211,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  headerTitle: undefined,
   semantic: null,
   isSelectable: false,
   children: undefined,

@@ -37,7 +37,7 @@ const Content = ({ classes, innerCardContent, needsBorder, ...other }) => (
 
 Content.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the component.
+   * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     /**

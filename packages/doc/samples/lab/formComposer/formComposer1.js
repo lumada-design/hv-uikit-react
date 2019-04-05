@@ -54,7 +54,7 @@ const groups = [
   {
     title: "Group2",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 3"
@@ -62,7 +62,7 @@ const groups = [
         name="input3"
         value="Some text 3"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 4"
@@ -74,14 +74,14 @@ const groups = [
   {
     title: "Group3",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 5"
         }}
         name="input5"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 6"
@@ -93,14 +93,14 @@ const groups = [
   {
     title: "Group4",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 7"
         }}
         name="input7"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 8"
@@ -112,14 +112,14 @@ const groups = [
   {
     title: "Group5",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 9"
         }}
         name="input9"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 10"
@@ -131,14 +131,14 @@ const groups = [
   {
     title: "Group6",
     children: [
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 11"
         }}
         name="input11"
       />,
-      <Input
+      <HvInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 12"

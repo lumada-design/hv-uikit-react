@@ -156,9 +156,7 @@ class HvInput extends React.Component {
     const {
       inputTextConfiguration,
       classes,
-      theme,
       password,
-      name,
       disabled,
       isRequired,
       iconVisible,
@@ -281,7 +279,7 @@ class HvInput extends React.Component {
 
 HvInput.propTypes = {
   /**
-   * A Jss Object used to override or extend the component styles.
+   * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**
@@ -336,7 +334,7 @@ HvInput.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * `true` if validation is shown, `false` otherwise.
+   * If `true` validation is shown, `false` otherwise.
    */
   validate: PropTypes.bool,
   /**
@@ -350,7 +348,7 @@ HvInput.propTypes = {
    */
   value: PropTypes.string,
   /**
-   * `true` if should autofocus.
+   * If `true` it should autofocus.
    */
   autoFocus: PropTypes.bool,
   /**
@@ -360,13 +358,11 @@ HvInput.propTypes = {
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
   /**
-   * `true` if the icon is visible, `false` otherwise
+   * If `true` the icon is visible, `false` otherwise
    */
   iconVisible: PropTypes.bool,
   /**
-   * The icon position of the input.
-   *
-   * note: Is recommended you use the provided iconPositions object to set this value.
+   * The icon position of the input. It is recommended to use the provided iconPositions object to set this value.
    */
   iconPosition: PropTypes.oneOf(["left", "right"]),
   /**
@@ -380,9 +376,7 @@ HvInput.propTypes = {
    */
   minCharQuantity: PropTypes.number,
   /**
-   * Which type of default validation should the input perform.
-   *
-   * note: Is recommended you use the provided ValidationTypes object to set this value.
+   * Which type of default validation should the input perform. It is recommended to use the provided ValidationTypes object to set this value.
    */
   validationType: PropTypes.oneOf(["none", "number", "email"]),
   /**
@@ -409,10 +403,10 @@ HvInput.defaultProps = {
   validation: null,
   maxCharQuantity: null,
   minCharQuantity: null,
-  validationType: validationTypes.none,
+  validationType: "none",
   value: "",
   autoFocus: false,
-  validationState: validationStates.empty,
+  validationState: "empty",
   disabled: false,
   isRequired: false,
   onChange: value => value,

@@ -423,7 +423,92 @@ Table.propTypes = {
   /**
    * the classes object to be applied into the root object.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component thead.
+     */
+    thead: PropTypes.string,
+    /**
+     * Styles applied to the component tr.
+     */
+    tr: PropTypes.string,
+    /**
+     * Styles applied to the component sort icon.
+     */
+    rtSortIcon: PropTypes.string,
+    /**
+     * Styles applied to the component when the sort icon is shown.
+     */
+    sortedIconShown: PropTypes.string,
+    /**
+     * Styles applied to the component when the sort icon is hidden.
+     */
+    sortedIconHidden: PropTypes.string,
+    /**
+     * Styles applied to the component pointer.
+     */
+    pointer: PropTypes.string,
+    /**
+     * Styles applied to the component subtitle.
+     */
+    subtitle: PropTypes.string,
+    /**
+     * Styles applied to the component title.
+     */
+    title: PropTypes.string,
+    /**
+     * Styles applied to the component header container.
+     */
+    headerContainer: PropTypes.string,
+    /**
+     * Styles applied to the component header text container.
+     */
+    headerTextContainer: PropTypes.string,
+    /**
+     * Styles applied to the component header props.
+     */
+    headerProps: PropTypes.string,
+    /**
+     * Styles applied to the component header when type is alphanumeric.
+     */
+    headerAlphaNumeric: PropTypes.string,
+    /**
+     * Styles applied to the component header when type is numeric.
+     */
+    headerNumeric: PropTypes.string,
+    /**
+     * Styles applied to the component to center.
+     */
+    centered: PropTypes.string,
+    /**
+     * Styles applied to the component when type is alphanumeric.
+     */
+    alphaNumeric: PropTypes.string,
+    /**
+     * Styles applied to the component when type is alphanumeric.
+     */
+    numeric: PropTypes.string,
+    /**
+     * Styles applied to the component when type is link.
+     */
+    link: PropTypes.string,
+    /**
+     * Styles applied to the component expander.
+     */
+    subComponentContainer: PropTypes.string,
+    /**
+     * Styles applied to the component icon in the columns.
+     */
+    iconContainer: PropTypes.string,
+    /**
+     * Styles applied to the component columns.
+     */
+    firstWithNumeric: PropTypes.string
+  }).isRequired,
   /**
    * Title of the table.
    */

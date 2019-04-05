@@ -71,7 +71,7 @@ HvBanner.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A Jss Object used to override or extend the styles applied to the banner.
+   * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     /**

@@ -21,24 +21,25 @@ import HvSnackbar from "@hv/uikit-react-core/Snackbar";
 storiesOf("Core", module).add("Snackbar", () => <HvSnackbar />, {
   title: "Snackbar",
   description:
-    "Snackbars provide brief messages about app processes through a message - typically at the bottom of the screen",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
+    "Snackbars provide brief messages about app processes through a message",
+  designSystemLink:
+    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvSnackbar from '@hv/uikit-react-core/Snackbar'",
   examples: [
     {
-      title: "1. Snackbars with different variants",
+      title: "1. Different variants",
       src: "core/snackbar/snackbar1"
     },
     {
-      title: "2. Snackbar with custom icon",
+      title: "2. With custom icon",
       src: "core/snackbar/snackbar2"
     },
     {
-      title: "3. Snackbar without icon",
+      title: "3. Without icon",
       src: "core/snackbar/snackbar3"
     },
     {
-      title: "4. Snackbar with actions",
+      title: "4. With actions",
       src: "core/snackbar/snackbar4"
     },
     {

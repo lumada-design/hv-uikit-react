@@ -25,8 +25,8 @@ storiesOf("Lab", module).add("Footer", () => <HvFooter />, {
   usage: "import HvFooter from '@hv/uikit-react-core/Footer'",
   examples: [
     {
-      title: "Simple footer",
-      description: "basic gray footer to identify app",
+      title: "Simple",
+      description: "Basic gray footer to identify app",
       src: "lab/footer/footerSimple.js"
     }
   ]

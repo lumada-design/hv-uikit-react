@@ -20,6 +20,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
+import empty from "./assets/radio-empty.svg";
+import full from "./assets/radio-full.svg";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -98,7 +100,7 @@ const HvRadio = props => {
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
-      control={(
+      control={
         <Radio
           className={classes.radio}
           icon={icons.emptyIcon}
@@ -111,7 +113,7 @@ const HvRadio = props => {
           checked={checked}
           {...propsIcon}
         />
-)}
+      }
       {...propsLabel}
     />
   );
@@ -121,9 +123,50 @@ HvRadio.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to the label typography.
+     */
+    labelTypography: PropTypes.string,
+    /**
+     * Styles applied to the component when the label is disable.
+     */
+    labelDisabled: PropTypes.string,
+    /**
+     *  Styles applied to the label when the position is end.
+     */
+    labelEnd: PropTypes.string,
+    /**
+     * Styles applied to the label when the position is start.
+     */
+    labelStart: PropTypes.string,
+    /**
+     * Styles applied to the checkbox core element (material-ui).
+     */
+    radio: PropTypes.string,
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the icon when not selected.
+     */
+    iconEmpty: PropTypes.string,
+    /**
+     * Styles applied to the icon when selected.
+     */
+    iconFull: PropTypes.string,
+    /**
+     * Styles applied to the icon when disable.
+     */
+    iconDisable: PropTypes.string
+  }).isRequired,
   /**
-   * If set to `true` the Radio button is disabled and the onChange function will not be called.
+   * If `true` the Radio button is disabled and the onChange function will not be called.
    */
   disabled: PropTypes.bool,
   /**
@@ -131,7 +174,7 @@ HvRadio.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * If set to `true` the Radio button is selected, if set to `false` the Radio button is not selected.
+   * If `true` the Radio button is selected, if set to `false` the Radio button is not selected.
    */
   checked: PropTypes.bool,
   /**

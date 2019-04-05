@@ -73,7 +73,7 @@ export default (
         isSelectable
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
-      <HeaderWithStyles HeaderTitle="Asset Avatar L90" Subheader="Compressor" />
+      <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />
     </HvCard>
   </div>
 );

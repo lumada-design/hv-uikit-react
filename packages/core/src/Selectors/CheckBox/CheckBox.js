@@ -104,7 +104,7 @@ const HvCheckbox = props => {
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
-      control={(
+      control={
         <Checkbox
           className={classes.checkBox}
           icon={icons.emptyIcon}
@@ -119,7 +119,7 @@ const HvCheckbox = props => {
           indeterminate={indeterminate}
           {...propsLabel}
         />
-)}
+      }
       {...propsIcon}
     />
   );
@@ -176,7 +176,7 @@ HvCheckbox.propTypes = {
     iconIndeterminate: PropTypes.string
   }).isRequired,
   /**
-   * If set to `true` the checkbox is disabled and the onClick function will not be called.
+   * If `true` the checkbox is disabled and the onClick function will not be called.
    */
   disabled: PropTypes.bool,
   /**
@@ -184,17 +184,16 @@ HvCheckbox.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * If set to `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
    * note: if this value is specified the state of the checkbox must be managed
    */
   checked: PropTypes.bool,
   /**
-   * If set to `true` the checkbox uses the intermediate state, if set to `false` the checkbox will not use the intermediate state.
+   * If `true` the checkbox uses the intermediate state, if set to `false` the checkbox will not use the intermediate state.
    */
   indeterminate: PropTypes.bool,
   /**
-   * the value of the checkbox.
-   * this value will be returned in the event object generated for the onChange callback
+   * The value of the checkbox. This value will be returned in the event object generated for the onChange callback
    */
   value: PropTypes.string,
   /**
