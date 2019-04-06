@@ -56,7 +56,11 @@ const styles = theme => ({
     height: "32px",
     width: `${theme.hv.spacing.lg}px`,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    background: `url(${DownArrow}) no-repeat right white`
+    background: `url(${DownArrow}) no-repeat right white`,
+    backgroundSize: "26px 26px",
+    "&::-ms-expand":{
+      display: "none"
+    }
   },
   pageNavigator: {
     display: "flex",

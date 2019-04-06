@@ -236,7 +236,7 @@ HvLogin.defaultProps = {
   recoveryInputLabel: "Email",
   recoveryPlaceholder: "Enter text",
   recoveryErrorMessage: "The email you've entered doesn't match any account",
-  userNameInputLabel: "Password",
+  userNameInputLabel: "Username",
   userNamePlaceHolder: "Enter text",
   passwordInputLabel: "Password",
   passwordPlaceHolder: "Enter text",

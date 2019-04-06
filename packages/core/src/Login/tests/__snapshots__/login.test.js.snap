@@ -40536,7 +40536,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
         }
         titleComponent={null}
         titleText="Welcome"
-        userNameInputLabel="Password"
+        userNameInputLabel="Username"
         userNamePlaceHolder="Enter text"
       >
         <div
@@ -40574,7 +40574,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                 rememberMeLabel="Remember me"
                 titleComponent={null}
                 titleText="Welcome"
-                userNameInputLabel="Password"
+                userNameInputLabel="Username"
                 userNamePlaceHolder="Enter text"
               >
                 <loginForm
@@ -41201,7 +41201,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   }
                   titleComponent={null}
                   titleText="Welcome"
-                  userNameInputLabel="Password"
+                  userNameInputLabel="Username"
                   userNamePlaceHolder="Enter text"
                 >
                   <form
@@ -42493,7 +42493,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                         inputTextConfiguration={
                           Object {
                             "infoText": "",
-                            "inputLabel": "Password",
+                            "inputLabel": "Username",
                             "placeholder": "Enter text",
                           }
                         }
@@ -42529,7 +42529,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                           inputTextConfiguration={
                             Object {
                               "infoText": "",
-                              "inputLabel": "Password",
+                              "inputLabel": "Username",
                               "placeholder": "Enter text",
                             }
                           }
@@ -43796,7 +43796,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 <h6
                                   className="MuiTypography-root-190 MuiTypography-subtitle2-209 HvInput-label-233"
                                 >
-                                  Password
+                                  Username
                                 </h6>
                               </Typography>
                             </WithStyles(Typography)>
