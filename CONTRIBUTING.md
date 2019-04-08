@@ -22,7 +22,7 @@
    
 ## Bugs
 
-If you find a bug in the source code, you can help us by submitting an issue to this repo. Even better you can submit a Merge Request with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue]((https://github.com/pentaho/hv-uikit-react/issues)) to this repo. Even better you can submit a Merge Request with a fix.
 
 ## Feature Requests
 
