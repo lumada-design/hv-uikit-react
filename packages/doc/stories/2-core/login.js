@@ -23,7 +23,6 @@ storiesOf("Core", module).add("Login", () => <HvLogin />, {
   title: "Login",
   description:
     "Login form with the capability for recovery of lost credentials.",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import { HvLogin } from '@hv/uikit-react-core/dist/Login'",
   examples: [
     {

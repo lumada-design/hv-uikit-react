@@ -22,7 +22,6 @@ storiesOf("Core", module).add("KPI", () => <HvKpi />, {
   title: "KPI - Key Performance Indicator ",
   description:
     "An indicator component that shows a value and accept any component(an Icon for example) to show a visual cue on it's meaning",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvKpi from '@hv/uikit-react-core/dist/Kpi'",
   examples: [
     {

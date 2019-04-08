@@ -22,8 +22,6 @@ storiesOf("Core", module).add("Banner", () => <HvBanner />, {
   title: "Banner",
   description:
     "A banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner). It requires an user action to close. Banners should appear at the top of the screen, below a top app bar. ",
-  designSystemLink:
-    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvBanner from '@hv/uikit-react-core/dist/Banner'",
   examples: [
     {
