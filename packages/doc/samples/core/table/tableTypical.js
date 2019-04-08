@@ -66,86 +66,103 @@ const data = [
   }
 ];
 
-const getColumns = () => [
-  {
-    headerText: "Customer",
-    accessor: "customer",
-    cellType: "alpha-numeric"
-  },
-  {
-    headerText: "Dealsize",
-    accessor: "dealSize",
-    cellType: "numeric"
-  },
-  {
-    headerText: "Sales",
-    accessor: "sales",
-    cellType: "numeric"
-  },
-  {
-    headerText: "Sales Growth",
-    cellType: "numeric",
-    Cell: cellData => {
-      const value = [
-        [" ", " ", { role: "style" }],
-        [
-          " ",
-          Number(cellData.row._original.salesGrowth),
-          `color:${cellData.row._original.color}`
-        ]
-      ];
-      return (
-        <div style={{ display: "flex" }}>
-          <div style={{ paddingRight: "30px", alignSelf: "center" }}>
-            {cellData.row._original.salesGrowth}
-€
-          </div>
-          <div style={{ alignSelf: "center" }}>
-            <Chart
-              width="100px"
-              height="30px"
-              chartType="BarChart"
-              loader={<div>Loading Chart</div>}
-              data={value}
-              options={{
-                legend: "none",
-                hAxis: {
-                  minValue: 0,
-                  maxValue: 1001
-                }
-              }}
-            />
-          </div>
-        </div>
-      );
-    }
-  },
-  {
-    headerText: "Order Number",
-    accessor: "orderNumber",
-    cellType: "numeric"
+class Wrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageSize: 10,
+      sorted: [{ id: "createdDate", desc: true }],
+    };
   }
-];
 
-const defaults = {
-  pageSize: 10,
-  pages: data.length,
-  sorted: [{ id: "createdDate", desc: true }],
-  titleText: "This is The Title",
-  subtitleText: "This is The Subtitle"
-};
+  getColumns = () => [
+    {
+      headerText: "Customer",
+      accessor: "customer",
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Dealsize",
+      accessor: "dealSize",
+      cellType: "numeric"
+    },
+    {
+      headerText: "Sales",
+      accessor: "sales",
+      cellType: "numeric"
+    },
+    {
+      headerText: "Sales Growth",
+      cellType: "numeric",
+      Cell: cellData => {
+        const value = [
+          [" ", " ", { role: "style" }],
+          [
+            " ",
+            Number(cellData.row._original.salesGrowth),
+            `color:${cellData.row._original.color}`
+          ]
+        ];
+        return (
+          <div style={{ display: "flex" }}>
+            <div style={{ paddingRight: "30px", alignSelf: "center" }}>
+              {cellData.row._original.salesGrowth}
+  €
+            </div>
+            <div style={{ alignSelf: "center" }}>
+              <Chart
+                width="100px"
+                height="30px"
+                chartType="BarChart"
+                loader={<div>Loading Chart</div>}
+                data={value}
+                options={{
+                  legend: "none",
+                  hAxis: {
+                    minValue: 0,
+                    maxValue: 1001
+                  }
+                }}
+              />
+            </div>
+          </div>
+        );
+      }
+    },
+    {
+      headerText: "Order Number",
+      accessor: "orderNumber",
+      cellType: "numeric"
+    }
+  ];
+
+  onPageSizeChange = newPageSize => {
+    this.setState({
+      pageSize: newPageSize
+    });
+  };
+
+  render() {
+    const {sorted, pageSize} = this.state;
+
+    return(
+      <HvTable
+        data={data}
+        columns={this.getColumns()}
+        defaultPageSize={5}
+        pageSize={pageSize}
+        onPageSizeChange={this.onPageSizeChange}
+        resizable
+        defaultSorted={sorted}
+        titleText="Sales overview"
+        subtitleText="Click on a row to see store details"
+        idForCheckbox="id"
+      />
+    )
+  }
+
+}
 
 export default (
-  <HvTable
-    data={data}
-    columns={getColumns()}
-    defaultPageSize={defaults.pageSize}
-    pageSize={defaults.pageSize}
-    resizable
-    pages={defaults.pages}
-    defaultSorted={defaults.sorted}
-    titleText="Sales overview"
-    subtitleText="Click on a row to see store details"
-    idForCheckbox="id"
-  />
+  <Wrapper/>
 );
