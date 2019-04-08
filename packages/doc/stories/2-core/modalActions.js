@@ -20,7 +20,6 @@ import HvModalActions from "@hv/uikit-react-core/dist/Modal/ModalActions";
 
 storiesOf("Core/modal", module).add("Actions", () => <HvModalActions />, {
   title: "Modal Actions",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvModalActions from '@hv/uikit-react-core/dist/Modal/ModalActions'",
   description: "The container for the actions of the modal component"
 });

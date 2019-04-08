@@ -22,8 +22,6 @@ storiesOf("Core", module).add("Button", () => <HvButton />, {
   title: "Button",
   description:
     "A button refers to a graphical control element that provides the user a simple way to trigger an event",
-  designSystemLink:
-    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvButton from '@hv/uikit-react-core/dist/Button'",
   examples: [
     {
