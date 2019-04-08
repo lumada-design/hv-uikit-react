@@ -167,7 +167,18 @@ const data = [
   }
 ];
 
-const getColumns = () => [
+class Wrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sorted: [{ id: "createdDate", desc: true }],
+      titleText: "This is The Title",
+      subtitleText: "This is The Subtitle",
+      pageSize: 10
+    };
+  }
+
+  getColumns = () => [
     {
       headerText: "Title",
       accessor: "name",
@@ -220,42 +231,47 @@ const getColumns = () => [
       accessor: "asset",
       cellType: "link"
     }
-];
+  ];
 
-const defaults = {
-  pageSize: 10,
-  pages: data.length,
-  sorted: [{ id: "createdDate", desc: true }],
-  titleText: "This is The Title",
-  subtitleText: "This is The Subtitle"
-};
+  onPageSizeChange = newPageSize => {
+    this.setState({
+      pageSize: newPageSize
+    });
+  };
 
-const subElementTemplate = row => (
-  <div>
-    <table>
-      <tr>
-        <th>first</th>
-        <th>second</th>
-      </tr>
-      <tr>
-        <td>{row.original.subElementTitle}</td>
-        <td>{row.original.subElementTitle2}</td>
-      </tr>
-    </table>
-  </div>
-);
+  subElementTemplate = row => (
+    <div>
+      <table>
+        <tr>
+          <th>first</th>
+          <th>second</th>
+        </tr>
+        <tr>
+          <td>{row.original.subElementTitle}</td>
+          <td>{row.original.subElementTitle2}</td>
+        </tr>
+      </table>
+    </div>
+  );
 
-export default (
-  <HvTable
-    data={data}
-    columns={getColumns()}
-    defaultPageSize={defaults.pageSize}
-    pageSize={defaults.pageSize}
-    resizable
-    pages={defaults.pages}
-    defaultSorted={defaults.sorted}
-    titleText={defaults.titleText}
-    subtitleText={defaults.subtitleText}
-    subElementTemplate={subElementTemplate}
-  />
-);
+  render() {
+    const { pageSize, sorted, titleText, subtitleText } = this.state;
+
+    return (
+      <HvTable
+        data={data}
+        columns={this.getColumns()}
+        defaultPageSize={10}
+        pageSize={pageSize}
+        resizable
+        defaultSorted={sorted}
+        titleText={titleText}
+        subtitleText={subtitleText}
+        subElementTemplate={this.subElementTemplate}
+        onPageSizeChange={this.onPageSizeChange}
+      />
+    );
+  }
+}
+
+export default <Wrapper />;
