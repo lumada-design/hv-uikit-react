@@ -16,7 +16,7 @@
 ## Setup
 1. For the time being the UI Kit lives in a private GitLab repository, so the first step is to create your personal account on our [GitLab](https://10.76.48.133/).
 
-2. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel.
+2. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel on the hitachivantara-eng workspace: https://hitachivantara-eng.slack.com/messages/CFY74GK6G
 
 3. Fork the project by navigating to the main [repository]((https://github.com/pentaho/hv-uikit-react)) and clicking the **Fork** button.
    
