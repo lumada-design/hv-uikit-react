@@ -22,6 +22,5 @@ storiesOf("Core/card", module).add("Header", () => <HvCardHeader />, {
   title: "Header",
   description:
     "Component of the card, responsible for presenting header content.",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import {HvCardHeader} from '@hv/uikit-react-core/dist/Card'"
 });

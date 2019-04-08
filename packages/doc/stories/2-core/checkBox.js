@@ -22,7 +22,6 @@ storiesOf("Core", module).add("CheckBox", () => <HvCheckBox />, {
   title: "Checkbox selector",
   description:
     "A checkbox selector that allows selecting a value, with 3 possible states: empty, full or intermediate",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import { HvCheckbox } from '@hv/uikit-react-core/dist/Selectors'",
   examples: [
     {

@@ -22,8 +22,6 @@ storiesOf("Core", module).add("Snackbar", () => <HvSnackbar />, {
   title: "Snackbar",
   description:
     "Snackbars provide brief messages about app processes through a message",
-  designSystemLink:
-    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvSnackbar from '@hv/uikit-react-core/dist/Snackbar'",
   examples: [
     {

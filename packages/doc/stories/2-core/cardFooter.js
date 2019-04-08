@@ -22,6 +22,5 @@ storiesOf("Core/card", module).add("Footer", () => <HvCardFooter />, {
   title: "Footer",
   description:
     "Component of the card, responsible for presenting the footer content.",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import {HvCardFooter} from '@hv/uikit-react-core/dist/Card'"
 });
