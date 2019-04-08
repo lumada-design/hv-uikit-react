@@ -25,6 +25,7 @@ const styles = theme => ({
   },
   iconContainer: {
     display: "inherit",
+    overflow:"hidden",
     marginLeft: `${theme.hv.spacing.xs}px`,
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
