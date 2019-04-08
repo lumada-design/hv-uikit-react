@@ -2,7 +2,7 @@
 
 ## How to use
 
-Download the example [or clone the repo](https://10.76.48.133/hv-design-system/ui/react):
+Download the example [or clone the repo](https://github.com/pentaho/hv-uikit-react):
 
 Go to example folder:
 ```
@@ -13,7 +13,7 @@ Install it and run:
 
 ```sh
 npm install
-npm run dev
+npm start
 ```
 
 ## The idea behind the example

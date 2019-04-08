@@ -8,8 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@hv/uikit-react-core": "file:../../packages/core",
-    "@hv/uikit-react-lab": "file:../../packages/lab",
+    "@hv/uikit-react-core": "latest",
+    "@hv/uikit-react-lab": "latest",
     "@material-ui/core": "^3.5.1",
     "jss": "latest",
     "next": "latest",
