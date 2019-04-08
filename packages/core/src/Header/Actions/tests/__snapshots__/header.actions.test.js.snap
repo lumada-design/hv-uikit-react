@@ -4381,6 +4381,7 @@ body {
 }
 .Actions-iconContainer-6 {
   display: inherit;
+  overflow: hidden;
   margin-left: 10px;
 }
 .Actions-iconContainer-6:hover {
@@ -4415,6 +4416,7 @@ body {
                   Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "overflow": "hidden",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -4429,6 +4431,7 @@ body {
                   ".Actions-iconContainer-6": Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "overflow": "hidden",
                   },
                   ".Actions-iconContainer-6:hover": Object {
                     "background-color": "#F0F0F0",
@@ -4444,6 +4447,7 @@ body {
                   "iconContainer": Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "overflow": "hidden",
                   },
                   "marginLeft": Object {
                     "margin-left": "60px",
@@ -4952,6 +4956,7 @@ body {
                     },
                     "display": "inherit",
                     "marginLeft": "10px",
+                    "overflow": "hidden",
                   },
                   "marginLeft": Object {
                     "marginLeft": "60px",
