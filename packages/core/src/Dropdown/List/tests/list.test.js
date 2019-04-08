@@ -84,7 +84,7 @@ describe("<List />", () => {
 
     instance.handleApply();
 
-    expect(instance.state.prevList).toBe(instance.state.list);
+    expect(instance.state.prevList).toEqual(instance.state.list);
     expect(instance.setSelection).toBeCalledWith(true, true);
   });
 });

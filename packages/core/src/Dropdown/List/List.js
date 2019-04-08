@@ -202,7 +202,13 @@ class List extends React.Component {
   handleApply() {
     const { list } = this.state;
 
-    this.setState({ prevList: list, searchStr: "" }, () =>
+    const newList = list.map(elem => {
+      const newElem = { ...elem };
+      newElem.isResult = true;
+      return newElem;
+    });
+
+    this.setState({ prevList: newList, searchStr: "" }, () =>
       this.setSelection(true, true)
     );
   }
