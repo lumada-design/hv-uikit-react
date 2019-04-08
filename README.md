@@ -25,13 +25,13 @@ To always have the latest development version of UIkit, even before a release, y
 - Ex: ```npm install @hv/uikit-react-core@latest```
 
 #### npm registry
-Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with the following line:
+Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
 If you want to use it for UI-KIT dependencies
 @hv:registry=http://nexus.pentaho.org/repository/group-npm/
 
-Of if you want to use it for all dependencies
+Or if you want to use it for all dependencies
 registry=http://nexus.pentaho.org/repository/group-npm/
 ```
 #### global link
