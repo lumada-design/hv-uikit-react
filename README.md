@@ -12,7 +12,8 @@
 
 You have the following options to get UIkit:
 
-- Clone the repo to get all source files including build scripts: `git clone https://github.com/pentaho/hv-uikit-react.git`  
+- Clone the repo to get all source files including build scripts:  
+  - `git clone https://github.com/pentaho/hv-uikit-react.git`  
 - Install with [npm](http://nexus.pentaho.org/) any of the available packages:
   - core - ```npm install @hv/uikit-react-core```
   - lab - ```npm install @hv/uikit-react-lab```
@@ -42,6 +43,13 @@ npm run link
 ```
 
 It will create a symlink in the global folder {prefix}/lib/node_modules/<package> for each package.
+
+### Getting Started
+Install root dependencies.
+
+```bash
+npm i
+```
 
 #### Bootstrap
 

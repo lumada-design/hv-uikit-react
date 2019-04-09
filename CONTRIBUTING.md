@@ -6,7 +6,7 @@
   - [Feature Requests](#feature-requests)
   - [Submission Guidelines](#submission-guidelines)
     - [Submitting an Issue](#submitting-an-issue)
-    - [Submitting a Merge Request](#submitting-a-merge-request)
+    - [Submitting a Pull Request](#submitting-a-pull-request)
   - [Coding Standards](#coding-standards)
     - [Style Guide](#style-guide)
     - [Linting](#linting)
@@ -14,15 +14,14 @@
   - [Testing](#testing)
 
 ## Setup
-1. For the time being the UI Kit lives in a private GitLab repository, so the first step is to create your personal account on our [GitLab](https://10.76.48.133/).
 
-2. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel on the hitachivantara-eng workspace: https://hitachivantara-eng.slack.com/messages/CFY74GK6G
+1. You need to ask to be added as a project member to be able to contribute. Please use **#ui-kit** slack channel on the hitachivantara-eng workspace: https://hitachivantara-eng.slack.com/messages/CFY74GK6G
 
-3. Fork the project by navigating to the main [repository]((https://github.com/pentaho/hv-uikit-react)) and clicking the **Fork** button.
+2. Fork the project by navigating to the main [repository]((https://github.com/pentaho/hv-uikit-react)) and clicking the **Fork** button.
    
 ## Bugs
 
-If you find a bug in the source code, you can help us by [submitting an issue]((https://github.com/pentaho/hv-uikit-react/issues)) to this repo. Even better you can submit a Merge Request with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue]((https://github.com/pentaho/hv-uikit-react/issues)) to this repo. Even better you can submit a Pull Request with a fix.
 
 ## Feature Requests
 
@@ -38,11 +37,11 @@ Before you submit your issue, search the repository. Maybe your question was alr
 
 If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues.
 
-### Submitting a Merge Request
+### Submitting a Pull Request
 
 1. Pull the latest master branch.
 
-2. Always work and submit merge requests from a branch. _Do not submit merge requests from the `master` branch of your fork_.
+2. Always work and submit pull requests from a branch. _Do not submit pull requests from the `master` branch of your fork_.
 
    ```
    $ git checkout -b { YOUR_BRANCH_NAME } master
@@ -57,7 +56,7 @@ If your issue appears to be a bug, and hasn't been reported, open a new issue. H
    ```
    $ git push origin { YOUR_BRANCH_NAME }
    ```
-6. Please create a merge request using the following format: `#[issue number] - pattern name`
+6. Please create a pull request using the following format: `#[issue number] - pattern name`
 7. Maintainers will be reviewing your work and making comments, asking questions and suggesting changes to be made before they merge your code.
 8. Once all revisions to your merge request are complete, a maintainer will squash and merge your commits for you.
 
@@ -65,7 +64,7 @@ If your issue appears to be a bug, and hasn't been reported, open a new issue. H
 
 ## Coding Standards
 
-Please follow the coding style of the project. We use eslint, so if possible, enable linting in your editor to get real-time feedback. The linting rules can be run manually with the following command npm run lint.
+Please follow the coding style of the project. We use eslint, so if possible, enable linting in your editor to get real-time feedback. The linting rules can be run manually with the following command ``npm run lint``.
 
 Finally, when you submit a pull request, they are run again by Jenkins, but hopefully by then your code is already clean!
 
