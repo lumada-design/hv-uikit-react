@@ -5,7 +5,12 @@
     "publish": {
       "npmClient": "npm",
       "registry": "https://nexus.pentaho.org/repository/public-npm-release/",
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "allowBranch": [
+        "master",
+        "alpha"
+      ],
+      "message": "chore(release): %s"
     }
   }
 }
