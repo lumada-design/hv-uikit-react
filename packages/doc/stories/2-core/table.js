@@ -24,8 +24,6 @@ import HvTable from "@hv/uikit-react-core/dist/Table/Table";
 storiesOf("Core", module).add("Table", () => <HvTable />, {
   title: "Table",
   description: "A Table visualization used to show data, based in the react-table. Please check https://react-table.js.org/#/story/readme for more info",
-  designSystemLink:
-    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvTable from '@hv/uikit-react-core/dist/Table'",
   examples: [
     {

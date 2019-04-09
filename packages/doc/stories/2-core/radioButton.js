@@ -22,8 +22,6 @@ storiesOf("Core", module).add("RadioButton", () => <HvRadio />, {
   title: "Radio button selector",
   description:
     "A Radio button selector that allows selecting a value, with 3 possible states: empty, full or intermediate",
-  designSystemLink:
-    "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvRadio from '@hv/uikit-react-core/dist/Selectors/RadioButton'",
   examples: [
     {
