@@ -24,10 +24,10 @@
     "doc": "npx lerna run doc",
     "test": "npx lerna run test --parallel",
     "link": "npx lerna run link",
-    "publish:prerelease": "npx lerna publish prerelease --yes",
-    "publish:preminor": "npx lerna publish preminor --yes --force-publish=*",
-    "publish:minor": "npx lerna publish minor --yes --force-publish=*",
-    "publish:major": "npx lerna publish major --yes --force-publish=*"
+    "publish:prerelease": "npx lerna publish prerelease --yes --github-release",
+    "publish:preminor": "npx lerna publish preminor --yes --github-release --force-publish=*",
+    "publish:minor": "npx lerna publish minor --yes --github-release --force-publish=*",
+    "publish:major": "npx lerna publish major --yes --github-release --force-publish=*",
     "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix",
     "lint:jenkins": "npx eslint -f checkstyle . > eslint.xml"
