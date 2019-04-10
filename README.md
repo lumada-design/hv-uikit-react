@@ -61,7 +61,7 @@ npm run dev
 Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/icons/CHANGELOG.md), [doc](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/doc/CHANGELOG.md).
 
 ## Contributing
-You need to ask to be added as a project member to be able to contribute. 
+You need to ask to be added as a project member to be able to contribute.
 Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
 
 Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/alpha/CONTRIBUTING.md) for detailed information.

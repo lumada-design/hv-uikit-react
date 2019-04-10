@@ -1,13 +1,12 @@
-#UI SVG Icons
+# @hv/uikit-react-icons
 
-##How generate the react component automatically based in the SVG files
- 
-### Getting Started
-Set the desired icons into `resources` folder.
+This package provides the Hitachi Vantara's Design System icons packaged as a set of React components.
 
-#### Running
 
-For converting the svg to react components the build command should be executed
-```bash
-npm run build
+## Installation
+
+Install the package in your project directory with:
+
+```sh
+npm install @hv/uikit-react-icons
 ```
