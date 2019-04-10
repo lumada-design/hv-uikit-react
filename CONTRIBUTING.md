@@ -33,13 +33,14 @@ npm run generate
 ```
 
 ## Bugs
-If you find a bug in the source code, you can help us by [submitting an issue]((#submitting-an-issue)) to this repo. 
+If you find a bug in the source code, you can help us by [submitting an issue]((#submitting-an-issue)) to this repo.
 Even better you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 ## Feature Requests
 
 You can request a new feature by [submitting an issue]((#submitting-an-issue)) to this repo.
 Features can be **new components** or changes to **existing**.
+
 Please make sure your features are compliant with the [Design System](https://hitachivantara.sharepoint.com/sites/DesignSystem/SitePages/Home.aspx) guidelines.
 
 ## Submission Guidelines
