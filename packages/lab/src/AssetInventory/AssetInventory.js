@@ -22,7 +22,7 @@ import ListIcon from "@hv/uikit-react-icons/dist/List.S";
 import CardsIcon from "@hv/uikit-react-icons/dist/Cards.S";
 import CardsIconSelected from "@hv/uikit-react-icons/dist/CardsSelected.S";
 import EmptySearchState from "../EmptyState";
-import SearchBox from "../SearchBox/SearchBox";
+import SearchBox from "../SearchBox";
 
 /**
  * Assets Inventory component.
