@@ -12,6 +12,7 @@ doc
 **/*/node_modules
 
 examples/**/*
+generator/**/*
 
 resources/license-header.js
 commitlint.config.js
