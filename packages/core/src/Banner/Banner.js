@@ -128,7 +128,6 @@ HvBanner.propTypes = {
 HvBanner.defaultProps = {
   className: "",
   message: "",
-  open: false,
   anchorOrigin: "top",
   customIcon: null,
   showIcon: false,

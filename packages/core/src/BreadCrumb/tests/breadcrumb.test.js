@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import AngleForwards12 from "@hv/uikit-react-icons/dist/DropRight.XS";
 import HvProvider from "../../Provider";

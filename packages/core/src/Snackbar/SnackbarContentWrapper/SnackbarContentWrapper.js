@@ -18,7 +18,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
-import Typography from "@material-ui/core/Typography";
 import LinesEllipsis from "react-lines-ellipsis";
 import VariantIcons from "./VariantIcons";
 
