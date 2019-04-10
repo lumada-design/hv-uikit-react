@@ -17,7 +17,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import EmptyStateIconComp from "@hv/uikit-react-icons/dist/Caution.L";
-import Grid from '@material-ui/core/Grid';
+import Grid from "@material-ui/core/Grid";
 import ListIcon from "@hv/uikit-react-icons/dist/List.S";
 import CardsIcon from "@hv/uikit-react-icons/dist/Cards.S";
 import CardsIconSelected from "@hv/uikit-react-icons/dist/CardsSelected.S";
@@ -36,7 +36,8 @@ export class HvAssetInventory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewMode: props.initialViewMode || HvAssetInventory.assetInventoryMode.CARDS
+      viewMode:
+        props.initialViewMode || HvAssetInventory.assetInventoryMode.CARDS
     };
   }
 
@@ -44,21 +45,38 @@ export class HvAssetInventory extends Component {
     this.setState({
       viewMode: value
     });
-    if(viewChangedHandler) {
+    if (viewChangedHandler) {
       viewChangedHandler(value);
     }
   }
 
   render() {
-    const { theme, classes, assetsTitle, searchHandler, viewChangedHandler, renderEmptyState, listRenderComponent, cardRenderComponent, toolsScreenGridSize } = this.props;
+    const {
+      theme,
+      classes,
+      assetsTitle,
+      searchHandler,
+      viewChangedHandler,
+      renderEmptyState,
+      listRenderComponent,
+      cardRenderComponent,
+      toolsScreenGridSize
+    } = this.props;
     const { viewMode } = this.state;
-    const viewModeCards = (viewMode === HvAssetInventory.assetInventoryMode.CARDS);
-    const viewModeList = (viewMode === HvAssetInventory.assetInventoryMode.LIST);
+    const viewModeCards =
+      viewMode === HvAssetInventory.assetInventoryMode.CARDS;
+    const viewModeList = viewMode === HvAssetInventory.assetInventoryMode.LIST;
 
     return (
       <div className={classes.container}>
         <div className={classes.title}>{assetsTitle}</div>
-        <Grid container spacing={24} direction="row" justify="space-between" alignItems="stretch">
+        <Grid
+          container
+          spacing={24}
+          direction="row"
+          justify="space-between"
+          alignItems="stretch"
+        >
           <Grid
             item
             xs={toolsScreenGridSize.xs}
@@ -103,8 +121,8 @@ export class HvAssetInventory extends Component {
         </Grid>
       </div>
     );
-  };
-};
+  }
+}
 
 HvAssetInventory.assetInventoryMode = {
   LIST: "LIST",
@@ -115,7 +133,7 @@ HvAssetInventory.propTypes = {
   /**
    * The start view mode to apply to the assets inventory.
    */
-  initialViewMode: PropTypes.oneOf(Object.keys(HvAssetInventory.assetInventoryMode)),
+  initialViewMode: PropTypes.oneOf(["LIST", "CARDS"]),
   /**
    * Title to show in the top of the component
    */
@@ -194,14 +212,14 @@ HvAssetInventory.propTypes = {
 };
 
 HvAssetInventory.defaultProps = {
-  theme: { hv: { palette: { atmosphere: { atmo6: "black"}, accent: { acce1: "white" } } } },
-  initialViewMode: HvAssetInventory.assetInventoryMode.CARDS,
+  initialViewMode: "CARDS",
+  theme: null,
   searchHandler: undefined,
   viewChangedHandler: undefined,
   listRenderComponent: undefined,
   cardRenderComponent: undefined,
   renderEmptyState: false,
-  toolsScreenGridSize: {xs: 12, sm: 6, md: 4, lg: 3, xl: 2}
+  toolsScreenGridSize: { xs: 12, sm: 6, md: 4, lg: 3, xl: 2 }
 };
 
 export default HvAssetInventory;

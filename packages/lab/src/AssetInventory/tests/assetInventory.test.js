@@ -19,6 +19,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import AssetInventoryWithStyles from "../index";
 import AssetInventory from "../AssetInventory";
 
@@ -31,9 +32,9 @@ describe("AssetInventory withStyles", () => {
 
   it("should be defined", () => {
     wrapper = shallow(
-      <AssetInventoryWithStyles
-        assetsTitle={configuration.assetsTitle}
-      />
+      <HvProvider>
+        <AssetInventoryWithStyles assetsTitle={configuration.assetsTitle} />
+      </HvProvider>
     );
     expect(wrapper).toBeDefined();
   });
@@ -42,23 +43,25 @@ describe("AssetInventory withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render the Asset Inventory component", () => {
+  it("should be able to render with every property defined", () => {
+    wrapper = mount(
+      <HvProvider>
+        <AssetInventoryWithStyles
+          assetsTitle={configuration.assetsTitle}
+          searchHandler={undefined}
+          viewChangedHandler={undefined}
+          renderEmptyState={false}
+          cardRenderComponent={<div />}
+          listRenderComponent={<div />}
+          toolsScreenGridSize={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 2 }}
+        />
+      </HvProvider>
+    );
     const AssetInventoryComponent = wrapper.find(AssetInventory);
     expect(AssetInventoryComponent.length).toBe(1);
   });
 
-  it("should be able to render with every property defined", () => {
-    wrapper = mount(
-      <AssetInventoryWithStyles
-        assetsTitle={configuration.assetsTitle}
-        searchHandler={undefined}
-        viewChangedHandler={undefined}
-        renderEmptyState={false}
-        cardRenderComponent={<div />}
-        listRenderComponent={<div />}
-        toolsScreenGridSize={{xs: 12, sm: 6, md: 4, lg: 3, xl: 2}}
-      />
-    );
+  it("should render the Asset Inventory component", () => {
     const AssetInventoryComponent = wrapper.find(AssetInventory);
     expect(AssetInventoryComponent.length).toBe(1);
   });
