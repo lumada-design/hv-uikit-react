@@ -13,16 +13,8 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9001",
-    "doc": "build-storybook",
-    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
-    "lint:fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",
-    "lint:jenkins": "eslint -f checkstyle . > eslint.xml",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+    "doc": "build-storybook"
   },
-  "pre-commit": [
-    "precommit-msg",
-    "lint"
-  ],
   "dependencies": {
     "@hv/uikit-common-themes": ">=1.0.1-alpha <1.0.1",
     "@hv/uikit-react-core": "^1.0.1-alpha.2",
@@ -53,16 +45,6 @@
     "babel-eslint": "9.0.0",
     "babel-loader": "8.0.5",
     "babel-plugin-module-resolver": "3.2.0",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "2.10.0",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-license-header": "0.1.2",
-    "eslint-plugin-prettier": "2.7.0",
-    "eslint-plugin-react": "7.12.4",
-    "pre-commit": "1.2.2",
-    "prettier": "1.16.4",
     "raw-loader": "1.0.0",
     "react-docgen": "4.1.0"
   }

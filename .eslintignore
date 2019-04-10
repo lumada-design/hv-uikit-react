@@ -1,0 +1,20 @@
+# tests
+**/*/coverage
+
+# build folder
+**/*/dist
+**/*/bin
+
+# doc folder
+doc
+
+# Dependency directories
+**/*/node_modules
+
+examples/**/*
+
+resources/license-header.js
+commitlint.config.js
+
+packages/icons/src/*
+

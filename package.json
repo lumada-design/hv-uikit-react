@@ -22,18 +22,40 @@
     "dev:storybook": "npx lerna run dev --parallel",
     "build": "npx lerna run build",
     "doc": "npx lerna run doc",
-    "lint": "npx lerna run lint --parallel",
-    "lint:jenkins": "npx lerna run lint:jenkins",
     "test": "npx lerna run test --parallel",
     "link": "npx lerna run link",
     "publish:prerelease": "npx lerna publish prerelease --yes",
     "publish:preminor": "npx lerna publish preminor --yes --force-publish=*",
     "publish:minor": "npx lerna publish minor --yes --force-publish=*",
     "publish:major": "npx lerna publish major --yes --force-publish=*"
+    "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
+    "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix",
+    "lint:jenkins": "npx eslint -f checkstyle . > eslint.xml"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "lerna": "3.13.1",
     "npm-run-all": "4.1.5",
-    "npx": "10.2.0"
+    "npx": "10.2.0",
+    "prettier": "^1.16.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "7.5.2",
+    "@commitlint/config-conventional": "7.5.0",
+    "babel-eslint": "9.0.0",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "2.10.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-license-header": "0.1.2",
+    "eslint-plugin-prettier": "2.7.0",
+    "eslint-plugin-react": "7.12.4",
+    "husky": "1.3.1"
   }
 }
