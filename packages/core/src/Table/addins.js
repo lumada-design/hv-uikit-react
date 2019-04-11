@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
+/* eslint-disable import/prefer-default-export */
+
 import React from "react";
 import HvLink from "../Link"
 
 /**
  * Creates a link to be in the columns with the cellType link.
- * //TODO: change to hvlink
  * @param col
  */
 const buildLink = col => {

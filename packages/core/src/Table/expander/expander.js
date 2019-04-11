@@ -15,7 +15,6 @@
  */
 
 import React from "react";
-import classNames from "classnames";
 
 /**
  * Add the expander element to the first column. This way the expander element doesn't create

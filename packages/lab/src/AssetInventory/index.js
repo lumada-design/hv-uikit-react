@@ -16,7 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import AssetInventory, { hvAssetsInventoryMode } from "./AssetInventory";
+import AssetInventory from "./AssetInventory";
 
-export { hvAssetsInventoryMode };
 export default withStyles(styles, { withTheme: true })(AssetInventory);

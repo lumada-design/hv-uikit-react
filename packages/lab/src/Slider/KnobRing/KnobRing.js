@@ -17,16 +17,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const HvButton = props => {
+const HvKnobRing = props => {
   const { classes } = props;
 
   return <div className={classes.knobRing} />;
 };
 
-HvButton.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
-  dragging: PropTypes.bool,
-  hoverColor: PropTypes.string
+HvKnobRing.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired
 };
 
-export default HvButton;
+export default HvKnobRing;

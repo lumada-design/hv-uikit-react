@@ -24,6 +24,11 @@ import CardsIconSelected from "@hv/uikit-react-icons/dist/CardsSelected.S";
 import EmptySearchState from "../EmptyState";
 import SearchBox from "../SearchBox";
 
+/*  TODO: Review accessibility */
+
+/*  eslint-disable  jsx-a11y/click-events-have-key-events */
+/*  eslint-disable jsx-a11y/no-static-element-interactions */
+
 /**
  * Assets Inventory component.
  */
@@ -148,7 +153,7 @@ HvAssetInventory.propTypes = {
   /**
    * JSS theme object.
    */
-  theme: PropTypes.object,
+  theme: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied to the banner.
    */

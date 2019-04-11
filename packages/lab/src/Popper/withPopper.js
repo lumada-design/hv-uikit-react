@@ -15,6 +15,7 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import Content from "./Content";
@@ -56,6 +57,10 @@ const withPopper = (Component, content) => {
       );
     }
   }
+
+  Popper.propTypes = {
+    classes: PropTypes.instanceOf(Object).isRequired,
+  };
 
   return withStyles(styles)(Popper);
 };

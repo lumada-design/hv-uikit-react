@@ -21,21 +21,13 @@
     "build:babel": "npx babel src -d dist --source-maps --copy-files",
     "build:clean": "npx del-cli dist/**/tests",
     "clean": "npx del-cli dist",
-    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
-    "lint:fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",
-    "lint:jenkins": "eslint -f checkstyle . > eslint.xml",
     "test": "jest -c config/jest-config.js --coverage",
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
     "link": "npm link"
   },
-  "pre-commit": [
-    "precommit-msg",
-    "lint"
-  ],
   "dependencies": {
     "@hv/uikit-common-themes": ">1.0.1-alpha <1.0.1",
     "@hv/uikit-react-icons": "^1.0.0",
@@ -71,20 +63,10 @@
     "copyfiles": "2.1.0",
     "del-cli": "1.1.0",
     "enzyme-to-json": "3.3.5",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "2.10.0",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-license-header": "0.1.2",
-    "eslint-plugin-prettier": "2.7.0",
-    "eslint-plugin-react": "7.12.4",
     "jest": "23.6.0",
     "jest-junit": "6.3.0",
     "jss-snapshot-serializer": "1.0.0",
-    "npm-run-all": "4.1.5",
-    "pre-commit": "1.2.2",
-    "prettier": "1.16.4"
+    "npm-run-all": "4.1.5"
   },
   "files": [
     "dist"

@@ -20,7 +20,7 @@ import Typography from "@material-ui/core/Typography";
 
 const HvFooter = ({ classes, labelLeftName }) => (
   <div className={classes.root}>
-    <Typography className={classes.labelLeft}>{labelLeftName ? labelLeftName : 'Hitachi Vantara'}</Typography>
+    <Typography className={classes.labelLeft}>{labelLeftName}</Typography>
     <Typography className={classes.labelRight}>
       {`© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`}
     </Typography>
@@ -30,6 +30,10 @@ const HvFooter = ({ classes, labelLeftName }) => (
 HvFooter.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   labelLeftName: PropTypes.string
+};
+
+HvFooter.defaultProps = {
+  labelLeftName: "Hitachi Vantara"
 };
 
 export default HvFooter;

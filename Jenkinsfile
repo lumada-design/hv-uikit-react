@@ -37,8 +37,12 @@ pipeline {
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
                     script {
-                        def RESULT = sh returnStatus: true, script: 'npm run test'
-                        if ( RESULT != 0 ) {
+                        def RESULT_TESTS = sh returnStatus: true, script: 'npm run test'
+                        if ( RESULT_TESTS != 0 ) {
+                            currentBuild.result = 'UNSTABLE'
+                        }
+                        def RESULT_LINT = sh returnStatus: true, script: 'npm run lint:jenkins'
+                        if ( RESULT_LINT != 0 ) {
                             currentBuild.result = 'UNSTABLE'
                         }
                     }
