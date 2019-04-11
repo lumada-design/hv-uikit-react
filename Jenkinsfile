@@ -56,11 +56,13 @@ pipeline {
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    sshagent (credentials: ['github-buildguy']) {
-                        sh 'git checkout alpha'
-                        sh 'cp .npmrc ~/.npmrc'
-                        sh 'git status'
-                        sh "npm run publish:${deploy}"
+                    withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
+                        sshagent (credentials: ['github-buildguy']) {
+                            sh 'git checkout alpha'
+                            sh 'cp .npmrc ~/.npmrc'
+                            sh 'git status'
+                            sh "npm run publish:${deploy}"
+                        }
                     }
                 }
             }  
