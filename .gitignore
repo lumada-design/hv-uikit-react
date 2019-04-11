@@ -16,6 +16,7 @@ node_modules
 
 #Junit
 **/*/junit.xml
+eslint.xml
 
 # Yarn Integrity file
 .yarn-integrity
