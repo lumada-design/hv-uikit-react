@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9001",
-    "doc": "build-storybook"
+    "build": "build-storybook -o dist"
   },
   "dependencies": {
     "@hv/uikit-common-themes": ">=1.0.1-alpha <1.0.1",
@@ -47,5 +47,8 @@
     "babel-plugin-module-resolver": "3.2.0",
     "raw-loader": "1.0.0",
     "react-docgen": "4.1.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
