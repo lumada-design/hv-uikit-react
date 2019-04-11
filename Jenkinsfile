@@ -80,7 +80,6 @@ pipeline {
                     slackSend channel: "${params.channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
-            cleanWs()
         }
     }
 }
