@@ -126,14 +126,13 @@ class List extends React.Component {
 
     const newList = list.map(elem => {
       const newElem = { ...elem };
+      const selectionKey = elem.id ? "id" : "label";
 
       if (!multiSelect) {
         newElem.selected = false;
       }
 
-      // This could cause bugs
-      // comparison by label may cause double selections in case of equal of two labels with the same value.
-      if (elem.label === selectedElem.label) {
+      if (elem[selectionKey] === selectedElem[selectionKey]) {
         newElem.selected = multiSelect || !selectDefault ? !elem.selected : true;
       }
 
