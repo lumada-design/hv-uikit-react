@@ -49,6 +49,9 @@ const styles = theme => ({
     marginTop: "10px",
     flexGrow: 1
   },
+  iconsWrapper: {
+    display: "flex"
+  },
   icon: {
     ...icon
   },
