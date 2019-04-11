@@ -57,14 +57,18 @@ It will run all packages and startup the UI Development Environment [Storybook](
 npm run dev
 ```
 
-Interested in running our documentation just to explore what we have? Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) open its index.html file.   
+#### documentation
+Interested in running our documentation just to explore what we have, but don't want to bootstrap the project? 
+Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) and open its index.html file.   
 
 ## Changelog
 Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/icons/CHANGELOG.md), [doc](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/doc/CHANGELOG.md).
 
 ## Contributing
-You need to ask to be added as a project member to be able to contribute.
-Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
+You need to ask to be added as a project member, to be able to contribute:
+
+- **#ui-kit** slack channel on the [hitachivantara-eng](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) workspace.
+- **#ui-kit** slack channel on the [hitachi-design](https://hitachi-design.slack.com/messages/CGC1E37J9/) workspace.
 
 Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/alpha/CONTRIBUTING.md) for detailed information.
 
