@@ -11,7 +11,7 @@ exports[`Slider  should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999998,
+            "index": -99999999999,
           },
           "themingEnabled": true,
         } => Map {
@@ -969,7 +969,7 @@ exports[`Slider  should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999998,
+                "index": -99999999999,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3135,7 +3135,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999998,
+                  "index": -99999999999,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3281,7 +3281,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999999,
+            "index": -99999999998,
           },
           "themingEnabled": true,
         } => Map {
@@ -4261,7 +4261,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999999,
+                "index": -99999999998,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5141,7 +5141,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999999,
+                  "index": -99999999998,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5401,15 +5401,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "knobRing": "HvButton-knobRing-11",
+                "knobRing": "HvKnobRing-knobRing-11",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "HvButton",
+                "classNamePrefix": "HvKnobRing",
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-11",
+                  "knobRing": "HvKnobRing-knobRing-11",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5886,7 +5886,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "HvButton",
+                "meta": "HvKnobRing",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -5894,10 +5894,10 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="HvButton"
+                  data-meta="HvKnobRing"
                 >
                   
-.HvButton-knobRing-11 {
+.HvKnobRing-knobRing-11 {
   top: -82%;
   left: -82%;
   width: 32px;
@@ -5908,10 +5908,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.HvButton-knobRing-11:hover {
+.HvKnobRing-knobRing-11:hover {
   border: 0px solid transparent;
 }
-.HvButton-knobRing-11:active {
+.HvKnobRing-knobRing-11:active {
   border: 0px solid transparent;
 }
 
@@ -5927,7 +5927,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-11",
+                  "knobRing": "HvKnobRing-knobRing-11",
                 },
                 "index": Array [
                   Object {
@@ -5949,7 +5949,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvButton-knobRing-11": Object {
+                  ".HvKnobRing-knobRing-11": Object {
                     "background-color": "transparent",
                     "border-color": "transparent",
                     "border-radius": "50%",
@@ -5960,10 +5960,10 @@ body {
                     "top": "-82%",
                     "width": "32px",
                   },
-                  ".HvButton-knobRing-11:active": Object {
+                  ".HvKnobRing-knobRing-11:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-11:hover": Object {
+                  ".HvKnobRing-knobRing-11:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -5980,9 +5980,9 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "HvButton",
+                  "classNamePrefix": "HvKnobRing",
                   "classes": Object {
-                    "knobRing": "HvButton-knobRing-11",
+                    "knobRing": "HvKnobRing-knobRing-11",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -6459,16 +6459,16 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "HvButton",
+                  "meta": "HvKnobRing",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvButton-knobRing-11:active": Object {
+                  ".HvKnobRing-knobRing-11:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-11:hover": Object {
+                  ".HvKnobRing-knobRing-11:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -6507,15 +6507,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "knobRing": "HvButton-knobRing-12",
+                "knobRing": "HvKnobRing-knobRing-12",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "HvButton",
+                "classNamePrefix": "HvKnobRing",
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-12",
+                  "knobRing": "HvKnobRing-knobRing-12",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -6992,7 +6992,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "HvButton",
+                "meta": "HvKnobRing",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -7000,10 +7000,10 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="HvButton"
+                  data-meta="HvKnobRing"
                 >
                   
-.HvButton-knobRing-12 {
+.HvKnobRing-knobRing-12 {
   top: -82%;
   left: -82%;
   width: 32px;
@@ -7014,10 +7014,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.HvButton-knobRing-12:hover {
+.HvKnobRing-knobRing-12:hover {
   border: 0px solid transparent;
 }
-.HvButton-knobRing-12:active {
+.HvKnobRing-knobRing-12:active {
   border: 0px solid transparent;
 }
 
@@ -7033,7 +7033,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-12",
+                  "knobRing": "HvKnobRing-knobRing-12",
                 },
                 "index": Array [
                   Object {
@@ -7055,7 +7055,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvButton-knobRing-12": Object {
+                  ".HvKnobRing-knobRing-12": Object {
                     "background-color": "transparent",
                     "border-color": "transparent",
                     "border-radius": "50%",
@@ -7066,10 +7066,10 @@ body {
                     "top": "-82%",
                     "width": "32px",
                   },
-                  ".HvButton-knobRing-12:active": Object {
+                  ".HvKnobRing-knobRing-12:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-12:hover": Object {
+                  ".HvKnobRing-knobRing-12:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -7086,9 +7086,9 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "HvButton",
+                  "classNamePrefix": "HvKnobRing",
                   "classes": Object {
-                    "knobRing": "HvButton-knobRing-12",
+                    "knobRing": "HvKnobRing-knobRing-12",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7565,16 +7565,16 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "HvButton",
+                  "meta": "HvKnobRing",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvButton-knobRing-12:active": Object {
+                  ".HvKnobRing-knobRing-12:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-12:hover": Object {
+                  ".HvKnobRing-knobRing-12:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -7613,15 +7613,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "knobRing": "HvButton-knobRing-13",
+                "knobRing": "HvKnobRing-knobRing-13",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "HvButton",
+                "classNamePrefix": "HvKnobRing",
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-13",
+                  "knobRing": "HvKnobRing-knobRing-13",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -8098,7 +8098,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "HvButton",
+                "meta": "HvKnobRing",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -8106,10 +8106,10 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="HvButton"
+                  data-meta="HvKnobRing"
                 >
                   
-.HvButton-knobRing-13 {
+.HvKnobRing-knobRing-13 {
   top: -82%;
   left: -82%;
   width: 32px;
@@ -8120,10 +8120,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.HvButton-knobRing-13:hover {
+.HvKnobRing-knobRing-13:hover {
   border: 0px solid transparent;
 }
-.HvButton-knobRing-13:active {
+.HvKnobRing-knobRing-13:active {
   border: 0px solid transparent;
 }
 
@@ -8139,7 +8139,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-13",
+                  "knobRing": "HvKnobRing-knobRing-13",
                 },
                 "index": Array [
                   Object {
@@ -8161,7 +8161,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvButton-knobRing-13": Object {
+                  ".HvKnobRing-knobRing-13": Object {
                     "background-color": "transparent",
                     "border-color": "transparent",
                     "border-radius": "50%",
@@ -8172,10 +8172,10 @@ body {
                     "top": "-82%",
                     "width": "32px",
                   },
-                  ".HvButton-knobRing-13:active": Object {
+                  ".HvKnobRing-knobRing-13:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-13:hover": Object {
+                  ".HvKnobRing-knobRing-13:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -8192,9 +8192,9 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "HvButton",
+                  "classNamePrefix": "HvKnobRing",
                   "classes": Object {
-                    "knobRing": "HvButton-knobRing-13",
+                    "knobRing": "HvKnobRing-knobRing-13",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -8671,16 +8671,16 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "HvButton",
+                  "meta": "HvKnobRing",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvButton-knobRing-13:active": Object {
+                  ".HvKnobRing-knobRing-13:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-13:hover": Object {
+                  ".HvKnobRing-knobRing-13:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -8719,15 +8719,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "knobRing": "HvButton-knobRing-14",
+                "knobRing": "HvKnobRing-knobRing-14",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "HvButton",
+                "classNamePrefix": "HvKnobRing",
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-14",
+                  "knobRing": "HvKnobRing-knobRing-14",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -9204,7 +9204,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "HvButton",
+                "meta": "HvKnobRing",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -9212,10 +9212,10 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="HvButton"
+                  data-meta="HvKnobRing"
                 >
                   
-.HvButton-knobRing-14 {
+.HvKnobRing-knobRing-14 {
   top: -82%;
   left: -82%;
   width: 32px;
@@ -9226,10 +9226,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.HvButton-knobRing-14:hover {
+.HvKnobRing-knobRing-14:hover {
   border: 0px solid transparent;
 }
-.HvButton-knobRing-14:active {
+.HvKnobRing-knobRing-14:active {
   border: 0px solid transparent;
 }
 
@@ -9245,7 +9245,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-14",
+                  "knobRing": "HvKnobRing-knobRing-14",
                 },
                 "index": Array [
                   Object {
@@ -9267,7 +9267,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvButton-knobRing-14": Object {
+                  ".HvKnobRing-knobRing-14": Object {
                     "background-color": "transparent",
                     "border-color": "transparent",
                     "border-radius": "50%",
@@ -9278,10 +9278,10 @@ body {
                     "top": "-82%",
                     "width": "32px",
                   },
-                  ".HvButton-knobRing-14:active": Object {
+                  ".HvKnobRing-knobRing-14:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-14:hover": Object {
+                  ".HvKnobRing-knobRing-14:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -9298,9 +9298,9 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "HvButton",
+                  "classNamePrefix": "HvKnobRing",
                   "classes": Object {
-                    "knobRing": "HvButton-knobRing-14",
+                    "knobRing": "HvKnobRing-knobRing-14",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -9777,16 +9777,16 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "HvButton",
+                  "meta": "HvKnobRing",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvButton-knobRing-14:active": Object {
+                  ".HvKnobRing-knobRing-14:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-14:hover": Object {
+                  ".HvKnobRing-knobRing-14:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -9825,15 +9825,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "knobRing": "HvButton-knobRing-15",
+                "knobRing": "HvKnobRing-knobRing-15",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "HvButton",
+                "classNamePrefix": "HvKnobRing",
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-15",
+                  "knobRing": "HvKnobRing-knobRing-15",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -10310,7 +10310,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "HvButton",
+                "meta": "HvKnobRing",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -10318,10 +10318,10 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="HvButton"
+                  data-meta="HvKnobRing"
                 >
                   
-.HvButton-knobRing-15 {
+.HvKnobRing-knobRing-15 {
   top: -82%;
   left: -82%;
   width: 32px;
@@ -10332,10 +10332,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.HvButton-knobRing-15:hover {
+.HvKnobRing-knobRing-15:hover {
   border: 0px solid transparent;
 }
-.HvButton-knobRing-15:active {
+.HvKnobRing-knobRing-15:active {
   border: 0px solid transparent;
 }
 
@@ -10351,7 +10351,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "knobRing": "HvButton-knobRing-15",
+                  "knobRing": "HvKnobRing-knobRing-15",
                 },
                 "index": Array [
                   Object {
@@ -10373,7 +10373,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvButton-knobRing-15": Object {
+                  ".HvKnobRing-knobRing-15": Object {
                     "background-color": "transparent",
                     "border-color": "transparent",
                     "border-radius": "50%",
@@ -10384,10 +10384,10 @@ body {
                     "top": "-82%",
                     "width": "32px",
                   },
-                  ".HvButton-knobRing-15:active": Object {
+                  ".HvKnobRing-knobRing-15:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-15:hover": Object {
+                  ".HvKnobRing-knobRing-15:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -10404,9 +10404,9 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "HvButton",
+                  "classNamePrefix": "HvKnobRing",
                   "classes": Object {
-                    "knobRing": "HvButton-knobRing-15",
+                    "knobRing": "HvKnobRing-knobRing-15",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10883,16 +10883,16 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "HvButton",
+                  "meta": "HvKnobRing",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvButton-knobRing-15:active": Object {
+                  ".HvKnobRing-knobRing-15:active": Object {
                     "border": "0px solid transparent",
                   },
-                  ".HvButton-knobRing-15:hover": Object {
+                  ".HvKnobRing-knobRing-15:hover": Object {
                     "border": "0px solid transparent",
                   },
                   "knobRing": Object {
@@ -17073,22 +17073,22 @@ body {
                     <Component
                       dragging={false}
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(HvKnobRing)
                         dragging={false}
                       >
-                        <HvButton
+                        <HvKnobRing
                           classes={
                             Object {
-                              "knobRing": "HvButton-knobRing-11",
+                              "knobRing": "HvKnobRing-knobRing-11",
                             }
                           }
                           dragging={false}
                         >
                           <div
-                            className="HvButton-knobRing-11"
+                            className="HvKnobRing-knobRing-11"
                           />
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </HvKnobRing>
+                      </WithStyles(HvKnobRing)>
                     </Component>
                   </div>
                 </Handle>
@@ -17413,22 +17413,22 @@ body {
                     <Component
                       dragging={false}
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(HvKnobRing)
                         dragging={false}
                       >
-                        <HvButton
+                        <HvKnobRing
                           classes={
                             Object {
-                              "knobRing": "HvButton-knobRing-12",
+                              "knobRing": "HvKnobRing-knobRing-12",
                             }
                           }
                           dragging={false}
                         >
                           <div
-                            className="HvButton-knobRing-12"
+                            className="HvKnobRing-knobRing-12"
                           />
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </HvKnobRing>
+                      </WithStyles(HvKnobRing)>
                     </Component>
                   </div>
                 </Handle>
@@ -17753,22 +17753,22 @@ body {
                     <Component
                       dragging={false}
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(HvKnobRing)
                         dragging={false}
                       >
-                        <HvButton
+                        <HvKnobRing
                           classes={
                             Object {
-                              "knobRing": "HvButton-knobRing-13",
+                              "knobRing": "HvKnobRing-knobRing-13",
                             }
                           }
                           dragging={false}
                         >
                           <div
-                            className="HvButton-knobRing-13"
+                            className="HvKnobRing-knobRing-13"
                           />
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </HvKnobRing>
+                      </WithStyles(HvKnobRing)>
                     </Component>
                   </div>
                 </Handle>
@@ -18093,22 +18093,22 @@ body {
                     <Component
                       dragging={false}
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(HvKnobRing)
                         dragging={false}
                       >
-                        <HvButton
+                        <HvKnobRing
                           classes={
                             Object {
-                              "knobRing": "HvButton-knobRing-14",
+                              "knobRing": "HvKnobRing-knobRing-14",
                             }
                           }
                           dragging={false}
                         >
                           <div
-                            className="HvButton-knobRing-14"
+                            className="HvKnobRing-knobRing-14"
                           />
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </HvKnobRing>
+                      </WithStyles(HvKnobRing)>
                     </Component>
                   </div>
                 </Handle>
@@ -18444,22 +18444,22 @@ body {
                     <Component
                       dragging={false}
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(HvKnobRing)
                         dragging={false}
                       >
-                        <HvButton
+                        <HvKnobRing
                           classes={
                             Object {
-                              "knobRing": "HvButton-knobRing-15",
+                              "knobRing": "HvKnobRing-knobRing-15",
                             }
                           }
                           dragging={false}
                         >
                           <div
-                            className="HvButton-knobRing-15"
+                            className="HvKnobRing-knobRing-15"
                           />
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </HvKnobRing>
+                      </WithStyles(HvKnobRing)>
                     </Component>
                   </div>
                 </Handle>

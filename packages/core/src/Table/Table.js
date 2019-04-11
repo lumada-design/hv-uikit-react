@@ -606,7 +606,7 @@ Table.defaultProps = {
   defaultSorted: [],
   subElementTemplate: null,
   idForCheckbox: "",
-  getTrProps: () => {},
+  getTrProps: undefined,
   useRouter: false
 };
 
