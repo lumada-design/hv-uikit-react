@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.4...@hv/uikit-react-core@1.0.1-alpha.6) (2019-04-11)
+
+
+### Bug Fixes
+
+* closes [#79](https://github.com/pentaho/hv-uikit-react/issues/79) - using SVG instead of  icon component in selectors ([#82](https://github.com/pentaho/hv-uikit-react/issues/82)) ([f9cf2ba](https://github.com/pentaho/hv-uikit-react/commit/f9cf2ba))
+
+
+
+
+
 ## [1.0.1-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.4...@hv/uikit-react-core@1.0.1-alpha.5) (2019-04-11)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.0.1-alpha.4...@hv/uikit-react-lab@1.0.1-alpha.9) (2019-04-11)
+
+
+### Bug Fixes
+
+* accessibility eslint warning solved (ignore added as a fix on [#72](https://github.com/pentaho/hv-uikit-react/issues/72)) ([#76](https://github.com/pentaho/hv-uikit-react/issues/76)) ([03cacb8](https://github.com/pentaho/hv-uikit-react/commit/03cacb8))
+* issue [#77](https://github.com/pentaho/hv-uikit-react/issues/77) ([ce159d6](https://github.com/pentaho/hv-uikit-react/commit/ce159d6))
+
+
+
+
+
 ## [1.0.1-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.0.1-alpha.7...@hv/uikit-react-lab@1.0.1-alpha.8) (2019-04-11)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
