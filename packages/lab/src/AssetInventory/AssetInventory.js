@@ -72,19 +72,19 @@ export class HvAssetInventory extends Component {
           </Grid>
           <Grid item className={classes.viewModeContainer}>
             {viewModeCards && (
-              <div>
-                <span onClick={() => this.changeViewMode(HvAssetInventory.assetInventoryMode.LIST, viewChangedHandler)}>
+              <div className={classes.iconsWrapper}>
+                <div role="presentation" onClick={() => this.changeViewMode(HvAssetInventory.assetInventoryMode.LIST, viewChangedHandler)}>
                   <ListIcon className={classes.iconChangeView} />
-                </span>
+                </div>
                 <CardsIconSelected className={classes.icon} />
               </div>
             )}
             {viewModeList && (
-              <div>
+              <div className={classes.iconsWrapper}>
                 <ListIcon className={classes.icon} color={[theme.hv.palette.accent.acce1, theme.hv.palette.atmosphere.atmo2]} />
-                <span onClick={() => this.changeViewMode(HvAssetInventory.assetInventoryMode.CARDS, viewChangedHandler)}>
+                <div role="presentation" onClick={() => this.changeViewMode(HvAssetInventory.assetInventoryMode.CARDS, viewChangedHandler)}>
                   <CardsIcon className={classes.iconChangeView} />
-                </span>
+                </div>
               </div>
             )}
           </Grid>
