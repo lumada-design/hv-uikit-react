@@ -6,9 +6,6 @@ pipeline {
         timestamps () 
         timeout(time: 20, unit: 'MINUTES') 
     }
-    triggers {
-        pollSCM 'H/10 * * * *'
-    }
     
     parameters {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
