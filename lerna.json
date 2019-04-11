@@ -11,12 +11,9 @@
         "master",
         "alpha"
       ],
-      "message": "[ci-skip] chore(release): publish",
+      "message": "chore(release): publish",
       "conventionalCommits": true,
       "githubRelease": true
     }
-  },
-  "ignoreChanges": [
-    ["**/tests/**", "**/*.md"]
-  ]
+  }
 }
