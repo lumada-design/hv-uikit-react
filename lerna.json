@@ -4,15 +4,19 @@
   "command": {
     "publish": {
       "npmClient": "npm",
-      "registry": "https://nexus.pentaho.org/repository/public-npm-release/",
-      "conventionalCommits": true
+      "registry": "https://nexus.pentaho.org/repository/public-npm-release/"
     },
     "version": {
       "allowBranch": [
         "master",
         "alpha"
       ],
-      "message": "[skip ci] chore(release): publish"
+      "message": "chore(release): publish",
+      "conventionalCommits": true,
+      "githubRelease": true
     }
-  }
+  },
+  "ignoreChanges": [
+    ["**/tests/**", "**/*.md"]
+  ]
 }
