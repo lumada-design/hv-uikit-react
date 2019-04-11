@@ -16,10 +16,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox.S";
+import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck.S";
+import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial.S";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
+import theme from "../../theme";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -43,14 +47,13 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
 
 /**
  * Chooses the correct icon to used based on the disable value.
- *
- * @param {String} classes - The classes object containing the classes names needed to be applied.
+ * 
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (classes, disabled) => {
+const prepareIcon = (disabled) => {
   const disabledIcon = (
-    <div className={classNames(classes.icon, classes.iconDisable)} />
+    <CheckBoxIcon color={["none", theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]} />
   );
 
   const icons = {
@@ -64,13 +67,13 @@ const prepareIcon = (classes, disabled) => {
   }
 
   icons.emptyIcon = (
-    <div className={classNames(classes.icon, classes.iconEmpty)} />
+    <CheckBoxIcon />
   );
   icons.checkedIcon = (
-    <div className={classNames(classes.icon, classes.iconFull)} />
+    <CheckBoxCheckedIcon />
   );
   icons.indeterminateIcon = (
-    <div className={classNames(classes.icon, classes.iconIndeterminate)} />
+    <CheckBoxPartialIcon />
   );
 
   return icons;
@@ -91,7 +94,7 @@ const HvCheckbox = props => {
   } = props;
 
   const materialPrimaryColor = "primary";
-  const icons = prepareIcon(classes, disabled);
+  const icons = prepareIcon(disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
 
   return (

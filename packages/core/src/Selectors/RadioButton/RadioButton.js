@@ -17,9 +17,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected.S";
+import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected.S";
 import Radio from "@material-ui/core/Radio";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
+import theme from "../../theme";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -44,13 +47,12 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
 /**
  * Chooses the correct icon to used based on the disable value.
  *
- * @param {String} classes - The classes object containing the classes names needed to be applied.
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (classes, disabled) => {
+const prepareIcon = (disabled) => {
   const disabledIcon = (
-    <div className={classNames(classes.icon, classes.iconDisable)} />
+    <RadioButtonUnSelected color={["none", theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]} />
   );
 
   const icons = {
@@ -63,10 +65,10 @@ const prepareIcon = (classes, disabled) => {
   }
 
   icons.emptyIcon = (
-    <div className={classNames(classes.icon, classes.iconEmpty)} />
+    <RadioButtonUnSelected />
   );
   icons.checkedIcon = (
-    <div className={classNames(classes.icon, classes.iconFull)} />
+    <RadioButtonSelected />
   );
 
   return icons;
@@ -85,7 +87,7 @@ const HvRadio = props => {
     propsIcon
   } = props;
 
-  const icons = prepareIcon(classes, disabled);
+  const icons = prepareIcon(disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const materialPrimaryColor = "primary";
 

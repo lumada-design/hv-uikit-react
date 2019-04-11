@@ -24,37 +24,17 @@ import CheckBoxWithStyles from "../index";
 import CheckBox from "../CheckBox";
 import labelPositions from "../../labelPositions";
 import HvProvider from "../../../Provider";
+import theme from "../../../theme";
 
 describe("CheckBox withStyles", () => {
   let wrapper;
-
-  const getIconClassNames = ParentElement =>
-    ParentElement.children()
-      .children()
-      .children()
-      .props().control.props.icon.props.className;
-
-  const getCheckedIconClassNames = ParentElement =>
-    ParentElement.children()
-      .children()
-      .children()
-      .props().control.props.checkedIcon.props.className;
-
-  const getIndeterminateIconClassNames = ParentElement =>
-    ParentElement.children()
-      .children()
-      .children()
-      .props().control.props.indeterminateIcon.props.className;
 
   const getLabelPositionClassNames = ParentElement =>
     ParentElement.children()
       .children()
       .props().className;
 
-  const emptyIconClassName = "iconEmpty";
-  const fullIconClassName = "iconFull";
-  const indeterminateIconClassName = "iconIndeterminate";
-  const disableIconClassName = "iconDisable";
+  const emptyIcon = "Checkbox.S";
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
@@ -74,7 +54,7 @@ describe("CheckBox withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render the RadioButton component", () => {
+  it("should render the Checkbox component", () => {
     wrapper = mount(
       <HvProvider>
         <CheckBoxWithStyles />
@@ -84,49 +64,31 @@ describe("CheckBox withStyles", () => {
     expect(buttonComponent.length).toBe(1);
   });
 
-  it("should apply the correct icon", () => {
+  it("should have an icon", () => {
     const mountWrapper = mount(
       <HvProvider>
         <CheckBoxWithStyles />
       </HvProvider>
-    ).find(CheckBox);
-    expect(getIconClassNames(mountWrapper).includes(emptyIconClassName)).toBe(
+    ).find(CheckBox).html();
+
+    expect(mountWrapper.includes(emptyIcon)).toBe(
       true
     );
-    expect(
-      getCheckedIconClassNames(mountWrapper).includes(fullIconClassName)
-    ).toBe(true);
-    expect(
-      getIndeterminateIconClassNames(mountWrapper).includes(
-        indeterminateIconClassName
-      )
-    ).toBe(true);
-    expect(
-      getCheckedIconClassNames(mountWrapper).includes(disableIconClassName)
-    ).toBe(false);
-    expect(getIconClassNames(mountWrapper).includes(disableIconClassName)).toBe(
-      false
-    );
+    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
+    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
   });
 
-  it("should apply the correct icon when disabled", () => {
+  it("should have an icon when disabled", () => {
     const mountWrapper = mount(
       <HvProvider>
         <CheckBoxWithStyles disabled />
       </HvProvider>
-    ).find(CheckBox);
-    expect(getIconClassNames(mountWrapper).includes(emptyIconClassName)).toBe(
-      false
-    );
-    expect(
-      getCheckedIconClassNames(mountWrapper).includes(fullIconClassName)
-    ).toBe(false);
-    expect(
-      getCheckedIconClassNames(mountWrapper).includes(disableIconClassName)
-    ).toBe(true);
-    expect(getIconClassNames(mountWrapper).includes(disableIconClassName)).toBe(
+    ).find(CheckBox).html();
+    expect(mountWrapper.includes(emptyIcon)).toBe(
       true
     );
+    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
+    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
   });
 
   it("should apply the correct class name when there is a label at the start", () => {
