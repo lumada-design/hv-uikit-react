@@ -275,6 +275,7 @@ Main.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool
     })

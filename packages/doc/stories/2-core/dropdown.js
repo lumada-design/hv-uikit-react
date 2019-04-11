@@ -45,7 +45,7 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
     },
     {
       title: "5. Multi-selection dropdown without search",
-      description: "Drop down with less than 10 elements",
+      description: "Supports equal labels and uses ids to manage selection",
       src: "core/dropdown/dropdown5"
     },
     {
@@ -54,8 +54,8 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
       src: "core/dropdown/dropdown6"
     },
     {
-      title: "7. Incomplete simple selection dropdown",
-      description: "Drop down with less than 10 elements",
+      title: "7. Single selection dropdown",
+      description: "Support ids to manage selection",
       src: "core/dropdown/dropdown7"
     },
     {
