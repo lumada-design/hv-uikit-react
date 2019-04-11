@@ -5,6 +5,7 @@ pipeline {
     options { 
         timestamps () 
         timeout(time: 20, unit: 'MINUTES') 
+        disableConcurrentBuilds()
     }
     
     parameters {
