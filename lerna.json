@@ -12,7 +12,7 @@
         "master",
         "alpha"
       ],
-      "message": "chore(release): publish"
+      "message": "[skip ci] chore(release): publish"
     }
   }
 }
