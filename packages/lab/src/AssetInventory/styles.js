@@ -32,13 +32,13 @@ const styles = theme => ({
   searchBoxContainer: {
     position: "relative",
     height: "auto",
-    marginTop: "30px"
+    marginTop: `${theme.hv.spacing.md}px`
   },
   viewModeContainer: {
     position: "relative",
     height: "auto",
     textAlign: "right",
-    marginTop: "30px"
+    marginTop: `${theme.hv.spacing.md}px`
   },
   emptyStateContainer: {
     width: "100%",
@@ -46,7 +46,7 @@ const styles = theme => ({
   },
   childrenListContainer: {
     width: "100%",
-    marginTop: "10px",
+    marginTop: `${theme.hv.spacing.xs}px`,
     flexGrow: 1
   },
   iconsWrapper: {
