@@ -20,14 +20,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
-import empty from "./assets/radio-empty.svg";
-import full from "./assets/radio-full.svg";
 
 /**
  * Chooses the correct label styling to applied based on position.
  *
  * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the avaible label positions.
+ * @param {Object} labelPosition - an Object containing the available label positions.
  * @returns {Object} - an Object with the name of the class for the required styling.
  */
 const prepareLabelStyles = (classes, labelPosition, label) => {

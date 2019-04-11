@@ -18,9 +18,9 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import Slider from "../Slider";
 import SliderWithStyles from "../index";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 describe("Slider ", () => {
   const knobProperties = [

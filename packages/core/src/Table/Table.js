@@ -85,6 +85,7 @@ class Table extends React.Component {
     this.state.recordQuantity = data.length;
 
     if (!idForCheckbox) {
+      /* eslint-disable-next-line global-require */
       const withFixedColumns = require("react-table-hoc-fixed-columns");
       this.state.Table = withFixedColumns.default(ReactTable);
     }
@@ -306,7 +307,7 @@ class Table extends React.Component {
       ...other
     } = this.props;
 
-    const { expanded, selectAll, Table } = this.state;
+    const { expanded, selectAll, Table: AugmentedTable } = this.state;
 
     const tableStyles = tableStyleOverrides(classes);
 
@@ -395,7 +396,7 @@ class Table extends React.Component {
             )}
           </div>
         )}
-        <Table
+        <AugmentedTable
           {...other}
           {...tableStyles}
           {...paginationProps}
@@ -604,7 +605,9 @@ Table.defaultProps = {
   sortable: true,
   defaultSorted: [],
   subElementTemplate: null,
-  idForCheckbox: ""
+  idForCheckbox: "",
+  getTrProps: undefined,
+  useRouter: false
 };
 
 export default Table;

@@ -15,7 +15,6 @@
  */
 
 import theme from "@hv/uikit-common-themes/dist/theme";
-import palette from "../palette";
 
 const muiAppBar = {
   root: {

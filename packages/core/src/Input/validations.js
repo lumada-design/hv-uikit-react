@@ -46,10 +46,10 @@ const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
  * @param {Number || String} num - The value to test.
  * @returns {Boolean} - ´true´ if the value is a number ´false´ otherwise.
  */
-const isNumeric = num => {
+const isNumeric = num => 
   // to prevent Number( <spaces> ) = 0
-  return num.trim().length > 0 && !Number.isNaN(Number(num));
-};
+   num.trim().length > 0 && !Number.isNaN(Number(num))
+;
 
 /**
  * Checks if the value is an email

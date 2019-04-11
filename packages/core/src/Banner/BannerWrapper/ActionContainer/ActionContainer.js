@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+/*  TODO: Review accessibility */
+
+/*  eslint-disable  jsx-a11y/click-events-have-key-events */
+/*  eslint-disable jsx-a11y/no-static-element-interactions */
+/*  eslint-disable jsx-a11y/interactive-supports-focus */
+
 import React from "react";
 import Close16 from "@hv/uikit-react-icons/dist/Close.S";
 import PropTypes from "prop-types";

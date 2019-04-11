@@ -81,8 +81,6 @@ class Recovery extends React.Component {
       recoveryTitle,
       messageToRecover,
       messageAfterRecover,
-      recoveryInputLabel,
-      recoveryPlaceholder,
       recoveryErrorMessage
     } = this.props;
     const { isRecovering, recoverStatus } = this.state;
@@ -178,14 +176,6 @@ Recovery.propTypes = {
    * Message shown after recover.
    */
   messageAfterRecover: PropTypes.string.isRequired,
-  /**
-   * Recovery input label.
-   */
-  recoveryInputLabel: PropTypes.string.isRequired,
-  /**
-   * Recovery placeholder.
-   */
-  recoveryPlaceholder: PropTypes.string.isRequired,
   /**
    * Message shown when an error occurs.
    */
