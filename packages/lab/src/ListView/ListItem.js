@@ -69,24 +69,36 @@ const ListItem = ({
   mediaPath,
   mediaTitle,
   mediaHeight,
+  mediaWidth,
   ...other
 }) => {
   const footerExist = actions || isSelectable;
   // calculate grid item size (as more content the smaller the grid items sizes should be)
-  const gridItemSize = 12 / ( 1 +
+  const gridItemSize =
+    12 /
+    (1 +
       (innerItemContent ? 1 : 0) +
       (!isNil(mediaPath) && mediaPath.length > 0 ? 1 : 0) +
-      (footerExist ? 1 : 0) );
+      (footerExist ? 1 : 0));
 
   const defaultContent = (
     <>
-      <Grid container spacing={24} direction="row" justify="space-between" alignItems="flex-start">
-        <Grid item xs={gridItemSize} sm={gridItemSize} md={gridItemSize} lg={gridItemSize} xl={gridItemSize}>
-          <LeftContent
-            avatar={avatar}
-            title={title}
-            subtitle={subtitle}
-          />
+      <Grid
+        container
+        spacing={24}
+        direction="row"
+        justify="space-between"
+        alignItems="flex-start"
+      >
+        <Grid
+          item
+          xs={gridItemSize}
+          sm={gridItemSize}
+          md={gridItemSize}
+          lg={gridItemSize}
+          xl={gridItemSize}
+        >
+          <LeftContent avatar={avatar} title={title} subtitle={subtitle} />
         </Grid>
         {innerItemContent && (
           <Grid item>
@@ -102,6 +114,7 @@ const ListItem = ({
               mediaPath={mediaPath}
               mediaTitle={mediaTitle}
               mediaHeight={mediaHeight}
+              mediaWidth={mediaWidth}
             />
           </Grid>
         )}
@@ -127,7 +140,8 @@ const ListItem = ({
       className={classNames(classes.content, classes.borderLeft)}
       style={{
         borderLeftColor: semantic && theme.palette.semantic[semantic],
-        borderLeftWidth: semantic !== null ? "4px" : classes.borderLeft.borderLeftWidth
+        borderLeftWidth:
+          semantic !== null ? "4px" : classes.borderLeft.borderLeftWidth
       }}
       {...other}
     >
@@ -187,6 +201,10 @@ ListItem.propTypes = {
    */
   mediaHeight: PropTypes.number,
   /**
+   *  The width necessary to adjust the media container to the image.
+   */
+  mediaWidth: PropTypes.number,
+  /**
    *  The border color at the left of the item. Must be one of palette semantic colors. You want to set another color, the borderLeft should be override.
    */
   semantic: PropTypes.oneOf([
@@ -239,6 +257,7 @@ ListItem.defaultProps = {
   onSelect: () => {},
   actions: null,
   mediaHeight: undefined,
+  mediaWidth: undefined,
   mediaPath: "",
   mediaTitle: "",
   checkboxValue: "",
