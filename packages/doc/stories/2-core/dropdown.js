@@ -59,12 +59,17 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
       src: "core/dropdown/dropdown7"
     },
     {
-      title: "8. Disabled multi-select dropdown",
+      title: "8. Single selection dropdown",
+      description: "With no default selected",
       src: "core/dropdown/dropdown8"
     },
     {
-      title: "9. Disabled dropdown",
+      title: "9. Disabled multi-select dropdown",
       src: "core/dropdown/dropdown9"
+    },
+    {
+      title: "10. Disabled dropdown",
+      src: "core/dropdown/dropdown10"
     }
   ]
 });
