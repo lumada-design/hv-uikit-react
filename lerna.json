@@ -11,7 +11,7 @@
         "master",
         "alpha"
       ],
-      "message": "chore(release): publish [ci-skip]",
+      "message": "chore(release): publish",
       "conventionalCommits": true,
       "githubRelease": true
     }
