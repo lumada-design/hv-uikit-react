@@ -152,7 +152,7 @@ class Main extends React.Component {
   }
 
   renderList() {
-    const { classes, values, multiSelect, showSearch } = this.props;
+    const { classes, values, multiSelect, showSearch, selectDefault } = this.props;
     const { isOpen, labels } = this.state;
 
     return (
@@ -174,6 +174,7 @@ class Main extends React.Component {
             this.handleSelection(selected, commitChanges, toggle)
           }
           labels={labels}
+          selectDefault={selectDefault}
         />
       </div>
     );
@@ -274,7 +275,7 @@ Main.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
+      label: PropTypes.string.isRequired,
       selected: PropTypes.bool
     })
   ),
@@ -315,7 +316,12 @@ Main.propTypes = {
     applyLabel: PropTypes.string,
     multiSelectionAction: PropTypes.string,
     multiSelectionConjunction: PropTypes.string
-  })
+  }),
+  /**
+   * If ´true´ and none element selected, 
+   * single select has default (first) label selected.
+   */
+  selectDefault: PropTypes.bool
 };
 
 Main.defaultProps = {
@@ -326,7 +332,8 @@ Main.defaultProps = {
   disabled: false,
   expanded: false,
   onChange() {},
-  labels: {}
+  labels: {},
+  selectDefault: true
 };
 
 export default Main;

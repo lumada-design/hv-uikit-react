@@ -31605,6 +31605,7 @@ body {
         }
         multiSelect={true}
         onChange={[Function]}
+        selectDefault={true}
         showSearch={true}
         theme={
           Object {

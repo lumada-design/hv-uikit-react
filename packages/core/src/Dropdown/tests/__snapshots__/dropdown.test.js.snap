@@ -33666,6 +33666,7 @@ body {
         labels={Object {}}
         multiSelect={true}
         onChange={[Function]}
+        selectDefault={true}
         showSearch={true}
         theme={
           Object {
@@ -34359,6 +34360,7 @@ body {
               }
               multiSelect={true}
               onChange={[Function]}
+              selectDefault={true}
               showSearch={true}
               values={
                 Array [
@@ -34405,6 +34407,7 @@ body {
                 }
                 multiSelect={true}
                 onChange={[Function]}
+                selectDefault={true}
                 showSearch={true}
                 theme={
                   Object {
@@ -60877,6 +60880,7 @@ body {
             ],
           }
         }
+        selectDefault={true}
         showSearch={true}
         theme={
           Object {
@@ -61565,6 +61569,7 @@ body {
               }
               multiSelect={false}
               onChange={[Function]}
+              selectDefault={true}
               showSearch={true}
               values={
                 Array [
@@ -61611,6 +61616,7 @@ body {
                 }
                 multiSelect={false}
                 onChange={[Function]}
+                selectDefault={true}
                 showSearch={true}
                 theme={
                   Object {
