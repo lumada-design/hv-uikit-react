@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.6...@hv/uikit-react-core@1.0.1-alpha.7) (2019-04-12)
+
+
+### Features
+
+* **dropdown:** enable/disable default selection on single selection dropdown ([fa56ec0](https://github.com/pentaho/hv-uikit-react/commit/fa56ec0))
+
+
+
+
+
 ## [1.0.1-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.4...@hv/uikit-react-core@1.0.1-alpha.6) (2019-04-11)
 
 
