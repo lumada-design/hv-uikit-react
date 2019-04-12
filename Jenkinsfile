@@ -12,7 +12,7 @@ pipeline {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
         booleanParam(name: 'skipDeploy', defaultValue: false, description: 'when true, skip deploy to nexus.')
-        choice(choices: ['prerelease', 'preminor', 'minor', 'major'], description: 'What type of deploy.', name: 'deploy')
+        choice(choices: ['patch', 'minor', 'major'], description: 'What type of deploy.', name: 'deploy')
         choice(choices: ['#ui-kit-eng-ci','#ui-kit-eng', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
    
@@ -23,7 +23,7 @@ pipeline {
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    sh 'npm install'
+                    sh 'npm ci --silent'
                     sh 'npm run bootstrap'
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
                     withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
                         sshagent (credentials: ['github-buildguy']) {
-                            sh 'git checkout alpha'
+                            sh 'git checkout master'
                             sh 'cp .npmrc ~/.npmrc'
                             sh 'git status'
                             sh "npm run publish:${deploy}"
