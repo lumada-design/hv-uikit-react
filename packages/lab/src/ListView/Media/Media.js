@@ -21,19 +21,31 @@ import CardMedia from "@material-ui/core/CardMedia";
 /**
  * The media container.
  *
- * @param {Object} { classes, mediaPath, mediaTitle, mediaHeight, ...other }
+ * @param {Object} { classes, mediaPath, mediaTitle, mediaHeight, mediaWidth, ...other }
  */
-const Media = ({ classes, mediaPath, mediaTitle, mediaHeight, ...other }) => (
-  <div className={classes.mediaContainer}>
-    <CardMedia
-      className={classes.media}
-      image={mediaPath}
-      style={mediaHeight ? { height: `${mediaHeight}px` } : undefined}
-      title={mediaTitle}
-      {...other}
-    />
-  </div>
-);
+const Media = ({
+  classes,
+  mediaPath,
+  mediaTitle,
+  mediaHeight,
+  mediaWidth,
+  ...other
+}) => {
+  const styleObj = {};
+  if (mediaHeight) styleObj.height = `${mediaHeight}px`;
+  if (mediaWidth) styleObj.width = `${mediaWidth}px`;
+  return (
+    <div className={classes.mediaContainer}>
+      <CardMedia
+        className={classes.media}
+        image={mediaPath}
+        style={styleObj}
+        title={mediaTitle}
+        {...other}
+      />
+    </div>
+  );
+};
 
 Media.propTypes = {
   /**
@@ -60,13 +72,18 @@ Media.propTypes = {
   /**
    *  The height necessary to adjust the media container to the image.
    */
-  mediaHeight: PropTypes.number
+  mediaHeight: PropTypes.number,
+  /**
+   *  The width necessary to adjust the media container to the image.
+   */
+  mediaWidth: PropTypes.number
 };
 
 Media.defaultProps = {
   mediaTitle: "",
   mediaPath: "",
-  mediaHeight: undefined
+  mediaHeight: undefined,
+  mediaWidth: undefined
 };
 
 export default Media;
