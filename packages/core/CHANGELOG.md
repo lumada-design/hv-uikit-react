@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.8...@hv/uikit-react-core@1.0.1-alpha.9) (2019-04-12)
+
+
+### Bug Fixes
+
+* **dropdown:** - support ids to manage selection ([891e944](https://github.com/pentaho/hv-uikit-react/commit/891e944))
+
+
+
+
+
 ## [1.0.1-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.7...@hv/uikit-react-core@1.0.1-alpha.8) (2019-04-12)
 
 
