@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.7...@hv/uikit-react-core@1.0.1-alpha.8) (2019-04-12)
+
+
+### Features
+
+* Fixes [#85](https://github.com/pentaho/hv-uikit-react/issues/85) ([0ab87ed](https://github.com/pentaho/hv-uikit-react/commit/0ab87ed))
+
+
+
+
+
 ## [1.0.1-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.1-alpha.6...@hv/uikit-react-core@1.0.1-alpha.7) (2019-04-12)
 
 
