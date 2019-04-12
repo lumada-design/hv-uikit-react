@@ -38,6 +38,21 @@ const mockData = [
   }
 ];
 
+const mockDataWithIds = [
+  {
+    id: "id-1",
+    label: "Value 1"
+  },
+  {
+    id: "id-2",
+    label: "Value 2"
+  },
+  {
+    id: "id-3",
+    label: "Value 3"
+  }
+];
+
 describe("<Dropdown />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
@@ -320,6 +335,29 @@ describe("<Dropdown />", () => {
         .simulate("change", { target: { checked: true } });
 
       expect(instance.handleSelection).toBeCalled();
+    });
+  });
+
+  describe("<Dropdown /> single selection with ids to manage selection", () => {
+    beforeEach(async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropdownWithStyles multiSelect={false} values={mockDataWithIds} />
+        </HvProvider>
+      );
+    });
+
+    it("handleSelection updates state accordingly", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+
+      instance.handleSelection({ id: "id-1" });
+
+      expect(instance.state.list).toEqual([
+        { isResult: true, selected: true, id: "id-1", label: "Value 1" },
+        { isResult: true, selected: false, id: "id-2", label: "Value 2" },
+        { isResult: true, selected: false, id: "id-3", label: "Value 3" }
+      ]);
     });
   });
 });
