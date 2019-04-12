@@ -17,52 +17,26 @@
 import React from "react";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-const data = [
+const smallData = [
   {
-    label: "value 1",
-    selected: false
+    label: "value 1"
   },
   {
-    label: "value 2",
-    selected: false
+    label: "value 2"
   },
   {
-    label: "value 3",
-    selected: true
+    label: "value 3"
   },
   {
-    label: "value 4",
-    selected: false
-  },
-  {
-    label: "value 5 value 5 value 5 555555555555 value value 5",
-    selected: false
-  },
-  {
-    label: "value 6"
-  },
-  {
-    label: "value 7"
-  },
-  {
-    label: "value 8",
-    selected: true
-  },
-  {
-    label: "value 9",
-    selected: true
-  },
-  {
-    label: "value 10"
-  },
-  {
-    label: "value 11"
-  },
-  {
-    label: "value 12"
+    label: "value 4"
   }
 ];
 
 export default (
-  <HvDropdown values={data} multiSelect showSearch={false} disabled />
+  <HvDropdown
+    values={smallData}
+    multiSelect={false}
+    showSearch={false}
+    selectDefault={false}
+  />
 );
