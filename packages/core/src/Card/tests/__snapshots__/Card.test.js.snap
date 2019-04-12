@@ -22151,10 +22151,6 @@ body {
                 "checkBox": "HvCheckbox-checkBox-92",
                 "container": "HvCheckbox-container-87",
                 "icon": "HvCheckbox-icon-93",
-                "iconDisable": "HvCheckbox-iconDisable-96",
-                "iconEmpty": "HvCheckbox-iconEmpty-94",
-                "iconFull": "HvCheckbox-iconFull-95",
-                "iconIndeterminate": "HvCheckbox-iconIndeterminate-97",
                 "labelDisabled": "HvCheckbox-labelDisabled-89",
                 "labelEnd": "HvCheckbox-labelEnd-90",
                 "labelStart": "HvCheckbox-labelStart-91",
@@ -22169,10 +22165,6 @@ body {
                   "checkBox": "HvCheckbox-checkBox-92",
                   "container": "HvCheckbox-container-87",
                   "icon": "HvCheckbox-icon-93",
-                  "iconDisable": "HvCheckbox-iconDisable-96",
-                  "iconEmpty": "HvCheckbox-iconEmpty-94",
-                  "iconFull": "HvCheckbox-iconFull-95",
-                  "iconIndeterminate": "HvCheckbox-iconIndeterminate-97",
                   "labelDisabled": "HvCheckbox-labelDisabled-89",
                   "labelEnd": "HvCheckbox-labelEnd-90",
                   "labelStart": "HvCheckbox-labelStart-91",
@@ -22701,18 +22693,6 @@ body {
   height: 16px;
   background-size: 16px 16px;
 }
-.HvCheckbox-iconEmpty-94 {
-  background: url(IMAGE_MOCK);
-}
-.HvCheckbox-iconFull-95 {
-  background: url(IMAGE_MOCK);
-}
-.HvCheckbox-iconDisable-96 {
-  background: url(IMAGE_MOCK);
-}
-.HvCheckbox-iconIndeterminate-97 {
-  background: url(IMAGE_MOCK);
-}
 
                 </style>,
                 "getKey": [Function],
@@ -22729,10 +22709,6 @@ body {
                   "checkBox": "HvCheckbox-checkBox-92",
                   "container": "HvCheckbox-container-87",
                   "icon": "HvCheckbox-icon-93",
-                  "iconDisable": "HvCheckbox-iconDisable-96",
-                  "iconEmpty": "HvCheckbox-iconEmpty-94",
-                  "iconFull": "HvCheckbox-iconFull-95",
-                  "iconIndeterminate": "HvCheckbox-iconIndeterminate-97",
                   "labelDisabled": "HvCheckbox-labelDisabled-89",
                   "labelEnd": "HvCheckbox-labelEnd-90",
                   "labelStart": "HvCheckbox-labelStart-91",
@@ -22776,18 +22752,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
                 ],
                 "map": Object {
                   ".HvCheckbox-checkBox-92": Object {
@@ -22805,18 +22769,6 @@ body {
                     "background-size": "16px 16px",
                     "height": "16px",
                     "width": "16px",
-                  },
-                  ".HvCheckbox-iconDisable-96": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  ".HvCheckbox-iconEmpty-94": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  ".HvCheckbox-iconFull-95": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  ".HvCheckbox-iconIndeterminate-97": Object {
-                    "background": "url(IMAGE_MOCK)",
                   },
                   ".HvCheckbox-labelDisabled-89": Object {
                     "background-color": "transparent",
@@ -22852,18 +22804,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  "iconDisable": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconEmpty": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconFull": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconIndeterminate": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
                   "labelDisabled": Object {
                     "background-color": "transparent",
                     "cursor": "not-allowed",
@@ -22889,10 +22829,6 @@ body {
                     "checkBox": "HvCheckbox-checkBox-92",
                     "container": "HvCheckbox-container-87",
                     "icon": "HvCheckbox-icon-93",
-                    "iconDisable": "HvCheckbox-iconDisable-96",
-                    "iconEmpty": "HvCheckbox-iconEmpty-94",
-                    "iconFull": "HvCheckbox-iconFull-95",
-                    "iconIndeterminate": "HvCheckbox-iconIndeterminate-97",
                     "labelDisabled": "HvCheckbox-labelDisabled-89",
                     "labelEnd": "HvCheckbox-labelEnd-90",
                     "labelStart": "HvCheckbox-labelStart-91",
@@ -23401,18 +23337,6 @@ body {
                     "backgroundSize": "16px 16px",
                     "height": "16px",
                     "width": "16px",
-                  },
-                  "iconDisable": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconEmpty": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconFull": Object {
-                    "background": "url(IMAGE_MOCK)",
-                  },
-                  "iconIndeterminate": Object {
-                    "background": "url(IMAGE_MOCK)",
                   },
                   "labelDisabled": Object {
                     "&:hover": Object {
@@ -24035,12 +23959,12 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "disabled": "MuiFormControlLabel-disabled-102",
-                "label": "MuiFormControlLabel-label-103",
-                "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                "root": "MuiFormControlLabel-root-98",
+                "disabled": "MuiFormControlLabel-disabled-98",
+                "label": "MuiFormControlLabel-label-99",
+                "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                "root": "MuiFormControlLabel-root-94",
               },
               "deployed": true,
               "linked": false,
@@ -24048,12 +23972,12 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiFormControlLabel",
                 "classes": Object {
-                  "disabled": "MuiFormControlLabel-disabled-102",
-                  "label": "MuiFormControlLabel-label-103",
-                  "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                  "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                  "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                  "root": "MuiFormControlLabel-root-98",
+                  "disabled": "MuiFormControlLabel-disabled-98",
+                  "label": "MuiFormControlLabel-label-99",
+                  "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                  "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                  "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                  "root": "MuiFormControlLabel-root-94",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -24541,7 +24465,7 @@ body {
                   data-meta="MuiFormControlLabel"
                 >
                   
-.MuiFormControlLabel-root-98 {
+.MuiFormControlLabel-root-94 {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -24550,23 +24474,23 @@ body {
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 }
-.MuiFormControlLabel-root-98.MuiFormControlLabel-disabled-102 {
+.MuiFormControlLabel-root-94.MuiFormControlLabel-disabled-98 {
   cursor: default;
 }
-.MuiFormControlLabel-labelPlacementStart-99 {
+.MuiFormControlLabel-labelPlacementStart-95 {
   margin-left: 16px;
   margin-right: -14px;
   flex-direction: row-reverse;
 }
-.MuiFormControlLabel-labelPlacementTop-100 {
+.MuiFormControlLabel-labelPlacementTop-96 {
   margin-left: 16px;
   flex-direction: column-reverse;
 }
-.MuiFormControlLabel-labelPlacementBottom-101 {
+.MuiFormControlLabel-labelPlacementBottom-97 {
   margin-left: 16px;
   flex-direction: column;
 }
-.MuiFormControlLabel-label-103.MuiFormControlLabel-disabled-102 {
+.MuiFormControlLabel-label-99.MuiFormControlLabel-disabled-98 {
   color: #999999;
 }
 
@@ -24582,12 +24506,12 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "disabled": "MuiFormControlLabel-disabled-102",
-                  "label": "MuiFormControlLabel-label-103",
-                  "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                  "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                  "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                  "root": "MuiFormControlLabel-root-98",
+                  "disabled": "MuiFormControlLabel-disabled-98",
+                  "label": "MuiFormControlLabel-label-99",
+                  "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                  "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                  "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                  "root": "MuiFormControlLabel-root-94",
                 },
                 "index": Array [
                   Object {
@@ -24622,25 +24546,25 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiFormControlLabel-disabled-102": Object {},
-                  ".MuiFormControlLabel-label-103": Object {},
-                  ".MuiFormControlLabel-label-103.MuiFormControlLabel-disabled-102": Object {
+                  ".MuiFormControlLabel-disabled-98": Object {},
+                  ".MuiFormControlLabel-label-99": Object {},
+                  ".MuiFormControlLabel-label-99.MuiFormControlLabel-disabled-98": Object {
                     "color": "#999999",
                   },
-                  ".MuiFormControlLabel-labelPlacementBottom-101": Object {
+                  ".MuiFormControlLabel-labelPlacementBottom-97": Object {
                     "flex-direction": "column",
                     "margin-left": "16px",
                   },
-                  ".MuiFormControlLabel-labelPlacementStart-99": Object {
+                  ".MuiFormControlLabel-labelPlacementStart-95": Object {
                     "flex-direction": "row-reverse",
                     "margin-left": "16px",
                     "margin-right": "-14px",
                   },
-                  ".MuiFormControlLabel-labelPlacementTop-100": Object {
+                  ".MuiFormControlLabel-labelPlacementTop-96": Object {
                     "flex-direction": "column-reverse",
                     "margin-left": "16px",
                   },
-                  ".MuiFormControlLabel-root-98": Object {
+                  ".MuiFormControlLabel-root-94": Object {
                     "-webkit-tap-highlight-color": "transparent",
                     "align-items": "center",
                     "cursor": "pointer",
@@ -24649,7 +24573,7 @@ body {
                     "margin-right": "16px",
                     "vertical-align": "middle",
                   },
-                  ".MuiFormControlLabel-root-98.MuiFormControlLabel-disabled-102": Object {
+                  ".MuiFormControlLabel-root-94.MuiFormControlLabel-disabled-98": Object {
                     "cursor": "default",
                   },
                   "disabled": Object {},
@@ -24681,12 +24605,12 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiFormControlLabel",
                   "classes": Object {
-                    "disabled": "MuiFormControlLabel-disabled-102",
-                    "label": "MuiFormControlLabel-label-103",
-                    "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                    "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                    "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                    "root": "MuiFormControlLabel-root-98",
+                    "disabled": "MuiFormControlLabel-disabled-98",
+                    "label": "MuiFormControlLabel-label-99",
+                    "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                    "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                    "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                    "root": "MuiFormControlLabel-root-94",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -25169,10 +25093,10 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".MuiFormControlLabel-label-103.MuiFormControlLabel-disabled-102": Object {
+                  ".MuiFormControlLabel-label-99.MuiFormControlLabel-disabled-98": Object {
                     "color": "#999999",
                   },
-                  ".MuiFormControlLabel-root-98.MuiFormControlLabel-disabled-102": Object {
+                  ".MuiFormControlLabel-root-94.MuiFormControlLabel-disabled-98": Object {
                     "cursor": "default",
                   },
                   "disabled": Object {},
@@ -25806,12 +25730,12 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "checked": "MuiCheckbox-checked-105",
-                "colorPrimary": "MuiCheckbox-colorPrimary-108",
-                "colorSecondary": "MuiCheckbox-colorSecondary-109",
-                "disabled": "MuiCheckbox-disabled-106",
-                "indeterminate": "MuiCheckbox-indeterminate-107",
-                "root": "MuiCheckbox-root-104",
+                "checked": "MuiCheckbox-checked-101",
+                "colorPrimary": "MuiCheckbox-colorPrimary-104",
+                "colorSecondary": "MuiCheckbox-colorSecondary-105",
+                "disabled": "MuiCheckbox-disabled-102",
+                "indeterminate": "MuiCheckbox-indeterminate-103",
+                "root": "MuiCheckbox-root-100",
               },
               "deployed": true,
               "linked": false,
@@ -25819,12 +25743,12 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiCheckbox",
                 "classes": Object {
-                  "checked": "MuiCheckbox-checked-105",
-                  "colorPrimary": "MuiCheckbox-colorPrimary-108",
-                  "colorSecondary": "MuiCheckbox-colorSecondary-109",
-                  "disabled": "MuiCheckbox-disabled-106",
-                  "indeterminate": "MuiCheckbox-indeterminate-107",
-                  "root": "MuiCheckbox-root-104",
+                  "checked": "MuiCheckbox-checked-101",
+                  "colorPrimary": "MuiCheckbox-colorPrimary-104",
+                  "colorSecondary": "MuiCheckbox-colorSecondary-105",
+                  "disabled": "MuiCheckbox-disabled-102",
+                  "indeterminate": "MuiCheckbox-indeterminate-103",
+                  "root": "MuiCheckbox-root-100",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -26312,19 +26236,19 @@ body {
                   data-meta="MuiCheckbox"
                 >
                   
-.MuiCheckbox-root-104 {
+.MuiCheckbox-root-100 {
   color: rgba(0, 0, 0, 0.54);
 }
-.MuiCheckbox-colorPrimary-108.MuiCheckbox-checked-105 {
+.MuiCheckbox-colorPrimary-104.MuiCheckbox-checked-101 {
   color: #146BD2;
 }
-.MuiCheckbox-colorPrimary-108.MuiCheckbox-disabled-106 {
+.MuiCheckbox-colorPrimary-104.MuiCheckbox-disabled-102 {
   color: rgba(0, 0, 0, 0.26);
 }
-.MuiCheckbox-colorSecondary-109.MuiCheckbox-checked-105 {
+.MuiCheckbox-colorSecondary-105.MuiCheckbox-checked-101 {
   color: #414141;
 }
-.MuiCheckbox-colorSecondary-109.MuiCheckbox-disabled-106 {
+.MuiCheckbox-colorSecondary-105.MuiCheckbox-disabled-102 {
   color: rgba(0, 0, 0, 0.26);
 }
 
@@ -26340,12 +26264,12 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "checked": "MuiCheckbox-checked-105",
-                  "colorPrimary": "MuiCheckbox-colorPrimary-108",
-                  "colorSecondary": "MuiCheckbox-colorSecondary-109",
-                  "disabled": "MuiCheckbox-disabled-106",
-                  "indeterminate": "MuiCheckbox-indeterminate-107",
-                  "root": "MuiCheckbox-root-104",
+                  "checked": "MuiCheckbox-checked-101",
+                  "colorPrimary": "MuiCheckbox-colorPrimary-104",
+                  "colorSecondary": "MuiCheckbox-colorSecondary-105",
+                  "disabled": "MuiCheckbox-disabled-102",
+                  "indeterminate": "MuiCheckbox-indeterminate-103",
+                  "root": "MuiCheckbox-root-100",
                 },
                 "index": Array [
                   Object {
@@ -26370,24 +26294,24 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiCheckbox-checked-105": Object {},
-                  ".MuiCheckbox-colorPrimary-108": Object {},
-                  ".MuiCheckbox-colorPrimary-108.MuiCheckbox-checked-105": Object {
+                  ".MuiCheckbox-checked-101": Object {},
+                  ".MuiCheckbox-colorPrimary-104": Object {},
+                  ".MuiCheckbox-colorPrimary-104.MuiCheckbox-checked-101": Object {
                     "color": "#146BD2",
                   },
-                  ".MuiCheckbox-colorPrimary-108.MuiCheckbox-disabled-106": Object {
+                  ".MuiCheckbox-colorPrimary-104.MuiCheckbox-disabled-102": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
-                  ".MuiCheckbox-colorSecondary-109": Object {},
-                  ".MuiCheckbox-colorSecondary-109.MuiCheckbox-checked-105": Object {
+                  ".MuiCheckbox-colorSecondary-105": Object {},
+                  ".MuiCheckbox-colorSecondary-105.MuiCheckbox-checked-101": Object {
                     "color": "#414141",
                   },
-                  ".MuiCheckbox-colorSecondary-109.MuiCheckbox-disabled-106": Object {
+                  ".MuiCheckbox-colorSecondary-105.MuiCheckbox-disabled-102": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
-                  ".MuiCheckbox-disabled-106": Object {},
-                  ".MuiCheckbox-indeterminate-107": Object {},
-                  ".MuiCheckbox-root-104": Object {
+                  ".MuiCheckbox-disabled-102": Object {},
+                  ".MuiCheckbox-indeterminate-103": Object {},
+                  ".MuiCheckbox-root-100": Object {
                     "color": "rgba(0, 0, 0, 0.54)",
                   },
                   "checked": Object {},
@@ -26403,12 +26327,12 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiCheckbox",
                   "classes": Object {
-                    "checked": "MuiCheckbox-checked-105",
-                    "colorPrimary": "MuiCheckbox-colorPrimary-108",
-                    "colorSecondary": "MuiCheckbox-colorSecondary-109",
-                    "disabled": "MuiCheckbox-disabled-106",
-                    "indeterminate": "MuiCheckbox-indeterminate-107",
-                    "root": "MuiCheckbox-root-104",
+                    "checked": "MuiCheckbox-checked-101",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-104",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-105",
+                    "disabled": "MuiCheckbox-disabled-102",
+                    "indeterminate": "MuiCheckbox-indeterminate-103",
+                    "root": "MuiCheckbox-root-100",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -26891,16 +26815,16 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".MuiCheckbox-colorPrimary-108.MuiCheckbox-checked-105": Object {
+                  ".MuiCheckbox-colorPrimary-104.MuiCheckbox-checked-101": Object {
                     "color": "#146BD2",
                   },
-                  ".MuiCheckbox-colorPrimary-108.MuiCheckbox-disabled-106": Object {
+                  ".MuiCheckbox-colorPrimary-104.MuiCheckbox-disabled-102": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
-                  ".MuiCheckbox-colorSecondary-109.MuiCheckbox-checked-105": Object {
+                  ".MuiCheckbox-colorSecondary-105.MuiCheckbox-checked-101": Object {
                     "color": "#414141",
                   },
-                  ".MuiCheckbox-colorSecondary-109.MuiCheckbox-disabled-106": Object {
+                  ".MuiCheckbox-colorSecondary-105.MuiCheckbox-disabled-102": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
                   "checked": Object {},
@@ -27525,10 +27449,10 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "checked": "MuiPrivateSwitchBase-checked-111",
-                "disabled": "MuiPrivateSwitchBase-disabled-112",
-                "input": "MuiPrivateSwitchBase-input-113",
-                "root": "MuiPrivateSwitchBase-root-110",
+                "checked": "MuiPrivateSwitchBase-checked-107",
+                "disabled": "MuiPrivateSwitchBase-disabled-108",
+                "input": "MuiPrivateSwitchBase-input-109",
+                "root": "MuiPrivateSwitchBase-root-106",
               },
               "deployed": true,
               "linked": false,
@@ -27536,10 +27460,10 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiPrivateSwitchBase",
                 "classes": Object {
-                  "checked": "MuiPrivateSwitchBase-checked-111",
-                  "disabled": "MuiPrivateSwitchBase-disabled-112",
-                  "input": "MuiPrivateSwitchBase-input-113",
-                  "root": "MuiPrivateSwitchBase-root-110",
+                  "checked": "MuiPrivateSwitchBase-checked-107",
+                  "disabled": "MuiPrivateSwitchBase-disabled-108",
+                  "input": "MuiPrivateSwitchBase-input-109",
+                  "root": "MuiPrivateSwitchBase-root-106",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -28027,15 +27951,15 @@ body {
                   data-meta="MuiPrivateSwitchBase"
                 >
                   
-.MuiPrivateSwitchBase-root-110 {
+.MuiPrivateSwitchBase-root-106 {
   display: inline-flex;
   transition: none;
   align-items: center;
 }
-.MuiPrivateSwitchBase-root-110:hover {
+.MuiPrivateSwitchBase-root-106:hover {
   background-color: transparent;
 }
-.MuiPrivateSwitchBase-input-113 {
+.MuiPrivateSwitchBase-input-109 {
   top: 0;
   left: 0;
   width: 100%;
@@ -28059,10 +27983,10 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "checked": "MuiPrivateSwitchBase-checked-111",
-                  "disabled": "MuiPrivateSwitchBase-disabled-112",
-                  "input": "MuiPrivateSwitchBase-input-113",
-                  "root": "MuiPrivateSwitchBase-root-110",
+                  "checked": "MuiPrivateSwitchBase-checked-107",
+                  "disabled": "MuiPrivateSwitchBase-disabled-108",
+                  "input": "MuiPrivateSwitchBase-input-109",
+                  "root": "MuiPrivateSwitchBase-root-106",
                 },
                 "index": Array [
                   Object {
@@ -28088,9 +28012,9 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiPrivateSwitchBase-checked-111": Object {},
-                  ".MuiPrivateSwitchBase-disabled-112": Object {},
-                  ".MuiPrivateSwitchBase-input-113": Object {
+                  ".MuiPrivateSwitchBase-checked-107": Object {},
+                  ".MuiPrivateSwitchBase-disabled-108": Object {},
+                  ".MuiPrivateSwitchBase-input-109": Object {
                     "cursor": "inherit",
                     "height": "100%",
                     "left": 0,
@@ -28101,12 +28025,12 @@ body {
                     "top": 0,
                     "width": "100%",
                   },
-                  ".MuiPrivateSwitchBase-root-110": Object {
+                  ".MuiPrivateSwitchBase-root-106": Object {
                     "align-items": "center",
                     "display": "inline-flex",
                     "transition": "none",
                   },
-                  ".MuiPrivateSwitchBase-root-110:hover": Object {
+                  ".MuiPrivateSwitchBase-root-106:hover": Object {
                     "background-color": "transparent",
                   },
                   "checked": Object {},
@@ -28132,10 +28056,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiPrivateSwitchBase",
                   "classes": Object {
-                    "checked": "MuiPrivateSwitchBase-checked-111",
-                    "disabled": "MuiPrivateSwitchBase-disabled-112",
-                    "input": "MuiPrivateSwitchBase-input-113",
-                    "root": "MuiPrivateSwitchBase-root-110",
+                    "checked": "MuiPrivateSwitchBase-checked-107",
+                    "disabled": "MuiPrivateSwitchBase-disabled-108",
+                    "input": "MuiPrivateSwitchBase-input-109",
+                    "root": "MuiPrivateSwitchBase-root-106",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -28618,7 +28542,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".MuiPrivateSwitchBase-root-110:hover": Object {
+                  ".MuiPrivateSwitchBase-root-106:hover": Object {
                     "backgroundColor": "transparent",
                   },
                   "checked": Object {},
@@ -29242,12 +29166,12 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "colorInherit": "MuiIconButton-colorInherit-115",
-                "colorPrimary": "MuiIconButton-colorPrimary-116",
-                "colorSecondary": "MuiIconButton-colorSecondary-117",
-                "disabled": "MuiIconButton-disabled-118",
-                "label": "MuiIconButton-label-119",
-                "root": "MuiIconButton-root-114",
+                "colorInherit": "MuiIconButton-colorInherit-111",
+                "colorPrimary": "MuiIconButton-colorPrimary-112",
+                "colorSecondary": "MuiIconButton-colorSecondary-113",
+                "disabled": "MuiIconButton-disabled-114",
+                "label": "MuiIconButton-label-115",
+                "root": "MuiIconButton-root-110",
               },
               "deployed": true,
               "linked": false,
@@ -29255,12 +29179,12 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiIconButton",
                 "classes": Object {
-                  "colorInherit": "MuiIconButton-colorInherit-115",
-                  "colorPrimary": "MuiIconButton-colorPrimary-116",
-                  "colorSecondary": "MuiIconButton-colorSecondary-117",
-                  "disabled": "MuiIconButton-disabled-118",
-                  "label": "MuiIconButton-label-119",
-                  "root": "MuiIconButton-root-114",
+                  "colorInherit": "MuiIconButton-colorInherit-111",
+                  "colorPrimary": "MuiIconButton-colorPrimary-112",
+                  "colorSecondary": "MuiIconButton-colorSecondary-113",
+                  "disabled": "MuiIconButton-disabled-114",
+                  "label": "MuiIconButton-label-115",
+                  "root": "MuiIconButton-root-110",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -29748,7 +29672,7 @@ body {
                   data-meta="MuiIconButton"
                 >
                   
-.MuiIconButton-root-114 {
+.MuiIconButton-root-110 {
   flex: 0 0 auto;
   color: rgba(0, 0, 0, 0.54);
   padding: 12px;
@@ -29758,46 +29682,46 @@ body {
   transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-radius: 50%;
 }
-.MuiIconButton-root-114:hover {
+.MuiIconButton-root-110:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.MuiIconButton-root-114.MuiIconButton-disabled-118 {
+.MuiIconButton-root-110.MuiIconButton-disabled-114 {
   color: rgba(0, 0, 0, 0.26);
 }
 @media (hover: none) {
-  .MuiIconButton-root-114:hover {
+  .MuiIconButton-root-110:hover {
     background-color: transparent;
   }
 }
-.MuiIconButton-root-114:hover.MuiIconButton-disabled-118 {
+.MuiIconButton-root-110:hover.MuiIconButton-disabled-114 {
   background-color: transparent;
 }
-.MuiIconButton-colorInherit-115 {
+.MuiIconButton-colorInherit-111 {
   color: inherit;
 }
-.MuiIconButton-colorPrimary-116 {
+.MuiIconButton-colorPrimary-112 {
   color: #146BD2;
 }
-.MuiIconButton-colorPrimary-116:hover {
+.MuiIconButton-colorPrimary-112:hover {
   background-color: rgba(20, 107, 210, 0.08);
 }
 @media (hover: none) {
-  .MuiIconButton-colorPrimary-116:hover {
+  .MuiIconButton-colorPrimary-112:hover {
     background-color: transparent;
   }
 }
-.MuiIconButton-colorSecondary-117 {
+.MuiIconButton-colorSecondary-113 {
   color: #414141;
 }
-.MuiIconButton-colorSecondary-117:hover {
+.MuiIconButton-colorSecondary-113:hover {
   background-color: rgba(65, 65, 65, 0.08);
 }
 @media (hover: none) {
-  .MuiIconButton-colorSecondary-117:hover {
+  .MuiIconButton-colorSecondary-113:hover {
     background-color: transparent;
   }
 }
-.MuiIconButton-label-119 {
+.MuiIconButton-label-115 {
   width: 100%;
   display: flex;
   align-items: inherit;
@@ -29816,12 +29740,12 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "colorInherit": "MuiIconButton-colorInherit-115",
-                  "colorPrimary": "MuiIconButton-colorPrimary-116",
-                  "colorSecondary": "MuiIconButton-colorSecondary-117",
-                  "disabled": "MuiIconButton-disabled-118",
-                  "label": "MuiIconButton-label-119",
-                  "root": "MuiIconButton-root-114",
+                  "colorInherit": "MuiIconButton-colorInherit-111",
+                  "colorPrimary": "MuiIconButton-colorPrimary-112",
+                  "colorSecondary": "MuiIconButton-colorSecondary-113",
+                  "disabled": "MuiIconButton-disabled-114",
+                  "label": "MuiIconButton-label-115",
+                  "root": "MuiIconButton-root-110",
                 },
                 "index": Array [
                   Object {
@@ -29846,12 +29770,12 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "generateClassName": [Function],
                       "index": 2,
@@ -29967,17 +29891,17 @@ body {
                       },
                       "nestingLevel": 2,
                       "parent": [Circular],
-                      "selector": ".MuiIconButton-root-114:hover",
+                      "selector": ".MuiIconButton-root-110:hover",
                       "sheet": [Circular],
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "index": Array [
                         Object {
@@ -29985,19 +29909,19 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiIconButton-root-114:hover": Object {
+                        ".MuiIconButton-root-110:hover": Object {
                           "background-color": "transparent",
                         },
                       },
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "colorInherit": "MuiIconButton-colorInherit-115",
-                          "colorPrimary": "MuiIconButton-colorPrimary-116",
-                          "colorSecondary": "MuiIconButton-colorSecondary-117",
-                          "disabled": "MuiIconButton-disabled-118",
-                          "label": "MuiIconButton-label-119",
-                          "root": "MuiIconButton-root-114",
+                          "colorInherit": "MuiIconButton-colorInherit-111",
+                          "colorPrimary": "MuiIconButton-colorPrimary-112",
+                          "colorSecondary": "MuiIconButton-colorSecondary-113",
+                          "disabled": "MuiIconButton-disabled-114",
+                          "label": "MuiIconButton-label-115",
+                          "root": "MuiIconButton-root-110",
                         },
                         "generateClassName": [Function],
                         "index": 2,
@@ -30113,11 +30037,11 @@ body {
                         },
                         "nestingLevel": 2,
                         "parent": [Circular],
-                        "selector": ".MuiIconButton-root-114:hover",
+                        "selector": ".MuiIconButton-root-110:hover",
                         "sheet": [Circular],
                       },
                       "raw": Object {
-                        ".MuiIconButton-root-114:hover": Object {
+                        ".MuiIconButton-root-110:hover": Object {
                           "backgroundColor": "transparent",
                         },
                       },
@@ -30143,12 +30067,12 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "generateClassName": [Function],
                       "index": 8,
@@ -30264,17 +30188,17 @@ body {
                       },
                       "nestingLevel": 2,
                       "parent": [Circular],
-                      "selector": ".MuiIconButton-colorPrimary-116:hover",
+                      "selector": ".MuiIconButton-colorPrimary-112:hover",
                       "sheet": [Circular],
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "index": Array [
                         Object {
@@ -30282,19 +30206,19 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiIconButton-colorPrimary-116:hover": Object {
+                        ".MuiIconButton-colorPrimary-112:hover": Object {
                           "background-color": "transparent",
                         },
                       },
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "colorInherit": "MuiIconButton-colorInherit-115",
-                          "colorPrimary": "MuiIconButton-colorPrimary-116",
-                          "colorSecondary": "MuiIconButton-colorSecondary-117",
-                          "disabled": "MuiIconButton-disabled-118",
-                          "label": "MuiIconButton-label-119",
-                          "root": "MuiIconButton-root-114",
+                          "colorInherit": "MuiIconButton-colorInherit-111",
+                          "colorPrimary": "MuiIconButton-colorPrimary-112",
+                          "colorSecondary": "MuiIconButton-colorSecondary-113",
+                          "disabled": "MuiIconButton-disabled-114",
+                          "label": "MuiIconButton-label-115",
+                          "root": "MuiIconButton-root-110",
                         },
                         "generateClassName": [Function],
                         "index": 8,
@@ -30410,11 +30334,11 @@ body {
                         },
                         "nestingLevel": 2,
                         "parent": [Circular],
-                        "selector": ".MuiIconButton-colorPrimary-116:hover",
+                        "selector": ".MuiIconButton-colorPrimary-112:hover",
                         "sheet": [Circular],
                       },
                       "raw": Object {
-                        ".MuiIconButton-colorPrimary-116:hover": Object {
+                        ".MuiIconButton-colorPrimary-112:hover": Object {
                           "backgroundColor": "transparent",
                         },
                       },
@@ -30434,12 +30358,12 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "generateClassName": [Function],
                       "index": 11,
@@ -30555,17 +30479,17 @@ body {
                       },
                       "nestingLevel": 2,
                       "parent": [Circular],
-                      "selector": ".MuiIconButton-colorSecondary-117:hover",
+                      "selector": ".MuiIconButton-colorSecondary-113:hover",
                       "sheet": [Circular],
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "index": Array [
                         Object {
@@ -30573,19 +30497,19 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiIconButton-colorSecondary-117:hover": Object {
+                        ".MuiIconButton-colorSecondary-113:hover": Object {
                           "background-color": "transparent",
                         },
                       },
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "colorInherit": "MuiIconButton-colorInherit-115",
-                          "colorPrimary": "MuiIconButton-colorPrimary-116",
-                          "colorSecondary": "MuiIconButton-colorSecondary-117",
-                          "disabled": "MuiIconButton-disabled-118",
-                          "label": "MuiIconButton-label-119",
-                          "root": "MuiIconButton-root-114",
+                          "colorInherit": "MuiIconButton-colorInherit-111",
+                          "colorPrimary": "MuiIconButton-colorPrimary-112",
+                          "colorSecondary": "MuiIconButton-colorSecondary-113",
+                          "disabled": "MuiIconButton-disabled-114",
+                          "label": "MuiIconButton-label-115",
+                          "root": "MuiIconButton-root-110",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -30701,11 +30625,11 @@ body {
                         },
                         "nestingLevel": 2,
                         "parent": [Circular],
-                        "selector": ".MuiIconButton-colorSecondary-117:hover",
+                        "selector": ".MuiIconButton-colorSecondary-113:hover",
                         "sheet": [Circular],
                       },
                       "raw": Object {
-                        ".MuiIconButton-colorSecondary-117:hover": Object {
+                        ".MuiIconButton-colorSecondary-113:hover": Object {
                           "backgroundColor": "transparent",
                         },
                       },
@@ -30722,29 +30646,29 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiIconButton-colorInherit-115": Object {
+                  ".MuiIconButton-colorInherit-111": Object {
                     "color": "inherit",
                   },
-                  ".MuiIconButton-colorPrimary-116": Object {
+                  ".MuiIconButton-colorPrimary-112": Object {
                     "color": "#146BD2",
                   },
-                  ".MuiIconButton-colorPrimary-116:hover": Object {
+                  ".MuiIconButton-colorPrimary-112:hover": Object {
                     "background-color": "rgba(20, 107, 210, 0.08)",
                   },
-                  ".MuiIconButton-colorSecondary-117": Object {
+                  ".MuiIconButton-colorSecondary-113": Object {
                     "color": "#414141",
                   },
-                  ".MuiIconButton-colorSecondary-117:hover": Object {
+                  ".MuiIconButton-colorSecondary-113:hover": Object {
                     "background-color": "rgba(65, 65, 65, 0.08)",
                   },
-                  ".MuiIconButton-disabled-118": Object {},
-                  ".MuiIconButton-label-119": Object {
+                  ".MuiIconButton-disabled-114": Object {},
+                  ".MuiIconButton-label-115": Object {
                     "align-items": "inherit",
                     "display": "flex",
                     "justify-content": "inherit",
                     "width": "100%",
                   },
-                  ".MuiIconButton-root-114": Object {
+                  ".MuiIconButton-root-110": Object {
                     "border-radius": "50%",
                     "color": "rgba(0, 0, 0, 0.54)",
                     "flex": "0 0 auto",
@@ -30754,13 +30678,13 @@ body {
                     "text-align": "center",
                     "transition": "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
                   },
-                  ".MuiIconButton-root-114.MuiIconButton-disabled-118": Object {
+                  ".MuiIconButton-root-110.MuiIconButton-disabled-114": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
-                  ".MuiIconButton-root-114:hover": Object {
+                  ".MuiIconButton-root-110:hover": Object {
                     "background-color": "rgba(0, 0, 0, 0.08)",
                   },
-                  ".MuiIconButton-root-114:hover.MuiIconButton-disabled-118": Object {
+                  ".MuiIconButton-root-110:hover.MuiIconButton-disabled-114": Object {
                     "background-color": "transparent",
                   },
                   "@media (hover: none)": ConditionalRule {
@@ -30769,12 +30693,12 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "generateClassName": [Function],
                       "index": 11,
@@ -30890,17 +30814,17 @@ body {
                       },
                       "nestingLevel": 2,
                       "parent": [Circular],
-                      "selector": ".MuiIconButton-colorSecondary-117:hover",
+                      "selector": ".MuiIconButton-colorSecondary-113:hover",
                       "sheet": [Circular],
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "colorInherit": "MuiIconButton-colorInherit-115",
-                        "colorPrimary": "MuiIconButton-colorPrimary-116",
-                        "colorSecondary": "MuiIconButton-colorSecondary-117",
-                        "disabled": "MuiIconButton-disabled-118",
-                        "label": "MuiIconButton-label-119",
-                        "root": "MuiIconButton-root-114",
+                        "colorInherit": "MuiIconButton-colorInherit-111",
+                        "colorPrimary": "MuiIconButton-colorPrimary-112",
+                        "colorSecondary": "MuiIconButton-colorSecondary-113",
+                        "disabled": "MuiIconButton-disabled-114",
+                        "label": "MuiIconButton-label-115",
+                        "root": "MuiIconButton-root-110",
                       },
                       "index": Array [
                         Object {
@@ -30908,19 +30832,19 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiIconButton-colorSecondary-117:hover": Object {
+                        ".MuiIconButton-colorSecondary-113:hover": Object {
                           "background-color": "transparent",
                         },
                       },
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "colorInherit": "MuiIconButton-colorInherit-115",
-                          "colorPrimary": "MuiIconButton-colorPrimary-116",
-                          "colorSecondary": "MuiIconButton-colorSecondary-117",
-                          "disabled": "MuiIconButton-disabled-118",
-                          "label": "MuiIconButton-label-119",
-                          "root": "MuiIconButton-root-114",
+                          "colorInherit": "MuiIconButton-colorInherit-111",
+                          "colorPrimary": "MuiIconButton-colorPrimary-112",
+                          "colorSecondary": "MuiIconButton-colorSecondary-113",
+                          "disabled": "MuiIconButton-disabled-114",
+                          "label": "MuiIconButton-label-115",
+                          "root": "MuiIconButton-root-110",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -31036,11 +30960,11 @@ body {
                         },
                         "nestingLevel": 2,
                         "parent": [Circular],
-                        "selector": ".MuiIconButton-colorSecondary-117:hover",
+                        "selector": ".MuiIconButton-colorSecondary-113:hover",
                         "sheet": [Circular],
                       },
                       "raw": Object {
-                        ".MuiIconButton-colorSecondary-117:hover": Object {
+                        ".MuiIconButton-colorSecondary-113:hover": Object {
                           "backgroundColor": "transparent",
                         },
                       },
@@ -31079,12 +31003,12 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiIconButton",
                   "classes": Object {
-                    "colorInherit": "MuiIconButton-colorInherit-115",
-                    "colorPrimary": "MuiIconButton-colorPrimary-116",
-                    "colorSecondary": "MuiIconButton-colorSecondary-117",
-                    "disabled": "MuiIconButton-disabled-118",
-                    "label": "MuiIconButton-label-119",
-                    "root": "MuiIconButton-root-114",
+                    "colorInherit": "MuiIconButton-colorInherit-111",
+                    "colorPrimary": "MuiIconButton-colorPrimary-112",
+                    "colorSecondary": "MuiIconButton-colorSecondary-113",
+                    "disabled": "MuiIconButton-disabled-114",
+                    "label": "MuiIconButton-label-115",
+                    "root": "MuiIconButton-root-110",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -31567,22 +31491,22 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".MuiIconButton-colorPrimary-116:hover": Object {
+                  ".MuiIconButton-colorPrimary-112:hover": Object {
                     "@media (hover: none)": Object {
                       "backgroundColor": "transparent",
                     },
                     "backgroundColor": "rgba(20, 107, 210, 0.08)",
                   },
-                  ".MuiIconButton-colorSecondary-117:hover": Object {
+                  ".MuiIconButton-colorSecondary-113:hover": Object {
                     "@media (hover: none)": Object {
                       "backgroundColor": "transparent",
                     },
                     "backgroundColor": "rgba(65, 65, 65, 0.08)",
                   },
-                  ".MuiIconButton-root-114.MuiIconButton-disabled-118": Object {
+                  ".MuiIconButton-root-110.MuiIconButton-disabled-114": Object {
                     "color": "rgba(0, 0, 0, 0.26)",
                   },
-                  ".MuiIconButton-root-114:hover": Object {
+                  ".MuiIconButton-root-110:hover": Object {
                     "&$disabled": Object {
                       "backgroundColor": "transparent",
                     },
@@ -31591,7 +31515,7 @@ body {
                     },
                     "backgroundColor": "rgba(0, 0, 0, 0.08)",
                   },
-                  ".MuiIconButton-root-114:hover.MuiIconButton-disabled-118": Object {
+                  ".MuiIconButton-root-110:hover.MuiIconButton-disabled-114": Object {
                     "backgroundColor": "transparent",
                   },
                   "@media (hover: none)": null,
@@ -32245,9 +32169,9 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "disabled": "MuiButtonBase-disabled-121",
-                "focusVisible": "MuiButtonBase-focusVisible-122",
-                "root": "MuiButtonBase-root-120",
+                "disabled": "MuiButtonBase-disabled-117",
+                "focusVisible": "MuiButtonBase-focusVisible-118",
+                "root": "MuiButtonBase-root-116",
               },
               "deployed": true,
               "linked": false,
@@ -32255,9 +32179,9 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiButtonBase",
                 "classes": Object {
-                  "disabled": "MuiButtonBase-disabled-121",
-                  "focusVisible": "MuiButtonBase-focusVisible-122",
-                  "root": "MuiButtonBase-root-120",
+                  "disabled": "MuiButtonBase-disabled-117",
+                  "focusVisible": "MuiButtonBase-focusVisible-118",
+                  "root": "MuiButtonBase-root-116",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -32745,7 +32669,7 @@ body {
                   data-meta="MuiButtonBase"
                 >
                   
-.MuiButtonBase-root-120 {
+.MuiButtonBase-root-116 {
   color: inherit;
   border: 0;
   margin: 0;
@@ -32765,10 +32689,10 @@ body {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
-.MuiButtonBase-root-120::-moz-focus-inner {
+.MuiButtonBase-root-116::-moz-focus-inner {
   border-style: none;
 }
-.MuiButtonBase-root-120.MuiButtonBase-disabled-121 {
+.MuiButtonBase-root-116.MuiButtonBase-disabled-117 {
   cursor: default;
   pointer-events: none;
 }
@@ -32785,9 +32709,9 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "disabled": "MuiButtonBase-disabled-121",
-                  "focusVisible": "MuiButtonBase-focusVisible-122",
-                  "root": "MuiButtonBase-root-120",
+                  "disabled": "MuiButtonBase-disabled-117",
+                  "focusVisible": "MuiButtonBase-focusVisible-118",
+                  "root": "MuiButtonBase-root-116",
                 },
                 "index": Array [
                   Object {
@@ -32821,9 +32745,9 @@ body {
                   Object {},
                 ],
                 "map": Object {
-                  ".MuiButtonBase-disabled-121": Object {},
-                  ".MuiButtonBase-focusVisible-122": Object {},
-                  ".MuiButtonBase-root-120": Object {
+                  ".MuiButtonBase-disabled-117": Object {},
+                  ".MuiButtonBase-focusVisible-118": Object {},
+                  ".MuiButtonBase-root-116": Object {
                     "-moz-appearance": "none",
                     "-webkit-appearance": "none",
                     "-webkit-tap-highlight-color": "transparent",
@@ -32843,11 +32767,11 @@ body {
                     "user-select": "none",
                     "vertical-align": "middle",
                   },
-                  ".MuiButtonBase-root-120.MuiButtonBase-disabled-121": Object {
+                  ".MuiButtonBase-root-116.MuiButtonBase-disabled-117": Object {
                     "cursor": "default",
                     "pointer-events": "none",
                   },
-                  ".MuiButtonBase-root-120::-moz-focus-inner": Object {
+                  ".MuiButtonBase-root-116::-moz-focus-inner": Object {
                     "border-style": "none",
                   },
                   "disabled": Object {},
@@ -32877,9 +32801,9 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiButtonBase",
                   "classes": Object {
-                    "disabled": "MuiButtonBase-disabled-121",
-                    "focusVisible": "MuiButtonBase-focusVisible-122",
-                    "root": "MuiButtonBase-root-120",
+                    "disabled": "MuiButtonBase-disabled-117",
+                    "focusVisible": "MuiButtonBase-focusVisible-118",
+                    "root": "MuiButtonBase-root-116",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -33362,11 +33286,11 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".MuiButtonBase-root-120.MuiButtonBase-disabled-121": Object {
+                  ".MuiButtonBase-root-116.MuiButtonBase-disabled-117": Object {
                     "cursor": "default",
                     "pointerEvents": "none",
                   },
-                  ".MuiButtonBase-root-120::-moz-focus-inner": Object {
+                  ".MuiButtonBase-root-116::-moz-focus-inner": Object {
                     "borderStyle": "none",
                   },
                   "disabled": Object {},
@@ -44993,10 +44917,6 @@ body {
                                         "checkBox": "HvCheckbox-checkBox-92",
                                         "container": "HvCheckbox-container-87",
                                         "icon": "HvCheckbox-icon-93",
-                                        "iconDisable": "HvCheckbox-iconDisable-96",
-                                        "iconEmpty": "HvCheckbox-iconEmpty-94",
-                                        "iconFull": "HvCheckbox-iconFull-95",
-                                        "iconIndeterminate": "HvCheckbox-iconIndeterminate-97",
                                         "labelDisabled": "HvCheckbox-labelDisabled-89",
                                         "labelEnd": "HvCheckbox-labelEnd-90",
                                         "labelStart": "HvCheckbox-labelStart-91",
@@ -45604,8 +45524,14 @@ body {
                                       control={
                                         <WithStyles(Checkbox)
                                           checkedIcon={
-                                            <div
-                                              className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                            <CheckboxCheckS
+                                              color={
+                                                Array [
+                                                  "none",
+                                                  "#414141",
+                                                  "#fff",
+                                                ]
+                                              }
                                             />
                                           }
                                           className="HvCheckbox-checkBox-92"
@@ -45613,13 +45539,25 @@ body {
                                           disableRipple={true}
                                           disabled={false}
                                           icon={
-                                            <div
-                                              className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                            <CheckboxS
+                                              color={
+                                                Array [
+                                                  "none",
+                                                  "#fff",
+                                                  "#414141",
+                                                ]
+                                              }
                                             />
                                           }
                                           indeterminateIcon={
-                                            <div
-                                              className="HvCheckbox-icon-93 HvCheckbox-iconIndeterminate-97"
+                                            <CheckboxPartialS
+                                              color={
+                                                Array [
+                                                  "none",
+                                                  "#fff",
+                                                  "#414141",
+                                                ]
+                                              }
                                             />
                                           }
                                           onChange={[Function]}
@@ -45634,19 +45572,25 @@ body {
                                         className="HvCheckbox-container-87"
                                         classes={
                                           Object {
-                                            "disabled": "MuiFormControlLabel-disabled-102 HvCheckbox-labelDisabled-89",
-                                            "label": "MuiFormControlLabel-label-103 HvCheckbox-labelTypography-88",
-                                            "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                                            "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                                            "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                                            "root": "MuiFormControlLabel-root-98",
+                                            "disabled": "MuiFormControlLabel-disabled-98 HvCheckbox-labelDisabled-89",
+                                            "label": "MuiFormControlLabel-label-99 HvCheckbox-labelTypography-88",
+                                            "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                                            "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                                            "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                                            "root": "MuiFormControlLabel-root-94",
                                           }
                                         }
                                         control={
                                           <WithStyles(Checkbox)
                                             checkedIcon={
-                                              <div
-                                                className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                              <CheckboxCheckS
+                                                color={
+                                                  Array [
+                                                    "none",
+                                                    "#414141",
+                                                    "#fff",
+                                                  ]
+                                                }
                                               />
                                             }
                                             className="HvCheckbox-checkBox-92"
@@ -45654,13 +45598,25 @@ body {
                                             disableRipple={true}
                                             disabled={false}
                                             icon={
-                                              <div
-                                                className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                              <CheckboxS
+                                                color={
+                                                  Array [
+                                                    "none",
+                                                    "#fff",
+                                                    "#414141",
+                                                  ]
+                                                }
                                               />
                                             }
                                             indeterminateIcon={
-                                              <div
-                                                className="HvCheckbox-icon-93 HvCheckbox-iconIndeterminate-97"
+                                              <CheckboxPartialS
+                                                color={
+                                                  Array [
+                                                    "none",
+                                                    "#fff",
+                                                    "#414141",
+                                                  ]
+                                                }
                                               />
                                             }
                                             onChange={[Function]}
@@ -45675,19 +45631,25 @@ body {
                                           className="HvCheckbox-container-87"
                                           classes={
                                             Object {
-                                              "disabled": "MuiFormControlLabel-disabled-102 HvCheckbox-labelDisabled-89",
-                                              "label": "MuiFormControlLabel-label-103 HvCheckbox-labelTypography-88",
-                                              "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-101",
-                                              "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-99",
-                                              "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-100",
-                                              "root": "MuiFormControlLabel-root-98",
+                                              "disabled": "MuiFormControlLabel-disabled-98 HvCheckbox-labelDisabled-89",
+                                              "label": "MuiFormControlLabel-label-99 HvCheckbox-labelTypography-88",
+                                              "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom-97",
+                                              "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart-95",
+                                              "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop-96",
+                                              "root": "MuiFormControlLabel-root-94",
                                             }
                                           }
                                           control={
                                             <WithStyles(Checkbox)
                                               checkedIcon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                <CheckboxCheckS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#414141",
+                                                      "#fff",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               className="HvCheckbox-checkBox-92"
@@ -45695,13 +45657,25 @@ body {
                                               disableRipple={true}
                                               disabled={false}
                                               icon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                <CheckboxS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#fff",
+                                                      "#414141",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               indeterminateIcon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconIndeterminate-97"
+                                                <CheckboxPartialS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#fff",
+                                                      "#414141",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               onChange={[Function]}
@@ -45713,12 +45687,18 @@ body {
                                           labelPlacement="end"
                                         >
                                           <label
-                                            className="MuiFormControlLabel-root-98 HvCheckbox-container-87"
+                                            className="MuiFormControlLabel-root-94 HvCheckbox-container-87"
                                           >
                                             <WithStyles(Checkbox)
                                               checkedIcon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                <CheckboxCheckS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#414141",
+                                                      "#fff",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               className="HvCheckbox-checkBox-92"
@@ -45726,13 +45706,25 @@ body {
                                               disableRipple={true}
                                               disabled={false}
                                               icon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                <CheckboxS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#fff",
+                                                      "#414141",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               indeterminateIcon={
-                                                <div
-                                                  className="HvCheckbox-icon-93 HvCheckbox-iconIndeterminate-97"
+                                                <CheckboxPartialS
+                                                  color={
+                                                    Array [
+                                                      "none",
+                                                      "#fff",
+                                                      "#414141",
+                                                    ]
+                                                  }
                                                 />
                                               }
                                               onChange={[Function]}
@@ -45740,33 +45732,51 @@ body {
                                             >
                                               <Checkbox
                                                 checkedIcon={
-                                                  <div
-                                                    className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                  <CheckboxCheckS
+                                                    color={
+                                                      Array [
+                                                        "none",
+                                                        "#414141",
+                                                        "#fff",
+                                                      ]
+                                                    }
                                                   />
                                                 }
                                                 className="HvCheckbox-checkBox-92"
                                                 classes={
                                                   Object {
-                                                    "checked": "MuiCheckbox-checked-105",
-                                                    "colorPrimary": "MuiCheckbox-colorPrimary-108",
-                                                    "colorSecondary": "MuiCheckbox-colorSecondary-109",
-                                                    "disabled": "MuiCheckbox-disabled-106",
-                                                    "indeterminate": "MuiCheckbox-indeterminate-107",
-                                                    "root": "MuiCheckbox-root-104",
+                                                    "checked": "MuiCheckbox-checked-101",
+                                                    "colorPrimary": "MuiCheckbox-colorPrimary-104",
+                                                    "colorSecondary": "MuiCheckbox-colorSecondary-105",
+                                                    "disabled": "MuiCheckbox-disabled-102",
+                                                    "indeterminate": "MuiCheckbox-indeterminate-103",
+                                                    "root": "MuiCheckbox-root-100",
                                                   }
                                                 }
                                                 color="primary"
                                                 disableRipple={true}
                                                 disabled={false}
                                                 icon={
-                                                  <div
-                                                    className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                  <CheckboxS
+                                                    color={
+                                                      Array [
+                                                        "none",
+                                                        "#fff",
+                                                        "#414141",
+                                                      ]
+                                                    }
                                                   />
                                                 }
                                                 indeterminate={false}
                                                 indeterminateIcon={
-                                                  <div
-                                                    className="HvCheckbox-icon-93 HvCheckbox-iconIndeterminate-97"
+                                                  <CheckboxPartialS
+                                                    color={
+                                                      Array [
+                                                        "none",
+                                                        "#fff",
+                                                        "#414141",
+                                                      ]
+                                                    }
                                                   />
                                                 }
                                                 onChange={[Function]}
@@ -45774,23 +45784,35 @@ body {
                                               >
                                                 <WithStyles(WithFormControlContext(SwitchBase))
                                                   checkedIcon={
-                                                    <div
-                                                      className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                    <CheckboxCheckS
+                                                      color={
+                                                        Array [
+                                                          "none",
+                                                          "#414141",
+                                                          "#fff",
+                                                        ]
+                                                      }
                                                     />
                                                   }
                                                   className="HvCheckbox-checkBox-92"
                                                   classes={
                                                     Object {
-                                                      "checked": "MuiCheckbox-checked-105",
-                                                      "disabled": "MuiCheckbox-disabled-106",
-                                                      "root": "MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108",
+                                                      "checked": "MuiCheckbox-checked-101",
+                                                      "disabled": "MuiCheckbox-disabled-102",
+                                                      "root": "MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104",
                                                     }
                                                   }
                                                   disableRipple={true}
                                                   disabled={false}
                                                   icon={
-                                                    <div
-                                                      className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                    <CheckboxS
+                                                      color={
+                                                        Array [
+                                                          "none",
+                                                          "#fff",
+                                                          "#414141",
+                                                        ]
+                                                      }
                                                     />
                                                   }
                                                   inputProps={
@@ -45804,24 +45826,36 @@ body {
                                                 >
                                                   <WithFormControlContext(SwitchBase)
                                                     checkedIcon={
-                                                      <div
-                                                        className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                      <CheckboxCheckS
+                                                        color={
+                                                          Array [
+                                                            "none",
+                                                            "#414141",
+                                                            "#fff",
+                                                          ]
+                                                        }
                                                       />
                                                     }
                                                     className="HvCheckbox-checkBox-92"
                                                     classes={
                                                       Object {
-                                                        "checked": "MuiPrivateSwitchBase-checked-111 MuiCheckbox-checked-105",
-                                                        "disabled": "MuiPrivateSwitchBase-disabled-112 MuiCheckbox-disabled-106",
-                                                        "input": "MuiPrivateSwitchBase-input-113",
-                                                        "root": "MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108",
+                                                        "checked": "MuiPrivateSwitchBase-checked-107 MuiCheckbox-checked-101",
+                                                        "disabled": "MuiPrivateSwitchBase-disabled-108 MuiCheckbox-disabled-102",
+                                                        "input": "MuiPrivateSwitchBase-input-109",
+                                                        "root": "MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104",
                                                       }
                                                     }
                                                     disableRipple={true}
                                                     disabled={false}
                                                     icon={
-                                                      <div
-                                                        className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                      <CheckboxS
+                                                        color={
+                                                          Array [
+                                                            "none",
+                                                            "#fff",
+                                                            "#414141",
+                                                          ]
+                                                        }
                                                       />
                                                     }
                                                     inputProps={
@@ -45835,24 +45869,36 @@ body {
                                                   >
                                                     <SwitchBase
                                                       checkedIcon={
-                                                        <div
-                                                          className="HvCheckbox-icon-93 HvCheckbox-iconFull-95"
+                                                        <CheckboxCheckS
+                                                          color={
+                                                            Array [
+                                                              "none",
+                                                              "#414141",
+                                                              "#fff",
+                                                            ]
+                                                          }
                                                         />
                                                       }
                                                       className="HvCheckbox-checkBox-92"
                                                       classes={
                                                         Object {
-                                                          "checked": "MuiPrivateSwitchBase-checked-111 MuiCheckbox-checked-105",
-                                                          "disabled": "MuiPrivateSwitchBase-disabled-112 MuiCheckbox-disabled-106",
-                                                          "input": "MuiPrivateSwitchBase-input-113",
-                                                          "root": "MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108",
+                                                          "checked": "MuiPrivateSwitchBase-checked-107 MuiCheckbox-checked-101",
+                                                          "disabled": "MuiPrivateSwitchBase-disabled-108 MuiCheckbox-disabled-102",
+                                                          "input": "MuiPrivateSwitchBase-input-109",
+                                                          "root": "MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104",
                                                         }
                                                       }
                                                       disableRipple={true}
                                                       disabled={false}
                                                       icon={
-                                                        <div
-                                                          className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
+                                                        <CheckboxS
+                                                          color={
+                                                            Array [
+                                                              "none",
+                                                              "#fff",
+                                                              "#414141",
+                                                            ]
+                                                          }
                                                         />
                                                       }
                                                       inputProps={
@@ -45865,7 +45911,7 @@ body {
                                                       value="value"
                                                     >
                                                       <WithStyles(IconButton)
-                                                        className="MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108 HvCheckbox-checkBox-92"
+                                                        className="MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104 HvCheckbox-checkBox-92"
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -45874,15 +45920,15 @@ body {
                                                         tabIndex={null}
                                                       >
                                                         <IconButton
-                                                          className="MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108 HvCheckbox-checkBox-92"
+                                                          className="MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104 HvCheckbox-checkBox-92"
                                                           classes={
                                                             Object {
-                                                              "colorInherit": "MuiIconButton-colorInherit-115",
-                                                              "colorPrimary": "MuiIconButton-colorPrimary-116",
-                                                              "colorSecondary": "MuiIconButton-colorSecondary-117",
-                                                              "disabled": "MuiIconButton-disabled-118",
-                                                              "label": "MuiIconButton-label-119",
-                                                              "root": "MuiIconButton-root-114",
+                                                              "colorInherit": "MuiIconButton-colorInherit-111",
+                                                              "colorPrimary": "MuiIconButton-colorPrimary-112",
+                                                              "colorSecondary": "MuiIconButton-colorSecondary-113",
+                                                              "disabled": "MuiIconButton-disabled-114",
+                                                              "label": "MuiIconButton-label-115",
+                                                              "root": "MuiIconButton-root-110",
                                                             }
                                                           }
                                                           color="default"
@@ -45895,7 +45941,7 @@ body {
                                                         >
                                                           <WithStyles(ButtonBase)
                                                             centerRipple={true}
-                                                            className="MuiIconButton-root-114 MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108 HvCheckbox-checkBox-92"
+                                                            className="MuiIconButton-root-110 MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104 HvCheckbox-checkBox-92"
                                                             component="span"
                                                             disableRipple={true}
                                                             disabled={false}
@@ -45906,12 +45952,12 @@ body {
                                                           >
                                                             <ButtonBase
                                                               centerRipple={true}
-                                                              className="MuiIconButton-root-114 MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108 HvCheckbox-checkBox-92"
+                                                              className="MuiIconButton-root-110 MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104 HvCheckbox-checkBox-92"
                                                               classes={
                                                                 Object {
-                                                                  "disabled": "MuiButtonBase-disabled-121",
-                                                                  "focusVisible": "MuiButtonBase-focusVisible-122",
-                                                                  "root": "MuiButtonBase-root-120",
+                                                                  "disabled": "MuiButtonBase-disabled-117",
+                                                                  "focusVisible": "MuiButtonBase-focusVisible-118",
+                                                                  "root": "MuiButtonBase-root-116",
                                                                 }
                                                               }
                                                               component="span"
@@ -45925,7 +45971,7 @@ body {
                                                               type="button"
                                                             >
                                                               <span
-                                                                className="MuiButtonBase-root-120 MuiIconButton-root-114 MuiPrivateSwitchBase-root-110 MuiCheckbox-root-104 MuiCheckbox-colorPrimary-108 HvCheckbox-checkBox-92"
+                                                                className="MuiButtonBase-root-116 MuiIconButton-root-110 MuiPrivateSwitchBase-root-106 MuiCheckbox-root-100 MuiCheckbox-colorPrimary-104 HvCheckbox-checkBox-92"
                                                                 onBlur={[Function]}
                                                                 onContextMenu={[Function]}
                                                                 onFocus={[Function]}
@@ -45940,13 +45986,78 @@ body {
                                                                 tabIndex={null}
                                                               >
                                                                 <span
-                                                                  className="MuiIconButton-label-119"
+                                                                  className="MuiIconButton-label-115"
                                                                 >
-                                                                  <div
-                                                                    className="HvCheckbox-icon-93 HvCheckbox-iconEmpty-94"
-                                                                  />
+                                                                  <CheckboxS
+                                                                    color={
+                                                                      Array [
+                                                                        "none",
+                                                                        "#fff",
+                                                                        "#414141",
+                                                                      ]
+                                                                    }
+                                                                  >
+                                                                    <svg
+                                                                      height={30}
+                                                                      viewBox="1 1 30 30 "
+                                                                      width={30}
+                                                                      xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                      <g
+                                                                        id="Checkbox.S"
+                                                                        transform="translate(-501 -2775)"
+                                                                      >
+                                                                        <rect
+                                                                          data-name="Rectangle 974"
+                                                                          fill="none"
+                                                                          height={32}
+                                                                          id="Rectangle_974"
+                                                                          transform="translate(501 2775)"
+                                                                          width={32}
+                                                                        />
+                                                                        <rect
+                                                                          data-name="Rectangle 2030"
+                                                                          fill="none"
+                                                                          height={16}
+                                                                          id="Rectangle_2030"
+                                                                          transform="translate(509 2783)"
+                                                                          width={16}
+                                                                        />
+                                                                        <g
+                                                                          data-name="Group 6100"
+                                                                          id="Group_6100"
+                                                                          transform="translate(501 2775)"
+                                                                        >
+                                                                          <g
+                                                                            data-name="Group 543"
+                                                                            id="Group_543"
+                                                                          >
+                                                                            <g
+                                                                              data-name="Rectangle 176"
+                                                                              id="Rectangle_176"
+                                                                            >
+                                                                              <rect
+                                                                                data-name="Rectangle 2310"
+                                                                                fill="#fff"
+                                                                                height={16}
+                                                                                id="Rectangle_2310"
+                                                                                transform="translate(8 8)"
+                                                                                width={16}
+                                                                              />
+                                                                              <path
+                                                                                d="M24,24H8V8H24ZM9,23H23V9H9Z"
+                                                                                data-name="Path 3090"
+                                                                                fill="#414141"
+                                                                                id="Path_3090"
+                                                                              />
+                                                                            </g>
+                                                                          </g>
+                                                                        </g>
+                                                                      </g>
+                                                                    </svg>
+                                                                  </CheckboxS>
                                                                   <input
-                                                                    className="MuiPrivateSwitchBase-input-113"
+                                                                    className="MuiPrivateSwitchBase-input-109"
                                                                     data-indeterminate={false}
                                                                     disabled={false}
                                                                     onChange={[Function]}
@@ -45965,12 +46076,12 @@ body {
                                               </Checkbox>
                                             </WithStyles(Checkbox)>
                                             <WithStyles(Typography)
-                                              className="MuiFormControlLabel-label-103 HvCheckbox-labelTypography-88"
+                                              className="MuiFormControlLabel-label-99 HvCheckbox-labelTypography-88"
                                               component="span"
                                             >
                                               <Typography
                                                 align="inherit"
-                                                className="MuiFormControlLabel-label-103 HvCheckbox-labelTypography-88"
+                                                className="MuiFormControlLabel-label-99 HvCheckbox-labelTypography-88"
                                                 classes={
                                                   Object {
                                                     "alignCenter": "MuiTypography-alignCenter-64",
@@ -46624,7 +46735,7 @@ body {
                                                 }
                                               >
                                                 <span
-                                                  className="MuiTypography-root-41 MuiTypography-body2-49 MuiFormControlLabel-label-103 HvCheckbox-labelTypography-88"
+                                                  className="MuiTypography-root-41 MuiTypography-body2-49 MuiFormControlLabel-label-99 HvCheckbox-labelTypography-88"
                                                 />
                                               </Typography>
                                             </WithStyles(Typography)>

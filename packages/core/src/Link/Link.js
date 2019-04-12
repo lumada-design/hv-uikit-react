@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+/*  TODO: Review accessibility */
+
+/*  eslint-disable  jsx-a11y/click-events-have-key-events */
+/*  eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React from "react";
 import PropTypes from "prop-types";
 import withConfig from "../config/withConfig";

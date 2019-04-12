@@ -90,12 +90,12 @@ class List extends React.Component {
    *
    */
   resetLists() {
-    const { multiSelect, values } = this.props;
+    const { multiSelect, values, selectDefault } = this.props;
     const hasSelection = getSelection(values).length > 0;
 
     let allowMulti = true;
     const newList = values.map((elem, i) => {
-      const selectFirst = !hasSelection && i === 0;
+      const selectFirst = selectDefault && !hasSelection && i === 0;
       const selectMultiple = allowMulti && elem.selected;
 
       const newElem = {
@@ -122,19 +122,18 @@ class List extends React.Component {
    */
   handleSelection(selectedElem) {
     const { list } = this.state;
-    const { multiSelect } = this.props;
+    const { multiSelect, selectDefault } = this.props;
 
     const newList = list.map(elem => {
       const newElem = { ...elem };
+      const selectionKey = elem.id ? "id" : "label";
 
       if (!multiSelect) {
         newElem.selected = false;
       }
 
-      // This could cause bugs
-      // comparison by label may cause double selections in case of equal of two labels with the same value.
-      if (elem.label === selectedElem.label) {
-        newElem.selected = multiSelect ? !elem.selected : true;
+      if (elem[selectionKey] === selectedElem[selectionKey]) {
+        newElem.selected = multiSelect || !selectDefault ? !elem.selected : true;
       }
 
       return newElem;
@@ -376,14 +375,20 @@ List.propTypes = {
   /**
    * An object containing all the labels for the dropdown.
    */
-  labels: PropTypes.instanceOf(Object).isRequired
+  labels: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * If ´true´ and none element selected, 
+   * single select has default (first) label selected.
+   */
+  selectDefault: PropTypes.bool
 };
 
 List.defaultProps = {
   values: [],
   multiSelect: false,
   showSearch: false,
-  onChange() {}
+  onChange() {},
+  selectDefault: true
 };
 
 export default List;

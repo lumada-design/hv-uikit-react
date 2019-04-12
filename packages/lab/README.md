@@ -1,0 +1,11 @@
+# @hv/uikit-react-lab
+
+This package hosts the contributed components that are not yet ready to move to core.
+
+## Installation
+
+Install the package in your project directory with:
+
+```sh
+npm install @hv/uikit-react-lab
+```

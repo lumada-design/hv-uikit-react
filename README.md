@@ -8,34 +8,25 @@
 ![alt text](https://img.shields.io/badge/lab--coverage-68%25-orange.svg)
 
 
-### Getting started
-
-You have the following options to get UIkit:
-
-- Clone the repo to get all source files including build scripts: `git clone https://github.com/pentaho/hv-uikit-react.git`  
-- Install with [npm](http://nexus.pentaho.org/) any of the available packages:
+### Installation
   - core - ```npm install @hv/uikit-react-core```
   - lab - ```npm install @hv/uikit-react-lab```
   - icons - ```npm install @hv/uikit-react-icons```
 
-### Developers
-
-To always have the latest development version of UIkit, even before a release, you may want to use npm with the `latest` tag.
-
-- Ex: ```npm install @hv/uikit-react-core@latest```
+To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
 
 #### npm registry
-Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with the following line:
+Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
 If you want to use it for UI-KIT dependencies
 @hv:registry=http://nexus.pentaho.org/repository/group-npm/
 
-Of if you want to use it for all dependencies
+Or if you want to use it for all dependencies
 registry=http://nexus.pentaho.org/repository/group-npm/
 ```
 #### global link
-###### *If you want to [link](https://docs.npmjs.com/cli/link.html) your packages globally you need to run this in the first place.*
+If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
 
 ```bash
 npm run link
@@ -43,7 +34,14 @@ npm run link
 
 It will create a symlink in the global folder {prefix}/lib/node_modules/<package> for each package.
 
-#### Bootstrap
+### Getting Started
+Install root dependencies.
+
+```bash
+npm i
+```
+
+#### bootstrap
 
 Bootstrap the packages in the current repo. Installs all their dependencies and links any cross-dependencies.
 
@@ -51,22 +49,34 @@ Bootstrap the packages in the current repo. Installs all their dependencies and 
 npm run bootstrap
 ```
 
-#### Run dev mode
+#### dev mode
 
 It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
 
 ```bash
 npm run dev
 ```
-### Examples
 
-We provide bootstrap examples for several platforms:
+#### documentation
+Interested in running our documentation just to explore what we have, but don't want to bootstrap the project? 
+Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) and open its index.html file.   
 
-```bash
-cd examples
-```
+## Changelog
+Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/icons/CHANGELOG.md), [doc](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/doc/CHANGELOG.md).
 
-#### Why monorepo and Lerna?
-Using a single repo reduces overhead from managing dependencies and the burden of writing code across packages.
+## Contributing
+You need to ask to be added as a project member, to be able to contribute:
 
-[Lerna](https://lernajs.io/) tries to ease the management of npm links when dealing with multi package projects hosted in a single repository. It also handles execution of tasks across many packages and eases the pain of versioning and publishing.
+- **#ui-kit** slack channel on the [hitachivantara-eng](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) workspace.
+- **#ui-kit** slack channel on the [hitachi-design](https://hitachi-design.slack.com/messages/CGC1E37J9/) workspace.
+
+Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/alpha/CONTRIBUTING.md) for detailed information.
+
+## Examples
+
+We provide some [examples](https://github.com/pentaho/hv-uikit-react/tree/alpha/examples) supporting several platforms.
+
+## License
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/alpha/LICENSE.md).
+
+

@@ -21,8 +21,8 @@ import { mount } from "enzyme";
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
-import MainWrapper from "../index";
-import Main from "../Dropdown";
+import DropdownWithStyles from "../index";
+import Dropdown from "../Dropdown";
 import List from "../List/List";
 import Actions from "../Actions/Actions";
 
@@ -38,12 +38,27 @@ const mockData = [
   }
 ];
 
-describe("<Main />", () => {
+const mockDataWithIds = [
+  {
+    id: "id-1",
+    label: "Value 1"
+  },
+  {
+    id: "id-2",
+    label: "Value 2"
+  },
+  {
+    id: "id-3",
+    label: "Value 3"
+  }
+];
+
+describe("<Dropdown />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
 
   let wrapper;
-  let mainComponent;
+  let dropdownComponent;
   let listComponent;
   let instance;
 
@@ -53,13 +68,28 @@ describe("<Main />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <MainWrapper values={mockData} onChange={onChangeMock} showSearch />
+          <DropdownWithStyles
+            values={mockData}
+            onChange={onChangeMock}
+            showSearch
+          />
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it("default value is selected", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+
+      expect(instance.state.list).toEqual([
+        { isResult: true, selected: true, label: "Value 1" },
+        { isResult: true, selected: false, label: "Value 2" },
+        { isResult: true, selected: false, label: "Value 3" }
+      ]);
     });
 
     it("calls lifecyce hooks", () => {
@@ -70,8 +100,8 @@ describe("<Main />", () => {
 
     it("onChange is triggered on selection and first is selected", () => {
       onChangeMock.mockReset();
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.handleToggle = jest.fn();
       instance.handleSelection([{ label: "Value 1" }, { label: "Value 2" }]);
@@ -83,8 +113,8 @@ describe("<Main />", () => {
     });
 
     it("handleClickOutside updates state accordingly with event payload", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.node = { contains: jest.fn() };
       instance.handleClickOutside({ target: "mock" });
@@ -93,8 +123,8 @@ describe("<Main />", () => {
     });
 
     it("handleToggle updates state accordingly", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.handleToggle({ stopPropagation: jest.fn() });
 
@@ -154,26 +184,38 @@ describe("<Main />", () => {
 
       expect(instance.handleSelection).toBeCalled();
     });
-
-    // it("handleSelection shoud be triggered when a single select item is selected ", () => {
-    //   listComponent = wrapper.find(List);
-    //   instance = listComponent.instance();
-    //   instance.handleSelection = jest.fn();
-
-    //   listComponent
-    //     .find("#single-select")
-    //     .at(0)
-    //     .simulate("keyDown", {});
-
-    //   expect(instance.handleSelection).toBeCalled();
-    // });
   });
 
-  describe("<Main /> with multiselect and search", () => {
+  describe("<Dropdown /> with selectDefault false", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <MainWrapper
+          <DropdownWithStyles values={mockData} selectDefault={false} />
+        </HvProvider>
+      );
+    });
+
+    it("should render correctly", () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it("no default value is selected", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+
+      expect(instance.state.list).toEqual([
+        { isResult: true, selected: false, label: "Value 1" },
+        { isResult: true, selected: false, label: "Value 2" },
+        { isResult: true, selected: false, label: "Value 3" }
+      ]);
+    });
+  });
+
+  describe("<Dropdown /> with multiselect and search", () => {
+    beforeEach(async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropdownWithStyles
             values={mockData}
             multiSelect
             showSearch
@@ -189,8 +231,8 @@ describe("<Main />", () => {
     });
 
     it("onChange is triggered on selection and has two elements selected", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.handleToggle = jest.fn();
       instance.handleSelection(
@@ -203,8 +245,8 @@ describe("<Main />", () => {
     });
 
     it("onChange is triggered on selection and selection is empty", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.handleToggle = jest.fn();
       instance.handleSelection([], true, true);
@@ -214,9 +256,9 @@ describe("<Main />", () => {
       expect(instance.state.selectionLabel).toBe("All");
     });
 
-    it("<Main /> handleToggle shoud do nothing if disabled", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+    it("<Dropdown /> handleToggle shoud do nothing if disabled", () => {
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
 
       instance.handleToggle();
 
@@ -224,11 +266,11 @@ describe("<Main />", () => {
     });
 
     it("handleToggle shoud be triggered when header is clicked", () => {
-      mainComponent = wrapper.find(Main);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(Dropdown);
+      instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
 
-      const header = mainComponent.find("#header");
+      const header = dropdownComponent.find("#header");
       header.simulate("click");
 
       expect(instance.handleToggle).toBeCalled();
@@ -236,11 +278,11 @@ describe("<Main />", () => {
     });
 
     it("handleCancel shoud be triggered when action cancel is clicked ", () => {
-      mainComponent = wrapper.find(List);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
       instance.handleCancel = jest.fn();
 
-      mainComponent
+      dropdownComponent
         .find(Actions)
         .find(HvButton)
         .at(0)
@@ -252,11 +294,11 @@ describe("<Main />", () => {
     });
 
     it("handleApply shoud be triggered when action apply is clicked ", () => {
-      mainComponent = wrapper.find(List);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
       instance.handleApply = jest.fn();
 
-      mainComponent
+      dropdownComponent
         .find(Actions)
         .find(HvButton)
         .at(1)
@@ -268,11 +310,11 @@ describe("<Main />", () => {
     });
 
     it("handleSelectAll shoud be triggered when All checkbox is selected ", () => {
-      mainComponent = wrapper.find(List);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
       instance.handleSelectAll = jest.fn();
 
-      mainComponent
+      dropdownComponent
         .find(HvCheckBox)
         .at(0)
         .find('input[type="checkbox"]')
@@ -282,17 +324,40 @@ describe("<Main />", () => {
     });
 
     it("handleSelection shoud be triggered when a multi select item is selected ", () => {
-      mainComponent = wrapper.find(List);
-      instance = mainComponent.instance();
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
       instance.handleSelection = jest.fn();
 
-      mainComponent
+      dropdownComponent
         .find(HvCheckBox)
         .at(1)
         .find('input[type="checkbox"]')
         .simulate("change", { target: { checked: true } });
 
       expect(instance.handleSelection).toBeCalled();
+    });
+  });
+
+  describe("<Dropdown /> single selection with ids to manage selection", () => {
+    beforeEach(async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropdownWithStyles multiSelect={false} values={mockDataWithIds} />
+        </HvProvider>
+      );
+    });
+
+    it("handleSelection updates state accordingly", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+
+      instance.handleSelection({ id: "id-1" });
+
+      expect(instance.state.list).toEqual([
+        { isResult: true, selected: true, id: "id-1", label: "Value 1" },
+        { isResult: true, selected: false, id: "id-2", label: "Value 2" },
+        { isResult: true, selected: false, id: "id-3", label: "Value 3" }
+      ]);
     });
   });
 });

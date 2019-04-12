@@ -27,7 +27,7 @@ import Button from "../../Button";
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <BannerWithStyles variant="default" onClose={() => {}} />
+      <BannerWithStyles variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 

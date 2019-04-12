@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+/* TODO: Review this file, copied from external location */
+
+/* eslint-disable */
+
 import React, { Component } from "react";
 import classnames from "classnames";
 

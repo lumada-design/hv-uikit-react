@@ -17,7 +17,7 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
 import CardWithStyles from "../index";

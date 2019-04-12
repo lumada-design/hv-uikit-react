@@ -22,7 +22,6 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
   title: "Dropdown List",
   description:
     "A drop-down list (abbreviated drop-down; also known as a drop-down menu, drop menu, pull-down list, picklist) is a graphical control element, similar to a list box, that allows the user to choose one value from a list. ",
-  designSystemLink: "https://10.76.48.133/hv-design-system/hv-design-system-specs/tree/master",
   usage: "import HvDropdown from '@hv/uikit-react-core/dist/Dropdown'",
   examples: [
     {
@@ -46,7 +45,7 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
     },
     {
       title: "5. Multi-selection dropdown without search",
-      description: "Drop down with less than 10 elements",
+      description: "Supports equal labels and uses ids to manage selection",
       src: "core/dropdown/dropdown5"
     },
     {
@@ -55,17 +54,22 @@ storiesOf("Core", module).add("Dropdown", () => <HvDropdown />, {
       src: "core/dropdown/dropdown6"
     },
     {
-      title: "7. Incomplete simple selection dropdown",
-      description: "Drop down with less than 10 elements",
+      title: "7. Single selection dropdown",
+      description: "Support ids to manage selection",
       src: "core/dropdown/dropdown7"
     },
     {
-      title: "8. Disabled multi-select dropdown",
+      title: "8. Single selection dropdown",
+      description: "With no default selected",
       src: "core/dropdown/dropdown8"
     },
     {
-      title: "9. Disabled dropdown",
+      title: "9. Disabled multi-select dropdown",
       src: "core/dropdown/dropdown9"
+    },
+    {
+      title: "10. Disabled dropdown",
+      src: "core/dropdown/dropdown10"
     }
   ]
 });

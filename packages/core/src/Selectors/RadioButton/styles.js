@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-import empty from "./assets/radio-empty.svg";
-import disable from "./assets/radio-disabled.svg";
-import full from "./assets/radio-full.svg";
-
 const styles = theme => ({
   container: {
     height: "32px",
@@ -55,15 +51,6 @@ const styles = theme => ({
     width: "16px",
     height: "16px",
     backgroundSize: "16px 16px"
-  },
-  iconEmpty: {
-    background: `url(${empty})`
-  },
-  iconFull: {
-    background: `url(${full})`
-  },
-  iconDisable: {
-    background: `url(${disable})`
   }
 });
 

@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-import empty from "./assets/check-empty.svg";
-import disable from "./assets/check-disabled.svg";
-import full from "./assets/check-checked.svg";
-import indeterminate from "./assets/check-partial.svg";
-
 const styles = theme => ({
   container: {
     height: "32px",
@@ -56,18 +51,6 @@ const styles = theme => ({
     width: "16px",
     height: "16px",
     backgroundSize: "16px 16px"
-  },
-  iconEmpty: {
-    background: `url(${empty})`
-  },
-  iconFull: {
-    background: `url(${full})`
-  },
-  iconDisable: {
-    background: `url(${disable})`
-  },
-  iconIndeterminate: {
-    background: `url(${indeterminate})`
   }
 });
 
