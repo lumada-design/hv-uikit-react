@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.0.2-alpha.0...@hv/uikit-react-icons@1.0.2-alpha.1) (2019-04-15)
+
+
+### Bug Fixes
+
+* lint issues with List item ([#85](https://github.com/pentaho/hv-uikit-react/issues/85)) ([472f6da](https://github.com/pentaho/hv-uikit-react/commit/472f6da))
+
+
+### Features
+
+* added sample for Asset Inventory ([#77](https://github.com/pentaho/hv-uikit-react/issues/77)) ([0eac27b](https://github.com/pentaho/hv-uikit-react/commit/0eac27b))
+
+
+
+
+
 ## [1.0.2-alpha.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.0.1-alpha.4...@hv/uikit-react-icons@1.0.2-alpha.0) (2019-04-12)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
