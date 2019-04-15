@@ -28,11 +28,11 @@ const styles = theme => ({
     float: "left",
     marginTop: 10,
     marginLeft: 20,
+    color: theme.hv.palette.atmosphere.atmo3,
     fontSize: "16px",
     letterSpacing: "0.02em",
     lineHeight: `${theme.hv.spacing.sm}px`,
     fontWeight: "600",
-    color: theme.hv.palette.atmosphere.atmo3,
     [theme.breakpoints.down("500")]: {
       display: "none"
     }

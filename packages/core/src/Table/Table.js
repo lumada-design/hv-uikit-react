@@ -18,11 +18,11 @@ import React from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
-import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
+import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {
   appendClassnames,
@@ -329,8 +329,8 @@ class Table extends React.Component {
             </div>
             {/* Setter of the styles for the header */}
             <div className={classes.headerTextContainer}>
-              <Typography
-                variant="subtitle2"
+              <HvTypography
+                variant="labelText"
                 className={classNames(classes.headerProps, {
                   [classes.headerAlphaNumeric]:
                     props.column.cellType === "alpha-numeric" ||
@@ -339,7 +339,7 @@ class Table extends React.Component {
                 })}
               >
                 {props.column.headerText}
-              </Typography>
+              </HvTypography>
             </div>
           </div>
         );
@@ -387,11 +387,11 @@ class Table extends React.Component {
         {titleText && (
           <div className={classes.title}>
             <div>
-              <Typography variant="h3">{titleText}</Typography>
+              <HvTypography variant="mTitle">{titleText}</HvTypography>
             </div>
             {subtitleText && (
               <div className={classes.subtitle}>
-                <Typography variant="body1">{subtitleText}</Typography>
+                <HvTypography variant="normalText">{subtitleText}</HvTypography>
               </div>
             )}
           </div>

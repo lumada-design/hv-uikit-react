@@ -16,8 +16,8 @@
 
 import React from "react";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
+import HvTypography from "../../../Typography";
 
 /**
  * Container for the message of the banner. This message may include:
@@ -32,7 +32,7 @@ import PropTypes from "prop-types";
 const MessageContainer = ({ classes, icon, actionsOnMessage, message }) => (
   <span id="client-snackbar" className={classes.messageSpan}>
     {icon}
-    <Typography
+    <HvTypography
       className={classNames(
         classes.message,
         {
@@ -42,7 +42,7 @@ const MessageContainer = ({ classes, icon, actionsOnMessage, message }) => (
       )}
     >
       {message}
-    </Typography>
+    </HvTypography>
     <div className={classes.actionMessageContainer}>{actionsOnMessage}</div>
   </span>
 );

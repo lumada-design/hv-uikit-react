@@ -21,9 +21,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
-import Typography from "@material-ui/core/Typography";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
+import HvTypography from "../Typography";
 import SubMenu from "./SubMenu";
 import Link from "../Link";
 
@@ -44,7 +44,9 @@ const removeExtension = label =>
  * @constructor
  */
 const LastPathElement = ({ label }) => (
-  <Typography variant="body2">{startCase(removeExtension(label))}</Typography>
+  <HvTypography variant="infoText">
+    {startCase(removeExtension(label))}
+  </HvTypography>
 );
 
 LastPathElement.propTypes = {
@@ -64,7 +66,9 @@ const Page = ({ useRouter, elem, classes }) => (
   <Link route={elem.path} params={elem.params} useRouter={useRouter}>
     <div className={classes.centerContainer}>
       {/* {elem.icon && <div className={classes.iconContainer}>{elem.icon}</div>} */}
-      <Typography className={classes.link}>{startCase(elem.label)}</Typography>
+      <HvTypography variant="sLink" className={classes.link}>
+        {startCase(elem.label)}
+      </HvTypography>
     </div>
   </Link>
 );

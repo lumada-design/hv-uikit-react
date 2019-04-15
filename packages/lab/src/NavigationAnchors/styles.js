@@ -58,7 +58,7 @@ const styles = theme => ({
     }
   },
   listItemTextDense: {
-    fontSize: theme.typography.body1.fontSize,
+    fontSize: theme.hv.typography.normalText.fontSize,
     fontWeight: "inherit"
   },
   listItemTextSelected: {

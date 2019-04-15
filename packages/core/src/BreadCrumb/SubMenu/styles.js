@@ -19,7 +19,7 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center",
     height: "32px",
-    fontFamily: theme.typography.fontFamily,
+    fontFamily: theme.hv.typography.fontFamily,
     color: `${theme.hv.palette.accent.acce1}`,
     textAlign: "left",
     fontSize: "12px",

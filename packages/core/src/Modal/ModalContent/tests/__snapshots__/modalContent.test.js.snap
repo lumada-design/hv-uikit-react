@@ -5,7 +5,7 @@ exports[`ModalContent Component allows external styles to be added 1`] = `
   className="testClassRoot undefined"
 >
   <WithStyles(Typography)
-    variant="body1"
+    variant="normalText"
   >
     Modal Content
   </WithStyles(Typography)>
@@ -17,7 +17,7 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
   className="undefined"
 >
   <WithStyles(Typography)
-    variant="body1"
+    variant="normalText"
   >
     Modal Content
   </WithStyles(Typography)>
@@ -409,10 +409,9 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "body1": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "14px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "20px",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": 1.5,
         },
         "body1Next": Object {
           "color": "#414141",
@@ -424,10 +423,9 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "body2": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "12px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "16px",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "lineHeight": 1.5,
         },
         "body2Next": Object {
           "color": "#414141",
@@ -439,10 +437,9 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "button": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "14px",
-          "fontWeight": "600",
-          "letterSpacing": "0.02em",
-          "lineHeight": "20px",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": 1.75,
           "textTransform": "uppercase",
         },
         "buttonNext": Object {
@@ -508,34 +505,30 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "h1": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "32px",
-          "fontWeight": "600",
-          "letterSpacing": "0.02em",
-          "lineHeight": "40px",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "lineHeight": 1,
         },
         "h2": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "32px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "40px",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "lineHeight": 1,
         },
         "h3": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "22px",
-          "fontWeight": "600",
-          "letterSpacing": "0.02em",
-          "lineHeight": "30px",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "lineHeight": 1.04,
         },
         "h4": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "22px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "30px",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "lineHeight": 1.17,
         },
         "h5": Object {
           "color": "#414141",
@@ -578,18 +571,16 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "subtitle1": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "14px",
-          "fontWeight": "600",
-          "letterSpacing": "0.02em",
-          "lineHeight": "20px",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": 1.75,
         },
         "subtitle2": Object {
           "color": "#414141",
           "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-          "fontSize": "12px",
-          "fontWeight": "600",
-          "letterSpacing": "0.02em",
-          "lineHeight": "16px",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": 1.57,
         },
         "suppressDeprecationWarnings": true,
         "title": Object {

@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import compressor from "./resources/compressor.png";
 
 const styles = theme => ({
@@ -26,23 +26,10 @@ const styles = theme => ({
   item: {
     padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
-  label: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.subtitle2
-  },
   text: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.body1
-  },
-  highlightText: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.h3
+    whiteSpace: "nowrap"
   }
 });
 
@@ -56,20 +43,24 @@ const data = {
 const SingleContent = ({ classes }) => (
   <div>
     <div>
-      <Typography variant="body1" className={classes.label}>
-        {data.firstTitle}
-      </Typography>
-      <Typography variant="body2" className={classes.text}>
-        {data.firstContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={classes.text}>
+          {data.firstContent}
+        </HvTypography>
+      </div>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography variant="body1" className={classes.label}>
-        {data.secondTitle}
-      </Typography>
-      <Typography variant="body2" className={classes.text}>
-        {data.secondContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={classes.text}>
+          {data.secondContent}
+        </HvTypography>
+      </div>
     </div>
   </div>
 );

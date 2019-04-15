@@ -21,7 +21,7 @@ import IconInvalid from "@hv/uikit-react-icons/dist/Level2.sema3.S";
 import WarningIcon from "@hv/uikit-react-icons/dist/Level4.sema5.S";
 import Icon from "@hv/uikit-react-icons/dist/Tool.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const kpiStyles = theme => ({
@@ -31,23 +31,10 @@ const kpiStyles = theme => ({
   item: {
     padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
-  label: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.subtitle2
-  },
   text: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.body1
-  },
-  highlightText: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.h3
+    whiteSpace: "nowrap"
   }
 });
 
@@ -72,20 +59,24 @@ const Content = ({ classes, value, icon }) => (
       visualIndicator={icon}
     />
     <div>
-      <Typography semantic="body1" className={classes.label}>
-        {data.firstTitle}
-      </Typography>
-      <Typography semantic="body2" className={classes.text}>
-        {data.firstContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={kpiStyles.text}>
+          {data.firstContent}
+        </HvTypography>
+      </div>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography semantic="body1" className={classes.label}>
-        {data.secondTitle}
-      </Typography>
-      <Typography semantic="body2" className={classes.text}>
-        {data.secondContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={kpiStyles.text}>
+          {data.secondContent}
+        </HvTypography>
+      </div>
     </div>
   </div>
 );

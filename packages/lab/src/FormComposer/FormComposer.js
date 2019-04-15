@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes, { shape } from "prop-types";
 
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvNavigationAnchors from "../NavigationAnchors";
 
 class HvFormComposer extends React.Component {
@@ -117,9 +117,9 @@ class HvFormComposer extends React.Component {
 
       return (
         <div key={group.title}>
-          <Typography id={group.title} className={classes.groupTitle}>
+          <HvTypography id={group.title} variant="mTitle">
             {group.title}
-          </Typography>
+          </HvTypography>
           {group.children.map((child, i) => {
             const key = `fc-${group.title}-${i}`;
             return (
@@ -141,7 +141,9 @@ class HvFormComposer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Typography className={classes.title}>{mainTitle}</Typography>
+        <HvTypography variant="xlTitle" className={classes.title}>
+          {mainTitle}
+        </HvTypography>
         <div className={classes.mainContainer}>
           {hasNavigation && (
             <div className={classes.navContainer}>

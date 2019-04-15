@@ -43,6 +43,7 @@ describe("Login ", () => {
           login={loginMock}
           recovery={recoverMock}
           allowRecover
+          titleText=""
         />
       </HvProvider>
     );

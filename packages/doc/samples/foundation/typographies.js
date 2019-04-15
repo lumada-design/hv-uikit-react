@@ -18,7 +18,7 @@ import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import Code from "@material-ui/icons/Code";
 import IconButton from "@material-ui/core/IconButton";
@@ -75,14 +75,14 @@ const Group = ({ classes, name, typography, theme }) => {
   return (
     <div className={classes.group}>
       <div className={classes.container}>
-        <Typography variant="h3">{name}</Typography>
+        <HvTypography variant="mTitle">{name}</HvTypography>
         <CodeButton
           classes={classes}
           onClick={() => setSnippetIsOpen(!snippetIsOpen)}
         />
       </div>
       <div className={classes.sentenceContainer}>
-        <div style={{ ...theme.typography[name] }}>{text}</div>
+        <HvTypography variant={name}>{text}</HvTypography>
       </div>
       <Collapse in={snippetIsOpen}>
         <SyntaxHighlighter

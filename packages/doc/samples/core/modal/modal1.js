@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import {
   HvModal,
   HvModalActions,
@@ -28,7 +28,9 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
 
   return (
     <div>
-      <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
+      <HvButton onClick={() => setOpen(true)}>
+        {buttonMessage}
+      </HvButton>
       <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
@@ -43,96 +45,96 @@ export default (
     <SimpleModal
       buttonMessage="default"
       title={<HvModalTitle variant="default">Are you sure?</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Switch anyway</Button>
+          </HvButton>
+          <HvButton>Switch anyway</HvButton>
         </HvModalActions>
-)}
+      }
     />
     <p />
     <SimpleModal
       buttonMessage="info"
       title={<HvModalTitle variant="info">Are you sure?</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Switch anyway</Button>
+          </HvButton>
+          <HvButton>Switch anyway</HvButton>
         </HvModalActions>
-)}
+      }
     />
     <p />
     <SimpleModal
       buttonMessage="success"
       title={<HvModalTitle variant="success">Are you sure?</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Switch anyway</Button>
+          </HvButton>
+          <HvButton>Switch anyway</HvButton>
         </HvModalActions>
-)}
+      }
     />
     <p />
     <SimpleModal
       buttonMessage="warning"
       title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Switch anyway</Button>
+          </HvButton>
+          <HvButton>Switch anyway</HvButton>
         </HvModalActions>
-)}
+      }
     />
     <p />
     <SimpleModal
       buttonMessage="error"
       title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           Switching to model view will clear all the fields in your
           visualization. You will need to re-select your fields.
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Switch anyway</Button>
+          </HvButton>
+          <HvButton>Switch anyway</HvButton>
         </HvModalActions>
-)}
+      }
     />
   </div>
 );

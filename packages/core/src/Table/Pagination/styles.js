@@ -77,11 +77,11 @@ const styles = theme => ({
     display: "inline-block"
   },
   rowText: {
-    ...theme.typography.normalText,
+    ...theme.hv.typography.normalText,
     marginLeft: `${theme.hv.spacing.xs}px`
   },
   pageJumpInput: {
-    ...theme.typography.normalText,
+    ...theme.hv.typography.normalText,
     width: "50px",
     textAlign: "right",
     fontSize: "14px",

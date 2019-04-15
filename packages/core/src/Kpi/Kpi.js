@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../Typography";
 
 const HvKpi = props => {
   const {
@@ -29,9 +29,12 @@ const HvKpi = props => {
 
   return (
     <div className={classes.kpiContainer}>
-      <Typography className={classes.titleText} variant="subtitle2">
-        {kpiTextConfiguration.title}
-      </Typography>
+      <div>
+        <HvTypography variant="labelText">
+          {kpiTextConfiguration.title}
+        </HvTypography>
+      </div>
+
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
           <div
@@ -43,36 +46,28 @@ const HvKpi = props => {
             {visualIndicator}
           </div>
         )}
-        <Typography
-          className={classNames(
-            classes.indicatorText,
-            classes.spacingToTheRight
-          )}
-          variant="h1"
-        >
+        <HvTypography className={classes.spacingToTheRight} variant="xlTitle">
           {kpiTextConfiguration.indicator}
-        </Typography>
-        <Typography className={classes.indicatorUnit} variant="body2">
+        </HvTypography>
+        <HvTypography className={classes.indicatorUnit} variant="infoText">
           {kpiTextConfiguration.unit}
-        </Typography>
+        </HvTypography>
       </div>
       <div className={classes.comparisonContainer}>
         {visualComparison != null && (
-          <div
+          <HvTypography
             className={classNames(
               classes.comparisons,
-              classes.visualComparisonContainer,
               classes.spacingToTheRight
             )}
+            variant="highlightText"
           >
             {visualComparison}
-          </div>
+          </HvTypography>
         )}
-        <Typography
-          className={classNames(classes.comparisons, classes.infoText)}
-        >
+        <HvTypography className={classes.comparisons} variant="vizText">
           {kpiTextConfiguration.comparisonIndicatorInfo}
-        </Typography>
+        </HvTypography>
       </div>
     </div>
   );
@@ -96,10 +91,6 @@ HvKpi.propTypes = {
      */
     comparisonContainer: PropTypes.string,
     /**
-     * Styles applied to the component visual comparison.
-     */
-    visualComparisonContainer: PropTypes.string,
-    /**
      * Styles applied to the component indicators.
      */
     indicatorsContainer: PropTypes.string,
@@ -114,22 +105,7 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component visual comparison.
      */
-    comparisons: PropTypes.string,
-    /**
-     * Styles applied to the component text indicator.
-     */
-    indicatorText: PropTypes.string,
-    /**
-     * Styles applied to the component info text.
-     */
-    infoText: PropTypes.string,
-    /**
-     * Styles applied to the component title.
-     */
-    titleText: PropTypes.string
-    /**
-     * Styles applied to the component visual comparison.
-     */
+    comparisons: PropTypes.string
   }).isRequired,
   /**
    * An Element that will be rendered to the left of the kpi indicator text.

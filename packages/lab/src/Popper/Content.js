@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Popper from "@material-ui/core/Popper";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Fade from "@material-ui/core/Fade";
 import Paper from "@material-ui/core/Paper";
 
@@ -25,7 +25,7 @@ const Content = ({ classes, content, ...props }) => {
   const isObject = content && typeof content === "object";
 
   const ContentAsString = () => (
-    <Typography className={classes.contentValue}>{content}</Typography>
+    <HvTypography className={classes.contentValue}>{content}</HvTypography>
   );
 
   const ContentAsObject = () =>
@@ -34,10 +34,10 @@ const Content = ({ classes, content, ...props }) => {
 
       return (
         <div key={keyIdx} className="key-value">
-          <Typography className={classes.contentKey}>{`${key}:`}</Typography>
-          <Typography className={classes.contentValue}>
+          <HvTypography className={classes.contentKey}>{`${key}:`}</HvTypography>
+          <HvTypography className={classes.contentValue}>
             {content[key]}
-          </Typography>
+          </HvTypography>
         </div>
       );
     });

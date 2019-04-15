@@ -16,14 +16,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const HvFooter = ({ classes, labelLeftName }) => (
   <div className={classes.root}>
-    <Typography className={classes.labelLeft}>{labelLeftName}</Typography>
-    <Typography className={classes.labelRight}>
+    <HvTypography className={classes.labelLeft}>{labelLeftName}</HvTypography>
+    <HvTypography className={classes.labelRight}>
       {`© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`}
-    </Typography>
+    </HvTypography>
   </div>
 );
 
