@@ -109,6 +109,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [1.0.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.0...@hv/uikit-react-core@1.0.1) (2019-04-12)
+
+
+### Bug Fixes
+
+* **dropdown:** support ids to manage selection ([5126830](https://github.com/pentaho/hv-uikit-react/commit/5126830))
+* lint issues with List item ([#85](https://github.com/pentaho/hv-uikit-react/issues/85)) ([472f6da](https://github.com/pentaho/hv-uikit-react/commit/472f6da))
+* using SVG instead of icon component in selectors ([#82](https://github.com/pentaho/hv-uikit-react/issues/82)) ([1a9aac6](https://github.com/pentaho/hv-uikit-react/commit/1a9aac6)), closes [#79](https://github.com/pentaho/hv-uikit-react/issues/79)
+
+
+### Features
+
+* **dropdown:** enable/disable default selection on single selection dropdown ([073da51](https://github.com/pentaho/hv-uikit-react/commit/073da51))
+* added sample for Asset Inventory ([#77](https://github.com/pentaho/hv-uikit-react/issues/77)) ([0eac27b](https://github.com/pentaho/hv-uikit-react/commit/0eac27b))
+
+
+
+
+
 # [1.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@0.3.1-alpha.2...@hv/uikit-react-core@1.0.0) (2019-04-08)
 
 ### Feature components
