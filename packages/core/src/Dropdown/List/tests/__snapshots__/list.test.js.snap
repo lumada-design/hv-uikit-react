@@ -31604,6 +31604,7 @@ body {
           }
         }
         multiSelect={true}
+        notifyChangesOnFirstRender={false}
         onChange={[Function]}
         selectDefault={true}
         showSearch={true}

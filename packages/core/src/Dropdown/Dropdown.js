@@ -90,9 +90,10 @@ class Main extends React.Component {
    * @param {Array} selection - An array containing the selected values.
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
    * @memberof Main
    */
-  handleSelection(selection, commitChanges, toggle) {
+  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { values, multiSelect, onChange } = this.props;
     const { labels } = this.state;
     const hasSelection = selection.length > 0;
@@ -113,8 +114,7 @@ class Main extends React.Component {
     }
 
     if (toggle) this.handleToggle();
-
-    onChange(multiSelect ? selection : selection[0]);
+    if (notifyChanges) onChange(multiSelect ? selection : selection[0]);
   }
 
   renderLabel() {
@@ -152,7 +152,14 @@ class Main extends React.Component {
   }
 
   renderList() {
-    const { classes, values, multiSelect, showSearch, selectDefault } = this.props;
+    const {
+      classes,
+      values,
+      multiSelect,
+      showSearch,
+      selectDefault,
+      notifyChangesOnFirstRender
+    } = this.props;
     const { isOpen, labels } = this.state;
 
     return (
@@ -170,11 +177,12 @@ class Main extends React.Component {
           multiSelect={multiSelect}
           isOpen={isOpen}
           showSearch={showSearch}
-          onChange={(selected, commitChanges, toggle) =>
-            this.handleSelection(selected, commitChanges, toggle)
+          onChange={(selected, commitChanges, toggle, notifyChanges) =>
+            this.handleSelection(selected, commitChanges, toggle, notifyChanges)
           }
           labels={labels}
           selectDefault={selectDefault}
+          notifyChangesOnFirstRender={notifyChangesOnFirstRender}
         />
       </div>
     );
@@ -301,6 +309,10 @@ Main.propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * If 'true' the dropdown will notify changes everytime it re-renders.
+   */
+  notifyChangesOnFirstRender: PropTypes.bool,
+  /**
    * An object containing all the labels for the dropdown.
    *
    * - select: The default when there are no options avaible.
@@ -319,7 +331,7 @@ Main.propTypes = {
     multiSelectionConjunction: PropTypes.string
   }),
   /**
-   * If ´true´ and none element selected, 
+   * If ´true´ and none element selected,
    * single select has default (first) label selected.
    */
   selectDefault: PropTypes.bool
@@ -333,6 +345,7 @@ Main.defaultProps = {
   disabled: false,
   expanded: false,
   onChange() {},
+  notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true
 };
