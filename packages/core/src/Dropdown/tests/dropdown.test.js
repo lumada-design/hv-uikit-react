@@ -112,6 +112,21 @@ describe("<Dropdown />", () => {
       expect(instance.handleToggle).not.toBeCalled();
     });
 
+    it("onChange is triggered on first render when required", () => {
+      onChangeMock.mockReset();
+      mount(
+        <HvProvider>
+          <DropdownWithStyles
+            values={mockData}
+            onChange={onChangeMock}
+            notifyChangesOnFirstRender
+            showSearch
+          />
+        </HvProvider>
+      );
+      expect(onChangeMock).toHaveBeenCalled();
+    });
+
     it("handleClickOutside updates state accordingly with event payload", () => {
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();

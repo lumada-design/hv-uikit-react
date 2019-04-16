@@ -40,8 +40,8 @@ class List extends React.Component {
   }
 
   componentWillMount() {
-    const { values } = this.props;
-    if (values) this.resetLists();
+    const { values, notifyChangesOnFirstRender } = this.props;
+    if (values) this.resetLists(notifyChangesOnFirstRender);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -55,11 +55,12 @@ class List extends React.Component {
    * Apply the selection to the state.
    *
    * @param {Boolean} commitChanges - If `true` the selection if finally committed and should be applied to the state.
-   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state.
+   * @param {Boolean} notifyChanges - If `true` it will execute the onChange function.
    * @memberof List
    */
 
-  setSelection(commitChanges, toggle) {
+  setSelection(commitChanges, toggle, notifyChanges = true) {
     const { list, searchStr } = this.state;
     const { onChange, labels } = this.props;
     const { selectAll, multiSelectionConjunction } = labels;
@@ -80,16 +81,15 @@ class List extends React.Component {
           : `${selection.length} ${multiSelectionConjunction} ${list.length}`
       });
     }
-
-    onChange(selection, commitChanges, toggle);
+    onChange(selection, commitChanges, toggle, notifyChanges);
   }
 
   /**
    * Reset lists and sets default selections according
    * to dropdown type and values selected.
-   *
+   * @param {Boolean} notifyChangesOnFirstRender - If `true` it will execute the onChange function.
    */
-  resetLists() {
+  resetLists(notifyChangesOnFirstRender = false) {
     const { multiSelect, values, selectDefault } = this.props;
     const hasSelection = getSelection(values).length > 0;
 
@@ -110,7 +110,7 @@ class List extends React.Component {
     });
 
     this.setState({ list: newList, prevList: newList }, () =>
-      this.setSelection(true)
+      this.setSelection(true, false, notifyChangesOnFirstRender)
     );
   }
 
@@ -133,7 +133,8 @@ class List extends React.Component {
       }
 
       if (elem[selectionKey] === selectedElem[selectionKey]) {
-        newElem.selected = multiSelect || !selectDefault ? !elem.selected : true;
+        newElem.selected =
+          multiSelect || !selectDefault ? !elem.selected : true;
       }
 
       return newElem;
@@ -377,16 +378,21 @@ List.propTypes = {
    */
   labels: PropTypes.instanceOf(Object).isRequired,
   /**
-   * If ´true´ and none element selected, 
+   * If ´true´ and none element selected,
    * single select has default (first) label selected.
    */
-  selectDefault: PropTypes.bool
+  selectDefault: PropTypes.bool,
+  /**
+   * If 'true' the dropdown will notify changes everytime it re-renders.
+   */
+  notifyChangesOnFirstRender: PropTypes.bool
 };
 
 List.defaultProps = {
   values: [],
   multiSelect: false,
   showSearch: false,
+  notifyChangesOnFirstRender: false,
   onChange() {},
   selectDefault: true
 };
