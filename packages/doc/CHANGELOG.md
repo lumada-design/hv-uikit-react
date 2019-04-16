@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.0.2-alpha.1...@hv/uikit-react-doc@1.0.2-alpha.2) (2019-04-16)
+
+
+### Bug Fixes
+
+* **dropdown:** adding a new prop to control the initial OnChangeCall.[#10](https://github.com/pentaho/hv-uikit-react/issues/10) ([d30a27a](https://github.com/pentaho/hv-uikit-react/commit/d30a27a))
+
+
+
+
+
 ## [1.0.2-alpha.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.0.2-alpha.0...@hv/uikit-react-doc@1.0.2-alpha.1) (2019-04-15)
 
 
