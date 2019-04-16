@@ -1,9 +1,9 @@
 ---
 name: Bug report
 about: Submit a bug that you have found
-title: "[BUG] "
+title: ''
 labels: bug
-assignees: diogofscmariano, francisco-guilherme, eliofreitas, tiago-ssantos
+assignees: diogofscmariano, eliofreitas, francisco-guilherme, tiago-ssantos
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 name: Submit a question
 about: Request clarifications about something related with this project
-title: "[QUESTION]  "
+title: ''
 labels: question
-assignees: diogofscmariano, francisco-guilherme, eliofreitas, tiago-ssantos
+assignees: diogofscmariano, eliofreitas, francisco-guilherme, tiago-ssantos
 
 ---
 
