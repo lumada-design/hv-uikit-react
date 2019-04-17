@@ -36,7 +36,8 @@ const styles = theme => ({
     marginTop: 0,
     marginRight: "-1px",
     paddingLeft: `${theme.hv.spacing.xs}px`
-  }
+  },
+  content: {}
 });
 
 export default styles;
