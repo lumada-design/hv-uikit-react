@@ -36,12 +36,10 @@ const styles = theme => ({
   },
   inputUser: {
     position: "relative",
-    top: `-${theme.hv.spacing.sm}px`
+    paddingBottom: `${theme.hv.spacing.md}px`
   },
   inputPassword: {
-    position: "relative",
-    marginTop: `-${theme.hv.spacing.xs}px`,
-    top: "-50px"
+
   },
   button: {
     width: "120px",
