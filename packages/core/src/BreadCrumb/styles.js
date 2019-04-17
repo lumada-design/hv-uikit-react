@@ -18,8 +18,6 @@ const styles = theme => ({
   root: {
     display: "flex",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.xs}px`,
-    marginLeft: `${theme.hv.spacing.md}px`,
     zIndex: 0
   },
   centerContainer: {

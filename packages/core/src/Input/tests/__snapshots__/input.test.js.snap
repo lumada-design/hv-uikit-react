@@ -4466,7 +4466,6 @@ body {
   color: #414141;
   display: block;
   font-size: 12px;
-  padding-top: 30px;
   line-height: 16px;
   font-weight: 600;
   padding-bottom: 10px;
@@ -4479,7 +4478,6 @@ body {
   padding-top: 10px;
   line-height: 16px;
   font-weight: 400;
-  padding-bottom: 30px;
   letter-spacing: 0.02em;
 }
 .HvInput-textInfo-490 {
@@ -4610,7 +4608,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   Object {
                     "color": "#999999",
@@ -4619,7 +4616,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   Object {
@@ -5033,7 +5029,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   ".HvInput-multiLine-487": Object {
                     "padding": 0,
@@ -5045,7 +5040,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   ".HvInput-textInfo-490": Object {
@@ -5417,7 +5411,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -5429,7 +5422,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   "textInfo": Object {
@@ -6058,7 +6050,6 @@ input:-webkit-autofill {
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                     "paddingBottom": "10px",
-                    "paddingTop": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -6070,7 +6061,6 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingBottom": "30px",
                     "paddingTop": "10px",
                   },
                   "textInfo": Object {
@@ -20240,7 +20230,6 @@ body {
   color: #414141;
   display: block;
   font-size: 12px;
-  padding-top: 30px;
   line-height: 16px;
   font-weight: 600;
   padding-bottom: 10px;
@@ -20253,7 +20242,6 @@ body {
   padding-top: 10px;
   line-height: 16px;
   font-weight: 400;
-  padding-bottom: 30px;
   letter-spacing: 0.02em;
 }
 .HvInput-textInfo-614 {
@@ -20384,7 +20372,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   Object {
                     "color": "#999999",
@@ -20393,7 +20380,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   Object {
@@ -20807,7 +20793,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   ".HvInput-multiLine-611": Object {
                     "padding": 0,
@@ -20819,7 +20804,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   ".HvInput-textInfo-614": Object {
@@ -21191,7 +21175,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -21203,7 +21186,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   "textInfo": Object {
@@ -21832,7 +21814,6 @@ input:-webkit-autofill {
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                     "paddingBottom": "10px",
-                    "paddingTop": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -21844,7 +21825,6 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingBottom": "30px",
                     "paddingTop": "10px",
                   },
                   "textInfo": Object {
@@ -39499,7 +39479,6 @@ body {
   color: #414141;
   display: block;
   font-size: 12px;
-  padding-top: 30px;
   line-height: 16px;
   font-weight: 600;
   padding-bottom: 10px;
@@ -39512,7 +39491,6 @@ body {
   padding-top: 10px;
   line-height: 16px;
   font-weight: 400;
-  padding-bottom: 30px;
   letter-spacing: 0.02em;
 }
 .HvInput-textInfo-90 {
@@ -39643,7 +39621,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   Object {
                     "color": "#999999",
@@ -39652,7 +39629,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   Object {
@@ -40066,7 +40042,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   ".HvInput-multiLine-87": Object {
                     "padding": 0,
@@ -40078,7 +40053,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   ".HvInput-textInfo-90": Object {
@@ -40450,7 +40424,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -40462,7 +40435,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   "textInfo": Object {
@@ -41091,7 +41063,6 @@ input:-webkit-autofill {
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                     "paddingBottom": "10px",
-                    "paddingTop": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -41103,7 +41074,6 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingBottom": "30px",
                     "paddingTop": "10px",
                   },
                   "textInfo": Object {

@@ -6753,13 +6753,8 @@ body {
   margin: 0px;
 }
 .loginForm-inputUser-171 {
-  top: -20px;
   position: relative;
-}
-.loginForm-inputPassword-172 {
-  top: -50px;
-  position: relative;
-  margin-top: -10px;
+  padding-bottom: 30px;
 }
 .loginForm-button-173 {
   width: 120px;
@@ -6869,14 +6864,10 @@ body {
                     "margin": "0px",
                   },
                   Object {
+                    "padding-bottom": "30px",
                     "position": "relative",
-                    "top": "-20px",
                   },
-                  Object {
-                    "margin-top": "-10px",
-                    "position": "relative",
-                    "top": "-50px",
-                  },
+                  Object {},
                   Object {
                     "float": "right",
                     "position": "relative",
@@ -6985,14 +6976,10 @@ body {
                     "min-height": "32px",
                     "min-width": "32px",
                   },
-                  ".loginForm-inputPassword-172": Object {
-                    "margin-top": "-10px",
-                    "position": "relative",
-                    "top": "-50px",
-                  },
+                  ".loginForm-inputPassword-172": Object {},
                   ".loginForm-inputUser-171": Object {
+                    "padding-bottom": "30px",
                     "position": "relative",
-                    "top": "-20px",
                   },
                   ".loginForm-linkButtonTypography-179": Object {
                     "font-size": "12px",
@@ -7071,14 +7058,10 @@ body {
                     "min-height": "32px",
                     "min-width": "32px",
                   },
-                  "inputPassword": Object {
-                    "margin-top": "-10px",
-                    "position": "relative",
-                    "top": "-50px",
-                  },
+                  "inputPassword": Object {},
                   "inputUser": Object {
+                    "padding-bottom": "30px",
                     "position": "relative",
-                    "top": "-20px",
                   },
                   "linkButtonTypography": Object {
                     "font-size": "12px",
@@ -7659,14 +7642,10 @@ body {
                     "minHeight": "32px",
                     "minWidth": "32px",
                   },
-                  "inputPassword": Object {
-                    "marginTop": "-10px",
-                    "position": "relative",
-                    "top": "-50px",
-                  },
+                  "inputPassword": Object {},
                   "inputUser": Object {
+                    "paddingBottom": "30px",
                     "position": "relative",
-                    "top": "-20px",
                   },
                   "linkButtonTypography": Object {
                     "fontSize": "12px",
@@ -13354,7 +13333,6 @@ body {
   color: #414141;
   display: block;
   font-size: 12px;
-  padding-top: 30px;
   line-height: 16px;
   font-weight: 600;
   padding-bottom: 10px;
@@ -13367,7 +13345,6 @@ body {
   padding-top: 10px;
   line-height: 16px;
   font-weight: 400;
-  padding-bottom: 30px;
   letter-spacing: 0.02em;
 }
 .HvInput-textInfo-231 {
@@ -13498,7 +13475,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   Object {
                     "color": "#999999",
@@ -13507,7 +13483,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   Object {
@@ -13921,7 +13896,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   ".HvInput-multiLine-228": Object {
                     "padding": 0,
@@ -13933,7 +13907,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   ".HvInput-textInfo-231": Object {
@@ -14305,7 +14278,6 @@ input:-webkit-autofill {
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                     "padding-bottom": "10px",
-                    "padding-top": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -14317,7 +14289,6 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-bottom": "30px",
                     "padding-top": "10px",
                   },
                   "textInfo": Object {
@@ -14946,7 +14917,6 @@ input:-webkit-autofill {
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                     "paddingBottom": "10px",
-                    "paddingTop": "30px",
                   },
                   "multiLine": Object {
                     "padding": 0,
@@ -14958,7 +14928,6 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingBottom": "30px",
                     "paddingTop": "10px",
                   },
                   "textInfo": Object {

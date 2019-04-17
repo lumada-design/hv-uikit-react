@@ -77,14 +77,12 @@ const styles = theme => ({
     padding: 0
   },
   label: {
-    paddingTop: `${theme.hv.spacing.md}px`,
     paddingBottom: `${theme.hv.spacing.xs}px`,
     display: "block",
     ...theme.hv.typography.labelText
   },
   text: {
     paddingTop: `${theme.hv.spacing.xs}px`,
-    paddingBottom: `${theme.hv.spacing.md}px`,
     display: "block",
     ...theme.hv.typography.disabledText
   },

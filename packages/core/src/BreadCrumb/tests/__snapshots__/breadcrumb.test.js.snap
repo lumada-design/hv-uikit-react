@@ -4378,9 +4378,7 @@ body {
 .BreadCrumb-root-1 {
   display: flex;
   z-index: 0;
-  margin-top: 10px;
   align-items: center;
-  margin-left: 30px;
 }
 .BreadCrumb-centerContainer-2 {
   display: flex;
@@ -4429,8 +4427,6 @@ body {
                   Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   Object {
@@ -4482,8 +4478,6 @@ body {
                   ".BreadCrumb-root-1": Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   ".BreadCrumb-separator-5": Object {
@@ -4509,8 +4503,6 @@ body {
                   "root": Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   "separator": Object {
@@ -5036,8 +5028,6 @@ body {
                   "root": Object {
                     "alignItems": "center",
                     "display": "flex",
-                    "marginLeft": "30px",
-                    "marginTop": "10px",
                     "zIndex": 0,
                   },
                   "separator": Object {

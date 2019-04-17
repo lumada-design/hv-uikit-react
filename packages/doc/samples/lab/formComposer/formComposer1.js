@@ -28,11 +28,19 @@ const inputTextConfiguration = {
   infoText: "Info text is here"
 };
 
+const inputStyles = theme => ({
+  container: {
+    padding: `${theme.hv.spacing.xs}px 0`
+  }
+});
+
+const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+
 const groups = [
   {
     title: "Group1",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
@@ -41,7 +49,7 @@ const groups = [
         onChange={value => value}
         value="Some text 1"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"
@@ -54,7 +62,7 @@ const groups = [
   {
     title: "Group2",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 3"
@@ -62,7 +70,7 @@ const groups = [
         name="input3"
         value="Some text 3"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 4"
@@ -74,14 +82,14 @@ const groups = [
   {
     title: "Group3",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 5"
         }}
         name="input5"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 6"
@@ -93,14 +101,14 @@ const groups = [
   {
     title: "Group4",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 7"
         }}
         name="input7"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 8"
@@ -112,14 +120,14 @@ const groups = [
   {
     title: "Group5",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 9"
         }}
         name="input9"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 10"
@@ -131,14 +139,14 @@ const groups = [
   {
     title: "Group6",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 11"
         }}
         name="input11"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 12"
