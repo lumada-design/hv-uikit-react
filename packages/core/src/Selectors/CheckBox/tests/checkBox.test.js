@@ -66,29 +66,41 @@ describe("CheckBox withStyles", () => {
 
   it("should have an icon", () => {
     const mountWrapper = mount(
-      <HvProvider>
+      <HvProvider uiKitTheme="dawn">
         <CheckBoxWithStyles />
       </HvProvider>
-    ).find(CheckBox).html();
+    )
+      .find(CheckBox)
+      .html();
 
-    expect(mountWrapper.includes(emptyIcon)).toBe(
-      true
-    );
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
+    const themeProvider = theme("dawn");
+
+    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+    ).toBe(false);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+    ).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
     const mountWrapper = mount(
-      <HvProvider>
+      <HvProvider uiKitTheme="dawn">
         <CheckBoxWithStyles disabled />
       </HvProvider>
-    ).find(CheckBox).html();
-    expect(mountWrapper.includes(emptyIcon)).toBe(
-      true
-    );
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
+    )
+      .find(CheckBox)
+      .html();
+    const themeProvider = theme("dawn");
+
+    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+    ).toBe(true);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+    ).toBe(true);
   });
 
   it("should apply the correct class name when there is a label at the start", () => {

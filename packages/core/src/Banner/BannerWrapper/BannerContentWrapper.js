@@ -38,6 +38,7 @@ function HvBannerContentWrapper({
   actionsOnMessage,
   action,
   onClose,
+  theme,
   ...other
 }) {
   let icon = null;
@@ -46,9 +47,12 @@ function HvBannerContentWrapper({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.iconVariant });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
-      className: classes.iconVariant
-    });
+    icon = React.cloneElement(
+      severityIcon(mapSeverityToVariant(variant), theme),
+      {
+        className: classes.iconVariant
+      }
+    );
   }
 
   return (
@@ -105,7 +109,11 @@ HvBannerContentWrapper.propTypes = {
   /**
    * Actions to display.
    */
-  action: PropTypes.node
+  action: PropTypes.node,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 HvBannerContentWrapper.defaultProps = {
@@ -114,7 +122,8 @@ HvBannerContentWrapper.defaultProps = {
   showIcon: false,
   customIcon: null,
   actionsOnMessage: undefined,
-  action: undefined
+  action: undefined,
+  theme: undefined
 };
 
 export default HvBannerContentWrapper;

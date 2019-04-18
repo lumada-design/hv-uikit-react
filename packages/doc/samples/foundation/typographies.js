@@ -16,33 +16,32 @@
 
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
-import theme from "@hv/uikit-common-themes/dist/theme.json";
 import Collapse from "@material-ui/core/Collapse";
 import Code from "@material-ui/icons/Code";
 import IconButton from "@material-ui/core/IconButton";
 
-const styles = () => ({
+const styles = theme => ({
   group: {
     margin: "10px",
     padding: "10px",
     width: "500px"
   },
   groupName: {
-    ...theme.typography.mediumTitle,
+    ...theme.hv.typography.mTitle,
     marginBottom: 15
   },
   typographyInfoContainer: {
     marginTop: "10px",
     padding: "10px",
-    backgroundColor: theme.palette.atmosphere.atmo4
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
   },
   sentenceContainer: {
     display: "flex",
     padding: "10px",
-    borderTop: `1px solid ${theme.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
   },
   container: {
     display: "flex",
@@ -70,7 +69,7 @@ const CodeButton = ({ classes, onClick }) => (
   </IconButton>
 );
 
-const Group = ({ classes, name, typography }) => {
+const Group = ({ classes, name, typography, theme }) => {
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
 
   return (
@@ -88,8 +87,12 @@ const Group = ({ classes, name, typography }) => {
       <Collapse in={snippetIsOpen}>
         <SyntaxHighlighter
           language="css"
-          style={prism}
-          customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
+          style={theme.type === "dark" ? darcula : prism}
+          customStyle={{
+            margin: 0,
+            borderRadius: 0,
+            fontSize: 14
+          }}
         >
           {JSON.stringify(typography, null, 4)}
         </SyntaxHighlighter>
@@ -98,8 +101,8 @@ const Group = ({ classes, name, typography }) => {
   );
 };
 
-const Typographies = ({ classes }) => {
-  const { typography } = theme;
+const Typographies = ({ classes, theme }) => {
+  const { typography } = theme.hv;
   const keys = Object.keys(typography);
 
   return (
@@ -112,10 +115,11 @@ const Typographies = ({ classes }) => {
             classes={classes}
             name={group}
             typography={typography[group]}
+            theme={theme.hv}
           />
         ))}
     </div>
   );
 };
 
-export default withStyles(styles)(Typographies);
+export default withStyles(styles, { withTheme: true })(Typographies);

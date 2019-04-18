@@ -19,6 +19,8 @@ import classNames from "classnames";
 import HvLink from "@hv/uikit-react-core/dist/Link";
 import Examples from "../Examples";
 import Tabs from "../Tabs";
+import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
+import Button from "@hv/uikit-react-core/dist/Button";
 
 const getPropsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -33,7 +35,7 @@ const getPropsMetadata = children => {
   return metadata;
 };
 
-const Main = ({ classes, children, context }) => {
+const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
@@ -51,7 +53,12 @@ const Main = ({ classes, children, context }) => {
           }
         ])}
       >
-        {kind} - <span className={classes.name}>{story}</span>
+        <div>
+          {kind} - <span className={classes.name}>{story}</span>
+        </div>
+        <Button colorType="secondary" onClick={() => config.changeTheme()}>
+          Change theme
+        </Button>
       </div>
       <div className={classes.content}>
         {title ? (
@@ -82,4 +89,4 @@ const Main = ({ classes, children, context }) => {
   );
 };
 
-export default Main;
+export default withConfig(Main);

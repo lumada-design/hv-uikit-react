@@ -16,14 +16,13 @@
 
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import theme from "@hv/uikit-common-themes/dist/theme.json";
 
-const styles = () => ({
+const styles = (theme) => ({
   group: {
     marginBottom: 20
   },
   groupName: {
-    ...theme.typography.mediumTitle,
+    ...theme.hv.typography.mTitle,
     marginBottom: 15
   },
   colors: {
@@ -36,14 +35,14 @@ const styles = () => ({
   colorSquare: {
     width: 150,
     height: 150,
-    border: `1px solid ${theme.palette.atmosphere.atmo5}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     margin: "0 20px 20px 0"
   },
   colorName: {
-    ...theme.typography.highlightText
+    ...theme.hv.typography.highlightText
   },
   colorCode: {
-    ...theme.typography.infoText
+    ...theme.hv.typography.infoText
   }
 });
 
@@ -69,8 +68,8 @@ const Group = ({ classes, name, colors }) => {
   );
 };
 
-const Colors = ({ classes }) => {
-  const { palette } = theme;
+const Colors = ({ classes, theme }) => {
+  const { palette } = theme.hv;
   const keys = Object.keys(palette);
 
   return (
@@ -87,4 +86,4 @@ const Colors = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Colors);
+export default withStyles(styles, { withTheme: true })(Colors);

@@ -4,6 +4,21 @@ exports[`InputAdornment should be defined 1`] = `
 <InputAdornment
   classes={Object {}}
   handleClear={[MockFunction]}
+  theme={
+    Object {
+      "hv": Object {
+        "palette": Object {
+          "semantic": Object {
+            "sema1": "#FFFFF",
+            "sema6": "#FFFFF",
+          },
+        },
+        "spacing": Object {
+          "md": 10,
+        },
+      },
+    }
+  }
   validationState="filled"
 >
   <div
@@ -22,8 +37,8 @@ exports[`InputAdornment should be defined 1`] = `
       }
       style={
         Object {
-          "height": "30px",
-          "width": "30px",
+          "height": "10px",
+          "width": "10px",
         }
       }
     >
@@ -31,8 +46,8 @@ exports[`InputAdornment should be defined 1`] = `
         height={30}
         style={
           Object {
-            "height": "30px",
-            "width": "30px",
+            "height": "10px",
+            "width": "10px",
           }
         }
         viewBox="1 1 30 30 "

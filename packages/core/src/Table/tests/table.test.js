@@ -27,6 +27,7 @@ import theme from "../../theme";
 
 describe("Hv Table", () => {
   let wrapper;
+  const themeProvider = theme("dawn");
 
   describe("index", () => {
     beforeEach(async () => {
@@ -36,7 +37,7 @@ describe("Hv Table", () => {
             classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
+            theme={themeProvider}
           />
         </HvProvider>
       );
@@ -73,12 +74,12 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is avaialble it is rendered", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
+            theme={themeProvider}
           />
         </MuiThemeProvider>
       );
@@ -89,10 +90,10 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is not empty, columns are displayed", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
-            theme={theme}
+            theme={themeProvider}
             columns={[
               { id: 1, Header: "column 1" },
               { id: 2, Header: "column 2" },
@@ -111,10 +112,10 @@ describe("Hv Table", () => {
 
     it("and if 'data' is provided, rows are the same length of 'data'", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
-            theme={theme}
+            theme={themeProvider}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
@@ -127,10 +128,10 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
-            theme={theme}
+            theme={themeProvider}
             columns={[]}
             data={[]}
             pageSize={5}
@@ -145,10 +146,10 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
-            theme={theme}
+            theme={themeProvider}
             columns={[]}
             data={[]}
             pageSize={5}
@@ -163,10 +164,10 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
-            theme={theme}
+            theme={themeProvider}
             columns={[]}
             data={[]}
             pageSize={5}
@@ -181,7 +182,7 @@ describe("Hv Table", () => {
 
     it("should mark the sorted column ", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -204,7 +205,7 @@ describe("Hv Table", () => {
         numeric: "numeric-random"
       };
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={classesToApply}
             columns={column}
@@ -231,7 +232,7 @@ describe("Hv Table", () => {
 
     it("should highlight the sorted column", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -252,7 +253,7 @@ describe("Hv Table", () => {
 
     it("should return an icon when sorted column in descending order", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -280,7 +281,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" }
       ];
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={columns}
@@ -311,7 +312,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" }
       ];
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={columns}
@@ -330,7 +331,7 @@ describe("Hv Table", () => {
 
     it("should select one value", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -349,7 +350,7 @@ describe("Hv Table", () => {
 
     it("should deselect one value", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -371,7 +372,7 @@ describe("Hv Table", () => {
 
     it("should check if the value is selected", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -397,7 +398,7 @@ describe("Hv Table", () => {
         viewIndex: 1
       };
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}
@@ -418,7 +419,7 @@ describe("Hv Table", () => {
     it("should fetch data", () => {
       const fetchDataMock = jest.fn(() => "mock");
       wrapper = mount(
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={themeProvider}>
           <HvTable
             classes={{}}
             columns={column}

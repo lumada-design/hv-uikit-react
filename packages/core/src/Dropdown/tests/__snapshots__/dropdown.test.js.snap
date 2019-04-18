@@ -2,8 +2,10 @@
 
 exports[`<Dropdown /> <Dropdown /> with multiselect and search should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -81,6 +83,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -5426,6 +5428,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5714,7 +5717,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -7416,6 +7418,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -7704,7 +7707,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -9171,6 +9173,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -9459,7 +9462,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -10982,6 +10984,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -11270,7 +11273,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -12753,6 +12755,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -13041,7 +13044,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -14472,6 +14474,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -14760,7 +14763,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -16189,6 +16191,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -16477,7 +16480,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -19192,6 +19194,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -19480,7 +19483,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -20945,6 +20947,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -21233,7 +21236,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -23737,6 +23739,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -24025,7 +24028,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -25384,6 +25386,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -25672,7 +25675,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -27445,6 +27447,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -27733,7 +27736,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -33100,6 +33102,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -33388,7 +33391,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -33736,6 +33738,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -34024,7 +34027,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -34479,6 +34481,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -34767,7 +34770,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -35109,6 +35111,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -35397,7 +35400,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -35812,6 +35814,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -36100,7 +36103,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -37058,6 +37060,7 @@ body {
                                             "xl": "90",
                                             "xs": "10",
                                           },
+                                          "type": "light",
                                           "typography": Object {
                                             "3xlTitle": Object {
                                               "color": "#414141",
@@ -37346,7 +37349,6 @@ body {
                                           "lg": "60",
                                           "md": "30",
                                           "sm": "20",
-                                          "unit": 8,
                                           "xl": "90",
                                           "xs": "10",
                                         },
@@ -37693,6 +37695,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -37981,7 +37984,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -38923,6 +38925,7 @@ body {
                                               "xl": "90",
                                               "xs": "10",
                                             },
+                                            "type": "light",
                                             "typography": Object {
                                               "3xlTitle": Object {
                                                 "color": "#414141",
@@ -39211,7 +39214,6 @@ body {
                                             "lg": "60",
                                             "md": "30",
                                             "sm": "20",
-                                            "unit": 8,
                                             "xl": "90",
                                             "xs": "10",
                                           },
@@ -39555,6 +39557,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -39843,7 +39846,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -40786,6 +40788,7 @@ body {
                                               "xl": "90",
                                               "xs": "10",
                                             },
+                                            "type": "light",
                                             "typography": Object {
                                               "3xlTitle": Object {
                                                 "color": "#414141",
@@ -41074,7 +41077,6 @@ body {
                                             "lg": "60",
                                             "md": "30",
                                             "sm": "20",
-                                            "unit": 8,
                                             "xl": "90",
                                             "xs": "10",
                                           },
@@ -41418,6 +41420,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -41706,7 +41709,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -42649,6 +42651,7 @@ body {
                                               "xl": "90",
                                               "xs": "10",
                                             },
+                                            "type": "light",
                                             "typography": Object {
                                               "3xlTitle": Object {
                                                 "color": "#414141",
@@ -42937,7 +42940,6 @@ body {
                                             "lg": "60",
                                             "md": "30",
                                             "sm": "20",
-                                            "unit": 8,
                                             "xl": "90",
                                             "xs": "10",
                                           },
@@ -43288,6 +43290,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -43576,7 +43579,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -43893,6 +43895,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -44181,7 +44184,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -44494,6 +44496,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -44782,7 +44785,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },
@@ -45122,6 +45124,7 @@ body {
                                           "xl": "90",
                                           "xs": "10",
                                         },
+                                        "type": "light",
                                         "typography": Object {
                                           "3xlTitle": Object {
                                             "color": "#414141",
@@ -45410,7 +45413,6 @@ body {
                                         "lg": "60",
                                         "md": "30",
                                         "sm": "20",
-                                        "unit": 8,
                                         "xl": "90",
                                         "xs": "10",
                                       },
@@ -45717,6 +45719,7 @@ body {
                                             "xl": "90",
                                             "xs": "10",
                                           },
+                                          "type": "light",
                                           "typography": Object {
                                             "3xlTitle": Object {
                                               "color": "#414141",
@@ -46005,7 +46008,6 @@ body {
                                           "lg": "60",
                                           "md": "30",
                                           "sm": "20",
-                                          "unit": 8,
                                           "xl": "90",
                                           "xs": "10",
                                         },
@@ -46321,6 +46323,7 @@ body {
                                               "xl": "90",
                                               "xs": "10",
                                             },
+                                            "type": "light",
                                             "typography": Object {
                                               "3xlTitle": Object {
                                                 "color": "#414141",
@@ -46609,7 +46612,6 @@ body {
                                             "lg": "60",
                                             "md": "30",
                                             "sm": "20",
-                                            "unit": 8,
                                             "xl": "90",
                                             "xs": "10",
                                           },
@@ -46923,6 +46925,7 @@ body {
                                                 "xl": "90",
                                                 "xs": "10",
                                               },
+                                              "type": "light",
                                               "typography": Object {
                                                 "3xlTitle": Object {
                                                   "color": "#414141",
@@ -47211,7 +47214,6 @@ body {
                                               "lg": "60",
                                               "md": "30",
                                               "sm": "20",
-                                              "unit": 8,
                                               "xl": "90",
                                               "xs": "10",
                                             },
@@ -47540,6 +47542,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -47828,7 +47831,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -48141,6 +48143,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -48429,7 +48432,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },
@@ -48769,6 +48771,7 @@ body {
                                           "xl": "90",
                                           "xs": "10",
                                         },
+                                        "type": "light",
                                         "typography": Object {
                                           "3xlTitle": Object {
                                             "color": "#414141",
@@ -49057,7 +49060,6 @@ body {
                                         "lg": "60",
                                         "md": "30",
                                         "sm": "20",
-                                        "unit": 8,
                                         "xl": "90",
                                         "xs": "10",
                                       },
@@ -49364,6 +49366,7 @@ body {
                                             "xl": "90",
                                             "xs": "10",
                                           },
+                                          "type": "light",
                                           "typography": Object {
                                             "3xlTitle": Object {
                                               "color": "#414141",
@@ -49652,7 +49655,6 @@ body {
                                           "lg": "60",
                                           "md": "30",
                                           "sm": "20",
-                                          "unit": 8,
                                           "xl": "90",
                                           "xs": "10",
                                         },
@@ -49968,6 +49970,7 @@ body {
                                               "xl": "90",
                                               "xs": "10",
                                             },
+                                            "type": "light",
                                             "typography": Object {
                                               "3xlTitle": Object {
                                                 "color": "#414141",
@@ -50256,7 +50259,6 @@ body {
                                             "lg": "60",
                                             "md": "30",
                                             "sm": "20",
-                                            "unit": 8,
                                             "xl": "90",
                                             "xs": "10",
                                           },
@@ -50570,6 +50572,7 @@ body {
                                                 "xl": "90",
                                                 "xs": "10",
                                               },
+                                              "type": "light",
                                               "typography": Object {
                                                 "3xlTitle": Object {
                                                   "color": "#414141",
@@ -50858,7 +50861,6 @@ body {
                                               "lg": "60",
                                               "md": "30",
                                               "sm": "20",
-                                              "unit": 8,
                                               "xl": "90",
                                               "xs": "10",
                                             },
@@ -51118,8 +51120,10 @@ body {
 
 exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -51197,6 +51201,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -51485,7 +51490,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -54467,6 +54471,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -54755,7 +54760,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -56542,6 +56546,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -56830,7 +56835,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -58528,6 +58532,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -58816,7 +58821,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -59161,6 +59165,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -59449,7 +59454,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -59899,6 +59903,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -60187,7 +60192,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -60486,8 +60490,10 @@ body {
 
 exports[`<Dropdown /> with defaults should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -60565,6 +60571,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -60853,7 +60860,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -63835,6 +63841,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -64123,7 +64130,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -65910,6 +65916,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -66198,7 +66205,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -67900,6 +67906,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -68188,7 +68195,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -69651,6 +69657,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -69939,7 +69946,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -70285,6 +70291,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -70573,7 +70580,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -71023,6 +71029,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -71311,7 +71318,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -71653,6 +71659,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -71941,7 +71948,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },

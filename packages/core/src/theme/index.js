@@ -15,40 +15,65 @@
  */
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import theme from "@hv/uikit-common-themes/dist/theme";
-import muiAppBar from "./overrides/muiAppBar";
-import muiToolbar from "./overrides/muiToolbar";
+import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
+import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
+import muiAppBarFunc from "./overrides/muiAppBar";
+import muiToolbarFunc from "./overrides/muiToolbar";
 import typography from "./typography";
 import palette from "./palette";
 
-const muiTheme = createMuiTheme({
-  shadows: Array(25).fill("none"),
-  palette,
-  typography,
-  shape: {
-    borderRadius: 0
-  },
-  props: {
-    MuiButtonBase: {
-      disableRipple: true
-    },
-    MuiInput: {
-      disableUnderline: true
-    }
-  },
-  overrides: {
-    MuiAppBar: {
-      root: muiAppBar.root,
-      colorDefault: muiAppBar.colorDefault
-    },
-    MuiToolbar: {
-      root: muiToolbar.root,
-      gutters: muiToolbar.gutters,
-      dense: muiToolbar.dense
-    }
+const muiTheme = uiKitTheme => {
+  let theme = null;
+
+  switch (uiKitTheme) {
+    case "dawn":
+      theme = dawnTheme;
+      break;
+    case "wicked":
+      theme = wickedTheme;
+      break;
+    default:
+      theme = dawnTheme;
+      break;
   }
-});
 
-muiTheme.spacing = { ...muiTheme.spacing, ...theme.spacing };
+  const paletteTheme = palette(theme);
+  const typographyTheme = typography(paletteTheme, theme);
+  const muiAppBar = muiAppBarFunc(theme);
+  const muiToolbar = muiToolbarFunc(theme);
+  
 
-export default Object.assign({}, muiTheme, { hv: theme });
+  const muiCreatedTheme = createMuiTheme({
+    shadows: Array(25).fill("none"),
+    palette: paletteTheme,
+    typography: typographyTheme,
+    shape: {
+      borderRadius: 0
+    },
+    props: {
+      MuiButtonBase: {
+        disableRipple: true
+      },
+      MuiInput: {
+        disableUnderline: true
+      }
+    },
+    overrides: {
+      MuiAppBar: {
+        root: muiAppBar.root,
+        colorDefault: muiAppBar.colorDefault
+      },
+      MuiToolbar: {
+        root: muiToolbar.root,
+        gutters: muiToolbar.gutters,
+        dense: muiToolbar.dense
+      }
+    }
+  });
+
+  muiCreatedTheme.spacing = { ...muiTheme.spacing, ...theme.spacing };
+
+  return Object.assign({}, muiCreatedTheme, { hv: theme });
+};
+
+export default muiTheme;

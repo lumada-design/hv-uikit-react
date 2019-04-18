@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-import theme from "@hv/uikit-common-themes/dist/theme";
-
-const muiToolbar = {
+const muiToolbar = theme => ({
   root: {
     alignItems: "center",
     "@media (min-width: 600px)": {
@@ -34,6 +32,6 @@ const muiToolbar = {
   dense: {
     minHeight: "46px"
   }
-};
+});
 
 export default muiToolbar;

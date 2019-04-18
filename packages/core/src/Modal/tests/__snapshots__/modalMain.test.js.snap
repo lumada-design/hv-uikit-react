@@ -283,6 +283,7 @@ exports[`Modal withStyles should render correctly 1`] = `
           "xl": "90",
           "xs": "10",
         },
+        "type": "light",
         "typography": Object {
           "3xlTitle": Object {
             "color": "#414141",
@@ -571,7 +572,6 @@ exports[`Modal withStyles should render correctly 1`] = `
         "lg": "60",
         "md": "30",
         "sm": "20",
-        "unit": 8,
         "xl": "90",
         "xs": "10",
       },
@@ -805,6 +805,7 @@ exports[`Modal withStyles should render correctly 1`] = `
   <ContextProvider
     value={
       Object {
+        "changeTheme": [Function],
         "router": null,
       }
     }

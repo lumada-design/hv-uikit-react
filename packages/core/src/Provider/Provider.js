@@ -65,9 +65,10 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme, router }) => {
-  const pConfig = { router };
-  const customTheme = applyCustomTheme(hvTheme, theme);
+const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
+  const pConfig = { router, changeTheme };
+
+  const customTheme = applyCustomTheme(hvTheme(uiKitTheme), theme);
   return (
     <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
       <CssBaseline />
@@ -79,12 +80,16 @@ const HvProvider = ({ children, theme, router }) => {
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.instanceOf(Object),
+  uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
+  changeTheme: PropTypes.func,
   router: PropTypes.instanceOf(Object)
 };
 
 HvProvider.defaultProps = {
   theme: null,
-  router: null
+  router: null,
+  uiKitTheme: "dawn",
+  changeTheme: () => {}
 };
 
 export default HvProvider;

@@ -174,6 +174,7 @@ class HvInput extends React.Component {
       onFocus,
       value,
       autoFocus,
+      theme,
       ...others
     } = this.props;
 
@@ -193,6 +194,7 @@ class HvInput extends React.Component {
         classes={classes}
         validationState={stateValidationState}
         handleClear={() => this.handleClear()}
+        theme={theme}
       />
     );
 
@@ -382,7 +384,11 @@ HvInput.propTypes = {
   /**
    * Overrides any validation with a specific error/warning message to set in the infoText slot.
    */
-  externalWarningTextOverride: PropTypes.string
+  externalWarningTextOverride: PropTypes.string,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 HvInput.defaultProps = {
@@ -412,7 +418,8 @@ HvInput.defaultProps = {
   onChange: value => value,
   onBlur: () => {},
   onFocus: () => {},
-  externalWarningTextOverride: null
+  externalWarningTextOverride: null,
+  theme: null
 };
 
 export default HvInput;

@@ -19,7 +19,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
-import theme from "@hv/uikit-common-themes/dist/theme";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
@@ -65,6 +64,7 @@ const Main = ({
   checkboxLabel,
   checkboxSelected,
   checkboxIndeterminate,
+  theme,
   mediaPath,
   mediaTitle,
   mediaHeight,
@@ -111,7 +111,7 @@ const Main = ({
     <Card
       className={classNames(classes.root, classes.borderTop)}
       style={{
-        borderTopColor: semantic && theme.palette.semantic[semantic],
+        borderTopColor: semantic && theme.hv.palette.semantic[semantic],
         borderTopWidth:
           semantic !== null ? "4px" : classes.borderTop.borderTopWidth
       }}
@@ -207,7 +207,11 @@ Main.propTypes = {
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool
+  checkboxIndeterminate: PropTypes.bool,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 Main.defaultProps = {
@@ -226,7 +230,8 @@ Main.defaultProps = {
   checkboxValue: "",
   checkboxLabel: "",
   checkboxSelected: undefined,
-  checkboxIndeterminate: undefined
+  checkboxIndeterminate: undefined,
+  theme: null
 };
 
 export default Main;

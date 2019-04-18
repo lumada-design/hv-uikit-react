@@ -37,6 +37,7 @@ const ModalTitle = ({
   variant,
   showIcon,
   customIcon,
+  theme,
   ...others
 }) => {
   const isString = typeof children === "string";
@@ -46,7 +47,7 @@ const ModalTitle = ({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.icon });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
+    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant), theme), {
       className: classes.icon
     });
   }
@@ -101,13 +102,18 @@ ModalTitle.propTypes = {
   /**
    * Node to be render.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 ModalTitle.defaultProps = {
   variant: "default",
   customIcon: null,
-  showIcon: true
+  showIcon: true,
+  theme: undefined
 };
 
 export default ModalTitle;

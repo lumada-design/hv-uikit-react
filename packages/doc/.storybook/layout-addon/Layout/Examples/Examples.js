@@ -16,7 +16,7 @@
 
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Collapse from "@material-ui/core/Collapse";
 import { Typography } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
@@ -49,7 +49,7 @@ class Example extends React.Component {
 
   render() {
     const { snippetIsOpen } = this.state;
-    const { classes, example } = this.props;
+    const { classes, example, theme } = this.props;
     const { src } = example;
     const isPath = typeof src === "string";
 
@@ -83,7 +83,7 @@ class Example extends React.Component {
           <Collapse in={snippetIsOpen}>
             <SyntaxHighlighter
               language="jsx"
-              style={prism}
+              style={theme.type === "dark" ? darcula : prism}
               customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
             >
               {isPath ? snippet : example.snippet}
@@ -98,7 +98,7 @@ class Example extends React.Component {
   }
 }
 
-const Examples = ({ classes, examples, basePath }) => (
+const Examples = ({ classes, examples, basePath, theme }) => (
   <>
     <h3 className={classes.root}>Examples</h3>
     {examples.map((example, idx) => (
@@ -107,6 +107,7 @@ const Examples = ({ classes, examples, basePath }) => (
         classes={classes}
         example={example}
         basePath={basePath}
+        theme={theme.hv}
       />
     ))}
   </>
