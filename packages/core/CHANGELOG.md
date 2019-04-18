@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.4...@hv/uikit-react-core@1.0.2-alpha.5) (2019-04-18)
+
+
+### Features
+
+* **theme:** multi theme support. [#99](https://github.com/pentaho/hv-uikit-react/issues/99) ([97a51b6](https://github.com/pentaho/hv-uikit-react/commit/97a51b6))
+
+
+
+
+
 ## [1.0.2-alpha.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.3...@hv/uikit-react-core@1.0.2-alpha.4) (2019-04-17)
 
 
