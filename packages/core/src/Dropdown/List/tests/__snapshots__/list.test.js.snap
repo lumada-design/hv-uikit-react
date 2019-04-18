@@ -2,8 +2,10 @@
 
 exports[`<List /> should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -81,6 +83,7 @@ exports[`<List /> should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`<List /> should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -5341,6 +5343,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5629,7 +5632,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -7096,6 +7098,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -7384,7 +7387,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -8907,6 +8909,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -9195,7 +9198,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -10678,6 +10680,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -10966,7 +10969,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -12397,6 +12399,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -12685,7 +12688,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -14114,6 +14116,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -14402,7 +14405,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -17117,6 +17119,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -17405,7 +17408,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -18870,6 +18872,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -19158,7 +19161,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -21662,6 +21664,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -21950,7 +21953,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -23309,6 +23311,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -23597,7 +23600,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -25370,6 +25372,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -25658,7 +25661,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -31025,6 +31027,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -31313,7 +31316,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -31675,6 +31677,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -31963,7 +31966,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -32305,6 +32307,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -32593,7 +32596,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -33008,6 +33010,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -33296,7 +33299,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -34254,6 +34256,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -34542,7 +34545,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -34889,6 +34891,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -35177,7 +35180,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -36119,6 +36121,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -36407,7 +36410,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -36751,6 +36753,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -37039,7 +37042,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -37982,6 +37984,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -38270,7 +38273,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -38614,6 +38616,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -38902,7 +38905,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -39845,6 +39847,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -40133,7 +40136,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -40484,6 +40486,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -40772,7 +40775,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -41089,6 +41091,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -41377,7 +41380,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -41690,6 +41692,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -41978,7 +41981,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -42318,6 +42320,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -42606,7 +42609,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -42913,6 +42915,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -43201,7 +43204,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -43517,6 +43519,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -43805,7 +43808,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -44119,6 +44121,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -44407,7 +44410,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },
@@ -44736,6 +44738,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -45024,7 +45027,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -45337,6 +45339,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -45625,7 +45628,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -45965,6 +45967,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -46253,7 +46256,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -46560,6 +46562,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -46848,7 +46851,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -47164,6 +47166,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -47452,7 +47455,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -47766,6 +47768,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -48054,7 +48057,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },

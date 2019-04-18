@@ -30,7 +30,7 @@ const styles = theme => ({
     marginBottom: "30px"
   },
   component: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.hv.palette.atmosphere.atmo3,
     padding: "20px"
   },
   iconCode: {

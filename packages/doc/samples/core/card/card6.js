@@ -16,13 +16,13 @@
 
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Level5.S";
-import IconInvalid from "@hv/uikit-react-icons/dist/Level2.S";
-import WarningIcon from "@hv/uikit-react-icons/dist/Level4.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/Level5.sema6.S";
+import IconInvalid from "@hv/uikit-react-icons/dist/Level2.sema3.S";
+import WarningIcon from "@hv/uikit-react-icons/dist/Level4.sema5.S";
 import Icon from "@hv/uikit-react-icons/dist/Tool.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Typography from "@material-ui/core/Typography";
-import theme from "@hv/uikit-common-themes/dist/theme";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const kpiStyles = theme => ({
   content: {
@@ -65,30 +65,34 @@ const ThroughputKpiTextConfiguration = score => ({
 });
 
 /* eslint react/prop-types: 0 */
-const Content = ({ value, icon }) => (
+const Content = ({ classes, value, icon }) => (
   <div>
     <HvKpi
       kpiTextConfiguration={ThroughputKpiTextConfiguration(value)}
       visualIndicator={icon}
     />
     <div>
-      <Typography semantic="body1" className={kpiStyles.label}>
+      <Typography semantic="body1" className={classes.label}>
         {data.firstTitle}
       </Typography>
-      <Typography semantic="body2" className={kpiStyles.text}>
+      <Typography semantic="body2" className={classes.text}>
         {data.firstContent}
       </Typography>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography semantic="body1" className={kpiStyles.label}>
+      <Typography semantic="body1" className={classes.label}>
         {data.secondTitle}
       </Typography>
-      <Typography semantic="body2" className={kpiStyles.text}>
+      <Typography semantic="body2" className={classes.text}>
         {data.secondContent}
       </Typography>
     </div>
   </div>
 );
+
+const ContentWithStyles = withStyles(kpiStyles, {
+  withTheme: true
+})(Content);
 
 export default (
   <>
@@ -103,7 +107,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="85" icon={<IconInvalid color={["none", theme.palette.semantic.sema3]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="85" icon={<IconInvalid />} />
+          }
           semantic="sema2"
           isSelectable
           checkboxValue="value"
@@ -114,7 +120,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="45" icon={<WarningIcon color={["none", theme.palette.semantic.sema5]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="45" icon={<WarningIcon />} />
+          }
           semantic="sema3"
           isSelectable
           checkboxValue="value"
@@ -125,7 +133,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="19" icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="19" icon={<FailureIcon />} />
+          }
           semantic="sema5"
           isSelectable
           checkboxValue="value"

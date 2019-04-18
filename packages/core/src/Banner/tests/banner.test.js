@@ -21,7 +21,11 @@ import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
 import HvProvider from "../../Provider";
-import { mapSeverityToVariant, severityIcon, variantIcon } from "../BannerWrapper/VariantUtils";
+import {
+  mapSeverityToVariant,
+  severityIcon,
+  variantIcon
+} from "../BannerWrapper/VariantUtils";
 import Button from "../../Button";
 
 describe("Banner ", () => {
@@ -124,17 +128,29 @@ describe("Banner ", () => {
   });
 
   it("should return the right severity icon", () => {
-    const error = severityIcon("error");
-    expect(error).toBe(variantIcon.error);
+    const theme = {
+      hv: {
+        palette: {
+          semantic: {
+            sema1: "#FFFFF",
+            sema5: "#FFFFF",
+            sema6: "#FFFFF"
+          }
+        }
+      }
+    };
 
-    const warning = severityIcon("warning");
-    expect(warning).toBe(variantIcon.warning);
+    const error = severityIcon("error", theme);
+    expect(error).toEqual(variantIcon.error(theme));
 
-    const info = severityIcon("info");
-    expect(info).toBe(variantIcon.info);
+    const warning = severityIcon("warning", theme);
+    expect(warning).toEqual(variantIcon.warning(theme));
 
-    const test = severityIcon("test");
-    expect(test).toBe(variantIcon.success);
+    const info = severityIcon("info", theme);
+    expect(info).toEqual(variantIcon.info(theme));
+
+    const test = severityIcon("test", theme);
+    expect(test).toEqual(variantIcon.success(theme));
   });
 
   it("should return the severity variant", () => {

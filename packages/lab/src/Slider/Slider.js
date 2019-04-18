@@ -483,7 +483,7 @@ HvSlider.propTypes = {
   /**
    * The object created by material to apply to the component.
    */
-  theme: PropTypes.instanceOf(Object).isRequired,
+  theme: PropTypes.instanceOf(Object),
   /**
    * The values array to apply to the component
    */
@@ -637,7 +637,8 @@ HvSlider.defaultProps = {
   maxPointValue: 100,
   onBeforeChange: () => {},
   onChange: () => {},
-  onAfterChange: () => {}
+  onAfterChange: () => {},
+  theme: null
 };
 
 export default HvSlider;

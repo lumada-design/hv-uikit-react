@@ -26,6 +26,20 @@ describe("InputAdornment", () => {
   let wrapper;
   const handleClearMock = jest.fn();
 
+  const theme = {
+    hv: {
+      spacing: {
+        md: 10
+      },
+      palette: {
+        semantic: {
+          sema1: "#FFFFF",
+          sema6: "#FFFFF"
+        }
+      }
+    }
+  };
+
   beforeEach(async () => {
     handleClearMock.mockClear();
 
@@ -34,6 +48,7 @@ describe("InputAdornment", () => {
         classes={{}}
         validationState={validationStates.filled}
         handleClear={handleClearMock}
+        theme={theme}
       />
     );
   });
@@ -58,6 +73,7 @@ describe("InputAdornment", () => {
         classes={{}}
         validationState={validationStates.valid}
         handleClear={handleClearMock}
+        theme={theme}
       />
     );
 
@@ -66,6 +82,4 @@ describe("InputAdornment", () => {
 
     expect(handleClearMock).not.toHaveBeenCalled();
   });
-
-
 });

@@ -19,18 +19,23 @@ import PropTypes from "prop-types";
 import MUITabs from "@material-ui/core/Tabs";
 import MUITab from "@material-ui/core/Tab";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import TableAPI from "../TableAPI";
 import TableCSS from "../TableCSS";
 
-const TabUsage = ({ parameters }) => {
+const TabUsage = ({ parameters, theme }) => {
   const { usage } = parameters;
 
   return (
     <SyntaxHighlighter
       language="javascript"
-      style={prism}
-      customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
+      style={theme.type === "dark" ? darcula : prism}
+      customStyle={{
+        backgroundColor: theme.palette.atmosphere.atmo3,
+        margin: 0,
+        borderRadius: 0,
+        fontSize: 14
+      }}
     >
       {usage}
     </SyntaxHighlighter>
@@ -55,7 +60,7 @@ class Tabs extends React.Component {
   };
 
   render() {
-    const { classes, parameters, propsMetaData } = this.props;
+    const { classes, parameters, propsMetaData, theme } = this.props;
     const { value } = this.state;
 
     return (
@@ -82,7 +87,7 @@ class Tabs extends React.Component {
           />
         </MUITabs>
         <div className={classes.props}>
-          {value === 0 && <TabUsage parameters={parameters} />}
+          {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
         </div>

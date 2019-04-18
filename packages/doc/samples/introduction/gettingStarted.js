@@ -16,23 +16,22 @@
 
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import theme from "@hv/uikit-common-themes/dist/theme";
 
-const styles = () => ({
+const styles = theme => ({
   title: {
-    ...theme.typography.mediumTitle,
+    ...theme.hv.typography.mTitle,
     marginBottom: 20
   },
   block1: {
     width: 700,
-    ...theme.typography.smallTitle,
+    ...theme.hv.typography.sTitle,
     marginBottom: 30,
     fontSize: 16,
     lineHeight: "26px"
   },
   block2: {
     width: 700,
-    ...theme.typography.smallTitle,
+    ...theme.hv.typography.sTitle,
     marginBottom: 30,
     fontSize: 16,
     lineHeight: "26px"
@@ -41,13 +40,13 @@ const styles = () => ({
     margin: "5px 0 0 20px"
   },
   span: {
-    ...theme.typography.mediumTitle,
+    ...theme.hv.typography.mTitle,
     marginBottom: 30,
     fontSize: 16
   }
 });
 
-const GettingStarted = ({ classes }) => (
+const GettingStarted = ({ classes, config }) => (
   <>
     <div className={classes.title}>Design System</div>
     <div className={classes.block1}>
@@ -71,8 +70,8 @@ const GettingStarted = ({ classes }) => (
       <br />
       <br />
       <span className={classes.span}> Core - </span>
-      components that are fully compliant with Design system guidelines and UI Kit
-      best practices.
+      components that are fully compliant with Design system guidelines and UI
+      Kit best practices.
       <br />
       <br />
       <span className={classes.span}> Lab - </span>
@@ -82,4 +81,4 @@ const GettingStarted = ({ classes }) => (
   </>
 );
 
-export default withStyles(styles)(GettingStarted);
+export default withStyles(styles, { withTheme: true })(GettingStarted);

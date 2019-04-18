@@ -15,15 +15,15 @@
  */
 
 import React from "react";
-import theme from "@hv/uikit-common-themes/dist/theme";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Level5.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/Level5.sema6.S";
 import Icon from "@hv/uikit-react-icons/dist/Up.S";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import leaf from "./resources/leaf.png";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const configuration = {
   title: "Leaves Appear wilted and scorched",
@@ -156,31 +156,35 @@ const actionStyles = theme => ({
   }
 });
 
-const MultipleActionsWithMediaButtons = () => (
+const MultipleActionsWithMediaButtons = classes => (
   <>
-    <HvButton className={actionStyles.button} colorType="link">
+    <HvButton className={classes.button} colorType="link">
       <Icon />
       Update
     </HvButton>
-    <HvButton className={actionStyles.smallButton} colorType="link">
+    <HvButton className={classes.smallButton} colorType="link">
       <MoreOptionsIcon />
     </HvButton>
   </>
 );
 
+const MultipleActionsWithMediaButtonsWithStyle = withStyles(actionStyles, {
+  withTheme: true
+})(MultipleActionsWithMediaButtons);
+
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
-      icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />}
+      icon={<FailureIcon />}
       headerTitle={configuration.title}
-      subheader={(
+      subheader={
         <div>
           <span style={subtitleLeftStyle}>{configuration.subtitleLeft}</span>
           <span>{configuration.subtitleRight}</span>
         </div>
-)}
+      }
       innerCardContent={<MultipleActionsWithMedia />}
-      actions={<MultipleActionsWithMediaButtons />}
+      actions={<MultipleActionsWithMediaButtonsWithStyle />}
       variant="error"
       isSelectable
       checkboxValue="value"

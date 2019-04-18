@@ -44,7 +44,11 @@ describe("ModalTitle Component", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<ModalTitle classes={{}}>Modal Content</ModalTitle>);
+    wrapper = shallow(
+      <HvProvider>
+        <ModalTitle classes={{}}>Modal Content</ModalTitle>
+      </HvProvider>
+    );
   });
 
   it("should render correctly if opened", () => {
@@ -53,22 +57,26 @@ describe("ModalTitle Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <ModalTitle classes={{}} disableTypography>
-        Modal Title
-      </ModalTitle>
+      <HvProvider>
+        <ModalTitle classes={{}} disableTypography>
+          Modal Title
+        </ModalTitle>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <ModalTitle
-        classes={{
-          root: "testClassRoot"
-        }}
-      >
-        Modal Content
-      </ModalTitle>
+      <HvProvider>
+        <ModalTitle
+          classes={{
+            root: "testClassRoot"
+          }}
+        >
+          Modal Content
+        </ModalTitle>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });

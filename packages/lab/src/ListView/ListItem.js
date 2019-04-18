@@ -19,7 +19,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
-import theme from "@hv/uikit-common-themes/dist/theme";
 import Grid from "@material-ui/core/Grid";
 import LeftContent from "./LeftContent";
 import Content from "./Content";
@@ -70,6 +69,7 @@ const ListItem = ({
   mediaTitle,
   mediaHeight,
   mediaWidth,
+  theme,
   ...other
 }) => {
   const footerExist = actions || isSelectable;
@@ -139,7 +139,7 @@ const ListItem = ({
     <Card
       className={classNames(classes.content, classes.borderLeft)}
       style={{
-        borderLeftColor: semantic && theme.palette.semantic[semantic],
+        borderLeftColor: semantic && theme.hv.palette.semantic[semantic],
         borderLeftWidth:
           semantic !== null ? "4px" : classes.borderLeft.borderLeftWidth
       }}
@@ -243,7 +243,11 @@ ListItem.propTypes = {
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool
+  checkboxIndeterminate: PropTypes.bool,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 ListItem.defaultProps = {
@@ -263,7 +267,8 @@ ListItem.defaultProps = {
   checkboxValue: "",
   checkboxLabel: "",
   checkboxSelected: undefined,
-  checkboxIndeterminate: undefined
+  checkboxIndeterminate: undefined,
+  theme: undefined
 };
 
 export default ListItem;

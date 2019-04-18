@@ -23,7 +23,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
-import theme from "../../theme";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -47,13 +46,19 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
 
 /**
  * Chooses the correct icon to used based on the disable value.
- * 
+ *
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (disabled) => {
+const prepareIcon = (disabled, theme) => {
   const disabledIcon = (
-    <CheckBoxIcon color={["none", theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]} />
+    <CheckBoxIcon
+      color={[
+        "none",
+        theme.hv.palette.atmosphere.atmo4,
+        theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
   );
 
   const icons = {
@@ -66,15 +71,9 @@ const prepareIcon = (disabled) => {
     return icons;
   }
 
-  icons.emptyIcon = (
-    <CheckBoxIcon />
-  );
-  icons.checkedIcon = (
-    <CheckBoxCheckedIcon />
-  );
-  icons.indeterminateIcon = (
-    <CheckBoxPartialIcon />
-  );
+  icons.emptyIcon = <CheckBoxIcon />;
+  icons.checkedIcon = <CheckBoxCheckedIcon />;
+  icons.indeterminateIcon = <CheckBoxPartialIcon />;
 
   return icons;
 };
@@ -90,11 +89,12 @@ const HvCheckbox = props => {
     label,
     labelPlacement,
     propsLabel,
-    propsIcon
+    propsIcon,
+    theme
   } = props;
 
   const materialPrimaryColor = "primary";
-  const icons = prepareIcon(disabled);
+  const icons = prepareIcon(disabled, theme);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
 
   return (
@@ -218,7 +218,11 @@ HvCheckbox.propTypes = {
   /**
    * Extra properties passed to the label.
    */
-  propsLabel: PropTypes.instanceOf(Object)
+  propsLabel: PropTypes.instanceOf(Object),
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 HvCheckbox.defaultProps = {
@@ -230,7 +234,8 @@ HvCheckbox.defaultProps = {
   onChange: () => {},
   propsIcon: undefined,
   propsLabel: undefined,
-  labelPlacement: "end"
+  labelPlacement: "end",
+  theme: null
 };
 
 export default HvCheckbox;

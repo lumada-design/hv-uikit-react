@@ -16,11 +16,13 @@
 
 const styles = theme => ({
   header: {
-    height: 40,
     backgroundColor: theme.hv.palette.semantic.sema2,
     ...theme.hv.typography.normalText,
-    padding: "10px 0 0 15px",
-    fontSize: 16
+    padding: "10px",
+    fontSize: 16,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   core: {
     backgroundColor: theme.hv.palette.semantic.sema1,
