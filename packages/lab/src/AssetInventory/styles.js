@@ -29,6 +29,9 @@ const styles = theme => ({
   title: {
     ...theme.typography.h1
   },
+  gridContainer: {
+    width: "auto"
+  },
   searchBoxContainer: {
     position: "relative",
     height: "auto",
