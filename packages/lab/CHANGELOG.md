@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.0.2-alpha.5...@hv/uikit-react-lab@1.0.2-alpha.6) (2019-04-22)
+
+
+### Bug Fixes
+
+* **asset-inventory:** items are cut when changing the view mode. [#112](https://github.com/pentaho/hv-uikit-react/issues/112) ([52bffce](https://github.com/pentaho/hv-uikit-react/commit/52bffce))
+
+
+
+
+
 ## [1.0.2-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.0.2-alpha.4...@hv/uikit-react-lab@1.0.2-alpha.5) (2019-04-18)
 
 
