@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../../../Typography";
 
 /**
  * Builds the title component. This component can be render by the props:
@@ -46,9 +46,9 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
     <div className={classes.logoContainer}>
       {logoComponent}
       {span}
-      <Typography variant="h3" className={classes.root}>
+      <HvTypography variant="mTitle" className={classes.root}>
         {titleText}
-      </Typography>
+      </HvTypography>
     </div>
   );
 };

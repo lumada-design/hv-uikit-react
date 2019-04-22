@@ -68,15 +68,11 @@ const styles = theme => ({
     justifyContent: "center"
   },
   checkBoxTypography: {
-    color: theme.typography.body2.color,
-    fontSize: theme.typography.body2.fontSize,
-    letterSpacing: theme.typography.body2.letterSpacing,
-    lineHeight: theme.typography.body2.lineHeight,
-    fontWeight: theme.typography.body2.fontWeight
+    ...theme.hv.typography.infoText
   },
 
   linkButtonTypography: {
-    fontSize: theme.typography.body2.fontSize
+    fontSize: theme.hv.typography.infoText.fontSize
   },
   showMessage: {
     backgroundColor: theme.hv.palette.semantic.sema9,

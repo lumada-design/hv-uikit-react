@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const HvEmptyState = props => {
   const { title, message, icon, classes } = props;
@@ -24,12 +24,12 @@ const HvEmptyState = props => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.iconContainer}>
-          {icon}
-        </div>
+        <div className={classes.iconContainer}>{icon}</div>
         <div className={classes.textContainer}>
-          <Typography className={classes.title}>{title}</Typography>
-          <Typography className={classes.message}>{message}</Typography>
+          <HvTypography variant="sTitle">{title}</HvTypography>
+          <HvTypography variant="normalText" className={classes.message}>
+            {message}
+          </HvTypography>
         </div>
       </div>
     </div>

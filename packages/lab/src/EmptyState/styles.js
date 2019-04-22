@@ -43,11 +43,7 @@ const styles = theme => ({
     overflow: "hidden",
     marginLeft: `${theme.hv.spacing.lg}px`
   },
-  title: {
-    ...theme.typography.h4,
-  },
   message: {
-    ...theme.typography.body1,
     marginTop: `${theme.hv.spacing.xs}px`,
   }
 });

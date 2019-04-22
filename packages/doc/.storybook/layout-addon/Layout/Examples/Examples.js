@@ -18,16 +18,12 @@ import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Collapse from "@material-ui/core/Collapse";
-import { Typography } from "@material-ui/core";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Code from "@material-ui/icons/Code";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton
-    className={classes.iconCode}
-    aria-label="Delete"
-    onClick={onClick}
-  >
+  <IconButton className={classes.iconCode} onClick={onClick}>
     <Code />
   </IconButton>
 );
@@ -62,7 +58,7 @@ class Example extends React.Component {
     return (
       <>
         <div className={classes.titleContainer}>
-          <Typography variant="subtitle1">{example.title}</Typography>
+          <HvTypography variant="highlightText">{example.title}</HvTypography>
           {!example.description && (
             <CodeButton
               classes={classes}
@@ -72,7 +68,9 @@ class Example extends React.Component {
         </div>
         {example.description && (
           <div className={classes.titleContainer}>
-            <Typography variant="body1">{example.description}</Typography>
+            <HvTypography variant="normalText">
+              {example.description}
+            </HvTypography>
             <CodeButton
               classes={classes}
               onClick={() => this.toggleSnippetArea()}

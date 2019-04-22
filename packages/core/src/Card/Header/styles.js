@@ -24,12 +24,12 @@ const styles = theme => ({
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   title: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.h3
+    fontFamily: theme.hv.typography.fontFamily,
+    ...theme.hv.typography.mTitle
   },
   subheader: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.body1,
+    fontFamily: theme.hv.typography.fontFamily,
+    ...theme.hv.typography.normalText,
     paddingTop: `${theme.hv.spacing.sm}px`
   },
   action: {

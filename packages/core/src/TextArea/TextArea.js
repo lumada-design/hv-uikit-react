@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../Typography";
 import Input from "../Input";
 
 /**
@@ -89,33 +89,33 @@ class HvTextArea extends React.Component {
         />
         {maxCharQuantity ? (
           <div className={classes.characterCounter}>
-            <Typography
+            <HvTypography
               className={classNames(classes.inline, {
                 [classes.currentCounter]: !disabled,
                 [classes.disabled]: disabled
               })}
-              variant="subtitle2"
+              variant="labelText"
             >
               {currentValueLength}
-            </Typography>
-            <Typography
+            </HvTypography>
+            <HvTypography
               className={classNames(classes.inline, classes.separator, {
                 [classes.maxCharacter]: !disabled,
                 [classes.disabled]: disabled
               })}
-              variant="body2"
+              variant="infoText"
             >
               /
-            </Typography>
-            <Typography
+            </HvTypography>
+            <HvTypography
               className={classNames(classes.inline, {
                 [classes.maxCharacter]: !disabled,
                 [classes.disabled]: disabled
               })}
-              variant="body2"
+              variant="infoText"
             >
               {maxCharQuantity}
-            </Typography>
+            </HvTypography>
           </div>
         ) : null}
       </>

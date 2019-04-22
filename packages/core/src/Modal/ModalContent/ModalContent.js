@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 
 /**
  * Message container. The passed children is render in this container, creating
@@ -39,7 +39,7 @@ const ModalContent = ({ classes, children }) => {
       })}
     >
       {!isString && children}
-      {isString && <Typography variant="body1">{children}</Typography>}
+      {isString && <HvTypography variant="normalText">{children}</HvTypography>}
     </MuiDialogContent>
   );
 };

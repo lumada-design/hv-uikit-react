@@ -25,32 +25,26 @@
  */
 
 const styles = theme => ({
-  input: {
-    height: "auto",
-    padding: "10px 0px",
-    overflow: "auto"
-  },
-  characterCounter: {
-    textAlign: "right",
-    paddingTop: `${theme.hv.spacing.xs}px`,
-    minWidth: "150px",
-    maxWidth: "610px"
-  },
-  inline: {
-    display: "inline"
-  },
-  separator: {
-    margin: `0 3px`
-  },
-  disabled: {
-    ...theme.hv.typography.disabledText
-  },
-  maxCharacter: {
-    ...theme.hv.typography.infoText
-  },
-  currentCounter: {
-    ...theme.hv.typography.labelText
-  }
+  "5xlTitle": theme.hv.typography["5xlTitle"],
+  "4xlTitle": theme.hv.typography["4xlTitle"],
+  "3xlTitle": theme.hv.typography["3xlTitle"],
+  "xxlTitle": theme.hv.typography.xxlTitle,
+  "xlTitle": theme.hv.typography.xlTitle,
+  "lTitle": theme.hv.typography.lTitle,
+  "mTitle": theme.hv.typography.mTitle,
+  "sTitle": theme.hv.typography.sTitle,
+  "xsTitle": theme.hv.typography.xsTitle,
+  "xxsTitle": theme.hv.typography.xxsTitle,
+  "highlightText": theme.hv.typography.highlightText,
+  "normalText": theme.hv.typography.normalText,
+  "inlineLink": theme.hv.typography.inlineLink,
+  "disabledButtonText": theme.hv.typography.disabledButtonText,
+  "labelText": theme.hv.typography.labelText,
+  "infoText": theme.hv.typography.infoText,
+  "sLink": theme.hv.typography.sLink,
+  "disabledText": theme.hv.typography.disabledText,
+  "vizText": theme.hv.typography.vizText,
 });
+
 
 export default styles;

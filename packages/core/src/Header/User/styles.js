@@ -44,9 +44,6 @@ const styles = theme => ({
     "& p": {
       color: theme.palette.text.main
     }
-  },
-  userRole: {
-    ...theme.hv.typography.vizText
   }
 });
 
