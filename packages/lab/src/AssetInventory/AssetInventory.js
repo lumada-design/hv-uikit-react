@@ -76,6 +76,7 @@ export class HvAssetInventory extends Component {
           direction="row"
           justify="space-between"
           alignItems="stretch"
+          className={classes.gridContainer}
         >
           <Grid
             item
