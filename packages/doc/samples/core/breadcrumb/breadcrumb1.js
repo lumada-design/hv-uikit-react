@@ -56,4 +56,8 @@ const data = [
   }
 ];
 
-export default <HvBreadCrumb listRoute={data} useRouter={false} />;
+export default (
+  <div>
+    <HvBreadCrumb listRoute={data} useRouter={false} />
+  </div>
+);

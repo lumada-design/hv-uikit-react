@@ -41,7 +41,6 @@ const styles = theme => ({
     }
   },
   listItemText: {
-    color: theme.palette.text.main,
     textTransform: "capitalize",
     padding: 0
   },
@@ -52,7 +51,7 @@ const styles = theme => ({
     lineHeight: "32px"
   },
   selected: {
-    "& p": {
+    "& span": {
       fontWeight: "bold",
       color: theme.hv.palette.accent.acce3
     }

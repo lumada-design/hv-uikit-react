@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
-import Button from "@material-ui/core/Button";
+import Button from "@hv/uikit-react-core/dist/Button";
 
 class SimpleBanner extends React.Component {
   state = {
@@ -78,7 +78,7 @@ const ActionButton = () => (
       letterSpacing: "0.02em",
       lineHeight: "20px",
       fontWeight: "600",
-      "textDecoration": "none"
+      textDecoration: "none"
     }}
   >
     Action
@@ -93,8 +93,6 @@ const ActionButtonCollection = () => (
     <ActionButton />
   </div>
 );
-
-
 
 export default (
   <SimpleBanner

@@ -22,7 +22,7 @@ const styles = theme => ({
     flexWrap: "nowrap"
   },
   message: {
-    ...theme.typography.body1,
+    ...theme.hv.typography.normalText,
     wordBreak: "break-all",
     maxHeight: "80px",
     overflow: "hidden",
@@ -31,8 +31,9 @@ const styles = theme => ({
     "-webkit-box-orient": "vertical"
   },
   action: {
-    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px 
-    ${theme.spacing.xs}px  ${theme.spacing.sm}px`,
+    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px ${
+      theme.spacing.xs
+    }px  ${theme.spacing.sm}px`,
     flex: "0 0 auto"
   },
   baseVariant: {

@@ -15,7 +15,7 @@
  */
 
 const styles = theme => ({
-  kpiContainer:{
+  kpiContainer: {
     width: "100%",
     height: "100%"
   },
@@ -29,13 +29,9 @@ const styles = theme => ({
   comparisonContainer: {
     minHeight: "16px",
     display: "flex",
-    alignItems: "flex-end",
+    alignItems: "flex-end"
   },
-  visualComparisonContainer: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.subtitle1
-  },
-  indicatorsContainer:{
+  indicatorsContainer: {
     display: "inline-flex",
     minHeight: "16px",
     alignItems: "flex-end",
@@ -44,27 +40,13 @@ const styles = theme => ({
   },
   indicatorUnit: {
     alignSelf: "flex-end",
-    paddingBottom: "3px",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.body2
+    paddingBottom: "3px"
   },
   spacingToTheRight: {
     marginRight: `${theme.hv.spacing.xs}px`
   },
-  comparisons:{
+  comparisons: {
     float: "left"
-  },
-  indicatorText: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.h1
-  },
-  infoText: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.hv.typography.vizText
-  },
-  titleText: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.subtitle2
   }
 });
 

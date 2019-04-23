@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 import ImageContainer from "../ImageContainer";
 
 /**
@@ -42,10 +42,10 @@ const User = ({ classes, userData, userIcon, onClick }) => {
     >
       <div className={classes.userInfo}>
         {userData && userData.name && (
-          <Typography variant="subtitle2">{userData.name}</Typography>
+          <HvTypography variant="labelText">{userData.name}</HvTypography>
         )}
         {userData && userData.role && (
-          <Typography className={classes.userRole}>{userData.role}</Typography>
+          <HvTypography variant="vizText">{userData.role}</HvTypography>
         )}
       </div>
       {userIcon && (

@@ -17,7 +17,7 @@
 import React from "react";
 import HvListView from "@hv/uikit-react-lab/dist/ListView";
 import leaf from "../../core/card/resources/leaf.png";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const data = {
   firstTitle: "ID",
@@ -28,12 +28,20 @@ const data = {
 const SingleContent = () => (
   <div style={{ display: "flex" }}>
     <div style={{ paddingRight: "20px" }}>
-      <Typography variant={"subtitle1"}>{data.firstTitle}</Typography>
-      <Typography>{data.firstContent}</Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography>{data.firstContent}</HvTypography>
+      </div>
     </div>
     <div>
-      <Typography variant={"subtitle1"}>{data.secondTitle}</Typography>
-      <Typography>{data.secondContent}</Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography>{data.secondContent}</HvTypography>
+      </div>
     </div>
   </div>
 );

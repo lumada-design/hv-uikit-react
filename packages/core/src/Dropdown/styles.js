@@ -36,7 +36,7 @@ const styles = theme => ({
     }
   },
   label: {
-    ...theme.typography.subtitle2,
+    ...theme.hv.typography.labelText,
     marginBottom: `${theme.hv.spacing.xs}px`
   },
   header: {
@@ -46,7 +46,7 @@ const styles = theme => ({
     userSelect: "none"
   },
   selection: {
-    ...theme.typography.body1,
+    ...theme.hv.typography.normalText,
     padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,
     lineHeight: "32px",
     pointerEvents: "none"

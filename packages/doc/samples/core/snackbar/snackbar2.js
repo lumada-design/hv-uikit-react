@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
-import Button from "@material-ui/core/Button";
+import Button from "@hv/uikit-react-core/dist/Button";
 import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
 
 class SimpleSnackbar extends React.Component {

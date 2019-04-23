@@ -23,7 +23,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 
 import Link from "../../Link";
 
@@ -87,7 +87,7 @@ const Navigation = ({
               isSelected(selected, i) ? classes.selected : ""
             )}
           >
-            <Typography className={classes.label}>{elem.label}</Typography>
+            <HvTypography className={classes.label}>{elem.label}</HvTypography>
           </ListItemText>
         </ListItem>
       </Link>

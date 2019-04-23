@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 
 /**
@@ -58,7 +58,7 @@ const ModalTitle = ({
         {icon}
         <div className={classNames({ [classes.textWithIcon]: icon })}>
           {!isString && children}
-          {isString && <Typography variant="h4">{children}</Typography>}
+          {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>
       </div>
     </MuiDialogTitle>

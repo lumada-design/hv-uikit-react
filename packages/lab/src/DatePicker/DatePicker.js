@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import moment from "moment";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import { DateUtils } from "react-day-picker";
 import { getDayStart, getDayEnd } from "./utils";
@@ -83,19 +83,19 @@ class HvDatePicker extends React.Component {
     const range = from === to ? rangeFrom : `${rangeFrom} - ${rangeEnd}`;
 
     const Label = () => (
-      <Typography variant="subtitle2" className={classNames([classes.label])}>
+      <HvTypography variant="labelText" className={classNames([classes.label])}>
         {label}
-      </Typography>
+      </HvTypography>
     );
 
     const ResetButton = () => (
-      <Typography
-        variant="subtitle2"
+      <HvTypography
+        variant="labelText"
         onClick={this.handleReset}
         className={classNames([classes.reset])}
       >
         {"x"}
-      </Typography>
+      </HvTypography>
     );
 
     return (

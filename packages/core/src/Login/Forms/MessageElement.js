@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 
 /**
  * Message composes by an icon and a text message.
@@ -34,7 +34,7 @@ function MessageElement( { iconElement, showMessage, icon, message }) {
   return (
     <div className={showMessage}>
       {iconClone}
-      <Typography variant="body1">{message}</Typography>
+      <HvTypography variant="normalText">{message}</HvTypography>
     </div>
   );
 }

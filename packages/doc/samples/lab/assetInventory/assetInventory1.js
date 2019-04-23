@@ -18,7 +18,7 @@ import React from "react";
 import HvAssetInventory from "@hv/uikit-react-lab/dist/AssetInventory";
 import Grid from "@material-ui/core/Grid";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import compressor from "../../core/card/resources/leaf.png";
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -32,12 +32,20 @@ const data = {
 const SingleContent = () => (
   <div>
     <div>
-      <Typography>{data.firstTitle}</Typography>
-      <Typography>{data.firstContent}</Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText">{data.firstContent}</HvTypography>
+      </div>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography>{data.secondTitle}</Typography>
-      <Typography>{data.secondContent}</Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText">{data.secondContent}</HvTypography>
+      </div>
     </div>
   </div>
 );
@@ -54,9 +62,6 @@ const listStyles = theme => ({
   titleRoot: {
     width: "400px"
   },
-  titleTypography: {
-    ...theme.hv.typography.sTitle
-  },
   image: {
     width: "180px",
     height: "60px",
@@ -64,36 +69,33 @@ const listStyles = theme => ({
   },
   whenRoot: {
     width: "200px"
-  },
-  normalTypography: {
-    ...theme.hv.typography.normalText
   }
 });
 
 const ListItem = ({ title, imageSrc, when, classes }) => (
   <div className={classes.root}>
     <div className={classes.titleRoot}>
-      <Typography className={classes.titleTypography}>{title}</Typography>
+      <HvTypography variant="sTitle">{title}</HvTypography>
     </div>
     <img alt={""} src={imageSrc} className={classes.image} />
     <div className={classes.whenRoot}>
-      <Typography className={classes.normalTypography}>{when}</Typography>
+      <HvTypography variant="normalText">{when}</HvTypography>
     </div>
     <div style={{ paddingLeft: "20px" }}>
-      <Typography className={classes.normalTypography}>
-        {data.firstTitle}
-      </Typography>
-      <Typography className={classes.normalTypography}>
-        {data.firstContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText">{data.firstContent}</HvTypography>
+      </div>
     </div>
     <div style={{ paddingLeft: "20px" }}>
-      <Typography className={classes.normalTypography}>
-        {data.secondTitle}
-      </Typography>
-      <Typography className={classes.normalTypography}>
-        {data.secondContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText">{data.secondContent}</HvTypography>
+      </div>
     </div>
   </div>
 );

@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import Unlock from "@hv/uikit-react-icons/dist/Unlock.S";
 import {
   HvModal,
@@ -29,7 +29,7 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
 
   return (
     <div>
-      <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
+      <HvButton onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
       <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
@@ -51,10 +51,10 @@ export default (
 )}
     actions={(
       <HvModalActions>
-        <Button colorType="secondary" onClick={() => {}}>
+        <HvButton colorType="secondary" onClick={() => {}}>
           Cancel
-        </Button>
-        <Button>Switch anyway</Button>
+        </HvButton>
+        <HvButton>Switch anyway</HvButton>
       </HvModalActions>
 )}
   />

@@ -32,7 +32,7 @@ const styles = theme => ({
   },
   singleSelection: {
     padding: `6px ${theme.hv.spacing.xs}px`,
-    ...theme.typography.body1,
+    ...theme.hv.typography.normalText,
     cursor: "pointer",
     "&:hover": {
       background: theme.hv.palette.atmosphere.atmo4
@@ -60,7 +60,7 @@ const styles = theme => ({
   selectAll: {
     margin: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
     "& > span": {
-      ...theme.typography.subtitle1
+      ...theme.hv.typography.highlightText
     }
   },
   actions: {

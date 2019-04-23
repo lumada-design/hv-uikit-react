@@ -15,14 +15,14 @@
  */
 
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import {
   HvModal,
   HvModalTitle,
   HvModalContent,
   HvModalActions
 } from "@hv/uikit-react-core/dist";
-import { Typography } from "@material-ui/core";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import TextArea from "@hv/uikit-react-core/dist/TextArea";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -85,7 +85,7 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <Button onClick={() => setOpen(true)}>{buttonMessage}</Button>
+      <HvButton onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
       <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
@@ -99,12 +99,7 @@ const styles = theme => ({
   label: {
     paddingTop: 0,
     paddingBottom: "10px",
-    display: "block",
-    fontWeight: theme.typography.subtitle2.fontWeight,
-    letterSpacing: theme.typography.subtitle2.letterSpacing,
-    color: theme.typography.subtitle2.color,
-    fontSize: theme.typography.subtitle2.fontSize,
-    lineHeight: theme.typography.subtitle2.lineHeight
+    display: "block"
   }
 });
 
@@ -114,25 +109,25 @@ export default (
   <div>
     <SimpleModal
       buttonMessage="table"
-      title={(
+      title={
         <HvModalTitle variant="default">
           <div>
-            <Typography variant="h6">LHR-HDIFS-03</Typography>
-            <Typography variant="body1">HDI</Typography>
+            <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
+            <HvTypography variant="normalText">HDI</HvTypography>
           </div>
         </HvModalTitle>
-)}
-      content={(
+      }
+      content={
         <HvModalContent>
           <SimpleTable />
         </HvModalContent>
-)}
+      }
     />
     <p />
     <SimpleModal
       buttonMessage="inputs"
       title={<HvModalTitle showIcon={false}>Work Request</HvModalTitle>}
-      content={(
+      content={
         <HvModalContent>
           <InputWithStyles
             inputTextConfiguration={{
@@ -154,15 +149,15 @@ export default (
             value="This is an example"
           />
         </HvModalContent>
-)}
-      actions={(
+      }
+      actions={
         <HvModalActions>
-          <Button colorType="secondary" onClick={() => {}}>
+          <HvButton colorType="secondary" onClick={() => {}}>
             Cancel
-          </Button>
-          <Button>Send Work Request</Button>
+          </HvButton>
+          <HvButton>Send Work Request</HvButton>
         </HvModalActions>
-)}
+      }
     />
   </div>
 );

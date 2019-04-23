@@ -17,8 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "@material-ui/core/Input";
-import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
+import HvTypography from "../Typography";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
@@ -216,8 +216,8 @@ class HvInput extends React.Component {
     let validationText;
     if (validate) {
       validationText = (
-        <Typography
-          variant="body2"
+        <HvTypography
+          variant="infoText"
           className={classNames(classes.text, {
             [classes.textInfo]:
               stateValidationState !== validationStates.invalid,
@@ -227,16 +227,16 @@ class HvInput extends React.Component {
           })}
         >
           {externalWarningTextOverride || infoText}
-        </Typography>
+        </HvTypography>
       );
     }
 
     let labelTypography;
     if (label) {
       labelTypography = (
-        <Typography variant="subtitle2" className={classes.label}>
+        <HvTypography variant="labelText" className={classes.label}>
           {label}
-        </Typography>
+        </HvTypography>
       );
     }
 

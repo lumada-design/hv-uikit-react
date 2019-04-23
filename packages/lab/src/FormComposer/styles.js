@@ -33,11 +33,7 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.md}px`
   },
   title: {
-    ...theme.hv.typography.xlargeTitle,
     padding: `${theme.hv.spacing.sm}px 0`
-  },
-  groupTitle: {
-    ...theme.hv.typography.mediumTitle
   },
   footer: {
     padding: `${theme.hv.spacing.sm}px`,

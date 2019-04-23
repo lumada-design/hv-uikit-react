@@ -31,7 +31,7 @@ const styles = theme => ({
     "&:focus": {
       outline: "none"
     },
-    ...theme.typography.body1
+    ...theme.hv.typography.normalText
   },
   icon: {
     position: "absolute",

@@ -16,8 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
+import HvTypography from "../../../Typography";
 import Input from "../../../Input";
 import HvButton, { buttonTypes } from "../../../Button";
 import MessageElement from "../MessageElement";
@@ -87,9 +87,9 @@ class Recovery extends React.Component {
 
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
-        <Typography className={classes.title} variant="h3">
+        <HvTypography className={classes.title} variant="mTitle">
           {recoveryTitle}
-        </Typography>
+        </HvTypography>
 
         <div className={classes.messageContainer}>
           {recoverStatus === "success" ? (
