@@ -26,7 +26,7 @@ import validationTypes from "../validationTypes";
 import iconPositions from "../iconPositions";
 import HvProvider from "../../Provider";
 
-const inputTextConfiguration = {
+const labels = {
   inputLabel: "inputLabel",
   placeholder: "placeholder",
   infoText: "infoText",
@@ -107,14 +107,14 @@ describe("Input", () => {
       <HvProvider>
         <InputWithStyles
           validationState={validationStates.valid}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           value={inputText}
         />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       inputText,
       inputInstance
@@ -127,14 +127,14 @@ describe("Input", () => {
       <HvProvider>
         <InputWithStyles
           validationState={validationStates.invalid}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           value={inputText}
         />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
     testState(
-      inputTextConfiguration.warningText,
+      labels.warningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -151,7 +151,7 @@ describe("Input", () => {
         <InputWithStyles
           value={inputText}
           onFocus={onFocus}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           iconPosition={iconPositions.left}
         />
       </HvProvider>
@@ -159,7 +159,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
@@ -176,14 +176,14 @@ describe("Input", () => {
         <InputWithStyles
           value={inputText}
           onFocus={onFocus}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
         />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.empty,
       inputText,
       inputInstance
@@ -202,7 +202,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
         />
       </HvProvider>
     );
@@ -211,7 +211,7 @@ describe("Input", () => {
       target: { name: "test", value: defaultInputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
@@ -230,7 +230,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.number}
         />
       </HvProvider>
@@ -238,7 +238,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -247,14 +247,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.warningText,
+      labels.warningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -273,7 +273,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.email}
         />
       </HvProvider>
@@ -281,7 +281,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -290,14 +290,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.warningText,
+      labels.warningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -317,7 +317,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.none}
           validation={validate}
         />
@@ -326,7 +326,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.warningText,
+      labels.warningText,
       validationStates.invalid,
       defaultInputText,
       inputInstance
@@ -346,7 +346,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.none}
           maxCharQuantity={quantity}
         />
@@ -355,7 +355,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -364,14 +364,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.maxCharQuantityWarningText,
+      labels.maxCharQuantityWarningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -391,7 +391,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.none}
           minCharQuantity={quantity}
           password
@@ -401,7 +401,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -410,14 +410,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.filled,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.minCharQuantityWarningText,
+      labels.minCharQuantityWarningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -437,7 +437,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.none}
           minCharQuantity={quantity}
           isRequired
@@ -447,7 +447,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -456,14 +456,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.empty,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.requiredWarningText,
+      labels.requiredWarningText,
       validationStates.invalid,
       inputText,
       inputInstance
@@ -483,7 +483,7 @@ describe("Input", () => {
         <InputWithStyles
           value={defaultInputText}
           onChange={onChange}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
           validationType={validationTypes.none}
           minCharQuantity={quantity}
         />
@@ -492,7 +492,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -501,14 +501,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.empty,
       inputText,
       inputInstance
     );
     inputInstance.onBlurHandler();
     testState(
-      inputTextConfiguration.infoText,
+      labels.infoText,
       validationStates.empty,
       inputText,
       inputInstance
@@ -522,13 +522,13 @@ describe("Input", () => {
       <HvProvider>
         <InputWithStyles
           value={defaultInputText}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={labels}
         />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
     inputInstance.handleClear();
-    expect(inputInstance.state.infoText).toBe(inputTextConfiguration.infoText);
+    expect(inputInstance.state.infoText).toBe(labels.infoText);
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText);
   });

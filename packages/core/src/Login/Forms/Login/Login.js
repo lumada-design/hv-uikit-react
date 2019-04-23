@@ -31,7 +31,7 @@ import MessageElement from "../MessageElement";
  * @constructor
  */
 // eslint-disable-next-line react/prop-types
-function RecoveryLinkButton({ onClick, classes }) {
+function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
   return (
     <div className={classes.forgotCredentials}>
       <HvButton
@@ -39,7 +39,7 @@ function RecoveryLinkButton({ onClick, classes }) {
         onClick={onClick}
         classes={{ textPrimary: classes.linkButtonTypography }}
       >
-        Forgot your credentials?
+        {forgotYourCredentialMessage}
       </HvButton>
     </div>
   );
@@ -131,6 +131,9 @@ class Login extends React.Component {
       userNamePlaceHolder,
       passwordInputLabel,
       passwordPlaceHolder,
+      loginButtonMessage,
+      loginButtonLabel,
+      forgotYourCredentialMessage,
       rememberMeLabel
     } = this.props;
     const { isLogging, loginError } = this.state;
@@ -158,7 +161,7 @@ class Login extends React.Component {
 
         <div className={classes.inputUser}>
           <Input
-            inputTextConfiguration={{
+            labels={{
               inputLabel: userNameInputLabel,
               placeholder: userNamePlaceHolder,
               infoText: ""
@@ -170,7 +173,7 @@ class Login extends React.Component {
         </div>
         <div className={classes.inputPassword}>
           <Input
-            inputTextConfiguration={{
+            labels={{
               inputLabel: passwordInputLabel,
               placeholder: passwordPlaceHolder,
               infoText: ""
@@ -199,12 +202,12 @@ class Login extends React.Component {
             colorType={buttonTypes.primary}
             className={classes.button}
           >
-            {isLogging ? "Logging in" : "Log in"}
+            {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>
         </div>
 
         {allowRecover ? (
-          <RecoveryLinkButton onClick={onClick} classes={classes} />
+          <RecoveryLinkButton onClick={onClick} classes={classes} forgotYourCredentialMessage={forgotYourCredentialMessage} />
         ) : null}
       </form>
     );
@@ -250,6 +253,18 @@ Login.propTypes = {
    * Icon to be presented when an error occurs in the login.
    */
   errorLoginIcon: PropTypes.element,
+  /**
+   * label for the login button.
+   */
+  loginButtonLabel: PropTypes.string.isRequired,
+  /** 
+   * label for the login button while loggin.
+   */
+  loginButtonMessage: PropTypes.string.isRequired,
+  /** 
+   * Link for forgot your credentials.
+   */
+  forgotYourCredentialMessage: PropTypes.string.isRequired,
   /**
    * Input user name label
    */

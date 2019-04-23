@@ -41918,7 +41918,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
       allowRecover={true}
       login={[MockFunction]}
       recovery={[MockFunction]}
-      titleText=""
     >
       <HvLogin
         allowRecover={true}
@@ -41941,10 +41940,32 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
             }
           />
         }
+        labels={
+          Object {
+            "cancelButton": "Cancel",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Enter Email",
+            "forgotYourCredentialMessage": "Forgot your credentials?",
+            "loginButtonLabel": "Log in",
+            "loginButtonMessage": "Logging",
+            "messageAfterRecover": "The instructions to recover your credentials were sent.",
+            "messageToRecover": "You will receive an email with instructions to recover your credentials",
+            "passwordInputLabel": "Password",
+            "passwordPlaceHolder": "Enter text",
+            "recoverButton": "Recover",
+            "recoveringMessage": "Recovering",
+            "recoveryErrorMessage": "The email you've entered doesn't match any account",
+            "recoveryInputLabel": "Email",
+            "recoveryPlaceholder": "Enter text",
+            "recoveryTitle": "Recover Credentials",
+            "rememberMeLabel": "Remember me",
+            "titleText": "Welcome",
+            "userNameInputLabel": "Username",
+            "userNamePlaceHolder": "Enter text",
+          }
+        }
         login={[MockFunction]}
         logo={null}
-        messageAfterRecover="The instructions to recover your credentials were sent."
-        messageToRecover="You will receive an email with instructions to recover your credentials."
         okRecoveryIcon={
           <Level0S
             color={
@@ -41955,14 +41976,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
             }
           />
         }
-        passwordInputLabel="Password"
-        passwordPlaceHolder="Enter text"
         recovery={[MockFunction]}
-        recoveryErrorMessage="The email you've entered doesn't match any account"
-        recoveryInputLabel="Email"
-        recoveryPlaceholder="Enter text"
-        recoveryTitle="Recover Credentials"
-        rememberMeLabel="Remember me"
         theme={
           Object {
             "breakpoints": Object {
@@ -42539,9 +42553,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
           }
         }
         titleComponent={null}
-        titleText=""
-        userNameInputLabel="Username"
-        userNamePlaceHolder="Enter text"
       >
         <div
           className="HvLogin-root-184"
@@ -42570,14 +42581,17 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                     }
                   />
                 }
+                forgotYourCredentialMessage="Forgot your credentials?"
                 login={[MockFunction]}
+                loginButtonLabel="Log in"
+                loginButtonMessage="Logging"
                 logo={null}
                 onClick={[Function]}
                 passwordInputLabel="Password"
                 passwordPlaceHolder="Enter text"
                 rememberMeLabel="Remember me"
                 titleComponent={null}
-                titleText=""
+                titleText="Welcome"
                 userNameInputLabel="Username"
                 userNamePlaceHolder="Enter text"
               >
@@ -42613,7 +42627,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       }
                     />
                   }
+                  forgotYourCredentialMessage="Forgot your credentials?"
                   login={[MockFunction]}
+                  loginButtonLabel="Log in"
+                  loginButtonMessage="Logging"
                   logo={null}
                   onClick={[Function]}
                   passwordInputLabel="Password"
@@ -43195,7 +43212,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                     }
                   }
                   titleComponent={null}
-                  titleText=""
+                  titleText="Welcome"
                   userNameInputLabel="Username"
                   userNamePlaceHolder="Enter text"
                 >
@@ -43209,7 +43226,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       <WithStyles(Title)
                         logo={null}
                         titleComponent={null}
-                        titleText=""
+                        titleText="Welcome"
                       >
                         <Title
                           classes={
@@ -43796,7 +43813,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                             }
                           }
                           titleComponent={null}
-                          titleText=""
+                          titleText="Welcome"
                         >
                           <div
                             className="Title-logoContainer-202"
@@ -44407,7 +44424,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                               >
                                 <span
                                   className="Typography-mTitle-211"
-                                />
+                                >
+                                  Welcome
+                                </span>
                               </Typography>
                             </WithStyles(Typography)>
                           </div>
@@ -44421,7 +44440,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       className="loginForm-inputUser-190"
                     >
                       <WithStyles(HvInput)
-                        inputTextConfiguration={
+                        labels={
                           Object {
                             "infoText": "",
                             "inputLabel": "Username",
@@ -44457,14 +44476,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                           iconPosition="right"
                           iconVisible={true}
                           inputProps={Object {}}
-                          inputTextConfiguration={
+                          isRequired={false}
+                          labels={
                             Object {
                               "infoText": "",
                               "inputLabel": "Username",
                               "placeholder": "Enter text",
                             }
                           }
-                          isRequired={false}
                           maxCharQuantity={null}
                           minCharQuantity={null}
                           name="username"
@@ -46474,7 +46493,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       className="loginForm-inputPassword-191"
                     >
                       <WithStyles(HvInput)
-                        inputTextConfiguration={
+                        labels={
                           Object {
                             "infoText": "",
                             "inputLabel": "Password",
@@ -46510,14 +46529,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                           iconPosition="right"
                           iconVisible={true}
                           inputProps={Object {}}
-                          inputTextConfiguration={
+                          isRequired={false}
+                          labels={
                             Object {
                               "infoText": "",
                               "inputLabel": "Password",
                               "placeholder": "Enter text",
                             }
                           }
-                          isRequired={false}
                           maxCharQuantity={null}
                           minCharQuantity={null}
                           name="password"
@@ -53967,6 +53986,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                           "title": "loginForm-title-188",
                         }
                       }
+                      forgotYourCredentialMessage="Forgot your credentials?"
                       onClick={[Function]}
                     >
                       <div

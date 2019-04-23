@@ -17,7 +17,7 @@
 import React from "react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 
-const inputTextConfiguration = {
+const labels = {
   placeholder: "Insert text",
   infoText: "Info",
   inputLabel: "Label",
@@ -25,4 +25,4 @@ const inputTextConfiguration = {
   maxCharQuantityWarningText: "Max characters exceeded"
 };
 
-export default <HvInput inputTextConfiguration={inputTextConfiguration} />;
+export default <HvInput labels={labels} />;

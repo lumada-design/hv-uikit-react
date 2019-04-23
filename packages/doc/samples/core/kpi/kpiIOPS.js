@@ -20,7 +20,7 @@ import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconInvalid from "@hv/uikit-react-icons/dist/Level5.S";
 import IconArrowDown from "./assets/arrow-red-down.svg";
 
-const IOPSKpiTextConfiguration = {
+const labels = {
   title: "Total IOPS",
   indicator: "113,277",
   unit: "",
@@ -56,7 +56,7 @@ const IopsComparisonVisualAverage = () => (
         paddingBottom: "2px"
       }}
     >
-      {IOPSKpiTextConfiguration.comparisonIndicator}
+      {labels.comparisonIndicator}
     </Typography>
   </div>
 );
@@ -65,7 +65,7 @@ const invalidIcon = () => <IconInvalid color={["none", "#D13F3F"]} />;
 
 export default (
   <HvKpi
-    kpiTextConfiguration={IOPSKpiTextConfiguration}
+    labels={labels}
     visualIndicator={invalidIcon()}
     visualComparison={IopsComparisonVisualAverage()}
   />

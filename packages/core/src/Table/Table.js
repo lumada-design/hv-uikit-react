@@ -19,6 +19,7 @@ import ReactTable, { ReactTableDefaults } from "react-table";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
@@ -304,6 +305,7 @@ class Table extends React.Component {
       idForCheckbox,
       useRouter,
       getTrProps,
+      labels,
       ...other
     } = this.props;
 
@@ -384,14 +386,14 @@ class Table extends React.Component {
 
     return (
       <div className={classes.tableContainer}>
-        {titleText && (
+        {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
-              <HvTypography variant="mTitle">{titleText}</HvTypography>
+              <HvTypography variant="mTitle">{(titleText || labels.titleText)}</HvTypography>
             </div>
-            {subtitleText && (
+            {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
-                <HvTypography variant="normalText">{subtitleText}</HvTypography>
+                <HvTypography variant="normalText">{(subtitleText || labels.subtitleText)}</HvTypography>
               </div>
             )}
           </div>
@@ -511,13 +513,22 @@ Table.propTypes = {
     firstWithNumeric: PropTypes.string
   }).isRequired,
   /**
-   * Title of the table.
+   * The labels inside the table. 
    */
-  titleText: PropTypes.string,
+  labels: PropTypes.shape({
+    titleText: PropTypes.string,
+    subtitleText: PropTypes.string
+  }),
+  /**
+   * Title of the table.
+   * @deprecated
+   */
+  titleText: deprecatedPropType(PropTypes.string),
   /**
    * Subtitle of the table.
+   * @deprecated
    */
-  subtitleText: PropTypes.string,
+  subtitleText: deprecatedPropType(PropTypes.string),
   /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
    Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
@@ -593,8 +604,12 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-  titleText: "",
-  subtitleText: "",
+  titleText: undefined,
+  subtitleText: undefined,
+  labels: {
+    titleText: "",
+    subtitleText: ""
+  },
   showPagination: true,
   showPageSize: true,
   pageSize: undefined,

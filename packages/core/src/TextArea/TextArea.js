@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvTypography from "../Typography";
 import Input from "../Input";
 
@@ -63,6 +64,7 @@ class HvTextArea extends React.Component {
     const {
       classes,
       inputTextConfiguration,
+      labels,
       maxCharQuantity,
       rows,
       value,
@@ -78,7 +80,7 @@ class HvTextArea extends React.Component {
             container: classes.container,
             input: classes.input
           }}
-          inputTextConfiguration={inputTextConfiguration}
+          labels={inputTextConfiguration || labels}
           value={value}
           onChange={this.onChangeHandler}
           multiline
@@ -159,6 +161,27 @@ HvTextArea.propTypes = {
      */
     disabled: PropTypes.string
   }).isRequired,
+    /**
+   * An Object containing the various text associated with the text area.
+   *
+   * -inputLabel: the label on top of the input.
+   * -placeholder: the placeholder value of the input.
+   * -infoText: the default value of the info text below the input.
+   * -warningText: the value when a validation fails.
+   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * -minCharQuantityWarningText: the message that appears when there are too few characters.
+   * -requiredWarningText: the message that appears when the input is empty and required.
+   *  @deprecated
+   */
+  inputTextConfiguration: deprecatedPropType(PropTypes.shape({
+    inputLabel: PropTypes.string,
+    placeholder: PropTypes.string,
+    infoText: PropTypes.string,
+    warningText: PropTypes.string,
+    maxCharQuantityWarningText: PropTypes.string,
+    minCharQuantityWarningText: PropTypes.string,
+    requiredWarningText: PropTypes.string
+  })),
   /**
    * An Object containing the various text associated with the text area.
    *
@@ -170,7 +193,7 @@ HvTextArea.propTypes = {
    * -minCharQuantityWarningText: the message that appears when there are too few characters.
    * -requiredWarningText: the message that appears when the input is empty and required.
    */
-  inputTextConfiguration: PropTypes.shape({
+  labels: PropTypes.shape({
     inputLabel: PropTypes.string,
     placeholder: PropTypes.string,
     infoText: PropTypes.string,
@@ -204,7 +227,8 @@ HvTextArea.propTypes = {
 };
 
 HvTextArea.defaultProps = {
-  inputTextConfiguration: {
+  inputTextConfiguration: undefined,
+  labels: {
     inputLabel: "",
     placeholder: "",
     warningText: "",

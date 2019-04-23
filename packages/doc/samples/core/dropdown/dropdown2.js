@@ -63,6 +63,16 @@ const data = [
   }
 ];
 
+const labels = {
+  title: "some label",
+  select: "some select",
+  selectAll: "some select all",
+  cancelLabel: "L-cancel",
+  applyLabel: "L-apply",
+  multiSelectionAction: "multi",
+  multiSelectionConjunction: "and-l"
+}
+
 export default (
-  <HvDropdown values={data} multiSelect showSearch label="some label" />
+  <HvDropdown values={data} multiSelect showSearch labels={labels} />
 );

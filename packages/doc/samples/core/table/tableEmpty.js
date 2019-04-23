@@ -23,8 +23,6 @@ class Wrapper extends React.Component {
     super(props);
     this.state = {
       sorted: [{ id: "createdDate", desc: true }],
-      titleText: "This is The Title",
-      subtitleText: "This is The Subtitle",
       pageSize: 10
     };
   }
@@ -91,7 +89,12 @@ class Wrapper extends React.Component {
   };
 
   render() {
-    const { pageSize, sorted, titleText, subtitleText } = this.state;
+    const { pageSize, sorted } = this.state;
+
+    const labels = {
+      titleText: "This is The Title",
+      subtitleText: "This is The Subtitle"
+    }
 
     return (
       <HvTable
@@ -101,8 +104,7 @@ class Wrapper extends React.Component {
         pageSize={pageSize}
         resizable
         defaultSorted={sorted}
-        titleText={titleText}
-        subtitleText={subtitleText}
+        labels={labels}
         onPageSizeChange={this.onPageSizeChange}
       />
     );

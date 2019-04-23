@@ -10,11 +10,11 @@ exports[`Header withStyles should render correctly 1`] = `
   }
   companyLogo={null}
   itemActions={Array []}
+  label={null}
   navigationData={Array []}
   onNavigationClick={[Function]}
   position="fixed"
   productLogo={null}
-  productText={null}
   selected={0}
   theme={
     Object {

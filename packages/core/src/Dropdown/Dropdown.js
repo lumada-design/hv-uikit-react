@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
 import List from "./List";
@@ -118,9 +119,8 @@ class Main extends React.Component {
   }
 
   renderLabel() {
-    const { classes, label } = this.props;
-
-    return <div className={classes.label}>{label}</div>;
+    const { classes, label, labels } = this.props;
+    return <div className={classes.label}>{labels.title || label }</div>;
   }
 
   renderHeader() {
@@ -189,13 +189,13 @@ class Main extends React.Component {
   }
 
   render() {
-    const { classes, label, disabled } = this.props;
+    const { classes, label, labels, disabled } = this.props;
 
     const { isOpen } = this.state;
 
     return (
       <React.Fragment>
-        {label ? this.renderLabel() : null}
+        {label || labels.title ? this.renderLabel() : null}
         <div
           className={classNames([
             classes.root,
@@ -276,8 +276,9 @@ Main.propTypes = {
   }).isRequired,
   /**
    * Label to display
+   * @deprecated
    */
-  label: PropTypes.string,
+  label: deprecatedPropType(PropTypes.string, "Instead use the labels title property"),
   /**
    * The list to be rendered by the dropdown.
    */
@@ -323,6 +324,7 @@ Main.propTypes = {
    * - multiSelectionConjunction: The label used in the middle of the multiselection count.
    */
   labels: PropTypes.shape({
+    title: PropTypes.string,
     select: PropTypes.string,
     selectAll: PropTypes.string,
     cancelLabel: PropTypes.string,
@@ -338,7 +340,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
-  label: null,
+  label: undefined,
   values: null,
   multiSelect: false,
   showSearch: false,

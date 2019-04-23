@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const HvSnackbar = props => {
@@ -24,6 +25,7 @@ const HvSnackbar = props => {
     classes,
     open,
     onClose,
+    label,
     message,
     anchorOrigin,
     autoHideDuration,
@@ -43,7 +45,7 @@ const HvSnackbar = props => {
       transitionDuration={0}
     >
       <HvSnackBarContentWrapper
-        message={message}
+        label={label || message}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
@@ -93,8 +95,13 @@ HvSnackbar.propTypes = {
   onClose: PropTypes.func,
   /**
    * The message to display.
+   * @deprecated
    */
-  message: PropTypes.node,
+  message: deprecatedPropType(PropTypes.node),
+  /**
+   * The message to display.
+   */
+  label: PropTypes.string,
   /**
    *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right"
    */
@@ -125,7 +132,8 @@ HvSnackbar.propTypes = {
 };
 
 HvSnackbar.defaultProps = {
-  message: "",
+  message: undefined,
+  label: "",
   open: false,
   anchorOrigin: { vertical: "top", horizontal: "right" },
   onClose: null,

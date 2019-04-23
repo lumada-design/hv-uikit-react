@@ -23,7 +23,7 @@ import KpiWithStyles from "../index";
 import Kpi from "../Kpi";
 import HvProvider from "../../Provider";
 
-const KpiTextConfiguration = {
+const labels = {
   title: "Avg. service time",
   indicator: "8.85",
   unit: "MS",
@@ -36,7 +36,7 @@ describe("Kpi withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <KpiWithStyles kpiTextConfiguration={KpiTextConfiguration} />
+        <KpiWithStyles labels={labels} />
       </HvProvider>
     );
   });

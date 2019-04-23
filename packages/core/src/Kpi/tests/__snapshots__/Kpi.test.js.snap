@@ -7967,7 +7967,7 @@ body {
       />
     </WithStyles(CssBaseline)>
     <WithStyles(HvKpi)
-      kpiTextConfiguration={
+      labels={
         Object {
           "comparisonIndicatorInfo": "vs last 24h.",
           "indicator": "8.85",
@@ -7988,7 +7988,7 @@ body {
             "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-28",
           }
         }
-        kpiTextConfiguration={
+        labels={
           Object {
             "comparisonIndicatorInfo": "vs last 24h.",
             "indicator": "8.85",
