@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.6...@hv/uikit-react-core@1.0.2-alpha.7) (2019-04-23)
+
+
+### Bug Fixes
+
+* **modal:** fixes hv property to theme in variant utils.[#119](https://github.com/pentaho/hv-uikit-react/issues/119) ([d233b85](https://github.com/pentaho/hv-uikit-react/commit/d233b85))
+
+
+
+
+
 ## [1.0.2-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.5...@hv/uikit-react-core@1.0.2-alpha.6) (2019-04-23)
 
 
