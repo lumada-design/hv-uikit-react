@@ -9522,7 +9522,7 @@ body {
           }
         }
         customIcon={null}
-        message=""
+        label=""
         onClose={null}
         open={false}
         showIcon={false}

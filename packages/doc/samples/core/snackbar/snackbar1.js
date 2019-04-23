@@ -37,7 +37,7 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -53,11 +53,11 @@ class SimpleSnackbar extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          {message}
+          {label}
         </Button>
         <HvSnackbar
           open={open}
-          message={`This is ${message}`}
+          label={`This is ${label}`}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -73,15 +73,15 @@ class SimpleSnackbar extends React.Component {
 export default (
   <div>
     <div>
-      <SimpleSnackbar message="default" variant="default" showIcon />
+      <SimpleSnackbar label="default" variant="default" showIcon />
     </div>
     <p />
     <div>
-      <SimpleSnackbar message="success" variant="success" showIcon />
+      <SimpleSnackbar label="success" variant="success" showIcon />
     </div>
     <p />
     <div>
-      <SimpleSnackbar message="error" variant="error" showIcon />
+      <SimpleSnackbar label="error" variant="error" showIcon />
     </div>
   </div>
 );

@@ -20,7 +20,7 @@ import IconValid from "@hv/uikit-react-icons/dist/Level0.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
-const AverageKpiTextConfiguration = {
+const labels = {
   title: "Avg. service time",
   indicator: "8.85",
   unit: "MS",
@@ -56,7 +56,7 @@ const averageComparisonVisualAverage = () => (
         paddingBottom: "2px"
       }}
     >
-      {AverageKpiTextConfiguration.comparisonIndicator}
+      {labels.comparisonIndicator}
     </Typography>
   </div>
 );
@@ -65,7 +65,7 @@ const icon = () => <IconValid color={["none", "#63A621"]} />;
 
 export default (
   <HvKpi
-    kpiTextConfiguration={AverageKpiTextConfiguration}
+    labels={labels}
     visualIndicator={icon()}
     visualComparison={averageComparisonVisualAverage()}
   />

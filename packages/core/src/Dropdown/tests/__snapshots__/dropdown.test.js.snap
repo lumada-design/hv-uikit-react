@@ -33432,7 +33432,6 @@ body {
     </WithStyles(CssBaseline)>
     <WithStyles(Main)
       disabled={true}
-      label="mockLabel"
       multiSelect={true}
       showSearch={true}
       values={
@@ -33469,7 +33468,6 @@ body {
         }
         disabled={true}
         expanded={false}
-        label="mockLabel"
         labels={Object {}}
         multiSelect={true}
         notifyChangesOnFirstRender={false}
@@ -34065,11 +34063,6 @@ body {
           ]
         }
       >
-        <div
-          className="Main-label-404"
-        >
-          mockLabel
-        </div>
         <div
           className="Main-root-401 Main-rootDisabled-403"
         >
@@ -58624,7 +58617,6 @@ body {
         }
         disabled={false}
         expanded={false}
-        label={null}
         labels={Object {}}
         multiSelect={false}
         notifyChangesOnFirstRender={false}
@@ -69662,7 +69654,6 @@ body {
         }
         disabled={false}
         expanded={false}
-        label={null}
         labels={Object {}}
         multiSelect={false}
         notifyChangesOnFirstRender={false}

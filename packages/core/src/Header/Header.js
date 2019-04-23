@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import isNill from "lodash/isNil";
@@ -55,6 +56,7 @@ const Main = ({
   companyLogo,
   productLogo,
   productText,
+  label,
   itemActions,
   useRouter
 }) => {
@@ -66,7 +68,7 @@ const Main = ({
         <Brand
           companyLogo={companyLogo}
           productLogo={productLogo}
-          productText={productText}
+          productText={productText || label}
         />
         <Navigation
           navigationData={navigationData}
@@ -112,9 +114,13 @@ Main.propTypes = {
   productLogo: PropTypes.node,
   /**
    * Product text.
+   * @deprecated
    */
-  productText: PropTypes.string,
-
+  productText: deprecatedPropType(PropTypes.string, "Instead use the label title property"),
+  /**
+   * Product text.
+   */
+  label: PropTypes.string,
   /**
    * The index of the selected navigation item.
    */
@@ -165,7 +171,8 @@ Main.defaultProps = {
   position: "fixed",
 
   companyLogo: null,
-  productText: null,
+  label: null,
+  productText: undefined,
   productLogo: null,
 
   navigationData: [],

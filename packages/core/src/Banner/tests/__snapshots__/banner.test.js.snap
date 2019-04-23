@@ -9442,7 +9442,7 @@ body {
           }
         }
         customIcon={null}
-        message=""
+        label=""
         onClose={[Function]}
         open={false}
         showIcon={false}

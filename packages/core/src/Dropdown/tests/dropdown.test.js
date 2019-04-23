@@ -235,7 +235,6 @@ describe("<Dropdown />", () => {
             multiSelect
             showSearch
             disabled
-            label="mockLabel"
           />
         </HvProvider>
       );

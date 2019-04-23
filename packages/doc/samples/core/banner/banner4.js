@@ -36,7 +36,7 @@ class SimpleBanner extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -56,7 +56,7 @@ class SimpleBanner extends React.Component {
         </Button>
         <HvBanner
           open={open}
-          message={`This is ${message}`}
+          label={`This is ${label}`}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -96,7 +96,7 @@ const ActionButtonCollection = () => (
 
 export default (
   <SimpleBanner
-    message="default"
+    label="default"
     variant="default"
     showIcon
     action={<ActionButtonCollection />}

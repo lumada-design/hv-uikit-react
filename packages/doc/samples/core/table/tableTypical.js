@@ -145,6 +145,11 @@ class Wrapper extends React.Component {
   render() {
     const {sorted, pageSize} = this.state;
 
+    const labels = {
+      titleText: "Sales overview",
+      subtitleText: "Click on a row to see store details"
+    }
+
     return(
       <HvTable
         data={data}
@@ -154,8 +159,7 @@ class Wrapper extends React.Component {
         onPageSizeChange={this.onPageSizeChange}
         resizable
         defaultSorted={sorted}
-        titleText="Sales overview"
-        subtitleText="Click on a row to see store details"
+        labels={labels}
         idForCheckbox="id"
       />
     )

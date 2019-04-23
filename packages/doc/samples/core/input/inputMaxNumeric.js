@@ -17,7 +17,7 @@
 import React from "react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 
-const numberInputTextConfiguration = {
+const labels = {
   placeholder: "Insert a number",
   infoText: "Enter a number",
   inputLabel: "Number",
@@ -28,7 +28,7 @@ const numberInputTextConfiguration = {
 
 export default (
   <HvInput
-    inputTextConfiguration={numberInputTextConfiguration}
+    labels={labels}
     maxCharQuantity={40}
     validationType="number"
   />

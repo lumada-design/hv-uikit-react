@@ -36,7 +36,7 @@ class SimpleBanner extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -52,17 +52,17 @@ class SimpleBanner extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          {message}
+          {label}
         </Button>
         <HvBanner
           open={open}
-          message={`This is ${message}`}
+          label={`This is ${label}`}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          actionsOnMessage={action}
+          actionsOnlabel={action}
         />
       </div>
     );
@@ -73,7 +73,7 @@ export default (
   <div>
     <div>
       <SimpleBanner
-        message="default"
+        label="default"
         variant="default"
         anchorOrigin="top"
         showIcon
@@ -81,11 +81,11 @@ export default (
     </div>
     <p />
     <div>
-      <SimpleBanner message="Success" variant="success" showIcon />
+      <SimpleBanner label="Success" variant="success" showIcon />
     </div>
     <p />
     <div>
-      <SimpleBanner message="Error" variant="error" showIcon />
+      <SimpleBanner label="Error" variant="error" showIcon />
     </div>
   </div>
 );

@@ -11394,7 +11394,8 @@ label[data-shrink=false] + .MuiInputBase-formControl-407 .MuiInputBase-input-416
         iconPosition="right"
         iconVisible={true}
         inputProps={Object {}}
-        inputTextConfiguration={
+        isRequired={false}
+        labels={
           Object {
             "infoText": "",
             "inputLabel": "",
@@ -11405,7 +11406,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-407 .MuiInputBase-input-416
             "warningText": "something wrong",
           }
         }
-        isRequired={false}
         maxCharQuantity={null}
         minCharQuantity={null}
         onBlur={[Function]}
@@ -25915,7 +25915,8 @@ label[data-shrink=false] + .MuiInputBase-formControl-514 .MuiInputBase-input-523
             "maxLength": 250,
           }
         }
-        inputTextConfiguration={
+        isRequired={false}
+        labels={
           Object {
             "infoText": "",
             "inputLabel": "",
@@ -25926,7 +25927,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-514 .MuiInputBase-input-523
             "warningText": "something wrong",
           }
         }
-        isRequired={false}
         maxCharQuantity={null}
         minCharQuantity={null}
         onBlur={[Function]}
@@ -41058,7 +41058,8 @@ label[data-shrink=false] + .MuiInputBase-formControl-92 .MuiInputBase-input-101:
         iconPosition="right"
         iconVisible={true}
         inputProps={Object {}}
-        inputTextConfiguration={
+        isRequired={false}
+        labels={
           Object {
             "infoText": "",
             "inputLabel": "",
@@ -41069,7 +41070,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-92 .MuiInputBase-input-101:
             "warningText": "something wrong",
           }
         }
-        isRequired={false}
         maxCharQuantity={null}
         minCharQuantity={null}
         onBlur={[Function]}

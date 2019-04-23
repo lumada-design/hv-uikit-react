@@ -48,7 +48,7 @@ describe("Header withStyles", () => {
     wrapper = mount(
       <HvProvider>
         <MainWithStyles
-          productText="Maintenance Insights"
+          label="Maintenance Insights"
           // Navigation
           navigationData={[{ label: "label", path: "path" }]}
           selected={0}

@@ -25,4 +25,4 @@ const AverageKpiTextConfiguration = {
   comparisonIndicator: "99%"
 };
 
-export default <HvKpi kpiTextConfiguration={AverageKpiTextConfiguration} />;
+export default <HvKpi labels={AverageKpiTextConfiguration} />;

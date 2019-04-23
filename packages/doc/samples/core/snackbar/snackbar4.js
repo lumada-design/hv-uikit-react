@@ -57,7 +57,7 @@ class SimpleSnackbar extends React.Component {
         </Button>
         <HvSnackbar
           open={open}
-          message={message}
+          label={message}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -88,7 +88,7 @@ const actionComponent = (
 
 export default (
   <SimpleSnackbar
-    message="This is a snackbar"
+    label="This is a snackbar"
     variant="default"
     showIcon
     action={actionComponent}

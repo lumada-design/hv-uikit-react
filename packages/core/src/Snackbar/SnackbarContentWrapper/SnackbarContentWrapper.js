@@ -80,7 +80,7 @@ const mapSeverityToVariant = severity => {
 function HvSnackbarContentWrapper(props) {
   const {
     classes,
-    message,
+    label,
     showIcon,
     customIcon,
     variant,
@@ -117,7 +117,7 @@ function HvSnackbarContentWrapper(props) {
                 },
                 { [classes.messageWithoutAction]: action === null }
               )}
-              text={message}
+              text={label}
               maxLine="3"
               ellipsis="..."
               trimRight
@@ -140,7 +140,7 @@ HvSnackbarContentWrapper.propTypes = {
   /**
    * The message to display.
    */
-  message: PropTypes.node,
+  label: PropTypes.string,
   /**
    * Variant of the snackbar.
    */
@@ -161,7 +161,7 @@ HvSnackbarContentWrapper.propTypes = {
 };
 
 HvSnackbarContentWrapper.defaultProps = {
-  message: "",
+  label: "",
   showIcon: false,
   customIcon: null,
   action: null

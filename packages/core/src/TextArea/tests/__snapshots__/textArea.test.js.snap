@@ -11,7 +11,7 @@ exports[`TextArea Component should render correctly if opened 1`] = `
     }
     disabled={false}
     iconVisible={false}
-    inputTextConfiguration={
+    labels={
       Object {
         "inputLabel": "",
         "maxCharQuantityWarningText": "",

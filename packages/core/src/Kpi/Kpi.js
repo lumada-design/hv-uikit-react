@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import HvTypography from "../Typography";
 
@@ -23,18 +24,20 @@ const HvKpi = props => {
   const {
     classes,
     kpiTextConfiguration,
+    labels,
     visualIndicator,
     visualComparison
   } = props;
+
+  const definedLabels = kpiTextConfiguration || labels;
 
   return (
     <div className={classes.kpiContainer}>
       <div>
         <HvTypography variant="labelText">
-          {kpiTextConfiguration.title}
+          {definedLabels.title}
         </HvTypography>
       </div>
-
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
           <div
@@ -47,10 +50,10 @@ const HvKpi = props => {
           </div>
         )}
         <HvTypography className={classes.spacingToTheRight} variant="xlTitle">
-          {kpiTextConfiguration.indicator}
+          {definedLabels.indicator}
         </HvTypography>
         <HvTypography className={classes.indicatorUnit} variant="infoText">
-          {kpiTextConfiguration.unit}
+          {definedLabels.unit}
         </HvTypography>
       </div>
       <div className={classes.comparisonContainer}>
@@ -66,7 +69,7 @@ const HvKpi = props => {
           </HvTypography>
         )}
         <HvTypography className={classes.comparisons} variant="vizText">
-          {kpiTextConfiguration.comparisonIndicatorInfo}
+          {definedLabels.comparisonIndicatorInfo}
         </HvTypography>
       </div>
     </div>
@@ -122,8 +125,23 @@ HvKpi.propTypes = {
    * - Indicator: The text in the middle of the kpi.
    * - Unit: The text to the right of the indicator.
    * - comparisonIndicatorInfo: the text to the right of the visual comparison.
+   * @deprecated
    */
-  kpiTextConfiguration: PropTypes.shape({
+  kpiTextConfiguration: deprecatedPropType(PropTypes.shape({
+    title: PropTypes.string,
+    indicator: PropTypes.string,
+    unit: PropTypes.string,
+    comparisonIndicatorInfo: PropTypes.string
+  }), "Instead use the labels property"),
+  /**
+   * The object that contains the different labels inside the kpi.
+   *
+   * - Title: The text at the top of the kpi.
+   * - Indicator: The text in the middle of the kpi.
+   * - Unit: The text to the right of the indicator.
+   * - comparisonIndicatorInfo: the text to the right of the visual comparison.
+   */
+  labels: PropTypes.shape({
     title: PropTypes.string,
     indicator: PropTypes.string,
     unit: PropTypes.string,
@@ -134,12 +152,13 @@ HvKpi.propTypes = {
 HvKpi.defaultProps = {
   visualIndicator: null,
   visualComparison: null,
-  kpiTextConfiguration: {
+  labels: {
     title: "",
     indicator: "",
     unit: "",
     comparisonIndicatorInfo: ""
-  }
+  },
+  kpiTextConfiguration: undefined
 };
 
 export default HvKpi;
