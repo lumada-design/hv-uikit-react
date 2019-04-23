@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.8...@hv/uikit-react-core@1.0.2-alpha.9) (2019-04-23)
+
+
+### Bug Fixes
+
+* **input:** handleClear now calls prop onChange. [#118](https://github.com/pentaho/hv-uikit-react/issues/118) ([51614b2](https://github.com/pentaho/hv-uikit-react/commit/51614b2))
+
+
+
+
+
 ## [1.0.2-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.7...@hv/uikit-react-core@1.0.2-alpha.8) (2019-04-23)
 
 
