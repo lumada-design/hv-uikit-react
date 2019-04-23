@@ -30,12 +30,7 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const {
-      validationState,
-      value,
-      inputTextConfiguration,
-      labels
-    } = props;
+    const { validationState, value, inputTextConfiguration, labels } = props;
 
     const definedLabels = inputTextConfiguration || labels;
 
@@ -43,7 +38,9 @@ class HvInput extends React.Component {
       validationState,
       value,
       infoText:
-        validationState === validationStates.invalid ? definedLabels.warningText: definedLabels.infoText
+        validationState === validationStates.invalid
+          ? definedLabels.warningText
+          : definedLabels.infoText
     };
   }
 
@@ -72,9 +69,11 @@ class HvInput extends React.Component {
    * because the reference to the input is lost when the component is updated.
    */
   handleClear = () => {
-    const { inputTextConfiguration, labels } = this.props;
+    const { inputTextConfiguration, labels, onChange } = this.props;
     const definedLabels = inputTextConfiguration || labels;
-    this.manageInputValueState("", definedLabels.infoText);
+    const value = "";
+    onChange(value);
+    this.manageInputValueState(value, definedLabels.infoText);
     setTimeout(() => {
       this.node.children[1].children[0].focus();
     });
@@ -118,7 +117,7 @@ class HvInput extends React.Component {
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
-        infoText = definedLabels.requiredWarningText
+        infoText = definedLabels.requiredWarningText;
       } else {
         validationState = validationStates.empty;
       }
@@ -308,15 +307,18 @@ HvInput.propTypes = {
    * -requiredWarningText: the message that appears when the input is empty and required.
    * @deprecated
    */
-  inputTextConfiguration: deprecatedPropType(PropTypes.shape({
-    inputLabel: PropTypes.string,
-    placeholder: PropTypes.string,
-    infoText: PropTypes.string,
-    warningText: PropTypes.string,
-    maxCharQuantityWarningText: PropTypes.string,
-    minCharQuantityWarningText: PropTypes.string,
-    requiredWarningText: PropTypes.string
-  }), "Instead use the labels property"),
+  inputTextConfiguration: deprecatedPropType(
+    PropTypes.shape({
+      inputLabel: PropTypes.string,
+      placeholder: PropTypes.string,
+      infoText: PropTypes.string,
+      warningText: PropTypes.string,
+      maxCharQuantityWarningText: PropTypes.string,
+      minCharQuantityWarningText: PropTypes.string,
+      requiredWarningText: PropTypes.string
+    }),
+    "Instead use the labels property"
+  ),
   /**
    * An Object containing the various text associated with the input.
    *
