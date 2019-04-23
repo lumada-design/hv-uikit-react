@@ -26,10 +26,10 @@ import React from "react";
  * @type {Readonly<{success: *, warning: *, error: *, info: *}>}
  */
 export const variantIcon = Object.freeze({
-  success: theme => <Level0Success16Color color={["none", theme.palette.semantic.sema1]} />,
-  warning: theme => <Level416Color color={["none", theme.palette.semantic.sema5]} />,
-  error: theme => <Level5Unsuccess16Color color={["none", theme.palette.semantic.sema6]} />,
-  info: theme => <Level3Alert16 color={["none", theme.palette.semantic.sema4]} />
+  success: theme => <Level0Success16Color color={["none", theme.hv.palette.semantic.sema1]} />,
+  warning: theme => <Level416Color color={["none", theme.hv.palette.semantic.sema5]} />,
+  error: theme => <Level5Unsuccess16Color color={["none", theme.hv.palette.semantic.sema6]} />,
+  info: theme => <Level3Alert16 color={["none", theme.hv.palette.semantic.sema4]} />
 });
 
 export const severityIcon = (severity, theme) => {
