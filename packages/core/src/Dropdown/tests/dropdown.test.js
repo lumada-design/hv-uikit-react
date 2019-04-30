@@ -187,7 +187,7 @@ describe("<Dropdown />", () => {
       expect(instance.state.searchStr).toEqual("2");
     });
 
-    it("handleSelection shoud be triggered when a single select item is clicked ", () => {
+    it("handleSelection should be triggered when a single select item is clicked ", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
       instance.handleSelection = jest.fn();
@@ -270,7 +270,7 @@ describe("<Dropdown />", () => {
       expect(instance.state.selectionLabel).toBe("All");
     });
 
-    it("<Dropdown /> handleToggle shoud do nothing if disabled", () => {
+    it("<Dropdown /> handleToggle should do nothing if disabled", () => {
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();
 
@@ -279,7 +279,7 @@ describe("<Dropdown />", () => {
       expect(instance.state.isOpen).toBe(false);
     });
 
-    it("handleToggle shoud be triggered when header is clicked", () => {
+    it("handleToggle should be triggered when header is clicked", () => {
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
@@ -291,7 +291,7 @@ describe("<Dropdown />", () => {
       expect(instance.state.isOpen).toBe(false);
     });
 
-    it("handleCancel shoud be triggered when action cancel is clicked ", () => {
+    it("handleCancel should be triggered when action cancel is clicked ", () => {
       dropdownComponent = wrapper.find(List);
       instance = dropdownComponent.instance();
       instance.handleCancel = jest.fn();
@@ -307,7 +307,7 @@ describe("<Dropdown />", () => {
       expect(instance.handleCancel).toBeCalled();
     });
 
-    it("handleApply shoud be triggered when action apply is clicked ", () => {
+    it("handleApply should be triggered when action apply is clicked ", () => {
       dropdownComponent = wrapper.find(List);
       instance = dropdownComponent.instance();
       instance.handleApply = jest.fn();
@@ -323,7 +323,7 @@ describe("<Dropdown />", () => {
       expect(instance.handleApply).toBeCalled();
     });
 
-    it("handleSelectAll shoud be triggered when All checkbox is selected ", () => {
+    it("handleSelectAll should be triggered when All checkbox is selected ", () => {
       dropdownComponent = wrapper.find(List);
       instance = dropdownComponent.instance();
       instance.handleSelectAll = jest.fn();
@@ -337,7 +337,7 @@ describe("<Dropdown />", () => {
       expect(instance.handleSelectAll).toBeCalled();
     });
 
-    it("handleSelection shoud be triggered when a multi select item is selected ", () => {
+    it("handleSelection should be triggered when a multi select item is selected ", () => {
       dropdownComponent = wrapper.find(List);
       instance = dropdownComponent.instance();
       instance.handleSelection = jest.fn();
@@ -349,6 +349,63 @@ describe("<Dropdown />", () => {
         .simulate("change", { target: { checked: true } });
 
       expect(instance.handleSelection).toBeCalled();
+    });
+  });
+
+  describe("<Dropdown /> onChange prop called in multiselect", () => {
+    const onChangeMock = jest.fn();
+
+    beforeEach(async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropdownWithStyles
+            multiSelect
+            values={mockDataWithIds}
+            onChange={onChangeMock}
+          />
+        </HvProvider>
+      );
+    });
+
+    it("onChange shouldn't be triggered when a multi select item is selected ", () => {
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
+
+      dropdownComponent
+        .find(HvCheckBox)
+        .at(1)
+        .find('input[type="checkbox"]')
+        .simulate("change", { target: { checked: true } });
+
+      expect(onChangeMock).not.toBeCalled();
+    });
+
+    it("onChange shouldn't be triggered when All checkbox is selected ", () => {
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
+
+      dropdownComponent
+        .find(HvCheckBox)
+        .at(0)
+        .find('input[type="checkbox"]')
+        .simulate("change", { target: { checked: true } });
+
+      expect(onChangeMock).not.toBeCalled();
+    });
+
+    it("onChange should be triggered when action apply is clicked ", () => {
+      dropdownComponent = wrapper.find(List);
+      instance = dropdownComponent.instance();
+
+      dropdownComponent
+        .find(Actions)
+        .find(HvButton)
+        .at(1)
+        .simulate("click", {
+          preventDefault() {}
+        });
+
+      expect(onChangeMock).toBeCalled();
     });
   });
 
