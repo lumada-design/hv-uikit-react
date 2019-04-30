@@ -49,6 +49,7 @@ describe("AssetInventory withStyles", () => {
         <AssetInventoryWithStyles
           assetsTitle={configuration.assetsTitle}
           searchHandler={undefined}
+          searchInput=""
           viewChangedHandler={undefined}
           renderEmptyState={false}
           cardRenderComponent={<div />}

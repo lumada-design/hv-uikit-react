@@ -56,6 +56,7 @@ export class HvAssetInventory extends Component {
       classes,
       assetsTitle,
       searchHandler,
+      searchInput,
       viewChangedHandler,
       renderEmptyState,
       listRenderComponent,
@@ -87,7 +88,7 @@ export class HvAssetInventory extends Component {
             xl={toolsScreenGridSize.xl}
             className={classes.searchBoxContainer}
           >
-            {searchHandler && <SearchBox onChange={e => searchHandler(e)} />}
+            {searchHandler && <SearchBox onChange={e => searchHandler(e)} searchInput={searchInput} />}
           </Grid>
           <Grid item className={classes.viewModeContainer}>
             {viewModeCards && (
@@ -147,6 +148,10 @@ HvAssetInventory.propTypes = {
    * The handler that will be called with the search new value.
    */
   searchHandler: PropTypes.func,
+  /**
+  * The initial value to be passed to the search box.
+  */
+  searchInput: PropTypes.string,
   /**
    * The handler that will be called with the new view mode when it's changed.
    */
@@ -216,6 +221,7 @@ HvAssetInventory.defaultProps = {
   initialViewMode: "CARDS",
   theme: null,
   searchHandler: undefined,
+  searchInput: "", 
   viewChangedHandler: undefined,
   listRenderComponent: undefined,
   cardRenderComponent: undefined,
