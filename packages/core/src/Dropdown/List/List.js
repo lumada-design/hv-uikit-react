@@ -116,6 +116,7 @@ class List extends React.Component {
 
   /**
    * Creates the selection list based on if simple or multiple selection.
+   * When multiselect the notificationChange should be set to false.
    *
    * @param {Object} selectedElem - The element that was selected by the user.
    * @memberof List
@@ -141,17 +142,19 @@ class List extends React.Component {
     });
 
     this.setState({ list: newList }, () =>
-      this.setSelection(!multiSelect, !multiSelect)
+      this.setSelection(!multiSelect, !multiSelect, !multiSelect)
     );
   }
 
   /**
    * Select all the values inside the dropdown.
+   * When multiselect the notificationChange should be set to false.
    *
    * @memberof List
    */
   handleSelectAll() {
     const { list, allSelected } = this.state;
+    const { multiSelect } = this.props;
 
     const newList = list.map(elem => {
       const newElem = { ...elem };
@@ -159,7 +162,9 @@ class List extends React.Component {
       return newElem;
     });
 
-    this.setState({ list: newList }, () => this.setSelection(false));
+    this.setState({ list: newList }, () =>
+      this.setSelection(false, undefined, !multiSelect)
+    );
   }
 
   /**
@@ -190,7 +195,7 @@ class List extends React.Component {
     const { prevList } = this.state;
 
     this.setState({ list: prevList, searchStr: "" }, () =>
-      this.setSelection(true, true)
+      this.setSelection(true, true, false)
     );
   }
 
@@ -209,7 +214,7 @@ class List extends React.Component {
     });
 
     this.setState({ prevList: newList, searchStr: "" }, () =>
-      this.setSelection(true, true)
+      this.setSelection(true, true, true)
     );
   }
 
