@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.11](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.10...@hv/uikit-react-core@1.0.2-alpha.11) (2019-05-02)
+
+
+### Bug Fixes
+
+* **dropdown:** when multiselect onChange just triggered in apply. [#122](https://github.com/pentaho/hv-uikit-react/issues/122) ([1dd10c7](https://github.com/pentaho/hv-uikit-react/commit/1dd10c7))
+
+
+
+
+
 ## [1.0.2-alpha.10](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.9...@hv/uikit-react-core@1.0.2-alpha.10) (2019-04-29)
 
 **Note:** Version bump only for package @hv/uikit-react-core
