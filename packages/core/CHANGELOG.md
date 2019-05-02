@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.13](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.12...@hv/uikit-react-core@1.0.2-alpha.13) (2019-05-02)
+
+
+### Features
+
+* reviewing eslint accesibility.[#95](https://github.com/pentaho/hv-uikit-react/issues/95) ([47d7f27](https://github.com/pentaho/hv-uikit-react/commit/47d7f27))
+
+
+
+
+
 ## [1.0.2-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.11...@hv/uikit-react-core@1.0.2-alpha.12) (2019-05-02)
 
 
