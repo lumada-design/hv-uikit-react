@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-/*  TODO: Review accessibility */
-
-/*  eslint-disable jsx-a11y/anchor-is-valid */
-
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
@@ -25,7 +21,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import HvTypography from "../../Typography";
 
-import Link from "../../Link";
+import HvLink from "../../Link";
 
 /**
  * Check if the index is the passed select header.
@@ -64,7 +60,7 @@ const Navigation = ({
     const route = `${basePath}${elem.path}`;
 
     return (
-      <Link
+      <HvLink
         key={key}
         route={route}
         params={elem.params}
@@ -90,7 +86,7 @@ const Navigation = ({
             <HvTypography className={classes.label}>{elem.label}</HvTypography>
           </ListItemText>
         </ListItem>
-      </Link>
+      </HvLink>
     );
   });
 

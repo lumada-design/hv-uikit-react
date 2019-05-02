@@ -18,7 +18,7 @@ import React from "react";
 import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal.S";
 import PropTypes from "prop-types";
 import DropDownMenu from "../../DropDownMenu";
-import Link from "../../Link";
+import HvLink from "../../Link";
 
 /**
  *
@@ -34,9 +34,9 @@ const SubMenu = ({ classes, subMenuList, useRouter }) => {
 
     return (
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <Link key={key} route={elem.path} useRouter={useRouter}>
+      <HvLink key={key} route={elem.path} useRouter={useRouter}>
         <div className={classes.menuItem}>{elem.label}</div>
-      </Link>
+      </HvLink>
     );
   });
 
