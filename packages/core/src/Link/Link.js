@@ -16,9 +16,6 @@
 
 /*  TODO: Review accessibility */
 
-/*  eslint-disable  jsx-a11y/click-events-have-key-events */
-/*  eslint-disable jsx-a11y/no-static-element-interactions */
-
 import React from "react";
 import PropTypes from "prop-types";
 import withConfig from "../config/withConfig";
@@ -53,7 +50,7 @@ class HvLink extends React.Component {
     };
 
     return useRouter ? (
-      <div onClick={handleClick} className={classes.a}>
+      <div onClick={handleClick} role="button" className={classes.a} onKeyDown={handleClick} tabIndex={0}>
         {children}
       </div>
     ) : (

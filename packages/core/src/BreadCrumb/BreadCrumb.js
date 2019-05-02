@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-/*  TODO: Review accessibility */
-
-/*  eslint-disable jsx-a11y/anchor-is-valid */
-
 import React from "react";
 import PropTypes from "prop-types";
 import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
@@ -25,7 +21,7 @@ import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
 import SubMenu from "./SubMenu";
-import Link from "../Link";
+import HvLink from "../Link";
 
 /**
  * Removes the extension of the label.
@@ -63,14 +59,14 @@ LastPathElement.propTypes = {
  * @constructor
  */
 const Page = ({ useRouter, elem, classes }) => (
-  <Link route={elem.path} params={elem.params} useRouter={useRouter}>
+  <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
     <div className={classes.centerContainer}>
       {/* {elem.icon && <div className={classes.iconContainer}>{elem.icon}</div>} */}
       <HvTypography variant="sLink" className={classes.link}>
         {startCase(elem.label)}
       </HvTypography>
     </div>
-  </Link>
+  </HvLink>
 );
 
 Page.propTypes = {
