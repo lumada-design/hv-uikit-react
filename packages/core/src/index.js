@@ -32,6 +32,7 @@ export { default as HvSnackbar } from "./Snackbar";
 export { default as HvTable } from "./Table";
 export { default as HvTextArea } from "./TextArea";
 export { default as HvTypography } from "./Typography";
+export { default as HvGrid } from "./Grid";
 
 // theme
 export { default as hvTheme } from "./theme";

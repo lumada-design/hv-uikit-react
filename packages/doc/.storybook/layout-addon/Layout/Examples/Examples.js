@@ -98,7 +98,9 @@ class Example extends React.Component {
 
 const Examples = ({ classes, examples, basePath, theme }) => (
   <>
-    <h3 className={classes.root}>Examples</h3>
+  <div className={classes.root}>
+  <HvTypography variant="xsTitle">Examples</HvTypography>
+  </div>
     {examples.map((example, idx) => (
       <Example
         key={idx}

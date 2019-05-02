@@ -14,30 +14,8 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  tabsRoot: {
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
-  },
-  tabsIndicator: {
-    backgroundColor: "#1890ff"
-  },
-  tabRoot: {
-    textTransform: "initial",
-    marginRight: theme.spacing.unit * 4,
-    "&:hover": {
-      opacity: 1
-    },
-    "&$tabSelected": {},
-    "&:focus": {},
-    ...theme.hv.typography.highlightText
-  },
-  tabSelected: {},
-  props: {
-    marginTop: 20
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Grid from "./Grid";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(Grid);
