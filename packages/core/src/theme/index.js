@@ -22,8 +22,9 @@ import muiToolbarFunc from "./overrides/muiToolbar";
 import typography from "./typography";
 import palette from "./palette";
 
+let theme = null;
+
 const muiTheme = uiKitTheme => {
-  let theme = null;
 
   switch (uiKitTheme) {
     case "dawn":
@@ -41,7 +42,6 @@ const muiTheme = uiKitTheme => {
   const typographyTheme = typography(paletteTheme, theme);
   const muiAppBar = muiAppBarFunc(theme);
   const muiToolbar = muiToolbarFunc(theme);
-  
 
   const muiCreatedTheme = createMuiTheme({
     shadows: Array(25).fill("none"),
@@ -49,6 +49,15 @@ const muiTheme = uiKitTheme => {
     typography: typographyTheme,
     shape: {
       borderRadius: 0
+    },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 720,
+        lg: 840,
+        xl: 1990
+      }
     },
     props: {
       MuiButtonBase: {
@@ -71,7 +80,7 @@ const muiTheme = uiKitTheme => {
     }
   });
 
-  muiCreatedTheme.spacing = { ...muiTheme.spacing, ...theme.spacing };
+  muiCreatedTheme.spacing = { ...muiTheme.spacing, ...theme.spacing};
 
   return Object.assign({}, muiCreatedTheme, { hv: theme });
 };

@@ -21,6 +21,7 @@ import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 
 const getPropsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -74,7 +75,11 @@ const Main = ({ classes, children, context, config }) => {
               </span>
             </div>
 
-            <div className={classes.description}>{description}</div>
+            <div
+              className={classes.description}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+
             <Tabs
               parameters={parameters}
               propsMetaData={getPropsMetadata(children)}

@@ -231,10 +231,10 @@ exports[`Modal withStyles should render correctly 1`] = `
         "only": [Function],
         "up": [Function],
         "values": Object {
-          "lg": 1280,
-          "md": 960,
+          "lg": 840,
+          "md": 720,
           "sm": 600,
-          "xl": 1920,
+          "xl": 1990,
           "xs": 0,
         },
         "width": [Function],
