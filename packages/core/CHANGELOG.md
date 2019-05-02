@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.11...@hv/uikit-react-core@1.0.2-alpha.12) (2019-05-02)
+
+
+### Features
+
+* **grid:** add grid component. [#107](https://github.com/pentaho/hv-uikit-react/issues/107) ([cba47c6](https://github.com/pentaho/hv-uikit-react/commit/cba47c6))
+
+
+
+
+
 ## [1.0.2-alpha.11](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.10...@hv/uikit-react-core@1.0.2-alpha.11) (2019-05-02)
 
 

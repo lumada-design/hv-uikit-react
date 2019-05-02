@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.0.2-alpha.4...@hv/uikit-react-icons@1.0.2-alpha.5) (2019-05-02)
+
+
+### Features
+
+* **grid:** add grid component. [#107](https://github.com/pentaho/hv-uikit-react/issues/107) ([cba47c6](https://github.com/pentaho/hv-uikit-react/commit/cba47c6))
+
+
+
+
+
 ## [1.0.2-alpha.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.0.2-alpha.3...@hv/uikit-react-icons@1.0.2-alpha.4) (2019-04-29)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
