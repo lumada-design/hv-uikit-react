@@ -23,6 +23,7 @@ import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 const HvSnackbar = props => {
   const {
     classes,
+    className,
     open,
     onClose,
     label,
@@ -38,6 +39,7 @@ const HvSnackbar = props => {
   return (
     <Snackbar
       classes={classes}
+      className={className}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
@@ -56,6 +58,10 @@ const HvSnackbar = props => {
 };
 
 HvSnackbar.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -132,6 +138,7 @@ HvSnackbar.propTypes = {
 };
 
 HvSnackbar.defaultProps = {
+  className: "",
   message: undefined,
   label: "",
   open: false,

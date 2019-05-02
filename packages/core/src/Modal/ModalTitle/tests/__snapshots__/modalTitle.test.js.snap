@@ -1184,6 +1184,7 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
     }
   >
     <ModalTitle
+      className=""
       classes={Object {}}
       customIcon={null}
       disableTypography={true}
@@ -1785,6 +1786,7 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
     }
   >
     <ModalTitle
+      className=""
       classes={
         Object {
           "root": "testClassRoot",
@@ -2389,6 +2391,7 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
     }
   >
     <ModalTitle
+      className=""
       classes={Object {}}
       customIcon={null}
       showIcon={true}

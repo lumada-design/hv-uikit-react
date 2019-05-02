@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -45,6 +46,7 @@ import Actions from "./Actions";
  */
 const Main = ({
   classes,
+  className,
   position,
   navigationData,
   selected,
@@ -63,7 +65,11 @@ const Main = ({
   const userExists = !(isNill(userData) && isNill(userIcon));
 
   return (
-    <AppBar color="default" position={position} className={classes.root}>
+    <AppBar
+      color="default"
+      position={position}
+      className={classNames(classes.root, className)}
+    >
       <Toolbar variant="dense">
         <Brand
           companyLogo={companyLogo}
@@ -85,6 +91,10 @@ const Main = ({
 };
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -116,7 +126,10 @@ Main.propTypes = {
    * Product text.
    * @deprecated
    */
-  productText: deprecatedPropType(PropTypes.string, "Instead use the label title property"),
+  productText: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the label title property"
+  ),
   /**
    * Product text.
    */
@@ -168,6 +181,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  className: "",
   position: "fixed",
 
   companyLogo: null,

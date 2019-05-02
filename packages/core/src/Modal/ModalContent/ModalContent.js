@@ -29,14 +29,18 @@ import HvTypography from "../../Typography";
  * @returns {*}
  * @constructor
  */
-const ModalContent = ({ classes, children }) => {
+const ModalContent = ({ classes, className, children }) => {
   const isString = typeof children === "string";
 
   return (
     <MuiDialogContent
-      className={classNames(classes.root, {
-        [classes.textContent]: isString
-      })}
+      className={classNames(
+        classes.root,
+        {
+          [classes.textContent]: isString
+        },
+        className
+      )}
     >
       {!isString && children}
       {isString && <HvTypography variant="normalText">{children}</HvTypography>}
@@ -44,6 +48,10 @@ const ModalContent = ({ classes, children }) => {
   );
 };
 ModalContent.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -61,6 +69,10 @@ ModalContent.propTypes = {
    * Content to be render.
    */
   children: PropTypes.node.isRequired
+};
+
+ModalContent.defaultProps = {
+  className: ""
 };
 
 export default ModalContent;

@@ -120,7 +120,7 @@ class Main extends React.Component {
 
   renderLabel() {
     const { classes, label, labels } = this.props;
-    return <div className={classes.label}>{labels.title || label }</div>;
+    return <div className={classes.label}>{labels.title || label}</div>;
   }
 
   renderHeader() {
@@ -189,7 +189,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { classes, label, labels, disabled } = this.props;
+    const { classes, className, label, labels, disabled } = this.props;
 
     const { isOpen } = this.state;
 
@@ -202,7 +202,8 @@ class Main extends React.Component {
             {
               [classes.rootDisabled]: disabled,
               [classes.rootActive]: isOpen
-            }
+            },
+            className
           ])}
           ref={el => {
             this.node = el;
@@ -217,6 +218,10 @@ class Main extends React.Component {
 }
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -278,7 +283,10 @@ Main.propTypes = {
    * Label to display
    * @deprecated
    */
-  label: deprecatedPropType(PropTypes.string, "Instead use the labels title property"),
+  label: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the labels title property"
+  ),
   /**
    * The list to be rendered by the dropdown.
    */
@@ -340,6 +348,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  className: "",
   label: undefined,
   values: null,
   multiSelect: false,

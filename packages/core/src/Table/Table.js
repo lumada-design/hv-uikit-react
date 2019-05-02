@@ -297,6 +297,7 @@ class Table extends React.Component {
   render() {
     const {
       classes,
+      className,
       columns,
       data,
       titleText,
@@ -325,7 +326,7 @@ class Table extends React.Component {
           : classes.sortedIconHidden;
 
         return (
-          <div className={classes.headerContainer}>
+          <div className={classNames(classes.headerContainer, className)}>
             <div className={classNames(classes.rtSortIcon, sortedIconClasses)}>
               {SortedIcon}
             </div>
@@ -423,6 +424,10 @@ class Table extends React.Component {
 }
 
 Table.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * the classes object to be applied into the root object.
    */
@@ -604,6 +609,7 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
+  className: "",
   titleText: undefined,
   subtitleText: undefined,
   labels: {

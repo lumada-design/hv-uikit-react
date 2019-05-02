@@ -7977,6 +7977,7 @@ body {
       }
     >
       <HvKpi
+        className=""
         classes={
           Object {
             "comparisonContainer": "HvKpi-comparisonContainer-29",
