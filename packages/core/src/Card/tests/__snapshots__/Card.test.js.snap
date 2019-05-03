@@ -33738,6 +33738,7 @@ body {
         actions="actions"
         checkboxLabel=""
         checkboxValue="value"
+        className=""
         classes={
           Object {
             "borderTop": "Main-borderTop-1",
@@ -34427,6 +34428,7 @@ body {
                     subheader="subtitle"
                   >
                     <Header
+                      className=""
                       classes={
                         Object {
                           "action": "Header-action-34",
@@ -36392,6 +36394,7 @@ body {
                     needsBorder={false}
                   >
                     <Content
+                      className=""
                       classes={
                         Object {
                           "bottomBorder": "Content-bottomBorder-79",
@@ -39323,6 +39326,7 @@ body {
                         actions="actions"
                         checkboxLabel=""
                         checkboxValue="value"
+                        className=""
                         classes={
                           Object {
                             "leftContainer": "Component-leftContainer-83",
@@ -41683,6 +41687,7 @@ body {
                                   value="value"
                                 >
                                   <HvCheckbox
+                                    className=""
                                     classes={
                                       Object {
                                         "checkBox": "HvCheckbox-checkBox-93",

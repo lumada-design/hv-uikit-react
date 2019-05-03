@@ -63,6 +63,7 @@ class HvTextArea extends React.Component {
   render() {
     const {
       classes,
+      className,
       inputTextConfiguration,
       labels,
       maxCharQuantity,
@@ -80,6 +81,7 @@ class HvTextArea extends React.Component {
             container: classes.container,
             input: classes.input
           }}
+          className={className}
           labels={inputTextConfiguration || labels}
           value={value}
           onChange={this.onChangeHandler}
@@ -128,6 +130,10 @@ class HvTextArea extends React.Component {
 // [classes.currentCounter]:!disabled,[classes.disabled]:disabled
 
 HvTextArea.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    *  Styles applied to the Drawer Paper element.
    */
@@ -227,6 +233,7 @@ HvTextArea.propTypes = {
 };
 
 HvTextArea.defaultProps = {
+  className: "",
   inputTextConfiguration: undefined,
   labels: {
     inputLabel: "",

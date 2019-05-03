@@ -33,6 +33,7 @@ import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
  */
 const ModalTitle = ({
   classes,
+  className,
   children,
   variant,
   showIcon,
@@ -47,13 +48,20 @@ const ModalTitle = ({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.icon });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant), theme), {
-      className: classes.icon
-    });
+    icon = React.cloneElement(
+      severityIcon(mapSeverityToVariant(variant), theme),
+      {
+        className: classes.icon
+      }
+    );
   }
 
   return (
-    <MuiDialogTitle className={classes.root} disableTypography {...others}>
+    <MuiDialogTitle
+      className={classNames(classes.root, className)}
+      disableTypography
+      {...others}
+    >
       <div className={classes.messageContainer}>
         {icon}
         <div className={classNames({ [classes.textWithIcon]: icon })}>
@@ -66,6 +74,10 @@ const ModalTitle = ({
 };
 
 ModalTitle.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -110,6 +122,7 @@ ModalTitle.propTypes = {
 };
 
 ModalTitle.defaultProps = {
+  className: "",
   variant: "default",
   customIcon: null,
   showIcon: true,

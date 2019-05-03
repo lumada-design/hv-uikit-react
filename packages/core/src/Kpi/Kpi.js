@@ -23,6 +23,7 @@ import HvTypography from "../Typography";
 const HvKpi = props => {
   const {
     classes,
+    className,
     kpiTextConfiguration,
     labels,
     visualIndicator,
@@ -32,11 +33,9 @@ const HvKpi = props => {
   const definedLabels = kpiTextConfiguration || labels;
 
   return (
-    <div className={classes.kpiContainer}>
+    <div className={classNames(classes.kpiContainer, className)}>
       <div>
-        <HvTypography variant="labelText">
-          {definedLabels.title}
-        </HvTypography>
+        <HvTypography variant="labelText">{definedLabels.title}</HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
@@ -77,6 +76,10 @@ const HvKpi = props => {
 };
 
 HvKpi.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -127,12 +130,15 @@ HvKpi.propTypes = {
    * - comparisonIndicatorInfo: the text to the right of the visual comparison.
    * @deprecated
    */
-  kpiTextConfiguration: deprecatedPropType(PropTypes.shape({
-    title: PropTypes.string,
-    indicator: PropTypes.string,
-    unit: PropTypes.string,
-    comparisonIndicatorInfo: PropTypes.string
-  }), "Instead use the labels property"),
+  kpiTextConfiguration: deprecatedPropType(
+    PropTypes.shape({
+      title: PropTypes.string,
+      indicator: PropTypes.string,
+      unit: PropTypes.string,
+      comparisonIndicatorInfo: PropTypes.string
+    }),
+    "Instead use the labels property"
+  ),
   /**
    * The object that contains the different labels inside the kpi.
    *
@@ -150,6 +156,7 @@ HvKpi.propTypes = {
 };
 
 HvKpi.defaultProps = {
+  className: "",
   visualIndicator: null,
   visualComparison: null,
   labels: {

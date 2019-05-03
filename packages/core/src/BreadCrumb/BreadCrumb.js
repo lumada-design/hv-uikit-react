@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
@@ -104,13 +105,12 @@ PathElement.propTypes = {
 /**
  * Helper function to build a new path list with one element with the list for the submenu.
  *
- * @param classes
  * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
  */
-const pathWithSubMenu = (classes, useRouter, listRoute, maxVisible) => {
+const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
   listRoute.splice(
@@ -132,7 +132,14 @@ const pathWithSubMenu = (classes, useRouter, listRoute, maxVisible) => {
  * @returns {*}
  * @constructor
  */
-const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
+const BreadCrumb = ({
+  classes,
+  className,
+  useRouter,
+  listRoute,
+  maxVisible,
+  url
+}) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
 
@@ -158,13 +165,13 @@ const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(classes, useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu( useRouter, listPath, maxVisibleElem)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
 
   return (
-    <div className={classes.root}>
+    <div className={classNames(classes.root, className)}>
       {listPath.map((elem, index) => {
         const key = `key_${index}`;
 
@@ -189,6 +196,10 @@ const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
   );
 };
 BreadCrumb.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -230,6 +241,7 @@ BreadCrumb.propTypes = {
 };
 
 BreadCrumb.defaultProps = {
+  className: "",
   useRouter: false,
   maxVisible: 9999,
   listRoute: [],

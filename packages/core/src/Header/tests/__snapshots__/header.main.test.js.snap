@@ -3,6 +3,7 @@
 exports[`Header withStyles should render correctly 1`] = `
 <Main
   basePath=""
+  className=""
   classes={
     Object {
       "root": "Main-root-1",

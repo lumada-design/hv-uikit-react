@@ -5600,6 +5600,7 @@ body {
     </WithStyles(CssBaseline)>
     <WithStyles(BreadCrumb)>
       <BreadCrumb
+        className=""
         classes={
           Object {
             "centerContainer": "BreadCrumb-centerContainer-2",

@@ -22,13 +22,23 @@ import classNames from "classnames";
 /**
  * The content container.
  *
- * @param {Object} { classes, innerCardContent, needsBorder, ...other }
+ * @param {Object} { classes, className, innerCardContent, needsBorder, ...other }
  */
-const Content = ({ classes, innerCardContent, needsBorder, ...other }) => (
+const Content = ({
+  classes,
+  className,
+  innerCardContent,
+  needsBorder,
+  ...other
+}) => (
   <CardContent
-    className={classNames(classes.content, {
-      [classes.bottomBorder]: needsBorder
-    })}
+    className={classNames(
+      classes.content,
+      {
+        [classes.bottomBorder]: needsBorder
+      },
+      className
+    )}
     {...other}
   >
     {innerCardContent}
@@ -36,6 +46,10 @@ const Content = ({ classes, innerCardContent, needsBorder, ...other }) => (
 );
 
 Content.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -60,6 +74,7 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
+  className: "",
   innerCardContent: undefined,
   needsBorder: false
 };

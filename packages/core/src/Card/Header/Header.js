@@ -27,12 +27,23 @@ import CardHeader from "@material-ui/core/CardHeader";
  *
  * @param {*} { classes, headerTitle, subheader, icon, needsBorder }
  */
-const Header = ({ classes, headerTitle, subheader, icon, needsBorder }) => (
+const Header = ({
+  classes,
+  className,
+  headerTitle,
+  subheader,
+  icon,
+  needsBorder
+}) => (
   <CardHeader
     title={headerTitle}
-    className={classNames(classes.root, {
-      [classes.bottomBorder]: needsBorder
-    })}
+    className={classNames(
+      classes.root,
+      {
+        [classes.bottomBorder]: needsBorder
+      },
+      className
+    )}
     subheader={subheader}
     action={icon}
     classes={{
@@ -45,6 +56,10 @@ const Header = ({ classes, headerTitle, subheader, icon, needsBorder }) => (
 );
 
 Header.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -90,6 +105,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
+  className: "",
   needsBorder: false,
   icon: null,
   subheader: undefined

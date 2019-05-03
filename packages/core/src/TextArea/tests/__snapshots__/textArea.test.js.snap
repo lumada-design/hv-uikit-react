@@ -3,6 +3,7 @@
 exports[`TextArea Component should render correctly if opened 1`] = `
 <Fragment>
   <WithStyles(HvInput)
+    className=""
     classes={
       Object {
         "container": undefined,

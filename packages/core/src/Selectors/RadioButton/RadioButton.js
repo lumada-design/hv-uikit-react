@@ -78,6 +78,7 @@ const prepareIcon = (disabled, theme) => {
 const HvRadio = props => {
   const {
     classes,
+    className,
     checked,
     disabled,
     onChange,
@@ -97,7 +98,7 @@ const HvRadio = props => {
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
-      className={labelClass}
+      className={classNames(labelClass, className)}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -122,6 +123,10 @@ const HvRadio = props => {
 };
 
 HvRadio.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
@@ -211,6 +216,7 @@ HvRadio.propTypes = {
 };
 
 HvRadio.defaultProps = {
+  className: "",
   value: "",
   label: "",
   checked: undefined,

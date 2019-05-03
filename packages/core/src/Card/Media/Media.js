@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import CardMedia from "@material-ui/core/CardMedia";
 
 /**
@@ -23,8 +24,15 @@ import CardMedia from "@material-ui/core/CardMedia";
  *
  * @param {Object} { classes, mediaPath, mediaTitle, mediaHeight, ...other }
  */
-const Media = ({ classes, mediaPath, mediaTitle, mediaHeight, ...other }) => (
-  <div className={classes.mediaContainer}>
+const Media = ({
+  classes,
+  className,
+  mediaPath,
+  mediaTitle,
+  mediaHeight,
+  ...other
+}) => (
+  <div className={classNames(classes.mediaContainer, className)}>
     <CardMedia
       className={classes.media}
       image={mediaPath}
@@ -36,6 +44,10 @@ const Media = ({ classes, mediaPath, mediaTitle, mediaHeight, ...other }) => (
 );
 
 Media.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -64,6 +76,7 @@ Media.propTypes = {
 };
 
 Media.defaultProps = {
+  className: "",
   mediaTitle: "",
   mediaPath: "",
   mediaHeight: undefined

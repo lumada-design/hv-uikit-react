@@ -81,6 +81,7 @@ const prepareIcon = (disabled, theme) => {
 const HvCheckbox = props => {
   const {
     classes,
+    className,
     checked,
     indeterminate,
     disabled,
@@ -102,7 +103,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={labelClass}
+      className={classNames(labelClass, className)}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -129,6 +130,10 @@ const HvCheckbox = props => {
 };
 
 HvCheckbox.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
@@ -226,6 +231,7 @@ HvCheckbox.propTypes = {
 };
 
 HvCheckbox.defaultProps = {
+  className: "",
   value: "",
   label: "",
   checked: undefined,

@@ -41923,6 +41923,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
         allowRecover={true}
         allowRememberMe={true}
         backgroundImage="IMAGE_MOCK"
+        className=""
         classes={
           Object {
             "formContainer": "HvLogin-formContainer-186",
@@ -44453,6 +44454,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       >
                         <HvInput
                           autoFocus={false}
+                          className=""
                           classes={
                             Object {
                               "container": "HvInput-container-224",
@@ -46506,6 +46508,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                       >
                         <HvInput
                           autoFocus={false}
+                          className=""
                           classes={
                             Object {
                               "container": "HvInput-container-224",
@@ -48555,6 +48558,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-252 .MuiInputBase-input-261
                         onChange={[Function]}
                       >
                         <HvCheckbox
+                          className=""
                           classes={
                             Object {
                               "checkBox": "HvCheckbox-checkBox-273",

@@ -9511,6 +9511,7 @@ body {
           }
         }
         autoHideDuration={2000}
+        className=""
         classes={
           Object {
             "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter-4",
@@ -10111,6 +10112,7 @@ body {
             }
           }
           autoHideDuration={2000}
+          className=""
           classes={
             Object {
               "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter-4",
@@ -10134,6 +10136,7 @@ body {
               }
             }
             autoHideDuration={2000}
+            className=""
             classes={
               Object {
                 "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-9 HvSnackbar-anchorOriginBottomCenter-4",

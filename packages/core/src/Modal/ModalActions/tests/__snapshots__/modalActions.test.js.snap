@@ -2,6 +2,7 @@
 
 exports[`ModalActions Component allows external props to be added 1`] = `
 <WithStyles(DialogActions)
+  className=""
   classes={
     Object {
       "action": undefined,
@@ -16,6 +17,7 @@ exports[`ModalActions Component allows external props to be added 1`] = `
 
 exports[`ModalActions Component allows external styles to be added 1`] = `
 <WithStyles(DialogActions)
+  className=""
   classes={
     Object {
       "action": "testClassAction",
@@ -29,6 +31,7 @@ exports[`ModalActions Component allows external styles to be added 1`] = `
 
 exports[`ModalActions Component should render correctly if opened 1`] = `
 <WithStyles(DialogActions)
+  className=""
   classes={
     Object {
       "action": undefined,

@@ -29,6 +29,7 @@ import Media from "./Media";
  *
  * @param {Object} {
  *   classes,
+ *   className,
  *   children,
  *   icon,
  *   headerTitle,
@@ -51,6 +52,7 @@ import Media from "./Media";
  */
 const Main = ({
   classes,
+  className,
   children,
   icon,
   headerTitle,
@@ -109,7 +111,7 @@ const Main = ({
 
   return (
     <Card
-      className={classNames(classes.root, classes.borderTop)}
+      className={classNames(classes.root, classes.borderTop, className)}
       style={{
         borderTopColor: semantic && theme.hv.palette.semantic[semantic],
         borderTopWidth:
@@ -123,6 +125,10 @@ const Main = ({
 };
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -215,6 +221,7 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  className: "",
   headerTitle: undefined,
   semantic: null,
   isSelectable: false,
