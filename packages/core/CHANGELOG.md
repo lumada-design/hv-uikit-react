@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.14](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.13...@hv/uikit-react-core@1.0.2-alpha.14) (2019-05-03)
+
+
+### Features
+
+* add classname to components. [#102](https://github.com/pentaho/hv-uikit-react/issues/102) ([99cff29](https://github.com/pentaho/hv-uikit-react/commit/99cff29))
+
+
+
+
+
 ## [1.0.2-alpha.13](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.12...@hv/uikit-react-core@1.0.2-alpha.13) (2019-05-02)
 
 
