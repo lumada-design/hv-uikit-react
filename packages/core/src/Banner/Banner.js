@@ -109,7 +109,7 @@ HvBanner.propTypes = {
   label: PropTypes.string,
   /**
    * The message to display.
-   * @deprecated.
+   * @deprecated. Instead use the label property
    */
   message: deprecatedPropType(PropTypes.string, "Instead use the label property"),
   /**

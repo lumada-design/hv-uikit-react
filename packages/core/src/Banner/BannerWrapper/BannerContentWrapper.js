@@ -89,7 +89,7 @@ HvBannerContentWrapper.propTypes = {
   content: PropTypes.node,
   /**
    * The message to display.
-   * @deprecated
+   * @deprecated Instead use the content property
    */
   message: deprecatedPropType(PropTypes.node, "Instead use the content property"),
   /**

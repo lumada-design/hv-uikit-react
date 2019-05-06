@@ -133,7 +133,7 @@ HvKpi.propTypes = {
    * - Indicator: The text in the middle of the kpi.
    * - Unit: The text to the right of the indicator.
    * - comparisonIndicatorInfo: the text to the right of the visual comparison.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   kpiTextConfiguration: deprecatedPropType(
     PropTypes.shape({

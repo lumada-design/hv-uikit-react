@@ -177,7 +177,7 @@ HvLogin.propTypes = {
   backgroundImage: PropTypes.string,
   /**
    * the welcome message.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   titleText: deprecatedPropType(PropTypes.string),
   /**
@@ -244,57 +244,57 @@ HvLogin.propTypes = {
   }),
   /**
    * Recovery title.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   recoveryTitle: deprecatedPropType(PropTypes.string),
   /**
    * Message to recover.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   messageToRecover: deprecatedPropType(PropTypes.string),
   /**
    * Message shown after recover.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   messageAfterRecover: deprecatedPropType(PropTypes.string),
   /**
    * Recovery input label.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   recoveryInputLabel: deprecatedPropType(PropTypes.string),
   /**
    * Recovery placeholder.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   recoveryPlaceholder: deprecatedPropType(PropTypes.string),
   /**
    * Message shown when an error occurs.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   recoveryErrorMessage: deprecatedPropType(PropTypes.string),
   /**
    * Input user name label.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   userNameInputLabel: deprecatedPropType(PropTypes.string),
   /**
    * Input user name placeholder.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   userNamePlaceHolder: deprecatedPropType(PropTypes.string),
   /**
    * Password label.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   passwordInputLabel: deprecatedPropType(PropTypes.string),
   /**
    * Password placeholder.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   passwordPlaceHolder: deprecatedPropType(PropTypes.string),
   /**
    * Remember me label.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   rememberMeLabel: deprecatedPropType(PropTypes.string)
 };
