@@ -183,7 +183,7 @@ HvTextArea.propTypes = {
    * -maxCharQuantityWarningText: the message that appears when there are too many characters.
    * -minCharQuantityWarningText: the message that appears when there are too few characters.
    * -requiredWarningText: the message that appears when the input is empty and required.
-   *  @deprecated
+   *  @deprecated Instead use the labels property
    */
   inputTextConfiguration: deprecatedPropType(PropTypes.shape({
     inputLabel: PropTypes.string,

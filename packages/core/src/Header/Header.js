@@ -130,7 +130,7 @@ Main.propTypes = {
   productLogo: PropTypes.node,
   /**
    * Product text.
-   * @deprecated
+   * @deprecated Instead use the label property
    */
   productText: deprecatedPropType(
     PropTypes.string,

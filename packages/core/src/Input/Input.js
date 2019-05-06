@@ -309,14 +309,14 @@ HvInput.propTypes = {
   /**
    * An Object containing the various text associated with the input.
    *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
-   * @deprecated
+   * - inputLabel: the label on top of the input.
+   * - placeholder: the placeholder value of the input.
+   * - infoText: the default value of the info text below the input.
+   * - warningText: the value when a validation fails.
+   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * - minCharQuantityWarningText: the message that appears when there are too few characters.
+   * - requiredWarningText: the message that appears when the input is empty and required.
+   * @deprecated Instead use the labels property
    */
   inputTextConfiguration: deprecatedPropType(
     PropTypes.shape({
@@ -333,13 +333,13 @@ HvInput.propTypes = {
   /**
    * An Object containing the various text associated with the input.
    *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
+   * - inputLabel: the label on top of the input.
+   * - placeholder: the placeholder value of the input.
+   * - infoText: the default value of the info text below the input.
+   * - warningText: the value when a validation fails.
+   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * - minCharQuantityWarningText: the message that appears when there are too few characters.
+   * - requiredWarningText: the message that appears when the input is empty and required.
    */
   labels: PropTypes.shape({
     inputLabel: PropTypes.string,

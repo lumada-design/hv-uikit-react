@@ -531,12 +531,12 @@ Table.propTypes = {
   }),
   /**
    * Title of the table.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   titleText: deprecatedPropType(PropTypes.string),
   /**
    * Subtitle of the table.
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   subtitleText: deprecatedPropType(PropTypes.string),
   /**

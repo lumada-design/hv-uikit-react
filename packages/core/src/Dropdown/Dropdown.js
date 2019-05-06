@@ -286,7 +286,7 @@ Main.propTypes = {
   }).isRequired,
   /**
    * Label to display
-   * @deprecated
+   * @deprecated Instead use the labels property
    */
   label: deprecatedPropType(
     PropTypes.string,

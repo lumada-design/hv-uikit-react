@@ -107,7 +107,7 @@ HvSnackbar.propTypes = {
   onClose: PropTypes.func,
   /**
    * The message to display.
-   * @deprecated
+   * @deprecated Instead use the label property
    */
   message: deprecatedPropType(PropTypes.node),
   /**
