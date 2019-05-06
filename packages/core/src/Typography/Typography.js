@@ -27,8 +27,8 @@ import classNames from "classnames";
  * @returns {*}
  * @constructor
  */
-const Typography = ({ variant, classes, className, children }) => (
-  <span className={classNames(classes[variant], className)}>{children}</span>
+const Typography = ({ variant, classes, className, id, children }) => (
+  <span id={id} className={classNames(classes[variant], className)}>{children}</span>
 );
 
 Typography.propTypes = {
@@ -40,6 +40,10 @@ Typography.propTypes = {
    * ClassName passed as prop.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * The text to be set.
    */
@@ -73,6 +77,7 @@ Typography.propTypes = {
 Typography.defaultProps = {
   variant: "normalText",
   className: undefined,
+  id: undefined,
   children: ""
 };
 

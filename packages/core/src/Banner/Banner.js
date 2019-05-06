@@ -32,6 +32,7 @@ const HvBanner = props => {
   const {
     classes,
     className,
+    id,
     open,
     onClose,
     message,
@@ -49,6 +50,7 @@ const HvBanner = props => {
   return (
     <Snackbar
       className={className}
+      id={id}
       classes={classes}
       anchorOrigin={anchorOriginBanner}
       open={open}
@@ -72,6 +74,10 @@ HvBanner.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -134,6 +140,7 @@ HvBanner.propTypes = {
 
 HvBanner.defaultProps = {
   className: "",
+  id: undefined,
   message: undefined,
   label: "",
   anchorOrigin: "top",

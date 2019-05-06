@@ -43,6 +43,7 @@ class HvLogin extends React.Component {
     const {
       classes,
       className,
+      id,
       login,
       recovery,
       backgroundImage,
@@ -124,6 +125,7 @@ class HvLogin extends React.Component {
 
     return (
       <div
+        id={id}
         className={classNames(classes.root, className)}
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
@@ -140,6 +142,10 @@ HvLogin.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * the classes object to be applied into the root object.
    */
@@ -295,6 +301,7 @@ HvLogin.propTypes = {
 
 HvLogin.defaultProps = {
   className: "",
+  id: undefined,
   backgroundImage: backImg,
   recovery: () => {},
   logo: null,

@@ -248,6 +248,7 @@ class Wrapper extends React.Component {
     return (
       <HvTable
         data={data}
+        id="test"
         columns={this.getColumns()}
         defaultPageSize={10}
         pageSize={pageSize}

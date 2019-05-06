@@ -53,6 +53,7 @@ import Media from "./Media";
 const Main = ({
   classes,
   className,
+  id,
   children,
   icon,
   headerTitle,
@@ -112,6 +113,7 @@ const Main = ({
   return (
     <Card
       className={classNames(classes.root, classes.borderTop, className)}
+      id={id}
       style={{
         borderTopColor: semantic && theme.hv.palette.semantic[semantic],
         borderTopWidth:
@@ -129,6 +131,10 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -222,6 +228,7 @@ Main.propTypes = {
 
 Main.defaultProps = {
   className: "",
+  id: undefined,
   headerTitle: undefined,
   semantic: null,
   isSelectable: false,

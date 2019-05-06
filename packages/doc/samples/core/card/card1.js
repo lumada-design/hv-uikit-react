@@ -70,6 +70,7 @@ export default (
     <HvCard
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
+      id="test"
       innerCardContent={<SingleContent classes={styles} />}
       mediaPath={compressor}
       mediaHeight={186}

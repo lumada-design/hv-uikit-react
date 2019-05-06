@@ -24,6 +24,7 @@ const HvKpi = props => {
   const {
     classes,
     className,
+    id,
     kpiTextConfiguration,
     labels,
     visualIndicator,
@@ -33,7 +34,7 @@ const HvKpi = props => {
   const definedLabels = kpiTextConfiguration || labels;
 
   return (
-    <div className={classNames(classes.kpiContainer, className)}>
+    <div id={id} className={classNames(classes.kpiContainer, className)}>
       <div>
         <HvTypography variant="labelText">{definedLabels.title}</HvTypography>
       </div>
@@ -80,6 +81,10 @@ HvKpi.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -157,6 +162,7 @@ HvKpi.propTypes = {
 
 HvKpi.defaultProps = {
   className: "",
+  id: undefined,
   visualIndicator: null,
   visualComparison: null,
   labels: {

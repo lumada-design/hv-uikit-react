@@ -29,7 +29,7 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   return (
     <div>
       <HvButton onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
-      <HvModal open={open} onClose={() => setOpen(false)}>
+      <HvModal open={open} onClose={() => setOpen(false)} id="test">
         {title}
         {content}
         {actions}

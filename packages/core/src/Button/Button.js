@@ -51,6 +51,7 @@ const HvButton = props => {
   const {
     classes,
     className,
+    id,
     children,
     disabled,
     onClick,
@@ -63,6 +64,7 @@ const HvButton = props => {
   return (
     <Button
       className={className}
+      id={id}
       classes={classes}
       variant={buttonConfiguration.variant}
       color={buttonConfiguration.color}
@@ -99,6 +101,10 @@ HvButton.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -140,6 +146,7 @@ HvButton.propTypes = {
 
 HvButton.defaultProps = {
   className: "",
+  id: undefined,
   type: "button",
   colorType: "primary",
   disabled: false,

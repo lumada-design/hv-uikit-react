@@ -298,6 +298,7 @@ class Table extends React.Component {
     const {
       classes,
       className,
+      id,
       columns,
       data,
       titleText,
@@ -386,7 +387,7 @@ class Table extends React.Component {
     const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
 
     return (
-      <div className={classes.tableContainer}>
+      <div id={id} className={classes.tableContainer}>
         {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
@@ -428,6 +429,10 @@ Table.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * the classes object to be applied into the root object.
    */
@@ -610,6 +615,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   className: "",
+  id: undefined,
   titleText: undefined,
   subtitleText: undefined,
   labels: {

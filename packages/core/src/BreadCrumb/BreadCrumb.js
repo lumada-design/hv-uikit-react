@@ -135,6 +135,7 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
 const BreadCrumb = ({
   classes,
   className,
+  id,
   useRouter,
   listRoute,
   maxVisible,
@@ -171,7 +172,7 @@ const BreadCrumb = ({
   const lastIndex = breadcrumbPath.length - 1;
 
   return (
-    <div className={classNames(classes.root, className)}>
+    <div id={id} className={classNames(classes.root, className)}>
       {listPath.map((elem, index) => {
         const key = `key_${index}`;
 
@@ -200,6 +201,10 @@ BreadCrumb.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -242,6 +247,7 @@ BreadCrumb.propTypes = {
 
 BreadCrumb.defaultProps = {
   className: "",
+  id: undefined,
   useRouter: false,
   maxVisible: 9999,
   listRoute: [],
