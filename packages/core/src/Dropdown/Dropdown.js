@@ -189,7 +189,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { classes, className, label, labels, disabled } = this.props;
+    const { classes, className, id, label, labels, disabled } = this.props;
 
     const { isOpen } = this.state;
 
@@ -197,6 +197,7 @@ class Main extends React.Component {
       <React.Fragment>
         {label || labels.title ? this.renderLabel() : null}
         <div
+          id={id}
           className={classNames([
             classes.root,
             {
@@ -222,6 +223,10 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -349,6 +354,7 @@ Main.propTypes = {
 
 Main.defaultProps = {
   className: "",
+  id: undefined,
   label: undefined,
   values: null,
   multiSelect: false,

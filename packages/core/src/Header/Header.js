@@ -47,6 +47,7 @@ import Actions from "./Actions";
 const Main = ({
   classes,
   className,
+  id,
   position,
   navigationData,
   selected,
@@ -69,6 +70,7 @@ const Main = ({
       color="default"
       position={position}
       className={classNames(classes.root, className)}
+      id={id}
     >
       <Toolbar variant="dense">
         <Brand
@@ -95,6 +97,10 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -182,6 +188,7 @@ Main.propTypes = {
 
 Main.defaultProps = {
   className: "",
+  id: undefined,
   position: "fixed",
 
   companyLogo: null,

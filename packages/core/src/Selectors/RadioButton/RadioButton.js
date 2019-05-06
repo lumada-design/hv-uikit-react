@@ -79,6 +79,7 @@ const HvRadio = props => {
   const {
     classes,
     className,
+    id,
     checked,
     disabled,
     onChange,
@@ -98,6 +99,7 @@ const HvRadio = props => {
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
+      id={id}
       className={classNames(labelClass, className)}
       classes={{
         disabled: classes.labelDisabled,
@@ -127,6 +129,10 @@ HvRadio.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
@@ -217,6 +223,7 @@ HvRadio.propTypes = {
 
 HvRadio.defaultProps = {
   className: "",
+  id: undefined,
   value: "",
   label: "",
   checked: undefined,

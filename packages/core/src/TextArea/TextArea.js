@@ -64,6 +64,7 @@ class HvTextArea extends React.Component {
     const {
       classes,
       className,
+      id,
       inputTextConfiguration,
       labels,
       maxCharQuantity,
@@ -82,6 +83,7 @@ class HvTextArea extends React.Component {
             input: classes.input
           }}
           className={className}
+          id={id}
           labels={inputTextConfiguration || labels}
           value={value}
           onChange={this.onChangeHandler}
@@ -134,6 +136,10 @@ HvTextArea.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    *  Styles applied to the Drawer Paper element.
    */
@@ -234,6 +240,7 @@ HvTextArea.propTypes = {
 
 HvTextArea.defaultProps = {
   className: "",
+  id: undefined,
   inputTextConfiguration: undefined,
   labels: {
     inputLabel: "",

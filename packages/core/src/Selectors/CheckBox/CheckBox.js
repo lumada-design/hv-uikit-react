@@ -82,6 +82,7 @@ const HvCheckbox = props => {
   const {
     classes,
     className,
+    id,
     checked,
     indeterminate,
     disabled,
@@ -104,6 +105,7 @@ const HvCheckbox = props => {
       labelPlacement={labelPlacement}
       disabled={disabled}
       className={classNames(labelClass, className)}
+      id={id}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -134,6 +136,10 @@ HvCheckbox.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
@@ -232,6 +238,7 @@ HvCheckbox.propTypes = {
 
 HvCheckbox.defaultProps = {
   className: "",
+  id: undefined,
   value: "",
   label: "",
   checked: undefined,

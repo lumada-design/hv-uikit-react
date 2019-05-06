@@ -55,6 +55,7 @@ class SimpleBanner extends React.Component {
           {label}
         </Button>
         <HvBanner
+          id="test"
           open={open}
           label={`This is ${label}`}
           onClose={this.handleClose}

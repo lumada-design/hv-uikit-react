@@ -24,6 +24,7 @@ const HvSnackbar = props => {
   const {
     classes,
     className,
+    id,
     open,
     onClose,
     label,
@@ -40,6 +41,7 @@ const HvSnackbar = props => {
     <Snackbar
       classes={classes}
       className={className}
+      id={id}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
@@ -62,6 +64,10 @@ HvSnackbar.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -139,6 +145,7 @@ HvSnackbar.propTypes = {
 
 HvSnackbar.defaultProps = {
   className: "",
+  id: undefined,
   message: undefined,
   label: "",
   open: false,

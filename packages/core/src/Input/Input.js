@@ -166,6 +166,7 @@ class HvInput extends React.Component {
       inputTextConfiguration,
       classes,
       className,
+      id,
       password,
       disabled,
       isRequired,
@@ -258,6 +259,7 @@ class HvInput extends React.Component {
           this.node = node;
         }}
         className={classNames(classes.container, className)}
+        id={id}
       >
         {labelTypography}
         <Input
@@ -296,6 +298,10 @@ HvInput.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -433,6 +439,7 @@ HvInput.propTypes = {
 
 HvInput.defaultProps = {
   className: "",
+  id: undefined,
   password: false,
   inputTextConfiguration: undefined,
   labels: {

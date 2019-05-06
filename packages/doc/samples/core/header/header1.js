@@ -69,6 +69,7 @@ const SimpleHeaderController = ({
 
   return (
     <HvHeader
+      id="test"
       position={position}
       // Brand
       companyLogo={companyLogo}
