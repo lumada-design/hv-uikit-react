@@ -85,6 +85,7 @@ const styles = theme => ({
   },
   mark: {
     ...theme.hv.typography.vizText,
+    fontFamily: theme.hv.typography.fontFamily,
     top: "-2px"
   },
   sliderTooltip: {
@@ -96,6 +97,7 @@ const styles = theme => ({
       height: "100%",
       padding: `${theme.hv.spacing.sm}px`,
       ...theme.hv.typography.infoText,
+      fontFamily: theme.hv.typography.fontFamily,
       boxShadow: "none"
     },
     "& .rc-slider-tooltip-arrow": {

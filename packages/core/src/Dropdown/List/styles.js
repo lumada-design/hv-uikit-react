@@ -32,7 +32,6 @@ const styles = theme => ({
   },
   singleSelection: {
     padding: `6px ${theme.hv.spacing.xs}px`,
-    ...theme.hv.typography.normalText,
     cursor: "pointer",
     "&:hover": {
       background: theme.hv.palette.atmosphere.atmo4

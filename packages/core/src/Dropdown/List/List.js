@@ -20,6 +20,7 @@ import classNames from "classnames";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Search from "../Search";
 import Actions from "../Actions";
+import HvTypography from "../../Typography";
 
 const getSelection = list => (list ? list.filter(elem => elem.selected) : null);
 
@@ -296,19 +297,23 @@ class List extends React.Component {
         onClick={() => this.handleSelection(elem)}
         onKeyDown={() => this.handleSelection(elem)}
         role="presentation"
-        className={classNames([
-          classes.hidden,
-          classes.singleSelection,
-          classes.truncate,
-          {
-            [classes.selected]: elem.selected
-          },
-          {
-            [classes.result]: elem.isResult
-          }
-        ])}
       >
-        {elem.label}
+        <HvTypography
+          variant="normalText"
+          className={classNames([
+            classes.hidden,
+            classes.singleSelection,
+            classes.truncate,
+            {
+              [classes.selected]: elem.selected
+            },
+            {
+              [classes.result]: elem.isResult
+            }
+          ])}
+        >
+          {elem.label}
+        </HvTypography>
       </div>
     );
   }
