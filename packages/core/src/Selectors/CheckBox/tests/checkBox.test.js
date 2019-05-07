@@ -66,40 +66,37 @@ describe("CheckBox withStyles", () => {
 
   it("should have an icon", () => {
     const mountWrapper = mount(
-      <HvProvider uiKitTheme="dawn">
+      <HvProvider>
         <CheckBoxWithStyles />
       </HvProvider>
     )
       .find(CheckBox)
       .html();
 
-    const themeProvider = theme("dawn");
-
     expect(mountWrapper.includes(emptyIcon)).toBe(true);
     expect(
-      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(false);
     expect(
-      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
     const mountWrapper = mount(
-      <HvProvider uiKitTheme="dawn">
+      <HvProvider>
         <CheckBoxWithStyles disabled />
       </HvProvider>
     )
       .find(CheckBox)
       .html();
-    const themeProvider = theme("dawn");
 
     expect(mountWrapper.includes(emptyIcon)).toBe(true);
     expect(
-      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(true);
     expect(
-      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(true);
   });
 

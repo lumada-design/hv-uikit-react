@@ -23,7 +23,7 @@ import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
-import hvTheme from "../theme";
+import { themeBuilder } from "../theme";
 
 const muiDefaultPalette = createPalette({});
 const muiDefaultTypography = createTypography(muiDefaultPalette, {
@@ -68,7 +68,7 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
 const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
   const pConfig = { router, changeTheme };
 
-  const customTheme = applyCustomTheme(hvTheme(uiKitTheme), theme);
+  const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
   return (
     <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
       <CssBaseline />

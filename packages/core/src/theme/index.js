@@ -85,4 +85,7 @@ const muiTheme = uiKitTheme => {
   return Object.assign({}, muiCreatedTheme, { hv: theme });
 };
 
-export default muiTheme;
+const defaultTheme = muiTheme();
+
+export { muiTheme as themeBuilder };
+export default defaultTheme;
