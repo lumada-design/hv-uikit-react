@@ -44,6 +44,7 @@ const styles = theme => ({
   "sLink": theme.hv.typography.sLink,
   "disabledText": theme.hv.typography.disabledText,
   "vizText": theme.hv.typography.vizText,
+  fontFamily: theme.hv.typography.fontFamily
 });
 
 
