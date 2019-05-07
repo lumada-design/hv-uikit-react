@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.21](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.20...@hv/uikit-react-core@1.0.2-alpha.21) (2019-05-07)
+
+
+### Bug Fixes
+
+* fix font family in components. [#141](https://github.com/pentaho/hv-uikit-react/issues/141) ([bd2c9cd](https://github.com/pentaho/hv-uikit-react/commit/bd2c9cd))
+
+
+
+
+
 ## [1.0.2-alpha.20](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.19...@hv/uikit-react-core@1.0.2-alpha.20) (2019-05-07)
 
 
