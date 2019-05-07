@@ -83,9 +83,9 @@ class HvDatePicker extends React.Component {
     const range = from === to ? rangeFrom : `${rangeFrom} - ${rangeEnd}`;
 
     const Label = () => (
-      <HvTypography variant="labelText" className={classNames([classes.label])}>
-        {label}
-      </HvTypography>
+      <div className={classes.label}>
+        <HvTypography variant="labelText">{label}</HvTypography>
+      </div>
     );
 
     const ResetButton = () => (
