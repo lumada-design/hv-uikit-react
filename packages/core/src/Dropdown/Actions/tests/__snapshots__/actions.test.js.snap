@@ -2,8 +2,10 @@
 
 exports[`<Actions /> should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`<Actions /> should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`<Actions /> should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4946,10 +4948,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -4998,6 +5000,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5286,7 +5289,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -6023,11 +6025,14 @@ body {
                 >
                   
 .HvButton-root-2 {
+  color: #414141;
   cursor: pointer;
   height: 32px;
   padding: 0 10px;
   min-width: 70px;
+  font-size: 14px;
   min-height: 32px;
+  line-height: 20px;
   font-weight: 600;
   text-transform: capitalize;
   letter-spacing: 0.02em;
@@ -6130,10 +6135,13 @@ body {
                 },
                 "index": Array [
                   Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -6274,10 +6282,13 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-2": Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -6324,10 +6335,13 @@ body {
                     "color": "#414141",
                   },
                   "root": Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -6946,10 +6960,13 @@ body {
                   "root": Object {
                     "&:active": Object {},
                     "&:hover,&:focus": Object {},
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "fontSize": "14px",
                     "fontWeight": "600",
                     "height": "32px",
                     "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
                     "minHeight": "32px",
                     "minWidth": "70px",
                     "padding": "0 10px",
@@ -7007,10 +7024,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -7059,6 +7076,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -7347,7 +7365,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -12666,10 +12683,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -12718,6 +12735,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -13006,7 +13024,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -14415,10 +14432,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -14467,6 +14484,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -14755,7 +14773,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -15016,10 +15033,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -15068,6 +15085,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -15356,7 +15374,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -15621,10 +15638,10 @@ body {
                     "only": [Function],
                     "up": [Function],
                     "values": Object {
-                      "lg": 1280,
-                      "md": 960,
+                      "lg": 840,
+                      "md": 720,
                       "sm": 600,
-                      "xl": 1920,
+                      "xl": 1990,
                       "xs": 0,
                     },
                     "width": [Function],
@@ -15673,6 +15690,7 @@ body {
                       "xl": "90",
                       "xs": "10",
                     },
+                    "type": "light",
                     "typography": Object {
                       "3xlTitle": Object {
                         "color": "#414141",
@@ -15961,7 +15979,6 @@ body {
                     "lg": "60",
                     "md": "30",
                     "sm": "20",
-                    "unit": 8,
                     "xl": "90",
                     "xs": "10",
                   },
@@ -16222,10 +16239,10 @@ body {
                       "only": [Function],
                       "up": [Function],
                       "values": Object {
-                        "lg": 1280,
-                        "md": 960,
+                        "lg": 840,
+                        "md": 720,
                         "sm": 600,
-                        "xl": 1920,
+                        "xl": 1990,
                         "xs": 0,
                       },
                       "width": [Function],
@@ -16274,6 +16291,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -16562,7 +16580,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -16850,10 +16867,10 @@ body {
                         "only": [Function],
                         "up": [Function],
                         "values": Object {
-                          "lg": 1280,
-                          "md": 960,
+                          "lg": 840,
+                          "md": 720,
                           "sm": 600,
-                          "xl": 1920,
+                          "xl": 1990,
                           "xs": 0,
                         },
                         "width": [Function],
@@ -16902,6 +16919,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -17190,7 +17208,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -17445,10 +17462,10 @@ body {
                           "only": [Function],
                           "up": [Function],
                           "values": Object {
-                            "lg": 1280,
-                            "md": 960,
+                            "lg": 840,
+                            "md": 720,
                             "sm": 600,
-                            "xl": 1920,
+                            "xl": 1990,
                             "xs": 0,
                           },
                           "width": [Function],
@@ -17497,6 +17514,7 @@ body {
                             "xl": "90",
                             "xs": "10",
                           },
+                          "type": "light",
                           "typography": Object {
                             "3xlTitle": Object {
                               "color": "#414141",
@@ -17785,7 +17803,6 @@ body {
                           "lg": "60",
                           "md": "30",
                           "sm": "20",
-                          "unit": 8,
                           "xl": "90",
                           "xs": "10",
                         },
@@ -18049,10 +18066,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 1280,
-                              "md": 960,
+                              "lg": 840,
+                              "md": 720,
                               "sm": 600,
-                              "xl": 1920,
+                              "xl": 1990,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -18101,6 +18118,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -18389,7 +18407,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -18651,10 +18668,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 1280,
-                                "md": 960,
+                                "lg": 840,
+                                "md": 720,
                                 "sm": 600,
-                                "xl": 1920,
+                                "xl": 1990,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -18703,6 +18720,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -18991,7 +19009,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -19268,10 +19285,10 @@ body {
                     "only": [Function],
                     "up": [Function],
                     "values": Object {
-                      "lg": 1280,
-                      "md": 960,
+                      "lg": 840,
+                      "md": 720,
                       "sm": 600,
-                      "xl": 1920,
+                      "xl": 1990,
                       "xs": 0,
                     },
                     "width": [Function],
@@ -19320,6 +19337,7 @@ body {
                       "xl": "90",
                       "xs": "10",
                     },
+                    "type": "light",
                     "typography": Object {
                       "3xlTitle": Object {
                         "color": "#414141",
@@ -19608,7 +19626,6 @@ body {
                     "lg": "60",
                     "md": "30",
                     "sm": "20",
-                    "unit": 8,
                     "xl": "90",
                     "xs": "10",
                   },
@@ -19869,10 +19886,10 @@ body {
                       "only": [Function],
                       "up": [Function],
                       "values": Object {
-                        "lg": 1280,
-                        "md": 960,
+                        "lg": 840,
+                        "md": 720,
                         "sm": 600,
-                        "xl": 1920,
+                        "xl": 1990,
                         "xs": 0,
                       },
                       "width": [Function],
@@ -19921,6 +19938,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -20209,7 +20227,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -20497,10 +20514,10 @@ body {
                         "only": [Function],
                         "up": [Function],
                         "values": Object {
-                          "lg": 1280,
-                          "md": 960,
+                          "lg": 840,
+                          "md": 720,
                           "sm": 600,
-                          "xl": 1920,
+                          "xl": 1990,
                           "xs": 0,
                         },
                         "width": [Function],
@@ -20549,6 +20566,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -20837,7 +20855,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -21092,10 +21109,10 @@ body {
                           "only": [Function],
                           "up": [Function],
                           "values": Object {
-                            "lg": 1280,
-                            "md": 960,
+                            "lg": 840,
+                            "md": 720,
                             "sm": 600,
-                            "xl": 1920,
+                            "xl": 1990,
                             "xs": 0,
                           },
                           "width": [Function],
@@ -21144,6 +21161,7 @@ body {
                             "xl": "90",
                             "xs": "10",
                           },
+                          "type": "light",
                           "typography": Object {
                             "3xlTitle": Object {
                               "color": "#414141",
@@ -21432,7 +21450,6 @@ body {
                           "lg": "60",
                           "md": "30",
                           "sm": "20",
-                          "unit": 8,
                           "xl": "90",
                           "xs": "10",
                         },
@@ -21696,10 +21713,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 1280,
-                              "md": 960,
+                              "lg": 840,
+                              "md": 720,
                               "sm": 600,
-                              "xl": 1920,
+                              "xl": 1990,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -21748,6 +21765,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -22036,7 +22054,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -22298,10 +22315,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 1280,
-                                "md": 960,
+                                "lg": 840,
+                                "md": 720,
                                 "sm": 600,
-                                "xl": 1920,
+                                "xl": 1990,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -22350,6 +22367,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -22638,7 +22656,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },

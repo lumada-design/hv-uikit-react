@@ -2,8 +2,10 @@
 
 exports[`FormComposer withStyles should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3281,7 +3283,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999986,
+            "index": -99999999985,
           },
           "themingEnabled": true,
         } => Map {
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3871,13 +3873,12 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "componentContainer": "HvFormComposer-componentContainer-47",
-                "footer": "HvFormComposer-footer-50",
-                "groupTitle": "HvFormComposer-groupTitle-49",
-                "mainContainer": "HvFormComposer-mainContainer-45",
-                "navContainer": "HvFormComposer-navContainer-46",
-                "root": "HvFormComposer-root-44",
-                "title": "HvFormComposer-title-48",
+                "componentContainer": "HvFormComposer-componentContainer-30",
+                "footer": "HvFormComposer-footer-32",
+                "mainContainer": "HvFormComposer-mainContainer-28",
+                "navContainer": "HvFormComposer-navContainer-29",
+                "root": "HvFormComposer-root-27",
+                "title": "HvFormComposer-title-31",
               },
               "deployed": true,
               "linked": false,
@@ -3885,13 +3886,12 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvFormComposer",
                 "classes": Object {
-                  "componentContainer": "HvFormComposer-componentContainer-47",
-                  "footer": "HvFormComposer-footer-50",
-                  "groupTitle": "HvFormComposer-groupTitle-49",
-                  "mainContainer": "HvFormComposer-mainContainer-45",
-                  "navContainer": "HvFormComposer-navContainer-46",
-                  "root": "HvFormComposer-root-44",
-                  "title": "HvFormComposer-title-48",
+                  "componentContainer": "HvFormComposer-componentContainer-30",
+                  "footer": "HvFormComposer-footer-32",
+                  "mainContainer": "HvFormComposer-mainContainer-28",
+                  "navContainer": "HvFormComposer-navContainer-29",
+                  "root": "HvFormComposer-root-27",
+                  "title": "HvFormComposer-title-31",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4255,7 +4255,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999986,
+                "index": -99999999985,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4379,27 +4379,27 @@ body {
                   data-meta="HvFormComposer"
                 >
                   
-.HvFormComposer-root-44 {
+.HvFormComposer-root-27 {
   background-color: #F9F9F9;
 }
-.HvFormComposer-mainContainer-45 {
+.HvFormComposer-mainContainer-28 {
   display: flex;
   background-color: #F5F5F5;
 }
-.HvFormComposer-navContainer-46 {
+.HvFormComposer-navContainer-29 {
   max-width: 200px;
   padding-top: 30px;
 }
-.HvFormComposer-componentContainer-47 {
+.HvFormComposer-componentContainer-30 {
   width: 100%;
   padding: 30px;
   max-height: 400px;
   overflow-y: auto;
 }
-.HvFormComposer-title-48 {
+.HvFormComposer-title-31 {
   padding: 20px 0;
 }
-.HvFormComposer-footer-50 {
+.HvFormComposer-footer-32 {
   padding: 20px;
   text-align: right;
 }
@@ -4416,13 +4416,12 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "componentContainer": "HvFormComposer-componentContainer-47",
-                  "footer": "HvFormComposer-footer-50",
-                  "groupTitle": "HvFormComposer-groupTitle-49",
-                  "mainContainer": "HvFormComposer-mainContainer-45",
-                  "navContainer": "HvFormComposer-navContainer-46",
-                  "root": "HvFormComposer-root-44",
-                  "title": "HvFormComposer-title-48",
+                  "componentContainer": "HvFormComposer-componentContainer-30",
+                  "footer": "HvFormComposer-footer-32",
+                  "mainContainer": "HvFormComposer-mainContainer-28",
+                  "navContainer": "HvFormComposer-navContainer-29",
+                  "root": "HvFormComposer-root-27",
+                  "title": "HvFormComposer-title-31",
                 },
                 "index": Array [
                   Object {
@@ -4445,36 +4444,34 @@ body {
                   Object {
                     "padding": "20px 0",
                   },
-                  Object {},
                   Object {
                     "padding": "20px",
                     "text-align": "right",
                   },
                 ],
                 "map": Object {
-                  ".HvFormComposer-componentContainer-47": Object {
+                  ".HvFormComposer-componentContainer-30": Object {
                     "max-height": "400px",
                     "overflow-y": "auto",
                     "padding": "30px",
                     "width": "100%",
                   },
-                  ".HvFormComposer-footer-50": Object {
+                  ".HvFormComposer-footer-32": Object {
                     "padding": "20px",
                     "text-align": "right",
                   },
-                  ".HvFormComposer-groupTitle-49": Object {},
-                  ".HvFormComposer-mainContainer-45": Object {
+                  ".HvFormComposer-mainContainer-28": Object {
                     "background-color": "#F5F5F5",
                     "display": "flex",
                   },
-                  ".HvFormComposer-navContainer-46": Object {
+                  ".HvFormComposer-navContainer-29": Object {
                     "max-width": "200px",
                     "padding-top": "30px",
                   },
-                  ".HvFormComposer-root-44": Object {
+                  ".HvFormComposer-root-27": Object {
                     "background-color": "#F9F9F9",
                   },
-                  ".HvFormComposer-title-48": Object {
+                  ".HvFormComposer-title-31": Object {
                     "padding": "20px 0",
                   },
                   "componentContainer": Object {
@@ -4487,7 +4484,6 @@ body {
                     "padding": "20px",
                     "text-align": "right",
                   },
-                  "groupTitle": Object {},
                   "mainContainer": Object {
                     "background-color": "#F5F5F5",
                     "display": "flex",
@@ -4507,13 +4503,12 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvFormComposer",
                   "classes": Object {
-                    "componentContainer": "HvFormComposer-componentContainer-47",
-                    "footer": "HvFormComposer-footer-50",
-                    "groupTitle": "HvFormComposer-groupTitle-49",
-                    "mainContainer": "HvFormComposer-mainContainer-45",
-                    "navContainer": "HvFormComposer-navContainer-46",
-                    "root": "HvFormComposer-root-44",
-                    "title": "HvFormComposer-title-48",
+                    "componentContainer": "HvFormComposer-componentContainer-30",
+                    "footer": "HvFormComposer-footer-32",
+                    "mainContainer": "HvFormComposer-mainContainer-28",
+                    "navContainer": "HvFormComposer-navContainer-29",
+                    "root": "HvFormComposer-root-27",
+                    "title": "HvFormComposer-title-31",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -4877,7 +4872,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999986,
+                  "index": -99999999985,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5006,7 +5001,6 @@ body {
                     "padding": "20px",
                     "textAlign": "right",
                   },
-                  "groupTitle": Object {},
                   "mainContainer": Object {
                     "backgroundColor": "#F5F5F5",
                     "display": "flex",
@@ -5049,10 +5043,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -5101,6 +5095,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5389,7 +5384,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -5621,85 +5615,53 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "alignCenter": "MuiTypography-alignCenter-74",
-                "alignJustify": "MuiTypography-alignJustify-76",
-                "alignLeft": "MuiTypography-alignLeft-73",
-                "alignRight": "MuiTypography-alignRight-75",
-                "body1": "MuiTypography-body1-60",
-                "body2": "MuiTypography-body2-59",
-                "button": "MuiTypography-button-62",
-                "caption": "MuiTypography-caption-61",
-                "colorError": "MuiTypography-colorError-85",
-                "colorInherit": "MuiTypography-colorInherit-80",
-                "colorPrimary": "MuiTypography-colorPrimary-81",
-                "colorSecondary": "MuiTypography-colorSecondary-82",
-                "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                "display1": "MuiTypography-display1-55",
-                "display2": "MuiTypography-display2-54",
-                "display3": "MuiTypography-display3-53",
-                "display4": "MuiTypography-display4-52",
-                "gutterBottom": "MuiTypography-gutterBottom-78",
-                "h1": "MuiTypography-h1-63",
-                "h2": "MuiTypography-h2-64",
-                "h3": "MuiTypography-h3-65",
-                "h4": "MuiTypography-h4-66",
-                "h5": "MuiTypography-h5-67",
-                "h6": "MuiTypography-h6-68",
-                "headline": "MuiTypography-headline-56",
-                "inline": "MuiTypography-inline-86",
-                "noWrap": "MuiTypography-noWrap-77",
-                "overline": "MuiTypography-overline-71",
-                "paragraph": "MuiTypography-paragraph-79",
-                "root": "MuiTypography-root-51",
-                "srOnly": "MuiTypography-srOnly-72",
-                "subheading": "MuiTypography-subheading-58",
-                "subtitle1": "MuiTypography-subtitle1-69",
-                "subtitle2": "MuiTypography-subtitle2-70",
-                "title": "MuiTypography-title-57",
+                "3xlTitle": "Typography-3xlTitle-35",
+                "4xlTitle": "Typography-4xlTitle-34",
+                "5xlTitle": "Typography-5xlTitle-33",
+                "baseFontFamily": "Typography-baseFontFamily-52",
+                "disabledButtonText": "Typography-disabledButtonText-46",
+                "disabledText": "Typography-disabledText-50",
+                "highlightText": "Typography-highlightText-43",
+                "infoText": "Typography-infoText-48",
+                "inlineLink": "Typography-inlineLink-45",
+                "lTitle": "Typography-lTitle-38",
+                "labelText": "Typography-labelText-47",
+                "mTitle": "Typography-mTitle-39",
+                "normalText": "Typography-normalText-44",
+                "sLink": "Typography-sLink-49",
+                "sTitle": "Typography-sTitle-40",
+                "vizText": "Typography-vizText-51",
+                "xlTitle": "Typography-xlTitle-37",
+                "xsTitle": "Typography-xsTitle-41",
+                "xxlTitle": "Typography-xxlTitle-36",
+                "xxsTitle": "Typography-xxsTitle-42",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "MuiTypography",
+                "classNamePrefix": "Typography",
                 "classes": Object {
-                  "alignCenter": "MuiTypography-alignCenter-74",
-                  "alignJustify": "MuiTypography-alignJustify-76",
-                  "alignLeft": "MuiTypography-alignLeft-73",
-                  "alignRight": "MuiTypography-alignRight-75",
-                  "body1": "MuiTypography-body1-60",
-                  "body2": "MuiTypography-body2-59",
-                  "button": "MuiTypography-button-62",
-                  "caption": "MuiTypography-caption-61",
-                  "colorError": "MuiTypography-colorError-85",
-                  "colorInherit": "MuiTypography-colorInherit-80",
-                  "colorPrimary": "MuiTypography-colorPrimary-81",
-                  "colorSecondary": "MuiTypography-colorSecondary-82",
-                  "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                  "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                  "display1": "MuiTypography-display1-55",
-                  "display2": "MuiTypography-display2-54",
-                  "display3": "MuiTypography-display3-53",
-                  "display4": "MuiTypography-display4-52",
-                  "gutterBottom": "MuiTypography-gutterBottom-78",
-                  "h1": "MuiTypography-h1-63",
-                  "h2": "MuiTypography-h2-64",
-                  "h3": "MuiTypography-h3-65",
-                  "h4": "MuiTypography-h4-66",
-                  "h5": "MuiTypography-h5-67",
-                  "h6": "MuiTypography-h6-68",
-                  "headline": "MuiTypography-headline-56",
-                  "inline": "MuiTypography-inline-86",
-                  "noWrap": "MuiTypography-noWrap-77",
-                  "overline": "MuiTypography-overline-71",
-                  "paragraph": "MuiTypography-paragraph-79",
-                  "root": "MuiTypography-root-51",
-                  "srOnly": "MuiTypography-srOnly-72",
-                  "subheading": "MuiTypography-subheading-58",
-                  "subtitle1": "MuiTypography-subtitle1-69",
-                  "subtitle2": "MuiTypography-subtitle2-70",
-                  "title": "MuiTypography-title-57",
+                  "3xlTitle": "Typography-3xlTitle-35",
+                  "4xlTitle": "Typography-4xlTitle-34",
+                  "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
+                  "disabledButtonText": "Typography-disabledButtonText-46",
+                  "disabledText": "Typography-disabledText-50",
+                  "highlightText": "Typography-highlightText-43",
+                  "infoText": "Typography-infoText-48",
+                  "inlineLink": "Typography-inlineLink-45",
+                  "lTitle": "Typography-lTitle-38",
+                  "labelText": "Typography-labelText-47",
+                  "mTitle": "Typography-mTitle-39",
+                  "normalText": "Typography-normalText-44",
+                  "sLink": "Typography-sLink-49",
+                  "sTitle": "Typography-sTitle-40",
+                  "vizText": "Typography-vizText-51",
+                  "xlTitle": "Typography-xlTitle-37",
+                  "xsTitle": "Typography-xsTitle-41",
+                  "xxlTitle": "Typography-xxlTitle-36",
+                  "xxsTitle": "Typography-xxsTitle-42",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -6176,226 +6138,152 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "MuiTypography",
-                "name": "MuiTypography",
+                "meta": "Typography",
+                "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
               },
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="MuiTypography"
+                  data-meta="Typography"
                 >
                   
-.MuiTypography-root-51 {
-  margin: 0;
-  display: block;
-}
-.MuiTypography-display4-52 {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 7rem;
-  font-weight: 300;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.14286em;
-  margin-left: -.04em;
-  letter-spacing: -.04em;
-}
-.MuiTypography-display3-53 {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 3.5rem;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.30357em;
-  margin-left: -.02em;
-  letter-spacing: -.02em;
-}
-.MuiTypography-display2-54 {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 2.8125rem;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.13333em;
-  margin-left: -.02em;
-}
-.MuiTypography-display1-55 {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 2.125rem;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.20588em;
-}
-.MuiTypography-headline-56 {
+.Typography-5xlTitle-33 {
   color: #414141;
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.35417em;
-}
-.MuiTypography-title-57 {
-  color: #414141;
-  font-size: 1.3125rem;
-  font-weight: 500;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.16667em;
-}
-.MuiTypography-subheading-58 {
-  color: #414141;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.5em;
-}
-.MuiTypography-body2-59 {
-  color: #414141;
-  font-size: 12px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.MuiTypography-body1-60 {
-  color: #414141;
-  font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-}
-.MuiTypography-caption-61 {
-  color: #414141;
-  font-size: 0.75rem;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
-  line-height: 1.66;
-}
-.MuiTypography-button-62 {
-  color: #414141;
-  font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-size: 52px;
+  line-height: 60px;
   font-weight: 600;
-  line-height: 20px;
-  text-transform: uppercase;
   letter-spacing: 0.02em;
 }
-.MuiTypography-h1-63 {
+.Typography-4xlTitle-34 {
+  color: #414141;
+  font-size: 52px;
+  line-height: 60px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-3xlTitle-35 {
+  color: #414141;
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-xxlTitle-36 {
+  color: #414141;
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-xlTitle-37 {
   color: #414141;
   font-size: 32px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
   line-height: 40px;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
-.MuiTypography-h2-64 {
+.Typography-lTitle-38 {
   color: #414141;
   font-size: 32px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
   line-height: 40px;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
-.MuiTypography-h3-65 {
+.Typography-mTitle-39 {
   color: #414141;
   font-size: 22px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  line-height: 30px;
   font-weight: 600;
-  line-height: 30px;
   letter-spacing: 0.02em;
 }
-.MuiTypography-h4-66 {
+.Typography-sTitle-40 {
   color: #414141;
   font-size: 22px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
   line-height: 30px;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
-.MuiTypography-h5-67 {
+.Typography-xsTitle-41 {
   color: #414141;
-  font-size: 1.5rem;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-xxsTitle-42 {
+  color: #414141;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: 400;
-  line-height: 1.33;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-h6-68 {
-  color: #414141;
-  font-size: 1.25rem;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 500;
-  line-height: 1.6;
-}
-.MuiTypography-subtitle1-69 {
+.Typography-highlightText-43 {
   color: #414141;
   font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
   line-height: 20px;
-  letter-spacing: 0.02em;
-}
-.MuiTypography-subtitle2-70 {
-  color: #414141;
-  font-size: 12px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   font-weight: 600;
-  line-height: 16px;
   letter-spacing: 0.02em;
 }
-.MuiTypography-overline-71 {
+.Typography-normalText-44 {
   color: #414141;
-  font-size: 0.75rem;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 400;
-  line-height: 2.66;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-srOnly-72 {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  overflow: hidden;
-}
-.MuiTypography-alignLeft-73 {
-  text-align: left;
-}
-.MuiTypography-alignCenter-74 {
-  text-align: center;
-}
-.MuiTypography-alignRight-75 {
-  text-align: right;
-}
-.MuiTypography-alignJustify-76 {
-  text-align: justify;
-}
-.MuiTypography-noWrap-77 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.MuiTypography-gutterBottom-78 {
-  margin-bottom: 0.35em;
-}
-.MuiTypography-paragraph-79 {
-  margin-bottom: 16px;
-}
-.MuiTypography-colorInherit-80 {
-  color: inherit;
-}
-.MuiTypography-colorPrimary-81 {
+.Typography-inlineLink-45 {
   color: #146BD2;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-colorSecondary-82 {
+.Typography-disabledButtonText-46 {
+  color: #999999;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-labelText-47 {
   color: #414141;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-colorTextPrimary-83 {
+.Typography-infoText-48 {
   color: #414141;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-colorTextSecondary-84 {
-  color: rgba(0, 0, 0, 0.54);
+.Typography-sLink-49 {
+  color: #146BD2;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-colorError-85 {
-  color: #f44336;
+.Typography-disabledText-50 {
+  color: #999999;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
-.MuiTypography-inline-86 {
-  display: inline;
+.Typography-vizText-51 {
+  color: #414141;
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-baseFontFamily-52 {
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
 }
 
                 </style>,
@@ -6410,137 +6298,58 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "alignCenter": "MuiTypography-alignCenter-74",
-                  "alignJustify": "MuiTypography-alignJustify-76",
-                  "alignLeft": "MuiTypography-alignLeft-73",
-                  "alignRight": "MuiTypography-alignRight-75",
-                  "body1": "MuiTypography-body1-60",
-                  "body2": "MuiTypography-body2-59",
-                  "button": "MuiTypography-button-62",
-                  "caption": "MuiTypography-caption-61",
-                  "colorError": "MuiTypography-colorError-85",
-                  "colorInherit": "MuiTypography-colorInherit-80",
-                  "colorPrimary": "MuiTypography-colorPrimary-81",
-                  "colorSecondary": "MuiTypography-colorSecondary-82",
-                  "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                  "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                  "display1": "MuiTypography-display1-55",
-                  "display2": "MuiTypography-display2-54",
-                  "display3": "MuiTypography-display3-53",
-                  "display4": "MuiTypography-display4-52",
-                  "gutterBottom": "MuiTypography-gutterBottom-78",
-                  "h1": "MuiTypography-h1-63",
-                  "h2": "MuiTypography-h2-64",
-                  "h3": "MuiTypography-h3-65",
-                  "h4": "MuiTypography-h4-66",
-                  "h5": "MuiTypography-h5-67",
-                  "h6": "MuiTypography-h6-68",
-                  "headline": "MuiTypography-headline-56",
-                  "inline": "MuiTypography-inline-86",
-                  "noWrap": "MuiTypography-noWrap-77",
-                  "overline": "MuiTypography-overline-71",
-                  "paragraph": "MuiTypography-paragraph-79",
-                  "root": "MuiTypography-root-51",
-                  "srOnly": "MuiTypography-srOnly-72",
-                  "subheading": "MuiTypography-subheading-58",
-                  "subtitle1": "MuiTypography-subtitle1-69",
-                  "subtitle2": "MuiTypography-subtitle2-70",
-                  "title": "MuiTypography-title-57",
+                  "3xlTitle": "Typography-3xlTitle-35",
+                  "4xlTitle": "Typography-4xlTitle-34",
+                  "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
+                  "disabledButtonText": "Typography-disabledButtonText-46",
+                  "disabledText": "Typography-disabledText-50",
+                  "highlightText": "Typography-highlightText-43",
+                  "infoText": "Typography-infoText-48",
+                  "inlineLink": "Typography-inlineLink-45",
+                  "lTitle": "Typography-lTitle-38",
+                  "labelText": "Typography-labelText-47",
+                  "mTitle": "Typography-mTitle-39",
+                  "normalText": "Typography-normalText-44",
+                  "sLink": "Typography-sLink-49",
+                  "sTitle": "Typography-sTitle-40",
+                  "vizText": "Typography-vizText-51",
+                  "xlTitle": "Typography-xlTitle-37",
+                  "xsTitle": "Typography-xsTitle-41",
+                  "xxlTitle": "Typography-xxlTitle-36",
+                  "xxsTitle": "Typography-xxsTitle-42",
                 },
                 "index": Array [
                   Object {
-                    "display": "block",
-                    "margin": 0,
-                  },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "7rem",
-                    "font-weight": "300",
-                    "letter-spacing": "-.04em",
-                    "line-height": "1.14286em",
-                    "margin-left": "-.04em",
-                  },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "3.5rem",
-                    "font-weight": "400",
-                    "letter-spacing": "-.02em",
-                    "line-height": "1.30357em",
-                    "margin-left": "-.02em",
-                  },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.8125rem",
-                    "font-weight": "400",
-                    "line-height": "1.13333em",
-                    "margin-left": "-.02em",
-                  },
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.125rem",
-                    "font-weight": "400",
-                    "line-height": "1.20588em",
-                  },
-                  Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
-                    "font-weight": "400",
-                    "line-height": "1.35417em",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.3125rem",
-                    "font-weight": "500",
-                    "line-height": "1.16667em",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1rem",
-                    "font-weight": "400",
-                    "line-height": "1.5em",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "12px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
-                    "font-weight": "400",
-                    "line-height": "1.66",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
+                    "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "20px",
-                    "text-transform": "uppercase",
+                    "line-height": "60px",
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                    "font-size": "52px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "60px",
+                  },
+                  Object {
+                    "color": "#414141",
+                    "font-size": "42px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
+                  },
+                  Object {
+                    "color": "#414141",
+                    "font-size": "42px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
+                  },
+                  Object {
+                    "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
@@ -6548,7 +6357,6 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -6556,7 +6364,6 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
@@ -6564,7 +6371,6 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -6572,21 +6378,20 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
+                    "font-size": "18px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
+                  },
+                  Object {
+                    "color": "#414141",
+                    "font-size": "18px",
                     "font-weight": "400",
-                    "line-height": "1.33",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.25rem",
-                    "font-weight": "500",
-                    "line-height": "1.6",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
@@ -6594,533 +6399,362 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "12px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
-                  },
-                  Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
+                    "font-size": "14px",
                     "font-weight": "400",
-                    "line-height": "2.66",
-                    "text-transform": "uppercase",
-                  },
-                  Object {
-                    "height": "1px",
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "width": "1px",
-                  },
-                  Object {
-                    "text-align": "left",
-                  },
-                  Object {
-                    "text-align": "center",
-                  },
-                  Object {
-                    "text-align": "right",
-                  },
-                  Object {
-                    "text-align": "justify",
-                  },
-                  Object {
-                    "overflow": "hidden",
-                    "text-overflow": "ellipsis",
-                    "white-space": "nowrap",
-                  },
-                  Object {
-                    "margin-bottom": "0.35em",
-                  },
-                  Object {
-                    "margin-bottom": "16px",
-                  },
-                  Object {
-                    "color": "inherit",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
                   },
                   Object {
                     "color": "#146BD2",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
                   },
                   Object {
                     "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
                     "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
+                    "color": "#146BD2",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
-                    "color": "#f44336",
+                    "color": "#999999",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
-                    "display": "inline",
+                    "color": "#414141",
+                    "font-size": "10px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "15px",
+                  },
+                  Object {
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   },
                 ],
                 "map": Object {
-                  ".MuiTypography-alignCenter-74": Object {
-                    "text-align": "center",
-                  },
-                  ".MuiTypography-alignJustify-76": Object {
-                    "text-align": "justify",
-                  },
-                  ".MuiTypography-alignLeft-73": Object {
-                    "text-align": "left",
-                  },
-                  ".MuiTypography-alignRight-75": Object {
-                    "text-align": "right",
-                  },
-                  ".MuiTypography-body1-60": Object {
+                  ".Typography-3xlTitle-35": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
+                    "font-size": "42px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
+                  },
+                  ".Typography-4xlTitle-34": Object {
+                    "color": "#414141",
+                    "font-size": "52px",
                     "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "60px",
+                  },
+                  ".Typography-5xlTitle-33": Object {
+                    "color": "#414141",
+                    "font-size": "52px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "60px",
+                  },
+                  ".Typography-baseFontFamily-52": Object {
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
+                  ".Typography-disabledButtonText-46": Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".MuiTypography-body2-59": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  ".Typography-disabledText-50": Object {
+                    "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".MuiTypography-button-62": Object {
+                  ".Typography-highlightText-43": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
-                    "text-transform": "uppercase",
                   },
-                  ".MuiTypography-caption-61": Object {
+                  ".Typography-infoText-48": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
+                    "font-size": "12px",
                     "font-weight": "400",
-                    "line-height": "1.66",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
-                  ".MuiTypography-colorError-85": Object {
-                    "color": "#f44336",
-                  },
-                  ".MuiTypography-colorInherit-80": Object {
-                    "color": "inherit",
-                  },
-                  ".MuiTypography-colorPrimary-81": Object {
+                  ".Typography-inlineLink-45": Object {
                     "color": "#146BD2",
-                  },
-                  ".MuiTypography-colorSecondary-82": Object {
-                    "color": "#414141",
-                  },
-                  ".MuiTypography-colorTextPrimary-83": Object {
-                    "color": "#414141",
-                  },
-                  ".MuiTypography-colorTextSecondary-84": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                  },
-                  ".MuiTypography-display1-55": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.125rem",
-                    "font-weight": "400",
-                    "line-height": "1.20588em",
-                  },
-                  ".MuiTypography-display2-54": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.8125rem",
-                    "font-weight": "400",
-                    "line-height": "1.13333em",
-                    "margin-left": "-.02em",
-                  },
-                  ".MuiTypography-display3-53": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "3.5rem",
-                    "font-weight": "400",
-                    "letter-spacing": "-.02em",
-                    "line-height": "1.30357em",
-                    "margin-left": "-.02em",
-                  },
-                  ".MuiTypography-display4-52": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "7rem",
-                    "font-weight": "300",
-                    "letter-spacing": "-.04em",
-                    "line-height": "1.14286em",
-                    "margin-left": "-.04em",
-                  },
-                  ".MuiTypography-gutterBottom-78": Object {
-                    "margin-bottom": "0.35em",
-                  },
-                  ".MuiTypography-h1-63": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "line-height": "20px",
                   },
-                  ".MuiTypography-h2-64": Object {
+                  ".Typography-lTitle-38": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".MuiTypography-h3-65": Object {
+                  ".Typography-labelText-47": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "22px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "30px",
-                  },
-                  ".MuiTypography-h4-66": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "22px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "30px",
-                  },
-                  ".MuiTypography-h5-67": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
-                    "font-weight": "400",
-                    "line-height": "1.33",
-                  },
-                  ".MuiTypography-h6-68": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.25rem",
-                    "font-weight": "500",
-                    "line-height": "1.6",
-                  },
-                  ".MuiTypography-headline-56": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
-                    "font-weight": "400",
-                    "line-height": "1.35417em",
-                  },
-                  ".MuiTypography-inline-86": Object {
-                    "display": "inline",
-                  },
-                  ".MuiTypography-noWrap-77": Object {
-                    "overflow": "hidden",
-                    "text-overflow": "ellipsis",
-                    "white-space": "nowrap",
-                  },
-                  ".MuiTypography-overline-71": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
-                    "font-weight": "400",
-                    "line-height": "2.66",
-                    "text-transform": "uppercase",
-                  },
-                  ".MuiTypography-paragraph-79": Object {
-                    "margin-bottom": "16px",
-                  },
-                  ".MuiTypography-root-51": Object {
-                    "display": "block",
-                    "margin": 0,
-                  },
-                  ".MuiTypography-srOnly-72": Object {
-                    "height": "1px",
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "width": "1px",
-                  },
-                  ".MuiTypography-subheading-58": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1rem",
-                    "font-weight": "400",
-                    "line-height": "1.5em",
-                  },
-                  ".MuiTypography-subtitle1-69": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
-                  },
-                  ".MuiTypography-subtitle2-70": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".MuiTypography-title-57": Object {
+                  ".Typography-mTitle-39": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.3125rem",
-                    "font-weight": "500",
-                    "line-height": "1.16667em",
-                  },
-                  "alignCenter": Object {
-                    "text-align": "center",
-                  },
-                  "alignJustify": Object {
-                    "text-align": "justify",
-                  },
-                  "alignLeft": Object {
-                    "text-align": "left",
-                  },
-                  "alignRight": Object {
-                    "text-align": "right",
-                  },
-                  "body1": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
-                  },
-                  "body2": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "12px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
-                  },
-                  "button": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
+                    "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
-                    "line-height": "20px",
-                    "text-transform": "uppercase",
+                    "line-height": "30px",
                   },
-                  "caption": Object {
+                  ".Typography-normalText-44": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
+                    "font-size": "14px",
                     "font-weight": "400",
-                    "line-height": "1.66",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
                   },
-                  "colorError": Object {
-                    "color": "#f44336",
-                  },
-                  "colorInherit": Object {
-                    "color": "inherit",
-                  },
-                  "colorPrimary": Object {
+                  ".Typography-sLink-49": Object {
                     "color": "#146BD2",
-                  },
-                  "colorSecondary": Object {
-                    "color": "#414141",
-                  },
-                  "colorTextPrimary": Object {
-                    "color": "#414141",
-                  },
-                  "colorTextSecondary": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                  },
-                  "display1": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.125rem",
-                    "font-weight": "400",
-                    "line-height": "1.20588em",
-                  },
-                  "display2": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "2.8125rem",
-                    "font-weight": "400",
-                    "line-height": "1.13333em",
-                    "margin-left": "-.02em",
-                  },
-                  "display3": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "3.5rem",
-                    "font-weight": "400",
-                    "letter-spacing": "-.02em",
-                    "line-height": "1.30357em",
-                    "margin-left": "-.02em",
-                  },
-                  "display4": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "7rem",
-                    "font-weight": "300",
-                    "letter-spacing": "-.04em",
-                    "line-height": "1.14286em",
-                    "margin-left": "-.04em",
-                  },
-                  "gutterBottom": Object {
-                    "margin-bottom": "0.35em",
-                  },
-                  "h1": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "40px",
-                  },
-                  "h2": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "32px",
+                    "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
-                    "line-height": "40px",
+                    "line-height": "16px",
                   },
-                  "h3": Object {
+                  ".Typography-sTitle-40": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "22px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "30px",
-                  },
-                  "h4": Object {
-                    "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  "h5": Object {
+                  ".Typography-vizText-51": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
+                    "font-size": "10px",
                     "font-weight": "400",
-                    "line-height": "1.33",
+                    "letter-spacing": "0.02em",
+                    "line-height": "15px",
                   },
-                  "h6": Object {
+                  ".Typography-xlTitle-37": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.25rem",
-                    "font-weight": "500",
-                    "line-height": "1.6",
+                    "font-size": "32px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "40px",
                   },
-                  "headline": Object {
+                  ".Typography-xsTitle-41": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.5rem",
+                    "font-size": "18px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
+                  },
+                  ".Typography-xxlTitle-36": Object {
+                    "color": "#414141",
+                    "font-size": "42px",
                     "font-weight": "400",
-                    "line-height": "1.35417em",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
                   },
-                  "inline": Object {
-                    "display": "inline",
-                  },
-                  "noWrap": Object {
-                    "overflow": "hidden",
-                    "text-overflow": "ellipsis",
-                    "white-space": "nowrap",
-                  },
-                  "overline": Object {
+                  ".Typography-xxsTitle-42": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "0.75rem",
+                    "font-size": "18px",
                     "font-weight": "400",
-                    "line-height": "2.66",
-                    "text-transform": "uppercase",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
                   },
-                  "paragraph": Object {
-                    "margin-bottom": "16px",
-                  },
-                  "root": Object {
-                    "display": "block",
-                    "margin": 0,
-                  },
-                  "srOnly": Object {
-                    "height": "1px",
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "width": "1px",
-                  },
-                  "subheading": Object {
+                  "3xlTitle": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1rem",
+                    "font-size": "42px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
+                  },
+                  "4xlTitle": Object {
+                    "color": "#414141",
+                    "font-size": "52px",
                     "font-weight": "400",
-                    "line-height": "1.5em",
+                    "letter-spacing": "0.02em",
+                    "line-height": "60px",
                   },
-                  "subtitle1": Object {
+                  "5xlTitle": Object {
                     "color": "#414141",
+                    "font-size": "52px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "60px",
+                  },
+                  "baseFontFamily": Object {
                     "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
+                  "disabledButtonText": Object {
+                    "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  "subtitle2": Object {
+                  "disabledText": Object {
+                    "color": "#999999",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  "highlightText": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  "infoText": Object {
+                    "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  "inlineLink": Object {
+                    "color": "#146BD2",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  "lTitle": Object {
+                    "color": "#414141",
+                    "font-size": "32px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "40px",
+                  },
+                  "labelText": Object {
+                    "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  "title": Object {
+                  "mTitle": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "1.3125rem",
-                    "font-weight": "500",
-                    "line-height": "1.16667em",
+                    "font-size": "22px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "30px",
+                  },
+                  "normalText": Object {
+                    "color": "#414141",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  "sLink": Object {
+                    "color": "#146BD2",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  "sTitle": Object {
+                    "color": "#414141",
+                    "font-size": "22px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "30px",
+                  },
+                  "vizText": Object {
+                    "color": "#414141",
+                    "font-size": "10px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "15px",
+                  },
+                  "xlTitle": Object {
+                    "color": "#414141",
+                    "font-size": "32px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "40px",
+                  },
+                  "xsTitle": Object {
+                    "color": "#414141",
+                    "font-size": "18px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
+                  },
+                  "xxlTitle": Object {
+                    "color": "#414141",
+                    "font-size": "42px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "52px",
+                  },
+                  "xxsTitle": Object {
+                    "color": "#414141",
+                    "font-size": "18px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "28px",
                   },
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "MuiTypography",
+                  "classNamePrefix": "Typography",
                   "classes": Object {
-                    "alignCenter": "MuiTypography-alignCenter-74",
-                    "alignJustify": "MuiTypography-alignJustify-76",
-                    "alignLeft": "MuiTypography-alignLeft-73",
-                    "alignRight": "MuiTypography-alignRight-75",
-                    "body1": "MuiTypography-body1-60",
-                    "body2": "MuiTypography-body2-59",
-                    "button": "MuiTypography-button-62",
-                    "caption": "MuiTypography-caption-61",
-                    "colorError": "MuiTypography-colorError-85",
-                    "colorInherit": "MuiTypography-colorInherit-80",
-                    "colorPrimary": "MuiTypography-colorPrimary-81",
-                    "colorSecondary": "MuiTypography-colorSecondary-82",
-                    "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                    "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                    "display1": "MuiTypography-display1-55",
-                    "display2": "MuiTypography-display2-54",
-                    "display3": "MuiTypography-display3-53",
-                    "display4": "MuiTypography-display4-52",
-                    "gutterBottom": "MuiTypography-gutterBottom-78",
-                    "h1": "MuiTypography-h1-63",
-                    "h2": "MuiTypography-h2-64",
-                    "h3": "MuiTypography-h3-65",
-                    "h4": "MuiTypography-h4-66",
-                    "h5": "MuiTypography-h5-67",
-                    "h6": "MuiTypography-h6-68",
-                    "headline": "MuiTypography-headline-56",
-                    "inline": "MuiTypography-inline-86",
-                    "noWrap": "MuiTypography-noWrap-77",
-                    "overline": "MuiTypography-overline-71",
-                    "paragraph": "MuiTypography-paragraph-79",
-                    "root": "MuiTypography-root-51",
-                    "srOnly": "MuiTypography-srOnly-72",
-                    "subheading": "MuiTypography-subheading-58",
-                    "subtitle1": "MuiTypography-subtitle1-69",
-                    "subtitle2": "MuiTypography-subtitle2-70",
-                    "title": "MuiTypography-title-57",
+                    "3xlTitle": "Typography-3xlTitle-35",
+                    "4xlTitle": "Typography-4xlTitle-34",
+                    "5xlTitle": "Typography-5xlTitle-33",
+                    "baseFontFamily": "Typography-baseFontFamily-52",
+                    "disabledButtonText": "Typography-disabledButtonText-46",
+                    "disabledText": "Typography-disabledText-50",
+                    "highlightText": "Typography-highlightText-43",
+                    "infoText": "Typography-infoText-48",
+                    "inlineLink": "Typography-inlineLink-45",
+                    "lTitle": "Typography-lTitle-38",
+                    "labelText": "Typography-labelText-47",
+                    "mTitle": "Typography-mTitle-39",
+                    "normalText": "Typography-normalText-44",
+                    "sLink": "Typography-sLink-49",
+                    "sTitle": "Typography-sTitle-40",
+                    "vizText": "Typography-vizText-51",
+                    "xlTitle": "Typography-xlTitle-37",
+                    "xsTitle": "Typography-xsTitle-41",
+                    "xxlTitle": "Typography-xxlTitle-36",
+                    "xxsTitle": "Typography-xxsTitle-42",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7597,221 +7231,147 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "MuiTypography",
-                  "name": "MuiTypography",
+                  "meta": "Typography",
+                  "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  "alignCenter": Object {
-                    "textAlign": "center",
-                  },
-                  "alignJustify": Object {
-                    "textAlign": "justify",
-                  },
-                  "alignLeft": Object {
-                    "textAlign": "left",
-                  },
-                  "alignRight": Object {
-                    "textAlign": "right",
-                  },
-                  "body1": Object {
+                  "3xlTitle": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "14px",
+                    "fontSize": "42px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "52px",
+                  },
+                  "4xlTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "52px",
                     "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "60px",
+                  },
+                  "5xlTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "52px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "60px",
+                  },
+                  "baseFontFamily": Object {
+                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
+                  "disabledButtonText": Object {
+                    "color": "#999999",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  "body2": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  "disabledText": Object {
+                    "color": "#999999",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                   },
-                  "button": Object {
+                  "highlightText": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "14px",
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
-                    "textTransform": "uppercase",
                   },
-                  "caption": Object {
+                  "infoText": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "0.75rem",
-                    "fontWeight": 400,
-                    "lineHeight": 1.66,
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "16px",
                   },
-                  "colorError": Object {
-                    "color": "#f44336",
-                  },
-                  "colorInherit": Object {
-                    "color": "inherit",
-                  },
-                  "colorPrimary": Object {
+                  "inlineLink": Object {
                     "color": "#146BD2",
-                  },
-                  "colorSecondary": Object {
-                    "color": "#414141",
-                  },
-                  "colorTextPrimary": Object {
-                    "color": "#414141",
-                  },
-                  "colorTextSecondary": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                  },
-                  "display1": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "2.125rem",
-                    "fontWeight": 400,
-                    "lineHeight": "1.20588em",
-                  },
-                  "display2": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "2.8125rem",
-                    "fontWeight": 400,
-                    "lineHeight": "1.13333em",
-                    "marginLeft": "-.02em",
-                  },
-                  "display3": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "3.5rem",
-                    "fontWeight": 400,
-                    "letterSpacing": "-.02em",
-                    "lineHeight": "1.30357em",
-                    "marginLeft": "-.02em",
-                  },
-                  "display4": Object {
-                    "color": "rgba(0, 0, 0, 0.54)",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "7rem",
-                    "fontWeight": 300,
-                    "letterSpacing": "-.04em",
-                    "lineHeight": "1.14286em",
-                    "marginLeft": "-.04em",
-                  },
-                  "gutterBottom": Object {
-                    "marginBottom": "0.35em",
-                  },
-                  "h1": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "32px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "40px",
-                  },
-                  "h2": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "32px",
-                    "fontWeight": "400",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "40px",
-                  },
-                  "h3": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "22px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "30px",
-                  },
-                  "h4": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "22px",
-                    "fontWeight": "400",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "30px",
-                  },
-                  "h5": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "1.5rem",
-                    "fontWeight": 400,
-                    "lineHeight": 1.33,
-                  },
-                  "h6": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "1.25rem",
-                    "fontWeight": 500,
-                    "lineHeight": 1.6,
-                  },
-                  "headline": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "1.5rem",
-                    "fontWeight": 400,
-                    "lineHeight": "1.35417em",
-                  },
-                  "inline": Object {
-                    "display": "inline",
-                  },
-                  "noWrap": Object {
-                    "overflow": "hidden",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
-                  },
-                  "overline": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "0.75rem",
-                    "fontWeight": 400,
-                    "lineHeight": 2.66,
-                    "textTransform": "uppercase",
-                  },
-                  "paragraph": Object {
-                    "marginBottom": 16,
-                  },
-                  "root": Object {
-                    "display": "block",
-                    "margin": 0,
-                  },
-                  "srOnly": Object {
-                    "height": 1,
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "width": 1,
-                  },
-                  "subheading": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "1rem",
-                    "fontWeight": 400,
-                    "lineHeight": "1.5em",
-                  },
-                  "subtitle1": Object {
-                    "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "14px",
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  "subtitle2": Object {
+                  "lTitle": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                    "fontSize": "32px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "40px",
+                  },
+                  "labelText": Object {
+                    "color": "#414141",
                     "fontSize": "12px",
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                   },
-                  "title": Object {
+                  "mTitle": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "1.3125rem",
-                    "fontWeight": 500,
-                    "lineHeight": "1.16667em",
+                    "fontSize": "22px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "30px",
+                  },
+                  "normalText": Object {
+                    "color": "#414141",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
+                  "sLink": Object {
+                    "color": "#146BD2",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "16px",
+                  },
+                  "sTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "22px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "30px",
+                  },
+                  "vizText": Object {
+                    "color": "#414141",
+                    "fontSize": "10px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "15px",
+                  },
+                  "xlTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "32px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "40px",
+                  },
+                  "xsTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "18px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "28px",
+                  },
+                  "xxlTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "42px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "52px",
+                  },
+                  "xxsTitle": Object {
+                    "color": "#414141",
+                    "fontSize": "18px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "28px",
                   },
                 },
                 "update": [Function],
@@ -7837,10 +7397,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -7889,6 +7449,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -8177,7 +7738,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -8433,13 +7993,12 @@ body {
       <HvFormComposer
         classes={
           Object {
-            "componentContainer": "HvFormComposer-componentContainer-47",
-            "footer": "HvFormComposer-footer-50",
-            "groupTitle": "HvFormComposer-groupTitle-49",
-            "mainContainer": "HvFormComposer-mainContainer-45",
-            "navContainer": "HvFormComposer-navContainer-46",
-            "root": "HvFormComposer-root-44",
-            "title": "HvFormComposer-title-48",
+            "componentContainer": "HvFormComposer-componentContainer-30",
+            "footer": "HvFormComposer-footer-32",
+            "mainContainer": "HvFormComposer-mainContainer-28",
+            "navContainer": "HvFormComposer-navContainer-29",
+            "root": "HvFormComposer-root-27",
+            "title": "HvFormComposer-title-31",
           }
         }
         footerContent={Array []}
@@ -8477,10 +8036,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -8529,6 +8088,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -8817,7 +8377,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -9048,80 +8607,38 @@ body {
         }
       >
         <div
-          className="HvFormComposer-root-44"
+          className="HvFormComposer-root-27"
         >
           <WithStyles(Typography)
-            className="HvFormComposer-title-48"
+            className="HvFormComposer-title-31"
+            variant="xlTitle"
           >
             <Typography
-              align="inherit"
-              className="HvFormComposer-title-48"
+              className="HvFormComposer-title-31"
               classes={
                 Object {
-                  "alignCenter": "MuiTypography-alignCenter-74",
-                  "alignJustify": "MuiTypography-alignJustify-76",
-                  "alignLeft": "MuiTypography-alignLeft-73",
-                  "alignRight": "MuiTypography-alignRight-75",
-                  "body1": "MuiTypography-body1-60",
-                  "body2": "MuiTypography-body2-59",
-                  "button": "MuiTypography-button-62",
-                  "caption": "MuiTypography-caption-61",
-                  "colorError": "MuiTypography-colorError-85",
-                  "colorInherit": "MuiTypography-colorInherit-80",
-                  "colorPrimary": "MuiTypography-colorPrimary-81",
-                  "colorSecondary": "MuiTypography-colorSecondary-82",
-                  "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                  "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                  "display1": "MuiTypography-display1-55",
-                  "display2": "MuiTypography-display2-54",
-                  "display3": "MuiTypography-display3-53",
-                  "display4": "MuiTypography-display4-52",
-                  "gutterBottom": "MuiTypography-gutterBottom-78",
-                  "h1": "MuiTypography-h1-63",
-                  "h2": "MuiTypography-h2-64",
-                  "h3": "MuiTypography-h3-65",
-                  "h4": "MuiTypography-h4-66",
-                  "h5": "MuiTypography-h5-67",
-                  "h6": "MuiTypography-h6-68",
-                  "headline": "MuiTypography-headline-56",
-                  "inline": "MuiTypography-inline-86",
-                  "noWrap": "MuiTypography-noWrap-77",
-                  "overline": "MuiTypography-overline-71",
-                  "paragraph": "MuiTypography-paragraph-79",
-                  "root": "MuiTypography-root-51",
-                  "srOnly": "MuiTypography-srOnly-72",
-                  "subheading": "MuiTypography-subheading-58",
-                  "subtitle1": "MuiTypography-subtitle1-69",
-                  "subtitle2": "MuiTypography-subtitle2-70",
-                  "title": "MuiTypography-title-57",
+                  "3xlTitle": "Typography-3xlTitle-35",
+                  "4xlTitle": "Typography-4xlTitle-34",
+                  "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
+                  "disabledButtonText": "Typography-disabledButtonText-46",
+                  "disabledText": "Typography-disabledText-50",
+                  "highlightText": "Typography-highlightText-43",
+                  "infoText": "Typography-infoText-48",
+                  "inlineLink": "Typography-inlineLink-45",
+                  "lTitle": "Typography-lTitle-38",
+                  "labelText": "Typography-labelText-47",
+                  "mTitle": "Typography-mTitle-39",
+                  "normalText": "Typography-normalText-44",
+                  "sLink": "Typography-sLink-49",
+                  "sTitle": "Typography-sTitle-40",
+                  "vizText": "Typography-vizText-51",
+                  "xlTitle": "Typography-xlTitle-37",
+                  "xsTitle": "Typography-xsTitle-41",
+                  "xxlTitle": "Typography-xxlTitle-36",
+                  "xxsTitle": "Typography-xxsTitle-42",
                 }
               }
-              color="default"
-              gutterBottom={false}
-              headlineMapping={
-                Object {
-                  "body1": "p",
-                  "body2": "p",
-                  "display1": "h1",
-                  "display2": "h1",
-                  "display3": "h1",
-                  "display4": "h1",
-                  "h1": "h1",
-                  "h2": "h2",
-                  "h3": "h3",
-                  "h4": "h4",
-                  "h5": "h5",
-                  "h6": "h6",
-                  "headline": "h1",
-                  "subheading": "h3",
-                  "subtitle1": "h6",
-                  "subtitle2": "h6",
-                  "title": "h2",
-                }
-              }
-              inline={false}
-              noWrap={false}
-              paragraph={false}
               theme={
                 Object {
                   "breakpoints": Object {
@@ -9137,10 +8654,10 @@ body {
                     "only": [Function],
                     "up": [Function],
                     "values": Object {
-                      "lg": 1280,
-                      "md": 960,
+                      "lg": 840,
+                      "md": 720,
                       "sm": 600,
-                      "xl": 1920,
+                      "xl": 1990,
                       "xs": 0,
                     },
                     "width": [Function],
@@ -9189,6 +8706,7 @@ body {
                       "xl": "90",
                       "xs": "10",
                     },
+                    "type": "light",
                     "typography": Object {
                       "3xlTitle": Object {
                         "color": "#414141",
@@ -9477,7 +8995,6 @@ body {
                     "lg": "60",
                     "md": "30",
                     "sm": "20",
-                    "unit": 8,
                     "xl": "90",
                     "xs": "10",
                   },
@@ -9706,95 +9223,52 @@ body {
                   },
                 }
               }
+              variant="xlTitle"
             >
-              <p
-                className="MuiTypography-root-51 MuiTypography-body2-59 HvFormComposer-title-48"
+              <span
+                className="Typography-xlTitle-37 Typography-baseFontFamily-52 HvFormComposer-title-31"
               />
             </Typography>
           </WithStyles(Typography)>
           <div
-            className="HvFormComposer-mainContainer-45"
+            className="HvFormComposer-mainContainer-28"
           >
             <div
-              className="HvFormComposer-componentContainer-47"
+              className="HvFormComposer-componentContainer-30"
             >
               <div
                 key="Group1"
               >
                 <WithStyles(Typography)
-                  className="HvFormComposer-groupTitle-49"
                   id="Group1"
+                  variant="mTitle"
                 >
                   <Typography
-                    align="inherit"
-                    className="HvFormComposer-groupTitle-49"
                     classes={
                       Object {
-                        "alignCenter": "MuiTypography-alignCenter-74",
-                        "alignJustify": "MuiTypography-alignJustify-76",
-                        "alignLeft": "MuiTypography-alignLeft-73",
-                        "alignRight": "MuiTypography-alignRight-75",
-                        "body1": "MuiTypography-body1-60",
-                        "body2": "MuiTypography-body2-59",
-                        "button": "MuiTypography-button-62",
-                        "caption": "MuiTypography-caption-61",
-                        "colorError": "MuiTypography-colorError-85",
-                        "colorInherit": "MuiTypography-colorInherit-80",
-                        "colorPrimary": "MuiTypography-colorPrimary-81",
-                        "colorSecondary": "MuiTypography-colorSecondary-82",
-                        "colorTextPrimary": "MuiTypography-colorTextPrimary-83",
-                        "colorTextSecondary": "MuiTypography-colorTextSecondary-84",
-                        "display1": "MuiTypography-display1-55",
-                        "display2": "MuiTypography-display2-54",
-                        "display3": "MuiTypography-display3-53",
-                        "display4": "MuiTypography-display4-52",
-                        "gutterBottom": "MuiTypography-gutterBottom-78",
-                        "h1": "MuiTypography-h1-63",
-                        "h2": "MuiTypography-h2-64",
-                        "h3": "MuiTypography-h3-65",
-                        "h4": "MuiTypography-h4-66",
-                        "h5": "MuiTypography-h5-67",
-                        "h6": "MuiTypography-h6-68",
-                        "headline": "MuiTypography-headline-56",
-                        "inline": "MuiTypography-inline-86",
-                        "noWrap": "MuiTypography-noWrap-77",
-                        "overline": "MuiTypography-overline-71",
-                        "paragraph": "MuiTypography-paragraph-79",
-                        "root": "MuiTypography-root-51",
-                        "srOnly": "MuiTypography-srOnly-72",
-                        "subheading": "MuiTypography-subheading-58",
-                        "subtitle1": "MuiTypography-subtitle1-69",
-                        "subtitle2": "MuiTypography-subtitle2-70",
-                        "title": "MuiTypography-title-57",
-                      }
-                    }
-                    color="default"
-                    gutterBottom={false}
-                    headlineMapping={
-                      Object {
-                        "body1": "p",
-                        "body2": "p",
-                        "display1": "h1",
-                        "display2": "h1",
-                        "display3": "h1",
-                        "display4": "h1",
-                        "h1": "h1",
-                        "h2": "h2",
-                        "h3": "h3",
-                        "h4": "h4",
-                        "h5": "h5",
-                        "h6": "h6",
-                        "headline": "h1",
-                        "subheading": "h3",
-                        "subtitle1": "h6",
-                        "subtitle2": "h6",
-                        "title": "h2",
+                        "3xlTitle": "Typography-3xlTitle-35",
+                        "4xlTitle": "Typography-4xlTitle-34",
+                        "5xlTitle": "Typography-5xlTitle-33",
+                        "baseFontFamily": "Typography-baseFontFamily-52",
+                        "disabledButtonText": "Typography-disabledButtonText-46",
+                        "disabledText": "Typography-disabledText-50",
+                        "highlightText": "Typography-highlightText-43",
+                        "infoText": "Typography-infoText-48",
+                        "inlineLink": "Typography-inlineLink-45",
+                        "lTitle": "Typography-lTitle-38",
+                        "labelText": "Typography-labelText-47",
+                        "mTitle": "Typography-mTitle-39",
+                        "normalText": "Typography-normalText-44",
+                        "sLink": "Typography-sLink-49",
+                        "sTitle": "Typography-sTitle-40",
+                        "vizText": "Typography-vizText-51",
+                        "xlTitle": "Typography-xlTitle-37",
+                        "xsTitle": "Typography-xsTitle-41",
+                        "xxlTitle": "Typography-xxlTitle-36",
+                        "xxsTitle": "Typography-xxsTitle-42",
                       }
                     }
                     id="Group1"
-                    inline={false}
-                    noWrap={false}
-                    paragraph={false}
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -9810,10 +9284,10 @@ body {
                           "only": [Function],
                           "up": [Function],
                           "values": Object {
-                            "lg": 1280,
-                            "md": 960,
+                            "lg": 840,
+                            "md": 720,
                             "sm": 600,
-                            "xl": 1920,
+                            "xl": 1990,
                             "xs": 0,
                           },
                           "width": [Function],
@@ -9862,6 +9336,7 @@ body {
                             "xl": "90",
                             "xs": "10",
                           },
+                          "type": "light",
                           "typography": Object {
                             "3xlTitle": Object {
                               "color": "#414141",
@@ -10150,7 +9625,6 @@ body {
                           "lg": "60",
                           "md": "30",
                           "sm": "20",
-                          "unit": 8,
                           "xl": "90",
                           "xs": "10",
                         },
@@ -10379,13 +9853,14 @@ body {
                         },
                       }
                     }
+                    variant="mTitle"
                   >
-                    <p
-                      className="MuiTypography-root-51 MuiTypography-body2-59 HvFormComposer-groupTitle-49"
+                    <span
+                      className="Typography-mTitle-39 Typography-baseFontFamily-52"
                       id="Group1"
                     >
                       Group1
-                    </p>
+                    </span>
                   </Typography>
                 </WithStyles(Typography)>
                 <div

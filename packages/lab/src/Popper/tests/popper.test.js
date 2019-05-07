@@ -19,10 +19,11 @@
 import React from "react";
 import { mount } from "enzyme";
 import Popper from "@material-ui/core/Popper";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Paper from "@material-ui/core/Paper";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-
+import withStyles from "@material-ui/core/styles/withStyles";
+import Style from "../styles";
 import withPopper from "../withPopper";
 import Content from "../Content";
 
@@ -37,7 +38,9 @@ describe("Hv Popper HOC", () => {
 
   const btn = props => (
     <HvProvider>
-      <button type="button" {...props}>popper button</button>
+      <button type="button" {...props}>
+        popper button
+      </button>
     </HvProvider>
   );
 
@@ -113,7 +116,17 @@ describe("Hv Popper", () => {
     });
 
     it("when given key-value pairs, they are displayed properly in the popper", () => {
-      wrapper = mount(<Content open classes={{}} content={data} />);
+      const ContentSample = () => <Content open classes={{}} content={data} />;
+
+      const ContentWithStyle = withStyles(Style, { withTheme: true })(
+        ContentSample
+      );
+
+      wrapper = mount(
+        <HvProvider>
+          <ContentWithStyle open classes={{}} content={data} />
+        </HvProvider>
+      );
 
       const keyValuePairs = wrapper.find(".key-value");
       expect(keyValuePairs.length).toBe(3);
@@ -121,10 +134,10 @@ describe("Hv Popper", () => {
       keyValuePairs.forEach((keyValue, i) => {
         expect(keyValue.props().children.length).toBe(2);
 
-        const key = keyValue.find(Typography).get(0);
+        const key = keyValue.find(HvTypography).get(0);
         expect(key.props.children).toBe(`data${i + 1}:`);
 
-        const value = keyValue.find(Typography).get(1);
+        const value = keyValue.find(HvTypography).get(1);
         expect(value.props.children).toBe(`test data ${i + 1}`);
       });
     });

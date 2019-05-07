@@ -70,6 +70,15 @@ const ListOfShape = ({ classes, obj }) => (
 );
 
 const parseDescription = description => {
+  if(description.indexOf("@deprecated") > -1) {
+    const text = description.split("@deprecated");
+    return (
+      <>
+        <p><i><b>Deprecated:</b>{` ${text[1]}`}</i></p>
+        <p>{text[0].split("-")[0]}</p>
+      </>);
+  }
+
   return description.split("-")[0];
 };
 
@@ -105,4 +114,8 @@ const parseType = (type, classes) => {
   return typeValue;
 };
 
-export { parseType, parseDescription };
+const isDeprecated = prop => {
+  return prop.description.indexOf("@deprecated") > -1;
+};
+
+export { parseType, parseDescription, isDeprecated };

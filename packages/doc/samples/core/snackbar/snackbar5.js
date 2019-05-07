@@ -42,29 +42,29 @@ export default (
   <div>
     Snackbar with icons
     <div>
-      <SnackbarContentWrapper message="Default" variant="default" showIcon />
+      <SnackbarContentWrapper label="Default" variant="default" showIcon />
     </div>
     <p />
     <div>
       <SnackbarContentWrapper
-        message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+        label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
         showIcon
       />
     </div>
     <p />
     <div>
-      <SnackbarContentWrapper message="Success" variant="success" showIcon />
+      <SnackbarContentWrapper label="Success" variant="success" showIcon />
     </div>
     <p />
     <div>
-      <SnackbarContentWrapper message="Error" variant="error" showIcon />
+      <SnackbarContentWrapper label="Error" variant="error" showIcon />
     </div>
     <p />
     Snackbar with custom icons
     <div>
       <SnackbarContentWrapper
-        message="default"
+        label="default"
         variant="default"
         customIcon={<FastForward16 />}
       />
@@ -72,7 +72,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+        label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
         customIcon={<FastForward16 />}
       />
@@ -80,7 +80,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="Success"
+        label="Success"
         variant="success"
         customIcon={<FastForward16 />}
       />
@@ -88,7 +88,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="Error"
+        label="Error"
         variant="error"
         customIcon={<FastForward16 />}
       />
@@ -97,7 +97,7 @@ export default (
     Snackbar with icons and action
     <div>
       <SnackbarContentWrapper
-        message="default"
+        label="default"
         variant="default"
         showIcon
         action={actionComponent}
@@ -106,7 +106,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+        label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
         showIcon
         action={actionComponent}
@@ -116,7 +116,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="Success"
+        label="Success"
         variant="success"
         showIcon
         action={actionComponent}
@@ -125,7 +125,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="Error"
+        label="Error"
         variant="error"
         showIcon
         action={actionComponent}
@@ -134,28 +134,28 @@ export default (
     <p />
     Snackbar without icons
     <div>
-      <SnackbarContentWrapper message="default" variant="default" />
+      <SnackbarContentWrapper label="default" variant="default" />
     </div>
     <p />
     <div>
       <SnackbarContentWrapper
-        message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+        label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
       />
     </div>
     <p />
     <div>
-      <SnackbarContentWrapper message="Success" variant="success" />
+      <SnackbarContentWrapper label="Success" variant="success" />
     </div>
     <p />
     <div>
-      <SnackbarContentWrapper message="Error" variant="error" />
+      <SnackbarContentWrapper label="Error" variant="error" />
     </div>
     <p />
     Snackbar without icons and with action
     <div>
       <SnackbarContentWrapper
-        message="default"
+        label="default"
         variant="default"
         action={actionComponent}
       />
@@ -163,7 +163,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+        label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
         action={actionComponent}
       />
@@ -171,7 +171,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="success"
+        label="success"
         variant="success"
         action={actionComponent}
       />
@@ -179,7 +179,7 @@ export default (
     <p />
     <div>
       <SnackbarContentWrapper
-        message="error"
+        label="error"
         variant="error"
         action={actionComponent}
       />

@@ -44,12 +44,12 @@ const styles = theme => ({
     height: "30px",
     width: "100%",
     background: "transparent",
-    ...theme.typography.body1,
+    ...theme.hv.typography.normalText,
     "&:focus": {
       outline: "none"
     },
     "&::placeholder": {
-      ...theme.hv.typography.body1,
+      ...theme.hv.typography.normalText,
       color: theme.hv.typography.disabledText.color
     }
   },

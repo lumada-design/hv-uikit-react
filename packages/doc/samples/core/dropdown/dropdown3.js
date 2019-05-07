@@ -64,5 +64,5 @@ const data = [
 ];
 
 export default (
-  <HvDropdown values={data} multiSelect={false} showSearch />
+  <HvDropdown values={data} multiSelect={false} showSearch notifyChangesOnFirstRender />
 );

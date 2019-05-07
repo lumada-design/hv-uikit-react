@@ -31,7 +31,7 @@ const SimpleHeaderController = ({
   navigationData,
   companyLogo,
   productLogo,
-  productText,
+  label,
   itemActions,
   userData,
   userIcon,
@@ -49,7 +49,7 @@ const SimpleHeaderController = ({
       // Brand
       companyLogo={companyLogo}
       productLogo={productLogo}
-      productText={productText}
+      label={label}
       // Navigation
       navigationData={navigationData}
       onNavigationClick={handleChange}

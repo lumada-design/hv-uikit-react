@@ -20,7 +20,7 @@ import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconValid from "@hv/uikit-react-icons/dist/Level0.S";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
-const ThroughputKpiTextConfiguration = {
+const labels = {
   title: "Total throughput",
   indicator: "16,699.82",
   unit: "MB/S",
@@ -56,7 +56,7 @@ const throughputComparisonVisual = () => (
         paddingBottom: "2px"
       }}
     >
-      {ThroughputKpiTextConfiguration.comparisonIndicator}
+      {labels.comparisonIndicator}
     </Typography>
   </div>
 );
@@ -65,7 +65,7 @@ const icon = () => <IconValid color={["none", "#63A621"]} />;
 
 export default (
   <HvKpi
-    kpiTextConfiguration={ThroughputKpiTextConfiguration}
+    labels={labels}
     visualIndicator={icon()}
     visualComparison={throughputComparisonVisual()}
   />

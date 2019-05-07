@@ -17,13 +17,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const HvSnackbar = props => {
   const {
     classes,
+    className,
+    id,
     open,
     onClose,
+    label,
     message,
     anchorOrigin,
     autoHideDuration,
@@ -36,6 +40,8 @@ const HvSnackbar = props => {
   return (
     <Snackbar
       classes={classes}
+      className={className}
+      id={id}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
@@ -43,7 +49,7 @@ const HvSnackbar = props => {
       transitionDuration={0}
     >
       <HvSnackBarContentWrapper
-        message={message}
+        label={label || message}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
@@ -54,6 +60,14 @@ const HvSnackbar = props => {
 };
 
 HvSnackbar.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -93,8 +107,13 @@ HvSnackbar.propTypes = {
   onClose: PropTypes.func,
   /**
    * The message to display.
+   * @deprecated Instead use the label property
    */
-  message: PropTypes.node,
+  message: deprecatedPropType(PropTypes.node),
+  /**
+   * The message to display.
+   */
+  label: PropTypes.string,
   /**
    *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right"
    */
@@ -125,7 +144,10 @@ HvSnackbar.propTypes = {
 };
 
 HvSnackbar.defaultProps = {
-  message: "",
+  className: "",
+  id: undefined,
+  message: undefined,
+  label: "",
   open: false,
   anchorOrigin: { vertical: "top", horizontal: "right" },
   onClose: null,

@@ -16,6 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import isNill from "lodash/isNil";
@@ -44,6 +46,8 @@ import Actions from "./Actions";
  */
 const Main = ({
   classes,
+  className,
+  id,
   position,
   navigationData,
   selected,
@@ -55,18 +59,24 @@ const Main = ({
   companyLogo,
   productLogo,
   productText,
+  label,
   itemActions,
   useRouter
 }) => {
   const userExists = !(isNill(userData) && isNill(userIcon));
 
   return (
-    <AppBar color="default" position={position} className={classes.root}>
+    <AppBar
+      color="default"
+      position={position}
+      className={classNames(classes.root, className)}
+      id={id}
+    >
       <Toolbar variant="dense">
         <Brand
           companyLogo={companyLogo}
           productLogo={productLogo}
-          productText={productText}
+          productText={productText || label}
         />
         <Navigation
           navigationData={navigationData}
@@ -83,6 +93,14 @@ const Main = ({
 };
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -112,9 +130,16 @@ Main.propTypes = {
   productLogo: PropTypes.node,
   /**
    * Product text.
+   * @deprecated Instead use the label property
    */
-  productText: PropTypes.string,
-
+  productText: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the label title property"
+  ),
+  /**
+   * Product text.
+   */
+  label: PropTypes.string,
   /**
    * The index of the selected navigation item.
    */
@@ -162,10 +187,13 @@ Main.propTypes = {
 };
 
 Main.defaultProps = {
+  className: "",
+  id: undefined,
   position: "fixed",
 
   companyLogo: null,
-  productText: null,
+  label: null,
+  productText: undefined,
   productLogo: null,
 
   navigationData: [],

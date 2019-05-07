@@ -18,10 +18,10 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
         "only": [Function],
         "up": [Function],
         "values": Object {
-          "lg": 1280,
-          "md": 960,
+          "lg": 840,
+          "md": 720,
           "sm": 600,
-          "xl": 1920,
+          "xl": 1990,
           "xs": 0,
         },
         "width": [Function],
@@ -70,6 +70,7 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
           "xl": "90",
           "xs": "10",
         },
+        "type": "light",
         "typography": Object {
           "3xlTitle": Object {
             "color": "#414141",
@@ -358,7 +359,6 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
         "lg": "60",
         "md": "30",
         "sm": "20",
-        "unit": 8,
         "xl": "90",
         "xs": "10",
       },
@@ -592,6 +592,7 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
   <ContextProvider
     value={
       Object {
+        "changeTheme": [Function],
         "router": null,
       }
     }
@@ -607,8 +608,10 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
 
 exports[`Brand withStyles should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -634,10 +637,10 @@ exports[`Brand withStyles should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -686,6 +689,7 @@ exports[`Brand withStyles should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -974,7 +978,6 @@ exports[`Brand withStyles should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3904,10 +3907,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3956,6 +3959,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -4244,7 +4248,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -5705,10 +5708,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -5757,6 +5760,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -6045,7 +6049,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -6312,10 +6315,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -6364,6 +6367,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -6652,7 +6656,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },

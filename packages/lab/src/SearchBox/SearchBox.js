@@ -62,10 +62,11 @@ class HvSearchBox extends React.Component {
   };
 
   render() {
-    const { placeholder, classes } = this.props;
+    const { placeholder, classes, searchInput } = this.props;
     const { value } = this.state;
+    const inputValue = searchInput && searchInput !== "" ? searchInput : value;
 
-    const hasInputValue = value && value !== "";
+    const hasInputValue = inputValue && inputValue !== "";
 
     const iconRenderer = hasInputValue ? (
       <span onClick={this.handleInputClear}>
@@ -83,7 +84,7 @@ class HvSearchBox extends React.Component {
       >
         <input
           className={classes.input}
-          value={value}
+          value={inputValue}
           placeholder={placeholder}
           type="text"
           onChange={this.handleInputChange}
@@ -115,12 +116,17 @@ HvSearchBox.propTypes = {
   /**
    * The function that use to validate input,
    */
-  onValidate: PropTypes.func
+  onValidate: PropTypes.func,
+  /**
+   * The initial value to be used by the input
+   */
+  searchInput: PropTypes.string
 };
 
 HvSearchBox.defaultProps = {
   value: "",
   placeholder: "Search",
+  searchInput: "",
   onChange: () => {},
   onValidate: undefined
 };

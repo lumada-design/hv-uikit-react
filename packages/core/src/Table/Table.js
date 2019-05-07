@@ -18,11 +18,12 @@ import React from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
-import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
+import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {
   appendClassnames,
@@ -296,6 +297,8 @@ class Table extends React.Component {
   render() {
     const {
       classes,
+      className,
+      id,
       columns,
       data,
       titleText,
@@ -304,6 +307,7 @@ class Table extends React.Component {
       idForCheckbox,
       useRouter,
       getTrProps,
+      labels,
       ...other
     } = this.props;
 
@@ -323,14 +327,14 @@ class Table extends React.Component {
           : classes.sortedIconHidden;
 
         return (
-          <div className={classes.headerContainer}>
+          <div className={classNames(classes.headerContainer, className)}>
             <div className={classNames(classes.rtSortIcon, sortedIconClasses)}>
               {SortedIcon}
             </div>
             {/* Setter of the styles for the header */}
             <div className={classes.headerTextContainer}>
-              <Typography
-                variant="subtitle2"
+              <HvTypography
+                variant="labelText"
                 className={classNames(classes.headerProps, {
                   [classes.headerAlphaNumeric]:
                     props.column.cellType === "alpha-numeric" ||
@@ -339,7 +343,7 @@ class Table extends React.Component {
                 })}
               >
                 {props.column.headerText}
-              </Typography>
+              </HvTypography>
             </div>
           </div>
         );
@@ -383,15 +387,15 @@ class Table extends React.Component {
     const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
 
     return (
-      <div className={classes.tableContainer}>
-        {titleText && (
+      <div id={id} className={classes.tableContainer}>
+        {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
-              <Typography variant="h3">{titleText}</Typography>
+              <HvTypography variant="mTitle">{(titleText || labels.titleText)}</HvTypography>
             </div>
-            {subtitleText && (
+            {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
-                <Typography variant="body1">{subtitleText}</Typography>
+                <HvTypography variant="normalText">{(subtitleText || labels.subtitleText)}</HvTypography>
               </div>
             )}
           </div>
@@ -421,6 +425,14 @@ class Table extends React.Component {
 }
 
 Table.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * the classes object to be applied into the root object.
    */
@@ -511,13 +523,22 @@ Table.propTypes = {
     firstWithNumeric: PropTypes.string
   }).isRequired,
   /**
-   * Title of the table.
+   * The labels inside the table. 
    */
-  titleText: PropTypes.string,
+  labels: PropTypes.shape({
+    titleText: PropTypes.string,
+    subtitleText: PropTypes.string
+  }),
+  /**
+   * Title of the table.
+   * @deprecated Instead use the labels property
+   */
+  titleText: deprecatedPropType(PropTypes.string),
   /**
    * Subtitle of the table.
+   * @deprecated Instead use the labels property
    */
-  subtitleText: PropTypes.string,
+  subtitleText: deprecatedPropType(PropTypes.string),
   /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
    Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
@@ -593,8 +614,14 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-  titleText: "",
-  subtitleText: "",
+  className: "",
+  id: undefined,
+  titleText: undefined,
+  subtitleText: undefined,
+  labels: {
+    titleText: "",
+    subtitleText: ""
+  },
   showPagination: true,
   showPageSize: true,
   pageSize: undefined,

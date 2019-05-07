@@ -17,7 +17,7 @@
 import React from "react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 
-const emailInputTextConfiguration = {
+const labels = {
   placeholder: "example@domain.com",
   infoText: "Enter your email",
   inputLabel: "Email",
@@ -28,7 +28,7 @@ const emailInputTextConfiguration = {
 
 export default (
   <HvInput
-    inputTextConfiguration={emailInputTextConfiguration}
+    labels={labels}
     validationType="email"
     validationState="invalid"
     value="wrong"

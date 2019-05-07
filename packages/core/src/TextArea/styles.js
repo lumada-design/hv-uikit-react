@@ -46,10 +46,10 @@ const styles = theme => ({
     ...theme.hv.typography.disabledText
   },
   maxCharacter: {
-    ...theme.typography.body2
+    ...theme.hv.typography.infoText
   },
   currentCounter: {
-    ...theme.typography.subtitle2
+    ...theme.hv.typography.labelText
   }
 });
 

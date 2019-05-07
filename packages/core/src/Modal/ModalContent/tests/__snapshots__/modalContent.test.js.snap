@@ -5,7 +5,7 @@ exports[`ModalContent Component allows external styles to be added 1`] = `
   className="testClassRoot undefined"
 >
   <WithStyles(Typography)
-    variant="body1"
+    variant="normalText"
   >
     Modal Content
   </WithStyles(Typography)>
@@ -17,7 +17,7 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
   className="undefined"
 >
   <WithStyles(Typography)
-    variant="body1"
+    variant="normalText"
   >
     Modal Content
   </WithStyles(Typography)>
@@ -42,10 +42,10 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "only": [Function],
         "up": [Function],
         "values": Object {
-          "lg": 1280,
-          "md": 960,
+          "lg": 840,
+          "md": 720,
           "sm": 600,
-          "xl": 1920,
+          "xl": 1990,
           "xs": 0,
         },
         "width": [Function],
@@ -94,6 +94,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
           "xl": "90",
           "xs": "10",
         },
+        "type": "light",
         "typography": Object {
           "3xlTitle": Object {
             "color": "#414141",
@@ -382,7 +383,6 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "lg": "60",
         "md": "30",
         "sm": "20",
-        "unit": 8,
         "xl": "90",
         "xs": "10",
       },
@@ -616,6 +616,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
   <ContextProvider
     value={
       Object {
+        "changeTheme": [Function],
         "router": null,
       }
     }

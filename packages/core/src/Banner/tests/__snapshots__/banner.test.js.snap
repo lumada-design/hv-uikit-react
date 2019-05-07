@@ -2,8 +2,10 @@
 
 exports[`Banner  should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -11,7 +13,7 @@ exports[`Banner  should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999991,
+            "index": -99999999990,
           },
           "themingEnabled": true,
         } => Map {
@@ -29,10 +31,10 @@ exports[`Banner  should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`Banner  should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`Banner  should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -969,7 +971,7 @@ exports[`Banner  should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999991,
+                "index": -99999999990,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3135,7 +3137,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999991,
+                  "index": -99999999990,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3281,7 +3283,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999992,
+            "index": -99999999991,
           },
           "themingEnabled": true,
         } => Map {
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4247,7 +4249,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999992,
+                "index": -99999999991,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4798,7 +4800,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999992,
+                  "index": -99999999991,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -4954,10 +4956,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -5006,6 +5008,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5294,7 +5297,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -6046,7 +6048,7 @@ body {
 .MuiSnackbar-anchorOriginTopCenter-5 {
   top: 0;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginTopCenter-5 {
     left: 50%;
     right: auto;
@@ -6056,7 +6058,7 @@ body {
 .MuiSnackbar-anchorOriginBottomCenter-6 {
   bottom: 0;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginBottomCenter-6 {
     left: 50%;
     right: auto;
@@ -6067,7 +6069,7 @@ body {
   top: 0;
   justify-content: flex-end;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginTopRight-7 {
     top: 24px;
     left: auto;
@@ -6078,7 +6080,7 @@ body {
   bottom: 0;
   justify-content: flex-end;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginBottomRight-8 {
     left: auto;
     right: 24px;
@@ -6089,7 +6091,7 @@ body {
   top: 0;
   justify-content: flex-start;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginTopLeft-9 {
     top: 24px;
     left: 24px;
@@ -6100,7 +6102,7 @@ body {
   bottom: 0;
   justify-content: flex-start;
 }
-@media (min-width:960px) {
+@media (min-width:720px) {
   .MuiSnackbar-anchorOriginBottomLeft-10 {
     left: 24px;
     right: auto;
@@ -6143,7 +6145,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -6443,7 +6445,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -6744,7 +6746,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7045,7 +7047,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7346,7 +7348,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7647,7 +7649,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7975,9 +7977,9 @@ body {
                     "right": 0,
                     "z-index": "1400",
                   },
-                  "@media (min-width:960px)": ConditionalRule {
+                  "@media (min-width:720px)": ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:960px)",
+                    "key": "@media (min-width:720px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -8797,9 +8799,9 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  "@media (min-width:960px)": null,
+                  "@media (min-width:720px)": null,
                   "anchorOriginBottomCenter": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8807,7 +8809,7 @@ body {
                     "bottom": 0,
                   },
                   "anchorOriginBottomLeft": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "bottom": 24,
                       "left": 24,
                       "right": "auto",
@@ -8816,7 +8818,7 @@ body {
                     "justifyContent": "flex-start",
                   },
                   "anchorOriginBottomRight": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "bottom": 24,
                       "left": "auto",
                       "right": 24,
@@ -8825,7 +8827,7 @@ body {
                     "justifyContent": "flex-end",
                   },
                   "anchorOriginTopCenter": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8833,7 +8835,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopLeft": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "left": 24,
                       "right": "auto",
                       "top": 24,
@@ -8842,7 +8844,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopRight": Object {
-                    "@media (min-width:960px)": Object {
+                    "@media (min-width:720px)": Object {
                       "left": "auto",
                       "right": 24,
                       "top": 24,
@@ -8883,10 +8885,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -8935,6 +8937,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -9223,7 +9226,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -9476,7 +9478,7 @@ body {
           }
         }
         customIcon={null}
-        message=""
+        label=""
         onClose={[Function]}
         open={false}
         showIcon={false}
@@ -9495,10 +9497,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -9547,6 +9549,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -9835,7 +9838,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },

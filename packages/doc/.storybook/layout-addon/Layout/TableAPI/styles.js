@@ -43,6 +43,9 @@ const styles = theme => ({
     listStyleType: "none",
     paddingLeft: "10px",
     margin: 0
+  },
+  deprecated: {
+    textDecoration: "line-through"
   }
 });
 

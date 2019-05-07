@@ -16,9 +16,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 import isNill from "lodash/isNil";
 import classNames from "classnames";
+import HvTypography from "../../Typography";
 import ImageContainer from "../ImageContainer";
 
 /**
@@ -51,7 +51,7 @@ const ElementContainer = ({ classes, text, existLogo }) => (
       [classes.paddingTextLeft]: existLogo
     })}
   >
-    <Typography variant="subtitle1">{text}</Typography>
+    <HvTypography variant="highlightText">{text}</HvTypography>
   </div>
 );
 

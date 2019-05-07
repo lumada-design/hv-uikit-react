@@ -157,7 +157,7 @@ const styles = theme => ({
   theadGroupTr: {},
   theadGroupTh: {},
   thead: {
-    ...theme.typography.subtitle2
+    ...theme.hv.typography.labelText
   },
   theadTh: {},
 

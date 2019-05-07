@@ -2,8 +2,10 @@
 
 exports[`<List /> should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`<List /> should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`<List /> should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`<List /> should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3281,7 +3283,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999985,
+            "index": -99999999984,
           },
           "themingEnabled": true,
         } => Map {
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4267,7 +4269,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999985,
+                "index": -99999999984,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4407,14 +4409,8 @@ body {
   user-select: none;
 }
 .List-singleSelection-5 {
-  color: #414141;
   cursor: pointer;
   padding: 6px 10px;
-  font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.02em;
 }
 .List-singleSelection-5:hover {
   background: #F0F0F0;
@@ -4444,9 +4440,8 @@ body {
 .List-selectAll-10 &gt; span {
   color: #414141;
   font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 600;
   line-height: 20px;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 .List-actions-11 {
@@ -4503,13 +4498,7 @@ body {
                     "width": "100%",
                   },
                   Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   Object {
@@ -4539,7 +4528,6 @@ body {
                   },
                   Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
@@ -4588,7 +4576,6 @@ body {
                   },
                   ".List-selectAll-10 > span": Object {
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
@@ -4608,13 +4595,7 @@ body {
                     "width": "100%",
                   },
                   ".List-singleSelection-5": Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   ".List-singleSelection-5:hover": Object {
@@ -4664,13 +4645,7 @@ body {
                     "width": "100%",
                   },
                   "singleSelection": Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   "truncate": Object {
@@ -5059,7 +5034,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999985,
+                  "index": -99999999984,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5180,7 +5155,6 @@ body {
                 "raw": Object {
                   ".List-selectAll-10 > span": Object {
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "14px",
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
@@ -5222,7 +5196,6 @@ body {
                   "selectAll": Object {
                     "& > span": Object {
                       "color": "#414141",
-                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "14px",
                       "fontWeight": "600",
                       "letterSpacing": "0.02em",
@@ -5247,13 +5220,7 @@ body {
                     "&:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
-                    "fontSize": "14px",
-                    "fontWeight": "400",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "20px",
                     "padding": "6px 10px",
                   },
                   "truncate": Object {
@@ -5289,10 +5256,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -5341,6 +5308,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5629,7 +5597,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -6376,9 +6343,8 @@ body {
   padding: 5px 30px 5px 5px;
   font-size: 14px;
   background: transparent;
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
-  font-weight: 400;
   line-height: 20px;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
 .Search-input-15:focus {
@@ -6419,7 +6385,6 @@ body {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "400",
                     "height": "30px",
@@ -6449,7 +6414,6 @@ body {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "400",
                     "height": "30px",
@@ -6478,7 +6442,6 @@ body {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
-                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "14px",
                     "font-weight": "400",
                     "height": "30px",
@@ -7000,7 +6963,6 @@ body {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
-                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "height": 30,
@@ -7044,10 +7006,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -7096,6 +7058,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -7384,7 +7347,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -8135,8 +8097,8 @@ body {
 .HvCheckbox-labelTypography-18 {
   color: #414141;
   font-size: 14px;
-  font-weight: 400;
   line-height: 20px;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
 .HvCheckbox-labelDisabled-19 {
@@ -8855,10 +8817,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -8907,6 +8869,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -9195,7 +9158,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -10626,10 +10588,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -10678,6 +10640,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -10966,7 +10929,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -12345,10 +12307,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -12397,6 +12359,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -12685,7 +12648,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -14062,10 +14024,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -14114,6 +14076,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -14402,7 +14365,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -17065,10 +17027,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -17117,6 +17079,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -17405,7 +17368,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -18818,10 +18780,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -18870,6 +18832,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -19158,7 +19121,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -21610,10 +21572,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -21662,6 +21624,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -21950,7 +21913,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -23257,10 +23219,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -23309,6 +23271,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -23597,7 +23560,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -24334,11 +24296,14 @@ body {
                 >
                   
 .HvButton-root-86 {
+  color: #414141;
   cursor: pointer;
   height: 32px;
   padding: 0 10px;
   min-width: 70px;
+  font-size: 14px;
   min-height: 32px;
+  line-height: 20px;
   font-weight: 600;
   text-transform: capitalize;
   letter-spacing: 0.02em;
@@ -24441,10 +24406,13 @@ body {
                 },
                 "index": Array [
                   Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -24585,10 +24553,13 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-86": Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -24635,10 +24606,13 @@ body {
                     "color": "#414141",
                   },
                   "root": Object {
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "font-size": "14px",
                     "font-weight": "600",
                     "height": "32px",
                     "letter-spacing": "0.02em",
+                    "line-height": "20px",
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
@@ -25257,10 +25231,13 @@ body {
                   "root": Object {
                     "&:active": Object {},
                     "&:hover,&:focus": Object {},
+                    "color": "#414141",
                     "cursor": "pointer",
+                    "fontSize": "14px",
                     "fontWeight": "600",
                     "height": "32px",
                     "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
                     "minHeight": "32px",
                     "minWidth": "70px",
                     "padding": "0 10px",
@@ -25318,10 +25295,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -25370,6 +25347,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -25658,7 +25636,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -30973,10 +30950,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -31025,6 +31002,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -31313,7 +31291,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -31604,6 +31581,7 @@ body {
           }
         }
         multiSelect={true}
+        notifyChangesOnFirstRender={false}
         onChange={[Function]}
         selectDefault={true}
         showSearch={true}
@@ -31622,10 +31600,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -31674,6 +31652,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -31962,7 +31941,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -32252,10 +32230,10 @@ body {
                       "only": [Function],
                       "up": [Function],
                       "values": Object {
-                        "lg": 1280,
-                        "md": 960,
+                        "lg": 840,
+                        "md": 720,
                         "sm": 600,
-                        "xl": 1920,
+                        "xl": 1990,
                         "xs": 0,
                       },
                       "width": [Function],
@@ -32304,6 +32282,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -32592,7 +32571,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -32955,10 +32933,10 @@ body {
                       "only": [Function],
                       "up": [Function],
                       "values": Object {
-                        "lg": 1280,
-                        "md": 960,
+                        "lg": 840,
+                        "md": 720,
                         "sm": 600,
-                        "xl": 1920,
+                        "xl": 1990,
                         "xs": 0,
                       },
                       "width": [Function],
@@ -33007,6 +32985,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -33295,7 +33274,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -33527,7 +33505,7 @@ body {
                 value=""
               >
                 <WithStyles(WithFormControlContext(FormControlLabel))
-                  className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20"
+                  className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20 List-selectAll-10"
                   classes={
                     Object {
                       "disabled": "HvCheckbox-labelDisabled-19",
@@ -33584,7 +33562,7 @@ body {
                   labelPlacement="end"
                 >
                   <WithFormControlContext(FormControlLabel)
-                    className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20"
+                    className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20 List-selectAll-10"
                     classes={
                       Object {
                         "disabled": "MuiFormControlLabel-disabled-28 HvCheckbox-labelDisabled-19",
@@ -33645,7 +33623,7 @@ body {
                     labelPlacement="end"
                   >
                     <FormControlLabel
-                      className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20"
+                      className="HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20 List-selectAll-10"
                       classes={
                         Object {
                           "disabled": "MuiFormControlLabel-disabled-28 HvCheckbox-labelDisabled-19",
@@ -33706,7 +33684,7 @@ body {
                       labelPlacement="end"
                     >
                       <label
-                        className="MuiFormControlLabel-root-24 HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20"
+                        className="MuiFormControlLabel-root-24 HvCheckbox-container-17 List-selection-4 HvCheckbox-labelEnd-20 List-selectAll-10"
                       >
                         <WithStyles(Checkbox)
                           checked={false}
@@ -34201,10 +34179,10 @@ body {
                                   "only": [Function],
                                   "up": [Function],
                                   "values": Object {
-                                    "lg": 1280,
-                                    "md": 960,
+                                    "lg": 840,
+                                    "md": 720,
                                     "sm": 600,
-                                    "xl": 1920,
+                                    "xl": 1990,
                                     "xs": 0,
                                   },
                                   "width": [Function],
@@ -34253,6 +34231,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -34541,7 +34520,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -34806,6 +34784,7 @@ body {
               >
                 <HvCheckbox
                   checked={true}
+                  className=""
                   classes={
                     Object {
                       "checkBox": "HvCheckbox-checkBox-22",
@@ -34836,10 +34815,10 @@ body {
                         "only": [Function],
                         "up": [Function],
                         "values": Object {
-                          "lg": 1280,
-                          "md": 960,
+                          "lg": 840,
+                          "md": 720,
                           "sm": 600,
-                          "xl": 1920,
+                          "xl": 1990,
                           "xs": 0,
                         },
                         "width": [Function],
@@ -34888,6 +34867,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -35176,7 +35156,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -36066,10 +36045,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 1280,
-                                      "md": 960,
+                                      "lg": 840,
+                                      "md": 720,
                                       "sm": 600,
-                                      "xl": 1920,
+                                      "xl": 1990,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -36118,6 +36097,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -36406,7 +36386,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -36668,6 +36647,7 @@ body {
               >
                 <HvCheckbox
                   checked={false}
+                  className=""
                   classes={
                     Object {
                       "checkBox": "HvCheckbox-checkBox-22",
@@ -36698,10 +36678,10 @@ body {
                         "only": [Function],
                         "up": [Function],
                         "values": Object {
-                          "lg": 1280,
-                          "md": 960,
+                          "lg": 840,
+                          "md": 720,
                           "sm": 600,
-                          "xl": 1920,
+                          "xl": 1990,
                           "xs": 0,
                         },
                         "width": [Function],
@@ -36750,6 +36730,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -37038,7 +37019,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -37929,10 +37909,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 1280,
-                                      "md": 960,
+                                      "lg": 840,
+                                      "md": 720,
                                       "sm": 600,
-                                      "xl": 1920,
+                                      "xl": 1990,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -37981,6 +37961,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -38269,7 +38250,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -38531,6 +38511,7 @@ body {
               >
                 <HvCheckbox
                   checked={false}
+                  className=""
                   classes={
                     Object {
                       "checkBox": "HvCheckbox-checkBox-22",
@@ -38561,10 +38542,10 @@ body {
                         "only": [Function],
                         "up": [Function],
                         "values": Object {
-                          "lg": 1280,
-                          "md": 960,
+                          "lg": 840,
+                          "md": 720,
                           "sm": 600,
-                          "xl": 1920,
+                          "xl": 1990,
                           "xs": 0,
                         },
                         "width": [Function],
@@ -38613,6 +38594,7 @@ body {
                           "xl": "90",
                           "xs": "10",
                         },
+                        "type": "light",
                         "typography": Object {
                           "3xlTitle": Object {
                             "color": "#414141",
@@ -38901,7 +38883,6 @@ body {
                         "lg": "60",
                         "md": "30",
                         "sm": "20",
-                        "unit": 8,
                         "xl": "90",
                         "xs": "10",
                       },
@@ -39792,10 +39773,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 1280,
-                                      "md": 960,
+                                      "lg": 840,
+                                      "md": 720,
                                       "sm": 600,
-                                      "xl": 1920,
+                                      "xl": 1990,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -39844,6 +39825,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -40132,7 +40114,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -40431,10 +40412,10 @@ body {
                       "only": [Function],
                       "up": [Function],
                       "values": Object {
-                        "lg": 1280,
-                        "md": 960,
+                        "lg": 840,
+                        "md": 720,
                         "sm": 600,
-                        "xl": 1920,
+                        "xl": 1990,
                         "xs": 0,
                       },
                       "width": [Function],
@@ -40483,6 +40464,7 @@ body {
                         "xl": "90",
                         "xs": "10",
                       },
+                      "type": "light",
                       "typography": Object {
                         "3xlTitle": Object {
                           "color": "#414141",
@@ -40771,7 +40753,6 @@ body {
                       "lg": "60",
                       "md": "30",
                       "sm": "20",
-                      "unit": 8,
                       "xl": "90",
                       "xs": "10",
                     },
@@ -41036,10 +41017,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 1280,
-                              "md": 960,
+                              "lg": 840,
+                              "md": 720,
                               "sm": 600,
-                              "xl": 1920,
+                              "xl": 1990,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -41088,6 +41069,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -41376,7 +41358,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -41637,10 +41618,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 1280,
-                                "md": 960,
+                                "lg": 840,
+                                "md": 720,
                                 "sm": 600,
-                                "xl": 1920,
+                                "xl": 1990,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -41689,6 +41670,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -41977,7 +41959,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -42265,10 +42246,10 @@ body {
                                 "only": [Function],
                                 "up": [Function],
                                 "values": Object {
-                                  "lg": 1280,
-                                  "md": 960,
+                                  "lg": 840,
+                                  "md": 720,
                                   "sm": 600,
-                                  "xl": 1920,
+                                  "xl": 1990,
                                   "xs": 0,
                                 },
                                 "width": [Function],
@@ -42317,6 +42298,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -42605,7 +42587,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -42860,10 +42841,10 @@ body {
                                   "only": [Function],
                                   "up": [Function],
                                   "values": Object {
-                                    "lg": 1280,
-                                    "md": 960,
+                                    "lg": 840,
+                                    "md": 720,
                                     "sm": 600,
-                                    "xl": 1920,
+                                    "xl": 1990,
                                     "xs": 0,
                                   },
                                   "width": [Function],
@@ -42912,6 +42893,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -43200,7 +43182,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -43464,10 +43445,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 1280,
-                                      "md": 960,
+                                      "lg": 840,
+                                      "md": 720,
                                       "sm": 600,
-                                      "xl": 1920,
+                                      "xl": 1990,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -43516,6 +43497,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -43804,7 +43786,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -44066,10 +44047,10 @@ body {
                                       "only": [Function],
                                       "up": [Function],
                                       "values": Object {
-                                        "lg": 1280,
-                                        "md": 960,
+                                        "lg": 840,
+                                        "md": 720,
                                         "sm": 600,
-                                        "xl": 1920,
+                                        "xl": 1990,
                                         "xs": 0,
                                       },
                                       "width": [Function],
@@ -44118,6 +44099,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -44406,7 +44388,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },
@@ -44683,10 +44664,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 1280,
-                              "md": 960,
+                              "lg": 840,
+                              "md": 720,
                               "sm": 600,
-                              "xl": 1920,
+                              "xl": 1990,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -44735,6 +44716,7 @@ body {
                               "xl": "90",
                               "xs": "10",
                             },
+                            "type": "light",
                             "typography": Object {
                               "3xlTitle": Object {
                                 "color": "#414141",
@@ -45023,7 +45005,6 @@ body {
                             "lg": "60",
                             "md": "30",
                             "sm": "20",
-                            "unit": 8,
                             "xl": "90",
                             "xs": "10",
                           },
@@ -45284,10 +45265,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 1280,
-                                "md": 960,
+                                "lg": 840,
+                                "md": 720,
                                 "sm": 600,
-                                "xl": 1920,
+                                "xl": 1990,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -45336,6 +45317,7 @@ body {
                                 "xl": "90",
                                 "xs": "10",
                               },
+                              "type": "light",
                               "typography": Object {
                                 "3xlTitle": Object {
                                   "color": "#414141",
@@ -45624,7 +45606,6 @@ body {
                               "lg": "60",
                               "md": "30",
                               "sm": "20",
-                              "unit": 8,
                               "xl": "90",
                               "xs": "10",
                             },
@@ -45912,10 +45893,10 @@ body {
                                 "only": [Function],
                                 "up": [Function],
                                 "values": Object {
-                                  "lg": 1280,
-                                  "md": 960,
+                                  "lg": 840,
+                                  "md": 720,
                                   "sm": 600,
-                                  "xl": 1920,
+                                  "xl": 1990,
                                   "xs": 0,
                                 },
                                 "width": [Function],
@@ -45964,6 +45945,7 @@ body {
                                   "xl": "90",
                                   "xs": "10",
                                 },
+                                "type": "light",
                                 "typography": Object {
                                   "3xlTitle": Object {
                                     "color": "#414141",
@@ -46252,7 +46234,6 @@ body {
                                 "lg": "60",
                                 "md": "30",
                                 "sm": "20",
-                                "unit": 8,
                                 "xl": "90",
                                 "xs": "10",
                               },
@@ -46507,10 +46488,10 @@ body {
                                   "only": [Function],
                                   "up": [Function],
                                   "values": Object {
-                                    "lg": 1280,
-                                    "md": 960,
+                                    "lg": 840,
+                                    "md": 720,
                                     "sm": 600,
-                                    "xl": 1920,
+                                    "xl": 1990,
                                     "xs": 0,
                                   },
                                   "width": [Function],
@@ -46559,6 +46540,7 @@ body {
                                     "xl": "90",
                                     "xs": "10",
                                   },
+                                  "type": "light",
                                   "typography": Object {
                                     "3xlTitle": Object {
                                       "color": "#414141",
@@ -46847,7 +46829,6 @@ body {
                                   "lg": "60",
                                   "md": "30",
                                   "sm": "20",
-                                  "unit": 8,
                                   "xl": "90",
                                   "xs": "10",
                                 },
@@ -47111,10 +47092,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 1280,
-                                      "md": 960,
+                                      "lg": 840,
+                                      "md": 720,
                                       "sm": 600,
-                                      "xl": 1920,
+                                      "xl": 1990,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -47163,6 +47144,7 @@ body {
                                       "xl": "90",
                                       "xs": "10",
                                     },
+                                    "type": "light",
                                     "typography": Object {
                                       "3xlTitle": Object {
                                         "color": "#414141",
@@ -47451,7 +47433,6 @@ body {
                                     "lg": "60",
                                     "md": "30",
                                     "sm": "20",
-                                    "unit": 8,
                                     "xl": "90",
                                     "xs": "10",
                                   },
@@ -47713,10 +47694,10 @@ body {
                                       "only": [Function],
                                       "up": [Function],
                                       "values": Object {
-                                        "lg": 1280,
-                                        "md": 960,
+                                        "lg": 840,
+                                        "md": 720,
                                         "sm": 600,
-                                        "xl": 1920,
+                                        "xl": 1990,
                                         "xs": 0,
                                       },
                                       "width": [Function],
@@ -47765,6 +47746,7 @@ body {
                                         "xl": "90",
                                         "xs": "10",
                                       },
+                                      "type": "light",
                                       "typography": Object {
                                         "3xlTitle": Object {
                                           "color": "#414141",
@@ -48053,7 +48035,6 @@ body {
                                       "lg": "60",
                                       "md": "30",
                                       "sm": "20",
-                                      "unit": 8,
                                       "xl": "90",
                                       "xs": "10",
                                     },

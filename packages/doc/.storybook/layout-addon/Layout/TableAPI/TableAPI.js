@@ -15,7 +15,9 @@
  */
 
 import React from "react";
-import { parseType, parseDescription } from "./utils";
+import classNames from "classnames";
+import { parseType, parseDescription, isDeprecated } from "./utils";
+
 
 const TableAPI = ({ classes, propsMetaData }) => (
   <table className={classes.table}>
@@ -37,7 +39,9 @@ const TableAPI = ({ classes, propsMetaData }) => (
 
         return (
           <tr key={key}>
-            <td>{key}</td>
+            <td className={classNames({
+              [classes.deprecated]: isDeprecated(prop)
+            })}>{key}</td>
             <td>{prop.type ? propType : ""}</td>
             {prop.required ? <td>true</td> : <td>-</td>}
             {prop.defaultValue ? (

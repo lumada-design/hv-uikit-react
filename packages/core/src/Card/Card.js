@@ -19,7 +19,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
-import theme from "@hv/uikit-common-themes/dist/theme";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
@@ -30,6 +29,7 @@ import Media from "./Media";
  *
  * @param {Object} {
  *   classes,
+ *   className,
  *   children,
  *   icon,
  *   headerTitle,
@@ -52,6 +52,8 @@ import Media from "./Media";
  */
 const Main = ({
   classes,
+  className,
+  id,
   children,
   icon,
   headerTitle,
@@ -65,6 +67,7 @@ const Main = ({
   checkboxLabel,
   checkboxSelected,
   checkboxIndeterminate,
+  theme,
   mediaPath,
   mediaTitle,
   mediaHeight,
@@ -109,9 +112,10 @@ const Main = ({
 
   return (
     <Card
-      className={classNames(classes.root, classes.borderTop)}
+      className={classNames(classes.root, classes.borderTop, className)}
+      id={id}
       style={{
-        borderTopColor: semantic && theme.palette.semantic[semantic],
+        borderTopColor: semantic && theme.hv.palette.semantic[semantic],
         borderTopWidth:
           semantic !== null ? "4px" : classes.borderTop.borderTopWidth
       }}
@@ -123,6 +127,14 @@ const Main = ({
 };
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -207,10 +219,16 @@ Main.propTypes = {
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool
+  checkboxIndeterminate: PropTypes.bool,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 Main.defaultProps = {
+  className: "",
+  id: undefined,
   headerTitle: undefined,
   semantic: null,
   isSelectable: false,
@@ -226,7 +244,8 @@ Main.defaultProps = {
   checkboxValue: "",
   checkboxLabel: "",
   checkboxSelected: undefined,
-  checkboxIndeterminate: undefined
+  checkboxIndeterminate: undefined,
+  theme: null
 };
 
 export default Main;

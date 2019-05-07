@@ -31,7 +31,8 @@ const styles = theme => ({
       opacity: 1
     },
     "&$tabSelected": {},
-    "&:focus": {}
+    "&:focus": {},
+    ...theme.hv.typography.highlightText
   },
   tabSelected: {},
   props: {

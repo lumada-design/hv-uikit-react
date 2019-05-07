@@ -205,6 +205,11 @@ class Wrapper extends React.Component {
   render() {
     const {sorted, pageSize} = this.state;
 
+    const labels = {
+      titleText: "Storage arrays",
+      subtitleText: "Click data centers or storage arrays to drill down"
+    }
+
     return(
       <HvTable
         data={data}
@@ -214,8 +219,7 @@ class Wrapper extends React.Component {
         pageSize={pageSize}
         resizable
         defaultSorted={sorted}
-        titleText="Storage arrays"
-        subtitleText="Click data centers or storage arrays to drill down"
+        labels={labels}
         subElementTemplate={this.subElementTemplate}
       />
     )

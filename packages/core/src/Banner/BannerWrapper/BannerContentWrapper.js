@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
@@ -38,6 +39,8 @@ function HvBannerContentWrapper({
   actionsOnMessage,
   action,
   onClose,
+  theme,
+  content,
   ...other
 }) {
   let icon = null;
@@ -46,9 +49,12 @@ function HvBannerContentWrapper({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.iconVariant });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
-      className: classes.iconVariant
-    });
+    icon = React.cloneElement(
+      severityIcon(mapSeverityToVariant(variant), theme),
+      {
+        className: classes.iconVariant
+      }
+    );
   }
 
   return (
@@ -63,7 +69,7 @@ function HvBannerContentWrapper({
         message=<MessageContainer
           icon={icon}
           actionsOnMessage={actionsOnMessage}
-          message={message}
+          message={message || content}
         />
         action=<ActionContainer onClose={onClose} action={action} />
         {...other}
@@ -80,7 +86,12 @@ HvBannerContentWrapper.propTypes = {
   /**
    * The message to display.
    */
-  message: PropTypes.node,
+  content: PropTypes.node,
+  /**
+   * The message to display.
+   * @deprecated Instead use the content property
+   */
+  message: deprecatedPropType(PropTypes.node, "Instead use the content property"),
   /**
    * Variant of the snackbar.
    */
@@ -105,16 +116,22 @@ HvBannerContentWrapper.propTypes = {
   /**
    * Actions to display.
    */
-  action: PropTypes.node
+  action: PropTypes.node,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 HvBannerContentWrapper.defaultProps = {
   classes: "",
-  message: "",
+  message: undefined,
+  content: "",
   showIcon: false,
   customIcon: null,
   actionsOnMessage: undefined,
-  action: undefined
+  action: undefined,
+  theme: undefined
 };
 
 export default HvBannerContentWrapper;

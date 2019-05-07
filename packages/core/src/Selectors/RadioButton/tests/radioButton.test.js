@@ -66,28 +66,39 @@ describe("RadioButton withStyles", () => {
 
   it("should have an icon", () => {
     const mountWrapper = mount(
-      <HvProvider>
+      <HvProvider uiKitTheme="dawn">
         <RadioWithStyles />
       </HvProvider>
-    ).find(RadioButton).html();
-    expect(mountWrapper.includes(emptyIcon)).toBe(
-      true
-    );
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
+    )
+      .find(RadioButton)
+      .html();
+    const themeProvider = theme("dawn");
+    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+    ).toBe(false);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+    ).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
     const mountWrapper = mount(
-      <HvProvider>
+      <HvProvider uiKitTheme="dawn">
         <RadioWithStyles disabled />
       </HvProvider>
-    ).find(RadioButton).html();
-    expect(mountWrapper.includes(emptyIcon)).toBe(
-      true
-    );
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
-    expect(mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
+    )
+      .find(RadioButton)
+      .html();
+    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    const themeProvider = theme("dawn");
+
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo4)
+    ).toBe(true);
+    expect(
+      mountWrapper.includes(themeProvider.hv.palette.atmosphere.atmo6)
+    ).toBe(true);
   });
 
   it("should apply the correct class name when there is a label at the start", () => {

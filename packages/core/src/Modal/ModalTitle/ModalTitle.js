@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 
 /**
@@ -33,10 +33,12 @@ import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
  */
 const ModalTitle = ({
   classes,
+  className,
   children,
   variant,
   showIcon,
   customIcon,
+  theme,
   ...others
 }) => {
   const isString = typeof children === "string";
@@ -46,18 +48,25 @@ const ModalTitle = ({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.icon });
   } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
-      className: classes.icon
-    });
+    icon = React.cloneElement(
+      severityIcon(mapSeverityToVariant(variant), theme),
+      {
+        className: classes.icon
+      }
+    );
   }
 
   return (
-    <MuiDialogTitle className={classes.root} disableTypography {...others}>
+    <MuiDialogTitle
+      className={classNames(classes.root, className)}
+      disableTypography
+      {...others}
+    >
       <div className={classes.messageContainer}>
         {icon}
         <div className={classNames({ [classes.textWithIcon]: icon })}>
           {!isString && children}
-          {isString && <Typography variant="h4">{children}</Typography>}
+          {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>
       </div>
     </MuiDialogTitle>
@@ -65,6 +74,10 @@ const ModalTitle = ({
 };
 
 ModalTitle.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -101,13 +114,19 @@ ModalTitle.propTypes = {
   /**
    * Node to be render.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 ModalTitle.defaultProps = {
+  className: "",
   variant: "default",
   customIcon: null,
-  showIcon: true
+  showIcon: true,
+  theme: undefined
 };
 
 export default ModalTitle;

@@ -27,12 +27,13 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
  * @returns {*}
  * @constructor
  */
-const ModalActions = ({ classes, children, ...others }) => (
+const ModalActions = ({ classes, className, children, ...others }) => (
   <MuiDialogActions
     classes={{
       root: classes.root,
       action: classes.action
     }}
+    className={className}
     {...others}
   >
     {children}
@@ -40,6 +41,10 @@ const ModalActions = ({ classes, children, ...others }) => (
 );
 
 ModalActions.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -57,6 +62,10 @@ ModalActions.propTypes = {
    * Actions of the modal.
    */
   children: PropTypes.node.isRequired
+};
+
+ModalActions.defaultProps = {
+  className: ""
 };
 
 export default ModalActions;

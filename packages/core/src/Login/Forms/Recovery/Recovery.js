@@ -16,8 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
+import HvTypography from "../../../Typography";
 import Input from "../../../Input";
 import HvButton, { buttonTypes } from "../../../Button";
 import MessageElement from "../MessageElement";
@@ -81,15 +81,20 @@ class Recovery extends React.Component {
       recoveryTitle,
       messageToRecover,
       messageAfterRecover,
-      recoveryErrorMessage
+      recoveryErrorMessage,
+      emailLabel,
+      emailPlaceholder,
+      recoveringMessage,
+      cancelButton,
+      recoverButton
     } = this.props;
     const { isRecovering, recoverStatus } = this.state;
 
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
-        <Typography className={classes.title} variant="h3">
+        <HvTypography className={classes.title} variant="mTitle">
           {recoveryTitle}
-        </Typography>
+        </HvTypography>
 
         <div className={classes.messageContainer}>
           {recoverStatus === "success" ? (
@@ -100,15 +105,15 @@ class Recovery extends React.Component {
               message={messageAfterRecover}
             />
           ) : (
-            <p className={classes.instructions}>{messageToRecover}</p>
+            <HvTypography variant="normalText" className={classes.instructions}>{messageToRecover}</HvTypography>
           )}
         </div>
 
         <div className={classes.input}>
           <Input
-            inputTextConfiguration={{
-              inputLabel: "Email",
-              placeholder: "Enter text"
+            labels={{
+              inputLabel: emailLabel,
+              placeholder: emailPlaceholder
             }}
             password={false}
             onChange={this.handleInputChange()}
@@ -129,7 +134,7 @@ class Recovery extends React.Component {
             type="submit"
             colorType={buttonTypes.primary}
           >
-            {isRecovering ? "Recovering" : "Recover"}
+            {isRecovering ? recoveringMessage : recoverButton}
           </HvButton>
           <HvButton
             className={classes.cancelButton}
@@ -137,7 +142,7 @@ class Recovery extends React.Component {
             onClick={onClick}
             colorType={buttonTypes.secondary}
           >
-            Cancel
+            {cancelButton}
           </HvButton>
         </div>
       </form>
@@ -164,6 +169,26 @@ Recovery.propTypes = {
    * Icon to be presented when the recovery occurs successfully.
    */
   okRecoveryIcon: PropTypes.node,
+  /**
+   * Label for the email input.
+   */
+  emailLabel: PropTypes.string.isRequired,
+  /**
+   * Placeholder for the email.
+   */
+  emailPlaceholder: PropTypes.string.isRequired,
+  /**
+   * Label for the cancel button.
+   */
+  cancelButton: PropTypes.string.isRequired,
+  /**
+   * Recovery button label
+   */
+  recoverButton: PropTypes.string.isRequired,
+  /**
+   * Recovering message after the recover button is pressed.
+   */
+  recoveringMessage: PropTypes.string.isRequired,
   /**
    * Recovery title.
    */

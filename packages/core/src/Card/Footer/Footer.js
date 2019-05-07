@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Cardactions from "@material-ui/core/CardActions";
 import HvCheckBox from "../../Selectors/CheckBox";
 
@@ -37,6 +38,7 @@ import HvCheckBox from "../../Selectors/CheckBox";
  */
 const Footer = ({
   classes,
+  className,
   actions,
   isSelectable,
   onChange,
@@ -46,7 +48,7 @@ const Footer = ({
   checkboxLabel,
   ...other
 }) => (
-  <Cardactions className={classes.root} {...other}>
+  <Cardactions className={classNames(classes.root, className)} {...other}>
     {isSelectable ? (
       <>
         <div className={classes.leftContainer}>
@@ -67,6 +69,10 @@ const Footer = ({
 );
 
 Footer.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -117,6 +123,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
+  className: "",
   isSelectable: false,
   onChange: () => {},
   checkboxValue: "",

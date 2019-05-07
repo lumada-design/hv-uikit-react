@@ -43,7 +43,7 @@ const styles = theme => ({
     padding: 0
   },
   messageText: {
-    ...theme.typography.body1,
+    ...theme.hv.typography.normalText,
     maxHeight: "80px"
   },
   messageWithoutIcon: {

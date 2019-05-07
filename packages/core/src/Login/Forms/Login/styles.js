@@ -36,12 +36,10 @@ const styles = theme => ({
   },
   inputUser: {
     position: "relative",
-    top: `-${theme.hv.spacing.sm}px`
+    paddingBottom: `${theme.hv.spacing.md}px`
   },
   inputPassword: {
-    position: "relative",
-    marginTop: `-${theme.hv.spacing.xs}px`,
-    top: "-50px"
+
   },
   button: {
     width: "120px",
@@ -70,15 +68,11 @@ const styles = theme => ({
     justifyContent: "center"
   },
   checkBoxTypography: {
-    color: theme.typography.body2.color,
-    fontSize: theme.typography.body2.fontSize,
-    letterSpacing: theme.typography.body2.letterSpacing,
-    lineHeight: theme.typography.body2.lineHeight,
-    fontWeight: theme.typography.body2.fontWeight
+    ...theme.hv.typography.infoText
   },
 
   linkButtonTypography: {
-    fontSize: theme.typography.body2.fontSize
+    fontSize: theme.hv.typography.infoText.fontSize
   },
   showMessage: {
     backgroundColor: theme.hv.palette.semantic.sema9,

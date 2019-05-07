@@ -2,8 +2,10 @@
 
 exports[`Actions withStyles should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`Actions withStyles should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`Actions withStyles should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`Actions withStyles should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4381,7 +4383,6 @@ body {
 }
 .Actions-iconContainer-6 {
   display: inherit;
-  overflow: hidden;
   margin-left: 10px;
 }
 .Actions-iconContainer-6:hover {
@@ -4416,7 +4417,6 @@ body {
                   Object {
                     "display": "inherit",
                     "margin-left": "10px",
-                    "overflow": "hidden",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -4431,7 +4431,6 @@ body {
                   ".Actions-iconContainer-6": Object {
                     "display": "inherit",
                     "margin-left": "10px",
-                    "overflow": "hidden",
                   },
                   ".Actions-iconContainer-6:hover": Object {
                     "background-color": "#F0F0F0",
@@ -4447,7 +4446,6 @@ body {
                   "iconContainer": Object {
                     "display": "inherit",
                     "margin-left": "10px",
-                    "overflow": "hidden",
                   },
                   "marginLeft": Object {
                     "margin-left": "60px",
@@ -4956,7 +4954,6 @@ body {
                     },
                     "display": "inherit",
                     "marginLeft": "10px",
-                    "overflow": "hidden",
                   },
                   "marginLeft": Object {
                     "marginLeft": "60px",
@@ -4985,10 +4982,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -5037,6 +5034,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -5325,7 +5323,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -5597,10 +5594,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -5649,6 +5646,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -5937,7 +5935,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },

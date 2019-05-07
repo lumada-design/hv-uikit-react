@@ -22,6 +22,7 @@ export default (
     onClick={() => {
       alert("You clicked me");
     }}
+    id="test"
   >
     Button
   </HvButton>

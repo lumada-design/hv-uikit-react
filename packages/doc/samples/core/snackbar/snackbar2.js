@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
-import Button from "@material-ui/core/Button";
+import Button from "@hv/uikit-react-core/dist/Button";
 import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
 
 class SimpleSnackbar extends React.Component {
@@ -38,7 +38,7 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -58,7 +58,7 @@ class SimpleSnackbar extends React.Component {
         </Button>
         <HvSnackbar
           open={open}
-          message="This is a custom icon"
+          label="This is a custom icon"
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -73,7 +73,7 @@ class SimpleSnackbar extends React.Component {
 
 export default (
   <SimpleSnackbar
-    message="This is a snackbar"
+    label="This is a snackbar"
     variant="default"
     customIcon={<FastForward16 />}
   />

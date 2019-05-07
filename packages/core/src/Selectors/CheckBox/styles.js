@@ -24,11 +24,7 @@ const styles = theme => ({
     }
   },
   labelTypography: {
-    fontWeight: theme.typography.body1.fontWeight,
-    letterSpacing: theme.typography.body1.letterSpacing,
-    color: theme.typography.body1.color,
-    fontSize: theme.typography.body1.fontSize,
-    lineHeight: theme.typography.body1.lineHeight
+    ...theme.hv.typography.normalText
   },
   labelDisabled: {
     backgroundColor: "transparent",

@@ -37,6 +37,7 @@ describe("<SearchBox />", () => {
     expect(props.value).toEqual("");
     expect(props.placeholder).toEqual("Search");
     expect(props.onChange).toBe(onChangeMock);
+    expect(props.searchInput).toEqual("");
   });
 
   it("renders correctly", () => {
@@ -44,6 +45,14 @@ describe("<SearchBox />", () => {
       <SearchBox classes={mockClasses} onChange={onChangeMock} />
     );
     expect(searchBox).toMatchSnapshot();
+  });
+
+  it("renders correctly with provided search input", () => {
+    const testSearchInput = "searchInput";
+    const searchBox = shallow(
+      <SearchBox classes={mockClasses} onChange={onChangeMock} searchInput={testSearchInput} />
+    );
+    expect(searchBox.find("input").prop('value')).toBe(testSearchInput);
   });
 
   it("onChange is triggered and state is changed", () => {

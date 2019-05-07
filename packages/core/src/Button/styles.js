@@ -24,8 +24,7 @@ const styles = theme => ({
     cursor: "pointer",
     height: "32px",
     minHeight: "32px",
-    fontWeight: theme.typography.button.fontWeight,
-    letterSpacing: theme.typography.button.letterSpacing
+    ...theme.hv.typography.highlightText
   },
   containedPrimary: {
     color: theme.hv.palette.atmosphere.atmo1,

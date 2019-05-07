@@ -55,7 +55,7 @@ const SimpleHeaderController = ({
   navigationData,
   companyLogo,
   productLogo,
-  productText,
+  label,
   itemActions,
   userData,
   userIcon,
@@ -69,11 +69,12 @@ const SimpleHeaderController = ({
 
   return (
     <HvHeader
+      id="test"
       position={position}
       // Brand
       companyLogo={companyLogo}
       productLogo={productLogo}
-      productText={productText}
+      label={label}
       // Navigation
       navigationData={navigationData}
       onNavigationClick={handleChange}
@@ -95,7 +96,7 @@ export default (
       position="static"
       // Brand
       companyLogo={<Hitachi />}
-      productText="Maintenance Insights"
+      label="Maintenance Insights"
       // Navigation
       navigationData={navigationData}
       selected={0}

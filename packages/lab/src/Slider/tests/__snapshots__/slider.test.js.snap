@@ -2,8 +2,10 @@
 
 exports[`Slider  should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`Slider  should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`Slider  should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`Slider  should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4459,6 +4461,7 @@ body {
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   letter-spacing: 0.02em;
 }
 .HvSlider-sliderTooltip-10 .rc-slider-tooltip-inner {
@@ -4472,6 +4475,7 @@ body {
   box-shadow: none;
   line-height: 16px;
   font-weight: 400;
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   border-radius: 0;
   letter-spacing: 0.02em;
 }
@@ -4573,6 +4577,7 @@ body {
                   },
                   Object {
                     "color": "#414141",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -4586,6 +4591,7 @@ body {
                     "border-radius": 0,
                     "box-shadow": "none",
                     "color": "#414141",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "12px",
                     "font-weight": "400",
                     "height": "100%",
@@ -4648,6 +4654,7 @@ body {
                   },
                   ".HvSlider-mark-9": Object {
                     "color": "#414141",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -4679,6 +4686,7 @@ body {
                     "border-radius": 0,
                     "box-shadow": "none",
                     "color": "#414141",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "12px",
                     "font-weight": "400",
                     "height": "100%",
@@ -4742,6 +4750,7 @@ body {
                   },
                   "mark": Object {
                     "color": "#414141",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -5279,6 +5288,7 @@ body {
                     "borderRadius": 0,
                     "boxShadow": "none",
                     "color": "#414141",
+                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "height": "100%",
@@ -5336,6 +5346,7 @@ body {
                   },
                   "mark": Object {
                     "color": "#414141",
+                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                     "fontSize": "10px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
@@ -5367,6 +5378,7 @@ body {
                       "borderRadius": 0,
                       "boxShadow": "none",
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "12px",
                       "fontWeight": "400",
                       "height": "100%",
@@ -10936,10 +10948,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -10988,6 +11000,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -11276,7 +11289,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -11623,10 +11635,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -11675,6 +11687,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -11963,7 +11976,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -12278,6 +12290,7 @@ body {
                 "label": "0",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12289,6 +12302,7 @@ body {
                 "label": "1",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12300,6 +12314,7 @@ body {
                 "label": "10",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12311,6 +12326,7 @@ body {
                 "label": "100",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12322,6 +12338,7 @@ body {
                 "label": "11",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12333,6 +12350,7 @@ body {
                 "label": "12",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12344,6 +12362,7 @@ body {
                 "label": "13",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12355,6 +12374,7 @@ body {
                 "label": "14",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12366,6 +12386,7 @@ body {
                 "label": "15",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12377,6 +12398,7 @@ body {
                 "label": "16",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12388,6 +12410,7 @@ body {
                 "label": "17",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12399,6 +12422,7 @@ body {
                 "label": "18",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12410,6 +12434,7 @@ body {
                 "label": "19",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12421,6 +12446,7 @@ body {
                 "label": "2",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12432,6 +12458,7 @@ body {
                 "label": "20",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12443,6 +12470,7 @@ body {
                 "label": "21",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12454,6 +12482,7 @@ body {
                 "label": "22",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12465,6 +12494,7 @@ body {
                 "label": "23",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12476,6 +12506,7 @@ body {
                 "label": "24",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12487,6 +12518,7 @@ body {
                 "label": "25",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12498,6 +12530,7 @@ body {
                 "label": "26",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12509,6 +12542,7 @@ body {
                 "label": "27",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12520,6 +12554,7 @@ body {
                 "label": "28",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12531,6 +12566,7 @@ body {
                 "label": "29",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12542,6 +12578,7 @@ body {
                 "label": "3",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12553,6 +12590,7 @@ body {
                 "label": "30",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12564,6 +12602,7 @@ body {
                 "label": "31",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12575,6 +12614,7 @@ body {
                 "label": "32",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12586,6 +12626,7 @@ body {
                 "label": "33",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12597,6 +12638,7 @@ body {
                 "label": "34",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12608,6 +12650,7 @@ body {
                 "label": "35",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12619,6 +12662,7 @@ body {
                 "label": "36",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12630,6 +12674,7 @@ body {
                 "label": "37",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12641,6 +12686,7 @@ body {
                 "label": "38",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12652,6 +12698,7 @@ body {
                 "label": "39",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12663,6 +12710,7 @@ body {
                 "label": "4",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12674,6 +12722,7 @@ body {
                 "label": "40",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12685,6 +12734,7 @@ body {
                 "label": "41",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12696,6 +12746,7 @@ body {
                 "label": "42",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12707,6 +12758,7 @@ body {
                 "label": "43",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12718,6 +12770,7 @@ body {
                 "label": "44",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12729,6 +12782,7 @@ body {
                 "label": "45",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12740,6 +12794,7 @@ body {
                 "label": "46",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12751,6 +12806,7 @@ body {
                 "label": "47",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12762,6 +12818,7 @@ body {
                 "label": "48",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12773,6 +12830,7 @@ body {
                 "label": "49",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12784,6 +12842,7 @@ body {
                 "label": "5",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12795,6 +12854,7 @@ body {
                 "label": "50",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12806,6 +12866,7 @@ body {
                 "label": "51",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12817,6 +12878,7 @@ body {
                 "label": "52",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12828,6 +12890,7 @@ body {
                 "label": "53",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12839,6 +12902,7 @@ body {
                 "label": "54",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12850,6 +12914,7 @@ body {
                 "label": "55",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12861,6 +12926,7 @@ body {
                 "label": "56",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12872,6 +12938,7 @@ body {
                 "label": "57",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12883,6 +12950,7 @@ body {
                 "label": "58",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12894,6 +12962,7 @@ body {
                 "label": "59",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12905,6 +12974,7 @@ body {
                 "label": "6",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12916,6 +12986,7 @@ body {
                 "label": "60",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12927,6 +12998,7 @@ body {
                 "label": "61",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12938,6 +13010,7 @@ body {
                 "label": "62",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12949,6 +13022,7 @@ body {
                 "label": "63",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12960,6 +13034,7 @@ body {
                 "label": "64",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12971,6 +13046,7 @@ body {
                 "label": "65",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12982,6 +13058,7 @@ body {
                 "label": "66",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12993,6 +13070,7 @@ body {
                 "label": "67",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13004,6 +13082,7 @@ body {
                 "label": "68",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13015,6 +13094,7 @@ body {
                 "label": "69",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13026,6 +13106,7 @@ body {
                 "label": "7",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13037,6 +13118,7 @@ body {
                 "label": "70",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13048,6 +13130,7 @@ body {
                 "label": "71",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13059,6 +13142,7 @@ body {
                 "label": "72",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13070,6 +13154,7 @@ body {
                 "label": "73",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13081,6 +13166,7 @@ body {
                 "label": "74",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13092,6 +13178,7 @@ body {
                 "label": "75",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13103,6 +13190,7 @@ body {
                 "label": "76",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13114,6 +13202,7 @@ body {
                 "label": "77",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13125,6 +13214,7 @@ body {
                 "label": "78",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13136,6 +13226,7 @@ body {
                 "label": "79",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13147,6 +13238,7 @@ body {
                 "label": "8",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13158,6 +13250,7 @@ body {
                 "label": "80",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13169,6 +13262,7 @@ body {
                 "label": "81",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13180,6 +13274,7 @@ body {
                 "label": "82",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13191,6 +13286,7 @@ body {
                 "label": "83",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13202,6 +13298,7 @@ body {
                 "label": "84",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13213,6 +13310,7 @@ body {
                 "label": "85",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13224,6 +13322,7 @@ body {
                 "label": "86",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13235,6 +13334,7 @@ body {
                 "label": "87",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13246,6 +13346,7 @@ body {
                 "label": "88",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13257,6 +13358,7 @@ body {
                 "label": "89",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13268,6 +13370,7 @@ body {
                 "label": "9",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13279,6 +13382,7 @@ body {
                 "label": "90",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13290,6 +13394,7 @@ body {
                 "label": "91",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13301,6 +13406,7 @@ body {
                 "label": "92",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13312,6 +13418,7 @@ body {
                 "label": "93",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13323,6 +13430,7 @@ body {
                 "label": "94",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13334,6 +13442,7 @@ body {
                 "label": "95",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13345,6 +13454,7 @@ body {
                 "label": "96",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13356,6 +13466,7 @@ body {
                 "label": "97",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13367,6 +13478,7 @@ body {
                 "label": "98",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13378,6 +13490,7 @@ body {
                 "label": "99",
                 "style": Object {
                   "color": "#414141",
+                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "fontSize": "10px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -13613,6 +13726,7 @@ body {
                     "label": "0",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13624,6 +13738,7 @@ body {
                     "label": "1",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13635,6 +13750,7 @@ body {
                     "label": "10",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13646,6 +13762,7 @@ body {
                     "label": "100",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13657,6 +13774,7 @@ body {
                     "label": "11",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13668,6 +13786,7 @@ body {
                     "label": "12",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13679,6 +13798,7 @@ body {
                     "label": "13",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13690,6 +13810,7 @@ body {
                     "label": "14",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13701,6 +13822,7 @@ body {
                     "label": "15",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13712,6 +13834,7 @@ body {
                     "label": "16",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13723,6 +13846,7 @@ body {
                     "label": "17",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13734,6 +13858,7 @@ body {
                     "label": "18",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13745,6 +13870,7 @@ body {
                     "label": "19",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13756,6 +13882,7 @@ body {
                     "label": "2",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13767,6 +13894,7 @@ body {
                     "label": "20",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13778,6 +13906,7 @@ body {
                     "label": "21",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13789,6 +13918,7 @@ body {
                     "label": "22",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13800,6 +13930,7 @@ body {
                     "label": "23",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13811,6 +13942,7 @@ body {
                     "label": "24",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13822,6 +13954,7 @@ body {
                     "label": "25",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13833,6 +13966,7 @@ body {
                     "label": "26",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13844,6 +13978,7 @@ body {
                     "label": "27",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13855,6 +13990,7 @@ body {
                     "label": "28",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13866,6 +14002,7 @@ body {
                     "label": "29",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13877,6 +14014,7 @@ body {
                     "label": "3",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13888,6 +14026,7 @@ body {
                     "label": "30",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13899,6 +14038,7 @@ body {
                     "label": "31",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13910,6 +14050,7 @@ body {
                     "label": "32",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13921,6 +14062,7 @@ body {
                     "label": "33",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13932,6 +14074,7 @@ body {
                     "label": "34",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13943,6 +14086,7 @@ body {
                     "label": "35",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13954,6 +14098,7 @@ body {
                     "label": "36",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13965,6 +14110,7 @@ body {
                     "label": "37",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13976,6 +14122,7 @@ body {
                     "label": "38",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13987,6 +14134,7 @@ body {
                     "label": "39",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -13998,6 +14146,7 @@ body {
                     "label": "4",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14009,6 +14158,7 @@ body {
                     "label": "40",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14020,6 +14170,7 @@ body {
                     "label": "41",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14031,6 +14182,7 @@ body {
                     "label": "42",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14042,6 +14194,7 @@ body {
                     "label": "43",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14053,6 +14206,7 @@ body {
                     "label": "44",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14064,6 +14218,7 @@ body {
                     "label": "45",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14075,6 +14230,7 @@ body {
                     "label": "46",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14086,6 +14242,7 @@ body {
                     "label": "47",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14097,6 +14254,7 @@ body {
                     "label": "48",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14108,6 +14266,7 @@ body {
                     "label": "49",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14119,6 +14278,7 @@ body {
                     "label": "5",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14130,6 +14290,7 @@ body {
                     "label": "50",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14141,6 +14302,7 @@ body {
                     "label": "51",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14152,6 +14314,7 @@ body {
                     "label": "52",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14163,6 +14326,7 @@ body {
                     "label": "53",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14174,6 +14338,7 @@ body {
                     "label": "54",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14185,6 +14350,7 @@ body {
                     "label": "55",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14196,6 +14362,7 @@ body {
                     "label": "56",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14207,6 +14374,7 @@ body {
                     "label": "57",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14218,6 +14386,7 @@ body {
                     "label": "58",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14229,6 +14398,7 @@ body {
                     "label": "59",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14240,6 +14410,7 @@ body {
                     "label": "6",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14251,6 +14422,7 @@ body {
                     "label": "60",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14262,6 +14434,7 @@ body {
                     "label": "61",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14273,6 +14446,7 @@ body {
                     "label": "62",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14284,6 +14458,7 @@ body {
                     "label": "63",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14295,6 +14470,7 @@ body {
                     "label": "64",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14306,6 +14482,7 @@ body {
                     "label": "65",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14317,6 +14494,7 @@ body {
                     "label": "66",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14328,6 +14506,7 @@ body {
                     "label": "67",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14339,6 +14518,7 @@ body {
                     "label": "68",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14350,6 +14530,7 @@ body {
                     "label": "69",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14361,6 +14542,7 @@ body {
                     "label": "7",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14372,6 +14554,7 @@ body {
                     "label": "70",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14383,6 +14566,7 @@ body {
                     "label": "71",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14394,6 +14578,7 @@ body {
                     "label": "72",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14405,6 +14590,7 @@ body {
                     "label": "73",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14416,6 +14602,7 @@ body {
                     "label": "74",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14427,6 +14614,7 @@ body {
                     "label": "75",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14438,6 +14626,7 @@ body {
                     "label": "76",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14449,6 +14638,7 @@ body {
                     "label": "77",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14460,6 +14650,7 @@ body {
                     "label": "78",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14471,6 +14662,7 @@ body {
                     "label": "79",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14482,6 +14674,7 @@ body {
                     "label": "8",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14493,6 +14686,7 @@ body {
                     "label": "80",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14504,6 +14698,7 @@ body {
                     "label": "81",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14515,6 +14710,7 @@ body {
                     "label": "82",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14526,6 +14722,7 @@ body {
                     "label": "83",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14537,6 +14734,7 @@ body {
                     "label": "84",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14548,6 +14746,7 @@ body {
                     "label": "85",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14559,6 +14758,7 @@ body {
                     "label": "86",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14570,6 +14770,7 @@ body {
                     "label": "87",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14581,6 +14782,7 @@ body {
                     "label": "88",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14592,6 +14794,7 @@ body {
                     "label": "89",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14603,6 +14806,7 @@ body {
                     "label": "9",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14614,6 +14818,7 @@ body {
                     "label": "90",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14625,6 +14830,7 @@ body {
                     "label": "91",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14636,6 +14842,7 @@ body {
                     "label": "92",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14647,6 +14854,7 @@ body {
                     "label": "93",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14658,6 +14866,7 @@ body {
                     "label": "94",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14669,6 +14878,7 @@ body {
                     "label": "95",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14680,6 +14890,7 @@ body {
                     "label": "96",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14691,6 +14902,7 @@ body {
                     "label": "97",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14702,6 +14914,7 @@ body {
                     "label": "98",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -14713,6 +14926,7 @@ body {
                     "label": "99",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18475,6 +18689,7 @@ body {
                     "label": "0",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18486,6 +18701,7 @@ body {
                     "label": "1",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18497,6 +18713,7 @@ body {
                     "label": "10",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18508,6 +18725,7 @@ body {
                     "label": "100",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18519,6 +18737,7 @@ body {
                     "label": "11",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18530,6 +18749,7 @@ body {
                     "label": "12",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18541,6 +18761,7 @@ body {
                     "label": "13",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18552,6 +18773,7 @@ body {
                     "label": "14",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18563,6 +18785,7 @@ body {
                     "label": "15",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18574,6 +18797,7 @@ body {
                     "label": "16",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18585,6 +18809,7 @@ body {
                     "label": "17",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18596,6 +18821,7 @@ body {
                     "label": "18",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18607,6 +18833,7 @@ body {
                     "label": "19",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18618,6 +18845,7 @@ body {
                     "label": "2",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18629,6 +18857,7 @@ body {
                     "label": "20",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18640,6 +18869,7 @@ body {
                     "label": "21",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18651,6 +18881,7 @@ body {
                     "label": "22",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18662,6 +18893,7 @@ body {
                     "label": "23",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18673,6 +18905,7 @@ body {
                     "label": "24",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18684,6 +18917,7 @@ body {
                     "label": "25",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18695,6 +18929,7 @@ body {
                     "label": "26",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18706,6 +18941,7 @@ body {
                     "label": "27",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18717,6 +18953,7 @@ body {
                     "label": "28",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18728,6 +18965,7 @@ body {
                     "label": "29",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18739,6 +18977,7 @@ body {
                     "label": "3",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18750,6 +18989,7 @@ body {
                     "label": "30",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18761,6 +19001,7 @@ body {
                     "label": "31",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18772,6 +19013,7 @@ body {
                     "label": "32",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18783,6 +19025,7 @@ body {
                     "label": "33",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18794,6 +19037,7 @@ body {
                     "label": "34",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18805,6 +19049,7 @@ body {
                     "label": "35",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18816,6 +19061,7 @@ body {
                     "label": "36",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18827,6 +19073,7 @@ body {
                     "label": "37",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18838,6 +19085,7 @@ body {
                     "label": "38",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18849,6 +19097,7 @@ body {
                     "label": "39",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18860,6 +19109,7 @@ body {
                     "label": "4",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18871,6 +19121,7 @@ body {
                     "label": "40",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18882,6 +19133,7 @@ body {
                     "label": "41",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18893,6 +19145,7 @@ body {
                     "label": "42",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18904,6 +19157,7 @@ body {
                     "label": "43",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18915,6 +19169,7 @@ body {
                     "label": "44",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18926,6 +19181,7 @@ body {
                     "label": "45",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18937,6 +19193,7 @@ body {
                     "label": "46",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18948,6 +19205,7 @@ body {
                     "label": "47",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18959,6 +19217,7 @@ body {
                     "label": "48",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18970,6 +19229,7 @@ body {
                     "label": "49",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18981,6 +19241,7 @@ body {
                     "label": "5",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -18992,6 +19253,7 @@ body {
                     "label": "50",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19003,6 +19265,7 @@ body {
                     "label": "51",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19014,6 +19277,7 @@ body {
                     "label": "52",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19025,6 +19289,7 @@ body {
                     "label": "53",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19036,6 +19301,7 @@ body {
                     "label": "54",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19047,6 +19313,7 @@ body {
                     "label": "55",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19058,6 +19325,7 @@ body {
                     "label": "56",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19069,6 +19337,7 @@ body {
                     "label": "57",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19080,6 +19349,7 @@ body {
                     "label": "58",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19091,6 +19361,7 @@ body {
                     "label": "59",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19102,6 +19373,7 @@ body {
                     "label": "6",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19113,6 +19385,7 @@ body {
                     "label": "60",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19124,6 +19397,7 @@ body {
                     "label": "61",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19135,6 +19409,7 @@ body {
                     "label": "62",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19146,6 +19421,7 @@ body {
                     "label": "63",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19157,6 +19433,7 @@ body {
                     "label": "64",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19168,6 +19445,7 @@ body {
                     "label": "65",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19179,6 +19457,7 @@ body {
                     "label": "66",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19190,6 +19469,7 @@ body {
                     "label": "67",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19201,6 +19481,7 @@ body {
                     "label": "68",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19212,6 +19493,7 @@ body {
                     "label": "69",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19223,6 +19505,7 @@ body {
                     "label": "7",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19234,6 +19517,7 @@ body {
                     "label": "70",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19245,6 +19529,7 @@ body {
                     "label": "71",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19256,6 +19541,7 @@ body {
                     "label": "72",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19267,6 +19553,7 @@ body {
                     "label": "73",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19278,6 +19565,7 @@ body {
                     "label": "74",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19289,6 +19577,7 @@ body {
                     "label": "75",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19300,6 +19589,7 @@ body {
                     "label": "76",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19311,6 +19601,7 @@ body {
                     "label": "77",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19322,6 +19613,7 @@ body {
                     "label": "78",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19333,6 +19625,7 @@ body {
                     "label": "79",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19344,6 +19637,7 @@ body {
                     "label": "8",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19355,6 +19649,7 @@ body {
                     "label": "80",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19366,6 +19661,7 @@ body {
                     "label": "81",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19377,6 +19673,7 @@ body {
                     "label": "82",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19388,6 +19685,7 @@ body {
                     "label": "83",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19399,6 +19697,7 @@ body {
                     "label": "84",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19410,6 +19709,7 @@ body {
                     "label": "85",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19421,6 +19721,7 @@ body {
                     "label": "86",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19432,6 +19733,7 @@ body {
                     "label": "87",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19443,6 +19745,7 @@ body {
                     "label": "88",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19454,6 +19757,7 @@ body {
                     "label": "89",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19465,6 +19769,7 @@ body {
                     "label": "9",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19476,6 +19781,7 @@ body {
                     "label": "90",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19487,6 +19793,7 @@ body {
                     "label": "91",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19498,6 +19805,7 @@ body {
                     "label": "92",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19509,6 +19817,7 @@ body {
                     "label": "93",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19520,6 +19829,7 @@ body {
                     "label": "94",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19531,6 +19841,7 @@ body {
                     "label": "95",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19542,6 +19853,7 @@ body {
                     "label": "96",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19553,6 +19865,7 @@ body {
                     "label": "97",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19564,6 +19877,7 @@ body {
                     "label": "98",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19575,6 +19889,7 @@ body {
                     "label": "99",
                     "style": Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -19601,6 +19916,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "0%",
@@ -19622,6 +19938,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "1%",
@@ -19643,6 +19960,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "2%",
@@ -19664,6 +19982,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "3%",
@@ -19685,6 +20004,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "4%",
@@ -19706,6 +20026,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "5%",
@@ -19727,6 +20048,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "6%",
@@ -19748,6 +20070,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "7.000000000000001%",
@@ -19769,6 +20092,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "8%",
@@ -19790,6 +20114,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "9%",
@@ -19811,6 +20136,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "10%",
@@ -19832,6 +20158,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "11%",
@@ -19853,6 +20180,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "12%",
@@ -19874,6 +20202,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "13%",
@@ -19895,6 +20224,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "14.000000000000002%",
@@ -19916,6 +20246,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "15%",
@@ -19937,6 +20268,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "16%",
@@ -19958,6 +20290,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "17%",
@@ -19979,6 +20312,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "18%",
@@ -20000,6 +20334,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "19%",
@@ -20021,6 +20356,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "20%",
@@ -20042,6 +20378,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "21%",
@@ -20063,6 +20400,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "22%",
@@ -20084,6 +20422,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "23%",
@@ -20105,6 +20444,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "24%",
@@ -20126,6 +20466,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "25%",
@@ -20147,6 +20488,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "26%",
@@ -20168,6 +20510,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "27%",
@@ -20189,6 +20532,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "28.000000000000004%",
@@ -20210,6 +20554,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "28.999999999999996%",
@@ -20231,6 +20576,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "30%",
@@ -20252,6 +20598,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "31%",
@@ -20273,6 +20620,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "32%",
@@ -20294,6 +20642,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "33%",
@@ -20315,6 +20664,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "34%",
@@ -20336,6 +20686,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "35%",
@@ -20357,6 +20708,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "36%",
@@ -20378,6 +20730,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "37%",
@@ -20399,6 +20752,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "38%",
@@ -20420,6 +20774,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "39%",
@@ -20441,6 +20796,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "40%",
@@ -20462,6 +20818,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "41%",
@@ -20483,6 +20840,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "42%",
@@ -20504,6 +20862,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "43%",
@@ -20525,6 +20884,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "44%",
@@ -20546,6 +20906,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "45%",
@@ -20567,6 +20928,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "46%",
@@ -20588,6 +20950,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "47%",
@@ -20609,6 +20972,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "48%",
@@ -20630,6 +20994,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "49%",
@@ -20651,6 +21016,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "50%",
@@ -20672,6 +21038,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "51%",
@@ -20693,6 +21060,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "52%",
@@ -20714,6 +21082,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "53%",
@@ -20735,6 +21104,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "54%",
@@ -20756,6 +21126,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "55.00000000000001%",
@@ -20777,6 +21148,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "56.00000000000001%",
@@ -20798,6 +21170,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "56.99999999999999%",
@@ -20819,6 +21192,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "57.99999999999999%",
@@ -20840,6 +21214,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "59%",
@@ -20861,6 +21236,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "60%",
@@ -20882,6 +21258,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "61%",
@@ -20903,6 +21280,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "62%",
@@ -20924,6 +21302,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "63%",
@@ -20945,6 +21324,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "64%",
@@ -20966,6 +21346,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "65%",
@@ -20987,6 +21368,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "66%",
@@ -21008,6 +21390,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "67%",
@@ -21029,6 +21412,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "68%",
@@ -21050,6 +21434,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "69%",
@@ -21071,6 +21456,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "70%",
@@ -21092,6 +21478,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "71%",
@@ -21113,6 +21500,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "72%",
@@ -21134,6 +21522,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "73%",
@@ -21155,6 +21544,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "74%",
@@ -21176,6 +21566,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "75%",
@@ -21197,6 +21588,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "76%",
@@ -21218,6 +21610,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "77%",
@@ -21239,6 +21632,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "78%",
@@ -21260,6 +21654,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "79%",
@@ -21281,6 +21676,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "80%",
@@ -21302,6 +21698,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "81%",
@@ -21323,6 +21720,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "82%",
@@ -21344,6 +21742,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "83%",
@@ -21365,6 +21764,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "84%",
@@ -21386,6 +21786,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "85%",
@@ -21407,6 +21808,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "86%",
@@ -21428,6 +21830,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "87%",
@@ -21449,6 +21852,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "88%",
@@ -21470,6 +21874,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "89%",
@@ -21491,6 +21896,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "90%",
@@ -21512,6 +21918,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "91%",
@@ -21533,6 +21940,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "92%",
@@ -21554,6 +21962,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "93%",
@@ -21575,6 +21984,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "94%",
@@ -21596,6 +22006,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "95%",
@@ -21617,6 +22028,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "96%",
@@ -21638,6 +22050,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "97%",
@@ -21659,6 +22072,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "98%",
@@ -21680,6 +22094,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "99%",
@@ -21701,6 +22116,7 @@ body {
                   style={
                     Object {
                       "color": "#414141",
+                      "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                       "fontSize": "10px",
                       "fontWeight": "400",
                       "left": "100%",

@@ -16,18 +16,14 @@
 
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Collapse from "@material-ui/core/Collapse";
-import { Typography } from "@material-ui/core";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Code from "@material-ui/icons/Code";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton
-    className={classes.iconCode}
-    aria-label="Delete"
-    onClick={onClick}
-  >
+  <IconButton className={classes.iconCode} onClick={onClick}>
     <Code />
   </IconButton>
 );
@@ -49,7 +45,7 @@ class Example extends React.Component {
 
   render() {
     const { snippetIsOpen } = this.state;
-    const { classes, example } = this.props;
+    const { classes, example, theme } = this.props;
     const { src } = example;
     const isPath = typeof src === "string";
 
@@ -62,7 +58,7 @@ class Example extends React.Component {
     return (
       <>
         <div className={classes.titleContainer}>
-          <Typography variant="subtitle1">{example.title}</Typography>
+          <HvTypography variant="highlightText">{example.title}</HvTypography>
           {!example.description && (
             <CodeButton
               classes={classes}
@@ -72,7 +68,9 @@ class Example extends React.Component {
         </div>
         {example.description && (
           <div className={classes.titleContainer}>
-            <Typography variant="body1">{example.description}</Typography>
+            <HvTypography variant="normalText">
+              {example.description}
+            </HvTypography>
             <CodeButton
               classes={classes}
               onClick={() => this.toggleSnippetArea()}
@@ -83,7 +81,7 @@ class Example extends React.Component {
           <Collapse in={snippetIsOpen}>
             <SyntaxHighlighter
               language="jsx"
-              style={prism}
+              style={theme.type === "dark" ? darcula : prism}
               customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
             >
               {isPath ? snippet : example.snippet}
@@ -98,15 +96,18 @@ class Example extends React.Component {
   }
 }
 
-const Examples = ({ classes, examples, basePath }) => (
+const Examples = ({ classes, examples, basePath, theme }) => (
   <>
-    <h3 className={classes.root}>Examples</h3>
+  <div className={classes.root}>
+  <HvTypography variant="xsTitle">Examples</HvTypography>
+  </div>
     {examples.map((example, idx) => (
       <Example
         key={idx}
         classes={classes}
         example={example}
         basePath={basePath}
+        theme={theme.hv}
       />
     ))}
   </>

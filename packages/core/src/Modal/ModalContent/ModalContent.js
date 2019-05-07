@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import classNames from "classnames";
-import Typography from "@material-ui/core/Typography";
+import HvTypography from "../../Typography";
 
 /**
  * Message container. The passed children is render in this container, creating
@@ -29,21 +29,29 @@ import Typography from "@material-ui/core/Typography";
  * @returns {*}
  * @constructor
  */
-const ModalContent = ({ classes, children }) => {
+const ModalContent = ({ classes, className, children }) => {
   const isString = typeof children === "string";
 
   return (
     <MuiDialogContent
-      className={classNames(classes.root, {
-        [classes.textContent]: isString
-      })}
+      className={classNames(
+        classes.root,
+        {
+          [classes.textContent]: isString
+        },
+        className
+      )}
     >
       {!isString && children}
-      {isString && <Typography variant="body1">{children}</Typography>}
+      {isString && <HvTypography variant="normalText">{children}</HvTypography>}
     </MuiDialogContent>
   );
 };
 ModalContent.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -61,6 +69,10 @@ ModalContent.propTypes = {
    * Content to be render.
    */
   children: PropTypes.node.isRequired
+};
+
+ModalContent.defaultProps = {
+  className: ""
 };
 
 export default ModalContent;

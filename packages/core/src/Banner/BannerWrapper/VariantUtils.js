@@ -18,30 +18,29 @@ import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
 import Level3Alert16 from "@hv/uikit-react-icons/dist/Level3.S";
 import Level416Color from "@hv/uikit-react-icons/dist/Level4.S";
 import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
-import theme from "@hv/uikit-common-themes/dist/theme";
 import React from "react";
 
 export const variantIcon = Object.freeze({
-  success: <Level0Success16Color color={["none", theme.palette.semantic.sema1]} />,
-  warning: <Level416Color color={["none", theme.palette.semantic.sema5]} />,
-  error: <Level5Unsuccess16Color color={["none", theme.palette.semantic.sema6]} />,
-  info: <Level3Alert16 color={["none", theme.palette.semantic.sema4]} />
+  success: theme => <Level0Success16Color color={["none", theme.hv.palette.semantic.sema1]} />,
+  warning: theme => <Level416Color color={["none", theme.hv.palette.semantic.sema5]} />,
+  error: theme => <Level5Unsuccess16Color color={["none", theme.hv.palette.semantic.sema6]} />,
+  info: theme => <Level3Alert16 color={["none", theme.hv.palette.semantic.sema4]} />
 });
 
-export const severityIcon = severity => {
+export const severityIcon = (severity, theme) => {
   let icon;
   switch (severity.toLowerCase()) {
     case "error":
-      icon = variantIcon.error;
+      icon = variantIcon.error(theme);
       break;
     case "warning":
-      icon = variantIcon.warning;
+      icon = variantIcon.warning(theme);
       break;
     case "info":
-      icon = variantIcon.info;
+      icon = variantIcon.info(theme);
       break;
     default:
-      icon = variantIcon.success;
+      icon = variantIcon.success(theme);
       break;
   }
 

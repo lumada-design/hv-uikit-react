@@ -16,10 +16,6 @@
 
 /*  TODO: Review accessibility */
 
-/*  eslint-disable  jsx-a11y/click-events-have-key-events */
-/*  eslint-disable jsx-a11y/no-static-element-interactions */
-/*  eslint-disable jsx-a11y/interactive-supports-focus */
-
 import React from "react";
 import Close16 from "@hv/uikit-react-icons/dist/Close.S";
 import PropTypes from "prop-types";
@@ -35,7 +31,7 @@ import PropTypes from "prop-types";
  */
 const ActionContainer = ({ classes, onClose, action }) => (
   <div className={classes.actionContainer}>
-    <div className={classes.closeAction} role="button" onClick={onClose}>
+    <div className={classes.closeAction} role="button" onClick={onClose} tabIndex={0} onKeyDown={onClose}>
       <Close16 />
     </div>
     <div className={classes.actionsInnerContainer}>{action}</div>

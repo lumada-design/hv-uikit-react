@@ -17,7 +17,6 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import theme from "@hv/uikit-common-themes/dist/theme";
 
 import Success from "@hv/uikit-react-icons/dist/Level0.S";
 import Close from "@hv/uikit-react-icons/dist/Close.S";
@@ -25,28 +24,35 @@ import Unsuccess from "@hv/uikit-react-icons/dist/Level5.S";
 
 import validationStates from "./validationStates";
 
-const stl = {
-  height: `${theme.spacing.md}px`,
-  width: `${theme.spacing.md}px`
+const InputAdornment = ({ classes, validationState, handleClear, theme }) => {
+  
+  const stl = {
+    height: `${theme.hv.spacing.md}px`,
+    width: `${theme.hv.spacing.md}px`
+  };
+  
+  return (
+    <div
+      className={classNames(classes.icon, {
+        [classes.iconClear]: validationState === validationStates.filled
+      })}
+      {...validationState === validationStates.filled && {
+        onMouseDown: () => handleClear(),
+        role: "button",
+        tabIndex: -1,
+        onKeyDown: () => handleClear()
+      }}
+    >
+      {validationState === validationStates.filled && <Close style={stl} />}
+      {validationState === validationStates.valid && (
+        <Success style={stl} color={["none", theme.hv.palette.semantic.sema1]} />
+      )}
+      {validationState === validationStates.invalid && (
+        <Unsuccess style={stl} color={["none", theme.hv.palette.semantic.sema6]} />
+      )}
+    </div>
+  );
 };
-
-const InputAdornment = ({ classes, validationState, handleClear }) => (
-  <div
-    className={classNames(classes.icon, {
-      [classes.iconClear]: validationState === validationStates.filled
-    })}
-    {...validationState === validationStates.filled && {
-      onMouseDown: () => handleClear(),
-      role: "button",
-      tabIndex: -1,
-      onKeyDown: () => handleClear()
-    }}
-  >
-    {validationState === validationStates.filled && <Close style={stl} />}
-    {validationState === validationStates.valid && <Success style={stl} color={["none", theme.palette.semantic.sema1]} />}
-    {validationState === validationStates.invalid && <Unsuccess style={stl} color={["none", theme.palette.semantic.sema6]} />}
-  </div>
-);
 
 InputAdornment.propTypes = {
   /**
@@ -62,12 +68,17 @@ InputAdornment.propTypes = {
   /**
    * The function that will be executed when the icon is clicked
    */
-  handleClear: PropTypes.func
+  handleClear: PropTypes.func,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 InputAdornment.defaultProps = {
   validationState: validationStates.empty,
-  handleClear: value => value
+  handleClear: value => value,
+  theme: null
 };
 
 export default InputAdornment;

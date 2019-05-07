@@ -34,7 +34,8 @@ const styles = theme => ({
   instructions: {
     position: "relative",
     margin: "0px",
-    textAlign: "center"
+    textAlign: "center",
+    fontFamily: theme.hv.typography.fontFamily
   },
   input: {
     position: "relative",

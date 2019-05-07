@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
-import Button from "@material-ui/core/Button";
+import Button from "@hv/uikit-react-core/dist/Button";
 
 class SimpleSnackbar extends React.Component {
   state = {
@@ -57,7 +57,7 @@ class SimpleSnackbar extends React.Component {
         </Button>
         <HvSnackbar
           open={open}
-          message={message}
+          label={message}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -71,7 +71,7 @@ class SimpleSnackbar extends React.Component {
 }
 export default (
   <SimpleSnackbar
-    message="This is a snackbar without icon"
+    label="This is a snackbar without icon"
     variant="default"
   />
 );

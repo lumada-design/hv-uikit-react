@@ -17,8 +17,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "@material-ui/core/Input";
-import Typography from "@material-ui/core/Typography";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
+import HvTypography from "../Typography";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
@@ -29,17 +30,17 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const {
-      validationState,
-      value,
-      inputTextConfiguration: { infoText, warningText }
-    } = props;
+    const { validationState, value, inputTextConfiguration, labels } = props;
+
+    const definedLabels = inputTextConfiguration || labels;
 
     this.state = {
       validationState,
       value,
       infoText:
-        validationState === validationStates.invalid ? warningText : infoText
+        validationState === validationStates.invalid
+          ? definedLabels.warningText
+          : definedLabels.infoText
     };
   }
 
@@ -68,8 +69,11 @@ class HvInput extends React.Component {
    * because the reference to the input is lost when the component is updated.
    */
   handleClear = () => {
-    const { inputTextConfiguration } = this.props;
-    this.manageInputValueState("", inputTextConfiguration.infoText);
+    const { inputTextConfiguration, labels, onChange } = this.props;
+    const definedLabels = inputTextConfiguration || labels;
+    const value = "";
+    onChange(value);
+    this.manageInputValueState(value, definedLabels.infoText);
     setTimeout(() => {
       this.node.children[1].children[0].focus();
     });
@@ -82,10 +86,11 @@ class HvInput extends React.Component {
    * @param {Object} event - The event provided by the material ui input
    */
   onChangeHandler = event => {
-    const { onChange, inputTextConfiguration } = this.props;
+    const { onChange, inputTextConfiguration, labels } = this.props;
     const { value } = event.target;
+    const definedLabels = inputTextConfiguration || labels;
     const newValue = onChange(value);
-    this.manageInputValueState(newValue, inputTextConfiguration.infoText);
+    this.manageInputValueState(newValue, definedLabels.infoText);
   };
 
   /**
@@ -96,7 +101,7 @@ class HvInput extends React.Component {
    */
   onBlurHandler = () => {
     const { value } = this.state;
-    const { onBlur, inputTextConfiguration, isRequired } = this.props;
+    const { onBlur, inputTextConfiguration, labels, isRequired } = this.props;
     const {
       validation,
       validationType,
@@ -104,13 +109,15 @@ class HvInput extends React.Component {
       maxCharQuantity
     } = this.props;
 
+    const definedLabels = inputTextConfiguration || labels;
+
     let validationState;
-    let { infoText } = inputTextConfiguration;
+    let { infoText } = definedLabels;
 
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
-        infoText = inputTextConfiguration.requiredWarningText;
+        infoText = definedLabels.requiredWarningText;
       } else {
         validationState = validationStates.empty;
       }
@@ -128,11 +135,11 @@ class HvInput extends React.Component {
         validationState = validationStates.invalid;
 
         if (maxCharQuantity && value.length > maxCharQuantity) {
-          infoText = inputTextConfiguration.maxCharQuantityWarningText;
+          infoText = definedLabels.maxCharQuantityWarningText;
         } else if (minCharQuantity && value.length < minCharQuantity) {
-          infoText = inputTextConfiguration.minCharQuantityWarningText;
+          infoText = definedLabels.minCharQuantityWarningText;
         } else {
-          infoText = inputTextConfiguration.warningText;
+          infoText = definedLabels.warningText;
         }
       }
     }
@@ -147,15 +154,19 @@ class HvInput extends React.Component {
    */
   onFocusHandler = () => {
     const { value } = this.state;
-    const { onFocus, inputTextConfiguration } = this.props;
-    this.manageInputValueState(value, inputTextConfiguration.infoText);
+    const { onFocus, inputTextConfiguration, labels } = this.props;
+    const definedLabels = inputTextConfiguration || labels;
+    this.manageInputValueState(value, definedLabels.infoText);
     onFocus(value);
   };
 
   render() {
     const {
+      labels,
       inputTextConfiguration,
       classes,
+      className,
+      id,
       password,
       disabled,
       isRequired,
@@ -174,6 +185,7 @@ class HvInput extends React.Component {
       onFocus,
       value,
       autoFocus,
+      theme,
       ...others
     } = this.props;
 
@@ -183,7 +195,9 @@ class HvInput extends React.Component {
       infoText
     } = this.state;
 
-    let label = inputTextConfiguration.inputLabel;
+    const definedLabels = inputTextConfiguration || labels;
+
+    let label = definedLabels.inputLabel;
     if (isRequired) {
       label = `${label}*`;
     }
@@ -193,6 +207,7 @@ class HvInput extends React.Component {
         classes={classes}
         validationState={stateValidationState}
         handleClear={() => this.handleClear()}
+        theme={theme}
       />
     );
 
@@ -214,8 +229,8 @@ class HvInput extends React.Component {
     let validationText;
     if (validate) {
       validationText = (
-        <Typography
-          variant="body2"
+        <HvTypography
+          variant="infoText"
           className={classNames(classes.text, {
             [classes.textInfo]:
               stateValidationState !== validationStates.invalid,
@@ -225,16 +240,16 @@ class HvInput extends React.Component {
           })}
         >
           {externalWarningTextOverride || infoText}
-        </Typography>
+        </HvTypography>
       );
     }
 
     let labelTypography;
     if (label) {
       labelTypography = (
-        <Typography variant="subtitle2" className={classes.label}>
+        <HvTypography variant="labelText" className={classes.label}>
           {label}
-        </Typography>
+        </HvTypography>
       );
     }
 
@@ -243,7 +258,8 @@ class HvInput extends React.Component {
         ref={node => {
           this.node = node;
         }}
-        className={classes.container}
+        className={classNames(classes.container, className)}
+        id={id}
       >
         {labelTypography}
         <Input
@@ -252,7 +268,7 @@ class HvInput extends React.Component {
           onFocus={this.onFocusHandler}
           value={stateValue}
           disabled={disabled}
-          placeholder={inputTextConfiguration.placeholder}
+          placeholder={definedLabels.placeholder}
           type={password ? "password" : "text"}
           classes={{
             input: classes.input,
@@ -279,21 +295,53 @@ class HvInput extends React.Component {
 
 HvInput.propTypes = {
   /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
+  /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**
    * An Object containing the various text associated with the input.
    *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
+   * - inputLabel: the label on top of the input.
+   * - placeholder: the placeholder value of the input.
+   * - infoText: the default value of the info text below the input.
+   * - warningText: the value when a validation fails.
+   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * - minCharQuantityWarningText: the message that appears when there are too few characters.
+   * - requiredWarningText: the message that appears when the input is empty and required.
+   * @deprecated Instead use the labels property
    */
-  inputTextConfiguration: PropTypes.shape({
+  inputTextConfiguration: deprecatedPropType(
+    PropTypes.shape({
+      inputLabel: PropTypes.string,
+      placeholder: PropTypes.string,
+      infoText: PropTypes.string,
+      warningText: PropTypes.string,
+      maxCharQuantityWarningText: PropTypes.string,
+      minCharQuantityWarningText: PropTypes.string,
+      requiredWarningText: PropTypes.string
+    }),
+    "Instead use the labels property"
+  ),
+  /**
+   * An Object containing the various text associated with the input.
+   *
+   * - inputLabel: the label on top of the input.
+   * - placeholder: the placeholder value of the input.
+   * - infoText: the default value of the info text below the input.
+   * - warningText: the value when a validation fails.
+   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
+   * - minCharQuantityWarningText: the message that appears when there are too few characters.
+   * - requiredWarningText: the message that appears when the input is empty and required.
+   */
+  labels: PropTypes.shape({
     inputLabel: PropTypes.string,
     placeholder: PropTypes.string,
     infoText: PropTypes.string,
@@ -382,12 +430,19 @@ HvInput.propTypes = {
   /**
    * Overrides any validation with a specific error/warning message to set in the infoText slot.
    */
-  externalWarningTextOverride: PropTypes.string
+  externalWarningTextOverride: PropTypes.string,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 HvInput.defaultProps = {
+  className: "",
+  id: undefined,
   password: false,
-  inputTextConfiguration: {
+  inputTextConfiguration: undefined,
+  labels: {
     inputLabel: "",
     placeholder: "enter value",
     infoText: "",
@@ -412,7 +467,8 @@ HvInput.defaultProps = {
   onChange: value => value,
   onBlur: () => {},
   onFocus: () => {},
-  externalWarningTextOverride: null
+  externalWarningTextOverride: null,
+  theme: null
 };
 
 export default HvInput;

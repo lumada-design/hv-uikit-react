@@ -16,7 +16,7 @@
 
 import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
-import Button from "@material-ui/core/Button";
+import Button from "@hv/uikit-react-core/dist/Button";
 import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
 
 class SimpleBanner extends React.Component {
@@ -37,7 +37,7 @@ class SimpleBanner extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -57,13 +57,13 @@ class SimpleBanner extends React.Component {
         </Button>
         <HvBanner
           open={open}
-          message={`This is ${message}`}
+          label={`This is ${label}`}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          actionsOnMessage={action}
+          actionsOnlabel={action}
         />
       </div>
     );
@@ -72,7 +72,7 @@ class SimpleBanner extends React.Component {
 
 export default (
   <SimpleBanner
-    message="Banner"
+    label="Banner"
     variant="default"
     customIcon={<FastForward16 />}
   />

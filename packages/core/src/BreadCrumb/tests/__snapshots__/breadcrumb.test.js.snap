@@ -2,8 +2,10 @@
 
 exports[`Breadcrumb withStyles should render correctly 1`] = `
 <HvProvider
+  changeTheme={[Function]}
   router={null}
   theme={null}
+  uiKitTheme="dawn"
 >
   <MuiThemeProviderOld
     sheetsManager={
@@ -29,10 +31,10 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -81,6 +83,7 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -369,7 +372,6 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3299,10 +3301,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -3351,6 +3353,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -3639,7 +3642,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -4378,18 +4380,14 @@ body {
 .BreadCrumb-root-1 {
   display: flex;
   z-index: 0;
-  margin-top: 10px;
   align-items: center;
-  margin-left: 30px;
 }
 .BreadCrumb-centerContainer-2 {
   display: flex;
   align-items: center;
 }
 .BreadCrumb-link-3 {
-  color: #146BD2;
   overflow: hidden;
-  font-size: 12px;
   max-width: 170px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4429,8 +4427,6 @@ body {
                   Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   Object {
@@ -4438,8 +4434,6 @@ body {
                     "display": "flex",
                   },
                   Object {
-                    "color": "#146BD2",
-                    "font-size": "12px",
                     "max-width": "170px",
                     "overflow": "hidden",
                     "text-decoration": "none",
@@ -4467,8 +4461,6 @@ body {
                     "display": "inherit",
                   },
                   ".BreadCrumb-link-3": Object {
-                    "color": "#146BD2",
-                    "font-size": "12px",
                     "max-width": "170px",
                     "overflow": "hidden",
                     "text-decoration": "none",
@@ -4482,8 +4474,6 @@ body {
                   ".BreadCrumb-root-1": Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   ".BreadCrumb-separator-5": Object {
@@ -4498,8 +4488,6 @@ body {
                     "display": "inherit",
                   },
                   "link": Object {
-                    "color": "#146BD2",
-                    "font-size": "12px",
                     "max-width": "170px",
                     "overflow": "hidden",
                     "text-decoration": "none",
@@ -4509,8 +4497,6 @@ body {
                   "root": Object {
                     "align-items": "center",
                     "display": "flex",
-                    "margin-left": "30px",
-                    "margin-top": "10px",
                     "z-index": 0,
                   },
                   "separator": Object {
@@ -5025,8 +5011,6 @@ body {
                       "color": "#4389DB",
                       "textDecoration": "none",
                     },
-                    "color": "#146BD2",
-                    "fontSize": "12px",
                     "maxWidth": "170px",
                     "overflow": "hidden",
                     "textDecoration": "none",
@@ -5036,8 +5020,6 @@ body {
                   "root": Object {
                     "alignItems": "center",
                     "display": "flex",
-                    "marginLeft": "30px",
-                    "marginTop": "10px",
                     "zIndex": 0,
                   },
                   "separator": Object {
@@ -5068,10 +5050,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 1280,
-            "md": 960,
+            "lg": 840,
+            "md": 720,
             "sm": 600,
-            "xl": 1920,
+            "xl": 1990,
             "xs": 0,
           },
           "width": [Function],
@@ -5120,6 +5102,7 @@ body {
             "xl": "90",
             "xs": "10",
           },
+          "type": "light",
           "typography": Object {
             "3xlTitle": Object {
               "color": "#414141",
@@ -5408,7 +5391,6 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
-          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -5645,6 +5627,7 @@ body {
     </WithStyles(CssBaseline)>
     <WithStyles(BreadCrumb)>
       <BreadCrumb
+        className=""
         classes={
           Object {
             "centerContainer": "BreadCrumb-centerContainer-2",
@@ -5671,10 +5654,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 1280,
-                "md": 960,
+                "lg": 840,
+                "md": 720,
                 "sm": 600,
-                "xl": 1920,
+                "xl": 1990,
                 "xs": 0,
               },
               "width": [Function],
@@ -5723,6 +5706,7 @@ body {
                 "xl": "90",
                 "xs": "10",
               },
+              "type": "light",
               "typography": Object {
                 "3xlTitle": Object {
                   "color": "#414141",
@@ -6011,7 +5995,6 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
-              "unit": 8,
               "xl": "90",
               "xs": "10",
             },

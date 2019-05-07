@@ -38,9 +38,10 @@ const style = {
  * @returns {*}
  * @constructor
  */
-const Main = ({ classes, children, open, onClose, ...others }) => (
+const Main = ({ classes, className, id, children, open, onClose, ...others }) => (
   <Dialog
-    className={classNames(classes.root)}
+    className={classNames(classes.root, className)}
+    id={id}
     open={open}
     PaperProps={{
       classes: {
@@ -67,6 +68,14 @@ const Main = ({ classes, children, open, onClose, ...others }) => (
 );
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -96,6 +105,11 @@ Main.propTypes = {
    * Function executed on close.
    */
   onClose: PropTypes.func.isRequired
+};
+
+Main.defaultProps = {
+  className: "",
+  id: undefined
 };
 
 export default Main;

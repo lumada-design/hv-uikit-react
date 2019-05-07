@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvBannerContentWrapper from "./BannerWrapper";
 
 /**
@@ -31,6 +32,7 @@ const HvBanner = props => {
   const {
     classes,
     className,
+    id,
     open,
     onClose,
     message,
@@ -39,7 +41,8 @@ const HvBanner = props => {
     showIcon,
     customIcon,
     action,
-    actionsOnMessage
+    actionsOnMessage,
+    label
   } = props;
 
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
@@ -47,13 +50,14 @@ const HvBanner = props => {
   return (
     <Snackbar
       className={className}
+      id={id}
       classes={classes}
       anchorOrigin={anchorOriginBanner}
       open={open}
       transitionDuration={0}
     >
       <HvBannerContentWrapper
-        message={message}
+        content={message || label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
@@ -70,6 +74,10 @@ HvBanner.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -98,7 +106,12 @@ HvBanner.propTypes = {
   /**
    * The message to display.
    */
-  message: PropTypes.string,
+  label: PropTypes.string,
+  /**
+   * The message to display.
+   * @deprecated. Instead use the label property
+   */
+  message: deprecatedPropType(PropTypes.string, "Instead use the label property"),
   /**
    *  The anchor of the Snackbar.
    */
@@ -127,7 +140,9 @@ HvBanner.propTypes = {
 
 HvBanner.defaultProps = {
   className: "",
-  message: "",
+  id: undefined,
+  message: undefined,
+  label: "",
   anchorOrigin: "top",
   customIcon: null,
   showIcon: false,

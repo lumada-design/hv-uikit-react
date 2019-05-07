@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-/*  TODO: Review accessibility */
-
-/*  eslint-disable jsx-a11y/anchor-is-valid */
-
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
-import Typography from "@material-ui/core/Typography";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
+import HvTypography from "../Typography";
 import SubMenu from "./SubMenu";
-import Link from "../Link";
+import HvLink from "../Link";
 
 /**
  * Removes the extension of the label.
@@ -44,7 +41,9 @@ const removeExtension = label =>
  * @constructor
  */
 const LastPathElement = ({ label }) => (
-  <Typography variant="body2">{startCase(removeExtension(label))}</Typography>
+  <HvTypography variant="infoText">
+    {startCase(removeExtension(label))}
+  </HvTypography>
 );
 
 LastPathElement.propTypes = {
@@ -61,12 +60,14 @@ LastPathElement.propTypes = {
  * @constructor
  */
 const Page = ({ useRouter, elem, classes }) => (
-  <Link route={elem.path} params={elem.params} useRouter={useRouter}>
+  <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
     <div className={classes.centerContainer}>
       {/* {elem.icon && <div className={classes.iconContainer}>{elem.icon}</div>} */}
-      <Typography className={classes.link}>{startCase(elem.label)}</Typography>
+      <HvTypography variant="sLink" className={classes.link}>
+        {startCase(elem.label)}
+      </HvTypography>
     </div>
-  </Link>
+  </HvLink>
 );
 
 Page.propTypes = {
@@ -104,13 +105,12 @@ PathElement.propTypes = {
 /**
  * Helper function to build a new path list with one element with the list for the submenu.
  *
- * @param classes
  * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
  */
-const pathWithSubMenu = (classes, useRouter, listRoute, maxVisible) => {
+const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
   listRoute.splice(
@@ -132,7 +132,15 @@ const pathWithSubMenu = (classes, useRouter, listRoute, maxVisible) => {
  * @returns {*}
  * @constructor
  */
-const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
+const BreadCrumb = ({
+  classes,
+  className,
+  id,
+  useRouter,
+  listRoute,
+  maxVisible,
+  url
+}) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
 
@@ -158,13 +166,13 @@ const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(classes, useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu( useRouter, listPath, maxVisibleElem)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
 
   return (
-    <div className={classes.root}>
+    <div id={id} className={classNames(classes.root, className)}>
       {listPath.map((elem, index) => {
         const key = `key_${index}`;
 
@@ -189,6 +197,14 @@ const BreadCrumb = ({ classes, useRouter, listRoute, maxVisible, url }) => {
   );
 };
 BreadCrumb.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -230,6 +246,8 @@ BreadCrumb.propTypes = {
 };
 
 BreadCrumb.defaultProps = {
+  className: "",
+  id: undefined,
   useRouter: false,
   maxVisible: 9999,
   listRoute: [],

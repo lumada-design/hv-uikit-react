@@ -17,8 +17,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
+import HvTypography from "../Typography";
 import List from "./List";
 
 const defaultLabels = {
@@ -90,9 +92,10 @@ class Main extends React.Component {
    * @param {Array} selection - An array containing the selected values.
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
    * @memberof Main
    */
-  handleSelection(selection, commitChanges, toggle) {
+  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { values, multiSelect, onChange } = this.props;
     const { labels } = this.state;
     const hasSelection = selection.length > 0;
@@ -113,14 +116,12 @@ class Main extends React.Component {
     }
 
     if (toggle) this.handleToggle();
-
-    onChange(multiSelect ? selection : selection[0]);
+    if (notifyChanges) onChange(multiSelect ? selection : selection[0]);
   }
 
   renderLabel() {
-    const { classes, label } = this.props;
-
-    return <div className={classes.label}>{label}</div>;
+    const { classes, label, labels } = this.props;
+    return <div className={classes.label}>{labels.title || label}</div>;
   }
 
   renderHeader() {
@@ -139,9 +140,9 @@ class Main extends React.Component {
         onClick={evt => this.handleToggle(evt)}
         role="presentation"
       >
-        <div className={classNames([classes.selection, classes.truncate])}>
+        <HvTypography variant="normalText" className={classNames([classes.selection, classes.truncate])}>
           {selectionLabel}
-        </div>
+        </HvTypography>
         {isOpen ? (
           <ArrowDown className={classes.arrow} />
         ) : (
@@ -152,7 +153,14 @@ class Main extends React.Component {
   }
 
   renderList() {
-    const { classes, values, multiSelect, showSearch, selectDefault } = this.props;
+    const {
+      classes,
+      values,
+      multiSelect,
+      showSearch,
+      selectDefault,
+      notifyChangesOnFirstRender
+    } = this.props;
     const { isOpen, labels } = this.state;
 
     return (
@@ -170,31 +178,34 @@ class Main extends React.Component {
           multiSelect={multiSelect}
           isOpen={isOpen}
           showSearch={showSearch}
-          onChange={(selected, commitChanges, toggle) =>
-            this.handleSelection(selected, commitChanges, toggle)
+          onChange={(selected, commitChanges, toggle, notifyChanges) =>
+            this.handleSelection(selected, commitChanges, toggle, notifyChanges)
           }
           labels={labels}
           selectDefault={selectDefault}
+          notifyChangesOnFirstRender={notifyChangesOnFirstRender}
         />
       </div>
     );
   }
 
   render() {
-    const { classes, label, disabled } = this.props;
+    const { classes, className, id, label, labels, disabled } = this.props;
 
     const { isOpen } = this.state;
 
     return (
       <React.Fragment>
-        {label ? this.renderLabel() : null}
+        {label || labels.title ? this.renderLabel() : null}
         <div
+          id={id}
           className={classNames([
             classes.root,
             {
               [classes.rootDisabled]: disabled,
               [classes.rootActive]: isOpen
-            }
+            },
+            className
           ])}
           ref={el => {
             this.node = el;
@@ -209,6 +220,14 @@ class Main extends React.Component {
 }
 
 Main.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /** 
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -268,8 +287,12 @@ Main.propTypes = {
   }).isRequired,
   /**
    * Label to display
+   * @deprecated Instead use the labels property
    */
-  label: PropTypes.string,
+  label: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the labels title property"
+  ),
   /**
    * The list to be rendered by the dropdown.
    */
@@ -301,6 +324,10 @@ Main.propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * If 'true' the dropdown will notify changes everytime it re-renders.
+   */
+  notifyChangesOnFirstRender: PropTypes.bool,
+  /**
    * An object containing all the labels for the dropdown.
    *
    * - select: The default when there are no options avaible.
@@ -311,6 +338,7 @@ Main.propTypes = {
    * - multiSelectionConjunction: The label used in the middle of the multiselection count.
    */
   labels: PropTypes.shape({
+    title: PropTypes.string,
     select: PropTypes.string,
     selectAll: PropTypes.string,
     cancelLabel: PropTypes.string,
@@ -319,20 +347,23 @@ Main.propTypes = {
     multiSelectionConjunction: PropTypes.string
   }),
   /**
-   * If ´true´ and none element selected, 
+   * If ´true´ and none element selected,
    * single select has default (first) label selected.
    */
   selectDefault: PropTypes.bool
 };
 
 Main.defaultProps = {
-  label: null,
+  className: "",
+  id: undefined,
+  label: undefined,
   values: null,
   multiSelect: false,
   showSearch: false,
   disabled: false,
   expanded: false,
   onChange() {},
+  notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true
 };

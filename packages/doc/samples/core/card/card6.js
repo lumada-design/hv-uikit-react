@@ -16,13 +16,13 @@
 
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Level5.S";
-import IconInvalid from "@hv/uikit-react-icons/dist/Level2.S";
-import WarningIcon from "@hv/uikit-react-icons/dist/Level4.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/Level5.sema6.S";
+import IconInvalid from "@hv/uikit-react-icons/dist/Level2.sema3.S";
+import WarningIcon from "@hv/uikit-react-icons/dist/Level4.sema5.S";
 import Icon from "@hv/uikit-react-icons/dist/Tool.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Typography from "@material-ui/core/Typography";
-import theme from "@hv/uikit-common-themes/dist/theme";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const kpiStyles = theme => ({
   content: {
@@ -31,23 +31,10 @@ const kpiStyles = theme => ({
   item: {
     padding: `0 0 ${theme.hv.spacing.sm}px 0`
   },
-  label: {
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.subtitle2
-  },
   text: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.body1
-  },
-  highlightText: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    fontFamily: theme.typography.fontFamily,
-    ...theme.typography.h3
+    whiteSpace: "nowrap"
   }
 });
 
@@ -65,30 +52,38 @@ const ThroughputKpiTextConfiguration = score => ({
 });
 
 /* eslint react/prop-types: 0 */
-const Content = ({ value, icon }) => (
+const Content = ({ classes, value, icon }) => (
   <div>
     <HvKpi
       kpiTextConfiguration={ThroughputKpiTextConfiguration(value)}
       visualIndicator={icon}
     />
     <div>
-      <Typography semantic="body1" className={kpiStyles.label}>
-        {data.firstTitle}
-      </Typography>
-      <Typography semantic="body2" className={kpiStyles.text}>
-        {data.firstContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={kpiStyles.text}>
+          {data.firstContent}
+        </HvTypography>
+      </div>
     </div>
     <div style={{ marginTop: "15px" }}>
-      <Typography semantic="body1" className={kpiStyles.label}>
-        {data.secondTitle}
-      </Typography>
-      <Typography semantic="body2" className={kpiStyles.text}>
-        {data.secondContent}
-      </Typography>
+      <div>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+      </div>
+      <div>
+        <HvTypography variant="infoText" className={kpiStyles.text}>
+          {data.secondContent}
+        </HvTypography>
+      </div>
     </div>
   </div>
 );
+
+const ContentWithStyles = withStyles(kpiStyles, {
+  withTheme: true
+})(Content);
 
 export default (
   <>
@@ -103,7 +98,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="85" icon={<IconInvalid color={["none", theme.palette.semantic.sema3]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="85" icon={<IconInvalid />} />
+          }
           semantic="sema2"
           isSelectable
           checkboxValue="value"
@@ -114,7 +111,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="45" icon={<WarningIcon color={["none", theme.palette.semantic.sema5]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="45" icon={<WarningIcon />} />
+          }
           semantic="sema3"
           isSelectable
           checkboxValue="value"
@@ -125,7 +124,9 @@ export default (
         <HvCard
           icon={<Icon />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<Content value="19" icon={<FailureIcon color={["none", theme.palette.semantic.sema6]} />} />}
+          innerCardContent={
+            <ContentWithStyles value="19" icon={<FailureIcon />} />
+          }
           semantic="sema5"
           isSelectable
           checkboxValue="value"

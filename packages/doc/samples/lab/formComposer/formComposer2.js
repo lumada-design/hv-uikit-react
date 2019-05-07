@@ -47,11 +47,19 @@ const data = [
   }
 ];
 
+const inputStyles = theme => ({
+  container: {
+    padding: `${theme.hv.spacing.xs}px 0`
+  }
+});
+
+const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+
 const groups = [
   {
     title: "Group 1 - Input",
     children: [
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
@@ -60,7 +68,7 @@ const groups = [
         onChange={value => value}
         value="Some text 1"
       />,
-      <HvInput
+      <CustomInput
         inputTextConfiguration={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"

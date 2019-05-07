@@ -36,6 +36,10 @@ storiesOf("Core", module).add("Login", () => <HvLogin />, {
     {
       title: "3. without Forgot Your Credentials and Remember me",
       src: "core/login/login3"
+    },
+    {
+      title: "4. Custom Labels",
+      src: "core/login/login4"
     }
   ]
 });

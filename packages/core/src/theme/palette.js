@@ -15,9 +15,8 @@
  */
 
 import createPalette from "@material-ui/core/styles/createPalette";
-import theme from "@hv/uikit-common-themes/dist/theme";
 
-const palette = createPalette({
+const palette = theme => createPalette({
   primary: {
     main: theme.palette.accent.acce2,
     light: theme.palette.accent.acce2h

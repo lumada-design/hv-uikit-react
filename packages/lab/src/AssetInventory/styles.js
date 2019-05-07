@@ -27,7 +27,10 @@ const styles = theme => ({
     flexFlow: "column"
   },
   title: {
-    ...theme.typography.h1
+    ...theme.hv.typography.xlTitle
+  },
+  gridContainer: {
+    width: "auto"
   },
   searchBoxContainer: {
     position: "relative",

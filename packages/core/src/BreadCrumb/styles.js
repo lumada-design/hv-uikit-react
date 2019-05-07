@@ -18,8 +18,6 @@ const styles = theme => ({
   root: {
     display: "flex",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.xs}px`,
-    marginLeft: `${theme.hv.spacing.md}px`,
     zIndex: 0
   },
   centerContainer: {
@@ -28,8 +26,6 @@ const styles = theme => ({
   },
   link: {
     textDecoration: "none",
-    color: theme.hv.palette.accent.acce2,
-    fontSize: "12px",
     maxWidth: "170px",
     whiteSpace: "nowrap",
     overflow: "hidden",

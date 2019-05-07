@@ -66,7 +66,7 @@ describe("<List />", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("handleCancel shoud reset list to prev list", () => {
+  it("handleCancel should reset list to prev list", () => {
     listComponent = wrapper.find(List);
     instance = listComponent.instance();
     instance.setSelection = jest.fn();
@@ -74,10 +74,10 @@ describe("<List />", () => {
     instance.handleCancel();
 
     expect(instance.state.list).toBe(instance.state.prevList);
-    expect(instance.setSelection).toBeCalledWith(true, true);
+    expect(instance.setSelection).toBeCalledWith(true, true, false);
   });
 
-  it("handleApply shoud reset prev list to list", () => {
+  it("handleApply should reset prev list to list", () => {
     listComponent = wrapper.find(List);
     instance = listComponent.instance();
     instance.setSelection = jest.fn();
@@ -85,6 +85,6 @@ describe("<List />", () => {
     instance.handleApply();
 
     expect(instance.state.prevList).toEqual(instance.state.list);
-    expect(instance.setSelection).toBeCalledWith(true, true);
+    expect(instance.setSelection).toBeCalledWith(true, true, true);
   });
 });

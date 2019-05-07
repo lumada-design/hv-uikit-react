@@ -1,9 +1,9 @@
 ---
 name: New feature request
 about: Suggest an idea for this project
-title: "[FEATURE] "
+title: ''
 labels: feature
-assignees: diogofscmariano, francisco-guilherme, eliofreitas, duarteteixeira, tiago-ssantos
+assignees: diogofscmariano, duarteteixeira, eliofreitas, francisco-guilherme, tiago-ssantos
 
 ---
 
