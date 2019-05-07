@@ -28,7 +28,7 @@ import classNames from "classnames";
  * @constructor
  */
 const Typography = ({ variant, classes, className, id, children }) => (
-  <span id={id} className={classNames(classes[variant], className)}>{children}</span>
+  <span id={id} className={classNames(classes[variant], classes.fontFamily, className)}>{children}</span>
 );
 
 Typography.propTypes = {

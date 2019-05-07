@@ -48,7 +48,8 @@ const styles = theme => ({
     color: theme.palette.text.main,
     fontSize: "14px",
     letterSpacing: "0.02em",
-    lineHeight: "32px"
+    lineHeight: "32px",
+    fontFamily: theme.hv.typography.fontFamily
   },
   selected: {
     "& span": {
