@@ -18,7 +18,6 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { MuiThemeProvider } from "@material-ui/core/styles";
 import ReactTable from "react-table";
 import HvProvider from "../../Provider";
 import HvTableWithStyles from "../index";
@@ -27,7 +26,6 @@ import theme from "../../theme";
 
 describe("Hv Table", () => {
   let wrapper;
-  const themeProvider = theme("dawn");
 
   describe("index", () => {
     beforeEach(async () => {
@@ -37,7 +35,7 @@ describe("Hv Table", () => {
             classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={themeProvider}
+            theme={theme}
           />
         </HvProvider>
       );
@@ -74,14 +72,14 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is avaialble it is rendered", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={themeProvider}
+            theme={theme}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const reactTable = wrapper.find(ReactTable);
@@ -90,10 +88,10 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is not empty, columns are displayed", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
-            theme={themeProvider}
+            theme={theme}
             columns={[
               { id: 1, Header: "column 1" },
               { id: 2, Header: "column 2" },
@@ -101,7 +99,7 @@ describe("Hv Table", () => {
             ]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const headers = wrapper
@@ -112,14 +110,14 @@ describe("Hv Table", () => {
 
     it("and if 'data' is provided, rows are the same length of 'data'", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
-            theme={themeProvider}
+            theme={theme}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const rowCount = wrapper.find(".rt-td").length;
@@ -128,15 +126,15 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
-            theme={themeProvider}
+            theme={theme}
             columns={[]}
             data={[]}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const pageSize = wrapper.find(".-pageSizeOptions select");
@@ -146,15 +144,15 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
-            theme={themeProvider}
+            theme={theme}
             columns={[]}
             data={[]}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const pageSize = wrapper.find(".-pageSizeOptions select");
@@ -164,15 +162,15 @@ describe("Hv Table", () => {
 
     it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
-            theme={themeProvider}
+            theme={theme}
             columns={[]}
             data={[]}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const pageSize = wrapper.find(".-pageSizeOptions select");
@@ -182,7 +180,7 @@ describe("Hv Table", () => {
 
     it("should mark the sorted column ", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -190,7 +188,7 @@ describe("Hv Table", () => {
             defaultSorted={defaultSorted}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -205,7 +203,7 @@ describe("Hv Table", () => {
         numeric: "numeric-random"
       };
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={classesToApply}
             columns={column}
@@ -213,7 +211,7 @@ describe("Hv Table", () => {
             defaultSorted={defaultSorted}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -232,7 +230,7 @@ describe("Hv Table", () => {
 
     it("should highlight the sorted column", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -240,7 +238,7 @@ describe("Hv Table", () => {
             defaultSorted={defaultSorted}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
       const internalColumnRepresentation = {
         className: "something"
@@ -253,7 +251,7 @@ describe("Hv Table", () => {
 
     it("should return an icon when sorted column in descending order", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -261,7 +259,7 @@ describe("Hv Table", () => {
             defaultSorted={defaultSorted}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
       const internalColumnRepresentation = {
         className: "something"
@@ -281,7 +279,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" }
       ];
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={columns}
@@ -289,7 +287,7 @@ describe("Hv Table", () => {
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
             pageSize={5}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
       const internalColumnRepresentation = {
         className: "something"
@@ -312,7 +310,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" }
       ];
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={columns}
@@ -321,7 +319,7 @@ describe("Hv Table", () => {
             pageSize={5}
             idForCheckbox="id"
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -331,7 +329,7 @@ describe("Hv Table", () => {
 
     it("should select one value", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -340,7 +338,7 @@ describe("Hv Table", () => {
             pageSize={5}
             idForCheckbox="id"
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -350,7 +348,7 @@ describe("Hv Table", () => {
 
     it("should deselect one value", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -359,7 +357,7 @@ describe("Hv Table", () => {
             pageSize={5}
             idForCheckbox="id"
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -372,7 +370,7 @@ describe("Hv Table", () => {
 
     it("should check if the value is selected", () => {
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -381,7 +379,7 @@ describe("Hv Table", () => {
             pageSize={5}
             idForCheckbox="id"
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -398,7 +396,7 @@ describe("Hv Table", () => {
         viewIndex: 1
       };
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -408,7 +406,7 @@ describe("Hv Table", () => {
             subElementTemplate={subElementTemplate}
             idForCheckbox="id"
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
@@ -419,7 +417,7 @@ describe("Hv Table", () => {
     it("should fetch data", () => {
       const fetchDataMock = jest.fn(() => "mock");
       wrapper = mount(
-        <MuiThemeProvider theme={themeProvider}>
+        <HvProvider>
           <HvTable
             classes={{}}
             columns={column}
@@ -429,7 +427,7 @@ describe("Hv Table", () => {
             idForCheckbox="id"
             onFetchData={fetchDataMock}
           />
-        </MuiThemeProvider>
+        </HvProvider>
       );
 
       const instance = wrapper.find(HvTable).instance();
