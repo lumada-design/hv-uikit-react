@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.0...@hv/uikit-react-core@1.1.1) (2019-05-07)
+
+
+### Bug Fixes
+
+* **theme:** compatibility issue with previous theme import. [#99](https://github.com/pentaho/hv-uikit-react/issues/99) ([719ee54](https://github.com/pentaho/hv-uikit-react/commit/719ee54))
+
+
+
+
+
 # [1.1.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.0.2-alpha.21...@hv/uikit-react-core@1.1.0) (2019-05-07)
 
 **Note:** Version bump only for package @hv/uikit-react-core
