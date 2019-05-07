@@ -83,7 +83,11 @@ Header.propTypes = {
     /**
      * Styles applied to the action element.
      */
-    action: PropTypes.string
+    action: PropTypes.string,
+    /**
+     * Styles applied to the content wrapper element.
+     */
+    content: PropTypes.string
   }).isRequired,
   /**
    *  The renderable content inside the title slot of the header.

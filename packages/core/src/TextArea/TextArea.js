@@ -171,7 +171,11 @@ HvTextArea.propTypes = {
     /**
      * Style applied to the character counter when it is disabled.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
+    /**
+     * Style applied to the input container.
+     */
+    container: PropTypes.string,
   }).isRequired,
     /**
    * An Object containing the various text associated with the text area.
