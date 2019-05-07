@@ -11,7 +11,7 @@ pipeline {
     parameters {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
-        booleanParam(name: 'skipDeploy', defaultValue: false, description: 'when true, skip deploy to nexus.')
+        booleanParam(name: 'skipDeploy', defaultValue: true, description: 'when true, skip deploy to nexus.')
         choice(choices: ['prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'What type of deploy.', name: 'deploy')
         choice(choices: ['#ui-kit-eng-ci','#ui-kit-eng', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
