@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.24](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.0.2-alpha.23...@hv/uikit-react-doc@1.0.2-alpha.24) (2019-05-07)
+
+
+### Bug Fixes
+
+* **datepicker:** fix label padding. [#144](https://github.com/pentaho/hv-uikit-react/issues/144) ([60e3625](https://github.com/pentaho/hv-uikit-react/commit/60e3625))
+
+
+
+
+
 ## [1.0.2-alpha.23](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.0.2-alpha.22...@hv/uikit-react-doc@1.0.2-alpha.23) (2019-05-07)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
