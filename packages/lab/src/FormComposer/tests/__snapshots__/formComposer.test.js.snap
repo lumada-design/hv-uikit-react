@@ -5618,9 +5618,9 @@ body {
                 "3xlTitle": "Typography-3xlTitle-35",
                 "4xlTitle": "Typography-4xlTitle-34",
                 "5xlTitle": "Typography-5xlTitle-33",
+                "baseFontFamily": "Typography-baseFontFamily-52",
                 "disabledButtonText": "Typography-disabledButtonText-46",
                 "disabledText": "Typography-disabledText-50",
-                "fontFamily": "Typography-fontFamily-52",
                 "highlightText": "Typography-highlightText-43",
                 "infoText": "Typography-infoText-48",
                 "inlineLink": "Typography-inlineLink-45",
@@ -5645,9 +5645,9 @@ body {
                   "3xlTitle": "Typography-3xlTitle-35",
                   "4xlTitle": "Typography-4xlTitle-34",
                   "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
                   "disabledButtonText": "Typography-disabledButtonText-46",
                   "disabledText": "Typography-disabledText-50",
-                  "fontFamily": "Typography-fontFamily-52",
                   "highlightText": "Typography-highlightText-43",
                   "infoText": "Typography-infoText-48",
                   "inlineLink": "Typography-inlineLink-45",
@@ -6282,52 +6282,8 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-fontFamily-52 {
-  0: ';
-  1: O;
-  2: p;
-  3: e;
-  4: n;
-  5:  ;
-  6: S;
-  7: a;
-  8: n;
-  9: s;
-  10: ';
-  11: ,;
-  12:  ;
-  13: ';
-  14: A;
-  15: r;
-  16: i;
-  17: a;
-  18: l;
-  19: ';
-  20: ,;
-  21:  ;
-  22: ';
-  23: H;
-  24: e;
-  25: l;
-  26: v;
-  27: e;
-  28: t;
-  29: i;
-  30: c;
-  31: a;
-  32: ';
-  33: ,;
-  34:  ;
-  35: s;
-  36: a;
-  37: n;
-  38: s;
-  39: -;
-  40: s;
-  41: e;
-  42: r;
-  43: i;
-  44: f;
+.Typography-baseFontFamily-52 {
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
 }
 
                 </style>,
@@ -6345,9 +6301,9 @@ body {
                   "3xlTitle": "Typography-3xlTitle-35",
                   "4xlTitle": "Typography-4xlTitle-34",
                   "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
                   "disabledButtonText": "Typography-disabledButtonText-46",
                   "disabledText": "Typography-disabledText-50",
-                  "fontFamily": "Typography-fontFamily-52",
                   "highlightText": "Typography-highlightText-43",
                   "infoText": "Typography-infoText-48",
                   "inlineLink": "Typography-inlineLink-45",
@@ -6498,51 +6454,7 @@ body {
                     "line-height": "15px",
                   },
                   Object {
-                    "0": "'",
-                    "1": "O",
-                    "10": "'",
-                    "11": ",",
-                    "12": " ",
-                    "13": "'",
-                    "14": "A",
-                    "15": "r",
-                    "16": "i",
-                    "17": "a",
-                    "18": "l",
-                    "19": "'",
-                    "2": "p",
-                    "20": ",",
-                    "21": " ",
-                    "22": "'",
-                    "23": "H",
-                    "24": "e",
-                    "25": "l",
-                    "26": "v",
-                    "27": "e",
-                    "28": "t",
-                    "29": "i",
-                    "3": "e",
-                    "30": "c",
-                    "31": "a",
-                    "32": "'",
-                    "33": ",",
-                    "34": " ",
-                    "35": "s",
-                    "36": "a",
-                    "37": "n",
-                    "38": "s",
-                    "39": "-",
-                    "4": "n",
-                    "40": "s",
-                    "41": "e",
-                    "42": "r",
-                    "43": "i",
-                    "44": "f",
-                    "5": " ",
-                    "6": "S",
-                    "7": "a",
-                    "8": "n",
-                    "9": "s",
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   },
                 ],
                 "map": Object {
@@ -6567,6 +6479,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
+                  ".Typography-baseFontFamily-52": Object {
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
                   ".Typography-disabledButtonText-46": Object {
                     "color": "#999999",
                     "font-size": "14px",
@@ -6580,53 +6495,6 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                  },
-                  ".Typography-fontFamily-52": Object {
-                    "0": "'",
-                    "1": "O",
-                    "10": "'",
-                    "11": ",",
-                    "12": " ",
-                    "13": "'",
-                    "14": "A",
-                    "15": "r",
-                    "16": "i",
-                    "17": "a",
-                    "18": "l",
-                    "19": "'",
-                    "2": "p",
-                    "20": ",",
-                    "21": " ",
-                    "22": "'",
-                    "23": "H",
-                    "24": "e",
-                    "25": "l",
-                    "26": "v",
-                    "27": "e",
-                    "28": "t",
-                    "29": "i",
-                    "3": "e",
-                    "30": "c",
-                    "31": "a",
-                    "32": "'",
-                    "33": ",",
-                    "34": " ",
-                    "35": "s",
-                    "36": "a",
-                    "37": "n",
-                    "38": "s",
-                    "39": "-",
-                    "4": "n",
-                    "40": "s",
-                    "41": "e",
-                    "42": "r",
-                    "43": "i",
-                    "44": "f",
-                    "5": " ",
-                    "6": "S",
-                    "7": "a",
-                    "8": "n",
-                    "9": "s",
                   },
                   ".Typography-highlightText-43": Object {
                     "color": "#414141",
@@ -6747,6 +6615,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
+                  "baseFontFamily": Object {
+                    "font-family": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
                   "disabledButtonText": Object {
                     "color": "#999999",
                     "font-size": "14px",
@@ -6760,53 +6631,6 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                  },
-                  "fontFamily": Object {
-                    "0": "'",
-                    "1": "O",
-                    "10": "'",
-                    "11": ",",
-                    "12": " ",
-                    "13": "'",
-                    "14": "A",
-                    "15": "r",
-                    "16": "i",
-                    "17": "a",
-                    "18": "l",
-                    "19": "'",
-                    "2": "p",
-                    "20": ",",
-                    "21": " ",
-                    "22": "'",
-                    "23": "H",
-                    "24": "e",
-                    "25": "l",
-                    "26": "v",
-                    "27": "e",
-                    "28": "t",
-                    "29": "i",
-                    "3": "e",
-                    "30": "c",
-                    "31": "a",
-                    "32": "'",
-                    "33": ",",
-                    "34": " ",
-                    "35": "s",
-                    "36": "a",
-                    "37": "n",
-                    "38": "s",
-                    "39": "-",
-                    "4": "n",
-                    "40": "s",
-                    "41": "e",
-                    "42": "r",
-                    "43": "i",
-                    "44": "f",
-                    "5": " ",
-                    "6": "S",
-                    "7": "a",
-                    "8": "n",
-                    "9": "s",
                   },
                   "highlightText": Object {
                     "color": "#414141",
@@ -6914,9 +6738,9 @@ body {
                     "3xlTitle": "Typography-3xlTitle-35",
                     "4xlTitle": "Typography-4xlTitle-34",
                     "5xlTitle": "Typography-5xlTitle-33",
+                    "baseFontFamily": "Typography-baseFontFamily-52",
                     "disabledButtonText": "Typography-disabledButtonText-46",
                     "disabledText": "Typography-disabledText-50",
-                    "fontFamily": "Typography-fontFamily-52",
                     "highlightText": "Typography-highlightText-43",
                     "infoText": "Typography-infoText-48",
                     "inlineLink": "Typography-inlineLink-45",
@@ -7434,6 +7258,9 @@ body {
                     "letterSpacing": "0.02em",
                     "lineHeight": "60px",
                   },
+                  "baseFontFamily": Object {
+                    "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                  },
                   "disabledButtonText": Object {
                     "color": "#999999",
                     "fontSize": "14px",
@@ -7448,7 +7275,6 @@ body {
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
                   },
-                  "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
                   "highlightText": Object {
                     "color": "#414141",
                     "fontSize": "14px",
@@ -8794,9 +8620,9 @@ body {
                   "3xlTitle": "Typography-3xlTitle-35",
                   "4xlTitle": "Typography-4xlTitle-34",
                   "5xlTitle": "Typography-5xlTitle-33",
+                  "baseFontFamily": "Typography-baseFontFamily-52",
                   "disabledButtonText": "Typography-disabledButtonText-46",
                   "disabledText": "Typography-disabledText-50",
-                  "fontFamily": "Typography-fontFamily-52",
                   "highlightText": "Typography-highlightText-43",
                   "infoText": "Typography-infoText-48",
                   "inlineLink": "Typography-inlineLink-45",
@@ -9400,7 +9226,7 @@ body {
               variant="xlTitle"
             >
               <span
-                className="Typography-xlTitle-37 Typography-fontFamily-52 HvFormComposer-title-31"
+                className="Typography-xlTitle-37 Typography-baseFontFamily-52 HvFormComposer-title-31"
               />
             </Typography>
           </WithStyles(Typography)>
@@ -9423,9 +9249,9 @@ body {
                         "3xlTitle": "Typography-3xlTitle-35",
                         "4xlTitle": "Typography-4xlTitle-34",
                         "5xlTitle": "Typography-5xlTitle-33",
+                        "baseFontFamily": "Typography-baseFontFamily-52",
                         "disabledButtonText": "Typography-disabledButtonText-46",
                         "disabledText": "Typography-disabledText-50",
-                        "fontFamily": "Typography-fontFamily-52",
                         "highlightText": "Typography-highlightText-43",
                         "infoText": "Typography-infoText-48",
                         "inlineLink": "Typography-inlineLink-45",
@@ -10030,7 +9856,7 @@ body {
                     variant="mTitle"
                   >
                     <span
-                      className="Typography-mTitle-39 Typography-fontFamily-52"
+                      className="Typography-mTitle-39 Typography-baseFontFamily-52"
                       id="Group1"
                     >
                       Group1
