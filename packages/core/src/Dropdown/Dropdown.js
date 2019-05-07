@@ -20,6 +20,7 @@ import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
+import HvTypography from "../Typography";
 import List from "./List";
 
 const defaultLabels = {
@@ -139,9 +140,9 @@ class Main extends React.Component {
         onClick={evt => this.handleToggle(evt)}
         role="presentation"
       >
-        <div className={classNames([classes.selection, classes.truncate])}>
+        <HvTypography variant="normalText" className={classNames([classes.selection, classes.truncate])}>
           {selectionLabel}
-        </div>
+        </HvTypography>
         {isOpen ? (
           <ArrowDown className={classes.arrow} />
         ) : (

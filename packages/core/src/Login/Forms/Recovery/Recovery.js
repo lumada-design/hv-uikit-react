@@ -105,7 +105,7 @@ class Recovery extends React.Component {
               message={messageAfterRecover}
             />
           ) : (
-            <p className={classes.instructions}>{messageToRecover}</p>
+            <HvTypography variant="normalText" className={classes.instructions}>{messageToRecover}</HvTypography>
           )}
         </div>
 

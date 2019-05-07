@@ -3283,7 +3283,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999985,
+            "index": -99999999984,
           },
           "themingEnabled": true,
         } => Map {
@@ -4269,7 +4269,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999985,
+                "index": -99999999984,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -4409,13 +4409,8 @@ body {
   user-select: none;
 }
 .List-singleSelection-5 {
-  color: #414141;
   cursor: pointer;
   padding: 6px 10px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
 }
 .List-singleSelection-5:hover {
   background: #F0F0F0;
@@ -4503,12 +4498,7 @@ body {
                     "width": "100%",
                   },
                   Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   Object {
@@ -4605,12 +4595,7 @@ body {
                     "width": "100%",
                   },
                   ".List-singleSelection-5": Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   ".List-singleSelection-5:hover": Object {
@@ -4660,12 +4645,7 @@ body {
                     "width": "100%",
                   },
                   "singleSelection": Object {
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "font-size": "14px",
-                    "font-weight": "400",
-                    "letter-spacing": "0.02em",
-                    "line-height": "20px",
                     "padding": "6px 10px",
                   },
                   "truncate": Object {
@@ -5054,7 +5034,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999985,
+                  "index": -99999999984,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5240,12 +5220,7 @@ body {
                     "&:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    "color": "#414141",
                     "cursor": "pointer",
-                    "fontSize": "14px",
-                    "fontWeight": "400",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "20px",
                     "padding": "6px 10px",
                   },
                   "truncate": Object {
