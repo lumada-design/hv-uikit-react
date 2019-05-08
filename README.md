@@ -20,10 +20,10 @@ Our packages are being published to a public npm registry. If you want to use th
 
 ```
 If you want to use it for UI-KIT dependencies
-@hv:registry=http://nexus.pentaho.org/repository/group-npm/
+@hv:registry=https://nexus.pentaho.org/repository/group-npm/
 
 Or if you want to use it for all dependencies
-registry=http://nexus.pentaho.org/repository/group-npm/
+registry=https://nexus.pentaho.org/repository/group-npm/
 ```
 #### global link
 If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:

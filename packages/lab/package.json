@@ -29,7 +29,7 @@
     "link": "npm link"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": "1.1.0",
+    "@hv/uikit-common-themes": ">=1.1.1-alpha.0 <1.1.1",
     "@hv/uikit-react-core": "^1.1.2",
     "@hv/uikit-react-icons": "^1.1.2",
     "@material-ui/core": "^3.9.3",
