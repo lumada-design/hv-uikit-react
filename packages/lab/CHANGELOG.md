@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.1...@hv/uikit-react-lab@1.1.2) (2019-05-08)
+
+
+### Bug Fixes
+
+* bump storybook version to have documentation package working.[#155](https://github.com/pentaho/hv-uikit-react/issues/155) ([ee68025](https://github.com/pentaho/hv-uikit-react/commit/ee68025))
+
+
+
+
+
 ## [1.1.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.0...@hv/uikit-react-lab@1.1.1) (2019-05-07)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
