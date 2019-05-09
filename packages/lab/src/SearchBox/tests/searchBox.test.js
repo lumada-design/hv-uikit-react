@@ -37,7 +37,7 @@ describe("<SearchBox />", () => {
     expect(props.value).toEqual("");
     expect(props.placeholder).toEqual("Search");
     expect(props.onChange).toBe(onChangeMock);
-    expect(props.searchInput).toEqual("");
+    expect(props.searchInput).toEqual(undefined);
   });
 
   it("renders correctly", () => {
