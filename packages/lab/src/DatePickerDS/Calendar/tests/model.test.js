@@ -16,7 +16,7 @@
 
 import CalendarModel from "../model";
 import { NAV_OPTIONS } from "../enums";
-import { getMonthDays } from "../utils";
+import { getMonthDays, makeUTCToday } from "../utils";
 
 let calendarModelInstance;
 
@@ -31,7 +31,7 @@ describe("CalendarModel", () => {
   });
 
   it("should create a calendar model object with today month and year when input parameters aren't supplied", () => {
-    const today = new Date();
+    const today = makeUTCToday();
     calendarModelInstance = new CalendarModel();
     expect(calendarModelInstance.month).toBe(today.getMonth() + 1);
     expect(calendarModelInstance.year).toBe(today.getFullYear());
@@ -91,7 +91,7 @@ describe("CalendarModel", () => {
 
   it("should have all the days of the month available in the dates array", () => {
     const currentDates = calendarModelInstance.dates.filter(
-      date => date.getMonth() + 1 === 1 && date.getFullYear() === 2000
+      date => date.getUTCMonth() + 1 === 1 && date.getUTCFullYear() === 2000
     );
 
     expect(currentDates.length).toBe(getMonthDays(1, 2000));

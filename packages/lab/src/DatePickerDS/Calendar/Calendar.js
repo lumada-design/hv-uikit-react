@@ -31,7 +31,9 @@ import {
   getFormattedDate,
   getMonthNamesList,
   getWeekdayNamesList,
-  getWeekdayName
+  getWeekdayName,
+  makeUTCDate,
+  makeUTCToday
 } from "./utils";
 
 import CalendarModel from "./model";
@@ -42,7 +44,7 @@ class Calendar extends React.Component {
 
     this.initLocalizedLabels();
 
-    this.state = { ...this.resolveStateFromProp(), today: new Date() };
+    this.state = { ...this.resolveStateFromProp(), today: makeUTCToday() };
   }
 
   /**
@@ -123,11 +125,11 @@ class Calendar extends React.Component {
   resolveStateFromDate = date => {
     const { locale } = this.props;
     const isDateObject = isDate(date);
-    const newDate = isDateObject ? date : new Date();
-    const month = newDate.getMonth() + 1;
+    const newDate = isDateObject ? date : makeUTCToday();
+    const month = newDate.getUTCMonth() + 1;
 
     return {
-      calendarModel: new CalendarModel(month, newDate.getFullYear()),
+      calendarModel: new CalendarModel(month, newDate.getUTCFullYear()),
       selectedDate: newDate,
       formattedDate: getFormattedDate(newDate, locale),
       viewMode: VIEW_MODE.CALENDAR
@@ -224,7 +226,7 @@ class Calendar extends React.Component {
       calendarModel.year &&
       isSameMonth(
         currentDate,
-        new Date(calendarModel.year, calendarModel.month - 1, 1)
+        makeUTCDate(calendarModel.year, calendarModel.month, 1)
       );
 
     // Sets the initial class as `calendarDate` and then adds the rest of the classes according to the state.
@@ -247,7 +249,7 @@ class Calendar extends React.Component {
         title={getFormattedDate(currentDate, locale)}
       >
         <HvTypography variant={typographyVariant} className={className}>
-          {currentDate.getDate()}
+          {currentDate.getUTCDate()}
         </HvTypography>
       </div>
     );
@@ -419,7 +421,7 @@ Calendar.defaultProps = {
     cancelLabel: "Cancel"
   },
   locale: "en-US", // TODO: Add a better way to add the default locale, maybe use navigator.languages.
-  initialDate: new Date(),
+  initialDate: makeUTCToday(),
   showActions: false,
   handleDateChange: undefined,
   handleApply: undefined,

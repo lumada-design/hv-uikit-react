@@ -21,6 +21,7 @@ import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
 import DatePickerDS from "../DatePickerDS";
 import Calendar from "../Calendar";
 import DatePickerDSWithStyles from "../index";
+import { convertISOStringDateToDate } from "../Calendar/utils";
 
 describe("DatePickerDS", () => {
   /**
@@ -147,7 +148,7 @@ describe("DatePickerDS", () => {
 
   it("should change the input value and hide the calendar after selecting a date", () => {
     const dummyDateString = "2018-11-10";
-    const dummyDate = new Date(dummyDateString);
+    const dummyDate = convertISOStringDateToDate(dummyDateString);
     wrapper.find(CalendarIcon).simulate("click");
     testState(true, "");
 
@@ -248,9 +249,13 @@ describe("DatePickerDS", () => {
     DatePickerDsInstance = getDatePickerDS(wrapper);
     testState(true, "");
 
-    DatePickerDsInstance.handleCalendarDateChange(new Date("2019-01-01"));
+    DatePickerDsInstance.handleCalendarDateChange(
+      convertISOStringDateToDate("2019-01-01")
+    );
     testState(true, "");
-    DatePickerDsInstance.handleCalendarApplyAction(new Date("2019-01-02"));
+    DatePickerDsInstance.handleCalendarApplyAction(
+      convertISOStringDateToDate("2019-01-02")
+    );
     testState(false, "2019-01-02");
   });
 
@@ -262,7 +267,9 @@ describe("DatePickerDS", () => {
     );
     DatePickerDsInstance = getDatePickerDS(wrapper);
     testState(true, "");
-    DatePickerDsInstance.handleCalendarDateChange(new Date("2019-01-01"));
+    DatePickerDsInstance.handleCalendarDateChange(
+      convertISOStringDateToDate("2019-01-01")
+    );
     testState(false, "2019-01-01");
   });
 
@@ -298,5 +305,18 @@ describe("DatePickerDS", () => {
     // Date is not changed when showActions = true
     DatePickerDsInstance.handleCalendarCancelAction();
     testState(false, "2019-01-01");
+  });
+
+  it("should have the selected date equal the received date", () => {
+    const dateValue = "2019-01-01";
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles value={dateValue} calendarVisible showActions />
+      </HvProvider>
+    );
+    const calendarInstance = wrapper.find(Calendar).instance();
+    expect(calendarInstance.props.initialDate).toEqual(
+      convertISOStringDateToDate(dateValue)
+    );
   });
 });

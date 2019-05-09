@@ -16,7 +16,5 @@
 
 import React from "react";
 import HvDatePickerDS from "@hv/uikit-react-lab/dist/DatePickerDS";
-import moment from "moment";
 
-const date = moment(new Date()).format('YYYY-MM-DD');
-export default <HvDatePickerDS value={date} />;
+export default <HvDatePickerDS value="1970-01-01" />;

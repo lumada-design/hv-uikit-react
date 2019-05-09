@@ -24,7 +24,7 @@ import Navigation from "../Navigation";
 import Actions from "../Actions";
 
 import { VIEW_MODE, REPRESENTATION_VALUES } from "../enums";
-import { getFormattedDate, getWeekdayName } from "../utils";
+import { getFormattedDate, getWeekdayName, makeUTCDate } from "../utils";
 
 import CalendarWithStyles from "../index";
 import Calendar from "../Calendar";
@@ -33,7 +33,7 @@ describe("<Calendar /> with minimum configuration", () => {
   let wrapper;
   let calendarComponent;
   let calendarInstance;
-  const initialDate = new Date(1970, 0, 1);
+  const initialDate = makeUTCDate(1970, 1, 1);
 
   beforeEach(async () => {
     wrapper = mount(
@@ -70,11 +70,15 @@ describe("<Calendar /> with minimum configuration", () => {
   });
 
   it("should have the month in the state be the same as the one set in the initialDate", () => {
-    expect(calendarInstance.state.calendarModel.month).toBe(initialDate.getMonth() + 1);
+    expect(calendarInstance.state.calendarModel.month).toBe(
+      initialDate.getUTCMonth() + 1
+    );
   });
 
   it("should have the year in the state be the same as the one set in the initialDate", () => {
-    expect(calendarInstance.state.calendarModel.year).toBe(initialDate.getFullYear());
+    expect(calendarInstance.state.calendarModel.year).toBe(
+      initialDate.getUTCFullYear()
+    );
   });
 
   it("should have the weekDayName be the same as the one from the initialDate", () => {
@@ -87,7 +91,7 @@ describe("<Calendar /> with minimum configuration", () => {
       calendarInstance.state.selectedDate,
       calendarInstance.props.locale,
       REPRESENTATION_VALUES.SHORT
-    )
+    );
 
     expect(selectedDateWeekdayName).toBe(initialDateWeekdayName);
   });
@@ -109,7 +113,7 @@ describe("<Calendar /> with configurations", () => {
   let wrapper;
   let calendarComponent;
 
-  const initialDate = new Date(1970, 0, 1);
+  const initialDate =  makeUTCDate(1970, 1, 1);
   const labels = {
     applyLabel: "Apply",
     cancelLabel: "Cancel"

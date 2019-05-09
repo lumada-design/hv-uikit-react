@@ -19,7 +19,7 @@ import PropTypes from "prop-types";
 
 import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
 import Calendar from "./Calendar";
-import { getDateISO } from "./Calendar/utils";
+import { getDateISO, convertISOStringDateToDate } from "./Calendar/utils";
 
 class HvDatePickerDS extends React.Component {
   /**
@@ -174,7 +174,7 @@ class HvDatePickerDS extends React.Component {
         handleDateChange={date => this.handleCalendarDateChange(date)}
         handleApply={date => this.handleCalendarApplyAction(date)}
         handleCancel={() => this.handleCalendarCancelAction()}
-        initialDate={new Date(value)}
+        initialDate={convertISOStringDateToDate(value)}
         locale={locale}
         showActions={showActions}
       />

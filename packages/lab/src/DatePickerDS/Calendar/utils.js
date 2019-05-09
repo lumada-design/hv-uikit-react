@@ -47,7 +47,47 @@ export const getMonthDays = (month, year) => new Date(year, month, 0).getDate();
  * @param {Date} date - Date value.
  * @returns {number} The number of the day of the week (0 to 6).
  */
-export const getWeekdayNumber = date => date.getDay();
+export const getWeekdayNumber = date => date.getUTCDay();
+
+/**
+ * Creates a date in UTC timezone.
+ *
+ * @param {number} year
+ * @param {number} month
+ * @param {number} day
+ * @returns {Date}
+ */
+export const makeUTCDate = (year, month, day) =>
+  new Date(Date.UTC(year, month - 1, day, 0));
+
+/**
+ * Creates a new date object with today's date in UTC timezone.
+ *
+ * @returns {Date}
+ */
+export const makeUTCToday = () => {
+  const today = new Date();
+  return makeUTCDate(
+    today.getFullYear(),
+    today.getMonth() + 1,
+    today.getDate()
+  );
+};
+
+/**
+ * Convert a date from UTC timezone to local timezone.
+ *
+ * @param {number} year
+ * @param {number} month
+ * @param {number} day
+ * @returns {Date}
+ */
+export const UTCToLocalDate = utcDate =>
+  new Date(
+    utcDate.getUTCFullYear(),
+    utcDate.getUTCMonth(),
+    utcDate.getUTCDate()
+  );
 
 /**
  * Returns the first day of the month for a given year.
@@ -58,7 +98,7 @@ export const getWeekdayNumber = date => date.getDay();
  * @returns {number} The first day of the month for the recieved year.
  */
 export const getMonthFirstDay = (month, year) =>
-  getWeekdayNumber(new Date(year, month - 1, 1));
+  getWeekdayNumber(makeUTCDate(year, month, 1));
 
 /**
  * Checks if the recieved date is a valid date.
@@ -83,11 +123,11 @@ export const isDate = date => {
 export const isSameMonth = (date1, date2) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
-  const date2Month = date2.getMonth() + 1;
-  const date2Year = date2.getFullYear();
+  const date2Month = date2.getUTCMonth() + 1;
+  const date2Year = date2.getUTCFullYear();
 
-  const date1Month = date1.getMonth() + 1;
-  const date1Year = date1.getFullYear();
+  const date1Month = date1.getUTCMonth() + 1;
+  const date1Year = date1.getUTCFullYear();
 
   return date2Month === date1Month && date2Year === date1Year;
 };
@@ -102,13 +142,13 @@ export const isSameMonth = (date1, date2) => {
 export const isSameDay = (date1, date2) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
-  const date2Day = date2.getDate();
-  const date2Month = date2.getMonth() + 1;
-  const date2Year = date2.getFullYear();
+  const date2Day = date2.getUTCDate();
+  const date2Month = date2.getUTCMonth() + 1;
+  const date2Year = date2.getUTCFullYear();
 
-  const date1Date = date1.getDate();
-  const date1Month = date1.getMonth() + 1;
-  const date1Year = date1.getFullYear();
+  const date1Date = date1.getUTCDate();
+  const date1Month = date1.getUTCMonth() + 1;
+  const date1Year = date1.getUTCFullYear();
 
   return (
     date2Day === date1Date &&
@@ -127,10 +167,27 @@ export const getDateISO = date => {
   if (!isDate(date)) return null;
 
   return [
-    date.getFullYear(),
-    zeroPad(date.getMonth() + 1, 2),
-    zeroPad(date.getDate(), 2)
+    date.getUTCFullYear(),
+    zeroPad(date.getUTCMonth() + 1, 2),
+    zeroPad(date.getUTCDate(), 2)
   ].join("-");
+};
+
+/**
+ * Converts a ISO date string ("YYYY-MM-DD") into a new Date.
+ * This is needed because when creating a new date in javascript using a ISO date string the timezone applied will
+ * always be UTC instead of local time.
+ *
+ * @param {string} isoStringDate
+ * @returns {Date} A new date created based on the ISO string.
+ */
+export const convertISOStringDateToDate = isoStringDate => {
+  const dateArray = isoStringDate.split("-");
+  return makeUTCDate(
+    parseInt(dateArray[0], 10),
+    parseInt(dateArray[1], 10),
+    parseInt(dateArray[2], 10)
+  );
 };
 
 /**
@@ -219,24 +276,24 @@ export const getWeekdayName = (
   locale,
   representationValue = REPRESENTATION_VALUES.LONG
 ) =>
-  date.toLocaleString(locale, {
-    weekday: representationValue
-  });
+  new Intl.DateTimeFormat(locale, { weekday: representationValue }).format(
+    UTCToLocalDate(date)
+  );
 
 /**
  * Returns the name of the month for the supplied month localized in the received locale and representation value.
  *
- * @param {number} month - Month which we want to retrieve the name. (1 January ... 12 December).
+ * @param {number} monthIndex - Month which we want to retrieve the name. (0 January ... 11 December).
  * @param {string} locale - The locale to be applied to the Intl format.
  * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The locale to be applied to the Intl format.
  * @returns {string} The name of the month.
  */
 export const getMonthName = (
-  month,
+  monthIndex,
   locale,
   representationValue = REPRESENTATION_VALUES.LONG
 ) => {
-  const auxDate = new Date(1970, month, 1);
+  const auxDate = new Date(1970, monthIndex, 1);
   return new Intl.DateTimeFormat(locale, { month: representationValue }).format(
     auxDate
   );
@@ -251,11 +308,11 @@ export const getMonthName = (
  * @returns {string} The formatted date as a string.
  */
 export const getFormattedDate = (date, locale) =>
-  `${date.getDate()} ${getMonthName(
-    date.getMonth(),
+  `${date.getUTCDate()} ${getMonthName(
+    date.getUTCMonth(),
     locale,
     REPRESENTATION_VALUES.SHORT
-  )}, ${date.getFullYear()}`;
+  )}, ${date.getUTCFullYear()}`;
 
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
@@ -280,15 +337,15 @@ export const createDatesArray = (month, year) => {
   // Creates the arrays for the dates for previous, current and next months
   const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
     const day = index + 1 + (prevMonthDays - daysFromPrevMonth);
-    return new Date(prevMonthYear.year, prevMonthYear.month - 1, day);
+    return makeUTCDate(prevMonthYear.year, prevMonthYear.month, day);
   });
   const currentMonthDates = [...new Array(monthDays)].map((n, index) => {
     const day = index + 1;
-    return new Date(year, month - 1, day);
+    return makeUTCDate(year, month, day);
   });
   const nextMonthDates = [...new Array(daysFromNextMonth)].map((n, index) => {
     const day = index + 1;
-    return new Date(nextMonthYear.year, nextMonthYear.month - 1, day);
+    return makeUTCDate(nextMonthYear.year, nextMonthYear.month, day);
   });
 
   return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates];

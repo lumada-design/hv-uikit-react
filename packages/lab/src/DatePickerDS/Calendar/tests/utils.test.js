@@ -18,11 +18,15 @@ import {
   zeroPad,
   getMonthDays,
   getWeekdayNumber,
+  makeUTCDate,
+  makeUTCToday,
+  UTCToLocalDate,
   getMonthFirstDay,
   isDate,
   isSameMonth,
   isSameDay,
   getDateISO,
+  convertISOStringDateToDate,
   getPreviousMonth,
   getNextMonth,
   getMonthNamesList,
@@ -71,32 +75,61 @@ describe("Calendar utils - getMonthDays", () => {
 
 describe("Calendar utils - getWeekdayNumber", () => {
   it("should return 0 when the date is referring to a Sunday", () => {
-    const sunday = new Date("2009-02-01");
+    const sunday = convertISOStringDateToDate("2009-02-01");
     expect(getWeekdayNumber(sunday)).toBe(0);
   });
   it("should return 1 when the date is referring to a Monday", () => {
-    const monday = new Date("2009-02-02");
+    const monday = convertISOStringDateToDate("2009-02-02");
     expect(getWeekdayNumber(monday)).toBe(1);
   });
   it("should return 2 when the date is referring to a Tuesday", () => {
-    const tuesday = new Date("2009-02-03");
+    const tuesday = convertISOStringDateToDate("2009-02-03");
     expect(getWeekdayNumber(tuesday)).toBe(2);
   });
   it("should return 3 when the date is referring to a Wednesday", () => {
-    const wednesday = new Date("2009-02-04");
+    const wednesday = convertISOStringDateToDate("2009-02-04");
     expect(getWeekdayNumber(wednesday)).toBe(3);
   });
   it("should return 4 when the date is referring to a Thursday", () => {
-    const thursday = new Date("2009-02-05");
+    const thursday = convertISOStringDateToDate("2009-02-05");
     expect(getWeekdayNumber(thursday)).toBe(4);
   });
   it("should return 5 when the date is referring to a Friday", () => {
-    const friday = new Date("2009-02-06");
+    const friday = convertISOStringDateToDate("2009-02-06");
     expect(getWeekdayNumber(friday)).toBe(5);
   });
   it("should return 6 when the date is referring to a Saturday", () => {
-    const saturday = new Date("2009-02-07");
+    const saturday = convertISOStringDateToDate("2009-02-07");
     expect(getWeekdayNumber(saturday)).toBe(6);
+  });
+});
+
+describe("Calendar utils - makeUTCDate", () => {
+  it("should create a date object in UTC timezone", () => {
+    const date = makeUTCDate(2009, 2, 1);
+    expect(date.getUTCFullYear()).toEqual(2009);
+    expect(date.getUTCMonth() + 1).toEqual(2);
+    expect(date.getUTCDate()).toEqual(1);
+  });
+});
+
+describe("Calendar utils - makeUTCToday", () => {
+  it("should create a date object with today's date in UTC timezone", () => {
+    const todayUTC = makeUTCToday();
+    const today = new Date();
+
+    expect(todayUTC.getUTCFullYear()).toEqual(today.getFullYear());
+    expect(todayUTC.getUTCMonth()).toEqual(today.getMonth());
+    expect(todayUTC.getUTCDate()).toEqual(today.getDate());
+  });
+});
+
+describe("Calendar utils - UTCToLocalDate", () => {
+  it("should change a date object in UTC timezone to local timezone", () => {
+    const dateUTC = makeUTCDate(2009, 2, 1);
+    const date = new Date(2009, 1, 1);
+
+    expect(UTCToLocalDate(dateUTC)).toEqual(date);
   });
 });
 
@@ -111,7 +144,7 @@ describe("Calendar utils - getMonthFirstDay", () => {
 
 describe("Calendar utils - isDate", () => {
   it("should return `true` if the value received is a valid date", () => {
-    expect(isDate(new Date("2019-01-01"))).toBe(true);
+    expect(isDate(convertISOStringDateToDate("2019-01-01"))).toBe(true);
     expect(isDate(new Date(2019, 0, 1))).toBe(true);
     expect(isDate(new Date())).toBe(true);
   });
@@ -125,33 +158,49 @@ describe("Calendar utils - isDate", () => {
 
 describe("Calendar utils - isSameMonth", () => {
   it("should return `true` if the received dates are in the same month and year", () => {
-    expect(isSameMonth(new Date("2019-01-01"), new Date("2019-01-31"))).toBe(
-      true
-    );
+    expect(
+      isSameMonth(
+        convertISOStringDateToDate("2019-01-01"),
+        convertISOStringDateToDate("2019-01-31")
+      )
+    ).toBe(true);
   });
   it("should return `false` if the received dates are not in the same month and year", () => {
-    expect(isSameMonth(new Date("2019-01-01"), new Date("2019-02-31"))).toBe(
-      false
-    );
+    expect(
+      isSameMonth(
+        convertISOStringDateToDate("2019-01-01"),
+        convertISOStringDateToDate("2019-02-31")
+      )
+    ).toBe(false);
   });
   it("should return `false` if one of the dates is invalid", () => {
-    expect(isSameMonth(new Date("2019-01-01"), undefined)).toBe(false);
+    expect(
+      isSameMonth(convertISOStringDateToDate("2019-01-01"), undefined)
+    ).toBe(false);
   });
 });
 
 describe("Calendar utils - isSameDay", () => {
   it("should return `true` if the received dates are in the same day, month and year", () => {
-    expect(isSameDay(new Date("2019-01-01"), new Date("2019-01-01"))).toBe(
-      true
-    );
+    expect(
+      isSameDay(
+        convertISOStringDateToDate("2019-01-01"),
+        convertISOStringDateToDate("2019-01-01")
+      )
+    ).toBe(true);
   });
   it("should return `false` if the received dates are not in the same day, month and year", () => {
-    expect(isSameDay(new Date("2019-01-01"), new Date("2019-01-31"))).toBe(
-      false
-    );
+    expect(
+      isSameDay(
+        convertISOStringDateToDate("2019-01-01"),
+        convertISOStringDateToDate("2019-01-31")
+      )
+    ).toBe(false);
   });
   it("should return `false` if one of the dates is invalid", () => {
-    expect(isSameDay(new Date("2019-01-01"), undefined)).toBe(false);
+    expect(isSameDay(convertISOStringDateToDate("2019-01-01"), undefined)).toBe(
+      false
+    );
   });
 });
 
@@ -161,6 +210,14 @@ describe("Calendar utils - getDateISO", () => {
   });
   it("should return `null` if the received date is invalid", () => {
     expect(getDateISO(undefined)).toBe(null);
+  });
+});
+
+describe("Calendar utils - convertISOStringDateToDate", () => {
+  it("should return the received ISO string date (YYYY-MM-DD) into the correct new Date object", () => {
+    expect(convertISOStringDateToDate("2019-02-01").toISOString()).toEqual(
+      "2019-02-01T00:00:00.000Z"
+    );
   });
 });
 
@@ -224,9 +281,9 @@ describe("Calendar utils - getMonthName", () => {
 
 describe("Calendar utils - getFormattedDate", () => {
   it("should return a date as a string with the format `14 Aug, 2019`", () => {
-    expect(getFormattedDate(new Date("2019-08-14"), "en-US")).toBe(
-      "14 Aug, 2019"
-    );
+    expect(
+      getFormattedDate(convertISOStringDateToDate("2019-08-14"), "en-US")
+    ).toBe("14 Aug, 2019");
   });
 });
 
@@ -242,7 +299,8 @@ describe("Calendar utils - createDatesArray", () => {
     for (let iMonth = 1; iMonth <= 12; iMonth += 1) {
       datesArray = createDatesArray(iMonth, year);
       const currentMonthDates = datesArray.filter(
-        date => date.getMonth() + 1 === iMonth && date.getFullYear() === year
+        date =>
+          date.getUTCMonth() + 1 === iMonth && date.getUTCFullYear() === year
       );
       const monthDays = getMonthDays(iMonth, year);
 
@@ -255,7 +313,7 @@ describe("Calendar utils - createDatesArray", () => {
     const previousMonthDays = getMonthFirstDay(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      date => date.getMonth() + 1 === 12 && date.getFullYear() === 1999
+      date => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
     );
     expect(previousMonthDates.length).toBe(previousMonthDays);
   });
@@ -264,16 +322,19 @@ describe("Calendar utils - createDatesArray", () => {
     const datesArray = createDatesArray(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      date => date.getMonth() + 1 === 12 && date.getFullYear() === 1999
+      date => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
     );
     const currentMonthDates = datesArray.filter(
-      date => date.getMonth() + 1 === 1 && date.getFullYear() === 2000
+      date => date.getUTCMonth() + 1 === 1 && date.getUTCFullYear() === 2000
     );
     const nextMonthDates = datesArray.filter(
-      date => date.getMonth() + 1 === 2 && date.getFullYear() === 2000
+      date => date.getUTCMonth() + 1 === 2 && date.getUTCFullYear() === 2000
     );
 
-    const totalAmountOfDates = previousMonthDates.length + currentMonthDates.length + nextMonthDates.length;
+    const totalAmountOfDates =
+      previousMonthDates.length +
+      currentMonthDates.length +
+      nextMonthDates.length;
     expect(totalAmountOfDates).toBe(42);
   });
 });
