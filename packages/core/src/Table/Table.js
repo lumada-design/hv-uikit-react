@@ -23,6 +23,7 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
+import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {
@@ -208,13 +209,15 @@ class Table extends React.Component {
    * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
    */
   getTheadThProps = (state, rowInfo, column) => {
-    const { classes } = this.props;
+    const { classes, sortable } = this.props;
     const { sorted } = this.state;
 
     appendClassnames(column, sorted, classes);
 
+    const isSortable = sortable && (isNil(column.sortable) || column.sortable);
+
     return {
-      className: setHeaderSortableClass(column.sortable, classes.theadTh)
+      className: setHeaderSortableClass(isSortable, classes.theadTh)
     };
   };
 
@@ -391,11 +394,15 @@ class Table extends React.Component {
         {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
-              <HvTypography variant="mTitle">{(titleText || labels.titleText)}</HvTypography>
+              <HvTypography variant="mTitle">
+                {titleText || labels.titleText}
+              </HvTypography>
             </div>
             {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
-                <HvTypography variant="normalText">{(subtitleText || labels.subtitleText)}</HvTypography>
+                <HvTypography variant="normalText">
+                  {subtitleText || labels.subtitleText}
+                </HvTypography>
               </div>
             )}
           </div>
@@ -429,7 +436,7 @@ Table.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -523,7 +530,7 @@ Table.propTypes = {
     firstWithNumeric: PropTypes.string
   }).isRequired,
   /**
-   * The labels inside the table. 
+   * The labels inside the table.
    */
   labels: PropTypes.shape({
     titleText: PropTypes.string,
@@ -552,7 +559,8 @@ Table.propTypes = {
       cellType: PropTypes.string,
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
-      Cell: PropTypes.instanceOf(Object)
+      Cell: PropTypes.instanceOf(Object),
+      sortable: PropTypes.bool
     })
   ).isRequired,
   /**
