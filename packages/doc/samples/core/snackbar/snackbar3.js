@@ -37,7 +37,7 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -57,7 +57,7 @@ class SimpleSnackbar extends React.Component {
         </Button>
         <HvSnackbar
           open={open}
-          label={message}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -70,8 +70,5 @@ class SimpleSnackbar extends React.Component {
   }
 }
 export default (
-  <SimpleSnackbar
-    label="This is a snackbar without icon"
-    variant="default"
-  />
+  <SimpleSnackbar label="This is a snackbar without icon" variant="default" />
 );
