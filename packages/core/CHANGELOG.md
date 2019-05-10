@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.0...@hv/uikit-react-core@1.1.3-alpha.1) (2019-05-10)
+
+
+### Bug Fixes
+
+* **TextArea,CardHeader:** Add missing classes properties that are missing in TextArea and Card Header components. [#143](https://github.com/pentaho/hv-uikit-react/issues/143) ([fe35910](https://github.com/pentaho/hv-uikit-react/commit/fe35910))
+
+
+### Features
+
+* **datepickerds:** first version of the new datepicker [#1](https://github.com/pentaho/hv-uikit-react/issues/1) ([329c968](https://github.com/pentaho/hv-uikit-react/commit/329c968))
+
+
+
+
+
 ## [1.1.3-alpha.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.2...@hv/uikit-react-core@1.1.3-alpha.0) (2019-05-08)
 
 **Note:** Version bump only for package @hv/uikit-react-core
