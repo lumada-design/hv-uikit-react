@@ -15,7 +15,8 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import withWidth from "@material-ui/core/withWidth";
 import styles from "./styles";
 import Grid from "./Grid";
 
-export default withStyles(styles, { withTheme: true })(Grid);
+export default withWidth()(withStyles(styles, { withTheme: true })(Grid));
