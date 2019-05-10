@@ -27,6 +27,11 @@ storiesOf("Lab", module).add("Search box", () => <HvSearchBox />, {
       title: "1. Simple",
       description: "Ignores case sensitive",
       src: "lab/searchBox/searchBoxSimple.js"
+    },
+    {
+      title: "2. Reset button",
+      description: "Reset button to clean the content of the search box",
+      src: "lab/searchBox/searchBoxWithReset.js"
     }
   ]
 });
