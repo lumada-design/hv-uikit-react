@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 import Calendar from "./Calendar";
 import { getDateISO, convertISOStringDateToDate } from "./Calendar/utils";
 
@@ -63,8 +64,12 @@ class HvDatePickerDS extends React.Component {
    * @param {Date} date Date value to be set on the input
    */
   changeInputValue = date => {
+    const {onChange} = this.props;
     const ISODate = getDateISO(date);
     this.setState({ value: ISODate != null ? ISODate : "" });
+    if (typeof onChange === "function") {
+      onChange(ISODate);
+    }
   };
 
   /**
@@ -159,7 +164,7 @@ class HvDatePickerDS extends React.Component {
    */
   renderLabel = () => {
     const { classes, label} = this.props;
-    return <div className={classes.label}>{label}</div>;
+    return <Typography variant="labelText" className={classes.label}>{label}</Typography>;
   }
 
   /**
@@ -196,7 +201,7 @@ class HvDatePickerDS extends React.Component {
             onClick={() => this.handleCalendarIconClick()}
           />
         </div>
-        <div>{calendarElement}</div>
+        <div className={classes.calendarContainer}>{calendarElement}</div>
       </div>
     );
   }
@@ -230,7 +235,12 @@ HvDatePickerDS.propTypes = {
   /**
    * Label
    */
-  label : PropTypes.string
+  label : PropTypes.string,
+  /**
+   * Callback function to be triggered when the input value is changed
+   */
+  onChange: PropTypes.func,
+
 };
 
 /**
@@ -243,7 +253,8 @@ HvDatePickerDS.defaultProps = {
   calendarVisible: false,
   locale: undefined,
   showActions: undefined,
-  label: undefined
+  label: undefined,
+  onChange : undefined
 };
 
 export default HvDatePickerDS;

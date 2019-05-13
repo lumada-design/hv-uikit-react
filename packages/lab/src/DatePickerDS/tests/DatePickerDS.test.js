@@ -18,6 +18,7 @@ import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 import DatePickerDS from "../DatePickerDS";
 import Calendar from "../Calendar";
 import DatePickerDSWithStyles from "../index";
@@ -33,15 +34,15 @@ describe("DatePickerDS", () => {
    * The DatePickerDS Instance (includes styles)
    * @type {DatePickerDSWithStyles}
    */
-  let DatePickerDsInstance;
+  let datePickerDSInstance;
 
   /**
    * Tests the component state
    * @param calendarVisible value to check for the calendarVisible state
    */
   const testState = (calendarVisible, date) => {
-    expect(DatePickerDsInstance.state.calendarVisible).toBe(calendarVisible);
-    expect(DatePickerDsInstance.state.value).toBe(date);
+    expect(datePickerDSInstance.state.calendarVisible).toBe(calendarVisible);
+    expect(datePickerDSInstance.state.value).toBe(date);
   };
 
   /**
@@ -58,7 +59,7 @@ describe("DatePickerDS", () => {
         <DatePickerDSWithStyles />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
   });
 
   it("should be defined", () => {
@@ -141,7 +142,7 @@ describe("DatePickerDS", () => {
     wrapper.find(CalendarIcon).simulate("click");
     testState(true, "");
 
-    DatePickerDsInstance.clearInput();
+    datePickerDSInstance.clearInput();
     testState(false, "");
     wrapper.update();
     expect(wrapper.find(Calendar).length).toBe(0);
@@ -153,15 +154,15 @@ describe("DatePickerDS", () => {
     wrapper.find(CalendarIcon).simulate("click");
     testState(true, "");
 
-    DatePickerDsInstance.setDate(dummyDate);
+    datePickerDSInstance.setDate(dummyDate);
     wrapper.update();
 
     expect(wrapper.find(Calendar).length).toBe(0);
-    expect(DatePickerDsInstance.state.value).toBe(dummyDateString);
+    expect(datePickerDSInstance.state.value).toBe(dummyDateString);
   });
 
   it("Should apply the default properties when empty component is created", () => {
-    expect(DatePickerDsInstance.state.value).toBe(
+    expect(datePickerDSInstance.state.value).toBe(
       DatePickerDS.defaultProps.value
     );
     expect(wrapper.find("input").instance().placeholder).toBe(
@@ -218,7 +219,7 @@ describe("DatePickerDS", () => {
       </div>
     );
 
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     wrapper.find(CalendarIcon).simulate("click");
     testState(true, "");
 
@@ -234,10 +235,10 @@ describe("DatePickerDS", () => {
         <DatePickerDSWithStyles showActions calendarVisible />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     testState(true, "");
 
-    DatePickerDsInstance.handleCalendarDateChange(new Date());
+    datePickerDSInstance.handleCalendarDateChange(new Date());
     testState(true, "");
   });
 
@@ -247,14 +248,14 @@ describe("DatePickerDS", () => {
         <DatePickerDSWithStyles showActions calendarVisible />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     testState(true, "");
 
-    DatePickerDsInstance.handleCalendarDateChange(
+    datePickerDSInstance.handleCalendarDateChange(
       convertISOStringDateToDate("2019-01-01")
     );
     testState(true, "");
-    DatePickerDsInstance.handleCalendarApplyAction(
+    datePickerDSInstance.handleCalendarApplyAction(
       convertISOStringDateToDate("2019-01-02")
     );
     testState(false, "2019-01-02");
@@ -266,9 +267,9 @@ describe("DatePickerDS", () => {
         <DatePickerDSWithStyles showActions={false} calendarVisible />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     testState(true, "");
-    DatePickerDsInstance.handleCalendarDateChange(
+    datePickerDSInstance.handleCalendarDateChange(
       convertISOStringDateToDate("2019-01-01")
     );
     testState(false, "2019-01-01");
@@ -284,11 +285,11 @@ describe("DatePickerDS", () => {
         />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     // Date is not changed when showActions = true
-    DatePickerDsInstance.handleCalendarDateChange(new Date("2019-01-02"));
+    datePickerDSInstance.handleCalendarDateChange(new Date("2019-01-02"));
     testState(true, "2019-01-01");
-    DatePickerDsInstance.handleCalendarCancelAction();
+    datePickerDSInstance.handleCalendarCancelAction();
     testState(false, "2019-01-01");
   });
 
@@ -302,9 +303,9 @@ describe("DatePickerDS", () => {
         />
       </HvProvider>
     );
-    DatePickerDsInstance = getDatePickerDS(wrapper);
+    datePickerDSInstance = getDatePickerDS(wrapper);
     // Date is not changed when showActions = true
-    DatePickerDsInstance.handleCalendarCancelAction();
+    datePickerDSInstance.handleCalendarCancelAction();
     testState(false, "2019-01-01");
   });
 
@@ -320,4 +321,56 @@ describe("DatePickerDS", () => {
       convertISOStringDateToDate(dateValue)
     );
   });
+
+  it("should call the onchange callback if defined", () =>{
+    const handleOnchange = jest.fn();
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles onChange={handleOnchange} />
+      </HvProvider>
+    );
+    datePickerDSInstance = wrapper.find(DatePickerDS).instance();
+    datePickerDSInstance.setDate(convertISOStringDateToDate("2018-11-10"));
+    expect(handleOnchange.mock.calls.length).toBe(1);
+  });
+
+  it("should have a label if a label prop is passed", () =>{
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles label="dummy label" />
+      </HvProvider>
+    );
+    expect(wrapper.find(Typography).length).toBe(1);
+  });
+
+  it("should not have a label if a label prop is passed", () =>{
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles label="dummy label" />
+      </HvProvider>
+    );
+    expect(wrapper.find(Typography).length).toBe(1);
+  });
+
+
+  it("should not have a label if a label prop is not passed", () =>{
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles />
+      </HvProvider>
+    );
+    expect(wrapper.find(Typography).length).toBe(0);
+  });
+
+  it("should have the text label equals to label prop (when passed)", () =>{
+    wrapper = mount(
+      <HvProvider>
+        <DatePickerDSWithStyles label="Dummy label" />
+      </HvProvider>
+    );
+    const typographyLabelElement = wrapper.find(Typography);
+    expect(typographyLabelElement.props().children).toBe('Dummy label');
+  });
+
+
 });

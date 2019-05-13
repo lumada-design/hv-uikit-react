@@ -130,8 +130,13 @@ class Calendar extends React.Component {
 
     return {
       calendarModel: new CalendarModel(month, newDate.getUTCFullYear()),
-      selectedDate: newDate,
+      selectedDate: isDateObject ? date : null,
       formattedDate: getFormattedDate(newDate, locale),
+      weekDayName: getWeekdayName(
+        newDate,
+        locale,
+        REPRESENTATION_VALUES.SHORT
+      ),
       viewMode: VIEW_MODE.CALENDAR
     };
   };
@@ -261,14 +266,7 @@ class Calendar extends React.Component {
    * @memberof Calendar
    */
   renderHeader = () => {
-    const { locale } = this.props;
-    const { formattedDate, selectedDate } = this.state;
-
-    const weekDayName = getWeekdayName(
-      selectedDate,
-      locale,
-      REPRESENTATION_VALUES.SHORT
-    );
+    const { formattedDate, weekDayName } = this.state;
 
     return <Header topText={weekDayName} mainText={formattedDate} />;
   };
