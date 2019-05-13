@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.1...@hv/uikit-react-icons@1.1.3-alpha.2) (2019-05-13)
+
+
+### Bug Fixes
+
+* **grid:** replace hook usage by withWidth to determine breakpoint. [#107](https://github.com/pentaho/hv-uikit-react/issues/107) ([fb4eebd](https://github.com/pentaho/hv-uikit-react/commit/fb4eebd))
+
+
+
+
+
 ## [1.1.3-alpha.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.0...@hv/uikit-react-icons@1.1.3-alpha.1) (2019-05-10)
 
 
