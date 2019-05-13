@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.2...@hv/uikit-react-core@1.1.3-alpha.3) (2019-05-13)
+
+
+### Bug Fixes
+
+* **theme:** add spacing unit to theme. [#168](https://github.com/pentaho/hv-uikit-react/issues/168) ([30ebcc2](https://github.com/pentaho/hv-uikit-react/commit/30ebcc2))
+
+
+
+
+
 ## [1.1.3-alpha.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.1...@hv/uikit-react-core@1.1.3-alpha.2) (2019-05-13)
 
 
