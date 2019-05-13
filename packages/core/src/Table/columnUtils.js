@@ -99,7 +99,6 @@ const setColumnAlignment = (cellType, classes) => {
   return classToApply;
 };
 
-
 /**
  * Adds to the className the sortable class if the header is marked as sortable.
  *
@@ -108,11 +107,11 @@ const setColumnAlignment = (cellType, classes) => {
  * @returns {*}
  */
 const setHeaderSortableClass = (sortableProp, existingClassNames) => {
-  if (sortableProp == null || sortableProp) {
+  if (!isNil(sortableProp) && sortableProp) {
     return classNames(existingClassNames, "sortable");
   }
   return existingClassNames;
-}
+};
 
 /**
  * Creates an expander button inside the first column of the table.
