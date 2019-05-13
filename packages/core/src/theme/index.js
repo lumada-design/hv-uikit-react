@@ -80,7 +80,7 @@ const muiTheme = uiKitTheme => {
     }
   });
 
-  muiCreatedTheme.spacing = { ...muiTheme.spacing, ...theme.spacing};
+  muiCreatedTheme.spacing = { ...muiCreatedTheme.spacing, ...theme.spacing};
 
   return Object.assign({}, muiCreatedTheme, { hv: theme });
 };

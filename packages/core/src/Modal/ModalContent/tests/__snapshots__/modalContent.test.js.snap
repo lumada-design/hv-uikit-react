@@ -383,6 +383,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "lg": "60",
         "md": "30",
         "sm": "20",
+        "unit": 8,
         "xl": "90",
         "xs": "10",
       },
