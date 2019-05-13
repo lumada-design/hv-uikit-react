@@ -69,12 +69,18 @@ const styles = theme => ({
   },
 
   datePickerContainer: {
+    position: "relative",
     width: "320px"
   },
 
   label: {
-    ...theme.hv.typography.labelText,
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: `${theme.hv.spacing.xs}px`
+  },
+
+  calendarContainer: {
+    position: "absolute",
+    zIndex: "10",
+    width: "100%"
   }
 
 });

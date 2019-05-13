@@ -3873,14 +3873,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "datePickerContainer": "HvDatePickerDS-datePickerContainer-15",
-                "icon": "HvDatePickerDS-icon-13",
-                "iconClear": "HvDatePickerDS-iconClear-14",
-                "input": "HvDatePickerDS-input-12",
-                "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-11",
-                "inputWithValue": "HvDatePickerDS-inputWithValue-10",
-                "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-9",
-                "label": "HvDatePickerDS-label-16",
+                "calendarContainer": "HvDatePickerDS-calendarContainer-18",
+                "datePickerContainer": "HvDatePickerDS-datePickerContainer-16",
+                "icon": "HvDatePickerDS-icon-14",
+                "iconClear": "HvDatePickerDS-iconClear-15",
+                "input": "HvDatePickerDS-input-13",
+                "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-12",
+                "inputWithValue": "HvDatePickerDS-inputWithValue-11",
+                "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-10",
+                "label": "HvDatePickerDS-label-17",
               },
               "deployed": true,
               "linked": false,
@@ -3888,14 +3889,15 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvDatePickerDS",
                 "classes": Object {
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-15",
-                  "icon": "HvDatePickerDS-icon-13",
-                  "iconClear": "HvDatePickerDS-iconClear-14",
-                  "input": "HvDatePickerDS-input-12",
-                  "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-11",
-                  "inputWithValue": "HvDatePickerDS-inputWithValue-10",
-                  "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-9",
-                  "label": "HvDatePickerDS-label-16",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-18",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-16",
+                  "icon": "HvDatePickerDS-icon-14",
+                  "iconClear": "HvDatePickerDS-iconClear-15",
+                  "input": "HvDatePickerDS-input-13",
+                  "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-12",
+                  "inputWithValue": "HvDatePickerDS-inputWithValue-11",
+                  "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-10",
+                  "label": "HvDatePickerDS-label-17",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4383,7 +4385,7 @@ body {
                   data-meta="HvDatePickerDS"
                 >
                   
-.HvDatePickerDS-inputWithoutValue-9 {
+.HvDatePickerDS-inputWithoutValue-10 {
   height: 32px;
   border: 1px solid #BCBCBC;
   position: relative;
@@ -4391,7 +4393,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputWithValue-10 {
+.HvDatePickerDS-inputWithValue-11 {
   height: 32px;
   border: 1px solid #414141;
   position: relative;
@@ -4399,7 +4401,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputWithCalendarVisible-11 {
+.HvDatePickerDS-inputWithCalendarVisible-12 {
   height: 32px;
   position: relative;
   background: #FFFFFF;
@@ -4409,7 +4411,7 @@ body {
   border-color: #414141;
   padding-right: 30px;
 }
-.HvDatePickerDS-input-12 {
+.HvDatePickerDS-input-13 {
   width: 100%;
   color: #414141;
   border: none;
@@ -4420,39 +4422,40 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-input-12:focus {
+.HvDatePickerDS-input-13:focus {
   outline: none;
 }
-.HvDatePickerDS-input-12::placeholder {
+.HvDatePickerDS-input-13::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-icon-13 {
+.HvDatePickerDS-icon-14 {
   right: 0;
   width: 32px;
   height: 32px;
   position: absolute;
 }
-.HvDatePickerDS-iconClear-14 {
+.HvDatePickerDS-iconClear-15 {
   right: 0;
   width: 32px;
   height: 32px;
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-datePickerContainer-15 {
+.HvDatePickerDS-datePickerContainer-16 {
   width: 320px;
+  position: relative;
 }
-.HvDatePickerDS-label-16 {
-  color: #414141;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 600;
+.HvDatePickerDS-label-17 {
   margin-bottom: 10px;
-  letter-spacing: 0.02em;
+}
+.HvDatePickerDS-calendarContainer-18 {
+  width: 100%;
+  z-index: 10;
+  position: absolute;
 }
 
                 </style>,
@@ -4467,14 +4470,15 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-15",
-                  "icon": "HvDatePickerDS-icon-13",
-                  "iconClear": "HvDatePickerDS-iconClear-14",
-                  "input": "HvDatePickerDS-input-12",
-                  "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-11",
-                  "inputWithValue": "HvDatePickerDS-inputWithValue-10",
-                  "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-9",
-                  "label": "HvDatePickerDS-label-16",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-18",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-16",
+                  "icon": "HvDatePickerDS-icon-14",
+                  "iconClear": "HvDatePickerDS-iconClear-15",
+                  "input": "HvDatePickerDS-input-13",
+                  "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-12",
+                  "inputWithValue": "HvDatePickerDS-inputWithValue-11",
+                  "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-10",
+                  "label": "HvDatePickerDS-label-17",
                 },
                 "index": Array [
                   Object {
@@ -4538,35 +4542,42 @@ body {
                     "width": "32px",
                   },
                   Object {
+                    "position": "relative",
                     "width": "320px",
                   },
                   Object {
-                    "color": "#414141",
-                    "font-size": "12px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
                     "margin-bottom": "10px",
+                  },
+                  Object {
+                    "position": "absolute",
+                    "width": "100%",
+                    "z-index": "10",
                   },
                 ],
                 "map": Object {
-                  ".HvDatePickerDS-datePickerContainer-15": Object {
+                  ".HvDatePickerDS-calendarContainer-18": Object {
+                    "position": "absolute",
+                    "width": "100%",
+                    "z-index": "10",
+                  },
+                  ".HvDatePickerDS-datePickerContainer-16": Object {
+                    "position": "relative",
                     "width": "320px",
                   },
-                  ".HvDatePickerDS-icon-13": Object {
+                  ".HvDatePickerDS-icon-14": Object {
                     "height": "32px",
                     "position": "absolute",
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-iconClear-14": Object {
+                  ".HvDatePickerDS-iconClear-15": Object {
                     "cursor": "pointer",
                     "height": "32px",
                     "position": "absolute",
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-input-12": Object {
+                  ".HvDatePickerDS-input-13": Object {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -4577,17 +4588,17 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvDatePickerDS-input-12::placeholder": Object {
+                  ".HvDatePickerDS-input-13::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvDatePickerDS-input-12:focus": Object {
+                  ".HvDatePickerDS-input-13:focus": Object {
                     "outline": "none",
                   },
-                  ".HvDatePickerDS-inputWithCalendarVisible-11": Object {
+                  ".HvDatePickerDS-inputWithCalendarVisible-12": Object {
                     "background": "#FFFFFF",
                     "border-color": "#414141",
                     "border-style": "solid",
@@ -4597,7 +4608,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputWithValue-10": Object {
+                  ".HvDatePickerDS-inputWithValue-11": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #414141",
                     "height": "32px",
@@ -4605,7 +4616,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputWithoutValue-9": Object {
+                  ".HvDatePickerDS-inputWithoutValue-10": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "height": "32px",
@@ -4613,15 +4624,16 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-label-16": Object {
-                    "color": "#414141",
-                    "font-size": "12px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
+                  ".HvDatePickerDS-label-17": Object {
                     "margin-bottom": "10px",
                   },
+                  "calendarContainer": Object {
+                    "position": "absolute",
+                    "width": "100%",
+                    "z-index": "10",
+                  },
                   "datePickerContainer": Object {
+                    "position": "relative",
                     "width": "320px",
                   },
                   "icon": Object {
@@ -4675,11 +4687,6 @@ body {
                     "position": "relative",
                   },
                   "label": Object {
-                    "color": "#414141",
-                    "font-size": "12px",
-                    "font-weight": "600",
-                    "letter-spacing": "0.02em",
-                    "line-height": "16px",
                     "margin-bottom": "10px",
                   },
                 },
@@ -4687,14 +4694,15 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvDatePickerDS",
                   "classes": Object {
-                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-15",
-                    "icon": "HvDatePickerDS-icon-13",
-                    "iconClear": "HvDatePickerDS-iconClear-14",
-                    "input": "HvDatePickerDS-input-12",
-                    "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-11",
-                    "inputWithValue": "HvDatePickerDS-inputWithValue-10",
-                    "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-9",
-                    "label": "HvDatePickerDS-label-16",
+                    "calendarContainer": "HvDatePickerDS-calendarContainer-18",
+                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-16",
+                    "icon": "HvDatePickerDS-icon-14",
+                    "iconClear": "HvDatePickerDS-iconClear-15",
+                    "input": "HvDatePickerDS-input-13",
+                    "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-12",
+                    "inputWithValue": "HvDatePickerDS-inputWithValue-11",
+                    "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-10",
+                    "label": "HvDatePickerDS-label-17",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5177,17 +5185,23 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvDatePickerDS-input-12::placeholder": Object {
+                  ".HvDatePickerDS-input-13::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvDatePickerDS-input-12:focus": Object {
+                  ".HvDatePickerDS-input-13:focus": Object {
                     "outline": "none",
                   },
+                  "calendarContainer": Object {
+                    "position": "absolute",
+                    "width": "100%",
+                    "zIndex": "10",
+                  },
                   "datePickerContainer": Object {
+                    "position": "relative",
                     "width": "320px",
                   },
                   "icon": Object {
@@ -5251,11 +5265,6 @@ body {
                     "position": "relative",
                   },
                   "label": Object {
-                    "color": "#414141",
-                    "fontSize": "12px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
                     "marginBottom": "10px",
                   },
                 },
@@ -5862,14 +5871,15 @@ body {
         calendarVisible={false}
         classes={
           Object {
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-15",
-            "icon": "HvDatePickerDS-icon-13",
-            "iconClear": "HvDatePickerDS-iconClear-14",
-            "input": "HvDatePickerDS-input-12",
-            "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-11",
-            "inputWithValue": "HvDatePickerDS-inputWithValue-10",
-            "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-9",
-            "label": "HvDatePickerDS-label-16",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-18",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-16",
+            "icon": "HvDatePickerDS-icon-14",
+            "iconClear": "HvDatePickerDS-iconClear-15",
+            "input": "HvDatePickerDS-input-13",
+            "inputWithCalendarVisible": "HvDatePickerDS-inputWithCalendarVisible-12",
+            "inputWithValue": "HvDatePickerDS-inputWithValue-11",
+            "inputWithoutValue": "HvDatePickerDS-inputWithoutValue-10",
+            "label": "HvDatePickerDS-label-17",
           }
         }
         placeholder="YYYY-MM-DD"
@@ -6460,20 +6470,20 @@ body {
         value=""
       >
         <div
-          className="HvDatePickerDS-datePickerContainer-15"
+          className="HvDatePickerDS-datePickerContainer-16"
         >
           <div
-            className="HvDatePickerDS-inputWithoutValue-9"
+            className="HvDatePickerDS-inputWithoutValue-10"
           >
             <input
-              className="HvDatePickerDS-input-12"
+              className="HvDatePickerDS-input-13"
               placeholder="YYYY-MM-DD"
               readOnly={true}
               type="text"
               value=""
             />
             <CalendarS
-              className="HvDatePickerDS-icon-13"
+              className="HvDatePickerDS-icon-14"
               color={
                 Array [
                   "none",
@@ -6483,7 +6493,7 @@ body {
               onClick={[Function]}
             >
               <svg
-                className="HvDatePickerDS-icon-13"
+                className="HvDatePickerDS-icon-14"
                 height={30}
                 onClick={[Function]}
                 viewBox="1 1 30 30 "
@@ -6569,7 +6579,9 @@ body {
               </svg>
             </CalendarS>
           </div>
-          <div />
+          <div
+            className="HvDatePickerDS-calendarContainer-18"
+          />
         </div>
       </HvDatePickerDS>
     </WithStyles(HvDatePickerDS)>
