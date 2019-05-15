@@ -197,7 +197,7 @@ class HvDatePickerDS extends React.Component {
             readOnly
           />
           <CalendarIcon
-            className={classes.icon}
+            className={calendarVisible?classes.iconWithCalendarVisible:classes.icon}
             onClick={() => this.handleCalendarIconClick()}
           />
         </div>
