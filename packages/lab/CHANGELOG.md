@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.5...@hv/uikit-react-lab@1.1.3-alpha.6) (2019-05-16)
+
+
+### Features
+
+* **AssetInventory:** add ids and space for dropdown sort component [#57](https://github.com/pentaho/hv-uikit-react/issues/57) ([8efdc6f](https://github.com/pentaho/hv-uikit-react/commit/8efdc6f))
+* **Grid:** update grid system to match ds latest guidelines [#107](https://github.com/pentaho/hv-uikit-react/issues/107) ([f4e6f7f](https://github.com/pentaho/hv-uikit-react/commit/f4e6f7f))
+
+
+
+
+
 ## [1.1.3-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.4...@hv/uikit-react-lab@1.1.3-alpha.5) (2019-05-16)
 
 
