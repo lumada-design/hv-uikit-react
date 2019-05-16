@@ -40,6 +40,7 @@ const Footer = ({
   classes,
   className,
   actions,
+  actionsAlignment,
   isSelectable,
   onChange,
   checkboxValue,
@@ -63,7 +64,7 @@ const Footer = ({
         <div className={classes.rightContainer}>{actions}</div>
       </>
     ) : (
-      <div className={classes.leftContainer}>{actions}</div>
+      <div className={classes[`${actionsAlignment}Container`]}>{actions}</div>
     )}
   </Cardactions>
 );
@@ -94,6 +95,10 @@ Footer.propTypes = {
    *  The renderable content inside the actions slot of the footer.
    */
   actions: PropTypes.node,
+  /**
+   * The alignment applied to the action elements
+   */
+  actionsAlignment: PropTypes.oneOf(["left", "right"]),
   /**
    *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
    */
@@ -129,6 +134,7 @@ Footer.defaultProps = {
   checkboxValue: "",
   checkboxLabel: "",
   actions: undefined,
+  actionsAlignment: "left",
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined
 };

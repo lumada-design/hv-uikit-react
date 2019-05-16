@@ -33961,6 +33961,7 @@ body {
     >
       <Main
         actions="actions"
+        actionsAlignment="left"
         checkboxLabel=""
         checkboxValue="value"
         className=""
@@ -39033,6 +39034,7 @@ body {
                   </WithStyles(Content)>
                   <WithStyles(Component)
                     actions="actions"
+                    actionsAlignment="left"
                     checkboxLabel=""
                     checkboxValue="value"
                     isSelectable={true}
@@ -39040,6 +39042,7 @@ body {
                   >
                     <Component
                       actions="actions"
+                      actionsAlignment="left"
                       checkboxLabel=""
                       checkboxValue="value"
                       classes={
@@ -39639,6 +39642,7 @@ body {
                     >
                       <Footer
                         actions="actions"
+                        actionsAlignment="left"
                         checkboxLabel=""
                         checkboxValue="value"
                         className=""
