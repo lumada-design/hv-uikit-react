@@ -26,7 +26,8 @@ const icon = {
   position: "absolute",
   right: 0,
   width: "32px",
-  height: "32px"
+  height: "32px",
+  bottom: "0px"
 };
 
 const styles = theme => ({
@@ -38,14 +39,13 @@ const styles = theme => ({
     ...inputRoot(theme),
     border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
-
   inputWithCalendarVisible: {
     ...inputRoot(theme),
     borderWidth: `1px 1px 0px 1px`,
     borderStyle: `solid`,
-    borderColor: `${theme.hv.palette.accent.acce1}`
+    borderColor: `${theme.hv.palette.accent.acce1}`,
+    borderBottom: `1px solid transparent`
   },
-
   input: {
     border: "none",
     height: "30px",
@@ -61,28 +61,29 @@ const styles = theme => ({
     }
   },
   icon: {
+    ...icon,
+    cursor: "pointer"
+  },
+  iconWithCalendarVisible: {
     ...icon
   },
   iconClear: {
     ...icon,
     cursor: "pointer"
   },
-
   datePickerContainer: {
     position: "relative",
     width: "320px"
   },
-
   label: {
-    marginBottom: `${theme.hv.spacing.xs}px`
+    marginBottom: `${theme.hv.spacing.xs}px`,
+    display: "block"
   },
-
   calendarContainer: {
     position: "absolute",
     zIndex: "10",
     width: "100%"
   }
-
 });
 
 export default styles;
