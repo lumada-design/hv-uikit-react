@@ -87,7 +87,7 @@ const Grid = React.forwardRef((props, ref) => {
       ref={ref}
       xs={container && !xs ? 4 : xs}
       sm={container && !sm ? 8 : sm}
-      md={container && !md ? 8 : md}
+      md={container && !md ? 12 : md}
       lg={container && !lg ? 12 : lg}
       xl={container && !xl ? 12 : xl}
       {...other}
