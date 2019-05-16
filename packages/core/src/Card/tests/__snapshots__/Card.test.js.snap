@@ -31,10 +31,10 @@ exports[`Card withStyles should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -3302,10 +3302,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -4930,10 +4930,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -6548,10 +6548,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -8660,10 +8660,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -10437,10 +10437,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -12158,10 +12158,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -14951,10 +14951,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -16617,10 +16617,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -18250,10 +18250,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -19926,10 +19926,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -21597,10 +21597,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -23409,10 +23409,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -25181,10 +25181,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -26901,10 +26901,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -28619,10 +28619,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -31623,10 +31623,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -33373,10 +33373,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 840,
-            "md": 720,
+            "lg": 1270,
+            "md": 960,
             "sm": 600,
-            "xl": 1990,
+            "xl": 1920,
             "xs": 0,
           },
           "width": [Function],
@@ -33961,6 +33961,7 @@ body {
     >
       <Main
         actions="actions"
+        actionsAlignment="left"
         checkboxLabel=""
         checkboxValue="value"
         className=""
@@ -33993,10 +33994,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -34693,10 +34694,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 840,
-                              "md": 720,
+                              "lg": 1270,
+                              "md": 960,
                               "sm": 600,
-                              "xl": 1990,
+                              "xl": 1920,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -35394,10 +35395,10 @@ body {
                                         "only": [Function],
                                         "up": [Function],
                                         "values": Object {
-                                          "lg": 840,
-                                          "md": 720,
+                                          "lg": 1270,
+                                          "md": 960,
                                           "sm": 600,
-                                          "xl": 1990,
+                                          "xl": 1920,
                                           "xs": 0,
                                         },
                                         "width": [Function],
@@ -36064,10 +36065,10 @@ body {
                                         "only": [Function],
                                         "up": [Function],
                                         "values": Object {
-                                          "lg": 840,
-                                          "md": 720,
+                                          "lg": 1270,
+                                          "md": 960,
                                           "sm": 600,
-                                          "xl": 1990,
+                                          "xl": 1920,
                                           "xs": 0,
                                         },
                                         "width": [Function],
@@ -36684,10 +36685,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 840,
-                              "md": 720,
+                              "lg": 1270,
+                              "md": 960,
                               "sm": 600,
-                              "xl": 1990,
+                              "xl": 1920,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -37272,10 +37273,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 840,
-                                "md": 720,
+                                "lg": 1270,
+                                "md": 960,
                                 "sm": 600,
-                                "xl": 1990,
+                                "xl": 1920,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -37866,10 +37867,10 @@ body {
                                 "only": [Function],
                                 "up": [Function],
                                 "values": Object {
-                                  "lg": 840,
-                                  "md": 720,
+                                  "lg": 1270,
+                                  "md": 960,
                                   "sm": 600,
-                                  "xl": 1990,
+                                  "xl": 1920,
                                   "xs": 0,
                                 },
                                 "width": [Function],
@@ -38454,10 +38455,10 @@ body {
                                   "only": [Function],
                                   "up": [Function],
                                   "values": Object {
-                                    "lg": 840,
-                                    "md": 720,
+                                    "lg": 1270,
+                                    "md": 960,
                                     "sm": 600,
-                                    "xl": 1990,
+                                    "xl": 1920,
                                     "xs": 0,
                                   },
                                   "width": [Function],
@@ -39033,6 +39034,7 @@ body {
                   </WithStyles(Content)>
                   <WithStyles(Component)
                     actions="actions"
+                    actionsAlignment="left"
                     checkboxLabel=""
                     checkboxValue="value"
                     isSelectable={true}
@@ -39040,6 +39042,7 @@ body {
                   >
                     <Component
                       actions="actions"
+                      actionsAlignment="left"
                       checkboxLabel=""
                       checkboxValue="value"
                       classes={
@@ -39066,10 +39069,10 @@ body {
                             "only": [Function],
                             "up": [Function],
                             "values": Object {
-                              "lg": 840,
-                              "md": 720,
+                              "lg": 1270,
+                              "md": 960,
                               "sm": 600,
-                              "xl": 1990,
+                              "xl": 1920,
                               "xs": 0,
                             },
                             "width": [Function],
@@ -39639,6 +39642,7 @@ body {
                     >
                       <Footer
                         actions="actions"
+                        actionsAlignment="left"
                         checkboxLabel=""
                         checkboxValue="value"
                         className=""
@@ -39672,10 +39676,10 @@ body {
                               "only": [Function],
                               "up": [Function],
                               "values": Object {
-                                "lg": 840,
-                                "md": 720,
+                                "lg": 1270,
+                                "md": 960,
                                 "sm": 600,
-                                "xl": 1990,
+                                "xl": 1920,
                                 "xs": 0,
                               },
                               "width": [Function],
@@ -40266,10 +40270,10 @@ body {
                                 "only": [Function],
                                 "up": [Function],
                                 "values": Object {
-                                  "lg": 840,
-                                  "md": 720,
+                                  "lg": 1270,
+                                  "md": 960,
                                   "sm": 600,
-                                  "xl": 1990,
+                                  "xl": 1920,
                                   "xs": 0,
                                 },
                                 "width": [Function],
@@ -40868,10 +40872,10 @@ body {
                                   "only": [Function],
                                   "up": [Function],
                                   "values": Object {
-                                    "lg": 840,
-                                    "md": 720,
+                                    "lg": 1270,
+                                    "md": 960,
                                     "sm": 600,
-                                    "xl": 1990,
+                                    "xl": 1920,
                                     "xs": 0,
                                   },
                                   "width": [Function],
@@ -41462,10 +41466,10 @@ body {
                                     "only": [Function],
                                     "up": [Function],
                                     "values": Object {
-                                      "lg": 840,
-                                      "md": 720,
+                                      "lg": 1270,
+                                      "md": 960,
                                       "sm": 600,
-                                      "xl": 1990,
+                                      "xl": 1920,
                                       "xs": 0,
                                     },
                                     "width": [Function],
@@ -42073,10 +42077,10 @@ body {
                                           "only": [Function],
                                           "up": [Function],
                                           "values": Object {
-                                            "lg": 840,
-                                            "md": 720,
+                                            "lg": 1270,
+                                            "md": 960,
                                             "sm": 600,
-                                            "xl": 1990,
+                                            "xl": 1920,
                                             "xs": 0,
                                           },
                                           "width": [Function],
@@ -43296,10 +43300,10 @@ body {
                                                       "only": [Function],
                                                       "up": [Function],
                                                       "values": Object {
-                                                        "lg": 840,
-                                                        "md": 720,
+                                                        "lg": 1270,
+                                                        "md": 960,
                                                         "sm": 600,
-                                                        "xl": 1990,
+                                                        "xl": 1920,
                                                         "xs": 0,
                                                       },
                                                       "width": [Function],

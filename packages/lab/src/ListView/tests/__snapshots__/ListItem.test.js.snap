@@ -18,10 +18,10 @@ exports[`ListItem withStyles should render correctly 1`] = `
         "only": [Function],
         "up": [Function],
         "values": Object {
-          "lg": 840,
-          "md": 720,
+          "lg": 1270,
+          "md": 960,
           "sm": 600,
-          "xl": 1990,
+          "xl": 1920,
           "xs": 0,
         },
         "width": [Function],

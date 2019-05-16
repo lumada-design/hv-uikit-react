@@ -60,6 +60,7 @@ const Main = ({
   subheader,
   innerCardContent,
   actions,
+  actionsAlignment,
   isSelectable,
   semantic,
   onChange,
@@ -100,6 +101,7 @@ const Main = ({
         <Footer
           checkboxValue={checkboxValue}
           actions={actions}
+          actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
           onChange={onChange}
           checkboxLabel={checkboxLabel}
@@ -131,7 +133,7 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -164,6 +166,10 @@ Main.propTypes = {
    *  The renderable content inside the actions slot of the footer.
    */
   actions: PropTypes.node,
+  /**
+   * The alignment applied to the action elements
+   */
+  actionsAlignment: PropTypes.oneOf(["left", "right"]),
   /**
    *  The renderable content inside the body of the card.
    */
@@ -238,6 +244,7 @@ Main.defaultProps = {
   innerCardContent: undefined,
   onChange: () => {},
   actions: null,
+  actionsAlignment: "left",
   mediaHeight: undefined,
   mediaPath: "",
   mediaTitle: "",

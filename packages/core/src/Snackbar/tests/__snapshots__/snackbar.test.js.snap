@@ -31,10 +31,10 @@ exports[`Snackbcar  should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -3302,10 +3302,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -5035,10 +5035,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
@@ -6128,7 +6128,7 @@ body {
 .MuiSnackbar-anchorOriginTopCenter-8 {
   top: 0;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginTopCenter-8 {
     left: 50%;
     right: auto;
@@ -6138,7 +6138,7 @@ body {
 .MuiSnackbar-anchorOriginBottomCenter-9 {
   bottom: 0;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginBottomCenter-9 {
     left: 50%;
     right: auto;
@@ -6149,7 +6149,7 @@ body {
   top: 0;
   justify-content: flex-end;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginTopRight-10 {
     top: 24px;
     left: auto;
@@ -6160,7 +6160,7 @@ body {
   bottom: 0;
   justify-content: flex-end;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginBottomRight-11 {
     left: auto;
     right: 24px;
@@ -6171,7 +6171,7 @@ body {
   top: 0;
   justify-content: flex-start;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginTopLeft-12 {
     top: 24px;
     left: 24px;
@@ -6182,7 +6182,7 @@ body {
   bottom: 0;
   justify-content: flex-start;
 }
-@media (min-width:720px) {
+@media (min-width:960px) {
   .MuiSnackbar-anchorOriginBottomLeft-13 {
     left: 24px;
     right: auto;
@@ -6225,7 +6225,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -6525,7 +6525,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -6826,7 +6826,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7127,7 +7127,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7428,7 +7428,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -7729,7 +7729,7 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -8057,9 +8057,9 @@ body {
                     "right": 0,
                     "z-index": "1400",
                   },
-                  "@media (min-width:720px)": ConditionalRule {
+                  "@media (min-width:960px)": ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
@@ -8879,9 +8879,9 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  "@media (min-width:720px)": null,
+                  "@media (min-width:960px)": null,
                   "anchorOriginBottomCenter": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8889,7 +8889,7 @@ body {
                     "bottom": 0,
                   },
                   "anchorOriginBottomLeft": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "bottom": 24,
                       "left": 24,
                       "right": "auto",
@@ -8898,7 +8898,7 @@ body {
                     "justifyContent": "flex-start",
                   },
                   "anchorOriginBottomRight": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "bottom": 24,
                       "left": "auto",
                       "right": 24,
@@ -8907,7 +8907,7 @@ body {
                     "justifyContent": "flex-end",
                   },
                   "anchorOriginTopCenter": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8915,7 +8915,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopLeft": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": 24,
                       "right": "auto",
                       "top": 24,
@@ -8924,7 +8924,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopRight": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "auto",
                       "right": 24,
                       "top": 24,
@@ -8965,10 +8965,10 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 840,
-            "md": 720,
+            "lg": 1270,
+            "md": 960,
             "sm": 600,
-            "xl": 1990,
+            "xl": 1920,
             "xs": 0,
           },
           "width": [Function],
@@ -9582,10 +9582,10 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],

@@ -202,6 +202,7 @@ const styles = theme => ({
   pointer: {
     cursor: "pointer"
   },
+  tableContainer: {},
   subtitle: {
     marginTop: `${theme.hv.spacing.xs}px`
   },
