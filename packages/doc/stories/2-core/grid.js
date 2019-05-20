@@ -21,44 +21,45 @@ import HvGrid from "@hv/uikit-react-core/dist/Grid";
 storiesOf("Core", module).add("Grid", () => <HvGrid />, {
   title: "Grid",
   description:
-    "The implemented Grid follow the design system directives.<br> Breakpoints: " +
-    "<ul>" +
-    "  <li><b>xs</b>: " +
-    "    <ul>" +
-    "      <li>width: [0-599] px </li>" +
-    "      <li>gutters: 15 px </li>" +
-    "      <li>number of columns: 4 </li>" +
-    "    </ul>" +
-    "  </li>" +
-    "  <li><b>sm</b>: " +
-    "    <ul>" +
-    "      <li>width: [600-959] px </li>" +
-    "      <li>gutters: 15 px </li>" +
-    "      <li>number of columns: 8 </li>" +
-    "    </ul>" +
-    "  </li>" +
-    "  <li><b> md </b>" +
-    "    <ul>" +
-    "      <li>width: [960-1269] px </li>" +
-    "      <li>gutters: 30 px </li>" +
-    "      <li>number of columns: 12 </li>" +
-    "    </ul>" +
-    "  </li>" +
-    "  <li><b>lg</b>: " +
-    "    <ul>" +
-    "      <li>width: [1270-1919] px </li>" +
-    "      <li>gutters: 30 px </li>" +
-    "      <li>number of columns: 12 </li>" +
-    "    </ul>" +
-    "  </li>" +
-    "  <li><b>xl</b>: " +
-    "    <ul>" +
-    "      <li>width: [1920-...] px </li>" +
-    "      <li>gutters: 30 px </li>" +
-    "      <li>number of columns: 12 </li>" +
-    "    </ul>" +
-    "  </li>" +
-    "</ul>",
+    "The implemented Grid follow the design system directives.<br><br>" +
+    "<table border='2'" +
+    "  <tr>" +
+    "   <th>Breakpoint</th>" +
+    "   <th>Width (in px)</th>" +
+    "   <th>Gutters (in px)</th>" +
+    "   <th>Number of columns</th>" +
+    "  </tr>" +
+    "  <tr>" +
+    "   <td>xs</td>" +
+    "   <td>[0-600[</td>" +
+    "    <td>15 </td>" +
+    "    <td>4 </td>" +
+    "  </tr>" +
+    "  <tr>" +
+    "   <td>sm</td>" +
+    "   <td>[600-960[ </td>" +
+    "    <td> 15  </td>" +
+    "    <td> 8 </td>" +
+    "  </tr>" +
+    "  <tr>" +
+    "   <td>md</td>" +
+    "   <td>[960-1270[  </td>" +
+    "    <td> 30  </td>" +
+    "    <td> 12 </td>" +
+    "  </tr>" +
+    "  <tr>" +
+    "   <td>lg</td>" +
+    "   <td>[1270-1920[  </td>" +
+    "    <td>30  </td>" +
+    "    <td>12</td>" +
+    "  </tr>" +
+    "  <tr>" +
+    "   <td>xl</td>" +
+    "   <td>[1920-...[  </td>" +
+    "    <td>30  </td>" +
+    "    <td>12</td>" +
+    "  </tr>" +
+    "</table>",
   usage: "import HvGrid from '@hv/uikit-react-core/dist/Grid'",
   examples: [
     {
@@ -68,7 +69,8 @@ storiesOf("Core", module).add("Grid", () => <HvGrid />, {
     },
     {
       title: "2. Different breakpoints behaviour",
-      description: "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints.",
+      description:
+        "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints.",
       src: "core/grid/grid2"
     }
   ]
