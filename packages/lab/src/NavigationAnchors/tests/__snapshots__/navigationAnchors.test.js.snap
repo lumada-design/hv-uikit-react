@@ -20051,6 +20051,7 @@ body {
           },
         ]
       }
+      selectedIndex={0}
     >
       <WithStyles(Drawer)
         anchor="left"
@@ -29189,6 +29190,7 @@ exports[`User withStyles should handle click action correctly 2`] = `
       },
     ]
   }
+  selectedIndex={0}
 >
   <WithStyles(Drawer)
     anchor="left"
@@ -53674,6 +53676,7 @@ body {
           },
         ]
       }
+      selectedIndex={0}
     >
       <WithStyles(Drawer)
         anchor="left"
