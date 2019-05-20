@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.5...@hv/uikit-react-core@1.1.3-alpha.6) (2019-05-20)
+
+
+### Features
+
+* **KPI:** add class to style indicator text. [#180](https://github.com/pentaho/hv-uikit-react/issues/180) ([a2fea6f](https://github.com/pentaho/hv-uikit-react/commit/a2fea6f))
+* **Snackbar:** Add ability to define transition direction and duration. [#182](https://github.com/pentaho/hv-uikit-react/issues/182) ([8e6844e](https://github.com/pentaho/hv-uikit-react/commit/8e6844e))
+* **Table:** Add capability to define selected rows from prop. [#179](https://github.com/pentaho/hv-uikit-react/issues/179) ([7d4619b](https://github.com/pentaho/hv-uikit-react/commit/7d4619b))
+
+
+
+
+
 ## [1.1.3-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.4...@hv/uikit-react-core@1.1.3-alpha.5) (2019-05-16)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.6...@hv/uikit-react-lab@1.1.3-alpha.7) (2019-05-20)
+
+
+### Features
+
+* **NavigationAnchors:** Add ability to select navigation item. [#181](https://github.com/pentaho/hv-uikit-react/issues/181) ([76383d7](https://github.com/pentaho/hv-uikit-react/commit/76383d7))
+
+
+
+
+
 ## [1.1.3-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.5...@hv/uikit-react-lab@1.1.3-alpha.6) (2019-05-16)
 
 
