@@ -49,7 +49,7 @@ const HvKpi = props => {
             {visualIndicator}
           </div>
         )}
-        <HvTypography className={classes.spacingToTheRight} variant="xlTitle">
+        <HvTypography className={classNames(classes.spacingToTheRight, classes.indicatorText)} variant="xlTitle">
           {definedLabels.indicator}
         </HvTypography>
         <HvTypography className={classes.indicatorUnit} variant="infoText">
@@ -81,7 +81,7 @@ HvKpi.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -105,6 +105,10 @@ HvKpi.propTypes = {
      * Styles applied to the component indicators.
      */
     indicatorsContainer: PropTypes.string,
+    /**
+     * Styles applied to the component indicators text.
+     */
+    indicatorText: PropTypes.string,
     /**
      * Styles applied to the component indicators unit.
      */

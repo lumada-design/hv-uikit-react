@@ -42,6 +42,7 @@ const styles = theme => ({
     alignSelf: "flex-end",
     paddingBottom: "3px"
   },
+  indicatorText: {},
   spacingToTheRight: {
     marginRight: `${theme.hv.spacing.xs}px`
   },

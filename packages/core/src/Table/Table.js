@@ -69,7 +69,7 @@ class Table extends React.Component {
       // Controls which row is expanded.
       expanded: {},
       // Controls which row is selected using the checkboxes.
-      selection: [],
+      selection: props.selections || [],
       // Controls if the select all options has been used
       selectAll: false
     };
@@ -91,6 +91,17 @@ class Table extends React.Component {
       const withFixedColumns = require("react-table-hoc-fixed-columns");
       this.state.Table = withFixedColumns.default(ReactTable);
     }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    const { selections } = props;
+    if (selections !== state.selections) {
+      return {
+        selections
+      };
+    }
+
+    return null;
   }
 
   /**
@@ -266,13 +277,16 @@ class Table extends React.Component {
   toggleSelection = key => {
     // start off with the existing state
     const { selection } = this.state;
+    const { onSelection } = this.props;
 
     const select = toggleSelection(key, selection);
 
     if (select.length === 0) this.setState({ selectAll: false });
 
     // update the state
-    this.setState({ selection: select });
+    this.setState({ selection: select }, () => {
+      onSelection(select);
+    });
   };
 
   /**
@@ -287,14 +301,19 @@ class Table extends React.Component {
    * Selects all the avaible rows on the page.
    */
   toggleAll = () => {
-    const { idForCheckbox } = this.props;
+    const { idForCheckbox, onSelection } = this.props;
     const { selectAll } = this.state;
 
     const stateToSet = toggleAll(idForCheckbox, selectAll, this.checkboxTable);
-    this.setState({
-      selectAll: stateToSet.selectAll,
-      selection: stateToSet.selection
-    });
+    this.setState(
+      {
+        selectAll: stateToSet.selectAll,
+        selection: stateToSet.selection
+      },
+      () => {
+        onSelection(stateToSet.selection);
+      }
+    );
   };
 
   render() {
@@ -618,7 +637,15 @@ Table.propTypes = {
   /**
    * Boolean to bind config back to function or not
    */
-  useRouter: PropTypes.bool
+  useRouter: PropTypes.bool,
+  /**
+   * Callback which receives the checked state of all items in the list
+   */
+  onSelection: PropTypes.func,
+  /**
+   * Ids of preselected items in the list
+   */
+  selections: PropTypes.arrayOf(PropTypes.any)
 };
 
 Table.defaultProps = {
@@ -642,7 +669,9 @@ Table.defaultProps = {
   subElementTemplate: null,
   idForCheckbox: "",
   getTrProps: undefined,
-  useRouter: false
+  useRouter: false,
+  selections: undefined,
+  onSelection: () => {}
 };
 
 export default Table;

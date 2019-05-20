@@ -26,8 +26,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import HvLink from "@hv/uikit-react-core/dist/Link";
 
 class NavigationAnchors extends React.Component {
-  state = {
-    selectedIndex: 0
+  constructor(props) {
+    super(props);
+    this.state  = {
+      selectedIndex: props.selectedIndex || 0
+    }
   };
 
   handleListItemClick = (event, index) => {
@@ -130,16 +133,21 @@ NavigationAnchors.propTypes = {
    * A callback called on click of every list item, if the href is false
    */
   onClick: PropTypes.func,
-  /** 
-   * Wether the anchors are always in a fixed position 
+  /**
+   * Whether the anchors are always in a fixed position
    */
-  floating: PropTypes.bool
+  floating: PropTypes.bool,
+  /**
+   * Currently selected index passed from the parent.
+   */
+  selectedIndex: PropTypes.number,
 };
 
 NavigationAnchors.defaultProps = {
   href: true,
   onClick: undefined,
-  floating: true
+  floating: true,
+  selectedIndex: 0
 };
 
 export default NavigationAnchors;
