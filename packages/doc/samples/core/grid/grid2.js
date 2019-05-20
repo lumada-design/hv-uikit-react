@@ -17,8 +17,8 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvGrid from "@hv/uikit-react-core/dist/Grid";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
-import Typography from "@hv/uikit-react-core/src/Typography";
 
 const Box = ({ text }) => (
   <div
@@ -55,7 +55,7 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
 
   return (
     <div>
-      <Typography variant="xxsTitle">{title}</Typography>
+      <HvTypography variant="xxsTitle">{title}</HvTypography>
       <div style={{ border: "1px solid" }}>
         <HvGrid container>
           <HvGrid item xs={4} sm={8} md={8} lg={12} xl={12}>

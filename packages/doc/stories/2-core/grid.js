@@ -25,35 +25,35 @@ storiesOf("Core", module).add("Grid", () => <HvGrid />, {
     "<ul>" +
     "  <li><b>xs</b>: " +
     "    <ul>" +
-    "      <li>width: [0-600[ px </li>" +
+    "      <li>width: [0-599] px </li>" +
     "      <li>gutters: 15 px </li>" +
     "      <li>number of columns: 4 </li>" +
     "    </ul>" +
     "  </li>" +
     "  <li><b>sm</b>: " +
     "    <ul>" +
-    "      <li>width: [600-720[ px </li>" +
+    "      <li>width: [600-959] px </li>" +
     "      <li>gutters: 15 px </li>" +
     "      <li>number of columns: 8 </li>" +
     "    </ul>" +
     "  </li>" +
     "  <li><b> md </b>" +
     "    <ul>" +
-    "      <li>width: [720-840[ px </li>" +
+    "      <li>width: [960-1269] px </li>" +
     "      <li>gutters: 30 px </li>" +
-    "      <li>number of columns: 8 </li>" +
+    "      <li>number of columns: 12 </li>" +
     "    </ul>" +
     "  </li>" +
     "  <li><b>lg</b>: " +
     "    <ul>" +
-    "      <li>width: [840-1990[ px </li>" +
+    "      <li>width: [1270-1919] px </li>" +
     "      <li>gutters: 30 px </li>" +
     "      <li>number of columns: 12 </li>" +
     "    </ul>" +
     "  </li>" +
     "  <li><b>xl</b>: " +
     "    <ul>" +
-    "      <li>width: [1990-...[ px </li>" +
+    "      <li>width: [1920-...] px </li>" +
     "      <li>gutters: 30 px </li>" +
     "      <li>number of columns: 12 </li>" +
     "    </ul>" +
