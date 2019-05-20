@@ -28,6 +28,15 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
       },
       "direction": "ltr",
       "hv": Object {
+        "deprecated": Object {
+          "palette": Object {
+            "accent": Object {},
+            "atmosphere": Object {},
+            "semantic": Object {},
+            "support": Object {},
+          },
+          "typography": Object {},
+        },
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
@@ -648,6 +657,15 @@ exports[`Brand withStyles should render correctly 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3919,6 +3937,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -5721,6 +5748,15 @@ body {
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -6329,6 +6365,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",

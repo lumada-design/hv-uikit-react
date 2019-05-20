@@ -28,6 +28,15 @@ exports[`ModalContent withStyles should render correctly 1`] = `
       },
       "direction": "ltr",
       "hv": Object {
+        "deprecated": Object {
+          "palette": Object {
+            "accent": Object {},
+            "atmosphere": Object {},
+            "semantic": Object {},
+            "support": Object {},
+          },
+          "typography": Object {},
+        },
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
@@ -633,6 +642,15 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
       },
       "direction": "ltr",
       "hv": Object {
+        "deprecated": Object {
+          "palette": Object {
+            "accent": Object {},
+            "atmosphere": Object {},
+            "semantic": Object {},
+            "support": Object {},
+          },
+          "typography": Object {},
+        },
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
@@ -1245,6 +1263,15 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
       },
       "direction": "ltr",
       "hv": Object {
+        "deprecated": Object {
+          "palette": Object {
+            "accent": Object {},
+            "atmosphere": Object {},
+            "semantic": Object {},
+            "support": Object {},
+          },
+          "typography": Object {},
+        },
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",
@@ -1860,6 +1887,15 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
       },
       "direction": "ltr",
       "hv": Object {
+        "deprecated": Object {
+          "palette": Object {
+            "accent": Object {},
+            "atmosphere": Object {},
+            "semantic": Object {},
+            "support": Object {},
+          },
+          "typography": Object {},
+        },
         "palette": Object {
           "accent": Object {
             "acce1": "#414141",

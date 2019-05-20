@@ -41,6 +41,15 @@ exports[`Input should not have the validation section 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3312,6 +3321,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -6094,6 +6112,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -8619,6 +8646,15 @@ label + .MuiInput-formControl-400 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -10858,6 +10894,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -11496,6 +11541,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -12293,6 +12347,15 @@ exports[`Input should pass other props to the child input component 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -15564,6 +15627,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -18346,6 +18418,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -20871,6 +20952,15 @@ label + .MuiInput-formControl-508 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -23114,6 +23204,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -25469,6 +25568,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -26115,6 +26223,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -26940,6 +27057,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
                   },
                   "direction": "ltr",
                   "hv": Object {
+                    "deprecated": Object {
+                      "palette": Object {
+                        "accent": Object {},
+                        "atmosphere": Object {},
+                        "semantic": Object {},
+                        "support": Object {},
+                      },
+                      "typography": Object {},
+                    },
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
@@ -27555,6 +27681,15 @@ exports[`Input should render correctly 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -30826,6 +30961,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -33608,6 +33752,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -36133,6 +36286,15 @@ label + .MuiInput-formControl-80 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -38376,6 +38538,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -40731,6 +40902,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -41367,6 +41547,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -42171,6 +42360,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
                   },
                   "direction": "ltr",
                   "hv": Object {
+                    "deprecated": Object {
+                      "palette": Object {
+                        "accent": Object {},
+                        "atmosphere": Object {},
+                        "semantic": Object {},
+                        "support": Object {},
+                      },
+                      "typography": Object {},
+                    },
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
