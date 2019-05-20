@@ -18,7 +18,8 @@ const styles = theme => ({
   root: {
     padding: `${theme.hv.spacing.sm}px`,
     borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   bottomBorder: {
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
