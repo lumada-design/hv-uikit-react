@@ -10152,9 +10152,12 @@ body {
             },
           }
         }
+        transitionDirection="top"
+        transitionDuration={0}
         variant="default"
       >
         <WithStyles(Snackbar)
+          TransitionComponent={[Function]}
           anchorOrigin={
             Object {
               "horizontal": "right",

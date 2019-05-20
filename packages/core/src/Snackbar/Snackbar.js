@@ -18,7 +18,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import Slide from "@material-ui/core/Slide";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
+
+const snackBarDirComponent = direction => props => (
+  <Slide {...props} direction={direction} />
+);
 
 const HvSnackbar = props => {
   const {
@@ -34,7 +39,9 @@ const HvSnackbar = props => {
     variant,
     showIcon,
     customIcon,
-    action
+    action,
+    transitionDuration,
+    transitionDirection
   } = props;
 
   return (
@@ -46,7 +53,8 @@ const HvSnackbar = props => {
       open={open}
       onClose={onClose}
       autoHideDuration={autoHideDuration}
-      transitionDuration={0}
+      transitionDuration={transitionDuration}
+      TransitionComponent={snackBarDirComponent(transitionDirection)}
     >
       <HvSnackBarContentWrapper
         label={label || message}
@@ -64,7 +72,7 @@ HvSnackbar.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -115,11 +123,11 @@ HvSnackbar.propTypes = {
    */
   label: PropTypes.string,
   /**
-   *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right"
+   *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation
    */
   anchorOrigin: PropTypes.shape({
     vertical: PropTypes.string,
-    horizontal: PropTypes.string,
+    horizontal: PropTypes.string
   }),
   /**
    * The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar
@@ -140,7 +148,15 @@ HvSnackbar.propTypes = {
   /**
    * Action to display.
    */
-  action: PropTypes.node
+  action: PropTypes.node,
+  /**
+   * Duration of transition in milliseconds.
+   */
+  transitionDuration: PropTypes.number,
+  /**
+   * Direction of slide transition set to one of "left", "right", "top", or "bottom".
+   */
+  transitionDirection: PropTypes.oneOf(["top", "bottom", "left", "right"])
 };
 
 HvSnackbar.defaultProps = {
@@ -155,7 +171,9 @@ HvSnackbar.defaultProps = {
   customIcon: null,
   showIcon: false,
   action: null,
-  variant: "default"
+  variant: "default",
+  transitionDuration: 0,
+  transitionDirection: "top"
 };
 
 export default HvSnackbar;
