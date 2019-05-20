@@ -6438,6 +6438,7 @@ body {
                 "lTitle": "Typography-lTitle-9",
                 "labelText": "Typography-labelText-18",
                 "mTitle": "Typography-mTitle-10",
+                "margin": "Typography-margin-24",
                 "normalText": "Typography-normalText-15",
                 "sLink": "Typography-sLink-20",
                 "sTitle": "Typography-sTitle-11",
@@ -6465,6 +6466,7 @@ body {
                   "lTitle": "Typography-lTitle-9",
                   "labelText": "Typography-labelText-18",
                   "mTitle": "Typography-mTitle-10",
+                  "margin": "Typography-margin-24",
                   "normalText": "Typography-normalText-15",
                   "sLink": "Typography-sLink-20",
                   "sTitle": "Typography-sTitle-11",
@@ -7096,6 +7098,9 @@ body {
 .Typography-baseFontFamily-23 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+.Typography-margin-24 {
+  margin: 0;
+}
 
                 </style>,
                 "getKey": [Function],
@@ -7121,6 +7126,7 @@ body {
                   "lTitle": "Typography-lTitle-9",
                   "labelText": "Typography-labelText-18",
                   "mTitle": "Typography-mTitle-10",
+                  "margin": "Typography-margin-24",
                   "normalText": "Typography-normalText-15",
                   "sLink": "Typography-sLink-20",
                   "sTitle": "Typography-sTitle-11",
@@ -7267,6 +7273,9 @@ body {
                   Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
+                  Object {
+                    "margin": 0,
+                  },
                 ],
                 "map": Object {
                   ".Typography-3xlTitle-6": Object {
@@ -7348,6 +7357,9 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
+                  },
+                  ".Typography-margin-24": Object {
+                    "margin": 0,
                   },
                   ".Typography-normalText-15": Object {
                     "color": "#414141",
@@ -7485,6 +7497,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
+                  "margin": Object {
+                    "margin": 0,
+                  },
                   "normalText": Object {
                     "color": "#414141",
                     "font-size": "14px",
@@ -7558,6 +7573,7 @@ body {
                     "lTitle": "Typography-lTitle-9",
                     "labelText": "Typography-labelText-18",
                     "mTitle": "Typography-mTitle-10",
+                    "margin": "Typography-margin-24",
                     "normalText": "Typography-normalText-15",
                     "sLink": "Typography-sLink-20",
                     "sTitle": "Typography-sTitle-11",
@@ -8132,6 +8148,9 @@ body {
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "30px",
+                  },
+                  "margin": Object {
+                    "margin": 0,
                   },
                   "normalText": Object {
                     "color": "#414141",
@@ -10003,6 +10022,7 @@ body {
                     "lTitle": "Typography-lTitle-9",
                     "labelText": "Typography-labelText-18",
                     "mTitle": "Typography-mTitle-10",
+                    "margin": "Typography-margin-24",
                     "normalText": "Typography-normalText-15",
                     "sLink": "Typography-sLink-20",
                     "sTitle": "Typography-sTitle-11",
@@ -10013,6 +10033,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-13",
                   }
                 }
+                paragraph={false}
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -10895,11 +10916,11 @@ body {
                 }
                 variant="normalText"
               >
-                <span
-                  className="Typography-normalText-15 Typography-baseFontFamily-23"
+                <p
+                  className="Typography-normalText-15 Typography-baseFontFamily-23 Typography-margin-24"
                 >
                   Mock text for the top content
-                </span>
+                </p>
               </Typography>
             </WithStyles(Typography)>
           </div>
@@ -10924,6 +10945,7 @@ body {
                     "lTitle": "Typography-lTitle-9",
                     "labelText": "Typography-labelText-18",
                     "mTitle": "Typography-mTitle-10",
+                    "margin": "Typography-margin-24",
                     "normalText": "Typography-normalText-15",
                     "sLink": "Typography-sLink-20",
                     "sTitle": "Typography-sTitle-11",
@@ -10934,6 +10956,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-13",
                   }
                 }
+                paragraph={false}
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -11816,11 +11839,11 @@ body {
                 }
                 variant="mTitle"
               >
-                <span
-                  className="Typography-mTitle-10 Typography-baseFontFamily-23"
+                <h3
+                  className="Typography-mTitle-10 Typography-baseFontFamily-23 Typography-margin-24"
                 >
                   Mock text for the main content
-                </span>
+                </h3>
               </Typography>
             </WithStyles(Typography)>
           </div>
