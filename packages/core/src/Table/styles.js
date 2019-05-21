@@ -109,11 +109,11 @@ const styles = theme => ({
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
           "& $tr > div ": {
-            background: "white",
+            background: theme.hv.palette.atmosphere.atmo1,
             position: "relative"
           },
           "& $tr:hover > div ": {
-            background: "white"
+            background: theme.hv.palette.atmosphere.atmo1
           }
         },
         "& $td": {

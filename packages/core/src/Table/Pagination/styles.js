@@ -56,7 +56,8 @@ const styles = theme => ({
     height: "32px",
     width: `${theme.hv.spacing.lg}px`,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    background: `url(${DownArrow}) no-repeat right white`,
+    background: `url(${DownArrow}) no-repeat right ${theme.hv.palette.atmosphere.atmo1}`,
+    color: theme.hv.palette.accent.acce1,
     backgroundSize: "26px 26px",
     "&::-ms-expand":{
       display: "none"
@@ -89,7 +90,8 @@ const styles = theme => ({
     padding: "2px 5px",
     borderRadius: "0",
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    height: "32px"
+    height: "32px",
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   arrowFirst: {
     background: `url(${ArrowFirst})`,

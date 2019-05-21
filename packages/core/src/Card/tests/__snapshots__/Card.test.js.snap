@@ -41,6 +41,15 @@ exports[`Card withStyles should render correctly 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3312,6 +3321,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -4940,6 +4958,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -6558,6 +6585,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -8670,6 +8706,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -9743,6 +9788,7 @@ body {
   padding: 20px;
   border-left: 1px solid #BCBCBC;
   border-right: 1px solid #BCBCBC;
+  background-color: #FFFFFF;
 }
 .Header-bottomBorder-31 {
   border-bottom: 1px solid #BCBCBC;
@@ -9791,6 +9837,7 @@ body {
                 },
                 "index": Array [
                   Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "20px",
@@ -9833,6 +9880,7 @@ body {
                   },
                   ".Header-content-35": Object {},
                   ".Header-root-30": Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "20px",
@@ -9864,6 +9912,7 @@ body {
                   },
                   "content": Object {},
                   "root": Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "20px",
@@ -10388,6 +10437,7 @@ body {
                   },
                   "content": Object {},
                   "root": Object {
+                    "backgroundColor": "#FFFFFF",
                     "borderLeft": "1px solid #BCBCBC",
                     "borderRight": "1px solid #BCBCBC",
                     "padding": "20px",
@@ -10447,6 +10497,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -12168,6 +12227,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -14961,6 +15029,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -16028,6 +16105,7 @@ body {
   padding: 0 20px 20px 20px;
   border-left: 1px solid #BCBCBC;
   border-right: 1px solid #BCBCBC;
+  background-color: #FFFFFF;
 }
 .Content-bottomBorder-79 {
   border-bottom: 1px solid #BCBCBC;
@@ -16054,6 +16132,7 @@ body {
                 },
                 "index": Array [
                   Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "0 20px 20px 20px",
@@ -16070,6 +16149,7 @@ body {
                     "border-bottom": "1px solid #BCBCBC",
                   },
                   ".Content-content-78": Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "0 20px 20px 20px",
@@ -16081,6 +16161,7 @@ body {
                     "border-bottom": "1px solid #BCBCBC",
                   },
                   "content": Object {
+                    "background-color": "#FFFFFF",
                     "border-left": "1px solid #BCBCBC",
                     "border-right": "1px solid #BCBCBC",
                     "padding": "0 20px 20px 20px",
@@ -16582,6 +16663,7 @@ body {
                     "borderBottom": "1px solid #BCBCBC",
                   },
                   "content": Object {
+                    "backgroundColor": "#FFFFFF",
                     "borderLeft": "1px solid #BCBCBC",
                     "borderRight": "1px solid #BCBCBC",
                     "padding": "0 20px 20px 20px",
@@ -16627,6 +16709,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -18260,6 +18351,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -19936,6 +20036,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -21607,6 +21716,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -23419,6 +23537,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -25191,6 +25318,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -26911,6 +27047,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -28629,6 +28774,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -31633,6 +31787,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -33383,6 +33546,15 @@ body {
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -34004,6 +34176,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -34704,6 +34885,15 @@ body {
                           },
                           "direction": "ltr",
                           "hv": Object {
+                            "deprecated": Object {
+                              "palette": Object {
+                                "accent": Object {},
+                                "atmosphere": Object {},
+                                "semantic": Object {},
+                                "support": Object {},
+                              },
+                              "typography": Object {},
+                            },
                             "palette": Object {
                               "accent": Object {
                                 "acce1": "#414141",
@@ -35405,6 +35595,15 @@ body {
                                       },
                                       "direction": "ltr",
                                       "hv": Object {
+                                        "deprecated": Object {
+                                          "palette": Object {
+                                            "accent": Object {},
+                                            "atmosphere": Object {},
+                                            "semantic": Object {},
+                                            "support": Object {},
+                                          },
+                                          "typography": Object {},
+                                        },
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
@@ -36075,6 +36274,15 @@ body {
                                       },
                                       "direction": "ltr",
                                       "hv": Object {
+                                        "deprecated": Object {
+                                          "palette": Object {
+                                            "accent": Object {},
+                                            "atmosphere": Object {},
+                                            "semantic": Object {},
+                                            "support": Object {},
+                                          },
+                                          "typography": Object {},
+                                        },
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
@@ -36695,6 +36903,15 @@ body {
                           },
                           "direction": "ltr",
                           "hv": Object {
+                            "deprecated": Object {
+                              "palette": Object {
+                                "accent": Object {},
+                                "atmosphere": Object {},
+                                "semantic": Object {},
+                                "support": Object {},
+                              },
+                              "typography": Object {},
+                            },
                             "palette": Object {
                               "accent": Object {
                                 "acce1": "#414141",
@@ -37283,6 +37500,15 @@ body {
                             },
                             "direction": "ltr",
                             "hv": Object {
+                              "deprecated": Object {
+                                "palette": Object {
+                                  "accent": Object {},
+                                  "atmosphere": Object {},
+                                  "semantic": Object {},
+                                  "support": Object {},
+                                },
+                                "typography": Object {},
+                              },
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
@@ -37877,6 +38103,15 @@ body {
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -38465,6 +38700,15 @@ body {
                                 },
                                 "direction": "ltr",
                                 "hv": Object {
+                                  "deprecated": Object {
+                                    "palette": Object {
+                                      "accent": Object {},
+                                      "atmosphere": Object {},
+                                      "semantic": Object {},
+                                      "support": Object {},
+                                    },
+                                    "typography": Object {},
+                                  },
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
@@ -39079,6 +39323,15 @@ body {
                           },
                           "direction": "ltr",
                           "hv": Object {
+                            "deprecated": Object {
+                              "palette": Object {
+                                "accent": Object {},
+                                "atmosphere": Object {},
+                                "semantic": Object {},
+                                "support": Object {},
+                              },
+                              "typography": Object {},
+                            },
                             "palette": Object {
                               "accent": Object {
                                 "acce1": "#414141",
@@ -39686,6 +39939,15 @@ body {
                             },
                             "direction": "ltr",
                             "hv": Object {
+                              "deprecated": Object {
+                                "palette": Object {
+                                  "accent": Object {},
+                                  "atmosphere": Object {},
+                                  "semantic": Object {},
+                                  "support": Object {},
+                                },
+                                "typography": Object {},
+                              },
                               "palette": Object {
                                 "accent": Object {
                                   "acce1": "#414141",
@@ -40280,6 +40542,15 @@ body {
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -40882,6 +41153,15 @@ body {
                                 },
                                 "direction": "ltr",
                                 "hv": Object {
+                                  "deprecated": Object {
+                                    "palette": Object {
+                                      "accent": Object {},
+                                      "atmosphere": Object {},
+                                      "semantic": Object {},
+                                      "support": Object {},
+                                    },
+                                    "typography": Object {},
+                                  },
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
@@ -41476,6 +41756,15 @@ body {
                                   },
                                   "direction": "ltr",
                                   "hv": Object {
+                                    "deprecated": Object {
+                                      "palette": Object {
+                                        "accent": Object {},
+                                        "atmosphere": Object {},
+                                        "semantic": Object {},
+                                        "support": Object {},
+                                      },
+                                      "typography": Object {},
+                                    },
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
@@ -42087,6 +42376,15 @@ body {
                                         },
                                         "direction": "ltr",
                                         "hv": Object {
+                                          "deprecated": Object {
+                                            "palette": Object {
+                                              "accent": Object {},
+                                              "atmosphere": Object {},
+                                              "semantic": Object {},
+                                              "support": Object {},
+                                            },
+                                            "typography": Object {},
+                                          },
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
@@ -43310,6 +43608,15 @@ body {
                                                     },
                                                     "direction": "ltr",
                                                     "hv": Object {
+                                                      "deprecated": Object {
+                                                        "palette": Object {
+                                                          "accent": Object {},
+                                                          "atmosphere": Object {},
+                                                          "semantic": Object {},
+                                                          "support": Object {},
+                                                        },
+                                                        "typography": Object {},
+                                                      },
                                                       "palette": Object {
                                                         "accent": Object {
                                                           "acce1": "#414141",

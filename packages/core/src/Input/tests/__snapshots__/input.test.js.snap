@@ -41,6 +41,15 @@ exports[`Input should not have the validation section 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3312,6 +3321,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -4499,7 +4517,8 @@ body {
   background-position: center;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  -webkit-text-fill-color: #414141;
 }
 
                 </style>,
@@ -4785,12 +4804,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -4927,7 +4948,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -5191,12 +5213,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -5333,7 +5357,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -5944,7 +5969,8 @@ input:-webkit-autofill {
                   },
                   "@global": Object {
                     "input:-webkit-autofill": Object {
-                      "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                      "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                      "-webkit-text-fill-color": "#414141",
                     },
                   },
                   "container": Object {
@@ -6086,6 +6112,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -8611,6 +8646,15 @@ label + .MuiInput-formControl-400 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -10850,6 +10894,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -11488,6 +11541,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -12285,6 +12347,15 @@ exports[`Input should pass other props to the child input component 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -15556,6 +15627,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -16743,7 +16823,8 @@ body {
   background-position: center;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  -webkit-text-fill-color: #414141;
 }
 
                 </style>,
@@ -17029,12 +17110,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -17171,7 +17254,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -17435,12 +17519,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -17577,7 +17663,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -18188,7 +18275,8 @@ input:-webkit-autofill {
                   },
                   "@global": Object {
                     "input:-webkit-autofill": Object {
-                      "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                      "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                      "-webkit-text-fill-color": "#414141",
                     },
                   },
                   "container": Object {
@@ -18330,6 +18418,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -20855,6 +20952,15 @@ label + .MuiInput-formControl-508 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -23098,6 +23204,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -25453,6 +25568,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -26099,6 +26223,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -26924,6 +27057,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
                   },
                   "direction": "ltr",
                   "hv": Object {
+                    "deprecated": Object {
+                      "palette": Object {
+                        "accent": Object {},
+                        "atmosphere": Object {},
+                        "semantic": Object {},
+                        "support": Object {},
+                      },
+                      "typography": Object {},
+                    },
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
@@ -27539,6 +27681,15 @@ exports[`Input should render correctly 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -30810,6 +30961,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -31997,7 +32157,8 @@ body {
   background-position: center;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  -webkit-text-fill-color: #414141;
 }
 
                 </style>,
@@ -32283,12 +32444,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -32425,7 +32588,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -32689,12 +32853,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -32831,7 +32997,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -33442,7 +33609,8 @@ input:-webkit-autofill {
                   },
                   "@global": Object {
                     "input:-webkit-autofill": Object {
-                      "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                      "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                      "-webkit-text-fill-color": "#414141",
                     },
                   },
                   "container": Object {
@@ -33584,6 +33752,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -36109,6 +36286,15 @@ label + .MuiInput-formControl-80 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -38352,6 +38538,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -40707,6 +40902,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -41343,6 +41547,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -42147,6 +42360,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
                   },
                   "direction": "ltr",
                   "hv": Object {
+                    "deprecated": Object {
+                      "palette": Object {
+                        "accent": Object {},
+                        "atmosphere": Object {},
+                        "semantic": Object {},
+                        "support": Object {},
+                      },
+                      "typography": Object {},
+                    },
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",

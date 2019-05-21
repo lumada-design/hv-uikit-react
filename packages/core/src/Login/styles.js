@@ -14,42 +14,58 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    flex: 1,
-    display: "flex",
-    width: "100%",
-    minHeight: 580,
-    background: `0 / cover fixed`,
-    justifyContent: "flex-end"
-  },
-  rightContainer: {
-    width: "30%",
-    minWidth: "380px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    [theme.breakpoints.down("500")]: {
-      minWidth: "320px",
-      width: "100%"
-    }
-  },
-  formContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    background: "rgba(255,255,255,0.9)",
-    "&:before": {
-      zIndex: "-1",
-      content: '""',
+import {
+  convertHexToRGB,
+  fade
+} from "@material-ui/core/styles/colorManipulator";
+
+const styles = theme => {
+  let convertedColor;
+
+  if (theme && theme.hv.palette.atmosphere.atmo2) {
+    convertedColor = fade(
+      convertHexToRGB(theme.hv.palette.atmosphere.atmo2),
+      0.9
+    );
+  }
+
+  return {
+    root: {
+      flex: 1,
+      display: "flex",
+      width: "100%",
+      minHeight: 580,
+      background: `0 / cover fixed`,
+      justifyContent: "flex-end"
+    },
+    rightContainer: {
+      width: "30%",
+      minWidth: "380px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      [theme.breakpoints.down("500")]: {
+        minWidth: "320px",
+        width: "100%"
+      }
+    },
+    formContainer: {
+      alignItems: "center",
+      justifyContent: "center",
+      position: "relative",
       width: "100%",
       height: "100%",
-      position: "relative",
-      filter: "blur(2px)"
+      background: convertedColor,
+      "&:before": {
+        zIndex: "-1",
+        content: '""',
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        filter: "blur(2px)"
+      }
     }
-  }
-});
+  };
+};
 
 export default styles;

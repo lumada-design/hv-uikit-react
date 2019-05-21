@@ -41,6 +41,15 @@ exports[`Login  should render correctly 1`] = `
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3312,6 +3321,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -4400,7 +4418,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  background: rgba(255,255,255,0.9);
+  background: rgba(249, 249, 249, 0.9);
   align-items: center;
   justify-content: center;
 }
@@ -4728,7 +4746,7 @@ body {
                   },
                   Object {
                     "align-items": "center",
-                    "background": "rgba(255,255,255,0.9)",
+                    "background": "rgba(249, 249, 249, 0.9)",
                     "height": "100%",
                     "justify-content": "center",
                     "position": "relative",
@@ -4746,7 +4764,7 @@ body {
                 "map": Object {
                   ".HvLogin-formContainer-187": Object {
                     "align-items": "center",
-                    "background": "rgba(255,255,255,0.9)",
+                    "background": "rgba(249, 249, 249, 0.9)",
                     "height": "100%",
                     "justify-content": "center",
                     "position": "relative",
@@ -5058,7 +5076,7 @@ body {
                   },
                   "formContainer": Object {
                     "align-items": "center",
-                    "background": "rgba(255,255,255,0.9)",
+                    "background": "rgba(249, 249, 249, 0.9)",
                     "height": "100%",
                     "justify-content": "center",
                     "position": "relative",
@@ -5588,7 +5606,7 @@ body {
                       "zIndex": "-1",
                     },
                     "alignItems": "center",
-                    "background": "rgba(255,255,255,0.9)",
+                    "background": "rgba(249, 249, 249, 0.9)",
                     "height": "100%",
                     "justifyContent": "center",
                     "position": "relative",
@@ -5651,6 +5669,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -7719,6 +7746,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -9390,6 +9426,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -11749,6 +11794,15 @@ body {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -12936,7 +12990,8 @@ body {
   background-position: center;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  -webkit-text-fill-color: #414141;
 }
 
                 </style>,
@@ -13222,12 +13277,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -13364,7 +13421,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -13628,12 +13686,14 @@ input:-webkit-autofill {
                       },
                       "index": Array [
                         Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       ],
                       "map": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "options": Object {
@@ -13770,7 +13830,8 @@ input:-webkit-autofill {
                       },
                       "raw": Object {
                         "input:-webkit-autofill": Object {
-                          "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                          "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                          "-webkit-text-fill-color": "#414141",
                         },
                       },
                       "update": [Function],
@@ -14381,7 +14442,8 @@ input:-webkit-autofill {
                   },
                   "@global": Object {
                     "input:-webkit-autofill": Object {
-                      "-webkit-box-shadow": "0 0 0px 1000px white inset",
+                      "-webkit-box-shadow": "0 0 0px 1000px #FFFFFF inset",
+                      "-webkit-text-fill-color": "#414141",
                     },
                   },
                   "container": Object {
@@ -14523,6 +14585,15 @@ input:-webkit-autofill {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -17048,6 +17119,15 @@ label + .MuiInput-formControl-241 {
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -19291,6 +19371,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -21103,6 +21192,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -22875,6 +22973,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -24595,6 +24702,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -26313,6 +26429,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -29317,6 +29442,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -31071,6 +31205,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -33864,6 +34007,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -35941,6 +36093,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -41597,6 +41758,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {},
+          },
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -42252,6 +42422,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {},
+              },
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -42921,6 +43100,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                       },
                       "direction": "ltr",
                       "hv": Object {
+                        "deprecated": Object {
+                          "palette": Object {
+                            "accent": Object {},
+                            "atmosphere": Object {},
+                            "semantic": Object {},
+                            "support": Object {},
+                          },
+                          "typography": Object {},
+                        },
                         "palette": Object {
                           "accent": Object {
                             "acce1": "#414141",
@@ -43532,6 +43720,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -44151,6 +44348,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -44808,6 +45014,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -45432,6 +45647,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -46242,6 +46466,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -46894,6 +47127,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -47518,6 +47760,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -48328,6 +48579,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -48953,6 +49213,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -50176,6 +50445,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           },
                                           "direction": "ltr",
                                           "hv": Object {
+                                            "deprecated": Object {
+                                              "palette": Object {
+                                                "accent": Object {},
+                                                "atmosphere": Object {},
+                                                "semantic": Object {},
+                                                "support": Object {},
+                                              },
+                                              "typography": Object {},
+                                            },
                                             "palette": Object {
                                               "accent": Object {
                                                 "acce1": "#414141",
@@ -50794,6 +51072,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                               },
                               "direction": "ltr",
                               "hv": Object {
+                                "deprecated": Object {
+                                  "palette": Object {
+                                    "accent": Object {},
+                                    "atmosphere": Object {},
+                                    "semantic": Object {},
+                                    "support": Object {},
+                                  },
+                                  "typography": Object {},
+                                },
                                 "palette": Object {
                                   "accent": Object {
                                     "acce1": "#414141",
@@ -51396,6 +51683,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 },
                                 "direction": "ltr",
                                 "hv": Object {
+                                  "deprecated": Object {
+                                    "palette": Object {
+                                      "accent": Object {},
+                                      "atmosphere": Object {},
+                                      "semantic": Object {},
+                                      "support": Object {},
+                                    },
+                                    "typography": Object {},
+                                  },
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
@@ -52025,6 +52321,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   },
                                   "direction": "ltr",
                                   "hv": Object {
+                                    "deprecated": Object {
+                                      "palette": Object {
+                                        "accent": Object {},
+                                        "atmosphere": Object {},
+                                        "semantic": Object {},
+                                        "support": Object {},
+                                      },
+                                      "typography": Object {},
+                                    },
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
@@ -52621,6 +52926,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -53226,6 +53540,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       },
                                       "direction": "ltr",
                                       "hv": Object {
+                                        "deprecated": Object {
+                                          "palette": Object {
+                                            "accent": Object {},
+                                            "atmosphere": Object {},
+                                            "semantic": Object {},
+                                            "support": Object {},
+                                          },
+                                          "typography": Object {},
+                                        },
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
@@ -53829,6 +54152,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         },
                                         "direction": "ltr",
                                         "hv": Object {
+                                          "deprecated": Object {
+                                            "palette": Object {
+                                              "accent": Object {},
+                                              "atmosphere": Object {},
+                                              "semantic": Object {},
+                                              "support": Object {},
+                                            },
+                                            "typography": Object {},
+                                          },
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
@@ -54478,6 +54810,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                 },
                                 "direction": "ltr",
                                 "hv": Object {
+                                  "deprecated": Object {
+                                    "palette": Object {
+                                      "accent": Object {},
+                                      "atmosphere": Object {},
+                                      "semantic": Object {},
+                                      "support": Object {},
+                                    },
+                                    "typography": Object {},
+                                  },
                                   "palette": Object {
                                     "accent": Object {
                                       "acce1": "#414141",
@@ -55080,6 +55421,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                   },
                                   "direction": "ltr",
                                   "hv": Object {
+                                    "deprecated": Object {
+                                      "palette": Object {
+                                        "accent": Object {},
+                                        "atmosphere": Object {},
+                                        "semantic": Object {},
+                                        "support": Object {},
+                                      },
+                                      "typography": Object {},
+                                    },
                                     "palette": Object {
                                       "accent": Object {
                                         "acce1": "#414141",
@@ -55709,6 +56059,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                     },
                                     "direction": "ltr",
                                     "hv": Object {
+                                      "deprecated": Object {
+                                        "palette": Object {
+                                          "accent": Object {},
+                                          "atmosphere": Object {},
+                                          "semantic": Object {},
+                                          "support": Object {},
+                                        },
+                                        "typography": Object {},
+                                      },
                                       "palette": Object {
                                         "accent": Object {
                                           "acce1": "#414141",
@@ -56305,6 +56664,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                       },
                                       "direction": "ltr",
                                       "hv": Object {
+                                        "deprecated": Object {
+                                          "palette": Object {
+                                            "accent": Object {},
+                                            "atmosphere": Object {},
+                                            "semantic": Object {},
+                                            "support": Object {},
+                                          },
+                                          "typography": Object {},
+                                        },
                                         "palette": Object {
                                           "accent": Object {
                                             "acce1": "#414141",
@@ -56910,6 +57278,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                         },
                                         "direction": "ltr",
                                         "hv": Object {
+                                          "deprecated": Object {
+                                            "palette": Object {
+                                              "accent": Object {},
+                                              "atmosphere": Object {},
+                                              "semantic": Object {},
+                                              "support": Object {},
+                                            },
+                                            "typography": Object {},
+                                          },
                                           "palette": Object {
                                             "accent": Object {
                                               "acce1": "#414141",
@@ -57513,6 +57890,15 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                                           },
                                           "direction": "ltr",
                                           "hv": Object {
+                                            "deprecated": Object {
+                                              "palette": Object {
+                                                "accent": Object {},
+                                                "atmosphere": Object {},
+                                                "semantic": Object {},
+                                                "support": Object {},
+                                              },
+                                              "typography": Object {},
+                                            },
                                             "palette": Object {
                                               "accent": Object {
                                                 "acce1": "#414141",
