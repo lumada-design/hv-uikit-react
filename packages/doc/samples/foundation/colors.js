@@ -17,7 +17,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = (theme) => ({
+const styles = theme => ({
   group: {
     marginBottom: 20
   },
@@ -46,8 +46,10 @@ const styles = (theme) => ({
   }
 });
 
-const Group = ({ classes, name, colors }) => {
+const Group = ({ classes, name, theme, colors }) => {
   const keys = Object.keys(colors);
+  debugger;
+  const deprecatedColors = theme.deprecated.palette[name];
 
   return (
     <div className={classes.group}>
@@ -55,7 +57,9 @@ const Group = ({ classes, name, colors }) => {
       <div className={classes.colors}>
         {keys.map((color, idx) => (
           <div key={idx} className={classes.colorContainer}>
-            <div className={classes.colorName}>{color}</div>
+            <div className={classes.colorName}>{`${color} ${
+              deprecatedColors[color] ? "(deprecated)" : ""
+            }`}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
             <div
               className={classes.colorSquare}
@@ -79,6 +83,7 @@ const Colors = ({ classes, theme }) => {
           key={idx}
           classes={classes}
           name={group}
+          theme={theme.hv}
           colors={palette[group]}
         />
       ))}

@@ -19,7 +19,7 @@
     "clean": "npx del-cli dist"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": ">=1.1.1-alpha.0 <1.1.1",
+    "@hv/uikit-common-themes":  "^1.1.1-alpha.0",
     "@hv/uikit-react-core": "^1.1.3-alpha.6",
     "@hv/uikit-react-icons": "^1.1.3-alpha.3",
     "@hv/uikit-react-lab": "^1.1.3-alpha.7",

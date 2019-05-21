@@ -71,11 +71,12 @@ const CodeButton = ({ classes, onClick }) => (
 
 const Group = ({ classes, name, typography, theme }) => {
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
+  let nameTypography = `${name} ${theme.deprecated.typography[name] ? "(deprecated)" : ""}`;
 
   return (
     <div className={classes.group}>
       <div className={classes.container}>
-        <HvTypography variant="mTitle">{name}</HvTypography>
+        <HvTypography variant="mTitle">{nameTypography}</HvTypography>
         <CodeButton
           classes={classes}
           onClick={() => setSnippetIsOpen(!snippetIsOpen)}
