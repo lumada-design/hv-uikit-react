@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.7...@hv/uikit-react-core@1.1.3-alpha.8) (2019-05-21)
+
+
+### Bug Fixes
+
+* **card:** add background color. [#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([2383d01](https://github.com/pentaho/hv-uikit-react/commit/2383d01))
+* **input:** autocomplete background in wicked theme.[#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([f89ef44](https://github.com/pentaho/hv-uikit-react/commit/f89ef44))
+* **login:** background color of right panel for wicked theme. [#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([e84ef98](https://github.com/pentaho/hv-uikit-react/commit/e84ef98))
+* **table:** background color for wicked theme. [#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([c94320c](https://github.com/pentaho/hv-uikit-react/commit/c94320c))
+
+
+
+
+
 ## [1.1.3-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.6...@hv/uikit-react-core@1.1.3-alpha.7) (2019-05-21)
 
 **Note:** Version bump only for package @hv/uikit-react-core

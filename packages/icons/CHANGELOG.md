@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.4...@hv/uikit-react-icons@1.1.3-alpha.5) (2019-05-21)
+
+
+### Bug Fixes
+
+* **table:** background color for wicked theme. [#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([c94320c](https://github.com/pentaho/hv-uikit-react/commit/c94320c))
+
+
+
+
+
 ## [1.1.3-alpha.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.3...@hv/uikit-react-icons@1.1.3-alpha.4) (2019-05-21)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
