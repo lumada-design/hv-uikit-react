@@ -48,7 +48,6 @@ const styles = theme => ({
 
 const Group = ({ classes, name, theme, colors }) => {
   const keys = Object.keys(colors);
-  debugger;
   const deprecatedColors = theme.deprecated.palette[name];
 
   return (
