@@ -32,11 +32,11 @@ const icon = {
 const styles = theme => ({
   rootWithoutInput: {
     ...root(theme),
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
   rootWithInput: {
     ...root(theme),
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
 
   input: {
@@ -51,6 +51,9 @@ const styles = theme => ({
     "&::placeholder": {
       ...theme.hv.typography.normalText,
       color: theme.hv.typography.disabledText.color
+    },
+    "&::-ms-clear": {
+      display: "none"
     }
   },
   icon: {
