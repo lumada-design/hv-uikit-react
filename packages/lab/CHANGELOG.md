@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.10](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.9...@hv/uikit-react-lab@1.1.3-alpha.10) (2019-05-22)
+
+
+### Bug Fixes
+
+* remove unneeded X in searchBox on IE ([ff5da6d](https://github.com/pentaho/hv-uikit-react/commit/ff5da6d))
+
+
+
+
+
 ## [1.1.3-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.8...@hv/uikit-react-lab@1.1.3-alpha.9) (2019-05-21)
 
 
