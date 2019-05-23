@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.8...@hv/uikit-react-core@1.1.3-alpha.9) (2019-05-23)
+
+
+### Bug Fixes
+
+* **Table:** Add the possibility of passing a function to the columns accessors. [#191](https://github.com/pentaho/hv-uikit-react/issues/191) ([ed512ab](https://github.com/pentaho/hv-uikit-react/commit/ed512ab))
+
+
+
+
+
 ## [1.1.3-alpha.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.7...@hv/uikit-react-core@1.1.3-alpha.8) (2019-05-21)
 
 
