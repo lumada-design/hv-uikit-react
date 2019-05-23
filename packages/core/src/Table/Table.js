@@ -573,7 +573,10 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       headerText: PropTypes.string,
-      accessor: PropTypes.string,
+      accessor: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.func
+      ]),
       format: PropTypes.func,
       cellType: PropTypes.string,
       style: PropTypes.instanceOf(Object),
