@@ -16,9 +16,24 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist/KeyboardUtils";
+import partialRight from "lodash/partialRight"
 import classNames from "classnames";
 import HvTypography from "../../Typography";
 import ImageContainer from "../ImageContainer";
+
+/** 
+ * Handles the clicking of the user data
+ * 
+ * @param evt - The event that happened when the user data was interacted.
+ * @param onClick - The provided user's function.
+ */
+const handleClick = (evt, onClick) => {
+  if(evt) evt.stopPropagation();
+  // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
+  if (isKeypress(evt, KeyboardCodes.Enter) === false) return;
+  onClick();
+}
 
 /**
  * User container. The render include a text area and a passed image/icon.
@@ -37,8 +52,10 @@ const User = ({ classes, userData, userIcon, onClick }) => {
       className={classNames(classes.userContainer, {
         [classes.userContainerPointer]: onClick
       })}
-      onClick={onClick}
-      role="presentation"
+      onClick={partialRight(handleClick , onClick)}
+      role="button"
+      onKeyDown={partialRight(handleClick , onClick)} 
+      tabIndex={0}
     >
       <div className={classes.userInfo}>
         {userData && userData.name && (

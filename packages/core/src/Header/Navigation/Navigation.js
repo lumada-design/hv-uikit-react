@@ -69,7 +69,7 @@ const Navigation = ({
           onClick(i);
         }}
       >
-        <ListItem button className={classes.listItem} key={key}>
+        <ListItem className={classes.listItem} key={key}>
           <div
             className={classnames(
               isSelected(selected, i) ? classes.selector : ""

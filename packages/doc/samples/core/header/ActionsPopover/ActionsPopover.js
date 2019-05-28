@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist/KeyboardUtils";
 import Popover from "@material-ui/core/Popover";
 
 class ActionsPopover extends React.Component {
@@ -26,6 +26,7 @@ class ActionsPopover extends React.Component {
   };
 
   handleClick = evt => {
+    if (isKeypress(evt, KeyboardCodes.Enter) === false) return;
     this.setState({
       isActive: true,
       anchorEl: evt.currentTarget
@@ -51,7 +52,9 @@ class ActionsPopover extends React.Component {
           aria-owns={open ? "simple-popper" : undefined}
           aria-haspopup="true"
           onClick={this.handleClick}
-          role="presentation"
+          onKeyDown={this.handleClick}
+          role="button"
+          tabIndex={0}
         />
         <Popover
           id="simple-popper"

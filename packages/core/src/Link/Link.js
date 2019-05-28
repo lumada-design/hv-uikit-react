@@ -18,6 +18,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist/KeyboardUtils";
 import withConfig from "../config/withConfig";
 
 class HvLink extends React.Component {
@@ -40,9 +41,17 @@ class HvLink extends React.Component {
       useRouter,
       onClick
     } = this.props;
-
+  
+   /** 
+    * Handles the clicking of the user data
+    * 
+    * @param evt - The event that happened when the user data was interacted.
+    * @param onClick - The provided user's function.
+    */ 
     const handleClick = e => {
       if (useRouter && config.router) {
+        // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
+        if (isKeypress(e, KeyboardCodes.Enter) === false) return;
         onClick({ route, params });
         e.preventDefault();
         config.router.push(route, params, options);
