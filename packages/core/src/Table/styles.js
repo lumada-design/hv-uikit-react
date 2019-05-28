@@ -95,17 +95,18 @@ const styles = theme => ({
             minWidth: "32px",
             display: "inline-table"
           },
-          "&.sortable":{
+          "&.sortable": {
             "&:hover > div > div > div ": {
               visibility: "visible"
             },
             "&:hover": {
               background: theme.hv.palette.atmosphere.atmo4
-            },
+            }
           }
         }
       },
       "& $tbody": {
+        overflow: "hidden",
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
           "& $tr > div ": {
