@@ -17,11 +17,9 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 
 import Header from "../Header";
 import Navigation from "../Navigation";
-import Actions from "../Actions";
 
 import { VIEW_MODE, REPRESENTATION_VALUES } from "../enums";
 import { getFormattedDate, getWeekdayName, makeUTCDate } from "../utils";
@@ -33,12 +31,12 @@ describe("<Calendar /> with minimum configuration", () => {
   let wrapper;
   let calendarComponent;
   let calendarInstance;
-  const initialDate = makeUTCDate(1970, 1, 1);
+  const selectedDate = makeUTCDate(1970, 1, 1);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <CalendarWithStyles initialDate={initialDate} />
+        <CalendarWithStyles selectedDate={selectedDate} />
       </HvProvider>
     );
     calendarComponent = wrapper.find(Calendar);
@@ -61,29 +59,25 @@ describe("<Calendar /> with minimum configuration", () => {
     expect(calendarComponent.find(Navigation).length).toBe(2);
   });
 
-  it("should not render an actions component", () => {
-    expect(calendarComponent.find(Actions).length).toBe(0);
+  it("should have the selectedDate in the state be the same as the selectedDate", () => {
+    expect(calendarInstance.state.selectedDate).toBe(selectedDate);
   });
 
-  it("should have the selectedDate in the state be the same as the initialDate", () => {
-    expect(calendarInstance.state.selectedDate).toBe(initialDate);
-  });
-
-  it("should have the month in the state be the same as the one set in the initialDate", () => {
+  it("should have the month in the state be the same as the one set in the selectedDate", () => {
     expect(calendarInstance.state.calendarModel.month).toBe(
-      initialDate.getUTCMonth() + 1
+      selectedDate.getUTCMonth() + 1
     );
   });
 
-  it("should have the year in the state be the same as the one set in the initialDate", () => {
+  it("should have the year in the state be the same as the one set in the selectedDate", () => {
     expect(calendarInstance.state.calendarModel.year).toBe(
-      initialDate.getUTCFullYear()
+      selectedDate.getUTCFullYear()
     );
   });
 
-  it("should have the weekDayName be the same as the one from the initialDate", () => {
-    const initialDateWeekdayName = getWeekdayName(
-      initialDate,
+  it("should have the weekDayName be the same as the one from the selectedDate", () => {
+    const initialSelectedDateWeekdayName = getWeekdayName(
+      selectedDate,
       calendarInstance.props.locale,
       REPRESENTATION_VALUES.SHORT
     );
@@ -93,15 +87,15 @@ describe("<Calendar /> with minimum configuration", () => {
       REPRESENTATION_VALUES.SHORT
     );
 
-    expect(selectedDateWeekdayName).toBe(initialDateWeekdayName);
+    expect(selectedDateWeekdayName).toBe(initialSelectedDateWeekdayName);
   });
 
-  it("should have the formattedDate be the same as the one from the initialDate", () => {
-    const initialDateFormatted = getFormattedDate(
-      initialDate,
+  it("should have the formattedDate be the same as the one from the selectedDate", () => {
+    const selectedDateFormatted = getFormattedDate(
+      selectedDate,
       calendarInstance.props.locale
     );
-    expect(calendarInstance.state.formattedDate).toBe(initialDateFormatted);
+    expect(calendarInstance.state.formattedDate).toBe(selectedDateFormatted);
   });
 
   it("should have the viewMode in the state set to Calendar", () => {
@@ -111,32 +105,21 @@ describe("<Calendar /> with minimum configuration", () => {
 
 describe("<Calendar /> with configurations", () => {
   let wrapper;
-  let calendarComponent;
 
-  const initialDate =  makeUTCDate(1970, 1, 1);
-  const labels = {
-    applyLabel: "Apply",
-    cancelLabel: "Cancel"
-  };
+  const selectedDate = makeUTCDate(1970, 1, 1);
+
   const handleDateChangeMock = jest.fn();
-  const handleApplyMock = jest.fn();
-  const handleCancelMock = jest.fn();
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
         <CalendarWithStyles
-          initialDate={initialDate}
+          selectedDate={selectedDate}
           locale="en-US"
-          labels={labels}
-          showActions
           handleDateChange={handleDateChangeMock}
-          handleApply={handleApplyMock}
-          handleCancel={handleCancelMock}
         />
       </HvProvider>
     );
-    calendarComponent = wrapper.find(Calendar);
   });
 
   it("should be defined", () => {
@@ -145,35 +128,5 @@ describe("<Calendar /> with configurations", () => {
 
   it("should render correctly", () => {
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should render an actions component", () => {
-    expect(calendarComponent.find(Actions).length).toBe(1);
-  });
-
-  it("handleCancel is triggered", () => {
-    const actionsComponent = calendarComponent.find(Actions);
-
-    actionsComponent
-      .find(HvButton)
-      .at(0)
-      .simulate("click", {
-        preventDefault() {}
-      });
-
-    expect(handleCancelMock).toBeCalled();
-  });
-
-  it("handleApply is triggered", () => {
-    const actionsComponent = calendarComponent.find(Actions);
-
-    actionsComponent
-      .find(HvButton)
-      .at(1)
-      .simulate("click", {
-        preventDefault() {}
-      });
-
-    expect(handleApplyMock).toBeCalled();
   });
 });

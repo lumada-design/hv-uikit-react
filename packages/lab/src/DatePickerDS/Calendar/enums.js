@@ -42,5 +42,6 @@ export const NAV_OPTIONS = {
   PREVIOUS_YEAR: "previous_year",
   NEXT_MONTH: "next_month",
   NEXT_YEAR: "next_year",
-  MONTH: "month"
+  MONTH: "month",
+  MONTH_YEAR: "month_year"
 };

@@ -20,7 +20,6 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
-import Actions from "./Actions";
 
 import { VIEW_MODE, REPRESENTATION_VALUES, NAV_OPTIONS } from "./enums";
 import {
@@ -44,7 +43,55 @@ class Calendar extends React.Component {
 
     this.initLocalizedLabels();
 
-    this.state = { ...this.resolveStateFromProp(), today: makeUTCToday() };
+    this.state = { ...this.resolveStateFromProps(), today: makeUTCToday() };
+  }
+
+  /**
+   * Triggered right before the Render() function of the components.
+   * Here we can update the state when a prop is changed.
+   * In this case we want to update the calendar state if the selectedDate in the Props is different from the one in
+   * the state.
+   *
+   * @static
+   * @param {Object} props - The new props object.
+   * @param {Object} state - The current state object.
+   *
+   * @returns {Object} - The updated state
+   * @memberof Calendar
+   */
+  static getDerivedStateFromProps(props, state) {
+    if (
+      isDate(props.selectedDate) &&
+      !isSameDay(props.selectedDate, state.selectedDate)
+    ) {
+      const newState = {};
+      newState.selectedDate = props.selectedDate;
+      newState.formattedDate = getFormattedDate(
+        props.selectedDate,
+        state.locale
+      );
+      newState.weekDayName = getWeekdayName(
+        props.selectedDate,
+        state.locale,
+        REPRESENTATION_VALUES.SHORT
+      );
+
+      if (!isSameMonth(props.selectedDate, state.visibleDate)) {
+        const newVisibleDate = props.selectedDate;
+        const visibleMonth = newVisibleDate.getUTCMonth() + 1;
+        const visibleYear = newVisibleDate.getUTCFullYear();
+
+        newState.visibleDate = newVisibleDate;
+        newState.calendarModel = state.calendarModel.navigateTo(
+          NAV_OPTIONS.MONTH_YEAR,
+          visibleMonth,
+          visibleYear
+        );
+      }
+
+      return newState;
+    }
+    return null;
   }
 
   /**
@@ -84,15 +131,12 @@ class Calendar extends React.Component {
       event.preventDefault();
     }
 
-    const { selectedDate } = this.state;
     const { handleDateChange } = this.props;
 
-    if (!(selectedDate && isSameDay(date, selectedDate))) {
-      this.setState(this.resolveStateFromDate(date));
+    this.setState(this.resolveStateFromDates(date));
 
-      if (typeof handleDateChange === "function") {
-        handleDateChange(date);
-      }
+    if (typeof handleDateChange === "function") {
+      handleDateChange(date);
     }
   };
 
@@ -105,35 +149,69 @@ class Calendar extends React.Component {
    */
   navigateTo = (navOption, month) => {
     const { calendarModel } = this.state;
-    this.setState({
-      calendarModel: calendarModel.navigateTo(navOption, month),
-      viewMode: VIEW_MODE.CALENDAR
-    });
+
+    this.setState(
+      {
+        calendarModel: calendarModel.navigateTo(navOption, month),
+        viewMode: VIEW_MODE.CALENDAR
+      },
+      this.visibleDateChanged()
+    );
+  };
+
+  /**
+   * Triggers the callback to warn that the visible date was changed.
+   *
+   * @memberof Calendar
+   */
+  visibleDateChanged = () => {
+    const { calendarModel } = this.state;
+    const { handleVisibleDateChange } = this.props;
+
+    if (typeof handleVisibleDateChange === "function") {
+      const visibleDate = makeUTCDate(
+        calendarModel.year,
+        calendarModel.month,
+        1
+      );
+      handleVisibleDateChange(visibleDate);
+    }
   };
 
   /**
    * Resolves the state using the received date.
    *
-   * @param {Date} date - The date into which the state will be resolved to.
-   * @memberof Calendar {{
+   * @param {Date} selectedDate - The date that will be used to set the selected date.
+   * @param {Date} visibleDate - The date that will be used to set the currently visble month and year.
+   *
+   * @returns {{
    *  selectedDate {Date} - Currently selected date
    *  calendarModel {CalendarModel} - Object representing the current calendar.
    *  formattedDate {string} - Currently selected date formatted according to Design System requirements.
+   *  weekDayName {string} - Week day name of the currently selected date.
    *  viewMode {REPRESENTATION_VALUE} - Visualization mode currently active.
    * }}
+   * @memberof Calendar
    */
-  resolveStateFromDate = date => {
+  resolveStateFromDates = (selectedDate, visibleDate) => {
     const { locale } = this.props;
-    const isDateObject = isDate(date);
-    const newDate = isDateObject ? date : makeUTCToday();
-    const month = newDate.getUTCMonth() + 1;
+
+    const isDateObject = isDate(selectedDate);
+    const validSelectedDate = isDateObject ? selectedDate : makeUTCToday();
+    const validVisibleDate = isDate(visibleDate)
+      ? visibleDate
+      : validSelectedDate;
+
+    const visibleMonth = validVisibleDate.getUTCMonth() + 1;
+    const visibleYear = validVisibleDate.getUTCFullYear();
 
     return {
-      calendarModel: new CalendarModel(month, newDate.getUTCFullYear()),
-      selectedDate: isDateObject ? date : null,
-      formattedDate: getFormattedDate(newDate, locale),
+      selectedDate: isDateObject ? selectedDate : null,
+      visibleDate: validVisibleDate,
+      calendarModel: new CalendarModel(visibleMonth, visibleYear),
+      formattedDate: getFormattedDate(validSelectedDate, locale),
       weekDayName: getWeekdayName(
-        newDate,
+        validSelectedDate,
         locale,
         REPRESENTATION_VALUES.SHORT
       ),
@@ -142,14 +220,14 @@ class Calendar extends React.Component {
   };
 
   /**
-   * Resolves the state using the `initialDate` property.
+   * Resolves the state using the `selectedDate` and `visibleDate` properties.
    *
    * @memberof Calendar
    */
-  resolveStateFromProp = () => {
-    const { initialDate } = this.props;
+  resolveStateFromProps = () => {
+    const { selectedDate, visibleDate } = this.props;
 
-    return this.resolveStateFromDate(initialDate);
+    return this.resolveStateFromDates(selectedDate, visibleDate);
   };
 
   /**
@@ -272,40 +350,6 @@ class Calendar extends React.Component {
   };
 
   /**
-   * Renders the container for the action elements.
-   *
-   * @memberof Calendar
-   */
-  renderActions = () => {
-    const { classes, labels } = this.props;
-    const { selectedDate } = this.state;
-    const actionLabels = {
-      applyLabel: labels.applyLabel,
-      cancelLabel: labels.cancelLabel
-    };
-
-    return (
-      <div className={classes.actionsContainer}>
-        <Actions
-          onCancel={() => {
-            const { handleCancel } = this.props;
-            if (typeof handleCancel === "function") {
-              handleCancel(selectedDate);
-            }
-          }}
-          onApply={() => {
-            const { handleApply } = this.props;
-            if (typeof handleApply === "function") {
-              handleApply(selectedDate);
-            }
-          }}
-          labels={actionLabels}
-        />
-      </div>
-    );
-  };
-
-  /**
    * Renders the monthly view. This view is used when pressing the month.
    *
    * @memberof Calendar
@@ -344,7 +388,7 @@ class Calendar extends React.Component {
    * @memberof Calendar
    */
   renderContent = () => {
-    const { classes, showActions } = this.props;
+    const { classes } = this.props;
     const { viewMode, calendarModel } = this.state;
 
     return (
@@ -355,7 +399,6 @@ class Calendar extends React.Component {
           {this.renderDayLabel()}
           {calendarModel.dates.map(this.renderCalendarDate)}
         </div>
-        {showActions && this.renderActions()}
       </>
     );
   };
@@ -378,52 +421,34 @@ Calendar.propTypes = {
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**
-   * An Object containing the various text associated with the input.
-   *
-   * - applyLabel: Label for apply button.
-   * - cancelLabel: Label for cancel button.
-   */
-  labels: PropTypes.shape({
-    applyLabel: PropTypes.string,
-    cancelLabel: PropTypes.string
-  }),
-  /**
    * Locale to be used by the calendar.
    */
   locale: PropTypes.string,
   /**
    * Date that should be used as the starting selected date for the calendar.
    */
-  initialDate: PropTypes.instanceOf(Date),
+  selectedDate: PropTypes.instanceOf(Date),
   /**
-   * Shows the Actions component when true.
+   * Date that will be used to know which month and year should be displayed on the calendar. The value of the day is
+   * irrelevant.
    */
-  showActions: PropTypes.bool,
+  visibleDate: PropTypes.instanceOf(Date),
   /**
    * Callback function to be triggered when the selected date has changed.
    */
   handleDateChange: PropTypes.func,
   /**
-   * Callback function to be triggered when the Apply button is clicked.
+   * Callback function to be triggered when visible date has changed.
    */
-  handleApply: PropTypes.func,
-  /**
-   * Callback function to be triggered when the select button is clicked.
-   */
-  handleCancel: PropTypes.func
+  handleVisibleDateChange: PropTypes.func
 };
 
 Calendar.defaultProps = {
-  labels: {
-    applyLabel: "Apply",
-    cancelLabel: "Cancel"
-  },
-  locale: "en-US", // TODO: Add a better way to add the default locale, maybe use navigator.languages.
-  initialDate: makeUTCToday(),
-  showActions: false,
+  locale: window.navigator.language || window.navigator.userLanguage,
+  selectedDate: undefined,
+  visibleDate: undefined,
   handleDateChange: undefined,
-  handleApply: undefined,
-  handleCancel: undefined
+  handleVisibleDateChange: undefined
 };
 
 export default Calendar;

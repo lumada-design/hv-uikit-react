@@ -46,7 +46,7 @@ export default class CalendarModel {
     this.month = validMonth;
     this.year = validYear;
     this.dates = createDatesArray(validMonth, validYear);
-  }
+  };
 
   /**
    * Navigates to the new date according to the recieved navigation option.
@@ -56,7 +56,7 @@ export default class CalendarModel {
    * to `MONTH`.
    * @memberof CalendarModel
    */
-  navigateTo = (navOptions, month = 1) => {
+  navigateTo = (navOptions, month = 1, year = 2000) => {
     let newMonthYear;
 
     switch (navOptions) {
@@ -75,6 +75,9 @@ export default class CalendarModel {
         break;
       case NAV_OPTIONS.MONTH:
         newMonthYear = { month, year: this.year };
+        break;
+      case NAV_OPTIONS.MONTH_YEAR:
+        newMonthYear = { month, year };
         break;
     }
 

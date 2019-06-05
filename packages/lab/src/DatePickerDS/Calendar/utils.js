@@ -183,11 +183,13 @@ export const getDateISO = date => {
  */
 export const convertISOStringDateToDate = isoStringDate => {
   const dateArray = isoStringDate.split("-");
-  return makeUTCDate(
+  const convertedDate = makeUTCDate(
     parseInt(dateArray[0], 10),
     parseInt(dateArray[1], 10),
     parseInt(dateArray[2], 10)
   );
+
+  return isDate(convertedDate) ? convertedDate : null;
 };
 
 /**
@@ -349,4 +351,21 @@ export const createDatesArray = (month, year) => {
   });
 
   return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates];
+};
+
+/**
+ * Checks if the visibleDate is valid, if not returns the selectedDate or Today's days if none if is valid.
+ *
+ * @param {Date} visibleDate - The initial visibleDate value.
+ * @param {Date} selectedDate - The selectedDate value.
+ * @returns - The valid date to be used as the visible date
+ */
+export const getValidVisibleDate = (visibleDate, selectedDate) => {
+  if (isDate(visibleDate)) {
+    return visibleDate;
+  }
+  if (isDate(selectedDate)) {
+    return selectedDate;
+  }
+  return makeUTCToday();
 };
