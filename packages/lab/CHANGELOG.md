@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.11...@hv/uikit-react-lab@1.1.3-alpha.12) (2019-06-06)
+
+
+### Features
+
+* **doc:** add reference to React in Storybook. [#200](https://github.com/pentaho/hv-uikit-react/issues/200) ([0876e45](https://github.com/pentaho/hv-uikit-react/commit/0876e45))
+
+
+
+
+
 ## [1.1.3-alpha.11](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.10...@hv/uikit-react-lab@1.1.3-alpha.11) (2019-05-23)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
