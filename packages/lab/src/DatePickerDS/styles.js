@@ -31,20 +31,13 @@ const icon = {
 };
 
 const styles = theme => ({
-  inputWithoutValue: {
+  inputCalendarClosed: {
     ...inputRoot(theme),
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
-  inputWithValue: {
+  inputCalendarOpen: {
     ...inputRoot(theme),
     border: `1px solid ${theme.hv.palette.accent.acce1}`
-  },
-  inputWithCalendarVisible: {
-    ...inputRoot(theme),
-    borderWidth: `1px 1px 0px 1px`,
-    borderStyle: `solid`,
-    borderColor: `${theme.hv.palette.accent.acce1}`,
-    borderBottom: `1px solid transparent`
   },
   input: {
     border: "none",
@@ -64,9 +57,6 @@ const styles = theme => ({
     ...icon,
     cursor: "pointer"
   },
-  iconWithCalendarVisible: {
-    ...icon
-  },
   iconClear: {
     ...icon,
     cursor: "pointer"
@@ -80,9 +70,65 @@ const styles = theme => ({
     display: "block"
   },
   calendarContainer: {
-    position: "absolute",
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     zIndex: "10",
-    width: "100%"
+    display: "flex",
+    flexDirection: "column",
+    border: `1px solid ${theme.hv.palette.accent.acce1}`
+  },
+  singleCalendarFooter: {
+    margin: `${theme.hv.spacing.sm}px`,
+    textAlign: "right"
+  },
+  rangeMainContainer: {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`
+  },
+  rangeCalendarsContainer: {
+    display: "flex",
+    flexDirection: "row"
+  },
+  rangeLeftCalendarContainer: {
+    width: "50%"
+  },
+  rangeRightCalendarContainer: {
+    width: "50%"
+  },
+  rangeCalendarsFooter: {
+    display: "flex",
+    flexDirection: "row"
+  },
+  rangeFooterLeft: {
+    width: "50%"
+  },
+  rangeFooterRight: {
+    width: "50%",
+    textAlign: "right",
+    padding: `${theme.hv.spacing.sm}px`
+  },
+  actionsContainer: {
+    textAlign: "right"
+  },
+  borderTopNone: {
+    borderTop: "none"
+  },
+  borderBottomNone: {
+    borderBottom: "none"
+  },
+  borderTopDisplay: {
+    borderTop: `1px solid ${theme.hv.palette.accent.acce1}`
+  },
+  borderBottomDisplay: {
+    borderBottom: `1px solid ${theme.hv.palette.accent.acce1}`
+  },
+  popper: {
+    width: "100%",
+    zIndex: "10"
+  },
+  doubleWidth: {
+    width: "calc(200% - 2px)"
   }
 });
 

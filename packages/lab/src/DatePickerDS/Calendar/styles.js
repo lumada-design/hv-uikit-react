@@ -16,9 +16,6 @@
 
 const styles = theme => ({
   calendarWrapper: {
-    position: "relative",
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
-    borderTop: "none",
     overflow: "hidden",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     padding: `${theme.hv.spacing.sm}px`
@@ -48,6 +45,7 @@ const styles = theme => ({
     flexDirection: "column",
     textAlign: "center",
     height: "40px",
+    width: "40px",
     "&:hover": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
       cursor: "pointer"
@@ -63,10 +61,6 @@ const styles = theme => ({
       backgroundColor: `${theme.hv.palette.accent.acce1}`,
       color: `${theme.hv.palette.atmosphere.atmo1}`
     }
-  },
-  actionsContainer: {
-    marginTop: `${theme.hv.spacing.sm}px`,
-    textAlign: "right"
   },
   calendarMonthlyGrid: {
     display: "grid",

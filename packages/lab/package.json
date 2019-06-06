@@ -37,6 +37,7 @@
     "classnames": "2.2.6",
     "lodash": "4.17.11",
     "moment": "2.24.0",
+    "popper.js": "^1.14.1",
     "prop-types": "15.7.2",
     "rc-slider": "8.6.3",
     "rc-tooltip": "3.7.3",

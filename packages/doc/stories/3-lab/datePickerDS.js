@@ -45,9 +45,20 @@ storiesOf("Lab", module).add("DatePickerDS", () => <HvDatePickerDS onValidate={"
       src: "lab/datePickerDS/datePickerDSWithActions.js"
     },
     {
-      title: "5. Datepicker with Label",
-      description: "Datepicker with Label",
+      title: "5. Datepicker with Label and custom action button labels",
+      description: "Datepicker with Label custom action button labels",
       src: "lab/datePickerDS/datePickerDSWithLabel.js"
+    },
+    {
+      title: "6. Empty range",
+      description: "Empty DatePicker range ",
+      src: "lab/datePickerDS/datePickerDSRangeEmpty.js"
+    },
+    {
+      title: "6. Range mode with values",
+      description: "Range mode with values",
+      src: "lab/datePickerDS/datePickerDSRangeWithValues.js"
     }
+
   ]
 });
