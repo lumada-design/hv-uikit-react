@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.6...@hv/uikit-react-icons@1.1.3-alpha.7) (2019-06-06)
+
+
+### Features
+
+* **datepickerds:** date picker range [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([027705c](https://github.com/pentaho/hv-uikit-react/commit/027705c))
+
+
+
+
+
 ## [1.1.3-alpha.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.5...@hv/uikit-react-icons@1.1.3-alpha.6) (2019-06-06)
 
 
