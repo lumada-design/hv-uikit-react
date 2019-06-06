@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { configure, addDecorator } from "@storybook/react";
+import { withOptions } from "@storybook/addon-options";
 import withLayout from "./layout-addon";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
@@ -16,6 +17,14 @@ const loadStories = () => {
 
 let appTheme = "dawn";
 
+addDecorator(
+  withOptions({
+    name: "React UI-Kit",
+    url: "https://github.com/pentaho/hv-uikit-react",
+    showAddonPanel: false,
+    sidebarAnimations: true
+  })
+);
 addDecorator(withLayout());
 
 const App = ({ story, initialTheme }) => {
