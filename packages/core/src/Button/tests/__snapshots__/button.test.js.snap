@@ -4410,6 +4410,9 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.02em;
 }
+.HvButton-root-35:focus {
+  border: solid 1px #4389DB;
+}
 .HvButton-containedPrimary-36 {
   color: #FFFFFF;
   background-color: #146BD2;
@@ -4522,6 +4525,9 @@ body {
                   },
                   Object {},
                   Object {},
+                  Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   Object {
                     "background-color": "#146BD2",
                     "color": "#FFFFFF",
@@ -4668,6 +4674,9 @@ body {
                     "text-transform": "capitalize",
                   },
                   ".HvButton-root-35:active": Object {},
+                  ".HvButton-root-35:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-35:hover, .HvButton-root-35:focus": Object {},
                   ".HvButton-textPrimary-38": Object {
                     "background-color": "transparent",
@@ -5256,6 +5265,9 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-35:active": Object {},
+                  ".HvButton-root-35:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-35:hover, .HvButton-root-35:focus": Object {},
                   ".HvButton-textPrimary-38.HvButton-disabled-39": Object {
                     "backgroundColor": "transparent",
@@ -5332,6 +5344,9 @@ body {
                   },
                   "root": Object {
                     "&:active": Object {},
+                    "&:focus": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover,&:focus": Object {},
                     "color": "#414141",
                     "cursor": "pointer",

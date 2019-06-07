@@ -20459,6 +20459,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
 .HvCheckbox-container-270:hover {
   background-color: #F0F0F0;
 }
+.HvCheckbox-container-270:focus-within {
+  border: solid 1px #4389DB;
+}
 .HvCheckbox-labelTypography-271 {
   color: #414141;
   font-size: 14px;
@@ -20519,6 +20522,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "background-color": "#F0F0F0",
                   },
                   Object {
+                    "border": "solid 1px #4389DB",
+                  },
+                  Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
@@ -20556,6 +20562,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "height": "32px",
                     "margin-left": 0,
                     "margin-right": 0,
+                  },
+                  ".HvCheckbox-container-270:focus-within": Object {
+                    "border": "solid 1px #4389DB",
                   },
                   ".HvCheckbox-container-270:hover": Object {
                     "background-color": "#F0F0F0",
@@ -21110,6 +21119,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvCheckbox-container-270:focus-within": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvCheckbox-container-270:hover": Object {
                     "backgroundColor": "#F0F0F0",
                   },
@@ -21121,6 +21133,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "padding": "8px",
                   },
                   "container": Object {
+                    "&:focus-within": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                     },
@@ -35096,6 +35111,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
   text-transform: capitalize;
   letter-spacing: 0.02em;
 }
+.HvButton-root-338:focus {
+  border: solid 1px #4389DB;
+}
 .HvButton-containedPrimary-339 {
   color: #FFFFFF;
   background-color: #146BD2;
@@ -35208,6 +35226,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   },
                   Object {},
                   Object {},
+                  Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   Object {
                     "background-color": "#146BD2",
                     "color": "#FFFFFF",
@@ -35354,6 +35375,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "text-transform": "capitalize",
                   },
                   ".HvButton-root-338:active": Object {},
+                  ".HvButton-root-338:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-338:hover, .HvButton-root-338:focus": Object {},
                   ".HvButton-textPrimary-341": Object {
                     "background-color": "transparent",
@@ -35942,6 +35966,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                     "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-338:active": Object {},
+                  ".HvButton-root-338:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-338:hover, .HvButton-root-338:focus": Object {},
                   ".HvButton-textPrimary-341.HvButton-disabled-342": Object {
                     "backgroundColor": "transparent",
@@ -36018,6 +36045,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-254 .MuiInputBase-input-263
                   },
                   "root": Object {
                     "&:active": Object {},
+                    "&:focus": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover,&:focus": Object {},
                     "color": "#414141",
                     "cursor": "pointer",
