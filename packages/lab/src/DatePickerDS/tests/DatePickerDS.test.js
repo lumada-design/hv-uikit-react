@@ -130,7 +130,7 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
         <DatePickerDSWithStyles
           rangeMode={false}
           value="2019-01-01"
-          locale="pt-PT"
+          locale="en-US"
         />
       </HvProvider>
     );
@@ -164,10 +164,6 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
     expect(datePickerDSInstance.state.selectedDate).toEqual(
       convertISOStringDateToDate("2019-01-01")
     );
-  });
-
-  it("should have the correct locale defined on the props", () => {
-    expect(datePickerDSInstance.props.locale).toBe("pt-PT");
   });
 
   it("should open the calendar when clicking the calendar icon", () => {
