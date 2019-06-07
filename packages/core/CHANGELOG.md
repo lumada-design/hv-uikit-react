@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.13](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.12...@hv/uikit-react-core@1.1.3-alpha.13) (2019-06-07)
+
+
+### Features
+
+* **datepickerds:** fix unit test on windows [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([b0d685c](https://github.com/pentaho/hv-uikit-react/commit/b0d685c))
+
+
+
+
+
 ## [1.1.3-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.11...@hv/uikit-react-core@1.1.3-alpha.12) (2019-06-07)
 
 
