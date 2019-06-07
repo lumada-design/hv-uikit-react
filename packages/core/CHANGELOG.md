@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.11...@hv/uikit-react-core@1.1.3-alpha.12) (2019-06-07)
+
+
+### Features
+
+* **dropdown:** enhance dropdown to be navigable with keyboard.[#193](https://github.com/pentaho/hv-uikit-react/issues/193) ([198382c](https://github.com/pentaho/hv-uikit-react/commit/198382c))
+
+
+
+
+
 ## [1.1.3-alpha.11](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.10...@hv/uikit-react-core@1.1.3-alpha.11) (2019-06-06)
 
 
