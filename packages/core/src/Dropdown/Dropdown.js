@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
 import HvTypography from "../Typography";
@@ -77,9 +78,9 @@ class Main extends React.Component {
   handleToggle(evt) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
-
     if (evt) evt.stopPropagation();
-    if (disabled) return;
+    // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
+    if (disabled || isKeypress(evt, KeyboardCodes.Enter) === false) return;
 
     this.setState({
       isOpen: !isOpen
@@ -137,8 +138,10 @@ class Main extends React.Component {
             [classes.headerDisabled]: disabled
           }
         ])}
+        onKeyDown={evt => this.handleToggle(evt)}
         onClick={evt => this.handleToggle(evt)}
-        role="presentation"
+        role="button"
+        tabIndex={0}
       >
         <HvTypography variant="normalText" className={classNames([classes.selection, classes.truncate])}>
           {selectionLabel}

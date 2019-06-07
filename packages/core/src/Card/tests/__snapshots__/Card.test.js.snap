@@ -22804,6 +22804,9 @@ body {
 .HvCheckbox-container-88:hover {
   background-color: #F0F0F0;
 }
+.HvCheckbox-container-88:focus-within {
+  border: solid 1px #4389DB;
+}
 .HvCheckbox-labelTypography-89 {
   color: #414141;
   font-size: 14px;
@@ -22864,6 +22867,9 @@ body {
                     "background-color": "#F0F0F0",
                   },
                   Object {
+                    "border": "solid 1px #4389DB",
+                  },
+                  Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
@@ -22901,6 +22907,9 @@ body {
                     "height": "32px",
                     "margin-left": 0,
                     "margin-right": 0,
+                  },
+                  ".HvCheckbox-container-88:focus-within": Object {
+                    "border": "solid 1px #4389DB",
                   },
                   ".HvCheckbox-container-88:hover": Object {
                     "background-color": "#F0F0F0",
@@ -23455,6 +23464,9 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvCheckbox-container-88:focus-within": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvCheckbox-container-88:hover": Object {
                     "backgroundColor": "#F0F0F0",
                   },
@@ -23466,6 +23478,9 @@ body {
                     "padding": "8px",
                   },
                   "container": Object {
+                    "&:focus-within": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                     },

@@ -140,7 +140,6 @@ describe("<Dropdown />", () => {
     it("handleToggle updates state accordingly", () => {
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();
-
       instance.handleToggle({ stopPropagation: jest.fn() });
 
       expect(instance.state.isOpen).toBe(true);

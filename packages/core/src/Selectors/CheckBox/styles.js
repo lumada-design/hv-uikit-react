@@ -21,6 +21,9 @@ const styles = theme => ({
     marginLeft: 0,
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "&:focus-within": {
+      border: `solid 1px ${theme.hv.palette.accent.acce2h}`
     }
   },
   labelTypography: {

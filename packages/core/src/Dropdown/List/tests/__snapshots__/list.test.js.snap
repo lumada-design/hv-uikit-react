@@ -8134,6 +8134,9 @@ body {
 .HvCheckbox-container-17:hover {
   background-color: #F0F0F0;
 }
+.HvCheckbox-container-17:focus-within {
+  border: solid 1px #4389DB;
+}
 .HvCheckbox-labelTypography-18 {
   color: #414141;
   font-size: 14px;
@@ -8194,6 +8197,9 @@ body {
                     "background-color": "#F0F0F0",
                   },
                   Object {
+                    "border": "solid 1px #4389DB",
+                  },
+                  Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
@@ -8231,6 +8237,9 @@ body {
                     "height": "32px",
                     "margin-left": 0,
                     "margin-right": 0,
+                  },
+                  ".HvCheckbox-container-17:focus-within": Object {
+                    "border": "solid 1px #4389DB",
                   },
                   ".HvCheckbox-container-17:hover": Object {
                     "background-color": "#F0F0F0",
@@ -8785,6 +8794,9 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvCheckbox-container-17:focus-within": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvCheckbox-container-17:hover": Object {
                     "backgroundColor": "#F0F0F0",
                   },
@@ -8796,6 +8808,9 @@ body {
                     "padding": "8px",
                   },
                   "container": Object {
+                    "&:focus-within": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                     },
@@ -24428,6 +24443,9 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.02em;
 }
+.HvButton-root-86:focus {
+  border: solid 1px #4389DB;
+}
 .HvButton-containedPrimary-87 {
   color: #FFFFFF;
   background-color: #146BD2;
@@ -24540,6 +24558,9 @@ body {
                   },
                   Object {},
                   Object {},
+                  Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   Object {
                     "background-color": "#146BD2",
                     "color": "#FFFFFF",
@@ -24686,6 +24707,9 @@ body {
                     "text-transform": "capitalize",
                   },
                   ".HvButton-root-86:active": Object {},
+                  ".HvButton-root-86:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-86:hover, .HvButton-root-86:focus": Object {},
                   ".HvButton-textPrimary-89": Object {
                     "background-color": "transparent",
@@ -25274,6 +25298,9 @@ body {
                     "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-root-86:active": Object {},
+                  ".HvButton-root-86:focus": Object {
+                    "border": "solid 1px #4389DB",
+                  },
                   ".HvButton-root-86:hover, .HvButton-root-86:focus": Object {},
                   ".HvButton-textPrimary-89.HvButton-disabled-90": Object {
                     "backgroundColor": "transparent",
@@ -25350,6 +25377,9 @@ body {
                   },
                   "root": Object {
                     "&:active": Object {},
+                    "&:focus": Object {
+                      "border": "solid 1px #4389DB",
+                    },
                     "&:hover,&:focus": Object {},
                     "color": "#414141",
                     "cursor": "pointer",

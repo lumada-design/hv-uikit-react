@@ -19,6 +19,9 @@ const styles = theme => ({
     textTransform: "capitalize",
     "&:hover,&:focus": {},
     "&:active": {},
+    "&:focus": {
+      border: `solid 1px ${theme.hv.palette.accent.acce2h}`
+    },
     minWidth: "70px",
     padding: `0 ${theme.hv.spacing.xs}px`,
     cursor: "pointer",
