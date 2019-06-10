@@ -49,7 +49,7 @@ const styles = theme => ({
   buttonsContainer: {
     position: "relative",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
     marginTop: `${theme.hv.spacing.sm}px`
   },
