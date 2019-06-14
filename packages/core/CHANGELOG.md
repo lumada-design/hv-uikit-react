@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.14](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.13...@hv/uikit-react-core@1.1.3-alpha.14) (2019-06-14)
+
+
+### Features
+
+* **Header:** Adding new prop labels to populate productName and tenantName when user is not logged in.[#206](https://github.com/pentaho/hv-uikit-react/issues/206) ([710ff4c](https://github.com/pentaho/hv-uikit-react/commit/710ff4c))
+
+
+
+
+
 ## [1.1.3-alpha.13](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.12...@hv/uikit-react-core@1.1.3-alpha.13) (2019-06-07)
 
 
