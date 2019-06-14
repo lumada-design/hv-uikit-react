@@ -608,6 +608,7 @@ exports[`User withStyles should render User component with Props 1`] = `
     }
   >
     <WithStyles(User)
+      labels={Object {}}
       userData={
         Object {
           "name": "UserName",

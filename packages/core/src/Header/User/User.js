@@ -27,11 +27,12 @@ import ImageContainer from "../ImageContainer";
  * @param userData
  * @param userIcon
  * @param onClick
+ * @param labels
  * @returns {*}
  * @constructor
  */
-const User = ({ classes, userData, userIcon, onClick }) => {
-  if (!userData && !userIcon) return "";
+const User = ({ classes, userData, userIcon, onClick, labels }) => {
+  if (!userData && !userIcon) return (<div>{labels.tenantName}</div>);
   return (
     <div
       className={classNames(classes.userContainer, {
@@ -79,13 +80,21 @@ User.propTypes = {
   /**
    * Function to be triggered by clicking in any point of container.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Object containing the labels to be present
+   */
+  labels: PropTypes.shape({
+    productName: PropTypes.string,
+    tenantName: PropTypes.string
+  })
 };
 
 User.defaultProps = {
   userData: null,
   userIcon: null,
-  onClick: null
+  onClick: null,
+  labels: {}
 };
 
 export default User;
