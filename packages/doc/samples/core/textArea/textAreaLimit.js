@@ -22,4 +22,4 @@ const labels= {
     placeholder: "Enter value"
 }
 
-export default <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={1500} />;
+export default <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={10} />;

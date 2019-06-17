@@ -532,4 +532,53 @@ describe("Input", () => {
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText);
   });
+
+  const getInputInstance = (defaultProps, newValue) => {
+    wrapper = mount(
+      React.createElement( 
+        props => (
+          <HvProvider>
+            <InputWithStyles
+              value={props.value}
+              labels={labels}
+              updateOnDifferentValue={props.updateOnDifferentValue}
+            />
+          </HvProvider>
+        ),
+        defaultProps
+      )
+    );
+    wrapper.setProps({ value: newValue });
+    wrapper.update();
+    const inputInstance = getInput(wrapper);
+    return inputInstance;
+  };
+
+  it("should change the state value when the value prop changes and updateOnDifferentValue is true", () => {
+    const inputText1 = "inputText1";
+    const inputText2 = "inputText2";
+    const defaultProps = {
+      value: inputText1,
+      updateOnDifferentValue: true
+    };
+
+    const inputInstance = getInputInstance(defaultProps, inputText2);
+    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.validationState).toBe(validationStates.empty);
+    expect(inputInstance.state.value).toBe(inputText2);
+  });
+
+  it("should not change the state value when the value prop changes and updateOnDifferentValue is false", () => {
+    const inputText1 = "inputText1";
+    const inputText2 = "inputText2";
+    const defaultProps = {
+      value: inputText1,
+      updateOnDifferentValue: false
+    };
+
+    const inputInstance = getInputInstance(defaultProps, inputText2);
+    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.validationState).toBe(validationStates.empty);
+    expect(inputInstance.state.value).toBe(inputText1);
+  });
 });

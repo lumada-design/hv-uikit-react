@@ -20,8 +20,7 @@ import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 
 storiesOf("Core", module).add("TextArea", () => <HvTextArea />, {
   title: "Text area",
-  description:
-    "A text area component to receive large inputs",
+  description: "A text area component to receive large inputs",
   usage: "import HvTextArea from '@hv/uikit-react-core/dist/TextArea'",
   examples: [
     {
@@ -31,13 +30,24 @@ storiesOf("Core", module).add("TextArea", () => <HvTextArea />, {
     },
     {
       title: "2. with limits",
-      description: "Text area that limits the quantity of character that can be introduced in the text area",
+      description:
+        "Text area that limits the quantity of character that can be introduced in the text area",
       src: "core/textArea/textAreaLimit.js"
     },
     {
       title: "3. Disabled",
       description: "Text area disabled and do not allow any interaction",
       src: "core/textArea/textAreaDisabled.js"
+    },
+    {
+      title: "4. Change input content with another component",
+      description: "Change the input value from outside the Input component",
+      src: "core/textArea/textAreaUncontrolledValue.js"
+    },
+    {
+      title: "5. Change input content with another component and with limit",
+      description: "Change the input value from outside the Input component",
+      src: "core/textArea/textAreaUncontrolledValueLimit.js"
     }
   ]
 });

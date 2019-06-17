@@ -37,12 +37,25 @@ class HvInput extends React.Component {
     this.state = {
       validationState,
       value,
+      originalValue: value,
       infoText:
         validationState === validationStates.invalid
           ? definedLabels.warningText
           : definedLabels.infoText
     };
   }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { updateOnDifferentValue, value: nextValue } = nextProps;
+    const { originalValue: oldValue } = prevState;
+    if ( updateOnDifferentValue && nextValue !== oldValue ) {
+      return {
+        value: nextValue,
+        originalValue: nextValue
+      }
+    }
+    return null;
+  };
 
   /**
    * Updates the states while the input is being entered.
@@ -169,6 +182,7 @@ class HvInput extends React.Component {
       id,
       password,
       disabled,
+      updateOnDifferentValue,
       isRequired,
       iconVisible,
       iconPosition,
@@ -359,6 +373,12 @@ HvInput.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
+   * If ´true´ the value that is shown in the input will reflect the value prop. Otherwise,
+   * only the Input component can change the value that is shown and will ignore the value
+   * prop even if it changes.
+   */
+  updateOnDifferentValue: PropTypes.bool,
+  /**
    * If ´true´ the input value must be filled on blur or else the validation fails.
    */
   isRequired: PropTypes.bool,
@@ -463,6 +483,7 @@ HvInput.defaultProps = {
   autoFocus: false,
   validationState: "empty",
   disabled: false,
+  updateOnDifferentValue: false,
   isRequired: false,
   onChange: value => value,
   onBlur: () => {},

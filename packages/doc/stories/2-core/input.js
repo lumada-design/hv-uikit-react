@@ -97,6 +97,11 @@ storiesOf("Core", module).add("Input", () => <HvInput />, {
       description:
         "Using the input props to inject input custom props, this input will block values when exceeding 250 characters",
       src: "core/input/inputCustomProps"
+    },
+    {
+      title: "14. Change input content with another component",
+      description: "Change the input value from outside the Input component",
+      src: "core/input/inputUncontrolledValue"
     }
   ]
 });
