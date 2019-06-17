@@ -15,6 +15,7 @@
  */
 
 import React, { Component } from "react";
+import classNames from "classnames";
 import PropTypes from "prop-types";
 import EmptyStateIconComp from "@hv/uikit-react-icons/dist/Caution.L";
 import Grid from "@material-ui/core/Grid";
@@ -22,11 +23,11 @@ import ListIcon from "@hv/uikit-react-icons/dist/List.S";
 import CardsIcon from "@hv/uikit-react-icons/dist/Cards.S";
 import CardsIconSelected from "@hv/uikit-react-icons/dist/CardsSelected.S";
 import EmptySearchState from "../EmptyState";
-import SearchBox from "../SearchBox";
 
 /*  TODO: Review accessibility */
 
 /*  eslint-disable  jsx-a11y/click-events-have-key-events */
+
 /*  eslint-disable jsx-a11y/no-static-element-interactions */
 
 /**
@@ -57,13 +58,12 @@ export class HvAssetInventory extends Component {
       theme,
       classes,
       assetsTitle,
-      searchHandler,
-      searchInput,
+      searchComponent,
       sortComponent,
       renderEmptyState,
       listRenderComponent,
       cardRenderComponent,
-      toolsScreenGridSize,
+      filterComponents,
       cardViewButtonId,
       listViewButtonId
     } = this.props;
@@ -71,6 +71,41 @@ export class HvAssetInventory extends Component {
     const viewModeCards =
       viewMode === HvAssetInventory.assetInventoryMode.CARDS;
     const viewModeList = viewMode === HvAssetInventory.assetInventoryMode.LIST;
+
+    const viewModeCardsButton = (
+      <>
+        {viewModeCards && <CardsIconSelected className={classes.icon} />}
+        {viewModeList && <CardsIcon className={classes.iconChangeView} />}
+      </>
+    );
+
+    const viewModeViewButton = (
+      <>
+        {viewModeCards && <ListIcon className={classes.iconChangeView} />}
+        {viewModeList && (
+          <ListIcon
+            className={classes.icon}
+            color={[
+              theme.hv.palette.accent.acce1,
+              theme.hv.palette.atmosphere.atmo2
+            ]}
+          />
+        )}
+      </>
+    );
+
+    const ViewModeButton = ({id, children, view}) => (
+      <div
+        {...id && { id }}
+        role="presentation"
+        onClick={() =>
+          this.changeViewMode(view)
+        }
+      >
+        {children}
+      </div>
+    );
+
 
     return (
       <div className={classes.container}>
@@ -81,74 +116,36 @@ export class HvAssetInventory extends Component {
           alignItems="stretch"
           className={classes.gridContainer}
         >
-          <Grid
-            item
-            xs={toolsScreenGridSize.xs}
-            sm={toolsScreenGridSize.sm}
-            md={toolsScreenGridSize.md}
-            lg={toolsScreenGridSize.lg}
-            xl={toolsScreenGridSize.xl}
-          >
+          <Grid item className={classNames(classes.clearPadding)}>
             <Grid container>
-              {searchHandler && (
-                <Grid item xs={12} className={classes.searchBoxContainer}>
-                  <SearchBox
-                    onChange={e => searchHandler(e)}
-                    searchInput={searchInput}
-                  />
-                </Grid>
-              )}
+              {searchComponent}
             </Grid>
           </Grid>
 
-          <Grid item>
+          <Grid item className={classNames(classes.clearPadding)}>
             <Grid container>
               {sortComponent && <Grid item>{sortComponent}</Grid>}
               <Grid item className={classes.viewModeContainer}>
                 <div className={classes.iconsWrapper}>
-                  <div
+                  <ViewModeButton
                     {...listViewButtonId && { id: listViewButtonId }}
-                    className={classes.icon}
-                    role="presentation"
-                    onClick={() =>
-                      this.changeViewMode(
-                        HvAssetInventory.assetInventoryMode.LIST
-                      )
-                    }
+                    view={HvAssetInventory.assetInventoryMode.LIST}
                   >
-                    {viewModeCards && (
-                      <ListIcon className={classes.iconChangeView} />
-                    )}
-                    {viewModeList && (
-                      <ListIcon
-                        className={classes.icon}
-                        color={[
-                          theme.hv.palette.accent.acce1,
-                          theme.hv.palette.atmosphere.atmo2
-                        ]}
-                      />
-                    )}
-                  </div>
-                  <div
+                    {viewModeViewButton}
+                  </ViewModeButton>
+                  <ViewModeButton
                     {...cardViewButtonId && { id: cardViewButtonId }}
-                    role="presentation"
-                    onClick={() =>
-                      this.changeViewMode(
-                        HvAssetInventory.assetInventoryMode.CARDS
-                      )
-                    }
+                    view={HvAssetInventory.assetInventoryMode.CARDS}
                   >
-                    {viewModeCards && (
-                      <CardsIconSelected className={classes.icon} />
-                    )}
-                    {viewModeList && (
-                      <CardsIcon className={classes.iconChangeView} />
-                    )}
-                  </div>
+                    {viewModeCardsButton}
+                  </ViewModeButton>
                 </div>
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
+        <Grid container>
+          {filterComponents}
         </Grid>
         {renderEmptyState && (
           <Grid container>
@@ -190,11 +187,10 @@ HvAssetInventory.propTypes = {
   /**
    * The handler that will be called with the search new value.
    */
-  searchHandler: PropTypes.func,
+  searchComponent: PropTypes.node,
   /**
    * The initial value to be passed to the search box.
    */
-  searchInput: PropTypes.string,
   sortComponent: PropTypes.node,
   /**
    * The handler that will be called with the new view mode when it's changed.
@@ -211,6 +207,8 @@ HvAssetInventory.propTypes = {
   /**
    * The Grid screen sizes for the 'tools' between the title and the items list.
    */
+  filterComponents: PropTypes.node,
+
   toolsScreenGridSize: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
@@ -273,11 +271,11 @@ HvAssetInventory.defaultProps = {
   assetsTitle: undefined,
   initialViewMode: "CARDS",
   theme: null,
-  searchHandler: undefined,
-  searchInput: "",
+  searchComponent: undefined,
   viewChangedHandler: undefined,
   listRenderComponent: undefined,
   cardRenderComponent: undefined,
+  filterComponents: undefined,
   renderEmptyState: false,
   sortComponent: undefined,
   cardViewButtonId: undefined,
