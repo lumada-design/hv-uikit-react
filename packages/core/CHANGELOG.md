@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.15](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.14...@hv/uikit-react-core@1.1.3-alpha.15) (2019-06-17)
+
+
+### Bug Fixes
+
+* **dropdown:** remove outline on focus ([31dc4c3](https://github.com/pentaho/hv-uikit-react/commit/31dc4c3))
+
+
+
+
+
 ## [1.1.3-alpha.14](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.13...@hv/uikit-react-core@1.1.3-alpha.14) (2019-06-14)
 
 

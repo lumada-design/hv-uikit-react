@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.17](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.16...@hv/uikit-react-lab@1.1.3-alpha.17) (2019-06-17)
+
+
+### Bug Fixes
+
+* **datePicker:** remove window dependency in prop failing in SSR. [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([e68ab93](https://github.com/pentaho/hv-uikit-react/commit/e68ab93))
+
+
+
+
+
 ## [1.1.3-alpha.16](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.15...@hv/uikit-react-lab@1.1.3-alpha.16) (2019-06-14)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
