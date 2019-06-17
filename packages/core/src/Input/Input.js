@@ -30,14 +30,21 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const { validationState, value, inputTextConfiguration, labels } = props;
+    const {
+      validationState,
+      value,
+      initialValue,
+      inputTextConfiguration,
+      labels
+    } = props;
 
     const definedLabels = inputTextConfiguration || labels;
 
+    const val = value || initialValue;
+
     this.state = {
       validationState,
-      value,
-      originalValue: value,
+      value: val,
       infoText:
         validationState === validationStates.invalid
           ? definedLabels.warningText
@@ -46,16 +53,16 @@ class HvInput extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { updateOnDifferentValue, value: nextValue } = nextProps;
-    const { originalValue: oldValue } = prevState;
-    if ( updateOnDifferentValue && nextValue !== oldValue ) {
+    const { inputValue: nextValue } = nextProps;
+    const { value: oldValue } = prevState;
+
+    if (nextValue !== undefined && nextValue !== oldValue) {
       return {
-        value: nextValue,
-        originalValue: nextValue
-      }
+        value: nextValue
+      };
     }
     return null;
-  };
+  }
 
   /**
    * Updates the states while the input is being entered.
@@ -182,7 +189,6 @@ class HvInput extends React.Component {
       id,
       password,
       disabled,
-      updateOnDifferentValue,
       isRequired,
       iconVisible,
       iconPosition,
@@ -200,6 +206,8 @@ class HvInput extends React.Component {
       value,
       autoFocus,
       theme,
+      inputValue,
+      initialValue,
       ...others
     } = this.props;
 
@@ -312,7 +320,7 @@ HvInput.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -373,12 +381,6 @@ HvInput.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the value that is shown in the input will reflect the value prop. Otherwise,
-   * only the Input component can change the value that is shown and will ignore the value
-   * prop even if it changes.
-   */
-  updateOnDifferentValue: PropTypes.bool,
-  /**
    * If ´true´ the input value must be filled on blur or else the validation fails.
    */
   isRequired: PropTypes.bool,
@@ -413,8 +415,18 @@ HvInput.propTypes = {
   validation: PropTypes.func,
   /**
    * The initial value of the input.
+   * @deprecated will be replace by initialValue
    */
-  value: PropTypes.string,
+  value: deprecatedPropType(PropTypes.string, "Instead use the initialValue property"),
+  /**
+   * The initial value of the input.
+   */
+  initialValue: PropTypes.string,
+  /**
+   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
+   * @deprecated will be replaced by value
+   */
+  inputValue: PropTypes.string,
   /**
    * If `true` it should autofocus.
    */
@@ -480,10 +492,11 @@ HvInput.defaultProps = {
   minCharQuantity: null,
   validationType: "none",
   value: "",
+  initialValue: "",
+  inputValue: undefined,
   autoFocus: false,
   validationState: "empty",
   disabled: false,
-  updateOnDifferentValue: false,
   isRequired: false,
   onChange: value => value,
   onBlur: () => {},

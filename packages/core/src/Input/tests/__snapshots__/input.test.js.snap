@@ -11497,6 +11497,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
         externalWarningTextOverride={null}
         iconPosition="right"
         iconVisible={true}
+        initialValue=""
         inputProps={Object {}}
         isRequired={false}
         labels={
@@ -12110,7 +12111,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
             },
           }
         }
-        updateOnDifferentValue={false}
         validate={false}
         validation={null}
         validationState="empty"
@@ -26176,6 +26176,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
         externalWarningTextOverride={null}
         iconPosition="right"
         iconVisible={true}
+        initialValue=""
         inputProps={
           Object {
             "maxLength": 250,
@@ -26793,7 +26794,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
             },
           }
         }
-        updateOnDifferentValue={false}
         validate={true}
         validation={null}
         validationState="empty"
@@ -41505,6 +41505,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
         externalWarningTextOverride={null}
         iconPosition="right"
         iconVisible={true}
+        initialValue=""
         inputProps={Object {}}
         isRequired={false}
         labels={
@@ -42118,7 +42119,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
             },
           }
         }
-        updateOnDifferentValue={false}
         validate={true}
         validation={null}
         validationState="empty"
