@@ -444,7 +444,7 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-  locale: window.navigator.language || window.navigator.userLanguage,
+  locale: "en-EN",
   selectedDate: undefined,
   visibleDate: undefined,
   handleDateChange: undefined,
