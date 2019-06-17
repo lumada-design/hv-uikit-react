@@ -42,9 +42,10 @@ const styles = theme => ({
   },
   header: {
     position: "relative",
-    height: 32,
+    height: `${theme.hv.spacing.md}px`,
     cursor: "pointer",
-    userSelect: "none"
+    userSelect: "none",
+    outline: "none"
   },
   selection: {
     padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,

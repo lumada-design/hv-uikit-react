@@ -4443,8 +4443,9 @@ body {
   letter-spacing: 0.02em;
 }
 .Main-header-685 {
-  height: 32px;
+  height: 30px;
   cursor: pointer;
+  outline: none;
   position: relative;
   user-select: none;
 }
@@ -4551,7 +4552,8 @@ body {
                   },
                   Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -4610,7 +4612,8 @@ body {
                   },
                   ".Main-header-685": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -4690,7 +4693,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -5270,7 +5274,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": 32,
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "userSelect": "none",
                   },
@@ -58926,8 +58931,9 @@ body {
   letter-spacing: 0.02em;
 }
 .Main-header-593 {
-  height: 32px;
+  height: 30px;
   cursor: pointer;
+  outline: none;
   position: relative;
   user-select: none;
 }
@@ -59034,7 +59040,8 @@ body {
                   },
                   Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -59093,7 +59100,8 @@ body {
                   },
                   ".Main-header-593": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -59173,7 +59181,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -59753,7 +59762,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": 32,
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "userSelect": "none",
                   },
@@ -73187,8 +73197,9 @@ body {
   letter-spacing: 0.02em;
 }
 .Main-header-5 {
-  height: 32px;
+  height: 30px;
   cursor: pointer;
+  outline: none;
   position: relative;
   user-select: none;
 }
@@ -73295,7 +73306,8 @@ body {
                   },
                   Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -73354,7 +73366,8 @@ body {
                   },
                   ".Main-header-5": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -73434,7 +73447,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": "32px",
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "user-select": "none",
                   },
@@ -74014,7 +74028,8 @@ body {
                   },
                   "header": Object {
                     "cursor": "pointer",
-                    "height": 32,
+                    "height": "30px",
+                    "outline": "none",
                     "position": "relative",
                     "userSelect": "none",
                   },
