@@ -32,6 +32,10 @@ const styles = theme => ({
   gridContainer: {
     width: "auto"
   },
+  clearPadding: {
+    paddingTop: 0,
+    paddingBottom: 0
+  },
   searchBoxContainer: {
     position: "relative",
     height: `${icon.height + parseInt(theme.hv.spacing.md, 10)}px`,
@@ -41,7 +45,7 @@ const styles = theme => ({
   viewModeContainer: {
     position: "relative",
     height: `${icon.height + parseInt(theme.hv.spacing.md, 10)}px`,
-    marginTop: `${theme.hv.spacing.md}px`,
+    marginTop: "26px",
     textAlign: "right"
   },
   emptyStateContainer: {
@@ -50,7 +54,7 @@ const styles = theme => ({
   },
   childrenListContainer: {
     width: "100%",
-    marginTop: `${theme.hv.spacing.xs}px`,
+    marginTop: `${theme.hv.spacing.sm}px`,
     flexGrow: 1
   },
   iconsWrapper: {

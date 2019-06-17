@@ -20,6 +20,7 @@ const styles = () => ({
     width: "270px"
   },
   label: {
+    display: "flex",
     marginBottom: 10
   },
   reset: {
