@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.16](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.15...@hv/uikit-react-core@1.1.3-alpha.16) (2019-06-18)
+
+
+### Features
+
+* **input:** update when value prop changes. [#211](https://github.com/pentaho/hv-uikit-react/issues/211) ([fde70a4](https://github.com/pentaho/hv-uikit-react/commit/fde70a4))
+* **textarea:** update when value prop changes. [#211](https://github.com/pentaho/hv-uikit-react/issues/211) ([b816557](https://github.com/pentaho/hv-uikit-react/commit/b816557))
+
+
+
+
+
 ## [1.1.3-alpha.15](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.14...@hv/uikit-react-core@1.1.3-alpha.15) (2019-06-17)
 
 
