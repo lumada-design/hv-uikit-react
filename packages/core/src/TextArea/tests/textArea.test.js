@@ -46,7 +46,7 @@ describe("TextArea Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <TextArea classes={{}} rows={4} value="test" onChange={() => {}} />
+      <TextArea classes={{}} rows={4} initialValue="test" onChange={() => {}} />
     );
   });
 
@@ -62,7 +62,7 @@ describe("TextArea Component", () => {
         <TextAreaWithStyles
           classes={{}}
           rows={4}
-          value="test"
+          initialValue="test"
           onChange={onChangeMock}
           maxCharQuantity={10}
         />
@@ -82,7 +82,7 @@ describe("TextArea Component", () => {
         <TextAreaWithStyles
           classes={{}}
           rows={4}
-          value="test"
+          initialValue="test"
           onChange={onChangeMock}
           maxCharQuantity={5}
         />
@@ -105,7 +105,7 @@ describe("TextArea Component", () => {
               classes={{}}
               inputValue={props.inputValue}
               rows={4}
-              value={props.value}
+              initialValue={props.value}
               onChange={props.onChangeMock}
               maxCharQuantity={props.maxCharQuantity}
             />
