@@ -152,7 +152,7 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
 
   it("should have the value showing on the input with the correct format", () => {
     expect(datePickerDSComponent.find("input").instance().value).toBe(
-      getFormattedDate(convertISOStringDateToDate("2019-01-01"))
+      getFormattedDate(convertISOStringDateToDate("2019-01-01"), datePickerDSInstance.props.locale)
     );
   });
 
@@ -201,7 +201,7 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
     wrapper.update();
 
     expect(datePickerDSComponent.find("input").instance().value).toBe(
-      getFormattedDate(dummyDate)
+      getFormattedDate(dummyDate, datePickerDSInstance.props.locale)
     );
   });
 
@@ -263,8 +263,8 @@ describe("<DatePickerDS /> with Range Calendar mode", () => {
   it("should have the values showing on the input with the correct format", () => {
     expect(datePickerDSComponent.find("input").instance().value).toBe(
       `${getFormattedDate(
-        convertISOStringDateToDate("2019-01-05")
-      )} - ${getFormattedDate(convertISOStringDateToDate("2019-01-10"))}`
+        convertISOStringDateToDate("2019-01-05"), datePickerDSInstance.props.locale
+      )} - ${getFormattedDate(convertISOStringDateToDate("2019-01-10"), datePickerDSInstance.props.locale)}`
     );
   });
 
