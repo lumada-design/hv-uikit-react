@@ -32,11 +32,45 @@ import Input from "../Input";
 class HvTextArea extends React.Component {
   constructor(props) {
     super(props);
-    const { value } = this.props;
+    const { value, initialValue } = this.props;
+    const val = value || initialValue;
     this.state = {
-      currentValueLength: value.length
+      currentValueLength: val !== undefined ? this.limitValue(val).length : 0
     };
   }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { inputValue: nextValue, maxCharQuantity } = nextProps;
+    const { currentValueLength: oldLength } = prevState;
+
+    if (nextValue !== undefined) {
+      const nextLength =
+        nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
+
+      if (nextLength !== oldLength) {
+        return {
+          currentValueLength: nextLength
+        };
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Limit the string to the maxCharQuantity length.
+   *
+   * @param value - string to evaluate
+   * @returns {string|*} - string according the limit
+   */
+  limitValue = value => {
+    const { maxCharQuantity } = this.props;
+
+    if (value === undefined) return value;
+
+    return isNil(maxCharQuantity) || value.length < maxCharQuantity
+      ? value
+      : value.substring(0, maxCharQuantity);
+  };
 
   /**
    * Updates the length of the string while is being inputted, also executes the user onChange
@@ -45,19 +79,17 @@ class HvTextArea extends React.Component {
    * @param {String} value - The value provided by the HvInput
    */
   onChangeHandler = value => {
-    const { onChange, maxCharQuantity } = this.props;
-    const newValue = onChange(value);
+    const { onChange } = this.props;
 
-    const textAreaValue =
-      isNil(maxCharQuantity) || newValue.length < maxCharQuantity
-        ? newValue
-        : newValue.substring(0, maxCharQuantity);
+    const newValue = onChange(this.limitValue(value));
+
+    const textAreaValue = this.limitValue(newValue);
 
     this.setState({
       currentValueLength: textAreaValue.length
     });
 
-    return textAreaValue;
+    return newValue;
   };
 
   render() {
@@ -70,6 +102,8 @@ class HvTextArea extends React.Component {
       maxCharQuantity,
       rows,
       value,
+      initialValue,
+      inputValue,
       disabled
     } = this.props;
 
@@ -85,7 +119,9 @@ class HvTextArea extends React.Component {
           className={className}
           id={id}
           labels={inputTextConfiguration || labels}
-          value={value}
+          value={this.limitValue(value)}
+          initialValue={this.limitValue(initialValue)}
+          inputValue={this.limitValue(inputValue)}
           onChange={this.onChangeHandler}
           multiline
           rows={rows}
@@ -136,7 +172,7 @@ HvTextArea.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -175,9 +211,9 @@ HvTextArea.propTypes = {
     /**
      * Style applied to the input container.
      */
-    container: PropTypes.string,
+    container: PropTypes.string
   }).isRequired,
-    /**
+  /**
    * An Object containing the various text associated with the text area.
    *
    * -inputLabel: the label on top of the input.
@@ -189,15 +225,17 @@ HvTextArea.propTypes = {
    * -requiredWarningText: the message that appears when the input is empty and required.
    *  @deprecated Instead use the labels property
    */
-  inputTextConfiguration: deprecatedPropType(PropTypes.shape({
-    inputLabel: PropTypes.string,
-    placeholder: PropTypes.string,
-    infoText: PropTypes.string,
-    warningText: PropTypes.string,
-    maxCharQuantityWarningText: PropTypes.string,
-    minCharQuantityWarningText: PropTypes.string,
-    requiredWarningText: PropTypes.string
-  })),
+  inputTextConfiguration: deprecatedPropType(
+    PropTypes.shape({
+      inputLabel: PropTypes.string,
+      placeholder: PropTypes.string,
+      infoText: PropTypes.string,
+      warningText: PropTypes.string,
+      maxCharQuantityWarningText: PropTypes.string,
+      minCharQuantityWarningText: PropTypes.string,
+      requiredWarningText: PropTypes.string
+    })
+  ),
   /**
    * An Object containing the various text associated with the text area.
    *
@@ -228,9 +266,19 @@ HvTextArea.propTypes = {
    */
   rows: PropTypes.number,
   /**
-   * The initial value of the text area.
+   * The initial value of the input.
+   * @deprecated will be replace by initialValue
    */
   value: PropTypes.string,
+  /**
+   * The initial value of the input.
+   */
+  initialValue: PropTypes.string,
+  /**
+   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
+   * @deprecated will be replaced by value
+   */
+  inputValue: PropTypes.string,
   /**
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value and must return a value otherwise the input will be empty.
@@ -257,6 +305,8 @@ HvTextArea.defaultProps = {
   rows: 1,
   disabled: false,
   value: "",
+  initialValue: "",
+  inputValue: undefined,
   maxCharQuantity: undefined,
   onChange: value => value
 };

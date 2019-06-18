@@ -30,18 +30,38 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const { validationState, value, inputTextConfiguration, labels } = props;
+    const {
+      validationState,
+      value,
+      initialValue,
+      inputTextConfiguration,
+      labels
+    } = props;
 
     const definedLabels = inputTextConfiguration || labels;
 
+    const val = value || initialValue;
+
     this.state = {
       validationState,
-      value,
+      value: val,
       infoText:
         validationState === validationStates.invalid
           ? definedLabels.warningText
           : definedLabels.infoText
     };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { inputValue: nextValue } = nextProps;
+    const { value: oldValue } = prevState;
+
+    if (nextValue !== undefined && nextValue !== oldValue) {
+      return {
+        value: nextValue
+      };
+    }
+    return null;
   }
 
   /**
@@ -186,6 +206,8 @@ class HvInput extends React.Component {
       value,
       autoFocus,
       theme,
+      inputValue,
+      initialValue,
       ...others
     } = this.props;
 
@@ -298,7 +320,7 @@ HvInput.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -393,8 +415,18 @@ HvInput.propTypes = {
   validation: PropTypes.func,
   /**
    * The initial value of the input.
+   * @deprecated will be replace by initialValue
    */
-  value: PropTypes.string,
+  value: deprecatedPropType(PropTypes.string, "Instead use the initialValue property"),
+  /**
+   * The initial value of the input.
+   */
+  initialValue: PropTypes.string,
+  /**
+   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
+   * @deprecated will be replaced by value
+   */
+  inputValue: PropTypes.string,
   /**
    * If `true` it should autofocus.
    */
@@ -460,6 +492,8 @@ HvInput.defaultProps = {
   minCharQuantity: null,
   validationType: "none",
   value: "",
+  initialValue: "",
+  inputValue: undefined,
   autoFocus: false,
   validationState: "empty",
   disabled: false,

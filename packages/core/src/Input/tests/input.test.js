@@ -532,4 +532,39 @@ describe("Input", () => {
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText);
   });
+
+  const getInputInstance = (defaultProps, newValue) => {
+    wrapper = mount(
+      React.createElement( 
+        props => (
+          <HvProvider>
+            <InputWithStyles
+              initialValue={props.value}
+              inputValue={props.inputValue}
+              labels={labels}
+            />
+          </HvProvider>
+        ),
+        defaultProps
+      )
+    );
+    wrapper.setProps({ inputValue: newValue });
+    wrapper.update();
+    const inputInstance = getInput(wrapper);
+    return inputInstance;
+  };
+
+  it("should change the state value when the inputValue prop changes", () => {
+    const inputText1 = "inputText1";
+    const inputText2 = "inputText2";
+    const defaultProps = {
+      value: inputText1
+    };
+
+    const inputInstance = getInputInstance(defaultProps, inputText2);
+    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.validationState).toBe(validationStates.empty);
+    expect(inputInstance.state.value).toBe(inputText2);
+  });
+
 });
