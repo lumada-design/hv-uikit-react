@@ -108,7 +108,7 @@ describe("Input", () => {
         <InputWithStyles
           validationState={validationStates.valid}
           labels={labels}
-          value={inputText}
+          initialValue={inputText}
         />
       </HvProvider>
     );
@@ -128,7 +128,7 @@ describe("Input", () => {
         <InputWithStyles
           validationState={validationStates.invalid}
           labels={labels}
-          value={inputText}
+          initialValue={inputText}
         />
       </HvProvider>
     );
@@ -149,7 +149,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={inputText}
+          initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
           iconPosition={iconPositions.left}
@@ -174,7 +174,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={inputText}
+          initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
         />
@@ -200,7 +200,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
         />
@@ -228,7 +228,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.number}
@@ -271,7 +271,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.email}
@@ -315,7 +315,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -344,7 +344,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -389,7 +389,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -435,7 +435,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -481,7 +481,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -521,7 +521,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           labels={labels}
         />
       </HvProvider>

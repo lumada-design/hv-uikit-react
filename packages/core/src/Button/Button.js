@@ -61,6 +61,10 @@ const HvButton = props => {
   } = props;
   const buttonConfiguration = generateButtonConfiguration(colorType);
 
+  const onClickHandler = event => {
+    if (!disabled) onClick(event);
+  };
+
   return (
     <Button
       className={className}
@@ -70,7 +74,7 @@ const HvButton = props => {
       color={buttonConfiguration.color}
       disabled={disabled}
       disableRipple
-      onClick={onClick}
+      onClick={onClickHandler}
       type={type}
       {...other}
     >
@@ -101,7 +105,7 @@ HvButton.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,

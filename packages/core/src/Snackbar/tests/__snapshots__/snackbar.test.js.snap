@@ -10197,7 +10197,7 @@ body {
             },
           }
         }
-        transitionDirection="top"
+        transitionDirection="up"
         transitionDuration={0}
         variant="default"
       >

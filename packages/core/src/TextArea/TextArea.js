@@ -108,7 +108,7 @@ class HvTextArea extends React.Component {
     } = this.props;
 
     const { currentValueLength } = this.state;
-
+    const val = value || initialValue;
     return (
       <>
         <Input
@@ -119,8 +119,7 @@ class HvTextArea extends React.Component {
           className={className}
           id={id}
           labels={inputTextConfiguration || labels}
-          value={this.limitValue(value)}
-          initialValue={this.limitValue(initialValue)}
+          initialValue={this.limitValue(val)}
           inputValue={this.limitValue(inputValue)}
           onChange={this.onChangeHandler}
           multiline

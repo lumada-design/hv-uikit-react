@@ -156,7 +156,7 @@ HvSnackbar.propTypes = {
   /**
    * Direction of slide transition set to one of "left", "right", "top", or "bottom".
    */
-  transitionDirection: PropTypes.oneOf(["top", "bottom", "left", "right"])
+  transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"])
 };
 
 HvSnackbar.defaultProps = {
@@ -173,7 +173,7 @@ HvSnackbar.defaultProps = {
   action: null,
   variant: "default",
   transitionDuration: 0,
-  transitionDirection: "top"
+  transitionDirection: "up"
 };
 
 export default HvSnackbar;
