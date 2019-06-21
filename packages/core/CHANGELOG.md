@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.17](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.16...@hv/uikit-react-core@1.1.3-alpha.17) (2019-06-21)
+
+
+### Bug Fixes
+
+* **button:** disabled button was clickable. [#205](https://github.com/pentaho/hv-uikit-react/issues/205) ([bf49357](https://github.com/pentaho/hv-uikit-react/commit/bf49357))
+
+
+
+
+
 ## [1.1.3-alpha.16](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.15...@hv/uikit-react-core@1.1.3-alpha.16) (2019-06-18)
 
 

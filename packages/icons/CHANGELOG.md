@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.10](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.9...@hv/uikit-react-icons@1.1.3-alpha.10) (2019-06-21)
+
+
+### Bug Fixes
+
+* **button:** disabled button was clickable. [#205](https://github.com/pentaho/hv-uikit-react/issues/205) ([bf49357](https://github.com/pentaho/hv-uikit-react/commit/bf49357))
+
+
+
+
+
 ## [1.1.3-alpha.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.8...@hv/uikit-react-icons@1.1.3-alpha.9) (2019-06-18)
 
 
