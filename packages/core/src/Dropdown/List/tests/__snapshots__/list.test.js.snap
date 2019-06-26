@@ -49,14 +49,6 @@ exports[`<List /> should render correctly 1`] = `
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -3615,14 +3607,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -5866,14 +5850,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -7912,14 +7888,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -10034,14 +10002,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -12101,14 +12061,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -14116,14 +14068,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -16129,14 +16073,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -19428,14 +19364,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -21477,14 +21405,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -24745,14 +24665,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -26688,14 +26600,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -29075,14 +28979,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -35035,14 +34931,6 @@ body {
               "support": Object {},
             },
             "typography": Object {},
-            "viz": Object {
-              "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "specialState": Object {},
-              },
-            },
           },
           "palette": Object {
             "accent": Object {
@@ -35981,14 +35869,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -36907,14 +36787,6 @@ body {
                           "support": Object {},
                         },
                         "typography": Object {},
-                        "viz": Object {
-                          "palette": Object {
-                            "categorical": Object {},
-                            "polarizes": Object {},
-                            "sequential": Object {},
-                            "specialState": Object {},
-                          },
-                        },
                       },
                       "palette": Object {
                         "accent": Object {
@@ -37906,14 +37778,6 @@ body {
                           "support": Object {},
                         },
                         "typography": Object {},
-                        "viz": Object {
-                          "palette": Object {
-                            "categorical": Object {},
-                            "polarizes": Object {},
-                            "sequential": Object {},
-                            "specialState": Object {},
-                          },
-                        },
                       },
                       "palette": Object {
                         "accent": Object {
@@ -39448,14 +39312,6 @@ body {
                                       "support": Object {},
                                     },
                                     "typography": Object {},
-                                    "viz": Object {
-                                      "palette": Object {
-                                        "categorical": Object {},
-                                        "polarizes": Object {},
-                                        "sequential": Object {},
-                                        "specialState": Object {},
-                                      },
-                                    },
                                   },
                                   "palette": Object {
                                     "accent": Object {
@@ -40380,14 +40236,6 @@ body {
                             "support": Object {},
                           },
                           "typography": Object {},
-                          "viz": Object {
-                            "palette": Object {
-                              "categorical": Object {},
-                              "polarizes": Object {},
-                              "sequential": Object {},
-                              "specialState": Object {},
-                            },
-                          },
                         },
                         "palette": Object {
                           "accent": Object {
@@ -41906,14 +41754,6 @@ body {
                                         "support": Object {},
                                       },
                                       "typography": Object {},
-                                      "viz": Object {
-                                        "palette": Object {
-                                          "categorical": Object {},
-                                          "polarizes": Object {},
-                                          "sequential": Object {},
-                                          "specialState": Object {},
-                                        },
-                                      },
                                     },
                                     "palette": Object {
                                       "accent": Object {
@@ -42835,14 +42675,6 @@ body {
                             "support": Object {},
                           },
                           "typography": Object {},
-                          "viz": Object {
-                            "palette": Object {
-                              "categorical": Object {},
-                              "polarizes": Object {},
-                              "sequential": Object {},
-                              "specialState": Object {},
-                            },
-                          },
                         },
                         "palette": Object {
                           "accent": Object {
@@ -44362,14 +44194,6 @@ body {
                                         "support": Object {},
                                       },
                                       "typography": Object {},
-                                      "viz": Object {
-                                        "palette": Object {
-                                          "categorical": Object {},
-                                          "polarizes": Object {},
-                                          "sequential": Object {},
-                                          "specialState": Object {},
-                                        },
-                                      },
                                     },
                                     "palette": Object {
                                       "accent": Object {
@@ -45291,14 +45115,6 @@ body {
                             "support": Object {},
                           },
                           "typography": Object {},
-                          "viz": Object {
-                            "palette": Object {
-                              "categorical": Object {},
-                              "polarizes": Object {},
-                              "sequential": Object {},
-                              "specialState": Object {},
-                            },
-                          },
                         },
                         "palette": Object {
                           "accent": Object {
@@ -46818,14 +46634,6 @@ body {
                                         "support": Object {},
                                       },
                                       "typography": Object {},
-                                      "viz": Object {
-                                        "palette": Object {
-                                          "categorical": Object {},
-                                          "polarizes": Object {},
-                                          "sequential": Object {},
-                                          "specialState": Object {},
-                                        },
-                                      },
                                     },
                                     "palette": Object {
                                       "accent": Object {
@@ -47753,14 +47561,6 @@ body {
                           "support": Object {},
                         },
                         "typography": Object {},
-                        "viz": Object {
-                          "palette": Object {
-                            "categorical": Object {},
-                            "polarizes": Object {},
-                            "sequential": Object {},
-                            "specialState": Object {},
-                          },
-                        },
                       },
                       "palette": Object {
                         "accent": Object {
@@ -48654,14 +48454,6 @@ body {
                                 "support": Object {},
                               },
                               "typography": Object {},
-                              "viz": Object {
-                                "palette": Object {
-                                  "categorical": Object {},
-                                  "polarizes": Object {},
-                                  "sequential": Object {},
-                                  "specialState": Object {},
-                                },
-                              },
                             },
                             "palette": Object {
                               "accent": Object {
@@ -49551,14 +49343,6 @@ body {
                                   "support": Object {},
                                 },
                                 "typography": Object {},
-                                "viz": Object {
-                                  "palette": Object {
-                                    "categorical": Object {},
-                                    "polarizes": Object {},
-                                    "sequential": Object {},
-                                    "specialState": Object {},
-                                  },
-                                },
                               },
                               "palette": Object {
                                 "accent": Object {
@@ -50475,14 +50259,6 @@ body {
                                     "support": Object {},
                                   },
                                   "typography": Object {},
-                                  "viz": Object {
-                                    "palette": Object {
-                                      "categorical": Object {},
-                                      "polarizes": Object {},
-                                      "sequential": Object {},
-                                      "specialState": Object {},
-                                    },
-                                  },
                                 },
                                 "palette": Object {
                                   "accent": Object {
@@ -51366,14 +51142,6 @@ body {
                                       "support": Object {},
                                     },
                                     "typography": Object {},
-                                    "viz": Object {
-                                      "palette": Object {
-                                        "categorical": Object {},
-                                        "polarizes": Object {},
-                                        "sequential": Object {},
-                                        "specialState": Object {},
-                                      },
-                                    },
                                   },
                                   "palette": Object {
                                     "accent": Object {
@@ -52266,14 +52034,6 @@ body {
                                         "support": Object {},
                                       },
                                       "typography": Object {},
-                                      "viz": Object {
-                                        "palette": Object {
-                                          "categorical": Object {},
-                                          "polarizes": Object {},
-                                          "sequential": Object {},
-                                          "specialState": Object {},
-                                        },
-                                      },
                                     },
                                     "palette": Object {
                                       "accent": Object {
@@ -53164,14 +52924,6 @@ body {
                                           "support": Object {},
                                         },
                                         "typography": Object {},
-                                        "viz": Object {
-                                          "palette": Object {
-                                            "categorical": Object {},
-                                            "polarizes": Object {},
-                                            "sequential": Object {},
-                                            "specialState": Object {},
-                                          },
-                                        },
                                       },
                                       "palette": Object {
                                         "accent": Object {
@@ -54077,14 +53829,6 @@ body {
                                 "support": Object {},
                               },
                               "typography": Object {},
-                              "viz": Object {
-                                "palette": Object {
-                                  "categorical": Object {},
-                                  "polarizes": Object {},
-                                  "sequential": Object {},
-                                  "specialState": Object {},
-                                },
-                              },
                             },
                             "palette": Object {
                               "accent": Object {
@@ -54974,14 +54718,6 @@ body {
                                   "support": Object {},
                                 },
                                 "typography": Object {},
-                                "viz": Object {
-                                  "palette": Object {
-                                    "categorical": Object {},
-                                    "polarizes": Object {},
-                                    "sequential": Object {},
-                                    "specialState": Object {},
-                                  },
-                                },
                               },
                               "palette": Object {
                                 "accent": Object {
@@ -55898,14 +55634,6 @@ body {
                                     "support": Object {},
                                   },
                                   "typography": Object {},
-                                  "viz": Object {
-                                    "palette": Object {
-                                      "categorical": Object {},
-                                      "polarizes": Object {},
-                                      "sequential": Object {},
-                                      "specialState": Object {},
-                                    },
-                                  },
                                 },
                                 "palette": Object {
                                   "accent": Object {
@@ -56789,14 +56517,6 @@ body {
                                       "support": Object {},
                                     },
                                     "typography": Object {},
-                                    "viz": Object {
-                                      "palette": Object {
-                                        "categorical": Object {},
-                                        "polarizes": Object {},
-                                        "sequential": Object {},
-                                        "specialState": Object {},
-                                      },
-                                    },
                                   },
                                   "palette": Object {
                                     "accent": Object {
@@ -57689,14 +57409,6 @@ body {
                                         "support": Object {},
                                       },
                                       "typography": Object {},
-                                      "viz": Object {
-                                        "palette": Object {
-                                          "categorical": Object {},
-                                          "polarizes": Object {},
-                                          "sequential": Object {},
-                                          "specialState": Object {},
-                                        },
-                                      },
                                     },
                                     "palette": Object {
                                       "accent": Object {
@@ -58587,14 +58299,6 @@ body {
                                           "support": Object {},
                                         },
                                         "typography": Object {},
-                                        "viz": Object {
-                                          "palette": Object {
-                                            "categorical": Object {},
-                                            "polarizes": Object {},
-                                            "sequential": Object {},
-                                            "specialState": Object {},
-                                          },
-                                        },
                                       },
                                       "palette": Object {
                                         "accent": Object {
