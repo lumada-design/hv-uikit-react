@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.11](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.10...@hv/uikit-react-icons@1.1.3-alpha.11) (2019-06-27)
+
+
+### Features
+
+* **doc:** add visualization colors. [#223](https://github.com/pentaho/hv-uikit-react/issues/223) ([c132d29](https://github.com/pentaho/hv-uikit-react/commit/c132d29))
+
+
+
+
+
 ## [1.1.3-alpha.10](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.9...@hv/uikit-react-icons@1.1.3-alpha.10) (2019-06-21)
 
 
