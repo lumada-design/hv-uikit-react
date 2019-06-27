@@ -16,14 +16,18 @@
 
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 
 const styles = theme => ({
-  group: {
-    marginBottom: 20
+  colorGroup: {
+    paddingBottom: "50px"
+  },
+  title: {
+    paddingBottom: "20px"
   },
   groupName: {
     ...theme.hv.typography.mTitle,
-    marginBottom: 15
+    marginBottom: "15px"
   },
   colors: {
     display: "flex",
@@ -46,18 +50,16 @@ const styles = theme => ({
   }
 });
 
-const Group = ({ classes, name, theme, colors }) => {
+const Group = ({ classes, name, deprecated, colors }) => {
   const keys = Object.keys(colors);
-  const deprecatedColors = theme.deprecated.palette[name];
-
   return (
-    <div className={classes.group}>
+    <div>
       <div className={classes.groupName}>{name}</div>
       <div className={classes.colors}>
         {keys.map((color, idx) => (
           <div key={idx} className={classes.colorContainer}>
             <div className={classes.colorName}>{`${color} ${
-              deprecatedColors[color] ? "(deprecated)" : ""
+              deprecated[color] ? "(deprecated)" : ""
             }`}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
             <div
@@ -71,21 +73,44 @@ const Group = ({ classes, name, theme, colors }) => {
   );
 };
 
+const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
+  <div className={classes.colorGroup}>
+    <div className={classes.title}>
+      <Typography variant="xlTitle">{title}</Typography>
+    </div>
+    {keys.map((group, idx) => (
+      <Group
+        key={idx}
+        classes={classes}
+        name={group}
+        deprecated={deprecated[group]}
+        colors={colors[group]}
+      />
+    ))}
+  </div>
+);
+
 const Colors = ({ classes, theme }) => {
   const { palette } = theme.hv;
+  const vizPalette = theme.hv.viz.palette;
   const keys = Object.keys(palette);
-
+  const keyViz = Object.keys(vizPalette);
   return (
     <div>
-      {keys.map((group, idx) => (
-        <Group
-          key={idx}
-          classes={classes}
-          name={group}
-          theme={theme.hv}
-          colors={palette[group]}
-        />
-      ))}
+      <ColorsGroup
+        title="Main"
+        keys={keys}
+        deprecated={theme.hv.deprecated.palette}
+        colors={palette}
+        classes={classes}
+      />
+      <ColorsGroup
+        title="Visualisation"
+        keys={keyViz}
+        deprecated={theme.hv.deprecated.viz.palette}
+        colors={vizPalette}
+        classes={classes}
+      />
     </div>
   );
 };

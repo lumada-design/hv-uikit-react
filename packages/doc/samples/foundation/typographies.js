@@ -109,7 +109,7 @@ const Typographies = ({ classes, theme }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
-        .filter(item => !(typeof typography[item] === "string"))
+        .filter(item => !(Array.isArray(typography[item])))
         .map((group, idx) => (
           <Group
             key={idx}
