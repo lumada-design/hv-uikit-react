@@ -49,14 +49,6 @@ exports[`Input should not have the validation section 1`] = `
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -3615,14 +3607,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -6692,14 +6676,6 @@ input:-webkit-autofill {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -9512,14 +9488,6 @@ label + .MuiInput-formControl-400 {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -12051,14 +12019,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
               "support": Object {},
             },
             "typography": Object {},
-            "viz": Object {
-              "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "specialState": Object {},
-              },
-            },
           },
           "palette": Object {
             "accent": Object {
@@ -12985,14 +12945,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-413 .MuiInputBase-input-422
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -14077,14 +14029,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -17643,14 +17587,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -20720,14 +20656,6 @@ input:-webkit-autofill {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -23540,14 +23468,6 @@ label + .MuiInput-formControl-508 {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -26083,14 +26003,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -28738,14 +28650,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
               "support": Object {},
             },
             "typography": Object {},
-            "viz": Object {
-              "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "specialState": Object {},
-              },
-            },
           },
           "palette": Object {
             "accent": Object {
@@ -29680,14 +29584,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -30800,14 +30696,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-521 .MuiInputBase-input-530
                         "support": Object {},
                       },
                       "typography": Object {},
-                      "viz": Object {
-                        "palette": Object {
-                          "categorical": Object {},
-                          "polarizes": Object {},
-                          "sequential": Object {},
-                          "specialState": Object {},
-                        },
-                      },
                     },
                     "palette": Object {
                       "accent": Object {
@@ -31710,14 +31598,6 @@ exports[`Input should render correctly 1`] = `
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -35276,14 +35156,6 @@ body {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -38353,14 +38225,6 @@ input:-webkit-autofill {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -41173,14 +41037,6 @@ label + .MuiInput-formControl-80 {
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -43716,14 +43572,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -46371,14 +46219,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
               "support": Object {},
             },
             "typography": Object {},
-            "viz": Object {
-              "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "specialState": Object {},
-              },
-            },
           },
           "palette": Object {
             "accent": Object {
@@ -47303,14 +47143,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
                   "support": Object {},
                 },
                 "typography": Object {},
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "specialState": Object {},
-                  },
-                },
               },
               "palette": Object {
                 "accent": Object {
@@ -48402,14 +48234,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-93 .MuiInputBase-input-102:
                         "support": Object {},
                       },
                       "typography": Object {},
-                      "viz": Object {
-                        "palette": Object {
-                          "categorical": Object {},
-                          "polarizes": Object {},
-                          "sequential": Object {},
-                          "specialState": Object {},
-                        },
-                      },
                     },
                     "palette": Object {
                       "accent": Object {

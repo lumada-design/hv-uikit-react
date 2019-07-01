@@ -5,7 +5,8 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "license-header/header": ["error", "./resources/license-header.js"],
-    "react/jsx-wrap-multilines": ["error", {"declaration": false, "assignment": false}]
+    "react/jsx-wrap-multilines": ["error", {"declaration": false, "assignment": false}],
+    "no-underscore-dangle": ["error", { "allow": ["_offset"] }]
   },
   env: {
     browser: true,
