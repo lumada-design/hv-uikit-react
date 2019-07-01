@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.24](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.23...@hv/uikit-react-doc@1.1.3-alpha.24) (2019-07-01)
+
+
+### Features
+
+* **barchar:** implementation of barchart pattern. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([2f668a0](https://github.com/pentaho/hv-uikit-react/commit/2f668a0))
+
+
+
+
+
 ## [1.1.3-alpha.23](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.22...@hv/uikit-react-doc@1.1.3-alpha.23) (2019-06-27)
 
 
