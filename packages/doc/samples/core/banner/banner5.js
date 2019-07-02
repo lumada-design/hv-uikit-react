@@ -62,7 +62,7 @@ class SimpleBanner extends React.Component {
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          actionsOnlabel={actionsOnlabel}
+          actionsOnMessage={actionsOnlabel}
         />
       </div>
     );

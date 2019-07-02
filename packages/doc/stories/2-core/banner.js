@@ -38,6 +38,7 @@ storiesOf("Core", module).add("Banner", () => <HvBanner />, {
     },
     {
       title: "4. With actions",
+
       src: "core/banner/banner4"
     },
     {
