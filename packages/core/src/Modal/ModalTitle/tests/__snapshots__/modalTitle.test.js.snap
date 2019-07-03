@@ -36,6 +36,14 @@ exports[`ModalContent withStyles should render correctly 1`] = `
             "support": Object {},
           },
           "typography": Object {},
+          "viz": Object {
+            "palette": Object {
+              "categorical": Object {},
+              "polarizes": Object {},
+              "sequential": Object {},
+              "specialState": Object {},
+            },
+          },
         },
         "palette": Object {
           "accent": Object {
@@ -928,6 +936,14 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
             "support": Object {},
           },
           "typography": Object {},
+          "viz": Object {
+            "palette": Object {
+              "categorical": Object {},
+              "polarizes": Object {},
+              "sequential": Object {},
+              "specialState": Object {},
+            },
+          },
         },
         "palette": Object {
           "accent": Object {
@@ -1827,6 +1843,14 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
             "support": Object {},
           },
           "typography": Object {},
+          "viz": Object {
+            "palette": Object {
+              "categorical": Object {},
+              "polarizes": Object {},
+              "sequential": Object {},
+              "specialState": Object {},
+            },
+          },
         },
         "palette": Object {
           "accent": Object {
@@ -2729,6 +2753,14 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
             "support": Object {},
           },
           "typography": Object {},
+          "viz": Object {
+            "palette": Object {
+              "categorical": Object {},
+              "polarizes": Object {},
+              "sequential": Object {},
+              "specialState": Object {},
+            },
+          },
         },
         "palette": Object {
           "accent": Object {
