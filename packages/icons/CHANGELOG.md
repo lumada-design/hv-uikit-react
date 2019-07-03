@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.13](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.12...@hv/uikit-react-icons@1.1.3-alpha.13) (2019-07-03)
+
+
+### Features
+
+* **storybook:** update of storybook version. [#231](https://github.com/pentaho/hv-uikit-react/issues/231) ([4c783e9](https://github.com/pentaho/hv-uikit-react/commit/4c783e9))
+
+
+
+
+
 ## [1.1.3-alpha.12](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.11...@hv/uikit-react-icons@1.1.3-alpha.12) (2019-07-01)
 
 
