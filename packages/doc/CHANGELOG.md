@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.25](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.24...@hv/uikit-react-doc@1.1.3-alpha.25) (2019-07-03)
+
+
+### Bug Fixes
+
+* **banner:** sample 5 not working. [#234](https://github.com/pentaho/hv-uikit-react/issues/234) ([935e2c2](https://github.com/pentaho/hv-uikit-react/commit/935e2c2))
+
+
+
+
+
 ## [1.1.3-alpha.24](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.23...@hv/uikit-react-doc@1.1.3-alpha.24) (2019-07-01)
 
 
