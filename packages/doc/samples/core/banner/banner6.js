@@ -51,7 +51,7 @@ const ActionButtonCollection = () => (
 export default (
   <div>
     <div>
-      <Typography>Banner with icons</Typography>
+      <Typography variant="xsTitle">Banner with icons</Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -83,7 +83,7 @@ export default (
     />
     <p />
     <div>
-      <Typography> Banner with custom icons</Typography>
+      <Typography variant="xsTitle"> Banner with custom icons</Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -115,7 +115,9 @@ export default (
     />
     <p />
     <div>
-      <Typography>Banner with icons and label action</Typography>
+      <Typography variant="xsTitle">
+        Banner with icons and label action
+      </Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -151,7 +153,7 @@ export default (
     />
     <p />
     <div>
-      <Typography>Banner with icons and action</Typography>
+      <Typography variant="xsTitle">Banner with icons and action</Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -188,7 +190,7 @@ export default (
     />
     <p />
     <div>
-      <Typography> Banner without icons</Typography>
+      <Typography variant="xsTitle"> Banner without icons</Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -212,7 +214,10 @@ export default (
     <BannerContentWrapper content="Error" variant="error" onClose={() => {}} />
     <p />
     <div>
-      <Typography> Banner without icons and with label action</Typography>
+      <Typography variant="xsTitle">
+        {" "}
+        Banner without icons and with label action
+      </Typography>
     </div>
     <p />
     <BannerContentWrapper
@@ -244,7 +249,10 @@ export default (
     />
     <p />
     <div>
-      <Typography> Banner without icons and with action</Typography>
+      <Typography variant="xsTitle">
+        {" "}
+        Banner without icons and with action
+      </Typography>
     </div>
     <p />
     <BannerContentWrapper
