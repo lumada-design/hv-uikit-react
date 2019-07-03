@@ -24,10 +24,9 @@ const trace1 = {
   type: "bar",
   hoverinfo: "none"
 };
-
 const data = [trace1];
+
 const layout = {
-  width: 1000,
   margin: {
     l: 50,
     r: 0,

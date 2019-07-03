@@ -130,6 +130,7 @@ const BarChart = ({
         config={config}
         onHover={eventData => onHover(eventData)}
         onUnhover={eventData => onUnHover(eventData)}
+        style={{ position: "relative" }}
       />
     </div>
   );

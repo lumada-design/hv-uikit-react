@@ -27,7 +27,6 @@ const trace1 = {
 
 const data = [trace1];
 const layout = {
-  width: 1000,
   margin: {
     l: 50,
     r: 0,
