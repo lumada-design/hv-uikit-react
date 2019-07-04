@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.25](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.24...@hv/uikit-react-lab@1.1.3-alpha.25) (2019-07-04)
+
+
+### Bug Fixes
+
+* **datepicker:** fixed reset onClick not being triggered. [#243](https://github.com/pentaho/hv-uikit-react/issues/243) ([6c72a50](https://github.com/pentaho/hv-uikit-react/commit/6c72a50))
+* **datepicker:** set styling values as pixels. [#243](https://github.com/pentaho/hv-uikit-react/issues/243) ([c873c77](https://github.com/pentaho/hv-uikit-react/commit/c873c77))
+
+
+
+
+
 ## [1.1.3-alpha.24](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.23...@hv/uikit-react-lab@1.1.3-alpha.24) (2019-07-04)
 
 
