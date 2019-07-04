@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.27](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.26...@hv/uikit-react-doc@1.1.3-alpha.27) (2019-07-04)
+
+
+### Features
+
+* **barchar:** add responsive. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([d7c921a](https://github.com/pentaho/hv-uikit-react/commit/d7c921a))
+
+
+
+
+
 ## [1.1.3-alpha.26](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.25...@hv/uikit-react-doc@1.1.3-alpha.26) (2019-07-03)
 
 
