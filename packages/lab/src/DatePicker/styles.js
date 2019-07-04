@@ -21,12 +21,12 @@ const styles = () => ({
   },
   label: {
     display: "flex",
-    marginBottom: 10
+    marginBottom: "10px"
   },
   reset: {
     position: "absolute",
-    bottom: 5,
-    right: 0,
+    bottom: "5px",
+    right: "0px",
     cursor: "pointer",
     backgroundColor: "transparent",
     outline: "none",
