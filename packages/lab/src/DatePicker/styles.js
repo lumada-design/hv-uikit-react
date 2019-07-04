@@ -25,9 +25,12 @@ const styles = () => ({
   },
   reset: {
     position: "absolute",
-    bottom: "8px",
-    right: "10px",
-    cursor: "pointer"
+    bottom: 5,
+    right: 0,
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    outline: "none",
+    border: "none"
   }
 });
 
