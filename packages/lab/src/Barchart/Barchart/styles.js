@@ -16,13 +16,11 @@
 
 const styles = theme => ({
   root: {
-    display: "inline-block",
     padding: "40px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   titleContainer: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    width: "1000px"
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   subtitle: {
     marginTop: `${theme.hv.spacing.xs}px`

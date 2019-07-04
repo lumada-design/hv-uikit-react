@@ -59,7 +59,6 @@ const trace5 = {
 
 const data = [trace1, trace2, trace3, trace4, trace5];
 const layout = {
-  width: 1000,
   margin: {
     l: 50,
     r: 0,
