@@ -6527,6 +6527,7 @@ body {
                 "lTitle": "Typography-lTitle-10",
                 "labelText": "Typography-labelText-19",
                 "mTitle": "Typography-mTitle-11",
+                "margin": "Typography-margin-25",
                 "normalText": "Typography-normalText-16",
                 "sLink": "Typography-sLink-21",
                 "sTitle": "Typography-sTitle-12",
@@ -6554,6 +6555,7 @@ body {
                   "lTitle": "Typography-lTitle-10",
                   "labelText": "Typography-labelText-19",
                   "mTitle": "Typography-mTitle-11",
+                  "margin": "Typography-margin-25",
                   "normalText": "Typography-normalText-16",
                   "sLink": "Typography-sLink-21",
                   "sTitle": "Typography-sTitle-12",
@@ -7185,6 +7187,9 @@ body {
 .Typography-baseFontFamily-24 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+.Typography-margin-25 {
+  margin: 0;
+}
 
                 </style>,
                 "getKey": [Function],
@@ -7210,6 +7215,7 @@ body {
                   "lTitle": "Typography-lTitle-10",
                   "labelText": "Typography-labelText-19",
                   "mTitle": "Typography-mTitle-11",
+                  "margin": "Typography-margin-25",
                   "normalText": "Typography-normalText-16",
                   "sLink": "Typography-sLink-21",
                   "sTitle": "Typography-sTitle-12",
@@ -7356,6 +7362,9 @@ body {
                   Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
+                  Object {
+                    "margin": 0,
+                  },
                 ],
                 "map": Object {
                   ".Typography-3xlTitle-7": Object {
@@ -7437,6 +7446,9 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
+                  },
+                  ".Typography-margin-25": Object {
+                    "margin": 0,
                   },
                   ".Typography-normalText-16": Object {
                     "color": "#414141",
@@ -7574,6 +7586,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
+                  "margin": Object {
+                    "margin": 0,
+                  },
                   "normalText": Object {
                     "color": "#414141",
                     "font-size": "14px",
@@ -7647,6 +7662,7 @@ body {
                     "lTitle": "Typography-lTitle-10",
                     "labelText": "Typography-labelText-19",
                     "mTitle": "Typography-mTitle-11",
+                    "margin": "Typography-margin-25",
                     "normalText": "Typography-normalText-16",
                     "sLink": "Typography-sLink-21",
                     "sTitle": "Typography-sTitle-12",
@@ -8221,6 +8237,9 @@ body {
                     "fontWeight": "600",
                     "letterSpacing": "0.02em",
                     "lineHeight": "30px",
+                  },
+                  "margin": Object {
+                    "margin": 0,
                   },
                   "normalText": Object {
                     "color": "#414141",
@@ -10140,6 +10159,7 @@ body {
                     "lTitle": "Typography-lTitle-10",
                     "labelText": "Typography-labelText-19",
                     "mTitle": "Typography-mTitle-11",
+                    "margin": "Typography-margin-25",
                     "normalText": "Typography-normalText-16",
                     "sLink": "Typography-sLink-21",
                     "sTitle": "Typography-sTitle-12",
@@ -10150,6 +10170,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-14",
                   }
                 }
+                paragraph={false}
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -11032,11 +11053,11 @@ body {
                 }
                 variant="normalText"
               >
-                <span
-                  className="Typography-normalText-16 Typography-baseFontFamily-24"
+                <p
+                  className="Typography-normalText-16 Typography-baseFontFamily-24 Typography-margin-25"
                 >
                   Navigation text
-                </span>
+                </p>
               </Typography>
             </WithStyles(Typography)>
           </div>

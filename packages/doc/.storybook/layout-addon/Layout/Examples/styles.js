@@ -18,7 +18,7 @@ const styles = theme => ({
   root: {
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     lineHeight: "50px",
-    marginTop: 40
+    margin: "40px 0 30px"
   },
   titleContainer: {
     marginBottom: "10px",
