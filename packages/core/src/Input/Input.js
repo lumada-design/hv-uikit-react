@@ -327,7 +327,68 @@ HvInput.propTypes = {
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the container of the input.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to input root which is comprising of everything but the labels and descriptions.
+     */
+    inputRoot: PropTypes.string,
+    /**
+     * Styles applied to input root when it is disabled.
+     */
+    inputRootDisabled: PropTypes.string,
+    /**
+     * Styles applied to input root when it is focused.
+     */
+    inputRootFocused: PropTypes.string,
+    /**
+     * Styles applied to input html element.
+     */
+    input: PropTypes.string,
+    /**
+     * Styles applied to input html element when it is disabled.
+     */
+    inputDisabled: PropTypes.string,
+    /**
+     * Styles applied to input html element when it is multiline mode.
+     */
+    multiLine: PropTypes.string,
+    /**
+     * Styles applied to the label element.
+     */
+    label: PropTypes.string,
+    /**
+     * Styles applied to the description.
+     */
+    text: PropTypes.string,
+    /**
+     * Styles applied to the description when it is showing an information.
+     */
+    textInfo: PropTypes.string,
+    /**
+     * Styles applied to the description when it is showing a warning.
+     */
+    textWarning: PropTypes.string,
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the container of the icon.
+     */
+    iconContainer: PropTypes.string,
+    /**
+     * Styles applied to the icon used to clean the input.
+     */
+    iconClear: PropTypes.string,
+    /**
+     * IE11 specific styling.
+     */
+    "@global": PropTypes.string,
+  }).isRequired,
   /**
    * An Object containing the various text associated with the input.
    *
