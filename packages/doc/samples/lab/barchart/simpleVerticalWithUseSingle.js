@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import BarchartControl from "@hv/uikit-react-lab/dist/Barchart/BarchartControl";
+import Barchart from "@hv/uikit-react-lab/dist/Barchart";
 
 const trace1 = {
   x: ["January", "February", "March"],
@@ -27,48 +27,21 @@ const trace1 = {
 
 const data = [trace1];
 const layout = {
-  margin: {
-    l: 50,
-    r: 0,
-    b: 50,
-    t: 0,
-    pad: 0
-  },
-  bargap: 0.25,
-  bargroupgap: 0.25,
-  legend: {
-    x: 1,
-    y: 4,
-    orientation: "h",
-    xanchor: "right"
-  },
   xaxis: {
     title: {
-      text: "2018",
-      x: 0,
-      y: 0,
-      xref: "paper",
-      yref: "paper"
-    },
-    ticks: "outside",
-    ticklen: 1
+      text: "2018"
+    }
   },
   yaxis: {
     title: {
       text: "Thousands of Dollars ($)"
-    },
-    ticks: "outside",
-    ticklen: 1,
-
-    dtick: 2000,
-    mirror: "allticks",
-    side: "left"
+    }
   }
 };
 
 export default (
   <div>
-    <BarchartControl
+    <Barchart
       title="Simple Vertical Bar Chart"
       subtitle="Sales performance (YTD)"
       data={data}

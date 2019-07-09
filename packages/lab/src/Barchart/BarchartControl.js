@@ -33,6 +33,7 @@ import Tooltip from "./Tooltip";
  * @constructor
  */
 const BarchartControl = ({
+  classes,
   title,
   subtitle,
   data,
@@ -86,7 +87,7 @@ const BarchartControl = ({
   };
 
   return (
-    <div>
+    <div classes={classes}>
       {isHover && (
         <Tooltip
           coordinates={coordinates}
@@ -109,6 +110,10 @@ const BarchartControl = ({
 };
 
 BarchartControl.propTypes = {
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
+  classes: PropTypes.instanceOf(Object),
   /**
    * Title of the chart.
    */
@@ -136,6 +141,7 @@ BarchartControl.propTypes = {
 };
 
 BarchartControl.defaultProps = {
+  classes: null,
   title: "",
   subtitle: "",
   useSingle: false,

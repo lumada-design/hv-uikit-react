@@ -60,7 +60,7 @@ SingleTooltip.propTypes = {
   /**
    * Value of the chart.
    */
-  value: PropTypes.string.isRequired
+  value: PropTypes.number.isRequired
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

@@ -59,42 +59,16 @@ const trace5 = {
 
 const data = [trace1, trace2, trace3, trace4, trace5];
 const layout = {
-  margin: {
-    l: 50,
-    r: 0,
-    b: 50,
-    t: 0,
-    pad: 0
-  },
   barmode: "stack",
-  bargap: 0.25,
-  bargroupgap: 0.25,
-  legend: {
-    x: 1,
-    y: 4,
-    orientation: "h",
-    xanchor: "right"
-  },
   xaxis: {
     title: {
-      text: "Axis description",
-      x: 0,
-      y: 0,
-      xref: "paper",
-      yref: "paper"
-    },
-    ticks: "outside",
-    ticklen: 1
+      text: "Axis description"
+    }
   },
   yaxis: {
     title: {
       text: "Thousands of Dollars ($)"
-    },
-    ticks: "outside",
-    ticklen: 1,
-    dtick: 2000,
-    mirror: "allticks",
-    side: "left"
+    }
   }
 };
 
