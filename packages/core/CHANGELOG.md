@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.22](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.21...@hv/uikit-react-core@1.1.3-alpha.22) (2019-07-09)
+
+
+### Bug Fixes
+
+* **input:** missing css documentation.[#260](https://github.com/pentaho/hv-uikit-react/issues/260) ([db431e1](https://github.com/pentaho/hv-uikit-react/commit/db431e1))
+
+
+
+
+
 ## [1.1.3-alpha.21](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.20...@hv/uikit-react-core@1.1.3-alpha.21) (2019-07-08)
 
 
