@@ -72,7 +72,7 @@ class NavigationAnchors extends React.Component {
                   root: classes.listItemRoot,
                   gutters: classes.listItemGutters
                 }}
-                key={option.label}
+                key={option.key || option.label}
                 onClick={event => this.handleListItemClick(event, index)}
                 selected={selectedIndex === index}
               >
@@ -90,7 +90,7 @@ class NavigationAnchors extends React.Component {
 
             if (href) {
               return (
-                <HvLink route={`#${options[index].value}`} key={option.label}>
+                <HvLink route={`#${options[index].value}`} key={option.key || option.label}>
                   {listItem}
                 </HvLink>
               );
