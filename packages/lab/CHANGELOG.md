@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.28](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.27...@hv/uikit-react-lab@1.1.3-alpha.28) (2019-07-10)
+
+
+### Features
+
+* **lab-navigationanchors:** ability to have custom keys for listitems ([d1d28e8](https://github.com/pentaho/hv-uikit-react/commit/d1d28e8))
+
+
+
+
+
 ## [1.1.3-alpha.27](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.26...@hv/uikit-react-lab@1.1.3-alpha.27) (2019-07-09)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
