@@ -38,11 +38,7 @@ const Main = ({ classes, children, context, config }) => {
   const { title, description, designSystemLink } = parameters;
   return (
     <>
-      <div
-        className={classNames([
-          classes.header
-        ])}
-      >
+      <div className={classNames([classes.header])}>
         <div>
           {kind} - <span className={classes.name}>{story}</span>
         </div>
@@ -68,7 +64,6 @@ const Main = ({ classes, children, context, config }) => {
               className={classes.description}
               dangerouslySetInnerHTML={{ __html: description }}
             />
-
           </>
         ) : (
           children
