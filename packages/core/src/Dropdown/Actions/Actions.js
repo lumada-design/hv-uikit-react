@@ -20,10 +20,10 @@ import HvButton from "../../Button";
 
 const Actions = ({ classes, onCancel, onApply, cancelLabel, applyLabel }) => (
   <div className={classes.root}>
-    <HvButton className={classes.button} onClick={onCancel} colorType="link">
+    <HvButton className={classes.button} onClick={onCancel} category="ghost">
       {cancelLabel}
     </HvButton>
-    <HvButton className={classes.button} onClick={onApply} colorType="link">
+    <HvButton className={classes.button} onClick={onApply} category="ghost">
       {applyLabel}
     </HvButton>
   </div>
