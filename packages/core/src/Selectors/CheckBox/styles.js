@@ -21,9 +21,6 @@ const styles = theme => ({
     marginLeft: 0,
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
-    },
-    "&:focus-within": {
-      border: `solid 1px ${theme.hv.palette.accent.acce2h}`
     }
   },
   labelTypography: {
@@ -44,7 +41,7 @@ const styles = theme => ({
     paddingLeft: "8px"
   },
   checkBox: {
-    padding: "8px"
+    padding: "1px"
   },
   icon: {
     width: "16px",

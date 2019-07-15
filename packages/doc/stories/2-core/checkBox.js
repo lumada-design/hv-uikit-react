@@ -21,41 +21,33 @@ import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
 storiesOf("Core", module).add("CheckBox", () => <HvCheckBox />, {
   title: "Checkbox selector",
   description:
-    "A checkbox selector that allows selecting a value, with 3 possible states: empty, full or intermediate",
+    "A checkbox selector used to present the user with a range of options, from which the user may select any number of options to complete their task.",
   usage: "import { HvCheckbox } from '@hv/uikit-react-core/dist/Selectors'",
   examples: [
     {
-      title: "1. Simple",
-      description: "Simple checkbox with no state management",
+      title: "1. Enabled",
       src: "core/checkbox/checkboxSimple"
     },
     {
-      title: "2. Disabled",
-      description:
-        "Simple checkbox with no state management but disable not allowing interactions",
+      title: "2. Disabled ",
       src: "core/checkbox/checkboxDisabled"
     },
     {
       title: "3. With label",
-      description: "Checkbox that has a label with no state management",
       src: "core/checkbox/checkboxLabel"
     },
     {
       title: "4. Disabled with label",
-      description:
-        "Checkbox that has a label with no state management but disable not allowing interactions",
       src: "core/checkbox/checkboxLabelDisabled"
     },
     {
       title: "5. With click action",
-      description:
-        "Checkbox with click action and no state management, the onChange returns the value assigned",
+      description: "Returns the value assigned on click",
       src: "core/checkbox/checkboxOnChange"
     },
     {
-      title: "6. Disabled with click action",
-      description:
-        "Checkbox with click action and no state management but disable not allowing interactions",
+      title: "6. Disabled with no click action",
+      description: "When disabled prevents click actions to be triggered",
       src: "core/checkbox/checkboxOnChangeDisabled"
     },
     {
