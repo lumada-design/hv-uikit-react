@@ -17,7 +17,8 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import * as iconComponentList from "@hv/uikit-react-icons/dist/index";
+import * as dawnIconComponentList from "@hv/uikit-react-icons/dist/DawnTheme/index";
+import * as wickedIconComponentList from "@hv/uikit-react-icons/dist/WickedTheme/index";
 
 const styles = theme => ({
   groupContainer: {
@@ -41,10 +42,12 @@ const styles = theme => ({
   }
 });
 
-const keys = Object.keys(iconComponentList);
+const keys = Array.from(new Set([...Object.keys(dawnIconComponentList), ...Object.keys(wickedIconComponentList)])).sort();
 
-const Group = ({ groupLabel, classes }) => {
-  let groupLabelLength = groupLabel.length * -1;
+const Group = ({ groupLabel, classes, theme }) => {
+  const groupLabelLength = groupLabel.length * -1;
+
+  const iconComponentList = theme.hv.type === 'dark' ? wickedIconComponentList : dawnIconComponentList;
 
   return (
     <div className={classes.groupContainer}>
@@ -58,6 +61,7 @@ const Group = ({ groupLabel, classes }) => {
           .filter(iconName => iconName.slice(groupLabelLength) === groupLabel)
           .map(icon => (
             <Icon
+              key={icon}
               name={icon}
               classes={classes}
               Component={iconComponentList[icon]}
@@ -70,20 +74,26 @@ const Group = ({ groupLabel, classes }) => {
 
 const Icon = ({ name, Component, classes }) => (
   <div className={classes.iconContainer}>
-    <Component />
+    { Component != null ?
+      (
+        <Component />
+      ) : (
+        <span style={{height: "100%", display: "block", fontWeight: "bold", color: "orangered"}}>Missing!</span>
+      )
+    }
     <div>
       <HvTypography variant={"disabledText"}>{name}</HvTypography>
     </div>
   </div>
 );
 
-const Icons = ({ classes }) => {
+const Icons = ({ classes, theme }) => {
   return (
     <div>
-      <Group groupLabel="XS" classes={classes} />
-      <Group groupLabel="S" classes={classes} />
-      <Group groupLabel="M" classes={classes} />
-      <Group groupLabel="L" classes={classes} />
+      <Group groupLabel="XS" classes={classes} theme={theme} />
+      <Group groupLabel="S" classes={classes} theme={theme} />
+      <Group groupLabel="M" classes={classes} theme={theme} />
+      <Group groupLabel="L" classes={classes} theme={theme} />
     </div>
   );
 };
