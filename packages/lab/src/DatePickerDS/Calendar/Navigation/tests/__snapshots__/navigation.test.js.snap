@@ -10115,25 +10115,14 @@ body {
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="DropLeft.XS"
-                transform="translate(-448 -857)"
-              >
-                <rect
-                  data-name="Rectangle 315"
-                  fill="none"
-                  height={32}
-                  id="Rectangle_315"
-                  transform="translate(448 857)"
-                  width={32}
-                />
-                <path
-                  d="M464.9,877.6l-4.6-4.6,4.6-4.6.7.7-3.9,3.9,3.9,3.9Z"
-                  data-name="Path 1993"
-                  fill="#414141"
-                  id="Path_1993"
-                />
-              </g>
+              <path
+                d="M0 0h32v32H0z"
+                fill="none"
+              />
+              <path
+                d="M16.9 20.6L12.3 16l4.6-4.6.7.7-3.9 3.9 3.9 3.9z"
+                fill="#414141"
+              />
             </svg>
           </DropLeftXS>
           <div
@@ -11079,25 +11068,14 @@ body {
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="DropRight.XS"
-                transform="translate(-510 -857)"
-              >
-                <rect
-                  data-name="Rectangle 315"
-                  fill="none"
-                  height={32}
-                  id="Rectangle_315"
-                  transform="translate(510 857)"
-                  width={32}
-                />
-                <path
-                  d="M525.1,877.6l-.7-.7,3.9-3.9-3.9-3.9.7-.7,4.6,4.6Z"
-                  data-name="Path 1994"
-                  fill="#414141"
-                  id="Path_1994"
-                />
-              </g>
+              <path
+                d="M0 0h32v32H0z"
+                fill="none"
+              />
+              <path
+                d="M15.1 20.6l-.7-.7 3.9-3.9-3.9-3.9.7-.7 4.6 4.6z"
+                fill="#414141"
+              />
             </svg>
           </DropRightXS>
         </div>

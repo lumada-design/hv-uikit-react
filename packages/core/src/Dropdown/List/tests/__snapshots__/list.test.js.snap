@@ -37794,45 +37794,28 @@ body {
                       width={30}
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <path
+                        d="M0 0h32v32H0z"
+                        fill="none"
+                      />
                       <g
-                        id="Search.S"
-                        transform="translate(-450 -1614)"
+                        transform="translate(8.1 8.1)"
                       >
-                        <path
-                          d="M0,0H32V32H0Z"
-                          data-name="Path 1651"
+                        <circle
+                          cx={6}
+                          cy={6}
                           fill="none"
-                          id="Path_1651"
-                          transform="translate(450 1614)"
+                          r={6}
                         />
-                        <g
-                          id="Ellipse_203"
-                          transform="translate(458.1 1622.1)"
-                        >
-                          <circle
-                            cx={6}
-                            cy={6}
-                            data-name="Ellipse 233"
-                            fill="none"
-                            id="Ellipse_233"
-                            r={6}
-                          />
-                          <path
-                            d="M6,12a6,6,0,1,1,6-6A6.018,6.018,0,0,1,6,12ZM6,1A4.951,4.951,0,0,0,1,6a4.951,4.951,0,0,0,5,5,4.951,4.951,0,0,0,5-5A4.951,4.951,0,0,0,6,1Z"
-                            data-name="Path 2329"
-                            fill="#414141"
-                            id="Path_2329"
-                          />
-                        </g>
-                        <rect
-                          data-name="Rectangle 2066"
+                        <path
+                          d="M6 12a6 6 0 1 1 6-6 6.018 6.018 0 0 1-6 6zM6 1a4.951 4.951 0 0 0-5 5 4.951 4.951 0 0 0 5 5 4.951 4.951 0 0 0 5-5 4.951 4.951 0 0 0-5-5z"
                           fill="#414141"
-                          height="6.9"
-                          id="Rectangle_2066"
-                          transform="matrix(0.707, -0.707, 0.707, 0.707, 467.583, 1632.447)"
-                          width={1}
                         />
                       </g>
+                      <path
+                        d="M17.583 18.447l.707-.707 4.878 4.878-.707.707z"
+                        fill="#414141"
+                      />
                     </svg>
                   </SearchS>
                 </div>
@@ -39257,68 +39240,22 @@ body {
                                                   width={30}
                                                   xmlns="http://www.w3.org/2000/svg"
                                                 >
-                                                  <g
-                                                    id="CheckboxPartial.S"
-                                                    transform="translate(-960 -970)"
-                                                  >
-                                                    <rect
-                                                      data-name="Rectangle 1007"
-                                                      fill="none"
-                                                      height={32}
-                                                      id="Rectangle_1007"
-                                                      transform="translate(960 970)"
-                                                      width={32}
-                                                    />
-                                                    <g
-                                                      data-name="Group 6101"
-                                                      id="Group_6101"
-                                                      transform="translate(960 970)"
-                                                    >
-                                                      <g
-                                                        data-name="Group 543"
-                                                        id="Group_543"
-                                                      >
-                                                        <g
-                                                          data-name="Rectangle 176"
-                                                          id="Rectangle_176"
-                                                        >
-                                                          <rect
-                                                            data-name="Rectangle 2311"
-                                                            fill="#fff"
-                                                            height={16}
-                                                            id="Rectangle_2311"
-                                                            transform="translate(8 8)"
-                                                            width={16}
-                                                          />
-                                                          <path
-                                                            d="M24,24H8V8H24ZM9,23H23V9H9Z"
-                                                            data-name="Path 3091"
-                                                            fill="#414141"
-                                                            id="Path_3091"
-                                                          />
-                                                        </g>
-                                                      </g>
-                                                    </g>
-                                                    <g
-                                                      data-name="Group 2344"
-                                                      id="Group_2344"
-                                                      transform="translate(960 970)"
-                                                    >
-                                                      <g
-                                                        data-name="Group 2321"
-                                                        id="Group_2321"
-                                                      >
-                                                        <rect
-                                                          data-name="Rectangle 2312"
-                                                          fill="#414141"
-                                                          height={2}
-                                                          id="Rectangle_2312"
-                                                          transform="translate(12 15)"
-                                                          width={8}
-                                                        />
-                                                      </g>
-                                                    </g>
-                                                  </g>
+                                                  <path
+                                                    d="M0 0h32v32H0z"
+                                                    fill="none"
+                                                  />
+                                                  <path
+                                                    d="M8 8h16v16H8z"
+                                                    fill="#fff"
+                                                  />
+                                                  <path
+                                                    d="M24 24H8V8h16zM9 23h14V9H9z"
+                                                    fill="#414141"
+                                                  />
+                                                  <path
+                                                    d="M12 15h8v2h-8z"
+                                                    fill="#414141"
+                                                  />
                                                 </svg>
                                               </CheckboxPartialS>
                                               <input
@@ -41727,56 +41664,24 @@ body {
                                                     width={30}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                   >
+                                                    <path
+                                                      d="M0 0h32v32H0z"
+                                                      fill="none"
+                                                    />
                                                     <g
-                                                      id="CheckboxCheck.S"
-                                                      transform="translate(-889 -917)"
+                                                      fill="#414141"
                                                     >
-                                                      <rect
-                                                        data-name="Rectangle 974"
-                                                        fill="none"
-                                                        height={32}
-                                                        id="Rectangle_974"
-                                                        transform="translate(889 917)"
-                                                        width={32}
-                                                      />
-                                                      <g
-                                                        data-name="Group 6100"
-                                                        id="Group_6100"
-                                                        transform="translate(889 917)"
-                                                      >
-                                                        <g
-                                                          data-name="Group 543"
-                                                          id="Group_543"
-                                                        >
-                                                          <g
-                                                            data-name="Rectangle 176"
-                                                            id="Rectangle_176"
-                                                          >
-                                                            <rect
-                                                              data-name="Rectangle 2309"
-                                                              fill="#414141"
-                                                              height={16}
-                                                              id="Rectangle_2309"
-                                                              transform="translate(8 8)"
-                                                              width={16}
-                                                            />
-                                                            <path
-                                                              d="M24,24H8V8H24ZM9,23H23V9H9Z"
-                                                              data-name="Path 3087"
-                                                              fill="#414141"
-                                                              id="Path_3087"
-                                                            />
-                                                          </g>
-                                                        </g>
-                                                      </g>
                                                       <path
-                                                        d="M14.049,20.463l-3.756-3.756,1.414-1.414,2.244,2.244,6.3-7.2,1.506,1.317Z"
-                                                        data-name="Path 3089"
-                                                        fill="#fff"
-                                                        id="Path_3089"
-                                                        transform="translate(889 917)"
+                                                        d="M8 8h16v16H8z"
+                                                      />
+                                                      <path
+                                                        d="M24 24H8V8h16zM9 23h14V9H9z"
                                                       />
                                                     </g>
+                                                    <path
+                                                      d="M14.049 20.463l-3.756-3.756 1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                                      fill="#fff"
+                                                    />
                                                   </svg>
                                                 </CheckboxCheckS>
                                                 <input
@@ -44182,57 +44087,22 @@ body {
                                                     width={30}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                   >
-                                                    <g
-                                                      id="Checkbox.S"
-                                                      transform="translate(-501 -2775)"
-                                                    >
-                                                      <rect
-                                                        data-name="Rectangle 974"
-                                                        fill="none"
-                                                        height={32}
-                                                        id="Rectangle_974"
-                                                        transform="translate(501 2775)"
-                                                        width={32}
-                                                      />
-                                                      <rect
-                                                        data-name="Rectangle 2030"
-                                                        fill="none"
-                                                        height={16}
-                                                        id="Rectangle_2030"
-                                                        transform="translate(509 2783)"
-                                                        width={16}
-                                                      />
-                                                      <g
-                                                        data-name="Group 6100"
-                                                        id="Group_6100"
-                                                        transform="translate(501 2775)"
-                                                      >
-                                                        <g
-                                                          data-name="Group 543"
-                                                          id="Group_543"
-                                                        >
-                                                          <g
-                                                            data-name="Rectangle 176"
-                                                            id="Rectangle_176"
-                                                          >
-                                                            <rect
-                                                              data-name="Rectangle 2310"
-                                                              fill="#fff"
-                                                              height={16}
-                                                              id="Rectangle_2310"
-                                                              transform="translate(8 8)"
-                                                              width={16}
-                                                            />
-                                                            <path
-                                                              d="M24,24H8V8H24ZM9,23H23V9H9Z"
-                                                              data-name="Path 3090"
-                                                              fill="#414141"
-                                                              id="Path_3090"
-                                                            />
-                                                          </g>
-                                                        </g>
-                                                      </g>
-                                                    </g>
+                                                    <path
+                                                      d="M0 0h32v32H0z"
+                                                      fill="none"
+                                                    />
+                                                    <path
+                                                      d="M8 8h16v16H8z"
+                                                      fill="none"
+                                                    />
+                                                    <path
+                                                      d="M8 8h16v16H8z"
+                                                      fill="#fff"
+                                                    />
+                                                    <path
+                                                      d="M24 24H8V8h16zM9 23h14V9H9z"
+                                                      fill="#414141"
+                                                    />
                                                   </svg>
                                                 </CheckboxS>
                                                 <input
@@ -46638,57 +46508,22 @@ body {
                                                     width={30}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                   >
-                                                    <g
-                                                      id="Checkbox.S"
-                                                      transform="translate(-501 -2775)"
-                                                    >
-                                                      <rect
-                                                        data-name="Rectangle 974"
-                                                        fill="none"
-                                                        height={32}
-                                                        id="Rectangle_974"
-                                                        transform="translate(501 2775)"
-                                                        width={32}
-                                                      />
-                                                      <rect
-                                                        data-name="Rectangle 2030"
-                                                        fill="none"
-                                                        height={16}
-                                                        id="Rectangle_2030"
-                                                        transform="translate(509 2783)"
-                                                        width={16}
-                                                      />
-                                                      <g
-                                                        data-name="Group 6100"
-                                                        id="Group_6100"
-                                                        transform="translate(501 2775)"
-                                                      >
-                                                        <g
-                                                          data-name="Group 543"
-                                                          id="Group_543"
-                                                        >
-                                                          <g
-                                                            data-name="Rectangle 176"
-                                                            id="Rectangle_176"
-                                                          >
-                                                            <rect
-                                                              data-name="Rectangle 2310"
-                                                              fill="#fff"
-                                                              height={16}
-                                                              id="Rectangle_2310"
-                                                              transform="translate(8 8)"
-                                                              width={16}
-                                                            />
-                                                            <path
-                                                              d="M24,24H8V8H24ZM9,23H23V9H9Z"
-                                                              data-name="Path 3090"
-                                                              fill="#414141"
-                                                              id="Path_3090"
-                                                            />
-                                                          </g>
-                                                        </g>
-                                                      </g>
-                                                    </g>
+                                                    <path
+                                                      d="M0 0h32v32H0z"
+                                                      fill="none"
+                                                    />
+                                                    <path
+                                                      d="M8 8h16v16H8z"
+                                                      fill="none"
+                                                    />
+                                                    <path
+                                                      d="M8 8h16v16H8z"
+                                                      fill="#fff"
+                                                    />
+                                                    <path
+                                                      d="M24 24H8V8h16zM9 23h14V9H9z"
+                                                      fill="#414141"
+                                                    />
                                                   </svg>
                                                 </CheckboxS>
                                                 <input

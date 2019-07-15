@@ -8026,81 +8026,19 @@ body {
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <path
+                    d="M0 0h32v32H0z"
+                    fill="none"
+                  />
                   <g
-                    id="Calendar.S"
-                    transform="translate(-242 -649)"
+                    fill="#414141"
                   >
                     <path
-                      d="M0,0H32V32H0Z"
-                      data-name="Path 664"
-                      fill="none"
-                      id="Path_664"
-                      transform="translate(242 649)"
+                      d="M18.5 10V8h-1v2h-3V8h-1v2H8v14h16V10zM23 23H9V11h14z"
                     />
-                    <g
-                      data-name="Group 3981"
-                      id="Group_3981"
-                    >
-                      <path
-                        d="M260.5,659v-2h-1v2h-3v-2h-1v2H250v14h16V659Zm4.5,13H251V660h14Z"
-                        data-name="Path 1897"
-                        fill="#414141"
-                        id="Path_1897"
-                      />
-                      <g
-                        data-name="Group 3980"
-                        id="Group_3980"
-                      >
-                        <rect
-                          data-name="Rectangle 1862"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1862"
-                          transform="translate(253 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1863"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1863"
-                          transform="translate(257 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1864"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1864"
-                          transform="translate(261 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1865"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1865"
-                          transform="translate(253 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1866"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1866"
-                          transform="translate(257 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1867"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1867"
-                          transform="translate(261 666.9)"
-                          width={2}
-                        />
-                      </g>
-                    </g>
+                    <path
+                      d="M11 13.9h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"
+                    />
                   </g>
                 </svg>
               </CalendarS>
@@ -16172,81 +16110,19 @@ body {
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <path
+                    d="M0 0h32v32H0z"
+                    fill="none"
+                  />
                   <g
-                    id="Calendar.S"
-                    transform="translate(-242 -649)"
+                    fill="#414141"
                   >
                     <path
-                      d="M0,0H32V32H0Z"
-                      data-name="Path 664"
-                      fill="none"
-                      id="Path_664"
-                      transform="translate(242 649)"
+                      d="M18.5 10V8h-1v2h-3V8h-1v2H8v14h16V10zM23 23H9V11h14z"
                     />
-                    <g
-                      data-name="Group 3981"
-                      id="Group_3981"
-                    >
-                      <path
-                        d="M260.5,659v-2h-1v2h-3v-2h-1v2H250v14h16V659Zm4.5,13H251V660h14Z"
-                        data-name="Path 1897"
-                        fill="#414141"
-                        id="Path_1897"
-                      />
-                      <g
-                        data-name="Group 3980"
-                        id="Group_3980"
-                      >
-                        <rect
-                          data-name="Rectangle 1862"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1862"
-                          transform="translate(253 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1863"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1863"
-                          transform="translate(257 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1864"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1864"
-                          transform="translate(261 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1865"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1865"
-                          transform="translate(253 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1866"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1866"
-                          transform="translate(257 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1867"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1867"
-                          transform="translate(261 666.9)"
-                          width={2}
-                        />
-                      </g>
-                    </g>
+                    <path
+                      d="M11 13.9h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"
+                    />
                   </g>
                 </svg>
               </CalendarS>
@@ -27926,81 +27802,19 @@ body {
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <path
+                    d="M0 0h32v32H0z"
+                    fill="none"
+                  />
                   <g
-                    id="Calendar.S"
-                    transform="translate(-242 -649)"
+                    fill="#414141"
                   >
                     <path
-                      d="M0,0H32V32H0Z"
-                      data-name="Path 664"
-                      fill="none"
-                      id="Path_664"
-                      transform="translate(242 649)"
+                      d="M18.5 10V8h-1v2h-3V8h-1v2H8v14h16V10zM23 23H9V11h14z"
                     />
-                    <g
-                      data-name="Group 3981"
-                      id="Group_3981"
-                    >
-                      <path
-                        d="M260.5,659v-2h-1v2h-3v-2h-1v2H250v14h16V659Zm4.5,13H251V660h14Z"
-                        data-name="Path 1897"
-                        fill="#414141"
-                        id="Path_1897"
-                      />
-                      <g
-                        data-name="Group 3980"
-                        id="Group_3980"
-                      >
-                        <rect
-                          data-name="Rectangle 1862"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1862"
-                          transform="translate(253 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1863"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1863"
-                          transform="translate(257 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1864"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1864"
-                          transform="translate(261 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1865"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1865"
-                          transform="translate(253 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1866"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1866"
-                          transform="translate(257 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1867"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1867"
-                          transform="translate(261 666.9)"
-                          width={2}
-                        />
-                      </g>
-                    </g>
+                    <path
+                      d="M11 13.9h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"
+                    />
                   </g>
                 </svg>
               </CalendarS>
@@ -36067,81 +35881,19 @@ body {
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <path
+                    d="M0 0h32v32H0z"
+                    fill="none"
+                  />
                   <g
-                    id="Calendar.S"
-                    transform="translate(-242 -649)"
+                    fill="#414141"
                   >
                     <path
-                      d="M0,0H32V32H0Z"
-                      data-name="Path 664"
-                      fill="none"
-                      id="Path_664"
-                      transform="translate(242 649)"
+                      d="M18.5 10V8h-1v2h-3V8h-1v2H8v14h16V10zM23 23H9V11h14z"
                     />
-                    <g
-                      data-name="Group 3981"
-                      id="Group_3981"
-                    >
-                      <path
-                        d="M260.5,659v-2h-1v2h-3v-2h-1v2H250v14h16V659Zm4.5,13H251V660h14Z"
-                        data-name="Path 1897"
-                        fill="#414141"
-                        id="Path_1897"
-                      />
-                      <g
-                        data-name="Group 3980"
-                        id="Group_3980"
-                      >
-                        <rect
-                          data-name="Rectangle 1862"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1862"
-                          transform="translate(253 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1863"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1863"
-                          transform="translate(257 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1864"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1864"
-                          transform="translate(261 662.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1865"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1865"
-                          transform="translate(253 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1866"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1866"
-                          transform="translate(257 666.9)"
-                          width={2}
-                        />
-                        <rect
-                          data-name="Rectangle 1867"
-                          fill="#414141"
-                          height={2}
-                          id="Rectangle_1867"
-                          transform="translate(261 666.9)"
-                          width={2}
-                        />
-                      </g>
-                    </g>
+                    <path
+                      d="M11 13.9h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"
+                    />
                   </g>
                 </svg>
               </CalendarS>
