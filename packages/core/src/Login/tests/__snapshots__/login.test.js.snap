@@ -58828,57 +58828,22 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                                                             width={30}
                                                             xmlns="http://www.w3.org/2000/svg"
                                                           >
-                                                            <g
-                                                              id="Checkbox.S"
-                                                              transform="translate(-501 -2775)"
-                                                            >
-                                                              <rect
-                                                                data-name="Rectangle 974"
-                                                                fill="none"
-                                                                height={32}
-                                                                id="Rectangle_974"
-                                                                transform="translate(501 2775)"
-                                                                width={32}
-                                                              />
-                                                              <rect
-                                                                data-name="Rectangle 2030"
-                                                                fill="none"
-                                                                height={16}
-                                                                id="Rectangle_2030"
-                                                                transform="translate(509 2783)"
-                                                                width={16}
-                                                              />
-                                                              <g
-                                                                data-name="Group 6100"
-                                                                id="Group_6100"
-                                                                transform="translate(501 2775)"
-                                                              >
-                                                                <g
-                                                                  data-name="Group 543"
-                                                                  id="Group_543"
-                                                                >
-                                                                  <g
-                                                                    data-name="Rectangle 176"
-                                                                    id="Rectangle_176"
-                                                                  >
-                                                                    <rect
-                                                                      data-name="Rectangle 2310"
-                                                                      fill="#fff"
-                                                                      height={16}
-                                                                      id="Rectangle_2310"
-                                                                      transform="translate(8 8)"
-                                                                      width={16}
-                                                                    />
-                                                                    <path
-                                                                      d="M24,24H8V8H24ZM9,23H23V9H9Z"
-                                                                      data-name="Path 3090"
-                                                                      fill="#414141"
-                                                                      id="Path_3090"
-                                                                    />
-                                                                  </g>
-                                                                </g>
-                                                              </g>
-                                                            </g>
+                                                            <path
+                                                              d="M0 0h32v32H0z"
+                                                              fill="none"
+                                                            />
+                                                            <path
+                                                              d="M8 8h16v16H8z"
+                                                              fill="none"
+                                                            />
+                                                            <path
+                                                              d="M8 8h16v16H8z"
+                                                              fill="#fff"
+                                                            />
+                                                            <path
+                                                              d="M24 24H8V8h16zM9 23h14V9H9z"
+                                                              fill="#414141"
+                                                            />
                                                           </svg>
                                                         </CheckboxS>
                                                         <input

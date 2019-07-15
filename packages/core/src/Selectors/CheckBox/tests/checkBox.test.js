@@ -20,6 +20,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
+import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox.S";
+
 import CheckBoxWithStyles from "../index";
 import CheckBox from "../CheckBox";
 import labelPositions from "../../labelPositions";
@@ -34,7 +36,6 @@ describe("CheckBox withStyles", () => {
       .children()
       .props().className;
 
-  const emptyIcon = "Checkbox.S";
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
@@ -69,16 +70,18 @@ describe("CheckBox withStyles", () => {
       <HvProvider>
         <CheckBoxWithStyles />
       </HvProvider>
-    )
-      .find(CheckBox)
-      .html();
+    );
 
-    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    const component = mountWrapper.find(CheckBox);
+    const componentHtml = component.html();
+
+    expect(component.find(CheckBoxIcon).length).toBe(1);
+
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(false);
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(false);
   });
 
@@ -87,16 +90,18 @@ describe("CheckBox withStyles", () => {
       <HvProvider>
         <CheckBoxWithStyles disabled />
       </HvProvider>
-    )
-      .find(CheckBox)
-      .html();
+    );
 
-    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    const component = mountWrapper.find(CheckBox);
+    const componentHtml = component.html();
+
+    expect(component.find(CheckBoxIcon).length).toBe(1);
+
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(true);
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(true);
   });
 
