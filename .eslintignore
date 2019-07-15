@@ -13,6 +13,7 @@ doc
 
 examples/**/*
 generator/**/*
+automation/**/*
 
 resources/license-header.js
 commitlint.config.js

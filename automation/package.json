@@ -1,0 +1,60 @@
+{
+  "name": "@hv/uikit-react-automation",
+  "version": "1.1.3-alpha.27",
+  "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
+  },
+  "scripts": {
+    "dev": "start-storybook -p 9002",
+    "build": "build-storybook -o dist"
+  },
+  "dependencies": {
+    "@hv/uikit-common-themes": "^1.1.1-alpha.6",
+    "@hv/uikit-react-core": "^1.1.3-alpha.20",
+    "@hv/uikit-react-icons": "^1.1.3-alpha.13",
+    "@hv/uikit-react-lab": "^1.1.3-alpha.24",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "3.0.2",
+    "@storybook/react": "^5.1.9",
+    "classnames": "2.2.6",
+    "file-loader": "^4.0.0",
+    "moment": "2.24.0",
+    "prop-types": "15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-google-charts": "3.0.11",
+    "react-syntax-highlighter": "10.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-transform-regenerator": "7.4.0",
+    "@babel/plugin-transform-runtime": "7.4.0",
+    "@babel/preset-env": "7.4.2",
+    "@babel/preset-react": "7.0.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-console": "^1.1.1",
+    "@storybook/addon-options": "5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/cli": "5.1.9",
+    "@storybook/theming": "5.1.9",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "3.2.0",
+    "babel-plugin-react-docgen": "3.0.0",
+    "del-cli": "1.1.0",
+    "raw-loader": "1.0.0",
+    "react-docgen": "4.1.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
