@@ -35,13 +35,17 @@ const defaultVariantMapping = {
   xxsTitle: "h6",
   highlightText: "p",
   normalText: "p",
-  inlineLink: "p",
+  selectedText: "p",
   disabledButtonText: "p",
+  placeholderText: "p",
+  inlineLink: "p",
+  selectedNavText: "p",
   labelText: "p",
   infoText: "p",
   sLink: "p",
-  disabledText: "p",
-  vizText: "p"
+  sText: "p",
+  vizText: "p",
+  disabledText: "p"
 };
 
 /**

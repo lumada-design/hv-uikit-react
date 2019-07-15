@@ -6555,20 +6555,24 @@ body {
                 "3xlTitle": "Typography-3xlTitle-6",
                 "4xlTitle": "Typography-4xlTitle-5",
                 "5xlTitle": "Typography-5xlTitle-4",
-                "baseFontFamily": "Typography-baseFontFamily-23",
-                "disabledButtonText": "Typography-disabledButtonText-17",
-                "disabledText": "Typography-disabledText-21",
+                "baseFontFamily": "Typography-baseFontFamily-27",
+                "disabledButtonText": "Typography-disabledButtonText-18",
+                "disabledText": "Typography-disabledText-25",
                 "highlightText": "Typography-highlightText-14",
-                "infoText": "Typography-infoText-19",
-                "inlineLink": "Typography-inlineLink-16",
+                "infoText": "Typography-infoText-23",
+                "inlineLink": "Typography-inlineLink-17",
                 "lTitle": "Typography-lTitle-9",
-                "labelText": "Typography-labelText-18",
+                "labelText": "Typography-labelText-22",
                 "mTitle": "Typography-mTitle-10",
-                "margin": "Typography-margin-24",
+                "margin": "Typography-margin-28",
                 "normalText": "Typography-normalText-15",
-                "sLink": "Typography-sLink-20",
+                "placeholderText": "Typography-placeholderText-19",
+                "sLink": "Typography-sLink-24",
+                "sText": "Typography-sText-21",
                 "sTitle": "Typography-sTitle-11",
-                "vizText": "Typography-vizText-22",
+                "selectedNavText": "Typography-selectedNavText-20",
+                "selectedText": "Typography-selectedText-16",
+                "vizText": "Typography-vizText-26",
                 "xlTitle": "Typography-xlTitle-8",
                 "xsTitle": "Typography-xsTitle-12",
                 "xxlTitle": "Typography-xxlTitle-7",
@@ -6583,20 +6587,24 @@ body {
                   "3xlTitle": "Typography-3xlTitle-6",
                   "4xlTitle": "Typography-4xlTitle-5",
                   "5xlTitle": "Typography-5xlTitle-4",
-                  "baseFontFamily": "Typography-baseFontFamily-23",
-                  "disabledButtonText": "Typography-disabledButtonText-17",
-                  "disabledText": "Typography-disabledText-21",
+                  "baseFontFamily": "Typography-baseFontFamily-27",
+                  "disabledButtonText": "Typography-disabledButtonText-18",
+                  "disabledText": "Typography-disabledText-25",
                   "highlightText": "Typography-highlightText-14",
-                  "infoText": "Typography-infoText-19",
-                  "inlineLink": "Typography-inlineLink-16",
+                  "infoText": "Typography-infoText-23",
+                  "inlineLink": "Typography-inlineLink-17",
                   "lTitle": "Typography-lTitle-9",
-                  "labelText": "Typography-labelText-18",
+                  "labelText": "Typography-labelText-22",
                   "mTitle": "Typography-mTitle-10",
-                  "margin": "Typography-margin-24",
+                  "margin": "Typography-margin-28",
                   "normalText": "Typography-normalText-15",
-                  "sLink": "Typography-sLink-20",
+                  "placeholderText": "Typography-placeholderText-19",
+                  "sLink": "Typography-sLink-24",
+                  "sText": "Typography-sText-21",
                   "sTitle": "Typography-sTitle-11",
-                  "vizText": "Typography-vizText-22",
+                  "selectedNavText": "Typography-selectedNavText-20",
+                  "selectedText": "Typography-selectedText-16",
+                  "vizText": "Typography-vizText-26",
                   "xlTitle": "Typography-xlTitle-8",
                   "xsTitle": "Typography-xsTitle-12",
                   "xxlTitle": "Typography-xxlTitle-7",
@@ -7172,59 +7180,87 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-16 {
+.Typography-selectedText-16 {
+  color: #F9F9F9;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-inlineLink-17 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-17 {
+.Typography-disabledButtonText-18 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-18 {
+.Typography-placeholderText-19 {
+  color: #999999;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-selectedNavText-20 {
+  color: #CC0000;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-sText-21 {
+  color: #414141;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-labelText-22 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-19 {
+.Typography-infoText-23 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-20 {
+.Typography-sLink-24 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-21 {
+.Typography-disabledText-25 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-22 {
+.Typography-vizText-26 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-23 {
+.Typography-baseFontFamily-27 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-24 {
+.Typography-margin-28 {
   margin: 0;
 }
 
@@ -7243,20 +7279,24 @@ body {
                   "3xlTitle": "Typography-3xlTitle-6",
                   "4xlTitle": "Typography-4xlTitle-5",
                   "5xlTitle": "Typography-5xlTitle-4",
-                  "baseFontFamily": "Typography-baseFontFamily-23",
-                  "disabledButtonText": "Typography-disabledButtonText-17",
-                  "disabledText": "Typography-disabledText-21",
+                  "baseFontFamily": "Typography-baseFontFamily-27",
+                  "disabledButtonText": "Typography-disabledButtonText-18",
+                  "disabledText": "Typography-disabledText-25",
                   "highlightText": "Typography-highlightText-14",
-                  "infoText": "Typography-infoText-19",
-                  "inlineLink": "Typography-inlineLink-16",
+                  "infoText": "Typography-infoText-23",
+                  "inlineLink": "Typography-inlineLink-17",
                   "lTitle": "Typography-lTitle-9",
-                  "labelText": "Typography-labelText-18",
+                  "labelText": "Typography-labelText-22",
                   "mTitle": "Typography-mTitle-10",
-                  "margin": "Typography-margin-24",
+                  "margin": "Typography-margin-28",
                   "normalText": "Typography-normalText-15",
-                  "sLink": "Typography-sLink-20",
+                  "placeholderText": "Typography-placeholderText-19",
+                  "sLink": "Typography-sLink-24",
+                  "sText": "Typography-sText-21",
                   "sTitle": "Typography-sTitle-11",
-                  "vizText": "Typography-vizText-22",
+                  "selectedNavText": "Typography-selectedNavText-20",
+                  "selectedText": "Typography-selectedText-16",
+                  "vizText": "Typography-vizText-26",
                   "xlTitle": "Typography-xlTitle-8",
                   "xsTitle": "Typography-xsTitle-12",
                   "xxlTitle": "Typography-xxlTitle-7",
@@ -7348,6 +7388,13 @@ body {
                     "line-height": "20px",
                   },
                   Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7360,6 +7407,27 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
                     "color": "#414141",
@@ -7425,17 +7493,17 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-23": Object {
+                  ".Typography-baseFontFamily-27": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-17": Object {
+                  ".Typography-disabledButtonText-18": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-21": Object {
+                  ".Typography-disabledText-25": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
@@ -7449,14 +7517,14 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-19": Object {
+                  ".Typography-infoText-23": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-16": Object {
+                  ".Typography-inlineLink-17": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7470,7 +7538,7 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-18": Object {
+                  ".Typography-labelText-22": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
@@ -7484,7 +7552,7 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-24": Object {
+                  ".Typography-margin-28": Object {
                     "margin": 0,
                   },
                   ".Typography-normalText-15": Object {
@@ -7494,8 +7562,22 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-20": Object {
+                  ".Typography-placeholderText-19": Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-sLink-24": Object {
                     "color": "#146BD2",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  ".Typography-sText-21": Object {
+                    "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -7508,7 +7590,21 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-vizText-22": Object {
+                  ".Typography-selectedNavText-20": Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-selectedText-16": Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-vizText-26": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
@@ -7633,8 +7729,22 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
+                  "placeholderText": Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
                   "sLink": Object {
                     "color": "#146BD2",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  "sText": Object {
+                    "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -7646,6 +7756,20 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
+                  },
+                  "selectedNavText": Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  "selectedText": Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
                   },
                   "vizText": Object {
                     "color": "#414141",
@@ -7690,20 +7814,24 @@ body {
                     "3xlTitle": "Typography-3xlTitle-6",
                     "4xlTitle": "Typography-4xlTitle-5",
                     "5xlTitle": "Typography-5xlTitle-4",
-                    "baseFontFamily": "Typography-baseFontFamily-23",
-                    "disabledButtonText": "Typography-disabledButtonText-17",
-                    "disabledText": "Typography-disabledText-21",
+                    "baseFontFamily": "Typography-baseFontFamily-27",
+                    "disabledButtonText": "Typography-disabledButtonText-18",
+                    "disabledText": "Typography-disabledText-25",
                     "highlightText": "Typography-highlightText-14",
-                    "infoText": "Typography-infoText-19",
-                    "inlineLink": "Typography-inlineLink-16",
+                    "infoText": "Typography-infoText-23",
+                    "inlineLink": "Typography-inlineLink-17",
                     "lTitle": "Typography-lTitle-9",
-                    "labelText": "Typography-labelText-18",
+                    "labelText": "Typography-labelText-22",
                     "mTitle": "Typography-mTitle-10",
-                    "margin": "Typography-margin-24",
+                    "margin": "Typography-margin-28",
                     "normalText": "Typography-normalText-15",
-                    "sLink": "Typography-sLink-20",
+                    "placeholderText": "Typography-placeholderText-19",
+                    "sLink": "Typography-sLink-24",
+                    "sText": "Typography-sText-21",
                     "sTitle": "Typography-sTitle-11",
-                    "vizText": "Typography-vizText-22",
+                    "selectedNavText": "Typography-selectedNavText-20",
+                    "selectedText": "Typography-selectedText-16",
+                    "vizText": "Typography-vizText-26",
                     "xlTitle": "Typography-xlTitle-8",
                     "xsTitle": "Typography-xsTitle-12",
                     "xxlTitle": "Typography-xxlTitle-7",
@@ -8285,8 +8413,22 @@ body {
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
+                  "placeholderText": Object {
+                    "color": "#999999",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
                   "sLink": Object {
                     "color": "#146BD2",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "16px",
+                  },
+                  "sText": Object {
+                    "color": "#414141",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
@@ -8298,6 +8440,20 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "30px",
+                  },
+                  "selectedNavText": Object {
+                    "color": "#CC0000",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
+                  "selectedText": Object {
+                    "color": "#F9F9F9",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
                   },
                   "vizText": Object {
                     "color": "#414141",
@@ -10223,20 +10379,24 @@ body {
                     "3xlTitle": "Typography-3xlTitle-6",
                     "4xlTitle": "Typography-4xlTitle-5",
                     "5xlTitle": "Typography-5xlTitle-4",
-                    "baseFontFamily": "Typography-baseFontFamily-23",
-                    "disabledButtonText": "Typography-disabledButtonText-17",
-                    "disabledText": "Typography-disabledText-21",
+                    "baseFontFamily": "Typography-baseFontFamily-27",
+                    "disabledButtonText": "Typography-disabledButtonText-18",
+                    "disabledText": "Typography-disabledText-25",
                     "highlightText": "Typography-highlightText-14",
-                    "infoText": "Typography-infoText-19",
-                    "inlineLink": "Typography-inlineLink-16",
+                    "infoText": "Typography-infoText-23",
+                    "inlineLink": "Typography-inlineLink-17",
                     "lTitle": "Typography-lTitle-9",
-                    "labelText": "Typography-labelText-18",
+                    "labelText": "Typography-labelText-22",
                     "mTitle": "Typography-mTitle-10",
-                    "margin": "Typography-margin-24",
+                    "margin": "Typography-margin-28",
                     "normalText": "Typography-normalText-15",
-                    "sLink": "Typography-sLink-20",
+                    "placeholderText": "Typography-placeholderText-19",
+                    "sLink": "Typography-sLink-24",
+                    "sText": "Typography-sText-21",
                     "sTitle": "Typography-sTitle-11",
-                    "vizText": "Typography-vizText-22",
+                    "selectedNavText": "Typography-selectedNavText-20",
+                    "selectedText": "Typography-selectedText-16",
+                    "vizText": "Typography-vizText-26",
                     "xlTitle": "Typography-xlTitle-8",
                     "xsTitle": "Typography-xsTitle-12",
                     "xxlTitle": "Typography-xxlTitle-7",
@@ -11169,7 +11329,7 @@ body {
                 variant="normalText"
               >
                 <p
-                  className="Typography-normalText-15 Typography-baseFontFamily-23 Typography-margin-24"
+                  className="Typography-normalText-15 Typography-baseFontFamily-27 Typography-margin-28"
                 >
                   Mock text for the top content
                 </p>
@@ -11188,20 +11348,24 @@ body {
                     "3xlTitle": "Typography-3xlTitle-6",
                     "4xlTitle": "Typography-4xlTitle-5",
                     "5xlTitle": "Typography-5xlTitle-4",
-                    "baseFontFamily": "Typography-baseFontFamily-23",
-                    "disabledButtonText": "Typography-disabledButtonText-17",
-                    "disabledText": "Typography-disabledText-21",
+                    "baseFontFamily": "Typography-baseFontFamily-27",
+                    "disabledButtonText": "Typography-disabledButtonText-18",
+                    "disabledText": "Typography-disabledText-25",
                     "highlightText": "Typography-highlightText-14",
-                    "infoText": "Typography-infoText-19",
-                    "inlineLink": "Typography-inlineLink-16",
+                    "infoText": "Typography-infoText-23",
+                    "inlineLink": "Typography-inlineLink-17",
                     "lTitle": "Typography-lTitle-9",
-                    "labelText": "Typography-labelText-18",
+                    "labelText": "Typography-labelText-22",
                     "mTitle": "Typography-mTitle-10",
-                    "margin": "Typography-margin-24",
+                    "margin": "Typography-margin-28",
                     "normalText": "Typography-normalText-15",
-                    "sLink": "Typography-sLink-20",
+                    "placeholderText": "Typography-placeholderText-19",
+                    "sLink": "Typography-sLink-24",
+                    "sText": "Typography-sText-21",
                     "sTitle": "Typography-sTitle-11",
-                    "vizText": "Typography-vizText-22",
+                    "selectedNavText": "Typography-selectedNavText-20",
+                    "selectedText": "Typography-selectedText-16",
+                    "vizText": "Typography-vizText-26",
                     "xlTitle": "Typography-xlTitle-8",
                     "xsTitle": "Typography-xsTitle-12",
                     "xxlTitle": "Typography-xxlTitle-7",
@@ -12134,7 +12298,7 @@ body {
                 variant="mTitle"
               >
                 <h3
-                  className="Typography-mTitle-10 Typography-baseFontFamily-23 Typography-margin-24"
+                  className="Typography-mTitle-10 Typography-baseFontFamily-27 Typography-margin-28"
                 >
                   Mock text for the main content
                 </h3>

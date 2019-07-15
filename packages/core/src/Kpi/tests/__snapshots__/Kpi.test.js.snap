@@ -4549,14 +4549,14 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "comparisonContainer": "HvKpi-comparisonContainer-32",
-                "comparisons": "HvKpi-comparisons-37",
-                "indicatorText": "HvKpi-indicatorText-35",
-                "indicatorUnit": "HvKpi-indicatorUnit-34",
-                "indicatorsContainer": "HvKpi-indicatorsContainer-33",
-                "kpiContainer": "HvKpi-kpiContainer-30",
-                "spacingToTheRight": "HvKpi-spacingToTheRight-36",
-                "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-31",
+                "comparisonContainer": "HvKpi-comparisonContainer-36",
+                "comparisons": "HvKpi-comparisons-41",
+                "indicatorText": "HvKpi-indicatorText-39",
+                "indicatorUnit": "HvKpi-indicatorUnit-38",
+                "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+                "kpiContainer": "HvKpi-kpiContainer-34",
+                "spacingToTheRight": "HvKpi-spacingToTheRight-40",
+                "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
               },
               "deployed": true,
               "linked": false,
@@ -4564,14 +4564,14 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvKpi",
                 "classes": Object {
-                  "comparisonContainer": "HvKpi-comparisonContainer-32",
-                  "comparisons": "HvKpi-comparisons-37",
-                  "indicatorText": "HvKpi-indicatorText-35",
-                  "indicatorUnit": "HvKpi-indicatorUnit-34",
-                  "indicatorsContainer": "HvKpi-indicatorsContainer-33",
-                  "kpiContainer": "HvKpi-kpiContainer-30",
-                  "spacingToTheRight": "HvKpi-spacingToTheRight-36",
-                  "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-31",
+                  "comparisonContainer": "HvKpi-comparisonContainer-36",
+                  "comparisons": "HvKpi-comparisons-41",
+                  "indicatorText": "HvKpi-indicatorText-39",
+                  "indicatorUnit": "HvKpi-indicatorUnit-38",
+                  "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+                  "kpiContainer": "HvKpi-kpiContainer-34",
+                  "spacingToTheRight": "HvKpi-spacingToTheRight-40",
+                  "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5059,37 +5059,37 @@ body {
                   data-meta="HvKpi"
                 >
                   
-.HvKpi-kpiContainer-30 {
+.HvKpi-kpiContainer-34 {
   width: 100%;
   height: 100%;
 }
-.HvKpi-visualIndicatorContainer-31 {
+.HvKpi-visualIndicatorContainer-35 {
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
 }
-.HvKpi-comparisonContainer-32 {
+.HvKpi-comparisonContainer-36 {
   display: flex;
   min-height: 16px;
   align-items: flex-end;
 }
-.HvKpi-indicatorsContainer-33 {
+.HvKpi-indicatorsContainer-37 {
   display: inline-flex;
   min-height: 16px;
   margin-top: 9px;
   align-items: flex-end;
   margin-bottom: 1px;
 }
-.HvKpi-indicatorUnit-34 {
+.HvKpi-indicatorUnit-38 {
   align-self: flex-end;
   padding-bottom: 3px;
 }
-.HvKpi-spacingToTheRight-36 {
+.HvKpi-spacingToTheRight-40 {
   margin-right: 10px;
 }
-.HvKpi-comparisons-37 {
+.HvKpi-comparisons-41 {
   float: left;
 }
 
@@ -5105,14 +5105,14 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "comparisonContainer": "HvKpi-comparisonContainer-32",
-                  "comparisons": "HvKpi-comparisons-37",
-                  "indicatorText": "HvKpi-indicatorText-35",
-                  "indicatorUnit": "HvKpi-indicatorUnit-34",
-                  "indicatorsContainer": "HvKpi-indicatorsContainer-33",
-                  "kpiContainer": "HvKpi-kpiContainer-30",
-                  "spacingToTheRight": "HvKpi-spacingToTheRight-36",
-                  "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-31",
+                  "comparisonContainer": "HvKpi-comparisonContainer-36",
+                  "comparisons": "HvKpi-comparisons-41",
+                  "indicatorText": "HvKpi-indicatorText-39",
+                  "indicatorUnit": "HvKpi-indicatorUnit-38",
+                  "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+                  "kpiContainer": "HvKpi-kpiContainer-34",
+                  "spacingToTheRight": "HvKpi-spacingToTheRight-40",
+                  "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
                 },
                 "index": Array [
                   Object {
@@ -5151,34 +5151,34 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvKpi-comparisonContainer-32": Object {
+                  ".HvKpi-comparisonContainer-36": Object {
                     "align-items": "flex-end",
                     "display": "flex",
                     "min-height": "16px",
                   },
-                  ".HvKpi-comparisons-37": Object {
+                  ".HvKpi-comparisons-41": Object {
                     "float": "left",
                   },
-                  ".HvKpi-indicatorText-35": Object {},
-                  ".HvKpi-indicatorUnit-34": Object {
+                  ".HvKpi-indicatorText-39": Object {},
+                  ".HvKpi-indicatorUnit-38": Object {
                     "align-self": "flex-end",
                     "padding-bottom": "3px",
                   },
-                  ".HvKpi-indicatorsContainer-33": Object {
+                  ".HvKpi-indicatorsContainer-37": Object {
                     "align-items": "flex-end",
                     "display": "inline-flex",
                     "margin-bottom": "1px",
                     "margin-top": "9px",
                     "min-height": "16px",
                   },
-                  ".HvKpi-kpiContainer-30": Object {
+                  ".HvKpi-kpiContainer-34": Object {
                     "height": "100%",
                     "width": "100%",
                   },
-                  ".HvKpi-spacingToTheRight-36": Object {
+                  ".HvKpi-spacingToTheRight-40": Object {
                     "margin-right": "10px",
                   },
-                  ".HvKpi-visualIndicatorContainer-31": Object {
+                  ".HvKpi-visualIndicatorContainer-35": Object {
                     "align-items": "center",
                     "background-color": "transparent",
                     "display": "inline-flex",
@@ -5224,14 +5224,14 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvKpi",
                   "classes": Object {
-                    "comparisonContainer": "HvKpi-comparisonContainer-32",
-                    "comparisons": "HvKpi-comparisons-37",
-                    "indicatorText": "HvKpi-indicatorText-35",
-                    "indicatorUnit": "HvKpi-indicatorUnit-34",
-                    "indicatorsContainer": "HvKpi-indicatorsContainer-33",
-                    "kpiContainer": "HvKpi-kpiContainer-30",
-                    "spacingToTheRight": "HvKpi-spacingToTheRight-36",
-                    "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-31",
+                    "comparisonContainer": "HvKpi-comparisonContainer-36",
+                    "comparisons": "HvKpi-comparisons-41",
+                    "indicatorText": "HvKpi-indicatorText-39",
+                    "indicatorUnit": "HvKpi-indicatorUnit-38",
+                    "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+                    "kpiContainer": "HvKpi-kpiContainer-34",
+                    "spacingToTheRight": "HvKpi-spacingToTheRight-40",
+                    "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -6686,27 +6686,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-40",
-                "4xlTitle": "Typography-4xlTitle-39",
-                "5xlTitle": "Typography-5xlTitle-38",
-                "baseFontFamily": "Typography-baseFontFamily-57",
-                "disabledButtonText": "Typography-disabledButtonText-51",
-                "disabledText": "Typography-disabledText-55",
-                "highlightText": "Typography-highlightText-48",
-                "infoText": "Typography-infoText-53",
-                "inlineLink": "Typography-inlineLink-50",
-                "lTitle": "Typography-lTitle-43",
-                "labelText": "Typography-labelText-52",
-                "mTitle": "Typography-mTitle-44",
-                "margin": "Typography-margin-58",
-                "normalText": "Typography-normalText-49",
-                "sLink": "Typography-sLink-54",
-                "sTitle": "Typography-sTitle-45",
-                "vizText": "Typography-vizText-56",
-                "xlTitle": "Typography-xlTitle-42",
-                "xsTitle": "Typography-xsTitle-46",
-                "xxlTitle": "Typography-xxlTitle-41",
-                "xxsTitle": "Typography-xxsTitle-47",
+                "3xlTitle": "Typography-3xlTitle-44",
+                "4xlTitle": "Typography-4xlTitle-43",
+                "5xlTitle": "Typography-5xlTitle-42",
+                "baseFontFamily": "Typography-baseFontFamily-65",
+                "disabledButtonText": "Typography-disabledButtonText-56",
+                "disabledText": "Typography-disabledText-63",
+                "highlightText": "Typography-highlightText-52",
+                "infoText": "Typography-infoText-61",
+                "inlineLink": "Typography-inlineLink-55",
+                "lTitle": "Typography-lTitle-47",
+                "labelText": "Typography-labelText-60",
+                "mTitle": "Typography-mTitle-48",
+                "margin": "Typography-margin-66",
+                "normalText": "Typography-normalText-53",
+                "placeholderText": "Typography-placeholderText-57",
+                "sLink": "Typography-sLink-62",
+                "sText": "Typography-sText-59",
+                "sTitle": "Typography-sTitle-49",
+                "selectedNavText": "Typography-selectedNavText-58",
+                "selectedText": "Typography-selectedText-54",
+                "vizText": "Typography-vizText-64",
+                "xlTitle": "Typography-xlTitle-46",
+                "xsTitle": "Typography-xsTitle-50",
+                "xxlTitle": "Typography-xxlTitle-45",
+                "xxsTitle": "Typography-xxsTitle-51",
               },
               "deployed": true,
               "linked": false,
@@ -6714,27 +6718,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Typography",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-40",
-                  "4xlTitle": "Typography-4xlTitle-39",
-                  "5xlTitle": "Typography-5xlTitle-38",
-                  "baseFontFamily": "Typography-baseFontFamily-57",
-                  "disabledButtonText": "Typography-disabledButtonText-51",
-                  "disabledText": "Typography-disabledText-55",
-                  "highlightText": "Typography-highlightText-48",
-                  "infoText": "Typography-infoText-53",
-                  "inlineLink": "Typography-inlineLink-50",
-                  "lTitle": "Typography-lTitle-43",
-                  "labelText": "Typography-labelText-52",
-                  "mTitle": "Typography-mTitle-44",
-                  "margin": "Typography-margin-58",
-                  "normalText": "Typography-normalText-49",
-                  "sLink": "Typography-sLink-54",
-                  "sTitle": "Typography-sTitle-45",
-                  "vizText": "Typography-vizText-56",
-                  "xlTitle": "Typography-xlTitle-42",
-                  "xsTitle": "Typography-xsTitle-46",
-                  "xxlTitle": "Typography-xxlTitle-41",
-                  "xxsTitle": "Typography-xxsTitle-47",
+                  "3xlTitle": "Typography-3xlTitle-44",
+                  "4xlTitle": "Typography-4xlTitle-43",
+                  "5xlTitle": "Typography-5xlTitle-42",
+                  "baseFontFamily": "Typography-baseFontFamily-65",
+                  "disabledButtonText": "Typography-disabledButtonText-56",
+                  "disabledText": "Typography-disabledText-63",
+                  "highlightText": "Typography-highlightText-52",
+                  "infoText": "Typography-infoText-61",
+                  "inlineLink": "Typography-inlineLink-55",
+                  "lTitle": "Typography-lTitle-47",
+                  "labelText": "Typography-labelText-60",
+                  "mTitle": "Typography-mTitle-48",
+                  "margin": "Typography-margin-66",
+                  "normalText": "Typography-normalText-53",
+                  "placeholderText": "Typography-placeholderText-57",
+                  "sLink": "Typography-sLink-62",
+                  "sText": "Typography-sText-59",
+                  "sTitle": "Typography-sTitle-49",
+                  "selectedNavText": "Typography-selectedNavText-58",
+                  "selectedText": "Typography-selectedText-54",
+                  "vizText": "Typography-vizText-64",
+                  "xlTitle": "Typography-xlTitle-46",
+                  "xsTitle": "Typography-xsTitle-50",
+                  "xxlTitle": "Typography-xxlTitle-45",
+                  "xxsTitle": "Typography-xxsTitle-51",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7222,143 +7230,171 @@ body {
                   data-meta="Typography"
                 >
                   
-.Typography-5xlTitle-38 {
+.Typography-5xlTitle-42 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-39 {
+.Typography-4xlTitle-43 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-40 {
+.Typography-3xlTitle-44 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-41 {
+.Typography-xxlTitle-45 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-42 {
+.Typography-xlTitle-46 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-43 {
+.Typography-lTitle-47 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-44 {
+.Typography-mTitle-48 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-45 {
+.Typography-sTitle-49 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-46 {
+.Typography-xsTitle-50 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-47 {
+.Typography-xxsTitle-51 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-48 {
+.Typography-highlightText-52 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-49 {
+.Typography-normalText-53 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-50 {
+.Typography-selectedText-54 {
+  color: #F9F9F9;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-inlineLink-55 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-51 {
+.Typography-disabledButtonText-56 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-52 {
+.Typography-placeholderText-57 {
+  color: #999999;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-selectedNavText-58 {
+  color: #CC0000;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.Typography-sText-59 {
+  color: #414141;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.Typography-labelText-60 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-53 {
+.Typography-infoText-61 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-54 {
+.Typography-sLink-62 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-55 {
+.Typography-disabledText-63 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-56 {
+.Typography-vizText-64 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-57 {
+.Typography-baseFontFamily-65 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-58 {
+.Typography-margin-66 {
   margin: 0;
 }
 
@@ -7374,27 +7410,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-40",
-                  "4xlTitle": "Typography-4xlTitle-39",
-                  "5xlTitle": "Typography-5xlTitle-38",
-                  "baseFontFamily": "Typography-baseFontFamily-57",
-                  "disabledButtonText": "Typography-disabledButtonText-51",
-                  "disabledText": "Typography-disabledText-55",
-                  "highlightText": "Typography-highlightText-48",
-                  "infoText": "Typography-infoText-53",
-                  "inlineLink": "Typography-inlineLink-50",
-                  "lTitle": "Typography-lTitle-43",
-                  "labelText": "Typography-labelText-52",
-                  "mTitle": "Typography-mTitle-44",
-                  "margin": "Typography-margin-58",
-                  "normalText": "Typography-normalText-49",
-                  "sLink": "Typography-sLink-54",
-                  "sTitle": "Typography-sTitle-45",
-                  "vizText": "Typography-vizText-56",
-                  "xlTitle": "Typography-xlTitle-42",
-                  "xsTitle": "Typography-xsTitle-46",
-                  "xxlTitle": "Typography-xxlTitle-41",
-                  "xxsTitle": "Typography-xxsTitle-47",
+                  "3xlTitle": "Typography-3xlTitle-44",
+                  "4xlTitle": "Typography-4xlTitle-43",
+                  "5xlTitle": "Typography-5xlTitle-42",
+                  "baseFontFamily": "Typography-baseFontFamily-65",
+                  "disabledButtonText": "Typography-disabledButtonText-56",
+                  "disabledText": "Typography-disabledText-63",
+                  "highlightText": "Typography-highlightText-52",
+                  "infoText": "Typography-infoText-61",
+                  "inlineLink": "Typography-inlineLink-55",
+                  "lTitle": "Typography-lTitle-47",
+                  "labelText": "Typography-labelText-60",
+                  "mTitle": "Typography-mTitle-48",
+                  "margin": "Typography-margin-66",
+                  "normalText": "Typography-normalText-53",
+                  "placeholderText": "Typography-placeholderText-57",
+                  "sLink": "Typography-sLink-62",
+                  "sText": "Typography-sText-59",
+                  "sTitle": "Typography-sTitle-49",
+                  "selectedNavText": "Typography-selectedNavText-58",
+                  "selectedText": "Typography-selectedText-54",
+                  "vizText": "Typography-vizText-64",
+                  "xlTitle": "Typography-xlTitle-46",
+                  "xsTitle": "Typography-xsTitle-50",
+                  "xxlTitle": "Typography-xxlTitle-45",
+                  "xxsTitle": "Typography-xxsTitle-51",
                 },
                 "index": Array [
                   Object {
@@ -7482,6 +7522,13 @@ body {
                     "line-height": "20px",
                   },
                   Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7494,6 +7541,27 @@ body {
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  Object {
+                    "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
                   },
                   Object {
                     "color": "#414141",
@@ -7538,139 +7606,167 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-40": Object {
+                  ".Typography-3xlTitle-44": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-39": Object {
+                  ".Typography-4xlTitle-43": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-38": Object {
+                  ".Typography-5xlTitle-42": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-57": Object {
+                  ".Typography-baseFontFamily-65": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-51": Object {
+                  ".Typography-disabledButtonText-56": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-55": Object {
+                  ".Typography-disabledText-63": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-48": Object {
+                  ".Typography-highlightText-52": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-53": Object {
+                  ".Typography-infoText-61": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-50": Object {
+                  ".Typography-inlineLink-55": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-43": Object {
+                  ".Typography-lTitle-47": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-52": Object {
+                  ".Typography-labelText-60": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-44": Object {
+                  ".Typography-mTitle-48": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-58": Object {
+                  ".Typography-margin-66": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-49": Object {
+                  ".Typography-normalText-53": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-54": Object {
+                  ".Typography-placeholderText-57": Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-sLink-62": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-45": Object {
+                  ".Typography-sText-59": Object {
+                    "color": "#414141",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  ".Typography-sTitle-49": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-vizText-56": Object {
+                  ".Typography-selectedNavText-58": Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-selectedText-54": Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  ".Typography-vizText-64": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-42": Object {
+                  ".Typography-xlTitle-46": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-46": Object {
+                  ".Typography-xsTitle-50": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-41": Object {
+                  ".Typography-xxlTitle-45": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-47": Object {
+                  ".Typography-xxsTitle-51": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -7767,8 +7863,22 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
+                  "placeholderText": Object {
+                    "color": "#999999",
+                    "font-size": "14px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
                   "sLink": Object {
                     "color": "#146BD2",
+                    "font-size": "12px",
+                    "font-weight": "400",
+                    "letter-spacing": "0.02em",
+                    "line-height": "16px",
+                  },
+                  "sText": Object {
+                    "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
@@ -7780,6 +7890,20 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
+                  },
+                  "selectedNavText": Object {
+                    "color": "#CC0000",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
+                  },
+                  "selectedText": Object {
+                    "color": "#F9F9F9",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "letter-spacing": "0.02em",
+                    "line-height": "20px",
                   },
                   "vizText": Object {
                     "color": "#414141",
@@ -7821,27 +7945,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Typography",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-40",
-                    "4xlTitle": "Typography-4xlTitle-39",
-                    "5xlTitle": "Typography-5xlTitle-38",
-                    "baseFontFamily": "Typography-baseFontFamily-57",
-                    "disabledButtonText": "Typography-disabledButtonText-51",
-                    "disabledText": "Typography-disabledText-55",
-                    "highlightText": "Typography-highlightText-48",
-                    "infoText": "Typography-infoText-53",
-                    "inlineLink": "Typography-inlineLink-50",
-                    "lTitle": "Typography-lTitle-43",
-                    "labelText": "Typography-labelText-52",
-                    "mTitle": "Typography-mTitle-44",
-                    "margin": "Typography-margin-58",
-                    "normalText": "Typography-normalText-49",
-                    "sLink": "Typography-sLink-54",
-                    "sTitle": "Typography-sTitle-45",
-                    "vizText": "Typography-vizText-56",
-                    "xlTitle": "Typography-xlTitle-42",
-                    "xsTitle": "Typography-xsTitle-46",
-                    "xxlTitle": "Typography-xxlTitle-41",
-                    "xxsTitle": "Typography-xxsTitle-47",
+                    "3xlTitle": "Typography-3xlTitle-44",
+                    "4xlTitle": "Typography-4xlTitle-43",
+                    "5xlTitle": "Typography-5xlTitle-42",
+                    "baseFontFamily": "Typography-baseFontFamily-65",
+                    "disabledButtonText": "Typography-disabledButtonText-56",
+                    "disabledText": "Typography-disabledText-63",
+                    "highlightText": "Typography-highlightText-52",
+                    "infoText": "Typography-infoText-61",
+                    "inlineLink": "Typography-inlineLink-55",
+                    "lTitle": "Typography-lTitle-47",
+                    "labelText": "Typography-labelText-60",
+                    "mTitle": "Typography-mTitle-48",
+                    "margin": "Typography-margin-66",
+                    "normalText": "Typography-normalText-53",
+                    "placeholderText": "Typography-placeholderText-57",
+                    "sLink": "Typography-sLink-62",
+                    "sText": "Typography-sText-59",
+                    "sTitle": "Typography-sTitle-49",
+                    "selectedNavText": "Typography-selectedNavText-58",
+                    "selectedText": "Typography-selectedText-54",
+                    "vizText": "Typography-vizText-64",
+                    "xlTitle": "Typography-xlTitle-46",
+                    "xsTitle": "Typography-xsTitle-50",
+                    "xxlTitle": "Typography-xxlTitle-45",
+                    "xxsTitle": "Typography-xxsTitle-51",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -8419,8 +8547,22 @@ body {
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
+                  "placeholderText": Object {
+                    "color": "#999999",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
                   "sLink": Object {
                     "color": "#146BD2",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "16px",
+                  },
+                  "sText": Object {
+                    "color": "#414141",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
@@ -8432,6 +8574,20 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "30px",
+                  },
+                  "selectedNavText": Object {
+                    "color": "#CC0000",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
+                  "selectedText": Object {
+                    "color": "#F9F9F9",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
                   },
                   "vizText": Object {
                     "color": "#414141",
@@ -9419,14 +9575,14 @@ body {
         className=""
         classes={
           Object {
-            "comparisonContainer": "HvKpi-comparisonContainer-32",
-            "comparisons": "HvKpi-comparisons-37",
-            "indicatorText": "HvKpi-indicatorText-35",
-            "indicatorUnit": "HvKpi-indicatorUnit-34",
-            "indicatorsContainer": "HvKpi-indicatorsContainer-33",
-            "kpiContainer": "HvKpi-kpiContainer-30",
-            "spacingToTheRight": "HvKpi-spacingToTheRight-36",
-            "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-31",
+            "comparisonContainer": "HvKpi-comparisonContainer-36",
+            "comparisons": "HvKpi-comparisons-41",
+            "indicatorText": "HvKpi-indicatorText-39",
+            "indicatorUnit": "HvKpi-indicatorUnit-38",
+            "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+            "kpiContainer": "HvKpi-kpiContainer-34",
+            "spacingToTheRight": "HvKpi-spacingToTheRight-40",
+            "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
           }
         }
         labels={
@@ -10363,7 +10519,7 @@ body {
         visualIndicator={null}
       >
         <div
-          className="HvKpi-kpiContainer-30"
+          className="HvKpi-kpiContainer-34"
         >
           <div>
             <WithStyles(Typography)
@@ -10372,27 +10528,31 @@ body {
               <Typography
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-40",
-                    "4xlTitle": "Typography-4xlTitle-39",
-                    "5xlTitle": "Typography-5xlTitle-38",
-                    "baseFontFamily": "Typography-baseFontFamily-57",
-                    "disabledButtonText": "Typography-disabledButtonText-51",
-                    "disabledText": "Typography-disabledText-55",
-                    "highlightText": "Typography-highlightText-48",
-                    "infoText": "Typography-infoText-53",
-                    "inlineLink": "Typography-inlineLink-50",
-                    "lTitle": "Typography-lTitle-43",
-                    "labelText": "Typography-labelText-52",
-                    "mTitle": "Typography-mTitle-44",
-                    "margin": "Typography-margin-58",
-                    "normalText": "Typography-normalText-49",
-                    "sLink": "Typography-sLink-54",
-                    "sTitle": "Typography-sTitle-45",
-                    "vizText": "Typography-vizText-56",
-                    "xlTitle": "Typography-xlTitle-42",
-                    "xsTitle": "Typography-xsTitle-46",
-                    "xxlTitle": "Typography-xxlTitle-41",
-                    "xxsTitle": "Typography-xxsTitle-47",
+                    "3xlTitle": "Typography-3xlTitle-44",
+                    "4xlTitle": "Typography-4xlTitle-43",
+                    "5xlTitle": "Typography-5xlTitle-42",
+                    "baseFontFamily": "Typography-baseFontFamily-65",
+                    "disabledButtonText": "Typography-disabledButtonText-56",
+                    "disabledText": "Typography-disabledText-63",
+                    "highlightText": "Typography-highlightText-52",
+                    "infoText": "Typography-infoText-61",
+                    "inlineLink": "Typography-inlineLink-55",
+                    "lTitle": "Typography-lTitle-47",
+                    "labelText": "Typography-labelText-60",
+                    "mTitle": "Typography-mTitle-48",
+                    "margin": "Typography-margin-66",
+                    "normalText": "Typography-normalText-53",
+                    "placeholderText": "Typography-placeholderText-57",
+                    "sLink": "Typography-sLink-62",
+                    "sText": "Typography-sText-59",
+                    "sTitle": "Typography-sTitle-49",
+                    "selectedNavText": "Typography-selectedNavText-58",
+                    "selectedText": "Typography-selectedText-54",
+                    "vizText": "Typography-vizText-64",
+                    "xlTitle": "Typography-xlTitle-46",
+                    "xsTitle": "Typography-xsTitle-50",
+                    "xxlTitle": "Typography-xxlTitle-45",
+                    "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
                 paragraph={false}
@@ -11321,7 +11481,7 @@ body {
                 variant="labelText"
               >
                 <p
-                  className="Typography-labelText-52 Typography-baseFontFamily-57 Typography-margin-58"
+                  className="Typography-labelText-60 Typography-baseFontFamily-65 Typography-margin-66"
                 >
                   Avg. service time
                 </p>
@@ -11329,37 +11489,41 @@ body {
             </WithStyles(Typography)>
           </div>
           <div
-            className="HvKpi-indicatorsContainer-33"
+            className="HvKpi-indicatorsContainer-37"
           >
             <WithStyles(Typography)
-              className="HvKpi-spacingToTheRight-36 HvKpi-indicatorText-35"
+              className="HvKpi-spacingToTheRight-40 HvKpi-indicatorText-39"
               variant="xlTitle"
             >
               <Typography
-                className="HvKpi-spacingToTheRight-36 HvKpi-indicatorText-35"
+                className="HvKpi-spacingToTheRight-40 HvKpi-indicatorText-39"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-40",
-                    "4xlTitle": "Typography-4xlTitle-39",
-                    "5xlTitle": "Typography-5xlTitle-38",
-                    "baseFontFamily": "Typography-baseFontFamily-57",
-                    "disabledButtonText": "Typography-disabledButtonText-51",
-                    "disabledText": "Typography-disabledText-55",
-                    "highlightText": "Typography-highlightText-48",
-                    "infoText": "Typography-infoText-53",
-                    "inlineLink": "Typography-inlineLink-50",
-                    "lTitle": "Typography-lTitle-43",
-                    "labelText": "Typography-labelText-52",
-                    "mTitle": "Typography-mTitle-44",
-                    "margin": "Typography-margin-58",
-                    "normalText": "Typography-normalText-49",
-                    "sLink": "Typography-sLink-54",
-                    "sTitle": "Typography-sTitle-45",
-                    "vizText": "Typography-vizText-56",
-                    "xlTitle": "Typography-xlTitle-42",
-                    "xsTitle": "Typography-xsTitle-46",
-                    "xxlTitle": "Typography-xxlTitle-41",
-                    "xxsTitle": "Typography-xxsTitle-47",
+                    "3xlTitle": "Typography-3xlTitle-44",
+                    "4xlTitle": "Typography-4xlTitle-43",
+                    "5xlTitle": "Typography-5xlTitle-42",
+                    "baseFontFamily": "Typography-baseFontFamily-65",
+                    "disabledButtonText": "Typography-disabledButtonText-56",
+                    "disabledText": "Typography-disabledText-63",
+                    "highlightText": "Typography-highlightText-52",
+                    "infoText": "Typography-infoText-61",
+                    "inlineLink": "Typography-inlineLink-55",
+                    "lTitle": "Typography-lTitle-47",
+                    "labelText": "Typography-labelText-60",
+                    "mTitle": "Typography-mTitle-48",
+                    "margin": "Typography-margin-66",
+                    "normalText": "Typography-normalText-53",
+                    "placeholderText": "Typography-placeholderText-57",
+                    "sLink": "Typography-sLink-62",
+                    "sText": "Typography-sText-59",
+                    "sTitle": "Typography-sTitle-49",
+                    "selectedNavText": "Typography-selectedNavText-58",
+                    "selectedText": "Typography-selectedText-54",
+                    "vizText": "Typography-vizText-64",
+                    "xlTitle": "Typography-xlTitle-46",
+                    "xsTitle": "Typography-xsTitle-50",
+                    "xxlTitle": "Typography-xxlTitle-45",
+                    "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
                 paragraph={false}
@@ -12288,41 +12452,45 @@ body {
                 variant="xlTitle"
               >
                 <h1
-                  className="Typography-xlTitle-42 Typography-baseFontFamily-57 Typography-margin-58 HvKpi-spacingToTheRight-36 HvKpi-indicatorText-35"
+                  className="Typography-xlTitle-46 Typography-baseFontFamily-65 Typography-margin-66 HvKpi-spacingToTheRight-40 HvKpi-indicatorText-39"
                 >
                   8.85
                 </h1>
               </Typography>
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              className="HvKpi-indicatorUnit-34"
+              className="HvKpi-indicatorUnit-38"
               variant="infoText"
             >
               <Typography
-                className="HvKpi-indicatorUnit-34"
+                className="HvKpi-indicatorUnit-38"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-40",
-                    "4xlTitle": "Typography-4xlTitle-39",
-                    "5xlTitle": "Typography-5xlTitle-38",
-                    "baseFontFamily": "Typography-baseFontFamily-57",
-                    "disabledButtonText": "Typography-disabledButtonText-51",
-                    "disabledText": "Typography-disabledText-55",
-                    "highlightText": "Typography-highlightText-48",
-                    "infoText": "Typography-infoText-53",
-                    "inlineLink": "Typography-inlineLink-50",
-                    "lTitle": "Typography-lTitle-43",
-                    "labelText": "Typography-labelText-52",
-                    "mTitle": "Typography-mTitle-44",
-                    "margin": "Typography-margin-58",
-                    "normalText": "Typography-normalText-49",
-                    "sLink": "Typography-sLink-54",
-                    "sTitle": "Typography-sTitle-45",
-                    "vizText": "Typography-vizText-56",
-                    "xlTitle": "Typography-xlTitle-42",
-                    "xsTitle": "Typography-xsTitle-46",
-                    "xxlTitle": "Typography-xxlTitle-41",
-                    "xxsTitle": "Typography-xxsTitle-47",
+                    "3xlTitle": "Typography-3xlTitle-44",
+                    "4xlTitle": "Typography-4xlTitle-43",
+                    "5xlTitle": "Typography-5xlTitle-42",
+                    "baseFontFamily": "Typography-baseFontFamily-65",
+                    "disabledButtonText": "Typography-disabledButtonText-56",
+                    "disabledText": "Typography-disabledText-63",
+                    "highlightText": "Typography-highlightText-52",
+                    "infoText": "Typography-infoText-61",
+                    "inlineLink": "Typography-inlineLink-55",
+                    "lTitle": "Typography-lTitle-47",
+                    "labelText": "Typography-labelText-60",
+                    "mTitle": "Typography-mTitle-48",
+                    "margin": "Typography-margin-66",
+                    "normalText": "Typography-normalText-53",
+                    "placeholderText": "Typography-placeholderText-57",
+                    "sLink": "Typography-sLink-62",
+                    "sText": "Typography-sText-59",
+                    "sTitle": "Typography-sTitle-49",
+                    "selectedNavText": "Typography-selectedNavText-58",
+                    "selectedText": "Typography-selectedText-54",
+                    "vizText": "Typography-vizText-64",
+                    "xlTitle": "Typography-xlTitle-46",
+                    "xsTitle": "Typography-xsTitle-50",
+                    "xxlTitle": "Typography-xxlTitle-45",
+                    "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
                 paragraph={false}
@@ -13251,7 +13419,7 @@ body {
                 variant="infoText"
               >
                 <p
-                  className="Typography-infoText-53 Typography-baseFontFamily-57 Typography-margin-58 HvKpi-indicatorUnit-34"
+                  className="Typography-infoText-61 Typography-baseFontFamily-65 Typography-margin-66 HvKpi-indicatorUnit-38"
                 >
                   MS
                 </p>
@@ -13259,37 +13427,41 @@ body {
             </WithStyles(Typography)>
           </div>
           <div
-            className="HvKpi-comparisonContainer-32"
+            className="HvKpi-comparisonContainer-36"
           >
             <WithStyles(Typography)
-              className="HvKpi-comparisons-37"
+              className="HvKpi-comparisons-41"
               variant="vizText"
             >
               <Typography
-                className="HvKpi-comparisons-37"
+                className="HvKpi-comparisons-41"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-40",
-                    "4xlTitle": "Typography-4xlTitle-39",
-                    "5xlTitle": "Typography-5xlTitle-38",
-                    "baseFontFamily": "Typography-baseFontFamily-57",
-                    "disabledButtonText": "Typography-disabledButtonText-51",
-                    "disabledText": "Typography-disabledText-55",
-                    "highlightText": "Typography-highlightText-48",
-                    "infoText": "Typography-infoText-53",
-                    "inlineLink": "Typography-inlineLink-50",
-                    "lTitle": "Typography-lTitle-43",
-                    "labelText": "Typography-labelText-52",
-                    "mTitle": "Typography-mTitle-44",
-                    "margin": "Typography-margin-58",
-                    "normalText": "Typography-normalText-49",
-                    "sLink": "Typography-sLink-54",
-                    "sTitle": "Typography-sTitle-45",
-                    "vizText": "Typography-vizText-56",
-                    "xlTitle": "Typography-xlTitle-42",
-                    "xsTitle": "Typography-xsTitle-46",
-                    "xxlTitle": "Typography-xxlTitle-41",
-                    "xxsTitle": "Typography-xxsTitle-47",
+                    "3xlTitle": "Typography-3xlTitle-44",
+                    "4xlTitle": "Typography-4xlTitle-43",
+                    "5xlTitle": "Typography-5xlTitle-42",
+                    "baseFontFamily": "Typography-baseFontFamily-65",
+                    "disabledButtonText": "Typography-disabledButtonText-56",
+                    "disabledText": "Typography-disabledText-63",
+                    "highlightText": "Typography-highlightText-52",
+                    "infoText": "Typography-infoText-61",
+                    "inlineLink": "Typography-inlineLink-55",
+                    "lTitle": "Typography-lTitle-47",
+                    "labelText": "Typography-labelText-60",
+                    "mTitle": "Typography-mTitle-48",
+                    "margin": "Typography-margin-66",
+                    "normalText": "Typography-normalText-53",
+                    "placeholderText": "Typography-placeholderText-57",
+                    "sLink": "Typography-sLink-62",
+                    "sText": "Typography-sText-59",
+                    "sTitle": "Typography-sTitle-49",
+                    "selectedNavText": "Typography-selectedNavText-58",
+                    "selectedText": "Typography-selectedText-54",
+                    "vizText": "Typography-vizText-64",
+                    "xlTitle": "Typography-xlTitle-46",
+                    "xsTitle": "Typography-xsTitle-50",
+                    "xxlTitle": "Typography-xxlTitle-45",
+                    "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
                 paragraph={false}
@@ -14218,7 +14390,7 @@ body {
                 variant="vizText"
               >
                 <p
-                  className="Typography-vizText-56 Typography-baseFontFamily-57 Typography-margin-58 HvKpi-comparisons-37"
+                  className="Typography-vizText-64 Typography-baseFontFamily-65 Typography-margin-66 HvKpi-comparisons-41"
                 >
                   vs last 24h.
                 </p>
