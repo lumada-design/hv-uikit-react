@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.17](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.16...@hv/uikit-react-icons@1.1.3-alpha.17) (2019-07-15)
+
+
+### Features
+
+* **barchat:** add max width to bar. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([01c5643](https://github.com/pentaho/hv-uikit-react/commit/01c5643))
+
+
+
+
+
 ## [1.1.3-alpha.16](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.15...@hv/uikit-react-icons@1.1.3-alpha.16) (2019-07-15)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
