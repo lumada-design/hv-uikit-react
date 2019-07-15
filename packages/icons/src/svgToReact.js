@@ -24,14 +24,27 @@ const fillColorReplacer = require("./colorUtils/fillColorReplacer");
 const sizeExtractor = require("./sizeUtils/sizeExtractor");
 const sizeReplacer = require("./sizeUtils/sizeReplacer");
 
-const writeFile = (processedSVG, fileName) => {
-  let file;
+const writeFile = (processedSVG, fileName, themeName) => {
+  let componentOutputFolder;
 
   if (outputPath) {
-    file = path.resolve(process.cwd(), outputPath, `${fileName}.js`);
+    if(themeName) {
+      componentOutputFolder = path.resolve(process.cwd(), outputPath, themeName);
+    } else {
+      componentOutputFolder = path.resolve(process.cwd(), outputPath);
+    }
   } else {
-    file = path.resolve(process.cwd(), `${fileName}.js`);
+    if(themeName) {
+      componentOutputFolder = path.resolve(process.cwd(), themeName);
+    } else {
+      componentOutputFolder = path.resolve(process.cwd());
+    }
   }
+
+  fs.mkdirSync(componentOutputFolder, { recursive: true });
+
+  let file = path.resolve(componentOutputFolder, `${fileName}.js`);
+
   fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
     if (err) {
       if (err.code === "EEXIST") {
@@ -44,10 +57,10 @@ const writeFile = (processedSVG, fileName) => {
     }
   });
 
-  fs.appendFile(path.resolve(process.cwd(), outputPath, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
+  fs.appendFile(path.resolve(componentOutputFolder, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
 };
 
-const runUtil = (fileToRead, fileToWrite) => {
+const runUtil = (fileToRead, fileToWrite, themeName) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
       printErrors(err);
@@ -123,7 +136,7 @@ const runUtil = (fileToRead, fileToWrite) => {
         colorObject.colorText
       );
 
-      writeFile(output, processedFileToWrite);
+      writeFile(output, fileToWrite, themeName);
     });
   });
 };
@@ -135,12 +148,17 @@ const runUtilForAllInDir = () => {
     } // GEt out early if not found
 
     files.forEach((file, i) => {
+      let themeName = path.relative(`${process.cwd()}/${inputPath}`, file).split(path.sep)[0];
+      if(!themeName.endsWith("Theme")) {
+        themeName = null;
+      }
+
       const extention = path.extname(file); // extract extensions
       const fileName = path.basename(file); // extract file name extensions
       if (extention === ".svg") {
         // variable instantiated up top
         const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName);
+        runUtil(file, componentName, themeName);
       }
     });
   });
