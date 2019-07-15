@@ -35,7 +35,7 @@ const MultiTooltip = ({ classes, data }) => (
     </div>
     <div className={classes.valuesContainer}>
       {data.elements.map(element => (
-        <div className={classes.values}>
+        <div key={element.name} className={classes.values}>
           <div
             className={classes.color}
             style={{ backgroundColor: element.color }}

@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import BarchartControl from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-lab/dist/Barchart";
 
 const trace1 = {
   y: ["Group one", "Group two", "Group three"],
@@ -64,44 +64,21 @@ const trace5 = {
 
 const data = [trace1, trace2, trace3, trace4, trace5];
 const layout = {
-  margin: {
-    l: 50,
-    r: 0,
-    b: 50,
-    t: 0,
-    pad: 0
-  },
   barmode: "group",
-  bargap: 0.25,
-  bargroupgap: 0.25,
-  legend: {
-    x: 1,
-    y: 4,
-    orientation: "h",
-    xanchor: "right"
-  },
   yaxis: {
-    automargin: true,
     title: {
       text: "Axis description"
-    },
-    ticks: "outside",
-    ticklen: 1
+    }
   },
   xaxis: {
     title: {
       text: "Thousands of Dollars ($)"
-    },
-    ticks: "outside",
-    ticklen: 1,
-    dtick: 2000,
-    mirror: "allticks",
-    side: "left"
+    }
   }
 };
 
 export default (
-  <BarchartControl
+  <Barchart
     title="Grouped Horizontal Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}

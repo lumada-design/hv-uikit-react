@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import BarchartControl from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-lab/dist/Barchart";
 
 const trace1 = {
   x: [2300, 1000, 8500],
@@ -27,45 +27,22 @@ const trace1 = {
 };
 
 const data = [trace1];
+
 const layout = {
-  margin: {
-    l: 50,
-    r: 0,
-    b: 50,
-    t: 0,
-    pad: 0
-  },
-  bargap: 0.25,
-  bargroupgap: 0.25,
-  legend: {
-    x: 1,
-    y: 4,
-    orientation: "h",
-    xanchor: "right"
-  },
   yaxis: {
-    automargin: true,
     title: {
       text: "2018"
-    },
-    ticks: "outside",
-    ticklen: 1
+    }
   },
   xaxis: {
     title: {
       text: "Thousands of Dollars ($)"
-    },
-    ticks: "outside",
-    ticklen: 1,
-
-    dtick: 2000,
-    mirror: "allticks",
-    side: "left"
+    }
   }
 };
 
 export default (
-  <BarchartControl
+  <Barchart
     title="Simple Horizontal Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}

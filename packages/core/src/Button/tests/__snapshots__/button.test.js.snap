@@ -48,16 +48,19 @@ exports[`Button withStyles should render correctly 1`] = `
                   "semantic": Object {},
                   "support": Object {},
                 },
-                "typography": Object {},
+                "typography": Object {
+                  "disabledText": Object {},
+                },
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
                     "polarizes": Object {},
                     "sequential": Object {},
-                    "specialState": Object {},
+                    "undefinedState": Object {},
                   },
                 },
               },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -76,6 +79,16 @@ exports[`Button withStyles should render correctly 1`] = `
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -151,7 +164,7 @@ exports[`Button withStyles should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -192,8 +205,22 @@ exports[`Button withStyles should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -205,6 +232,20 @@ exports[`Button withStyles should render correctly 1`] = `
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -281,6 +322,7 @@ exports[`Button withStyles should render correctly 1`] = `
                   "sequential": Object {
                     "cviz1": "#2DB3E0",
                     "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
                     "cviz1_300": "#BAE3F3",
                     "cviz1_400": "#A6DCEE",
                     "cviz1_500": "#92D5EC",
@@ -289,7 +331,7 @@ exports[`Button withStyles should render correctly 1`] = `
                     "cviz1_800": "#55C0E4",
                     "cviz1_900": "#40B9E2",
                   },
-                  "specialState": Object {
+                  "undefinedState": Object {
                     "atmo5": "#DEDEDE",
                   },
                 },
@@ -504,7 +546,7 @@ exports[`Button withStyles should render correctly 1`] = `
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
+                "color": "#999999",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
@@ -3614,16 +3656,19 @@ body {
                   "semantic": Object {},
                   "support": Object {},
                 },
-                "typography": Object {},
+                "typography": Object {
+                  "disabledText": Object {},
+                },
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
                     "polarizes": Object {},
                     "sequential": Object {},
-                    "specialState": Object {},
+                    "undefinedState": Object {},
                   },
                 },
               },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -3642,6 +3687,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -3717,7 +3772,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -3758,8 +3813,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -3771,6 +3840,20 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -3847,6 +3930,7 @@ body {
                   "sequential": Object {
                     "cviz1": "#2DB3E0",
                     "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
                     "cviz1_300": "#BAE3F3",
                     "cviz1_400": "#A6DCEE",
                     "cviz1_500": "#92D5EC",
@@ -3855,7 +3939,7 @@ body {
                     "cviz1_800": "#55C0E4",
                     "cviz1_900": "#40B9E2",
                   },
-                  "specialState": Object {
+                  "undefinedState": Object {
                     "atmo5": "#DEDEDE",
                   },
                 },
@@ -4070,7 +4154,7 @@ body {
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
+                "color": "#999999",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
@@ -6001,16 +6085,19 @@ body {
                   "semantic": Object {},
                   "support": Object {},
                 },
-                "typography": Object {},
+                "typography": Object {
+                  "disabledText": Object {},
+                },
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
                     "polarizes": Object {},
                     "sequential": Object {},
-                    "specialState": Object {},
+                    "undefinedState": Object {},
                   },
                 },
               },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -6029,6 +6116,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -6104,7 +6201,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -6145,8 +6242,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -6158,6 +6269,20 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -6234,6 +6359,7 @@ body {
                   "sequential": Object {
                     "cviz1": "#2DB3E0",
                     "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
                     "cviz1_300": "#BAE3F3",
                     "cviz1_400": "#A6DCEE",
                     "cviz1_500": "#92D5EC",
@@ -6242,7 +6368,7 @@ body {
                     "cviz1_800": "#55C0E4",
                     "cviz1_900": "#40B9E2",
                   },
-                  "specialState": Object {
+                  "undefinedState": Object {
                     "atmo5": "#DEDEDE",
                   },
                 },
@@ -6457,7 +6583,7 @@ body {
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
+                "color": "#999999",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
@@ -11965,16 +12091,19 @@ body {
                   "semantic": Object {},
                   "support": Object {},
                 },
-                "typography": Object {},
+                "typography": Object {
+                  "disabledText": Object {},
+                },
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
                     "polarizes": Object {},
                     "sequential": Object {},
-                    "specialState": Object {},
+                    "undefinedState": Object {},
                   },
                 },
               },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -11993,6 +12122,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -12068,7 +12207,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12109,8 +12248,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -12122,6 +12275,20 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -12198,6 +12365,7 @@ body {
                   "sequential": Object {
                     "cviz1": "#2DB3E0",
                     "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
                     "cviz1_300": "#BAE3F3",
                     "cviz1_400": "#A6DCEE",
                     "cviz1_500": "#92D5EC",
@@ -12206,7 +12374,7 @@ body {
                     "cviz1_800": "#55C0E4",
                     "cviz1_900": "#40B9E2",
                   },
-                  "specialState": Object {
+                  "undefinedState": Object {
                     "atmo5": "#DEDEDE",
                   },
                 },
@@ -12421,7 +12589,7 @@ body {
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
+                "color": "#999999",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
@@ -14010,16 +14178,19 @@ body {
               "semantic": Object {},
               "support": Object {},
             },
-            "typography": Object {},
+            "typography": Object {
+              "disabledText": Object {},
+            },
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
                 "polarizes": Object {},
                 "sequential": Object {},
-                "specialState": Object {},
+                "undefinedState": Object {},
               },
             },
           },
+          "name": "dawn",
           "palette": Object {
             "accent": Object {
               "acce1": "#414141",
@@ -14038,6 +14209,16 @@ body {
             },
             "semantic": Object {
               "sema1": "#63A621",
+              "sema10": "#EF9A9A",
+              "sema11": "#E57373",
+              "sema12": "#EF5350",
+              "sema13": "#E53935",
+              "sema14": "#C62828",
+              "sema15": "#80DEEA",
+              "sema16": "#4DD0E1",
+              "sema17": "#26C6DA",
+              "sema18": "#00ACC1",
+              "sema19": "#00838F",
               "sema2": "#72CCCB",
               "sema3": "#E68C17",
               "sema4": "#FF5252",
@@ -14113,7 +14294,7 @@ body {
               "lineHeight": "20px",
             },
             "infoText": Object {
-              "color": "#414141",
+              "color": "#999999",
               "fontSize": "12px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
@@ -14154,8 +14335,22 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
             },
+            "placeholderText": Object {
+              "color": "#999999",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
             "sLink": Object {
               "color": "#146BD2",
+              "fontSize": "12px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "sText": Object {
+              "color": "#414141",
               "fontSize": "12px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
@@ -14167,6 +14362,20 @@ body {
               "fontWeight": "400",
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
+            },
+            "selectedNavText": Object {
+              "color": "#CC0000",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "selectedText": Object {
+              "color": "#F9F9F9",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
             },
             "vizText": Object {
               "color": "#414141",
@@ -14243,6 +14452,7 @@ body {
               "sequential": Object {
                 "cviz1": "#2DB3E0",
                 "cviz1_100": "#E3F1F6",
+                "cviz1_200": "#CFEAF3",
                 "cviz1_300": "#BAE3F3",
                 "cviz1_400": "#A6DCEE",
                 "cviz1_500": "#92D5EC",
@@ -14251,7 +14461,7 @@ body {
                 "cviz1_800": "#55C0E4",
                 "cviz1_900": "#40B9E2",
               },
-              "specialState": Object {
+              "undefinedState": Object {
                 "atmo5": "#DEDEDE",
               },
             },
@@ -14466,7 +14676,7 @@ body {
             "lineHeight": 1.5,
           },
           "body2": Object {
-            "color": "#414141",
+            "color": "#999999",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
@@ -14911,16 +15121,19 @@ body {
                   "semantic": Object {},
                   "support": Object {},
                 },
-                "typography": Object {},
+                "typography": Object {
+                  "disabledText": Object {},
+                },
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
                     "polarizes": Object {},
                     "sequential": Object {},
-                    "specialState": Object {},
+                    "undefinedState": Object {},
                   },
                 },
               },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
                   "acce1": "#414141",
@@ -14939,6 +15152,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -15014,7 +15237,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -15055,8 +15278,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -15068,6 +15305,20 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -15144,6 +15395,7 @@ body {
                   "sequential": Object {
                     "cviz1": "#2DB3E0",
                     "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
                     "cviz1_300": "#BAE3F3",
                     "cviz1_400": "#A6DCEE",
                     "cviz1_500": "#92D5EC",
@@ -15152,7 +15404,7 @@ body {
                     "cviz1_800": "#55C0E4",
                     "cviz1_900": "#40B9E2",
                   },
-                  "specialState": Object {
+                  "undefinedState": Object {
                     "atmo5": "#DEDEDE",
                   },
                 },
@@ -15367,7 +15619,7 @@ body {
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
+                "color": "#999999",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
@@ -15808,16 +16060,19 @@ body {
                     "semantic": Object {},
                     "support": Object {},
                   },
-                  "typography": Object {},
+                  "typography": Object {
+                    "disabledText": Object {},
+                  },
                   "viz": Object {
                     "palette": Object {
                       "categorical": Object {},
                       "polarizes": Object {},
                       "sequential": Object {},
-                      "specialState": Object {},
+                      "undefinedState": Object {},
                     },
                   },
                 },
+                "name": "dawn",
                 "palette": Object {
                   "accent": Object {
                     "acce1": "#414141",
@@ -15836,6 +16091,16 @@ body {
                   },
                   "semantic": Object {
                     "sema1": "#63A621",
+                    "sema10": "#EF9A9A",
+                    "sema11": "#E57373",
+                    "sema12": "#EF5350",
+                    "sema13": "#E53935",
+                    "sema14": "#C62828",
+                    "sema15": "#80DEEA",
+                    "sema16": "#4DD0E1",
+                    "sema17": "#26C6DA",
+                    "sema18": "#00ACC1",
+                    "sema19": "#00838F",
                     "sema2": "#72CCCB",
                     "sema3": "#E68C17",
                     "sema4": "#FF5252",
@@ -15911,7 +16176,7 @@ body {
                     "lineHeight": "20px",
                   },
                   "infoText": Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
@@ -15952,8 +16217,22 @@ body {
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
+                  "placeholderText": Object {
+                    "color": "#999999",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
                   "sLink": Object {
                     "color": "#146BD2",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "16px",
+                  },
+                  "sText": Object {
+                    "color": "#414141",
                     "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
@@ -15965,6 +16244,20 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "30px",
+                  },
+                  "selectedNavText": Object {
+                    "color": "#CC0000",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
+                  },
+                  "selectedText": Object {
+                    "color": "#F9F9F9",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em",
+                    "lineHeight": "20px",
                   },
                   "vizText": Object {
                     "color": "#414141",
@@ -16041,6 +16334,7 @@ body {
                     "sequential": Object {
                       "cviz1": "#2DB3E0",
                       "cviz1_100": "#E3F1F6",
+                      "cviz1_200": "#CFEAF3",
                       "cviz1_300": "#BAE3F3",
                       "cviz1_400": "#A6DCEE",
                       "cviz1_500": "#92D5EC",
@@ -16049,7 +16343,7 @@ body {
                       "cviz1_800": "#55C0E4",
                       "cviz1_900": "#40B9E2",
                     },
-                    "specialState": Object {
+                    "undefinedState": Object {
                       "atmo5": "#DEDEDE",
                     },
                   },
@@ -16264,7 +16558,7 @@ body {
                   "lineHeight": 1.5,
                 },
                 "body2": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontFamily": Array [
                     "'Open Sans'",
                     "Arial",
@@ -16732,16 +17026,19 @@ body {
                       "semantic": Object {},
                       "support": Object {},
                     },
-                    "typography": Object {},
+                    "typography": Object {
+                      "disabledText": Object {},
+                    },
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
                         "polarizes": Object {},
                         "sequential": Object {},
-                        "specialState": Object {},
+                        "undefinedState": Object {},
                       },
                     },
                   },
+                  "name": "dawn",
                   "palette": Object {
                     "accent": Object {
                       "acce1": "#414141",
@@ -16760,6 +17057,16 @@ body {
                     },
                     "semantic": Object {
                       "sema1": "#63A621",
+                      "sema10": "#EF9A9A",
+                      "sema11": "#E57373",
+                      "sema12": "#EF5350",
+                      "sema13": "#E53935",
+                      "sema14": "#C62828",
+                      "sema15": "#80DEEA",
+                      "sema16": "#4DD0E1",
+                      "sema17": "#26C6DA",
+                      "sema18": "#00ACC1",
+                      "sema19": "#00838F",
                       "sema2": "#72CCCB",
                       "sema3": "#E68C17",
                       "sema4": "#FF5252",
@@ -16835,7 +17142,7 @@ body {
                       "lineHeight": "20px",
                     },
                     "infoText": Object {
-                      "color": "#414141",
+                      "color": "#999999",
                       "fontSize": "12px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -16876,8 +17183,22 @@ body {
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
                     },
+                    "placeholderText": Object {
+                      "color": "#999999",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "20px",
+                    },
                     "sLink": Object {
                       "color": "#146BD2",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "16px",
+                    },
+                    "sText": Object {
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
@@ -16889,6 +17210,20 @@ body {
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "selectedNavText": Object {
+                      "color": "#CC0000",
+                      "fontSize": "14px",
+                      "fontWeight": "600",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "20px",
+                    },
+                    "selectedText": Object {
+                      "color": "#F9F9F9",
+                      "fontSize": "14px",
+                      "fontWeight": "600",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "20px",
                     },
                     "vizText": Object {
                       "color": "#414141",
@@ -16965,6 +17300,7 @@ body {
                       "sequential": Object {
                         "cviz1": "#2DB3E0",
                         "cviz1_100": "#E3F1F6",
+                        "cviz1_200": "#CFEAF3",
                         "cviz1_300": "#BAE3F3",
                         "cviz1_400": "#A6DCEE",
                         "cviz1_500": "#92D5EC",
@@ -16973,7 +17309,7 @@ body {
                         "cviz1_800": "#55C0E4",
                         "cviz1_900": "#40B9E2",
                       },
-                      "specialState": Object {
+                      "undefinedState": Object {
                         "atmo5": "#DEDEDE",
                       },
                     },
@@ -17188,7 +17524,7 @@ body {
                     "lineHeight": 1.5,
                   },
                   "body2": Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
@@ -17623,16 +17959,19 @@ body {
                         "semantic": Object {},
                         "support": Object {},
                       },
-                      "typography": Object {},
+                      "typography": Object {
+                        "disabledText": Object {},
+                      },
                       "viz": Object {
                         "palette": Object {
                           "categorical": Object {},
                           "polarizes": Object {},
                           "sequential": Object {},
-                          "specialState": Object {},
+                          "undefinedState": Object {},
                         },
                       },
                     },
+                    "name": "dawn",
                     "palette": Object {
                       "accent": Object {
                         "acce1": "#414141",
@@ -17651,6 +17990,16 @@ body {
                       },
                       "semantic": Object {
                         "sema1": "#63A621",
+                        "sema10": "#EF9A9A",
+                        "sema11": "#E57373",
+                        "sema12": "#EF5350",
+                        "sema13": "#E53935",
+                        "sema14": "#C62828",
+                        "sema15": "#80DEEA",
+                        "sema16": "#4DD0E1",
+                        "sema17": "#26C6DA",
+                        "sema18": "#00ACC1",
+                        "sema19": "#00838F",
                         "sema2": "#72CCCB",
                         "sema3": "#E68C17",
                         "sema4": "#FF5252",
@@ -17726,7 +18075,7 @@ body {
                         "lineHeight": "20px",
                       },
                       "infoText": Object {
-                        "color": "#414141",
+                        "color": "#999999",
                         "fontSize": "12px",
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
@@ -17767,8 +18116,22 @@ body {
                         "letterSpacing": "0.02em",
                         "lineHeight": "20px",
                       },
+                      "placeholderText": Object {
+                        "color": "#999999",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "20px",
+                      },
                       "sLink": Object {
                         "color": "#146BD2",
+                        "fontSize": "12px",
+                        "fontWeight": "400",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "16px",
+                      },
+                      "sText": Object {
+                        "color": "#414141",
                         "fontSize": "12px",
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
@@ -17780,6 +18143,20 @@ body {
                         "fontWeight": "400",
                         "letterSpacing": "0.02em",
                         "lineHeight": "30px",
+                      },
+                      "selectedNavText": Object {
+                        "color": "#CC0000",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "20px",
+                      },
+                      "selectedText": Object {
+                        "color": "#F9F9F9",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.02em",
+                        "lineHeight": "20px",
                       },
                       "vizText": Object {
                         "color": "#414141",
@@ -17856,6 +18233,7 @@ body {
                         "sequential": Object {
                           "cviz1": "#2DB3E0",
                           "cviz1_100": "#E3F1F6",
+                          "cviz1_200": "#CFEAF3",
                           "cviz1_300": "#BAE3F3",
                           "cviz1_400": "#A6DCEE",
                           "cviz1_500": "#92D5EC",
@@ -17864,7 +18242,7 @@ body {
                           "cviz1_800": "#55C0E4",
                           "cviz1_900": "#40B9E2",
                         },
-                        "specialState": Object {
+                        "undefinedState": Object {
                           "atmo5": "#DEDEDE",
                         },
                       },
@@ -18079,7 +18457,7 @@ body {
                       "lineHeight": 1.5,
                     },
                     "body2": Object {
-                      "color": "#414141",
+                      "color": "#999999",
                       "fontFamily": Array [
                         "'Open Sans'",
                         "Arial",
@@ -18523,16 +18901,19 @@ body {
                           "semantic": Object {},
                           "support": Object {},
                         },
-                        "typography": Object {},
+                        "typography": Object {
+                          "disabledText": Object {},
+                        },
                         "viz": Object {
                           "palette": Object {
                             "categorical": Object {},
                             "polarizes": Object {},
                             "sequential": Object {},
-                            "specialState": Object {},
+                            "undefinedState": Object {},
                           },
                         },
                       },
+                      "name": "dawn",
                       "palette": Object {
                         "accent": Object {
                           "acce1": "#414141",
@@ -18551,6 +18932,16 @@ body {
                         },
                         "semantic": Object {
                           "sema1": "#63A621",
+                          "sema10": "#EF9A9A",
+                          "sema11": "#E57373",
+                          "sema12": "#EF5350",
+                          "sema13": "#E53935",
+                          "sema14": "#C62828",
+                          "sema15": "#80DEEA",
+                          "sema16": "#4DD0E1",
+                          "sema17": "#26C6DA",
+                          "sema18": "#00ACC1",
+                          "sema19": "#00838F",
                           "sema2": "#72CCCB",
                           "sema3": "#E68C17",
                           "sema4": "#FF5252",
@@ -18626,7 +19017,7 @@ body {
                           "lineHeight": "20px",
                         },
                         "infoText": Object {
-                          "color": "#414141",
+                          "color": "#999999",
                           "fontSize": "12px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
@@ -18667,8 +19058,22 @@ body {
                           "letterSpacing": "0.02em",
                           "lineHeight": "20px",
                         },
+                        "placeholderText": Object {
+                          "color": "#999999",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "20px",
+                        },
                         "sLink": Object {
                           "color": "#146BD2",
+                          "fontSize": "12px",
+                          "fontWeight": "400",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "16px",
+                        },
+                        "sText": Object {
+                          "color": "#414141",
                           "fontSize": "12px",
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
@@ -18680,6 +19085,20 @@ body {
                           "fontWeight": "400",
                           "letterSpacing": "0.02em",
                           "lineHeight": "30px",
+                        },
+                        "selectedNavText": Object {
+                          "color": "#CC0000",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "20px",
+                        },
+                        "selectedText": Object {
+                          "color": "#F9F9F9",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "20px",
                         },
                         "vizText": Object {
                           "color": "#414141",
@@ -18756,6 +19175,7 @@ body {
                           "sequential": Object {
                             "cviz1": "#2DB3E0",
                             "cviz1_100": "#E3F1F6",
+                            "cviz1_200": "#CFEAF3",
                             "cviz1_300": "#BAE3F3",
                             "cviz1_400": "#A6DCEE",
                             "cviz1_500": "#92D5EC",
@@ -18764,7 +19184,7 @@ body {
                             "cviz1_800": "#55C0E4",
                             "cviz1_900": "#40B9E2",
                           },
-                          "specialState": Object {
+                          "undefinedState": Object {
                             "atmo5": "#DEDEDE",
                           },
                         },
@@ -18979,7 +19399,7 @@ body {
                         "lineHeight": 1.5,
                       },
                       "body2": Object {
-                        "color": "#414141",
+                        "color": "#999999",
                         "fontFamily": Array [
                           "'Open Sans'",
                           "Arial",
@@ -19421,16 +19841,19 @@ body {
                             "semantic": Object {},
                             "support": Object {},
                           },
-                          "typography": Object {},
+                          "typography": Object {
+                            "disabledText": Object {},
+                          },
                           "viz": Object {
                             "palette": Object {
                               "categorical": Object {},
                               "polarizes": Object {},
                               "sequential": Object {},
-                              "specialState": Object {},
+                              "undefinedState": Object {},
                             },
                           },
                         },
+                        "name": "dawn",
                         "palette": Object {
                           "accent": Object {
                             "acce1": "#414141",
@@ -19449,6 +19872,16 @@ body {
                           },
                           "semantic": Object {
                             "sema1": "#63A621",
+                            "sema10": "#EF9A9A",
+                            "sema11": "#E57373",
+                            "sema12": "#EF5350",
+                            "sema13": "#E53935",
+                            "sema14": "#C62828",
+                            "sema15": "#80DEEA",
+                            "sema16": "#4DD0E1",
+                            "sema17": "#26C6DA",
+                            "sema18": "#00ACC1",
+                            "sema19": "#00838F",
                             "sema2": "#72CCCB",
                             "sema3": "#E68C17",
                             "sema4": "#FF5252",
@@ -19524,7 +19957,7 @@ body {
                             "lineHeight": "20px",
                           },
                           "infoText": Object {
-                            "color": "#414141",
+                            "color": "#999999",
                             "fontSize": "12px",
                             "fontWeight": "400",
                             "letterSpacing": "0.02em",
@@ -19565,8 +19998,22 @@ body {
                             "letterSpacing": "0.02em",
                             "lineHeight": "20px",
                           },
+                          "placeholderText": Object {
+                            "color": "#999999",
+                            "fontSize": "14px",
+                            "fontWeight": "400",
+                            "letterSpacing": "0.02em",
+                            "lineHeight": "20px",
+                          },
                           "sLink": Object {
                             "color": "#146BD2",
+                            "fontSize": "12px",
+                            "fontWeight": "400",
+                            "letterSpacing": "0.02em",
+                            "lineHeight": "16px",
+                          },
+                          "sText": Object {
+                            "color": "#414141",
                             "fontSize": "12px",
                             "fontWeight": "400",
                             "letterSpacing": "0.02em",
@@ -19578,6 +20025,20 @@ body {
                             "fontWeight": "400",
                             "letterSpacing": "0.02em",
                             "lineHeight": "30px",
+                          },
+                          "selectedNavText": Object {
+                            "color": "#CC0000",
+                            "fontSize": "14px",
+                            "fontWeight": "600",
+                            "letterSpacing": "0.02em",
+                            "lineHeight": "20px",
+                          },
+                          "selectedText": Object {
+                            "color": "#F9F9F9",
+                            "fontSize": "14px",
+                            "fontWeight": "600",
+                            "letterSpacing": "0.02em",
+                            "lineHeight": "20px",
                           },
                           "vizText": Object {
                             "color": "#414141",
@@ -19654,6 +20115,7 @@ body {
                             "sequential": Object {
                               "cviz1": "#2DB3E0",
                               "cviz1_100": "#E3F1F6",
+                              "cviz1_200": "#CFEAF3",
                               "cviz1_300": "#BAE3F3",
                               "cviz1_400": "#A6DCEE",
                               "cviz1_500": "#92D5EC",
@@ -19662,7 +20124,7 @@ body {
                               "cviz1_800": "#55C0E4",
                               "cviz1_900": "#40B9E2",
                             },
-                            "specialState": Object {
+                            "undefinedState": Object {
                               "atmo5": "#DEDEDE",
                             },
                           },
@@ -19877,7 +20339,7 @@ body {
                           "lineHeight": 1.5,
                         },
                         "body2": Object {
-                          "color": "#414141",
+                          "color": "#999999",
                           "fontFamily": Array [
                             "'Open Sans'",
                             "Arial",

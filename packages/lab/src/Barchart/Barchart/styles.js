@@ -30,11 +30,15 @@ const styles = theme => ({
   },
   vizText: {
     ...theme.hv.typography.vizText,
+    fontFamily: theme.hv.typography.fontFamily,
     fontSize: 10
   },
-  lineColor: {
-    color: theme.hv.palette.atmosphere.atmo5
-  }
+  lineColor: theme.hv.palette.atmosphere.atmo6,
+  gridColor: theme.hv.palette.atmosphere.atmo5,
+  paddingTop: {
+    paddingTop: "20px"
+  },
+  plotColor: theme.hv.palette.atmosphere.atmo1
 });
 
 export default styles;

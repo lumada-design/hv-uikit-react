@@ -14,80 +14,48 @@
  * limitations under the License.
  */
 
-import React, { memo } from "react";
+import React, { memo, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
-import isNil from "lodash/isNil";
+import { isNil, fill, clone } from "lodash";
+import classNames from "classnames";
+import propSetter from "./plotlyOverrides";
+
 import styleCreator from "./styles";
+
+const MARGIN = 50;
+const MAX_BAR_WIDTH = 90;
 
 /**
  * Setter of default properties.
  *
- * @param layout
+ * @param inputLayout
  * @param theme
  * @returns {*}
  */
-const propsSetter = (layout, theme) => {
+const propsSetter = (inputLayout, theme, isHorizontal) => {
   const styles = styleCreator(theme);
-  const newLayout = layout;
+  const layout = inputLayout;
 
-  newLayout.colorway = Object.values(styles.defaultColors);
+  // Layout
+  propSetter.setLayout(layout, styles);
 
-  if (isNil(newLayout.legend)) newLayout.legend = {};
+  // Legend
+  propSetter.setLegend(layout, styles);
 
-  newLayout.legend.font = {
-    family: styles.vizText.fontFamily,
-    size: styles.vizText.fontSize,
-    color: styles.vizText.color
-  };
+  // Xaxis
+  propSetter.setXaxis(layout, styles, isHorizontal);
 
-  newLayout.plot_bgcolor = theme.hv.palette.atmosphere.atmo1;
+  // Yaxis
+  propSetter.setYaxis(layout, styles, isHorizontal);
 
-  newLayout.paper_bgcolor = theme.hv.palette.atmosphere.atmo1;
-
-  if (isNil(newLayout.xaxis)) newLayout.xaxis = {};
-  newLayout.xaxis.linecolor = styles.lineColor.color;
-
-  if (isNil(newLayout.xaxis.title)) newLayout.xaxis.title = {};
-  newLayout.xaxis.title.font = {
-    family: styles.vizText.fontFamily,
-    size: styles.vizText.fontSize,
-    color: styles.vizText.color
-  };
-
-  newLayout.xaxis.tickcolor = styles.lineColor.color;
-  newLayout.xaxis.gridcolor = theme.hv.palette.atmosphere.atmo5;
-  newLayout.xaxis.tickfont = {
-    family: styles.vizText.fontFamily,
-    size: styles.vizText.fontSize,
-    color: styles.vizText.color
-  };
-
-  if (isNil(newLayout.yaxis)) newLayout.yaxis = {};
-  newLayout.yaxis.linecolor = styles.lineColor.color;
-  newLayout.yaxis.gridcolor = theme.hv.palette.atmosphere.atmo5;
-
-  if (isNil(newLayout.yaxis.title)) newLayout.yaxis.title = {};
-
-  newLayout.yaxis.title.font = {
-    family: styles.vizText.fontFamily,
-    size: styles.vizText.fontSize,
-    color: styles.vizText.color
-  };
-  newLayout.yaxis.tickcolor = styles.lineColor.color;
-  newLayout.yaxis.tickfont = {
-    family: styles.vizText.fontFamily,
-    size: styles.vizText.fontSize,
-    color: styles.vizText.color
-  };
-
-  return newLayout;
+  return layout;
 };
 
 /**
- * Ploty barchart.
+ * Plotly barchart.
  *
  * @param classes
  * @param theme
@@ -113,8 +81,63 @@ const BarChart = ({
   onUnHover,
   onMouseMove
 }) => {
+  const [revision, setRevision] = useState(0);
+  const [newData, setNewData] = useState(data);
+  const isHorizontal = !isNil(data[0].orientation)
+    ? data[0].orientation.toUpperCase() === "H"
+    : false;
+  const newLayout = propsSetter(layout, theme, isHorizontal);
+
+  const { bargap, bargroupgap, barmode } = layout;
+  const isStack = barmode === "stack";
+  const numberOfBarsByGroup = isStack ? 1 : data.length;
+  const numberOfGroup = data[0].x.length;
+
   const Plot = createPlotlyComponent(Plotly);
-  const newLayout = propsSetter(layout, theme);
+
+  const ref = useRef(null);
+
+  /**
+   * Used to force the max width of each bar with 90px.
+   */
+  const recalculateBarWidth = () => {
+    const { width } = ref.current.getBoundingClientRect();
+    const plotWidth = width - MARGIN;
+    const groupWidth = plotWidth / numberOfGroup;
+    const colWidth =
+      groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
+
+    const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
+    const isAlreadyGreaterThan90 = newData[0].width !== undefined;
+
+    if (greaterThan90) {
+      const newWidth = (MAX_BAR_WIDTH / plotWidth) * numberOfGroup;
+
+      newData.map(subData => {
+        // eslint-disable-next-line no-param-reassign
+        subData.width = fill(clone(subData.x), newWidth);
+        return subData;
+      });
+
+      setNewData(newData);
+      setRevision(revision + 1);
+    }
+
+    if (!greaterThan90 && isAlreadyGreaterThan90) {
+      newData.map(subData => {
+        // eslint-disable-next-line no-param-reassign
+        subData.width = undefined;
+        return subData;
+      });
+      setNewData(newData);
+      setRevision(revision + 1);
+    }
+  };
+
+  /**
+   * Call in the first render.
+   */
+  useLayoutEffect(() => recalculateBarWidth(), []);
 
   return (
     <div className={classes.root} onMouseMove={e => onMouseMove(e)}>
@@ -124,14 +147,18 @@ const BarChart = ({
           {subtitle && <Typography variant="infoText">{subtitle}</Typography>}
         </div>
       </div>
-      <Plot
-        data={data}
-        layout={newLayout}
-        config={config}
-        onHover={eventData => onHover(eventData)}
-        onUnhover={eventData => onUnHover(eventData)}
-        style={{ position: "relative" }}
-      />
+      <div ref={ref} className={classNames({ [classes.paddingTop]: title })}>
+        <Plot
+          data={newData}
+          layout={newLayout}
+          config={config}
+          revision={revision}
+          onHover={eventData => onHover(eventData)}
+          onUnhover={eventData => onUnHover(eventData)}
+          onAfterPlot={() => recalculateBarWidth("onAfterPlot")}
+          style={{ position: "relative" }}
+        />
+      </div>
     </div>
   );
 };

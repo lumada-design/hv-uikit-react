@@ -20,8 +20,12 @@ import Barchart from "@hv/uikit-react-lab/dist/Barchart";
 
 storiesOf("Lab", module).add("Barchart", () => <Barchart />, {
   title: "Barchart",
-  description: "",
-  usage: "import Barchart from '@hv/uikit-react-core/dist/Barchart'",
+  description:
+    "A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights " +
+    "or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally.<br><br>" +
+    "This component is built using Plotly (https://github.com/plotly/react-plotly.js/#basic-props). <br>" +
+    "Certain properties of the layout and data are overwritten so the component can follow the Design System guidelines.",
+  usage: "import Barchart from '@hv/uikit-react-lab/dist/Barchart'",
   examples: [
     {
       title: "Simple Vertical Bar with use single",
@@ -56,6 +60,6 @@ storiesOf("Lab", module).add("Barchart", () => <Barchart />, {
     {
       title: "Stacked Horizontal Bar",
       src: "lab/barchart/stackHorizontal.js"
-    },
+    }
   ]
 });
