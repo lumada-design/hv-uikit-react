@@ -34,7 +34,7 @@ class CheckboxStateManager extends React.Component {
         <div>
           <div>
             <HvRadio
-              label="checked"
+              label="some label"
               checked={checkedRadio === valueA}
               onChange={() => {
                 if (checkedRadio !== valueA) {
@@ -48,7 +48,7 @@ class CheckboxStateManager extends React.Component {
 
           <div>
             <HvRadio
-              label="unchecked"
+              label="some other label"
               checked={checkedRadio === valueB}
               onChange={() => {
                 if (checkedRadio !== valueB) {

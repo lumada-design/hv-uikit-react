@@ -21,41 +21,35 @@ import HvRadio from "@hv/uikit-react-core/dist/Selectors/RadioButton";
 storiesOf("Core", module).add("RadioButton", () => <HvRadio />, {
   title: "Radio button selector",
   description:
-    "A Radio button selector that allows selecting a value, with 3 possible states: empty, full or intermediate",
+    "A Radio button selector used to limit the user’s choice to just one option from the range provided.",
   usage: "import HvRadio from '@hv/uikit-react-core/dist/Selectors/RadioButton'",
   examples: [
     {
-      title: "1. Simple",
-      description: "Simple Radio button with no state management",
+      title: "1. Enabled",
       src: "core/radioButton/radioButtonSimple"
     },
     {
       title: "2. Disabled ",
-      description:
-        "Simple Radio button with no state management but disable not allowing interactions",
       src: "core/radioButton/radioButtonDisabled"
     },
     {
       title: "2. With label",
-      description: "Radio button that has a label with no state management",
       src: "core/radioButton/radioButtonLabel"
     },
     {
       title: "3. Disabled with label",
-      description:
-        "Radio button that has a label with no state management but disable not allowing interactions",
       src: "core/radioButton/radioButtonLabelDisabled"
     },
     {
       title: "4. With click action",
       description:
-        "Radio button with click action and no state management the onChange returns the value assigned",
+        "Returns the value assigned on click",
       src: "core/radioButton/radioButtonOnChange"
     },
     {
-      title: "5. Disabled with click action",
+      title: "5. Disabled with no click action",
       description:
-        "Radio button with click action and no state management but disable not allowing interactions",
+        "When disabled prevents click actions to be triggered",
       src: "core/radioButton/radioButtonOnChangeDisabled"
     },
     {

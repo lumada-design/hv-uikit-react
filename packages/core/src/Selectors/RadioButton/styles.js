@@ -41,12 +41,7 @@ const styles = theme => ({
     paddingLeft: "8px"
   },
   radio: {
-    padding: "8px"
-  },
-  icon: {
-    width: "16px",
-    height: "16px",
-    backgroundSize: "16px 16px"
+    padding: "1px"
   }
 });
 
