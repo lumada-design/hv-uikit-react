@@ -30,12 +30,11 @@ describe("CalendarModel", () => {
     expect(calendarModelInstance.year).toBe(2000);
   });
 
-
-  it.skip("should create a calendar model object with today month and year when input parameters aren't supplied", () => {
+  it("should create a calendar model object with today month and year when input parameters aren't supplied", () => {
     const today = makeUTCToday();
     calendarModelInstance = new CalendarModel();
-    expect(calendarModelInstance.month).toBe(today.getMonth() + 1);
-    expect(calendarModelInstance.year).toBe(today.getFullYear());
+    expect(calendarModelInstance.month).toBe(today.getUTCMonth() + 1);
+    expect(calendarModelInstance.year).toBe(today.getUTCFullYear());
   });
 
   it("should create a `dates` property with 42 positions", () => {

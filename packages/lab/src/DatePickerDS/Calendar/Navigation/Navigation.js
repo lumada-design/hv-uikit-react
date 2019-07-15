@@ -23,13 +23,25 @@ import DropRightIcon from "@hv/uikit-react-icons/dist/DropRight.XS";
 
 const Navigation = ({
   classes,
+  theme,
   onNavigatePrevious,
   onNavigateNext,
   onTextClick,
-  navigationText
+  navigationText,
+  isPreviousEnabled,
+  isNextEnabled
 }) => (
   <div className={classes.root}>
-    <DropLeftIcon className={classes.icon} onClick={onNavigatePrevious} fill="red" />
+    <DropLeftIcon
+      className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
+      onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
+      color={[
+        "none",
+        isPreviousEnabled
+          ? theme.hv.palette.accent.acce1
+          : theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
 
     <div
       className={`${
@@ -43,7 +55,16 @@ const Navigation = ({
       <HvTypography variant="normalText">{navigationText}</HvTypography>
     </div>
 
-    <DropRightIcon className={classes.icon} onClick={onNavigateNext} />
+    <DropRightIcon
+      className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
+      onClick={isNextEnabled ? onNavigateNext : undefined}
+      color={[
+        "none",
+        isNextEnabled
+          ? theme.hv.palette.accent.acce1
+          : theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
   </div>
 );
 
@@ -52,6 +73,10 @@ Navigation.propTypes = {
    * A Jss Object used to override or extend the component styles.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * The object storing the theme.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A function to be executed whenever the navigate previous action is triggered.
    */
@@ -67,14 +92,24 @@ Navigation.propTypes = {
   /**
    * The text that will be shown between the navigation buttons.
    */
-  navigationText: PropTypes.string
+  navigationText: PropTypes.string,
+  /**
+   * Flag stating if the previous button should be enabled or disabled.
+   */
+  isPreviousEnabled: PropTypes.bool,
+  /**
+   * Flag stating if the next button should be enabled or disabled.
+   */
+  isNextEnabled: PropTypes.bool
 };
 
 Navigation.defaultProps = {
   onNavigatePrevious: undefined,
   onNavigateNext: undefined,
   onTextClick: undefined,
-  navigationText: "n/a"
+  navigationText: "n/a",
+  isPreviousEnabled: true,
+  isNextEnabled: true
 };
 
 export default Navigation;

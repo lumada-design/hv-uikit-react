@@ -28,6 +28,12 @@ const styles = theme => ({
       cursor: "pointer"
     }
   },
+  disabled: {
+    "&:hover": {
+      backgroundColor: "transparent",
+      cursor: "not-allowed"
+    }
+  },
   text: {
     width: "calc(100% - 60px)",
     textAlign: "center",

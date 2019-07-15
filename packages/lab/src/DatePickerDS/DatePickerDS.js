@@ -28,10 +28,12 @@ import Calendar from "./Calendar";
 import Actions from "./Actions";
 
 import {
+  DEFAULT_LOCALE,
   getDateISO,
   convertISOStringDateToDate,
   isDate,
-  getFormattedDate
+  getFormattedDate,
+  isValidLocale
 } from "./Calendar/utils";
 
 import {
@@ -47,11 +49,39 @@ class HvDatePickerDS extends React.Component {
   constructor(props) {
     super(props);
 
+    const { locale } = this.props;
+
     this.state = {
       ...this.resolveStateFromProps(),
       calendarOpen: false,
-      calendarAnchorElement: null
+      calendarAnchorElement: null,
+      locale: isValidLocale(locale) ? locale : DEFAULT_LOCALE
     };
+  }
+
+  /**
+   * Triggered right before the Render() function of the components.
+   * Here we can update the state when a prop is changed.
+   * Currently we only want to update the locale. In the future we might want to be able to update other props.
+   *
+   * @static
+   * @param {Object} props - The new props object.
+   * @param {Object} state - The current state object.
+   *
+   * @returns {Object} - The updated state
+   * @memberof DatePickerDS
+   */
+  static getDerivedStateFromProps(props, state) {
+    if (props.locale !== state.locale) {
+      const validLocale = isValidLocale(props.locale)
+        ? props.locale
+        : DEFAULT_LOCALE;
+      return {
+        ...state,
+        locale: validLocale
+      };
+    }
+    return null;
   }
 
   /**
@@ -63,21 +93,28 @@ class HvDatePickerDS extends React.Component {
     const { value, startValue, endValue, rangeMode } = this.props;
 
     if (rangeMode) {
+      const startSelectedDate =
+        startValue !== "" ? convertISOStringDateToDate(startValue) : null;
+      const endSelectedDate =
+        endValue !== "" ? convertISOStringDateToDate(endValue) : null;
       // Range mode state
       return {
-        startSelectedDate: convertISOStringDateToDate(startValue),
-        endSelectedDate: convertISOStringDateToDate(endValue),
-        tempStartSelectedDate: convertISOStringDateToDate(startValue),
-        tempEndSelectedDate: convertISOStringDateToDate(endValue),
+        startSelectedDate,
+        endSelectedDate,
+        tempStartSelectedDate: startSelectedDate,
+        tempEndSelectedDate: endSelectedDate,
         startVisibleDate: null,
         endVisibleDate: null
       };
     }
 
     // Single calendar mode state
+    const selectedDate =
+      value !== "" ? convertISOStringDateToDate(value) : null;
+
     return {
-      selectedDate: convertISOStringDateToDate(value),
-      tempSelectedDate: convertISOStringDateToDate(value)
+      selectedDate,
+      tempSelectedDate: selectedDate
     };
   };
 
@@ -150,16 +187,7 @@ class HvDatePickerDS extends React.Component {
    * @memberof HvDatePickerDS
    */
   handleCancelAction = () => {
-    const { rangeMode } = this.props;
-    const { startSelectedDate, endSelectedDate } = this.state;
-
-    if (rangeMode) {
-      this.setState({
-        tempStartSelectedDate: startSelectedDate,
-        tempEndSelectedDate: endSelectedDate
-      });
-    }
-    this.setCalendarOpen(false);
+    this.cancelDateSelection();
   };
 
   /**
@@ -182,9 +210,7 @@ class HvDatePickerDS extends React.Component {
    * @memberof HvDatePickerDS
    */
   handleCalendarClickAway = () => {
-    this.setState({
-      calendarOpen: false
-    });
+    this.cancelDateSelection();
   };
 
   /**
@@ -193,7 +219,8 @@ class HvDatePickerDS extends React.Component {
    * @memberof HvDatePickerDS
    */
   getFormattedSelectedDate = () => {
-    const { rangeMode, locale } = this.props;
+    const { rangeMode } = this.props;
+    const { locale } = this.state;
 
     if (rangeMode) {
       const { startSelectedDate, endSelectedDate } = this.state;
@@ -209,6 +236,29 @@ class HvDatePickerDS extends React.Component {
     const { selectedDate } = this.state;
 
     return isDate(selectedDate) ? getFormattedDate(selectedDate, locale) : "";
+  };
+
+  /**
+   * Cancels the date selection and closes the Calendar component.
+   *
+   * @memberof HvDatePickerDS
+   */
+  cancelDateSelection = () => {
+    const { rangeMode } = this.props;
+    const { selectedDate, startSelectedDate, endSelectedDate } = this.state;
+
+    if (rangeMode) {
+      this.setState({
+        tempStartSelectedDate: startSelectedDate,
+        tempEndSelectedDate: endSelectedDate
+      });
+    } else {
+      this.setState({
+        tempSelectedDate: selectedDate
+      });
+    }
+
+    this.setCalendarOpen(false);
   };
 
   /**
@@ -366,8 +416,8 @@ class HvDatePickerDS extends React.Component {
             )}
           >
             <Actions
-              onCancel={this.handleCancelAction}
-              onApply={this.handleApplyAction}
+              onCancel={() => this.handleCancelAction()}
+              onApply={() => this.handleApplyAction()}
               labels={actionLabels}
             />
           </div>
@@ -378,8 +428,8 @@ class HvDatePickerDS extends React.Component {
     return (
       <div className={classes.singleCalendarFooter}>
         <Actions
-          onCancel={this.handleCancelAction}
-          onApply={this.handleApplyAction}
+          onCancel={() => this.handleCancelAction()}
+          onApply={() => this.handleApplyAction()}
           labels={actionLabels}
         />
       </div>
@@ -392,8 +442,8 @@ class HvDatePickerDS extends React.Component {
    * @memberof Calendar
    */
   renderSingleCalendar = () => {
-    const { classes, locale, showActions } = this.props;
-    const { tempSelectedDate, calendarPlacement } = this.state;
+    const { classes, showActions } = this.props;
+    const { tempSelectedDate, calendarPlacement, locale } = this.state;
 
     return (
       <div
@@ -418,13 +468,14 @@ class HvDatePickerDS extends React.Component {
    * @memberof Calendar
    */
   renderRangeCalendars = () => {
-    const { classes, locale, horizontalPlacement } = this.props;
+    const { classes, horizontalPlacement } = this.props;
     const {
       tempStartSelectedDate,
       tempEndSelectedDate,
       startVisibleDate,
       endVisibleDate,
-      calendarPlacement
+      calendarPlacement,
+      locale
     } = this.state;
 
     return (
@@ -636,7 +687,7 @@ HvDatePickerDS.defaultProps = {
   value: "",
   startValue: "",
   endValue: "",
-  locale: undefined,
+  locale: DEFAULT_LOCALE,
   showActions: false,
   onChange: undefined
 };

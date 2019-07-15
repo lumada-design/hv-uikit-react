@@ -23,6 +23,7 @@ import {
   UTCToLocalDate,
   getMonthFirstDay,
   isDate,
+  isDateInValidRange,
   isSameMonth,
   isSameDay,
   getDateISO,
@@ -34,7 +35,10 @@ import {
   getWeekdayName,
   getMonthName,
   getFormattedDate,
-  createDatesArray
+  createDatesArray,
+  isValidLocale,
+  isPreviousDateValid,
+  isNextDateValid
 } from "../utils";
 
 describe("Calendar utils - zeroPad", () => {
@@ -153,6 +157,18 @@ describe("Calendar utils - isDate", () => {
     expect(isDate(undefined)).toBe(false);
     expect(isDate(null)).toBe(false);
     expect(isDate(6)).toBe(false);
+  });
+});
+
+describe("Calendar utils - isDateInValidRange", () => {
+  it("should return `true` if the date is 2019-01-01", () => {
+    expect(isDateInValidRange(convertISOStringDateToDate("2019-01-01"))).toBe(true);
+  });
+  it("should return `false` if the value received is 0999-01-01", () => {
+    expect(isDateInValidRange(convertISOStringDateToDate("0999-01-01"))).toBe(false);
+  });
+  it("should return `false` if the value received is 10999-01-01", () => {
+    expect(isDateInValidRange(convertISOStringDateToDate("10999-01-01"))).toBe(false);
   });
 });
 
@@ -336,5 +352,44 @@ describe("Calendar utils - createDatesArray", () => {
       currentMonthDates.length +
       nextMonthDates.length;
     expect(totalAmountOfDates).toBe(42);
+  });
+});
+
+describe("Calendar utils - isValidLocale", () => {
+  it("should return true for American locale `en-US`", () => {
+    expect(isValidLocale("en-US")).toBe(true);
+  });
+  it("should return false for a locale with the incorrect format `something wrong`", () => {
+    expect(isValidLocale("something wrong")).toBe(false);
+  });
+});
+
+describe("Calendar utils - isPreviousDateValid", () => {
+  it("should return true for year: 2019 and month: 1", () => {
+    expect(isPreviousDateValid(2019, 1)).toBe(true);
+  });
+  it("should return false for year: 1000 and month: 1", () => {
+    expect(isPreviousDateValid(1000, 1)).toBe(false);
+  });
+  it("should return true for year: 1000 and month: 2", () => {
+    expect(isPreviousDateValid(1000, 2)).toBe(true);
+  });
+  it("should return true for year: 2000 and month: 1", () => {
+    expect(isPreviousDateValid(2000, 1)).toBe(true);
+  });
+});
+
+describe("Calendar utils - isNextDateValid", () => {
+  it("should return true for year: 2019 and month: 1", () => {
+    expect(isNextDateValid(2019, 1)).toBe(true);
+  });
+  it("should return true for year: 9999 and month: 1", () => {
+    expect(isNextDateValid(9999, 1)).toBe(true);
+  });
+  it("should return true for year: 9999 and month: 5", () => {
+    expect(isNextDateValid(9999, 5)).toBe(true);
+  });
+  it("should return false for year: 9999 and month: 12", () => {
+    expect(isNextDateValid(9999, 12)).toBe(false);
   });
 });
