@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.15](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.14...@hv/uikit-react-icons@1.1.3-alpha.15) (2019-07-15)
+
+
+### Features
+
+* **icons:** updated icons from DS 1.0.0 version [#258](https://github.com/pentaho/hv-uikit-react/issues/258) ([1379c0c](https://github.com/pentaho/hv-uikit-react/commit/1379c0c))
+
+
+
+
+
 ## [1.1.3-alpha.14](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.13...@hv/uikit-react-icons@1.1.3-alpha.14) (2019-07-08)
 
 
