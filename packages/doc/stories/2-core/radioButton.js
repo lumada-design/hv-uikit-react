@@ -22,7 +22,8 @@ storiesOf("Core", module).add("RadioButton", () => <HvRadio />, {
   title: "Radio button selector",
   description:
     "A Radio button selector used to limit the user’s choice to just one option from the range provided.",
-  usage: "import HvRadio from '@hv/uikit-react-core/dist/Selectors/RadioButton'",
+  usage:
+    "import HvRadio from '@hv/uikit-react-core/dist/Selectors/RadioButton'",
   examples: [
     {
       title: "1. Enabled",
@@ -33,27 +34,25 @@ storiesOf("Core", module).add("RadioButton", () => <HvRadio />, {
       src: "core/radioButton/radioButtonDisabled"
     },
     {
-      title: "2. With label",
+      title: "3. With label",
       src: "core/radioButton/radioButtonLabel"
     },
     {
-      title: "3. Disabled with label",
+      title: "4. Disabled with label",
       src: "core/radioButton/radioButtonLabelDisabled"
     },
     {
-      title: "4. With click action",
-      description:
-        "Returns the value assigned on click",
+      title: "5. With click action",
+      description: "Returns the value assigned on click",
       src: "core/radioButton/radioButtonOnChange"
     },
     {
-      title: "5. Disabled with no click action",
-      description:
-        "When disabled prevents click actions to be triggered",
+      title: "6. Disabled with no click action",
+      description: "When disabled prevents click actions to be triggered",
       src: "core/radioButton/radioButtonOnChangeDisabled"
     },
     {
-      title: "6. With state management",
+      title: "7. With state management",
       description:
         "Demonstration of how to create a group of Radio button with state management",
       src: "core/radioButton/radioButtonState"
