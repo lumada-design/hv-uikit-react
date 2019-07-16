@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvBadge } from "./Badge";
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Badge from "./Badge";
+
+export default withStyles(styles, { withTheme: true })(Badge);

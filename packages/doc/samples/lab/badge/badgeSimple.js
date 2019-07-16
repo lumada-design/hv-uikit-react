@@ -14,12 +14,21 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvBadge } from "./Badge";
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+import React from "react";
+import HvBadge from "@hv/uikit-react-lab/dist/Badge";
+
+const exampleStyles = {
+	display: "flex",
+	width: "400px",
+	justifyContent: "space-between"
+}
+
+export default (
+	<div style={exampleStyles}>
+		<HvBadge count={1}/>
+		<HvBadge showCount count={8}/>
+		<HvBadge showCount count={12}/>
+		<HvBadge showCount count={100}/>
+	</div>
+);
+
