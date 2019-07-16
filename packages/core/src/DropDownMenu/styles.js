@@ -16,41 +16,47 @@
 
 const styles = theme => ({
   root: {
-    position: "relative",
-    zIndex: 10
+    position: "absolute",
+    width: "100%"
   },
   icon: {
-    boxSizing: "content-box",
-    border: `solid 1px transparent`,
-    borderBottom: "none"
+    position: "relative"
   },
   iconSelected: {
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
+    zIndex: 10,
+    border: `solid 1px ${theme.hv.palette.accent.acce1}`,
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     borderBottom: "none"
   },
   iconButton: {
-    boxSizing: "content-box",
     color: theme.palette.text.main,
     padding: 0,
     "&:hover": {
       backgroundColor: "transparent"
     }
   },
-  menuList: {
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    padding: `${theme.hv.spacing.xs}px`,
+  extenderLine: {
     position: "absolute",
-    whiteSpace: "nowrap",
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    top: `${theme.hv.spacing.md}px`,
-    zIndex: -1
+    width: "calc(100% - 30px)",
+    top: "-1px",
+    right: "31px",
+    borderTop: `1px solid ${theme.hv.palette.accent.acce1}`
   },
-  right: { justifyContent: "flex-start" },
-  center: { justifyContent: "center" },
-  left: { justifyContent: "flex-end" },
-  rightPx: { left: "0px" },
-  leftPx: { right: "0px" }
+  paperRoot: {
+    position: "absolute",
+    zIndex: 1,
+    right: "-1px",
+    top: 0,
+    background: theme.palette.common.white,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    borderTop: "none"
+  },
+  column: {
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "right"
+  },
+  menuList: {}
 });
 
 export default styles;
