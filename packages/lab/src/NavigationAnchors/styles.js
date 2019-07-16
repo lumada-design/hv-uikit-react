@@ -23,8 +23,7 @@ const styles = theme => ({
   },
   drawerPaperPositionInherit: {
     position: "inherit"
-  }
-  ,
+  },
   listRoot: {
     borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
   },
@@ -35,19 +34,23 @@ const styles = theme => ({
   listItemRoot: {
     height: 32,
     background: "none",
+    marginBottom: "8px",
+    "&:last-child": {
+      marginBottom: "0"
+    },
     "&:hover": {
-      background: "none"
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     },
     "&$listItemSelected": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     },
     "&$listItemSelected:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     }
   },
   listItemGutters: {
     "@media (min-width: 600px)": {
-      paddingLeft: `${theme.hv.spacing.xs}px`
+      padding: `0 ${theme.hv.spacing.xs}px`
     }
   },
   listItemSelected: {
@@ -62,7 +65,7 @@ const styles = theme => ({
     fontWeight: "inherit"
   },
   listItemTextSelected: {
-    fontWeight: 600
+    ...theme.hv.typography.highlightText
   }
 });
 

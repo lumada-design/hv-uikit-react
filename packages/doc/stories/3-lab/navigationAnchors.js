@@ -33,6 +33,12 @@ storiesOf("Lab", module).add(
         description:
           "Basic navigation anchors to provide a clickable area to change views",
         src: "lab/navigationAnchors/navigationAnchorsSimple.js"
+      },
+      {
+        title: "2. Scroll",
+        description:
+          "Basic navigation anchors to provide a clickable area to show scrolling capabilities",
+        src: "lab/navigationAnchors/navigationAnchorsScroll.js"
       }
     ]
   }
