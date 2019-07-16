@@ -23440,9 +23440,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
 .HvCheckbox-container-272:hover {
   background-color: #F0F0F0;
 }
-.HvCheckbox-container-272:focus-within {
-  border: solid 1px #4389DB;
-}
 .HvCheckbox-labelTypography-273 {
   color: #414141;
   font-size: 14px;
@@ -23465,7 +23462,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
   padding-left: 8px;
 }
 .HvCheckbox-checkBox-277 {
-  padding: 8px;
+  padding: 1px;
 }
 .HvCheckbox-icon-278 {
   width: 16px;
@@ -23503,9 +23500,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                     "background-color": "#F0F0F0",
                   },
                   Object {
-                    "border": "solid 1px #4389DB",
-                  },
-                  Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
@@ -23527,7 +23521,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                     "padding-left": "8px",
                   },
                   Object {
-                    "padding": "8px",
+                    "padding": "1px",
                   },
                   Object {
                     "background-size": "16px 16px",
@@ -23537,15 +23531,12 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                 ],
                 "map": Object {
                   ".HvCheckbox-checkBox-277": Object {
-                    "padding": "8px",
+                    "padding": "1px",
                   },
                   ".HvCheckbox-container-272": Object {
                     "height": "32px",
                     "margin-left": 0,
                     "margin-right": 0,
-                  },
-                  ".HvCheckbox-container-272:focus-within": Object {
-                    "border": "solid 1px #4389DB",
                   },
                   ".HvCheckbox-container-272:hover": Object {
                     "background-color": "#F0F0F0",
@@ -23577,7 +23568,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                     "line-height": "20px",
                   },
                   "checkBox": Object {
-                    "padding": "8px",
+                    "padding": "1px",
                   },
                   "container": Object {
                     "height": "32px",
@@ -24100,9 +24091,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvCheckbox-container-272:focus-within": Object {
-                    "border": "solid 1px #4389DB",
-                  },
                   ".HvCheckbox-container-272:hover": Object {
                     "backgroundColor": "#F0F0F0",
                   },
@@ -24111,12 +24099,9 @@ label[data-shrink=false] + .MuiInputBase-formControl-256 .MuiInputBase-input-265
                     "cursor": "not-allowed",
                   },
                   "checkBox": Object {
-                    "padding": "8px",
+                    "padding": "1px",
                   },
                   "container": Object {
-                    "&:focus-within": Object {
-                      "border": "solid 1px #4389DB",
-                    },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
                     },

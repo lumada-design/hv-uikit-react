@@ -17,64 +17,46 @@
 import React from "react";
 import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
 
-const valueA = "a";
-const valueB = "b";
-const valueC = "c";
-const nothing = "";
-
 class CheckboxStateManager extends React.Component {
   state = {
-    checkedRadio: "a"
+    isAChecked: false,
+    isBChecked: false,
+    isCChecked: false
   };
 
   render() {
-    const { checkedRadio } = this.state;
+    const { isAChecked, isBChecked, isCChecked } = this.state;
 
     return (
       <>
         <div>
-          <div>
-            <HvCheckBox
-              label="checked"
-              checked={checkedRadio === valueA}
-              onChange={() => {
-                if (checkedRadio !== valueA) {
-                  this.setState({ checkedRadio: valueA });
-                } else {
-                  this.setState({ checkedRadio: nothing });
-                }
-              }}
-            />
-          </div>
+          <HvCheckBox
+            label="some label"
+            checked={isAChecked}
+            onChange={() =>
+              this.setState({ isAChecked: !this.state.isAChecked })
+            }
+          />
+        </div>
 
-          <div>
-            <HvCheckBox
-              label="unchecked"
-              checked={checkedRadio === valueB}
-              onChange={() => {
-                if (checkedRadio !== valueB) {
-                  this.setState({ checkedRadio: valueB });
-                } else {
-                  this.setState({ checkedRadio: nothing });
-                }
-              }}
-            />
-          </div>
+        <div>
+          <HvCheckBox
+            label="other label"
+            checked={isBChecked}
+            onChange={() =>
+              this.setState({ isBChecked: !this.state.isBChecked })
+            }
+          />
+        </div>
 
-          <div>
-            <HvCheckBox
-              label="indeterminate"
-              checked={checkedRadio === valueC}
-              indeterminate={checkedRadio === valueC}
-              onChange={() => {
-                if (checkedRadio !== valueC) {
-                  this.setState({ checkedRadio: valueC });
-                } else {
-                  this.setState({ checkedRadio: nothing });
-                }
-              }}
-            />
-          </div>
+        <div>
+          <HvCheckBox
+            label="indeterminate"
+            indeterminate={isCChecked}
+            onChange={() =>
+              this.setState({ isCChecked: !this.state.isCChecked })
+            }
+          />
         </div>
       </>
     );
