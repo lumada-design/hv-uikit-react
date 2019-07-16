@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.18](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.17...@hv/uikit-react-icons@1.1.3-alpha.18) (2019-07-16)
+
+
+### Features
+
+* **checkbox:** reviewed component according to guidelines. [#251](https://github.com/pentaho/hv-uikit-react/issues/251) ([9cf7470](https://github.com/pentaho/hv-uikit-react/commit/9cf7470))
+
+
+
+
+
 ## [1.1.3-alpha.17](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.16...@hv/uikit-react-icons@1.1.3-alpha.17) (2019-07-15)
 
 
