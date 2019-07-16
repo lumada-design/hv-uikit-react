@@ -57,7 +57,18 @@ storiesOf("Core", module).add("Table", () => <HvTable />, {
       description:
         "each row can be checked to be selected and some cells contain custom content",
       src: "core/table/tableTypical"
+    },
+    {
+      title: "7. With both checkbox and secondary actions",
+      description:
+        "each row has a checkbox column and a dropdown menu with clickable actions",
+      src: "core/table/tableSecondary"
+    },
+    {
+      title: "8. With null data values",
+      description:
+        "some rows have null data values which should be replaced by emdashes",
+      src: "core/table/tableNulls"
     }
-
   ]
 });
