@@ -29,7 +29,7 @@ const labels = {
 export default (
   <HvInput
     labels={labels}
-    iconPosition="left"
+    validationIconPosition="left"
     validationType="email"
     validationState="invalid"
     value="wrong"

@@ -28,6 +28,6 @@ const labels = {
 export default (
   <HvInput
     labels={labels}
-    maxCharQuantity={40}
+    maxCharQuantity={5}
   />
 );

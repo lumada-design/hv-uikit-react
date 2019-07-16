@@ -124,7 +124,7 @@ describe("TextArea Component", () => {
     const inputValue = "four";
     const onChangeMock = jest.fn(() => inputValue);
     const defaultProps = {
-      value: "example",
+      initialValue: "example",
       onChange: onChangeMock
     };
     const instance = getInputInstance(defaultProps, inputValue);
@@ -133,7 +133,7 @@ describe("TextArea Component", () => {
 
   it("should limit the current value length on change of inputValue", () => {
     const defaultProps = {
-      value: "four",
+      initialValue: "four",
       maxCharQuantity: 5
     };
     const instance = getInputInstance(defaultProps, "onethousand");

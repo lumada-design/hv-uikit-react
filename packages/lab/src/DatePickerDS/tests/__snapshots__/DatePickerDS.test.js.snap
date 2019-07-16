@@ -241,6 +241,7 @@ exports[`<DatePickerDS /> with Range Calendar mode should render correctly 1`] =
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3849,6 +3850,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -6483,6 +6485,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -7459,6 +7462,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -8494,6 +8498,7 @@ exports[`<DatePickerDS /> with Single Calendar mode should render correctly 1`] 
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -12102,6 +12107,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -14736,6 +14742,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -15711,6 +15718,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -16746,6 +16754,7 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -20354,6 +20363,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -22992,6 +23002,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -24323,6 +24334,7 @@ body {
 .Typography-selectedText-1571 {
   color: #F9F9F9;
   font-size: 14px;
+  background: #414141;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -24528,6 +24540,7 @@ body {
                     "line-height": "20px",
                   },
                   Object {
+                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -24738,6 +24751,7 @@ body {
                     "line-height": "20px",
                   },
                   ".Typography-selectedText-1571": Object {
+                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -24905,6 +24919,7 @@ body {
                     "line-height": "20px",
                   },
                   "selectedText": Object {
+                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -25589,6 +25604,7 @@ body {
                     "lineHeight": "20px",
                   },
                   "selectedText": Object {
+                    "background": "#414141",
                     "color": "#F9F9F9",
                     "fontSize": "14px",
                     "fontWeight": "600",
@@ -25864,6 +25880,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -26848,6 +26865,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -27816,6 +27834,7 @@ body {
                           "lineHeight": "20px",
                         },
                         "selectedText": Object {
+                          "background": "#414141",
                           "color": "#F9F9F9",
                           "fontSize": "14px",
                           "fontWeight": "600",
@@ -28850,6 +28869,7 @@ exports[`<DatePickerDS /> with minimum configuration should render correctly 1`]
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -32458,6 +32478,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -35092,6 +35113,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -36063,6 +36085,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
