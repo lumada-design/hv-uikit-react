@@ -120,13 +120,17 @@ Typography.propTypes = {
     "xxsTitle",
     "highlightText",
     "normalText",
-    "inlineLink",
+    "selectedText",
     "disabledButtonText",
+    "placeholderText",
+    "inlineLink",
+    "selectedNavText",
     "labelText",
     "infoText",
     "sLink",
-    "disabledText",
-    "vizText"
+    "sText",
+    "vizText",
+    "disabledText"
   ])
 };
 
