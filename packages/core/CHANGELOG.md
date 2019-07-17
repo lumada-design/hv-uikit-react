@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.31](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.30...@hv/uikit-react-core@1.1.3-alpha.31) (2019-07-17)
+
+
+### Features
+
+* **button:** update button styling.[#236](https://github.com/pentaho/hv-uikit-react/issues/236) ([f866a64](https://github.com/pentaho/hv-uikit-react/commit/f866a64))
+
+
+
+
+
 ## [1.1.3-alpha.30](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.29...@hv/uikit-react-core@1.1.3-alpha.30) (2019-07-17)
 
 
