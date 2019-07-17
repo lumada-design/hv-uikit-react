@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.32](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.31...@hv/uikit-react-core@1.1.3-alpha.32) (2019-07-17)
+
+
+### Bug Fixes
+
+* **typography:** add new typographies to prop types. [#308](https://github.com/pentaho/hv-uikit-react/issues/308) ([3983e01](https://github.com/pentaho/hv-uikit-react/commit/3983e01))
+
+
+
+
+
 ## [1.1.3-alpha.31](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.30...@hv/uikit-react-core@1.1.3-alpha.31) (2019-07-17)
 
 
