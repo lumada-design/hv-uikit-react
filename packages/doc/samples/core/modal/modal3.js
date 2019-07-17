@@ -152,7 +152,7 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton colorType="secondary" onClick={() => {}}>
+          <HvButton category="secondary" onClick={() => {}}>
             Cancel
           </HvButton>
           <HvButton>Send Work Request</HvButton>

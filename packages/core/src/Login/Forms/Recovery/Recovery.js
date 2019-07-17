@@ -19,7 +19,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import HvTypography from "../../../Typography";
 import Input from "../../../Input";
-import HvButton, { buttonTypes } from "../../../Button";
+import HvButton from "../../../Button";
 import MessageElement from "../MessageElement";
 
 /**
@@ -132,7 +132,7 @@ class Recovery extends React.Component {
           <HvButton
             className={classes.submitButton}
             type="submit"
-            colorType={buttonTypes.primary}
+            category="primary"
           >
             {isRecovering ? recoveringMessage : recoverButton}
           </HvButton>
@@ -140,7 +140,7 @@ class Recovery extends React.Component {
             className={classes.cancelButton}
             type="submit"
             onClick={onClick}
-            colorType={buttonTypes.secondary}
+            category="secondary"
           >
             {cancelButton}
           </HvButton>

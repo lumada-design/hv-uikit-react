@@ -174,11 +174,11 @@ const MultipleActionsButtons = () => (
   <>
     <HvButton
       className={MultipleActionsButtonsStyles.smallButton}
-      colorType="link"
+      category="ghost"
     >
       View
     </HvButton>
-    <HvButton className={MultipleActionsButtonsStyles.button} colorType="link">
+    <HvButton className={MultipleActionsButtonsStyles.button} category="ghost">
       Share
     </HvButton>
   </>

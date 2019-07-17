@@ -16,21 +16,21 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { HvButton, buttonTypes, HvLink } from "@hv/uikit-react-core/dist";
+import { HvButton, HvLink } from "@hv/uikit-react-core/dist";
 
 const ActionsList = ({ classes, eventId, dismiss, close }) => (
   <div className={classes.root}>
     <HvLink route="events" params={{ eventId }}>
       <HvButton
         style={{ borderBottom: "none" }}
-        colorType={buttonTypes.secondary}
+        category="secondary"
         className={classes.button}
       >
         View
       </HvButton>
     </HvLink>
     <HvButton
-      colorType={buttonTypes.secondary}
+      category="secondary"
       className={classes.button}
       onClick={() => {
         dismiss({

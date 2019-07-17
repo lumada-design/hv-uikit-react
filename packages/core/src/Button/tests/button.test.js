@@ -79,7 +79,7 @@ describe("Button withStyles", () => {
           Click!
         </ButtonWithStyles>
       </HvProvider>
-    ).find(HvButton);;
+    ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
       materialButtonConfiguration.color.primary
     );
@@ -93,7 +93,111 @@ describe("Button withStyles", () => {
       <HvProvider>
         <ButtonWithStyles colorType={buttonTypes.link}>Click!</ButtonWithStyles>
       </HvProvider>
-    ).find(HvButton);;
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.text
+    );
+  });
+
+  it("should correctly map the secondary category to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.outlined
+    );
+  });
+
+  it("should correctly map the secondary type to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles category="ghost">Click!</ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.text
+    );
+  });
+
+  it("should correctly map the secondary type to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles category="ghostSecondary">Click!</ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.text
+    );
+  });
+
+  it("should correctly map the secondary category to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles variant="inspireRed">Click!</ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.contained
+    );
+  });
+
+  it("should correctly map the secondary category to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles variant="inspireRed" category="secondary">
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.outlined
+    );
+  });
+
+  it("should correctly map the secondary type to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles variant="inspireRed" category="ghost">
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
+    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
+      materialButtonConfiguration.color.primary
+    );
+    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
+      materialButtonConfiguration.variant.text
+    );
+  });
+
+  it("should correctly map the secondary type to the material ui configurations", () => {
+    const mountWrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles variant="inspireRed" category="ghostSecondary">
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
       materialButtonConfiguration.color.primary
     );

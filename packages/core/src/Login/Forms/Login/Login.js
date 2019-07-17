@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Input from "../../../Input";
-import HvButton, { buttonTypes } from "../../../Button";
+import HvButton from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
 import MessageElement from "../MessageElement";
@@ -35,7 +35,7 @@ function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
   return (
     <div className={classes.forgotCredentials}>
       <HvButton
-        colorType="link"
+        category="ghost"
         onClick={onClick}
         classes={{ textPrimary: classes.linkButtonTypography }}
       >
@@ -199,7 +199,7 @@ class Login extends React.Component {
           ) : null}
           <HvButton
             type="submit"
-            colorType={buttonTypes.primary}
+            category="primary"
             className={classes.button}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}

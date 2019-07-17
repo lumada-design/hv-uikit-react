@@ -40,11 +40,11 @@ const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
 
 const MultipleActionsWithMediaButtons = () => (
   <>
-    <HvButton colorType="link">
+    <HvButton category="ghost">
       <Icon />
       Update
     </HvButton>
-    <HvButton colorType="link">
+    <HvButton category="ghost">
       <MoreOptionsIcon />
     </HvButton>
   </>

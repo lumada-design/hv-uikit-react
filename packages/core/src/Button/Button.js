@@ -17,35 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
-import buttonTypes from "./buttonTypes";
-import materialButtonConfiguration from "./materialButtonConfiguration";
-
-/**
- * Receives a type of HvButton and generates an appropiate material ui configuration.
- *
- * @param {*} type - The button type configuration that will be generated.
- * @returns {Object} - An Object with the color and variant values required by the material ui button.
- */
-const generateButtonConfiguration = type => {
-  switch (type) {
-    default:
-    case buttonTypes.primary:
-      return {
-        color: materialButtonConfiguration.color.primary,
-        variant: materialButtonConfiguration.variant.contained
-      };
-    case buttonTypes.secondary:
-      return {
-        color: materialButtonConfiguration.color.primary,
-        variant: materialButtonConfiguration.variant.outlined
-      };
-    case buttonTypes.link:
-      return {
-        color: materialButtonConfiguration.color.primary,
-        variant: materialButtonConfiguration.variant.text
-      };
-  }
-};
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import materialConfigurationFactory from "./materialConfigurarionFactory";
 
 const HvButton = props => {
   const {
@@ -57,10 +30,17 @@ const HvButton = props => {
     onClick,
     type,
     colorType,
+    category,
+    variant,
     ...other
   } = props;
-  const buttonConfiguration = generateButtonConfiguration(colorType);
 
+  const buttonConfiguration = materialConfigurationFactory(
+    classes,
+    category,
+    variant,
+    colorType
+  );
   const onClickHandler = event => {
     if (!disabled) onClick(event);
   };
@@ -69,7 +49,7 @@ const HvButton = props => {
     <Button
       className={className}
       id={id}
-      classes={classes}
+      classes={buttonConfiguration.classes}
       variant={buttonConfiguration.variant}
       color={buttonConfiguration.color}
       disabled={disabled}
@@ -90,8 +70,12 @@ HvButton.propTypes = {
    *    --"submit",
    *    --"reset",
    *    --"button"
+   * @deprecated
    */
-  type: PropTypes.oneOf(["submit", "reset", "button"]),
+  type: deprecatedPropType(
+    PropTypes.oneOf(["submit", "reset", "button"]),
+    "This will be deprecated in material 4"
+  ),
   /**
    * Type of color of HvButton to use.
    *  - Accepted values:
@@ -99,8 +83,34 @@ HvButton.propTypes = {
    *    --"secondary",
    *    --"link"
    *  - note: the buttonType object should be used to set this value.
+   * @deprecated
    */
-  colorType: PropTypes.oneOf(["primary", "secondary", "link"]),
+  colorType: deprecatedPropType(
+    PropTypes.oneOf(["primary", "secondary", "link"]),
+    "Instead use the category property"
+  ),
+  /**
+   * Category of button to use.
+   *  - Accepted values:
+   *    --"primary",
+   *    --"secondary",
+   *    --"ghost"
+   *    --"ghostSecondary"
+   *  - note: the buttonType object should be used to set this value.
+   */
+  category: PropTypes.oneOf([
+    "primary",
+    "secondary",
+    "ghost",
+    "ghostSecondary"
+  ]),
+  /**
+   * The variant of button to use.
+   *  - Accepted values:
+   *    -- "primary"
+   *    -- "inspireRed"
+   */
+  variant: PropTypes.oneOf(["primary", "inspireRed"]),
   /**
    * Class names to be applied.
    */
@@ -118,21 +128,69 @@ HvButton.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the component contained primary.
+     * Styles applied to the primary primary button.
      */
-    containedPrimary: PropTypes.string,
+    primary: PropTypes.string,
     /**
-     * Styles applied to the component outline primary.
+     * Styles applied to the primary primary button when it is disabled.
      */
-    outlinedPrimary: PropTypes.string,
+    primaryDisabled: PropTypes.string,
     /**
-     * Styles applied to the component text primary.
+     * Styles applied to the primary secondary button.
      */
-    textPrimary: PropTypes.string,
+    secondary: PropTypes.string,
     /**
-     * Styles applied to the component when disable.
+     * Styles applied to the primary secondary button when it is disabled.
      */
-    disabled: PropTypes.string
+    secondaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the primary ghost button.
+     */
+    ghost: PropTypes.string,
+    /**
+     * Styles applied to the primary ghost button when it is disabled.
+     */
+    ghostDisabled: PropTypes.string,
+    /**
+     * Styles applied to the primary secondary ghost  button.
+     */
+    ghostSecondary: PropTypes.string,
+    /**
+     * Styles applied to the primary secondary ghost button when it is disabled.
+     */
+    ghostSecondaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed primary button.
+     */
+    inspireRedPrimary: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed primary button when it is disabled.
+     */
+    inspireRedPrimaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed secondary button.
+     */
+    inspireRedSecondary: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed secondary button when it is disabled.
+     */
+    inspireRedSecondaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed ghost button.
+     */
+    inspireRedGhost: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed ghost button when it is disabled.
+     */
+    inspireRedGhostDisabled: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed secondary ghost  button.
+     */
+    inspireRedGhostSecondary: PropTypes.string,
+    /**
+     * Styles applied to the inspireRed secondary ghost button when it is disabled.
+     */
+    inspireRedGhostSecondaryDisabled: PropTypes.string
   }).isRequired,
   /**
    * The content inside the button.
@@ -152,7 +210,9 @@ HvButton.defaultProps = {
   className: "",
   id: undefined,
   type: "button",
-  colorType: "primary",
+  colorType: undefined,
+  category: "primary",
+  variant: "primary",
   disabled: false,
   onClick: () => {}
 };

@@ -20,10 +20,10 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const Actions = ({ classes, onCancel, onApply, labels }) => (
   <div className={classes.root}>
-    <HvButton className={classes.button} onClick={onCancel} colorType="link">
+    <HvButton className={classes.button} onClick={onCancel} category="ghost">
       {labels.cancelLabel}
     </HvButton>
-    <HvButton className={classes.button} onClick={onApply} colorType="link">
+    <HvButton className={classes.button} onClick={onApply} category="ghost">
       {labels.applyLabel}
     </HvButton>
   </div>
