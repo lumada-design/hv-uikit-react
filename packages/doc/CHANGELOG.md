@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.40](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.39...@hv/uikit-react-doc@1.1.3-alpha.40) (2019-07-17)
+
+
+### Features
+
+* **typography:** update new typographies. [#262](https://github.com/pentaho/hv-uikit-react/issues/262) ([bbd5e82](https://github.com/pentaho/hv-uikit-react/commit/bbd5e82))
+
+
+
+
+
 ## [1.1.3-alpha.39](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.38...@hv/uikit-react-doc@1.1.3-alpha.39) (2019-07-16)
 
 
