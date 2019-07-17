@@ -22,6 +22,11 @@ import { REPRESENTATION_VALUES } from "./enums";
 export const CALENDAR_WEEKS = 6;
 
 /**
+ * Constant with the default locale that should be used as the default.
+ */
+export const DEFAULT_LOCALE = "en";
+
+/**
  * Pads a string value with leading zeroes(0) until length is reached.
  * For example: zeroPad(5, 2) => "05".
  *
@@ -59,6 +64,15 @@ export const getWeekdayNumber = date => date.getUTCDay();
  */
 export const makeUTCDate = (year, month, day) =>
   new Date(Date.UTC(year, month - 1, day, 0));
+
+/**
+ * Creates a date in UTC timezone from an ISO string.
+ *
+ * @param {string} ISO formatted date.
+ * @returns {Date}
+ */
+export const makeUTCDateFromISOString = isoStringDate =>
+  new Date(isoStringDate);
 
 /**
  * Creates a new date object with today's date in UTC timezone.
@@ -111,6 +125,21 @@ export const isDate = date => {
   const isValidDate = date && !Number.isNaN(date.valueOf());
 
   return auxIsDate && isValidDate;
+};
+
+/**
+ * Checks if the recieved date is between `1000-01-01` and `9999-12-31`.
+ *
+ * @param {Date} date - The date to be validated.
+ * @returns {boolean} A flag stating if the date is in a valid range or not.
+ */
+export const isDateInValidRange = date => {
+  if (!isDate(date)) {
+    return false;
+  }
+
+  const year = date.getUTCFullYear();
+  return year >= 1000 && year <= 9999;
 };
 
 /**
@@ -174,6 +203,15 @@ export const getDateISO = date => {
 };
 
 /**
+ * Checks if a string is a valid ISO formatted date.
+ *
+ * @param {string} isoStringDate - The string to be checked.
+ * @returns {boolean} True if the received string is in a valid ISO format, false otherwise.
+ */
+export const isValidISOString = isoStringDate =>
+  /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
+
+/**
  * Converts a ISO date string ("YYYY-MM-DD") into a new Date.
  * This is needed because when creating a new date in javascript using a ISO date string the timezone applied will
  * always be UTC instead of local time.
@@ -182,14 +220,22 @@ export const getDateISO = date => {
  * @returns {Date} A new date created based on the ISO string.
  */
 export const convertISOStringDateToDate = isoStringDate => {
-  const dateArray = isoStringDate.split("-");
-  const convertedDate = makeUTCDate(
-    parseInt(dateArray[0], 10),
-    parseInt(dateArray[1], 10),
-    parseInt(dateArray[2], 10)
-  );
+  if (isoStringDate !== "" && !isValidISOString(isoStringDate)) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `The date must be in ISO format (YYYY-MM-DD): ${isoStringDate}`
+    );
+    return null;
+  }
 
-  return isDate(convertedDate) ? convertedDate : null;
+  const convertedDate = makeUTCDateFromISOString(isoStringDate);
+  if (!isDate(convertedDate) || !isDateInValidRange(convertedDate)) {
+    // eslint-disable-next-line no-console
+    console.warn(`The received date is invalid: ${isoStringDate}`);
+    return null;
+  }
+
+  return convertedDate;
 };
 
 /**
@@ -368,4 +414,60 @@ export const getValidVisibleDate = (visibleDate, selectedDate) => {
     return selectedDate;
   }
   return makeUTCToday();
+};
+
+/**
+ * Checks if the received locale is valid according to Intl.
+ *
+ * @param {string} locale - The locale to be checked
+ * @returns {boolean} - True if the locale is valid, false otherwise.
+ */
+export const isValidLocale = locale => {
+  try {
+    if (Intl.DateTimeFormat.supportedLocalesOf(locale).length > 0) {
+      return true;
+    }
+    // eslint-disable-next-line no-console
+    console.warn(`${locale} is not supported. Falling back to a known locale.`);
+    return false;
+  } catch (error) {
+    if (error.name === "RangeError") {
+      // eslint-disable-next-line no-console
+      console.error(`Invalid locale: ${locale}`);
+      return false;
+    }
+    // eslint-disable-next-line no-console
+    console.error(error.message);
+    return false;
+  }
+};
+
+/**
+ * Checks if the previous year / month is a valid date.
+ *
+ * @param {number} year - The year.
+ * @param {number} month - The month.
+ * @returns {boolean} - True if the previous date is valid, false otherwise.
+ */
+export const isPreviousDateValid = (year, month) => {
+  const previousMonthYear = getPreviousMonth(month, year);
+
+  return isDateInValidRange(
+    makeUTCDate(previousMonthYear.year, previousMonthYear.month, 1)
+  );
+};
+
+/**
+ * Checks if the next year / month is a valid date.
+ *
+ * @param {number} year - The year.
+ * @param {number} month - The month.
+ * @returns {boolean} - True if the next date is valid, false otherwise.
+ */
+export const isNextDateValid = (year, month) => {
+  const nextMonthYear = getNextMonth(month, year);
+
+  return isDateInValidRange(
+    makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1)
+  );
 };

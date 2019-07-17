@@ -62,6 +62,12 @@ const styles = theme => ({
       color: `${theme.hv.palette.atmosphere.atmo1}`
     }
   },
+  calendarDateInvalid: {
+    "&:hover": {
+      cursor: "not-allowed",
+      backgroundColor: "transparent"
+    }
+  },
   calendarMonthlyGrid: {
     display: "grid",
     gridTemplate: "repeat(3, 40px) / repeat(3, auto)",
@@ -70,10 +76,10 @@ const styles = theme => ({
     // This is needed in order to have the monthly view showing on top of the rest
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     position: "absolute",
-    width: "100%",
-    height: "calc(100% - 100px)",
+    width: "calc(100% - 2px)", // 2px for left and right margins.
+    height: "calc(100% - 101px)",
     top: "0",
-    marginTop: "100px",
+    margin: "100px 1px 0 1px",
     left: "0",
     zIndex: "10"
   },

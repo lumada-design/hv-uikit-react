@@ -23,16 +23,21 @@ import Navigation from "./Navigation";
 
 import { VIEW_MODE, REPRESENTATION_VALUES, NAV_OPTIONS } from "./enums";
 import {
+  DEFAULT_LOCALE,
   isDate,
   isSameDay,
   isSameMonth,
+  isValidLocale,
+  isPreviousDateValid,
+  isNextDateValid,
   getDateISO,
   getFormattedDate,
   getMonthNamesList,
   getWeekdayNamesList,
   getWeekdayName,
   makeUTCDate,
-  makeUTCToday
+  makeUTCToday,
+  isDateInValidRange
 } from "./utils";
 
 import CalendarModel from "./model";
@@ -41,9 +46,9 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.initLocalizedLabels();
-
     this.state = { ...this.resolveStateFromProps(), today: makeUTCToday() };
+
+    this.initLocalizedLabels();
   }
 
   /**
@@ -100,7 +105,7 @@ class Calendar extends React.Component {
    * @memberof Calendar
    */
   initLocalizedLabels = () => {
-    const { locale } = this.props;
+    const { locale } = this.state;
 
     this.listMonthNamesLong = getMonthNamesList(
       locale,
@@ -204,18 +209,20 @@ class Calendar extends React.Component {
 
     const visibleMonth = validVisibleDate.getUTCMonth() + 1;
     const visibleYear = validVisibleDate.getUTCFullYear();
+    const validLocale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
 
     return {
       selectedDate: isDateObject ? selectedDate : null,
       visibleDate: validVisibleDate,
       calendarModel: new CalendarModel(visibleMonth, visibleYear),
-      formattedDate: getFormattedDate(validSelectedDate, locale),
+      formattedDate: getFormattedDate(validSelectedDate, validLocale),
       weekDayName: getWeekdayName(
         validSelectedDate,
-        locale,
+        validLocale,
         REPRESENTATION_VALUES.SHORT
       ),
-      viewMode: VIEW_MODE.CALENDAR
+      viewMode: VIEW_MODE.CALENDAR,
+      locale: validLocale
     };
   };
 
@@ -238,8 +245,13 @@ class Calendar extends React.Component {
   renderNavigation = () => {
     const { calendarModel } = this.state;
     const { classes } = this.props;
+    const { year, month } = calendarModel;
 
-    const monthName = this.listMonthNamesLong[calendarModel.month - 1];
+    const monthName = this.listMonthNamesLong[month - 1];
+    const previousYearValid = isPreviousDateValid(year, 1);
+    const nextYearValid = isNextDateValid(year, 12);
+    const previousMonthValid = isPreviousDateValid(year, month);
+    const nextMonthValid = isNextDateValid(year, month);
 
     return (
       <div className={classes.navigationContainer}>
@@ -252,13 +264,17 @@ class Calendar extends React.Component {
             onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_MONTH)}
             onTextClick={() => this.setState({ viewMode: VIEW_MODE.MONTHLY })}
             className={classes.navigationMonth}
+            isPreviousEnabled={previousMonthValid}
+            isNextEnabled={nextMonthValid}
           />
         </div>
 
         <Navigation
-          navigationText={calendarModel.year.toString()}
+          navigationText={year.toString()}
           onNavigatePrevious={() => this.navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)}
           onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_YEAR)}
+          isPreviousEnabled={previousYearValid}
+          isNextEnabled={nextYearValid}
         />
       </div>
     );
@@ -294,8 +310,8 @@ class Calendar extends React.Component {
    * @memberof Calendar
    */
   renderCalendarDate = currentDate => {
-    const { selectedDate, calendarModel, today } = this.state;
-    const { classes, locale } = this.props;
+    const { selectedDate, calendarModel, today, locale } = this.state;
+    const { classes } = this.props;
 
     // Checks if the received date is the same as today.
     const isToday = isSameDay(currentDate, today);
@@ -312,6 +328,9 @@ class Calendar extends React.Component {
         makeUTCDate(calendarModel.year, calendarModel.month, 1)
       );
 
+    // Checks if the date is in a valid range
+    const dateInValidRange = isDateInValidRange(currentDate);
+
     // Sets the initial class as `calendarDate` and then adds the rest of the classes according to the state.
     let className = `${classes.calendarDate}`;
     let typographyVariant = "normalText";
@@ -327,11 +346,16 @@ class Calendar extends React.Component {
     return (
       <div
         key={getDateISO(currentDate)}
-        onClick={this.selectDate(currentDate)}
+        onClick={dateInValidRange ? this.selectDate(currentDate) : undefined}
         role="presentation"
         title={getFormattedDate(currentDate, locale)}
       >
-        <HvTypography variant={typographyVariant} className={className}>
+        <HvTypography
+          variant={typographyVariant}
+          className={`${className} ${
+            dateInValidRange ? "" : classes.calendarDateInvalid
+          }`}
+        >
           {currentDate.getUTCDate()}
         </HvTypography>
       </div>
@@ -444,7 +468,7 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-  locale: "en-EN",
+  locale: DEFAULT_LOCALE,
   selectedDate: undefined,
   visibleDate: undefined,
   handleDateChange: undefined,
