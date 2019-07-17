@@ -65,6 +65,7 @@ describe("CheckBox withStyles", () => {
     expect(buttonComponent.length).toBe(1);
   });
 
+
   it("should have an icon", () => {
     const mountWrapper = mount(
       <HvProvider>
