@@ -38,24 +38,40 @@ const styles = theme => ({
 
 const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
 
-const MultipleActionsWithMediaButtons = () => (
+const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
     <HvButton category="ghost">
       <Icon />
       Update
     </HvButton>
-    <HvButton category="ghost">
+    <HvButton category="ghost" className={classes.smallButton}>
       <MoreOptionsIcon />
     </HvButton>
   </>
 );
+
+const multipleActionsWidhMediaButtonsStyle = theme => ({
+  smallButton: {
+    width: "32px",
+    minWidth: "32px",
+    padding: 0,
+    color: theme.palette.grey.inspire,
+    "& span": {
+      color: theme.palette.grey.inspire
+    }
+  }
+});
+
+const CustomActions = withStyles(multipleActionsWidhMediaButtonsStyle, {
+  withTheme: true
+})(MultipleActionsWithMediaButtons);
 
 export default (
   <div style={{ width: "500px" }}>
     <HvCard variant="error">
       <CustomMedia mediaPath={leaf} mediaHeight={160} />
       <HvCardFooter
-        actions={<MultipleActionsWithMediaButtons />}
+        actions={<CustomActions />}
         isSelectable
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />

@@ -15,21 +15,36 @@
  */
 
 import React from "react";
-import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/dist/Card";
+import HvCard, {
+  HvCardFooter,
+  HvCardHeader
+} from "@hv/uikit-react-core/dist/Card";
 import Icon from "@hv/uikit-react-icons/dist/Upload.S";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = () => ({
+const styles = theme => ({
   root: {
     color: "red"
   }
 });
 
+const moreOptionsStyles = theme => ({
+  root: {
+    width: "32px",
+    minWidth: "32px",
+    padding: 0,
+    color: theme.palette.grey.inspire,
+    "& span": {
+      color: theme.palette.grey.inspire
+    }
+  }
+});
+
 const IconButton = withStyles(styles, { withTheme: true })(HvButton);
 
-const MoreOptionsIconButton = withStyles(styles, {
+const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
   withTheme: true
 })(HvButton);
 

@@ -121,9 +121,6 @@ const MultipleActionsButtonsStyles = theme => ({
     color: theme.palette.grey.inspire,
     "& span": {
       color: theme.palette.grey.inspire
-    },
-    "&:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.xs}px`
     }
   }
 });

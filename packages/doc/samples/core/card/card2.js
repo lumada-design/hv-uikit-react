@@ -132,9 +132,6 @@ const ActionStyles = theme => ({
     color: theme.palette.grey.inspire,
     "& span": {
       color: theme.palette.grey.inspire
-    },
-    "&:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.xs}px`
     }
   },
   smallButton: {
@@ -144,9 +141,6 @@ const ActionStyles = theme => ({
     color: theme.palette.grey.inspire,
     "& span": {
       color: theme.palette.grey.inspire
-    },
-    "&:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.xs}px`
     }
   }
 });
