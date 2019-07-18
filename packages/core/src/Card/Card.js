@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
@@ -74,6 +74,8 @@ const Main = ({
   mediaHeight,
   ...other
 }) => {
+  const [selected, setSelected] = useState(checkboxSelected);
+
   const footerExist = actions || isSelectable;
 
   const defaultContent = (
@@ -82,7 +84,6 @@ const Main = ({
         icon={icon}
         headerTitle={headerTitle}
         subheader={subheader}
-        needsBorder={!footerExist && !innerCardContent}
       />
       {!isNil(mediaPath) && mediaPath.length > 0 && (
         <Media
@@ -91,19 +92,17 @@ const Main = ({
           mediaHeight={mediaHeight}
         />
       )}
-      {innerCardContent && (
-        <Content
-          innerCardContent={innerCardContent}
-          needsBorder={!footerExist}
-        />
-      )}
+      {innerCardContent && <Content innerCardContent={innerCardContent} />}
       {footerExist && (
         <Footer
           checkboxValue={checkboxValue}
           actions={actions}
           actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
-          onChange={onChange}
+          onChange={event => {
+            setSelected(event.target.checked);
+            onChange(event);
+          }}
           checkboxLabel={checkboxLabel}
           checkboxSelected={checkboxSelected}
           checkboxIndeterminate={checkboxIndeterminate}
@@ -114,13 +113,13 @@ const Main = ({
 
   return (
     <Card
-      className={classNames(classes.root, classes.borderTop, className)}
+      className={classNames(classes.root, classes.borderTop, className, {
+        [classes.selectable]: isSelectable,
+        [classes.selected]: selected,
+        [classes[semantic]]: semantic,
+
+      })}
       id={id}
-      style={{
-        borderTopColor: semantic && theme.hv.palette.semantic[semantic],
-        borderTopWidth:
-          semantic !== null ? "4px" : classes.borderTop.borderTopWidth
-      }}
       {...other}
     >
       {children || defaultContent}

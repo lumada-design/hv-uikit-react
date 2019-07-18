@@ -14,12 +14,41 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  borderTop: {
-    borderTopWidth: "1px",
-    borderTopStyle: "solid",
-    borderTopColor: theme.hv.palette.atmosphere.atmo6
-  }
-});
+import _ from "lodash";
+
+const styles = theme => {
+  const semantics = _.mapValues(theme.hv.palette.semantic, value => ({
+    "&::before": {
+      background: value
+    }
+  }));
+
+  return {
+    root: {
+      boxSizing: "content-box",
+      "&::before": {
+        content: "''",
+        height: 2,
+        width: "100%",
+        display: "block",
+        background: theme.hv.palette.atmosphere.atmo6
+      }
+    },
+    ...semantics,
+    selectable: {
+      cursor: "pointer",
+      "&:hover": {
+        outline: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+      }
+    },
+    selected: {
+      outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+      "&:hover": {
+        outline: `1px solid ${theme.hv.palette.accent.acce1}`
+      }
+    },
+
+  };
+};
 
 export default styles;

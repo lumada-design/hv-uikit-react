@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import CardHeader from "@material-ui/core/CardHeader";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 /**
  * The header container that possesses three slots:
@@ -25,29 +26,22 @@ import CardHeader from "@material-ui/core/CardHeader";
  * - title
  * - subheader
  *
- * @param {*} { classes, headerTitle, subheader, icon, needsBorder }
+ * @param {*} { classes, headerTitle, subheader, icon }
  */
 const Header = ({
   classes,
   className,
   headerTitle,
   subheader,
-  icon,
-  needsBorder
+  icon
 }) => (
   <CardHeader
     title={headerTitle}
-    className={classNames(
-      classes.root,
-      {
-        [classes.bottomBorder]: needsBorder
-      },
-      className
-    )}
+    className={classNames(classes.root, className)}
     subheader={subheader}
     action={icon}
     classes={{
-      title: classes.title,
+      title: icon ? classes.titleShort : classes.title,
       subheader: classes.subheader,
       action: classes.action,
       content: classes.content
@@ -99,9 +93,10 @@ Header.propTypes = {
   subheader: PropTypes.node,
   /**
    * If the Header requires a bottom border
+   * @deprecated
    */
-  needsBorder: PropTypes.bool,
-
+  // eslint-disable-next-line react/no-unused-prop-types
+  needsBorder: deprecatedPropType(PropTypes.bool),
   /**
    *  The renderable content inside the icon slot of the header.
    */
@@ -110,7 +105,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   className: "",
-  needsBorder: false,
+  needsBorder: undefined,
   icon: null,
   subheader: undefined
 };
