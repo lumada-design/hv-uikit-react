@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.41](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.40...@hv/uikit-react-lab@1.1.3-alpha.41) (2019-07-18)
+
+
+### Features
+
+* **input:** update to DS guidelines. [#239](https://github.com/pentaho/hv-uikit-react/issues/239) ([826db04](https://github.com/pentaho/hv-uikit-react/commit/826db04))
+
+
+
+
+
 ## [1.1.3-alpha.40](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.39...@hv/uikit-react-lab@1.1.3-alpha.40) (2019-07-18)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
