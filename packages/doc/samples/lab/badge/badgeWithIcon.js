@@ -17,17 +17,12 @@
 import React from "react";
 
 import HvBadge from "@hv/uikit-react-lab/dist/Badge";
-import bell from "./resources/bell.svg"
+import {AlertS} from "@hv/uikit-react-icons/bin/DawnTheme"
 
 const exampleStyles = {
 	display: "flex",
 	width: "800px",
 	justifyContent: "space-between"
-}
-
-const iconStyles = {
-	width: "16px",
-	height: "16px",
 }
 
 const fontStyles = {
@@ -39,13 +34,13 @@ const fontStyles = {
 export default (
 	<div style={exampleStyles}>
 		<HvBadge count={0}>
-			<img alt="notification" style={iconStyles} src={bell} />
+			<AlertS />
 		</HvBadge>
 		<HvBadge count={1}>
-			<img alt="notification" style={iconStyles} src={bell} />
+			<AlertS />
 		</HvBadge>
 		<HvBadge showCount count={8}>
-			<img alt="notification" style={iconStyles} src={bell} />
+			<AlertS />
 		</HvBadge>
 		<HvBadge showCount count={12}>
 			<div style={fontStyles}>
