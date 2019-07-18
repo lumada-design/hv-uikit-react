@@ -14,17 +14,11 @@
  * limitations under the License.
  */
 
-import React from "react";
-import HvButton from "@hv/uikit-react-core/dist/Button";
+const styles = theme => ({
+  pre: {
+    ...theme.hv.typography.normalText,
+    fontFamily: "'Open Sans', Arial, Helvetica, sans-serif"
+  }
+});
 
-export default (
-  <HvButton
-    onClick={() => {
-      alert("You clicked me");
-    }}
-    variant="inspireRed"
-    category="ghost"
-  >
-    Button
-  </HvButton>
-);
+export default styles;

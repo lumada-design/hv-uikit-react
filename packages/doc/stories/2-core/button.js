@@ -25,84 +25,44 @@ storiesOf("Core", module).add("Button", () => <HvButton />, {
   usage: "import HvButton from '@hv/uikit-react-core/dist/Button'",
   examples: [
     {
-      title: "1. Primary primary",
+      title: "1. Primary",
       description: "Primary button with click action",
       src: "core/button/buttonPrimaryPrimary"
     },
     {
-      title: "2. Primary primary disabled",
+      title: "2. Primary disabled",
       description: "Disabled button that doesn't allow any interation",
       src: "core/button/buttonPrimaryPrimaryDisabled"
     },
     {
-      title: "3. Primary secondary",
+      title: "3. Secondary",
       description: "Secondary button with click action",
       src: "core/button/buttonPrimarySecondary"
     },
     {
-      title: "4. Primary secondary disabled",
+      title: "4. Secondary disabled",
       description: "Disabled button that doesn't allow any interation",
       src: "core/button/buttonPrimarySecondaryDisabled"
     },
     {
-      title: "5. Primary ghost",
+      title: "5. Ghost",
       description: "Ghost button with click action",
       src: "core/button/buttonPrimaryGhost"
     },
     {
-      title: "6. Primary ghost disabled",
+      title: "6. Ghost disabled",
       description: "Disabled button that doesn't allow any interation",
       src: "core/button/buttonPrimaryGhostDisabled"
     },
     {
-      title: "7. Primary ghost secondary",
+      title: "7. Ghost secondary",
       description: "Ghost button with click action",
       src: "core/button/buttonPrimaryGhostSecondary"
     },
     {
-      title: "8. Primary ghost secondary disabled",
+      title: "8. Ghost secondary disabled",
       description: "Disabled button that doesn't allow any interation",
       src: "core/button/buttonPrimaryGhostSecondaryDisabled"
-    },
-    {
-      title: "9. Hitachi primary",
-      description: "Hitachi Primary button with click action",
-      src: "core/button/buttonHitachiPrimary"
-    },
-    {
-      title: "10. Hitachi primary disabled",
-      description: "Disabled button that doesn't allow any interation",
-      src: "core/button/buttonHitachiPrimaryDisabled"
-    },
-    {
-      title: "11. Hitachi secondary",
-      description: "Secondary button with click action",
-      src: "core/button/buttonHitachiSecondary"
-    },
-    {
-      title: "12. Hitachi secondary disabled",
-      description: "Disabled button that doesn't allow any interation",
-      src: "core/button/buttonHitachiSecondaryDisabled"
-    },
-    {
-      title: "13. Hitachi ghost",
-      description: "Link button with click action",
-      src: "core/button/buttonHitachiGhost"
-    },
-    {
-      title: "14. Hitachi ghost disabled",
-      description: "Disabled button that doesn't allow any interation",
-      src: "core/button/buttonHitachiGhostDisabled"
-    },
-    {
-      title: "15. Hitachi ghost secondary",
-      description: "Link button with click action",
-      src: "core/button/buttonHitachiGhostSecondary"
-    },
-    {
-      title: "16. Hitachi ghost secondary disabled",
-      description: "Disabled button that doesn't allow any interation",
-      src: "core/button/buttonHitachiGhostSecondaryDisabled"
     }
   ]
 });

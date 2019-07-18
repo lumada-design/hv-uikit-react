@@ -93,7 +93,7 @@ const legacyConfiguration = (classes, colorType) => {
  * @param {String} variant - variant of button to use. primary, inspireRed...etc .
  * @returns {Object} - An Object with the color and variant values required by the material ui button.
  */
-const getMaterialConfiguration = (classes, category, variant) => {
+const getMaterialConfiguration = (classes, category) => {
   const styling = {
     root: classes.root,
     containedPrimary: classes.primary,
@@ -102,84 +102,38 @@ const getMaterialConfiguration = (classes, category, variant) => {
     disabled: classes.primaryDisabled
   };
 
-  const inspireRedStyling = {
-    ...styling,
-    containedPrimary: classes.inspireRedPrimary,
-    outlinedPrimary: classes.inspireRedSecondary,
-    textPrimary: classes.inspireRedGhost,
-    disabled: classes.inspireRedPrimaryDisabled
-  };
-
-  switch (variant) {
+  switch (category) {
     default:
-    case variantValues.primary:
-      switch (category) {
-        default:
-        case categoryValues.primary:
-          return {
-            ...materialContained,
-            classes: styling
-          };
-        case categoryValues.secondary:
-          return {
-            ...materialOutlined,
-            classes: {
-              ...styling,
-              disabled: classes.secondaryDisabled
-            }
-          };
-        case categoryValues.ghost:
-          return {
-            ...materialText,
-            classes: {
-              ...styling,
-              disabled: classes.ghostDisabled
-            }
-          };
-        case categoryValues.ghostSecondary:
-          return {
-            ...materialText,
-            classes: {
-              ...styling,
-              textPrimary: classes.ghostSecondary,
-              disabled: classes.ghostSecondaryDisabled
-            }
-          };
-      }
-    case variantValues.inspireRed:
-      switch (category) {
-        default:
-        case categoryValues.primary:
-          return {
-            ...materialContained,
-            classes: inspireRedStyling
-          };
-        case categoryValues.secondary:
-          return {
-            ...materialOutlined,
-            classes: {
-              ...inspireRedStyling,
-              disabled: classes.inspireRedSecondaryDisabled
-            }
-          };
-        case categoryValues.ghost:
-          return {
-            ...materialText,
-            classes: {
-              ...inspireRedStyling,
-              disabled: classes.inspireRedGhostDisabled
-            }
-          };
-        case categoryValues.ghostSecondary:
-          return {
-            ...materialText,
-            classes: {
-              ...inspireRedStyling,
-              textPrimary: classes.inspireRedGhostSecondary,
-              disabled: classes.inspireRedGhostSecondaryDisabled
-            }
-          };
-      }
+    case categoryValues.primary:
+      return {
+        ...materialContained,
+        classes: styling
+      };
+    case categoryValues.secondary:
+      return {
+        ...materialOutlined,
+        classes: {
+          ...styling,
+          disabled: classes.secondaryDisabled
+        }
+      };
+    case categoryValues.ghost:
+      return {
+        ...materialText,
+        classes: {
+          ...styling,
+          disabled: classes.ghostDisabled
+        }
+      };
+    case categoryValues.ghostSecondary:
+      return {
+        ...materialText,
+        classes: {
+          ...styling,
+          textPrimary: classes.ghostSecondary,
+          disabled: classes.ghostSecondaryDisabled
+        }
+      };
   }
 };
 
@@ -192,17 +146,12 @@ const getMaterialConfiguration = (classes, category, variant) => {
  * @param {String} colorType - the old category switching property that is deprecated.
  * @returns {Object} - An Object with the color and variant values required by the material ui button.
  */
-const materialConfigurationFactory = (
-  classes,
-  category,
-  variant,
-  colorType
-) => {
+const materialConfigurationFactory = (classes, category, colorType) => {
   if (colorType) {
     // compatibility path
     return legacyConfiguration(classes, colorType);
   }
-  return getMaterialConfiguration(classes, category, variant);
+  return getMaterialConfiguration(classes, category);
 };
 
 export default materialConfigurationFactory;
