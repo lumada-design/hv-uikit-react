@@ -18,19 +18,18 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-import Success from "@hv/uikit-react-icons/dist/Level0.S";
-import Close from "@hv/uikit-react-icons/dist/Close.S";
-import Unsuccess from "@hv/uikit-react-icons/dist/Level5.S";
+import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
+import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.S";
+import Unsuccess from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 
 import validationStates from "./validationStates";
 
 const InputAdornment = ({ classes, validationState, handleClear, theme }) => {
-  
   const stl = {
     height: `${theme.hv.spacing.md}px`,
     width: `${theme.hv.spacing.md}px`
   };
-  
+
   return (
     <div
       className={classNames(classes.icon, {
@@ -44,11 +43,9 @@ const InputAdornment = ({ classes, validationState, handleClear, theme }) => {
       }}
     >
       {validationState === validationStates.filled && <Close style={stl} />}
-      {validationState === validationStates.valid && (
-        <Success style={stl} color={["none", theme.hv.palette.semantic.sema1]} />
-      )}
+      {validationState === validationStates.valid && <Success style={stl} />}
       {validationState === validationStates.invalid && (
-        <Unsuccess style={stl} color={["none", theme.hv.palette.semantic.sema6]} />
+        <Unsuccess style={stl} />
       )}
     </div>
   );

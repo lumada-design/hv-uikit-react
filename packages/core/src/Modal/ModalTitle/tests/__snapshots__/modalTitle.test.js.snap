@@ -228,6 +228,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
+            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",
@@ -1170,6 +1171,7 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
+            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",
@@ -2119,6 +2121,7 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
+            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",
@@ -3071,6 +3074,7 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
+            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",

@@ -30,7 +30,7 @@ export default (
   <HvInput
     isRequired
     labels={labels}
-    maxCharQuantity={40}
+    maxCharQuantity={5}
     validationType="number"
   />
 );

@@ -19,6 +19,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
+import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
 import InputWithStyles from "../index";
 import Input from "../Input";
 import validationStates from "../validationStates";
@@ -520,10 +521,7 @@ describe("Input", () => {
     const defaultInputText = "test1";
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
-          initialValue={defaultInputText}
-          labels={labels}
-        />
+        <InputWithStyles initialValue={defaultInputText} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -535,7 +533,7 @@ describe("Input", () => {
 
   const getInputInstance = (defaultProps, newValue) => {
     wrapper = mount(
-      React.createElement( 
+      React.createElement(
         props => (
           <HvProvider>
             <InputWithStyles
@@ -550,15 +548,14 @@ describe("Input", () => {
     );
     wrapper.setProps({ inputValue: newValue });
     wrapper.update();
-    const inputInstance = getInput(wrapper);
-    return inputInstance;
+    return getInput(wrapper);
   };
 
   it("should change the state value when the inputValue prop changes", () => {
     const inputText1 = "inputText1";
     const inputText2 = "inputText2";
     const defaultProps = {
-      value: inputText1
+      initialValue: inputText1
     };
 
     const inputInstance = getInputInstance(defaultProps, inputText2);
@@ -567,4 +564,27 @@ describe("Input", () => {
     expect(inputInstance.state.value).toBe(inputText2);
   });
 
+  it("should show the info icon and not the info label", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles infoIcon labels={labels} />
+      </HvProvider>
+    );
+    const inputComponent = wrapper.find(InfoS);
+    expect(inputComponent.length).toBe(1);
+    const labelParagraph = wrapper.find("p");
+    expect(labelParagraph.length).toBe(1);
+  });
+
+  it("should show the info label and not the info icon", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles labels={labels} />
+      </HvProvider>
+    );
+    const iconInfo = wrapper.find(InfoS);
+    expect(iconInfo.length).toBe(0);
+    const labelParagraph = wrapper.find("p");
+    expect(labelParagraph.length).toBe(2);
+  });
 });

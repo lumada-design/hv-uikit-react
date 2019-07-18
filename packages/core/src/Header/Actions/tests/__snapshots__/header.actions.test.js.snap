@@ -241,6 +241,7 @@ exports[`Actions withStyles should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3849,6 +3850,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -5868,6 +5870,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -6818,6 +6821,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",

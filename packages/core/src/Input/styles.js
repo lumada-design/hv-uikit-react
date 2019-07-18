@@ -23,48 +23,48 @@ const styles = theme => ({
     margin: "0",
     width: "100%",
     borderStyle: "solid",
-    borderWidth: "1px",
-    background: theme.hv.palette.atmosphere.atmo1,
+    borderWidth: " 0 0 1px 0",
+    background: "transparent",
     borderColor: theme.hv.palette.atmosphere.atmo6,
     "&:hover": {
       borderStyle: "solid",
-      borderWidth: "1px",
+      borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
+      background: theme.hv.palette.atmosphere.atmo2
     }
   },
   inputRootDisabled: {
     borderColor: theme.hv.palette.atmosphere.atmo6,
-    background: theme.hv.palette.atmosphere.atmo2,
+    background: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
       borderColor: theme.hv.palette.atmosphere.atmo6,
-      background: theme.hv.palette.atmosphere.atmo2,
+      background: theme.hv.palette.atmosphere.atmo4,
       cursor: "not-allowed"
     },
     cursor: "not-allowed"
   },
   inputRootFocused: {
     borderStyle: "solid",
-    borderWidth: "1px",
+    borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
-    background: theme.hv.palette.atmosphere.atmo1,
+    background: theme.hv.palette.atmosphere.atmo2,
     "&:hover": {
       borderStyle: "solid",
-      borderWidth: "1px",
+      borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
+      background: theme.hv.palette.atmosphere.atmo2
     }
   },
   input: {
-    height: 20,
+    height: `21px`,
     marginLeft: `${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
-    padding: "5px 0 5px",
+    padding: "6px 0 5px",
     ...theme.hv.typography.normalText,
     overflow: "hidden",
     textOverflow: "ellipsis",
     "&::placeholder": {
-      ...theme.hv.typography.disabledText
+      ...theme.hv.typography.placeholderText
     },
     "&::-ms-clear": {
       display: "none"
@@ -76,20 +76,27 @@ const styles = theme => ({
   multiLine: {
     padding: 0
   },
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "space-between"
+  },
   label: {
-    paddingBottom: `${theme.hv.spacing.xs}px`,
+    paddingBottom: "8px",
     display: "block"
   },
-  text: {
-    paddingTop: `${theme.hv.spacing.xs}px`,
-    display: "block",
-    ...theme.hv.typography.disabledText
+  labelDisable: {
+    color: theme.hv.palette.atmosphere.atmo7
   },
-  textInfo: {
-    color: theme.hv.typography.disabledText.color
+  infoIconContainer: {
+    height: `${theme.hv.spacing.md}px`
+  },
+  infoText: {
+    paddingTop: "8px",
+    display: "block"
   },
   textWarning: {
-    color: theme.hv.palette.semantic.sema6
+    color: theme.hv.palette.accent.acce1
   },
   icon: {
     width: `${theme.hv.spacing.md}px`,
@@ -106,7 +113,9 @@ const styles = theme => ({
   },
   "@global": {
     "input:-webkit-autofill": {
-      "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
+      "-webkit-box-shadow": `0 0 0px 1000px ${
+        theme.hv.palette.atmosphere.atmo1
+      } inset`,
       "-webkit-text-fill-color": theme.hv.typography.normalText.color
     }
   }

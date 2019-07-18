@@ -30,76 +30,81 @@ storiesOf("Core", module).add("Input", () => <HvInput />, {
       src: "core/input/inputSimple"
     },
     {
-      title: "2. Disabled",
+      title: "2. Simple with icon info",
+      description: "Simple input with basic labels and icon info",
+      src: "core/input/inputSimpleWithIconInfo"
+    },
+    {
+      title: "3. Disabled",
       description:
         "Simple input with basic labels but disable not allowing interactions",
       src: "core/input/inputSimpleDisable"
     },
     {
-      title: "3. No validation",
+      title: "4. No validation",
       description:
         "Input that disables every type of validations not showing validation icons",
       src: "core/input/inputNoValidation"
     },
     {
-      title: "4. Limited",
+      title: "5. Limited",
       description:
-        "input that includes validation of the max length of the string accepting up to 40 characters",
+        "input that includes validation of the max length of the string accepting up to 5 characters",
       src: "core/input/inputMax"
     },
     {
-      title: "5. Limited numeric",
+      title: "6. Limited numeric",
       description:
-        "input that only accepts number, includes validation of the max length of the string accepting up to 40 characters",
+        "input that only accepts number, includes validation of the max length of the string accepting up to 5 characters",
       src: "core/input/inputMaxNumeric"
     },
     {
-      title: "6. Required limited numeric",
+      title: "7. Required limited numeric",
       description:
-        "Required input, that only accepts number, includes validation of the max length of the string accepting up to 40 characters",
+        "Required input, that only accepts number, includes validation of the max length of the string accepting up to 5 characters",
       src: "core/input/inputRequiredMaxNumeric"
     },
     {
-      title: "7. Email",
+      title: "8. Email",
       description:
         "Email required input, that only accepts valid email addresses",
       src: "core/input/inputEmail"
     },
     {
-      title: "8. Password",
+      title: "9. Password",
       description:
         "Password required input that only accepts the value ´password´, the value must be between 6 and 12 characters in length",
       src: "core/input/inputPassword"
     },
     {
-      title: "9. Custom validation",
+      title: "10. Custom validation",
       description:
         "Input with a custom validation function, it validates if the input contains the value `hello`",
       src: "core/input/inputCustomValidation"
     },
     {
-      title: "10. Default value",
+      title: "12. Default value",
       description: "Input with an default value already in place",
       src: "core/input/inputDefaultValue"
     },
     {
-      title: "11. Left icon",
+      title: "12. Left icon",
       description: "Input with icons aligned to the left",
       src: "core/input/inputLeftIcon"
     },
     {
-      title: "12. Event demonstration",
+      title: "13. Event demonstration",
       description: "Input with all event functions enabled",
       src: "core/input/inputEvents"
     },
     {
-      title: "13. Custom input props",
+      title: "14. Custom input props",
       description:
         "Using the input props to inject input custom props, this input will block values when exceeding 250 characters",
       src: "core/input/inputCustomProps"
     },
     {
-      title: "14. Change input content with another component",
+      title: "15. Change input content with another component",
       description: "Change the input value from outside the Input component",
       src: "core/input/inputUncontrolledValue"
     }

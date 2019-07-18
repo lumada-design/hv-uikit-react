@@ -30,6 +30,6 @@ export default (
   <HvInput
     labels={labels}
     validationType="email"
-    value="example@exam.com"
+    initialValue="example@exam.com"
   />
 );
