@@ -18,6 +18,7 @@ import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",
@@ -54,7 +55,7 @@ const MultipleActionsStyles = theme => ({
   }
 });
 
-const MultipleActions = () => {
+const MultipleActions = ({classes}) => {
   const {
     cellATitle,
     cellAContent,
@@ -71,86 +72,70 @@ const MultipleActions = () => {
   return (
     <>
       <Grid container>
-        <Grid item xs={5} className={MultipleActionsStyles.item}>
-          <div>
-            <HvTypography variant="highlightText">{cellATitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsStyles.text}
-            >
-              {cellAContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={5} className={classes.item}>
+          <HvTypography variant="labelText">{cellATitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellAContent}
+          </HvTypography>
         </Grid>
-        <Grid item xs={7} className={MultipleActionsStyles.item}>
-          <div>
-            <HvTypography variant="highlightText">{cellBTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsStyles.text}
-            >
-              {cellBContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={7} className={classes.item}>
+          <HvTypography variant="labelText">{cellBTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellBContent}
+          </HvTypography>
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={5} className={MultipleActionsStyles.item}>
-          <div>
-            <HvTypography variant="highlightText">{cellCTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsStyles.text}
-            >
-              {cellCContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={5} className={classes.item}>
+          <HvTypography variant="labelText">{cellCTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellCContent}
+          </HvTypography>
         </Grid>
-        <Grid item xs={7} className={MultipleActionsStyles.bottomItem}>
-          <div>
-            <HvTypography variant="highlightText">{cellDTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsStyles.text}
-            >
-              {cellDContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={7} className={classes.bottomItem}>
+          <HvTypography variant="labelText">{cellDTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellDContent}
+          </HvTypography>
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={12} className={MultipleActionsStyles.bottomItem}>
-          <div>
-            <HvTypography variant="highlightText">{cellETitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsStyles.text}
-            >
-              {cellEContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={12} className={classes.bottomItem}>
+          <HvTypography variant="labelText">{cellETitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellEContent}
+          </HvTypography>
         </Grid>
       </Grid>
     </>
   );
 };
 
+const MultipleActionsWithStyle = withStyles(MultipleActionsStyles, {
+  withTheme: true
+})(MultipleActions);
+
 export default (
   <div style={{ width: "500px" }}>
     <HvCard
       headerTitle={configurationNoMedia.title}
       subheader={configurationNoMedia.subtitle}
-      innerCardContent={<MultipleActions />}
+      innerCardContent={<MultipleActionsWithStyle />}
       variant="none"
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}

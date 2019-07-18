@@ -21,45 +21,17 @@ import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
 import CardWithStyles from "../index";
-import Card from "../Card";
 
 const configuration = {
   title: "title",
   subtitle: "subtitle",
-  content: "content",
+  content: (<div />),
   actions: "actions",
   icon: "icon"
 };
 
 describe("Card withStyles", () => {
   let wrapper;
-
-  it("should be defined", () => {
-    wrapper = mount(
-      <HvProvider>
-        <CardWithStyles
-          icon={configuration.icon}
-          headerTitle={configuration.title}
-          subheader={configuration.subtitle}
-          innerCardContent={configuration.content}
-          actions={configuration.actions}
-          variant="error"
-          isSelectable
-          checkboxValue="value"
-        />
-      </HvProvider>
-    );
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should render the Card component", () => {
-    const CardComponent = wrapper.find(Card);
-    expect(CardComponent.length).toBe(1);
-  });
 
   it("should be able to render with every property defined", () => {
     wrapper = mount(
@@ -71,13 +43,12 @@ describe("Card withStyles", () => {
           innerCardContent={configuration.content}
           actions={configuration.actions}
           mediaPath="path"
-          variant="error"
           isSelectable
           checkboxValue="value"
         />
       </HvProvider>
     );
-    const CardComponent = wrapper.find(Card);
-    expect(CardComponent.length).toBe(1);
+
+    expect(wrapper).toMatchSnapshot();
   });
 });

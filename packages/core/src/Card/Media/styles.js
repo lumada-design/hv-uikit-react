@@ -18,8 +18,6 @@ const styles = theme => ({
   mediaContainer: {
     width: "100%",
     paddingBottom: `${theme.hv.spacing.sm}px`,
-    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   media: {

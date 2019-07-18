@@ -16,10 +16,10 @@
 
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Level5.sema6.S";
-import Icon from "@hv/uikit-react-icons/dist/Up.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/DawnTheme/Level3.sema4.S";
+import Upload from "@hv/uikit-react-icons/dist/DawnTheme/Upload.S";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/DawnTheme/MoreOptionsVertical.S";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import leaf from "./resources/leaf.png";
@@ -65,7 +65,7 @@ const MultipleActionsWithMediaStyles = theme => ({
   }
 });
 
-const MultipleActionsWithMedia = () => {
+const MultipleActionsWithMedia = ({classes}) => {
   const {
     cellATitle,
     cellAContent,
@@ -80,66 +80,54 @@ const MultipleActionsWithMedia = () => {
   return (
     <>
       <Grid container>
-        <Grid item xs={5} className={MultipleActionsWithMediaStyles.item}>
-          <div>
-            <HvTypography variant="highlightText">{cellATitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsWithMediaStyles.text}
-            >
-              {cellAContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={5} className={classes.item}>
+          <HvTypography variant="labelText">{cellATitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellAContent}
+          </HvTypography>
         </Grid>
-        <Grid item xs={7} className={MultipleActionsWithMediaStyles.item}>
-          <div>
-            <HvTypography variant="highlightText">{cellBTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsWithMediaStyles.text}
-            >
-              {cellBContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={7} className={classes.item}>
+          <HvTypography variant="labelText">{cellBTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellBContent}
+          </HvTypography>
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={5} className={MultipleActionsWithMediaStyles.bottoItem}>
-          <div>
-            <HvTypography variant="highlightText">{cellCTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsWithMediaStyles.text}
-            >
-              {cellCContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={5} className={classes.bottomItem}>
+          <HvTypography variant="labelText">{cellCTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellCContent}
+          </HvTypography>
         </Grid>
-        <Grid item xs={7} className={MultipleActionsWithMediaStyles.bottoItem}>
-          <div>
-            <HvTypography variant="highlightText">{cellDTitle}</HvTypography>
-          </div>
-          <div>
-            <HvTypography
-              variant="infoText"
-              className={MultipleActionsWithMediaStyles.text}
-            >
-              {cellDContent}
-            </HvTypography>
-          </div>
+        <Grid item xs={7} className={classes.bottomItem}>
+          <HvTypography variant="labelText">{cellDTitle}</HvTypography>
+          <HvTypography
+            variant="normalText"
+            className={classes.text}
+          >
+            {cellDContent}
+          </HvTypography>
         </Grid>
       </Grid>
     </>
   );
 };
 
-const actionStyles = theme => ({
+const MultipleActionsWithMediaWithStyles = withStyles(MultipleActionsWithMediaStyles, {
+  withTheme: true
+})(MultipleActionsWithMedia);
+
+const ActionStyles = theme => ({
   button: {
     color: theme.palette.grey.inspire,
     "& span": {
@@ -163,24 +151,24 @@ const actionStyles = theme => ({
   }
 });
 
-const MultipleActionsWithMediaButtons = classes => (
+const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
-    <HvButton className={classes.button} category="ghost">
-      <Icon />
+    <HvButton className={classes.button} category="ghostSecondary">
+      <Upload />
       Update
     </HvButton>
-    <HvButton className={classes.smallButton} category="ghost">
+    <HvButton className={classes.smallButton} category="ghostSecondary">
       <MoreOptionsIcon />
     </HvButton>
   </>
 );
 
-const MultipleActionsWithMediaButtonsWithStyle = withStyles(actionStyles, {
+const MultipleActionsWithMediaButtonsWithStyle = withStyles(ActionStyles, {
   withTheme: true
 })(MultipleActionsWithMediaButtons);
 
 export default (
-  <div style={{ width: "500px" }}>
+  <div style={{ width: "360px" }}>
     <HvCard
       icon={<FailureIcon />}
       headerTitle={configuration.title}
@@ -190,9 +178,9 @@ export default (
           <span>{configuration.subtitleRight}</span>
         </div>
       }
-      innerCardContent={<MultipleActionsWithMedia />}
+      innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={<MultipleActionsWithMediaButtonsWithStyle />}
-      variant="error"
+      semantic="sema4"
       isSelectable
       checkboxValue="value"
       mediaPath={leaf}

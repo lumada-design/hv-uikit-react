@@ -41,32 +41,32 @@ const data = {
 };
 
 const SingleContent = ({ classes }) => (
-  <div>
+  <>
     <div>
       <div>
-        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+        <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
       </div>
       <div>
-        <HvTypography variant="infoText" className={classes.text}>
+        <HvTypography variant="normalText" className={classes.text}>
           {data.firstContent}
         </HvTypography>
       </div>
     </div>
     <div style={{ marginTop: "15px" }}>
       <div>
-        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+        <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
       </div>
       <div>
-        <HvTypography variant="infoText" className={classes.text}>
+        <HvTypography variant="normalText" className={classes.text}>
           {data.secondContent}
         </HvTypography>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default (
-  <div style={{ width: "500px" }}>
+  <div style={{ width: "360px" }}>
     <HvCard
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
