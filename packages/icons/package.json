@@ -18,7 +18,8 @@
     "clean": "npx del-cli dist bin",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
-    "link": "npm link"
+    "link": "npm link",
+    "update-uikit-common": "npm update @hv/uikit-common-icons"
   },
   "dependencies": {
     "@hv/uikit-common-icons": "^1.1.1-alpha.9"
