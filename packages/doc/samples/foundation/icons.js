@@ -44,6 +44,24 @@ const styles = theme => ({
 
 const keys = Array.from(new Set([...Object.keys(dawnIconComponentList), ...Object.keys(wickedIconComponentList)])).sort();
 
+const keysBySize = keys.reduce((map, value) => {
+  var size = value.charAt(value.length-1);
+  if(value.endsWith('XS')) {
+    size = 'XS';
+  }
+
+  if(map[size]) {
+    map[size].push(value);
+  }
+
+  return map;
+}, {
+  "XS": [],
+  "S": [],
+  "M": [],
+  "L": []
+});
+
 const Group = ({ groupLabel, classes, theme }) => {
   const groupLabelLength = groupLabel.length * -1;
 
@@ -57,8 +75,7 @@ const Group = ({ groupLabel, classes, theme }) => {
         </HvTypography>
       </div>
       <div className={classes.iconContainers}>
-        {keys
-          .filter(iconName => iconName.slice(groupLabelLength) === groupLabel)
+        {keysBySize[groupLabel]
           .map(icon => (
             <Icon
               key={icon}
