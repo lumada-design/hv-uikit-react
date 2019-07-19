@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.35](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.34...@hv/uikit-react-core@1.1.3-alpha.35) (2019-07-19)
+
+
+### Features
+
+* **button:** adding accessibility tab and review button. [#247](https://github.com/pentaho/hv-uikit-react/issues/247) ([a2a0ce3](https://github.com/pentaho/hv-uikit-react/commit/a2a0ce3))
+
+
+
+
+
 ## [1.1.3-alpha.34](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.33...@hv/uikit-react-core@1.1.3-alpha.34) (2019-07-18)
 
 
