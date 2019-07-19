@@ -22,17 +22,25 @@ import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-const getPropsMetadata = children => {
+const getComponentsMetadata = children => {
+
   const nodes = React.Children.map(children, element => {
     if (!React.isValidElement(element)) return;
     return element;
   });
 
-  const metadata = nodes[0].type.Naked
+  const propsMetaData = nodes[0].type.Naked
     ? nodes[0].type.Naked.__docgenInfo.props
     : nodes[0].type.__docgenInfo.props;
 
-  return metadata;
+  const descriptionMetadata = nodes[0].type.Naked
+  ? nodes[0].type.Naked.__docgenInfo.description
+  : nodes[0].type.__docgenInfo.description;
+
+  return {
+    propsMetaData,
+    descriptionMetadata,
+  }
 };
 
 const Main = ({ classes, children, context, config }) => {
@@ -42,6 +50,7 @@ const Main = ({ classes, children, context, config }) => {
   const isCore = kind.startsWith("Core");
   const isLab = kind.startsWith("Lab");
 
+  const metadata = getComponentsMetadata(children);
   return (
     <>
       <div
@@ -81,7 +90,8 @@ const Main = ({ classes, children, context, config }) => {
 
             <Tabs
               parameters={parameters}
-              propsMetaData={getPropsMetadata(children)}
+              propsMetaData={metadata.propsMetaData}
+              descriptionMetadata={metadata.descriptionMetadata}
             />
             {examples && <Examples examples={examples} />}
           </>

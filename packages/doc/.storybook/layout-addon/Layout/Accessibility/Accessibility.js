@@ -15,17 +15,20 @@
  */
 
 import React from "react";
-import HvButton from "@hv/uikit-react-core/dist/Button";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
-export default (
-  <HvButton
-    onClick={() => {
-      alert("You clicked me");
-    }}
-    variant="inspireRed"
-    category="ghost"
-    disabled
-  >
-    Button
-  </HvButton>
+const descriptionMetadataTrimmer = descriptionMetadata => {
+  const i = descriptionMetadata.indexOf("@a")
+  const d = descriptionMetadata.indexOf("@ea");
+  return descriptionMetadata.substring(i+2,d);
+}
+
+const Accessibility = ({ classes, descriptionMetadata }) => (
+  <>
+    <HvTypography variant="highlightText">Accessibility guidelines and tips</HvTypography>
+    <pre className={classes.pre}>
+      {descriptionMetadataTrimmer(descriptionMetadata)}
+    </pre>
+  </>
 );
+export default Accessibility;

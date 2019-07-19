@@ -14,17 +14,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import HvButton from "@hv/uikit-react-core/dist/Button";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Accessibility from "./Accessibility";
 
-export default (
-  <HvButton
-    onClick={() => {
-      alert("You clicked me");
-    }}
-    variant="inspireRed"
-    category="ghostSecondary"
-  >
-    Button
-  </HvButton>
-);
+export default withStyles(styles, { withTheme: true })(Accessibility);
