@@ -33,6 +33,12 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo2
     }
   },
+  inputRootInvalid: {
+    borderColor: theme.hv.palette.semantic.sema4,
+    "&:hover": {
+      borderColor: theme.hv.palette.semantic.sema4
+    }
+  },
   inputRootDisabled: {
     borderColor: theme.hv.palette.atmosphere.atmo6,
     background: theme.hv.palette.atmosphere.atmo4,
