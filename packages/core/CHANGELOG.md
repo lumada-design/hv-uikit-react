@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.37](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.36...@hv/uikit-react-core@1.1.3-alpha.37) (2019-07-22)
+
+
+### Features
+
+* **card:** adjust header padding-top. [#237](https://github.com/pentaho/hv-uikit-react/issues/237) ([c9fefd0](https://github.com/pentaho/hv-uikit-react/commit/c9fefd0))
+* **theme:** add new accent color. [#323](https://github.com/pentaho/hv-uikit-react/issues/323) ([7c0ba8c](https://github.com/pentaho/hv-uikit-react/commit/7c0ba8c))
+
+
+
+
+
 ## [1.1.3-alpha.36](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.35...@hv/uikit-react-core@1.1.3-alpha.36) (2019-07-22)
 
 
