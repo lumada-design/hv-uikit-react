@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9001",
-    "build": "build-storybook -o dist",
+    "build": "build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
     "clean": "npx del-cli dist"

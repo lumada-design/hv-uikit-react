@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.3-alpha.38](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.37...@hv/uikit-react-core@1.1.3-alpha.38) (2019-07-22)
-
-
-### Features
-
-* **button:** set color acce0 in primary button. [#236](https://github.com/pentaho/hv-uikit-react/issues/236) ([6cbb78e](https://github.com/pentaho/hv-uikit-react/commit/6cbb78e))
-
-
-
-
-
 ## [1.1.3-alpha.37](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.36...@hv/uikit-react-core@1.1.3-alpha.37) (2019-07-22)
 
 

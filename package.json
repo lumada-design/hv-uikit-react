@@ -17,7 +17,7 @@
     "clean": "npm-run-all clean:*",
     "clean:package_clean": "npx lerna run clean --parallel",
     "clean:lerna": "npx lerna clean --yes ",
-    "bootstrap": "npm run update-uikit-common && npx lerna bootstrap",
+    "bootstrap": "npx lerna bootstrap",
     "dev": "npm-run-all dev:*",
     "dev:build": "npx lerna run build --scope \"@hv/uikit-react-icons\" --stream",
     "dev:storybook": "npx lerna run dev --parallel",

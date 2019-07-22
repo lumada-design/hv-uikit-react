@@ -19,7 +19,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
-import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
+import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.S";
 import Unsuccess from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 
 import validationStates from "./validationStates";
