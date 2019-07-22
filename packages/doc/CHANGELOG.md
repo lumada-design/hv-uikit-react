@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.48](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.47...@hv/uikit-react-doc@1.1.3-alpha.48) (2019-07-22)
+
+
+### Bug Fixes
+
+* **docs:** xs icons were showing up in the s group [#258](https://github.com/pentaho/hv-uikit-react/issues/258) ([8f88667](https://github.com/pentaho/hv-uikit-react/commit/8f88667))
+
+
+
+
+
 ## [1.1.3-alpha.47](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.46...@hv/uikit-react-doc@1.1.3-alpha.47) (2019-07-19)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.36](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.35...@hv/uikit-react-core@1.1.3-alpha.36) (2019-07-22)
+
+
+### Features
+
+* **card:** adjust card header/content paddings and fix subtitle. [#237](https://github.com/pentaho/hv-uikit-react/issues/237) ([fbb029f](https://github.com/pentaho/hv-uikit-react/commit/fbb029f))
+
+
+
+
+
 ## [1.1.3-alpha.35](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.34...@hv/uikit-react-core@1.1.3-alpha.35) (2019-07-19)
 
 
