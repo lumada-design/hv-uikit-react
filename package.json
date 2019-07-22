@@ -35,7 +35,7 @@
     "publish:major": "npx lerna publish major --yes --force-publish=*",
     "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix",
-    "lint:jenkins": "npx eslint -f checkstyle . > eslint.xml"
+    "lint:jenkins": "npm run lint"
   },
   "husky": {
     "hooks": {
