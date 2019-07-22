@@ -11979,7 +11979,7 @@ body {
                 >
                   
 .Header-root-51 {
-  padding: 0 10px 20px 15px;
+  padding: 15px 20px;
   position: relative;
   background-color: #FFFFFF;
 }
@@ -12039,7 +12039,7 @@ body {
                 "index": Array [
                   Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 10px 20px 15px",
+                    "padding": "15px 20px",
                     "position": "relative",
                   },
                   Object {
@@ -12088,7 +12088,7 @@ body {
                   ".Header-content-56": Object {},
                   ".Header-root-51": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 10px 20px 15px",
+                    "padding": "15px 20px",
                     "position": "relative",
                   },
                   ".Header-subheader-54": Object {
@@ -12127,7 +12127,7 @@ body {
                   "content": Object {},
                   "root": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 10px 20px 15px",
+                    "padding": "15px 20px",
                     "position": "relative",
                   },
                   "subheader": Object {
@@ -12659,7 +12659,7 @@ body {
                   "content": Object {},
                   "root": Object {
                     "backgroundColor": "#FFFFFF",
-                    "padding": "0 10px 20px 15px",
+                    "padding": "15px 20px",
                     "position": "relative",
                   },
                   "subheader": Object {
