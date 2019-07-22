@@ -63,7 +63,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -242,7 +241,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3673,7 +3671,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3852,7 +3849,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -5755,7 +5751,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -5934,7 +5929,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -7266,7 +7260,6 @@ body {
 .Typography-selectedText-50 {
   color: #F9F9F9;
   font-size: 14px;
-  background: #414141;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -7472,7 +7465,6 @@ body {
                     "line-height": "20px",
                   },
                   Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7683,7 +7675,6 @@ body {
                     "line-height": "20px",
                   },
                   ".Typography-selectedText-50": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7851,7 +7842,6 @@ body {
                     "line-height": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -8536,7 +8526,6 @@ body {
                     "lineHeight": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "fontSize": "14px",
                     "fontWeight": "600",
@@ -8634,7 +8623,6 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
-              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -8813,7 +8801,6 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
-              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -9613,7 +9600,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -9792,7 +9778,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -10577,7 +10562,6 @@ body {
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
-                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -10756,7 +10740,6 @@ body {
                         "lineHeight": "20px",
                       },
                       "selectedText": Object {
-                        "background": "#414141",
                         "color": "#F9F9F9",
                         "fontSize": "14px",
                         "fontWeight": "600",
@@ -11553,7 +11536,6 @@ body {
                           "name": "dawn",
                           "palette": Object {
                             "accent": Object {
-                              "acce0": "#FFFFFF",
                               "acce1": "#414141",
                               "acce2": "#146BD2",
                               "acce2h": "#4389DB",
@@ -11732,7 +11714,6 @@ body {
                               "lineHeight": "20px",
                             },
                             "selectedText": Object {
-                              "background": "#414141",
                               "color": "#F9F9F9",
                               "fontSize": "14px",
                               "fontWeight": "600",
