@@ -342,7 +342,6 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -521,7 +520,6 @@ exports[`DropDownMenu index should render without throwing any error 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3952,7 +3950,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -4131,7 +4128,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -6159,7 +6155,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -6338,7 +6333,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -9502,7 +9496,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -9681,7 +9674,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -10884,15 +10876,15 @@ body {
                   
 .MuiButtonBase-root-17 {
   color: inherit;
-  border: 0;
-  margin: 0;
   cursor: pointer;
+  margin: 0;
+  border: 0;
   display: inline-flex;
-  outline: none;
   padding: 0;
+  outline: none;
   position: relative;
-  align-items: center;
   user-select: none;
+  align-items: center;
   border-radius: 0;
   vertical-align: middle;
   justify-content: center;
@@ -11591,7 +11583,6 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
-              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -11770,7 +11761,6 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
-              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -12541,7 +12531,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12720,7 +12709,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",

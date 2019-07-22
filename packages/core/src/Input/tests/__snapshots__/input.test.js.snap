@@ -63,7 +63,6 @@ exports[`Input should not have the validation section 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -242,7 +241,6 @@ exports[`Input should not have the validation section 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3673,7 +3671,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3852,7 +3849,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -6829,7 +6825,6 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -7008,7 +7003,6 @@ input:-webkit-autofill {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -9693,7 +9687,6 @@ label + .MuiInput-formControl-444 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -9872,7 +9865,6 @@ label + .MuiInput-formControl-444 {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -11122,8 +11114,8 @@ label + .MuiInput-formControl-444 {
 }
 .MuiInputBase-input-466 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -12280,7 +12272,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12459,7 +12450,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -13791,7 +13781,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
 .Typography-selectedText-485 {
   color: #F9F9F9;
   font-size: 14px;
-  background: #414141;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -13997,7 +13986,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "line-height": "20px",
                   },
                   Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -14208,7 +14196,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "line-height": "20px",
                   },
                   ".Typography-selectedText-485": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -14376,7 +14363,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "line-height": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -15061,7 +15047,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "lineHeight": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "fontSize": "14px",
                     "fontWeight": "600",
@@ -15159,7 +15144,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
           "name": "dawn",
           "palette": Object {
             "accent": Object {
-              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -15338,7 +15322,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
               "lineHeight": "20px",
             },
             "selectedText": Object {
-              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -16140,7 +16123,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -16319,7 +16301,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -17296,7 +17277,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
-                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -17475,7 +17455,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                         "lineHeight": "20px",
                       },
                       "selectedText": Object {
-                        "background": "#414141",
                         "color": "#F9F9F9",
                         "fontSize": "14px",
                         "fontWeight": "600",
@@ -18250,7 +18229,6 @@ exports[`Input should pass other props to the child input component 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -18429,7 +18407,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -21860,7 +21837,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -22039,7 +22015,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -25016,7 +24991,6 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -25195,7 +25169,6 @@ input:-webkit-autofill {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -27880,7 +27853,6 @@ label + .MuiInput-formControl-586 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -28059,7 +28031,6 @@ label + .MuiInput-formControl-586 {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -29309,8 +29280,8 @@ label + .MuiInput-formControl-586 {
 }
 .MuiInputBase-input-608 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -30467,7 +30438,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -30646,7 +30616,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -31978,7 +31947,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
 .Typography-selectedText-627 {
   color: #F9F9F9;
   font-size: 14px;
-  background: #414141;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -32184,7 +32152,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "line-height": "20px",
                   },
                   Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -32395,7 +32362,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "line-height": "20px",
                   },
                   ".Typography-selectedText-627": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -32563,7 +32529,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "line-height": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -33248,7 +33213,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "lineHeight": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "fontSize": "14px",
                     "fontWeight": "600",
@@ -33346,7 +33310,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
           "name": "dawn",
           "palette": Object {
             "accent": Object {
-              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -33525,7 +33488,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
               "lineHeight": "20px",
             },
             "selectedText": Object {
-              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -34335,7 +34297,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -34514,7 +34475,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -35511,7 +35471,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
-                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -35690,7 +35649,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                         "lineHeight": "20px",
                       },
                       "selectedText": Object {
-                        "background": "#414141",
                         "color": "#F9F9F9",
                         "fontSize": "14px",
                         "fontWeight": "600",
@@ -36465,7 +36423,6 @@ exports[`Input should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -36644,7 +36601,6 @@ exports[`Input should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -40075,7 +40031,6 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -40254,7 +40209,6 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -43231,7 +43185,6 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -43410,7 +43363,6 @@ input:-webkit-autofill {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -46095,7 +46047,6 @@ label + .MuiInput-formControl-89 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -46274,7 +46225,6 @@ label + .MuiInput-formControl-89 {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -47524,8 +47474,8 @@ label + .MuiInput-formControl-89 {
 }
 .MuiInputBase-input-111 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -48682,7 +48632,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -48861,7 +48810,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -50193,7 +50141,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
 .Typography-selectedText-130 {
   color: #F9F9F9;
   font-size: 14px;
-  background: #414141;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -50399,7 +50346,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "line-height": "20px",
                   },
                   Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -50610,7 +50556,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "line-height": "20px",
                   },
                   ".Typography-selectedText-130": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -50778,7 +50723,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "line-height": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -51463,7 +51407,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "lineHeight": "20px",
                   },
                   "selectedText": Object {
-                    "background": "#414141",
                     "color": "#F9F9F9",
                     "fontSize": "14px",
                     "fontWeight": "600",
@@ -51561,7 +51504,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
           "name": "dawn",
           "palette": Object {
             "accent": Object {
-              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -51740,7 +51682,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
               "lineHeight": "20px",
             },
             "selectedText": Object {
-              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -52540,7 +52481,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
-                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -52719,7 +52659,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
-                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -53695,7 +53634,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
-                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -53874,7 +53812,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                         "lineHeight": "20px",
                       },
                       "selectedText": Object {
-                        "background": "#414141",
                         "color": "#F9F9F9",
                         "fontSize": "14px",
                         "fontWeight": "600",

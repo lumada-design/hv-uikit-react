@@ -50,7 +50,6 @@ exports[`Barchart withStyles should render correctly 1`] = `
         "name": "dawn",
         "palette": Object {
           "accent": Object {
-            "acce0": "#FFFFFF",
             "acce1": "#414141",
             "acce2": "#146BD2",
             "acce2h": "#4389DB",
@@ -229,7 +228,6 @@ exports[`Barchart withStyles should render correctly 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
-            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",
@@ -1014,7 +1012,6 @@ exports[`Tooltip withStyles should render correctly 1`] = `
         "name": "dawn",
         "palette": Object {
           "accent": Object {
-            "acce0": "#FFFFFF",
             "acce1": "#414141",
             "acce2": "#146BD2",
             "acce2h": "#4389DB",
@@ -1193,7 +1190,6 @@ exports[`Tooltip withStyles should render correctly 1`] = `
             "lineHeight": "20px",
           },
           "selectedText": Object {
-            "background": "#414141",
             "color": "#F9F9F9",
             "fontSize": "14px",
             "fontWeight": "600",
