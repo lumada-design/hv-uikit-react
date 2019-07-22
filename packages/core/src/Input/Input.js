@@ -317,8 +317,7 @@ class HvInput extends React.Component {
             multiline: classes.multiLine
           }}
           className={classNames(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled,
-            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+            [classes.inputRootDisabled]: disabled
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}

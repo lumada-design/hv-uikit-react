@@ -28,7 +28,7 @@ exports[`InputAdornment should be defined 1`] = `
     role="button"
     tabIndex={-1}
   >
-    <CloseXS
+    <CloseS
       color={
         Array [
           "none",
@@ -59,11 +59,11 @@ exports[`InputAdornment should be defined 1`] = `
           fill="none"
         />
         <path
-          d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
+          d="M22 10.7l-.7-.7-5.3 5.3-5.3-5.3-.7.7 5.3 5.3-5.3 5.3.7.7 5.3-5.3 5.3 5.3.7-.7-5.3-5.3z"
           fill="#414141"
         />
       </svg>
-    </CloseXS>
+    </CloseS>
   </div>
 </InputAdornment>
 `;
