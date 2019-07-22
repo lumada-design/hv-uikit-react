@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    padding: `0 ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px 15px`,
+    padding: `15px ${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     position: "relative"
   },
