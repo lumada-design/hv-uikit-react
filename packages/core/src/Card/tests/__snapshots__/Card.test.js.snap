@@ -11979,7 +11979,7 @@ body {
                 >
                   
 .Header-root-51 {
-  padding: 20px;
+  padding: 0 10px 20px 15px;
   position: relative;
   background-color: #FFFFFF;
 }
@@ -12001,10 +12001,10 @@ body {
   letter-spacing: 0.02em;
 }
 .Header-subheader-54 {
-  color: #414141;
-  font-size: 14px;
+  color: #999999;
+  font-size: 12px;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  line-height: 20px;
+  line-height: 16px;
   font-weight: 400;
   padding-top: 10px;
   letter-spacing: 0.02em;
@@ -12013,7 +12013,7 @@ body {
   right: 20px;
   position: absolute;
   margin-top: 0;
-  margin-right: -1px;
+  margin-right: 0px;
   padding-left: 10px;
 }
 
@@ -12039,7 +12039,7 @@ body {
                 "index": Array [
                   Object {
                     "background-color": "#FFFFFF",
-                    "padding": "20px",
+                    "padding": "0 10px 20px 15px",
                     "position": "relative",
                   },
                   Object {
@@ -12060,16 +12060,16 @@ body {
                     "margin-right": "30px",
                   },
                   Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
-                    "font-size": "14px",
+                    "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
-                    "line-height": "20px",
+                    "line-height": "16px",
                     "padding-top": "10px",
                   },
                   Object {
-                    "margin-right": "-1px",
+                    "margin-right": "0px",
                     "margin-top": 0,
                     "padding-left": "10px",
                     "position": "absolute",
@@ -12079,7 +12079,7 @@ body {
                 ],
                 "map": Object {
                   ".Header-action-55": Object {
-                    "margin-right": "-1px",
+                    "margin-right": "0px",
                     "margin-top": 0,
                     "padding-left": "10px",
                     "position": "absolute",
@@ -12088,16 +12088,16 @@ body {
                   ".Header-content-56": Object {},
                   ".Header-root-51": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "20px",
+                    "padding": "0 10px 20px 15px",
                     "position": "relative",
                   },
                   ".Header-subheader-54": Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
-                    "font-size": "14px",
+                    "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
-                    "line-height": "20px",
+                    "line-height": "16px",
                     "padding-top": "10px",
                   },
                   ".Header-title-52": Object {
@@ -12118,7 +12118,7 @@ body {
                     "margin-right": "30px",
                   },
                   "action": Object {
-                    "margin-right": "-1px",
+                    "margin-right": "0px",
                     "margin-top": 0,
                     "padding-left": "10px",
                     "position": "absolute",
@@ -12127,16 +12127,16 @@ body {
                   "content": Object {},
                   "root": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "20px",
+                    "padding": "0 10px 20px 15px",
                     "position": "relative",
                   },
                   "subheader": Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
-                    "font-size": "14px",
+                    "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
-                    "line-height": "20px",
+                    "line-height": "16px",
                     "padding-top": "10px",
                   },
                   "title": Object {
@@ -12650,7 +12650,7 @@ body {
                 },
                 "raw": Object {
                   "action": Object {
-                    "marginRight": "-1px",
+                    "marginRight": "0px",
                     "marginTop": 0,
                     "paddingLeft": "10px",
                     "position": "absolute",
@@ -12659,21 +12659,21 @@ body {
                   "content": Object {},
                   "root": Object {
                     "backgroundColor": "#FFFFFF",
-                    "padding": "20px",
+                    "padding": "0 10px 20px 15px",
                     "position": "relative",
                   },
                   "subheader": Object {
-                    "color": "#414141",
+                    "color": "#999999",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "14px",
+                    "fontSize": "12px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
-                    "lineHeight": "20px",
+                    "lineHeight": "16px",
                     "paddingTop": "10px",
                   },
                   "title": Object {
@@ -23493,7 +23493,7 @@ body {
                 >
                   
 .Content-content-103 {
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 15px 20px;
   background-color: #FFFFFF;
 }
 .Content-bottomBorder-104 {
@@ -23522,7 +23522,7 @@ body {
                 "index": Array [
                   Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 20px 20px 20px",
+                    "padding": "0 20px 15px 20px",
                   },
                   Object {
                     "border-bottom": "1px solid #BCBCBC",
@@ -23537,7 +23537,7 @@ body {
                   },
                   ".Content-content-103": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 20px 20px 20px",
+                    "padding": "0 20px 15px 20px",
                   },
                   ".Content-item-105": Object {
                     "padding": "0 0 20px 0",
@@ -23547,7 +23547,7 @@ body {
                   },
                   "content": Object {
                     "background-color": "#FFFFFF",
-                    "padding": "0 20px 20px 20px",
+                    "padding": "0 20px 15px 20px",
                   },
                   "item": Object {
                     "padding": "0 0 20px 0",
@@ -24047,7 +24047,7 @@ body {
                   },
                   "content": Object {
                     "backgroundColor": "#FFFFFF",
-                    "padding": "0 20px 20px 20px",
+                    "padding": "0 20px 15px 20px",
                   },
                   "item": Object {
                     "padding": "0 0 20px 0",

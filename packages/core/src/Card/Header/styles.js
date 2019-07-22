@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: `0 ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px 15px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     position: "relative"
   },
@@ -31,14 +31,14 @@ const styles = theme => ({
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.normalText,
+    ...theme.hv.typography.infoText,
     paddingTop: `${theme.hv.spacing.xs}px`
   },
   action: {
     position: "absolute",
     right: 20,
     marginTop: 0,
-    marginRight: "-1px",
+    marginRight: "0px",
     paddingLeft: `${theme.hv.spacing.xs}px`
   },
   content: {}

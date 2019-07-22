@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   content: {
-    padding: `0 ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`,
+    padding: `0 ${theme.hv.spacing.sm}px 15px ${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   bottomBorder: {
