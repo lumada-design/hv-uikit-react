@@ -21,7 +21,7 @@ const styles = theme => ({
     "&:active": {},
     "&:focus": {
       outline: "5px auto rgba(0, 150, 255, 1)"
-    },
+    },  
     minWidth: "70px",
     padding: `0 ${theme.hv.spacing.xs}px`,
     cursor: "pointer",
@@ -30,7 +30,7 @@ const styles = theme => ({
     ...theme.hv.typography.highlightText
   },
   primary: {
-    color: theme.hv.palette.atmosphere.atmo1,
+    color: theme.hv.palette.accent.acce0,
     backgroundColor: theme.hv.palette.accent.acce2,
     "&:hover": {
       backgroundColor: theme.hv.palette.accent.acce2h
