@@ -63,6 +63,7 @@ exports[`Login  should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3672,6 +3673,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -6349,6 +6351,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -8755,6 +8758,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -10764,6 +10768,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -13646,6 +13651,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -16801,6 +16807,7 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -19664,6 +19671,7 @@ label + .MuiInput-formControl-259 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -22250,6 +22258,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -24400,6 +24409,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -26510,6 +26520,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -28568,6 +28579,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -30624,6 +30636,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -33966,6 +33979,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -36058,6 +36072,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -39369,6 +39384,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -42015,6 +42031,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -48018,6 +48035,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -49011,6 +49029,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -50018,6 +50037,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                         "name": "dawn",
                         "palette": Object {
                           "accent": Object {
+                            "acce0": "#FFFFFF",
                             "acce1": "#414141",
                             "acce2": "#146BD2",
                             "acce2h": "#4389DB",
@@ -50967,6 +50987,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -51930,6 +51951,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                       "name": "dawn",
                                       "palette": Object {
                                         "accent": Object {
+                                          "acce0": "#FFFFFF",
                                           "acce1": "#414141",
                                           "acce2": "#146BD2",
                                           "acce2h": "#4389DB",
@@ -52929,6 +52951,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -53902,6 +53925,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -55058,6 +55082,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                       "name": "dawn",
                                       "palette": Object {
                                         "accent": Object {
+                                          "acce0": "#FFFFFF",
                                           "acce1": "#414141",
                                           "acce2": "#146BD2",
                                           "acce2h": "#4389DB",
@@ -56052,6 +56077,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -57025,6 +57051,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -58181,6 +58208,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                       "name": "dawn",
                                       "palette": Object {
                                         "accent": Object {
+                                          "acce0": "#FFFFFF",
                                           "acce1": "#414141",
                                           "acce2": "#146BD2",
                                           "acce2h": "#4389DB",
@@ -59144,6 +59172,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -60670,6 +60699,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -61630,6 +61660,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -62570,6 +62601,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                   "name": "dawn",
                                   "palette": Object {
                                     "accent": Object {
+                                      "acce0": "#FFFFFF",
                                       "acce1": "#414141",
                                       "acce2": "#146BD2",
                                       "acce2h": "#4389DB",
@@ -63537,6 +63569,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                     "name": "dawn",
                                     "palette": Object {
                                       "accent": Object {
+                                        "acce0": "#FFFFFF",
                                         "acce1": "#414141",
                                         "acce2": "#146BD2",
                                         "acce2h": "#4389DB",
@@ -64471,6 +64504,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                       "name": "dawn",
                                       "palette": Object {
                                         "accent": Object {
+                                          "acce0": "#FFFFFF",
                                           "acce1": "#414141",
                                           "acce2": "#146BD2",
                                           "acce2h": "#4389DB",
@@ -65414,6 +65448,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                         "name": "dawn",
                                         "palette": Object {
                                           "accent": Object {
+                                            "acce0": "#FFFFFF",
                                             "acce1": "#414141",
                                             "acce2": "#146BD2",
                                             "acce2h": "#4389DB",
@@ -66355,6 +66390,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -67347,6 +67383,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                   "name": "dawn",
                                   "palette": Object {
                                     "accent": Object {
+                                      "acce0": "#FFFFFF",
                                       "acce1": "#414141",
                                       "acce2": "#146BD2",
                                       "acce2h": "#4389DB",
@@ -68287,6 +68324,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                     "name": "dawn",
                                     "palette": Object {
                                       "accent": Object {
+                                        "acce0": "#FFFFFF",
                                         "acce1": "#414141",
                                         "acce2": "#146BD2",
                                         "acce2h": "#4389DB",
@@ -69254,6 +69292,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                       "name": "dawn",
                                       "palette": Object {
                                         "accent": Object {
+                                          "acce0": "#FFFFFF",
                                           "acce1": "#414141",
                                           "acce2": "#146BD2",
                                           "acce2h": "#4389DB",
@@ -70188,6 +70227,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                         "name": "dawn",
                                         "palette": Object {
                                           "accent": Object {
+                                            "acce0": "#FFFFFF",
                                             "acce1": "#414141",
                                             "acce2": "#146BD2",
                                             "acce2h": "#4389DB",
@@ -71131,6 +71171,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -72072,6 +72113,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-272 .MuiInputBase-input-281
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",

@@ -63,6 +63,7 @@ exports[`Input should not have the validation section 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3672,6 +3673,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -6827,6 +6829,7 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -9690,6 +9693,7 @@ label + .MuiInput-formControl-444 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12276,6 +12280,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -15154,6 +15159,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -16134,6 +16140,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -17289,6 +17296,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
+                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -18242,6 +18250,7 @@ exports[`Input should pass other props to the child input component 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -21851,6 +21860,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -25006,6 +25016,7 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -27869,6 +27880,7 @@ label + .MuiInput-formControl-586 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -30455,6 +30467,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -33333,6 +33346,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -34321,6 +34335,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -35496,6 +35511,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
+                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
@@ -36449,6 +36465,7 @@ exports[`Input should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -40058,6 +40075,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -43213,6 +43231,7 @@ input:-webkit-autofill {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -46076,6 +46095,7 @@ label + .MuiInput-formControl-89 {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -48662,6 +48682,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -51540,6 +51561,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -52518,6 +52540,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -53672,6 +53695,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                     "name": "dawn",
                     "palette": Object {
                       "accent": Object {
+                        "acce0": "#FFFFFF",
                         "acce1": "#414141",
                         "acce2": "#146BD2",
                         "acce2h": "#4389DB",
