@@ -63,6 +63,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3672,6 +3673,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -5920,6 +5922,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -8370,6 +8373,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -10408,6 +10412,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12369,6 +12374,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -15229,6 +15235,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -17321,6 +17328,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -19401,6 +19409,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -22708,6 +22717,7 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -23692,6 +23702,7 @@ body {
                 "name": "dawn",
                 "palette": Object {
                   "accent": Object {
+                    "acce0": "#FFFFFF",
                     "acce1": "#414141",
                     "acce2": "#146BD2",
                     "acce2h": "#4389DB",
@@ -24641,6 +24652,7 @@ body {
                       "name": "dawn",
                       "palette": Object {
                         "accent": Object {
+                          "acce0": "#FFFFFF",
                           "acce1": "#414141",
                           "acce2": "#146BD2",
                           "acce2h": "#4389DB",
@@ -25680,6 +25692,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -26620,6 +26633,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -27662,6 +27676,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -28664,6 +28679,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
@@ -29620,6 +29636,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -30560,6 +30577,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -31602,6 +31620,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -32604,6 +32623,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
@@ -33560,6 +33580,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -34500,6 +34521,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -35542,6 +35564,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -36544,6 +36567,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
@@ -41347,6 +41371,7 @@ exports[`User withStyles should render correctly 1`] = `
         "name": "dawn",
         "palette": Object {
           "accent": Object {
+            "acce0": "#FFFFFF",
             "acce1": "#414141",
             "acce2": "#146BD2",
             "acce2h": "#4389DB",
@@ -42319,6 +42344,7 @@ exports[`User withStyles should render correctly with props 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -45928,6 +45954,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -48176,6 +48203,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -50626,6 +50654,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -52664,6 +52693,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -54625,6 +54655,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -57485,6 +57516,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -59577,6 +59609,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -61657,6 +61690,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -64964,6 +64998,7 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -65947,6 +65982,7 @@ body {
                 "name": "dawn",
                 "palette": Object {
                   "accent": Object {
+                    "acce0": "#FFFFFF",
                     "acce1": "#414141",
                     "acce2": "#146BD2",
                     "acce2h": "#4389DB",
@@ -66896,6 +66932,7 @@ body {
                       "name": "dawn",
                       "palette": Object {
                         "accent": Object {
+                          "acce0": "#FFFFFF",
                           "acce1": "#414141",
                           "acce2": "#146BD2",
                           "acce2h": "#4389DB",
@@ -67935,6 +67972,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -68875,6 +68913,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -69917,6 +69956,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -70919,6 +70959,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
@@ -71875,6 +71916,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -72815,6 +72857,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -73857,6 +73900,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -74859,6 +74903,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
@@ -75815,6 +75860,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -76755,6 +76801,7 @@ body {
                                             "name": "dawn",
                                             "palette": Object {
                                               "accent": Object {
+                                                "acce0": "#FFFFFF",
                                                 "acce1": "#414141",
                                                 "acce2": "#146BD2",
                                                 "acce2h": "#4389DB",
@@ -77797,6 +77844,7 @@ body {
                                                               "name": "dawn",
                                                               "palette": Object {
                                                                 "accent": Object {
+                                                                  "acce0": "#FFFFFF",
                                                                   "acce1": "#414141",
                                                                   "acce2": "#146BD2",
                                                                   "acce2h": "#4389DB",
@@ -78799,6 +78847,7 @@ body {
                                                                     "name": "dawn",
                                                                     "palette": Object {
                                                                       "accent": Object {
+                                                                        "acce0": "#FFFFFF",
                                                                         "acce1": "#414141",
                                                                         "acce2": "#146BD2",
                                                                         "acce2h": "#4389DB",
