@@ -63,6 +63,7 @@ exports[`Provider should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -241,6 +242,7 @@ exports[`Provider should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3667,6 +3669,7 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -3845,6 +3848,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",

@@ -63,6 +63,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -241,6 +242,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3671,6 +3673,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3849,6 +3852,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -6185,6 +6189,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -6363,6 +6368,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -8140,6 +8146,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -8318,6 +8325,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -10589,6 +10597,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -10767,6 +10776,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -12758,6 +12768,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12936,6 +12947,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -14816,6 +14828,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -14994,6 +15007,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -18126,6 +18140,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -18304,6 +18319,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -20115,6 +20131,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -20293,6 +20310,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -22104,6 +22122,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -22282,6 +22301,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -24102,6 +24122,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -24280,6 +24301,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -26072,6 +26094,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -26250,6 +26273,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -28085,6 +28109,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -28263,6 +28288,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -30093,6 +30119,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -30271,6 +30298,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -32242,6 +32270,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -32420,6 +32449,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -34351,6 +34381,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -34529,6 +34560,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -36408,6 +36440,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -36586,6 +36619,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -38463,6 +38497,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -38641,6 +38676,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -41804,6 +41840,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -41982,6 +42019,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -43184,15 +43222,15 @@ body {
                   
 .MuiButtonBase-root-142 {
   color: inherit;
-  cursor: pointer;
-  margin: 0;
   border: 0;
+  margin: 0;
+  cursor: pointer;
   display: inline-flex;
-  padding: 0;
   outline: none;
+  padding: 0;
   position: relative;
-  user-select: none;
   align-items: center;
+  user-select: none;
   border-radius: 0;
   vertical-align: middle;
   justify-content: center;
@@ -43891,6 +43929,7 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -44069,6 +44108,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -44870,6 +44910,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -45048,6 +45089,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -45869,6 +45911,7 @@ body {
                             "name": "dawn",
                             "palette": Object {
                               "accent": Object {
+                                "acce0": "#FFFFFF",
                                 "acce1": "#414141",
                                 "acce2": "#146BD2",
                                 "acce2h": "#4389DB",
@@ -46047,6 +46090,7 @@ body {
                                 "lineHeight": "20px",
                               },
                               "selectedText": Object {
+                                "background": "#414141",
                                 "color": "#F9F9F9",
                                 "fontSize": "14px",
                                 "fontWeight": "600",
@@ -46907,6 +46951,7 @@ body {
                                         "name": "dawn",
                                         "palette": Object {
                                           "accent": Object {
+                                            "acce0": "#FFFFFF",
                                             "acce1": "#414141",
                                             "acce2": "#146BD2",
                                             "acce2h": "#4389DB",
@@ -47085,6 +47130,7 @@ body {
                                             "lineHeight": "20px",
                                           },
                                           "selectedText": Object {
+                                            "background": "#414141",
                                             "color": "#F9F9F9",
                                             "fontSize": "14px",
                                             "fontWeight": "600",
@@ -47914,6 +47960,7 @@ body {
                                         "name": "dawn",
                                         "palette": Object {
                                           "accent": Object {
+                                            "acce0": "#FFFFFF",
                                             "acce1": "#414141",
                                             "acce2": "#146BD2",
                                             "acce2h": "#4389DB",
@@ -48092,6 +48139,7 @@ body {
                                             "lineHeight": "20px",
                                           },
                                           "selectedText": Object {
+                                            "background": "#414141",
                                             "color": "#F9F9F9",
                                             "fontSize": "14px",
                                             "fontWeight": "600",
@@ -48870,6 +48918,7 @@ body {
                             "name": "dawn",
                             "palette": Object {
                               "accent": Object {
+                                "acce0": "#FFFFFF",
                                 "acce1": "#414141",
                                 "acce2": "#146BD2",
                                 "acce2h": "#4389DB",
@@ -49048,6 +49097,7 @@ body {
                                 "lineHeight": "20px",
                               },
                               "selectedText": Object {
+                                "background": "#414141",
                                 "color": "#F9F9F9",
                                 "fontSize": "14px",
                                 "fontWeight": "600",
@@ -49799,6 +49849,7 @@ body {
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -49977,6 +50028,7 @@ body {
                                     "lineHeight": "20px",
                                   },
                                   "selectedText": Object {
+                                    "background": "#414141",
                                     "color": "#F9F9F9",
                                     "fontSize": "14px",
                                     "fontWeight": "600",
@@ -50733,6 +50785,7 @@ body {
                                   "name": "dawn",
                                   "palette": Object {
                                     "accent": Object {
+                                      "acce0": "#FFFFFF",
                                       "acce1": "#414141",
                                       "acce2": "#146BD2",
                                       "acce2h": "#4389DB",
@@ -50911,6 +50964,7 @@ body {
                                       "lineHeight": "20px",
                                     },
                                     "selectedText": Object {
+                                      "background": "#414141",
                                       "color": "#F9F9F9",
                                       "fontSize": "14px",
                                       "fontWeight": "600",
@@ -51664,6 +51718,7 @@ body {
                                     "name": "dawn",
                                     "palette": Object {
                                       "accent": Object {
+                                        "acce0": "#FFFFFF",
                                         "acce1": "#414141",
                                         "acce2": "#146BD2",
                                         "acce2h": "#4389DB",
@@ -51842,6 +51897,7 @@ body {
                                         "lineHeight": "20px",
                                       },
                                       "selectedText": Object {
+                                        "background": "#414141",
                                         "color": "#F9F9F9",
                                         "fontSize": "14px",
                                         "fontWeight": "600",
@@ -52606,6 +52662,7 @@ body {
                             "name": "dawn",
                             "palette": Object {
                               "accent": Object {
+                                "acce0": "#FFFFFF",
                                 "acce1": "#414141",
                                 "acce2": "#146BD2",
                                 "acce2h": "#4389DB",
@@ -52784,6 +52841,7 @@ body {
                                 "lineHeight": "20px",
                               },
                               "selectedText": Object {
+                                "background": "#414141",
                                 "color": "#F9F9F9",
                                 "fontSize": "14px",
                                 "fontWeight": "600",
@@ -53531,6 +53589,7 @@ body {
                               "name": "dawn",
                               "palette": Object {
                                 "accent": Object {
+                                  "acce0": "#FFFFFF",
                                   "acce1": "#414141",
                                   "acce2": "#146BD2",
                                   "acce2h": "#4389DB",
@@ -53709,6 +53768,7 @@ body {
                                   "lineHeight": "20px",
                                 },
                                 "selectedText": Object {
+                                  "background": "#414141",
                                   "color": "#F9F9F9",
                                   "fontSize": "14px",
                                   "fontWeight": "600",
@@ -54462,6 +54522,7 @@ body {
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -54640,6 +54701,7 @@ body {
                                     "lineHeight": "20px",
                                   },
                                   "selectedText": Object {
+                                    "background": "#414141",
                                     "color": "#F9F9F9",
                                     "fontSize": "14px",
                                     "fontWeight": "600",
@@ -55387,6 +55449,7 @@ body {
                                   "name": "dawn",
                                   "palette": Object {
                                     "accent": Object {
+                                      "acce0": "#FFFFFF",
                                       "acce1": "#414141",
                                       "acce2": "#146BD2",
                                       "acce2h": "#4389DB",
@@ -55565,6 +55628,7 @@ body {
                                       "lineHeight": "20px",
                                     },
                                     "selectedText": Object {
+                                      "background": "#414141",
                                       "color": "#F9F9F9",
                                       "fontSize": "14px",
                                       "fontWeight": "600",
@@ -56338,6 +56402,7 @@ body {
                             "name": "dawn",
                             "palette": Object {
                               "accent": Object {
+                                "acce0": "#FFFFFF",
                                 "acce1": "#414141",
                                 "acce2": "#146BD2",
                                 "acce2h": "#4389DB",
@@ -56516,6 +56581,7 @@ body {
                                 "lineHeight": "20px",
                               },
                               "selectedText": Object {
+                                "background": "#414141",
                                 "color": "#F9F9F9",
                                 "fontSize": "14px",
                                 "fontWeight": "600",
@@ -57282,6 +57348,7 @@ body {
                               "name": "dawn",
                               "palette": Object {
                                 "accent": Object {
+                                  "acce0": "#FFFFFF",
                                   "acce1": "#414141",
                                   "acce2": "#146BD2",
                                   "acce2h": "#4389DB",
@@ -57460,6 +57527,7 @@ body {
                                   "lineHeight": "20px",
                                 },
                                 "selectedText": Object {
+                                  "background": "#414141",
                                   "color": "#F9F9F9",
                                   "fontSize": "14px",
                                   "fontWeight": "600",
@@ -58213,6 +58281,7 @@ body {
                                 "name": "dawn",
                                 "palette": Object {
                                   "accent": Object {
+                                    "acce0": "#FFFFFF",
                                     "acce1": "#414141",
                                     "acce2": "#146BD2",
                                     "acce2h": "#4389DB",
@@ -58391,6 +58460,7 @@ body {
                                     "lineHeight": "20px",
                                   },
                                   "selectedText": Object {
+                                    "background": "#414141",
                                     "color": "#F9F9F9",
                                     "fontSize": "14px",
                                     "fontWeight": "600",
@@ -59152,6 +59222,7 @@ body {
                                   "name": "dawn",
                                   "palette": Object {
                                     "accent": Object {
+                                      "acce0": "#FFFFFF",
                                       "acce1": "#414141",
                                       "acce2": "#146BD2",
                                       "acce2h": "#4389DB",
@@ -59330,6 +59401,7 @@ body {
                                       "lineHeight": "20px",
                                     },
                                     "selectedText": Object {
+                                      "background": "#414141",
                                       "color": "#F9F9F9",
                                       "fontSize": "14px",
                                       "fontWeight": "600",
@@ -60083,6 +60155,7 @@ body {
                                     "name": "dawn",
                                     "palette": Object {
                                       "accent": Object {
+                                        "acce0": "#FFFFFF",
                                         "acce1": "#414141",
                                         "acce2": "#146BD2",
                                         "acce2h": "#4389DB",
@@ -60261,6 +60334,7 @@ body {
                                         "lineHeight": "20px",
                                       },
                                       "selectedText": Object {
+                                        "background": "#414141",
                                         "color": "#F9F9F9",
                                         "fontSize": "14px",
                                         "fontWeight": "600",
@@ -61031,6 +61105,7 @@ body {
                                           "name": "dawn",
                                           "palette": Object {
                                             "accent": Object {
+                                              "acce0": "#FFFFFF",
                                               "acce1": "#414141",
                                               "acce2": "#146BD2",
                                               "acce2h": "#4389DB",
@@ -61209,6 +61284,7 @@ body {
                                               "lineHeight": "20px",
                                             },
                                             "selectedText": Object {
+                                              "background": "#414141",
                                               "color": "#F9F9F9",
                                               "fontSize": "14px",
                                               "fontWeight": "600",
@@ -62556,6 +62632,7 @@ body {
                                                       "name": "dawn",
                                                       "palette": Object {
                                                         "accent": Object {
+                                                          "acce0": "#FFFFFF",
                                                           "acce1": "#414141",
                                                           "acce2": "#146BD2",
                                                           "acce2h": "#4389DB",
@@ -62734,6 +62811,7 @@ body {
                                                           "lineHeight": "20px",
                                                         },
                                                         "selectedText": Object {
+                                                          "background": "#414141",
                                                           "color": "#F9F9F9",
                                                           "fontSize": "14px",
                                                           "fontWeight": "600",
