@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.42](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.41...@hv/uikit-react-core@1.1.3-alpha.42) (2019-07-23)
+
+
+### Features
+
+* **dropdownmenu:** added Popper to dropdownmenu with positioning props [#298](https://github.com/pentaho/hv-uikit-react/issues/298) ([b40a7c6](https://github.com/pentaho/hv-uikit-react/commit/b40a7c6))
+
+
+
+
+
 ## [1.1.3-alpha.41](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.40...@hv/uikit-react-core@1.1.3-alpha.41) (2019-07-23)
 
 
