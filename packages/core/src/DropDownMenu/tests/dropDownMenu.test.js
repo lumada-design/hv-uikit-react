@@ -24,6 +24,19 @@ import DropDownMenu from "../index";
 import DropDownMenuComponent from "../DropDownMenu";
 import HvProvider from "../../Provider";
 
+jest.mock(
+  "popper.js",
+  () =>
+    class {
+      constructor() {
+        return {
+          scheduleUpdate: jest.fn(),
+          update: jest.fn()
+        };
+      }
+    }
+);
+
 describe("DropDownMenu", () => {
   let wrapper;
 
