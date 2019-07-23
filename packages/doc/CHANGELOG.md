@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.60](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.59...@hv/uikit-react-doc@1.1.3-alpha.60) (2019-07-23)
+
+
+### Features
+
+* **table:** updated style, added dropdown prop, checkbox header ([af314dd](https://github.com/pentaho/hv-uikit-react/commit/af314dd))
+
+
+
+
+
 ## [1.1.3-alpha.59](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.58...@hv/uikit-react-doc@1.1.3-alpha.59) (2019-07-23)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
