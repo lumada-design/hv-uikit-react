@@ -16,7 +16,7 @@
 
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import Typography from "@hv/uikit-react-core/dist/Typography";
+import Typography from "../../../Typography";
 
 /**
  * Tooltip with color representation.

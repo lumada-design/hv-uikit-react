@@ -16,11 +16,11 @@
 
 import React, { memo, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import Typography from "@hv/uikit-react-core/dist/Typography";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
 import { isNil, fill, clone } from "lodash";
 import classNames from "classnames";
+import Typography from "../../Typography";
 import propSetter from "./plotlyOverrides";
 
 import styleCreator from "./styles";

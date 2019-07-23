@@ -15,25 +15,57 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-core/dist/Barchart";
 
 const trace1 = {
-  x: [2300, 1000, 8500],
-  y: ["January", "February", "March"],
+  x: ["Group one", "Group two", "Group three"],
+  y: [2300, 1000, 8500],
   name: "Sales Target",
   type: "bar",
-  orientation: "h",
   hoverinfo: "none"
 };
 
-const data = [trace1];
+const trace2 = {
+  x: ["Group one", "Group two", "Group three"],
+  y: [6000, 3900, 1000],
+  name: "Sales Per Rep",
+  type: "bar",
+  hoverinfo: "none"
+};
+
+const trace3 = {
+  x: ["Group one", "Group two", "Group three"],
+  y: [3700, 7500, 1100],
+  name: "Monthly Sales",
+  type: "bar",
+  hoverinfo: "none"
+};
+
+const trace4 = {
+  x: ["Group one", "Group two", "Group three"],
+  y: [2100, 8500, 3000],
+  name: "Target",
+  type: "bar",
+  hoverinfo: "none"
+};
+
+const trace5 = {
+  x: ["Group one", "Group two", "Group three"],
+  y: [500, 8000, 9500],
+  name: "Cash",
+  type: "bar",
+  hoverinfo: "none"
+};
+
+const data = [trace1, trace2, trace3, trace4, trace5];
 const layout = {
-  yaxis: {
+  barmode: "group",
+  xaxis: {
     title: {
-      text: "2018"
+      text: "Axis description"
     }
   },
-  xaxis: {
+  yaxis: {
     title: {
       text: "Thousands of Dollars ($)"
     }
@@ -42,7 +74,7 @@ const layout = {
 
 export default (
   <Barchart
-    title="Simple Horizontal Bar Chart"
+    title="Grouped Vertical Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}
     layout={layout}

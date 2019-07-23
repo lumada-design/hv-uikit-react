@@ -19,7 +19,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import HvProvider from "../../Provider";
 import BarchartControlWithStyles from "../index";
 import BarchartControl from "../BarchartControl";
 import Barchart from "../Barchart";
