@@ -176,6 +176,7 @@ class Main extends React.Component {
           }
         ])}
       >
+        <div className={classes.listBorder} />
         <List
           values={values}
           multiSelect={multiSelect}

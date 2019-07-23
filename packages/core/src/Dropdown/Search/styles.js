@@ -17,15 +17,13 @@
 const styles = theme => ({
   root: {
     position: "relative",
-    background: theme.hv.palette.atmosphere.atmo2,
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-    height: 30,
-    marginTop: 20
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    height: "32px"
   },
   input: {
     border: "none",
     width: "100%",
-    height: 30,
+    height: "32px",
     padding: `5px ${theme.hv.spacing.md}px 5px 5px`,
     background: "transparent",
     "&:focus": {

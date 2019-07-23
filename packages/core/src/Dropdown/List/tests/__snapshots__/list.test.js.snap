@@ -4558,7 +4558,7 @@ body {
                 "list": "List-list-2",
                 "marginBottom": "List-marginBottom-13",
                 "multiSelection": "List-multiSelection-6",
-                "paddingRight": "List-paddingRight-12",
+                "padding": "List-padding-12",
                 "result": "List-result-9",
                 "root": "List-root-1",
                 "selectAll": "List-selectAll-10",
@@ -4578,7 +4578,7 @@ body {
                   "list": "List-list-2",
                   "marginBottom": "List-marginBottom-13",
                   "multiSelection": "List-multiSelection-6",
-                  "paddingRight": "List-paddingRight-12",
+                  "padding": "List-padding-12",
                   "result": "List-result-9",
                   "root": "List-root-1",
                   "selectAll": "List-selectAll-10",
@@ -5074,7 +5074,7 @@ body {
                 >
                   
 .List-root-1 {
-  margin: 10px 0 0 20px;
+  margin-top: 15px;
 }
 .List-list-2 {
   overflow: auto;
@@ -5115,7 +5115,7 @@ body {
   display: block;
 }
 .List-selectAll-10 {
-  margin: 10px 0 10px 0;
+  margin-top: 5px;
 }
 .List-selectAll-10 &gt; span {
   color: #414141;
@@ -5125,11 +5125,14 @@ body {
   letter-spacing: 0.02em;
 }
 .List-actions-11 {
-  margin: 20px 20px 20px 0;
+  padding: 20px;
   text-align: right;
+  border-top: 3px solid #F9F9F9;
 }
-.List-paddingRight-12 {
-  padding-right: 20px;
+.List-padding-12 {
+  padding-left: 20px;
+  margin-right: 2px;
+  padding-right: 18px;
 }
 .List-marginBottom-13 {
   margin-bottom: 20px;
@@ -5152,7 +5155,7 @@ body {
                   "list": "List-list-2",
                   "marginBottom": "List-marginBottom-13",
                   "multiSelection": "List-multiSelection-6",
-                  "paddingRight": "List-paddingRight-12",
+                  "padding": "List-padding-12",
                   "result": "List-result-9",
                   "root": "List-root-1",
                   "selectAll": "List-selectAll-10",
@@ -5163,7 +5166,7 @@ body {
                 },
                 "index": Array [
                   Object {
-                    "margin": "10px 0 0 20px",
+                    "margin-top": "15px",
                   },
                   Object {
                     "max-height": "320px",
@@ -5204,7 +5207,7 @@ body {
                     "display": "block",
                   },
                   Object {
-                    "margin": "10px 0 10px 0",
+                    "margin-top": "5px",
                   },
                   Object {
                     "color": "#414141",
@@ -5214,11 +5217,14 @@ body {
                     "line-height": "20px",
                   },
                   Object {
-                    "margin": "20px 20px 20px 0",
+                    "border-top": "3px solid #F9F9F9",
+                    "padding": "20px",
                     "text-align": "right",
                   },
                   Object {
-                    "padding-right": "20px",
+                    "margin-right": "2px",
+                    "padding-left": "20px",
+                    "padding-right": "18px",
                   },
                   Object {
                     "margin-bottom": "20px",
@@ -5226,7 +5232,8 @@ body {
                 ],
                 "map": Object {
                   ".List-actions-11": Object {
-                    "margin": "20px 20px 20px 0",
+                    "border-top": "3px solid #F9F9F9",
+                    "padding": "20px",
                     "text-align": "right",
                   },
                   ".List-hidden-3": Object {
@@ -5242,17 +5249,19 @@ body {
                   ".List-multiSelection-6": Object {
                     "cursor": "pointer",
                   },
-                  ".List-paddingRight-12": Object {
-                    "padding-right": "20px",
+                  ".List-padding-12": Object {
+                    "margin-right": "2px",
+                    "padding-left": "20px",
+                    "padding-right": "18px",
                   },
                   ".List-result-9": Object {
                     "display": "block",
                   },
                   ".List-root-1": Object {
-                    "margin": "10px 0 0 20px",
+                    "margin-top": "15px",
                   },
                   ".List-selectAll-10": Object {
-                    "margin": "10px 0 10px 0",
+                    "margin-top": "5px",
                   },
                   ".List-selectAll-10 > span": Object {
                     "color": "#414141",
@@ -5287,7 +5296,8 @@ body {
                     "white-space": "nowrap",
                   },
                   "actions": Object {
-                    "margin": "20px 20px 20px 0",
+                    "border-top": "3px solid #F9F9F9",
+                    "padding": "20px",
                     "text-align": "right",
                   },
                   "hidden": Object {
@@ -5303,17 +5313,19 @@ body {
                   "multiSelection": Object {
                     "cursor": "pointer",
                   },
-                  "paddingRight": Object {
-                    "padding-right": "20px",
+                  "padding": Object {
+                    "margin-right": "2px",
+                    "padding-left": "20px",
+                    "padding-right": "18px",
                   },
                   "result": Object {
                     "display": "block",
                   },
                   "root": Object {
-                    "margin": "10px 0 0 20px",
+                    "margin-top": "15px",
                   },
                   "selectAll": Object {
-                    "margin": "10px 0 10px 0",
+                    "margin-top": "5px",
                   },
                   "selected": Object {
                     "background": "#414141",
@@ -5343,7 +5355,7 @@ body {
                     "list": "List-list-2",
                     "marginBottom": "List-marginBottom-13",
                     "multiSelection": "List-multiSelection-6",
-                    "paddingRight": "List-paddingRight-12",
+                    "padding": "List-padding-12",
                     "result": "List-result-9",
                     "root": "List-root-1",
                     "selectAll": "List-selectAll-10",
@@ -5848,7 +5860,8 @@ body {
                     "background": "#F0F0F0",
                   },
                   "actions": Object {
-                    "margin": "20px 20px 20px 0",
+                    "borderTop": "3px solid #F9F9F9",
+                    "padding": "20px",
                     "textAlign": "right",
                   },
                   "hidden": Object {
@@ -5864,14 +5877,16 @@ body {
                   "multiSelection": Object {
                     "cursor": "pointer",
                   },
-                  "paddingRight": Object {
-                    "paddingRight": "20px",
+                  "padding": Object {
+                    "marginRight": "2px",
+                    "paddingLeft": "20px",
+                    "paddingRight": "18px",
                   },
                   "result": Object {
                     "display": "block",
                   },
                   "root": Object {
-                    "margin": "10px 0 0 20px",
+                    "marginTop": "15px",
                   },
                   "selectAll": Object {
                     "& > span": Object {
@@ -5881,7 +5896,7 @@ body {
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
                     },
-                    "margin": "10px 0 10px 0",
+                    "marginTop": "5px",
                   },
                   "selected": Object {
                     "&:hover": Object {
@@ -7349,17 +7364,15 @@ body {
                 >
                   
 .Search-root-14 {
-  height: 30px;
+  height: 32px;
   position: relative;
-  background: #F9F9F9;
-  margin-top: 20px;
-  border-bottom: 1px solid #DEDEDE;
+  border-bottom: 1px solid #BCBCBC;
 }
 .Search-input-15 {
   width: 100%;
   color: #414141;
   border: none;
-  height: 30px;
+  height: 32px;
   padding: 5px 30px 5px 5px;
   font-size: 14px;
   background: transparent;
@@ -7395,10 +7408,8 @@ body {
                 },
                 "index": Array [
                   Object {
-                    "background": "#F9F9F9",
-                    "border-bottom": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "margin-top": "20px",
+                    "border-bottom": "1px solid #BCBCBC",
+                    "height": "32px",
                     "position": "relative",
                   },
                   Object {
@@ -7407,7 +7418,7 @@ body {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
-                    "height": "30px",
+                    "height": "32px",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "padding": "5px 30px 5px 5px",
@@ -7436,7 +7447,7 @@ body {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
-                    "height": "30px",
+                    "height": "32px",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "padding": "5px 30px 5px 5px",
@@ -7446,10 +7457,8 @@ body {
                     "outline": "none",
                   },
                   ".Search-root-14": Object {
-                    "background": "#F9F9F9",
-                    "border-bottom": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "margin-top": "20px",
+                    "border-bottom": "1px solid #BCBCBC",
+                    "height": "32px",
                     "position": "relative",
                   },
                   "icon": Object {
@@ -7464,17 +7473,15 @@ body {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
-                    "height": "30px",
+                    "height": "32px",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "padding": "5px 30px 5px 5px",
                     "width": "100%",
                   },
                   "root": Object {
-                    "background": "#F9F9F9",
-                    "border-bottom": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "margin-top": "20px",
+                    "border-bottom": "1px solid #BCBCBC",
+                    "height": "32px",
                     "position": "relative",
                   },
                 },
@@ -7985,17 +7992,15 @@ body {
                     "color": "#414141",
                     "fontSize": "14px",
                     "fontWeight": "400",
-                    "height": 30,
+                    "height": "32px",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                     "padding": "5px 30px 5px 5px",
                     "width": "100%",
                   },
                   "root": Object {
-                    "background": "#F9F9F9",
-                    "borderBottom": "1px solid #DEDEDE",
-                    "height": 30,
-                    "marginTop": 20,
+                    "borderBottom": "1px solid #BCBCBC",
+                    "height": "32px",
                     "position": "relative",
                   },
                 },
@@ -36784,7 +36789,7 @@ body {
             "list": "List-list-2",
             "marginBottom": "List-marginBottom-13",
             "multiSelection": "List-multiSelection-6",
-            "paddingRight": "List-paddingRight-12",
+            "padding": "List-padding-12",
             "result": "List-result-9",
             "root": "List-root-1",
             "selectAll": "List-selectAll-10",
@@ -37751,7 +37756,7 @@ body {
           className="List-root-1"
         >
           <div
-            className="List-paddingRight-12"
+            className="List-padding-12"
           >
             <WithStyles(Search)
               onChange={[Function]}
@@ -38772,7 +38777,7 @@ body {
             </WithStyles(Search)>
           </div>
           <div
-            className="List-selectAll-10 List-paddingRight-12"
+            className="List-selectAll-10 List-padding-12"
           >
             <WithStyles(HvCheckbox)
               checked={false}
@@ -41294,7 +41299,7 @@ body {
             </WithStyles(HvCheckbox)>
           </div>
           <div
-            className="List-list-2 List-paddingRight-12"
+            className="List-list-2 List-padding-12"
           >
             <div
               className="List-hidden-3 List-multiSelection-6 List-result-9"
