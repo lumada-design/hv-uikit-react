@@ -17,40 +17,31 @@
 import React from "react";
 
 import HvBadge from "@hv/uikit-react-lab/dist/Badge";
-import {AlertS} from "@hv/uikit-react-icons/bin/DawnTheme"
+import Typography from "@hv/uikit-react-core/dist/Typography";
+import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
 
 const exampleStyles = {
-	display: "flex",
-	width: "800px",
-	justifyContent: "space-between"
-}
-
-const fontStyles = {
-	fontSize: "22px",
-	color: "#414141",
-	lineHeight: "20px"
-}
+  display: "flex",
+  width: "800px",
+  justifyContent: "space-between"
+};
 
 export default (
-	<div style={exampleStyles}>
-		<HvBadge count={0}>
-			<AlertS />
-		</HvBadge>
-		<HvBadge count={1}>
-			<AlertS />
-		</HvBadge>
-		<HvBadge showCount count={8}>
-			<AlertS />
-		</HvBadge>
-		<HvBadge showCount count={12}>
-			<div style={fontStyles}>
-				Track events
-			</div>
-		</HvBadge>
-		<HvBadge showCount count={100}>
-			<div style={fontStyles}>
-				Vehicle events
-			</div>
-		</HvBadge>
-	</div>
+  <div style={exampleStyles}>
+    <HvBadge count={0}>
+      <AlertS />
+    </HvBadge>
+    <HvBadge count={1}>
+      <AlertS />
+    </HvBadge>
+    <HvBadge showCount count={8}>
+      <AlertS />
+    </HvBadge>
+    <HvBadge showCount count={12}>
+      <Typography variant="sTitle">Track events</Typography>
+    </HvBadge>
+    <HvBadge showCount count={100}>
+      <Typography variant="sTitle">Vehicle events</Typography>
+    </HvBadge>
+  </div>
 );

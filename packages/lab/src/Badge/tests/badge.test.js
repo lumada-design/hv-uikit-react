@@ -18,7 +18,6 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 import Badge from "../Badge";
@@ -30,16 +29,16 @@ describe("<Badge />", () => {
     count: "count",
     withIcon: "withIcon",
     iconContainer: "iconContainer",
-    badgeBorder: "badgeBorder",
-  }
+    badgeBorder: "badgeBorder"
+  };
 
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
         <Badge classes={classes} count={0} />
       </HvProvider>
-    )
-  })
+    );
+  });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
@@ -50,15 +49,21 @@ describe("<Badge />", () => {
   });
 
   it("should render correctly with showCount", () => {
-    expect(wrapper.props().children[1].props.children.props.children).toBeFalsy()
+    expect(
+      wrapper.props().children[1].props.children.props.children
+    ).toBeFalsy();
 
     wrapper = shallow(
       <HvProvider>
         <Badge classes={classes} count={12} showCount />
       </HvProvider>
-    )
+    );
 
-    expect(shallow(wrapper.props().children[1].props.children).find(".count").props().children).toEqual(12)
+    expect(
+      shallow(wrapper.props().children[1].props.children)
+        .find(".count")
+        .props().children
+    ).toEqual(12);
   });
 
   it("should render correctly with maxCount", () => {
@@ -66,8 +71,12 @@ describe("<Badge />", () => {
       <HvProvider>
         <Badge classes={classes} count={100} showCount />
       </HvProvider>
-    )
-    expect(wrapper.props().children[1].props.children.props.count).toEqual(100)
-    expect(shallow(wrapper.props().children[1].props.children).find(".count").props().children).toEqual("99+")
+    );
+    expect(wrapper.props().children[1].props.children.props.count).toEqual(100);
+    expect(
+      shallow(wrapper.props().children[1].props.children)
+        .find(".count")
+        .props().children
+    ).toEqual("99+");
   });
-})
+});

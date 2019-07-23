@@ -18,19 +18,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Badge = (props) => {
-  const {classes, showCount, count, maxCount, children} = props;
+const Badge = props => {
+  const { classes, showCount, count, maxCount, children } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
 
   const iconClasses = {
     [classes.badge]: count > 0,
-    [classes.count]: showCount,
+    [classes.count]: showCount
   };
 
   return (
-    <div className={classes.iconContainer}>
+    <div className={classes.root}>
       {children}
-      <div className={classes.badgeBorder}>
+      <div className={classes.badgePosition}>
         <div className={classNames(iconClasses)}>
           {showCount && renderedCount}
         </div>
@@ -41,9 +41,26 @@ const Badge = (props) => {
 
 Badge.propTypes = {
   /**
-   *  Styles applied to the Badge element
+   *   A Jss Object used to override or extend the styles applied to the badge.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component badge position.
+     */
+    badgePosition: PropTypes.string,
+    /**
+     * Styles applied to the component badge.
+     */
+    badge: PropTypes.string,
+    /**
+     * Styles applied to the component badge count.
+     */
+    count: PropTypes.string
+  }).isRequired,
   /**
    * Count is the number of unread notifications
    */
@@ -65,7 +82,7 @@ Badge.propTypes = {
 Badge.defaultProps = {
   showCount: false,
   maxCount: 99,
-  children: null,
+  children: null
 };
 
 export default Badge;

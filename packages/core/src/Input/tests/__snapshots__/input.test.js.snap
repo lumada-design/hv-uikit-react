@@ -11122,8 +11122,8 @@ label + .MuiInput-formControl-444 {
 }
 .MuiInputBase-input-466 {
   font: inherit;
-  width: 100%;
   color: currentColor;
+  width: 100%;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -29309,8 +29309,8 @@ label + .MuiInput-formControl-586 {
 }
 .MuiInputBase-input-608 {
   font: inherit;
-  width: 100%;
   color: currentColor;
+  width: 100%;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -47524,8 +47524,8 @@ label + .MuiInput-formControl-89 {
 }
 .MuiInputBase-input-111 {
   font: inherit;
-  width: 100%;
   color: currentColor;
+  width: 100%;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;

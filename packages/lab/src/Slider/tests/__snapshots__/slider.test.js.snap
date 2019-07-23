@@ -63,6 +63,7 @@ exports[`Slider  should render correctly 1`] = `
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -241,6 +242,7 @@ exports[`Slider  should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -3671,6 +3673,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3849,6 +3852,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
@@ -5075,10 +5079,10 @@ body {
 }
 .HvSlider-dot-2 {
   width: 1px;
+  bottom: -1px;
+  height: 4px;
   border: none;
   cursor: pointer;
-  height: 4px;
-  bottom: -1px;
   z-index: -3;
   position: absolute;
   margin-left: 0px;
@@ -5142,11 +5146,11 @@ body {
 }
 .HvSlider-sliderTooltip-10 .rc-slider-tooltip-inner {
   color: #999999;
-  height: 100%;
   border: solid 1px #999999 ;
+  height: 100%;
   padding: 20px;
-  font-size: 12px;
   max-width: 532px;
+  font-size: 12px;
   background: #FFFFFF;
   box-shadow: none;
   line-height: 16px;
@@ -11671,6 +11675,7 @@ body {
           "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -11849,6 +11854,7 @@ body {
               "lineHeight": "20px",
             },
             "selectedText": Object {
+              "background": "#414141",
               "color": "#F9F9F9",
               "fontSize": "14px",
               "fontWeight": "600",
@@ -12696,6 +12702,7 @@ body {
               "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -12874,6 +12881,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "selectedText": Object {
+                  "background": "#414141",
                   "color": "#F9F9F9",
                   "fontSize": "14px",
                   "fontWeight": "600",
