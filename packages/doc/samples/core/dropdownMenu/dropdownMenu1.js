@@ -32,29 +32,30 @@ const menuOptions = [
     label: "Label 3",
     action: () => {}
   }
-]
-const getSecondaryActions = (menuOptions) => {
+];
+
+const getSecondaryActions = menuOptions => {
   return _.map(menuOptions, (option, index) => (
-    <MenuItem key={index} >
-      {option.label}
-    </MenuItem>
+    <MenuItem key={index}>{option.label}</MenuItem>
   ));
-}
+};
 
 const boxStyles = {
   width: "100px",
   height: "150px"
-}
+};
 const containerStyles = {
   height: "32px",
   width: "32px",
-  position: "absolute",
-}
-export default
-<div style={boxStyles}>
-  <div style={containerStyles}>
-    <DropDownMenu icon={<MoreVert/>} position="bottom-end" >
-      {getSecondaryActions(menuOptions)}
-    </DropDownMenu>
+  position: "absolute"
+};
+
+export default (
+  <div style={boxStyles}>
+    <div style={containerStyles}>
+      <DropDownMenu icon={<MoreVert />} position="bottom-end">
+        {getSecondaryActions(menuOptions)}
+      </DropDownMenu>
+    </div>
   </div>
-</div>
+);

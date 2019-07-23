@@ -30,13 +30,18 @@ const DropDownMenu = ({ icon, classes, position, children }) => {
 
   return (
     <div className={classes.root}>
-      <div className={classNames(classes.icon, {
-        [classes.iconSelected]: open })}
+      <div
+        className={classNames(classes.icon, {
+          [classes.iconSelected]: open
+        })}
       >
         <div className={classes.column}>
           <IconButton
             className={classNames(classes.iconButton)}
-            onClick={(event) => {setOpen(!open); setAnchorEl(event.currentTarget);}}
+            onClick={event => {
+              setOpen(!open);
+              setAnchorEl(event.currentTarget);
+            }}
           >
             {icon}
           </IconButton>
@@ -51,7 +56,7 @@ const DropDownMenu = ({ icon, classes, position, children }) => {
             disablePortal
             modifiers={{
               flip: {
-                enabled: false,
+                enabled: false
               },
               preventOverflow: {
                 enabled: false,
@@ -62,16 +67,15 @@ const DropDownMenu = ({ icon, classes, position, children }) => {
               }
             }}
           >
-            <ClickAwayListener onClickAway={() => {
-              setOpen(false);
-              setAnchorEl(null);
-            }}
+            <ClickAwayListener
+              onClickAway={() => {
+                setOpen(false);
+                setAnchorEl(null);
+              }}
             >
               <Paper className={classes.paperRoot}>
                 <div className={classes.extenderLine} />
-                <MenuList>
-                  {children}
-                </MenuList>
+                <MenuList>{children}</MenuList>
               </Paper>
             </ClickAwayListener>
           </Popper>
@@ -84,7 +88,8 @@ const DropDownMenu = ({ icon, classes, position, children }) => {
 DropDownMenu.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
   icon: PropTypes.element.isRequired,
-  position: PropTypes.oneOf([ // Material UI Popper positions
+  position: PropTypes.oneOf([
+    // Material UI Popper positions
     "top-start",
     "top",
     "top-end",
