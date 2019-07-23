@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox.S";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck.S";
@@ -101,13 +101,31 @@ const HvCheckbox = props => {
   const materialPrimaryColor = "primary";
   const icons = prepareIcon(disabled, theme);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const [isFocusDisabled, disableFocus] = useState(false);
+
+  const onLocalChange = evt => {
+    const isKeyEvent =
+      window.event.screenX === 0 &&
+      window.event.screenY === 0 &&
+      window.event.clientX === 0 &&
+      window.event.clientY === 0;
+
+    disableFocus(!isKeyEvent);
+    onChange(evt);
+  };
+
+  const onBlur = () => {
+    disableFocus(false);
+  };
 
   return (
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, className)}
+      className={classNames(labelClass, className, {
+        [classes.disableFocus]: isFocusDisabled
+      })}
       id={id}
       classes={{
         disabled: classes.labelDisabled,
@@ -122,7 +140,8 @@ const HvCheckbox = props => {
           color={materialPrimaryColor}
           disabled={disabled}
           disableRipple
-          onChange={onChange}
+          onChange={onLocalChange}
+          onBlur={onBlur}
           value={value}
           checked={checked}
           indeterminate={indeterminate}

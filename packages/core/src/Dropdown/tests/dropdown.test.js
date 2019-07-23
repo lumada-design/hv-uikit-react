@@ -56,7 +56,8 @@ const mockDataWithIds = [
 describe("<Dropdown />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
-
+  global.window.event = jest.fn();
+  
   let wrapper;
   let dropdownComponent;
   let listComponent;
