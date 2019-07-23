@@ -87,4 +87,37 @@ describe("<List />", () => {
     expect(instance.state.prevList).toEqual(instance.state.list);
     expect(instance.setSelection).toBeCalledWith(true, true, true);
   });
+
+  it("should only reset when values change", () => {
+    instance = wrapper.find(List).instance();
+    instance.resetLists = jest.fn();
+    instance.componentWillReceiveProps({
+      values: [...mockData],
+      multiSelect: true,
+      showSearch: true,
+      onChange: onChangeMock(),
+      labels: mockLabels,
+    });
+    expect(instance.resetLists.mock.calls.length).toEqual(0);
+
+    const newMockData = [
+     {
+       label: "Value 4"
+     },
+     {
+       label: "Value 5"
+     },
+     {
+       label: "Value 6"
+     }
+    ];
+    instance.componentWillReceiveProps({
+      values: newMockData,
+      multiSelect: true,
+      showSearch: true,
+      onChange: onChangeMock(),
+      labels: mockLabels,
+    });
+    expect(instance.resetLists.mock.calls.length).toEqual(1);
+  })
 });
