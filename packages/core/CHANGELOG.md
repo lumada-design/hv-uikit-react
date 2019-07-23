@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.43](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.42...@hv/uikit-react-core@1.1.3-alpha.43) (2019-07-23)
+
+
+### Features
+
+* **checkbox:** add focus handling. [#251](https://github.com/pentaho/hv-uikit-react/issues/251) ([99176b7](https://github.com/pentaho/hv-uikit-react/commit/99176b7))
+
+
+
+
+
 ## [1.1.3-alpha.42](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.41...@hv/uikit-react-core@1.1.3-alpha.42) (2019-07-23)
 
 
