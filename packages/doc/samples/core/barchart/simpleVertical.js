@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-core/dist/Barchart";
 
 const trace1 = {
   x: ["January", "February", "March"],

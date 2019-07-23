@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-core/dist/Barchart";
 
 const trace1 = {
   y: ["Group one", "Group two", "Group three"],
@@ -64,22 +64,23 @@ const trace5 = {
 
 const data = [trace1, trace2, trace3, trace4, trace5];
 const layout = {
-  barmode: "group",
-  yaxis: {
-    title: {
-      text: "Axis description"
-    }
-  },
+  barmode: "stack",
+
   xaxis: {
     title: {
       text: "Thousands of Dollars ($)"
+    }
+  },
+  yaxis: {
+    title: {
+      text: "Axis description"
     }
   }
 };
 
 export default (
   <Barchart
-    title="Grouped Horizontal Bar Chart"
+    title="Stacked Horizontal Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}
     layout={layout}

@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-lab/dist/Barchart";
+import Barchart from "@hv/uikit-react-core/dist/Barchart";
 
 const trace1 = {
   x: [2300, 1000, 8500],
@@ -27,7 +27,6 @@ const trace1 = {
 };
 
 const data = [trace1];
-
 const layout = {
   yaxis: {
     title: {
@@ -47,6 +46,5 @@ export default (
     subtitle="Sales performance (YTD)"
     data={data}
     layout={layout}
-    useSingle
   />
 );
