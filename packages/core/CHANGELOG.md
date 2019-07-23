@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.45](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.44...@hv/uikit-react-core@1.1.3-alpha.45) (2019-07-23)
+
+
+### Features
+
+* **radiobutton:** add focus handling. [#250](https://github.com/pentaho/hv-uikit-react/issues/250) ([dd51e82](https://github.com/pentaho/hv-uikit-react/commit/dd51e82))
+
+
+
+
+
 ## [1.1.3-alpha.44](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.43...@hv/uikit-react-core@1.1.3-alpha.44) (2019-07-23)
 
 
