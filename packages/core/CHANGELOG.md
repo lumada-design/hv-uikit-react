@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.46](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.45...@hv/uikit-react-core@1.1.3-alpha.46) (2019-07-23)
+
+
+### Bug Fixes
+
+* **dropdown:** fix disabled label style ([9fb02e7](https://github.com/pentaho/hv-uikit-react/commit/9fb02e7))
+
+
+
+
+
 ## [1.1.3-alpha.45](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.44...@hv/uikit-react-core@1.1.3-alpha.45) (2019-07-23)
 
 
