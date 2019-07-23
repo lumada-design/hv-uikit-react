@@ -143,7 +143,16 @@ class Main extends React.Component {
         role="button"
         tabIndex={0}
       >
-        <HvTypography variant="normalText" className={classNames([classes.selection, classes.truncate])}>
+        <HvTypography
+          variant="normalText"
+          className={classNames([
+            classes.selection,
+            classes.truncate,
+            {
+              [classes.selectionDisabled]: disabled
+            }
+          ])}
+        >
           {selectionLabel}
         </HvTypography>
         {isOpen ? (
@@ -228,7 +237,7 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
