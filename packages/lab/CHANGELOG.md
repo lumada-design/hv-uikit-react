@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.47](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.46...@hv/uikit-react-lab@1.1.3-alpha.47) (2019-07-23)
+
+
+### Features
+
+* **badge:** add notification badge. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([808269f](https://github.com/pentaho/hv-uikit-react/commit/808269f))
+
+
+
+
+
 ## [1.1.3-alpha.46](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.45...@hv/uikit-react-lab@1.1.3-alpha.46) (2019-07-22)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
