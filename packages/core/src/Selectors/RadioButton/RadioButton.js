@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -97,13 +97,31 @@ const HvRadio = props => {
   const icons = getIcons(disabled, theme);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const materialPrimaryColor = "primary";
+  const [isFocusDisabled, disableFocus] = useState(false);
+
+  const onLocalChange = evt => {
+    const isKeyEvent =
+      window.event.screenX === 0 &&
+      window.event.screenY === 0 &&
+      window.event.clientX === 0 &&
+      window.event.clientY === 0;
+
+    disableFocus(!isKeyEvent);
+    onChange(evt);
+  };
+
+  const onBlur = () => {
+    disableFocus(false);
+  };
 
   return (
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
       id={id}
-      className={classNames(labelStyles, className)}
+      className={classNames(labelStyles, className, {
+        [classes.disableFocus]: isFocusDisabled
+      })}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -116,7 +134,8 @@ const HvRadio = props => {
           color={materialPrimaryColor}
           disabled={disabled}
           disableRipple
-          onChange={onChange}
+          onChange={onLocalChange}
+          onBlur={onBlur}
           value={value}
           checked={checked}
           {...radioProps}
