@@ -100,6 +100,30 @@ const setColumnAlignment = (cellType, classes) => {
 };
 
 /**
+ *  Set the column border to the right of checkbox column and/or left of secondary actions column.
+ *
+ * @param {Object} column - a reference to the React table column object.
+ * @param {Boolean} hasCheckbox - true if table has a checkbox column.
+ * @param {Boolean} hasSecondaryActions - true if table has a secondary actions column.
+ *
+ */
+const setColumnBorder = (column, hasCheckbox, hasSecondaryActions) => {
+  const col = column;
+  const headerClassNames = col.headerClassName;
+
+  if (hasCheckbox) {
+    col.headerClassName = classNames("-checkBoxNeighbor", headerClassNames);
+    col.className = classNames(col.className, "-checkBoxNeighbor");
+  }
+
+  if (hasSecondaryActions) {
+    col.headerClassName = classNames("-secondaryActionsNeighbor", col.headerClassName);
+    col.className = classNames(col.className, "-secondaryActionsNeighbor");
+  }
+};
+
+
+/**
  * Adds to the className the sortable class if the header is marked as sortable.
  *
  * @param sortableProp
@@ -186,6 +210,13 @@ const appendClassnames = (column, colSortedSelected, classes) => {
     col.headerClassName = classNames("checkBox", headerClassNames);
     col.className = classNames(col.className, "checkBox");
   }
+
+  else if (col.id === "secondaryActions") {
+    const headerClassNames = col.headerClassName;
+    col.headerClassName = classNames("secondaryAction", headerClassNames);
+    col.className = classNames(col.className, "secondaryAction");
+  }
+
   // If the cell isn't checkbox and wasn't overwritten a text container should be introduced to the cell
   else if (!col.Cell) {
     col.Cell = wrapper(col.format, col.id, classes);
@@ -196,6 +227,7 @@ export {
   markSorted,
   wrapper,
   setColumnAlignment,
+  setColumnBorder,
   setHeaderSortableClass,
   appendClassnames,
   createExpanderButton
