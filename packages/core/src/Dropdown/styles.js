@@ -57,6 +57,10 @@ const styles = theme => ({
     lineHeight: "32px",
     pointerEvents: "none"
   },
+  selectionDisabled: {
+    ...theme.hv.typography.placeholderText,
+    lineHeight: "32px"
+  },
   arrow: {
     position: "absolute",
     pointerEvents: "none",
