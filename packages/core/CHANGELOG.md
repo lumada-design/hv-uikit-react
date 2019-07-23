@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.41](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.40...@hv/uikit-react-core@1.1.3-alpha.41) (2019-07-23)
+
+
+### Bug Fixes
+
+* **dropdown:** prevents dropdown from resetting after rerenders. [#304](https://github.com/pentaho/hv-uikit-react/issues/304) ([54c037f](https://github.com/pentaho/hv-uikit-react/commit/54c037f))
+
+
+
+
+
 ## [1.1.3-alpha.40](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.39...@hv/uikit-react-core@1.1.3-alpha.40) (2019-07-23)
 
 
