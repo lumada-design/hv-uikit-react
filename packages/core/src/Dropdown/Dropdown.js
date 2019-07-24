@@ -126,9 +126,13 @@ class Main extends React.Component {
   }
 
   renderHeader() {
-    const { classes, disabled } = this.props;
+    const { classes, disabled, theme } = this.props;
     const { isOpen, selectionLabel } = this.state;
 
+    const color = disabled
+      ? ["none", theme.hv.palette.atmosphere.atmo7]
+      : undefined;
+    
     return (
       <div
         id="header"
@@ -158,7 +162,7 @@ class Main extends React.Component {
         {isOpen ? (
           <ArrowDown className={classes.arrow} />
         ) : (
-          <ArrowUp className={classes.arrow} />
+          <ArrowUp className={classes.arrow} color={color} />
         )}
       </div>
     );
@@ -363,7 +367,11 @@ Main.propTypes = {
    * If ´true´ and none element selected,
    * single select has default (first) label selected.
    */
-  selectDefault: PropTypes.bool
+  selectDefault: PropTypes.bool,
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object)
 };
 
 Main.defaultProps = {
@@ -378,7 +386,8 @@ Main.defaultProps = {
   onChange() {},
   notifyChangesOnFirstRender: false,
   labels: {},
-  selectDefault: true
+  selectDefault: true,
+  theme: null
 };
 
 export default Main;
