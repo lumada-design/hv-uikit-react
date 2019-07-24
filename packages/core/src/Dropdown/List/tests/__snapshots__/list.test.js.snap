@@ -5073,9 +5073,6 @@ body {
                   data-meta="List"
                 >
                   
-.List-root-1 {
-  margin-top: 15px;
-}
 .List-list-2 {
   overflow: auto;
   max-height: 320px;
@@ -5165,9 +5162,7 @@ body {
                   "truncate": "List-truncate-8",
                 },
                 "index": Array [
-                  Object {
-                    "margin-top": "15px",
-                  },
+                  Object {},
                   Object {
                     "max-height": "320px",
                     "overflow": "auto",
@@ -5257,9 +5252,7 @@ body {
                   ".List-result-9": Object {
                     "display": "block",
                   },
-                  ".List-root-1": Object {
-                    "margin-top": "15px",
-                  },
+                  ".List-root-1": Object {},
                   ".List-selectAll-10": Object {
                     "margin-top": "5px",
                   },
@@ -5321,9 +5314,7 @@ body {
                   "result": Object {
                     "display": "block",
                   },
-                  "root": Object {
-                    "margin-top": "15px",
-                  },
+                  "root": Object {},
                   "selectAll": Object {
                     "margin-top": "5px",
                   },
@@ -5885,9 +5876,7 @@ body {
                   "result": Object {
                     "display": "block",
                   },
-                  "root": Object {
-                    "marginTop": "15px",
-                  },
+                  "root": Object {},
                   "selectAll": Object {
                     "& > span": Object {
                       "color": "#414141",
