@@ -27,10 +27,10 @@ const styles = theme => ({
   },
   rootActive: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-    boxShadow: `0px 0px 5px 2px rgba(65,65,65,.12)`,
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
     "&:hover": {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-      boxShadow: `0px 0px 5px 2px rgba(65,65,65,.12)`
+      boxShadow: `0 2px 12px rgba(65,65,65,.12)`
     }
   },
   rootDisabled: {
@@ -88,15 +88,13 @@ const styles = theme => ({
   listOpen: {
     display: "block",
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-    // boxShadow: `0px 0px 5px 2px rgba(65,65,65,.12)`
-    boxShadow: "2px 3px 2px rgba(65,65,65,.12), -2px 2px 3px rgba(65,65,65,.12)"
+    boxShadow: "0 -8px 0 #fff, 0 1px 8px rgba(65,65,65,.12)"
   },
   listBorder: {
     display: "block",
-    height: "5px",
-    marginTop: "10px",
-    // boxShadow: `0px 0px 5px 2px rgba(65,65,65,.12)`
-    boxShadow: "0px -1px 1px 0px rgba(65,65,65,.12)"
+    height: "20px",
+    marginTop: "12px",
+    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)"
   },
   icon: {
     position: "absolute",
