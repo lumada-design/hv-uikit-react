@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.62](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.61...@hv/uikit-react-doc@1.1.3-alpha.62) (2019-07-24)
+
+
+### Features
+
+* **dropdown:** change icon color when disabled. [#238](https://github.com/pentaho/hv-uikit-react/issues/238) ([ecc2912](https://github.com/pentaho/hv-uikit-react/commit/ecc2912))
+
+
+
+
+
 ## [1.1.3-alpha.61](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.60...@hv/uikit-react-doc@1.1.3-alpha.61) (2019-07-23)
 
 
