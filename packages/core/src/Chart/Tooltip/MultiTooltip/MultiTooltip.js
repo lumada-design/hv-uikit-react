@@ -46,7 +46,7 @@ const MultiTooltip = ({ classes, data }) => (
           </div>
           <div className={classes.separator} />
           <div>
-            <Typography variant="infoText">{element.value}</Typography>
+            <Typography variant="sText">{element.value}</Typography>
           </div>
         </div>
       ))}

@@ -17,8 +17,38 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import Barchart from "./Barchart";
+import classNames from "classnames";
 import Tooltip from "./Tooltip";
+import propSetter from "./plotlyOverrides";
+import styleCreator from "./styles";
+import Typography from "../Typography";
+import Plot from "./Plot";
+
+/**
+ * Setter of default layout properties.
+ *
+ * @param inputLayout
+ * @param theme
+ * @returns {*}
+ */
+const propsLayoutSetter = (inputLayout, theme, isHorizontal) => {
+  const styles = styleCreator(theme);
+  const layout = inputLayout;
+
+  // Layout
+  propSetter.setLayout(layout, styles);
+
+  // Legend
+  propSetter.setLegend(layout, styles);
+
+  // Xaxis
+  propSetter.setXaxis(layout, styles, isHorizontal);
+
+  // Yaxis
+  propSetter.setYaxis(layout, styles, isHorizontal);
+
+  return layout;
+};
 
 /**
  * Component responsible for the presentation of the barchart component.
@@ -32,14 +62,16 @@ import Tooltip from "./Tooltip";
  * @returns {*}
  * @constructor
  */
-const BarchartControl = ({
+const Chart = ({
   classes,
+  theme,
   title,
   subtitle,
   data,
   layout,
   config,
-  useSingle
+  useSingle,
+  afterPlot
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
@@ -49,6 +81,8 @@ const BarchartControl = ({
   const isHorizontal = !isNil(data[0].orientation)
     ? data[0].orientation.toUpperCase() === "H"
     : false;
+
+  const newLayout = propsLayoutSetter(layout, theme, isHorizontal);
 
   /**
    * Extract data from the plotly onHover event to be used to create the tooltip.
@@ -62,7 +96,9 @@ const BarchartControl = ({
     };
     eventData.points.forEach(p => {
       dataFromPoints.elements.push({
-        color: p.fullData.marker.color,
+        color: p.fullData.marker
+          ? p.fullData.marker.color
+          : p.fullData.line.color,
         name: p.fullData.name,
         value: isHorizontal ? p.x : p.y
       });
@@ -70,7 +106,7 @@ const BarchartControl = ({
 
     setDataTooltip(dataFromPoints);
 
-    setIsHover(true);
+    if (!isHover) setIsHover(true);
   };
 
   const onUnHover = () => setIsHover(false);
@@ -95,25 +131,38 @@ const BarchartControl = ({
           useSingle={useSingle}
         />
       )}
-      <Barchart
-        title={title}
-        subtitle={subtitle}
-        data={data}
-        layout={layout}
-        config={{ responsive: true, displayModeBar: false, ...config }}
-        onHover={onHover}
-        onUnHover={onUnHover}
-        onMouseMove={onMouseMove}
-      />
+      <div className={classes.root} onMouseMove={e => onMouseMove(e)}>
+        <div className={classes.titleContainer}>
+          {title && <Typography variant="mTitle">{title}</Typography>}
+          <div className={classes.subtitle}>
+            {subtitle && <Typography variant="infoText">{subtitle}</Typography>}
+          </div>
+        </div>
+        <div className={classNames({ [classes.paddingTop]: title })}>
+          <Plot
+            title={title}
+            data={data}
+            layout={newLayout}
+            config={{ responsive: true, displayModeBar: false, ...config }}
+            onHover={onHover}
+            onUnHover={onUnHover}
+            afterPlot={afterPlot}
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
-BarchartControl.propTypes = {
+Chart.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.instanceOf(Object),
+  /**
+   * Theme.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Title of the chart.
    */
@@ -137,15 +186,20 @@ BarchartControl.propTypes = {
   /**
    * Defines if should use a single or multiline tooltip.
    */
-  useSingle: PropTypes.bool
+  useSingle: PropTypes.bool,
+  /**
+   * Function to be called after plot render.
+   */
+  afterPlot: PropTypes.func
 };
 
-BarchartControl.defaultProps = {
+Chart.defaultProps = {
   classes: null,
   title: "",
   subtitle: "",
   useSingle: false,
-  config: null
+  config: null,
+  afterPlot: undefined
 };
 
-export default BarchartControl;
+export default Chart;

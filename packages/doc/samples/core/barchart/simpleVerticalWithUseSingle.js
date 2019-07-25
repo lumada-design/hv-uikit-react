@@ -20,12 +20,11 @@ import Barchart from "@hv/uikit-react-core/dist/Barchart";
 const trace1 = {
   x: ["January", "February", "March"],
   y: [2300, 1000, 8500],
-  name: "Sales Target",
-  type: "bar",
-  hoverinfo: "none"
+  name: "Sales Target"
 };
 
 const data = [trace1];
+
 const layout = {
   xaxis: {
     title: {

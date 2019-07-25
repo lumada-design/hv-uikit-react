@@ -16,50 +16,41 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import Linechart from "@hv/uikit-react-core/dist/Linechart";
 
-storiesOf("Core/Visualization", module).add("Barchart", () => <Barchart />, {
-  title: "Barchart",
+storiesOf("Core/Visualization", module).add("Linechart", () => <Linechart />, {
+  title: "Linechart",
   description:
     "A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights " +
     "or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally.<br><br>" +
     "This component is built using Plotly (https://github.com/plotly/react-plotly.js/#basic-props). <br>" +
     "Certain properties of the layout and data are overwritten so the component can follow the Design System guidelines.",
-  usage: "import Barchart from '@hv/uikit-react-core/dist/Barchart'",
+  usage: "import Linechart from '@hv/uikit-react-core/dist/Linechart'",
   examples: [
     {
-      title: "Simple Vertical Bar with use single",
-      descr: "Tooltip with single line",
-      src: "core/barchart/simpleVerticalWithUseSingle.js"
-    },
-    {
-      title: "Simple Vertical Bar",
+      title: "Simple Linechart",
       descr: "Tooltip with multiple line",
-      src: "core/barchart/simpleVertical.js"
+      src: "core/linechart/simple.js"
     },
     {
-      title: "Grouped Vertical Bar",
-      src: "core/barchart/groupVertical.js"
+      title: "Simple Linechart with area",
+      descr: "Tooltip with multiple line",
+      src: "core/linechart/simpleArea.js"
     },
     {
-      title: "Stacked Vertical Bar",
-      src: "core/barchart/stackVertical.js"
+      title: "Multiple lines Linechart",
+      descr: "Tooltip with multiple line",
+      src: "core/linechart/group.js"
     },
     {
-      title: "Simple Horizontal Bar  with use single",
-      src: "core/barchart/simpleHorizontalWithUseSingle.js"
+      title: "Multiple lines Linechart",
+      descr: "Tooltip with multiple line",
+      src: "core/linechart/groupArea.js"
     },
     {
-      title: "Simple Horizontal Bar",
-      src: "core/barchart/simpleHorizontal.js"
-    },
-    {
-      title: "Grouped Horizontal Bar",
-      src: "core/barchart/groupHorizontal.js"
-    },
-    {
-      title: "Stacked Horizontal Bar",
-      src: "core/barchart/stackHorizontal.js"
+      title: "Multiple lines Linechart with area",
+      descr: "Tooltip with multiple line",
+      src: "core/linechart/groupStacked.js"
     }
   ]
 });

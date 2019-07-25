@@ -21,12 +21,11 @@ const trace1 = {
   x: [2300, 1000, 8500],
   y: ["January", "February", "March"],
   name: "Sales Target",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  orientation: "h"
 };
 
 const data = [trace1];
+
 const layout = {
   yaxis: {
     title: {

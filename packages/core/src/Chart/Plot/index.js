@@ -14,37 +14,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Plot from "./Plot";
 
-const trace1 = {
-  x: ["January", "February", "March"],
-  y: [2300, 1000, 8500],
-  name: "Sales Target"
-};
-
-const data = [trace1];
-
-const layout = {
-  xaxis: {
-    title: {
-      text: "2018"
-    }
-  },
-  yaxis: {
-    title: {
-      text: "Thousands of Dollars ($)"
-    }
-  }
-};
-
-export default (
-  <div>
-    <Barchart
-      title="Simple Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      layout={layout}
-    />
-  </div>
-);
+export default withStyles(styles, { withTheme: true })(Plot);

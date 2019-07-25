@@ -14,18 +14,8 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    padding: `${theme.hv.spacing.sm}px`,
-    display: "flex",
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    width: "fit-content",
-    zIndex: 100
-  },
-  separator: {
-    width: `${theme.hv.spacing.xs}px`
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Chart from "./Chart";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(Chart);

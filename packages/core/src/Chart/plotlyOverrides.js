@@ -25,13 +25,11 @@ const setterIfNil = (object, property, value) => {
   object[property] = object[property] || value;
 };
 
-
 /**
  * Auxiliary functions to set the layout in order to follow the DS guideline.
  *
  */
 const propSetter = {
-
   setYaxis: (layout, styles, isHorizontal) => {
     setterIfNil(layout, "yaxis", {});
 
@@ -95,7 +93,6 @@ const propSetter = {
   },
 
   setLegend: (layout, styles) => {
-
     setterIfNil(layout, "legend", {
       x: 1,
       y: 1.1,
@@ -131,7 +128,6 @@ const propSetter = {
 
     setterIfNil(layout, "paper_bgcolor", styles.plotColor);
   }
-
 };
 
 export default propSetter;

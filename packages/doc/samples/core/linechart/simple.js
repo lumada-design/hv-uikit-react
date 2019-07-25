@@ -15,14 +15,13 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import Linechart from "@hv/uikit-react-core/dist/Linechart";
 
 const trace1 = {
   x: ["January", "February", "March"],
   y: [2300, 1000, 8500],
   name: "Sales Target"
 };
-
 const data = [trace1];
 
 const layout = {
@@ -40,7 +39,7 @@ const layout = {
 
 export default (
   <div>
-    <Barchart
+    <Linechart
       title="Simple Vertical Bar Chart"
       subtitle="Sales performance (YTD)"
       data={data}

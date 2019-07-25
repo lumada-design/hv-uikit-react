@@ -34,7 +34,7 @@ const SingleTooltip = ({ classes, title, value }) => (
     </div>
     <div className={classes.separator} />
     <div>
-      <Typography variant="infoText">{value}</Typography>
+      <Typography variant="sText">{value}</Typography>
     </div>
   </div>
 );
