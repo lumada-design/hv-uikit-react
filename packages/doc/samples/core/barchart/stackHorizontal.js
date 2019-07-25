@@ -20,69 +20,43 @@ import Barchart from "@hv/uikit-react-core/dist/Barchart";
 const trace1 = {
   y: ["Group one", "Group two", "Group three"],
   x: [2300, 1000, 8500],
-  name: "Sales Target",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  name: "Sales Target"
 };
 
 const trace2 = {
   y: ["Group one", "Group two", "Group three"],
   x: [6000, 3900, 1000],
-  name: "Sales Per Rep",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  name: "Sales Per Rep"
 };
 
 const trace3 = {
   y: ["Group one", "Group two", "Group three"],
   x: [3700, 7500, 1100],
-  name: "Monthly Sales",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  name: "Monthly Sales"
 };
 
 const trace4 = {
   y: ["Group one", "Group two", "Group three"],
   x: [2100, 8500, 3000],
-  name: "Target",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  name: "Target"
 };
 
 const trace5 = {
   y: ["Group one", "Group two", "Group three"],
   x: [500, 8000, 9500],
-  name: "Cash",
-  type: "bar",
-  orientation: "h",
-  hoverinfo: "none"
+  name: "Cash"
 };
 
 const data = [trace1, trace2, trace3, trace4, trace5];
-const layout = {
-  barmode: "stack",
-
-  xaxis: {
-    title: {
-      text: "Thousands of Dollars ($)"
-    }
-  },
-  yaxis: {
-    title: {
-      text: "Axis description"
-    }
-  }
-};
 
 export default (
   <Barchart
     title="Stacked Horizontal Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}
-    layout={layout}
+    stack
+    horizontal
+    xAxisTitle="Thousands of Dollars ($)"
+    yAxisTitle="Axis description"
   />
 );

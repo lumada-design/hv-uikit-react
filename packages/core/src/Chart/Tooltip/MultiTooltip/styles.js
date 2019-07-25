@@ -17,13 +17,13 @@
 const styles = theme => ({
   root: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     width: "fit-content",
+    boxShadow: "0 2px 12px rgba(65,65,65,.12)",
     zIndex: 100
   },
   title: {
     padding: `${theme.hv.spacing.sm}px`,
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
   },
   valuesContainer: {
     padding: `${theme.hv.spacing.sm}px`

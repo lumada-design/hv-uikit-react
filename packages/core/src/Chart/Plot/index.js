@@ -14,37 +14,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Plot from "./Plot";
 
-const trace1 = {
-  x: [2300, 1000, 8500],
-  y: ["January", "February", "March"],
-  name: "Sales Target",
-};
-
-const data = [trace1];
-
-const layout = {
-  yaxis: {
-    title: {
-      text: "2018"
-    }
-  },
-  xaxis: {
-    title: {
-      text: "Thousands of Dollars ($)"
-    }
-  }
-};
-
-export default (
-  <Barchart
-    title="Simple Horizontal Bar Chart"
-    subtitle="Sales performance (YTD)"
-    data={data}
-    horizontal
-    xAxisTitle="Thousands of Dollars ($)"
-    yAxisTitle="2018"
-  />
-);
+export default withStyles(styles, { withTheme: true })(Plot);

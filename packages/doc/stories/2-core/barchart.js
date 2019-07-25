@@ -18,7 +18,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Barchart from "@hv/uikit-react-core/dist/Barchart";
 
-storiesOf("Core", module).add("Barchart", () => <Barchart />, {
+storiesOf("Core/Visualization", module).add("Barchart", () => <Barchart />, {
   title: "Barchart",
   description:
     "A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights " +
@@ -46,7 +46,7 @@ storiesOf("Core", module).add("Barchart", () => <Barchart />, {
       src: "core/barchart/stackVertical.js"
     },
     {
-      title: "Simple Horizontal Bar  with use single",
+      title: "Simple Horizontal Bar with use single",
       src: "core/barchart/simpleHorizontalWithUseSingle.js"
     },
     {
