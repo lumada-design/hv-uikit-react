@@ -2,8 +2,8 @@
 name: Feature enhancement request
 about: Suggest an enhancement for an existing feature
 title: ''
-labels: enhancement
-assignees: diogofscmariano, eliofreitas, francisco-guilherme, tiago-ssantos
+labels: ''
+assignees: diogofscmariano
 
 ---
 

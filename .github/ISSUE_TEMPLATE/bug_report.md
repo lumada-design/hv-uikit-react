@@ -2,8 +2,8 @@
 name: Bug report
 about: Submit a bug that you have found
 title: ''
-labels: bug
-assignees: diogofscmariano, eliofreitas, francisco-guilherme, tiago-ssantos
+labels: ''
+assignees: diogofscmariano
 
 ---
 
