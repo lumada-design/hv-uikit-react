@@ -1,4 +1,4 @@
-# @hv/uikit-react-automation
+# @hv/uikit-react-automation-storybook
 
 Environment for automation tests against UI components in React for the Hitachi Vantara's Design System.
 
