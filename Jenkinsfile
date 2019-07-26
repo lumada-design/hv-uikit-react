@@ -10,6 +10,7 @@ pipeline {
     
     parameters {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
+        booleanParam(name: 'skipAutomation', defaultValue: false, description: 'when true, skip automation.')
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
         booleanParam(name: 'skipDeploy', defaultValue: false, description: 'when true, skip deploy to nexus.')
         choice(choices: ['prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'What type of deploy.', name: 'deploy')
@@ -25,6 +26,22 @@ pipeline {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
                     sh 'npm ci --silent'
                     sh 'npm run bootstrap'
+                }
+            }
+        }
+        stage('Build Automation') {
+            when {
+                expression { !params.skipAutomation }
+            }
+            steps {
+                script {
+                    withNPM(npmrcConfig: 'hv-ui-nprc') {
+                        def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                        docker.withRegistry(dockerRegistry) {
+                            def automationImage = docker.build("uikit-react-automation", "-f ./packages/automation/Dockerfile .")
+                            automationImage.push("latest")
+                        }    
+                    } 
                 }
             }
         }

@@ -13,7 +13,7 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "automation": "cd automation && npm run dev",
+    "automation": "npx lerna run automation",
     "clean": "npm-run-all clean:*",
     "clean:package_clean": "npx lerna run clean --parallel",
     "clean:lerna": "npx lerna clean --yes ",
@@ -27,12 +27,12 @@
     "link": "npx lerna run link",
     "update-uikit-common": "npx lerna run update-uikit-common && npx lerna link",
     "generate": "node generator/index.js",
-    "publish:prerelease": "npx lerna publish prerelease --yes",
-    "publish:prepatch": "npx lerna publish prepatch --yes --force-publish=*",
-    "publish:patch": "npx lerna publish patch --yes --force-publish=*",
-    "publish:preminor": "npx lerna publish preminor --yes --force-publish=*",
-    "publish:minor": "npx lerna publish minor --yes --force-publish=*",
-    "publish:major": "npx lerna publish major --yes --force-publish=*",
+    "publish:prerelease": "npx lerna publish --ignore-changes automation prerelease --yes",
+    "publish:prepatch": "npx lerna publish --ignore-changes automation prepatch --yes --force-publish=*",
+    "publish:patch": "npx lerna publish --ignore-changes automation patch --yes --force-publish=*",
+    "publish:preminor": "npx lerna publish --ignore-changes automation preminor --yes --force-publish=*",
+    "publish:minor": "npx lerna publish --ignore-changes automation minor --yes --force-publish=*",
+    "publish:major": "npx lerna publish --ignore-changes automation major --yes --force-publish=*",
     "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix",
     "lint:jenkins": "npm run lint"
