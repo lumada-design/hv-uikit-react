@@ -65,8 +65,8 @@ const Main = ({ classes, children, context, config }) => {
         <div>
           {kind} - <span className={classes.name}>{story}</span>
         </div>
-        <Button colorType="secondary" onClick={() => config.changeTheme()}>
-          Change theme
+        <Button category="primary" onClick={() => config.changeTheme()}>
+          Toggle theme
         </Button>
       </div>
       <div className={classes.content}>

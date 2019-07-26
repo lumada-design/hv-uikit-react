@@ -16,25 +16,31 @@
 
 const styles = theme => ({
   header: {
-    backgroundColor: theme.hv.palette.semantic.sema2,
-    ...theme.hv.typography.normalText,
+    backgroundColor: theme.hv.palette.accent.acce0,
+    ...theme.hv.typography.normalText.atmo1,
+    borderBottomColor: theme.hv.palette.atmosphere.atmo5,
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
     padding: "10px",
-    fontSize: 16,
+    fontSize: 14,
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    position: "fixed",
+    width: "100%",
+    zIndex: "100",
+    padding: "5px 15px",
+    height: "50px"
   },
   core: {
-    backgroundColor: theme.hv.palette.semantic.sema1,
-    color: theme.palette.common.white
+    color: theme.hv.typography.normalText.atmo7
   },
   lab: {
-    backgroundColor: theme.hv.palette.semantic.sema3,
-    color: theme.palette.common.white
+    color: theme.hv.typography.normalText.atmo7
   },
   content: {
     width: "100%",
-    padding: "30px 50px"
+    padding: "80px 50px 20px"
   },
   name: {
     fontWeight: theme.hv.typography.highlightText.fontWeight

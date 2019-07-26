@@ -20,11 +20,11 @@ import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Collapse from "@material-ui/core/Collapse";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import Code from "@material-ui/icons/Code";
+import CodeS from "@hv/uikit-react-icons/dist/Code.S";
 
 const CodeButton = ({ classes, onClick }) => (
   <IconButton className={classes.iconCode} onClick={onClick}>
-    <Code />
+    <CodeS />
   </IconButton>
 );
 
