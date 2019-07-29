@@ -13,7 +13,7 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "automation": "cd automation && npm run dev",
+    "automation": "npx lerna run automation",
     "clean": "npm-run-all clean:*",
     "clean:package_clean": "npx lerna run clean --parallel",
     "clean:lerna": "npx lerna clean --yes ",
@@ -34,8 +34,7 @@
     "publish:minor": "npx lerna publish minor --yes --force-publish=*",
     "publish:major": "npx lerna publish major --yes --force-publish=*",
     "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
-    "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix",
-    "lint:jenkins": "npm run lint"
+    "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix"
   },
   "husky": {
     "hooks": {
