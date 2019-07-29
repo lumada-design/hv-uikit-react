@@ -37,7 +37,7 @@ export default (
     <HvBadge showCount count={8}>
       <AlertS />
     </HvBadge>
-    <HvBadge showCount count={12}>
+    <HvBadge showCount count={22}>
       <Typography variant="sTitle">Track events</Typography>
     </HvBadge>
     <HvBadge showCount count={100}>
