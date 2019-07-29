@@ -22,19 +22,16 @@ const Badge = props => {
   const { classes, showCount, count, maxCount, children } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
 
-  const iconClasses = {
+  const iconClasses = classNames(classes.badgePosition, {
     [classes.badge]: count > 0,
+    [classes.badgeTwoDigits]: count > 9,
     [classes.count]: showCount
-  };
+  });
 
   return (
     <div className={classes.root}>
       {children}
-      <div className={classes.badgePosition}>
-        <div className={classNames(iconClasses)}>
-          {showCount && renderedCount}
-        </div>
-      </div>
+      <div className={iconClasses}>{showCount && renderedCount}</div>
     </div>
   );
 };
@@ -59,7 +56,11 @@ Badge.propTypes = {
     /**
      * Styles applied to the component badge count.
      */
-    count: PropTypes.string
+    count: PropTypes.string,
+    /**
+     * Styles applied to the component badge when count greater than 9.
+     */
+    badgeTwoDigits: PropTypes.string
   }).isRequired,
   /**
    * Count is the number of unread notifications

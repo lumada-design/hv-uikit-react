@@ -16,41 +16,35 @@
 
 const styles = theme => ({
   root: {
-    position: "relative",
-    display: "flex",
-    alignItems: "flex-end",
-    height: "fit-content",
-    width: "fit-content"
+    position: "relative"
   },
   badgePosition: {
     position: "absolute",
-    minHeight: "16px",
-    minWidth: "30px",
     display: "flex",
     alignItems: "center",
     top: `-${theme.hv.spacing.xs}px`,
-    right: "-30px"
+    right: "-6px"
   },
   badge: {
     borderRadius: `${theme.hv.spacing.xs}px`,
     backgroundColor: theme.hv.palette.accent.acce1,
     marginTop: "2px",
-    height: "fit-content",
-    width: "fit-content",
     minHeight: "6px",
     minWidth: "6px"
   },
   count: {
     ...theme.hv.typography.labelText,
-    display: "flex",
     justifyContent: "center",
-    alignItems: "center",
     height: "16px",
-    width: "fit-content",
-    padding: "4px 5px",
+    padding: "5px",
     letterSpacing: "0", // this change is to center the numbers within the badge
     lineHeight: "0",
-    color: theme.hv.palette.atmosphere.atmo1
+    color: theme.hv.palette.atmosphere.atmo1,
+    right: "-16px"
+  },
+  badgeTwoDigits: {
+    width: `${theme.hv.spacing.md}px`,
+    right: `-${theme.hv.spacing.md}px`
   }
 });
 
