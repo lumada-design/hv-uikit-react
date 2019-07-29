@@ -42,7 +42,7 @@ const Main = ({ classes, children, context, config }) => {
         <div>
           {kind} - <span className={classes.name}>{story}</span>
         </div>
-        <Button colorType="secondary" onClick={() => config.changeTheme()}>
+        <Button category="secondary" onClick={() => config.changeTheme()}>
           Change theme
         </Button>
       </div>

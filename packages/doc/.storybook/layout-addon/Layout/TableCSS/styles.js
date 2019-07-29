@@ -16,18 +16,23 @@
 
 const styles = theme => ({
   table: {
-    ...theme.hv.typography.normalText,
-    fontSie: 1,
+    fontSize: 14,
+    width: "100%",
     borderCollapse: "collapse",
-    "& tr": {
-    },
+    "& tr": {},
     "& th": {
-      padding: "10px",
+      padding: "7px 20px",
       textAlign: "left",
+      height: "52px",
+      ...theme.hv.typography.highlightText,
+      background: theme.hv.palette.atmosphere.atmo1,
       borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+      verticalAlign: "top"
     },
     "& td": {
-      padding: "10px",
+      padding: "0 20px",
+      ...theme.hv.typography.normalText,
+      lineHeight: "32px",
       minWidth:"150px",
       borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
     }

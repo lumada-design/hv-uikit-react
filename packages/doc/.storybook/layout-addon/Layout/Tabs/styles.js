@@ -19,10 +19,13 @@ const styles = theme => ({
     flexGrow: 1
   },
   tabsRoot: {
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+    margin: "60px 0 20px"
   },
   tabsIndicator: {
-    backgroundColor: "#1890ff"
+    backgroundColor: theme.hv.palette.accent.acce1,
+    bottom: "none",
+    top: 0
   },
   tabRoot: {
     textTransform: "initial",
