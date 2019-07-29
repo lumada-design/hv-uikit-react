@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.66](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.65...@hv/uikit-react-doc@1.1.3-alpha.66) (2019-07-29)
+
+
+### Features
+
+* **badge:** update component according DS guidelines. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([81ed411](https://github.com/pentaho/hv-uikit-react/commit/81ed411))
+
+
+
+
+
 ## [1.1.3-alpha.65](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.64...@hv/uikit-react-doc@1.1.3-alpha.65) (2019-07-29)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
