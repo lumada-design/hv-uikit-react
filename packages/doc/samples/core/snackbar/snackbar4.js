@@ -16,6 +16,7 @@
 
 import React from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import Button from "@hv/uikit-react-core/dist/Button";
 
 class SimpleSnackbar extends React.Component {
@@ -37,7 +38,7 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
-      message,
+      label,
       variant,
       showIcon,
       anchorOrigin,
@@ -57,7 +58,7 @@ class SimpleSnackbar extends React.Component {
         </Button>
         <HvSnackbar
           open={open}
-          label={message}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -71,19 +72,14 @@ class SimpleSnackbar extends React.Component {
 }
 
 const actionComponent = (
-  <a
-    href="https://i.imgflip.com/yrj3h.jpg"
-    style={{
-      color: "#146BD2",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
+  <HvButton
+    onClick={() => {
+      alert("You clicked me");
     }}
+    category="ghostSecondary"
   >
-    Event
-  </a>
+    Button
+  </HvButton>
 );
 
 export default (

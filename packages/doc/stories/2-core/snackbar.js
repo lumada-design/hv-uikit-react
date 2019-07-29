@@ -18,7 +18,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 
-storiesOf("Core", module).add("Snackbar", () => <HvSnackbar />, {
+storiesOf("Core/Notifications", module).add("Snackbar", () => <HvSnackbar />, {
   title: "Snackbar",
   description:
     "Snackbars provide brief messages about app processes through a message",
