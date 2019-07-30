@@ -63,7 +63,8 @@ const Typography = ({
   paragraph,
   className,
   id,
-  children
+  children,
+  ...other
 }) => {
   const Component =
     (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
@@ -77,6 +78,7 @@ const Typography = ({
         classes.margin,
         className
       )}
+      {...other}
     >
       {children}
     </Component>

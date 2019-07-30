@@ -15,15 +15,15 @@
  */
 
 import React from "react";
-import { Typography } from "@material-ui/core";
-import IconValid from "@hv/uikit-react-icons/dist/Level0.S";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import Goodsema1S from "@hv/uikit-react-icons/dist/DawnTheme/Good.sema1.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
 const labels = {
   title: "Avg. service time",
-  indicator: "8.85",
-  unit: "MS",
+  indicator: "124 14",
+  unit: "",
   comparisonIndicatorInfo: "vs last 24h.",
   comparisonIndicator: "10%"
 };
@@ -31,7 +31,8 @@ const labels = {
 const averageComparisonVisualAverage = () => (
   <div
     style={{
-      position: "relative"
+      position: "relative",
+      top:"1px"
     }}
   >
     <div
@@ -40,28 +41,25 @@ const averageComparisonVisualAverage = () => (
         position: "absolute",
         width: "32px",
         height: "32px",
-        top: "1px",
+        top: "4px",
         left: "-3px",
         background: `url(${IconArrowUp}) no-repeat`
       }}
       color="#008000"
     />
-    <Typography
+    <HvTypography
       style={{
-        color: "#63A621",
         position: "relative",
-        paddingLeft: "16px",
-        fontSize: "14px",
-        fontWeight: "600",
-        paddingBottom: "2px"
+        paddingLeft: "16px"
       }}
+      variant="highlightText"
     >
       {labels.comparisonIndicator}
-    </Typography>
+    </HvTypography>
   </div>
 );
 
-const icon = () => <IconValid color={["none", "#63A621"]} />;
+const icon = () => <Goodsema1S />;
 
 export default (
   <HvKpi
