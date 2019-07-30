@@ -35,8 +35,8 @@ const styles = theme => ({
     display: "inline-flex",
     minHeight: "16px",
     alignItems: "flex-end",
-    marginTop: `9px`,
-    marginBottom: `1px`
+    marginTop: "5px",
+    marginBottom: `${theme.hv.spacing.xs}px`
   },
   indicatorUnit: {
     alignSelf: "flex-end",
