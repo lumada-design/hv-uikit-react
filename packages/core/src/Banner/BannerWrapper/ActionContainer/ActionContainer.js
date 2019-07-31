@@ -17,7 +17,7 @@
 /*  TODO: Review accessibility */
 
 import React from "react";
-import Close16 from "@hv/uikit-react-icons/dist/Close.S";
+import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
 import PropTypes from "prop-types";
 
 /**
@@ -32,7 +32,7 @@ import PropTypes from "prop-types";
 const ActionContainer = ({ classes, onClose, action }) => (
   <div className={classes.actionContainer}>
     <div className={classes.closeAction} role="button" onClick={onClose} tabIndex={0} onKeyDown={onClose}>
-      <Close16 />
+      <Close />
     </div>
     <div className={classes.actionsInnerContainer}>{action}</div>
   </div>

@@ -15,6 +15,9 @@
  */
 
 const styles = theme => ({
+  rootClosed: {
+    display: "none"
+  },
   root: {
     minWidth: `calc(100% - ${theme.hv.spacing.sm}px)`
   },
