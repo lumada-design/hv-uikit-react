@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.30](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.29...@hv/uikit-react-icons@1.1.3-alpha.30) (2019-07-31)
+
+
+### Features
+
+* **linechart:** add Linechart component. [#334](https://github.com/pentaho/hv-uikit-react/issues/334) ([#358](https://github.com/pentaho/hv-uikit-react/issues/358)) ([5da04d4](https://github.com/pentaho/hv-uikit-react/commit/5da04d4))
+
+
+
+
+
 ## [1.1.3-alpha.29](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.1.3-alpha.28...@hv/uikit-react-icons@1.1.3-alpha.29) (2019-07-29)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

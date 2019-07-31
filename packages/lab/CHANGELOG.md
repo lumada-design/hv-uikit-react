@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.61](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.60...@hv/uikit-react-lab@1.1.3-alpha.61) (2019-07-31)
+
+
+### Features
+
+* **linechart:** add Linechart component. [#334](https://github.com/pentaho/hv-uikit-react/issues/334) ([#358](https://github.com/pentaho/hv-uikit-react/issues/358)) ([5da04d4](https://github.com/pentaho/hv-uikit-react/commit/5da04d4))
+
+
+
+
+
 ## [1.1.3-alpha.60](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.59...@hv/uikit-react-lab@1.1.3-alpha.60) (2019-07-29)
 
 
