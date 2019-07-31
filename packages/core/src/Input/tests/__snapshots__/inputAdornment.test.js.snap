@@ -54,14 +54,28 @@ exports[`InputAdornment should be defined 1`] = `
         width={30}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M0 0h32v32H0z"
-          fill="none"
-        />
-        <path
-          d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
-          fill="#414141"
-        />
+        <defs>
+          <clipPath
+            id="Close_XS_svg__a"
+          >
+            <path
+              d="M0 0h32v32H0z"
+              fill="none"
+            />
+          </clipPath>
+        </defs>
+        <g
+          clipPath="url(#Close_XS_svg__a)"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="none"
+          />
+          <path
+            d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
+            fill="#414141"
+          />
+        </g>
       </svg>
     </CloseXS>
   </div>

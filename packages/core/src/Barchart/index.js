@@ -16,6 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import BarchartControl from "./BarchartControl";
+import Barchart from "./Barchart";
 
-export default withStyles(styles, { withTheme: true })(BarchartControl);
+export default withStyles(styles, { withTheme: true })(Barchart);

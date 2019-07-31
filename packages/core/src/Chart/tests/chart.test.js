@@ -20,14 +20,14 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import BarchartControlWithStyles from "../index";
-import BarchartControl from "../BarchartControl";
-import Barchart from "../Barchart";
+import ChartWithStyles from "../index";
+import Chart from "../Chart";
+import Plot from "../Plot";
 import Tooltip from "../Tooltip/index";
 import SingleTooltip from "../Tooltip/SingleTooltip";
 import MultiTooltip from "../Tooltip/MultiTooltip";
 
-describe("Barchart withStyles", () => {
+describe("Chart withStyles", () => {
   let wrapper;
 
   const trace1 = {
@@ -45,7 +45,7 @@ describe("Barchart withStyles", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <BarchartControlWithStyles data={data} layout={layout} />
+        <ChartWithStyles data={data} layout={layout} />
       </HvProvider>
     );
   });
@@ -58,35 +58,30 @@ describe("Barchart withStyles", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render the BarchartControl", () => {
+  it("should render the Chart", () => {
     wrapper = mount(
       <HvProvider>
-        <BarchartControlWithStyles data={data} layout={layout} />
+        <ChartWithStyles data={data} layout={layout} />
       </HvProvider>
     );
-    const barchartControl = wrapper.find(BarchartControl);
-    expect(barchartControl.length).toBe(1);
+    const chart = wrapper.find(Chart);
+    expect(chart.length).toBe(1);
   });
 
-  // Barchart testing
-  it("should render the Barchart", () => {
+  it("should render the Plot", () => {
     wrapper = mount(
       <HvProvider>
-        <BarchartControlWithStyles data={data} layout={layout} />
+        <ChartWithStyles data={data} layout={layout} />
       </HvProvider>
     );
-    const barchart = wrapper.find(Barchart);
-    expect(barchart.length).toBe(1);
+    const plot = wrapper.find(Plot);
+    expect(plot.length).toBe(1);
   });
 
   it("should render a title", () => {
     wrapper = mount(
       <HvProvider>
-        <BarchartControlWithStyles
-          data={data}
-          layout={layout}
-          title="This is a title"
-        />
+        <ChartWithStyles data={data} layout={layout} title="This is a title" />
       </HvProvider>
     );
     const title = wrapper.find("h3");
@@ -96,7 +91,7 @@ describe("Barchart withStyles", () => {
   it("should render a subtitle", () => {
     wrapper = mount(
       <HvProvider>
-        <BarchartControlWithStyles
+        <ChartWithStyles
           data={data}
           layout={layout}
           title="This is a title"

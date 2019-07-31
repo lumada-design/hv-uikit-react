@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import Linechart from "@hv/uikit-react-core/dist/Linechart";
 
 const trace1 = {
   x: ["Group one", "Group two", "Group three"],
@@ -50,12 +50,11 @@ const trace5 = {
 const data = [trace1, trace2, trace3, trace4, trace5];
 
 export default (
-  <Barchart
+  <Linechart
     title="Stacked Vertical Bar Chart"
     subtitle="Sales performance (YTD)"
     data={data}
-    stack
-    xAxisTitle="Thousands of Dollars ($)"
-    yAxisTitle="Axis description"
+    xAxisTitle="Axis description"
+    yAxisTitle="Thousands of Dollars ($)"
   />
 );
