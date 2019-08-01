@@ -35,5 +35,6 @@ export default (
   <DropDownMenu
     icon={<MoreVert />}
     dataList={menuOptions}
+    placement={"right"}
   />
 );

@@ -17,97 +17,123 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import IconButton from "@material-ui/core/IconButton";
-import Popper from "@material-ui/core/Popper";
-import Paper from "@material-ui/core/Paper";
-import MenuList from "@material-ui/core/MenuList";
+import Popper from "./Popper";
+import List from "../List";
 
-const DropDownMenu = ({ icon, classes, position, children }) => {
+/**
+ * Dropdown component with a menu.
+ *
+ * @param icon
+ * @param classes
+ * @param placement
+ * @param dataList
+ * @param id
+ * @returns {*}
+ * @constructor
+ */
+const DropDownMenu = ({ icon, classes, placement, dataList, id }) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
+  const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
+
+  /**
+   * Open the dropdown.
+   *
+   * @param event
+   */
+  const handleClick = event => {
+    const { currentTarget } = event;
+    setOpen(!open);
+    setAnchorEl(currentTarget);
+  };
+
+  /**
+   * Close the dropdown.
+   */
+  const handleClickAway = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className={classes.root}>
-      <div
-        className={classNames(classes.icon, {
-          [classes.iconSelected]: open
-        })}
-      >
-        <div className={classes.column}>
-          <IconButton
-            className={classNames(classes.iconButton)}
-            onClick={event => {
-              setOpen(!open);
-              setAnchorEl(event.currentTarget);
-            }}
-          >
-            {icon}
-          </IconButton>
-          <Popper
-            open={open}
-            anchorEl={anchorEl}
-            onClose={() => {
-              setOpen(false);
-              setAnchorEl(null);
-            }}
-            placement={position}
-            disablePortal
-            modifiers={{
-              flip: {
-                enabled: false
-              },
-              preventOverflow: {
-                enabled: false,
-                boundariesElement: "scrollParent"
-              },
-              hide: {
-                enabled: false
-              }
-            }}
-          >
-            <ClickAwayListener
-              onClickAway={() => {
-                setOpen(false);
-                setAnchorEl(null);
-              }}
-            >
-              <Paper className={classes.paperRoot}>
-                <div className={classes.extenderLine} />
-                <MenuList>{children}</MenuList>
-              </Paper>
-            </ClickAwayListener>
-          </Popper>
-        </div>
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <div {...id && { id }}>
+        <IconButton
+          className={classNames(classes.icon, {
+            [classes.iconSelected]: open
+          })}
+          onClick={handleClick}
+        >
+          {icon}
+        </IconButton>
+        <Popper
+          disablePortal
+          open={open}
+          anchorEl={anchorEl}
+          placement={bottom}
+        >
+          <div className={classes.menuList}>
+            <List values={dataList} selectable={false} condensed />
+          </div>
+        </Popper>
       </div>
-    </div>
+    </ClickAwayListener>
   );
 };
 
 DropDownMenu.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the icon when selected.
+     */
+    iconSelected: PropTypes.string,
+    /**
+     * Styles applied to the list.
+     */
+    menuList: PropTypes.string
+  }).isRequired,
+  /**
+   * Icon.
+   */
   icon: PropTypes.element.isRequired,
-  position: PropTypes.oneOf([
-    // Material UI Popper positions
-    "top-start",
-    "top",
-    "top-end",
-    "left-start",
-    "left",
-    "left-end",
-    "bottom-start",
-    "bottom",
-    "bottom-end",
-    "right-start",
-    "right",
-    "right-end"
-  ]),
-  children: PropTypes.node.isRequired
+  /**
+   * A list containing the elements to be rendered.
+   *
+   * - label: The label of the element to be rendered.
+   * - selected: The selection state of the element.
+   * - leftIcon: The icon node to be rendered on the left.
+   * - showNavIcon: If true renders the navigation icon on the right.
+   */
+  dataList: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      selected: PropTypes.bool,
+      leftIcon: PropTypes.func,
+      showNavIcon: PropTypes.bool
+    })
+  ).isRequired,
+  /**
+   * Placement of the dropdown.
+   */
+  placement: PropTypes.oneOf(["left", "right"])
 };
 
 DropDownMenu.defaultProps = {
-  position: "bottom-end"
+  id: undefined,
+  placement: "left"
 };
 
 export default DropDownMenu;

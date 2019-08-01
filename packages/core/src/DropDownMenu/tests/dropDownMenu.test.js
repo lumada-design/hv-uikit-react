@@ -21,7 +21,6 @@ import toJson from "enzyme-to-json";
 import IconButton from "@material-ui/core/IconButton";
 
 import DropDownMenu from "../index";
-import DropDownMenuComponent from "../DropDownMenu";
 import HvProvider from "../../Provider";
 
 jest.mock(
@@ -31,7 +30,8 @@ jest.mock(
       constructor() {
         return {
           scheduleUpdate: jest.fn(),
-          update: jest.fn()
+          update: jest.fn(),
+          destroy: jest.fn()
         };
       }
     }
@@ -40,28 +40,24 @@ jest.mock(
 describe("DropDownMenu", () => {
   let wrapper;
 
-  describe("index", () => {
-    beforeAll(() => {
-      wrapper = mount(
-        <HvProvider>
-          <DropDownMenu icon={<div />}>
-            <div />
-          </DropDownMenu>
-        </HvProvider>
-      );
-    });
-
-    it("should render without throwing any error", () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
-    });
-  });
+  const menuOptions = [
+    {
+      label: "Label 1"
+    },
+    {
+      label: "Label 2"
+    },
+    {
+      label: "Label 3"
+    }
+  ];
 
   describe("component", () => {
     beforeEach(() => {
       wrapper = mount(
-        <DropDownMenuComponent classes={{}} icon={<div />}>
-          <div />
-        </DropDownMenuComponent>
+        <HvProvider>
+          <DropDownMenu dataList={menuOptions} icon={<div />} />
+        </HvProvider>
       );
     });
 
@@ -73,6 +69,13 @@ describe("DropDownMenu", () => {
       const button = wrapper.find(IconButton);
       button.at(0).simulate("click");
 
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it("opens on click", () => {
+      const button = wrapper.find(IconButton);
+      button.at(0).simulate("click");
+      button.at(0).simulate("click");
       expect(toJson(wrapper)).toMatchSnapshot();
     });
   });
