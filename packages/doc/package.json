@@ -4,6 +4,7 @@
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
+  "private": true,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
@@ -19,9 +20,9 @@
     "clean": "npx del-cli dist"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": "^1.1.1-alpha.10",
-    "@hv/uikit-react-core": "^1.1.3-alpha.52",
-    "@hv/uikit-react-icons": "^1.1.3-alpha.30",
+    "@hv/uikit-common-themes": "1.1.1-alpha.10",
+    "@hv/uikit-react-core": "1.1.3-alpha.52",
+    "@hv/uikit-react-icons": "1.1.3-alpha.30",
     "@hv/uikit-react-lab": "^1.1.3-alpha.61",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "3.0.2",
