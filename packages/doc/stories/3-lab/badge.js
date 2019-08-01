@@ -32,6 +32,12 @@ storiesOf("Lab", module).add("Badge", () => <HvBadge />, {
       description:
         "Badges show when there are unread notifications with an icon.",
       src: "lab/badge/badgeWithIcon.js"
+    },
+    {
+      title: "3. With Text",
+      description:
+        "Badges show when there are unread notifications with text.",
+      src: "lab/badge/badgeWithText.js"
     }
   ]
 });

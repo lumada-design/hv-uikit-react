@@ -17,6 +17,7 @@
 import React from "react";
 
 import HvBadge from "@hv/uikit-react-lab/dist/Badge";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
 
 const exampleStyles = {
@@ -27,14 +28,14 @@ const exampleStyles = {
 
 export default (
   <div style={exampleStyles}>
-    <HvBadge count={0} icon={<AlertS />} />
+    <HvBadge count={0} text="Events" textVariant="sTitle" />
 
-    <HvBadge count={1} icon={<AlertS />} />
+    <HvBadge count={1} text="Events" textVariant="sTitle" />
 
-    <HvBadge showCount count={8} icon={<AlertS />} />
+    <HvBadge showCount count={8} text="Events" textVariant="sTitle" />
 
-    <HvBadge showCount count={88} icon={<AlertS />} />
+    <HvBadge showCount count={88} text="Events" textVariant="sTitle" />
 
-    <HvBadge showCount count={888} icon={<AlertS />} />
+    <HvBadge showCount count={888} text="Events" textVariant="sTitle" />
   </div>
 );
