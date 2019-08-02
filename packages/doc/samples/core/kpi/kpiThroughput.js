@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import { Typography } from "@material-ui/core";
+import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Goodsema1S from "@hv/uikit-react-icons/dist/DawnTheme/Good.sema1.S";
 import IconArrowUp from "./assets/arrow-green-up.svg";
@@ -40,24 +40,21 @@ const throughputComparisonVisual = () => (
         position: "absolute",
         width: "32px",
         height: "32px",
-        top: "1px",
+        top: "4px",
         left: "-3px",
         background: `url(${IconArrowUp}) no-repeat`
       }}
       color="#008000"
     />
-    <Typography
+    <HvTypography
       style={{
-        color: "#63A621",
         position: "relative",
-        paddingLeft: "16px",
-        fontSize: "14px",
-        fontWeight: "600",
-        paddingBottom: "2px"
+        paddingLeft: "16px"
       }}
+      variant="highlightText"
     >
       {labels.comparisonIndicator}
-    </Typography>
+    </HvTypography>
   </div>
 );
 
