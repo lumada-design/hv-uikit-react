@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.69](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.68...@hv/uikit-react-doc@1.1.3-alpha.69) (2019-08-02)
+
+
+### Bug Fixes
+
+* **kpi:** fix number color in sample. [#342](https://github.com/pentaho/hv-uikit-react/issues/342) ([be7d2e9](https://github.com/pentaho/hv-uikit-react/commit/be7d2e9))
+
+
+
+
+
 ## [1.1.3-alpha.68](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.67...@hv/uikit-react-doc@1.1.3-alpha.68) (2019-08-02)
 
 
