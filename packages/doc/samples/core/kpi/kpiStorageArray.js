@@ -15,8 +15,6 @@
  */
 
 import React from "react";
-import { Typography } from "@material-ui/core";
-import IconInvalid from "@hv/uikit-react-icons/dist/Level5.S";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 
 const labels = {
@@ -27,31 +25,9 @@ const labels = {
   comparisonIndicator: "-5 units"
 };
 
-const StorageArrayComparisonVisual = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <Typography
-      style={{
-        position: "relative",
-        fontSize: "14px",
-        fontWeight: "600",
-        paddingBottom: "2px"
-      }}
-    >
-      {labels.comparisonIndicator}
-    </Typography>
-  </div>
-);
-
-const invalidIcon = () => <IconInvalid color={["none", "#D13F3F"]} />;
-
 export default (
   <HvKpi
     labels={labels}
-    visualIndicator={invalidIcon()}
-    visualComparison={StorageArrayComparisonVisual()}
+    visualComparison={labels.comparisonIndicator}
   />
 );

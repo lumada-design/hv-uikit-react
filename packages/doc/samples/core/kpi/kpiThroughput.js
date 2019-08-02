@@ -17,7 +17,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconValid from "@hv/uikit-react-icons/dist/Level0.S";
+import Goodsema1S from "@hv/uikit-react-icons/dist/DawnTheme/Good.sema1.S";
 import IconArrowUp from "./assets/arrow-green-up.svg";
 
 const labels = {
@@ -61,7 +61,7 @@ const throughputComparisonVisual = () => (
   </div>
 );
 
-const icon = () => <IconValid color={["none", "#63A621"]} />;
+const icon = () => <Goodsema1S />;
 
 export default (
   <HvKpi

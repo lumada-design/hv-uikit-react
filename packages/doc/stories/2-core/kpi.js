@@ -48,6 +48,11 @@ storiesOf("Core", module).add("KPI", () => <HvKpi />, {
         title: "5. Storage output Throughput",
         description: "A kpi of the number of storage arrays",
         src: "core/kpi/kpiStorageArray"
+    },
+    {
+      title: "6. Nodes",
+      description: "A kpi of the number nodes",
+      src: "core/kpi/kpiNodes"
     }
   ]
 });
