@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.65](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.64...@hv/uikit-react-lab@1.1.3-alpha.65) (2019-08-02)
+
+**Note:** Version bump only for package @hv/uikit-react-lab
+
+
+
+
+
 ## [1.1.3-alpha.64](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.63...@hv/uikit-react-lab@1.1.3-alpha.64) (2019-08-02)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
