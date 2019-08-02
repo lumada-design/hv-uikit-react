@@ -17,21 +17,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 
 const Badge = props => {
-  const { classes, showCount, count, maxCount, children } = props;
+  const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
+  let Component;
 
-  const iconClasses = classNames(classes.badgePosition, {
+  let badgeClasses = classNames(classes.badgePosition, {
     [classes.badge]: count > 0,
-    [classes.badgeTwoDigits]: count > 9,
-    [classes.count]: showCount
+    [classes.showCount]: showCount,
+    [classes.badgeTwoDigits]: showCount && count > 9
   });
+
+  if (icon) {
+    Component = icon;
+    badgeClasses = classNames(badgeClasses, {
+      [classes.badgeIcon]: count > 0,
+      [classes.showCountIcon]: showCount,
+      [classes.badgeTwoDigitsIcon]: showCount && count > 9
+    });
+  } else if (text) {
+    Component = <Typography variant={textVariant}>{text}</Typography>;
+    badgeClasses = classNames(badgeClasses, {
+      [classes.badgeText]: count > 0,
+      [classes.showCountText]: showCount,
+      [classes.badgeTwoDigitsText]: showCount && count > 9
+    });
+  }
 
   return (
     <div className={classes.root}>
-      {children}
-      <div className={iconClasses}>{showCount && renderedCount}</div>
+      {Component}
+      <div className={badgeClasses}>{showCount && renderedCount}</div>
     </div>
   );
 };
@@ -75,15 +93,25 @@ Badge.propTypes = {
    */
   maxCount: PropTypes.number,
   /**
-   * Node that the notification badge will be attached to
+   * Icon which the notification will be attached.
    */
-  children: PropTypes.node
+  icon: PropTypes.node,
+  /**
+   * Text which the notification will be attached.
+   */
+  text: PropTypes.string,
+  /**
+   * Text variant.
+   */
+  textVariant: PropTypes.string
 };
 
 Badge.defaultProps = {
   showCount: false,
   maxCount: 99,
-  children: null
+  icon: null,
+  text: null,
+  textVariant: null
 };
 
 export default Badge;

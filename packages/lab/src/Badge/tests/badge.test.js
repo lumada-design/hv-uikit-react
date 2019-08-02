@@ -15,27 +15,19 @@
  */
 
 import React from "react";
-import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
-
+import { mount, shallow } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import Typography from "@hv/uikit-react-core/dist/Typography";
+import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
+import Badge from "../index";
 
-import Badge from "../Badge";
-
-describe("<Badge />", () => {
+describe("Badge ", () => {
   let wrapper;
-  const classes = {
-    badge: "badge",
-    count: "count",
-    withIcon: "withIcon",
-    iconContainer: "iconContainer",
-    badgeBorder: "badgeBorder"
-  };
 
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <Badge classes={classes} count={0} />
+        <Badge count={0} />
       </HvProvider>
     );
   });
@@ -45,38 +37,58 @@ describe("<Badge />", () => {
   });
 
   it("should render correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should render correctly with showCount", () => {
-    expect(
-      wrapper.props().children[1].props.children.props.children
-    ).toBeFalsy();
-
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
-        <Badge classes={classes} count={12} showCount />
+        <Badge count={12} showCount />
       </HvProvider>
     );
+    const divs = wrapper.find("div");
 
-    expect(
-      shallow(wrapper.props().children[1].props.children)
-        .find(".count")
-        .props().children
-    ).toEqual(12);
+    expect(divs.at(1).text()).toEqual("12");
   });
 
   it("should render correctly with maxCount", () => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
-        <Badge classes={classes} count={100} showCount />
+        <Badge count={100} showCount />
       </HvProvider>
     );
-    expect(wrapper.props().children[1].props.children.props.count).toEqual(100);
-    expect(
-      shallow(wrapper.props().children[1].props.children)
-        .find(".count")
-        .props().children
-    ).toEqual("99+");
+    const divs = wrapper.find("div");
+
+    expect(divs.at(1).text()).toEqual("99+");
+  });
+
+  it("should render correctly with text", () => {
+    wrapper = mount(
+      <HvProvider>
+        <Badge count={100} showCount text="hello" textVariant="sTitle" />
+      </HvProvider>
+    );
+    const text = wrapper.find(Typography);
+
+    expect(text.length).toEqual(1);
+
+    const divs = wrapper.find("div");
+
+    expect(divs.at(1).text()).toEqual("99+");
+  });
+
+  it("should render correctly with svg", () => {
+    wrapper = mount(
+      <HvProvider>
+        <Badge count={100} showCount icon={<AlertS />} />
+      </HvProvider>
+    );
+    const icon = wrapper.find(AlertS);
+
+    expect(icon.length).toEqual(1);
+
+    const divs = wrapper.find("div");
+
+    expect(divs.at(1).text()).toEqual("99+");
   });
 });

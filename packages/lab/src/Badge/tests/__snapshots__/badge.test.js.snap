@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Badge /> should render correctly 1`] = `
+exports[`Badge  should render correctly 1`] = `
 <MuiThemeProviderOld
   sheetsManager={Map {}}
   theme={
@@ -937,19 +937,8 @@ exports[`<Badge /> should render correctly 1`] = `
       }
     }
   >
-    <Badge
-      classes={
-        Object {
-          "badge": "badge",
-          "badgeBorder": "badgeBorder",
-          "count": "count",
-          "iconContainer": "iconContainer",
-          "withIcon": "withIcon",
-        }
-      }
+    <WithStyles(Badge)
       count={0}
-      maxCount={99}
-      showCount={false}
     />
   </ContextProvider>
 </MuiThemeProviderOld>
