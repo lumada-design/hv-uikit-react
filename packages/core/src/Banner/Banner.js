@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
+import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvBannerContentWrapper from "./BannerWrapper";
 
@@ -38,6 +39,8 @@ const HvBanner = props => {
     message,
     anchorOrigin,
     variant,
+    transitionDuration,
+    transitionDirection,
     showIcon,
     customIcon,
     action,
@@ -47,14 +50,25 @@ const HvBanner = props => {
 
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
+  const SlideTransition = properties => (
+    <Slide {...properties} direction={transitionDirection} />
+  );
+
+  const bannerClasses = {
+    anchorOriginTopCenter: classes.anchorOriginTopCenter,
+    anchorOriginBottomCenter: classes.anchorOriginBottomCenter
+  };
+  bannerClasses.root = open ? classes.root : classes.rootClosed;
+
   return (
     <Snackbar
       className={className}
       id={id}
-      classes={classes}
+      classes={bannerClasses}
       anchorOrigin={anchorOriginBanner}
+      TransitionComponent={SlideTransition}
       open={open}
-      transitionDuration={0}
+      transitionDuration={transitionDuration}
     >
       <HvBannerContentWrapper
         content={message || label}
@@ -74,7 +88,7 @@ HvBanner.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -111,7 +125,10 @@ HvBanner.propTypes = {
    * The message to display.
    * @deprecated. Instead use the label property
    */
-  message: deprecatedPropType(PropTypes.string, "Instead use the label property"),
+  message: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the label property"
+  ),
   /**
    *  The anchor of the Snackbar.
    */
@@ -135,7 +152,15 @@ HvBanner.propTypes = {
   /**
    * Actions to display on message.
    */
-  actionsOnMessage: PropTypes.node
+  actionsOnMessage: PropTypes.node,
+  /** 
+   * How much the transition animation last in milliseconds, if 0 no animation is played.
+   */
+  transitionDuration: PropTypes.number,
+  /** 
+   * Direction of slide transition.
+   */
+  transitionDirection:  PropTypes.oneOf(["up", "down", "left", "right"])
 };
 
 HvBanner.defaultProps = {
@@ -148,7 +173,9 @@ HvBanner.defaultProps = {
   showIcon: false,
   action: null,
   actionsOnMessage: null,
-  variant: "default"
+  variant: "default",
+  transitionDuration: 300,
+  transitionDirection: "down"
 };
 
 export default HvBanner;

@@ -17,14 +17,17 @@
 const styles = theme => ({
   actionContainer: {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   actionsInnerContainer: {
     flexDirection: "row",
     paddingRight: `${theme.spacing.xs}px`
   },
   closeAction: {
-    alignSelf: "flex-end"
+    alignSelf: "flex-end",
+    height: "32px",
+    width: "32px",
+    cursor: "pointer"
   }
 });
 

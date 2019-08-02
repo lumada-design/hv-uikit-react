@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
-import Level3Alert16 from "@hv/uikit-react-icons/dist/Level3.S";
-import Level416Color from "@hv/uikit-react-icons/dist/Level4.S";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
+import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
+import Error from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 import React from "react";
 
 export const variantIcon = Object.freeze({
-  success: theme => <Level0Success16Color color={["none", theme.hv.palette.semantic.sema1]} />,
-  warning: theme => <Level416Color color={["none", theme.hv.palette.semantic.sema5]} />,
-  error: theme => <Level5Unsuccess16Color color={["none", theme.hv.palette.semantic.sema6]} />,
-  info: theme => <Level3Alert16 color={["none", theme.hv.palette.semantic.sema4]} />
+  success: () => <Success />,
+  error: () => <Error />,
 });
 
 export const severityIcon = (severity, theme) => {
@@ -32,12 +28,6 @@ export const severityIcon = (severity, theme) => {
   switch (severity.toLowerCase()) {
     case "error":
       icon = variantIcon.error(theme);
-      break;
-    case "warning":
-      icon = variantIcon.warning(theme);
-      break;
-    case "info":
-      icon = variantIcon.info(theme);
       break;
     default:
       icon = variantIcon.success(theme);
@@ -50,17 +40,8 @@ export const severityIcon = (severity, theme) => {
 export const mapSeverityToVariant = severity => {
   let variant;
   switch (severity.toLowerCase()) {
-    case "catastrophic":
     case "error":
       variant = "error";
-      break;
-    case "critical":
-    case "warning":
-      variant = "warning";
-      break;
-    case "marginal":
-    case "info":
-      variant = "info";
       break;
     default:
       variant = "default";

@@ -4553,9 +4553,10 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                "root": "HvBanner-root-1",
+                "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                "root": "HvBanner-root-2",
+                "rootClosed": "HvBanner-rootClosed-1",
               },
               "deployed": true,
               "linked": false,
@@ -4563,9 +4564,10 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvBanner",
                 "classes": Object {
-                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                  "root": "HvBanner-root-1",
+                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                  "root": "HvBanner-root-2",
+                  "rootClosed": "HvBanner-rootClosed-1",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5053,13 +5055,16 @@ body {
                   data-meta="HvBanner"
                 >
                   
-.HvBanner-root-1 {
+.HvBanner-rootClosed-1 {
+  display: none;
+}
+.HvBanner-root-2 {
   min-width: calc(100% - 20px);
 }
-.HvBanner-anchorOriginTopCenter-2 {
+.HvBanner-anchorOriginTopCenter-3 {
   top: 10px;
 }
-.HvBanner-anchorOriginBottomCenter-3 {
+.HvBanner-anchorOriginBottomCenter-4 {
   bottom: 10px;
 }
 
@@ -5075,11 +5080,15 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                  "root": "HvBanner-root-1",
+                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                  "root": "HvBanner-root-2",
+                  "rootClosed": "HvBanner-rootClosed-1",
                 },
                 "index": Array [
+                  Object {
+                    "display": "none",
+                  },
                   Object {
                     "min-width": "calc(100% - 20px)",
                   },
@@ -5091,14 +5100,17 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvBanner-anchorOriginBottomCenter-3": Object {
+                  ".HvBanner-anchorOriginBottomCenter-4": Object {
                     "bottom": "10px",
                   },
-                  ".HvBanner-anchorOriginTopCenter-2": Object {
+                  ".HvBanner-anchorOriginTopCenter-3": Object {
                     "top": "10px",
                   },
-                  ".HvBanner-root-1": Object {
+                  ".HvBanner-root-2": Object {
                     "min-width": "calc(100% - 20px)",
+                  },
+                  ".HvBanner-rootClosed-1": Object {
+                    "display": "none",
                   },
                   "anchorOriginBottomCenter": Object {
                     "bottom": "10px",
@@ -5109,14 +5121,18 @@ body {
                   "root": Object {
                     "min-width": "calc(100% - 20px)",
                   },
+                  "rootClosed": Object {
+                    "display": "none",
+                  },
                 },
                 "options": Object {
                   "Renderer": [Function],
                   "classNamePrefix": "HvBanner",
                   "classes": Object {
-                    "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                    "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                    "root": "HvBanner-root-1",
+                    "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                    "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                    "root": "HvBanner-root-2",
+                    "rootClosed": "HvBanner-rootClosed-1",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5607,6 +5623,9 @@ body {
                   },
                   "root": Object {
                     "minWidth": "calc(100% - 20px)",
+                  },
+                  "rootClosed": Object {
+                    "display": "none",
                   },
                 },
                 "update": [Function],
@@ -6548,13 +6567,13 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                "root": "MuiSnackbar-root-4",
+                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                "root": "MuiSnackbar-root-5",
               },
               "deployed": true,
               "linked": false,
@@ -6562,13 +6581,13 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiSnackbar",
                 "classes": Object {
-                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                  "root": "MuiSnackbar-root-4",
+                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                  "root": "MuiSnackbar-root-5",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7056,7 +7075,7 @@ body {
                   data-meta="MuiSnackbar"
                 >
                   
-.MuiSnackbar-root-4 {
+.MuiSnackbar-root-5 {
   left: 0;
   right: 0;
   z-index: 1400;
@@ -7065,65 +7084,65 @@ body {
   align-items: center;
   justify-content: center;
 }
-.MuiSnackbar-anchorOriginTopCenter-5 {
+.MuiSnackbar-anchorOriginTopCenter-6 {
   top: 0;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginTopCenter-5 {
+  .MuiSnackbar-anchorOriginTopCenter-6 {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
   }
 }
-.MuiSnackbar-anchorOriginBottomCenter-6 {
+.MuiSnackbar-anchorOriginBottomCenter-7 {
   bottom: 0;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginBottomCenter-6 {
+  .MuiSnackbar-anchorOriginBottomCenter-7 {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
   }
 }
-.MuiSnackbar-anchorOriginTopRight-7 {
+.MuiSnackbar-anchorOriginTopRight-8 {
   top: 0;
   justify-content: flex-end;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginTopRight-7 {
+  .MuiSnackbar-anchorOriginTopRight-8 {
     top: 24px;
     left: auto;
     right: 24px;
   }
 }
-.MuiSnackbar-anchorOriginBottomRight-8 {
+.MuiSnackbar-anchorOriginBottomRight-9 {
   bottom: 0;
   justify-content: flex-end;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginBottomRight-8 {
+  .MuiSnackbar-anchorOriginBottomRight-9 {
     left: auto;
     right: 24px;
     bottom: 24px;
   }
 }
-.MuiSnackbar-anchorOriginTopLeft-9 {
+.MuiSnackbar-anchorOriginTopLeft-10 {
   top: 0;
   justify-content: flex-start;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginTopLeft-9 {
+  .MuiSnackbar-anchorOriginTopLeft-10 {
     top: 24px;
     left: 24px;
     right: auto;
   }
 }
-.MuiSnackbar-anchorOriginBottomLeft-10 {
+.MuiSnackbar-anchorOriginBottomLeft-11 {
   bottom: 0;
   justify-content: flex-start;
 }
 @media (min-width:960px) {
-  .MuiSnackbar-anchorOriginBottomLeft-10 {
+  .MuiSnackbar-anchorOriginBottomLeft-11 {
     left: 24px;
     right: auto;
     bottom: 24px;
@@ -7142,13 +7161,13 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                  "root": "MuiSnackbar-root-4",
+                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                  "root": "MuiSnackbar-root-5",
                 },
                 "index": Array [
                   Object {
@@ -7169,13 +7188,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 2,
@@ -7295,13 +7314,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7311,7 +7330,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopCenter-5": Object {
+                        ".MuiSnackbar-anchorOriginTopCenter-6": Object {
                           "left": "50%",
                           "right": "auto",
                           "transform": "translateX(-50%)",
@@ -7325,13 +7344,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 2,
@@ -7469,13 +7488,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 4,
@@ -7595,13 +7614,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7611,7 +7630,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomCenter-6": Object {
+                        ".MuiSnackbar-anchorOriginBottomCenter-7": Object {
                           "left": "50%",
                           "right": "auto",
                           "transform": "translateX(-50%)",
@@ -7625,13 +7644,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 4,
@@ -7770,13 +7789,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 6,
@@ -7896,13 +7915,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7912,7 +7931,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopRight-7": Object {
+                        ".MuiSnackbar-anchorOriginTopRight-8": Object {
                           "left": "auto",
                           "right": "24px",
                           "top": "24px",
@@ -7926,13 +7945,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 6,
@@ -8071,13 +8090,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 8,
@@ -8197,13 +8216,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -8213,7 +8232,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomRight-8": Object {
+                        ".MuiSnackbar-anchorOriginBottomRight-9": Object {
                           "bottom": "24px",
                           "left": "auto",
                           "right": "24px",
@@ -8227,13 +8246,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 8,
@@ -8372,13 +8391,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 10,
@@ -8498,13 +8517,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -8514,7 +8533,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopLeft-9": Object {
+                        ".MuiSnackbar-anchorOriginTopLeft-10": Object {
                           "left": "24px",
                           "right": "auto",
                           "top": "24px",
@@ -8528,13 +8547,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 10,
@@ -8673,13 +8692,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 12,
@@ -8799,13 +8818,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -8815,7 +8834,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                        ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                           "bottom": "24px",
                           "left": "24px",
                           "right": "auto",
@@ -8829,13 +8848,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 12,
@@ -8966,29 +8985,29 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiSnackbar-anchorOriginBottomCenter-6": Object {
+                  ".MuiSnackbar-anchorOriginBottomCenter-7": Object {
                     "bottom": 0,
                   },
-                  ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                  ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                     "bottom": 0,
                     "justify-content": "flex-start",
                   },
-                  ".MuiSnackbar-anchorOriginBottomRight-8": Object {
+                  ".MuiSnackbar-anchorOriginBottomRight-9": Object {
                     "bottom": 0,
                     "justify-content": "flex-end",
                   },
-                  ".MuiSnackbar-anchorOriginTopCenter-5": Object {
+                  ".MuiSnackbar-anchorOriginTopCenter-6": Object {
                     "top": 0,
                   },
-                  ".MuiSnackbar-anchorOriginTopLeft-9": Object {
+                  ".MuiSnackbar-anchorOriginTopLeft-10": Object {
                     "justify-content": "flex-start",
                     "top": 0,
                   },
-                  ".MuiSnackbar-anchorOriginTopRight-7": Object {
+                  ".MuiSnackbar-anchorOriginTopRight-8": Object {
                     "justify-content": "flex-end",
                     "top": 0,
                   },
-                  ".MuiSnackbar-root-4": Object {
+                  ".MuiSnackbar-root-5": Object {
                     "align-items": "center",
                     "display": "flex",
                     "justify-content": "center",
@@ -9003,13 +9022,13 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 12,
@@ -9129,13 +9148,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -9145,7 +9164,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                        ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                           "bottom": "24px",
                           "left": "24px",
                           "right": "auto",
@@ -9159,13 +9178,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 12,
@@ -9330,13 +9349,13 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiSnackbar",
                   "classes": Object {
-                    "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                    "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                    "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                    "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                    "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                    "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                    "root": "MuiSnackbar-root-4",
+                    "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                    "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                    "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                    "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                    "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                    "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                    "root": "MuiSnackbar-root-5",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10832,9 +10851,10 @@ body {
         className=""
         classes={
           Object {
-            "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-            "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-            "root": "HvBanner-root-1",
+            "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+            "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+            "root": "HvBanner-root-2",
+            "rootClosed": "HvBanner-rootClosed-1",
           }
         }
         customIcon={null}
@@ -11766,9 +11786,12 @@ body {
             },
           }
         }
+        transitionDirection="down"
+        transitionDuration={300}
         variant="default"
       >
         <WithStyles(Snackbar)
+          TransitionComponent={[Function]}
           anchorOrigin={
             Object {
               "horizontal": "center",
@@ -11778,13 +11801,13 @@ body {
           className=""
           classes={
             Object {
-              "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-              "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-              "root": "HvBanner-root-1",
+              "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+              "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+              "root": "HvBanner-rootClosed-1",
             }
           }
           open={false}
-          transitionDuration={0}
+          transitionDuration={300}
         >
           <Snackbar
             TransitionComponent={[Function]}
@@ -11797,18 +11820,18 @@ body {
             className=""
             classes={
               Object {
-                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6 HvBanner-anchorOriginBottomCenter-3",
-                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5 HvBanner-anchorOriginTopCenter-2",
-                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                "root": "MuiSnackbar-root-4 HvBanner-root-1",
+                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7 HvBanner-anchorOriginBottomCenter-4",
+                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6 HvBanner-anchorOriginTopCenter-3",
+                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                "root": "MuiSnackbar-root-5 HvBanner-rootClosed-1",
               }
             }
             disableWindowBlurListener={false}
             open={false}
-            transitionDuration={0}
+            transitionDuration={300}
           />
         </WithStyles(Snackbar)>
       </HvBanner>
