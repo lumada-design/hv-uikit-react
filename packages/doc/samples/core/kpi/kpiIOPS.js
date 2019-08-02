@@ -66,7 +66,8 @@ const invalidIcon = () =>
     width: "32px",
     height: "32px",
     position: "relative",
-    left: "-8px"
+    left: "-8px",
+    pointerEvents:"none"
 }}>
   <Chart
     width={'50px'}
@@ -83,6 +84,9 @@ const invalidIcon = () =>
     options={{
       legend: "none",
       colors: ['red'],
+      tooltip: {
+        trigger: 'none'
+      },
       hAxis: {
         minValue: 0,
         maxValue: 10,
