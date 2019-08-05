@@ -31,7 +31,8 @@ const data = [
     label: "Delete"
   },
   {
-    label: "Update"
+    label: "Update",
+    path: "https://www.hitachivantara.com"
   }
 ];
 

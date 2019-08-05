@@ -34,6 +34,10 @@ const styles = theme => ({
     },
     "& svg:last-child": {
       marginLeft: "auto"
+    },
+    "& a": {
+      display: "block",
+      width: "100%"
     }
   },
   condensed: {
