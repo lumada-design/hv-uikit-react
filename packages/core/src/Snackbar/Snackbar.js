@@ -21,9 +21,31 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
-const snackBarDirComponent = direction => props => (
-  <Slide {...props} direction={direction} />
-);
+const transLeft = props => <Slide {...props} direction="left" />;
+const transRight = props => <Slide {...props} direction="right" />;
+const transUp = props => <Slide {...props} direction="up" />;
+const transDown = props => <Slide {...props} direction="down" />;
+
+const snackBarDirComponent = direction => {
+  let trans;
+  switch (direction) {
+    case "left":
+      trans = transLeft;
+      break;
+    case "right":
+      trans = transRight;
+      break;
+    case "up":
+      trans = transUp;
+      break;
+    case "down":
+      trans = transDown;
+      break;
+    default:
+      trans = transLeft;
+  }
+  return trans;
+};
 
 const HvSnackbar = props => {
   const {
@@ -136,7 +158,7 @@ HvSnackbar.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]),
+  variant: PropTypes.oneOf(["default", "success", "error"]),
   /**
    * Custom icon to replace the variant default.
    */
@@ -154,7 +176,7 @@ HvSnackbar.propTypes = {
    */
   transitionDuration: PropTypes.number,
   /**
-   * Direction of slide transition set to one of "left", "right", "top", or "bottom".
+   * Direction of slide transition.
    */
   transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"])
 };
@@ -172,8 +194,8 @@ HvSnackbar.defaultProps = {
   showIcon: false,
   action: null,
   variant: "default",
-  transitionDuration: 0,
-  transitionDirection: "up"
+  transitionDuration: 700,
+  transitionDirection: "left"
 };
 
 export default HvSnackbar;

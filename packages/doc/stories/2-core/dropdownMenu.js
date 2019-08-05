@@ -25,8 +25,12 @@ storiesOf("Core", module).add("DropDownMenu", () => <DropDownMenu />, {
   usage: "import DropDownMenu from '@hv/uikit-react-core/dist/DropDownMenu'",
   examples: [
     {
-      title: "1. Bottom-left positioning",
+      title: "1. Left positioning",
       src: "core/dropdownMenu/dropdownMenu1"
+    },
+    {
+      title: "2. Right positioning",
+      src: "core/dropdownMenu/dropdownMenu2"
     }
   ]
 });

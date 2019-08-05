@@ -15,48 +15,32 @@
  */
 
 const styles = theme => ({
-  root: {
-    position: "absolute",
-    width: "100%"
-  },
   icon: {
-    position: "relative"
-  },
-  iconSelected: {
-    zIndex: 10,
-    border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    borderBottom: "none"
-  },
-  iconButton: {
-    color: theme.palette.text.main,
+    height: 33,
+    width: 32,
+    border: `solid 1px transparent`,
+    position: "relative",
+    boxSizing: "content-box",
+    color: theme.hv.palette.accent.acce1,
     padding: 0,
     "&:hover": {
       backgroundColor: "transparent"
+    },
+    borderRadius: 0
+  },
+  iconSelected: {
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    "&:hover": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`
     }
   },
-  extenderLine: {
-    position: "absolute",
-    width: "calc(100% - 30px)",
-    top: "-1px",
-    right: "31px",
-    borderTop: `1px solid ${theme.hv.palette.accent.acce1}`
-  },
-  paperRoot: {
-    position: "absolute",
-    zIndex: 1,
-    right: "-1px",
-    top: 0,
-    background: theme.palette.common.white,
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
-    borderTop: "none"
-  },
-  column: {
-    display: "flex",
-    flexFlow: "column",
-    alignItems: "right"
-  },
-  menuList: {}
+  menuList: {
+    padding: `${theme.spacing.xs}px`,
+    whiteSpace: "nowrap",
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+  }
 });
 
 export default styles;
