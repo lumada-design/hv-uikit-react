@@ -18,8 +18,6 @@ import React from "react";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import IconButton from "@material-ui/core/IconButton";
-
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
 
@@ -66,14 +64,14 @@ describe("DropDownMenu", () => {
     });
 
     it("opens on click", () => {
-      const button = wrapper.find(IconButton);
-      button.at(0).simulate("click");
+      const button = wrapper.find("div");
+      button.at(1).simulate("click");
 
       expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it("opens on click", () => {
-      const button = wrapper.find(IconButton);
+    it("closes on double click", () => {
+      const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
       expect(toJson(wrapper)).toMatchSnapshot();
