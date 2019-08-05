@@ -17,118 +17,182 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import CautionL from "@hv/uikit-react-icons/dist/Caution.L";
-import CautionM from "@hv/uikit-react-icons/dist/Caution.M";
+import Grid from "@hv/uikit-react-core/dist/Grid";
 import CautionS from "@hv/uikit-react-icons/dist/Caution.S";
-import QaGrid from "../custom/qaGrid";
 
 const samples = {};
 const myAlert = msg => alert(msg); /* eslint-disable-line no-alert */
 
 // sample scenarios
-samples["aspect primary choice"] = (
+samples.positive = (
   <>
-    <HvButton>default primary</HvButton>
-    <HvButton colorType="secondary">secondary</HvButton>
-    <HvButton colorType="link">link</HvButton>
-    <HvButton disabled>disabled primary</HvButton>
-    <HvButton disabled colorType="secondary">
-      disabled secondary
-    </HvButton>
-    <HvButton disabled colorType="link">
-      disabled link
-    </HvButton>
+    <Grid container>
+      <Grid item xl={2}>
+        {" "}
+        Enable{" "}
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton id="default" onClick={() => myAlert("default")}>
+          <CautionS />
+          default
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="secondary"
+          category="secondary"
+          onClick={() => myAlert("secondary")}
+        >
+          <CautionS />
+          secondary
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton id="ghost" category="ghost" onClick={() => myAlert("ghost")}>
+          <CautionS />
+          ghost
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="ghostSecondary"
+          category="ghostSecondary"
+          onClick={() => myAlert("ghostSecondary")}
+        >
+          <CautionS />
+          ghostSecondary
+        </HvButton>
+      </Grid>
+    </Grid>
+    <Grid container>
+      <Grid item xl={2}>
+        {" "}
+        Disable{" "}
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="disabledPrimary"
+          disabled
+          onClick={() => myAlert("disabled primary")}
+        >
+          <CautionS />
+          disabled primary
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="disabledSecondary"
+          disabled
+          category="secondary"
+          onClick={() => myAlert("disabled secondary")}
+        >
+          <CautionS />
+          disabled secondary
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="disabledGhost"
+          disabled
+          category="ghost"
+          onClick={() => myAlert("disabled ghost")}
+        >
+          <CautionS />
+          disabled ghost
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="disabledGhostSecondary"
+          disabled
+          category="ghostSecondary"
+          onClick={() => myAlert("disabled ghostSecondary")}
+        >
+          <CautionS />
+          disabled ghostSecondary
+        </HvButton>
+      </Grid>
+    </Grid>
+
+    <Grid container>
+      <Grid item xl={2}>
+        {" "}
+        all properties{" "}
+      </Grid>
+      <Grid item xl>
+        <HvButton
+          className="all"
+          id="allProperties"
+          disabled
+          classes=""
+          onclick={() => myAlert("incorrect")}
+        >
+          <CautionS />
+          all properties
+        </HvButton>
+      </Grid>
+    </Grid>
   </>
 );
 
-samples["aspect hitachi red"] = (
+samples.negative = (
   <>
-    <HvButton>default primary</HvButton>
-    <HvButton colorType="secondary">secondary</HvButton>
-    <HvButton colorType="link">link</HvButton>
-    <HvButton disabled>disabled primary</HvButton>
-    <HvButton disabled colorType="secondary">
-      disabled secondary
-    </HvButton>
-    <HvButton disabled colorType="link">
-      disabled link
-    </HvButton>
+    <Grid container>
+      <Grid item xl={2}>
+        {" "}
+        icon{" "}
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton>
+          <CautionS />
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton category="secondary">
+          <CautionS />
+          between
+          <CautionS />
+        </HvButton>
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton category="ghost">
+          <CautionS />
+          <CautionS />
+          <CautionS />
+        </HvButton>
+      </Grid>
+    </Grid>
+    <Grid container>
+      <Grid item xl={2}>
+        {" "}
+        null / empty{" "}
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton onClick={() => myAlert("primary (default)")} />
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton category="secondary" onClick={() => myAlert("secondary")} />
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton category="ghost" onClick={() => myAlert("ghost")} />
+      </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          category="ghostSecondary"
+          onClick={() => myAlert("ghostSecondary")}
+        />
+      </Grid>
+    </Grid>
   </>
 );
-
-samples.functionality = (
-  <>
-    <HvButton onClick={() => myAlert("enable")}>enable</HvButton>
-    <HvButton disabled onClick={() => myAlert("incorrect")}>
-      disabled
-    </HvButton>
-  </>
-);
-
-samples["properties default"] = <HvButton>default values</HvButton>;
-
-samples["properties all"] = (
-  <HvButton
-    className="all"
-    id="all"
-    type="button"
-    colortype="primary"
-    disabled
-    classes=""
-    onclick={() => myAlert("incorrect")}
-  >
-    all properties
-  </HvButton>
-);
-
-samples["properties type"] = (
-  <>
-    <HvButton type="button">button</HvButton>
-    <HvButton type="submit">submit</HvButton>
-    <HvButton type="reset">reset</HvButton>
-  </>
-);
-
-samples["properties children icon"] = (
-  <>
-    <HvButton onClick={() => myAlert("Large")}>
-      <CautionL />
-      large
-    </HvButton>
-    <HvButton onClick={() => myAlert("Medium")}>
-      <CautionM />
-      medium
-    </HvButton>
-    <HvButton onClick={() => myAlert("Small")}>
-      <CautionS />
-      small
-    </HvButton>
-  </>
-);
-
-samples.accessibility = <HvButton />;
-
-samples.responsiveness = <HvButton />;
-
-samples["negative required"] = <HvButton />;
-
-samples["negative children"] = (
-  <HvButton onClick={() => myAlert("Parental Button")}>
-    <HvButton onClick={() => myAlert("Children Button")} colorType="secondary">
-      button inside into other button
-    </HvButton>
-  </HvButton>
-);
-
-samples["negative colorType"] = (
-  <HvButton colorType="negative">negative colortype</HvButton>
-);
-
-samples["negative type"] = <HvButton type="negative">negative type</HvButton>;
 
 // create CoreButton for each sample
 Object.keys(samples).forEach(key =>
   storiesOf("CoreButton", module).add(key, () => (
-    <QaGrid>{samples[key]}</QaGrid>
+    <Grid container>
+      <Grid item xl>
+        {samples[key]}
+      </Grid>
+    </Grid>
   ))
 );

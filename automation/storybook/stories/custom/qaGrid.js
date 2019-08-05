@@ -29,7 +29,8 @@ const QaGrid = ({ children }) => (
       backgroundColor: "white"
     }}
   >
-    <Grid item style={{ margin: "auto" }}>
+    <Grid item style={{ margin: "auto" }} 
+      justify="space-between">
       {children}
     </Grid>
   </Grid>
