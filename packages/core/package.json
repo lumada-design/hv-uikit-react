@@ -40,6 +40,7 @@
     "lodash": "4.17.11",
     "plotly.js": "1.48.3",
     "plotly.js-basic-dist": "1.48.3",
+    "popper.js": "1.15.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
