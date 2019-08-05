@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.57](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.56...@hv/uikit-react-core@1.1.3-alpha.57) (2019-08-05)
+
+
+### Features
+
+* **automation:** Create Button Smoke Test [#350](https://github.com/pentaho/hv-uikit-react/issues/350) ([#369](https://github.com/pentaho/hv-uikit-react/issues/369)) ([c3f5314](https://github.com/pentaho/hv-uikit-react/commit/c3f5314))
+
+
+
+
+
 ## [1.1.3-alpha.56](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.55...@hv/uikit-react-core@1.1.3-alpha.56) (2019-08-05)
 
 

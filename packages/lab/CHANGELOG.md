@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.67](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.66...@hv/uikit-react-lab@1.1.3-alpha.67) (2019-08-05)
+
+
+### Features
+
+* **automation:** Create Button Smoke Test [#350](https://github.com/pentaho/hv-uikit-react/issues/350) ([#369](https://github.com/pentaho/hv-uikit-react/issues/369)) ([c3f5314](https://github.com/pentaho/hv-uikit-react/commit/c3f5314))
+
+
+
+
+
 ## [1.1.3-alpha.66](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.65...@hv/uikit-react-lab@1.1.3-alpha.66) (2019-08-05)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
