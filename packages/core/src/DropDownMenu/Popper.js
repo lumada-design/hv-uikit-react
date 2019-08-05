@@ -154,6 +154,8 @@ class Popper extends React.Component {
       onCreate: this.handlePopperCreate,
       onUpdate: this.handlePopperUpdate
     });
+    // Used for recalculate positioning after render.
+    this.popper.scheduleUpdate();
   };
 
   updatePopperPlacement = placement => {
