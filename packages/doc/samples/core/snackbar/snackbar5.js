@@ -19,37 +19,32 @@ import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
 import HvSnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const SnackbarContentWrapper = withStyles(styles)(HvSnackbarContentWrapper);
 
 const actionComponent = (
-  <a
-    href="https://i.imgflip.com/yrj3h.jpg"
-    style={{
-      color: "#146BD2",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
+  <HvButton
+    onClick={() => {
+      alert("You clicked me");
     }}
+    category="ghostSecondary"
   >
-    Event
-  </a>
+    Button
+  </HvButton>
 );
 
 export default (
   <div>
-    Snackbar with icons
+    Snackbar variants
     <div>
-      <SnackbarContentWrapper label="Default" variant="default" showIcon />
+      <SnackbarContentWrapper label="Default" variant="default" />
     </div>
     <p />
     <div>
       <SnackbarContentWrapper
         label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
-        showIcon
       />
     </div>
     <p />
