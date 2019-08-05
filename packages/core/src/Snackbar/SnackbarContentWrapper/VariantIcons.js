@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-import Level0 from "@hv/uikit-react-icons/dist/Level0.sema1.S";
-import Level4 from "@hv/uikit-react-icons/dist/Level4.sema5.S";
-import Level5 from "@hv/uikit-react-icons/dist/Level5.sema6.S";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.sema4.S";
+import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
+import Error from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
+
 import React from "react";
 
-const variantIcon = Object.freeze({
-  success: <Level0 />,
-  warning: <Level4 />,
-  error: <Level5 />,
-  info: <Level3 />
-});
+const variantIcon = variant => {
+  let icon;
+  switch (variant) {
+    case "success":
+      icon = <Success />;
+      break;
+    case "error":
+      icon = <Error />;
+      break;
+    default:
+      icon = null;
+  }
+  return icon;
+};
 
 export default variantIcon;

@@ -16,10 +16,9 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
-import VariantIcons from "../SnackbarContentWrapper/VariantIcons";
+import Icon from "@hv/uikit-react-icons/dist/DawnTheme/Add.S";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
@@ -59,7 +58,31 @@ describe("Snackbcar ", () => {
     expect(sliderComponent.length).toBe(1);
   });
 
-  it("should render the default icon", () => {
+  it("shouldn't render icon when default", () => {
+    const sliderComponent = mount(
+      <HvProvider>
+        <SnackBarWithStyles open showIcon />
+      </HvProvider>
+    )
+      .find(SnackBarContent)
+      .find("svg");
+
+    expect(sliderComponent.length).toBe(0);
+  });
+
+  it("shouldn't render the success icon", () => {
+    const sliderComponent = mount(
+      <HvProvider>
+        <SnackBarWithStyles open variant="success" showIcon={false} />
+      </HvProvider>
+    )
+      .find(SnackBarContent)
+      .find("svg");
+
+    expect(sliderComponent.length).toBe(0);
+  });
+
+  it("should render the success icon", () => {
     const sliderComponent = mount(
       <HvProvider>
         <SnackBarWithStyles open variant="success" showIcon />
@@ -69,18 +92,6 @@ describe("Snackbcar ", () => {
       .find("svg");
 
     expect(sliderComponent.length).toBe(1);
-  });
-
-  it("shouldn't render the default icon", () => {
-    const sliderComponent = mount(
-      <HvProvider>
-        <SnackBarWithStyles open variant="info" showIcon={false} />
-      </HvProvider>
-    )
-      .find(SnackBarContent)
-      .find("svg");
-
-    expect(sliderComponent.length).toBe(0);
   });
 
   it("should render the error icon", () => {
@@ -95,38 +106,10 @@ describe("Snackbcar ", () => {
     expect(sliderComponent.length).toBe(1);
   });
 
-  it("should render the warning icon", () => {
-    const sliderComponent = mount(
-      <HvProvider>
-        <SnackBarWithStyles open variant="warning" showIcon />
-      </HvProvider>
-    )
-      .find(SnackBarContent)
-      .find("svg");
-
-    expect(sliderComponent.length).toBe(1);
-  });
-
-  it("should render the info icon", () => {
-    const sliderComponent = mount(
-      <HvProvider>
-        <SnackBarWithStyles open variant="info" showIcon />
-      </HvProvider>
-    )
-      .find(SnackBarContent)
-      .find("svg");
-
-    expect(sliderComponent.length).toBe(1);
-  });
-
   it("should render the custom icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles
-          open
-          variant="info"
-          customIcon={VariantIcons.warning}
-        />
+        <SnackBarWithStyles open customIcon={<Icon />} />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -140,7 +123,7 @@ describe("Snackbcar ", () => {
       <HvProvider>
         <SnackBarWithStyles
           open
-          variant="info"
+          variant="success"
           action={<a href=" ">Event</a>}
         />
       </HvProvider>

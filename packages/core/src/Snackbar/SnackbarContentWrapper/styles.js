@@ -36,15 +36,14 @@ const styles = theme => ({
     maxHeight: "32px",
     minWidth: "32px",
     minHeight: "32px",
-    alignSelf: "start",
-    display: "table-cell"
+    alignSelf: "center"
   },
   message: {
     padding: 0
   },
   messageText: {
     ...theme.hv.typography.normalText,
-    maxHeight: "80px"
+    maxHeight: "82px"
   },
   messageWithoutIcon: {
     paddingLeft: `${theme.hv.spacing.sm}px`
@@ -63,7 +62,7 @@ const styles = theme => ({
     minWidth: "fit-content"
   },
   messageSpan: {
-    display: "table",
+    display: "flex",
     alignItems: "center",
     margin: `${theme.hv.spacing.xs}px 0`,
     minHeight: "32px"
