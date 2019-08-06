@@ -78,7 +78,7 @@ const DropDownMenu = ({ icon, classes, placement, dataList, id, disablePortal })
           popperOptions={{}}
         >
           <div className={classes.menuList}>
-            <List values={dataList} selectable={false} />
+            <List values={dataList} selectable={false} condensed />
           </div>
         </Popper>
       </div>

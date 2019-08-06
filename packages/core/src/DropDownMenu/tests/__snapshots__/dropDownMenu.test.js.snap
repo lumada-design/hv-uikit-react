@@ -5081,7 +5081,7 @@ body {
   background-color: #FFFFFF;
 }
 .DropDownMenu-menuList-49 {
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   white-space: nowrap;
   background-color: #FFFFFF;
@@ -5133,7 +5133,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                 ],
@@ -5163,7 +5163,7 @@ body {
                   ".DropDownMenu-menuList-49": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   ".DropDownMenu-root-46": Object {
@@ -5188,7 +5188,7 @@ body {
                   "menuList": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   "root": Object {
@@ -5716,7 +5716,7 @@ body {
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "whiteSpace": "nowrap",
                   },
                   "root": Object {
@@ -12747,7 +12747,7 @@ body {
   background-color: #FFFFFF;
 }
 .DropDownMenu-menuList-4 {
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   white-space: nowrap;
   background-color: #FFFFFF;
@@ -12799,7 +12799,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                 ],
@@ -12829,7 +12829,7 @@ body {
                   ".DropDownMenu-menuList-4": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   ".DropDownMenu-root-1": Object {
@@ -12854,7 +12854,7 @@ body {
                   "menuList": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   "root": Object {
@@ -13382,7 +13382,7 @@ body {
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "whiteSpace": "nowrap",
                   },
                   "root": Object {
@@ -20413,7 +20413,7 @@ body {
   background-color: #FFFFFF;
 }
 .DropDownMenu-menuList-8 {
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   white-space: nowrap;
   background-color: #FFFFFF;
@@ -20465,7 +20465,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                 ],
@@ -20495,7 +20495,7 @@ body {
                   ".DropDownMenu-menuList-8": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   ".DropDownMenu-root-5": Object {
@@ -20520,7 +20520,7 @@ body {
                   "menuList": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "white-space": "nowrap",
                   },
                   "root": Object {
@@ -21048,7 +21048,7 @@ body {
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
-                    "padding": "10px",
+                    "padding": "20px",
                     "whiteSpace": "nowrap",
                   },
                   "root": Object {
@@ -28217,6 +28217,7 @@ body {
                     className="DropDownMenu-menuList-8"
                   >
                     <WithStyles(HvList)
+                      condensed={true}
                       selectable={false}
                       values={
                         Array [
@@ -28249,7 +28250,7 @@ body {
                             "typography": "HvList-typography-14",
                           }
                         }
-                        condensed={false}
+                        condensed={true}
                         id=""
                         labels={
                           Object {
@@ -29210,7 +29211,7 @@ body {
                         >
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13"
+                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
                             key="0"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -31117,7 +31118,7 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13"
+                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
                             key="1"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -33024,7 +33025,7 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13"
+                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
                             key="2"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
