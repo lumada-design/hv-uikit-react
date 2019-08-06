@@ -15,32 +15,19 @@
  */
 
 const styles = theme => ({
-  paper: {
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    padding: `${theme.hv.spacing.xs}px`,
-    marginTop: "5px"
+  root: {
+    display: "flex",
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%,-75%)",
+    transition: "all .3s ease",
+    zIndex: 1,
+    pointerEvents: "none",
+    padding: `${theme.hv.spacing.sm}px`
   },
-  moreVertContainer: {
-    height: "100%"
-  },
-  moreVertBtn: {
-    width: "100%",
-    height: "100%",
-    minWidth: "32px",
-    padding: "0",
-    "&:hover": {
-      background: `${theme.hv.palette.accent.acce1}`,
-      color: `${theme.hv.palette.atmosphere.atmo1}`
-    }
-  },
-  activated: {
-    background: `${theme.hv.palette.accent.acce1}`,
-    color: `${theme.hv.palette.atmosphere.atmo1}`
-  },
-  actionBtn: {
-    display: "block",
-    width: "100%",
-    color: `${theme.hv.palette.accent.acce2}`
+  noTextMessage: {
+    lineHeight: "32px"
   }
 });
 

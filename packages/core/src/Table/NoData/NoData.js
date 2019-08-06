@@ -14,8 +14,19 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Popup from "./Popup";
+/* eslint-disable */
+import React from "react";
+import FailS from "@hv/uikit-react-icons/dist/DawnTheme/Fail.S";
 
-export default withStyles(styles, { withTheme: true })(Popup);
+import HvTypography from "../../Typography";
+
+const NoData = ({ classes, noDataMessage }) => (
+  <div className={classes.root}>
+    <FailS />
+    <HvTypography variant="normalText" className={classes.noTextMessage}>
+      {noDataMessage || " No data to display"}
+    </HvTypography>
+  </div>
+);
+
+export default NoData;

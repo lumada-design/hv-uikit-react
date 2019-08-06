@@ -23,7 +23,7 @@ class Wrapper extends React.Component {
     super(props);
     this.state = {
       sorted: [{ id: "createdDate", desc: true }],
-      pageSize: 10
+      pageSize: 0
     };
   }
 
@@ -100,9 +100,9 @@ class Wrapper extends React.Component {
       <HvTable
         data={[]}
         columns={this.getColumns()}
-        defaultPageSize={10}
+        defaultPageSize={0}
         pageSize={pageSize}
-        resizable
+        resizable={false}
         defaultSorted={sorted}
         labels={labels}
         onPageSizeChange={this.onPageSizeChange}

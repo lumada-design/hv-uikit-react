@@ -63,8 +63,7 @@ const styles = theme => ({
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
           minHeight: 32,
           minWidth: 72,
-          paddingTop: 0,
-          paddingBottom: 0,
+          padding: 0,
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "flex-end",
@@ -73,7 +72,11 @@ const styles = theme => ({
           borderTop: "none",
           borderBottom: "none",
           boxShadow: "none",
-          "& > div": { width: "100%" },
+          "& > div": {
+            width: "100%",
+            margin: "1px 0px",
+            alignSelf: "baseline"
+          },
           "& > div.rt-resizer": {
             width: `${theme.hv.spacing.xs}px`,
             right: "-8px"
@@ -82,10 +85,10 @@ const styles = theme => ({
             borderLeft: "none"
           },
           "&:nth-child(2).-checkBoxNeighbor": {
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
+            borderLeftColor: theme.hv.palette.atmosphere.atmo5
           },
           "&:nth-last-child(2).-secondaryActionsNeighbor": {
-            borderRightColor: theme.hv.palette.atmosphere.atmo4,
+            borderRightColor: theme.hv.palette.atmosphere.atmo5
           },
           "&:last-child": {
             borderRight: "none"
@@ -98,26 +101,26 @@ const styles = theme => ({
           },
           "&.-sort-desc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
+            borderLeftColor: theme.hv.palette.atmosphere.atmo5,
+            borderRightColor: theme.hv.palette.atmosphere.atmo5
           },
           "&.-sort-asc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
+            borderLeftColor: theme.hv.palette.atmosphere.atmo5,
+            borderRightColor: theme.hv.palette.atmosphere.atmo5
           },
           "&.checkBox": {
             minWidth: "30px",
             height: "100%",
             display: "inline-table"
           },
-          "&.sortable":{
+          "&.sortable": {
             "&:hover > div > div > div ": {
               visibility: "visible"
             },
             "&:hover": {
               background: theme.hv.palette.atmosphere.atmo4
-            },
+            }
           }
         }
       },
@@ -133,14 +136,16 @@ const styles = theme => ({
           },
           "& $tr.selected > div": {
             background: theme.hv.palette.atmosphere.atmo1
-          },
+          }
         },
         "& $td": {
           border: "1px solid transparent",
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
-          "&.alphaNumeric": {
+          "&.sortable": {
             paddingLeft: "32px",
+          },
+          "&.alphaNumeric": {
             minWidth: "70px",
             textAlign: "left"
           },
@@ -195,6 +200,9 @@ const styles = theme => ({
   theadFilterTr: {},
   theadFilterTh: {},
   tbody: {},
+  tBodyEmpty: {
+    minHeight: "calc(32px * 3)"
+  },
   trGroups: {},
   tr: {
     height: "32px",
@@ -216,18 +224,15 @@ const styles = theme => ({
   noDate: {},
   resizer: {},
   rtSortIcon: {
-    marginRight: `${theme.hv.spacing.xs}px`,
     width: "32px",
     height: "32px",
-    position: "absolute",
-    bottom: "0",
-    left: "0"
+    position: "absolute"
   },
   sortedIconShown: {
     visibility: "visible"
   },
   sortedIconHidden: {
-    visibility: "hidden"
+    display: "none"
   },
   pointer: {
     cursor: "pointer"
@@ -245,11 +250,19 @@ const styles = theme => ({
   },
   headerTextContainer: {
     minWidth: 0,
-    padding: "8px 5px 8px 0px",
+    padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
     minHeight: "32px",
     overflow: "hidden",
     whiteSpace: "nowrap",
-    textOverflow: "ellipsis"
+    textOverflow: "ellipsis",
+  },
+  headerNotSortable: {
+    width: `calc(100% - ${theme.hv.spacing.xs}px)`,
+    marginLeft: `${theme.hv.spacing.xs}px`
+  },
+  headerSortable: {
+    marginLeft: "32px",
+    width: "calc(100% - 32px)"
   },
   checkBoxBorder: {
     "&:nth-child(2)": {
@@ -262,16 +275,14 @@ const styles = theme => ({
     justifyContent: "space-between",
     marginBottom: `${theme.hv.spacing.xs}px`
   },
-  checkBoxRowSelected: {
-    backgroundColor: theme.hv.palette.semantic.sema7
-  },
   headerProps: {
     width: "100%",
-    whiteSpace: "normal"
+    whiteSpace: "normal",
+    textOverflow: "ellipsis",
+    overflow: "hidden"
   },
   headerAlphaNumeric: {
     float: "left",
-    paddingLeft: "27px",
     textAlign: "left"
   },
   headerNumeric: {
