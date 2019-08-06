@@ -194,7 +194,7 @@ HvSnackbar.defaultProps = {
   showIcon: false,
   action: null,
   variant: "default",
-  transitionDuration: 700,
+  transitionDuration: 300,
   transitionDirection: "left"
 };
 

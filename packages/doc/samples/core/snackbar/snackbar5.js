@@ -28,7 +28,7 @@ const actionComponent = (
     onClick={() => {
       alert("You clicked me");
     }}
-    category="ghostSecondary"
+    category="ghost"
   >
     Button
   </HvButton>

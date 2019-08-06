@@ -11848,7 +11848,7 @@ body {
           }
         }
         transitionDirection="left"
-        transitionDuration={700}
+        transitionDuration={300}
         variant="default"
       >
         <WithStyles(Snackbar)
@@ -11873,7 +11873,7 @@ body {
           }
           onClose={null}
           open={false}
-          transitionDuration={700}
+          transitionDuration={300}
         >
           <Snackbar
             TransitionComponent={[Function]}
@@ -11899,7 +11899,7 @@ body {
             disableWindowBlurListener={false}
             onClose={null}
             open={false}
-            transitionDuration={700}
+            transitionDuration={300}
           />
         </WithStyles(Snackbar)>
       </HvSnackbar>
