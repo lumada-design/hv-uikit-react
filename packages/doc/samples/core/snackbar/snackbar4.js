@@ -71,7 +71,7 @@ class SimpleSnackbar extends React.Component {
   }
 }
 
-const ActionButton = () => (
+const ActionButton = (
   <a
     href="https://i.imgflip.com/yrj3h.jpg"
     style={{
@@ -86,7 +86,6 @@ const ActionButton = () => (
     Action
   </a>
 );
-
 
 export default (
   <SimpleSnackbar
