@@ -10906,7 +10906,7 @@ body {
             "vertical": "top",
           }
         }
-        autoHideDuration={2000}
+        autoHideDuration={5000}
         className=""
         classes={
           Object {
@@ -11859,7 +11859,7 @@ body {
               "vertical": "top",
             }
           }
-          autoHideDuration={2000}
+          autoHideDuration={5000}
           className=""
           classes={
             Object {
@@ -11883,7 +11883,7 @@ body {
                 "vertical": "top",
               }
             }
-            autoHideDuration={2000}
+            autoHideDuration={5000}
             className=""
             classes={
               Object {

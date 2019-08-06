@@ -71,22 +71,28 @@ class SimpleSnackbar extends React.Component {
   }
 }
 
-const actionComponent = (
-  <HvButton
-    onClick={() => {
-      alert("You clicked me");
+const ActionButton = () => (
+  <a
+    href="https://i.imgflip.com/yrj3h.jpg"
+    style={{
+      color: "#146BD2",
+      fontSize: "14px",
+      letterSpacing: "0.02em",
+      lineHeight: "20px",
+      fontWeight: "600",
+      textDecoration: "none"
     }}
-    category="ghost"
   >
-    Button
-  </HvButton>
+    Action
+  </a>
 );
+
 
 export default (
   <SimpleSnackbar
     label="This is a snackbar"
     variant="default"
     showIcon
-    action={actionComponent}
+    action={ActionButton}
   />
 );

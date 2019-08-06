@@ -189,7 +189,7 @@ HvSnackbar.defaultProps = {
   open: false,
   anchorOrigin: { vertical: "top", horizontal: "right" },
   onClose: null,
-  autoHideDuration: 2000,
+  autoHideDuration: 5000,
   customIcon: null,
   showIcon: false,
   action: null,

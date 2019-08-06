@@ -24,14 +24,19 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 const SnackbarContentWrapper = withStyles(styles)(HvSnackbarContentWrapper);
 
 const actionComponent = (
-  <HvButton
-    onClick={() => {
-      alert("You clicked me");
+  <a
+    href="https://i.imgflip.com/yrj3h.jpg"
+    style={{
+      color: "#146BD2",
+      fontSize: "14px",
+      letterSpacing: "0.02em",
+      lineHeight: "20px",
+      fontWeight: "600",
+      textDecoration: "none"
     }}
-    category="ghost"
   >
-    Button
-  </HvButton>
+    Action
+  </a>
 );
 
 export default (
