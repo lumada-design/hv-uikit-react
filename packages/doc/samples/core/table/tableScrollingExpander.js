@@ -111,7 +111,8 @@ class Wrapper extends React.Component {
                 hAxis: {
                   minValue: 0,
                   maxValue: 3
-                }
+                },
+                backgroundColor: "transparent"
               }}
             />
           </div>
@@ -119,7 +120,7 @@ class Wrapper extends React.Component {
       }
     },
     {
-      headerText: "Average compression rt.",
+      headerText: "Average compression rt",
       accessor: "averageCompression",
       width:150,
       cellType: "numeric",
@@ -217,7 +218,8 @@ class Wrapper extends React.Component {
         onPageSizeChange={this.onPageSizeChange}
         defaultPageSize={10}
         pageSize={pageSize}
-        resizable
+        resizable={false}
+
         defaultSorted={sorted}
         labels={labels}
         subElementTemplate={this.subElementTemplate}

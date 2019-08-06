@@ -10572,6 +10572,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {
@@ -12469,6 +12470,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {
@@ -14362,6 +14364,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {
@@ -16259,6 +16262,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-51",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {

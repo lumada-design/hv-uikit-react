@@ -94,6 +94,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Sales Growth",
       cellType: "numeric",
+      minWidth: 170,
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
@@ -105,13 +106,13 @@ class Wrapper extends React.Component {
         ];
         return (
           <div style={{ display: "flex" }}>
-            <div style={{ paddingRight: "30px", alignSelf: "center" }}>
+            <div style={{ alignSelf: "center" }}>
               {cellData.row._original.salesGrowth}
   €
             </div>
             <div style={{ alignSelf: "center" }}>
               <Chart
-                width="100px"
+                width="55px"
                 height="30px"
                 chartType="BarChart"
                 loader={<div>Loading Chart</div>}
@@ -121,7 +122,8 @@ class Wrapper extends React.Component {
                   hAxis: {
                     minValue: 0,
                     maxValue: 1001
-                  }
+                  },
+                  backgroundColor: "transparent"
                 }}
               />
             </div>
@@ -157,7 +159,7 @@ class Wrapper extends React.Component {
         defaultPageSize={5}
         pageSize={pageSize}
         onPageSizeChange={this.onPageSizeChange}
-        resizable
+        resizable={false}
         defaultSorted={sorted}
         labels={labels}
         idForCheckbox="id"

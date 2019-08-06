@@ -15,16 +15,17 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
-import PropTypes from "prop-types";
+
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
+import Sort from "@hv/uikit-react-icons/dist/DawnTheme/Sort.XS";
 import isNil from "lodash/isNil";
-import { MenuItem } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import _ from "lodash";
 import HvTypography from "../Typography";
@@ -44,6 +45,7 @@ import {
 import HvCheckBox from "../Selectors/CheckBox";
 
 import ReactTablePagination from "./Pagination";
+import NoData from "./NoData";
 import { tableStyleOverrides } from "./styles";
 import DropDownMenu from "../DropDownMenu";
 
@@ -119,13 +121,13 @@ class Table extends React.Component {
     const { data } = this.props;
     const newData = [];
     let newEntry = {};
-    _.map(data, (entry) => {
+    _.map(data, entry => {
       newEntry = {};
       _.each(entry, (val, key) => {
         newEntry[key] = val === null ? `\u2014` : val;
-      })
+      });
       newData.push(newEntry);
-    })
+    });
 
     return newData;
   };
@@ -137,29 +139,14 @@ class Table extends React.Component {
    * @param numRows - number of rows in table
    * @returns {String} number selected
    */
-  getCheckBoxHeader = (numRows) => {
+  getCheckBoxHeader = numRows => {
     const { selection } = this.state;
     if (selection.length === 0) {
       return "All";
     }
 
     return `${selection.length} of ${numRows}`;
-
   };
-
-  /**
-   *
-   * Returns dropdown menu children prop with correct action names.
-   */
-  getSecondaryActions = (menuOptions) => {
-    const { classes } = this.props;
-    const listItems = _.map(menuOptions, (option, index) => (
-      <MenuItem key={index} className={classes.menuItem}>
-        {option.label}
-      </MenuItem>
-    ));
-    return listItems;
-  }
 
   /**
    *
@@ -170,13 +157,24 @@ class Table extends React.Component {
    */
   getSortedComponent = id => {
     const { sorted } = this.state;
+    const { columns, sortable } = this.props;
 
     const sortInfo = sorted.filter(item => item.id === id);
 
     if (sortInfo.length) {
-      if (sortInfo[0].desc === true) return <SortDesc />;
-      if (sortInfo[0].desc === false) return <SortAsc />;
+      return sortInfo[0].desc === true ? <SortDesc /> : <SortAsc />;
     }
+
+    const columnDef = columns.filter(
+      item => item.id === id || item.accessor === id
+    );
+    if (
+      (columnDef.length && (_.isNil(columnDef[0].sortable) && sortable)) ||
+      columnDef[0].sortable
+    ) {
+      return <Sort />;
+    }
+
     return false;
   };
 
@@ -281,13 +279,13 @@ class Table extends React.Component {
     const { sorted } = this.state;
     let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
-    if(column.id === "secondaryActions") {
-      isSortable = null
+    if (column.id === "secondaryActions") {
+      isSortable = null;
     }
 
     setColumnBorder(column, !!idForCheckbox, !!secondaryActions);
 
-    appendClassnames(column, sorted, classes);
+    appendClassnames(column, sorted, classes, sortable);
 
     if (column.id !== "secondaryActions") {
       return {
@@ -298,7 +296,21 @@ class Table extends React.Component {
     return {
       className: classNames(classes.theadTh, "secondaryAction")
     };
+  };
 
+  /**
+   * Override of the tbody. This method is used to add properties to the entire table body.
+   *
+   * @returns {{className: (tbody, tbodyEmpty)}}
+   */
+  getTBodyProps = () => {
+    const { classes, data } = this.props;
+
+    return {
+      className: classNames(classes.tbody, {
+        [classes.tBodyEmpty]: data.length === 0
+      })
+    };
   };
 
   /**
@@ -323,8 +335,13 @@ class Table extends React.Component {
       };
     }
 
-    if (idForCheckbox && rowInfo && rowInfo.row && selection.includes(rowInfo.original.id)) {
-      return {className: classNames(classes.tr, "selected")};
+    if (
+      idForCheckbox &&
+      rowInfo &&
+      rowInfo.row &&
+      selection.includes(rowInfo.original.id)
+    ) {
+      return { className: classNames(classes.tr, "selected") };
     }
 
     return { className: classes.tr };
@@ -404,25 +421,36 @@ class Table extends React.Component {
       getTrProps,
       labels,
       secondaryActions,
+      sortable,
       ...other
     } = this.props;
 
-    const { expanded, selectAll, Table: AugmentedTable, selection } = this.state;
+    const {
+      expanded,
+      selectAll,
+      Table: AugmentedTable,
+      selection
+    } = this.state;
 
     const tableStyles = tableStyleOverrides(classes);
 
     // Add dropdown menu column if secondaryActions exists in props
-    if (!!secondaryActions && !columns.some(col => col.accessor === "secondaryActions")) {
+    if (
+      !!secondaryActions &&
+      !columns.some(col => col.accessor === "secondaryActions")
+    ) {
       columns.push({
         headerText: "",
         accessor: "secondaryActions",
         cellType: "alpha-numeric",
         Cell: () => (
-          <DropDownMenu icon={<MoreVert />} position="bottom-end">
-            {this.getSecondaryActions(secondaryActions)}
-          </DropDownMenu>
+          <DropDownMenu
+            disablePortal={false}
+            icon={<MoreVert />}
+            dataList={secondaryActions}
+          />
         )
-      })
+      });
     }
 
     // Creates the thead with the text and the sorted icon.
@@ -430,7 +458,7 @@ class Table extends React.Component {
       ...ReactTableDefaults.column,
       Header: props => {
         const Sorted = this.getSortedComponent(props.column.id);
-        const SortedIcon = !Sorted ? <SortAsc /> : Sorted;
+        const SortedIcon = !Sorted ? <Sort /> : Sorted;
 
         const sortedIconClasses = Sorted
           ? classes.sortedIconShown
@@ -442,13 +470,23 @@ class Table extends React.Component {
               {SortedIcon}
             </div>
             {/* Setter of the styles for the header */}
-            <div className={classes.headerTextContainer}>
+            <div
+              className={classNames(classes.headerTextContainer, {
+                [classes.headerSortable]:
+                  (_.isNil(props.column.sortable) && sortable) ||
+                  props.column.sortable,
+                [classes.headerNotSortable]: !(
+                  (_.isNil(props.column.sortable) && sortable) ||
+                  props.column.sortable
+                )
+              })}
+            >
               <HvTypography
                 variant="highlightText"
                 className={classNames(classes.headerProps, {
                   [classes.headerAlphaNumeric]:
-                  props.column.cellType === "alpha-numeric" ||
-                  props.column.cellType === "link",
+                    props.column.cellType === "alpha-numeric" ||
+                    props.column.cellType === "link",
                   [classes.headerNumeric]: props.column.cellType === "numeric"
                 })}
               >
@@ -491,15 +529,12 @@ class Table extends React.Component {
     };
 
     const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
-    const lockIconClasses = selection.length > 0
-      ? classes.lockIconSelected
-      : classes.lockIcon;
-    const trashIconClasses = selection.length > 0
-      ? classes.trashIconSelected
-      : classes.trashIcon;
-    const checkboxRowClasses = selection.length > 0
-      ? classNames(classes.checkBoxRow, classes.checkBoxRowSelected)
-      : classes.checkBoxRow
+    const checkboxRowClasses =
+      selection.length > 0
+        ? classNames(classes.checkBoxRow, classes.checkBoxRowSelected)
+        : classes.checkBoxRow;
+
+    const sanitizedData = this.sanitizedData();
 
     return (
       <div id={id} className={classes.tableContainer}>
@@ -519,21 +554,21 @@ class Table extends React.Component {
             )}
           </div>
         )}
-        {!!idForCheckbox &&
-        <div className={classNames(checkboxRowClasses)}>
-          <div className={classes.checkBoxText}>
-            <HvCheckBox
-              onChange={() => this.toggleAll()}
-              checked={selectAll}
-              indeterminate={this.isIndeterminateStatus()}
-            />
-            {this.getCheckBoxHeader(data.length)}
+        {!!idForCheckbox && (
+          <div className={classNames(checkboxRowClasses)}>
+            <div className={classes.checkBoxText}>
+              <HvCheckBox
+                onChange={() => this.toggleAll()}
+                checked={selectAll}
+                disabled={data.length === 0}
+                indeterminate={this.isIndeterminateStatus()}
+              />
+              <HvTypography variant="highlightText">
+                {this.getCheckBoxHeader(data.length)}
+              </HvTypography>
+            </div>
           </div>
-          <div className={classes.checkBoxText}>
-            <div className={classNames(trashIconClasses)} />
-            <div className={classNames(lockIconClasses)} />
-          </div>
-        </div>}
+        )}
         <AugmentedTable
           {...other}
           {...tableStyles}
@@ -545,13 +580,15 @@ class Table extends React.Component {
           ref={r => (this.checkboxTable = r)}
           getTheadThProps={this.getTheadThProps}
           getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
-          data={this.sanitizedData()}
+          getTbodyProps={this.getTBodyProps}
+          data={sanitizedData}
           columns={newColumn}
           className="-highlight"
           SubComponent={newSubComponent}
           expanded={expanded}
           keyField={idForCheckbox}
           isSelected={this.isSelected}
+          NoDataComponent={NoData}
         />
       </div>
     );
@@ -681,10 +718,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       headerText: PropTypes.string,
-      accessor: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.func
-      ]),
+      accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
       format: PropTypes.func,
       cellType: PropTypes.string,
       style: PropTypes.instanceOf(Object),

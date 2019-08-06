@@ -51947,6 +51947,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                     "xxsTitle": "Typography-xxsTitle-227",
                                   }
                                 }
+                                component={null}
                                 paragraph={false}
                                 theme={
                                   Object {
@@ -54845,6 +54846,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                         "xxsTitle": "Typography-xxsTitle-227",
                                       }
                                     }
+                                    component={null}
                                     paragraph={false}
                                     theme={
                                       Object {
@@ -56926,6 +56928,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                     "xxsTitle": "Typography-xxsTitle-227",
                                   }
                                 }
+                                component={null}
                                 paragraph={false}
                                 theme={
                                   Object {
@@ -59819,6 +59822,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                         "xxsTitle": "Typography-xxsTitle-227",
                                       }
                                     }
+                                    component={null}
                                     paragraph={false}
                                     theme={
                                       Object {
@@ -61900,6 +61904,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                     "xxsTitle": "Typography-xxsTitle-227",
                                   }
                                 }
+                                component={null}
                                 paragraph={false}
                                 theme={
                                   Object {

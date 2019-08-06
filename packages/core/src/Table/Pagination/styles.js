@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import DownArrow from "../assets/ChevronDown.svg";
+import DropDownXS from "@hv/uikit-common-icons/dist/DawnTheme/XS-icons/DropDown.XS.svg";
 import ArrowFirst from "../assets/ArrowFirst.svg";
 import ArrowLeft from "../assets/ArrowLeft.svg";
 import ArrowRight from "../assets/ArrowRight.svg";
@@ -50,16 +50,19 @@ const styles = theme => ({
     "-webkit-appearance": "listbox",
     "-webkit-border-radius": "0px",
     padding: "2px 7px",
+    margin: `0px ${theme.hv.spacing.xs}px`,
     fontSize: "14px",
     fontWeight: "normal",
     outline: "none",
     height: "32px",
     width: `${theme.hv.spacing.lg}px`,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    background: `url(${DownArrow}) no-repeat right ${theme.hv.palette.atmosphere.atmo1}`,
+    background: `url(${DropDownXS}) no-repeat right ${
+      theme.hv.palette.atmosphere.atmo1
+    }`,
     color: theme.hv.palette.accent.acce1,
     backgroundSize: "26px 26px",
-    "&::-ms-expand":{
+    "&::-ms-expand": {
       display: "none"
     }
   },
@@ -120,6 +123,24 @@ const styles = theme => ({
   },
   arrowLastDisabled: {
     background: `url(${ArrowLastDisabled})`
+  },
+  pageSizeInput: {
+    ...theme.hv.typography.labelText,
+    textAlign: "right"
+  },
+  pageSizeInputContainer: {
+    width: 70,
+    minWidth: 70,
+    maxWidth: 100,
+    padding: `0 ${theme.hv.spacing.xs}px`
+  },
+  pageSizeInputIconClear: {
+    display: "none"
+  },
+  pageSizeInputList: {
+    width: 90,
+    minWidth: 90,
+    maxWidth: 90
   }
 });
 

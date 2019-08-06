@@ -32,7 +32,7 @@ import List from "../List";
  * @returns {*}
  * @constructor
  */
-const DropDownMenu = ({ icon, classes, placement, dataList, id }) => {
+const DropDownMenu = ({ icon, classes, placement, dataList, id, disablePortal }) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -71,10 +71,11 @@ const DropDownMenu = ({ icon, classes, placement, dataList, id }) => {
           {icon}
         </div>
         <Popper
-          disablePortal
+          disablePortal={disablePortal}
           open={open}
           anchorEl={anchorEl}
           placement={bottom}
+          popperOptions={{}}
         >
           <div className={classes.menuList}>
             <List values={dataList} selectable={false} />
@@ -130,12 +131,17 @@ DropDownMenu.propTypes = {
   /**
    * Placement of the dropdown.
    */
-  placement: PropTypes.oneOf(["left", "right"])
+  placement: PropTypes.oneOf(["left", "right"]),
+  /**
+   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: PropTypes.bool
 };
 
 DropDownMenu.defaultProps = {
   id: undefined,
-  placement: "left"
+  placement: "left",
+  disablePortal: true
 };
 
 export default DropDownMenu;

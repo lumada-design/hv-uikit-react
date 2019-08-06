@@ -251,7 +251,7 @@ class Wrapper extends React.Component {
         columns={this.getColumns()}
         defaultPageSize={10}
         pageSize={pageSize}
-        resizable
+        resizable={false}
         defaultSorted={sorted}
         labels={labels}
         onPageSizeChange={this.onPageSizeChange}

@@ -215,7 +215,8 @@ class Wrapper extends React.Component {
       accessor: "severity",
       format: value => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
+      sortable: false
     },
     {
       headerText: "Priority",
@@ -252,7 +253,7 @@ class Wrapper extends React.Component {
         columns={this.getColumns()}
         defaultPageSize={10}
         pageSize={pageSize}
-        resizable
+        resizable={false}
         defaultSorted={sorted}
         labels={labels}
         onPageSizeChange={this.onPageSizeChange}

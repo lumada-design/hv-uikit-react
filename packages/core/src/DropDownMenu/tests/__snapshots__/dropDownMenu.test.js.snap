@@ -6699,6 +6699,7 @@ body {
             },
           ]
         }
+        disablePortal={true}
         icon={<div />}
         placement="left"
         theme={
@@ -7648,6 +7649,7 @@ body {
               disablePortal={true}
               open={false}
               placement="bottom-end"
+              popperOptions={Object {}}
               transition={false}
             />
           </div>
@@ -14363,6 +14365,7 @@ body {
             },
           ]
         }
+        disablePortal={true}
         icon={<div />}
         placement="left"
         theme={
@@ -15312,6 +15315,7 @@ body {
               disablePortal={true}
               open={false}
               placement="bottom-end"
+              popperOptions={Object {}}
               transition={false}
             />
           </div>
@@ -27236,6 +27240,7 @@ body {
             },
           ]
         }
+        disablePortal={true}
         icon={<div />}
         placement="left"
         theme={
@@ -28193,6 +28198,7 @@ body {
               disablePortal={true}
               open={true}
               placement="bottom-end"
+              popperOptions={Object {}}
               transition={false}
             >
               <Portal
@@ -29248,6 +29254,7 @@ body {
                                       "xxsTitle": "Typography-xxsTitle-30",
                                     }
                                   }
+                                  component={null}
                                   paragraph={false}
                                   theme={
                                     Object {
@@ -31154,6 +31161,7 @@ body {
                                       "xxsTitle": "Typography-xxsTitle-30",
                                     }
                                   }
+                                  component={null}
                                   paragraph={false}
                                   theme={
                                     Object {
@@ -33060,6 +33068,7 @@ body {
                                       "xxsTitle": "Typography-xxsTitle-30",
                                     }
                                   }
+                                  component={null}
                                   paragraph={false}
                                   theme={
                                     Object {

@@ -27621,6 +27621,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-1550",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {
