@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.62](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.61...@hv/uikit-react-core@1.1.3-alpha.62) (2019-08-06)
+
+
+### Features
+
+* **DropdownMenu:** expose disablePortal property. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([88b8f88](https://github.com/pentaho/hv-uikit-react/commit/88b8f88))
+* **table:** update table styles. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([09abd8c](https://github.com/pentaho/hv-uikit-react/commit/09abd8c))
+* **Typography:** add ability to customize the html element. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([665bd72](https://github.com/pentaho/hv-uikit-react/commit/665bd72))
+
+
+
+
+
 ## [1.1.3-alpha.61](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.60...@hv/uikit-react-core@1.1.3-alpha.61) (2019-08-06)
 
 **Note:** Version bump only for package @hv/uikit-react-core
