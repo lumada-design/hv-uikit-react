@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import NavIcon from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
+import HvLink from "../Link";
 import HvTypography from "../Typography";
 import HvCheckBox from "../Selectors/CheckBox";
 import HvRadioButton from "../Selectors/RadioButton";
@@ -36,26 +37,38 @@ const DEFAULT_LABELS = {
   selectionConjunction: "of"
 };
 
-class List extends React.Component {
+const isItemSelected = (item, newItem) => {
+  const selectionKey = item && item.id ? "id" : "label";
+  const selectionElement = item && item[selectionKey];
+  return newItem[selectionKey] === selectionElement;
+};
+
+class HvList extends React.Component {
   state = DEFAULT_STATE;
 
   componentDidMount() {
     const { values } = this.props;
     const parsedList = this.parseList(values);
 
-    this.setState({ list: parsedList }, () => this.setSelection(false));
+    this.setSelection(parsedList, false);
   }
 
   /**
-   * Sets the selection state according to the list and props state and trigger the onChange callback.
+   * Sets the selection state according to the list and props and trigger the onChange callback.
    *
+   * @param {Array} list - The list to set the selection according.
    * @param {Boolean} trigger - If true it will trigger the onChange callback.
    *
    * @memberof List
    */
-  setSelection(trigger) {
-    const { list } = this.state;
-    const { labels, multiSelect, useSelector, onChange } = this.props;
+  setSelection(list, trigger) {
+    const {
+      labels,
+      multiSelect,
+      useSelector,
+      onChange,
+      selectable
+    } = this.props;
     const { selectAll, selectionConjunction } = labels;
 
     const hasLeftIcon = !!list.filter(elem => elem.leftIcon).length;
@@ -75,7 +88,8 @@ class List extends React.Component {
       isFocusDisabled: true
     });
 
-    if (trigger) onChange(multiSelect ? selection : selection[0]);
+    // only triggers the onChange callback if the list is selectable
+    if (trigger && selectable) onChange(multiSelect ? selection : selection[0]);
   }
 
   /**
@@ -91,21 +105,20 @@ class List extends React.Component {
     let isAnySelected = false;
 
     const newList = list.map(elem => {
-      const newElem = { ...elem };
-      const selectionKey = elem.id ? "id" : "label";
-      const selectedElement = item && item[selectionKey];
+      const newItem = { ...elem };
+      const isSelected = isItemSelected(item, newItem);
 
       // reset elem selection
-      if (!multiSelect || !selectable || !newElem.selected) {
-        newElem.selected = false;
+      if (!multiSelect || !selectable || !newItem.selected) {
+        newItem.selected = false;
       }
 
-      if (selectable && elem[selectionKey] === selectedElement) {
+      if (isSelected) {
         isAnySelected = true;
-        newElem.selected = multiSelect ? !elem.selected : true;
+        newItem.selected = multiSelect ? !elem.selected : true;
       }
 
-      return newElem;
+      return newItem;
     });
 
     // select first item when single select
@@ -128,6 +141,7 @@ class List extends React.Component {
       window &&
       window.event &&
       window.event.type !== "click" &&
+      window.event.type !== "mousedown" &&
       window.event.code !== "Enter"
     ) {
       this.setState({ isFocusDisabled: false });
@@ -135,9 +149,14 @@ class List extends React.Component {
     }
 
     const { list } = this.state;
+    const { onClick } = this.props;
     const parsedList = this.parseList(list, item);
 
-    this.setState({ list: parsedList }, () => this.setSelection(true));
+    onClick(item);
+
+    // need to defer the state update because list was being updated before triggering the link (when avaialable).
+    const delay = item.path ? 150 : 0;
+    setTimeout(() => this.setSelection(parsedList, true), delay);
   }
 
   /**
@@ -155,7 +174,32 @@ class List extends React.Component {
       return newElem;
     });
 
-    this.setState({ list: newList }, () => this.setSelection(true));
+    this.setSelection(newList, true);
+  }
+
+  /**
+   * It will manage the selected list item state on mouse up.
+   *
+   * @memberof List
+   */
+  handleMouseUp(item) {
+    const { list } = this.state;
+    const { selectable } = this.props;
+
+    const newList = list.map(elem => {
+      const newItem = { ...elem };
+
+      if (!selectable) {
+        newItem.selected = false;
+      }
+
+      return newItem;
+    });
+
+    // need to defer the state update because list was being updated before triggering the link (when avaialable).
+    const delay = item.path ? 150 : 0;
+    setTimeout(() => this.setSelection(newList, true), delay);
+    
   }
 
   renderMultiSelect(item) {
@@ -176,21 +220,21 @@ class List extends React.Component {
     );
   }
 
-  renderSingleSelect(elem) {
+  renderSingleSelect(item) {
     const { classes, useSelector } = this.props;
 
     return useSelector ? (
       <HvRadioButton
-        label={elem.label}
-        checked={elem.selected}
-        onChange={() => this.handleSelection(elem)}
+        label={item.label}
+        checked={item.selected}
+        onChange={() => this.handleSelection(item)}
         classes={{
           container: classes.selectorContainer,
           labelTypography: classes.truncate
         }}
       />
     ) : (
-      this.renderItemText(elem)
+      this.renderItemText(item)
     );
   }
 
@@ -210,79 +254,91 @@ class List extends React.Component {
     );
   }
 
-  renderItem(key, elem) {
+  renderItem(key, item) {
     const { isFocusDisabled } = this.state;
     const { classes, multiSelect, useSelector, condensed } = this.props;
 
     return (
       <li
         key={key}
-        onClick={() => !useSelector && this.handleSelection(elem)}
-        onKeyDown={() => !useSelector && this.handleSelection(elem)}
+        onKeyDown={() => !useSelector && this.handleSelection(item)}
+        onMouseDown={() => !useSelector && this.handleSelection(item)}
+        onMouseUp={() => !useSelector && this.handleMouseUp(item)}
         role="option"
-        aria-selected={elem.selected}
-        tabIndex={useSelector ? null : 0}
+        aria-selected={item.selected}
+        tabIndex={item.path || useSelector ? null : 0}
         className={classNames([
           classes.listItem,
           {
-            [classes.selected]: elem.selected && !useSelector,
+            [classes.selected]: item.selected && !useSelector,
             [classes.focusDisabled]: isFocusDisabled,
             [classes.condensed]: condensed
           }
         ])}
       >
-        {!useSelector && this.rendereLeftIcon(elem)}
+        {!useSelector && this.rendereLeftIcon(item)}
 
         {multiSelect
-          ? this.renderMultiSelect(elem)
-          : this.renderSingleSelect(elem)}
+          ? this.renderMultiSelect(item)
+          : this.renderSingleSelect(item)}
 
-        {!useSelector && this.renderNavIcon(elem)}
+        {!useSelector && this.renderNavIcon(item)}
       </li>
     );
   }
 
-  renderItemText(elem) {
+  renderItemText(item) {
     const { hasLeftIcon } = this.state;
-    const { classes } = this.props;
+    const { classes, useRouter } = this.props;
 
-    return (
+    const ItemText = () => (
       <HvTypography
         variant="normalText"
         className={classNames([
           classes.typography,
           classes.truncate,
           {
-            [classes.selected]: elem.selected,
-            [classes.iconLeftPadding]: elem.leftIcon,
-            [classes.noIconLeftPadding]: !elem.leftIcon && hasLeftIcon
+            [classes.selected]: item.selected,
+            [classes.iconLeftPadding]: item.leftIcon,
+            [classes.noIconLeftPadding]: !item.leftIcon && hasLeftIcon
           }
         ])}
-        onChange={() => this.handleSelection(elem)}
       >
-        {elem.label}
+        {item.label}
       </HvTypography>
+    );
+
+    return item.path ? (
+      <HvLink
+        route={item.path}
+        params={item.params || {}}
+        useRouter={useRouter}
+      >
+        <ItemText />
+      </HvLink>
+    ) : (
+      <ItemText />
     );
   }
 
-  rendereLeftIcon(elem) {
+  rendereLeftIcon(item) {
     const { theme } = this.props;
 
-    const iconColor = elem.selected
+    const iconColor = item.selected
       ? theme.hv.palette.atmosphere.atmo1
       : theme.hv.palette.accent.acce1;
 
-    return elem.leftIcon ? elem.leftIcon({ color: ["none", iconColor] }) : null;
+    return item.leftIcon ? item.leftIcon({ color: ["none", iconColor] }) : null;
   }
 
-  renderNavIcon(elem) {
+  renderNavIcon(item) {
     const { theme } = this.props;
 
-    const iconColor = elem.selected
+    const iconColor = item.selected
       ? theme.hv.palette.atmosphere.atmo1
       : theme.hv.palette.accent.acce1;
 
-    return elem.showNavIcon ? <NavIcon color={["none", iconColor]} /> : null;
+    return item.showNavIcon ? <NavIcon color={["none", iconColor]} /> : null;
   }
 
   render() {
@@ -302,7 +358,7 @@ class List extends React.Component {
   }
 }
 
-List.propTypes = {
+HvList.propTypes = {
   /**
    * The theme passed by the provider.
    */
@@ -371,13 +427,17 @@ List.propTypes = {
    * - selected: The selection state of the element.
    * - leftIcon: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
+   * - path: The path to navigate to.
+   * - params: The params to pass to the router.
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       leftIcon: PropTypes.func,
-      showNavIcon: PropTypes.bool
+      showNavIcon: PropTypes.bool,
+      path: PropTypes.string,
+      params: PropTypes.instanceOf(Object)
     })
   ).isRequired,
   /**
@@ -404,9 +464,17 @@ List.propTypes = {
    */
   useSelector: PropTypes.bool,
   /**
-   * Call back fired when list item is selected.
+   * Indicates if the router should be used.
+   */
+  useRouter: PropTypes.bool,
+  /**
+   * Call back fired when list item is selected. Returns selection state.
    */
   onChange: PropTypes.func,
+  /**
+   * Call back fired when list item is selected. Returns selected item.
+   */
+  onClick: PropTypes.func,
   /**
    * If ´true´ the list items will show the selection state.
    */
@@ -422,16 +490,18 @@ List.propTypes = {
   condensed: PropTypes.bool
 };
 
-List.defaultProps = {
+HvList.defaultProps = {
   id: "",
   multiSelect: false,
   showSelectAll: false,
   labels: DEFAULT_LABELS,
   useSelector: false,
+  useRouter: false,
   onChange() {},
+  onClick() {},
   selectable: true,
   selectDefault: true,
   condensed: false
 };
 
-export default List;
+export default HvList;

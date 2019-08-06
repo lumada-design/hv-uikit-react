@@ -82,11 +82,21 @@ const mockDataMultiSelection = [
 describe("<List />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
-  global.window.event = { type: "click" };
+  global.window.event = { type: "mousedown" };
 
   let wrapper;
   let listComponent;
   let instance;
+
+  beforeEach(async () => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(async () => {
+    jest.useRealTimers();
+  });
+
+
 
   describe("Single selection", () => {
     const onChangeMock = jest.fn();
@@ -125,6 +135,7 @@ describe("<List />", () => {
 
       instance.handleToggle = jest.fn();
       instance.handleSelection({ label: "Value 1" });
+      jest.runAllTimers();
 
       expect(onChangeMock).toBeCalledWith({ label: "Value 1", selected: true });
       expect(instance.state.selectionLabel).toBe("1 of 3");
@@ -135,11 +146,38 @@ describe("<List />", () => {
       instance = listComponent.instance();
 
       instance.handleSelection({ label: "Value 2" });
+      jest.runAllTimers();
 
       expect(instance.state.list).toEqual([
         { selected: false, label: "Value 1" },
         { selected: true, label: "Value 2" },
         { selected: false, label: "Value 3" }
+      ]);
+    });
+
+    it("handleMouseUp should be triggered when mouse up on list item", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+      instance.handleMouseUp = jest.fn();
+
+      listComponent
+        .find("li")
+        .at(0)
+        .simulate("mouseUp", {});
+
+      expect(instance.handleMouseUp).toBeCalled();
+    });
+
+    it("handleMouseUp updates state accordingly", () => {
+      listComponent = wrapper.find(List);
+      instance = listComponent.instance();
+
+      instance.handleMouseUp({ label: "Value 1" });
+
+      expect(instance.state.list).toEqual([
+        { label: "Value 1", selected: true },
+        { label: "Value 2", selected: false },
+        { label: "Value 3", selected: false }
       ]);
     });
   });
@@ -148,9 +186,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
-            values={mockDataSingleSelectionWithIds}
-          />
+          <ListWithStyles values={mockDataSingleSelectionWithIds} />
         </HvProvider>
       );
     });
@@ -160,7 +196,7 @@ describe("<List />", () => {
       instance = listComponent.instance();
 
       instance.handleSelection({ id: "id-1" });
-
+      
       expect(instance.state.list).toEqual([
         { selected: true, id: "id-1", label: "Value 1" },
         { selected: false, id: "id-2", label: "Value 2" },
@@ -191,9 +227,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
-            values={mockDataSingleSelectionWithIcons}
-          />
+          <ListWithStyles values={mockDataSingleSelectionWithIcons} />
         </HvProvider>
       );
     });
@@ -241,6 +275,7 @@ describe("<List />", () => {
 
       instance.handleToggle = jest.fn();
       instance.handleSelection({ label: "Value 2" });
+      jest.runAllTimers();
 
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
@@ -255,6 +290,7 @@ describe("<List />", () => {
       instance = listComponent.instance();
 
       instance.handleSelection({ label: "Value 1" });
+      jest.runAllTimers();
 
       expect(instance.state.list).toEqual([
         { selected: false, label: "Value 1" },
@@ -283,7 +319,7 @@ describe("<List />", () => {
       listComponent
         .find("li")
         .at(0)
-        .simulate("click", {});
+        .simulate("mousedown", {});
 
       expect(instance.handleSelection).toBeCalled();
     });
