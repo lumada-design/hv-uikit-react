@@ -62,11 +62,12 @@ const Typography = ({
   classes,
   paragraph,
   className,
+  component,
   id,
   children,
   ...other
 }) => {
-  const Component =
+  const Component = component ||
     (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
   return (
@@ -94,6 +95,12 @@ Typography.propTypes = {
    * ClassName passed as prop.
    */
   className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * By default, it maps the variant to a good default headline component.
+   */
+  component: PropTypes.elementType,
   /**
    * Id to be applied to the root node.
    */
@@ -140,6 +147,7 @@ Typography.defaultProps = {
   variant: "normalText",
   className: undefined,
   id: undefined,
+  component: null,
   paragraph: false,
   children: ""
 };

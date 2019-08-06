@@ -17248,6 +17248,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-457 .MuiInputBase-input-466
                   "xxsTitle": "Typography-xxsTitle-482",
                 }
               }
+              component={null}
               paragraph={false}
               theme={
                 Object {
@@ -36387,6 +36388,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-599 .MuiInputBase-input-608
                   "xxsTitle": "Typography-xxsTitle-624",
                 }
               }
+              component={null}
               paragraph={false}
               theme={
                 Object {
@@ -55495,6 +55497,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-102 .MuiInputBase-input-111
                   "xxsTitle": "Typography-xxsTitle-127",
                 }
               }
+              component={null}
               paragraph={false}
               theme={
                 Object {

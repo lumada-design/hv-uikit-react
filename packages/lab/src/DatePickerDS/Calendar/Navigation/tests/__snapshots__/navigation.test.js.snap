@@ -10574,6 +10574,7 @@ body {
                     "xxsTitle": "Typography-xxsTitle-15",
                   }
                 }
+                component={null}
                 paragraph={false}
                 theme={
                   Object {
