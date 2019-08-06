@@ -77,7 +77,7 @@ const DropDownMenu = ({ icon, classes, placement, dataList, id }) => {
           placement={bottom}
         >
           <div className={classes.menuList}>
-            <List values={dataList} selectable={false} condensed />
+            <List values={dataList} selectable={false} />
           </div>
         </Popper>
       </div>

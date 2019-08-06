@@ -28211,7 +28211,6 @@ body {
                     className="DropDownMenu-menuList-8"
                   >
                     <WithStyles(HvList)
-                      condensed={true}
                       selectable={false}
                       values={
                         Array [
@@ -28244,7 +28243,7 @@ body {
                             "typography": "HvList-typography-14",
                           }
                         }
-                        condensed={true}
+                        condensed={false}
                         id=""
                         labels={
                           Object {
@@ -29205,7 +29204,7 @@ body {
                         >
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvList-focusDisabled-13"
                             key="0"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -31111,7 +31110,7 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvList-focusDisabled-13"
                             key="1"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -33017,7 +33016,7 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvList-focusDisabled-13"
                             key="2"
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
