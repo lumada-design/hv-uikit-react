@@ -199,7 +199,6 @@ class HvList extends React.Component {
     // need to defer the state update because list was being updated before triggering the link (when avaialable).
     const delay = item.path ? 150 : 0;
     setTimeout(() => this.setSelection(newList, true), delay);
-    
   }
 
   renderMultiSelect(item) {
@@ -293,7 +292,7 @@ class HvList extends React.Component {
 
     const ItemText = () => (
       <HvTypography
-        variant="normalText"
+        variant={item.selected ? "selectedText" : "normalText"}
         className={classNames([
           classes.typography,
           classes.truncate,
