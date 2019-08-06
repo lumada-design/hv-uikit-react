@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999982,
+            "index": -99999999983,
           },
           "themingEnabled": true,
         } => Map {
@@ -4933,7 +4933,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999982,
+                "index": -99999999983,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5082,7 +5082,7 @@ body {
 }
 .BreadCrumb-separator-5 {
   margin: 0 -4px;
-  display: inherit;
+  display: contents;
 }
 
                 </style>,
@@ -5128,7 +5128,7 @@ body {
                     "display": "inherit",
                   },
                   Object {
-                    "display": "inherit",
+                    "display": "contents",
                     "margin": "0 -4px",
                   },
                 ],
@@ -5157,7 +5157,7 @@ body {
                     "z-index": 0,
                   },
                   ".BreadCrumb-separator-5": Object {
-                    "display": "inherit",
+                    "display": "contents",
                     "margin": "0 -4px",
                   },
                   "centerContainer": Object {
@@ -5180,7 +5180,7 @@ body {
                     "z-index": 0,
                   },
                   "separator": Object {
-                    "display": "inherit",
+                    "display": "contents",
                     "margin": "0 -4px",
                   },
                 },
@@ -5556,7 +5556,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999982,
+                  "index": -99999999983,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5703,7 +5703,7 @@ body {
                     "zIndex": 0,
                   },
                   "separator": Object {
-                    "display": "inherit",
+                    "display": "contents",
                     "margin": "0 -4px",
                   },
                 },

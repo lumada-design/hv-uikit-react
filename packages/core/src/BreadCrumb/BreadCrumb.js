@@ -17,11 +17,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Separator from "@hv/uikit-react-icons/dist/DropRight.XS";
+import Separator from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
+import MoreOptions from "@hv/uikit-react-icons/dist/DawnTheme/MoreOptionsHorizontal.S";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
-import SubMenu from "./SubMenu";
+import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";
 
 /**
@@ -41,7 +42,7 @@ const removeExtension = label =>
  * @constructor
  */
 const LastPathElement = ({ label }) => (
-  <HvTypography variant="infoText">
+  <HvTypography variant="sText">
     {startCase(removeExtension(label))}
   </HvTypography>
 );
@@ -62,7 +63,6 @@ LastPathElement.propTypes = {
 const Page = ({ useRouter, elem, classes }) => (
   <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
     <div className={classes.centerContainer}>
-      {/* {elem.icon && <div className={classes.iconContainer}>{elem.icon}</div>} */}
       <HvTypography variant="sLink" className={classes.link}>
         {startCase(elem.label)}
       </HvTypography>
@@ -113,10 +113,11 @@ PathElement.propTypes = {
 const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
+
   listRoute.splice(
     1,
     nbrElemToSubMenu,
-    <SubMenu subMenuList={subMenuList} useRouter={useRouter} />
+    <HvDropDownMenu icon={<MoreOptions />} dataList={subMenuList} />
   );
 
   return listRoute;
@@ -166,7 +167,7 @@ const BreadCrumb = ({
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu( useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu(useRouter, listPath, maxVisibleElem)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
@@ -201,7 +202,7 @@ BreadCrumb.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
