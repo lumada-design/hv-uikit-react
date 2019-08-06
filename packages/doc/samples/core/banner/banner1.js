@@ -77,7 +77,6 @@ export default (
         label="default"
         variant="default"
         anchorOrigin="top"
-        showIcon
       />
     </div>
     <p />
