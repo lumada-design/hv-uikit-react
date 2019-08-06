@@ -18,7 +18,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import IconButton from "@material-ui/core/IconButton";
 import Popper from "./Popper";
 import List from "../List";
 
@@ -59,15 +58,18 @@ const DropDownMenu = ({ icon, classes, placement, dataList, id }) => {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <div {...id && { id }}>
-        <IconButton
+      <div {...id && { id }} className={classes.root}>
+        <div
+          role="button"
+          onKeyDown={handleClick}
+          tabIndex={0}
           className={classNames(classes.icon, {
             [classes.iconSelected]: open
           })}
           onClick={handleClick}
         >
           {icon}
-        </IconButton>
+        </div>
         <Popper
           disablePortal
           open={open}

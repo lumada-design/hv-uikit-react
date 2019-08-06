@@ -15,10 +15,12 @@
  */
 
 const styles = theme => ({
+  root: {
+    display: "contents"
+  },
   icon: {
     height: 33,
     width: 32,
-    border: `solid 1px transparent`,
     position: "relative",
     boxSizing: "content-box",
     color: theme.hv.palette.accent.acce1,
@@ -26,7 +28,10 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: "transparent"
     },
-    borderRadius: 0
+    borderRadius: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   },
   iconSelected: {
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
