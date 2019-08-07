@@ -3,9 +3,9 @@ RUN mkdir /hv-uikit-react
 COPY ./ /hv-uikit-react
 WORKDIR /hv-uikit-react
 
-RUN npm ci --verbose
-RUN npm run bootstrap
+RUN npm ci --silent
+RUN npm run bootstrap --ci --unsafe-perm
 
-CMD npm run automation
+CMD ["npm", "run", "automation"]
 
 EXPOSE 9002
