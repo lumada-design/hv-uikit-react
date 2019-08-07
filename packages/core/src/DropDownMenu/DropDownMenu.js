@@ -32,7 +32,14 @@ import List from "../List";
  * @returns {*}
  * @constructor
  */
-const DropDownMenu = ({ icon, classes, placement, dataList, id, disablePortal }) => {
+const DropDownMenu = ({
+  icon,
+  classes,
+  placement,
+  dataList,
+  id,
+  disablePortal
+}) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -76,6 +83,7 @@ const DropDownMenu = ({ icon, classes, placement, dataList, id, disablePortal })
           anchorEl={anchorEl}
           placement={bottom}
           popperOptions={{}}
+          style={{ zIndex: 1 }}
         >
           <div className={classes.menuList}>
             <List values={dataList} selectable={false} condensed />

@@ -32,9 +32,11 @@ const menuOptions = [
 ];
 
 export default (
-  <DropDownMenu
-    icon={<MoreVert />}
-    dataList={menuOptions}
-    placement={"right"}
-  />
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <DropDownMenu
+      icon={<MoreVert />}
+      dataList={menuOptions}
+      placement={"right"}
+    />
+  </div>
 );

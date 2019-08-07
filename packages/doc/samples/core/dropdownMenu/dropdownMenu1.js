@@ -32,8 +32,7 @@ const menuOptions = [
 ];
 
 export default (
-  <DropDownMenu
-    icon={<MoreVert />}
-    dataList={menuOptions}
-  />
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <DropDownMenu icon={<MoreVert />} dataList={menuOptions} />
+  </div>
 );
