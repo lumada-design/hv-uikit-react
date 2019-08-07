@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.64](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.63...@hv/uikit-react-core@1.1.3-alpha.64) (2019-08-07)
+
+
+### Features
+
+* **badge:** promote to core. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([aea0046](https://github.com/pentaho/hv-uikit-react/commit/aea0046))
+
+
+
+
+
 ## [1.1.3-alpha.63](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.62...@hv/uikit-react-core@1.1.3-alpha.63) (2019-08-07)
 
 **Note:** Version bump only for package @hv/uikit-react-core
