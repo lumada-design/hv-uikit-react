@@ -101,13 +101,13 @@ const styles = theme => ({
           },
           "&.-sort-desc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo5,
-            borderRightColor: theme.hv.palette.atmosphere.atmo5
+            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
+            borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&.-sort-asc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo5,
-            borderRightColor: theme.hv.palette.atmosphere.atmo5
+            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
+            borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&.checkBox": {
             minWidth: "30px",
