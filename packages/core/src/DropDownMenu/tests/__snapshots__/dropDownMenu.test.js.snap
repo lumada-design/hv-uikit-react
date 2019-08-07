@@ -7650,6 +7650,11 @@ body {
               open={false}
               placement="bottom-end"
               popperOptions={Object {}}
+              style={
+                Object {
+                  "zIndex": 1,
+                }
+              }
               transition={false}
             />
           </div>
@@ -15316,6 +15321,11 @@ body {
               open={false}
               placement="bottom-end"
               popperOptions={Object {}}
+              style={
+                Object {
+                  "zIndex": 1,
+                }
+              }
               transition={false}
             />
           </div>
@@ -28199,6 +28209,11 @@ body {
               open={true}
               placement="bottom-end"
               popperOptions={Object {}}
+              style={
+                Object {
+                  "zIndex": 1,
+                }
+              }
               transition={false}
             >
               <Portal
@@ -28209,7 +28224,7 @@ body {
                   role="tooltip"
                   style={
                     Object {
-                      "position": "absolute",
+                      "zIndex": 1,
                     }
                   }
                 >
