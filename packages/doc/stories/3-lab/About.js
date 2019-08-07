@@ -16,10 +16,6 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import About from "../../samples/lab/about";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+storiesOf("Lab", module).add("About", () => <About />);

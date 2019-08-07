@@ -15,11 +15,14 @@
  */
 
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import CodeBlock from "./CodeBlock";
+import ReactMarkdown from "react-markdown";
+import input from "../../../../README.md";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+const Code = ({ value }) => <CodeBlock value={value} language="bash" />;
+
+const Introduction = () => (
+  <ReactMarkdown source={input} renderers={{ code: Code }} />
+);
+
+export default Introduction;

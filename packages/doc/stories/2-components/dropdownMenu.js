@@ -16,10 +16,21 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import DropDownMenu from "@hv/uikit-react-core/dist/DropDownMenu";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+storiesOf("Components", module).add("DropDownMenu", () => <DropDownMenu />, {
+  title: "Dropdown Menu",
+  description:
+    "A drop-down menu, drop menu, pull-down list, picklist) is a graphical control element, similar to a list box, that allows the user to choose one value from a list. ",
+  usage: "import DropDownMenu from '@hv/uikit-react-core/dist/DropDownMenu'",
+  examples: [
+    {
+      title: "1. Left positioning",
+      src: "components/dropdownMenu/dropdownMenu1"
+    },
+    {
+      title: "2. Right positioning",
+      src: "components/dropdownMenu/dropdownMenu2"
+    }
+  ]
+});

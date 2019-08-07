@@ -16,10 +16,11 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import HvCardMedia from "@hv/uikit-react-core/dist/Card/Media";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+storiesOf("Components/card", module).add("Media", () => <HvCardMedia />, {
+  title: "Media",
+  description:
+    "Component of the card, responsible for presenting media content.",
+  usage: "import {HvCardMedia} from '@hv/uikit-react-core/dist/Card'"
+});

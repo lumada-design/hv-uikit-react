@@ -1,6 +1,6 @@
 import React from "react";
 import HvListView from "@hv/uikit-react-lab/dist/ListView";
-import leaf from "../../core/card/resources/leaf.png";
+import leaf from "../../components/card/resources/leaf.png";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const data = {

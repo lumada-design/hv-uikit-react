@@ -13,25 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvSearchBox from "@hv/uikit-react-lab/dist/SearchBox";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
-storiesOf("Lab", module).add("Search Box", () => <HvSearchBox />, {
-  title: "Search Box",
-  description: "A search box component, still in development",
-  usage: "import HvSearchBox from '@hv/uikit-react-core/dist/SearchBox'",
+storiesOf("Components", module).add("Badge", () => <HvBadge />, {
+  title: "Badge",
+  description: "A badge component to inform the user of unread notifications",
+  usage: "import HvBadge from '@hv/uikit-react-core/dist/Badge'",
   examples: [
     {
       title: "1. Simple",
-      description: "Ignores case sensitive",
-      src: "lab/searchBox/searchBoxSimple.js"
+      description: "Basic badges show when there are unread notifications.",
+      src: "components/badge/badgeSimple.js"
     },
     {
-      title: "2. Reset button",
-      description: "Reset button to clean the content of the search box",
-      src: "lab/searchBox/searchBoxWithReset.js"
+      title: "2. With Icon",
+      description:
+        "Badges show when there are unread notifications with an icon.",
+      src: "components/badge/badgeWithIcon.js"
+    },
+    {
+      title: "3. With Text",
+      description:
+        "Badges show when there are unread notifications with text.",
+      src: "components/badge/badgeWithText.js"
     }
   ]
 });

@@ -16,18 +16,30 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvEmptyState from "@hv/uikit-react-lab/dist/EmptyState";
+import HvLogin from "@hv/uikit-react-core/dist/Login";
 
-storiesOf("Lab", module).add("Empty State", () => <HvEmptyState />, {
-  title: "Empty State",
+
+storiesOf("Components", module).add("Login", () => <HvLogin />, {
+  title: "Login",
   description:
-    "A splash screen component for information, still in development",
-  usage: "import HvEmptyState from '@hv/uikit-react-core/dist/EmptyState'",
+    "Login form with the capability for recovery of lost credentials.",
+  usage: "import { HvLogin } from '@hv/uikit-react-core/dist/Login'",
   examples: [
     {
-      title: "1. Simple",
-      description: "Basic empty state to provide information",
-      src: "lab/emptyState/emptyStateSimple.js"
+      title: "1. Successful requests",
+      src: "components/login/login1"
+    },
+    {
+      title: "2. unsuccessful requests",
+      src: "components/login/login2"
+    },
+    {
+      title: "3. without Forgot Your Credentials and Remember me",
+      src: "components/login/login3"
+    },
+    {
+      title: "4. Custom Labels",
+      src: "components/login/login4"
     }
   ]
 });

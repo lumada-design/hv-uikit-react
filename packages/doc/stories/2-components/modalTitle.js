@@ -16,10 +16,10 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import HvModalTitle from "@hv/uikit-react-core/dist/Modal/ModalTitle";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+storiesOf("Components/Modal", module).add("Title", () => <HvModalTitle />, {
+  title: "Modal Title",
+  usage: "import HvModalTitle from '@hv/uikit-react-core/dist/Modal/ModalTitle'",
+  description: "The container for the tile of the modal component"
+});

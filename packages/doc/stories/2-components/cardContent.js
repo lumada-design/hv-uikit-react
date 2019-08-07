@@ -16,10 +16,11 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Colors from "../../samples/foundation/colors";
+import HvCardContent from "@hv/uikit-react-core/dist/Card/Content";
 
-storiesOf("Foundation/Palettes", module)
-  .add("Main", () => <Colors />)
-  .add("Visualization", () => (
-    <Colors palettePath="viz" deprecatedPath="viz" />
-  ));
+storiesOf("Components/card", module).add("Content", () => <HvCardContent />, {
+  title: "Content",
+  description:
+    "Component of the card, responsible for presenting the content.",
+  usage: "import {HvCardContent} from '@hv/uikit-react-core/dist/Card'"
+});
