@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Typography from "@hv/uikit-react-core/dist/Typography";
+import Typography from "../Typography";
 
 const Badge = props => {
   const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
