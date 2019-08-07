@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.33](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@0.0.1-alpha.7...@hv/uikit-react-automation-storybook@1.1.3-alpha.33) (2019-08-07)
+
+
+### Features
+
+* **automation:** Create Button Smoke Test [#350](https://github.com/pentaho/hv-uikit-react/issues/350) ([#369](https://github.com/pentaho/hv-uikit-react/issues/369)) ([c3f5314](https://github.com/pentaho/hv-uikit-react/commit/c3f5314))
+
+
+
+
+
 ## [1.1.3-alpha.38](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation@1.1.3-alpha.37...@hv/uikit-react-automation@1.1.3-alpha.38) (2019-08-07)
 
 **Note:** Version bump only for package @hv/uikit-react-automation
