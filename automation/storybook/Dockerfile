@@ -3,7 +3,7 @@ RUN mkdir /hv-uikit-react
 COPY ./ /hv-uikit-react
 WORKDIR /hv-uikit-react
 
-RUN npm ci --silent
+RUN npm ci --verbose
 RUN npm run bootstrap
 
 CMD npm run automation
