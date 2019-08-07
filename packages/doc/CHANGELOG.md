@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.83](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.82...@hv/uikit-react-doc@1.1.3-alpha.83) (2019-08-07)
+
+
+### Features
+
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([49adca2](https://github.com/pentaho/hv-uikit-react/commit/49adca2))
+
+
+
+
+
 ## [1.1.3-alpha.82](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.81...@hv/uikit-react-doc@1.1.3-alpha.82) (2019-08-07)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
