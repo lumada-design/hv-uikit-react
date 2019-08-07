@@ -33,6 +33,7 @@ export { default as HvTable } from "./Table";
 export { default as HvTextArea } from "./TextArea";
 export { default as HvTypography } from "./Typography";
 export { default as HvGrid } from "./Grid";
+export { default as HvBadge } from "./Badge";
 
 // theme
 export { default as hvTheme } from "./theme";

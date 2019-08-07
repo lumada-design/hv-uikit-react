@@ -15,29 +15,29 @@
  */
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvBadge from "@hv/uikit-react-lab/dist/Badge";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
-storiesOf("Lab", module).add("Badge", () => <HvBadge />, {
+storiesOf("Core", module).add("Badge", () => <HvBadge />, {
   title: "Badge",
   description: "A badge component to inform the user of unread notifications",
-  usage: "import HvBadge from '@hv/uikit-react-lab/dist/Badge'",
+  usage: "import HvBadge from '@hv/uikit-react-core/dist/Badge'",
   examples: [
     {
       title: "1. Simple",
       description: "Basic badges show when there are unread notifications.",
-      src: "lab/badge/badgeSimple.js"
+      src: "core/badge/badgeSimple.js"
     },
     {
       title: "2. With Icon",
       description:
         "Badges show when there are unread notifications with an icon.",
-      src: "lab/badge/badgeWithIcon.js"
+      src: "core/badge/badgeWithIcon.js"
     },
     {
       title: "3. With Text",
       description:
         "Badges show when there are unread notifications with text.",
-      src: "lab/badge/badgeWithText.js"
+      src: "core/badge/badgeWithText.js"
     }
   ]
 });

@@ -16,9 +16,9 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import Typography from "@hv/uikit-react-core/dist/Typography";
 import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
+import HvProvider from "../../Provider";
+import Typography from "../../Typography";
 import Badge from "../index";
 
 describe("Badge ", () => {
