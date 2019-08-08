@@ -21,7 +21,7 @@ import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
-import find from "lodash/_find";
+import find from "lodash/find";
 
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -45,7 +45,7 @@ const getComponentsMetadata = children => {
 
 const shouldShowHeader = kind => {
   const list = ["Lab", "Components", "Foundation"];
-  return undefined === find(list, elem => kind.startsWith(elem));
+  return find(list, elem => kind.startsWith(elem));
 };
 
 const Main = ({ classes, children, context, config }) => {
