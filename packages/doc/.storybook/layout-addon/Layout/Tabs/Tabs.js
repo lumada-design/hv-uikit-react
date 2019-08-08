@@ -64,6 +64,14 @@ class Tabs extends React.Component {
     const { classes, parameters, propsMetaData, descriptionMetadata, theme } = this.props;
     const { value } = this.state;
 
+    let accessibility;
+
+    try {
+      accessibility = require(`../../../../pages/components/${ parameters.title }/accessibility.md`)
+    } catch (error) {
+      accessibility = false;
+    }
+
     return (
       <div className={classes.root}>
         <MUITabs
@@ -86,17 +94,20 @@ class Tabs extends React.Component {
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
             label="CSS"
           />
-          <MUITab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label="Accessibility"
-          />
+          { accessibility && 
+            (
+              <MUITab
+              disableRipple
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              label="Accessibility"/>
+            )
+          }
         </MUITabs>
         <div className={classes.props}>
           {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
-          {value === 3 && <Accessibility descriptionMetadata={descriptionMetadata} />}
+          {value === 3 && <Accessibility descriptionMetadata={descriptionMetadata} componentName={parameters.title} />}
         </div>
       </div>
     );

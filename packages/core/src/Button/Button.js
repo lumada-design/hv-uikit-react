@@ -22,7 +22,10 @@ import materialConfigurationFactory from "./materialConfigurarionFactory";
 
 /**
  * Hitachi Vantara Design System compliant Button allows 4 categories
- * 
+ * md expects a path to the md file relative to the location of doc/.storybook/layout-addon/Layout/Accessibility
+ * @md 
+ * ../../../../../core/src/Button/ButtonAccessibility.md
+ * @mde 
  * @a
  *  -1.1.1 Non-text Content:
  *  -1.3.1 Info and Relationships:
