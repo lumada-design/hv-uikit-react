@@ -198,10 +198,18 @@ class HvDatePickerDS extends React.Component {
   handleCalendarIconClick = event => {
     const { currentTarget } = event;
 
-    this.setState(state => ({
-      calendarAnchorElement: currentTarget.parentElement,
-      calendarOpen: !state.calendarOpen
-    }));
+    this.setState(
+      state => ({
+        calendarAnchorElement: currentTarget.parentElement,
+        calendarOpen: !state.calendarOpen
+      }),
+      () => {
+        const { calendarOpen } = this.state;
+        if (!calendarOpen) {
+          this.cancelDateSelection();
+        }
+      }
+    );
   };
 
   /**
