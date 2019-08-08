@@ -16,8 +16,8 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Roadmap from "../../samples/discoverMore/roadmap";
+import RoadMap from "../../samples/discoverMore/roadMap";
 
-storiesOf("Discover More", module).add("Roadmap", () => (
-  <Roadmap />
+storiesOf("Discover More", module).add("RoadMap", () => (
+  <RoadMap />
 ));
