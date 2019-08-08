@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3-alpha.77](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.76...@hv/uikit-react-lab@1.1.3-alpha.77) (2019-08-08)
+
+
+### Bug Fixes
+
+* **datepickerds:** click on calendar icon cancels date selection [#387](https://github.com/pentaho/hv-uikit-react/issues/387) ([17af5e6](https://github.com/pentaho/hv-uikit-react/commit/17af5e6))
+
+
+
+
+
 ## [1.1.3-alpha.76](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.75...@hv/uikit-react-lab@1.1.3-alpha.76) (2019-08-07)
 
 
