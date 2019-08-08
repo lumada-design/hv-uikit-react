@@ -35,10 +35,6 @@ const styles = theme => ({
     width: "100%",
     padding: "80px 50px 20px"
   },
-  content: {
-    width: "100%",
-    padding: "50px"
-  },
   name: {
     fontWeight: theme.hv.typography.highlightText.fontWeight
   },

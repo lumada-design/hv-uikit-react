@@ -15,13 +15,13 @@
  */
 
 import React from "react";
-import classNames from "classnames";
 import HvLink from "@hv/uikit-react-core/dist/Link";
 import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
 import find from "lodash/find";
+import classNames from "classnames";
 
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -53,27 +53,20 @@ const Main = ({ classes, children, context, config }) => {
   const { examples, title, description, designSystemLink } = parameters;
 
   const isComponent = shouldShowHeader(kind);
-  debugger;
-
   const metadata = getComponentsMetadata(children);
   return (
     <>
-      {isComponent && (
+
         <div className={classes.header}>
           <div>
             {kind} - <span className={classes.name}>{story}</span>
           </div>
-          <Button category="primary" onClick={() => config.changeTheme()}>
+  {isComponent && (  <Button category="primary" onClick={() => config.changeTheme()}>
             Toggle theme
-          </Button>
+          </Button>)}
         </div>
-      )}
-      <div
-        className={classNames({
-          [classes.content]: !isComponent,
-          [classes.contentWithHeader]: isComponent
-        })}
-      >
+      )
+      <div className={classes.contentWithHeader}>
         {title ? (
           <>
             <div className={classes.title}>
