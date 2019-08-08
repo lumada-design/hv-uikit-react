@@ -15,14 +15,10 @@
  */
 
 import React from "react";
-import CodeBlock from "./CodeBlock";
+import "./supportedComponents.css";
 import ReactMarkdown from "react-markdown";
-import input from "../../../../INSTALLATION.md";
+import input from "../../../../SUPPORTED_COMPONENTS.md";
 
-const Code = ({ value }) => <CodeBlock value={value} language="bash" />;
+const SupportedComponents = classes => <ReactMarkdown source={input} />;
 
-const Introduction = () => (
-  <ReactMarkdown source={input} renderers={{ code: Code }} />
-);
-
-export default Introduction;
+export default SupportedComponents;

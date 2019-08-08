@@ -15,14 +15,9 @@
  */
 
 import React from "react";
-import CodeBlock from "./CodeBlock";
-import ReactMarkdown from "react-markdown";
-import input from "../../../../INSTALLATION.md";
+import { storiesOf } from "@storybook/react";
+import SupportedComponents from "../../samples/gettingStarted/supportedComponents";
 
-const Code = ({ value }) => <CodeBlock value={value} language="bash" />;
-
-const Introduction = () => (
-  <ReactMarkdown source={input} renderers={{ code: Code }} />
-);
-
-export default Introduction;
+storiesOf("Getting Started", module).add("Supported Components", () => (
+  <SupportedComponents />
+));
