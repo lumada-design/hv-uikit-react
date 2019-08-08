@@ -36,7 +36,6 @@ const styles = theme => ({
 
 const Group = ({ classes, name, deprecated, colors }) => {
   const keys = Object.keys(colors);
-  debugger;
   return (
     <div>
       <div className={classes.groupName}>{name}</div>
@@ -73,7 +72,6 @@ const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
 );
 
 const Colors = ({ classes, theme, palettePath, deprecatedPath }) => {
-  debugger;
   const palette = palettePath
     ? theme.hv[palettePath].palette
     : theme.hv.palette;

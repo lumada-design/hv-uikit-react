@@ -21,9 +21,9 @@ import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
+import find from "lodash/_find";
 
 const getComponentsMetadata = children => {
-
   const nodes = React.Children.map(children, element => {
     if (!React.isValidElement(element)) return;
     return element;
@@ -34,42 +34,46 @@ const getComponentsMetadata = children => {
     : nodes[0].type.__docgenInfo.props;
 
   const descriptionMetadata = nodes[0].type.Naked
-  ? nodes[0].type.Naked.__docgenInfo.description
-  : nodes[0].type.__docgenInfo.description;
+    ? nodes[0].type.Naked.__docgenInfo.description
+    : nodes[0].type.__docgenInfo.description;
 
   return {
     propsMetaData,
-    descriptionMetadata,
-  }
+    descriptionMetadata
+  };
+};
+
+const shouldShowHeader = kind => {
+  const list = ["Lab", "Components", "Foundation"];
+  return undefined === find(list, elem => kind.startsWith(elem));
 };
 
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
-  const isCore = kind.startsWith("Core");
-  const isLab = kind.startsWith("Lab");
+  const isComponent = shouldShowHeader(kind);
+  debugger;
 
   const metadata = getComponentsMetadata(children);
   return (
     <>
-      <div
-        className={classNames([
-          classes.header,
-          {
-            [classes.core]: isCore,
-            [classes.lab]: isLab
-          }
-        ])}
-      >
-        <div>
-          {kind} - <span className={classes.name}>{story}</span>
+      {isComponent && (
+        <div className={classes.header}>
+          <div>
+            {kind} - <span className={classes.name}>{story}</span>
+          </div>
+          <Button category="primary" onClick={() => config.changeTheme()}>
+            Toggle theme
+          </Button>
         </div>
-        <Button category="primary" onClick={() => config.changeTheme()}>
-          Toggle theme
-        </Button>
-      </div>
-      <div className={classes.content}>
+      )}
+      <div
+        className={classNames({
+          [classes.content]: !isComponent,
+          [classes.contentWithHeader]: isComponent
+        })}
+      >
         {title ? (
           <>
             <div className={classes.title}>
