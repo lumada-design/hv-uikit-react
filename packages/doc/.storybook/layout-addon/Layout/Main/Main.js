@@ -23,6 +23,11 @@ import Button from "@hv/uikit-react-core/dist/Button";
 import find from "lodash/find";
 import classNames from "classnames";
 
+import corePackage from "../../../../../core/package";
+import labPackage from "../../../../../lab/package";
+import iconsPackage from "../../../../../icons/package";
+import core from "react-syntax-highlighter/dist/esm/languages/prism/core";
+
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
     if (!React.isValidElement(element)) return;
@@ -53,13 +58,23 @@ const Main = ({ classes, children, context, config }) => {
   const { examples, title, description, designSystemLink } = parameters;
 
   const isComponent = shouldShowHeader(kind);
+
+  let processedKind = kind.startsWith("Components") ? kind.replace("Components", "Core") : kind;
+  processedKind = story === "Icons" && "Icons" || processedKind;
+  processedKind = story === "Typography" && "Core" || processedKind;
+
   const metadata = getComponentsMetadata(children);
   return (
     <>
 
         <div className={classes.header}>
           <div>
-            {kind} - <span className={classes.name}>{story}</span>
+            {processedKind}{` ${
+              kind.startsWith("Components") && `v${corePackage.version}` ||
+              kind === "Lab" && `v${labPackage.version}` ||
+              story === "Icons" && `v${iconsPackage.version}` ||
+              story === "Typography" && `v${corePackage.version}` || ""
+          }`} <span className={classes.name}>{story === "Icons" ? "" : `- ${story}`}</span>
           </div>
   {isComponent && (  <Button category="primary" onClick={() => config.changeTheme()}>
             Toggle theme
