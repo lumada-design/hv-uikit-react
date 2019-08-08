@@ -1,5 +1,3 @@
-# Examples
-
 | Examples                                                                                                  | Description                                                                         |
 | :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
 | [with-cra](https://github.com/pentaho/hv-uikit-react/tree/master/examples/with-cra)                       | A [Create React App](https://facebook.github.io/create-react-app/) example          |
