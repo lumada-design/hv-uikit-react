@@ -21,7 +21,7 @@ import HvGrid from "@hv/uikit-react-core/dist/Grid";
 storiesOf("Layout", module).add("Grid", () => <HvGrid />, {
   title: "Grid",
   description:
-    "The implemented Grid follow the design system directives.<br><br>" +
+    "The implemented Grid is based in the <a href=\"https://v3.material-ui.com/layout/grid/#grid\">Material UI</a> implementation.<br/><br/> The definitions where set following the design system directives:<br><br>" +
     "<table border='2'" +
     "  <tr>" +
     "   <th>Breakpoint</th>" +
@@ -65,13 +65,13 @@ storiesOf("Layout", module).add("Grid", () => <HvGrid />, {
     {
       title: "1. Default behaviour",
       description: "Change the size of the window to see the grid behaviour.",
-      src: "components/grid/grid1"
+      src: "layout/grid/grid1"
     },
     {
       title: "2. Different breakpoints behaviour",
       description:
         "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints.",
-      src: "components/grid/grid2"
+      src: "layout/grid/grid2"
     }
   ]
 });

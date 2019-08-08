@@ -7,10 +7,10 @@ import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMe
 const Box = ({ text }) => (
   <div
     style={{
-      backgroundColor: "indianred",
+      backgroundColor: "ivory",
       height: "150px",
       width: "100%",
-      border: "1px solid black"
+      boxShadow: "2px 2px 5px grey"
     }}
   >
     <div
@@ -41,7 +41,7 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
   return (
     <div>
       <HvTypography variant="xxsTitle">{title}</HvTypography>
-      <div style={{ border: "1px solid" }}>
+      <div style={{ border: "1px solid",backgroundColor: "#F9F9F9" }}>
         <HvGrid container>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
             <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
