@@ -14,11 +14,11 @@ pipeline {
         stage('Release') {
             steps {
                 build job: 'react', parameters: [
-                    bool(name: 'skipLint', value: false),
-                    bool(name: 'skipBuild', value: false),
-                    bool(name: 'skipJavascriptTest', value: false),
-                    bool(name: 'skipAutomationTest', value: true),
-                    bool(name: 'skipPublish', value: false)
+                    booleanParam(name: 'skipLint', value: false),
+                    booleanParam(name: 'skipBuild', value: false),
+                    booleanParam(name: 'skipJavascriptTest', value: false),
+                    booleanParam(name: 'skipAutomationTest', value: true),
+                    booleanParam(name: 'skipPublish', value: false)
                 ]
             }
         }
