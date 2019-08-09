@@ -19,7 +19,7 @@ pipeline {
                     booleanParam(name: 'skipJavascriptTest', value: false),
                     booleanParam(name: 'skipAutomationTest', value: true),
                     booleanParam(name: 'skipPublish', value: false),
-                    choice(name: 'publishType', value: 'minor')
+                    string(name: 'publishType', value: 'minor')
                 ]
             }
         }
