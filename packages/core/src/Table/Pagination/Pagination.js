@@ -168,6 +168,7 @@ export default class ReactTablePagination extends Component {
                     }
                   }}
                   validationIconVisible={false}
+                  disabled={pageSize === 0}
                 />
               </div>
             ) : (
