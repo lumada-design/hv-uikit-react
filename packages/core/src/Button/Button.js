@@ -237,7 +237,7 @@ HvButton.propTypes = {
 HvButton.defaultProps = {
   className: "",
   id: undefined,
-  type: "button",
+  type: undefined,
   colorType: undefined,
   category: "primary",
   disabled: false,
