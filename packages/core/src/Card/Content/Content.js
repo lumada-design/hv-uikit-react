@@ -29,14 +29,15 @@ const Content = ({
   classes,
   className,
   innerCardContent,
-  ...other
+  needsBorder,
+  ...others
 }) => (
   <CardContent
     className={classNames(
       classes.content,
       className
     )}
-    {...other}
+    {...others}
   >
     {innerCardContent}
   </CardContent>

@@ -53853,7 +53853,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                           }
                           disabled={false}
                           externalWarningTextOverride={null}
-                          iconVisible={true}
                           infoIcon={false}
                           initialValue=""
                           inputProps={Object {}}
@@ -54802,7 +54801,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                           validationIconVisible={true}
                           validationState="empty"
                           validationType="none"
-                          value=""
                         >
                           <div
                             className="HvInput-container-243"
@@ -56719,7 +56717,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 }
                               }
                               disabled={false}
-                              endAdornment={null}
                               inputProps={Object {}}
                               name="username"
                               onBlur={[Function]}
@@ -56751,7 +56748,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 }
                                 disableUnderline={true}
                                 disabled={false}
-                                endAdornment={null}
                                 inputProps={Object {}}
                                 name="username"
                                 onBlur={[Function]}
@@ -56782,7 +56778,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                     }
                                   }
                                   disabled={false}
-                                  endAdornment={null}
                                   fullWidth={false}
                                   inputComponent="input"
                                   inputProps={Object {}}
@@ -56820,7 +56815,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                       }
                                     }
                                     disabled={false}
-                                    endAdornment={null}
                                     fullWidth={false}
                                     inputComponent="input"
                                     inputProps={Object {}}
@@ -56858,7 +56852,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                         }
                                       }
                                       disabled={false}
-                                      endAdornment={null}
                                       fullWidth={false}
                                       inputComponent="input"
                                       inputProps={Object {}}
@@ -58829,7 +58822,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                           }
                           disabled={false}
                           externalWarningTextOverride={null}
-                          iconVisible={true}
                           infoIcon={false}
                           initialValue=""
                           inputProps={Object {}}
@@ -59778,7 +59770,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                           validationIconVisible={true}
                           validationState="empty"
                           validationType="none"
-                          value=""
                         >
                           <div
                             className="HvInput-container-243"
@@ -61695,7 +61686,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 }
                               }
                               disabled={false}
-                              endAdornment={null}
                               inputProps={Object {}}
                               name="password"
                               onBlur={[Function]}
@@ -61727,7 +61717,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 }
                                 disableUnderline={true}
                                 disabled={false}
-                                endAdornment={null}
                                 inputProps={Object {}}
                                 name="password"
                                 onBlur={[Function]}
@@ -61758,7 +61747,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                     }
                                   }
                                   disabled={false}
-                                  endAdornment={null}
                                   fullWidth={false}
                                   inputComponent="input"
                                   inputProps={Object {}}
@@ -61796,7 +61784,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                       }
                                     }
                                     disabled={false}
-                                    endAdornment={null}
                                     fullWidth={false}
                                     inputComponent="input"
                                     inputProps={Object {}}
@@ -61834,7 +61821,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                         }
                                       }
                                       disabled={false}
-                                      endAdornment={null}
                                       fullWidth={false}
                                       inputComponent="input"
                                       inputProps={Object {}}
@@ -71988,11 +71974,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                       >
                         <HvButton
                           category="ghost"
-                          classes={
-                            Object {
-                              "textPrimary": "loginForm-linkButtonTypography-211",
-                            }
-                          }
                           onClick={[Function]}
                         >
                           <HvButton
@@ -72009,7 +71990,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 "root": "HvButton-root-358",
                                 "secondary": "HvButton-secondary-361",
                                 "secondaryDisabled": "HvButton-secondaryDisabled-362",
-                                "textPrimary": "undefined loginForm-linkButtonTypography-211",
                               }
                             }
                             disabled={false}
@@ -72938,7 +72918,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                 },
                               }
                             }
-                            type="button"
                           >
                             <WithStyles(Button)
                               className=""
@@ -73879,7 +73858,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-273 .MuiInputBase-input-282
                                   },
                                 }
                               }
-                              type="button"
                               variant="text"
                             >
                               <Button

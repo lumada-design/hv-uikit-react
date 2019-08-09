@@ -83,7 +83,7 @@ describe("Input", () => {
   it("should not have the validation section", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles validate={false} />
+        <InputWithStyles showInfo={false} />
       </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
@@ -153,7 +153,7 @@ describe("Input", () => {
           initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
-          iconPosition={iconPositions.left}
+          validationIconPosition={iconPositions.left}
         />
       </HvProvider>
     );
@@ -219,7 +219,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate numbers on blur", () => {
+  it("should showInfo numbers on blur", () => {
     const inputText = "test";
     const defaultInputText = "233";
     const onChange = value => {
@@ -262,7 +262,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate emails on blur", () => {
+  it("should showInfo emails on blur", () => {
     const inputText = "notEmail";
     const defaultInputText = "email@example.com";
     const onChange = value => {
@@ -305,7 +305,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate use custom validations on blur", () => {
+  it("should showInfo use custom validations on blur", () => {
     const inputText = "test";
     const defaultInputText = "test2";
     const onChange = value => {

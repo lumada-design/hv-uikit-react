@@ -159,8 +159,8 @@ export default class ReactTablePagination extends Component {
                     }
                     this.setState({ page: this.getSafePage(page) });
                   }}
-                  initialValue={this.state.page + 1}
-                  inputValue={this.state.page === "" ? "" : Number(this.state.page) + 1}
+                  initialValue={`${this.state.page + 1}`}
+                  inputValue={`${this.state.page === "" ? "" : Number(this.state.page) + 1}`}
                   onBlur={this.applyPage}
                   onKeyPress={e => {
                     if (e.which === 13 || e.keyCode === 13) {

@@ -23,7 +23,7 @@ exports[`Modal Component allows external props to be added 1`] = `
   open={true}
 >
   <HvButton
-    colorType="link"
+    category="ghost"
     onClick={[Function]}
   >
     <CloseS
@@ -65,8 +65,8 @@ exports[`Modal Component allows external styles to be added 1`] = `
   open={true}
 >
   <HvButton
+    category="ghost"
     className="testClassCloseButton"
-    colorType="link"
     onClick={[Function]}
   >
     <CloseS
@@ -108,7 +108,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
   open={true}
 >
   <HvButton
-    colorType="link"
+    category="ghost"
     onClick={[Function]}
   >
     <CloseS
@@ -150,7 +150,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
   open={false}
 >
   <HvButton
-    colorType="link"
+    category="ghost"
     onClick={[Function]}
   >
     <CloseS
@@ -192,7 +192,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
   open={true}
 >
   <HvButton
-    colorType="link"
+    category="ghost"
     onClick={[Function]}
   >
     <CloseS

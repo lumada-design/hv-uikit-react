@@ -37,7 +37,6 @@ function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
       <HvButton
         category="ghost"
         onClick={onClick}
-        classes={{ textPrimary: classes.linkButtonTypography }}
       >
         {forgotYourCredentialMessage}
       </HvButton>

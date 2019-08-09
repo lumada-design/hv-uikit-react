@@ -125,8 +125,8 @@ class HvTextArea extends React.Component {
           multiline
           rows={rows}
           disabled={disabled}
-          validate={false}
-          iconVisible={false}
+          showInfo={false}
+          validationIconVisible={false}
         />
         {maxCharQuantity ? (
           <div className={classes.characterCounter}>
