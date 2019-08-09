@@ -6,13 +6,14 @@ pipeline {
     }
     options { 
         timestamps () 
+        timeout(time: 20, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
    
     stages {
         stage('Release') {
             steps {
-                build job: 'react', parameters: [
+                build job: 'ui-kit/react', parameters: [
                     booleanParam(name: 'skipLint', value: false),
                     booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: false),
