@@ -107,10 +107,7 @@ HvButton.propTypes = {
    *    --"button"
    * @deprecated
    */
-  type: deprecatedPropType(
-    PropTypes.oneOf(["submit", "reset", "button"]),
-    "This will be deprecated in material 4"
-  ),
+  type: PropTypes.oneOf(["submit", "reset", "button"]),
   /**
    * Type of color of HvButton to use.
    *  - Accepted values:

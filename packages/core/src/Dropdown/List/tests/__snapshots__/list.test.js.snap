@@ -50759,7 +50759,6 @@ body {
                           },
                         }
                       }
-                      type="button"
                     >
                       <WithStyles(Button)
                         className="Actions-button-86"
@@ -51700,7 +51699,6 @@ body {
                             },
                           }
                         }
-                        type="button"
                         variant="text"
                       >
                         <Button
@@ -56450,7 +56448,6 @@ body {
                           },
                         }
                       }
-                      type="button"
                     >
                       <WithStyles(Button)
                         className="Actions-button-86"
@@ -57391,7 +57388,6 @@ body {
                             },
                           }
                         }
-                        type="button"
                         variant="text"
                       >
                         <Button

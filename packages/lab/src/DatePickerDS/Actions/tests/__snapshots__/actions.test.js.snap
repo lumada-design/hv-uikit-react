@@ -19182,7 +19182,6 @@ body {
                   },
                 }
               }
-              type="button"
             >
               <WithStyles(Button)
                 className="Actions-button-1"
@@ -20123,7 +20122,6 @@ body {
                     },
                   }
                 }
-                type="button"
                 variant="text"
               >
                 <Button
@@ -24873,7 +24871,6 @@ body {
                   },
                 }
               }
-              type="button"
             >
               <WithStyles(Button)
                 className="Actions-button-1"
@@ -25814,7 +25811,6 @@ body {
                     },
                   }
                 }
-                type="button"
                 variant="text"
               >
                 <Button

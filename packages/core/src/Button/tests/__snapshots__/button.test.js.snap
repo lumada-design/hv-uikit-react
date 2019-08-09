@@ -16243,7 +16243,6 @@ body {
             },
           }
         }
-        type="button"
       >
         <WithStyles(Button)
           className=""
@@ -17184,7 +17183,6 @@ body {
               },
             }
           }
-          type="button"
           variant="contained"
         >
           <Button

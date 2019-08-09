@@ -58,7 +58,7 @@ const Main = ({ classes, className, id, children, open, onClose, ...others }) =>
   >
     <Button
       className={classes.closeButton}
-      colorType="link"
+      category="ghost"
       onClick={event => onClose(event)}
     >
       <Close16 style={style} />

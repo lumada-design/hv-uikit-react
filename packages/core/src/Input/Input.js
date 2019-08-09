@@ -528,7 +528,7 @@ HvInput.propTypes = {
    * The input value to be set. If used it is the responsibility of the caller to maintain the state.
    * @deprecated will be replaced by value
    */
-  inputValue: deprecatedPropType(PropTypes.string, "will be replaced by value"),
+  inputValue: PropTypes.string,
   /**
    * If `true` it should autofocus.
    */
@@ -607,7 +607,7 @@ HvInput.defaultProps = {
   },
   inputProps: {},
   infoIcon: false,
-  iconVisible: true,
+  iconVisible: undefined,
   validationIconVisible: true,
   iconPosition: undefined,
   validationIconPosition: "right",
@@ -617,7 +617,7 @@ HvInput.defaultProps = {
   maxCharQuantity: null,
   minCharQuantity: null,
   validationType: "none",
-  value: "",
+  value: undefined,
   initialValue: "",
   inputValue: undefined,
   autoFocus: false,

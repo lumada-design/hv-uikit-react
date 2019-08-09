@@ -11,7 +11,6 @@ exports[`TextArea Component should render correctly if opened 1`] = `
       }
     }
     disabled={false}
-    iconVisible={false}
     initialValue="test"
     labels={
       Object {
@@ -26,7 +25,8 @@ exports[`TextArea Component should render correctly if opened 1`] = `
     multiline={true}
     onChange={[Function]}
     rows={4}
-    validate={false}
+    showInfo={false}
+    validationIconVisible={false}
   />
 </Fragment>
 `;
