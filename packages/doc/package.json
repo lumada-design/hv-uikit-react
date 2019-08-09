@@ -17,7 +17,7 @@
     "build": "build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
-    "deploy": "storybook-to-ghpages --ci --existing-output-dir dist",
+    "deploy": "storybook-to-ghpages --ci",
     "clean": "npx del-cli dist"
   },
   "dependencies": {

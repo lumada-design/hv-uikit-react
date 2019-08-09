@@ -13,6 +13,7 @@ pipeline {
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
         booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus and documentation.')
+        choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
    
@@ -96,7 +97,7 @@ pipeline {
                             sh "git checkout ${env.BRANCH_NAME}"
                             sh 'cp .npmrc ~/.npmrc'
                             sh 'git status'
-                            sh "npm run publish"
+                            sh "npm run publish-${params.publishType}"
                             sh "npm run publish-documentation"
                         }
                     }
