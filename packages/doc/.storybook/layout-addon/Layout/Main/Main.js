@@ -15,15 +15,20 @@
  */
 
 import React from "react";
-import classNames from "classnames";
 import HvLink from "@hv/uikit-react-core/dist/Link";
 import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
+import find from "lodash/find";
+import classNames from "classnames";
+
+import corePackage from "../../../../../core/package";
+import labPackage from "../../../../../lab/package";
+import iconsPackage from "../../../../../icons/package";
+import core from "react-syntax-highlighter/dist/esm/languages/prism/core";
 
 const getComponentsMetadata = children => {
-
   const nodes = React.Children.map(children, element => {
     if (!React.isValidElement(element)) return;
     return element;
@@ -34,42 +39,49 @@ const getComponentsMetadata = children => {
     : nodes[0].type.__docgenInfo.props;
 
   const descriptionMetadata = nodes[0].type.Naked
-  ? nodes[0].type.Naked.__docgenInfo.description
-  : nodes[0].type.__docgenInfo.description;
+    ? nodes[0].type.Naked.__docgenInfo.description
+    : nodes[0].type.__docgenInfo.description;
 
   return {
     propsMetaData,
-    descriptionMetadata,
-  }
+    descriptionMetadata
+  };
+};
+
+const shouldShowHeader = kind => {
+  const list = ["Lab", "Components", "Foundation"];
+  return find(list, elem => kind.startsWith(elem));
 };
 
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
-  const isCore = kind.startsWith("Core");
-  const isLab = kind.startsWith("Lab");
+  const isComponent = shouldShowHeader(kind);
+
+  let processedKind = kind.startsWith("Components") ? kind.replace("Components", "Core") : kind;
+  processedKind = story === "Icons" && "Icons" || processedKind;
+  processedKind = story === "Typography" && "Core" || processedKind;
 
   const metadata = getComponentsMetadata(children);
   return (
     <>
-      <div
-        className={classNames([
-          classes.header,
-          {
-            [classes.core]: isCore,
-            [classes.lab]: isLab
-          }
-        ])}
-      >
-        <div>
-          {kind} - <span className={classes.name}>{story}</span>
+
+        <div className={classes.header}>
+          <div>
+            {processedKind}{` ${
+              kind.startsWith("Components") && `v${corePackage.version}` ||
+              kind === "Lab" && `v${labPackage.version}` ||
+              story === "Icons" && `v${iconsPackage.version}` ||
+              story === "Typography" && `v${corePackage.version}` || ""
+          }`} <span className={classes.name}>{story === "Icons" ? "" : `- ${story}`}</span>
+          </div>
+  {isComponent && (  <Button category="primary" onClick={() => config.changeTheme()}>
+            Toggle theme
+          </Button>)}
         </div>
-        <Button category="primary" onClick={() => config.changeTheme()}>
-          Toggle theme
-        </Button>
-      </div>
-      <div className={classes.content}>
+      )
+      <div className={classes.contentWithHeader}>
         {title ? (
           <>
             <div className={classes.title}>

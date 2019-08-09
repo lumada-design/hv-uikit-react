@@ -15,20 +15,31 @@
  */
 
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
-const descriptionMetadataTrimmer = descriptionMetadata => {
-  const i = descriptionMetadata.indexOf("@a")
-  const d = descriptionMetadata.indexOf("@ea");
-  return descriptionMetadata.substring(i+2,d);
+class Accessibility extends React.Component {
+  state = {
+    content: ""
+  }
+
+  async componentDidMount() {
+    const { componentName } = this.props;
+
+    let documentPage = await require(`../../../../pages/components/${ componentName }/accessibility.md`);
+    this.setState({
+      content: documentPage.default
+    })
+  }
+
+  render() {
+    return   (
+      <>
+        <ReactMarkdown source={ this.state.content } />
+    
+      </>
+    ); 
+  }
 }
 
-const Accessibility = ({ classes, descriptionMetadata }) => (
-  <>
-    <HvTypography variant="highlightText">Accessibility guidelines and tips</HvTypography>
-    <pre className={classes.pre}>
-      {descriptionMetadataTrimmer(descriptionMetadata)}
-    </pre>
-  </>
-);
 export default Accessibility;

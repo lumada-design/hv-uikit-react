@@ -3,7 +3,7 @@ import HvAssetInventory from "@hv/uikit-react-lab/dist/AssetInventory";
 import Grid from "@material-ui/core/Grid";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import compressor from "../../core/card/resources/leaf.png";
+import compressor from "../../components/card/resources/leaf.png";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const data = {

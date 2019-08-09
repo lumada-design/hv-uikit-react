@@ -17,11 +17,10 @@
 const styles = theme => ({
   header: {
     backgroundColor: theme.hv.palette.accent.acce0,
-    ...theme.hv.typography.normalText.atmo1,
+    ...theme.hv.typography.normalText,
     borderBottomColor: theme.hv.palette.atmosphere.atmo5,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
-    padding: "10px",
     fontSize: 14,
     display: "flex",
     justifyContent: "space-between",
@@ -32,13 +31,7 @@ const styles = theme => ({
     padding: "5px 15px",
     height: "50px"
   },
-  core: {
-    color: theme.hv.typography.normalText.atmo7
-  },
-  lab: {
-    color: theme.hv.typography.normalText.atmo7
-  },
-  content: {
+  contentWithHeader: {
     width: "100%",
     padding: "80px 50px 20px"
   },

@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MUITabs from "@material-ui/core/Tabs";
 import MUITab from "@material-ui/core/Tab";
+import isNil from "lodash/isNil";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import TableAPI from "../TableAPI";
@@ -61,8 +62,26 @@ class Tabs extends React.Component {
   };
 
   render() {
-    const { classes, parameters, propsMetaData, descriptionMetadata, theme } = this.props;
+    const {
+      classes,
+      parameters,
+      propsMetaData,
+      descriptionMetadata,
+      theme
+    } = this.props;
     const { value } = this.state;
+
+    let showAccessibility;
+
+    const showCssTab = !isNil(propsMetaData.classes);
+
+    try {
+      showAccessibility = require(`../../../../pages/components/${
+        parameters.title
+      }/accessibility.md`);
+    } catch (error) {
+      showAccessibility = false;
+    }
 
     return (
       <div className={classes.root}>
@@ -81,22 +100,31 @@ class Tabs extends React.Component {
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
             label="API"
           />
-          <MUITab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label="CSS"
-          />
-          <MUITab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label="Accessibility"
-          />
+          {showCssTab && (
+            <MUITab
+              disableRipple
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              label="CSS"
+            />
+          )}
+          {showAccessibility && (
+            <MUITab
+              disableRipple
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              label="Accessibility"
+            />
+          )}
         </MUITabs>
         <div className={classes.props}>
           {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
-          {value === 3 && <Accessibility descriptionMetadata={descriptionMetadata} />}
+          {value === 3 && (
+            <Accessibility
+              descriptionMetadata={descriptionMetadata}
+              componentName={parameters.title}
+            />
+          )}
         </div>
       </div>
     );

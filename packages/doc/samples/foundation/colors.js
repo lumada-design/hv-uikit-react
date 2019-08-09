@@ -59,9 +59,6 @@ const Group = ({ classes, name, deprecated, colors }) => {
 
 const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
   <div className={classes.colorGroup}>
-    <div className={classes.title}>
-      <Typography variant="xlTitle">{title}</Typography>
-    </div>
     {keys.map((group, idx) => (
       <Group
         key={idx}
@@ -74,25 +71,20 @@ const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
   </div>
 );
 
-const Colors = ({ classes, theme }) => {
-  const { palette } = theme.hv;
-  const vizPalette = theme.hv.viz.palette;
+const Colors = ({ classes, theme, palettePath, deprecatedPath }) => {
+  const palette = palettePath
+    ? theme.hv[palettePath].palette
+    : theme.hv.palette;
+  const deprecate = deprecatedPath
+    ? theme.hv.deprecated[deprecatedPath].palette
+    : theme.hv.deprecated.palette;
   const keys = Object.keys(palette);
-  const keyViz = Object.keys(vizPalette);
   return (
     <div>
       <ColorsGroup
-        title="Main"
         keys={keys}
-        deprecated={theme.hv.deprecated.palette}
+        deprecated={deprecate}
         colors={palette}
-        classes={classes}
-      />
-      <ColorsGroup
-        title="Visualisation"
-        keys={keyViz}
-        deprecated={theme.hv.deprecated.viz.palette}
-        colors={vizPalette}
         classes={classes}
       />
     </div>

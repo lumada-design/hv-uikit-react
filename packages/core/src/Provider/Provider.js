@@ -79,9 +79,21 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
 
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  /** 
+   * The material theme object that can be used to override the defaults 
+   */
   theme: PropTypes.instanceOf(Object),
+  /** 
+   * Which of design system default themes to use.
+   */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
+  /** 
+   * Which of design system default themes to use.
+   */
   changeTheme: PropTypes.func,
+  /** 
+   * Configuration object for routing, exposes push and prefetch
+   */
   router: PropTypes.instanceOf(Object)
 };
 
