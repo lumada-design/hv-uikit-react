@@ -51,6 +51,7 @@ describe("Header withStyles", () => {
           label="Maintenance Insights"
           // Navigation
           navigationData={[{ label: "label", path: "path" }]}
+          labels={{}}
           selected={0}
           // User
           userIcon="Text"

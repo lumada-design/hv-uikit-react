@@ -20,7 +20,8 @@ const parseDescription = description => {
   return description.split("-")[0];
 };
 
-const TableCSS = ({ classes, propsMetaData }) => (
+const TableCSS = ({ classes, propsMetaData }) => {
+  return(
   <table className={classes.table}>
     <thead>
       <tr>
@@ -44,5 +45,5 @@ const TableCSS = ({ classes, propsMetaData }) => (
       })}
     </tbody>
   </table>
-);
+);}
 export default TableCSS;

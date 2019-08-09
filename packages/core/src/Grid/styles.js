@@ -21,7 +21,7 @@ const GRID_SIZES = ["auto", true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const BREAKPOINT_COL = {
   xs: 4,
   sm: 8,
-  md: 8,
+  md: 12,
   lg: 12,
   xl: 12
 };
@@ -79,14 +79,10 @@ function generateGutter(theme, breakpoint) {
       return;
     }
     styles[`spacing-${breakpoint}-${spacing}`] = {
-
       marginTop: -spacing / 2,
-    marginRight: spacing / 2,
-    marginBottom: -spacing / 2,
-    marginLeft: spacing / 2,
+      marginBottom: -spacing / 2,
 
-
-      width: `calc(100% - ${spacing}px)`,
+      width: "100%",
       "& > div": {
         padding: spacing / 2
       }

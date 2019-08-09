@@ -17,7 +17,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 
 const BREAKPOINT_GUTTERS = {
   xs: 15,
@@ -49,17 +48,13 @@ const Grid = React.forwardRef((props, ref) => {
     // passed automatically withTheme
     // eslint-disable-next-line react/prop-types
     theme,
+    // passed automatically withWidth
+    // eslint-disable-next-line react/prop-types
+    width,
     ...other
   } = props;
 
-  const findBreakpoint = () =>
-    [...theme.breakpoints.keys].reverse().reduce((output, key) => {
-      const matches = useMediaQuery(theme.breakpoints.only(key));
-
-      return !output && matches ? key : output;
-    }, null) || "xs";
-
-  const breakpointSpacing = spacing || BREAKPOINT_GUTTERS[findBreakpoint()];
+  const breakpointSpacing = spacing || BREAKPOINT_GUTTERS[width];
 
   const className = classNames(
     classes.root,
@@ -92,7 +87,7 @@ const Grid = React.forwardRef((props, ref) => {
       ref={ref}
       xs={container && !xs ? 4 : xs}
       sm={container && !sm ? 8 : sm}
-      md={container && !md ? 8 : md}
+      md={container && !md ? 12 : md}
       lg={container && !lg ? 12 : lg}
       xl={container && !xl ? 12 : xl}
       {...other}

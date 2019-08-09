@@ -1,0 +1,81 @@
+default.css:
+  background-color: rgb(20, 107, 210)
+  color: rgb(255, 255, 255)
+  height: 32px
+  text-transform: capitalize
+  padding-top: 0px
+  padding-right: 10px
+  padding-bottom: 0px
+  padding-left: 10px
+secondary.css:
+  background-color: rgb(255, 255, 255)
+  color: rgb(65, 65, 65)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+ghost.css:
+  background-color: rgba(0, 0, 0, 0)
+  color: rgb(20, 107, 210)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+ghostSecondary.css:
+  background-color: rgba(0, 0, 0, 0)
+  color: rgb(65, 65, 65)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+disabledPrimary.css:
+  background-color: rgb(240, 240, 240)
+  color: rgb(153, 153, 153)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+disabledSecondary.css:
+  background-color: rgb(240, 240, 240)
+  color: rgb(153, 153, 153)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+disabledGhost.css:
+  background-color: rgba(0, 0, 0, 0)
+  color: rgb(153, 153, 153)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+disabledGhostSecondary.css:
+  background-color: rgba(0, 0, 0, 0)
+  color: rgb(153, 153, 153)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize
+allProperties.css:
+  background-color: rgb(240, 240, 240)
+  color: rgb(153, 153, 153)
+  height: 32px
+  padding-bottom: 0px
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 0px
+  text-transform: capitalize

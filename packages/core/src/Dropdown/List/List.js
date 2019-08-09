@@ -45,13 +45,6 @@ class List extends React.Component {
     if (values) this.resetLists(notifyChangesOnFirstRender);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { values } = this.props;
-    if (nextProps.values !== values) {
-      this.setState({ list: values }, () => this.resetLists());
-    }
-  }
-
   /**
    * Apply the selection to the state.
    *
@@ -339,16 +332,16 @@ class List extends React.Component {
 
     return (
       <div className={classes.root}>
-        <div className={classes.paddingRight}>
+        <div className={classes.padding}>
           {showSearch ? this.renderSearch() : null}
         </div>
-        <div className={classNames([classes.selectAll, classes.paddingRight])}>
+        <div className={classNames([classes.selectAll, classes.padding])}>
           {multiSelect ? this.renderSelectAll() : null}
         </div>
         <div
           className={classNames([
             classes.list,
-            classes.paddingRight,
+            classes.padding,
             {
               [classes.marginBottom]: !multiSelect
             }

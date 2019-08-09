@@ -22,3 +22,4 @@ export { default as HvFormComposer } from "./FormComposer";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { default as HvSearchBox } from "./SearchBox";
 export { default as HvSlider } from "./Slider";
+export { default as HvSwitch } from "./Switch";

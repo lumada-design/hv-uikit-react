@@ -16,25 +16,29 @@
 
 const styles = theme => ({
   root: {
-    padding: `${theme.hv.spacing.sm}px`,
-    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-  },
-  bottomBorder: {
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    padding: `15px ${theme.hv.spacing.sm}px`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    position: "relative"
   },
   title: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.mTitle
+    ...theme.hv.typography.mTitle,
+  },
+  titleShort: {
+    fontFamily: theme.hv.typography.fontFamily,
+    ...theme.hv.typography.mTitle,
+    marginRight: "30px"
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.normalText,
-    paddingTop: `${theme.hv.spacing.sm}px`
+    ...theme.hv.typography.infoText,
+    paddingTop: `${theme.hv.spacing.xs}px`
   },
   action: {
+    position: "absolute",
+    right: 20,
     marginTop: 0,
-    marginRight: "-1px",
+    marginRight: "0px",
     paddingLeft: `${theme.hv.spacing.xs}px`
   },
   content: {}

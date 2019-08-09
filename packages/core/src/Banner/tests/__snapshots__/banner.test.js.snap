@@ -31,18 +31,39 @@ exports[`Banner  should render correctly 1`] = `
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {
+                  "disabledText": Object {},
+                },
+                "viz": Object {
+                  "palette": Object {
+                    "categorical": Object {},
+                    "polarizes": Object {},
+                    "sequential": Object {},
+                    "undefinedState": Object {},
+                  },
+                },
+              },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -59,6 +80,16 @@ exports[`Banner  should render correctly 1`] = `
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -120,7 +151,12 @@ exports[`Banner  should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "highlightText": Object {
                   "color": "#414141",
                   "fontSize": "14px",
@@ -129,7 +165,7 @@ exports[`Banner  should render correctly 1`] = `
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -170,8 +206,22 @@ exports[`Banner  should render correctly 1`] = `
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -183,6 +233,21 @@ exports[`Banner  should render correctly 1`] = `
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "background": "#414141",
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -218,6 +283,59 @@ exports[`Banner  should render correctly 1`] = `
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "28px",
+                },
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz10": "#419393",
+                    "cviz11": "#58C9DD",
+                    "cviz12": "#F8C189",
+                    "cviz13": "#528BBF",
+                    "cviz14": "#DE64BD",
+                    "cviz15": "#73BF9C",
+                    "cviz16": "#9672C1",
+                    "cviz17": "#EB95AF",
+                    "cviz18": "#646A98",
+                    "cviz19": "#D88136",
+                    "cviz2": "#FF990D",
+                    "cviz20": "#309B59",
+                    "cviz3": "#D31F6B",
+                    "cviz4": "#FFD00A",
+                    "cviz5": "#18C38A",
+                    "cviz6": "#098CB2",
+                    "cviz7": "#EA5B86",
+                    "cviz8": "#9B469B",
+                    "cviz9": "#F4763D",
+                  },
+                  "polarizes": Object {
+                    "cviz21": "#869F1E",
+                    "cviz22": "#A4991C",
+                    "cviz23": "#C4931A",
+                    "cviz24": "#E68C17",
+                    "cviz25": "#F27034",
+                    "cviz26": "#FF5252",
+                    "cviz27": "#EC3D57",
+                    "cviz28": "#D8265D",
+                    "sema1": "#63A621",
+                    "sema5": "#C51162",
+                  },
+                  "sequential": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
+                    "cviz1_300": "#BAE3F3",
+                    "cviz1_400": "#A6DCEE",
+                    "cviz1_500": "#92D5EC",
+                    "cviz1_600": "#7ECEE9",
+                    "cviz1_700": "#69C7E7",
+                    "cviz1_800": "#55C0E4",
+                    "cviz1_900": "#40B9E2",
+                  },
+                  "undefinedState": Object {
+                    "atmo5": "#DEDEDE",
+                  },
                 },
               },
             },
@@ -372,6 +490,7 @@ exports[`Banner  should render correctly 1`] = `
               "lg": "60",
               "md": "30",
               "sm": "20",
+              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -397,7 +516,16 @@ exports[`Banner  should render correctly 1`] = `
             "typography": Object {
               "body1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -405,14 +533,32 @@ exports[`Banner  should render correctly 1`] = `
               },
               "body1Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "color": "#999999",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -420,14 +566,32 @@ exports[`Banner  should render correctly 1`] = `
               },
               "body2Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "button": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -436,7 +600,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "buttonNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 500,
                 "lineHeight": 1.75,
@@ -444,28 +617,64 @@ exports[`Banner  should render correctly 1`] = `
               },
               "caption": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "captionNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.20588em",
               },
               "display2": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.8125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.13333em",
@@ -473,7 +682,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "display3": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "3.5rem",
                 "fontWeight": 400,
                 "letterSpacing": "-.02em",
@@ -482,21 +700,44 @@ exports[`Banner  should render correctly 1`] = `
               },
               "display4": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "7rem",
                 "fontWeight": 300,
                 "letterSpacing": "-.04em",
                 "lineHeight": "1.14286em",
                 "marginLeft": "-.04em",
               },
-              "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
               "fontSize": 14,
               "fontWeightLight": 300,
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -504,7 +745,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "h2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -512,7 +762,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "h3": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -520,7 +779,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "h4": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -528,28 +796,64 @@ exports[`Banner  should render correctly 1`] = `
               },
               "h5": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": 1.33,
               },
               "h6": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.25rem",
                 "fontWeight": 500,
                 "lineHeight": 1.6,
               },
               "headline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
               "overline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 2.66,
@@ -559,14 +863,32 @@ exports[`Banner  should render correctly 1`] = `
               "round": [Function],
               "subheading": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": "1.5em",
               },
               "subtitle1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -574,7 +896,16 @@ exports[`Banner  should render correctly 1`] = `
               },
               "subtitle2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -583,7 +914,16 @@ exports[`Banner  should render correctly 1`] = `
               "suppressDeprecationWarnings": true,
               "title": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.3125rem",
                 "fontWeight": 500,
                 "lineHeight": "1.16667em",
@@ -3301,18 +3641,39 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {
+                  "disabledText": Object {},
+                },
+                "viz": Object {
+                  "palette": Object {
+                    "categorical": Object {},
+                    "polarizes": Object {},
+                    "sequential": Object {},
+                    "undefinedState": Object {},
+                  },
+                },
+              },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -3329,6 +3690,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -3390,7 +3761,12 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "highlightText": Object {
                   "color": "#414141",
                   "fontSize": "14px",
@@ -3399,7 +3775,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -3440,8 +3816,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -3453,6 +3843,21 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "background": "#414141",
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -3488,6 +3893,59 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "28px",
+                },
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz10": "#419393",
+                    "cviz11": "#58C9DD",
+                    "cviz12": "#F8C189",
+                    "cviz13": "#528BBF",
+                    "cviz14": "#DE64BD",
+                    "cviz15": "#73BF9C",
+                    "cviz16": "#9672C1",
+                    "cviz17": "#EB95AF",
+                    "cviz18": "#646A98",
+                    "cviz19": "#D88136",
+                    "cviz2": "#FF990D",
+                    "cviz20": "#309B59",
+                    "cviz3": "#D31F6B",
+                    "cviz4": "#FFD00A",
+                    "cviz5": "#18C38A",
+                    "cviz6": "#098CB2",
+                    "cviz7": "#EA5B86",
+                    "cviz8": "#9B469B",
+                    "cviz9": "#F4763D",
+                  },
+                  "polarizes": Object {
+                    "cviz21": "#869F1E",
+                    "cviz22": "#A4991C",
+                    "cviz23": "#C4931A",
+                    "cviz24": "#E68C17",
+                    "cviz25": "#F27034",
+                    "cviz26": "#FF5252",
+                    "cviz27": "#EC3D57",
+                    "cviz28": "#D8265D",
+                    "sema1": "#63A621",
+                    "sema5": "#C51162",
+                  },
+                  "sequential": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
+                    "cviz1_300": "#BAE3F3",
+                    "cviz1_400": "#A6DCEE",
+                    "cviz1_500": "#92D5EC",
+                    "cviz1_600": "#7ECEE9",
+                    "cviz1_700": "#69C7E7",
+                    "cviz1_800": "#55C0E4",
+                    "cviz1_900": "#40B9E2",
+                  },
+                  "undefinedState": Object {
+                    "atmo5": "#DEDEDE",
+                  },
                 },
               },
             },
@@ -3642,6 +4100,7 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
+              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -3667,7 +4126,16 @@ body {
             "typography": Object {
               "body1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -3675,14 +4143,32 @@ body {
               },
               "body1Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "color": "#999999",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -3690,14 +4176,32 @@ body {
               },
               "body2Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "button": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -3706,7 +4210,16 @@ body {
               },
               "buttonNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 500,
                 "lineHeight": 1.75,
@@ -3714,28 +4227,64 @@ body {
               },
               "caption": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "captionNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.20588em",
               },
               "display2": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.8125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.13333em",
@@ -3743,7 +4292,16 @@ body {
               },
               "display3": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "3.5rem",
                 "fontWeight": 400,
                 "letterSpacing": "-.02em",
@@ -3752,21 +4310,44 @@ body {
               },
               "display4": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "7rem",
                 "fontWeight": 300,
                 "letterSpacing": "-.04em",
                 "lineHeight": "1.14286em",
                 "marginLeft": "-.04em",
               },
-              "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
               "fontSize": 14,
               "fontWeightLight": 300,
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -3774,7 +4355,16 @@ body {
               },
               "h2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -3782,7 +4372,16 @@ body {
               },
               "h3": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -3790,7 +4389,16 @@ body {
               },
               "h4": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -3798,28 +4406,64 @@ body {
               },
               "h5": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": 1.33,
               },
               "h6": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.25rem",
                 "fontWeight": 500,
                 "lineHeight": 1.6,
               },
               "headline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
               "overline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 2.66,
@@ -3829,14 +4473,32 @@ body {
               "round": [Function],
               "subheading": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": "1.5em",
               },
               "subtitle1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -3844,7 +4506,16 @@ body {
               },
               "subtitle2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -3853,7 +4524,16 @@ body {
               "suppressDeprecationWarnings": true,
               "title": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.3125rem",
                 "fontWeight": 500,
                 "lineHeight": "1.16667em",
@@ -3873,9 +4553,10 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                "root": "HvBanner-root-1",
+                "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                "root": "HvBanner-root-2",
+                "rootClosed": "HvBanner-rootClosed-1",
               },
               "deployed": true,
               "linked": false,
@@ -3883,9 +4564,10 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvBanner",
                 "classes": Object {
-                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                  "root": "HvBanner-root-1",
+                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                  "root": "HvBanner-root-2",
+                  "rootClosed": "HvBanner-rootClosed-1",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4373,13 +5055,16 @@ body {
                   data-meta="HvBanner"
                 >
                   
-.HvBanner-root-1 {
+.HvBanner-rootClosed-1 {
+  display: none;
+}
+.HvBanner-root-2 {
   min-width: calc(100% - 20px);
 }
-.HvBanner-anchorOriginTopCenter-2 {
+.HvBanner-anchorOriginTopCenter-3 {
   top: 10px;
 }
-.HvBanner-anchorOriginBottomCenter-3 {
+.HvBanner-anchorOriginBottomCenter-4 {
   bottom: 10px;
 }
 
@@ -4395,11 +5080,15 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                  "root": "HvBanner-root-1",
+                  "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                  "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                  "root": "HvBanner-root-2",
+                  "rootClosed": "HvBanner-rootClosed-1",
                 },
                 "index": Array [
+                  Object {
+                    "display": "none",
+                  },
                   Object {
                     "min-width": "calc(100% - 20px)",
                   },
@@ -4411,14 +5100,17 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvBanner-anchorOriginBottomCenter-3": Object {
+                  ".HvBanner-anchorOriginBottomCenter-4": Object {
                     "bottom": "10px",
                   },
-                  ".HvBanner-anchorOriginTopCenter-2": Object {
+                  ".HvBanner-anchorOriginTopCenter-3": Object {
                     "top": "10px",
                   },
-                  ".HvBanner-root-1": Object {
+                  ".HvBanner-root-2": Object {
                     "min-width": "calc(100% - 20px)",
+                  },
+                  ".HvBanner-rootClosed-1": Object {
+                    "display": "none",
                   },
                   "anchorOriginBottomCenter": Object {
                     "bottom": "10px",
@@ -4429,14 +5121,18 @@ body {
                   "root": Object {
                     "min-width": "calc(100% - 20px)",
                   },
+                  "rootClosed": Object {
+                    "display": "none",
+                  },
                 },
                 "options": Object {
                   "Renderer": [Function],
                   "classNamePrefix": "HvBanner",
                   "classes": Object {
-                    "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-                    "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-                    "root": "HvBanner-root-1",
+                    "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+                    "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+                    "root": "HvBanner-root-2",
+                    "rootClosed": "HvBanner-rootClosed-1",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -4928,6 +5624,9 @@ body {
                   "root": Object {
                     "minWidth": "calc(100% - 20px)",
                   },
+                  "rootClosed": Object {
+                    "display": "none",
+                  },
                 },
                 "update": [Function],
               },
@@ -4956,18 +5655,39 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {
+                  "disabledText": Object {},
+                },
+                "viz": Object {
+                  "palette": Object {
+                    "categorical": Object {},
+                    "polarizes": Object {},
+                    "sequential": Object {},
+                    "undefinedState": Object {},
+                  },
+                },
+              },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -4984,6 +5704,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -5045,7 +5775,12 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "highlightText": Object {
                   "color": "#414141",
                   "fontSize": "14px",
@@ -5054,7 +5789,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -5095,8 +5830,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -5108,6 +5857,21 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "background": "#414141",
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -5143,6 +5907,59 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "28px",
+                },
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz10": "#419393",
+                    "cviz11": "#58C9DD",
+                    "cviz12": "#F8C189",
+                    "cviz13": "#528BBF",
+                    "cviz14": "#DE64BD",
+                    "cviz15": "#73BF9C",
+                    "cviz16": "#9672C1",
+                    "cviz17": "#EB95AF",
+                    "cviz18": "#646A98",
+                    "cviz19": "#D88136",
+                    "cviz2": "#FF990D",
+                    "cviz20": "#309B59",
+                    "cviz3": "#D31F6B",
+                    "cviz4": "#FFD00A",
+                    "cviz5": "#18C38A",
+                    "cviz6": "#098CB2",
+                    "cviz7": "#EA5B86",
+                    "cviz8": "#9B469B",
+                    "cviz9": "#F4763D",
+                  },
+                  "polarizes": Object {
+                    "cviz21": "#869F1E",
+                    "cviz22": "#A4991C",
+                    "cviz23": "#C4931A",
+                    "cviz24": "#E68C17",
+                    "cviz25": "#F27034",
+                    "cviz26": "#FF5252",
+                    "cviz27": "#EC3D57",
+                    "cviz28": "#D8265D",
+                    "sema1": "#63A621",
+                    "sema5": "#C51162",
+                  },
+                  "sequential": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
+                    "cviz1_300": "#BAE3F3",
+                    "cviz1_400": "#A6DCEE",
+                    "cviz1_500": "#92D5EC",
+                    "cviz1_600": "#7ECEE9",
+                    "cviz1_700": "#69C7E7",
+                    "cviz1_800": "#55C0E4",
+                    "cviz1_900": "#40B9E2",
+                  },
+                  "undefinedState": Object {
+                    "atmo5": "#DEDEDE",
+                  },
                 },
               },
             },
@@ -5297,6 +6114,7 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
+              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -5322,7 +6140,16 @@ body {
             "typography": Object {
               "body1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -5330,14 +6157,32 @@ body {
               },
               "body1Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "color": "#999999",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -5345,14 +6190,32 @@ body {
               },
               "body2Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "button": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -5361,7 +6224,16 @@ body {
               },
               "buttonNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 500,
                 "lineHeight": 1.75,
@@ -5369,28 +6241,64 @@ body {
               },
               "caption": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "captionNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.20588em",
               },
               "display2": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.8125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.13333em",
@@ -5398,7 +6306,16 @@ body {
               },
               "display3": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "3.5rem",
                 "fontWeight": 400,
                 "letterSpacing": "-.02em",
@@ -5407,21 +6324,44 @@ body {
               },
               "display4": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "7rem",
                 "fontWeight": 300,
                 "letterSpacing": "-.04em",
                 "lineHeight": "1.14286em",
                 "marginLeft": "-.04em",
               },
-              "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
               "fontSize": 14,
               "fontWeightLight": 300,
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -5429,7 +6369,16 @@ body {
               },
               "h2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -5437,7 +6386,16 @@ body {
               },
               "h3": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -5445,7 +6403,16 @@ body {
               },
               "h4": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -5453,28 +6420,64 @@ body {
               },
               "h5": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": 1.33,
               },
               "h6": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.25rem",
                 "fontWeight": 500,
                 "lineHeight": 1.6,
               },
               "headline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
               "overline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 2.66,
@@ -5484,14 +6487,32 @@ body {
               "round": [Function],
               "subheading": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": "1.5em",
               },
               "subtitle1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -5499,7 +6520,16 @@ body {
               },
               "subtitle2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -5508,7 +6538,16 @@ body {
               "suppressDeprecationWarnings": true,
               "title": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.3125rem",
                 "fontWeight": 500,
                 "lineHeight": "1.16667em",
@@ -5528,13 +6567,13 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                "root": "MuiSnackbar-root-4",
+                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                "root": "MuiSnackbar-root-5",
               },
               "deployed": true,
               "linked": false,
@@ -5542,13 +6581,13 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "MuiSnackbar",
                 "classes": Object {
-                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                  "root": "MuiSnackbar-root-4",
+                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                  "root": "MuiSnackbar-root-5",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -6036,7 +7075,7 @@ body {
                   data-meta="MuiSnackbar"
                 >
                   
-.MuiSnackbar-root-4 {
+.MuiSnackbar-root-5 {
   left: 0;
   right: 0;
   z-index: 1400;
@@ -6045,65 +7084,65 @@ body {
   align-items: center;
   justify-content: center;
 }
-.MuiSnackbar-anchorOriginTopCenter-5 {
+.MuiSnackbar-anchorOriginTopCenter-6 {
   top: 0;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginTopCenter-5 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginTopCenter-6 {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
   }
 }
-.MuiSnackbar-anchorOriginBottomCenter-6 {
+.MuiSnackbar-anchorOriginBottomCenter-7 {
   bottom: 0;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginBottomCenter-6 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginBottomCenter-7 {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
   }
 }
-.MuiSnackbar-anchorOriginTopRight-7 {
+.MuiSnackbar-anchorOriginTopRight-8 {
   top: 0;
   justify-content: flex-end;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginTopRight-7 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginTopRight-8 {
     top: 24px;
     left: auto;
     right: 24px;
   }
 }
-.MuiSnackbar-anchorOriginBottomRight-8 {
+.MuiSnackbar-anchorOriginBottomRight-9 {
   bottom: 0;
   justify-content: flex-end;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginBottomRight-8 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginBottomRight-9 {
     left: auto;
     right: 24px;
     bottom: 24px;
   }
 }
-.MuiSnackbar-anchorOriginTopLeft-9 {
+.MuiSnackbar-anchorOriginTopLeft-10 {
   top: 0;
   justify-content: flex-start;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginTopLeft-9 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginTopLeft-10 {
     top: 24px;
     left: 24px;
     right: auto;
   }
 }
-.MuiSnackbar-anchorOriginBottomLeft-10 {
+.MuiSnackbar-anchorOriginBottomLeft-11 {
   bottom: 0;
   justify-content: flex-start;
 }
-@media (min-width:720px) {
-  .MuiSnackbar-anchorOriginBottomLeft-10 {
+@media (min-width:960px) {
+  .MuiSnackbar-anchorOriginBottomLeft-11 {
     left: 24px;
     right: auto;
     bottom: 24px;
@@ -6122,13 +7161,13 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                  "root": "MuiSnackbar-root-4",
+                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                  "root": "MuiSnackbar-root-5",
                 },
                 "index": Array [
                   Object {
@@ -6145,17 +7184,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 2,
@@ -6275,13 +7314,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -6291,7 +7330,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopCenter-5": Object {
+                        ".MuiSnackbar-anchorOriginTopCenter-6": Object {
                           "left": "50%",
                           "right": "auto",
                           "transform": "translateX(-50%)",
@@ -6305,13 +7344,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 2,
@@ -6445,17 +7484,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 4,
@@ -6575,13 +7614,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -6591,7 +7630,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomCenter-6": Object {
+                        ".MuiSnackbar-anchorOriginBottomCenter-7": Object {
                           "left": "50%",
                           "right": "auto",
                           "transform": "translateX(-50%)",
@@ -6605,13 +7644,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 4,
@@ -6746,17 +7785,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 6,
@@ -6876,13 +7915,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -6892,7 +7931,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopRight-7": Object {
+                        ".MuiSnackbar-anchorOriginTopRight-8": Object {
                           "left": "auto",
                           "right": "24px",
                           "top": "24px",
@@ -6906,13 +7945,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 6,
@@ -7047,17 +8086,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 8,
@@ -7177,13 +8216,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7193,7 +8232,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomRight-8": Object {
+                        ".MuiSnackbar-anchorOriginBottomRight-9": Object {
                           "bottom": "24px",
                           "left": "auto",
                           "right": "24px",
@@ -7207,13 +8246,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 8,
@@ -7348,17 +8387,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 10,
@@ -7478,13 +8517,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7494,7 +8533,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginTopLeft-9": Object {
+                        ".MuiSnackbar-anchorOriginTopLeft-10": Object {
                           "left": "24px",
                           "right": "auto",
                           "top": "24px",
@@ -7508,13 +8547,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 10,
@@ -7649,17 +8688,17 @@ body {
                   },
                   ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 12,
@@ -7779,13 +8818,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -7795,7 +8834,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                        ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                           "bottom": "24px",
                           "left": "24px",
                           "right": "auto",
@@ -7809,13 +8848,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 12,
@@ -7946,29 +8985,29 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".MuiSnackbar-anchorOriginBottomCenter-6": Object {
+                  ".MuiSnackbar-anchorOriginBottomCenter-7": Object {
                     "bottom": 0,
                   },
-                  ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                  ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                     "bottom": 0,
                     "justify-content": "flex-start",
                   },
-                  ".MuiSnackbar-anchorOriginBottomRight-8": Object {
+                  ".MuiSnackbar-anchorOriginBottomRight-9": Object {
                     "bottom": 0,
                     "justify-content": "flex-end",
                   },
-                  ".MuiSnackbar-anchorOriginTopCenter-5": Object {
+                  ".MuiSnackbar-anchorOriginTopCenter-6": Object {
                     "top": 0,
                   },
-                  ".MuiSnackbar-anchorOriginTopLeft-9": Object {
+                  ".MuiSnackbar-anchorOriginTopLeft-10": Object {
                     "justify-content": "flex-start",
                     "top": 0,
                   },
-                  ".MuiSnackbar-anchorOriginTopRight-7": Object {
+                  ".MuiSnackbar-anchorOriginTopRight-8": Object {
                     "justify-content": "flex-end",
                     "top": 0,
                   },
-                  ".MuiSnackbar-root-4": Object {
+                  ".MuiSnackbar-root-5": Object {
                     "align-items": "center",
                     "display": "flex",
                     "justify-content": "center",
@@ -7977,19 +9016,19 @@ body {
                     "right": 0,
                     "z-index": "1400",
                   },
-                  "@media (min-width:720px)": ConditionalRule {
+                  "@media (min-width:960px)": ConditionalRule {
                     "isProcessed": true,
-                    "key": "@media (min-width:720px)",
+                    "key": "@media (min-width:960px)",
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "generateClassName": [Function],
                       "index": 12,
@@ -8109,13 +9148,13 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                        "root": "MuiSnackbar-root-4",
+                        "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                        "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                        "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                        "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                        "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                        "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                        "root": "MuiSnackbar-root-5",
                       },
                       "index": Array [
                         Object {
@@ -8125,7 +9164,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".MuiSnackbar-anchorOriginBottomLeft-10": Object {
+                        ".MuiSnackbar-anchorOriginBottomLeft-11": Object {
                           "bottom": "24px",
                           "left": "24px",
                           "right": "auto",
@@ -8139,13 +9178,13 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                          "root": "MuiSnackbar-root-4",
+                          "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                          "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                          "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                          "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                          "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                          "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                          "root": "MuiSnackbar-root-5",
                         },
                         "generateClassName": [Function],
                         "index": 12,
@@ -8310,13 +9349,13 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiSnackbar",
                   "classes": Object {
-                    "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6",
-                    "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                    "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                    "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5",
-                    "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                    "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                    "root": "MuiSnackbar-root-4",
+                    "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7",
+                    "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                    "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                    "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6",
+                    "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                    "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                    "root": "MuiSnackbar-root-5",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -8799,9 +9838,9 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  "@media (min-width:720px)": null,
+                  "@media (min-width:960px)": null,
                   "anchorOriginBottomCenter": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8809,7 +9848,7 @@ body {
                     "bottom": 0,
                   },
                   "anchorOriginBottomLeft": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "bottom": 24,
                       "left": 24,
                       "right": "auto",
@@ -8818,7 +9857,7 @@ body {
                     "justifyContent": "flex-start",
                   },
                   "anchorOriginBottomRight": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "bottom": 24,
                       "left": "auto",
                       "right": 24,
@@ -8827,7 +9866,7 @@ body {
                     "justifyContent": "flex-end",
                   },
                   "anchorOriginTopCenter": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "50%",
                       "right": "auto",
                       "transform": "translateX(-50%)",
@@ -8835,7 +9874,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopLeft": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": 24,
                       "right": "auto",
                       "top": 24,
@@ -8844,7 +9883,7 @@ body {
                     "top": 0,
                   },
                   "anchorOriginTopRight": Object {
-                    "@media (min-width:720px)": Object {
+                    "@media (min-width:960px)": Object {
                       "left": "auto",
                       "right": 24,
                       "top": 24,
@@ -8885,18 +9924,39 @@ body {
           "only": [Function],
           "up": [Function],
           "values": Object {
-            "lg": 840,
-            "md": 720,
+            "lg": 1270,
+            "md": 960,
             "sm": 600,
-            "xl": 1990,
+            "xl": 1920,
             "xs": 0,
           },
           "width": [Function],
         },
         "direction": "ltr",
         "hv": Object {
+          "deprecated": Object {
+            "palette": Object {
+              "accent": Object {},
+              "atmosphere": Object {},
+              "semantic": Object {},
+              "support": Object {},
+            },
+            "typography": Object {
+              "disabledText": Object {},
+            },
+            "viz": Object {
+              "palette": Object {
+                "categorical": Object {},
+                "polarizes": Object {},
+                "sequential": Object {},
+                "undefinedState": Object {},
+              },
+            },
+          },
+          "name": "dawn",
           "palette": Object {
             "accent": Object {
+              "acce0": "#FFFFFF",
               "acce1": "#414141",
               "acce2": "#146BD2",
               "acce2h": "#4389DB",
@@ -8913,6 +9973,16 @@ body {
             },
             "semantic": Object {
               "sema1": "#63A621",
+              "sema10": "#EF9A9A",
+              "sema11": "#E57373",
+              "sema12": "#EF5350",
+              "sema13": "#E53935",
+              "sema14": "#C62828",
+              "sema15": "#80DEEA",
+              "sema16": "#4DD0E1",
+              "sema17": "#26C6DA",
+              "sema18": "#00ACC1",
+              "sema19": "#00838F",
               "sema2": "#72CCCB",
               "sema3": "#E68C17",
               "sema4": "#FF5252",
@@ -8974,7 +10044,12 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
             },
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "highlightText": Object {
               "color": "#414141",
               "fontSize": "14px",
@@ -8983,7 +10058,7 @@ body {
               "lineHeight": "20px",
             },
             "infoText": Object {
-              "color": "#414141",
+              "color": "#999999",
               "fontSize": "12px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
@@ -9024,8 +10099,22 @@ body {
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
             },
+            "placeholderText": Object {
+              "color": "#999999",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
             "sLink": Object {
               "color": "#146BD2",
+              "fontSize": "12px",
+              "fontWeight": "400",
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "sText": Object {
+              "color": "#414141",
               "fontSize": "12px",
               "fontWeight": "400",
               "letterSpacing": "0.02em",
@@ -9037,6 +10126,21 @@ body {
               "fontWeight": "400",
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
+            },
+            "selectedNavText": Object {
+              "color": "#CC0000",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "selectedText": Object {
+              "background": "#414141",
+              "color": "#F9F9F9",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
             },
             "vizText": Object {
               "color": "#414141",
@@ -9072,6 +10176,59 @@ body {
               "fontWeight": "400",
               "letterSpacing": "0.02em",
               "lineHeight": "28px",
+            },
+          },
+          "viz": Object {
+            "palette": Object {
+              "categorical": Object {
+                "cviz1": "#2DB3E0",
+                "cviz10": "#419393",
+                "cviz11": "#58C9DD",
+                "cviz12": "#F8C189",
+                "cviz13": "#528BBF",
+                "cviz14": "#DE64BD",
+                "cviz15": "#73BF9C",
+                "cviz16": "#9672C1",
+                "cviz17": "#EB95AF",
+                "cviz18": "#646A98",
+                "cviz19": "#D88136",
+                "cviz2": "#FF990D",
+                "cviz20": "#309B59",
+                "cviz3": "#D31F6B",
+                "cviz4": "#FFD00A",
+                "cviz5": "#18C38A",
+                "cviz6": "#098CB2",
+                "cviz7": "#EA5B86",
+                "cviz8": "#9B469B",
+                "cviz9": "#F4763D",
+              },
+              "polarizes": Object {
+                "cviz21": "#869F1E",
+                "cviz22": "#A4991C",
+                "cviz23": "#C4931A",
+                "cviz24": "#E68C17",
+                "cviz25": "#F27034",
+                "cviz26": "#FF5252",
+                "cviz27": "#EC3D57",
+                "cviz28": "#D8265D",
+                "sema1": "#63A621",
+                "sema5": "#C51162",
+              },
+              "sequential": Object {
+                "cviz1": "#2DB3E0",
+                "cviz1_100": "#E3F1F6",
+                "cviz1_200": "#CFEAF3",
+                "cviz1_300": "#BAE3F3",
+                "cviz1_400": "#A6DCEE",
+                "cviz1_500": "#92D5EC",
+                "cviz1_600": "#7ECEE9",
+                "cviz1_700": "#69C7E7",
+                "cviz1_800": "#55C0E4",
+                "cviz1_900": "#40B9E2",
+              },
+              "undefinedState": Object {
+                "atmo5": "#DEDEDE",
+              },
             },
           },
         },
@@ -9226,6 +10383,7 @@ body {
           "lg": "60",
           "md": "30",
           "sm": "20",
+          "unit": 8,
           "xl": "90",
           "xs": "10",
         },
@@ -9251,7 +10409,16 @@ body {
         "typography": Object {
           "body1": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "14px",
             "fontWeight": "400",
             "letterSpacing": "0.02em",
@@ -9259,14 +10426,32 @@ body {
           },
           "body1Next": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1rem",
             "fontWeight": 400,
             "lineHeight": 1.5,
           },
           "body2": Object {
-            "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "color": "#999999",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "12px",
             "fontWeight": "400",
             "letterSpacing": "0.02em",
@@ -9274,14 +10459,32 @@ body {
           },
           "body2Next": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "0.875rem",
             "fontWeight": 400,
             "lineHeight": 1.5,
           },
           "button": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "14px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
@@ -9290,7 +10493,16 @@ body {
           },
           "buttonNext": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "0.875rem",
             "fontWeight": 500,
             "lineHeight": 1.75,
@@ -9298,28 +10510,64 @@ body {
           },
           "caption": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "0.75rem",
             "fontWeight": 400,
             "lineHeight": 1.66,
           },
           "captionNext": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "0.75rem",
             "fontWeight": 400,
             "lineHeight": 1.66,
           },
           "display1": Object {
             "color": "rgba(0, 0, 0, 0.54)",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "2.125rem",
             "fontWeight": 400,
             "lineHeight": "1.20588em",
           },
           "display2": Object {
             "color": "rgba(0, 0, 0, 0.54)",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "2.8125rem",
             "fontWeight": 400,
             "lineHeight": "1.13333em",
@@ -9327,7 +10575,16 @@ body {
           },
           "display3": Object {
             "color": "rgba(0, 0, 0, 0.54)",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "3.5rem",
             "fontWeight": 400,
             "letterSpacing": "-.02em",
@@ -9336,21 +10593,44 @@ body {
           },
           "display4": Object {
             "color": "rgba(0, 0, 0, 0.54)",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "7rem",
             "fontWeight": 300,
             "letterSpacing": "-.04em",
             "lineHeight": "1.14286em",
             "marginLeft": "-.04em",
           },
-          "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+          "fontFamily": Array [
+            "'Open Sans'",
+            "Arial",
+            "Helvetica",
+            "sans-serif",
+          ],
           "fontSize": 14,
           "fontWeightLight": 300,
           "fontWeightMedium": 500,
           "fontWeightRegular": 400,
           "h1": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "32px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
@@ -9358,7 +10638,16 @@ body {
           },
           "h2": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "32px",
             "fontWeight": "400",
             "letterSpacing": "0.02em",
@@ -9366,7 +10655,16 @@ body {
           },
           "h3": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "22px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
@@ -9374,7 +10672,16 @@ body {
           },
           "h4": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "22px",
             "fontWeight": "400",
             "letterSpacing": "0.02em",
@@ -9382,28 +10689,64 @@ body {
           },
           "h5": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1.5rem",
             "fontWeight": 400,
             "lineHeight": 1.33,
           },
           "h6": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1.25rem",
             "fontWeight": 500,
             "lineHeight": 1.6,
           },
           "headline": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1.5rem",
             "fontWeight": 400,
             "lineHeight": "1.35417em",
           },
           "overline": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "0.75rem",
             "fontWeight": 400,
             "lineHeight": 2.66,
@@ -9413,14 +10756,32 @@ body {
           "round": [Function],
           "subheading": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1rem",
             "fontWeight": 400,
             "lineHeight": "1.5em",
           },
           "subtitle1": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "14px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
@@ -9428,7 +10789,16 @@ body {
           },
           "subtitle2": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "12px",
             "fontWeight": "600",
             "letterSpacing": "0.02em",
@@ -9437,7 +10807,16 @@ body {
           "suppressDeprecationWarnings": true,
           "title": Object {
             "color": "#414141",
-            "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+            "fontFamily": Array [
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+              "'Open Sans'",
+              "Arial",
+              "Helvetica",
+              "sans-serif",
+            ],
             "fontSize": "1.3125rem",
             "fontWeight": 500,
             "lineHeight": "1.16667em",
@@ -9472,9 +10851,10 @@ body {
         className=""
         classes={
           Object {
-            "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-            "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-            "root": "HvBanner-root-1",
+            "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+            "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+            "root": "HvBanner-root-2",
+            "rootClosed": "HvBanner-rootClosed-1",
           }
         }
         customIcon={null}
@@ -9497,18 +10877,39 @@ body {
               "only": [Function],
               "up": [Function],
               "values": Object {
-                "lg": 840,
-                "md": 720,
+                "lg": 1270,
+                "md": 960,
                 "sm": 600,
-                "xl": 1990,
+                "xl": 1920,
                 "xs": 0,
               },
               "width": [Function],
             },
             "direction": "ltr",
             "hv": Object {
+              "deprecated": Object {
+                "palette": Object {
+                  "accent": Object {},
+                  "atmosphere": Object {},
+                  "semantic": Object {},
+                  "support": Object {},
+                },
+                "typography": Object {
+                  "disabledText": Object {},
+                },
+                "viz": Object {
+                  "palette": Object {
+                    "categorical": Object {},
+                    "polarizes": Object {},
+                    "sequential": Object {},
+                    "undefinedState": Object {},
+                  },
+                },
+              },
+              "name": "dawn",
               "palette": Object {
                 "accent": Object {
+                  "acce0": "#FFFFFF",
                   "acce1": "#414141",
                   "acce2": "#146BD2",
                   "acce2h": "#4389DB",
@@ -9525,6 +10926,16 @@ body {
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
+                  "sema10": "#EF9A9A",
+                  "sema11": "#E57373",
+                  "sema12": "#EF5350",
+                  "sema13": "#E53935",
+                  "sema14": "#C62828",
+                  "sema15": "#80DEEA",
+                  "sema16": "#4DD0E1",
+                  "sema17": "#26C6DA",
+                  "sema18": "#00ACC1",
+                  "sema19": "#00838F",
                   "sema2": "#72CCCB",
                   "sema3": "#E68C17",
                   "sema4": "#FF5252",
@@ -9586,7 +10997,12 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "16px",
                 },
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "highlightText": Object {
                   "color": "#414141",
                   "fontSize": "14px",
@@ -9595,7 +11011,7 @@ body {
                   "lineHeight": "20px",
                 },
                 "infoText": Object {
-                  "color": "#414141",
+                  "color": "#999999",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -9636,8 +11052,22 @@ body {
                   "letterSpacing": "0.02em",
                   "lineHeight": "20px",
                 },
+                "placeholderText": Object {
+                  "color": "#999999",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
                 "sLink": Object {
                   "color": "#146BD2",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "16px",
+                },
+                "sText": Object {
+                  "color": "#414141",
                   "fontSize": "12px",
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
@@ -9649,6 +11079,21 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "30px",
+                },
+                "selectedNavText": Object {
+                  "color": "#CC0000",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
+                },
+                "selectedText": Object {
+                  "background": "#414141",
+                  "color": "#F9F9F9",
+                  "fontSize": "14px",
+                  "fontWeight": "600",
+                  "letterSpacing": "0.02em",
+                  "lineHeight": "20px",
                 },
                 "vizText": Object {
                   "color": "#414141",
@@ -9684,6 +11129,59 @@ body {
                   "fontWeight": "400",
                   "letterSpacing": "0.02em",
                   "lineHeight": "28px",
+                },
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz10": "#419393",
+                    "cviz11": "#58C9DD",
+                    "cviz12": "#F8C189",
+                    "cviz13": "#528BBF",
+                    "cviz14": "#DE64BD",
+                    "cviz15": "#73BF9C",
+                    "cviz16": "#9672C1",
+                    "cviz17": "#EB95AF",
+                    "cviz18": "#646A98",
+                    "cviz19": "#D88136",
+                    "cviz2": "#FF990D",
+                    "cviz20": "#309B59",
+                    "cviz3": "#D31F6B",
+                    "cviz4": "#FFD00A",
+                    "cviz5": "#18C38A",
+                    "cviz6": "#098CB2",
+                    "cviz7": "#EA5B86",
+                    "cviz8": "#9B469B",
+                    "cviz9": "#F4763D",
+                  },
+                  "polarizes": Object {
+                    "cviz21": "#869F1E",
+                    "cviz22": "#A4991C",
+                    "cviz23": "#C4931A",
+                    "cviz24": "#E68C17",
+                    "cviz25": "#F27034",
+                    "cviz26": "#FF5252",
+                    "cviz27": "#EC3D57",
+                    "cviz28": "#D8265D",
+                    "sema1": "#63A621",
+                    "sema5": "#C51162",
+                  },
+                  "sequential": Object {
+                    "cviz1": "#2DB3E0",
+                    "cviz1_100": "#E3F1F6",
+                    "cviz1_200": "#CFEAF3",
+                    "cviz1_300": "#BAE3F3",
+                    "cviz1_400": "#A6DCEE",
+                    "cviz1_500": "#92D5EC",
+                    "cviz1_600": "#7ECEE9",
+                    "cviz1_700": "#69C7E7",
+                    "cviz1_800": "#55C0E4",
+                    "cviz1_900": "#40B9E2",
+                  },
+                  "undefinedState": Object {
+                    "atmo5": "#DEDEDE",
+                  },
                 },
               },
             },
@@ -9838,6 +11336,7 @@ body {
               "lg": "60",
               "md": "30",
               "sm": "20",
+              "unit": 8,
               "xl": "90",
               "xs": "10",
             },
@@ -9863,7 +11362,16 @@ body {
             "typography": Object {
               "body1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -9871,14 +11379,32 @@ body {
               },
               "body1Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "body2": Object {
-                "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "color": "#999999",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -9886,14 +11412,32 @@ body {
               },
               "body2Next": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 400,
                 "lineHeight": 1.5,
               },
               "button": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -9902,7 +11446,16 @@ body {
               },
               "buttonNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.875rem",
                 "fontWeight": 500,
                 "lineHeight": 1.75,
@@ -9910,28 +11463,64 @@ body {
               },
               "caption": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "captionNext": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 1.66,
               },
               "display1": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.20588em",
               },
               "display2": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "2.8125rem",
                 "fontWeight": 400,
                 "lineHeight": "1.13333em",
@@ -9939,7 +11528,16 @@ body {
               },
               "display3": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "3.5rem",
                 "fontWeight": 400,
                 "letterSpacing": "-.02em",
@@ -9948,21 +11546,44 @@ body {
               },
               "display4": Object {
                 "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "7rem",
                 "fontWeight": 300,
                 "letterSpacing": "-.04em",
                 "lineHeight": "1.14286em",
                 "marginLeft": "-.04em",
               },
-              "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
               "fontSize": 14,
               "fontWeightLight": 300,
               "fontWeightMedium": 500,
               "fontWeightRegular": 400,
               "h1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -9970,7 +11591,16 @@ body {
               },
               "h2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "32px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -9978,7 +11608,16 @@ body {
               },
               "h3": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -9986,7 +11625,16 @@ body {
               },
               "h4": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "22px",
                 "fontWeight": "400",
                 "letterSpacing": "0.02em",
@@ -9994,28 +11642,64 @@ body {
               },
               "h5": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": 1.33,
               },
               "h6": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.25rem",
                 "fontWeight": 500,
                 "lineHeight": 1.6,
               },
               "headline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.5rem",
                 "fontWeight": 400,
                 "lineHeight": "1.35417em",
               },
               "overline": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "0.75rem",
                 "fontWeight": 400,
                 "lineHeight": 2.66,
@@ -10025,14 +11709,32 @@ body {
               "round": [Function],
               "subheading": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1rem",
                 "fontWeight": 400,
                 "lineHeight": "1.5em",
               },
               "subtitle1": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "14px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -10040,7 +11742,16 @@ body {
               },
               "subtitle2": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "12px",
                 "fontWeight": "600",
                 "letterSpacing": "0.02em",
@@ -10049,7 +11760,16 @@ body {
               "suppressDeprecationWarnings": true,
               "title": Object {
                 "color": "#414141",
-                "fontFamily": "'Open Sans', 'Arial', 'Helvetica', sans-serif",
+                "fontFamily": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
                 "fontSize": "1.3125rem",
                 "fontWeight": 500,
                 "lineHeight": "1.16667em",
@@ -10066,9 +11786,12 @@ body {
             },
           }
         }
+        transitionDirection="down"
+        transitionDuration={300}
         variant="default"
       >
         <WithStyles(Snackbar)
+          TransitionComponent={[Function]}
           anchorOrigin={
             Object {
               "horizontal": "center",
@@ -10078,13 +11801,13 @@ body {
           className=""
           classes={
             Object {
-              "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-3",
-              "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-2",
-              "root": "HvBanner-root-1",
+              "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+              "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+              "root": "HvBanner-rootClosed-1",
             }
           }
           open={false}
-          transitionDuration={0}
+          transitionDuration={300}
         >
           <Snackbar
             TransitionComponent={[Function]}
@@ -10097,18 +11820,18 @@ body {
             className=""
             classes={
               Object {
-                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-6 HvBanner-anchorOriginBottomCenter-3",
-                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-10",
-                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-8",
-                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-5 HvBanner-anchorOriginTopCenter-2",
-                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-9",
-                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-7",
-                "root": "MuiSnackbar-root-4 HvBanner-root-1",
+                "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter-7 HvBanner-anchorOriginBottomCenter-4",
+                "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft-11",
+                "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight-9",
+                "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter-6 HvBanner-anchorOriginTopCenter-3",
+                "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft-10",
+                "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight-8",
+                "root": "MuiSnackbar-root-5 HvBanner-rootClosed-1",
               }
             }
             disableWindowBlurListener={false}
             open={false}
-            transitionDuration={0}
+            transitionDuration={300}
           />
         </WithStyles(Snackbar)>
       </HvBanner>

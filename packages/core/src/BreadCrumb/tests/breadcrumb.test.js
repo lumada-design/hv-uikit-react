@@ -17,7 +17,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import AngleForwards12 from "@hv/uikit-react-icons/dist/DropRight.XS";
+import AngleForwards12 from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
 import HvProvider from "../../Provider";
 import BreadcrumbWithStyles from "../index";
 import Breadcrumb from "../BreadCrumb";

@@ -18,7 +18,8 @@ const styles = theme => ({
   root: {
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     lineHeight: "50px",
-    marginTop: 40
+    margin: "40px 0 30px",
+    paddingBottom: "5px"
   },
   titleContainer: {
     marginBottom: "10px",
@@ -36,8 +37,9 @@ const styles = theme => ({
   iconCode: {
     marginLeft: "auto",
     padding: 0,
+    borderRadius: "0",
     "&:hover": {
-      backgroundColor: "transparent"
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
     }
   }
 });

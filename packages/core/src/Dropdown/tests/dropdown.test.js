@@ -56,6 +56,7 @@ const mockDataWithIds = [
 describe("<Dropdown />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
+  global.window.event = jest.fn();
 
   let wrapper;
   let dropdownComponent;
@@ -140,7 +141,6 @@ describe("<Dropdown />", () => {
     it("handleToggle updates state accordingly", () => {
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();
-
       instance.handleToggle({ stopPropagation: jest.fn() });
 
       expect(instance.state.isOpen).toBe(true);

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox.S";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck.S";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial.S";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import classNames from "classnames";
@@ -90,21 +91,41 @@ const HvCheckbox = props => {
     value,
     label,
     labelPlacement,
-    propsLabel,
+    formControlLabelProps,
     propsIcon,
+    checkboxProps,
+    propsLabel,
     theme
   } = props;
 
   const materialPrimaryColor = "primary";
   const icons = prepareIcon(disabled, theme);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const [isFocusDisabled, disableFocus] = useState(false);
+
+  const onLocalChange = evt => {
+    const isKeyEvent =
+      window.event.screenX === 0 &&
+      window.event.screenY === 0 &&
+      window.event.clientX === 0 &&
+      window.event.clientY === 0;
+
+    disableFocus(!isKeyEvent);
+    onChange(evt);
+  };
+
+  const onBlur = () => {
+    disableFocus(false);
+  };
 
   return (
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, className)}
+      className={classNames(labelClass, className, {
+        [classes.disableFocus]: isFocusDisabled
+      })}
       id={id}
       classes={{
         disabled: classes.labelDisabled,
@@ -119,13 +140,16 @@ const HvCheckbox = props => {
           color={materialPrimaryColor}
           disabled={disabled}
           disableRipple
-          onChange={onChange}
+          onChange={onLocalChange}
+          onBlur={onBlur}
           value={value}
           checked={checked}
           indeterminate={indeterminate}
+          {...checkboxProps}
           {...propsLabel}
         />
       }
+      {...formControlLabelProps}
       {...propsIcon}
     />
   );
@@ -136,7 +160,7 @@ HvCheckbox.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -223,13 +247,27 @@ HvCheckbox.propTypes = {
    */
   labelPlacement: PropTypes.oneOf(["start", "end"]),
   /**
-   * Extra properties passed to the icon.
+   * Extra properties passed to the MUI FormControlLabel component.
    */
-  propsIcon: PropTypes.instanceOf(Object),
+  formControlLabelProps: PropTypes.instanceOf(Object),
   /**
-   * Extra properties passed to the label.
+   * @deprecated Instead use the formControlLabelProps property
    */
-  propsLabel: PropTypes.instanceOf(Object),
+  propsIcon: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the formControlLabelProps property"
+  ),
+  /**
+   * Extra properties passed to the MUI Checkbox component.
+   */
+  checkboxProps: PropTypes.instanceOf(Object),
+  /**
+   * @deprecated Instead use the checkboxProps property
+   */
+  propsLabel: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the checkboxProps property"
+  ),
   /**
    * The theme passed by the provider.
    */
@@ -245,7 +283,9 @@ HvCheckbox.defaultProps = {
   indeterminate: undefined,
   disabled: false,
   onChange: () => {},
+  formControlLabelProps: undefined,
   propsIcon: undefined,
+  checkboxProps: undefined,
   propsLabel: undefined,
   labelPlacement: "end",
   theme: null

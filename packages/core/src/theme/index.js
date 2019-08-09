@@ -54,9 +54,9 @@ const muiTheme = uiKitTheme => {
       values: {
         xs: 0,
         sm: 600,
-        md: 720,
-        lg: 840,
-        xl: 1990
+        md: 960,
+        lg: 1270,
+        xl: 1920
       }
     },
     props: {
@@ -80,7 +80,7 @@ const muiTheme = uiKitTheme => {
     }
   });
 
-  muiCreatedTheme.spacing = { ...muiTheme.spacing, ...theme.spacing};
+  muiCreatedTheme.spacing = { ...muiCreatedTheme.spacing, ...theme.spacing};
 
   return Object.assign({}, muiCreatedTheme, { hv: theme });
 };

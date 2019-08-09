@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    margin: `${theme.hv.spacing.xs}px 0 0 ${theme.hv.spacing.sm}px`
+    
   },
   list: {
     maxHeight: 320,
@@ -57,19 +57,20 @@ const styles = theme => ({
     display: "block"
   },
   selectAll: {
-    margin: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
+    marginTop: `5px`,
     "& > span": {
       ...theme.hv.typography.highlightText
     }
   },
   actions: {
     textAlign: "right",
-    margin: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${
-      theme.hv.spacing.sm
-    }px 0`
+    borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
+    padding: `${theme.hv.spacing.sm}px`
   },
-  paddingRight: {
-    paddingRight: `${theme.hv.spacing.sm}px`
+  padding: {
+    paddingLeft: `${theme.hv.spacing.sm}px`,
+    paddingRight: "18px",
+    marginRight: "2px"
   },
   marginBottom: {
     marginBottom: `${theme.hv.spacing.sm}px`

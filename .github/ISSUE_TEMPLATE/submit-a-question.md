@@ -2,8 +2,8 @@
 name: Submit a question
 about: Request clarifications about something related with this project
 title: ''
-labels: question
-assignees: diogofscmariano, eliofreitas, francisco-guilherme, tiago-ssantos
+labels: ''
+assignees: diogofscmariano
 
 ---
 

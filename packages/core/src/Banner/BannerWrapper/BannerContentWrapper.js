@@ -66,12 +66,14 @@ function HvBannerContentWrapper({
           action: classes.action
         }}
         className={classNames(classes[variant], classes.baseVariant)}
-        message=<MessageContainer
-          icon={icon}
-          actionsOnMessage={actionsOnMessage}
-          message={message || content}
-        />
-        action=<ActionContainer onClose={onClose} action={action} />
+        message={
+          <MessageContainer
+            icon={icon}
+            actionsOnMessage={actionsOnMessage}
+            message={message || content}
+          />
+        }
+        action={<ActionContainer onClose={onClose} action={action} />}
         {...other}
       />
     </div>
@@ -91,7 +93,10 @@ HvBannerContentWrapper.propTypes = {
    * The message to display.
    * @deprecated Instead use the content property
    */
-  message: deprecatedPropType(PropTypes.node, "Instead use the content property"),
+  message: deprecatedPropType(
+    PropTypes.node,
+    "Instead use the content property"
+  ),
   /**
    * Variant of the snackbar.
    */

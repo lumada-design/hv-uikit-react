@@ -20,6 +20,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
+import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected.S";
+
 import RadioWithStyles from "../index";
 import RadioButton from "../RadioButton";
 import labelPositions from "../../labelPositions";
@@ -34,7 +36,6 @@ describe("RadioButton withStyles", () => {
       .children()
       .props().className;
 
-  const emptyIcon = "RadioButtonUnselected";
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
@@ -69,15 +70,18 @@ describe("RadioButton withStyles", () => {
       <HvProvider>
         <RadioWithStyles />
       </HvProvider>
-    )
-      .find(RadioButton)
-      .html();
-    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    );
+
+    const component = mountWrapper.find(RadioButton);
+    const componentHtml = component.html();
+
+    expect(component.find(RadioButtonUnSelected).length).toBe(1);
+
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(false);
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(false);
   });
 
@@ -86,16 +90,18 @@ describe("RadioButton withStyles", () => {
       <HvProvider>
         <RadioWithStyles disabled />
       </HvProvider>
-    )
-      .find(RadioButton)
-      .html();
-    expect(mountWrapper.includes(emptyIcon)).toBe(true);
+    );
+
+    const component = mountWrapper.find(RadioButton);
+    const componentHtml = component.html();
+
+    expect(component.find(RadioButtonUnSelected).length).toBe(1);
 
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo4)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo4)
     ).toBe(true);
     expect(
-      mountWrapper.includes(theme.hv.palette.atmosphere.atmo6)
+      componentHtml.includes(theme.hv.palette.atmosphere.atmo6)
     ).toBe(true);
   });
 

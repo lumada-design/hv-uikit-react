@@ -31,10 +31,11 @@ const styles = theme => ({
     "-webkit-box-orient": "vertical"
   },
   action: {
-    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px ${
-      theme.spacing.xs
-    }px  ${theme.spacing.sm}px`,
-    flex: "0 0 auto"
+    padding: `${theme.spacing.xs}px 0 ${theme.spacing.xs}px  ${
+      theme.spacing.sm
+    }px`,
+    flex: "0 0 auto",
+    marginRight: `${theme.spacing.xs}px`
   },
   baseVariant: {
     minHeight: "52px",

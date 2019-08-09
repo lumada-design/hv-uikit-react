@@ -19,6 +19,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
+import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
 import InputWithStyles from "../index";
 import Input from "../Input";
 import validationStates from "../validationStates";
@@ -82,7 +83,7 @@ describe("Input", () => {
   it("should not have the validation section", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles validate={false} />
+        <InputWithStyles showInfo={false} />
       </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
@@ -108,7 +109,7 @@ describe("Input", () => {
         <InputWithStyles
           validationState={validationStates.valid}
           labels={labels}
-          value={inputText}
+          initialValue={inputText}
         />
       </HvProvider>
     );
@@ -128,7 +129,7 @@ describe("Input", () => {
         <InputWithStyles
           validationState={validationStates.invalid}
           labels={labels}
-          value={inputText}
+          initialValue={inputText}
         />
       </HvProvider>
     );
@@ -149,10 +150,10 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={inputText}
+          initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
-          iconPosition={iconPositions.left}
+          validationIconPosition={iconPositions.left}
         />
       </HvProvider>
     );
@@ -174,7 +175,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={inputText}
+          initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
         />
@@ -200,7 +201,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
         />
@@ -218,7 +219,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate numbers on blur", () => {
+  it("should showInfo numbers on blur", () => {
     const inputText = "test";
     const defaultInputText = "233";
     const onChange = value => {
@@ -228,7 +229,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.number}
@@ -261,7 +262,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate emails on blur", () => {
+  it("should showInfo emails on blur", () => {
     const inputText = "notEmail";
     const defaultInputText = "email@example.com";
     const onChange = value => {
@@ -271,7 +272,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.email}
@@ -304,7 +305,7 @@ describe("Input", () => {
     );
   });
 
-  it("should validate use custom validations on blur", () => {
+  it("should showInfo use custom validations on blur", () => {
     const inputText = "test";
     const defaultInputText = "test2";
     const onChange = value => {
@@ -315,7 +316,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -344,7 +345,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -389,7 +390,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -435,7 +436,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -481,7 +482,7 @@ describe("Input", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles
-          value={defaultInputText}
+          initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
           validationType={validationTypes.none}
@@ -520,10 +521,7 @@ describe("Input", () => {
     const defaultInputText = "test1";
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
-          value={defaultInputText}
-          labels={labels}
-        />
+        <InputWithStyles initialValue={defaultInputText} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -531,5 +529,62 @@ describe("Input", () => {
     expect(inputInstance.state.infoText).toBe(labels.infoText);
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText);
+  });
+
+  const getInputInstance = (defaultProps, newValue) => {
+    wrapper = mount(
+      React.createElement(
+        props => (
+          <HvProvider>
+            <InputWithStyles
+              initialValue={props.value}
+              inputValue={props.inputValue}
+              labels={labels}
+            />
+          </HvProvider>
+        ),
+        defaultProps
+      )
+    );
+    wrapper.setProps({ inputValue: newValue });
+    wrapper.update();
+    return getInput(wrapper);
+  };
+
+  it("should change the state value when the inputValue prop changes", () => {
+    const inputText1 = "inputText1";
+    const inputText2 = "inputText2";
+    const defaultProps = {
+      initialValue: inputText1
+    };
+
+    const inputInstance = getInputInstance(defaultProps, inputText2);
+    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.validationState).toBe(validationStates.empty);
+    expect(inputInstance.state.value).toBe(inputText2);
+  });
+
+  it("should show the info icon and not the info label", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles infoIcon labels={labels} />
+      </HvProvider>
+    );
+    const inputComponent = wrapper.find(InfoS);
+    expect(inputComponent.length).toBe(1);
+    const labelParagraph = wrapper.find("p");
+    expect(labelParagraph.length).toBe(1);
+  });
+
+  it("should show the info label and not the info icon", () => {
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles labels={labels} />
+      </HvProvider>
+    );
+    const iconInfo = wrapper.find(InfoS);
+    expect(iconInfo.length).toBe(0);
+    const labelParagraph = wrapper.find("p");
+    expect(labelParagraph.length).toBe(2);
   });
 });

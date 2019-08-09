@@ -20,6 +20,8 @@
 
 import React, { Component } from "react";
 import classnames from "classnames";
+import HvTypography from "../../Typography";
+import HvInput from "../../Input";
 
 export default class ReactTablePagination extends Component {
   constructor(props) {
@@ -55,10 +57,7 @@ export default class ReactTablePagination extends Component {
     }
   }
 
-  applyPage(e) {
-    if (e) {
-      e.preventDefault();
-    }
+  applyPage() {
     const page = this.state.page;
     this.changePage(page === "" ? this.props.page : page);
   }
@@ -70,6 +69,8 @@ export default class ReactTablePagination extends Component {
         {...props}
       />
     );
+
+    const { page: statePage } = this.state;
 
     const {
       // Computed
@@ -85,6 +86,8 @@ export default class ReactTablePagination extends Component {
       canNext,
       onPageSizeChange,
       className,
+      rowsSelectorText,
+      ofText,
       PreviousComponent = defaultButton,
       NextComponent = defaultButton,
       FirstPageComponent = defaultButton,
@@ -96,9 +99,13 @@ export default class ReactTablePagination extends Component {
         <div className={classes.pageSizeOptions}>
           {showPageSizeOptions && (
             <span className="select-wrap -pageSizeOptions">
+              <HvTypography component="span" variant="sText">
+                Show
+              </HvTypography>
               <select
+                disabled={pageSize === 0}
                 className={classes.pageSizeOptionsSelect}
-                aria-label={this.props.rowsSelectorText}
+                aria-label={rowsSelectorText}
                 onChange={e => onPageSizeChange(Number(e.target.value))}
                 value={pageSize}
               >
@@ -109,7 +116,9 @@ export default class ReactTablePagination extends Component {
                   </option>
                 ))}
               </select>
-              <span className={classes.rowText}>rows</span>
+              <HvTypography component="span" variant="sText">
+                rows
+              </HvTypography>
             </span>
           )}
         </div>
@@ -134,38 +143,41 @@ export default class ReactTablePagination extends Component {
             disabled={!canPrevious}
           />
           <span className={classes.pageInfo}>
-            {this.props.pageText}
-            {" "}
             {showPageJump ? (
               <div className={classes.pageJump}>
-                <input
-                  className={classes.pageJumpInput}
-                  aria-label={this.props.pageJumpText}
-                  type="text"
-                  onChange={e => {
-                    const val = e.target.value;
+                <HvInput
+                  labels={{}}
+                  classes={{
+                    input: classes.pageSizeInput,
+                    container: classes.pageSizeInputContainer,
+                    iconClear: classes.pageSizeInputIconClear
+                  }}
+                  onChange={val => {
                     const page = val - 1;
                     if (val === "") {
                       return this.setState({ page: val });
                     }
                     this.setState({ page: this.getSafePage(page) });
                   }}
-                  value={this.state.page === "" ? "" : this.state.page + 1}
+                  initialValue={`${this.state.page + 1}`}
+                  inputValue={`${this.state.page === "" ? "" : Number(this.state.page) + 1}`}
                   onBlur={this.applyPage}
                   onKeyPress={e => {
                     if (e.which === 13 || e.keyCode === 13) {
                       this.applyPage();
                     }
                   }}
+                  validationIconVisible={false}
+                  disabled={pageSize === 0}
                 />
               </div>
             ) : (
-              <span className="-currentPage">{page + 1}</span>
+              <HvTypography component="span" variant="sText">{`${page + 1}`}</HvTypography>
             )}
-            {" "}
-            {this.props.ofText}
-            {" "}
-            <span className="-totalPages">{pages || 1}</span>
+            <HvTypography component="span" variant="sText">{`${ofText} `}</HvTypography>
+            <HvTypography component="span" variant="sText">
+              {pages || 1}
+            </HvTypography>
           </span>
           <NextComponent
             className={

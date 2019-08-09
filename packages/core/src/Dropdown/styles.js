@@ -26,7 +26,12 @@ const styles = theme => ({
     }
   },
   rootActive: {
-    border: `1px solid ${theme.hv.palette.accent.acce1}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+      boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+    }
   },
   rootDisabled: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
@@ -42,14 +47,19 @@ const styles = theme => ({
   },
   header: {
     position: "relative",
-    height: 32,
+    height: `${theme.hv.spacing.md}px`,
     cursor: "pointer",
-    userSelect: "none"
+    userSelect: "none",
+    outline: "none"
   },
   selection: {
     padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,
     lineHeight: "32px",
     pointerEvents: "none"
+  },
+  selectionDisabled: {
+    ...theme.hv.typography.placeholderText,
+    lineHeight: "32px"
   },
   arrow: {
     position: "absolute",
@@ -76,7 +86,15 @@ const styles = theme => ({
     display: "none"
   },
   listOpen: {
-    display: "block"
+    display: "block",
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: "0 -8px 0 #fff, 0 1px 8px rgba(65,65,65,.12)"
+  },
+  listBorder: {
+    display: "block",
+    height: "20px",
+    marginTop: "12px",
+    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)"
   },
   icon: {
     position: "absolute",

@@ -40,7 +40,7 @@ const styles = theme => ({
   },
   separator: {
     margin: "0 -4px",
-    display: "inherit"
+    display: "contents"
   }
 });
 

@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+import lock from "./assets/Lock.svg";
+import lockSelected from "./assets/LockSelected.svg";
+import trash from "./assets/Trash.svg";
+import trashSelected from "./assets/TrashSelected.svg";
+
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
   getTableProps: () => ({ className: classes.table }),
@@ -46,22 +51,19 @@ const styles = theme => ({
     textAlign: "right",
     border: "none",
     "& $table": {
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-      borderBottom: "none",
       "& $thead": {
-        background: theme.hv.palette.atmosphere.atmo5,
+        background: theme.hv.palette.atmosphere.atmo1,
         textAlign: `right`,
-        borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+        borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
         boxShadow: `none`,
         // Needed because of the HOC for the fixed columns
         top: "0 !important",
         "& $theadTh": {
           outline: "none",
-          backgroundColor: theme.hv.palette.atmosphere.atmo5,
+          backgroundColor: theme.hv.palette.atmosphere.atmo1,
           minHeight: 32,
           minWidth: 72,
-          paddingTop: 0,
-          paddingBottom: 0,
+          padding: 0,
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "flex-end",
@@ -70,7 +72,11 @@ const styles = theme => ({
           borderTop: "none",
           borderBottom: "none",
           boxShadow: "none",
-          "& > div": { width: "100%" },
+          "& > div": {
+            width: "100%",
+            margin: "1px 0px",
+            alignSelf: "baseline"
+          },
           "& > div.rt-resizer": {
             width: `${theme.hv.spacing.xs}px`,
             right: "-8px"
@@ -78,53 +84,80 @@ const styles = theme => ({
           "&:first-child": {
             borderLeft: "none"
           },
+          "&:nth-child(2).-checkBoxNeighbor": {
+            borderLeftColor: theme.hv.palette.atmosphere.atmo5
+          },
+          "&:nth-last-child(2).-secondaryActionsNeighbor": {
+            borderRightColor: theme.hv.palette.atmosphere.atmo5
+          },
           "&:last-child": {
             borderRight: "none"
           },
+          "&.secondaryAction": {
+            minWidth: "32px",
+            maxWidth: "32px",
+            height: "100%",
+            display: "inline-table"
+          },
           "&.-sort-desc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo6,
-            borderRightColor: theme.hv.palette.atmosphere.atmo6
+            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
+            borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&.-sort-asc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo6,
-            borderRightColor: theme.hv.palette.atmosphere.atmo6
+            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
+            borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&.checkBox": {
-            minWidth: "32px",
+            minWidth: "30px",
+            height: "100%",
             display: "inline-table"
           },
-          "&.sortable":{
+          "&.sortable": {
             "&:hover > div > div > div ": {
               visibility: "visible"
             },
             "&:hover": {
               background: theme.hv.palette.atmosphere.atmo4
-            },
+            }
           }
         }
       },
       "& $tbody": {
         "& $trGroups": {
-          borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+          borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {
-            background: "white",
+            background: theme.hv.palette.atmosphere.atmo2,
             position: "relative"
           },
           "& $tr:hover > div ": {
-            background: "white"
+            background: theme.hv.palette.atmosphere.atmo1
+          },
+          "& $tr.selected > div": {
+            background: theme.hv.palette.atmosphere.atmo1
           }
         },
         "& $td": {
           border: "1px solid transparent",
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
+          "&.sortable": {
+            paddingLeft: "32px",
+          },
           "&.alphaNumeric": {
-            paddingLeft: "32px"
+            minWidth: "70px",
+            textAlign: "left"
           },
           "&.link": {
             paddingLeft: "32px"
+          },
+          "&.secondaryAction": {
+            minWidth: "33px",
+            maxWidth: "33px",
+            padding: 0,
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+            overflow: "visible"
           },
           "&:first-child": {
             borderLeft: "none"
@@ -138,12 +171,14 @@ const styles = theme => ({
         },
         "& $td.sorted": {
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+          border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
           borderTop: "none",
           borderBottom: "none"
         },
         "& .checkBox": {
-          minWidth: "32px"
+          minWidth: "30px",
+          maxWidth: "30px",
+          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
         }
       }
     },
@@ -165,6 +200,9 @@ const styles = theme => ({
   theadFilterTr: {},
   theadFilterTh: {},
   tbody: {},
+  tBodyEmpty: {
+    minHeight: "calc(32px * 3)"
+  },
   trGroups: {},
   tr: {
     height: "32px",
@@ -186,22 +224,20 @@ const styles = theme => ({
   noDate: {},
   resizer: {},
   rtSortIcon: {
-    marginRight: `${theme.hv.spacing.xs}px`,
     width: "32px",
     height: "32px",
-    position: "absolute",
-    bottom: "0",
-    left: "0"
+    position: "absolute"
   },
   sortedIconShown: {
     visibility: "visible"
   },
   sortedIconHidden: {
-    visibility: "hidden"
+    display: "none"
   },
   pointer: {
     cursor: "pointer"
   },
+  tableContainer: {},
   subtitle: {
     marginTop: `${theme.hv.spacing.xs}px`
   },
@@ -213,17 +249,40 @@ const styles = theme => ({
     minHeight: "32px"
   },
   headerTextContainer: {
-    padding: "8px 5px 8px 0px",
+    minWidth: 0,
+    padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
     minHeight: "32px",
-    overflow: "auto"
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+  },
+  headerNotSortable: {
+    width: `calc(100% - ${theme.hv.spacing.xs}px)`,
+    marginLeft: `${theme.hv.spacing.xs}px`
+  },
+  headerSortable: {
+    marginLeft: "32px",
+    width: "calc(100% - 32px)"
+  },
+  checkBoxBorder: {
+    "&:nth-child(2)": {
+      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+    }
+  },
+  checkBoxRow: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    marginBottom: `${theme.hv.spacing.xs}px`
   },
   headerProps: {
     width: "100%",
-    whiteSpace: "normal"
+    whiteSpace: "normal",
+    textOverflow: "ellipsis",
+    overflow: "hidden"
   },
   headerAlphaNumeric: {
     float: "left",
-    paddingLeft: "27px",
     textAlign: "left"
   },
   headerNumeric: {
@@ -251,7 +310,8 @@ const styles = theme => ({
   subComponentContainer: {
     width: "100%",
     height: "100%",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    background: theme.hv.palette.atmosphere.atmo1,
     padding: `${theme.hv.spacing.md}px 32px`
   },
   iconContainer: {
@@ -263,6 +323,36 @@ const styles = theme => ({
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"
+  },
+  lockIcon: {
+    background: `url(${lock}) no-repeat center`,
+    width: "32px",
+    height: "32px"
+  },
+  lockIconSelected: {
+    background: `url(${lockSelected}) no-repeat center`,
+    width: "32px",
+    height: "32px"
+  },
+  trashIcon: {
+    background: `url(${trash}) no-repeat center`,
+    width: "32px",
+    height: "32px"
+  },
+  trashIconSelected: {
+    width: "32px",
+    height: "32px",
+    background: `url(${trashSelected}) no-repeat center`
+  },
+  checkBoxText: {
+    display: "flex",
+    alignItems: "center"
+  },
+  menuItem: {
+    ...theme.hv.typography.normalText,
+    textAlign: "right",
+    marginBottom: "-6px",
+    marginTop: "-6px"
   }
 });
 

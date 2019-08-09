@@ -99,6 +99,31 @@ const setColumnAlignment = (cellType, classes) => {
   return classToApply;
 };
 
+/**
+ *  Set the column border to the right of checkbox column and/or left of secondary actions column.
+ *
+ * @param {Object} column - a reference to the React table column object.
+ * @param {Boolean} hasCheckbox - true if table has a checkbox column.
+ * @param {Boolean} hasSecondaryActions - true if table has a secondary actions column.
+ *
+ */
+const setColumnBorder = (column, hasCheckbox, hasSecondaryActions) => {
+  const col = column;
+  const headerClassNames = col.headerClassName;
+
+  if (hasCheckbox) {
+    col.headerClassName = classNames("-checkBoxNeighbor", headerClassNames);
+    col.className = classNames(col.className, "-checkBoxNeighbor");
+  }
+
+  if (hasSecondaryActions) {
+    col.headerClassName = classNames(
+      "-secondaryActionsNeighbor",
+      col.headerClassName
+    );
+    col.className = classNames(col.className, "-secondaryActionsNeighbor");
+  }
+};
 
 /**
  * Adds to the className the sortable class if the header is marked as sortable.
@@ -108,11 +133,11 @@ const setColumnAlignment = (cellType, classes) => {
  * @returns {*}
  */
 const setHeaderSortableClass = (sortableProp, existingClassNames) => {
-  if (sortableProp == null || sortableProp) {
+  if (!isNil(sortableProp) && sortableProp) {
     return classNames(existingClassNames, "sortable");
   }
   return existingClassNames;
-}
+};
 
 /**
  * Creates an expander button inside the first column of the table.
@@ -163,7 +188,12 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
  * @param {Array} colSortedSelected - An array containing the columns to be sorted.
  * @param {Object} classes - contains the classes to apply to the column.
  */
-const appendClassnames = (column, colSortedSelected, classes) => {
+const appendClassnames = (
+  column,
+  colSortedSelected,
+  classes,
+  tableSortable
+) => {
   const col = column;
   // build the link component if the cell has cellType "link"
   buildLink(col);
@@ -181,11 +211,19 @@ const appendClassnames = (column, colSortedSelected, classes) => {
     col.className = classNames(col.className, "firstExpandable");
   }
 
+  if ((isNil(column.sortable) && tableSortable) || column.sortable) {
+    col.className = classNames(col.className, "sortable");
+  }
+
   // checkbox column
   if (col.id === "_selector") {
     const headerClassNames = col.headerClassName;
     col.headerClassName = classNames("checkBox", headerClassNames);
     col.className = classNames(col.className, "checkBox");
+  } else if (col.id === "secondaryActions") {
+    const headerClassNames = col.headerClassName;
+    col.headerClassName = classNames("secondaryAction", headerClassNames);
+    col.className = classNames(col.className, "secondaryAction");
   }
   // If the cell isn't checkbox and wasn't overwritten a text container should be introduced to the cell
   else if (!col.Cell) {
@@ -197,6 +235,7 @@ export {
   markSorted,
   wrapper,
   setColumnAlignment,
+  setColumnBorder,
   setHeaderSortableClass,
   appendClassnames,
   createExpanderButton

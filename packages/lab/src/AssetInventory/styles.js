@@ -15,8 +15,8 @@
  */
 
 const icon = {
-  width: "32px",
-  height: "32px"
+  width: 32,
+  height: 32
 };
 
 const styles = theme => ({
@@ -32,16 +32,21 @@ const styles = theme => ({
   gridContainer: {
     width: "auto"
   },
+  clearPadding: {
+    paddingTop: 0,
+    paddingBottom: 0
+  },
   searchBoxContainer: {
     position: "relative",
-    height: "auto",
-    marginTop: `${theme.hv.spacing.md}px`
+    height: `${icon.height + parseInt(theme.hv.spacing.md, 10)}px`,
+    marginTop: `${theme.hv.spacing.md}px`,
+    padding: 0
   },
   viewModeContainer: {
     position: "relative",
-    height: "auto",
-    textAlign: "right",
-    marginTop: `${theme.hv.spacing.md}px`
+    height: `${icon.height + parseInt(theme.hv.spacing.md, 10)}px`,
+    marginTop: "26px",
+    textAlign: "right"
   },
   emptyStateContainer: {
     width: "100%",
@@ -49,11 +54,12 @@ const styles = theme => ({
   },
   childrenListContainer: {
     width: "100%",
-    marginTop: `${theme.hv.spacing.xs}px`,
+    marginTop: `${theme.hv.spacing.sm}px`,
     flexGrow: 1
   },
   iconsWrapper: {
-    display: "flex"
+    display: "flex",
+    height: icon.height
   },
   icon: {
     ...icon

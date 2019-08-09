@@ -21,7 +21,15 @@ const styles = theme => ({
     marginLeft: 0,
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "&:focus-within:not(.disableFocus)": {
+      outlineColor: "-webkit-focus-ring-color",
+      outlineStyle: "auto",
+      outlineOffset: "-3px"
     }
+  },
+  disableFocus: {
+    outline: "none !important"
   },
   labelTypography: {
     ...theme.hv.typography.normalText
@@ -41,7 +49,7 @@ const styles = theme => ({
     paddingLeft: "8px"
   },
   checkBox: {
-    padding: "8px"
+    padding: "1px"
   },
   icon: {
     width: "16px",

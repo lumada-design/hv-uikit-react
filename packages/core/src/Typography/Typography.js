@@ -19,6 +19,36 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 /**
+ * Mapping of typography with HTML elements.
+ * @type {{infoText: string, xxsTitle: string, disabledButtonText: string, xsTitle: string, labelText: string, "5xlTitle": string, sTitle: string, xlTitle: string, highlightText: string, inlineLink: string, lTitle: string, normalText: string, "4xlTitle": string, "3xlTitle": string, sLink: string, xxlTitle: string, mTitle: string, disabledText: string, vizText: string}}
+ */
+const defaultVariantMapping = {
+  "5xlTitle": "h1",
+  "4xlTitle": "h1",
+  "3xlTitle": "h1",
+  xxlTitle: "h1",
+  xlTitle: "h1",
+  lTitle: "h2",
+  mTitle: "h3",
+  sTitle: "h4",
+  xsTitle: "h5",
+  xxsTitle: "h6",
+  highlightText: "p",
+  normalText: "p",
+  selectedText: "p",
+  disabledButtonText: "p",
+  placeholderText: "p",
+  inlineLink: "p",
+  selectedNavText: "p",
+  labelText: "p",
+  infoText: "p",
+  sLink: "p",
+  sText: "p",
+  vizText: "p",
+  disabledText: "p"
+};
+
+/**
  * Typography element. It uses the define typography set in the theme, selected by the variant.
  *
  * @param theme
@@ -27,9 +57,34 @@ import classNames from "classnames";
  * @returns {*}
  * @constructor
  */
-const Typography = ({ variant, classes, className, id, children }) => (
-  <span id={id} className={classNames(classes[variant], classes.baseFontFamily, className)}>{children}</span>
-);
+const Typography = ({
+  variant,
+  classes,
+  paragraph,
+  className,
+  component,
+  id,
+  children,
+  ...other
+}) => {
+  const Component = component ||
+    (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
+
+  return (
+    <Component
+      id={id}
+      className={classNames(
+        classes[variant],
+        classes.baseFontFamily,
+        classes.margin,
+        className
+      )}
+      {...other}
+    >
+      {children}
+    </Component>
+  );
+};
 
 Typography.propTypes = {
   /**
@@ -40,10 +95,20 @@ Typography.propTypes = {
    * ClassName passed as prop.
    */
   className: PropTypes.string,
-  /** 
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * By default, it maps the variant to a good default headline component.
+   */
+  component: PropTypes.elementType,
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * If `true`, the text will have a bottom margin.
+   */
+  paragraph: PropTypes.bool,
   /**
    * The text to be set.
    */
@@ -64,13 +129,17 @@ Typography.propTypes = {
     "xxsTitle",
     "highlightText",
     "normalText",
-    "inlineLink",
+    "selectedText",
     "disabledButtonText",
+    "placeholderText",
+    "inlineLink",
+    "selectedNavText",
     "labelText",
     "infoText",
     "sLink",
-    "disabledText",
-    "vizText"
+    "sText",
+    "vizText",
+    "disabledText"
   ])
 };
 
@@ -78,6 +147,8 @@ Typography.defaultProps = {
   variant: "normalText",
   className: undefined,
   id: undefined,
+  component: null,
+  paragraph: false,
   children: ""
 };
 

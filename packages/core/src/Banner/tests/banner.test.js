@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
+import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
@@ -143,31 +143,14 @@ describe("Banner ", () => {
     const error = severityIcon("error", theme);
     expect(error).toEqual(variantIcon.error(theme));
 
-    const warning = severityIcon("warning", theme);
-    expect(warning).toEqual(variantIcon.warning(theme));
-
-    const info = severityIcon("info", theme);
-    expect(info).toEqual(variantIcon.info(theme));
-
     const test = severityIcon("test", theme);
     expect(test).toEqual(variantIcon.success(theme));
   });
 
   it("should return the severity variant", () => {
-    const catastrophic = mapSeverityToVariant("catastrophic");
-    expect(catastrophic).toBe("error");
 
-    const critical = mapSeverityToVariant("critical");
-    expect(critical).toBe("warning");
-
-    const warning = mapSeverityToVariant("warning");
-    expect(warning).toBe("warning");
-
-    const info = mapSeverityToVariant("info");
-    expect(info).toBe("info");
-
-    const marginal = mapSeverityToVariant("marginal");
-    expect(marginal).toBe("info");
+    const error = mapSeverityToVariant("error");
+    expect(error).toBe("error");
 
     const test = mapSeverityToVariant("test");
     expect(test).toBe("default");

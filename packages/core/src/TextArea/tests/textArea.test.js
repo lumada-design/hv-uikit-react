@@ -46,7 +46,7 @@ describe("TextArea Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <TextArea classes={{}} rows={4} value="test" onChange={() => {}} />
+      <TextArea classes={{}} rows={4} initialValue="test" onChange={() => {}} />
     );
   });
 
@@ -59,7 +59,13 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles classes={{}} rows={4} value="test" onChange={onChangeMock} maxCharQuantity={10} />
+        <TextAreaWithStyles
+          classes={{}}
+          rows={4}
+          initialValue="test"
+          onChange={onChangeMock}
+          maxCharQuantity={10}
+        />
       </HvProvider>
     );
     const instance = wrapperMount.find(TextArea).instance();
@@ -73,12 +79,64 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles classes={{}} rows={4} value="test" onChange={onChangeMock} maxCharQuantity={5} />
+        <TextAreaWithStyles
+          classes={{}}
+          rows={4}
+          initialValue="test"
+          onChange={onChangeMock}
+          maxCharQuantity={5}
+        />
       </HvProvider>
     );
     const instance = wrapperMount.find(TextArea).instance();
     instance.onChangeHandler(value);
     expect(onChangeMock).toHaveBeenCalled();
+    expect(instance.state.currentValueLength).toBe(5);
+  });
+
+  //--------------------------
+
+  const getInputInstance = (defaultProps, inputValue) => {
+    wrapper = mount(
+      React.createElement(
+        props => (
+          <HvProvider>
+            <TextAreaWithStyles
+              classes={{}}
+              inputValue={props.inputValue}
+              rows={4}
+              initialValue={props.value}
+              onChange={props.onChangeMock}
+              maxCharQuantity={props.maxCharQuantity}
+            />
+          </HvProvider>
+        ),
+        defaultProps
+      )
+    );
+    wrapper.setProps({ inputValue });
+    wrapper.update();
+    const inputInstance = wrapper.find(TextArea).instance();
+    return inputInstance;
+  };
+
+  it("should save the current value length on change of inputValue", () => {
+    const inputValue = "four";
+    const onChangeMock = jest.fn(() => inputValue);
+    const defaultProps = {
+      initialValue: "example",
+      onChange: onChangeMock
+    };
+    const instance = getInputInstance(defaultProps, inputValue);
+    expect(instance.state.currentValueLength).toBe(4);
+  });
+
+  it("should limit the current value length on change of inputValue", () => {
+    const defaultProps = {
+      initialValue: "four",
+      maxCharQuantity: 5
+    };
+    const instance = getInputInstance(defaultProps, "onethousand");
     expect(instance.state.currentValueLength).toBe(5);
   });
 });

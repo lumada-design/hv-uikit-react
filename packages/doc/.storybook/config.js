@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { configure, addDecorator } from "@storybook/react";
-import withLayout from "./layout-addon";
+import { addDecorator, configure, addParameters } from "@storybook/react";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import { create } from "@storybook/theming";
+import withLayout from "./layout-addon";
 
 const req = require.context("../stories", true, /\.js$/);
 
@@ -15,6 +16,16 @@ const loadStories = () => {
 };
 
 let appTheme = "dawn";
+
+addParameters({
+  options: {
+    theme: create({
+      brandTitle: "React UI-Kit",
+      brandUrl: "https://github.com/pentaho/hv-uikit-react"
+    }),
+    showPanel: false
+  }
+});
 
 addDecorator(withLayout());
 

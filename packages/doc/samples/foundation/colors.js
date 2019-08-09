@@ -1,29 +1,17 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 
-const styles = (theme) => ({
-  group: {
-    marginBottom: 20
+const styles = theme => ({
+  colorGroup: {
+    paddingBottom: "50px"
+  },
+  title: {
+    paddingBottom: "20px"
   },
   groupName: {
     ...theme.hv.typography.mTitle,
-    marginBottom: 15
+    marginBottom: "15px"
   },
   colors: {
     display: "flex",
@@ -46,16 +34,17 @@ const styles = (theme) => ({
   }
 });
 
-const Group = ({ classes, name, colors }) => {
+const Group = ({ classes, name, deprecated, colors }) => {
   const keys = Object.keys(colors);
-
   return (
-    <div className={classes.group}>
+    <div>
       <div className={classes.groupName}>{name}</div>
       <div className={classes.colors}>
         {keys.map((color, idx) => (
           <div key={idx} className={classes.colorContainer}>
-            <div className={classes.colorName}>{color}</div>
+            <div className={classes.colorName}>{`${color} ${
+              deprecated[color] ? "(deprecated)" : ""
+            }`}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
             <div
               className={classes.colorSquare}
@@ -68,20 +57,36 @@ const Group = ({ classes, name, colors }) => {
   );
 };
 
-const Colors = ({ classes, theme }) => {
-  const { palette } = theme.hv;
-  const keys = Object.keys(palette);
+const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
+  <div className={classes.colorGroup}>
+    {keys.map((group, idx) => (
+      <Group
+        key={idx}
+        classes={classes}
+        name={group}
+        deprecated={deprecated[group]}
+        colors={colors[group]}
+      />
+    ))}
+  </div>
+);
 
+const Colors = ({ classes, theme, palettePath, deprecatedPath }) => {
+  const palette = palettePath
+    ? theme.hv[palettePath].palette
+    : theme.hv.palette;
+  const deprecate = deprecatedPath
+    ? theme.hv.deprecated[deprecatedPath].palette
+    : theme.hv.deprecated.palette;
+  const keys = Object.keys(palette);
   return (
     <div>
-      {keys.map((group, idx) => (
-        <Group
-          key={idx}
-          classes={classes}
-          name={group}
-          colors={palette[group]}
-        />
-      ))}
+      <ColorsGroup
+        keys={keys}
+        deprecated={deprecate}
+        colors={palette}
+        classes={classes}
+      />
     </div>
   );
 };

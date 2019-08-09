@@ -16,41 +16,36 @@
 
 const styles = theme => ({
   root: {
-    position: "relative",
-    zIndex: 10
+    display: "contents"
   },
   icon: {
+    height: 33,
+    width: 32,
+    position: "relative",
     boxSizing: "content-box",
-    border: `solid 1px transparent`,
-    borderBottom: "none"
-  },
-  iconSelected: {
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    borderBottom: "none"
-  },
-  iconButton: {
-    boxSizing: "content-box",
-    color: theme.palette.text.main,
+    color: theme.hv.palette.accent.acce1,
     padding: 0,
     "&:hover": {
       backgroundColor: "transparent"
+    },
+    borderRadius: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  iconSelected: {
+    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    "&:hover": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`
     }
   },
   menuList: {
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    padding: `${theme.hv.spacing.xs}px`,
-    position: "absolute",
+    padding: `${theme.spacing.sm}px`,
     whiteSpace: "nowrap",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    top: `${theme.hv.spacing.md}px`,
-    zIndex: -1
-  },
-  right: { justifyContent: "flex-start" },
-  center: { justifyContent: "center" },
-  left: { justifyContent: "flex-end" },
-  rightPx: { left: "0px" },
-  leftPx: { right: "0px" }
+    boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+  }
 });
 
 export default styles;

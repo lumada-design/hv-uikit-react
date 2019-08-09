@@ -89,20 +89,20 @@ class HvDatePicker extends React.Component {
     );
 
     const ResetButton = () => (
-      <HvTypography
-        variant="labelText"
+      <button
+        type="button"
         onClick={this.handleReset}
         className={classNames([classes.reset])}
       >
-        {"x"}
-      </HvTypography>
+        <HvTypography variant="labelText">x</HvTypography>
+      </button>
     );
 
     return (
       <div className={classes.wrapper}>
-        {!hideReset ? <ResetButton /> : ""}
+        {!hideReset && <ResetButton />}
 
-        {label ? <Label label={label} /> : ""}
+        {label && <Label label={label} />}
 
         <div className="DayPickerWrapper">
           <DayPickerInput

@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -71,11 +55,12 @@ const CodeButton = ({ classes, onClick }) => (
 
 const Group = ({ classes, name, typography, theme }) => {
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
+  let nameTypography = `${name} ${theme.deprecated.typography[name] ? "(deprecated)" : ""}`;
 
   return (
     <div className={classes.group}>
       <div className={classes.container}>
-        <HvTypography variant="mTitle">{name}</HvTypography>
+        <HvTypography variant="mTitle">{nameTypography}</HvTypography>
         <CodeButton
           classes={classes}
           onClick={() => setSnippetIsOpen(!snippetIsOpen)}
@@ -108,7 +93,7 @@ const Typographies = ({ classes, theme }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
-        .filter(item => !(typeof typography[item] === "string"))
+        .filter(item => !(Array.isArray(typography[item])))
         .map((group, idx) => (
           <Group
             key={idx}

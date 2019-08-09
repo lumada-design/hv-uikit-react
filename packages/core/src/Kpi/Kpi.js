@@ -28,7 +28,9 @@ const HvKpi = props => {
     kpiTextConfiguration,
     labels,
     visualIndicator,
-    visualComparison
+    visualComparison,
+    indicatorUnitTextVariant,
+    indicatorTextVariant
   } = props;
 
   const definedLabels = kpiTextConfiguration || labels;
@@ -36,7 +38,7 @@ const HvKpi = props => {
   return (
     <div id={id} className={classNames(classes.kpiContainer, className)}>
       <div>
-        <HvTypography variant="labelText">{definedLabels.title}</HvTypography>
+        <HvTypography variant="highlightText">{definedLabels.title}</HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
@@ -49,10 +51,10 @@ const HvKpi = props => {
             {visualIndicator}
           </div>
         )}
-        <HvTypography className={classes.spacingToTheRight} variant="xlTitle">
+        <HvTypography className={classNames(classes.spacingToTheRight, classes.indicatorText)} variant={indicatorTextVariant}>
           {definedLabels.indicator}
         </HvTypography>
-        <HvTypography className={classes.indicatorUnit} variant="infoText">
+        <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
           {definedLabels.unit}
         </HvTypography>
       </div>
@@ -81,7 +83,7 @@ HvKpi.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -105,6 +107,10 @@ HvKpi.propTypes = {
      * Styles applied to the component indicators.
      */
     indicatorsContainer: PropTypes.string,
+    /**
+     * Styles applied to the component indicators text.
+     */
+    indicatorText: PropTypes.string,
     /**
      * Styles applied to the component indicators unit.
      */
@@ -157,7 +163,15 @@ HvKpi.propTypes = {
     indicator: PropTypes.string,
     unit: PropTypes.string,
     comparisonIndicatorInfo: PropTypes.string
-  })
+  }),
+  /** 
+   *  The typography variant used in the main text indicator of the KPI 
+   */
+  indicatorTextVariant: PropTypes.oneOf(["5xlTitle","xxlTitle","lTitle","sTitle"]),
+  /** 
+   *  The typography variant used in the main text indicator of the KPI 
+   */
+  indicatorUnitTextVariant: PropTypes.oneOf(["sText","infoText"])
 };
 
 HvKpi.defaultProps = {
@@ -171,6 +185,8 @@ HvKpi.defaultProps = {
     unit: "",
     comparisonIndicatorInfo: ""
   },
+  indicatorTextVariant: "lTitle",
+  indicatorUnitTextVariant: "sText",
   kpiTextConfiguration: undefined
 };
 

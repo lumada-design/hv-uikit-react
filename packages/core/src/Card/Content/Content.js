@@ -16,30 +16,28 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import CardContent from "@material-ui/core/CardContent";
 import classNames from "classnames";
+import CardContent from "@material-ui/core/CardContent";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 /**
  * The content container.
  *
- * @param {Object} { classes, className, innerCardContent, needsBorder, ...other }
+ * @param {Object} { classes, className, innerCardContent, ...other }
  */
 const Content = ({
   classes,
   className,
   innerCardContent,
   needsBorder,
-  ...other
+  ...others
 }) => (
   <CardContent
     className={classNames(
       classes.content,
-      {
-        [classes.bottomBorder]: needsBorder
-      },
       className
     )}
-    {...other}
+    {...others}
   >
     {innerCardContent}
   </CardContent>
@@ -69,14 +67,16 @@ Content.propTypes = {
   innerCardContent: PropTypes.node,
   /**
    * If the content requires a bottom border
+   * @deprecated
    */
-  needsBorder: PropTypes.bool
+  // eslint-disable-next-line react/no-unused-prop-types
+  needsBorder: deprecatedPropType(PropTypes.bool)
 };
 
 Content.defaultProps = {
   className: "",
   innerCardContent: undefined,
-  needsBorder: false
+  needsBorder: undefined
 };
 
 export default Content;

@@ -1,14 +1,14 @@
 const path = require("path");
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports =  ({ config, mode }) => {
   // Extend defaultConfig as you need.
 
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.txt$/i,
     use: "raw-loader"
   });
 
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.js?$/,
     exclude: /node_modules/,
     use: [
@@ -32,8 +32,8 @@ module.exports = (baseConfig, env, defaultConfig) => {
                     "../../lab/src"
                   ),
                   "@hv/uikit-react-icons/dist": path.resolve(
-                      __dirname,
-                      "../../icons/dist"
+                    __dirname,
+                    "../../icons/dist"
                   )
                 }
               }
@@ -44,5 +44,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     ]
   });
 
-  return defaultConfig;
+  return config;
 };

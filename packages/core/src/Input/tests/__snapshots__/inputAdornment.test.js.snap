@@ -28,7 +28,7 @@ exports[`InputAdornment should be defined 1`] = `
     role="button"
     tabIndex={-1}
   >
-    <CloseS
+    <CloseXS
       color={
         Array [
           "none",
@@ -54,27 +54,30 @@ exports[`InputAdornment should be defined 1`] = `
         width={30}
         xmlns="http://www.w3.org/2000/svg"
       >
+        <defs>
+          <clipPath
+            id="Close_XS_svg__a"
+          >
+            <path
+              d="M0 0h32v32H0z"
+              fill="none"
+            />
+          </clipPath>
+        </defs>
         <g
-          id="Close.S"
-          transform="translate(-631.5 -882.5)"
+          clipPath="url(#Close_XS_svg__a)"
         >
-          <rect
-            data-name="Rectangle 976"
+          <path
+            d="M0 0h32v32H0z"
             fill="none"
-            height={32}
-            id="Rectangle_976"
-            transform="translate(631.5 882.5)"
-            width={32}
           />
           <path
-            d="M653.5,893.2l-.7-.7-5.3,5.3-5.3-5.3-.7.7,5.3,5.3-5.3,5.3.7.7,5.3-5.3,5.3,5.3.7-.7-5.3-5.3Z"
-            data-name="Path 1904"
+            d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
             fill="#414141"
-            id="Path_1904"
           />
         </g>
       </svg>
-    </CloseS>
+    </CloseXS>
   </div>
 </InputAdornment>
 `;

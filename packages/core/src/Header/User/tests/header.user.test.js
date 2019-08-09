@@ -46,7 +46,7 @@ describe("User withStyles", () => {
   it("should render User component", () => {
     wrapper = mount(
       <HvProvider>
-        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
       </HvProvider>
     );
     const userComponent = wrapper.find(User);
@@ -56,7 +56,7 @@ describe("User withStyles", () => {
   it("should render User component with Props", () => {
     wrapper = shallow(
       <HvProvider>
-        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
       </HvProvider>
     );
 
@@ -66,7 +66,7 @@ describe("User withStyles", () => {
   it("should render text properly", () => {
     const typographies = mount(
       <HvProvider>
-        <UserWithStyles userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
       </HvProvider>
     ).find("Typography");
 
@@ -76,7 +76,7 @@ describe("User withStyles", () => {
   it("should render name text properly", () => {
     const typographies = mount(
       <HvProvider>
-        <UserWithStyles userData={{ name: "UserName" }} />
+        <UserWithStyles labels={{}} userData={{ name: "UserName" }} />
       </HvProvider>
     ).find("Typography");
 
@@ -86,7 +86,7 @@ describe("User withStyles", () => {
   it("should render role text properly", () => {
     const typographies = mount(
       <HvProvider>
-        <UserWithStyles userData={{ role: "UserRole" }} />
+        <UserWithStyles labels={{}} userData={{ role: "UserRole" }} />
       </HvProvider>
     ).find("Typography");
 
@@ -100,17 +100,5 @@ describe("User withStyles", () => {
       </HvProvider>
     ).find(Help16);
     expect(img.length).toBe(1);
-  });
-
-  it("should render nothing if no props", () => {
-    const childComponent = mount(
-      <HvProvider>
-        <UserWithStyles />
-      </HvProvider>
-    )
-      .find(User)
-      .children();
-
-    expect(childComponent.length).toBe(0);
   });
 });

@@ -17,7 +17,7 @@
 // components
 export { default as HvBanner } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
-export { default as HvButton, buttonTypes } from "./Button";
+export { default as HvButton } from "./Button";
 export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
@@ -33,6 +33,7 @@ export { default as HvTable } from "./Table";
 export { default as HvTextArea } from "./TextArea";
 export { default as HvTypography } from "./Typography";
 export { default as HvGrid } from "./Grid";
+export { default as HvBadge } from "./Badge";
 
 // theme
 export { default as hvTheme } from "./theme";

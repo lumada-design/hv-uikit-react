@@ -30,6 +30,7 @@ const styles = theme => ({
     padding: "10px 0px",
     overflow: "auto"
   },
+  container:{},
   characterCounter: {
     textAlign: "right",
     paddingTop: `${theme.hv.spacing.xs}px`,

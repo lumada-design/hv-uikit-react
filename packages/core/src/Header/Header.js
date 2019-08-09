@@ -60,6 +60,7 @@ const Main = ({
   productLogo,
   productText,
   label,
+  labels,
   itemActions,
   useRouter
 }) => {
@@ -76,7 +77,7 @@ const Main = ({
         <Brand
           companyLogo={companyLogo}
           productLogo={productLogo}
-          productText={productText || label}
+          productText={productText || label || labels.productName}
         />
         <Navigation
           navigationData={navigationData}
@@ -85,7 +86,7 @@ const Main = ({
           selected={selected}
           onClick={onNavigationClick}
         />
-        <User userData={userData} userIcon={userIcon} onClick={userClick} />
+        <User labels={labels} userData={userData} userIcon={userIcon} onClick={userClick} />
         <Actions userExists={userExists} itemActions={itemActions} />
       </Toolbar>
     </AppBar>
@@ -173,6 +174,13 @@ Main.propTypes = {
     role: PropTypes.string
   }),
   /**
+   * Object containing the labels to be present
+   */
+  labels: PropTypes.shape({
+    productName: PropTypes.string,
+    tenantName: PropTypes.string
+  }),
+  /**
    * Image to be render. If a path is passed an image is render, otherwise the component itself.
    */
   userIcon: PropTypes.node,
@@ -195,6 +203,7 @@ Main.defaultProps = {
   label: null,
   productText: undefined,
   productLogo: null,
+  labels: {},
 
   navigationData: [],
   basePath: "",

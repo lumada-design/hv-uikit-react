@@ -16,9 +16,9 @@
 
 const styles = theme => ({
   root: {
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    padding: `${theme.hv.spacing.xs}px`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo3
+    padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px`,
+    borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   leftContainer: {
     alignSelf: "flex-start",

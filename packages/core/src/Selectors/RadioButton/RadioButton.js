@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected.S";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected.S";
@@ -24,13 +25,13 @@ import classNames from "classnames";
 import labelPositions from "../labelPositions";
 
 /**
- * Chooses the correct label styling to applied based on position.
+ * Returns the correct label styles to be applied based on label position.
  *
  * @param {String} classes - The classes object containing the classes names needed to be applied.
  * @param {Object} labelPosition - an Object containing the available label positions.
  * @returns {Object} - an Object with the name of the class for the required styling.
  */
-const prepareLabelStyles = (classes, labelPosition, label) => {
+const getLabelStyles = (classes, labelPosition, label) => {
   if (label) {
     switch (labelPosition) {
       default:
@@ -44,12 +45,12 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
 };
 
 /**
- * Chooses the correct icon to used based on the disable value.
+ * Returns the icons to be used based on the disable value.
  *
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (disabled, theme) => {
+const getIcons = (disabled, theme) => {
   const disabledIcon = (
     <RadioButtonUnSelected
       color={[
@@ -86,21 +87,41 @@ const HvRadio = props => {
     value,
     label,
     labelPlacement,
+    formControlLabelProps,
     propsLabel,
-    propsIcon,
+    radioProps,
+    propsIcons,
     theme
   } = props;
 
-  const icons = prepareIcon(disabled, theme);
-  const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const icons = getIcons(disabled, theme);
+  const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const materialPrimaryColor = "primary";
+  const [isFocusDisabled, disableFocus] = useState(false);
+
+  const onLocalChange = evt => {
+    const isKeyEvent =
+      window.event.screenX === 0 &&
+      window.event.screenY === 0 &&
+      window.event.clientX === 0 &&
+      window.event.clientY === 0;
+
+    disableFocus(!isKeyEvent);
+    onChange(evt);
+  };
+
+  const onBlur = () => {
+    disableFocus(false);
+  };
 
   return (
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
       id={id}
-      className={classNames(labelClass, className)}
+      className={classNames(labelStyles, className, {
+        [classes.disableFocus]: isFocusDisabled
+      })}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
@@ -113,12 +134,15 @@ const HvRadio = props => {
           color={materialPrimaryColor}
           disabled={disabled}
           disableRipple
-          onChange={onChange}
+          onChange={onLocalChange}
+          onBlur={onBlur}
           value={value}
           checked={checked}
-          {...propsIcon}
+          {...radioProps}
+          {...propsIcons}
         />
       }
+      {...formControlLabelProps}
       {...propsLabel}
     />
   );
@@ -129,7 +153,7 @@ HvRadio.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -208,13 +232,27 @@ HvRadio.propTypes = {
    */
   labelPlacement: PropTypes.oneOf(["start", "end"]),
   /**
-   * Extra properties passed to the icon.
+   * Extra properties passed to the MUI FormControlLabel component.
    */
-  propsIcon: PropTypes.instanceOf(Object),
+  formControlLabelProps: PropTypes.instanceOf(Object),
   /**
-   * Extra properties passed to the label.
+   * @deprecated Instead use the formControlLabelProps property
    */
-  propsLabel: PropTypes.instanceOf(Object),
+  propsLabel: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the formControlLabelProps property"
+  ),
+  /**
+   * Extra properties passed to the MUI Radio component.
+   */
+  radioProps: PropTypes.instanceOf(Object),
+  /**
+   * @deprecated Instead use the radioProps property
+   */
+  propsIcons: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the radioProps property"
+  ),
   /**
    * The theme passed by the provider.
    */
@@ -229,8 +267,10 @@ HvRadio.defaultProps = {
   checked: undefined,
   disabled: false,
   onChange: () => {},
-  propsIcon: undefined,
+  formControlLabelProps: undefined,
   propsLabel: undefined,
+  radioProps: undefined,
+  propsIcons: undefined,
   labelPlacement: labelPositions.end,
   theme: null
 };
