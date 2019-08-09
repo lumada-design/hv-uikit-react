@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.64...@hv/uikit-react-core@1.1.3) (2019-08-09)
+
+
+### Bug Fixes
+
+* remove warnings and removed deprecated messages. [#389](https://github.com/pentaho/hv-uikit-react/issues/389) ([5950a89](https://github.com/pentaho/hv-uikit-react/commit/5950a89))
+* updated button default props. [#395](https://github.com/pentaho/hv-uikit-react/issues/395) ([bd27f3f](https://github.com/pentaho/hv-uikit-react/commit/bd27f3f))
+
+
+
+
+
 ## [1.1.3-alpha.64](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.63...@hv/uikit-react-core@1.1.3-alpha.64) (2019-08-07)
 
 
