@@ -22,7 +22,7 @@
     "update-uikit-common": "npm update @hv/uikit-common-icons"
   },
   "dependencies": {
-    "@hv/uikit-common-icons": "^1.1.1-alpha.12"
+    "@hv/uikit-common-icons": "^1.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
