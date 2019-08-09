@@ -17,7 +17,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import isEqual from "lodash/isEqual";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Search from "../Search";
 import Actions from "../Actions";
@@ -44,13 +43,6 @@ class List extends React.Component {
   componentWillMount() {
     const { values, notifyChangesOnFirstRender } = this.props;
     if (values) this.resetLists(notifyChangesOnFirstRender);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { values } = this.props;
-    if (!isEqual(nextProps.values, values)) {
-      this.setState({ list: values }, () => this.resetLists());
-    }
   }
 
   /**
