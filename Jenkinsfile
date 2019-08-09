@@ -1,5 +1,4 @@
 pipeline {
-    
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
     options { 
@@ -7,14 +6,14 @@ pipeline {
         timeout(time: 20, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
-    
+
     parameters {
+        booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.')
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
-        booleanParam(name: 'skipAutomation', defaultValue: true, description: 'when true, skip automation.')
-        booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
-        booleanParam(name: 'skipDeploy', defaultValue: true, description: 'when true, skip deploy to nexus.')
-        choice(choices: ['prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'What type of deploy.', name: 'deploy')
-        choice(choices: ['#ui-kit-eng-ci','#ui-kit-eng', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
+        booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
+        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
+        booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus and documentation.')
+        choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
    
     stages {
@@ -29,27 +28,9 @@ pipeline {
                 }
             }
         }
-        stage('Build Automation') {
+        stage('Lint') {
             when {
-                expression { !params.skipAutomation }
-            }
-            steps {
-                script {
-                    withNPM(npmrcConfig: 'hv-ui-nprc') {
-                        def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                        def dockerRegistryCredentialsId = 'buildguynexus'
-                        def dockerImageTag = "${GIT_BRANCH}.${BUILD_NUMBER}"
-                        docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
-                            def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
-                            automationImage.push("${dockerImageTag}")
-                        }    
-                    } 
-                }
-            }
-        }
-        stage('Test') {
-            when {
-                expression { !params.skipTest }
+                expression { !params.skipLint }
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
@@ -58,18 +39,53 @@ pipeline {
                         if ( RESULT_LINT != 0 ) {
                             currentBuild.result = 'UNSTABLE'
                         }
-                        def RESULT_TESTS = sh returnStatus: true, script: 'npm run test'
-                        if ( RESULT_TESTS != 0 ) {
-                            currentBuild.result = 'UNSTABLE'
-                        }
                     }
-                    junit '**/junit.xml'
                 }
             }
         }
-        stage('Deploy') {
+        stage('Tests') {
+            parallel {
+                stage('Tests Javascript') {
+                    when {
+                        expression { !params.skipJavascriptTest }
+                    }
+                    steps {
+                        withNPM(npmrcConfig: 'hv-ui-nprc') {
+                            script {
+                                def RESULT_TESTS = sh returnStatus: true, script: 'npm run test'
+                                if ( RESULT_TESTS != 0 ) {
+                                    currentBuild.result = 'UNSTABLE'
+                                }
+                            }
+                            junit '**/junit.xml'
+                        }
+                    }
+                }
+
+                stage('Tests Automation') {
+                    when {
+                        expression { !params.skipAutomationTest }
+                    }
+                    steps {
+                        script {
+                            withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                                def dockerRegistryCredentialsId = 'buildguynexus'
+                                def dockerImageTag = "${GIT_BRANCH}.${BUILD_NUMBER}"
+                                docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
+                                    def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
+                                    automationImage.push("${dockerImageTag}")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('Publish Packages') {
             when {
-                expression { !params.skipDeploy && !env.CHANGE_ID }
+                branch 'master'
+                expression {  !params.skipPublish && !env.CHANGE_ID }
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
@@ -78,11 +94,12 @@ pipeline {
                             sh "git checkout ${env.BRANCH_NAME}"
                             sh 'cp .npmrc ~/.npmrc'
                             sh 'git status'
-                            sh "npm run publish:${deploy}"
+                            sh "npm run publish"
+                            sh "npm run publish-documentation"
                         }
                     }
                 }
-            }  
+            }
         }
     }
     

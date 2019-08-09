@@ -4,6 +4,7 @@
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
+  "private": true,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
@@ -16,6 +17,7 @@
     "build": "build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
+    "deploy": "storybook-to-ghpages --ci --existing-output-dir dist",
     "clean": "npx del-cli dist"
   },
   "dependencies": {
@@ -47,6 +49,7 @@
     "@storybook/addons": "5.1.9",
     "@storybook/cli": "5.1.9",
     "@storybook/react": "5.1.9",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/theming": "5.1.9",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
