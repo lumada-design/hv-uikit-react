@@ -10,7 +10,7 @@ pipeline {
     
     parameters {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
-        booleanParam(name: 'skipAutomation', defaultValue: false, description: 'when true, skip automation.')
+        booleanParam(name: 'skipAutomation', defaultValue: true, description: 'when true, skip automation.')
         booleanParam(name: 'skipTest', defaultValue: false, description: 'when true, skip tests.')
         booleanParam(name: 'skipDeploy', defaultValue: true, description: 'when true, skip deploy to nexus.')
         choice(choices: ['prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'What type of deploy.', name: 'deploy')
