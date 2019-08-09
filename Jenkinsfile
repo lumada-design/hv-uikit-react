@@ -64,6 +64,7 @@ pipeline {
 
                 stage('Tests Automation') {
                     when {
+                        triggeredBy 'UpstreamCause'
                         expression { !params.skipAutomationTest }
                     }
                     steps {
@@ -84,6 +85,7 @@ pipeline {
         }
         stage('Publish Packages') {
             when {
+                triggeredBy 'UpstreamCause'
                 branch 'master'
                 expression {  !params.skipPublish && !env.CHANGE_ID }
             }
