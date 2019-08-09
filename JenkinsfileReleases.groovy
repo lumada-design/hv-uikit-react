@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Release') {
             steps {
-                build job: 'ui-kit/react', parameters: [
+                build job: "ui-kit/react", parameters: [
                     booleanParam(name: 'skipLint', value: false),
                     booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: false),
