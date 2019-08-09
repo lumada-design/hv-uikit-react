@@ -164,7 +164,7 @@ class NavigationAnchors extends React.Component {
                 root: classes.listItemRoot,
                 gutters: classes.listItemGutters
               }}
-              key={option.label}
+              key={option.key || option.label}
               onClick={event =>
                 this.handleListItemClick(event, option.value, index)
               }
