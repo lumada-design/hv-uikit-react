@@ -17,6 +17,17 @@ pipeline {
     }
    
     stages {
+        stage('Build') {
+            when {
+                expression { !params.skipBuild }
+            }
+            steps {
+                withNPM(npmrcConfig: 'hv-ui-nprc') {
+                    sh 'npm ci --silent'
+                    sh 'npm run bootstrap'
+                }
+            }
+        }
         stage('Lint') {
             when {
                 expression { !params.skipLint }
@@ -29,18 +40,6 @@ pipeline {
                             currentBuild.result = 'UNSTABLE'
                         }
                     }
-                }
-            }
-        }
-
-        stage('Build') {
-            when {
-                expression { !params.skipBuild }
-            }
-            steps {
-                withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    sh 'npm ci --silent'
-                    sh 'npm run bootstrap'
                 }
             }
         }
@@ -85,7 +84,8 @@ pipeline {
         }
         stage('Publish Packages') {
             when {
-                expression {  !params.skipPublish && branch 'master' && !env.CHANGE_ID }
+                branch 'master'
+                expression {  !params.skipPublish && !env.CHANGE_ID }
             }
             steps {
                 withNPM(npmrcConfig: 'hv-ui-nprc') {
