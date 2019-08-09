@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
-    trigger {
+    triggers {
         cron('@midnight')
     }
     options { 
