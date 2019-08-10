@@ -13,6 +13,9 @@ const smallData = [
   },
   {
     label: "value 4"
+  },
+  {
+    label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5"
   }
 ];
 

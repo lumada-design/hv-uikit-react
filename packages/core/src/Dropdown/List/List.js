@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Tooltip from "@material-ui/core/Tooltip";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Search from "../Search";
 import Actions from "../Actions";
@@ -283,6 +284,8 @@ class List extends React.Component {
   renderSingleSelect(key, elem) {
     const { classes } = this.props;
 
+    const LabelComponent = props => <div {...props}>{elem.label}</div>;
+
     return (
       <div
         id="single-select"
@@ -305,7 +308,14 @@ class List extends React.Component {
             }
           ])}
         >
-          {elem.label}
+          <Tooltip
+            className={classes.truncate}
+            disableFocusListener
+            disableTouchListener
+            title={elem.label}
+          >
+            <LabelComponent />
+          </Tooltip>
         </HvTypography>
       </div>
     );
