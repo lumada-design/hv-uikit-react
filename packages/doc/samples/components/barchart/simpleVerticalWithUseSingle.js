@@ -9,6 +9,20 @@ const trace1 = {
 
 const data = [trace1];
 
+const layout = {
+  xaxis: {
+    title: {
+      text: "2018"
+    }
+  },
+  yaxis: {
+    title: {
+      text: "Thousands of Dollars ($)"
+    }
+  }
+};
+
+
 export default (
   <div>
     <Barchart
@@ -18,6 +32,7 @@ export default (
       tooltipType={"single"}
       xAxisTitle="Thousands of Dollars ($)"
       yAxisTitle="Axis description"
+      layout={layout}
     />
   </div>
 );

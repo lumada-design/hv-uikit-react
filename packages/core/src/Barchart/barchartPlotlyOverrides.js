@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import clone from "lodash/cloneDeep";
+
 /**
  * Set the property if it is null.
  * @param object
@@ -31,8 +33,7 @@ const setterIfNil = (object, property, value) => {
  */
 
 export const setLayout = (inputLayout, stack) => {
-  const layout = inputLayout === undefined ? {} : inputLayout;
-
+  const layout = inputLayout === undefined ? {} : clone(inputLayout);
   setterIfNil(layout, "bargap", 0.25);
   setterIfNil(layout, "bargroupgap", 0.25);
   if (stack) setterIfNil(layout, "barmode", "stack");
