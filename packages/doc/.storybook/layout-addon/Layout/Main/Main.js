@@ -34,17 +34,21 @@ const getComponentsMetadata = children => {
     return element;
   });
 
-  const propsMetaData = nodes[0].type.Naked
-    ? nodes[0].type.Naked.__docgenInfo.props
-    : nodes[0].type.__docgenInfo.props;
-
-  const descriptionMetadata = nodes[0].type.Naked
-    ? nodes[0].type.Naked.__docgenInfo.description
-    : nodes[0].type.__docgenInfo.description;
+  if(nodes[0] && nodes[0].type && nodes[0].type.Naked && nodes[0].type.Naked.__docgenInfo) {
+    return {
+      propsMetaData: nodes[0].type.Naked.__docgenInfo.props,
+      descriptionMetadata: nodes[0].type.Naked.__docgenInfo.description
+    }
+  } else if(nodes[0] && nodes[0].type && nodes[0].type.__docgenInfo) {
+    return {
+      propsMetaData: nodes[0].type.__docgenInfo.props,
+      descriptionMetadata: nodes[0].type.__docgenInfo.description
+    }
+  }
 
   return {
-    propsMetaData,
-    descriptionMetadata
+    propsMetaData: undefined,
+    descriptionMetadata: ""
   };
 };
 
@@ -64,6 +68,7 @@ const Main = ({ classes, children, context, config }) => {
   processedKind = story === "Typography" && "Core" || processedKind;
 
   const metadata = getComponentsMetadata(children);
+  console.log(metadata);
   return (
     <>
 
