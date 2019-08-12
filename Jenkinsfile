@@ -109,8 +109,16 @@ pipeline {
     post {
         always {
             script {
+                def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
+                def githubDeploy = "https://pentaho.github.io/hv-uikit-react"
+
                 if ( currentBuild.currentResult == "SUCCESS" ) {
                     slackSend channel: "${params.channel}", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
+
+                    def commitMessage = sh(returnStdout: true, script: 'git show -s --format=%B HEAD').trim()
+                    commitMessage.split("chore(release): publish\n\n");
+                    def slackMessage = "ui-kit new artifacts are available\nNew releases:\n${commitMessage}\nFor more details about the changes please check:\n- Change logs: ${githubReleasesURL}\n- Documentation: ${githubDeploy}"
+                    slackSend channel: "#ui-kit-eng-ci", color: "good", message: slackMessage
                 }
                 else if( currentBuild.currentResult == "UNSTABLE" ) { 
                     slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
