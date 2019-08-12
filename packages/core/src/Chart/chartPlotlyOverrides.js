@@ -30,7 +30,7 @@ const setterIfNil = (object, property, value) => {
  *
  */
 
-export const setYaxis = (inputLayout, styles, isHorizontal, yAxisTitle) => {
+export const setYaxis = (inputLayout, styles, yAxisTitle, isHorizontal) => {
   const layout = inputLayout;
 
   setterIfNil(layout, "yaxis", {});
@@ -142,7 +142,10 @@ export const setLayout = (inputLayout, styles) => {
     pad: 0
   });
 
-  setterIfNil(layout, "plot_bgcolor", styles.plotColor);
+  layout.plot_bgcolor = styles.plotColor;
+  layout.paper_bgcolor = styles.plotColor;
 
-  setterIfNil(layout, "paper_bgcolor", styles.plotColor);
+  // setterIfNil(layout, "plot_bgcolor", styles.plotColor);
+  //
+  // setterIfNil(layout, "paper_bgcolor", styles.plotColor);
 };

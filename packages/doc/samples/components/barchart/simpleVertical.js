@@ -9,26 +9,12 @@ const trace1 = {
 
 const data = [trace1];
 
-const layout = {
-  xaxis: {
-    title: {
-      text: "2018"
-    }
-  },
-  yaxis: {
-    title: {
-      text: "Thousands of Dollars ($)"
-    }
-  }
-};
-
 export default (
   <div>
     <Barchart
       title="Simple Vertical Bar Chart"
       subtitle="Sales performance (YTD)"
       data={data}
-      layout={layout}
       xAxisTitle="Thousands of Dollars ($)"
       yAxisTitle="Axis description"
     />

@@ -22,7 +22,7 @@ import { mount, shallow } from "enzyme";
 import HvProvider from "../../Provider";
 import LinechartWithStyles from "../index";
 import Linechart from "../Linechart";
-import setData from "../lineChartPlotlyOverrides";
+import {setData} from "../lineChartPlotlyOverrides";
 
 describe("Linechart withStyles", () => {
   let wrapper;

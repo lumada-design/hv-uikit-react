@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Chart from "../Chart";
-import setData from "./lineChartPlotlyOverrides";
+import { setData, setLayout } from "./lineChartPlotlyOverrides";
 
 /**
  * Component responsible for the presentation of the barchart component.
@@ -44,6 +44,7 @@ const Linechart = ({
   yAxisTitle
 }) => {
   const newData = setData(data, type);
+  const newLayout = setLayout(layout);
 
   return (
     <Chart
@@ -53,7 +54,7 @@ const Linechart = ({
       xAxisTitle={xAxisTitle}
       yAxisTitle={yAxisTitle}
       data={newData}
-      layout={layout}
+      layout={newLayout}
       config={config}
       tooltipType={tooltipType}
     />
@@ -105,7 +106,7 @@ Linechart.propTypes = {
 
 Linechart.defaultProps = {
   classes: null,
-  layout: {},
+  layout: undefined,
   title: "",
   subtitle: "",
   tooltipType: "multiple",
