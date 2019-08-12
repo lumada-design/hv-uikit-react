@@ -422,6 +422,7 @@ HvList.propTypes = {
   /**
    * A list containing the elements to be rendered.
    *
+   * - id: the id of the item.
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
    * - leftIcon: The icon node to be rendered on the left.
@@ -431,6 +432,7 @@ HvList.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       leftIcon: PropTypes.func,
