@@ -81,11 +81,8 @@ const styles = theme => ({
             width: `${theme.hv.spacing.xs}px`,
             right: "-8px"
           },
-          "&:first-child": {
+          "&:first-child:not(.checkbox)": {
             borderLeft: "none"
-          },
-          "&:nth-child(2).-checkBoxNeighbor": {
-            borderLeftColor: theme.hv.palette.atmosphere.atmo5
           },
           "&:nth-last-child(2).-secondaryActionsNeighbor": {
             borderRightColor: theme.hv.palette.atmosphere.atmo5
@@ -94,10 +91,11 @@ const styles = theme => ({
             borderRight: "none"
           },
           "&.secondaryAction": {
-            minWidth: "32px",
-            maxWidth: "32px",
+            minWidth: "31px",
+            maxWidth: "31px",
             height: "100%",
-            display: "inline-table"
+            display: "inline-table",
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&.-sort-desc": {
             backgroundColor: theme.hv.palette.atmosphere.atmo3,
@@ -112,7 +110,17 @@ const styles = theme => ({
           "&.checkBox": {
             minWidth: "30px",
             height: "100%",
-            display: "inline-table"
+            display: "inline-table",
+            borderRightColor: theme.hv.palette.atmosphere.atmo5
+          },
+          "& ~.rt-th.rthfc-th-fixed-left-last": {
+            borderLeft: "none"
+          },
+          "&.rt-th.rthfc-th-fixed-left-last": {
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "&.rt-th.rthfc-th-fixed-right-first": {
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&.sortable": {
             "&:hover > div > div > div ": {
@@ -129,7 +137,6 @@ const styles = theme => ({
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {
             background: theme.hv.palette.atmosphere.atmo2,
-            position: "relative"
           },
           "& $tr:hover > div ": {
             background: theme.hv.palette.atmosphere.atmo1
@@ -153,10 +160,10 @@ const styles = theme => ({
             paddingLeft: "32px"
           },
           "&.secondaryAction": {
-            minWidth: "33px",
-            maxWidth: "33px",
+            minWidth: "31px",
+            maxWidth: "31px",
             padding: 0,
-            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
             overflow: "visible"
           },
           "&:first-child": {
@@ -164,7 +171,13 @@ const styles = theme => ({
           },
           "&:last-child": {
             borderRight: "none"
-          }
+          },
+          "&.rt-td.rthfc-td-fixed-left-last": {
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "&.rt-td.rthfc-td-fixed-right-first": {
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
         },
         "& .firstExpandable": {
           paddingLeft: "0px"
@@ -178,7 +191,7 @@ const styles = theme => ({
         "& .checkBox": {
           minWidth: "30px",
           maxWidth: "30px",
-          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
         }
       }
     },

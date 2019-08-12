@@ -155,7 +155,7 @@ class Wrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sorted: [{ id: "createdDate", desc: true }],
+      sorted: [{ id: "name", desc: true }],
       pageSize: 10
     };
   }
@@ -212,7 +212,8 @@ class Wrapper extends React.Component {
     {
       headerText: "Asset",
       accessor: "asset",
-      cellType: "link"
+      cellType: "link",
+      fixed: "right"
     }
   ];
 
