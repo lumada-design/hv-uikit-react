@@ -6,8 +6,40 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [1.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.1.3-alpha.77...@hv/uikit-react-lab@1.2.0) (2019-08-09)
 
 
+### Features
+
+* **Badge:** promote to core. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([aea0046](https://github.com/pentaho/hv-uikit-react/commit/aea0046))
+* **ToggleSwitch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([49adca2](https://github.com/pentaho/hv-uikit-react/commit/49adca2))
+* **Typography:** add ability to customize the html element. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([665bd72](https://github.com/pentaho/hv-uikit-react/commit/665bd72))
+* **Badge:** update component according DS guidelines. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([81ed411](https://github.com/pentaho/hv-uikit-react/commit/81ed411))
+* **Badge:** add notification badge. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([808269f](https://github.com/pentaho/hv-uikit-react/commit/808269f))
+* **Theme:** add new accent color. [#323](https://github.com/pentaho/hv-uikit-react/issues/323) ([7c0ba8c](https://github.com/pentaho/hv-uikit-react/commit/7c0ba8c))
+* **Typography:** update new typographies. [#262](https://github.com/pentaho/hv-uikit-react/issues/262) ([bbd5e82](https://github.com/pentaho/hv-uikit-react/commit/bbd5e82))
+* **NavigationAnchors:** ability to have custom keys for listitems ([d1d28e8](https://github.com/pentaho/hv-uikit-react/commit/d1d28e8))
+* **Typography:** add the correct html tags.[#161](https://github.com/pentaho/hv-uikit-react/issues/161) ([711e5f9](https://github.com/pentaho/hv-uikit-react/commit/711e5f9))
+* **NavigationAnchors:** Add ability to select navigation item. [#181](https://github.com/pentaho/hv-uikit-react/issues/181) ([76383d7](https://github.com/pentaho/hv-uikit-react/commit/76383d7))
+* **AssetInventory:** add ids and space for dropdown sort component [#57](https://github.com/pentaho/hv-uikit-react/issues/57) ([8efdc6f](https://github.com/pentaho/hv-uikit-react/commit/8efdc6f))
+* **Searchbox:** update internal state. [#152](https://github.com/pentaho/hv-uikit-react/issues/152) ([ea9453a](https://github.com/pentaho/hv-uikit-react/commit/ea9453a))
+* **DatePickerDS:** first version of the new datepicker [#1](https://github.com/pentaho/hv-uikit-react/issues/1) ([329c968](https://github.com/pentaho/hv-uikit-react/commit/329c968))
+* **DatePickerDS:** fixed broken unit test on date objects [#1](https://github.com/pentaho/hv-uikit-react/issues/1) ([550a362](https://github.com/pentaho/hv-uikit-react/commit/550a362))
+
+
+
+
 ### Bug Fixes
 
+* **DatePickerDS:** click on calendar icon cancels date selection [#387](https://github.com/pentaho/hv-uikit-react/issues/387) ([17af5e6](https://github.com/pentaho/hv-uikit-react/commit/17af5e6))
+* **ToggleSwitch:** update snapshots. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([b84bc9a](https://github.com/pentaho/hv-uikit-react/commit/b84bc9a))
+* **DatePicker:** fixed reset onClick not being triggered. [#243](https://github.com/pentaho/hv-uikit-react/issues/243) ([6c72a50](https://github.com/pentaho/hv-uikit-react/commit/6c72a50))
+* **DatePicker:** set styling values as pixels. [#243](https://github.com/pentaho/hv-uikit-react/issues/243) ([c873c77](https://github.com/pentaho/hv-uikit-react/commit/c873c77))
+* **DatePickerDS:** fixed broken tests on windows. [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([4498bb6](https://github.com/pentaho/hv-uikit-react/commit/4498bb6))
+* **DatePicker:** remove window dependency in prop failing in SSR. [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([e68ab93](https://github.com/pentaho/hv-uikit-react/commit/e68ab93))
+* **DatePickerDS:** fix unit test on windows [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([b0d685c](https://github.com/pentaho/hv-uikit-react/commit/b0d685c))
+* **DatePickerDS:** date picker range [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([027705c](https://github.com/pentaho/hv-uikit-react/commit/027705c))
+* remove unneeded X in searchBox on IE ([ff5da6d](https://github.com/pentaho/hv-uikit-react/commit/ff5da6d))
+* **DatePickerDS:** styles fixes [#2](https://github.com/pentaho/hv-uikit-react/issues/2) ([2a01e2d](https://github.com/pentaho/hv-uikit-react/commit/2a01e2d))
+* **Theme:** add spacing unit to theme. [#168](https://github.com/pentaho/hv-uikit-react/issues/168) ([1aa22f4](https://github.com/pentaho/hv-uikit-react/commit/1aa22f4))
+* **DatePickerDS:** initialization value fix and popover behavior [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([337bbc6](https://github.com/pentaho/hv-uikit-react/commit/337bbc6))
 * **navarchors:** add missing code. [#312](https://github.com/pentaho/hv-uikit-react/issues/312) ([#398](https://github.com/pentaho/hv-uikit-react/issues/398)) ([683f637](https://github.com/pentaho/hv-uikit-react/commit/683f637))
 * remove warnings and removed deprecated messages. [#389](https://github.com/pentaho/hv-uikit-react/issues/389) ([5950a89](https://github.com/pentaho/hv-uikit-react/commit/5950a89))
 

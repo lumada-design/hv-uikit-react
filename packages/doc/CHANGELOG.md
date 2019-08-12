@@ -5,7 +5,59 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.86...@hv/uikit-react-doc@1.2.0) (2019-08-09)
 
-**Note:** Version bump only for package @hv/uikit-react-doc
+### Features
+
+* **Badge:** promote to core. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([aea0046](https://github.com/pentaho/hv-uikit-react/commit/aea0046))
+* **ToggleSwitch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([49adca2](https://github.com/pentaho/hv-uikit-react/commit/49adca2))
+* **Table:** update table styles. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([09abd8c](https://github.com/pentaho/hv-uikit-react/commit/09abd8c))
+* **DropdownMenu:** update component according DS guidelines. [#298](https://github.com/pentaho/hv-uikit-react/issues/298) ([#371](https://github.com/pentaho/hv-uikit-react/issues/371)) ([00463dc](https://github.com/pentaho/hv-uikit-react/commit/00463dc))
+* **Snackbar:** updata component to DS guidelines. [#343](https://github.com/pentaho/hv-uikit-react/issues/343) ([#363](https://github.com/pentaho/hv-uikit-react/issues/363)) ([f87d571](https://github.com/pentaho/hv-uikit-react/commit/f87d571))
+* **List:** implemented list according to DS 1.0.0. [#241](https://github.com/pentaho/hv-uikit-react/issues/241) ([a31cfb7](https://github.com/pentaho/hv-uikit-react/commit/a31cfb7))
+* **Banner:** update component according to ds guidelines.[#340](https://github.com/pentaho/hv-uikit-react/issues/340) ([#362](https://github.com/pentaho/hv-uikit-react/issues/362)) ([43d3866](https://github.com/pentaho/hv-uikit-react/commit/43d3866))
+* **KPI:** update component according to ds guidelines. [#342](https://github.com/pentaho/hv-uikit-react/issues/342) ([ebe0e8c](https://github.com/pentaho/hv-uikit-react/commit/ebe0e8c))
+* **Linechart:** add Linechart component. [#334](https://github.com/pentaho/hv-uikit-react/issues/334) ([#358](https://github.com/pentaho/hv-uikit-react/issues/358)) ([5da04d4](https://github.com/pentaho/hv-uikit-react/commit/5da04d4))
+* **Badge:** update component according DS guidelines. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([81ed411](https://github.com/pentaho/hv-uikit-react/commit/81ed411))
+* **Dropdown:** change icon color when disabled. [#238](https://github.com/pentaho/hv-uikit-react/issues/238) ([ecc2912](https://github.com/pentaho/hv-uikit-react/commit/ecc2912))
+* **Barchart:** promote component from lab to core. [#332](https://github.com/pentaho/hv-uikit-react/issues/332) ([#337](https://github.com/pentaho/hv-uikit-react/issues/337)) ([4e716c5](https://github.com/pentaho/hv-uikit-react/commit/4e716c5))
+* **Table:** updated style, added dropdown prop, checkbox header ([af314dd](https://github.com/pentaho/hv-uikit-react/commit/af314dd))
+* **DropdownMenu:** added Popper to dropdownmenu with positioning props [#298](https://github.com/pentaho/hv-uikit-react/issues/298) ([b40a7c6](https://github.com/pentaho/hv-uikit-react/commit/b40a7c6))
+* **Badge:** add notification badge. [#295](https://github.com/pentaho/hv-uikit-react/issues/295) ([808269f](https://github.com/pentaho/hv-uikit-react/commit/808269f))
+* **Button:** adding accessibility tab and review button. [#247](https://github.com/pentaho/hv-uikit-react/issues/247) ([a2a0ce3](https://github.com/pentaho/hv-uikit-react/commit/a2a0ce3))
+* **Input:** update to DS guidelines. [#239](https://github.com/pentaho/hv-uikit-react/issues/239) ([826db04](https://github.com/pentaho/hv-uikit-react/commit/826db04))
+* **Card:** update card according to DS 1.0.0. [#237](https://github.com/pentaho/hv-uikit-react/issues/237) ([8b28bbf](https://github.com/pentaho/hv-uikit-react/commit/8b28bbf))
+* **DatePickerDS:** improvements to the datepickerds. [#293](https://github.com/pentaho/hv-uikit-react/issues/293) ([08c5bee](https://github.com/pentaho/hv-uikit-react/commit/08c5bee))
+* **Button:** update button styling.[#236](https://github.com/pentaho/hv-uikit-react/issues/236) ([f866a64](https://github.com/pentaho/hv-uikit-react/commit/f866a64))
+* **Typography:** update new typographies. [#262](https://github.com/pentaho/hv-uikit-react/issues/262) ([bbd5e82](https://github.com/pentaho/hv-uikit-react/commit/bbd5e82))
+* **Checkbox:** reviewed component according to guidelines. [#251](https://github.com/pentaho/hv-uikit-react/issues/251) ([9cf7470](https://github.com/pentaho/hv-uikit-react/commit/9cf7470))
+* **Barchart:** add max width to bar. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([01c5643](https://github.com/pentaho/hv-uikit-react/commit/01c5643))
+* **Typography:** add the correct html tags.[#161](https://github.com/pentaho/hv-uikit-react/issues/161) ([711e5f9](https://github.com/pentaho/hv-uikit-react/commit/711e5f9))
+* **Barchart:** add responsive. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([d7c921a](https://github.com/pentaho/hv-uikit-react/commit/d7c921a))
+* **Storybook:** update of storybook version. [#231](https://github.com/pentaho/hv-uikit-react/issues/231) ([4c783e9](https://github.com/pentaho/hv-uikit-react/commit/4c783e9))
+* **Barchart:** implementation of barchart pattern. [#225](https://github.com/pentaho/hv-uikit-react/issues/225) ([2f668a0](https://github.com/pentaho/hv-uikit-react/commit/2f668a0))
+* **Doc:** add visualization colors. [#223](https://github.com/pentaho/hv-uikit-react/issues/223) ([c132d29](https://github.com/pentaho/hv-uikit-react/commit/c132d29))
+* **Input:** update when value prop changes. [#211](https://github.com/pentaho/hv-uikit-react/issues/211) ([fde70a4](https://github.com/pentaho/hv-uikit-react/commit/fde70a4))
+* **TextArea:** update when value prop changes. [#211](https://github.com/pentaho/hv-uikit-react/issues/211) ([b816557](https://github.com/pentaho/hv-uikit-react/commit/b816557))
+* **DatePickerDS:** fix unit test on windows [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([b0d685c](https://github.com/pentaho/hv-uikit-react/commit/b0d685c))
+* **DatePickerDS:** date picker range [#165](https://github.com/pentaho/hv-uikit-react/issues/165) ([027705c](https://github.com/pentaho/hv-uikit-react/commit/027705c))
+* **Doc:** add reference to React in Storybook. [#200](https://github.com/pentaho/hv-uikit-react/issues/200) ([0876e45](https://github.com/pentaho/hv-uikit-react/commit/0876e45))
+* **Icons:** display existing icons in a storybook screen. [#188](https://github.com/pentaho/hv-uikit-react/issues/188) ([1d7aaa0](https://github.com/pentaho/hv-uikit-react/commit/1d7aaa0))
+* **SearchBox:** update internal state. [#152](https://github.com/pentaho/hv-uikit-react/issues/152) ([ea9453a](https://github.com/pentaho/hv-uikit-react/commit/ea9453a))
+* **DatePickerDS:** first version of the new datepicker [#1](https://github.com/pentaho/hv-uikit-react/issues/1) ([329c968](https://github.com/pentaho/hv-uikit-react/commit/329c968))
+* **DatePickerDS:** fixed broken unit test on date objects [#1](https://github.com/pentaho/hv-uikit-react/issues/1) ([550a362](https://github.com/pentaho/hv-uikit-react/commit/550a362))
+
+
+
+### Bug Fixes
+
+* **KPI:** fix number color in sample. [#342](https://github.com/pentaho/hv-uikit-react/issues/342) ([be7d2e9](https://github.com/pentaho/hv-uikit-react/commit/be7d2e9))
+* **Docs:** xs icons were showing up in the s group [#258](https://github.com/pentaho/hv-uikit-react/issues/258) ([8f88667](https://github.com/pentaho/hv-uikit-react/commit/8f88667))
+* **Banner:** sample 5 not working. [#234](https://github.com/pentaho/hv-uikit-react/issues/234) ([935e2c2](https://github.com/pentaho/hv-uikit-react/commit/935e2c2))
+* **Button:** disabled button was clickable. [#205](https://github.com/pentaho/hv-uikit-react/issues/205) ([bf49357](https://github.com/pentaho/hv-uikit-react/commit/bf49357))
+* **Table:** background color for wicked theme. [#184](https://github.com/pentaho/hv-uikit-react/issues/184) ([c94320c](https://github.com/pentaho/hv-uikit-react/commit/c94320c))
+* **Theme:** add spacing unit to theme. [#168](https://github.com/pentaho/hv-uikit-react/issues/168) ([1aa22f4](https://github.com/pentaho/hv-uikit-react/commit/1aa22f4))
+* **Grid:** replace hook usage by withWidth to determine breakpoint. [#107](https://github.com/pentaho/hv-uikit-react/issues/107) ([fb4eebd](https://github.com/pentaho/hv-uikit-react/commit/fb4eebd))
+* **Snackbar:** fix sample 3. [#148](https://github.com/pentaho/hv-uikit-react/issues/148) ([19bc591](https://github.com/pentaho/hv-uikit-react/commit/19bc591))
+
 
 
 
