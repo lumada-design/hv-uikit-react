@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import isNil from "lodash/isNil";
 import NavIcon from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
 import HvLink from "../Link";
 import HvTypography from "../Typography";
@@ -24,6 +25,7 @@ import HvCheckBox from "../Selectors/CheckBox";
 import HvRadioButton from "../Selectors/RadioButton";
 
 const DEFAULT_STATE = {
+  values: [],
   list: [],
   selectionLabel: "",
   anySelected: false,
@@ -43,14 +45,100 @@ const isItemSelected = (item, newItem) => {
   return newItem[selectionKey] === selectionElement;
 };
 
+const prepareState = (list, labels, useSelector) => {
+  const { selectAll, selectionConjunction } = labels;
+  const hasLeftIcon = !!list.filter(elem => elem.leftIcon).length;
+  const selection = list.filter(elem => elem.selected);
+  const hasSelection = !!selection.length;
+  const allSelected = selection.length === list.length;
+  const selectionLabel = !hasSelection
+    ? selectAll
+    : `${selection.length} ${selectionConjunction} ${list.length}`;
+  return {
+    list,
+    selectionLabel,
+    anySelected: hasSelection && !allSelected,
+    allSelected: hasSelection && allSelected,
+    hasLeftIcon: !useSelector && hasLeftIcon,
+    isFocusDisabled: true
+  };
+};
+
+const parseSelection = (list, multiSelect, selectable, selectDefault, item) => {
+  let isAnySelected = false;
+  const newList = list.map(elem => {
+    const newItem = { ...elem };
+    const isSelected = isItemSelected(item, newItem);
+
+    // reset elem selection
+    if (!multiSelect || !selectable || !newItem.selected) {
+      newItem.selected = false;
+    }
+
+    if (isSelected) {
+      isAnySelected = true;
+      newItem.selected = multiSelect ? !elem.selected : true;
+    }
+
+    return newItem;
+  });
+
+  // select first item when single select
+  if (!multiSelect && !isAnySelected && selectable && selectDefault) {
+    newList[0].selected = true;
+  }
+
+  return newList;
+};
+
 class HvList extends React.Component {
   state = DEFAULT_STATE;
 
   componentDidMount() {
     const { values } = this.props;
     const parsedList = this.parseList(values);
-
     this.setSelection(parsedList, false);
+    this.setState({
+      values
+    });
+  }
+
+  /**
+   * Used for when the values prop is changed and the values must be updated in the list.
+   *
+   * @param nextProps
+   * @param prevState
+   * @returns {null|{isFocusDisabled: boolean, selectionLabel: *, hasLeftIcon: boolean, anySelected: boolean, list: *, allSelected: boolean}}
+   */
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const {
+      values: nextValue,
+      labels: nextLabels,
+      useSelector: nextUseSelector,
+      multiSelect: nextMultiSelect,
+      selectable: nextSelectable,
+      selectDefault: nextSelectDefault
+    } = nextProps;
+    const { values: oldValues, list: oldList } = prevState;
+    if (isNil(nextValue) || oldValues === nextValue) {
+      return null;
+    }
+    const nextParsedList = parseSelection(
+      nextValue,
+      nextMultiSelect,
+      nextSelectable,
+      nextSelectDefault
+    );
+    const preparedState = prepareState(
+      nextParsedList,
+      nextLabels,
+      nextUseSelector
+    );
+    preparedState.values = nextValue;
+    if (nextParsedList !== undefined && preparedState.list !== oldList) {
+      return preparedState;
+    }
+    return null;
   }
 
   /**
@@ -69,24 +157,10 @@ class HvList extends React.Component {
       onChange,
       selectable
     } = this.props;
-    const { selectAll, selectionConjunction } = labels;
 
-    const hasLeftIcon = !!list.filter(elem => elem.leftIcon).length;
+    const preparedState = prepareState(list, labels, useSelector);
     const selection = list.filter(elem => elem.selected);
-    const hasSelection = !!selection.length;
-    const allSelected = selection.length === list.length;
-    const selectionLabel = !hasSelection
-      ? selectAll
-      : `${selection.length} ${selectionConjunction} ${list.length}`;
-
-    this.setState({
-      list,
-      selectionLabel,
-      anySelected: hasSelection && !allSelected,
-      allSelected: hasSelection && allSelected,
-      hasLeftIcon: !useSelector && hasLeftIcon,
-      isFocusDisabled: true
-    });
+    this.setState(preparedState);
 
     // only triggers the onChange callback if the list is selectable
     if (trigger && selectable) onChange(multiSelect ? selection : selection[0]);
@@ -102,31 +176,7 @@ class HvList extends React.Component {
    */
   parseList(list, item) {
     const { multiSelect, selectable, selectDefault } = this.props;
-    let isAnySelected = false;
-
-    const newList = list.map(elem => {
-      const newItem = { ...elem };
-      const isSelected = isItemSelected(item, newItem);
-
-      // reset elem selection
-      if (!multiSelect || !selectable || !newItem.selected) {
-        newItem.selected = false;
-      }
-
-      if (isSelected) {
-        isAnySelected = true;
-        newItem.selected = multiSelect ? !elem.selected : true;
-      }
-
-      return newItem;
-    });
-
-    // select first item when single select
-    if (!multiSelect && !isAnySelected && selectable && selectDefault) {
-      newList[0].selected = true;
-    }
-
-    return newList;
+    return parseSelection(list, multiSelect, selectable, selectDefault, item);
   }
 
   /**
@@ -275,7 +325,7 @@ class HvList extends React.Component {
           }
         ])}
       >
-        {!useSelector && this.rendereLeftIcon(item)}
+        {!useSelector && this.renderLeftIcon(item)}
 
         {multiSelect
           ? this.renderMultiSelect(item)
@@ -320,7 +370,7 @@ class HvList extends React.Component {
     );
   }
 
-  rendereLeftIcon(item) {
+  renderLeftIcon(item) {
     const { theme } = this.props;
 
     const iconColor = item.selected
