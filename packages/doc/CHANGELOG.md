@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.2.0...@hv/uikit-react-doc@1.2.1) (2019-08-12)
+
+
+### Bug Fixes
+
+* **documentation:** properly validate doc pages with no components. [#389](https://github.com/pentaho/hv-uikit-react/issues/389) ([a65f598](https://github.com/pentaho/hv-uikit-react/commit/a65f598))
+
+
+
+
+
 # [1.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.1.3-alpha.86...@hv/uikit-react-doc@1.2.0) (2019-08-09)
 
 ### Features
