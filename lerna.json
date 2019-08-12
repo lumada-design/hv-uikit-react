@@ -15,5 +15,8 @@
       "conventionalCommits": true,
       "githubRelease": true
     }
-  }
+  },
+  "ignoreChanges": [
+    "**/*.md"
+  ]
 }
