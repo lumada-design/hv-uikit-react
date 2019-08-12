@@ -107,6 +107,11 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
       title: "15. Change input content with another component",
       description: "Change the input value from outside the Input component",
       src: "components/input/inputUncontrolledValue"
-    }
+    },
+    {
+      title: "16. Suggestions",
+      description: "Simple input with suggestion list",
+      src: "components/input/inputSuggestions"
+    },
   ]
 });

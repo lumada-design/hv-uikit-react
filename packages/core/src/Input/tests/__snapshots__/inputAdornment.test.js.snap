@@ -3,6 +3,7 @@
 exports[`InputAdornment should be defined 1`] = `
 <InputAdornment
   classes={Object {}}
+  customFixedIcon={null}
   handleClear={[MockFunction]}
   theme={
     Object {
@@ -19,65 +20,68 @@ exports[`InputAdornment should be defined 1`] = `
       },
     }
   }
+  validationIconVisible={true}
   validationState="filled"
 >
-  <div
-    className="undefined"
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    role="button"
-    tabIndex={-1}
-  >
-    <CloseXS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
-      style={
-        Object {
-          "height": "10px",
-          "width": "10px",
-        }
-      }
+  <div>
+    <div
+      className="undefined"
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={-1}
     >
-      <svg
-        height={30}
+      <CloseXS
+        color={
+          Array [
+            "none",
+            "#414141",
+          ]
+        }
         style={
           Object {
             "height": "10px",
             "width": "10px",
           }
         }
-        viewBox="1 1 30 30 "
-        width={30}
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <clipPath
-            id="Close_XS_svg__a"
+        <svg
+          height={30}
+          style={
+            Object {
+              "height": "10px",
+              "width": "10px",
+            }
+          }
+          viewBox="1 1 30 30 "
+          width={30}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <clipPath
+              id="Close_XS_svg__a"
+            >
+              <path
+                d="M0 0h32v32H0z"
+                fill="none"
+              />
+            </clipPath>
+          </defs>
+          <g
+            clipPath="url(#Close_XS_svg__a)"
           >
             <path
               d="M0 0h32v32H0z"
               fill="none"
             />
-          </clipPath>
-        </defs>
-        <g
-          clipPath="url(#Close_XS_svg__a)"
-        >
-          <path
-            d="M0 0h32v32H0z"
-            fill="none"
-          />
-          <path
-            d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
-            fill="#414141"
-          />
-        </g>
-      </svg>
-    </CloseXS>
+            <path
+              d="M20.4 12.1l-.7-.7-3.9 3.9-3.9-3.9-.7.7 3.9 3.9-3.9 3.9.7.7 3.9-3.9 3.9 3.9.7-.7-3.9-3.9z"
+              fill="#414141"
+            />
+          </g>
+        </svg>
+      </CloseXS>
+    </div>
   </div>
 </InputAdornment>
 `;

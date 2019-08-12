@@ -17,36 +17,46 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-
+import isNil from "lodash/isNil";
 import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
 import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
 import Unsuccess from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 
 import validationStates from "./validationStates";
 
-const InputAdornment = ({ classes, validationState, handleClear, theme }) => {
+const InputAdornment = ({ classes, validationState, validationIconVisible, customFixedIcon, handleClear, theme }) => {
   const stl = {
     height: `${theme.hv.spacing.md}px`,
     width: `${theme.hv.spacing.md}px`
   };
-
+  if(isNil(customFixedIcon) && !validationIconVisible) {
+    return undefined;
+  }
   return (
-    <div
-      className={classNames(classes.icon, {
-        [classes.iconClear]: validationState === validationStates.filled
-      })}
-      {...validationState === validationStates.filled && {
-        onMouseDown: () => handleClear(),
-        role: "button",
-        tabIndex: -1,
-        onKeyDown: () => handleClear()
-      }}
-    >
-      {validationState === validationStates.filled && <Close style={stl} />}
-      {validationState === validationStates.valid && <Success style={stl} />}
-      {validationState === validationStates.invalid && (
-        <Unsuccess style={stl} />
-      )}
+    <div className={classes.iconFlexBox}>
+      <div
+        className={classNames(classes.icon, {
+          [classes.iconClear]: validationState === validationStates.filled
+        })}
+        {...validationState === validationStates.filled && {
+          onMouseDown: () => handleClear(),
+          role: "button",
+          tabIndex: -1,
+          onKeyDown: () => handleClear()
+        }}
+      >
+        
+        {validationIconVisible && validationState === validationStates.filled && <Close style={stl} />}
+        {validationIconVisible && validationState === validationStates.valid && <Success style={stl} />}
+        {validationIconVisible && validationState === validationStates.invalid && (
+          <Unsuccess style={stl} />
+        )}
+      </div>
+      {!isNil(customFixedIcon) && 
+        <div className={classes.icon}>
+          {customFixedIcon}
+        </div>
+      }
     </div>
   );
 };
@@ -62,6 +72,11 @@ InputAdornment.propTypes = {
    * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
+  validationIconVisible: PropTypes.bool,
+  /**
+   * a custom icon to be added into the input.
+   */
+  customFixedIcon: PropTypes.node,
   /**
    * The function that will be executed when the icon is clicked
    */
@@ -73,7 +88,9 @@ InputAdornment.propTypes = {
 };
 
 InputAdornment.defaultProps = {
+  validationIconVisible: true,
   validationState: validationStates.empty,
+  customFixedIcon: null,
   handleClear: value => value,
   theme: null
 };
