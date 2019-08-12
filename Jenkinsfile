@@ -116,8 +116,9 @@ pipeline {
                     slackSend channel: "${params.channel}", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
 
                     def commitMessage = sh(returnStdout: true, script: 'git show -s --format=%B HEAD').trim()
-                    commitMessage.split("chore(release): publish\n\n");
+                    commitMessage = commitMessage.split("chore(release): publish\n\n")[1];
                     def slackMessage = "ui-kit new artifacts are available\nNew releases:\n${commitMessage}\nFor more details about the changes please check:\n- Change logs: ${githubReleasesURL}\n- Documentation: ${githubDeploy}"
+
                     slackSend channel: "#ui-kit-eng-ci", color: "good", message: slackMessage
                 }
                 else if( currentBuild.currentResult == "UNSTABLE" ) { 
