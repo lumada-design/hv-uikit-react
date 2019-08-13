@@ -35,7 +35,8 @@ const styles = theme => ({
       },
       "& + $bar": {
         backgroundColor: theme.hv.palette.accent.acce2,
-        opacity: 1
+        border: `solid 1px ${theme.hv.palette.accent.acce2h}`,
+        opacity: 1,
       }
     }
   },
@@ -47,7 +48,7 @@ const styles = theme => ({
     left: 17,
     top: 8,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
     opacity: 1
   },
 
@@ -55,28 +56,37 @@ const styles = theme => ({
     width: 16,
     height: 16,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
-    marginLeft: -30
+    backgroundColor: theme.hv.palette.accent.acce0,
+    marginLeft: -32,
   },
 
   checked: {
     transform: "translateX(32px)",
-    width: 21
+    width: 20
   },
 
   iconChecked: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    backgroundColor: theme.hv.palette.accent.acce0,
+    border: `solid 1px ${theme.hv.palette.accent.acce2h}`,
     marginLeft: "unset"
   },
 
   disabled: {
     color: theme.hv.palette.atmosphere.atmo4,
-    borderColor: theme.hv.palette.atmosphere.atmo6
+    borderColor: theme.hv.palette.atmosphere.atmo6,
+    cursor: "no-drop",
+    "& + $bar": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+      opacity: 1,
+      cursor: "no-drop"
+    }
   },
 
   disabledLabel: {
     ...theme.hv.typography.placeholderText,
     height: `${theme.hv.spacing.sm}px`,
-    cursor: "default"
+    cursor: "no-drop"
   },
 
   labelDeselected: {
@@ -111,13 +121,13 @@ const styles = theme => ({
     backgroundColor: `${theme.hv.palette.accent.acce2h} !important`,
     opacity: 1
   },
-  
+
   checkedIcon: {
-    clipPath: "circle(25.4% at 50% 50%)",
-    background: "#fff",
-    marginLeft: -1,
-    width: "34 !important",
-    height: 34
+    clipPath: "circle(8px)",
+    background: theme.hv.palette.accent.acce0,
+    marginLeft: 0,
+    width: 32,
+    height: 32
   }
 });
 
