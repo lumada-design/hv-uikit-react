@@ -17,8 +17,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReactTable, { ReactTableDefaults } from "react-table";
+import withFixedColumns from 'react-table-hoc-fixed-columns';
 import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
+import 'react-table-hoc-fixed-columns/lib/styles.css' // important: this line must be placed after react-table css import
 
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
@@ -33,8 +35,7 @@ import expander from "./expander/expander";
 import {
   appendClassnames,
   createExpanderButton,
-  setHeaderSortableClass,
-  setColumnBorder
+  setHeaderSortableClass
 } from "./columnUtils";
 import {
   toggleAll,
@@ -48,6 +49,9 @@ import ReactTablePagination from "./Pagination";
 import NoData from "./NoData";
 import { tableStyleOverrides } from "./styles";
 import DropDownMenu from "../DropDownMenu";
+
+const ReactTableFixedColumns = withFixedColumns(ReactTable);
+const ReactTableCheckbox = checkboxHOC(ReactTable);
 
 /**
  * Table component. This component offers:
@@ -67,8 +71,6 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // table component to be render
-      Table: props.idForCheckbox ? checkboxHOC(ReactTable) : ReactTable,
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -86,18 +88,8 @@ class Table extends React.Component {
    * Change the state property initiallyLoaded to identify that it is the first load.
    */
   componentDidMount() {
-    const { initiallyLoaded } = this.state;
-    const { data, idForCheckbox } = this.props;
-    if (!initiallyLoaded) {
-      this.state.initiallyLoaded = true;
-    }
+    const { data } = this.props;
     this.state.recordQuantity = data.length;
-
-    if (!idForCheckbox) {
-      /* eslint-disable-next-line global-require */
-      const withFixedColumns = require("react-table-hoc-fixed-columns");
-      this.state.Table = withFixedColumns.default(ReactTable);
-    }
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -275,15 +267,13 @@ class Table extends React.Component {
    * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
    */
   getTheadThProps = (state, rowInfo, column) => {
-    const { classes, sortable, idForCheckbox, secondaryActions } = this.props;
+    const { classes, sortable } = this.props;
     const { sorted } = this.state;
     let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
       isSortable = null;
     }
-
-    setColumnBorder(column, !!idForCheckbox, !!secondaryActions);
 
     appendClassnames(column, sorted, classes, sortable);
 
@@ -428,10 +418,10 @@ class Table extends React.Component {
     const {
       expanded,
       selectAll,
-      Table: AugmentedTable,
       selection
     } = this.state;
 
+    const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
 
     // Add dropdown menu column if secondaryActions exists in props
@@ -443,6 +433,8 @@ class Table extends React.Component {
         headerText: "",
         accessor: "secondaryActions",
         cellType: "alpha-numeric",
+        width: 31,
+        sortable: false,
         Cell: () => (
           <DropDownMenu
             disablePortal={false}

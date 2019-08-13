@@ -111,7 +111,7 @@ const setColumnBorder = (column, hasCheckbox, hasSecondaryActions) => {
   const col = column;
   const headerClassNames = col.headerClassName;
 
-  if (hasCheckbox) {
+  if (hasCheckbox && column.id === "_selector") {
     col.headerClassName = classNames("-checkBoxNeighbor", headerClassNames);
     col.className = classNames(col.className, "-checkBoxNeighbor");
   }
