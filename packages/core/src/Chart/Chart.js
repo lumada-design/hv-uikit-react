@@ -36,7 +36,13 @@ import Plot from "./Plot";
  * @param theme
  * @returns {*}
  */
-const propsLayoutSetter = (inputLayout, theme, isHorizontal) => {
+const propsLayoutSetter = (
+  inputLayout,
+  theme,
+  isHorizontal,
+  xAxisTitle,
+  yAxisTitle
+) => {
   const styles = styleCreator(theme);
   const layout = inputLayout === undefined ? {} : inputLayout;
 
@@ -47,10 +53,10 @@ const propsLayoutSetter = (inputLayout, theme, isHorizontal) => {
   setLegend(layout, styles);
 
   // Xaxis
-  setXaxis(layout, styles, isHorizontal);
+  setXaxis(layout, styles, xAxisTitle, isHorizontal);
 
   // Yaxis
-  setYaxis(layout, styles, isHorizontal);
+  setYaxis(layout, styles, yAxisTitle, isHorizontal);
 
   return layout;
 };
@@ -76,7 +82,9 @@ const Chart = ({
   layout,
   config,
   tooltipType,
-  afterPlot
+  afterPlot,
+  xAxisTitle,
+  yAxisTitle
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
@@ -87,7 +95,13 @@ const Chart = ({
     ? data[0].orientation.toUpperCase() === "H"
     : false;
 
-  const newLayout = propsLayoutSetter(layout, theme, isHorizontal);
+  const newLayout = propsLayoutSetter(
+    layout,
+    theme,
+    isHorizontal,
+    xAxisTitle,
+    yAxisTitle
+  );
 
   /**
    * Extract data from the plotly onHover event to be used to create the tooltip.
@@ -200,7 +214,15 @@ Chart.propTypes = {
   /**
    * Function to be called after plot render.
    */
-  afterPlot: PropTypes.func
+  afterPlot: PropTypes.func,
+  /**
+   * Defines the X axis title.
+   */
+  xAxisTitle: PropTypes.string,
+  /**
+   * Defines the Y axis title.
+   */
+  yAxisTitle: PropTypes.string
 };
 
 Chart.defaultProps = {
@@ -209,7 +231,9 @@ Chart.defaultProps = {
   subtitle: "",
   tooltipType: "multiple",
   config: null,
-  afterPlot: undefined
+  afterPlot: undefined,
+  xAxisTitle: null,
+  yAxisTitle: null
 };
 
 export default Chart;

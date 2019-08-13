@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import clone from "lodash/cloneDeep";
+
 /**
  * Set the property if it is null.
  * @param object
@@ -29,7 +31,7 @@ const setterIfNil = (object, property, value) => {
  * Auxiliary functions to set the data in order to follow the DS guideline.
  *
  */
-const setData = (inputData, type) => {
+export const setData = (inputData, type) => {
   const data = inputData;
 
   data.forEach(trace => {
@@ -57,4 +59,8 @@ const setData = (inputData, type) => {
   return data;
 };
 
-export default setData;
+export const setLayout = inputLayout => {
+  const layout = inputLayout === undefined ? {} : clone(inputLayout);
+
+  return layout;
+};

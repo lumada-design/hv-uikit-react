@@ -18,6 +18,7 @@ import React, { memo, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
+import equals from "lodash/isEqual";
 
 /**
  * Plotly plot.
@@ -103,6 +104,7 @@ Plot.defaultProps = {
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.data === nextProps.data && prevProps.layout === nextProps.layout;
+  equals(prevProps.data, nextProps.data) &&
+  equals(prevProps.layout, nextProps.layout);
 
 export default memo(Plot, arePropsEqual);
