@@ -66,9 +66,15 @@ const prepareState = (list, labels, useSelector) => {
 
 const parseSelection = (list, multiSelect, selectable, selectDefault, item) => {
   let isAnySelected = false;
+
   const newList = list.map(elem => {
     const newItem = { ...elem };
-    const isSelected = isItemSelected(item, newItem);
+    let isSelected;
+    if (multiSelect) {
+      isSelected = isItemSelected(item, newItem);
+    } else {
+      isSelected = item ? isItemSelected(item, newItem) : elem.selected;
+    }
 
     // reset elem selection
     if (!multiSelect || !selectable || !newItem.selected) {
@@ -204,7 +210,7 @@ class HvList extends React.Component {
 
     onClick(item);
 
-    // need to defer the state update because list was being updated before triggering the link (when avaialable).
+    // need to defer the state update because list was being updated before triggering the link (when available).
     const delay = item.path ? 150 : 0;
     setTimeout(() => this.setSelection(parsedList, true), delay);
   }
