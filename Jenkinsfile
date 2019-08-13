@@ -110,16 +110,22 @@ pipeline {
         always {
             script {
                 def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
-                def githubDeploy = "https://pentaho.github.io/hv-uikit-react"
-
                 if ( currentBuild.currentResult == "SUCCESS" ) {
-                    slackSend channel: "${params.channel}", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
+                    slackSend channel: "#ui-kit-eng-ci", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
+                    if ( env.BRANCH_NAME == "master" ) {
+                        def commitMessage = sh(returnStdout: true, script: 'git show -s --format=%B HEAD').trim()
+                        def commitTimestamp = sh(returnStdout: true, script: 'git show -s --format=%ct HEAD').trim()
 
-                    def commitMessage = sh(returnStdout: true, script: 'git show -s --format=%B HEAD').trim()
-                    commitMessage = commitMessage.split("chore(release): publish\n\n")[1];
-                    def slackMessage = "ui-kit new artifacts are available\nNew releases:\n${commitMessage}\nFor more details about the changes please check:\n- Change logs: ${githubReleasesURL}\n- Documentation: ${githubDeploy}"
-
-                    slackSend channel: "#ui-kit-eng-ci", color: "good", message: slackMessage
+                        if ( commitMessage.startsWith("chore") ) {
+                            def dateNow = (currentBuild.startTimeInMillis / 1000) as long
+                            def dateCommit = commitTimestamp as long
+                            def difference = dateNow - dateCommit
+                            if( ((difference % 3600) % 60) < 30 ) {
+                                def slackMessage = "*ui-kit new artifacts are available and documentation is updated*\n${commitMessage.replace('chore(release): publish', '')}\nFor more details about the changes please check the CHANGELOG in ${githubReleasesURL}\n"
+                                slackSend channel: "#ui-kit", color: "good", message: slackMessage
+                            }
+                        }
+                    }
                 }
                 else if( currentBuild.currentResult == "UNSTABLE" ) { 
                     slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
