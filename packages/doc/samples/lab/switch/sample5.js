@@ -4,7 +4,7 @@ import Switch from "@hv/uikit-react-lab/dist/Switch";
 export default (
   <Switch
     checked={true}
-    disabled={true}
+    disabled={false}
     showLabels={false}
     displayIconChecked={true}
   />
