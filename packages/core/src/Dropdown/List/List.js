@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Tooltip from "@material-ui/core/Tooltip";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Search from "../Search";
 import Actions from "../Actions";
@@ -281,7 +282,9 @@ class List extends React.Component {
   }
 
   renderSingleSelect(key, elem) {
-    const { classes } = this.props;
+    const { classes, hasTooltips } = this.props;
+
+    const LabelComponent = props => <div {...props}>{elem.label}</div>;
 
     return (
       <div
@@ -305,7 +308,18 @@ class List extends React.Component {
             }
           ])}
         >
-          {elem.label}
+          {hasTooltips ? (
+            <Tooltip
+              className={classes.truncate}
+              disableFocusListener
+              disableTouchListener
+              title={elem.label}
+            >
+              <LabelComponent />
+            </Tooltip>
+          ) : (
+            elem.label
+          )}
         </HvTypography>
       </div>
     );
@@ -388,7 +402,11 @@ List.propTypes = {
   /**
    * If 'true' the dropdown will notify changes everytime it re-renders.
    */
-  notifyChangesOnFirstRender: PropTypes.bool
+  notifyChangesOnFirstRender: PropTypes.bool,
+  /**
+   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   */
+  hasTooltips: PropTypes.bool
 };
 
 List.defaultProps = {
@@ -397,7 +415,8 @@ List.defaultProps = {
   showSearch: false,
   notifyChangesOnFirstRender: false,
   onChange() {},
-  selectDefault: true
+  selectDefault: true,
+  hasTooltips: false
 };
 
 export default List;
