@@ -17,9 +17,9 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import _ from "lodash"
+import HvBadge from '@hv/uikit-react-core/dist/Badge'
 import Panel from "./Panel"
 import Notification from "./Notification"
-import HvBadge from '../Badge'
 
 export default class NotificationPanel extends Component {
   constructor(props) {
@@ -72,9 +72,7 @@ export default class NotificationPanel extends Component {
     return (
       <div className={classes.root}>
         <div role="button" className={classes.iconWrapper} tabIndex="0" onKeyDown={this.handleIconKeyDown} onClick={this.handleIconClick}>
-          <HvBadge count={notifications.length || 0} classes={{badgeBorder: classes.badgeBorder}}>
-            {icon}
-          </HvBadge>
+          <HvBadge icon={icon} showCount count={notifications.length} classes={{badgeBorder: classes.badgeBorder}} />
         </div>
         <Panel {...panelProps}>
           {n}
@@ -137,5 +135,5 @@ NotificationPanel.propTypes = {
 }
 
 NotificationPanel.defaultProps = {
-  open: false,
+  open: false
 }
