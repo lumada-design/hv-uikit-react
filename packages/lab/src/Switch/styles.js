@@ -25,18 +25,17 @@ const styles = theme => ({
 
   switchBase: {
     width: 52,
-    height: 22,
+    height: `${theme.hv.spacing.sm}px`,
     "&$checked": {
       "& input": {
-        top: -1,
-        width: 52,
+        width: 51,
         left: -32,
-        height: 22
+        height: 21
       },
       "& + $bar": {
         backgroundColor: theme.hv.palette.accent.acce2,
         border: `solid 1px ${theme.hv.palette.accent.acce2h}`,
-        opacity: 1,
+        opacity: 1
       }
     }
   },
@@ -58,17 +57,21 @@ const styles = theme => ({
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo7}`,
     backgroundColor: theme.hv.palette.accent.acce0,
     marginLeft: -32,
+    marginTop: 2
   },
 
   checked: {
     transform: "translateX(32px)",
-    width: 20
+    width: `${theme.hv.spacing.sm}px`,
+    height: `${theme.hv.spacing.sm}px`,
+    top: 1
   },
 
   iconChecked: {
     backgroundColor: theme.hv.palette.accent.acce0,
     border: `solid 1px ${theme.hv.palette.accent.acce2h}`,
-    marginLeft: "unset"
+    marginLeft: "unset",
+    marginTop: 0
   },
 
   disabled: {
@@ -80,6 +83,9 @@ const styles = theme => ({
       border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
       opacity: 1,
       cursor: "no-drop"
+    },
+    "& $icon": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo6}`
     }
   },
 
@@ -95,7 +101,6 @@ const styles = theme => ({
     cursor: "pointer"
   },
   labelSelected: {
-    ...theme.hv.typography.highlightText,
     height: `${theme.hv.spacing.sm}px`,
     cursor: "default"
   },
@@ -124,10 +129,10 @@ const styles = theme => ({
 
   checkedIcon: {
     clipPath: "circle(8px)",
-    background: theme.hv.palette.accent.acce0,
+    WebkitClipPath: "circle(8px)",
     marginLeft: 0,
-    width: 32,
-    height: 32
+    width: "16px !important",
+    height: "16px !important"
   }
 });
 
