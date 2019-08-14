@@ -181,12 +181,28 @@ class Table extends React.Component {
   getPaginationProps = () => {
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
-    const { pageSize = data.length, onPageSizeChange, pages } = this.props;
+    const {
+      pageSize = data.length,
+      onPageSizeChange,
+      onPageChange,
+      pages
+    } = this.props;
 
     return {
       showPagination,
       ...(showPagination && { PaginationComponent: ReactTablePagination }),
-      ...(showPagination && onPageSizeChange && { onPageSizeChange }),
+      ...(showPagination && {
+        onPageSizeChange: (...others) => {
+          this.setState({ expanded: {} });
+          if (onPageSizeChange) onPageSizeChange(others);
+        }
+      }),
+      ...(showPagination && {
+        onPageChange: (...others) => {
+          this.setState({ expanded: {} });
+          if (onPageChange) onPageChange(others);
+        }
+      }),
       ...(showPagination && pages && { pages }),
 
       ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
@@ -452,7 +468,7 @@ class Table extends React.Component {
         );
       }
     };
-
+    ReactTableDefaults.expanderDefaults.show = false;
     Object.assign(ReactTableDefaults, {
       column: ColumnSettings
     });
@@ -638,6 +654,10 @@ Table.propTypes = {
    */
   showPagination: PropTypes.bool,
   /**
+   * Callback to notify when the page changes
+   */
+  onPageChange: PropTypes.func,
+  /**
    * Boolean to show or hide the page size control
    */
   showPageSize: PropTypes.bool,
@@ -714,6 +734,7 @@ Table.defaultProps = {
     subtitleText: ""
   },
   showPagination: true,
+  onPageChange: () => {},
   showPageSize: true,
   pageSize: undefined,
   onPageSizeChange: () => {},
