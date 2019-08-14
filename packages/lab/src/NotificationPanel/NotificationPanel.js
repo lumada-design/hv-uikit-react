@@ -14,49 +14,49 @@
  * limitations under the License.
  */
 
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import _ from "lodash"
-import HvBadge from '@hv/uikit-react-core/dist/Badge'
-import Panel from "./Panel"
-import Notification from "./Notification"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import Panel from "./Panel";
+import Notification from "./Notification";
 
 export default class NotificationPanel extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       open: props.open
-    }
+    };
   }
 
   handleIconClick = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       open: !prevState.open
-    }))
-  }
+    }));
+  };
 
-  handleIconKeyDown = (e) => {
+  handleIconKeyDown = e => {
     if (e.keyCode === 13) {
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         open: !prevState.open
-      }))
+      }));
     }
-  }
+  };
 
   onClose = () => {
     this.setState({
       open: false
-    })
-  }
+    });
+  };
 
   render() {
-    const {classes, icon, header, footer, notifications} = this.props
-    const {open} = this.state
+    const { classes, icon, header, footer, notifications } = this.props;
+    const { open } = this.state;
 
-    const n = _.map(notifications, (notification) => (
+    const n = _.map(notifications, notification => (
       <Notification key={notification.id} notification={notification} />
-    ))
+    ));
 
     const panelProps = {
       open,
@@ -67,18 +67,27 @@ export default class NotificationPanel extends Component {
       header,
       footer,
       notifications
-    }
+    };
 
     return (
       <div className={classes.root}>
-        <div role="button" className={classes.iconWrapper} tabIndex="0" onKeyDown={this.handleIconKeyDown} onClick={this.handleIconClick}>
-          <HvBadge icon={icon} showCount count={notifications.length} classes={{badgeBorder: classes.badgeBorder}} />
+        <div
+          role="button"
+          className={classes.iconWrapper}
+          tabIndex="0"
+          onKeyDown={this.handleIconKeyDown}
+          onClick={this.handleIconClick}
+        >
+          <HvBadge
+            icon={icon}
+            showCount
+            count={notifications.length}
+            classes={{ badgeBorder: classes.badgeBorder }}
+          />
         </div>
-        <Panel {...panelProps}>
-          {n}
-        </Panel>
+        <Panel {...panelProps}>{n}</Panel>
       </div>
-    )
+    );
   }
 }
 
@@ -132,8 +141,8 @@ NotificationPanel.propTypes = {
    * renderable footer element
    */
   footer: PropTypes.element.isRequired
-}
+};
 
 NotificationPanel.defaultProps = {
   open: false
-}
+};

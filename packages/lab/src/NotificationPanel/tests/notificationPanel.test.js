@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import React from "react"
-import {mount} from "enzyme/build"
-import moment from 'moment/moment'
-import HvProvider from "@hv/uikit-react-core/dist/Provider"
-import HvNotificationPanelWithStyles from "../index"
-import HvNotificationPanel from "../NotificationPanel"
-import Notification from '../Notification'
+import React from "react";
+import { mount } from "enzyme/build";
+import moment from "moment/moment";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import HvNotificationPanelWithStyles from "../index";
+import HvNotificationPanel from "../NotificationPanel";
+import Notification from "../Notification";
 
-Date.now = jest.fn(() => 1561396490043)
+Date.now = jest.fn(() => 1561396490043);
 
 const baseProps = {
   classes: {},
@@ -44,7 +44,7 @@ const baseProps = {
       id: "2",
       title: "Test 2",
       isRead: true,
-      date: moment().subtract(1, 'day')
+      date: moment().subtract(1, "day")
     },
     {
       id: "3",
@@ -54,87 +54,107 @@ const baseProps = {
     }
   ],
   footer: <div className="footer" />
-}
+};
 
 describe("Hv NotificationPanel", () => {
-  let wrapper
+  let wrapper;
 
   describe("index", () => {
-    beforeEach(async() => {
+    beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
           <HvNotificationPanelWithStyles {...baseProps} />
         </HvProvider>
-      )
-    })
+      );
+    });
 
     it("should be defined", () => {
-      expect(wrapper).toBeDefined()
-    })
+      expect(wrapper).toBeDefined();
+    });
 
     it("mandatory and default properties are defined and received by child components", () => {
-      const {open, icon, header, notifications, footer} = wrapper.find(HvNotificationPanel).instance().props
+      const { open, icon, header, notifications, footer } = wrapper
+        .find(HvNotificationPanel)
+        .instance().props;
 
-      expect(open).toBe(false)
-      expect(icon).toBeTruthy()
-      expect(header).toBeTruthy()
-      expect(header.headerTitle).toEqual("Test title")
-      expect(header.headerCloseImg).toBeTruthy()
-      expect(notifications).toBeTruthy()
-      expect(notifications.length).toEqual(3)
-      expect(footer).toBeTruthy()
-    })
-  })
+      expect(open).toBe(false);
+      expect(icon).toBeTruthy();
+      expect(header).toBeTruthy();
+      expect(header.headerTitle).toEqual("Test title");
+      expect(header.headerCloseImg).toBeTruthy();
+      expect(notifications).toBeTruthy();
+      expect(notifications.length).toEqual(3);
+      expect(footer).toBeTruthy();
+    });
+  });
 
   describe("is rendered correctly and behaves as expected", () => {
-    beforeEach(async() => {
+    beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
           <HvNotificationPanel {...baseProps} />
         </HvProvider>
-      )
-    })
+      );
+    });
 
     it("should open and close panel correctly", () => {
-      const notificationPanel = wrapper.find(HvNotificationPanel)
-      const instance = notificationPanel.instance()
+      const notificationPanel = wrapper.find(HvNotificationPanel);
+      const instance = notificationPanel.instance();
 
-      expect(instance.state.open).toBe(false)
+      expect(instance.state.open).toBe(false);
 
-      instance.handleIconClick()
+      instance.handleIconClick();
 
-      expect(instance.state.open).toBe(true)
+      expect(instance.state.open).toBe(true);
 
-      instance.handleIconClick()
+      instance.handleIconClick();
 
-      expect(instance.state.open).toBe(false)
-    })
+      expect(instance.state.open).toBe(false);
+    });
 
     it("should close panel correctly", () => {
-      const notificationPanel = wrapper.find(HvNotificationPanel)
-      const instance = notificationPanel.instance()
+      const notificationPanel = wrapper.find(HvNotificationPanel);
+      const instance = notificationPanel.instance();
 
-      expect(instance.state.open).toBe(false)
+      expect(instance.state.open).toBe(false);
 
-      instance.handleIconClick()
+      instance.handleIconClick();
 
-      expect(instance.state.open).toBe(true)
+      expect(instance.state.open).toBe(true);
 
-      instance.onClose()
+      instance.onClose();
 
-      expect(instance.state.open).toBe(false)
-    })
+      expect(instance.state.open).toBe(false);
+    });
 
     it("should have correct time notification was created", () => {
-      const notifications = wrapper.find(Notification)
+      const notifications = wrapper.find(Notification);
 
-      expect(notifications.length).toEqual(3)
+      expect(notifications.length).toEqual(3);
 
-      expect(notifications.children().at(0).instance().getTime()).toEqual("a few seconds ago")
+      expect(
+        notifications
+          .children()
+          .at(0)
+          .instance()
+          .getTime()
+      ).toEqual("a few seconds ago");
 
-      expect(notifications.children().at(1).instance().getTime()).toEqual("Sun, 10:14 AM")
+      expect(
+        notifications
+          .children()
+          .at(1)
+          .instance()
+          .getTime()
+      ).toEqual("Sun, 10:14 AM");
 
-      expect(notifications.children().at(2).instance().getTime()).toEqual("24 May 2019, 10:14 AM")
-    })
-  })
-})
+      expect(
+        notifications
+          .children()
+          .at(2)
+          .instance()
+          .getTime()
+      ).toEqual("24 May 2019, 10:14 AM");
+    });
+  });
+});

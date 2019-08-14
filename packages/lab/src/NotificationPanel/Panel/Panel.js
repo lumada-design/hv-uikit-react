@@ -14,44 +14,62 @@
  * limitations under the License.
  */
 
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import _ from "lodash"
-import HvBadge from '@hv/uikit-react-core/dist/Badge'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
-const EnterKeyCode = 13
+const EnterKeyCode = 13;
 
 export default class Panel extends Component {
-  onKeyDownClose = (e) => {
+  onKeyDownClose = e => {
     if (e.keyCode === EnterKeyCode) {
-      const {onClose} = this.props
-      onClose()
+      const { onClose } = this.props;
+      onClose();
     }
-  }
+  };
 
   render() {
-    const {classes, open, header: {headerTitle, headerCloseImg}, notifications, onClose, footer, children} = this.props
-    const newNotificationCount = _.filter(notifications, (notification) => !notification.isRead).length
+    const {
+      classes,
+      open,
+      header: { headerTitle, headerCloseImg },
+      notifications,
+      onClose,
+      footer,
+      children
+    } = this.props;
+    const newNotificationCount = _.filter(
+      notifications,
+      notification => !notification.isRead
+    ).length;
 
     return (
-      <div className={`${classes.root} ${open ? classes.open : ""} ${classes.panel}`} ref={this.rootRef}>
+      <div
+        className={`${classes.root} ${open ? classes.open : ""} ${
+          classes.panel
+        }`}
+        ref={this.rootRef}
+      >
         <div className={classes.header}>
           <div className={classes.titleContainer}>
             <div className={classes.title}>{headerTitle}</div>
             <HvBadge count={newNotificationCount} showCount />
           </div>
-          <div role="button" className={classes.close} tabIndex="0" onKeyDown={this.onKeyDownClose} onClick={onClose}>
+          <div
+            role="button"
+            className={classes.close}
+            tabIndex="0"
+            onKeyDown={this.onKeyDownClose}
+            onClick={onClose}
+          >
             {headerCloseImg}
           </div>
         </div>
-        <div className={classes.notificationsContainer}>
-          {children}
-        </div>
-        <div className={classes.footerContainer}>
-          {footer}
-        </div>
+        <div className={classes.notificationsContainer}>{children}</div>
+        <div className={classes.footerContainer}>{footer}</div>
       </div>
-    )
+    );
   }
 }
 
@@ -104,11 +122,11 @@ Panel.propTypes = {
   /**
    * Node to be rendered
    */
-  children: PropTypes.node,
-}
+  children: PropTypes.node
+};
 
 Panel.defaultProps = {
   open: false,
   notifications: [],
   children: null
-}
+};

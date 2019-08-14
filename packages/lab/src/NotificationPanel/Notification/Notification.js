@@ -14,51 +14,64 @@
  * limitations under the License.
  */
 
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import moment from 'moment/moment';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import moment from "moment/moment";
 
 export default class Notification extends Component {
   // TODO: figure out rules for how time should be presented
   getTime = () => {
-    const {notification: {date, isRead}} = this.props;
+    const {
+      notification: { date, isRead }
+    } = this.props;
 
     if (!isRead) {
-  	  return moment(date).fromNow();
+      return moment(date).fromNow();
     }
 
     const d = moment(date);
     let format = "D MMMM YYYY, h:mm A";
 
-    if (d.isSame(Date.now(), 'week')) {
+    if (d.isSame(Date.now(), "week")) {
       format = "ddd, h:mm A";
     }
 
     return d.format(format);
-  }
+  };
 
   render() {
-    const {classes, notification: {title, isRead, icon}} = this.props;
+    const {
+      classes,
+      notification: { title, isRead, icon }
+    } = this.props;
 
     return (
-      <div className={classNames([classes.root,  {[classes.read]: isRead}])}>
-        <div className={classes.iconContainer}>
-          {icon}
-        </div>
+      <div className={classNames([classes.root, { [classes.read]: isRead }])}>
+        <div className={classes.iconContainer}>{icon}</div>
         <div>
-          <div className={classNames([classes.title, {[classes.read]: isRead}])}>
+          <div
+            className={classNames([classes.title, { [classes.read]: isRead }])}
+          >
             {title}
           </div>
-          <div className={classNames([classes.timeContainer, {[classes.read]: isRead}])}>
-            <div className={classNames([classes.bullet, {[classes.hide]: isRead}])} />
-            <div className={classes.time}>
-              {this.getTime()}
-            </div>
+          <div
+            className={classNames([
+              classes.timeContainer,
+              { [classes.read]: isRead }
+            ])}
+          >
+            <div
+              className={classNames([
+                classes.bullet,
+                { [classes.hide]: isRead }
+              ])}
+            />
+            <div className={classes.time}>{this.getTime()}</div>
           </div>
         </div>
       </div>
-  	);
+    );
   }
 }
 
@@ -82,10 +95,14 @@ Notification.propTypes = {
     /**
      * date the notification was created
      */
-    date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
+    date: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.object
+    ]).isRequired,
     /**
      * renderable icon that denotes the status of the notification
      */
     icon: PropTypes.element
   }).isRequired
-}
+};
