@@ -146,7 +146,7 @@ describe("Hv NotificationPanel", () => {
           .at(1)
           .instance()
           .getTime()
-      ).toEqual("Sun, 10:14 AM");
+      ).toEqual("Sun, 1:14 PM");
 
       expect(
         notifications
@@ -154,7 +154,7 @@ describe("Hv NotificationPanel", () => {
           .at(2)
           .instance()
           .getTime()
-      ).toEqual("24 May 2019, 10:14 AM");
+      ).toEqual("24 May 2019, 1:14 PM");
     });
   });
 });
