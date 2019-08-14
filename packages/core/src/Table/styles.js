@@ -62,6 +62,7 @@ const styles = theme => ({
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
           minHeight: 32,
+          maxHeight: 54,
           minWidth: 72,
           padding: 0,
           display: "flex",
@@ -91,10 +92,8 @@ const styles = theme => ({
             borderRight: "none"
           },
           "&.secondaryAction": {
-            minWidth: "31px",
-            maxWidth: "31px",
-            height: "100%",
-            display: "inline-table",
+            minWidth: "30px",
+            maxWidth: "30px",
             borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&.-sort-desc": {
@@ -108,9 +107,8 @@ const styles = theme => ({
             borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&.checkBox": {
-            minWidth: "30px",
-            height: "100%",
-            display: "inline-table",
+            minWidth: "31px",
+            maxWidth: "31px",
             borderRightColor: theme.hv.palette.atmosphere.atmo5
           },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
@@ -178,6 +176,9 @@ const styles = theme => ({
           "&.rt-td.rthfc-td-fixed-right-first": {
             borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
           },
+          "&$expand": {
+            paddingLeft: "2px"
+          }
         },
         "& .firstExpandable": {
           paddingLeft: "0px"
@@ -189,8 +190,9 @@ const styles = theme => ({
           borderBottom: "none"
         },
         "& .checkBox": {
-          minWidth: "30px",
-          maxWidth: "30px",
+          minWidth: "31px",
+          maxWidth: "31px",
+          padding: 0,
           borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
         }
       }
@@ -283,11 +285,8 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.md}px 32px`
   },
   iconContainer: {
-    width: "32px",
-    height: "32px",
-    position: "absolute",
-    bottom: 0,
-    left: 0
+    width: "30px",
+    height: "30px"
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"
@@ -321,7 +320,8 @@ const styles = theme => ({
     textAlign: "right",
     marginBottom: "-6px",
     marginTop: "-6px"
-  }
+  },
+  expand: {}
 });
 
 export { styles, tableStyleOverrides };
