@@ -175,7 +175,8 @@ class Main extends React.Component {
       multiSelect,
       showSearch,
       selectDefault,
-      notifyChangesOnFirstRender
+      notifyChangesOnFirstRender,
+      hasTooltips
     } = this.props;
     const { isOpen, labels } = this.state;
 
@@ -201,6 +202,7 @@ class Main extends React.Component {
           labels={labels}
           selectDefault={selectDefault}
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
+          hasTooltips={hasTooltips}
         />
       </div>
     );
@@ -371,7 +373,11 @@ Main.propTypes = {
   /**
    * The theme passed by the provider.
    */
-  theme: PropTypes.instanceOf(Object)
+  theme: PropTypes.instanceOf(Object),
+  /**
+   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   */
+  hasTooltips: PropTypes.bool,
 };
 
 Main.defaultProps = {
@@ -387,7 +393,8 @@ Main.defaultProps = {
   notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true,
-  theme: null
+  theme: null,
+  hasTooltips: false
 };
 
 export default Main;
