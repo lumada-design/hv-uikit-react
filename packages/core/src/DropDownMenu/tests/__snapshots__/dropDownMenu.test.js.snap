@@ -29226,8 +29226,10 @@ body {
                         >
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvFocusable HvList-focusDisabled-13 HvList-condensed-11"
                             key="0"
+                            onBlur={[Function]}
+                            onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
                             onMouseUp={[Function]}
@@ -31133,8 +31135,10 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvFocusable HvList-focusDisabled-13 HvList-condensed-11"
                             key="1"
+                            onBlur={[Function]}
+                            onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
                             onMouseUp={[Function]}
@@ -33040,8 +33044,10 @@ body {
                           </li>
                           <li
                             aria-selected={false}
-                            className="HvList-listItem-10 HvList-focusDisabled-13 HvList-condensed-11"
+                            className="HvList-listItem-10 HvFocusable HvList-focusDisabled-13 HvList-condensed-11"
                             key="2"
+                            onBlur={[Function]}
+                            onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
                             onMouseUp={[Function]}
