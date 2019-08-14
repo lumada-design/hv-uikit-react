@@ -16,11 +16,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import isNil from "lodash/isNil";
 import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
 import HvTypography from "../Typography";
+import HvList from "../List";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
@@ -46,6 +48,7 @@ class HvInput extends React.Component {
     this.state = {
       validationState,
       value: val,
+      suggestionValues: null,
       infoText:
         validationState === validationStates.invalid
           ? definedLabels.warningText
@@ -101,6 +104,44 @@ class HvInput extends React.Component {
   };
 
   /**
+   * clears the suggestion array.
+   */
+  suggestionClearHandler = () => {
+    this.setState({
+      suggestionValues: null
+    });
+  }
+
+  /**
+   * fills of the suggestion array.
+   */
+  suggestionHandler = value => {
+    const { suggestionListCallback } = this.props;
+    const suggestionsArray = suggestionListCallback(value);
+    if (
+      !isNil(suggestionsArray) &&
+      Array.isArray(suggestionsArray) &&
+      !isNil(suggestionsArray[0].label)
+    ) {
+      this.setState({
+        suggestionValues: suggestionsArray
+      });
+    } else {
+      this.suggestionClearHandler();
+    }
+  };
+
+  /** 
+   * Executes the user callback adds the selection to the state and clears the suggestions.
+   */
+  suggestionSelectedHandler = item => {
+    const { suggestionSelectedCallback } = this.props;
+    suggestionSelectedCallback(item);
+    this.manageInputValueState(item.label);
+    this.suggestionClearHandler();
+  }
+
+  /**
    * Updates the state while is being inputted, also executes the user onChange
    * allowing the customization of the input if required.
    *
@@ -111,6 +152,7 @@ class HvInput extends React.Component {
     const { value } = event.target;
     const definedLabels = inputTextConfiguration || labels;
     const newValue = onChange(value);
+    this.suggestionHandler(value);
     this.manageInputValueState(newValue, definedLabels.infoText);
   };
 
@@ -166,6 +208,7 @@ class HvInput extends React.Component {
     }
 
     this.setState({ validationState, infoText });
+    this.suggestionClearHandler();
     onBlur(value, validationState);
   };
 
@@ -195,6 +238,7 @@ class HvInput extends React.Component {
       iconVisible,
       validationIconVisible,
       iconPosition,
+      customFixedIcon,
       validationIconPosition,
       validate,
       showInfo,
@@ -208,6 +252,8 @@ class HvInput extends React.Component {
       onChange,
       onBlur,
       onFocus,
+      suggestionSelectedCallback,
+      suggestionListCallback,
       value,
       autoFocus,
       theme,
@@ -219,7 +265,8 @@ class HvInput extends React.Component {
     const {
       validationState: stateValidationState,
       value: stateValue,
-      infoText
+      infoText,
+      suggestionValues
     } = this.state;
 
     const definedLabels = inputTextConfiguration || labels;
@@ -232,6 +279,8 @@ class HvInput extends React.Component {
     let adornment = (
       <InputAdornment
         classes={classes}
+        customFixedIcon={customFixedIcon}
+        validationIconVisible={validationIconVisible}
         validationState={stateValidationState}
         handleClear={() => this.handleClear()}
         theme={theme}
@@ -241,16 +290,17 @@ class HvInput extends React.Component {
     if (disabled) {
       adornment = null;
     }
-
-    if (
-      stateValidationState !== validationStates.filled &&
-      (stateValidationState === validationStates.empty ||
-        (validationType === validationTypes.none &&
-          maxCharQuantity === null &&
-          minCharQuantity === null &&
-          !validation))
-    ) {
-      adornment = null;
+    if(customFixedIcon === null) {
+      if (
+        stateValidationState !== validationStates.filled &&
+        (stateValidationState === validationStates.empty ||
+          (validationType === validationTypes.none &&
+            maxCharQuantity === null &&
+            minCharQuantity === null &&
+            !validation))
+      ) {
+        adornment = null;
+      }
     }
 
     let validationText;
@@ -286,6 +336,7 @@ class HvInput extends React.Component {
         </HvTypography>
       );
     }
+
     return (
       <div
         ref={node => {
@@ -324,13 +375,23 @@ class HvInput extends React.Component {
           {...(iconPosition === "right" ||
             (iconPosition === undefined &&
               validationIconPosition === "right")) &&
-            iconVisible &&
-            validationIconVisible && { endAdornment: adornment }}
+            (iconVisible || iconVisible === undefined) &&
+            { endAdornment: adornment }}
           {...(iconPosition === "left" || validationIconPosition === "left") &&
-            iconVisible &&
-            validationIconVisible && { startAdornment: adornment }}
+            (iconVisible || iconVisible === undefined) &&
+            { startAdornment: adornment }}
           {...others}
         />
+        {suggestionValues && (
+          <div className={classes.suggestionsContainer}>
+            <div className={classes.suggestionList}>
+              <HvList 
+                values={suggestionValues} 
+                onClick={this.suggestionSelectedHandler}
+              />
+            </div>
+          </div>
+        )}
         {validationText}
       </div>
     );
@@ -495,6 +556,14 @@ HvInput.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
+   */
+  suggestionListCallback: PropTypes.func,
+  /**
+   * The function that will be executed after selecting a value in the suggestion list
+   */
+  suggestionSelectedCallback: PropTypes.func,
+  /**
    * If `true` validation is shown, `false` otherwise.
    *  * @deprecated Instead use the showInfo property
    */
@@ -568,6 +637,10 @@ HvInput.propTypes = {
    */
   validationIconPosition: PropTypes.oneOf(["left", "right"]),
   /**
+   * a custom icon to be added into the input.
+   */
+  customFixedIcon: PropTypes.node,
+  /**
    * The maximum allowed length of the characters, if this value is null no check
    * will be performed.
    */
@@ -606,6 +679,7 @@ HvInput.defaultProps = {
     requiredWarningText: "The value is required"
   },
   inputProps: {},
+  customFixedIcon: null,
   infoIcon: false,
   iconVisible: undefined,
   validationIconVisible: true,
@@ -624,6 +698,8 @@ HvInput.defaultProps = {
   validationState: "empty",
   disabled: false,
   isRequired: false,
+  suggestionListCallback: () => {},
+  suggestionSelectedCallback: () => {},
   onChange: value => value,
   onBlur: () => {},
   onFocus: () => {},

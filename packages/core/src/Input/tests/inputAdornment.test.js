@@ -58,12 +58,12 @@ describe("InputAdornment", () => {
   });
 
   it("should call handleClear when mouseDown", () => {
-    wrapper.simulate("mousedown");
+    wrapper.children().children().simulate("mousedown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should call handleClear when keydown", () => {
-    wrapper.simulate("keydown");
+    wrapper.children().children().simulate("keydown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
