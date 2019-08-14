@@ -150,7 +150,7 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
 const createExpanderButton = (columns, subElementTemplate, classes) => {
   const newColumn = columns;
   if (subElementTemplate) {
-    newColumn[0].sortable = true;
+    newColumn[0].className = classNames(newColumns[0].className, classes.expand);
     newColumn[0].expander = true;
     newColumn[0].width = newColumn[1].width;
     // eslint-disable-next-line react/prop-types
