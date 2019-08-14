@@ -122,25 +122,21 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
  * @returns {Object} a modified column.
  */
 const createExpanderButton = (columns, subElementTemplate, classes) => {
-  const newColumn = columns;
+  const newColumns = columns;
   if (subElementTemplate) {
-    newColumn[0].className = classNames(newColumns[0].className, classes.expand);
-    newColumn[0].expander = true;
-    newColumn[0].width = newColumn[1].width;
+    newColumns[0].className = classNames(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
-    newColumn[0].Expander = ({ isExpanded, ...rest }) => (
+    newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        <div>
-          {isExpanded ? (
-            <div className={classNames(classes.iconContainer)}>
-              <AngleUp />
-            </div>
-          ) : (
-            <div className={classNames(classes.iconContainer)}>
-              <AngleDown />
-            </div>
-          )}
-        </div>
+        {isExpanded ? (
+          <div className={classNames(classes.iconContainer)}>
+            <AngleUp />
+          </div>
+        ) : (
+          <div className={classNames(classes.iconContainer)}>
+            <AngleDown />
+          </div>
+        )}
         <div
           className={classNames({
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
@@ -152,7 +148,7 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
       </>
     );
   }
-  return newColumn;
+  return newColumns;
 };
 
 /**
