@@ -23,6 +23,7 @@ export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvHeader } from "./Header";
 export { default as HvInput}  from "./Input";
+export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";

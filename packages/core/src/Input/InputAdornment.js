@@ -46,7 +46,7 @@ const InputAdornment = ({ classes, validationState, validationIconVisible, custo
         }}
       >
         
-        {validationIconVisible && validationState === validationStates.filled && <Close style={stl} />}
+        {validationState === validationStates.filled && <Close style={stl} />}
         {validationIconVisible && validationState === validationStates.valid && <Success style={stl} />}
         {validationIconVisible && validationState === validationStates.invalid && (
           <Unsuccess style={stl} />
