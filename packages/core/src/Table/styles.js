@@ -257,26 +257,6 @@ const styles = theme => ({
   title: {
     marginBottom: `${theme.hv.spacing.sm}px`
   },
-  headerContainer: {
-    width: "100%",
-    minHeight: "32px"
-  },
-  headerTextContainer: {
-    minWidth: 0,
-    padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
-    minHeight: "32px",
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
-  },
-  headerNotSortable: {
-    width: `calc(100% - ${theme.hv.spacing.xs}px)`,
-    marginLeft: `${theme.hv.spacing.xs}px`
-  },
-  headerSortable: {
-    marginLeft: "32px",
-    width: "calc(100% - 32px)"
-  },
   checkBoxBorder: {
     "&:nth-child(2)": {
       borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
@@ -287,31 +267,6 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "space-between",
     marginBottom: `${theme.hv.spacing.xs}px`
-  },
-  headerProps: {
-    width: "100%",
-    whiteSpace: "normal",
-    textOverflow: "ellipsis",
-    overflow: "hidden"
-  },
-  headerAlphaNumeric: {
-    float: "left",
-    textAlign: "left"
-  },
-  headerNumeric: {
-    float: "right",
-    textAlign: "right"
-  },
-
-  centered: {
-    justifyContent: "center"
-  },
-  alphaNumeric: {
-    justifyContent: "flex-start"
-  },
-  numeric: {
-    justifyContent: "flex-end",
-    textAlign: "right"
   },
   link: {
     justifyContent: "flex-start",

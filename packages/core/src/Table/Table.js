@@ -415,11 +415,7 @@ class Table extends React.Component {
       ...other
     } = this.props;
 
-    const {
-      expanded,
-      selectAll,
-      selection
-    } = this.state;
+    const { expanded, selectAll, selection, recordQuantity } = this.state;
 
     const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
@@ -449,43 +445,10 @@ class Table extends React.Component {
     const ColumnSettings = {
       ...ReactTableDefaults.column,
       Header: props => {
-        const Sorted = this.getSortedComponent(props.column.id);
-        const SortedIcon = !Sorted ? <Sort /> : Sorted;
-
-        const sortedIconClasses = Sorted
-          ? classes.sortedIconShown
-          : classes.sortedIconHidden;
-
+        const { column } = props;
+        const { sorted } = this.state;
         return (
-          <div className={classNames(classes.headerContainer, className)}>
-            <div className={classNames(classes.rtSortIcon, sortedIconClasses)}>
-              {SortedIcon}
-            </div>
-            {/* Setter of the styles for the header */}
-            <div
-              className={classNames(classes.headerTextContainer, {
-                [classes.headerSortable]:
-                  (_.isNil(props.column.sortable) && sortable) ||
-                  props.column.sortable,
-                [classes.headerNotSortable]: !(
-                  (_.isNil(props.column.sortable) && sortable) ||
-                  props.column.sortable
-                )
-              })}
-            >
-              <HvTypography
-                variant="highlightText"
-                className={classNames(classes.headerProps, {
-                  [classes.headerAlphaNumeric]:
-                    props.column.cellType === "alpha-numeric" ||
-                    props.column.cellType === "link",
-                  [classes.headerNumeric]: props.column.cellType === "numeric"
-                })}
-              >
-                {props.column.headerText}
-              </HvTypography>
-            </div>
-          </div>
+          <Header key={column.id} column={column} sort={sorted} tableSortable={sortable} />
         );
       }
     };
@@ -636,38 +599,6 @@ Table.propTypes = {
      * Styles applied to the component title.
      */
     title: PropTypes.string,
-    /**
-     * Styles applied to the component header container.
-     */
-    headerContainer: PropTypes.string,
-    /**
-     * Styles applied to the component header text container.
-     */
-    headerTextContainer: PropTypes.string,
-    /**
-     * Styles applied to the component header props.
-     */
-    headerProps: PropTypes.string,
-    /**
-     * Styles applied to the component header when type is alphanumeric.
-     */
-    headerAlphaNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component header when type is numeric.
-     */
-    headerNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component to center.
-     */
-    centered: PropTypes.string,
-    /**
-     * Styles applied to the component when type is alphanumeric.
-     */
-    alphaNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component when type is alphanumeric.
-     */
-    numeric: PropTypes.string,
     /**
      * Styles applied to the component when type is link.
      */
