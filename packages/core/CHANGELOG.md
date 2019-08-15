@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.2.0...@hv/uikit-react-core@1.3.0) (2019-08-15)
+
+
+### Features
+
+* **dropdown:** optional enhance dropdown to show tooltip [#396](https://github.com/pentaho/hv-uikit-react/issues/396) ([#411](https://github.com/pentaho/hv-uikit-react/issues/411)) ([515adb7](https://github.com/pentaho/hv-uikit-react/commit/515adb7))
+
+
+
+
+
 # [1.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.1.3-alpha.64...@hv/uikit-react-core@1.2.0) (2019-08-09)
 
 

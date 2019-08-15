@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.2.1...@hv/uikit-react-doc@1.3.0) (2019-08-15)
+
+
+### Features
+
+* **dropdown:** optional enhance dropdown to show tooltip [#396](https://github.com/pentaho/hv-uikit-react/issues/396) ([#411](https://github.com/pentaho/hv-uikit-react/issues/411)) ([515adb7](https://github.com/pentaho/hv-uikit-react/commit/515adb7))
+* **notification-panel:** created notification panel ([#345](https://github.com/pentaho/hv-uikit-react/issues/345)) ([77eb48e](https://github.com/pentaho/hv-uikit-react/commit/77eb48e))
+
+
+
+
+
 ## [1.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.2.0...@hv/uikit-react-doc@1.2.1) (2019-08-12)
 
 
