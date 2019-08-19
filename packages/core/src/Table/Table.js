@@ -16,20 +16,21 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import _ from "lodash";
+import classNames from "classnames";
 import ReactTable, { ReactTableDefaults } from "react-table";
-import withFixedColumns from 'react-table-hoc-fixed-columns';
+import withFixedColumns from "react-table-hoc-fixed-columns";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
+
 import "react-table/react-table.css";
-import 'react-table-hoc-fixed-columns/lib/styles.css' // important: this line must be placed after react-table css import
+import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import classNames from "classnames";
+
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
 import Sort from "@hv/uikit-react-icons/dist/DawnTheme/Sort.XS";
-import isNil from "lodash/isNil";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
-import _ from "lodash";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {
@@ -43,11 +44,13 @@ import {
   toggleSelection,
   isSelected
 } from "./checkBoxUtils";
-import HvCheckBox from "../Selectors/CheckBox";
 
 import ReactTablePagination from "./Pagination";
 import NoData from "./NoData";
+import Header from "./Header";
 import { tableStyleOverrides } from "./styles";
+
+import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
@@ -178,12 +181,28 @@ class Table extends React.Component {
   getPaginationProps = () => {
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
-    const { pageSize = data.length, onPageSizeChange, pages } = this.props;
+    const {
+      pageSize = data.length,
+      onPageSizeChange,
+      onPageChange,
+      pages
+    } = this.props;
 
     return {
       showPagination,
       ...(showPagination && { PaginationComponent: ReactTablePagination }),
-      ...(showPagination && onPageSizeChange && { onPageSizeChange }),
+      ...(showPagination && {
+        onPageSizeChange: (...others) => {
+          this.setState({ expanded: {} });
+          if (onPageSizeChange) onPageSizeChange(others);
+        }
+      }),
+      ...(showPagination && {
+        onPageChange: (...others) => {
+          this.setState({ expanded: {} });
+          if (onPageChange) onPageChange(others);
+        }
+      }),
       ...(showPagination && pages && { pages }),
 
       ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
@@ -214,10 +233,10 @@ class Table extends React.Component {
    * @param sortedColumn - the column representation from the user.
    * @param col - column representation from react tables that is going to be modified.
    */
-  highlightSortedColumn = (sortedColumn, col) => {
+  onSortChange = (sortedColumn, col) => {
     const column = col;
     column.className = "sorted";
-    this.setState({ sorted: sortedColumn });
+    this.setState({ sorted: sortedColumn, expanded: {} });
   };
 
   /**
@@ -231,9 +250,25 @@ class Table extends React.Component {
     return {
       sortable,
       ...(sortable && { defaultSorted }),
-      ...(sortable && {
-        onSortedChange: this.highlightSortedColumn
-      })
+      onSortedChange: this.onSortChange
+    };
+  };
+
+  getCheckboxProps = () => {
+    const { classes } = this.props;
+    const { selection } = this.state;
+
+    return {
+      selectWidth: 32,
+      SelectAllInputComponent: () => (
+        <div className={classNames(classes.checkBox)} />
+      ),
+      SelectInputComponent: props => (
+        <HvCheckBox
+          checked={isSelected(props.id, selection)}
+          onChange={() => this.toggleSelection(props.id)}
+        />
+      )
     };
   };
 
@@ -269,7 +304,7 @@ class Table extends React.Component {
   getTheadThProps = (state, rowInfo, column) => {
     const { classes, sortable } = this.props;
     const { sorted } = this.state;
-    let isSortable = sortable && (isNil(column.sortable) || column.sortable);
+    let isSortable = sortable && (_.isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
       isSortable = null;
@@ -338,17 +373,6 @@ class Table extends React.Component {
   };
 
   //  ----------- Checkbox -----------
-
-  /**
-   * Check if the row is selected based on it's key.
-   *
-   * @param {Number} key - the key that uniquely identifies the row.
-   */
-  isSelected = key => {
-    const { selection } = this.state;
-    return isSelected(key, selection);
-  };
-
   /**
    * Selects or unselect a row.
    *
@@ -367,14 +391,6 @@ class Table extends React.Component {
     this.setState({ selection: select }, () => {
       onSelection(select);
     });
-  };
-
-  /**
-   *  Adds the indeterminate status to the checkbox when necessary.
-   */
-  isIndeterminateStatus = () => {
-    const { selection, recordQuantity } = this.state;
-    return isIndeterminateStatus(selection, recordQuantity);
   };
 
   /**
@@ -415,11 +431,7 @@ class Table extends React.Component {
       ...other
     } = this.props;
 
-    const {
-      expanded,
-      selectAll,
-      selection
-    } = this.state;
+    const { expanded, selectAll, selection, recordQuantity } = this.state;
 
     const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
@@ -449,51 +461,14 @@ class Table extends React.Component {
     const ColumnSettings = {
       ...ReactTableDefaults.column,
       Header: props => {
-        const Sorted = this.getSortedComponent(props.column.id);
-        const SortedIcon = !Sorted ? <Sort /> : Sorted;
-
-        const sortedIconClasses = Sorted
-          ? classes.sortedIconShown
-          : classes.sortedIconHidden;
-
+        const { column } = props;
+        const { sorted } = this.state;
         return (
-          <div className={classNames(classes.headerContainer, className)}>
-            <div className={classNames(classes.rtSortIcon, sortedIconClasses)}>
-              {SortedIcon}
-            </div>
-            {/* Setter of the styles for the header */}
-            <div
-              className={classNames(classes.headerTextContainer, {
-                [classes.headerSortable]:
-                  (_.isNil(props.column.sortable) && sortable) ||
-                  props.column.sortable,
-                [classes.headerNotSortable]: !(
-                  (_.isNil(props.column.sortable) && sortable) ||
-                  props.column.sortable
-                )
-              })}
-            >
-              <HvTypography
-                variant="highlightText"
-                className={classNames(classes.headerProps, {
-                  [classes.headerAlphaNumeric]:
-                    props.column.cellType === "alpha-numeric" ||
-                    props.column.cellType === "link",
-                  [classes.headerNumeric]: props.column.cellType === "numeric"
-                })}
-              >
-                {props.column.headerText}
-              </HvTypography>
-            </div>
-          </div>
+          <Header key={column.id} column={column} sort={sorted} tableSortable={sortable} />
         );
       }
     };
-
-    const paginationProps = this.getPaginationProps();
-    const serverSizeProps = this.getServerSizeProps();
-    const sortProps = this.getSortProps();
-
+    ReactTableDefaults.expanderDefaults.show = false;
     Object.assign(ReactTableDefaults, {
       column: ColumnSettings
     });
@@ -507,29 +482,12 @@ class Table extends React.Component {
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
-    // checkbox properties
-    const checkboxProps = {
-      SelectAllInputComponent: () => (
-        <div className={classNames(classes.checkBox)} />
-      ),
-      SelectInputComponent: props => (
-        <HvCheckBox
-          checked={this.isSelected(props.id)}
-          onChange={() => this.toggleSelection(props.id)}
-        />
-      )
-    };
-
     const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
-    const checkboxRowClasses =
-      selection.length > 0
-        ? classNames(classes.checkBoxRow, classes.checkBoxRowSelected)
-        : classes.checkBoxRow;
 
     const sanitizedData = this.sanitizedData();
 
     return (
-      <div id={id} className={classes.tableContainer}>
+      <div id={id} className={classNames(classes.tableContainer, className)}>
         {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
@@ -547,13 +505,13 @@ class Table extends React.Component {
           </div>
         )}
         {!!idForCheckbox && (
-          <div className={classNames(checkboxRowClasses)}>
+          <div className={classes.checkBoxRow}>
             <div className={classes.checkBoxText}>
               <HvCheckBox
                 onChange={() => this.toggleAll()}
                 checked={selectAll}
                 disabled={data.length === 0}
-                indeterminate={this.isIndeterminateStatus()}
+                indeterminate={isIndeterminateStatus(selection, recordQuantity)}
               />
               <HvTypography variant="highlightText">
                 {this.getCheckBoxHeader(data.length)}
@@ -564,10 +522,10 @@ class Table extends React.Component {
         <AugmentedTable
           {...other}
           {...tableStyles}
-          {...paginationProps}
-          {...serverSizeProps}
-          {...sortProps}
-          {...checkboxProps}
+          {...this.getPaginationProps()}
+          {...this.getServerSizeProps()}
+          {...this.getSortProps()}
+          {...this.getCheckboxProps()}
           /* eslint no-return-assign: 0 */
           ref={r => (this.checkboxTable = r)}
           getTheadThProps={this.getTheadThProps}
@@ -579,7 +537,7 @@ class Table extends React.Component {
           SubComponent={newSubComponent}
           expanded={expanded}
           keyField={idForCheckbox}
-          isSelected={this.isSelected}
+          isSelected={key => isSelected(key, selection)}
           NoDataComponent={NoData}
         />
       </div>
@@ -636,38 +594,6 @@ Table.propTypes = {
      * Styles applied to the component title.
      */
     title: PropTypes.string,
-    /**
-     * Styles applied to the component header container.
-     */
-    headerContainer: PropTypes.string,
-    /**
-     * Styles applied to the component header text container.
-     */
-    headerTextContainer: PropTypes.string,
-    /**
-     * Styles applied to the component header props.
-     */
-    headerProps: PropTypes.string,
-    /**
-     * Styles applied to the component header when type is alphanumeric.
-     */
-    headerAlphaNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component header when type is numeric.
-     */
-    headerNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component to center.
-     */
-    centered: PropTypes.string,
-    /**
-     * Styles applied to the component when type is alphanumeric.
-     */
-    alphaNumeric: PropTypes.string,
-    /**
-     * Styles applied to the component when type is alphanumeric.
-     */
-    numeric: PropTypes.string,
     /**
      * Styles applied to the component when type is link.
      */
@@ -727,6 +653,10 @@ Table.propTypes = {
    * Boolean to show or hide the pagination controls
    */
   showPagination: PropTypes.bool,
+  /**
+   * Callback to notify when the page changes
+   */
+  onPageChange: PropTypes.func,
   /**
    * Boolean to show or hide the page size control
    */
@@ -804,6 +734,7 @@ Table.defaultProps = {
     subtitleText: ""
   },
   showPagination: true,
+  onPageChange: () => {},
   showPageSize: true,
   pageSize: undefined,
   onPageSizeChange: () => {},

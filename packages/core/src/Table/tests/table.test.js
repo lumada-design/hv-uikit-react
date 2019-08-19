@@ -246,7 +246,7 @@ describe("Hv Table", () => {
       };
 
       const instance = wrapper.find(HvTable).instance();
-      instance.highlightSortedColumn([column[0]], internalColumnRepresentation);
+      instance.onSortChange([column[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
     });
 
@@ -267,7 +267,7 @@ describe("Hv Table", () => {
       };
 
       const instance = wrapper.find(HvTable).instance();
-      instance.highlightSortedColumn([column[0]], internalColumnRepresentation);
+      instance.onSortChange([column[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
       const sortedIcon = instance.getSortedComponent(1);
       expect(sortedIcon).toBeDefined();
@@ -295,7 +295,7 @@ describe("Hv Table", () => {
       };
 
       const instance = wrapper.find(HvTable).instance();
-      instance.highlightSortedColumn(
+      instance.onSortChange(
         [columns[0]],
         internalColumnRepresentation
       );
@@ -386,8 +386,6 @@ describe("Hv Table", () => {
       const instance = wrapper.find(HvTable).instance();
       instance.toggleSelection(column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
-      const isSelected = instance.isSelected(column[0].id);
-      expect(isSelected).toEqual(true);
     });
 
     it("should add an expander if the subElementTemplate is defined", () => {
