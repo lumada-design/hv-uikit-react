@@ -21,6 +21,7 @@ import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import HvList from "../List";
 import validationTypes from "./validationTypes";
@@ -110,7 +111,7 @@ class HvInput extends React.Component {
     this.setState({
       suggestionValues: null
     });
-  }
+  };
 
   /**
    * fills of the suggestion array.
@@ -131,7 +132,7 @@ class HvInput extends React.Component {
     }
   };
 
-  /** 
+  /**
    * Executes the user callback adds the selection to the state and clears the suggestions.
    */
   suggestionSelectedHandler = item => {
@@ -139,7 +140,7 @@ class HvInput extends React.Component {
     suggestionSelectedCallback(item);
     this.manageInputValueState(item.label);
     this.suggestionClearHandler();
-  }
+  };
 
   /**
    * Updates the state while is being inputted, also executes the user onChange
@@ -162,7 +163,7 @@ class HvInput extends React.Component {
    *
    * @returns {undefined}
    */
-  onBlurHandler = () => {
+  onInputBlurHandler = () => {
     const { value } = this.state;
     const { onBlur, inputTextConfiguration, labels, isRequired } = this.props;
     const {
@@ -208,7 +209,6 @@ class HvInput extends React.Component {
     }
 
     this.setState({ validationState, infoText });
-    this.suggestionClearHandler();
     onBlur(value, validationState);
   };
 
@@ -222,6 +222,31 @@ class HvInput extends React.Component {
     const definedLabels = inputTextConfiguration || labels;
     this.manageInputValueState(value, definedLabels.infoText);
     onFocus(value);
+  };
+
+  /**
+   * Focus the suggestion list when the arrow down is pressed.
+   *
+   * @param {Object} event - The event provided by the material ui input
+   */
+  onKeyDownHandler = event => {
+    const { onKeyDown } = this.props;
+    const { value } = this.state;
+    if (isKeypress(event, KeyboardCodes.ArrowDown)) {
+      this.node.getElementsByTagName("LI")[0].focus();
+    }
+    onKeyDown(event, value);
+  };
+
+  /**
+   * Clears the suggestion list on blur.
+   *
+   * @param {Object} event - The event provided by the material ui input.
+   */
+  onContainerBlurHanlder = event => {
+    if (isNil(event.relatedTarget)) {
+      this.suggestionClearHandler();
+    }
   };
 
   render() {
@@ -252,6 +277,7 @@ class HvInput extends React.Component {
       onChange,
       onBlur,
       onFocus,
+      onKeyDown,
       suggestionSelectedCallback,
       suggestionListCallback,
       value,
@@ -287,10 +313,10 @@ class HvInput extends React.Component {
       />
     );
 
-    if (disabled) {
+    if (disabled && !customFixedIcon === null) {
       adornment = null;
     }
-    if(customFixedIcon === null) {
+    if (customFixedIcon === null) {
       if (
         stateValidationState !== validationStates.filled &&
         (stateValidationState === validationStates.empty ||
@@ -344,6 +370,7 @@ class HvInput extends React.Component {
         }}
         className={classNames(classes.container, className)}
         id={id}
+        onBlur={this.onContainerBlurHanlder}
       >
         <div className={classes.labelContainer}>
           <div>{labelTypography}</div>
@@ -355,7 +382,8 @@ class HvInput extends React.Component {
         </div>
         <Input
           autoFocus={autoFocus}
-          onBlur={this.onBlurHandler}
+          onKeyDown={this.onKeyDownHandler}
+          onBlur={this.onInputBlurHandler}
           onFocus={this.onFocusHandler}
           value={stateValue}
           disabled={disabled}
@@ -375,18 +403,20 @@ class HvInput extends React.Component {
           {...(iconPosition === "right" ||
             (iconPosition === undefined &&
               validationIconPosition === "right")) &&
-            (iconVisible || iconVisible === undefined) &&
-            { endAdornment: adornment }}
+            (iconVisible || iconVisible === undefined) && {
+              endAdornment: adornment
+            }}
           {...(iconPosition === "left" || validationIconPosition === "left") &&
-            (iconVisible || iconVisible === undefined) &&
-            { startAdornment: adornment }}
+            (iconVisible || iconVisible === undefined) && {
+              startAdornment: adornment
+            }}
           {...others}
         />
         {suggestionValues && (
           <div className={classes.suggestionsContainer}>
             <div className={classes.suggestionList}>
-              <HvList 
-                values={suggestionValues} 
+              <HvList
+                values={suggestionValues}
                 onClick={this.suggestionSelectedHandler}
               />
             </div>
@@ -556,6 +586,11 @@ HvInput.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * The function that will be executed onKeyDown, allows checking the value state,
+   * it receives the event and value.
+   */
+  onKeyDown: PropTypes.func,
+  /**
    * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
    */
   suggestionListCallback: PropTypes.func,
@@ -703,6 +738,7 @@ HvInput.defaultProps = {
   onChange: value => value,
   onBlur: () => {},
   onFocus: () => {},
+  onKeyDown: () => {},
   externalWarningTextOverride: null,
   theme: null
 };

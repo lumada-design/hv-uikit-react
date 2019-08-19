@@ -24,9 +24,19 @@ storiesOf("Components", module).add("SearchBox", () => <SearchBox />, {
   usage: "import SearchBox from '@hv/uikit-react-core/dist/SearchBox'",
   examples: [
     {
-      title: "Basic",
-      description: "Sample usage of SearchBox",
-      src: "components/searchBox/sample.js"
+      title: "Simple",
+      description: "Basic usage of SearchBox",
+      src: "components/searchBox/simpleSearchbox.js"
+    },
+    {
+      title: "Disabled Searchbox",
+      description: "Disabled searchBox disallows interactions",
+      src: "components/searchBox/disabledSearchbox.js"
+    },
+    {
+      title: "No Suggestions Searchbox",
+      description: "searchbox without suggestion",
+      src: "components/searchBox/noSuggestionSearchbox.js"
     }
   ]
 });

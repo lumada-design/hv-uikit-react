@@ -18,6 +18,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
+import findIndex from "lodash/findIndex";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import NavIcon from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
 import HvLink from "../Link";
 import HvTypography from "../Typography";
@@ -31,8 +33,14 @@ const DEFAULT_STATE = {
   anySelected: false,
   allSelected: false,
   hasLeftIcon: false,
-  isFocusDisabled: false
+  isFocusDisabled: false,
+  focusedIndex: 0
 };
+
+const focusClasses = {
+  focusable: "HvFocusable",
+  focused: "HvFocused"
+}
 
 const DEFAULT_LABELS = {
   selectAll: "All",
@@ -96,6 +104,46 @@ const parseSelection = (list, multiSelect, selectable, selectDefault, item) => {
 
   return newList;
 };
+
+const getFocusableElement = parentElement => {
+  let focusableElement = null;
+  [focusableElement] = parentElement.getElementsByTagName("a");
+  if(!isNil(focusableElement)) {
+    return focusableElement;
+  }
+  [focusableElement] = parentElement.getElementsByTagName("input");
+  if(!isNil(focusableElement)) {
+    return focusableElement;
+  }
+  return parentElement;
+}
+
+const findLiTag = childElement => {
+  if(childElement && childElement.tagName !== "LI") {
+    return findLiTag(childElement.parentElement);
+  }
+  return childElement;
+}
+
+const moveFocus = (event, node, focusableClassName, focusedClassName) => {
+  if (isKeypress(event, KeyboardCodes.ArrowDown)) {
+    const listNode = node.getElementsByClassName(focusableClassName);
+    let currentFocusedItem = node.getElementsByClassName(focusedClassName)[0];
+    if(isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
+    const liNode = findLiTag(currentFocusedItem);
+    let index = findIndex(listNode, liNode);
+    index = (index + 1) >= listNode.length ? (listNode.length - 1) : (index + 1);
+    getFocusableElement(listNode[index]).focus();
+  } else if (isKeypress(event, KeyboardCodes.ArrowUp)) {
+    const listNode = node.getElementsByClassName(focusableClassName);
+    let currentFocusedItem = node.getElementsByClassName(focusedClassName)[0];
+    if(isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
+    const liNode = findLiTag(currentFocusedItem);
+    let index = findIndex(listNode, liNode);
+    index = index - 1 < 0 ? 0 : index - 1;
+    getFocusableElement(listNode[index]).focus();
+  }
+}
 
 class HvList extends React.Component {
   state = DEFAULT_STATE;
@@ -183,6 +231,13 @@ class HvList extends React.Component {
   parseList(list, item) {
     const { multiSelect, selectable, selectDefault } = this.props;
     return parseSelection(list, multiSelect, selectable, selectDefault, item);
+  }
+
+  handleKeyDown(event, item, useSelector) {
+    moveFocus(event, this.node, focusClasses.focusable, focusClasses.focused);
+    if(!useSelector) {
+      this.handleSelection(item);
+    }
   }
 
   /**
@@ -316,14 +371,20 @@ class HvList extends React.Component {
     return (
       <li
         key={key}
-        onKeyDown={() => !useSelector && this.handleSelection(item)}
+        onKeyDown={(event) => this.handleKeyDown(event, item, useSelector)}
         onMouseDown={() => !useSelector && this.handleSelection(item)}
         onMouseUp={() => !useSelector && this.handleMouseUp(item)}
+        onFocus={event => {
+          event.target.classList.add(focusClasses.focused)
+          if(!useSelector) this.handleSelection(item)
+        }}
+        onBlur={event => {event.target.classList.remove(focusClasses.focused)}}
         role="option"
         aria-selected={item.selected}
         tabIndex={item.path || useSelector ? null : 0}
         className={classNames([
           classes.listItem,
+          focusClasses.focusable,
           {
             [classes.selected]: item.selected && !useSelector,
             [classes.focusDisabled]: isFocusDisabled,
@@ -403,7 +464,14 @@ class HvList extends React.Component {
     return (
       <>
         {list && (
-          <ul id={id} className={classes.root} role="listbox">
+          <ul 
+            id={id} 
+            className={classes.root} 
+            role="listbox" 
+            ref={node => {
+                this.node = node;
+            }}
+          >
             {multiSelect && showSelectAll ? this.renderSelectAll() : null}
             {list.map((item, i) => this.renderItem(i, item))}
           </ul>
