@@ -23,6 +23,7 @@ import HvProvider from "../../Provider";
 
 describe("<SearchBox />", () => {
   const onChangeMock = jest.fn();
+  const onSubmitMock = jest.fn();
 
   it("has default props", () => {
     const wrapper = mount(
@@ -45,6 +46,25 @@ describe("<SearchBox />", () => {
       </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("renders disabled correctly", () => {
+    const wrapper = shallow(
+      <HvProvider>
+        <SearchBox onChange={onChangeMock} disabled />
+      </HvProvider>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("submits on enter", () => {
+    const wrapper = mount(
+      <HvProvider>
+        <SearchBox onChange={onChangeMock} onSubmit={onSubmitMock} />
+      </HvProvider>
+    );
+    wrapper.children().childAt(1).children().children().props().onKeyDown({keyCode: 13} , "value");
+    expect(onSubmitMock).toHaveBeenCalled();
   });
 
   it("renders correctly with provided search input", () => {

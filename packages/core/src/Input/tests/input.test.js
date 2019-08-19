@@ -219,6 +219,75 @@ describe("Input", () => {
     );
   });
 
+  it("should return the value on change and correctly update the state", () => {
+    const inputText = "test2";
+    const defaultInputText = "test1";
+    const onChange = value => {
+      expect(value).toBe(defaultInputText);
+      return inputText;
+    };
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          initialValue={defaultInputText}
+          onChange={onChange}
+          labels={labels}
+        />
+      </HvProvider>
+    );
+    const inputInstance = getInput(wrapper);
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: defaultInputText }
+    });
+    testState(
+      labels.infoText,
+      validationStates.filled,
+      inputText,
+      inputInstance
+    );
+  });
+
+  it("should fill the suggestion array", () => {
+    const suggestions = [{label: "test"}];
+    const inputText = "test2";
+    const defaultInputText = "test1";
+    const suggestionHandler = () => suggestions;
+    const onChange = value => {
+      expect(value).toBe(defaultInputText);
+      return inputText;
+    };
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          initialValue={defaultInputText}
+          suggestionListCallback={suggestionHandler}
+          onChange={onChange}
+          labels={labels}
+        />
+      </HvProvider>
+    );
+    const inputInstance = getInput(wrapper);
+    inputInstance.onChangeHandler({
+      target: { name: "test", value: defaultInputText }
+    });
+    expect(inputInstance.state.suggestionValues).toEqual(suggestions);
+  });
+
+  it("should call the selected callback", () => {
+    const suggestionSelected = jest.fn();
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          labels={labels}
+          suggestionSelectedCallback={suggestionSelected}
+        />
+      </HvProvider>
+    );
+    const inputInstance = getInput(wrapper);
+    inputInstance.suggestionSelectedHandler({label: "test"});
+    expect(suggestionSelected).toHaveBeenCalled();
+  });
+
   it("should showInfo numbers on blur", () => {
     const inputText = "test";
     const defaultInputText = "233";
@@ -237,7 +306,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -253,7 +322,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.warningText,
       validationStates.invalid,
@@ -280,7 +349,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -296,7 +365,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.warningText,
       validationStates.invalid,
@@ -325,7 +394,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.warningText,
       validationStates.invalid,
@@ -354,7 +423,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -370,7 +439,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.maxCharQuantityWarningText,
       validationStates.invalid,
@@ -400,7 +469,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -416,7 +485,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.minCharQuantityWarningText,
       validationStates.invalid,
@@ -446,7 +515,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -462,7 +531,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.requiredWarningText,
       validationStates.invalid,
@@ -491,7 +560,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.valid,
@@ -507,7 +576,7 @@ describe("Input", () => {
       inputText,
       inputInstance
     );
-    inputInstance.onBlurHandler();
+    inputInstance.onInputBlurHandler();
     testState(
       labels.infoText,
       validationStates.empty,

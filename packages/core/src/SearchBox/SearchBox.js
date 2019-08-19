@@ -22,13 +22,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import partial from "lodash/partial";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/DawnTheme/Search.S";
 import HvInput from "../Input";
+
+const onKeyDownHandler = (handlers, event, value) => {
+  const [onKeyDown, onSubmit] = handlers;
+  if(isKeypress(event, KeyboardCodes.Enter)) {
+    onSubmit(value);
+  }
+  onKeyDown(event, value);
+}
 
 const HvSearchBox = props => {
   const {
     classes,
     id,
+    theme,
     className,
     labels,
     initialValue,
@@ -39,8 +50,12 @@ const HvSearchBox = props => {
     suggestionSelectedCallback,
     onBlur,
     onFocus,
+    onKeyDown,
+    onSubmit,
     autoFocus
   } = props;
+
+  const lensIcon = disabled ? <SearchIcon color={["none", theme.hv.palette.atmosphere.atmo7]} /> : <SearchIcon />;
 
   return (
     <>
@@ -52,10 +67,11 @@ const HvSearchBox = props => {
         inputValue={value}
         suggestionListCallback={suggestionListCallback}
         suggestionSelectedCallback={suggestionSelectedCallback}
-        customFixedIcon={<SearchIcon />}
+        customFixedIcon={lensIcon}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        onKeyDown={partial(onKeyDownHandler, [onKeyDown, onSubmit])}
         autoFocus={autoFocus}
         disabled={disabled}
         showInfo={false}
@@ -71,9 +87,13 @@ HvSearchBox.propTypes = {
    */
   className: PropTypes.string,
   /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object),
+  /**
    * A Jss Object used to override or extend the styles applied to the search box.
    */
-  classes: PropTypes.instanceOf({
+  classes: PropTypes.shape({
     /**
      * Styles applied to searchbox root.
      */
@@ -116,10 +136,20 @@ HvSearchBox.propTypes = {
    */
   onBlur: PropTypes.func,
   /**
-   * The function that will be executed onBlur, allows checking the value state,
+   * The function that will be executed onFocus, allows checking the value state,
    * it receives the value.
    */
   onFocus: PropTypes.func,
+  /**
+   * The function that will be executed onKeyDown, allows checking the value state,
+   * it receives the value.
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * The function that will be executed on Enter, allows checking the value state,
+   * it receives the value.
+   */
+  onSubmit: PropTypes.func,
   /**
    * If `true` it should autofocus.
    */
@@ -138,14 +168,17 @@ HvSearchBox.defaultProps = {
   value: undefined,
   initialValue: "",
   className: "",
+  theme: null,
   id: "",
   labels: {
     inputLabel: "",
     placeholder: "search"
   },
   onChange: undefined,
-  onBlur: undefined,
-  onFocus: undefined,
+  onBlur: () => {},
+  onFocus: () => {},
+  onKeyDown: () => {},
+  onSubmit: () => {},
   suggestionListCallback: () => {},
   suggestionSelectedCallback: () => {},
   autoFocus: false,
