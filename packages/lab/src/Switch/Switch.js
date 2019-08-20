@@ -23,7 +23,7 @@ import { filter } from "lodash";
 
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
-import CheckMark from "./media/ToggleSuccess.S.svg";
+import CheckMark from "./media/ToggleSuccess.XS.svg";
 
 const Switch = props => {
   const {
@@ -184,8 +184,7 @@ const Switch = props => {
           )
         }}
       />
-      {showLabels && <RightLabel />
-      }
+      {showLabels && <RightLabel />}
     </div>
   );
 };
