@@ -15172,12 +15172,15 @@ body {
   background-position: center;
 }
 .HvInput-suggestionsContainer-263 {
+  top: -1px;
   width: 100%;
   position: relative;
 }
 .HvInput-suggestionList-264 {
   width: 100%;
+  padding: 20px;
   position: absolute;
+  box-shadow: 0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12);
   background-color: #FFFFFF;
 }
 input:-webkit-autofill {
@@ -15328,10 +15331,13 @@ input:-webkit-autofill {
                   },
                   Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
@@ -15765,11 +15771,14 @@ input:-webkit-autofill {
                   },
                   ".HvInput-suggestionList-264": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   ".HvInput-suggestionsContainer-263": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   ".HvInput-textWarning-258": Object {
@@ -16176,11 +16185,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -16832,11 +16844,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "backgroundColor": "#FFFFFF",
+                    "boxShadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -53950,6 +53965,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-279 .MuiInputBase-input-288
                             }
                           }
                           customFixedIcon={null}
+                          disableClear={false}
                           disabled={false}
                           externalWarningTextOverride={null}
                           infoIcon={false}
@@ -58938,6 +58954,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-279 .MuiInputBase-input-288
                             }
                           }
                           customFixedIcon={null}
+                          disableClear={false}
                           disabled={false}
                           externalWarningTextOverride={null}
                           infoIcon={false}

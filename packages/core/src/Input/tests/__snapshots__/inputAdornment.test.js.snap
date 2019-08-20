@@ -4,6 +4,7 @@ exports[`InputAdornment should be defined 1`] = `
 <InputAdornment
   classes={Object {}}
   customFixedIcon={null}
+  disableClear={false}
   handleClear={[MockFunction]}
   theme={
     Object {

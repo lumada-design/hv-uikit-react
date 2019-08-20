@@ -5194,12 +5194,15 @@ body {
   background-position: center;
 }
 .HvInput-suggestionsContainer-462 {
+  top: -1px;
   width: 100%;
   position: relative;
 }
 .HvInput-suggestionList-463 {
   width: 100%;
+  padding: 20px;
   position: absolute;
+  box-shadow: 0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12);
   background-color: #FFFFFF;
 }
 input:-webkit-autofill {
@@ -5350,10 +5353,13 @@ input:-webkit-autofill {
                   },
                   Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
@@ -5787,11 +5793,14 @@ input:-webkit-autofill {
                   },
                   ".HvInput-suggestionList-463": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   ".HvInput-suggestionsContainer-462": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   ".HvInput-textWarning-457": Object {
@@ -6198,11 +6207,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -6854,11 +6866,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "backgroundColor": "#FFFFFF",
+                    "boxShadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -13284,6 +13299,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-478 .MuiInputBase-input-487
           }
         }
         customFixedIcon={null}
+        disableClear={false}
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
@@ -19637,12 +19653,15 @@ body {
   background-position: center;
 }
 .HvInput-suggestionsContainer-585 {
+  top: -1px;
   width: 100%;
   position: relative;
 }
 .HvInput-suggestionList-586 {
   width: 100%;
+  padding: 20px;
   position: absolute;
+  box-shadow: 0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12);
   background-color: #FFFFFF;
 }
 input:-webkit-autofill {
@@ -19793,10 +19812,13 @@ input:-webkit-autofill {
                   },
                   Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
@@ -20230,11 +20252,14 @@ input:-webkit-autofill {
                   },
                   ".HvInput-suggestionList-586": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   ".HvInput-suggestionsContainer-585": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   ".HvInput-textWarning-580": Object {
@@ -20641,11 +20666,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -21297,11 +21325,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "backgroundColor": "#FFFFFF",
+                    "boxShadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -30614,6 +30645,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-601 .MuiInputBase-input-610
           }
         }
         customFixedIcon={null}
+        disableClear={false}
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
@@ -38884,12 +38916,15 @@ body {
   background-position: center;
 }
 .HvInput-suggestionsContainer-92 {
+  top: -1px;
   width: 100%;
   position: relative;
 }
 .HvInput-suggestionList-93 {
   width: 100%;
+  padding: 20px;
   position: absolute;
+  box-shadow: 0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12);
   background-color: #FFFFFF;
 }
 input:-webkit-autofill {
@@ -39040,10 +39075,13 @@ input:-webkit-autofill {
                   },
                   Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
@@ -39477,11 +39515,14 @@ input:-webkit-autofill {
                   },
                   ".HvInput-suggestionList-93": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   ".HvInput-suggestionsContainer-92": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   ".HvInput-textWarning-87": Object {
@@ -39888,11 +39929,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "background-color": "#FFFFFF",
+                    "box-shadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -40544,11 +40588,14 @@ input:-webkit-autofill {
                   },
                   "suggestionList": Object {
                     "backgroundColor": "#FFFFFF",
+                    "boxShadow": "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+                    "padding": "20px",
                     "position": "absolute",
                     "width": "100%",
                   },
                   "suggestionsContainer": Object {
                     "position": "relative",
+                    "top": "-1px",
                     "width": "100%",
                   },
                   "textWarning": Object {
@@ -49855,6 +49902,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-108 .MuiInputBase-input-117
           }
         }
         customFixedIcon={null}
+        disableClear={false}
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
