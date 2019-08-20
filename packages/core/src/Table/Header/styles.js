@@ -17,8 +17,7 @@
 const styles = theme => ({
   headerContainer: {
     width: "100%",
-    minHeight: "32px",
-    maxHeight: "54px"
+    display: "flex"
   },
   headerProps: {
     width: "100%",
@@ -29,7 +28,6 @@ const styles = theme => ({
   headerTextContainer: {
     minWidth: 0,
     padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
-    minHeight: "32px",
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
@@ -39,8 +37,7 @@ const styles = theme => ({
     marginLeft: `${theme.hv.spacing.xs}px`
   },
   headerSortable: {
-    marginLeft: "32px",
-    width: "calc(100% - 32px)"
+    maxWidth: "calc(100% - 32px)"
   },
   headerAlphaNumeric: {
     float: "left",
@@ -53,8 +50,10 @@ const styles = theme => ({
   rtSortIcon: {
     width: "32px",
     height: "32px",
-    position: "absolute"
   },
+  rtSortIconNumeric: {
+    marginLeft: "auto"
+  }
 });
 
 export default styles;
