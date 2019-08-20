@@ -243,10 +243,72 @@ class HvInput extends React.Component {
    *
    * @param {Object} event - The event provided by the material ui input.
    */
-  onContainerBlurHanlder = event => {
+  onContainerBlurHandler = event => {
     if (isNil(event.relatedTarget)) {
       this.suggestionClearHandler();
     }
+  };
+
+  getInputAdornment = (
+    classes,
+    theme,
+    validationIconVisible,
+    stateValidationState,
+    disabled,
+    customFixedIcon,
+    maxCharQuantity,
+    minCharQuantity,
+    validation,
+    validationType,
+    disableClear
+  ) => {
+    if (disabled && !customFixedIcon === null) {
+      return null;
+    }
+    if (customFixedIcon === null) {
+      if (
+        stateValidationState !== validationStates.filled &&
+        (stateValidationState === validationStates.empty ||
+          (validationType === validationTypes.none &&
+            maxCharQuantity === null &&
+            minCharQuantity === null &&
+            !validation))
+      ) {
+        return null;
+      }
+    } else if (
+      stateValidationState !== validationStates.filled &&
+      (stateValidationState === validationStates.empty ||
+        (validationType === validationTypes.none &&
+          maxCharQuantity === null &&
+          minCharQuantity === null &&
+          !validation))
+    ) {
+      return (
+        <InputAdornment
+          classes={classes}
+          customFixedIcon={customFixedIcon}
+          onlyCustomIcon
+          validationIconVisible={validationIconVisible}
+          validationState={stateValidationState}
+          handleClear={() => this.handleClear()}
+          theme={theme}
+          disableClear={disableClear}
+        />
+      );
+    }
+
+    return (
+      <InputAdornment
+        classes={classes}
+        customFixedIcon={customFixedIcon}
+        validationIconVisible={validationIconVisible}
+        validationState={stateValidationState}
+        handleClear={() => this.handleClear()}
+        theme={theme}
+        disableClear={disableClear}
+      />
+    );
   };
 
   render() {
@@ -262,6 +324,7 @@ class HvInput extends React.Component {
       infoIcon,
       iconVisible,
       validationIconVisible,
+      disableClear,
       iconPosition,
       customFixedIcon,
       validationIconPosition,
@@ -302,32 +365,19 @@ class HvInput extends React.Component {
       label = `${label}*`;
     }
 
-    let adornment = (
-      <InputAdornment
-        classes={classes}
-        customFixedIcon={customFixedIcon}
-        validationIconVisible={validationIconVisible}
-        validationState={stateValidationState}
-        handleClear={() => this.handleClear()}
-        theme={theme}
-      />
-    );
-
-    if (disabled && !customFixedIcon === null) {
-      adornment = null;
-    }
-    if (customFixedIcon === null) {
-      if (
-        stateValidationState !== validationStates.filled &&
-        (stateValidationState === validationStates.empty ||
-          (validationType === validationTypes.none &&
-            maxCharQuantity === null &&
-            minCharQuantity === null &&
-            !validation))
-      ) {
-        adornment = null;
-      }
-    }
+    const adornment = this.getInputAdornment(
+      classes,
+      theme,
+      validationIconVisible,
+      stateValidationState,
+      disabled,
+      customFixedIcon,
+      maxCharQuantity,
+      minCharQuantity,
+      validation,
+      validationType,
+      disableClear
+    )
 
     let validationText;
     if ((validate || showInfo) && !infoIcon) {
@@ -370,7 +420,7 @@ class HvInput extends React.Component {
         }}
         className={classNames(classes.container, className)}
         id={id}
-        onBlur={this.onContainerBlurHanlder}
+        onBlur={this.onContainerBlurHandler}
       >
         <div className={classes.labelContainer}>
           <div>{labelTypography}</div>
@@ -418,6 +468,8 @@ class HvInput extends React.Component {
               <HvList
                 values={suggestionValues}
                 onClick={this.suggestionSelectedHandler}
+                selectable={false}
+                condensed
               />
             </div>
           </div>
@@ -660,6 +712,10 @@ HvInput.propTypes = {
    */
   validationIconVisible: PropTypes.bool,
   /**
+   * If `true` the clear button is disabled if `false` is enable
+   */
+  disableClear: PropTypes.bool,
+  /**
    * The icon position of the input. It is recommended to use the provided iconPositions object to set this value.
    * @deprecated Instead use the validationIconPosition property
    */
@@ -718,6 +774,7 @@ HvInput.defaultProps = {
   infoIcon: false,
   iconVisible: undefined,
   validationIconVisible: true,
+  disableClear: false,
   iconPosition: undefined,
   validationIconPosition: "right",
   validate: undefined,
