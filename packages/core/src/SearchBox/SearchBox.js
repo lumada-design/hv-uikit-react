@@ -19,20 +19,87 @@
 /*  eslint-disable  jsx-a11y/click-events-have-key-events */
 /*  eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import partial from "lodash/partial";
+import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/DawnTheme/Search.S";
 import HvInput from "../Input";
 
+/**
+ *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
+ *
+ *  @param handlers - array with the callbacks to use
+ *  @param event - contains the onKeyDown event
+ *  @param value - the value inside the input
+ */
 const onKeyDownHandler = (handlers, event, value) => {
   const [onKeyDown, onSubmit] = handlers;
-  if(isKeypress(event, KeyboardCodes.Enter)) {
+  if (isKeypress(event, KeyboardCodes.Enter)) {
     onSubmit(value);
   }
   onKeyDown(event, value);
+};
+
+/**
+ *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
+ *
+ *  @param theme - array with the callbacks to use
+ *  @param disabled - contains the onKeyDown event
+ */
+const changeIconColor = (theme, disabled) =>
+  disabled ? (
+    <SearchIcon color={["none", theme.hv.palette.atmosphere.atmo7]} />
+  ) : (
+    <SearchIcon />
+  );
+
+const iconStateHandler = (value, theme, disabled, setIcon) => {
+  if (isNil(value) || value === "") {
+    setIcon(changeIconColor(theme, disabled));
+  } else {
+    setIcon(undefined);
+  }
+};
+
+/**
+ *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
+ *
+ *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param value - the value inside the input.
+ */
+const onChangeHandler = (contextValues, value) => {
+  const [onChange, theme, disabled, setIcon] = contextValues;
+  let newValue = value;
+  newValue = onChange(newValue);
+  iconStateHandler(value, theme, disabled, setIcon);
+  return newValue;
+};
+
+/**
+ *  Clears the lens icon.
+ *
+ *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param value - the value inside the input.
+ */
+const onFocusHandler = (contextValues, value) => {
+  const [onFocus, theme, disabled, setIcon] = contextValues;
+  iconStateHandler(value, theme, disabled, setIcon);
+  onFocus(value);
+}
+
+/**
+ *  Puts the lens icon back in place.
+ *
+ *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param value - the value inside the input.
+ */
+const onBlurHandler = (contextValues, value) => {
+  const [onBlur, theme, disabled, setIcon] = contextValues;
+  setIcon(changeIconColor(theme, disabled));
+  onBlur(value);
 }
 
 const HvSearchBox = props => {
@@ -55,7 +122,7 @@ const HvSearchBox = props => {
     autoFocus
   } = props;
 
-  const lensIcon = disabled ? <SearchIcon color={["none", theme.hv.palette.atmosphere.atmo7]} /> : <SearchIcon />;
+  const [lensIcon, setIcon] = useState(changeIconColor(theme, disabled));
 
   return (
     <>
@@ -68,9 +135,24 @@ const HvSearchBox = props => {
         suggestionListCallback={suggestionListCallback}
         suggestionSelectedCallback={suggestionSelectedCallback}
         customFixedIcon={lensIcon}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
+        onChange={partial(onChangeHandler, [
+          onChange,
+          theme,
+          disabled,
+          setIcon
+        ])}
+        onBlur={partial(onBlurHandler, [
+          onBlur,
+          theme,
+          disabled,
+          setIcon
+        ])}
+        onFocus={partial(onFocusHandler, [
+          onFocus,
+          theme,
+          disabled,
+          setIcon
+        ])}
         onKeyDown={partial(onKeyDownHandler, [onKeyDown, onSubmit])}
         autoFocus={autoFocus}
         disabled={disabled}
@@ -97,7 +179,7 @@ HvSearchBox.propTypes = {
     /**
      * Styles applied to searchbox root.
      */
-    root: PropTypes.string,
+    root: PropTypes.string
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -172,9 +254,9 @@ HvSearchBox.defaultProps = {
   id: "",
   labels: {
     inputLabel: "",
-    placeholder: "search"
+    placeholder: "Search"
   },
-  onChange: undefined,
+  onChange: value => value,
   onBlur: () => {},
   onFocus: () => {},
   onKeyDown: () => {},

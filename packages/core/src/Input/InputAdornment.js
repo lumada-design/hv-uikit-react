@@ -24,14 +24,12 @@ import Unsuccess from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
 
 import validationStates from "./validationStates";
 
-const InputAdornment = ({ classes, validationState, validationIconVisible, customFixedIcon, handleClear, theme }) => {
+const InputAdornment = ({ classes, validationState, validationIconVisible, customFixedIcon, handleClear, theme, onlyCustomIcon, disableClear }) => {
   const stl = {
     height: `${theme.hv.spacing.md}px`,
     width: `${theme.hv.spacing.md}px`
   };
-  if(isNil(customFixedIcon) && !validationIconVisible) {
-    return undefined;
-  }
+
   return (
     <div className={classes.iconFlexBox}>
       <div
@@ -46,9 +44,9 @@ const InputAdornment = ({ classes, validationState, validationIconVisible, custo
         }}
       >
         
-        {validationState === validationStates.filled && <Close style={stl} />}
-        {validationIconVisible && validationState === validationStates.valid && <Success style={stl} />}
-        {validationIconVisible && validationState === validationStates.invalid && (
+        {!onlyCustomIcon && !disableClear && validationState === validationStates.filled && <Close style={stl} />}
+        {!onlyCustomIcon && validationIconVisible && validationState === validationStates.valid && <Success style={stl} />}
+        {!onlyCustomIcon && validationIconVisible && validationState === validationStates.invalid && (
           <Unsuccess style={stl} />
         )}
       </div>
@@ -82,6 +80,14 @@ InputAdornment.propTypes = {
    */
   handleClear: PropTypes.func,
   /**
+   * forces the adornment to contain only the custom icon
+   */
+  onlyCustomIcon: PropTypes.bool,
+  /**
+   * If `true` the clear button is disabled if `false` is enable
+   */
+  disableClear: PropTypes.bool,
+  /**
    * The theme passed by the provider.
    */
   theme: PropTypes.instanceOf(Object)
@@ -89,6 +95,8 @@ InputAdornment.propTypes = {
 
 InputAdornment.defaultProps = {
   validationIconVisible: true,
+  onlyCustomIcon: undefined,
+  disableClear: false,
   validationState: validationStates.empty,
   customFixedIcon: null,
   handleClear: value => value,
