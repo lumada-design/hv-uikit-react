@@ -192,15 +192,15 @@ class Table extends React.Component {
       showPagination,
       ...(showPagination && { PaginationComponent: ReactTablePagination }),
       ...(showPagination && {
-        onPageSizeChange: (...others) => {
+        onPageSizeChange: (newPageSize, page) => {
           this.setState({ expanded: {} });
-          if (onPageSizeChange) onPageSizeChange(others);
+          if (onPageSizeChange) onPageSizeChange(newPageSize, page);
         }
       }),
       ...(showPagination && {
-        onPageChange: (...others) => {
+        onPageChange: (page) => {
           this.setState({ expanded: {} });
-          if (onPageChange) onPageChange(others);
+          if (onPageChange) onPageChange(page);
         }
       }),
       ...(showPagination && pages && { pages }),
