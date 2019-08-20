@@ -37,7 +37,8 @@ class List extends React.Component {
       anySelected: false,
       allSelected: false,
       searchStr: "",
-      selectionLabel: selectAll
+      selectionLabel: selectAll,
+      isOverflow: false
     };
   }
 
@@ -77,6 +78,16 @@ class List extends React.Component {
       });
     }
     onChange(selection, commitChanges, toggle, notifyChanges);
+  }
+
+  textOnMouseEnter(e) {
+    const { isOverflow } = this.state;
+    if (!isOverflow && e.target.scrollWidth > e.target.clientWidth)
+      this.setState({ isOverflow: true });
+  }
+
+  textOnMouseLeave() {
+    this.setState({ isOverflow: false });
   }
 
   /**
@@ -283,6 +294,7 @@ class List extends React.Component {
 
   renderSingleSelect(key, elem) {
     const { classes, hasTooltips } = this.props;
+    const { isOverflow } = this.state;
 
     const LabelComponent = props => <div {...props}>{elem.label}</div>;
 
@@ -308,17 +320,22 @@ class List extends React.Component {
             }
           ])}
         >
-          {hasTooltips ? (
+          {hasTooltips && isOverflow ? (
             <Tooltip
               className={classes.truncate}
               disableFocusListener
               disableTouchListener
               title={elem.label}
             >
-              <LabelComponent />
+              <LabelComponent onMouseLeave={() => this.textOnMouseLeave()} />
             </Tooltip>
           ) : (
-            elem.label
+            <div
+              className={classes.truncate}
+              onMouseEnter={e => this.textOnMouseEnter(e)}
+            >
+              {elem.label}
+            </div>
           )}
         </HvTypography>
       </div>
