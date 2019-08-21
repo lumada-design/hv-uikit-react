@@ -17,37 +17,37 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import Switch from "@hv/uikit-react-lab/dist/Switch";
+import Switch from "@hv/uikit-react-core/dist/Switch";
 
-storiesOf("Lab/Selection mechanisms", module).add("Toogle Switch", () => <Switch />, {
+storiesOf("Components/Selection mechanisms", module).add("Toogle Switch", () => <Switch />, {
   title: "Toogle Switch",
   description: "",
-  usage: "import Switch from '@hv/uikit-react-lab/dist/Switch'",
+  usage: "import Switch from '@hv/uikit-react-core/dist/Switch'",
   examples: [
     {
       title: "Example 1",
       description: "with Labels",
-      src: "lab/switch/sample1.js"
+      src: "components/switch/sample1.js"
     },
     {
       title: "Example 2",
       description: "without Labels",
-      src: "lab/switch/sample2.js"
+      src: "components/switch/sample2.js"
     },
     {
       title: "Example 3",
       description: "with Custom Labels",
-      src: "lab/switch/sample3.js"
+      src: "components/switch/sample3.js"
     },
     {
       title: "Example 4",
       description: "Disabled in Left Position",
-      src: "lab/switch/sample4.js"
+      src: "components/switch/sample4.js"
     },
     {
       title: "Example 5",
       description: "with Auxiliary Checkmark",
-      src: "lab/switch/sample5.js"
+      src: "components/switch/sample5.js"
     }
   ]
 });
