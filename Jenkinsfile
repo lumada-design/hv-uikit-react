@@ -63,6 +63,9 @@ pipeline {
                 }
 
                 stage('Tests Automation') {
+                    agent {
+                      label 'robotframework-unix'
+                    }
                     when {
                         expression { !params.skipAutomationTest }
                     }
@@ -71,13 +74,31 @@ pipeline {
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
                                 def dockerRegistry = 'https://nexus.pentaho.org:8002'
                                 def dockerRegistryCredentialsId = 'buildguynexus'
-                                def dockerImageTag = "${GIT_BRANCH}.${BUILD_NUMBER}"
+                                def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                                 docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
                                     def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
                                     automationImage.push("${dockerImageTag}")
                                 }
                             }
+                            sh 'docker system prune -f' // docker remove all unused objects
+                            def port = "9002"
+                            def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
+                            sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
+                            waitUntilServerUp(URL)
+                            build job: 'storybook-core-tests', parameters: [
+                              string(name: 'STORYBOOK_URL', value: URL),
+                              string(name: 'BRANCH', value: env.GIT_BRANCH)
+                            ]
+                            
                         }
+                    }
+                    post {
+                      always {
+                        script {
+                          def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
+                          sh "docker kill ${container}"
+                        }
+                      }
                     }
                 }
             }
@@ -118,4 +139,18 @@ pipeline {
             }
         }
     }
+}
+
+void waitUntilServerUp(String url) {
+  script {
+    sleep(time: 15, unit: "SECONDS") // time to start docker machine
+    timeout(2) {
+      waitUntil {
+        script {
+          def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
+          return (r == 0);
+        }
+      }
+    }
+  }
 }
