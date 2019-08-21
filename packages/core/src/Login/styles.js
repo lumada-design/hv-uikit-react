@@ -31,11 +31,10 @@ const styles = theme => {
 
   return {
     container: {
-      background: `0 / cover`,
+      background: `0 / auto`,
       justifyContent: "flex-end",
       width: "100%",
       height: "100%",
-      backgroundSize: 300
     },
     root: {
 
@@ -44,7 +43,7 @@ const styles = theme => {
       background: convertedColor,
       position:"relative"
     },
-    test:{
+    panelPosition:{
       position:"absolute"
     }
   };

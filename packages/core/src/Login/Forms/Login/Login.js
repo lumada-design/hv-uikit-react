@@ -34,7 +34,7 @@ import MessageElement from "../MessageElement";
 function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
   return (
     <div className={classes.forgotCredentials}>
-      <HvButton category="ghost" onClick={onClick}>
+      <HvButton category="ghost" onClick={onClick} className={classes.sentenceCase}>
         {forgotYourCredentialMessage}
       </HvButton>
     </div>
@@ -194,7 +194,7 @@ class Login extends React.Component {
               onChange={this.handleRememberMe}
             />
           ) : null}
-          <HvButton type="submit" category="primary" className={classes.button}>
+          <HvButton type="submit" category="primary" className={classNames(classes.button, classes.sentenceCase)}>
             {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>
         </div>
