@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.2.1...@hv/uikit-react-automation-storybook@1.2.2) (2019-08-21)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
 ## [1.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.2.0...@hv/uikit-react-automation-storybook@1.2.1) (2019-08-15)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook
