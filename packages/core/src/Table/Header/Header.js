@@ -47,40 +47,46 @@ const getSortedComponent = (id, columnSortable, sort) => {
   return false;
 };
 
-const Header = React.memo(({
-  classes,
-  column: { id, sortable, cellType, headerText },
-  tableSortable,
-  sort
-}) => {
-  const columnSortable = (_.isNil(sortable) && tableSortable) || sortable;
-  return (
-    <div className={classNames(classes.headerContainer)}>
-      {columnSortable && (
-        <div className={classNames(classes.rtSortIcon)}>
-          {getSortedComponent(id, columnSortable, sort)}
-        </div>
-      )}
-      {/* Setter of the styles for the header */}
-      <div
-        className={classNames(classes.headerTextContainer, {
-          [classes.headerSortable]: columnSortable,
-          [classes.headerNotSortable]: !columnSortable
-        })}
-      >
-        <HvTypography
-          variant="highlightText"
-          className={classNames(classes.headerProps, {
-            [classes.headerAlphaNumeric]:
-              cellType === "alpha-numeric" || cellType === "link",
-            [classes.headerNumeric]: cellType === "numeric"
+const Header = React.memo(
+  ({
+    classes,
+    column: { id, sortable, cellType, headerText },
+    tableSortable,
+    sort
+  }) => {
+    const columnSortable = (_.isNil(sortable) && tableSortable) || sortable;
+    return (
+      <div className={classNames(classes.headerContainer)}>
+        {columnSortable && (
+          <div
+            className={classNames(classes.rtSortIcon, {
+              [classes.rtSortIconNumeric]: cellType === "numeric"
+            })}
+          >
+            {getSortedComponent(id, columnSortable, sort)}
+          </div>
+        )}
+        {/* Setter of the styles for the header */}
+        <div
+          className={classNames(classes.headerTextContainer, {
+            [classes.headerSortable]: columnSortable,
+            [classes.headerNotSortable]: !columnSortable
           })}
         >
-          {headerText}
-        </HvTypography>
+          <HvTypography
+            variant="highlightText"
+            className={classNames(classes.headerProps, {
+              [classes.headerAlphaNumeric]:
+                cellType === "alpha-numeric" || cellType === "link",
+              [classes.headerNumeric]: cellType === "numeric"
+            })}
+          >
+            {headerText}
+          </HvTypography>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default Header;

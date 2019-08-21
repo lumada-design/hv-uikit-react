@@ -155,7 +155,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Allocated vs avail.capability",
       cellType: "numeric",
-      width:140,
+      minWidth: 140,
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
@@ -189,7 +189,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Average compression rt",
       accessor: "averageCompression",
-      width:150,
+      minWidth:150,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageCompression}:1`
     },
@@ -202,21 +202,21 @@ class Wrapper extends React.Component {
     {
       headerText: "Total throughput",
       accessor: "totalThroughput",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${ cellData.row._original.totalThroughput.toLocaleString('en-US')} MB/s`
     },
     {
       headerText: "Average service time",
       accessor: "averageServiceTime",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageServiceTime} ms`
     },
     {
       headerText: "Average read time",
       accessor: "averageReadTime",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageReadTime} ms`
     }

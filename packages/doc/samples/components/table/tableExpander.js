@@ -165,14 +165,21 @@ class Wrapper extends React.Component {
       headerText: "Title",
       accessor: "name",
       cellType: "alpha-numeric",
-      fixed: "left"
+      fixed: "left",
+      sortMethod: (a, b) => {
+        if (a === b) {
+          return 0;
+        }
+        const aReverse = Number(a.split(" ")[1]);
+        const bReverse = Number(b.split(" ")[1]);
+        return aReverse > bReverse ? 1 : -1;
+      }
     },
     {
       headerText: "Time",
       accessor: "createdDate",
       format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
-      cellType: "numeric",
-      fixed: "left"
+      cellType: "numeric"
     },
     {
       headerText: "Event Type",
@@ -211,7 +218,8 @@ class Wrapper extends React.Component {
     {
       headerText: "Asset",
       accessor: "asset",
-      cellType: "link"
+      cellType: "link",
+      sortable: false
     }
   ];
 

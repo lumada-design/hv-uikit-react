@@ -61,17 +61,13 @@ const styles = theme => ({
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          minHeight: 32,
-          maxHeight: 54,
+          height: 54,
           minWidth: 72,
           padding: 0,
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "flex-end",
-          borderLeft: "1px solid transparent",
-          borderRight: "1px solid transparent",
-          borderTop: "none",
-          borderBottom: "none",
+          border: "none",
           boxShadow: "none",
           "& > div": {
             width: "100%",
@@ -96,20 +92,10 @@ const styles = theme => ({
             maxWidth: "30px",
             borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
           },
-          "&.-sort-desc": {
-            backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
-          },
-          "&.-sort-asc": {
-            backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
-          },
           "&.checkBox": {
             minWidth: "31px",
             maxWidth: "31px",
-            borderRightColor: theme.hv.palette.atmosphere.atmo5
+            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
           },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
             borderLeft: "none"
@@ -148,14 +134,17 @@ const styles = theme => ({
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
           "&.sortable": {
-            paddingLeft: "32px",
+            paddingLeft: "32px"
           },
           "&.alphaNumeric": {
             minWidth: "70px",
             textAlign: "left"
           },
           "&.link": {
-            paddingLeft: "32px"
+            paddingLeft: "32px",
+            "&:not(.sortable)": {
+              paddingLeft: `${theme.hv.spacing.xs}px`
+            }
           },
           "&.secondaryAction": {
             minWidth: "31px",
@@ -184,10 +173,7 @@ const styles = theme => ({
           paddingLeft: "0px"
         },
         "& $td.sorted": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-          borderTop: "none",
-          borderBottom: "none"
+          backgroundColor: theme.hv.palette.atmosphere.atmo1
         },
         "& .checkBox": {
           minWidth: "31px",
@@ -269,6 +255,16 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "space-between",
     marginBottom: `${theme.hv.spacing.xs}px`
+  },
+  centered: {
+    justifyContent: "center"
+  },
+  alphaNumeric: {
+    justifyContent: "flex-start"
+  },
+  numeric: {
+    justifyContent: "flex-end",
+    textAlign: "right"
   },
   link: {
     justifyContent: "flex-start",

@@ -139,6 +139,8 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
         )}
         <div
           className={classNames({
+            [classes.textContainer]: rest.column.cellType === "alpha-numeric",
+            [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
           })}
         >
