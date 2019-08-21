@@ -150,16 +150,16 @@ class HvLogin extends React.Component {
             backgroundSize: `${backgroundImageSize}`
           }}
         >
-          <HvGrid item xs="false" sm="false" md={8} lg={8} xl={8} className={classes.test}>
+          <HvGrid item xs="false" sm="false" md={8} lg={8} xl={8} className={classes.panelPosition}>
             <div id={id} className={classNames(classes.root, className)} />
           </HvGrid>
           <HvGrid
             item
             xs={12}
             sm={12}
-            md={4}
-            lg={4}
-            xl={4}
+            md={5}
+            lg={5}
+            xl={5}
             className={classes.rightContainer}
           >
             <div>{form}</div>
