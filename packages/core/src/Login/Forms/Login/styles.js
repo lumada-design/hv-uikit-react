@@ -17,6 +17,7 @@
 const styles = theme => ({
   root: {
     minWidth: "250px",
+    width:"300px",
     padding: 0,
     marginLeft: "auto",
     marginRight: "auto",
@@ -69,7 +70,9 @@ const styles = theme => ({
   checkBoxTypography: {
     ...theme.hv.typography.infoText
   },
-
+  sentenceCase:{
+    textTransform: `full-size-kana`
+  },
   linkButtonTypography: {
     fontSize: theme.hv.typography.infoText.fontSize
   },
