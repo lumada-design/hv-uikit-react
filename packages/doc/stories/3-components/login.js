@@ -18,7 +18,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvLogin from "@hv/uikit-react-core/dist/Login";
 
-
 storiesOf("Components", module).add("Login", () => <HvLogin />, {
   title: "Login",
   description:
@@ -40,6 +39,10 @@ storiesOf("Components", module).add("Login", () => <HvLogin />, {
     {
       title: "4. Custom Labels",
       src: "components/login/login4"
+    },
+    {
+      title: "5. Custom Background",
+      src: "components/login/login5"
     }
   ]
 });

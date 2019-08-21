@@ -16,12 +16,9 @@
 
 const styles = theme => ({
   root: {
-    position: "absolute",
-    width: "310px",
     height: "100%",
-    margin: "0px 0px 0px -155px",
-    padding: 0,
-    left: "50%"
+    minWidth: "250px",
+    padding: 0
   },
   title: {
     display: "flex",
