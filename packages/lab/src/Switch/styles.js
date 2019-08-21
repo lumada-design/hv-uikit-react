@@ -85,7 +85,8 @@ const styles = theme => ({
       cursor: "no-drop"
     },
     "& $icon": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo6}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo6}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
     }
   },
 
