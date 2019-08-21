@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvHeader } from "./Header";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvNotificationPanel} from "./NotificationPanel";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
-export { default as HvSwitch } from "./Switch";
+import ImageContainer from "./ImageContainer";
+
+export default ImageContainer;
