@@ -22,7 +22,7 @@ storiesOf("Lab", module).add("Footer", () => <HvFooter />, {
   title: "Footer",
   description:
     "A footer component for identification, still in development",
-  usage: "import HvFooter from '@hv/uikit-react-core/dist/Footer'",
+  usage: "import HvFooter from '@hv/uikit-react-lab/dist/Footer'",
   examples: [
     {
       title: "Simple",

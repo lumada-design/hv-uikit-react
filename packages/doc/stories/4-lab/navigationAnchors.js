@@ -26,7 +26,7 @@ storiesOf("Lab", module).add(
     description:
       "A navigation component to help in changing views, still in development",
     usage:
-      "import HvNavigationAnchors from '@hv/uikit-react-core/dist/NavigationAnchors'",
+      "import HvNavigationAnchors from '@hv/uikit-react-lab/dist/NavigationAnchors'",
     examples: [
       {
         title: "1. Simple",
