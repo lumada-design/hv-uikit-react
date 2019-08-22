@@ -21,7 +21,7 @@ import BaseSwitch from "@material-ui/core/Switch";
 import classnames from "classnames";
 import { filter } from "lodash";
 
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import HvTypography from "../Typography";
 
 import CheckMark from "./media/ToggleSuccess.XS.svg";
 
