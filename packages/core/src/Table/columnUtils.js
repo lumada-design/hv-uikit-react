@@ -100,32 +100,6 @@ const setColumnAlignment = (cellType, classes) => {
 };
 
 /**
- *  Set the column border to the right of checkbox column and/or left of secondary actions column.
- *
- * @param {Object} column - a reference to the React table column object.
- * @param {Boolean} hasCheckbox - true if table has a checkbox column.
- * @param {Boolean} hasSecondaryActions - true if table has a secondary actions column.
- *
- */
-const setColumnBorder = (column, hasCheckbox, hasSecondaryActions) => {
-  const col = column;
-  const headerClassNames = col.headerClassName;
-
-  if (hasCheckbox) {
-    col.headerClassName = classNames("-checkBoxNeighbor", headerClassNames);
-    col.className = classNames(col.className, "-checkBoxNeighbor");
-  }
-
-  if (hasSecondaryActions) {
-    col.headerClassName = classNames(
-      "-secondaryActionsNeighbor",
-      col.headerClassName
-    );
-    col.className = classNames(col.className, "-secondaryActionsNeighbor");
-  }
-};
-
-/**
  * Adds to the className the sortable class if the header is marked as sortable.
  *
  * @param sortableProp
@@ -148,27 +122,25 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
  * @returns {Object} a modified column.
  */
 const createExpanderButton = (columns, subElementTemplate, classes) => {
-  const newColumn = columns;
+  const newColumns = columns;
   if (subElementTemplate) {
-    newColumn[0].sortable = true;
-    newColumn[0].expander = true;
-    newColumn[0].width = newColumn[1].width;
+    newColumns[0].className = classNames(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
-    newColumn[0].Expander = ({ isExpanded, ...rest }) => (
+    newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        <div>
-          {isExpanded ? (
-            <div className={classNames(classes.iconContainer)}>
-              <AngleUp />
-            </div>
-          ) : (
-            <div className={classNames(classes.iconContainer)}>
-              <AngleDown />
-            </div>
-          )}
-        </div>
+        {isExpanded ? (
+          <div className={classNames(classes.iconContainer)}>
+            <AngleUp />
+          </div>
+        ) : (
+          <div className={classNames(classes.iconContainer)}>
+            <AngleDown />
+          </div>
+        )}
         <div
           className={classNames({
+            [classes.textContainer]: rest.column.cellType === "alpha-numeric",
+            [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
           })}
         >
@@ -178,7 +150,7 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
       </>
     );
   }
-  return newColumn;
+  return newColumns;
 };
 
 /**
@@ -235,7 +207,6 @@ export {
   markSorted,
   wrapper,
   setColumnAlignment,
-  setColumnBorder,
   setHeaderSortableClass,
   appendClassnames,
   createExpanderButton

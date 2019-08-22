@@ -27,7 +27,7 @@ storiesOf("Lab", module).add(
       "A DatePicker component with a popup calendar used to choose dates, following specifications provided by "
       + "Design System."
       + "<br />The dates selection is limited between `1000-01-01` and `9999-12-31`.",
-    usage: "import HvDatePickerDS from '@hv/uikit-react-core/lab/DatePickerDS'",
+    usage: "import HvDatePickerDS from '@hv/uikit-react-lab/dist/DatePickerDS'",
     examples: [
       {
         title: "1. Empty",

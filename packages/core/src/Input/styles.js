@@ -98,6 +98,10 @@ const styles = theme => ({
   textWarning: {
     color: theme.hv.palette.accent.acce1
   },
+  iconFlexBox: {
+    display: "flex",
+    flexDirection: "row"
+  },
   icon: {
     width: `${theme.hv.spacing.md}px`,
     height: `${theme.hv.spacing.md}px`
@@ -110,6 +114,18 @@ const styles = theme => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     cursor: "pointer"
+  },
+  suggestionsContainer: {
+    width: "100%",
+    position: "relative",
+    top: "-1px",
+  },
+  suggestionList: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+    padding: `${theme.hv.spacing.sm}px`,
+    position: "absolute",
+    width: "100%"
   },
   "@global": {
     "input:-webkit-autofill": {

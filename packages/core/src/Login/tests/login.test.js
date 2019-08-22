@@ -52,10 +52,6 @@ describe("Login ", () => {
     expect(wrapper).toBeDefined();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it("should render the Login component", () => {
     const loginComponent = wrapper.find(HvLogin);
 

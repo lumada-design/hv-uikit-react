@@ -23,6 +23,7 @@ export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvHeader } from "./Header";
 export { default as HvInput}  from "./Input";
+export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";
@@ -34,6 +35,7 @@ export { default as HvTextArea } from "./TextArea";
 export { default as HvTypography } from "./Typography";
 export { default as HvGrid } from "./Grid";
 export { default as HvBadge } from "./Badge";
+export { default as HvSwitch } from "./Switch";
 
 // theme
 export { default as hvTheme } from "./theme";

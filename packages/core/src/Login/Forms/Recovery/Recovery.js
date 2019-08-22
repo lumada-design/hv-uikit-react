@@ -120,6 +120,7 @@ class Recovery extends React.Component {
             externalWarningTextOverride={
               recoverStatus === "error" ? recoveryErrorMessage : null
             }
+            autoFocus
           />
         </div>
 

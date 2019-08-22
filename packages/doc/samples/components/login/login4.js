@@ -24,7 +24,7 @@ const labels =
   rememberMeLabel: "remember me label",
   loginButtonMessage: "Log message",
   loginButtonLabel: "Log button",
-  forgotYourCredentialMessage: "forgot Your Credential Message",
+  forgotYourCredentialMessage: "Forgot Your Credential Message",
   emailLabel: "email label",
   emailPlaceholder: "email placeholder",
   cancelButton: "Cancel label",

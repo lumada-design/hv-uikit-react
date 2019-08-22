@@ -61,16 +61,13 @@ const styles = theme => ({
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          minHeight: 32,
+          height: 54,
           minWidth: 72,
           padding: 0,
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "flex-end",
-          borderLeft: "1px solid transparent",
-          borderRight: "1px solid transparent",
-          borderTop: "none",
-          borderBottom: "none",
+          border: "none",
           boxShadow: "none",
           "& > div": {
             width: "100%",
@@ -81,11 +78,8 @@ const styles = theme => ({
             width: `${theme.hv.spacing.xs}px`,
             right: "-8px"
           },
-          "&:first-child": {
+          "&:first-child:not(.checkbox)": {
             borderLeft: "none"
-          },
-          "&:nth-child(2).-checkBoxNeighbor": {
-            borderLeftColor: theme.hv.palette.atmosphere.atmo5
           },
           "&:nth-last-child(2).-secondaryActionsNeighbor": {
             borderRightColor: theme.hv.palette.atmosphere.atmo5
@@ -94,25 +88,23 @@ const styles = theme => ({
             borderRight: "none"
           },
           "&.secondaryAction": {
-            minWidth: "32px",
-            maxWidth: "32px",
-            height: "100%",
-            display: "inline-table"
-          },
-          "&.-sort-desc": {
-            backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
-          },
-          "&.-sort-asc": {
-            backgroundColor: theme.hv.palette.atmosphere.atmo3,
-            borderLeftColor: theme.hv.palette.atmosphere.atmo4,
-            borderRightColor: theme.hv.palette.atmosphere.atmo4
+            minWidth: "30px",
+            maxWidth: "30px",
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&.checkBox": {
-            minWidth: "30px",
-            height: "100%",
-            display: "inline-table"
+            minWidth: "31px",
+            maxWidth: "31px",
+            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "& ~.rt-th.rthfc-th-fixed-left-last": {
+            borderLeft: "none"
+          },
+          "&.rt-th.rthfc-th-fixed-left-last": {
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "&.rt-th.rthfc-th-fixed-right-first": {
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&.sortable": {
             "&:hover > div > div > div ": {
@@ -129,7 +121,6 @@ const styles = theme => ({
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {
             background: theme.hv.palette.atmosphere.atmo2,
-            position: "relative"
           },
           "& $tr:hover > div ": {
             background: theme.hv.palette.atmosphere.atmo1
@@ -143,20 +134,23 @@ const styles = theme => ({
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
           "&.sortable": {
-            paddingLeft: "32px",
+            paddingLeft: "32px"
           },
           "&.alphaNumeric": {
             minWidth: "70px",
             textAlign: "left"
           },
           "&.link": {
-            paddingLeft: "32px"
+            paddingLeft: "32px",
+            "&:not(.sortable)": {
+              paddingLeft: `${theme.hv.spacing.xs}px`
+            }
           },
           "&.secondaryAction": {
-            minWidth: "33px",
-            maxWidth: "33px",
+            minWidth: "31px",
+            maxWidth: "31px",
             padding: 0,
-            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
             overflow: "visible"
           },
           "&:first-child": {
@@ -164,21 +158,28 @@ const styles = theme => ({
           },
           "&:last-child": {
             borderRight: "none"
+          },
+          "&.rt-td.rthfc-td-fixed-left-last": {
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "&.rt-td.rthfc-td-fixed-right-first": {
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+          },
+          "&$expand": {
+            paddingLeft: "2px"
           }
         },
         "& .firstExpandable": {
           paddingLeft: "0px"
         },
         "& $td.sorted": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-          borderTop: "none",
-          borderBottom: "none"
+          backgroundColor: theme.hv.palette.atmosphere.atmo1
         },
         "& .checkBox": {
-          minWidth: "30px",
-          maxWidth: "30px",
-          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+          minWidth: "31px",
+          maxWidth: "31px",
+          padding: 0,
+          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
         }
       }
     },
@@ -244,26 +245,6 @@ const styles = theme => ({
   title: {
     marginBottom: `${theme.hv.spacing.sm}px`
   },
-  headerContainer: {
-    width: "100%",
-    minHeight: "32px"
-  },
-  headerTextContainer: {
-    minWidth: 0,
-    padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
-    minHeight: "32px",
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
-  },
-  headerNotSortable: {
-    width: `calc(100% - ${theme.hv.spacing.xs}px)`,
-    marginLeft: `${theme.hv.spacing.xs}px`
-  },
-  headerSortable: {
-    marginLeft: "32px",
-    width: "calc(100% - 32px)"
-  },
   checkBoxBorder: {
     "&:nth-child(2)": {
       borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
@@ -275,21 +256,6 @@ const styles = theme => ({
     justifyContent: "space-between",
     marginBottom: `${theme.hv.spacing.xs}px`
   },
-  headerProps: {
-    width: "100%",
-    whiteSpace: "normal",
-    textOverflow: "ellipsis",
-    overflow: "hidden"
-  },
-  headerAlphaNumeric: {
-    float: "left",
-    textAlign: "left"
-  },
-  headerNumeric: {
-    float: "right",
-    textAlign: "right"
-  },
-
   centered: {
     justifyContent: "center"
   },
@@ -315,11 +281,8 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.md}px 32px`
   },
   iconContainer: {
-    width: "32px",
-    height: "32px",
-    position: "absolute",
-    bottom: 0,
-    left: 0
+    width: "30px",
+    height: "30px"
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"
@@ -353,7 +316,8 @@ const styles = theme => ({
     textAlign: "right",
     marginBottom: "-6px",
     marginTop: "-6px"
-  }
+  },
+  expand: {}
 });
 
 export { styles, tableStyleOverrides };

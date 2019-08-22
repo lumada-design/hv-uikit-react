@@ -18,12 +18,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
+import Level0Success16Color from "@hv/uikit-react-icons/dist/Success.sema1.S";
+import Fail4Unsuccess16Color from "@hv/uikit-react-icons/dist/Fail.sema4.S";
+
+import HvGrid from "../Grid";
 
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
-import backImg from "./resources/background.jpg";
+import backImg from "./resources/bg.svg";
 
 /**
  * Main container for the Login component.
@@ -47,6 +49,7 @@ class HvLogin extends React.Component {
       login,
       recovery,
       backgroundImage,
+      backgroundImageSize,
       titleText,
       logo,
       titleComponent,
@@ -65,11 +68,22 @@ class HvLogin extends React.Component {
       userNamePlaceHolder,
       passwordInputLabel,
       passwordPlaceHolder,
-      rememberMeLabel
+      rememberMeLabel,
+      incorrectCredentialsMessage
     } = this.props;
     const { inRecoveryMode } = this.state;
 
     let form;
+    let backgroundLoginImg;
+
+    if (backgroundImage.length === 0) {
+      backgroundLoginImg = backImg;
+    } else {
+      /*eslint-disable */
+      const backGroundImagePath = require(`./resources/${backgroundImage}`);
+      /*eslint-disable */
+      backgroundLoginImg = backGroundImagePath;
+    }
 
     if (inRecoveryMode) {
       form = (
@@ -107,6 +121,9 @@ class HvLogin extends React.Component {
           allowRememberMe={allowRememberMe}
           onClick={this.switchForms}
           errorLoginIcon={errorLoginIcon}
+          incorrectCredentialsMessage={
+            incorrectCredentialsMessage || labels.incorrectCredentialsMessage
+          }
           userNameInputLabel={userNameInputLabel || labels.userNameInputLabel}
           userNamePlaceHolder={
             userNamePlaceHolder || labels.userNamePlaceHolder
@@ -124,15 +141,31 @@ class HvLogin extends React.Component {
     }
 
     return (
-      <div
-        id={id}
-        className={classNames(classes.root, className)}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className={classes.rightContainer}>
-          <div className={classes.formContainer}>{form}</div>
-        </div>
-      </div>
+      <>
+        <HvGrid
+          container
+          className={classes.container}
+          style={{
+            backgroundImage: `url(${backgroundLoginImg})`,
+            backgroundSize: `${backgroundImageSize}`
+          }}
+        >
+          <HvGrid item xs="false" sm="false" md={8} lg={8} xl={8} className={classes.panelPosition}>
+            <div id={id} className={classNames(classes.root, className)} />
+          </HvGrid>
+          <HvGrid
+            item
+            xs={12}
+            sm={12}
+            md={5}
+            lg={5}
+            xl={5}
+            className={classes.rightContainer}
+          >
+            <div>{form}</div>
+          </HvGrid>
+        </HvGrid>
+      </>
     );
   }
 }
@@ -142,7 +175,7 @@ HvLogin.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -176,6 +209,10 @@ HvLogin.propTypes = {
    */
   backgroundImage: PropTypes.string,
   /**
+   * Sizing for background image
+   */
+  backgroundImageSize: PropTypes.string,
+  /**
    * the welcome message.
    * @deprecated Instead use the labels property
    */
@@ -205,6 +242,10 @@ HvLogin.propTypes = {
    */
   errorLoginIcon: PropTypes.element,
   /**
+   *  Incorrect Credentials Message.
+   */
+  incorrectCredentialsMessage: PropTypes.string,
+  /**
    * The object that contains the different labels inside the kpi.
    *
    * - titleText: The welcome message.
@@ -219,6 +260,7 @@ HvLogin.propTypes = {
    * - passwordInputLabel: Password label.
    * - passwordPlaceHolder: Password placeholder.
    * - rememberMeLabel: Remember me label.
+   * - incorrectCredentialsMessage: Incorrect Credentials Message
    */
   labels: PropTypes.shape({
     titleText: PropTypes.string,
@@ -240,7 +282,8 @@ HvLogin.propTypes = {
     emailPlaceholder: PropTypes.string.isRequired,
     cancelButton: PropTypes.string.isRequired,
     recoverButton: PropTypes.string.isRequired,
-    recoveringMessage: PropTypes.string.isRequired
+    recoveringMessage: PropTypes.string.isRequired,
+    incorrectCredentialsMessage: PropTypes.string
   }),
   /**
    * Recovery title.
@@ -302,14 +345,15 @@ HvLogin.propTypes = {
 HvLogin.defaultProps = {
   className: "",
   id: undefined,
-  backgroundImage: backImg,
+  backgroundImage: "",
+  backgroundImageSize: "321px",
   recovery: () => {},
   logo: null,
   titleComponent: null,
   allowRecover: true,
   allowRememberMe: true,
   okRecoveryIcon: <Level0Success16Color />,
-  errorLoginIcon: <Level5Unsuccess16Color />,
+  errorLoginIcon: <Fail4Unsuccess16Color />,
   labels: {
     titleText: "Welcome",
     recoveryTitle: "Recover Credentials",
@@ -332,7 +376,9 @@ HvLogin.defaultProps = {
     emailPlaceholder: "Enter Email",
     cancelButton: "Cancel",
     recoverButton: "Recover",
-    recoveringMessage: "Recovering"
+    recoveringMessage: "Recovering",
+    incorrectCredentialsMessage:
+      "Incorrect Username and/or Password. Please try again."
   },
   titleText: undefined,
   recoveryTitle: undefined,
@@ -345,7 +391,8 @@ HvLogin.defaultProps = {
   userNamePlaceHolder: undefined,
   passwordInputLabel: undefined,
   passwordPlaceHolder: undefined,
-  rememberMeLabel: undefined
+  rememberMeLabel: undefined,
+  incorrectCredentialsMessage: undefined
 };
 
 export default HvLogin;

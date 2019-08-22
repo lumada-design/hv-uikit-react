@@ -5,7 +5,7 @@ import HvTable from "@hv/uikit-react-core/dist/Table";
 const data = [
   {
     "id": 1,
-    "dataCenter": "Denver",
+    "dataCenter": "Bob Route",
     "storageSegment": "Open systems",
     "storageArray": 3,
     "allocateVsCapability": 2.5,
@@ -17,7 +17,7 @@ const data = [
   },
   {
     "id": 2,
-    "dataCenter": "Virginia",
+    "dataCenter": "Captain America Route",
     "storageSegment": "Tandem",
     "storageArray": 3,
     "allocateVsCapability": 2.5,
@@ -28,8 +28,92 @@ const data = [
     "averageReadTime": 1.45
   },
   {
-    "id": 3,
-    "dataCenter": "Virginia",
+    "id": 4,
+    "dataCenter": "Chris1",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  },
+  {
+    "id": 5,
+    "dataCenter": "Jeans Data Route",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  },
+  {
+    "id": 6,
+    "dataCenter": "Captain America Route",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  },
+  {
+    "id": 7,
+    "dataCenter": "Bob Route",
+    "storageSegment": "Open systems",
+    "storageArray": 3,
+    "allocateVsCapability": 2.5,
+    "averageCompression": 1.62,
+    "totalIOPS": 18649,
+    "totalThroughput" : 1963.28,
+    "averageServiceTime": 1.20,
+    "averageReadTime": 1.83
+  },
+  {
+    "id": 8,
+    "dataCenter": "Captain America Route",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2.5,
+    "averageCompression": 1.7,
+    "totalIOPS": 8652,
+    "totalThroughput" : 1013.01,
+    "averageServiceTime": 5.16,
+    "averageReadTime": 1.45
+  },
+  {
+    "id": 9,
+    "dataCenter": "Chris1",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  },
+  {
+    "id": 10,
+    "dataCenter": "Jeans Data Route",
+    "storageSegment": "Tandem",
+    "storageArray": 3,
+    "allocateVsCapability": 2,
+    "averageCompression": 1.91,
+    "totalIOPS": 10459,
+    "totalThroughput" : 923.65,
+    "averageServiceTime": 1.38,
+    "averageReadTime": 1.05
+  },
+  {
+    "id": 11,
+    "dataCenter": "Captain America Route",
     "storageSegment": "Tandem",
     "storageArray": 3,
     "allocateVsCapability": 2,
@@ -46,8 +130,8 @@ class Wrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 10,
-      sorted: [{ id: "createdDate", desc: true }],
+      pageSize: 5,
+      sorted: [{ id: "dataCenter", desc: true }],
     };
   }
 
@@ -56,7 +140,6 @@ class Wrapper extends React.Component {
       headerText: "Data Center",
       accessor: "dataCenter",
       cellType: "alpha-numeric",
-      fixed: "left"
     },
     {
       headerText: "Storage segment",
@@ -72,7 +155,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Allocated vs avail.capability",
       cellType: "numeric",
-      width:140,
+      minWidth: 140,
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
@@ -106,7 +189,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Average compression rt",
       accessor: "averageCompression",
-      width:150,
+      minWidth:150,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageCompression}:1`
     },
@@ -119,21 +202,21 @@ class Wrapper extends React.Component {
     {
       headerText: "Total throughput",
       accessor: "totalThroughput",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${ cellData.row._original.totalThroughput.toLocaleString('en-US')} MB/s`
     },
     {
       headerText: "Average service time",
       accessor: "averageServiceTime",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageServiceTime} ms`
     },
     {
       headerText: "Average read time",
       accessor: "averageReadTime",
-      width: 130,
+      minWidth: 130,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageReadTime} ms`
     }
@@ -199,9 +282,7 @@ class Wrapper extends React.Component {
       <HvTable
         data={data}
         columns={this.getColumns()}
-        onPageSizeChange={this.onPageSizeChange}
         defaultPageSize={10}
-        pageSize={pageSize}
         resizable={false}
 
         defaultSorted={sorted}

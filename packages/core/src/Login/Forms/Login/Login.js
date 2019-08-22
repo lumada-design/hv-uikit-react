@@ -34,10 +34,7 @@ import MessageElement from "../MessageElement";
 function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
   return (
     <div className={classes.forgotCredentials}>
-      <HvButton
-        category="ghost"
-        onClick={onClick}
-      >
+      <HvButton category="ghost" onClick={onClick} className={classes.sentenceCase}>
         {forgotYourCredentialMessage}
       </HvButton>
     </div>
@@ -133,7 +130,8 @@ class Login extends React.Component {
       loginButtonMessage,
       loginButtonLabel,
       forgotYourCredentialMessage,
-      rememberMeLabel
+      rememberMeLabel,
+      incorrectCredentialsMessage
     } = this.props;
     const { isLogging, loginError } = this.state;
 
@@ -153,7 +151,7 @@ class Login extends React.Component {
               iconElement={errorLoginIcon}
               icon={classes.icon}
               showMessage={classes.showMessage}
-              message="Incorrect Username or Password. Try again."
+              message={incorrectCredentialsMessage}
             />
           ) : null}
         </div>
@@ -168,6 +166,7 @@ class Login extends React.Component {
             name="username"
             password={false}
             onChange={this.handleInputChange("username")}
+            autoFocus
           />
         </div>
         <div className={classes.inputPassword}>
@@ -196,17 +195,17 @@ class Login extends React.Component {
               onChange={this.handleRememberMe}
             />
           ) : null}
-          <HvButton
-            type="submit"
-            category="primary"
-            className={classes.button}
-          >
+          <HvButton type="submit" category="primary" className={classNames(classes.button, classes.sentenceCase)}>
             {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>
         </div>
 
         {allowRecover ? (
-          <RecoveryLinkButton onClick={onClick} classes={classes} forgotYourCredentialMessage={forgotYourCredentialMessage} />
+          <RecoveryLinkButton
+            onClick={onClick}
+            classes={classes}
+            forgotYourCredentialMessage={forgotYourCredentialMessage}
+          />
         ) : null}
       </form>
     );
@@ -256,11 +255,11 @@ Login.propTypes = {
    * label for the login button.
    */
   loginButtonLabel: PropTypes.string.isRequired,
-  /** 
+  /**
    * label for the login button while loggin.
    */
   loginButtonMessage: PropTypes.string.isRequired,
-  /** 
+  /**
    * Link for forgot your credentials.
    */
   forgotYourCredentialMessage: PropTypes.string.isRequired,
@@ -283,7 +282,11 @@ Login.propTypes = {
   /**
    * Remember me label.
    */
-  rememberMeLabel: PropTypes.string.isRequired
+  rememberMeLabel: PropTypes.string.isRequired,
+  /**
+   * Incorrect Credentials Message
+   */
+  incorrectCredentialsMessage: PropTypes.string.isRequired
 };
 
 Login.defaultProps = {

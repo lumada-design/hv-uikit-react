@@ -16,19 +16,18 @@
 
 const styles = theme => ({
   root: {
-    position: "absolute",
-    width: "310px",
-    height: "calc(100% - 50px)",
-    margin: "0px 0px 0px -155px",
-    padding: 0,
-    left: "50%"
+    minWidth: "250px",
+    width:"300px",
+    padding: "30px 0px 0px 0px",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   title: {
     display: "flex",
     position: "relative",
-    width: "310px",
+    left: "auto",
     zIndex: 1,
-    margin: `${theme.hv.spacing.lg}px 0 ${theme.hv.spacing.sm}px`,
+    margin: `60px 0 ${theme.hv.spacing.sm}px`,
     overflow: "auto"
   },
   h3: {
@@ -36,41 +35,44 @@ const styles = theme => ({
   },
   inputUser: {
     position: "relative",
-    paddingBottom: `${theme.hv.spacing.md}px`
+    paddingBottom: 19,
+    marginTop: 22
   },
-  inputPassword: {
-
-  },
+  inputPassword: {},
   button: {
     width: "120px",
     float: "right",
-    position: "relative"
+    position: "absolute",
+    right: 0,
+    top: 0
   },
   buttonsContainer: {
     position: "relative",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: "52px"
   },
   buttonsContainerWithRemember: {
     position: "relative",
     display: "flex",
     justifyContent: "space-between",
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: "52px"
   },
   separator: {
     width: `${theme.hv.spacing.sm}px`
   },
   forgotCredentials: {
-    marginTop: `${theme.hv.spacing.lg}px`,
+    marginTop: "40px",
     display: "flex",
     justifyContent: "center"
   },
   checkBoxTypography: {
     ...theme.hv.typography.infoText
   },
-
+  sentenceCase:{
+    textTransform: `full-size-kana`
+  },
   linkButtonTypography: {
     fontSize: theme.hv.typography.infoText.fontSize
   },

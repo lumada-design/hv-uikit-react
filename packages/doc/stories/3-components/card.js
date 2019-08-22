@@ -22,7 +22,7 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
   title: "Card",
   description:
     "Cards are surfaces that display content and actions on a single topic. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy. The Card can be an component by itself or a composition of elements (header, content, media and footer) passed as children.",
-  usage: "import {HvCard} from '@hv/uikit-react-core/dist/Card'",
+  usage: "import HvCard from '@hv/uikit-react-core/dist/Card'",
   examples: [
     {
       title: "1. Single action",

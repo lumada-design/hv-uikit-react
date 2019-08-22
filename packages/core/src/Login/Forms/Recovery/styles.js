@@ -16,12 +16,12 @@
 
 const styles = theme => ({
   root: {
-    position: "absolute",
-    width: "310px",
     height: "100%",
-    margin: "0px 0px 0px -155px",
-    padding: 0,
-    left: "50%"
+    minWidth: 250,
+    width:300,
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "30px 0px 0px 0px",
   },
   title: {
     display: "flex",
@@ -39,7 +39,7 @@ const styles = theme => ({
   },
   input: {
     position: "relative",
-    paddingTop: "100px"
+    paddingTop: "126px"
   },
   cancelButton: {
     position: "relative",
@@ -54,7 +54,7 @@ const styles = theme => ({
     position: "relative",
     display: "inherit",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: "52px"
   },
   buttonsContainerError: {
     position: "relative",
@@ -77,7 +77,7 @@ const styles = theme => ({
     minHeight: "32px"
   },
   messageContainer: {
-    top: `${theme.hv.spacing.sm}px`,
+    top: "15px",
     position: "relative",
     display: "flex",
     alignItems: "center",

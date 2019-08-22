@@ -9,7 +9,8 @@ const data = [
     label: "Edit"
   },
   {
-    label: "Remove"
+    label: "Remove",
+    path: "https://www.hitachivantara.com"
   },
   {
     label: "Delete"
