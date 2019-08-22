@@ -55,7 +55,7 @@ const labels = {
   applyLabel: "L-apply",
   multiSelectionAction: "multi",
   multiSelectionConjunction: "and-l"
-}
+};
 
 export default (
   <HvDropdown values={data} multiSelect showSearch labels={labels} />
