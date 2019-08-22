@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
+import Level0Success16Color from "@hv/uikit-react-icons/dist/Success.sema1.S";
 import Fail4Unsuccess16Color from "@hv/uikit-react-icons/dist/Fail.sema4.S";
 
 import HvGrid from "../Grid";
@@ -346,7 +346,7 @@ HvLogin.defaultProps = {
   className: "",
   id: undefined,
   backgroundImage: "",
-  backgroundImageSize: "155",
+  backgroundImageSize: "321px",
   recovery: () => {},
   logo: null,
   titleComponent: null,
