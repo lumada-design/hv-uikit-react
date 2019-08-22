@@ -22,7 +22,7 @@ storiesOf("Lab", module).add("Empty State", () => <HvEmptyState />, {
   title: "Empty State",
   description:
     "A splash screen component for information, still in development",
-  usage: "import HvEmptyState from '@hv/uikit-react-core/dist/EmptyState'",
+  usage: "import HvEmptyState from '@hv/uikit-react-lab/dist/EmptyState'",
   examples: [
     {
       title: "1. Simple",

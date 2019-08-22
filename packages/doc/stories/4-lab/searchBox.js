@@ -21,7 +21,7 @@ import HvSearchBox from "@hv/uikit-react-lab/dist/SearchBox";
 storiesOf("Lab", module).add("Search Box", () => <HvSearchBox />, {
   title: "Search Box",
   description: "A search box component, still in development",
-  usage: "import HvSearchBox from '@hv/uikit-react-core/dist/SearchBox'",
+  usage: "import HvSearchBox from '@hv/uikit-react-lab/dist/SearchBox'",
   examples: [
     {
       title: "1. Simple",
