@@ -39,7 +39,7 @@ const styles = theme => ({
   },
   input: {
     position: "relative",
-    paddingTop: "100px"
+    paddingTop: "126px"
   },
   cancelButton: {
     position: "relative",
@@ -54,7 +54,7 @@ const styles = theme => ({
     position: "relative",
     display: "inherit",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: "52px"
   },
   buttonsContainerError: {
     position: "relative",

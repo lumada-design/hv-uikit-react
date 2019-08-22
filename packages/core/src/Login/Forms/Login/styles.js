@@ -27,7 +27,7 @@ const styles = theme => ({
     position: "relative",
     left: "auto",
     zIndex: 1,
-    margin: `53px 0 ${theme.hv.spacing.sm}px`,
+    margin: `60px 0 ${theme.hv.spacing.sm}px`,
     overflow: "auto"
   },
   h3: {
@@ -51,7 +51,7 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: "52px"
   },
   buttonsContainerWithRemember: {
     position: "relative",
