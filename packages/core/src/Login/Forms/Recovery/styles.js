@@ -17,8 +17,11 @@
 const styles = theme => ({
   root: {
     height: "100%",
-    minWidth: "250px",
-    padding: 0
+    minWidth: 250,
+    width:300,
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "30px 0px 0px 0px",
   },
   title: {
     display: "flex",
@@ -74,7 +77,7 @@ const styles = theme => ({
     minHeight: "32px"
   },
   messageContainer: {
-    top: `${theme.hv.spacing.sm}px`,
+    top: "15px",
     position: "relative",
     display: "flex",
     alignItems: "center",

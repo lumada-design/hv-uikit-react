@@ -166,6 +166,7 @@ class Login extends React.Component {
             name="username"
             password={false}
             onChange={this.handleInputChange("username")}
+            autoFocus
           />
         </div>
         <div className={classes.inputPassword}>
