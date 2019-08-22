@@ -41,7 +41,8 @@ const styles = theme => {
     },
     rightContainer: {
       background: convertedColor,
-      position:"relative"
+      position:"relative",
+      maxWidth:500
     },
     panelPosition:{
       position:"absolute"

@@ -18,7 +18,7 @@ const styles = theme => ({
   root: {
     minWidth: "250px",
     width:"300px",
-    padding: 0,
+    padding: "30px 0px 0px 0px",
     marginLeft: "auto",
     marginRight: "auto",
   },
