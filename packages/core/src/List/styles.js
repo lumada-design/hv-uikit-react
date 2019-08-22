@@ -79,6 +79,9 @@ const styles = theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
+  },
+  hidden: {
+    display: "none"
   }
 });
 

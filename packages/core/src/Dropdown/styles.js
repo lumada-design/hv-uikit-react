@@ -72,30 +72,7 @@ const styles = theme => ({
       cursor: "not-allowed"
     }
   },
-  list: {
-    position: "absolute",
-    left: -1,
-    maxWidth: 310,
-    minWidth: 310,
-    background: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
-    borderTop: "none",
-    zIndex: 1000
-  },
-  listClosed: {
-    display: "none"
-  },
-  listOpen: {
-    display: "block",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-    boxShadow: "0 -8px 0 #fff, 0 1px 8px rgba(65,65,65,.12)"
-  },
-  listBorder: {
-    display: "block",
-    height: "20px",
-    marginTop: "12px",
-    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)"
-  },
+
   icon: {
     position: "absolute",
     top: 0,

@@ -15,65 +15,82 @@
  */
 
 const styles = theme => ({
-  root: {
-    
+  rootList: {
+    maxWidth: 310,
+    minWidth: 310
   },
-  list: {
-    maxHeight: 320,
-    overflow: "auto"
+  listContainer: {
+    overflow: "auto",
+    maxHeight: 270,
+    paddingLeft: "20px",
+    marginRight: "2px",
+    paddingRight: "18px",
+    paddingBottom: "20px"
   },
-  hidden: {
-    display: "none"
+  searchContainer: {
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    paddingBottom: "10px"
   },
-  selection: {
-    width: "100%",
-    userSelect: "none",
-    cursor: "pointer"
-  },
-  singleSelection: {
-    padding: `6px ${theme.hv.spacing.xs}px`,
-    cursor: "pointer",
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo4
-    }
-  },
-  multiSelection: {
-    cursor: "pointer"
-  },
-  selected: {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1,
-    "&:hover": {
-      background: theme.hv.palette.accent.acce1,
-      color: theme.hv.palette.atmosphere.atmo1
-    }
-  },
-  truncate: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
-  },
-  result: {
-    display: "block"
+  selectAllContainer: {
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    width: "100%"
   },
   selectAll: {
-    marginTop: `5px`,
     "& > span": {
       ...theme.hv.typography.highlightText
     }
+  },
+  selection: {
+    width: "100%"
   },
   actions: {
     textAlign: "right",
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
     padding: `${theme.hv.spacing.sm}px`
   },
-  padding: {
-    paddingLeft: `${theme.hv.spacing.sm}px`,
-    paddingRight: "18px",
-    marginRight: "2px"
+  marginTop: {
+    marginTop: `${theme.hv.spacing.sm}px`
   },
-  marginBottom: {
-    marginBottom: `${theme.hv.spacing.sm}px`
+  listBorderUp: {
+    display: "block",
+    height: "10px",
+    boxShadow: " 0px -5px 5px -4px rgba(65,65,65,.12)"
+  },
+
+  listBorderDown: {
+    display: "block",
+    height: "20px",
+    marginTop: "12px",
+    boxShadow: `0 0 0 ${
+      theme.hv.palette.atmosphere.atmo1
+    }, 0px -5px 12px -5px rgba(65,65,65,.12)`
+  },
+  list: {
+    maxWidth: 310,
+    minWidth: 310,
+    background: theme.hv.palette.atmosphere.atmo1,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    borderTop: "none",
+    zIndex: 1000
+  },
+  listClosed: {
+    display: "none"
+  },
+  listOpenDown: {
+    display: "block",
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 -8px 0 ${
+      theme.hv.palette.atmosphere.atmo1
+    }, 0 1px 8px rgba(65,65,65,.12)`
+  },
+  listOpenUp: {
+    display: "block",
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: `0 8px 0 ${
+      theme.hv.palette.atmosphere.atmo1
+    }, 0 1px 8px rgba(65,65,65,.12)`
   }
 });
 
