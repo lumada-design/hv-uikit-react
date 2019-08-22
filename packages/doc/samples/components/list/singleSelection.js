@@ -15,12 +15,12 @@ const data = [
     label: "Delete"
   },
   {
-    label: "Update"
+    label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
   }
 ];
 
 export default (
   <div style={{ width: 200 }}>
-    <List values={data} selectDefault />
+    <List values={data} selectDefault hasTooltips />
   </div>
 );

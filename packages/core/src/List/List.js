@@ -21,6 +21,7 @@ import isNil from "lodash/isNil";
 import findIndex from "lodash/findIndex";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import NavIcon from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
+import Tooltip from "@material-ui/core/Tooltip";
 import HvLink from "../Link";
 import HvTypography from "../Typography";
 import HvCheckBox from "../Selectors/CheckBox";
@@ -34,13 +35,14 @@ const DEFAULT_STATE = {
   allSelected: false,
   hasLeftIcon: false,
   isFocusDisabled: false,
-  focusedIndex: 0
+  focusedIndex: 0,
+  isOverflow: false
 };
 
 const focusClasses = {
   focusable: "HvFocusable",
   focused: "HvFocused"
-}
+};
 
 const DEFAULT_LABELS = {
   selectAll: "All",
@@ -108,42 +110,42 @@ const parseSelection = (list, multiSelect, selectable, selectDefault, item) => {
 const getFocusableElement = parentElement => {
   let focusableElement = null;
   [focusableElement] = parentElement.getElementsByTagName("a");
-  if(!isNil(focusableElement)) {
+  if (!isNil(focusableElement)) {
     return focusableElement;
   }
   [focusableElement] = parentElement.getElementsByTagName("input");
-  if(!isNil(focusableElement)) {
+  if (!isNil(focusableElement)) {
     return focusableElement;
   }
   return parentElement;
-}
+};
 
 const findLiTag = childElement => {
-  if(childElement && childElement.tagName !== "LI") {
+  if (childElement && childElement.tagName !== "LI") {
     return findLiTag(childElement.parentElement);
   }
   return childElement;
-}
+};
 
 const moveFocus = (event, node, focusableClassName, focusedClassName) => {
   if (isKeypress(event, KeyboardCodes.ArrowDown)) {
     const listNode = node.getElementsByClassName(focusableClassName);
     let currentFocusedItem = node.getElementsByClassName(focusedClassName)[0];
-    if(isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
+    if (isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
     const liNode = findLiTag(currentFocusedItem);
     let index = findIndex(listNode, liNode);
-    index = (index + 1) >= listNode.length ? (listNode.length - 1) : (index + 1);
+    index = index + 1 >= listNode.length ? listNode.length - 1 : index + 1;
     getFocusableElement(listNode[index]).focus();
   } else if (isKeypress(event, KeyboardCodes.ArrowUp)) {
     const listNode = node.getElementsByClassName(focusableClassName);
     let currentFocusedItem = node.getElementsByClassName(focusedClassName)[0];
-    if(isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
+    if (isNil(currentFocusedItem)) [currentFocusedItem] = listNode;
     const liNode = findLiTag(currentFocusedItem);
     let index = findIndex(listNode, liNode);
     index = index - 1 < 0 ? 0 : index - 1;
     getFocusableElement(listNode[index]).focus();
   }
-}
+};
 
 class HvList extends React.Component {
   state = DEFAULT_STATE;
@@ -221,6 +223,25 @@ class HvList extends React.Component {
   }
 
   /**
+   * Check the if the size of the text is greater that the container.
+   *
+   * @param e
+   */
+  textOnMouseEnter(e) {
+    const { isOverflow } = this.state;
+    if (!isOverflow && e.target.scrollWidth > e.target.clientWidth)
+      this.setState({ isOverflow: true });
+  }
+
+  /**
+   * Set default isOverflow value.
+   */
+  textOnMouseLeave() {
+    const { isOverflow } = this.state;
+    if (isOverflow) this.setState({ isOverflow: false });
+  }
+
+  /**
    *  Parse list and normalize it according to item selected and props.
    *
    * @param {Array} list - the list to be parsed.
@@ -235,7 +256,7 @@ class HvList extends React.Component {
 
   handleKeyDown(event, item, useSelector) {
     moveFocus(event, this.node, focusClasses.focusable, focusClasses.focused);
-    if(!useSelector) {
+    if (!useSelector) {
       this.handleSelection(item);
     }
   }
@@ -314,7 +335,6 @@ class HvList extends React.Component {
 
   renderMultiSelect(item) {
     const { classes, useSelector } = this.props;
-
     return useSelector ? (
       <HvCheckBox
         label={item.label}
@@ -330,9 +350,35 @@ class HvList extends React.Component {
     );
   }
 
-  renderSingleSelect(item) {
-    const { classes, useSelector } = this.props;
+  renderItemTextWithTooltip(item) {
+    const { isOverflow } = this.state;
+    const { classes } = this.props;
 
+    return isOverflow ? (
+      <Tooltip
+        className={classes.truncate}
+        disableFocusListener
+        disableTouchListener
+        title={item.label}
+      >
+        <div onMouseLeave={() => this.textOnMouseLeave()}>
+          {this.renderItemText(item)}
+        </div>
+      </Tooltip>
+    ) : (
+      <div
+        className={classes.truncate}
+        onMouseEnter={e => this.textOnMouseEnter(e)}
+      >
+        {this.renderItemText(item)}
+      </div>
+    );
+  }
+
+  renderSingleSelect(item) {
+    const { classes, useSelector, hasTooltips } = this.props;
+
+    // eslint-disable-next-line no-nested-ternary
     return useSelector ? (
       <HvRadioButton
         label={item.label}
@@ -343,6 +389,8 @@ class HvList extends React.Component {
           labelTypography: classes.truncate
         }}
       />
+    ) : hasTooltips ? (
+      this.renderItemTextWithTooltip(item)
     ) : (
       this.renderItemText(item)
     );
@@ -367,18 +415,19 @@ class HvList extends React.Component {
   renderItem(key, item) {
     const { isFocusDisabled } = this.state;
     const { classes, multiSelect, useSelector, condensed } = this.props;
-
     return (
       <li
         key={key}
-        onKeyDown={(event) => this.handleKeyDown(event, item, useSelector)}
+        onKeyDown={event => this.handleKeyDown(event, item, useSelector)}
         onMouseDown={() => !useSelector && this.handleSelection(item)}
         onMouseUp={() => !useSelector && this.handleMouseUp(item)}
         onFocus={event => {
-          event.target.classList.add(focusClasses.focused)
-          if(!useSelector) this.handleSelection(item)
+          event.target.classList.add(focusClasses.focused);
+          if (!useSelector) this.handleSelection(item);
         }}
-        onBlur={event => {event.target.classList.remove(focusClasses.focused)}}
+        onBlur={event => {
+          event.target.classList.remove(focusClasses.focused);
+        }}
         role="option"
         aria-selected={item.selected}
         tabIndex={item.path || useSelector ? null : 0}
@@ -406,7 +455,6 @@ class HvList extends React.Component {
   renderItemText(item) {
     const { hasLeftIcon } = this.state;
     const { classes, useRouter } = this.props;
-
     const ItemText = () => (
       <HvTypography
         variant={item.selected ? "selectedText" : "normalText"}
@@ -460,20 +508,22 @@ class HvList extends React.Component {
   render() {
     const { classes, id, multiSelect, showSelectAll } = this.props;
     const { list } = this.state;
-
     return (
       <>
         {list && (
-          <ul 
-            id={id} 
-            className={classes.root} 
-            role="listbox" 
+          <ul
+            id={id}
+            className={classes.root}
+            role="listbox"
             ref={node => {
-                this.node = node;
+              this.node = node;
             }}
           >
             {multiSelect && showSelectAll ? this.renderSelectAll() : null}
-            {list.map((item, i) => this.renderItem(i, item))}
+            {list.map((item, i) => {
+              if (!item.isHidden) return this.renderItem(i, item);
+              return null;
+            })}
           </ul>
         )}
       </>
@@ -559,6 +609,7 @@ HvList.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
+      isHidden: PropTypes.bool,
       leftIcon: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
@@ -612,7 +663,11 @@ HvList.propTypes = {
   /**
    * If ´true´ the list will be rendered without vertical spacing.
    */
-  condensed: PropTypes.bool
+  condensed: PropTypes.bool,
+  /**
+   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   */
+  hasTooltips: PropTypes.bool
 };
 
 HvList.defaultProps = {
@@ -626,7 +681,8 @@ HvList.defaultProps = {
   onClick() {},
   selectable: true,
   selectDefault: true,
-  condensed: false
+  condensed: false,
+  hasTooltips: false
 };
 
 export default HvList;

@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
 import HvTypography from "../Typography";
@@ -45,59 +45,33 @@ class Main extends React.Component {
     this.state = {
       isOpen: props.expanded,
       selectionLabel: props.multiSelect ? labels.selectAll : labels.select,
+      anchorEl: null,
       labels
     };
   }
 
+  /**
+   * Set up the header label.
+   */
   componentDidMount() {
-    document.addEventListener("click", this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("click", this.handleClickOutside);
-  }
-
-  /**
-   *  Closes the dropdown whenever there is a click outside the document.
-   *
-   * @param {Object} evt - the event produced by clicking outside.
-   */
-  handleClickOutside = evt => {
-    if (!this.node.contains(evt.target)) {
-      this.setState({ isOpen: false });
+    const { values, selectDefault } = this.props;
+    if (values) {
+      let selected = values.filter(elem => elem.selected);
+      if (selected.length === 0 && selectDefault) {
+        selected = [values[0]];
+      }
+      this.setSelectionLabel(true, selected);
     }
-  };
-
-  /**
-   *  Opens and closes the dropdown
-   *
-   * @param {Object} evt - the event produced by the click action.
-   * @returns {undefined}
-   * @memberof Main
-   */
-  handleToggle(evt) {
-    const { disabled } = this.props;
-    const { isOpen } = this.state;
-    if (evt) evt.stopPropagation();
-    // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
-    if (disabled || isKeypress(evt, KeyboardCodes.Enter) === false) return;
-
-    this.setState({
-      isOpen: !isOpen
-    });
   }
 
   /**
-   * Applies the selected values to the state
+   * Set the selectionLabel.
    *
-   * @param {Array} selection - An array containing the selected values.
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
-   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
-   * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
-   * @memberof Main
+   * @param  {Array} selection - An array containing the selected values.
    */
-  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
-    const { values, multiSelect, onChange } = this.props;
+  setSelectionLabel(commitChanges, selection) {
+    const { values, multiSelect } = this.props;
     const { labels } = this.state;
     const hasSelection = selection.length > 0;
     const isSingleSelection = selection.length === 1;
@@ -115,7 +89,51 @@ class Main extends React.Component {
 
       this.setState({ selectionLabel });
     }
+  }
 
+  /**
+   *  Closes the dropdown whenever there is a click outside the document.
+   *
+   * @param {Object} evt - the event produced by clicking outside.
+   */
+  handleClickAway = evt => {
+    if (!this.node.contains(evt.target)) this.setState({ isOpen: false });
+  };
+
+  /**
+   *  Opens and closes the dropdown.
+   *
+   * @param {Object} evt - the event produced by the click action.
+   * @returns {undefined}
+   * @memberof Main
+   */
+  handleToggle(evt) {
+    const { disabled } = this.props;
+    const { isOpen } = this.state;
+    if (evt) evt.stopPropagation();
+    // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
+    if (disabled || isKeypress(evt, KeyboardCodes.Enter) === false) return;
+
+    const anchor = evt ? evt.currentTarget : null;
+
+    this.setState({
+      isOpen: !isOpen,
+      anchorEl: anchor
+    });
+  }
+
+  /**
+   * Applies the selected values to the state
+   *
+   * @param {Array} selection - An array containing the selected values.
+   * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
+   * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
+   * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
+   * @memberof Main
+   */
+  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
+    const { multiSelect, onChange } = this.props;
+    this.setSelectionLabel(commitChanges, selection);
     if (toggle) this.handleToggle();
     if (notifyChanges) onChange(multiSelect ? selection : selection[0]);
   }
@@ -132,7 +150,7 @@ class Main extends React.Component {
     const color = disabled
       ? ["none", theme.hv.palette.atmosphere.atmo7]
       : undefined;
-    
+
     return (
       <div
         id="header"
@@ -170,39 +188,33 @@ class Main extends React.Component {
 
   renderList() {
     const {
-      classes,
       values,
       multiSelect,
       showSearch,
       selectDefault,
-      notifyChangesOnFirstRender
+      notifyChangesOnFirstRender,
+      disablePortal,
+      hasTooltips
     } = this.props;
-    const { isOpen, labels } = this.state;
+    const { isOpen, labels, anchorEl } = this.state;
 
     return (
-      <div
-        className={classNames([
-          classes.list,
-          classes.listClosed,
-          {
-            [classes.listOpen]: isOpen
-          }
-        ])}
-      >
-        <div className={classes.listBorder} />
-        <List
-          values={values}
-          multiSelect={multiSelect}
-          isOpen={isOpen}
-          showSearch={showSearch}
-          onChange={(selected, commitChanges, toggle, notifyChanges) =>
-            this.handleSelection(selected, commitChanges, toggle, notifyChanges)
-          }
-          labels={labels}
-          selectDefault={selectDefault}
-          notifyChangesOnFirstRender={notifyChangesOnFirstRender}
-        />
-      </div>
+      <List
+        values={values}
+        multiSelect={multiSelect}
+        showSearch={showSearch}
+        onChange={(selected, commitChanges, toggle, notifyChanges) =>
+          this.handleSelection(selected, commitChanges, toggle, notifyChanges)
+        }
+        labels={labels}
+        selectDefault={selectDefault}
+        notifyChangesOnFirstRender={notifyChangesOnFirstRender}
+        hasTooltips={hasTooltips}
+        disablePortal={disablePortal}
+        isOpen={isOpen}
+        anchorEl={anchorEl}
+        handleClickAway={this.handleClickAway}
+      />
     );
   }
 
@@ -212,10 +224,13 @@ class Main extends React.Component {
     const { isOpen } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         {label || labels.title ? this.renderLabel() : null}
         <div
           id={id}
+          ref={el => {
+            this.node = el;
+          }}
           className={classNames([
             classes.root,
             {
@@ -224,14 +239,11 @@ class Main extends React.Component {
             },
             className
           ])}
-          ref={el => {
-            this.node = el;
-          }}
         >
           {this.renderHeader()}
           {this.renderList()}
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -341,7 +353,7 @@ Main.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * If 'true' the dropdown will notify changes everytime it re-renders.
+   * If 'true' the dropdown will notify on the first render.
    */
   notifyChangesOnFirstRender: PropTypes.bool,
   /**
@@ -371,7 +383,16 @@ Main.propTypes = {
   /**
    * The theme passed by the provider.
    */
-  theme: PropTypes.instanceOf(Object)
+  theme: PropTypes.instanceOf(Object),
+  /**
+   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   */
+  hasTooltips: PropTypes.bool,
+  /**
+   * Disable the portal behavior.
+   * The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: PropTypes.bool
 };
 
 Main.defaultProps = {
@@ -387,7 +408,9 @@ Main.defaultProps = {
   notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true,
-  theme: null
+  theme: null,
+  disablePortal: false,
+  hasTooltips: false
 };
 
 export default Main;

@@ -13,6 +13,10 @@ const smallData = [
   },
   {
     label: "value 4"
+  },
+  {
+    label:
+      "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5"
   }
 ];
 
@@ -22,5 +26,6 @@ export default (
     multiSelect={false}
     showSearch={false}
     selectDefault={false}
+    hasTooltips
   />
 );
