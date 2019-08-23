@@ -9,7 +9,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * **chart:** change plot background according to theme. [#406](https://github.com/pentaho/hv-uikit-react/issues/406) ([46f8855](https://github.com/pentaho/hv-uikit-react/commit/46f8855))
-* **doc:** usage of lab components pointing to core. [#447](https://github.com/pentaho/hv-uikit-react/issues/447) ([#449](https://github.com/pentaho/hv-uikit-react/issues/449)) ([fc35a0f](https://github.com/pentaho/hv-uikit-react/commit/fc35a0f))
+* **doc:** usage of lab components pointing to core. [#447](https://github.com/pentaho/hv-uikit-react/issues/447) ([fc35a0f](https://github.com/pentaho/hv-uikit-react/commit/fc35a0f))
 * **table:** adjust table column borders according to DS. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([6da0456](https://github.com/pentaho/hv-uikit-react/commit/6da0456))
 * **table:** refactor expand logic to allow sort. [#353](https://github.com/pentaho/hv-uikit-react/issues/353) ([fe93730](https://github.com/pentaho/hv-uikit-react/commit/fe93730))
 
@@ -18,9 +18,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **header:** add responsive header to lab [#421](https://github.com/pentaho/hv-uikit-react/issues/421) ([945b229](https://github.com/pentaho/hv-uikit-react/commit/945b229))
 * **searchbox:** adding searchbox component.[#62](https://github.com/pentaho/hv-uikit-react/issues/62) ([7f2b7ba](https://github.com/pentaho/hv-uikit-react/commit/7f2b7ba))
-* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([c92c174](https://github.com/pentaho/hv-uikit-react/commit/c92c174))
-* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([b9a0463](https://github.com/pentaho/hv-uikit-react/commit/b9a0463))
-* **toggle-switch:** promote switch from lab to core. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([#438](https://github.com/pentaho/hv-uikit-react/issues/438)) ([e8c53f5](https://github.com/pentaho/hv-uikit-react/commit/e8c53f5))
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([c92c174](https://github.com/pentaho/hv-uikit-react/commit/c92c174), [b9a0463](https://github.com/pentaho/hv-uikit-react/commit/b9a0463))
+* **toggle-switch:** promote switch from lab to core. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([e8c53f5](https://github.com/pentaho/hv-uikit-react/commit/e8c53f5))
 
 
 
