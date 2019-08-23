@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme/build";
-import moment from "moment/moment";
+import moment from "moment-timezone";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import HvNotificationPanelWithStyles from "../index";
 import HvNotificationPanel from "../NotificationPanel";
@@ -37,20 +37,20 @@ const baseProps = {
       id: "1",
       title: "Test",
       isRead: false,
-      date: moment(),
+      date: moment.tz("Europe/Lisbon"),
       icon: <img alt="test" src="test warning" />
     },
     {
       id: "2",
       title: "Test 2",
       isRead: true,
-      date: moment().subtract(1, "day")
+      date: moment.tz("Europe/Lisbon").subtract(1, "day")
     },
     {
       id: "3",
       title: "Test 2",
       isRead: true,
-      date: moment().subtract(1, "month")
+      date: moment.tz("Europe/Lisbon").subtract(1, "month")
     }
   ],
   footer: <div className="footer" />
@@ -146,7 +146,7 @@ describe("Hv NotificationPanel", () => {
           .at(1)
           .instance()
           .getTime()
-      ).toEqual("Sun, 1:14 PM");
+      ).toEqual("Sun, 6:14 PM");
 
       expect(
         notifications
@@ -154,7 +154,7 @@ describe("Hv NotificationPanel", () => {
           .at(2)
           .instance()
           .getTime()
-      ).toEqual("24 May 2019, 1:14 PM");
+      ).toEqual("24 May 2019, 6:14 PM");
     });
   });
 });
