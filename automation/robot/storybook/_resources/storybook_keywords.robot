@@ -30,7 +30,8 @@ apply storybook theme
     ${actual_theme}=               Set Variable If                    '${color}' == 'rgb(204, 204, 204)'    dark     default
     Return From Keyword If         '${actual_theme}' == '${theme}'
     Click Button                   ${button}
-    Wait Until Keyword Succeeds    5    400ms    verify css element property has different value    ${button}    color    ${color}
+    sleep                          1s   #necessary for some browsers fade
+    Wait Until Keyword Succeeds    3    1s    verify css element property has different value    ${button}    color    ${color}
 
 get css property value
     [Arguments]        ${locator}    ${property}
@@ -85,8 +86,4 @@ verify css element property value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}    get css property value    ${locator}    ${property}
     Should Be Equal     ${current_value}          ${value}      error message: the css element property don't have the correct value
-
-
-
-    
-    
+
