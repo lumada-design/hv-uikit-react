@@ -61,24 +61,22 @@ const List = ({
    * @param param
    * @returns {*}
    */
-  const findSelected = param => param.filter(elem => elem.selected === true);
+  const findSelected = param =>
+    param ? param.filter(elem => elem.selected === true) : [];
 
   /**
    * After the first render, call onChange if notifyChangesOnFirstRender.
    */
   useEffect(() => {
+    const newList = findSelected(list);
     if (notifyChangesOnFirstRender) {
-      onChange(findSelected(values), false, false, true);
+      onChange(newList, false, false, true);
+    }
+    if (list) {
+      // eslint-disable-next-line no-use-before-define
+      updateSelectionLabel(newList);
     }
   }, []);
-
-  /**
-   * Update selectAll in with render.
-   */
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    if (list) updateSelectAll(list);
-  });
 
   /**
    * Sets the filtered values to the state.
@@ -123,6 +121,23 @@ const List = ({
   );
 
   /**
+   * Update the selectionLabel.
+   *
+   * @param selection
+   */
+  const updateSelectionLabel = selection => {
+    const hasSelection = selection.length > 0;
+
+    const { selectAll, multiSelectionConjunction } = labels;
+
+    setSelectionLabel(
+      !hasSelection
+        ? selectAll
+        : `${selection.length} ${multiSelectionConjunction} ${list.length}`
+    );
+  };
+
+  /**
    * Centralized point to call the prop onChange, altering the selection label.
    * @param selection
    * @param commitChanges
@@ -131,17 +146,7 @@ const List = ({
    */
   const sendOnChange = (selection, commitChanges, toggle, notifyChanges) => {
     onChange(selection, commitChanges, toggle, notifyChanges);
-
-    const hasSelection = selection.length > 0;
-
-    const { selectAll, multiSelectionConjunction } = labels;
-
-    if (commitChanges)
-      setSelectionLabel(
-        !hasSelection
-          ? selectAll
-          : `${selection.length} ${multiSelectionConjunction} ${list.length}`
-      );
+    updateSelectionLabel(selection);
   };
 
   /**
@@ -194,7 +199,7 @@ const List = ({
         checked={allSelected}
       />
     </div>
-    );
+  );
   /**
    * Clean the list of selected values.
    */
