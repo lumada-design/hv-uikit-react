@@ -315,12 +315,14 @@ const List = ({
   };
 
   /**
-   * Send the indication of click away.
+   * Send the indication of click away and cancel any selection.
    *
    * @param evt
    */
-  const handleClickAwayInternal = evt => handleClickAway(evt);
-
+  const handleClickAwayInternal = evt => {
+    handleCancel();
+    handleClickAway(evt);
+  };
   const showList = !isNil(values);
 
   return (
