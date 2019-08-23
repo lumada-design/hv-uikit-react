@@ -4,7 +4,10 @@ Resource          _resources/button_keywords.robot
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Template     Test button state transition between focus-focus
-Default Tags      smoke
+Default Tags      smoke     bug-edge-webdriver
+
+*** Comments ***
+bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16448300/
 
 *** Keywords ***
 Test button state transition between focus-focus
