@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.3.0...@hv/uikit-react-core@1.4.0) (2019-08-23)
+
+
+### Bug Fixes
+
+* **chart:** change plot background according to theme. [#406](https://github.com/pentaho/hv-uikit-react/issues/406) ([46f8855](https://github.com/pentaho/hv-uikit-react/commit/46f8855))
+* **list:** single selection first render when selected. [#416](https://github.com/pentaho/hv-uikit-react/issues/416) ([48114c3](https://github.com/pentaho/hv-uikit-react/commit/48114c3))
+* **login:** update component according to ds guidelines. [#299](https://github.com/pentaho/hv-uikit-react/issues/299) ([#451](https://github.com/pentaho/hv-uikit-react/issues/451)) ([2a67f9f](https://github.com/pentaho/hv-uikit-react/commit/2a67f9f))
+* **table:** adjust table column borders according to DS. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([6da0456](https://github.com/pentaho/hv-uikit-react/commit/6da0456))
+* **table:** adjust table styles according to DS. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([cdbd514](https://github.com/pentaho/hv-uikit-react/commit/cdbd514))
+* **table:** fix border on fixed columns. [#294](https://github.com/pentaho/hv-uikit-react/issues/294) ([cdf9036](https://github.com/pentaho/hv-uikit-react/commit/cdf9036))
+* **table:** refactor expand logic to allow sort. [#353](https://github.com/pentaho/hv-uikit-react/issues/353) ([fe93730](https://github.com/pentaho/hv-uikit-react/commit/fe93730))
+
+
+### Features
+
+* **searchbox:** adding searchbox component.[#62](https://github.com/pentaho/hv-uikit-react/issues/62) ([7f2b7ba](https://github.com/pentaho/hv-uikit-react/commit/7f2b7ba))
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([c92c174](https://github.com/pentaho/hv-uikit-react/commit/c92c174))
+* **toggle-switch:** promote switch from lab to core. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([#438](https://github.com/pentaho/hv-uikit-react/issues/438)) ([e8c53f5](https://github.com/pentaho/hv-uikit-react/commit/e8c53f5))
+
+
+
+
+
 # [1.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.2.0...@hv/uikit-react-core@1.3.0) (2019-08-15)
 
 

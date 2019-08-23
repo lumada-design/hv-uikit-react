@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.4.0...@hv/uikit-react-lab@1.5.0) (2019-08-23)
+
+
+### Features
+
+* **header:** add responsive header to lab [#421](https://github.com/pentaho/hv-uikit-react/issues/421) ([945b229](https://github.com/pentaho/hv-uikit-react/commit/945b229))
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([11083a7](https://github.com/pentaho/hv-uikit-react/commit/11083a7))
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([b9a0463](https://github.com/pentaho/hv-uikit-react/commit/b9a0463))
+* **toggle-switch:** implement the Toggle Switch Component. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([#427](https://github.com/pentaho/hv-uikit-react/issues/427)) ([e7ec2cc](https://github.com/pentaho/hv-uikit-react/commit/e7ec2cc))
+* **toggle-switch:** promote switch from lab to core. [#252](https://github.com/pentaho/hv-uikit-react/issues/252) ([#438](https://github.com/pentaho/hv-uikit-react/issues/438)) ([e8c53f5](https://github.com/pentaho/hv-uikit-react/commit/e8c53f5))
+
+
+
+
+
 # [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.3.0...@hv/uikit-react-lab@1.4.0) (2019-08-21)
 
 
