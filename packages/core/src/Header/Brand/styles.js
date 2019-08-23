@@ -20,7 +20,14 @@ const styles = theme => ({
     display: "inherit",
     alignItems: "center",
     height: "100%",
-    marginRight: `${theme.hv.spacing.lg}px`
+    marginRight: `${theme.hv.spacing.lg}px`,
+    zIndex:2
+  },
+
+  centerBrandContainer: {
+    flex: 1,
+    display: "flex",
+    justifyContent: "center"
   },
   iconContainer: {
     display: "inherit",
@@ -32,12 +39,12 @@ const styles = theme => ({
     alignItems: "center"
   },
   separator: {
-    width: `${theme.hv.spacing.sm}px`,
-    height: `${theme.hv.spacing.md}px`,
-    borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    width: `${theme.hv.spacing.xs}px`,
+    height: `${theme.hv.spacing.sm}px`,
+    borderRight: `1px solid ${theme.hv.palette.accent.acce1}`
   },
   separatorPadding: {
-    width: `${theme.hv.spacing.sm}px`
+    width: `${theme.hv.spacing.xs}px`
   },
   separatorBox: {
     display: "flex"
@@ -45,7 +52,8 @@ const styles = theme => ({
   productLogoTextContainer: {
     height: "46px",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    whiteSpace: "nowrap"
   },
   paddingTextLeft: { paddingLeft: `${theme.hv.spacing.xs}px` }
 });

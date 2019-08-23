@@ -18,7 +18,8 @@ const styles = theme => ({
   actionsContainer: {
     display: "flex",
     height: "100%",
-    alignItems: "center"
+    alignItems: "center",
+    zIndex:2
   },
   marginLeft: {
     marginLeft: `${theme.hv.spacing.lg}px`

@@ -1,80 +1,83 @@
 import React, { useState } from "react";
-import isNil from "lodash/isNil";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import HitachiLogo from "./resources/hitachi";
 import UserIcon from "@hv/uikit-react-icons/dist/User.S";
-import CalendarIcon from "@hv/uikit-react-icons/dist/DawnTheme/Calendar.S";
-import LineChartIcon from "@hv/uikit-react-icons/dist/DawnTheme/LineChart.S";
-import PlaneIcon from "@hv/uikit-react-icons/dist/DawnTheme/Plane.S";
+import HelpIcon from "@hv/uikit-react-icons/dist/Help.S";
+import HitachiLogo from "./resources/hitachi";
+
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
 const navigationData = {
-  showSearch: false,
   data: [
     {
       label: "Overview",
-      leftIcon: UserIcon,
       path: "/"
     },
     {
       label: "Events",
-      leftIcon: CalendarIcon,
       path: "/events"
     },
     {
       label: "Work orders",
-      path: "/work",
-      leftIcon: CalendarIcon
+      path: "/work"
     },
     {
       label: "Asset",
-      leftIcon: PlaneIcon,
       path: "/asset"
     },
     {
       label: "Analytics",
-      leftIcon: LineChartIcon,
-      showNavIcon: true,
-      path: "/Analytics",
-      subData: {
-        data: [
-          {
-            label: "Model Effectiveness",
-            leftIcon: UserIcon,
-            path: "/meffectiveness"
-          },
-          {
-            label: "Trend Analysis",
-            leftIcon: CalendarIcon,
-            path: "/tAnalysis"
-          }
-        ]
-      }
+      path: "/Analytics"
     },
     {
       label: "Resources",
-      leftIcon: PlaneIcon,
       path: "/Resources"
     }
   ]
 };
 
+const responsivenessConfig = {
+  showHbMenus: "sm",
+  showNavigation: "lg",
+  showUser: "sm",
+  centerAlignElement: "sm"
+};
+
+const actionValues = [
+  {
+    label: "Profile",
+    leftIcon: UserIcon,
+    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
+    onVerticalClick: () => alert("Profile"),
+    path: "route3"
+  },
+  {
+    label: "Notifications",
+    leftIcon: AlertS,
+    horizontalItemAction:<HvBadge count={88} icon={<AlertS onClick={() => alert("Notification")} />} />,
+    onVerticalClick: () => alert("Notifications"),
+    path: "route3"
+  }
+];
 
 const SimpleHeaderController = ({
   position,
   navigationData,
   companyLogo,
   productLogo,
-  label
+  label,
+  actionValues,
+  responsivenessConfig
 }) => {
-  const [selected, setSelected] = useState([0, -1]);
+  const [selected, setSelected] = useState(0);
 
-  const handleSelection = (index, subIndex) => {
-    setSelected([index, subIndex]);
+  const handleSelection = (index) => {
+    setSelected(index);
   }
 
-  const handleKeyDown = (index, subIndex, event) => {
+  const handleKeyDown = (index, event) => {
     if(!isKeypress(event, KeyboardCodes.Enter)) {
       return
     }
@@ -83,6 +86,7 @@ const SimpleHeaderController = ({
 
   return (
     <HvHeader
+      id="test"
       position={position}
       // Brand
       companyLogo={companyLogo}
@@ -94,6 +98,9 @@ const SimpleHeaderController = ({
       onNavigationKeyDown={handleKeyDown}
       selected={selected}
       useRouter
+      // Actions
+      actionValues={actionValues}
+      responsivenessConfig={responsivenessConfig}
     />
   );
 };
@@ -104,8 +111,14 @@ export default (
       position="static"
       // Brand
       companyLogo={<Hitachi />}
+      label="Maintenance Insights"
       // Navigation
       navigationData={navigationData}
+      selected={0}
+      useRouter
+      // Actions
+      actionValues={actionValues}
+      responsivenessConfig={responsivenessConfig}
     />
   </div>
 );

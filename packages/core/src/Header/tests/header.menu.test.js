@@ -14,19 +14,29 @@
  * limitations under the License.
  */
 
-const styles = () => ({
-  shadowPadding:{
-    padding:"0 10px"
-  },
-  navButton: {
-    zIndex: "3",
-    cursor: "pointer",
-    minWidth: 30,
-    marginRight: 20
-  },
-  verticalNavigationSeparation: {
-    marginTop: "5px"
-  }
+/* eslint-env jest */
+
+import React from "react";
+import { shallow } from "enzyme";
+
+// import Settings from "@hv/uikit-react-icons/dist/Settings.S";
+import MainWithStyles from "../index";
+// import Main from "../Header";
+// import HvProvider from "../../Provider";
+
+describe("Header withStyles", () => {
+  let wrapper;
+
+  beforeEach(async () => {
+    wrapper = shallow(<MainWithStyles />);
+  });
+
+  it("should be defined", () => {
+    expect(wrapper).toBeDefined();
+  });
+
+
+
 });
 
-export default styles;
+
