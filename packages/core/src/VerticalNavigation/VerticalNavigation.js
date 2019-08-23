@@ -52,13 +52,14 @@ class VerticalNavigation extends React.Component {
   constructor(props) {
     super(props);
     const { values, noAnimation } = this.props;
+    const nValues = isNil(values) ? [] : [values];
 
     this.state = {
       /**
        * Arrays used to maintain a history to be possible to navigate through several sub-levels.
        */
       title: [],
-      list: [values],
+      list: nValues,
       /**
        * Search string always set to "" in each level change.
        */
@@ -205,37 +206,43 @@ class VerticalNavigation extends React.Component {
     const currentList = last(list);
     const isFirstLevel = list.length === 1;
     const showSearchBox = currentList.showSearch;
+    const noValues =
+      !isNil(currentList.data) &&
+      Array.isArray(currentList.data) &&
+      currentList.data.length > 0;
 
     return (
       <div className={classes.innerContainer}>
-        <div className={classes.listContainer}>
-          {currentTitle && (
-            <Title title={currentTitle} onClick={this.onReturn} />
-          )}
-          {showSearchBox && (
-            <div className={classes.searchBoxContainer}>
-              <SearchBox
-                onChange={str => this.handleSearch(str)}
-                value={searchStr}
+        {noValues && (
+          <div className={classes.listContainer}>
+            {currentTitle && (
+              <Title title={currentTitle} onClick={this.onReturn} />
+            )}
+            {showSearchBox && (
+              <div className={classes.searchBoxContainer}>
+                <SearchBox
+                  onChange={str => this.handleSearch(str)}
+                  value={searchStr}
+                />
+              </div>
+            )}
+            <div
+              className={classNames(classes.scrollContainer, {
+                [classes.withSearch]: showSearchBox && isFirstLevel,
+                [classes.withTitle]: !showSearchBox && currentTitle,
+                [classes.withTitleAndSearch]: showSearchBox && currentTitle
+              })}
+            >
+              <List
+                values={currentList.data}
+                onClick={this.onSelection}
+                selectDefault={false}
               />
             </div>
-          )}
-          <div
-            className={classNames(classes.scrollContainer, {
-              [classes.withSearch]: showSearchBox && isFirstLevel,
-              [classes.withTitle]: !showSearchBox && currentTitle,
-              [classes.withTitleAndSearch]: showSearchBox && currentTitle
-            })}
-          >
-            <List
-              values={currentList.data}
-              onClick={this.onSelection}
-              selectDefault={false}
-            />
           </div>
-        </div>
+        )}
         {isFirstLevel && actionValues && (
-          <div className={classes.actionContainer}>
+          <div className={classNames(classes.actionContainer, {[classes.soloActionContainer]: !noValues})}>
             <List
               values={actionValues}
               selectDefault={false}
@@ -249,10 +256,10 @@ class VerticalNavigation extends React.Component {
 
   render() {
     const { mirror, show, showAnimation } = this.state;
-    const { classes } = this.props;
+    const { classes, className } = this.props;
 
     return (
-      <div className={classes.verticalContainer}>
+      <div className={classNames([classes.verticalContainer, className])}>
         {showAnimation && (
           <Fade right mirror={mirror} when={show} duration={ANIMATION_DURATION}>
             {this.renderVerticalNavigation()}
@@ -265,6 +272,10 @@ class VerticalNavigation extends React.Component {
 }
 
 VerticalNavigation.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * Styles applied to the element.
    */
@@ -355,6 +366,7 @@ VerticalNavigation.propTypes = {
 VerticalNavigation.defaultProps = {
   values: [],
   actionValues: null,
+  className: "",
   onClick: undefined,
   onClickAction: undefined,
   noAnimation: false

@@ -18,6 +18,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import withConfig from "../config/withConfig";
 
 class HvLink extends React.Component {
@@ -38,10 +39,13 @@ class HvLink extends React.Component {
       options,
       config,
       useRouter,
-      onClick
+      onClick,
+      tabIndex,
+        ...other
     } = this.props;
 
     const handleClick = e => {
+      if(isKeypress(e, KeyboardCodes.Tab)) return;
       if (useRouter && config.router) {
         onClick({ route, params });
         e.preventDefault();
@@ -50,7 +54,7 @@ class HvLink extends React.Component {
     };
 
     return useRouter ? (
-      <div onClick={handleClick} role="button" className={classes.a} onKeyDown={handleClick} tabIndex={0}>
+      <div onClick={handleClick} role="button" className={classes.a} onKeyDown={handleClick} tabIndex={tabIndex} {...other}>
         {children}
       </div>
     ) : (
@@ -69,13 +73,15 @@ HvLink.propTypes = {
   options: PropTypes.instanceOf(Object),
   config: PropTypes.instanceOf(Object).isRequired,
   useRouter: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  tabIndex: PropTypes.number
 };
 
 HvLink.defaultProps = {
   useRouter: false,
   params: {},
   options: {},
+  tabIndex: 0,
   onClick: () => {}
 };
 

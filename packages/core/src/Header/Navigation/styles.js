@@ -15,33 +15,88 @@
  */
 
 const styles = theme => ({
+  navigationContainer: {
+    display: "contents"
+  },
+  menuContainer: {
+    display: "flex",
+    flex: 1,
+    justifyContent: "center",
+    height: "100%",
+    zIndex: 2
+  },
+  emptyContainer: {
+    width: "100%",
+  },
   menu: {
     display: "flex",
     flex: 1,
-    justifyContent: "left",
+    justifyContent: "center",
+    height: "100%",
+    width: "100%",
+    zIndex: 2,
+    position: "absolute",
+    top: 0,
+    left: 0,
     "& > a, > div": {
-      paddingRight: `${theme.hv.spacing.xs}px`
+      paddingRight: `0px`,
+      margin: `0px 0 ${theme.hv.spacing.xs}px 0`
     },
     "& > a:last-child, > div:last-child": {
-      paddingRight: "0px"
+      paddingRight: "0px",
+      margin: `0px 0 ${theme.hv.spacing.xs}px 0`
     }
   },
-  "@media (max-width: 1120px)": {
-    menu: {
-      display: "none"
+  subMenuCurtain: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    zIndex: 1,
+    left: 0,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
+  },
+  subMenuContainer: {
+    width: "100%",
+    height: "40px",
+    position: "absolute",
+    boxShadow: "0 0 0 #fff, 0px 6px 12px rgba(65,65,65,.12);",
+    top: "46px",
+    left: "0",
+    backgroundColor: theme.hv.palette.atmosphere.atmo3
+  },
+  subMenu: {
+    "& > a, > div": {
+      margin: "0",
+      borderTop: `2px solid transparent`
+    },
+    "& > a:last-child, > div:last-child": {
+      margin: "0",
+      borderTop: `2px solid transparent`
     }
   },
   listItem: {
     position: "relative",
     width: "unset",
     maxWidth: "170px",
-    padding: `0 ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
+    height: "100%",
+    padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
     "&:focus": {
       backgroundColor: theme.hv.palette.atmosphere.atmo1
+    },
+    "&:hover": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    }
+  },
+  subListItem: {
+    maxWidth: "200px",
+    "&:focus": {
+      backgroundColor: "transparent"
     }
   },
   listItemText: {
-    textTransform: "capitalize",
     padding: 0
   },
   label: {
@@ -52,18 +107,16 @@ const styles = theme => ({
     fontFamily: theme.hv.typography.fontFamily
   },
   selected: {
-    "& span": {
-      fontWeight: "bold",
-      color: theme.hv.palette.accent.acce3
-    }
+    "& p": {
+      color: theme.hv.typography.selectedNavText.color,
+      fontWeight: theme.hv.typography.selectedNavText.fontWeight
+    },
   },
-  selector: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    top: -7,
-    left: 0,
-    borderTop: `4px solid ${theme.hv.palette.accent.acce3}`
+  selectedButton: {
+    borderTop: `2px solid ${theme.hv.palette.accent.acce3}`
+  },
+  notSelectedButton: {
+    borderTop: `2px solid transparent`
   }
 });
 

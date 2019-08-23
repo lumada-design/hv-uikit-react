@@ -1,36 +1,97 @@
 import React, { useState } from "react";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/User.S";
-import SettingIcon from "@hv/uikit-react-icons/dist/Settings.S";
-import HelpIcon from "@hv/uikit-react-icons/dist/Help.S";
+import UserIcon from "@hv/uikit-react-icons/dist/DawnTheme/User.S";
+import SettingIcon from "@hv/uikit-react-icons/dist/DawnTheme/Settings.S";
+import HelpIcon from "@hv/uikit-react-icons/dist/DawnTheme/Help.S";
 import HitachiLogo from "./resources/hitachi";
+import isNil from "lodash/isNil";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import CalendarIcon from "@hv/uikit-react-icons/dist/DawnTheme/Calendar.S";
+import PlaneIcon from "@hv/uikit-react-icons/dist/DawnTheme/Plane.S";
+import LineChartIcon from "@hv/uikit-react-icons/dist/DawnTheme/LineChart.S";
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
-const navigationData = [
+const responsivenessConfig = {
+  showHbMenus: "md",
+  showNavigation: "lg",
+  showUser: "md",
+  showActions: "md",
+  centerAlignElement: "xs"
+};
+
+const navigationData = {
+  showSearch: false,
+  data: [
+    {
+      label: "Overview",
+      leftIcon: UserIcon,
+      path: "/"
+    },
+    {
+      label: "Events",
+      leftIcon: CalendarIcon,
+      path: "/events"
+    },
+    {
+      label: "Work orders",
+      path: "/work",
+      leftIcon: CalendarIcon
+    },
+    {
+      label: "Asset",
+      leftIcon: PlaneIcon,
+      path: "/asset"
+    },
+    {
+      label: "Analytics",
+      leftIcon: LineChartIcon,
+      showNavIcon: true,
+      path: "/Analytics",
+      subData: {
+        data: [
+          {
+            label: "Model Effectiveness",
+            leftIcon: UserIcon,
+            path: "/meffectiveness"
+          },
+          {
+            label: "Trend analysis",
+            leftIcon: CalendarIcon,
+            path: "/tAnalysis"
+          }
+        ]
+      }
+    },
+    {
+      label: "Resources",
+      leftIcon: PlaneIcon,
+      path: "/Resources"
+    }
+  ]
+};
+
+const actionValues = [
   {
-    label: "Overview",
-    path: "/"
+    label: "Profile",
+    leftIcon: UserIcon,
+    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
+    onVerticalClick: () => alert("Profile"),
+    path: "route3"
   },
   {
-    label: "events",
-    path: "/events"
+    label: "Settings",
+    leftIcon: SettingIcon,
+    horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
+    onVerticalClick: () => alert("Settings"),
+    path: "route3"
   },
   {
-    label: "work orders",
-    path: "/work"
-  },
-  {
-    label: "asset",
-    path: "/asset"
-  },
-  {
-    label: "Analytics",
-    path: "/Analytics"
-  },
-  {
-    label: "Resources",
-    path: "/Resources"
+    label: "Help",
+    leftIcon: HelpIcon,
+    horizontalItemAction:<HelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
+    onVerticalClick: () => alert("Help"),
+    path: "route3"
   }
 ];
 
@@ -40,16 +101,21 @@ const SimpleHeaderController = ({
   companyLogo,
   productLogo,
   label,
-  itemActions,
-  userData,
-  userIcon,
-  userClick
+  responsivenessConfig
 }) => {
-  const [selected, setSelected] = useState(0);
 
-  const handleChange = index => {
-    setSelected(index);
+  const handleSelection = (index, subIndex) => {
+    setSelected([index, subIndex]);
+  }
+
+  const handleKeyDown = (index, subIndex, event) => {
+    if(!isKeypress(event, KeyboardCodes.Enter)) {
+      return
+    }
+    handleSelection(index, subIndex);
   };
+
+  const [selected, setSelected] = useState([0, -1]);
 
   return (
     <HvHeader
@@ -60,22 +126,21 @@ const SimpleHeaderController = ({
       productLogo={productLogo}
       label={label}
       // Navigation
-      navigationData={navigationData}
-      onNavigationClick={handleChange}
-      selected={selected}
+      navigationStructure={navigationData}
       useRouter
-      // User
-      userData={userData}
-      userIcon={userIcon}
-      userClick={userClick}
+      selected={selected}
+      onNavigationClick={handleSelection}
+      onNavigationKeyDown={handleKeyDown}
+      // Responsiveness Settings
+      responsivenessConfig={responsivenessConfig}
       // Actions
-      itemActions={itemActions}
+      actionValues={actionValues}
     />
   );
 };
 
 export default (
-  <div style={{overflowX: "auto", overflowY: "hidden"}}>
+  <div style={{ overflowX: "auto", overflowY: "hidden", height: 600 }}>
     <SimpleHeaderController
       position="static"
       // Brand
@@ -85,11 +150,10 @@ export default (
       navigationData={navigationData}
       selected={0}
       useRouter
-      // User
-      userIcon={<UserIcon />}
-      userClick={() => alert("clicked")}
+      // Responsiveness Settings
+      responsivenessConfig={responsivenessConfig}
       // Actions
-      itemActions={[<SettingIcon />, <HelpIcon />]}
+      actionValues={actionValues}
     />
   </div>
 );
