@@ -416,6 +416,7 @@ class Table extends React.Component {
     const {
       classes,
       className,
+      uniqClassName,
       id,
       columns,
       data,
@@ -534,6 +535,7 @@ class Table extends React.Component {
           data={sanitizedData}
           columns={newColumn}
           className="-highlight"
+          uniqClassName={uniqClassName}
           SubComponent={newSubComponent}
           expanded={expanded}
           keyField={idForCheckbox}
@@ -550,6 +552,10 @@ Table.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /**
+   * Unique class name used to identify the fixed table
+   */
+  uniqClassName: PropTypes.string,
   /**
    * Id to be applied to the root node.
    */
@@ -726,6 +732,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   className: "",
+  uniqClassName: null,
   id: undefined,
   titleText: undefined,
   subtitleText: undefined,
