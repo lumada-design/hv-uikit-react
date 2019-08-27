@@ -102,6 +102,10 @@ export default (
       selected={0}
       useRouter
       // User
+      userData={{
+        name: "Andrew Jennings",
+        role: "maintenance manager"
+      }}
       userIcon={<UserS />}
       userClick={() => alert("clicked")}
       // Actions
