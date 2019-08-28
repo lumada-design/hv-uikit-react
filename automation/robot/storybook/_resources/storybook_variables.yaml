@@ -2,3 +2,4 @@ STORYBOOK_URL:    http://localhost:9002
 BROWSER:    ff
 BUTTON_PAGE:    iframe.html?id=corebutton--positive
 PA11Y:    C:\\Users\\jgoncalvesx\\AppData\\Roaming\\npm\\pa11y
+TOLERANCE:    3
