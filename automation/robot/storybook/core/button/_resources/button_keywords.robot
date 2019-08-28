@@ -17,15 +17,17 @@ verify button css properties
 
 verify button background-color change with mouse over
     [Arguments]    ${locator}
-    ${value}                       get css property value    ${locator}    background-color
+    remove mouse over button
+    ${value}                       get constanct css property value    ${locator}    background-color
     Mouse Over                     ${locator}
-    Wait Until Keyword Succeeds    5                         500ms         verify css element property has different value    ${locator}    background-color    ${value}
+    Wait Until Keyword Succeeds    5                                   500ms         verify css element property has different value    ${locator}    background-color    ${value}
 
 verify CSS properties do not changes with mouse over
     [Arguments]    ${locator}
-    ${value}                       get css property value    ${locator}    background-color
+    remove mouse over button    
+    ${value}                       get constanct css property value    ${locator}    background-color
     Mouse Over                     ${locator}
-    Wait Until Keyword Succeeds    5                         500ms         verify css element property value    ${locator}    background-color    ${value}
+    Wait Until Keyword Succeeds    5                                   500ms         verify css element property value    ${locator}    background-color    ${value}
     
 remove mouse over button
     Mouse Over    //body
