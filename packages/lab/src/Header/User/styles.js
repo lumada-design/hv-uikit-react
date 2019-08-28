@@ -55,7 +55,8 @@ const styles = theme => ({
 
     marginRight: `${theme.hv.spacing.xs}px`,
     "& p": {
-      color: theme.palette.text.main
+      color: theme.palette.text.main,
+      whiteSpace: "nowrap"
     }
   }
 });
