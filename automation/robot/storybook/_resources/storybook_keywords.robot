@@ -1,6 +1,7 @@
 *** Settings ***
-Library    SeleniumLibrary
-Library    Collections
+Library      SeleniumLibrary
+Library      RobotEyes
+Library      Collections
 Variables    storybook_variables.yaml
 
 *** Keywords ***
@@ -26,17 +27,16 @@ apply storybook theme
     ...                - recognize as dark theme when "change theme" button color is rgb(204, 204, 204)
     ...    
     ${button}                      Set Variable                       //button[.='Change theme']
-    ${color}                       get css property value             ${button}                             color
-    ${actual_theme}=               Set Variable If                    '${color}' == 'rgb(204, 204, 204)'    dark     default
+    ${color}                       get css property value             ${button}                        color
+    ${actual_theme}=               Set Variable If                    '204, 204, 204' in '${color}'    dark     default
     Return From Keyword If         '${actual_theme}' == '${theme}'
     Click Button                   ${button}
-    sleep                          1s   #necessary for some browsers fade
-    Wait Until Keyword Succeeds    3    1s    verify css element property has different value    ${button}    color    ${color}
+    Wait Until Keyword Succeeds    5    1s    verify css element property has different value    ${button}    color    ${color}
 
 get css property value
     [Arguments]        ${locator}    ${property}
     [Documentation]
-    ...                Get the CSS property value of an Element.
+    ...                Attention! please check also get constanct css property value to avoid fade problems
     ...
     ...                This keyword retrieves the CSS property value of an element. The element
     ...                is retrieved using the locator.
@@ -50,7 +50,7 @@ get css property value
     ...                note: Same output can be get by javascript: "return window.getComputedStyle(document.getElementById("${locator}"), null).getPropertyValue("${attribute name}");
     ...                IE11 webdriver have a bug that returns error running that javascript
     ...    
-    ${css}=         Wait Until Keyword Succeeds    5         400ms                        Get WebElement       ${locator}
+    ${css}=         Wait Until Keyword Succeeds    5         400ms                    Get WebElement       ${locator}
     ${prop_val}=    Call Method                    ${css}    value_of_css_property    ${property}
     [Return]        ${prop_val}
 
@@ -79,11 +79,49 @@ verify element is not focused
 
 verify css element property has different value
     [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}       get css property value    ${locator}    ${property}
-    Should Not Be Equal    ${current_value}          ${value}      error message: the css element property should have different value of "${value}"
+    ${current_value}       get constanct css property value    ${locator}    ${property}
+    Should Not Be Equal    ${current_value}                    ${value}      error message: the css element property should have different value of "${value}"
     
 verify css element property value
     [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}    get css property value    ${locator}    ${property}
-    Should Be Equal     ${current_value}          ${value}      error message: the css element property don't have the correct value
-
+    ${current_value}    get constanct css property value    ${locator}    ${property}
+    Should Be Equal     ${current_value}                    ${value}      error message: the css element property don't have the correct value
+
+capture image of
+    [Arguments]    ${locator}    ${tolerance}=    ${blur}=    ${radius}=
+    [Documentation]
+    ...                If the browser is IntenetExplorer then run keyword "capture full screen"
+    ...                else run keyword "Capture Element"
+    ...
+    ...                Arguments:
+    ...                - locator                             (string)    should have format of prefix=value (example id=default or css=#default)
+    ...                - other arguments                     (string)    are optional for keyword "Capture Element"
+    ...
+    ...                workaround for issue:                 https://github.com/jz-jess/RobotEyes/issues/35
+    ...
+    Run Keyword If    "${BROWSER}".lower().startswith("i",0,1)    Capture Full Screen
+    ...               ELSE                                        Capture Element        ${locator}    ${tolerance}    ${blur}    ${radius}    
+
+setup RobotEyes
+    [Documentation]
+    ...                mandatory setup to:
+    ...                - set baseline directory structure
+    ...                - look on SeleniumLibrary webdriver to capture images
+    ...    
+    ${TEST NAME}    Set Variable       ${SUITE NAME}\\${TEST NAME}\\${BROWSER}
+    Open Eyes       SeleniumLibrary
+
+get constanct css property value
+    [Arguments]        ${locator}    ${property}
+    [Documentation]
+    ...                equal of keyword "get css property value" but wait until 2 seconds to browser fade end
+    ...
+    ${previous}    get css property value    ${locator}    ${property}
+    FOR            ${index}                  IN RANGE                      10
+    \              Sleep                     200ms
+    \              ${last}                   get css property value        ${locator}        ${property}
+    \              Run Keyword If            '${previous}' == '${last}'    Return From Keyword    ${last}
+    \              Run Keyword If            '${previous}' == '${last}'    Exit For Loop
+    \              ${previous}               Set Variable                  ${last}
+    \              Run Keyword If            ${index} == 9                 fail              After 2 seconds The property are still changing
+    END
