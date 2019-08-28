@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.4.0...@hv/uikit-react-core@1.4.1) (2019-08-28)
+
+
+### Bug Fixes
+
+* **table:** snapshots no longer fail on rerun. [#465](https://github.com/pentaho/hv-uikit-react/issues/465) ([305c05c](https://github.com/pentaho/hv-uikit-react/commit/305c05c))
+
+
+
+
+
 # [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.3.0...@hv/uikit-react-core@1.4.0) (2019-08-23)
 
 
