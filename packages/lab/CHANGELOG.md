@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.5.1...@hv/uikit-react-lab@1.5.2) (2019-08-29)
+
+
+### Bug Fixes
+
+* **header:** prevents user name and role from wrapping. [#468](https://github.com/pentaho/hv-uikit-react/issues/468) ([b0f9dbd](https://github.com/pentaho/hv-uikit-react/commit/b0f9dbd))
+
+
+
+
+
 ## [1.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.5.0...@hv/uikit-react-lab@1.5.1) (2019-08-28)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
