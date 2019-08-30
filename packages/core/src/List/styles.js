@@ -62,7 +62,7 @@ const styles = theme => ({
     paddingLeft: 0
   },
   noIconLeftPadding: {
-    paddingLeft: "32px"
+    paddingLeft: `${theme.hv.spacing.md}px`
   },
   navIcon: {
     marginLeft: "auto"
