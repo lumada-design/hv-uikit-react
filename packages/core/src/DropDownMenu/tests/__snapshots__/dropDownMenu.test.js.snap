@@ -22571,7 +22571,7 @@ body {
   padding-left: 0;
 }
 .HvList-noIconLeftPadding-16 {
-  padding-left: 32px;
+  padding-left: 30px;
 }
 .HvList-navIcon-17 {
   margin-left: auto;
@@ -22669,7 +22669,7 @@ body {
                     "padding-left": 0,
                   },
                   Object {
-                    "padding-left": "32px",
+                    "padding-left": "30px",
                   },
                   Object {
                     "margin-left": "auto",
@@ -22731,7 +22731,7 @@ body {
                     "margin-left": "auto",
                   },
                   ".HvList-noIconLeftPadding-16": Object {
-                    "padding-left": "32px",
+                    "padding-left": "30px",
                   },
                   ".HvList-root-9": Object {
                     "display": "block",
@@ -22788,7 +22788,7 @@ body {
                     "margin-left": "auto",
                   },
                   "noIconLeftPadding": Object {
-                    "padding-left": "32px",
+                    "padding-left": "30px",
                   },
                   "root": Object {
                     "display": "block",
@@ -23373,7 +23373,7 @@ body {
                     "marginLeft": "auto",
                   },
                   "noIconLeftPadding": Object {
-                    "paddingLeft": "32px",
+                    "paddingLeft": "30px",
                   },
                   "root": Object {
                     "display": "block",
