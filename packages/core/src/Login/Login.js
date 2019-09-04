@@ -25,7 +25,7 @@ import HvGrid from "../Grid";
 
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
-import backImg from "./resources/bg.svg";
+import defaultBackImage from "./resources/bg.svg";
 
 /**
  * Main container for the Login component.
@@ -72,19 +72,9 @@ class HvLogin extends React.Component {
       incorrectCredentialsMessage
     } = this.props;
     const { inRecoveryMode } = this.state;
+    const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
 
     let form;
-    let backgroundLoginImg;
-
-    if (backgroundImage.length === 0) {
-      backgroundLoginImg = backImg;
-    } else {
-      /*eslint-disable */
-      const backGroundImagePath = require(`./resources/${backgroundImage}`);
-      /*eslint-disable */
-      backgroundLoginImg = backGroundImagePath;
-    }
-
     if (inRecoveryMode) {
       form = (
         <Recovery
