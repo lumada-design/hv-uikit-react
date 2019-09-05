@@ -9,6 +9,14 @@ import PlaneIcon from "@hv/uikit-react-icons/dist/DawnTheme/Plane.S";
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
+const responsivenessConfig = {
+  showHbMenus: "md",
+  showNavigation: "lg",
+  showUser: "md",
+  showActions: "md",
+  centerAlignElement: "xs"
+};
+
 const navigationData = {
   showSearch: false,
   data: [
@@ -66,6 +74,7 @@ const SimpleHeaderController = ({
   navigationData,
   companyLogo,
   productLogo,
+  responsivenessConfig,
   label
 }) => {
   const [selected, setSelected] = useState([0, -1]);
@@ -93,6 +102,7 @@ const SimpleHeaderController = ({
       onNavigationClick={handleSelection}
       onNavigationKeyDown={handleKeyDown}
       selected={selected}
+      responsivenessConfig={responsivenessConfig}
       useRouter
     />
   );
@@ -106,6 +116,7 @@ export default (
       companyLogo={<Hitachi />}
       // Navigation
       navigationData={navigationData}
+      responsivenessConfig={responsivenessConfig}
     />
   </div>
 );

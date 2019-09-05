@@ -4,6 +4,15 @@ import SettingIcon from "@hv/uikit-react-icons/dist/Settings.S";
 import TestLogo from "./resources/testlogo.svg";
 import photo from "./resources/user.png";
 
+
+const responsivenessConfig = {
+  showHbMenus: "md",
+  showNavigation: "lg",
+  showUser: "md",
+  showActions: "md",
+  centerAlignElement: "xs"
+};
+
 const userData = {
   name: "Andrew Jennings",
   role: "maintenance manager"
@@ -40,6 +49,7 @@ const userClick = () => alert("clicked");
 
 const SimpleHeaderController = ({
   position,
+  responsivenessConfig,
   companyLogo,
   productLogo,
   label,
@@ -56,6 +66,7 @@ const SimpleHeaderController = ({
 
   return (
     <HvHeader
+      responsivenessConfig={responsivenessConfig}
       navigationData={navigationData}
       onNavigationClick={handleChange}
       position={position}
@@ -89,6 +100,7 @@ export default (
       userIcon={photo}
       userData={userData}
       userClick={userClick}
+      responsivenessConfig={responsivenessConfig}
       itemActions={[<SettingIcon />]}
     />
   </div>

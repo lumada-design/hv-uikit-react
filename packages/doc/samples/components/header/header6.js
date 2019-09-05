@@ -39,10 +39,11 @@ const navigationData = {
 };
 
 const responsivenessConfig = {
-  showHbMenus: "sm",
+  showHbMenus: "md",
   showNavigation: "lg",
-  showUser: "sm",
-  centerAlignElement: "sm"
+  showUser: "md",
+  showActions: "md",
+  centerAlignElement: "xs"
 };
 
 const actionValues = [

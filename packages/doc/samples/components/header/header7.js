@@ -1,26 +1,19 @@
 import React, { useState } from "react";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import SettingIcon from "@hv/uikit-react-icons/dist/Settings.S";
-import HitachiLogo from "./resources/hitachi";
-import TestLogo from "./resources/testlogo.svg";
 import UserIcon from "@hv/uikit-react-icons/dist/User.S";
+import HelpIcon from "@hv/uikit-react-icons/dist/Help.S";
+import HitachiLogo from "./resources/hitachi";
+
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
-const responsivenessConfig = {
-  showHbMenus: "md",
-  showNavigation: "lg",
-  showUser: "md",
-  showActions: "md",
-  centerAlignElement: "xs"
-};
-
 const navigationData = {
-  showSearch: false,
   data: [
     {
       label: "Overview",
-      path: "/",
+      path: "/"
     },
     {
       label: "Events",
@@ -45,12 +38,27 @@ const navigationData = {
   ]
 };
 
+const responsivenessConfig = {
+  showHbMenus: "md",
+  showNavigation: "lg",
+  showUser: "md",
+  showActions: "md",
+  centerAlignElement: "xs"
+};
+
 const actionValues = [
   {
-    label: "Settings",
-    leftIcon: SettingIcon,
-    horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
-    onVerticalClick: () => alert("Settings"),
+    label: "Profile",
+    leftIcon: UserIcon,
+    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
+    onVerticalClick: () => alert("Profile"),
+    path: "route3"
+  },
+  {
+    label: "Notifications",
+    leftIcon: AlertS,
+    horizontalItemAction:<HvBadge count={88} icon={<AlertS onClick={() => alert("Notification")} />} />,
+    onVerticalClick: () => alert("Notifications"),
     path: "route3"
   }
 ];
@@ -64,22 +72,22 @@ const SimpleHeaderController = ({
   actionValues,
   responsivenessConfig
 }) => {
+  const [selected, setSelected] = useState(0);
 
-  const handleSelection = (index, subIndex) => {
-    setSelected([index, subIndex]);
+  const handleSelection = (index) => {
+    setSelected(index);
   }
 
-  const handleKeyDown = (index, subIndex, event) => {
+  const handleKeyDown = (index, event) => {
     if(!isKeypress(event, KeyboardCodes.Enter)) {
       return
     }
     handleSelection(index, subIndex);
   };
 
-  const [selected, setSelected] = useState([0, -1]);
-
   return (
     <HvHeader
+      id="test"
       position={position}
       // Brand
       companyLogo={companyLogo}
@@ -91,9 +99,10 @@ const SimpleHeaderController = ({
       onNavigationKeyDown={handleKeyDown}
       selected={selected}
       useRouter
+      // Actions
       actionValues={actionValues}
-      // Responsiveness Settings
       responsivenessConfig={responsivenessConfig}
+      fixVerticalNavigation
     />
   );
 };
@@ -104,16 +113,14 @@ export default (
       position="static"
       // Brand
       companyLogo={<Hitachi />}
-      label="Application Name"
-      productLogo={TestLogo}
+      label="Maintenance Insights"
       // Navigation
       navigationData={navigationData}
       selected={0}
       useRouter
-      // Responsiveness Settings
-      responsivenessConfig={responsivenessConfig}
       // Actions
       actionValues={actionValues}
+      responsivenessConfig={responsivenessConfig}
     />
   </div>
 );

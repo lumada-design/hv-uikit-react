@@ -256,7 +256,7 @@ class VerticalNavigation extends React.Component {
 
   render() {
     const { mirror, show, showAnimation } = this.state;
-    const { classes, className } = this.props;
+    const { classes, className} = this.props;
 
     return (
       <div className={classNames([classes.verticalContainer, className])}>
