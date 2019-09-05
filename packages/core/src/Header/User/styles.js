@@ -21,7 +21,8 @@ const styles = theme => ({
     display: "flex",
     flexShrink: 0,
     alignItems: "center",
-    marginLeft: "auto"
+    marginLeft: "auto",
+    zIndex:2
   },
   userContainerPointer: {
     cursor: "pointer"
@@ -42,7 +43,8 @@ const styles = theme => ({
 
     marginRight: `${theme.hv.spacing.xs}px`,
     "& p": {
-      color: theme.palette.text.main
+      color: theme.palette.text.main,
+      whiteSpace: "nowrap"
     }
   }
 });

@@ -5499,14 +5499,15 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "brandContainer": "Brand-brandContainer-9",
-                "companyLogoTextContainer": "Brand-companyLogoTextContainer-11",
-                "iconContainer": "Brand-iconContainer-10",
-                "paddingTextLeft": "Brand-paddingTextLeft-16",
-                "productLogoTextContainer": "Brand-productLogoTextContainer-15",
-                "separator": "Brand-separator-12",
-                "separatorBox": "Brand-separatorBox-14",
-                "separatorPadding": "Brand-separatorPadding-13",
+                "brandContainer": "Brand-brandContainer-10",
+                "centerBrandContainer": "Brand-centerBrandContainer-11",
+                "companyLogoTextContainer": "Brand-companyLogoTextContainer-13",
+                "iconContainer": "Brand-iconContainer-12",
+                "paddingTextLeft": "Brand-paddingTextLeft-18",
+                "productLogoTextContainer": "Brand-productLogoTextContainer-17",
+                "separator": "Brand-separator-14",
+                "separatorBox": "Brand-separatorBox-16",
+                "separatorPadding": "Brand-separatorPadding-15",
               },
               "deployed": true,
               "linked": false,
@@ -5514,14 +5515,15 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Brand",
                 "classes": Object {
-                  "brandContainer": "Brand-brandContainer-9",
-                  "companyLogoTextContainer": "Brand-companyLogoTextContainer-11",
-                  "iconContainer": "Brand-iconContainer-10",
-                  "paddingTextLeft": "Brand-paddingTextLeft-16",
-                  "productLogoTextContainer": "Brand-productLogoTextContainer-15",
-                  "separator": "Brand-separator-12",
-                  "separatorBox": "Brand-separatorBox-14",
-                  "separatorPadding": "Brand-separatorPadding-13",
+                  "brandContainer": "Brand-brandContainer-10",
+                  "centerBrandContainer": "Brand-centerBrandContainer-11",
+                  "companyLogoTextContainer": "Brand-companyLogoTextContainer-13",
+                  "iconContainer": "Brand-iconContainer-12",
+                  "paddingTextLeft": "Brand-paddingTextLeft-18",
+                  "productLogoTextContainer": "Brand-productLogoTextContainer-17",
+                  "separator": "Brand-separator-14",
+                  "separatorBox": "Brand-separatorBox-16",
+                  "separatorPadding": "Brand-separatorPadding-15",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -6009,39 +6011,46 @@ body {
                   data-meta="Brand"
                 >
                   
-.Brand-brandContainer-9 {
+.Brand-brandContainer-10 {
   height: 100%;
   display: inherit;
+  z-index: 2;
   position: relative;
   align-items: center;
   margin-right: 60px;
 }
-.Brand-iconContainer-10 {
+.Brand-centerBrandContainer-11 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.Brand-iconContainer-12 {
   display: inherit;
   max-height: 46px;
 }
-.Brand-companyLogoTextContainer-11 {
+.Brand-companyLogoTextContainer-13 {
   height: 46px;
   display: flex;
   align-items: center;
 }
-.Brand-separator-12 {
-  width: 20px;
-  height: 30px;
-  border-right: 1px solid #DEDEDE;
+.Brand-separator-14 {
+  width: 10px;
+  height: 20px;
+  border-right: 1px solid #414141;
 }
-.Brand-separatorPadding-13 {
-  width: 20px;
+.Brand-separatorPadding-15 {
+  width: 10px;
 }
-.Brand-separatorBox-14 {
+.Brand-separatorBox-16 {
   display: flex;
 }
-.Brand-productLogoTextContainer-15 {
+.Brand-productLogoTextContainer-17 {
   height: 46px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
-.Brand-paddingTextLeft-16 {
+.Brand-paddingTextLeft-18 {
   padding-left: 10px;
 }
 
@@ -6057,14 +6066,15 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "brandContainer": "Brand-brandContainer-9",
-                  "companyLogoTextContainer": "Brand-companyLogoTextContainer-11",
-                  "iconContainer": "Brand-iconContainer-10",
-                  "paddingTextLeft": "Brand-paddingTextLeft-16",
-                  "productLogoTextContainer": "Brand-productLogoTextContainer-15",
-                  "separator": "Brand-separator-12",
-                  "separatorBox": "Brand-separatorBox-14",
-                  "separatorPadding": "Brand-separatorPadding-13",
+                  "brandContainer": "Brand-brandContainer-10",
+                  "centerBrandContainer": "Brand-centerBrandContainer-11",
+                  "companyLogoTextContainer": "Brand-companyLogoTextContainer-13",
+                  "iconContainer": "Brand-iconContainer-12",
+                  "paddingTextLeft": "Brand-paddingTextLeft-18",
+                  "productLogoTextContainer": "Brand-productLogoTextContainer-17",
+                  "separator": "Brand-separator-14",
+                  "separatorBox": "Brand-separatorBox-16",
+                  "separatorPadding": "Brand-separatorPadding-15",
                 },
                 "index": Array [
                   Object {
@@ -6073,6 +6083,12 @@ body {
                     "height": "100%",
                     "margin-right": "60px",
                     "position": "relative",
+                    "z-index": "2",
+                  },
+                  Object {
+                    "display": "flex",
+                    "flex": "1",
+                    "justify-content": "center",
                   },
                   Object {
                     "display": "inherit",
@@ -6084,12 +6100,12 @@ body {
                     "height": "46px",
                   },
                   Object {
-                    "border-right": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "width": "20px",
+                    "border-right": "1px solid #414141",
+                    "height": "20px",
+                    "width": "10px",
                   },
                   Object {
-                    "width": "20px",
+                    "width": "10px",
                   },
                   Object {
                     "display": "flex",
@@ -6098,46 +6114,54 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "46px",
+                    "white-space": "nowrap",
                   },
                   Object {
                     "padding-left": "10px",
                   },
                 ],
                 "map": Object {
-                  ".Brand-brandContainer-9": Object {
+                  ".Brand-brandContainer-10": Object {
                     "align-items": "center",
                     "display": "inherit",
                     "height": "100%",
                     "margin-right": "60px",
                     "position": "relative",
+                    "z-index": "2",
                   },
-                  ".Brand-companyLogoTextContainer-11": Object {
+                  ".Brand-centerBrandContainer-11": Object {
+                    "display": "flex",
+                    "flex": "1",
+                    "justify-content": "center",
+                  },
+                  ".Brand-companyLogoTextContainer-13": Object {
                     "align-items": "center",
                     "display": "flex",
                     "height": "46px",
                   },
-                  ".Brand-iconContainer-10": Object {
+                  ".Brand-iconContainer-12": Object {
                     "display": "inherit",
                     "max-height": "46px",
                   },
-                  ".Brand-paddingTextLeft-16": Object {
+                  ".Brand-paddingTextLeft-18": Object {
                     "padding-left": "10px",
                   },
-                  ".Brand-productLogoTextContainer-15": Object {
+                  ".Brand-productLogoTextContainer-17": Object {
                     "align-items": "center",
                     "display": "flex",
                     "height": "46px",
+                    "white-space": "nowrap",
                   },
-                  ".Brand-separator-12": Object {
-                    "border-right": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "width": "20px",
+                  ".Brand-separator-14": Object {
+                    "border-right": "1px solid #414141",
+                    "height": "20px",
+                    "width": "10px",
                   },
-                  ".Brand-separatorBox-14": Object {
+                  ".Brand-separatorBox-16": Object {
                     "display": "flex",
                   },
-                  ".Brand-separatorPadding-13": Object {
-                    "width": "20px",
+                  ".Brand-separatorPadding-15": Object {
+                    "width": "10px",
                   },
                   "brandContainer": Object {
                     "align-items": "center",
@@ -6145,6 +6169,12 @@ body {
                     "height": "100%",
                     "margin-right": "60px",
                     "position": "relative",
+                    "z-index": "2",
+                  },
+                  "centerBrandContainer": Object {
+                    "display": "flex",
+                    "flex": "1",
+                    "justify-content": "center",
                   },
                   "companyLogoTextContainer": Object {
                     "align-items": "center",
@@ -6162,31 +6192,33 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "46px",
+                    "white-space": "nowrap",
                   },
                   "separator": Object {
-                    "border-right": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "width": "20px",
+                    "border-right": "1px solid #414141",
+                    "height": "20px",
+                    "width": "10px",
                   },
                   "separatorBox": Object {
                     "display": "flex",
                   },
                   "separatorPadding": Object {
-                    "width": "20px",
+                    "width": "10px",
                   },
                 },
                 "options": Object {
                   "Renderer": [Function],
                   "classNamePrefix": "Brand",
                   "classes": Object {
-                    "brandContainer": "Brand-brandContainer-9",
-                    "companyLogoTextContainer": "Brand-companyLogoTextContainer-11",
-                    "iconContainer": "Brand-iconContainer-10",
-                    "paddingTextLeft": "Brand-paddingTextLeft-16",
-                    "productLogoTextContainer": "Brand-productLogoTextContainer-15",
-                    "separator": "Brand-separator-12",
-                    "separatorBox": "Brand-separatorBox-14",
-                    "separatorPadding": "Brand-separatorPadding-13",
+                    "brandContainer": "Brand-brandContainer-10",
+                    "centerBrandContainer": "Brand-centerBrandContainer-11",
+                    "companyLogoTextContainer": "Brand-companyLogoTextContainer-13",
+                    "iconContainer": "Brand-iconContainer-12",
+                    "paddingTextLeft": "Brand-paddingTextLeft-18",
+                    "productLogoTextContainer": "Brand-productLogoTextContainer-17",
+                    "separator": "Brand-separator-14",
+                    "separatorBox": "Brand-separatorBox-16",
+                    "separatorPadding": "Brand-separatorPadding-15",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -6675,6 +6707,12 @@ body {
                     "height": "100%",
                     "marginRight": "60px",
                     "position": "relative",
+                    "zIndex": 2,
+                  },
+                  "centerBrandContainer": Object {
+                    "display": "flex",
+                    "flex": 1,
+                    "justifyContent": "center",
                   },
                   "companyLogoTextContainer": Object {
                     "alignItems": "center",
@@ -6692,17 +6730,18 @@ body {
                     "alignItems": "center",
                     "display": "flex",
                     "height": "46px",
+                    "whiteSpace": "nowrap",
                   },
                   "separator": Object {
-                    "borderRight": "1px solid #DEDEDE",
-                    "height": "30px",
-                    "width": "20px",
+                    "borderRight": "1px solid #414141",
+                    "height": "20px",
+                    "width": "10px",
                   },
                   "separatorBox": Object {
                     "display": "flex",
                   },
                   "separatorPadding": Object {
-                    "width": "20px",
+                    "width": "10px",
                   },
                 },
                 "update": [Function],
@@ -7645,16 +7684,18 @@ body {
     </WithStyles(CssBaseline)>
     <WithStyles(Brand)>
       <Brand
+        centerAlignElement={null}
         classes={
           Object {
-            "brandContainer": "Brand-brandContainer-9",
-            "companyLogoTextContainer": "Brand-companyLogoTextContainer-11",
-            "iconContainer": "Brand-iconContainer-10",
-            "paddingTextLeft": "Brand-paddingTextLeft-16",
-            "productLogoTextContainer": "Brand-productLogoTextContainer-15",
-            "separator": "Brand-separator-12",
-            "separatorBox": "Brand-separatorBox-14",
-            "separatorPadding": "Brand-separatorPadding-13",
+            "brandContainer": "Brand-brandContainer-10",
+            "centerBrandContainer": "Brand-centerBrandContainer-11",
+            "companyLogoTextContainer": "Brand-companyLogoTextContainer-13",
+            "iconContainer": "Brand-iconContainer-12",
+            "paddingTextLeft": "Brand-paddingTextLeft-18",
+            "productLogoTextContainer": "Brand-productLogoTextContainer-17",
+            "separator": "Brand-separator-14",
+            "separatorBox": "Brand-separatorBox-16",
+            "separatorPadding": "Brand-separatorPadding-15",
           }
         }
         companyLogo={null}
@@ -8586,7 +8627,7 @@ body {
         }
       >
         <div
-          className="Brand-brandContainer-9"
+          className="Brand-brandContainer-10"
         />
       </Brand>
     </WithStyles(Brand)>

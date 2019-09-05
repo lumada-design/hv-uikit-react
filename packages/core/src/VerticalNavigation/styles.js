@@ -66,6 +66,9 @@ const styles = theme => ({
     paddingRight: `${theme.hv.spacing.sm}px`,
     paddingBottom: `${theme.hv.spacing.sm}px`,
     paddingTop: `${theme.hv.spacing.xs}px`
+  },
+  soloActionContainer: {
+    borderTop: `none`,
   }
 });
 

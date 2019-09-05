@@ -65,12 +65,35 @@ const ElementContainer = ({ classes, text, existLogo }) => (
  * @returns {*}
  * @constructor
  */
-const Brand = ({ classes, companyLogo, productLogo, productText }) => {
+
+/*
+*
+* className={classnames(
+          disabled
+            ? classes.disabledLabel
+            : {
+                [classes.labelSelected]: !clickState,
+                [classes.labelDeselected]: clickState
+              },
+          classes.labelLeftPositioning
+        )}
+* */
+const Brand = ({
+  classes,
+  centerAlignElement,
+  companyLogo,
+  productLogo,
+  productText
+}) => {
   const existSeparator =
     !isNill(companyLogo) && !(isNill(productLogo) && isNill(productText));
 
   return (
-    <div className={classes.brandContainer}>
+    <div
+      className={classNames(classes.brandContainer, {
+        [classes.centerBrandContainer]: centerAlignElement
+      })}
+    >
       {companyLogo && (
         <ImageContainer
           image={companyLogo}
@@ -103,6 +126,10 @@ Brand.propTypes = {
   /**
    * Company logo. Can be a path for a image or a component.
    */
+  centerAlignElement: PropTypes.bool,
+  /**
+   * Company logo. Can be a path for a image or a component.
+   */
   companyLogo: PropTypes.node,
   /**
    * Product logo. Can be a path for a image or a component.
@@ -115,6 +142,7 @@ Brand.propTypes = {
 };
 
 Brand.defaultProps = {
+  centerAlignElement:null,
   companyLogo: null,
   productLogo: null,
   productText: null

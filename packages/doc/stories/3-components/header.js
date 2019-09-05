@@ -26,23 +26,36 @@ storiesOf("Components", module).add("Header", () => <HvHeader />, {
   examples: [
     {
       title: "Variant 1",
-      src: "components/header/header1"
+      src: "components/header/header1",
+      description: "Inside and below the Header usage and responsive behavior"
     },
     {
       title: "Variant 2",
-      src: "components/header/header2"
+      src: "components/header/header2",
+      description: "Inside the Header usage and responsive behavior"
     },
     {
       title: "Variant 3",
-      src: "components/header/header3"
+      src: "components/header/header3",
+      description: "Inside the Header usage and responsive behavior"
     },
     {
       title: "Variant 4",
-      src: "components/header/header4"
+      src: "components/header/header4",
+      description: "Header with no menu tabs"
     },
     {
       title: "Variant 5",
       src: "components/header/header5"
+    },
+    {
+      title: "Variant 6",
+      src: "components/header/header6"
+    },
+    {
+      title: "Deprecated Example",
+      src: "components/header/headerDeprecated",
+      description: "Header with no menu tabs"
     }
   ]
 });
