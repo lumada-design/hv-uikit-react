@@ -20,6 +20,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import OutsideClickHandler from "react-outside-click-handler";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -27,7 +28,8 @@ import isNill from "lodash/isNil";
 import isEqual from "lodash/isEqual";
 import map from "lodash/map";
 
-import MenuS from "@hv/uikit-react-icons/dist/Menu.S";
+import MenuS from "@hv/uikit-react-icons/dist/DawnTheme/Menu.S";
+import CloseS from "@hv/uikit-react-icons/dist/DawnTheme/Close.S";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
@@ -79,6 +81,7 @@ const Main = ({
   itemActions,
   useRouter,
   responsivenessConfig,
+  fixVerticalNavigation,
   actionValues
 }) => {
   // ToDo - run prettier on code base
@@ -127,8 +130,7 @@ const Main = ({
   };
 
   const getNavigationData = (navStructure, navData) => {
-
-    if(!isNill(navData)) {
+    if (!isNill(navData)) {
       return navData;
     }
     const defaultData = {
@@ -154,12 +156,12 @@ const Main = ({
           }
         }
       ]
-    }
-    if(isEqual(navStructure, defaultData)) {
+    };
+    if (isEqual(navStructure, defaultData)) {
       return null;
     }
     return navStructure.data;
-  }
+  };
   const navData = getNavigationData(navigationStructure, navigationData);
   return (
     <div className={classes.shadowPadding}>
@@ -170,18 +172,18 @@ const Main = ({
         id={id}
       >
         <Toolbar variant="dense">
-          {showHbMenu && !(isNill(navData) && isNill(actionItemMapper))? (
-            <MenuS
+          {showHbMenu && !(isNill(navData) && isNill(actionItemMapper)) ? (
+            <div
               role="button"
               className={classes.navButton}
               onClick={() => toggleNav(!showNav)}
-              onKeyDown={
-                e => {
-                  if(isKeypress(e, KeyboardCodes.Enter)) toggleNav(!showNav);
-                }
-              }
+              onKeyDown={e => {
+                if (isKeypress(e, KeyboardCodes.Enter)) toggleNav(!showNav);
+              }}
               tabIndex={0}
-            />
+            >
+              {showNav ? <CloseS /> : <MenuS />}
+            </div>
           ) : (
             ""
           )}
@@ -225,17 +227,34 @@ const Main = ({
           )}
         </Toolbar>
       </AppBar>
-      {showNav && showHbMenu && !(isNill(navData) && isNill(actionItemMapper)) ? (
-        <HvVerticalNavigation
-          className={classes.verticalNavigationSeparation}
-          values={isNill(navData)? undefined: navigationMapper(navigationStructure, navigationData)}
-          actionValues={defineHeaderActions(
-            itemActions,
-            checkUserDeprecatedProps(labels, userData, userIcon, userClick),
-            actionValues
-          )}
-          onClickAction={item=>{item.onVerticalClick()}}
-        />
+      {showNav &&
+      showHbMenu &&
+      !(isNill(navData) && isNill(actionItemMapper)) ? (
+        <OutsideClickHandler useCapture onOutsideClick={() => setTimeout(()=>toggleNav(false), 0)}>
+          <div
+            className={classNames(classes.verticalNavigationContainer, {
+              [classes.verticalNavigationContainerFixed]: fixVerticalNavigation,
+              [classes.verticalNavigationContainerAbsolute]: !fixVerticalNavigation
+            })}
+          >
+            <HvVerticalNavigation
+              className={classes.verticalNavigationSeparation}
+              values={
+                isNill(navData)
+                  ? undefined
+                  : navigationMapper(navigationStructure, navigationData)
+              }
+              actionValues={defineHeaderActions(
+                itemActions,
+                checkUserDeprecatedProps(labels, userData, userIcon, userClick),
+                actionValues
+              )}
+              onClickAction={item => {
+                item.onVerticalClick();
+              }}
+            />
+          </div>
+        </OutsideClickHandler>
       ) : (
         ""
       )}
@@ -426,7 +445,8 @@ Main.propTypes = {
       params: PropTypes.instanceOf(Object),
       horizontalItemAction: PropTypes.node
     })
-  )
+  ),
+  fixVerticalNavigation: PropTypes.bool
 };
 
 Main.defaultProps = {
@@ -484,7 +504,8 @@ Main.defaultProps = {
     showActions: "sm",
     centerAlignElement: "sm"
   },
-  actionValues: null
+  actionValues: null,
+  fixVerticalNavigation: false
 };
 
 export default Main;
