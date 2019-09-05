@@ -15,8 +15,39 @@
  */
 
 const styles = () => ({
-  root: {
-    minWidth: "1120px"
+  shadowPadding:{
+    padding:"0 10px",
+  },
+  navButton: {
+    zIndex: "3",
+    cursor: "pointer",
+    marginRight: 20,
+    width: 30
+  },
+  verticalNavigationSeparation: {
+    marginTop: "5px"
+  },
+  verticalNavigationshield: {
+    width: "100%",
+    height: "100%",
+    top: "0",
+    left: "320px",
+    position: "absolute"
+  },
+  verticalNavigationContainer: {
+    zIndex: "7"
+  },
+  verticalNavigationContainerFixed: {
+    height: "calc(100% - 50px)",
+    width: "30%",
+    position: "fixed",
+    top: 55,
+    left: 0
+  },
+  verticalNavigationContainerAbsolute: {
+    height: "100%",
+    width: "30%",
+    position: "absolute"
   }
 });
 

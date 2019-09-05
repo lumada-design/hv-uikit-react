@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
@@ -65,8 +65,9 @@ const Main = ({
   itemActions,
   useRouter
 }) => {
-  const [showNav, toggleNav] = useState(false)
+  const [showNav, toggleNav] = useState(false);
   const userExists = !(isNill(userData) && isNill(userIcon));
+
 
   return (
     <AppBar
@@ -76,7 +77,10 @@ const Main = ({
       id={id}
     >
       <Toolbar variant="dense">
-        <MenuS className={classes.navButton} onClick={() => toggleNav(!showNav)} />
+        <MenuS
+          className={classes.navButton}
+          onClick={() => toggleNav(!showNav)}
+        />
         <Brand
           companyLogo={companyLogo}
           productLogo={productLogo}
@@ -91,12 +95,18 @@ const Main = ({
             onClick={onNavigationClick}
           />
         </div>
-        <div className={classes.hidden}> 
-          <User labels={labels} userData={userData} userIcon={userIcon} onClick={userClick} />
+        <div className={classes.hidden}>
+          <User
+            labels={labels}
+            userData={userData}
+            userIcon={userIcon}
+            onClick={userClick}
+          />
           <Actions userExists={userExists} itemActions={itemActions} />
         </div>
       </Toolbar>
-      <div className={classNames(
+      <div
+        className={classNames(
           classes.verticalNav,
           showNav ? classes.showNav : ""
         )}
@@ -110,14 +120,18 @@ const Main = ({
           verticalStyles
         />
         <div className={classes.userAction}>
-          <User 
-            labels={labels} 
-            userData={userData} 
-            userIcon={userIcon} 
-            onClick={userClick} 
+          <User
+            labels={labels}
+            userData={userData}
+            userIcon={userIcon}
+            onClick={userClick}
             verticalStyles
           />
-          <Actions userExists={userExists} itemActions={itemActions} verticalStyles />
+          <Actions
+            userExists={userExists}
+            itemActions={itemActions}
+            verticalStyles
+          />
         </div>
       </div>
     </AppBar>
@@ -129,7 +143,7 @@ Main.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -184,7 +198,7 @@ Main.propTypes = {
       label: PropTypes.string,
       path: PropTypes.string,
       /**
-       * Function to return an icon for each nav item. 
+       * Function to return an icon for each nav item.
        * Takes in array of color values to be applied to the icon
        */
       icon: PropTypes.func
@@ -207,7 +221,7 @@ Main.propTypes = {
    */
   userData: PropTypes.shape({
     name: PropTypes.string,
-    role: PropTypes.string,
+    role: PropTypes.string
   }),
   /**
    * Object containing the labels to be present
@@ -227,16 +241,18 @@ Main.propTypes = {
   /**
    * Array with the components to be render.
    */
-  itemActions: PropTypes.arrayOf(PropTypes.shape({
-    /**
-     * Component to be rendered
-     */
-    action: PropTypes.element,
-    /**
-     * Text corresponding to the component to be rendered
-     */
-    label: PropTypes.string
-  })),
+  itemActions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /**
+       * Component to be rendered
+       */
+      action: PropTypes.element,
+      /**
+       * Text corresponding to the component to be rendered
+       */
+      label: PropTypes.string
+    })
+  )
 };
 
 Main.defaultProps = {

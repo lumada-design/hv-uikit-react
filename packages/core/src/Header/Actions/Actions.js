@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import isNil from "lodash/isNil";
 
 /**
  * Action container. The component receives (itemAction) an array of components to be render.
@@ -29,22 +30,28 @@ import classNames from "classnames";
  * @returns {*}
  * @constructor
  */
-const Actions = ({ classes, userExists, itemActions }) => (
-  <div
-    className={classNames(classes.actionsContainer, {
-      [classes.marginLeft]: !userExists
-    })}
-  >
-    {itemActions.map((child, i) => {
-      const key = `action_${i}`;
-      return (
-        <div className={classes.iconContainer} key={key}>
-          {child}
-        </div>
-      );
-    })}
-  </div>
-);
+const Actions = ({ classes, userExists, itemActions }) => {
+  let nItemActions = itemActions;
+  if (isNil(nItemActions)) {
+    nItemActions = [];
+  }
+  return (
+    <div
+      className={classNames(classes.actionsContainer, {
+        [classes.marginLeft]: !userExists
+      })}
+    >
+      {nItemActions.map((child, i) => {
+        const key = `action_${i}`;
+        return (
+          <div className={classes.iconContainer} key={key}>
+            {child}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 Actions.propTypes = {
   /**
    * A Jss Object used to override or extend the component styles.

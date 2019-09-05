@@ -40,10 +40,10 @@ const styles = theme => ({
   },
   showCount: {
     ...theme.hv.typography.labelText,
+    fontFamily: theme.hv.typography.fontFamily,
     justifyContent: "center",
     height: "16px",
     width: "16px",
-    padding: "5px",
     lineHeight: "0",
     color: theme.hv.palette.atmosphere.atmo1
   },

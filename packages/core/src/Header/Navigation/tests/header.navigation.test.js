@@ -74,20 +74,4 @@ describe("Menu withStyles", () => {
     ).find("a");
     expect(userComponent.length).toBe(2);
   });
-
-  it("shouldn't render anything in the Navigation", () => {
-    const childComponents = mount(
-      <HvProvider>
-        <NavigationWithStyles
-          basePath="basePath"
-          useRouter={false}
-          selected={0}
-        />
-      </HvProvider>
-    )
-      .find(Navigation)
-      .children();
-
-    expect(childComponents.length).toBe(0);
-  });
 });

@@ -28,6 +28,7 @@ const Box = ({ text }) => (
 
 const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
   const findBreakpoint = () =>
+
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
       const matches = useMediaQuery(theme.breakpoints.only(key));
 

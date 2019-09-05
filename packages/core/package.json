@@ -47,7 +47,9 @@
     "react-dom": "16.8.6",
     "react-jss": "8.6.1",
     "react-lines-ellipsis": "0.14.0",
+    "react-outside-click-handler": "^1.2.4",
     "react-plotly.js": "2.3.0",
+    "react-reveal": "^1.2.2",
     "react-table": "6.8.6",
     "react-table-hoc-fixed-columns": "2.1.1"
   },

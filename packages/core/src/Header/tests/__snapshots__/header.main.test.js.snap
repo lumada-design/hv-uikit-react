@@ -2,21 +2,64 @@
 
 exports[`Header withStyles should render correctly 1`] = `
 <Main
+  actionValues={null}
   basePath=""
   className=""
   classes={
     Object {
-      "root": "Main-root-1",
+      "navButton": "Main-navButton-2",
+      "shadowPadding": "Main-shadowPadding-1",
+      "verticalNavigationContainer": "Main-verticalNavigationContainer-5",
+      "verticalNavigationContainerAbsolute": "Main-verticalNavigationContainerAbsolute-7",
+      "verticalNavigationContainerFixed": "Main-verticalNavigationContainerFixed-6",
+      "verticalNavigationSeparation": "Main-verticalNavigationSeparation-3",
+      "verticalNavigationshield": "Main-verticalNavigationshield-4",
     }
   }
   companyLogo={null}
-  itemActions={Array []}
+  fixVerticalNavigation={false}
+  itemActions={null}
   label={null}
   labels={Object {}}
-  navigationData={Array []}
+  navigationStructure={
+    Object {
+      "data": Array [
+        Object {
+          "id": undefined,
+          "isHidden": false,
+          "label": "",
+          "leftIcon": null,
+          "params": Object {},
+          "path": "",
+          "selected": false,
+          "showNavIcon": false,
+          "subData": Object {
+            "data": Array [
+              Object {
+                "label": "",
+                "path": "",
+              },
+            ],
+            "showSearch": false,
+          },
+        },
+      ],
+      "showSearch": false,
+    }
+  }
   onNavigationClick={[Function]}
+  onNavigationKeyDown={[Function]}
   position="fixed"
   productLogo={null}
+  responsivenessConfig={
+    Object {
+      "centerAlignElement": "sm",
+      "showActions": "sm",
+      "showHbMenus": "sm",
+      "showNavigation": "md",
+      "showUser": "sm",
+    }
+  }
   selected={0}
   theme={
     Object {

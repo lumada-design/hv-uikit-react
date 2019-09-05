@@ -14,13 +14,27 @@
  * limitations under the License.
  */
 
-import React from "react";
+// ToDo - Remove this comment
+// ToDo - Turn on git hooks before commit
+
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import OutsideClickHandler from "react-outside-click-handler";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import isNill from "lodash/isNil";
+import isEqual from "lodash/isEqual";
+import map from "lodash/map";
+
+import MenuS from "@hv/uikit-react-icons/dist/DawnTheme/Menu.S";
+import CloseS from "@hv/uikit-react-icons/dist/DawnTheme/Close.S";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import HvVerticalNavigation from "../VerticalNavigation";
+
 import Brand from "./Brand";
 import Navigation from "./Navigation";
 import User from "./User";
@@ -45,13 +59,16 @@ import Actions from "./Actions";
  * @constructor
  */
 const Main = ({
+  theme,
   classes,
   className,
   id,
   position,
+  navigationStructure,
   navigationData,
   selected,
   onNavigationClick,
+  onNavigationKeyDown,
   userData,
   userIcon,
   userClick,
@@ -62,43 +79,200 @@ const Main = ({
   label,
   labels,
   itemActions,
-  useRouter
+  useRouter,
+  responsivenessConfig,
+  fixVerticalNavigation,
+  actionValues
 }) => {
+  // ToDo - run prettier on code base
+  const [showNav, toggleNav] = useState(false);
   const userExists = !(isNill(userData) && isNill(userIcon));
+  const showHbMenu = useMediaQuery(
+    theme.breakpoints.down(responsivenessConfig.showHbMenus)
+  );
+  const showNavigation = useMediaQuery(
+    theme.breakpoints.up(responsivenessConfig.showNavigation)
+  );
+  const showUser = !useMediaQuery(
+    theme.breakpoints.down(responsivenessConfig.showUser)
+  );
+  const showActions = !useMediaQuery(
+    theme.breakpoints.down(responsivenessConfig.showActions)
+  );
+  const centerAlignElement = useMediaQuery(
+    theme.breakpoints.down(responsivenessConfig.centerAlignElement)
+  );
 
+  const navigationMapper = (navStructure, navData) => {
+    if (isNill(navData)) {
+      return navStructure;
+    }
+
+    return {
+      showSearch: false,
+      data: navData
+    };
+  };
+
+  const actionItemMapper =
+    !isNill(actionValues) && Array.isArray(actionValues)
+      ? map(actionValues, actionValue => actionValue.horizontalItemAction)
+      : undefined;
+
+  const checkUserDeprecatedProps = (lbls, uData, uIcon, onClk) =>
+    !isNill(lbls) && !isNill(uData) && !isNill(uIcon) && !isNill(onClk);
+
+  const defineHeaderActions = (itemAction, userExist, actionValue) => {
+    if (userExist || (Array.isArray(itemAction) && !itemAction.length < 1)) {
+      return undefined;
+    }
+    return actionValue;
+  };
+
+  const getNavigationData = (navStructure, navData) => {
+    if (!isNill(navData)) {
+      return navData;
+    }
+    const defaultData = {
+      showSearch: false,
+      data: [
+        {
+          id: undefined,
+          label: "",
+          selected: false,
+          isHidden: false,
+          leftIcon: null,
+          showNavIcon: false,
+          path: "",
+          params: {},
+          subData: {
+            showSearch: false,
+            data: [
+              {
+                label: "",
+                path: ""
+              }
+            ]
+          }
+        }
+      ]
+    };
+    if (isEqual(navStructure, defaultData)) {
+      return null;
+    }
+    return navStructure.data;
+  };
+  const navData = getNavigationData(navigationStructure, navigationData);
   return (
-    <AppBar
-      color="default"
-      position={position}
-      className={classNames(classes.root, className)}
-      id={id}
-    >
-      <Toolbar variant="dense">
-        <Brand
-          companyLogo={companyLogo}
-          productLogo={productLogo}
-          productText={productText || label || labels.productName}
-        />
-        <Navigation
-          navigationData={navigationData}
-          basePath={basePath}
-          useRouter={useRouter}
-          selected={selected}
-          onClick={onNavigationClick}
-        />
-        <User labels={labels} userData={userData} userIcon={userIcon} onClick={userClick} />
-        <Actions userExists={userExists} itemActions={itemActions} />
-      </Toolbar>
-    </AppBar>
+    <div className={classes.shadowPadding}>
+      <AppBar
+        color="default"
+        position={position}
+        className={classNames(classes.root, className)}
+        id={id}
+      >
+        <Toolbar variant="dense">
+          {showHbMenu && !(isNill(navData) && isNill(actionItemMapper)) ? (
+            <div
+              role="button"
+              className={classes.navButton}
+              onClick={() => toggleNav(!showNav)}
+              onKeyDown={e => {
+                if (isKeypress(e, KeyboardCodes.Enter)) toggleNav(!showNav);
+              }}
+              tabIndex={0}
+            >
+              {showNav ? <CloseS /> : <MenuS />}
+            </div>
+          ) : (
+            ""
+          )}
+          <Brand
+            centerAlignElement={centerAlignElement}
+            companyLogo={companyLogo}
+            productLogo={productLogo}
+            productText={productText || label || labels.productName}
+          />
+          {showNavigation &&
+          (navigationStructure.data.length > 0 || navigationData.length > 0) ? (
+            <Navigation
+              navigationData={navData}
+              basePath={basePath}
+              useRouter={useRouter}
+              selected={selected}
+              onKeyDown={onNavigationKeyDown}
+              onClick={onNavigationClick}
+            />
+          ) : (
+            ""
+          )}
+          {showUser &&
+          checkUserDeprecatedProps(labels, userData, userIcon, userClick) ? (
+            <User
+              labels={labels}
+              userData={userData}
+              userIcon={userIcon}
+              onClick={userClick}
+            />
+          ) : (
+            ""
+          )}
+          {showActions ? (
+            <Actions
+              userExists={userExists}
+              itemActions={actionItemMapper || itemActions}
+            />
+          ) : (
+            ""
+          )}
+        </Toolbar>
+      </AppBar>
+      {showNav &&
+      showHbMenu &&
+      !(isNill(navData) && isNill(actionItemMapper)) ? (
+        <OutsideClickHandler useCapture onOutsideClick={() => setTimeout(()=>toggleNav(false), 0)}>
+          <div
+            className={classNames(classes.verticalNavigationContainer, {
+              [classes.verticalNavigationContainerFixed]: fixVerticalNavigation,
+              [classes.verticalNavigationContainerAbsolute]: !fixVerticalNavigation
+            })}
+          >
+            <HvVerticalNavigation
+              className={classes.verticalNavigationSeparation}
+              values={
+                isNill(navData)
+                  ? undefined
+                  : navigationMapper(navigationStructure, navigationData)
+              }
+              actionValues={defineHeaderActions(
+                itemActions,
+                checkUserDeprecatedProps(labels, userData, userIcon, userClick),
+                actionValues
+              )}
+              onClickAction={item => {
+                item.onVerticalClick();
+              }}
+            />
+          </div>
+        </OutsideClickHandler>
+      ) : (
+        ""
+      )}
+    </div>
   );
 };
 
 Main.propTypes = {
   /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object),
+  /**
+   * Class names to be applied.
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -142,17 +316,56 @@ Main.propTypes = {
    */
   label: PropTypes.string,
   /**
+   * Props passed to the navigation component
+   */
+  navigationStructure: PropTypes.shape({
+    showSearch: PropTypes.bool,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        label: PropTypes.string.isRequired,
+        selected: PropTypes.bool,
+        isHidden: PropTypes.bool,
+        leftIcon: PropTypes.func,
+        showNavIcon: PropTypes.bool,
+        path: PropTypes.string,
+        params: PropTypes.instanceOf(Object),
+        subData: PropTypes.shape({
+          data: PropTypes.arrayOf(
+            PropTypes.shape({
+              label: PropTypes.string,
+              path: PropTypes.string
+            })
+          )
+        })
+      })
+    )
+  }),
+  /**
    * The index of the selected navigation item.
    */
-  selected: PropTypes.number,
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
   /**
    * The data used for creating the navigation item.
    */
-  navigationData: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      path: PropTypes.string
-    })
+
+  navigationData: deprecatedPropType(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        path: PropTypes.string,
+        subData: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            path: PropTypes.string
+          })
+        )
+      })
+    ),
+    "use navigationStructure instead"
   ),
   /**
    * Path to be as base to be concatenated with the pat of the navigation data.
@@ -162,6 +375,10 @@ Main.propTypes = {
    * Indicates if the router should be used.
    */
   useRouter: PropTypes.bool,
+  /**
+   * Function when the navigation item detects a keydown. It returns the index.
+   */
+  onNavigationKeyDown: PropTypes.func,
   /**
    * Function when the navigation item is click. It returns the selected index.
    */
@@ -191,23 +408,87 @@ Main.propTypes = {
   /**
    * Array with the components to be render.
    */
-  itemActions: PropTypes.arrayOf(PropTypes.element)
+  itemActions: deprecatedPropType(
+    PropTypes.arrayOf(PropTypes.element),
+    "if using this prop, responsiveness might be compromised, use actionValues instead"
+  ),
+  /**
+   * Array with responsiveness breakpoints for components.
+   * *  - Accepted values:
+   *    --"xs",
+   *    --"sm",
+   *    --"md",
+   *    --"lg",
+   *    --"xl",
+   */
+  responsivenessConfig: PropTypes.shape({
+    showHbMenus: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
+    showNavigation: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
+    showUser: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
+    showActions: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
+    centerAlignElement: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"])
+  }),
+  /**
+   * Property set for actions to be displayed in the Vertical Navigation.
+   */
+  actionValues: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      selected: PropTypes.bool,
+      isHidden: PropTypes.bool,
+      leftIcon: PropTypes.func,
+      showNavIcon: PropTypes.bool,
+      subData: PropTypes.object,
+      path: PropTypes.string,
+      onVerticalClick: PropTypes.func,
+      params: PropTypes.instanceOf(Object),
+      horizontalItemAction: PropTypes.node
+    })
+  ),
+  fixVerticalNavigation: PropTypes.bool
 };
 
 Main.defaultProps = {
   className: "",
   id: undefined,
   position: "fixed",
-
   companyLogo: null,
   label: null,
   productText: undefined,
   productLogo: null,
   labels: {},
+  theme: {},
 
-  navigationData: [],
+  navigationStructure: {
+    showSearch: false,
+    data: [
+      {
+        id: undefined,
+        label: "",
+        selected: false,
+        isHidden: false,
+        leftIcon: null,
+        showNavIcon: false,
+        path: "",
+        params: {},
+        subData: {
+          showSearch: false,
+          data: [
+            {
+              label: "",
+              path: ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  navigationData: undefined,
   basePath: "",
   onNavigationClick: () => {},
+  onNavigationKeyDown: () => {},
   selected: 0,
   useRouter: false,
 
@@ -215,7 +496,16 @@ Main.defaultProps = {
   userIcon: null,
   userClick: null,
 
-  itemActions: []
+  itemActions: null,
+  responsivenessConfig: {
+    showHbMenus: "sm",
+    showNavigation: "md",
+    showUser: "sm",
+    showActions: "sm",
+    centerAlignElement: "sm"
+  },
+  actionValues: null,
+  fixVerticalNavigation: false
 };
 
 export default Main;

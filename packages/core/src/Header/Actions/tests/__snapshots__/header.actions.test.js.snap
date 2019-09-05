@@ -5056,6 +5056,7 @@ body {
 .Actions-actionsContainer-4 {
   height: 100%;
   display: flex;
+  z-index: 2;
   align-items: center;
 }
 .Actions-marginLeft-5 {
@@ -5090,6 +5091,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "z-index": "2",
                   },
                   Object {
                     "margin-left": "60px",
@@ -5107,6 +5109,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "z-index": "2",
                   },
                   ".Actions-iconContainer-6": Object {
                     "display": "inherit",
@@ -5122,6 +5125,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "z-index": "2",
                   },
                   "iconContainer": Object {
                     "display": "inherit",
@@ -5627,6 +5631,7 @@ body {
                     "alignItems": "center",
                     "display": "flex",
                     "height": "100%",
+                    "zIndex": 2,
                   },
                   "iconContainer": Object {
                     "&:hover": Object {
