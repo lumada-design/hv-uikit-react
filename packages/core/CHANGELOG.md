@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.5.0...@hv/uikit-react-core@1.5.1) (2019-09-06)
+
+
+### Bug Fixes
+
+* **dropdown:** change list z-index to prevent rendering behind modal. [#476](https://github.com/pentaho/hv-uikit-react/issues/476) ([#500](https://github.com/pentaho/hv-uikit-react/issues/500)) ([9e6b6a1](https://github.com/pentaho/hv-uikit-react/commit/9e6b6a1))
+
+
+
+
+
 # [1.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.4.1...@hv/uikit-react-core@1.5.0) (2019-09-06)
 
 
