@@ -12,13 +12,15 @@ pipeline {
    
     stages {
         stage('Skip Build?') {
-            result = sh (script: "git log -1 | grep 'chore(release): publish'", returnStatus: true)
-            if (result == 0) {
-                echo ("This build will be skipped because it is a trigger from chore. Aborting.")
-                env.shouldBuild = false
-            } else {
-                env.shouldBuild = true
-            }
+            steps {
+                result = sh (script: "git log -1 | grep 'chore(release): publish'", returnStatus: true)
+                if (result == 0) {
+                    echo ("This build will be skipped because it is a trigger from chore. Aborting.")
+                    env.shouldBuild = false
+                } else {
+                    env.shouldBuild = true
+                }
+            }    
         }
 
         stage('Release') {
