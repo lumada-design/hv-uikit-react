@@ -27,6 +27,7 @@ import Popper from "../../utils/Popper";
 import HvCheckBox from "../../Selectors/CheckBox";
 
 const List = ({
+  theme,
   classes,
   values,
   multiSelect,
@@ -340,7 +341,7 @@ const List = ({
         onUpdate: data => handleListFlip(data),
         onCreate: data => handleListCreate(data)
       }}
-      style={{ zIndex: 1 }}
+      style={{ zIndex: theme.zIndex.tooltip }}
     >
       <ClickAwayListener onClickAway={handleClickAwayInternal}>
         <div
@@ -388,6 +389,10 @@ const List = ({
 };
 
 List.propTypes = {
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the component styles.
    */
