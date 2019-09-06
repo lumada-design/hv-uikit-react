@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.5.2...@hv/uikit-react-doc@1.6.0) (2019-09-06)
+
+
+### Bug Fixes
+
+* **login:** allow background image from different sources. [#486](https://github.com/pentaho/hv-uikit-react/issues/486) ([cb112a1](https://github.com/pentaho/hv-uikit-react/commit/cb112a1))
+
+
+### Features
+
+* **header:** update component according to ds guidelines. [#194](https://github.com/pentaho/hv-uikit-react/issues/194) ([66c8c05](https://github.com/pentaho/hv-uikit-react/commit/66c8c05))
+* **vertical-navigation:** add component. [#240](https://github.com/pentaho/hv-uikit-react/issues/240) ([a3f46a8](https://github.com/pentaho/hv-uikit-react/commit/a3f46a8))
+
+
+
+
+
 ## [1.5.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.5.1...@hv/uikit-react-doc@1.5.2) (2019-08-29)
 
 

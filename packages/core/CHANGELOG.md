@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.4.1...@hv/uikit-react-core@1.5.0) (2019-09-06)
+
+
+### Bug Fixes
+
+* **badge:** add font family to count. [#478](https://github.com/pentaho/hv-uikit-react/issues/478) ([63ab569](https://github.com/pentaho/hv-uikit-react/commit/63ab569))
+* **badge:** removed extra padding. [#477](https://github.com/pentaho/hv-uikit-react/issues/477) ([babc1c0](https://github.com/pentaho/hv-uikit-react/commit/babc1c0))
+* **dropdown:** click outside should behave as cancel. [#284](https://github.com/pentaho/hv-uikit-react/issues/284) ([eb12a6e](https://github.com/pentaho/hv-uikit-react/commit/eb12a6e))
+* **dropdown:** selected number reacts to clicks. [#285](https://github.com/pentaho/hv-uikit-react/issues/285) ([6cb4b17](https://github.com/pentaho/hv-uikit-react/commit/6cb4b17))
+* **list:** text align when no icon. [#460](https://github.com/pentaho/hv-uikit-react/issues/460) ([b5eb2f7](https://github.com/pentaho/hv-uikit-react/commit/b5eb2f7))
+* **login:** allow background image from different sources. [#486](https://github.com/pentaho/hv-uikit-react/issues/486) ([cb112a1](https://github.com/pentaho/hv-uikit-react/commit/cb112a1))
+
+
+### Features
+
+* **header:** update component according to ds guidelines. [#194](https://github.com/pentaho/hv-uikit-react/issues/194) ([66c8c05](https://github.com/pentaho/hv-uikit-react/commit/66c8c05))
+* **vertical-navigation:** add component. [#240](https://github.com/pentaho/hv-uikit-react/issues/240) ([a3f46a8](https://github.com/pentaho/hv-uikit-react/commit/a3f46a8))
+
+
+
+
+
 ## [1.4.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.4.0...@hv/uikit-react-core@1.4.1) (2019-08-28)
 
 
