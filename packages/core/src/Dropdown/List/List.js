@@ -340,7 +340,7 @@ const List = ({
         onUpdate: data => handleListFlip(data),
         onCreate: data => handleListCreate(data)
       }}
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 1500 }}
     >
       <ClickAwayListener onClickAway={handleClickAwayInternal}>
         <div
