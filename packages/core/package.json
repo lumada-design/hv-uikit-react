@@ -30,7 +30,7 @@
     "update-uikit-common": "npm update @hv/uikit-common-themes @hv/uikit-common-utils"
   },
   "dependencies": {
-    "@hv/uikit-common-icons": "^1.2.0",
+    "@hv/uikit-common-icons": "^1.3.0",
     "@hv/uikit-common-themes": "^1.2.0",
     "@hv/uikit-common-utils": "^1.2.0",
     "@hv/uikit-react-icons": "^1.2.1",

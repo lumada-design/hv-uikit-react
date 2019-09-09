@@ -68,7 +68,7 @@ const Main = ({ classes, children, context, config }) => {
   processedKind = story === "Typography" && "Core" || processedKind;
 
   const metadata = getComponentsMetadata(children);
-  console.log(metadata);
+
   return (
     <>
 

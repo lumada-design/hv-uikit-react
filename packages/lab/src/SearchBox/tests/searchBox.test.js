@@ -18,11 +18,13 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import SearchBox from "../SearchBox";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import SearchBox from "../index";
 
 const mockClasses = {};
 
-const testState = (instance, value) => {
+const testState = (wrapper, value) => {
+  const instance = wrapper.children().childAt(1).children().instance();
   expect(instance.state.value).toEqual(value);
 };
 
@@ -31,9 +33,11 @@ describe("<SearchBox />", () => {
 
   it("has default props", () => {
     const searchBox = mount(
-      <SearchBox classes={mockClasses} onChange={onChangeMock} />
+      <HvProvider>
+        <SearchBox classes={mockClasses} onChange={onChangeMock} />
+      </HvProvider>
     );
-    const props = searchBox.props();
+    const props = searchBox.children().childAt(1).children().props();
     expect(props.value).toEqual("");
     expect(props.placeholder).toEqual("Search");
     expect(props.onChange).toBe(onChangeMock);
@@ -42,27 +46,33 @@ describe("<SearchBox />", () => {
 
   it("renders correctly", () => {
     const searchBox = shallow(
-      <SearchBox classes={mockClasses} onChange={onChangeMock} />
+      <HvProvider>
+        <SearchBox classes={mockClasses} onChange={onChangeMock} />
+      </HvProvider>
     );
     expect(searchBox).toMatchSnapshot();
   });
 
   it("renders correctly with provided search input", () => {
     const testSearchInput = "searchInput";
-    const searchBox = shallow(
-      <SearchBox
-        classes={mockClasses}
-        onChange={onChangeMock}
-        searchInput={testSearchInput}
-      />
+    const searchBox = mount(
+      <HvProvider>
+        <SearchBox
+          classes={mockClasses}
+          onChange={onChangeMock}
+          searchInput={testSearchInput}
+        />
+      </HvProvider>
     );
     expect(searchBox.find("input").prop("value")).toBe(testSearchInput);
   });
 
   it("onChange is triggered and state is changed", () => {
     onChangeMock.mockReset();
-    const searchBox = shallow(
-      <SearchBox classes={mockClasses} onChange={onChangeMock} />
+    const searchBox = mount(
+      <HvProvider>
+        <SearchBox classes={mockClasses} onChange={onChangeMock} />
+      </HvProvider>
     );
     const eventMock = {
       target: {
@@ -72,21 +82,23 @@ describe("<SearchBox />", () => {
     searchBox.find("input").simulate("change", eventMock);
 
     expect(onChangeMock).toBeCalledWith("test");
-    testState(searchBox.instance(), "test");
+    testState(searchBox, "test");
   });
 
   it("onChange is triggered and state resets when clear is clicked", () => {
     onChangeMock.mockReset();
-    const searchBox = shallow(
-      <SearchBox
-        classes={mockClasses}
-        onChange={onChangeMock}
-        value="mockValue"
-      />
+    const searchBox = mount(
+      <HvProvider>
+        <SearchBox
+          classes={mockClasses}
+          onChange={onChangeMock}
+          value="mockValue"
+        />
+      </HvProvider>
     );
     searchBox.find("span").simulate("click");
 
     expect(onChangeMock).toBeCalledWith("");
-    testState(searchBox.instance(), "");
+    testState(searchBox, "");
   });
 });

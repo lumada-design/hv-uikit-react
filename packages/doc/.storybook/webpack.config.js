@@ -33,7 +33,7 @@ module.exports =  ({ config, mode }) => {
                   ),
                   "@hv/uikit-react-icons/dist": path.resolve(
                     __dirname,
-                    "../../icons/dist"
+                    "../../icons/bin"
                   )
                 }
               }
