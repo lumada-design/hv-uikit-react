@@ -24,13 +24,13 @@ const styles = theme => ({
     width: "100%",
     borderStyle: "solid",
     borderWidth: " 0 0 1px 0",
-    background: "transparent",
+    background: theme.hv.palette.atmosphere.atmo1,
     borderColor: theme.hv.palette.atmosphere.atmo6,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo2
+      background: theme.hv.palette.atmosphere.atmo1
     }
   },
   inputRootDisabled: {
@@ -47,12 +47,12 @@ const styles = theme => ({
     borderStyle: "solid",
     borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
-    background: theme.hv.palette.atmosphere.atmo2,
+    background: theme.hv.palette.atmosphere.atmo1,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo2
+      background: theme.hv.palette.atmosphere.atmo1
     }
   },
   input: {
