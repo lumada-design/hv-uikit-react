@@ -25,7 +25,7 @@ const styles = theme => {
   if (theme && theme.hv.palette.atmosphere.atmo2) {
     convertedColor = fade(
         convertHexToRGB(theme.hv.palette.atmosphere.atmo2),
-        0.9
+        1
     );
   }
 

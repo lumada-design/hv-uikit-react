@@ -336,7 +336,7 @@ HvLogin.defaultProps = {
   className: "",
   id: undefined,
   backgroundImage: "",
-  backgroundImageSize: "321px",
+  backgroundImageSize: "100%",
   recovery: () => {},
   logo: null,
   titleComponent: null,
