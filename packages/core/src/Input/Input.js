@@ -380,7 +380,7 @@ class HvInput extends React.Component {
     )
 
     let validationText;
-    if ((validate || showInfo) && !infoIcon) {
+    if ((validate || showInfo) ) {
       validationText = (
         <HvTypography
           variant={
