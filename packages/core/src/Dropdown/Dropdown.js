@@ -19,8 +19,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
-import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
+import ArrowUp from "@hv/uikit-react-icons/dist/DawnTheme/DropDown.XS";
+import ArrowDown from "@hv/uikit-react-icons/dist/DawnTheme/DropUp.XS";
 import HvTypography from "../Typography";
 import List from "./List";
 

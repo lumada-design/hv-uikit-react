@@ -9,12 +9,12 @@ const data = [
   {
     label: "Advanced server DS120",
     selected: false,
-    leftIcon: UserIcon
+    leftIcon: props => <UserIcon {...props} />
   },
   {
     label: "Advanced server DS122",
     selected: false,
-    leftIcon: CalendarIcon
+    leftIcon: props => <CalendarIcon {...props}/>
   },
   {
     label: "Advanced server DS250",
@@ -23,12 +23,12 @@ const data = [
   {
     label: "Advanced server DS530",
     selected: false,
-    leftIcon: PlaneIcon
+    leftIcon: props => <PlaneIcon {...props}/>
   },
   {
     label: "Advanced server DS555",
     selected: false,
-    leftIcon: LineChartIcon
+    leftIcon: props => <LineChartIcon {...props}/>
   }
 ];
 

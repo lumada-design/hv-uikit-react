@@ -54,7 +54,7 @@ const mockDataSingleSelectionWithIds = [
 const mockDataSingleSelectionWithIcons = [
   {
     label: "Value 1",
-    leftIcon: LineChartIcon
+    leftIcon: props => <LineChartIcon {...props} />
   },
   {
     label: "Value 2"

@@ -26,13 +26,7 @@ exports[`Modal Component allows external props to be added 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
+    <WithStyles(CloseS)
       style={
         Object {
           "width": "32px",
@@ -69,13 +63,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
     className="testClassCloseButton"
     onClick={[Function]}
   >
-    <CloseS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
+    <WithStyles(CloseS)
       style={
         Object {
           "width": "32px",
@@ -111,13 +99,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
+    <WithStyles(CloseS)
       style={
         Object {
           "width": "32px",
@@ -153,13 +135,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
+    <WithStyles(CloseS)
       style={
         Object {
           "width": "32px",
@@ -195,13 +171,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      color={
-        Array [
-          "none",
-          "#414141",
-        ]
-      }
+    <WithStyles(CloseS)
       style={
         Object {
           "width": "32px",

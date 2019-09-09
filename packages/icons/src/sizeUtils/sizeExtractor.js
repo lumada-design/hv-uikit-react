@@ -5,7 +5,7 @@
  * @param  string fileData
  * @return Object
  */
-module.exports = function extractSize(fileData) {
+module.exports = function extractSize(fileData, useGeneric) {
   const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/g;
   const widthRegexp = /width={(\d*?)}/g;
   const heightRegexp = /height={(\d*?)}/g;
@@ -23,12 +23,21 @@ module.exports = function extractSize(fileData) {
   matcher = heightRegexp.exec(fileData);
   result.height = parseInt(matcher[1], 10) - 2;
   matcher = viewBoxRegexp.exec(fileData);
-  result.viewBoxRegexp = [
-    parseInt(matcher[1], 10) + 1,
-    parseInt(matcher[2], 10) + 1,
-    parseInt(matcher[3], 10) - 2,
-    parseInt(matcher[4], 10) - 2
-  ];
+  if(useGeneric) {
+    result.viewBoxRegexp = [
+      parseInt(matcher[1], 10),
+      parseInt(matcher[2], 10),
+      parseInt(matcher[3], 10),
+      parseInt(matcher[4], 10)
+    ];
+  } else {
+    result.viewBoxRegexp = [
+      parseInt(matcher[1], 10) + 1,
+      parseInt(matcher[2], 10) + 1,
+      parseInt(matcher[3], 10) - 2,
+      parseInt(matcher[4], 10) - 2
+    ];
+  }
 
   return result;
 };

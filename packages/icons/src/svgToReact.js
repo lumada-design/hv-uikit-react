@@ -60,7 +60,7 @@ const writeFile = (processedSVG, fileName, themeName) => {
   fs.appendFile(path.resolve(componentOutputFolder, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
 };
 
-const runUtil = (fileToRead, fileToWrite, themeName) => {
+const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
       printErrors(err);
@@ -114,8 +114,8 @@ const runUtil = (fileToRead, fileToWrite, themeName) => {
       // operator. We will sub those back in manually now
       output = output.replace(/:props:/g, "{...other}");
 
-      const sizeObject = sizeExtractor(output);
-      output = sizeReplacer(output, sizeObject);
+      const sizeObject = sizeExtractor(output, useGeneric);
+      output = sizeReplacer(output, sizeObject, useGeneric);
 
       const colorObject = colorExtractor(output);
       output = fillColorReplacer(output, colorObject);
@@ -133,7 +133,9 @@ const runUtil = (fileToRead, fileToWrite, themeName) => {
       output = generateComponent(
         output,
         processedFileToWrite.split(".").join(""),
-        colorObject.colorText
+        colorObject.colorText,
+        sizeObject,
+        useGeneric
       );
 
       writeFile(output, fileToWrite, themeName);
@@ -146,11 +148,15 @@ const runUtilForAllInDir = () => {
     if (err) {
       return console.log(err);
     } // GEt out early if not found
-
     files.forEach((file, i) => {
+      let useGeneric = false;
       let themeName = path.relative(`${process.cwd()}/${inputPath}`, file).split(path.sep)[0];
-      if(!themeName.endsWith("Theme")) {
+      if(!(themeName.endsWith("Theme") || themeName.endsWith("Generic"))) {
         themeName = null;
+      }  
+      
+      if(themeName === "Generic") {
+        useGeneric = true;
       }
 
       const extention = path.extname(file); // extract extensions
@@ -158,7 +164,7 @@ const runUtilForAllInDir = () => {
       if (extention === ".svg") {
         // variable instantiated up top
         const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName, themeName);
+        runUtil(file, componentName, themeName, useGeneric);
       }
     });
   });
