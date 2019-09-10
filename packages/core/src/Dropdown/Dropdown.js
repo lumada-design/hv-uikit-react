@@ -50,22 +50,39 @@ class Main extends React.Component {
     };
   }
 
-  /**
-   * Set up the header label.
-   */
-  componentDidMount() {
-    const { values, selectDefault } = this.props;
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { values, selectDefault, multiSelect } = nextProps;
+    const { labels } = prevState;
+    let selectionLabel = multiSelect ? labels.selectAll : labels.select;
+
     if (values) {
       let selected = values.filter(elem => elem.selected);
       if (selected.length === 0 && selectDefault) {
         selected = [values[0]];
       }
-      this.setSelectionLabel(true, selected);
+      const hasSelection = selected.length > 0;
+      const isSingleSelection = selected.length === 1;
+
+      if (hasSelection && isSingleSelection) {
+        selectionLabel = selected[0].label;
+      } else if (hasSelection && multiSelect) {
+        selectionLabel = `${labels.multiSelectionAction} ${selected.length} ${
+          labels.multiSelectionConjunction
+        } ${values.length}`;
+      }
+
+      if (selectionLabel !== prevState.selectionLabel) {
+        return { selectionLabel };
+      }
     }
+    return null;
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { values, selectDefault } = nextProps;
+  /**
+   * Set up the header label.
+   */
+  componentDidMount() {
+    const { values, selectDefault } = this.props;
     if (values) {
       let selected = values.filter(elem => elem.selected);
       if (selected.length === 0 && selectDefault) {
