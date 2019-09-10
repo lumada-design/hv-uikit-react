@@ -88,11 +88,6 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
       src: "components/input/inputDefaultValue"
     },
     {
-      title: "12. Left icon",
-      description: "Input with icons aligned to the left",
-      src: "components/input/inputLeftIcon"
-    },
-    {
       title: "13. Event demonstration",
       description: "Input with all event functions enabled",
       src: "components/input/inputEvents"
