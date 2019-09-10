@@ -1,6 +1,6 @@
 *** Settings ***
 Library      SeleniumLibrary
-Library      RobotEyes
+Library      OperatingSystem
 Library      Collections
 Variables    storybook_variables.yaml
 
@@ -20,15 +20,15 @@ open storybook
 apply storybook theme
     [Arguments]        ${theme}=default
     [Documentation]
-    ...                Change storybook as argument theme that can be "default" or "dark"
-    ...                if the actual theme is as argument theme don't do nothing
+    ...                Change storybook as argument theme that can be "dawn" or "wicked"
+    ...                if the actual theme is as argument theme don't will do nothing
     ...
     ...                themes assumptions:
-    ...                - recognize as dark theme when "change theme" button color is rgb(204, 204, 204)
+    ...                - recognize as wicked theme when "change theme" button color is rgb(204, 204, 204)
     ...    
     ${button}                      Set Variable                       //button[.='Change theme']
     ${color}                       get css property value             ${button}                        color
-    ${actual_theme}=               Set Variable If                    '204, 204, 204' in '${color}'    dark     default
+    ${actual_theme}=               Set Variable If                    '204, 204, 204' in '${color}'    wicked     dawn
     Return From Keyword If         '${actual_theme}' == '${theme}'
     Click Button                   ${button}
     Wait Until Keyword Succeeds    5    1s    verify css element property has different value    ${button}    color    ${color}
@@ -102,15 +102,6 @@ capture image of
     Run Keyword If    "${BROWSER}".lower().startswith("i",0,1)    Capture Full Screen
     ...               ELSE                                        Capture Element        ${locator}    ${tolerance}    ${blur}    ${radius}    
 
-setup RobotEyes
-    [Documentation]
-    ...                mandatory setup to:
-    ...                - set baseline directory structure
-    ...                - look on SeleniumLibrary webdriver to capture images
-    ...    
-    ${TEST NAME}    Set Variable       ${SUITE NAME}\\${TEST NAME}\\${BROWSER}
-    Open Eyes       SeleniumLibrary
-
 get constanct css property value
     [Arguments]        ${locator}    ${property}
     [Documentation]
@@ -125,3 +116,23 @@ get constanct css property value
     \              ${previous}               Set Variable                  ${last}
     \              Run Keyword If            ${index} == 9                 fail              After 2 seconds The property are still changing
     END
+    
+compare images
+    [Arguments]    ${baseImage}    ${locator}    ${tagName}    ${tolerance}
+    [Documentation]
+    ...                Compare the baseline image with a captured image of element locator
+    ...                Arguments:
+    ...                - baseImage    (string)     path to base image       ex: (${dir}/default_ie.png)
+    ...                - locator      (string)     web locator o element
+    ...                - tagName      (string)     captured image name, it is suggested the format theme_state_locator_browser.png
+    ...                - tolerance    (decimal)    % value to tolerate      ex: (0.01 = 1%, max value 1 = 100%)
+    ...    
+    Create Directory              ${OUTPUTDIR}/results/${SUITE NAME}/${TEST NAME}
+    ${path}                       Set Variable                          ${SUITE NAME}/${TEST NAME}/${tagName}
+    Capture Element Screenshot    ${locator}                            actual/${path}
+    ${rc}                         ${output} =                           Run And Return Rc And Output                compare -metric NCC "${baseImage}" "${OUTPUTDIR}/actual/${path}" "${OUTPUTDIR}/results/${path}"
+    ${val}                        Evaluate                              round(${output},2) + float(${tolerance})
+    Run Keyword If                round(${val},2)<1                     fail                                        The images do not match
+    [Return]                      round(${output},2)
+    
+
