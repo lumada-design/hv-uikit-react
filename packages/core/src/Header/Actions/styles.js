@@ -19,7 +19,8 @@ const styles = theme => ({
     display: "flex",
     height: "100%",
     alignItems: "center",
-    zIndex:2
+    zIndex: 2,
+    marginLeft: "auto"
   },
   marginLeft: {
     marginLeft: `${theme.hv.spacing.lg}px`

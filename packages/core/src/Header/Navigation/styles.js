@@ -26,7 +26,7 @@ const styles = theme => ({
     zIndex: 2
   },
   emptyContainer: {
-    width: "100%",
+    width: "100%"
   },
   menu: {
     display: "flex",
@@ -53,7 +53,8 @@ const styles = theme => ({
     position: "absolute",
     zIndex: 1,
     left: 0,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    top: 0
   },
   subMenuContainer: {
     width: "100%",
@@ -110,7 +111,7 @@ const styles = theme => ({
     "& p": {
       color: theme.hv.typography.selectedNavText.color,
       fontWeight: theme.hv.typography.selectedNavText.fontWeight
-    },
+    }
   },
   selectedButton: {
     borderTop: `2px solid ${theme.hv.palette.accent.acce3}`
