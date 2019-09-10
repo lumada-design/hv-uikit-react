@@ -64,6 +64,17 @@ class Main extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { values, selectDefault } = nextProps;
+    if (values) {
+      let selected = values.filter(elem => elem.selected);
+      if (selected.length === 0 && selectDefault) {
+        selected = [values[0]];
+      }
+      this.setSelectionLabel(true, selected);
+    }
+  }
+
   /**
    * Set the selectionLabel.
    *
