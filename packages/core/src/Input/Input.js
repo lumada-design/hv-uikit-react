@@ -177,7 +177,7 @@ class HvInput extends React.Component {
 
     let validationState;
     let { infoText } = definedLabels;
-
+    
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
@@ -377,7 +377,7 @@ class HvInput extends React.Component {
       validation,
       validationType,
       disableClear
-    )
+    );
 
     let validationText;
     if ((validate || showInfo) && !infoIcon) {
@@ -446,7 +446,9 @@ class HvInput extends React.Component {
             multiline: classes.multiLine
           }}
           className={classNames(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled
+            [classes.inputRootDisabled]: disabled,
+            [classes.inputRootInvalid]:
+              stateValidationState === validationStates.invalid
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}
