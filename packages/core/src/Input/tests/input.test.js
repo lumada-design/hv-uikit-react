@@ -633,7 +633,7 @@ describe("Input", () => {
     expect(inputInstance.state.value).toBe(inputText2);
   });
 
-  it("should show the info icon and not the info label", () => {
+  it("should show the info icon and the info label", () => {
     wrapper = mount(
       <HvProvider>
         <InputWithStyles infoIcon labels={labels} />
@@ -642,7 +642,7 @@ describe("Input", () => {
     const inputComponent = wrapper.find(InfoS);
     expect(inputComponent.length).toBe(1);
     const labelParagraph = wrapper.find("p");
-    expect(labelParagraph.length).toBe(1);
+    expect(labelParagraph.length).toBe(2);
   });
 
   it("should show the info label and not the info icon", () => {
