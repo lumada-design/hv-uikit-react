@@ -32,30 +32,35 @@ storiesOf("Components/Visualization", module).add(
     usage: "import Linechart from '@hv/uikit-react-core/dist/Linechart'",
     examples: [
       {
-        title: "Simple Linechart",
-        descr: "Tooltip with multiple line",
+        title: "1. Simple Linechart",
+        description: "Tooltip with multiple line",
         src: "components/linechart/simple.js"
       },
       {
-        title: "Simple Linechart with area",
-        descr: "Tooltip with multiple line",
+        title: "2. Simple Linechart with area",
+        description: "Tooltip with multiple line",
         src: "components/linechart/simpleArea.js"
       },
       {
-        title: "Multiple lines Linechart",
-        descr: "Tooltip with multiple line",
+        title: "3. Multiple lines Linechart",
+        description: "Tooltip with multiple line",
         src: "components/linechart/group.js"
       },
       {
-        title: "Multiple lines Linechart",
-        descr: "Tooltip with multiple line",
+        title: "4. Multiple lines Linechart",
+        description: "Tooltip with multiple line",
         src: "components/linechart/groupArea.js"
       },
       {
-        title: "Multiple lines Linechart with area",
-        descr: "Tooltip with multiple line",
+        title: "5. Multiple lines Linechart with area",
+        description: "Tooltip with multiple line",
         src: "components/linechart/groupStacked.js"
-      }
+      },
+      {
+        title: "6. Time Series with range slider",
+        description: "To represent the date, the axis date should be passed as YYYY-MM-DD",
+        src: "components/linechart/timeSerie.js"
+      },
     ]
   }
 );
