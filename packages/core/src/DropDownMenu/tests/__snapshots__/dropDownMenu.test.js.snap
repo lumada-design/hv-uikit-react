@@ -6701,6 +6701,7 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        onClick={null}
         placement="left"
         theme={
           Object {
@@ -14372,6 +14373,7 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        onClick={null}
         placement="left"
         theme={
           Object {
@@ -27271,6 +27273,7 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        onClick={null}
         placement="left"
         theme={
           Object {
@@ -28252,6 +28255,7 @@ body {
                   >
                     <WithStyles(HvList)
                       condensed={true}
+                      onClick={null}
                       selectable={false}
                       values={
                         Array [
@@ -28296,7 +28300,7 @@ body {
                         }
                         multiSelect={false}
                         onChange={[Function]}
-                        onClick={[Function]}
+                        onClick={null}
                         selectDefault={true}
                         selectable={false}
                         showSelectAll={false}
