@@ -71,9 +71,9 @@ const mapNavigationData = (
         params={elem.params}
         useRouter={useRouter}
         onClick={e => {
-          if(isNil(superIndex)) {
-            if(navigationData[i].subData) return;
-            onClick(i, -1, e) 
+          if (isNil(superIndex)) {
+            if (navigationData[i].subData) return;
+            onClick(i, -1, e);
             return;
           }
           onClick(superIndex, i, e);
@@ -85,8 +85,8 @@ const mapNavigationData = (
           setHoveredIndex(i);
         }}
         onKeyDown={e => {
-          if(isNil(superIndex)) {
-            onKeyDown(i, -1, e) 
+          if (isNil(superIndex)) {
+            onKeyDown(i, -1, e);
           } else {
             onKeyDown(superIndex, i, e);
           }
@@ -202,7 +202,6 @@ const Navigation = ({
   onClick,
   onKeyDown
 }) => {
-
   if (!navigationData) {
     return <div className={classes.emptyContainer} />;
   }
