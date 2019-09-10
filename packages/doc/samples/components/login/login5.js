@@ -14,7 +14,7 @@ export default (
       allowRecover={true}
       allowRememberMe={true}
       backgroundImage={backgroundImage}
-      backgroundImageSize="auto"
+      backgroundImageSize="100%"
     />
   </div>
 );
