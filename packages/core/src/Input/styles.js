@@ -55,6 +55,12 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo1
     }
   },
+  inputRootInvalid: {
+    borderColor: theme.hv.palette.semantic.sema4,
+    "&:hover": {
+      borderColor: theme.hv.palette.semantic.sema4
+    }
+  },
   input: {
     height: `21px`,
     marginLeft: `${theme.hv.spacing.xs}px`,
@@ -118,7 +124,7 @@ const styles = theme => ({
   suggestionsContainer: {
     width: "100%",
     position: "relative",
-    top: "-1px",
+    top: "-1px"
   },
   suggestionList: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
