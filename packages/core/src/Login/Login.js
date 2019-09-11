@@ -72,7 +72,9 @@ class HvLogin extends React.Component {
       incorrectCredentialsMessage
     } = this.props;
     const { inRecoveryMode } = this.state;
-    const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
+    const backgroundLoginImg = !backgroundImage.length
+      ? defaultBackImage
+      : backgroundImage;
 
     let form;
     if (inRecoveryMode) {
@@ -137,10 +139,18 @@ class HvLogin extends React.Component {
           className={classes.container}
           style={{
             backgroundImage: `url(${backgroundLoginImg})`,
-            backgroundSize: `${backgroundImageSize}`
+            backgroundSize: `${backgroundImageSize}`,
           }}
         >
-          <HvGrid item xs="false" sm="false" md={8} lg={8} xl={8} className={classes.panelPosition}>
+          <HvGrid
+            item
+            xs="false"
+            sm="false"
+            md={8}
+            lg={8}
+            xl={8}
+            className={classes.panelPosition}
+          >
             <div id={id} className={classNames(classes.root, className)} />
           </HvGrid>
           <HvGrid
