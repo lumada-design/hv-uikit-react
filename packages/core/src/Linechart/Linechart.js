@@ -41,10 +41,11 @@ const Linechart = ({
   tooltipType,
   type,
   xAxisTitle,
-  yAxisTitle
+  yAxisTitle,
+  rangeSlider
 }) => {
   const newData = setData(data, type);
-  const newLayout = setLayout(layout);
+  const newLayout = setLayout(layout, rangeSlider);
 
   return (
     <Chart
@@ -101,7 +102,11 @@ Linechart.propTypes = {
   /**
    * Defines the title of the Y axis.
    */
-  yAxisTitle: PropTypes.string
+  yAxisTitle: PropTypes.string,
+  /**
+   * Defines it should present a range slider.
+   */
+  rangeSlider: PropTypes.bool
 };
 
 Linechart.defaultProps = {
@@ -113,7 +118,8 @@ Linechart.defaultProps = {
   config: null,
   type: "line",
   xAxisTitle: undefined,
-  yAxisTitle: undefined
+  yAxisTitle: undefined,
+  rangeSlider: false
 };
 
 export default Linechart;

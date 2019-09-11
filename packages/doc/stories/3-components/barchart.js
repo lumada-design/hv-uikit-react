@@ -28,37 +28,37 @@ storiesOf("Components/Visualization", module).add("Barchart", () => <Barchart />
   usage: "import Barchart from '@hv/uikit-react-core/dist/Barchart'",
   examples: [
     {
-      title: "Simple Vertical Bar with use single",
-      descr: "Tooltip with single line",
+      title: "1. Simple Vertical Bar with use single",
+      description: "Tooltip with single line",
       src: "components/barchart/simpleVerticalWithUseSingle.js"
     },
     {
-      title: "Simple Vertical Bar",
-      descr: "Tooltip with multiple line",
+      title: "2. Simple Vertical Bar",
+      description: "Tooltip with multiple line",
       src: "components/barchart/simpleVertical.js"
     },
     {
-      title: "Grouped Vertical Bar",
+      title: "3. Grouped Vertical Bar",
       src: "components/barchart/groupVertical.js"
     },
     {
-      title: "Stacked Vertical Bar",
+      title: "4. Stacked Vertical Bar",
       src: "components/barchart/stackVertical.js"
     },
     {
-      title: "Simple Horizontal Bar with use single",
+      title: "5. Simple Horizontal Bar with use single",
       src: "components/barchart/simpleHorizontalWithUseSingle.js"
     },
     {
-      title: "Simple Horizontal Bar",
+      title: "6. Simple Horizontal Bar",
       src: "components/barchart/simpleHorizontal.js"
     },
     {
-      title: "Grouped Horizontal Bar",
+      title: "7. Grouped Horizontal Bar",
       src: "components/barchart/groupHorizontal.js"
     },
     {
-      title: "Stacked Horizontal Bar",
+      title: "8. Stacked Horizontal Bar",
       src: "components/barchart/stackHorizontal.js"
     }
   ]

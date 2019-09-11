@@ -59,8 +59,16 @@ export const setData = (inputData, type) => {
   return data;
 };
 
-export const setLayout = inputLayout => {
+export const setLayout = (inputLayout, rangeSlider) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
+
+  if (rangeSlider) {
+    setterIfNil(layout, "xaxis", {});
+
+    setterIfNil(layout.xaxis, "rangeslider", {
+      visible: true
+    });
+  }
 
   return layout;
 };
