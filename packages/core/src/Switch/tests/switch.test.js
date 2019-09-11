@@ -19,7 +19,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../../dist/Provider";
+import HvProvider from "../../Provider";
 
 import SwitchWithStyles from "..";
 import Switch from "../Switch";
