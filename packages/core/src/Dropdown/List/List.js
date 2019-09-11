@@ -39,8 +39,7 @@ const List = ({
   hasTooltips,
   disablePortal,
   isOpen,
-  anchorEl,
-  handleClickAway
+  anchorEl
 }) => {
   const [searchStr, setSearchStr] = useState();
   const [list, setList] = useState(clone(values));
@@ -267,11 +266,14 @@ const List = ({
 
   /**
    * Cancel the selection in case of no commit reverting the state to it's previous iteration.
+   * If the handler is called by the onClickAway it is evaluated if the click was done in the header
+   * to prevent the double toggle.
    */
-  const handleCancel = () => {
+  const handleCancel = e => {
     setList(clone(prevList));
     setSearchStr("");
-    sendOnChange(getSelection(prevList), true, true, false);
+    const toggle = isNil(e) ? true : e.target.id !== "header";
+    sendOnChange(getSelection(prevList), true, toggle, false);
   };
 
   /**
@@ -320,15 +322,6 @@ const List = ({
     }
   };
 
-  /**
-   * Send the indication of click away and cancel any selection.
-   *
-   * @param evt
-   */
-  const handleClickAwayInternal = evt => {
-    handleCancel();
-    handleClickAway(evt);
-  };
   const showList = !isNil(values);
 
   return (
@@ -343,7 +336,7 @@ const List = ({
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
     >
-      <ClickAwayListener onClickAway={handleClickAwayInternal}>
+      <ClickAwayListener onClickAway={e => handleCancel(e)}>
         <div
           className={classNames([
             classes.list,
@@ -444,11 +437,7 @@ List.propTypes = {
    * The return value will passed as the reference object of the Popper
    * instance.
    */
-  anchorEl: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  /**
-   * Function to be call when clicking away of the list.
-   */
-  handleClickAway: PropTypes.func
+  anchorEl: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
 };
 
 List.defaultProps = {
@@ -461,8 +450,7 @@ List.defaultProps = {
   hasTooltips: false,
   disablePortal: true,
   isOpen: false,
-  anchorEl: null,
-  handleClickAway: null
+  anchorEl: null
 };
 
 export default List;

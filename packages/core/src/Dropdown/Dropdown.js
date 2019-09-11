@@ -92,15 +92,6 @@ class Main extends React.Component {
   }
 
   /**
-   *  Closes the dropdown whenever there is a click outside the document.
-   *
-   * @param {Object} evt - the event produced by clicking outside.
-   */
-  handleClickAway = evt => {
-    if (!this.node.contains(evt.target)) this.setState({ isOpen: false });
-  };
-
-  /**
    *  Opens and closes the dropdown.
    *
    * @param {Object} evt - the event produced by the click action.
@@ -213,7 +204,6 @@ class Main extends React.Component {
         disablePortal={disablePortal}
         isOpen={isOpen}
         anchorEl={anchorEl}
-        handleClickAway={this.handleClickAway}
       />
     );
   }
