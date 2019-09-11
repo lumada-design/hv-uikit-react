@@ -35,6 +35,8 @@ const styles = theme => {
       justifyContent: "flex-end",
       width: "100%",
       height: "100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "bottom",
     },
     root: {
 
