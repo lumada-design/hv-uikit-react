@@ -626,7 +626,7 @@ HvInput.propTypes = {
   password: PropTypes.bool,
   /**
    * The function that will be executed onChange, allows modification of the input,
-   * it receives the value and must return a value otherwise the input will be empty.
+   * it receives the value. If a new value should be presented it must returned it.
    */
   onChange: PropTypes.func,
   /**
