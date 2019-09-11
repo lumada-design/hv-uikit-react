@@ -122,12 +122,20 @@ const List = ({
   );
 
   /**
+   * Get selected members.
+   * @param sourceList
+   * @returns {null}
+   */
+  const getSelection = sourceList =>
+    sourceList ? sourceList.filter(elem => elem.selected) : [];
+
+  /**
    * Update the selectionLabel.
    *
    * @param selection
    */
   const updateSelectionLabel = selection => {
-    const hasSelection = selection.length > 0;
+    const hasSelection = getSelection(selection).length > 0;
 
     const { selectAll, multiSelectionConjunction } = labels;
 
@@ -149,14 +157,6 @@ const List = ({
     onChange(selection, commitChanges, toggle, notifyChanges);
     updateSelectionLabel(selection);
   };
-
-  /**
-   * Get selected members.
-   * @param sourceList
-   * @returns {null}
-   */
-  const getSelection = sourceList =>
-    sourceList ? sourceList.filter(elem => elem.selected) : [];
 
   /**
    * Update states associated with select all.
