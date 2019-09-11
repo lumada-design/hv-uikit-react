@@ -19,6 +19,7 @@ Test button state transition between default-focus
     apply storybook theme        ${theme}
     Click Button                 ${button_locator}
     Alert Should Be Present
+    remove mouse over button
     Element Should Be Focused    ${button_locator}
     compare images               ${CURDIR}/baseline/${baseline}    ${button_locator}     ${theme}_focus_${button_locator}_${BROWSER}.png    ${TOLERANCE}
 

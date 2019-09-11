@@ -2,4 +2,4 @@ STORYBOOK_URL:    http://localhost:9002
 BROWSER:    ff
 BUTTON_PAGE:    iframe.html?id=corebutton--positive
 PA11Y:    
-TOLERANCE:    3
+TOLERANCE:    0.03
