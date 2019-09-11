@@ -122,16 +122,6 @@ describe("<Dropdown />", () => {
       expect(onChangeMock).toHaveBeenCalled();
     });
 
-    it("handleClickAway updates state accordingly with event payload", () => {
-      dropdownComponent = wrapper.find(Dropdown);
-      instance = dropdownComponent.instance();
-
-      instance.node = { contains: jest.fn() };
-      instance.handleClickAway({ target: "mock" });
-
-      expect(instance.state.isOpen).toBe(false);
-    });
-
     it("handleToggle updates state accordingly", () => {
       act(() => {
         wrapper = mount(
