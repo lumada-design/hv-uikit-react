@@ -2,7 +2,6 @@
 Variables          ../../_resources/storybook_variables.yaml
 Resource           _resources/button_keywords.robot
 Library            SeleniumLibrary
-Library            RobotEyes                           ${TOLERANCE}
 Suite Setup        open storybook button page
 Suite Teardown     Close Browser
 Test Template      Test button state transition between focus-hover-focus
