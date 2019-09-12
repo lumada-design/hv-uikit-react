@@ -11,7 +11,7 @@ pipeline {
         booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.')
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
-        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
+        booleanParam(name: 'skipAutomationTest', defaultValue: false, description: 'when true, skip automation tests.')
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus and documentation.')
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
@@ -68,8 +68,23 @@ pipeline {
                       label 'robotframework-unix'
                     }
                     when {
-                        triggeredBy 'UpstreamCause'
                         expression { !params.skipAutomationTest }
+                        anyOf {
+                            allOf {
+                                anyOf {
+                                    changeRequest target: 'master'
+                                    branch 'master'
+                                }
+                                triggeredBy 'UpstreamCause'
+                            }
+                            allOf {
+                                branch 'alpha'
+                                anyOf {
+                                    triggeredBy 'SCMTrigger'
+                                    triggeredBy 'UpstreamCause'
+                                }
+                            }
+                        }
                     }
                     steps {
                         script {
@@ -95,6 +110,13 @@ pipeline {
                         }
                     }
                     post {
+                        failure {
+                            echo ("This build is unstable. Please check the automation tests.")
+                            script {
+                                currentBuild.result = "UNSTABLE"
+                            }
+                        }
+
                       always {
                         script {
                           def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
