@@ -2,10 +2,8 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          _resources/button_keywords.robot
 Library           SeleniumLibrary
-Library           RobotEyes                           ${TOLERANCE}
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
-Test Setup        setup RobotEyes
 Test Template     Test there is no state transition on click a focused button
 Default Tags      smoke    bug-edge-webdriver
 
@@ -25,8 +23,6 @@ Test there is no state transition on click a focused button
     Click Button                 ${button_locator}
     Alert Should Be Present
     Element Should Be Focused    ${button_locator}
-    capture image of             id=${button_locator}
-    Compare Images
 
 *** Test Cases ***                              button              theme
 click on focus default button                   default             default

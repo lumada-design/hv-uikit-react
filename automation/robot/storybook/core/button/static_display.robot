@@ -7,7 +7,7 @@ Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Setup        setup RobotEyes
 Test Template     Test static display of button
-Default Tags      smoke    
+Default Tags      smoke   image 
 
 *** Keywords ***
 Test static display of button

@@ -2,10 +2,8 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          _resources/button_keywords.robot
 Library           SeleniumLibrary
-Library           RobotEyes                           ${TOLERANCE}
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
-Test Setup        setup RobotEyes
 Test Template     Test there is no state transition on click a disabled button
 Default Tags      smoke
 
@@ -20,8 +18,6 @@ Test there is no state transition on click a disabled button
     Alert Should Not Be Present
     Element Should Be Disabled       ${button_locator}
     verify element is not focused    ${button_locator}
-    capture image of                 id=${button_locator}
-    Compare Images
 
 *** Test Cases ***                                 button_locator     	       theme
 click on disabled default button                   disabledPrimary             default
