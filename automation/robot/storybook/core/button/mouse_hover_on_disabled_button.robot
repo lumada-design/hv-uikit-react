@@ -2,10 +2,8 @@
 Variables          ../../_resources/storybook_variables.yaml
 Resource           _resources/button_keywords.robot
 Library            SeleniumLibrary
-Library            RobotEyes                           ${TOLERANCE}
 Suite Setup        open storybook button page
 Suite Teardown     Close Browser
-Test Setup         setup RobotEyes
 Test Template      Test there is no state transition on mouse hover disabled button
 Default Tags       smoke
 
@@ -17,9 +15,7 @@ Test there is no state transition on mouse hover disabled button
     ...
     apply storybook theme            ${theme}
     Wait Until Element Is Visible    ${button_locator}
-    verify CSS properties do not changes with mouse over    ${button_locator}
-    capture image of                 id=${button_locator}
-    Compare Images
+    verify CSS properties do not changes with mouse hover    ${button_locator}
 
 *** Test Cases ***                                       button_locator              theme
 mouse hover on disabled default button                   disabledPrimary             default

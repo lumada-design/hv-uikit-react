@@ -87,21 +87,6 @@ verify css element property value
     ${current_value}    get constanct css property value    ${locator}    ${property}
     Should Be Equal     ${current_value}                    ${value}      error message: the css element property don't have the correct value
 
-capture image of
-    [Arguments]    ${locator}    ${tolerance}=    ${blur}=    ${radius}=
-    [Documentation]
-    ...                If the browser is IntenetExplorer then run keyword "capture full screen"
-    ...                else run keyword "Capture Element"
-    ...
-    ...                Arguments:
-    ...                - locator                             (string)    should have format of prefix=value (example id=default or css=#default)
-    ...                - other arguments                     (string)    are optional for keyword "Capture Element"
-    ...
-    ...                workaround for issue:                 https://github.com/jz-jess/RobotEyes/issues/35
-    ...
-    Run Keyword If    "${BROWSER}".lower().startswith("i",0,1)    Capture Full Screen
-    ...               ELSE                                        Capture Element        ${locator}    ${tolerance}    ${blur}    ${radius}    
-
 get constanct css property value
     [Arguments]        ${locator}    ${property}
     [Documentation]

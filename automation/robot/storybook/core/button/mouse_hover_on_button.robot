@@ -2,10 +2,8 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          _resources/button_keywords.robot
 Library           SeleniumLibrary
-Library           RobotEyes                           ${TOLERANCE}
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
-Test Setup        setup RobotEyes
 Test Template     Test button state transition between default-hover-default
 Default Tags      smoke
 
@@ -17,11 +15,7 @@ Test button state transition between default-hover-default
     ...
     apply storybook theme            ${theme}
     Wait Until Element Is Visible    ${button_locator}
-    verify button background-color change with mouse over    ${button_locator}
-    capture image of                 id=${button_locator}
-    remove mouse over button
-    capture image of                 id=${button_locator}
-    Compare Images
+    verify button background-color change on and removing mouse hover    ${button_locator}  
 
 *** Test Cases ***                              button_locator     theme
 mouse hover on default button                   default            default

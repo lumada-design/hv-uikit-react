@@ -5,7 +5,6 @@ Library           SeleniumLibrary
 Library           RobotEyes                           ${TOLERANCE}
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
-Test Setup        setup RobotEyes
 Test Template     Test button state transition between focus-default
 Default Tags      smoke    bug-edge-webdriver
 
@@ -25,8 +24,6 @@ Test button state transition between focus-default
     remove focus
     Element Should Be Enabled        ${button_locator}
     verify element is not focused    ${button_locator}
-    capture image of                 id=${button_locator}
-    Compare Images
 
 *** Test Cases ***                               button_locator      theme
 remove focus on default button                   default             default
