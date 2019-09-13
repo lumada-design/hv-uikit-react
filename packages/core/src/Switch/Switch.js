@@ -21,6 +21,7 @@ import BaseSwitch from "@material-ui/core/Switch";
 import classnames from "classnames";
 import { filter } from "lodash";
 
+import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
 
 import CheckMark from "./media/ToggleSuccess.XS.svg";
@@ -50,7 +51,11 @@ const Switch = props => {
     const labelIsDisabled = labelClassRegex.test(event.target.className);
     // verify checked property and if true enable clicking on labels
     if (!disabled && labelIsDisabled) {
-      setClicked(!clickState);
+      const status = !clickState;
+      setClicked(status);
+      // eslint-disable-next-line no-param-reassign
+      event.target.checked = status;
+      onChange(event);
     }
   };
 
@@ -106,7 +111,7 @@ const Switch = props => {
 
   const LeftLabel = () => (
     <div
-      id={`${id}_leftButton`}
+      id={!isNil(id) ? `${id}_leftButton` : null}
       role="button"
       tabIndex={0}
       onClick={handleLabelClick}
@@ -130,7 +135,7 @@ const Switch = props => {
 
   const RightLabel = () => (
     <div
-      id={`${id}_rightButton`}
+      id={!isNil(id) ? `${id}_rightButton` : null}
       role="button"
       tabIndex={0}
       onClick={handleLabelClick}
@@ -268,7 +273,7 @@ Switch.defaultProps = {
     left: "Off",
     right: "On"
   },
-  id: "hvswitch",
+  id: undefined,
   value: "",
   showLabels: true,
   displayIconChecked: false

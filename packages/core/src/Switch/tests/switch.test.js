@@ -97,6 +97,7 @@ describe("Switch label click", () => {
   wrapper = mount(
     <HvProvider>
       <SwitchWithStyles
+        id="hvswitch"
         checked={false}
         showLabels
         labels={{
