@@ -83,8 +83,8 @@ const Switch = props => {
   };
 
   const extractHoverableElements = event => [
-    nodeIterator(event.target, 3, "bar"),
-    nodeIterator(event.target, 1, "icon")
+    nodeIterator(event.target, 3, classes.bar),
+    nodeIterator(event.target, 1, classes.icon)
   ];
 
   const switchHoverIn = event => {
