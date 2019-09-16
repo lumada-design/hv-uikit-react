@@ -39,14 +39,12 @@ const styles = () => ({
   },
   verticalNavigationContainerFixed: {
     height: "calc(100% - 50px)",
-    width: "30%",
     position: "fixed",
     top: 55,
     left: 0
   },
   verticalNavigationContainerAbsolute: {
     height: "100%",
-    width: "30%",
     position: "absolute"
   }
 });
