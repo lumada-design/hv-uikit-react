@@ -91,7 +91,12 @@ class Table extends React.Component {
    * Change the state property initiallyLoaded to identify that it is the first load.
    */
   componentDidMount() {
+    const { initiallyLoaded } = this.state;
     const { data } = this.props;
+
+    if (!initiallyLoaded) {
+      this.state.initiallyLoaded = true;
+    }
     this.state.recordQuantity = data.length;
   }
 
