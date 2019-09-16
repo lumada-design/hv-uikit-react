@@ -1,3 +1,5 @@
+boolean shouldBuild = true
+
 pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
@@ -17,17 +19,15 @@ pipeline {
                     def result = sh (script: "git log -1 | grep 'chore(release): publish'", returnStatus: true)
                     if (result == 0) {
                         echo ("This build will be skipped because it is a trigger from chore. Aborting.")
-                        env.shouldBuild = false
-                    } else {
-                        env.shouldBuild = true
-                    }
+                        shouldBuild = false
+                    } 
                 }
             }    
         }
 
         stage('Release') {
             when {
-                expression { env.shouldBuild }
+                expression { shouldBuild }
             }
 
             steps {
