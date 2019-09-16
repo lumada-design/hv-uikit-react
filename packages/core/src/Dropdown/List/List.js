@@ -25,6 +25,7 @@ import Search from "../../SearchBox";
 import Actions from "../Actions";
 import Popper from "../../utils/Popper";
 import HvCheckBox from "../../Selectors/CheckBox";
+import { getSelected } from "../utils";
 
 const List = ({
   theme,
@@ -56,27 +57,18 @@ const List = ({
   };
 
   /**
-   * Find selected values.
-   *
-   * @param param
-   * @returns {*}
-   */
-  const findSelected = param =>
-    param ? param.filter(elem => elem.selected === true) : [];
-
-  /**
    * After the first render, call onChange if notifyChangesOnFirstRender.
    */
   useEffect(() => {
-    const newList = findSelected(list);
+    setList(values);
     if (notifyChangesOnFirstRender) {
-      onChange(newList, false, false, true);
+      onChange(values, false, false, true);
     }
     if (list) {
       // eslint-disable-next-line no-use-before-define
-      updateSelectionLabel(newList);
+      updateSelectionLabel(values);
     }
-  }, []);
+  }, [values]);
 
   /**
    * Sets the filtered values to the state.
@@ -95,10 +87,11 @@ const List = ({
     if (!isNil(results)) {
       const newList = list.map(elem => {
         const newElem = { ...elem };
-        newElem.isHidden =
-          results.find(result => result.label === elem.label) === undefined;
+        const isResult = results.find(result => result.label === elem.label);
+        newElem.isHidden = !isResult;
         return newElem;
       });
+
       setList(newList);
       setSearchStr(str);
     }
@@ -121,27 +114,18 @@ const List = ({
   );
 
   /**
-   * Get selected members.
-   * @param sourceList
-   * @returns {null}
-   */
-  const getSelection = sourceList =>
-    sourceList ? sourceList.filter(elem => elem.selected) : [];
-
-  /**
    * Update the selectionLabel.
    *
    * @param selection
    */
   const updateSelectionLabel = selection => {
-    const hasSelection = getSelection(selection).length > 0;
-
     const { selectAll, multiSelectionConjunction } = labels;
+    const selected = getSelected(selection);
 
     setSelectionLabel(
-      !hasSelection
+      !selected.length
         ? selectAll
-        : `${selection.length} ${multiSelectionConjunction} ${list.length}`
+        : `${selected.length} ${multiSelectionConjunction} ${list.length}`
     );
   };
 
@@ -161,9 +145,9 @@ const List = ({
    * Update states associated with select all.
    */
   const updateSelectAll = selection => {
-    const selectedLength = getSelection(selection).length;
-    const hasSelection = selectedLength > 0;
-    const allSelect = selectedLength === list.length;
+    const selected = getSelected(selection);
+    const hasSelection = selected.length > 0;
+    const allSelect = selected.length === list.length;
 
     setAnySelected(hasSelection && !allSelect);
     setAllSelected(hasSelection && allSelect);
@@ -181,7 +165,7 @@ const List = ({
       return newElem;
     });
 
-    setList(clone(newList));
+    setList(newList);
 
     updateSelectAll(newList);
 
@@ -200,28 +184,6 @@ const List = ({
       />
     </div>
   );
-  /**
-   * Clean the list of selected values.
-   */
-  const cleanSelection = () => {
-    list.forEach(item => {
-      // eslint-disable-next-line no-param-reassign
-      item.selected = false;
-    });
-    setList(list);
-  };
-
-  /**
-   * Set element selected in list.
-   *
-   * @param elem
-   */
-  const setSelected = elem => {
-    const selectionKey = elem.id ? "id" : "label";
-    list.find(
-      result => result[selectionKey] === elem[[selectionKey]]
-    ).selected = true;
-  };
 
   /**
    * Set hidden to false.
@@ -240,27 +202,17 @@ const List = ({
    * @param selected - elements selected.
    */
   const onSelection = selected => {
-    cleanSelection();
+    updateSelectAll(selected);
 
     if (multiSelect) {
-      selected.forEach(elem => {
-        setSelected(elem);
-      });
-    } else {
-      setSelected(selected);
-    }
-
-    updateSelectAll(list);
-
-    if (multiSelect) {
-      setList(list);
+      setList(clone(selected));
       sendOnChange(selected, false, false, false);
     } else {
       cleanHidden();
-      setPrevList(clone(list));
-      setList(clone(list));
+      setPrevList(clone(selected));
+      setList(clone(selected));
       setSearchStr("");
-      sendOnChange([selected], true, true, true);
+      sendOnChange(selected, true, true, true);
     }
   };
 
@@ -273,7 +225,7 @@ const List = ({
     setList(clone(prevList));
     setSearchStr("");
     const toggle = isNil(e) ? true : e.target.id !== "header";
-    sendOnChange(getSelection(prevList), true, toggle, false);
+    sendOnChange(prevList, true, toggle, false);
   };
 
   /**
@@ -281,10 +233,10 @@ const List = ({
    */
   const handleApply = () => {
     cleanHidden();
-    setPrevList(clone(list));
-    setList(clone(list));
+    setPrevList(list);
+    setList(list);
     setSearchStr("");
-    sendOnChange(getSelection(list), true, true, true);
+    sendOnChange(list, true, true, true);
   };
 
   /**

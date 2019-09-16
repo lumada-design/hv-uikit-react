@@ -27,7 +27,6 @@ import Dropdown from "../Dropdown";
 import List from "../List/List";
 import Actions from "../Actions/Actions";
 import Typography from "../../Typography";
-import InnerList from "../../List";
 
 const mockData = [
   {
@@ -76,6 +75,7 @@ describe("<Dropdown />", () => {
             values={mockData}
             onChange={onChangeMock}
             showSearch
+            selectDefault
             expanded
           />
         </HvProvider>
@@ -92,20 +92,6 @@ describe("<Dropdown />", () => {
       expect(listComponent.at(1).prop("variant")).toBe("selectedText");
     });
 
-    it("onChange is triggered on selection and first is selected", () => {
-      onChangeMock.mockReset();
-      dropdownComponent = wrapper.find(Dropdown);
-      instance = dropdownComponent.instance();
-
-      instance.handleToggle = jest.fn();
-      instance.handleSelection([{ label: "Value 1" }, { label: "Value 2" }]);
-
-      expect(onChangeMock).toBeCalledWith({ label: "Value 1" });
-
-      expect(instance.state.selectionLabel).toBe("Value 1");
-      expect(instance.handleToggle).not.toBeCalled();
-    });
-
     it("onChange is triggered on first render when required", () => {
       onChangeMock.mockReset();
       mount(
@@ -119,6 +105,7 @@ describe("<Dropdown />", () => {
           />
         </HvProvider>
       );
+
       expect(onChangeMock).toHaveBeenCalled();
     });
 
@@ -130,6 +117,7 @@ describe("<Dropdown />", () => {
               values={mockData}
               onChange={onChangeMock}
               showSearch
+              selectDefault
             />
           </HvProvider>
         );
@@ -140,18 +128,6 @@ describe("<Dropdown />", () => {
       instance.handleToggle({ stopPropagation: jest.fn() });
 
       expect(instance.state.isOpen).toBe(true);
-    });
-
-    it("handleSelection updates state accordingly", () => {
-      listComponent = wrapper.find(InnerList);
-
-      const fc = listComponent.children().props().onChange;
-
-      act(() => {
-        fc({ label: "Value 2" });
-      });
-
-      expect(onChangeMock).lastCalledWith({ label: "Value 2" });
     });
   });
 
@@ -198,32 +174,6 @@ describe("<Dropdown />", () => {
 
     it("should render correctly", () => {
       expect(wrapper).toMatchSnapshot();
-    });
-
-    it("onChange is triggered on selection and has two elements selected", () => {
-      dropdownComponent = wrapper.find(Dropdown);
-      instance = dropdownComponent.instance();
-
-      instance.handleToggle = jest.fn();
-      instance.handleSelection(
-        [{ label: "Value 1" }, { label: "Value 2" }],
-        true
-      );
-
-      expect(instance.state.selectionLabel).toBe("Selected 2 of 3");
-      expect(instance.handleToggle).not.toBeCalled();
-    });
-
-    it("onChange is triggered on selection and selection is empty", () => {
-      dropdownComponent = wrapper.find(Dropdown);
-      instance = dropdownComponent.instance();
-
-      instance.handleToggle = jest.fn();
-      instance.handleSelection([], true, true);
-
-      expect(instance.state.selectionLabel).toBe("All");
-      expect(instance.handleToggle).toBeCalled();
-      expect(instance.state.selectionLabel).toBe("All");
     });
 
     it("<Dropdown /> handleToggle should do nothing if disabled", () => {
@@ -303,27 +253,4 @@ describe("<Dropdown />", () => {
       expect(onChangeMock).toBeCalled();
     });
   });
-
-  // describe("<Dropdown /> single selection with ids to manage selection", () => {
-  //   beforeEach(async () => {
-  //     wrapper = mount(
-  //       <HvProvider>
-  //         <DropdownWithStyles multiSelect={false} values={mockDataWithIds} />
-  //       </HvProvider>
-  //     );
-  //   });
-  //
-  //   it("handleSelection updates state accordingly", () => {
-  //     listComponent = wrapper.find(List);
-  //     instance = listComponent.instance();
-  //
-  //     instance.handleSelection({ id: "id-1" });
-  //
-  //     expect(instance.state.list).toEqual([
-  //       { isResult: true, selected: true, id: "id-1", label: "Value 1" },
-  //       { isResult: true, selected: false, id: "id-2", label: "Value 2" },
-  //       { isResult: true, selected: false, id: "id-3", label: "Value 3" }
-  //     ]);
-  //   });
-  // });
 });
