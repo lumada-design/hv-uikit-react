@@ -27,7 +27,7 @@
 const styles = theme => ({
   verticalContainer: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    maxWidth: "320px",
+    width: "320px",
     height: "100%",
     overflow: "hidden",
     "& >div": {
