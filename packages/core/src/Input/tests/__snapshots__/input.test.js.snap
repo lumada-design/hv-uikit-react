@@ -13,7 +13,7 @@ exports[`Input should not have the validation section 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999979,
           },
           "themingEnabled": true,
         } => Map {
@@ -1311,7 +1311,7 @@ exports[`Input should not have the validation section 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999979,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3477,7 +3477,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999979,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999981,
+            "index": -99999999980,
           },
           "themingEnabled": true,
         } => Map {
@@ -4963,7 +4963,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999981,
+                "index": -99999999980,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -6638,7 +6638,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999981,
+                  "index": -99999999980,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -14513,7 +14513,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999979,
           },
           "themingEnabled": true,
         } => Map {
@@ -15811,7 +15811,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999979,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -17977,7 +17977,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999979,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -18123,7 +18123,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999981,
+            "index": -99999999980,
           },
           "themingEnabled": true,
         } => Map {
@@ -19463,7 +19463,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999981,
+                "index": -99999999980,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -21138,7 +21138,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999981,
+                  "index": -99999999980,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -33817,7 +33817,7 @@ exports[`Input should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999979,
           },
           "themingEnabled": true,
         } => Map {
@@ -35115,7 +35115,7 @@ exports[`Input should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999979,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -37281,7 +37281,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999979,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -37427,7 +37427,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999981,
+            "index": -99999999980,
           },
           "themingEnabled": true,
         } => Map {
@@ -38767,7 +38767,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999981,
+                "index": -99999999980,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -40442,7 +40442,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999981,
+                  "index": -99999999980,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
