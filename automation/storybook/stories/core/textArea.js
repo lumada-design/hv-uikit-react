@@ -17,34 +17,29 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
-import QaGrid from "../custom/qaGrid";
-
-// sample scenarios labels
-const lbsmin = {
-  inputLabel: "TextAreaLabel",
-  placeholder: "Enter value"
-};
+import Grid from "@hv/uikit-react-core/dist/Grid";
+import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
+import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
+import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
+import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
+import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
 
 // sample scenarios
 const samples = {};
 
-samples.simple = <HvTextArea id="test" />;
-
-samples.limited = <HvTextArea rows={5} labels={lbsmin} maxCharQuantity={150} />;
-
-samples.disabled = (
-  <HvTextArea
-    label="Text Area"
-    rows={5}
-    labels={lbsmin}
-    maxCharQuantity={1500}
-    disabled
-  />
-);
+samples.TextAreaDisabled = TextAreaDisabled;
+samples.TextAreaLimit = TextAreaLimit;
+samples.TextAreaSimple = TextAreaSimple;
+samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
+samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
   storiesOf("CoreTextArea", module).add(key, () => (
-    <QaGrid>{samples[key]}</QaGrid>
+    <Grid container>
+      <Grid item xl>
+        {samples[key]}
+      </Grid>
+    </Grid>
   ))
 );

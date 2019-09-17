@@ -13,7 +13,7 @@ exports[`Input should not have the validation section 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999979,
+            "index": -99999999969,
           },
           "themingEnabled": true,
         } => Map {
@@ -1311,7 +1311,7 @@ exports[`Input should not have the validation section 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999979,
+                "index": -99999999969,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3477,7 +3477,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999979,
+                  "index": -99999999969,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999970,
           },
           "themingEnabled": true,
         } => Map {
@@ -4963,7 +4963,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999970,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -6638,7 +6638,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999970,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -6929,7 +6929,7 @@ input:-webkit-autofill {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999997,
+            "index": -99999999996,
           },
           "themingEnabled": true,
         } => Map {
@@ -8255,7 +8255,7 @@ input:-webkit-autofill {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999997,
+                "index": -99999999996,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -9566,7 +9566,7 @@ label + .MuiInput-formControl-472 {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999997,
+                  "index": -99999999996,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -9793,7 +9793,7 @@ label + .MuiInput-formControl-472 {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999998,
+            "index": -99999999997,
           },
           "themingEnabled": true,
         } => Map {
@@ -11127,7 +11127,7 @@ label + .MuiInput-formControl-472 {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999998,
+                "index": -99999999997,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -11272,8 +11272,8 @@ label + .MuiInput-formControl-472 {
 }
 .MuiInputBase-input-494 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -12047,7 +12047,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999998,
+                  "index": -99999999997,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -14513,7 +14513,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999979,
+            "index": -99999999969,
           },
           "themingEnabled": true,
         } => Map {
@@ -15811,7 +15811,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999979,
+                "index": -99999999969,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -17977,7 +17977,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999979,
+                  "index": -99999999969,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -18123,7 +18123,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999970,
           },
           "themingEnabled": true,
         } => Map {
@@ -19463,7 +19463,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999970,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -21138,7 +21138,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999970,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -21429,7 +21429,7 @@ input:-webkit-autofill {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999997,
+            "index": -99999999996,
           },
           "themingEnabled": true,
         } => Map {
@@ -22755,7 +22755,7 @@ input:-webkit-autofill {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999997,
+                "index": -99999999996,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -24066,7 +24066,7 @@ label + .MuiInput-formControl-597 {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999997,
+                  "index": -99999999996,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -24293,7 +24293,7 @@ label + .MuiInput-formControl-597 {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999998,
+            "index": -99999999997,
           },
           "themingEnabled": true,
         } => Map {
@@ -25627,7 +25627,7 @@ label + .MuiInput-formControl-597 {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999998,
+                "index": -99999999997,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -25772,8 +25772,8 @@ label + .MuiInput-formControl-597 {
 }
 .MuiInputBase-input-619 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -26547,7 +26547,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999998,
+                  "index": -99999999997,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26880,7 +26880,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999996,
+            "index": -99999999995,
           },
           "themingEnabled": true,
         } => Map {
@@ -28230,7 +28230,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999996,
+                "index": -99999999995,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -29461,7 +29461,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999996,
+                  "index": -99999999995,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -33817,7 +33817,7 @@ exports[`Input should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999979,
+            "index": -99999999969,
           },
           "themingEnabled": true,
         } => Map {
@@ -35115,7 +35115,7 @@ exports[`Input should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999979,
+                "index": -99999999969,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -37281,7 +37281,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999979,
+                  "index": -99999999969,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -37427,7 +37427,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999980,
+            "index": -99999999970,
           },
           "themingEnabled": true,
         } => Map {
@@ -38767,7 +38767,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999980,
+                "index": -99999999970,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -40442,7 +40442,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999980,
+                  "index": -99999999970,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -40733,7 +40733,7 @@ input:-webkit-autofill {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999997,
+            "index": -99999999996,
           },
           "themingEnabled": true,
         } => Map {
@@ -42059,7 +42059,7 @@ input:-webkit-autofill {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999997,
+                "index": -99999999996,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -43370,7 +43370,7 @@ label + .MuiInput-formControl-97 {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999997,
+                  "index": -99999999996,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -43597,7 +43597,7 @@ label + .MuiInput-formControl-97 {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999998,
+            "index": -99999999997,
           },
           "themingEnabled": true,
         } => Map {
@@ -44931,7 +44931,7 @@ label + .MuiInput-formControl-97 {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999998,
+                "index": -99999999997,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -45076,8 +45076,8 @@ label + .MuiInput-formControl-97 {
 }
 .MuiInputBase-input-119 {
   font: inherit;
-  color: currentColor;
   width: 100%;
+  color: currentColor;
   border: 0;
   margin: 0;
   padding: 6px 0 7px;
@@ -45851,7 +45851,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999998,
+                  "index": -99999999997,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -46184,7 +46184,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999996,
+            "index": -99999999995,
           },
           "themingEnabled": true,
         } => Map {
@@ -47534,7 +47534,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999996,
+                "index": -99999999995,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -48765,7 +48765,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999996,
+                  "index": -99999999995,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],

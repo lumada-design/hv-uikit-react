@@ -24,7 +24,7 @@ const samples = {};
 const myAlert = msg => alert(msg); /* eslint-disable-line no-alert */
 
 // sample scenarios
-samples.positive = (
+samples.smoke = (
   <>
     <Grid container>
       <Grid item xl={2}>
