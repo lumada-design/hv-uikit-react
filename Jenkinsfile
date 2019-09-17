@@ -21,8 +21,7 @@ pipeline {
         stage('print parameters') {   
             steps {                     
                 script {
-                print "print parameters ${skipAutomationTest}"    
-                echo "print2 parameters ${skipAutomationTest}"
+                print "print skipJavascriptTest parameters ${skipJavascriptTest}"    
                 }
             }                  
         }
