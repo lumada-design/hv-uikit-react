@@ -18,14 +18,6 @@ pipeline {
     }
    
     stages {
-        stage('print parameters') {   
-            steps {                     
-                script {
-                print "print skipJavascriptTest parameters ${skipJavascriptTest}"    
-                print "print params.skipJavascriptTest parameters ${params.skipJavascriptTest}"                        
-                }
-            }                  
-        }
         stage('Build') {
             when {
                 expression { !params.skipBuild }
