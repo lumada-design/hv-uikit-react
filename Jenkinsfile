@@ -22,6 +22,7 @@ pipeline {
             steps {                     
                 script {
                 print "print skipJavascriptTest parameters ${skipJavascriptTest}"    
+                print "print params.skipJavascriptTest parameters ${params.skipJavascriptTest}"                        
                 }
             }                  
         }
