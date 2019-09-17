@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "node-js-11.10-auto"}
     options { 
         timestamps () 
-        timeout(time: 20, unit: 'MINUTES') 
+        timeout(time: 50, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
 
@@ -79,19 +79,16 @@ pipeline {
                             }
                             allOf {
                                 branch 'alpha'
-                                anyOf {
-                                    triggeredBy 'SCMTrigger'
-                                    triggeredBy 'UpstreamCause'
-                                }
+                                triggeredBy 'UpstreamCause'
                             }
                         }
                     }
                     steps {
                         script {
+                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                            def dockerRegistryCredentialsId = 'buildguynexus'
+                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                                def dockerRegistryCredentialsId = 'buildguynexus'
-                                def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                                 docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
                                     def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
                                     automationImage.push("${dockerImageTag}")
@@ -119,8 +116,11 @@ pipeline {
 
                       always {
                         script {
-                          def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
-                          sh "docker kill ${container}"
+                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                            def dockerRegistryCredentialsId = 'buildguynexus'
+                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
+                            def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
+                            sh "docker kill ${container}"
                         }
                       }
                     }

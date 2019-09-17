@@ -2,11 +2,11 @@ pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
     triggers {
-        cron('@daily')
+        cron('* * * * *')
     }
     options { 
         timestamps () 
-        timeout(time: 20, unit: 'MINUTES') 
+        timeout(time: 50, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
    
