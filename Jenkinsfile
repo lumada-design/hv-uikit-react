@@ -19,8 +19,11 @@ pipeline {
    
     stages {
         stage('print parameters') {   
-            steps { 
-                sh 'echo ${params.skipAutomationTest}'
+            steps {                     
+                script {
+                print "print parameters ${skipAutomationTest}"    
+                echo "print2 parameters ${skipAutomationTest}"
+                }
             }                  
         }
         stage('Build') {
