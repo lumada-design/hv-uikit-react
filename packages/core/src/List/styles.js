@@ -14,6 +14,22 @@
  * limitations under the License.
  */
 
+const selected = theme => ({
+  background: theme.hv.palette.accent.acce1,
+  color: theme.hv.palette.atmosphere.atmo1,
+  "& *": {
+    background: theme.hv.palette.accent.acce1,
+    color: theme.hv.palette.atmosphere.atmo1
+  }
+});
+
+const hover = theme => ({
+  background: theme.hv.palette.atmosphere.atmo4,
+  "& *": {
+    background: theme.hv.palette.atmosphere.atmo4
+  }
+});
+
 const styles = theme => ({
   root: {
     display: "block",
@@ -23,65 +39,45 @@ const styles = theme => ({
   listItem: {
     display: "flex",
     justifyContent: "flex-start",
+    alignItems: "center",
     height: "32px",
     listStyleType: "none",
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo4,
-      cursor: "pointer"
-    },
+    cursor: "pointer",
+    "&:hover:not($selected)": hover(theme),
+    "&:active:hover:not($selector)": selected(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
     },
     "& svg:last-child": {
       marginLeft: "auto"
-    },
-    "& a": {
-      display: "block",
-      width: "100%"
     }
   },
   condensed: {
     marginBottom: "0 !important"
   },
-  selected: {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1,
-    "&:hover": {
-      background: theme.hv.palette.accent.acce1,
-      color: theme.hv.palette.atmosphere.atmo1
-    }
-  },
-  focusDisabled: {
-    outline: "none !important"
-  },
-  typography: {
-    lineHeight: "32px",
-    padding: `0 ${theme.hv.spacing.xs}px`
-  },
-  iconLeftPadding: {
-    paddingLeft: 0
-  },
-  noIconLeftPadding: {
-    paddingLeft: `${theme.hv.spacing.md}px`
-  },
-  navIcon: {
-    marginLeft: "auto"
-  },
+  selector: {},
   selectorContainer: {
     width: "100%"
   },
+  selected: selected(theme),
   selectAll: {
     "& > span": {
       ...theme.hv.typography.highlightText
     }
   },
+  label: {
+    padding: `0 ${theme.hv.spacing.xs}px`
+  },
+  labelIconLeftPadding: {
+    paddingLeft: 0
+  },
+  noIconLeftPadding: {
+    paddingLeft: `${theme.hv.spacing.md}px`
+  },
   truncate: {
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
-  },
-  hidden: {
-    display: "none"
   }
 });
 

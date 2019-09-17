@@ -84,6 +84,10 @@ describe("<List />", () => {
   global.document.removeEventListener = jest.fn();
   global.window.event = { type: "mousedown" };
 
+  const mockEvt = { preventDefault: jest.fn() };
+  const onClickMock = jest.fn();
+  const onChangeMock = jest.fn();
+
   let wrapper;
   let listComponent;
   let instance;
@@ -96,18 +100,16 @@ describe("<List />", () => {
     jest.useRealTimers();
   });
 
-
-
   describe("Single selection", () => {
-    const onChangeMock = jest.fn();
-
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
           <ListWithStyles
             values={mockDataSingleSelection}
             onChange={onChangeMock}
+            onClick={onClickMock}
             selectDefault
+            singleSelectionToggle={false}
           />
         </HvProvider>
       );
@@ -129,54 +131,32 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      onChangeMock.mockReset();
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
 
       instance.handleToggle = jest.fn();
-      instance.handleSelection({ label: "Value 1" });
+      instance.handleSelect(mockEvt, { label: "Value 1" });
       jest.runAllTimers();
 
-      expect(onChangeMock).toBeCalledWith({ label: "Value 1", selected: true });
       expect(instance.state.selectionLabel).toBe("1 of 3");
-    });
-
-    it("handleSelection updates state accordingly", () => {
-      listComponent = wrapper.find(List);
-      instance = listComponent.instance();
-
-      instance.handleSelection({ label: "Value 2" });
-      jest.runAllTimers();
-
-      expect(instance.state.list).toEqual([
-        { selected: false, label: "Value 1" },
-        { selected: true, label: "Value 2" },
-        { selected: false, label: "Value 3" }
+      expect(onClickMock).toBeCalledWith({ label: "Value 1" });
+      expect(onChangeMock).toBeCalledWith([
+        { label: "Value 1", selected: true },
+        { label: "Value 2", selected: false },
+        { label: "Value 3", selected: false }
       ]);
     });
 
-    it("handleMouseUp should be triggered when mouse up on list item", () => {
-      listComponent = wrapper.find(List);
-      instance = listComponent.instance();
-      instance.handleMouseUp = jest.fn();
-
-      listComponent
-        .find("li")
-        .at(0)
-        .simulate("mouseUp", {});
-
-      expect(instance.handleMouseUp).toBeCalled();
-    });
-
-    it("handleMouseUp updates state accordingly", () => {
+    it("handleSelect updates state accordingly", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
 
-      instance.handleMouseUp({ label: "Value 1" });
+      instance.handleSelect(mockEvt, { label: "Value 2" });
+      jest.runAllTimers();
 
       expect(instance.state.list).toEqual([
-        { label: "Value 1", selected: true },
-        { label: "Value 2", selected: false },
+        { label: "Value 1", selected: false },
+        { label: "Value 2", selected: true },
         { label: "Value 3", selected: false }
       ]);
     });
@@ -190,13 +170,10 @@ describe("<List />", () => {
         </HvProvider>
       );
     });
-
-    it("handleSelection updates state accordingly", () => {
+    it("handleSelect updates state accordingly", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
-
-      instance.handleSelection({ id: "id-1" });
-      
+      instance.handleSelect(mockEvt, { id: "id-1" });
       expect(instance.state.list).toEqual([
         { selected: true, id: "id-1", label: "Value 1" },
         { selected: false, id: "id-2", label: "Value 2" },
@@ -217,7 +194,6 @@ describe("<List />", () => {
         </HvProvider>
       );
     });
-
     it("should render correctly", () => {
       expect(wrapper).toMatchSnapshot();
     });
@@ -231,15 +207,12 @@ describe("<List />", () => {
         </HvProvider>
       );
     });
-
     it("should render correctly", () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
 
   describe("Multi selection", () => {
-    const onChangeMock = jest.fn();
-
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -260,7 +233,6 @@ describe("<List />", () => {
     it("default values are selected", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
-
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },
@@ -269,14 +241,11 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      onChangeMock.mockReset();
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
-
       instance.handleToggle = jest.fn();
-      instance.handleSelection({ label: "Value 2" });
+      instance.handleSelect(mockEvt, { label: "Value 2" });
       jest.runAllTimers();
-
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: true },
@@ -285,25 +254,21 @@ describe("<List />", () => {
       expect(instance.state.selectionLabel).toBe("3 of 3");
     });
 
-    it("handleSelection updates state accordingly", () => {
+    it("handleSelect updates state accordingly", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
-
-      instance.handleSelection({ label: "Value 1" });
+      instance.handleSelect(mockEvt, { label: "Value 1" });
       jest.runAllTimers();
-
       expect(instance.state.list).toEqual([
-        { selected: false, label: "Value 1" },
-        { selected: false, label: "Value 2" },
-        { selected: true, label: "Value 3" }
+        { label: "Value 1", selected: false },
+        { label: "Value 2", selected: false },
+        { label: "Value 3", selected: true }
       ]);
     });
 
     it("handleSelectAll updates state accordingly", () => {
       listComponent = wrapper.find(List);
-
       instance.handleSelectAll();
-
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: true },
@@ -311,23 +276,19 @@ describe("<List />", () => {
       ]);
     });
 
-    it("handleSelection should be triggered when a single select item is clicked ", () => {
+    it("handleSelect should be triggered when a single select item is clicked ", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
-      instance.handleSelection = jest.fn();
-
+      instance.handleSelect = jest.fn();
       listComponent
         .find("li")
         .at(0)
-        .simulate("mousedown", {});
-
-      expect(instance.handleSelection).toBeCalled();
+        .simulate("click", {});
+      expect(instance.handleSelect).toBeCalled();
     });
   });
 
   describe("Multi selection with selectors", () => {
-    const onChangeMock = jest.fn();
-
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -350,13 +311,11 @@ describe("<List />", () => {
       listComponent = wrapper.find(List);
       instance = listComponent.instance();
       instance.handleSelectAll = jest.fn();
-
       listComponent
         .find(HvCheckBox)
         .at(0)
         .find('input[type="checkbox"]')
         .simulate("change", { target: { checked: true } });
-
       expect(instance.handleSelectAll).toBeCalled();
     });
   });
