@@ -187,7 +187,8 @@ void waitUntilServerUp(String url) {
     timeout(time: 5, unit: 'MINUTES') {
       waitUntil {
         script {
-          return sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
+          def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
+          return (r == 0)  
         }
       }
     }
