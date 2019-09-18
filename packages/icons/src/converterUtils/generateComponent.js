@@ -31,11 +31,17 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
 module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSizes, useGeneric) => {
   const themePalette = dawnTheme.palette
 
-  let palette = colorArrayDefaultValues.replace(
-    '"#414141"',
-    "theme.hv.palette.accent.acce1"
-  );
-  palette = replaceColorsWithTheme(colorArrayDefaultValues, themePalette);
+  let palette = colorArrayDefaultValues;
+  let exportName = `${componentName};`
+
+  if(useGeneric) {
+    palette = colorArrayDefaultValues.replace(
+      '"#414141"',
+      "theme.hv.palette.accent.acce1"
+    );
+    palette = replaceColorsWithTheme(colorArrayDefaultValues, themePalette);
+    exportName = `withStyles(styles, { withTheme: true })(${componentName});`;
+  }
 
   const iconContainer = useGeneric ? 
     `
@@ -139,7 +145,11 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
         colorArray =  [${palette}];
       }
 
-      const classesToApply = getClasses(className, iconSize, classes);
+      let classesToApply = null;
+
+      if(!isNil(classes)) {
+        classesToApply = getClasses(className, iconSize, classes);
+      }
 
       return (
         ${iconContainer}
@@ -231,6 +241,6 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       }
     });
 
-    export default withStyles(styles, { withTheme: true })(${componentName});`
+    export default ${exportName}`
   )
 }
