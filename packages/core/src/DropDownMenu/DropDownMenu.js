@@ -33,6 +33,7 @@ import List from "../List";
  * @constructor
  */
 const DropDownMenu = ({
+  theme,
   icon,
   classes,
   placement,
@@ -84,7 +85,7 @@ const DropDownMenu = ({
           anchorEl={anchorEl}
           placement={bottom}
           popperOptions={{}}
-          style={{ zIndex: 1 }}
+          style={{ zIndex: theme.zIndex.tooltip }}
         >
           <div className={classes.menuList}>
             <List
@@ -101,6 +102,10 @@ const DropDownMenu = ({
 };
 
 DropDownMenu.propTypes = {
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Id to be applied to the root node.
    */
