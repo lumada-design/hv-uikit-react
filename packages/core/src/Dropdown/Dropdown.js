@@ -23,7 +23,7 @@ import ArrowUp from "@hv/uikit-react-icons/dist/DawnTheme/DropDown.XS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DawnTheme/DropUp.XS";
 import HvTypography from "../Typography";
 import List from "./List";
-import { getSelectionLabel } from "./utils";
+import { getSelectionLabel, getSelected } from "./utils";
 
 const DEFAULT_LABELS = {
   select: "Select...",
@@ -104,10 +104,11 @@ class Main extends React.Component {
     const { multiSelect, onChange } = this.props;
     const { labels } = this.state;
     const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
+    const selected = getSelected(selection);
 
     if (commitChanges) this.setState({ selectionLabel });
     if (toggle) this.handleToggle();
-    if (notifyChanges) onChange(multiSelect ? selection : selection[0]);
+    if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
   }
 
   renderLabel() {
