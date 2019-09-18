@@ -16,26 +16,30 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
-import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
-import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
-import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
-import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
+import Card1 from "../../../../packages/doc/samples/components/card/card1";
+import Card2 from "../../../../packages/doc/samples/components/card/card2";
+import Card3 from "../../../../packages/doc/samples/components/card/card3";
+import Card4 from "../../../../packages/doc/samples/components/card/card4";
+import Card5 from "../../../../packages/doc/samples/components/card/card5";
+import Card6 from "../../../../packages/doc/samples/components/card/card6";
+import Card7 from "../../../../packages/doc/samples/components/card/card7";
+import Card8 from "../../../../packages/doc/samples/components/card/card8";
 
 // sample scenarios
 const samples = {};
-
-samples.TextAreaDisabled = TextAreaDisabled;
-samples.TextAreaLimit = TextAreaLimit;
-samples.TextAreaSimple = TextAreaSimple;
-samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
-samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
+samples.Card1 = Card1;
+samples.Card2 = Card2;
+samples.Card3 = Card3;
+samples.Card4 = Card4;
+samples.Card5 = Card5;
+samples.Card6 = Card6;
+samples.Card7 = Card7;
+samples.Card8 = Card8;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreTextArea", module).add(key, () => (
+  storiesOf("CoreCard", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}
