@@ -26,12 +26,18 @@ exports[`Modal Component allows external props to be added 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <WithStyles(CloseS)
+    <CloseS
+      className=""
+      color={null}
+      height={null}
+      iconSize="S"
       style={
         Object {
           "width": "32px",
         }
       }
+      viewbox="1 1 30 30 "
+      width={null}
     />
   </HvButton>
   Modal Content
@@ -63,12 +69,18 @@ exports[`Modal Component allows external styles to be added 1`] = `
     className="testClassCloseButton"
     onClick={[Function]}
   >
-    <WithStyles(CloseS)
+    <CloseS
+      className=""
+      color={null}
+      height={null}
+      iconSize="S"
       style={
         Object {
           "width": "32px",
         }
       }
+      viewbox="1 1 30 30 "
+      width={null}
     />
   </HvButton>
   Modal Content
@@ -99,12 +111,18 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     category="ghost"
     onClick={[Function]}
   >
-    <WithStyles(CloseS)
+    <CloseS
+      className=""
+      color={null}
+      height={null}
+      iconSize="S"
       style={
         Object {
           "width": "32px",
         }
       }
+      viewbox="1 1 30 30 "
+      width={null}
     />
   </HvButton>
   Modal Content
@@ -135,12 +153,18 @@ exports[`Modal Component should render correctly if closed 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <WithStyles(CloseS)
+    <CloseS
+      className=""
+      color={null}
+      height={null}
+      iconSize="S"
       style={
         Object {
           "width": "32px",
         }
       }
+      viewbox="1 1 30 30 "
+      width={null}
     />
   </HvButton>
   Modal Content
@@ -171,12 +195,18 @@ exports[`Modal Component should render correctly if opened 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <WithStyles(CloseS)
+    <CloseS
+      className=""
+      color={null}
+      height={null}
+      iconSize="S"
       style={
         Object {
           "width": "32px",
         }
       }
+      viewbox="1 1 30 30 "
+      width={null}
     />
   </HvButton>
   Modal Content

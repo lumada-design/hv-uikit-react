@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999865,
+            "index": -99999999878,
           },
           "themingEnabled": true,
         } => Map {
@@ -4553,20 +4553,20 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "icon": "HvTimePicker-icon-50",
-                "input": "HvTimePicker-input-45",
-                "inputContainer": "HvTimePicker-inputContainer-49",
-                "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-                "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-                "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-                "label": "HvTimePicker-label-52",
-                "periodContainer": "HvTimePicker-periodContainer-58",
-                "popper": "HvTimePicker-popper-54",
-                "popperAbove": "HvTimePicker-popperAbove-56",
-                "popperBelow": "HvTimePicker-popperBelow-55",
-                "separator": "HvTimePicker-separator-57",
-                "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-                "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+                "icon": "HvTimePicker-icon-45",
+                "input": "HvTimePicker-input-40",
+                "inputContainer": "HvTimePicker-inputContainer-44",
+                "inputPopperClosed": "HvTimePicker-inputPopperClosed-43",
+                "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-42",
+                "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-41",
+                "label": "HvTimePicker-label-47",
+                "periodContainer": "HvTimePicker-periodContainer-53",
+                "popper": "HvTimePicker-popper-49",
+                "popperAbove": "HvTimePicker-popperAbove-51",
+                "popperBelow": "HvTimePicker-popperBelow-50",
+                "separator": "HvTimePicker-separator-52",
+                "timePickerContainer": "HvTimePicker-timePickerContainer-46",
+                "timePopperContainer": "HvTimePicker-timePopperContainer-48",
               },
               "deployed": true,
               "linked": false,
@@ -4574,20 +4574,20 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvTimePicker",
                 "classes": Object {
-                  "icon": "HvTimePicker-icon-50",
-                  "input": "HvTimePicker-input-45",
-                  "inputContainer": "HvTimePicker-inputContainer-49",
-                  "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-                  "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-                  "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-                  "label": "HvTimePicker-label-52",
-                  "periodContainer": "HvTimePicker-periodContainer-58",
-                  "popper": "HvTimePicker-popper-54",
-                  "popperAbove": "HvTimePicker-popperAbove-56",
-                  "popperBelow": "HvTimePicker-popperBelow-55",
-                  "separator": "HvTimePicker-separator-57",
-                  "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-                  "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+                  "icon": "HvTimePicker-icon-45",
+                  "input": "HvTimePicker-input-40",
+                  "inputContainer": "HvTimePicker-inputContainer-44",
+                  "inputPopperClosed": "HvTimePicker-inputPopperClosed-43",
+                  "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-42",
+                  "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-41",
+                  "label": "HvTimePicker-label-47",
+                  "periodContainer": "HvTimePicker-periodContainer-53",
+                  "popper": "HvTimePicker-popper-49",
+                  "popperAbove": "HvTimePicker-popperAbove-51",
+                  "popperBelow": "HvTimePicker-popperBelow-50",
+                  "separator": "HvTimePicker-separator-52",
+                  "timePickerContainer": "HvTimePicker-timePickerContainer-46",
+                  "timePopperContainer": "HvTimePicker-timePopperContainer-48",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4951,7 +4951,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999865,
+                "index": -99999999878,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5075,7 +5075,7 @@ body {
                   data-meta="HvTimePicker"
                 >
                   
-.HvTimePicker-input-45 {
+.HvTimePicker-input-40 {
   width: 100%;
   color: #414141;
   border: none;
@@ -5087,33 +5087,33 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvTimePicker-input-45:focus {
+.HvTimePicker-input-40:focus {
   outline: none;
 }
-.HvTimePicker-input-45::placeholder {
+.HvTimePicker-input-40::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvTimePicker-inputPopperOpenedBelow-46 {
+.HvTimePicker-inputPopperOpenedBelow-41 {
   box-shadow: 0 10px 12px #fff;
 }
-.HvTimePicker-inputPopperOpenedAbove-47 {
+.HvTimePicker-inputPopperOpenedAbove-42 {
   box-shadow: 0 -10px 12px #fff;
 }
-.HvTimePicker-inputPopperClosed-48 {
+.HvTimePicker-inputPopperClosed-43 {
   border: 1px solid #BCBCBC;
 }
-.HvTimePicker-inputContainer-49 {
+.HvTimePicker-inputContainer-44 {
   height: 32px;
   position: relative;
   background: #FFFFFF;
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvTimePicker-icon-50 {
+.HvTimePicker-icon-45 {
   right: 0;
   width: 30px;
   height: 30px;
@@ -5121,15 +5121,15 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvTimePicker-timePickerContainer-51 {
+.HvTimePicker-timePickerContainer-46 {
   position: relative;
   min-width: 200px;
 }
-.HvTimePicker-label-52 {
+.HvTimePicker-label-47 {
   display: block;
   margin-bottom: 10px;
 }
-.HvTimePicker-timePopperContainer-53 {
+.HvTimePicker-timePopperContainer-48 {
   z-index: 10;
   display: flex;
   align-items: center;
@@ -5139,19 +5139,19 @@ body {
   justify-content: center;
   background-color: #FFFFFF;
 }
-.HvTimePicker-popper-54 {
+.HvTimePicker-popper-49 {
   z-index: 10;
   min-width: 100%;
 }
-.HvTimePicker-popperBelow-55 {
+.HvTimePicker-popperBelow-50 {
   margin-top: 10px;
   box-shadow: 0 -2px 12px rgba(65,65,65,.12);
 }
-.HvTimePicker-popperAbove-56 {
+.HvTimePicker-popperAbove-51 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   margin-bottom: 10px;
 }
-.HvTimePicker-separator-57 {
+.HvTimePicker-separator-52 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
@@ -5160,7 +5160,7 @@ body {
   margin-right: 5px;
   letter-spacing: 0.02em;
 }
-.HvTimePicker-periodContainer-58 {
+.HvTimePicker-periodContainer-53 {
   margin-left: 10px;
 }
 
@@ -5176,20 +5176,20 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "icon": "HvTimePicker-icon-50",
-                  "input": "HvTimePicker-input-45",
-                  "inputContainer": "HvTimePicker-inputContainer-49",
-                  "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-                  "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-                  "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-                  "label": "HvTimePicker-label-52",
-                  "periodContainer": "HvTimePicker-periodContainer-58",
-                  "popper": "HvTimePicker-popper-54",
-                  "popperAbove": "HvTimePicker-popperAbove-56",
-                  "popperBelow": "HvTimePicker-popperBelow-55",
-                  "separator": "HvTimePicker-separator-57",
-                  "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-                  "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+                  "icon": "HvTimePicker-icon-45",
+                  "input": "HvTimePicker-input-40",
+                  "inputContainer": "HvTimePicker-inputContainer-44",
+                  "inputPopperClosed": "HvTimePicker-inputPopperClosed-43",
+                  "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-42",
+                  "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-41",
+                  "label": "HvTimePicker-label-47",
+                  "periodContainer": "HvTimePicker-periodContainer-53",
+                  "popper": "HvTimePicker-popper-49",
+                  "popperAbove": "HvTimePicker-popperAbove-51",
+                  "popperBelow": "HvTimePicker-popperBelow-50",
+                  "separator": "HvTimePicker-separator-52",
+                  "timePickerContainer": "HvTimePicker-timePickerContainer-46",
+                  "timePopperContainer": "HvTimePicker-timePopperContainer-48",
                 },
                 "index": Array [
                   Object {
@@ -5282,7 +5282,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvTimePicker-icon-50": Object {
+                  ".HvTimePicker-icon-45": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "30px",
@@ -5290,7 +5290,7 @@ body {
                     "right": 0,
                     "width": "30px",
                   },
-                  ".HvTimePicker-input-45": Object {
+                  ".HvTimePicker-input-40": Object {
                     "background": "white",
                     "border": "none",
                     "color": "#414141",
@@ -5302,52 +5302,52 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvTimePicker-input-45::placeholder": Object {
+                  ".HvTimePicker-input-40::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvTimePicker-input-45:focus": Object {
+                  ".HvTimePicker-input-40:focus": Object {
                     "outline": "none",
                   },
-                  ".HvTimePicker-inputContainer-49": Object {
+                  ".HvTimePicker-inputContainer-44": Object {
                     "background": "#FFFFFF",
                     "height": "32px",
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvTimePicker-inputPopperClosed-48": Object {
+                  ".HvTimePicker-inputPopperClosed-43": Object {
                     "border": "1px solid #BCBCBC",
                   },
-                  ".HvTimePicker-inputPopperOpenedAbove-47": Object {
+                  ".HvTimePicker-inputPopperOpenedAbove-42": Object {
                     "box-shadow": "0 -10px 12px #fff",
                   },
-                  ".HvTimePicker-inputPopperOpenedBelow-46": Object {
+                  ".HvTimePicker-inputPopperOpenedBelow-41": Object {
                     "box-shadow": "0 10px 12px #fff",
                   },
-                  ".HvTimePicker-label-52": Object {
+                  ".HvTimePicker-label-47": Object {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
-                  ".HvTimePicker-periodContainer-58": Object {
+                  ".HvTimePicker-periodContainer-53": Object {
                     "margin-left": "10px",
                   },
-                  ".HvTimePicker-popper-54": Object {
+                  ".HvTimePicker-popper-49": Object {
                     "min-width": "100%",
                     "z-index": "10",
                   },
-                  ".HvTimePicker-popperAbove-56": Object {
+                  ".HvTimePicker-popperAbove-51": Object {
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "margin-bottom": "10px",
                   },
-                  ".HvTimePicker-popperBelow-55": Object {
+                  ".HvTimePicker-popperBelow-50": Object {
                     "box-shadow": "0 -2px 12px rgba(65,65,65,.12)",
                     "margin-top": "10px",
                   },
-                  ".HvTimePicker-separator-57": Object {
+                  ".HvTimePicker-separator-52": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
@@ -5356,11 +5356,11 @@ body {
                     "margin-left": "5px",
                     "margin-right": "5px",
                   },
-                  ".HvTimePicker-timePickerContainer-51": Object {
+                  ".HvTimePicker-timePickerContainer-46": Object {
                     "min-width": "200px",
                     "position": "relative",
                   },
-                  ".HvTimePicker-timePopperContainer-53": Object {
+                  ".HvTimePicker-timePopperContainer-48": Object {
                     "align-items": "center",
                     "background-color": "#FFFFFF",
                     "display": "flex",
@@ -5453,20 +5453,20 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvTimePicker",
                   "classes": Object {
-                    "icon": "HvTimePicker-icon-50",
-                    "input": "HvTimePicker-input-45",
-                    "inputContainer": "HvTimePicker-inputContainer-49",
-                    "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-                    "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-                    "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-                    "label": "HvTimePicker-label-52",
-                    "periodContainer": "HvTimePicker-periodContainer-58",
-                    "popper": "HvTimePicker-popper-54",
-                    "popperAbove": "HvTimePicker-popperAbove-56",
-                    "popperBelow": "HvTimePicker-popperBelow-55",
-                    "separator": "HvTimePicker-separator-57",
-                    "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-                    "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+                    "icon": "HvTimePicker-icon-45",
+                    "input": "HvTimePicker-input-40",
+                    "inputContainer": "HvTimePicker-inputContainer-44",
+                    "inputPopperClosed": "HvTimePicker-inputPopperClosed-43",
+                    "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-42",
+                    "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-41",
+                    "label": "HvTimePicker-label-47",
+                    "periodContainer": "HvTimePicker-periodContainer-53",
+                    "popper": "HvTimePicker-popper-49",
+                    "popperAbove": "HvTimePicker-popperAbove-51",
+                    "popperBelow": "HvTimePicker-popperBelow-50",
+                    "separator": "HvTimePicker-separator-52",
+                    "timePickerContainer": "HvTimePicker-timePickerContainer-46",
+                    "timePopperContainer": "HvTimePicker-timePopperContainer-48",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5830,7 +5830,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999865,
+                  "index": -99999999878,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5949,14 +5949,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvTimePicker-input-45::placeholder": Object {
+                  ".HvTimePicker-input-40::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvTimePicker-input-45:focus": Object {
+                  ".HvTimePicker-input-40:focus": Object {
                     "outline": "none",
                   },
                   "icon": Object {
@@ -6062,7 +6062,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999899,
+            "index": -99999999900,
           },
           "themingEnabled": true,
         } => Map {
@@ -6992,31 +6992,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-61",
-                "4xlTitle": "Typography-4xlTitle-60",
-                "5xlTitle": "Typography-5xlTitle-59",
-                "baseFontFamily": "Typography-baseFontFamily-82",
-                "disabledButtonText": "Typography-disabledButtonText-73",
-                "disabledText": "Typography-disabledText-80",
-                "highlightText": "Typography-highlightText-69",
-                "infoText": "Typography-infoText-78",
-                "inlineLink": "Typography-inlineLink-72",
-                "lTitle": "Typography-lTitle-64",
-                "labelText": "Typography-labelText-77",
-                "mTitle": "Typography-mTitle-65",
-                "margin": "Typography-margin-83",
-                "normalText": "Typography-normalText-70",
-                "placeholderText": "Typography-placeholderText-74",
-                "sLink": "Typography-sLink-79",
-                "sText": "Typography-sText-76",
-                "sTitle": "Typography-sTitle-66",
-                "selectedNavText": "Typography-selectedNavText-75",
-                "selectedText": "Typography-selectedText-71",
-                "vizText": "Typography-vizText-81",
-                "xlTitle": "Typography-xlTitle-63",
-                "xsTitle": "Typography-xsTitle-67",
-                "xxlTitle": "Typography-xxlTitle-62",
-                "xxsTitle": "Typography-xxsTitle-68",
+                "3xlTitle": "Typography-3xlTitle-56",
+                "4xlTitle": "Typography-4xlTitle-55",
+                "5xlTitle": "Typography-5xlTitle-54",
+                "baseFontFamily": "Typography-baseFontFamily-77",
+                "disabledButtonText": "Typography-disabledButtonText-68",
+                "disabledText": "Typography-disabledText-75",
+                "highlightText": "Typography-highlightText-64",
+                "infoText": "Typography-infoText-73",
+                "inlineLink": "Typography-inlineLink-67",
+                "lTitle": "Typography-lTitle-59",
+                "labelText": "Typography-labelText-72",
+                "mTitle": "Typography-mTitle-60",
+                "margin": "Typography-margin-78",
+                "normalText": "Typography-normalText-65",
+                "placeholderText": "Typography-placeholderText-69",
+                "sLink": "Typography-sLink-74",
+                "sText": "Typography-sText-71",
+                "sTitle": "Typography-sTitle-61",
+                "selectedNavText": "Typography-selectedNavText-70",
+                "selectedText": "Typography-selectedText-66",
+                "vizText": "Typography-vizText-76",
+                "xlTitle": "Typography-xlTitle-58",
+                "xsTitle": "Typography-xsTitle-62",
+                "xxlTitle": "Typography-xxlTitle-57",
+                "xxsTitle": "Typography-xxsTitle-63",
               },
               "deployed": true,
               "linked": false,
@@ -7024,31 +7024,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Typography",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-61",
-                  "4xlTitle": "Typography-4xlTitle-60",
-                  "5xlTitle": "Typography-5xlTitle-59",
-                  "baseFontFamily": "Typography-baseFontFamily-82",
-                  "disabledButtonText": "Typography-disabledButtonText-73",
-                  "disabledText": "Typography-disabledText-80",
-                  "highlightText": "Typography-highlightText-69",
-                  "infoText": "Typography-infoText-78",
-                  "inlineLink": "Typography-inlineLink-72",
-                  "lTitle": "Typography-lTitle-64",
-                  "labelText": "Typography-labelText-77",
-                  "mTitle": "Typography-mTitle-65",
-                  "margin": "Typography-margin-83",
-                  "normalText": "Typography-normalText-70",
-                  "placeholderText": "Typography-placeholderText-74",
-                  "sLink": "Typography-sLink-79",
-                  "sText": "Typography-sText-76",
-                  "sTitle": "Typography-sTitle-66",
-                  "selectedNavText": "Typography-selectedNavText-75",
-                  "selectedText": "Typography-selectedText-71",
-                  "vizText": "Typography-vizText-81",
-                  "xlTitle": "Typography-xlTitle-63",
-                  "xsTitle": "Typography-xsTitle-67",
-                  "xxlTitle": "Typography-xxlTitle-62",
-                  "xxsTitle": "Typography-xxsTitle-68",
+                  "3xlTitle": "Typography-3xlTitle-56",
+                  "4xlTitle": "Typography-4xlTitle-55",
+                  "5xlTitle": "Typography-5xlTitle-54",
+                  "baseFontFamily": "Typography-baseFontFamily-77",
+                  "disabledButtonText": "Typography-disabledButtonText-68",
+                  "disabledText": "Typography-disabledText-75",
+                  "highlightText": "Typography-highlightText-64",
+                  "infoText": "Typography-infoText-73",
+                  "inlineLink": "Typography-inlineLink-67",
+                  "lTitle": "Typography-lTitle-59",
+                  "labelText": "Typography-labelText-72",
+                  "mTitle": "Typography-mTitle-60",
+                  "margin": "Typography-margin-78",
+                  "normalText": "Typography-normalText-65",
+                  "placeholderText": "Typography-placeholderText-69",
+                  "sLink": "Typography-sLink-74",
+                  "sText": "Typography-sText-71",
+                  "sTitle": "Typography-sTitle-61",
+                  "selectedNavText": "Typography-selectedNavText-70",
+                  "selectedText": "Typography-selectedText-66",
+                  "vizText": "Typography-vizText-76",
+                  "xlTitle": "Typography-xlTitle-58",
+                  "xsTitle": "Typography-xsTitle-62",
+                  "xxlTitle": "Typography-xxlTitle-57",
+                  "xxsTitle": "Typography-xxsTitle-63",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7412,7 +7412,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999899,
+                "index": -99999999900,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -7536,91 +7536,91 @@ body {
                   data-meta="Typography"
                 >
                   
-.Typography-5xlTitle-59 {
+.Typography-5xlTitle-54 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-60 {
+.Typography-4xlTitle-55 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-61 {
+.Typography-3xlTitle-56 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-62 {
+.Typography-xxlTitle-57 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-63 {
+.Typography-xlTitle-58 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-64 {
+.Typography-lTitle-59 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-65 {
+.Typography-mTitle-60 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-66 {
+.Typography-sTitle-61 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-67 {
+.Typography-xsTitle-62 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-68 {
+.Typography-xxsTitle-63 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-69 {
+.Typography-highlightText-64 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-70 {
+.Typography-normalText-65 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedText-71 {
+.Typography-selectedText-66 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -7628,80 +7628,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-72 {
+.Typography-inlineLink-67 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-73 {
+.Typography-disabledButtonText-68 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-placeholderText-74 {
+.Typography-placeholderText-69 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedNavText-75 {
+.Typography-selectedNavText-70 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sText-76 {
+.Typography-sText-71 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-77 {
+.Typography-labelText-72 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-78 {
+.Typography-infoText-73 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-79 {
+.Typography-sLink-74 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-80 {
+.Typography-disabledText-75 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-81 {
+.Typography-vizText-76 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-82 {
+.Typography-baseFontFamily-77 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-83 {
+.Typography-margin-78 {
   margin: 0;
 }
 
@@ -7717,31 +7717,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-61",
-                  "4xlTitle": "Typography-4xlTitle-60",
-                  "5xlTitle": "Typography-5xlTitle-59",
-                  "baseFontFamily": "Typography-baseFontFamily-82",
-                  "disabledButtonText": "Typography-disabledButtonText-73",
-                  "disabledText": "Typography-disabledText-80",
-                  "highlightText": "Typography-highlightText-69",
-                  "infoText": "Typography-infoText-78",
-                  "inlineLink": "Typography-inlineLink-72",
-                  "lTitle": "Typography-lTitle-64",
-                  "labelText": "Typography-labelText-77",
-                  "mTitle": "Typography-mTitle-65",
-                  "margin": "Typography-margin-83",
-                  "normalText": "Typography-normalText-70",
-                  "placeholderText": "Typography-placeholderText-74",
-                  "sLink": "Typography-sLink-79",
-                  "sText": "Typography-sText-76",
-                  "sTitle": "Typography-sTitle-66",
-                  "selectedNavText": "Typography-selectedNavText-75",
-                  "selectedText": "Typography-selectedText-71",
-                  "vizText": "Typography-vizText-81",
-                  "xlTitle": "Typography-xlTitle-63",
-                  "xsTitle": "Typography-xsTitle-67",
-                  "xxlTitle": "Typography-xxlTitle-62",
-                  "xxsTitle": "Typography-xxsTitle-68",
+                  "3xlTitle": "Typography-3xlTitle-56",
+                  "4xlTitle": "Typography-4xlTitle-55",
+                  "5xlTitle": "Typography-5xlTitle-54",
+                  "baseFontFamily": "Typography-baseFontFamily-77",
+                  "disabledButtonText": "Typography-disabledButtonText-68",
+                  "disabledText": "Typography-disabledText-75",
+                  "highlightText": "Typography-highlightText-64",
+                  "infoText": "Typography-infoText-73",
+                  "inlineLink": "Typography-inlineLink-67",
+                  "lTitle": "Typography-lTitle-59",
+                  "labelText": "Typography-labelText-72",
+                  "mTitle": "Typography-mTitle-60",
+                  "margin": "Typography-margin-78",
+                  "normalText": "Typography-normalText-65",
+                  "placeholderText": "Typography-placeholderText-69",
+                  "sLink": "Typography-sLink-74",
+                  "sText": "Typography-sText-71",
+                  "sTitle": "Typography-sTitle-61",
+                  "selectedNavText": "Typography-selectedNavText-70",
+                  "selectedText": "Typography-selectedText-66",
+                  "vizText": "Typography-vizText-76",
+                  "xlTitle": "Typography-xlTitle-58",
+                  "xsTitle": "Typography-xsTitle-62",
+                  "xxlTitle": "Typography-xxlTitle-57",
+                  "xxsTitle": "Typography-xxsTitle-63",
                 },
                 "index": Array [
                   Object {
@@ -7914,132 +7914,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-61": Object {
+                  ".Typography-3xlTitle-56": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-60": Object {
+                  ".Typography-4xlTitle-55": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-59": Object {
+                  ".Typography-5xlTitle-54": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-82": Object {
+                  ".Typography-baseFontFamily-77": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-73": Object {
+                  ".Typography-disabledButtonText-68": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-80": Object {
+                  ".Typography-disabledText-75": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-69": Object {
+                  ".Typography-highlightText-64": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-78": Object {
+                  ".Typography-infoText-73": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-72": Object {
+                  ".Typography-inlineLink-67": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-64": Object {
+                  ".Typography-lTitle-59": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-77": Object {
+                  ".Typography-labelText-72": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-65": Object {
+                  ".Typography-mTitle-60": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-83": Object {
+                  ".Typography-margin-78": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-70": Object {
+                  ".Typography-normalText-65": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-placeholderText-74": Object {
+                  ".Typography-placeholderText-69": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-79": Object {
+                  ".Typography-sLink-74": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sText-76": Object {
+                  ".Typography-sText-71": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-66": Object {
+                  ".Typography-sTitle-61": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-selectedNavText-75": Object {
+                  ".Typography-selectedNavText-70": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-selectedText-71": Object {
+                  ".Typography-selectedText-66": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -8047,35 +8047,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-vizText-81": Object {
+                  ".Typography-vizText-76": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-63": Object {
+                  ".Typography-xlTitle-58": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-67": Object {
+                  ".Typography-xsTitle-62": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-62": Object {
+                  ".Typography-xxlTitle-57": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-68": Object {
+                  ".Typography-xxsTitle-63": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -8255,31 +8255,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Typography",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-61",
-                    "4xlTitle": "Typography-4xlTitle-60",
-                    "5xlTitle": "Typography-5xlTitle-59",
-                    "baseFontFamily": "Typography-baseFontFamily-82",
-                    "disabledButtonText": "Typography-disabledButtonText-73",
-                    "disabledText": "Typography-disabledText-80",
-                    "highlightText": "Typography-highlightText-69",
-                    "infoText": "Typography-infoText-78",
-                    "inlineLink": "Typography-inlineLink-72",
-                    "lTitle": "Typography-lTitle-64",
-                    "labelText": "Typography-labelText-77",
-                    "mTitle": "Typography-mTitle-65",
-                    "margin": "Typography-margin-83",
-                    "normalText": "Typography-normalText-70",
-                    "placeholderText": "Typography-placeholderText-74",
-                    "sLink": "Typography-sLink-79",
-                    "sText": "Typography-sText-76",
-                    "sTitle": "Typography-sTitle-66",
-                    "selectedNavText": "Typography-selectedNavText-75",
-                    "selectedText": "Typography-selectedText-71",
-                    "vizText": "Typography-vizText-81",
-                    "xlTitle": "Typography-xlTitle-63",
-                    "xsTitle": "Typography-xsTitle-67",
-                    "xxlTitle": "Typography-xxlTitle-62",
-                    "xxsTitle": "Typography-xxsTitle-68",
+                    "3xlTitle": "Typography-3xlTitle-56",
+                    "4xlTitle": "Typography-4xlTitle-55",
+                    "5xlTitle": "Typography-5xlTitle-54",
+                    "baseFontFamily": "Typography-baseFontFamily-77",
+                    "disabledButtonText": "Typography-disabledButtonText-68",
+                    "disabledText": "Typography-disabledText-75",
+                    "highlightText": "Typography-highlightText-64",
+                    "infoText": "Typography-infoText-73",
+                    "inlineLink": "Typography-inlineLink-67",
+                    "lTitle": "Typography-lTitle-59",
+                    "labelText": "Typography-labelText-72",
+                    "mTitle": "Typography-mTitle-60",
+                    "margin": "Typography-margin-78",
+                    "normalText": "Typography-normalText-65",
+                    "placeholderText": "Typography-placeholderText-69",
+                    "sLink": "Typography-sLink-74",
+                    "sText": "Typography-sText-71",
+                    "sTitle": "Typography-sTitle-61",
+                    "selectedNavText": "Typography-selectedNavText-70",
+                    "selectedText": "Typography-selectedText-66",
+                    "vizText": "Typography-vizText-76",
+                    "xlTitle": "Typography-xlTitle-58",
+                    "xsTitle": "Typography-xsTitle-62",
+                    "xxlTitle": "Typography-xxlTitle-57",
+                    "xxsTitle": "Typography-xxsTitle-63",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -8643,7 +8643,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999899,
+                  "index": -99999999900,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -8934,2064 +8934,6 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "28px",
-                  },
-                },
-                "update": [Function],
-              },
-              "update": [Function],
-            },
-          },
-        },
-        Object {
-          "create": [Function],
-          "options": Object {
-            "index": -99999999998,
-          },
-          "themingEnabled": true,
-        } => Map {
-          Object {
-            "breakpoints": Object {
-              "between": [Function],
-              "down": [Function],
-              "keys": Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ],
-              "only": [Function],
-              "up": [Function],
-              "values": Object {
-                "lg": 1270,
-                "md": 960,
-                "sm": 600,
-                "xl": 1920,
-                "xs": 0,
-              },
-              "width": [Function],
-            },
-            "direction": "ltr",
-            "hv": Object {
-              "deprecated": Object {
-                "palette": Object {
-                  "accent": Object {},
-                  "atmosphere": Object {},
-                  "semantic": Object {},
-                  "support": Object {},
-                },
-                "typography": Object {
-                  "disabledText": Object {},
-                },
-                "viz": Object {
-                  "palette": Object {
-                    "categorical": Object {},
-                    "polarizes": Object {},
-                    "sequential": Object {},
-                    "undefinedState": Object {},
-                  },
-                },
-              },
-              "name": "dawn",
-              "palette": Object {
-                "accent": Object {
-                  "acce0": "#FFFFFF",
-                  "acce1": "#414141",
-                  "acce2": "#146BD2",
-                  "acce2h": "#4389DB",
-                  "acce3": "#CC0000",
-                },
-                "atmosphere": Object {
-                  "atmo1": "#FFFFFF",
-                  "atmo2": "#F9F9F9",
-                  "atmo3": "#F5F5F5",
-                  "atmo4": "#F0F0F0",
-                  "atmo5": "#DEDEDE",
-                  "atmo6": "#BCBCBC",
-                  "atmo7": "#999999",
-                },
-                "semantic": Object {
-                  "sema1": "#63A621",
-                  "sema10": "#EF9A9A",
-                  "sema11": "#E57373",
-                  "sema12": "#EF5350",
-                  "sema13": "#E53935",
-                  "sema14": "#C62828",
-                  "sema15": "#80DEEA",
-                  "sema16": "#4DD0E1",
-                  "sema17": "#26C6DA",
-                  "sema18": "#00ACC1",
-                  "sema19": "#00838F",
-                  "sema2": "#72CCCB",
-                  "sema3": "#E68C17",
-                  "sema4": "#FF5252",
-                  "sema5": "#C51162",
-                  "sema6": "#AA00FF",
-                  "sema7": "#D3E3F6",
-                  "sema8": "#DFECD1",
-                  "sema9": "#F5D8D8",
-                },
-                "support": Object {
-                  "supp1": "#0F8B8D",
-                  "supp2": "#734B6D",
-                  "supp3": "#4E7599",
-                  "supp4": "#C19C31",
-                  "supp5": "#546B6B",
-                },
-              },
-              "spacing": Object {
-                "lg": "60",
-                "md": "30",
-                "sm": "20",
-                "xl": "90",
-                "xs": "10",
-              },
-              "type": "light",
-              "typography": Object {
-                "3xlTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "42px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "52px",
-                },
-                "4xlTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "52px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "60px",
-                },
-                "5xlTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "52px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "60px",
-                },
-                "disabledButtonText": Object {
-                  "color": "#999999",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "disabledText": Object {
-                  "color": "#999999",
-                  "fontSize": "12px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
-                },
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "highlightText": Object {
-                  "color": "#414141",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "infoText": Object {
-                  "color": "#999999",
-                  "fontSize": "12px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
-                },
-                "inlineLink": Object {
-                  "color": "#146BD2",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "lTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "labelText": Object {
-                  "color": "#414141",
-                  "fontSize": "12px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
-                },
-                "mTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "22px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "30px",
-                },
-                "normalText": Object {
-                  "color": "#414141",
-                  "fontSize": "14px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "placeholderText": Object {
-                  "color": "#999999",
-                  "fontSize": "14px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "sLink": Object {
-                  "color": "#146BD2",
-                  "fontSize": "12px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
-                },
-                "sText": Object {
-                  "color": "#414141",
-                  "fontSize": "12px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "16px",
-                },
-                "sTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "22px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "30px",
-                },
-                "selectedNavText": Object {
-                  "color": "#CC0000",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "selectedText": Object {
-                  "background": "#414141",
-                  "color": "#F9F9F9",
-                  "fontSize": "14px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "20px",
-                },
-                "vizText": Object {
-                  "color": "#414141",
-                  "fontSize": "10px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "15px",
-                },
-                "xlTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "32px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "40px",
-                },
-                "xsTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "18px",
-                  "fontWeight": "600",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "28px",
-                },
-                "xxlTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "42px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "52px",
-                },
-                "xxsTitle": Object {
-                  "color": "#414141",
-                  "fontSize": "18px",
-                  "fontWeight": "400",
-                  "letterSpacing": "0.02em",
-                  "lineHeight": "28px",
-                },
-              },
-              "viz": Object {
-                "palette": Object {
-                  "categorical": Object {
-                    "cviz1": "#2DB3E0",
-                    "cviz10": "#419393",
-                    "cviz11": "#58C9DD",
-                    "cviz12": "#F8C189",
-                    "cviz13": "#528BBF",
-                    "cviz14": "#DE64BD",
-                    "cviz15": "#73BF9C",
-                    "cviz16": "#9672C1",
-                    "cviz17": "#EB95AF",
-                    "cviz18": "#646A98",
-                    "cviz19": "#D88136",
-                    "cviz2": "#FF990D",
-                    "cviz20": "#309B59",
-                    "cviz3": "#D31F6B",
-                    "cviz4": "#FFD00A",
-                    "cviz5": "#18C38A",
-                    "cviz6": "#098CB2",
-                    "cviz7": "#EA5B86",
-                    "cviz8": "#9B469B",
-                    "cviz9": "#F4763D",
-                  },
-                  "polarizes": Object {
-                    "cviz21": "#869F1E",
-                    "cviz22": "#A4991C",
-                    "cviz23": "#C4931A",
-                    "cviz24": "#E68C17",
-                    "cviz25": "#F27034",
-                    "cviz26": "#FF5252",
-                    "cviz27": "#EC3D57",
-                    "cviz28": "#D8265D",
-                    "sema1": "#63A621",
-                    "sema5": "#C51162",
-                  },
-                  "sequential": Object {
-                    "cviz1": "#2DB3E0",
-                    "cviz1_100": "#E3F1F6",
-                    "cviz1_200": "#CFEAF3",
-                    "cviz1_300": "#BAE3F3",
-                    "cviz1_400": "#A6DCEE",
-                    "cviz1_500": "#92D5EC",
-                    "cviz1_600": "#7ECEE9",
-                    "cviz1_700": "#69C7E7",
-                    "cviz1_800": "#55C0E4",
-                    "cviz1_900": "#40B9E2",
-                  },
-                  "undefinedState": Object {
-                    "atmo5": "#DEDEDE",
-                  },
-                },
-              },
-            },
-            "mixins": Object {
-              "gutters": [Function],
-              "toolbar": Object {
-                "@media (min-width:0px) and (orientation: landscape)": Object {
-                  "minHeight": 48,
-                },
-                "@media (min-width:600px)": Object {
-                  "minHeight": 64,
-                },
-                "minHeight": 56,
-              },
-            },
-            "overrides": Object {
-              "MuiAppBar": Object {
-                "colorDefault": Object {
-                  "backgroundColor": "#FFFFFF",
-                  "contrastText": "#414141",
-                },
-                "root": Object {
-                  "@media (min-width: 600px)": Object {
-                    "height": "50px",
-                  },
-                  "borderTop": "4px solid #CC0000",
-                },
-              },
-              "MuiToolbar": Object {
-                "dense": Object {
-                  "minHeight": "46px",
-                },
-                "gutters": Object {
-                  "@media (min-width:600px)": Object {
-                    "paddingLeft": "20px",
-                    "paddingRight": "20px",
-                  },
-                  "paddingLeft": "20px",
-                  "paddingRight": "20px",
-                },
-                "root": Object {
-                  "@media (min-width: 600px)": Object {
-                    "minHeight": "46px",
-                  },
-                  "alignItems": "center",
-                },
-              },
-            },
-            "palette": Object {
-              "action": Object {
-                "active": "rgba(0, 0, 0, 0.54)",
-                "disabled": "rgba(0, 0, 0, 0.26)",
-                "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                "hover": "rgba(0, 0, 0, 0.08)",
-                "hoverOpacity": 0.08,
-                "selected": "rgba(0, 0, 0, 0.14)",
-              },
-              "augmentColor": [Function],
-              "background": Object {
-                "default": "#F9F9F9",
-                "paper": "#fff",
-              },
-              "common": Object {
-                "black": "#000",
-                "white": "#fff",
-              },
-              "contrastThreshold": 3,
-              "divider": "rgba(0, 0, 0, 0.12)",
-              "error": Object {
-                "contrastText": "#fff",
-                "dark": "#d32f2f",
-                "light": "#e57373",
-                "main": "#f44336",
-              },
-              "getContrastText": [Function],
-              "grey": Object {
-                "100": "#f5f5f5",
-                "200": "#eeeeee",
-                "300": "#e0e0e0",
-                "400": "#bdbdbd",
-                "50": "#fafafa",
-                "500": "#9e9e9e",
-                "600": "#757575",
-                "700": "#616161",
-                "800": "#424242",
-                "900": "#212121",
-                "A100": "#d5d5d5",
-                "A200": "#aaaaaa",
-                "A400": "#303030",
-                "A700": "#616161",
-              },
-              "primary": Object {
-                "contrastText": "#fff",
-                "dark": "rgb(14, 74, 147)",
-                "light": "#4389DB",
-                "main": "#146BD2",
-              },
-              "secondary": Object {
-                "contrastText": "#fff",
-                "dark": "rgb(45, 45, 45)",
-                "light": "#999999",
-                "main": "#414141",
-              },
-              "text": Object {
-                "disabled": "#999999",
-                "hint": "rgba(0, 0, 0, 0.38)",
-                "primary": "#414141",
-                "secondary": "rgba(0, 0, 0, 0.54)",
-              },
-              "tonalOffset": 0.2,
-              "type": "light",
-            },
-            "props": Object {
-              "MuiButtonBase": Object {
-                "disableRipple": true,
-              },
-              "MuiInput": Object {
-                "disableUnderline": true,
-              },
-            },
-            "shadows": Array [
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-              "none",
-            ],
-            "shape": Object {
-              "borderRadius": 0,
-            },
-            "spacing": Object {
-              "lg": "60",
-              "md": "30",
-              "sm": "20",
-              "unit": 8,
-              "xl": "90",
-              "xs": "10",
-            },
-            "transitions": Object {
-              "create": [Function],
-              "duration": Object {
-                "complex": 375,
-                "enteringScreen": 225,
-                "leavingScreen": 195,
-                "short": 250,
-                "shorter": 200,
-                "shortest": 150,
-                "standard": 300,
-              },
-              "easing": Object {
-                "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-              },
-              "getAutoHeightDuration": [Function],
-            },
-            "typography": Object {
-              "body1": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "14px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "20px",
-              },
-              "body1Next": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1rem",
-                "fontWeight": 400,
-                "lineHeight": 1.5,
-              },
-              "body2": Object {
-                "color": "#999999",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "12px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
-              "body2Next": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "0.875rem",
-                "fontWeight": 400,
-                "lineHeight": 1.5,
-              },
-              "button": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "14px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "20px",
-                "textTransform": "uppercase",
-              },
-              "buttonNext": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "0.875rem",
-                "fontWeight": 500,
-                "lineHeight": 1.75,
-                "textTransform": "uppercase",
-              },
-              "caption": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "0.75rem",
-                "fontWeight": 400,
-                "lineHeight": 1.66,
-              },
-              "captionNext": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "0.75rem",
-                "fontWeight": 400,
-                "lineHeight": 1.66,
-              },
-              "display1": Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "2.125rem",
-                "fontWeight": 400,
-                "lineHeight": "1.20588em",
-              },
-              "display2": Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "2.8125rem",
-                "fontWeight": 400,
-                "lineHeight": "1.13333em",
-                "marginLeft": "-.02em",
-              },
-              "display3": Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "3.5rem",
-                "fontWeight": 400,
-                "letterSpacing": "-.02em",
-                "lineHeight": "1.30357em",
-                "marginLeft": "-.02em",
-              },
-              "display4": Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "7rem",
-                "fontWeight": 300,
-                "letterSpacing": "-.04em",
-                "lineHeight": "1.14286em",
-                "marginLeft": "-.04em",
-              },
-              "fontFamily": Array [
-                "'Open Sans'",
-                "Arial",
-                "Helvetica",
-                "sans-serif",
-              ],
-              "fontSize": 14,
-              "fontWeightLight": 300,
-              "fontWeightMedium": 500,
-              "fontWeightRegular": 400,
-              "h1": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "32px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
-              },
-              "h2": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "32px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "40px",
-              },
-              "h3": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "22px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "30px",
-              },
-              "h4": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "22px",
-                "fontWeight": "400",
-                "letterSpacing": "0.02em",
-                "lineHeight": "30px",
-              },
-              "h5": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1.5rem",
-                "fontWeight": 400,
-                "lineHeight": 1.33,
-              },
-              "h6": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1.25rem",
-                "fontWeight": 500,
-                "lineHeight": 1.6,
-              },
-              "headline": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1.5rem",
-                "fontWeight": 400,
-                "lineHeight": "1.35417em",
-              },
-              "overline": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "0.75rem",
-                "fontWeight": 400,
-                "lineHeight": 2.66,
-                "textTransform": "uppercase",
-              },
-              "pxToRem": [Function],
-              "round": [Function],
-              "subheading": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1rem",
-                "fontWeight": 400,
-                "lineHeight": "1.5em",
-              },
-              "subtitle1": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "14px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "20px",
-              },
-              "subtitle2": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "12px",
-                "fontWeight": "600",
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
-              },
-              "suppressDeprecationWarnings": true,
-              "title": Object {
-                "color": "#414141",
-                "fontFamily": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "fontSize": "1.3125rem",
-                "fontWeight": 500,
-                "lineHeight": "1.16667em",
-              },
-              "useNextVariants": true,
-            },
-            "zIndex": Object {
-              "appBar": 1100,
-              "drawer": 1200,
-              "mobileStepper": 1000,
-              "modal": 1300,
-              "snackbar": 1400,
-              "tooltip": 1500,
-            },
-          } => Object {
-            "refs": 1,
-            "sheet": StyleSheet {
-              "attached": true,
-              "classes": Object {
-                "rootL": "TimeS-rootL-87",
-                "rootM": "TimeS-rootM-86",
-                "rootS": "TimeS-rootS-85",
-                "rootXL": "TimeS-rootXL-88",
-                "rootXs": "TimeS-rootXs-84",
-              },
-              "deployed": true,
-              "linked": false,
-              "options": Object {
-                "Renderer": [Function],
-                "classNamePrefix": "TimeS",
-                "classes": Object {
-                  "rootL": "TimeS-rootL-87",
-                  "rootM": "TimeS-rootM-86",
-                  "rootS": "TimeS-rootS-85",
-                  "rootXL": "TimeS-rootXL-88",
-                  "rootXs": "TimeS-rootXs-84",
-                },
-                "defaultTheme": Object {
-                  "breakpoints": Object {
-                    "between": [Function],
-                    "down": [Function],
-                    "keys": Array [
-                      "xs",
-                      "sm",
-                      "md",
-                      "lg",
-                      "xl",
-                    ],
-                    "only": [Function],
-                    "up": [Function],
-                    "values": Object {
-                      "lg": 1280,
-                      "md": 960,
-                      "sm": 600,
-                      "xl": 1920,
-                      "xs": 0,
-                    },
-                    "width": [Function],
-                  },
-                  "direction": "ltr",
-                  "mixins": Object {
-                    "gutters": [Function],
-                    "toolbar": Object {
-                      "@media (min-width:0px) and (orientation: landscape)": Object {
-                        "minHeight": 48,
-                      },
-                      "@media (min-width:600px)": Object {
-                        "minHeight": 64,
-                      },
-                      "minHeight": 56,
-                    },
-                  },
-                  "overrides": Object {},
-                  "palette": Object {
-                    "action": Object {
-                      "active": "rgba(0, 0, 0, 0.54)",
-                      "disabled": "rgba(0, 0, 0, 0.26)",
-                      "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                      "hover": "rgba(0, 0, 0, 0.08)",
-                      "hoverOpacity": 0.08,
-                      "selected": "rgba(0, 0, 0, 0.14)",
-                    },
-                    "augmentColor": [Function],
-                    "background": Object {
-                      "default": "#fafafa",
-                      "paper": "#fff",
-                    },
-                    "common": Object {
-                      "black": "#000",
-                      "white": "#fff",
-                    },
-                    "contrastThreshold": 3,
-                    "divider": "rgba(0, 0, 0, 0.12)",
-                    "error": Object {
-                      "contrastText": "#fff",
-                      "dark": "#d32f2f",
-                      "light": "#e57373",
-                      "main": "#f44336",
-                    },
-                    "getContrastText": [Function],
-                    "grey": Object {
-                      "100": "#f5f5f5",
-                      "200": "#eeeeee",
-                      "300": "#e0e0e0",
-                      "400": "#bdbdbd",
-                      "50": "#fafafa",
-                      "500": "#9e9e9e",
-                      "600": "#757575",
-                      "700": "#616161",
-                      "800": "#424242",
-                      "900": "#212121",
-                      "A100": "#d5d5d5",
-                      "A200": "#aaaaaa",
-                      "A400": "#303030",
-                      "A700": "#616161",
-                    },
-                    "primary": Object {
-                      "contrastText": "#fff",
-                      "dark": "#303f9f",
-                      "light": "#7986cb",
-                      "main": "#3f51b5",
-                    },
-                    "secondary": Object {
-                      "contrastText": "#fff",
-                      "dark": "#c51162",
-                      "light": "#ff4081",
-                      "main": "#f50057",
-                    },
-                    "text": Object {
-                      "disabled": "rgba(0, 0, 0, 0.38)",
-                      "hint": "rgba(0, 0, 0, 0.38)",
-                      "primary": "rgba(0, 0, 0, 0.87)",
-                      "secondary": "rgba(0, 0, 0, 0.54)",
-                    },
-                    "tonalOffset": 0.2,
-                    "type": "light",
-                  },
-                  "props": Object {},
-                  "shadows": Array [
-                    "none",
-                    "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
-                    "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
-                    "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
-                    "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-                    "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
-                    "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-                    "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
-                    "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
-                    "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
-                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
-                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
-                    "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
-                    "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
-                    "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
-                    "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
-                    "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
-                    "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
-                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
-                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
-                    "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
-                    "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
-                    "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
-                  ],
-                  "shape": Object {
-                    "borderRadius": 4,
-                  },
-                  "spacing": Object {
-                    "unit": 8,
-                  },
-                  "transitions": Object {
-                    "create": [Function],
-                    "duration": Object {
-                      "complex": 375,
-                      "enteringScreen": 225,
-                      "leavingScreen": 195,
-                      "short": 250,
-                      "shorter": 200,
-                      "shortest": 150,
-                      "standard": 300,
-                    },
-                    "easing": Object {
-                      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                      "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                      "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-                    },
-                    "getAutoHeightDuration": [Function],
-                  },
-                  "typography": Object {
-                    "body1": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.46429em",
-                    },
-                    "body1Next": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.00938em",
-                      "lineHeight": 1.5,
-                    },
-                    "body2": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 500,
-                      "lineHeight": "1.71429em",
-                    },
-                    "body2Next": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.01071em",
-                      "lineHeight": 1.5,
-                    },
-                    "button": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 500,
-                      "textTransform": "uppercase",
-                    },
-                    "buttonNext": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 500,
-                      "letterSpacing": "0.02857em",
-                      "lineHeight": 1.75,
-                      "textTransform": "uppercase",
-                    },
-                    "caption": Object {
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.75rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.375em",
-                    },
-                    "captionNext": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.75rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.03333em",
-                      "lineHeight": 1.66,
-                    },
-                    "display1": Object {
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "2.125rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.20588em",
-                    },
-                    "display2": Object {
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "2.8125rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.13333em",
-                      "marginLeft": "-.02em",
-                    },
-                    "display3": Object {
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "3.5rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "-.02em",
-                      "lineHeight": "1.30357em",
-                      "marginLeft": "-.02em",
-                    },
-                    "display4": Object {
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "7rem",
-                      "fontWeight": 300,
-                      "letterSpacing": "-.04em",
-                      "lineHeight": "1.14286em",
-                      "marginLeft": "-.04em",
-                    },
-                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                    "fontSize": 14,
-                    "fontWeightLight": 300,
-                    "fontWeightMedium": 500,
-                    "fontWeightRegular": 400,
-                    "h1": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "6rem",
-                      "fontWeight": 300,
-                      "letterSpacing": "-0.01562em",
-                      "lineHeight": 1,
-                    },
-                    "h2": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "3.75rem",
-                      "fontWeight": 300,
-                      "letterSpacing": "-0.00833em",
-                      "lineHeight": 1,
-                    },
-                    "h3": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "3rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0em",
-                      "lineHeight": 1.04,
-                    },
-                    "h4": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "2.125rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.00735em",
-                      "lineHeight": 1.17,
-                    },
-                    "h5": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1.5rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0em",
-                      "lineHeight": 1.33,
-                    },
-                    "h6": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1.25rem",
-                      "fontWeight": 500,
-                      "letterSpacing": "0.0075em",
-                      "lineHeight": 1.6,
-                    },
-                    "headline": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1.5rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.35417em",
-                    },
-                    "overline": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.75rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.08333em",
-                      "lineHeight": 2.66,
-                      "textTransform": "uppercase",
-                    },
-                    "pxToRem": [Function],
-                    "round": [Function],
-                    "subheading": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1rem",
-                      "fontWeight": 400,
-                      "lineHeight": "1.5em",
-                    },
-                    "subtitle1": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1rem",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.00938em",
-                      "lineHeight": 1.75,
-                    },
-                    "subtitle2": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "0.875rem",
-                      "fontWeight": 500,
-                      "letterSpacing": "0.00714em",
-                      "lineHeight": 1.57,
-                    },
-                    "title": Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": "1.3125rem",
-                      "fontWeight": 500,
-                      "lineHeight": "1.16667em",
-                    },
-                    "useNextVariants": false,
-                  },
-                  "zIndex": Object {
-                    "appBar": 1100,
-                    "drawer": 1200,
-                    "mobileStepper": 1000,
-                    "modal": 1300,
-                    "snackbar": 1400,
-                    "tooltip": 1500,
-                  },
-                },
-                "flip": false,
-                "generateClassName": [Function],
-                "index": -99999999998,
-                "insertionPoint": undefined,
-                "jss": Jss {
-                  "generateClassName": [Function],
-                  "id": 1,
-                  "options": Object {
-                    "Renderer": [Function],
-                    "createGenerateClassName": [Function],
-                    "plugins": Array [
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                        "onProcessRule": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                        "onProcessStyle": [Function],
-                        "onUpdate": [Function],
-                      },
-                      Object {
-                        "onCreateRule": [Function],
-                        "onProcessRule": [Function],
-                      },
-                      Object {
-                        "onProcessStyle": [Function],
-                      },
-                      Object {
-                        "onChangeValue": [Function],
-                        "onProcessStyle": [Function],
-                      },
-                      Object {
-                        "onChangeValue": [Function],
-                        "onProcessStyle": [Function],
-                      },
-                      Object {
-                        "onChangeValue": [Function],
-                        "onProcessRule": [Function],
-                        "onProcessStyle": [Function],
-                      },
-                      Object {
-                        "onProcessStyle": [Function],
-                      },
-                    ],
-                  },
-                  "plugins": PluginsRegistry {
-                    "hooks": Object {
-                      "onChangeValue": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                      "onCreateRule": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                      "onProcessRule": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                      "onProcessSheet": Array [],
-                      "onProcessStyle": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                      "onUpdate": Array [
-                        [Function],
-                      ],
-                    },
-                  },
-                  "version": "9.8.7",
-                },
-                "link": false,
-                "meta": "TimeS",
-                "name": undefined,
-                "parent": [Circular],
-                "sheet": [Circular],
-              },
-              "renderer": DomRenderer {
-                "element": <style
-                  data-jss=""
-                  data-meta="TimeS"
-                >
-                  
-.TimeS-rootXs-84 {
-  width: 8px;
-  height: 8px;
-}
-.TimeS-rootS-85 {
-  width: 16px;
-  height: 16px;
-}
-.TimeS-rootM-86 {
-  width: 32px;
-  height: 32px;
-}
-.TimeS-rootL-87 {
-  width: 64px;
-  height: 64px;
-}
-.TimeS-rootXL-88 {
-  width: 128px;
-  height: 128px;
-}
-
-                </style>,
-                "getKey": [Function],
-                "getPropertyValue": [Function],
-                "getUnescapedKeysMap": [Function],
-                "hasInsertedRules": false,
-                "removeProperty": [Function],
-                "setProperty": [Function],
-                "setSelector": [Function],
-                "sheet": [Circular],
-              },
-              "rules": RuleList {
-                "classes": Object {
-                  "rootL": "TimeS-rootL-87",
-                  "rootM": "TimeS-rootM-86",
-                  "rootS": "TimeS-rootS-85",
-                  "rootXL": "TimeS-rootXL-88",
-                  "rootXs": "TimeS-rootXs-84",
-                },
-                "index": Array [
-                  Object {
-                    "height": "8px",
-                    "width": "8px",
-                  },
-                  Object {
-                    "height": "16px",
-                    "width": "16px",
-                  },
-                  Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  Object {
-                    "height": "64px",
-                    "width": "64px",
-                  },
-                  Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                ],
-                "map": Object {
-                  ".TimeS-rootL-87": Object {
-                    "height": "64px",
-                    "width": "64px",
-                  },
-                  ".TimeS-rootM-86": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  ".TimeS-rootS-85": Object {
-                    "height": "16px",
-                    "width": "16px",
-                  },
-                  ".TimeS-rootXL-88": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  ".TimeS-rootXs-84": Object {
-                    "height": "8px",
-                    "width": "8px",
-                  },
-                  "rootL": Object {
-                    "height": "64px",
-                    "width": "64px",
-                  },
-                  "rootM": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  "rootS": Object {
-                    "height": "16px",
-                    "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  "rootXs": Object {
-                    "height": "8px",
-                    "width": "8px",
-                  },
-                },
-                "options": Object {
-                  "Renderer": [Function],
-                  "classNamePrefix": "TimeS",
-                  "classes": Object {
-                    "rootL": "TimeS-rootL-87",
-                    "rootM": "TimeS-rootM-86",
-                    "rootS": "TimeS-rootS-85",
-                    "rootXL": "TimeS-rootXL-88",
-                    "rootXs": "TimeS-rootXs-84",
-                  },
-                  "defaultTheme": Object {
-                    "breakpoints": Object {
-                      "between": [Function],
-                      "down": [Function],
-                      "keys": Array [
-                        "xs",
-                        "sm",
-                        "md",
-                        "lg",
-                        "xl",
-                      ],
-                      "only": [Function],
-                      "up": [Function],
-                      "values": Object {
-                        "lg": 1280,
-                        "md": 960,
-                        "sm": 600,
-                        "xl": 1920,
-                        "xs": 0,
-                      },
-                      "width": [Function],
-                    },
-                    "direction": "ltr",
-                    "mixins": Object {
-                      "gutters": [Function],
-                      "toolbar": Object {
-                        "@media (min-width:0px) and (orientation: landscape)": Object {
-                          "minHeight": 48,
-                        },
-                        "@media (min-width:600px)": Object {
-                          "minHeight": 64,
-                        },
-                        "minHeight": 56,
-                      },
-                    },
-                    "overrides": Object {},
-                    "palette": Object {
-                      "action": Object {
-                        "active": "rgba(0, 0, 0, 0.54)",
-                        "disabled": "rgba(0, 0, 0, 0.26)",
-                        "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                        "hover": "rgba(0, 0, 0, 0.08)",
-                        "hoverOpacity": 0.08,
-                        "selected": "rgba(0, 0, 0, 0.14)",
-                      },
-                      "augmentColor": [Function],
-                      "background": Object {
-                        "default": "#fafafa",
-                        "paper": "#fff",
-                      },
-                      "common": Object {
-                        "black": "#000",
-                        "white": "#fff",
-                      },
-                      "contrastThreshold": 3,
-                      "divider": "rgba(0, 0, 0, 0.12)",
-                      "error": Object {
-                        "contrastText": "#fff",
-                        "dark": "#d32f2f",
-                        "light": "#e57373",
-                        "main": "#f44336",
-                      },
-                      "getContrastText": [Function],
-                      "grey": Object {
-                        "100": "#f5f5f5",
-                        "200": "#eeeeee",
-                        "300": "#e0e0e0",
-                        "400": "#bdbdbd",
-                        "50": "#fafafa",
-                        "500": "#9e9e9e",
-                        "600": "#757575",
-                        "700": "#616161",
-                        "800": "#424242",
-                        "900": "#212121",
-                        "A100": "#d5d5d5",
-                        "A200": "#aaaaaa",
-                        "A400": "#303030",
-                        "A700": "#616161",
-                      },
-                      "primary": Object {
-                        "contrastText": "#fff",
-                        "dark": "#303f9f",
-                        "light": "#7986cb",
-                        "main": "#3f51b5",
-                      },
-                      "secondary": Object {
-                        "contrastText": "#fff",
-                        "dark": "#c51162",
-                        "light": "#ff4081",
-                        "main": "#f50057",
-                      },
-                      "text": Object {
-                        "disabled": "rgba(0, 0, 0, 0.38)",
-                        "hint": "rgba(0, 0, 0, 0.38)",
-                        "primary": "rgba(0, 0, 0, 0.87)",
-                        "secondary": "rgba(0, 0, 0, 0.54)",
-                      },
-                      "tonalOffset": 0.2,
-                      "type": "light",
-                    },
-                    "props": Object {},
-                    "shadows": Array [
-                      "none",
-                      "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
-                      "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
-                      "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
-                      "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-                      "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
-                      "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-                      "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
-                      "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
-                      "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
-                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
-                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
-                      "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
-                      "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
-                      "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
-                      "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
-                      "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
-                      "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
-                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
-                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
-                      "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
-                      "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
-                      "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
-                    ],
-                    "shape": Object {
-                      "borderRadius": 4,
-                    },
-                    "spacing": Object {
-                      "unit": 8,
-                    },
-                    "transitions": Object {
-                      "create": [Function],
-                      "duration": Object {
-                        "complex": 375,
-                        "enteringScreen": 225,
-                        "leavingScreen": 195,
-                        "short": 250,
-                        "shorter": 200,
-                        "shortest": 150,
-                        "standard": 300,
-                      },
-                      "easing": Object {
-                        "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                        "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                        "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                        "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-                      },
-                      "getAutoHeightDuration": [Function],
-                    },
-                    "typography": Object {
-                      "body1": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.46429em",
-                      },
-                      "body1Next": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.00938em",
-                        "lineHeight": 1.5,
-                      },
-                      "body2": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 500,
-                        "lineHeight": "1.71429em",
-                      },
-                      "body2Next": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.01071em",
-                        "lineHeight": 1.5,
-                      },
-                      "button": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 500,
-                        "textTransform": "uppercase",
-                      },
-                      "buttonNext": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 500,
-                        "letterSpacing": "0.02857em",
-                        "lineHeight": 1.75,
-                        "textTransform": "uppercase",
-                      },
-                      "caption": Object {
-                        "color": "rgba(0, 0, 0, 0.54)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.75rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.375em",
-                      },
-                      "captionNext": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.75rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.03333em",
-                        "lineHeight": 1.66,
-                      },
-                      "display1": Object {
-                        "color": "rgba(0, 0, 0, 0.54)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "2.125rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.20588em",
-                      },
-                      "display2": Object {
-                        "color": "rgba(0, 0, 0, 0.54)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "2.8125rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.13333em",
-                        "marginLeft": "-.02em",
-                      },
-                      "display3": Object {
-                        "color": "rgba(0, 0, 0, 0.54)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "3.5rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "-.02em",
-                        "lineHeight": "1.30357em",
-                        "marginLeft": "-.02em",
-                      },
-                      "display4": Object {
-                        "color": "rgba(0, 0, 0, 0.54)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "7rem",
-                        "fontWeight": 300,
-                        "letterSpacing": "-.04em",
-                        "lineHeight": "1.14286em",
-                        "marginLeft": "-.04em",
-                      },
-                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                      "fontSize": 14,
-                      "fontWeightLight": 300,
-                      "fontWeightMedium": 500,
-                      "fontWeightRegular": 400,
-                      "h1": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "6rem",
-                        "fontWeight": 300,
-                        "letterSpacing": "-0.01562em",
-                        "lineHeight": 1,
-                      },
-                      "h2": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "3.75rem",
-                        "fontWeight": 300,
-                        "letterSpacing": "-0.00833em",
-                        "lineHeight": 1,
-                      },
-                      "h3": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "3rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0em",
-                        "lineHeight": 1.04,
-                      },
-                      "h4": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "2.125rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.00735em",
-                        "lineHeight": 1.17,
-                      },
-                      "h5": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1.5rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0em",
-                        "lineHeight": 1.33,
-                      },
-                      "h6": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1.25rem",
-                        "fontWeight": 500,
-                        "letterSpacing": "0.0075em",
-                        "lineHeight": 1.6,
-                      },
-                      "headline": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1.5rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.35417em",
-                      },
-                      "overline": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.75rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.08333em",
-                        "lineHeight": 2.66,
-                        "textTransform": "uppercase",
-                      },
-                      "pxToRem": [Function],
-                      "round": [Function],
-                      "subheading": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1rem",
-                        "fontWeight": 400,
-                        "lineHeight": "1.5em",
-                      },
-                      "subtitle1": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1rem",
-                        "fontWeight": 400,
-                        "letterSpacing": "0.00938em",
-                        "lineHeight": 1.75,
-                      },
-                      "subtitle2": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "0.875rem",
-                        "fontWeight": 500,
-                        "letterSpacing": "0.00714em",
-                        "lineHeight": 1.57,
-                      },
-                      "title": Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                        "fontSize": "1.3125rem",
-                        "fontWeight": 500,
-                        "lineHeight": "1.16667em",
-                      },
-                      "useNextVariants": false,
-                    },
-                    "zIndex": Object {
-                      "appBar": 1100,
-                      "drawer": 1200,
-                      "mobileStepper": 1000,
-                      "modal": 1300,
-                      "snackbar": 1400,
-                      "tooltip": 1500,
-                    },
-                  },
-                  "flip": false,
-                  "generateClassName": [Function],
-                  "index": -99999999998,
-                  "insertionPoint": undefined,
-                  "jss": Jss {
-                    "generateClassName": [Function],
-                    "id": 1,
-                    "options": Object {
-                      "Renderer": [Function],
-                      "createGenerateClassName": [Function],
-                      "plugins": Array [
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                          "onProcessRule": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                          "onProcessStyle": [Function],
-                          "onUpdate": [Function],
-                        },
-                        Object {
-                          "onCreateRule": [Function],
-                          "onProcessRule": [Function],
-                        },
-                        Object {
-                          "onProcessStyle": [Function],
-                        },
-                        Object {
-                          "onChangeValue": [Function],
-                          "onProcessStyle": [Function],
-                        },
-                        Object {
-                          "onChangeValue": [Function],
-                          "onProcessStyle": [Function],
-                        },
-                        Object {
-                          "onChangeValue": [Function],
-                          "onProcessRule": [Function],
-                          "onProcessStyle": [Function],
-                        },
-                        Object {
-                          "onProcessStyle": [Function],
-                        },
-                      ],
-                    },
-                    "plugins": PluginsRegistry {
-                      "hooks": Object {
-                        "onChangeValue": Array [
-                          [Function],
-                          [Function],
-                          [Function],
-                        ],
-                        "onCreateRule": Array [
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                        ],
-                        "onProcessRule": Array [
-                          [Function],
-                          [Function],
-                          [Function],
-                        ],
-                        "onProcessSheet": Array [],
-                        "onProcessStyle": Array [
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                          [Function],
-                        ],
-                        "onUpdate": Array [
-                          [Function],
-                        ],
-                      },
-                    },
-                    "version": "9.8.7",
-                  },
-                  "link": false,
-                  "meta": "TimeS",
-                  "name": undefined,
-                  "parent": [Circular],
-                  "sheet": [Circular],
-                },
-                "raw": Object {
-                  "rootL": Object {
-                    "height": "64px",
-                    "width": "64px",
-                  },
-                  "rootM": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  "rootS": Object {
-                    "height": "16px",
-                    "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  "rootXs": Object {
-                    "height": "8px",
-                    "width": "8px",
                   },
                 },
                 "update": [Function],
@@ -11961,20 +9903,20 @@ body {
       <HvTimePicker
         classes={
           Object {
-            "icon": "HvTimePicker-icon-50",
-            "input": "HvTimePicker-input-45",
-            "inputContainer": "HvTimePicker-inputContainer-49",
-            "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-            "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-            "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-            "label": "HvTimePicker-label-52",
-            "periodContainer": "HvTimePicker-periodContainer-58",
-            "popper": "HvTimePicker-popper-54",
-            "popperAbove": "HvTimePicker-popperAbove-56",
-            "popperBelow": "HvTimePicker-popperBelow-55",
-            "separator": "HvTimePicker-separator-57",
-            "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-            "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+            "icon": "HvTimePicker-icon-45",
+            "input": "HvTimePicker-input-40",
+            "inputContainer": "HvTimePicker-inputContainer-44",
+            "inputPopperClosed": "HvTimePicker-inputPopperClosed-43",
+            "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-42",
+            "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-41",
+            "label": "HvTimePicker-label-47",
+            "periodContainer": "HvTimePicker-periodContainer-53",
+            "popper": "HvTimePicker-popper-49",
+            "popperAbove": "HvTimePicker-popperAbove-51",
+            "popperBelow": "HvTimePicker-popperBelow-50",
+            "separator": "HvTimePicker-separator-52",
+            "timePickerContainer": "HvTimePicker-timePickerContainer-46",
+            "timePopperContainer": "HvTimePicker-timePopperContainer-48",
           }
         }
         hours={10}
@@ -12933,41 +10875,41 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="HvTimePicker-timePickerContainer-51"
+            className="HvTimePicker-timePickerContainer-46"
           >
             <WithStyles(Typography)
-              className="HvTimePicker-label-52"
+              className="HvTimePicker-label-47"
               variant="labelText"
             >
               <Typography
-                className="HvTimePicker-label-52"
+                className="HvTimePicker-label-47"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-61",
-                    "4xlTitle": "Typography-4xlTitle-60",
-                    "5xlTitle": "Typography-5xlTitle-59",
-                    "baseFontFamily": "Typography-baseFontFamily-82",
-                    "disabledButtonText": "Typography-disabledButtonText-73",
-                    "disabledText": "Typography-disabledText-80",
-                    "highlightText": "Typography-highlightText-69",
-                    "infoText": "Typography-infoText-78",
-                    "inlineLink": "Typography-inlineLink-72",
-                    "lTitle": "Typography-lTitle-64",
-                    "labelText": "Typography-labelText-77",
-                    "mTitle": "Typography-mTitle-65",
-                    "margin": "Typography-margin-83",
-                    "normalText": "Typography-normalText-70",
-                    "placeholderText": "Typography-placeholderText-74",
-                    "sLink": "Typography-sLink-79",
-                    "sText": "Typography-sText-76",
-                    "sTitle": "Typography-sTitle-66",
-                    "selectedNavText": "Typography-selectedNavText-75",
-                    "selectedText": "Typography-selectedText-71",
-                    "vizText": "Typography-vizText-81",
-                    "xlTitle": "Typography-xlTitle-63",
-                    "xsTitle": "Typography-xsTitle-67",
-                    "xxlTitle": "Typography-xxlTitle-62",
-                    "xxsTitle": "Typography-xxsTitle-68",
+                    "3xlTitle": "Typography-3xlTitle-56",
+                    "4xlTitle": "Typography-4xlTitle-55",
+                    "5xlTitle": "Typography-5xlTitle-54",
+                    "baseFontFamily": "Typography-baseFontFamily-77",
+                    "disabledButtonText": "Typography-disabledButtonText-68",
+                    "disabledText": "Typography-disabledText-75",
+                    "highlightText": "Typography-highlightText-64",
+                    "infoText": "Typography-infoText-73",
+                    "inlineLink": "Typography-inlineLink-67",
+                    "lTitle": "Typography-lTitle-59",
+                    "labelText": "Typography-labelText-72",
+                    "mTitle": "Typography-mTitle-60",
+                    "margin": "Typography-margin-78",
+                    "normalText": "Typography-normalText-65",
+                    "placeholderText": "Typography-placeholderText-69",
+                    "sLink": "Typography-sLink-74",
+                    "sText": "Typography-sText-71",
+                    "sTitle": "Typography-sTitle-61",
+                    "selectedNavText": "Typography-selectedNavText-70",
+                    "selectedText": "Typography-selectedText-66",
+                    "vizText": "Typography-vizText-76",
+                    "xlTitle": "Typography-xlTitle-58",
+                    "xsTitle": "Typography-xsTitle-62",
+                    "xxlTitle": "Typography-xxlTitle-57",
+                    "xxsTitle": "Typography-xxsTitle-63",
                   }
                 }
                 component={null}
@@ -13899,7 +11841,7 @@ body {
                 variant="labelText"
               >
                 <p
-                  className="Typography-labelText-77 Typography-baseFontFamily-82 Typography-margin-83 HvTimePicker-label-52"
+                  className="Typography-labelText-72 Typography-baseFontFamily-77 Typography-margin-78 HvTimePicker-label-47"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -14830,1009 +12772,71 @@ body {
               </Typography>
             </WithStyles(Typography)>
             <div
-              className="HvTimePicker-inputContainer-49 HvTimePicker-inputPopperClosed-48"
+              className="HvTimePicker-inputContainer-44 HvTimePicker-inputPopperClosed-43"
             >
               <input
-                className="HvTimePicker-input-45"
+                className="HvTimePicker-input-40"
                 readOnly={true}
                 type="text"
                 value="mockGetFormattedTime"
               />
-              <WithStyles(TimeS)
-                className="HvTimePicker-icon-50"
+              <TimeS
+                className="HvTimePicker-icon-45"
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
-                <TimeS
-                  className="HvTimePicker-icon-50"
-                  classes={
-                    Object {
-                      "rootL": "TimeS-rootL-87",
-                      "rootM": "TimeS-rootM-86",
-                      "rootS": "TimeS-rootS-85",
-                      "rootXL": "TimeS-rootXL-88",
-                      "rootXs": "TimeS-rootXs-84",
-                    }
-                  }
-                  color={null}
-                  height={null}
-                  iconSize="S"
+                <svg
+                  className="HvTimePicker-icon-45"
+                  height={30}
                   onClick={[Function]}
-                  theme={
-                    Object {
-                      "breakpoints": Object {
-                        "between": [Function],
-                        "down": [Function],
-                        "keys": Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ],
-                        "only": [Function],
-                        "up": [Function],
-                        "values": Object {
-                          "lg": 1270,
-                          "md": 960,
-                          "sm": 600,
-                          "xl": 1920,
-                          "xs": 0,
-                        },
-                        "width": [Function],
-                      },
-                      "direction": "ltr",
-                      "hv": Object {
-                        "deprecated": Object {
-                          "palette": Object {
-                            "accent": Object {},
-                            "atmosphere": Object {},
-                            "semantic": Object {},
-                            "support": Object {},
-                          },
-                          "typography": Object {
-                            "disabledText": Object {},
-                          },
-                          "viz": Object {
-                            "palette": Object {
-                              "categorical": Object {},
-                              "polarizes": Object {},
-                              "sequential": Object {},
-                              "undefinedState": Object {},
-                            },
-                          },
-                        },
-                        "name": "dawn",
-                        "palette": Object {
-                          "accent": Object {
-                            "acce0": "#FFFFFF",
-                            "acce1": "#414141",
-                            "acce2": "#146BD2",
-                            "acce2h": "#4389DB",
-                            "acce3": "#CC0000",
-                          },
-                          "atmosphere": Object {
-                            "atmo1": "#FFFFFF",
-                            "atmo2": "#F9F9F9",
-                            "atmo3": "#F5F5F5",
-                            "atmo4": "#F0F0F0",
-                            "atmo5": "#DEDEDE",
-                            "atmo6": "#BCBCBC",
-                            "atmo7": "#999999",
-                          },
-                          "semantic": Object {
-                            "sema1": "#63A621",
-                            "sema10": "#EF9A9A",
-                            "sema11": "#E57373",
-                            "sema12": "#EF5350",
-                            "sema13": "#E53935",
-                            "sema14": "#C62828",
-                            "sema15": "#80DEEA",
-                            "sema16": "#4DD0E1",
-                            "sema17": "#26C6DA",
-                            "sema18": "#00ACC1",
-                            "sema19": "#00838F",
-                            "sema2": "#72CCCB",
-                            "sema3": "#E68C17",
-                            "sema4": "#FF5252",
-                            "sema5": "#C51162",
-                            "sema6": "#AA00FF",
-                            "sema7": "#D3E3F6",
-                            "sema8": "#DFECD1",
-                            "sema9": "#F5D8D8",
-                          },
-                          "support": Object {
-                            "supp1": "#0F8B8D",
-                            "supp2": "#734B6D",
-                            "supp3": "#4E7599",
-                            "supp4": "#C19C31",
-                            "supp5": "#546B6B",
-                          },
-                        },
-                        "spacing": Object {
-                          "lg": "60",
-                          "md": "30",
-                          "sm": "20",
-                          "xl": "90",
-                          "xs": "10",
-                        },
-                        "type": "light",
-                        "typography": Object {
-                          "3xlTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "42px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "52px",
-                          },
-                          "4xlTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "52px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "60px",
-                          },
-                          "5xlTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "52px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "60px",
-                          },
-                          "disabledButtonText": Object {
-                            "color": "#999999",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "disabledText": Object {
-                            "color": "#999999",
-                            "fontSize": "12px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "16px",
-                          },
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "highlightText": Object {
-                            "color": "#414141",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "infoText": Object {
-                            "color": "#999999",
-                            "fontSize": "12px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "16px",
-                          },
-                          "inlineLink": Object {
-                            "color": "#146BD2",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "lTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "32px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "40px",
-                          },
-                          "labelText": Object {
-                            "color": "#414141",
-                            "fontSize": "12px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "16px",
-                          },
-                          "mTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "22px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "30px",
-                          },
-                          "normalText": Object {
-                            "color": "#414141",
-                            "fontSize": "14px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "placeholderText": Object {
-                            "color": "#999999",
-                            "fontSize": "14px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "sLink": Object {
-                            "color": "#146BD2",
-                            "fontSize": "12px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "16px",
-                          },
-                          "sText": Object {
-                            "color": "#414141",
-                            "fontSize": "12px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "16px",
-                          },
-                          "sTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "22px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "30px",
-                          },
-                          "selectedNavText": Object {
-                            "color": "#CC0000",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "selectedText": Object {
-                            "background": "#414141",
-                            "color": "#F9F9F9",
-                            "fontSize": "14px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "20px",
-                          },
-                          "vizText": Object {
-                            "color": "#414141",
-                            "fontSize": "10px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "15px",
-                          },
-                          "xlTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "32px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "40px",
-                          },
-                          "xsTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "18px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "28px",
-                          },
-                          "xxlTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "42px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "52px",
-                          },
-                          "xxsTitle": Object {
-                            "color": "#414141",
-                            "fontSize": "18px",
-                            "fontWeight": "400",
-                            "letterSpacing": "0.02em",
-                            "lineHeight": "28px",
-                          },
-                        },
-                        "viz": Object {
-                          "palette": Object {
-                            "categorical": Object {
-                              "cviz1": "#2DB3E0",
-                              "cviz10": "#419393",
-                              "cviz11": "#58C9DD",
-                              "cviz12": "#F8C189",
-                              "cviz13": "#528BBF",
-                              "cviz14": "#DE64BD",
-                              "cviz15": "#73BF9C",
-                              "cviz16": "#9672C1",
-                              "cviz17": "#EB95AF",
-                              "cviz18": "#646A98",
-                              "cviz19": "#D88136",
-                              "cviz2": "#FF990D",
-                              "cviz20": "#309B59",
-                              "cviz3": "#D31F6B",
-                              "cviz4": "#FFD00A",
-                              "cviz5": "#18C38A",
-                              "cviz6": "#098CB2",
-                              "cviz7": "#EA5B86",
-                              "cviz8": "#9B469B",
-                              "cviz9": "#F4763D",
-                            },
-                            "polarizes": Object {
-                              "cviz21": "#869F1E",
-                              "cviz22": "#A4991C",
-                              "cviz23": "#C4931A",
-                              "cviz24": "#E68C17",
-                              "cviz25": "#F27034",
-                              "cviz26": "#FF5252",
-                              "cviz27": "#EC3D57",
-                              "cviz28": "#D8265D",
-                              "sema1": "#63A621",
-                              "sema5": "#C51162",
-                            },
-                            "sequential": Object {
-                              "cviz1": "#2DB3E0",
-                              "cviz1_100": "#E3F1F6",
-                              "cviz1_200": "#CFEAF3",
-                              "cviz1_300": "#BAE3F3",
-                              "cviz1_400": "#A6DCEE",
-                              "cviz1_500": "#92D5EC",
-                              "cviz1_600": "#7ECEE9",
-                              "cviz1_700": "#69C7E7",
-                              "cviz1_800": "#55C0E4",
-                              "cviz1_900": "#40B9E2",
-                            },
-                            "undefinedState": Object {
-                              "atmo5": "#DEDEDE",
-                            },
-                          },
-                        },
-                      },
-                      "mixins": Object {
-                        "gutters": [Function],
-                        "toolbar": Object {
-                          "@media (min-width:0px) and (orientation: landscape)": Object {
-                            "minHeight": 48,
-                          },
-                          "@media (min-width:600px)": Object {
-                            "minHeight": 64,
-                          },
-                          "minHeight": 56,
-                        },
-                      },
-                      "overrides": Object {
-                        "MuiAppBar": Object {
-                          "colorDefault": Object {
-                            "backgroundColor": "#FFFFFF",
-                            "contrastText": "#414141",
-                          },
-                          "root": Object {
-                            "@media (min-width: 600px)": Object {
-                              "height": "50px",
-                            },
-                            "borderTop": "4px solid #CC0000",
-                          },
-                        },
-                        "MuiToolbar": Object {
-                          "dense": Object {
-                            "minHeight": "46px",
-                          },
-                          "gutters": Object {
-                            "@media (min-width:600px)": Object {
-                              "paddingLeft": "20px",
-                              "paddingRight": "20px",
-                            },
-                            "paddingLeft": "20px",
-                            "paddingRight": "20px",
-                          },
-                          "root": Object {
-                            "@media (min-width: 600px)": Object {
-                              "minHeight": "46px",
-                            },
-                            "alignItems": "center",
-                          },
-                        },
-                      },
-                      "palette": Object {
-                        "action": Object {
-                          "active": "rgba(0, 0, 0, 0.54)",
-                          "disabled": "rgba(0, 0, 0, 0.26)",
-                          "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                          "hover": "rgba(0, 0, 0, 0.08)",
-                          "hoverOpacity": 0.08,
-                          "selected": "rgba(0, 0, 0, 0.14)",
-                        },
-                        "augmentColor": [Function],
-                        "background": Object {
-                          "default": "#F9F9F9",
-                          "paper": "#fff",
-                        },
-                        "common": Object {
-                          "black": "#000",
-                          "white": "#fff",
-                        },
-                        "contrastThreshold": 3,
-                        "divider": "rgba(0, 0, 0, 0.12)",
-                        "error": Object {
-                          "contrastText": "#fff",
-                          "dark": "#d32f2f",
-                          "light": "#e57373",
-                          "main": "#f44336",
-                        },
-                        "getContrastText": [Function],
-                        "grey": Object {
-                          "100": "#f5f5f5",
-                          "200": "#eeeeee",
-                          "300": "#e0e0e0",
-                          "400": "#bdbdbd",
-                          "50": "#fafafa",
-                          "500": "#9e9e9e",
-                          "600": "#757575",
-                          "700": "#616161",
-                          "800": "#424242",
-                          "900": "#212121",
-                          "A100": "#d5d5d5",
-                          "A200": "#aaaaaa",
-                          "A400": "#303030",
-                          "A700": "#616161",
-                        },
-                        "primary": Object {
-                          "contrastText": "#fff",
-                          "dark": "rgb(14, 74, 147)",
-                          "light": "#4389DB",
-                          "main": "#146BD2",
-                        },
-                        "secondary": Object {
-                          "contrastText": "#fff",
-                          "dark": "rgb(45, 45, 45)",
-                          "light": "#999999",
-                          "main": "#414141",
-                        },
-                        "text": Object {
-                          "disabled": "#999999",
-                          "hint": "rgba(0, 0, 0, 0.38)",
-                          "primary": "#414141",
-                          "secondary": "rgba(0, 0, 0, 0.54)",
-                        },
-                        "tonalOffset": 0.2,
-                        "type": "light",
-                      },
-                      "props": Object {
-                        "MuiButtonBase": Object {
-                          "disableRipple": true,
-                        },
-                        "MuiInput": Object {
-                          "disableUnderline": true,
-                        },
-                      },
-                      "shadows": Array [
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                        "none",
-                      ],
-                      "shape": Object {
-                        "borderRadius": 0,
-                      },
-                      "spacing": Object {
-                        "lg": "60",
-                        "md": "30",
-                        "sm": "20",
-                        "unit": 8,
-                        "xl": "90",
-                        "xs": "10",
-                      },
-                      "transitions": Object {
-                        "create": [Function],
-                        "duration": Object {
-                          "complex": 375,
-                          "enteringScreen": 225,
-                          "leavingScreen": 195,
-                          "short": 250,
-                          "shorter": 200,
-                          "shortest": 150,
-                          "standard": 300,
-                        },
-                        "easing": Object {
-                          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-                        },
-                        "getAutoHeightDuration": [Function],
-                      },
-                      "typography": Object {
-                        "body1": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "14px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
-                        },
-                        "body1Next": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1rem",
-                          "fontWeight": 400,
-                          "lineHeight": 1.5,
-                        },
-                        "body2": Object {
-                          "color": "#999999",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "12px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "16px",
-                        },
-                        "body2Next": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "0.875rem",
-                          "fontWeight": 400,
-                          "lineHeight": 1.5,
-                        },
-                        "button": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
-                          "textTransform": "uppercase",
-                        },
-                        "buttonNext": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "0.875rem",
-                          "fontWeight": 500,
-                          "lineHeight": 1.75,
-                          "textTransform": "uppercase",
-                        },
-                        "caption": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "0.75rem",
-                          "fontWeight": 400,
-                          "lineHeight": 1.66,
-                        },
-                        "captionNext": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "0.75rem",
-                          "fontWeight": 400,
-                          "lineHeight": 1.66,
-                        },
-                        "display1": Object {
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "2.125rem",
-                          "fontWeight": 400,
-                          "lineHeight": "1.20588em",
-                        },
-                        "display2": Object {
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "2.8125rem",
-                          "fontWeight": 400,
-                          "lineHeight": "1.13333em",
-                          "marginLeft": "-.02em",
-                        },
-                        "display3": Object {
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "3.5rem",
-                          "fontWeight": 400,
-                          "letterSpacing": "-.02em",
-                          "lineHeight": "1.30357em",
-                          "marginLeft": "-.02em",
-                        },
-                        "display4": Object {
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "7rem",
-                          "fontWeight": 300,
-                          "letterSpacing": "-.04em",
-                          "lineHeight": "1.14286em",
-                          "marginLeft": "-.04em",
-                        },
-                        "fontFamily": Array [
-                          "'Open Sans'",
-                          "Arial",
-                          "Helvetica",
-                          "sans-serif",
-                        ],
-                        "fontSize": 14,
-                        "fontWeightLight": 300,
-                        "fontWeightMedium": 500,
-                        "fontWeightRegular": 400,
-                        "h1": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "32px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "40px",
-                        },
-                        "h2": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "32px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "40px",
-                        },
-                        "h3": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "22px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "30px",
-                        },
-                        "h4": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "22px",
-                          "fontWeight": "400",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "30px",
-                        },
-                        "h5": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1.5rem",
-                          "fontWeight": 400,
-                          "lineHeight": 1.33,
-                        },
-                        "h6": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1.25rem",
-                          "fontWeight": 500,
-                          "lineHeight": 1.6,
-                        },
-                        "headline": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1.5rem",
-                          "fontWeight": 400,
-                          "lineHeight": "1.35417em",
-                        },
-                        "overline": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "0.75rem",
-                          "fontWeight": 400,
-                          "lineHeight": 2.66,
-                          "textTransform": "uppercase",
-                        },
-                        "pxToRem": [Function],
-                        "round": [Function],
-                        "subheading": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1rem",
-                          "fontWeight": 400,
-                          "lineHeight": "1.5em",
-                        },
-                        "subtitle1": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "14px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "20px",
-                        },
-                        "subtitle2": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "12px",
-                          "fontWeight": "600",
-                          "letterSpacing": "0.02em",
-                          "lineHeight": "16px",
-                        },
-                        "suppressDeprecationWarnings": true,
-                        "title": Object {
-                          "color": "#414141",
-                          "fontFamily": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "fontSize": "1.3125rem",
-                          "fontWeight": 500,
-                          "lineHeight": "1.16667em",
-                        },
-                        "useNextVariants": true,
-                      },
-                      "zIndex": Object {
-                        "appBar": 1100,
-                        "drawer": 1200,
-                        "mobileStepper": 1000,
-                        "modal": 1300,
-                        "snackbar": 1400,
-                        "tooltip": 1500,
-                      },
-                    }
-                  }
-                  viewbox="1 1 30 30 "
-                  width={null}
+                  viewBox="1 1 30 30"
+                  width={30}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    className="HvTimePicker-icon-50"
-                    height={30}
-                    onClick={[Function]}
-                    viewBox="1 1 30 30"
-                    width={30}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <path
+                    className="color0"
+                    d="M0 0h32v32H0z"
+                    fill="none"
+                  />
+                  <g
+                    className="color0"
+                    fill="none"
                   >
                     <path
-                      className="color0"
                       d="M0 0h32v32H0z"
-                      fill="none"
                     />
-                    <g
-                      className="color0"
-                      fill="none"
-                    >
-                      <path
-                        d="M0 0h32v32H0z"
-                      />
-                      <circle
-                        cx={8}
-                        cy={8}
-                        r={8}
-                        transform="translate(8 8)"
-                      />
-                    </g>
-                    <path
-                      className="color0"
-                      d="M16 24a8.024 8.024 0 0 1-8-8 8.024 8.024 0 0 1 8-8 8.024 8.024 0 0 1 8 8 8.024 8.024 0 0 1-8 8z"
-                      fill="none"
+                    <circle
+                      cx={8}
+                      cy={8}
+                      r={8}
+                      transform="translate(8 8)"
                     />
-                    <path
-                      className="color1"
-                      d="M16 23a7.023 7.023 0 1 0-4.943-2.057A6.953 6.953 0 0 0 16 23m0 1a8 8 0 1 1 8-8 8.024 8.024 0 0 1-8 8z"
-                      fill="#414141"
-                    />
-                    <path
-                      className="color1"
-                      d="M18.646 19.354L15.5 16.207V11h1v4.793l2.854 2.854z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </TimeS>
-              </WithStyles(TimeS)>
+                  </g>
+                  <path
+                    className="color0"
+                    d="M16 24a8.024 8.024 0 0 1-8-8 8.024 8.024 0 0 1 8-8 8.024 8.024 0 0 1 8 8 8.024 8.024 0 0 1-8 8z"
+                    fill="none"
+                  />
+                  <path
+                    className="color1"
+                    d="M16 23a7.023 7.023 0 1 0-4.943-2.057A6.953 6.953 0 0 0 16 23m0 1a8 8 0 1 1 8-8 8.024 8.024 0 0 1-8 8z"
+                    fill="#414141"
+                  />
+                  <path
+                    className="color1"
+                    d="M18.646 19.354L15.5 16.207V11h1v4.793l2.854 2.854z"
+                    fill="#414141"
+                  />
+                </svg>
+              </TimeS>
             </div>
             <Popper
               anchorEl={null}
-              className="HvTimePicker-popper-54 HvTimePicker-popperBelow-55"
+              className="HvTimePicker-popper-49 HvTimePicker-popperBelow-50"
               disablePortal={true}
               open={false}
               placement="bottom-start"

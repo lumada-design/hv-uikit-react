@@ -13,7 +13,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999976,
+            "index": -99999999982,
           },
           "themingEnabled": true,
         } => Map {
@@ -1311,7 +1311,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999976,
+                "index": -99999999982,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3477,7 +3477,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999976,
+                  "index": -99999999982,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999977,
+            "index": -99999999983,
           },
           "themingEnabled": true,
         } => Map {
@@ -4931,7 +4931,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999977,
+                "index": -99999999983,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5566,7 +5566,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999977,
+                  "index": -99999999983,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -7685,7 +7685,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999976,
+            "index": -99999999982,
           },
           "themingEnabled": true,
         } => Map {
@@ -8983,7 +8983,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999976,
+                "index": -99999999982,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -11149,7 +11149,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999976,
+                  "index": -99999999982,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -11295,7 +11295,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999977,
+            "index": -99999999983,
           },
           "themingEnabled": true,
         } => Map {
@@ -12603,7 +12603,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999977,
+                "index": -99999999983,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -13238,7 +13238,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999977,
+                  "index": -99999999983,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -15357,7 +15357,7 @@ exports[`DropDownMenu component opens on click 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999976,
+            "index": -99999999982,
           },
           "themingEnabled": true,
         } => Map {
@@ -16655,7 +16655,7 @@ exports[`DropDownMenu component opens on click 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999976,
+                "index": -99999999982,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -18821,7 +18821,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999976,
+                  "index": -99999999982,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -18967,7 +18967,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999977,
+            "index": -99999999983,
           },
           "themingEnabled": true,
         } => Map {
@@ -20275,7 +20275,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999977,
+                "index": -99999999983,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -20910,7 +20910,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999977,
+                  "index": -99999999983,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -21076,7 +21076,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999978,
+            "index": -99999999984,
           },
           "themingEnabled": true,
         } => Map {
@@ -22398,7 +22398,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999978,
+                "index": -99999999984,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -23176,7 +23176,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999978,
+                  "index": -99999999984,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -23414,7 +23414,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999979,
+            "index": -99999999985,
           },
           "themingEnabled": true,
         } => Map {
@@ -24718,7 +24718,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999979,
+                "index": -99999999985,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -25848,7 +25848,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999979,
+                  "index": -99999999985,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26002,7 +26002,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999982,
+            "index": -99999999988,
           },
           "themingEnabled": true,
         } => Map {
@@ -27352,7 +27352,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999982,
+                "index": -99999999988,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -28583,7 +28583,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999982,
+                  "index": -99999999988,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
