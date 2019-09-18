@@ -4,12 +4,12 @@ pipeline {
     triggers {
         cron('@midnight')
     }
-    options { 
-        timestamps () 
-        timeout(time: 50, unit: 'MINUTES') 
+    options {
+        timestamps ()
+        timeout(time: 75, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
-   
+
     stages {
         stage('Automation Regression Tests') {
             steps {

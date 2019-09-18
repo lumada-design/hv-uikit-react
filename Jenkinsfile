@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
-    options { 
-        timestamps () 
-        timeout(time: 50, unit: 'MINUTES') 
+    options {
+        timestamps ()
+        timeout(time: 70, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
 
@@ -16,7 +16,7 @@ pipeline {
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
-   
+
     stages {
         stage('Build') {
             when {
@@ -103,7 +103,7 @@ pipeline {
                               string(name: 'STORYBOOK_URL', value: URL),
                               string(name: 'BRANCH', value: env.GIT_BRANCH)
                             ]
-                            
+
                         }
                     }
                     post {
@@ -148,7 +148,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             script {
@@ -170,10 +170,10 @@ pipeline {
                         }
                     }
                 }
-                else if( currentBuild.currentResult == "UNSTABLE" ) { 
+                else if( currentBuild.currentResult == "UNSTABLE" ) {
                     slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
                 }
-                else { 
+                else {
                     slackSend channel: "${params.channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
@@ -183,12 +183,11 @@ pipeline {
 
 void waitUntilServerUp(String url) {
   script {
-    sleep(time: 15, unit: "SECONDS") // time to start docker machine
-    timeout(2) {
+    sleep(time: 45, unit: "SECONDS") // time to start docker machine
+    timeout(time: 5, unit: 'MINUTES') {
       waitUntil {
         script {
-          def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
-          return (r == 0);
+          return sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
         }
       }
     }
