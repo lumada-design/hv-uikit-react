@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 // This file contains definitions for controlling the display of the element,
 // removing hard-coded values from the codebase itself
 // these values assist in calculating the dimensions for the buttons

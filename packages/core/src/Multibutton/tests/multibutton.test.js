@@ -19,12 +19,12 @@
 import React from "react";
 import { mount } from "enzyme";
 
+import Map from "@hv/uikit-react-icons/dist/DawnTheme/Map.S";
+import LocationPin from "@hv/uikit-react-icons/dist/DawnTheme/LocationPin.S";
 import MultibuttonWithStyles from "../index";
 import Multibutton from "../MultiButton";
 import HvProvider from "../../Provider";
 
-import Map from "@hv/uikit-react-icons/dist/DawnTheme/Map.S";
-import LocationPin from "@hv/uikit-react-icons/dist/DawnTheme/LocationPin.S";
 
 const buttonsDefinitions = [
   { id: "map", value: "map", icon: <Map />, isSelected: true },
@@ -41,7 +41,7 @@ describe("Multibutton withStyles - Icons Only", () => {
       <HvProvider>
         <MultibuttonWithStyles
           buttonsDefinitions={buttonsDefinitions}
-          buttonType={"icon"}
+          buttonType="icon"
           isMultiSelectable
         />
       </HvProvider>
@@ -109,7 +109,7 @@ describe("Multibutton withStyles - Text Only", () => {
       <HvProvider>
         <MultibuttonWithStyles
           buttonsDefinitions={buttonsDefinitions}
-          buttonType={"text"}
+          buttonType="text"
           isMultiSelectable
         />
       </HvProvider>
@@ -134,7 +134,7 @@ describe("Multibutton withStyles - Text and Icons", () => {
       <HvProvider>
         <MultibuttonWithStyles
           buttonsDefinitions={buttonsDefinitions}
-          buttonType={"mixed"}
+          buttonType="mixed"
           isMultiSelectable
         />
       </HvProvider>
@@ -172,7 +172,7 @@ describe("Multibutton withStyles - Minimum Selection", () => {
       <HvProvider>
         <MultibuttonWithStyles
           buttonsDefinitions={conditionalButtonsDefinitions}
-          buttonType={"mixed"}
+          buttonType="mixed"
           isMultiSelectable
         />
       </HvProvider>
@@ -216,7 +216,7 @@ describe("Multibutton withStyles - Minimum Selection", () => {
       <HvProvider>
         <MultibuttonWithStyles
           buttonsDefinitions={minimalSelectionButtonsDefinitions}
-          buttonType={"mixed"}
+          buttonType="mixed"
           isMultiSelectable
           minSelection={1}
         />

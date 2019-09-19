@@ -32,18 +32,14 @@ class Multibutton extends React.Component {
 
     // iterate over elements - remove optional definitions
     // compare remaining objects
-    const items = map(buttonsDefinitions, o => {
-      return Object.keys(o);
-    });
+    const items = map(buttonsDefinitions, o => Object.keys(o));
 
-    const filtered = map(items, i => {
-      return difference(i, [
+    const filtered = map(items, i => difference(i, [
         "isSelected",
         "isMultiSelectable",
         "vertical",
         "isEnforced"
-      ]);
-    });
+      ]));
 
     const firstItem = filtered.shift();
 
@@ -67,7 +63,7 @@ class Multibutton extends React.Component {
       hasError
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
@@ -94,13 +90,12 @@ class Multibutton extends React.Component {
 
     const btnClickableProps = filter(buttonsDefinitions, btnProp => {
       if (btnProp.id === clickedTarget.id) {
-        return btnProp.isEnforced || false;
+        return btnProp.isEnforced;
       }
+      return false;
     });
 
-    const btnClickable = map(btnClickableProps, i => {
-      return i.isEnforced;
-    })[0];
+    const btnClickable = map(btnClickableProps, i => i.isEnforced)[0];
 
     if (btnClickable) {
       return -1;
@@ -124,8 +119,7 @@ class Multibutton extends React.Component {
         newState = checkedItems.filter((_, i) => i !== itemToRemove);
         target.dataset.selectionindicator = "notSelected";
       }
-    } else {
-      if (checkedItems.indexOf(clickedTarget.id) !== -1) {
+    } else if (checkedItems.indexOf(clickedTarget.id) !== -1) {
         // handle state change
         newState = [];
         target.dataset.selectionindicator = "notSelected";
@@ -133,7 +127,6 @@ class Multibutton extends React.Component {
         newState = [clickedTarget.id];
         clickedTarget.dataset.selectionindicator = "isSelected";
       }
-    }
 
     this.setState({
       checkedItems: newState
@@ -145,6 +138,7 @@ class Multibutton extends React.Component {
 
   render() {
     const {
+      className,
       classes,
       vertical,
       buttonType,
@@ -161,7 +155,7 @@ class Multibutton extends React.Component {
       );
     }
 
-    const calculatedBtnWidth = _ =>
+    const calculatedBtnWidth = () =>
       buttonsDefinitions.reduce((a, b) =>
         a.value.length > b.value.length ? a : b
       ).value.length *
@@ -169,7 +163,7 @@ class Multibutton extends React.Component {
       (settings.PADDING_DIM * 2 + settings.BORDER_DIM * 2) +
       (buttonsDefinitions[0].icon ? settings.ICON_WIDTH : 0);
 
-    const btnWidth = _ => {
+    const btnWidth = () => {
       if (buttonType === "icon") {
         return settings.ICON_BTN_WIDTH;
       }
@@ -181,9 +175,7 @@ class Multibutton extends React.Component {
     const multiBtnContainerWidth =
       btnWidth() * (vertical ? 1 : buttonsDefinitions.length) + 2;
 
-    const inlineStylesGenerator = () => {
-      return { minWidth: btnWidth(), padding: 0 };
-    };
+    const inlineStylesGenerator = () => ({ minWidth: btnWidth(), padding: 0 });
 
     const selectionIndicator = button => {
       const { checkedItems } = this.state;
@@ -209,7 +201,7 @@ class Multibutton extends React.Component {
           className={classNames(classes.btnBase, classes.btnSecondary, {
             [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
             [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
-          })}
+          }, className)}
           category={button.isSelected ? "secondary" : "ghost"}
           style={inlineStylesGenerator(button)}
           data-selectionindicator={selectionIndicator(button)}
@@ -242,6 +234,10 @@ class Multibutton extends React.Component {
 }
 
 Multibutton.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -301,6 +297,7 @@ Multibutton.propTypes = {
 };
 
 Multibutton.defaultProps = {
+  className:"",
   vertical: false,
   isMultiSelectable: false,
   onChange: () => {},
