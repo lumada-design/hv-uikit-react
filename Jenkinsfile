@@ -99,6 +99,7 @@ pipeline {
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
+                            echo "the run was here"
                             def jobResult =
                                             build job: 'storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
@@ -191,6 +192,10 @@ void waitUntilServerUp(String url) {
       waitUntil {
         script {
           def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
+          println " ***** result: ${r} "
+          if (r == 0)  {
+            println " the expression is correct "
+            println " value =  ${r == 0}  "  
           return (r == 0)  
         }
       }
