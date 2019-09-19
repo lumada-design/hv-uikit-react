@@ -99,11 +99,14 @@ pipeline {
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
-                            build job: 'storybook-core-tests', parameters: [
-                              string(name: 'STORYBOOK_URL', value: URL),
-                              string(name: 'BRANCH', value: env.GIT_BRANCH)
-                            ]
+                            def jobResult =
+                                            build job: 'PDI_Test', parameters: [
+                                                string(name: 'STORYBOOK_URL', value: URL),
+                                                string(name: 'BRANCH', value: env.GIT_BRANCH)
+                                            ], propagate: true, wait: true
 
+                            echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
+                            
                         }
                     }
                     post {
