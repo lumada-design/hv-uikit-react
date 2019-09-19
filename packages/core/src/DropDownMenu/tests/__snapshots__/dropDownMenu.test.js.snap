@@ -7653,7 +7653,7 @@ body {
               popperOptions={Object {}}
               style={
                 Object {
-                  "zIndex": 1,
+                  "zIndex": 1500,
                 }
               }
               transition={false}
@@ -15325,7 +15325,7 @@ body {
               popperOptions={Object {}}
               style={
                 Object {
-                  "zIndex": 1,
+                  "zIndex": 1500,
                 }
               }
               transition={false}
@@ -30814,7 +30814,7 @@ body {
               popperOptions={Object {}}
               style={
                 Object {
-                  "zIndex": 1,
+                  "zIndex": 1500,
                 }
               }
               transition={false}
@@ -30827,7 +30827,7 @@ body {
                   role="tooltip"
                   style={
                     Object {
-                      "zIndex": 1,
+                      "zIndex": 1500,
                     }
                   }
                 >
