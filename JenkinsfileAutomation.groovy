@@ -1,9 +1,6 @@
 pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
-    triggers {
-        cron('@midnight')
-    }
     options {
         timestamps ()
         timeout(time: 75, unit: 'MINUTES')
