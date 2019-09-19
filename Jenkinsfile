@@ -78,7 +78,7 @@ pipeline {
                                 triggeredBy 'UpstreamCause'
                             }
                             allOf {
-                                branch 'alpha'
+                                branch 'automationFix'
                                 triggeredBy 'UpstreamCause'
                             }
                         }
