@@ -41,12 +41,12 @@ const dropdownSizes = [
   },
   {
     id: "2",
-    label: "M"
+    label: "M",
+    selected: true
   },
   {
     id: "3",
-    label: "L",
-    selected: true
+    label: "L"
   },
   {
     id: "4",
