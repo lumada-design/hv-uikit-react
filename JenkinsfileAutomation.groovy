@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Automation Regression Tests') {
             steps {
-                build job: "ui-kit/react/alpha", parameters: [
+                build job: "ui-kit/react/automationFix", parameters: [
                     booleanParam(name: 'skipLint', value: false),
                     booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: true),
