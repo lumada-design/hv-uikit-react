@@ -16,26 +16,26 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
-import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
-import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
-import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
-import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
+import Banner1 from "../../../../packages/doc/samples/components/banner/banner1";
+import Banner2 from "../../../../packages/doc/samples/components/banner/banner2";
+import Banner3 from "../../../../packages/doc/samples/components/banner/banner3";
+import Banner4 from "../../../../packages/doc/samples/components/banner/banner4";
+import Banner5 from "../../../../packages/doc/samples/components/banner/banner5";
+import Banner6 from "../../../../packages/doc/samples/components/banner/banner6";
 
 // sample scenarios
 const samples = {};
-
-samples.TextAreaDisabled = TextAreaDisabled;
-samples.TextAreaLimit = TextAreaLimit;
-samples.TextAreaSimple = TextAreaSimple;
-samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
-samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
+samples.Banner1 = Banner1;
+samples.Banner2 = Banner2;
+samples.Banner3 = Banner3;
+samples.Banner4 = Banner4;
+samples.Banner5 = Banner5;
+samples.Banner6 = Banner6;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreTextArea", module).add(key, () => (
+  storiesOf("CoreBanner", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}

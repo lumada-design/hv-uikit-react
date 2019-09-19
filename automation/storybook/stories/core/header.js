@@ -16,26 +16,25 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
-import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
-import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
-import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
-import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
+import Header1 from "../../../../packages/doc/samples/components/header/header1";
+import Header2 from "../../../../packages/doc/samples/components/header/header2";
+import Header3 from "../../../../packages/doc/samples/components/header/header3";
+import Header4 from "../../../../packages/doc/samples/components/header/header4";
+import Header5 from "../../../../packages/doc/samples/components/header/header5";
 
 // sample scenarios
 const samples = {};
 
-samples.TextAreaDisabled = TextAreaDisabled;
-samples.TextAreaLimit = TextAreaLimit;
-samples.TextAreaSimple = TextAreaSimple;
-samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
-samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
+samples.Header1 = Header1;
+samples.Header2 = Header2;
+samples.Header3 = Header3;
+samples.Header3 = Header4;
+samples.Header3 = Header5;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreTextArea", module).add(key, () => (
+  storiesOf("CoreHeader", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}
