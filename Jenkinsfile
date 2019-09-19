@@ -100,7 +100,7 @@ pipeline {
                             sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
                             def jobResult =
-                                            build job: 'PDI_Test', parameters: [
+                                            build job: 'storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
                                                 string(name: 'BRANCH', value: env.GIT_BRANCH)
                                             ], propagate: true, wait: true
