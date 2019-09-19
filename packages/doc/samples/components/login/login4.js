@@ -30,6 +30,8 @@ const labels =
   cancelButton: "Cancel label",
   recoverButton: "Recover label",
   recoveringMessage: "Recovering label",
+  incorrectCredentialsMessage: "incorrect Credentials Message label"
+
 }
 
 export default (
