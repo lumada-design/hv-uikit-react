@@ -192,11 +192,7 @@ void waitUntilServerUp(String url) {
       waitUntil {
         script {
           def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
-          println " ***** result: ${r} "
-          if (r == 0)  {
-            println " the expression is correct "
-            println " value =  ${r == 0}  "  
-          }  
+          return (r == 0)
         }
       }
     }
