@@ -16,26 +16,26 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
-import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
-import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
-import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
-import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
+import Breadcrumb1 from "../../../../packages/doc/samples/components/breadcrumb/breadcrumb1";
+import Breadcrumb2 from "../../../../packages/doc/samples/components/breadcrumb/breadcrumb2";
+import Breadcrumb3 from "../../../../packages/doc/samples/components/breadcrumb/breadcrumb3";
+import Breadcrumb4 from "../../../../packages/doc/samples/components/breadcrumb/breadcrumb4";
+import Breadcrumb5 from "../../../../packages/doc/samples/components/breadcrumb/breadcrumb5";
+
 
 // sample scenarios
 const samples = {};
-
-samples.TextAreaDisabled = TextAreaDisabled;
-samples.TextAreaLimit = TextAreaLimit;
-samples.TextAreaSimple = TextAreaSimple;
-samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
-samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
+samples.Breadcrumb1 = Breadcrumb1;
+samples.Breadcrumb2 = Breadcrumb2;
+samples.Breadcrumb3 = Breadcrumb3;
+samples.Breadcrumb4 = Breadcrumb4;
+samples.Breadcrumb5 = Breadcrumb5;
+;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreTextArea", module).add(key, () => (
+  storiesOf("CoreBreadcrumb", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}

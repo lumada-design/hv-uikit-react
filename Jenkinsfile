@@ -70,40 +70,27 @@ pipeline {
                     when {
                         expression { !params.skipAutomationTest }
                         anyOf {
-                            allOf {
-                                anyOf {
-                                    changeRequest target: 'master'
-                                    branch 'master'
-                                }
-                                triggeredBy 'UpstreamCause'
-                            }
-                            allOf {
-                                branch 'alpha'
-                                triggeredBy 'UpstreamCause'
-                            }
+                            changeRequest target: 'master'
+                            branch 'master'    
+                            branch 'alpha'
                         }
                     }
                     steps {
                         script {
-                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                            def dockerRegistryCredentialsId = 'buildguynexus'
-                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
-                                    def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
-                                    automationImage.push("${dockerImageTag}")
-                                }
+                                sh 'npm ci --silent'
+                                sh 'npm run bootstrap'
+                                sh 'npm run automation &'
                             }
-                            sh 'docker system prune -f' // docker remove all unused objects
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
-                            sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
-                            echo "the run was here"
+                            def REFSPEC = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
+                            echo "[INFO] REFSPEC: " + REFSPEC
                             def jobResult =
-                                            build job: 'storybook-core-tests', parameters: [
+                                            build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
-                                                string(name: 'BRANCH', value: env.GIT_BRANCH)
+                                                string(name: 'REFSPEC', value: REFSPEC)
                                             ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
@@ -120,11 +107,7 @@ pipeline {
 
                       always {
                         script {
-                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                            def dockerRegistryCredentialsId = 'buildguynexus'
-                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
-                            def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
-                            sh "docker kill ${container}"
+                            sh 'pkill -f node'
                         }
                       }
                     }
@@ -185,6 +168,8 @@ pipeline {
     }
 }
 
+// ================== FUNCTIONS =================================================
+
 void waitUntilServerUp(String url) {
   script {
     sleep(time: 45, unit: "SECONDS") // time to start docker machine
@@ -192,13 +177,19 @@ void waitUntilServerUp(String url) {
       waitUntil {
         script {
           def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
-          println " ***** result: ${r} "
-          if (r == 0)  {
-            println " the expression is correct "
-            println " value =  ${r == 0}  "  
-          }  
+          return (r == 0)
         }
       }
     }
   }
+}
+
+def getRefspec(String changeId, String branch) {
+  def refspec = ''
+  if (changeId) {
+    refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
+  } else {
+    refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
+  }
+  return refspec
 }

@@ -16,26 +16,24 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import TextAreaDisabled from "../../../../packages/doc/samples/components/textArea/textAreaDisabled";
-import TextAreaLimit from "../../../../packages/doc/samples/components/textArea/textAreaLimit";
-import TextAreaSimple from "../../../../packages/doc/samples/components/textArea/textAreaSimple";
-import TextAreaUncontrolledValue from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValue";
-import TextAreaUncontrolledValueLimit from "../../../../packages/doc/samples/components/textArea/textAreaUncontrolledValueLimit";
+import Snackbar1 from "../../../../packages/doc/samples/components/snackbar/snackbar1";
+import Snackbar2 from "../../../../packages/doc/samples/components/snackbar/snackbar2";
+import Snackbar3 from "../../../../packages/doc/samples/components/snackbar/snackbar3";
+import Snackbar4 from "../../../../packages/doc/samples/components/snackbar/snackbar4";
+import Snackbar5 from "../../../../packages/doc/samples/components/snackbar/snackbar5";
 
 // sample scenarios
 const samples = {};
-
-samples.TextAreaDisabled = TextAreaDisabled;
-samples.TextAreaLimit = TextAreaLimit;
-samples.TextAreaSimple = TextAreaSimple;
-samples.TextAreaUncontrolledValue = TextAreaUncontrolledValue;
-samples.TextAreaUncontrolledValueLimit = TextAreaUncontrolledValueLimit;
+samples.Snackbar1 = Snackbar1;
+samples.Snackbar2 = Snackbar2;
+samples.Snackbar3 = Snackbar3;
+samples.Snackbar4 = Snackbar4;
+samples.Snackbar5 = Snackbar5;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreTextArea", module).add(key, () => (
+  storiesOf("CoreSnackbar", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}
