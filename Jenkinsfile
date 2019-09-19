@@ -196,7 +196,7 @@ void waitUntilServerUp(String url) {
           if (r == 0)  {
             println " the expression is correct "
             println " value =  ${r == 0}  "  
-          return (r == 0)  
+          }  
         }
       }
     }
