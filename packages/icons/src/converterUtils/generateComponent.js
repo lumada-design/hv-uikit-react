@@ -181,7 +181,7 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
          * Styles applied to the component root when it is extra large.
          */
         rootXL: PropTypes.string,
-      }).isRequired,
+      }),
       /**
        * Class names to be applied.
        */
@@ -211,6 +211,7 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     
     ${componentName}.defaultProps = {
       className: "",
+      classes: undefined,
       color: null,
       viewbox: "${defaultSizes.viewBoxRegexp.join(" ")} ",
       height: null,
