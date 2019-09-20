@@ -85,7 +85,6 @@ pipeline {
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             waitUntilServerUp(URL)
-                            echo "the run was here"
                             def jobResult =
                                             build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
