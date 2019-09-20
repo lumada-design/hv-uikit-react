@@ -85,7 +85,11 @@ pipeline {
                     }
                     steps {
                         script {
-                            sh 'npm run automation &'
+                            withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                sh 'npm ci --silent'
+                                sh 'npm run bootstrap'
+                                sh 'npm run automation &'
+                            }
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             waitUntilServerUp(URL)
