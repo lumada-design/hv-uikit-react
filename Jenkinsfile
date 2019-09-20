@@ -85,19 +85,9 @@ pipeline {
                     }
                     steps {
                         script {
-                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                            def dockerRegistryCredentialsId = 'buildguynexus'
-                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
-                            withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
-                                    def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
-                                    automationImage.push("${dockerImageTag}")
-                                }
-                            }
-                            sh 'docker system prune -f' // docker remove all unused objects
+                            sh 'npm run automation &'
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
-                            sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
                             echo "the run was here"
                             def jobResult =
@@ -120,11 +110,7 @@ pipeline {
 
                       always {
                         script {
-                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                            def dockerRegistryCredentialsId = 'buildguynexus'
-                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
-                            def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
-                            sh "docker kill ${container}"
+                            sh 'pkill -f node'
                         }
                       }
                     }
