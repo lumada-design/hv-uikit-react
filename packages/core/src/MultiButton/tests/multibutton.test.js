@@ -27,7 +27,7 @@ import HvProvider from "../../Provider";
 
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", icon: <Map />, isSelected: true },
+  { id: "map", value: "map", icon: <Map />, selected: true },
   { id: "satellite", value: "satellite", icon: <LocationPin /> },
   { id: "map1", value: "map1", icon: <Map /> },
   { id: "satellite1", value: "satellite1", icon: <LocationPin /> }
@@ -40,9 +40,9 @@ describe("Multibutton withStyles - Icons Only", () => {
     wrapper = mount(
       <HvProvider>
         <MultibuttonWithStyles
-          buttonsDefinitions={buttonsDefinitions}
-          buttonType="icon"
-          isMultiSelectable
+          buttons={buttonsDefinitions}
+          type="icon"
+          multi
         />
       </HvProvider>
     );
@@ -108,9 +108,9 @@ describe("Multibutton withStyles - Text Only", () => {
     wrapper = mount(
       <HvProvider>
         <MultibuttonWithStyles
-          buttonsDefinitions={buttonsDefinitions}
-          buttonType="text"
-          isMultiSelectable
+          buttons={buttonsDefinitions}
+          type="text"
+          multi
         />
       </HvProvider>
     );
@@ -133,9 +133,9 @@ describe("Multibutton withStyles - Text and Icons", () => {
     wrapper = mount(
       <HvProvider>
         <MultibuttonWithStyles
-          buttonsDefinitions={buttonsDefinitions}
-          buttonType="mixed"
-          isMultiSelectable
+          buttons={buttonsDefinitions}
+          type="mixed"
+          multi
         />
       </HvProvider>
     );
@@ -156,8 +156,8 @@ const conditionalButtonsDefinitions = [
     id: "map",
     value: "map",
     icon: <Map />,
-    isSelected: true,
-    isEnforced: true
+    selected: true,
+    enforced: true
   },
   { id: "satellite", value: "satellite", icon: <LocationPin /> },
   { id: "map1", value: "map1", icon: <Map /> },
@@ -171,9 +171,9 @@ describe("Multibutton withStyles - Enforce No Selection", () => {
     wrapper = mount(
       <HvProvider>
         <MultibuttonWithStyles
-          buttonsDefinitions={conditionalButtonsDefinitions}
-          buttonType="mixed"
-          isMultiSelectable
+          buttons={conditionalButtonsDefinitions}
+          type="mixed"
+          multi
         />
       </HvProvider>
     );
@@ -197,14 +197,14 @@ describe("Multibutton withStyles - Enforce No Selection", () => {
 });
 
 const minimalSelectionButtonsDefinitions = [
-  { id: "map", value: "map", icon: <Map />, isSelected: true },
+  { id: "map", value: "map", icon: <Map />, selected: true },
   {
     id: "satellite",
     value: "satellite",
     icon: <LocationPin />,
-    isSelected: true
+    selected: true
   },
-  { id: "map1", value: "map1", icon: <Map />, isSelected: true },
+  { id: "map1", value: "map1", icon: <Map />, selected: true },
   { id: "satellite1", value: "satellite1", icon: <LocationPin /> }
 ];
 
@@ -215,9 +215,9 @@ describe("Multibutton withStyles - Enforce Minimum Selection", () => {
     wrapper = mount(
       <HvProvider>
         <MultibuttonWithStyles
-          buttonsDefinitions={minimalSelectionButtonsDefinitions}
-          buttonType="mixed"
-          isMultiSelectable
+          buttons={minimalSelectionButtonsDefinitions}
+          type="mixed"
+          multi
           minSelection={1}
         />
       </HvProvider>
@@ -245,7 +245,6 @@ describe("Multibutton withStyles - Enforce Minimum Selection", () => {
         id: "satellite"
       }
     }, 1);
-    // expect(instance.state.checkedItems.length).toBe(1);
     instance.handleClick({
       target: {
         nodename: "SPAN",

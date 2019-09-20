@@ -26,18 +26,18 @@ class MultiButton extends React.Component {
   constructor(props) {
     super(props);
 
-    const { buttonsDefinitions } = this.props;
+    const { buttons } = this.props;
 
     let hasError = false;
 
-    const items = map(buttonsDefinitions, o => Object.keys(o));
+    const items = map(buttons, o => Object.keys(o));
     /**
      * the contents of filtered are buttons properties, which are optional
      * and can be omitted when we are validating that the buttons to be rendered
      * are of the same visual type
      * */
     const filtered = map(items, i =>
-      difference(i, ["isSelected", "isMultiSelectable", "isEnforced"])
+      difference(i, ["selected", "multi", "enforced"])
     );
 
     /**
@@ -60,9 +60,7 @@ class MultiButton extends React.Component {
      * set the state with their ids
      * */
     const initialCompState = filter(
-      map(buttonsDefinitions, item =>
-        item.isSelected !== undefined ? item.id : null
-      ),
+      map(buttons, item => (item.selected !== undefined ? item.id : null)),
       item => item !== null
     );
     /**
@@ -78,22 +76,17 @@ class MultiButton extends React.Component {
 
   handleClick(e, idx) {
     const { checkedItems } = this.state;
-    const {
-      onChange,
-      isMultiSelectable,
-      minSelection,
-      buttonsDefinitions
-    } = this.props;
+    const { onChange, multi, minSelection, buttons } = this.props;
 
     const { target } = e;
 
     let newState;
 
-    const clickedBtnDefs = buttonsDefinitions[idx];
+    const clickedBtnDefs = buttons[idx];
     const btnClickable =
-      clickedBtnDefs.isEnforced !== undefined ? clickedBtnDefs : false;
+      clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
 
-    const clickedBtnId = buttonsDefinitions[idx].id;
+    const clickedBtnId = buttons[idx].id;
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
 
     if (btnClickable) {
@@ -107,12 +100,12 @@ class MultiButton extends React.Component {
       return -1;
     }
 
-    if (isMultiSelectable) {
+    if (multi) {
       // check if item has not been clicked
       if (clickedBtnPositionInState === -1) {
         // handle state change
-        newState = [...checkedItems, buttonsDefinitions[idx].id];
-        target.dataset.selectionindicator = "isSelected";
+        newState = [...checkedItems, buttons[idx].id];
+        target.dataset.selectionindicator = "selected";
       } else {
         const itemToRemove = clickedBtnPositionInState;
         newState = checkedItems.filter((_, i) => i !== itemToRemove);
@@ -124,7 +117,7 @@ class MultiButton extends React.Component {
       target.dataset.selectionindicator = "notSelected";
     } else {
       newState = [clickedBtnId];
-      target.dataset.selectionindicator = "isSelected";
+      target.dataset.selectionindicator = "selected";
     }
 
     this.setState({
@@ -140,10 +133,8 @@ class MultiButton extends React.Component {
       className,
       classes,
       vertical,
-      buttonType,
-      buttonsDefinitions,
-      isMultiSelectable,
-      minSelection
+      type,
+      buttons
     } = this.props;
 
     const { hasError } = this.state;
@@ -160,7 +151,7 @@ class MultiButton extends React.Component {
      * by an arbitrary value that is defined in the settings file.
      * The calculation is handled by calculatedBtnWidth in the auxiliary functions file
      * */
-    const btnWidth = calculatedBtnWidth(buttonsDefinitions, buttonType);
+    const btnWidth = calculatedBtnWidth(buttons, type);
     /**
      * we need to calculate the width of the container that will
      * contain the button in a vertical display
@@ -169,7 +160,7 @@ class MultiButton extends React.Component {
      * the multibutton component
      * */
     const multiBtnContainerWidth =
-      btnWidth * (vertical ? 1 : buttonsDefinitions.length) + 2;
+      btnWidth * (vertical ? 1 : buttons.length) + 2;
 
     /**
      * this function applies a minimum width to each button dynamically as there is
@@ -193,7 +184,7 @@ class MultiButton extends React.Component {
       return indicatorProp;
     };
 
-    const buttons = buttonsDefinitions.map((button, idx) => {
+    const buttonList = buttons.map((button, idx) => {
       const { checkedItems } = this.state;
       return (
         <HvButton
@@ -209,13 +200,13 @@ class MultiButton extends React.Component {
             },
             className
           )}
-          category={button.isSelected ? "secondary" : "ghost"}
+          category={button.selected ? "secondary" : "ghost"}
           style={inlineStylesGenerator()}
           data-selectionindicator={selectionIndicator(button)}
         >
-          {buttonType === "icon" && <>{button.icon}</>}
-          {buttonType === "text" && <>{button.value}</>}
-          {buttonType === "mixed" && (
+          {type === "icon" && <>{button.icon}</>}
+          {type === "text" && <>{button.value}</>}
+          {type === "mixed" && (
             <>
               {button.icon}
               {button.value}
@@ -231,10 +222,8 @@ class MultiButton extends React.Component {
           [classes.rootVertical]: vertical
         })}
         style={{ width: multiBtnContainerWidth }}
-        isMultiSelectable={isMultiSelectable}
-        minSelection={minSelection}
       >
-        {buttons}
+        {buttonList}
       </div>
     );
   }
@@ -261,7 +250,7 @@ MultiButton.propTypes = {
   /**
    * If the multibutton is multi selectable.
    */
-  isMultiSelectable: PropTypes.bool,
+  multi: PropTypes.bool,
   /**
    * Type of button display.
    *  - Accepted values:
@@ -269,28 +258,32 @@ MultiButton.propTypes = {
    *    --"icon": displays just an icon,
    *    --"mixed": displays both a label and an icon
    */
-  buttonType: PropTypes.oneOf(["text", "icon", "mixed"]).isRequired,
+  type: PropTypes.oneOf(["text", "icon", "mixed"]).isRequired,
   /**
    * Buttons definitions
    */
-  buttonsDefinitions: PropTypes.arrayOf(
+  buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * Buttons definitions
+       * he button id
        */
       id: PropTypes.string.isRequired,
       /**
-       * Buttons definitions
+       * the button label
        */
       value: PropTypes.string,
       /**
-       * Buttons definitions
+       * icon in button
        */
       icon: PropTypes.node,
       /**
+       * If the button is selected
+       */
+      selected: PropTypes.bool,
+      /**
        * Specify if item can be toggled or not
        */
-      isEnforced: PropTypes.bool
+      enforced: PropTypes.bool
     })
   ).isRequired,
   /**
@@ -306,7 +299,7 @@ MultiButton.propTypes = {
 MultiButton.defaultProps = {
   className: "",
   vertical: false,
-  isMultiSelectable: false,
+  multi: false,
   onChange: () => {},
   minSelection: 0
 };

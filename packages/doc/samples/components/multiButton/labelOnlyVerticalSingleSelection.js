@@ -18,14 +18,14 @@ import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", isSelected: true },
+  { id: "map", value: "map", selected: true },
   { id: "satellite", value: "satellite" }
 ];
 
 export default (
   <MultiButton
-    buttonsDefinitions={buttonsDefinitions}
-    buttonType={"text"}
+    buttons={buttonsDefinitions}
+    type={"text"}
     vertical
   />
 );

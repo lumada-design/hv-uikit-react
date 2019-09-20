@@ -21,14 +21,14 @@ import Map from "@hv/uikit-react-icons/dist/DawnTheme/Map.S";
 import LocationPin from "@hv/uikit-react-icons/dist/DawnTheme/LocationPin.S";
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", icon: <Map />, isSelected: true },
+  { id: "map", value: "map", icon: <Map />, selected: true },
   { id: "satellite", value: "satellite", icon: <LocationPin /> }
 ];
 
 export default (
   <MultiButton
-    buttonsDefinitions={buttonsDefinitions}
+    buttons={buttonsDefinitions}
     vertical
-    buttonType={"mixed"}
+    type={"mixed"}
   />
 );

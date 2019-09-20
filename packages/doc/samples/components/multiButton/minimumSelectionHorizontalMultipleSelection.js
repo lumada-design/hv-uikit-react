@@ -26,19 +26,19 @@ const buttonsDefinitions = [
     id: "satellite",
     value: "satellite",
     icon: <LocationPin />,
-    isSelected: true
+    selected: true
   },
-  { id: "map1", value: "chart", icon: <Map />, isSelected: true },
+  { id: "map1", value: "chart", icon: <Map />, selected: true },
   { id: "satellite1", value: "location 1", icon: <LocationPin /> },
   { id: "satellite2", value: "location 2", icon: <LocationPin /> },
-  { id: "satellite3", value: "location 3", icon: <LocationPin /> },
+  { id: "satellite3", value: "location 3", icon: <LocationPin /> }
 ];
 
 export default (
   <MultiButton
-    buttonsDefinitions={buttonsDefinitions}
-    buttonType={"mixed"}
-    isMultiSelectable
+    buttons={buttonsDefinitions}
+    type={"mixed"}
+    multi
     minSelection={2}
   />
 );
