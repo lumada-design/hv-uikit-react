@@ -95,7 +95,7 @@ pipeline {
                             waitUntilServerUp(URL)
                             echo "the run was here"
                             def jobResult =
-                                            build job: 'storybook-core-tests', parameters: [
+                                            build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
                                                 string(name: 'BRANCH', value: env.GIT_BRANCH)
                                             ], propagate: true, wait: true
