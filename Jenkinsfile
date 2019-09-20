@@ -75,11 +75,11 @@ pipeline {
                                     changeRequest target: 'master'
                                     branch 'master'
                                 }
-                                triggeredBy 'UpstreamCause'
+                                //triggeredBy 'UpstreamCause'
                             }
                             allOf {
                                 branch 'automationFix'
-                                triggeredBy 'SCMTrigger'
+                                //triggeredBy 'SCMTrigger'
                             }
                         }
                     }
