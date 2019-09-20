@@ -79,7 +79,7 @@ pipeline {
                         script {
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
                                 sh 'npm ci --silent'
-                                sh 'npx lerna bootstrap --ignore @hv/uikit-react-doc'
+                                sh 'npm run bootstrap'
                                 sh 'npm run automation &'
                             }
                             def port = "9002"
