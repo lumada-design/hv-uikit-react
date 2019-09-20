@@ -10516,21 +10516,27 @@ body {
                 "#414141",
               ]
             }
+            height={null}
+            iconSize="S"
             onClick={[MockFunction]}
+            viewbox="1 1 30 30 "
+            width={null}
           >
             <svg
               className="Navigation-icon-2"
               height={30}
               onClick={[MockFunction]}
-              viewBox="1 1 30 30 "
+              viewBox="1 1 30 30"
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                className="color0"
                 d="M0 0h32v32H0z"
                 fill="none"
               />
               <path
+                className="color1"
                 d="M16.9 20.6L12.3 16l4.6-4.6.7.7-3.9 3.9 3.9 3.9z"
                 fill="#414141"
               />
@@ -12442,21 +12448,27 @@ body {
                 "#414141",
               ]
             }
+            height={null}
+            iconSize="S"
             onClick={[MockFunction]}
+            viewbox="1 1 30 30 "
+            width={null}
           >
             <svg
               className="Navigation-icon-2"
               height={30}
               onClick={[MockFunction]}
-              viewBox="1 1 30 30 "
+              viewBox="1 1 30 30"
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                className="color0"
                 d="M0 0h32v32H0z"
                 fill="none"
               />
               <path
+                className="color1"
                 d="M15.1 20.6l-.7-.7 3.9-3.9-3.9-3.9.7-.7 4.6 4.6z"
                 fill="#414141"
               />

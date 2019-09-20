@@ -72,8 +72,7 @@ class Tabs extends React.Component {
     const { value } = this.state;
 
     let showAccessibility;
-
-    const showCssTab = !isNil(propsMetaData.classes);
+    const showCssTab = !isNil(propsMetaData) && !isNil(propsMetaData.classes);
 
     try {
       showAccessibility = require(`../../../../pages/components/${

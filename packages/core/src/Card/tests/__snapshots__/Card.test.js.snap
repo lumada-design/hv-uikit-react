@@ -62041,13 +62041,12 @@ body {
                                         <WithStyles(Checkbox)
                                           checkedIcon={
                                             <CheckboxCheckS
-                                              color={
-                                                Array [
-                                                  "none",
-                                                  "#414141",
-                                                  "#fff",
-                                                ]
-                                              }
+                                              className=""
+                                              color={null}
+                                              height={null}
+                                              iconSize="S"
+                                              viewbox="1 1 30 30 "
+                                              width={null}
                                             />
                                           }
                                           className="HvCheckbox-checkBox-119"
@@ -62056,24 +62055,22 @@ body {
                                           disabled={false}
                                           icon={
                                             <CheckboxS
-                                              color={
-                                                Array [
-                                                  "none",
-                                                  "#fff",
-                                                  "#414141",
-                                                ]
-                                              }
+                                              className=""
+                                              color={null}
+                                              height={null}
+                                              iconSize="S"
+                                              viewbox="1 1 30 30 "
+                                              width={null}
                                             />
                                           }
                                           indeterminateIcon={
                                             <CheckboxPartialS
-                                              color={
-                                                Array [
-                                                  "none",
-                                                  "#fff",
-                                                  "#414141",
-                                                ]
-                                              }
+                                              className=""
+                                              color={null}
+                                              height={null}
+                                              iconSize="S"
+                                              viewbox="1 1 30 30 "
+                                              width={null}
                                             />
                                           }
                                           onBlur={[Function]}
@@ -62101,13 +62098,12 @@ body {
                                           <WithStyles(Checkbox)
                                             checkedIcon={
                                               <CheckboxCheckS
-                                                color={
-                                                  Array [
-                                                    "none",
-                                                    "#414141",
-                                                    "#fff",
-                                                  ]
-                                                }
+                                                className=""
+                                                color={null}
+                                                height={null}
+                                                iconSize="S"
+                                                viewbox="1 1 30 30 "
+                                                width={null}
                                               />
                                             }
                                             className="HvCheckbox-checkBox-119"
@@ -62116,24 +62112,22 @@ body {
                                             disabled={false}
                                             icon={
                                               <CheckboxS
-                                                color={
-                                                  Array [
-                                                    "none",
-                                                    "#fff",
-                                                    "#414141",
-                                                  ]
-                                                }
+                                                className=""
+                                                color={null}
+                                                height={null}
+                                                iconSize="S"
+                                                viewbox="1 1 30 30 "
+                                                width={null}
                                               />
                                             }
                                             indeterminateIcon={
                                               <CheckboxPartialS
-                                                color={
-                                                  Array [
-                                                    "none",
-                                                    "#fff",
-                                                    "#414141",
-                                                  ]
-                                                }
+                                                className=""
+                                                color={null}
+                                                height={null}
+                                                iconSize="S"
+                                                viewbox="1 1 30 30 "
+                                                width={null}
                                               />
                                             }
                                             onBlur={[Function]}
@@ -62161,13 +62155,12 @@ body {
                                             <WithStyles(Checkbox)
                                               checkedIcon={
                                                 <CheckboxCheckS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#414141",
-                                                      "#fff",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               className="HvCheckbox-checkBox-119"
@@ -62176,24 +62169,22 @@ body {
                                               disabled={false}
                                               icon={
                                                 <CheckboxS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#fff",
-                                                      "#414141",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               indeterminateIcon={
                                                 <CheckboxPartialS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#fff",
-                                                      "#414141",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               onBlur={[Function]}
@@ -62211,13 +62202,12 @@ body {
                                             <WithStyles(Checkbox)
                                               checkedIcon={
                                                 <CheckboxCheckS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#414141",
-                                                      "#fff",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               className="HvCheckbox-checkBox-119"
@@ -62226,24 +62216,22 @@ body {
                                               disabled={false}
                                               icon={
                                                 <CheckboxS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#fff",
-                                                      "#414141",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               indeterminateIcon={
                                                 <CheckboxPartialS
-                                                  color={
-                                                    Array [
-                                                      "none",
-                                                      "#fff",
-                                                      "#414141",
-                                                    ]
-                                                  }
+                                                  className=""
+                                                  color={null}
+                                                  height={null}
+                                                  iconSize="S"
+                                                  viewbox="1 1 30 30 "
+                                                  width={null}
                                                 />
                                               }
                                               onBlur={[Function]}
@@ -62253,13 +62241,12 @@ body {
                                               <Checkbox
                                                 checkedIcon={
                                                   <CheckboxCheckS
-                                                    color={
-                                                      Array [
-                                                        "none",
-                                                        "#414141",
-                                                        "#fff",
-                                                      ]
-                                                    }
+                                                    className=""
+                                                    color={null}
+                                                    height={null}
+                                                    iconSize="S"
+                                                    viewbox="1 1 30 30 "
+                                                    width={null}
                                                   />
                                                 }
                                                 className="HvCheckbox-checkBox-119"
@@ -62278,25 +62265,23 @@ body {
                                                 disabled={false}
                                                 icon={
                                                   <CheckboxS
-                                                    color={
-                                                      Array [
-                                                        "none",
-                                                        "#fff",
-                                                        "#414141",
-                                                      ]
-                                                    }
+                                                    className=""
+                                                    color={null}
+                                                    height={null}
+                                                    iconSize="S"
+                                                    viewbox="1 1 30 30 "
+                                                    width={null}
                                                   />
                                                 }
                                                 indeterminate={false}
                                                 indeterminateIcon={
                                                   <CheckboxPartialS
-                                                    color={
-                                                      Array [
-                                                        "none",
-                                                        "#fff",
-                                                        "#414141",
-                                                      ]
-                                                    }
+                                                    className=""
+                                                    color={null}
+                                                    height={null}
+                                                    iconSize="S"
+                                                    viewbox="1 1 30 30 "
+                                                    width={null}
                                                   />
                                                 }
                                                 onBlur={[Function]}
@@ -62306,13 +62291,12 @@ body {
                                                 <WithStyles(WithFormControlContext(SwitchBase))
                                                   checkedIcon={
                                                     <CheckboxCheckS
-                                                      color={
-                                                        Array [
-                                                          "none",
-                                                          "#414141",
-                                                          "#fff",
-                                                        ]
-                                                      }
+                                                      className=""
+                                                      color={null}
+                                                      height={null}
+                                                      iconSize="S"
+                                                      viewbox="1 1 30 30 "
+                                                      width={null}
                                                     />
                                                   }
                                                   className="HvCheckbox-checkBox-119"
@@ -62327,13 +62311,12 @@ body {
                                                   disabled={false}
                                                   icon={
                                                     <CheckboxS
-                                                      color={
-                                                        Array [
-                                                          "none",
-                                                          "#fff",
-                                                          "#414141",
-                                                        ]
-                                                      }
+                                                      className=""
+                                                      color={null}
+                                                      height={null}
+                                                      iconSize="S"
+                                                      viewbox="1 1 30 30 "
+                                                      width={null}
                                                     />
                                                   }
                                                   inputProps={
@@ -62349,13 +62332,12 @@ body {
                                                   <WithFormControlContext(SwitchBase)
                                                     checkedIcon={
                                                       <CheckboxCheckS
-                                                        color={
-                                                          Array [
-                                                            "none",
-                                                            "#414141",
-                                                            "#fff",
-                                                          ]
-                                                        }
+                                                        className=""
+                                                        color={null}
+                                                        height={null}
+                                                        iconSize="S"
+                                                        viewbox="1 1 30 30 "
+                                                        width={null}
                                                       />
                                                     }
                                                     className="HvCheckbox-checkBox-119"
@@ -62371,13 +62353,12 @@ body {
                                                     disabled={false}
                                                     icon={
                                                       <CheckboxS
-                                                        color={
-                                                          Array [
-                                                            "none",
-                                                            "#fff",
-                                                            "#414141",
-                                                          ]
-                                                        }
+                                                        className=""
+                                                        color={null}
+                                                        height={null}
+                                                        iconSize="S"
+                                                        viewbox="1 1 30 30 "
+                                                        width={null}
                                                       />
                                                     }
                                                     inputProps={
@@ -62393,13 +62374,12 @@ body {
                                                     <SwitchBase
                                                       checkedIcon={
                                                         <CheckboxCheckS
-                                                          color={
-                                                            Array [
-                                                              "none",
-                                                              "#414141",
-                                                              "#fff",
-                                                            ]
-                                                          }
+                                                          className=""
+                                                          color={null}
+                                                          height={null}
+                                                          iconSize="S"
+                                                          viewbox="1 1 30 30 "
+                                                          width={null}
                                                         />
                                                       }
                                                       className="HvCheckbox-checkBox-119"
@@ -62415,13 +62395,12 @@ body {
                                                       disabled={false}
                                                       icon={
                                                         <CheckboxS
-                                                          color={
-                                                            Array [
-                                                              "none",
-                                                              "#fff",
-                                                              "#414141",
-                                                            ]
-                                                          }
+                                                          className=""
+                                                          color={null}
+                                                          height={null}
+                                                          iconSize="S"
+                                                          viewbox="1 1 30 30 "
+                                                          width={null}
                                                         />
                                                       }
                                                       inputProps={
@@ -62513,33 +62492,37 @@ body {
                                                                   className="MuiIconButton-label-142"
                                                                 >
                                                                   <CheckboxS
-                                                                    color={
-                                                                      Array [
-                                                                        "none",
-                                                                        "#fff",
-                                                                        "#414141",
-                                                                      ]
-                                                                    }
+                                                                    className=""
+                                                                    color={null}
+                                                                    height={null}
+                                                                    iconSize="S"
+                                                                    viewbox="1 1 30 30 "
+                                                                    width={null}
                                                                   >
                                                                     <svg
+                                                                      className=""
                                                                       height={30}
-                                                                      viewBox="1 1 30 30 "
+                                                                      viewBox="1 1 30 30"
                                                                       width={30}
                                                                       xmlns="http://www.w3.org/2000/svg"
                                                                     >
                                                                       <path
+                                                                        className="color0"
                                                                         d="M0 0h32v32H0z"
                                                                         fill="none"
                                                                       />
                                                                       <path
+                                                                        className="color0"
                                                                         d="M8 8h16v16H8z"
                                                                         fill="none"
                                                                       />
                                                                       <path
+                                                                        className="color1"
                                                                         d="M8 8h16v16H8z"
                                                                         fill="#fff"
                                                                       />
                                                                       <path
+                                                                        className="color2"
                                                                         d="M24 24H8V8h16zM9 23h14V9H9z"
                                                                         fill="#414141"
                                                                       />

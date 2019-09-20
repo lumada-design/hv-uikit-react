@@ -7601,39 +7601,43 @@ body {
         >
           <DropUpXS
             className="PeriodPicker-upIcon-7"
-            color={
-              Array [
-                "none",
-                "#414141",
-              ]
-            }
+            color={null}
+            height={null}
+            iconSize="S"
             onClick={[Function]}
+            viewbox="1 1 30 30 "
+            width={null}
           >
             <svg
               className="PeriodPicker-upIcon-7"
               height={30}
               onClick={[Function]}
-              viewBox="1 1 30 30 "
+              viewBox="1 1 30 30"
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                className="color0"
                 d="M0 0h32v32H0z"
                 fill="none"
               />
               <path
+                className="color0"
                 d="M17.2 11.8L13 16l4.2 4.2"
                 fill="none"
               />
               <path
+                className="color0"
                 d="M14.8 20.2L19 16l-4.2-4.2"
                 fill="none"
               />
               <path
+                className="color1"
                 d="M12.1 17.6l-.7-.7 4.6-4.6 4.6 4.6-.7.7-3.9-3.9z"
                 fill="#414141"
               />
               <path
+                className="color0"
                 d="M11.8 14.8L16 19l4.2-4.2"
                 fill="none"
               />
@@ -7646,39 +7650,43 @@ body {
           </div>
           <DropDownXS
             className="PeriodPicker-downIcon-8"
-            color={
-              Array [
-                "none",
-                "#414141",
-              ]
-            }
+            color={null}
+            height={null}
+            iconSize="S"
             onClick={[Function]}
+            viewbox="1 1 30 30 "
+            width={null}
           >
             <svg
               className="PeriodPicker-downIcon-8"
               height={30}
               onClick={[Function]}
-              viewBox="1 1 30 30 "
+              viewBox="1 1 30 30"
               width={30}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                className="color0"
                 d="M0 0h32v32H0z"
                 fill="none"
               />
               <path
+                className="color0"
                 d="M17.2 11.8L13 16l4.2 4.2"
                 fill="none"
               />
               <path
+                className="color0"
                 d="M14.8 20.2L19 16l-4.2-4.2"
                 fill="none"
               />
               <path
+                className="color0"
                 d="M20.2 17.2L16 13l-4.2 4.2"
                 fill="none"
               />
               <path
+                className="color1"
                 d="M16 19.7l-4.6-4.6.7-.7 3.9 3.9 3.9-3.9.7.7z"
                 fill="#414141"
               />

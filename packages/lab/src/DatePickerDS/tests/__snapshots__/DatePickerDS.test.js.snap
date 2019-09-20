@@ -8186,27 +8186,28 @@ body {
               />
               <CalendarS
                 className="HvDatePickerDS-icon-1029"
-                color={
-                  Array [
-                    "none",
-                    "#414141",
-                  ]
-                }
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
                 <svg
                   className="HvDatePickerDS-icon-1029"
                   height={30}
                   onClick={[Function]}
-                  viewBox="1 1 30 30 "
+                  viewBox="1 1 30 30"
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    className="color0"
                     d="M0 0h32v32H0z"
                     fill="none"
                   />
                   <g
+                    className="color1"
                     fill="#414141"
                   >
                     <path
@@ -16446,27 +16447,28 @@ body {
               />
               <CalendarS
                 className="HvDatePickerDS-icon-483"
-                color={
-                  Array [
-                    "none",
-                    "#414141",
-                  ]
-                }
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
                 <svg
                   className="HvDatePickerDS-icon-483"
                   height={30}
                   onClick={[Function]}
-                  viewBox="1 1 30 30 "
+                  viewBox="1 1 30 30"
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    className="color0"
                     d="M0 0h32v32H0z"
                     fill="none"
                   />
                   <g
+                    className="color1"
                     fill="#414141"
                   >
                     <path
@@ -29492,27 +29494,28 @@ body {
               />
               <CalendarS
                 className="HvDatePickerDS-icon-1521"
-                color={
-                  Array [
-                    "none",
-                    "#414141",
-                  ]
-                }
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
                 <svg
                   className="HvDatePickerDS-icon-1521"
                   height={30}
                   onClick={[Function]}
-                  viewBox="1 1 30 30 "
+                  viewBox="1 1 30 30"
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    className="color0"
                     d="M0 0h32v32H0z"
                     fill="none"
                   />
                   <g
+                    className="color1"
                     fill="#414141"
                   >
                     <path
@@ -37748,27 +37751,28 @@ body {
               />
               <CalendarS
                 className="HvDatePickerDS-icon-27"
-                color={
-                  Array [
-                    "none",
-                    "#414141",
-                  ]
-                }
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
                 <svg
                   className="HvDatePickerDS-icon-27"
                   height={30}
                   onClick={[Function]}
-                  viewBox="1 1 30 30 "
+                  viewBox="1 1 30 30"
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    className="color0"
                     d="M0 0h32v32H0z"
                     fill="none"
                   />
                   <g
+                    className="color1"
                     fill="#414141"
                   >
                     <path

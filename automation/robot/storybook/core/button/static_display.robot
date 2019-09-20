@@ -2,12 +2,10 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          _resources/button_keywords.robot
 Library           SeleniumLibrary
-Library           RobotEyes                           ${TOLERANCE}
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
-Test Setup        setup RobotEyes
 Test Template     Test static display of button
-Default Tags      smoke    
+Default Tags      smoke   image 
 
 *** Keywords ***
 Test static display of button
@@ -16,8 +14,9 @@ Test static display of button
     ...                verify button is focused when a button is clicked
     ...
     apply storybook theme        ${theme}
-    Capture Full Screen    
-    Compare Images
+    #Capture Full Screen    
+    #Compare Images
+    #under maintenance
 
 *** Test Cases ***      theme
 button default theme    default

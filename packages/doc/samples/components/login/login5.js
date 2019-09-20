@@ -3,6 +3,13 @@ import HvLogin from "@hv/uikit-react-core/dist/Login";
 
 const backgroundImage = require("./assets/background.jpg");
 
+const callSimulation = () =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
+
 export default (
   <div
     style={{
@@ -11,10 +18,12 @@ export default (
     }}
   >
     <HvLogin
+      login={callSimulation}
+      recovery={callSimulation}
       allowRecover={true}
       allowRememberMe={true}
       backgroundImage={backgroundImage}
-      backgroundImageSize="auto"
+      backgroundImageSize="100%"
     />
   </div>
 );

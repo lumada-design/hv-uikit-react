@@ -5058,6 +5058,7 @@ body {
   display: flex;
   z-index: 2;
   align-items: center;
+  margin-left: auto;
 }
 .Actions-marginLeft-5 {
   margin-left: 60px;
@@ -5091,6 +5092,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "margin-left": "auto",
                     "z-index": "2",
                   },
                   Object {
@@ -5109,6 +5111,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "margin-left": "auto",
                     "z-index": "2",
                   },
                   ".Actions-iconContainer-6": Object {
@@ -5125,6 +5128,7 @@ body {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
+                    "margin-left": "auto",
                     "z-index": "2",
                   },
                   "iconContainer": Object {
@@ -5631,6 +5635,7 @@ body {
                     "alignItems": "center",
                     "display": "flex",
                     "height": "100%",
+                    "marginLeft": "auto",
                     "zIndex": 2,
                   },
                   "iconContainer": Object {

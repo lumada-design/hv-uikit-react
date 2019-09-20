@@ -8,7 +8,7 @@
 module.exports = function replaceFill(fileData, colorObject) {
   let result = fileData;
   colorObject.colorArray.forEach((element, index) => {
-    result = result.split(`fill="${element}"`).join(`fill={color[${index}]}`)
+    result = result.split(`fill="${element}"`).join(`fill={colorArray[${index}]} className="color${index}" `)
   });
 
   return result;

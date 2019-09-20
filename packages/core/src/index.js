@@ -36,6 +36,7 @@ export { default as HvTypography } from "./Typography";
 export { default as HvGrid } from "./Grid";
 export { default as HvBadge } from "./Badge";
 export { default as HvSwitch } from "./Switch";
+export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 
 // theme

@@ -31,7 +31,15 @@ import defaultBackImage from "./resources/bg.svg";
  * Main container for the Login component.
  */
 class HvLogin extends React.Component {
-  state = { inRecoveryMode: false };
+  state = { inRecoveryMode: false, isLoading: true };
+
+  /**
+   * When the component is fully loaded the state is changed
+   * indicating that the load is complete and the form can be displayed.
+   */
+  componentDidMount() {
+    this.setState({ isLoading: false });
+  }
 
   /**
    * Function to switch the status inRecoveryMode. This status is used to determine which form
@@ -71,8 +79,10 @@ class HvLogin extends React.Component {
       rememberMeLabel,
       incorrectCredentialsMessage
     } = this.props;
-    const { inRecoveryMode } = this.state;
-    const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
+    const { inRecoveryMode, isLoading } = this.state;
+    const backgroundLoginImg = !backgroundImage.length
+      ? defaultBackImage
+      : backgroundImage;
 
     let form;
     if (inRecoveryMode) {
@@ -126,6 +136,7 @@ class HvLogin extends React.Component {
           loginButtonMessage={labels.loginButtonMessage}
           loginButtonLabel={labels.loginButtonLabel}
           forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
+          isLoading={isLoading}
         />
       );
     }
@@ -140,7 +151,15 @@ class HvLogin extends React.Component {
             backgroundSize: `${backgroundImageSize}`
           }}
         >
-          <HvGrid item xs="false" sm="false" md={8} lg={8} xl={8} className={classes.panelPosition}>
+          <HvGrid
+            item
+            xs="false"
+            sm="false"
+            md={8}
+            lg={8}
+            xl={8}
+            className={classes.panelPosition}
+          >
             <div id={id} className={classNames(classes.root, className)} />
           </HvGrid>
           <HvGrid
@@ -336,7 +355,7 @@ HvLogin.defaultProps = {
   className: "",
   id: undefined,
   backgroundImage: "",
-  backgroundImageSize: "321px",
+  backgroundImageSize: "100%",
   recovery: () => {},
   logo: null,
   titleComponent: null,

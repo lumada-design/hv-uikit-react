@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-11.10-auto"}
-    options { 
-        timestamps () 
-        timeout(time: 20, unit: 'MINUTES') 
+    options {
+        timestamps ()
+        timeout(time: 70, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
 
@@ -11,12 +11,12 @@ pipeline {
         booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.')
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
-        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
+        booleanParam(name: 'skipAutomationTest', defaultValue: false, description: 'when true, skip automation tests.')
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus and documentation.')
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
-   
+
     stages {
         stage('Build') {
             when {
@@ -68,15 +68,27 @@ pipeline {
                       label 'robotframework-unix'
                     }
                     when {
-                        triggeredBy 'UpstreamCause'
                         expression { !params.skipAutomationTest }
+                        anyOf {
+                            allOf {
+                                anyOf {
+                                    changeRequest target: 'master'
+                                    branch 'master'
+                                }
+                                triggeredBy 'UpstreamCause'
+                            }
+                            allOf {
+                                branch 'alpha'
+                                triggeredBy 'UpstreamCause'
+                            }
+                        }
                     }
                     steps {
                         script {
+                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                            def dockerRegistryCredentialsId = 'buildguynexus'
+                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                def dockerRegistry = 'https://nexus.pentaho.org:8002'
-                                def dockerRegistryCredentialsId = 'buildguynexus'
-                                def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
                                 docker.withRegistry(dockerRegistry, dockerRegistryCredentialsId) {
                                     def automationImage = docker.build("hv/uikit-react-automation-storybook:${dockerImageTag}", "-f ./automation/storybook/Dockerfile .")
                                     automationImage.push("${dockerImageTag}")
@@ -87,18 +99,32 @@ pipeline {
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             sh "docker run -d -p ${port}:9002 --name ${dockerImageTag} nexus.pentaho.org/hv/uikit-react-automation-storybook:${dockerImageTag}"
                             waitUntilServerUp(URL)
-                            build job: 'storybook-core-tests', parameters: [
-                              string(name: 'STORYBOOK_URL', value: URL),
-                              string(name: 'BRANCH', value: env.GIT_BRANCH)
-                            ]
+                            echo "the run was here"
+                            def jobResult =
+                                            build job: 'storybook-core-tests', parameters: [
+                                                string(name: 'STORYBOOK_URL', value: URL),
+                                                string(name: 'BRANCH', value: env.GIT_BRANCH)
+                                            ], propagate: true, wait: true
+
+                            echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
                             
                         }
                     }
                     post {
+                        failure {
+                            echo ("This build is unstable. Please check the automation tests.")
+                            script {
+                                currentBuild.result = "UNSTABLE"
+                            }
+                        }
+
                       always {
                         script {
-                          def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
-                          sh "docker kill ${container}"
+                            def dockerRegistry = 'https://nexus.pentaho.org:8002'
+                            def dockerRegistryCredentialsId = 'buildguynexus'
+                            def dockerImageTag = "${env.GIT_BRANCH}.${env.BUILD_NUMBER}"
+                            def container = sh(script: "docker ps -f name=${dockerImageTag} -q", returnStdout: true)
+                            sh "docker kill ${container}"
                         }
                       }
                     }
@@ -126,7 +152,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             script {
@@ -148,10 +174,10 @@ pipeline {
                         }
                     }
                 }
-                else if( currentBuild.currentResult == "UNSTABLE" ) { 
+                else if( currentBuild.currentResult == "UNSTABLE" ) {
                     slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
                 }
-                else { 
+                else {
                     slackSend channel: "${params.channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
@@ -161,12 +187,16 @@ pipeline {
 
 void waitUntilServerUp(String url) {
   script {
-    sleep(time: 15, unit: "SECONDS") // time to start docker machine
-    timeout(2) {
+    sleep(time: 45, unit: "SECONDS") // time to start docker machine
+    timeout(time: 5, unit: 'MINUTES') {
       waitUntil {
         script {
           def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
-          return (r == 0);
+          println " ***** result: ${r} "
+          if (r == 0)  {
+            println " the expression is correct "
+            println " value =  ${r == 0}  "  
+          }  
         }
       }
     }

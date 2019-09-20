@@ -19,12 +19,13 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import ArrowUp from "@hv/uikit-react-icons/dist/DropDown.XS";
-import ArrowDown from "@hv/uikit-react-icons/dist/DropUp.XS";
+import ArrowUp from "@hv/uikit-react-icons/dist/DawnTheme/DropDown.XS";
+import ArrowDown from "@hv/uikit-react-icons/dist/DawnTheme/DropUp.XS";
 import HvTypography from "../Typography";
 import List from "./List";
+import { getSelectionLabel, getSelected } from "./utils";
 
-const defaultLabels = {
+const DEFAULT_LABELS = {
   select: "Select...",
   selectAll: "All",
   cancelLabel: "Cancel",
@@ -33,84 +34,52 @@ const defaultLabels = {
   multiSelectionConjunction: "of"
 };
 
+const DEFAULT_STATE = {
+  isOpen: false,
+  selectionLabel: null,
+  anchorEl: null,
+  values: [],
+  labels: DEFAULT_LABELS
+};
+
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
+  state = DEFAULT_STATE;
 
-    const labels = {
-      ...defaultLabels,
-      ...props.labels
-    };
+  static getDerivedStateFromProps(props, state) {
+    if (props.values !== state.values) {
+      const labels = {
+        ...DEFAULT_LABELS,
+        ...props.labels
+      };
 
-    this.state = {
-      isOpen: props.expanded,
-      selectionLabel: props.multiSelect ? labels.selectAll : labels.select,
-      anchorEl: null,
-      labels
-    };
-  }
-
-  /**
-   * Set up the header label.
-   */
-  componentDidMount() {
-    const { values, selectDefault } = this.props;
-    if (values) {
-      let selected = values.filter(elem => elem.selected);
-      if (selected.length === 0 && selectDefault) {
-        selected = [values[0]];
-      }
-      this.setSelectionLabel(true, selected);
+      return {
+        isOpen: props.expanded,
+        selectionLabel: getSelectionLabel(
+          props.values,
+          labels,
+          props.multiSelect
+        ),
+        anchorEl: null,
+        values: props.values,
+        labels
+      };
     }
+
+    return null;
   }
-
-  /**
-   * Set the selectionLabel.
-   *
-   * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
-   * @param  {Array} selection - An array containing the selected values.
-   */
-  setSelectionLabel(commitChanges, selection) {
-    const { values, multiSelect } = this.props;
-    const { labels } = this.state;
-    const hasSelection = selection.length > 0;
-    const isSingleSelection = selection.length === 1;
-
-    let selectionLabel = multiSelect ? labels.selectAll : labels.select;
-
-    if (commitChanges) {
-      if (hasSelection && isSingleSelection) {
-        selectionLabel = selection[0].label;
-      } else if (hasSelection && multiSelect) {
-        selectionLabel = `${labels.multiSelectionAction} ${selection.length} ${
-          labels.multiSelectionConjunction
-        } ${values.length}`;
-      }
-
-      this.setState({ selectionLabel });
-    }
-  }
-
-  /**
-   *  Closes the dropdown whenever there is a click outside the document.
-   *
-   * @param {Object} evt - the event produced by clicking outside.
-   */
-  handleClickAway = evt => {
-    if (!this.node.contains(evt.target)) this.setState({ isOpen: false });
-  };
 
   /**
    *  Opens and closes the dropdown.
    *
    * @param {Object} evt - the event produced by the click action.
    * @returns {undefined}
-   * @memberof Main
+   * @memberof Dropdown
    */
   handleToggle(evt) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
     if (evt) evt.stopPropagation();
+
     // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
     if (disabled || isKeypress(evt, KeyboardCodes.Enter) === false) return;
 
@@ -133,9 +102,13 @@ class Main extends React.Component {
    */
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { multiSelect, onChange } = this.props;
-    this.setSelectionLabel(commitChanges, selection);
+    const { labels } = this.state;
+    const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
+    const selected = getSelected(selection);
+
+    if (commitChanges) this.setState({ selectionLabel });
     if (toggle) this.handleToggle();
-    if (notifyChanges) onChange(multiSelect ? selection : selection[0]);
+    if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
   }
 
   renderLabel() {
@@ -188,7 +161,6 @@ class Main extends React.Component {
 
   renderList() {
     const {
-      values,
       multiSelect,
       showSearch,
       selectDefault,
@@ -196,7 +168,7 @@ class Main extends React.Component {
       disablePortal,
       hasTooltips
     } = this.props;
-    const { isOpen, labels, anchorEl } = this.state;
+    const { isOpen, values, labels, anchorEl } = this.state;
 
     return (
       <List
@@ -213,14 +185,12 @@ class Main extends React.Component {
         disablePortal={disablePortal}
         isOpen={isOpen}
         anchorEl={anchorEl}
-        handleClickAway={this.handleClickAway}
       />
     );
   }
 
   render() {
     const { classes, className, id, label, labels, disabled } = this.props;
-
     const { isOpen } = this.state;
 
     return (
@@ -325,6 +295,10 @@ Main.propTypes = {
   /**
    * The list to be rendered by the dropdown.
    */
+  // needed to disable eslint because:
+  // https://github.com/yannickcr/eslint-plugin-react/issues/1751
+  // https://github.com/yannickcr/eslint-plugin-react/issues/2028
+  // eslint-disable-next-line react/no-unused-prop-types
   values: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -347,6 +321,10 @@ Main.propTypes = {
   /**
    * If ´true´ the dropdown starts opened if ´false´ it starts closed.
    */
+  // needed to disable eslint because:
+  // https://github.com/yannickcr/eslint-plugin-react/issues/1751
+  // https://github.com/yannickcr/eslint-plugin-react/issues/2028
+  // eslint-disable-next-line react/no-unused-prop-types
   expanded: PropTypes.bool,
   /**
    * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).

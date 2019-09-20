@@ -177,7 +177,7 @@ class HvInput extends React.Component {
 
     let validationState;
     let { infoText } = definedLabels;
-
+    
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
@@ -377,10 +377,10 @@ class HvInput extends React.Component {
       validation,
       validationType,
       disableClear
-    )
+    );
 
     let validationText;
-    if ((validate || showInfo) && !infoIcon) {
+    if ((validate || showInfo) ) {
       validationText = (
         <HvTypography
           variant={
@@ -446,7 +446,9 @@ class HvInput extends React.Component {
             multiline: classes.multiLine
           }}
           className={classNames(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled
+            [classes.inputRootDisabled]: disabled,
+            [classes.inputRootInvalid]:
+              stateValidationState === validationStates.invalid
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}
@@ -624,7 +626,7 @@ HvInput.propTypes = {
   password: PropTypes.bool,
   /**
    * The function that will be executed onChange, allows modification of the input,
-   * it receives the value and must return a value otherwise the input will be empty.
+   * it receives the value. If a new value should be presented it must returned it.
    */
   onChange: PropTypes.func,
   /**

@@ -33,12 +33,14 @@ import List from "../List";
  * @constructor
  */
 const DropDownMenu = ({
+  theme,
   icon,
   classes,
   placement,
   dataList,
   id,
-  disablePortal
+  disablePortal,
+  onClick
 }) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -83,10 +85,15 @@ const DropDownMenu = ({
           anchorEl={anchorEl}
           placement={bottom}
           popperOptions={{}}
-          style={{ zIndex: 1 }}
+          style={{ zIndex: theme.zIndex.tooltip }}
         >
           <div className={classes.menuList}>
-            <List values={dataList} selectable={false} condensed />
+            <List
+              values={dataList}
+              selectable={false}
+              onClick={onClick}
+              condensed
+            />
           </div>
         </Popper>
       </div>
@@ -95,6 +102,10 @@ const DropDownMenu = ({
 };
 
 DropDownMenu.propTypes = {
+  /**
+   * The theme passed by the provider.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Id to be applied to the root node.
    */
@@ -143,13 +154,18 @@ DropDownMenu.propTypes = {
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
-  disablePortal: PropTypes.bool
+  disablePortal: PropTypes.bool,
+  /**
+   * Function executed in each onClick. Should received the clicked element.
+   */
+  onClick: PropTypes.func
 };
 
 DropDownMenu.defaultProps = {
   id: undefined,
   placement: "left",
-  disablePortal: true
+  disablePortal: true,
+  onClick: null
 };
 
 export default DropDownMenu;

@@ -18,9 +18,10 @@
 
 import React from "react";
 import { mount } from "enzyme";
-
+import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "../InputAdornment";
 import validationStates from "../validationStates";
+import HvProvider from "../../Provider";
 
 describe("InputAdornment", () => {
   let wrapper;
@@ -40,16 +41,38 @@ describe("InputAdornment", () => {
     }
   };
 
+  const StyledInputAdornment = withStyles({
+    iconFlexBox: {
+      display: "flex",
+      flexDirection: "row"
+    },
+    icon: {
+      width: `${theme.hv.spacing.md}px`,
+      height: `${theme.hv.spacing.md}px`
+    },
+    iconContainer: {
+      width: `${theme.hv.spacing.md}px`,
+      height: `${theme.hv.spacing.md}px`
+    },
+    iconClear: {
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      cursor: "pointer"
+    }
+  }, {withTheme: true})(InputAdornment);
+
   beforeEach(async () => {
     handleClearMock.mockClear();
 
     wrapper = mount(
-      <InputAdornment
-        classes={{}}
-        validationState={validationStates.filled}
-        handleClear={handleClearMock}
-        theme={theme}
-      />
+      <HvProvider>
+        <StyledInputAdornment
+          classes={{}}
+          validationState={validationStates.filled}
+          handleClear={handleClearMock}
+          theme={theme}
+        />
+      </HvProvider>
     );
   });
 
@@ -58,23 +81,25 @@ describe("InputAdornment", () => {
   });
 
   it("should call handleClear when mouseDown", () => {
-    wrapper.children().children().simulate("mousedown");
+    wrapper.find('[role="button"]').simulate("mousedown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should call handleClear when keydown", () => {
-    wrapper.children().children().simulate("keydown");
+    wrapper.find('[role="button"]').simulate("keydown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should not call handleClear when mousedown and keydown when not clickable", () => {
     wrapper = mount(
-      <InputAdornment
-        classes={{}}
-        validationState={validationStates.valid}
-        handleClear={handleClearMock}
-        theme={theme}
-      />
+      <HvProvider>
+        <StyledInputAdornment
+          classes={{}}
+          validationState={validationStates.valid}
+          handleClear={handleClearMock}
+          theme={theme}
+        />
+      </HvProvider>
     );
 
     wrapper.simulate("keydown");

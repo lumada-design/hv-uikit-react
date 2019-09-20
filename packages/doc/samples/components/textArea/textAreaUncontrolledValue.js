@@ -25,17 +25,17 @@ function WrapperComp() {
   return (
     <>
       <Button style={btnStyle} onClick={() => setValue("First value")}>
-        First value{" "}
+        First value
       </Button>
       <Button style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value{" "}
+        Second value
       </Button>
       <Button style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value{" "}
+        Third value
       </Button>
 
       <HvTextArea
-        initialValue={"Initial State"}
+        initialValue="Initial State"
         inputValue={value}
         rows={5}
         labels={labels}

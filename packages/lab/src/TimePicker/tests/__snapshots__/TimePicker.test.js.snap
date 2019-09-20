@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999879,
+            "index": -99999999878,
           },
           "themingEnabled": true,
         } => Map {
@@ -4951,7 +4951,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999879,
+                "index": -99999999878,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5830,7 +5830,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999879,
+                  "index": -99999999878,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -12782,27 +12782,28 @@ body {
               />
               <TimeS
                 className="HvTimePicker-icon-45"
-                color={
-                  Array [
-                    "none",
-                    "#414141",
-                  ]
-                }
+                color={null}
+                height={null}
+                iconSize="S"
                 onClick={[Function]}
+                viewbox="1 1 30 30 "
+                width={null}
               >
                 <svg
                   className="HvTimePicker-icon-45"
                   height={30}
                   onClick={[Function]}
-                  viewBox="1 1 30 30 "
+                  viewBox="1 1 30 30"
                   width={30}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    className="color0"
                     d="M0 0h32v32H0z"
                     fill="none"
                   />
                   <g
+                    className="color0"
                     fill="none"
                   >
                     <path
@@ -12816,14 +12817,17 @@ body {
                     />
                   </g>
                   <path
+                    className="color0"
                     d="M16 24a8.024 8.024 0 0 1-8-8 8.024 8.024 0 0 1 8-8 8.024 8.024 0 0 1 8 8 8.024 8.024 0 0 1-8 8z"
                     fill="none"
                   />
                   <path
+                    className="color1"
                     d="M16 23a7.023 7.023 0 1 0-4.943-2.057A6.953 6.953 0 0 0 16 23m0 1a8 8 0 1 1 8-8 8.024 8.024 0 0 1-8 8z"
                     fill="#414141"
                   />
                   <path
+                    className="color1"
                     d="M18.646 19.354L15.5 16.207V11h1v4.793l2.854 2.854z"
                     fill="#414141"
                   />

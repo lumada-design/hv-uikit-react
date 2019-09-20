@@ -34,7 +34,11 @@ import MessageElement from "../MessageElement";
 function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
   return (
     <div className={classes.forgotCredentials}>
-      <HvButton category="ghost" onClick={onClick} className={classes.sentenceCase}>
+      <HvButton
+        category="ghost"
+        onClick={onClick}
+        className={classes.sentenceCase}
+      >
         {forgotYourCredentialMessage}
       </HvButton>
     </div>
@@ -72,6 +76,10 @@ class Login extends React.Component {
    */
   handleSubmit = async e => {
     e.preventDefault();
+
+    // Prevent the submit if the component isn't fully loaded.
+    const { isLoading } = this.props;
+    if (isLoading) return;
 
     const { username, password, rememberMe } = this.state;
     const { login } = this.props;
@@ -195,7 +203,11 @@ class Login extends React.Component {
               onChange={this.handleRememberMe}
             />
           ) : null}
-          <HvButton type="submit" category="primary" className={classNames(classes.button, classes.sentenceCase)}>
+          <HvButton
+            type="submit"
+            category="primary"
+            className={classNames(classes.button, classes.sentenceCase)}
+          >
             {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>
         </div>
@@ -286,7 +298,11 @@ Login.propTypes = {
   /**
    * Incorrect Credentials Message
    */
-  incorrectCredentialsMessage: PropTypes.string.isRequired
+  incorrectCredentialsMessage: PropTypes.string.isRequired,
+  /**
+   * Indicates if the Login is fully loaded.
+   */
+  isLoading: PropTypes.bool
 };
 
 Login.defaultProps = {
@@ -295,7 +311,8 @@ Login.defaultProps = {
   titleComponent: null,
   allowRecover: false,
   allowRememberMe: false,
-  errorLoginIcon: null
+  errorLoginIcon: null,
+  isLoading: false
 };
 
 export default Login;
