@@ -72,7 +72,7 @@ pipeline {
                         anyOf {
                             changeRequest target: 'master'
                             branch 'master'    
-                            branch 'automationFix'
+                            branch 'alpha'
                         }
                     }
                     steps {
