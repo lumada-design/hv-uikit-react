@@ -79,7 +79,7 @@ pipeline {
                             }
                             allOf {
                                 branch 'automationFix'
-                                triggeredBy 'UpstreamCause'
+                                triggeredBy 'SCMTrigger'
                             }
                         }
                     }
