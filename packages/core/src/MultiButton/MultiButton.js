@@ -170,6 +170,14 @@ class MultiButton extends React.Component {
      * */
     const inlineStylesGenerator = () => ({ minWidth: btnWidth, padding: 0 });
 
+    /**
+     * This function checks if the clicked button is stored in state, if so
+     * it then takes into account if the button is in a vertical or horizontal
+     * positioning. It return s string that maps to a css class that applies
+     * styling that fine tunes the component display
+     *
+     * @param {node} button - clicked button.
+     */
     const selectionIndicator = button => {
       const { checkedItems } = this.state;
 

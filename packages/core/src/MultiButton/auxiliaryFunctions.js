@@ -24,6 +24,16 @@
 // changed in order to reflect these modifications
 import settings from "./settings";
 
+/**
+ * This function calculates the width to be applied to each button
+ * taking into account the longest value string in the buton props
+ * and then calculating the dimension, by taking into account paddings and
+ * border dimensions, as set in the settings file
+ *
+ * @param {array} buttonDefs - contains the properties of each button
+ * @param {String} buttonType - the type of button: if just an icon, text or icon and text
+ *
+ */
 const calculatedBtnWidth = (buttonDefs, buttonType) => {
   if (buttonType === "icon") {
     return settings.ICON_BTN_WIDTH;

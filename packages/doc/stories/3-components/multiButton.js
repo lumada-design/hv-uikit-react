@@ -20,7 +20,7 @@ import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
 storiesOf("Components", module).add("MultiButton", () => <MultiButton />, {
   title: "MultiButton",
-  description: "",
+  description: "MultiButton component with the ability to allow for single selection toggling as well as multi selection",
   usage: "import MultiButton from '@hv/uikit-react-core/dist/MultiButton'",
   examples: [
     // Single Selection Samples
