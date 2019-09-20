@@ -70,24 +70,16 @@ pipeline {
                     when {
                         expression { !params.skipAutomationTest }
                         anyOf {
-                            allOf {
-                                anyOf {
-                                    changeRequest target: 'master'
-                                    branch 'master'
-                                }
-                                //triggeredBy 'UpstreamCause'
-                            }
-                            allOf {
-                                branch 'automationFix'
-                                //triggeredBy 'SCMTrigger'
-                            }
+                            changeRequest target: 'master'
+                            branch 'master'    
+                            branch 'automationFix'
                         }
                     }
                     steps {
                         script {
                             withNPM(npmrcConfig: 'hv-ui-nprc') {
                                 sh 'npm ci --silent'
-                                sh 'npm run bootstrap'
+                                sh 'npx lerna bootstrap --ignore @hv/uikit-react-doc'
                                 sh 'npm run automation &'
                             }
                             def port = "9002"
