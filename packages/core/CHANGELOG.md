@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.5.1...@hv/uikit-react-core@1.6.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* **dropdown:**  label not updated when using selected all. [#521](https://github.com/pentaho/hv-uikit-react/issues/521) ([7d1e1a0](https://github.com/pentaho/hv-uikit-react/commit/7d1e1a0))
+* **dropdown:** allow component list to be update on runtime. [#537](https://github.com/pentaho/hv-uikit-react/issues/537) ([ef5d5ce](https://github.com/pentaho/hv-uikit-react/commit/ef5d5ce))
+* **dropdown:** not closing when header clicked. [#520](https://github.com/pentaho/hv-uikit-react/issues/520) ([3223cea](https://github.com/pentaho/hv-uikit-react/commit/3223cea))
+* **dropdown:** onChange returning always first value. [#553](https://github.com/pentaho/hv-uikit-react/issues/553) ([cb75b04](https://github.com/pentaho/hv-uikit-react/commit/cb75b04))
+* **dropdownmenu:** add onClick prop. [#504](https://github.com/pentaho/hv-uikit-react/issues/504) ([a148a58](https://github.com/pentaho/hv-uikit-react/commit/a148a58))
+* **dropdownmenu:** fix z-index to use the material ui values. [#551](https://github.com/pentaho/hv-uikit-react/issues/551) ([dd3af74](https://github.com/pentaho/hv-uikit-react/commit/dd3af74))
+* **header:** errors in internet explorer. [#503](https://github.com/pentaho/hv-uikit-react/issues/503) ([#518](https://github.com/pentaho/hv-uikit-react/issues/518)) ([5337826](https://github.com/pentaho/hv-uikit-react/commit/5337826))
+* **header:** remove 30% dimension from vertical navigation. [#538](https://github.com/pentaho/hv-uikit-react/issues/538) ([b55ac25](https://github.com/pentaho/hv-uikit-react/commit/b55ac25))
+* **input:** border color when invalid. [#514](https://github.com/pentaho/hv-uikit-react/issues/514) ([a395b15](https://github.com/pentaho/hv-uikit-react/commit/a395b15))
+* **input:** show validation text with iconInfo. [#467](https://github.com/pentaho/hv-uikit-react/issues/467) ([17debf0](https://github.com/pentaho/hv-uikit-react/commit/17debf0))
+* **list:** refactor component to fix multiple issues. [#542](https://github.com/pentaho/hv-uikit-react/issues/542) ([b35c3b8](https://github.com/pentaho/hv-uikit-react/commit/b35c3b8)), closes [#159](https://github.com/pentaho/hv-uikit-react/issues/159) [#463](https://github.com/pentaho/hv-uikit-react/issues/463) [#464](https://github.com/pentaho/hv-uikit-react/issues/464)
+* **login:** form Available before page fully loaded. [#502](https://github.com/pentaho/hv-uikit-react/issues/502) ([61dba09](https://github.com/pentaho/hv-uikit-react/commit/61dba09))
+* **login:** replace login background with new image from marketing team - update css for background img. [#474](https://github.com/pentaho/hv-uikit-react/issues/474) ([f6109d1](https://github.com/pentaho/hv-uikit-react/commit/f6109d1))
+* **login:** replace login background with new image from marketing team. [#474](https://github.com/pentaho/hv-uikit-react/issues/474) ([b57ecb9](https://github.com/pentaho/hv-uikit-react/commit/b57ecb9))
+* **switch:** errors in error when hovering. [#492](https://github.com/pentaho/hv-uikit-react/issues/492) ([#539](https://github.com/pentaho/hv-uikit-react/issues/539)) ([afcb5c9](https://github.com/pentaho/hv-uikit-react/commit/afcb5c9))
+* **table:** add initiallyLoaded logic back, removed by mistake. [#523](https://github.com/pentaho/hv-uikit-react/issues/523) ([1a88bec](https://github.com/pentaho/hv-uikit-react/commit/1a88bec))
+* **textarea:** inconsistency in onChange. [#510](https://github.com/pentaho/hv-uikit-react/issues/510) ([5fc64a0](https://github.com/pentaho/hv-uikit-react/commit/5fc64a0))
+* **toggleswitch:** add onchange when label are clicked. [#481](https://github.com/pentaho/hv-uikit-react/issues/481) ([dbdb9ff](https://github.com/pentaho/hv-uikit-react/commit/dbdb9ff))
+
+
+### Features
+
+* **icons:** make icons responsive to theme and change size.[#259](https://github.com/pentaho/hv-uikit-react/issues/259) ([2080be5](https://github.com/pentaho/hv-uikit-react/commit/2080be5))
+* **input:** change background color to follow DS. [#475](https://github.com/pentaho/hv-uikit-react/issues/475) ([5d09164](https://github.com/pentaho/hv-uikit-react/commit/5d09164))
+* **linechart:** expose time series capability. [#472](https://github.com/pentaho/hv-uikit-react/issues/472) ([cf624c6](https://github.com/pentaho/hv-uikit-react/commit/cf624c6))
+* **multibutton:** implement component as per specs. [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([7f6e591](https://github.com/pentaho/hv-uikit-react/commit/7f6e591))
+* **togglebutton:** add component following DS guidelines. [#253](https://github.com/pentaho/hv-uikit-react/issues/253) ([9f0c422](https://github.com/pentaho/hv-uikit-react/commit/9f0c422))
+
+
+
+
+
 ## [1.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.5.0...@hv/uikit-react-core@1.5.1) (2019-09-06)
 
 

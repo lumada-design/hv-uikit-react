@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.2.1...@hv/uikit-react-icons@1.3.0) (2019-09-21)
+
+
+### Features
+
+* **icons:** make icons responsive to theme and change size.[#259](https://github.com/pentaho/hv-uikit-react/issues/259) ([2080be5](https://github.com/pentaho/hv-uikit-react/commit/2080be5))
+
+
+
+
+
 ## [1.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.2.0...@hv/uikit-react-icons@1.2.1) (2019-08-23)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.6.1...@hv/uikit-react-lab@1.7.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* **input:** border color when invalid. [#514](https://github.com/pentaho/hv-uikit-react/issues/514) ([a395b15](https://github.com/pentaho/hv-uikit-react/commit/a395b15))
+* **list:** refactor component to fix multiple issues. [#542](https://github.com/pentaho/hv-uikit-react/issues/542) ([b35c3b8](https://github.com/pentaho/hv-uikit-react/commit/b35c3b8)), closes [#159](https://github.com/pentaho/hv-uikit-react/issues/159) [#463](https://github.com/pentaho/hv-uikit-react/issues/463) [#464](https://github.com/pentaho/hv-uikit-react/issues/464)
+
+
+### Features
+
+* **icons:** make icons responsive to theme and change size.[#259](https://github.com/pentaho/hv-uikit-react/issues/259) ([2080be5](https://github.com/pentaho/hv-uikit-react/commit/2080be5))
+* **input:** change background color to follow DS. [#475](https://github.com/pentaho/hv-uikit-react/issues/475) ([5d09164](https://github.com/pentaho/hv-uikit-react/commit/5d09164))
+
+
+
+
+
 ## [1.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.6.0...@hv/uikit-react-lab@1.6.1) (2019-09-06)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

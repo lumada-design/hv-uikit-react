@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.6.1...@hv/uikit-react-doc@1.7.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* **dropdownmenu:** add onClick prop. [#504](https://github.com/pentaho/hv-uikit-react/issues/504) ([a148a58](https://github.com/pentaho/hv-uikit-react/commit/a148a58))
+* **input:** removal of example. [#482](https://github.com/pentaho/hv-uikit-react/issues/482) ([a7fdc82](https://github.com/pentaho/hv-uikit-react/commit/a7fdc82))
+* **login:** form Available before page fully loaded. [#502](https://github.com/pentaho/hv-uikit-react/issues/502) ([61dba09](https://github.com/pentaho/hv-uikit-react/commit/61dba09))
+* **login:** replace login background with new image from marketing team. [#474](https://github.com/pentaho/hv-uikit-react/issues/474) ([b57ecb9](https://github.com/pentaho/hv-uikit-react/commit/b57ecb9))
+* **textarea:** inconsistency in onChange. [#510](https://github.com/pentaho/hv-uikit-react/issues/510) ([5fc64a0](https://github.com/pentaho/hv-uikit-react/commit/5fc64a0))
+* **toggleswitch:** add onchange when label are clicked. [#481](https://github.com/pentaho/hv-uikit-react/issues/481) ([dbdb9ff](https://github.com/pentaho/hv-uikit-react/commit/dbdb9ff))
+
+
+### Features
+
+* **icons:** make icons responsive to theme and change size.[#259](https://github.com/pentaho/hv-uikit-react/issues/259) ([2080be5](https://github.com/pentaho/hv-uikit-react/commit/2080be5))
+* **linechart:** expose time series capability. [#472](https://github.com/pentaho/hv-uikit-react/issues/472) ([cf624c6](https://github.com/pentaho/hv-uikit-react/commit/cf624c6))
+* **multibutton:** implement component as per specs. [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([7f6e591](https://github.com/pentaho/hv-uikit-react/commit/7f6e591))
+* **togglebutton:** add component following DS guidelines. [#253](https://github.com/pentaho/hv-uikit-react/issues/253) ([9f0c422](https://github.com/pentaho/hv-uikit-react/commit/9f0c422))
+
+
+
+
+
 ## [1.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.6.0...@hv/uikit-react-doc@1.6.1) (2019-09-06)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
