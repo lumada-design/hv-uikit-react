@@ -14,7 +14,7 @@ const myActions = [
   { id: "post", label: "Add", icon: AddIcon, disabled: false },
   { id: "get", label: "Preview", icon: PreviewIcon, disabled: true },
   { id: "put", label: "Upload", icon: UploadIcon, disabled: true },
-  { id: "delete", label: "Delete", icon: DeleteIcon, disabled: false },
+  { id: "delete", label: "Delete", icon: DeleteIcon, disabled: false }
 ];
 
 export default (
@@ -24,7 +24,7 @@ export default (
       subheader={configurationNoMedia.subtitle}
       isSelectable
       actions={myActions}
-      actionsCallback={a => alert('You have pressed ' + a.label)}
+      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
       maxVisibleActions={3}
       actionsAlignment="left"
       checkboxValue="value"
