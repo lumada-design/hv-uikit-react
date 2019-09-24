@@ -85,10 +85,12 @@ pipeline {
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             waitUntilServerUp(URL)
+                            def REFSPEC = getRefspec()
+                            echo "[INFO] REFSPEC: " + REFSPEC
                             def jobResult =
                                             build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
-                                                string(name: 'BRANCH', value: env.GIT_BRANCH)
+                                                string(name: 'REFSPEC', value: REFSPEC)
                                             ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
@@ -166,6 +168,8 @@ pipeline {
     }
 }
 
+// ================== FUNCTIONS =================================================
+
 void waitUntilServerUp(String url) {
   script {
     sleep(time: 45, unit: "SECONDS") // time to start docker machine
@@ -178,4 +182,13 @@ void waitUntilServerUp(String url) {
       }
     }
   }
+}
+
+def getRefspec(String refspec) {
+  if (refspec) {
+    refspec = "+refs/pull/${env.CHANGE_ID}/head:refs/remotes/origin/PR-${env.CHANGE_ID}"
+  } else {
+    refspec = "+refs/heads/master:refs/remotes/origin/${env.BRANCH_NAME}"
+  }
+  return refspec
 }
