@@ -85,7 +85,7 @@ pipeline {
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             waitUntilServerUp(URL)
-                            def REFSPEC = getRefspec()
+                            def REFSPEC = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
                             echo "[INFO] REFSPEC: " + REFSPEC
                             def jobResult =
                                             build job: 'ui-kit/automation/storybook-core-tests', parameters: [
@@ -184,11 +184,12 @@ void waitUntilServerUp(String url) {
   }
 }
 
-def getRefspec(String refspec) {
-  if (refspec) {
-    refspec = "+refs/pull/${env.CHANGE_ID}/head:refs/remotes/origin/PR-${env.CHANGE_ID}"
+def getRefspec(String changeId, String branch) {
+  def refspec = ''
+  if (changeId) {
+    refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
   } else {
-    refspec = "+refs/heads/master:refs/remotes/origin/${env.BRANCH_NAME}"
+    refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
   }
   return refspec
 }
