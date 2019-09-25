@@ -12,6 +12,7 @@ Metadata
 ...         | hv-uikit-react/issues/564 | ie, chrome  |
 ...         | hv-uikit-react/issues/547 | ie          |
 
+
 *** Keywords ***
 Test toggle switch property check state transition
     [Arguments]        ${locator}    ${state}    ${theme}
