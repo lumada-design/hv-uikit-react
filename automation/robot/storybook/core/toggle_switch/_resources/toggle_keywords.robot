@@ -8,6 +8,13 @@ open storybook toggle page
     open storybook
     Go To                            ${STORYBOOK_URL}/${TOGGLE_PAGE}
     Wait Until Element Is Visible    xpath=(//button)[1]    2s    error message: The page don't was visible in 2 seconds 
+
+rotine different toggle css properties 
+    [Arguments]    ${locator}    ${dict}
+    ${list}    Get Dictionary Keys    ${dict}
+    FOR        ${key}                 IN                     @{list}
+    \          ${value}               Get From Dictionary    ${dict}    ${key}
+    \          verify css element property has different value    ${locator}    ${key}    ${value}
     
 get toggle css properties
     [Arguments]    ${locator}    ${list}
@@ -26,10 +33,7 @@ Verify different toggle check state
     
 verify different toggle css properties 
     [Arguments]    ${locator}    ${dict}
-    ${list}    Get Dictionary Keys    ${dict}
-    FOR        ${key}                 IN                     @{list}
-    \          ${value}               Get From Dictionary    ${dict}    ${key}
-    \          verify css element property has different value    ${locator}    ${key}    ${value}
+    Wait Until Keyword Succeeds    3    500ms    rotine different toggle css properties    ${locator}    ${dict}
     
 verify toogle properties
     [Arguments]    ${locator}        ${dict}
