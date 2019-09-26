@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
 import Header from "./Header";
@@ -60,6 +60,7 @@ const Main = ({
   subheader,
   innerCardContent,
   actions,
+  maxVisibleActions,
   actionsAlignment,
   isSelectable,
   semantic,
@@ -97,6 +98,7 @@ const Main = ({
         <Footer
           checkboxValue={checkboxValue}
           actions={actions}
+          maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
           onChange={event => {
@@ -164,7 +166,14 @@ Main.propTypes = {
   /**
    *  The renderable content inside the actions slot of the footer.
    */
-  actions: PropTypes.node,
+  actions: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      icon: PropTypes.func,
+      onSelect: PropTypes.func
+    }))]),
   /**
    * The alignment applied to the action elements
    */
@@ -228,7 +237,11 @@ Main.propTypes = {
   /**
    * The theme passed by the provider.
    */
-  theme: PropTypes.instanceOf(Object)
+  theme: PropTypes.instanceOf(Object),
+  /**
+   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
+   */
+  maxVisibleActions: PropTypes.number,
 };
 
 Main.defaultProps = {
@@ -251,7 +264,8 @@ Main.defaultProps = {
   checkboxLabel: "",
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
-  theme: null
+  theme: null,
+  maxVisibleActions: 2,
 };
 
 export default Main;
