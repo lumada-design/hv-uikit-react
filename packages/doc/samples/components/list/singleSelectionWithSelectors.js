@@ -12,7 +12,8 @@ const data = [
     label: "98003, Store Manager"
   },
   {
-    label: "98004, Store Manager"
+    label: "98004, Store Manager",
+    disabled: true
   },
   {
     label: "98005, Store Manager"

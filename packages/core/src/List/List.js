@@ -61,6 +61,7 @@ class List extends React.Component {
 
   handleSelect(evt, item) {
     if (!item.path) evt.preventDefault();
+    if (item.disabled) return;
     
     const { list, labels } = this.state;
     const { onChange, onClick } = this.props;
@@ -75,10 +76,10 @@ class List extends React.Component {
   }
 
   handleSelectAll() {
-    const { list, labels, allSelected } = this.state;
+    const { list, labels, allSelectableSelected } = this.state;
     const { onChange } = this.props;
 
-    const parsedList = parseList(list, null, this.props, !allSelected);
+    const parsedList = parseList(list, null, this.props, !allSelectableSelected);
     const parsedState = parseState(parsedList, labels);
 
     this.setState({ ...parsedState });
@@ -117,7 +118,8 @@ class List extends React.Component {
             {
               [classes.selected]: item.selected && !useSelector,
               [classes.condensed]: condensed,
-              [classes.selector]: useSelector
+              [classes.selector]: useSelector,
+              [classes.disabled]: item.disabled,
             }
           ])}
         >
@@ -271,6 +273,10 @@ List.propTypes = {
      */
     condensed: PropTypes.string,
     /**
+     * Styles applied to the list item when disabled.
+     */
+    disabled: PropTypes.string,
+    /**
      * Styles applied to the list item selector container.
      */
     selectorContainer: PropTypes.string,
@@ -305,6 +311,7 @@ List.propTypes = {
    * - id: the id of the item.
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
+   * - disabled: The disabled state of the element.
    * - leftIcon: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
@@ -316,6 +323,7 @@ List.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
+      disabled: PropTypes.bool,
       isHidden: PropTypes.bool,
       leftIcon: PropTypes.func,
       showNavIcon: PropTypes.bool,
