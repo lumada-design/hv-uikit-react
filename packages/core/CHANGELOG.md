@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.6.0...@hv/uikit-react-core@1.6.1) (2019-09-27)
+
+
+### Bug Fixes
+
+* **login:** replace animated svg for static svg. [#574](https://github.com/pentaho/hv-uikit-react/issues/574) ([f315cde](https://github.com/pentaho/hv-uikit-react/commit/f315cde))
+
+
+
+
+
 # [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.5.1...@hv/uikit-react-core@1.6.0) (2019-09-21)
 
 
