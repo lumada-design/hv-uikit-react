@@ -41,11 +41,6 @@ const Switch = props => {
 
   const [clickState, setClicked] = useState(checked);
 
-  const handleChange = event => {
-    setClicked(event.target.checked);
-    onChange(event);
-  };
-
   const handleLabelClick = event => {
     const labelClassRegex = /labelDeselected/;
     const labelIsDisabled = labelClassRegex.test(event.target.className);
@@ -109,6 +104,12 @@ const Switch = props => {
     }
   };
 
+  const handleChange = event => {
+    setClicked(event.target.checked);
+    switchHoverOut(event);
+    onChange(event);
+  };
+
   const LeftLabel = () => (
     <div
       id={!isNil(id) ? `${id}_leftButton` : null}
@@ -167,8 +168,8 @@ const Switch = props => {
         id={id}
         value={value}
         inputProps={{
-          onMouseOver: event => switchHoverIn(event, classes, clickState),
-          onMouseOut: event => switchHoverOut(event, classes, clickState)
+          onMouseOver: event => switchHoverIn(event),
+          onMouseOut: event => switchHoverOut(event)
         }}
         classes={{
           root: classes.root,
@@ -179,7 +180,7 @@ const Switch = props => {
           disabled: classes.disabled,
           iconChecked: classes.iconChecked
         }}
-        {...displayIconChecked && {
+        {...(displayIconChecked && {
           checkedIcon: (
             <img
               alt="checkmark"
@@ -187,7 +188,7 @@ const Switch = props => {
               src={CheckMark}
             />
           )
-        }}
+        })}
       />
       {showLabels && <RightLabel />}
     </div>
