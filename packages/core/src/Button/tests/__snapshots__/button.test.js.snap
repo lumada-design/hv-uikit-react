@@ -5085,19 +5085,10 @@ body {
   color: #FFFFFF;
   background-color: #146BD2;
 }
-.HvButton-primary-40:hover {
-  background-color: #4389DB;
-}
 .HvButton-primary-40:active {
   background-color: #146BD2;
 }
 .HvButton-primary-40.HvButton-primaryDisabled-41 {
-  color: #999999;
-  cursor: not-allowed;
-  pointer-events: auto;
-  background-color: #F0F0F0;
-}
-.HvButton-primary-40.HvButton-primaryDisabled-41.HvButton-primary-40:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
@@ -5113,21 +5104,10 @@ body {
   border: 1px solid #BCBCBC;
   background-color: #FFFFFF;
 }
-.HvButton-secondary-42:hover {
-  border: 1px solid #F0F0F0;
-  background-color: #F0F0F0;
-}
 .HvButton-secondary-42:active {
   background-color: #FFFFFF;
 }
 .HvButton-secondary-42.HvButton-secondaryDisabled-43 {
-  color: #999999;
-  border: none;
-  cursor: not-allowed;
-  pointer-events: auto;
-  background-color: #F0F0F0;
-}
-.HvButton-secondary-42.HvButton-secondaryDisabled-43.HvButton-secondary-42:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
@@ -5144,20 +5124,10 @@ body {
   color: #146BD2;
   background-color: transparent;
 }
-.HvButton-ghost-44:hover {
-  background-color: #F0F0F0;
-}
 .HvButton-ghost-44:active {
   background-color: transparent;
 }
 .HvButton-ghost-44.HvButton-ghostDisabled-45 {
-  color: #999999;
-  border: none;
-  cursor: not-allowed;
-  pointer-events: auto;
-  background-color: transparent;
-}
-.HvButton-ghost-44.HvButton-ghostDisabled-45.HvButton-ghost-44:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
@@ -5173,20 +5143,10 @@ body {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghostSecondary-46:hover {
-  background-color: #F0F0F0;
-}
 .HvButton-ghostSecondary-46:active {
   background-color: transparent;
 }
 .HvButton-ghostSecondary-46.HvButton-ghostSecondaryDisabled-47 {
-  color: #999999;
-  border: none;
-  cursor: not-allowed;
-  pointer-events: auto;
-  background-color: transparent;
-}
-.HvButton-ghostSecondary-46.HvButton-ghostSecondaryDisabled-47.HvButton-ghostSecondary-46:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
@@ -5245,16 +5205,7 @@ body {
                     "color": "#FFFFFF",
                   },
                   Object {
-                    "background-color": "#4389DB",
-                  },
-                  Object {
                     "background-color": "#146BD2",
-                  },
-                  Object {
-                    "background-color": "#F0F0F0",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -5273,18 +5224,7 @@ body {
                     "color": "#414141",
                   },
                   Object {
-                    "background-color": "#F0F0F0",
-                    "border": "1px solid #F0F0F0",
-                  },
-                  Object {
                     "background-color": "#FFFFFF",
-                  },
-                  Object {
-                    "background-color": "#F0F0F0",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -5304,17 +5244,7 @@ body {
                     "color": "#146BD2",
                   },
                   Object {
-                    "background-color": "#F0F0F0",
-                  },
-                  Object {
                     "background-color": "transparent",
-                  },
-                  Object {
-                    "background-color": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
                   },
                   Object {
                     "background-color": "transparent",
@@ -5333,17 +5263,7 @@ body {
                     "color": "#414141",
                   },
                   Object {
-                    "background-color": "#F0F0F0",
-                  },
-                  Object {
                     "background-color": "transparent",
-                  },
-                  Object {
-                    "background-color": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
                   },
                   Object {
                     "background-color": "transparent",
@@ -5370,18 +5290,8 @@ body {
                     "cursor": "not-allowed",
                     "pointer-events": "auto",
                   },
-                  ".HvButton-ghost-44.HvButton-ghostDisabled-45.HvButton-ghost-44:hover": Object {
-                    "background-color": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
-                  },
                   ".HvButton-ghost-44:active": Object {
                     "background-color": "transparent",
-                  },
-                  ".HvButton-ghost-44:hover": Object {
-                    "background-color": "#F0F0F0",
                   },
                   ".HvButton-ghostDisabled-45": Object {
                     "background-color": "transparent",
@@ -5399,18 +5309,8 @@ body {
                     "cursor": "not-allowed",
                     "pointer-events": "auto",
                   },
-                  ".HvButton-ghostSecondary-46.HvButton-ghostSecondaryDisabled-47.HvButton-ghostSecondary-46:hover": Object {
-                    "background-color": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
-                  },
                   ".HvButton-ghostSecondary-46:active": Object {
                     "background-color": "transparent",
-                  },
-                  ".HvButton-ghostSecondary-46:hover": Object {
-                    "background-color": "#F0F0F0",
                   },
                   ".HvButton-ghostSecondaryDisabled-47": Object {
                     "background-color": "transparent",
@@ -5427,17 +5327,8 @@ body {
                     "cursor": "not-allowed",
                     "pointer-events": "auto",
                   },
-                  ".HvButton-primary-40.HvButton-primaryDisabled-41.HvButton-primary-40:hover": Object {
-                    "background-color": "#F0F0F0",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
-                  },
                   ".HvButton-primary-40:active": Object {
                     "background-color": "#146BD2",
-                  },
-                  ".HvButton-primary-40:hover": Object {
-                    "background-color": "#4389DB",
                   },
                   ".HvButton-primaryDisabled-41": Object {
                     "background-color": "#F0F0F0",
@@ -5474,19 +5365,8 @@ body {
                     "cursor": "not-allowed",
                     "pointer-events": "auto",
                   },
-                  ".HvButton-secondary-42.HvButton-secondaryDisabled-43.HvButton-secondary-42:hover": Object {
-                    "background-color": "#F0F0F0",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointer-events": "auto",
-                  },
                   ".HvButton-secondary-42:active": Object {
                     "background-color": "#FFFFFF",
-                  },
-                  ".HvButton-secondary-42:hover": Object {
-                    "background-color": "#F0F0F0",
-                    "border": "1px solid #F0F0F0",
                   },
                   ".HvButton-secondaryDisabled-43": Object {
                     "background-color": "#F0F0F0",
@@ -6048,27 +5928,10 @@ body {
                     "cursor": "not-allowed",
                     "pointerEvents": "auto",
                   },
-                  ".HvButton-ghost-44.HvButton-ghostDisabled-45.HvButton-ghost-44:hover": Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointerEvents": "auto",
-                  },
                   ".HvButton-ghost-44:active": Object {
                     "backgroundColor": "transparent",
                   },
-                  ".HvButton-ghost-44:hover": Object {
-                    "backgroundColor": "#F0F0F0",
-                  },
                   ".HvButton-ghostSecondary-46.HvButton-ghostSecondaryDisabled-47": Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointerEvents": "auto",
-                  },
-                  ".HvButton-ghostSecondary-46.HvButton-ghostSecondaryDisabled-47.HvButton-ghostSecondary-46:hover": Object {
                     "backgroundColor": "transparent",
                     "border": "none",
                     "color": "#999999",
@@ -6078,16 +5941,7 @@ body {
                   ".HvButton-ghostSecondary-46:active": Object {
                     "backgroundColor": "transparent",
                   },
-                  ".HvButton-ghostSecondary-46:hover": Object {
-                    "backgroundColor": "#F0F0F0",
-                  },
                   ".HvButton-primary-40.HvButton-primaryDisabled-41": Object {
-                    "backgroundColor": "#F0F0F0",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointerEvents": "auto",
-                  },
-                  ".HvButton-primary-40.HvButton-primaryDisabled-41.HvButton-primary-40:hover": Object {
                     "backgroundColor": "#F0F0F0",
                     "color": "#999999",
                     "cursor": "not-allowed",
@@ -6095,9 +5949,6 @@ body {
                   },
                   ".HvButton-primary-40:active": Object {
                     "backgroundColor": "#146BD2",
-                  },
-                  ".HvButton-primary-40:hover": Object {
-                    "backgroundColor": "#4389DB",
                   },
                   ".HvButton-root-39:active": Object {},
                   ".HvButton-root-39:focus": Object {
@@ -6111,19 +5962,8 @@ body {
                     "cursor": "not-allowed",
                     "pointerEvents": "auto",
                   },
-                  ".HvButton-secondary-42.HvButton-secondaryDisabled-43.HvButton-secondary-42:hover": Object {
-                    "backgroundColor": "#F0F0F0",
-                    "border": "none",
-                    "color": "#999999",
-                    "cursor": "not-allowed",
-                    "pointerEvents": "auto",
-                  },
                   ".HvButton-secondary-42:active": Object {
                     "backgroundColor": "#FFFFFF",
-                  },
-                  ".HvButton-secondary-42:hover": Object {
-                    "backgroundColor": "#F0F0F0",
-                    "border": "1px solid #F0F0F0",
                   },
                   "ghost": Object {
                     "&$ghostDisabled": Object {
@@ -6133,18 +5973,8 @@ body {
                       "cursor": "not-allowed",
                       "pointerEvents": "auto",
                     },
-                    "&$ghostDisabled&:hover": Object {
-                      "backgroundColor": "transparent",
-                      "border": "none",
-                      "color": "#999999",
-                      "cursor": "not-allowed",
-                      "pointerEvents": "auto",
-                    },
                     "&:active": Object {
                       "backgroundColor": "transparent",
-                    },
-                    "&:hover": Object {
-                      "backgroundColor": "#F0F0F0",
                     },
                     "backgroundColor": "transparent",
                     "color": "#146BD2",
@@ -6162,18 +5992,8 @@ body {
                       "cursor": "not-allowed",
                       "pointerEvents": "auto",
                     },
-                    "&$ghostSecondaryDisabled&:hover": Object {
-                      "backgroundColor": "transparent",
-                      "border": "none",
-                      "color": "#999999",
-                      "cursor": "not-allowed",
-                      "pointerEvents": "auto",
-                    },
                     "&:active": Object {
                       "backgroundColor": "transparent",
-                    },
-                    "&:hover": Object {
-                      "backgroundColor": "#F0F0F0",
                     },
                     "backgroundColor": "transparent",
                     "color": "#414141",
@@ -6190,17 +6010,8 @@ body {
                       "cursor": "not-allowed",
                       "pointerEvents": "auto",
                     },
-                    "&$primaryDisabled&:hover": Object {
-                      "backgroundColor": "#F0F0F0",
-                      "color": "#999999",
-                      "cursor": "not-allowed",
-                      "pointerEvents": "auto",
-                    },
                     "&:active": Object {
                       "backgroundColor": "#146BD2",
-                    },
-                    "&:hover": Object {
-                      "backgroundColor": "#4389DB",
                     },
                     "backgroundColor": "#146BD2",
                     "color": "#FFFFFF",
@@ -6236,19 +6047,8 @@ body {
                       "cursor": "not-allowed",
                       "pointerEvents": "auto",
                     },
-                    "&$secondaryDisabled&:hover": Object {
-                      "backgroundColor": "#F0F0F0",
-                      "border": "none",
-                      "color": "#999999",
-                      "cursor": "not-allowed",
-                      "pointerEvents": "auto",
-                    },
                     "&:active": Object {
                       "backgroundColor": "#FFFFFF",
-                    },
-                    "&:hover": Object {
-                      "backgroundColor": "#F0F0F0",
-                      "border": "1px solid #F0F0F0",
                     },
                     "backgroundColor": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
