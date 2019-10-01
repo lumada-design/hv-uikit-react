@@ -190,10 +190,10 @@ def getRefspec(String changeId, String branch) {
   def branchString = ''
   if (changeId) {
     refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
-    branchString = '*'
+    branchString = branch
   } else {
     refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
-    branchString = branch
+    branchString = "*/" + branch
   }
   return [refspec, branchString]
 }
