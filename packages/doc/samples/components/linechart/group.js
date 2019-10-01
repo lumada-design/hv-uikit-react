@@ -1,44 +1,47 @@
 import React from "react";
 import Linechart from "@hv/uikit-react-core/dist/Linechart";
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
 const trace1 = {
-  x: ["Group one", "Group two", "Group three"],
-  y: [2300, 1000, 8500],
+  x: months,
+  y: [3400, 5929, 1803, 6470, 6853, 7517, 5636, 4280, 7238, 6889, 8268, 2751],
   name: "Sales Target"
 };
 
 const trace2 = {
-  x: ["Group one", "Group two", "Group three"],
-  y: [6000, 3900, 1000],
+  x: months,
+  y: [3022, 3005, 2517, 8397, 6587, 6648, 8067, 2723, 7523, 7853, 4819, 3820],
   name: "Sales Per Rep"
 };
 
 const trace3 = {
-  x: ["Group one", "Group two", "Group three"],
-  y: [3700, 7500, 1100],
+  x: months,
+  y: [3900, 4971, 2694, 2177, 7756, 1717, 3308, 2200, 2294, 1771, 2324, 6705],
   name: "Monthly Sales"
 };
 
-const trace4 = {
-  x: ["Group one", "Group two", "Group three"],
-  y: [2100, 8500, 3000],
-  name: "Target"
-};
-
-const trace5 = {
-  x: ["Group one", "Group two", "Group three"],
-  y: [500, 8000, 9500],
-  name: "Cash"
-};
-
-const data = [trace1, trace2, trace3, trace4, trace5];
+const data = [trace1, trace2, trace3];
 
 export default (
   <Linechart
-    title="Stacked Vertical Bar Chart"
+    title="Multiple lines"
     subtitle="Sales performance (YTD)"
     data={data}
-    xAxisTitle="Axis description"
+    xAxisTitle="2018"
     yAxisTitle="Thousands of Dollars ($)"
   />
 );

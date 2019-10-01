@@ -21,7 +21,7 @@ const trace3 = {
 
 const trace4 = {
   x: ["Group one", "Group two", "Group three"],
-  y: [5000, 8500, 8700],
+  y: [9000, 8500, 8700],
   name: "Target"
 };
 
@@ -35,7 +35,7 @@ const data = [trace1, trace2, trace3, trace4, trace5];
 
 export default (
   <Linechart
-    title="Stacked Vertical Bar Chart"
+    title="Multiple lines with area"
     subtitle="Sales performance (YTD)"
     data={data}
     type="area"

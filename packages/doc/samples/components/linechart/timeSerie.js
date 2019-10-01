@@ -1539,14 +1539,12 @@ const trace2 = {
 const data = [trace1, trace2];
 
 export default (
-  <div>
-    <Linechart
-      title="Simple Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="2018"
-      yAxisTitle="Thousands of Dollars ($)"
-      rangeSlider
-    />
-  </div>
+  <Linechart
+    title="Time series with range slider"
+    subtitle="Sales performance (YTD)"
+    data={data}
+    xAxisTitle="Date"
+    yAxisTitle="Thousands of Dollars ($)"
+    rangeSlider
+  />
 );
