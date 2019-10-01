@@ -30,6 +30,21 @@ const hover = theme => ({
   }
 });
 
+const disabled = theme => ({
+  cursor: "not-allowed",
+  background: "transparent !important",
+  "& *": {
+    cursor: "not-allowed",
+    background: "transparent !important",
+  },
+  "& svg *.color1": {
+    fill: theme.hv.palette.atmosphere.atmo7,
+  },
+  "& p, & span": {
+    ...theme.hv.typography.disabledButtonText,
+  },
+});
+
 const styles = theme => ({
   root: {
     display: "block",
@@ -43,8 +58,8 @@ const styles = theme => ({
     height: "32px",
     listStyleType: "none",
     cursor: "pointer",
-    "&:hover:not($selected)": hover(theme),
-    "&:active:hover:not($selector)": selected(theme),
+    "&:not($disabled):hover:not($selected)": hover(theme),
+    "&:not($disabled):active:hover:not($selector)": selected(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
     },
@@ -65,6 +80,7 @@ const styles = theme => ({
       ...theme.hv.typography.highlightText
     }
   },
+  disabled: disabled(theme),
   label: {
     padding: `0 ${theme.hv.spacing.xs}px`
   },

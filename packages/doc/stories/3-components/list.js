@@ -40,7 +40,7 @@ storiesOf("Components", module).add("List", () => <List />, {
       src: "components/list/singleSelection.js"
     },
     {
-      title: "5. Single selection with left icons",
+      title: "5. Single selection with left icons and disabled item",
       src: "components/list/singleSelectionWithLeftIcons.js"
     },
     {
@@ -58,6 +58,10 @@ storiesOf("Components", module).add("List", () => <List />, {
     {
       title: "9. Multi selection with selectors and select all",
       src: "components/list/multiSelectionWithSelectorsAndSelectAll.js"
+    },
+    {
+      title: "10. Multi selection with selectors, disabled items, and select all",
+      src: "components/list/multiSelectionWithSelectorsDisabledAndSelectAll.js"
     }
   ]
 });

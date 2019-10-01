@@ -23,6 +23,7 @@ const data = [
   {
     label: "Advanced server DS530",
     selected: false,
+    disabled: true,
     leftIcon: props => <PlaneIcon {...props}/>
   },
   {
