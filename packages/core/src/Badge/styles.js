@@ -16,7 +16,8 @@
 
 const styles = theme => ({
   root: {
-    position: "relative"
+    position: "relative",
+    height:30
   },
   badgePosition: {
     display: "flex",
