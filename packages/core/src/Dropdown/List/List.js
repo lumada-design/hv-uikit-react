@@ -40,7 +40,8 @@ const List = ({
   hasTooltips,
   disablePortal,
   isOpen,
-  anchorEl
+  anchorEl,
+  singleSelectionToggle
 }) => {
   const [searchStr, setSearchStr] = useState();
   const [list, setList] = useState(clone(values));
@@ -320,6 +321,7 @@ const List = ({
                   selectDefault={selectDefault}
                   hasTooltips={hasTooltips}
                   condensed
+                  singleSelectionToggle={singleSelectionToggle}
                 />
               )}
             </div>
@@ -389,7 +391,11 @@ List.propTypes = {
    * The return value will passed as the reference object of the Popper
    * instance.
    */
-  anchorEl: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
+  anchorEl: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  /**
+   * If ´true´, selection can be toggled when single selection.
+   */
+  singleSelectionToggle: PropTypes.bool.isRequired
 };
 
 List.defaultProps = {

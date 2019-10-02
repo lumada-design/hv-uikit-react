@@ -166,7 +166,8 @@ class Main extends React.Component {
       selectDefault,
       notifyChangesOnFirstRender,
       disablePortal,
-      hasTooltips
+      hasTooltips,
+      singleSelectionToggle
     } = this.props;
     const { isOpen, values, labels, anchorEl } = this.state;
 
@@ -185,6 +186,7 @@ class Main extends React.Component {
         disablePortal={disablePortal}
         isOpen={isOpen}
         anchorEl={anchorEl}
+        singleSelectionToggle={singleSelectionToggle}
       />
     );
   }
@@ -370,7 +372,11 @@ Main.propTypes = {
    * Disable the portal behavior.
    * The children stay within it's parent DOM hierarchy.
    */
-  disablePortal: PropTypes.bool
+  disablePortal: PropTypes.bool,
+  /**
+   * If ´true´, selection can be toggled when single selection.
+   */
+  singleSelectionToggle:PropTypes.bool
 };
 
 Main.defaultProps = {
@@ -388,7 +394,8 @@ Main.defaultProps = {
   selectDefault: true,
   theme: null,
   disablePortal: false,
-  hasTooltips: false
+  hasTooltips: false,
+  singleSelectionToggle: true,
 };
 
 export default Main;
