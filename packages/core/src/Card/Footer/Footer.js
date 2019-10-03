@@ -24,16 +24,22 @@ import HvCheckBox from "../../Selectors/CheckBox";
 import HvButton from "../../Button";
 import DropDownMenu from "../../DropDownMenu";
 
-const renderActions = (actions, actionsCallback, classes, maxVisibleActions) => {
+const renderActions = (
+  actions,
+  id,
+  actionsCallback,
+  classes,
+  maxVisibleActions
+) => {
   if (!Array.isArray(actions)) {
-    return (React.isValidElement(actions)) ? actions : null;
+    return React.isValidElement(actions) ? actions : null;
   }
 
-  const renderButton = (action) => (
+  const renderButton = action => (
     <HvButton
       className={classes.button}
       disabled={action.disabled}
-      onClick={() =>  actionsCallback(action)}
+      onClick={() => actionsCallback(id, action)}
       category="ghostSecondary"
     >
       {action.icon && action.icon({ classes })}
@@ -41,7 +47,7 @@ const renderActions = (actions, actionsCallback, classes, maxVisibleActions) => 
     </HvButton>
   );
 
-  const renderActionsGrid = (acts) => (
+  const renderActionsGrid = acts => (
     <Grid container>
       <Grid item xs={8} className={classes.item}>
         {renderButton(acts[0])}
@@ -50,17 +56,17 @@ const renderActions = (actions, actionsCallback, classes, maxVisibleActions) => 
         <DropDownMenu
           icon={<MoreVert />}
           placement="left"
-          onClick={actionsCallback}
+          onClick={action => actionsCallback(id, action)}
           dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
         />
       </Grid>
     </Grid>
   );
 
-  return (actions.length > maxVisibleActions)
-    ? renderActionsGrid(actions)
+  return actions.length > maxVisibleActions
+    ? renderActionsGrid(actions, id)
     : actions.map(a => renderButton(a));
-}
+};
 
 /**
  * The footer container contains the actions of the cards also
@@ -80,6 +86,7 @@ const renderActions = (actions, actionsCallback, classes, maxVisibleActions) => 
  */
 const Footer = ({
   classes,
+  id,
   className,
   actions,
   actionsCallback,
@@ -94,19 +101,33 @@ const Footer = ({
   ...other
 }) => (
   <Cardactions className={classNames(classes.root, className)} {...other}>
-    {isSelectable &&
+    {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
-          value={checkboxValue}
+          value={checkboxValue || id}
           onChange={onChange}
           label={checkboxLabel}
           checked={checkboxSelected}
           indeterminate={checkboxIndeterminate}
         />
       </div>
-    }
-    <div className={classes[`${isSelectable || Array.isArray(actions) ? "right" : actionsAlignment}Container`]}>
-      {renderActions(actions, actionsCallback, classes, maxVisibleActions)}
+    )}
+    <div
+      className={
+        classes[
+          `${
+            isSelectable || Array.isArray(actions) ? "right" : actionsAlignment
+          }Container`
+        ]
+      }
+    >
+      {renderActions(
+        actions,
+        checkboxValue || id,
+        actionsCallback,
+        classes,
+        maxVisibleActions
+      )}
     </div>
   </Cardactions>
 );
@@ -134,16 +155,23 @@ Footer.propTypes = {
     rightContainer: PropTypes.string
   }).isRequired,
   /**
+   * Component identifier.
+   */
+  id: PropTypes.string,
+  /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon}´
    */
   actions: oneOfType([
     PropTypes.node,
-    PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      icon: PropTypes.func,
-    }))]),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func
+      })
+    )
+  ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
@@ -186,6 +214,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   className: "",
+  id: "",
   isSelectable: false,
   onChange: () => {},
   checkboxValue: "",
