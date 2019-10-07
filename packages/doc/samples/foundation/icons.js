@@ -23,7 +23,7 @@ const styles = theme => ({
   iconContainer: {
     margin: "5px",
     padding: "5px",
-    minWidth: "200px",
+    width: "140px",
     display: "inherit",
     flexDirection: "column",
     alignItems: "center"
@@ -37,12 +37,12 @@ const dropdownSizes = [
   },
   {
     id: "1",
-    label: "S"
+    label: "S",
+    selected: true
   },
   {
     id: "2",
-    label: "M",
-    selected: true
+    label: "M"
   },
   {
     id: "3",
@@ -138,7 +138,7 @@ const Group = ({ groupLabel, classes, iconSize, colorArray = [], theme }) => {
 const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
   <div className={classes.iconContainer}>
     {Component != null ? (
-      <Component iconSize={iconSize.label} color={colorArray}/>
+      <Component iconSize={iconSize && iconSize.label} color={colorArray} />
     ) : (
       <span
         style={{
@@ -152,11 +152,9 @@ const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
       </span>
     )}
     <div>
-      <HvTypography 
-        style={{
-          margin: "5px 0"
-        }} 
-      variant={"disabledText"}>{name}</HvTypography>
+      <HvTypography style={{ margin: "6px 0" }} variant={"infoText"}>
+        {name}
+      </HvTypography>
     </div>
   </div>
 );
@@ -166,7 +164,7 @@ const Icons = ({ classes, theme }) => {
   const [iconSize, setIconSize] = useState(
     {
       id: 2,
-      label: "XL",
+      label: "M",
       selected: true
     }
   );
@@ -199,10 +197,6 @@ const Icons = ({ classes, theme }) => {
             setIconSize(item);
           }}
           notifyChangesOnFirstRender
-        />
-        <ColorPicker 
-          applyCallback={applyCallback}
-          clearCallback={clearCallback}
         />
       </div>
       <Group groupLabel={GenericLabel} classes={classes} theme={theme} iconSize={iconSize} colorArray={colorArray}/>
