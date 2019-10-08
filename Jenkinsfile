@@ -62,57 +62,6 @@ pipeline {
                         }
                     }
                 }
-
-                stage('Tests Automation') {
-                    agent {
-                      label 'robotframework-unix'
-                    }
-                    when {
-                        expression { !params.skipAutomationTest }
-                        anyOf {
-                            changeRequest target: 'master'
-                            branch 'master'    
-                            branch 'alpha'
-                        }
-                    }
-                    steps {
-                        script {
-                            withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                sh 'npm ci --silent'
-                                sh 'npm run bootstrap'
-                                sh 'npm run automation &'
-                            }
-                            def port = "9002"
-                            def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
-                            waitUntilServerUp(URL)
-                            def (REFSPEC, BRANCH_STRING) = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
-                            echo "[INFO] REFSPEC: " + REFSPEC
-                            def jobResult =
-                                            build job: 'ui-kit/automation/storybook-core-tests', parameters: [
-                                                string(name: 'STORYBOOK_URL', value: URL),
-                                                string(name: 'REFSPEC', value: REFSPEC),
-                                                string(name: 'BRANCH_STRING', value: BRANCH_STRING)
-                                            ], propagate: true, wait: true
-
-                            echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
-                            
-                        }
-                    }
-                    post {
-                        failure {
-                            echo ("This build is unstable. Please check the automation tests.")
-                            script {
-                                currentBuild.result = "UNSTABLE"
-                            }
-                        }
-
-                      always {
-                        script {
-                            sh 'pkill -f node'
-                        }
-                      }
-                    }
-                }
             }
         }
         stage('Publish Packages') {
