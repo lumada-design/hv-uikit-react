@@ -68,6 +68,7 @@ pipeline {
                       label 'robotframework-unix'
                     }
                     when {
+                        beforeAgent true
                         expression { !params.skipAutomationTest }
                         anyOf {
                             allOf {
