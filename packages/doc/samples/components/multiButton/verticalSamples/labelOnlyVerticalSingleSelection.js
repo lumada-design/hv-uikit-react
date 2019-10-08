@@ -17,12 +17,13 @@
 import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
-import Map from "@hv/uikit-react-icons/dist/DawnTheme/Map.S";
-import LocationPin from "@hv/uikit-react-icons/dist/DawnTheme/LocationPin.S";
-
 const buttonsDefinitions = [
-  { id: "map", value: "map", icon: <Map />, selected: true },
-  { id: "satellite", value: "satellite", icon: <LocationPin /> }
+  { id: "map", value: "map", selected: true },
+  { id: "satellite", value: "satellite" }
 ];
 
-export default <MultiButton buttons={buttonsDefinitions} type={"mixed"} />;
+export default (
+  <div class="testClass" style={{ width: "100px"  }}>
+    <MultiButton buttons={buttonsDefinitions} type={"text"} vertical />
+  </div>
+);
