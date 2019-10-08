@@ -17,15 +17,29 @@
 import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
+import Map from "@hv/uikit-react-icons/dist/Generic/Map";
+import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
+
 const buttonsDefinitions = [
-  { id: "map", value: "map", selected: true },
-  { id: "satellite", value: "satellite" }
+  { id: "map", value: "map", icon: <Map /> },
+  {
+    id: "satellite",
+    value: "satellite",
+    icon: <LocationPin />
+  },
+  { id: "map1", value: "chart", icon: <Map /> },
+  { id: "satellite1", value: "location 1", icon: <LocationPin /> },
+  { id: "satellite2", value: "location 2", icon: <LocationPin /> },
+  { id: "satellite3", value: "location 3", icon: <LocationPin /> }
 ];
 
 export default (
-  <MultiButton
-    buttons={buttonsDefinitions}
-    type={"text"}
-    multi
-  />
+  <div style={{ width: "1000px" }}>
+    <MultiButton
+      buttons={buttonsDefinitions}
+      type={"mixed"}
+      multi
+      maxSelection={2}
+    />
+  </div>
 );
