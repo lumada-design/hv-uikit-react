@@ -20,7 +20,7 @@ import CheckboxCheck from '@hv/uikit-react-icons/dist/Generic/CheckboxCheck';
 
 storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
   title: "Generic Icons",
-  description: "Usage of The generic icons as any icon works the same the sample will be done using the CheckboxCheck icon",
+  description: "Usage of Generic Icons that can be altered to standard or custom sizes and colors",
   usage: "import CheckboxCheck from '@hv/uikit-react-icons/dist/Generic/CheckboxCheck'",
   examples: [
     {
@@ -42,6 +42,16 @@ storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
       title: "Icon with custom size",
       description: "Overrides Generic Icon size using non standard sizes",
       src: "components/genericIcon/nonStandardSizes.js"
+    },
+    {
+      title: "Icon with color from semantic palette",
+      description: "Overrides Generic Icon colors with semantic palette colors",
+      src: "components/genericIcon/semanticColors.js"
+    },
+    {
+      title: "Icon with inverted semantic colors",
+      description: "Inverts Generic Icon colors",
+      src: "components/genericIcon/semanticInverted.js"
     }
   ]
 });
