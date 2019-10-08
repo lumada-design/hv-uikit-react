@@ -25,7 +25,6 @@ import MultibuttonWithStyles from "../index";
 import MultiButton from "../MultiButton";
 import HvProvider from "../../Provider";
 
-
 const buttonsDefinitions = [
   { id: "map", value: "map", icon: <Map />, selected: true },
   { id: "satellite", value: "satellite", icon: <LocationPin /> },
@@ -39,11 +38,7 @@ describe("Multibutton withStyles - Icons Only", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <MultibuttonWithStyles
-          buttons={buttonsDefinitions}
-          type="icon"
-          multi
-        />
+        <MultibuttonWithStyles buttons={buttonsDefinitions} type="icon" multi />
       </HvProvider>
     );
   });
@@ -65,38 +60,47 @@ describe("Multibutton withStyles - Icons Only", () => {
     const multiButtonComponent = wrapper.find(MultiButton);
     const instance = multiButtonComponent.instance();
 
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "map"
-      }
-    }, 0);
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
 
     expect(instance.state.checkedItems.length).toBe(0);
 
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "map"
-      }
-    }, 0);
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
     expect(instance.state.checkedItems.length).toBe(1);
 
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "satellite"
-      }
-    }, 1);
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "satellite"
+        }
+      },
+      1
+    );
     expect(instance.state.checkedItems.length).toBe(2);
   });
 });
@@ -107,11 +111,7 @@ describe("Multibutton withStyles - Text Only", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <MultibuttonWithStyles
-          buttons={buttonsDefinitions}
-          type="text"
-          multi
-        />
+        <MultibuttonWithStyles buttons={buttonsDefinitions} type="text" multi />
       </HvProvider>
     );
   });
@@ -182,15 +182,18 @@ describe("Multibutton withStyles - Enforce No Selection", () => {
   it("should not allow for deselection", () => {
     const multiButtonComponent = wrapper.find(MultiButton);
     const instance = multiButtonComponent.instance();
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "map"
-      }
-    },0);
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
 
     expect(instance.state.checkedItems.length).toBe(1);
   });
@@ -227,33 +230,147 @@ describe("Multibutton withStyles - Enforce Minimum Selection", () => {
   it("should not allow for deselection", () => {
     const multiButtonComponent = wrapper.find(MultiButton);
     const instance = multiButtonComponent.instance();
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "map"
-      }
-    }, 0);
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "satellite"
-      }
-    }, 1);
-    instance.handleClick({
-      target: {
-        nodename: "SPAN",
-        dataset: {
-          selectionindicator: ""
-        },
-        id: "map1"
-      }
-    }, 2);
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "satellite"
+        }
+      },
+      1
+    );
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map1"
+        }
+      },
+      2
+    );
     expect(instance.state.checkedItems.length).toBe(1);
+  });
+});
+
+describe("Multibutton withStyles - Enforce Maximum Selection", () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(
+      <HvProvider>
+        <MultibuttonWithStyles
+          buttons={minimalSelectionButtonsDefinitions}
+          type="mixed"
+          multi
+          minSelection={1}
+          maxSelection={3}
+        />
+      </HvProvider>
+    );
+  });
+
+  it("should not allow for Selection after max number has been selected", () => {
+    const multiButtonComponent = wrapper.find(MultiButton);
+    const instance = multiButtonComponent.instance();
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "satellite"
+        }
+      },
+      1
+    );
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map1"
+        }
+      },
+      2
+    );
+    expect(instance.state.checkedItems.length).toBe(1);
+
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "satellite"
+        }
+      },
+      1
+    );
+
+    expect(instance.state.checkedItems.length).toBe(2);
+
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "map"
+        }
+      },
+      0
+    );
+
+    expect(instance.state.checkedItems.length).toBe(3);
+
+    instance.handleClick(
+      {
+        target: {
+          nodename: "SPAN",
+          dataset: {
+            selectionindicator: ""
+          },
+          id: "satellite1"
+        }
+      },
+      3
+    );
+
+    expect(instance.state.checkedItems.length).toBe(3);
   });
 });

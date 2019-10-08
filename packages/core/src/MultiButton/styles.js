@@ -19,6 +19,7 @@ const styles = theme => ({
     display: "flex",
     minHeight: 34,
     alignItems: "center",
+    transition:"none",
   },
   btnBase: {
     maxWidth: 200,
@@ -28,7 +29,6 @@ const styles = theme => ({
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     "&:first-child": {
       borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-      paddingRight: 1,
       "&:hover": {
         borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
       }
@@ -38,24 +38,65 @@ const styles = theme => ({
       "&:hover": {
         borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
       }
+    },
+    "&:focus":{
+      outline:"none"
     }
   },
+  labelText:{
+    textOverflow:"ellipsis",
+    whiteSpace:"nowrap",
+    overflow:"hidden"
+  },
+  btnSecondary: {
+    flex: "1 1 0px",
+  },
+  isSelected: {
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    borderLeft: `1px solid ${theme.hv.palette.accent.acce1} !important`,
+    borderRight: `1px solid ${theme.hv.palette.accent.acce1} !important`,
+    background: theme.hv.palette.atmosphere.atmo1,
+    height: 34,
+    cursor:"default",
+    ...theme.hv.typography.highlightText,
+    "&:hover": {
+      background: theme.hv.palette.atmosphere.atmo1,
+      border: `1px solid ${theme.hv.palette.accent.acce1}`
+    },
+    "& + button[data-selectionindicator='isSelected']": {
+      borderLeft: "none !important",
+    }
+  },
+  isUnselected: {
+    background: theme.hv.palette.atmosphere.atmo2,
+    ...theme.hv.typography.normalText,
+    "&:hover": {
+      border:"none",
+      borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`
+    }
+  },
+  // vertical button display Styling
   rootVertical: {
     flexDirection: "column",
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderTop: "none",
-    borderBottom: "none",
+    borderTop:"none",
+    borderBottom:"none",
     "& $btnBase": {
-      borderTop: "none",
-      borderBottom: "none",
+      width: "100%",
+      border: "none",
       "&:first-child": {
         borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-        borderLeft: "none"
+        "&:hover": {
+          borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        }
       },
       "&:last-child": {
-        borderRight: "none",
-        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-      }
+        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        "&:hover": {
+          borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        }
+      },
     },
     "& $isSelected": {
       height: 32,
@@ -64,53 +105,27 @@ const styles = theme => ({
       borderBottom: `1px solid ${theme.hv.palette.accent.acce1} !important`,
       "& + button[data-selectionindicator='isSelectedVertical']": {
         borderTop: "none !important"
-      }
+      },
+      "&:first-child": {
+        "&:hover": {
+          borderTop: `1px solid ${theme.hv.palette.accent.acce1} !important`,
+        }
+      },
     },
     "& $isUnselected": {
-      "&:first-child:hover": {
-        borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`
-      },
-      "&:last-child:hover": {
-        borderBottom: `1px solid ${
-          theme.hv.palette.atmosphere.atmo6
-        } !important`
-      },
       "&:hover": {
-        borderTop: "none !important",
-        borderBottom: "none !important"
+        border: "none !important",
+        "&:first-child": {
+          "&:hover": {
+            borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
+          }
+        },
+        "&:last-child": {
+          "&:hover": {
+            borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
+          }
+        },
       }
-    }
-  },
-  isSelected: {
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
-    borderLeft: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-    borderRight: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-    background: theme.hv.palette.atmosphere.atmo1,
-    minHeight: 32,
-    ...theme.hv.typography.highlightText,
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo1,
-      border: `1px solid ${theme.hv.palette.accent.acce1}`
-    },
-    "& + button[data-selectionindicator='isSelected']": {
-      borderLeft: "none !important"
-    }
-  },
-  isUnselected: {
-    background: theme.hv.palette.atmosphere.atmo2,
-    ...theme.hv.typography.normalText,
-    height: 32,
-    "&:hover": {
-      borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`
-    }
-  },
-  btnSecondary: {
-    paddingRight: "1px !important",
-    "&:hover": {
-      borderRight: "none",
-      paddingRight: "1px !important",
-      background: theme.hv.palette.atmosphere.atmo1
     }
   }
 });
