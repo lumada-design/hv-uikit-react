@@ -14,11 +14,15 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9001",
-    "build": "build-storybook -o dist --quiet",
+    "build": "npx cross-env NODE_OPTIONS=--max-old-space-size=4096 build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
     "deploy": "storybook-to-ghpages --ci",
     "clean": "npx del-cli dist"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
     "@hv/uikit-common-themes": "^1.2.0",
@@ -32,9 +36,7 @@
     "lodash": "4.17.11",
     "moment": "2.24.0",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
     "react-color": "^2.17.3",
-    "react-dom": "16.8.6",
     "react-google-charts": "3.0.11",
     "react-markdown": "4.1.0",
     "react-syntax-highlighter": "10.2.1"
@@ -58,9 +60,12 @@
     "babel-loader": "8.0.5",
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-react-docgen": "3.0.0",
+    "cross-env": "^6.0.3",
     "del-cli": "1.1.0",
     "raw-loader": "1.0.0",
-    "react-docgen": "4.1.0"
+    "react": "^16.8.6",
+    "react-docgen": "4.1.0",
+    "react-dom": "^16.8.6"
   },
   "files": [
     "dist"

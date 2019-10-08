@@ -21,6 +21,9 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   return result;
 }
 
+const hasSpecialSize = componentName => /^Level(\d)/g.test(componentName);
+const getSize = (componentName, size) => hasSpecialSize(componentName) ? size + 8 : size;
+
 /**
  * Creates a full component string based upon provided svg data and a component name
  * @param  string svgOutput -The svg data, preformatted
@@ -35,13 +38,16 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
   let exportName = `${componentName};`
 
   if(useGeneric) {
-    palette = colorArrayDefaultValues.replace(
-      '"#414141"',
-      "theme.hv.palette.accent.acce1"
-    );
-    palette = replaceColorsWithTheme(colorArrayDefaultValues, themePalette);
+    palette = colorArrayDefaultValues
+      .replace(/"#414141"/g, "theme.hv.palette.accent.acce1")
+      .replace(/"#fff"/g, "theme.hv.palette.accent.acce0");
+    palette = replaceColorsWithTheme(palette, themePalette);
     exportName = `withStyles(styles, { withTheme: true })(${componentName});`;
   }
+
+  const warning = !useGeneric
+    ? `console.warn("The icon ${componentName} is deprecated. Please use the Generic Icon variant.");`
+    : "";
 
   const iconContainer = useGeneric ? 
     `
@@ -62,21 +68,20 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
           .map(line => `    ${line}`)
           .join('\n')
         }
-      ` 
+      `;
 
-  return (
-    `
+  return `
     import React from 'react';
     import PropTypes from "prop-types";
     import classNames from "classnames";
     import isNil from "lodash/isNil";
     import withStyles from "@material-ui/core/styles/withStyles";
 
-    const X_SMALL = "8px";
-    const SMALL = "16px";
-    const MEDIUM = "32px";
-    const LARGE = "64px";
-    const X_LARGE = "128px";
+    const X_SMALL = "${getSize(componentName, 12)}px";
+    const SMALL = "${getSize(componentName, 16)}px";
+    const MEDIUM = "${getSize(componentName, 32)}px";
+    const LARGE = "${getSize(componentName, 96)}px";
+    const X_LARGE = "${getSize(componentName, 128)}px";
 
     const sizeSelector = (iconHeight, iconWidth, iconSize) => {
 
@@ -135,14 +140,22 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     }
 
     const ${componentName} = props => {
-    
-      const {classes, color, iconSize, viewbox, height, width, theme, className, ...other} = props;
+      const {classes, color, iconSize, viewbox, height, width, theme, semantic, inverted, className, ...other} = props;
 
       let colorArray = color;
       const size = sizeSelector(height, width, iconSize);
 
       if (isNil(colorArray) || colorArray.length < 1) {
         colorArray =  [${palette}];
+
+        if (!isNil(semantic)) {
+          colorArray[0] = theme.hv.palette.semantic[semantic];
+        }
+
+        if (inverted && colorArray[1]) {
+          colorArray[1] = colorArray[0];
+          colorArray[0] = "none";
+        }
       }
 
       let classesToApply = null;
@@ -150,6 +163,8 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       if(!isNil(classes)) {
         classesToApply = getClasses(className, iconSize, classes);
       }
+
+      ${warning}
 
       return (
         ${iconContainer}
@@ -206,7 +221,17 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       /**
        * Sets one of the standard sizes of the icons
        */
-      iconSize: PropTypes.oneOf(["XS","S","M","L", "XL"]),
+      iconSize: PropTypes.oneOf(["XS","S","M","L","XL"]),
+      /**
+       * Sets one of the standard semantic palette colors of the icon
+       */
+      semantic: PropTypes.oneOf([
+        "sema1","sema2","sema3","sema4","sema5","sema6","sema7","sema8","sema9","sema10",
+        "sema11","sema12","sema13","sema14","sema15","sema16","sema17","sema18","sema19"]),
+      /**
+       * Inverts the background-foreground on semantic icons
+       */
+      inverted: PropTypes.bool
     };
     
     ${componentName}.defaultProps = {
@@ -242,6 +267,5 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       }
     });
 
-    export default ${exportName}`
-  )
+    export default ${exportName}`;
 }

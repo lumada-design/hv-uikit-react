@@ -57,6 +57,11 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
     {
       title: "8. Composition with component footer and header",
       src: "components/card/card8"
+    },
+    {
+      title: "9. Automatic action creation from list",
+      src: "components/card/card9",
+      description: "Card actions can be created automatically if an array is provided. The actions will collapse into a DropDownMenu if the limit of visible actions is surpassed.",
     }
   ]
 });

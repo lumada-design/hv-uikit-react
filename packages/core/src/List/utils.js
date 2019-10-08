@@ -27,6 +27,7 @@ const parseState = (list, labels) => {
   const selection = list.filter(elem => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
+  const allSelectableSelected = list.every(elem => elem.selected || elem.disabled);
   const selectionLabel = !anySelected
     ? selectAll
     : `${selection.length} ${selectionConjunction} ${list.length}`;
@@ -37,6 +38,7 @@ const parseState = (list, labels) => {
     hasLeftIcons,
     anySelected,
     allSelected,
+    allSelectableSelected,
     selectionLabel
   };
 };
@@ -75,7 +77,7 @@ const parseList = (list, item, props, selectAll) => {
       anySelected = true;
     }
 
-    if (typeof selectAll === "boolean") newItem.selected = selectAll;
+    if (typeof selectAll === "boolean" && !elem.disabled) newItem.selected = selectAll;
 
     // normalize item selected prop if not provided
     if (!newItem.selected) newItem.selected = false;

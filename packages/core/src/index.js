@@ -38,6 +38,7 @@ export { default as HvBadge } from "./Badge";
 export { default as HvSwitch } from "./Switch";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
+export {default as HvCardView} from "./AssetInventory/CardView"
 
 // theme
 export { default as hvTheme } from "./theme";

@@ -5,7 +5,12 @@ Library           SeleniumLibrary
 Suite Setup       open storybook toggle page
 Suite Teardown    Close Browser
 Test Template     Test toggle state transition pressing labels
-Default Tags      smoke
+Default Tags      smoke    issue-ie    issue-chrome    issue-firefox
+Metadata        
+...    | issue                     | browsers   |
+...    | ------------------------- | ---------- |
+...    | hv-uikit-react/issues/564 | ie, chrome | 
+...    | hv-uikit-react/issues/547 | ie         |
 
 *** Keywords ***
 Test toggle state transition pressing labels

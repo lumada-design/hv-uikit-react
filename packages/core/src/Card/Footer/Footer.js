@@ -15,10 +15,58 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
+import Grid from "@material-ui/core/Grid";
 import Cardactions from "@material-ui/core/CardActions";
+import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import HvCheckBox from "../../Selectors/CheckBox";
+import HvButton from "../../Button";
+import DropDownMenu from "../../DropDownMenu";
+
+const renderActions = (
+  actions,
+  id,
+  actionsCallback,
+  classes,
+  maxVisibleActions
+) => {
+  if (!Array.isArray(actions)) {
+    return React.isValidElement(actions) ? actions : null;
+  }
+
+  const renderButton = action => (
+    <HvButton
+      className={classes.button}
+      disabled={action.disabled}
+      onClick={() => actionsCallback(id, action)}
+      category="ghostSecondary"
+    >
+      {action.icon && action.icon({ classes })}
+      {action.label}
+    </HvButton>
+  );
+
+  const renderActionsGrid = acts => (
+    <Grid container>
+      <Grid item xs={8} className={classes.item}>
+        {renderButton(acts[0])}
+      </Grid>
+      <Grid item xs={4} className={classes.item}>
+        <DropDownMenu
+          icon={<MoreVert />}
+          placement="left"
+          onClick={action => actionsCallback(id, action)}
+          dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
+        />
+      </Grid>
+    </Grid>
+  );
+
+  return actions.length > maxVisibleActions
+    ? renderActionsGrid(actions, id)
+    : actions.map(a => renderButton(a));
+};
 
 /**
  * The footer container contains the actions of the cards also
@@ -38,9 +86,12 @@ import HvCheckBox from "../../Selectors/CheckBox";
  */
 const Footer = ({
   classes,
+  id,
   className,
   actions,
+  actionsCallback,
   actionsAlignment,
+  maxVisibleActions,
   isSelectable,
   onChange,
   checkboxValue,
@@ -50,22 +101,34 @@ const Footer = ({
   ...other
 }) => (
   <Cardactions className={classNames(classes.root, className)} {...other}>
-    {isSelectable ? (
-      <>
-        <div className={classes.leftContainer}>
-          <HvCheckBox
-            value={checkboxValue}
-            onChange={onChange}
-            label={checkboxLabel}
-            checked={checkboxSelected}
-            indeterminate={checkboxIndeterminate}
-          />
-        </div>
-        <div className={classes.rightContainer}>{actions}</div>
-      </>
-    ) : (
-      <div className={classes[`${actionsAlignment}Container`]}>{actions}</div>
+    {isSelectable && (
+      <div className={classes.leftContainer}>
+        <HvCheckBox
+          value={checkboxValue || id}
+          onChange={onChange}
+          label={checkboxLabel}
+          checked={checkboxSelected}
+          indeterminate={checkboxIndeterminate}
+        />
+      </div>
     )}
+    <div
+      className={
+        classes[
+          `${
+            isSelectable || Array.isArray(actions) ? "right" : actionsAlignment
+          }Container`
+        ]
+      }
+    >
+      {renderActions(
+        actions,
+        checkboxValue || id,
+        actionsCallback,
+        classes,
+        maxVisibleActions
+      )}
+    </div>
   </Cardactions>
 );
 
@@ -92,13 +155,35 @@ Footer.propTypes = {
     rightContainer: PropTypes.string
   }).isRequired,
   /**
-   *  The renderable content inside the actions slot of the footer.
+   * Component identifier.
    */
-  actions: PropTypes.node,
+  id: PropTypes.string,
+  /**
+   * The renderable content inside the actions slot of the footer,
+   * or an Array of actions ´{id, label, icon}´
+   */
+  actions: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func
+      })
+    )
+  ]),
+  /**
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   */
+  actionsCallback: PropTypes.func,
   /**
    * The alignment applied to the action elements
    */
   actionsAlignment: PropTypes.oneOf(["left", "right"]),
+  /**
+   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
+   */
+  maxVisibleActions: PropTypes.number,
   /**
    *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
    */
@@ -129,12 +214,15 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   className: "",
+  id: "",
   isSelectable: false,
   onChange: () => {},
   checkboxValue: "",
   checkboxLabel: "",
   actions: undefined,
+  actionsCallback: () => {},
   actionsAlignment: "left",
+  maxVisibleActions: 2,
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined
 };

@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 import isNil from "lodash/isNil";
 import Card from "@material-ui/core/Card";
 import Header from "./Header";
@@ -60,6 +60,8 @@ const Main = ({
   subheader,
   innerCardContent,
   actions,
+  actionsCallback,
+  maxVisibleActions,
   actionsAlignment,
   isSelectable,
   semantic,
@@ -80,11 +82,7 @@ const Main = ({
 
   const defaultContent = (
     <>
-      <Header
-        icon={icon}
-        headerTitle={headerTitle}
-        subheader={subheader}
-      />
+      <Header icon={icon} headerTitle={headerTitle} subheader={subheader} />
       {!isNil(mediaPath) && mediaPath.length > 0 && (
         <Media
           mediaPath={mediaPath}
@@ -97,6 +95,9 @@ const Main = ({
         <Footer
           checkboxValue={checkboxValue}
           actions={actions}
+          id={id}
+          actionsCallback={actionsCallback}
+          maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
           onChange={event => {
@@ -116,8 +117,7 @@ const Main = ({
       className={classNames(classes.root, classes.borderTop, className, {
         [classes.selectable]: isSelectable,
         [classes.selected]: selected,
-        [classes[semantic]]: semantic,
-
+        [classes[semantic]]: semantic
       })}
       id={id}
       {...other}
@@ -162,9 +162,23 @@ Main.propTypes = {
    */
   icon: PropTypes.node,
   /**
-   *  The renderable content inside the actions slot of the footer.
+   * The renderable content inside the actions slot of the footer,
+   * or an Array of actions ´{id, label, icon}´
    */
-  actions: PropTypes.node,
+  actions: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func
+      })
+    )
+  ]),
+  /**
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   */
+  actionsCallback: PropTypes.func,
   /**
    * The alignment applied to the action elements
    */
@@ -197,7 +211,17 @@ Main.propTypes = {
     "sema6",
     "sema7",
     "sema8",
-    "sema9"
+    "sema9",
+    "sema10",
+    "sema11",
+    "sema12",
+    "sema13",
+    "sema14",
+    "sema15",
+    "sema16",
+    "sema17",
+    "sema18",
+    "sema19"
   ]),
   /**
    *  The function that will be executed when the card is selected.
@@ -228,7 +252,11 @@ Main.propTypes = {
   /**
    * The theme passed by the provider.
    */
-  theme: PropTypes.instanceOf(Object)
+  theme: PropTypes.instanceOf(Object),
+  /**
+   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
+   */
+  maxVisibleActions: PropTypes.number
 };
 
 Main.defaultProps = {
@@ -243,6 +271,7 @@ Main.defaultProps = {
   innerCardContent: undefined,
   onChange: () => {},
   actions: null,
+  actionsCallback: () => {},
   actionsAlignment: "left",
   mediaHeight: undefined,
   mediaPath: "",
@@ -251,7 +280,8 @@ Main.defaultProps = {
   checkboxLabel: "",
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
-  theme: null
+  theme: null,
+  maxVisibleActions: 2
 };
 
 export default Main;

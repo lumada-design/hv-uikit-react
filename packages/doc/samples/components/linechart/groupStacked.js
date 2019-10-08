@@ -35,7 +35,7 @@ const data = [trace1, trace2, trace3, trace4, trace5];
 
 export default (
   <Linechart
-    title="Stacked Vertical Bar Chart"
+    title="Multiple lines with area stacked"
     subtitle="Sales performance (YTD)"
     data={data}
     type="stack"

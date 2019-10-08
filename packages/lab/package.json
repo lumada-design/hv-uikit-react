@@ -29,6 +29,10 @@
     "link": "npm link",
     "update-uikit-common": "npm update @hv/uikit-common-themes"
   },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "dependencies": {
     "@hv/uikit-common-themes": "^1.2.0",
     "@hv/uikit-react-core": "^1.6.1",
@@ -43,14 +47,14 @@
     "prop-types": "15.7.2",
     "rc-slider": "8.6.3",
     "rc-tooltip": "3.7.3",
-    "react": "16.8.6",
     "react-date-range": "1.0.0-beta2",
     "react-day-picker": "7.3.0",
-    "react-dom": "16.8.6",
     "react-jss": "8.6.1",
     "react-select": "2.4.2"
   },
   "devDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
     "@babel/plugin-proposal-class-properties": "7.4.0",
