@@ -2,7 +2,7 @@ import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import compressor from "../card/resources/compressor.png";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core";
+import { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import UploadIcon from "@hv/uikit-react-icons/dist/Upload.S";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import { ViewContextConsumer } from "@hv/uikit-react-core/src/AssetInventory/CardView/ViewContext";
