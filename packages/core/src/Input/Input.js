@@ -20,7 +20,7 @@ import isNil from "lodash/isNil";
 import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
-import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
+import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import HvList from "../List";

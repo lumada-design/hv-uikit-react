@@ -53,6 +53,16 @@ const styles = theme => ({
   },
   rtSortIconNumeric: {
     marginLeft: "auto"
+  },
+  box: {
+    width: "30px",
+    height: "30px",
+    padding: "7px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
   }
 });
 

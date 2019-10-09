@@ -1,6 +1,6 @@
 import React from "react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
-import Search from "@hv/uikit-react-icons/dist/Search.S";
+import RawSearch from "@hv/uikit-react-icons/dist/Generic/Search";
 
 const labels = {
   placeholder: "Search",
@@ -31,6 +31,14 @@ const suggestionHandler = value => {
     return null;
   }
 };
+
+const styles = {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
+}
+
+const Search = () => <RawSearch boxStyles={styles} />
 
 export default (
   <HvInput

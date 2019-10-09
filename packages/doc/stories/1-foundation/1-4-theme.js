@@ -17,7 +17,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Theme from "../../samples/foundation/theme";
-import HvProvider from "@hv/uikit-react-core/src/Provider";
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 storiesOf("Foundation/Theming", module)
   .add("Intro", () => <Theme />)

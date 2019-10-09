@@ -1,9 +1,9 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/DawnTheme/Tool.S";
-import Level1Sema2S from "@hv/uikit-react-icons/dist/DawnTheme/Level1.sema2.S";
-import Level2Sema3S from "@hv/uikit-react-icons/dist/DawnTheme/Level2.sema3.S";
-import Level3Sema4S from "@hv/uikit-react-icons/dist/DawnTheme/Level3.sema4.S";
+import Icon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
+import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
+import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
@@ -69,6 +69,44 @@ const ContentWithStyles = withStyles(kpiStyles, {
   withTheme: true
 })(Content);
 
+const iconStyles = {
+  paddingTop: "7px",
+  width: "30px",
+  height: "30px"
+};
+
+const StyledIcon = () => (
+  <Icon boxStyles={iconStyles} style={{ display: "block", margin: "auto" }} />
+);
+
+const levelStyles = {
+  width: "30px"
+};
+
+const StyledLevel1 = () => (
+  <Level1
+    boxStyles={levelStyles}
+    semantic="sema2"
+    style={{ display: "block", margin: "auto" }}
+  />
+);
+
+const StyledLevel2 = () => (
+  <Level2
+    boxStyles={levelStyles}
+    semantic="sema3"
+    style={{ display: "block", margin: "auto" }}
+  />
+);
+
+const StyledLevel3 = () => (
+  <Level3
+    boxStyles={levelStyles}
+    semantic="sema4"
+    style={{ display: "block", margin: "auto" }}
+  />
+);
+
 export default (
   <>
     <div
@@ -80,10 +118,13 @@ export default (
     >
       <div style={{ width: "280px" }}>
         <HvCard
-          icon={<Icon />}
+          icon={<StyledIcon />}
           headerTitle="Replace contaminated oil"
           innerCardContent={
-            <ContentWithStyles value="85" icon={<Level1Sema2S />} />
+            <ContentWithStyles
+              value="85"
+              icon={<StyledLevel1 semantic="sema2" iconSize="S" />}
+            />
           }
           semantic="sema2"
           isSelectable
@@ -93,10 +134,13 @@ export default (
       </div>
       <div style={{ width: "280px" }}>
         <HvCard
-          icon={<Icon />}
+          icon={<StyledIcon />}
           headerTitle="Replace contaminated oil"
           innerCardContent={
-            <ContentWithStyles value="45" icon={<Level2Sema3S />} />
+            <ContentWithStyles
+              value="45"
+              icon={<StyledLevel2 semantic="sema3" iconSize="S" />}
+            />
           }
           semantic="sema3"
           isSelectable
@@ -106,10 +150,13 @@ export default (
       </div>
       <div style={{ width: "280px" }}>
         <HvCard
-          icon={<Icon />}
+          icon={<StyledIcon />}
           headerTitle="Replace contaminated oil"
           innerCardContent={
-            <ContentWithStyles value="19" icon={<Level3Sema4S />} />
+            <ContentWithStyles
+              value="19"
+              icon={<StyledLevel3 semantic="sema4" iconSize="S" />}
+            />
           }
           semantic="sema4"
           isSelectable

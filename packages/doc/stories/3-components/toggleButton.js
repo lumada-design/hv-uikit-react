@@ -29,8 +29,8 @@ storiesOf("Components/Selection mechanisms", module).add(
       "<br>For this case the SVG must have 3 classes declared:" +
       "<ul>" +
       "<li>default</li>" +
-      "<li> selected</li>" +
       "<li>selected</li>" +
+      "<li>notSelected</li>" +
       "</ul>" +
       " The component toggles between each classe.",
     usage: "import Button from '@hv/uikit-react-core/dist/ToggleButton'",

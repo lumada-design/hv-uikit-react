@@ -133,7 +133,7 @@ describe("Asset Inventory ", () => {
       </HvProvider>
     );
 
-    const search = wrapper.find("Search");
+    const search = wrapper.find(Search);
 
     expect(search.length).toBe(1);
   });

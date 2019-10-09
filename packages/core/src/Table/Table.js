@@ -27,10 +27,10 @@ import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
-import SortAsc from "@hv/uikit-react-icons/dist/SortAscending.XS";
-import SortDesc from "@hv/uikit-react-icons/dist/SortDescending.XS";
-import Sort from "@hv/uikit-react-icons/dist/DawnTheme/Sort.XS";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
+import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
+import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {

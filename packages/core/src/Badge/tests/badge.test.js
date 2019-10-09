@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
+import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
 import HvProvider from "../../Provider";
 import Typography from "../../Typography";
 import Badge from "../index";
@@ -80,15 +80,15 @@ describe("Badge ", () => {
   it("should render correctly with svg", () => {
     wrapper = mount(
       <HvProvider>
-        <Badge count={100} showCount icon={<AlertS />} />
+        <Badge count={100} showCount icon={<Alert />} />
       </HvProvider>
     );
-    const icon = wrapper.find(AlertS);
+    const icon = wrapper.find(Alert);
 
     expect(icon.length).toEqual(1);
 
     const divs = wrapper.find("div");
 
-    expect(divs.at(1).text()).toEqual("99+");
+    expect(divs.at(2).text()).toEqual("99+");
   });
 });

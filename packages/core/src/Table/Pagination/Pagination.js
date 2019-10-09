@@ -20,6 +20,11 @@
 
 import React, { Component } from "react";
 import classnames from "classnames";
+import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
+import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
+import ArrowLeft from "@hv/uikit-react-icons/dist/Generic/Backwards";
+import ArrowRight from "@hv/uikit-react-icons/dist/Generic/Forwards";
+import ArrowLast from "@hv/uikit-react-icons/dist/Generic/End";
 import HvTypography from "../../Typography";
 import HvInput from "../../Input";
 
@@ -63,20 +68,14 @@ export default class ReactTablePagination extends Component {
   }
 
   render() {
-    const defaultButton = ({ className, ...props }) => (
-      <div
-        className={classnames(classes.paginationBtn, className)}
-        {...props}
-      />
-    );
-
     const { page: statePage } = this.state;
-
+    
     const {
       // Computed
       pages,
       // Props
       page,
+      theme,
       classes,
       showPageSizeOptions,
       pageSizeOptions,
@@ -88,10 +87,6 @@ export default class ReactTablePagination extends Component {
       className,
       rowsSelectorText,
       ofText,
-      PreviousComponent = defaultButton,
-      NextComponent = defaultButton,
-      FirstPageComponent = defaultButton,
-      LastPageComponent = defaultButton
     } = this.props;
 
     return (
@@ -116,6 +111,9 @@ export default class ReactTablePagination extends Component {
                   </option>
                 ))}
               </select>
+              <span>
+                <Down className={classes.selectDownIcon}/>
+              </span>
               <HvTypography component="span" variant="sText">
                 rows
               </HvTypography>
@@ -123,24 +121,33 @@ export default class ReactTablePagination extends Component {
           )}
         </div>
         <div className={classes.pageNavigator}>
-          <FirstPageComponent
-            className={
-              !canPrevious ? classes.arrowFirstDisabled : classes.arrowFirst
+          <ArrowFirst
+            className={classnames(
+              classes.iconContainer,
+              canPrevious && classes.arrowEnabled
+            )}
+            color={
+              !canPrevious ? [theme.hv.palette.atmosphere.atmo7] : undefined
             }
+            disabled={!canPrevious}
             onClick={() => {
               if (!canPrevious) return;
               this.changePage(0);
             }}
           />
-          <PreviousComponent
-            className={
-              !canPrevious ? classes.arrowLeftDisabled : classes.arrowLeft
+          <ArrowLeft
+            className={classnames(
+              classes.iconContainer,
+              canPrevious && classes.arrowEnabled
+            )}
+            color={
+              !canPrevious ? [theme.hv.palette.atmosphere.atmo7] : undefined
             }
+            disabled={!canPrevious}
             onClick={() => {
               if (!canPrevious) return;
               this.changePage(page - 1);
             }}
-            disabled={!canPrevious}
           />
           <span className={classes.pageInfo}>
             {showPageJump ? (
@@ -159,8 +166,10 @@ export default class ReactTablePagination extends Component {
                     }
                     this.setState({ page: this.getSafePage(page) });
                   }}
-                  initialValue={`${this.state.page + 1}`}
-                  inputValue={`${this.state.page === "" ? "" : Number(this.state.page) + 1}`}
+                  initialValue={`${statePage + 1}`}
+                  inputValue={`${
+                    statePage === "" ? "" : Number(statePage) + 1
+                  }`}
                   onBlur={this.applyPage}
                   onKeyPress={e => {
                     if (e.which === 13 || e.keyCode === 13) {
@@ -173,24 +182,40 @@ export default class ReactTablePagination extends Component {
                 />
               </div>
             ) : (
-              <HvTypography component="span" variant="sText">{`${page + 1}`}</HvTypography>
+              <HvTypography component="span" variant="sText">{`${page +
+                1}`}</HvTypography>
             )}
-            <HvTypography component="span" variant="sText">{`${ofText} `}</HvTypography>
+            <HvTypography
+              component="span"
+              variant="sText"
+            >{`${ofText} `}</HvTypography>
             <HvTypography component="span" variant="sText">
               {pages || 1}
             </HvTypography>
           </span>
-          <NextComponent
-            className={
-              !canNext ? classes.arrowRightDisabled : classes.arrowRight
+          <ArrowRight
+            className={classnames(
+              classes.iconContainer,
+              canNext && classes.arrowEnabled
+            )}
+            color={
+              !canNext ? [theme.hv.palette.atmosphere.atmo7] : undefined
             }
+            disabled={!canNext}
             onClick={() => {
               if (!canNext) return;
               this.changePage(page + 1);
             }}
           />
-          <LastPageComponent
-            className={!canNext ? classes.arrowLastDisabled : classes.arrowLast}
+          <ArrowLast
+            className={classnames(
+              classes.iconContainer,
+              canNext && classes.arrowEnabled
+            )}
+            color={
+              !canNext ? [theme.hv.palette.atmosphere.atmo7] : undefined
+            }
+            disabled={!canNext}
             onClick={() => {
               if (!canNext) return;
               this.changePage(pages - 1);

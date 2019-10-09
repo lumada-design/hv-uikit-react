@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import HvNotificationPanel from "@hv/uikit-react-lab/dist/NotificationPanel";
 
-import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
-import CloseXS from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
-import Level5 from "@hv/uikit-react-icons/dist/DawnTheme/Level5.sema6.S";
+import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
+import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = {
@@ -25,7 +25,7 @@ class SimpleNotificationPanel extends Component {
     const { classes } = this.props;
 
     const npProps = {
-      icon: <AlertS />,
+      icon: <Alert iconSize="S" />,
       open: true,
       classes: {
         panel: classes.panel,
@@ -33,7 +33,7 @@ class SimpleNotificationPanel extends Component {
       },
       header: {
         headerTitle: "Notifications",
-        headerCloseImg: <CloseXS />
+        headerCloseImg: <Close iconSize="XS" />
       },
       notifications: [
         {
@@ -41,7 +41,7 @@ class SimpleNotificationPanel extends Component {
           title: "Test",
           isRead: false,
           date: new Date(),
-          icon: <Level5 />
+          icon: <Level5 iconSize="S" semantic="sema6" />
         },
         {
           id: "2",

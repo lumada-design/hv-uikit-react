@@ -5075,9 +5075,12 @@ body {
 }
 .Actions-iconContainer-6 {
   display: inherit;
+  padding: 7px;
+  margin-top: -2px;
   margin-left: 10px;
 }
 .Actions-iconContainer-6:hover {
+  cursor: pointer;
   background-color: #F0F0F0;
 }
 
@@ -5111,9 +5114,12 @@ body {
                   Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "margin-top": "-2px",
+                    "padding": "7px",
                   },
                   Object {
                     "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                 ],
                 "map": Object {
@@ -5127,9 +5133,12 @@ body {
                   ".Actions-iconContainer-6": Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "margin-top": "-2px",
+                    "padding": "7px",
                   },
                   ".Actions-iconContainer-6:hover": Object {
                     "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".Actions-marginLeft-5": Object {
                     "margin-left": "60px",
@@ -5144,6 +5153,8 @@ body {
                   "iconContainer": Object {
                     "display": "inherit",
                     "margin-left": "10px",
+                    "margin-top": "-2px",
+                    "padding": "7px",
                   },
                   "marginLeft": Object {
                     "margin-left": "60px",
@@ -5640,6 +5651,7 @@ body {
                 "raw": Object {
                   ".Actions-iconContainer-6:hover": Object {
                     "backgroundColor": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   "actionsContainer": Object {
                     "alignItems": "center",
@@ -5651,9 +5663,12 @@ body {
                   "iconContainer": Object {
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
+                      "cursor": "pointer",
                     },
                     "display": "inherit",
                     "marginLeft": "10px",
+                    "marginTop": "-2px",
+                    "padding": "7px",
                   },
                   "marginLeft": Object {
                     "marginLeft": "60px",

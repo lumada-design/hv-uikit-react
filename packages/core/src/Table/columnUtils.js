@@ -18,8 +18,8 @@ import React from "react";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 
-import AngleDown from "@hv/uikit-react-icons/dist/DropDown.XS";
-import AngleUp from "@hv/uikit-react-icons/dist/DropUp.XS";
+import AngleDown from "@hv/uikit-react-icons/dist/Generic/Down";
+import AngleUp from "@hv/uikit-react-icons/dist/Generic/Up";
 
 import { buildLink } from "./addins";
 
@@ -128,15 +128,12 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
     // eslint-disable-next-line react/prop-types
     newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        {isExpanded ? (
-          <div className={classNames(classes.iconContainer)}>
-            <AngleUp />
-          </div>
-        ) : (
-          <div className={classNames(classes.iconContainer)}>
-            <AngleDown />
-          </div>
-        )}
+        <div className={classNames(classes.iconContainer)}>
+          {isExpanded
+            ? (<AngleUp className={classes.separatorContainer} width="10px" height="10px" />)
+            : (<AngleDown className={classes.separatorContainer} width="10px" height="10px" />)}
+        </div>
+
         <div
           className={classNames({
             [classes.textContainer]: rest.column.cellType === "alpha-numeric",

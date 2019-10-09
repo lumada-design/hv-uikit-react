@@ -13,7 +13,7 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999999,
+            "index": -99999999998,
           },
           "themingEnabled": true,
         } => Map {
@@ -1316,7 +1316,7 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999999,
+                "index": -99999999998,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3482,7 +3482,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999999,
+                  "index": -99999999998,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999981,
+            "index": -99999999974,
           },
           "themingEnabled": true,
         } => Map {
@@ -4568,6 +4568,7 @@ body {
                 "link": "BreadCrumb-link-3",
                 "root": "BreadCrumb-root-1",
                 "separator": "BreadCrumb-separator-5",
+                "separatorContainer": "BreadCrumb-separatorContainer-6",
               },
               "deployed": true,
               "linked": false,
@@ -4580,6 +4581,7 @@ body {
                   "link": "BreadCrumb-link-3",
                   "root": "BreadCrumb-root-1",
                   "separator": "BreadCrumb-separator-5",
+                  "separatorContainer": "BreadCrumb-separatorContainer-6",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4943,7 +4945,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999981,
+                "index": -99999999974,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5094,6 +5096,17 @@ body {
   margin: 0 -4px;
   display: contents;
 }
+.BreadCrumb-separatorContainer-6 {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+}
+.BreadCrumb-separatorContainer-6&gt;svg {
+  margin: 0 auto;
+  display: block;
+}
 
                 </style>,
                 "getKey": [Function],
@@ -5112,6 +5125,7 @@ body {
                   "link": "BreadCrumb-link-3",
                   "root": "BreadCrumb-root-1",
                   "separator": "BreadCrumb-separator-5",
+                  "separatorContainer": "BreadCrumb-separatorContainer-6",
                 },
                 "index": Array [
                   Object {
@@ -5140,6 +5154,17 @@ body {
                   Object {
                     "display": "contents",
                     "margin": "0 -4px",
+                  },
+                  Object {
+                    "align-items": "center",
+                    "display": "flex",
+                    "height": "30px",
+                    "padding-left": "2px",
+                    "width": "30px",
+                  },
+                  Object {
+                    "display": "block",
+                    "margin": "0 auto",
                   },
                 ],
                 "map": Object {
@@ -5170,6 +5195,17 @@ body {
                     "display": "contents",
                     "margin": "0 -4px",
                   },
+                  ".BreadCrumb-separatorContainer-6": Object {
+                    "align-items": "center",
+                    "display": "flex",
+                    "height": "30px",
+                    "padding-left": "2px",
+                    "width": "30px",
+                  },
+                  ".BreadCrumb-separatorContainer-6>svg": Object {
+                    "display": "block",
+                    "margin": "0 auto",
+                  },
                   "centerContainer": Object {
                     "align-items": "center",
                     "display": "flex",
@@ -5193,6 +5229,13 @@ body {
                     "display": "contents",
                     "margin": "0 -4px",
                   },
+                  "separatorContainer": Object {
+                    "align-items": "center",
+                    "display": "flex",
+                    "height": "30px",
+                    "padding-left": "2px",
+                    "width": "30px",
+                  },
                 },
                 "options": Object {
                   "Renderer": [Function],
@@ -5203,6 +5246,7 @@ body {
                     "link": "BreadCrumb-link-3",
                     "root": "BreadCrumb-root-1",
                     "separator": "BreadCrumb-separator-5",
+                    "separatorContainer": "BreadCrumb-separatorContainer-6",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5566,7 +5610,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999981,
+                  "index": -99999999974,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5689,6 +5733,10 @@ body {
                     "color": "#4389DB",
                     "textDecoration": "none",
                   },
+                  ".BreadCrumb-separatorContainer-6>svg": Object {
+                    "display": "block",
+                    "margin": "0 auto",
+                  },
                   "centerContainer": Object {
                     "alignItems": "center",
                     "display": "flex",
@@ -5715,6 +5763,17 @@ body {
                   "separator": Object {
                     "display": "contents",
                     "margin": "0 -4px",
+                  },
+                  "separatorContainer": Object {
+                    "&>svg": Object {
+                      "display": "block",
+                      "margin": "0 auto",
+                    },
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "30px",
+                    "paddingLeft": "2px",
+                    "width": "30px",
                   },
                 },
                 "update": [Function],
@@ -6670,6 +6729,7 @@ body {
             "link": "BreadCrumb-link-3",
             "root": "BreadCrumb-root-1",
             "separator": "BreadCrumb-separator-5",
+            "separatorContainer": "BreadCrumb-separatorContainer-6",
           }
         }
         listRoute={Array []}

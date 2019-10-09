@@ -1,11 +1,22 @@
 import React from "react";
-import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
+import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
 import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
+
+const boxStyles = {
+  width: "32px",
+  height: "32px",
+  display: "flex",
+  alignItems: "center",
+}
+
+const svgStyle = {
+  margin: "0 auto"
+}
 
 const ActionButton = () => (
   <a
@@ -73,28 +84,28 @@ export default (
     <BannerContentWrapper
       content="default"
       variant="default"
-      customIcon={<FastForward16 />}
+      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
       variant="default"
-      customIcon={<FastForward16 />}
+      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="Success"
       variant="success"
-      customIcon={<FastForward16 />}
+      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="Error"
       variant="error"
-      customIcon={<FastForward16 />}
+      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} />}
       onClose={() => {}}
     />
     <p />

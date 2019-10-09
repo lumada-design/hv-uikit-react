@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
-import DropRight from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
+import isNil from "lodash/isNil";
+import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";
 import HvRadioButton from "../Selectors/RadioButton";
@@ -123,7 +125,12 @@ class List extends React.Component {
             }
           ])}
         >
-          {!useSelector && item.leftIcon && this.renderLeftIcon(item)}
+          {!useSelector && 
+            (
+              (item.leftIcon && this.renderLeftIcon(item)) ||
+              (item.iconCallback && this.renderLeftIcon(item))
+            )
+          }
 
           {multiSelect
             ? this.renderMultiSelectItem(item)
@@ -201,8 +208,8 @@ class List extends React.Component {
           classes.truncate,
           {
             [classes.selected]: item.selected,
-            [classes.labelIconLeftPadding]: item.leftIcon,
-            [classes.noIconLeftPadding]: !item.leftIcon && hasLeftIcons
+            [classes.labelIconLeftPadding]: (item.leftIcon || item.iconCallback),
+            [classes.noIconLeftPadding]: !(item.leftIcon || item.iconCallback) && hasLeftIcons
           }
         ])}
       >
@@ -211,14 +218,10 @@ class List extends React.Component {
     );
   };
 
-  renderNavIcon = item => {
-    const { theme } = this.props;
+  renderNavIcon = () => {
+    const { classes } = this.props;
 
-    const iconColor = item.selected
-      ? theme.hv.palette.atmosphere.atmo1
-      : theme.hv.palette.accent.acce1;
-
-    return <DropRight color={["none", iconColor]} />;
+    return <DropRight className={classes.box} iconSize="XS" />;
   };
 
   renderLeftIcon = item => {
@@ -228,7 +231,11 @@ class List extends React.Component {
       ? theme.hv.palette.atmosphere.atmo1
       : theme.hv.palette.accent.acce1;
 
-    return item.leftIcon({ color: ["none", iconColor] });
+    const deprecatedIcon = !isNil(item.leftIcon) ? item.leftIcon({ color: ["none", iconColor] }) : undefined;
+    const newIcon = !isNil(item.iconCallback) ? item.iconCallback({isSelected: item.selected}) : undefined;
+    const icon = !isNil(deprecatedIcon) ? deprecatedIcon : newIcon;
+
+    return icon;
   };
 
   render() {
@@ -325,7 +332,8 @@ List.propTypes = {
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       isHidden: PropTypes.bool,
-      leftIcon: PropTypes.func,
+      leftIcon: deprecatedPropType(PropTypes.func),
+      iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
       params: PropTypes.instanceOf(Object)

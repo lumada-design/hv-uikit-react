@@ -1,8 +1,24 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@hv/uikit-react-core/dist/Button";
 import ToggleButton from "@hv/uikit-react-core/dist/ToggleButton";
-import Lock from "@hv/uikit-react-icons/dist/DawnTheme/Lock.S";
-import Unlock from "@hv/uikit-react-icons/dist/DawnTheme/Unlock.S";
+import Lock from "@hv/uikit-react-icons/dist/Generic/Lock";
+import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+
+const styles = () => ({
+  rootS: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+});
+
+const StyledLock = withStyles(styles, { withTheme: true })(Lock);
+const StyledUnlock = withStyles(styles, { withTheme: true })(Unlock);
 
 const ToggleButtonControl = () => {
   const [select, setSelect] = useState(true);
@@ -13,13 +29,13 @@ const ToggleButtonControl = () => {
 
   return (
     <>
-      <Button onClick={toggleState}>{label}</Button>
+      <Button style={{ marginBottom: "12px" }} onClick={toggleState}>{label}</Button>
       <div>
         <ToggleButton
           selected={select}
-          notSelectedIcon={Unlock}
+          notSelectedIcon={StyledUnlock}
           notSelectedTitle="Open"
-          selectedIcon={Lock}
+          selectedIcon={StyledLock}
           selectedTitle="Closed"
           onClick={toggleState}
         />

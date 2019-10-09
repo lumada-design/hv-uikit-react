@@ -19,7 +19,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-// import Settings from "@hv/uikit-react-icons/dist/Settings.S";
+// import Settings from "@hv/uikit-react-icons/dist/Generic/Settings";
 import MainWithStyles from "../index";
 // import Main from "../Header";
 // import HvProvider from "../../Provider";

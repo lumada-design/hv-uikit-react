@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import LineChartIcon from "@hv/uikit-react-icons/dist/DawnTheme/LineChart.S";
+import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
 import ListWithStyles from "../index";

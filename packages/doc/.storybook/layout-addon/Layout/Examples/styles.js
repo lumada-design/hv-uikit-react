@@ -44,7 +44,11 @@ const styles = theme => ({
     "&:focus": {
       outline: "5px auto rgba(0, 150, 255, 1)"
     }
-  }
+  },
+  iconStyles: {
+    width: "30px",
+    height: "30px"
+  },
 });
 
 export default styles;

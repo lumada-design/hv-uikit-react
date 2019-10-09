@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
+import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
@@ -67,7 +67,7 @@ describe("Banner ", () => {
       <HvProvider>
         <BannerWithStyles variant="error" open showIcon onClose={() => {}} />
       </HvProvider>
-    ).find(Level5Unsuccess16Color);
+    ).find(Fail);
     expect(iconComponent.length).toBe(1);
   });
 
@@ -81,7 +81,7 @@ describe("Banner ", () => {
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Level5Unsuccess16Color);
+    ).find(Fail);
     expect(iconComponent.length).toBe(0);
   });
 
@@ -91,11 +91,11 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
-          customIcon={<Level5Unsuccess16Color />}
+          customIcon={<Fail />}
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Level5Unsuccess16Color);
+    ).find(Fail);
     expect(iconComponent.length).toBe(1);
   });
 

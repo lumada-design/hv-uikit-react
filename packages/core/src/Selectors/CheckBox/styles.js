@@ -55,6 +55,15 @@ const styles = theme => ({
     width: "16px",
     height: "16px",
     backgroundSize: "16px 16px"
+  },
+  box: {
+    width: "30px",
+    height: "30px",
+    padding: "7px",
+    "& svg": {
+      display: "block", 
+      margin: "auto" 
+    }
   }
 });
 

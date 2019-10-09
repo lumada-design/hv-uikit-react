@@ -1,9 +1,9 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/DawnTheme/Level3.sema4.S";
-import Upload from "@hv/uikit-react-icons/dist/DawnTheme/Upload.S";
+import FailureIcon from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
+import Upload from "@hv/uikit-react-icons/dist/Generic/Upload";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/DawnTheme/MoreOptionsVertical.S";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import leaf from "./resources/leaf.png";
@@ -49,7 +49,7 @@ const MultipleActionsWithMediaStyles = theme => ({
   }
 });
 
-const MultipleActionsWithMedia = ({classes}) => {
+const MultipleActionsWithMedia = ({ classes }) => {
   const {
     cellATitle,
     cellAContent,
@@ -66,19 +66,13 @@ const MultipleActionsWithMedia = ({classes}) => {
       <Grid container>
         <Grid item xs={5} className={classes.item}>
           <HvTypography variant="labelText">{cellATitle}</HvTypography>
-          <HvTypography
-            variant="normalText"
-            className={classes.text}
-          >
+          <HvTypography variant="normalText" className={classes.text}>
             {cellAContent}
           </HvTypography>
         </Grid>
         <Grid item xs={7} className={classes.item}>
           <HvTypography variant="labelText">{cellBTitle}</HvTypography>
-          <HvTypography
-            variant="normalText"
-            className={classes.text}
-          >
+          <HvTypography variant="normalText" className={classes.text}>
             {cellBContent}
           </HvTypography>
         </Grid>
@@ -86,19 +80,13 @@ const MultipleActionsWithMedia = ({classes}) => {
       <Grid container>
         <Grid item xs={5} className={classes.bottomItem}>
           <HvTypography variant="labelText">{cellCTitle}</HvTypography>
-          <HvTypography
-            variant="normalText"
-            className={classes.text}
-          >
+          <HvTypography variant="normalText" className={classes.text}>
             {cellCContent}
           </HvTypography>
         </Grid>
         <Grid item xs={7} className={classes.bottomItem}>
           <HvTypography variant="labelText">{cellDTitle}</HvTypography>
-          <HvTypography
-            variant="normalText"
-            className={classes.text}
-          >
+          <HvTypography variant="normalText" className={classes.text}>
             {cellDContent}
           </HvTypography>
         </Grid>
@@ -107,9 +95,12 @@ const MultipleActionsWithMedia = ({classes}) => {
   );
 };
 
-const MultipleActionsWithMediaWithStyles = withStyles(MultipleActionsWithMediaStyles, {
-  withTheme: true
-})(MultipleActionsWithMedia);
+const MultipleActionsWithMediaWithStyles = withStyles(
+  MultipleActionsWithMediaStyles,
+  {
+    withTheme: true
+  }
+)(MultipleActionsWithMedia);
 
 const ActionStyles = theme => ({
   button: {
@@ -126,13 +117,18 @@ const ActionStyles = theme => ({
     "& span": {
       color: theme.palette.grey.inspire
     }
+  },
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
   }
 });
 
-const MultipleActionsWithMediaButtons = ({classes}) => (
+const MultipleActionsWithMediaButtons = ({ classes }) => (
   <>
     <HvButton className={classes.button} category="ghostSecondary">
-      <Upload />
+      <Upload className={classes.box} />
       Update
     </HvButton>
     <HvButton className={classes.smallButton} category="ghostSecondary">
@@ -145,10 +141,24 @@ const MultipleActionsWithMediaButtonsWithStyle = withStyles(ActionStyles, {
   withTheme: true
 })(MultipleActionsWithMediaButtons);
 
+const iconStyles = {
+  paddingTop: "3px",
+  width: "30px",
+  height: "30px"
+};
+
+const StyledFailureIcon = () => (
+  <FailureIcon
+    semantic="sema4"
+    boxStyles={iconStyles}
+    style={{ display: "block", margin: "auto" }}
+  />
+);
+
 export default (
   <div style={{ width: "360px" }}>
     <HvCard
-      icon={<FailureIcon />}
+      icon={<StyledFailureIcon />}
       headerTitle={configuration.title}
       subheader={
         <div>

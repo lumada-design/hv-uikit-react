@@ -133,7 +133,15 @@ const styles = theme => ({
     WebkitClipPath: "circle(8px)",
     marginLeft: 0,
     width: "16px !important",
-    height: "16px !important"
+    height: "16px !important",
+    background:`${theme.hv.palette.accent.acce0} `,
+    border:`1px solid ${theme.hv.palette.accent.acce2h}`,
+    borderRadius:"50%",
+    "& div":{
+      position:"absolute",
+      top:-10,
+      left:2
+    }
   }
 });
 

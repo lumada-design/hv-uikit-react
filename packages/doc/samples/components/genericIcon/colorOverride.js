@@ -15,6 +15,6 @@
  */
 
 import React from "react";
-import CheckboxCheck from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
+import Bookmark from "@hv/uikit-react-icons/dist/Generic/Bookmark";
 
-export default <CheckboxCheck color={["#FF0000","#9100FF"]} />;
+export default <Bookmark color={["#CC0000","#414141"]} />;

@@ -2,9 +2,7 @@ import React from "react";
 import Chart from "react-google-charts";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconInvalid from "@hv/uikit-react-icons/dist/Level5.S";
 import IconArrowDown from "./assets/arrow-red-down.svg";
-import { relative } from "path";
 
 const labels = {
   title: "Total IOPS",

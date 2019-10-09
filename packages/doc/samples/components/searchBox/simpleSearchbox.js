@@ -44,7 +44,11 @@ const suggestionHandler = value => {
 export default (
   <SearchBox
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item => alert(item.label + " selected")}
-    onChange={value => alert(value + " submitted")}
+    suggestionSelectedCallback={item => console.log(item.label + " selected")}
+    onChange={value => {
+      console.log(value + " submitted")
+      return value;
+     }
+    }
   />
 );

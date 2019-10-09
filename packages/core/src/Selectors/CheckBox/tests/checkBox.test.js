@@ -20,7 +20,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox.S";
+import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 
 import CheckBoxWithStyles from "../index";
 import CheckBox from "../CheckBox";

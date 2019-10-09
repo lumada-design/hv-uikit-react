@@ -41,6 +41,17 @@ const styles = theme => ({
   separator: {
     margin: "0 -4px",
     display: "contents"
+  },
+  separatorContainer: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: "2px",
+    "&>svg": {
+      display: "block",
+      margin: "0 auto",
+    }
   }
 });
 

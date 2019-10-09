@@ -31,6 +31,10 @@ storiesOf("Components", module).add("DropDownMenu", () => <DropDownMenu />, {
     {
       title: "2. Right positioning",
       src: "components/dropdownMenu/dropdownMenu2"
+    },
+    {
+      title: "3. Right Positioning with Icons and Actions",
+      src: "components/dropdownMenu/dropdownMenu3"
     }
   ]
 });

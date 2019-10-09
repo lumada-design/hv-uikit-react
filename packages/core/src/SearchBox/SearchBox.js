@@ -25,7 +25,7 @@ import classNames from "classnames";
 import partial from "lodash/partial";
 import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
-import SearchIcon from "@hv/uikit-react-icons/dist/DawnTheme/Search.S";
+import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
 import HvInput from "../Input";
 
 /**
@@ -51,14 +51,27 @@ const onKeyDownHandler = (handlers, event, value) => {
  */
 const changeIconColor = (theme, disabled) =>
   disabled ? (
-    <SearchIcon color={["none", theme.hv.palette.atmosphere.atmo7]} />
+    <SearchIcon
+      color={[theme.hv.palette.atmosphere.atmo7]}
+      boxStyles={{
+        width: "30px",
+        height: "30px",
+        padding: "7px"
+      }}
+    />
   ) : (
-    <SearchIcon />
+    <SearchIcon
+      boxStyles={{
+        width: "30px",
+        height: "30px",
+        padding: "7px"
+      }}
+    />
   );
 
-const iconStateHandler = (value, theme, disabled, setIcon) => {
+const iconStateHandler = (value, theme, disabled, setIcon, classes) => {
   if (isNil(value) || value === "") {
-    setIcon(changeIconColor(theme, disabled));
+    setIcon(changeIconColor(theme, disabled, classes));
   } else {
     setIcon(undefined);
   }
@@ -71,10 +84,10 @@ const iconStateHandler = (value, theme, disabled, setIcon) => {
  *  @param value - the value inside the input.
  */
 const onChangeHandler = (contextValues, value) => {
-  const [onChange, theme, disabled, setIcon] = contextValues;
+  const [onChange, theme, disabled, setIcon, classes] = contextValues;
   let newValue = value;
   newValue = onChange(newValue);
-  iconStateHandler(value, theme, disabled, setIcon);
+  iconStateHandler(value, theme, disabled, setIcon, classes);
   return newValue;
 };
 
@@ -85,10 +98,10 @@ const onChangeHandler = (contextValues, value) => {
  *  @param value - the value inside the input.
  */
 const onFocusHandler = (contextValues, value) => {
-  const [onFocus, theme, disabled, setIcon] = contextValues;
-  iconStateHandler(value, theme, disabled, setIcon);
+  const [onFocus, theme, disabled, setIcon, classes] = contextValues;
+  iconStateHandler(value, theme, disabled, setIcon, classes);
   onFocus(value);
-}
+};
 
 /**
  *  Puts the lens icon back in place.
@@ -97,10 +110,10 @@ const onFocusHandler = (contextValues, value) => {
  *  @param value - the value inside the input.
  */
 const onBlurHandler = (contextValues, value) => {
-  const [onBlur, theme, disabled, setIcon] = contextValues;
-  setIcon(changeIconColor(theme, disabled));
+  const [onBlur, theme, disabled, setIcon, classes] = contextValues;
+  setIcon(changeIconColor(theme, disabled, classes));
   onBlur(value);
-}
+};
 
 const HvSearchBox = props => {
   const {
@@ -122,7 +135,9 @@ const HvSearchBox = props => {
     autoFocus
   } = props;
 
-  const [lensIcon, setIcon] = useState(changeIconColor(theme, disabled));
+  const [lensIcon, setIcon] = useState(
+    changeIconColor(theme, disabled, classes)
+  );
 
   return (
     <>
@@ -139,19 +154,22 @@ const HvSearchBox = props => {
           onChange,
           theme,
           disabled,
-          setIcon
+          setIcon,
+          classes
         ])}
         onBlur={partial(onBlurHandler, [
           onBlur,
           theme,
           disabled,
-          setIcon
+          setIcon,
+          classes
         ])}
         onFocus={partial(onFocusHandler, [
           onFocus,
           theme,
           disabled,
-          setIcon
+          setIcon,
+          classes
         ])}
         onKeyDown={partial(onKeyDownHandler, [onKeyDown, onSubmit])}
         autoFocus={autoFocus}

@@ -1,9 +1,24 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/DawnTheme/User.S";
-import SettingIcon from "@hv/uikit-react-icons/dist/DawnTheme/Settings.S";
-import HelpIcon from "@hv/uikit-react-icons/dist/DawnTheme/Help.S";
+import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
+import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
+import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
 import HitachiLogo from "./resources/hitachi";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
+const StyledHelpIcon = withStyles(styles, { withTheme: true })(HelpIcon);
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -18,22 +33,22 @@ const responsivenessConfig = {
 const actionValues = [
   {
     label: "Profile",
-    leftIcon: UserIcon,
-    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
+    iconCallback: (state) => <StyledUserIcon {...state} />,
+    horizontalItemAction:<StyledUserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
     onVerticalClick: () => alert("Profile"),
     path: "route3"
   },
   {
     label: "Settings",
-    leftIcon: SettingIcon,
-    horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
+    iconCallback: (state) => <StyledSettingIcon {...state} />,
+    horizontalItemAction:<StyledSettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
     onVerticalClick: () => alert("Settings"),
     path: "route3"
   },
   {
     label: "Help",
-    leftIcon: HelpIcon,
-    horizontalItemAction:<HelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
+    iconCallback: (state) => <StyledHelpIcon {...state} />,
+    horizontalItemAction:<StyledHelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
     onVerticalClick: () => alert("Help"),
     path: "route3"
   }

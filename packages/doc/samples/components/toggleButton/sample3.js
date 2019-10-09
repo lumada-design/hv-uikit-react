@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import ToggleButton from "@hv/uikit-react-core/dist/ToggleButton";
-import Lock from "@hv/uikit-react-icons/dist/DawnTheme/Lock.S";
-import Unlock from "@hv/uikit-react-icons/dist/DawnTheme/Unlock.S";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const Eye = props => {
-  const { className, ...other } = props;
+  const { theme, className, ...other } = props;
 
   return (
     <svg
@@ -22,10 +21,10 @@ const Eye = props => {
             __html:
               ".cls-1 {\n        fill: none;\n      }\n" +
               "" +
-              ".cls-2 {\n        fill: #414141;\n      }\n" +
+              ".cls-2 {\n        fill: "+ theme.hv.palette.accent.acce1 +"; \n      }\n" +
               "" +
               ".default > rect{\n\t " +
-              "   fill: #414141\n\t  }\n  " +
+              "   fill: "+ theme.hv.palette.accent.acce1 +"\n\t  }\n  " +
               "" +
               ".selected > rect{\n\t   " +
               "    fill: none;\n     " +
@@ -33,7 +32,7 @@ const Eye = props => {
               "  }\n\t  \n\t " +
               " " +
               ".notSelected > rect{\n\t  " +
-              "    fill: #414141;\n      " +
+              "    fill: "+ theme.hv.palette.accent.acce1 +";\n      " +
               "    animation: dash_in .2s ease-in-out;\n    " +
               "  }\n\n    " +
               " " +
@@ -49,11 +48,11 @@ const Eye = props => {
               "@keyframes dash_out {\n     " +
               "   from {\n        " +
               "     width: 19.8;\n\t\t  " +
-              "     fill: #414141;\n\n       " +
+              "     fill: "+ theme.hv.palette.accent.acce1 +";\n\n       " +
               "   }\n     " +
               "   to {\n     " +
               "     width: 0;\n\t\t" +
-              "     fill: #414141;\n " +
+              "     fill: "+ theme.hv.palette.accent.acce1 +";\n " +
               "       }\n\t\t\n   " +
               "   }\n    "
           }}
@@ -64,7 +63,7 @@ const Eye = props => {
           id="fc623adc-be5e-469d-9072-f0580ca88767"
           className="cls-1"
           d="M8,2c4,0,8,6,8,6s-3.58,6-8,6S0,8,0,8,4,2,8,2Z"
-          transform="translate(0 -0.65)"
+          transform="translate(0 -0.65)"Eye
         />
         <g id="a15f14a7-dffe-4c64-9428-aba4924f7fde">
           <path
@@ -93,9 +92,23 @@ const Eye = props => {
   );
 };
 
+const styles = () => ({
+  rootS: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+});
+
+const StyledLock = withStyles(styles, { withTheme: true })(Eye);
+
 export default (
   <ToggleButton
-    notSelectedIcon={Eye}
+    notSelectedIcon={StyledLock}
     notSelectedTitle="Don't Show"
     selectedTitle="Show"
     animated
