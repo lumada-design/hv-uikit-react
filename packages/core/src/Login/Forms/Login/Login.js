@@ -131,6 +131,7 @@ class Login extends React.Component {
       allowRecover,
       allowRememberMe,
       errorLoginIcon,
+      isLoading,
       userNameInputLabel,
       userNamePlaceHolder,
       passwordInputLabel,
@@ -172,6 +173,7 @@ class Login extends React.Component {
               infoText: ""
             }}
             name="username"
+            disabled={isLoading}
             password={false}
             onChange={this.handleInputChange("username")}
             autoFocus
@@ -185,6 +187,7 @@ class Login extends React.Component {
               infoText: ""
             }}
             name="password"
+            disabled={isLoading}
             password
             onChange={this.handleInputChange("password")}
           />
@@ -207,6 +210,7 @@ class Login extends React.Component {
             type="submit"
             category="primary"
             className={classNames(classes.button, classes.sentenceCase)}
+            disabled={isLoading}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>

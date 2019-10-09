@@ -64,6 +64,15 @@ describe("Login ", () => {
     expect(loginComponent.length).toBe(1);
   });
 
+  it("should enable the Login form after mount", () => {
+    const loginComponent = wrapper.find(LoginForm);
+
+    expect(loginComponent.length).toBe(1);
+    expect(loginComponent.find('input[name="username"]').prop('disabled')).toBe(false);
+    expect(loginComponent.find('input[name="password"]').prop('disabled')).toBe(false);
+    expect(loginComponent.find('button[type="submit"]').prop('disabled')).toBe(false);
+  });
+
   it("shouldn't render the Recovery form", () => {
     const recoverComponent = wrapper.find(Recovery);
 
