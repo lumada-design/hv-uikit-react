@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.3.0...@hv/uikit-react-icons@1.4.0) (2019-10-09)
+
+
+### Features
+
+* **icons:** implement icon semantic colors and sizes. [#425](https://github.com/pentaho/hv-uikit-react/issues/425) ([0a16cbc](https://github.com/pentaho/hv-uikit-react/commit/0a16cbc))
+
+
+
+
+
 # [1.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.2.1...@hv/uikit-react-icons@1.3.0) (2019-09-21)
 
 

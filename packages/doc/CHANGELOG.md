@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.7.1...@hv/uikit-react-doc@1.8.0) (2019-10-09)
+
+
+### Bug Fixes
+
+* **dependencies:** allow deps to retrieve latest minor version. [#532](https://github.com/pentaho/hv-uikit-react/issues/532) ([fff3600](https://github.com/pentaho/hv-uikit-react/commit/fff3600))
+* **linechart:** corrections on samples. [#550](https://github.com/pentaho/hv-uikit-react/issues/550) ([7185ff7](https://github.com/pentaho/hv-uikit-react/commit/7185ff7))
+
+
+### Features
+
+* **card:** implement automatic card actions ([8a2e00c](https://github.com/pentaho/hv-uikit-react/commit/8a2e00c))
+* **cardview:** add component following ds guidelines. [#556](https://github.com/pentaho/hv-uikit-react/issues/556) ([94eda9d](https://github.com/pentaho/hv-uikit-react/commit/94eda9d))
+* **icons:** implement icon semantic colors and sizes. [#425](https://github.com/pentaho/hv-uikit-react/issues/425) ([0a16cbc](https://github.com/pentaho/hv-uikit-react/commit/0a16cbc))
+* **list:** add disableable list items ([b33cf69](https://github.com/pentaho/hv-uikit-react/commit/b33cf69))
+* **listview:** implement List view.[#557](https://github.com/pentaho/hv-uikit-react/issues/557) ([508d4e9](https://github.com/pentaho/hv-uikit-react/commit/508d4e9))
+
+
+
+
+
 ## [1.7.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.7.0...@hv/uikit-react-doc@1.7.1) (2019-09-27)
 
 **Note:** Version bump only for package @hv/uikit-react-doc

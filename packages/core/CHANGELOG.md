@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.6.1...@hv/uikit-react-core@1.7.0) (2019-10-09)
+
+
+### Bug Fixes
+
+* **badge:** correct sizing of container on hover. [#489](https://github.com/pentaho/hv-uikit-react/issues/489) ([cd8fa33](https://github.com/pentaho/hv-uikit-react/commit/cd8fa33))
+* **dependencies:** allow deps to retrieve latest minor version. [#532](https://github.com/pentaho/hv-uikit-react/issues/532) ([fff3600](https://github.com/pentaho/hv-uikit-react/commit/fff3600))
+* **dropdown:** add singleSelectionToggle prop. [#587](https://github.com/pentaho/hv-uikit-react/issues/587) ([d55dc04](https://github.com/pentaho/hv-uikit-react/commit/d55dc04))
+* **login:** replace animated svg for static svg. [#574](https://github.com/pentaho/hv-uikit-react/issues/574) ([274200b](https://github.com/pentaho/hv-uikit-react/commit/274200b))
+* **switch:** remove active hover when toggling to inactive ([9000e71](https://github.com/pentaho/hv-uikit-react/commit/9000e71))
+
+
+### Features
+
+* **card:** implement automatic card actions ([8a2e00c](https://github.com/pentaho/hv-uikit-react/commit/8a2e00c))
+* **cardview:** add component following ds guidelines. [#556](https://github.com/pentaho/hv-uikit-react/issues/556) ([94eda9d](https://github.com/pentaho/hv-uikit-react/commit/94eda9d))
+* **list:** add disableable list items ([b33cf69](https://github.com/pentaho/hv-uikit-react/commit/b33cf69))
+* **listview:** implement List view.[#557](https://github.com/pentaho/hv-uikit-react/issues/557) ([508d4e9](https://github.com/pentaho/hv-uikit-react/commit/508d4e9))
+
+
+
+
+
 ## [1.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.6.0...@hv/uikit-react-core@1.6.1) (2019-09-27)
 
 
