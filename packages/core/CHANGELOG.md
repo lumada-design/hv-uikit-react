@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.7.0...@hv/uikit-react-core@1.7.1) (2019-10-10)
+
+
+### Bug Fixes
+
+* **login:** disable login form initially for ssr [#502](https://github.com/pentaho/hv-uikit-react/issues/502) ([b520f5e](https://github.com/pentaho/hv-uikit-react/commit/b520f5e))
+
+
+
+
+
 # [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.6.1...@hv/uikit-react-core@1.7.0) (2019-10-09)
 
 
