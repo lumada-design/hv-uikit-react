@@ -58,21 +58,21 @@ class MultiButton extends React.Component {
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
 
     if (btnClickable) {
-      return ;
+      return;
     }
 
     if (
       checkedItems.length === minSelection &&
       checkedItems.indexOf(clickedBtnId) !== -1
     ) {
-      return ;
+      return;
     }
 
     if (
       checkedItems.length === maxSelection &&
       checkedItems.indexOf(clickedBtnId) === -1
     ) {
-      return ;
+      return;
     }
 
     if (multi) {
@@ -90,14 +90,13 @@ class MultiButton extends React.Component {
       // a deselected element mimicking the behavior of the button component
       newState = [clickedBtnId];
     } else {
-      return ;
+      return;
     }
 
     this.setState({
       checkedItems: newState
     });
     onChange(newState);
-    
   }
 
   render() {
@@ -133,8 +132,7 @@ class MultiButton extends React.Component {
       let btnStruct;
       if (btnType === "icon") {
         btnStruct = <>{button.icon}</>;
-      }
-      if (btnType === "text") {
+      } else if (btnType === "text") {
         btnStruct = (
           <>
             <div className={classes.labelText}>{button.value}</div>
@@ -144,7 +142,11 @@ class MultiButton extends React.Component {
         btnStruct = (
           <>
             {button.icon}
-            <div className={classes.labelText}>{button.value}</div>
+            <div
+              className={classNames(classes.labelText, classes.labelPadding)}
+            >
+              {button.value}
+            </div>
           </>
         );
       }
@@ -163,6 +165,7 @@ class MultiButton extends React.Component {
             classes.btnBase,
             classes.btnSecondary,
             {
+              [classes.iconWidth]: type === "icon",
               [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
               [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
             },

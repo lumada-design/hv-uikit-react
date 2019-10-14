@@ -23,14 +23,14 @@ import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 const buttonsDefinitions = [
   { id: "map", icon: <Map />, selected: true },
   { id: "location", icon: <LocationPin /> },
-{ id: "map1", icon: <Map /> },
-{ id: "location1", icon: <LocationPin /> },
-{ id: "map2", icon: <Map /> },
-{ id: "location2", icon: <LocationPin /> }
+  { id: "map1", icon: <Map /> },
+  { id: "location1", icon: <LocationPin /> },
+  { id: "map2", icon: <Map /> },
+  { id: "location2", icon: <LocationPin /> }
 ];
 
 export default (
-  <div class="testClass" style={{ width: "150px" }}>
+  <div class="testClass" style={{ width: "34px" }}>
     <MultiButton buttons={buttonsDefinitions} type={"icon"} vertical />
   </div>
 );

@@ -21,6 +21,12 @@ const styles = theme => ({
     alignItems: "center",
     transition:"none",
   },
+  iconWidth:{
+    minWidth: "32px !important"
+  },
+  labelPadding:{
+    marginLeft:8
+  },
   btnBase: {
     maxWidth: 200,
     borderLeft: "none",
