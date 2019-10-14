@@ -17,43 +17,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { map, filter, difference, isEqual, each } from "lodash";
+import { map, filter } from "lodash";
 import HvButton from "../Button";
-
-import calculatedBtnWidth from "./auxiliaryFunctions";
 
 class MultiButton extends React.Component {
   constructor(props) {
     super(props);
 
     const { buttons } = this.props;
-
-    let hasError = false;
-
-    const items = map(buttons, o => Object.keys(o));
-    /**
-     * the contents of filtered are buttons properties, which are optional
-     * and can be omitted when we are validating that the buttons to be rendered
-     * are of the same visual type
-     * */
-    const filtered = map(items, i =>
-      difference(i, ["selected", "multi", "enforced"])
-    );
-
-    /**
-     * All buttons in multibutton should be consistent: i.e, all should be of the same type
-     * icon, text or mixed
-     * compare the properties of the first element with all the remaining
-     * elements in properties set. If there is a mismatch an error is thrown
-     * */
-    const firstItem = filtered.shift();
-    each(filtered, item => {
-      if (!isEqual(firstItem, item)) {
-        hasError = true;
-        return -1;
-      }
-      return 1;
-    });
 
     /**
      * parse button properties and if any buttons are preset as selected
@@ -69,16 +40,13 @@ class MultiButton extends React.Component {
      * set the button props
      */
     this.state = {
-      checkedItems: initialCompState,
-      hasError
+      checkedItems: initialCompState
     };
   }
 
   handleClick(e, idx) {
     const { checkedItems } = this.state;
-    const { onChange, multi, minSelection, buttons } = this.props;
-
-    const { target } = e;
+    const { onChange, multi, minSelection, maxSelection, buttons } = this.props;
 
     let newState;
 
@@ -90,14 +58,21 @@ class MultiButton extends React.Component {
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
 
     if (btnClickable) {
-      return -1;
+      return ;
     }
 
     if (
       checkedItems.length === minSelection &&
       checkedItems.indexOf(clickedBtnId) !== -1
     ) {
-      return -1;
+      return ;
+    }
+
+    if (
+      checkedItems.length === maxSelection &&
+      checkedItems.indexOf(clickedBtnId) === -1
+    ) {
+      return ;
     }
 
     if (multi) {
@@ -105,70 +80,28 @@ class MultiButton extends React.Component {
       if (clickedBtnPositionInState === -1) {
         // handle state change
         newState = [...checkedItems, buttons[idx].id];
-        target.dataset.selectionindicator = "selected";
       } else {
         const itemToRemove = clickedBtnPositionInState;
         newState = checkedItems.filter((_, i) => i !== itemToRemove);
-        target.dataset.selectionindicator = "notSelected";
       }
-    } else if (clickedBtnPositionInState !== -1) {
+    } else if (clickedBtnPositionInState === -1) {
       // handle state change
-      newState = [];
-      target.dataset.selectionindicator = "notSelected";
-    } else {
+      // this enforces that the change happens only when we click on
+      // a deselected element mimicking the behavior of the button component
       newState = [clickedBtnId];
-      target.dataset.selectionindicator = "selected";
+    } else {
+      return ;
     }
 
     this.setState({
       checkedItems: newState
     });
     onChange(newState);
-
-    return 1;
+    
   }
 
   render() {
-    const {
-      className,
-      classes,
-      vertical,
-      type,
-      buttons
-    } = this.props;
-
-    const { hasError } = this.state;
-
-    if (hasError) {
-      throw new Error(
-        "Button Definitions in Component are inconsistent! Buttons should be consistent"
-      );
-    }
-
-    /**
-     * btnWidth is calculated taking into account the longest name
-     * in the buttons props, and then calculating the number of characters in the string
-     * by an arbitrary value that is defined in the settings file.
-     * The calculation is handled by calculatedBtnWidth in the auxiliary functions file
-     * */
-    const btnWidth = calculatedBtnWidth(buttons, type);
-    /**
-     * we need to calculate the width of the container that will
-     * contain the button in a vertical display
-     * as the button width can vary this has to be calculated taking into
-     * account the display mode and the length of the elements to display in
-     * the multibutton component
-     * */
-    const multiBtnContainerWidth =
-      btnWidth * (vertical ? 1 : buttons.length) + 2;
-
-    /**
-     * this function applies a minimum width to each button dynamically as there is
-     * variability due to the button types: icon has a min width of 32, all other types
-     * should have a minimum width of 70, however in ideal scenarios the minimum width
-     * should be the same width as the calculated width for the button
-     * */
-    const inlineStylesGenerator = () => ({ minWidth: btnWidth, padding: 0 });
+    const { className, classes, vertical, type, buttons } = this.props;
 
     /**
      * This function checks if the clicked button is stored in state, if so
@@ -192,6 +125,33 @@ class MultiButton extends React.Component {
       return indicatorProp;
     };
 
+    /**
+     * Generate button content elements to render the component itself
+     */
+
+    const generateBtnContents = (btnType, button) => {
+      let btnStruct;
+      if (btnType === "icon") {
+        btnStruct = <>{button.icon}</>;
+      }
+      if (btnType === "text") {
+        btnStruct = (
+          <>
+            <div className={classes.labelText}>{button.value}</div>
+          </>
+        );
+      } else {
+        btnStruct = (
+          <>
+            {button.icon}
+            <div className={classes.labelText}>{button.value}</div>
+          </>
+        );
+      }
+
+      return btnStruct;
+    };
+
     const buttonList = buttons.map((button, idx) => {
       const { checkedItems } = this.state;
       return (
@@ -209,17 +169,9 @@ class MultiButton extends React.Component {
             className
           )}
           category={button.selected ? "secondary" : "ghost"}
-          style={inlineStylesGenerator()}
           data-selectionindicator={selectionIndicator(button)}
         >
-          {type === "icon" && <>{button.icon}</>}
-          {type === "text" && <>{button.value}</>}
-          {type === "mixed" && (
-            <>
-              {button.icon}
-              {button.value}
-            </>
-          )}
+          {generateBtnContents(type, button)}
         </HvButton>
       );
     });
@@ -229,7 +181,6 @@ class MultiButton extends React.Component {
         className={classNames(classes.root, {
           [classes.rootVertical]: vertical
         })}
-        style={{ width: multiBtnContainerWidth }}
       >
         {buttonList}
       </div>
@@ -301,7 +252,11 @@ MultiButton.propTypes = {
   /**
    * Specify minimum number of selections in component
    */
-  minSelection: PropTypes.number
+  minSelection: PropTypes.number,
+  /**
+   * Specify maximum number of selections in component
+   */
+  maxSelection: PropTypes.number
 };
 
 MultiButton.defaultProps = {
@@ -309,7 +264,8 @@ MultiButton.defaultProps = {
   vertical: false,
   multi: false,
   onChange: () => {},
-  minSelection: 0
+  minSelection: 0,
+  maxSelection: null
 };
 
 export default MultiButton;
