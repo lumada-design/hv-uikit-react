@@ -16,10 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import Card from "../../Card";
 import Grid from "../../Grid";
-import { ViewContextProvider } from "./ViewContext";
 
 /**
  * Definition of which render should be used.
@@ -29,13 +27,14 @@ import { ViewContextProvider } from "./ViewContext";
  * @returns {function(*, *): *}
  * @constructor
  */
-const CardRenderChooser = (viewConfiguration, render) => {
+const CardRenderChooser = (
+  viewConfiguration,
+  render,
+  innerCardContent,
+  metadata
+) => {
   if (render) {
-    return data => (
-      <ViewContextProvider value={viewConfiguration}>
-        {render(data)}
-      </ViewContextProvider>
-    );
+    return data => render(data, viewConfiguration, metadata);
   }
   return (data, others) => (
     <Card
@@ -45,6 +44,7 @@ const CardRenderChooser = (viewConfiguration, render) => {
       isSelectable={viewConfiguration.isSelectable}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
+      innerCardContent={innerCardContent ? innerCardContent(data) : undefined}
       {...others}
     />
   );
@@ -67,13 +67,21 @@ const CardView = ({
   id,
   className,
   classes,
+  icon,
   values,
   renderer,
   viewConfiguration,
+  innerCardContent,
+  metadata,
   ...others
 }) => {
   // If no custom render is passed, the render uses the standard card implementation
-  const cardRender = CardRenderChooser(viewConfiguration, renderer);
+  const cardRender = CardRenderChooser(
+    viewConfiguration,
+    renderer,
+    innerCardContent,
+    metadata
+  );
 
   const { breakpoints } = viewConfiguration;
 
@@ -96,17 +104,19 @@ const CardView = ({
   ));
 
   return (
-    <Grid
-      id={id}
-      container
-      className={classNames(className, classes.gridContainer)}
-      justify="center"
-      alignItems="center"
-      spacing={30}
-      {...others}
-    >
-      {renderCards}
-    </Grid>
+    <div className={classes.root}>
+      <Grid
+        id={id}
+        container
+        className={className}
+        justify="flex-start"
+        alignItems="center"
+        spacing={30}
+        {...others}
+      >
+        {renderCards}
+      </Grid>
+    </div>
   );
 };
 
@@ -126,6 +136,25 @@ CardView.propTypes = {
     gridContainer: PropTypes.string
   }).isRequired,
   /**
+   * Icon used in the multi button in the assert inventory.
+   */
+  icon: PropTypes.node.isRequired,
+  /**
+   * Metadata associated with the values.
+   */
+  metadata: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      accessor: PropTypes.string,
+      cellType: PropTypes.oneOf(["alpha-numeric", "numeric", "date", "node"]),
+      sortable: PropTypes.bool,
+      sortFunction: PropTypes.func,
+      searchable: PropTypes.bool,
+      searchFunction: PropTypes.func
+    })
+  ),
+  /**
    * Values to be passed to the card render.
    */
   values: PropTypes.instanceOf(Array).isRequired,
@@ -133,6 +162,10 @@ CardView.propTypes = {
    * Custom render for the cards.
    */
   renderer: PropTypes.func,
+  /**
+   * innerCardContent to be passed to the standard render.
+   */
+  innerCardContent: PropTypes.func,
   /**
    * Configuration settings for the view.
    */
@@ -255,6 +288,8 @@ CardView.defaultProps = {
   className: "",
   id: "",
   renderer: undefined,
+  innerCardContent: undefined,
+  metadata: undefined,
   viewConfiguration: {
     onSelection: null,
     breakpoints: {

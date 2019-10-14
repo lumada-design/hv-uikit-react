@@ -21,7 +21,7 @@ import HvGrid from "@hv/uikit-react-core/dist/Grid";
 storiesOf("Layout", module).add("Grid", () => <HvGrid />, {
   title: "Grid",
   description:
-    "The implemented Grid is based in the <a href=\"https://v3.material-ui.com/layout/grid/#grid\">Material UI</a> implementation.<br/><br/> The definitions where set following the design system directives:<br><br>" +
+    'The implemented Grid is based in the <a href="https://v3.material-ui.com/layout/grid/#grid">Material UI</a> implementation.<br/><br/> The definitions where set following the design system directives:<br><br>' +
     "<table border='2'" +
     "  <tr>" +
     "   <th>Breakpoint</th>" +

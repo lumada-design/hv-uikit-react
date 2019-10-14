@@ -17,16 +17,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import map from "lodash/map";
 import isNil from "lodash/isNil";
 import HvTypography from "../../../Typography";
 
 const HeaderCells = (classes, columnConfiguration) =>
-  map(columnConfiguration, configuration => {
+  columnConfiguration.map((configuration, index) => {
     const alignConf =
       !isNil(configuration) && !isNil(configuration.align)
         ? configuration.align
         : undefined;
+
+    const keyIndex = `th${index}`;
 
     return (
       <th
@@ -35,6 +36,8 @@ const HeaderCells = (classes, columnConfiguration) =>
         })}
         style={{ ...configuration.style }}
         align={alignConf}
+        id={index}
+        key={keyIndex}
       >
         <HvTypography variant="labelText">{configuration.title}</HvTypography>
       </th>

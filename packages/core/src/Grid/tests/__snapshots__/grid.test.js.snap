@@ -16151,7 +16151,6 @@ body {
             lg="false"
             md="false"
             sm="false"
-            spacing={0}
             theme={
               Object {
                 "breakpoints": Object {

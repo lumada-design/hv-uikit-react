@@ -18,31 +18,35 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 
-storiesOf("Components/Notifications", module).add("Snackbar", () => <HvSnackbar />, {
-  title: "Snackbar",
-  description:
-    "Snackbars provide brief messages about app processes through a message",
-  usage: "import HvSnackbar from '@hv/uikit-react-core/dist/Snackbar'",
-  examples: [
-    {
-      title: "1. Different variants",
-      src: "components/snackbar/snackbar1"
-    },
-    {
-      title: "2. With custom icon",
-      src: "components/snackbar/snackbar2"
-    },
-    {
-      title: "3. Without icon",
-      src: "components/snackbar/snackbar3"
-    },
-    {
-      title: "4. With actions",
-      src: "components/snackbar/snackbar4"
-    },
-    {
-      title: "5. Examples of snackbars",
-      src: "components/snackbar/snackbar5"
-    }
-  ]
-});
+storiesOf("Components/Notifications", module).add(
+  "Snackbar",
+  () => <HvSnackbar />,
+  {
+    title: "Snackbar",
+    description:
+      "Snackbars provide brief messages about app processes through a message",
+    usage: "import HvSnackbar from '@hv/uikit-react-core/dist/Snackbar'",
+    examples: [
+      {
+        title: "1. Different variants",
+        src: "components/snackbar/snackbar1"
+      },
+      {
+        title: "2. With custom icon",
+        src: "components/snackbar/snackbar2"
+      },
+      {
+        title: "3. Without icon",
+        src: "components/snackbar/snackbar3"
+      },
+      {
+        title: "4. With actions",
+        src: "components/snackbar/snackbar4"
+      },
+      {
+        title: "5. Examples of snackbars",
+        src: "components/snackbar/snackbar5"
+      }
+    ]
+  }
+);

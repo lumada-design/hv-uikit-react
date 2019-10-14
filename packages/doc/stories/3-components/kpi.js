@@ -25,9 +25,9 @@ storiesOf("Components/Visualization", module).add("KPI", () => <HvKpi />, {
   usage: "import HvKpi from '@hv/uikit-react-core/dist/Kpi'",
   examples: [
     {
-        title: "1. Simple",
-        description: "One of the most basic functionality of the kpi component",
-        src: "components/kpi/kpiSimple"
+      title: "1. Simple",
+      description: "One of the most basic functionality of the kpi component",
+      src: "components/kpi/kpiSimple"
     },
     {
       title: "2. Average service time",
@@ -35,19 +35,19 @@ storiesOf("Components/Visualization", module).add("KPI", () => <HvKpi />, {
       src: "components/kpi/kpiAverage"
     },
     {
-        title: "3. Total IOPS",
-        description: "A kpi showing the total IOPS",
-        src: "components/kpi/kpiIOPS"
+      title: "3. Total IOPS",
+      description: "A kpi showing the total IOPS",
+      src: "components/kpi/kpiIOPS"
     },
     {
-        title: "4. Total Throughput",
-        description: "A kpi showing the total IOPS",
-        src: "components/kpi/kpiThroughput"
+      title: "4. Total Throughput",
+      description: "A kpi showing the total IOPS",
+      src: "components/kpi/kpiThroughput"
     },
     {
-        title: "5. Storage output Throughput",
-        description: "A kpi of the number of storage arrays",
-        src: "components/kpi/kpiStorageArray"
+      title: "5. Storage output Throughput",
+      description: "A kpi of the number of storage arrays",
+      src: "components/kpi/kpiStorageArray"
     },
     {
       title: "6. Nodes",

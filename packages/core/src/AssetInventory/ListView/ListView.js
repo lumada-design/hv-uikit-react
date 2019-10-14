@@ -20,38 +20,54 @@ import isNil from "lodash/isNil";
 import classnames from "classnames";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
+import Grid from "../../Grid";
 
-const Rows = ({ renderer, values }) => values.map(value => renderer(value));
+const Rows = ({ renderer, values, viewConfiguration, metadata }) =>
+  values.map((value, index) =>
+    renderer(value, index, viewConfiguration, metadata)
+  );
 
 const ListView = ({
   className,
   id,
+  icon,
   viewConfiguration,
   classes,
   renderer,
   values,
   cellSpacing,
+  metadata,
   ...other
 }) => (
-  <table
-    className={classnames(className, classes.root)}
-    cellSpacing={cellSpacing}
-    id={id}
-    {...other}
-  >
-    {!isNil(viewConfiguration) &&
-      !isNil(viewConfiguration.columnConfiguration) &&
-      viewConfiguration.columnConfiguration.length > 0 && (
-        <thead className={classes.tableHead}>
-          <ListViewHeaderRow viewConfiguration={viewConfiguration} />
-        </thead>
-      )}
-    <tbody className={classes.tableBody}>
-      <ListViewContextProvider value={viewConfiguration}>
-        <Rows classes={classes} renderer={renderer} values={values} />
-      </ListViewContextProvider>
-    </tbody>
-  </table>
+  <Grid container justify="center" alignContent="stretch">
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <table
+        className={classnames(className, classes.root)}
+        cellSpacing={cellSpacing}
+        id={id}
+        {...other}
+      >
+        {!isNil(viewConfiguration) &&
+          !isNil(viewConfiguration.columnConfiguration) &&
+          viewConfiguration.columnConfiguration.length > 0 && (
+            <thead className={classes.tableHead}>
+              <ListViewHeaderRow viewConfiguration={viewConfiguration} />
+            </thead>
+          )}
+        <tbody className={classes.tableBody}>
+          <ListViewContextProvider value={viewConfiguration}>
+            <Rows
+              classes={classes}
+              renderer={renderer}
+              values={values}
+              metadata={metadata}
+              viewConfiguration={viewConfiguration}
+            />
+          </ListViewContextProvider>
+        </tbody>
+      </table>
+    </Grid>
+  </Grid>
 );
 
 ListView.propTypes = {
@@ -63,6 +79,10 @@ ListView.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * Icon used in the multi button in the assert inventory.
+   */
+  icon: PropTypes.node.isRequired,
   /**
    * Configuration used to setup various properties of the view.
    * This configuration is propagated to the known childs of the asset inventory through context.
@@ -111,14 +131,30 @@ ListView.propTypes = {
   /**
    * The spacing between the cells correspond to the usual htlm table attribute
    */
-  cellSpacing: PropTypes.string
+  cellSpacing: PropTypes.string,
+  /**
+   * Metadata associated with the values.
+   */
+  metadata: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      accessor: PropTypes.string,
+      cellType: PropTypes.oneOf(["alpha-numeric", "numeric", "date", "node"]),
+      sortable: PropTypes.bool,
+      sortFunction: PropTypes.func,
+      searchable: PropTypes.bool,
+      searchFunction: PropTypes.func
+    })
+  )
 };
 
 ListView.defaultProps = {
   cellSpacing: "0",
   viewConfiguration: null,
   className: "",
-  id: ""
+  id: "",
+  metadata: undefined
 };
 
 export default ListView;

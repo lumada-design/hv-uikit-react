@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import isNil from "lodash/isNil";
 
 const BREAKPOINT_GUTTERS = {
   xs: 15,
@@ -54,7 +55,9 @@ const Grid = React.forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const breakpointSpacing = spacing || BREAKPOINT_GUTTERS[width];
+  const breakpointSpacing = !isNil(spacing)
+    ? spacing
+    : BREAKPOINT_GUTTERS[width];
 
   const className = classNames(
     classes.root,
@@ -309,7 +312,7 @@ Grid.defaultProps = {
   lg: "false",
   md: "false",
   sm: "false",
-  spacing: 0,
+  spacing: undefined,
   wrap: "wrap",
   xl: "false",
   xs: "false",

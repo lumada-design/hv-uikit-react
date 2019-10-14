@@ -42,7 +42,6 @@ const cell = (
     !isNil(columnConfiguration[columnIndex].align)
       ? columnConfiguration[columnIndex].align
       : undefined;
-
   return (
     <td
       className={classNames(className, classes.root, {

@@ -15,7 +15,8 @@
  */
 
 const styles = () => ({
-  gridContainer: {}
+  root: {
+  },
 });
 
 export default styles;
