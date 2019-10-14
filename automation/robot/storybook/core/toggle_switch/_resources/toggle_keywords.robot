@@ -41,5 +41,5 @@ verify toogle properties
     
 Verify toggle check state
     [Arguments]    ${locator}    ${state}
-    Wait Until Keyword Succeeds    3    500ms    verify element property value    ${locator}    checked    ${state}    
+    Wait Until Keyword Succeeds    3    500ms    Element Attribute Value Should Be    ${locator}    checked    ${state}    
     
