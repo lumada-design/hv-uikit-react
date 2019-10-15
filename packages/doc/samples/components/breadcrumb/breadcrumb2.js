@@ -3,31 +3,31 @@ import HvBreadCrumb from "@hv/uikit-react-core/dist/BreadCrumb";
 
 const data = [
   {
-    label: "Label1",
+    label: "Label 1",
     path: "route1"
   },
   {
-    label: "Label2",
+    label: "Label 2",
     path: "route2"
   },
   {
-    label: "Label3",
+    label: "Label 3",
     path: "route3"
   },
   {
-    label: "Label4",
+    label: "Label 4",
     path: "route2"
   },
   {
-    label: "Label5",
+    label: "Label 5",
     path: "route3"
   },
   {
-    label: "Label6",
+    label: "Label 6",
     path: "route2"
   },
   {
-    label: "Label7",
+    label: "Label 7",
     path: "route3"
   }
 ];

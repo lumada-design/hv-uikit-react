@@ -8,8 +8,6 @@ Default Tags      smoke
 
 *** Test Cases ***
 breadcrumb tooltip 2 paths visible of 8
-    [Tags]    issue
-    [Documentation]    https://github.com/pentaho/hv-uikit-react/issues/634
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corebreadcrumb--breadcrumb3
     Wait Until Element Is Visible    //div[contains(@class,'BreadCrumb-root')]    10s
     Element Text Should Be           //div[contains(@class,'BreadCrumb-root')]    Label 1\nLabel 8
