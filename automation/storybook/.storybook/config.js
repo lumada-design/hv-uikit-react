@@ -15,7 +15,8 @@ const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
 
-let appTheme = "dawn";
+const params = new URLSearchParams(window.location.search);
+const defaultTheme = params.get("theme") || "dawn";
 
 addParameters({
   options: {
@@ -35,7 +36,6 @@ const App = ({ story, initialTheme }) => {
   const switchTheme = () => {
     let newTheme = theme === "dawn" ? "wicked" : "dawn";
     setTheme(newTheme);
-    appTheme = newTheme;
   };
 
   return (
@@ -49,6 +49,6 @@ const App = ({ story, initialTheme }) => {
   );
 };
 
-addDecorator(story => <App story={story} initialTheme={appTheme} />);
+addDecorator(story => <App story={story} initialTheme={defaultTheme} />);
 
 configure(loadStories, module);
