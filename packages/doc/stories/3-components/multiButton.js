@@ -108,6 +108,5 @@ storiesOf("Components", module).add("MultiButton", () => <MultiButton />, {
       description: "Change multibutton properties, triggered by external an agent",
       src: "components/multiButton/horizontalSamples/inputControlledValue.js"
     }
-
   ]
 });

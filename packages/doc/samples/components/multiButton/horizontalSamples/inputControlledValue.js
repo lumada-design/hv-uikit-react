@@ -7,7 +7,7 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const btnStyle = {
-  width: "50px",
+  width: "110px",
   height: "50px",
   margin: "10px"
 };
