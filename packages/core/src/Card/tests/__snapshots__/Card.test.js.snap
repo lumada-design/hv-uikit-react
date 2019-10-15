@@ -3623,7 +3623,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999968,
+            "index": -99999999967,
           },
           "themingEnabled": true,
         } => Map {
@@ -4967,7 +4967,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999968,
+                "index": -99999999967,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5823,7 +5823,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999968,
+                  "index": -99999999967,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -18090,7 +18090,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999969,
+            "index": -99999999968,
           },
           "themingEnabled": true,
         } => Map {
@@ -19394,7 +19394,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999969,
+                "index": -99999999968,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -19943,7 +19943,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999969,
+                  "index": -99999999968,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -20081,7 +20081,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999970,
+            "index": -99999999969,
           },
           "themingEnabled": false,
         } => Map {
@@ -21385,7 +21385,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999970,
+                "index": -99999999969,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -21934,7 +21934,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999970,
+                  "index": -99999999969,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26044,7 +26044,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999971,
+            "index": -99999999970,
           },
           "themingEnabled": true,
         } => Map {
@@ -27350,7 +27350,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999971,
+                "index": -99999999970,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -27917,7 +27917,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999971,
+                  "index": -99999999970,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
