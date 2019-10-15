@@ -15,16 +15,19 @@ const smallData = [
     label: "value 4"
   },
   {
-    label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5"
+    label:
+      "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5"
   }
 ];
 
 export default (
-  <HvDropdown
-    values={smallData}
-    multiSelect={false}
-    showSearch={false}
-    selectDefault={false}
-    hasTooltips
-  />
+  <div style={{ width: "310px" }}>
+    <HvDropdown
+      values={smallData}
+      multiSelect={false}
+      showSearch={false}
+      selectDefault={false}
+      hasTooltips
+    />
+  </div>
 );

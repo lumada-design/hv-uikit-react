@@ -20,4 +20,8 @@ const smallData = [
   }
 ];
 
-export default <HvDropdown values={smallData} multiSelect={false} showSearch />;
+export default (
+  <div style={{ width: "310px" }}>
+    <HvDropdown values={smallData} multiSelect={false} showSearch />
+  </div>
+);

@@ -48,5 +48,7 @@ const data = [
 ];
 
 export default (
-  <HvDropdown values={data} multiSelect showSearch={false} disabled />
+  <div style={{ width: "310px" }}>
+    <HvDropdown values={data} multiSelect showSearch={false} disabled />
+  </div>
 );

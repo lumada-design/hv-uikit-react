@@ -42,10 +42,12 @@ const data = [
 ];
 
 export default (
-  <HvDropdown
-    values={data}
-    multiSelect={false}
-    showSearch
-    notifyChangesOnFirstRender
-  />
+  <div style={{ width: "310px" }}>
+    <HvDropdown
+      values={data}
+      multiSelect={false}
+      showSearch
+      notifyChangesOnFirstRender
+    />
+  </div>
 );
