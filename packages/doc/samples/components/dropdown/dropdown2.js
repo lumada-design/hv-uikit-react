@@ -58,5 +58,13 @@ const labels = {
 };
 
 export default (
-  <HvDropdown values={data} multiSelect showSearch labels={labels} className="bananas"/>
+  <div style={{ width: "310px" }}>
+    <HvDropdown
+      values={data}
+      multiSelect
+      showSearch
+      labels={labels}
+      className="bananas"
+    />
+  </div>
 );

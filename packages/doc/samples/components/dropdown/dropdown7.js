@@ -21,5 +21,12 @@ const smallData = [
 ];
 
 export default (
-  <HvDropdown values={smallData} onChange={item=>console.log(item)} multiSelect={false} showSearch={false} />
+  <div style={{ width: "310px" }}>
+    <HvDropdown
+      values={smallData}
+      onChange={item => console.log(item)}
+      multiSelect={false}
+      showSearch={false}
+    />
+  </div>
 );

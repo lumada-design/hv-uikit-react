@@ -17,8 +17,8 @@
 const styles = theme => ({
   root: {
     position: "relative",
-    maxWidth: 310,
-    minWidth: 310,
+    // maxWidth: 310,
+    // minWidth: 310,
     background: theme.hv.palette.atmosphere.atmo1,
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     "&:hover": {

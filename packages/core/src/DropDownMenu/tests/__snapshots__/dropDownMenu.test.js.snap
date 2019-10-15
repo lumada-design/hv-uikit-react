@@ -5075,6 +5075,7 @@ body {
 }
 .DropDownMenu-iconSelected-50 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
+  margin-right: 0;
   background-color: #FFFFFF;
 }
 .DropDownMenu-iconSelected-50:hover {
@@ -5126,6 +5127,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -5156,6 +5158,7 @@ body {
                   ".DropDownMenu-iconSelected-50": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   ".DropDownMenu-iconSelected-50:hover": Object {
                     "background-color": "#FFFFFF",
@@ -5184,6 +5187,7 @@ body {
                   "iconSelected": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   "menuList": Object {
                     "background-color": "#FFFFFF",
@@ -5712,6 +5716,7 @@ body {
                     },
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "marginRight": 0,
                   },
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
@@ -12747,6 +12752,7 @@ body {
 }
 .DropDownMenu-iconSelected-3 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
+  margin-right: 0;
   background-color: #FFFFFF;
 }
 .DropDownMenu-iconSelected-3:hover {
@@ -12798,6 +12804,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -12828,6 +12835,7 @@ body {
                   ".DropDownMenu-iconSelected-3": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   ".DropDownMenu-iconSelected-3:hover": Object {
                     "background-color": "#FFFFFF",
@@ -12856,6 +12864,7 @@ body {
                   "iconSelected": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   "menuList": Object {
                     "background-color": "#FFFFFF",
@@ -13384,6 +13393,7 @@ body {
                     },
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "marginRight": 0,
                   },
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
@@ -20419,6 +20429,7 @@ body {
 }
 .DropDownMenu-iconSelected-7 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
+  margin-right: 0;
   background-color: #FFFFFF;
 }
 .DropDownMenu-iconSelected-7:hover {
@@ -20470,6 +20481,7 @@ body {
                   Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -20500,6 +20512,7 @@ body {
                   ".DropDownMenu-iconSelected-7": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   ".DropDownMenu-iconSelected-7:hover": Object {
                     "background-color": "#FFFFFF",
@@ -20528,6 +20541,7 @@ body {
                   "iconSelected": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "margin-right": 0,
                   },
                   "menuList": Object {
                     "background-color": "#FFFFFF",
@@ -21056,6 +21070,7 @@ body {
                     },
                     "backgroundColor": "#FFFFFF",
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
+                    "marginRight": 0,
                   },
                   "menuList": Object {
                     "backgroundColor": "#FFFFFF",
