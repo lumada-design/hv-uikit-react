@@ -38,7 +38,9 @@ const HvKpi = props => {
   return (
     <div id={id} className={classNames(classes.kpiContainer, className)}>
       <div>
-        <HvTypography variant="highlightText">{definedLabels.title}</HvTypography>
+        <HvTypography variant="highlightText">
+          {definedLabels.title}
+        </HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
@@ -51,15 +53,24 @@ const HvKpi = props => {
             {visualIndicator}
           </div>
         )}
-        <HvTypography className={classNames(classes.spacingToTheRight, classes.indicatorText)} variant={indicatorTextVariant}>
+        <HvTypography
+          className={classNames(
+            classes.spacingToTheRight,
+            classes.indicatorText
+          )}
+          variant={indicatorTextVariant}
+        >
           {definedLabels.indicator}
         </HvTypography>
-        <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
+        <HvTypography
+          className={classes.indicatorUnit}
+          variant={indicatorUnitTextVariant}
+        >
           {definedLabels.unit}
         </HvTypography>
       </div>
-      <div className={classes.comparisonContainer}>
-        {visualComparison != null && (
+      {visualComparison != null && (
+        <div className={classes.comparisonContainer}>
           <HvTypography
             className={classNames(
               classes.comparisons,
@@ -69,11 +80,11 @@ const HvKpi = props => {
           >
             {visualComparison}
           </HvTypography>
-        )}
-        <HvTypography className={classes.comparisons} variant="vizText">
-          {definedLabels.comparisonIndicatorInfo}
-        </HvTypography>
-      </div>
+          <HvTypography className={classes.comparisons} variant="vizText">
+            {definedLabels.comparisonIndicatorInfo}
+          </HvTypography>
+        </div>
+      )}
     </div>
   );
 };
@@ -164,14 +175,19 @@ HvKpi.propTypes = {
     unit: PropTypes.string,
     comparisonIndicatorInfo: PropTypes.string
   }),
-  /** 
-   *  The typography variant used in the main text indicator of the KPI 
+  /**
+   *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorTextVariant: PropTypes.oneOf(["5xlTitle","xxlTitle","lTitle","sTitle"]),
-  /** 
-   *  The typography variant used in the main text indicator of the KPI 
+  indicatorTextVariant: PropTypes.oneOf([
+    "5xlTitle",
+    "xxlTitle",
+    "lTitle",
+    "sTitle"
+  ]),
+  /**
+   *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sText","infoText"])
+  indicatorUnitTextVariant: PropTypes.oneOf(["sText", "infoText"])
 };
 
 HvKpi.defaultProps = {
