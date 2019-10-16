@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-import React from "react";
-import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
+const stylesDropdownMenu = theme => ({
+  icon: {
+    height: 33,
+    width: 32,
+    position: "relative",
+    boxSizing: "content-box",
+    color: theme.hv.palette.accent.acce1,
+    padding: 0,
+    "&:hover": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    borderRadius: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
 
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
-
-const buttonsDefinitions = [
-  { id: "map", icon: <Map />, selected: true },
-  { id: "location", icon: <LocationPin /> }
-];
-
-export default (
-  <div style={{ width: "34px" }}>
-    <MultiButton buttons={buttonsDefinitions} type={"icon"} multi />
-  </div>
-);
+export default stylesDropdownMenu;
