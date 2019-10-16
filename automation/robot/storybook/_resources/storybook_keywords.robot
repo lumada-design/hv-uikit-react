@@ -114,16 +114,22 @@ verify css element property has different value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}       get constanct css property value    ${locator}    ${property}
     Should Not Be Equal    ${current_value}                    ${value}      error message: the css element property should have different value of "${value}"
-    
+
+verify element count
+    [Arguments]    ${locator}    ${counts}
+    [Documentation]    
+    ...   | Arguments: | Description | Default Value |
+    ...   | locator | supported selenium Library locators |
+    ...   | counts | (integer) of expected counts |
+    ...          
+    ${got_counts}      Get Element Count     //div[@class='MultiButton-root-147']//button
+    ${counts}          Convert To Integer    ${counts}
+    Should Be Equal    ${got_counts}         ${counts}
+
 verify element is not focused
     [Arguments]        ${locator}
     ${value}           Run Keyword And Return Status    Element Should Be Focused    ${locator}
     Should Be Equal    ${value}                         ${False}                     error message: The element is focused
-
-verify element property value
-    [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}    Get Element Attribute    ${locator}    ${property}
-    Should Be Equal     ${current_value}         ${value}      error message: the element property don't have the correct value
 
 verify element property has different value
     [Arguments]    ${locator}    ${property}    ${value}
