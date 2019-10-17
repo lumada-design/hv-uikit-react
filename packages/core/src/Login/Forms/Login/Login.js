@@ -139,10 +139,17 @@ class Login extends React.Component {
       loginButtonLabel,
       forgotYourCredentialMessage,
       rememberMeLabel,
-      incorrectCredentialsMessage
+      incorrectCredentialsMessage,
+      customMessage
     } = this.props;
     const { isLogging, loginError } = this.state;
 
+    const customMessageElement = ( !loginError && customMessage != null ) ?
+      (<MessageElement
+        showMessage={classes.showCustomMessage}
+        message={customMessage}
+      />
+      ) : null;
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
         <div className={classes.title}>
@@ -161,7 +168,7 @@ class Login extends React.Component {
               showMessage={classes.showMessage}
               message={incorrectCredentialsMessage}
             />
-          ) : null}
+          ) : customMessageElement }
         </div>
 
         <div className={classes.inputUser}>
@@ -302,7 +309,12 @@ Login.propTypes = {
   /**
    * Indicates if the Login is fully loaded.
    */
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  /**
+   * A custom message to be shown in the error area.
+   * Will be overridden by any error messages.
+   */
+  customMessage: PropTypes.string
 };
 
 Login.defaultProps = {
@@ -312,7 +324,8 @@ Login.defaultProps = {
   allowRecover: false,
   allowRememberMe: false,
   errorLoginIcon: null,
-  isLoading: false
+  isLoading: false,
+  customMessage: null
 };
 
 export default Login;

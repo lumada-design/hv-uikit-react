@@ -66,6 +66,7 @@ class HvLogin extends React.Component {
       okRecoveryIcon,
       errorLoginIcon,
       labels,
+      customMessage,
       recoveryTitle,
       messageToRecover,
       messageAfterRecover,
@@ -77,7 +78,8 @@ class HvLogin extends React.Component {
       passwordInputLabel,
       passwordPlaceHolder,
       rememberMeLabel,
-      incorrectCredentialsMessage
+      incorrectCredentialsMessage,
+      formClasses
     } = this.props;
     const { inRecoveryMode, isLoading } = this.state;
     const backgroundLoginImg = !backgroundImage.length
@@ -137,6 +139,8 @@ class HvLogin extends React.Component {
           loginButtonLabel={labels.loginButtonLabel}
           forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
           isLoading={isLoading}
+          customMessage={customMessage.text}
+          classes={formClasses}
         />
       );
     }
@@ -205,6 +209,16 @@ HvLogin.propTypes = {
      */
     formContainer: PropTypes.string
   }).isRequired,
+
+  /**
+   *  the classes object to be applied into the inner form.
+   */
+  formClasses: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string
+  }),
   /**
    * the function invoked for the log in
    */
@@ -293,6 +307,13 @@ HvLogin.propTypes = {
     recoverButton: PropTypes.string.isRequired,
     recoveringMessage: PropTypes.string.isRequired,
     incorrectCredentialsMessage: PropTypes.string
+  }),
+  /**
+   * A custom message to be shown in the error area.
+   * Will be overridden by any error messages.
+   */
+  customMessage: PropTypes.shape({
+    text: PropTypes.string,
   }),
   /**
    * Recovery title.
@@ -389,6 +410,8 @@ HvLogin.defaultProps = {
     incorrectCredentialsMessage:
       "Incorrect Username and/or Password. Please try again."
   },
+  customMessage: {},
+  formClasses: null,
   titleText: undefined,
   recoveryTitle: undefined,
   messageToRecover: undefined,

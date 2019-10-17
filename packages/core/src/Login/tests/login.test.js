@@ -26,6 +26,7 @@ import LoginForm from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
 import HvButton from "../../Button";
 import Title from "../Forms/Login/Title/Title";
+import MessageElement from "../Forms/MessageElement";
 
 describe("Login ", () => {
   let loginMock;
@@ -143,5 +144,25 @@ describe("Login ", () => {
       .first();
 
     expect(foundTitleComponent.type()).toBe("img");
+  });
+
+  it("should render initial custom message", () => {
+    const msg = { text: 'some message.' };
+    const wrapper2 = mount(
+      <HvProvider>
+        <LoginWithStyles
+          login={loginMock}
+          customMessage={msg}
+        />
+      </HvProvider>
+    );
+
+    const foundMsg = wrapper2
+      .find(MessageElement)
+      .children()
+      .children()
+      .first();
+
+    expect(foundMsg.text()).toBe(msg.text);
   });
 });
