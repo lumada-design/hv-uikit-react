@@ -122,7 +122,7 @@ verify element count
     ...   | locator | supported selenium Library locators |
     ...   | counts | (integer) of expected counts |
     ...          
-    ${got_counts}      Get Element Count     //div[@class='MultiButton-root-147']//button
+    ${got_counts}      Get Element Count     ${locator}
     ${counts}          Convert To Integer    ${counts}
     Should Be Equal    ${got_counts}         ${counts}
 
@@ -135,9 +135,4 @@ verify element property has different value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}       Get Element Attribute    ${locator}    ${property}
     Should Not Be Equal    ${current_value}         ${value}      error message: the element property shouln't have same value
-
-
-
-
-    
-
+  
