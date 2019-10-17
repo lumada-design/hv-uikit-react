@@ -15,7 +15,7 @@ Test no toggle state transition when disabled
     &{dict}                       get toggle css properties    ${locator}    ${list}
     Element Should Be Disabled    ${locator}
     Verify toggle check state     ${locator}                   ${state}
-    Run Keyword And Ignore Error   Click Element                 ${clickOn}
+    Run Keyword And Ignore Error  Click Element                ${clickOn}
     Verify toggle check state     ${locator}                   ${state}
     verify toogle properties      ${locator}                   ${dict}
 
