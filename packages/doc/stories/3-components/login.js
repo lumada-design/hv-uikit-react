@@ -43,6 +43,10 @@ storiesOf("Components", module).add("Login", () => <HvLogin />, {
     {
       title: "5. Custom Background",
       src: "components/login/login5"
+    },
+    {
+      title: "6. Custom initial message",
+      src: "components/login/login6"
     }
   ]
 });
