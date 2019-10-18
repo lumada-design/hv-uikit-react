@@ -29,6 +29,7 @@ export default (
       actionsAlignment="left"
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}
+      actionItemWidth={110}
     />
   </div>
 );
