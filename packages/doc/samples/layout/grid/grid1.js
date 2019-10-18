@@ -42,7 +42,7 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
     <div>
       <HvTypography variant="xxsTitle">{title}</HvTypography>
       <div style={{ border: "1px solid",backgroundColor: "#F9F9F9" }}>
-        <HvGrid container>
+        <HvGrid container >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
             <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
               <Box text={value.toString()} />
