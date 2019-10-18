@@ -16,7 +16,8 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import LoginTemplate from "../../samples/templates/login";
+import Templates from "../../samples/templates/main";
+import login from "./resources/login.png";
 
 storiesOf("Templates", module)
   .addParameters({
@@ -24,4 +25,16 @@ storiesOf("Templates", module)
       isToolshown: false
     }
   })
-  .add("Login", () => <LoginTemplate />);
+  .add("Templates", () => (
+    <Templates
+      description="A selection of basic react templates to help you get started building your app."
+      containers={[
+        {
+          img: login,
+          labels: { title: "Login", text: "A simple Login page." },
+          sourceCodeUrl: "https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/samples/templates/login",
+          associatedStory: ["Templates", "Login"]
+        }
+      ]}
+    />
+  ));

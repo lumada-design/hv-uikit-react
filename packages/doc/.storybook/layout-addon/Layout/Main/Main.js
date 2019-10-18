@@ -58,7 +58,7 @@ const getComponentsMetadata = children => {
 };
 
 const shouldShowHeader = kind => {
-  const list = ["Lab", "Components", "Foundation"];
+  const list = ["Lab", "Components", "Foundation", "Templates"];
   return find(list, elem => kind.startsWith(elem));
 };
 
@@ -66,7 +66,7 @@ const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
-  if (kind.startsWith("Template")) return children;
+  if (parameters.options.noAddon) return children;
 
   const isComponent = shouldShowHeader(kind);
 
