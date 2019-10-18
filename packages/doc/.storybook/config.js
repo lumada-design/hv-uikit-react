@@ -23,7 +23,8 @@ addParameters({
       brandTitle: "React UI-Kit",
       brandUrl: "https://github.com/pentaho/hv-uikit-react"
     }),
-    showPanel: false
+    showPanel: false,
+    isToolshown: true
   }
 });
 
