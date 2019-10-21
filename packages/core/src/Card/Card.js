@@ -74,6 +74,7 @@ const Main = ({
   mediaPath,
   mediaTitle,
   mediaHeight,
+  actionItemWidth,
   ...other
 }) => {
   const [selected, setSelected] = useState(checkboxSelected);
@@ -107,6 +108,7 @@ const Main = ({
           checkboxLabel={checkboxLabel}
           checkboxSelected={checkboxSelected}
           checkboxIndeterminate={checkboxIndeterminate}
+          actionItemWidth={actionItemWidth}
         />
       )}
     </>
@@ -256,7 +258,12 @@ Main.propTypes = {
   /**
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
-  maxVisibleActions: PropTypes.number
+  maxVisibleActions: PropTypes.number,
+  /**
+   *  Width applicable to the action container, to handle an issue Safari has when using css flex:
+   *  It resizes descendant divs, unless a width is forced
+   *     */
+  actionItemWidth: PropTypes.number
 };
 
 Main.defaultProps = {
@@ -281,7 +288,8 @@ Main.defaultProps = {
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
   theme: null,
-  maxVisibleActions: 2
+  maxVisibleActions: 2,
+  actionItemWidth: undefined
 };
 
 export default Main;

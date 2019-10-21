@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
-import Grid from "@material-ui/core/Grid";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import HvButton from "../../../Button";
@@ -44,6 +43,8 @@ const renderActions = (
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
       category="ghostSecondary"
+      id={id}
+      key={id}
     >
       {action.icon && action.icon({ classes })}
       {action.label}
@@ -51,21 +52,17 @@ const renderActions = (
   );
 
   const renderActionsGrid = acts => (
-    <Grid container>
-      <Grid item xs={8} className={classes.item}>
-        {renderButton(acts[0])}
-      </Grid>
-      <Grid item xs={4} className={classes.item}>
-        <DropDownMenu
-          className={classes.button}
-          icon={<MoreVert />}
-          placement="left"
-          disablePortal={false}
-          onClick={action => actionsCallback(id, action)}
-          dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
-        />
-      </Grid>
-    </Grid>
+    <div className={classes.actionGrid}>
+      {renderButton(acts[0])}
+      <DropDownMenu
+        className={classes.button}
+        icon={<MoreVert />}
+        placement="left"
+        disablePortal={false}
+        onClick={action => actionsCallback(id, action)}
+        dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
+      />
+    </div>
   );
 
   return actions.length > maxVisibleActions
@@ -79,20 +76,31 @@ const selectCell = (
   checkboxValue,
   checkboxSelected,
   checkboxIndeterminate,
-  checkboxSemantic
+  checkboxSemantic,
+  id
 ) => (
-  <Cell className={classes.selectCell} semantic={checkboxSemantic}>
+  <Cell
+    className={classes.selectCell}
+    semantic={checkboxSemantic}
+    id={`checkbox${id}`}
+    key={`checkbox${id}`}
+  >
     <HvCheckbox
       value={checkboxValue}
       onChange={onCheckboxSelected}
       checked={checkboxSelected}
       indeterminate={checkboxIndeterminate}
+      id={id}
     />
   </Cell>
 );
 
 const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell className={classes.actionSeparator}>
+  <Cell
+    className={classes.actionSeparator}
+    id={`action${id}`}
+    key={`action${id}`}
+  >
     {renderActions(
       id,
       viewConfiguration.actions,
@@ -149,6 +157,7 @@ const row = (
   return (
     <tr
       id={id}
+      key={id}
       className={classNames(className, classes.root, {
         [classes.selectable]: renderSelectCell,
         [classes.notSelectable]: !renderSelectCell
@@ -162,7 +171,8 @@ const row = (
           checkboxValue,
           checkboxSelected,
           checkboxIndeterminate,
-          checkboxSemantic
+          checkboxSemantic,
+          id
         )}
       {clonedChildren}
       {renderActionsCell &&

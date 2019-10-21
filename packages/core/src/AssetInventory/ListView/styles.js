@@ -16,10 +16,10 @@
 
 const styles = theme => ({
   root: {
-    borderSpacing: `0 ${theme.hv.spacing.xs}px`
+    borderSpacing: `0 ${theme.hv.spacing.xs}px`,
+    width: "100%"
   },
-  tableBody: {
-  },
+  tableBody: {},
   tableHead: {
     width: "100%"
   }

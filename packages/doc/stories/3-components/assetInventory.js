@@ -13,34 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import HvAssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
 
-// import React from "react";
-// import { storiesOf } from "@storybook/react";
-// import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
-//
-// storiesOf("Components/Asset Inventory", module).add(
-//   "Card View",
-//   () => <CardView />,
-//   {
-//     title: "Card View",
-//     description:
-//       "Used to represent cards in th Asset Inventory component. It is possible to pass a custom card render por each card that must set placeholders for the data received. If not custom" +
-//       "render is passed, the default implementation of the card is used.",
-//     usage:
-//       "import HvCardView from '@hv/uikit-react-core/dist/AssetInventory/CardView'",
-//     examples: [
-//       {
-//         title: "1. Standard render",
-//         src: "components/assetInventory/cardView1"
-//       },
-//       {
-//         title: "2. Custom render with custom actions",
-//         src: "components/assetInventory/cardView2"
-//       },
-//       {
-//         title: "3. Custom render with default actions",
-//         src: "components/assetInventory/cardView3"
-//       }
-//     ]
-//   }
-// );
+storiesOf("Components/Asset Inventory", module).add(
+  "Asset Inventory",
+  () => <HvAssetInventory />,
+  {
+    title: "Asset Inventory",
+    description:
+      "A asset inventory allows to switch between views. The sort and filter are defined using the metadata configuration. The remaining configuration can be ser in the asset or individual views (example 2 and 3).",
+    usage:
+      "import HvAssetInventory from '@hv/uikit-react-core/dist/AssetInventory'",
+    examples: [
+      {
+        title: "1. Simple",
+        description:
+          "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon",
+        src: "components/assetInventory/assetInventory1.js"
+      },
+      {
+        title: "2. with three views",
+        src: "components/assetInventory/assetInventory2.js"
+      },
+      {
+        title: "3. with configuration set in the asset inventory.",
+        src: "components/assetInventory/assetInventory3.js"
+      }
+    ]
+  }
+);

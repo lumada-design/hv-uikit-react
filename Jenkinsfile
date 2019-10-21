@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "node-js-11.10-auto"}
     options {
         timestamps ()
-        timeout(time: 70, unit: 'MINUTES')
+        timeout(time: 140, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
 
