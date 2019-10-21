@@ -1,17 +1,7 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "@hv/uikit-react-core/dist/Header";
 import Login from "@hv/uikit-react-core/dist/Login";
-import Lumada from "../components/header/resources/hitachi";
-// import Lumada from "./resources/lumada.svg";
-
-const styles = () => ({
-  root: {
-    height: "100vh"
-  }
-});
-
-const LumadaLogo = () => <Lumada style={{ width: "72px" }} />;
+import HitachiLogo from "../home/components/hitachiLogo";
 
 const callSimulation = () =>
   new Promise(resolve => {
@@ -22,7 +12,7 @@ const callSimulation = () =>
 
 const LoginTemplate = ({ classes }) => (
   <div>
-    <Header id="header" companyLogo={<LumadaLogo />} label="App Name" />
+    <Header id="header" companyLogo={<HitachiLogo />} label="App Name" />
     <div className={classes.root}>
       <Login
         login={callSimulation}
@@ -33,4 +23,4 @@ const LoginTemplate = ({ classes }) => (
     </div>
   </div>
 );
-export default withStyles(styles, { withTheme: true })(LoginTemplate);
+export default LoginTemplate;
