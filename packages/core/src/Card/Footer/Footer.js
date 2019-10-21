@@ -17,8 +17,7 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
-import Grid from "@material-ui/core/Grid";
-import Cardactions from "@material-ui/core/CardActions";
+import CardActions from "@material-ui/core/CardActions";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvCheckBox from "../../Selectors/CheckBox";
@@ -35,7 +34,8 @@ const renderActions = (
   id,
   actionsCallback,
   classes,
-  maxVisibleActions
+  maxVisibleActions,
+  actionItemWidth
 ) => {
   if (!Array.isArray(actions)) {
     return React.isValidElement(actions) ? actions : null;
@@ -52,24 +52,23 @@ const renderActions = (
     </HvButton>
   );
 
-  const renderActionsGrid = acts => (
-    <Grid container>
-      <Grid item xs={8} className={classes.item}>
-        {renderButton(acts[0])}
-      </Grid>
-      <Grid item xs={4} className={classes.item}>
-        <DropDown
-          icon={<MoreVert />}
-          placement="left"
-          onClick={action => actionsCallback(id, action)}
-          dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
-        />
-      </Grid>
-    </Grid>
+  const renderActionsGrid = (acts, idx, actWidth) => (
+    <div
+      className={classes.actionContainer}
+      style={actWidth !== undefined ? { width: `${actWidth}px` } : undefined}
+    >
+      {renderButton(acts[0])}
+      <DropDown
+        icon={<MoreVert />}
+        placement="left"
+        onClick={action => actionsCallback(id, action)}
+        dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
+      />
+    </div>
   );
 
   return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions, id)
+    ? renderActionsGrid(actions, id, actionItemWidth)
     : actions.map(a => renderButton(a));
 };
 
@@ -103,9 +102,10 @@ const Footer = ({
   checkboxSelected,
   checkboxIndeterminate,
   checkboxLabel,
+  actionItemWidth,
   ...other
 }) => (
-  <Cardactions className={classNames(classes.root, className)} {...other}>
+  <CardActions className={classNames(classes.root, className)} {...other}>
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
@@ -131,10 +131,11 @@ const Footer = ({
         checkboxValue || id,
         actionsCallback,
         classes,
-        maxVisibleActions
+        maxVisibleActions,
+        actionItemWidth
       )}
     </div>
-  </Cardactions>
+  </CardActions>
 );
 
 Footer.propTypes = {
@@ -214,7 +215,12 @@ Footer.propTypes = {
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool
+  checkboxIndeterminate: PropTypes.bool,
+  /**
+   *  Width applicable to the action container, to handle an issue Safari has when using css flex:
+   *  It resizes descendant divs, unless a width is forced
+   *     */
+  actionItemWidth: PropTypes.number
 };
 
 Footer.defaultProps = {
@@ -229,7 +235,8 @@ Footer.defaultProps = {
   actionsAlignment: "left",
   maxVisibleActions: 2,
   checkboxSelected: undefined,
-  checkboxIndeterminate: undefined
+  checkboxIndeterminate: undefined,
+  actionItemWidth: undefined
 };
 
 export default Footer;
