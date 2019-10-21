@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import LoginTemplate from "../../samples/templates/Login";
+import HomeTemplate from "../../samples/templates/home/Home";
 
 storiesOf("Templates", module)
   .addParameters({
@@ -25,4 +25,4 @@ storiesOf("Templates", module)
       noAddon: true
     }
   })
-  .add("Login", () => <LoginTemplate />);
+  .add("Home", () => <HomeTemplate />);
