@@ -27,9 +27,10 @@ import HvTypography from "../../Typography";
  */
 function MessageElement( { iconElement, showMessage, icon, message }) {
 
-  const iconClone = React.cloneElement(iconElement, {
-    className: icon
-  });
+  const iconClone = iconElement != null ?
+    React.cloneElement(iconElement, {
+      className: icon
+    }) : null;
 
   return (
     <div className={showMessage}>
@@ -43,7 +44,7 @@ MessageElement.propTypes = {
   /**
    * Icon component.
    */
-  iconElement: PropTypes.node.isRequired,
+  iconElement: PropTypes.node,
   /**
    * Class for the div.
    */
@@ -51,11 +52,16 @@ MessageElement.propTypes = {
   /**
    * Class for the icon.
    */
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.string,
   /**
    * Message to be showed.
    */
   message: PropTypes.string.isRequired
 };
+
+MessageElement.defaultProps = {
+  iconElement: null,
+  icon: null
+}
 
 export default MessageElement;

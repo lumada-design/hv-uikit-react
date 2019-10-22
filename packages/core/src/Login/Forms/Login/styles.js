@@ -83,6 +83,16 @@ const styles = theme => ({
     height: "100%",
     paddingRight: `${theme.hv.spacing.xs}px`
   },
+  showCustomMessage: {
+    backgroundColor: theme.hv.palette.semantic.sema7,
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+    width: "100%",
+    paddingRight: `${theme.hv.spacing.xs}px`,
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    whiteSpace: "pre-wrap"
+  },
   icon: {
     margin: `0 ${theme.hv.spacing.xs}px`,
     maxWidth: "32px",
