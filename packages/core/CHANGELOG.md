@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.7.1...@hv/uikit-react-core@1.8.0) (2019-10-22)
+
+
+### Bug Fixes
+
+* **card:** actions doesn't have hover in the icon. [#628](https://github.com/pentaho/hv-uikit-react/issues/628) ([24fbd1b](https://github.com/pentaho/hv-uikit-react/commit/24fbd1b))
+* **card:** actions not showing in IE and Safari. [#619](https://github.com/pentaho/hv-uikit-react/issues/619) ([61790da](https://github.com/pentaho/hv-uikit-react/commit/61790da))
+* **kpi:** don't show div when visualComparison is empty. [#609](https://github.com/pentaho/hv-uikit-react/issues/609) ([1a4a66c](https://github.com/pentaho/hv-uikit-react/commit/1a4a66c))
+
+
+### Features
+
+* **assetinventory:** add component following ds guidelines. [#573](https://github.com/pentaho/hv-uikit-react/issues/573) ([00e020a](https://github.com/pentaho/hv-uikit-react/commit/00e020a))
+
+
+
+
+
 ## [1.7.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.7.0...@hv/uikit-react-core@1.7.1) (2019-10-10)
 
 

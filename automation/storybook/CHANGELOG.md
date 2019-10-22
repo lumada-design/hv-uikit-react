@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.3.3...@hv/uikit-react-automation-storybook@1.4.0) (2019-10-22)
+
+
+### Features
+
+* **automation:** set default theme using a url parameter. [#624](https://github.com/pentaho/hv-uikit-react/issues/624) ([3106176](https://github.com/pentaho/hv-uikit-react/commit/3106176))
+
+
+
+
+
 ## [1.3.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.3.2...@hv/uikit-react-automation-storybook@1.3.3) (2019-10-10)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook
