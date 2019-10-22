@@ -19,7 +19,17 @@ import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { makeStyles } from "@material-ui/styles";
 import HvBannerContentWrapper from "./BannerWrapper";
+
+const useStyles = makeStyles({
+  anchorOriginTopCenter: {
+    top: offset => `${offset}px`
+  },
+  anchorOriginBottomCenter: {
+    bottom: offset => `${offset}px`
+  }
+});
 
 /**
  * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
@@ -45,7 +55,8 @@ const HvBanner = props => {
     customIcon,
     action,
     actionsOnMessage,
-    label
+    label,
+    offset
   } = props;
 
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
@@ -54,9 +65,11 @@ const HvBanner = props => {
     <Slide {...properties} direction={transitionDirection} />
   );
 
+  const classOffset = offset ? useStyles(offset) : classes;
+
   const bannerClasses = {
-    anchorOriginTopCenter: classes.anchorOriginTopCenter,
-    anchorOriginBottomCenter: classes.anchorOriginBottomCenter
+    anchorOriginTopCenter: classOffset.anchorOriginTopCenter,
+    anchorOriginBottomCenter: classOffset.anchorOriginBottomCenter
   };
   bannerClasses.root = open ? classes.root : classes.rootClosed;
 
@@ -153,14 +166,18 @@ HvBanner.propTypes = {
    * Actions to display on message.
    */
   actionsOnMessage: PropTypes.node,
-  /** 
+  /**
    * How much the transition animation last in milliseconds, if 0 no animation is played.
    */
   transitionDuration: PropTypes.number,
-  /** 
+  /**
    * Direction of slide transition.
    */
-  transitionDirection:  PropTypes.oneOf(["up", "down", "left", "right"])
+  transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
+  /**
+   * Custom offset from top/bottom of the page, in px.
+   */
+  offset: PropTypes.number
 };
 
 HvBanner.defaultProps = {
@@ -175,7 +192,8 @@ HvBanner.defaultProps = {
   actionsOnMessage: null,
   variant: "default",
   transitionDuration: 300,
-  transitionDirection: "down"
+  transitionDirection: "down",
+  offset: undefined
 };
 
 export default HvBanner;
