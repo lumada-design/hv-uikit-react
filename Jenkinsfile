@@ -88,6 +88,16 @@ pipeline {
                             waitUntilServerUp(URL)
                             def (REFSPEC, BRANCH_STRING) = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
                             echo "[INFO] REFSPEC: " + REFSPEC
+
+                            def jobResultAccessibility =
+                                            build job: 'ui-kit/automation/storybook-core-accessibility', parameters: [
+                                                string(name: 'STORYBOOK_URL', value: URL),
+                                                string(name: 'REFSPEC', value: REFSPEC),
+                                                string(name: 'BRANCH_STRING', value: BRANCH_STRING)
+                                            ], propagate: true, wait: true
+
+                            echo "[INFO] BUILD JOB storybook-core-accessibility RESULT: " + jobResultAccessibility.getCurrentResult()
+
                             def jobResult =
                                             build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),

@@ -5,8 +5,8 @@ Resource    ../../../_resources/storybook_keywords.robot
 *** Keywords ***
 open storybook button page
     open storybook
-    Go To                            ${STORYBOOK_URL}/${BUTTON_PAGE}
-    Wait Until Element Is Visible    xpath=(//button)[1]    2s    error message: The page don't was visible in 2 seconds 
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebutton--smoke
+    Wait Until Element Is Visible    xpath=(//button)[1]    2s    error message: The page don't was visible in 2 seconds
 
 verify button css properties
     [Arguments]        ${locator}    ${css}
@@ -24,11 +24,11 @@ verify button background-color change on mouse hover
 
 verify CSS properties do not changes with mouse hover
     [Arguments]    ${locator}
-    remove mouse hover button    
+    remove mouse hover button
     ${value}                       get constanct css property value    ${locator}    background-color
     mouse over                     ${locator}
     Wait Until Keyword Succeeds    5                                   500ms         verify css element property value    ${locator}    background-color    ${value}
-    
+
 remove mouse hover button
     mouse over    //body
 

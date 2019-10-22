@@ -1,6 +1,3 @@
 STORYBOOK_URL:    http://localhost:9002
 BROWSER:    ff
-BUTTON_PAGE:    iframe.html?id=corebutton--smoke
-TOGGLE_PAGE:    iframe.html?id=coretoggle--smoke
-PA11Y:    
-TOLERANCE:    0.03
+PA11Y_STANDARD:    WCAG2AA
