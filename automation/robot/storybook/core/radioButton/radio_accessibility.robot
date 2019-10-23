@@ -15,11 +15,11 @@ verify radio accessibility as standard
 storybook sample radiobuttondisabled against standard               radiobuttondisabled            --ignore label
 storybook sample radiobuttonlabel against standard                  radiobuttonlabel
 storybook sample radiobuttonlabeldisabled against standard          radiobuttonlabeldisabled       --ignore label
-    [Tags]             pa11y    issue-WCAG2AA
+    [Tags]             pa11y    issue-WCAG2AA    issue-Section508
     [Documentation]    https://github.com/pentaho/hv-uikit-react/issues/681
 storybook sample radiobuttononchange against standard               radiobuttononchange
 storybook sample radiobuttononchangedisabled against standard       radiobuttononchangedisabled    
-    [Tags]             pa11y    issue-WCAG2AA
+    [Tags]             pa11y    issue-WCAG2AA    issue-Section508
     [Documentation]    https://github.com/pentaho/hv-uikit-react/issues/681
 storybook sample radiobuttonsimple against standard                 radiobuttonsimple              --ignore label
 storybook sample radiobuttonstate against standard                  radiobuttonstate

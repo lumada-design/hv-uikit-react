@@ -14,11 +14,11 @@ verify checkbox accessibility as standard
 storybook sample checkboxdisabled against standard               checkboxdisabled            --ignore label
 storybook sample checkboxlabel against standard                  checkboxlabel
 storybook sample checkboxlabeldisabled against standard          checkboxlabeldisabled
-    [Tags]             pa11y    issue-WCAG2AA
+    [Tags]             pa11y    issue-WCAG2AA    issue-Section508
     [Documentation]    https://github.com/pentaho/hv-uikit-react/issues/681
 storybook sample checkboxonchange against standard               checkboxonchange
 storybook sample checkboxonchangedisabled against standard       checkboxonchangedisabled
-    [Tags]             pa11y    issue-WCAG2AA
+    [Tags]             pa11y    issue-WCAG2AA    issue-Section508
     [Documentation]    https://github.com/pentaho/hv-uikit-react/issues/681
 storybook sample checkboxsimple against standard                 checkboxsimple              --ignore label
 storybook sample checkboxstate against standard                  checkboxstate
