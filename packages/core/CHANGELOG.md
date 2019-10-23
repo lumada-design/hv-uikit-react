@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.8.0...@hv/uikit-react-core@1.9.0) (2019-10-23)
+
+
+### Features
+
+* **login:** custom initial message and allow resize ([7d491ba](https://github.com/pentaho/hv-uikit-react/commit/7d491ba))
+
+
+
+
+
 # [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.7.1...@hv/uikit-react-core@1.8.0) (2019-10-22)
 
 
