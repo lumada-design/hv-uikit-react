@@ -1,8 +1,8 @@
 *** Setting ***
-Resource        ../../_resources/accessibility.robot
-Variables       ../../_resources/storybook_variables.yaml
-Test Template   verify toggle button accessibility as standard
-Default Tags    smoke    pa11y
+Resource         ../../_resources/accessibility.robot
+Variables        ../../_resources/storybook_variables.yaml
+Test Template    verify toggle button accessibility as standard
+Force Tags       pa11y
 
 *** Keywords ***
 verify toggle button accessibility as standard
