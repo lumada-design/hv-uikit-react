@@ -2,14 +2,22 @@
 Resource         ../../_resources/accessibility.robot
 Variables        ../../_resources/storybook_variables.yaml
 Test Template    verify input accessibility as standard
-Default Tags     smoke    pa11y    issue-WCAG2AA    issue-Section508
-Documentation    this component is now under maintenance be re-factory by team
+Force Tags       pa11y
+Documentation    
+...              | issue | ignore | description |
+...              | 248 | many | [Input] Review Accessibility (enhancement) |
+
+*** Variables ***
+${root-element}                 --root-element "\#root > div.Component-content-4"
+${ignore-name}                  --ignore WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name
+${ignore-label}                 --ignore WCAG2AA.Principle1.Guideline1_3.1_3_1.F68 --ignore label
+${ignore-contrast}              --ignore WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail --ignore color-contrast
+${ignore-InputPassword.Name}    --ignore WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputPassword.Name
 
 *** Keywords ***
 verify input accessibility as standard
     [Arguments]    ${sample}    ${optional}=--root-element "\#root > div.Component-content-4"    ${standard}=${PA11Y_STANDARD}
-    ${ignore_option}=    Set Variable    --ignore WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2 --ignore html-has-lang;landmark-one-main;region
-    verify element accessibility as standard   ${STORYBOOK_URL}/iframe.html?id=coreinput--${sample}    ${standard}    ${optional} ${ignore_option}
+    verify element accessibility as standard   ${STORYBOOK_URL}/iframe.html?id=coreinput--${sample}    ${standard}    ${optional} ${root-element} ${ignore-name} ${ignore-label} ${ignore-contrast} ${ignore-InputPassword.Name}
 
 *** Test Cases ***                                           #sample                    #options
 storybook sample InputCustomProps against standard           inputcustomprops
