@@ -45,6 +45,7 @@ exports[`Input should not have the validation section 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -77,6 +78,10 @@ exports[`Input should not have the validation section 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -3655,6 +3660,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -3687,6 +3693,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -6961,6 +6971,7 @@ input:-webkit-autofill {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -6993,6 +7004,10 @@ input:-webkit-autofill {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -9825,6 +9840,7 @@ label + .MuiInput-formControl-472 {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -9857,6 +9873,10 @@ label + .MuiInput-formControl-472 {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -12408,6 +12428,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -12440,6 +12461,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -13397,6 +13422,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -13429,6 +13455,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -14545,6 +14575,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -14577,6 +14608,10 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -18155,6 +18190,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -18187,6 +18223,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -21461,6 +21501,7 @@ input:-webkit-autofill {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -21493,6 +21534,10 @@ input:-webkit-autofill {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -24325,6 +24370,7 @@ label + .MuiInput-formControl-597 {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -24357,6 +24403,10 @@ label + .MuiInput-formControl-597 {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -26912,6 +26962,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -26944,6 +26995,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -29791,6 +29846,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -29823,6 +29879,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -30788,6 +30848,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -30820,6 +30881,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -31971,6 +32036,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                       "palette": Object {
                         "accent": Object {},
                         "atmosphere": Object {},
+                        "base": Object {},
                         "semantic": Object {},
                         "support": Object {},
                       },
@@ -32003,6 +32069,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                         "atmo5": "#DEDEDE",
                         "atmo6": "#BCBCBC",
                         "atmo7": "#999999",
+                      },
+                      "base": Object {
+                        "base1": "#FFFFFF",
+                        "base2": "#414141",
                       },
                       "semantic": Object {
                         "sema1": "#63A621",
@@ -32899,6 +32969,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                         "palette": Object {
                           "accent": Object {},
                           "atmosphere": Object {},
+                          "base": Object {},
                           "semantic": Object {},
                           "support": Object {},
                         },
@@ -32931,6 +33002,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                           "atmo5": "#DEDEDE",
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
+                        },
+                        "base": Object {
+                          "base1": "#FFFFFF",
+                          "base2": "#414141",
                         },
                         "semantic": Object {
                           "sema1": "#63A621",
@@ -33849,6 +33924,7 @@ exports[`Input should render correctly 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -33881,6 +33957,10 @@ exports[`Input should render correctly 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -37459,6 +37539,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -37491,6 +37572,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -40765,6 +40850,7 @@ input:-webkit-autofill {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -40797,6 +40883,10 @@ input:-webkit-autofill {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -43629,6 +43719,7 @@ label + .MuiInput-formControl-97 {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -43661,6 +43752,10 @@ label + .MuiInput-formControl-97 {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -46216,6 +46311,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -46248,6 +46344,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -49095,6 +49195,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -49127,6 +49228,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -50082,6 +50187,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -50114,6 +50220,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -51244,6 +51354,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                       "palette": Object {
                         "accent": Object {},
                         "atmosphere": Object {},
+                        "base": Object {},
                         "semantic": Object {},
                         "support": Object {},
                       },
@@ -51276,6 +51387,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                         "atmo5": "#DEDEDE",
                         "atmo6": "#BCBCBC",
                         "atmo7": "#999999",
+                      },
+                      "base": Object {
+                        "base1": "#FFFFFF",
+                        "base2": "#414141",
                       },
                       "semantic": Object {
                         "sema1": "#63A621",
@@ -52172,6 +52287,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                         "palette": Object {
                           "accent": Object {},
                           "atmosphere": Object {},
+                          "base": Object {},
                           "semantic": Object {},
                           "support": Object {},
                         },
@@ -52204,6 +52320,10 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                           "atmo5": "#DEDEDE",
                           "atmo6": "#BCBCBC",
                           "atmo7": "#999999",
+                        },
+                        "base": Object {
+                          "base1": "#FFFFFF",
+                          "base2": "#414141",
                         },
                         "semantic": Object {
                           "sema1": "#63A621",
