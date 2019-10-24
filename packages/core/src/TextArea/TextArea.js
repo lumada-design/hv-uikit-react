@@ -114,7 +114,10 @@ class HvTextArea extends React.Component {
         <Input
           classes={{
             container: classes.container,
-            input: classes.input
+            input: classes.input,
+            inputRoot: classes.inputRoot,
+            inputRootDisabled: classes.inputRootDisabled,
+            inputRootFocused: classes.inputRootFocused
           }}
           className={className}
           id={id}
@@ -127,6 +130,7 @@ class HvTextArea extends React.Component {
           disabled={disabled}
           showInfo={false}
           validationIconVisible={false}
+          disableClear
         />
         {maxCharQuantity ? (
           <div className={classes.characterCounter}>

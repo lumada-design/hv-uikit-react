@@ -8,8 +8,12 @@ exports[`TextArea Component should render correctly if opened 1`] = `
       Object {
         "container": undefined,
         "input": undefined,
+        "inputRoot": undefined,
+        "inputRootDisabled": undefined,
+        "inputRootFocused": undefined,
       }
     }
+    disableClear={true}
     disabled={false}
     initialValue="test"
     labels={

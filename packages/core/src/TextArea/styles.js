@@ -30,7 +30,44 @@ const styles = theme => ({
     padding: "10px 0px",
     overflow: "auto"
   },
-  container:{},
+  inputRoot: {
+    margin: "0",
+    width: "100%",
+    borderStyle: "solid",
+    borderWidth: " 1px",
+    background: theme.hv.palette.atmosphere.atmo1,
+    borderColor: theme.hv.palette.atmosphere.atmo6,
+    "&:hover": {
+      borderStyle: "solid",
+      borderWidth: " 1px",
+      borderColor: theme.hv.palette.accent.acce1,
+      background: theme.hv.palette.atmosphere.atmo1
+    }
+  },
+  inputRootDisabled: {
+    borderColor: theme.hv.palette.atmosphere.atmo6,
+    background: theme.hv.palette.atmosphere.atmo2,
+    "&:hover": {
+      borderColor: theme.hv.palette.atmosphere.atmo6,
+      background: theme.hv.palette.atmosphere.atmo2,
+      cursor: "not-allowed"
+    },
+    cursor: "not-allowed"
+  },
+  inputRootFocused: {
+    borderStyle: "solid",
+    borderWidth: " 1px",
+    borderColor: theme.hv.palette.accent.acce1,
+    background: theme.hv.palette.atmosphere.atmo1,
+    outline: "5px auto rgba(0, 150, 255, 1)",
+    "&:hover": {
+      borderStyle: "solid",
+      borderWidth: " 1px",
+      borderColor: theme.hv.palette.accent.acce1,
+      background: theme.hv.palette.atmosphere.atmo1
+    }
+  },
+  container: {},
   characterCounter: {
     textAlign: "right",
     paddingTop: `${theme.hv.spacing.xs}px`,
