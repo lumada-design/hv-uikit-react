@@ -59,6 +59,18 @@ const DropDownMenu = ({
   };
 
   /**
+   * Open the dropdown on Enter or Space.
+   *
+   * @param event
+   */
+  const handleKeyDown = event => {
+    const { currentTarget, key } = event;
+    const openingKeys = ["Enter", " "];
+    if (openingKeys.includes(key)) setOpen(!open);
+    setAnchorEl(currentTarget);
+  };
+
+  /**
    * Close the dropdown.
    */
   const handleClickAway = () => {
@@ -70,7 +82,7 @@ const DropDownMenu = ({
       <div {...id && { id }} className={classes.root}>
         <div
           role="button"
-          onKeyDown={handleClick}
+          onKeyDown={handleKeyDown}
           tabIndex={0}
           className={classNames(classes.icon, {
             [classes.iconSelected]: open

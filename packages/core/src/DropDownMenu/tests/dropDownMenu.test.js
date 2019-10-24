@@ -20,6 +20,7 @@ import toJson from "enzyme-to-json";
 
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
+import Popper from "../../utils/Popper";
 
 jest.mock(
   "popper.js",
@@ -37,6 +38,8 @@ jest.mock(
 
 describe("DropDownMenu", () => {
   let wrapper;
+  const SPACE = " ";
+  const ENTER = "Enter";
 
   const menuOptions = [
     {
@@ -75,6 +78,56 @@ describe("DropDownMenu", () => {
       button.at(0).simulate("click");
       button.at(0).simulate("click");
       expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it("opens on Enter", () => {
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+    });
+
+    it("closes on double Enter", () => {
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+
+    it("opens on Space", () => {
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+    });
+
+    it("closes on double Space", () => {
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+
+    it("opens and closes mixing mouse click, Enter, and Space", () => {
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(false);
     });
   });
 });
