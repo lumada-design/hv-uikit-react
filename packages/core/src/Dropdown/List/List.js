@@ -191,8 +191,8 @@ const List = ({
    *
    * @returns {*}
    */
-  const cleanHidden = () =>
-    list.forEach(item => {
+  const cleanHidden = (lst) =>
+    lst.forEach(item => {
       // eslint-disable-next-line no-param-reassign
       item.isHidden = false;
     });
@@ -209,7 +209,7 @@ const List = ({
       setList(clone(selected));
       sendOnChange(selected, false, false, false);
     } else {
-      cleanHidden();
+      cleanHidden(selected);
       setPrevList(clone(selected));
       setList(clone(selected));
       setSearchStr("");
@@ -225,6 +225,7 @@ const List = ({
   const handleCancel = e => {
     setList(clone(prevList));
     setSearchStr("");
+    updateSelectAll(prevList);
     const toggle = isNil(e) ? true : e.target.id !== "header";
     sendOnChange(prevList, true, toggle, false);
   };
@@ -233,7 +234,7 @@ const List = ({
    * Commits the temporary selection to the state.
    */
   const handleApply = () => {
-    cleanHidden();
+    cleanHidden(list);
     setPrevList(list);
     setList(list);
     setSearchStr("");
@@ -256,7 +257,7 @@ const List = ({
   );
 
   /**
-   * When the list is render, it should determine his position.
+   * When the list is rendered, it should determine its position.
    *
    * @param data
    */
