@@ -45,6 +45,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -77,6 +78,10 @@ exports[`DropDownMenu component closes on double click 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -3655,6 +3660,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -3687,6 +3693,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -5760,6 +5770,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -5792,6 +5803,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -6732,6 +6747,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -6764,6 +6780,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -7717,6 +7737,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -7749,6 +7770,10 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -11327,6 +11352,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -11359,6 +11385,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -13432,6 +13462,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -13464,6 +13495,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -14404,6 +14439,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -14436,6 +14472,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -15389,6 +15429,7 @@ exports[`DropDownMenu component opens on click 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -15421,6 +15462,10 @@ exports[`DropDownMenu component opens on click 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -18999,6 +19044,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -19031,6 +19077,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -21108,6 +21158,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -21140,6 +21191,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -23540,6 +23595,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -23572,6 +23628,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -26128,6 +26188,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -26160,6 +26221,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -29007,6 +29072,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -29039,6 +29105,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -29979,6 +30049,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -30011,6 +30082,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -31008,6 +31083,7 @@ body {
                                 "palette": Object {
                                   "accent": Object {},
                                   "atmosphere": Object {},
+                                  "base": Object {},
                                   "semantic": Object {},
                                   "support": Object {},
                                 },
@@ -31040,6 +31116,10 @@ body {
                                   "atmo5": "#DEDEDE",
                                   "atmo6": "#BCBCBC",
                                   "atmo7": "#999999",
+                                },
+                                "base": Object {
+                                  "base1": "#FFFFFF",
+                                  "base2": "#414141",
                                 },
                                 "semantic": Object {
                                   "sema1": "#63A621",
@@ -32016,6 +32096,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -32048,6 +32129,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -32944,6 +33029,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -32976,6 +33062,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",
@@ -33940,6 +34030,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -33972,6 +34063,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -34868,6 +34963,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -34900,6 +34996,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",
@@ -35864,6 +35964,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -35896,6 +35997,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -36792,6 +36897,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -36824,6 +36930,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",
