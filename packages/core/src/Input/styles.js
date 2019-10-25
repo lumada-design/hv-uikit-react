@@ -48,6 +48,7 @@ const styles = theme => ({
     borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
+    outline: "5px auto rgba(0, 150, 255, 1)",
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
@@ -62,7 +63,7 @@ const styles = theme => ({
     }
   },
   input: {
-    height: `21px`,
+    height: `20px`,
     marginLeft: `${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
     padding: "6px 0 5px",
@@ -95,8 +96,8 @@ const styles = theme => ({
     color: theme.hv.palette.atmosphere.atmo7
   },
   infoIconContainer: {
-    height: "30px",
-    width: "30px",
+    height: "32px",
+    width: "32px",
     display:"flex",
     justifyContent:"center",
     '& div': {
