@@ -40,6 +40,9 @@ const styles = theme => ({
     borderRadius: "0",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,
+    },
+    "&:focus": {
+      outline: "5px auto rgba(0, 150, 255, 1)"
     }
   }
 });
