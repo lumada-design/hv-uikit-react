@@ -21,19 +21,21 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", icon: <Map />, selected: true },
-  {
-    id: "satellite",
-    value: "satellite",
-    icon: <LocationPin />,
-    selected: true
-  },
-  { id: "map1", value: "navigate", icon: <Map />, selected: true },
-  { id: "satellite1", value: "place", icon: <LocationPin /> }
+  { id: "monday", value: "M", selected: true },
+  { id: "tuesday", value: "T" },
+  { id: "wednesday", value: "W", selected: true },
+  { id: "thursday", value: "T", selected: true },
+  { id: "friday", value: "F" },
+  { id: "saturday", value: "S", selected: true },
+  { id: "sunday", value: "S" }
 ];
 
 export default (
-  <div style={{ width: "460px" }}>
-    <MultiButton buttons={buttonsDefinitions} type={"mixed"} multi />
+  <div style={{ width: "224px" }}>
+    <MultiButton
+      buttons={buttonsDefinitions}
+      type={"text"}
+      multi
+    />
   </div>
 );
