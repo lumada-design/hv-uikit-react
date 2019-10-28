@@ -42,7 +42,7 @@ const DEFAULT_STATE = {
   labels: DEFAULT_LABELS
 };
 
-class Main extends React.Component {
+class Dropdown extends React.Component {
   state = DEFAULT_STATE;
 
   static getDerivedStateFromProps(props, state) {
@@ -98,7 +98,7 @@ class Main extends React.Component {
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
    * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
-   * @memberof Main
+   * @memberof Dropdown
    */
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { multiSelect, onChange } = this.props;
@@ -220,7 +220,7 @@ class Main extends React.Component {
   }
 }
 
-Main.propTypes = {
+Dropdown.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -379,7 +379,7 @@ Main.propTypes = {
   singleSelectionToggle:PropTypes.bool
 };
 
-Main.defaultProps = {
+Dropdown.defaultProps = {
   className: "",
   id: undefined,
   label: undefined,
@@ -398,4 +398,4 @@ Main.defaultProps = {
   singleSelectionToggle: true,
 };
 
-export default Main;
+export default Dropdown;
