@@ -19,6 +19,7 @@ import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
+import { makeStyles } from "@material-ui/styles";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const transLeft = props => <Slide {...props} direction="left" />;
@@ -47,6 +48,31 @@ const snackBarDirComponent = direction => {
   return trans;
 };
 
+const useStyles = makeStyles({
+  anchorOriginTopRight: {
+    top: props => `${props.offset}px`,
+    right: props => `${props.theme.hv.spacing.xs}px`
+  },
+  anchorOriginTopLeft: {
+    top: props => `${props.offset}px`,
+    left: props => `${props.theme.hv.spacing.xs}px`
+  },
+  anchorOriginTopCenter: {
+    top: props => `${props.offset}px`
+  },
+  anchorOriginBottomCenter: {
+    bottom: props => `${props.offset}px`
+  },
+  anchorOriginBottomLeft: {
+    bottom: props => `${props.offset}px`,
+    left: props => `${props.theme.hv.spacing.xs}px`
+  },
+  anchorOriginBottomRight: {
+    bottom: props => `${props.offset}px`,
+    right: props => `${props.theme.hv.spacing.xs}px`
+  }
+});
+
 const HvSnackbar = props => {
   const {
     classes,
@@ -63,12 +89,24 @@ const HvSnackbar = props => {
     customIcon,
     action,
     transitionDuration,
-    transitionDirection
+    transitionDirection,
+    offset
   } = props;
+
+  const classOffset = offset ? useStyles(props) : classes;
+
+  const snackbarClasses = {
+    anchorOriginTopRight: classOffset.anchorOriginTopRight,
+    anchorOriginTopLeft: classOffset.anchorOriginTopLeft,
+    anchorOriginTopCenter: classOffset.anchorOriginTopCenter,
+    anchorOriginBottomCenter: classOffset.anchorOriginBottomCenter,
+    anchorOriginBottomLeft: classOffset.anchorOriginBottomLeft,
+    anchorOriginBottomRight: classOffset.anchorOriginBottomRight
+  };
 
   return (
     <Snackbar
-      classes={classes}
+      classes={snackbarClasses}
       className={className}
       id={id}
       anchorOrigin={anchorOrigin}
@@ -178,7 +216,11 @@ HvSnackbar.propTypes = {
   /**
    * Direction of slide transition.
    */
-  transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"])
+  transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
+  /**
+   * Custom offset from top/bottom of the page, in px.
+   */
+  offset: PropTypes.number
 };
 
 HvSnackbar.defaultProps = {
@@ -195,7 +237,8 @@ HvSnackbar.defaultProps = {
   action: null,
   variant: "default",
   transitionDuration: 300,
-  transitionDirection: "left"
+  transitionDirection: "left",
+  offset: undefined
 };
 
 export default HvSnackbar;
