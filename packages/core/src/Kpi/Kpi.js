@@ -35,6 +35,9 @@ const HvKpi = props => {
 
   const definedLabels = kpiTextConfiguration || labels;
 
+  const InternalVisualComparison =
+    typeof visualComparison === "string" ? HvTypography : "div";
+
   return (
     <div id={id} className={classNames(classes.kpiContainer, className)}>
       <div>
@@ -71,7 +74,7 @@ const HvKpi = props => {
       </div>
       {visualComparison != null && (
         <div className={classes.comparisonContainer}>
-          <HvTypography
+          <InternalVisualComparison
             className={classNames(
               classes.comparisons,
               classes.spacingToTheRight
@@ -79,7 +82,7 @@ const HvKpi = props => {
             variant="highlightText"
           >
             {visualComparison}
-          </HvTypography>
+          </InternalVisualComparison>
           <HvTypography className={classes.comparisons} variant="vizText">
             {definedLabels.comparisonIndicatorInfo}
           </HvTypography>
