@@ -317,7 +317,17 @@ const styles = theme => ({
     marginBottom: "-6px",
     marginTop: "-6px"
   },
-  expand: {}
+  expand: {},
+  separatorContainer: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      display: "block",
+      margin: "0 auto"
+    }
+  }
 });
 
 export { styles, tableStyleOverrides };

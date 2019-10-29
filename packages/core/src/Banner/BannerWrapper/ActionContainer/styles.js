@@ -28,6 +28,15 @@ const styles = theme => ({
     height: "32px",
     width: "32px",
     cursor: "pointer"
+  },
+  iconContainer: {
+    width: "32px",
+    height: "32px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
   }
 });
 

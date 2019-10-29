@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Icon from "@hv/uikit-react-icons/dist/DawnTheme/Add.S";
+import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
@@ -109,7 +109,7 @@ describe("Snackbcar ", () => {
   it("should render the custom icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open customIcon={<Icon />} />
+        <SnackBarWithStyles open customIcon={<AddIcon />} />
       </HvProvider>
     )
       .find(SnackBarContent)

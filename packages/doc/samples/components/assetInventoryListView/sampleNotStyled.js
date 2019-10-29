@@ -21,11 +21,11 @@ import AssetInventoryListView, {
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Level1 from "@hv/uikit-react-icons/dist/DawnTheme/Level1.sema10.S";
-import Level2 from "@hv/uikit-react-icons/dist/DawnTheme/Level2.sema11.S";
-import Level3 from "@hv/uikit-react-icons/dist/DawnTheme/Level3.sema12.S";
-import Level4 from "@hv/uikit-react-icons/dist/DawnTheme/Level4.sema13.S";
-import Level5 from "@hv/uikit-react-icons/dist/DawnTheme/Level5.sema14.S";
+import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
+import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
+import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 
 const values = [
   {

@@ -1,8 +1,9 @@
 import React from "react";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import Goodsema1S from "@hv/uikit-react-icons/dist/DawnTheme/Good.sema1.S";
+import Success from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import IconArrowUp from "./assets/arrow-green-up.svg";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {
   title: "Avg. service time",
@@ -43,7 +44,15 @@ const averageComparisonVisualAverage = () => (
   </div>
 );
 
-const icon = () => <Goodsema1S />;
+const iconStyles = {
+    width: "30px",
+    height: "30px",
+    paddingTop: "3px"
+}
+
+const StyledFailureIcon = () => <Success semantic="sema1" boxStyles={iconStyles} style={{display: "block", margin: "auto"}}/>;
+
+const icon = () => <StyledFailureIcon />;
 
 export default (
   <HvKpi

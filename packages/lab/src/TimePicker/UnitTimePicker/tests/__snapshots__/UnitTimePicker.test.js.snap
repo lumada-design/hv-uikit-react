@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999978,
+            "index": -99999999968,
           },
           "themingEnabled": true,
         } => Map {
@@ -4947,7 +4947,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999978,
+                "index": -99999999968,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5648,7 +5648,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999978,
+                  "index": -99999999968,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5833,7 +5833,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999979,
+            "index": -99999999969,
           },
           "themingEnabled": true,
         } => Map {
@@ -6768,11 +6768,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
+                "box": "HvInput-box-79",
                 "container": "HvInput-container-65",
-                "icon": "HvInput-icon-80",
                 "iconClear": "HvInput-iconClear-82",
                 "iconContainer": "HvInput-iconContainer-81",
-                "iconFlexBox": "HvInput-iconFlexBox-79",
+                "iconFlexBox": "HvInput-iconFlexBox-80",
                 "infoIconContainer": "HvInput-infoIconContainer-76",
                 "infoText": "HvInput-infoText-77",
                 "input": "HvInput-input-70",
@@ -6795,11 +6795,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvInput",
                 "classes": Object {
+                  "box": "HvInput-box-79",
                   "container": "HvInput-container-65",
-                  "icon": "HvInput-icon-80",
                   "iconClear": "HvInput-iconClear-82",
                   "iconContainer": "HvInput-iconContainer-81",
-                  "iconFlexBox": "HvInput-iconFlexBox-79",
+                  "iconFlexBox": "HvInput-iconFlexBox-80",
                   "infoIconContainer": "HvInput-infoIconContainer-76",
                   "infoText": "HvInput-infoText-77",
                   "input": "HvInput-input-70",
@@ -7178,7 +7178,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999979,
+                "index": -99999999969,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -7390,7 +7390,14 @@ body {
   color: #999999;
 }
 .HvInput-infoIconContainer-76 {
+  width: 30px;
   height: 30px;
+  display: flex;
+  justify-content: center;
+}
+.HvInput-infoIconContainer-76 div {
+  align-self: center;
+  margin-top: -2px;
 }
 .HvInput-infoText-77 {
   display: block;
@@ -7399,13 +7406,16 @@ body {
 .HvInput-textWarning-78 {
   color: #414141;
 }
-.HvInput-iconFlexBox-79 {
-  display: flex;
-  flex-direction: row;
-}
-.HvInput-icon-80 {
+.HvInput-box-79 {
   width: 30px;
   height: 30px;
+  padding: 7px;
+}
+.HvInput-iconFlexBox-80 {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .HvInput-iconContainer-81 {
   width: 30px;
@@ -7413,6 +7423,7 @@ body {
 }
 .HvInput-iconClear-82 {
   cursor: pointer;
+  margin-bottom: 5px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -7445,11 +7456,11 @@ input:-webkit-autofill {
               },
               "rules": RuleList {
                 "classes": Object {
+                  "box": "HvInput-box-79",
                   "container": "HvInput-container-65",
-                  "icon": "HvInput-icon-80",
                   "iconClear": "HvInput-iconClear-82",
                   "iconContainer": "HvInput-iconContainer-81",
-                  "iconFlexBox": "HvInput-iconFlexBox-79",
+                  "iconFlexBox": "HvInput-iconFlexBox-80",
                   "infoIconContainer": "HvInput-infoIconContainer-76",
                   "infoText": "HvInput-infoText-77",
                   "input": "HvInput-input-70",
@@ -7555,7 +7566,14 @@ input:-webkit-autofill {
                     "color": "#999999",
                   },
                   Object {
+                    "display": "flex",
                     "height": "30px",
+                    "justify-content": "center",
+                    "width": "30px",
+                  },
+                  Object {
+                    "align-self": "center",
+                    "margin-top": "-2px",
                   },
                   Object {
                     "display": "block",
@@ -7565,12 +7583,15 @@ input:-webkit-autofill {
                     "color": "#414141",
                   },
                   Object {
-                    "display": "flex",
-                    "flex-direction": "row",
+                    "height": "30px",
+                    "padding": "7px",
+                    "width": "30px",
                   },
                   Object {
+                    "display": "flex",
+                    "flex-direction": "row",
                     "height": "30px",
-                    "width": "30px",
+                    "justify-content": "center",
                   },
                   Object {
                     "height": "30px",
@@ -7580,6 +7601,7 @@ input:-webkit-autofill {
                     "background-position": "center",
                     "background-repeat": "no-repeat",
                     "cursor": "pointer",
+                    "margin-bottom": "5px",
                   },
                   Object {
                     "position": "relative",
@@ -7599,11 +7621,11 @@ input:-webkit-autofill {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
+                        "box": "HvInput-box-79",
                         "container": "HvInput-container-65",
-                        "icon": "HvInput-icon-80",
                         "iconClear": "HvInput-iconClear-82",
                         "iconContainer": "HvInput-iconContainer-81",
-                        "iconFlexBox": "HvInput-iconFlexBox-79",
+                        "iconFlexBox": "HvInput-iconFlexBox-80",
                         "infoIconContainer": "HvInput-infoIconContainer-76",
                         "infoText": "HvInput-infoText-77",
                         "input": "HvInput-input-70",
@@ -7736,11 +7758,11 @@ input:-webkit-autofill {
                     },
                     "rules": RuleList {
                       "classes": Object {
+                        "box": "HvInput-box-79",
                         "container": "HvInput-container-65",
-                        "icon": "HvInput-icon-80",
                         "iconClear": "HvInput-iconClear-82",
                         "iconContainer": "HvInput-iconContainer-81",
-                        "iconFlexBox": "HvInput-iconFlexBox-79",
+                        "iconFlexBox": "HvInput-iconFlexBox-80",
                         "infoIconContainer": "HvInput-infoIconContainer-76",
                         "infoText": "HvInput-infoText-77",
                         "input": "HvInput-input-70",
@@ -7772,11 +7794,11 @@ input:-webkit-autofill {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
+                          "box": "HvInput-box-79",
                           "container": "HvInput-container-65",
-                          "icon": "HvInput-icon-80",
                           "iconClear": "HvInput-iconClear-82",
                           "iconContainer": "HvInput-iconContainer-81",
-                          "iconFlexBox": "HvInput-iconFlexBox-79",
+                          "iconFlexBox": "HvInput-iconFlexBox-80",
                           "infoIconContainer": "HvInput-infoIconContainer-76",
                           "infoText": "HvInput-infoText-77",
                           "input": "HvInput-input-70",
@@ -7919,29 +7941,40 @@ input:-webkit-autofill {
                   },
                 ],
                 "map": Object {
+                  ".HvInput-box-79": Object {
+                    "height": "30px",
+                    "padding": "7px",
+                    "width": "30px",
+                  },
                   ".HvInput-container-65": Object {
                     "max-width": "610px",
                     "min-width": "150px",
-                  },
-                  ".HvInput-icon-80": Object {
-                    "height": "30px",
-                    "width": "30px",
                   },
                   ".HvInput-iconClear-82": Object {
                     "background-position": "center",
                     "background-repeat": "no-repeat",
                     "cursor": "pointer",
+                    "margin-bottom": "5px",
                   },
                   ".HvInput-iconContainer-81": Object {
                     "height": "30px",
                     "width": "30px",
                   },
-                  ".HvInput-iconFlexBox-79": Object {
+                  ".HvInput-iconFlexBox-80": Object {
                     "display": "flex",
                     "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
                   },
                   ".HvInput-infoIconContainer-76": Object {
+                    "display": "flex",
                     "height": "30px",
+                    "justify-content": "center",
+                    "width": "30px",
+                  },
+                  ".HvInput-infoIconContainer-76 div": Object {
+                    "align-self": "center",
+                    "margin-top": "-2px",
                   },
                   ".HvInput-infoText-77": Object {
                     "display": "block",
@@ -8051,11 +8084,11 @@ input:-webkit-autofill {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
+                        "box": "HvInput-box-79",
                         "container": "HvInput-container-65",
-                        "icon": "HvInput-icon-80",
                         "iconClear": "HvInput-iconClear-82",
                         "iconContainer": "HvInput-iconContainer-81",
-                        "iconFlexBox": "HvInput-iconFlexBox-79",
+                        "iconFlexBox": "HvInput-iconFlexBox-80",
                         "infoIconContainer": "HvInput-infoIconContainer-76",
                         "infoText": "HvInput-infoText-77",
                         "input": "HvInput-input-70",
@@ -8188,11 +8221,11 @@ input:-webkit-autofill {
                     },
                     "rules": RuleList {
                       "classes": Object {
+                        "box": "HvInput-box-79",
                         "container": "HvInput-container-65",
-                        "icon": "HvInput-icon-80",
                         "iconClear": "HvInput-iconClear-82",
                         "iconContainer": "HvInput-iconContainer-81",
-                        "iconFlexBox": "HvInput-iconFlexBox-79",
+                        "iconFlexBox": "HvInput-iconFlexBox-80",
                         "infoIconContainer": "HvInput-infoIconContainer-76",
                         "infoText": "HvInput-infoText-77",
                         "input": "HvInput-input-70",
@@ -8224,11 +8257,11 @@ input:-webkit-autofill {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
+                          "box": "HvInput-box-79",
                           "container": "HvInput-container-65",
-                          "icon": "HvInput-icon-80",
                           "iconClear": "HvInput-iconClear-82",
                           "iconContainer": "HvInput-iconContainer-81",
-                          "iconFlexBox": "HvInput-iconFlexBox-79",
+                          "iconFlexBox": "HvInput-iconFlexBox-80",
                           "infoIconContainer": "HvInput-infoIconContainer-76",
                           "infoText": "HvInput-infoText-77",
                           "input": "HvInput-input-70",
@@ -8369,18 +8402,20 @@ input:-webkit-autofill {
                     },
                     "type": "global",
                   },
+                  "box": Object {
+                    "height": "30px",
+                    "padding": "7px",
+                    "width": "30px",
+                  },
                   "container": Object {
                     "max-width": "610px",
                     "min-width": "150px",
-                  },
-                  "icon": Object {
-                    "height": "30px",
-                    "width": "30px",
                   },
                   "iconClear": Object {
                     "background-position": "center",
                     "background-repeat": "no-repeat",
                     "cursor": "pointer",
+                    "margin-bottom": "5px",
                   },
                   "iconContainer": Object {
                     "height": "30px",
@@ -8389,9 +8424,14 @@ input:-webkit-autofill {
                   "iconFlexBox": Object {
                     "display": "flex",
                     "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
                   },
                   "infoIconContainer": Object {
+                    "display": "flex",
                     "height": "30px",
+                    "justify-content": "center",
+                    "width": "30px",
                   },
                   "infoText": Object {
                     "display": "block",
@@ -8470,11 +8510,11 @@ input:-webkit-autofill {
                   "Renderer": [Function],
                   "classNamePrefix": "HvInput",
                   "classes": Object {
+                    "box": "HvInput-box-79",
                     "container": "HvInput-container-65",
-                    "icon": "HvInput-icon-80",
                     "iconClear": "HvInput-iconClear-82",
                     "iconContainer": "HvInput-iconContainer-81",
-                    "iconFlexBox": "HvInput-iconFlexBox-79",
+                    "iconFlexBox": "HvInput-iconFlexBox-80",
                     "infoIconContainer": "HvInput-infoIconContainer-76",
                     "infoText": "HvInput-infoText-77",
                     "input": "HvInput-input-70",
@@ -8853,7 +8893,7 @@ input:-webkit-autofill {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999979,
+                  "index": -99999999969,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -8972,6 +9012,10 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".HvInput-infoIconContainer-76 div": Object {
+                    "alignSelf": "center",
+                    "marginTop": -2,
+                  },
                   ".HvInput-input-70::-ms-clear": Object {
                     "display": "none",
                   },
@@ -9008,18 +9052,20 @@ input:-webkit-autofill {
                       "-webkit-text-fill-color": "#414141",
                     },
                   },
+                  "box": Object {
+                    "height": "30px",
+                    "padding": "7px",
+                    "width": "30px",
+                  },
                   "container": Object {
                     "maxWidth": "610px",
                     "minWidth": "150px",
-                  },
-                  "icon": Object {
-                    "height": "30px",
-                    "width": "30px",
                   },
                   "iconClear": Object {
                     "backgroundPosition": "center",
                     "backgroundRepeat": "no-repeat",
                     "cursor": "pointer",
+                    "marginBottom": "5px",
                   },
                   "iconContainer": Object {
                     "height": "30px",
@@ -9028,9 +9074,18 @@ input:-webkit-autofill {
                   "iconFlexBox": Object {
                     "display": "flex",
                     "flexDirection": "row",
+                    "height": 30,
+                    "justifyContent": "center",
                   },
                   "infoIconContainer": Object {
+                    "& div": Object {
+                      "alignSelf": "center",
+                      "marginTop": -2,
+                    },
+                    "display": "flex",
                     "height": "30px",
+                    "justifyContent": "center",
+                    "width": "30px",
                   },
                   "infoText": Object {
                     "display": "block",
@@ -16561,11 +16616,11 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
               className=""
               classes={
                 Object {
+                  "box": "HvInput-box-79",
                   "container": "HvInput-container-65 UnitTimePicker-inputContainer-64",
-                  "icon": "HvInput-icon-80",
                   "iconClear": "HvInput-iconClear-82",
                   "iconContainer": "HvInput-iconContainer-81",
-                  "iconFlexBox": "HvInput-iconFlexBox-79",
+                  "iconFlexBox": "HvInput-iconFlexBox-80",
                   "infoIconContainer": "HvInput-infoIconContainer-76",
                   "infoText": "HvInput-infoText-77",
                   "input": "HvInput-input-70 UnitTimePicker-unitTimeInput-59",

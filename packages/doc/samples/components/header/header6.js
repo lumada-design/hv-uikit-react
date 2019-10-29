@@ -1,11 +1,24 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/User.S";
-import HelpIcon from "@hv/uikit-react-icons/dist/Help.S";
+import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
+import AlertIcon from "@hv/uikit-react-icons/dist/Generic/Alert";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
+
 import HitachiLogo from "./resources/hitachi";
 
-import HvBadge from "@hv/uikit-react-core/dist/Badge";
-import AlertS from "@hv/uikit-react-icons/dist/DawnTheme/Alert.S";
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
+const StyledAlertIcon = withStyles(styles, { withTheme: true })(AlertIcon);
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -49,15 +62,15 @@ const responsivenessConfig = {
 const actionValues = [
   {
     label: "Profile",
-    leftIcon: UserIcon,
-    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
+    iconCallback: (state) => <StyledUserIcon {...state}/>,
+    horizontalItemAction: <StyledUserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
     onVerticalClick: () => alert("Profile"),
     path: "route3"
   },
   {
     label: "Notifications",
-    leftIcon: AlertS,
-    horizontalItemAction:<HvBadge count={88} icon={<AlertS onClick={() => alert("Notification")} />} />,
+    iconCallback: (state) => <StyledAlertIcon {...state}/>,
+    horizontalItemAction:<HvBadge count={88} icon={<StyledAlertIcon onClick={() => alert("Notification")} />} />,
     onVerticalClick: () => alert("Notifications"),
     path: "route3"
   }

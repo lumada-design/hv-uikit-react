@@ -1,6 +1,6 @@
 import React from "react";
 import DropDownMenu from "@hv/uikit-react-core/dist/DropDownMenu";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 
 const menuOptions = [
   {
@@ -16,6 +16,15 @@ const menuOptions = [
 
 export default (
   <div style={{ display: "flex", justifyContent: "center" }}>
-    <DropDownMenu icon={<MoreVert />} dataList={menuOptions} onClick={(e) => alert(e.label)} />
+    <DropDownMenu
+      icon={
+        <MoreVert
+          boxStyles={{ width: "30px", padding: "7px" }}
+          style={{ display: "block" }}
+        />
+      }
+      dataList={menuOptions}
+      onClick={e => alert(e.label)}
+    />
   </div>
 );

@@ -18,8 +18,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Lock from "@hv/uikit-react-icons/dist/DawnTheme/Lock.S";
-import Unlock from "@hv/uikit-react-icons/dist/DawnTheme/Unlock.S";
+import Lock from "@hv/uikit-react-icons/dist/Generic/Lock";
+import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
 import HvProvider from "../../Provider";
 import ToggleButton from "../index";
 
@@ -68,8 +68,8 @@ describe("ToggleButton withStyles", () => {
         />
       </HvProvider>
     );
-
-    wrapper.find("div").simulate("click");
+    const divs = wrapper.find("div")
+    divs.at(0).simulate("click");
 
     expect(onClickMock.mock.calls.length).toBe(1);
   });
@@ -93,13 +93,14 @@ describe("ToggleButton withStyles", () => {
       </HvProvider>
     );
 
-    wrapper.find("div").simulate("click");
+    const divs = wrapper.find("div")
+    divs.at(0).simulate("click");
 
     let selectIcon = wrapper.find(Unlock);
 
     expect(selectIcon.hasClass("selected")).toBe(true);
 
-    wrapper.find("div").simulate("click");
+    divs.at(0).simulate("click");
 
     selectIcon = wrapper.find(Unlock);
 

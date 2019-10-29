@@ -1,14 +1,31 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/DawnTheme/User.S";
-import SettingIcon from "@hv/uikit-react-icons/dist/DawnTheme/Settings.S";
-import HelpIcon from "@hv/uikit-react-icons/dist/DawnTheme/Help.S";
+import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
+import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
+import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
 import HitachiLogo from "./resources/hitachi";
-import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
-import CalendarIcon from "@hv/uikit-react-icons/dist/DawnTheme/Calendar.S";
-import PlaneIcon from "@hv/uikit-react-icons/dist/DawnTheme/Plane.S";
-import LineChartIcon from "@hv/uikit-react-icons/dist/DawnTheme/LineChart.S";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
+import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
+import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
+const StyledHelpIcon = withStyles(styles, { withTheme: true })(HelpIcon);
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(PlaneIcon);
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(CalendarIcon);
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(LineChartIcon);
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -25,39 +42,39 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      leftIcon: UserIcon,
+      iconCallback: (state) => <StyledUserIcon {...state}/>,
       path: "/"
     },
     {
       label: "Events",
-      leftIcon: CalendarIcon,
+      iconCallback: (state) => <StyledCalendarIcon {...state}/>,
       path: "/events"
     },
     {
       label: "Work orders",
       path: "/work",
-      leftIcon: CalendarIcon
+      iconCallback: (state) => <StyledCalendarIcon {...state}/>
     },
     {
       label: "Asset",
-      leftIcon: PlaneIcon,
+      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
       path: "/asset"
     },
     {
       label: "Analytics",
-      leftIcon: LineChartIcon,
+      iconCallback: (state) => <StyledLineChartIcon {...state}/>,
       showNavIcon: true,
       path: "/Analytics",
       subData: {
         data: [
           {
             label: "Model Effectiveness",
-            leftIcon: UserIcon,
+            iconCallback: (state) => <StyledUserIcon {...state}/>,
             path: "/meffectiveness"
           },
           {
             label: "Trend analysis",
-            leftIcon: CalendarIcon,
+            iconCallback: (state) => <StyledCalendarIcon {...state}/>,
             path: "/tAnalysis"
           }
         ]
@@ -65,7 +82,7 @@ const navigationData = {
     },
     {
       label: "Resources",
-      leftIcon: PlaneIcon,
+      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
       path: "/Resources"
     }
   ]
@@ -74,21 +91,21 @@ const navigationData = {
 const actionValues = [
   {
     label: "Profile",
-    leftIcon: UserIcon,
+    iconCallback: (state) => <StyledUserIcon {...state}/>,
     horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
     onVerticalClick: () => alert("Profile"),
     path: "route3"
   },
   {
     label: "Settings",
-    leftIcon: SettingIcon,
+    iconCallback: (state) => <StyledSettingIcon {...state}/>,
     horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
     onVerticalClick: () => alert("Settings"),
     path: "route3"
   },
   {
     label: "Help",
-    leftIcon: HelpIcon,
+    iconCallback: (state) => <StyledHelpIcon {...state}/>,
     horizontalItemAction:<HelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
     onVerticalClick: () => alert("Help"),
     path: "route3"

@@ -1,13 +1,31 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/User.S";
-import SettingIcon from "@hv/uikit-react-icons/dist/Settings.S";
+import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
+import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import ActionsPopover from "./ActionsPopover";
 import ActionsList from "./ActionsList";
-import CalendarIcon from "@hv/uikit-react-icons/dist/DawnTheme/Calendar.S";
-import LineChartIcon from "@hv/uikit-react-icons/dist/DawnTheme/LineChart.S";
-import PlaneIcon from "@hv/uikit-react-icons/dist/DawnTheme/Plane.S";
-import HelpIcon from "@hv/uikit-react-icons/dist/Help.S";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
+import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
+import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(CalendarIcon);
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(LineChartIcon);
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(PlaneIcon);
+const StyledHelpIcon = withStyles(styles, { withTheme: true })(HelpIcon);
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -22,32 +40,32 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      leftIcon: UserIcon,
+      iconCallback: (state) => <StyledUserIcon {...state}/>,
       path: "/"
     },
     {
       label: "Events",
-      leftIcon: CalendarIcon,
+      iconCallback: (state) => <StyledCalendarIcon {...state}/>,
       path: "/events"
     },
     {
       label: "Work orders",
       path: "/work",
-      leftIcon: CalendarIcon
+      iconCallback: (state) => <StyledCalendarIcon {...state}/>
     },
     {
       label: "Asset",
-      leftIcon: PlaneIcon,
+      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
       path: "/asset"
     },
     {
       label: "Analytics",
-      leftIcon: LineChartIcon,
+      iconCallback: (state) => <StyledLineChartIcon {...state}/>,
       path: "/Analytics",
     },
     {
       label: "Resources",
-      leftIcon: PlaneIcon,
+      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
       path: "/Resources"
     }
   ]
@@ -56,22 +74,22 @@ const navigationData = {
 const actionValues = [
   {
     label: "Profile",
-    leftIcon: UserIcon,
+    iconCallback: (state) => <StyledUserIcon {...state}/>,
     horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
     onVerticalClick: () => alert("Profile"),
     path: "route3"
   },
   {
     label: "Settings",
-    leftIcon: SettingIcon,
-    horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
+    iconCallback: (state) => <StyledSettingIcon {...state}/>,
+    horizontalItemAction:<StyledSettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
     onVerticalClick: () => alert("Settings"),
     path: "route3"
   },
   {
     label: "Help",
-    leftIcon: HelpIcon,
-    horizontalItemAction:<HelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
+    iconCallback: (state) => <StyledHelpIcon {...state}/>,
+    horizontalItemAction:<StyledHelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
     onVerticalClick: () => alert("Help"),
     path: "route3"
   }

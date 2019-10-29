@@ -62,9 +62,6 @@ const styles = theme => ({
     "&:not($disabled):active:hover:not($selector)": selected(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
-    },
-    "& svg:last-child": {
-      marginLeft: "auto"
     }
   },
   condensed: {
@@ -94,6 +91,16 @@ const styles = theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
+  },
+  box: {
+    width: "30px",
+    height: "30px",
+    padding: "9px",
+    marginLeft: "auto",
+    "& svg": {
+      display: "block", 
+      margin: "auto" 
+    }
   }
 });
 

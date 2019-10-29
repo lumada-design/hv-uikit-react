@@ -20,7 +20,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected.S";
+import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
 
 import RadioWithStyles from "../index";
 import RadioButton from "../RadioButton";

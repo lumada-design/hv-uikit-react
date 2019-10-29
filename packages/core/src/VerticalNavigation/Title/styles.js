@@ -42,6 +42,15 @@ const styles = theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
+  },
+  box: {
+    width: "30px",
+    height: "30px",
+    padding: "10px 7px 7px 7px",
+    "& svg": {
+      display: "block", 
+      margin: "auto" 
+    }
   }
 });
 

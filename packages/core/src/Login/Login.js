@@ -18,8 +18,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Success.sema1.S";
-import Fail4Unsuccess16Color from "@hv/uikit-react-icons/dist/Fail.sema4.S";
+import Success from "@hv/uikit-react-icons/dist/Generic/Success";
+import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 import HvGrid from "../Grid";
 
@@ -382,8 +382,8 @@ HvLogin.defaultProps = {
   titleComponent: null,
   allowRecover: true,
   allowRememberMe: true,
-  okRecoveryIcon: <Level0Success16Color />,
-  errorLoginIcon: <Fail4Unsuccess16Color />,
+  okRecoveryIcon: <Success />,
+  errorLoginIcon: <Fail />,
   labels: {
     titleText: "Welcome",
     recoveryTitle: "Recover Credentials",

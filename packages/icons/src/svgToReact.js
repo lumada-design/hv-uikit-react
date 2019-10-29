@@ -60,7 +60,7 @@ const writeFile = (processedSVG, fileName, themeName) => {
   fs.appendFile(path.resolve(componentOutputFolder, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
 };
 
-const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false) => {
+const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, specialCaseXS = false) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
       printErrors(err);
@@ -135,7 +135,8 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false) => {
         processedFileToWrite.split(".").join(""),
         colorObject.colorText,
         sizeObject,
-        useGeneric
+        useGeneric,
+        specialCaseXS
       );
 
       writeFile(output, fileToWrite, themeName);
@@ -150,21 +151,26 @@ const runUtilForAllInDir = () => {
     } // GEt out early if not found
     files.forEach((file, i) => {
       let useGeneric = false;
+      let specialCaseXS = false;
       let themeName = path.relative(`${process.cwd()}/${inputPath}`, file).split(path.sep)[0];
       if(!(themeName.endsWith("Theme") || themeName.endsWith("Generic"))) {
         themeName = null;
       }  
-      
-      if(themeName === "Generic") {
-        useGeneric = true;
-      }
 
       const extention = path.extname(file); // extract extensions
       const fileName = path.basename(file); // extract file name extensions
+
+      if(themeName === "Generic") {
+        useGeneric = true;
+        if(fileName.includes("XS")) {
+          specialCaseXS = true
+        }
+      }
+
       if (extention === ".svg") {
         // variable instantiated up top
         const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName, themeName, useGeneric);
+        runUtil(file, componentName, themeName, useGeneric, specialCaseXS);
       }
     });
   });

@@ -20,12 +20,8 @@ import PropTypes from "prop-types";
 
 import Dialog from "@material-ui/core/Dialog";
 
-import Close16 from "@hv/uikit-react-icons/dist/Close.S";
+import Close from "@hv/uikit-react-icons/dist/Generic/Close";
 import Button from "../Button";
-
-const style = {
-  width: "32px"
-};
 
 /**
  * Modal component.
@@ -61,7 +57,7 @@ const Main = ({ classes, className, id, children, open, onClose, ...others }) =>
       category="ghost"
       onClick={event => onClose(event)}
     >
-      <Close16 style={style} />
+      <Close className={classes.iconContainer} />
     </Button>
     {children}
   </Dialog>

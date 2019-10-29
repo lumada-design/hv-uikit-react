@@ -50,6 +50,15 @@ const styles = theme => ({
   },
   radio: {
     padding: "1px"
+  },
+  box: {
+    width: "30px",
+    height: "30px",
+    padding: "7px",
+    "& svg": {
+      display: "block", 
+      margin: "auto" 
+    }
   }
 });
 

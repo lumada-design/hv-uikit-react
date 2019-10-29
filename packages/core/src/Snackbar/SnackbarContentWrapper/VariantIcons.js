@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
-import Error from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
-
 import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Success from "@hv/uikit-react-icons/dist/Generic/Success";
+import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
+import styles from "./styles";
+
+const StyledSuccess = withStyles(styles, { withTheme: true })(Success);
+const StyledError = withStyles(styles, { withTheme: true })(Error);
 
 const variantIcon = variant => {
   let icon;
   switch (variant) {
     case "success":
-      icon = <Success />;
+      icon = <StyledSuccess iconSize="S" semantic="sema1" />;
       break;
     case "error":
-      icon = <Error />;
+      icon = <StyledError iconSize="S" semantic="sema4" />;
       break;
     default:
       icon = null;

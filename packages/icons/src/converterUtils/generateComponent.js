@@ -31,7 +31,7 @@ const getSize = (componentName, size) => hasSpecialSize(componentName) ? size + 
  * @param  string colorArrayDefaultValues - The defaults value of colors to add to the component
  * @return string The parsed component string
  */
-module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSizes, useGeneric) => {
+module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSizes, useGeneric, specialCaseXS) => {
   const themePalette = dawnTheme.palette
 
   let palette = colorArrayDefaultValues;
@@ -51,7 +51,7 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
 
   const iconContainer = useGeneric ? 
     `
-      <div className={classesToApply}>
+      <div className={classesToApply} style={stylesToApply}>
         ${
           svgOutput
           .split('\n')
@@ -69,6 +69,7 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
           .join('\n')
         }
       `;
+  const defaultSize = specialCaseXS ? "XS" : "S";
 
   return `
     import React from 'react';
@@ -140,7 +141,9 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     }
 
     const ${componentName} = props => {
-      const {classes, color, iconSize, viewbox, height, width, theme, semantic, inverted, className, ...other} = props;
+      const {classes, color, iconSize, viewbox, height, width, theme, semantic, inverted, className, boxStyles, ...other} = props;
+
+      const stylesToApply = boxStyles;
 
       let colorArray = color;
       const size = sizeSelector(height, width, iconSize);
@@ -231,7 +234,11 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       /**
        * Inverts the background-foreground on semantic icons
        */
-      inverted: PropTypes.bool
+      inverted: PropTypes.bool,
+      /**
+       * Styles applied to the box around the svg.
+       */
+      boxStyles: PropTypes.instanceOf(Object)
     };
     
     ${componentName}.defaultProps = {
@@ -241,7 +248,8 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       viewbox: "${defaultSizes.viewBoxRegexp.join(" ")} ",
       height: null,
       width: null,
-      iconSize: "S"
+      iconSize: "${defaultSize}",
+      boxStyles: undefined
     };
 
     const styles = () => ({

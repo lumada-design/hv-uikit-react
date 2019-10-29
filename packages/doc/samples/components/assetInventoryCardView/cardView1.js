@@ -1,12 +1,52 @@
 import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
+import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
+import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
+import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
+import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import RawIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import withStyles from "@material-ui/core/styles/withStyles";
 import compressor from "../card/resources/compressor.png";
 import leaf from "../card/resources/leaf.png";
-import AddIcon from "@hv/uikit-react-icons/dist/Add.S";
-import UploadIcon from "@hv/uikit-react-icons/dist/Upload.S";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Delete.S";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Preview.S";
-import Icon from "@hv/uikit-react-icons/dist/DawnTheme/Tool.S";
+
+const styles = () => ({
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
+  }
+});
+
+const Icon = withStyles(styles, { withTheme: true })(({classes}) => <RawIcon className={classes.box} />);
+
+const AddIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawAddIcon className={classes.box} color={color} />)
+  }
+);
+
+const PreviewIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawPreviewIcon className={classes.box} color={color} />)
+  }
+);
+
+
+const UploadIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawUploadIcon className={classes.box} color={color} />)
+  }
+);
+
+const DeleteIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawDeleteIcon className={classes.box} color={color} />)
+  }
+);
 
 //-------------------- Data --------------------
 const compressorData = id => {
@@ -50,10 +90,10 @@ const values = () => {
 
 //--------------- Configuration ----------------
 const myActions = [
-  { id: "post", label: "Add", icon: AddIcon, disabled: false },
-  { id: "get", label: "Preview", icon: PreviewIcon, disabled: true },
-  { id: "put", label: "Upload", icon: UploadIcon, disabled: true },
-  { id: "delete", label: "Delete", icon: DeleteIcon, disabled: false }
+  { id: "post", label: "Add", iconCallback: () => <AddIcon />, disabled: false },
+  { id: "get", label: "Preview", iconCallback: () => <PreviewIcon disabled />, disabled: true },
+  { id: "put", label: "Upload", iconCallback: () => <UploadIcon disabled />, disabled: true },
+  { id: "delete", label: "Delete", iconCallback: () => <DeleteIcon />, disabled: false }
 ];
 
 const viewConfiguration = {

@@ -18,46 +18,48 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import Success from "@hv/uikit-react-icons/dist/DawnTheme/Success.sema1.S";
-import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
-import Unsuccess from "@hv/uikit-react-icons/dist/DawnTheme/Fail.sema4.S";
+import Success from "@hv/uikit-react-icons/dist/Generic/Success";
+import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
+import Unsuccess from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 import validationStates from "./validationStates";
 
-const InputAdornment = ({ classes, validationState, validationIconVisible, customFixedIcon, handleClear, theme, onlyCustomIcon, disableClear }) => {
-  const stl = {
-    height: `${theme.hv.spacing.md}px`,
-    width: `${theme.hv.spacing.md}px`
-  };
-
-  return (
-    <div className={classes.iconFlexBox}>
-      <div
-        className={classNames(classes.icon, {
-          [classes.iconClear]: validationState === validationStates.filled
-        })}
-        {...validationState === validationStates.filled && {
-          onMouseDown: () => handleClear(),
-          role: "button",
-          tabIndex: -1,
-          onKeyDown: () => handleClear()
-        }}
-      >
-        
-        {!onlyCustomIcon && !disableClear && validationState === validationStates.filled && <Close style={stl} />}
-        {!onlyCustomIcon && validationIconVisible && validationState === validationStates.valid && <Success style={stl} />}
-        {!onlyCustomIcon && validationIconVisible && validationState === validationStates.invalid && (
-          <Unsuccess style={stl} />
-        )}
-      </div>
-      {!isNil(customFixedIcon) && 
-        <div className={classes.icon}>
-          {customFixedIcon}
-        </div>
-      }
+const InputAdornment = ({
+  classes,
+  validationState,
+  validationIconVisible,
+  customFixedIcon,
+  handleClear,
+  onlyCustomIcon,
+  disableClear
+}) => (
+  <div className={classes.iconFlexBox}>
+    <div
+      className={classNames(classes.icon, {
+        [classes.iconClear]: validationState === validationStates.filled
+      })}
+      {...validationState === validationStates.filled && {
+        onMouseDown: () => handleClear(),
+        role: "button",
+        tabIndex: -1,
+        onKeyDown: () => handleClear()
+      }}
+    >
+      {!onlyCustomIcon &&
+        !disableClear &&
+        validationState === validationStates.filled && <Close className={classes.box} />}
+      {!onlyCustomIcon &&
+        validationIconVisible &&
+        validationState === validationStates.valid && <Success semantic="sema1" className={classes.box} />}
+      {!onlyCustomIcon &&
+        validationIconVisible &&
+        validationState === validationStates.invalid && <Unsuccess semantic="sema4" className={classes.box} />}
     </div>
-  );
-};
+    {!isNil(customFixedIcon) && (
+      <div className={classes.icon}>{customFixedIcon}</div>
+    )}
+  </div>
+);
 
 InputAdornment.propTypes = {
   /**

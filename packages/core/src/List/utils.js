@@ -20,10 +20,15 @@ const isItemSelected = (item, newItem) => {
   return newItem[selectionKey] === selectionElement;
 };
 
+const checkIcons = list => {
+  const hasLeftIcons = !!list.filter(elem => elem.leftIcon).length;
+  const hasIconsCallback = !!list.filter(elem => elem.iconCallback).length;
+  return hasLeftIcons || hasIconsCallback;
+}
+
 const parseState = (list, labels) => {
   const { selectAll, selectionConjunction } = labels;
-
-  const hasLeftIcons = !!list.filter(elem => elem.leftIcon).length;
+  const hasLeftIcons = checkIcons(list);
   const selection = list.filter(elem => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;

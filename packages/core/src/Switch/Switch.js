@@ -22,9 +22,8 @@ import classnames from "classnames";
 import { filter } from "lodash";
 
 import isNil from "lodash/isNil";
+import CheckMark from "@hv/uikit-react-icons/dist/Generic/Good";
 import HvTypography from "../Typography";
-
-import CheckMark from "./media/ToggleSuccess.XS.svg";
 
 const Switch = props => {
   const {
@@ -36,7 +35,8 @@ const Switch = props => {
     id,
     showLabels,
     value,
-    displayIconChecked
+    displayIconChecked,
+    theme
   } = props;
 
   const [clickState, setClicked] = useState(checked);
@@ -48,8 +48,7 @@ const Switch = props => {
     if (!disabled && labelIsDisabled) {
       const status = !clickState;
       setClicked(status);
-      // eslint-disable-next-line no-param-reassign
-      event.target.checked = status;
+      event.target.setAttribute("checked", status);
       onChange(event);
     }
   };
@@ -180,15 +179,17 @@ const Switch = props => {
           disabled: classes.disabled,
           iconChecked: classes.iconChecked
         }}
-        {...(displayIconChecked && {
+        {...displayIconChecked && {
           checkedIcon: (
-            <img
-              alt="checkmark"
-              className={classes.checkedIcon}
-              src={CheckMark}
-            />
+            <div className={classes.checkedIcon}>
+              <CheckMark
+                width={12}
+                height={12}
+                color={[theme.hv.palette.accent.acce2h]}
+              />
+            </div>
           )
-        })}
+        }}
       />
       {showLabels && <RightLabel />}
     </div>
@@ -262,7 +263,13 @@ Switch.propTypes = {
   /**
    * Determine if custom icon in button should be displayed
    * */
-  displayIconChecked: PropTypes.bool
+  displayIconChecked: PropTypes.bool,
+  /**
+   * Theming sheet used to style components
+   * In this case needed to style checkmark in toggle button
+   * */
+  theme: PropTypes.instanceOf(Object)
+
 };
 
 Switch.defaultProps = {
@@ -277,7 +284,8 @@ Switch.defaultProps = {
   id: undefined,
   value: "",
   showLabels: true,
-  displayIconChecked: false
+  displayIconChecked: false,
+  theme: undefined
 };
 
 export default Switch;

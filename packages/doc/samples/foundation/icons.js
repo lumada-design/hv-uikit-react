@@ -37,8 +37,7 @@ const dropdownSizes = [
   },
   {
     id: "1",
-    label: "S",
-    selected: true
+    label: "S"
   },
   {
     id: "2",
@@ -51,6 +50,11 @@ const dropdownSizes = [
   {
     id: "4",
     label: "XL"
+  },
+  {
+    id: "5",
+    label: "default",
+    selected: true
   }
 ];
 
@@ -138,7 +142,7 @@ const Group = ({ groupLabel, classes, iconSize, colorArray = [], theme }) => {
 const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
   <div className={classes.iconContainer}>
     {Component != null ? (
-      <Component iconSize={iconSize && iconSize.label} color={colorArray} />
+      <Component iconSize={iconSize.label === "default" ? undefined: iconSize && iconSize.label} color={colorArray} />
     ) : (
       <span
         style={{
