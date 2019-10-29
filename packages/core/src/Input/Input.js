@@ -337,6 +337,7 @@ class HvInput extends React.Component {
       validation,
       externalWarningTextOverride,
       inputProps,
+      inputRef,
       onChange,
       onBlur,
       onFocus,
@@ -452,6 +453,7 @@ class HvInput extends React.Component {
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}
+          inputRef={inputRef}
           {...(iconPosition === "right" ||
             (iconPosition === undefined &&
               validationIconPosition === "right")) &&
@@ -612,6 +614,10 @@ HvInput.propTypes = {
    * Attributes applied to the input element.
    */
   inputProps: PropTypes.instanceOf(Object),
+   /**
+   * Allows passing a ref to the underlying input
+   */
+  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * If ´true´ the input is disabled.
    */
@@ -772,6 +778,7 @@ HvInput.defaultProps = {
     requiredWarningText: "The value is required"
   },
   inputProps: {},
+  inputRef: null,
   customFixedIcon: null,
   infoIcon: false,
   iconVisible: undefined,

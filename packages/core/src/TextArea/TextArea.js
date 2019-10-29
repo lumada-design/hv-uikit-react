@@ -32,11 +32,13 @@ import Input from "../Input";
 class HvTextArea extends React.Component {
   constructor(props) {
     super(props);
-    const { value, initialValue } = this.props;
+    const { value, initialValue, autoScroll } = this.props;
     const val = value || initialValue;
     this.state = {
-      currentValueLength: val !== undefined ? this.limitValue(val).length : 0
+      currentValueLength: val !== undefined ? this.limitValue(val).length : 0,
+      autoScrolling: autoScroll
     };
+    this.textInputRef = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -56,6 +58,21 @@ class HvTextArea extends React.Component {
     return null;
   }
 
+  componentDidMount() {
+    const { autoScroll } = this.props;
+    if (autoScroll) {
+      this.addScrollListener();
+      this.scrollDown();
+    }
+  }
+
+  componentDidUpdate() {
+    const { autoScrolling } = this.state;
+    if (autoScrolling) {
+      this.scrollDown();
+    }
+  }
+
   /**
    * Limit the string to the maxCharQuantity length.
    *
@@ -72,6 +89,28 @@ class HvTextArea extends React.Component {
       : value.substring(0, maxCharQuantity);
   };
 
+  isScrolledDown = () => {
+    const el = this.textInputRef.current;
+    return el == null ||
+      el.scrollHeight - el.scrollTop === el.clientHeight;
+  };
+
+  scrollDown = () => {
+    const el = this.textInputRef.current;
+    if (el != null) {
+      el.scrollTop = el.scrollHeight - el.clientHeight;
+    }
+  };
+
+  addScrollListener = () => {
+    const scrollHandler = {
+      handleEvent: () => {
+        this.setState({ autoScrolling: this.isScrolledDown() });
+      }
+    };
+    this.textInputRef.current.addEventListener('scroll', scrollHandler);
+  };
+
   /**
    * Updates the length of the string while is being inputted, also executes the user onChange
    * allowing the customization of the input if required.
@@ -86,9 +125,8 @@ class HvTextArea extends React.Component {
     const textAreaValue = this.limitValue(!isNil(newValue) ? newValue : value);
 
     this.setState({
-      currentValueLength: textAreaValue.length
+      currentValueLength: textAreaValue.length,
     });
-
     return newValue;
   };
 
@@ -127,6 +165,7 @@ class HvTextArea extends React.Component {
           disabled={disabled}
           showInfo={false}
           validationIconVisible={false}
+          inputRef={this.textInputRef}
         />
         {maxCharQuantity ? (
           <div className={classes.characterCounter}>
@@ -162,6 +201,7 @@ class HvTextArea extends React.Component {
       </>
     );
   }
+
 }
 
 // [classes.currentCounter]:!disabled,[classes.disabled]:disabled
@@ -286,7 +326,12 @@ HvTextArea.propTypes = {
   /**
    * If ´true´ the text area is disabled.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * Auto-scroll: automatically scroll to the end on inputValue changes.
+   * Will stop if the user scrolls up and resume if scrolled to the bottom.
+   */
+  autoScroll: PropTypes.bool
 };
 
 HvTextArea.defaultProps = {
@@ -307,7 +352,8 @@ HvTextArea.defaultProps = {
   initialValue: "",
   inputValue: undefined,
   maxCharQuantity: undefined,
-  onChange: value => value
+  onChange: value => value,
+  autoScroll: false
 };
 
 export default HvTextArea;

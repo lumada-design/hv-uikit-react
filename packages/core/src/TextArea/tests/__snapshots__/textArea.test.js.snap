@@ -12,6 +12,11 @@ exports[`TextArea Component should render correctly if opened 1`] = `
     }
     disabled={false}
     initialValue="test"
+    inputRef={
+      Object {
+        "current": null,
+      }
+    }
     labels={
       Object {
         "inputLabel": "",
