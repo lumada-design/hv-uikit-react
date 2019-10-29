@@ -104,7 +104,11 @@ storiesOf("Components", module).add("MultiButton", () => <MultiButton />, {
       src: "components/multiButton/horizontalSamples/maximumSelectionHorizontalMultipleSelection.js"
     },
     {
-      title: "Dynamically changge button contents",
+      title: "Days of Week Selector",
+      src: "components/multiButton/horizontalSamples/daysOfWeekSelectionHorizontalMultipleSelection.js"
+    },
+    {
+      title: "Dynamically change button contents",
       description: "Change multibutton properties, triggered by external an agent",
       src: "components/multiButton/horizontalSamples/inputControlledValue.js"
     }

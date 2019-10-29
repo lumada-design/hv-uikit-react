@@ -17,7 +17,8 @@
 const styles = theme => ({
   root: {
     display: "flex",
-    minHeight: 34,
+    minHeight: 32,
+    // height:34,
     alignItems: "center",
     transition:"none",
   },
@@ -28,7 +29,9 @@ const styles = theme => ({
     marginLeft:8
   },
   btnBase: {
+    minWidth:32,
     maxWidth: 200,
+    padding:0,
     borderLeft: "none",
     borderRight: "none",
     borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
@@ -37,12 +40,6 @@ const styles = theme => ({
       borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
       "&:hover": {
         borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-      }
-    },
-    "&:last-child": {
-      borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-      "&:hover": {
-        borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
       }
     },
     "&:focus":{
@@ -67,20 +64,31 @@ const styles = theme => ({
     ...theme.hv.typography.highlightText,
     "&:hover": {
       background: theme.hv.palette.atmosphere.atmo1,
-      border: `1px solid ${theme.hv.palette.accent.acce1}`
+      border: `1px solid ${theme.hv.palette.accent.acce1}`,
+      borderRight: `1px solid ${theme.hv.palette.accent.acce1}`
     },
     "& + button[data-selectionindicator='isSelected']": {
-      borderLeft: "none !important",
+      borderLeft: "1px solid transparent !important",
     }
   },
   isUnselected: {
+    minWidth:"32px !important",
     background: theme.hv.palette.atmosphere.atmo2,
+    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo2}`,
+    borderRight: `1px solid transparent`,
     ...theme.hv.typography.normalText,
     "&:hover": {
-      border:"none",
       borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`
-    }
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
+      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo2}`,
+      borderRight: `1px solid transparent`
+    },
+    "&:last-child": {
+      borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      "&:hover": {
+        borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+      }
+    },
   },
   // vertical button display Styling
   rootVertical: {
@@ -88,6 +96,9 @@ const styles = theme => ({
     border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
     borderTop:"none",
     borderBottom:"none",
+    btnSecondary: {
+      flex: "1 1 20px",
+    },
     "& $btnBase": {
       width: "100%",
       border: "none",
@@ -95,10 +106,13 @@ const styles = theme => ({
         borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
         "&:hover": {
           borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+          borderBottom: `1px solid transparent`,
+          borderLeft:"none"
         }
       },
       "&:last-child": {
         borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        borderRight:"none",
         "&:hover": {
           borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
         }
@@ -106,21 +120,23 @@ const styles = theme => ({
     },
     "& $isSelected": {
       height: 32,
-      width: `calc(100% + 4px) !important`,
+      width: `calc(100% + 2px) !important`,
       borderTop: `1px solid ${theme.hv.palette.accent.acce1} !important`,
       borderBottom: `1px solid ${theme.hv.palette.accent.acce1} !important`,
       "& + button[data-selectionindicator='isSelectedVertical']": {
-        borderTop: "none !important"
-      },
-      "&:first-child": {
-        "&:hover": {
-          borderTop: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-        }
+        borderTop: "1px solid transparent !important"
       },
     },
     "& $isUnselected": {
+      borderTop: "1px solid transparent",
+      borderBottom: "1px solid transparent",
+      "&:first-child": {
+        borderBottom: `1px solid transparent`,
+      },
       "&:hover": {
         border: "none !important",
+        borderTop: `1px solid transparent !important`,
+        borderBottom: `1px solid transparent !important`,
         "&:first-child": {
           "&:hover": {
             borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
