@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.7.5...@hv/uikit-react-lab@1.8.0) (2019-10-30)
+
+
+### Features
+
+* **textarea:** autoScroll for dynamic content ([a9d52a9](https://github.com/pentaho/hv-uikit-react/commit/a9d52a9))
+
+
+
+
+
 ## [1.7.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.7.4...@hv/uikit-react-lab@1.7.5) (2019-10-23)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
