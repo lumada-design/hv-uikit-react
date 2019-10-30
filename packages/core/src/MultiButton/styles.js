@@ -17,137 +17,77 @@
 const styles = theme => ({
   root: {
     display: "flex",
-    minHeight: 32,
-    // height:34,
+    height: 32,
     alignItems: "center",
-    transition:"none",
+    transition: "none",
+    boxShadow: `-1px 1px 0px 0px ${
+      theme.hv.palette.atmosphere.atmo6
+    }, 1px 1px 0px 0px ${
+      theme.hv.palette.atmosphere.atmo6
+    }, -1px -1px 0px 0px ${
+      theme.hv.palette.atmosphere.atmo6
+    }, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}`
   },
-  iconWidth:{
+  iconWidth: {
     minWidth: "32px !important"
   },
-  labelPadding:{
-    marginLeft:8
+  labelPadding: {
+    marginLeft: 8
   },
   btnBase: {
-    minWidth:32,
+    minWidth: 32,
     maxWidth: 200,
-    padding:0,
-    borderLeft: "none",
-    borderRight: "none",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    "&:first-child": {
-      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-      "&:hover": {
-        borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-      }
+    padding: 0,
+    border: "none",
+    transition:"none",
+    "&:focus": {
+      outline: "none"
     },
-    "&:focus":{
-      outline:"none"
+    "&:active": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     }
   },
-  labelText:{
-    textOverflow:"ellipsis",
-    whiteSpace:"nowrap",
-    overflow:"hidden"
+  labelText: {
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden"
   },
   btnSecondary: {
-    flex: "1 1 0px",
-  },
-  isSelected: {
-    border: `1px solid ${theme.hv.palette.accent.acce1}`,
-    borderLeft: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-    borderRight: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-    background: theme.hv.palette.atmosphere.atmo1,
-    height: 34,
-    cursor:"default",
-    ...theme.hv.typography.highlightText,
+    flex: "1 0 0px",
     "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo1,
-      border: `1px solid ${theme.hv.palette.accent.acce1}`,
-      borderRight: `1px solid ${theme.hv.palette.accent.acce1}`
-    },
-    "& + button[data-selectionindicator='isSelected']": {
-      borderLeft: "1px solid transparent !important",
+      border: "none !important"
     }
   },
-  isUnselected: {
-    minWidth:"32px !important",
-    background: theme.hv.palette.atmosphere.atmo2,
-    borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    borderRight: `1px solid transparent`,
-    ...theme.hv.typography.normalText,
-    "&:hover": {
-      borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo2}`,
-      borderRight: `1px solid transparent`
-    },
-    "&:last-child": {
-      borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-      "&:hover": {
-        borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-      }
-    },
+  isSelected: {
+    zIndex: 1,
+    background: theme.hv.palette.atmosphere.atmo1,
+    height: 34,
+    cursor: "default",
+    ...theme.hv.typography.highlightText,
+    boxShadow: `1px -1px 0px 0px ${
+      theme.hv.palette.accent.acce1
+    }, 1px 0px 0px 0px ${theme.hv.palette.accent.acce1}, 0px 0px 0px 1px ${
+      theme.hv.palette.accent.acce1
+    }, 0px 0px 0px 0px ${theme.hv.palette.accent.acce1}`
   },
-  // vertical button display Styling
+  isUnselected: {
+    minWidth: "32px !important",
+    background: theme.hv.palette.atmosphere.atmo2,
+    ...theme.hv.typography.normalText
+  },
+  // vertical button display Styling 
   rootVertical: {
     flexDirection: "column",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    borderTop:"none",
-    borderBottom:"none",
+    height:"auto",
     btnSecondary: {
-      flex: "1 1 20px",
+      flex: "1 1 20px"
     },
     "& $btnBase": {
-      width: "100%",
-      border: "none",
-      "&:first-child": {
-        borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-        "&:hover": {
-          borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-          borderBottom: `1px solid transparent`,
-          borderLeft:"none"
-        }
-      },
-      "&:last-child": {
-        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-        borderRight:"none",
-        "&:hover": {
-          borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-        }
-      },
+      width: "100%"
     },
     "& $isSelected": {
       height: 32,
-      width: `calc(100% + 2px) !important`,
-      borderTop: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-      borderBottom: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-      "& + button[data-selectionindicator='isSelectedVertical']": {
-        borderTop: "1px solid transparent !important"
-      },
-    },
-    "& $isUnselected": {
-      borderTop: "1px solid transparent",
-      borderBottom: "1px solid transparent",
-      "&:first-child": {
-        borderBottom: `1px solid transparent`,
-      },
-      "&:hover": {
-        border: "none !important",
-        borderTop: `1px solid transparent !important`,
-        borderBottom: `1px solid transparent !important`,
-        "&:first-child": {
-          "&:hover": {
-            borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-          }
-        },
-        "&:last-child": {
-          "&:hover": {
-            borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6} !important`,
-          }
-        },
-      }
+      width: `calc(100% + 2px) !important`
     }
   }
 });

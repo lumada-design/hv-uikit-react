@@ -39,12 +39,12 @@ function WrapperComp() {
   return (
     <>
       <Button style={btnStyle} onClick={() => setValue(initialButtonsDefinitions)}>
-        Initial Props{" "}
+        Initial Props
       </Button>
       <Button style={btnStyle} onClick={() => setValue(finalButtonsDefinitions)}>
-        New Props{" "}
+        New Props
       </Button>
-      <div style={{ width: "500px" }}>
+      <div style={{ width: "400px" }}>
         <MultiButton buttons={value} type={"mixed"} multi />
       </div>
     </>
