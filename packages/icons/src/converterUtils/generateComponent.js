@@ -37,10 +37,14 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
   let palette = colorArrayDefaultValues;
   let exportName = `${componentName};`
 
+  const isSelector =
+    componentName.startsWith("Checkbox") ||
+    componentName.startsWith("RadioButton");
+
   if(useGeneric) {
     palette = colorArrayDefaultValues
       .replace(/"#414141"/g, "theme.hv.palette.accent.acce1")
-      .replace(/"#fff"/g, "theme.hv.palette.accent.acce0");
+      .replace(/"#fff"/g, "theme.hv.palette." + (isSelector ? "atmosphere.atmo1" : "accent.acce0"));
     palette = replaceColorsWithTheme(palette, themePalette);
     exportName = `withStyles(styles, { withTheme: true })(${componentName});`;
   }
