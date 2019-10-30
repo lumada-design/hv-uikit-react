@@ -103,28 +103,6 @@ class MultiButton extends React.Component {
     const { className, classes, vertical, type, buttons } = this.props;
 
     /**
-     * This function checks if the clicked button is stored in state, if so
-     * it then takes into account if the button is in a vertical or horizontal
-     * positioning. It return s string that maps to a css class that applies
-     * styling that fine tunes the component display
-     *
-     * @param {node} button - clicked button.
-     */
-    const selectionIndicator = button => {
-      const { checkedItems } = this.state;
-
-      let indicatorProp;
-      if (vertical) {
-        indicatorProp =
-          checkedItems.indexOf(button.id) !== -1 ? "isSelectedVertical" : "";
-      } else {
-        indicatorProp =
-          checkedItems.indexOf(button.id) !== -1 ? "isSelected" : "";
-      }
-      return indicatorProp;
-    };
-
-    /**
      * Generate button content elements to render the component itself
      */
 
@@ -172,7 +150,6 @@ class MultiButton extends React.Component {
             className
           )}
           category={button.selected ? "secondary" : "ghost"}
-          data-selectionindicator={selectionIndicator(button)}
         >
           {generateBtnContents(type, button)}
         </HvButton>
