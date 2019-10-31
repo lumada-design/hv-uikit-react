@@ -3,7 +3,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HitachiLogo from "./resources/hitachi";
-import TestLogo from "./resources/testlogo.svg";
 
 const styles = {
   rootS: {
@@ -71,7 +70,6 @@ const SimpleHeaderController = ({
   position,
   navigationData,
   companyLogo,
-  productLogo,
   label,
   actionValues,
   responsivenessConfig
@@ -95,7 +93,6 @@ const SimpleHeaderController = ({
       position={position}
       // Brand
       companyLogo={companyLogo}
-      productLogo={productLogo}
       label={label}
       // Navigation
       navigationStructure={navigationData}
@@ -117,7 +114,6 @@ export default (
       // Brand
       companyLogo={<Hitachi />}
       label="Application Name"
-      productLogo={TestLogo}
       // Navigation
       navigationData={navigationData}
       selected={0}
