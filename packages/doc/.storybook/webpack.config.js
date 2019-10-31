@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports =  ({ config, mode }) => {
+module.exports = ({ config, mode }) => {
   // Extend defaultConfig as you need.
 
   config.module.rules.push({

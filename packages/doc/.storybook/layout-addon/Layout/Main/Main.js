@@ -34,16 +34,21 @@ const getComponentsMetadata = children => {
     return element;
   });
 
-  if(nodes[0] && nodes[0].type && nodes[0].type.Naked && nodes[0].type.Naked.__docgenInfo) {
+  if (
+    nodes[0] &&
+    nodes[0].type &&
+    nodes[0].type.Naked &&
+    nodes[0].type.Naked.__docgenInfo
+  ) {
     return {
       propsMetaData: nodes[0].type.Naked.__docgenInfo.props,
       descriptionMetadata: nodes[0].type.Naked.__docgenInfo.description
-    }
-  } else if(nodes[0] && nodes[0].type && nodes[0].type.__docgenInfo) {
+    };
+  } else if (nodes[0] && nodes[0].type && nodes[0].type.__docgenInfo) {
     return {
       propsMetaData: nodes[0].type.__docgenInfo.props,
       descriptionMetadata: nodes[0].type.__docgenInfo.description
-    }
+    };
   }
 
   return {
@@ -53,7 +58,7 @@ const getComponentsMetadata = children => {
 };
 
 const shouldShowHeader = kind => {
-  const list = ["Lab", "Components", "Foundation"];
+  const list = ["Lab", "Components", "Foundation", "Templates"];
   return find(list, elem => kind.startsWith(elem));
 };
 
@@ -61,30 +66,38 @@ const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { examples, title, description, designSystemLink } = parameters;
 
+  if (parameters.options.noAddon) return children;
+
   const isComponent = shouldShowHeader(kind);
 
-  let processedKind = kind.startsWith("Components") ? kind.replace("Components", "Core") : kind;
-  processedKind = story === "Icons" && "Icons" || processedKind;
-  processedKind = story === "Typography" && "Core" || processedKind;
+  let processedKind = kind.startsWith("Components")
+    ? kind.replace("Components", "Core")
+    : kind;
+  processedKind = (story === "Icons" && "Icons") || processedKind;
+  processedKind = (story === "Typography" && "Core") || processedKind;
 
   const metadata = getComponentsMetadata(children);
 
   return (
     <>
-
-        <div className={classes.header}>
-          <div>
-            {processedKind}{` ${
-              kind.startsWith("Components") && `v${corePackage.version}` ||
-              kind === "Lab" && `v${labPackage.version}` ||
-              story === "Icons" && `v${iconsPackage.version}` ||
-              story === "Typography" && `v${corePackage.version}` || ""
-          }`} <span className={classes.name}>{story === "Icons" ? "" : `- ${story}`}</span>
-          </div>
-  {isComponent && (  <Button category="primary" onClick={() => config.changeTheme()}>
-            Toggle theme
-          </Button>)}
+      <div className={classes.header}>
+        <div>
+          {processedKind}
+          {` ${(kind.startsWith("Components") && `v${corePackage.version}`) ||
+            (kind === "Lab" && `v${labPackage.version}`) ||
+            (story === "Icons" && `v${iconsPackage.version}`) ||
+            (story === "Typography" && `v${corePackage.version}`) ||
+            ""}`}
+          <span className={classes.name}>
+            {story === "Icons" ? "" : `- ${story}`}
+          </span>
         </div>
+        {isComponent && (
+          <Button category="primary" onClick={() => config.changeTheme()}>
+            Toggle theme
+          </Button>
+        )}
+      </div>
       )
       <div className={classes.contentWithHeader}>
         {title ? (

@@ -110,7 +110,7 @@ const CardView = ({
         container
         className={className}
         justify="flex-start"
-        alignItems="center"
+        alignItems="flex-start"
         spacing={30}
         {...others}
       >
