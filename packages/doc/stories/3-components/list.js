@@ -60,7 +60,7 @@ storiesOf("Components", module).add("List", () => <List />, {
       src: "components/list/multiSelectionWithSelectorsAndSelectAll.js"
     },
     {
-      title: "10. Multi selection with selectors, disabled items, and select all",
+      title: "10. Multi selection with selectors and disabled items",
       src: "components/list/multiSelectionWithSelectorsDisabledAndSelectAll.js"
     }
   ]

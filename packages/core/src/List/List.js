@@ -34,6 +34,8 @@ const DEFAULT_STATE = {
   hasLeftIcons: false,
   allSelected: false,
   anySelected: false,
+  anySelectableSelected: false,
+  allSelectableSelected: false,
   selectionLabel: ""
 };
 
@@ -78,10 +80,10 @@ class List extends React.Component {
   }
 
   handleSelectAll() {
-    const { list, labels, allSelectableSelected } = this.state;
+    const { list, labels, anySelectableSelected } = this.state;
     const { onChange } = this.props;
 
-    const parsedList = parseList(list, null, this.props, !allSelectableSelected);
+    const parsedList = parseList(list, null, this.props, !anySelectableSelected);
     const parsedState = parseState(parsedList, labels);
 
     this.setState({ ...parsedState });
