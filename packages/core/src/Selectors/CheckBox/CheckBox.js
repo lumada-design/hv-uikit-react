@@ -51,7 +51,8 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (classes, disabled, theme) => {
+const prepareIcon = (classes, checked, disabled, theme) => {
+
   const disabledIcon = (
     <CheckBoxIcon
       className={classes.box}
@@ -62,10 +63,30 @@ const prepareIcon = (classes, disabled, theme) => {
     />
   );
 
+  const disabledCheckedIcon = (
+    <CheckBoxCheckedIcon
+      className={classes.box}
+      color={[
+        theme.hv.palette.atmosphere.atmo4,
+        theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
+  );
+
+  const disabledPartialIcon = (
+    <CheckBoxPartialIcon
+      className={classes.box}
+      color={[
+        theme.hv.palette.atmosphere.atmo4,
+        theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
+  );
+
   const icons = {
     emptyIcon: disabledIcon,
-    checkedIcon: disabledIcon,
-    indeterminate: disabledIcon
+    checkedIcon: disabledCheckedIcon,
+    indeterminate: disabledPartialIcon
   };
 
   if (disabled) {
@@ -99,7 +120,7 @@ const HvCheckbox = props => {
   } = props;
 
   const materialPrimaryColor = "primary";
-  const icons = prepareIcon(classes, disabled, theme);
+  const icons = prepareIcon(classes, checked, disabled, theme,);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 

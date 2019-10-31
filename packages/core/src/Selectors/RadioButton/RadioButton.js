@@ -62,9 +62,19 @@ const getIcons = (classes, disabled, theme) => {
     />
   );
 
+  const disabledRadioButtonSelected = (
+    <RadioButtonSelected
+      className={classes.box}
+      color={[
+        theme.hv.palette.atmosphere.atmo4,
+        theme.hv.palette.atmosphere.atmo6
+      ]}
+    />
+  );
+
   const icons = {
     emptyIcon: disabledIcon,
-    checkedIcon: disabledIcon
+    checkedIcon: disabledRadioButtonSelected
   };
 
   if (disabled) {
