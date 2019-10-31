@@ -41,7 +41,7 @@ const styles = theme => ({
     border: "none",
     transition:"none",
     "&:focus": {
-      outline: "none"
+      zIndex:1
     },
     "&:active": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
@@ -73,9 +73,12 @@ const styles = theme => ({
   isUnselected: {
     minWidth: "32px !important",
     background: theme.hv.palette.atmosphere.atmo2,
-    ...theme.hv.typography.normalText
+    ...theme.hv.typography.normalText,
+    "&:hover": {
+      background: theme.hv.palette.atmosphere.atmo4,
+    }
   },
-  // vertical button display Styling 
+  // vertical button display Styling
   rootVertical: {
     flexDirection: "column",
     height:"auto",
