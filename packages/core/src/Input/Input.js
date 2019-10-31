@@ -177,7 +177,7 @@ class HvInput extends React.Component {
 
     let validationState;
     let { infoText } = definedLabels;
-    
+
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
@@ -262,7 +262,10 @@ class HvInput extends React.Component {
     validationType,
     disableClear
   ) => {
-    if (disabled && !customFixedIcon === null) {
+    if (
+      (disabled && isNil(customFixedIcon)) ||
+      (!validationIconVisible && isNil(customFixedIcon) && disableClear)
+    ) {
       return null;
     }
     if (customFixedIcon === null) {
@@ -381,7 +384,7 @@ class HvInput extends React.Component {
     );
 
     let validationText;
-    if ((validate || showInfo) ) {
+    if (validate || showInfo) {
       validationText = (
         <HvTypography
           variant={

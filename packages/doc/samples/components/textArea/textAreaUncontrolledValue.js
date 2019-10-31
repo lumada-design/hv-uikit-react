@@ -8,9 +8,9 @@ const labels = {
 };
 
 const btnStyle = {
-  width: "50px",
-  height: "50px",
-  margin: "10px"
+  width: "130px",
+  height: "32px",
+  margin: "0 10px 30px 0"
 };
 
 function WrapperComp() {
