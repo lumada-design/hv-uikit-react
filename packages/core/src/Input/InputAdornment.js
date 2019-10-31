@@ -46,8 +46,8 @@ const InputAdornment = ({
       }}
     >
       {!onlyCustomIcon &&
-        !disableClear &&
-        validationState === validationStates.filled && <Close className={classes.box} />}
+        !disableClear && 
+        validationState === validationStates.filled && <Close className={classes.closeBox} />}
       {!onlyCustomIcon &&
         validationIconVisible &&
         validationState === validationStates.valid && <Success semantic="sema1" className={classes.box} />}

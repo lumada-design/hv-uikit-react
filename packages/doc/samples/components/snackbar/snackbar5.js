@@ -50,7 +50,7 @@ export default (
       <SnackbarContentWrapper
         label="default"
         variant="default"
-        customIcon={<StyledFastForward iconSize="S" />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -58,7 +58,7 @@ export default (
       <SnackbarContentWrapper
         label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
-        customIcon={<StyledFastForward iconSize="S" />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -66,7 +66,7 @@ export default (
       <SnackbarContentWrapper
         label="Success"
         variant="success"
-        customIcon={<StyledFastForward iconSize="S" />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -74,7 +74,7 @@ export default (
       <SnackbarContentWrapper
         label="Error"
         variant="error"
-        customIcon={<StyledFastForward iconSize="S" />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
