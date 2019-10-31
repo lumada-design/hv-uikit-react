@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Button from "@hv/uikit-react-core/dist/Button";
+import Input from "@hv/uikit-react-core/dist/Input";
 
 const labels = {
   inputLabel: "Label",
@@ -8,9 +9,17 @@ const labels = {
 };
 
 const btnStyle = {
-  width: "50px",
-  height: "50px",
-  margin: "10px"
+  width: "130px",
+  height: "32px",
+  margin: "0 10px 30px 0"
+};
+
+const inpStyle = {
+  marginBottom: "30px"
+};
+
+const inputLabels = {
+  inputLabel: "Limit"
 };
 
 function WrapperComp() {
@@ -26,20 +35,22 @@ function WrapperComp() {
   return (
     <>
       <Button style={btnStyle} onClick={() => setValue("First value")}>
-        First value{" "}
+        First value
       </Button>
       <Button style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value{" "}
+        Second value
       </Button>
       <Button style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value{" "}
+        Third value
       </Button>
-      Limit:
-      <input
-        type="text"
+
+      <Input
+        style={inpStyle}
         value={maxChar}
-        onChange={evt => setMaxChar(evt.target.value)}
+        onChange={value => setMaxChar(value)}
+        labels={inputLabels}
       />
+
       <HvTextArea
         initialValue={"Initial State"}
         inputValue={value}
