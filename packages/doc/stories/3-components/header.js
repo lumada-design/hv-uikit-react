@@ -51,16 +51,6 @@ storiesOf("Components", module).add("Header", () => <HvHeader />, {
     {
       title: "Variant 6",
       src: "components/header/header6"
-    },
-    {
-      title: "Variant 7",
-      src: "components/header/header7",
-      description: "vertical navigation fixed"
-    },
-    {
-      title: "Deprecated Example",
-      src: "components/header/headerDeprecated",
-      description: "Header with no menu tabs"
     }
   ]
 });
