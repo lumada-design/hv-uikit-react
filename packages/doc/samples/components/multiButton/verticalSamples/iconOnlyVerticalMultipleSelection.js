@@ -26,7 +26,7 @@ const buttonsDefinitions = [
 ];
 
 export default (
-  <div class="testClass" style={{ width: "34px" }}>
+  <div class="testClass" style={{ width: "32px" }}>
     <MultiButton buttons={buttonsDefinitions} type={"icon"} vertical multi />
   </div>
 );

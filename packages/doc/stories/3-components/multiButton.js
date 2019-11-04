@@ -109,7 +109,7 @@ storiesOf("Components", module).add("MultiButton", () => <MultiButton />, {
     },
     {
       title: "Dynamically change button contents",
-      description: "Change multibutton properties, triggered by external an agent",
+      description: "Changes multibutton properties, triggered by an external agent",
       src: "components/multiButton/horizontalSamples/inputControlledValue.js"
     }
   ]
