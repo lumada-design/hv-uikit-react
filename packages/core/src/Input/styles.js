@@ -117,6 +117,15 @@ const styles = theme => ({
     width: "30px",
     height: "30px"
   },
+  closeBox: {
+    width: "30px",
+    height: "30px",
+    paddingTop: "10px",
+    "& svg": {
+      display: "block",
+      margin: "auto"
+    }
+  },
   iconFlexBox: {
     display: "flex",
     flexDirection: "row",

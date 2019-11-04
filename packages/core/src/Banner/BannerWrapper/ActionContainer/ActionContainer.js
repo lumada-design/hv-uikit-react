@@ -29,15 +29,19 @@ import PropTypes from "prop-types";
  * @returns {*}
  * @constructor
  */
-const ActionContainer = ({ classes, onClose, action }) => (
+const ActionContainer = ({ theme, classes, onClose, action }) => (
   <div className={classes.actionContainer}>
     <div className={classes.closeAction} role="button" onClick={onClose} tabIndex={0} onKeyDown={onClose}>
-      <Close iconSize="XS" className={classes.iconContainer} />
+      <Close iconSize="XS" className={classes.iconContainer} color={[theme.hv.palette.base.base2]} />
     </div>
     <div className={classes.actionsInnerContainer}>{action}</div>
   </div>
 );
 ActionContainer.propTypes = {
+  /*
+   * An object containing the palette color specificactions.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
