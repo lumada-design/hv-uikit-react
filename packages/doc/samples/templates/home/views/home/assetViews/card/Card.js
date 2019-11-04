@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import withStyles from "@material-ui/core/es/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Kpi from "@hv/uikit-react-core/dist/Kpi";
