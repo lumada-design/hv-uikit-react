@@ -12040,6 +12040,7 @@ body {
   letter-spacing: 0.02em;
 }
 .Header-action-55 {
+  top: 15px;
   right: 20px;
   position: absolute;
   margin-top: 0;
@@ -12104,6 +12105,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   Object {},
                 ],
@@ -12114,6 +12116,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   ".Header-content-56": Object {},
                   ".Header-root-51": Object {
@@ -12153,6 +12156,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   "content": Object {},
                   "root": Object {
@@ -12685,6 +12689,7 @@ body {
                     "paddingLeft": "10px",
                     "position": "absolute",
                     "right": 20,
+                    "top": "15px",
                   },
                   "content": Object {},
                   "root": Object {
