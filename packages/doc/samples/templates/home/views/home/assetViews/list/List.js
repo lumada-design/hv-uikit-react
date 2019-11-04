@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import withStyles from "@material-ui/core/es/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { HvListViewCell, HvListViewRow } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
