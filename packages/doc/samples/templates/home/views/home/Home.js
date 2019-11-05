@@ -42,7 +42,7 @@ const control = (id, action) => {
 const Home = ({ classes }) => {
   return (
     <div>
-      <Typography variant="xxlTitle" className={classes.title}>
+      <Typography variant="3xlTitle" className={classes.title}>
         Assets
       </Typography>
       <AssetInventory

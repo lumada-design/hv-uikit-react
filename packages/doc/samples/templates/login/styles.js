@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-const styles = () => ({
+const styles = theme => ({
   root: {
-    height: "100vh"
+    height: "100vh",
+    backgroundColor: theme.hv.palette.atmosphere.atmo2
   }
 });
 
