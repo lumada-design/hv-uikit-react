@@ -146,11 +146,13 @@ const List = ({
    * Update states associated with select all.
    */
   const updateSelectAll = selection => {
+    if (!selection) return;
     const selected = getSelected(selection);
     const hasSelection = selected.length > 0;
     const allSelect = selected.length === list.length;
+    const anySelect = selected.length > 0;
 
-    setAnySelected(hasSelection && !allSelect);
+    setAnySelected(hasSelection && anySelect);
     setAllSelected(hasSelection && allSelect);
   };
 
@@ -160,16 +162,10 @@ const List = ({
    * @memberof List
    */
   const handleSelectAll = () => {
-    const newList = list.map(elem => {
-      const newElem = { ...elem };
-      newElem.selected = !allSelected;
-      return newElem;
-    });
+    const newList = list.map(elem => ({ ...elem, selected: !anySelected }));
 
     setList(newList);
-
     updateSelectAll(newList);
-
     sendOnChange(newList, false, false, false);
   };
 
@@ -180,7 +176,7 @@ const List = ({
         onChange={() => handleSelectAll()}
         classes={{ container: classes.selection }}
         className={classNames([classes.selectAll])}
-        indeterminate={anySelected}
+        indeterminate={anySelected && !allSelected}
         checked={allSelected}
       />
     </div>
@@ -191,7 +187,7 @@ const List = ({
    *
    * @returns {*}
    */
-  const cleanHidden = (lst) =>
+  const cleanHidden = lst =>
     lst.forEach(item => {
       // eslint-disable-next-line no-param-reassign
       item.isHidden = false;
@@ -273,6 +269,7 @@ const List = ({
     if (!created) {
       setPositionUp(position);
       setCreated(true);
+      updateSelectAll(prevList);
     }
   };
 

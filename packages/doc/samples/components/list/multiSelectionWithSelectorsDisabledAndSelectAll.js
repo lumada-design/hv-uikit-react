@@ -28,6 +28,6 @@ const data = [
 
 export default (
   <div style={{ width: 300 }}>
-    <List values={data} multiSelect={true} showSelectAll useSelector />
+    <List values={data} multiSelect useSelector />
   </div>
 );
