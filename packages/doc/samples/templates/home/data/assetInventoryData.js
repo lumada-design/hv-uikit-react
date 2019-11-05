@@ -18,7 +18,7 @@ const randomGenerator = (max, min) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const riskDownTime = {
-  headerTitle: "Risk of downtime on truck ",
+  headerTitle: "Downtime track ",
   event: {
     description: "Risk of downtime on Truck 12",
     timestamp: "2 minutes ago",
