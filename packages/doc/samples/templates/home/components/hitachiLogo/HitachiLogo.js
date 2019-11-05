@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Hitachi from "../../../../components/header/resources/hitachi";
+import Hitachi from "./hitachi-logo.svg";
 
 const HitachiLogo = ({ classes }) => <Hitachi className={classes.root} />;
 

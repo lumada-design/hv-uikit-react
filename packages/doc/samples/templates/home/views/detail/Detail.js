@@ -19,9 +19,9 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Good from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
-import HvTable from "@hv/uikit-react-core/dist/Table";
 import Linechart from "@hv/uikit-react-core/dist/Linechart";
 import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import Table from "./table/Table";
 import data from "../../data/tableInventoryData";
 import getColumns from "../../configuration/tableConfiguration";
 import dataLine from "../../configuration/lineChartConfiguration";
@@ -45,6 +45,8 @@ const averageComparisonVisualAverage = classes => (
 );
 
 const Detail = ({ classes }) => {
+  const columns = getColumns();
+
   return (
     <Grid container>
       <Grid item xs={1} sm={2} md={4} lg={4} xl={4}>
@@ -60,17 +62,7 @@ const Detail = ({ classes }) => {
         <HvKpi labels={labels} />
       </Grid>
       <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <HvTable
-          data={data}
-          columns={getColumns()}
-          defaultPageSize={10}
-          pageSize={10}
-          resizable={false}
-          labels={{
-            titleText: "Insights"
-          }}
-          idForCheckbox="id"
-        />
+        <Table data={data} columns={columns} title="Insights" />
       </Grid>
       <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <HvTypography variant="mTitle" className={classes.title}>
