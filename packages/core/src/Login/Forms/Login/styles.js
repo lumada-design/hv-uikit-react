@@ -21,6 +21,7 @@ const styles = theme => ({
     padding: "30px 0px 0px 0px",
     marginLeft: "auto",
     marginRight: "auto",
+    marginTop:50
   },
   title: {
     display: "flex",
@@ -91,7 +92,12 @@ const styles = theme => ({
     width: "100%",
     paddingRight: `${theme.hv.spacing.xs}px`,
     paddingLeft: `${theme.hv.spacing.xs}px`,
-    whiteSpace: "pre-wrap"
+    whiteSpace: "pre-wrap",
+    "& $p":{
+      ...theme.hv.typography.normalText,
+      color: theme.hv.palette.base.base2,
+    }
+
   },
   icon: {
     margin: `0 ${theme.hv.spacing.xs}px`,

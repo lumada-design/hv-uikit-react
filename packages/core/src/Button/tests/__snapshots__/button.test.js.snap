@@ -5085,7 +5085,7 @@ body {
   min-height: 32px;
   line-height: 20px;
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 0.02em;
 }
 .HvButton-root-39:focus {
@@ -5243,7 +5243,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   Object {},
                   Object {},
@@ -5465,7 +5465,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   ".HvButton-root-39:active": Object {},
                   ".HvButton-root-39:focus": Object {
@@ -5542,7 +5542,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   "secondary": Object {
                     "background-color": "#FFFFFF",
@@ -6236,7 +6236,7 @@ body {
                     "minHeight": "32px",
                     "minWidth": "70px",
                     "padding": "0 10px",
-                    "textTransform": "capitalize",
+                    "textTransform": "none",
                   },
                   "secondary": Object {
                     "&$secondaryDisabled": Object {

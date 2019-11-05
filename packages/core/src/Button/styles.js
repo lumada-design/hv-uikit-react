@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    textTransform: "capitalize",
+    textTransform: "none",
     "&:hover,&:focus": {},
     "&:active": {},
     "&:focus": {
@@ -27,7 +27,7 @@ const styles = theme => ({
     cursor: "pointer",
     height: "32px",
     minHeight: "32px",
-    ...theme.hv.typography.highlightText
+    ...theme.hv.typography.highlightText,
   },
   primary: {
     color: theme.hv.palette.accent.acce0,
