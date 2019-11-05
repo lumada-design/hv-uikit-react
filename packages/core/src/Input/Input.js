@@ -255,6 +255,7 @@ class HvInput extends React.Component {
     validationIconVisible,
     stateValidationState,
     disabled,
+    readOnly,
     customFixedIcon,
     maxCharQuantity,
     minCharQuantity,
@@ -266,7 +267,7 @@ class HvInput extends React.Component {
       return null;
     }
     if (customFixedIcon === null) {
-      if (
+      if ( readOnly ||
         stateValidationState !== validationStates.filled &&
         (stateValidationState === validationStates.empty ||
           (validationType === validationTypes.none &&
@@ -320,6 +321,7 @@ class HvInput extends React.Component {
       id,
       password,
       disabled,
+      readOnly,
       isRequired,
       infoIcon,
       iconVisible,
@@ -372,6 +374,7 @@ class HvInput extends React.Component {
       validationIconVisible,
       stateValidationState,
       disabled,
+      readOnly,
       customFixedIcon,
       maxCharQuantity,
       minCharQuantity,
@@ -438,6 +441,7 @@ class HvInput extends React.Component {
           onFocus={this.onFocusHandler}
           value={stateValue}
           disabled={disabled}
+          readOnly={readOnly}
           placeholder={definedLabels.placeholder}
           type={password ? "password" : "text"}
           classes={{
@@ -617,11 +621,17 @@ HvInput.propTypes = {
    /**
    * Allows passing a ref to the underlying input
    */
-  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  inputRef: PropTypes.oneOfType([
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.func]),
   /**
    * If ´true´ the input is disabled.
    */
   disabled: PropTypes.bool,
+    /**
+   * If ´true´ the input is read only.
+   */
+  readOnly: PropTypes.bool,
   /**
    * If ´true´ the input value must be filled on blur or else the validation fails.
    */
@@ -798,6 +808,7 @@ HvInput.defaultProps = {
   autoFocus: false,
   validationState: "empty",
   disabled: false,
+  readOnly: false,
   isRequired: false,
   suggestionListCallback: () => {},
   suggestionSelectedCallback: () => {},

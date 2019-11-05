@@ -142,7 +142,8 @@ class HvTextArea extends React.Component {
       value,
       initialValue,
       inputValue,
-      disabled
+      disabled,
+      readOnly
     } = this.props;
 
     const { currentValueLength } = this.state;
@@ -163,6 +164,7 @@ class HvTextArea extends React.Component {
           multiline
           rows={rows}
           disabled={disabled}
+          readOnly={readOnly}
           showInfo={false}
           validationIconVisible={false}
           inputRef={this.textInputRef}
@@ -327,8 +329,12 @@ HvTextArea.propTypes = {
    * If ´true´ the text area is disabled.
    */
   disabled: PropTypes.bool,
+    /**
+   * If ´true´ the text area is read only.
+   */
+  readOnly: PropTypes.bool,
   /**
-   * Auto-scroll: automatically scroll to the end on inputValue changes.
+   * Auto scroll: automatically scroll to the end on inputValue changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
   autoScroll: PropTypes.bool
@@ -348,6 +354,7 @@ HvTextArea.defaultProps = {
   },
   rows: 1,
   disabled: false,
+  readOnly: false,
   value: "",
   initialValue: "",
   inputValue: undefined,

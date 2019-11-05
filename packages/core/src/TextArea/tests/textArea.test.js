@@ -23,6 +23,8 @@ import HvProvider from "../../Provider";
 
 import TextAreaWithStyles from "../index";
 import TextArea from "../TextArea";
+import InputAdornment from "../../Input/InputAdornment";
+import Input from "../../Input";
 
 describe("TextArea withStyles", () => {
   let wrapper;
@@ -184,5 +186,19 @@ describe("TextArea Component", () => {
     inputElement.scrollTop = 20;
     inputElement.dispatchEvent(new Event('scroll'));
     expect(instance.state.autoScrolling).toBe(true);
+  });
+
+  it("should have no adornment on focus when read-only", () => {
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextArea
+          classes={{}}
+          value='stuff'
+          readOnly
+        />
+      </HvProvider>);
+    expect(wrapperMount.find(Input).prop('readOnly')).toBe(true);
+    wrapperMount.find('textarea').simulate('focus');
+    expect(wrapperMount.find(InputAdornment).exists()).toBe(false);
   });
 });

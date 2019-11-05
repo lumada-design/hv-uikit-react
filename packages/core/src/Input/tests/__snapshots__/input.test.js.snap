@@ -13366,6 +13366,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
         onFocus={[Function]}
         onKeyDown={[Function]}
         password={false}
+        readOnly={false}
         showInfo={false}
         suggestionListCallback={[Function]}
         suggestionSelectedCallback={[Function]}
@@ -14328,6 +14329,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
             onFocus={[Function]}
             onKeyDown={[Function]}
             placeholder="enter value"
+            readOnly={false}
             type="text"
             value=""
           >
@@ -14361,6 +14363,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
               onFocus={[Function]}
               onKeyDown={[Function]}
               placeholder="enter value"
+              readOnly={false}
               type="text"
               value=""
             >
@@ -14396,6 +14399,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 placeholder="enter value"
+                readOnly={false}
                 type="text"
                 value=""
               >
@@ -14435,6 +14439,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   placeholder="enter value"
+                  readOnly={false}
                   type="text"
                   value=""
                 >
@@ -14474,6 +14479,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     placeholder="enter value"
+                    readOnly={false}
                     type="text"
                     value=""
                   >
@@ -14490,6 +14496,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         placeholder="enter value"
+                        readOnly={false}
                         type="text"
                         value=""
                       />
@@ -30763,6 +30770,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
         onFocus={[Function]}
         onKeyDown={[Function]}
         password={false}
+        readOnly={false}
         showInfo={true}
         suggestionListCallback={[Function]}
         suggestionSelectedCallback={[Function]}
@@ -31729,6 +31737,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
             onFocus={[Function]}
             onKeyDown={[Function]}
             placeholder="enter value"
+            readOnly={false}
             type="text"
             value=""
           >
@@ -31766,6 +31775,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
               onFocus={[Function]}
               onKeyDown={[Function]}
               placeholder="enter value"
+              readOnly={false}
               type="text"
               value=""
             >
@@ -31805,6 +31815,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 placeholder="enter value"
+                readOnly={false}
                 type="text"
                 value=""
               >
@@ -31848,6 +31859,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   placeholder="enter value"
+                  readOnly={false}
                   type="text"
                   value=""
                 >
@@ -31891,6 +31903,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     placeholder="enter value"
+                    readOnly={false}
                     type="text"
                     value=""
                   >
@@ -31908,6 +31921,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-610 .MuiInputBase-input-619
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         placeholder="enter value"
+                        readOnly={false}
                         type="text"
                         value=""
                       />
@@ -50063,6 +50077,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
         onFocus={[Function]}
         onKeyDown={[Function]}
         password={false}
+        readOnly={false}
         showInfo={true}
         suggestionListCallback={[Function]}
         suggestionSelectedCallback={[Function]}
@@ -51025,6 +51040,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
             onFocus={[Function]}
             onKeyDown={[Function]}
             placeholder="enter value"
+            readOnly={false}
             type="text"
             value=""
           >
@@ -51058,6 +51074,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
               onFocus={[Function]}
               onKeyDown={[Function]}
               placeholder="enter value"
+              readOnly={false}
               type="text"
               value=""
             >
@@ -51093,6 +51110,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 placeholder="enter value"
+                readOnly={false}
                 type="text"
                 value=""
               >
@@ -51132,6 +51150,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   placeholder="enter value"
+                  readOnly={false}
                   type="text"
                   value=""
                 >
@@ -51171,6 +51190,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     placeholder="enter value"
+                    readOnly={false}
                     type="text"
                     value=""
                   >
@@ -51187,6 +51207,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         placeholder="enter value"
+                        readOnly={false}
                         type="text"
                         value=""
                       />

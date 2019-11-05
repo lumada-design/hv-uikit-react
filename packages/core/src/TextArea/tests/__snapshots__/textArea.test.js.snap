@@ -29,6 +29,7 @@ exports[`TextArea Component should render correctly if opened 1`] = `
     }
     multiline={true}
     onChange={[Function]}
+    readOnly={false}
     rows={4}
     showInfo={false}
     validationIconVisible={false}

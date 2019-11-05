@@ -16570,6 +16570,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
               onFocus={[Function]}
               onKeyDown={[Function]}
               password={false}
+              readOnly={false}
               showInfo={false}
               suggestionListCallback={[Function]}
               suggestionSelectedCallback={[Function]}
@@ -17532,6 +17533,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   placeholder=""
+                  readOnly={false}
                   type="text"
                   value={30}
                 >
@@ -17565,6 +17567,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     placeholder=""
+                    readOnly={false}
                     type="text"
                     value={30}
                   >
@@ -17600,6 +17603,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       placeholder=""
+                      readOnly={false}
                       type="text"
                       value={30}
                     >
@@ -17639,6 +17643,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         placeholder=""
+                        readOnly={false}
                         type="text"
                         value={30}
                       >
@@ -17678,6 +17683,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                           onFocus={[Function]}
                           onKeyDown={[Function]}
                           placeholder=""
+                          readOnly={false}
                           type="text"
                           value={30}
                         >
@@ -17694,6 +17700,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-99 .MuiInputBase-input-108:
                               onFocus={[Function]}
                               onKeyDown={[Function]}
                               placeholder=""
+                              readOnly={false}
                               type="text"
                               value={30}
                             />
