@@ -16,7 +16,7 @@
 
 const styles = theme => ({
   root: {
-    padding: ` ${theme.hv.spacing.md}px 0px 0px 0px`,
+    padding: `${theme.hv.spacing.sm}px`,
     flex: "none"
   },
   textContent: {
