@@ -21,7 +21,7 @@ import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { KeyboardCodes, isKeypress, isIE } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import HvList from "../List";
 import validationTypes from "./validationTypes";
@@ -245,7 +245,12 @@ class HvInput extends React.Component {
    */
   onContainerBlurHandler = event => {
     if (isNil(event.relatedTarget)) {
-      this.suggestionClearHandler();
+      // workaround because IE 11
+      if (isIE()) {
+        setTimeout(this.suggestionClearHandler, 100);
+      } else {
+        this.suggestionClearHandler();
+      }
     }
   };
 
@@ -617,7 +622,7 @@ HvInput.propTypes = {
    * Attributes applied to the input element.
    */
   inputProps: PropTypes.instanceOf(Object),
-   /**
+  /**
    * Allows passing a ref to the underlying input
    */
   inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
