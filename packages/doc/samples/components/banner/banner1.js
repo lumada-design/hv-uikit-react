@@ -48,6 +48,7 @@ class SimpleBanner extends React.Component {
           customIcon={customIcon}
           showIcon={showIcon}
           actionsOnlabel={action}
+          offset={100}
         />
       </div>
     );

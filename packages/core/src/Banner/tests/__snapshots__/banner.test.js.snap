@@ -13,7 +13,7 @@ exports[`Banner  should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999990,
+            "index": -99999999985,
           },
           "themingEnabled": true,
         } => Map {
@@ -45,6 +45,7 @@ exports[`Banner  should render correctly 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -77,6 +78,10 @@ exports[`Banner  should render correctly 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -1311,7 +1316,7 @@ exports[`Banner  should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999990,
+                "index": -99999999985,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3477,7 +3482,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999990,
+                  "index": -99999999985,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3623,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999991,
+            "index": -99999999986,
           },
           "themingEnabled": true,
         } => Map {
@@ -3655,6 +3660,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -3687,6 +3693,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -4931,7 +4941,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999991,
+                "index": -99999999986,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5496,7 +5506,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999991,
+                  "index": -99999999986,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5637,7 +5647,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999996,
+            "index": -99999999995,
           },
           "themingEnabled": true,
         } => Map {
@@ -5669,6 +5679,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -5701,6 +5712,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -6951,7 +6966,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999996,
+                "index": -99999999995,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -9719,7 +9734,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999996,
+                  "index": -99999999995,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -9938,6 +9953,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -9970,6 +9986,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -10891,6 +10911,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -10923,6 +10944,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",

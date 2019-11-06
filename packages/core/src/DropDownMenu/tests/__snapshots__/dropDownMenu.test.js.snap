@@ -13,7 +13,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999982,
+            "index": -99999999976,
           },
           "themingEnabled": true,
         } => Map {
@@ -45,6 +45,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -77,6 +78,10 @@ exports[`DropDownMenu component closes on double click 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -1311,7 +1316,7 @@ exports[`DropDownMenu component closes on double click 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999982,
+                "index": -99999999976,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3477,7 +3482,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999982,
+                  "index": -99999999976,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3623,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999983,
+            "index": -99999999977,
           },
           "themingEnabled": true,
         } => Map {
@@ -3655,6 +3660,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -3687,6 +3693,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -4553,10 +4563,10 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "icon": "DropDownMenu-icon-49",
-                "iconSelected": "DropDownMenu-iconSelected-50",
-                "menuList": "DropDownMenu-menuList-51",
-                "root": "DropDownMenu-root-48",
+                "icon": "DropDownMenu-icon-50",
+                "iconSelected": "DropDownMenu-iconSelected-51",
+                "menuList": "DropDownMenu-menuList-52",
+                "root": "DropDownMenu-root-49",
               },
               "deployed": true,
               "linked": false,
@@ -4564,10 +4574,10 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "DropDownMenu",
                 "classes": Object {
-                  "icon": "DropDownMenu-icon-49",
-                  "iconSelected": "DropDownMenu-iconSelected-50",
-                  "menuList": "DropDownMenu-menuList-51",
-                  "root": "DropDownMenu-root-48",
+                  "icon": "DropDownMenu-icon-50",
+                  "iconSelected": "DropDownMenu-iconSelected-51",
+                  "menuList": "DropDownMenu-menuList-52",
+                  "root": "DropDownMenu-root-49",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -4931,7 +4941,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999983,
+                "index": -99999999977,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5055,10 +5065,10 @@ body {
                   data-meta="DropDownMenu"
                 >
                   
-.DropDownMenu-root-48 {
+.DropDownMenu-root-49 {
   display: contents;
 }
-.DropDownMenu-icon-49 {
+.DropDownMenu-icon-50 {
   width: 32px;
   color: #414141;
   height: 33px;
@@ -5070,17 +5080,17 @@ body {
   border-radius: 0;
   justify-content: center;
 }
-.DropDownMenu-icon-49:hover {
+.DropDownMenu-icon-50:hover {
   background-color: transparent;
 }
-.DropDownMenu-iconSelected-50 {
+.DropDownMenu-iconSelected-51 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   background-color: #FFFFFF;
 }
-.DropDownMenu-iconSelected-50:hover {
+.DropDownMenu-iconSelected-51:hover {
   background-color: #FFFFFF;
 }
-.DropDownMenu-menuList-51 {
+.DropDownMenu-menuList-52 {
   padding: 20px;
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
   white-space: nowrap;
@@ -5099,10 +5109,10 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "icon": "DropDownMenu-icon-49",
-                  "iconSelected": "DropDownMenu-iconSelected-50",
-                  "menuList": "DropDownMenu-menuList-51",
-                  "root": "DropDownMenu-root-48",
+                  "icon": "DropDownMenu-icon-50",
+                  "iconSelected": "DropDownMenu-iconSelected-51",
+                  "menuList": "DropDownMenu-menuList-52",
+                  "root": "DropDownMenu-root-49",
                 },
                 "index": Array [
                   Object {
@@ -5138,7 +5148,7 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".DropDownMenu-icon-49": Object {
+                  ".DropDownMenu-icon-50": Object {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
@@ -5150,23 +5160,23 @@ body {
                     "position": "relative",
                     "width": "32px",
                   },
-                  ".DropDownMenu-icon-49:hover": Object {
+                  ".DropDownMenu-icon-50:hover": Object {
                     "background-color": "transparent",
                   },
-                  ".DropDownMenu-iconSelected-50": Object {
+                  ".DropDownMenu-iconSelected-51": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                   },
-                  ".DropDownMenu-iconSelected-50:hover": Object {
+                  ".DropDownMenu-iconSelected-51:hover": Object {
                     "background-color": "#FFFFFF",
                   },
-                  ".DropDownMenu-menuList-51": Object {
+                  ".DropDownMenu-menuList-52": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "padding": "20px",
                     "white-space": "nowrap",
                   },
-                  ".DropDownMenu-root-48": Object {
+                  ".DropDownMenu-root-49": Object {
                     "display": "contents",
                   },
                   "icon": Object {
@@ -5199,10 +5209,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "DropDownMenu",
                   "classes": Object {
-                    "icon": "DropDownMenu-icon-49",
-                    "iconSelected": "DropDownMenu-iconSelected-50",
-                    "menuList": "DropDownMenu-menuList-51",
-                    "root": "DropDownMenu-root-48",
+                    "icon": "DropDownMenu-icon-50",
+                    "iconSelected": "DropDownMenu-iconSelected-51",
+                    "menuList": "DropDownMenu-menuList-52",
+                    "root": "DropDownMenu-root-49",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5566,7 +5576,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999983,
+                  "index": -99999999977,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5685,10 +5695,10 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".DropDownMenu-icon-49:hover": Object {
+                  ".DropDownMenu-icon-50:hover": Object {
                     "backgroundColor": "transparent",
                   },
-                  ".DropDownMenu-iconSelected-50:hover": Object {
+                  ".DropDownMenu-iconSelected-51:hover": Object {
                     "backgroundColor": "#FFFFFF",
                   },
                   "icon": Object {
@@ -5760,6 +5770,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -5792,6 +5803,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -6680,10 +6695,10 @@ body {
       <DropDownMenu
         classes={
           Object {
-            "icon": "DropDownMenu-icon-49",
-            "iconSelected": "DropDownMenu-iconSelected-50",
-            "menuList": "DropDownMenu-menuList-51",
-            "root": "DropDownMenu-root-48",
+            "icon": "DropDownMenu-icon-50",
+            "iconSelected": "DropDownMenu-iconSelected-51",
+            "menuList": "DropDownMenu-menuList-52",
+            "root": "DropDownMenu-root-49",
           }
         }
         dataList={
@@ -6732,6 +6747,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -6764,6 +6780,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -7634,10 +7654,10 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="DropDownMenu-root-48"
+            className="DropDownMenu-root-49"
           >
             <div
-              className="DropDownMenu-icon-49"
+              className="DropDownMenu-icon-50"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -7685,7 +7705,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999982,
+            "index": -99999999976,
           },
           "themingEnabled": true,
         } => Map {
@@ -7717,6 +7737,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -7749,6 +7770,10 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -8983,7 +9008,7 @@ exports[`DropDownMenu component is rendered correctly and behaves as expected 1`
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999982,
+                "index": -99999999976,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -11149,7 +11174,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999982,
+                  "index": -99999999976,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -11295,7 +11320,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999983,
+            "index": -99999999977,
           },
           "themingEnabled": true,
         } => Map {
@@ -11327,6 +11352,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -11359,6 +11385,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -12603,7 +12633,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999983,
+                "index": -99999999977,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -13238,7 +13268,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999983,
+                  "index": -99999999977,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -13432,6 +13462,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -13464,6 +13495,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -14404,6 +14439,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -14436,6 +14472,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -15357,7 +15397,7 @@ exports[`DropDownMenu component opens on click 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999982,
+            "index": -99999999976,
           },
           "themingEnabled": true,
         } => Map {
@@ -15389,6 +15429,7 @@ exports[`DropDownMenu component opens on click 1`] = `
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -15421,6 +15462,10 @@ exports[`DropDownMenu component opens on click 1`] = `
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -16655,7 +16700,7 @@ exports[`DropDownMenu component opens on click 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999982,
+                "index": -99999999976,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -18821,7 +18866,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999982,
+                  "index": -99999999976,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -18967,7 +19012,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999983,
+            "index": -99999999977,
           },
           "themingEnabled": true,
         } => Map {
@@ -18999,6 +19044,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -19031,6 +19077,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -20275,7 +20325,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999983,
+                "index": -99999999977,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -20910,7 +20960,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999983,
+                  "index": -99999999977,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -21076,7 +21126,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999984,
+            "index": -99999999978,
           },
           "themingEnabled": true,
         } => Map {
@@ -21108,6 +21158,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -21140,6 +21191,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -22006,6 +22061,7 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
+                "box": "List-box-21",
                 "condensed": "List-condensed-11",
                 "disabled": "List-disabled-16",
                 "label": "List-label-17",
@@ -22025,6 +22081,7 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "List",
                 "classes": Object {
+                  "box": "List-box-21",
                   "condensed": "List-condensed-11",
                   "disabled": "List-disabled-16",
                   "label": "List-label-17",
@@ -22400,7 +22457,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999984,
+                "index": -99999999978,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -22547,9 +22604,6 @@ body {
 .List-listItem-10:not(:last-child) {
   margin-bottom: 8px;
 }
-.List-listItem-10 svg:last-child {
-  margin-left: auto;
-}
 .List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12) * {
   color: #FFFFFF;
   background: #414141;
@@ -22610,6 +22664,16 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.List-box-21 {
+  width: 30px;
+  height: 30px;
+  padding: 9px;
+  margin-left: auto;
+}
+.List-box-21 svg {
+  margin: auto;
+  display: block;
+}
 
                 </style>,
                 "getKey": [Function],
@@ -22623,6 +22687,7 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
+                  "box": "List-box-21",
                   "condensed": "List-condensed-11",
                   "disabled": "List-disabled-16",
                   "label": "List-label-17",
@@ -22659,9 +22724,6 @@ body {
                   },
                   Object {
                     "margin-bottom": "8px",
-                  },
-                  Object {
-                    "margin-left": "auto",
                   },
                   Object {
                     "background": "#414141",
@@ -22725,8 +22787,28 @@ body {
                     "text-overflow": "ellipsis",
                     "white-space": "nowrap",
                   },
+                  Object {
+                    "height": "30px",
+                    "margin-left": "auto",
+                    "padding": "9px",
+                    "width": "30px",
+                  },
+                  Object {
+                    "display": "block",
+                    "margin": "auto",
+                  },
                 ],
                 "map": Object {
+                  ".List-box-21": Object {
+                    "height": "30px",
+                    "margin-left": "auto",
+                    "padding": "9px",
+                    "width": "30px",
+                  },
+                  ".List-box-21 svg": Object {
+                    "display": "block",
+                    "margin": "auto",
+                  },
                   ".List-condensed-11": Object {
                     "margin-bottom": "0 !important",
                   },
@@ -22761,9 +22843,6 @@ body {
                     "height": "32px",
                     "justify-content": "flex-start",
                     "list-style-type": "none",
-                  },
-                  ".List-listItem-10 svg:last-child": Object {
-                    "margin-left": "auto",
                   },
                   ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12)": Object {
                     "background": "#414141",
@@ -22815,6 +22894,12 @@ body {
                     "text-overflow": "ellipsis",
                     "white-space": "nowrap",
                   },
+                  "box": Object {
+                    "height": "30px",
+                    "margin-left": "auto",
+                    "padding": "9px",
+                    "width": "30px",
+                  },
                   "condensed": Object {
                     "margin-bottom": "0 !important",
                   },
@@ -22863,6 +22948,7 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "List",
                   "classes": Object {
+                    "box": "List-box-21",
                     "condensed": "List-condensed-11",
                     "disabled": "List-disabled-16",
                     "label": "List-label-17",
@@ -23238,7 +23324,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999984,
+                  "index": -99999999978,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -23357,6 +23443,10 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".List-box-21 svg": Object {
+                    "display": "block",
+                    "margin": "auto",
+                  },
                   ".List-disabled-16 *": Object {
                     "background": "transparent !important",
                     "cursor": "not-allowed",
@@ -23370,9 +23460,6 @@ body {
                   },
                   ".List-disabled-16 svg *.color1": Object {
                     "fill": "#999999",
-                  },
-                  ".List-listItem-10 svg:last-child": Object {
-                    "marginLeft": "auto",
                   },
                   ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12)": Object {
                     "& *": Object {
@@ -23409,6 +23496,16 @@ body {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
+                  "box": Object {
+                    "& svg": Object {
+                      "display": "block",
+                      "margin": "auto",
+                    },
+                    "height": "30px",
+                    "marginLeft": "auto",
+                    "padding": "9px",
+                    "width": "30px",
+                  },
                   "condensed": Object {
                     "marginBottom": "0 !important",
                   },
@@ -23437,9 +23534,6 @@ body {
                     "paddingLeft": 0,
                   },
                   "listItem": Object {
-                    "& svg:last-child": Object {
-                      "marginLeft": "auto",
-                    },
                     "&:not($disabled):active:hover:not($selector)": Object {
                       "& *": Object {
                         "background": "#414141",
@@ -23508,7 +23602,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999985,
+            "index": -99999999979,
           },
           "themingEnabled": true,
         } => Map {
@@ -23540,6 +23634,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -23572,6 +23667,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -24438,8 +24537,8 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "focusDisabled": "Focus-focusDisabled-21",
-                "focused": "Focus-focused-22",
+                "focusDisabled": "Focus-focusDisabled-22",
+                "focused": "Focus-focused-23",
               },
               "deployed": true,
               "linked": false,
@@ -24447,8 +24546,8 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Focus",
                 "classes": Object {
-                  "focusDisabled": "Focus-focusDisabled-21",
-                  "focused": "Focus-focused-22",
+                  "focusDisabled": "Focus-focusDisabled-22",
+                  "focused": "Focus-focused-23",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -24812,7 +24911,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999985,
+                "index": -99999999979,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -24936,21 +25035,21 @@ body {
                   data-meta="Focus"
                 >
                   
-.Focus-focusDisabled-21 {
+.Focus-focusDisabled-22 {
   outline: none;
 }
-.Focus-focusDisabled-21 *:focus {
+.Focus-focusDisabled-22 *:focus {
   outline: none;
 }
-.Focus-focusDisabled-21 * {
+.Focus-focusDisabled-22 * {
   outline: none !important;
 }
-.Focus-focused-22 {
+.Focus-focused-23 {
   outline: 4px auto Highlight;
   outline-offset: -2px;
 }
 @media (-webkit-min-device-pixel-ratio:0) {
-  .Focus-focused-22 {
+  .Focus-focused-23 {
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
     outline-offset: -2px;
@@ -24969,8 +25068,8 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "focusDisabled": "Focus-focusDisabled-21",
-                  "focused": "Focus-focused-22",
+                  "focusDisabled": "Focus-focusDisabled-22",
+                  "focused": "Focus-focused-23",
                 },
                 "index": Array [
                   Object {
@@ -24992,8 +25091,8 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "focusDisabled": "Focus-focusDisabled-21",
-                        "focused": "Focus-focused-22",
+                        "focusDisabled": "Focus-focusDisabled-22",
+                        "focused": "Focus-focused-23",
                       },
                       "generateClassName": [Function],
                       "index": 4,
@@ -25113,8 +25212,8 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "focusDisabled": "Focus-focusDisabled-21",
-                        "focused": "Focus-focused-22",
+                        "focusDisabled": "Focus-focusDisabled-22",
+                        "focused": "Focus-focused-23",
                       },
                       "index": Array [
                         Object {
@@ -25124,7 +25223,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".Focus-focused-22": Object {
+                        ".Focus-focused-23": Object {
                           "outline-color": "-webkit-focus-ring-color",
                           "outline-offset": "-2px",
                           "outline-style": "auto",
@@ -25138,8 +25237,8 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "focusDisabled": "Focus-focusDisabled-21",
-                          "focused": "Focus-focused-22",
+                          "focusDisabled": "Focus-focusDisabled-22",
+                          "focused": "Focus-focused-23",
                         },
                         "generateClassName": [Function],
                         "index": 4,
@@ -25270,16 +25369,16 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Focus-focusDisabled-21": Object {
+                  ".Focus-focusDisabled-22": Object {
                     "outline": "none",
                   },
-                  ".Focus-focusDisabled-21 *": Object {
+                  ".Focus-focusDisabled-22 *": Object {
                     "outline": "none !important",
                   },
-                  ".Focus-focusDisabled-21 *:focus": Object {
+                  ".Focus-focusDisabled-22 *:focus": Object {
                     "outline": "none",
                   },
-                  ".Focus-focused-22": Object {
+                  ".Focus-focused-23": Object {
                     "outline": "4px auto Highlight",
                     "outline-offset": "-2px",
                   },
@@ -25289,8 +25388,8 @@ body {
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "focusDisabled": "Focus-focusDisabled-21",
-                        "focused": "Focus-focused-22",
+                        "focusDisabled": "Focus-focusDisabled-22",
+                        "focused": "Focus-focused-23",
                       },
                       "generateClassName": [Function],
                       "index": 4,
@@ -25410,8 +25509,8 @@ body {
                     },
                     "rules": RuleList {
                       "classes": Object {
-                        "focusDisabled": "Focus-focusDisabled-21",
-                        "focused": "Focus-focused-22",
+                        "focusDisabled": "Focus-focusDisabled-22",
+                        "focused": "Focus-focused-23",
                       },
                       "index": Array [
                         Object {
@@ -25421,7 +25520,7 @@ body {
                         },
                       ],
                       "map": Object {
-                        ".Focus-focused-22": Object {
+                        ".Focus-focused-23": Object {
                           "outline-color": "-webkit-focus-ring-color",
                           "outline-offset": "-2px",
                           "outline-style": "auto",
@@ -25435,8 +25534,8 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "focusDisabled": "Focus-focusDisabled-21",
-                          "focused": "Focus-focused-22",
+                          "focusDisabled": "Focus-focusDisabled-22",
+                          "focused": "Focus-focused-23",
                         },
                         "generateClassName": [Function],
                         "index": 4,
@@ -25577,8 +25676,8 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Focus",
                   "classes": Object {
-                    "focusDisabled": "Focus-focusDisabled-21",
-                    "focused": "Focus-focused-22",
+                    "focusDisabled": "Focus-focusDisabled-22",
+                    "focused": "Focus-focused-23",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -25942,7 +26041,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999985,
+                  "index": -99999999979,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26061,10 +26160,10 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Focus-focusDisabled-21 *": Object {
+                  ".Focus-focusDisabled-22 *": Object {
                     "outline": "none !important",
                   },
-                  ".Focus-focusDisabled-21 *:focus": Object {
+                  ".Focus-focusDisabled-22 *:focus": Object {
                     "outline": "none",
                   },
                   "@media (-webkit-min-device-pixel-ratio:0)": null,
@@ -26096,7 +26195,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999988,
+            "index": -99999999982,
           },
           "themingEnabled": true,
         } => Map {
@@ -26128,6 +26227,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -26160,6 +26260,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -27026,31 +27130,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-25",
-                "4xlTitle": "Typography-4xlTitle-24",
-                "5xlTitle": "Typography-5xlTitle-23",
-                "baseFontFamily": "Typography-baseFontFamily-46",
-                "disabledButtonText": "Typography-disabledButtonText-37",
-                "disabledText": "Typography-disabledText-44",
-                "highlightText": "Typography-highlightText-33",
-                "infoText": "Typography-infoText-42",
-                "inlineLink": "Typography-inlineLink-36",
-                "lTitle": "Typography-lTitle-28",
-                "labelText": "Typography-labelText-41",
-                "mTitle": "Typography-mTitle-29",
-                "margin": "Typography-margin-47",
-                "normalText": "Typography-normalText-34",
-                "placeholderText": "Typography-placeholderText-38",
-                "sLink": "Typography-sLink-43",
-                "sText": "Typography-sText-40",
-                "sTitle": "Typography-sTitle-30",
-                "selectedNavText": "Typography-selectedNavText-39",
-                "selectedText": "Typography-selectedText-35",
-                "vizText": "Typography-vizText-45",
-                "xlTitle": "Typography-xlTitle-27",
-                "xsTitle": "Typography-xsTitle-31",
-                "xxlTitle": "Typography-xxlTitle-26",
-                "xxsTitle": "Typography-xxsTitle-32",
+                "3xlTitle": "Typography-3xlTitle-26",
+                "4xlTitle": "Typography-4xlTitle-25",
+                "5xlTitle": "Typography-5xlTitle-24",
+                "baseFontFamily": "Typography-baseFontFamily-47",
+                "disabledButtonText": "Typography-disabledButtonText-38",
+                "disabledText": "Typography-disabledText-45",
+                "highlightText": "Typography-highlightText-34",
+                "infoText": "Typography-infoText-43",
+                "inlineLink": "Typography-inlineLink-37",
+                "lTitle": "Typography-lTitle-29",
+                "labelText": "Typography-labelText-42",
+                "mTitle": "Typography-mTitle-30",
+                "margin": "Typography-margin-48",
+                "normalText": "Typography-normalText-35",
+                "placeholderText": "Typography-placeholderText-39",
+                "sLink": "Typography-sLink-44",
+                "sText": "Typography-sText-41",
+                "sTitle": "Typography-sTitle-31",
+                "selectedNavText": "Typography-selectedNavText-40",
+                "selectedText": "Typography-selectedText-36",
+                "vizText": "Typography-vizText-46",
+                "xlTitle": "Typography-xlTitle-28",
+                "xsTitle": "Typography-xsTitle-32",
+                "xxlTitle": "Typography-xxlTitle-27",
+                "xxsTitle": "Typography-xxsTitle-33",
               },
               "deployed": true,
               "linked": false,
@@ -27058,31 +27162,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Typography",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-25",
-                  "4xlTitle": "Typography-4xlTitle-24",
-                  "5xlTitle": "Typography-5xlTitle-23",
-                  "baseFontFamily": "Typography-baseFontFamily-46",
-                  "disabledButtonText": "Typography-disabledButtonText-37",
-                  "disabledText": "Typography-disabledText-44",
-                  "highlightText": "Typography-highlightText-33",
-                  "infoText": "Typography-infoText-42",
-                  "inlineLink": "Typography-inlineLink-36",
-                  "lTitle": "Typography-lTitle-28",
-                  "labelText": "Typography-labelText-41",
-                  "mTitle": "Typography-mTitle-29",
-                  "margin": "Typography-margin-47",
-                  "normalText": "Typography-normalText-34",
-                  "placeholderText": "Typography-placeholderText-38",
-                  "sLink": "Typography-sLink-43",
-                  "sText": "Typography-sText-40",
-                  "sTitle": "Typography-sTitle-30",
-                  "selectedNavText": "Typography-selectedNavText-39",
-                  "selectedText": "Typography-selectedText-35",
-                  "vizText": "Typography-vizText-45",
-                  "xlTitle": "Typography-xlTitle-27",
-                  "xsTitle": "Typography-xsTitle-31",
-                  "xxlTitle": "Typography-xxlTitle-26",
-                  "xxsTitle": "Typography-xxsTitle-32",
+                  "3xlTitle": "Typography-3xlTitle-26",
+                  "4xlTitle": "Typography-4xlTitle-25",
+                  "5xlTitle": "Typography-5xlTitle-24",
+                  "baseFontFamily": "Typography-baseFontFamily-47",
+                  "disabledButtonText": "Typography-disabledButtonText-38",
+                  "disabledText": "Typography-disabledText-45",
+                  "highlightText": "Typography-highlightText-34",
+                  "infoText": "Typography-infoText-43",
+                  "inlineLink": "Typography-inlineLink-37",
+                  "lTitle": "Typography-lTitle-29",
+                  "labelText": "Typography-labelText-42",
+                  "mTitle": "Typography-mTitle-30",
+                  "margin": "Typography-margin-48",
+                  "normalText": "Typography-normalText-35",
+                  "placeholderText": "Typography-placeholderText-39",
+                  "sLink": "Typography-sLink-44",
+                  "sText": "Typography-sText-41",
+                  "sTitle": "Typography-sTitle-31",
+                  "selectedNavText": "Typography-selectedNavText-40",
+                  "selectedText": "Typography-selectedText-36",
+                  "vizText": "Typography-vizText-46",
+                  "xlTitle": "Typography-xlTitle-28",
+                  "xsTitle": "Typography-xsTitle-32",
+                  "xxlTitle": "Typography-xxlTitle-27",
+                  "xxsTitle": "Typography-xxsTitle-33",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -27446,7 +27550,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999988,
+                "index": -99999999982,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -27570,91 +27674,91 @@ body {
                   data-meta="Typography"
                 >
                   
-.Typography-5xlTitle-23 {
+.Typography-5xlTitle-24 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-24 {
+.Typography-4xlTitle-25 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-25 {
+.Typography-3xlTitle-26 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-26 {
+.Typography-xxlTitle-27 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-27 {
+.Typography-xlTitle-28 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-28 {
+.Typography-lTitle-29 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-29 {
+.Typography-mTitle-30 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-30 {
+.Typography-sTitle-31 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-31 {
+.Typography-xsTitle-32 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-32 {
+.Typography-xxsTitle-33 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-33 {
+.Typography-highlightText-34 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-34 {
+.Typography-normalText-35 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedText-35 {
+.Typography-selectedText-36 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -27662,80 +27766,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-36 {
+.Typography-inlineLink-37 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-37 {
+.Typography-disabledButtonText-38 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-placeholderText-38 {
+.Typography-placeholderText-39 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedNavText-39 {
+.Typography-selectedNavText-40 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sText-40 {
+.Typography-sText-41 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-41 {
+.Typography-labelText-42 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-42 {
+.Typography-infoText-43 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-43 {
+.Typography-sLink-44 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-44 {
+.Typography-disabledText-45 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-45 {
+.Typography-vizText-46 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-46 {
+.Typography-baseFontFamily-47 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-47 {
+.Typography-margin-48 {
   margin: 0;
 }
 
@@ -27751,31 +27855,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-25",
-                  "4xlTitle": "Typography-4xlTitle-24",
-                  "5xlTitle": "Typography-5xlTitle-23",
-                  "baseFontFamily": "Typography-baseFontFamily-46",
-                  "disabledButtonText": "Typography-disabledButtonText-37",
-                  "disabledText": "Typography-disabledText-44",
-                  "highlightText": "Typography-highlightText-33",
-                  "infoText": "Typography-infoText-42",
-                  "inlineLink": "Typography-inlineLink-36",
-                  "lTitle": "Typography-lTitle-28",
-                  "labelText": "Typography-labelText-41",
-                  "mTitle": "Typography-mTitle-29",
-                  "margin": "Typography-margin-47",
-                  "normalText": "Typography-normalText-34",
-                  "placeholderText": "Typography-placeholderText-38",
-                  "sLink": "Typography-sLink-43",
-                  "sText": "Typography-sText-40",
-                  "sTitle": "Typography-sTitle-30",
-                  "selectedNavText": "Typography-selectedNavText-39",
-                  "selectedText": "Typography-selectedText-35",
-                  "vizText": "Typography-vizText-45",
-                  "xlTitle": "Typography-xlTitle-27",
-                  "xsTitle": "Typography-xsTitle-31",
-                  "xxlTitle": "Typography-xxlTitle-26",
-                  "xxsTitle": "Typography-xxsTitle-32",
+                  "3xlTitle": "Typography-3xlTitle-26",
+                  "4xlTitle": "Typography-4xlTitle-25",
+                  "5xlTitle": "Typography-5xlTitle-24",
+                  "baseFontFamily": "Typography-baseFontFamily-47",
+                  "disabledButtonText": "Typography-disabledButtonText-38",
+                  "disabledText": "Typography-disabledText-45",
+                  "highlightText": "Typography-highlightText-34",
+                  "infoText": "Typography-infoText-43",
+                  "inlineLink": "Typography-inlineLink-37",
+                  "lTitle": "Typography-lTitle-29",
+                  "labelText": "Typography-labelText-42",
+                  "mTitle": "Typography-mTitle-30",
+                  "margin": "Typography-margin-48",
+                  "normalText": "Typography-normalText-35",
+                  "placeholderText": "Typography-placeholderText-39",
+                  "sLink": "Typography-sLink-44",
+                  "sText": "Typography-sText-41",
+                  "sTitle": "Typography-sTitle-31",
+                  "selectedNavText": "Typography-selectedNavText-40",
+                  "selectedText": "Typography-selectedText-36",
+                  "vizText": "Typography-vizText-46",
+                  "xlTitle": "Typography-xlTitle-28",
+                  "xsTitle": "Typography-xsTitle-32",
+                  "xxlTitle": "Typography-xxlTitle-27",
+                  "xxsTitle": "Typography-xxsTitle-33",
                 },
                 "index": Array [
                   Object {
@@ -27948,132 +28052,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-25": Object {
+                  ".Typography-3xlTitle-26": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-24": Object {
+                  ".Typography-4xlTitle-25": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-23": Object {
+                  ".Typography-5xlTitle-24": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-46": Object {
+                  ".Typography-baseFontFamily-47": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-37": Object {
+                  ".Typography-disabledButtonText-38": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-44": Object {
+                  ".Typography-disabledText-45": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-33": Object {
+                  ".Typography-highlightText-34": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-42": Object {
+                  ".Typography-infoText-43": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-36": Object {
+                  ".Typography-inlineLink-37": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-28": Object {
+                  ".Typography-lTitle-29": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-41": Object {
+                  ".Typography-labelText-42": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-29": Object {
+                  ".Typography-mTitle-30": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-47": Object {
+                  ".Typography-margin-48": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-34": Object {
+                  ".Typography-normalText-35": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-placeholderText-38": Object {
+                  ".Typography-placeholderText-39": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-43": Object {
+                  ".Typography-sLink-44": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sText-40": Object {
+                  ".Typography-sText-41": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-30": Object {
+                  ".Typography-sTitle-31": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-selectedNavText-39": Object {
+                  ".Typography-selectedNavText-40": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-selectedText-35": Object {
+                  ".Typography-selectedText-36": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -28081,35 +28185,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-vizText-45": Object {
+                  ".Typography-vizText-46": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-27": Object {
+                  ".Typography-xlTitle-28": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-31": Object {
+                  ".Typography-xsTitle-32": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-26": Object {
+                  ".Typography-xxlTitle-27": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-32": Object {
+                  ".Typography-xxsTitle-33": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -28289,31 +28393,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Typography",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-25",
-                    "4xlTitle": "Typography-4xlTitle-24",
-                    "5xlTitle": "Typography-5xlTitle-23",
-                    "baseFontFamily": "Typography-baseFontFamily-46",
-                    "disabledButtonText": "Typography-disabledButtonText-37",
-                    "disabledText": "Typography-disabledText-44",
-                    "highlightText": "Typography-highlightText-33",
-                    "infoText": "Typography-infoText-42",
-                    "inlineLink": "Typography-inlineLink-36",
-                    "lTitle": "Typography-lTitle-28",
-                    "labelText": "Typography-labelText-41",
-                    "mTitle": "Typography-mTitle-29",
-                    "margin": "Typography-margin-47",
-                    "normalText": "Typography-normalText-34",
-                    "placeholderText": "Typography-placeholderText-38",
-                    "sLink": "Typography-sLink-43",
-                    "sText": "Typography-sText-40",
-                    "sTitle": "Typography-sTitle-30",
-                    "selectedNavText": "Typography-selectedNavText-39",
-                    "selectedText": "Typography-selectedText-35",
-                    "vizText": "Typography-vizText-45",
-                    "xlTitle": "Typography-xlTitle-27",
-                    "xsTitle": "Typography-xsTitle-31",
-                    "xxlTitle": "Typography-xxlTitle-26",
-                    "xxsTitle": "Typography-xxsTitle-32",
+                    "3xlTitle": "Typography-3xlTitle-26",
+                    "4xlTitle": "Typography-4xlTitle-25",
+                    "5xlTitle": "Typography-5xlTitle-24",
+                    "baseFontFamily": "Typography-baseFontFamily-47",
+                    "disabledButtonText": "Typography-disabledButtonText-38",
+                    "disabledText": "Typography-disabledText-45",
+                    "highlightText": "Typography-highlightText-34",
+                    "infoText": "Typography-infoText-43",
+                    "inlineLink": "Typography-inlineLink-37",
+                    "lTitle": "Typography-lTitle-29",
+                    "labelText": "Typography-labelText-42",
+                    "mTitle": "Typography-mTitle-30",
+                    "margin": "Typography-margin-48",
+                    "normalText": "Typography-normalText-35",
+                    "placeholderText": "Typography-placeholderText-39",
+                    "sLink": "Typography-sLink-44",
+                    "sText": "Typography-sText-41",
+                    "sTitle": "Typography-sTitle-31",
+                    "selectedNavText": "Typography-selectedNavText-40",
+                    "selectedText": "Typography-selectedText-36",
+                    "vizText": "Typography-vizText-46",
+                    "xlTitle": "Typography-xlTitle-28",
+                    "xsTitle": "Typography-xsTitle-32",
+                    "xxlTitle": "Typography-xxlTitle-27",
+                    "xxsTitle": "Typography-xxsTitle-33",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -28677,7 +28781,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999988,
+                  "index": -99999999982,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -29007,6 +29111,7 @@ body {
             "palette": Object {
               "accent": Object {},
               "atmosphere": Object {},
+              "base": Object {},
               "semantic": Object {},
               "support": Object {},
             },
@@ -29039,6 +29144,10 @@ body {
               "atmo5": "#DEDEDE",
               "atmo6": "#BCBCBC",
               "atmo7": "#999999",
+            },
+            "base": Object {
+              "base1": "#FFFFFF",
+              "base2": "#414141",
             },
             "semantic": Object {
               "sema1": "#63A621",
@@ -29979,6 +30088,7 @@ body {
                 "palette": Object {
                   "accent": Object {},
                   "atmosphere": Object {},
+                  "base": Object {},
                   "semantic": Object {},
                   "support": Object {},
                 },
@@ -30011,6 +30121,10 @@ body {
                   "atmo5": "#DEDEDE",
                   "atmo6": "#BCBCBC",
                   "atmo7": "#999999",
+                },
+                "base": Object {
+                  "base1": "#FFFFFF",
+                  "base2": "#414141",
                 },
                 "semantic": Object {
                   "sema1": "#63A621",
@@ -30949,6 +31063,7 @@ body {
                       <List
                         classes={
                           Object {
+                            "box": "List-box-21",
                             "condensed": "List-condensed-11",
                             "disabled": "List-disabled-16",
                             "label": "List-label-17",
@@ -31008,6 +31123,7 @@ body {
                                 "palette": Object {
                                   "accent": Object {},
                                   "atmosphere": Object {},
+                                  "base": Object {},
                                   "semantic": Object {},
                                   "support": Object {},
                                 },
@@ -31040,6 +31156,10 @@ body {
                                   "atmo5": "#DEDEDE",
                                   "atmo6": "#BCBCBC",
                                   "atmo7": "#999999",
+                                },
+                                "base": Object {
+                                  "base1": "#FFFFFF",
+                                  "base2": "#414141",
                                 },
                                 "semantic": Object {
                                   "sema1": "#63A621",
@@ -31931,8 +32051,8 @@ body {
                             <Focus
                               classes={
                                 Object {
-                                  "focusDisabled": "Focus-focusDisabled-21",
-                                  "focused": "Focus-focused-22",
+                                  "focusDisabled": "Focus-focusDisabled-22",
+                                  "focused": "Focus-focused-23",
                                 }
                               }
                               focusOnClick={false}
@@ -31940,7 +32060,7 @@ body {
                             >
                               <li
                                 aria-selected={false}
-                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-21"
+                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-22"
                                 key=".0"
                                 onBlur={[Function]}
                                 onClick={[Function]}
@@ -31958,31 +32078,31 @@ body {
                                       className="List-label-17 List-truncate-20"
                                       classes={
                                         Object {
-                                          "3xlTitle": "Typography-3xlTitle-25",
-                                          "4xlTitle": "Typography-4xlTitle-24",
-                                          "5xlTitle": "Typography-5xlTitle-23",
-                                          "baseFontFamily": "Typography-baseFontFamily-46",
-                                          "disabledButtonText": "Typography-disabledButtonText-37",
-                                          "disabledText": "Typography-disabledText-44",
-                                          "highlightText": "Typography-highlightText-33",
-                                          "infoText": "Typography-infoText-42",
-                                          "inlineLink": "Typography-inlineLink-36",
-                                          "lTitle": "Typography-lTitle-28",
-                                          "labelText": "Typography-labelText-41",
-                                          "mTitle": "Typography-mTitle-29",
-                                          "margin": "Typography-margin-47",
-                                          "normalText": "Typography-normalText-34",
-                                          "placeholderText": "Typography-placeholderText-38",
-                                          "sLink": "Typography-sLink-43",
-                                          "sText": "Typography-sText-40",
-                                          "sTitle": "Typography-sTitle-30",
-                                          "selectedNavText": "Typography-selectedNavText-39",
-                                          "selectedText": "Typography-selectedText-35",
-                                          "vizText": "Typography-vizText-45",
-                                          "xlTitle": "Typography-xlTitle-27",
-                                          "xsTitle": "Typography-xsTitle-31",
-                                          "xxlTitle": "Typography-xxlTitle-26",
-                                          "xxsTitle": "Typography-xxsTitle-32",
+                                          "3xlTitle": "Typography-3xlTitle-26",
+                                          "4xlTitle": "Typography-4xlTitle-25",
+                                          "5xlTitle": "Typography-5xlTitle-24",
+                                          "baseFontFamily": "Typography-baseFontFamily-47",
+                                          "disabledButtonText": "Typography-disabledButtonText-38",
+                                          "disabledText": "Typography-disabledText-45",
+                                          "highlightText": "Typography-highlightText-34",
+                                          "infoText": "Typography-infoText-43",
+                                          "inlineLink": "Typography-inlineLink-37",
+                                          "lTitle": "Typography-lTitle-29",
+                                          "labelText": "Typography-labelText-42",
+                                          "mTitle": "Typography-mTitle-30",
+                                          "margin": "Typography-margin-48",
+                                          "normalText": "Typography-normalText-35",
+                                          "placeholderText": "Typography-placeholderText-39",
+                                          "sLink": "Typography-sLink-44",
+                                          "sText": "Typography-sText-41",
+                                          "sTitle": "Typography-sTitle-31",
+                                          "selectedNavText": "Typography-selectedNavText-40",
+                                          "selectedText": "Typography-selectedText-36",
+                                          "vizText": "Typography-vizText-46",
+                                          "xlTitle": "Typography-xlTitle-28",
+                                          "xsTitle": "Typography-xsTitle-32",
+                                          "xxlTitle": "Typography-xxlTitle-27",
+                                          "xxsTitle": "Typography-xxsTitle-33",
                                         }
                                       }
                                       component={null}
@@ -32016,6 +32136,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -32048,6 +32169,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -32914,7 +33039,7 @@ body {
                                       variant="normalText"
                                     >
                                       <p
-                                        className="Typography-normalText-34 Typography-baseFontFamily-46 Typography-margin-47 List-label-17 List-truncate-20"
+                                        className="Typography-normalText-35 Typography-baseFontFamily-47 Typography-margin-48 List-label-17 List-truncate-20"
                                         theme={
                                           Object {
                                             "breakpoints": Object {
@@ -32944,6 +33069,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -32976,6 +33102,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",
@@ -33855,8 +33985,8 @@ body {
                             <Focus
                               classes={
                                 Object {
-                                  "focusDisabled": "Focus-focusDisabled-21",
-                                  "focused": "Focus-focused-22",
+                                  "focusDisabled": "Focus-focusDisabled-22",
+                                  "focused": "Focus-focused-23",
                                 }
                               }
                               focusOnClick={false}
@@ -33864,7 +33994,7 @@ body {
                             >
                               <li
                                 aria-selected={false}
-                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-21"
+                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-22"
                                 key=".0"
                                 onBlur={[Function]}
                                 onClick={[Function]}
@@ -33882,31 +34012,31 @@ body {
                                       className="List-label-17 List-truncate-20"
                                       classes={
                                         Object {
-                                          "3xlTitle": "Typography-3xlTitle-25",
-                                          "4xlTitle": "Typography-4xlTitle-24",
-                                          "5xlTitle": "Typography-5xlTitle-23",
-                                          "baseFontFamily": "Typography-baseFontFamily-46",
-                                          "disabledButtonText": "Typography-disabledButtonText-37",
-                                          "disabledText": "Typography-disabledText-44",
-                                          "highlightText": "Typography-highlightText-33",
-                                          "infoText": "Typography-infoText-42",
-                                          "inlineLink": "Typography-inlineLink-36",
-                                          "lTitle": "Typography-lTitle-28",
-                                          "labelText": "Typography-labelText-41",
-                                          "mTitle": "Typography-mTitle-29",
-                                          "margin": "Typography-margin-47",
-                                          "normalText": "Typography-normalText-34",
-                                          "placeholderText": "Typography-placeholderText-38",
-                                          "sLink": "Typography-sLink-43",
-                                          "sText": "Typography-sText-40",
-                                          "sTitle": "Typography-sTitle-30",
-                                          "selectedNavText": "Typography-selectedNavText-39",
-                                          "selectedText": "Typography-selectedText-35",
-                                          "vizText": "Typography-vizText-45",
-                                          "xlTitle": "Typography-xlTitle-27",
-                                          "xsTitle": "Typography-xsTitle-31",
-                                          "xxlTitle": "Typography-xxlTitle-26",
-                                          "xxsTitle": "Typography-xxsTitle-32",
+                                          "3xlTitle": "Typography-3xlTitle-26",
+                                          "4xlTitle": "Typography-4xlTitle-25",
+                                          "5xlTitle": "Typography-5xlTitle-24",
+                                          "baseFontFamily": "Typography-baseFontFamily-47",
+                                          "disabledButtonText": "Typography-disabledButtonText-38",
+                                          "disabledText": "Typography-disabledText-45",
+                                          "highlightText": "Typography-highlightText-34",
+                                          "infoText": "Typography-infoText-43",
+                                          "inlineLink": "Typography-inlineLink-37",
+                                          "lTitle": "Typography-lTitle-29",
+                                          "labelText": "Typography-labelText-42",
+                                          "mTitle": "Typography-mTitle-30",
+                                          "margin": "Typography-margin-48",
+                                          "normalText": "Typography-normalText-35",
+                                          "placeholderText": "Typography-placeholderText-39",
+                                          "sLink": "Typography-sLink-44",
+                                          "sText": "Typography-sText-41",
+                                          "sTitle": "Typography-sTitle-31",
+                                          "selectedNavText": "Typography-selectedNavText-40",
+                                          "selectedText": "Typography-selectedText-36",
+                                          "vizText": "Typography-vizText-46",
+                                          "xlTitle": "Typography-xlTitle-28",
+                                          "xsTitle": "Typography-xsTitle-32",
+                                          "xxlTitle": "Typography-xxlTitle-27",
+                                          "xxsTitle": "Typography-xxsTitle-33",
                                         }
                                       }
                                       component={null}
@@ -33940,6 +34070,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -33972,6 +34103,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -34838,7 +34973,7 @@ body {
                                       variant="normalText"
                                     >
                                       <p
-                                        className="Typography-normalText-34 Typography-baseFontFamily-46 Typography-margin-47 List-label-17 List-truncate-20"
+                                        className="Typography-normalText-35 Typography-baseFontFamily-47 Typography-margin-48 List-label-17 List-truncate-20"
                                         theme={
                                           Object {
                                             "breakpoints": Object {
@@ -34868,6 +35003,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -34900,6 +35036,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",
@@ -35779,8 +35919,8 @@ body {
                             <Focus
                               classes={
                                 Object {
-                                  "focusDisabled": "Focus-focusDisabled-21",
-                                  "focused": "Focus-focused-22",
+                                  "focusDisabled": "Focus-focusDisabled-22",
+                                  "focused": "Focus-focused-23",
                                 }
                               }
                               focusOnClick={false}
@@ -35788,7 +35928,7 @@ body {
                             >
                               <li
                                 aria-selected={false}
-                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-21"
+                                className="List-listItem-10 List-condensed-11 Focus-focusDisabled-22"
                                 key=".0"
                                 onBlur={[Function]}
                                 onClick={[Function]}
@@ -35806,31 +35946,31 @@ body {
                                       className="List-label-17 List-truncate-20"
                                       classes={
                                         Object {
-                                          "3xlTitle": "Typography-3xlTitle-25",
-                                          "4xlTitle": "Typography-4xlTitle-24",
-                                          "5xlTitle": "Typography-5xlTitle-23",
-                                          "baseFontFamily": "Typography-baseFontFamily-46",
-                                          "disabledButtonText": "Typography-disabledButtonText-37",
-                                          "disabledText": "Typography-disabledText-44",
-                                          "highlightText": "Typography-highlightText-33",
-                                          "infoText": "Typography-infoText-42",
-                                          "inlineLink": "Typography-inlineLink-36",
-                                          "lTitle": "Typography-lTitle-28",
-                                          "labelText": "Typography-labelText-41",
-                                          "mTitle": "Typography-mTitle-29",
-                                          "margin": "Typography-margin-47",
-                                          "normalText": "Typography-normalText-34",
-                                          "placeholderText": "Typography-placeholderText-38",
-                                          "sLink": "Typography-sLink-43",
-                                          "sText": "Typography-sText-40",
-                                          "sTitle": "Typography-sTitle-30",
-                                          "selectedNavText": "Typography-selectedNavText-39",
-                                          "selectedText": "Typography-selectedText-35",
-                                          "vizText": "Typography-vizText-45",
-                                          "xlTitle": "Typography-xlTitle-27",
-                                          "xsTitle": "Typography-xsTitle-31",
-                                          "xxlTitle": "Typography-xxlTitle-26",
-                                          "xxsTitle": "Typography-xxsTitle-32",
+                                          "3xlTitle": "Typography-3xlTitle-26",
+                                          "4xlTitle": "Typography-4xlTitle-25",
+                                          "5xlTitle": "Typography-5xlTitle-24",
+                                          "baseFontFamily": "Typography-baseFontFamily-47",
+                                          "disabledButtonText": "Typography-disabledButtonText-38",
+                                          "disabledText": "Typography-disabledText-45",
+                                          "highlightText": "Typography-highlightText-34",
+                                          "infoText": "Typography-infoText-43",
+                                          "inlineLink": "Typography-inlineLink-37",
+                                          "lTitle": "Typography-lTitle-29",
+                                          "labelText": "Typography-labelText-42",
+                                          "mTitle": "Typography-mTitle-30",
+                                          "margin": "Typography-margin-48",
+                                          "normalText": "Typography-normalText-35",
+                                          "placeholderText": "Typography-placeholderText-39",
+                                          "sLink": "Typography-sLink-44",
+                                          "sText": "Typography-sText-41",
+                                          "sTitle": "Typography-sTitle-31",
+                                          "selectedNavText": "Typography-selectedNavText-40",
+                                          "selectedText": "Typography-selectedText-36",
+                                          "vizText": "Typography-vizText-46",
+                                          "xlTitle": "Typography-xlTitle-28",
+                                          "xsTitle": "Typography-xsTitle-32",
+                                          "xxlTitle": "Typography-xxlTitle-27",
+                                          "xxsTitle": "Typography-xxsTitle-33",
                                         }
                                       }
                                       component={null}
@@ -35864,6 +36004,7 @@ body {
                                               "palette": Object {
                                                 "accent": Object {},
                                                 "atmosphere": Object {},
+                                                "base": Object {},
                                                 "semantic": Object {},
                                                 "support": Object {},
                                               },
@@ -35896,6 +36037,10 @@ body {
                                                 "atmo5": "#DEDEDE",
                                                 "atmo6": "#BCBCBC",
                                                 "atmo7": "#999999",
+                                              },
+                                              "base": Object {
+                                                "base1": "#FFFFFF",
+                                                "base2": "#414141",
                                               },
                                               "semantic": Object {
                                                 "sema1": "#63A621",
@@ -36762,7 +36907,7 @@ body {
                                       variant="normalText"
                                     >
                                       <p
-                                        className="Typography-normalText-34 Typography-baseFontFamily-46 Typography-margin-47 List-label-17 List-truncate-20"
+                                        className="Typography-normalText-35 Typography-baseFontFamily-47 Typography-margin-48 List-label-17 List-truncate-20"
                                         theme={
                                           Object {
                                             "breakpoints": Object {
@@ -36792,6 +36937,7 @@ body {
                                                 "palette": Object {
                                                   "accent": Object {},
                                                   "atmosphere": Object {},
+                                                  "base": Object {},
                                                   "semantic": Object {},
                                                   "support": Object {},
                                                 },
@@ -36824,6 +36970,10 @@ body {
                                                   "atmo5": "#DEDEDE",
                                                   "atmo6": "#BCBCBC",
                                                   "atmo7": "#999999",
+                                                },
+                                                "base": Object {
+                                                  "base1": "#FFFFFF",
+                                                  "base2": "#414141",
                                                 },
                                                 "semantic": Object {
                                                   "sema1": "#63A621",

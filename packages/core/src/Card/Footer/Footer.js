@@ -17,9 +17,10 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
 import withStyles from "@material-ui/core/styles/withStyles";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckBox from "../../Selectors/CheckBox";
 import HvButton from "../../Button";
 import DropDownMenu from "../../DropDownMenu";
@@ -47,7 +48,7 @@ const renderActions = (
       onClick={() => actionsCallback(id, action)}
       category="ghostSecondary"
     >
-      {action.icon && action.icon({ classes })}
+      {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
       {action.label}
     </HvButton>
   );
@@ -59,10 +60,10 @@ const renderActions = (
     >
       {renderButton(acts[0])}
       <DropDown
-        icon={<MoreVert />}
+        icon={<MoreVert className={classes.box} />}
         placement="left"
         onClick={action => actionsCallback(id, action)}
-        dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
+        dataList={acts.slice(1).map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
       />
     </div>
   );
@@ -174,7 +175,8 @@ Footer.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        icon: PropTypes.func
+        icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
+        iconCallback: PropTypes.func
       })
     )
   ]),

@@ -20,6 +20,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import withStyles from "@material-ui/core/styles/withStyles";
 import OutsideClickHandler from "react-outside-click-handler";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
@@ -28,8 +29,9 @@ import isNill from "lodash/isNil";
 import isEqual from "lodash/isEqual";
 import map from "lodash/map";
 
-import MenuS from "@hv/uikit-react-icons/dist/DawnTheme/Menu.S";
-import CloseS from "@hv/uikit-react-icons/dist/DawnTheme/Close.S";
+import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
+import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
@@ -39,6 +41,19 @@ import Brand from "./Brand";
 import Navigation from "./Navigation";
 import User from "./User";
 import Actions from "./Actions";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "35px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledMenu = withStyles(styles, { withTheme: true })(Menu);
+const StyledClose = withStyles(styles, { withTheme: true })(Close);
 
 /**
  *
@@ -142,6 +157,7 @@ const Main = ({
           selected: false,
           isHidden: false,
           leftIcon: null,
+          iconCallback: undefined,
           showNavIcon: false,
           path: "",
           params: {},
@@ -157,12 +173,14 @@ const Main = ({
         }
       ]
     };
+
     if (isEqual(navStructure, defaultData)) {
       return null;
     }
     return navStructure.data;
   };
   const navData = getNavigationData(navigationStructure, navigationData);
+
   return (
     <div className={classes.shadowPadding}>
       <AppBar
@@ -182,7 +200,11 @@ const Main = ({
               }}
               tabIndex={0}
             >
-              {showNav ? <CloseS /> : <MenuS />}
+              {showNav ? (
+                <StyledClose iconSize="S" />
+              ) : (
+                <StyledMenu iconSize="S" />
+              )}
             </div>
           ) : (
             ""
@@ -230,7 +252,10 @@ const Main = ({
       {showNav &&
       showHbMenu &&
       !(isNill(navData) && isNill(actionItemMapper)) ? (
-        <OutsideClickHandler useCapture onOutsideClick={() => setTimeout(()=>toggleNav(false), 0)}>
+        <OutsideClickHandler
+          useCapture
+          onOutsideClick={() => setTimeout(() => toggleNav(false), 0)}
+        >
           <div
             className={classNames(classes.verticalNavigationContainer, {
               [classes.verticalNavigationContainerFixed]: fixVerticalNavigation,
@@ -326,7 +351,11 @@ Main.propTypes = {
         label: PropTypes.string.isRequired,
         selected: PropTypes.bool,
         isHidden: PropTypes.bool,
-        leftIcon: PropTypes.func,
+        leftIcon: deprecatedPropType(
+          PropTypes.func,
+          "Use iconCallback instead"
+        ),
+        iconCallback: PropTypes.func,
         showNavIcon: PropTypes.bool,
         path: PropTypes.string,
         params: PropTypes.instanceOf(Object),
@@ -437,7 +466,8 @@ Main.propTypes = {
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       isHidden: PropTypes.bool,
-      leftIcon: PropTypes.func,
+      leftIcon: deprecatedPropType(PropTypes.func, "Use iconCallback instead"),
+      iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       subData: PropTypes.object,
       path: PropTypes.string,
@@ -469,6 +499,7 @@ Main.defaultProps = {
         selected: false,
         isHidden: false,
         leftIcon: null,
+        iconCallback: undefined,
         showNavIcon: false,
         path: "",
         params: {},

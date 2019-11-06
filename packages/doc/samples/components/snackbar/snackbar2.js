@@ -1,7 +1,11 @@
 import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
-import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
+import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
+import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
+
+const StyledFastForward = withStyles(styles, { withTheme: true })(FastForward);
 
 class SimpleSnackbar extends React.Component {
   state = {
@@ -59,6 +63,6 @@ export default (
   <SimpleSnackbar
     label="This is a snackbar"
     variant="default"
-    customIcon={<FastForward16 />}
+    customIcon={<StyledFastForward iconSize="S" />}
   />
 );

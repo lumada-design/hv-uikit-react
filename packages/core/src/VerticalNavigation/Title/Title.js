@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 
-import NavIcon from "@hv/uikit-react-icons/dist/DawnTheme/DropLeft.XS";
+import NavIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
 import Typography from "../../Typography";
 
 const onKeyDownHandler = (event, onClick) => {
@@ -28,7 +28,7 @@ const onKeyDownHandler = (event, onClick) => {
   }
 };
 
-const Title = ({ theme, title, classes, onClick }) => (
+const Title = ({ title, classes, onClick }) => (
   <div
     role="button"
     className={classes.titleContainer}
@@ -37,7 +37,7 @@ const Title = ({ theme, title, classes, onClick }) => (
     onKeyDown={e => onKeyDownHandler(e, onClick)}
   >
     <div className={classes.navIcon}>
-      <NavIcon color={["none", theme.hv.palette.accent.acce1]} />
+      <NavIcon iconSize="XS" className={classes.box} />
     </div>
     <Typography className={classes.typography} variant="highlightText">
       {title}
@@ -46,10 +46,6 @@ const Title = ({ theme, title, classes, onClick }) => (
 );
 
 Title.propTypes = {
-  /**
-   * The object created by material to apply to the component.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Styles applied to the element.
    */

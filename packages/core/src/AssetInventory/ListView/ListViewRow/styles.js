@@ -45,6 +45,14 @@ const styles = theme => ({
   },
   actionGrid: {
     display: "flex"
+  },
+  box:{
+    width: "30px", 
+    padding: "7px",
+    "&>svg": {
+      display: "block",
+      margin: "auto"
+    }
   }
 });
 

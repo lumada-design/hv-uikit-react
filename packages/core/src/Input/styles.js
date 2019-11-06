@@ -48,6 +48,7 @@ const styles = theme => ({
     borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
+    outline: "5px auto rgba(0, 150, 255, 1)",
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
@@ -62,7 +63,7 @@ const styles = theme => ({
     }
   },
   input: {
-    height: `21px`,
+    height: `20px`,
     marginLeft: `${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
     padding: "6px 0 5px",
@@ -95,7 +96,14 @@ const styles = theme => ({
     color: theme.hv.palette.atmosphere.atmo7
   },
   infoIconContainer: {
-    height: `${theme.hv.spacing.md}px`
+    height: "32px",
+    width: "32px",
+    display:"flex",
+    justifyContent:"center",
+    '& div': {
+      alignSelf:"center",
+      marginTop:-2
+    }
   },
   infoText: {
     paddingTop: "8px",
@@ -104,13 +112,25 @@ const styles = theme => ({
   textWarning: {
     color: theme.hv.palette.accent.acce1
   },
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
+  },
+  closeBox: {
+    width: "30px",
+    height: "30px",
+    paddingTop: "10px",
+    "& svg": {
+      display: "block",
+      margin: "auto"
+    }
+  },
   iconFlexBox: {
     display: "flex",
-    flexDirection: "row"
-  },
-  icon: {
-    width: `${theme.hv.spacing.md}px`,
-    height: `${theme.hv.spacing.md}px`
+    flexDirection: "row",
+    height: 30,
+    justifyContent:"center"
   },
   iconContainer: {
     width: `${theme.hv.spacing.md}px`,
@@ -119,7 +139,8 @@ const styles = theme => ({
   iconClear: {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    cursor: "pointer"
+    cursor: "pointer",
+    marginBottom: "5px"
   },
   suggestionsContainer: {
     width: "100%",

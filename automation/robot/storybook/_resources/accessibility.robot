@@ -12,9 +12,9 @@ verify element accessibility as standard
     ...   | standard   |   the accessibility standard to use: Section508, WCAG2A, WCAG2AA (default), WCAG2AAA – only used by htmlcs runner | WCAG2AA |
     ...   | optional   |   available options on https://github.com/pa11y/pa11y | --root-element "\#root > div.Component-content-4"  | 
     ...    
-    ${script}         Set Variable        pa11y --debug --reporter json --standard ${standard} ${optional} ${url}
-    ${result}=        Run Process         ${script}       shell=True                        timeout=60s    alias=${url}${optional}${standard}
-    Run Keyword If    ${result.rc} > 0    report error    ${url}${optional}${standard}
+    ${script}         Set Variable        pa11y --runner htmlcs --runner axe --reporter json --standard ${standard} ${optional} ${url}
+    ${result}=        Run Process         ${script}       shell=True    timeout=120s    alias=${url}${optional}${standard}
+    Run Keyword If    ${result.rc} > 0    report error   ${url}${optional}${standard}
     
 report error
     [Arguments]    ${alias}

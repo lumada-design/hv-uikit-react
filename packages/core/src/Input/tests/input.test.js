@@ -19,7 +19,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import InfoS from "@hv/uikit-react-icons/dist/DawnTheme/Info.S";
+import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
 import InputWithStyles from "../index";
 import Input from "../Input";
 import validationStates from "../validationStates";

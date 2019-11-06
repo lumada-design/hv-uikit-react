@@ -14,11 +14,23 @@
  * limitations under the License.
  */
 
-import Level0Success16Color from "@hv/uikit-react-icons/dist/Level0.S";
-import Level3Alert16 from "@hv/uikit-react-icons/dist/Level3.S";
-import Level416Color from "@hv/uikit-react-icons/dist/Level4.S";
-import Level5Unsuccess16Color from "@hv/uikit-react-icons/dist/Level5.S";
 import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Level0 from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
+import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+
+const styles = () => ({
+  rootM: {
+    padding: "4px"
+  }
+});
+
+const StyledLevel0 = withStyles(styles, { withTheme: true })(Level0);
+const StyledLevel3 = withStyles(styles, { withTheme: true })(Level3);
+const StyledLevel4 = withStyles(styles, { withTheme: true })(Level4);
+const StyledLevel5 = withStyles(styles, { withTheme: true })(Level5);
 
 /**
  * Icon mapping.
@@ -26,10 +38,10 @@ import React from "react";
  * @type {Readonly<{success: *, warning: *, error: *, info: *}>}
  */
 export const variantIcon = Object.freeze({
-  success: theme => <Level0Success16Color color={["none", theme.hv.palette.semantic.sema1]} />,
-  warning: theme => <Level416Color color={["none", theme.hv.palette.semantic.sema5]} />,
-  error: theme => <Level5Unsuccess16Color color={["none", theme.hv.palette.semantic.sema6]} />,
-  info: theme => <Level3Alert16 color={["none", theme.hv.palette.semantic.sema4]} />
+  success: () => <StyledLevel0 iconSize="M" semantic="sema1" />,
+  warning: () => <StyledLevel4 iconSize="M" semantic="sema5" />,
+  error: () => <StyledLevel5 iconSize="M" semantic="sema6" />,
+  info: () => <StyledLevel3 iconSize="M" semantic="sema4"  />
 });
 
 export const severityIcon = (severity, theme) => {

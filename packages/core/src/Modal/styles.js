@@ -52,6 +52,15 @@ const styles = theme => {
       "&:hover": {
         backgroundColor: "transparent"
       }
+    },
+    iconContainer: {
+      width: "32px",
+      height: "32px",
+      display: "flex",
+      alignItems: "center",
+      "&>svg": {
+        margin: "0 auto",
+      }
     }
   };
 };

@@ -26,19 +26,7 @@ exports[`Modal Component allows external props to be added 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      className=""
-      color={null}
-      height={null}
-      iconSize="S"
-      style={
-        Object {
-          "width": "32px",
-        }
-      }
-      viewbox="1 1 30 30 "
-      width={null}
-    />
+    <WithStyles(Close) />
   </HvButton>
   Modal Content
 </WithStyles(Dialog)>
@@ -69,19 +57,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
     className="testClassCloseButton"
     onClick={[Function]}
   >
-    <CloseS
-      className=""
-      color={null}
-      height={null}
-      iconSize="S"
-      style={
-        Object {
-          "width": "32px",
-        }
-      }
-      viewbox="1 1 30 30 "
-      width={null}
-    />
+    <WithStyles(Close) />
   </HvButton>
   Modal Content
 </WithStyles(Dialog)>
@@ -111,19 +87,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      className=""
-      color={null}
-      height={null}
-      iconSize="S"
-      style={
-        Object {
-          "width": "32px",
-        }
-      }
-      viewbox="1 1 30 30 "
-      width={null}
-    />
+    <WithStyles(Close) />
   </HvButton>
   Modal Content
 </WithStyles(Dialog)>
@@ -153,19 +117,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      className=""
-      color={null}
-      height={null}
-      iconSize="S"
-      style={
-        Object {
-          "width": "32px",
-        }
-      }
-      viewbox="1 1 30 30 "
-      width={null}
-    />
+    <WithStyles(Close) />
   </HvButton>
   Modal Content
 </WithStyles(Dialog)>
@@ -195,19 +147,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
     category="ghost"
     onClick={[Function]}
   >
-    <CloseS
-      className=""
-      color={null}
-      height={null}
-      iconSize="S"
-      style={
-        Object {
-          "width": "32px",
-        }
-      }
-      viewbox="1 1 30 30 "
-      width={null}
-    />
+    <WithStyles(Close) />
   </HvButton>
   Modal Content
 </WithStyles(Dialog)>
@@ -245,6 +185,7 @@ exports[`Modal withStyles should render correctly 1`] = `
           "palette": Object {
             "accent": Object {},
             "atmosphere": Object {},
+            "base": Object {},
             "semantic": Object {},
             "support": Object {},
           },
@@ -277,6 +218,10 @@ exports[`Modal withStyles should render correctly 1`] = `
             "atmo5": "#DEDEDE",
             "atmo6": "#BCBCBC",
             "atmo7": "#999999",
+          },
+          "base": Object {
+            "base1": "#FFFFFF",
+            "base2": "#414141",
           },
           "semantic": Object {
             "sema1": "#63A621",

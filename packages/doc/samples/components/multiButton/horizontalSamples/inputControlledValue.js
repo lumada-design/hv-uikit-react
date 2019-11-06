@@ -7,9 +7,9 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const btnStyle = {
-  width: "110px",
-  height: "50px",
-  margin: "10px"
+  width: "120px",
+  height: "32px",
+  margin: "0 10px 30px 0"
 };
 
 const initialButtonsDefinitions = [
@@ -39,12 +39,12 @@ function WrapperComp() {
   return (
     <>
       <Button style={btnStyle} onClick={() => setValue(initialButtonsDefinitions)}>
-        Initial Props{" "}
+        Initial Props
       </Button>
       <Button style={btnStyle} onClick={() => setValue(finalButtonsDefinitions)}>
-        New Props{" "}
+        New Props
       </Button>
-      <div style={{ width: "500px" }}>
+      <div style={{ width: "400px" }}>
         <MultiButton buttons={value} type={"mixed"} multi />
       </div>
     </>

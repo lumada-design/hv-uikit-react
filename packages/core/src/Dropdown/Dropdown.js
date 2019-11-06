@@ -17,10 +17,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import withStyles from "@material-ui/core/styles/withStyles";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import ArrowUp from "@hv/uikit-react-icons/dist/DawnTheme/DropDown.XS";
-import ArrowDown from "@hv/uikit-react-icons/dist/DawnTheme/DropUp.XS";
+import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
+import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import HvTypography from "../Typography";
 import List from "./List";
 import { getSelectionLabel, getSelected } from "./utils";
@@ -42,7 +43,23 @@ const DEFAULT_STATE = {
   labels: DEFAULT_LABELS
 };
 
-class Main extends React.Component {
+const styles = {
+  rootXs: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+};
+
+const StyledArrowUp = withStyles(styles, { withTheme: true })(ArrowUp);
+const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
+
+class Dropdown extends React.Component {
+
   state = DEFAULT_STATE;
 
   static getDerivedStateFromProps(props, state) {
@@ -98,7 +115,7 @@ class Main extends React.Component {
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
    * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
-   * @memberof Main
+   * @memberof Dropdown
    */
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { multiSelect, onChange } = this.props;
@@ -121,7 +138,7 @@ class Main extends React.Component {
     const { isOpen, selectionLabel } = this.state;
 
     const color = disabled
-      ? ["none", theme.hv.palette.atmosphere.atmo7]
+      ? [theme.hv.palette.atmosphere.atmo7]
       : undefined;
 
     return (
@@ -151,9 +168,9 @@ class Main extends React.Component {
           {selectionLabel}
         </HvTypography>
         {isOpen ? (
-          <ArrowDown className={classes.arrow} />
+          <StyledArrowUp iconSize="XS" className={classes.arrow} />
         ) : (
-          <ArrowUp className={classes.arrow} color={color} />
+          <StyledArrowDown iconSize="XS" className={classes.arrow} color={color} />
         )}
       </div>
     );
@@ -220,7 +237,7 @@ class Main extends React.Component {
   }
 }
 
-Main.propTypes = {
+Dropdown.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -379,7 +396,7 @@ Main.propTypes = {
   singleSelectionToggle:PropTypes.bool
 };
 
-Main.defaultProps = {
+Dropdown.defaultProps = {
   className: "",
   id: undefined,
   label: undefined,
@@ -398,4 +415,4 @@ Main.defaultProps = {
   singleSelectionToggle: true,
 };
 
-export default Main;
+export default Dropdown;

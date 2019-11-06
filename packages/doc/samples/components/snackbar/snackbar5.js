@@ -1,11 +1,11 @@
 import React from "react";
-import FastForward16 from "@hv/uikit-react-icons/dist/FastForwards.S";
+import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
 import HvSnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const SnackbarContentWrapper = withStyles(styles)(HvSnackbarContentWrapper);
+const StyledFastForward = withStyles(styles, { withTheme: true })(FastForward);
 
 const actionComponent = (
   <a
@@ -50,7 +50,7 @@ export default (
       <SnackbarContentWrapper
         label="default"
         variant="default"
-        customIcon={<FastForward16 />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -58,7 +58,7 @@ export default (
       <SnackbarContentWrapper
         label="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
         variant="default"
-        customIcon={<FastForward16 />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -66,7 +66,7 @@ export default (
       <SnackbarContentWrapper
         label="Success"
         variant="success"
-        customIcon={<FastForward16 />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />
@@ -74,7 +74,7 @@ export default (
       <SnackbarContentWrapper
         label="Error"
         variant="error"
-        customIcon={<FastForward16 />}
+        customIcon={<StyledFastForward iconSize="S" color={["#414141"]} />}
       />
     </div>
     <p />

@@ -14,16 +14,6 @@
  * limitations under the License.
  */
 
-import DropDownXS from "@hv/uikit-common-icons/dist/DawnTheme/XS-icons/DropDown.XS.svg";
-import ArrowFirst from "../assets/ArrowFirst.svg";
-import ArrowLeft from "../assets/ArrowLeft.svg";
-import ArrowRight from "../assets/ArrowRight.svg";
-import ArrowLast from "../assets/ArrowLast.svg";
-import ArrowFirstDisabled from "../assets/ArrowFirstDisabled.svg";
-import ArrowLeftDisabled from "../assets/ArrowLeftDisabled.svg";
-import ArrowRightDisabled from "../assets/ArrowRightDisabled.svg";
-import ArrowLastDisabled from "../assets/ArrowLastDisabled.svg";
-
 const styles = theme => ({
   paginationContainer: {
     position: "relative",
@@ -34,11 +24,6 @@ const styles = theme => ({
     flexWrap: "wrap",
     padding: "3px",
     margin: `${theme.hv.spacing.md}px 0 0 0`
-  },
-  paginationBtn: {
-    width: "32px",
-    padding: "0",
-    height: "100%"
   },
   pageSizeOptions: {
     position: "absolute",
@@ -57,10 +42,8 @@ const styles = theme => ({
     height: "32px",
     width: `${theme.hv.spacing.lg}px`,
     border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    background: `url(${DropDownXS}) no-repeat right ${
-      theme.hv.palette.atmosphere.atmo1
-    }`,
     color: theme.hv.palette.accent.acce1,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     backgroundSize: "26px 26px",
     "&::-ms-expand": {
       display: "none"
@@ -96,33 +79,8 @@ const styles = theme => ({
     height: "32px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
-  arrowFirst: {
-    background: `url(${ArrowFirst})`,
+  arrowEnabled: {
     cursor: "pointer"
-  },
-  arrowLeft: {
-    background: `url(${ArrowLeft})`,
-    cursor: "pointer"
-  },
-  arrowRight: {
-    background: `url(${ArrowRight})`,
-    cursor: "pointer"
-  },
-  arrowLast: {
-    background: `url(${ArrowLast})`,
-    cursor: "pointer"
-  },
-  arrowFirstDisabled: {
-    background: `url(${ArrowFirstDisabled})`
-  },
-  arrowLeftDisabled: {
-    background: `url(${ArrowLeftDisabled})`
-  },
-  arrowRightDisabled: {
-    background: `url(${ArrowRightDisabled})`
-  },
-  arrowLastDisabled: {
-    background: `url(${ArrowLastDisabled})`
   },
   pageSizeInput: {
     ...theme.hv.typography.labelText,
@@ -141,6 +99,26 @@ const styles = theme => ({
     width: 90,
     minWidth: 90,
     maxWidth: 90
+  },
+  iconContainer: {
+    width: "32px",
+    height: "32px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  },
+  selectDownIcon: {
+    display: "flex",
+    alignItems: "center",
+    position: "absolute",
+    pointerEvents: "none",
+    right: "44px",
+    top: "11px",
+    "&>svg": {
+      margin: "0 auto"
+    }
   }
 });
 

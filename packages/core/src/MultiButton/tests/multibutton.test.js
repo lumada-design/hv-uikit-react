@@ -19,8 +19,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Map from "@hv/uikit-react-icons/dist/DawnTheme/Map.S";
-import LocationPin from "@hv/uikit-react-icons/dist/DawnTheme/LocationPin.S";
+import Map from "@hv/uikit-react-icons/dist/Generic/Map";
+import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 import MultibuttonWithStyles from "../index";
 import MultiButton from "../MultiButton";
 import HvProvider from "../../Provider";

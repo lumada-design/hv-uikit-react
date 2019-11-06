@@ -1,9 +1,9 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Upload.S";
+import Icon from "@hv/uikit-react-icons/dist/Generic/Upload";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import leaf from "./resources/leaf.png";
 
@@ -25,7 +25,7 @@ const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
 const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
     <HvButton category="ghost">
-      <Icon />
+      <Icon className={classes.box} />
       Update
     </HvButton>
     <HvButton category="ghost" className={classes.smallButton}>
@@ -43,6 +43,11 @@ const multipleActionsWidhMediaButtonsStyle = theme => ({
     "& span": {
       color: theme.palette.grey.inspire
     }
+  },
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
   }
 });
 

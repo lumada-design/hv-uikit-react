@@ -16,13 +16,28 @@
 
 /* eslint-disable */
 import React from "react";
-import FailS from "@hv/uikit-react-icons/dist/DawnTheme/Fail.S";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 import HvTypography from "../../Typography";
 
+const styles = {
+  rootS: {
+    width: "32px",
+    height: "32px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+};
+
+const StyledFail = withStyles(styles, { withTheme: true })(Fail);
+
 const NoData = ({ classes, noDataMessage }) => (
   <div className={classes.root}>
-    <FailS />
+    <StyledFail />
     <HvTypography variant="normalText" className={classes.noTextMessage}>
       {noDataMessage || " No data to display"}
     </HvTypography>

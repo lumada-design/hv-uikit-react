@@ -12,17 +12,57 @@ import ListView, {
   HvListViewCell,
   HvListViewRow
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
-import AddIcon from "@hv/uikit-react-icons/dist/Add.S";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Preview.S";
-import UploadIcon from "@hv/uikit-react-icons/dist/Upload.S";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Delete.S";
-import Icon from "@hv/uikit-react-icons/dist/DawnTheme/Tool.S";
-import Level1 from "@hv/uikit-react-icons/dist/DawnTheme/Level1.sema10.S";
-import Level2 from "@hv/uikit-react-icons/dist/DawnTheme/Level2.sema11.S";
-import Level3 from "@hv/uikit-react-icons/dist/DawnTheme/Level3.sema12.S";
-import Level4 from "@hv/uikit-react-icons/dist/DawnTheme/Level4.sema13.S";
-import Level5 from "@hv/uikit-react-icons/dist/DawnTheme/Level5.sema14.S";
+import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
+import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
+import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
+import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
+import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
+import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
+
+const styles = () => ({
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      display: "block",
+      margin: "0 auto",
+    }
+  }
+});
+
+const AddIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawAddIcon className={classes.box} color={color} />)
+  }
+);
+
+const PreviewIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawPreviewIcon className={classes.box} color={color} />)
+  }
+);
+
+
+const UploadIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawUploadIcon className={classes.box} color={color} />)
+  }
+);
+
+const DeleteIcon = withStyles(styles, { withTheme: true }) (
+  ({classes, disabled, theme}) => {
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    return (<RawDeleteIcon className={classes.box} color={color} />)
+  }
+);
 
 //----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
@@ -99,23 +139,88 @@ const cardRenderer = (value, viewConfiguration, metadata) => {
   switch (value.status) {
     default:
     case 1:
-      status.Icon = <Level1 />;
+      status.Icon = (
+        <Level1
+          semantic="sema10"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = <Level2 />;
+      status.Icon = (
+        <Level2
+          semantic="sema11"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = <Level3 />;
+      status.Icon = (
+        <Level3
+          semantic="sema12"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema12";
       break;
     case 4:
-      status.Icon = <Level4 />;
+      status.Icon = (
+        <Level4
+          semantic="sema13"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema13";
       break;
     case 5:
-      status.Icon = <Level5 />;
+      status.Icon = (
+        <Level5
+          semantic="sema14"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema14";
       break;
   }
@@ -144,7 +249,7 @@ const Row = ({ classes, status, value, id }) => {
   return (
     <HvListViewRow checkboxValue={value.id}>
       <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
-        <Icon className={classes.icon} />
+        <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
 
       <HvListViewCell id={"description" + id} key={"description" + id}>
@@ -183,7 +288,8 @@ const stylesRow = theme => ({
     borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
   },
   icon: {
-    display: "block"
+    display: "block",
+    paddingLeft: "3px"
   }
 });
 
@@ -299,10 +405,10 @@ const values = () => {
 //----------------------- Configuration ------------------------------
 
 const myActions = [
-  { id: "post", label: "Add", icon: AddIcon, disabled: false },
-  { id: "get", label: "Preview", icon: PreviewIcon, disabled: true },
-  { id: "put", label: "Upload", icon: UploadIcon, disabled: true },
-  { id: "delete", label: "Delete", icon: DeleteIcon, disabled: false }
+  { id: "post", label: "Add", iconCallback: () => <AddIcon />, disabled: false },
+  { id: "get", label: "Preview", iconCallback: () => <PreviewIcon disabled />, disabled: true },
+  { id: "put", label: "Upload", iconCallback: () => <UploadIcon disabled />, disabled: true },
+  { id: "delete", label: "Delete", iconCallback: () => <DeleteIcon />, disabled: false }
 ];
 
 const configuration = {

@@ -17,7 +17,7 @@
 /*  TODO: Review accessibility */
 
 import React from "react";
-import Close from "@hv/uikit-react-icons/dist/DawnTheme/Close.XS";
+import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import PropTypes from "prop-types";
 
 /**
@@ -29,15 +29,19 @@ import PropTypes from "prop-types";
  * @returns {*}
  * @constructor
  */
-const ActionContainer = ({ classes, onClose, action }) => (
+const ActionContainer = ({ theme, classes, onClose, action }) => (
   <div className={classes.actionContainer}>
     <div className={classes.closeAction} role="button" onClick={onClose} tabIndex={0} onKeyDown={onClose}>
-      <Close />
+      <Close iconSize="XS" className={classes.iconContainer} color={[theme.hv.palette.base.base2]} />
     </div>
     <div className={classes.actionsInnerContainer}>{action}</div>
   </div>
 );
 ActionContainer.propTypes = {
+  /*
+   * An object containing the palette color specificactions.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */

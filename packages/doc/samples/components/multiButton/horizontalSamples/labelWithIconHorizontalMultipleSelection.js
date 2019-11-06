@@ -33,7 +33,7 @@ const buttonsDefinitions = [
 ];
 
 export default (
-  <div style={{ width: "400px" }}>
+  <div style={{ width: "460px" }}>
     <MultiButton buttons={buttonsDefinitions} type={"mixed"} multi />
   </div>
 );

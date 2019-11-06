@@ -19,7 +19,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical.S";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import HvButton from "../../../Button";
 import DropDownMenu from "../../../DropDownMenu";
@@ -46,7 +46,7 @@ const renderActions = (
       id={id}
       key={id}
     >
-      {action.icon && action.icon({ classes })}
+      {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
       {action.label}
     </HvButton>
   );
@@ -56,11 +56,11 @@ const renderActions = (
       {renderButton(acts[0])}
       <DropDownMenu
         className={classes.button}
-        icon={<MoreVert />}
+        icon={<MoreVert className={classes.box} />}
         placement="left"
         disablePortal={false}
         onClick={action => actionsCallback(id, action)}
-        dataList={acts.slice(1).map(a => ({ ...a, leftIcon: a.icon }))}
+        dataList={acts.slice(1).map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
       />
     </div>
   );

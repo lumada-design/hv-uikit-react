@@ -1,9 +1,20 @@
 import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import SettingIcon from "@hv/uikit-react-icons/dist/Settings.S";
+import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HitachiLogo from "./resources/hitachi";
-import TestLogo from "./resources/testlogo.svg";
-import UserIcon from "@hv/uikit-react-icons/dist/User.S";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      margin: "7px"
+    }
+  }
+};
+
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -48,8 +59,8 @@ const navigationData = {
 const actionValues = [
   {
     label: "Settings",
-    leftIcon: SettingIcon,
-    horizontalItemAction:<SettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
+    iconCallback: (state) => <StyledSettingIcon {...state}/>,
+    horizontalItemAction:<StyledSettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
     onVerticalClick: () => alert("Settings"),
     path: "route3"
   }
@@ -59,7 +70,6 @@ const SimpleHeaderController = ({
   position,
   navigationData,
   companyLogo,
-  productLogo,
   label,
   actionValues,
   responsivenessConfig
@@ -83,7 +93,6 @@ const SimpleHeaderController = ({
       position={position}
       // Brand
       companyLogo={companyLogo}
-      productLogo={productLogo}
       label={label}
       // Navigation
       navigationStructure={navigationData}
@@ -105,7 +114,6 @@ export default (
       // Brand
       companyLogo={<Hitachi />}
       label="Application Name"
-      productLogo={TestLogo}
       // Navigation
       navigationData={navigationData}
       selected={0}

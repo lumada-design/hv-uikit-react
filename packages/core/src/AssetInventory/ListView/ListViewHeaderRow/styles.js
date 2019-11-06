@@ -22,7 +22,10 @@ const styles = () => ({
   root: {
     alignItems: "center",
     width: "100%",
-    position: "relative"
+    position: "relative",
+    "& $th": {
+      background:"transparent"
+    },
   },
   selectable: {
     marginLeft: "42px"

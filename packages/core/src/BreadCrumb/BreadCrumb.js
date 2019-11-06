@@ -17,8 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Separator from "@hv/uikit-react-icons/dist/DawnTheme/DropRight.XS";
-import MoreOptions from "@hv/uikit-react-icons/dist/DawnTheme/MoreOptionsHorizontal.S";
+import Separator from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
+import MoreOptions from "@hv/uikit-react-icons/dist/Generic/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
@@ -92,7 +92,7 @@ const PathElement = ({ classes, children }) => (
   <div className={classes.centerContainer}>
     {children}
     <div className={classes.separator}>
-      <Separator />
+      <Separator className={classes.separatorContainer} />
     </div>
   </div>
 );
