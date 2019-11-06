@@ -44,24 +44,16 @@ storiesOf("Components", module).add("List", () => <List />, {
       src: "components/list/singleSelectionWithLeftIcons.js"
     },
     {
-      title: "6 Multi selection",
-      src: "components/list/multiSelection.js"
-    },
-    {
-      title: "7. Single selection with selectors",
+      title: "6. Single selection with selectors",
       src: "components/list/singleSelectionWithSelectors.js"
     },
     {
-      title: "8. Multi selection with selectors",
+      title: "7. Multi selection with selectors",
       src: "components/list/multiSelectionWithSelectors.js"
     },
     {
-      title: "9. Multi selection with selectors and select all",
+      title: "8. Multi selection with selectors and select all",
       src: "components/list/multiSelectionWithSelectorsAndSelectAll.js"
-    },
-    {
-      title: "10. Multi selection with selectors and disabled items",
-      src: "components/list/multiSelectionWithSelectorsDisabledAndSelectAll.js"
     }
   ]
 });
