@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.infoText,
+    ...theme.hv.typography.sText,
     paddingTop: `${theme.hv.spacing.xs}px`
   },
   action: {
