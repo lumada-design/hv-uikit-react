@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const styles = () => ({
+const styles = theme => ({
   root: {
-    padding: 0,
+    padding:`40px 0 0 ${theme.hv.spacing.sm}px`,
     margin: 0
   },
   messageContainer: {

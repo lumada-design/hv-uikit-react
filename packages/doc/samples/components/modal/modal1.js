@@ -35,10 +35,10 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton category="secondary" onClick={() => {}}>
+          <HvButton category="ghost" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Switch anyway</HvButton>
+          <HvButton category="ghost">Switch anyway</HvButton>
         </HvModalActions>
       }
     />
@@ -54,10 +54,10 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton category="secondary" onClick={() => {}}>
+          <HvButton category="ghost" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Switch anyway</HvButton>
+          <HvButton category="ghost">Switch anyway</HvButton>
         </HvModalActions>
       }
     />
@@ -73,10 +73,10 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton category="secondary" onClick={() => {}}>
+          <HvButton category="ghost" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Switch anyway</HvButton>
+          <HvButton category="ghost">Switch anyway</HvButton>
         </HvModalActions>
       }
     />
@@ -92,10 +92,10 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton category="secondary" onClick={() => {}}>
+          <HvButton category="ghost" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Switch anyway</HvButton>
+          <HvButton category="ghost">Switch anyway</HvButton>
         </HvModalActions>
       }
     />
@@ -111,10 +111,10 @@ export default (
       }
       actions={
         <HvModalActions>
-          <HvButton category="secondary" onClick={() => {}}>
+          <HvButton category="ghost" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Switch anyway</HvButton>
+          <HvButton category="ghost">Switch anyway</HvButton>
         </HvModalActions>
       }
     />
