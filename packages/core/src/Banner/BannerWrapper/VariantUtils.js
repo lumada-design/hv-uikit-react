@@ -18,10 +18,21 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
-import styles from "./styles";
 
-const StyledSuccess = withStyles(styles, { withTheme: true })(Success);
-const StyledError = withStyles(styles, { withTheme: true })(Error);
+const styles = {
+  rootS: {
+    width: "32px",
+    height: "32px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+};
+
+const StyledSuccess = withStyles(styles)(Success);
+const StyledError = withStyles(styles)(Error);
 
 export const variantIcon = Object.freeze({
   success: () => <StyledSuccess iconSize="S" semantic="sema1" />,
