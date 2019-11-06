@@ -43,6 +43,7 @@ const styles = theme => ({
   },
   messageText: {
     ...theme.hv.typography.normalText,
+    color: theme.hv.palette.base.base2,
     maxHeight: "82px"
   },
   messageWithoutIcon: {
@@ -66,15 +67,6 @@ const styles = theme => ({
     alignItems: "center",
     margin: `${theme.hv.spacing.xs}px 0`,
     minHeight: "32px"
-  },
-  rootS: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
   }
 });
 
