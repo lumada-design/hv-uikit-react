@@ -6,11 +6,16 @@ import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = () => ({
+const styles = (theme) => ({
   box: {
     padding: "6px",
     width: "30px",
     height: "30px"
+  },
+  wrapper: {
+    width: 240,
+    padding: `${theme.hv.spacing.sm}px`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   }
 });
 
@@ -76,8 +81,12 @@ const data = [
   }
 ];
 
+const ListWrapper = withStyles(styles, { withTheme: true })(
+  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
+);
+
 export default (
-  <div style={{ width: 200 }}>
+  <ListWrapper>
     <List values={data} selectDefault />
-  </div>
+  </ListWrapper>
 );
