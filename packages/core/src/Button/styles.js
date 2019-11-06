@@ -15,6 +15,7 @@
  */
 
 const styles = theme => ({
+  
   root: {
     textTransform: "capitalize",
     "&:hover,&:focus": {},
@@ -89,7 +90,7 @@ const styles = theme => ({
     border: "none"
   },
   ghost: {
-    color: theme.hv.palette.accent.acce2,
+    color: theme.hv.palette.accent.acce1,
     backgroundColor: "transparent",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
@@ -118,7 +119,7 @@ const styles = theme => ({
     cursor: "not-allowed"
   },
   ghostSecondary: {
-    color: theme.hv.palette.accent.acce1,
+    color: theme.hv.palette.accent.acce2,
     backgroundColor: "transparent",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
