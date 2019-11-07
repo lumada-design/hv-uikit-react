@@ -3,7 +3,18 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
 import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
-import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+};
 
 const StyledFastForward = withStyles(styles, { withTheme: true })(FastForward);
 
