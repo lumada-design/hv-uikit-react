@@ -69,7 +69,9 @@ const styles = theme => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       border: `solid 1px ${theme.hv.palette.accent.acce1}`,
       marginLeft: "unset",
-      marginTop: 0
+      position:"absolute",
+      right:2,
+      top:0
     },
 
     disabled: {
