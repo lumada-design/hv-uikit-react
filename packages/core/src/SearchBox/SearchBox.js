@@ -38,7 +38,7 @@ import HvInput from "../Input";
 const onKeyDownHandler = (handlers, event, value) => {
   const [onKeyDown, onSubmit] = handlers;
   if (isKeypress(event, KeyboardCodes.Enter)) {
-    onSubmit(value);
+    onSubmit(event, value);
   }
   onKeyDown(event, value);
 };
