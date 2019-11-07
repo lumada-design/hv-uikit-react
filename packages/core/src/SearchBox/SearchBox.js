@@ -23,10 +23,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import partial from "lodash/partial";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
 import HvInput from "../Input";
+
 
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
@@ -38,7 +40,15 @@ import HvInput from "../Input";
 const onKeyDownHandler = (handlers, event, value) => {
   const [onKeyDown, onSubmit] = handlers;
   if (isKeypress(event, KeyboardCodes.Enter)) {
-    onSubmit(value);
+    // for legacy purposes, check the length of the parameters associated with onSubmit
+    // 1 = the older api; 2 = new api
+    if(onSubmit.length === 1){
+      onSubmit(value)
+      console.log('WARNING: Note that in the future rather\n' +
+        '   * than accepting a value as argument, this will change to an event as argument');
+    } else {
+      onSubmit(event, value)
+    }
   }
   onKeyDown(event, value);
 };
@@ -247,9 +257,12 @@ HvSearchBox.propTypes = {
   onKeyDown: PropTypes.func,
   /**
    * The function that will be executed on Enter, allows checking the value state,
-   * it receives the value.
+   * it receives the value or event+value. On evocation we check for the number
+   * of arguments associated with the function. Note that in the future rather
+   * than accepting a value as argument, this will change to an event as argument
    */
-  onSubmit: PropTypes.func,
+  onSubmit: deprecatedPropType(PropTypes.func, "In the future rather\n" +
+    "   * than accepting a value as argument, this will change to an event as argument"),
   /**
    * If `true` it should autofocus.
    */
