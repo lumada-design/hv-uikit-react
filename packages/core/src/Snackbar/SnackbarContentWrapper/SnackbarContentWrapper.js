@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
-import LinesEllipsis from "react-lines-ellipsis";
+import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
 
 function HvSnackbarContentWrapper(props) {
@@ -50,21 +50,15 @@ function HvSnackbarContentWrapper(props) {
       message={
         <div id="client-snackbar" className={classes.messageSpan}>
           {icon}
-          <LinesEllipsis
-            className={classNames(
-              classes.messageText,
-              {
-                [classes.messageWithoutIcon]: !icon
-              },
-              { [classes.messageWithoutAction]: action === null }
-            )}
+          <TextTruncate
+            containerClassName={classNames(classes.messageText, {
+              [classes.messageWithoutIcon]: !icon,
+              [classes.messageWithoutAction]: action === null
+            })}
+            line={3}
             text={label}
-            maxLine="3"
-            ellipsis="..."
-            trimRight
-            basedOn="letters"
+            textElement="div"
           />
-
           {action && <div className={classes.action}>{action}</div>}
         </div>
       }

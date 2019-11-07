@@ -18,13 +18,14 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import "jest-canvas-mock";
 import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
 import HvProvider from "../../Provider";
 
-describe("Snackbcar ", () => {
+describe("Snackbar ", () => {
   const wrapper = mount(
     <HvProvider>
       <SnackBarWithStyles />
@@ -52,7 +53,7 @@ describe("Snackbcar ", () => {
   it("should render the SnackbarComponent component as the snackbar is open", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open />
+        <SnackBarWithStyles open transitionDirection="right" />
       </HvProvider>
     ).find(SnackBarContent);
     expect(sliderComponent.length).toBe(1);
@@ -61,7 +62,7 @@ describe("Snackbcar ", () => {
   it("shouldn't render icon when default", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open showIcon />
+        <SnackBarWithStyles open showIcon transitionDirection="up" />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -73,7 +74,12 @@ describe("Snackbcar ", () => {
   it("shouldn't render the success icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open variant="success" showIcon={false} />
+        <SnackBarWithStyles
+          open
+          variant="success"
+          showIcon={false}
+          transitionDirection="down"
+        />
       </HvProvider>
     )
       .find(SnackBarContent)

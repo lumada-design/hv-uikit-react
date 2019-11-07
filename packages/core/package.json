@@ -81,7 +81,8 @@
     "jss-snapshot-serializer": "1.0.0",
     "npm-run-all": "4.1.5",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "jest-canvas-mock": "2.2.0"
   },
   "files": [
     "dist"

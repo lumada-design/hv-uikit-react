@@ -8,8 +8,6 @@ const styles = {
   rootS: {
     width: "30px",
     height: "30px",
-    display: "flex",
-    alignItems: "center",
     "&>svg": {
       margin: "0 auto"
     }
@@ -148,7 +146,9 @@ export default (
       <SnackbarContentWrapper label="Error" variant="error" />
     </div>
     <p />
-    <Typography variant="xsTitle">Snackbar without icons and with action</Typography>
+    <Typography variant="xsTitle">
+      Snackbar without icons and with action
+    </Typography>
     <div>
       <SnackbarContentWrapper
         label="default"
