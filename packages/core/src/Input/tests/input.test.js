@@ -248,7 +248,7 @@ describe("Input", () => {
   });
 
   it("should fill the suggestion array", () => {
-    const suggestions = [{label: "test"}];
+    const suggestions = [{ label: "test" }];
     const inputText = "test2";
     const defaultInputText = "test1";
     const suggestionHandler = () => suggestions;
@@ -284,7 +284,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.suggestionSelectedHandler({label: "test"});
+    inputInstance.suggestionSelectedHandler({ label: "test" });
     expect(suggestionSelected).toHaveBeenCalled();
   });
 
@@ -655,5 +655,49 @@ describe("Input", () => {
     expect(iconInfo.length).toBe(0);
     const labelParagraph = wrapper.find("p");
     expect(labelParagraph.length).toBe(2);
+  });
+
+  const getWrapper = wrap => {
+    const invalidInputClassRegEx = /inputRootInvalid/g;
+    return invalidInputClassRegEx.exec(wrap.html());
+  };
+
+  it("should correctly outline input on error/correct state", () => {
+    const inputText1 = "";
+    const inputText2 = "Some Value";
+    const defaultProps = {
+      initialValue: inputText1,
+      inputValue: "",
+      validationState: "invalid"
+    };
+
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          initialValue={defaultProps.initialValue}
+          inputValue={defaultProps.inputValue}
+          labels={labels}
+          validationState={defaultProps.validationState}
+        />
+      </HvProvider>
+    );
+
+    const inputComponent = wrapper.find(Input).instance();
+
+    expect(inputComponent.state.validationState).toBe(validationStates.invalid);
+    expect(inputComponent.state.inputValue).toBe(undefined);
+    // check for invalid class applied to input
+    expect(getWrapper(wrapper).length).toBe(1);
+
+    inputComponent.setState({
+      inputValue: inputText2,
+      validationState: "filled"
+    });
+    wrapper.update();
+
+    expect(inputComponent.state.validationState).toBe(validationStates.filled);
+    expect(inputComponent.state.inputValue).toBe(inputText2);
+    // check for invalid class applied to input -> should not be applied
+    expect(getWrapper(wrapper)).toBe(null);
   });
 });
