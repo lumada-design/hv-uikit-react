@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.8.0...@hv/uikit-react-lab@1.9.0) (2019-11-07)
+
+
+### Bug Fixes
+
+* **icons:** fix banners and input. [#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([b343b06](https://github.com/pentaho/hv-uikit-react/commit/b343b06))
+* **input:** fix differential from uikit to ds. [#696](https://github.com/pentaho/hv-uikit-react/issues/696) ([4ae31d2](https://github.com/pentaho/hv-uikit-react/commit/4ae31d2))
+
+
+### Features
+
+* **icons:** review icon usage across components.[#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([65aaa2f](https://github.com/pentaho/hv-uikit-react/commit/65aaa2f))
+* **theme:** add new category base colors. [#687](https://github.com/pentaho/hv-uikit-react/issues/687) ([4bf41b7](https://github.com/pentaho/hv-uikit-react/commit/4bf41b7))
+
+
+
+
+
 # [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.7.5...@hv/uikit-react-lab@1.8.0) (2019-10-30)
 
 

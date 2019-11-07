@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.10.1...@hv/uikit-react-doc@1.11.0) (2019-11-07)
+
+
+### Bug Fixes
+
+* **dropdownmenu:** fix dropdownmenu opening on Tab. [#602](https://github.com/pentaho/hv-uikit-react/issues/602) ([f72ebfe](https://github.com/pentaho/hv-uikit-react/commit/f72ebfe))
+* **header:** fix header samples. [#712](https://github.com/pentaho/hv-uikit-react/issues/712) ([3966717](https://github.com/pentaho/hv-uikit-react/commit/3966717))
+* **icons:** fix banners and input. [#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([b343b06](https://github.com/pentaho/hv-uikit-react/commit/b343b06))
+* **multibutton:** match multibutton to ds 1.2.0 . [#705](https://github.com/pentaho/hv-uikit-react/issues/705) ([a0caec5](https://github.com/pentaho/hv-uikit-react/commit/a0caec5))
+
+
+### Features
+
+* **banner:** add offset prop. [#689](https://github.com/pentaho/hv-uikit-react/issues/689) ([4988d79](https://github.com/pentaho/hv-uikit-react/commit/4988d79))
+* **icons:** review icon usage across components.[#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([65aaa2f](https://github.com/pentaho/hv-uikit-react/commit/65aaa2f))
+* **multibutton:** refactor component . [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([647443f](https://github.com/pentaho/hv-uikit-react/commit/647443f))
+* **multibutton:** refactor component . [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([549307f](https://github.com/pentaho/hv-uikit-react/commit/549307f))
+* **templates:** add template for Login. [#458](https://github.com/pentaho/hv-uikit-react/issues/458) ([c15d3fc](https://github.com/pentaho/hv-uikit-react/commit/c15d3fc))
+* **templates:** add templates for home and detail. ([#459](https://github.com/pentaho/hv-uikit-react/issues/459), [#461](https://github.com/pentaho/hv-uikit-react/issues/461)) ([e8e0c56](https://github.com/pentaho/hv-uikit-react/commit/e8e0c56))
+* **templates:** add templates to storybook. [#626](https://github.com/pentaho/hv-uikit-react/issues/626) ([5ce3229](https://github.com/pentaho/hv-uikit-react/commit/5ce3229))
+* **theme:** add new category base colors. [#687](https://github.com/pentaho/hv-uikit-react/issues/687) ([4bf41b7](https://github.com/pentaho/hv-uikit-react/commit/4bf41b7))
+
+
+
+
+
 ## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.10.0...@hv/uikit-react-doc@1.10.1) (2019-10-30)
 
 **Note:** Version bump only for package @hv/uikit-react-doc

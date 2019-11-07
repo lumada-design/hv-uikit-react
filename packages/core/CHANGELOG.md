@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.10.0...@hv/uikit-react-core@1.11.0) (2019-11-07)
+
+
+### Bug Fixes
+
+* **checkbox:** checkbox checked disabled wrong render.[#633](https://github.com/pentaho/hv-uikit-react/issues/633) ([5d76709](https://github.com/pentaho/hv-uikit-react/commit/5d76709))
+* **dropdown:** fix filter and checkbox reset. [#669](https://github.com/pentaho/hv-uikit-react/issues/669) ([dbdf745](https://github.com/pentaho/hv-uikit-react/commit/dbdf745))
+* **dropdownmenu:** fix dropdownmenu opening on Tab. [#602](https://github.com/pentaho/hv-uikit-react/issues/602) ([f72ebfe](https://github.com/pentaho/hv-uikit-react/commit/f72ebfe))
+* **icons:** fix banners and input. [#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([b343b06](https://github.com/pentaho/hv-uikit-react/commit/b343b06))
+* **input:** fix differential from uikit to ds. [#696](https://github.com/pentaho/hv-uikit-react/issues/696) ([4ae31d2](https://github.com/pentaho/hv-uikit-react/commit/4ae31d2))
+* **kpi:** set component according with visualComparion type. [#715](https://github.com/pentaho/hv-uikit-react/issues/715) ([ae68d83](https://github.com/pentaho/hv-uikit-react/commit/ae68d83))
+* **listview:** remove background color in header. [#685](https://github.com/pentaho/hv-uikit-react/issues/685) ([78b671c](https://github.com/pentaho/hv-uikit-react/commit/78b671c))
+* **multibutton:** match multibutton to ds 1.2.0 . [#705](https://github.com/pentaho/hv-uikit-react/issues/705) ([a0caec5](https://github.com/pentaho/hv-uikit-react/commit/a0caec5))
+
+
+### Features
+
+* **banner:** add offset prop. [#689](https://github.com/pentaho/hv-uikit-react/issues/689) ([4988d79](https://github.com/pentaho/hv-uikit-react/commit/4988d79))
+* **icons:** review icon usage across components.[#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([65aaa2f](https://github.com/pentaho/hv-uikit-react/commit/65aaa2f))
+* **multibutton:** refactor component . [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([647443f](https://github.com/pentaho/hv-uikit-react/commit/647443f))
+* **multibutton:** refactor component . [#470](https://github.com/pentaho/hv-uikit-react/issues/470) ([549307f](https://github.com/pentaho/hv-uikit-react/commit/549307f))
+* **snackbar:** add offset prop. [#699](https://github.com/pentaho/hv-uikit-react/issues/699) ([a731f9f](https://github.com/pentaho/hv-uikit-react/commit/a731f9f))
+* **templates:** add templates for home and detail. ([#459](https://github.com/pentaho/hv-uikit-react/issues/459), [#461](https://github.com/pentaho/hv-uikit-react/issues/461)) ([e8e0c56](https://github.com/pentaho/hv-uikit-react/commit/e8e0c56))
+* **theme:** add new category base colors. [#687](https://github.com/pentaho/hv-uikit-react/issues/687) ([4bf41b7](https://github.com/pentaho/hv-uikit-react/commit/4bf41b7))
+
+
+
+
+
 # [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.9.0...@hv/uikit-react-core@1.10.0) (2019-10-30)
 
 

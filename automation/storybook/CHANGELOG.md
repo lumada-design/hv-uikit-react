@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.5.1...@hv/uikit-react-automation-storybook@1.6.0) (2019-11-07)
+
+
+### Features
+
+* **theme:** add new category base colors. [#687](https://github.com/pentaho/hv-uikit-react/issues/687) ([4bf41b7](https://github.com/pentaho/hv-uikit-react/commit/4bf41b7))
+
+
+
+
+
 ## [1.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.5.0...@hv/uikit-react-automation-storybook@1.5.1) (2019-10-30)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.4.0...@hv/uikit-react-icons@1.5.0) (2019-11-07)
+
+
+### Bug Fixes
+
+* **icons:** add exception for Radio/Checkbox. [#732](https://github.com/pentaho/hv-uikit-react/issues/732) ([901560f](https://github.com/pentaho/hv-uikit-react/commit/901560f))
+* **icons:** fix banners and input. [#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([b343b06](https://github.com/pentaho/hv-uikit-react/commit/b343b06))
+
+
+### Features
+
+* **icons:** review icon usage across components.[#576](https://github.com/pentaho/hv-uikit-react/issues/576) ([65aaa2f](https://github.com/pentaho/hv-uikit-react/commit/65aaa2f))
+* **theme:** add new category base colors. [#687](https://github.com/pentaho/hv-uikit-react/issues/687) ([4bf41b7](https://github.com/pentaho/hv-uikit-react/commit/4bf41b7))
+
+
+
+
+
 # [1.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.3.0...@hv/uikit-react-icons@1.4.0) (2019-10-09)
 
 
