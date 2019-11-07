@@ -58,12 +58,13 @@ class HvInput extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { inputValue: nextValue } = nextProps;
+    const { inputValue: nextValue, validationState } = nextProps;
     const { value: oldValue } = prevState;
 
     if (nextValue !== undefined && nextValue !== oldValue) {
       return {
-        value: nextValue
+        value: nextValue,
+        validationState
       };
     }
     return null;
