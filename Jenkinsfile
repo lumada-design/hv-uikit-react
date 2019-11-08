@@ -72,7 +72,7 @@ pipeline {
                         anyOf {
                             changeRequest target: 'master'
                             branch 'master'    
-                            environment name:'params.skipAutomationTest', value: 'false'
+                            expression { !params.skipAutomationTest }
                         }
                     }
                     steps {
