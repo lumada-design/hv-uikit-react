@@ -16,7 +16,6 @@
 
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { shallow, mount } from "enzyme";
 
@@ -138,5 +137,52 @@ describe("TextArea Component", () => {
     };
     const instance = getInputInstance(defaultProps, "onethousand");
     expect(instance.state.currentValueLength).toBe(5);
+  });
+
+  it("should scroll down on update when autoScroll", () => {
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextAreaWithStyles
+          classes={{}}
+          value="test"
+          autoScroll
+        />
+      </HvProvider>);
+    const instance = wrapperMount.find(TextArea).instance();
+    const inputElement = wrapperMount.find('textarea').getDOMNode();
+
+    expect(instance.state.autoScrolling).toBe(true);
+    expect(instance.textInputRef.current).toBeDefined();
+    expect(inputElement.scrollTop).toBe(0);
+
+    Object.defineProperty(inputElement, 'scrollHeight', {value: 30});
+    Object.defineProperty(inputElement, 'clientHeight', {value: 10});
+
+    wrapperMount.setProps({value: 'trigger update'});
+    expect(inputElement.scrollTop).toBe(20);
+  });
+
+  it("should stop and resume autoScrolling on scroll", () => {
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextAreaWithStyles
+          classes={{}}
+          value="test"
+          autoScroll
+        />
+      </HvProvider>);
+    const instance = wrapperMount.find(TextArea).instance();
+    const inputElement = wrapperMount.find('textarea').getDOMNode();
+    expect(instance.state.autoScrolling).toBe(true);
+    Object.defineProperty(inputElement, 'scrollHeight', {value: 30});
+    Object.defineProperty(inputElement, 'clientHeight', {value: 10});
+
+    inputElement.scrollTop = 10;
+    inputElement.dispatchEvent(new Event('scroll'));
+    expect(instance.state.autoScrolling).toBe(false);
+
+    inputElement.scrollTop = 20;
+    inputElement.dispatchEvent(new Event('scroll'));
+    expect(instance.state.autoScrolling).toBe(true);
   });
 });

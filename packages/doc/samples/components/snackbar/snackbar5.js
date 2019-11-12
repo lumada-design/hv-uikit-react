@@ -1,17 +1,29 @@
 import React from "react";
+import Typography from "@hv/uikit-react-core/dist/Typography";
 import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper/styles";
 import HvSnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
+
+const styles = {
+  rootS: {
+    width: "30px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
+    "&>svg": {
+      margin: "0 auto"
+    }
+  }
+};
 
 const SnackbarContentWrapper = withStyles(styles)(HvSnackbarContentWrapper);
 const StyledFastForward = withStyles(styles, { withTheme: true })(FastForward);
 
 const actionComponent = (
   <a
-    href="https://i.imgflip.com/yrj3h.jpg"
     style={{
-      color: "#146BD2",
+      cursor: "pointer",
+      color: "#414141",
       fontSize: "14px",
       letterSpacing: "0.02em",
       lineHeight: "20px",
@@ -25,7 +37,7 @@ const actionComponent = (
 
 export default (
   <div>
-    Snackbar variants
+    <Typography variant="xsTitle">Snackbar variants</Typography>
     <div>
       <SnackbarContentWrapper label="Default" variant="default" />
     </div>
@@ -45,7 +57,7 @@ export default (
       <SnackbarContentWrapper label="Error" variant="error" showIcon />
     </div>
     <p />
-    Snackbar with custom icons
+    <Typography variant="xsTitle">Snackbar with custom icons</Typography>
     <div>
       <SnackbarContentWrapper
         label="default"
@@ -78,7 +90,7 @@ export default (
       />
     </div>
     <p />
-    Snackbar with icons and action
+    <Typography variant="xsTitle">Snackbar with icons and action</Typography>
     <div>
       <SnackbarContentWrapper
         label="default"
@@ -116,7 +128,7 @@ export default (
       />
     </div>
     <p />
-    Snackbar without icons
+    <Typography variant="xsTitle">Snackbar without icons</Typography>
     <div>
       <SnackbarContentWrapper label="default" variant="default" />
     </div>
@@ -136,7 +148,7 @@ export default (
       <SnackbarContentWrapper label="Error" variant="error" />
     </div>
     <p />
-    Snackbar without icons and with action
+    <Typography variant="xsTitle">Snackbar without icons and with action</Typography>
     <div>
       <SnackbarContentWrapper
         label="default"

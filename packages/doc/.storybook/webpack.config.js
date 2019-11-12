@@ -3,9 +3,20 @@ const path = require("path");
 module.exports = ({ config, mode }) => {
   // Extend defaultConfig as you need.
 
+  const rules = config.module.rules;
+
+  const fileLoaderRule = rules.find(rule => rule.test.test(".svg"));
+  fileLoaderRule.exclude = path.resolve(__dirname, "../samples/templates");
+
   config.module.rules.push({
     test: /\.txt$/i,
     use: "raw-loader"
+  });
+
+  config.module.rules.push({
+    test: /\.svg$/,
+    include: path.resolve(__dirname, "../samples/templates"),
+    use: "@svgr/webpack"
   });
 
   config.module.rules.push({

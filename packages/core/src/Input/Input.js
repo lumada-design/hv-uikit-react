@@ -21,7 +21,7 @@ import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { KeyboardCodes, isKeypress, isIE } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import HvList from "../List";
 import validationTypes from "./validationTypes";
@@ -58,12 +58,13 @@ class HvInput extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { inputValue: nextValue } = nextProps;
+    const { inputValue: nextValue, validationState } = nextProps;
     const { value: oldValue } = prevState;
 
     if (nextValue !== undefined && nextValue !== oldValue) {
       return {
-        value: nextValue
+        value: nextValue,
+        validationState
       };
     }
     return null;
@@ -177,7 +178,7 @@ class HvInput extends React.Component {
 
     let validationState;
     let { infoText } = definedLabels;
-    
+
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
@@ -245,7 +246,12 @@ class HvInput extends React.Component {
    */
   onContainerBlurHandler = event => {
     if (isNil(event.relatedTarget)) {
-      this.suggestionClearHandler();
+      // workaround because IE 11
+      if (isIE()) {
+        setTimeout(this.suggestionClearHandler, 100);
+      } else {
+        this.suggestionClearHandler();
+      }
     }
   };
 
@@ -262,7 +268,10 @@ class HvInput extends React.Component {
     validationType,
     disableClear
   ) => {
-    if (disabled && !customFixedIcon === null) {
+    if (
+      (disabled && isNil(customFixedIcon)) ||
+      (!validationIconVisible && isNil(customFixedIcon) && disableClear)
+    ) {
       return null;
     }
     if (customFixedIcon === null) {
@@ -337,6 +346,7 @@ class HvInput extends React.Component {
       validation,
       externalWarningTextOverride,
       inputProps,
+      inputRef,
       onChange,
       onBlur,
       onFocus,
@@ -380,7 +390,7 @@ class HvInput extends React.Component {
     );
 
     let validationText;
-    if ((validate || showInfo) ) {
+    if (validate || showInfo) {
       validationText = (
         <HvTypography
           variant={
@@ -452,6 +462,7 @@ class HvInput extends React.Component {
           })}
           onChange={this.onChangeHandler}
           inputProps={inputProps}
+          inputRef={inputRef}
           {...(iconPosition === "right" ||
             (iconPosition === undefined &&
               validationIconPosition === "right")) &&
@@ -613,6 +624,10 @@ HvInput.propTypes = {
    */
   inputProps: PropTypes.instanceOf(Object),
   /**
+   * Allows passing a ref to the underlying input
+   */
+  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  /**
    * If ´true´ the input is disabled.
    */
   disabled: PropTypes.bool,
@@ -772,6 +787,7 @@ HvInput.defaultProps = {
     requiredWarningText: "The value is required"
   },
   inputProps: {},
+  inputRef: null,
   customFixedIcon: null,
   infoIcon: false,
   iconVisible: undefined,

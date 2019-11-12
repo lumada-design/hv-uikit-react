@@ -32,11 +32,13 @@ import Input from "../Input";
 class HvTextArea extends React.Component {
   constructor(props) {
     super(props);
-    const { value, initialValue } = this.props;
+    const { value, initialValue, autoScroll } = this.props;
     const val = value || initialValue;
     this.state = {
-      currentValueLength: val !== undefined ? this.limitValue(val).length : 0
+      currentValueLength: val !== undefined ? this.limitValue(val).length : 0,
+      autoScrolling: autoScroll
     };
+    this.textInputRef = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -56,6 +58,21 @@ class HvTextArea extends React.Component {
     return null;
   }
 
+  componentDidMount() {
+    const { autoScroll } = this.props;
+    if (autoScroll) {
+      this.addScrollListener();
+      this.scrollDown();
+    }
+  }
+
+  componentDidUpdate() {
+    const { autoScrolling } = this.state;
+    if (autoScrolling) {
+      this.scrollDown();
+    }
+  }
+
   /**
    * Limit the string to the maxCharQuantity length.
    *
@@ -70,6 +87,27 @@ class HvTextArea extends React.Component {
     return isNil(maxCharQuantity) || value.length < maxCharQuantity
       ? value
       : value.substring(0, maxCharQuantity);
+  };
+
+  isScrolledDown = () => {
+    const el = this.textInputRef.current;
+    return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
+  };
+
+  scrollDown = () => {
+    const el = this.textInputRef.current;
+    if (el != null) {
+      el.scrollTop = el.scrollHeight - el.clientHeight;
+    }
+  };
+
+  addScrollListener = () => {
+    const scrollHandler = {
+      handleEvent: () => {
+        this.setState({ autoScrolling: this.isScrolledDown() });
+      }
+    };
+    this.textInputRef.current.addEventListener("scroll", scrollHandler);
   };
 
   /**
@@ -88,7 +126,6 @@ class HvTextArea extends React.Component {
     this.setState({
       currentValueLength: textAreaValue.length
     });
-
     return newValue;
   };
 
@@ -104,62 +141,74 @@ class HvTextArea extends React.Component {
       value,
       initialValue,
       inputValue,
-      disabled
+      disabled,
+      resizable
     } = this.props;
 
     const { currentValueLength } = this.state;
     const val = value || initialValue;
+
     return (
-      <>
-        <Input
-          classes={{
-            container: classes.container,
-            input: classes.input
-          }}
-          className={className}
-          id={id}
-          labels={inputTextConfiguration || labels}
-          initialValue={this.limitValue(val)}
-          inputValue={this.limitValue(inputValue)}
-          onChange={this.onChangeHandler}
-          multiline
-          rows={rows}
-          disabled={disabled}
-          showInfo={false}
-          validationIconVisible={false}
-        />
-        {maxCharQuantity ? (
-          <div className={classes.characterCounter}>
-            <HvTypography
-              className={classNames(classes.inline, {
-                [classes.currentCounter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="labelText"
-            >
-              {currentValueLength}
-            </HvTypography>
-            <HvTypography
-              className={classNames(classes.inline, classes.separator, {
-                [classes.maxCharacter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="infoText"
-            >
-              /
-            </HvTypography>
-            <HvTypography
-              className={classNames(classes.inline, {
-                [classes.maxCharacter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="infoText"
-            >
-              {maxCharQuantity}
-            </HvTypography>
-          </div>
-        ) : null}
-      </>
+      <div>
+        <div className={classes.textAreaContainer}>
+          <Input
+            classes={{
+              container: classes.container,
+              input: classNames(classes.input, {
+                [classes.resize]: !disabled && resizable,
+                [classes.defaultWith]: !resizable
+              }),
+              inputRoot: classes.inputRoot,
+              inputRootDisabled: classes.inputRootDisabled,
+              inputRootFocused: classes.inputRootFocused
+            }}
+            className={className}
+            id={id}
+            labels={inputTextConfiguration || labels}
+            initialValue={this.limitValue(val)}
+            inputValue={this.limitValue(inputValue)}
+            onChange={this.onChangeHandler}
+            multiline
+            rows={rows}
+            disabled={disabled}
+            showInfo={false}
+            validationIconVisible={false}
+            disableClear
+            inputRef={this.textInputRef}
+          />
+          {maxCharQuantity ? (
+            <div className={classes.characterCounter}>
+              <HvTypography
+                className={classNames(classes.inline, {
+                  [classes.currentCounter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="labelText"
+              >
+                {currentValueLength}
+              </HvTypography>
+              <HvTypography
+                className={classNames(classes.inline, classes.separator, {
+                  [classes.maxCharacter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="infoText"
+              >
+                /
+              </HvTypography>
+              <HvTypography
+                className={classNames(classes.inline, {
+                  [classes.maxCharacter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="infoText"
+              >
+                {maxCharQuantity}
+              </HvTypography>
+            </div>
+          ) : null}
+        </div>
+      </div>
     );
   }
 }
@@ -183,6 +232,26 @@ HvTextArea.propTypes = {
      * Style applied on the text area input box.
      */
     input: PropTypes.string,
+    /**
+     * Style applied when resizable is `true`. Can be used to set max/min width.
+     */
+    resize: PropTypes.string,
+    /**
+     * Styles applied to input root which is comprising of everything but the labels and descriptions.
+     */
+    inputRoot: PropTypes.string,
+    /**
+     * Styles applied to input root when it is disabled.
+     */
+    inputRootDisabled: PropTypes.string,
+    /**
+     * Styles applied to input root when it is focused.
+     */
+    inputRootFocused: PropTypes.string,
+    /**
+     * Style applied defining the width when resizable is `false`.
+     */
+    defaultWith: PropTypes.string,
     /**
      * Style applied on the character counter.
      */
@@ -210,7 +279,11 @@ HvTextArea.propTypes = {
     /**
      * Style applied to the input container.
      */
-    container: PropTypes.string
+    container: PropTypes.string,
+    /**
+     * Style applied container of the text area component.
+     */
+    textAreaContainer: PropTypes.string
   }).isRequired,
   /**
    * An Object containing the various text associated with the text area.
@@ -286,7 +359,16 @@ HvTextArea.propTypes = {
   /**
    * If ´true´ the text area is disabled.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * If ´true´ the component is resizable.
+   */
+  resizable: PropTypes.bool,
+  /**
+   * Auto-scroll: automatically scroll to the end on inputValue changes.
+   * Will stop if the user scrolls up and resume if scrolled to the bottom.
+   */
+  autoScroll: PropTypes.bool
 };
 
 HvTextArea.defaultProps = {
@@ -307,7 +389,9 @@ HvTextArea.defaultProps = {
   initialValue: "",
   inputValue: undefined,
   maxCharQuantity: undefined,
-  onChange: value => value
+  onChange: value => value,
+  autoScroll: false,
+  resizable: false
 };
 
 export default HvTextArea;

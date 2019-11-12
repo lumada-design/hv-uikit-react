@@ -48,7 +48,7 @@ class SimpleBanner extends React.Component {
           customIcon={customIcon}
           showIcon={showIcon}
           actionsOnlabel={action}
-          offset={100}
+          offset={60}
         />
       </div>
     );
@@ -57,20 +57,10 @@ class SimpleBanner extends React.Component {
 
 export default (
   <div>
-    <div>
-      <SimpleBanner
-        label="default"
-        variant="default"
-        anchorOrigin="top"
-      />
-    </div>
+    <SimpleBanner label="default" variant="default" anchorOrigin="top" />
     <p />
-    <div>
-      <SimpleBanner label="Success" variant="success" showIcon />
-    </div>
+    <SimpleBanner label="Success" variant="success" showIcon />
     <p />
-    <div>
-      <SimpleBanner label="Error" variant="error" showIcon />
-    </div>
+    <SimpleBanner label="Error" variant="error" showIcon />
   </div>
 );

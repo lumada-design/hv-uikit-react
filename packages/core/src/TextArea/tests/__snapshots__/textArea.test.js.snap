@@ -1,34 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea Component should render correctly if opened 1`] = `
-<Fragment>
-  <WithStyles(HvInput)
-    className=""
-    classes={
-      Object {
-        "container": undefined,
-        "input": undefined,
+<div>
+  <div>
+    <WithStyles(HvInput)
+      className=""
+      classes={
+        Object {
+          "container": undefined,
+          "input": "undefined",
+          "inputRoot": undefined,
+          "inputRootDisabled": undefined,
+          "inputRootFocused": undefined,
+        }
       }
-    }
-    disabled={false}
-    initialValue="test"
-    labels={
-      Object {
-        "inputLabel": "",
-        "maxCharQuantityWarningText": "",
-        "minCharQuantityWarningText": "",
-        "placeholder": "",
-        "requiredWarningText": "",
-        "warningText": "",
+      disableClear={true}
+      disabled={false}
+      initialValue="test"
+      inputRef={
+        Object {
+          "current": null,
+        }
       }
-    }
-    multiline={true}
-    onChange={[Function]}
-    rows={4}
-    showInfo={false}
-    validationIconVisible={false}
-  />
-</Fragment>
+      labels={
+        Object {
+          "inputLabel": "",
+          "maxCharQuantityWarningText": "",
+          "minCharQuantityWarningText": "",
+          "placeholder": "",
+          "requiredWarningText": "",
+          "warningText": "",
+        }
+      }
+      multiline={true}
+      onChange={[Function]}
+      rows={4}
+      showInfo={false}
+      validationIconVisible={false}
+    />
+  </div>
+</div>
 `;
 
 exports[`TextArea withStyles should render correctly 1`] = `

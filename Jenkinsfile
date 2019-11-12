@@ -69,11 +69,10 @@ pipeline {
                     }
                     when {
                         beforeAgent true
-                        expression { !params.skipAutomationTest }
                         anyOf {
                             changeRequest target: 'master'
                             branch 'master'    
-                            branch 'alpha'
+                            expression { !params.skipAutomationTest }
                         }
                     }
                     steps {

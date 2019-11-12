@@ -25,7 +25,7 @@ exports[`Header withStyles should render correctly 1`] = `
     Object {
       "data": Array [
         Object {
-          "iconCallback": [Function],
+          "iconCallback": undefined,
           "id": undefined,
           "isHidden": false,
           "label": "",
