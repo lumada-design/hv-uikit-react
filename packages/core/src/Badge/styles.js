@@ -17,52 +17,35 @@
 const styles = theme => ({
   root: {
     position: "relative",
-    height:30
+    height: `${theme.hv.spacing.md}px`,
+    "&>*": { float: "left" }
   },
-  badgePosition: {
-    display: "flex",
-    alignItems: "center"
+  badgeContainer: {
+    width: 0
   },
   badge: {
     borderRadius: `${theme.hv.spacing.xs}px`,
     backgroundColor: theme.hv.palette.accent.acce1,
+    float: "left",
     minHeight: "6px",
     minWidth: "6px"
   },
   badgeIcon: {
-    position: "absolute",
+    position: "relative",
     top: "2px",
-    right: "2px"
-  },
-  badgeText: {
-    position: "absolute",
-    top: "0px",
-    right: "-6px"
+    left: "-7px"
   },
   showCount: {
     ...theme.hv.typography.labelText,
     fontFamily: theme.hv.typography.fontFamily,
-    justifyContent: "center",
-    height: "16px",
-    width: "16px",
-    lineHeight: "0",
+    padding: "0 0.5em",
     color: theme.hv.palette.atmosphere.atmo1
   },
-  showCountIcon: {
-    right: "-9px"
+  badgeOneDigit: {
+    padding: 0,
+    width: "16px",
+    textAlign: "center"
   },
-  showCountText: {
-    right: "-16px"
-  },
-  badgeTwoDigits: {
-    width: `${theme.hv.spacing.md}px`
-  },
-  badgeTwoDigitsIcon: {
-    right: `-23px`
-  },
-  badgeTwoDigitsText: {
-    right: `-30px`
-  }
 });
 
 export default styles;

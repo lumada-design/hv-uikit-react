@@ -1,5 +1,4 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
 import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
 
