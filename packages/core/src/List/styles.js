@@ -30,6 +30,13 @@ const hover = theme => ({
   }
 });
 
+const hoverActive = theme => ({
+  ...selected(theme),
+  "& svg *.color0": {
+    fill: theme.hv.palette.atmosphere.atmo1
+  }
+});
+
 const disabled = theme => ({
   cursor: "not-allowed",
   background: "transparent !important",
@@ -58,8 +65,8 @@ const styles = theme => ({
     height: "32px",
     listStyleType: "none",
     cursor: "pointer",
-    "&:not($disabled):hover:not($selected)": hover(theme),
-    "&:not($disabled):active:hover:not($selector)": selected(theme),
+    "&:not($disabled):not($selected):hover": hover(theme),
+    "&:not($disabled):not($selector):hover:active": hoverActive(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
     }
@@ -98,8 +105,8 @@ const styles = theme => ({
     padding: "9px",
     marginLeft: "auto",
     "& svg": {
-      display: "block", 
-      margin: "auto" 
+      display: "block",
+      margin: "auto"
     }
   }
 });

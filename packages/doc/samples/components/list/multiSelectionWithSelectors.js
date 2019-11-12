@@ -21,11 +21,12 @@ const data = [
   {
     id: "4",
     label: "Bergen city",
+    disabled: true,
     selected: false
   },
   {
     id: "5",
-    label: "Bergen city",
+    label: "Boston of the Seven Seas",
     selected: false
   }
 ];
