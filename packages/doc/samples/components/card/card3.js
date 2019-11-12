@@ -111,10 +111,10 @@ const MultipleActionsButtonsStyles = theme => ({
 
 const MultipleActionsButtons = ({ classes }) => (
   <>
-    <HvButton className={classes.button} category="ghostSecondary">
+    <HvButton className={classes.button} category="ghost">
       View
     </HvButton>
-    <HvButton className={classes.button} category="ghostSecondary">
+    <HvButton className={classes.button} category="ghost">
       Share
     </HvButton>
   </>
