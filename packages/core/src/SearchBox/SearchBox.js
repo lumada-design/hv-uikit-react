@@ -44,6 +44,7 @@ const onKeyDownHandler = (handlers, event, value) => {
     // 1 = the older api; 2 = new api
     if(onSubmit.length === 1){
       onSubmit(value)
+      // eslint-disable-next-line no-console
       console.log('WARNING: Note that in the future rather\n' +
         '   * than accepting a value as argument, this will change to an event as argument');
     } else {
