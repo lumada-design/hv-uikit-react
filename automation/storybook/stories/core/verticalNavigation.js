@@ -17,31 +17,23 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import Card1 from "../../../../packages/doc/samples/components/card/card1";
-import Card2 from "../../../../packages/doc/samples/components/card/card2";
-import Card3 from "../../../../packages/doc/samples/components/card/card3";
-import Card4 from "../../../../packages/doc/samples/components/card/card4";
-import Card5 from "../../../../packages/doc/samples/components/card/card5";
-import Card6 from "../../../../packages/doc/samples/components/card/card6";
-import Card7 from "../../../../packages/doc/samples/components/card/card7";
-import Card8 from "../../../../packages/doc/samples/components/card/card8";
-import Card9 from "../../../../packages/doc/samples/components/card/card9";
+import VerticalNavigation1 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation1";
+import VerticalNavigation2 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation2";
+import VerticalNavigation3 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation3";
+import VerticalNavigation4 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation4";
+import VerticalNavigation5 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation5";
 
 // sample scenarios
 const samples = {};
-samples.Card1 = Card1;
-samples.Card2 = Card2;
-samples.Card3 = Card3;
-samples.Card4 = Card4;
-samples.Card5 = Card5;
-samples.Card6 = Card6;
-samples.Card7 = Card7;
-samples.Card8 = Card8;
-samples.Card9 = Card9;
+samples.VerticalNavigation1 = VerticalNavigation1;
+samples.VerticalNavigation2 = VerticalNavigation2;
+samples.VerticalNavigation3 = VerticalNavigation3;
+samples.VerticalNavigation4 = VerticalNavigation4;
+samples.VerticalNavigation5 = VerticalNavigation5;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreCard", module).add(key, () => (
+  storiesOf("CoreVerticalNavigation", module).add(key, () => (
     <Grid container>
       <Grid item xl>
         {samples[key]}
