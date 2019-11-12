@@ -24,10 +24,10 @@ const labels = {
   rememberMeLabel: "Remember me label",
   loginButtonMessage: "Log message",
   loginButtonLabel: "Log button",
-  forgotYourCredentialMessage: "Forgot Your Credential Message",
+  forgotYourCredentialMessage: "Forgot your credential message",
   emailLabel: "Email label",
   emailPlaceholder: "Email placeholder",
-  cancelButton: "Cancel l",
+  cancelButton: "Cancel",
   recoverButton: "Recover l",
   recoveringMessage: "Recovering label",
   incorrectCredentialsMessage: "Some Error!"

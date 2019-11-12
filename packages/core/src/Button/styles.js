@@ -17,7 +17,7 @@
 const styles = theme => ({
   
   root: {
-    textTransform: "capitalize",
+    textTransform: "none",
     "&:hover,&:focus": {},
     "&:active": {},
     "&:focus": {
