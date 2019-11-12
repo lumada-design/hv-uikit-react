@@ -24,13 +24,13 @@ const labels =
   rememberMeLabel: "Remember me label",
   loginButtonMessage: "Log message",
   loginButtonLabel: "Log button",
-  forgotYourCredentialMessage: "Forgot Your Credential Message",
+  forgotYourCredentialMessage: "Forgot your credential message",
   emailLabel: "Email label",
   emailPlaceholder: "Email placeholder",
   cancelButton: "Cancel label",
   recoverButton: "Recover label",
   recoveringMessage: "Recovering label",
-  incorrectCredentialsMessage: "Incorrect Credentials Message label"
+  incorrectCredentialsMessage: "Incorrect credentials message label"
 
 }
 
