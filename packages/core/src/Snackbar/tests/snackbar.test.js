@@ -18,7 +18,6 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import "jest-canvas-mock";
 import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";

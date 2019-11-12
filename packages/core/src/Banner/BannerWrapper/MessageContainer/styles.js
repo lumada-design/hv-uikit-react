@@ -32,9 +32,6 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.xs}px`,
     flex: "0 0 auto"
   },
-  message: {
-    color: theme.hv.palette.base.base2
-  },
   messageSpan: {
     display: "flex",
     alignItems: "center"
