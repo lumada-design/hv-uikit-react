@@ -45,7 +45,7 @@ export default (
     labels={labels}
     id="test"
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item=>alert(item.label + " selected")}
+    suggestionSelectedCallback={item=>console.log(item.label + " selected")}
     customFixedIcon={<Search />}
   />
 );

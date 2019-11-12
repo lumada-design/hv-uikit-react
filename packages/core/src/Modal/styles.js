@@ -35,7 +35,7 @@ const styles = theme => {
     paper: {
       background: `${theme.hv.palette.atmosphere.atmo2}`,
       border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-      padding: "40px",
+      padding: "0px",
       overflow: "hidden"
     },
     closeButton: {

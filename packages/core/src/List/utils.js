@@ -32,6 +32,7 @@ const parseState = (list, labels) => {
   const selection = list.filter(elem => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
+  const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
   const allSelectableSelected = list.every(elem => elem.selected || elem.disabled);
   const selectionLabel = !anySelected
     ? selectAll
@@ -43,6 +44,7 @@ const parseState = (list, labels) => {
     hasLeftIcons,
     anySelected,
     allSelected,
+    anySelectableSelected,
     allSelectableSelected,
     selectionLabel
   };

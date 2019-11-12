@@ -86,23 +86,23 @@ const cardRenderer = (data, viewConfiguration) => {
     default:
     case probability < 20:
       status.Icon = <Level1 semantic="sema9" />;
-      status.sema = "sema9";
+      status.sema = "sema10";
       break;
     case probability < 40:
       status.Icon = <Level2 semantic="sema10" />;
-      status.sema = "sema10";
+      status.sema = "sema11";
       break;
     case probability < 60:
       status.Icon = <Level3 semantic="sema11" />;
-      status.sema = "sema11";
+      status.sema = "sema12";
       break;
     case probability < 80:
       status.Icon = <Level4 semantic="sema12" />;
-      status.sema = "sema12";
+      status.sema = "sema13";
       break;
     case probability <= 100:
       status.Icon = <Level5 semantic="sema13" />;
-      status.sema = "sema13";
+      status.sema = "sema14";
       break;
   }
 

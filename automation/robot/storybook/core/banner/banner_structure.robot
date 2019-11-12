@@ -14,7 +14,7 @@ banner structure with svg, text and action
     Wait Until Element Is Visible    client-snackbar    2s
     Element Text Should Be           client-snackbar    This is default\nAction
     Page Should Contain Element      //div[contains(@class,'Success')]/*[name()='svg']   
-    Element Should Be Visible        //a[@href='https://i.imgflip.com/yrj3h.jpg' and text()='Action']    # Action Link
+    Element Should Be Visible        //a[text()='Action']    # Action Link
 
 banner close it
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corebanner--banner5

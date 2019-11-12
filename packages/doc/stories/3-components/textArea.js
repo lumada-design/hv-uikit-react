@@ -29,23 +29,28 @@ storiesOf("Components", module).add("Text Area", () => <HvTextArea />, {
       src: "components/textArea/textAreaSimple.js"
     },
     {
-      title: "2. with limits",
+      title: "2. Simple Resizable",
+      description: "Basic text area usage",
+      src: "components/textArea/textAreaSimpleResizable.js"
+    },
+    {
+      title: "3. with limits",
       description:
         "Text area that limits the quantity of character that can be introduced in the text area",
       src: "components/textArea/textAreaLimit.js"
     },
     {
-      title: "3. Disabled",
+      title: "4. Disabled",
       description: "Text area disabled and do not allow any interaction",
       src: "components/textArea/textAreaDisabled.js"
     },
     {
-      title: "4. Change input content with another component",
+      title: "5. Change input content with another component",
       description: "Change the input value from outside the Input component",
       src: "components/textArea/textAreaUncontrolledValue.js"
     },
     {
-      title: "5. Change input content with another component and with limit",
+      title: "6. Change input content with another component and with limit",
       description: "Change the input value from outside the Input component",
       src: "components/textArea/textAreaUncontrolledValueLimit.js"
     }

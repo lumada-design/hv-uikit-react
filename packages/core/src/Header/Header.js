@@ -154,7 +154,7 @@ const Main = ({
           selected: false,
           isHidden: false,
           leftIcon: null,
-          iconCallback: () => {},
+          iconCallback: undefined,
           showNavIcon: false,
           path: "",
           params: {},
@@ -170,12 +170,14 @@ const Main = ({
         }
       ]
     };
+
     if (isEqual(navStructure, defaultData)) {
       return null;
     }
     return navStructure.data;
   };
   const navData = getNavigationData(navigationStructure, navigationData);
+
   return (
     <div className={classes.shadowPadding}>
       <AppBar
@@ -195,7 +197,11 @@ const Main = ({
               }}
               tabIndex={0}
             >
-              {showNav ? <StyledClose iconSize="S" /> : <StyledMenu iconSize="S" />}
+              {showNav ? (
+                <StyledClose iconSize="S" />
+              ) : (
+                <StyledMenu iconSize="S" />
+              )}
             </div>
           ) : (
             ""
@@ -243,7 +249,10 @@ const Main = ({
       {showNav &&
       showHbMenu &&
       !(isNill(navData) && isNill(actionItemMapper)) ? (
-        <OutsideClickHandler useCapture onOutsideClick={() => setTimeout(()=>toggleNav(false), 0)}>
+        <OutsideClickHandler
+          useCapture
+          onOutsideClick={() => setTimeout(() => toggleNav(false), 0)}
+        >
           <div
             className={classNames(classes.verticalNavigationContainer, {
               [classes.verticalNavigationContainerFixed]: fixVerticalNavigation,
@@ -339,7 +348,10 @@ Main.propTypes = {
         label: PropTypes.string.isRequired,
         selected: PropTypes.bool,
         isHidden: PropTypes.bool,
-        leftIcon: deprecatedPropType(PropTypes.func, "Use iconCallback instead"),
+        leftIcon: deprecatedPropType(
+          PropTypes.func,
+          "Use iconCallback instead"
+        ),
         iconCallback: PropTypes.func,
         showNavIcon: PropTypes.bool,
         path: PropTypes.string,
@@ -484,7 +496,7 @@ Main.defaultProps = {
         selected: false,
         isHidden: false,
         leftIcon: null,
-        iconCallback: () => {},
+        iconCallback: undefined,
         showNavIcon: false,
         path: "",
         params: {},

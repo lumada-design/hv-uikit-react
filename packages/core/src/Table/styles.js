@@ -117,6 +117,7 @@ const styles = theme => ({
         }
       },
       "& $tbody": {
+        overflow:"hidden",
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {

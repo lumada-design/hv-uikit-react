@@ -17,7 +17,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import MultiSelection from "../../../../packages/doc/samples/components/list/multiSelection";
+import MultiSelection from "../../../../packages/doc/samples/components/list/multiSelectionWithSelectorsDisabledAndSelectAll";
 import MultiSelectionWithSelectors from "../../../../packages/doc/samples/components/list/multiSelectionWithSelectors";
 import MultiSelectionWithSelectorsAndSelectAll from "../../../../packages/doc/samples/components/list/multiSelectionWithSelectorsAndSelectAll";
 import SimpleListCondensed from "../../../../packages/doc/samples/components/list/simpleListCondensed";
