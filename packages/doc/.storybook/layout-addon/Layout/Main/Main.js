@@ -98,7 +98,6 @@ const Main = ({ classes, children, context, config }) => {
           </Button>
         )}
       </div>
-      )
       <div className={classes.contentWithHeader}>
         {title ? (
           <>
