@@ -116,7 +116,6 @@ const styles = theme => ({
 
     uncheckedHoverClass: {
       border: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
 
     uncheckedIconHoverClass: {
@@ -124,7 +123,6 @@ const styles = theme => ({
     },
 
     checkedHoverClass: {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
       opacity: 1
     },
 
