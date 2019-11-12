@@ -234,7 +234,9 @@ class List extends React.Component {
       : theme.hv.palette.accent.acce1;
 
     const deprecatedIcon = !isNil(item.leftIcon) ? item.leftIcon({ color: ["none", iconColor] }) : undefined;
-    const newIcon = !isNil(item.iconCallback) ? item.iconCallback({isSelected: item.selected}) : undefined;
+    const newIcon = !isNil(item.iconCallback)
+      ? item.iconCallback({ isSelected: item.selected, isDisabled: item.disabled })
+      : undefined;
     const icon = !isNil(deprecatedIcon) ? deprecatedIcon : newIcon;
 
     return icon;

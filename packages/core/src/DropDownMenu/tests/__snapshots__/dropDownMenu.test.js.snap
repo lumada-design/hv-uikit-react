@@ -22594,21 +22594,24 @@ body {
   justify-content: flex-start;
   list-style-type: none;
 }
-.List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14) {
+.List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover {
   background: #F0F0F0;
 }
-.List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12) {
+.List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active {
   color: #FFFFFF;
   background: #414141;
 }
 .List-listItem-10:not(:last-child) {
   margin-bottom: 8px;
 }
-.List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12) * {
+.List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active * {
   color: #FFFFFF;
   background: #414141;
 }
-.List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14) * {
+.List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active svg *.color0 {
+  fill: #FFFFFF;
+}
+.List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover * {
   background: #F0F0F0;
 }
 .List-condensed-11 {
@@ -22730,6 +22733,9 @@ body {
                     "color": "#FFFFFF",
                   },
                   Object {
+                    "fill": "#FFFFFF",
+                  },
+                  Object {
                     "background": "#F0F0F0",
                   },
                   Object {
@@ -22844,19 +22850,22 @@ body {
                     "justify-content": "flex-start",
                     "list-style-type": "none",
                   },
-                  ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12)": Object {
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover": Object {
+                    "background": "#F0F0F0",
+                  },
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover *": Object {
+                    "background": "#F0F0F0",
+                  },
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active": Object {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12) *": Object {
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active *": Object {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14)": Object {
-                    "background": "#F0F0F0",
-                  },
-                  ".List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14) *": Object {
-                    "background": "#F0F0F0",
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active svg *.color0": Object {
+                    "fill": "#FFFFFF",
                   },
                   ".List-listItem-10:not(:last-child)": Object {
                     "margin-bottom": "8px",
@@ -23461,26 +23470,32 @@ body {
                   ".List-disabled-16 svg *.color1": Object {
                     "fill": "#999999",
                   },
-                  ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12)": Object {
-                    "& *": Object {
-                      "background": "#414141",
-                      "color": "#FFFFFF",
-                    },
-                    "background": "#414141",
-                    "color": "#FFFFFF",
-                  },
-                  ".List-listItem-10:not(.List-disabled-16):active:hover:not(.List-selector-12) *": Object {
-                    "background": "#414141",
-                    "color": "#FFFFFF",
-                  },
-                  ".List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14)": Object {
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover": Object {
                     "& *": Object {
                       "background": "#F0F0F0",
                     },
                     "background": "#F0F0F0",
                   },
-                  ".List-listItem-10:not(.List-disabled-16):hover:not(.List-selected-14) *": Object {
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selected-14):hover *": Object {
                     "background": "#F0F0F0",
+                  },
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active": Object {
+                    "& *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    "& svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    "background": "#414141",
+                    "color": "#FFFFFF",
+                  },
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active *": Object {
+                    "background": "#414141",
+                    "color": "#FFFFFF",
+                  },
+                  ".List-listItem-10:not(.List-disabled-16):not(.List-selector-12):hover:active svg *.color0": Object {
+                    "fill": "#FFFFFF",
                   },
                   ".List-listItem-10:not(:last-child)": Object {
                     "marginBottom": "8px",
@@ -23534,19 +23549,22 @@ body {
                     "paddingLeft": 0,
                   },
                   "listItem": Object {
-                    "&:not($disabled):active:hover:not($selector)": Object {
-                      "& *": Object {
-                        "background": "#414141",
-                        "color": "#FFFFFF",
-                      },
-                      "background": "#414141",
-                      "color": "#FFFFFF",
-                    },
-                    "&:not($disabled):hover:not($selected)": Object {
+                    "&:not($disabled):not($selected):hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
+                    },
+                    "&:not($disabled):not($selector):hover:active": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "&:not(:last-child)": Object {
                       "marginBottom": "8px",
