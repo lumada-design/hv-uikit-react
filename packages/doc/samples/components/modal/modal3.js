@@ -12,6 +12,16 @@ import TextArea from "@hv/uikit-react-core/dist/TextArea";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Input from "@hv/uikit-react-core/dist/Input";
 
+const containerStyle = {
+  display:"flex"
+}
+
+const btnStyle = {
+  width: "120px",
+  height: "32px",
+  marginRight: 20
+};
+
 const getColumns = () => [
   {
     headerText: "Customer",
@@ -69,7 +79,7 @@ const SimpleModal = ({ buttonMessage, title, content, actions }) => {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <HvButton onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
+      <HvButton style={btnStyle} onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
       <HvModal open={open} onClose={() => setOpen(false)}>
         {title}
         {content}
@@ -90,7 +100,7 @@ const styles = theme => ({
 const InputWithStyles = withStyles(styles, { withTheme: true })(Input);
 
 export default (
-  <div>
+  <div style={containerStyle}>
     <SimpleModal
       buttonMessage="table"
       title={
@@ -136,10 +146,10 @@ export default (
       }
       actions={
         <HvModalActions>
+          <HvButton>Send Work Request</HvButton>
           <HvButton category="secondary" onClick={() => {}}>
             Cancel
           </HvButton>
-          <HvButton>Send Work Request</HvButton>
         </HvModalActions>
       }
     />
