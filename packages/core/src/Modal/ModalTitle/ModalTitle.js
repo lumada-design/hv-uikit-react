@@ -31,6 +31,7 @@ import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
  * @returns {*}
  * @constructor
  */
+
 const ModalTitle = ({
   classes,
   className,
@@ -64,7 +65,7 @@ const ModalTitle = ({
     >
       <div className={classes.messageContainer}>
         {icon}
-        <div className={classNames({ [classes.textWithIcon]: icon })}>
+        <div className={classNames({ [classes.textWithIcon]: icon,  [classes.textWithCustomIcon]: customIcon})}>
           {!isString && children}
           {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>

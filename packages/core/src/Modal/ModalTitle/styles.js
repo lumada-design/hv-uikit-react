@@ -23,7 +23,10 @@ const styles = theme => ({
     display: "flex",
   },
   textWithIcon: {
-    paddingLeft: "58px"
+    paddingLeft: 58
+  },
+  textWithCustomIcon: {
+    paddingLeft: 27
   },
   icon: {
     position:"absolute",
