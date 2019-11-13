@@ -127,11 +127,11 @@ const ActionStyles = theme => ({
 
 const MultipleActionsWithMediaButtons = ({ classes }) => (
   <>
-    <HvButton className={classes.button} category="ghostSecondary">
+    <HvButton className={classes.button} category="ghost">
       <Upload className={classes.box} />
       Update
     </HvButton>
-    <HvButton className={classes.smallButton} category="ghostSecondary">
+    <HvButton className={classes.smallButton} category="ghost">
       <MoreOptionsIcon />
     </HvButton>
   </>

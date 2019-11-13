@@ -8,12 +8,6 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = () => ({
-  root: {
-    color: "red"
-  }
-});
-
 const moreOptionsStyles = theme => ({
   root: {
     width: "32px",
@@ -34,18 +28,16 @@ const stylesMediaButton = () => ({
   }
 })
 
-const IconButton = withStyles(styles, { withTheme: true })(HvButton);
-
 const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
   withTheme: true
 })(HvButton);
 
 const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
-    <IconButton colorType="link">
+    <HvButton colorType="link">
       <Icon className={classes.box} />
       Update
-    </IconButton>
+    </HvButton>
     <MoreOptionsIconButton colorType="link">
       <MoreOptionsIcon />
     </MoreOptionsIconButton>
