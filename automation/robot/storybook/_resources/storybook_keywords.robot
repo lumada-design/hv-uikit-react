@@ -135,4 +135,8 @@ verify element property has different value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}       Get Element Attribute    ${locator}    ${property}
     Should Not Be Equal    ${current_value}         ${value}      error message: the element property shouln't have same value
-  
+
+verify list items
+    [Arguments]    ${locator}    ${items}
+    ${list_items}      Get List Items    ${locator}
+    Should Be Equal    ${list_items}     ${items}
