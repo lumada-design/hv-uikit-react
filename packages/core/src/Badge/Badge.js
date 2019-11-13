@@ -22,34 +22,21 @@ import Typography from "../Typography";
 const Badge = props => {
   const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
-  let Component;
+  const Component = icon || text && <Typography variant={textVariant}>{text}</Typography>;
 
-  let badgeClasses = classNames(classes.badgePosition, {
+  const badgeClasses = classNames(classes.badgePosition, {
     [classes.badge]: count > 0,
     [classes.showCount]: showCount,
-    [classes.badgeTwoDigits]: showCount && count > 9
+    [classes.badgeIcon]: icon,
+    [classes.badgeOneDigit]: showCount && count <= 9
   });
-
-  if (icon) {
-    Component = icon;
-    badgeClasses = classNames(badgeClasses, {
-      [classes.badgeIcon]: count > 0,
-      [classes.showCountIcon]: showCount,
-      [classes.badgeTwoDigitsIcon]: showCount && count > 9
-    });
-  } else if (text) {
-    Component = <Typography variant={textVariant}>{text}</Typography>;
-    badgeClasses = classNames(badgeClasses, {
-      [classes.badgeText]: count > 0,
-      [classes.showCountText]: showCount,
-      [classes.badgeTwoDigitsText]: showCount && count > 9
-    });
-  }
 
   return (
     <div className={classes.root}>
       {Component}
-      <div className={badgeClasses}>{showCount && renderedCount}</div>
+      <div className={Component ? classes.badgeContainer : null}>
+        <div className={badgeClasses}>{showCount && renderedCount}</div>
+      </div>
     </div>
   );
 };
