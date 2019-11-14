@@ -21,32 +21,22 @@ import {
 
 const styles = theme => {
   let convertedColor;
-  let dropShadowColor;
-  if (theme && theme.hv.palette.atmosphere.atmo5) {
+  if (theme && theme.hv.palette.atmosphere.atmo2) {
     convertedColor = fade(
-      convertHexToRGB(theme.hv.palette.atmosphere.atmo5),
+      convertHexToRGB(theme.hv.palette.atmosphere.atmo2),
       0.8
     );
   }
-
-  if (theme && theme.hv.palette.accent.acce1) {
-    dropShadowColor = fade(
-      convertHexToRGB(theme.hv.palette.accent.acce1),
-      0.12
-    );
-  }
-
-
 
   return {
     background: {
       background: convertedColor
     },
     paper: {
-      background: `${theme.hv.palette.atmosphere.atmo1}`,
+      background: `${theme.hv.palette.atmosphere.atmo2}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
       padding: "0px",
-      overflow: "hidden",
-      filter: `drop-shadow(0px 2px 12px ${dropShadowColor})`
+      overflow: "hidden"
     },
     closeButton: {
       position: "absolute",

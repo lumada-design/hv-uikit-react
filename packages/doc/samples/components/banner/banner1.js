@@ -1,116 +1,66 @@
-import React, { useState, memo } from "react";
+import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-const find = (array, value) => array.findIndex(element => element === value);
-
-// Simple controller for the offset of the banners.
-class Controller extends React.Component {
-  state = { banners: [] };
-
-  openCallback = id => {
-    const { banners } = this.state;
-    banners.push(id);
-    this.setState({ banners });
+class SimpleBanner extends React.Component {
+  state = {
+    open: false
   };
 
-  closeCallback = id => {
-    const { banners } = this.state;
-    banners.splice(find(banners, id), 1);
-    this.setState({ banners });
+  handleClick = () => {
+    this.setState({ open: true });
   };
 
-  calculateOffset = id => 60 * (find(this.state.banners, id) + 1);
-
-  isOpen = id => find(this.state.banners, id) !== -1;
+  handleClose = (action, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ open: false });
+  };
 
   render() {
+    const {
+      label,
+      variant,
+      showIcon,
+      anchorOrigin,
+      action,
+      customIcon
+    } = this.props;
+    const { open } = this.state;
     return (
       <div>
-        <SimpleBanner
-          id={"0"}
-          label="default"
-          variant="default"
-          offset={this.calculateOffset("0")}
-          open={this.isOpen("0")}
-          openCallback={this.openCallback}
-          closeCallback={this.closeCallback}
-        />
-        <p />
-        <SimpleBanner
-          id={"1"}
-          label="Success"
-          variant="success"
-          showIcon
-          offset={this.calculateOffset("1")}
-          open={this.isOpen("1")}
-          openCallback={this.openCallback}
-          closeCallback={this.closeCallback}
-        />
-        <p />
-        <SimpleBanner
-          id={"2"}
-          label="Error"
-          variant="error"
-          showIcon
-          offset={this.calculateOffset("2")}
-          open={this.isOpen("2")}
-          openCallback={this.openCallback}
-          closeCallback={this.closeCallback}
+        <Button
+          onClick={this.handleClick}
+          variant="contained"
+          color="primary"
+          style={{ width: "150px" }}
+        >
+          {label}
+        </Button>
+        <HvBanner
+          id="test"
+          open={open}
+          label={`This is ${label}`}
+          onClose={this.handleClose}
+          anchorOrigin={anchorOrigin}
+          variant={variant}
+          customIcon={customIcon}
+          showIcon={showIcon}
+          actionsOnlabel={action}
+          offset={60}
         />
       </div>
     );
   }
 }
 
-const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.open === nextProps.open && prevProps.offset === nextProps.offset;
-
-const HvBannerMemo = memo(HvBanner, arePropsEqual);
-
-const SimpleBanner = ({
-  label,
-  id,
-  variant,
-  showIcon,
-  offset,
-  open,
-  openCallback,
-  closeCallback
-}) => {
-  const handleClick = () => {
-    openCallback(id);
-  };
-
-  const handleClose = (action, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    closeCallback(id);
-  };
-
-  return (
-    <div>
-      <Button
-        onClick={handleClick}
-        variant="contained"
-        color="primary"
-        style={{ width: "150px" }}
-        disabled={open}
-      >
-        {label}
-      </Button>
-      <HvBannerMemo
-        id={id}
-        open={open}
-        label={`This is ${label}`}
-        onClose={handleClose}
-        variant={variant}
-        showIcon={showIcon}
-        offset={offset}
-      />
-    </div>
-  );
-};
-
-export default <Controller />;
+export default (
+  <div>
+    <SimpleBanner label="default" variant="default" anchorOrigin="top" />
+    <p />
+    <SimpleBanner label="Success" variant="success" showIcon />
+    <p />
+    <SimpleBanner label="Error" variant="error" showIcon />
+  </div>
+);
