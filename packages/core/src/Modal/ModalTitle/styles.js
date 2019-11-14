@@ -26,7 +26,7 @@ const styles = theme => ({
     paddingLeft: 58
   },
   textWithCustomIcon: {
-    paddingLeft: 27
+    paddingLeft: 58,
   },
   icon: {
     position:"absolute",
@@ -35,6 +35,9 @@ const styles = theme => ({
     maxHeight: "48px",
     minWidth: "48px",
     minHeight: "48px",
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center"
   }
 });
 
