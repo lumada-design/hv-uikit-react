@@ -87,7 +87,7 @@ describe("<Dropdown />", () => {
     });
 
     it("default value is selected", () => {
-      listComponent = wrapper.find(Typography);
+      listComponent = wrapper.find(List).find(Typography);
 
       expect(listComponent.at(1).prop("variant")).toBe("selectedText");
     });

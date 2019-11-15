@@ -120,6 +120,10 @@ const styles = theme => ({
     justifyContent:"center"
   },
   adornmentButton: {
+    backgroundColor: "transparent",
+    border: "none",
+    padding: 0,
+    margin: 0,
     cursor: "pointer"
   },
   adornmentIconBox: {

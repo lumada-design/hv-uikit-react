@@ -89,13 +89,13 @@ describe("InputAdornment", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should call handleClear when mouseDown", () => {
-    wrapper.find('[role="button"]').simulate("mousedown");
+  it("should call handleClear when mouseDown on the clear button", () => {
+    wrapper.find('button').simulate("mousedown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should call handleClear when keydown", () => {
-    wrapper.find('[role="button"]').simulate("keydown", {keyCode: 13});
+    wrapper.find('button').simulate("keydown", {keyCode: 13});
     expect(handleClearMock).toHaveBeenCalled();
   });
 

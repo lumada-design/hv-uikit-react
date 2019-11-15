@@ -8738,8 +8738,10 @@ body {
             "adornmentsBox": "InputAdornment-adornmentsBox-1",
           }
         }
+        clearButtonLabel="Clear the text"
         customFixedIcon={null}
         handleClear={[MockFunction]}
+        inputId={null}
         showClear={true}
         showValidationIcon={true}
         theme={
@@ -8760,14 +8762,18 @@ body {
         validationState="filled"
       >
         <div
+          aria-hidden="true"
           className="InputAdornment-adornmentsBox-1"
         >
-          <div
+          <button
+            aria-hidden="true"
+            aria-label="Clear the text"
             className="InputAdornment-adornmentButton-2"
             onKeyDown={[Function]}
             onMouseDown={[MockFunction]}
-            role="button"
             tabIndex="-1"
+            title="Clear the text"
+            type="button"
           >
             <WithStyles(CloseXS)
               className="InputAdornment-adornmentIconBox-3"
@@ -9736,7 +9742,7 @@ body {
                 </div>
               </CloseXS>
             </WithStyles(CloseXS)>
-          </div>
+          </button>
         </div>
       </InputAdornment>
     </WithStyles(InputAdornment)>
