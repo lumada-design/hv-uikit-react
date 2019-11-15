@@ -258,64 +258,28 @@ class HvInput extends React.Component {
   getInputAdornment = (
     classes,
     theme,
-    validationIconVisible,
+    showValidationIcon,
     stateValidationState,
-    disabled,
-    customFixedIcon,
-    maxCharQuantity,
-    minCharQuantity,
-    validation,
-    validationType,
-    disableClear
+    showClear,
+    customFixedIcon
   ) => {
-    if (
-      (disabled && isNil(customFixedIcon)) ||
-      (!validationIconVisible && isNil(customFixedIcon) && disableClear)
-    ) {
+    if (!showValidationIcon && !showClear && isNil(customFixedIcon)) {
+      // nothing to show
       return null;
-    }
-    if (customFixedIcon === null) {
-      if (
-        stateValidationState !== validationStates.filled &&
-        (stateValidationState === validationStates.empty ||
-          (validationType === validationTypes.none &&
-            maxCharQuantity === null &&
-            minCharQuantity === null &&
-            !validation))
-      ) {
-        return null;
-      }
-    } else if (
-      stateValidationState !== validationStates.filled &&
-      (stateValidationState === validationStates.empty ||
-        (validationType === validationTypes.none &&
-          maxCharQuantity === null &&
-          minCharQuantity === null &&
-          !validation))
-    ) {
-      return (
-        <InputAdornment
-          classes={classes}
-          customFixedIcon={customFixedIcon}
-          onlyCustomIcon
-          validationIconVisible={validationIconVisible}
-          validationState={stateValidationState}
-          handleClear={() => this.handleClear()}
-          theme={theme}
-          disableClear={disableClear}
-        />
-      );
     }
 
     return (
       <InputAdornment
         classes={classes}
-        customFixedIcon={customFixedIcon}
-        validationIconVisible={validationIconVisible}
-        validationState={stateValidationState}
-        handleClear={() => this.handleClear()}
         theme={theme}
-        disableClear={disableClear}
+
+        showValidationIcon={showValidationIcon}
+        validationState={stateValidationState}
+
+        showClear={showClear}
+        handleClear={() => this.handleClear()}
+
+        customFixedIcon={customFixedIcon}
       />
     );
   };
@@ -375,18 +339,26 @@ class HvInput extends React.Component {
       label = `${label}*`;
     }
 
+    // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
+    // - the input have some sort of validation
+    // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
+    const showValidationIcon = !disabled && validationIconVisible && showInfo &&
+      (stateValidationState === validationStates.invalid ||
+        (validationType !== validationTypes.none ||
+          maxCharQuantity !== null ||
+          minCharQuantity !== null ||
+          validation !== null));
+
+    // show the clear button only if the input is enabled, disableClear is false and the input is not empty
+    const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
+
     const adornment = this.getInputAdornment(
       classes,
       theme,
-      validationIconVisible,
+      showValidationIcon,
       stateValidationState,
-      disabled,
-      customFixedIcon,
-      maxCharQuantity,
-      minCharQuantity,
-      validation,
-      validationType,
-      disableClear
+      showClear,
+      customFixedIcon
     );
 
     let validationText;
@@ -559,13 +531,9 @@ HvInput.propTypes = {
      */
     textWarning: PropTypes.string,
     /**
-     * Styles applied to the icon.
+     * Styles applied to the input adornment icons.
      */
     icon: PropTypes.string,
-    /**
-     * Styles applied to the container of the icon.
-     */
-    iconContainer: PropTypes.string,
     /**
      * Styles applied to the icon used to clean the input.
      */

@@ -24,39 +24,44 @@ import Unsuccess from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 import validationStates from "./validationStates";
 
+function onKeyDownClear(e, handleClear) {
+  const EnterKeyCode = 13;
+
+  if (e.keyCode === EnterKeyCode) {
+    handleClear();
+  }
+};
+
 const InputAdornment = ({
   classes,
+  showValidationIcon,
   validationState,
-  validationIconVisible,
   customFixedIcon,
   handleClear,
-  onlyCustomIcon,
-  disableClear
+  showClear
 }) => (
-  <div className={classes.iconFlexBox}>
-    <div
-      className={classNames(classes.icon, {
-        [classes.iconClear]: validationState === validationStates.filled
-      })}
-      {...validationState === validationStates.filled && {
-        onMouseDown: () => handleClear(),
-        role: "button",
-        tabIndex: -1,
-        onKeyDown: () => handleClear()
-      }}
-    >
-      {!onlyCustomIcon &&
-        !disableClear && 
-        validationState === validationStates.filled && <Close className={classes.closeBox} />}
-      {!onlyCustomIcon &&
-        validationIconVisible &&
-        validationState === validationStates.valid && <Success semantic="sema1" className={classes.box} />}
-      {!onlyCustomIcon &&
-        validationIconVisible &&
-        validationState === validationStates.invalid && <Unsuccess semantic="sema4" className={classes.box} />}
-    </div>
+  <div className={classes.adornmentsBox}>
+    {showValidationIcon &&
+      validationState === validationStates.valid && <Success semantic="sema1" className={classNames(classes.adornmentIconBox, classes.icon)} />}
+    {showValidationIcon &&
+      validationState === validationStates.invalid && <Unsuccess semantic="sema4" className={classNames(classes.adornmentIconBox, classes.icon)} />}
+
+    {showClear &&
+      validationState === validationStates.filled && 
+        <div
+          className={classes.adornmentButton}
+          role="button"
+          tabIndex="-1"
+          onMouseDown={handleClear}
+          onKeyDown={(e) => onKeyDownClear(e, handleClear)}
+        >
+          <Close
+            className={classNames(classes.adornmentIconBox, classes.icon)}
+          />
+        </div>}
+
     {!isNil(customFixedIcon) && (
-      <div className={classes.icon}>{customFixedIcon}</div>
+      <>{React.cloneElement(customFixedIcon, {className: classNames(classes.adornmentIconBox, classes.icon, customFixedIcon.props.className)})}</>
     )}
   </div>
 );
@@ -66,43 +71,41 @@ InputAdornment.propTypes = {
    * A Jss Object used to override or extend the component styles.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
+
   /**
-   * The initial state of the input.
+   * If `true` the validation icon is shown, if `false` it is not
+   */
+  showValidationIcon: PropTypes.bool,
+  /**
+   * The state of the input.
    *
    * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
-  validationIconVisible: PropTypes.bool,
+
   /**
-   * a custom icon to be added into the input.
+   * If `true` the clear button is shown, if `false` it is not
    */
-  customFixedIcon: PropTypes.node,
+  showClear: PropTypes.bool,
   /**
    * The function that will be executed when the icon is clicked
    */
   handleClear: PropTypes.func,
+
   /**
-   * forces the adornment to contain only the custom icon
+   * a custom icon to be added into the input.
    */
-  onlyCustomIcon: PropTypes.bool,
-  /**
-   * If `true` the clear button is disabled if `false` is enable
-   */
-  disableClear: PropTypes.bool,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  customFixedIcon: PropTypes.node
 };
 
 InputAdornment.defaultProps = {
-  validationIconVisible: true,
-  onlyCustomIcon: undefined,
-  disableClear: false,
+  showValidationIcon: true,
   validationState: validationStates.empty,
-  customFixedIcon: null,
+
+  showClear: true,
   handleClear: value => value,
-  theme: null
+
+  customFixedIcon: null
 };
 
 export default InputAdornment;
