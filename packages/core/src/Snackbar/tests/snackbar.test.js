@@ -19,6 +19,8 @@
 import React from "react";
 import { mount } from "enzyme";
 import "jest-canvas-mock";
+import { Snackbar as MaterialSnackbar } from "@material-ui/core";
+
 import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
@@ -138,5 +140,36 @@ describe("Snackbar ", () => {
       .find("a");
 
     expect(sliderComponent.length).toBe(1);
+  });
+
+  it("should render with the correct offset", () => {
+    const offset = 10;
+    let component = mount(
+      <HvProvider>
+        <SnackBarWithStyles
+          open
+          offset={offset}
+        />
+      </HvProvider>
+    )
+      .find(MaterialSnackbar)
+
+    expect(component.get(0).props.style).toEqual({"top":`${offset}px`});
+
+    component = mount(
+      <HvProvider>
+        <SnackBarWithStyles
+          open
+          offset={offset}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right"
+          }}
+        />
+      </HvProvider>
+    )
+      .find(MaterialSnackbar)
+
+    expect(component.get(0).props.style).toEqual({"bottom":`${offset}px`});
   });
 });

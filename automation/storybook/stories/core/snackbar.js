@@ -21,7 +21,7 @@ import Snackbar1 from "../../../../packages/doc/samples/components/snackbar/snac
 import Snackbar2 from "../../../../packages/doc/samples/components/snackbar/snackbar2";
 import Snackbar3 from "../../../../packages/doc/samples/components/snackbar/snackbar3";
 import Snackbar4 from "../../../../packages/doc/samples/components/snackbar/snackbar4";
-import Snackbar5 from "../../../../packages/doc/samples/components/snackbar/snackbar5";
+import Snackbar5 from "../../../../packages/doc/samples/components/snackbar/snackbar6";
 
 // sample scenarios
 const samples = {};

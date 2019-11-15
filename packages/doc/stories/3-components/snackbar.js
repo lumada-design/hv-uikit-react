@@ -44,8 +44,12 @@ storiesOf("Components/Notifications", module).add(
         src: "components/snackbar/snackbar4"
       },
       {
-        title: "5. Examples of snackbars",
+        title: "5. With offset",
         src: "components/snackbar/snackbar5"
+      },
+      {
+        title: "6. Examples of snackbars",
+        src: "components/snackbar/snackbar6"
       }
     ]
   }
