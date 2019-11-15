@@ -32,6 +32,9 @@ function WrapperComp() {
       <Button style={btnStyle} onClick={() => setValue("Third value")}>
         Third value{" "}
       </Button>
+      <Button style={btnStyle} onClick={() => setValue("")}>
+        Clear value{" "}
+      </Button>
       <HvInput labels={labels} inputValue={value} onChange={setterValue} />
     </>
   );
