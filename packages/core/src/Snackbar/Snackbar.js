@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
-import { makeStyles } from "@material-ui/styles";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const transLeft = props => <Slide {...props} direction="left" />;
@@ -48,31 +47,9 @@ const snackBarDirComponent = direction => {
   return trans;
 };
 
-const useStyles = makeStyles({
-  anchorOriginTopRight: {
-    top: props => `${props.offset}px`,
-    right: props => `${props.theme.hv.spacing.xs}px`
-  },
-  anchorOriginTopLeft: {
-    top: props => `${props.offset}px`,
-    left: props => `${props.theme.hv.spacing.xs}px`
-  },
-  anchorOriginTopCenter: {
-    top: props => `${props.offset}px`
-  },
-  anchorOriginBottomCenter: {
-    bottom: props => `${props.offset}px`
-  },
-  anchorOriginBottomLeft: {
-    bottom: props => `${props.offset}px`,
-    left: props => `${props.theme.hv.spacing.xs}px`
-  },
-  anchorOriginBottomRight: {
-    bottom: props => `${props.offset}px`,
-    right: props => `${props.theme.hv.spacing.xs}px`
-  }
-});
+const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
 
+// TODO: review to use makeStyles during the Material 4 upgrade as a731f9f90e482fcb5a5f630d6015ed2433831011
 const HvSnackbar = props => {
   const {
     classes,
@@ -93,20 +70,22 @@ const HvSnackbar = props => {
     offset
   } = props;
 
-  const classOffset = offset ? useStyles(props) : classes;
-
-  const snackbarClasses = {
-    anchorOriginTopRight: classOffset.anchorOriginTopRight,
-    anchorOriginTopLeft: classOffset.anchorOriginTopLeft,
-    anchorOriginTopCenter: classOffset.anchorOriginTopCenter,
-    anchorOriginBottomCenter: classOffset.anchorOriginBottomCenter,
-    anchorOriginBottomLeft: classOffset.anchorOriginBottomLeft,
-    anchorOriginBottomRight: classOffset.anchorOriginBottomRight
+  const anchorOriginOffset = offset && {
+    anchorOriginTop: {
+      top: `${offset}px`
+    },
+    anchorOriginBottom: {
+      bottom: `${offset}px`
+    }
   };
 
   return (
     <Snackbar
-      classes={snackbarClasses}
+      {...offset && {
+        style:
+          anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
+      }}
+      classes={classes}
       className={className}
       id={id}
       anchorOrigin={anchorOrigin}
