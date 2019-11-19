@@ -21,7 +21,7 @@ module.exports = ({ config, mode }) => {
 
   config.module.rules.push({
     test: /\.js?$/,
-    exclude: /node_modules/,
+    exclude: /node_modules\/(?!(uniqid)\/).*/,
     use: [
       {
         loader: "babel-loader",
