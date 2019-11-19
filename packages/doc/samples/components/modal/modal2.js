@@ -1,50 +1,69 @@
 import React, { useState } from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+
 import {
   HvModal,
   HvModalActions,
   HvModalContent,
   HvModalTitle
 } from "@hv/uikit-react-core/dist";
+import HvButton from "@hv/uikit-react-core/dist/Button";
+import withStyles from "@material-ui/core/styles/withStyles";
 
-const StyledUnlock = () => <Unlock iconSize="M" />;
+const btnStyle = {
+  width: "120px",
+  height: "32px",
+  marginRight: 20
+};
 
-const SimpleModal = ({ buttonMessage, title, content, actions }) => {
+const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
-      <HvButton onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
-      <HvModal open={open} onClose={() => setOpen(false)}>
+      <HvButton style={btnStyle} onClick={() => setOpen(true)}>
+        {buttonMessage}
+      </HvButton>
+      <HvModal
+        classes={classes}
+        open={open}
+        onClose={() => setOpen(false)}
+        id="test"
+      >
         {title}
-        {content}
-        {actions}
+        {content ? (
+          content
+        ) : (
+          <HvModalContent>
+            Switching to model view will clear all the fields in your
+            visualization. You will need to re-select your fields.
+          </HvModalContent>
+        )}
+        <HvModalActions>
+          <HvButton category="ghost">Switch anyway</HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
       </HvModal>
     </div>
   );
 };
 
+const iconWrapper = (Icon, sema, props) => {
+  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
+  return () => <GeneratedIcon semantic={sema} {...props} />;
+};
+
+const generalIconProps = { iconSize: "M" };
+
 export default (
   <SimpleModal
     buttonMessage="Custom icon"
     title={
-      <HvModalTitle customIcon={<StyledUnlock />}>Are you sure?</HvModalTitle>
-    }
-    content={
-      <HvModalContent>
-        Switching to model view will clear all the fields in your visualization.
-        You will need to re-select your fields.
-      </HvModalContent>
-    }
-    actions={
-      <HvModalActions>
-        <HvButton>Switch anyway</HvButton>
-        <HvButton category="ghost" onClick={() => {}}>
-          Cancel
-        </HvButton>
-      </HvModalActions>
+      <HvModalTitle customIcon={iconWrapper(Unlock, "", generalIconProps)()}>
+        Are you sure?
+      </HvModalTitle>
     }
   />
 );

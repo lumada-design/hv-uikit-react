@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
+import Success from "@hv/uikit-react-icons/dist/Generic/Success";
+import Warning from "@hv/uikit-react-icons/dist/Generic/Caution";
+import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 import {
   HvModal,
   HvModalActions,
   HvModalContent,
   HvModalTitle
 } from "@hv/uikit-react-core/dist";
-
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const containerStyle = {
-  display:"flex"
-}
+  display: "flex"
+};
 
 const btnStyle = {
   width: "120px",
@@ -18,77 +21,79 @@ const btnStyle = {
   marginRight: 20
 };
 
-const SimpleModal = ({ buttonMessage, title, content, actions }) => {
+const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
-      <HvButton style={btnStyle} onClick={() => setOpen(true)}>{buttonMessage}</HvButton>
-      <HvModal open={open} onClose={() => setOpen(false)} id="test">
+      <HvButton style={btnStyle} onClick={() => setOpen(true)}>
+        {buttonMessage}
+      </HvButton>
+      <HvModal
+        classes={classes}
+        open={open}
+        onClose={() => setOpen(false)}
+        id="test"
+      >
         {title}
-        {content}
-        {actions}
+        {content ? (
+          content
+        ) : (
+          <HvModalContent>
+            Switching to model view will clear all the fields in your
+            visualization. You will need to re-select your fields.
+          </HvModalContent>
+        )}
+        <HvModalActions>
+          <HvButton category="ghost">Switch anyway</HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
       </HvModal>
     </div>
   );
 };
 
+const iconWrapper = (Icon, sema, props) => {
+  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
+  return () => <GeneratedIcon semantic={sema} {...props} />;
+};
+
+const generalIconProps = { iconSize: "M" };
+
 export default (
   <div style={containerStyle}>
     <SimpleModal
-      buttonMessage="success"
-      title={<HvModalTitle variant="success">Are you sure?</HvModalTitle>}
-      content={
-        <HvModalContent>
-          Switching to model view will clear all the fields in your
-          visualization. You will need to re-select your fields.
-        </HvModalContent>
-      }
-      actions={
-        <HvModalActions>
-          <HvButton category="ghost">Switch anyway</HvButton>
-          <HvButton category="ghost" onClick={() => {}}>
-            Cancel
-          </HvButton>
-        </HvModalActions>
+      buttonMessage="Success"
+      title={
+        <HvModalTitle
+          customIcon={iconWrapper(Success, "sema1", generalIconProps)()}
+        >
+          Are you sure?
+        </HvModalTitle>
       }
     />
     <p />
     <SimpleModal
-      buttonMessage="warning"
-      title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
-      content={
-        <HvModalContent>
-          Switching to model view will clear all the fields in your
-          visualization. You will need to re-select your fields.
-        </HvModalContent>
-      }
-      actions={
-        <HvModalActions>
-          <HvButton category="ghost">Switch anyway</HvButton>
-          <HvButton category="ghost" onClick={() => {}}>
-            Cancel
-          </HvButton>
-        </HvModalActions>
+      buttonMessage="Warning"
+      title={
+        <HvModalTitle
+          customIcon={iconWrapper(Warning, "sema3", generalIconProps)()}
+        >
+          Are you sure?
+        </HvModalTitle>
       }
     />
     <p />
     <SimpleModal
-      buttonMessage="error"
-      title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
-      content={
-        <HvModalContent>
-          Switching to model view will clear all the fields in your
-          visualization. You will need to re-select your fields.
-        </HvModalContent>
-      }
-      actions={
-        <HvModalActions>
-          <HvButton category="ghost">Switch anyway</HvButton>
-          <HvButton category="ghost" onClick={() => {}}>
-            Cancel
-          </HvButton>
-        </HvModalActions>
+      buttonMessage="Error"
+      title={
+        <HvModalTitle
+          customIcon={iconWrapper(Fail, "sema4", generalIconProps)()}
+        >
+          Are you sure?
+        </HvModalTitle>
       }
     />
   </div>
