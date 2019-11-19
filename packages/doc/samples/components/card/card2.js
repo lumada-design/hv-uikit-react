@@ -80,13 +80,13 @@ const MultipleActionsWithMedia = ({ classes }) => {
       <Grid container>
         <Grid item xs={5} className={classes.bottomItem}>
           <HvTypography variant="labelText">{cellCTitle}</HvTypography>
-          <HvTypography variant="normalText" className={classes.text}>
+          <HvTypography variant="sTitle" className={classes.text}>
             {cellCContent}
           </HvTypography>
         </Grid>
         <Grid item xs={7} className={classes.bottomItem}>
           <HvTypography variant="labelText">{cellDTitle}</HvTypography>
-          <HvTypography variant="normalText" className={classes.text}>
+          <HvTypography variant="sTitle" className={classes.text}>
             {cellDContent}
           </HvTypography>
         </Grid>
@@ -127,11 +127,11 @@ const ActionStyles = theme => ({
 
 const MultipleActionsWithMediaButtons = ({ classes }) => (
   <>
-    <HvButton className={classes.button} category="ghostSecondary">
+    <HvButton className={classes.button} category="ghost">
       <Upload className={classes.box} />
       Update
     </HvButton>
-    <HvButton className={classes.smallButton} category="ghostSecondary">
+    <HvButton className={classes.smallButton} category="ghost">
       <MoreOptionsIcon />
     </HvButton>
   </>

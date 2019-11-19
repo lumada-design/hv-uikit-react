@@ -1,28 +1,63 @@
 import React from "react";
-import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
-import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";
-import Typography from "@hv/uikit-react-core/dist/Typography";
+import HvBanner from "@hv/uikit-react-core/dist/Banner";
+import Button from "@hv/uikit-react-core/dist/Button";
 
-const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
+class SimpleBanner extends React.Component {
+  state = {
+    open: false
+  };
 
-const boxStyles = {
-  width: "32px",
-  height: "32px",
-  display: "flex",
-  alignItems: "center",
-}
+  handleClick = () => {
+    this.setState({ open: true });
+  };
 
-const svgStyle = {
-  margin: "0 auto"
+  handleClose = (action, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ open: false });
+  };
+
+  render() {
+    const {
+      label,
+      variant,
+      showIcon,
+      anchorOrigin,
+      actionsOnlabel,
+      customIcon
+    } = this.props;
+    const { open } = this.state;
+    return (
+      <div>
+        <Button
+          onClick={this.handleClick}
+          variant="contained"
+          color="primary"
+          style={{ width: "150px" }}
+        >
+          Click Me
+        </Button>
+        <HvBanner
+          open={open}
+          label={`This is ${label}`}
+          onClose={this.handleClose}
+          anchorOrigin={anchorOrigin}
+          variant={variant}
+          customIcon={customIcon}
+          showIcon={showIcon}
+          actionsOnMessage={actionsOnlabel}
+        />
+      </div>
+    );
+  }
 }
 
 const ActionButton = () => (
   <a
-    href="https://i.imgflip.com/yrj3h.jpg"
     style={{
-      color: "#146BD2",
+      cursor: "pointer",
+      color: "#414141",
       fontSize: "14px",
       letterSpacing: "0.02em",
       lineHeight: "20px",
@@ -34,248 +69,11 @@ const ActionButton = () => (
   </a>
 );
 
-const ActionButtonCollection = () => (
-  <div
-    style={{ display: "flex", width: "100px", justifyContent: "space-between" }}
-  >
-    <ActionButton />
-    <ActionButton />
-  </div>
-);
-
 export default (
-  <div>
-    <div>
-      <Typography variant="xsTitle">Banner with icons</Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="Default"
-      variant="default"
-      showIcon
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      showIcon
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Success"
-      variant="success"
-      showIcon
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Error"
-      variant="error"
-      showIcon
-      onClose={() => {}}
-    />
-    <p />
-    <div>
-      <Typography variant="xsTitle"> Banner with custom icons</Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} color={["#414141"]} />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} color={["#414141"]} />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Success"
-      variant="success"
-      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} color={["#414141"]} />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Error"
-      variant="error"
-      customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} color={["#414141"]} />}
-      onClose={() => {}}
-    />
-    <p />
-    <div>
-      <Typography variant="xsTitle">
-        Banner with icons and label action
-      </Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Success"
-      variant="success"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Error"
-      variant="error"
-      showIcon
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <div>
-      <Typography variant="xsTitle">Banner with icons and action</Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      showIcon
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      showIcon
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <p />
-    <BannerContentWrapper
-      content="Success"
-      variant="success"
-      showIcon
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Error"
-      variant="error"
-      showIcon
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <div>
-      <Typography variant="xsTitle"> Banner without icons</Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="Success"
-      variant="success"
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper content="Error" variant="error" onClose={() => {}} />
-    <p />
-    <div>
-      <Typography variant="xsTitle">
-        {" "}
-        Banner without icons and with label action
-      </Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="success"
-      variant="success"
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="error"
-      variant="error"
-      actionsOnMessage={<ActionButton />}
-      onClose={() => {}}
-    />
-    <p />
-    <div>
-      <Typography variant="xsTitle">
-        {" "}
-        Banner without icons and with action
-      </Typography>
-    </div>
-    <p />
-    <BannerContentWrapper
-      content="default"
-      variant="default"
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
-      variant="default"
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="success"
-      variant="success"
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-    <p />
-    <BannerContentWrapper
-      content="error"
-      variant="error"
-      action={<ActionButtonCollection />}
-      onClose={() => {}}
-    />
-  </div>
+  <SimpleBanner
+    label="default"
+    variant="default"
+    showIcon
+    actionsOnlabel={<ActionButton />}
+  />
 );

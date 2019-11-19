@@ -46,7 +46,7 @@ const renderActions = (
     <HvButton
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
-      category="ghostSecondary"
+      category="ghost"
     >
       {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
       {action.label}

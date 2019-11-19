@@ -22,7 +22,7 @@ const styles = theme => ({
   },
   title: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.mTitle,
+    ...theme.hv.typography.mTitle
   },
   titleShort: {
     fontFamily: theme.hv.typography.fontFamily,
@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.infoText,
+    ...theme.hv.typography.sText,
     paddingTop: `${theme.hv.spacing.xs}px`
   },
   action: {
@@ -39,7 +39,8 @@ const styles = theme => ({
     right: 20,
     marginTop: 0,
     marginRight: "0px",
-    paddingLeft: `${theme.hv.spacing.xs}px`
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    top: "15px"
   },
   content: {}
 });

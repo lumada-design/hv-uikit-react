@@ -18,7 +18,7 @@ const styles = theme => ({
   root: {
     width: "310px",
     minHeight: "52px",
-    maxHeight: "92px",
+    maxHeight: "80px",
     padding: 0
   },
   success: {
@@ -31,19 +31,32 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.semantic.sema7
   },
   iconVariant: {
-    marginLeft: `${theme.hv.spacing.xs}px`,
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingTop: "5px",
     maxWidth: "32px",
     maxHeight: "32px",
     minWidth: "32px",
     minHeight: "32px",
-    alignSelf: "center"
+    display: "table-cell",
+    verticalAlign: "middle"
   },
   message: {
     padding: 0
   },
+  messageSpan: {
+    display: "table",
+    margin: `${theme.hv.spacing.xs}px 0`,
+    minHeight: "32px",
+    width: "310px",
+    maxHeight: "60px"
+  },
   messageText: {
     ...theme.hv.typography.normalText,
-    maxHeight: "82px"
+    color: theme.hv.palette.base.base2,
+    fontFamily: theme.hv.typography.fontFamily,
+    maxHeight: "60px",
+    display: "table-cell",
+    verticalAlign: "middle"
   },
   messageWithoutIcon: {
     paddingLeft: `${theme.hv.spacing.sm}px`
@@ -51,30 +64,12 @@ const styles = theme => ({
   messageWithoutAction: {
     paddingRight: `${theme.hv.spacing.sm}px`
   },
-  containerAlign: {
-    display: "table-cell",
-    verticalAlign: "middle"
-  },
   action: {
-    marginRight: `${theme.hv.spacing.sm}px`,
-    marginLeft: `${theme.hv.spacing.xs}px`,
-    paddingLeft: "0px",
-    minWidth: "fit-content"
-  },
-  messageSpan: {
-    display: "flex",
-    alignItems: "center",
-    margin: `${theme.hv.spacing.xs}px 0`,
-    minHeight: "32px"
-  },
-  rootS: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    paddingRight: `${theme.hv.spacing.sm}px`,
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    display: "table-cell",
+    verticalAlign: "middle",
+    textAlign: "right"
   }
 });
 

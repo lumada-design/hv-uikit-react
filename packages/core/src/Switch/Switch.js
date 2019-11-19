@@ -185,7 +185,7 @@ const Switch = props => {
               <CheckMark
                 width={12}
                 height={12}
-                color={[theme.hv.palette.accent.acce2h]}
+                color={[theme.hv.palette.accent.acce1]}
               />
             </div>
           )

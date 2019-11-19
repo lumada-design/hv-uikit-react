@@ -35,7 +35,7 @@ storiesOf("Templates", module)
           img: login,
           labels: { title: "Login", text: "A simple Login page." },
           sourceCodeUrl:
-            "https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/samples/templates/Login.js",
+            "https://github.com/pentaho/hv-uikit-react/blob/master/packages/doc/samples/templates/login/Login.js",
           associatedStory: ["Templates", "Login"]
         },
         {

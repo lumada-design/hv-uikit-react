@@ -38,16 +38,19 @@ storiesOf("Components/Notifications", module).add("Banner", () => <HvBanner />, 
     },
     {
       title: "4. With actions",
-
       src: "components/banner/banner4"
     },
     {
-      title: "5. With message action",
+      title: "5. With offset",
       src: "components/banner/banner5"
     },
     {
-      title: "6. More examples",
+      title: "6. With message action",
       src: "components/banner/banner6"
+    },
+    {
+      title: "7. More examples",
+      src: "components/banner/banner7"
     }
   ]
 });

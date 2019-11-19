@@ -21,8 +21,8 @@ import Banner1 from "../../../../packages/doc/samples/components/banner/banner1"
 import Banner2 from "../../../../packages/doc/samples/components/banner/banner2";
 import Banner3 from "../../../../packages/doc/samples/components/banner/banner3";
 import Banner4 from "../../../../packages/doc/samples/components/banner/banner4";
-import Banner5 from "../../../../packages/doc/samples/components/banner/banner5";
-import Banner6 from "../../../../packages/doc/samples/components/banner/banner6";
+import Banner5 from "../../../../packages/doc/samples/components/banner/banner6";
+import Banner6 from "../../../../packages/doc/samples/components/banner/banner7";
 
 // sample scenarios
 const samples = {};

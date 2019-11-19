@@ -24,7 +24,6 @@ class SimpleBanner extends React.Component {
       variant,
       showIcon,
       anchorOrigin,
-      actionsOnlabel,
       customIcon
     } = this.props;
     const { open } = this.state;
@@ -46,34 +45,17 @@ class SimpleBanner extends React.Component {
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          actionsOnMessage={actionsOnlabel}
+          offset={100}
         />
       </div>
     );
   }
 }
 
-const ActionButton = () => (
-  <a
-    href="https://i.imgflip.com/yrj3h.jpg"
-    style={{
-      color: "#146BD2",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
-    }}
-  >
-    Action
-  </a>
-);
-
 export default (
   <SimpleBanner
     label="default"
     variant="default"
     showIcon
-    actionsOnlabel={<ActionButton />}
   />
 );

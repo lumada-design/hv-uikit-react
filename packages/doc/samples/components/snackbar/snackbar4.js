@@ -57,9 +57,9 @@ class SimpleSnackbar extends React.Component {
 
 const ActionButton = (
   <a
-    href="https://i.imgflip.com/yrj3h.jpg"
     style={{
-      color: "#146BD2",
+      cursor: "pointer",
+      color: "#414141",
       fontSize: "14px",
       letterSpacing: "0.02em",
       lineHeight: "20px",

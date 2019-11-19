@@ -25,59 +25,64 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
   usage: "import HvInput from '@hv/uikit-react-core/dist/Input'",
   examples: [
     {
-      title: "1. Simple",
+      title: "1. Simple input",
       description: "Simple input with basic labels",
       src: "components/input/inputSimple"
     },
     {
-      title: "2. Simple with icon info",
-      description: "Simple input with basic labels and icon info",
+      title: "2. Input with icon info",
+      description: "Showing the info icon instead of the info text bellow the input",
       src: "components/input/inputSimpleWithIconInfo"
     },
     {
-      title: "3. Disabled",
+      title: "3. Disabled input",
       description:
-        "Simple input with basic labels but disable not allowing interactions",
+        "Disabled input not allowing interactions",
       src: "components/input/inputSimpleDisable"
     },
     {
-      title: "4. No validation",
+      title: "4. Input in invalid validation state",
+      description: "Input created in invalid validation state showing the error message and the failed validation icon",
+      src: "components/input/inputSimpleInvalid"
+    },
+    {
+      title: "5. No validation",
       description:
         "Input that disables every type of validations not showing validation icons",
       src: "components/input/inputNoValidation"
     },
     {
-      title: "5. Limited",
+      title: "6. Limited",
       description:
         "input that includes validation of the max length of the string accepting up to 5 characters",
       src: "components/input/inputMax"
     },
     {
-      title: "6. Limited numeric",
+      title: "7. Limited numeric",
       description:
         "input that only accepts number, includes validation of the max length of the string accepting up to 5 characters",
       src: "components/input/inputMaxNumeric"
     },
     {
-      title: "7. Required limited numeric",
+      title: "8. Required limited numeric",
       description:
         "Required input, that only accepts number, includes validation of the max length of the string accepting up to 5 characters",
       src: "components/input/inputRequiredMaxNumeric"
     },
     {
-      title: "8. Email",
+      title: "9. Email",
       description:
         "Email required input, that only accepts valid email addresses",
       src: "components/input/inputEmail"
     },
     {
-      title: "9. Password",
+      title: "10. Password",
       description:
         "Password required input that only accepts the value ´password´, the value must be between 6 and 12 characters in length",
       src: "components/input/inputPassword"
     },
     {
-      title: "10. Custom validation",
+      title: "11. Custom validation",
       description:
         "Input with a custom validation function, it validates if the input contains the value `hello`",
       src: "components/input/inputCustomValidation"
@@ -95,7 +100,7 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     {
       title: "14. Custom input props",
       description:
-        "Using the input props to inject input custom props, this input will block values when exceeding 250 characters",
+        "Using the input props to inject input custom props, this input will block values when exceeding 25 characters",
       src: "components/input/inputCustomProps"
     },
     {

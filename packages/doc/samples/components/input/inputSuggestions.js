@@ -1,6 +1,6 @@
 import React from "react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
-import RawSearch from "@hv/uikit-react-icons/dist/Generic/Search";
+import Search from "@hv/uikit-react-icons/dist/Generic/Search";
 
 const labels = {
   placeholder: "Search",
@@ -32,20 +32,12 @@ const suggestionHandler = value => {
   }
 };
 
-const styles = {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-}
-
-const Search = () => <RawSearch boxStyles={styles} />
-
 export default (
   <HvInput
     labels={labels}
     id="test"
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item=>alert(item.label + " selected")}
+    suggestionSelectedCallback={item=>console.log(item.label + " selected")}
     customFixedIcon={<Search />}
   />
 );

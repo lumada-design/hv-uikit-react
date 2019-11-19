@@ -12,7 +12,8 @@ pipeline {
         booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
         booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
-        booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus and documentation.')
+        booleanParam(name: 'skipPublishDoc', defaultValue: true, description: 'when true, skip publish documentation.')
+        booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.')
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
     }
@@ -69,10 +70,10 @@ pipeline {
                     }
                     when {
                         beforeAgent true
+                        expression { !params.skipAutomationTest }
                         anyOf {
                             changeRequest target: 'master'
-                            branch 'master'    
-                            environment name:'params.skipAutomationTest', value: 'false'
+                            branch 'master'
                         }
                     }
                     steps {
@@ -126,12 +127,11 @@ pipeline {
             }
         }
         stage('Publish') {
-            when {
-                branch 'master'
-                expression {  !params.skipPublish && !env.CHANGE_ID }
-            }
             parallel {
                 stage('Publish Documentation') {
+                    when {
+                         expression {  !params.skipPublishDoc && !env.CHANGE_ID }
+                    }
                     steps {
                         withNPM(npmrcConfig: 'hv-ui-nprc') {
                             withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
@@ -145,6 +145,8 @@ pipeline {
                 
                 stage('Publish Packages') {
                     when {
+                        branch 'master'
+                        expression {  !params.skipPublish && !env.CHANGE_ID }
                         triggeredBy 'UpstreamCause'
                     }
                     steps {

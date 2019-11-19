@@ -42,22 +42,31 @@ describe("InputAdornment", () => {
   };
 
   const StyledInputAdornment = withStyles({
-    iconFlexBox: {
+    adornmentsBox: {
       display: "flex",
-      flexDirection: "row"
+      flexDirection: "row",
+      height: 30,
+      justifyContent:"center"
     },
-    icon: {
-      width: `${theme.hv.spacing.md}px`,
-      height: `${theme.hv.spacing.md}px`
-    },
-    iconContainer: {
-      width: `${theme.hv.spacing.md}px`,
-      height: `${theme.hv.spacing.md}px`
-    },
-    iconClear: {
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",
+    adornmentButton: {
+      backgroundColor: "transparent",
+      border: "none",
+      padding: 0,
+      margin: 0,
       cursor: "pointer"
+    },
+    adornmentIconBox: {
+      width: `${theme.hv.spacing.md}px`,
+      height: `${theme.hv.spacing.md}px`,
+      position: "relative",
+      "& svg": {
+        position: "absolute",
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        margin: "auto"
+      }
     }
   }, {withTheme: true})(InputAdornment);
 
@@ -80,13 +89,13 @@ describe("InputAdornment", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should call handleClear when mouseDown", () => {
-    wrapper.find('[role="button"]').simulate("mousedown");
+  it("should call handleClear when mouseDown on the clear button", () => {
+    wrapper.find('button').simulate("mousedown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should call handleClear when keydown", () => {
-    wrapper.find('[role="button"]').simulate("keydown");
+    wrapper.find('button').simulate("keydown", {keyCode: 13});
     expect(handleClearMock).toHaveBeenCalled();
   });
 
@@ -95,14 +104,14 @@ describe("InputAdornment", () => {
       <HvProvider>
         <StyledInputAdornment
           classes={{}}
-          validationState={validationStates.valid}
+          validationState={validationStates.empty}
           handleClear={handleClearMock}
           theme={theme}
         />
       </HvProvider>
     );
 
-    wrapper.simulate("keydown");
+    wrapper.simulate("keydown", {keyCode: 13});
     wrapper.simulate("mousedown");
 
     expect(handleClearMock).not.toHaveBeenCalled();

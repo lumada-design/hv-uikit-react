@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-const styles = () => ({
+const styles = theme => ({
   root: {
-    padding: 0,
+    padding:`40px 0 0 ${theme.hv.spacing.sm}px`,
     margin: 0
   },
   messageContainer: {
     display: "flex",
   },
   textWithIcon: {
-    paddingLeft: "58px"
+    paddingLeft: 58
+  },
+  textWithCustomIcon: {
+    paddingLeft: 58,
   },
   icon: {
     position:"absolute",
@@ -32,6 +35,9 @@ const styles = () => ({
     maxHeight: "48px",
     minWidth: "48px",
     minHeight: "48px",
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center"
   }
 });
 

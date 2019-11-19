@@ -37,8 +37,8 @@ const labels = {
   requiredWarningText: "requiredWarningText"
 };
 
-const testState = (infoText, state, value, instance) => {
-  expect(instance.state.infoText).toBe(infoText);
+const testState = (warningText, state, value, instance) => {
+  expect(instance.state.warningText).toBe(warningText);
   expect(instance.state.validationState).toBe(state);
   expect(instance.state.value).toBe(value);
 };
@@ -115,7 +115,7 @@ describe("Input", () => {
     );
     const inputInstance = getInput(wrapper);
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       inputText,
       inputInstance
@@ -160,7 +160,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -184,7 +184,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onFocusHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.empty,
       inputText,
       inputInstance
@@ -212,7 +212,7 @@ describe("Input", () => {
       target: { name: "test", value: defaultInputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -240,7 +240,7 @@ describe("Input", () => {
       target: { name: "test", value: defaultInputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -248,7 +248,7 @@ describe("Input", () => {
   });
 
   it("should fill the suggestion array", () => {
-    const suggestions = [{label: "test"}];
+    const suggestions = [{ label: "test" }];
     const inputText = "test2";
     const defaultInputText = "test1";
     const suggestionHandler = () => suggestions;
@@ -284,7 +284,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.suggestionSelectedHandler({label: "test"});
+    inputInstance.suggestionSelectedHandler({ label: "test" });
     expect(suggestionSelected).toHaveBeenCalled();
   });
 
@@ -308,7 +308,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -317,7 +317,7 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -351,7 +351,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -360,7 +360,7 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -425,7 +425,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -434,7 +434,7 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -471,7 +471,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -480,7 +480,7 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.filled,
       inputText,
       inputInstance
@@ -517,7 +517,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -526,7 +526,7 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.empty,
       inputText,
       inputInstance
@@ -562,7 +562,7 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.valid,
       defaultInputText,
       inputInstance
@@ -571,14 +571,14 @@ describe("Input", () => {
       target: { name: "test", value: inputText }
     });
     testState(
-      labels.infoText,
+      null,
       validationStates.empty,
       inputText,
       inputInstance
     );
     inputInstance.onInputBlurHandler();
     testState(
-      labels.infoText,
+      null,
       validationStates.empty,
       inputText,
       inputInstance
@@ -595,7 +595,7 @@ describe("Input", () => {
     );
     const inputInstance = getInput(wrapper);
     inputInstance.handleClear();
-    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.warningText).toBe(null);
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText);
   });
@@ -628,7 +628,7 @@ describe("Input", () => {
     };
 
     const inputInstance = getInputInstance(defaultProps, inputText2);
-    expect(inputInstance.state.infoText).toBe(labels.infoText);
+    expect(inputInstance.state.warningText).toBe(null);
     expect(inputInstance.state.validationState).toBe(validationStates.empty);
     expect(inputInstance.state.value).toBe(inputText2);
   });
@@ -655,5 +655,49 @@ describe("Input", () => {
     expect(iconInfo.length).toBe(0);
     const labelParagraph = wrapper.find("p");
     expect(labelParagraph.length).toBe(2);
+  });
+
+  const getWrapper = wrap => {
+    const invalidInputClassRegEx = /inputRootInvalid/g;
+    return invalidInputClassRegEx.exec(wrap.html());
+  };
+
+  it("should correctly outline input on error/correct state", () => {
+    const inputText1 = "";
+    const inputText2 = "Some Value";
+    const defaultProps = {
+      initialValue: inputText1,
+      inputValue: "",
+      validationState: "invalid"
+    };
+
+    wrapper = mount(
+      <HvProvider>
+        <InputWithStyles
+          initialValue={defaultProps.initialValue}
+          inputValue={defaultProps.inputValue}
+          labels={labels}
+          validationState={defaultProps.validationState}
+        />
+      </HvProvider>
+    );
+
+    const inputComponent = wrapper.find(Input).instance();
+
+    expect(inputComponent.state.validationState).toBe(validationStates.invalid);
+    expect(inputComponent.state.inputValue).toBe(undefined);
+    // check for invalid class applied to input
+    expect(getWrapper(wrapper).length).toBe(1);
+
+    inputComponent.setState({
+      inputValue: inputText2,
+      validationState: "filled"
+    });
+    wrapper.update();
+
+    expect(inputComponent.state.validationState).toBe(validationStates.filled);
+    expect(inputComponent.state.inputValue).toBe(inputText2);
+    // check for invalid class applied to input -> should not be applied
+    expect(getWrapper(wrapper)).toBe(null);
   });
 });

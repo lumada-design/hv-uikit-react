@@ -19,17 +19,11 @@ import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import { makeStyles } from "@material-ui/styles";
 import HvBannerContentWrapper from "./BannerWrapper";
 
-const useStyles = makeStyles({
-  anchorOriginTopCenter: {
-    top: offset => `${offset}px`
-  },
-  anchorOriginBottomCenter: {
-    bottom: offset => `${offset}px`
-  }
-});
+// TODO: review to use makeStyles during the Material 4 upgrade as 4988d7987a4fecf6bb33d539d476885d95acb8f8
+
+const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
 
 /**
  * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
@@ -59,22 +53,33 @@ const HvBanner = props => {
     offset
   } = props;
 
+  const anchorOriginOffset = offset && {
+    anchorOriginTop: {
+      top: `${offset}px`
+    },
+    anchorOriginBottom: {
+      bottom: `${offset}px`
+    }
+  };
+
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
   const SlideTransition = properties => (
     <Slide {...properties} direction={transitionDirection} />
   );
 
-  const classOffset = offset ? useStyles(offset) : classes;
-
   const bannerClasses = {
-    anchorOriginTopCenter: classOffset.anchorOriginTopCenter,
-    anchorOriginBottomCenter: classOffset.anchorOriginBottomCenter
+    anchorOriginTopCenter: classes.anchorOriginTopCenter,
+    anchorOriginBottomCenter: classes.anchorOriginBottomCenter
   };
   bannerClasses.root = open ? classes.root : classes.rootClosed;
 
   return (
     <Snackbar
+      {...offset && {
+        style:
+          anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
+      }}
       className={className}
       id={id}
       classes={bannerClasses}

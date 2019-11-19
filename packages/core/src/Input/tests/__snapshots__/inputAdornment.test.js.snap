@@ -4563,10 +4563,9 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "icon": "InputAdornment-icon-2",
-                "iconClear": "InputAdornment-iconClear-4",
-                "iconContainer": "InputAdornment-iconContainer-3",
-                "iconFlexBox": "InputAdornment-iconFlexBox-1",
+                "adornmentButton": "InputAdornment-adornmentButton-2",
+                "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
+                "adornmentsBox": "InputAdornment-adornmentsBox-1",
               },
               "deployed": true,
               "linked": false,
@@ -4574,10 +4573,9 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "InputAdornment",
                 "classes": Object {
-                  "icon": "InputAdornment-icon-2",
-                  "iconClear": "InputAdornment-iconClear-4",
-                  "iconContainer": "InputAdornment-iconContainer-3",
-                  "iconFlexBox": "InputAdornment-iconFlexBox-1",
+                  "adornmentButton": "InputAdornment-adornmentButton-2",
+                  "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
+                  "adornmentsBox": "InputAdornment-adornmentsBox-1",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5065,22 +5063,31 @@ body {
                   data-meta="InputAdornment"
                 >
                   
-.InputAdornment-iconFlexBox-1 {
+.InputAdornment-adornmentsBox-1 {
+  height: 30px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
-.InputAdornment-icon-2 {
-  width: 10px;
-  height: 10px;
-}
-.InputAdornment-iconContainer-3 {
-  width: 10px;
-  height: 10px;
-}
-.InputAdornment-iconClear-4 {
+.InputAdornment-adornmentButton-2 {
+  border: none;
+  margin: 0;
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 0;
+  background-color: transparent;
+}
+.InputAdornment-adornmentIconBox-3 {
+  width: 10px;
+  height: 10px;
+  position: relative;
+}
+.InputAdornment-adornmentIconBox-3 svg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
 }
 
                 </style>,
@@ -5095,74 +5102,91 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "icon": "InputAdornment-icon-2",
-                  "iconClear": "InputAdornment-iconClear-4",
-                  "iconContainer": "InputAdornment-iconContainer-3",
-                  "iconFlexBox": "InputAdornment-iconFlexBox-1",
+                  "adornmentButton": "InputAdornment-adornmentButton-2",
+                  "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
+                  "adornmentsBox": "InputAdornment-adornmentsBox-1",
                 },
                 "index": Array [
                   Object {
                     "display": "flex",
                     "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
                   },
                   Object {
-                    "height": "10px",
-                    "width": "10px",
-                  },
-                  Object {
-                    "height": "10px",
-                    "width": "10px",
-                  },
-                  Object {
-                    "background-position": "center",
-                    "background-repeat": "no-repeat",
+                    "background-color": "transparent",
+                    "border": "none",
                     "cursor": "pointer",
+                    "margin": 0,
+                    "padding": 0,
+                  },
+                  Object {
+                    "height": "10px",
+                    "position": "relative",
+                    "width": "10px",
+                  },
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
                   },
                 ],
                 "map": Object {
-                  ".InputAdornment-icon-2": Object {
-                    "height": "10px",
-                    "width": "10px",
-                  },
-                  ".InputAdornment-iconClear-4": Object {
-                    "background-position": "center",
-                    "background-repeat": "no-repeat",
+                  ".InputAdornment-adornmentButton-2": Object {
+                    "background-color": "transparent",
+                    "border": "none",
                     "cursor": "pointer",
+                    "margin": 0,
+                    "padding": 0,
                   },
-                  ".InputAdornment-iconContainer-3": Object {
+                  ".InputAdornment-adornmentIconBox-3": Object {
                     "height": "10px",
+                    "position": "relative",
                     "width": "10px",
                   },
-                  ".InputAdornment-iconFlexBox-1": Object {
+                  ".InputAdornment-adornmentIconBox-3 svg": Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  ".InputAdornment-adornmentsBox-1": Object {
                     "display": "flex",
                     "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
                   },
-                  "icon": Object {
-                    "height": "10px",
-                    "width": "10px",
-                  },
-                  "iconClear": Object {
-                    "background-position": "center",
-                    "background-repeat": "no-repeat",
+                  "adornmentButton": Object {
+                    "background-color": "transparent",
+                    "border": "none",
                     "cursor": "pointer",
+                    "margin": 0,
+                    "padding": 0,
                   },
-                  "iconContainer": Object {
+                  "adornmentIconBox": Object {
                     "height": "10px",
+                    "position": "relative",
                     "width": "10px",
                   },
-                  "iconFlexBox": Object {
+                  "adornmentsBox": Object {
                     "display": "flex",
                     "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
                   },
                 },
                 "options": Object {
                   "Renderer": [Function],
                   "classNamePrefix": "InputAdornment",
                   "classes": Object {
-                    "icon": "InputAdornment-icon-2",
-                    "iconClear": "InputAdornment-iconClear-4",
-                    "iconContainer": "InputAdornment-iconContainer-3",
-                    "iconFlexBox": "InputAdornment-iconFlexBox-1",
+                    "adornmentButton": "InputAdornment-adornmentButton-2",
+                    "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
+                    "adornmentsBox": "InputAdornment-adornmentsBox-1",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5645,22 +5669,39 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  "icon": Object {
-                    "height": "10px",
-                    "width": "10px",
+                  ".InputAdornment-adornmentIconBox-3 svg": Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
                   },
-                  "iconClear": Object {
-                    "backgroundPosition": "center",
-                    "backgroundRepeat": "no-repeat",
+                  "adornmentButton": Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
                     "cursor": "pointer",
+                    "margin": 0,
+                    "padding": 0,
                   },
-                  "iconContainer": Object {
+                  "adornmentIconBox": Object {
+                    "& svg": Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
                     "height": "10px",
+                    "position": "relative",
                     "width": "10px",
                   },
-                  "iconFlexBox": Object {
+                  "adornmentsBox": Object {
                     "display": "flex",
                     "flexDirection": "row",
+                    "height": 30,
+                    "justifyContent": "center",
                   },
                 },
                 "update": [Function],
@@ -6607,11 +6648,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "rootL": "CloseXS-rootL-8",
-                "rootM": "CloseXS-rootM-7",
-                "rootS": "CloseXS-rootS-6",
-                "rootXL": "CloseXS-rootXL-9",
-                "rootXs": "CloseXS-rootXs-5",
+                "rootL": "CloseXS-rootL-7",
+                "rootM": "CloseXS-rootM-6",
+                "rootS": "CloseXS-rootS-5",
+                "rootXL": "CloseXS-rootXL-8",
+                "rootXs": "CloseXS-rootXs-4",
               },
               "deployed": true,
               "linked": false,
@@ -6619,11 +6660,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "CloseXS",
                 "classes": Object {
-                  "rootL": "CloseXS-rootL-8",
-                  "rootM": "CloseXS-rootM-7",
-                  "rootS": "CloseXS-rootS-6",
-                  "rootXL": "CloseXS-rootXL-9",
-                  "rootXs": "CloseXS-rootXs-5",
+                  "rootL": "CloseXS-rootL-7",
+                  "rootM": "CloseXS-rootM-6",
+                  "rootS": "CloseXS-rootS-5",
+                  "rootXL": "CloseXS-rootXL-8",
+                  "rootXs": "CloseXS-rootXs-4",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7111,23 +7152,23 @@ body {
                   data-meta="CloseXS"
                 >
                   
-.CloseXS-rootXs-5 {
+.CloseXS-rootXs-4 {
   width: 12px;
   height: 12px;
 }
-.CloseXS-rootS-6 {
+.CloseXS-rootS-5 {
   width: 16px;
   height: 16px;
 }
-.CloseXS-rootM-7 {
+.CloseXS-rootM-6 {
   width: 32px;
   height: 32px;
 }
-.CloseXS-rootL-8 {
+.CloseXS-rootL-7 {
   width: 96px;
   height: 96px;
 }
-.CloseXS-rootXL-9 {
+.CloseXS-rootXL-8 {
   width: 128px;
   height: 128px;
 }
@@ -7144,11 +7185,11 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "rootL": "CloseXS-rootL-8",
-                  "rootM": "CloseXS-rootM-7",
-                  "rootS": "CloseXS-rootS-6",
-                  "rootXL": "CloseXS-rootXL-9",
-                  "rootXs": "CloseXS-rootXs-5",
+                  "rootL": "CloseXS-rootL-7",
+                  "rootM": "CloseXS-rootM-6",
+                  "rootS": "CloseXS-rootS-5",
+                  "rootXL": "CloseXS-rootXL-8",
+                  "rootXs": "CloseXS-rootXs-4",
                 },
                 "index": Array [
                   Object {
@@ -7173,23 +7214,23 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".CloseXS-rootL-8": Object {
+                  ".CloseXS-rootL-7": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".CloseXS-rootM-7": Object {
+                  ".CloseXS-rootM-6": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".CloseXS-rootS-6": Object {
+                  ".CloseXS-rootS-5": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".CloseXS-rootXL-9": Object {
+                  ".CloseXS-rootXL-8": Object {
                     "height": "128px",
                     "width": "128px",
                   },
-                  ".CloseXS-rootXs-5": Object {
+                  ".CloseXS-rootXs-4": Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -7218,11 +7259,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "CloseXS",
                   "classes": Object {
-                    "rootL": "CloseXS-rootL-8",
-                    "rootM": "CloseXS-rootM-7",
-                    "rootS": "CloseXS-rootS-6",
-                    "rootXL": "CloseXS-rootXL-9",
-                    "rootXs": "CloseXS-rootXs-5",
+                    "rootL": "CloseXS-rootL-7",
+                    "rootM": "CloseXS-rootM-6",
+                    "rootS": "CloseXS-rootS-5",
+                    "rootXL": "CloseXS-rootXL-8",
+                    "rootXs": "CloseXS-rootXs-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -8692,15 +8733,17 @@ body {
       <InputAdornment
         classes={
           Object {
-            "icon": "InputAdornment-icon-2",
-            "iconClear": "InputAdornment-iconClear-4",
-            "iconContainer": "InputAdornment-iconContainer-3",
-            "iconFlexBox": "InputAdornment-iconFlexBox-1",
+            "adornmentButton": "InputAdornment-adornmentButton-2",
+            "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
+            "adornmentsBox": "InputAdornment-adornmentsBox-1",
           }
         }
+        clearButtonLabel="Clear the text"
         customFixedIcon={null}
-        disableClear={false}
         handleClear={[MockFunction]}
+        inputId={null}
+        showClear={true}
+        showValidationIcon={true}
         theme={
           Object {
             "hv": Object {
@@ -8716,29 +8759,34 @@ body {
             },
           }
         }
-        validationIconVisible={true}
         validationState="filled"
       >
         <div
-          className="InputAdornment-iconFlexBox-1"
+          aria-hidden="true"
+          className="InputAdornment-adornmentsBox-1"
         >
-          <div
-            className="InputAdornment-icon-2 InputAdornment-iconClear-4"
+          <button
+            aria-hidden="true"
+            aria-label="Clear the text"
+            className="InputAdornment-adornmentButton-2"
             onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            role="button"
-            tabIndex={-1}
+            onMouseDown={[MockFunction]}
+            tabIndex="-1"
+            title="Clear the text"
+            type="button"
           >
-            <WithStyles(CloseXS)>
+            <WithStyles(CloseXS)
+              className="InputAdornment-adornmentIconBox-3"
+            >
               <CloseXS
-                className=""
+                className="InputAdornment-adornmentIconBox-3"
                 classes={
                   Object {
-                    "rootL": "CloseXS-rootL-8",
-                    "rootM": "CloseXS-rootM-7",
-                    "rootS": "CloseXS-rootS-6",
-                    "rootXL": "CloseXS-rootXL-9",
-                    "rootXs": "CloseXS-rootXs-5",
+                    "rootL": "CloseXS-rootL-7",
+                    "rootM": "CloseXS-rootM-6",
+                    "rootS": "CloseXS-rootS-5",
+                    "rootXL": "CloseXS-rootXL-8",
+                    "rootXs": "CloseXS-rootXs-4",
                   }
                 }
                 color={null}
@@ -9677,7 +9725,7 @@ body {
                 width={null}
               >
                 <div
-                  className="CloseXS-rootXs-5"
+                  className="InputAdornment-adornmentIconBox-3 CloseXS-rootXs-4"
                 >
                   <svg
                     height="12px"
@@ -9694,7 +9742,7 @@ body {
                 </div>
               </CloseXS>
             </WithStyles(CloseXS)>
-          </div>
+          </button>
         </div>
       </InputAdornment>
     </WithStyles(InputAdornment)>

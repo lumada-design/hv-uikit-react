@@ -3,10 +3,8 @@ import HvInput from "@hv/uikit-react-core/dist/Input";
 
 const labels = {
   placeholder: "Insert text",
-  infoText: "Info",
-  inputLabel: "Label",
-  warningText: "Error",
-  maxCharQuantityWarningText: "Max characters exceeded"
+  infoText: "Look at the browser's developer console to see the event handlers output",
+  inputLabel: "Text I will modify"
 };
 
 export default (

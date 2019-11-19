@@ -91,8 +91,7 @@ class HvTextArea extends React.Component {
 
   isScrolledDown = () => {
     const el = this.textInputRef.current;
-    return el == null ||
-      el.scrollHeight - el.scrollTop === el.clientHeight;
+    return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
   };
 
   scrollDown = () => {
@@ -108,7 +107,7 @@ class HvTextArea extends React.Component {
         this.setState({ autoScrolling: this.isScrolledDown() });
       }
     };
-    this.textInputRef.current.addEventListener('scroll', scrollHandler);
+    this.textInputRef.current.addEventListener("scroll", scrollHandler);
   };
 
   /**
@@ -125,7 +124,7 @@ class HvTextArea extends React.Component {
     const textAreaValue = this.limitValue(!isNil(newValue) ? newValue : value);
 
     this.setState({
-      currentValueLength: textAreaValue.length,
+      currentValueLength: textAreaValue.length
     });
     return newValue;
   };
@@ -142,66 +141,76 @@ class HvTextArea extends React.Component {
       value,
       initialValue,
       inputValue,
-      disabled
+      disabled,
+      resizable
     } = this.props;
 
     const { currentValueLength } = this.state;
     const val = value || initialValue;
+
     return (
-      <>
-        <Input
-          classes={{
-            container: classes.container,
-            input: classes.input
-          }}
-          className={className}
-          id={id}
-          labels={inputTextConfiguration || labels}
-          initialValue={this.limitValue(val)}
-          inputValue={this.limitValue(inputValue)}
-          onChange={this.onChangeHandler}
-          multiline
-          rows={rows}
-          disabled={disabled}
-          showInfo={false}
-          validationIconVisible={false}
-          inputRef={this.textInputRef}
-        />
-        {maxCharQuantity ? (
-          <div className={classes.characterCounter}>
-            <HvTypography
-              className={classNames(classes.inline, {
-                [classes.currentCounter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="labelText"
-            >
-              {currentValueLength}
-            </HvTypography>
-            <HvTypography
-              className={classNames(classes.inline, classes.separator, {
-                [classes.maxCharacter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="infoText"
-            >
-              /
-            </HvTypography>
-            <HvTypography
-              className={classNames(classes.inline, {
-                [classes.maxCharacter]: !disabled,
-                [classes.disabled]: disabled
-              })}
-              variant="infoText"
-            >
-              {maxCharQuantity}
-            </HvTypography>
-          </div>
-        ) : null}
-      </>
+      <div>
+        <div className={classes.textAreaContainer}>
+          <Input
+            classes={{
+              container: classes.container,
+              input: classNames(classes.input, {
+                [classes.resize]: !disabled && resizable,
+                [classes.defaultWith]: !resizable
+              }),
+              inputRoot: classes.inputRoot,
+              inputRootDisabled: classes.inputRootDisabled,
+              inputRootFocused: classes.inputRootFocused
+            }}
+            className={className}
+            id={id}
+            labels={inputTextConfiguration || labels}
+            initialValue={this.limitValue(val)}
+            inputValue={this.limitValue(inputValue)}
+            onChange={this.onChangeHandler}
+            multiline
+            rows={rows}
+            disabled={disabled}
+            showInfo={false}
+            validationIconVisible={false}
+            disableClear
+            inputRef={this.textInputRef}
+          />
+          {maxCharQuantity ? (
+            <div className={classes.characterCounter}>
+              <HvTypography
+                className={classNames(classes.inline, {
+                  [classes.currentCounter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="labelText"
+              >
+                {currentValueLength}
+              </HvTypography>
+              <HvTypography
+                className={classNames(classes.inline, classes.separator, {
+                  [classes.maxCharacter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="infoText"
+              >
+                /
+              </HvTypography>
+              <HvTypography
+                className={classNames(classes.inline, {
+                  [classes.maxCharacter]: !disabled,
+                  [classes.disabled]: disabled
+                })}
+                variant="infoText"
+              >
+                {maxCharQuantity}
+              </HvTypography>
+            </div>
+          ) : null}
+        </div>
+      </div>
     );
   }
-
 }
 
 // [classes.currentCounter]:!disabled,[classes.disabled]:disabled
@@ -223,6 +232,26 @@ HvTextArea.propTypes = {
      * Style applied on the text area input box.
      */
     input: PropTypes.string,
+    /**
+     * Style applied when resizable is `true`. Can be used to set max/min width.
+     */
+    resize: PropTypes.string,
+    /**
+     * Styles applied to input root which is comprising of everything but the labels and descriptions.
+     */
+    inputRoot: PropTypes.string,
+    /**
+     * Styles applied to input root when it is disabled.
+     */
+    inputRootDisabled: PropTypes.string,
+    /**
+     * Styles applied to input root when it is focused.
+     */
+    inputRootFocused: PropTypes.string,
+    /**
+     * Style applied defining the width when resizable is `false`.
+     */
+    defaultWith: PropTypes.string,
     /**
      * Style applied on the character counter.
      */
@@ -250,7 +279,11 @@ HvTextArea.propTypes = {
     /**
      * Style applied to the input container.
      */
-    container: PropTypes.string
+    container: PropTypes.string,
+    /**
+     * Style applied container of the text area component.
+     */
+    textAreaContainer: PropTypes.string
   }).isRequired,
   /**
    * An Object containing the various text associated with the text area.
@@ -328,6 +361,10 @@ HvTextArea.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
+   * If ´true´ the component is resizable.
+   */
+  resizable: PropTypes.bool,
+  /**
    * Auto-scroll: automatically scroll to the end on inputValue changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
@@ -353,7 +390,8 @@ HvTextArea.defaultProps = {
   inputValue: undefined,
   maxCharQuantity: undefined,
   onChange: value => value,
-  autoScroll: false
+  autoScroll: false,
+  resizable: false
 };
 
 export default HvTextArea;

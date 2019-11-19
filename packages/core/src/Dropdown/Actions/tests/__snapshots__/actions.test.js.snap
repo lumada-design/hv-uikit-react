@@ -7077,7 +7077,7 @@ body {
   min-height: 32px;
   line-height: 20px;
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 0.02em;
 }
 .HvButton-root-2:focus {
@@ -7143,7 +7143,7 @@ body {
   background-color: #F0F0F0;
 }
 .HvButton-ghost-7 {
-  color: #146BD2;
+  color: #414141;
   background-color: transparent;
 }
 .HvButton-ghost-7:hover {
@@ -7172,7 +7172,7 @@ body {
   background-color: transparent;
 }
 .HvButton-ghostSecondary-9 {
-  color: #414141;
+  color: #146BD2;
   background-color: transparent;
 }
 .HvButton-ghostSecondary-9:hover {
@@ -7235,7 +7235,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   Object {},
                   Object {},
@@ -7303,7 +7303,7 @@ body {
                   },
                   Object {
                     "background-color": "transparent",
-                    "color": "#146BD2",
+                    "color": "#414141",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -7332,7 +7332,7 @@ body {
                   },
                   Object {
                     "background-color": "transparent",
-                    "color": "#414141",
+                    "color": "#146BD2",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -7363,7 +7363,7 @@ body {
                 "map": Object {
                   ".HvButton-ghost-7": Object {
                     "background-color": "transparent",
-                    "color": "#146BD2",
+                    "color": "#414141",
                   },
                   ".HvButton-ghost-7.HvButton-ghostDisabled-8": Object {
                     "background-color": "transparent",
@@ -7392,7 +7392,7 @@ body {
                   },
                   ".HvButton-ghostSecondary-9": Object {
                     "background-color": "transparent",
-                    "color": "#414141",
+                    "color": "#146BD2",
                   },
                   ".HvButton-ghostSecondary-9.HvButton-ghostSecondaryDisabled-10": Object {
                     "background-color": "transparent",
@@ -7457,7 +7457,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   ".HvButton-root-2:active": Object {},
                   ".HvButton-root-2:focus": Object {
@@ -7498,7 +7498,7 @@ body {
                   },
                   "ghost": Object {
                     "background-color": "transparent",
-                    "color": "#146BD2",
+                    "color": "#414141",
                   },
                   "ghostDisabled": Object {
                     "background-color": "transparent",
@@ -7507,7 +7507,7 @@ body {
                   },
                   "ghostSecondary": Object {
                     "background-color": "transparent",
-                    "color": "#414141",
+                    "color": "#146BD2",
                   },
                   "ghostSecondaryDisabled": Object {
                     "background-color": "transparent",
@@ -7534,7 +7534,7 @@ body {
                     "min-height": "32px",
                     "min-width": "70px",
                     "padding": "0 10px",
-                    "text-transform": "capitalize",
+                    "text-transform": "none",
                   },
                   "secondary": Object {
                     "background-color": "#FFFFFF",
@@ -8149,7 +8149,7 @@ body {
                       "backgroundColor": "#F0F0F0",
                     },
                     "backgroundColor": "transparent",
-                    "color": "#146BD2",
+                    "color": "#414141",
                   },
                   "ghostDisabled": Object {
                     "backgroundColor": "transparent",
@@ -8178,7 +8178,7 @@ body {
                       "backgroundColor": "#F0F0F0",
                     },
                     "backgroundColor": "transparent",
-                    "color": "#414141",
+                    "color": "#146BD2",
                   },
                   "ghostSecondaryDisabled": Object {
                     "backgroundColor": "transparent",
@@ -8228,7 +8228,7 @@ body {
                     "minHeight": "32px",
                     "minWidth": "70px",
                     "padding": "0 10px",
-                    "textTransform": "capitalize",
+                    "textTransform": "none",
                   },
                   "secondary": Object {
                     "&$secondaryDisabled": Object {

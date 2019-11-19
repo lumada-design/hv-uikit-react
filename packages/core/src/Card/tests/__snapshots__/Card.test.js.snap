@@ -12031,7 +12031,7 @@ body {
   letter-spacing: 0.02em;
 }
 .Header-subheader-54 {
-  color: #999999;
+  color: #414141;
   font-size: 12px;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   line-height: 16px;
@@ -12040,6 +12040,7 @@ body {
   letter-spacing: 0.02em;
 }
 .Header-action-55 {
+  top: 15px;
   right: 20px;
   position: absolute;
   margin-top: 0;
@@ -12090,7 +12091,7 @@ body {
                     "margin-right": "30px",
                   },
                   Object {
-                    "color": "#999999",
+                    "color": "#414141",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                     "font-size": "12px",
                     "font-weight": "400",
@@ -12104,6 +12105,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   Object {},
                 ],
@@ -12114,6 +12116,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   ".Header-content-56": Object {},
                   ".Header-root-51": Object {
@@ -12122,7 +12125,7 @@ body {
                     "position": "relative",
                   },
                   ".Header-subheader-54": Object {
-                    "color": "#999999",
+                    "color": "#414141",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                     "font-size": "12px",
                     "font-weight": "400",
@@ -12153,6 +12156,7 @@ body {
                     "padding-left": "10px",
                     "position": "absolute",
                     "right": "20px",
+                    "top": "15px",
                   },
                   "content": Object {},
                   "root": Object {
@@ -12161,7 +12165,7 @@ body {
                     "position": "relative",
                   },
                   "subheader": Object {
-                    "color": "#999999",
+                    "color": "#414141",
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                     "font-size": "12px",
                     "font-weight": "400",
@@ -12685,6 +12689,7 @@ body {
                     "paddingLeft": "10px",
                     "position": "absolute",
                     "right": 20,
+                    "top": "15px",
                   },
                   "content": Object {},
                   "root": Object {
@@ -12693,7 +12698,7 @@ body {
                     "position": "relative",
                   },
                   "subheader": Object {
-                    "color": "#999999",
+                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",

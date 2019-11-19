@@ -15,11 +15,18 @@
  */
 
 const styles = theme => ({
+  message: {
+    ...theme.hv.typography.normalText,
+    color: theme.hv.palette.base.base2,
+    wordBreak: "break-all",
+    maxHeight: "80px",
+    overflow: "hidden",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 3,
+    "-webkit-box-orient": "vertical"
+  },
   messageWithoutIcon: {
     paddingLeft: `${theme.hv.spacing.sm}px`
-  },
-  messageWithoutAction: {
-    paddingRight: `${theme.hv.spacing.sm}px`
   },
   actionMessageContainer: {
     padding: `${theme.hv.spacing.xs}px`,

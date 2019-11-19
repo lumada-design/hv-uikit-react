@@ -1,4 +1,11 @@
 import React from "react";
 import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 
-export default <HvTextArea id="test"/>;
+const labels = {
+  inputLabel: "Label",
+  placeholder: "Enter value"
+};
+
+export default (
+  <HvTextArea label="Text Area" labels={labels} id="test" width={610} />
+);

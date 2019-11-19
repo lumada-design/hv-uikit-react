@@ -22,6 +22,6 @@ snackbar 4. With actions renders an action
     Click Button                     Click Me
     Wait Until Page Contains         This is a snackbar
     Element Should Be Visible        client-snackbar
-    Element Should Be Visible        //a[@href='https://i.imgflip.com/yrj3h.jpg' and text()='Action']
+    Element Should Be Visible        //a[text()='Action']
     Sleep                            6s
     Element Should Not Be Visible    client-snackbar

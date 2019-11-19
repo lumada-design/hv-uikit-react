@@ -16,7 +16,6 @@ The robot framework scripts
     |                                   | `pip install PyYAML`                                                            | for YAML files support                |
     |                                   | `pip install robotframework`                                                    | framework for all related libraries   |
     |                                   | `pip install robotframework-seleniumlibrary`                                    | Selenium Library                      |
-    |                                   | `pip install robotframework-eyes`                                               | Image comparation Library             |
     | Install Firefox Browser           | https://www.mozilla.org/en-US/firefox/download/thanks/                          |                                       |
     | Disable Firefox updates           | https://support.mozilla.org/en-US/questions/1265295                             |                                       |
     | Install Chrome Browser            | https://www.google.com/chrome/                                                  |                                       |
@@ -61,19 +60,11 @@ The robot framework scripts
 
     | Package                         | Version | Usage                                     |
     | ------------------------------- | ------- | ----------------------------------------- |
-    | Click                           | 7.0     | robotframework-eyes dependency            |
-    | Flask                           | 1.1.1   | robotframework-eyes dependency            |
-    | itsdangerous                    | 1.1.0   | robotframework-eyes dependency            |
-    | Jinja2                          | 2.10.1  | robotframework-eyes dependency            |
-    | MarkupSafe                      | 1.1.1   | robotframework-eyes dependency            |
-    | Pillow                          | 6.1.0   | robotframework-eyes dependency            |
     | pip                             | 19.2.3  |                                           |
     | PyYAML                          | 5.1.2   |                                           |
     | robotframework                  | 3.1.2   |                                           |
-    | robotframework-eyes             | 1.1.1   |                                           |
     | robotframework-selenium2library | 3.0.0   | robotframework-seleniumlibrary dependency |
     | robotframework-seleniumlibrary  | 3.3.1   | robotframework-seleniumlibrary dependency |
     | selenium                        | 3.141.0 | robotframework-seleniumlibrary dependency |
     | setuptools                      | 40.8.0  |                                           |
     | urllib3                         | 1.25.3  | robotframework-seleniumlibrary dependency |
-    | Werkzeug                        | 0.15.5  | robotframework-eyes dependency            |

@@ -112,36 +112,34 @@ const styles = theme => ({
   textWarning: {
     color: theme.hv.palette.accent.acce1
   },
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  },
-  closeBox: {
-    width: "30px",
-    height: "30px",
-    paddingTop: "10px",
-    "& svg": {
-      display: "block",
-      margin: "auto"
-    }
-  },
-  iconFlexBox: {
+
+  adornmentsBox: {
     display: "flex",
     flexDirection: "row",
     height: 30,
     justifyContent:"center"
   },
-  iconContainer: {
+  adornmentButton: {
+    backgroundColor: "transparent",
+    border: "none",
+    padding: 0,
+    margin: 0,
+    cursor: "pointer"
+  },
+  adornmentIconBox: {
     width: `${theme.hv.spacing.md}px`,
-    height: `${theme.hv.spacing.md}px`
+    height: `${theme.hv.spacing.md}px`,
+    position: "relative",
+    "& svg": {
+      position: "absolute",
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      margin: "auto"
+  }
   },
-  iconClear: {
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    cursor: "pointer",
-    marginBottom: "5px"
-  },
+
   suggestionsContainer: {
     width: "100%",
     position: "relative",

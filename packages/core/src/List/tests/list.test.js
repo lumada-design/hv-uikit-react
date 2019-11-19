@@ -266,14 +266,10 @@ describe("<List />", () => {
       ]);
     });
 
-    it("handleSelectAll updates state accordingly", () => {
+    it("handleSelectAll should unselect all if any selected", () => {
       listComponent = wrapper.find(List);
       instance.handleSelectAll();
-      expect(instance.state.list).toEqual([
-        { label: "Value 1", selected: true },
-        { label: "Value 2", selected: true },
-        { label: "Value 3", selected: true }
-      ]);
+      expect(instance.state.list.some(el => el.selected)).toEqual(false);
     });
 
     it("handleSelect should be triggered when a single select item is clicked ", () => {

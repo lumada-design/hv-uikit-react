@@ -64,15 +64,6 @@ const styles = theme => ({
   outContainer: {
     width: "100%",
     position: "relative"
-  },
-  rootS: {
-    width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
   }
 });
 

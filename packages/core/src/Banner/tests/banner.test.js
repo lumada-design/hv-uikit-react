@@ -17,6 +17,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
@@ -127,6 +128,30 @@ describe("Banner ", () => {
     expect(buttonComponent.length).toBe(1);
   });
 
+  it("should render with the correct offset", () => {
+    const offset = 10;
+    let component = mount(
+      <HvProvider>
+        <BannerWithStyles open offset={offset} onClose={() => {}} />
+      </HvProvider>
+    ).find(MaterialSnackbar);
+
+    expect(component.get(0).props.style).toEqual({ top: `${offset}px` });
+
+    component = mount(
+      <HvProvider>
+        <BannerWithStyles
+          open
+          offset={offset}
+          anchorOrigin="bottom"
+          onClose={() => {}}
+        />
+      </HvProvider>
+    ).find(MaterialSnackbar);
+
+    expect(component.get(0).props.style).toEqual({ bottom: `${offset}px` });
+  });
+
   it("should return the right severity icon", () => {
     const theme = {
       hv: {
@@ -148,7 +173,6 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-
     const error = mapSeverityToVariant("error");
     expect(error).toBe("error");
 

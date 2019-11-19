@@ -27,15 +27,44 @@
 const styles = theme => ({
   input: {
     height: "auto",
-    padding: "10px 0px",
-    overflow: "auto"
-  },
-  container:{},
-  characterCounter: {
-    textAlign: "right",
-    paddingTop: `${theme.hv.spacing.xs}px`,
+    padding: "5px 10px",
+    overflow: "auto",
+    marginLeft: "0px",
+    marginRight: "0px",
+    minHeight: "21px",
     minWidth: "150px",
     maxWidth: "610px"
+  },
+  resize: {
+    resize: "auto",
+    width: "100%"
+  },
+  defaultWith: {
+    width: "610px"
+  },
+  inputRoot: {
+    borderWidth: " 1px",
+    "&:hover": {
+      borderWidth: " 1px"
+    }
+  },
+  inputRootDisabled: {
+    background: theme.hv.palette.atmosphere.atmo2,
+    "&:hover": {
+      background: theme.hv.palette.atmosphere.atmo2
+    }
+  },
+  inputRootFocused: {
+    borderWidth: " 1px",
+    outline: "5px auto rgba(0, 150, 255, 1)",
+    "&:hover": {
+      borderWidth: " 1px"
+    }
+  },
+  container: {},
+  characterCounter: {
+    textAlign: "right",
+    paddingTop: `${theme.hv.spacing.xs}px`
   },
   inline: {
     display: "inline"
@@ -51,6 +80,9 @@ const styles = theme => ({
   },
   currentCounter: {
     ...theme.hv.typography.labelText
+  },
+  textAreaContainer: {
+    display: "inline-block"
   }
 });
 

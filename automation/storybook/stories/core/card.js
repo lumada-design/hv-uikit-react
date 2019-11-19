@@ -25,6 +25,7 @@ import Card5 from "../../../../packages/doc/samples/components/card/card5";
 import Card6 from "../../../../packages/doc/samples/components/card/card6";
 import Card7 from "../../../../packages/doc/samples/components/card/card7";
 import Card8 from "../../../../packages/doc/samples/components/card/card8";
+import Card9 from "../../../../packages/doc/samples/components/card/card9";
 
 // sample scenarios
 const samples = {};
@@ -36,6 +37,7 @@ samples.Card5 = Card5;
 samples.Card6 = Card6;
 samples.Card7 = Card7;
 samples.Card8 = Card8;
+samples.Card9 = Card9;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

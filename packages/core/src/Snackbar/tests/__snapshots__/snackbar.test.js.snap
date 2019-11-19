@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snackbcar  should render correctly 1`] = `
+exports[`Snackbar  should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
   router={null}
@@ -13,7 +13,7 @@ exports[`Snackbcar  should render correctly 1`] = `
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999988,
+            "index": -99999999975,
           },
           "themingEnabled": true,
         } => Map {
@@ -1316,7 +1316,7 @@ exports[`Snackbcar  should render correctly 1`] = `
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999988,
+                "index": -99999999975,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -3482,7 +3482,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999988,
+                  "index": -99999999975,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999989,
+            "index": -99999999895,
           },
           "themingEnabled": true,
         } => Map {
@@ -4945,7 +4945,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999989,
+                "index": -99999999895,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5554,7 +5554,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999989,
+                  "index": -99999999895,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5705,7 +5705,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999995,
+            "index": -99999999925,
           },
           "themingEnabled": true,
         } => Map {
@@ -7024,7 +7024,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999995,
+                "index": -99999999925,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -9792,7 +9792,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999995,
+                  "index": -99999999925,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
