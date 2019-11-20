@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.9.0...@hv/uikit-react-lab@1.10.0) (2019-11-20)
+
+
+### Bug Fixes
+
+* **button:** apply new ds style to ghost button. [#694](https://github.com/pentaho/hv-uikit-react/issues/694) ([34d3e2c](https://github.com/pentaho/hv-uikit-react/commit/34d3e2c))
+* **input:** suggestions list not working in ie 11. [#671](https://github.com/pentaho/hv-uikit-react/issues/671) ([7d197bf](https://github.com/pentaho/hv-uikit-react/commit/7d197bf))
+
+
+### Features
+
+* **input:** Input's accessibility [#248](https://github.com/pentaho/hv-uikit-react/issues/248) ([9eb0a50](https://github.com/pentaho/hv-uikit-react/commit/9eb0a50)), closes [#807](https://github.com/pentaho/hv-uikit-react/issues/807)
+
+
+
+
+
 # [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.8.0...@hv/uikit-react-lab@1.9.0) (2019-11-07)
 
 

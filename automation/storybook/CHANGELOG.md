@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.6.0...@hv/uikit-react-automation-storybook@1.6.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* **banner:** refactor styles to remove Material 4 dependency. [#816](https://github.com/pentaho/hv-uikit-react/issues/816) ([d8410ab](https://github.com/pentaho/hv-uikit-react/commit/d8410ab))
+* **button:** apply new ds style to ghost button. [#694](https://github.com/pentaho/hv-uikit-react/issues/694) ([34d3e2c](https://github.com/pentaho/hv-uikit-react/commit/34d3e2c))
+* **snackbar:** refactor styles to remove Material 4 dependency. [#816](https://github.com/pentaho/hv-uikit-react/issues/816) ([73aa95d](https://github.com/pentaho/hv-uikit-react/commit/73aa95d))
+
+
+
+
+
 # [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.5.1...@hv/uikit-react-automation-storybook@1.6.0) (2019-11-07)
 
 

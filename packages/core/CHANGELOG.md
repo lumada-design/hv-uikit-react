@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.11.0...@hv/uikit-react-core@1.12.0) (2019-11-20)
+
+
+### Bug Fixes
+
+* **badge:** number rendering in safari. [#391](https://github.com/pentaho/hv-uikit-react/issues/391) ([4357300](https://github.com/pentaho/hv-uikit-react/commit/4357300))
+* **banner:** refactor styles to remove Material 4 dependency. [#816](https://github.com/pentaho/hv-uikit-react/issues/816) ([d8410ab](https://github.com/pentaho/hv-uikit-react/commit/d8410ab))
+* **banner:** review component. [#706](https://github.com/pentaho/hv-uikit-react/issues/706) ([c106181](https://github.com/pentaho/hv-uikit-react/commit/c106181))
+* **button:** apply new ds style to ghost button. [#694](https://github.com/pentaho/hv-uikit-react/issues/694) ([34d3e2c](https://github.com/pentaho/hv-uikit-react/commit/34d3e2c))
+* **card:** internet explorer 11 errors. [#672](https://github.com/pentaho/hv-uikit-react/issues/672) ([7da4879](https://github.com/pentaho/hv-uikit-react/commit/7da4879))
+* **input:** Refactoring of input's adornment mechanism [#808](https://github.com/pentaho/hv-uikit-react/issues/808) ([6969134](https://github.com/pentaho/hv-uikit-react/commit/6969134))
+* **input:** suggestions list not working in ie 11. [#671](https://github.com/pentaho/hv-uikit-react/issues/671) ([7d197bf](https://github.com/pentaho/hv-uikit-react/commit/7d197bf))
+* **list:** icon theme on :active. [#682](https://github.com/pentaho/hv-uikit-react/issues/682) ([947061d](https://github.com/pentaho/hv-uikit-react/commit/947061d))
+* **list:** select all unselect by default. [#717](https://github.com/pentaho/hv-uikit-react/issues/717) ([afad1e0](https://github.com/pentaho/hv-uikit-react/commit/afad1e0))
+* **login:** apply new ds guidelines to login samples. [#701](https://github.com/pentaho/hv-uikit-react/issues/701) ([ef3d953](https://github.com/pentaho/hv-uikit-react/commit/ef3d953))
+* **login:** apply new ds guidelines to login samples. [#701](https://github.com/pentaho/hv-uikit-react/issues/701) ([442dead](https://github.com/pentaho/hv-uikit-react/commit/442dead))
+* **modal:** apply new ds guidelines to component . [#627](https://github.com/pentaho/hv-uikit-react/issues/627) ([b4f0e12](https://github.com/pentaho/hv-uikit-react/commit/b4f0e12))
+* **modal:** apply new ds guidelines to component. [#627](https://github.com/pentaho/hv-uikit-react/issues/627) ([23fadc0](https://github.com/pentaho/hv-uikit-react/commit/23fadc0))
+* **modal:** apply new ds guidelines to component. [#627](https://github.com/pentaho/hv-uikit-react/issues/627) ([fbfe98d](https://github.com/pentaho/hv-uikit-react/commit/fbfe98d))
+* **searchbox:** make onkeydown and onsubmit api consistent. [#577](https://github.com/pentaho/hv-uikit-react/issues/577) ([9ebcf86](https://github.com/pentaho/hv-uikit-react/commit/9ebcf86))
+* **snackbar:** ie11 ellipsis. [#688](https://github.com/pentaho/hv-uikit-react/issues/688) ([8d754f1](https://github.com/pentaho/hv-uikit-react/commit/8d754f1))
+* **snackbar:** refactor styles to remove Material 4 dependency. [#816](https://github.com/pentaho/hv-uikit-react/issues/816) ([73aa95d](https://github.com/pentaho/hv-uikit-react/commit/73aa95d))
+* **snackbar:** review component. [#707](https://github.com/pentaho/hv-uikit-react/issues/707) ([c22c21f](https://github.com/pentaho/hv-uikit-react/commit/c22c21f))
+* **switch:** apply new ds style to switch component . [#709](https://github.com/pentaho/hv-uikit-react/issues/709) ([e3f85f5](https://github.com/pentaho/hv-uikit-react/commit/e3f85f5))
+* **switch:** fix ie11 toggle switch positioning. [#547](https://github.com/pentaho/hv-uikit-react/issues/547) ([29b7083](https://github.com/pentaho/hv-uikit-react/commit/29b7083))
+* **table:** fix vertical scrollbar display ie11. [#674](https://github.com/pentaho/hv-uikit-react/issues/674) ([7ccf753](https://github.com/pentaho/hv-uikit-react/commit/7ccf753))
+* **templates:** login broken link to github. [#800](https://github.com/pentaho/hv-uikit-react/issues/800) ([880f755](https://github.com/pentaho/hv-uikit-react/commit/880f755))
+* **textarea:** update component to follow DS 1.2. [#710](https://github.com/pentaho/hv-uikit-react/issues/710) ([8de50b7](https://github.com/pentaho/hv-uikit-react/commit/8de50b7))
+
+
+### Features
+
+* **card:** updating subheader style ([a37f334](https://github.com/pentaho/hv-uikit-react/commit/a37f334))
+* **input:** Input's accessibility [#248](https://github.com/pentaho/hv-uikit-react/issues/248) ([9eb0a50](https://github.com/pentaho/hv-uikit-react/commit/9eb0a50)), closes [#807](https://github.com/pentaho/hv-uikit-react/issues/807)
+* **input:** pull validationstate when pulling new inputvalue. [#691](https://github.com/pentaho/hv-uikit-react/issues/691) ([df32cc9](https://github.com/pentaho/hv-uikit-react/commit/df32cc9))
+
+
+
+
+
 # [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.10.0...@hv/uikit-react-core@1.11.0) (2019-11-07)
 
 

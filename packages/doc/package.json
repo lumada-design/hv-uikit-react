@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-doc",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -27,9 +27,9 @@
   "dependencies": {
     "@hv/uikit-common-themes": "^1.4.0",
     "@hv/uikit-common-utils": "^1.2.0",
-    "@hv/uikit-react-core": "^1.11.0",
-    "@hv/uikit-react-icons": "^1.5.0",
-    "@hv/uikit-react-lab": "^1.9.0",
+    "@hv/uikit-react-core": "^1.12.0",
+    "@hv/uikit-react-icons": "^1.5.1",
+    "@hv/uikit-react-lab": "^1.10.0",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "3.0.2",
     "classnames": "2.2.6",
@@ -48,7 +48,6 @@
     "@babel/plugin-transform-runtime": "7.4.0",
     "@babel/preset-env": "7.4.2",
     "@babel/preset-react": "7.0.0",
-    "@svgr/webpack": "4.3.3",
     "@storybook/addon-actions": "5.2.1",
     "@storybook/addon-links": "5.2.1",
     "@storybook/addon-options": "5.2.1",
