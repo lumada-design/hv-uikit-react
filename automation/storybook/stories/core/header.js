@@ -29,16 +29,14 @@ const samples = {};
 samples.Header1 = Header1;
 samples.Header2 = Header2;
 samples.Header3 = Header3;
-samples.Header3 = Header4;
-samples.Header3 = Header5;
+samples.Header4 = Header4;
+samples.Header5 = Header5;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
   storiesOf("CoreHeader", module).add(key, () => (
-    <Grid container>
-      <Grid item xl>
+    <>
         {samples[key]}
-      </Grid>
-    </Grid>
+    </>
   ))
 );
