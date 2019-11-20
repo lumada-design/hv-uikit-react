@@ -9,19 +9,19 @@ Default Tags      smoke
 *** Test Cases ***
 snackbar 2. with custom icon close after 6 seconds
     go to                            ${STORYBOOK_URL}/iframe.html?id=coresnackbar--snackbar2
-    Wait Until Element Is Visible    //button           10s
+    Wait Until Element Is Visible    css:button               7s
     Click Button                     Click me
     Wait Until Page Contains         This is a custom icon    2s
     Element Should Be Visible        client-snackbar
-    Sleep                            6s
+    Sleep                            6s                       # autoHideDuration
     Element Should Not Be Visible    client-snackbar
 
 snackbar 4. With actions renders an action
     go to                            ${STORYBOOK_URL}/iframe.html?id=coresnackbar--snackbar4
-    Wait Until Element Is Visible    //button           10s
+    Wait Until Element Is Visible    css:button              7s
     Click Button                     Click Me
     Wait Until Page Contains         This is a snackbar
     Element Should Be Visible        client-snackbar
     Element Should Be Visible        //a[text()='Action']
-    Sleep                            6s
+    Sleep                            6s                      # autoHideDuration
     Element Should Not Be Visible    client-snackbar
