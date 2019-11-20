@@ -4553,29 +4553,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "actionsContainer": "HvDatePickerDS-actionsContainer-1042",
-                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1046",
-                "borderBottomNone": "HvDatePickerDS-borderBottomNone-1044",
-                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1045",
-                "borderTopNone": "HvDatePickerDS-borderTopNone-1043",
-                "calendarContainer": "HvDatePickerDS-calendarContainer-1033",
-                "datePickerContainer": "HvDatePickerDS-datePickerContainer-1031",
-                "doubleWidth": "HvDatePickerDS-doubleWidth-1048",
-                "icon": "HvDatePickerDS-icon-1029",
-                "iconClear": "HvDatePickerDS-iconClear-1030",
-                "input": "HvDatePickerDS-input-1028",
-                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1026",
-                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1027",
-                "label": "HvDatePickerDS-label-1032",
-                "popper": "HvDatePickerDS-popper-1047",
-                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1036",
-                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1039",
-                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1040",
-                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1041",
-                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1037",
-                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1035",
-                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1038",
-                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1034",
+                "actionsContainer": "HvDatePickerDS-actionsContainer-1114",
+                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1118",
+                "borderBottomNone": "HvDatePickerDS-borderBottomNone-1116",
+                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1117",
+                "borderTopNone": "HvDatePickerDS-borderTopNone-1115",
+                "calendarContainer": "HvDatePickerDS-calendarContainer-1105",
+                "datePickerContainer": "HvDatePickerDS-datePickerContainer-1103",
+                "doubleWidth": "HvDatePickerDS-doubleWidth-1120",
+                "icon": "HvDatePickerDS-icon-1101",
+                "iconClear": "HvDatePickerDS-iconClear-1102",
+                "input": "HvDatePickerDS-input-1100",
+                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1096",
+                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1097",
+                "label": "HvDatePickerDS-label-1104",
+                "noBorderBottom": "HvDatePickerDS-noBorderBottom-1099",
+                "noBorderTop": "HvDatePickerDS-noBorderTop-1098",
+                "popper": "HvDatePickerDS-popper-1119",
+                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1108",
+                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1111",
+                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1112",
+                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1113",
+                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1109",
+                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1107",
+                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1110",
+                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1106",
               },
               "deployed": true,
               "linked": false,
@@ -4583,29 +4585,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvDatePickerDS",
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-1042",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1046",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1044",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1045",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-1043",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-1033",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1031",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-1048",
-                  "icon": "HvDatePickerDS-icon-1029",
-                  "iconClear": "HvDatePickerDS-iconClear-1030",
-                  "input": "HvDatePickerDS-input-1028",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1026",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1027",
-                  "label": "HvDatePickerDS-label-1032",
-                  "popper": "HvDatePickerDS-popper-1047",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1036",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1039",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1040",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1041",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1037",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1035",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1038",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1034",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-1114",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1118",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1116",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1117",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-1115",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-1105",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1103",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-1120",
+                  "icon": "HvDatePickerDS-icon-1101",
+                  "iconClear": "HvDatePickerDS-iconClear-1102",
+                  "input": "HvDatePickerDS-input-1100",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1096",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1097",
+                  "label": "HvDatePickerDS-label-1104",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-1099",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-1098",
+                  "popper": "HvDatePickerDS-popper-1119",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1108",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1111",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1112",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1113",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1109",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1107",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1110",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1106",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5093,7 +5097,7 @@ body {
                   data-meta="HvDatePickerDS"
                 >
                   
-.HvDatePickerDS-inputCalendarClosed-1026 {
+.HvDatePickerDS-inputCalendarClosed-1096 {
   height: 32px;
   border: 1px solid #BCBCBC;
   position: relative;
@@ -5101,7 +5105,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputCalendarOpen-1027 {
+.HvDatePickerDS-inputCalendarOpen-1097 {
   height: 32px;
   border: 1px solid #414141;
   position: relative;
@@ -5109,7 +5113,13 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-input-1028 {
+.HvDatePickerDS-noBorderTop-1098 {
+  border-top: none;
+}
+.HvDatePickerDS-noBorderBottom-1099 {
+  border-bottom: none;
+}
+.HvDatePickerDS-input-1100 {
   width: 100%;
   color: #414141;
   border: none;
@@ -5120,17 +5130,17 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-input-1028:focus {
+.HvDatePickerDS-input-1100:focus {
   outline: none;
 }
-.HvDatePickerDS-input-1028::placeholder {
+.HvDatePickerDS-input-1100::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-icon-1029 {
+.HvDatePickerDS-icon-1101 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -5138,7 +5148,7 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-iconClear-1030 {
+.HvDatePickerDS-iconClear-1102 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -5146,73 +5156,73 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-datePickerContainer-1031 {
+.HvDatePickerDS-datePickerContainer-1103 {
   width: 320px;
   position: relative;
 }
-.HvDatePickerDS-label-1032 {
+.HvDatePickerDS-label-1104 {
   display: block;
   margin-bottom: 10px;
 }
-.HvDatePickerDS-calendarContainer-1033 {
+.HvDatePickerDS-calendarContainer-1105 {
   border: 1px solid #414141;
   z-index: 10;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-singleCalendarFooter-1034 {
+.HvDatePickerDS-singleCalendarFooter-1106 {
   margin: 20px;
   text-align: right;
 }
-.HvDatePickerDS-rangeMainContainer-1035 {
+.HvDatePickerDS-rangeMainContainer-1107 {
   border: 1px solid #414141;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-rangeCalendarsContainer-1036 {
+.HvDatePickerDS-rangeCalendarsContainer-1108 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeLeftCalendarContainer-1037 {
+.HvDatePickerDS-rangeLeftCalendarContainer-1109 {
   width: 50%;
 }
-.HvDatePickerDS-rangeRightCalendarContainer-1038 {
+.HvDatePickerDS-rangeRightCalendarContainer-1110 {
   width: 50%;
 }
-.HvDatePickerDS-rangeCalendarsFooter-1039 {
+.HvDatePickerDS-rangeCalendarsFooter-1111 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeFooterLeft-1040 {
+.HvDatePickerDS-rangeFooterLeft-1112 {
   width: 50%;
 }
-.HvDatePickerDS-rangeFooterRight-1041 {
+.HvDatePickerDS-rangeFooterRight-1113 {
   width: 50%;
   padding: 20px;
   text-align: right;
 }
-.HvDatePickerDS-actionsContainer-1042 {
+.HvDatePickerDS-actionsContainer-1114 {
   text-align: right;
 }
-.HvDatePickerDS-borderTopNone-1043 {
+.HvDatePickerDS-borderTopNone-1115 {
   border-top: none;
 }
-.HvDatePickerDS-borderBottomNone-1044 {
+.HvDatePickerDS-borderBottomNone-1116 {
   border-bottom: none;
 }
-.HvDatePickerDS-borderTopDisplay-1045 {
+.HvDatePickerDS-borderTopDisplay-1117 {
   border-top: 1px solid #414141;
 }
-.HvDatePickerDS-borderBottomDisplay-1046 {
+.HvDatePickerDS-borderBottomDisplay-1118 {
   border-bottom: 1px solid #414141;
 }
-.HvDatePickerDS-popper-1047 {
+.HvDatePickerDS-popper-1119 {
   width: 100%;
   z-index: 10;
 }
-.HvDatePickerDS-doubleWidth-1048 {
+.HvDatePickerDS-doubleWidth-1120 {
   width: calc(200% - 2px);
 }
 
@@ -5228,29 +5238,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-1042",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1046",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1044",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1045",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-1043",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-1033",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1031",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-1048",
-                  "icon": "HvDatePickerDS-icon-1029",
-                  "iconClear": "HvDatePickerDS-iconClear-1030",
-                  "input": "HvDatePickerDS-input-1028",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1026",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1027",
-                  "label": "HvDatePickerDS-label-1032",
-                  "popper": "HvDatePickerDS-popper-1047",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1036",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1039",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1040",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1041",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1037",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1035",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1038",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1034",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-1114",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1118",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1116",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1117",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-1115",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-1105",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1103",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-1120",
+                  "icon": "HvDatePickerDS-icon-1101",
+                  "iconClear": "HvDatePickerDS-iconClear-1102",
+                  "input": "HvDatePickerDS-input-1100",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1096",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1097",
+                  "label": "HvDatePickerDS-label-1104",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-1099",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-1098",
+                  "popper": "HvDatePickerDS-popper-1119",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1108",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1111",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1112",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1113",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1109",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1107",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1110",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1106",
                 },
                 "index": Array [
                   Object {
@@ -5268,6 +5280,12 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  Object {
+                    "border-top": "none",
+                  },
+                  Object {
+                    "border-bottom": "none",
                   },
                   Object {
                     "background": "transparent",
@@ -5377,36 +5395,36 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvDatePickerDS-actionsContainer-1042": Object {
+                  ".HvDatePickerDS-actionsContainer-1114": Object {
                     "text-align": "right",
                   },
-                  ".HvDatePickerDS-borderBottomDisplay-1046": Object {
+                  ".HvDatePickerDS-borderBottomDisplay-1118": Object {
                     "border-bottom": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderBottomNone-1044": Object {
+                  ".HvDatePickerDS-borderBottomNone-1116": Object {
                     "border-bottom": "none",
                   },
-                  ".HvDatePickerDS-borderTopDisplay-1045": Object {
+                  ".HvDatePickerDS-borderTopDisplay-1117": Object {
                     "border-top": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderTopNone-1043": Object {
+                  ".HvDatePickerDS-borderTopNone-1115": Object {
                     "border-top": "none",
                   },
-                  ".HvDatePickerDS-calendarContainer-1033": Object {
+                  ".HvDatePickerDS-calendarContainer-1105": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-datePickerContainer-1031": Object {
+                  ".HvDatePickerDS-datePickerContainer-1103": Object {
                     "position": "relative",
                     "width": "320px",
                   },
-                  ".HvDatePickerDS-doubleWidth-1048": Object {
+                  ".HvDatePickerDS-doubleWidth-1120": Object {
                     "width": "calc(200% - 2px)",
                   },
-                  ".HvDatePickerDS-icon-1029": Object {
+                  ".HvDatePickerDS-icon-1101": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -5414,7 +5432,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-iconClear-1030": Object {
+                  ".HvDatePickerDS-iconClear-1102": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -5422,7 +5440,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-input-1028": Object {
+                  ".HvDatePickerDS-input-1100": Object {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -5433,17 +5451,17 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvDatePickerDS-input-1028::placeholder": Object {
+                  ".HvDatePickerDS-input-1100::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvDatePickerDS-input-1028:focus": Object {
+                  ".HvDatePickerDS-input-1100:focus": Object {
                     "outline": "none",
                   },
-                  ".HvDatePickerDS-inputCalendarClosed-1026": Object {
+                  ".HvDatePickerDS-inputCalendarClosed-1096": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "height": "32px",
@@ -5451,7 +5469,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputCalendarOpen-1027": Object {
+                  ".HvDatePickerDS-inputCalendarOpen-1097": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #414141",
                     "height": "32px",
@@ -5459,43 +5477,49 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-label-1032": Object {
+                  ".HvDatePickerDS-label-1104": Object {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
-                  ".HvDatePickerDS-popper-1047": Object {
+                  ".HvDatePickerDS-noBorderBottom-1099": Object {
+                    "border-bottom": "none",
+                  },
+                  ".HvDatePickerDS-noBorderTop-1098": Object {
+                    "border-top": "none",
+                  },
+                  ".HvDatePickerDS-popper-1119": Object {
                     "width": "100%",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-rangeCalendarsContainer-1036": Object {
+                  ".HvDatePickerDS-rangeCalendarsContainer-1108": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeCalendarsFooter-1039": Object {
+                  ".HvDatePickerDS-rangeCalendarsFooter-1111": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeFooterLeft-1040": Object {
+                  ".HvDatePickerDS-rangeFooterLeft-1112": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeFooterRight-1041": Object {
+                  ".HvDatePickerDS-rangeFooterRight-1113": Object {
                     "padding": "20px",
                     "text-align": "right",
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeLeftCalendarContainer-1037": Object {
+                  ".HvDatePickerDS-rangeLeftCalendarContainer-1109": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeMainContainer-1035": Object {
+                  ".HvDatePickerDS-rangeMainContainer-1107": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                   },
-                  ".HvDatePickerDS-rangeRightCalendarContainer-1038": Object {
+                  ".HvDatePickerDS-rangeRightCalendarContainer-1110": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-singleCalendarFooter-1034": Object {
+                  ".HvDatePickerDS-singleCalendarFooter-1106": Object {
                     "margin": "20px",
                     "text-align": "right",
                   },
@@ -5575,6 +5599,12 @@ body {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
+                  "noBorderBottom": Object {
+                    "border-bottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "border-top": "none",
+                  },
                   "popper": Object {
                     "width": "100%",
                     "z-index": "10",
@@ -5616,29 +5646,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvDatePickerDS",
                   "classes": Object {
-                    "actionsContainer": "HvDatePickerDS-actionsContainer-1042",
-                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1046",
-                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-1044",
-                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1045",
-                    "borderTopNone": "HvDatePickerDS-borderTopNone-1043",
-                    "calendarContainer": "HvDatePickerDS-calendarContainer-1033",
-                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-1031",
-                    "doubleWidth": "HvDatePickerDS-doubleWidth-1048",
-                    "icon": "HvDatePickerDS-icon-1029",
-                    "iconClear": "HvDatePickerDS-iconClear-1030",
-                    "input": "HvDatePickerDS-input-1028",
-                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1026",
-                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1027",
-                    "label": "HvDatePickerDS-label-1032",
-                    "popper": "HvDatePickerDS-popper-1047",
-                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1036",
-                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1039",
-                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1040",
-                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1041",
-                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1037",
-                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1035",
-                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1038",
-                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1034",
+                    "actionsContainer": "HvDatePickerDS-actionsContainer-1114",
+                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1118",
+                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-1116",
+                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1117",
+                    "borderTopNone": "HvDatePickerDS-borderTopNone-1115",
+                    "calendarContainer": "HvDatePickerDS-calendarContainer-1105",
+                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-1103",
+                    "doubleWidth": "HvDatePickerDS-doubleWidth-1120",
+                    "icon": "HvDatePickerDS-icon-1101",
+                    "iconClear": "HvDatePickerDS-iconClear-1102",
+                    "input": "HvDatePickerDS-input-1100",
+                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1096",
+                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1097",
+                    "label": "HvDatePickerDS-label-1104",
+                    "noBorderBottom": "HvDatePickerDS-noBorderBottom-1099",
+                    "noBorderTop": "HvDatePickerDS-noBorderTop-1098",
+                    "popper": "HvDatePickerDS-popper-1119",
+                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1108",
+                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1111",
+                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1112",
+                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1113",
+                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1109",
+                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1107",
+                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1110",
+                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1106",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -6121,14 +6153,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvDatePickerDS-input-1028::placeholder": Object {
+                  ".HvDatePickerDS-input-1100::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvDatePickerDS-input-1028:focus": Object {
+                  ".HvDatePickerDS-input-1100:focus": Object {
                     "outline": "none",
                   },
                   "actionsContainer": Object {
@@ -6216,6 +6248,12 @@ body {
                   "label": Object {
                     "display": "block",
                     "marginBottom": "10px",
+                  },
+                  "noBorderBottom": Object {
+                    "borderBottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "borderTop": "none",
                   },
                   "popper": Object {
                     "width": "100%",
@@ -7201,29 +7239,31 @@ body {
       <HvDatePickerDS
         classes={
           Object {
-            "actionsContainer": "HvDatePickerDS-actionsContainer-1042",
-            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1046",
-            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1044",
-            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1045",
-            "borderTopNone": "HvDatePickerDS-borderTopNone-1043",
-            "calendarContainer": "HvDatePickerDS-calendarContainer-1033",
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1031",
-            "doubleWidth": "HvDatePickerDS-doubleWidth-1048",
-            "icon": "HvDatePickerDS-icon-1029",
-            "iconClear": "HvDatePickerDS-iconClear-1030",
-            "input": "HvDatePickerDS-input-1028",
-            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1026",
-            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1027",
-            "label": "HvDatePickerDS-label-1032",
-            "popper": "HvDatePickerDS-popper-1047",
-            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1036",
-            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1039",
-            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1040",
-            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1041",
-            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1037",
-            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1035",
-            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1038",
-            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1034",
+            "actionsContainer": "HvDatePickerDS-actionsContainer-1114",
+            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1118",
+            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1116",
+            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1117",
+            "borderTopNone": "HvDatePickerDS-borderTopNone-1115",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-1105",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1103",
+            "doubleWidth": "HvDatePickerDS-doubleWidth-1120",
+            "icon": "HvDatePickerDS-icon-1101",
+            "iconClear": "HvDatePickerDS-iconClear-1102",
+            "input": "HvDatePickerDS-input-1100",
+            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1096",
+            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1097",
+            "label": "HvDatePickerDS-label-1104",
+            "noBorderBottom": "HvDatePickerDS-noBorderBottom-1099",
+            "noBorderTop": "HvDatePickerDS-noBorderTop-1098",
+            "popper": "HvDatePickerDS-popper-1119",
+            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1108",
+            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1111",
+            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1112",
+            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1113",
+            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1109",
+            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1107",
+            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1110",
+            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1106",
           }
         }
         endValue="2019-01-10"
@@ -8172,20 +8212,20 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="HvDatePickerDS-datePickerContainer-1031"
+            className="HvDatePickerDS-datePickerContainer-1103"
           >
             <div
-              className="HvDatePickerDS-inputCalendarClosed-1026"
+              className="HvDatePickerDS-inputCalendarClosed-1096"
             >
               <input
-                className="HvDatePickerDS-input-1028"
+                className="HvDatePickerDS-input-1100"
                 placeholder="Select a date"
                 readOnly={true}
                 type="text"
                 value="5 Jan, 2019 - 10 Jan, 2019"
               />
               <CalendarS
-                className="HvDatePickerDS-icon-1029"
+                className="HvDatePickerDS-icon-1101"
                 color={null}
                 height={null}
                 iconSize="S"
@@ -8194,7 +8234,7 @@ body {
                 width={null}
               >
                 <svg
-                  className="HvDatePickerDS-icon-1029"
+                  className="HvDatePickerDS-icon-1101"
                   height={30}
                   onClick={[Function]}
                   viewBox="1 1 30 30"
@@ -8222,22 +8262,8 @@ body {
             </div>
             <Popper
               anchorEl={null}
-              className="HvDatePickerDS-popper-1047 HvDatePickerDS-doubleWidth-1048"
+              className="HvDatePickerDS-popper-1119 HvDatePickerDS-doubleWidth-1120"
               disablePortal={true}
-              modifiers={
-                Object {
-                  "applyCustomStyle": Object {
-                    "enabled": true,
-                    "fn": [Function],
-                    "order": 899,
-                  },
-                  "preventOverflow": Object {
-                    "enabled": true,
-                    "escapeWithReference": true,
-                    "padding": 0,
-                  },
-                }
-              }
               open={false}
               placement="bottom-start"
               popperOptions={
@@ -12815,29 +12841,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "actionsContainer": "HvDatePickerDS-actionsContainer-496",
-                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-500",
-                "borderBottomNone": "HvDatePickerDS-borderBottomNone-498",
-                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-499",
-                "borderTopNone": "HvDatePickerDS-borderTopNone-497",
-                "calendarContainer": "HvDatePickerDS-calendarContainer-487",
-                "datePickerContainer": "HvDatePickerDS-datePickerContainer-485",
-                "doubleWidth": "HvDatePickerDS-doubleWidth-502",
-                "icon": "HvDatePickerDS-icon-483",
-                "iconClear": "HvDatePickerDS-iconClear-484",
-                "input": "HvDatePickerDS-input-482",
-                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-480",
-                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-481",
-                "label": "HvDatePickerDS-label-486",
-                "popper": "HvDatePickerDS-popper-501",
-                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-490",
-                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-493",
-                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-494",
-                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-495",
-                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-491",
-                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-489",
-                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-492",
-                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-488",
+                "actionsContainer": "HvDatePickerDS-actionsContainer-532",
+                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-536",
+                "borderBottomNone": "HvDatePickerDS-borderBottomNone-534",
+                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-535",
+                "borderTopNone": "HvDatePickerDS-borderTopNone-533",
+                "calendarContainer": "HvDatePickerDS-calendarContainer-523",
+                "datePickerContainer": "HvDatePickerDS-datePickerContainer-521",
+                "doubleWidth": "HvDatePickerDS-doubleWidth-538",
+                "icon": "HvDatePickerDS-icon-519",
+                "iconClear": "HvDatePickerDS-iconClear-520",
+                "input": "HvDatePickerDS-input-518",
+                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-514",
+                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-515",
+                "label": "HvDatePickerDS-label-522",
+                "noBorderBottom": "HvDatePickerDS-noBorderBottom-517",
+                "noBorderTop": "HvDatePickerDS-noBorderTop-516",
+                "popper": "HvDatePickerDS-popper-537",
+                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-526",
+                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-529",
+                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-530",
+                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-531",
+                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-527",
+                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-525",
+                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-528",
+                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-524",
               },
               "deployed": true,
               "linked": false,
@@ -12845,29 +12873,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvDatePickerDS",
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-496",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-500",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-498",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-499",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-497",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-487",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-485",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-502",
-                  "icon": "HvDatePickerDS-icon-483",
-                  "iconClear": "HvDatePickerDS-iconClear-484",
-                  "input": "HvDatePickerDS-input-482",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-480",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-481",
-                  "label": "HvDatePickerDS-label-486",
-                  "popper": "HvDatePickerDS-popper-501",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-490",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-493",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-494",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-495",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-491",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-489",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-492",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-488",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-532",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-536",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-534",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-535",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-533",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-523",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-521",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-538",
+                  "icon": "HvDatePickerDS-icon-519",
+                  "iconClear": "HvDatePickerDS-iconClear-520",
+                  "input": "HvDatePickerDS-input-518",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-514",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-515",
+                  "label": "HvDatePickerDS-label-522",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-517",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-516",
+                  "popper": "HvDatePickerDS-popper-537",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-526",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-529",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-530",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-531",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-527",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-525",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-528",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-524",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -13355,7 +13385,7 @@ body {
                   data-meta="HvDatePickerDS"
                 >
                   
-.HvDatePickerDS-inputCalendarClosed-480 {
+.HvDatePickerDS-inputCalendarClosed-514 {
   height: 32px;
   border: 1px solid #BCBCBC;
   position: relative;
@@ -13363,7 +13393,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputCalendarOpen-481 {
+.HvDatePickerDS-inputCalendarOpen-515 {
   height: 32px;
   border: 1px solid #414141;
   position: relative;
@@ -13371,7 +13401,13 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-input-482 {
+.HvDatePickerDS-noBorderTop-516 {
+  border-top: none;
+}
+.HvDatePickerDS-noBorderBottom-517 {
+  border-bottom: none;
+}
+.HvDatePickerDS-input-518 {
   width: 100%;
   color: #414141;
   border: none;
@@ -13382,17 +13418,17 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-input-482:focus {
+.HvDatePickerDS-input-518:focus {
   outline: none;
 }
-.HvDatePickerDS-input-482::placeholder {
+.HvDatePickerDS-input-518::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-icon-483 {
+.HvDatePickerDS-icon-519 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -13400,7 +13436,7 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-iconClear-484 {
+.HvDatePickerDS-iconClear-520 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -13408,73 +13444,73 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-datePickerContainer-485 {
+.HvDatePickerDS-datePickerContainer-521 {
   width: 320px;
   position: relative;
 }
-.HvDatePickerDS-label-486 {
+.HvDatePickerDS-label-522 {
   display: block;
   margin-bottom: 10px;
 }
-.HvDatePickerDS-calendarContainer-487 {
+.HvDatePickerDS-calendarContainer-523 {
   border: 1px solid #414141;
   z-index: 10;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-singleCalendarFooter-488 {
+.HvDatePickerDS-singleCalendarFooter-524 {
   margin: 20px;
   text-align: right;
 }
-.HvDatePickerDS-rangeMainContainer-489 {
+.HvDatePickerDS-rangeMainContainer-525 {
   border: 1px solid #414141;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-rangeCalendarsContainer-490 {
+.HvDatePickerDS-rangeCalendarsContainer-526 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeLeftCalendarContainer-491 {
+.HvDatePickerDS-rangeLeftCalendarContainer-527 {
   width: 50%;
 }
-.HvDatePickerDS-rangeRightCalendarContainer-492 {
+.HvDatePickerDS-rangeRightCalendarContainer-528 {
   width: 50%;
 }
-.HvDatePickerDS-rangeCalendarsFooter-493 {
+.HvDatePickerDS-rangeCalendarsFooter-529 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeFooterLeft-494 {
+.HvDatePickerDS-rangeFooterLeft-530 {
   width: 50%;
 }
-.HvDatePickerDS-rangeFooterRight-495 {
+.HvDatePickerDS-rangeFooterRight-531 {
   width: 50%;
   padding: 20px;
   text-align: right;
 }
-.HvDatePickerDS-actionsContainer-496 {
+.HvDatePickerDS-actionsContainer-532 {
   text-align: right;
 }
-.HvDatePickerDS-borderTopNone-497 {
+.HvDatePickerDS-borderTopNone-533 {
   border-top: none;
 }
-.HvDatePickerDS-borderBottomNone-498 {
+.HvDatePickerDS-borderBottomNone-534 {
   border-bottom: none;
 }
-.HvDatePickerDS-borderTopDisplay-499 {
+.HvDatePickerDS-borderTopDisplay-535 {
   border-top: 1px solid #414141;
 }
-.HvDatePickerDS-borderBottomDisplay-500 {
+.HvDatePickerDS-borderBottomDisplay-536 {
   border-bottom: 1px solid #414141;
 }
-.HvDatePickerDS-popper-501 {
+.HvDatePickerDS-popper-537 {
   width: 100%;
   z-index: 10;
 }
-.HvDatePickerDS-doubleWidth-502 {
+.HvDatePickerDS-doubleWidth-538 {
   width: calc(200% - 2px);
 }
 
@@ -13490,29 +13526,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-496",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-500",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-498",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-499",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-497",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-487",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-485",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-502",
-                  "icon": "HvDatePickerDS-icon-483",
-                  "iconClear": "HvDatePickerDS-iconClear-484",
-                  "input": "HvDatePickerDS-input-482",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-480",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-481",
-                  "label": "HvDatePickerDS-label-486",
-                  "popper": "HvDatePickerDS-popper-501",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-490",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-493",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-494",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-495",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-491",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-489",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-492",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-488",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-532",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-536",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-534",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-535",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-533",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-523",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-521",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-538",
+                  "icon": "HvDatePickerDS-icon-519",
+                  "iconClear": "HvDatePickerDS-iconClear-520",
+                  "input": "HvDatePickerDS-input-518",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-514",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-515",
+                  "label": "HvDatePickerDS-label-522",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-517",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-516",
+                  "popper": "HvDatePickerDS-popper-537",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-526",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-529",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-530",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-531",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-527",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-525",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-528",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-524",
                 },
                 "index": Array [
                   Object {
@@ -13530,6 +13568,12 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  Object {
+                    "border-top": "none",
+                  },
+                  Object {
+                    "border-bottom": "none",
                   },
                   Object {
                     "background": "transparent",
@@ -13639,36 +13683,36 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvDatePickerDS-actionsContainer-496": Object {
+                  ".HvDatePickerDS-actionsContainer-532": Object {
                     "text-align": "right",
                   },
-                  ".HvDatePickerDS-borderBottomDisplay-500": Object {
+                  ".HvDatePickerDS-borderBottomDisplay-536": Object {
                     "border-bottom": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderBottomNone-498": Object {
+                  ".HvDatePickerDS-borderBottomNone-534": Object {
                     "border-bottom": "none",
                   },
-                  ".HvDatePickerDS-borderTopDisplay-499": Object {
+                  ".HvDatePickerDS-borderTopDisplay-535": Object {
                     "border-top": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderTopNone-497": Object {
+                  ".HvDatePickerDS-borderTopNone-533": Object {
                     "border-top": "none",
                   },
-                  ".HvDatePickerDS-calendarContainer-487": Object {
+                  ".HvDatePickerDS-calendarContainer-523": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-datePickerContainer-485": Object {
+                  ".HvDatePickerDS-datePickerContainer-521": Object {
                     "position": "relative",
                     "width": "320px",
                   },
-                  ".HvDatePickerDS-doubleWidth-502": Object {
+                  ".HvDatePickerDS-doubleWidth-538": Object {
                     "width": "calc(200% - 2px)",
                   },
-                  ".HvDatePickerDS-icon-483": Object {
+                  ".HvDatePickerDS-icon-519": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -13676,7 +13720,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-iconClear-484": Object {
+                  ".HvDatePickerDS-iconClear-520": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -13684,7 +13728,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-input-482": Object {
+                  ".HvDatePickerDS-input-518": Object {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -13695,17 +13739,17 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvDatePickerDS-input-482::placeholder": Object {
+                  ".HvDatePickerDS-input-518::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvDatePickerDS-input-482:focus": Object {
+                  ".HvDatePickerDS-input-518:focus": Object {
                     "outline": "none",
                   },
-                  ".HvDatePickerDS-inputCalendarClosed-480": Object {
+                  ".HvDatePickerDS-inputCalendarClosed-514": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "height": "32px",
@@ -13713,7 +13757,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputCalendarOpen-481": Object {
+                  ".HvDatePickerDS-inputCalendarOpen-515": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #414141",
                     "height": "32px",
@@ -13721,43 +13765,49 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-label-486": Object {
+                  ".HvDatePickerDS-label-522": Object {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
-                  ".HvDatePickerDS-popper-501": Object {
+                  ".HvDatePickerDS-noBorderBottom-517": Object {
+                    "border-bottom": "none",
+                  },
+                  ".HvDatePickerDS-noBorderTop-516": Object {
+                    "border-top": "none",
+                  },
+                  ".HvDatePickerDS-popper-537": Object {
                     "width": "100%",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-rangeCalendarsContainer-490": Object {
+                  ".HvDatePickerDS-rangeCalendarsContainer-526": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeCalendarsFooter-493": Object {
+                  ".HvDatePickerDS-rangeCalendarsFooter-529": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeFooterLeft-494": Object {
+                  ".HvDatePickerDS-rangeFooterLeft-530": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeFooterRight-495": Object {
+                  ".HvDatePickerDS-rangeFooterRight-531": Object {
                     "padding": "20px",
                     "text-align": "right",
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeLeftCalendarContainer-491": Object {
+                  ".HvDatePickerDS-rangeLeftCalendarContainer-527": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeMainContainer-489": Object {
+                  ".HvDatePickerDS-rangeMainContainer-525": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                   },
-                  ".HvDatePickerDS-rangeRightCalendarContainer-492": Object {
+                  ".HvDatePickerDS-rangeRightCalendarContainer-528": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-singleCalendarFooter-488": Object {
+                  ".HvDatePickerDS-singleCalendarFooter-524": Object {
                     "margin": "20px",
                     "text-align": "right",
                   },
@@ -13837,6 +13887,12 @@ body {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
+                  "noBorderBottom": Object {
+                    "border-bottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "border-top": "none",
+                  },
                   "popper": Object {
                     "width": "100%",
                     "z-index": "10",
@@ -13878,29 +13934,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvDatePickerDS",
                   "classes": Object {
-                    "actionsContainer": "HvDatePickerDS-actionsContainer-496",
-                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-500",
-                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-498",
-                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-499",
-                    "borderTopNone": "HvDatePickerDS-borderTopNone-497",
-                    "calendarContainer": "HvDatePickerDS-calendarContainer-487",
-                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-485",
-                    "doubleWidth": "HvDatePickerDS-doubleWidth-502",
-                    "icon": "HvDatePickerDS-icon-483",
-                    "iconClear": "HvDatePickerDS-iconClear-484",
-                    "input": "HvDatePickerDS-input-482",
-                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-480",
-                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-481",
-                    "label": "HvDatePickerDS-label-486",
-                    "popper": "HvDatePickerDS-popper-501",
-                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-490",
-                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-493",
-                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-494",
-                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-495",
-                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-491",
-                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-489",
-                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-492",
-                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-488",
+                    "actionsContainer": "HvDatePickerDS-actionsContainer-532",
+                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-536",
+                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-534",
+                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-535",
+                    "borderTopNone": "HvDatePickerDS-borderTopNone-533",
+                    "calendarContainer": "HvDatePickerDS-calendarContainer-523",
+                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-521",
+                    "doubleWidth": "HvDatePickerDS-doubleWidth-538",
+                    "icon": "HvDatePickerDS-icon-519",
+                    "iconClear": "HvDatePickerDS-iconClear-520",
+                    "input": "HvDatePickerDS-input-518",
+                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-514",
+                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-515",
+                    "label": "HvDatePickerDS-label-522",
+                    "noBorderBottom": "HvDatePickerDS-noBorderBottom-517",
+                    "noBorderTop": "HvDatePickerDS-noBorderTop-516",
+                    "popper": "HvDatePickerDS-popper-537",
+                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-526",
+                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-529",
+                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-530",
+                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-531",
+                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-527",
+                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-525",
+                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-528",
+                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-524",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -14383,14 +14441,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvDatePickerDS-input-482::placeholder": Object {
+                  ".HvDatePickerDS-input-518::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvDatePickerDS-input-482:focus": Object {
+                  ".HvDatePickerDS-input-518:focus": Object {
                     "outline": "none",
                   },
                   "actionsContainer": Object {
@@ -14478,6 +14536,12 @@ body {
                   "label": Object {
                     "display": "block",
                     "marginBottom": "10px",
+                  },
+                  "noBorderBottom": Object {
+                    "borderBottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "borderTop": "none",
                   },
                   "popper": Object {
                     "width": "100%",
@@ -15462,29 +15526,31 @@ body {
       <HvDatePickerDS
         classes={
           Object {
-            "actionsContainer": "HvDatePickerDS-actionsContainer-496",
-            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-500",
-            "borderBottomNone": "HvDatePickerDS-borderBottomNone-498",
-            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-499",
-            "borderTopNone": "HvDatePickerDS-borderTopNone-497",
-            "calendarContainer": "HvDatePickerDS-calendarContainer-487",
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-485",
-            "doubleWidth": "HvDatePickerDS-doubleWidth-502",
-            "icon": "HvDatePickerDS-icon-483",
-            "iconClear": "HvDatePickerDS-iconClear-484",
-            "input": "HvDatePickerDS-input-482",
-            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-480",
-            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-481",
-            "label": "HvDatePickerDS-label-486",
-            "popper": "HvDatePickerDS-popper-501",
-            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-490",
-            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-493",
-            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-494",
-            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-495",
-            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-491",
-            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-489",
-            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-492",
-            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-488",
+            "actionsContainer": "HvDatePickerDS-actionsContainer-532",
+            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-536",
+            "borderBottomNone": "HvDatePickerDS-borderBottomNone-534",
+            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-535",
+            "borderTopNone": "HvDatePickerDS-borderTopNone-533",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-523",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-521",
+            "doubleWidth": "HvDatePickerDS-doubleWidth-538",
+            "icon": "HvDatePickerDS-icon-519",
+            "iconClear": "HvDatePickerDS-iconClear-520",
+            "input": "HvDatePickerDS-input-518",
+            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-514",
+            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-515",
+            "label": "HvDatePickerDS-label-522",
+            "noBorderBottom": "HvDatePickerDS-noBorderBottom-517",
+            "noBorderTop": "HvDatePickerDS-noBorderTop-516",
+            "popper": "HvDatePickerDS-popper-537",
+            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-526",
+            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-529",
+            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-530",
+            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-531",
+            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-527",
+            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-525",
+            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-528",
+            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-524",
           }
         }
         endValue=""
@@ -16433,20 +16499,20 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="HvDatePickerDS-datePickerContainer-485"
+            className="HvDatePickerDS-datePickerContainer-521"
           >
             <div
-              className="HvDatePickerDS-inputCalendarClosed-480"
+              className="HvDatePickerDS-inputCalendarClosed-514"
             >
               <input
-                className="HvDatePickerDS-input-482"
+                className="HvDatePickerDS-input-518"
                 placeholder="Select a date"
                 readOnly={true}
                 type="text"
                 value="1 Jan, 2019"
               />
               <CalendarS
-                className="HvDatePickerDS-icon-483"
+                className="HvDatePickerDS-icon-519"
                 color={null}
                 height={null}
                 iconSize="S"
@@ -16455,7 +16521,7 @@ body {
                 width={null}
               >
                 <svg
-                  className="HvDatePickerDS-icon-483"
+                  className="HvDatePickerDS-icon-519"
                   height={30}
                   onClick={[Function]}
                   viewBox="1 1 30 30"
@@ -16483,22 +16549,8 @@ body {
             </div>
             <Popper
               anchorEl={null}
-              className="HvDatePickerDS-popper-501"
+              className="HvDatePickerDS-popper-537"
               disablePortal={true}
-              modifiers={
-                Object {
-                  "applyCustomStyle": Object {
-                    "enabled": true,
-                    "fn": [Function],
-                    "order": 899,
-                  },
-                  "preventOverflow": Object {
-                    "enabled": true,
-                    "escapeWithReference": true,
-                    "padding": 0,
-                  },
-                }
-              }
               open={false}
               placement="bottom-start"
               popperOptions={
@@ -21076,29 +21128,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "actionsContainer": "HvDatePickerDS-actionsContainer-1534",
-                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1538",
-                "borderBottomNone": "HvDatePickerDS-borderBottomNone-1536",
-                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1537",
-                "borderTopNone": "HvDatePickerDS-borderTopNone-1535",
-                "calendarContainer": "HvDatePickerDS-calendarContainer-1525",
-                "datePickerContainer": "HvDatePickerDS-datePickerContainer-1523",
-                "doubleWidth": "HvDatePickerDS-doubleWidth-1540",
-                "icon": "HvDatePickerDS-icon-1521",
-                "iconClear": "HvDatePickerDS-iconClear-1522",
-                "input": "HvDatePickerDS-input-1520",
-                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1518",
-                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1519",
-                "label": "HvDatePickerDS-label-1524",
-                "popper": "HvDatePickerDS-popper-1539",
-                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1528",
-                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1531",
-                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1532",
-                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1533",
-                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1529",
-                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1527",
-                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1530",
-                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1526",
+                "actionsContainer": "HvDatePickerDS-actionsContainer-1636",
+                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1640",
+                "borderBottomNone": "HvDatePickerDS-borderBottomNone-1638",
+                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1639",
+                "borderTopNone": "HvDatePickerDS-borderTopNone-1637",
+                "calendarContainer": "HvDatePickerDS-calendarContainer-1627",
+                "datePickerContainer": "HvDatePickerDS-datePickerContainer-1625",
+                "doubleWidth": "HvDatePickerDS-doubleWidth-1642",
+                "icon": "HvDatePickerDS-icon-1623",
+                "iconClear": "HvDatePickerDS-iconClear-1624",
+                "input": "HvDatePickerDS-input-1622",
+                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1618",
+                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1619",
+                "label": "HvDatePickerDS-label-1626",
+                "noBorderBottom": "HvDatePickerDS-noBorderBottom-1621",
+                "noBorderTop": "HvDatePickerDS-noBorderTop-1620",
+                "popper": "HvDatePickerDS-popper-1641",
+                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1630",
+                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1633",
+                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1634",
+                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1635",
+                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1631",
+                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1629",
+                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1632",
+                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1628",
               },
               "deployed": true,
               "linked": false,
@@ -21106,29 +21160,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvDatePickerDS",
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-1534",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1538",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1536",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1537",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-1535",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-1525",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1523",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-1540",
-                  "icon": "HvDatePickerDS-icon-1521",
-                  "iconClear": "HvDatePickerDS-iconClear-1522",
-                  "input": "HvDatePickerDS-input-1520",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1518",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1519",
-                  "label": "HvDatePickerDS-label-1524",
-                  "popper": "HvDatePickerDS-popper-1539",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1528",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1531",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1532",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1533",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1529",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1527",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1530",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1526",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-1636",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1640",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1638",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1639",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-1637",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-1627",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1625",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-1642",
+                  "icon": "HvDatePickerDS-icon-1623",
+                  "iconClear": "HvDatePickerDS-iconClear-1624",
+                  "input": "HvDatePickerDS-input-1622",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1618",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1619",
+                  "label": "HvDatePickerDS-label-1626",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-1621",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-1620",
+                  "popper": "HvDatePickerDS-popper-1641",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1630",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1633",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1634",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1635",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1631",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1629",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1632",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1628",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -21616,7 +21672,7 @@ body {
                   data-meta="HvDatePickerDS"
                 >
                   
-.HvDatePickerDS-inputCalendarClosed-1518 {
+.HvDatePickerDS-inputCalendarClosed-1618 {
   height: 32px;
   border: 1px solid #BCBCBC;
   position: relative;
@@ -21624,7 +21680,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputCalendarOpen-1519 {
+.HvDatePickerDS-inputCalendarOpen-1619 {
   height: 32px;
   border: 1px solid #414141;
   position: relative;
@@ -21632,7 +21688,13 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-input-1520 {
+.HvDatePickerDS-noBorderTop-1620 {
+  border-top: none;
+}
+.HvDatePickerDS-noBorderBottom-1621 {
+  border-bottom: none;
+}
+.HvDatePickerDS-input-1622 {
   width: 100%;
   color: #414141;
   border: none;
@@ -21643,17 +21705,17 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-input-1520:focus {
+.HvDatePickerDS-input-1622:focus {
   outline: none;
 }
-.HvDatePickerDS-input-1520::placeholder {
+.HvDatePickerDS-input-1622::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-icon-1521 {
+.HvDatePickerDS-icon-1623 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -21661,7 +21723,7 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-iconClear-1522 {
+.HvDatePickerDS-iconClear-1624 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -21669,73 +21731,73 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-datePickerContainer-1523 {
+.HvDatePickerDS-datePickerContainer-1625 {
   width: 320px;
   position: relative;
 }
-.HvDatePickerDS-label-1524 {
+.HvDatePickerDS-label-1626 {
   display: block;
   margin-bottom: 10px;
 }
-.HvDatePickerDS-calendarContainer-1525 {
+.HvDatePickerDS-calendarContainer-1627 {
   border: 1px solid #414141;
   z-index: 10;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-singleCalendarFooter-1526 {
+.HvDatePickerDS-singleCalendarFooter-1628 {
   margin: 20px;
   text-align: right;
 }
-.HvDatePickerDS-rangeMainContainer-1527 {
+.HvDatePickerDS-rangeMainContainer-1629 {
   border: 1px solid #414141;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-rangeCalendarsContainer-1528 {
+.HvDatePickerDS-rangeCalendarsContainer-1630 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeLeftCalendarContainer-1529 {
+.HvDatePickerDS-rangeLeftCalendarContainer-1631 {
   width: 50%;
 }
-.HvDatePickerDS-rangeRightCalendarContainer-1530 {
+.HvDatePickerDS-rangeRightCalendarContainer-1632 {
   width: 50%;
 }
-.HvDatePickerDS-rangeCalendarsFooter-1531 {
+.HvDatePickerDS-rangeCalendarsFooter-1633 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeFooterLeft-1532 {
+.HvDatePickerDS-rangeFooterLeft-1634 {
   width: 50%;
 }
-.HvDatePickerDS-rangeFooterRight-1533 {
+.HvDatePickerDS-rangeFooterRight-1635 {
   width: 50%;
   padding: 20px;
   text-align: right;
 }
-.HvDatePickerDS-actionsContainer-1534 {
+.HvDatePickerDS-actionsContainer-1636 {
   text-align: right;
 }
-.HvDatePickerDS-borderTopNone-1535 {
+.HvDatePickerDS-borderTopNone-1637 {
   border-top: none;
 }
-.HvDatePickerDS-borderBottomNone-1536 {
+.HvDatePickerDS-borderBottomNone-1638 {
   border-bottom: none;
 }
-.HvDatePickerDS-borderTopDisplay-1537 {
+.HvDatePickerDS-borderTopDisplay-1639 {
   border-top: 1px solid #414141;
 }
-.HvDatePickerDS-borderBottomDisplay-1538 {
+.HvDatePickerDS-borderBottomDisplay-1640 {
   border-bottom: 1px solid #414141;
 }
-.HvDatePickerDS-popper-1539 {
+.HvDatePickerDS-popper-1641 {
   width: 100%;
   z-index: 10;
 }
-.HvDatePickerDS-doubleWidth-1540 {
+.HvDatePickerDS-doubleWidth-1642 {
   width: calc(200% - 2px);
 }
 
@@ -21751,29 +21813,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-1534",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1538",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1536",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1537",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-1535",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-1525",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1523",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-1540",
-                  "icon": "HvDatePickerDS-icon-1521",
-                  "iconClear": "HvDatePickerDS-iconClear-1522",
-                  "input": "HvDatePickerDS-input-1520",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1518",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1519",
-                  "label": "HvDatePickerDS-label-1524",
-                  "popper": "HvDatePickerDS-popper-1539",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1528",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1531",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1532",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1533",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1529",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1527",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1530",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1526",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-1636",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1640",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-1638",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1639",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-1637",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-1627",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-1625",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-1642",
+                  "icon": "HvDatePickerDS-icon-1623",
+                  "iconClear": "HvDatePickerDS-iconClear-1624",
+                  "input": "HvDatePickerDS-input-1622",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1618",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1619",
+                  "label": "HvDatePickerDS-label-1626",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-1621",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-1620",
+                  "popper": "HvDatePickerDS-popper-1641",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1630",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1633",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1634",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1635",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1631",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1629",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1632",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1628",
                 },
                 "index": Array [
                   Object {
@@ -21791,6 +21855,12 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  Object {
+                    "border-top": "none",
+                  },
+                  Object {
+                    "border-bottom": "none",
                   },
                   Object {
                     "background": "transparent",
@@ -21900,36 +21970,36 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvDatePickerDS-actionsContainer-1534": Object {
+                  ".HvDatePickerDS-actionsContainer-1636": Object {
                     "text-align": "right",
                   },
-                  ".HvDatePickerDS-borderBottomDisplay-1538": Object {
+                  ".HvDatePickerDS-borderBottomDisplay-1640": Object {
                     "border-bottom": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderBottomNone-1536": Object {
+                  ".HvDatePickerDS-borderBottomNone-1638": Object {
                     "border-bottom": "none",
                   },
-                  ".HvDatePickerDS-borderTopDisplay-1537": Object {
+                  ".HvDatePickerDS-borderTopDisplay-1639": Object {
                     "border-top": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderTopNone-1535": Object {
+                  ".HvDatePickerDS-borderTopNone-1637": Object {
                     "border-top": "none",
                   },
-                  ".HvDatePickerDS-calendarContainer-1525": Object {
+                  ".HvDatePickerDS-calendarContainer-1627": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-datePickerContainer-1523": Object {
+                  ".HvDatePickerDS-datePickerContainer-1625": Object {
                     "position": "relative",
                     "width": "320px",
                   },
-                  ".HvDatePickerDS-doubleWidth-1540": Object {
+                  ".HvDatePickerDS-doubleWidth-1642": Object {
                     "width": "calc(200% - 2px)",
                   },
-                  ".HvDatePickerDS-icon-1521": Object {
+                  ".HvDatePickerDS-icon-1623": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -21937,7 +22007,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-iconClear-1522": Object {
+                  ".HvDatePickerDS-iconClear-1624": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -21945,7 +22015,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-input-1520": Object {
+                  ".HvDatePickerDS-input-1622": Object {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -21956,17 +22026,17 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvDatePickerDS-input-1520::placeholder": Object {
+                  ".HvDatePickerDS-input-1622::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvDatePickerDS-input-1520:focus": Object {
+                  ".HvDatePickerDS-input-1622:focus": Object {
                     "outline": "none",
                   },
-                  ".HvDatePickerDS-inputCalendarClosed-1518": Object {
+                  ".HvDatePickerDS-inputCalendarClosed-1618": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "height": "32px",
@@ -21974,7 +22044,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputCalendarOpen-1519": Object {
+                  ".HvDatePickerDS-inputCalendarOpen-1619": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #414141",
                     "height": "32px",
@@ -21982,43 +22052,49 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-label-1524": Object {
+                  ".HvDatePickerDS-label-1626": Object {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
-                  ".HvDatePickerDS-popper-1539": Object {
+                  ".HvDatePickerDS-noBorderBottom-1621": Object {
+                    "border-bottom": "none",
+                  },
+                  ".HvDatePickerDS-noBorderTop-1620": Object {
+                    "border-top": "none",
+                  },
+                  ".HvDatePickerDS-popper-1641": Object {
                     "width": "100%",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-rangeCalendarsContainer-1528": Object {
+                  ".HvDatePickerDS-rangeCalendarsContainer-1630": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeCalendarsFooter-1531": Object {
+                  ".HvDatePickerDS-rangeCalendarsFooter-1633": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeFooterLeft-1532": Object {
+                  ".HvDatePickerDS-rangeFooterLeft-1634": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeFooterRight-1533": Object {
+                  ".HvDatePickerDS-rangeFooterRight-1635": Object {
                     "padding": "20px",
                     "text-align": "right",
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeLeftCalendarContainer-1529": Object {
+                  ".HvDatePickerDS-rangeLeftCalendarContainer-1631": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeMainContainer-1527": Object {
+                  ".HvDatePickerDS-rangeMainContainer-1629": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                   },
-                  ".HvDatePickerDS-rangeRightCalendarContainer-1530": Object {
+                  ".HvDatePickerDS-rangeRightCalendarContainer-1632": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-singleCalendarFooter-1526": Object {
+                  ".HvDatePickerDS-singleCalendarFooter-1628": Object {
                     "margin": "20px",
                     "text-align": "right",
                   },
@@ -22098,6 +22174,12 @@ body {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
+                  "noBorderBottom": Object {
+                    "border-bottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "border-top": "none",
+                  },
                   "popper": Object {
                     "width": "100%",
                     "z-index": "10",
@@ -22139,29 +22221,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvDatePickerDS",
                   "classes": Object {
-                    "actionsContainer": "HvDatePickerDS-actionsContainer-1534",
-                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1538",
-                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-1536",
-                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1537",
-                    "borderTopNone": "HvDatePickerDS-borderTopNone-1535",
-                    "calendarContainer": "HvDatePickerDS-calendarContainer-1525",
-                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-1523",
-                    "doubleWidth": "HvDatePickerDS-doubleWidth-1540",
-                    "icon": "HvDatePickerDS-icon-1521",
-                    "iconClear": "HvDatePickerDS-iconClear-1522",
-                    "input": "HvDatePickerDS-input-1520",
-                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1518",
-                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1519",
-                    "label": "HvDatePickerDS-label-1524",
-                    "popper": "HvDatePickerDS-popper-1539",
-                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1528",
-                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1531",
-                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1532",
-                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1533",
-                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1529",
-                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1527",
-                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1530",
-                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1526",
+                    "actionsContainer": "HvDatePickerDS-actionsContainer-1636",
+                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1640",
+                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-1638",
+                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1639",
+                    "borderTopNone": "HvDatePickerDS-borderTopNone-1637",
+                    "calendarContainer": "HvDatePickerDS-calendarContainer-1627",
+                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-1625",
+                    "doubleWidth": "HvDatePickerDS-doubleWidth-1642",
+                    "icon": "HvDatePickerDS-icon-1623",
+                    "iconClear": "HvDatePickerDS-iconClear-1624",
+                    "input": "HvDatePickerDS-input-1622",
+                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1618",
+                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1619",
+                    "label": "HvDatePickerDS-label-1626",
+                    "noBorderBottom": "HvDatePickerDS-noBorderBottom-1621",
+                    "noBorderTop": "HvDatePickerDS-noBorderTop-1620",
+                    "popper": "HvDatePickerDS-popper-1641",
+                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1630",
+                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1633",
+                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1634",
+                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1635",
+                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1631",
+                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1629",
+                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1632",
+                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1628",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -22644,14 +22728,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvDatePickerDS-input-1520::placeholder": Object {
+                  ".HvDatePickerDS-input-1622::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvDatePickerDS-input-1520:focus": Object {
+                  ".HvDatePickerDS-input-1622:focus": Object {
                     "outline": "none",
                   },
                   "actionsContainer": Object {
@@ -22739,6 +22823,12 @@ body {
                   "label": Object {
                     "display": "block",
                     "marginBottom": "10px",
+                  },
+                  "noBorderBottom": Object {
+                    "borderBottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "borderTop": "none",
                   },
                   "popper": Object {
                     "width": "100%",
@@ -23716,31 +23806,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-1543",
-                "4xlTitle": "Typography-4xlTitle-1542",
-                "5xlTitle": "Typography-5xlTitle-1541",
-                "baseFontFamily": "Typography-baseFontFamily-1564",
-                "disabledButtonText": "Typography-disabledButtonText-1555",
-                "disabledText": "Typography-disabledText-1562",
-                "highlightText": "Typography-highlightText-1551",
-                "infoText": "Typography-infoText-1560",
-                "inlineLink": "Typography-inlineLink-1554",
-                "lTitle": "Typography-lTitle-1546",
-                "labelText": "Typography-labelText-1559",
-                "mTitle": "Typography-mTitle-1547",
-                "margin": "Typography-margin-1565",
-                "normalText": "Typography-normalText-1552",
-                "placeholderText": "Typography-placeholderText-1556",
-                "sLink": "Typography-sLink-1561",
-                "sText": "Typography-sText-1558",
-                "sTitle": "Typography-sTitle-1548",
-                "selectedNavText": "Typography-selectedNavText-1557",
-                "selectedText": "Typography-selectedText-1553",
-                "vizText": "Typography-vizText-1563",
-                "xlTitle": "Typography-xlTitle-1545",
-                "xsTitle": "Typography-xsTitle-1549",
-                "xxlTitle": "Typography-xxlTitle-1544",
-                "xxsTitle": "Typography-xxsTitle-1550",
+                "3xlTitle": "Typography-3xlTitle-1645",
+                "4xlTitle": "Typography-4xlTitle-1644",
+                "5xlTitle": "Typography-5xlTitle-1643",
+                "baseFontFamily": "Typography-baseFontFamily-1666",
+                "disabledButtonText": "Typography-disabledButtonText-1657",
+                "disabledText": "Typography-disabledText-1664",
+                "highlightText": "Typography-highlightText-1653",
+                "infoText": "Typography-infoText-1662",
+                "inlineLink": "Typography-inlineLink-1656",
+                "lTitle": "Typography-lTitle-1648",
+                "labelText": "Typography-labelText-1661",
+                "mTitle": "Typography-mTitle-1649",
+                "margin": "Typography-margin-1667",
+                "normalText": "Typography-normalText-1654",
+                "placeholderText": "Typography-placeholderText-1658",
+                "sLink": "Typography-sLink-1663",
+                "sText": "Typography-sText-1660",
+                "sTitle": "Typography-sTitle-1650",
+                "selectedNavText": "Typography-selectedNavText-1659",
+                "selectedText": "Typography-selectedText-1655",
+                "vizText": "Typography-vizText-1665",
+                "xlTitle": "Typography-xlTitle-1647",
+                "xsTitle": "Typography-xsTitle-1651",
+                "xxlTitle": "Typography-xxlTitle-1646",
+                "xxsTitle": "Typography-xxsTitle-1652",
               },
               "deployed": true,
               "linked": false,
@@ -23748,31 +23838,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Typography",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-1543",
-                  "4xlTitle": "Typography-4xlTitle-1542",
-                  "5xlTitle": "Typography-5xlTitle-1541",
-                  "baseFontFamily": "Typography-baseFontFamily-1564",
-                  "disabledButtonText": "Typography-disabledButtonText-1555",
-                  "disabledText": "Typography-disabledText-1562",
-                  "highlightText": "Typography-highlightText-1551",
-                  "infoText": "Typography-infoText-1560",
-                  "inlineLink": "Typography-inlineLink-1554",
-                  "lTitle": "Typography-lTitle-1546",
-                  "labelText": "Typography-labelText-1559",
-                  "mTitle": "Typography-mTitle-1547",
-                  "margin": "Typography-margin-1565",
-                  "normalText": "Typography-normalText-1552",
-                  "placeholderText": "Typography-placeholderText-1556",
-                  "sLink": "Typography-sLink-1561",
-                  "sText": "Typography-sText-1558",
-                  "sTitle": "Typography-sTitle-1548",
-                  "selectedNavText": "Typography-selectedNavText-1557",
-                  "selectedText": "Typography-selectedText-1553",
-                  "vizText": "Typography-vizText-1563",
-                  "xlTitle": "Typography-xlTitle-1545",
-                  "xsTitle": "Typography-xsTitle-1549",
-                  "xxlTitle": "Typography-xxlTitle-1544",
-                  "xxsTitle": "Typography-xxsTitle-1550",
+                  "3xlTitle": "Typography-3xlTitle-1645",
+                  "4xlTitle": "Typography-4xlTitle-1644",
+                  "5xlTitle": "Typography-5xlTitle-1643",
+                  "baseFontFamily": "Typography-baseFontFamily-1666",
+                  "disabledButtonText": "Typography-disabledButtonText-1657",
+                  "disabledText": "Typography-disabledText-1664",
+                  "highlightText": "Typography-highlightText-1653",
+                  "infoText": "Typography-infoText-1662",
+                  "inlineLink": "Typography-inlineLink-1656",
+                  "lTitle": "Typography-lTitle-1648",
+                  "labelText": "Typography-labelText-1661",
+                  "mTitle": "Typography-mTitle-1649",
+                  "margin": "Typography-margin-1667",
+                  "normalText": "Typography-normalText-1654",
+                  "placeholderText": "Typography-placeholderText-1658",
+                  "sLink": "Typography-sLink-1663",
+                  "sText": "Typography-sText-1660",
+                  "sTitle": "Typography-sTitle-1650",
+                  "selectedNavText": "Typography-selectedNavText-1659",
+                  "selectedText": "Typography-selectedText-1655",
+                  "vizText": "Typography-vizText-1665",
+                  "xlTitle": "Typography-xlTitle-1647",
+                  "xsTitle": "Typography-xsTitle-1651",
+                  "xxlTitle": "Typography-xxlTitle-1646",
+                  "xxsTitle": "Typography-xxsTitle-1652",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -24260,91 +24350,91 @@ body {
                   data-meta="Typography"
                 >
                   
-.Typography-5xlTitle-1541 {
+.Typography-5xlTitle-1643 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-1542 {
+.Typography-4xlTitle-1644 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-1543 {
+.Typography-3xlTitle-1645 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-1544 {
+.Typography-xxlTitle-1646 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-1545 {
+.Typography-xlTitle-1647 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-1546 {
+.Typography-lTitle-1648 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-1547 {
+.Typography-mTitle-1649 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-1548 {
+.Typography-sTitle-1650 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-1549 {
+.Typography-xsTitle-1651 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-1550 {
+.Typography-xxsTitle-1652 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-1551 {
+.Typography-highlightText-1653 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-1552 {
+.Typography-normalText-1654 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedText-1553 {
+.Typography-selectedText-1655 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -24352,80 +24442,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-1554 {
+.Typography-inlineLink-1656 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-1555 {
+.Typography-disabledButtonText-1657 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-placeholderText-1556 {
+.Typography-placeholderText-1658 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedNavText-1557 {
+.Typography-selectedNavText-1659 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sText-1558 {
+.Typography-sText-1660 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-1559 {
+.Typography-labelText-1661 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-1560 {
+.Typography-infoText-1662 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-1561 {
+.Typography-sLink-1663 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-1562 {
+.Typography-disabledText-1664 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-1563 {
+.Typography-vizText-1665 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-1564 {
+.Typography-baseFontFamily-1666 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-1565 {
+.Typography-margin-1667 {
   margin: 0;
 }
 
@@ -24441,31 +24531,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-1543",
-                  "4xlTitle": "Typography-4xlTitle-1542",
-                  "5xlTitle": "Typography-5xlTitle-1541",
-                  "baseFontFamily": "Typography-baseFontFamily-1564",
-                  "disabledButtonText": "Typography-disabledButtonText-1555",
-                  "disabledText": "Typography-disabledText-1562",
-                  "highlightText": "Typography-highlightText-1551",
-                  "infoText": "Typography-infoText-1560",
-                  "inlineLink": "Typography-inlineLink-1554",
-                  "lTitle": "Typography-lTitle-1546",
-                  "labelText": "Typography-labelText-1559",
-                  "mTitle": "Typography-mTitle-1547",
-                  "margin": "Typography-margin-1565",
-                  "normalText": "Typography-normalText-1552",
-                  "placeholderText": "Typography-placeholderText-1556",
-                  "sLink": "Typography-sLink-1561",
-                  "sText": "Typography-sText-1558",
-                  "sTitle": "Typography-sTitle-1548",
-                  "selectedNavText": "Typography-selectedNavText-1557",
-                  "selectedText": "Typography-selectedText-1553",
-                  "vizText": "Typography-vizText-1563",
-                  "xlTitle": "Typography-xlTitle-1545",
-                  "xsTitle": "Typography-xsTitle-1549",
-                  "xxlTitle": "Typography-xxlTitle-1544",
-                  "xxsTitle": "Typography-xxsTitle-1550",
+                  "3xlTitle": "Typography-3xlTitle-1645",
+                  "4xlTitle": "Typography-4xlTitle-1644",
+                  "5xlTitle": "Typography-5xlTitle-1643",
+                  "baseFontFamily": "Typography-baseFontFamily-1666",
+                  "disabledButtonText": "Typography-disabledButtonText-1657",
+                  "disabledText": "Typography-disabledText-1664",
+                  "highlightText": "Typography-highlightText-1653",
+                  "infoText": "Typography-infoText-1662",
+                  "inlineLink": "Typography-inlineLink-1656",
+                  "lTitle": "Typography-lTitle-1648",
+                  "labelText": "Typography-labelText-1661",
+                  "mTitle": "Typography-mTitle-1649",
+                  "margin": "Typography-margin-1667",
+                  "normalText": "Typography-normalText-1654",
+                  "placeholderText": "Typography-placeholderText-1658",
+                  "sLink": "Typography-sLink-1663",
+                  "sText": "Typography-sText-1660",
+                  "sTitle": "Typography-sTitle-1650",
+                  "selectedNavText": "Typography-selectedNavText-1659",
+                  "selectedText": "Typography-selectedText-1655",
+                  "vizText": "Typography-vizText-1665",
+                  "xlTitle": "Typography-xlTitle-1647",
+                  "xsTitle": "Typography-xsTitle-1651",
+                  "xxlTitle": "Typography-xxlTitle-1646",
+                  "xxsTitle": "Typography-xxsTitle-1652",
                 },
                 "index": Array [
                   Object {
@@ -24638,132 +24728,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-1543": Object {
+                  ".Typography-3xlTitle-1645": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-1542": Object {
+                  ".Typography-4xlTitle-1644": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-1541": Object {
+                  ".Typography-5xlTitle-1643": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-1564": Object {
+                  ".Typography-baseFontFamily-1666": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-1555": Object {
+                  ".Typography-disabledButtonText-1657": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-1562": Object {
+                  ".Typography-disabledText-1664": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-1551": Object {
+                  ".Typography-highlightText-1653": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-1560": Object {
+                  ".Typography-infoText-1662": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-1554": Object {
+                  ".Typography-inlineLink-1656": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-1546": Object {
+                  ".Typography-lTitle-1648": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-1559": Object {
+                  ".Typography-labelText-1661": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-1547": Object {
+                  ".Typography-mTitle-1649": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-1565": Object {
+                  ".Typography-margin-1667": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-1552": Object {
+                  ".Typography-normalText-1654": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-placeholderText-1556": Object {
+                  ".Typography-placeholderText-1658": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-1561": Object {
+                  ".Typography-sLink-1663": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sText-1558": Object {
+                  ".Typography-sText-1660": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-1548": Object {
+                  ".Typography-sTitle-1650": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-selectedNavText-1557": Object {
+                  ".Typography-selectedNavText-1659": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-selectedText-1553": Object {
+                  ".Typography-selectedText-1655": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -24771,35 +24861,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-vizText-1563": Object {
+                  ".Typography-vizText-1665": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-1545": Object {
+                  ".Typography-xlTitle-1647": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-1549": Object {
+                  ".Typography-xsTitle-1651": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-1544": Object {
+                  ".Typography-xxlTitle-1646": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-1550": Object {
+                  ".Typography-xxsTitle-1652": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -24979,31 +25069,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Typography",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-1543",
-                    "4xlTitle": "Typography-4xlTitle-1542",
-                    "5xlTitle": "Typography-5xlTitle-1541",
-                    "baseFontFamily": "Typography-baseFontFamily-1564",
-                    "disabledButtonText": "Typography-disabledButtonText-1555",
-                    "disabledText": "Typography-disabledText-1562",
-                    "highlightText": "Typography-highlightText-1551",
-                    "infoText": "Typography-infoText-1560",
-                    "inlineLink": "Typography-inlineLink-1554",
-                    "lTitle": "Typography-lTitle-1546",
-                    "labelText": "Typography-labelText-1559",
-                    "mTitle": "Typography-mTitle-1547",
-                    "margin": "Typography-margin-1565",
-                    "normalText": "Typography-normalText-1552",
-                    "placeholderText": "Typography-placeholderText-1556",
-                    "sLink": "Typography-sLink-1561",
-                    "sText": "Typography-sText-1558",
-                    "sTitle": "Typography-sTitle-1548",
-                    "selectedNavText": "Typography-selectedNavText-1557",
-                    "selectedText": "Typography-selectedText-1553",
-                    "vizText": "Typography-vizText-1563",
-                    "xlTitle": "Typography-xlTitle-1545",
-                    "xsTitle": "Typography-xsTitle-1549",
-                    "xxlTitle": "Typography-xxlTitle-1544",
-                    "xxsTitle": "Typography-xxsTitle-1550",
+                    "3xlTitle": "Typography-3xlTitle-1645",
+                    "4xlTitle": "Typography-4xlTitle-1644",
+                    "5xlTitle": "Typography-5xlTitle-1643",
+                    "baseFontFamily": "Typography-baseFontFamily-1666",
+                    "disabledButtonText": "Typography-disabledButtonText-1657",
+                    "disabledText": "Typography-disabledText-1664",
+                    "highlightText": "Typography-highlightText-1653",
+                    "infoText": "Typography-infoText-1662",
+                    "inlineLink": "Typography-inlineLink-1656",
+                    "lTitle": "Typography-lTitle-1648",
+                    "labelText": "Typography-labelText-1661",
+                    "mTitle": "Typography-mTitle-1649",
+                    "margin": "Typography-margin-1667",
+                    "normalText": "Typography-normalText-1654",
+                    "placeholderText": "Typography-placeholderText-1658",
+                    "sLink": "Typography-sLink-1663",
+                    "sText": "Typography-sText-1660",
+                    "sTitle": "Typography-sTitle-1650",
+                    "selectedNavText": "Typography-selectedNavText-1659",
+                    "selectedText": "Typography-selectedText-1655",
+                    "vizText": "Typography-vizText-1665",
+                    "xlTitle": "Typography-xlTitle-1647",
+                    "xsTitle": "Typography-xsTitle-1651",
+                    "xxlTitle": "Typography-xxlTitle-1646",
+                    "xxsTitle": "Typography-xxsTitle-1652",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -26615,29 +26705,31 @@ body {
       <HvDatePickerDS
         classes={
           Object {
-            "actionsContainer": "HvDatePickerDS-actionsContainer-1534",
-            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1538",
-            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1536",
-            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1537",
-            "borderTopNone": "HvDatePickerDS-borderTopNone-1535",
-            "calendarContainer": "HvDatePickerDS-calendarContainer-1525",
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1523",
-            "doubleWidth": "HvDatePickerDS-doubleWidth-1540",
-            "icon": "HvDatePickerDS-icon-1521",
-            "iconClear": "HvDatePickerDS-iconClear-1522",
-            "input": "HvDatePickerDS-input-1520",
-            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1518",
-            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1519",
-            "label": "HvDatePickerDS-label-1524",
-            "popper": "HvDatePickerDS-popper-1539",
-            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1528",
-            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1531",
-            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1532",
-            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1533",
-            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1529",
-            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1527",
-            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1530",
-            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1526",
+            "actionsContainer": "HvDatePickerDS-actionsContainer-1636",
+            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1640",
+            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1638",
+            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1639",
+            "borderTopNone": "HvDatePickerDS-borderTopNone-1637",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-1627",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1625",
+            "doubleWidth": "HvDatePickerDS-doubleWidth-1642",
+            "icon": "HvDatePickerDS-icon-1623",
+            "iconClear": "HvDatePickerDS-iconClear-1624",
+            "input": "HvDatePickerDS-input-1622",
+            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1618",
+            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1619",
+            "label": "HvDatePickerDS-label-1626",
+            "noBorderBottom": "HvDatePickerDS-noBorderBottom-1621",
+            "noBorderTop": "HvDatePickerDS-noBorderTop-1620",
+            "popper": "HvDatePickerDS-popper-1641",
+            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1630",
+            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1633",
+            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1634",
+            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1635",
+            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1631",
+            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1629",
+            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1632",
+            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1628",
           }
         }
         endValue=""
@@ -27586,41 +27678,41 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="HvDatePickerDS-datePickerContainer-1523"
+            className="HvDatePickerDS-datePickerContainer-1625"
           >
             <WithStyles(Typography)
-              className="HvDatePickerDS-label-1524"
+              className="HvDatePickerDS-label-1626"
               variant="labelText"
             >
               <Typography
-                className="HvDatePickerDS-label-1524"
+                className="HvDatePickerDS-label-1626"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-1543",
-                    "4xlTitle": "Typography-4xlTitle-1542",
-                    "5xlTitle": "Typography-5xlTitle-1541",
-                    "baseFontFamily": "Typography-baseFontFamily-1564",
-                    "disabledButtonText": "Typography-disabledButtonText-1555",
-                    "disabledText": "Typography-disabledText-1562",
-                    "highlightText": "Typography-highlightText-1551",
-                    "infoText": "Typography-infoText-1560",
-                    "inlineLink": "Typography-inlineLink-1554",
-                    "lTitle": "Typography-lTitle-1546",
-                    "labelText": "Typography-labelText-1559",
-                    "mTitle": "Typography-mTitle-1547",
-                    "margin": "Typography-margin-1565",
-                    "normalText": "Typography-normalText-1552",
-                    "placeholderText": "Typography-placeholderText-1556",
-                    "sLink": "Typography-sLink-1561",
-                    "sText": "Typography-sText-1558",
-                    "sTitle": "Typography-sTitle-1548",
-                    "selectedNavText": "Typography-selectedNavText-1557",
-                    "selectedText": "Typography-selectedText-1553",
-                    "vizText": "Typography-vizText-1563",
-                    "xlTitle": "Typography-xlTitle-1545",
-                    "xsTitle": "Typography-xsTitle-1549",
-                    "xxlTitle": "Typography-xxlTitle-1544",
-                    "xxsTitle": "Typography-xxsTitle-1550",
+                    "3xlTitle": "Typography-3xlTitle-1645",
+                    "4xlTitle": "Typography-4xlTitle-1644",
+                    "5xlTitle": "Typography-5xlTitle-1643",
+                    "baseFontFamily": "Typography-baseFontFamily-1666",
+                    "disabledButtonText": "Typography-disabledButtonText-1657",
+                    "disabledText": "Typography-disabledText-1664",
+                    "highlightText": "Typography-highlightText-1653",
+                    "infoText": "Typography-infoText-1662",
+                    "inlineLink": "Typography-inlineLink-1656",
+                    "lTitle": "Typography-lTitle-1648",
+                    "labelText": "Typography-labelText-1661",
+                    "mTitle": "Typography-mTitle-1649",
+                    "margin": "Typography-margin-1667",
+                    "normalText": "Typography-normalText-1654",
+                    "placeholderText": "Typography-placeholderText-1658",
+                    "sLink": "Typography-sLink-1663",
+                    "sText": "Typography-sText-1660",
+                    "sTitle": "Typography-sTitle-1650",
+                    "selectedNavText": "Typography-selectedNavText-1659",
+                    "selectedText": "Typography-selectedText-1655",
+                    "vizText": "Typography-vizText-1665",
+                    "xlTitle": "Typography-xlTitle-1647",
+                    "xsTitle": "Typography-xsTitle-1651",
+                    "xxlTitle": "Typography-xxlTitle-1646",
+                    "xxsTitle": "Typography-xxsTitle-1652",
                   }
                 }
                 component={null}
@@ -28552,7 +28644,7 @@ body {
                 variant="labelText"
               >
                 <p
-                  className="Typography-labelText-1559 Typography-baseFontFamily-1564 Typography-margin-1565 HvDatePickerDS-label-1524"
+                  className="Typography-labelText-1661 Typography-baseFontFamily-1666 Typography-margin-1667 HvDatePickerDS-label-1626"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -29483,17 +29575,17 @@ body {
               </Typography>
             </WithStyles(Typography)>
             <div
-              className="HvDatePickerDS-inputCalendarClosed-1518"
+              className="HvDatePickerDS-inputCalendarClosed-1618"
             >
               <input
-                className="HvDatePickerDS-input-1520"
+                className="HvDatePickerDS-input-1622"
                 placeholder="I'M THE PLACEHOLDER"
                 readOnly={true}
                 type="text"
                 value="5 Jan, 2019"
               />
               <CalendarS
-                className="HvDatePickerDS-icon-1521"
+                className="HvDatePickerDS-icon-1623"
                 color={null}
                 height={null}
                 iconSize="S"
@@ -29502,7 +29594,7 @@ body {
                 width={null}
               >
                 <svg
-                  className="HvDatePickerDS-icon-1521"
+                  className="HvDatePickerDS-icon-1623"
                   height={30}
                   onClick={[Function]}
                   viewBox="1 1 30 30"
@@ -29530,22 +29622,8 @@ body {
             </div>
             <Popper
               anchorEl={null}
-              className="HvDatePickerDS-popper-1539"
+              className="HvDatePickerDS-popper-1641"
               disablePortal={true}
-              modifiers={
-                Object {
-                  "applyCustomStyle": Object {
-                    "enabled": true,
-                    "fn": [Function],
-                    "order": 899,
-                  },
-                  "preventOverflow": Object {
-                    "enabled": true,
-                    "escapeWithReference": true,
-                    "padding": 0,
-                  },
-                }
-              }
               open={false}
               placement="bottom-start"
               popperOptions={
@@ -34123,29 +34201,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "actionsContainer": "HvDatePickerDS-actionsContainer-40",
-                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-44",
-                "borderBottomNone": "HvDatePickerDS-borderBottomNone-42",
-                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-43",
-                "borderTopNone": "HvDatePickerDS-borderTopNone-41",
-                "calendarContainer": "HvDatePickerDS-calendarContainer-31",
-                "datePickerContainer": "HvDatePickerDS-datePickerContainer-29",
-                "doubleWidth": "HvDatePickerDS-doubleWidth-46",
-                "icon": "HvDatePickerDS-icon-27",
-                "iconClear": "HvDatePickerDS-iconClear-28",
-                "input": "HvDatePickerDS-input-26",
-                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-24",
-                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-25",
-                "label": "HvDatePickerDS-label-30",
-                "popper": "HvDatePickerDS-popper-45",
-                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-34",
-                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-37",
-                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-38",
-                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-39",
-                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-35",
-                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-33",
-                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-36",
-                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-32",
+                "actionsContainer": "HvDatePickerDS-actionsContainer-44",
+                "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-48",
+                "borderBottomNone": "HvDatePickerDS-borderBottomNone-46",
+                "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-47",
+                "borderTopNone": "HvDatePickerDS-borderTopNone-45",
+                "calendarContainer": "HvDatePickerDS-calendarContainer-35",
+                "datePickerContainer": "HvDatePickerDS-datePickerContainer-33",
+                "doubleWidth": "HvDatePickerDS-doubleWidth-50",
+                "icon": "HvDatePickerDS-icon-31",
+                "iconClear": "HvDatePickerDS-iconClear-32",
+                "input": "HvDatePickerDS-input-30",
+                "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-26",
+                "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-27",
+                "label": "HvDatePickerDS-label-34",
+                "noBorderBottom": "HvDatePickerDS-noBorderBottom-29",
+                "noBorderTop": "HvDatePickerDS-noBorderTop-28",
+                "popper": "HvDatePickerDS-popper-49",
+                "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-38",
+                "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-41",
+                "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-42",
+                "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-43",
+                "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-39",
+                "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-37",
+                "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-40",
+                "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-36",
               },
               "deployed": true,
               "linked": false,
@@ -34153,29 +34233,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "HvDatePickerDS",
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-40",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-44",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-42",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-43",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-41",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-31",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-29",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-46",
-                  "icon": "HvDatePickerDS-icon-27",
-                  "iconClear": "HvDatePickerDS-iconClear-28",
-                  "input": "HvDatePickerDS-input-26",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-24",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-25",
-                  "label": "HvDatePickerDS-label-30",
-                  "popper": "HvDatePickerDS-popper-45",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-34",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-37",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-38",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-39",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-35",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-33",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-36",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-32",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-44",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-48",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-46",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-47",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-45",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-35",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-33",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-50",
+                  "icon": "HvDatePickerDS-icon-31",
+                  "iconClear": "HvDatePickerDS-iconClear-32",
+                  "input": "HvDatePickerDS-input-30",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-26",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-27",
+                  "label": "HvDatePickerDS-label-34",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-29",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-28",
+                  "popper": "HvDatePickerDS-popper-49",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-38",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-41",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-42",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-43",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-39",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-37",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-40",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-36",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -34663,7 +34745,7 @@ body {
                   data-meta="HvDatePickerDS"
                 >
                   
-.HvDatePickerDS-inputCalendarClosed-24 {
+.HvDatePickerDS-inputCalendarClosed-26 {
   height: 32px;
   border: 1px solid #BCBCBC;
   position: relative;
@@ -34671,7 +34753,7 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-inputCalendarOpen-25 {
+.HvDatePickerDS-inputCalendarOpen-27 {
   height: 32px;
   border: 1px solid #414141;
   position: relative;
@@ -34679,7 +34761,13 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
-.HvDatePickerDS-input-26 {
+.HvDatePickerDS-noBorderTop-28 {
+  border-top: none;
+}
+.HvDatePickerDS-noBorderBottom-29 {
+  border-bottom: none;
+}
+.HvDatePickerDS-input-30 {
   width: 100%;
   color: #414141;
   border: none;
@@ -34690,17 +34778,17 @@ body {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-input-26:focus {
+.HvDatePickerDS-input-30:focus {
   outline: none;
 }
-.HvDatePickerDS-input-26::placeholder {
+.HvDatePickerDS-input-30::placeholder {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.HvDatePickerDS-icon-27 {
+.HvDatePickerDS-icon-31 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -34708,7 +34796,7 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-iconClear-28 {
+.HvDatePickerDS-iconClear-32 {
   right: 0;
   width: 32px;
   height: 32px;
@@ -34716,73 +34804,73 @@ body {
   cursor: pointer;
   position: absolute;
 }
-.HvDatePickerDS-datePickerContainer-29 {
+.HvDatePickerDS-datePickerContainer-33 {
   width: 320px;
   position: relative;
 }
-.HvDatePickerDS-label-30 {
+.HvDatePickerDS-label-34 {
   display: block;
   margin-bottom: 10px;
 }
-.HvDatePickerDS-calendarContainer-31 {
+.HvDatePickerDS-calendarContainer-35 {
   border: 1px solid #414141;
   z-index: 10;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-singleCalendarFooter-32 {
+.HvDatePickerDS-singleCalendarFooter-36 {
   margin: 20px;
   text-align: right;
 }
-.HvDatePickerDS-rangeMainContainer-33 {
+.HvDatePickerDS-rangeMainContainer-37 {
   border: 1px solid #414141;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
 }
-.HvDatePickerDS-rangeCalendarsContainer-34 {
+.HvDatePickerDS-rangeCalendarsContainer-38 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeLeftCalendarContainer-35 {
+.HvDatePickerDS-rangeLeftCalendarContainer-39 {
   width: 50%;
 }
-.HvDatePickerDS-rangeRightCalendarContainer-36 {
+.HvDatePickerDS-rangeRightCalendarContainer-40 {
   width: 50%;
 }
-.HvDatePickerDS-rangeCalendarsFooter-37 {
+.HvDatePickerDS-rangeCalendarsFooter-41 {
   display: flex;
   flex-direction: row;
 }
-.HvDatePickerDS-rangeFooterLeft-38 {
+.HvDatePickerDS-rangeFooterLeft-42 {
   width: 50%;
 }
-.HvDatePickerDS-rangeFooterRight-39 {
+.HvDatePickerDS-rangeFooterRight-43 {
   width: 50%;
   padding: 20px;
   text-align: right;
 }
-.HvDatePickerDS-actionsContainer-40 {
+.HvDatePickerDS-actionsContainer-44 {
   text-align: right;
 }
-.HvDatePickerDS-borderTopNone-41 {
+.HvDatePickerDS-borderTopNone-45 {
   border-top: none;
 }
-.HvDatePickerDS-borderBottomNone-42 {
+.HvDatePickerDS-borderBottomNone-46 {
   border-bottom: none;
 }
-.HvDatePickerDS-borderTopDisplay-43 {
+.HvDatePickerDS-borderTopDisplay-47 {
   border-top: 1px solid #414141;
 }
-.HvDatePickerDS-borderBottomDisplay-44 {
+.HvDatePickerDS-borderBottomDisplay-48 {
   border-bottom: 1px solid #414141;
 }
-.HvDatePickerDS-popper-45 {
+.HvDatePickerDS-popper-49 {
   width: 100%;
   z-index: 10;
 }
-.HvDatePickerDS-doubleWidth-46 {
+.HvDatePickerDS-doubleWidth-50 {
   width: calc(200% - 2px);
 }
 
@@ -34798,29 +34886,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "actionsContainer": "HvDatePickerDS-actionsContainer-40",
-                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-44",
-                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-42",
-                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-43",
-                  "borderTopNone": "HvDatePickerDS-borderTopNone-41",
-                  "calendarContainer": "HvDatePickerDS-calendarContainer-31",
-                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-29",
-                  "doubleWidth": "HvDatePickerDS-doubleWidth-46",
-                  "icon": "HvDatePickerDS-icon-27",
-                  "iconClear": "HvDatePickerDS-iconClear-28",
-                  "input": "HvDatePickerDS-input-26",
-                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-24",
-                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-25",
-                  "label": "HvDatePickerDS-label-30",
-                  "popper": "HvDatePickerDS-popper-45",
-                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-34",
-                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-37",
-                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-38",
-                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-39",
-                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-35",
-                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-33",
-                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-36",
-                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-32",
+                  "actionsContainer": "HvDatePickerDS-actionsContainer-44",
+                  "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-48",
+                  "borderBottomNone": "HvDatePickerDS-borderBottomNone-46",
+                  "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-47",
+                  "borderTopNone": "HvDatePickerDS-borderTopNone-45",
+                  "calendarContainer": "HvDatePickerDS-calendarContainer-35",
+                  "datePickerContainer": "HvDatePickerDS-datePickerContainer-33",
+                  "doubleWidth": "HvDatePickerDS-doubleWidth-50",
+                  "icon": "HvDatePickerDS-icon-31",
+                  "iconClear": "HvDatePickerDS-iconClear-32",
+                  "input": "HvDatePickerDS-input-30",
+                  "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-26",
+                  "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-27",
+                  "label": "HvDatePickerDS-label-34",
+                  "noBorderBottom": "HvDatePickerDS-noBorderBottom-29",
+                  "noBorderTop": "HvDatePickerDS-noBorderTop-28",
+                  "popper": "HvDatePickerDS-popper-49",
+                  "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-38",
+                  "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-41",
+                  "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-42",
+                  "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-43",
+                  "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-39",
+                  "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-37",
+                  "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-40",
+                  "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-36",
                 },
                 "index": Array [
                   Object {
@@ -34838,6 +34928,12 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  Object {
+                    "border-top": "none",
+                  },
+                  Object {
+                    "border-bottom": "none",
                   },
                   Object {
                     "background": "transparent",
@@ -34947,36 +35043,36 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".HvDatePickerDS-actionsContainer-40": Object {
+                  ".HvDatePickerDS-actionsContainer-44": Object {
                     "text-align": "right",
                   },
-                  ".HvDatePickerDS-borderBottomDisplay-44": Object {
+                  ".HvDatePickerDS-borderBottomDisplay-48": Object {
                     "border-bottom": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderBottomNone-42": Object {
+                  ".HvDatePickerDS-borderBottomNone-46": Object {
                     "border-bottom": "none",
                   },
-                  ".HvDatePickerDS-borderTopDisplay-43": Object {
+                  ".HvDatePickerDS-borderTopDisplay-47": Object {
                     "border-top": "1px solid #414141",
                   },
-                  ".HvDatePickerDS-borderTopNone-41": Object {
+                  ".HvDatePickerDS-borderTopNone-45": Object {
                     "border-top": "none",
                   },
-                  ".HvDatePickerDS-calendarContainer-31": Object {
+                  ".HvDatePickerDS-calendarContainer-35": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-datePickerContainer-29": Object {
+                  ".HvDatePickerDS-datePickerContainer-33": Object {
                     "position": "relative",
                     "width": "320px",
                   },
-                  ".HvDatePickerDS-doubleWidth-46": Object {
+                  ".HvDatePickerDS-doubleWidth-50": Object {
                     "width": "calc(200% - 2px)",
                   },
-                  ".HvDatePickerDS-icon-27": Object {
+                  ".HvDatePickerDS-icon-31": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -34984,7 +35080,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-iconClear-28": Object {
+                  ".HvDatePickerDS-iconClear-32": Object {
                     "bottom": "0px",
                     "cursor": "pointer",
                     "height": "32px",
@@ -34992,7 +35088,7 @@ body {
                     "right": 0,
                     "width": "32px",
                   },
-                  ".HvDatePickerDS-input-26": Object {
+                  ".HvDatePickerDS-input-30": Object {
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -35003,17 +35099,17 @@ body {
                     "line-height": "20px",
                     "width": "100%",
                   },
-                  ".HvDatePickerDS-input-26::placeholder": Object {
+                  ".HvDatePickerDS-input-30::placeholder": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".HvDatePickerDS-input-26:focus": Object {
+                  ".HvDatePickerDS-input-30:focus": Object {
                     "outline": "none",
                   },
-                  ".HvDatePickerDS-inputCalendarClosed-24": Object {
+                  ".HvDatePickerDS-inputCalendarClosed-26": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "height": "32px",
@@ -35021,7 +35117,7 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-inputCalendarOpen-25": Object {
+                  ".HvDatePickerDS-inputCalendarOpen-27": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #414141",
                     "height": "32px",
@@ -35029,43 +35125,49 @@ body {
                     "padding-right": "30px",
                     "position": "relative",
                   },
-                  ".HvDatePickerDS-label-30": Object {
+                  ".HvDatePickerDS-label-34": Object {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
-                  ".HvDatePickerDS-popper-45": Object {
+                  ".HvDatePickerDS-noBorderBottom-29": Object {
+                    "border-bottom": "none",
+                  },
+                  ".HvDatePickerDS-noBorderTop-28": Object {
+                    "border-top": "none",
+                  },
+                  ".HvDatePickerDS-popper-49": Object {
                     "width": "100%",
                     "z-index": "10",
                   },
-                  ".HvDatePickerDS-rangeCalendarsContainer-34": Object {
+                  ".HvDatePickerDS-rangeCalendarsContainer-38": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeCalendarsFooter-37": Object {
+                  ".HvDatePickerDS-rangeCalendarsFooter-41": Object {
                     "display": "flex",
                     "flex-direction": "row",
                   },
-                  ".HvDatePickerDS-rangeFooterLeft-38": Object {
+                  ".HvDatePickerDS-rangeFooterLeft-42": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeFooterRight-39": Object {
+                  ".HvDatePickerDS-rangeFooterRight-43": Object {
                     "padding": "20px",
                     "text-align": "right",
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeLeftCalendarContainer-35": Object {
+                  ".HvDatePickerDS-rangeLeftCalendarContainer-39": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-rangeMainContainer-33": Object {
+                  ".HvDatePickerDS-rangeMainContainer-37": Object {
                     "background-color": "#FFFFFF",
                     "border": "1px solid #414141",
                     "display": "flex",
                     "flex-direction": "column",
                   },
-                  ".HvDatePickerDS-rangeRightCalendarContainer-36": Object {
+                  ".HvDatePickerDS-rangeRightCalendarContainer-40": Object {
                     "width": "50%",
                   },
-                  ".HvDatePickerDS-singleCalendarFooter-32": Object {
+                  ".HvDatePickerDS-singleCalendarFooter-36": Object {
                     "margin": "20px",
                     "text-align": "right",
                   },
@@ -35145,6 +35247,12 @@ body {
                     "display": "block",
                     "margin-bottom": "10px",
                   },
+                  "noBorderBottom": Object {
+                    "border-bottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "border-top": "none",
+                  },
                   "popper": Object {
                     "width": "100%",
                     "z-index": "10",
@@ -35186,29 +35294,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "HvDatePickerDS",
                   "classes": Object {
-                    "actionsContainer": "HvDatePickerDS-actionsContainer-40",
-                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-44",
-                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-42",
-                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-43",
-                    "borderTopNone": "HvDatePickerDS-borderTopNone-41",
-                    "calendarContainer": "HvDatePickerDS-calendarContainer-31",
-                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-29",
-                    "doubleWidth": "HvDatePickerDS-doubleWidth-46",
-                    "icon": "HvDatePickerDS-icon-27",
-                    "iconClear": "HvDatePickerDS-iconClear-28",
-                    "input": "HvDatePickerDS-input-26",
-                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-24",
-                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-25",
-                    "label": "HvDatePickerDS-label-30",
-                    "popper": "HvDatePickerDS-popper-45",
-                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-34",
-                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-37",
-                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-38",
-                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-39",
-                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-35",
-                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-33",
-                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-36",
-                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-32",
+                    "actionsContainer": "HvDatePickerDS-actionsContainer-44",
+                    "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-48",
+                    "borderBottomNone": "HvDatePickerDS-borderBottomNone-46",
+                    "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-47",
+                    "borderTopNone": "HvDatePickerDS-borderTopNone-45",
+                    "calendarContainer": "HvDatePickerDS-calendarContainer-35",
+                    "datePickerContainer": "HvDatePickerDS-datePickerContainer-33",
+                    "doubleWidth": "HvDatePickerDS-doubleWidth-50",
+                    "icon": "HvDatePickerDS-icon-31",
+                    "iconClear": "HvDatePickerDS-iconClear-32",
+                    "input": "HvDatePickerDS-input-30",
+                    "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-26",
+                    "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-27",
+                    "label": "HvDatePickerDS-label-34",
+                    "noBorderBottom": "HvDatePickerDS-noBorderBottom-29",
+                    "noBorderTop": "HvDatePickerDS-noBorderTop-28",
+                    "popper": "HvDatePickerDS-popper-49",
+                    "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-38",
+                    "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-41",
+                    "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-42",
+                    "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-43",
+                    "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-39",
+                    "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-37",
+                    "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-40",
+                    "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-36",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -35691,14 +35801,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvDatePickerDS-input-26::placeholder": Object {
+                  ".HvDatePickerDS-input-30::placeholder": Object {
                     "color": "#999999",
                     "fontSize": "14px",
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
                   },
-                  ".HvDatePickerDS-input-26:focus": Object {
+                  ".HvDatePickerDS-input-30:focus": Object {
                     "outline": "none",
                   },
                   "actionsContainer": Object {
@@ -35786,6 +35896,12 @@ body {
                   "label": Object {
                     "display": "block",
                     "marginBottom": "10px",
+                  },
+                  "noBorderBottom": Object {
+                    "borderBottom": "none",
+                  },
+                  "noBorderTop": Object {
+                    "borderTop": "none",
                   },
                   "popper": Object {
                     "width": "100%",
@@ -36766,29 +36882,31 @@ body {
       <HvDatePickerDS
         classes={
           Object {
-            "actionsContainer": "HvDatePickerDS-actionsContainer-40",
-            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-44",
-            "borderBottomNone": "HvDatePickerDS-borderBottomNone-42",
-            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-43",
-            "borderTopNone": "HvDatePickerDS-borderTopNone-41",
-            "calendarContainer": "HvDatePickerDS-calendarContainer-31",
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-29",
-            "doubleWidth": "HvDatePickerDS-doubleWidth-46",
-            "icon": "HvDatePickerDS-icon-27",
-            "iconClear": "HvDatePickerDS-iconClear-28",
-            "input": "HvDatePickerDS-input-26",
-            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-24",
-            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-25",
-            "label": "HvDatePickerDS-label-30",
-            "popper": "HvDatePickerDS-popper-45",
-            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-34",
-            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-37",
-            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-38",
-            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-39",
-            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-35",
-            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-33",
-            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-36",
-            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-32",
+            "actionsContainer": "HvDatePickerDS-actionsContainer-44",
+            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-48",
+            "borderBottomNone": "HvDatePickerDS-borderBottomNone-46",
+            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-47",
+            "borderTopNone": "HvDatePickerDS-borderTopNone-45",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-35",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-33",
+            "doubleWidth": "HvDatePickerDS-doubleWidth-50",
+            "icon": "HvDatePickerDS-icon-31",
+            "iconClear": "HvDatePickerDS-iconClear-32",
+            "input": "HvDatePickerDS-input-30",
+            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-26",
+            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-27",
+            "label": "HvDatePickerDS-label-34",
+            "noBorderBottom": "HvDatePickerDS-noBorderBottom-29",
+            "noBorderTop": "HvDatePickerDS-noBorderTop-28",
+            "popper": "HvDatePickerDS-popper-49",
+            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-38",
+            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-41",
+            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-42",
+            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-43",
+            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-39",
+            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-37",
+            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-40",
+            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-36",
           }
         }
         endValue=""
@@ -37737,20 +37855,20 @@ body {
           touchEvent="onTouchEnd"
         >
           <div
-            className="HvDatePickerDS-datePickerContainer-29"
+            className="HvDatePickerDS-datePickerContainer-33"
           >
             <div
-              className="HvDatePickerDS-inputCalendarClosed-24"
+              className="HvDatePickerDS-inputCalendarClosed-26"
             >
               <input
-                className="HvDatePickerDS-input-26"
+                className="HvDatePickerDS-input-30"
                 placeholder="Select a date"
                 readOnly={true}
                 type="text"
                 value=""
               />
               <CalendarS
-                className="HvDatePickerDS-icon-27"
+                className="HvDatePickerDS-icon-31"
                 color={null}
                 height={null}
                 iconSize="S"
@@ -37759,7 +37877,7 @@ body {
                 width={null}
               >
                 <svg
-                  className="HvDatePickerDS-icon-27"
+                  className="HvDatePickerDS-icon-31"
                   height={30}
                   onClick={[Function]}
                   viewBox="1 1 30 30"
@@ -37787,22 +37905,8 @@ body {
             </div>
             <Popper
               anchorEl={null}
-              className="HvDatePickerDS-popper-45"
+              className="HvDatePickerDS-popper-49"
               disablePortal={true}
-              modifiers={
-                Object {
-                  "applyCustomStyle": Object {
-                    "enabled": true,
-                    "fn": [Function],
-                    "order": 899,
-                  },
-                  "preventOverflow": Object {
-                    "enabled": true,
-                    "escapeWithReference": true,
-                    "padding": 0,
-                  },
-                }
-              }
               open={false}
               placement="bottom-start"
               popperOptions={

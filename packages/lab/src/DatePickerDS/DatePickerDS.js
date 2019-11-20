@@ -137,11 +137,19 @@ class HvDatePickerDS extends React.Component {
    */
   getInputStyle = () => {
     const { classes } = this.props;
-    const { calendarOpen } = this.state;
+    const { calendarOpen, calendarPlacement } = this.state;
 
-    return calendarOpen
-      ? classes.inputCalendarOpen
-      : classes.inputCalendarClosed;
+    let inputStyle = calendarOpen
+      ? `${classes.inputCalendarOpen}`
+      : `${classes.inputCalendarClosed}`;
+
+    if (calendarOpen && calendarPlacement) {
+      inputStyle += calendarPlacement.includes("bottom")
+        ? ` ${classes.noBorderBottom}`
+        : ` ${classes.noBorderTop}`;
+    }
+
+    return inputStyle;
   };
 
   /**
@@ -200,7 +208,7 @@ class HvDatePickerDS extends React.Component {
 
     this.setState(
       state => ({
-        calendarAnchorElement: currentTarget.parentElement,
+        calendarAnchorElement: currentTarget.parentNode,
         calendarOpen: !state.calendarOpen
       }),
       () => {
@@ -450,7 +458,7 @@ class HvDatePickerDS extends React.Component {
    * @memberof Calendar
    */
   renderSingleCalendar = () => {
-    const { classes, showActions } = this.props;
+    const { classes, showActions, rangeMode } = this.props;
     const { tempSelectedDate, calendarPlacement, locale } = this.state;
 
     return (
@@ -464,6 +472,7 @@ class HvDatePickerDS extends React.Component {
           handleDateChange={date => this.handleSingleCalendarDateChange(date)}
           selectedDate={tempSelectedDate}
           locale={locale}
+          rangeMode={rangeMode}
         />
         {showActions && this.renderActions()}
       </div>
@@ -476,7 +485,7 @@ class HvDatePickerDS extends React.Component {
    * @memberof Calendar
    */
   renderRangeCalendars = () => {
-    const { classes, horizontalPlacement } = this.props;
+    const { classes, horizontalPlacement, rangeMode } = this.props;
     const {
       tempStartSelectedDate,
       tempEndSelectedDate,
@@ -505,6 +514,7 @@ class HvDatePickerDS extends React.Component {
               selectedDate={tempStartSelectedDate}
               visibleDate={startVisibleDate}
               locale={locale}
+              rangeMode={rangeMode}
             />
           </div>
 
@@ -522,6 +532,7 @@ class HvDatePickerDS extends React.Component {
               selectedDate={tempEndSelectedDate}
               visibleDate={endVisibleDate}
               locale={locale}
+              rangeMode={rangeMode}
             />
           </div>
         </div>
@@ -537,6 +548,7 @@ class HvDatePickerDS extends React.Component {
    */
   renderInput = () => {
     const { classes, labels } = this.props;
+
     return (
       <>
         {labels && labels.title && this.renderLabel()}
@@ -579,31 +591,8 @@ class HvDatePickerDS extends React.Component {
         anchorEl={calendarAnchorElement}
         disablePortal
         popperOptions={{
-          onCreate: data => {
-            this.updateCalendarPlacement(data.placement);
-          },
-          onUpdate: data => {
-            this.updateCalendarPlacement(data.placement);
-          }
-        }}
-        modifiers={{
-          preventOverflow: {
-            enabled: true,
-            padding: 0,
-            // Follows the anchor element outside of the boundaries.
-            escapeWithReference: true
-          },
-          applyCustomStyle: {
-            enabled: true,
-            order: 900 - 1,
-            fn: data => ({
-              ...data,
-              styles: {
-                ...data.styles,
-                top: data.placement.includes("top") ? "1px" : "-1px"
-              }
-            })
-          }
+          onCreate: data => this.updateCalendarPlacement(data.placement),
+          onUpdate: data => this.updateCalendarPlacement(data.placement)
         }}
       >
         {rangeMode ? this.renderRangeCalendars() : this.renderSingleCalendar()}

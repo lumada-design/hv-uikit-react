@@ -39,6 +39,12 @@ const styles = theme => ({
     ...inputRoot(theme),
     border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
+  noBorderTop: {
+    borderTop: "none"
+  },
+  noBorderBottom: {
+    borderBottom: "none"
+  },
   input: {
     border: "none",
     height: "30px",
