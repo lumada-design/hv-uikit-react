@@ -28,6 +28,7 @@ import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
 
 const List = ({
+  id,
   theme,
   classes,
   values,
@@ -107,6 +108,7 @@ const List = ({
   const renderSearch = () => (
     <div className={classes.searchContainer}>
       <Search
+        id={`${id}-search`}
         value={searchStr}
         values={values}
         onChange={str => handleSearch(str)}
@@ -172,6 +174,7 @@ const List = ({
   const renderSelectAll = () => (
     <div className={classes.selectAllContainer}>
       <HvCheckBox
+        id={`${id}-select-all`}
         label={selectionLabel}
         onChange={() => handleSelectAll()}
         classes={{ container: classes.selection }}
@@ -243,6 +246,7 @@ const List = ({
   const renderActions = () => (
     <div className={classes.actions}>
       <Actions
+        id={`${id}-actions`}
         onCancel={() => handleCancel()}
         onApply={() => handleApply()}
         labels={labels}
@@ -277,6 +281,7 @@ const List = ({
 
   return (
     <Popper
+      id={id}
       disablePortal={disablePortal}
       open={isOpen}
       anchorEl={anchorEl}
@@ -310,6 +315,7 @@ const List = ({
             <div className={classes.listContainer}>
               {showList && (
                 <InnerList
+                  id={`${id}-list`}
                   values={list}
                   multiSelect={multiSelect}
                   useSelector={multiSelect}
@@ -334,6 +340,10 @@ const List = ({
 };
 
 List.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string.isRequired,
   /**
    * The theme passed by the provider.
    */
