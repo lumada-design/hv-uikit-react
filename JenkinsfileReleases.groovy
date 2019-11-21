@@ -35,7 +35,7 @@ pipeline {
                     booleanParam(name: 'skipLint', value: false),
                     booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: false),
-                    booleanParam(name: 'skipAutomationTest', value: true),
+                    booleanParam(name: 'skipAutomationTest', value: false),
                     booleanParam(name: 'skipPublishDoc', value: false),
                     booleanParam(name: 'skipPublish', value: false)
                 ]
