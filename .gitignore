@@ -40,3 +40,4 @@ eslint.xml
 
 .npmrc
 .idea
+*.iml

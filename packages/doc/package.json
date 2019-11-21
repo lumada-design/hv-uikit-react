@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-doc",
-  "version": "1.12.0",
+  "version": "1.11.0",
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -17,7 +17,6 @@
     "build": "npx cross-env NODE_OPTIONS=--max-old-space-size=4096 build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
-    "deploy": "storybook-to-ghpages --ci",
     "clean": "npx del-cli dist"
   },
   "peerDependencies": {
@@ -27,9 +26,9 @@
   "dependencies": {
     "@hv/uikit-common-themes": "^1.4.0",
     "@hv/uikit-common-utils": "^1.2.0",
-    "@hv/uikit-react-core": "^1.12.0",
-    "@hv/uikit-react-icons": "^1.5.1",
-    "@hv/uikit-react-lab": "^1.10.0",
+    "@hv/uikit-react-core": "^1.11.0",
+    "@hv/uikit-react-icons": "^1.5.0",
+    "@hv/uikit-react-lab": "^1.9.0",
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "3.0.2",
     "classnames": "2.2.6",
@@ -54,7 +53,6 @@
     "@storybook/addons": "5.2.1",
     "@storybook/cli": "5.2.1",
     "@storybook/react": "5.2.1",
-    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/theming": "5.2.1",
     "@svgr/webpack": "4.3.3",
     "babel-core": "7.0.0-bridge.0",
