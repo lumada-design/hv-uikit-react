@@ -21,8 +21,9 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.sm}px`
   },
   calendarGrid: {
-    display: "grid",
-    gridTemplate: "repeat(7, auto) / repeat(7, auto)"
+    display: "flex",
+    flexFlow: "wrap",
+    width: "280px"
   },
   navigationContainer: {
     display: "flex",
@@ -37,7 +38,8 @@ const styles = theme => ({
     justifyContent: "center",
     flexDirection: "column",
     textAlign: "center",
-    height: "40px"
+    height: "40px",
+    width: "40px"
   },
   calendarDate: {
     display: "flex",
@@ -69,19 +71,24 @@ const styles = theme => ({
     }
   },
   calendarMonthlyGrid: {
-    display: "grid",
-    gridTemplate: "repeat(3, 40px) / repeat(3, auto)",
-    justifyContent: "space-evenly",
-    alignContent: "center",
-    // This is needed in order to have the monthly view showing on top of the rest
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    position: "absolute",
-    width: "calc(100% - 2px)", // 2px for left and right margins.
-    height: "calc(100% - 101px)",
     top: "0",
-    margin: "100px 1px 0 1px",
-    left: "0",
-    zIndex: "10"
+    height: "calc(100% - 120px)",
+    marginTop: "100px",
+    marginLeft: "-20px",
+    display: "flex",
+    zIndex: "10",
+    padding: "0 20px",
+    position: "absolute",
+    flexFlow: "wrap",
+    alignContent: "center",
+    justifyContent: "space-evenly",
+    backgroundColor: "#FFFFFF"
+  },
+  normalWidth: {
+    width: "calc(100% - 2px)" // 2px for the borders.
+  },
+  rangeModeWidth: {
+    width: "calc((100% / 2) - 2px)" // 100% divided by two to handle the range situation minus 2px for the borders.
   },
   calendarMonthlyCell: {
     display: "flex",
@@ -89,7 +96,7 @@ const styles = theme => ({
     flexDirection: "column",
     textAlign: "center",
     height: "40px",
-    minWidth: "92px",
+    width: "92px",
     "&:hover": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
       cursor: "pointer"

@@ -379,11 +379,15 @@ class Calendar extends React.Component {
    * @memberof Calendar
    */
   renderMonthlyView = () => {
-    const { classes } = this.props;
+    const { classes, rangeMode } = this.props;
     const { calendarModel } = this.state;
 
     return (
-      <div className={classes.calendarMonthlyGrid}>
+      <div
+        className={`${classes.calendarMonthlyGrid} ${
+          rangeMode ? classes.rangeModeWidth : classes.normalWidth
+        }`}
+      >
         {this.listMonthNamesShort.map((monthName, index) => {
           const key = `${monthName}-${index}`;
           let className = `${classes.calendarMonthlyCell}`;
@@ -464,7 +468,11 @@ Calendar.propTypes = {
   /**
    * Callback function to be triggered when visible date has changed.
    */
-  handleVisibleDateChange: PropTypes.func
+  handleVisibleDateChange: PropTypes.func,
+  /**
+   * Indicates if the calendar is being used in ranged mode.
+   */
+  rangeMode: PropTypes.bool
 };
 
 Calendar.defaultProps = {
@@ -472,7 +480,8 @@ Calendar.defaultProps = {
   selectedDate: undefined,
   visibleDate: undefined,
   handleDateChange: undefined,
-  handleVisibleDateChange: undefined
+  handleVisibleDateChange: undefined,
+  rangeMode: false
 };
 
 export default Calendar;
