@@ -18,18 +18,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import HvButton from "../../Button";
 
-const Actions = ({ classes, onCancel, onApply, cancelLabel, applyLabel }) => (
-  <div className={classes.root}>
-    <HvButton className={classes.button} onClick={onCancel} category="ghost">
+const Actions = ({ id, classes, onCancel, onApply, cancelLabel, applyLabel }) => (
+  <div id={id} className={classes.root}>
+    <HvButton id={`${id}-cancel`} className={classes.button} onClick={onCancel} category="ghost">
       {cancelLabel}
     </HvButton>
-    <HvButton className={classes.button} onClick={onApply} category="ghost">
+    <HvButton id={`${id}-apply`} className={classes.button} onClick={onApply} category="ghost">
       {applyLabel}
     </HvButton>
   </div>
 );
 
 Actions.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string.isRequired,
   /**
    * A Jss Object used to override or extend the component styles.
    */

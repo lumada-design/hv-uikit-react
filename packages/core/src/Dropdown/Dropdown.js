@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import uniqueId from 'lodash/uniqueId';
 import withStyles from "@material-ui/core/styles/withStyles";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
@@ -60,7 +61,18 @@ const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
 
 class Dropdown extends React.Component {
 
-  state = DEFAULT_STATE;
+  constructor(props) {
+    super(props);
+
+    const {
+      id
+    } = props;
+
+    this.state = {
+      internalId: id || uniqueId("hv-dropdown-"),
+      ...DEFAULT_STATE
+    };
+  }
 
   static getDerivedStateFromProps(props, state) {
     if (props.values !== state.values) {
@@ -135,7 +147,7 @@ class Dropdown extends React.Component {
 
   renderHeader() {
     const { classes, disabled, theme } = this.props;
-    const { isOpen, selectionLabel } = this.state;
+    const { isOpen, selectionLabel, internalId } = this.state;
 
     const color = disabled
       ? [theme.hv.palette.atmosphere.atmo7]
@@ -143,7 +155,7 @@ class Dropdown extends React.Component {
 
     return (
       <div
-        id="header"
+        id={`${internalId}-header`}
         className={classNames([
           classes.header,
           {
@@ -186,10 +198,11 @@ class Dropdown extends React.Component {
       hasTooltips,
       singleSelectionToggle
     } = this.props;
-    const { isOpen, values, labels, anchorEl } = this.state;
+    const { isOpen, values, labels, anchorEl, internalId } = this.state;
 
     return (
       <List
+        id={`${internalId}-values`}
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
@@ -209,14 +222,14 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    const { classes, className, id, label, labels, disabled } = this.props;
-    const { isOpen } = this.state;
+    const { classes, className, label, labels, disabled } = this.props;
+    const { isOpen, internalId } = this.state;
 
     return (
       <>
         {label || labels.title ? this.renderLabel() : null}
         <div
-          id={id}
+          id={internalId}
           ref={el => {
             this.node = el;
           }}

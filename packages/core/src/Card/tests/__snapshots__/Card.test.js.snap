@@ -64438,6 +64438,7 @@ body {
                                               className="HvCheckbox-box-123"
                                             />
                                           }
+                                          id="hv-checkbox-1-input"
                                           indeterminateIcon={
                                             <WithStyles(CheckboxPartial)
                                               className="HvCheckbox-box-123"
@@ -64449,6 +64450,7 @@ body {
                                         />
                                       }
                                       disabled={false}
+                                      id="hv-checkbox-1"
                                       label=""
                                       labelPlacement="end"
                                     >
@@ -64480,6 +64482,7 @@ body {
                                                 className="HvCheckbox-box-123"
                                               />
                                             }
+                                            id="hv-checkbox-1-input"
                                             indeterminateIcon={
                                               <WithStyles(CheckboxPartial)
                                                 className="HvCheckbox-box-123"
@@ -64491,6 +64494,7 @@ body {
                                           />
                                         }
                                         disabled={false}
+                                        id="hv-checkbox-1"
                                         label=""
                                         labelPlacement="end"
                                       >
@@ -64522,6 +64526,7 @@ body {
                                                   className="HvCheckbox-box-123"
                                                 />
                                               }
+                                              id="hv-checkbox-1-input"
                                               indeterminateIcon={
                                                 <WithStyles(CheckboxPartial)
                                                   className="HvCheckbox-box-123"
@@ -64533,11 +64538,13 @@ body {
                                             />
                                           }
                                           disabled={false}
+                                          id="hv-checkbox-1"
                                           label=""
                                           labelPlacement="end"
                                         >
                                           <label
                                             className="MuiFormControlLabel-root-124 HvCheckbox-container-115"
+                                            id="hv-checkbox-1"
                                           >
                                             <WithStyles(Checkbox)
                                               checkedIcon={
@@ -64554,6 +64561,7 @@ body {
                                                   className="HvCheckbox-box-123"
                                                 />
                                               }
+                                              id="hv-checkbox-1-input"
                                               indeterminateIcon={
                                                 <WithStyles(CheckboxPartial)
                                                   className="HvCheckbox-box-123"
@@ -64588,6 +64596,7 @@ body {
                                                     className="HvCheckbox-box-123"
                                                   />
                                                 }
+                                                id="hv-checkbox-1-input"
                                                 indeterminate={false}
                                                 indeterminateIcon={
                                                   <WithStyles(CheckboxPartial)
@@ -64619,6 +64628,7 @@ body {
                                                       className="HvCheckbox-box-123"
                                                     />
                                                   }
+                                                  id="hv-checkbox-1-input"
                                                   inputProps={
                                                     Object {
                                                       "data-indeterminate": false,
@@ -64651,6 +64661,7 @@ body {
                                                         className="HvCheckbox-box-123"
                                                       />
                                                     }
+                                                    id="hv-checkbox-1-input"
                                                     inputProps={
                                                       Object {
                                                         "data-indeterminate": false,
@@ -64683,6 +64694,7 @@ body {
                                                           className="HvCheckbox-box-123"
                                                         />
                                                       }
+                                                      id="hv-checkbox-1-input"
                                                       inputProps={
                                                         Object {
                                                           "data-indeterminate": false,
@@ -65747,6 +65759,7 @@ body {
                                                                     className="MuiPrivateSwitchBase-input-139"
                                                                     data-indeterminate={false}
                                                                     disabled={false}
+                                                                    id="hv-checkbox-1-input"
                                                                     onChange={[Function]}
                                                                     type="checkbox"
                                                                     value="value"

@@ -17317,7 +17317,9 @@ body {
         classes={Object {}}
       />
     </WithStyles(CssBaseline)>
-    <WithStyles(Actions)>
+    <WithStyles(Actions)
+      id="test-actions"
+    >
       <Actions
         applyLabel="Apply"
         cancelLabel="Cancel"
@@ -17326,6 +17328,7 @@ body {
             "button": "Actions-button-1",
           }
         }
+        id="test-actions"
         onApply={[Function]}
         onCancel={[Function]}
         theme={
@@ -18258,10 +18261,13 @@ body {
           }
         }
       >
-        <div>
+        <div
+          id="test-actions"
+        >
           <HvButton
             category="ghost"
             className="Actions-button-1"
+            id="test-actions-cancel"
             onClick={[Function]}
           >
             <HvButton
@@ -18281,6 +18287,7 @@ body {
                 }
               }
               disabled={false}
+              id="test-actions-cancel"
               onClick={[Function]}
               theme={
                 Object {
@@ -19226,6 +19233,7 @@ body {
                 color="primary"
                 disableRipple={true}
                 disabled={false}
+                id="test-actions-cancel"
                 onClick={[Function]}
                 theme={
                   Object {
@@ -20196,6 +20204,7 @@ body {
                   disableRipple={true}
                   disabled={false}
                   fullWidth={false}
+                  id="test-actions-cancel"
                   mini={false}
                   onClick={[Function]}
                   size="medium"
@@ -21138,6 +21147,7 @@ body {
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="MuiButton-focusVisible-30"
+                    id="test-actions-cancel"
                     onClick={[Function]}
                     theme={
                       Object {
@@ -22086,6 +22096,7 @@ body {
                       disabled={false}
                       focusRipple={true}
                       focusVisibleClassName="MuiButton-focusVisible-30"
+                      id="test-actions-cancel"
                       onClick={[Function]}
                       tabIndex="0"
                       theme={
@@ -23022,6 +23033,7 @@ body {
                       <button
                         className="MuiButtonBase-root-37 MuiButton-root-11 HvButton-root-2 MuiButton-text-13 MuiButton-textPrimary-14 HvButton-ghost-7 MuiButton-flat-16 MuiButton-flatPrimary-17 Actions-button-1"
                         disabled={false}
+                        id="test-actions-cancel"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onContextMenu={[Function]}
@@ -23981,6 +23993,7 @@ body {
           <HvButton
             category="ghost"
             className="Actions-button-1"
+            id="test-actions-apply"
             onClick={[Function]}
           >
             <HvButton
@@ -24000,6 +24013,7 @@ body {
                 }
               }
               disabled={false}
+              id="test-actions-apply"
               onClick={[Function]}
               theme={
                 Object {
@@ -24945,6 +24959,7 @@ body {
                 color="primary"
                 disableRipple={true}
                 disabled={false}
+                id="test-actions-apply"
                 onClick={[Function]}
                 theme={
                   Object {
@@ -25915,6 +25930,7 @@ body {
                   disableRipple={true}
                   disabled={false}
                   fullWidth={false}
+                  id="test-actions-apply"
                   mini={false}
                   onClick={[Function]}
                   size="medium"
@@ -26857,6 +26873,7 @@ body {
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="MuiButton-focusVisible-30"
+                    id="test-actions-apply"
                     onClick={[Function]}
                     theme={
                       Object {
@@ -27805,6 +27822,7 @@ body {
                       disabled={false}
                       focusRipple={true}
                       focusVisibleClassName="MuiButton-focusVisible-30"
+                      id="test-actions-apply"
                       onClick={[Function]}
                       tabIndex="0"
                       theme={
@@ -28741,6 +28759,7 @@ body {
                       <button
                         className="MuiButtonBase-root-37 MuiButton-root-11 HvButton-root-2 MuiButton-text-13 MuiButton-textPrimary-14 HvButton-ghost-7 MuiButton-flat-16 MuiButton-flatPrimary-17 Actions-button-1"
                         disabled={false}
+                        id="test-actions-apply"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onContextMenu={[Function]}

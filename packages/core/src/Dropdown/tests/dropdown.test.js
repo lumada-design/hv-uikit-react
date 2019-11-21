@@ -162,6 +162,7 @@ describe("<Dropdown />", () => {
       wrapper = mount(
         <HvProvider>
           <DropdownWithStyles
+            id="test-dropdown"
             values={mockData}
             multiSelect
             showSearch
@@ -190,7 +191,7 @@ describe("<Dropdown />", () => {
       instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
 
-      const header = dropdownComponent.find("#header");
+      const header = dropdownComponent.find("#test-dropdown-header");
       header.simulate("click");
 
       expect(instance.handleToggle).toBeCalled();
