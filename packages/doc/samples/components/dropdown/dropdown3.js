@@ -43,6 +43,7 @@ const data = [
 
 export default (
   <HvDropdown
+    id="dropdown3"
     values={data}
     multiSelect={false}
     showSearch

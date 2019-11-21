@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import uniqueId from 'lodash/uniqueId';
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
@@ -109,6 +110,7 @@ const HvRadio = props => {
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const materialPrimaryColor = "primary";
   const [isFocusDisabled, disableFocus] = useState(false);
+  const [internalId] = useState(id || uniqueId("hv-radiobutton-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -129,7 +131,7 @@ const HvRadio = props => {
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
-      id={id}
+      id={internalId}
       className={classNames(labelStyles, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
@@ -139,6 +141,7 @@ const HvRadio = props => {
       }}
       control={
         <Radio
+          id={`${internalId}-input`}
           className={classes.radio}
           icon={icons.emptyIcon}
           checkedIcon={icons.checkedIcon}

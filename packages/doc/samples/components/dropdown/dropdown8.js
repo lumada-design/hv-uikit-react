@@ -21,6 +21,7 @@ const smallData = [
 
 export default (
   <HvDropdown
+    id="dropdown8"
     values={smallData}
     multiSelect={false}
     showSearch={false}

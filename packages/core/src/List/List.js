@@ -19,6 +19,7 @@ import PropTypes from "prop-types";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
+import uniqueId from 'lodash/uniqueId';
 import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";
@@ -45,7 +46,19 @@ const DEFAULT_LABELS = {
 };
 
 class List extends React.Component {
-  state = DEFAULT_STATE;
+
+  constructor(props) {
+    super(props);
+
+    const {
+      id
+    } = props;
+
+    this.state = {
+      internalId: id || uniqueId("hv-list-"),
+      ...DEFAULT_STATE
+    };
+  }
 
   static getDerivedStateFromProps(props, state) {
     if (props.values !== state.values) {
@@ -109,10 +122,14 @@ class List extends React.Component {
 
   renderListItem = (item, i) => {
     const { classes, multiSelect, useSelector, condensed } = this.props;
+    const { internalId } = this.state;
+
+    const itemId = `${internalId}-item-${i}`;
 
     return (
       <Focus key={i} focusOnClick={false}>
         <li
+          id={itemId}
           role="option"
           aria-selected={item.selected}
           onClick={evt => this.handleSelect(evt, item)}
@@ -135,8 +152,8 @@ class List extends React.Component {
           }
 
           {multiSelect
-            ? this.renderMultiSelectItem(item)
-            : this.renderSingleSelectItem(item)}
+            ? this.renderMultiSelectItem(item, itemId)
+            : this.renderSingleSelectItem(item, itemId)}
 
           {item.showNavIcon && this.renderNavIcon(item)}
         </li>
@@ -144,11 +161,12 @@ class List extends React.Component {
     );
   };
 
-  renderMultiSelectItem = item => {
+  renderMultiSelectItem = (item, itemId) => {
     const { classes, useSelector } = this.props;
 
     return useSelector ? (
       <HvCheckBox
+        id={`${itemId}-selector`}
         label={item.label}
         checked={item.selected}
         onChange={evt => this.handleSelect(evt, item)}
@@ -162,11 +180,12 @@ class List extends React.Component {
     );
   };
 
-  renderSingleSelectItem = item => {
+  renderSingleSelectItem = (item, itemId) => {
     const { classes, useSelector } = this.props;
 
     return useSelector ? (
       <HvRadioButton
+        id={`${itemId}-selector`}
         label={item.label}
         checked={item.selected}
         classes={{
@@ -243,15 +262,15 @@ class List extends React.Component {
   };
 
   render() {
-    const { classes, id, multiSelect, useSelector, showSelectAll } = this.props;
-    const { list } = this.state;
+    const { classes, multiSelect, useSelector, showSelectAll } = this.props;
+    const { list, internalId } = this.state;
 
     return (
       <>
         {multiSelect && useSelector && showSelectAll && this.renderSelectAll()}
 
         {list && (
-          <ul id={id} className={classes.root} role="listbox">
+          <ul id={internalId} className={classes.root} role="listbox">
             {list.map(
               (item, i) => !item.isHidden && this.renderListItem(item, i)
             )}

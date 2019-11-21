@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import uniqueId from 'lodash/uniqueId';
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
@@ -123,6 +124,7 @@ const HvCheckbox = props => {
   const icons = prepareIcon(classes, checked, disabled, theme,);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
+  const [internalId] = useState(id || uniqueId("hv-checkbox-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -147,13 +149,14 @@ const HvCheckbox = props => {
       className={classNames(labelClass, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
-      id={id}
+      id={internalId}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
       control={
         <Checkbox
+          id={`${internalId}-input`}
           className={classes.checkBox}
           icon={icons.emptyIcon}
           indeterminateIcon={icons.indeterminateIcon}
