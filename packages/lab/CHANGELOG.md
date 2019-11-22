@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.0...@hv/uikit-react-lab@1.10.1) (2019-11-22)
+
+
+### Bug Fixes
+
+* **datepickerds:** fixed the component to work on ie  [#844](https://github.com/pentaho/hv-uikit-react/issues/844)  ([6b99ae5](https://github.com/pentaho/hv-uikit-react/commit/6b99ae5))
+
+
+
+
+
 # [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.9.0...@hv/uikit-react-lab@1.10.0) (2019-11-20)
 
 
