@@ -27,8 +27,10 @@ search on first level
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    css:ul[role='listbox']             7s
     Click Element                    //li[contains(.,'Advanced server DS530')]
-    Input Text                       css:input[placeholder='Search']    335
-    Wait Until Keyword Succeeds      2    1    Element Text Should Be    css:ul[role='listbox']>li    Variant X-335
+    Wait Until Element Is Enabled    css:input[placeholder='Search']    2s
+    Wait Until Keyword Succeeds      3                                  1     Input Text                css:input[placeholder='Search']    335
+    Wait Until Element Is Enabled    css:input[value='335']             2s
+    Wait Until Keyword Succeeds      3                                  1     Element Text Should Be    css:ul[role='listbox']>li          Variant X-335
 
 search on 2nd level
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
@@ -36,8 +38,10 @@ search on 2nd level
     Click Element                    //li[contains(.,'Advanced server DS530')]
     Wait Until Element Is Enabled    //li[contains(.,'Variant X-333')]    2s
     Click Element                    //li[contains(.,'Variant X-333')]
-    Input Text                       css:input[placeholder='Search']      921
-    Wait Until Keyword Succeeds      2    1    Element Text Should Be    css:ul[role='listbox']>li    Component HS-921
+    Wait Until Element Is Enabled    css:input[placeholder='Search']      2s
+    Wait Until Keyword Succeeds      3                                    1     Input Text                css:input[placeholder='Search']    921
+    Wait Until Element Is Enabled    css:input[value='921']               2s
+    Wait Until Keyword Succeeds      3                                    1     Element Text Should Be    css:ul[role='listbox']>li          Component HS-921
 
 select action values settings Profile Help
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
