@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import uniqueId from "lodash/uniqueId";
 
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
@@ -49,9 +50,10 @@ class HvDatePickerDS extends React.Component {
   constructor(props) {
     super(props);
 
-    const { locale } = this.props;
+    const { id, locale } = this.props;
 
     this.state = {
+      internalId: id || uniqueId("hv-datepickerds-"),
       ...this.resolveStateFromProps(),
       calendarOpen: false,
       calendarAnchorElement: null,
@@ -155,13 +157,17 @@ class HvDatePickerDS extends React.Component {
   /**
    * Updates the calendar placement in case the Popper placement changed.
    *
+   * @param {Object} data - The data provided by the popper plugin.
    * @memberof HvDatePickerDS
    */
-  updateCalendarPlacement = popperPlacement => {
+  updateCalendarPlacement = data => {
     const { calendarPlacement } = this.state;
 
-    if (calendarPlacement !== popperPlacement) {
-      this.setState({ calendarPlacement: popperPlacement });
+    if (calendarPlacement !== data.placement) {
+      this.setState({
+        calendarPlacement: data.placement,
+        calendarFlipped: data.flipped
+      });
     }
   };
 
@@ -223,10 +229,15 @@ class HvDatePickerDS extends React.Component {
   /**
    * Handles the event of clicking away from the Calendar.
    *
+   * @param {Object} event - The event triggered when clicking outside of the calendar container.
    * @memberof HvDatePickerDS
    */
-  handleCalendarClickAway = () => {
-    this.cancelDateSelection();
+  handleCalendarClickAway = event => {
+    const { internalId } = this.state;
+
+    if (event.target.id !== `${internalId}-icon`) {
+      this.cancelDateSelection();
+    }
   };
 
   /**
@@ -548,6 +559,7 @@ class HvDatePickerDS extends React.Component {
    */
   renderInput = () => {
     const { classes, labels } = this.props;
+    const { internalId } = this.state;
 
     return (
       <>
@@ -564,6 +576,7 @@ class HvDatePickerDS extends React.Component {
             readOnly
           />
           <CalendarIcon
+            id={`${internalId}-icon`}
             className={classes.icon}
             onClick={this.handleCalendarIconClick}
           />
@@ -578,24 +591,31 @@ class HvDatePickerDS extends React.Component {
    * @memberof HvDatePickerDS
    */
   renderPopper = () => {
-    const { classes, rangeMode, horizontalPlacement } = this.props;
-    const { calendarOpen, calendarAnchorElement } = this.state;
+    const { classes, theme, rangeMode, horizontalPlacement } = this.props;
+    const { calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
 
     return (
       <Popper
-        className={`${classes.popper} ${rangeMode ? classes.doubleWidth : ""}`}
+        className={classes.popper}
         open={calendarOpen}
         placement={
           horizontalPlacement === "left" ? "bottom-start" : "bottom-end"
         }
         anchorEl={calendarAnchorElement}
-        disablePortal
+        disablePortal={false}
         popperOptions={{
-          onCreate: data => this.updateCalendarPlacement(data.placement),
-          onUpdate: data => this.updateCalendarPlacement(data.placement)
+          onCreate: data => this.updateCalendarPlacement(data),
+          onUpdate: data => this.updateCalendarPlacement(data)
+        }}
+        style={{
+          zIndex: `${calendarFlipped ? theme.zIndex.tooltip : 0}`
         }}
       >
-        {rangeMode ? this.renderRangeCalendars() : this.renderSingleCalendar()}
+        <ClickAwayListener onClickAway={this.handleCalendarClickAway}>
+          {rangeMode
+            ? this.renderRangeCalendars()
+            : this.renderSingleCalendar()}
+        </ClickAwayListener>
       </Popper>
     );
   };
@@ -610,17 +630,19 @@ class HvDatePickerDS extends React.Component {
     const { classes } = this.props;
 
     return (
-      <ClickAwayListener onClickAway={this.handleCalendarClickAway}>
-        <div className={classes.datePickerContainer}>
-          {this.renderInput()}
-          {this.renderPopper()}
-        </div>
-      </ClickAwayListener>
+      <div className={classes.datePickerContainer}>
+        {this.renderInput()}
+        {this.renderPopper()}
+      </div>
     );
   }
 }
 
 HvDatePickerDS.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * An Object containing the various text associated with the input.
    *
@@ -669,10 +691,15 @@ HvDatePickerDS.propTypes = {
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  /*
+   * The theme object provided by the withStyles component.
+   */
+  theme: PropTypes.instanceOf(Object).isRequired
 };
 
 HvDatePickerDS.defaultProps = {
+  id: undefined,
   labels: {
     applyLabel: "Apply",
     cancelLabel: "Cancel",
