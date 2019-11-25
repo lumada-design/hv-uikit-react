@@ -152,7 +152,10 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
 
   it("should have the value showing on the input with the correct format", () => {
     expect(datePickerDSComponent.find("input").instance().value).toBe(
-      getFormattedDate(convertISOStringDateToDate("2019-01-01"), datePickerDSInstance.props.locale)
+      getFormattedDate(
+        convertISOStringDateToDate("2019-01-01"),
+        datePickerDSInstance.props.locale
+      )
     );
   });
 
@@ -263,8 +266,12 @@ describe("<DatePickerDS /> with Range Calendar mode", () => {
   it("should have the values showing on the input with the correct format", () => {
     expect(datePickerDSComponent.find("input").instance().value).toBe(
       `${getFormattedDate(
-        convertISOStringDateToDate("2019-01-05"), datePickerDSInstance.props.locale
-      )} - ${getFormattedDate(convertISOStringDateToDate("2019-01-10"), datePickerDSInstance.props.locale)}`
+        convertISOStringDateToDate("2019-01-05"),
+        datePickerDSInstance.props.locale
+      )} - ${getFormattedDate(
+        convertISOStringDateToDate("2019-01-10"),
+        datePickerDSInstance.props.locale
+      )}`
     );
   });
 
@@ -337,6 +344,7 @@ describe("<DatePickerDS /> with custom properties", () => {
           labels={labels}
           horizontalPlacement="left"
           showActions
+          id="testingDatePicker"
         />
       </HvProvider>
     );
@@ -421,7 +429,14 @@ describe("<DatePickerDS /> with custom properties", () => {
     wrapper.find(CalendarIcon).simulate("click");
 
     datePickerDSInstance.handleSingleCalendarDateChange(dummyDate);
-    datePickerDSInstance.handleCalendarClickAway();
+
+    const dummyEvent = {
+      target: {
+        id: "testingDatePicker-icon-NOT"
+      }
+    };
+
+    datePickerDSInstance.handleCalendarClickAway(dummyEvent);
 
     expect(datePickerDSInstance.state.selectedDate).toEqual(
       convertISOStringDateToDate("2019-01-05")

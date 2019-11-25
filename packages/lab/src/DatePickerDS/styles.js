@@ -77,7 +77,7 @@ const styles = theme => ({
   },
   calendarContainer: {
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    zIndex: "10",
+    width: "320px",
     display: "flex",
     flexDirection: "column",
     border: `1px solid ${theme.hv.palette.accent.acce1}`
@@ -90,7 +90,8 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    border: `1px solid ${theme.hv.palette.accent.acce1}`
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    width: "640px"
   },
   rangeCalendarsContainer: {
     display: "flex",
@@ -128,13 +129,6 @@ const styles = theme => ({
   },
   borderBottomDisplay: {
     borderBottom: `1px solid ${theme.hv.palette.accent.acce1}`
-  },
-  popper: {
-    width: "100%",
-    zIndex: "10"
-  },
-  doubleWidth: {
-    width: "calc(200% - 2px)"
   }
 });
 
