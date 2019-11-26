@@ -20,12 +20,17 @@ class SimpleBanner extends React.Component {
 
   render() {
     const {
+      id,
       label,
+      labelButton,
       variant,
       showIcon,
       anchorOrigin,
-      action,
-      customIcon
+      actions,
+      actionsCallback,
+      actionsPosition,
+      customIcon,
+      offset
     } = this.props;
     const { open } = this.state;
     return (
@@ -36,53 +41,38 @@ class SimpleBanner extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          {labelButton}
         </Button>
         <HvBanner
+          id={id}
           open={open}
-          label={`This is ${label}`}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          action={action}
+          actions={actions}
+          actionsCallback={actionsCallback}
+          actionsPosition={actionsPosition}
+          offset={offset}
         />
       </div>
     );
   }
 }
 
-const ActionButton = () => (
-  <a
-    style={{
-      cursor: "pointer",
-      color: "#414141",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
-    }}
-  >
-    Action
-  </a>
-);
-
-const ActionButtonCollection = () => (
-  <div
-    style={{ display: "flex", width: "100px", justifyContent: "space-between" }}
-  >
-    <ActionButton />
-    <ActionButton />
-  </div>
-);
-
 export default (
   <SimpleBanner
-    label="default"
+    id="actionStructure"
+    label="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
+    labelButton="Click me"
     variant="default"
-    showIcon
-    action={<ActionButtonCollection />}
+    actions={[
+      { id: "action1", label: "Action 1", disabled: false },
+      { id: "action2", label: "Action 2", disabled: false }
+    ]}
+    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+    actionsPosition="bottom-right"
   />
 );

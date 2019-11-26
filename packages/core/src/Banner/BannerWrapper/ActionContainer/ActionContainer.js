@@ -18,7 +18,8 @@
 
 import React from "react";
 import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
+import renderAction from "../ActionRender/ActionRender";
 
 /**
  * Container for the actions. This actions include:
@@ -29,15 +30,45 @@ import PropTypes from "prop-types";
  * @returns {*}
  * @constructor
  */
-const ActionContainer = ({ theme, classes, onClose, action }) => (
-  <div className={classes.actionContainer}>
-    <div className={classes.closeAction} role="button" onClick={onClose} tabIndex={0} onKeyDown={onClose}>
-      <Close iconSize="XS" className={classes.iconContainer} color={[theme.hv.palette.base.base2]} />
+const ActionContainer = ({
+  id,
+  theme,
+  classes,
+  onClose,
+  action,
+  actionCallback
+}) => {
+  let renderedAction;
+  if (action)
+    renderedAction = renderAction(action, actionCallback, id);
+
+  return (
+    <div className={classes.actionContainer}>
+      <div
+        className={classes.closeAction}
+        role="button"
+        onClick={onClose}
+        tabIndex={0}
+        onKeyDown={onClose}
+      >
+        <Close
+          iconSize="XS"
+          className={classes.iconContainer}
+          color={[theme.hv.palette.base.base2]}
+        />
+      </div>
+      {(renderedAction &&
+        <div className={classes.actionsInnerContainer}>{renderedAction}</div>
+      )}
     </div>
-    <div className={classes.actionsInnerContainer}>{action}</div>
-  </div>
-);
+  );
+};
+
 ActionContainer.propTypes = {
+  /**
+   * Identifier.
+   */
+  id: PropTypes.string,
   /*
    * An object containing the palette color specificactions.
    */
@@ -53,12 +84,28 @@ ActionContainer.propTypes = {
   /**
    * Actions to display.
    */
-  action: PropTypes.node
+  action: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func,
+        disabled: PropTypes.bool
+      })
+    )
+  ]),
+  /**
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   */
+  actionCallback: PropTypes.func
 };
 
 ActionContainer.defaultProps = {
+  id: null,
   classes: "",
-  action: undefined
+  action: undefined,
+  actionCallback: () => {}
 };
 
 export default ActionContainer;

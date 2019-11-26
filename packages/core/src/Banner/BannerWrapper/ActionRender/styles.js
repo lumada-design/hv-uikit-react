@@ -15,31 +15,6 @@
  */
 
 const styles = theme => ({
-  actionContainer: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    justifyContent: "space-between"
-  },
-  actionsInnerContainer: {
-    flexDirection: "row",
-    marginTop: "8px" // avoid overlap with close button outline focus ring
-  },
-  closeAction: {
-    alignSelf: "flex-end",
-    height: "32px",
-    width: "32px",
-    cursor: "pointer"
-  },
-  iconContainer: {
-    width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
-  },
   separator: {
     paddingLeft: `${theme.spacing.xs}px`
   }

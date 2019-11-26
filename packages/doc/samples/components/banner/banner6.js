@@ -20,60 +20,51 @@ class SimpleBanner extends React.Component {
 
   render() {
     const {
+      id,
       label,
       variant,
       showIcon,
       anchorOrigin,
-      actionsOnlabel,
+      actions,
+      actionsPosition,
       customIcon
     } = this.props;
     const { open } = this.state;
     return (
       <div>
         <Button
+          id={id ? `${id}-open-button` : undefined}
           onClick={this.handleClick}
           variant="contained"
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          Click me
         </Button>
         <HvBanner
+          id={id}
           open={open}
-          label={`This is ${label}`}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          actionsOnMessage={actionsOnlabel}
+          actions={actions}
+          actionsPosition={actionsPosition}
         />
       </div>
     );
   }
 }
 
-const ActionButton = () => (
-  <a
-    style={{
-      cursor: "pointer",
-      color: "#414141",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
-    }}
-  >
-    Action
-  </a>
-);
-
 export default (
   <SimpleBanner
-    label="default"
-    variant="default"
+    id="banner6"
+    label="This is a success banner."
+    variant="success"
     showIcon
-    actionsOnlabel={<ActionButton />}
+    actions={<Button category="semantic">Action</Button>}
+    actionsPosition="inline"
   />
 );

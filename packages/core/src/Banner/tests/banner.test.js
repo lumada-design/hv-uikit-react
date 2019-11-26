@@ -106,7 +106,28 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
-          actionsOnMessage={<Button>button</Button>}
+          actions={<Button>button</Button>}
+          actionsPosition="inline"
+          onClose={() => {}}
+        />
+      </HvProvider>
+    ).find(Button);
+    expect(buttonComponent.length).toBe(1);
+  });
+
+  it("should render a action by passing a structure on the message", () => {
+    const buttonComponent = mount(
+      <HvProvider>
+        <BannerWithStyles
+          variant="default"
+          open
+          actions={[
+            {
+              id: "testButton",
+              label: "test"
+            }
+          ]}
+          actionsPosition="inline"
           onClose={() => {}}
         />
       </HvProvider>
@@ -120,7 +141,28 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
-          action={<Button>button</Button>}
+          actions={<Button>button</Button>}
+          actionsPosition="bottom-right"
+          onClose={() => {}}
+        />
+      </HvProvider>
+    ).find(Button);
+    expect(buttonComponent.length).toBe(1);
+  });
+
+  it("should render a action by passing a structure on the action container", () => {
+    const buttonComponent = mount(
+      <HvProvider>
+        <BannerWithStyles
+          variant="default"
+          open
+          actions={[
+            {
+              id: "testButton",
+              label: "test"
+            }
+          ]}
+          actionsPosition="bottom-right"
           onClose={() => {}}
         />
       </HvProvider>
