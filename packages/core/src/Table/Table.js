@@ -45,7 +45,7 @@ import {
   isSelected
 } from "./checkBoxUtils";
 
-import ReactTablePagination from "./Pagination";
+import Pagination from "../Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
 import { tableStyleOverrides } from "./styles";
@@ -195,7 +195,7 @@ class Table extends React.Component {
 
     return {
       showPagination,
-      ...(showPagination && { PaginationComponent: ReactTablePagination }),
+      ...(showPagination && { PaginationComponent: Pagination }),
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
           this.setState({ expanded: {} });
@@ -203,7 +203,7 @@ class Table extends React.Component {
         }
       }),
       ...(showPagination && {
-        onPageChange: (page) => {
+        onPageChange: page => {
           this.setState({ expanded: {} });
           if (onPageChange) onPageChange(page);
         }
@@ -439,7 +439,9 @@ class Table extends React.Component {
 
     const { expanded, selectAll, selection, recordQuantity } = this.state;
 
-    const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
+    const AugmentedTable = idForCheckbox
+      ? ReactTableCheckbox
+      : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
 
     // Add dropdown menu column if secondaryActions exists in props
@@ -470,7 +472,12 @@ class Table extends React.Component {
         const { column } = props;
         const { sorted } = this.state;
         return (
-          <Header key={column.id} column={column} sort={sorted} tableSortable={sortable} />
+          <Header
+            key={column.id}
+            column={column}
+            sort={sorted}
+            tableSortable={sortable}
+          />
         );
       }
     };
