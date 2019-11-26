@@ -368,7 +368,7 @@ class HvInput extends React.Component {
           this.node = node;
         }}
         className={classNames(classes.container, className)}
-        id={id}
+        id={internalId}
         onBlur={this.onContainerBlurHandler}
       >
         <div className={classes.labelContainer}>
