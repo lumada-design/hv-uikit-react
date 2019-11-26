@@ -15,10 +15,9 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
@@ -31,14 +30,15 @@ import ActionContainer from "./ActionContainer";
  * @constructor
  */
 function HvBannerContentWrapper({
+  id,
   classes,
-  message,
   showIcon,
   customIcon,
   variant,
-  actionsOnMessage,
-  action,
   onClose,
+  actions,
+  actionsCallback,
+  actionsPosition,
   theme,
   content,
   ...other
@@ -57,9 +57,19 @@ function HvBannerContentWrapper({
     );
   }
 
+  let effectiveActionsPosition = actionsPosition;
+  if(actionsPosition === "auto") {
+    // default to inline
+    // this might try to be more inteligent in the future,
+    // taking into account the content lenght, available space,
+    // number of actions, etc..
+    effectiveActionsPosition = "inline";
+  }
+
   return (
     <div className={classes.outContainer}>
       <SnackbarContent
+        id={id}
         classes={{
           root: classes.root,
           message: classes.message,
@@ -68,12 +78,25 @@ function HvBannerContentWrapper({
         className={classNames(classes[variant], classes.baseVariant)}
         message={
           <MessageContainer
+            id={id}
             icon={icon}
-            actionsOnMessage={actionsOnMessage}
-            message={message || content}
+            {...(effectiveActionsPosition === "inline" && {
+              actionsOnMessage: actions,
+              actionsOnMessageCallback: actionsCallback
+            })}
+            message={content}
           />
         }
-        action={<ActionContainer onClose={onClose} action={action} />}
+        action={
+          <ActionContainer
+            id={id}
+            onClose={onClose}
+            {...(effectiveActionsPosition === "bottom-right" && {
+              action: actions,
+              actionCallback: actionsCallback
+            })}
+          />
+        }
         {...other}
       />
     </div>
@@ -82,6 +105,10 @@ function HvBannerContentWrapper({
 
 HvBannerContentWrapper.propTypes = {
   /**
+   * Identifier.
+   */
+  id: PropTypes.string,
+  /**
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes: PropTypes.instanceOf(Object),
@@ -89,14 +116,6 @@ HvBannerContentWrapper.propTypes = {
    * The message to display.
    */
   content: PropTypes.node,
-  /**
-   * The message to display.
-   * @deprecated Instead use the content property
-   */
-  message: deprecatedPropType(
-    PropTypes.node,
-    "Instead use the content property"
-  ),
   /**
    * Variant of the snackbar.
    */
@@ -115,13 +134,31 @@ HvBannerContentWrapper.propTypes = {
    */
   onClose: PropTypes.func.isRequired,
   /**
-   * Actions to display on message.
+   * Actions to display on the right side.
    */
-  actionsOnMessage: PropTypes.node,
+  actions: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func,
+        disabled: PropTypes.bool
+      })
+    )
+  ]),
   /**
-   * Actions to display.
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
-  action: PropTypes.node,
+  actionsCallback: PropTypes.func,
+  /**
+   * The position property of the header.
+   */
+  actionsPosition: PropTypes.PropTypes.oneOf([
+    "auto",
+    "inline",
+    "bottom-right"
+  ]),
   /**
    * The theme passed by the provider.
    */
@@ -129,13 +166,14 @@ HvBannerContentWrapper.propTypes = {
 };
 
 HvBannerContentWrapper.defaultProps = {
+  id: null,
   classes: "",
-  message: undefined,
   content: "",
   showIcon: false,
   customIcon: null,
-  actionsOnMessage: undefined,
-  action: undefined,
+  actions: null,
+  actionsCallback: () => {},
+  actionsPosition: "auto",
   theme: undefined
 };
 

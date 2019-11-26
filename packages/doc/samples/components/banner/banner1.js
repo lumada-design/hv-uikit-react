@@ -29,7 +29,7 @@ class Controller extends React.Component {
       <div>
         <SimpleBanner
           id={"0"}
-          label="default"
+          label="This is a default banner."
           variant="default"
           offset={this.calculateOffset("0")}
           open={this.isOpen("0")}
@@ -39,7 +39,7 @@ class Controller extends React.Component {
         <p />
         <SimpleBanner
           id={"1"}
-          label="Success"
+          label="This is a success banner."
           variant="success"
           showIcon
           offset={this.calculateOffset("1")}
@@ -50,7 +50,7 @@ class Controller extends React.Component {
         <p />
         <SimpleBanner
           id={"2"}
-          label="Error"
+          label="This is an error banner."
           variant="error"
           showIcon
           offset={this.calculateOffset("2")}
@@ -95,15 +95,15 @@ const SimpleBanner = ({
         onClick={handleClick}
         variant="contained"
         color="primary"
-        style={{ width: "150px" }}
+        style={{ width: "150px", textTransform: "capitalize" }}
         disabled={open}
       >
-        {label}
+        {variant}
       </Button>
       <HvBannerMemo
         id={id}
         open={open}
-        label={`This is ${label}`}
+        label={label}
         onClose={handleClose}
         variant={variant}
         showIcon={showIcon}

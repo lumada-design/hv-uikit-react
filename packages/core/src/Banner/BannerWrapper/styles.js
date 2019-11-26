@@ -22,26 +22,17 @@ const styles = theme => ({
     flexWrap: "nowrap"
   },
   message: {
-    ...theme.hv.typography.normalText,
-    wordBreak: "break-all",
-    maxHeight: "80px",
-    overflow: "hidden",
-    display: "-webkit-box",
-    "-webkit-line-clamp": 3,
-    "-webkit-box-orient": "vertical"
+    display: "flex",
+    alignItems: "center",
+    padding: `${theme.hv.spacing.xs}px 0`
   },
   action: {
-    padding: `${theme.spacing.xs}px 0 ${theme.spacing.xs}px  ${
-      theme.spacing.sm
-    }px`,
+    padding: `${theme.spacing.xs}px`,
     flex: "0 0 auto",
-    marginRight: `${theme.spacing.xs}px`
+    placeSelf: "stretch"
   },
   baseVariant: {
-    minHeight: "52px",
-    maxHeight: "92px",
-    padding: 0,
-    overflow: "hidden"
+    padding: `0 ${theme.hv.spacing.xs}px`
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8
@@ -53,8 +44,7 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.semantic.sema7
   },
   iconVariant: {
-    marginLeft: `${theme.hv.spacing.xs}px`,
-    marginRight: "5px",
+    paddingLeft: `${theme.hv.spacing.xs}px`,
     maxWidth: "32px",
     maxHeight: "32px",
     minWidth: "32px",
