@@ -14,139 +14,178 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  
-  root: {
-    textTransform: "none",
-    "&:hover,&:focus": {},
-    "&:active": {},
-    "&:focus": {
-      outline: "5px auto rgba(0, 150, 255, 1)"
-    },  
-    minWidth: "70px",
-    padding: `0 ${theme.hv.spacing.xs}px`,
-    cursor: "pointer",
-    height: "32px",
-    minHeight: "32px",
-    ...theme.hv.typography.highlightText
-  },
-  primary: {
-    color: theme.hv.palette.accent.acce0,
-    backgroundColor: theme.hv.palette.accent.acce2,
-    "&:hover": {
-      backgroundColor: theme.hv.palette.accent.acce2h
+import {
+  convertHexToRGB,
+  fade
+} from "@material-ui/core/styles/colorManipulator";
+
+const styles = theme => {
+  const base1RGB = convertHexToRGB(theme.hv.palette.base.base1);
+  const convertedColor = fade(base1RGB, 0.3);
+  const convertedColorDisabled = fade(base1RGB, 0.1);
+
+  return {
+    root: {
+      textTransform: "none",
+      "&:hover,&:focus": {},
+      "&:active": {},
+      "&:focus": {
+        outline: "5px auto rgba(0, 150, 255, 1)"
+      },
+      minWidth: "70px",
+      padding: `0 ${theme.hv.spacing.xs}px`,
+      cursor: "pointer",
+      height: "32px",
+      minHeight: "32px",
+      ...theme.hv.typography.highlightText
     },
-    "&:active": {
-      backgroundColor: theme.hv.palette.accent.acce2
+    primary: {
+      color: theme.hv.palette.accent.acce0,
+      backgroundColor: theme.hv.palette.accent.acce2,
+      "&:hover": {
+        backgroundColor: theme.hv.palette.accent.acce2h
+      },
+      "&:active": {
+        backgroundColor: theme.hv.palette.accent.acce2
+      },
+      "&$primaryDisabled": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        color: theme.hv.palette.atmosphere.atmo7,
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      },
+      "&$primaryDisabled&:hover": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        color: theme.hv.palette.atmosphere.atmo7,
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      }
     },
-    "&$primaryDisabled": {
+    primaryDisabled: {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      color: theme.hv.palette.atmosphere.atmo7,
+      cursor: "not-allowed"
+    },
+    secondary: {
+      backgroundColor: theme.hv.palette.atmosphere.atmo1,
+      color: theme.hv.palette.accent.acce1,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      "&:hover": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+      },
+      "&:active": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo1
+      },
+      "&$secondaryDisabled": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      },
+      "&$secondaryDisabled&:hover": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      }
+    },
+    secondaryDisabled: {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,
       color: theme.hv.palette.atmosphere.atmo7,
       cursor: "not-allowed",
-      pointerEvents: "auto"
+      border: "none"
     },
-    "&$primaryDisabled&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      color: theme.hv.palette.atmosphere.atmo7,
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    }
-  },
-  primaryDisabled: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo4,
-    color: theme.hv.palette.atmosphere.atmo7,
-    cursor: "not-allowed"
-  },
-  secondary: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    color: theme.hv.palette.accent.acce1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+    ghost: {
+      color: theme.hv.palette.accent.acce1,
+      backgroundColor: "transparent",
+      "&:hover": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4
+      },
+      "&:active": {
+        backgroundColor: "transparent"
+      },
+      "&$ghostDisabled": {
+        backgroundColor: "transparent",
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      },
+      "&$ghostDisabled&:hover": {
+        backgroundColor: "transparent",
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      }
     },
-    "&:active": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo1
-    },
-    "&$secondaryDisabled": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    },
-    "&$secondaryDisabled&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    }
-  },
-  secondaryDisabled: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo4,
-    color: theme.hv.palette.atmosphere.atmo7,
-    cursor: "not-allowed",
-    border: "none"
-  },
-  ghost: {
-    color: theme.hv.palette.accent.acce1,
-    backgroundColor: "transparent",
-    "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
-    },
-    "&:active": {
-      backgroundColor: "transparent"
-    },
-    "&$ghostDisabled": {
+    ghostDisabled: {
       backgroundColor: "transparent",
       color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
+      cursor: "not-allowed"
     },
-    "&$ghostDisabled&:hover": {
+    ghostSecondary: {
+      color: theme.hv.palette.accent.acce2,
+      backgroundColor: "transparent",
+      "&:hover": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo4
+      },
+      "&:active": {
+        backgroundColor: "transparent"
+      },
+      "&$ghostSecondaryDisabled": {
+        backgroundColor: "transparent",
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      },
+      "&$ghostSecondaryDisabled&:hover": {
+        backgroundColor: "transparent",
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      }
+    },
+    ghostSecondaryDisabled: {
       backgroundColor: "transparent",
       color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
+      cursor: "not-allowed"
+    },
+    semantic: {
+      color: theme.hv.palette.base.base2,
+      backgroundColor: "transparent",
+      "&:hover": {
+        backgroundColor: convertedColor
+      },
+      "&:active": {
+        backgroundColor: convertedColor
+      },
+      "&$semanticDisabled": {
+        backgroundColor: convertedColorDisabled,
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      },
+      "&$semanticDisabled&:hover": {
+        backgroundColor: convertedColorDisabled,
+        color: theme.hv.palette.atmosphere.atmo7,
+        border: "none",
+        cursor: "not-allowed",
+        pointerEvents: "auto"
+      }
+    },
+    semanticDisabled: {
+      backgroundColor: convertedColorDisabled,
+      color: theme.hv.palette.atmosphere.atmo7,
+      cursor: "not-allowed"
     }
-  },
-  ghostDisabled: {
-    backgroundColor: "transparent",
-    color: theme.hv.palette.atmosphere.atmo7,
-    cursor: "not-allowed"
-  },
-  ghostSecondary: {
-    color: theme.hv.palette.accent.acce2,
-    backgroundColor: "transparent",
-    "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
-    },
-    "&:active": {
-      backgroundColor: "transparent"
-    },
-    "&$ghostSecondaryDisabled": {
-      backgroundColor: "transparent",
-      color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    },
-    "&$ghostSecondaryDisabled&:hover": {
-      backgroundColor: "transparent",
-      color: theme.hv.palette.atmosphere.atmo7,
-      border: "none",
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    }
-  },
-  ghostSecondaryDisabled: {
-    backgroundColor: "transparent",
-    color: theme.hv.palette.atmosphere.atmo7,
-    cursor: "not-allowed"
-  }
-});
+  };
+};
 
 export default styles;

@@ -28,8 +28,7 @@ samples.smoke = (
   <>
     <Grid container>
       <Grid item xl={2}>
-        {" "}
-        Enable{" "}
+        Enable
       </Grid>
       <Grid item xl={2}>
         <HvButton id="default" onClick={() => myAlert("default")}>
@@ -63,11 +62,20 @@ samples.smoke = (
           ghostSecondary
         </HvButton>
       </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="semantic"
+          category="semantic"
+          onClick={() => myAlert("semantic")}
+        >
+          <CautionS />
+          semantic
+        </HvButton>
+      </Grid>
     </Grid>
     <Grid container>
       <Grid item xl={2}>
-        {" "}
-        Disable{" "}
+        Disable
       </Grid>
       <Grid item xl={2}>
         <HvButton
@@ -112,12 +120,22 @@ samples.smoke = (
           disabled ghostSecondary
         </HvButton>
       </Grid>
+      <Grid item xl={2}>
+        <HvButton
+          id="disabledSemantic"
+          disabled
+          category="semantic"
+          onClick={() => myAlert("semantic")}
+        >
+          <CautionS />
+          disabled semantic
+        </HvButton>
+      </Grid>
     </Grid>
 
     <Grid container>
       <Grid item xl={2}>
-        {" "}
-        all properties{" "}
+        all properties
       </Grid>
       <Grid item xl>
         <HvButton

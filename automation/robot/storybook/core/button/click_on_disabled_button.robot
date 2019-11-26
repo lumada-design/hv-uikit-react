@@ -23,3 +23,4 @@ click on disabled default button                   disabledPrimary
 click on disabled secondary button                 disabledSecondary
 click on disabled ghost button                     disabledGhost
 click on disabled ghost Secondary button           disabledGhostSecondary
+click on disabled semantic button                  disabledSemantic

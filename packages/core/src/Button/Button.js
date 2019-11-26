@@ -23,9 +23,9 @@ import materialConfigurationFactory from "./materialConfigurarionFactory";
 /**
  * Hitachi Vantara Design System compliant Button allows 4 categories
  * md expects a path to the md file relative to the location of doc/.storybook/layout-addon/Layout/Accessibility
- * @md 
+ * @md
  * ../../../../../core/src/Button/ButtonAccessibility.md
- * @mde 
+ * @mde
  * @a
  *  -1.1.1 Non-text Content:
  *  -1.3.1 Info and Relationships:
@@ -37,23 +37,23 @@ import materialConfigurationFactory from "./materialConfigurarionFactory";
  *    - Make all functionality available from a keyboard.
  *      - Following button activation, focus is set depending on the type of action the button performs. For example:
  *        - If the button onClick opens a dialog, the focus moves inside the dialog.
- *        - If the button onClick closes a dialog, focus typically returns to the button that opened the dialog unless 
- *          the function performed in the dialog context logically leads to a different element. 
- *          For example, activating a cancel button in a dialog returns focus to the button that opened the dialog. 
- *          However, if the dialog were confirming the action of deleting the page from which it was opened, 
+ *        - If the button onClick closes a dialog, focus typically returns to the button that opened the dialog unless
+ *          the function performed in the dialog context logically leads to a different element.
+ *          For example, activating a cancel button in a dialog returns focus to the button that opened the dialog.
+ *          However, if the dialog were confirming the action of deleting the page from which it was opened,
  *          the focus would logically move to a new context.
- *        - If the button onClick does not dismiss the current context, 
+ *        - If the button onClick does not dismiss the current context,
  *          then focus typically remains on the button after activation, e.g., an Apply or Recalculate button.
- *        - If the button action indicates a context change, such as move to next step in a wizard or add another 
+ *        - If the button action indicates a context change, such as move to next step in a wizard or add another
  *          search criteria, then it is often appropriate to move focus to the starting point for that action.
- *        - If the button is activated with a shortcut key, the focus usually remains in the context from which the shortcut key was activated. 
- *          For example, if Alt + U were assigned to an "Up" button that moves the currently focused item in a list one position higher in the list, 
+ *        - If the button is activated with a shortcut key, the focus usually remains in the context from which the shortcut key was activated.
+ *          For example, if Alt + U were assigned to an "Up" button that moves the currently focused item in a list one position higher in the list,
  *          pressing Alt + U when the focus is in the list would not move the focus from the list.
  *  -2.1.2 No Keyboard Trap:
- *    - If keyboard focus can be moved to a button using a keyboard interface, 
+ *    - If keyboard focus can be moved to a button using a keyboard interface,
  *      then focus can be moved away from the button using only a keyboard interface.
  *  -2.4.3 Focus Order
- *    - If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, 
+ *    - If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation,
  *      focusable buttons receive focus in an order that preserves meaning and operability.
  *  -2.5.3 Label in Name:
  *     -For buttons with labels that include text or images of text, the name contains the text that is presented visually.
@@ -130,14 +130,16 @@ HvButton.propTypes = {
    *    --"primary",
    *    --"secondary",
    *    --"ghost"
-   *    --"ghostSecondary"
+   *    --"ghostSecondary",
+   *     "semantic"
    *  - note: the buttonType object should be used to set this value.
    */
   category: PropTypes.oneOf([
     "primary",
     "secondary",
     "ghost",
-    "ghostSecondary"
+    "ghostSecondary",
+    "semantic"
   ]),
   /**
    * Class names to be applied.
@@ -180,13 +182,21 @@ HvButton.propTypes = {
      */
     ghostDisabled: PropTypes.string,
     /**
-     * Styles applied to the primary secondary ghost  button.
+     * Styles applied to the primary secondary ghost button.
      */
     ghostSecondary: PropTypes.string,
     /**
      * Styles applied to the primary secondary ghost button when it is disabled.
      */
     ghostSecondaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the semantic button.
+     */
+    semantic: PropTypes.string,
+    /**
+     * Styles applied to the semantic button when it is disabled.
+     */
+    semanticDisabled: PropTypes.string,
     /**
      * Styles applied to the inspireRed primary button.
      */
