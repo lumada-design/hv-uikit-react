@@ -18,6 +18,7 @@ const styles = theme => ({
   header: {
     backgroundColor: theme.hv.palette.semantic.sema2,
     ...theme.hv.typography.normalText,
+    color: theme.hv.palette.base.base2,
     padding: "10px",
     fontSize: 16,
     display: "flex",
