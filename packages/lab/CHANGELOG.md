@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.1...@hv/uikit-react-lab@1.10.2) (2019-11-26)
+
+
+### Bug Fixes
+
+* **datepickerds:** fixed issues found when used on DFS  [#844](https://github.com/pentaho/hv-uikit-react/issues/844) ([2e59a5f](https://github.com/pentaho/hv-uikit-react/commit/2e59a5f))
+
+
+
+
+
 ## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.0...@hv/uikit-react-lab@1.10.1) (2019-11-22)
 
 
