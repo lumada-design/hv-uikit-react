@@ -18,8 +18,8 @@ const styles = theme => ({
   root: {
     width: "310px",
     minHeight: "52px",
-    maxHeight: "80px",
-    padding: 0
+    maxHeight: "92px",
+    padding: `${theme.spacing.xs}px`
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8
@@ -45,28 +45,18 @@ const styles = theme => ({
   },
   messageSpan: {
     display: "table",
-    margin: `${theme.hv.spacing.xs}px 0`,
-    minHeight: "32px",
-    width: "310px",
-    maxHeight: "60px"
+    minHeight: "32px"
   },
   messageText: {
     ...theme.hv.typography.normalText,
+    padding: `0 ${theme.hv.spacing.xs}px`,
     color: theme.hv.palette.base.base2,
     fontFamily: theme.hv.typography.fontFamily,
-    maxHeight: "60px",
     display: "table-cell",
-    verticalAlign: "middle"
-  },
-  messageWithoutIcon: {
-    paddingLeft: `${theme.hv.spacing.sm}px`
-  },
-  messageWithoutAction: {
-    paddingRight: `${theme.hv.spacing.sm}px`
+    verticalAlign: "middle",
+    maxHeight: "72px"
   },
   action: {
-    paddingRight: `${theme.hv.spacing.sm}px`,
-    paddingLeft: `${theme.hv.spacing.xs}px`,
     display: "table-cell",
     verticalAlign: "middle",
     textAlign: "right"

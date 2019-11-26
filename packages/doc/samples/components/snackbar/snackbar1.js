@@ -35,13 +35,13 @@ class SimpleSnackbar extends React.Component {
           onClick={this.handleClick}
           variant="contained"
           color="primary"
-          style={{ width: "150px" }}
+          style={{ width: "150px", textTransform: "capitalize" }}
         >
-          {label}
+          {variant}
         </Button>
         <HvSnackbar
           open={open}
-          label={`This is ${label}`}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -57,15 +57,15 @@ class SimpleSnackbar extends React.Component {
 export default (
   <div>
     <div>
-      <SimpleSnackbar label="default" variant="default" showIcon />
+      <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />
     </div>
     <p />
     <div>
-      <SimpleSnackbar label="success" variant="success" showIcon />
+      <SimpleSnackbar label="This is a success message." variant="success" showIcon />
     </div>
     <p />
     <div>
-      <SimpleSnackbar label="error" variant="error" showIcon />
+      <SimpleSnackbar label="This is an error message." variant="error" showIcon />
     </div>
   </div>
 );

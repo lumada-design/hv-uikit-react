@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999895,
+            "index": -99999999894,
           },
           "themingEnabled": true,
         } => Map {
@@ -4945,7 +4945,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999895,
+                "index": -99999999894,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5554,7 +5554,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999895,
+                  "index": -99999999894,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -10920,6 +10920,7 @@ body {
     <WithStyles(HvSnackbar)>
       <HvSnackbar
         action={null}
+        actionCallback={[Function]}
         anchorOrigin={
           Object {
             "horizontal": "right",
@@ -10939,6 +10940,7 @@ body {
           }
         }
         customIcon={null}
+        id={null}
         label=""
         onClose={null}
         open={false}
@@ -11896,6 +11898,7 @@ body {
               "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight-1",
             }
           }
+          id="hv-snackbar-1"
           onClose={null}
           open={false}
           transitionDuration={300}
@@ -11922,6 +11925,7 @@ body {
               }
             }
             disableWindowBlurListener={false}
+            id="hv-snackbar-1"
             onClose={null}
             open={false}
             transitionDuration={300}

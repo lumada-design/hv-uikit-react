@@ -1,6 +1,5 @@
 import React from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 import Button from "@hv/uikit-react-core/dist/Button";
 
 class SimpleSnackbar extends React.Component {
@@ -22,25 +21,31 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
+      id,
       label,
+      buttonLabel,
       variant,
       showIcon,
       anchorOrigin,
       action,
-      customIcon
+      actionCallback,
+      customIcon,
+      offset
     } = this.props;
     const { open } = this.state;
     return (
       <div>
         <Button
+          id={id ? `${id}-open-button` : undefined}
           onClick={this.handleClick}
           variant="contained"
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          {buttonLabel}
         </Button>
         <HvSnackbar
+          id={id}
           open={open}
           label={label}
           onClose={this.handleClose}
@@ -48,34 +53,30 @@ class SimpleSnackbar extends React.Component {
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
+          offset={offset}
           action={action}
+          actionCallback={actionCallback}
         />
       </div>
     );
   }
 }
 
-const ActionButton = (
-  <a
-    style={{
-      cursor: "pointer",
-      color: "#414141",
-      fontSize: "14px",
-      letterSpacing: "0.02em",
-      lineHeight: "20px",
-      fontWeight: "600",
-      textDecoration: "none"
-    }}
-  >
-    Action
-  </a>
-);
-
 export default (
   <SimpleSnackbar
-    label="This is a snackbar"
+    id="actionStructure"
+    buttonLabel="Click me"
+    label="This is a snackbar."
     variant="default"
     showIcon
-    action={ActionButton}
+    action={{
+      id: "post",
+      label: "Action",
+      disabled: false
+    }}
+    actionCallback={(id, action) =>
+      alert(`clicked ${id} with ${action.label}`)
+    }
+    offset={72}
   />
 );
