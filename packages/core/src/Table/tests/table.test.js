@@ -138,7 +138,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const pageSize = wrapper.find(".-pageSizeOptions select");
+      const pageSize = wrapper.find("select");
 
       expect(pageSize.props().value).toBe(5);
     });
@@ -156,7 +156,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const pageSize = wrapper.find(".-pageSizeOptions select");
+      const pageSize = wrapper.find("select");
 
       expect(pageSize.props().value).toBe(5);
     });
@@ -174,7 +174,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const pageSize = wrapper.find(".-pageSizeOptions select");
+      const pageSize = wrapper.find("select");
 
       expect(pageSize.props().value).toBe(5);
     });
@@ -295,10 +295,7 @@ describe("Hv Table", () => {
       };
 
       const instance = wrapper.find(HvTable).instance();
-      instance.onSortChange(
-        [columns[0]],
-        internalColumnRepresentation
-      );
+      instance.onSortChange([columns[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
       const sortedIcon = instance.getSortedComponent(1);
       expect(sortedIcon).toBeDefined();

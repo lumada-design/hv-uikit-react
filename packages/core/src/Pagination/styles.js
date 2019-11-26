@@ -15,92 +15,89 @@
  */
 
 const styles = theme => ({
-  paginationContainer: {
+  root: {
     position: "relative",
     zIndex: 1,
     display: "flex",
     justifyContent: "center",
     alignItems: "stretch",
     flexWrap: "wrap",
-    padding: "3px",
-    margin: `${theme.hv.spacing.md}px 0 0 0`
+    marginTop: `${theme.hv.spacing.sm}px`
   },
   pageSizeOptions: {
     position: "absolute",
+    marginRight: "40px",
     top: "50%",
     transform: "translateY(-50%)",
     left: "0"
   },
   pageSizeOptionsSelect: {
-    "-webkit-appearance": "listbox",
-    "-webkit-border-radius": "0px",
-    padding: "2px 7px",
-    margin: `0px ${theme.hv.spacing.xs}px`,
-    fontSize: "14px",
-    fontWeight: "normal",
+    ...theme.hv.typography.sText,
+    "-webkit-appearance": "none",
+    border: "none",
+    borderRadius: 0,
+    padding: "0 6px",
+    marginLeft: `${theme.hv.spacing.sm}px`,
+    marginRight: `${theme.hv.spacing.xs}px`,
     outline: "none",
     height: "32px",
     width: `${theme.hv.spacing.lg}px`,
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    color: theme.hv.palette.accent.acce1,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    backgroundColor: "transparent",
     backgroundSize: "26px 26px",
     "&::-ms-expand": {
       display: "none"
+    },
+    "&:hover:enabled": {
+      cursor: "pointer",
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "&:focus": {
+      outline: "5px auto rgba(0, 150, 255, 1)"
     }
   },
   pageNavigator: {
     display: "flex",
     alignItems: "stretch",
-    height: "32px"
+    height: "32px",
+    "&>*": {
+      margin: `0 ${theme.hv.spacing.xs / 2}px`
+    }
   },
   pageInfo: {
     display: "inline-block",
-    margin: `0 ${theme.hv.spacing.xs}px`,
     whiteSpace: "nowrap",
-    height: "32px"
+    height: "32px",
+    lineHeight: "32px"
   },
   pageJump: {
     display: "inline-block"
-  },
-  rowText: {
-    ...theme.hv.typography.normalText,
-    marginLeft: `${theme.hv.spacing.xs}px`
-  },
-  pageJumpInput: {
-    ...theme.hv.typography.normalText,
-    width: "50px",
-    textAlign: "right",
-    fontSize: "14px",
-    margin: `-1px ${theme.hv.spacing.xs}px`,
-    padding: "2px 5px",
-    borderRadius: "0",
-    border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-    height: "32px",
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
-  },
-  arrowEnabled: {
-    cursor: "pointer"
   },
   pageSizeInput: {
     ...theme.hv.typography.labelText,
     textAlign: "right"
   },
+  pageSizeInputRoot: {
+    backgroundColor: "transparent",
+    "&:hover": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    }
+  },
   pageSizeInputContainer: {
-    width: 70,
-    minWidth: 70,
-    maxWidth: 100,
-    padding: `0 ${theme.hv.spacing.xs}px`
-  },
-  pageSizeInputIconClear: {
-    display: "none"
-  },
-  pageSizeInputList: {
-    width: 90,
-    minWidth: 90,
-    maxWidth: 90
+    width: 40,
+    minWidth: 40,
+    maxWidth: 100
   },
   iconContainer: {
+    padding: 0,
+    borderRadius: 0,
+    "&:hover": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "&:focus": {
+      outline: "5px auto rgba(0, 150, 255, 1)"
+    }
+  },
+  icon: {
     width: "32px",
     height: "32px",
     display: "flex",
@@ -110,12 +107,12 @@ const styles = theme => ({
     }
   },
   selectDownIcon: {
-    display: "flex",
+    display: "inline-flex",
     alignItems: "center",
-    position: "absolute",
+    position: "relative",
     pointerEvents: "none",
-    right: "44px",
-    top: "11px",
+    left: "-26px",
+    top: "2px",
     "&>svg": {
       margin: "0 auto"
     }
