@@ -21,3 +21,4 @@ mouse hover on default button                   default
 mouse hover on secondary button                 secondary
 mouse hover on ghost button                     ghost
 mouse hover on ghost Secondary button           ghostSecondary
+mouse hover on semantic button                  semantic

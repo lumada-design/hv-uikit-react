@@ -21,3 +21,4 @@ mouse hover on disabled default button                   disabledPrimary
 mouse hover on disabled secondary button                 disabledSecondary      
 mouse hover on disabled ghost button                     disabledGhost          
 mouse hover on disabled ghost Secondary button           disabledGhostSecondary 
+mouse hover on disabled semantic button                  disabledSemantic

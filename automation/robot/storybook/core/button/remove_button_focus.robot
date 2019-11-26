@@ -28,3 +28,4 @@ remove focus on default button                   default
 remove focus on secondary button                 secondary
 remove focus on ghost button                     ghost
 remove focus on ghost Secondary button           ghostSecondary
+remove focus on semantic button                  semantic
