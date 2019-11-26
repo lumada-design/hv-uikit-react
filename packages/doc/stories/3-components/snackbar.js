@@ -32,23 +32,21 @@ storiesOf("Components/Notifications", module).add(
         src: "components/snackbar/snackbar1"
       },
       {
-        title: "2. With custom icon",
-        src: "components/snackbar/snackbar2"
-      },
-      {
-        title: "3. Without icon",
-        src: "components/snackbar/snackbar3"
-      },
-      {
-        title: "4. With actions",
+        title: "2. With action",
+        description:
+          "It is possible to pass directly a component to the action or use a structure that will render a semantic button",
         src: "components/snackbar/snackbar4"
       },
       {
-        title: "5. With offset",
+        title: "3. With custom icon",
+        src: "components/snackbar/snackbar2"
+      },
+      {
+        title: "4. With offset",
         src: "components/snackbar/snackbar5"
       },
       {
-        title: "6. Examples of snackbars",
+        title: "5. More examples",
         src: "components/snackbar/snackbar6"
       }
     ]

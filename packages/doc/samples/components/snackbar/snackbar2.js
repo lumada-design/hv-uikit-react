@@ -2,21 +2,19 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
-import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
+import Info from "@hv/uikit-react-icons/dist/Generic/Info";
 
 const styles = {
   rootS: {
     width: "30px",
     height: "30px",
-    display: "flex",
-    alignItems: "center",
     "&>svg": {
       margin: "0 auto"
     }
   }
 };
 
-const StyledFastForward = withStyles(styles, { withTheme: true })(FastForward);
+const StyledInfo = withStyles(styles, { withTheme: true })(Info);
 
 class SimpleSnackbar extends React.Component {
   state = {
@@ -37,6 +35,7 @@ class SimpleSnackbar extends React.Component {
 
   render() {
     const {
+      id,
       label,
       variant,
       showIcon,
@@ -48,6 +47,7 @@ class SimpleSnackbar extends React.Component {
     return (
       <div>
         <Button
+          id={id ? `${id}-open-button` : undefined}
           onClick={this.handleClick}
           variant="contained"
           color="primary"
@@ -56,8 +56,9 @@ class SimpleSnackbar extends React.Component {
           Click me
         </Button>
         <HvSnackbar
+          id={id}
           open={open}
-          label="This is a custom icon"
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -72,8 +73,9 @@ class SimpleSnackbar extends React.Component {
 
 export default (
   <SimpleSnackbar
-    label="This is a snackbar"
+    id="snackbar2"
+    label="This is a snackbar with a custom icon."
     variant="default"
-    customIcon={<StyledFastForward iconSize="S" />}
+    customIcon={<StyledInfo iconSize="S" />}
   />
 );

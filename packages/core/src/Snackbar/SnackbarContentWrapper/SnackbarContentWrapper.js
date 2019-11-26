@@ -15,22 +15,41 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
+import PropTypes, { oneOfType } from "prop-types";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
+import HvButton from "../../Button";
 
-function HvSnackbarContentWrapper(props) {
-  const {
-    classes,
-    label,
-    showIcon,
-    customIcon,
-    variant,
-    action,
-    ...other
-  } = props;
+const renderAction = (action, actionsCallback, id) => {
+  if (React.isValidElement(action)) {
+    return action;
+  }
+
+  return (
+    <HvButton
+      disabled={action.disabled}
+      onClick={() => actionsCallback(id, action)}
+      category="semantic"
+    >
+      {(action.icon && action.icon()) ||
+        (action.iconCallback && action.iconCallback())}
+      {action.label}
+    </HvButton>
+  );
+};
+
+const HvSnackbarContentWrapper = ({
+  id,
+  classes,
+  label,
+  showIcon,
+  customIcon,
+  variant,
+  action,
+  actionCallback,
+  ...other
+}) => {
   let icon;
 
   if (customIcon !== null) {
@@ -43,35 +62,41 @@ function HvSnackbarContentWrapper(props) {
       : null;
   }
 
+  let renderedAction;
+  if (action) renderedAction = renderAction(action, actionCallback, id);
+
   return (
     <SnackbarContent
+      id={id}
       classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
       message={
-        <div id="client-snackbar" className={classes.messageSpan}>
+        <div {...(id && {id: `${id}-message`})} className={classes.messageSpan}>
           {icon}
           <TextTruncate
-            containerClassName={classNames(classes.messageText, {
-              [classes.messageWithoutIcon]: !icon,
-              [classes.messageWithoutAction]: action === null
-            })}
+            {...(id && {id: `${id}-message-text`})}
+            containerClassName={classes.messageText}
             line={3}
             text={label}
             textElement="div"
           />
-          {action && <div className={classes.action}>{action}</div>}
+          {action && <div {...(id && {id: `${id}-action`})} className={classes.action}>{renderedAction}</div>}
         </div>
       }
       {...other}
     />
   );
-}
+};
 
 HvSnackbarContentWrapper.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * The message to display.
    */
@@ -91,14 +116,28 @@ HvSnackbarContentWrapper.propTypes = {
   /**
    * Action to display.
    */
-  action: PropTypes.node
+  action: oneOfType([
+    PropTypes.node,
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      icon: PropTypes.func,
+      disabled: PropTypes.bool
+    })
+  ]),
+  /**
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   */
+  actionCallback: PropTypes.func
 };
 
 HvSnackbarContentWrapper.defaultProps = {
+  id: undefined,
   label: "",
   showIcon: false,
   customIcon: null,
-  action: null
+  action: null,
+  actionCallback: () => {}
 };
 
 export default HvSnackbarContentWrapper;
