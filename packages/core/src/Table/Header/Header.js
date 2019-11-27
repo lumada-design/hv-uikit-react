@@ -18,7 +18,6 @@
 import React from "react";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
@@ -52,16 +51,19 @@ const getSortedComponent = (id, columnSortable, sort, classes) => {
 
 const Header = React.memo(
   ({
+    tableInternalId,
     classes,
     column: { id, sortable, cellType, headerText },
     tableSortable,
     sort
   }) => {
     const columnSortable = (isNil(sortable) && tableSortable) || sortable;
+
     return (
       <div className={classNames(classes.headerContainer)}>
         {columnSortable && (
           <div
+            id={id != null ? `${tableInternalId}-column-${id}-sort-button` : undefined}
             className={classNames(classes.rtSortIcon, {
               [classes.rtSortIconNumeric]: cellType === "numeric"
             })}
@@ -77,6 +79,7 @@ const Header = React.memo(
           })}
         >
           <HvTypography
+            id={id != null ? `${tableInternalId}-column-${id}-label` : undefined}
             variant="highlightText"
             className={classNames(classes.headerProps, {
               [classes.headerAlphaNumeric]:
