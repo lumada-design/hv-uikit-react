@@ -14,12 +14,22 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "@hv/uikit-react-core/dist/withDeprecate";
-import styles from "./styles";
-import AssetInventory from "./AssetInventory";
+import React from "react";
 
-export default withDeprecate(
-  withStyles(styles, { withTheme: true })(AssetInventory),
-  "This component is deprecated. Please use the Asset Inventory Component in the Core Package"
-);
+const withDeprecate = (InnerComponent, msg = '') => class extends React.Component {
+  componentWillMount () {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`${InnerComponent.name} is deprecated`, msg);
+    }
+  }
+
+  render () {
+    return (
+      <InnerComponent {...this.props} />
+    );
+  }
+};
+
+export default withDeprecate;
+
+

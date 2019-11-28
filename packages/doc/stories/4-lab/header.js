@@ -19,7 +19,9 @@ import { storiesOf } from "@storybook/react";
 import HvHeader from "@hv/uikit-react-lab/dist/Header";
 
 storiesOf("Lab", module).add("Header", () => <HvHeader />, {
+  deprecated: true,
   title: "Header",
+  componentToUse: "Header",
   description:
     "A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be close. Banners should be display at the top of the screen, below a top app bar.",
   usage: "import HvHeader from '@hv/uikit-react-lab/dist/Header'",
@@ -27,7 +29,7 @@ storiesOf("Lab", module).add("Header", () => <HvHeader />, {
     {
       title: "Variant 1",
       src: "lab/header/header1"
-    },
+    }
     // {
     //   title: "Variant 2",
     //   src: "lab/header/header2"

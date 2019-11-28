@@ -942,7 +942,7 @@ exports[`<SearchBox /> renders correctly 1`] = `
       }
     }
   >
-    <WithStyles(HvSearchBox)
+    <_class
       classes={Object {}}
       onChange={[MockFunction]}
     />

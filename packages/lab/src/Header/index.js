@@ -15,7 +15,11 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import withDeprecate from "@hv/uikit-react-core/dist/withDeprecate";
 import styles from "./styles";
 import Header from "./Header";
 
-export default withStyles(styles, { withTheme: true })(Header);
+export default withDeprecate(
+  withStyles(styles, { withTheme: true })(Header),
+  "This component is deprecated. Please use the Header Component in the Core Package"
+);

@@ -942,7 +942,7 @@ exports[`AssetInventory withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(HvAssetInventory)
+    <_class
       assetsTitle="title"
     />
   </ContextProvider>

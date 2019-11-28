@@ -942,7 +942,7 @@ exports[`ListItem withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(ListItem)
+    <_class
       actions="actions"
       avatar="icon"
       checkboxValue="value"

@@ -19,9 +19,11 @@ import { storiesOf } from "@storybook/react";
 import HvAssetInventory from "@hv/uikit-react-lab/dist/AssetInventory";
 
 storiesOf("Lab", module).add("Asset Inventory", () => <HvAssetInventory />, {
+  deprecated:true,
   title: "Asset Inventory",
+  componentToUse: "Asset Inventory",
   description:
-    "A asset inventory allows to switch between views (card and list). ",
+    "A asset inventory allows to switch between views (card and list).",
   usage: "import HvAssetInventory from '@hv/uikit-react-lab/dist/AssetInventory'",
   examples: [
     {

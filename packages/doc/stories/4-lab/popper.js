@@ -19,9 +19,11 @@ import { storiesOf } from "@storybook/react";
 import Content from "@hv/uikit-react-lab/dist/Popper/Content"
 
 storiesOf("Lab", module).add("Popper", () => <Content />, {
+  deprecated:true,
   title: "Popper",
+  componentToUse: "Tooltip",
   description:
-    "A Popper Higher order component that show itself when hovering, still in development",
+    "A Popper Higher order component that show itself when hovering, still in development.",
   usage: "import withPopper from '@hv/uikit-react-lab/dist/Popper/withPopper'",
   examples: [
     {
