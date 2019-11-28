@@ -17,6 +17,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import uniqueId from 'lodash/uniqueId';
 import IconButton from "@material-ui/core/IconButton";
 import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
@@ -34,6 +35,7 @@ const Pagination = ({
   theme,
   classes,
   className,
+  id,
   pages,
   page,
   showPageSizeOptions,
@@ -48,6 +50,8 @@ const Pagination = ({
 }) => {
   const [statePage, setStatePage] = useState(page);
   const computedLabels = { ...Pagination.defaultProps.labels, ...labels };
+
+  const [internalId] = useState(id || uniqueId("hv-pagination-"));
 
   const getSafePage = inPage =>
     Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
@@ -74,7 +78,7 @@ const Pagination = ({
   const disabledColors = [theme.hv.palette.atmosphere.atmo7];
 
   return (
-    <div className={classnames(className, classes.root)}>
+    <div id={internalId} className={classnames(className, classes.root)}>
       <div className={classes.pageSizeOptions}>
         {showPageSizeOptions && (
           <>
@@ -82,6 +86,7 @@ const Pagination = ({
               {computedLabels.pageSizePrev}
             </HvTypography>
             <select
+              id={`${internalId}-pageSize`}
               disabled={pageSize === 0}
               className={classes.pageSizeOptionsSelect}
               aria-label={computedLabels.pageSizeSelectorDescription}
@@ -103,6 +108,7 @@ const Pagination = ({
       </div>
       <div className={classes.pageNavigator}>
         <IconButton
+          id={`${internalId}-firstPage-button`}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
@@ -113,6 +119,7 @@ const Pagination = ({
           />
         </IconButton>
         <IconButton
+          id={`${internalId}-previousPage-button`}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
@@ -126,6 +133,7 @@ const Pagination = ({
           {showPageJump ? (
             <div className={classes.pageJump}>
               <HvInput
+                id={`${internalId}-currentPage`}
                 labels={computedLabels}
                 classes={{
                   input: classes.pageSizeInput,
@@ -150,11 +158,12 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${computedLabels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography component="span" variant="sText">
+          <HvTypography id={`${internalId}-totalPages`} component="span" variant="sText">
             {pages || 1}
           </HvTypography>
         </div>
         <IconButton
+          id={`${internalId}-nextPage-button`}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
@@ -165,6 +174,7 @@ const Pagination = ({
           />
         </IconButton>
         <IconButton
+          id={`${internalId}-lastPage-button`}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
@@ -282,6 +292,10 @@ Pagination.propTypes = {
    */
   className: PropTypes.string,
   /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
+  /**
    * An object containing all the labels for the component.
    *
    */
@@ -306,6 +320,7 @@ Pagination.defaultProps = {
   onPageChange() {},
   onPageSizeChange() {},
   className: "",
+  id: undefined,
   labels: {
     pageSizePrev: "Show",
     pageSizeEntryName: "rows",
