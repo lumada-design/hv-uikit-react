@@ -3,6 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Pagination from "@hv/uikit-react-core/dist/Pagination";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 
+const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
 const data = [...Array(64).keys()];
 
 const styles = theme => ({
@@ -26,7 +27,7 @@ const Container = withStyles(styles, { withTheme: true })(
 
 const ControlledPagination = () => {
   const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(12);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
 
   const numPages = Math.ceil(data.length / pageSize);
 
@@ -46,10 +47,10 @@ const ControlledPagination = () => {
         canPrevious={page > 0}
         canNext={page < numPages - 1}
         pageSize={pageSize}
-        pageSizeOptions={[3, 6, 12, 24, 48, 200]}
+        pageSizeOptions={pageSizeOptions}
         onPageChange={page => setPage(page)}
         onPageSizeChange={pageSize => setPageSize(pageSize)}
-        labels={{ labelEntryType: "items" }}
+        labels={{ pageSizeEntryName: "items" }}
       />
     </>
   );

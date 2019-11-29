@@ -5,6 +5,7 @@ import ToolIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
 import compressorImage from "../card/resources/compressor.png";
 import leafImage from "../card/resources/leaf.png";
 
+const pageSizeOptions = [4, 8, 12, 24, 48];
 const createData = num => {
   const variations = [
     { semantic: "sema2", subheader: "Machine", mediaPath: compressorImage },
@@ -22,7 +23,7 @@ const createData = num => {
 
 const ControlledPagination = () => {
   const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(3);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[0]);
   const [data, setData] = useState(createData(64));
 
   const numPages = Math.ceil(data.length / pageSize);
@@ -54,10 +55,10 @@ const ControlledPagination = () => {
         canPrevious={page > 0}
         canNext={page < numPages - 1}
         pageSize={pageSize}
-        pageSizeOptions={[3, 6, 12, 24, 48, 200]}
+        pageSizeOptions={pageSizeOptions}
         onPageChange={page => setPage(page)}
         onPageSizeChange={pageSize => setPageSize(pageSize)}
-        labels={{ labelEntryType: "assets" }}
+        labels={{ pageSizeEntryName: "assets" }}
       />
     </>
   );

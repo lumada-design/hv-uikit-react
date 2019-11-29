@@ -36,12 +36,13 @@ const styles = theme => ({
     "-webkit-appearance": "none",
     border: "none",
     borderRadius: 0,
-    padding: "0 6px",
-    marginLeft: `${theme.hv.spacing.sm}px`,
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingRight: "32px",
+    textAlignLast: "right",
+    marginLeft: `${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
     outline: "none",
     height: "32px",
-    width: `${theme.hv.spacing.lg}px`,
     backgroundColor: "transparent",
     backgroundSize: "26px 26px",
     "&::-ms-expand": {
@@ -70,22 +71,34 @@ const styles = theme => ({
     lineHeight: "32px"
   },
   pageJump: {
-    display: "inline-block"
+    display: "inline-block",
+    marginRight: `${theme.hv.spacing.xs}px`
   },
   pageSizeInput: {
     ...theme.hv.typography.labelText,
-    textAlign: "right"
+    paddingLeft: `${theme.hv.spacing.xs / 2}px`,
+    paddingRight: `${theme.hv.spacing.xs / 2}px`,
+    margin: 0,
+    textAlign: "right",
+    MozAppearance: "textfield",
+    "&:focus": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    }
   },
   pageSizeInputRoot: {
     backgroundColor: "transparent",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+      WebkitAppearance: "none",
+      margin: 0
     }
   },
   pageSizeInputContainer: {
-    width: 40,
-    minWidth: 40,
-    maxWidth: 100
+    width: "40px",
+    minWidth: "40px",
+    maxWidth: `${theme.hv.spacing.lg}px`
   },
   iconContainer: {
     padding: 0,
@@ -107,15 +120,12 @@ const styles = theme => ({
     }
   },
   selectDownIcon: {
-    display: "inline-flex",
-    alignItems: "center",
+    display: "inline-block",
     position: "relative",
     pointerEvents: "none",
-    left: "-26px",
+    left: "-32px",
     top: "2px",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    width: 0
   }
 });
 
