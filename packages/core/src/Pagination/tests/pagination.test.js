@@ -35,10 +35,6 @@ describe("Default Pagination", () => {
     expect(wrapper).toBeDefined();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it("should render the Pagination component", () => {
     const paginationComponent = wrapper.find(Pagination);
     expect(paginationComponent.length).toBe(1);
