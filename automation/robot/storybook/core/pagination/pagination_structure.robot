@@ -15,7 +15,7 @@ ${next}         //button[span/div[contains(@class,'Forwards')]]
 ${last}         //button[span/div[contains(@class,'End')]]
 
 *** Test Cases ***
-check default previous/first page disabled and page input 1
+check default disabled previous/first page
     Go To                               ${STORYBOOK_URL}/iframe.html?id=corepagination--pagination2
     Wait Until Element Is Enabled       ${input}        10s
     Element Should Be Disabled          ${first}
@@ -64,7 +64,7 @@ input value less than minimal pages
     Wait Until Element Is Enabled       ${input}        10s
     Input Text                          ${input}        -3
     Press Keys                          ${input}        RETURN
-    Textfield Value Should Be           ${input}        1
+    Textfield Value Should Be           ${input}        3
 
 input value just accept integers
     Go To                               ${STORYBOOK_URL}/iframe.html?id=corepagination--pagination2
@@ -87,7 +87,7 @@ change page size on last page
     Wait Until Element Is Enabled       ${select}       10s
     Click Element                       //select/option[1]
     Click Button                        ${last}
-    Textfield Value Should Be           ${input}        22
+    Textfield Value Should Be           ${input}        16
     Click Element                       //select/option[4]
     Textfield Value Should Be           ${input}        3
 

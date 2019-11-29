@@ -140,7 +140,7 @@ const Pagination = ({
                   inputRoot: classes.pageSizeInputRoot,
                   container: classes.pageSizeInputContainer
                 }}
-                onChange={val => setStatePage(val === "" ? val : val - 1)}
+                onChange={val => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
                 inputValue={`${statePage === "" ? "" : Number(statePage) + 1}`}
                 onBlur={applyPage}
@@ -148,6 +148,7 @@ const Pagination = ({
                 validationIconVisible={false}
                 disabled={pageSize === 0}
                 disableClear
+                type="number"
               />
             </div>
           ) : (
