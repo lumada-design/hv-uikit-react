@@ -25,7 +25,7 @@ change input limit with another component
     Wait Until Page Contains Element    //div[contains(@class,'HvTextArea-characterCounte') and contains(.,'10/20')]    2s
     Press Keys                          css:textarea    CTRL+a+DELETE           #chrome work around to keyword (Clear Element Text) doesn't work
     Input Text                          css:textarea    A aB bC cD dE eF fGgH hI iJ jK kL lM mN nO oP pQ qR rS sT tU uV vW wX xY yZ z
-    Element Text Should Be              css:textarea    A aB bC cD dE eF fGg
+    Wait Until Keyword Succeeds         3    1    Element Text Should Be    css:textarea    A aB bC cD dE eF fGg
 
 unable to insert text
     Go To                               ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareadisabled
