@@ -5085,7 +5085,7 @@ body {
 }
 .HvTooltip-tooltip-29 {
   width: fit-content;
-  padding: 20px;
+  padding: 15px 20px;
   display: flex;
   z-index: 100;
   max-width: 532px;
@@ -5122,16 +5122,15 @@ body {
   z-index: 15;
 }
 .HvTooltip-title-32 {
-  padding: 20px;
+  padding: 15px 20px 5px 20px;
   border-bottom: 3px solid #F9F9F9;
-  padding-bottom: 10px;
 }
 .HvTooltip-valuesContainer-33 {
   padding: 20px;
 }
 .HvTooltip-values-34 {
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   justify-content: space-between;
 }
 .HvTooltip-values-34:last-child {
@@ -5185,7 +5184,7 @@ body {
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -5220,8 +5219,7 @@ body {
                   },
                   Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   Object {
                     "padding": "20px",
@@ -5229,7 +5227,7 @@ body {
                   Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   Object {
                     "padding-bottom": 0,
@@ -5286,15 +5284,14 @@ body {
                   },
                   ".HvTooltip-title-32": Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   ".HvTooltip-tooltip-29": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -5312,7 +5309,7 @@ body {
                   ".HvTooltip-values-34": Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   ".HvTooltip-values-34:last-child": Object {
                     "padding-bottom": 0,
@@ -5349,15 +5346,14 @@ body {
                   },
                   "title": Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   "tooltip": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -5367,7 +5363,7 @@ body {
                   "values": Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   "valuesContainer": Object {
                     "padding": "20px",
@@ -5926,8 +5922,7 @@ body {
                   },
                   "title": Object {
                     "borderBottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "paddingBottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   "tooltip": Object {
                     "& p": Object {
@@ -5942,7 +5937,7 @@ body {
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "maxWidth": 532,
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "zIndex": 100,
                   },
@@ -5955,7 +5950,7 @@ body {
                     },
                     "display": "flex",
                     "justifyContent": "space-between",
-                    "paddingBottom": "20px",
+                    "paddingBottom": "15px",
                   },
                   "valuesContainer": Object {
                     "padding": "20px",
@@ -17731,7 +17726,7 @@ body {
 }
 .HvTooltip-tooltip-86 {
   width: fit-content;
-  padding: 20px;
+  padding: 15px 20px;
   display: flex;
   z-index: 100;
   max-width: 532px;
@@ -17768,16 +17763,15 @@ body {
   z-index: 15;
 }
 .HvTooltip-title-89 {
-  padding: 20px;
+  padding: 15px 20px 5px 20px;
   border-bottom: 3px solid #F9F9F9;
-  padding-bottom: 10px;
 }
 .HvTooltip-valuesContainer-90 {
   padding: 20px;
 }
 .HvTooltip-values-91 {
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   justify-content: space-between;
 }
 .HvTooltip-values-91:last-child {
@@ -17831,7 +17825,7 @@ body {
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -17866,8 +17860,7 @@ body {
                   },
                   Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   Object {
                     "padding": "20px",
@@ -17875,7 +17868,7 @@ body {
                   Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   Object {
                     "padding-bottom": 0,
@@ -17932,15 +17925,14 @@ body {
                   },
                   ".HvTooltip-title-89": Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   ".HvTooltip-tooltip-86": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -17958,7 +17950,7 @@ body {
                   ".HvTooltip-values-91": Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   ".HvTooltip-values-91:last-child": Object {
                     "padding-bottom": 0,
@@ -17995,15 +17987,14 @@ body {
                   },
                   "title": Object {
                     "border-bottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "padding-bottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   "tooltip": Object {
                     "background-color": "#FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "max-width": "532px",
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "z-index": "100",
                   },
@@ -18013,7 +18004,7 @@ body {
                   "values": Object {
                     "display": "flex",
                     "justify-content": "space-between",
-                    "padding-bottom": "20px",
+                    "padding-bottom": "15px",
                   },
                   "valuesContainer": Object {
                     "padding": "20px",
@@ -18572,8 +18563,7 @@ body {
                   },
                   "title": Object {
                     "borderBottom": "3px solid #F9F9F9",
-                    "padding": "20px",
-                    "paddingBottom": "10px",
+                    "padding": "15px 20px 5px 20px",
                   },
                   "tooltip": Object {
                     "& p": Object {
@@ -18588,7 +18578,7 @@ body {
                     "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
                     "display": "flex",
                     "maxWidth": 532,
-                    "padding": "20px",
+                    "padding": "15px 20px",
                     "width": "fit-content",
                     "zIndex": 100,
                   },
@@ -18601,7 +18591,7 @@ body {
                     },
                     "display": "flex",
                     "justifyContent": "space-between",
-                    "paddingBottom": "20px",
+                    "paddingBottom": "15px",
                   },
                   "valuesContainer": Object {
                     "padding": "20px",
