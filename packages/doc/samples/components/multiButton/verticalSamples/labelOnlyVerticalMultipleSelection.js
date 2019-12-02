@@ -18,8 +18,8 @@ import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", selected: true },
-  { id: "satellite", value: "satellite" }
+  { id: "map", value: "Map", selected: true },
+  { id: "satellite", value: "Satellite" }
 ];
 
 export default (
