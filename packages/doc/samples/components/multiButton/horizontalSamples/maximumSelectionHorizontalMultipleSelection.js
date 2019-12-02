@@ -21,16 +21,16 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const buttonsDefinitions = [
-  { id: "map", value: "map", icon: <Map /> },
+  { id: "map", value: "Map", icon: <Map /> },
   {
     id: "satellite",
-    value: "satellite",
+    value: "Satellite",
     icon: <LocationPin />
   },
-  { id: "map1", value: "chart", icon: <Map /> },
-  { id: "satellite1", value: "location 1", icon: <LocationPin /> },
-  { id: "satellite2", value: "location 2", icon: <LocationPin /> },
-  { id: "satellite3", value: "location 3", icon: <LocationPin /> }
+  { id: "map1", value: "Chart", icon: <Map /> },
+  { id: "satellite1", value: "Location 1", icon: <LocationPin /> },
+  { id: "satellite2", value: "Location 2", icon: <LocationPin /> },
+  { id: "satellite3", value: "Location 3", icon: <LocationPin /> }
 ];
 
 export default (
