@@ -9,20 +9,15 @@ Default Tags      smoke
 
 *** Keywords ***
 Test button state transition between default-hover-default
-    [Arguments]        ${button_locator}    ${theme}
+    [Arguments]        ${button_locator}
     [Documentation]
     ...                verify just the button background-color change with mouse over on button
     ...
-    apply storybook theme            ${theme}
     Wait Until Element Is Visible    ${button_locator}
-    verify button background-color change on and removing mouse hover    ${button_locator}  
+    verify button background-color change on and removing mouse hover    ${button_locator}
 
-*** Test Cases ***                              button_locator     theme
-mouse hover on default button                   default            default
-mouse hover on secondary button                 secondary          default
-mouse hover on ghost button                     ghost              default
-mouse hover on ghost Secondary button           ghostSecondary     default
-mouse hover on dark default button              default            dark
-mouse hover on dark secondary button            secondary          dark
-mouse hover on dark ghost button                ghost              dark
-mouse hover on dark ghost Secondary button      ghostSecondary     dark
+*** Test Cases ***                              button_locator
+mouse hover on default button                   default
+mouse hover on secondary button                 secondary
+mouse hover on ghost button                     ghost
+mouse hover on ghost Secondary button           ghostSecondary

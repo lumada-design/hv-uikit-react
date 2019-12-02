@@ -4,7 +4,9 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    issue
+Documentation
+...    TC fails just when executed via jenkins, otherwise run test manually or via locally they always pass. (This problems are being mitigate)
 
 *** Test Cases ***
 successful requests after input credencials
