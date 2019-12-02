@@ -4,7 +4,9 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke   issue
+Documentation    
+...    TC fails just when executed via jenkins, otherwise run test manually or via locally they always pass. (This problems are being mitigate)
 
 *** Test Cases ***
 change focus on click other container
@@ -50,4 +52,4 @@ all icons on action area are enable
     Element Should Be Enabled        (//div[contains(@class,'Actions-iconContainer')])[1]
 
 #notes
-# don't is clear, easy to distinct what is menu vs submenu or what is the level of submenu
+# don't is clear, easy to distinct the level on component (what is menu, submenu sub-sub-menu ...
