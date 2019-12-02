@@ -12,22 +12,17 @@ bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platfor
 
 *** Keywords ***
 Test button state transition between focus-hover-focus
-    [Arguments]        ${button_locator}    ${theme}
+    [Arguments]        ${button_locator}
     [Documentation]
     ...                verify just the button background-color change with mouse over on focused button
     ...
-    apply storybook theme       ${theme}
     Click Button                ${button_locator}
     Alert Should Be Present
     Element Should Be Focused   ${button_locator}
     verify button background-color change on and removing mouse hover    ${button_locator}
 
-*** Test Cases ***                                      button_locator      theme
-mouse hover on focused default button                   default             default
-mouse hover on focused secondary button                 secondary           default
-mouse hover on focused ghost button                     ghost               default
-mouse hover on focused ghost Secondary button           ghostSecondary      default
-mouse hover on focused dark default button              default             dark
-mouse hover on focused dark secondary button            secondary           dark
-mouse hover on focused dark ghost button                ghost               dark
-mouse hover on focused dark ghost Secondary button      ghostSecondary      dark
+*** Test Cases ***                                      button_locator
+mouse hover on focused default button                   default
+mouse hover on focused secondary button                 secondary
+mouse hover on focused ghost button                     ghost
+mouse hover on focused ghost Secondary button           ghostSecondary
