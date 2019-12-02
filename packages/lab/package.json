@@ -50,7 +50,8 @@
     "react-date-range": "1.0.0-beta2",
     "react-day-picker": "7.3.0",
     "react-jss": "8.6.1",
-    "react-select": "2.4.2"
+    "react-select": "2.4.2",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
