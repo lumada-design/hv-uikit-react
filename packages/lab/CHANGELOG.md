@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.2...@hv/uikit-react-lab@1.10.3) (2019-12-03)
+
+
+### Bug Fixes
+
+* **timepicker:** fix font family on TimePicker. [#861](https://github.com/pentaho/hv-uikit-react/issues/861) ([1effa60](https://github.com/pentaho/hv-uikit-react/commit/1effa60))
+
+
+
+
+
 ## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.1...@hv/uikit-react-lab@1.10.2) (2019-11-26)
 
 
