@@ -217,7 +217,7 @@ HvBanner.propTypes = {
    */
   transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
   /**
-   * Custom offset from top/bottom of the page, in px.
+   * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
   offset: PropTypes.number,
 
@@ -261,7 +261,7 @@ HvBanner.defaultProps = {
   variant: "default",
   transitionDuration: 300,
   transitionDirection: "down",
-  offset: undefined,
+  offset: 60,
 
   // deprecated:
   message: undefined,
