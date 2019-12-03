@@ -17,24 +17,14 @@
 const styles = theme => ({
   message: {
     ...theme.hv.typography.normalText,
+    padding: `0 ${theme.hv.spacing.xs}px`,
     color: theme.hv.palette.base.base2,
-    wordBreak: "break-all",
-    maxHeight: "80px",
-    overflow: "hidden",
-    display: "-webkit-box",
-    "-webkit-line-clamp": 3,
-    "-webkit-box-orient": "vertical"
-  },
-  messageWithoutIcon: {
-    paddingLeft: `${theme.hv.spacing.sm}px`
+    wordBreak: "break-word",
+    maxWidth: "700px",
+    overflow: "hidden"
   },
   actionMessageContainer: {
-    padding: `${theme.hv.spacing.xs}px`,
     flex: "0 0 auto"
-  },
-  messageSpan: {
-    display: "flex",
-    alignItems: "center"
   }
 });
 

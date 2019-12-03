@@ -28,3 +28,4 @@ click on focus default button                   default
 click on focus secondary button                 secondary      
 click on focus ghost button                     ghost          
 click on focus ghost Secondary button           ghostSecondary 
+click on focus semantic button                  semantic

@@ -36,7 +36,7 @@ class SimpleBanner extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          Click me
         </Button>
         <HvBanner
           open={open}

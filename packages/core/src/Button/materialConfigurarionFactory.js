@@ -36,7 +36,8 @@ const categoryValues = Object.freeze({
   primary: "primary",
   secondary: "secondary",
   ghost: "ghost",
-  ghostSecondary: "ghostSecondary"
+  ghostSecondary: "ghostSecondary",
+  semantic: "semantic"
 });
 
 const variantValues = Object.freeze({
@@ -45,7 +46,7 @@ const variantValues = Object.freeze({
 });
 
 /**
- * Receives a desired HvButton category and variant and generates an appropiate material ui configuration.
+ * Receives a desired HvButton category and variant and generates an appropriate material ui configuration.
  *
  * @param {Object} classes - The styling to apply to the buttons.
  * @param {String} colorType - the old category switching property that is deprecated.
@@ -134,6 +135,15 @@ const getMaterialConfiguration = (classes, category) => {
           disabled: classes.ghostSecondaryDisabled
         }
       };
+    case categoryValues.semantic:
+      return {
+        ...materialText,
+        classes: {
+          ...styling,
+          textPrimary: classes.semantic,
+          disabled: classes.semanticDisabled
+        }
+      }
   }
 };
 

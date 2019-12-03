@@ -36,7 +36,7 @@ class SimpleSnackbar extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          Click me
         </Button>
         <HvSnackbar
           open={open}
@@ -55,7 +55,7 @@ class SimpleSnackbar extends React.Component {
 
 export default (
   <SimpleSnackbar
-    label="This is a snackbar"
+    label="This is a snackbar."
     variant="default"
     showIcon
   />

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import PropTypes, { oneOfType } from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
+import uniqueId from "lodash/uniqueId";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const transLeft = props => <Slide {...props} direction="left" />;
@@ -65,10 +66,13 @@ const HvSnackbar = props => {
     showIcon,
     customIcon,
     action,
+    actionCallback,
     transitionDuration,
     transitionDirection,
     offset
   } = props;
+
+  const [snackbarId] = useState(id || uniqueId("hv-snackbar-"));
 
   const anchorOriginOffset = offset && {
     anchorOriginTop: {
@@ -87,7 +91,7 @@ const HvSnackbar = props => {
       }}
       classes={classes}
       className={className}
-      id={id}
+      id={snackbarId}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
@@ -96,11 +100,13 @@ const HvSnackbar = props => {
       TransitionComponent={snackBarDirComponent(transitionDirection)}
     >
       <HvSnackBarContentWrapper
+        id={`${snackbarId}-content`}
         label={label || message}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
         action={action}
+        actionCallback={actionCallback}
       />
     </Snackbar>
   );
@@ -154,11 +160,6 @@ HvSnackbar.propTypes = {
   onClose: PropTypes.func,
   /**
    * The message to display.
-   * @deprecated Instead use the label property
-   */
-  message: deprecatedPropType(PropTypes.node),
-  /**
-   * The message to display.
    */
   label: PropTypes.string,
   /**
@@ -187,7 +188,19 @@ HvSnackbar.propTypes = {
   /**
    * Action to display.
    */
-  action: PropTypes.node,
+  action: oneOfType([
+    PropTypes.node,
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      icon: PropTypes.func,
+      disabled: PropTypes.bool
+    })
+  ]),
+  /**
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   */
+  actionCallback: PropTypes.func,
   /**
    * Duration of transition in milliseconds.
    */
@@ -199,13 +212,19 @@ HvSnackbar.propTypes = {
   /**
    * Custom offset from top/bottom of the page, in px.
    */
-  offset: PropTypes.number
+  offset: PropTypes.number,
+
+  // deprecated:
+  /**
+   * The message to display.
+   * @deprecated Instead use the label property
+   */
+  message: deprecatedPropType(PropTypes.node),
 };
 
 HvSnackbar.defaultProps = {
   className: "",
-  id: undefined,
-  message: undefined,
+  id: null,
   label: "",
   open: false,
   anchorOrigin: { vertical: "top", horizontal: "right" },
@@ -214,10 +233,14 @@ HvSnackbar.defaultProps = {
   customIcon: null,
   showIcon: false,
   action: null,
+  actionCallback: () => {},
   variant: "default",
   transitionDuration: 300,
   transitionDirection: "left",
-  offset: undefined
+  offset: undefined,
+
+  // deprecated:
+  message: undefined
 };
 
 export default HvSnackbar;

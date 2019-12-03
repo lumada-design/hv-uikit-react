@@ -26,3 +26,4 @@ click on dawn default button              default
 click on dawn secondary button            secondary      
 click on dawn ghost button                ghost          
 click on dawn ghost Secondary button      ghostSecondary 
+click on dawn semantic button             semantic

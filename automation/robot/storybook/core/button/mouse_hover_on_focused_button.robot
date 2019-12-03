@@ -26,3 +26,4 @@ mouse hover on focused default button                   default
 mouse hover on focused secondary button                 secondary
 mouse hover on focused ghost button                     ghost
 mouse hover on focused ghost Secondary button           ghostSecondary
+mouse hover on focused semantic button                  semantic
