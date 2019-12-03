@@ -942,7 +942,7 @@ exports[`Header withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(Main) />
+    <DeprecatedComponent />
   </ContextProvider>
 </MuiThemeProviderOld>
 `;

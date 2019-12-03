@@ -15,6 +15,7 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import withDeprecate from "@hv/uikit-react-core/dist/withDeprecate";
 import styles from "./styles";
 import ListItem from "./ListItem";
 
@@ -23,4 +24,7 @@ export { default as HvListItemRightContent } from "./RightContent";
 export { default as HvListItemContent } from "./Content";
 export { default as HvListItemMedia } from "./Media";
 
-export default withStyles(styles, { withTheme: true })(ListItem);
+export default withDeprecate(
+  withStyles(styles, { withTheme: true })(ListItem),
+  "This component is deprecated. Please use the List View Component in the Core Package"
+);

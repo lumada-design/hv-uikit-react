@@ -24,7 +24,7 @@ import SearchBox from "../index";
 const mockClasses = {};
 
 const testState = (wrapper, value) => {
-  const instance = wrapper.children().childAt(1).children().instance();
+  const instance = wrapper.children().childAt(1).children().find("HvSearchBox").instance();
   expect(instance.state.value).toEqual(value);
 };
 
@@ -37,7 +37,7 @@ describe("<SearchBox />", () => {
         <SearchBox classes={mockClasses} onChange={onChangeMock} />
       </HvProvider>
     );
-    const props = searchBox.children().childAt(1).children().props();
+    const props = searchBox.children().childAt(1).children().find('HvSearchBox').props();
     expect(props.value).toEqual("");
     expect(props.placeholder).toEqual("Search");
     expect(props.onChange).toBe(onChangeMock);
