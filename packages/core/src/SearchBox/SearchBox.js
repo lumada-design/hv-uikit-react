@@ -23,12 +23,10 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import partial from "lodash/partial";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import isNil from "lodash/isNil";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
 import HvInput from "../Input";
-
 
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
@@ -42,13 +40,14 @@ const onKeyDownHandler = (handlers, event, value) => {
   if (isKeypress(event, KeyboardCodes.Enter)) {
     // for legacy purposes, check the length of the parameters associated with onSubmit
     // 1 = the older api; 2 = new api
-    if(onSubmit.length === 1){
-      onSubmit(value)
+    if (onSubmit.length === 1) {
+      onSubmit(value);
       // eslint-disable-next-line no-console
-      console.log('WARNING: Note that in the future rather\n' +
-        '   * than accepting a value as argument, this will change to an event as argument');
+      console.warn(
+        "WARNING: Note that in the future rather than receiving the value as argument it should receive the event and the value"
+      );
     } else {
-      onSubmit(event, value)
+      onSubmit(event, value);
     }
   }
   onKeyDown(event, value);
@@ -143,7 +142,8 @@ const HvSearchBox = props => {
     onFocus,
     onKeyDown,
     onSubmit,
-    autoFocus
+    autoFocus,
+    ariaLabel
   } = props;
 
   const [lensIcon, setIcon] = useState(
@@ -187,6 +187,7 @@ const HvSearchBox = props => {
         disabled={disabled}
         showInfo={false}
         validationIconVisible={false}
+        inputProps={{ "aria-label": ariaLabel }}
       />
     </>
   );
@@ -262,8 +263,7 @@ HvSearchBox.propTypes = {
    * of arguments associated with the function. Note that in the future rather
    * than accepting a value as argument, this will change to an event as argument
    */
-  onSubmit: deprecatedPropType(PropTypes.func, "In the future rather\n" +
-    "   * than accepting a value as argument, this will change to an event as argument"),
+  onSubmit: PropTypes.func,
   /**
    * If `true` it should autofocus.
    */
@@ -275,7 +275,11 @@ HvSearchBox.propTypes = {
   /**
    * The initial value of the searchBox.
    */
-  initialValue: PropTypes.string
+  initialValue: PropTypes.string,
+  /**
+   * Arial Label.
+   */
+  ariaLabel: PropTypes.string
 };
 
 HvSearchBox.defaultProps = {
@@ -296,7 +300,8 @@ HvSearchBox.defaultProps = {
   suggestionListCallback: () => {},
   suggestionSelectedCallback: () => {},
   autoFocus: false,
-  disabled: false
+  disabled: false,
+  ariaLabel: "search"
 };
 
 export default HvSearchBox;
