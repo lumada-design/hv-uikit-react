@@ -51,8 +51,7 @@ const styles = theme => ({
     }
   },
   popper: {
-    opacity: 1,
-    zIndex: 15
+    opacity: 1
   },
   title: {
     padding: "15px 20px 5px 20px",
