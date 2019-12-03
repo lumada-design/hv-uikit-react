@@ -16,7 +16,6 @@
 
 const styles = theme => ({
   root: {
-    zIndex: 100,
     pointerEvents: "none"
   },
   tooltip: {
@@ -26,7 +25,6 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: "0 2px 12px rgba(65,65,65,.12)",
     width: "fit-content",
-    zIndex: 100,
     "& p": {
       display: "-webkit-box",
       width: "fit-content",
@@ -43,7 +41,6 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: "0 2px 12px rgba(65,65,65,.12)",
     width: "fit-content",
-    zIndex: 100,
     "& p": {
       display: "-webkit-box",
       width: "fit-content",
