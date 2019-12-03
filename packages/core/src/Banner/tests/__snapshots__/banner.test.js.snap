@@ -10880,6 +10880,7 @@ body {
         }
         customIcon={null}
         label=""
+        offset={60}
         onClose={[Function]}
         open={false}
         showIcon={false}
@@ -11834,6 +11835,11 @@ body {
           }
           id="hv-banner-1"
           open={false}
+          style={
+            Object {
+              "top": "60px",
+            }
+          }
           transitionDuration={300}
         >
           <Snackbar
@@ -11859,6 +11865,11 @@ body {
             disableWindowBlurListener={false}
             id="hv-banner-1"
             open={false}
+            style={
+              Object {
+                "top": "60px",
+              }
+            }
             transitionDuration={300}
           />
         </WithStyles(Snackbar)>
