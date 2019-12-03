@@ -942,7 +942,7 @@ exports[`<SearchBox /> renders correctly 1`] = `
       }
     }
   >
-    <WithStyles(HvSearchBox)
+    <DeprecatedComponent
       classes={Object {}}
       onChange={[MockFunction]}
     />

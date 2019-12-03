@@ -19,9 +19,11 @@ import { storiesOf } from "@storybook/react";
 import HvListView from "@hv/uikit-react-lab/dist/ListView";
 
 storiesOf("Lab", module).add("List View", () => <HvListView />, {
+  deprecated: true,
   title: "List View",
+  componentToUse: "List",
   description:
-    "A list view composer component used to create lists, still in development ",
+    "A list view composer component used to create lists, still in development.",
   usage: "import HvListView from '@hv/uikit-react-lab/dist/ListView'",
   examples: [
     {
