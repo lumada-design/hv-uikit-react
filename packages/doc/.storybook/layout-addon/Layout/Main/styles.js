@@ -27,7 +27,7 @@ const styles = theme => ({
     alignItems: "center",
     position: "fixed",
     width: "100%",
-    zIndex: "100",
+    zIndex: "1999",
     padding: "5px 15px",
     height: "50px"
   },
