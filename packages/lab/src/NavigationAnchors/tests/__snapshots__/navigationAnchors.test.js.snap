@@ -21687,6 +21687,7 @@ body {
       classes={Object {}}
       floating={true}
       href={true}
+      offsetTop={0}
       onClick={[Function]}
       options={
         Array [
@@ -29952,6 +29953,7 @@ exports[`User withStyles should handle click action correctly 2`] = `
   classes={Object {}}
   floating={true}
   href={false}
+  offsetTop={0}
   onClick={[Function]}
   options={
     Array [
@@ -56434,6 +56436,7 @@ body {
       classes={Object {}}
       floating={true}
       href={true}
+      offsetTop={0}
       options={
         Array [
           Object {
