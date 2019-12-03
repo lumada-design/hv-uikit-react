@@ -17,6 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import withDeprecate from "@hv/uikit-react-core/dist/withDeprecate";
 import styles from "./styles";
 import Content from "./Content";
 
@@ -59,10 +60,13 @@ const withPopper = (Component, content) => {
   }
 
   Popper.propTypes = {
-    classes: PropTypes.instanceOf(Object).isRequired,
+    classes: PropTypes.instanceOf(Object).isRequired
   };
 
-  return withStyles(styles)(Popper);
+  return withDeprecate(
+    withStyles(styles, { withTheme: true })(Popper),
+    "This component is deprecated. Please use the Tooltip Component in the Core Package"
+  );
 };
 
 export default withPopper;
