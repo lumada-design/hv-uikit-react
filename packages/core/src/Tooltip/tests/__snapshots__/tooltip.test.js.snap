@@ -5116,7 +5116,6 @@ body {
 }
 .HvTooltip-popper-31 {
   opacity: 1;
-  z-index: 15;
 }
 .HvTooltip-title-32 {
   padding: 15px 20px 5px 20px;
@@ -5209,7 +5208,6 @@ body {
                   },
                   Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   Object {
                     "border-bottom": "3px solid #F9F9F9",
@@ -5263,7 +5261,6 @@ body {
                   },
                   ".HvTooltip-popper-31": Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   ".HvTooltip-root-28": Object {
                     "pointer-events": "none",
@@ -5322,7 +5319,6 @@ body {
                   },
                   "popper": Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   "root": Object {
                     "pointer-events": "none",
@@ -5895,7 +5891,6 @@ body {
                   },
                   "popper": Object {
                     "opacity": 1,
-                    "zIndex": 15,
                   },
                   "root": Object {
                     "pointerEvents": "none",
@@ -17742,7 +17737,6 @@ body {
 }
 .HvTooltip-popper-88 {
   opacity: 1;
-  z-index: 15;
 }
 .HvTooltip-title-89 {
   padding: 15px 20px 5px 20px;
@@ -17835,7 +17829,6 @@ body {
                   },
                   Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   Object {
                     "border-bottom": "3px solid #F9F9F9",
@@ -17889,7 +17882,6 @@ body {
                   },
                   ".HvTooltip-popper-88": Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   ".HvTooltip-root-85": Object {
                     "pointer-events": "none",
@@ -17948,7 +17940,6 @@ body {
                   },
                   "popper": Object {
                     "opacity": "1",
-                    "z-index": "15",
                   },
                   "root": Object {
                     "pointer-events": "none",
@@ -18521,7 +18512,6 @@ body {
                   },
                   "popper": Object {
                     "opacity": 1,
-                    "zIndex": 15,
                   },
                   "root": Object {
                     "pointerEvents": "none",
