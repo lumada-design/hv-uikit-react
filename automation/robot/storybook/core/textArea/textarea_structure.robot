@@ -18,11 +18,12 @@ change input content with another component
 
 change input limit with another component
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareauncontrolledvaluelimit
-    Wait Until Element Is Enabled    css:textarea    7s
-    Press Keys                       css:input       CTRL+A+DELETE    #chrome work around to keyword (Clear Element Text) doesn't work
-    Input Text                       css:input       11
+    Wait Until Element Is Enabled    css:textarea                  7s
+    Run Keyword If                   '${BROWSER.lower()}'=='ie'    Press Keys    css:input                 CTRL+A+DELETE    #IE11 vs chrome keyboards case incompatible
+    ...                              ELSE                          Press Keys    css:input                 CTRL+a+DELETE
+    Input Text                       css:input                     11            clear=True
     Click Button                     Second value
-    Wait Until Keyword Succeeds      3               1                Element Text Should Be    css:textarea    Second valu
+    Wait Until Keyword Succeeds      3                             1s            Element Text Should Be    css:textarea     Second valu
 
 unable to insert text
     Go To                               ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareadisabled
