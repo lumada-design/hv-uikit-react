@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.4...@hv/uikit-react-lab@1.11.0) (2019-12-04)
+
+
+### Bug Fixes
+
+* **input:** apply generated id to the root node - fixes [#855](https://github.com/pentaho/hv-uikit-react/issues/855)  ([8438eb7](https://github.com/pentaho/hv-uikit-react/commit/8438eb7))
+* **lab:** mark components as deprecated. [#850](https://github.com/pentaho/hv-uikit-react/issues/850) ([da7a0fa](https://github.com/pentaho/hv-uikit-react/commit/da7a0fa))
+
+
+### Features
+
+* **button:** add semantic variant. [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([f215e50](https://github.com/pentaho/hv-uikit-react/commit/f215e50))
+
+
+
+
+
 ## [1.10.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.3...@hv/uikit-react-lab@1.10.4) (2019-12-04)
 
 

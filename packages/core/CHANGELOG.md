@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.12.0...@hv/uikit-react-core@1.13.0) (2019-12-04)
+
+
+### Bug Fixes
+
+* **banner:** offset defaults to 60px [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([#880](https://github.com/pentaho/hv-uikit-react/issues/880)) ([70e0fe5](https://github.com/pentaho/hv-uikit-react/commit/70e0fe5))
+* **dropdown:** adds ids to structural elements [#735](https://github.com/pentaho/hv-uikit-react/issues/735) ([44536a8](https://github.com/pentaho/hv-uikit-react/commit/44536a8))
+* **input:** apply generated id to the root node - fixes [#855](https://github.com/pentaho/hv-uikit-react/issues/855)  ([8438eb7](https://github.com/pentaho/hv-uikit-react/commit/8438eb7))
+* **lab:** mark components as deprecated. [#850](https://github.com/pentaho/hv-uikit-react/issues/850) ([da7a0fa](https://github.com/pentaho/hv-uikit-react/commit/da7a0fa))
+* **pagination:** apply DS guidelines. [#794](https://github.com/pentaho/hv-uikit-react/issues/794) ([b56313d](https://github.com/pentaho/hv-uikit-react/commit/b56313d))
+* **searchbox:** added arial-label. [#782](https://github.com/pentaho/hv-uikit-react/issues/782) ([21f8418](https://github.com/pentaho/hv-uikit-react/commit/21f8418))
+* **switch:** apply new ds style to switch component. [#709](https://github.com/pentaho/hv-uikit-react/issues/709) ([6862f94](https://github.com/pentaho/hv-uikit-react/commit/6862f94))
+* **table:** adds ids to structural elements [#736](https://github.com/pentaho/hv-uikit-react/issues/736) ([5c49c7a](https://github.com/pentaho/hv-uikit-react/commit/5c49c7a))
+
+
+### Features
+
+* **banner:** update api to use semantic button. [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([4d31d64](https://github.com/pentaho/hv-uikit-react/commit/4d31d64))
+* **button:** add semantic variant. [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([f215e50](https://github.com/pentaho/hv-uikit-react/commit/f215e50))
+* **pagination:** extract Pagination from Table. [#794](https://github.com/pentaho/hv-uikit-react/issues/794)  ([f5c5c11](https://github.com/pentaho/hv-uikit-react/commit/f5c5c11))
+* **snackbar:** update api to use semantic button. [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([ce5447a](https://github.com/pentaho/hv-uikit-react/commit/ce5447a))
+* **tooltip:** implement tooltip pattern. [#16](https://github.com/pentaho/hv-uikit-react/issues/16) ([67718a6](https://github.com/pentaho/hv-uikit-react/commit/67718a6))
+
+
+
+
+
 # [1.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.11.0...@hv/uikit-react-core@1.12.0) (2019-11-20)
 
 

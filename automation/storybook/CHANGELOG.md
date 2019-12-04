@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.6.5...@hv/uikit-react-automation-storybook@1.7.0) (2019-12-04)
+
+
+### Bug Fixes
+
+* **automation:** adapt automation scripts [#836](https://github.com/pentaho/hv-uikit-react/issues/836)  ([286debd](https://github.com/pentaho/hv-uikit-react/commit/286debd))
+* **automation:** storybook IE11 due to uniqid. [#832](https://github.com/pentaho/hv-uikit-react/issues/832)  ([2d1440b](https://github.com/pentaho/hv-uikit-react/commit/2d1440b))
+* **searchbox:** added arial-label. [#782](https://github.com/pentaho/hv-uikit-react/issues/782) ([21f8418](https://github.com/pentaho/hv-uikit-react/commit/21f8418))
+* **switch:** apply new ds style to switch component. [#709](https://github.com/pentaho/hv-uikit-react/issues/709) ([6862f94](https://github.com/pentaho/hv-uikit-react/commit/6862f94))
+
+
+### Features
+
+* **button:** add semantic variant. [#693](https://github.com/pentaho/hv-uikit-react/issues/693) ([f215e50](https://github.com/pentaho/hv-uikit-react/commit/f215e50))
+* **pagination:** extract Pagination from Table. [#794](https://github.com/pentaho/hv-uikit-react/issues/794)  ([f5c5c11](https://github.com/pentaho/hv-uikit-react/commit/f5c5c11))
+* **tooltip:** implement tooltip pattern. [#16](https://github.com/pentaho/hv-uikit-react/issues/16) ([67718a6](https://github.com/pentaho/hv-uikit-react/commit/67718a6))
+
+
+
+
+
 ## [1.6.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.6.4...@hv/uikit-react-automation-storybook@1.6.5) (2019-12-04)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook
