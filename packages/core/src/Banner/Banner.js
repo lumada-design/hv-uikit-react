@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import PropTypes, { oneOfType } from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import uniqueId from "lodash/uniqueId";
 import HvBannerContentWrapper from "./BannerWrapper";
 
 // TODO: review to use makeStyles during the Material 4 upgrade as 4988d7987a4fecf6bb33d539d476885d95acb8f8
@@ -40,17 +41,22 @@ const HvBanner = props => {
     id,
     open,
     onClose,
-    message,
     anchorOrigin,
     variant,
     transitionDuration,
     transitionDirection,
     showIcon,
     customIcon,
-    action,
-    actionsOnMessage,
+    actions,
+    actionsCallback,
+    actionsPosition,
     label,
-    offset
+    offset,
+
+    // deprecated:
+    message,
+    action,
+    actionsOnMessage
   } = props;
 
   const anchorOriginOffset = offset && {
@@ -62,6 +68,7 @@ const HvBanner = props => {
     }
   };
 
+  const [bannerId] = useState(id || uniqueId("hv-banner-"));
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
   const SlideTransition = properties => (
@@ -74,6 +81,24 @@ const HvBanner = props => {
   };
   bannerClasses.root = open ? classes.root : classes.rootClosed;
 
+  // deprecated properties fallbacks (start):
+  let effectiveActions = actions;
+  if(actionsOnMessage != null) {
+    effectiveActions = actionsOnMessage;
+  } else if(action != null) {
+    effectiveActions = action;
+  }
+
+  let effectiveActionsPosition = actionsPosition;
+  if(actionsPosition === "auto") {
+    if(actionsOnMessage != null) {
+      effectiveActionsPosition = "inline";
+    } else if(action != null) {
+      effectiveActionsPosition = "bottom-right";
+    }
+  }
+  // deprecated properties fallbacks (end)
+
   return (
     <Snackbar
       {...offset && {
@@ -81,7 +106,7 @@ const HvBanner = props => {
           anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
       }}
       className={className}
-      id={id}
+      id={bannerId}
       classes={bannerClasses}
       anchorOrigin={anchorOriginBanner}
       TransitionComponent={SlideTransition}
@@ -89,13 +114,15 @@ const HvBanner = props => {
       transitionDuration={transitionDuration}
     >
       <HvBannerContentWrapper
+        id={`${bannerId}-content`}
         content={message || label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
-        action={action}
+        actions={effectiveActions}
+        actionsCallback={actionsCallback}
+        actionsPosition={effectiveActionsPosition}
         onClose={onClose}
-        actionsOnMessage={actionsOnMessage}
       />
     </Snackbar>
   );
@@ -140,14 +167,6 @@ HvBanner.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * The message to display.
-   * @deprecated. Instead use the label property
-   */
-  message: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the label property"
-  ),
-  /**
    *  The anchor of the Snackbar.
    */
   anchorOrigin: PropTypes.oneOf(["top", "bottom"]),
@@ -166,11 +185,29 @@ HvBanner.propTypes = {
   /**
    * Actions to display on the right side.
    */
-  action: PropTypes.node,
+  actions: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func,
+        disabled: PropTypes.bool
+      })
+    )
+  ]),
   /**
-   * Actions to display on message.
+   *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
-  actionsOnMessage: PropTypes.node,
+  actionsCallback: PropTypes.func,
+  /**
+   * The position property of the header.
+   */
+  actionsPosition: PropTypes.PropTypes.oneOf([
+    "auto",
+    "inline",
+    "bottom-right"
+  ]),
   /**
    * How much the transition animation last in milliseconds, if 0 no animation is played.
    */
@@ -180,25 +217,56 @@ HvBanner.propTypes = {
    */
   transitionDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
   /**
-   * Custom offset from top/bottom of the page, in px.
+   * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
-  offset: PropTypes.number
+  offset: PropTypes.number,
+
+  // deprecated:
+  /**
+   * The message to display.
+   * @deprecated. Instead use the label property
+   */
+  message: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the label property"
+  ),
+  /**
+   * Actions to display on the right side.
+   * @deprecated. Instead use the actions property
+   */
+  action: deprecatedPropType(
+    PropTypes.node,
+    "Instead use the actions property"
+  ),
+  /**
+   * Actions to display on message.
+   * @deprecated. Instead use the actions property together with actionsPosition="inline"
+   */
+  actionsOnMessage: deprecatedPropType(
+    PropTypes.node,
+    "Instead use the actions property together with actionsPosition=\"inline\""
+  )
 };
 
 HvBanner.defaultProps = {
   className: "",
   id: undefined,
-  message: undefined,
   label: "",
   anchorOrigin: "top",
   customIcon: null,
   showIcon: false,
-  action: null,
-  actionsOnMessage: null,
+  actions: null,
+  actionsCallback: () => {},
+  actionsPosition: "auto",
   variant: "default",
   transitionDuration: 300,
   transitionDirection: "down",
-  offset: undefined
+  offset: 60,
+
+  // deprecated:
+  message: undefined,
+  action: undefined,
+  actionsOnMessage: undefined
 };
 
 export default HvBanner;

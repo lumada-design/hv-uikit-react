@@ -1,18 +1,18 @@
 import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
-import FastForward from "@hv/uikit-react-icons/dist/Generic/FastForwards";
+import Info from "@hv/uikit-react-icons/dist/Generic/Info";
 
 const boxStyles = {
   width: "32px",
   height: "32px",
   display: "flex",
-  alignItems: "center",
-}
+  alignItems: "center"
+};
 
 const svgStyle = {
   margin: "0 auto"
-}
+};
 
 class SimpleBanner extends React.Component {
   state = {
@@ -48,11 +48,11 @@ class SimpleBanner extends React.Component {
           color="primary"
           style={{ width: "150px" }}
         >
-          Click Me
+          Click me
         </Button>
         <HvBanner
           open={open}
-          label={`This is ${label}`}
+          label={label}
           onClose={this.handleClose}
           anchorOrigin={anchorOrigin}
           variant={variant}
@@ -67,8 +67,8 @@ class SimpleBanner extends React.Component {
 
 export default (
   <SimpleBanner
-    label="Banner"
+    label="This is a default banner."
     variant="default"
-    customIcon={<FastForward boxStyles={boxStyles} style={svgStyle} />}
+    customIcon={<Info boxStyles={boxStyles} style={svgStyle} />}
   />
 );

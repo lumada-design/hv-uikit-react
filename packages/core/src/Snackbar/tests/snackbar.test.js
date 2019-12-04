@@ -26,6 +26,7 @@ import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
 import HvProvider from "../../Provider";
+import Button from "../../Button";
 
 describe("Snackbar ", () => {
   const wrapper = mount(
@@ -126,7 +127,7 @@ describe("Snackbar ", () => {
     expect(sliderComponent.length).toBe(1);
   });
 
-  it("should render the action", () => {
+  it("should render the action when a component is passed", () => {
     const sliderComponent = mount(
       <HvProvider>
         <SnackBarWithStyles
@@ -171,5 +172,25 @@ describe("Snackbar ", () => {
       .find(MaterialSnackbar)
 
     expect(component.get(0).props.style).toEqual({"bottom":`${offset}px`});
+  });
+
+  it("should render the action when a structure is passed", () => {
+    const sliderComponent = mount(
+      <HvProvider>
+        <SnackBarWithStyles
+          open
+          variant="success"
+          action={{
+            id: "testButton",
+            label: "test"
+          }}
+        />
+      </HvProvider>
+    )
+      .find(SnackBarContent)
+      .find(Button);
+
+    expect(sliderComponent.length).toBe(1);
+    expect(sliderComponent.prop("category")).toBe("semantic");
   });
 });

@@ -18,10 +18,12 @@ const styles = theme => ({
   actionContainer: {
     display: "flex",
     flexDirection: "column",
+    height: "100%",
+    justifyContent: "space-between"
   },
   actionsInnerContainer: {
     flexDirection: "row",
-    paddingRight: `${theme.spacing.xs}px`
+    marginTop: "8px" // avoid overlap with close button outline focus ring
   },
   closeAction: {
     alignSelf: "flex-end",
@@ -37,6 +39,9 @@ const styles = theme => ({
     "&>svg": {
       margin: "0 auto"
     }
+  },
+  separator: {
+    paddingLeft: `${theme.spacing.xs}px`
   }
 });
 

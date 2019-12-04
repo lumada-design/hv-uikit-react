@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import HvLink from "@hv/uikit-react-core/dist/Link";
 import Examples from "../Examples";
 import Tabs from "../Tabs";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
+import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import find from "lodash/find";
 import classNames from "classnames";
 
@@ -27,6 +28,7 @@ import corePackage from "../../../../../core/package";
 import labPackage from "../../../../../lab/package";
 import iconsPackage from "../../../../../icons/package";
 import core from "react-syntax-highlighter/dist/esm/languages/prism/core";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -62,9 +64,33 @@ const shouldShowHeader = kind => {
   return find(list, elem => kind.startsWith(elem));
 };
 
+
+const SimpleBanner = ({ compNameToUse }) => {
+
+  const [open, setState] = useState(true);
+
+    return (
+      <div>
+        <HvBanner
+          open={open}
+          label={`This component is deprecated. Please use the ${compNameToUse} in the Core package`}
+          onClose={() => setState(false)}
+          variant="default"
+        />
+      </div>
+    );
+}
+
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
-  const { examples, title, description, designSystemLink } = parameters;
+  const {
+    examples,
+    title,
+    description,
+    designSystemLink,
+    deprecated,
+    componentToUse
+  } = parameters;
 
   if (parameters.options.noAddon) return children;
 
@@ -101,6 +127,7 @@ const Main = ({ classes, children, context, config }) => {
       <div className={classes.contentWithHeader}>
         {title ? (
           <>
+            {deprecated ? <SimpleBanner compNameToUse={componentToUse} /> : ""}
             <div className={classes.title}>
               {title}
               <span className={classes.link}>
@@ -111,12 +138,10 @@ const Main = ({ classes, children, context, config }) => {
                 )}
               </span>
             </div>
-
             <div
               className={classes.description}
               dangerouslySetInnerHTML={{ __html: description }}
             />
-
             <Tabs
               parameters={parameters}
               propsMetaData={metadata.propsMetaData}

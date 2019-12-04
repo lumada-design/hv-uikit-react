@@ -12,22 +12,18 @@ bug-edge-webdriver:  https://developer.microsoft.com/en-us/microsoft-edge/platfo
 
 *** Keywords ***
 Test button state transition between default-focus
-    [Arguments]        ${button_locator}    ${theme}
+    [Arguments]        ${button_locator}
     [Documentation]
     ...                verify button is focused when a button is clicked
     ...
-    apply storybook theme        ${theme}
     Click Button                 ${button_locator}
     Alert Should Be Present
     remove mouse hover button
     Element Should Be Focused    ${button_locator}
 
-*** Test Cases ***                        button            theme    
-click on dawn default button              default           dawn     
-click on dawn secondary button            secondary         dawn     
-click on dawn ghost button                ghost             dawn     
-click on dawn ghost Secondary button      ghostSecondary    dawn     
-click on wicked default button            default           wicked   
-click on wicked secondary button          secondary         wicked   
-click on wicked ghost button              ghost             wicked   
-click on wicked ghost Secondary button    ghostSecondary    wicked   
+*** Test Cases ***                        button         
+click on dawn default button              default        
+click on dawn secondary button            secondary      
+click on dawn ghost button                ghost          
+click on dawn ghost Secondary button      ghostSecondary 
+click on dawn semantic button             semantic

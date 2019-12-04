@@ -133,6 +133,9 @@ const styles = theme => ({
 const textAreaStyles = theme => ({
   container: {
     width: 555
+  },
+  textAreaContainer: {
+    paddingTop:30
   }
 });
 
@@ -202,3 +205,5 @@ export default (
     />
   </div>
 );
+
+// apply padding to this element: HvTextArea-textAreaContainer-254

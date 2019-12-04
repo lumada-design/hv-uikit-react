@@ -19,3 +19,4 @@ resources/license-header.js
 commitlint.config.js
 
 packages/icons/src/*
+packages/lab/src/*

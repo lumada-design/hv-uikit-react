@@ -14,8 +14,15 @@
  * limitations under the License.
  */
 
+import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Pagination from "./Pagination";
+import styles from "../../Pagination/styles";
+import Pagination from "../../Pagination";
 
-export default withStyles(styles, { withTheme: true })(Pagination);
+export default withStyles(styles, { withTheme: true })(props => (
+  <Pagination
+    {...props}
+    rowsSelectorText={props.labels.labelRowsSelector}
+    ofText={props.labels.labelOf}
+  />
+));

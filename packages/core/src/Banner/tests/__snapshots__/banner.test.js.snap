@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999892,
+            "index": -99999999890,
           },
           "themingEnabled": true,
         } => Map {
@@ -4941,7 +4941,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999892,
+                "index": -99999999890,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5506,7 +5506,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999892,
+                  "index": -99999999890,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -10865,8 +10865,9 @@ body {
       variant="default"
     >
       <HvBanner
-        action={null}
-        actionsOnMessage={null}
+        actions={null}
+        actionsCallback={[Function]}
+        actionsPosition="auto"
         anchorOrigin="top"
         className=""
         classes={
@@ -10879,6 +10880,7 @@ body {
         }
         customIcon={null}
         label=""
+        offset={60}
         onClose={[Function]}
         open={false}
         showIcon={false}
@@ -11831,7 +11833,13 @@ body {
               "root": "HvBanner-rootClosed-1",
             }
           }
+          id="hv-banner-1"
           open={false}
+          style={
+            Object {
+              "top": "60px",
+            }
+          }
           transitionDuration={300}
         >
           <Snackbar
@@ -11855,7 +11863,13 @@ body {
               }
             }
             disableWindowBlurListener={false}
+            id="hv-banner-1"
             open={false}
+            style={
+              Object {
+                "top": "60px",
+              }
+            }
             transitionDuration={300}
           />
         </WithStyles(Snackbar)>

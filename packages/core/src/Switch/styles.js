@@ -85,7 +85,7 @@ const styles = theme => ({
         cursor: "no-drop"
       },
       "& $icon": {
-        backgroundColor: `${theme.hv.palette.atmosphere.atmo6}`,
+        backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
         border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
       }
     },
@@ -97,9 +97,9 @@ const styles = theme => ({
     },
 
     labelDeselected: {
-      ...theme.hv.typography.placeholderText,
+      ...theme.hv.typography.normalText,
       height: `${theme.hv.spacing.sm}px`,
-      cursor: "pointer"
+      cursor: "pointer",
     },
     labelSelected: {
       height: `${theme.hv.spacing.sm}px`,
@@ -116,7 +116,6 @@ const styles = theme => ({
 
     uncheckedHoverClass: {
       border: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
 
     uncheckedIconHoverClass: {
@@ -124,7 +123,6 @@ const styles = theme => ({
     },
 
     checkedHoverClass: {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
       opacity: 1
     },
 

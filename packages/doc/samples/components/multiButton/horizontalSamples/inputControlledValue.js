@@ -20,9 +20,9 @@ const initialButtonsDefinitions = [
     selected: true,
     enforced: true
   },
-  { id: "satellite", value: "satellite", icon: <LocationPin /> },
-  { id: "map1", value: "chart", icon: <Map />, selected: true },
-  { id: "satellite1", value: "place", icon: <LocationPin /> }
+  { id: "satellite", value: "Satellite", icon: <LocationPin /> },
+  { id: "map1", value: "Chart", icon: <Map />, selected: true },
+  { id: "satellite1", value: "Place", icon: <LocationPin /> }
 ];
 
 const finalButtonsDefinitions = [

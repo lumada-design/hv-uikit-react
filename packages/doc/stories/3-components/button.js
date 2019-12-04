@@ -31,7 +31,7 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
     },
     {
       title: "2. Primary disabled",
-      description: "Disabled button that doesn't allow any interation",
+      description: "Disabled button that doesn't allow any interaction",
       src: "components/button/buttonPrimaryPrimaryDisabled"
     },
     {
@@ -41,7 +41,7 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
     },
     {
       title: "4. Secondary disabled",
-      description: "Disabled button that doesn't allow any interation",
+      description: "Disabled button that doesn't allow any interaction",
       src: "components/button/buttonPrimarySecondaryDisabled"
     },
     {
@@ -51,7 +51,7 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
     },
     {
       title: "6. Ghost disabled",
-      description: "Disabled button that doesn't allow any interation",
+      description: "Disabled button that doesn't allow any interaction",
       src: "components/button/buttonPrimaryGhostDisabled"
     },
     {
@@ -61,8 +61,18 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
     },
     {
       title: "8. Ghost secondary disabled",
-      description: "Disabled button that doesn't allow any interation",
+      description: "Disabled button that doesn't allow any interaction",
       src: "components/button/buttonPrimaryGhostSecondaryDisabled"
+    },
+    {
+      title: "9. Semantic",
+      description: "Semantic button with click action",
+      src: "components/button/buttonSemantic"
+    },
+    {
+      title: "10. Semantic disabled",
+      description: "Disabled button that doesn't allow any interaction",
+      src: "components/button/buttonSemanticDisabled"
     }
   ]
 });

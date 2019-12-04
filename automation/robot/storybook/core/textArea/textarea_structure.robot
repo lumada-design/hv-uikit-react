@@ -9,7 +9,7 @@ Force Tags        smoke
 *** Test Cases ***
 change input content with another component
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareauncontrolledvalue
-    Wait Until Element Is Enabled    css:textarea      10s
+    Wait Until Element Is Enabled    css:textarea      7s
     Element Text Should Be           css:textarea      Initial State
     Click Button                     First value
     Element Text Should Be           css:textarea      First value
@@ -18,13 +18,14 @@ change input content with another component
 
 change input limit with another component
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareauncontrolledvaluelimit
-    Wait Until Element Is Enabled    css:textarea    10s
-    Input Text                       css:input       20
-    Element Text Should Be           //div[contains(@class,'HvTextArea-characterCounte')]    10/20
-    Input Text                       css:textarea    A aB bC cD dE eF fGgH hI iJ jK kL lM mN nO oP pQ qR rS sT tU uV vW wX xY yZ z
-    Element Text Should Be           css:textarea    A aB bC cD dE eF fGg
+    Wait Until Element Is Enabled    css:textarea                  7s
+    Run Keyword If                   '${BROWSER.lower()}'=='ie'    Press Keys    css:input                 CTRL+A+DELETE    #IE11 vs chrome keyboards case incompatible
+    ...                              ELSE                          Press Keys    css:input                 CTRL+a+DELETE
+    Input Text                       css:input                     11            clear=True
+    Click Button                     Second value
+    Wait Until Keyword Succeeds      3                             1s            Element Text Should Be    css:textarea     Second valu
 
 unable to insert text
     Go To                               ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareadisabled
-    Wait Until Page Contains Element    css:textarea    10s
+    Wait Until Page Contains Element    css:textarea    7s
     Element Should Be Disabled          css:textarea

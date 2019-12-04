@@ -13,11 +13,10 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "start-storybook -p 9001",
+    "dev": "start-storybook -p 9001 --quiet",
     "build": "npx cross-env NODE_OPTIONS=--max-old-space-size=4096 build-storybook -o dist --quiet",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
-    "deploy": "storybook-to-ghpages --ci",
     "clean": "npx del-cli dist"
   },
   "peerDependencies": {
@@ -54,7 +53,6 @@
     "@storybook/addons": "5.2.1",
     "@storybook/cli": "5.2.1",
     "@storybook/react": "5.2.1",
-    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/theming": "5.2.1",
     "@svgr/webpack": "4.3.3",
     "babel-core": "7.0.0-bridge.0",

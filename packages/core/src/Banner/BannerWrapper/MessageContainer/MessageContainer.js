@@ -15,9 +15,9 @@
  */
 
 import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 import HvTypography from "../../../Typography";
+import renderAction from "../ActionRender/ActionRender";
 
 /**
  * Container for the message of the banner. This message may include:
@@ -29,25 +29,44 @@ import HvTypography from "../../../Typography";
  * @returns {*}
  * @constructor
  */
-const MessageContainer = ({ classes, icon, actionsOnMessage, message }) => (
-  <span id="client-snackbar" className={classes.messageSpan}>
-    {icon}
-    <HvTypography
-      className={classNames(
-        classes.message,
-        {
-          [classes.messageWithoutIcon]: !icon
-        },
-        { [classes.messageWithoutAction]: !actionsOnMessage }
+const MessageContainer = ({
+  id,
+  classes,
+  icon,
+  actionsOnMessage,
+  actionsOnMessageCallback,
+  message
+}) => {
+  let renderedAction;
+
+  if (actionsOnMessage)
+    renderedAction = renderAction(
+      actionsOnMessage,
+      actionsOnMessageCallback,
+      id
+    );
+
+  return (
+    <>
+      {icon}
+      <HvTypography
+        {...(id && {id: `${id}-message-text`})}
+        className={classes.message}
+      >
+        {message}
+      </HvTypography>
+      {( renderedAction &&
+        <div {...(id && {id: `${id}-message-actions`})} className={classes.actionMessageContainer}>{renderedAction}</div>
       )}
-    >
-      {message}
-    </HvTypography>
-    <div className={classes.actionMessageContainer}>{actionsOnMessage}</div>
-  </span>
-);
+    </>
+  );
+};
 
 MessageContainer.propTypes = {
+  /**
+   * Identifier.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */
@@ -63,14 +82,30 @@ MessageContainer.propTypes = {
   /**
    * Actions to display on message.
    */
-  actionsOnMessage: PropTypes.node
+  actionsOnMessage: oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.func,
+        disabled: PropTypes.bool
+      })
+    )
+  ]),
+  /**
+   * The callback function ran when an action is triggered, receiving ´actionsOnMessage´ as param
+   */
+  actionsOnMessageCallback: PropTypes.func
 };
 
 MessageContainer.defaultProps = {
+  id: null,
   classes: "",
   icon: null,
   message: "",
-  actionsOnMessage: undefined
+  actionsOnMessage: undefined,
+  actionsOnMessageCallback: () => {}
 };
 
 export default MessageContainer;

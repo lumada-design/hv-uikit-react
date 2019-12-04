@@ -12,11 +12,10 @@ bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platfor
 
 *** Keywords ***
 Test button state transition between focus-default
-    [Arguments]        ${button_locator}    ${theme}
+    [Arguments]        ${button_locator}
     [Documentation]
     ...                verify button lost the focus state when is clicked other element
     ...
-    apply storybook theme            ${theme}
     Click Button                     ${button_locator}
     Alert Should Be Present
     Element Should Be Focused        ${button_locator}
@@ -24,12 +23,9 @@ Test button state transition between focus-default
     Element Should Be Enabled        ${button_locator}
     verify element is not focused    ${button_locator}
 
-*** Test Cases ***                               button_locator      theme
-remove focus on default button                   default             default
-remove focus on secondary button                 secondary           default
-remove focus on ghost button                     ghost               default
-remove focus on ghost Secondary button           ghostSecondary      default
-remove focus on dark default button              default             dark
-remove focus on dark secondary button            secondary           dark
-remove focus on dark ghost button                ghost               dark
-remove focus on dark ghost Secondary button      ghostSecondary      dark
+*** Test Cases ***                               button_locator
+remove focus on default button                   default
+remove focus on secondary button                 secondary
+remove focus on ghost button                     ghost
+remove focus on ghost Secondary button           ghostSecondary
+remove focus on semantic button                  semantic
