@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.12.3...@hv/uikit-react-doc@1.12.4) (2019-12-04)
+
+**Note:** Version bump only for package @hv/uikit-react-doc
+
+
+
+
+
 ## [1.12.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.12.2...@hv/uikit-react-doc@1.12.3) (2019-12-03)
 
 **Note:** Version bump only for package @hv/uikit-react-doc

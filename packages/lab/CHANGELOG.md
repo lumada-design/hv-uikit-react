@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.3...@hv/uikit-react-lab@1.10.4) (2019-12-04)
+
+
+### Bug Fixes
+
+* **navigationanchor:** ie and edge fix adding polyfill [#873](https://github.com/pentaho/hv-uikit-react/issues/873) ([b019426](https://github.com/pentaho/hv-uikit-react/commit/b019426))
+
+
+
+
+
 ## [1.10.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.2...@hv/uikit-react-lab@1.10.3) (2019-12-03)
 
 
