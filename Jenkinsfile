@@ -147,7 +147,6 @@ pipeline {
                     when {
                         branch 'master'
                         expression {  !params.skipPublish && !env.CHANGE_ID }
-                        triggeredBy 'UpstreamCause'
                     }
                     steps {
                         withNPM(npmrcConfig: 'hv-ui-nprc') {
