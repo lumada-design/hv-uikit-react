@@ -43,9 +43,9 @@ module.exports = ({ svgOutput, componentName, colorArrayDefaultValues, defaultSi
   const palette = replaceColorsWithTheme(themedPalette, themePalette);
 
   return `
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const X_SMALL = "${calcSize(12)}px";
@@ -120,7 +120,7 @@ const ${componentName} = ({
   }
 
   const size = sizeSelector(iconSize, height, width);
-  const clx = classNames(className, classes.root, sizeClass(classes, iconSize));
+  const clx = clsx(className, classes.root, sizeClass(classes, iconSize));
 
   return (
     <div className={clx} style={boxStyles} {...other}>
