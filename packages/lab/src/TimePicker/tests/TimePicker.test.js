@@ -17,7 +17,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import TimeIcon from "@hv/uikit-react-icons/dist/Time.S";
+import TimeIcon from "@hv/uikit-react-icons/dist/Generic/Time";
 import { ClickAwayListener } from "@material-ui/core";
 import TimePickerWithStyles from "../index";
 import TimePicker from "../TimePicker";
@@ -193,9 +193,7 @@ describe("TimePicker", () => {
 
   it("getTimeFormat - should return the result from getFormatTimeLocale when there is no timeFormat prop defined", () => {
     const result = formatters.getTimeFormatForLocale();
-    expect(timePickerInstance.getTimeFormat()).toBe(
-      result
-    );
+    expect(timePickerInstance.getTimeFormat()).toBe(result);
   });
 
   it("isPopperBelowParent - should return true if the popper placement is bottom", () => {
@@ -216,7 +214,11 @@ describe("TimePicker", () => {
       </HvProvider>
     );
     expect(LabelWrapper.find(Typography)).toHaveLength(1);
-    expect(LabelWrapper.find(Typography).at(0).text()).toBe(mockTitle);
+    expect(
+      LabelWrapper.find(Typography)
+        .at(0)
+        .text()
+    ).toBe(mockTitle);
   });
 
   it("renderInput - should render the input", () => {
@@ -235,7 +237,10 @@ describe("TimePicker", () => {
       timePopperOpen: true,
       timePopperAnchor: null
     });
-    const spyRenderContent = jest.spyOn(timePickerInstance, "renderTimePopperContent");
+    const spyRenderContent = jest.spyOn(
+      timePickerInstance,
+      "renderTimePopperContent"
+    );
     const PopperComp = timePickerInstance.renderPopper;
     const PopperWrapper = mount(
       <HvProvider>

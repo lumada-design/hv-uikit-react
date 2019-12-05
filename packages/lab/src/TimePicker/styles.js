@@ -17,9 +17,9 @@
 const icon = {
   position: "absolute",
   right: 0,
+  bottom: 0,
   width: "30px",
-  height: "30px",
-  bottom: "0px"
+  height: "30px"
 };
 
 const styles = theme => ({
@@ -74,7 +74,7 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center",
     paddingLeft: `${theme.hv.spacing.sm}px`,
-    paddingRight: `${theme.hv.spacing.sm}px`,
+    paddingRight: `${theme.hv.spacing.sm}px`
   },
   popper: {
     minWidth: "100%",

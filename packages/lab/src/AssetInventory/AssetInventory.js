@@ -17,11 +17,10 @@
 import React, { Component } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import EmptyStateIconComp from "@hv/uikit-react-icons/dist/Caution.L";
+import EmptyStateIconComp from "@hv/uikit-react-icons/dist/Generic/Caution";
 import Grid from "@material-ui/core/Grid";
-import ListIcon from "@hv/uikit-react-icons/dist/List.S";
-import CardsIcon from "@hv/uikit-react-icons/dist/Cards.S";
-import CardsIconSelected from "@hv/uikit-react-icons/dist/CardsSelected.S";
+import ListIcon from "@hv/uikit-react-icons/dist/Generic/List";
+import CardsIcon from "@hv/uikit-react-icons/dist/Generic/Cards";
 import EmptySearchState from "../EmptyState";
 
 /*  TODO: Review accessibility */
@@ -74,7 +73,7 @@ export class HvAssetInventory extends Component {
 
     const viewModeCardsButton = (
       <>
-        {viewModeCards && <CardsIconSelected className={classes.icon} />}
+        {viewModeCards && <CardsIcon className={classes.iconSelected} />}
         {viewModeList && <CardsIcon className={classes.iconChangeView} />}
       </>
     );
@@ -82,30 +81,19 @@ export class HvAssetInventory extends Component {
     const viewModeViewButton = (
       <>
         {viewModeCards && <ListIcon className={classes.iconChangeView} />}
-        {viewModeList && (
-          <ListIcon
-            className={classes.icon}
-            color={[
-              theme.hv.palette.accent.acce1,
-              theme.hv.palette.atmosphere.atmo2
-            ]}
-          />
-        )}
+        {viewModeList && <ListIcon className={classes.iconSelected} />}
       </>
     );
 
-    const ViewModeButton = ({id, children, view}) => (
+    const ViewModeButton = ({ id, children, view }) => (
       <div
         {...id && { id }}
         role="presentation"
-        onClick={() =>
-          this.changeViewMode(view)
-        }
+        onClick={() => this.changeViewMode(view)}
       >
         {children}
       </div>
     );
-
 
     return (
       <div className={classes.container}>
@@ -117,9 +105,7 @@ export class HvAssetInventory extends Component {
           className={classes.gridContainer}
         >
           <Grid item className={classNames(classes.clearPadding)}>
-            <Grid container>
-              {searchComponent}
-            </Grid>
+            <Grid container>{searchComponent}</Grid>
           </Grid>
 
           <Grid item className={classNames(classes.clearPadding)}>
@@ -144,16 +130,14 @@ export class HvAssetInventory extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container>
-          {filterComponents}
-        </Grid>
+        <Grid container>{filterComponents}</Grid>
         {renderEmptyState && (
           <Grid container>
             <Grid item className={classes.emptyStateContainer}>
               <EmptySearchState
                 title="There are no matching results."
                 message="Please refine your search criteria."
-                icon={<EmptyStateIconComp />}
+                icon={<EmptyStateIconComp iconSize="L" />}
               />
             </Grid>
           </Grid>

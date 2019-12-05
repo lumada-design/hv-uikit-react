@@ -86,7 +86,6 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     const SMALL = "${getSize(componentName, 16)}px";
     const MEDIUM = "${getSize(componentName, 32)}px";
     const LARGE = "${getSize(componentName, 96)}px";
-    const X_LARGE = "${getSize(componentName, 128)}px";
 
     const sizeSelector = (iconHeight, iconWidth, iconSize) => {
 
@@ -119,10 +118,6 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
           size.height = LARGE;
           size.width = LARGE;
           break;
-        case "XL":
-          size.height = X_LARGE;
-          size.width = X_LARGE;
-        break;
       }
 
       return size;
@@ -131,16 +126,14 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     const getClasses = (className, iconSize, classes) => {
       switch(iconSize) {
         case "XS":
-          return classNames(className, classes.rootXs);
+          return classNames(className, classes.root, classes.rootXs);
         case "S":
-          return classNames(className, classes.rootS);
+          return classNames(className, classes.root, classes.rootS);
         default:
         case "M":
-          return classNames(className, classes.rootM);
+          return classNames(className, classes.root, classes.rootM);
         case "L":
-          return classNames(className, classes.rootL);
-        case "XL":
-          return classNames(className, classes.rootXL);
+          return classNames(className, classes.root, classes.rootL);
       }
     }
 
@@ -199,10 +192,6 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
          * Styles applied to the component root when it is large.
          */
         rootL: PropTypes.string,
-        /**
-         * Styles applied to the component root when it is extra large.
-         */
-        rootXL: PropTypes.string,
       }),
       /**
        * Class names to be applied.
@@ -257,6 +246,12 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
     };
 
     const styles = () => ({
+      root: {
+        display: "flex",
+        "& svg": {
+          margin: "auto"
+        }
+      },
       rootXs: {
         height: X_SMALL,
         width: X_SMALL
@@ -272,10 +267,6 @@ module.exports = (svgOutput, componentName, colorArrayDefaultValues, defaultSize
       rootL: {
         height: LARGE,
         width: LARGE
-      },
-      rootXL: {
-        height: X_LARGE,
-        width: X_LARGE
       }
     });
 

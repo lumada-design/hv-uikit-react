@@ -18,8 +18,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Input from "@hv/uikit-react-core/dist/Input";
-import AddTimeIcon from "@hv/uikit-react-icons/dist/DropUp.XS";
-import SubtractTimeIcon from "@hv/uikit-react-icons/dist/DropDown.XS";
+import AddTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
+import SubtractTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";
@@ -93,7 +93,7 @@ class UnitTimePicker extends React.Component {
   /**
    * Changes the time unit value in the state.
    * The onChange callback is only called if the new value is a valid one (in the allowed range)
-   * 
+   *
    * @param {Number} value - new time unit value
    * @memberof UnitTimePicker
    */
@@ -142,10 +142,7 @@ class UnitTimePicker extends React.Component {
 
     return (
       <div className={classes.unitTimeContainer}>
-        <AddTimeIcon
-          className={classes.addIcon} 
-          onClick={this.handleAddTime} 
-        />
+        <AddTimeIcon className={classes.addIcon} onClick={this.handleAddTime} />
         <Input
           className={classes.unitTime}
           classes={{
@@ -196,8 +193,10 @@ UnitTimePicker.propTypes = {
     const minValue = TimePickerUnits[otherProps.unit].min;
     const maxValue = TimePickerUnits[otherProps.unit].max;
     const unitValue = otherProps[propName];
-    if (unitValue > maxValue || unitValue < minValue ) {
-      return new Error(`Invalid prop ${propName} supplied to ${componentName}. Value not in the correct range ${minValue}-${maxValue}`);
+    if (unitValue > maxValue || unitValue < minValue) {
+      return new Error(
+        `Invalid prop ${propName} supplied to ${componentName}. Value not in the correct range ${minValue}-${maxValue}`
+      );
     }
     return null;
   },

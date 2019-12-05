@@ -17,7 +17,7 @@
 const icon = {
   width: "32px",
   height: "32px",
-  textAlign: "center"
+  cursor: "pointer"
 };
 
 const styles = theme => ({
@@ -25,7 +25,9 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    "&:first-child": { marginTop: `${theme.hv.spacing.sm}px` },
+    "&:last-child": { marginBottom: `${theme.hv.spacing.sm}px` }
   },
   periodText: {
     ...theme.hv.typography.highlightText,
@@ -35,13 +37,8 @@ const styles = theme => ({
     paddingTop: `${theme.hv.spacing.xs}px`,
     paddingBottom: `${theme.hv.spacing.xs}px`
   },
-  upIcon: {
-    ...icon,
-    marginTop: `${theme.hv.spacing.sm}px`
-  },
-  downIcon: {
-    ...icon,
-    marginBottom: `${theme.hv.spacing.sm}px`
+  icon: {
+    ...icon
   }
 });
 

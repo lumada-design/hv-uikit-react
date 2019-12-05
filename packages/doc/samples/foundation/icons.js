@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import isNil from "lodash/isNil";
-import * as dawnIconComponentList from "@hv/uikit-react-icons/dist/DawnTheme/index";
-import * as wickedIconComponentList from "@hv/uikit-react-icons/dist/WickedTheme/index";
 import * as genericIconComponentList from "@hv/uikit-react-icons/dist/Generic/index";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
-import ColorPicker from "./colorPicker";
 
 const styles = theme => ({
   groupContainer: {
@@ -19,7 +15,6 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap"
   },
-
   iconContainer: {
     margin: "5px",
     padding: "5px",
@@ -31,34 +26,14 @@ const styles = theme => ({
 });
 
 const dropdownSizes = [
-  {
-    id: "0",
-    label: "XS"
-  },
-  {
-    id: "1",
-    label: "S"
-  },
-  {
-    id: "2",
-    label: "M"
-  },
-  {
-    id: "3",
-    label: "L"
-  },
-  {
-    id: "4",
-    label: "XL"
-  },
-  {
-    id: "5",
-    label: "default",
-    selected: true
-  }
+  { id: "0", label: "XS" },
+  { id: "1", label: "S" },
+  { id: "2", label: "M" },
+  { id: "3", label: "L" },
+  { id: "4", label: "default", selected: true }
 ];
 
-const labels = {
+const dropdownLabels = {
   title: "Size selector",
   select: "Size..",
   selectAll: "select all",
@@ -68,44 +43,11 @@ const labels = {
   multiSelectionConjunction: ""
 };
 
-
-const GenericLabel = "Generic";
-
 const keys = Array.from(
   new Set([...Object.keys(genericIconComponentList)])
 ).sort();
 
-const deprecatedKeys = Array.from(
-  new Set([
-    ...Object.keys(dawnIconComponentList),
-    ...Object.keys(wickedIconComponentList)
-  ])
-).sort();
-
-const keysBySize = deprecatedKeys.reduce(
-  (map, value) => {
-    var size = value.charAt(value.length - 1);
-    if (value.endsWith("XS")) {
-      size = "XS";
-    }
-
-    if (map[size]) {
-      map[size].push(value);
-    }
-
-    return map;
-  },
-  {
-    XS: [],
-    S: [],
-    M: [],
-    L: []
-  }
-);
-
-const Group = ({ groupLabel, classes, iconSize, colorArray = [], theme }) => {
-  const iconComponentList =
-    theme.hv.type === "dark" ? wickedIconComponentList : dawnIconComponentList;
+const Group = ({ groupLabel, classes, iconSize, colorArray = [] }) => {
   return (
     <div className={classes.groupContainer}>
       <div>
@@ -114,26 +56,16 @@ const Group = ({ groupLabel, classes, iconSize, colorArray = [], theme }) => {
         </HvTypography>
       </div>
       <div className={classes.iconContainers}>
-        {groupLabel !== GenericLabel
-          ? keysBySize[groupLabel].map(icon => (
-              <Icon
-                key={icon}
-                name={icon}
-                classes={classes}
-                Component={iconComponentList[icon]}
-                iconSize={iconSize}
-              />
-            ))
-          : keys.map(icon => (
-              <Icon
-                key={icon}
-                name={icon}
-                classes={classes}
-                Component={genericIconComponentList[icon]}
-                colorArray={colorArray}
-                iconSize={iconSize}
-              />
-            ))}
+        {keys.map(icon => (
+          <Icon
+            key={icon}
+            name={icon}
+            classes={classes}
+            Component={genericIconComponentList[icon]}
+            colorArray={colorArray}
+            iconSize={iconSize}
+          />
+        ))}
       </div>
     </div>
   );
@@ -142,7 +74,7 @@ const Group = ({ groupLabel, classes, iconSize, colorArray = [], theme }) => {
 const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
   <div className={classes.iconContainer}>
     {Component != null ? (
-      <Component iconSize={iconSize.label === "default" ? undefined: iconSize && iconSize.label} color={colorArray} />
+      <Component iconSize={iconSize && iconSize.label} color={colorArray} />
     ) : (
       <span
         style={{
@@ -164,31 +96,11 @@ const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
 );
 
 const Icons = ({ classes, theme }) => {
-
-  const [iconSize, setIconSize] = useState(
-    {
-      id: 2,
-      label: "M",
-      selected: true
-    }
-  );
-
-  const [colorArray, setColorArray] = useState([])
-
-  const applyCallback = colorList => {
-    let colorArray = [];
-    if(isNil(colorList) || !Array.isArray(colorList) || colorList.length < 1) {
-      return;
-    }
-    colorList.forEach(item => {
-      colorArray.push(item.label)
-    })
-    setColorArray(colorArray);
-  }
-
-  const clearCallback = () => {
-    setColorArray([]);
-  }
+  const [iconSize, setIconSize] = useState({
+    id: 2,
+    label: "M",
+    selected: true
+  });
 
   return (
     <div>
@@ -196,21 +108,17 @@ const Icons = ({ classes, theme }) => {
         <HvDropdown
           values={dropdownSizes}
           multiSelect={false}
-          labels={labels}
-          onChange={item => {
-            setIconSize(item);
-          }}
+          labels={dropdownLabels}
+          onChange={item => setIconSize(item)}
           notifyChangesOnFirstRender
         />
       </div>
-      <Group groupLabel={GenericLabel} classes={classes} theme={theme} iconSize={iconSize} colorArray={colorArray}/>
-      <HvTypography variant="lTitle" style={{ padding: "20px 0" }}>
-        Deprecated Icons
-      </HvTypography>
-      <Group groupLabel="XS" classes={classes} theme={theme} iconSize={iconSize}/>
-      <Group groupLabel="S" classes={classes} theme={theme} iconSize={iconSize}/>
-      <Group groupLabel="M" classes={classes} theme={theme} iconSize={iconSize}/>
-      <Group groupLabel="L" classes={classes} theme={theme} iconSize={iconSize}/>
+      <Group
+        groupLabel={"Generic"}
+        classes={classes}
+        theme={theme}
+        iconSize={iconSize}
+      />
     </div>
   );
 };

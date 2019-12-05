@@ -20,7 +20,9 @@ const styles = theme => ({
   },
   navButton: {
     zIndex: "3",
-    cursor: "pointer"    
+    cursor: "pointer",
+    width: "32px",
+    height: "32px"
   },
   verticalNav: {
     display: "none",
@@ -62,7 +64,7 @@ const styles = theme => ({
     userAction: {
       borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
     }
-  },
+  }
 });
 
 export default styles;

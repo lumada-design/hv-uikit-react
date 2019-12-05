@@ -24,9 +24,10 @@ const root = theme => ({
 
 const icon = {
   position: "absolute",
+  top: 0,
   right: 0,
-  width: "32px",
-  height: "32px"
+  width: "30px",
+  height: "30px"
 };
 
 const styles = theme => ({
