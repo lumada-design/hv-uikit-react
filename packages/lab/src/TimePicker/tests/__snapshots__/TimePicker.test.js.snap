@@ -14903,9 +14903,6 @@ body {
                       "rootXs": "Time-rootXs-85",
                     }
                   }
-                  color={null}
-                  height={null}
-                  iconSize="S"
                   onClick={[Function]}
                   theme={
                     Object {
@@ -15836,16 +15833,14 @@ body {
                       },
                     }
                   }
-                  viewbox="0 0 16 16 "
-                  width={null}
                 >
                   <div
                     className="HvTimePicker-icon-50 Time-root-84 Time-rootS-86"
+                    onClick={[Function]}
                   >
                     <svg
                       height="16px"
-                      onClick={[Function]}
-                      viewBox="0 0 16 16 "
+                      viewBox="0 0 16 16"
                       width="16px"
                       xmlns="http://www.w3.org/2000/svg"
                     >

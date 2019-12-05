@@ -28784,9 +28784,6 @@ body {
                     "rootXs": "DropDownXS-rootXs-345",
                   }
                 }
-                color={null}
-                height={null}
-                iconSize="XS"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -29716,15 +29713,13 @@ body {
                     },
                   }
                 }
-                viewbox="0 0 12 12 "
-                width={null}
               >
                 <div
                   className="Pagination-selectDownIcon-318 DropDownXS-root-344 DropDownXS-rootXs-345"
                 >
                   <svg
                     height="12px"
-                    viewBox="0 0 12 12 "
+                    viewBox="0 0 12 12"
                     width="12px"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -31733,8 +31728,6 @@ body {
                               }
                             }
                             color={null}
-                            height={null}
-                            iconSize="S"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -32664,15 +32657,13 @@ body {
                                 },
                               }
                             }
-                            viewbox="0 0 16 16 "
-                            width={null}
                           >
                             <div
                               className="Pagination-icon-317 Start-root-358 Start-rootS-360"
                             >
                               <svg
                                 height="16px"
-                                viewBox="0 0 16 16 "
+                                viewBox="0 0 16 16"
                                 width="16px"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
@@ -32780,8 +32771,6 @@ body {
                               }
                             }
                             color={null}
-                            height={null}
-                            iconSize="S"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -33711,15 +33700,13 @@ body {
                                 },
                               }
                             }
-                            viewbox="0 0 16 16 "
-                            width={null}
                           >
                             <div
                               className="Pagination-icon-317 Backwards-root-363 Backwards-rootS-365"
                             >
                               <svg
                                 height="16px"
-                                viewBox="0 0 16 16 "
+                                viewBox="0 0 16 16"
                                 width="16px"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
@@ -39543,8 +39530,6 @@ body {
                               }
                             }
                             color={null}
-                            height={null}
-                            iconSize="S"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -40474,15 +40459,13 @@ body {
                                 },
                               }
                             }
-                            viewbox="0 0 16 16 "
-                            width={null}
                           >
                             <div
                               className="Pagination-icon-317 Forwards-root-368 Forwards-rootS-370"
                             >
                               <svg
                                 height="16px"
-                                viewBox="0 0 16 16 "
+                                viewBox="0 0 16 16"
                                 width="16px"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
@@ -40590,8 +40573,6 @@ body {
                               }
                             }
                             color={null}
-                            height={null}
-                            iconSize="S"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -41521,15 +41502,13 @@ body {
                                 },
                               }
                             }
-                            viewbox="0 0 16 16 "
-                            width={null}
                           >
                             <div
                               className="Pagination-icon-317 End-root-373 End-rootS-375"
                             >
                               <svg
                                 height="16px"
-                                viewBox="0 0 16 16 "
+                                viewBox="0 0 16 16"
                                 width="16px"
                                 xmlns="http://www.w3.org/2000/svg"
                               >

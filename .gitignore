@@ -44,6 +44,8 @@ eslint.xml
 **/*/dist
 **/*/bin
 
+.prettierrc*
+
 .npmrc
 .idea
 *.iml

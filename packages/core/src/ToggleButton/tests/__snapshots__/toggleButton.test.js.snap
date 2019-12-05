@@ -9634,9 +9634,6 @@ body {
                   "rootXs": "Unlock-rootXs-5",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="S"
               theme={
                 Object {
                   "breakpoints": Object {
@@ -10566,15 +10563,13 @@ body {
                   },
                 }
               }
-              viewbox="0 0 16 16 "
-              width={null}
             >
               <div
                 className="ToggleButton-icon-2 Unlock-root-4 Unlock-rootS-6"
               >
                 <svg
                   height="16px"
-                  viewBox="0 0 16 16 "
+                  viewBox="0 0 16 16"
                   width="16px"
                   xmlns="http://www.w3.org/2000/svg"
                 >
