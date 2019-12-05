@@ -14658,9 +14658,6 @@ body {
                   "rootXs": "DropUpXS-rootXs-43",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[Function]}
               theme={
                 Object {
@@ -15591,16 +15588,14 @@ body {
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="PeriodPicker-icon-41 DropUpXS-root-42 DropUpXS-rootXs-43"
+                onClick={[Function]}
               >
                 <svg
                   height="12px"
-                  onClick={[Function]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -17532,9 +17527,6 @@ body {
                   "rootXs": "DropDownXS-rootXs-73",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[Function]}
               theme={
                 Object {
@@ -18465,16 +18457,14 @@ body {
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="PeriodPicker-icon-41 DropDownXS-root-72 DropDownXS-rootXs-73"
+                onClick={[Function]}
               >
                 <svg
                   height="12px"
-                  onClick={[Function]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >

@@ -23616,9 +23616,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                   "rootXs": "DropUpXS-rootXs-100",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[Function]}
               theme={
                 Object {
@@ -24549,16 +24546,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="UnitTimePicker-addIcon-96 DropUpXS-root-99 DropUpXS-rootXs-100"
+                onClick={[Function]}
               >
                 <svg
                   height="12px"
-                  onClick={[Function]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -33539,9 +33534,6 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                   "rootXs": "DropDownXS-rootXs-179",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[Function]}
               theme={
                 Object {
@@ -34472,16 +34464,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="UnitTimePicker-subtractIcon-97 DropDownXS-root-178 DropDownXS-rootXs-179"
+                onClick={[Function]}
               >
                 <svg
                   height="12px"
-                  onClick={[Function]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >

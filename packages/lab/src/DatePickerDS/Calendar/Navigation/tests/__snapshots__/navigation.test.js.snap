@@ -14714,9 +14714,6 @@ body {
                   "rootXs": "DropLeftXS-rootXs-7",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[MockFunction]}
               theme={
                 Object {
@@ -15647,16 +15644,14 @@ body {
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="Navigation-icon-2 DropLeftXS-root-6 DropLeftXS-rootXs-7"
+                onClick={[MockFunction]}
               >
                 <svg
                   height="12px"
-                  onClick={[MockFunction]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -17592,9 +17587,6 @@ body {
                   "rootXs": "DropRightXS-rootXs-37",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="XS"
               onClick={[MockFunction]}
               theme={
                 Object {
@@ -18525,16 +18517,14 @@ body {
                   },
                 }
               }
-              viewbox="0 0 12 12 "
-              width={null}
             >
               <div
                 className="Navigation-icon-2 DropRightXS-root-36 DropRightXS-rootXs-37"
+                onClick={[MockFunction]}
               >
                 <svg
                   height="12px"
-                  onClick={[MockFunction]}
-                  viewBox="0 0 12 12 "
+                  viewBox="0 0 12 12"
                   width="12px"
                   xmlns="http://www.w3.org/2000/svg"
                 >

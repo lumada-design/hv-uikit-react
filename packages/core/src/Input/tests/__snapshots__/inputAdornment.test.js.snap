@@ -8799,9 +8799,6 @@ body {
                     "rootXs": "CloseXS-rootXs-5",
                   }
                 }
-                color={null}
-                height={null}
-                iconSize="XS"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -9731,15 +9728,13 @@ body {
                     },
                   }
                 }
-                viewbox="0 0 12 12 "
-                width={null}
               >
                 <div
                   className="InputAdornment-adornmentIconBox-3 CloseXS-root-4 CloseXS-rootXs-5"
                 >
                   <svg
                     height="12px"
-                    viewBox="0 0 12 12 "
+                    viewBox="0 0 12 12"
                     width="12px"
                     xmlns="http://www.w3.org/2000/svg"
                   >
