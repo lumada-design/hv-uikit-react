@@ -27,13 +27,14 @@ import MultiButton from "../../MultiButton";
  * @returns {*}
  * @constructor
  */
-const AssetMultiButton = ({ views, changeView }) => {
+const AssetMultiButton = ({ id, views, changeView }) => {
   const options = [];
   views.map(view => options.push({ id: view.id, icon: view.icon }));
   if (!isEmpty(options)) options[0].selected = true;
 
   return (
     <MultiButton
+      id={`multi_button_${id}`}
       buttons={options}
       type="icon"
       onChange={changeView}
@@ -43,6 +44,7 @@ const AssetMultiButton = ({ views, changeView }) => {
 };
 
 AssetMultiButton.propTypes = {
+  id: PropTypes.string.isRequired,
   views: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

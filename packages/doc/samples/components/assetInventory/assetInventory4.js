@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
 import Cards from "@hv/uikit-react-icons/dist/Generic/Cards";
 import List from "@hv/uikit-react-icons/dist/Generic/List";
@@ -22,11 +22,17 @@ import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
 import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
 import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
+import { getPages, fetchData, doSearch, doSort } from "./ServerSideTester";
 
-const boxStyles = { width: "30px", height: "30px" };
 const styles = () => ({
   box: {
-    ...boxStyles
+    padding: "7px",
+    width: "30px",
+    height: "30px",
+    "&>svg": {
+      display: "block",
+      margin: "0 auto"
+    }
   }
 });
 
@@ -138,23 +144,88 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
   switch (data.status) {
     default:
     case 1:
-      status.Icon = <Level1 semantic="sema10" boxStyles={boxStyles} />;
+      status.Icon = (
+        <Level1
+          semantic="sema10"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = <Level2 semantic="sema11" boxStyles={boxStyles} />;
+      status.Icon = (
+        <Level2
+          semantic="sema11"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = <Level3 semantic="sema12" boxStyles={boxStyles} />;
+      status.Icon = (
+        <Level3
+          semantic="sema12"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema12";
       break;
     case 4:
-      status.Icon = <Level4 semantic="sema13" boxStyles={boxStyles} />;
+      status.Icon = (
+        <Level4
+          semantic="sema13"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema13";
       break;
     case 5:
-      status.Icon = <Level5 semantic="sema14" boxStyles={boxStyles} />;
+      status.Icon = (
+        <Level5
+          semantic="sema14"
+          boxStyles={{
+            paddingTop: "3px",
+            width: "30px",
+            height: "30px"
+          }}
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+        />
+      );
       status.sema = "sema14";
       break;
   }
@@ -272,49 +343,6 @@ const rowRenderer = (value, index, viewConfiguration, metadata) => {
   );
 };
 
-//--------------------------- Values ---------------------------------
-
-const compressorData = id => {
-  return {
-    headerTitle: id + " Risk of downtime " + (id + 1),
-    id: "id_" + id,
-    status: 5,
-    event: {
-      description: "Risk of downtime on Truck " + id,
-      timestamp: "2 minutes ago",
-      schedule: "fix now"
-    },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: "id_" + id
-  };
-};
-
-const machineData = id => {
-  return {
-    headerTitle: id + " Track severe " + (id + 1),
-    id: "id_" + id,
-    status: 2,
-    event: {
-      description: "Track " + id + " severe breakdown",
-      timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
-    },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: "id_" + id
-  };
-};
-
-const values = () => {
-  let cards = [];
-  for (let i = 0; i < 10; ++i)
-    cards.push(i % 2 === 0 ? compressorData(i) : machineData(i));
-  return cards;
-};
-
 //----------------------- Configuration ------------------------------
 
 const myActions = [
@@ -354,111 +382,138 @@ const configuration = {
       sortable: true,
       sortableLabelAsc: "Title ascending",
       sortableLabelDesc: "Title descending"
-    },
-    {
-      id: "id2",
-      accessor: "semantic",
-      cellType: "alpha-numeric"
-    },
-    {
-      id: "id3",
-      accessor: "probability",
-      cellType: "numeric",
-      searchable: true,
-      sortable: true,
-      sortableLabelAsc: "Probability ascending",
-      sortableLabelDesc: "Probability descending"
-    },
-    {
-      id: "id4",
-      accessor: "timeHorizon",
-      cellType: "numeric",
-      sortable: true,
-      sortableLabelAsc: "TimeHorizon ascending",
-      sortableLabelDesc: "TimeHorizon descending"
-    },
-    {
-      id: "id4",
-      accessor: "event.schedule",
-      cellType: "alpha-numeric",
-      searchable: true
     }
   ]
 };
 
-export default (
-  <AssetInventory
-    values={values()}
-    configuration={configuration}
-    onSelection={event => alert(event.target.value)}
-    isSelectable
-    actions={myActions}
-    maxVisibleActions={3}
-    actionsCallback={(id, action) =>
-      alert("You have pressed card " + id + " with action " + action.label)
-    }
-    hasPagination
-    pageSizeOptions={[2, 4, 6, 8, 10]}
-  >
-    <CardView
-      id="card"
-      icon={<Cards />}
-      renderer={cardRenderer}
-      viewConfiguration={{
-        breakpoints: {
-          xs: "false",
-          sm: "false",
-          md: 4,
-          lg: 3,
-          xl: 3
+class ServerSideAssetInventory extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      page: 0,
+      pageSize: 4,
+      values: fetchData(4, 0)
+    };
+  }
+
+  onSort = sort => {
+    this.setState(prevState => ({
+      values: doSort(sort.type, prevState.pageSize, prevState.page)
+    }));
+  };
+
+  onPageChange = page => {
+    this.setState(prevState => ({
+      page: page,
+      values: fetchData(prevState.pageSize, page)
+    }));
+  };
+
+  onPageSizeChange = pageSize => {
+    this.setState(prevState => ({
+      pageSize: pageSize,
+      values: fetchData(pageSize, prevState.page)
+    }));
+  };
+
+  onSearch = search => {
+    this.setState(prevState => ({
+      page: 0,
+      values: doSearch(search, prevState.pageSize)
+    }));
+  };
+
+  render() {
+    const { pageSize, page, values } = this.state;
+
+    return (
+      <AssetInventory
+        values={values}
+        selectedValues={["id_1", "id_3", "id_4"]}
+        configuration={configuration}
+        onSelection={event => alert(event.target.value)}
+        isSelectable
+        actions={myActions}
+        maxVisibleActions={3}
+        actionsCallback={(id, action) =>
+          alert("You have pressed card " + id + " with action " + action.label)
         }
-      }}
-    />
-    <ListView
-      id="list"
-      icon={<List />}
-      renderer={rowRenderer}
-      viewConfiguration={{
-        columnConfiguration: [
-          {
-            title: "Status",
-            style: {
-              paddingLeft: "8px",
-              minWidth: "52px"
-            },
-            align: "left"
-          },
-          {
-            title: "Event",
-            style: {
-              minWidth: "570px"
-            },
-            align: "left"
-          },
-          {
-            title: "Probability",
-            style: {
-              minWidth: "93px"
-            },
-            align: "right"
-          },
-          {
-            title: "Time horizon",
-            style: {
-              minWidth: "108px"
-            },
-            align: "right"
-          },
-          {
-            title: "Related Assets",
-            style: {
-              minWidth: "195px",
-              paddingLeft: "30px"
-            },
-            align: "left"
-          }
-        ]
-      }}
-    />
-  </AssetInventory>
-);
+        // Pagination
+        hasPagination
+        paginationServerSide
+        pageSizeOptions={[2, 4, 6, 8, 10]}
+        onPageChange={this.onPageChange}
+        onPageSizeChange={this.onPageSizeChange}
+        pages={getPages(pageSize)}
+        page={page}
+        pageSize={pageSize}
+        // Search
+        onSearch={this.onSearch}
+        // Sort
+        onSort={this.onSort}
+      >
+        <CardView
+          id="card"
+          icon={<Cards />}
+          renderer={cardRenderer}
+          viewConfiguration={{
+            breakpoints: {
+              xs: "false",
+              sm: "false",
+              md: 4,
+              lg: 3,
+              xl: 3
+            }
+          }}
+        />
+        <ListView
+          id="list"
+          icon={<List />}
+          renderer={rowRenderer}
+          viewConfiguration={{
+            columnConfiguration: [
+              {
+                title: "Status",
+                style: {
+                  paddingLeft: "8px",
+                  minWidth: "52px"
+                },
+                align: "left"
+              },
+              {
+                title: "Event",
+                style: {
+                  minWidth: "570px"
+                },
+                align: "left"
+              },
+              {
+                title: "Probability",
+                style: {
+                  minWidth: "93px"
+                },
+                align: "right"
+              },
+              {
+                title: "Time horizon",
+                style: {
+                  minWidth: "108px"
+                },
+                align: "right"
+              },
+              {
+                title: "Related Assets",
+                style: {
+                  minWidth: "195px",
+                  paddingLeft: "30px"
+                },
+                align: "left"
+              }
+            ]
+          }}
+        />
+      </AssetInventory>
+    );
+  }
+}
+export default <ServerSideAssetInventory />;
