@@ -17,7 +17,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import IconButton from "@material-ui/core/IconButton";
 import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
@@ -159,7 +159,11 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${computedLabels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography id={`${internalId}-totalPages`} component="span" variant="sText">
+          <HvTypography
+            id={`${internalId}-totalPages`}
+            component="span"
+            variant="sText"
+          >
             {pages || 1}
           </HvTypography>
         </div>
@@ -248,11 +252,11 @@ Pagination.propTypes = {
      */
     selectDownIcon: PropTypes.string
   }).isRequired,
-  /*
+  /**
    * The number of pages the component has.
    */
   pages: PropTypes.number,
-  /*
+  /**
    * The currently selected page (0-indexed).
    */
   page: PropTypes.number,

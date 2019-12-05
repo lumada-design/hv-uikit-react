@@ -162,12 +162,6 @@ describe("Asset Inventory ", () => {
     expect(search.length).toBe(0);
   });
 
-  // it("should correctly sort alpha-numeric values", () => { });
-
-  // it("should correctly sort numeric values", () => { });
-
-  // it("should correctly sort date values", () => { });
-
   it("should correctly filter alpha-numeric values", () => {
     const configuration = {
       metadata: [
@@ -317,5 +311,133 @@ describe("Asset Inventory ", () => {
     );
 
     expect(view.exists()).toBe(false);
+  });
+
+  it("should render pagination", () => {
+    wrapper = mount(
+      <HvProvider>
+        <AssetInventory values={values} configuration={{}} hasPagination>
+          <div id="view1">test1</div>
+        </AssetInventory>
+      </HvProvider>
+    );
+
+    const pagination = wrapper.find("Pagination");
+
+    expect(pagination.length).toBe(1);
+  });
+
+  it("should present a subset of data using pagination, calculating the page total", () => {
+    const val = [
+      {
+        id: "1",
+        name: "AA"
+      },
+      {
+        id: "2",
+        name: "BB"
+      },
+      {
+        id: "3",
+        name: "CC"
+      },
+      {
+        id: "4",
+        name: "DD"
+      },
+      {
+        id: "5",
+        name: "EE"
+      },
+      {
+        id: "6",
+        name: "FF"
+      }
+    ];
+
+    wrapper = mount(
+      <HvProvider>
+        <AssetInventory
+          id="hv-pagination"
+          values={val}
+          configuration={{}}
+          hasPagination
+          pageSize={2}
+        >
+          <div id="view1">test1</div>
+        </AssetInventory>
+      </HvProvider>
+    );
+
+    const instance = wrapper.find("AssetInventory").instance();
+
+    expect(instance.state.viewValues.length).toBe(2);
+
+    const totalPages = wrapper.findWhere(
+      n => n.type() === "span" && n.prop("id") === "hv-pagination-totalPages"
+    );
+
+    expect(totalPages.text()).toBe("3");
+  });
+
+  it("should change the subset of data using pagination", () => {
+    const val = [
+      {
+        id: "1",
+        name: "AA"
+      },
+      {
+        id: "2",
+        name: "BB"
+      },
+      {
+        id: "3",
+        name: "CC"
+      },
+      {
+        id: "4",
+        name: "DD"
+      },
+      {
+        id: "5",
+        name: "EE"
+      },
+      {
+        id: "6",
+        name: "FF"
+      }
+    ];
+
+    wrapper = mount(
+      <HvProvider>
+        <AssetInventory
+          id="hv-pagination"
+          values={val}
+          configuration={{}}
+          hasPagination
+          pageSize={2}
+        >
+          <div id="view1">test1</div>
+        </AssetInventory>
+      </HvProvider>
+    );
+
+    const instance = wrapper.find("AssetInventory").instance();
+
+    expect(instance.state.viewValues[0].id).toBe("1");
+    expect(instance.state.viewValues[1].id).toBe("2");
+
+    wrapper
+      .findWhere(
+        n =>
+          n.type() === "button" &&
+          n.prop("id") === "hv-pagination-nextPage-button"
+      )
+      .simulate("click");
+
+    expect(instance.state.viewValues.length).toBe(2);
+
+    expect(instance.state.viewValues[0].id).toBe("3");
+    expect(instance.state.viewValues[1].id).toBe("4");
   });
 });

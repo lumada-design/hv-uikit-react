@@ -39,6 +39,9 @@ const styles = theme => ({
   sortContainer: {},
   searchBoxContainer: {
     width: "250px"
+  },
+  pagination:{
+    marginTop:0
   }
 });
 

@@ -69,6 +69,32 @@ const sortByType = type => {
 };
 
 /**
+ * Calls the passed onSelection passing the sort function.
+ *
+ * @param sort
+ */
+const sortValues = ({
+  accessor,
+  sortFunction: externalSortFunction,
+  type,
+  cellType
+}) => {
+  let selectedSortFunc;
+
+  const sortFunction = externalSortFunction || sortByType(cellType);
+
+  if (type === "asc") {
+    selectedSortFunc = (a, b) =>
+      sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1;
+  }
+  if (type === "desc") {
+    selectedSortFunc = (a, b) =>
+      sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1;
+  }
+  return selectedSortFunc;
+};
+
+/**
  * Sort component.
  *
  * @param id
@@ -78,31 +104,9 @@ const sortByType = type => {
  * @returns {*}
  * @constructor
  */
-const Sort = ({ id, labels, onSelection, metadata }) => {
-  /**
-   * Calls the passed onSelection passing the sort function.
-   *
-   * @param sort
-   */
-  const sortValues = ({
-    accessor,
-    sortFunction: externalSortFunction,
-    type,
-    cellType
-  }) => {
-    let selectedSortFunc;
-
-    const sortFunction = externalSortFunction || sortByType(cellType);
-
-    if (type === "asc") {
-      selectedSortFunc = (a, b) =>
-        sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1;
-    }
-    if (type === "desc") {
-      selectedSortFunc = (a, b) =>
-        sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1;
-    }
-    onSelection(selectedSortFunc);
+const Sort = ({ id, labels, onSelection, metadata, onSort }) => {
+  const innerSortValues = data => {
+    onSelection(sortValues(data));
   };
 
   return (
@@ -110,7 +114,7 @@ const Sort = ({ id, labels, onSelection, metadata }) => {
       id={`sort_${id}`}
       labels={labels}
       values={sortOperationSetup(metadata)}
-      onChange={sortValues}
+      onChange={onSort || innerSortValues}
       selectDefault={false}
       singleSelectionToggle={false}
     />
@@ -126,6 +130,10 @@ Sort.propTypes = {
    * Callback on selection.
    */
   onSelection: PropTypes.func.isRequired,
+  /**
+   * onSort callback.
+   */
+  onSort: PropTypes.func,
   /**
    * Labels.
    */
@@ -150,10 +158,12 @@ Sort.propTypes = {
 };
 
 Sort.defaultProps = {
-  id: undefined
+  id: undefined,
+  onSort: null
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
   prevProps.metadata === nextProps.metadata;
 
 export default memo(Sort, arePropsEqual);
+export { sortOperationSetup, sortValues };

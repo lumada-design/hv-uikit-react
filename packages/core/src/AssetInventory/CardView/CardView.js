@@ -69,6 +69,7 @@ const CardView = ({
   classes,
   icon,
   values,
+  selectedValues,
   renderer,
   viewConfiguration,
   innerCardContent,
@@ -88,20 +89,29 @@ const CardView = ({
   /**
    * Render of the cards for each value.
    */
-  const renderCards = values.map(value => (
-    <Grid
-      id={value.id}
-      key={value.id}
-      item
-      xs={breakpoints.xs}
-      sm={breakpoints.sm}
-      md={breakpoints.md}
-      lg={breakpoints.lg}
-      xl={breakpoints.xl}
-    >
-      {cardRender(value, others)}
-    </Grid>
-  ));
+  const renderCards = values.map(value => {
+    if (selectedValues && selectedValues.indexOf(value.id) > -1) {
+      // eslint-disable-next-line no-param-reassign
+      value.checkboxSelected = true;
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      value.checkboxSelected = false;
+    }
+    return (
+      <Grid
+        id={value.id}
+        key={value.id}
+        item
+        xs={breakpoints.xs}
+        sm={breakpoints.sm}
+        md={breakpoints.md}
+        lg={breakpoints.lg}
+        xl={breakpoints.xl}
+      >
+        {cardRender(value, others)}
+      </Grid>
+    );
+  });
 
   return (
     <div className={classes.root}>
@@ -158,6 +168,10 @@ CardView.propTypes = {
    * Values to be passed to the card render.
    */
   values: PropTypes.instanceOf(Array).isRequired,
+  /**
+   * Selected values.
+   */
+  selectedValues: PropTypes.arrayOf(PropTypes.string),
   /**
    * Custom render for the cards.
    */
@@ -287,6 +301,7 @@ CardView.propTypes = {
 CardView.defaultProps = {
   className: "",
   id: "",
+  selectedValues: null,
   renderer: undefined,
   innerCardContent: undefined,
   metadata: undefined,
