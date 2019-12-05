@@ -45074,11 +45074,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "rootL": "Checkbox-rootL-152",
-                "rootM": "Checkbox-rootM-151",
-                "rootS": "Checkbox-rootS-150",
-                "rootXL": "Checkbox-rootXL-153",
-                "rootXs": "Checkbox-rootXs-149",
+                "root": "Checkbox-root-149",
+                "rootL": "Checkbox-rootL-153",
+                "rootM": "Checkbox-rootM-152",
+                "rootS": "Checkbox-rootS-151",
+                "rootXs": "Checkbox-rootXs-150",
               },
               "deployed": true,
               "linked": false,
@@ -45086,11 +45086,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Checkbox",
                 "classes": Object {
-                  "rootL": "Checkbox-rootL-152",
-                  "rootM": "Checkbox-rootM-151",
-                  "rootS": "Checkbox-rootS-150",
-                  "rootXL": "Checkbox-rootXL-153",
-                  "rootXs": "Checkbox-rootXs-149",
+                  "root": "Checkbox-root-149",
+                  "rootL": "Checkbox-rootL-153",
+                  "rootM": "Checkbox-rootM-152",
+                  "rootS": "Checkbox-rootS-151",
+                  "rootXs": "Checkbox-rootXs-150",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -45578,25 +45578,27 @@ body {
                   data-meta="Checkbox"
                 >
                   
-.Checkbox-rootXs-149 {
+.Checkbox-root-149 {
+  display: flex;
+}
+.Checkbox-root-149 svg {
+  margin: auto;
+}
+.Checkbox-rootXs-150 {
   width: 12px;
   height: 12px;
 }
-.Checkbox-rootS-150 {
+.Checkbox-rootS-151 {
   width: 16px;
   height: 16px;
 }
-.Checkbox-rootM-151 {
+.Checkbox-rootM-152 {
   width: 32px;
   height: 32px;
 }
-.Checkbox-rootL-152 {
+.Checkbox-rootL-153 {
   width: 96px;
   height: 96px;
-}
-.Checkbox-rootXL-153 {
-  width: 128px;
-  height: 128px;
 }
 
                 </style>,
@@ -45611,14 +45613,20 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "rootL": "Checkbox-rootL-152",
-                  "rootM": "Checkbox-rootM-151",
-                  "rootS": "Checkbox-rootS-150",
-                  "rootXL": "Checkbox-rootXL-153",
-                  "rootXs": "Checkbox-rootXs-149",
+                  "root": "Checkbox-root-149",
+                  "rootL": "Checkbox-rootL-153",
+                  "rootM": "Checkbox-rootM-152",
+                  "rootS": "Checkbox-rootS-151",
+                  "rootXs": "Checkbox-rootXs-150",
                 },
                 "index": Array [
                   Object {
+                    "display": "flex",
+                  },
+                  Object {
+                    "margin": "auto",
+                  },
+                  Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -45633,32 +45641,33 @@ body {
                   Object {
                     "height": "96px",
                     "width": "96px",
-                  },
-                  Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                 ],
                 "map": Object {
-                  ".Checkbox-rootL-152": Object {
+                  ".Checkbox-root-149": Object {
+                    "display": "flex",
+                  },
+                  ".Checkbox-root-149 svg": Object {
+                    "margin": "auto",
+                  },
+                  ".Checkbox-rootL-153": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Checkbox-rootM-151": Object {
+                  ".Checkbox-rootM-152": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Checkbox-rootS-150": Object {
+                  ".Checkbox-rootS-151": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Checkbox-rootXL-153": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  ".Checkbox-rootXs-149": Object {
+                  ".Checkbox-rootXs-150": Object {
                     "height": "12px",
                     "width": "12px",
+                  },
+                  "root": Object {
+                    "display": "flex",
                   },
                   "rootL": Object {
                     "height": "96px",
@@ -45672,10 +45681,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
                   "rootXs": Object {
                     "height": "12px",
                     "width": "12px",
@@ -45685,11 +45690,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Checkbox",
                   "classes": Object {
-                    "rootL": "Checkbox-rootL-152",
-                    "rootM": "Checkbox-rootM-151",
-                    "rootS": "Checkbox-rootS-150",
-                    "rootXL": "Checkbox-rootXL-153",
-                    "rootXs": "Checkbox-rootXs-149",
+                    "root": "Checkbox-root-149",
+                    "rootL": "Checkbox-rootL-153",
+                    "rootM": "Checkbox-rootM-152",
+                    "rootS": "Checkbox-rootS-151",
+                    "rootXs": "Checkbox-rootXs-150",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -46172,6 +46177,15 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".Checkbox-root-149 svg": Object {
+                    "margin": "auto",
+                  },
+                  "root": Object {
+                    "& svg": Object {
+                      "margin": "auto",
+                    },
+                    "display": "flex",
+                  },
                   "rootL": Object {
                     "height": "96px",
                     "width": "96px",
@@ -46183,10 +46197,6 @@ body {
                   "rootS": Object {
                     "height": "16px",
                     "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                   "rootXs": Object {
                     "height": "12px",
@@ -64790,11 +64800,11 @@ body {
                                                                       className="HvCheckbox-box-123"
                                                                       classes={
                                                                         Object {
-                                                                          "rootL": "Checkbox-rootL-152",
-                                                                          "rootM": "Checkbox-rootM-151",
-                                                                          "rootS": "Checkbox-rootS-150",
-                                                                          "rootXL": "Checkbox-rootXL-153",
-                                                                          "rootXs": "Checkbox-rootXs-149",
+                                                                          "root": "Checkbox-root-149",
+                                                                          "rootL": "Checkbox-rootL-153",
+                                                                          "rootM": "Checkbox-rootM-152",
+                                                                          "rootS": "Checkbox-rootS-151",
+                                                                          "rootXs": "Checkbox-rootXs-150",
                                                                         }
                                                                       }
                                                                       color={null}
@@ -65733,7 +65743,7 @@ body {
                                                                       width={null}
                                                                     >
                                                                       <div
-                                                                        className="HvCheckbox-box-123 Checkbox-rootS-150"
+                                                                        className="HvCheckbox-box-123 Checkbox-root-149 Checkbox-rootS-151"
                                                                       >
                                                                         <svg
                                                                           height="16px"

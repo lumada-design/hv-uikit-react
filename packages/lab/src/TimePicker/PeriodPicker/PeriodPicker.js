@@ -17,8 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import UpIcon from "@hv/uikit-react-icons/dist/DropUp.XS";
-import DownIcon from "@hv/uikit-react-icons/dist/DropDown.XS";
+import UpIcon from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
+import DownIcon from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import { getPeriodForDate } from "../timePickerUtils";
 import { PeriodPickerOptions } from "../enums";
 
@@ -66,14 +66,11 @@ class PeriodPicker extends React.Component {
 
     return (
       <div className={classes.periodContainer}>
-        <UpIcon className={classes.upIcon} onClick={this.handleChangePeriod} />
+        <UpIcon className={classes.icon} onClick={this.handleChangePeriod} />
         <HvTypography variant="highlightText" className={classes.periodText}>
           {currentPeriod}
         </HvTypography>
-        <DownIcon
-          className={classes.downIcon}
-          onClick={this.handleChangePeriod}
-        />
+        <DownIcon className={classes.icon} onClick={this.handleChangePeriod} />
       </div>
     );
   }

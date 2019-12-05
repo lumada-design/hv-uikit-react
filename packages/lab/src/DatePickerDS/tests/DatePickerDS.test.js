@@ -18,7 +18,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 
 import {

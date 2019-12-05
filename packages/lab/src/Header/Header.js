@@ -21,7 +21,7 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import isNill from "lodash/isNil";
-import MenuS from "@hv/uikit-react-icons/dist/Menu.S";
+import MenuS from "@hv/uikit-react-icons/dist/Generic/Menu";
 import Brand from "./Brand";
 import Navigation from "./Navigation";
 import User from "./User";
@@ -67,7 +67,6 @@ const Main = ({
 }) => {
   const [showNav, toggleNav] = useState(false);
   const userExists = !(isNill(userData) && isNill(userIcon));
-
 
   return (
     <AppBar

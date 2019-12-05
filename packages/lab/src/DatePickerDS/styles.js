@@ -25,9 +25,9 @@ const inputRoot = theme => ({
 const icon = {
   position: "absolute",
   right: 0,
-  width: "32px",
-  height: "32px",
-  bottom: "0px"
+  bottom: 0,
+  width: "30px",
+  height: "30px"
 };
 
 const styles = theme => ({

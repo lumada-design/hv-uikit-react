@@ -6648,11 +6648,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "rootL": "CloseXS-rootL-7",
-                "rootM": "CloseXS-rootM-6",
-                "rootS": "CloseXS-rootS-5",
-                "rootXL": "CloseXS-rootXL-8",
-                "rootXs": "CloseXS-rootXs-4",
+                "root": "CloseXS-root-4",
+                "rootL": "CloseXS-rootL-8",
+                "rootM": "CloseXS-rootM-7",
+                "rootS": "CloseXS-rootS-6",
+                "rootXs": "CloseXS-rootXs-5",
               },
               "deployed": true,
               "linked": false,
@@ -6660,11 +6660,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "CloseXS",
                 "classes": Object {
-                  "rootL": "CloseXS-rootL-7",
-                  "rootM": "CloseXS-rootM-6",
-                  "rootS": "CloseXS-rootS-5",
-                  "rootXL": "CloseXS-rootXL-8",
-                  "rootXs": "CloseXS-rootXs-4",
+                  "root": "CloseXS-root-4",
+                  "rootL": "CloseXS-rootL-8",
+                  "rootM": "CloseXS-rootM-7",
+                  "rootS": "CloseXS-rootS-6",
+                  "rootXs": "CloseXS-rootXs-5",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7152,25 +7152,27 @@ body {
                   data-meta="CloseXS"
                 >
                   
-.CloseXS-rootXs-4 {
+.CloseXS-root-4 {
+  display: flex;
+}
+.CloseXS-root-4 svg {
+  margin: auto;
+}
+.CloseXS-rootXs-5 {
   width: 12px;
   height: 12px;
 }
-.CloseXS-rootS-5 {
+.CloseXS-rootS-6 {
   width: 16px;
   height: 16px;
 }
-.CloseXS-rootM-6 {
+.CloseXS-rootM-7 {
   width: 32px;
   height: 32px;
 }
-.CloseXS-rootL-7 {
+.CloseXS-rootL-8 {
   width: 96px;
   height: 96px;
-}
-.CloseXS-rootXL-8 {
-  width: 128px;
-  height: 128px;
 }
 
                 </style>,
@@ -7185,14 +7187,20 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "rootL": "CloseXS-rootL-7",
-                  "rootM": "CloseXS-rootM-6",
-                  "rootS": "CloseXS-rootS-5",
-                  "rootXL": "CloseXS-rootXL-8",
-                  "rootXs": "CloseXS-rootXs-4",
+                  "root": "CloseXS-root-4",
+                  "rootL": "CloseXS-rootL-8",
+                  "rootM": "CloseXS-rootM-7",
+                  "rootS": "CloseXS-rootS-6",
+                  "rootXs": "CloseXS-rootXs-5",
                 },
                 "index": Array [
                   Object {
+                    "display": "flex",
+                  },
+                  Object {
+                    "margin": "auto",
+                  },
+                  Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -7207,32 +7215,33 @@ body {
                   Object {
                     "height": "96px",
                     "width": "96px",
-                  },
-                  Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                 ],
                 "map": Object {
-                  ".CloseXS-rootL-7": Object {
+                  ".CloseXS-root-4": Object {
+                    "display": "flex",
+                  },
+                  ".CloseXS-root-4 svg": Object {
+                    "margin": "auto",
+                  },
+                  ".CloseXS-rootL-8": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".CloseXS-rootM-6": Object {
+                  ".CloseXS-rootM-7": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".CloseXS-rootS-5": Object {
+                  ".CloseXS-rootS-6": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".CloseXS-rootXL-8": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  ".CloseXS-rootXs-4": Object {
+                  ".CloseXS-rootXs-5": Object {
                     "height": "12px",
                     "width": "12px",
+                  },
+                  "root": Object {
+                    "display": "flex",
                   },
                   "rootL": Object {
                     "height": "96px",
@@ -7246,10 +7255,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
                   "rootXs": Object {
                     "height": "12px",
                     "width": "12px",
@@ -7259,11 +7264,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "CloseXS",
                   "classes": Object {
-                    "rootL": "CloseXS-rootL-7",
-                    "rootM": "CloseXS-rootM-6",
-                    "rootS": "CloseXS-rootS-5",
-                    "rootXL": "CloseXS-rootXL-8",
-                    "rootXs": "CloseXS-rootXs-4",
+                    "root": "CloseXS-root-4",
+                    "rootL": "CloseXS-rootL-8",
+                    "rootM": "CloseXS-rootM-7",
+                    "rootS": "CloseXS-rootS-6",
+                    "rootXs": "CloseXS-rootXs-5",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7746,6 +7751,15 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".CloseXS-root-4 svg": Object {
+                    "margin": "auto",
+                  },
+                  "root": Object {
+                    "& svg": Object {
+                      "margin": "auto",
+                    },
+                    "display": "flex",
+                  },
                   "rootL": Object {
                     "height": "96px",
                     "width": "96px",
@@ -7757,10 +7771,6 @@ body {
                   "rootS": Object {
                     "height": "16px",
                     "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                   "rootXs": Object {
                     "height": "12px",
@@ -8782,11 +8792,11 @@ body {
                 className="InputAdornment-adornmentIconBox-3"
                 classes={
                   Object {
-                    "rootL": "CloseXS-rootL-7",
-                    "rootM": "CloseXS-rootM-6",
-                    "rootS": "CloseXS-rootS-5",
-                    "rootXL": "CloseXS-rootXL-8",
-                    "rootXs": "CloseXS-rootXs-4",
+                    "root": "CloseXS-root-4",
+                    "rootL": "CloseXS-rootL-8",
+                    "rootM": "CloseXS-rootM-7",
+                    "rootS": "CloseXS-rootS-6",
+                    "rootXs": "CloseXS-rootXs-5",
                   }
                 }
                 color={null}
@@ -9725,7 +9735,7 @@ body {
                 width={null}
               >
                 <div
-                  className="InputAdornment-adornmentIconBox-3 CloseXS-rootXs-4"
+                  className="InputAdornment-adornmentIconBox-3 CloseXS-root-4 CloseXS-rootXs-5"
                 >
                   <svg
                     height="12px"
