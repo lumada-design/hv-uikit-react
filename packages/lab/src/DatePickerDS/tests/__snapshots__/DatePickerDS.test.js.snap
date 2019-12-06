@@ -7241,6 +7241,7 @@ body {
             "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1056",
           }
         }
+        disablePortal={true}
         endValue="2019-01-10"
         horizontalPlacement="left"
         labels={
@@ -8239,7 +8240,7 @@ body {
           </div>
           <Popper
             anchorEl={null}
-            disablePortal={false}
+            disablePortal={true}
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -8250,7 +8251,7 @@ body {
             }
             style={
               Object {
-                "zIndex": "0",
+                "zIndex": "1",
               }
             }
             transition={false}
@@ -15502,6 +15503,7 @@ body {
             "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-498",
           }
         }
+        disablePortal={true}
         endValue=""
         horizontalPlacement="left"
         labels={
@@ -16500,7 +16502,7 @@ body {
           </div>
           <Popper
             anchorEl={null}
-            disablePortal={false}
+            disablePortal={true}
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -16511,7 +16513,7 @@ body {
             }
             style={
               Object {
-                "zIndex": "0",
+                "zIndex": "1",
               }
             }
             transition={false}
@@ -26661,6 +26663,7 @@ body {
             "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1556",
           }
         }
+        disablePortal={true}
         endValue=""
         horizontalPlacement="left"
         id="testingDatePicker"
@@ -29564,7 +29567,7 @@ body {
           </div>
           <Popper
             anchorEl={null}
-            disablePortal={false}
+            disablePortal={true}
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -29575,7 +29578,7 @@ body {
             }
             style={
               Object {
-                "zIndex": "0",
+                "zIndex": "1",
               }
             }
             transition={false}
@@ -36823,6 +36826,7 @@ body {
             "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-34",
           }
         }
+        disablePortal={true}
         endValue=""
         horizontalPlacement="left"
         labels={
@@ -37821,7 +37825,7 @@ body {
           </div>
           <Popper
             anchorEl={null}
-            disablePortal={false}
+            disablePortal={true}
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -37832,7 +37836,7 @@ body {
             }
             style={
               Object {
-                "zIndex": "0",
+                "zIndex": "1",
               }
             }
             transition={false}
