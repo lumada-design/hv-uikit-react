@@ -23,11 +23,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-/**
- * NOTE: This package is needed to enable the smooth scrolling on IE11 and Edge.
- */
-import smoothscroll from "smoothscroll-polyfill";
-
 const RETRY_MAX = 5;
 
 class NavigationAnchors extends React.Component {
@@ -127,16 +122,7 @@ class NavigationAnchors extends React.Component {
 
     const ele = document.getElementById(id);
     if (ele) {
-      const { offsetTop } = this.props;
-      const yCoordinate = ele.getBoundingClientRect().top + window.pageYOffset;
-
-      // Activates the polyfill
-      smoothscroll.polyfill();
-
-      window.scrollTo({
-        top: yCoordinate + offsetTop,
-        behavior: "smooth"
-      });
+      ele.scrollIntoView({ behavior: "smooth" });
     }
 
     const { href, onClick, options } = this.props;
@@ -241,11 +227,7 @@ NavigationAnchors.propTypes = {
   /**
    * The Id of the scrollable container containing displayed elements
    */
-  scrollElementId: PropTypes.string,
-  /**
-   * The top offset value.
-   */
-  offsetTop: PropTypes.number
+  scrollElementId: PropTypes.string
 };
 
 NavigationAnchors.defaultProps = {
@@ -253,8 +235,7 @@ NavigationAnchors.defaultProps = {
   onClick: undefined,
   floating: true,
   selectedIndex: 0,
-  scrollElementId: "",
-  offsetTop: 0
+  scrollElementId: ""
 };
 
 export default NavigationAnchors;
