@@ -107,7 +107,27 @@ samples.smoke = (
 </>
 );
 
-// create CoreTextArea for each sample
+samples.toggleOff = (
+  <>
+<Grid container>
+  <Grid item xl={2}>
+    <Switch id="defaultLabels" />
+  </Grid>
+</Grid>
+</>
+);
+
+samples.toggleOn = (
+  <>
+<Grid container>
+  <Grid item xl={2}>
+    <Switch checked={false} disabled={false} labels={labels} id="customLabelsUnc" />
+  </Grid>
+</Grid>
+</>
+);
+
+// create page for each sample
 Object.keys(samples).forEach(key =>
   storiesOf("CoreToggle", module).add(key, () => (
     <Grid container>

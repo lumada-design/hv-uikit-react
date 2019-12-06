@@ -1,15 +1,13 @@
 *** Setting ***
 Resource         ../../_resources/accessibility.robot
 Variables        ../../_resources/storybook_variables.yaml
-Test Template    verify toggle button accessibility as standard
+Test Template    pa11y should not find errors
 Force Tags       pa11y
 
-*** Keywords ***
-verify toggle button accessibility as standard
-    [Arguments]    ${sample}    ${optional}=--root-element "\#root > div.Component-content-4"    ${standard}=${PA11Y_STANDARD}
-    verify element accessibility as standard   ${STORYBOOK_URL}/iframe.html?id=coretogglebutton--${sample}    ${standard}    ${optional}
+*** Variables ***
+${pa11y_script}    pa11y --runner htmlcs --runner axe --standard WCAG2AA --root-element "div[class|='Component-content']" ${STORYBOOK_URL}/iframe.html?id=coretogglebutton--
 
-*** Test Cases ***                                      #sample    #options
-storybook sample sample1 against standard WCAG2AA       sample1
-storybook sample sample2 against standard WCAG2AA       sample2
-storybook sample sample3 against standard WCAG2AA       sample3
+*** Test Cases ***
+storybook sample sample1 against standard WCAG2AA       ${pa11y_script}sample1
+storybook sample sample2 against standard WCAG2AA       ${pa11y_script}sample2
+storybook sample sample3 against standard WCAG2AA       ${pa11y_script}sample3

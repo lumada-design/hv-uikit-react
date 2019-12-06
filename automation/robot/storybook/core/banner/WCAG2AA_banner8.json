@@ -1,0 +1,67 @@
+[
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(6) > div > div:nth-child(2) > div > div:nth-child(1)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(8) > div > div:nth-child(2) > div > div:nth-child(1)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(10) > div > div:nth-child(2) > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(12) > div > div:nth-child(2) > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "button-name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
+        "context": "<div class=\"ActionContainer-closeAction-262\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > div",
+        "runner": "axe",
+        "runnerExtras": {
+            "description": "Ensures buttons have discernible text",
+            "impact": "critical",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
+        }
+    }
+]
