@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import HitachiLogo from "./resources/hitachi";
@@ -7,20 +8,33 @@ import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
 
-const styles = {
-  rootS: {
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      margin: "7px"
+const styles = theme => ({
+  box: {
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
     }
   }
-};
+});
 
-const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(CalendarIcon);
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(LineChartIcon);
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(PlaneIcon);
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(props => 
+  <UserIcon className={getClasses(props)} />
+);
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => 
+  <CalendarIcon className={getClasses(props)} />
+);
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => 
+  <LineChartIcon className={getClasses(props)} />
+);
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => 
+  <PlaneIcon className={getClasses(props)} />
+);
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 

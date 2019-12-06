@@ -29,7 +29,6 @@ const styles = theme => ({
     display: "inherit",
     marginLeft: `${theme.hv.spacing.xs}px`,
     marginTop: "-2px",
-    padding: "7px",
     "&:hover": {
       cursor: "pointer",
       backgroundColor: theme.hv.palette.atmosphere.atmo4

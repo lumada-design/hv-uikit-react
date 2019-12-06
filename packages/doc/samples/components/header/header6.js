@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
@@ -7,18 +8,27 @@ import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
 import HitachiLogo from "./resources/hitachi";
 
-const styles = {
-  rootS: {
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      margin: "7px"
+const styles = theme => ({
+  box: {
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
     }
   }
-};
+});
 
-const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
-const StyledAlertIcon = withStyles(styles, { withTheme: true })(AlertIcon);
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
+  <UserIcon className={getClasses(props)} />
+));
+const StyledAlertIcon = withStyles(styles, { withTheme: true })(props => (
+  <AlertIcon className={getClasses(props)} />
+));
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -62,16 +72,26 @@ const responsivenessConfig = {
 const actionValues = [
   {
     label: "Profile",
-    iconCallback: (state) => <StyledUserIcon {...state}/>,
-    horizontalItemAction: <StyledUserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
-    onVerticalClick: () => alert("Profile"),
+    iconCallback: state => <StyledUserIcon {...state} />,
+    horizontalItemAction: (
+      <StyledUserIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Profile")}
+      />
+    ),
+    onVerticalClick: () => console.log("Profile"),
     path: "route3"
   },
   {
     label: "Notifications",
-    iconCallback: (state) => <StyledAlertIcon {...state}/>,
-    horizontalItemAction:<HvBadge count={88} icon={<StyledAlertIcon onClick={() => alert("Notification")} />} />,
-    onVerticalClick: () => alert("Notifications"),
+    iconCallback: state => <StyledAlertIcon {...state} />,
+    horizontalItemAction: (
+      <HvBadge
+        count={88}
+        icon={<StyledAlertIcon onClick={() => console.log("Notification")} />}
+      />
+    ),
+    onVerticalClick: () => console.log("Notifications"),
     path: "route3"
   }
 ];
@@ -87,13 +107,13 @@ const SimpleHeaderController = ({
 }) => {
   const [selected, setSelected] = useState(0);
 
-  const handleSelection = (index) => {
+  const handleSelection = index => {
     setSelected(index);
-  }
+  };
 
   const handleKeyDown = (index, event) => {
-    if(!isKeypress(event, KeyboardCodes.Enter)) {
-      return
+    if (!isKeypress(event, KeyboardCodes.Enter)) {
+      return;
     }
     handleSelection(index, subIndex);
   };
