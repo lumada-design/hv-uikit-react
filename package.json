@@ -19,7 +19,6 @@
     "clean:lerna": "npx lerna clean --yes ",
     "bootstrap": "npx lerna bootstrap",
     "dev": "npm-run-all dev:*",
-    "dev:build": "npx lerna run build --scope \"@hv/uikit-react-icons\" --stream",
     "dev:storybook": "npx lerna run dev --parallel",
     "build": "npx lerna run build",
     "doc": "npx lerna run doc",
