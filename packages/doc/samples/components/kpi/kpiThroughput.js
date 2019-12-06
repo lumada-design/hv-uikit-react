@@ -44,14 +44,13 @@ const throughputComparisonVisual = () => (
 );
 
 const iconStyles = {
-    width: "30px",
-    height: "30px",
-    paddingTop: "3px"
-}
+  width: "30px",
+  height: "30px"
+};
 
 const StyledFailureIcon = withStyles(iconStyles, {
   withTheme: true
-})(({classes}) => <Success semantic="sema1" boxStyles={iconStyles} style={{display: "block", margin: "auto"}}/>);
+})(() => <Success semantic="sema1" />);
 
 const icon = () => <StyledFailureIcon />;
 

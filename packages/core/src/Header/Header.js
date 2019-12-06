@@ -40,12 +40,9 @@ import User from "./User";
 import Actions from "./Actions";
 
 const styles = {
-  rootS: {
-    width: "30px",
-    height: "35px",
-    "&>svg": {
-      margin: "7px"
-    }
+  root: {
+    width: "32px",
+    height: "32px"
   }
 };
 

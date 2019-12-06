@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
 import RawUserIcon from "@hv/uikit-react-icons/dist/Generic/User";
 import RawCalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
@@ -8,127 +9,100 @@ import RawMachineS from "@hv/uikit-react-icons/dist/Generic/Machine";
 import RawComponents from "@hv/uikit-react-icons/dist/Generic/Components";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = () => ({
+const styles = theme => ({
   box: {
-    padding: "6px",
-    width: "30px",
-    height: "30px"
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
+    }
   }
 });
 
-const UserIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
 
-    return <RawUserIcon className={classes.box} color={color} />;
-  }
-);
+const UserIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawUserIcon className={getClasses(props)} />
+));
 
-const CalendarIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const CalendarIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawCalendarIcon className={getClasses(props)} />
+));
 
-    return <RawCalendarIcon className={classes.box} color={color} />;
-  }
-);
+const LineChartIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawLineChartIcon className={getClasses(props)} />
+));
 
-const LineChartIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const PlaneIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawPlaneIcon className={getClasses(props)} />
+));
 
-    return <RawLineChartIcon className={classes.box} color={color} />;
-  }
-);
+const MachineS = withStyles(styles, { withTheme: true })(props => (
+  <RawMachineS className={getClasses(props)} />
+));
 
-const PlaneIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawPlaneIcon className={classes.box} color={color} />;
-  }
-);
-
-const MachineS = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawMachineS className={classes.box} color={color} />;
-  }
-);
-
-const Components = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawComponents className={classes.box} color={color} />;
-  }
-);
+const Components = withStyles(styles, { withTheme: true })(props => (
+  <RawComponents className={getClasses(props)} />
+));
 
 const data = {
   data: [
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }

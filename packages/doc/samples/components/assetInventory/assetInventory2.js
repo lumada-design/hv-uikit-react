@@ -23,44 +23,38 @@ import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
 import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
 
+const boxStyles = { width: "30px", height: "30px" };
 const styles = () => ({
   box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      display: "block",
-      margin: "0 auto",
-    }
+    ...boxStyles
   }
 });
 
-const AddIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const AddIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawAddIcon className={classes.box} color={color} />)
+    return <RawAddIcon className={classes.box} color={color} />;
   }
 );
 
-const PreviewIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const PreviewIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawPreviewIcon className={classes.box} color={color} />)
+    return <RawPreviewIcon className={classes.box} color={color} />;
   }
 );
 
-
-const UploadIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const UploadIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawUploadIcon className={classes.box} color={color} />)
+    return <RawUploadIcon className={classes.box} color={color} />;
   }
 );
 
-const DeleteIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const DeleteIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawDeleteIcon className={classes.box} color={color} />)
+    return <RawDeleteIcon className={classes.box} color={color} />;
   }
 );
 
@@ -139,88 +133,23 @@ const cardRenderer = (value, viewConfiguration, metadata) => {
   switch (value.status) {
     default:
     case 1:
-      status.Icon = (
-        <Level1
-          semantic="sema10"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level1 semantic="sema10" boxStyles={boxStyles} />;
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = (
-        <Level2
-          semantic="sema11"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level2 semantic="sema11" boxStyles={boxStyles} />;
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = (
-        <Level3
-          semantic="sema12"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level3 semantic="sema12" boxStyles={boxStyles} />;
       status.sema = "sema12";
       break;
     case 4:
-      status.Icon = (
-        <Level4
-          semantic="sema13"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level4 semantic="sema13" boxStyles={boxStyles} />;
       status.sema = "sema13";
       break;
     case 5:
-      status.Icon = (
-        <Level5
-          semantic="sema14"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level5 semantic="sema14" boxStyles={boxStyles} />;
       status.sema = "sema14";
       break;
   }
@@ -405,10 +334,30 @@ const values = () => {
 //----------------------- Configuration ------------------------------
 
 const myActions = [
-  { id: "post", label: "Add", iconCallback: () => <AddIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <PreviewIcon disabled />, disabled: true },
-  { id: "put", label: "Upload", iconCallback: () => <UploadIcon disabled />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: () => <DeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Add",
+    iconCallback: () => <AddIcon />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <PreviewIcon disabled />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Upload",
+    iconCallback: () => <UploadIcon disabled />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <DeleteIcon />,
+    disabled: false
+  }
 ];
 
 const configuration = {
