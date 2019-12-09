@@ -967,7 +967,9 @@ exports[`Asset Inventory  should render correctly 1`] = `
         ]
       }
     >
-      <div />
+      <div
+        id="id0"
+      />
     </WithStyles(AssetInventory)>
   </ContextProvider>
 </MuiThemeProviderOld>

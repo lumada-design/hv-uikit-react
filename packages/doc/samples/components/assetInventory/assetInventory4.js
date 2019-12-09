@@ -22,17 +22,13 @@ import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
 import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
 import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
+// https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/samples/components/assetInventory/ServerSideTester.js
 import { getPages, fetchData, doSearch, doSort } from "./ServerSideTester";
 
+const boxStyles = { width: "30px", height: "30px" };
 const styles = () => ({
   box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      display: "block",
-      margin: "0 auto"
-    }
+    ...boxStyles
   }
 });
 
@@ -144,88 +140,23 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
   switch (data.status) {
     default:
     case 1:
-      status.Icon = (
-        <Level1
-          semantic="sema10"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level1 semantic="sema10" boxStyles={boxStyles} />;
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = (
-        <Level2
-          semantic="sema11"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level2 semantic="sema11" boxStyles={boxStyles} />;
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = (
-        <Level3
-          semantic="sema12"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level3 semantic="sema12" boxStyles={boxStyles} />;
       status.sema = "sema12";
       break;
     case 4:
-      status.Icon = (
-        <Level4
-          semantic="sema13"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level4 semantic="sema13" boxStyles={boxStyles} />;
       status.sema = "sema13";
       break;
     case 5:
-      status.Icon = (
-        <Level5
-          semantic="sema14"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
+      status.Icon = <Level5 semantic="sema14" boxStyles={boxStyles} />;
       status.sema = "sema14";
       break;
   }
@@ -392,7 +323,8 @@ class ServerSideAssetInventory extends React.Component {
     this.state = {
       page: 0,
       pageSize: 4,
-      values: fetchData(4, 0)
+      values: fetchData(4, 0),
+      searchString: "just an example"
     };
   }
 
@@ -419,12 +351,13 @@ class ServerSideAssetInventory extends React.Component {
   onSearch = search => {
     this.setState(prevState => ({
       page: 0,
-      values: doSearch(search, prevState.pageSize)
+      values: doSearch(search, prevState.pageSize),
+      searchString: search
     }));
   };
 
   render() {
-    const { pageSize, page, values } = this.state;
+    const { pageSize, page, values, searchString } = this.state;
 
     return (
       <AssetInventory
@@ -450,7 +383,9 @@ class ServerSideAssetInventory extends React.Component {
         // Search
         onSearch={this.onSearch}
         // Sort
-        onSort={this.onSort}
+        onSortChange={this.onSort}
+        sortOptionId={"id1Asc"}
+        searchString={searchString}
       >
         <CardView
           id="card"
