@@ -19,16 +19,20 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import Settings from "@hv/uikit-react-icons/dist/Settings.S";
+import Settings from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import MenuS from "@hv/uikit-react-icons/dist/Menu.S";
+import MenuS from "@hv/uikit-react-icons/dist/Generic/Menu";
 import MainWithStyles from "../index";
 
 describe("Header withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<HvProvider><MainWithStyles /></HvProvider>);
+    wrapper = shallow(
+      <HvProvider>
+        <MainWithStyles />
+      </HvProvider>
+    );
   });
 
   it("should be defined", () => {
@@ -51,7 +55,7 @@ describe("Header withStyles", () => {
           // User
           userIcon="Text"
           // Actions
-          itemActions={[{action: <Settings />, label: "Settings"}]}
+          itemActions={[{ action: <Settings />, label: "Settings" }]}
         />
       </HvProvider>
     );
@@ -78,7 +82,7 @@ describe("Header withStyles", () => {
           // User
           userIcon="Text"
           // Actions
-          itemActions={[{action: <Settings />, label: "Settings"}]}
+          itemActions={[{ action: <Settings />, label: "Settings" }]}
         />
       </HvProvider>
     );

@@ -142,7 +142,6 @@ const MultipleActionsWithMediaButtonsWithStyle = withStyles(ActionStyles, {
 })(MultipleActionsWithMediaButtons);
 
 const iconStyles = {
-  paddingTop: "3px",
   width: "30px",
   height: "30px"
 };

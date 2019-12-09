@@ -5075,7 +5075,6 @@ body {
 }
 .Actions-iconContainer-6 {
   display: inherit;
-  padding: 7px;
   margin-top: -2px;
   margin-left: 10px;
 }
@@ -5115,7 +5114,6 @@ body {
                     "display": "inherit",
                     "margin-left": "10px",
                     "margin-top": "-2px",
-                    "padding": "7px",
                   },
                   Object {
                     "background-color": "#F0F0F0",
@@ -5134,7 +5132,6 @@ body {
                     "display": "inherit",
                     "margin-left": "10px",
                     "margin-top": "-2px",
-                    "padding": "7px",
                   },
                   ".Actions-iconContainer-6:hover": Object {
                     "background-color": "#F0F0F0",
@@ -5154,7 +5151,6 @@ body {
                     "display": "inherit",
                     "margin-left": "10px",
                     "margin-top": "-2px",
-                    "padding": "7px",
                   },
                   "marginLeft": Object {
                     "margin-left": "60px",
@@ -5668,7 +5664,6 @@ body {
                     "display": "inherit",
                     "marginLeft": "10px",
                     "marginTop": "-2px",
-                    "padding": "7px",
                   },
                   "marginLeft": Object {
                     "marginLeft": "60px",

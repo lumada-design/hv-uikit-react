@@ -61,8 +61,12 @@ const styles = theme => ({
     display: "flex",
     height: icon.height
   },
-  icon: {
-    ...icon
+  iconSelected: {
+    ...icon,
+    background: theme.hv.palette.accent.acce1,
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo2
+    }
   },
   iconChangeView: {
     ...icon,

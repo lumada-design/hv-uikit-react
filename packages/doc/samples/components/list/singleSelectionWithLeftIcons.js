@@ -1,71 +1,68 @@
 import React from "react";
+import classNames from "classnames";
 import List from "@hv/uikit-react-core/dist/List";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
+import MachineIcon from "@hv/uikit-react-icons/dist/Generic/Machine";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = (theme) => ({
+const styles = theme => ({
   box: {
-    padding: "6px",
-    width: "30px",
-    height: "30px"
+    width: "32px",
+    height: "32px"
   },
   wrapper: {
     width: 240,
     padding: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
+    }
   }
 });
 
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, disabled }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <PlaneIcon className={classes.box} color={color} />;
-  }
-);
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
 
-const StyledUserIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
+  <PlaneIcon className={getClasses(props)} />
+));
 
-    return <UserIcon className={classes.box} color={color} />;
-  }
-);
+const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
+  <UserIcon className={getClasses(props)} />
+));
 
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
+  <CalendarIcon className={getClasses(props)} />
+));
 
-    return <CalendarIcon className={classes.box} color={color} />;
-  }
-);
+const StyledMachineIcon = withStyles(styles, { withTheme: true })(props => (
+  <MachineIcon className={getClasses(props)} />
+));
 
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <LineChartIcon className={classes.box} color={color} />;
-  }
-);
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
+  <LineChartIcon className={getClasses(props)} />
+));
 
 const data = [
   {
     label: "Advanced server DS120",
     selected: false,
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <StyledUserIcon /> : <StyledUserIcon selected />
+    iconCallback: state => <StyledUserIcon {...state} />
   },
   {
     label: "Advanced server DS122",
     selected: false,
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <StyledCalendarIcon /> : <StyledCalendarIcon selected />
+    iconCallback: state => <StyledCalendarIcon {...state} />
   },
   {
     label: "Advanced server DS250",
-    selected: true
+    selected: true,
+    iconCallback: state => <StyledMachineIcon {...state} />
   },
   {
     label: "Advanced server DS530",
@@ -76,8 +73,7 @@ const data = [
   {
     label: "Advanced server DS555",
     selected: false,
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <StyledLineChartIcon /> : <StyledLineChartIcon selected />
+    iconCallback: state => <StyledLineChartIcon {...state} />
   }
 ];
 

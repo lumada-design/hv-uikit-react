@@ -19,7 +19,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import Help16 from "@hv/uikit-react-icons/dist/Help.S";
+import Help16 from "@hv/uikit-react-icons/dist/Generic/Help";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import UserWithStyles from "../index";
 import User from "../User";
@@ -46,7 +46,10 @@ describe("User withStyles", () => {
   it("should render User component", () => {
     wrapper = mount(
       <HvProvider>
-        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles
+          labels={{}}
+          userData={{ name: "UserName", role: "UserRole" }}
+        />
       </HvProvider>
     );
     const userComponent = wrapper.find(User);
@@ -56,7 +59,10 @@ describe("User withStyles", () => {
   it("should render User component with Props", () => {
     wrapper = shallow(
       <HvProvider>
-        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles
+          labels={{}}
+          userData={{ name: "UserName", role: "UserRole" }}
+        />
       </HvProvider>
     );
 
@@ -66,7 +72,10 @@ describe("User withStyles", () => {
   it("should render text properly", () => {
     const typographies = mount(
       <HvProvider>
-        <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
+        <UserWithStyles
+          labels={{}}
+          userData={{ name: "UserName", role: "UserRole" }}
+        />
       </HvProvider>
     ).find("Typography");
 

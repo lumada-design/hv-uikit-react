@@ -23,12 +23,16 @@ const styles = theme => ({
   icon: {
     userSelect: "none",
     width: "30px",
+    height: "30px",
     "&:hover": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
       cursor: "pointer"
     }
   },
   disabled: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo6
+    },
     "&:hover": {
       backgroundColor: "transparent",
       cursor: "not-allowed"

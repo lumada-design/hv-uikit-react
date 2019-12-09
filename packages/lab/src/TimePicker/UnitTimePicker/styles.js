@@ -17,7 +17,7 @@
 const icon = {
   width: "32px",
   height: "32px",
-  textAlign: "center"
+  cursor: "pointer"
 };
 
 const styles = theme => ({
@@ -35,19 +35,17 @@ const styles = theme => ({
     width: "40px",
     padding: 0,
     margin: 0,
-    '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
-      '-webkit-appearance': 'none',
-      '-moz-appearance': 'none',
-      'margin': 0
+    "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
+      "-webkit-appearance": "none",
+      "-moz-appearance": "none",
+      margin: 0
     },
-    '&[type=number]': {
-      '-webkit-appearance': 'textfield',
-      '-moz-appearance': 'textfield'
+    "&[type=number]": {
+      "-webkit-appearance": "textfield",
+      "-moz-appearance": "textfield"
     }
   },
-  unitTimeInputRoot: {
-
-  },
+  unitTimeInputRoot: {},
   unitTimeInputRootInvalid: {
     border: "1px red solid"
   },

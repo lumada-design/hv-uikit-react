@@ -17,6 +17,7 @@ const content = require("./lang/en");
 const createComponentName = require("./fileSystemUtils/createComponentName");
 const formatSVG = require("./converterUtils/formatSVG");
 const generateComponent = require("./converterUtils/generateComponent");
+const generateOldComponent = require("./converterUtils/generateOldComponent");
 const printErrors = require("./logUtils/output").printErrors;
 const removeStyle = require("./converterUtils/removeStyle");
 const colorExtractor = require("./colorUtils/colorExtractor");
@@ -25,21 +26,9 @@ const sizeExtractor = require("./sizeUtils/sizeExtractor");
 const sizeReplacer = require("./sizeUtils/sizeReplacer");
 
 const writeFile = (processedSVG, fileName, themeName) => {
-  let componentOutputFolder;
-
-  if (outputPath) {
-    if(themeName) {
-      componentOutputFolder = path.resolve(process.cwd(), outputPath, themeName);
-    } else {
-      componentOutputFolder = path.resolve(process.cwd(), outputPath);
-    }
-  } else {
-    if(themeName) {
-      componentOutputFolder = path.resolve(process.cwd(), themeName);
-    } else {
-      componentOutputFolder = path.resolve(process.cwd());
-    }
-  }
+  const componentOutputFolder = outputPath
+    ? path.resolve(process.cwd(), outputPath, themeName || "")
+    : path.resolve(process.cwd(), themeName || "");
 
   fs.mkdirSync(componentOutputFolder, { recursive: true });
 
@@ -57,7 +46,11 @@ const writeFile = (processedSVG, fileName, themeName) => {
     }
   });
 
-  fs.appendFile(path.resolve(componentOutputFolder, `index.js`), `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`, () => {});
+  fs.appendFile(
+    path.resolve(componentOutputFolder, `index.js`),
+    `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`,
+    () => {}
+  );
 };
 
 const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, specialCaseXS = false) => {
@@ -85,9 +78,7 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
       let defaultWidth = "50px";
       let defaultHeight = "50px";
       if (body.firstChild.hasAttribute("viewBox")) {
-        const [minX, minY, width, height] = body.firstChild
-          .getAttribute("viewBox")
-          .split(/[,\s]+/);
+        const [minX, minY, width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
         defaultWidth = width;
         defaultHeight = height;
       }
@@ -127,18 +118,17 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
         output = formatSVG(output);
       }
 
-      const processedFileToWrite = fileToWrite;
+      const processedFileToWrite = fileToWrite.split(".").join("");
 
       // Wrap it up in a React component
-      output = generateComponent(
-        output,
-        processedFileToWrite.split(".").join(""),
-        colorObject.colorText,
-        sizeObject,
-        useGeneric,
-        specialCaseXS
-      );
+      const params = {
+        svgOutput: output,
+        componentName: processedFileToWrite,
+        colorArrayDefaultValues: colorObject.colorText,
+        defaultSizes: sizeObject
+      };
 
+      output = useGeneric ? generateComponent(params) : generateOldComponent(params);
       writeFile(output, fileToWrite, themeName);
     });
   });
@@ -151,26 +141,22 @@ const runUtilForAllInDir = () => {
     } // GEt out early if not found
     files.forEach((file, i) => {
       let useGeneric = false;
-      let specialCaseXS = false;
       let themeName = path.relative(`${process.cwd()}/${inputPath}`, file).split(path.sep)[0];
-      if(!(themeName.endsWith("Theme") || themeName.endsWith("Generic"))) {
+      if (!(themeName.endsWith("Theme") || themeName.endsWith("Generic"))) {
         themeName = null;
-      }  
+      }
 
       const extention = path.extname(file); // extract extensions
       const fileName = path.basename(file); // extract file name extensions
 
-      if(themeName === "Generic") {
+      if (themeName === "Generic") {
         useGeneric = true;
-        if(fileName.includes("XS")) {
-          specialCaseXS = true
-        }
       }
 
       if (extention === ".svg") {
         // variable instantiated up top
         const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName, themeName, useGeneric, specialCaseXS);
+        runUtil(file, componentName, themeName, useGeneric);
       }
     });
   });

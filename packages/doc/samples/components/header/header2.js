@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
@@ -10,22 +11,39 @@ import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
 import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
 
-const styles = {
-  rootS: {
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      margin: "7px"
+const styles = theme => ({
+  box: {
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
     }
   }
-};
+});
 
-const StyledUserIcon = withStyles(styles, { withTheme: true })(UserIcon);
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(CalendarIcon);
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(LineChartIcon);
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(PlaneIcon);
-const StyledHelpIcon = withStyles(styles, { withTheme: true })(HelpIcon);
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
+
+const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
+  <UserIcon className={getClasses(props)} />
+));
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(props => (
+  <SettingIcon className={getClasses(props)} />
+));
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
+  <CalendarIcon className={getClasses(props)} />
+));
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
+  <LineChartIcon className={getClasses(props)} />
+));
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
+  <PlaneIcon className={getClasses(props)} />
+));
+const StyledHelpIcon = withStyles(styles, { withTheme: true })(props => (
+  <HelpIcon className={getClasses(props)} />
+));
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -40,32 +58,32 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      iconCallback: (state) => <StyledUserIcon {...state}/>,
+      iconCallback: state => <StyledUserIcon {...state} />,
       path: "/"
     },
     {
       label: "Events",
-      iconCallback: (state) => <StyledCalendarIcon {...state}/>,
+      iconCallback: state => <StyledCalendarIcon {...state} />,
       path: "/events"
     },
     {
       label: "Work orders",
       path: "/work",
-      iconCallback: (state) => <StyledCalendarIcon {...state}/>
+      iconCallback: state => <StyledCalendarIcon {...state} />
     },
     {
       label: "Asset",
-      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
+      iconCallback: state => <StyledPlaneIcon {...state} />,
       path: "/asset"
     },
     {
       label: "Analytics",
-      iconCallback: (state) => <StyledLineChartIcon {...state}/>,
-      path: "/Analytics",
+      iconCallback: state => <StyledLineChartIcon {...state} />,
+      path: "/Analytics"
     },
     {
       label: "Resources",
-      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
+      iconCallback: state => <StyledPlaneIcon {...state} />,
       path: "/Resources"
     }
   ]
@@ -74,23 +92,38 @@ const navigationData = {
 const actionValues = [
   {
     label: "Profile",
-    iconCallback: (state) => <StyledUserIcon {...state}/>,
-    horizontalItemAction:<UserIcon style={{cursor: "pointer"}} onClick={() => alert("Profile")} />,
-    onVerticalClick: () => alert("Profile"),
+    iconCallback: state => <StyledUserIcon {...state} />,
+    horizontalItemAction: (
+      <StyledUserIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Profile")}
+      />
+    ),
+    onVerticalClick: () => console.log("Profile"),
     path: "route3"
   },
   {
     label: "Settings",
-    iconCallback: (state) => <StyledSettingIcon {...state}/>,
-    horizontalItemAction:<StyledSettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
-    onVerticalClick: () => alert("Settings"),
+    iconCallback: state => <StyledSettingIcon {...state} />,
+    horizontalItemAction: (
+      <StyledSettingIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Settings")}
+      />
+    ),
+    onVerticalClick: () => console.log("Settings"),
     path: "route3"
   },
   {
     label: "Help",
-    iconCallback: (state) => <StyledHelpIcon {...state}/>,
-    horizontalItemAction:<StyledHelpIcon style={{cursor: "pointer"}} onClick={() => alert("Help")}/>,
-    onVerticalClick: () => alert("Help"),
+    iconCallback: state => <StyledHelpIcon {...state} />,
+    horizontalItemAction: (
+      <StyledHelpIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Help")}
+      />
+    ),
+    onVerticalClick: () => console.log("Help"),
     path: "route3"
   }
 ];
@@ -111,11 +144,11 @@ const SimpleHeaderController = ({
 }) => {
   const handleSelection = (index, subIndex) => {
     setSelected([index, subIndex]);
-  }
+  };
 
   const handleKeyDown = (index, subIndex, event) => {
-    if(!isKeypress(event, KeyboardCodes.Enter)) {
-      return
+    if (!isKeypress(event, KeyboardCodes.Enter)) {
+      return;
     }
     handleSelection(index, subIndex);
   };
