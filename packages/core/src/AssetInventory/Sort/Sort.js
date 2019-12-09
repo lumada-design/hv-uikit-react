@@ -25,24 +25,28 @@ import DropDown from "../../Dropdown";
  * @param metadata
  * @returns {[]}
  */
-const sortOperationSetup = metadata => {
+const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
 
   metadata.forEach(element => {
     if (element.sortable) {
       sortableCriteria.push({
+        id: `${element.id}Asc`,
         cellType: element.cellType,
         label: element.sortableLabelAsc,
         accessor: element.accessor,
         type: "asc",
-        sortFunction: element.sortFunction
+        sortFunction: element.sortFunction,
+        selected: `${element.id}Asc` === selectedSort
       });
       sortableCriteria.push({
+        id: `${element.id}Desc`,
         cellType: element.cellType,
         label: element.sortableLabelDesc,
         accessor: element.accessor,
         type: "desc",
-        sortFunction: element.sortFunction
+        sortFunction: element.sortFunction,
+        selected: `${element.id}Desc` === selectedSort
       });
     }
   });
@@ -104,17 +108,24 @@ const sortValues = ({
  * @returns {*}
  * @constructor
  */
-const Sort = ({ id, labels, onSelection, metadata, onSort }) => {
+const Sort = ({
+  id,
+  labels,
+  selected,
+  onSelection,
+  metadata,
+  onSortChange
+}) => {
   const innerSortValues = data => {
-    onSelection(sortValues(data));
+    onSelection(sortValues(data), data.id);
   };
 
   return (
     <DropDown
       id={`sort_${id}`}
       labels={labels}
-      values={sortOperationSetup(metadata)}
-      onChange={onSort || innerSortValues}
+      values={sortOperationSetup(metadata, selected)}
+      onChange={onSortChange || innerSortValues}
       selectDefault={false}
       singleSelectionToggle={false}
     />
@@ -131,9 +142,9 @@ Sort.propTypes = {
    */
   onSelection: PropTypes.func.isRequired,
   /**
-   * onSort callback.
+   * onSortChange callback.
    */
-  onSort: PropTypes.func,
+  onSortChange: PropTypes.func,
   /**
    * Labels.
    */
@@ -154,12 +165,16 @@ Sort.propTypes = {
       searchable: PropTypes.bool,
       searchFunction: PropTypes.func
     })
-  ).isRequired
+  ).isRequired,
+  /**
+   * Selected id
+   */
+  selected: PropTypes.string.isRequired
 };
 
 Sort.defaultProps = {
   id: undefined,
-  onSort: null
+  onSortChange: null
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

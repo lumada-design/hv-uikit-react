@@ -161,6 +161,7 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
 
   return (
     <HvCard
+      id={"Card_" + data.id}
       icon={status.Icon}
       headerTitle={data.headerTitle}
       innerCardContent={<ContentWithStyles values={data} icon={status.Icon} />}
@@ -388,6 +389,7 @@ const configuration = {
 
 export default (
   <AssetInventory
+    id="hv-assetinventory"
     values={values()}
     configuration={configuration}
     onSelection={event => alert(event.target.value)}
@@ -399,9 +401,11 @@ export default (
     }
     hasPagination
     pageSizeOptions={[2, 4, 6, 8, 10]}
+    pageSize={4}
+    selectedView={"listView"}
   >
     <CardView
-      id="card"
+      id="cardView"
       icon={<Cards />}
       renderer={cardRenderer}
       viewConfiguration={{
@@ -415,7 +419,7 @@ export default (
       }}
     />
     <ListView
-      id="list"
+      id="listView"
       icon={<List />}
       renderer={rowRenderer}
       viewConfiguration={{

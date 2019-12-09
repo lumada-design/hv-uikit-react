@@ -48,7 +48,7 @@ describe("Asset Inventory ", () => {
     wrapper = shallow(
       <HvProvider>
         <AssetInventory values={values} configuration={[]}>
-          <div />
+          <div id="id0" />
         </AssetInventory>
       </HvProvider>
     );

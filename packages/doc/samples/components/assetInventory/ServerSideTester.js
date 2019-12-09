@@ -50,7 +50,7 @@ const getHeaderNumber = str => parseInt(str.substr(0, str.indexOf(" ")));
  * @returns {number}
  */
 const sortAsc = (a, b) =>
-  getHeaderNumber(a.headerTitle) > getHeaderNumber(b.headerTitle) ? 1 : -1;
+  getHeaderNumber(a.headerTitle) - getHeaderNumber(b.headerTitle);
 
 /**
  * Sort descending.
@@ -60,7 +60,7 @@ const sortAsc = (a, b) =>
  * @returns {number}
  */
 const sortDesc = (a, b) =>
-  getHeaderNumber(a.headerTitle) > getHeaderNumber(b.headerTitle) ? -1 : 1;
+  getHeaderNumber(b.headerTitle) - getHeaderNumber(a.headerTitle);
 
 /**
  * Values generator.
@@ -142,5 +142,7 @@ const doSort = (type, size, page) => {
  * @returns {number}
  */
 const getPages = size => Math.ceil(values.filter(searchFilter).length / size);
+
+
 
 export { fetchData, getPages, doSearch, doSort };
