@@ -27,6 +27,7 @@ import Dropdown7 from "../../../../packages/doc/samples/components/dropdown/drop
 import Dropdown8 from "../../../../packages/doc/samples/components/dropdown/dropdown8";
 import Dropdown9 from "../../../../packages/doc/samples/components/dropdown/dropdown9";
 import Dropdown10 from "../../../../packages/doc/samples/components/dropdown/dropdown10";
+import Dropdown11 from "../../../../packages/doc/samples/components/dropdown/dropdown11";
 // sample scenarios
 const samples = {};
 
@@ -40,6 +41,7 @@ samples.Dropdown7 = Dropdown7;
 samples.Dropdown8 = Dropdown8;
 samples.Dropdown9 = Dropdown9;
 samples.Dropdown10 = Dropdown10;
+samples.Dropdown11 = Dropdown11;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
