@@ -591,7 +591,13 @@ class HvDatePickerDS extends React.Component {
    * @memberof HvDatePickerDS
    */
   renderPopper = () => {
-    const { classes, theme, rangeMode, horizontalPlacement } = this.props;
+    const {
+      classes,
+      theme,
+      rangeMode,
+      horizontalPlacement,
+      disablePortal
+    } = this.props;
     const { calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
 
     return (
@@ -602,13 +608,13 @@ class HvDatePickerDS extends React.Component {
           horizontalPlacement === "left" ? "bottom-start" : "bottom-end"
         }
         anchorEl={calendarAnchorElement}
-        disablePortal={false}
+        disablePortal={disablePortal}
         popperOptions={{
           onCreate: data => this.updateCalendarPlacement(data),
           onUpdate: data => this.updateCalendarPlacement(data)
         }}
         style={{
-          zIndex: `${calendarFlipped ? theme.zIndex.tooltip : 0}`
+          zIndex: `${calendarFlipped ? theme.zIndex.tooltip : 1}`
         }}
       >
         <ClickAwayListener onClickAway={this.handleCalendarClickAway}>
@@ -695,7 +701,11 @@ HvDatePickerDS.propTypes = {
   /*
    * The theme object provided by the withStyles component.
    */
-  theme: PropTypes.instanceOf(Object).isRequired
+  theme: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: PropTypes.bool
 };
 
 HvDatePickerDS.defaultProps = {
@@ -713,7 +723,8 @@ HvDatePickerDS.defaultProps = {
   endValue: "",
   locale: DEFAULT_LOCALE,
   showActions: false,
-  onChange: undefined
+  onChange: undefined,
+  disablePortal: true
 };
 
 export default HvDatePickerDS;
