@@ -1,0 +1,37 @@
+[
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button class=\"MuiButtonBase-root-46 MuiButton-root-20 HvButton-root-9 MuiButton-outlined-28 MuiButton-outlinedPrimary-29 HvButton-secondary-12 MultiButton-btnBase-152 MultiButton-btnSecondary-154 MultiButton-iconWidth-150 MultiButton-isSelected-155\"...",
+        "selector": "#map",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button class=\"MuiButtonBase-root-46 MuiButton-root-20 HvButton-root-9 MuiButton-text-22 MuiButton-textPrimary-23 HvButton-ghost-14 MuiButton-flat-25 MuiButton-flatPrimary-26 MultiButton-btnBase-152 MultiButton-btnSecondary-154 MultiButton-iconWidth-...",
+        "selector": "#location",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "button-name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
+        "context": "<button class=\"MuiButtonBase-root-46 MuiButton-root-20 HvButton-root-9 MuiButton-outlined-28 MuiButton-outlinedPrimary-29 HvButton-secondary-12 MultiButton-btnBase-152 MultiButton-btnSecondary-154 MultiButton-iconWidth-150 MultiButton-isSelected-155\"...",
+        "selector": "#map",
+        "runner": "axe",
+        "runnerExtras": {
+            "description": "Ensures buttons have discernible text",
+            "impact": "critical",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
+        }
+    }
+]

@@ -24,6 +24,7 @@ import Banner4 from "../../../../packages/doc/samples/components/banner/banner4"
 import Banner5 from "../../../../packages/doc/samples/components/banner/banner5";
 import Banner6 from "../../../../packages/doc/samples/components/banner/banner6";
 import Banner7 from "../../../../packages/doc/samples/components/banner/banner7";
+import Banner8 from "../../../../packages/doc/samples/components/banner/banner8";
 
 // sample scenarios
 const samples = {};
@@ -34,6 +35,7 @@ samples.Banner4 = Banner4;
 samples.Banner5 = Banner5;
 samples.Banner6 = Banner6;
 samples.Banner7 = Banner7;
+samples.Banner8 = Banner8;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

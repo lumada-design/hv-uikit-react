@@ -1,0 +1,27 @@
+[
+    {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<div role=\"button\" tabindex=\"0\" class=\"DropDownMenu-icon-187\"><div class=\"MoreOptionsHorizont...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(2) > div:nth-child(1) > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+    },
+    {
+        "code": "button-name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
+        "context": "<div role=\"button\" tabindex=\"0\" class=\"DropDownMenu-icon-187\"><div class=\"MoreOptionsHorizont...</div>",
+        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(2) > div:nth-child(1) > div",
+        "runner": "axe",
+        "runnerExtras": {
+            "description": "Ensures buttons have discernible text",
+            "impact": "critical",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
+        }
+    }
+]
