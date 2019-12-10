@@ -17,6 +17,8 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
+import take from "lodash/take";
+import takeRight from "lodash/takeRight";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -30,47 +32,62 @@ const DropDown = withStyles(stylesDropdownMenu, { withTheme: true })(
   DropDownMenu
 );
 
-const renderActions = (
+const FooterActions = ({
   actions,
   id,
   actionsCallback,
   classes,
   maxVisibleActions,
   actionItemWidth
-) => {
+}) => {
   if (!Array.isArray(actions)) {
     return React.isValidElement(actions) ? actions : null;
   }
 
-  const renderButton = action => (
+  const renderButton = (action, key = "") => (
     <HvButton
+      key={key}
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
       category="ghost"
     >
-      {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
+      {(action.icon && action.icon()) ||
+        (action.iconCallback && action.iconCallback())}
       {action.label}
     </HvButton>
   );
 
-  const renderActionsGrid = (acts, idx, actWidth) => (
-    <div
-      className={classes.actionContainer}
-      style={actWidth !== undefined ? { width: `${actWidth}px` } : undefined}
-    >
-      {renderButton(acts[0])}
-      <DropDown
-        icon={<MoreVert className={classes.box} />}
-        placement="left"
-        onClick={action => actionsCallback(id, action)}
-        dataList={acts.slice(1).map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
-      />
-    </div>
-  );
+  const renderActionsGrid = (acts, actWidth) => {
+    const actsSlicePart1 = take(acts, maxVisibleActions);
+    const actsSlicePart2 = takeRight(acts, acts.length - maxVisibleActions);
+
+    return (
+      <div
+        className={classes.actionContainer}
+        style={actWidth !== undefined ? { width: `${actWidth}px` } : undefined}
+      >
+        {actsSlicePart1.map((action, idx) =>
+          renderButton(action, `${id}-${idx}-action-${action.id}`)
+        )}
+        <DropDown
+          icon={<MoreVert className={classes.box} />}
+          placement="left"
+          onClick={action => actionsCallback(id, action)}
+          dataList={actsSlicePart2.map(action => ({
+            ...action,
+            iconCallback: action.iconCallback,
+            icon: action.icon
+          }))}
+        />
+      </div>
+    );
+  };
 
   return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions, id, actionItemWidth)
-    : actions.map(a => renderButton(a));
+    ? renderActionsGrid(actions, actionItemWidth)
+    : actions.map((action, idx) =>
+        renderButton(action, `${id}-${idx}-action-${action.id}`)
+      );
 };
 
 /**
@@ -127,14 +144,14 @@ const Footer = ({
         ]
       }
     >
-      {renderActions(
-        actions,
-        checkboxValue || id,
-        actionsCallback,
-        classes,
-        maxVisibleActions,
-        actionItemWidth
-      )}
+      <FooterActions
+        id={checkboxValue || id}
+        classes={classes}
+        actions={actions}
+        maxVisibleActions={maxVisibleActions}
+        actionItemWidth={actionItemWidth}
+        actionsCallback={actionsCallback}
+      />
     </div>
   </CardActions>
 );
