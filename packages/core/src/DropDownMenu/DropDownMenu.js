@@ -40,7 +40,8 @@ const DropDownMenu = ({
   dataList,
   id,
   disablePortal,
-  onClick
+  onClick,
+  keepOpened
 }) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -103,7 +104,12 @@ const DropDownMenu = ({
             <List
               values={dataList}
               selectable={false}
-              onClick={onClick}
+              onClick={item => {
+                if (!keepOpened) {
+                  setOpen(false);
+                }
+                onClick(item);
+              }}
               condensed
             />
           </div>
@@ -172,14 +178,19 @@ DropDownMenu.propTypes = {
   /**
    * Function executed in each onClick. Should received the clicked element.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Keep the Dropdown Menu opened after clicking one option
+   */
+  keepOpened: PropTypes.bool
 };
 
 DropDownMenu.defaultProps = {
   id: undefined,
   placement: "left",
   disablePortal: true,
-  onClick: null
+  onClick: null,
+  keepOpened: true
 };
 
 export default DropDownMenu;
