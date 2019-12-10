@@ -204,7 +204,7 @@ class Table extends React.Component {
 
     return {
       id: `${internalId}-pagination`,
-      showPagination,
+      showPagination: data.length > 0 && showPagination,
       ...(showPagination && { PaginationComponent: Pagination }),
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
