@@ -111,8 +111,8 @@ describe("InputAdornment", () => {
       </HvProvider>
     );
 
-    wrapper.simulate("keydown", {keyCode: 13});
-    wrapper.simulate("mousedown");
+    wrapper.find(StyledInputAdornment).simulate("keydown", {keyCode: 13});
+    wrapper.find(StyledInputAdornment).simulate("mousedown");
 
     expect(handleClearMock).not.toHaveBeenCalled();
   });

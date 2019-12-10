@@ -38,7 +38,7 @@ module.exports = {
     "^@hv/uikit-react-core(.*)$": "<rootDir>/node_modules/@hv/uikit-react-core$1",
     "^@hv/uikit-react-icons(.*)$": "<rootDir>/node_modules/@hv/uikit-react-icons$1"
   },
-  setupTestFrameworkScriptFile: "<rootDir>/config/test-setup.js",
+  setupFilesAfterEnv: ["<rootDir>/config/test-setup.js"],
   testRegex: "src/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
   testURL: "http://localhost/",
