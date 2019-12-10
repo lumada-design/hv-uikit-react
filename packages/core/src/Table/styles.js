@@ -61,8 +61,8 @@ const styles = theme => ({
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          height: 54,
-          minWidth: 72,
+          height: "54px",
+          minWidth: "72px",
           padding: 0,
           display: "flex",
           alignItems: "flex-end",
@@ -117,11 +117,11 @@ const styles = theme => ({
         }
       },
       "& $tbody": {
-        overflow:"hidden",
+        overflow: "hidden",
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {
-            background: theme.hv.palette.atmosphere.atmo2,
+            background: theme.hv.palette.atmosphere.atmo2
           },
           "& $tr:hover > div ": {
             background: theme.hv.palette.atmosphere.atmo1

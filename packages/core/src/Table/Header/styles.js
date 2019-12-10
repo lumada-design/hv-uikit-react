@@ -30,7 +30,7 @@ const styles = theme => ({
     padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
     overflow: "hidden",
     whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
+    textOverflow: "ellipsis"
   },
   headerNotSortable: {
     width: `calc(100% - ${theme.hv.spacing.xs}px)`,
@@ -49,20 +49,14 @@ const styles = theme => ({
   },
   rtSortIcon: {
     width: "32px",
-    height: "32px",
+    height: "32px"
   },
   rtSortIconNumeric: {
     marginLeft: "auto"
   },
   box: {
-    width: "30px",
-    height: "30px",
-    padding: "7px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    width: "32px",
+    height: "32px"
   }
 });
 
