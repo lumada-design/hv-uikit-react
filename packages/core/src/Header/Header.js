@@ -24,6 +24,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import isNill from "lodash/isNil";
 import isEqual from "lodash/isEqual";
+import isEmpty from "lodash/isEmpty";
 import map from "lodash/map";
 
 import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
@@ -167,8 +168,7 @@ const Main = ({
         }
       ]
     };
-
-    if (isEqual(navStructure, defaultData)) {
+    if (isEmpty(navStructure.data) || isEqual(navStructure, defaultData)) {
       return null;
     }
     return navStructure.data;
@@ -374,7 +374,6 @@ Main.propTypes = {
   /**
    * The data used for creating the navigation item.
    */
-
   navigationData: deprecatedPropType(
     PropTypes.arrayOf(
       PropTypes.shape({
