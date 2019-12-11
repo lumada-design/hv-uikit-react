@@ -23,7 +23,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import Slide from "react-reveal/Slide"; // Importing Zoom effect
 import HvTypography from "../../Typography";
-
 import HvLink from "../../Link";
 
 /**
