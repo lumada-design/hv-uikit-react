@@ -18,7 +18,7 @@ const styles = theme => ({
   root: {
     padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px`,
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   leftContainer: {
     alignSelf: "flex-start",
@@ -28,16 +28,12 @@ const styles = theme => ({
     alignSelf: "flex-end",
     marginLeft: "auto"
   },
-  actionContainer:{
-    display:"flex",
+  actionContainer: {
+    display: "flex"
   },
-  box:{
-    width: "30px", 
-    padding: "7px",
-    "&>svg": {
-      display: "block",
-      margin: "auto"
-    }
+  box: {
+    width: "32px",
+    height: "32px"
   }
 });
 

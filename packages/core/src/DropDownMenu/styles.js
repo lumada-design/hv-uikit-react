@@ -19,14 +19,15 @@ const styles = theme => ({
     display: "contents"
   },
   icon: {
-    height: 33,
-    width: 32,
+    height: "32px",
+    width: "32px",
+
     position: "relative",
     boxSizing: "content-box",
-    color: theme.hv.palette.accent.acce1,
     padding: 0,
     "&:hover": {
-      backgroundColor: "transparent"
+      cursor: "pointer",
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     borderRadius: 0,
     display: "flex",

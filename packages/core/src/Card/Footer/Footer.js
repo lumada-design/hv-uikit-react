@@ -19,16 +19,10 @@ import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
-import withStyles from "@material-ui/core/styles/withStyles";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckBox from "../../Selectors/CheckBox";
 import HvButton from "../../Button";
 import DropDownMenu from "../../DropDownMenu";
-import stylesDropdownMenu from "./stylesDropdownMenu";
-
-const DropDown = withStyles(stylesDropdownMenu, { withTheme: true })(
-  DropDownMenu
-);
 
 const renderActions = (
   actions,
@@ -48,7 +42,8 @@ const renderActions = (
       onClick={() => actionsCallback(id, action)}
       category="ghost"
     >
-      {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
+      {(action.icon && action.icon()) ||
+        (action.iconCallback && action.iconCallback())}
       {action.label}
     </HvButton>
   );
@@ -59,11 +54,13 @@ const renderActions = (
       style={actWidth !== undefined ? { width: `${actWidth}px` } : undefined}
     >
       {renderButton(acts[0])}
-      <DropDown
+      <DropDownMenu
         icon={<MoreVert className={classes.box} />}
         placement="left"
         onClick={action => actionsCallback(id, action)}
-        dataList={acts.slice(1).map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
+        dataList={acts
+          .slice(1)
+          .map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
       />
     </div>
   );

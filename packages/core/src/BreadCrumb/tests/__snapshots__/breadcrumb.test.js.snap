@@ -4564,11 +4564,10 @@ body {
               "attached": true,
               "classes": Object {
                 "centerContainer": "BreadCrumb-centerContainer-2",
-                "iconContainer": "BreadCrumb-iconContainer-4",
                 "link": "BreadCrumb-link-3",
                 "root": "BreadCrumb-root-1",
-                "separator": "BreadCrumb-separator-5",
-                "separatorContainer": "BreadCrumb-separatorContainer-6",
+                "separator": "BreadCrumb-separator-4",
+                "separatorContainer": "BreadCrumb-separatorContainer-5",
               },
               "deployed": true,
               "linked": false,
@@ -4577,11 +4576,10 @@ body {
                 "classNamePrefix": "BreadCrumb",
                 "classes": Object {
                   "centerContainer": "BreadCrumb-centerContainer-2",
-                  "iconContainer": "BreadCrumb-iconContainer-4",
                   "link": "BreadCrumb-link-3",
                   "root": "BreadCrumb-root-1",
-                  "separator": "BreadCrumb-separator-5",
-                  "separatorContainer": "BreadCrumb-separatorContainer-6",
+                  "separator": "BreadCrumb-separator-4",
+                  "separatorContainer": "BreadCrumb-separatorContainer-5",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5089,23 +5087,12 @@ body {
   color: #4389DB;
   text-decoration: none;
 }
-.BreadCrumb-iconContainer-4 {
-  display: inherit;
-}
-.BreadCrumb-separator-5 {
-  margin: 0 -4px;
+.BreadCrumb-separator-4 {
   display: contents;
 }
-.BreadCrumb-separatorContainer-6 {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  padding-left: 2px;
-}
-.BreadCrumb-separatorContainer-6&gt;svg {
-  margin: 0 auto;
-  display: block;
+.BreadCrumb-separatorContainer-5 {
+  width: 32px;
+  height: 32px;
 }
 
                 </style>,
@@ -5121,11 +5108,10 @@ body {
               "rules": RuleList {
                 "classes": Object {
                   "centerContainer": "BreadCrumb-centerContainer-2",
-                  "iconContainer": "BreadCrumb-iconContainer-4",
                   "link": "BreadCrumb-link-3",
                   "root": "BreadCrumb-root-1",
-                  "separator": "BreadCrumb-separator-5",
-                  "separatorContainer": "BreadCrumb-separatorContainer-6",
+                  "separator": "BreadCrumb-separator-4",
+                  "separatorContainer": "BreadCrumb-separatorContainer-5",
                 },
                 "index": Array [
                   Object {
@@ -5149,31 +5135,17 @@ body {
                     "text-decoration": "none",
                   },
                   Object {
-                    "display": "inherit",
-                  },
-                  Object {
                     "display": "contents",
-                    "margin": "0 -4px",
                   },
                   Object {
-                    "align-items": "center",
-                    "display": "flex",
-                    "height": "30px",
-                    "padding-left": "2px",
-                    "width": "30px",
-                  },
-                  Object {
-                    "display": "block",
-                    "margin": "0 auto",
+                    "height": "32px",
+                    "width": "32px",
                   },
                 ],
                 "map": Object {
                   ".BreadCrumb-centerContainer-2": Object {
                     "align-items": "center",
                     "display": "flex",
-                  },
-                  ".BreadCrumb-iconContainer-4": Object {
-                    "display": "inherit",
                   },
                   ".BreadCrumb-link-3": Object {
                     "max-width": "170px",
@@ -5191,27 +5163,16 @@ body {
                     "display": "flex",
                     "z-index": 0,
                   },
-                  ".BreadCrumb-separator-5": Object {
+                  ".BreadCrumb-separator-4": Object {
                     "display": "contents",
-                    "margin": "0 -4px",
                   },
-                  ".BreadCrumb-separatorContainer-6": Object {
-                    "align-items": "center",
-                    "display": "flex",
-                    "height": "30px",
-                    "padding-left": "2px",
-                    "width": "30px",
-                  },
-                  ".BreadCrumb-separatorContainer-6>svg": Object {
-                    "display": "block",
-                    "margin": "0 auto",
+                  ".BreadCrumb-separatorContainer-5": Object {
+                    "height": "32px",
+                    "width": "32px",
                   },
                   "centerContainer": Object {
                     "align-items": "center",
                     "display": "flex",
-                  },
-                  "iconContainer": Object {
-                    "display": "inherit",
                   },
                   "link": Object {
                     "max-width": "170px",
@@ -5227,14 +5188,10 @@ body {
                   },
                   "separator": Object {
                     "display": "contents",
-                    "margin": "0 -4px",
                   },
                   "separatorContainer": Object {
-                    "align-items": "center",
-                    "display": "flex",
-                    "height": "30px",
-                    "padding-left": "2px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                 },
                 "options": Object {
@@ -5242,11 +5199,10 @@ body {
                   "classNamePrefix": "BreadCrumb",
                   "classes": Object {
                     "centerContainer": "BreadCrumb-centerContainer-2",
-                    "iconContainer": "BreadCrumb-iconContainer-4",
                     "link": "BreadCrumb-link-3",
                     "root": "BreadCrumb-root-1",
-                    "separator": "BreadCrumb-separator-5",
-                    "separatorContainer": "BreadCrumb-separatorContainer-6",
+                    "separator": "BreadCrumb-separator-4",
+                    "separatorContainer": "BreadCrumb-separatorContainer-5",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5733,16 +5689,9 @@ body {
                     "color": "#4389DB",
                     "textDecoration": "none",
                   },
-                  ".BreadCrumb-separatorContainer-6>svg": Object {
-                    "display": "block",
-                    "margin": "0 auto",
-                  },
                   "centerContainer": Object {
                     "alignItems": "center",
                     "display": "flex",
-                  },
-                  "iconContainer": Object {
-                    "display": "inherit",
                   },
                   "link": Object {
                     "&:hover": Object {
@@ -5762,18 +5711,10 @@ body {
                   },
                   "separator": Object {
                     "display": "contents",
-                    "margin": "0 -4px",
                   },
                   "separatorContainer": Object {
-                    "&>svg": Object {
-                      "display": "block",
-                      "margin": "0 auto",
-                    },
-                    "alignItems": "center",
-                    "display": "flex",
-                    "height": "30px",
-                    "paddingLeft": "2px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                 },
                 "update": [Function],
@@ -6725,11 +6666,10 @@ body {
         classes={
           Object {
             "centerContainer": "BreadCrumb-centerContainer-2",
-            "iconContainer": "BreadCrumb-iconContainer-4",
             "link": "BreadCrumb-link-3",
             "root": "BreadCrumb-root-1",
-            "separator": "BreadCrumb-separator-5",
-            "separatorContainer": "BreadCrumb-separatorContainer-6",
+            "separator": "BreadCrumb-separator-4",
+            "separatorContainer": "BreadCrumb-separatorContainer-5",
           }
         }
         listRoute={Array []}
