@@ -82,7 +82,6 @@ const navigationData = {
       label: "Analytics",
       iconCallback: state => <StyledLineChartIcon {...state} />,
       showNavIcon: true,
-      path: "/Analytics",
       subData: {
         data: [
           {

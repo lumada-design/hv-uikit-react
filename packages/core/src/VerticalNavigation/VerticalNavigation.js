@@ -20,25 +20,12 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
 import classNames from "classnames";
+import { isIE } from "@hv/uikit-common-utils/dist";
 import Title from "./Title";
 import SearchBox from "../SearchBox";
 import List from "../List";
 
 const ANIMATION_DURATION = 200;
-
-const isIE = () => {
-  let isIEbrowser = false;
-  const ua = window.navigator.userAgent;
-  // Previous ie
-  const oldIE = ua.indexOf("MSIE ");
-  // IE 11
-  const newIE = ua.indexOf("Trident/");
-
-  if (oldIE > -1 || newIE > -1) {
-    isIEbrowser = true;
-  }
-  return isIEbrowser;
-};
 
 /**
  * Vertical navigation.
@@ -243,7 +230,11 @@ class VerticalNavigation extends React.Component {
           </div>
         )}
         {isFirstLevel && actionValues && (
-          <div className={classNames(classes.actionContainer, {[classes.soloActionContainer]: !noValues})}>
+          <div
+            className={classNames(classes.actionContainer, {
+              [classes.soloActionContainer]: !noValues
+            })}
+          >
             <List
               values={actionValues}
               selectDefault={false}
@@ -257,7 +248,7 @@ class VerticalNavigation extends React.Component {
 
   render() {
     const { mirror, show, showAnimation } = this.state;
-    const { classes, className} = this.props;
+    const { classes, className } = this.props;
 
     return (
       <div className={classNames([classes.verticalContainer, className])}>
