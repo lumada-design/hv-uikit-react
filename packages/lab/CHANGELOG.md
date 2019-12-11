@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.11.0...@hv/uikit-react-lab@1.12.0) (2019-12-11)
+
+
+### Bug Fixes
+
+* **navigationanchors:** reverted the changes done for ie and edge [#873](https://github.com/pentaho/hv-uikit-react/issues/873) ([d85972b](https://github.com/pentaho/hv-uikit-react/commit/d85972b))
+
+
+### Features
+
+* **datepickerds:** add disablePortal prop to the component. [#904](https://github.com/pentaho/hv-uikit-react/issues/904) ([cfbb52f](https://github.com/pentaho/hv-uikit-react/commit/cfbb52f))
+
+
+
+
+
 # [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.10.4...@hv/uikit-react-lab@1.11.0) (2019-12-04)
 
 
