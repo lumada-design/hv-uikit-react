@@ -5070,8 +5070,7 @@ body {
 }
 .DropDownMenu-icon-50 {
   width: 32px;
-  color: #414141;
-  height: 33px;
+  height: 32px;
   padding: 0;
   display: flex;
   position: relative;
@@ -5081,7 +5080,8 @@ body {
   justify-content: center;
 }
 .DropDownMenu-icon-50:hover {
-  background-color: transparent;
+  cursor: pointer;
+  background-color: #F0F0F0;
 }
 .DropDownMenu-iconSelected-51 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
@@ -5122,16 +5122,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -5152,16 +5152,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   ".DropDownMenu-icon-50:hover": Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-51": Object {
                     "background-color": "#FFFFFF",
@@ -5183,9 +5183,8 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
@@ -5696,25 +5695,26 @@ body {
                 },
                 "raw": Object {
                   ".DropDownMenu-icon-50:hover": Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-51:hover": Object {
                     "backgroundColor": "#FFFFFF",
                   },
                   "icon": Object {
                     "&:hover": Object {
-                      "backgroundColor": "transparent",
+                      "backgroundColor": "#F0F0F0",
+                      "cursor": "pointer",
                     },
                     "alignItems": "center",
                     "borderRadius": 0,
                     "boxSizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": 33,
+                    "height": "32px",
                     "justifyContent": "center",
                     "padding": 0,
                     "position": "relative",
-                    "width": 32,
+                    "width": "32px",
                   },
                   "iconSelected": Object {
                     "&:hover": Object {
@@ -12766,8 +12766,7 @@ body {
 }
 .DropDownMenu-icon-2 {
   width: 32px;
-  color: #414141;
-  height: 33px;
+  height: 32px;
   padding: 0;
   display: flex;
   position: relative;
@@ -12777,7 +12776,8 @@ body {
   justify-content: center;
 }
 .DropDownMenu-icon-2:hover {
-  background-color: transparent;
+  cursor: pointer;
+  background-color: #F0F0F0;
 }
 .DropDownMenu-iconSelected-3 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
@@ -12818,16 +12818,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -12848,16 +12848,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   ".DropDownMenu-icon-2:hover": Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-3": Object {
                     "background-color": "#FFFFFF",
@@ -12879,9 +12879,8 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
@@ -13392,25 +13391,26 @@ body {
                 },
                 "raw": Object {
                   ".DropDownMenu-icon-2:hover": Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-3:hover": Object {
                     "backgroundColor": "#FFFFFF",
                   },
                   "icon": Object {
                     "&:hover": Object {
-                      "backgroundColor": "transparent",
+                      "backgroundColor": "#F0F0F0",
+                      "cursor": "pointer",
                     },
                     "alignItems": "center",
                     "borderRadius": 0,
                     "boxSizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": 33,
+                    "height": "32px",
                     "justifyContent": "center",
                     "padding": 0,
                     "position": "relative",
-                    "width": 32,
+                    "width": "32px",
                   },
                   "iconSelected": Object {
                     "&:hover": Object {
@@ -20462,8 +20462,7 @@ body {
 }
 .DropDownMenu-icon-6 {
   width: 32px;
-  color: #414141;
-  height: 33px;
+  height: 32px;
   padding: 0;
   display: flex;
   position: relative;
@@ -20473,7 +20472,8 @@ body {
   justify-content: center;
 }
 .DropDownMenu-icon-6:hover {
-  background-color: transparent;
+  cursor: pointer;
+  background-color: #F0F0F0;
 }
 .DropDownMenu-iconSelected-7 {
   box-shadow: 0 2px 12px rgba(65,65,65,.12);
@@ -20514,16 +20514,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   Object {
                     "background-color": "#FFFFFF",
@@ -20544,16 +20544,16 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
                     "width": "32px",
                   },
                   ".DropDownMenu-icon-6:hover": Object {
-                    "background-color": "transparent",
+                    "background-color": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-7": Object {
                     "background-color": "#FFFFFF",
@@ -20575,9 +20575,8 @@ body {
                     "align-items": "center",
                     "border-radius": 0,
                     "box-sizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": "33px",
+                    "height": "32px",
                     "justify-content": "center",
                     "padding": 0,
                     "position": "relative",
@@ -21088,25 +21087,26 @@ body {
                 },
                 "raw": Object {
                   ".DropDownMenu-icon-6:hover": Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#F0F0F0",
+                    "cursor": "pointer",
                   },
                   ".DropDownMenu-iconSelected-7:hover": Object {
                     "backgroundColor": "#FFFFFF",
                   },
                   "icon": Object {
                     "&:hover": Object {
-                      "backgroundColor": "transparent",
+                      "backgroundColor": "#F0F0F0",
+                      "cursor": "pointer",
                     },
                     "alignItems": "center",
                     "borderRadius": 0,
                     "boxSizing": "content-box",
-                    "color": "#414141",
                     "display": "flex",
-                    "height": 33,
+                    "height": "32px",
                     "justifyContent": "center",
                     "padding": 0,
                     "position": "relative",
-                    "width": 32,
+                    "width": "32px",
                   },
                   "iconSelected": Object {
                     "&:hover": Object {

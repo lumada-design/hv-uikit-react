@@ -21,16 +21,10 @@ import take from "lodash/take";
 import takeRight from "lodash/takeRight";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
-import withStyles from "@material-ui/core/styles/withStyles";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckBox from "../../Selectors/CheckBox";
 import HvButton from "../../Button";
 import DropDownMenu from "../../DropDownMenu";
-import stylesDropdownMenu from "./stylesDropdownMenu";
-
-const DropDown = withStyles(stylesDropdownMenu, { withTheme: true })(
-  DropDownMenu
-);
 
 const FooterActions = ({
   actions,
@@ -69,7 +63,7 @@ const FooterActions = ({
         {actsSliceLeft.map((action, idx) =>
           renderButton(action, `${id}-${idx}-action-${action.id}`)
         )}
-        <DropDown
+        <DropDownMenu
           icon={<MoreVert className={classes.box} />}
           placement="left"
           onClick={action => actionsCallback(id, action)}

@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999961,
+            "index": -99999999962,
           },
           "themingEnabled": true,
         } => Map {
@@ -4977,7 +4977,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999961,
+                "index": -99999999962,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5833,7 +5833,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999961,
+                  "index": -99999999962,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -12036,7 +12036,7 @@ body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   line-height: 16px;
   font-weight: 400;
-  padding-top: 10px;
+  padding-top: 20px;
   letter-spacing: 0.02em;
 }
 .Header-action-55 {
@@ -12097,7 +12097,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   Object {
                     "margin-right": "0px",
@@ -12131,7 +12131,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   ".Header-title-52": Object {
                     "color": "#414141",
@@ -12171,7 +12171,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   "title": Object {
                     "color": "#414141",
@@ -12709,7 +12709,7 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingTop": "10px",
+                    "paddingTop": "20px",
                   },
                   "title": Object {
                     "color": "#414141",
@@ -18130,7 +18130,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999962,
+            "index": -99999999963,
           },
           "themingEnabled": true,
         } => Map {
@@ -19439,7 +19439,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999962,
+                "index": -99999999963,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -19988,7 +19988,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999962,
+                  "index": -99999999963,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -20126,7 +20126,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999963,
+            "index": -99999999964,
           },
           "themingEnabled": false,
         } => Map {
@@ -21435,7 +21435,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999963,
+                "index": -99999999964,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -21984,7 +21984,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999963,
+                  "index": -99999999964,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26104,7 +26104,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999964,
+            "index": -99999999965,
           },
           "themingEnabled": true,
         } => Map {
@@ -27419,7 +27419,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999964,
+                "index": -99999999965,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -27560,12 +27560,8 @@ body {
   display: flex;
 }
 .Component-box-111 {
-  width: 30px;
-  padding: 7px;
-}
-.Component-box-111&gt;svg {
-  margin: auto;
-  display: block;
+  width: 32px;
+  height: 32px;
 }
 
                 </style>,
@@ -27604,12 +27600,8 @@ body {
                     "display": "flex",
                   },
                   Object {
-                    "padding": "7px",
-                    "width": "30px",
-                  },
-                  Object {
-                    "display": "block",
-                    "margin": "auto",
+                    "height": "32px",
+                    "width": "32px",
                   },
                 ],
                 "map": Object {
@@ -27617,12 +27609,8 @@ body {
                     "display": "flex",
                   },
                   ".Component-box-111": Object {
-                    "padding": "7px",
-                    "width": "30px",
-                  },
-                  ".Component-box-111>svg": Object {
-                    "display": "block",
-                    "margin": "auto",
+                    "height": "32px",
+                    "width": "32px",
                   },
                   ".Component-leftContainer-108": Object {
                     "align-self": "flex-start",
@@ -27641,8 +27629,8 @@ body {
                     "display": "flex",
                   },
                   "box": Object {
-                    "padding": "7px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                   "leftContainer": Object {
                     "align-self": "flex-start",
@@ -28030,7 +28018,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999964,
+                  "index": -99999999965,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -28149,20 +28137,12 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Component-box-111>svg": Object {
-                    "display": "block",
-                    "margin": "auto",
-                  },
                   "actionContainer": Object {
                     "display": "flex",
                   },
                   "box": Object {
-                    "&>svg": Object {
-                      "display": "block",
-                      "margin": "auto",
-                    },
-                    "padding": "7px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                   "leftContainer": Object {
                     "alignSelf": "flex-start",
