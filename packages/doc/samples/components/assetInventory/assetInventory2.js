@@ -58,6 +58,23 @@ const DeleteIcon = withStyles(styles, { withTheme: true })(
   }
 );
 
+const getStatus = statusNumber => {
+  switch (statusNumber) {
+    case 1:
+      return { Icon: Level1, sema: "sema10" };
+    case 2:
+      return { Icon: Level2, sema: "sema11" };
+    case 3:
+      return { Icon: Level3, sema: "sema12" };
+    case 4:
+      return { Icon: Level4, sema: "sema13" };
+    case 5:
+      return { Icon: Level5, sema: "sema14" };
+    default:
+      return { Icon: null, sema: "sema1" };
+  }
+};
+
 //----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
   content: {
@@ -77,7 +94,7 @@ const kpiStyles = theme => ({
   timestamp: {
     paddingRight: `${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
   },
   container: {
     marginLeft: "-15px"
@@ -127,40 +144,15 @@ const ContentWithStyles = withStyles(kpiStyles, {
 })(Content);
 
 const cardRenderer = (value, viewConfiguration, metadata) => {
-  const status = {
-    Icon: null,
-    sema: "sema1"
-  };
-  switch (value.status) {
-    default:
-    case 1:
-      status.Icon = <Level1 semantic="sema10" boxStyles={boxStyles} />;
-      status.sema = "sema10";
-      break;
-    case 2:
-      status.Icon = <Level2 semantic="sema11" boxStyles={boxStyles} />;
-      status.sema = "sema11";
-      break;
-    case 3:
-      status.Icon = <Level3 semantic="sema12" boxStyles={boxStyles} />;
-      status.sema = "sema12";
-      break;
-    case 4:
-      status.Icon = <Level4 semantic="sema13" boxStyles={boxStyles} />;
-      status.sema = "sema13";
-      break;
-    case 5:
-      status.Icon = <Level5 semantic="sema14" boxStyles={boxStyles} />;
-      status.sema = "sema14";
-      break;
-  }
+  const { Icon, sema } = getStatus(value.status);
+  const StyledIcon = <Icon semantic={sema} boxStyles={boxStyles} />;
 
   return (
     <HvCard
-      icon={status.Icon}
+      icon={StyledIcon}
       headerTitle={value.headerTitle}
-      innerCardContent={<ContentWithStyles values={value} icon={status.Icon} />}
-      semantic={status.sema}
+      innerCardContent={<ContentWithStyles values={value} icon={StyledIcon} />}
+      semantic={sema}
       checkboxValue={value.id}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
@@ -215,7 +207,7 @@ const stylesRow = theme => ({
   timestamp: {
     padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
   },
   icon: {
     display: "block",
@@ -225,44 +217,14 @@ const stylesRow = theme => ({
 
 const StyledRow = withStyles(stylesRow, { withTheme: true })(Row);
 
-const rowRenderer = (value, index, viewConfiguration, metadata) => {
-  const status = {
-    Icon: null,
-    sema: "sema1"
-  };
-  switch (value.status) {
-    default:
-    case 1:
-      status.Icon = Level1;
-      status.sema = "sema10";
-      break;
-    case 2:
-      status.Icon = Level2;
-      status.sema = "sema11";
-      break;
-    case 3:
-      status.Icon = Level3;
-      status.sema = "sema12";
-      break;
-    case 4:
-      status.Icon = Level4;
-      status.sema = "sema13";
-      break;
-    case 5:
-      status.Icon = Level5;
-      status.sema = "sema14";
-      break;
-  }
-
-  return (
-    <StyledRow
-      status={status}
-      value={value}
-      id={value.id + index}
-      key={value.id + index}
-    />
-  );
-};
+const rowRenderer = (value, index, viewConfiguration, metadata) => (
+  <StyledRow
+    status={getStatus(value.status)}
+    value={value}
+    id={value.id + index}
+    key={value.id + index}
+  />
+);
 
 //-------------------------- TextRender --------------------------------
 
@@ -392,12 +354,12 @@ export default (
   <AssetInventory
     values={values()}
     configuration={configuration}
-    onSelection={event => alert(event.target.value)}
+    onSelection={event => console.log(event.target.value)}
     isSelectable
     actions={myActions}
     maxVisibleActions={3}
     actionsCallback={(id, action) =>
-      alert("You have pressed card " + id + " with action " + action.label)
+      console.log(`You have pressed card ${id} with action ${action.label}`)
     }
   >
     <CardView
@@ -422,7 +384,6 @@ export default (
       viewConfiguration={{
         columnConfiguration: [
           {
-            title: "Status",
             style: {
               width: 1
             },

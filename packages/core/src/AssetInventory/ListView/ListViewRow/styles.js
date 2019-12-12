@@ -32,6 +32,18 @@ const styles = theme => ({
   dropdownMenu: {
     position: "relative"
   },
+  selectable: {
+    cursor: "pointer",
+    "&:hover": {
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    }
+  },
+  selected: {
+    outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+    "&:hover": {
+      outline: `1px solid ${theme.hv.palette.accent.acce1}`
+    }
+  },
   actionSeparator: {
     width: 1,
     whiteSpace: "nowrap",

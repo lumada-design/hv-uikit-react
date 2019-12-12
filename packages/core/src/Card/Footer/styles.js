@@ -29,7 +29,11 @@ const styles = theme => ({
     marginLeft: "auto"
   },
   actionContainer: {
-    display: "flex"
+    display: "flex",
+    "&>*:nth-child(2)": {
+      display: "block",
+      marginLeft: `${theme.hv.spacing.xs}px`
+    }
   },
   box: {
     width: "32px",

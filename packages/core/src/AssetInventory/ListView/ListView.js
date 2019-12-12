@@ -30,13 +30,10 @@ const Rows = ({
   metadata
 }) =>
   values.map((value, index) => {
-    if (selectedValues && selectedValues.indexOf(value.id) > -1) {
-      // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = true;
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = false;
-    }
+    // eslint-disable-next-line no-param-reassign
+    value.checkboxSelected =
+      selectedValues && selectedValues.includes(value.id);
+
     return renderer(value, index, viewConfiguration, metadata);
   });
 
@@ -63,7 +60,8 @@ const ListView = ({
       >
         {!isNil(viewConfiguration) &&
           !isNil(viewConfiguration.columnConfiguration) &&
-          viewConfiguration.columnConfiguration.length > 0 && (
+          viewConfiguration.columnConfiguration.length > 0 &&
+          values.length > 0 && (
             <thead className={classes.tableHead}>
               <ListViewHeaderRow viewConfiguration={viewConfiguration} />
             </thead>
