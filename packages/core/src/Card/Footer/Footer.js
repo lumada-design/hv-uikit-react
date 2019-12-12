@@ -78,6 +78,7 @@ const FooterActions = ({
             iconCallback: action.iconCallback,
             icon: action.icon
           }))}
+          keepOpened={false}
         />
       </div>
     );

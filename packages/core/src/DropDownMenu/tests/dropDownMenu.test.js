@@ -57,7 +57,11 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu dataList={menuOptions} icon={<div />} />
+          <DropDownMenu
+            id="dropdownMenu"
+            dataList={menuOptions}
+            icon={<div />}
+          />
         </HvProvider>
       );
     });
@@ -127,6 +131,28 @@ describe("DropDownMenu", () => {
       expect(wrapper.find(Popper).props().open).toBe(true);
 
       button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+
+    it("closes after selecting one option", () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropDownMenu
+            dataList={menuOptions}
+            icon={<div />}
+            keepOpened={false}
+            onClick={() => {}}
+          />
+        </HvProvider>
+      );
+
+      const button = wrapper.find('div[role="button"]');
+
+      button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      const option = wrapper.find('li[id="hv-list-8-item-0"]');
+      option.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
   });

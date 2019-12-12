@@ -28,6 +28,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       ]
     }
     icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
     onClick={[Function]}
     placement="left"
   />
@@ -61,6 +62,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       ]
     }
     icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
     onClick={[Function]}
     placement="left"
   />
@@ -96,6 +98,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       ]
     }
     icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
     onClick={[Function]}
     placement="left"
   />

@@ -6691,6 +6691,7 @@ body {
         ]
       }
       icon={<div />}
+      id="dropdownMenu"
     >
       <DropDownMenu
         classes={
@@ -6716,6 +6717,8 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        id="dropdownMenu"
+        keepOpened={true}
         onClick={null}
         placement="left"
         theme={
@@ -7655,6 +7658,7 @@ body {
         >
           <div
             className="DropDownMenu-root-49"
+            id="dropdownMenu"
           >
             <div
               className="DropDownMenu-icon-50"
@@ -14383,6 +14387,7 @@ body {
         ]
       }
       icon={<div />}
+      id="dropdownMenu"
     >
       <DropDownMenu
         classes={
@@ -14408,6 +14413,8 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        id="dropdownMenu"
+        keepOpened={true}
         onClick={null}
         placement="left"
         theme={
@@ -15347,6 +15354,7 @@ body {
         >
           <div
             className="DropDownMenu-root-1"
+            id="dropdownMenu"
           >
             <div
               className="DropDownMenu-icon-2"
@@ -30050,6 +30058,7 @@ body {
         ]
       }
       icon={<div />}
+      id="dropdownMenu"
     >
       <DropDownMenu
         classes={
@@ -30075,6 +30084,8 @@ body {
         }
         disablePortal={true}
         icon={<div />}
+        id="dropdownMenu"
+        keepOpened={true}
         onClick={null}
         placement="left"
         theme={
@@ -31014,6 +31025,7 @@ body {
         >
           <div
             className="DropDownMenu-root-5"
+            id="dropdownMenu"
           >
             <div
               className="DropDownMenu-icon-6 DropDownMenu-iconSelected-7"
@@ -31062,7 +31074,7 @@ body {
                   >
                     <WithStyles(List)
                       condensed={true}
-                      onClick={null}
+                      onClick={[Function]}
                       selectable={false}
                       values={
                         Array [
@@ -31107,7 +31119,7 @@ body {
                         }
                         multiSelect={false}
                         onChange={[Function]}
-                        onClick={null}
+                        onClick={[Function]}
                         selectDefault={false}
                         selectable={false}
                         showSelectAll={false}
