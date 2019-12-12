@@ -14,35 +14,24 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  controlsContainer: {
-    display: "flex",
-    paddingBottom: `${theme.hv.spacing.md}px`,
-    justifyContent: "space-between",
-    alignItems: "flex-end"
-  },
-  search: {
-    justifyContent: "flex-end"
-  },
-  rightControls: {
-    display: "flex",
-    alignItems: "flex-end"
-  },
-  multiButtons: {
-    paddingLeft: `${theme.hv.spacing.md}px`
-  },
-  viewContainer: {
-    overflow: "auto",
-    padding: `${theme.hv.spacing.md}px 0`,
-    width: "100%"
-  },
-  sortContainer: {},
-  searchBoxContainer: {
-    width: "250px"
-  },
-  pagination:{
-    marginTop:0
-  }
-});
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Grid from "@hv/uikit-react-core/dist/Grid";
+import Simple from "../../../../packages/doc/samples/components/assetInventory/assetInventory1";
 
-export default styles;
+
+// sample scenarios
+const samples = {};
+samples.Simple = Simple;
+
+
+// create CoreTextArea for each sample
+Object.keys(samples).forEach(key =>
+  storiesOf("CoreAssetInventory", module).add(key, () => (
+    <Grid container>
+      <Grid item xl>
+        {samples[key]}
+      </Grid>
+    </Grid>
+  ))
+);

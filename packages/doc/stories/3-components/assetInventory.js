@@ -40,6 +40,10 @@ storiesOf("Components/Asset Inventory", module).add(
       {
         title: "3. with configuration set in the asset inventory.",
         src: "components/assetInventory/assetInventory3.js"
+      },
+      {
+        title: "4. Server Side pagination simulation",
+        src: "components/assetInventory/assetInventory4.js"
       }
     ]
   }

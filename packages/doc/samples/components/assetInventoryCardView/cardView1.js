@@ -97,7 +97,7 @@ const myActions = [
 ];
 
 const viewConfiguration = {
-  onSelection: event => console.log(event.target.value),
+  onSelection: event => console.log(event.target.checked),
   breakpoints: {
     xs: "false",
     sm: "false",

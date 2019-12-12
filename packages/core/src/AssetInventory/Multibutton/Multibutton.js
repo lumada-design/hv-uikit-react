@@ -16,7 +16,6 @@
 
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import isEmpty from "lodash/isEmpty";
 import MultiButton from "../../MultiButton";
 
 /**
@@ -27,29 +26,47 @@ import MultiButton from "../../MultiButton";
  * @returns {*}
  * @constructor
  */
-const AssetMultiButton = ({ views, changeView }) => {
+const AssetMultiButton = ({ id, views, changeView, onViewChange }) => {
   const options = [];
-  views.map(view => options.push({ id: view.id, icon: view.icon }));
-  if (!isEmpty(options)) options[0].selected = true;
+
+  views.map(view =>
+    options.push({
+      id: view.id,
+      icon: view.icon,
+      selected: view.selected ? true : undefined
+    })
+  );
+
+  const onChangeViewHandler = buttonId => {
+    changeView(buttonId);
+    onViewChange(buttonId);
+  };
 
   return (
     <MultiButton
+      id={`multi_button_${id}`}
       buttons={options}
       type="icon"
-      onChange={changeView}
+      onChange={onChangeViewHandler}
       minSelection={1}
     />
   );
 };
 
 AssetMultiButton.propTypes = {
+  id: PropTypes.string.isRequired,
   views: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       icon: PropTypes.node
     })
   ).isRequired,
-  changeView: PropTypes.func.isRequired
+  changeView: PropTypes.func.isRequired,
+  onViewChange: PropTypes.func
+};
+
+AssetMultiButton.defaultProps = {
+  onViewChange: null
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
