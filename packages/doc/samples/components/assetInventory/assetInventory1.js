@@ -11,7 +11,6 @@ import ListView, {
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-
 import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
 import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
@@ -96,34 +95,30 @@ const KpiTimeHorizon = score => ({
 
 /* eslint react/prop-types: 0 */
 const Content = ({ classes, values }) => (
-  <>
-    <Grid container className={classes.container}>
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="infoText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="infoText">
-            {values.event.schedule}
-          </HvTypography>
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={KpiProbability(values.probability)} />
-          <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
+  <Grid container className={classes.container}>
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvTypography className={classes.timestamp} variant="sText">
+          {values.event.timestamp}
         </HvTypography>
-      </Grid>
+        <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+      </div>
     </Grid>
-  </>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvKpi labels={KpiProbability(values.probability)} />
+        <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
+      </div>
+    </Grid>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+      <HvTypography variant="labelText">Related assets</HvTypography>
+      <HvTypography variant="normalText" className={classes.text}>
+        {values.relatedAssets}
+      </HvTypography>
+    </Grid>
+  </Grid>
 );
 
 const ContentWithStyles = withStyles(kpiStyles, {
@@ -196,10 +191,10 @@ const Row = ({ classes, status, value, id }) => {
           <HvTypography variant="highlightText">
             {value.event.description}
           </HvTypography>
-          <HvTypography className={classes.timestamp} variant="infoText">
+          <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
-          <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+          <HvTypography style={{ paddingTop: "2px" }} variant="sText">
             {value.event.schedule}
           </HvTypography>
         </div>
@@ -228,7 +223,7 @@ const stylesRow = theme => ({
   },
   icon: {
     display: "block",
-    paddingLeft: "3px"
+    margin: `0 ${theme.hv.spacing.xs}px`
   }
 });
 
@@ -427,10 +422,9 @@ export default (
           {
             title: "Status",
             style: {
-              paddingLeft: "8px",
-              minWidth: "52px"
+              width: 1
             },
-            align: "left"
+            align: "center"
           },
           {
             title: "Event",
