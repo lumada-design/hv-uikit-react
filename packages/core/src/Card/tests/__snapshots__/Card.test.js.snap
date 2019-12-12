@@ -5172,7 +5172,7 @@ body {
   cursor: pointer;
 }
 .Main-selectable-21:hover {
-  outline: 1px solid #DEDEDE;
+  outline: 1px solid #BCBCBC;
 }
 .Main-selected-22 {
   outline: 1px solid #414141;
@@ -5307,7 +5307,7 @@ body {
                     "cursor": "pointer",
                   },
                   Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   Object {
                     "outline": "1px solid #414141",
@@ -5331,7 +5331,7 @@ body {
                     "cursor": "pointer",
                   },
                   ".Main-selectable-21:hover": Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   ".Main-selected-22": Object {
                     "outline": "1px solid #414141",
@@ -5960,7 +5960,7 @@ body {
                     "width": "100%",
                   },
                   ".Main-selectable-21:hover": Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   ".Main-selected-22:hover": Object {
                     "outline": "1px solid #414141",
@@ -6034,7 +6034,7 @@ body {
                   },
                   "selectable": Object {
                     "&:hover": Object {
-                      "outline": "1px solid #DEDEDE",
+                      "outline": "1px solid #BCBCBC",
                     },
                     "cursor": "pointer",
                   },
@@ -27559,6 +27559,10 @@ body {
 .Component-actionContainer-110 {
   display: flex;
 }
+.Component-actionContainer-110&gt;*:nth-child(2) {
+  display: block;
+  margin-left: 10px;
+}
 .Component-box-111 {
   width: 32px;
   height: 32px;
@@ -27600,6 +27604,10 @@ body {
                     "display": "flex",
                   },
                   Object {
+                    "display": "block",
+                    "margin-left": "10px",
+                  },
+                  Object {
                     "height": "32px",
                     "width": "32px",
                   },
@@ -27607,6 +27615,10 @@ body {
                 "map": Object {
                   ".Component-actionContainer-110": Object {
                     "display": "flex",
+                  },
+                  ".Component-actionContainer-110>*:nth-child(2)": Object {
+                    "display": "block",
+                    "margin-left": "10px",
                   },
                   ".Component-box-111": Object {
                     "height": "32px",
@@ -28137,7 +28149,15 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".Component-actionContainer-110>*:nth-child(2)": Object {
+                    "display": "block",
+                    "marginLeft": "10px",
+                  },
                   "actionContainer": Object {
+                    "&>*:nth-child(2)": Object {
+                      "display": "block",
+                      "marginLeft": "10px",
+                    },
                     "display": "flex",
                   },
                   "box": Object {

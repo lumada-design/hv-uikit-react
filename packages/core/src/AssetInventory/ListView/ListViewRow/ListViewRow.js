@@ -163,6 +163,7 @@ const row = (
       key={id}
       className={classNames(className, classes.root, {
         [classes.selectable]: renderSelectCell,
+        [classes.selected]: checkboxSelected,
         [classes.notSelectable]: !renderSelectCell
       })}
       {...other}
