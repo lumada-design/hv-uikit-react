@@ -288,7 +288,7 @@ Main.defaultProps = {
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
   theme: null,
-  maxVisibleActions: 2,
+  maxVisibleActions: 1,
   actionItemWidth: undefined
 };
 
