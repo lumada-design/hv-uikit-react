@@ -35,23 +35,12 @@ const styles = theme => ({
       color: theme.hv.palette.accent.acce2h
     }
   },
-  iconContainer: {
-    display: "inherit"
-  },
   separator: {
-    margin: "0 -4px",
     display: "contents"
   },
   separatorContainer: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    paddingLeft: "2px",
-    "&>svg": {
-      display: "block",
-      margin: "0 auto",
-    }
+    width: "32px",
+    height: "32px"
   }
 });
 

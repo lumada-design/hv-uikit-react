@@ -25,13 +25,19 @@ const styles = theme => ({
     position: "relative"
   },
   button: {
-    padding: `0 ${theme.hv.spacing.sm}px`,
+    padding: `0 ${theme.hv.spacing.xs}px`,
+    marginRight: `${theme.hv.spacing.xs}px`,
     position: "relative"
   },
   dropdownMenu: {
     position: "relative"
   },
   actionSeparator: {
+    width: 1,
+    whiteSpace: "nowrap",
+    alignItems: "center",
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingRight: `${theme.hv.spacing.xs}px`,
     "&::before": {
       content: "''",
       height: "100%",
@@ -46,13 +52,9 @@ const styles = theme => ({
   actionGrid: {
     display: "flex"
   },
-  box:{
-    width: "30px", 
-    padding: "7px",
-    "&>svg": {
-      display: "block",
-      margin: "auto"
-    }
+  box: {
+    width: "32px",
+    height: "32px"
   }
 });
 

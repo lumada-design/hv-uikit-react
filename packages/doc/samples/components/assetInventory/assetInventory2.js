@@ -71,11 +71,16 @@ const kpiStyles = theme => ({
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
   },
-  kpis: { display: "flex" },
+  kpis: {
+    display: "flex"
+  },
   timestamp: {
     paddingRight: `${theme.hv.spacing.xs}px`,
     marginRight: "10px",
     borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
+  },
+  container: {
+    marginLeft: "-15px"
   }
 });
 
@@ -91,34 +96,30 @@ const KpiTimeHorizon = score => ({
 
 /* eslint react/prop-types: 0 */
 const Content = ({ classes, values }) => (
-  <>
-    <Grid container spacing={0}>
-      <Grid item xs={4} sm={8} md={8} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="infoText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="infoText">
-            {values.event.schedule}
-          </HvTypography>
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={8} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={KpiProbability(values.probability)} />
-          <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={8} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
+  <Grid container className={classes.container}>
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvTypography className={classes.timestamp} variant="sText">
+          {values.event.timestamp}
         </HvTypography>
-      </Grid>
+        <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+      </div>
     </Grid>
-  </>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvKpi labels={KpiProbability(values.probability)} />
+        <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
+      </div>
+    </Grid>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+      <HvTypography variant="labelText">Related assets</HvTypography>
+      <HvTypography variant="normalText" className={classes.text}>
+        {values.relatedAssets}
+      </HvTypography>
+    </Grid>
+  </Grid>
 );
 
 const ContentWithStyles = withStyles(kpiStyles, {
@@ -186,10 +187,10 @@ const Row = ({ classes, status, value, id }) => {
           <HvTypography variant="highlightText">
             {value.event.description}
           </HvTypography>
-          <HvTypography className={classes.timestamp} variant="infoText">
+          <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
-          <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+          <HvTypography style={{ paddingTop: "2px" }} variant="sText">
             {value.event.schedule}
           </HvTypography>
         </div>
@@ -218,7 +219,7 @@ const stylesRow = theme => ({
   },
   icon: {
     display: "block",
-    paddingLeft: "3px"
+    margin: `0 ${theme.hv.spacing.xs}px`
   }
 });
 
@@ -423,36 +424,35 @@ export default (
           {
             title: "Status",
             style: {
-              paddingLeft: "8px",
-              width: "52px"
+              width: 1
             },
-            align: "left"
+            align: "center"
           },
           {
             title: "Event",
             style: {
-              width: "570px"
+              minWidth: "570px"
             },
             align: "left"
           },
           {
             title: "Probability",
             style: {
-              width: "93px"
+              minWidth: "93px"
             },
             align: "right"
           },
           {
             title: "Time horizon",
             style: {
-              width: "108px"
+              minWidth: "108px"
             },
             align: "right"
           },
           {
             title: "Related Assets",
             style: {
-              width: "195px",
+              minWidth: "195px",
               paddingLeft: "30px"
             },
             align: "left"
