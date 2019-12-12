@@ -66799,7 +66799,23 @@ body {
                               <div
                                 className="Component-rightContainer-109 MuiCardActions-action-114"
                                 key=".1"
-                              />
+                              >
+                                <FooterActions
+                                  actions="actions"
+                                  actionsCallback={[Function]}
+                                  classes={
+                                    Object {
+                                      "actionContainer": "Component-actionContainer-110",
+                                      "box": "Component-box-111",
+                                      "leftContainer": "Component-leftContainer-108",
+                                      "rightContainer": "Component-rightContainer-109",
+                                      "root": "Component-root-107",
+                                    }
+                                  }
+                                  id="value"
+                                  maxVisibleActions={2}
+                                />
+                              </div>
                             </div>
                           </CardActions>
                         </WithStyles(CardActions)>
