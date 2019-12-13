@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render the actions and the dropdown accordingly 1`] = `
+<div>
+  <HvButton
+    category="ghost"
+    key="-0-action-view"
+    onClick={[Function]}
+  >
+    View
+  </HvButton>
+  <WithStyles(WithStyles(DropDownMenu))
+    dataList={
+      Array [
+        Object {
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "delete",
+          "label": "Delete",
+        },
+        Object {
+          "disabled": true,
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "update",
+          "label": "Update",
+        },
+      ]
+    }
+    icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
+    onClick={[Function]}
+    placement="left"
+  />
+</div>
+`;
+
+exports[`Footer should render the actions and the dropdown accordingly 2`] = `
+<div>
+  <WithStyles(WithStyles(DropDownMenu))
+    dataList={
+      Array [
+        Object {
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "view",
+          "label": "View",
+        },
+        Object {
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "delete",
+          "label": "Delete",
+        },
+        Object {
+          "disabled": true,
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "update",
+          "label": "Update",
+        },
+      ]
+    }
+    icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
+    onClick={[Function]}
+    placement="left"
+  />
+</div>
+`;
+
+exports[`Footer should render the actions and the dropdown accordingly 3`] = `
+<div>
+  <HvButton
+    category="ghost"
+    key="-0-action-view"
+    onClick={[Function]}
+  >
+    View
+  </HvButton>
+  <HvButton
+    category="ghost"
+    key="-1-action-delete"
+    onClick={[Function]}
+  >
+    Delete
+  </HvButton>
+  <WithStyles(WithStyles(DropDownMenu))
+    dataList={
+      Array [
+        Object {
+          "disabled": true,
+          "icon": undefined,
+          "iconCallback": undefined,
+          "id": "update",
+          "label": "Update",
+        },
+      ]
+    }
+    icon={<WithStyles(MoreOptionsVertical) />}
+    keepOpened={false}
+    onClick={[Function]}
+    placement="left"
+  />
+</div>
+`;
