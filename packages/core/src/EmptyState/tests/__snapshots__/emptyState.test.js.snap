@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmptyState /> should render correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        mockIcon
+      </div>
+    </div>
+    <div>
+      <WithStyles(Typography)
+        variant="sTitle"
+      >
+        mockTitle
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="normalText"
+      >
+        mockMessage
+      </WithStyles(Typography)>
+    </div>
+  </div>
+</div>
+`;
