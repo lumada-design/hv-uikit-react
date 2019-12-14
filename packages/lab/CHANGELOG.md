@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.12.0...@hv/uikit-react-lab@1.13.0) (2019-12-14)
+
+
+### Features
+
+* **loading:** add loading component. [#15](https://github.com/pentaho/hv-uikit-react/issues/15) ([d9f78a1](https://github.com/pentaho/hv-uikit-react/commit/d9f78a1))
+
+
+
+
+
 # [1.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.11.0...@hv/uikit-react-lab@1.12.0) (2019-12-11)
 
 

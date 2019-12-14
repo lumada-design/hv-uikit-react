@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.13.0...@hv/uikit-react-core@1.14.0) (2019-12-14)
+
+
+### Bug Fixes
+
+* **card-footer:** apply maxVisibleActions property properly [#912](https://github.com/pentaho/hv-uikit-react/issues/912) ([b434878](https://github.com/pentaho/hv-uikit-react/commit/b434878))
+
+
+### Features
+
+* **dropdown-menu:** add ability to close the menu after click [#911](https://github.com/pentaho/hv-uikit-react/issues/911) ([58ecd41](https://github.com/pentaho/hv-uikit-react/commit/58ecd41))
+
+
+
+
+
 # [1.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.12.0...@hv/uikit-react-core@1.13.0) (2019-12-04)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.13.1...@hv/uikit-react-doc@1.14.0) (2019-12-14)
+
+
+### Bug Fixes
+
+* **card-footer:** apply maxVisibleActions property properly [#912](https://github.com/pentaho/hv-uikit-react/issues/912) ([b434878](https://github.com/pentaho/hv-uikit-react/commit/b434878))
+
+
+### Features
+
+* **loading:** add loading component. [#15](https://github.com/pentaho/hv-uikit-react/issues/15) ([d9f78a1](https://github.com/pentaho/hv-uikit-react/commit/d9f78a1))
+
+
+
+
+
 ## [1.13.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.13.0...@hv/uikit-react-doc@1.13.1) (2019-12-11)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
