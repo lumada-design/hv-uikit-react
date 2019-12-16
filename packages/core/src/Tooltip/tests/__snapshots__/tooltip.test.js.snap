@@ -25226,6 +25226,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   enterDelay={300}
   open={null}
   placement="top"
+  theme={null}
   tooltipAnchor={
     <button
       id="testChild"

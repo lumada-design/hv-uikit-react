@@ -21,6 +21,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Fade from "@material-ui/core/Fade";
 
 const HvTooltip = ({
+  theme,
   classes,
   open,
   enterDelay,
@@ -29,7 +30,8 @@ const HvTooltip = ({
   tooltipAnchor,
   tooltipData,
   TransitionComponent,
-  TransitionProps
+  TransitionProps,
+  ...others
 }) => (
   <Tooltip
     open={open}
@@ -42,12 +44,17 @@ const HvTooltip = ({
       popper: classes.popper
     }}
     title={tooltipData}
+    {...others}
   >
     {tooltipAnchor}
   </Tooltip>
 );
 
 HvTooltip.propTypes = {
+  /**
+   * The object created by material to apply to the component.
+   */
+  theme: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -125,6 +132,7 @@ HvTooltip.propTypes = {
 };
 
 HvTooltip.defaultProps = {
+  theme: null,
   classes: {},
   open: null,
   enterDelay: 300,
