@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.14.0...@hv/uikit-react-core@1.15.0) (2019-12-16)
+
+
+### Bug Fixes
+
+* **table:** in the onFetchData make sure that cursor is correct [#928](https://github.com/pentaho/hv-uikit-react/issues/928) ([cfcc946](https://github.com/pentaho/hv-uikit-react/commit/cfcc946))
+
+
+### Features
+
+* **tooltip:** add ability to pass Material-UI tooltip props. [#926](https://github.com/pentaho/hv-uikit-react/issues/926) ([a383df7](https://github.com/pentaho/hv-uikit-react/commit/a383df7))
+
+
+
+
+
 # [1.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.13.0...@hv/uikit-react-core@1.14.0) (2019-12-14)
 
 
