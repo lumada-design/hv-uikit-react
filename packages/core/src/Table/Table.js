@@ -301,7 +301,7 @@ class Table extends React.Component {
     if (initiallyLoaded) {
       let cursor = `${page * pageSize}`;
 
-      if (sortedFromState[0] !== sorted[0]) {
+	  if (sortedFromState[0].id !== sorted[0].id || sortedFromState[0].desc !== sorted[0].desc) {
         cursor = "0";
       }
 
