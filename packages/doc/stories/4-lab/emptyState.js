@@ -19,6 +19,8 @@ import { storiesOf } from "@storybook/react";
 import HvEmptyState from "@hv/uikit-react-lab/dist/EmptyState";
 
 storiesOf("Lab", module).add("Empty State", () => <HvEmptyState />, {
+  deprecated: true,
+  componentToUse: "Empty State",
   title: "Empty State",
   description:
     "A splash screen component for information, still in development",
