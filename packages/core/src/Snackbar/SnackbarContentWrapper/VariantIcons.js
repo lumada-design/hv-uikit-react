@@ -20,33 +20,23 @@ import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 const styles = {
-  rootS: {
+  root: {
     width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    height: "32px"
   }
 };
 
 const StyledSuccess = withStyles(styles, { withTheme: true })(Success);
 const StyledError = withStyles(styles, { withTheme: true })(Error);
-
 const variantIcon = variant => {
-  let icon;
   switch (variant) {
     case "success":
-      icon = <StyledSuccess iconSize="S" semantic="sema1" />;
-      break;
+      return <StyledSuccess iconSize="S" semantic="sema1" />;
     case "error":
-      icon = <StyledError iconSize="S" semantic="sema4" />;
-      break;
+      return <StyledError iconSize="S" semantic="sema4" />;
     default:
-      icon = null;
+      return null;
   }
-  return icon;
 };
 
 export default variantIcon;

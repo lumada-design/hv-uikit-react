@@ -50,20 +50,7 @@ const HvSnackbarContentWrapper = ({
   actionCallback,
   ...other
 }) => {
-  let icon;
-
-  if (customIcon !== null) {
-    icon = React.cloneElement(customIcon, { className: classes.iconVariant });
-  } else if (showIcon) {
-    icon = variantIcon(variant)
-      ? React.cloneElement(variantIcon(variant), {
-          className: classes.iconVariant
-        })
-      : null;
-  }
-
-  let renderedAction;
-  if (action) renderedAction = renderAction(action, actionCallback, id);
+  const icon = customIcon || (showIcon && variantIcon(variant));
 
   return (
     <SnackbarContent
@@ -71,16 +58,23 @@ const HvSnackbarContentWrapper = ({
       classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
       message={
-        <div {...(id && {id: `${id}-message`})} className={classes.messageSpan}>
-          {icon}
+        <div
+          {...(id && { id: `${id}-message` })}
+          className={classes.messageSpan}
+        >
+          {icon && <div className={classes.iconVariant}>{icon}</div>}
           <TextTruncate
-            {...(id && {id: `${id}-message-text`})}
+            {...(id && { id: `${id}-message-text` })}
             containerClassName={classes.messageText}
             line={3}
             text={label}
             textElement="div"
           />
-          {action && <div {...(id && {id: `${id}-action`})} className={classes.action}>{renderedAction}</div>}
+          {action && (
+            <div {...(id && { id: `${id}-action` })} className={classes.action}>
+              {action && renderAction(action, actionCallback, id)}
+            </div>
+          )}
         </div>
       }
       {...other}

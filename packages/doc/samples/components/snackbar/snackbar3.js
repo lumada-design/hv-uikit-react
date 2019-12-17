@@ -48,6 +48,7 @@ class SimpleSnackbar extends React.Component {
           customIcon={customIcon}
           showIcon={showIcon}
           action={action}
+          offset={60}
         />
       </div>
     );
