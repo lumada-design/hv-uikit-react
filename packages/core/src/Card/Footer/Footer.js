@@ -232,7 +232,7 @@ Footer.defaultProps = {
   actions: undefined,
   actionsCallback: () => {},
   actionsAlignment: "left",
-  maxVisibleActions: 2,
+  maxVisibleActions: 1,
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
   actionItemWidth: undefined

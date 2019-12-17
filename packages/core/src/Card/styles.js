@@ -38,7 +38,7 @@ const styles = theme => {
     selectable: {
       cursor: "pointer",
       "&:hover": {
-        outline: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+        outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
       }
     },
     selected: {
@@ -46,8 +46,7 @@ const styles = theme => {
       "&:hover": {
         outline: `1px solid ${theme.hv.palette.accent.acce1}`
       }
-    },
-
+    }
   };
 };
 
