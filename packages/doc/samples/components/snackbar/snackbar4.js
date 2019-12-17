@@ -53,7 +53,7 @@ class SimpleSnackbar extends React.Component {
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          offset={offset}
+          offset={60}
           action={action}
           actionCallback={actionCallback}
         />
@@ -74,9 +74,6 @@ export default (
       label: "Action",
       disabled: false
     }}
-    actionCallback={(id, action) =>
-      alert(`clicked ${id} with ${action.label}`)
-    }
-    offset={72}
+    actionCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
   />
 );

@@ -20,13 +20,7 @@ class SimpleSnackbar extends React.Component {
   };
 
   render() {
-    const {
-      label,
-      variant,
-      showIcon,
-      anchorOrigin,
-      customIcon
-    } = this.props;
+    const { label, variant, showIcon, anchorOrigin, customIcon } = this.props;
     const { open } = this.state;
     return (
       <div>
@@ -46,7 +40,7 @@ class SimpleSnackbar extends React.Component {
           variant={variant}
           customIcon={customIcon}
           showIcon={showIcon}
-          offset={100}
+          offset={60}
         />
       </div>
     );
@@ -54,9 +48,5 @@ class SimpleSnackbar extends React.Component {
 }
 
 export default (
-  <SimpleSnackbar
-    label="This is a snackbar."
-    variant="default"
-    showIcon
-  />
+  <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />
 );

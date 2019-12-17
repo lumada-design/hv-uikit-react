@@ -20,6 +20,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
 import uniqueId from "lodash/uniqueId";
+import capitalize from "lodash/capitalize";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 
 const transLeft = props => <Slide {...props} direction="left" />;
@@ -28,29 +29,19 @@ const transUp = props => <Slide {...props} direction="up" />;
 const transDown = props => <Slide {...props} direction="down" />;
 
 const snackBarDirComponent = direction => {
-  let trans;
   switch (direction) {
-    case "left":
-      trans = transLeft;
-      break;
-    case "right":
-      trans = transRight;
-      break;
-    case "up":
-      trans = transUp;
-      break;
-    case "down":
-      trans = transDown;
-      break;
     default:
-      trans = transLeft;
+    case "left":
+      return transLeft;
+    case "right":
+      return transRight;
+    case "up":
+      return transUp;
+    case "down":
+      return transDown;
   }
-  return trans;
 };
 
-const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
-
-// TODO: review to use makeStyles during the Material 4 upgrade as a731f9f90e482fcb5a5f630d6015ed2433831011
 const HvSnackbar = props => {
   const {
     classes,
@@ -85,10 +76,10 @@ const HvSnackbar = props => {
 
   return (
     <Snackbar
-      {...offset && {
+      {...(offset && {
         style:
           anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
-      }}
+      })}
       classes={classes}
       className={className}
       id={snackbarId}
@@ -219,7 +210,7 @@ HvSnackbar.propTypes = {
    * The message to display.
    * @deprecated Instead use the label property
    */
-  message: deprecatedPropType(PropTypes.node),
+  message: deprecatedPropType(PropTypes.node)
 };
 
 HvSnackbar.defaultProps = {
