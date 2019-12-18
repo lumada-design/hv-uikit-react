@@ -18,28 +18,53 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 import TooltipWithStyles from "..";
 import Tooltip from "../Tooltip";
 import HvProvider from "../../Provider";
+import HvTypography from "../../Typography";
+import tooltipStyling from "../styles";
+
+const createTooltipData = data => {
+  // eslint-disable-next-line react/prop-types
+  const TooltipContent = ({ classes }) => (
+    <div>
+      <div className={classes.title}>
+        <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+      </div>
+      <div className={classes.valueWrapper}>
+        {data.elements.map(element => (
+          <div key={element.name} className={classes.values}>
+            <HvTypography variant="labelText">{element.name}</HvTypography>
+            <div className={classes.separator} />
+            <HvTypography variant="sText">{element.value}</HvTypography>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return withStyles(tooltipStyling, {
+    withTheme: true
+  })(TooltipContent);
+};
+
+const Anchor = (
+  <button id="testChild" type="submit">
+    Hello World
+  </button>
+);
 
 describe("Single Line Tooltip", () => {
   let wrapper;
 
-  const data = {
-    title: "Grid view"
-  };
-
-  const defaultProps = {
-    children: (
-      <button id="testChild" type="submit">
-        Hello World
-      </button>
-    )
-  };
   beforeEach(async () => {
     wrapper = mount(
-      <Tooltip tooltipData={data} tooltipAnchor={defaultProps.children} />
+      <Tooltip
+        tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}
+        tooltipAnchor={Anchor}
+      />
     );
   });
 
@@ -62,38 +87,21 @@ describe("Multi Line Tooltip - No Header", () => {
 
   const data = {
     elements: [
-      {
-        name: "Status",
-        value: "Open"
-      },
-      {
-        name: "Date",
-        value: "12/08/2018"
-      },
-      {
-        name: "Assignee",
-        value: "Management"
-      },
-      {
-        name: "Approval",
-        value: "Not yet requested"
-      }
+      { name: "Status", value: "Open" },
+      { name: "Date", value: "12/08/2018" },
+      { name: "Assignee", value: "Management" },
+      { name: "Approval", value: "Not yet requested" }
     ]
   };
 
-  const defaultProps = {
-    children: (
-      <button id="testChild" type="submit">
-        Hello World
-      </button>
-    )
-  };
+  const TooltipData = createTooltipData(data);
+
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
         <TooltipWithStyles
-          tooltipData={data}
-          tooltipAnchor={defaultProps.children}
+          tooltipData={<TooltipData />}
+          tooltipAnchor={Anchor}
           useSingle={false}
         />
       </HvProvider>
@@ -120,30 +128,19 @@ describe("Multi Line Tooltip - With Header", () => {
   const data = {
     title: "January",
     elements: [
-      {
-        name: "Sales",
-        value: "52,000 units"
-      },
-      {
-        name: "Profit",
-        value: "50%"
-      }
+      { name: "Sales", value: "52,000 units" },
+      { name: "Profit", value: "50%" }
     ]
   };
 
-  const defaultProps = {
-    children: (
-      <button id="testChild" type="submit">
-        Hello World
-      </button>
-    )
-  };
+  const TooltipData = createTooltipData(data);
+
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
         <TooltipWithStyles
-          tooltipData={data}
-          tooltipAnchor={defaultProps.children}
+          tooltipData={<TooltipData />}
+          tooltipAnchor={Anchor}
           useSingle={false}
         />
       </HvProvider>

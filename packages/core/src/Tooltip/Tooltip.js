@@ -16,7 +16,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
 import Tooltip from "@material-ui/core/Tooltip";
 import Fade from "@material-ui/core/Fade";
 
@@ -92,7 +91,7 @@ HvTooltip.propTypes = {
   /**
    * Values to display in tooltip.
    */
-  tooltipData: PropTypes.shape({}),
+  tooltipData: PropTypes.node,
   /**
    * If true, the tooltip is shown.
    */
@@ -113,11 +112,13 @@ HvTooltip.propTypes = {
   /**
    * The component used for the transition
    */
-  TransitionComponent: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
+  TransitionComponent: PropTypes.any,
   /**
    * Properties applied to the Transition element.
    */
-  TransitionProps: PropTypes.shape({}),
+  // eslint-disable-next-line react/forbid-prop-types
+  TransitionProps: PropTypes.object,
   /**
    * Defines if should use a single or multiline tooltip.
    */
@@ -130,9 +131,7 @@ HvTooltip.defaultProps = {
   enterDelay: 300,
   placement: "top",
   useSingle: true,
-  tooltipData: {
-    title: "Some Value"
-  },
+  tooltipData: null,
   tooltipAnchor: null,
   TransitionComponent: Fade,
   TransitionProps: {
