@@ -34,11 +34,11 @@ const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
 
 const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
-    <HvButton colorType="link">
+    <HvButton category="link">
       <Icon className={classes.box} />
       Update
     </HvButton>
-    <MoreOptionsIconButton colorType="link">
+    <MoreOptionsIconButton category="link">
       <MoreOptionsIcon />
     </MoreOptionsIconButton>
   </>
