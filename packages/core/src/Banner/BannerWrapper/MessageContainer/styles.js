@@ -16,12 +16,13 @@
 
 const styles = theme => ({
   message: {
-    ...theme.hv.typography.normalText,
-    padding: `0 ${theme.hv.spacing.xs}px`,
     color: theme.hv.palette.base.base2,
     wordBreak: "break-word",
     maxWidth: "700px",
     overflow: "hidden"
+  },
+  iconContainer: {
+    marginRight: `${theme.hv.spacing.xs}px`
   },
   actionMessageContainer: {
     flex: "0 0 auto"

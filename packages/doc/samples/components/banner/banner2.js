@@ -5,13 +5,7 @@ import Info from "@hv/uikit-react-icons/dist/Generic/Info";
 
 const boxStyles = {
   width: "32px",
-  height: "32px",
-  display: "flex",
-  alignItems: "center"
-};
-
-const svgStyle = {
-  margin: "0 auto"
+  height: "32px"
 };
 
 class SimpleBanner extends React.Component {
@@ -69,6 +63,6 @@ export default (
   <SimpleBanner
     label="This is a default banner."
     variant="default"
-    customIcon={<Info boxStyles={boxStyles} style={svgStyle} />}
+    customIcon={<Info boxStyles={boxStyles} />}
   />
 );

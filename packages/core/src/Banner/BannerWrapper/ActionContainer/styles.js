@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+import {
+  convertHexToRGB,
+  fade
+} from "@material-ui/core/styles/colorManipulator";
+
 const styles = theme => ({
   actionContainer: {
     display: "flex",
@@ -27,18 +32,14 @@ const styles = theme => ({
   },
   closeAction: {
     alignSelf: "flex-end",
-    height: "32px",
-    width: "32px",
-    cursor: "pointer"
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: fade(convertHexToRGB(theme.hv.palette.base.base1), 0.3)
+    }
   },
   iconContainer: {
     width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    height: "32px"
   },
   separator: {
     paddingLeft: `${theme.spacing.xs}px`
