@@ -10556,28 +10556,7 @@ body {
           Hello World
         </button>
       }
-      tooltipData={
-        Object {
-          "elements": Array [
-            Object {
-              "name": "Status",
-              "value": "Open",
-            },
-            Object {
-              "name": "Date",
-              "value": "12/08/2018",
-            },
-            Object {
-              "name": "Assignee",
-              "value": "Management",
-            },
-            Object {
-              "name": "Approval",
-              "value": "Not yet requested",
-            },
-          ],
-        }
-      }
+      tooltipData={<WithStyles(TooltipContent) />}
       useSingle={false}
     >
       <HvTooltip
@@ -11542,28 +11521,7 @@ body {
             Hello World
           </button>
         }
-        tooltipData={
-          Object {
-            "elements": Array [
-              Object {
-                "name": "Status",
-                "value": "Open",
-              },
-              Object {
-                "name": "Date",
-                "value": "12/08/2018",
-              },
-              Object {
-                "name": "Assignee",
-                "value": "Management",
-              },
-              Object {
-                "name": "Approval",
-                "value": "Not yet requested",
-              },
-            ],
-          }
-        }
+        tooltipData={<WithStyles(TooltipContent) />}
         useSingle={false}
       >
         <WithStyles(Tooltip)
@@ -11582,28 +11540,7 @@ body {
           enterDelay={300}
           open={null}
           placement="top"
-          title={
-            Object {
-              "elements": Array [
-                Object {
-                  "name": "Status",
-                  "value": "Open",
-                },
-                Object {
-                  "name": "Date",
-                  "value": "12/08/2018",
-                },
-                Object {
-                  "name": "Assignee",
-                  "value": "Management",
-                },
-                Object {
-                  "name": "Approval",
-                  "value": "Not yet requested",
-                },
-              ],
-            }
-          }
+          title={<WithStyles(TooltipContent) />}
         >
           <Tooltip
             TransitionComponent={[Function]}
@@ -12563,28 +12500,7 @@ body {
                 },
               }
             }
-            title={
-              Object {
-                "elements": Array [
-                  Object {
-                    "name": "Status",
-                    "value": "Open",
-                  },
-                  Object {
-                    "name": "Date",
-                    "value": "12/08/2018",
-                  },
-                  Object {
-                    "name": "Assignee",
-                    "value": "Management",
-                  },
-                  Object {
-                    "name": "Approval",
-                    "value": "Not yet requested",
-                  },
-                ],
-              }
-            }
+            title={<WithStyles(TooltipContent) />}
           >
             <RootRef
               rootRef={[Function]}
@@ -23177,21 +23093,7 @@ body {
           Hello World
         </button>
       }
-      tooltipData={
-        Object {
-          "elements": Array [
-            Object {
-              "name": "Sales",
-              "value": "52,000 units",
-            },
-            Object {
-              "name": "Profit",
-              "value": "50%",
-            },
-          ],
-          "title": "January",
-        }
-      }
+      tooltipData={<WithStyles(TooltipContent) />}
       useSingle={false}
     >
       <HvTooltip
@@ -24156,21 +24058,7 @@ body {
             Hello World
           </button>
         }
-        tooltipData={
-          Object {
-            "elements": Array [
-              Object {
-                "name": "Sales",
-                "value": "52,000 units",
-              },
-              Object {
-                "name": "Profit",
-                "value": "50%",
-              },
-            ],
-            "title": "January",
-          }
-        }
+        tooltipData={<WithStyles(TooltipContent) />}
         useSingle={false}
       >
         <WithStyles(Tooltip)
@@ -24189,21 +24077,7 @@ body {
           enterDelay={300}
           open={null}
           placement="top"
-          title={
-            Object {
-              "elements": Array [
-                Object {
-                  "name": "Sales",
-                  "value": "52,000 units",
-                },
-                Object {
-                  "name": "Profit",
-                  "value": "50%",
-                },
-              ],
-              "title": "January",
-            }
-          }
+          title={<WithStyles(TooltipContent) />}
         >
           <Tooltip
             TransitionComponent={[Function]}
@@ -25163,21 +25037,7 @@ body {
                 },
               }
             }
-            title={
-              Object {
-                "elements": Array [
-                  Object {
-                    "name": "Sales",
-                    "value": "52,000 units",
-                  },
-                  Object {
-                    "name": "Profit",
-                    "value": "50%",
-                  },
-                ],
-                "title": "January",
-              }
-            }
+            title={<WithStyles(TooltipContent) />}
           >
             <RootRef
               rootRef={[Function]}
@@ -25236,9 +25096,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     </button>
   }
   tooltipData={
-    Object {
-      "title": "Grid view",
-    }
+    <WithStyles(Typography)
+      variant="labelText"
+    >
+      Grid View
+    </WithStyles(Typography)>
   }
   useSingle={true}
 >
@@ -25259,9 +25121,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     open={null}
     placement="top"
     title={
-      Object {
-        "title": "Grid view",
-      }
+      <WithStyles(Typography)
+        variant="labelText"
+      >
+        Grid View
+      </WithStyles(Typography)>
     }
   >
     <Tooltip
@@ -25656,9 +25520,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         }
       }
       title={
-        Object {
-          "title": "Grid view",
-        }
+        <WithStyles(Typography)
+          variant="labelText"
+        >
+          Grid View
+        </WithStyles(Typography)>
       }
     >
       <RootRef

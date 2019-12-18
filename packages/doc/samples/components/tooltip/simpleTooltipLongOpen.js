@@ -3,40 +3,33 @@ import Tooltip from "@hv/uikit-react-core/dist/Tooltip";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const styling = {
-  outerDiv:{
+  outerDiv: {
     width: 100,
-    cursor: "pointer",
+    cursor: "pointer"
   },
   placeholder: {
     display: "flex",
+    textAlign: "center",
     justifyContent: "center",
     paddingTop: 90
-  },
-  typographyAligner:{
-    textAlign: "center"
   }
 };
 
-const TooltipControl = (() => {
-  return (
-    <div tabIndex="0" style={styling.outerDiv}>
-      <div style={styling.typographyAligner}>
-        <HvTypography variant="normalText">Tooltip open</HvTypography>
-      </div>
-    </div>
-  );
-})();
+const TooltipControl = (
+  <div tabIndex="0" style={styling.outerDiv}>
+    <HvTypography variant="normalText">Tooltip open</HvTypography>
+  </div>
+);
 
-const data = (() => {
-  return (
-    <HvTypography variant="infoText">Tooltips can showcase truncated text. The text should be concise and not redundant.</HvTypography>
-  );
-})()
+const data = (
+  <HvTypography variant="infoText">
+    Tooltips can showcase truncated text. The text should be concise and not
+    redundant.
+  </HvTypography>
+);
 
 export default (
   <div style={styling.placeholder}>
-    <>
-      <Tooltip tooltipData={data} tooltipAnchor={TooltipControl} open={true} />
-    </>
+    <Tooltip tooltipData={data} tooltipAnchor={TooltipControl} open />
   </div>
 );
