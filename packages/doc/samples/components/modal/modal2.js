@@ -8,7 +8,6 @@ import {
   HvModalTitle
 } from "@hv/uikit-react-core/dist";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import withStyles from "@material-ui/core/styles/withStyles";
 
 const btnStyle = {
   width: "120px",
@@ -50,18 +49,11 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   );
 };
 
-const iconWrapper = (Icon, sema, props) => {
-  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
-  return () => <GeneratedIcon semantic={sema} {...props} />;
-};
-
-const generalIconProps = { iconSize: "M" };
-
 export default (
   <SimpleModal
     buttonMessage="Custom icon"
     title={
-      <HvModalTitle customIcon={iconWrapper(Unlock, "", generalIconProps)()}>
+      <HvModalTitle customIcon={<Unlock iconSize="M" />}>
         Are you sure?
       </HvModalTitle>
     }

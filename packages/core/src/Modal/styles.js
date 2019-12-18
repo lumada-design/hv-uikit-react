@@ -36,8 +36,6 @@ const styles = theme => {
     );
   }
 
-
-
   return {
     background: {
       background: convertedColor
@@ -54,23 +52,11 @@ const styles = theme => {
       top: 0,
       padding: 0,
       margin: `${theme.hv.spacing.xs}px`,
-      width: 32,
-      minWidth: 32,
-      "& > span": {
-        width: 32
-      },
-      "&:hover": {
-        backgroundColor: "transparent"
-      }
+      minWidth: "unset"
     },
     iconContainer: {
       width: "32px",
-      height: "32px",
-      display: "flex",
-      alignItems: "center",
-      "&>svg": {
-        margin: "0 auto",
-      }
+      height: "32px"
     }
   };
 };
