@@ -203,51 +203,51 @@ Pagination.propTypes = {
    * A JSS Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
-    /*
+    /**
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
-    /*
+    /**
      * Styles applied to the page size selector container.
      */
     pageSizeOptions: PropTypes.string,
-    /*
+    /**
      * Styles applied to the page size selector dropdown element.
      */
     pageSizeOptionsSelect: PropTypes.string,
-    /*
+    /**
      * Styles applied to the page navigation container.
      */
     pageNavigator: PropTypes.string,
-    /*
+    /**
      * Styles applied to the central page information container.
      */
     pageInfo: PropTypes.string,
-    /*
+    /**
      * Styles applied to the page selector input container.
      */
     pageJump: PropTypes.string,
-    /*
+    /**
      * Styles passed down to the page selector Input component as `input`.
      */
     pageSizeInput: PropTypes.string,
-    /*
+    /**
      * Styles passed down to the page selector Input component as `inputRoot` .
      */
     pageSizeInputRoot: PropTypes.string,
-    /*
+    /**
      * Styles passed down to the page selector Input component as `container`.
      */
     pageSizeInputContainer: PropTypes.string,
-    /*
+    /**
      * Styles applied to each navigation `IconButton` icon container.
      */
     iconContainer: PropTypes.string,
-    /*
+    /**
      * Styles applied to each navigation icon.
      */
     icon: PropTypes.string,
-    /*
+    /**
      * Styles applied to the page size dropdown icon.
      */
     selectDownIcon: PropTypes.string

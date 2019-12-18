@@ -15,40 +15,95 @@
  */
 
 import React from "react";
+import classNames from "classnames";
+import isString from "lodash/isString";
 import PropTypes from "prop-types";
 import HvTypography from "../Typography";
 
-const HvEmptyState = props => {
-  const { title, message, icon, classes } = props;
+const renderNode = (className, node, variant) => (
+  <div className={className}>
+    {isString(node) ? (
+      <HvTypography variant={variant}>{node}</HvTypography>
+    ) : (
+      node
+    )}
+  </div>
+);
 
-  return (
-    <div className={classes.root}>
-      <div className={classes.container}>
-        <div className={classes.iconContainer}>{icon}</div>
-        <div className={classes.textContainer}>
-          <HvTypography variant="sTitle">{title}</HvTypography>
-          <HvTypography variant="normalText" className={classes.message}>
-            {message}
-          </HvTypography>
-        </div>
+const HvEmptyState = ({
+  classes,
+  title = null,
+  message = null,
+  action = null,
+  icon
+}) => (
+  <div className={classes.root}>
+    <div
+      className={classNames(classes.container, {
+        [classes.containerMessageOnly]: message && !title && !action
+      })}
+    >
+      <div className={classes.iconContainer}>{icon}</div>
+      <div className={classes.textContainer}>
+        {title && renderNode(classes.titleContainer, title, "sTitle")}
+        {message && renderNode(classes.messageContainer, message, "normalText")}
+        {action && renderNode(classes.actionContainer, action, "normalText")}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 HvEmptyState.propTypes = {
+  /* eslint-disable react/require-default-props */
   /**
    * A Jss Object used to override or extend the styles applied to the empty state component.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component container class.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to the component container class, when there is no title or action.
+     */
+    containerMessageOnly: PropTypes.string,
+    /**
+     * Styles applied to the icon container class.
+     */
+    iconContainer: PropTypes.string,
+    /**
+     * Styles applied to the text container class.
+     */
+    textContainer: PropTypes.string,
+    /**
+     * Styles applied to the title container class.
+     */
+    titleContainer: PropTypes.string,
+    /**
+     * Styles applied to the message container class.
+     */
+    messageContainer: PropTypes.string,
+    /**
+     * Styles applied to the action message container class.
+     */
+    actionContainer: PropTypes.string
+  }).isRequired,
   /**
    * The title to be shown.
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node,
   /**
    * The message to be shown.
    */
-  message: PropTypes.string.isRequired,
+  message: PropTypes.node.isRequired,
+  /**
+   * The action message to be shown.
+   */
+  action: PropTypes.node,
   /**
    *  Icon to be presented.
    */

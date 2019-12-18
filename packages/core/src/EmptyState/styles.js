@@ -16,35 +16,52 @@
 
 const styles = theme => ({
   root: {
-    background: "transparent",
     width: "100%",
     height: "100%",
     display: "flex",
     justifyContent: "center"
   },
-
   container: {
-    maxWidth: "670px",
     display: "flex",
-    alignItems: "center"
+    flexDirection: "row",
+    [theme.breakpoints.only("xs")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center"
+    }
   },
-
-  iconContainer: {
-    height: "120px",
-    width: "120px",
-    display: "flex",
+  containerMessageOnly: {
     alignItems: "center",
-    justifyContent: "center"
+    [theme.breakpoints.only("xs")]: {
+      flexDirection: "row"
+    },
+    "& $textContainer": {
+      marginLeft: 0
+    }
   },
-
+  iconContainer: {},
   textContainer: {
     background: "transparent",
     maxWidth: "510px",
     overflow: "hidden",
-    marginLeft: `${theme.hv.spacing.lg}px`
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: `${theme.hv.spacing.sm}px`
+    }
   },
-  message: {
+  titleContainer: {
     marginTop: `${theme.hv.spacing.xs}px`,
+    marginBottom: `${theme.hv.spacing.xs}px`,
+    [theme.breakpoints.only("xs")]: {
+      marginTop: `${theme.hv.spacing.sm}px`
+    }
+  },
+  messageContainer: {},
+  actionContainer: {
+    marginTop: `${theme.hv.spacing.md}px`,
+    "& a": {
+      ...theme.hv.typography.inlineLink,
+      textDecoration: "none"
+    }
   }
 });
 
