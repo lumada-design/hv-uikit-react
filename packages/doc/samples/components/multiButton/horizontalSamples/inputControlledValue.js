@@ -13,23 +13,14 @@ const btnStyle = {
 };
 
 const initialButtonsDefinitions = [
-  {
-    id: "map",
-    value: "map",
-    icon: <Map />,
-    selected: true,
-    enforced: true
-  },
+  { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
   { id: "satellite", value: "Satellite", icon: <LocationPin /> },
   { id: "map1", value: "Chart", icon: <Map />, selected: true },
   { id: "satellite1", value: "Place", icon: <LocationPin /> }
 ];
 
 const finalButtonsDefinitions = [
-  {
-    id: "f1",
-    value: "F1",
-  },
+  { id: "f1", value: "F1" },
   { id: "f2", value: "F2", icon: <LocationPin /> }
 ];
 
