@@ -20,14 +20,9 @@ import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
 
 const styles = {
-  rootS: {
+  root: {
     width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    height: "32px"
   }
 };
 
@@ -36,31 +31,23 @@ const StyledError = withStyles(styles)(Error);
 
 export const variantIcon = Object.freeze({
   success: () => <StyledSuccess iconSize="S" semantic="sema1" />,
-  error: () => <StyledError iconSize="S" semantic="sema4" />,
+  error: () => <StyledError iconSize="S" semantic="sema4" />
 });
 
 export const severityIcon = (severity, theme) => {
-  let icon;
   switch (severity.toLowerCase()) {
     case "error":
-      icon = variantIcon.error(theme);
-      break;
+      return variantIcon.error(theme);
     default:
-      icon = variantIcon.success(theme);
-      break;
+      return variantIcon.success(theme);
   }
-
-  return icon;
 };
 
 export const mapSeverityToVariant = severity => {
-  let variant;
   switch (severity.toLowerCase()) {
     case "error":
-      variant = "error";
-      break;
+      return "error";
     default:
-      variant = "default";
+      return "default";
   }
-  return variant;
 };

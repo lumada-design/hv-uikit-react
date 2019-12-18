@@ -10,18 +10,10 @@ const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
 
 const boxStyles = {
   width: "32px",
-  height: "32px",
-  display: "flex",
-  alignItems: "center"
+  height: "32px"
 };
 
-const svgStyle = {
-  margin: "0 auto"
-};
-
-const CustomIcon = (
-  <Info boxStyles={boxStyles} style={svgStyle} color={["#414141"]} />
-);
+const CustomIcon = <Info boxStyles={boxStyles} color={["#414141"]} />;
 
 const ActionButton = () => <Button category="semantic">Action</Button>;
 
@@ -32,7 +24,6 @@ const actionArray = [
 
 export default (
   <div>
-
     <Typography variant="xsTitle">Semantics</Typography>
     <p />
     <BannerContentWrapper
