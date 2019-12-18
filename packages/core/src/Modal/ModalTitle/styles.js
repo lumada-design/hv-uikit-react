@@ -16,28 +16,18 @@
 
 const styles = theme => ({
   root: {
-    padding:`40px 0 0 ${theme.hv.spacing.sm}px`,
+    padding: `${theme.hv.spacing.sm}px 0 0 ${theme.hv.spacing.sm}px`,
     margin: 0
   },
   messageContainer: {
     display: "flex",
+    alignItems: "center"
   },
-  textWithIcon: {
-    paddingLeft: 58
-  },
-  textWithCustomIcon: {
-    paddingLeft: 58,
-  },
+  textWithIcon: {},
   icon: {
-    position:"absolute",
-    top: "31px",
-    maxWidth: "48px",
-    maxHeight: "48px",
-    minWidth: "48px",
-    minHeight: "48px",
-    display:"flex",
-    alignItems:"center",
-    justifyContent:"center"
+    marginRight: `${theme.hv.spacing.xs}px`,
+    width: 48,
+    height: 48
   }
 });
 
