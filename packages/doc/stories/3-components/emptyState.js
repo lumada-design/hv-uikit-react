@@ -25,8 +25,19 @@ storiesOf("Components", module).add("Empty State", () => <HvEmptyState />, {
   examples: [
     {
       title: "1. Simple",
-      description: "Basic empty state to provide information",
       src: "components/emptyState/emptyStateSimple.js"
+    },
+    {
+      title: "2. With Action",
+      src: "components/emptyState/emptyStateFull.js"
+    },
+    {
+      title: "3. Custom message",
+      src: "components/emptyState/emptyStateCustom.js"
+    },
+    {
+      title: "4. No Results",
+      src: "components/emptyState/emptyStateMessageOnly.js"
     }
   ]
 });
