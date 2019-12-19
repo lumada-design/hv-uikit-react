@@ -73,6 +73,11 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
       title: "10. Semantic disabled",
       description: "Disabled button that doesn't allow any interaction",
       src: "components/button/buttonSemanticDisabled"
+    },
+    {
+      title: "11. Buttons with icons",
+      description: "Various Button configurations with left icons",
+      src: "components/button/buttonIcon"
     }
   ]
 });

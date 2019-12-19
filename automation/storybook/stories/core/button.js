@@ -18,10 +18,12 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import CautionS from "@hv/uikit-react-icons/dist/Caution.S";
+import Caution from "@hv/uikit-react-icons/dist/Generic/Caution";
 
 const samples = {};
 const myAlert = msg => alert(msg); /* eslint-disable-line no-alert */
+
+const CautionS = <Caution boxStyles={{ width: 32, height: 30 }} />;
 
 // sample scenarios
 samples.smoke = (
@@ -31,8 +33,11 @@ samples.smoke = (
         Enable
       </Grid>
       <Grid item xl={2}>
-        <HvButton id="default" onClick={() => myAlert("default")}>
-          <CautionS />
+        <HvButton
+          id="default"
+          startIcon={CautionS}
+          onClick={() => myAlert("default")}
+        >
           default
         </HvButton>
       </Grid>
@@ -40,15 +45,19 @@ samples.smoke = (
         <HvButton
           id="secondary"
           category="secondary"
+          startIcon={CautionS}
           onClick={() => myAlert("secondary")}
         >
-          <CautionS />
           secondary
         </HvButton>
       </Grid>
       <Grid item xl={2}>
-        <HvButton id="ghost" category="ghost" onClick={() => myAlert("ghost")}>
-          <CautionS />
+        <HvButton
+          id="ghost"
+          category="ghost"
+          startIcon={CautionS}
+          onClick={() => myAlert("ghost")}
+        >
           ghost
         </HvButton>
       </Grid>
@@ -56,9 +65,9 @@ samples.smoke = (
         <HvButton
           id="ghostSecondary"
           category="ghostSecondary"
+          startIcon={CautionS}
           onClick={() => myAlert("ghostSecondary")}
         >
-          <CautionS />
           ghostSecondary
         </HvButton>
       </Grid>
@@ -66,9 +75,9 @@ samples.smoke = (
         <HvButton
           id="semantic"
           category="semantic"
+          startIcon={CautionS}
           onClick={() => myAlert("semantic")}
         >
-          <CautionS />
           semantic
         </HvButton>
       </Grid>
@@ -81,9 +90,9 @@ samples.smoke = (
         <HvButton
           id="disabledPrimary"
           disabled
+          startIcon={CautionS}
           onClick={() => myAlert("disabled primary")}
         >
-          <CautionS />
           disabled primary
         </HvButton>
       </Grid>
@@ -92,9 +101,9 @@ samples.smoke = (
           id="disabledSecondary"
           disabled
           category="secondary"
+          startIcon={CautionS}
           onClick={() => myAlert("disabled secondary")}
         >
-          <CautionS />
           disabled secondary
         </HvButton>
       </Grid>
@@ -103,9 +112,9 @@ samples.smoke = (
           id="disabledGhost"
           disabled
           category="ghost"
+          startIcon={CautionS}
           onClick={() => myAlert("disabled ghost")}
         >
-          <CautionS />
           disabled ghost
         </HvButton>
       </Grid>
@@ -114,9 +123,9 @@ samples.smoke = (
           id="disabledGhostSecondary"
           disabled
           category="ghostSecondary"
+          startIcon={CautionS}
           onClick={() => myAlert("disabled ghostSecondary")}
         >
-          <CautionS />
           disabled ghostSecondary
         </HvButton>
       </Grid>
@@ -125,9 +134,9 @@ samples.smoke = (
           id="disabledSemantic"
           disabled
           category="semantic"
+          startIcon={CautionS}
           onClick={() => myAlert("semantic")}
         >
-          <CautionS />
           disabled semantic
         </HvButton>
       </Grid>
@@ -143,9 +152,9 @@ samples.smoke = (
           id="allProperties"
           disabled
           classes=""
+          startIcon={CautionS}
           onclick={() => myAlert("incorrect")}
         >
-          <CautionS />
           all properties
         </HvButton>
       </Grid>
@@ -157,33 +166,29 @@ samples.negative = (
   <>
     <Grid container>
       <Grid item xl={2}>
-        {" "}
-        icon{" "}
+        icon
       </Grid>
       <Grid item xl={2}>
-        <HvButton>
-          <CautionS />
-        </HvButton>
+        <HvButton startIcon={CautionS} />
       </Grid>
       <Grid item xl={2}>
         <HvButton category="secondary">
-          <CautionS />
+          <Caution />
           between
-          <CautionS />
+          <Caution />
         </HvButton>
       </Grid>
       <Grid item xl={2}>
         <HvButton category="ghost">
-          <CautionS />
-          <CautionS />
-          <CautionS />
+          <Caution />
+          <Caution />
+          <Caution />
         </HvButton>
       </Grid>
     </Grid>
     <Grid container>
       <Grid item xl={2}>
-        {" "}
-        null / empty{" "}
+        null / empty
       </Grid>
       <Grid item xl={2}>
         <HvButton onClick={() => myAlert("primary (default)")} />

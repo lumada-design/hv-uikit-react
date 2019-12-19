@@ -19,8 +19,8 @@
 // import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
+import Download from "@hv/uikit-react-icons/dist/Generic/Download";
 import HvProvider from "../../Provider";
-
 import ButtonWithStyles from "../index";
 import HvButton from "../Button";
 import materialButtonConfiguration from "../materialButtonConfiguration";
@@ -57,9 +57,7 @@ describe("Button withStyles", () => {
   it("should correctly map the primary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="primary">
-          Click!
-        </ButtonWithStyles>
+        <ButtonWithStyles category="primary">Click!</ButtonWithStyles>
       </HvProvider>
     ).find(HvButton);
 
@@ -74,9 +72,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="secondary">
-          Click!
-        </ButtonWithStyles>
+        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -141,5 +137,31 @@ describe("Button withStyles", () => {
     expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
       materialButtonConfiguration.variant.text
     );
+  });
+});
+
+describe("Button with Icon", () => {
+  let wrapper;
+
+  beforeEach(async () => {
+    wrapper = mount(
+      <HvProvider>
+        <ButtonWithStyles category="primary" startIcon={<Download />}>
+          Click!
+        </ButtonWithStyles>
+      </HvProvider>
+    );
+  });
+
+  it("should be defined", () => {
+    expect(wrapper).toBeDefined();
+  });
+
+  it("should render the Button component", () => {
+    expect(wrapper.find(HvButton).length).toBe(1);
+  });
+
+  it("should render the icon component", () => {
+    expect(wrapper.find(Download).length).toBe(1);
   });
 });
