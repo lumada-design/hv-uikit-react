@@ -45,7 +45,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton category="ghost">Switch anyway</HvButton>
+          <HvButton category="ghost">Apply</HvButton>
           <HvButton category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
@@ -117,7 +117,7 @@ const containerStyle = {
   display: "flex"
 };
 
-const styles = theme => ({
+const styles = () => ({
   container: {
     width: 555
   },
@@ -130,34 +130,33 @@ const styles = theme => ({
     paddingBottom: 20
   }
 });
-const textAreaStyles = theme => ({
+
+const textAreaStyles = () => ({
   container: {
     width: 555
   },
   textAreaContainer: {
-    paddingTop:30
+    paddingTop: 30
   }
 });
 
-const contentClass = {
+const contentStyles = () => ({
   paper: {
     width: 555
   }
-};
+});
 
 const InputWithStyles = withStyles(styles, { withTheme: true })(Input);
 const TextAreaWithStyles = withStyles(textAreaStyles, { withTheme: true })(
   TextArea
 );
-
-const ModalWithStyles = withStyles(contentClass, { withTheme: true })(
+const ModalWithStyles = withStyles(contentStyles, { withTheme: true })(
   SimpleModal
 );
 
 export default (
   <div style={containerStyle}>
     <ModalWithStyles
-      classes={{ paper: contentClass.paper }}
       buttonMessage="Table"
       title={
         <HvModalTitle
@@ -205,5 +204,3 @@ export default (
     />
   </div>
 );
-
-// apply padding to this element: HvTextArea-textAreaContainer-254

@@ -46,7 +46,7 @@ function WrapperComp() {
 
       <Input
         style={inpStyle}
-        value={maxChar}
+        initialValue={String(maxChar)}
         onChange={value => setMaxChar(value)}
         labels={inputLabels}
       />

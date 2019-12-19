@@ -65,7 +65,7 @@ const ModalTitle = ({
     >
       <div className={classes.messageContainer}>
         {icon}
-        <div className={classNames({ [classes.textWithIcon]: icon,  [classes.textWithCustomIcon]: customIcon})}>
+        <div className={classNames({ [classes.textWithIcon]: icon })}>
           {!isString && children}
           {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>
