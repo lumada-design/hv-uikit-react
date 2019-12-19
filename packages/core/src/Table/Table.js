@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import classNames from "classnames";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
@@ -75,9 +75,7 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
 
-    const {
-      id
-    } = props;
+    const { id } = props;
 
     this.state = {
       internalId: id || uniqueId("hv-table-"),
@@ -330,7 +328,10 @@ class Table extends React.Component {
 
     return {
       id: column.id ? `${internalId}-column-${column.id}` : undefined,
-      className: column.id !== "secondaryActions" ? setHeaderSortableClass(isSortable, classes.theadTh) : classNames(classes.theadTh, "secondaryAction")
+      className:
+        column.id !== "secondaryActions"
+          ? setHeaderSortableClass(isSortable, classes.theadTh)
+          : classNames(classes.theadTh, "secondaryAction")
     };
   };
 
@@ -380,13 +381,10 @@ class Table extends React.Component {
 
     const rowId = this.computeRowId(rowInfo);
 
-    if (
-      rowId &&
-      selection.includes(rowId)
-    ) {
+    if (rowId && selection.includes(rowId)) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, "selected") 
+        className: classNames(classes.tr, "selected")
       };
     }
 
@@ -399,9 +397,12 @@ class Table extends React.Component {
     const rowElementId = this.computeRowElementId(rowInfo);
 
     return {
-      id: rowElementId && column.id ? `${rowElementId}-column-${column.id}` : undefined,
+      id:
+        rowElementId && column.id
+          ? `${rowElementId}-column-${column.id}`
+          : undefined,
       className: classes.td
-    }
+    };
   };
 
   //  ----------- Checkbox -----------
@@ -462,12 +463,17 @@ class Table extends React.Component {
   computeRowId(rowInfo) {
     const { idForCheckbox } = this.props;
 
-    if (idForCheckbox && rowInfo && rowInfo.original && rowInfo.original[idForCheckbox]) {
+    if (
+      idForCheckbox &&
+      rowInfo &&
+      rowInfo.original &&
+      rowInfo.original[idForCheckbox]
+    ) {
       return rowInfo.original[idForCheckbox];
     }
 
     return null;
-  };
+  }
 
   render() {
     const {
@@ -488,7 +494,13 @@ class Table extends React.Component {
       ...other
     } = this.props;
 
-    const { internalId, expanded, selectAll, selection, recordQuantity } = this.state;
+    const {
+      internalId,
+      expanded,
+      selectAll,
+      selection,
+      recordQuantity
+    } = this.state;
 
     const AugmentedTable = idForCheckbox
       ? ReactTableCheckbox
@@ -506,12 +518,17 @@ class Table extends React.Component {
         cellType: "alpha-numeric",
         width: 31,
         sortable: false,
-        Cell: props => (<DropDownMenu
-          id={`${this.computeRowElementId(props)}-secondaryActions-menu`}
-          disablePortal={false}
-          icon={<MoreVert />}
-          dataList={secondaryActions}
-        />)
+        Cell: props => (
+          <DropDownMenu
+            id={`${this.computeRowElementId(props)}-secondaryActions`}
+            disablePortal={false}
+            icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
+            dataList={secondaryActions}
+            onClick={event => {
+              event.action(props.original)
+            }}
+          />
+        )
       });
     }
 
@@ -525,7 +542,7 @@ class Table extends React.Component {
         return (
           <Header
             key={column.id}
-            tableInternalId={internalId} 
+            tableInternalId={internalId}
             column={column}
             sort={sorted}
             tableSortable={sortable}
@@ -552,7 +569,10 @@ class Table extends React.Component {
     const sanitizedData = this.sanitizedData();
 
     return (
-      <div id={internalId} className={classNames(classes.tableContainer, className)}>
+      <div
+        id={internalId}
+        className={classNames(classes.tableContainer, className)}
+      >
         {(titleText || labels.titleText) && (
           <div className={classes.title}>
             <div>
@@ -562,7 +582,10 @@ class Table extends React.Component {
             </div>
             {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
-                <HvTypography variant="normalText" id={`${internalId}-subtitle`}>
+                <HvTypography
+                  variant="normalText"
+                  id={`${internalId}-subtitle`}
+                >
                   {subtitleText || labels.subtitleText}
                 </HvTypography>
               </div>
