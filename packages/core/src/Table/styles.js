@@ -51,6 +51,7 @@ const styles = theme => ({
     textAlign: "right",
     border: "none",
     "& $table": {
+      "-ms-overflow-y": "hidden",
       "& $thead": {
         background: theme.hv.palette.atmosphere.atmo1,
         textAlign: `right`,
@@ -117,7 +118,7 @@ const styles = theme => ({
         }
       },
       "& $tbody": {
-        overflow: "hidden",
+        "-ms-overflow-y": "hidden",
         "& $trGroups": {
           borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           "& $tr > div ": {
