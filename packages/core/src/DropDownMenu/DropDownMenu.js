@@ -18,6 +18,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import IconButton from "@material-ui/core/IconButton";
 import Popper from "../utils/Popper";
 import List from "../List";
 
@@ -43,73 +44,71 @@ const DropDownMenu = ({
   onClick
 }) => {
   const [open, setOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const anchorRef = React.useRef(null);
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
-  /**
-   * Open the dropdown.
-   *
-   * @param event
-   */
-  const handleClick = event => {
-    const { currentTarget } = event;
-    setOpen(!open);
-    setAnchorEl(currentTarget);
+  const handleToggle = () => {
+    setOpen(prevOpen => !prevOpen);
   };
 
-  /**
-   * Open the dropdown on Enter or Space.
-   *
-   * @param event
-   */
-  const handleKeyDown = event => {
-    const { currentTarget, key } = event;
-    const openingKeys = ["Enter", " "];
-    if (openingKeys.includes(key)) setOpen(!open);
-    setAnchorEl(currentTarget);
-  };
+  const handleClose = event => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
 
-  /**
-   * Close the dropdown.
-   */
-  const handleClickAway = () => {
     setOpen(false);
   };
 
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
   return (
-    <ClickAwayListener onClickAway={handleClickAway}>
-      <div {...id && { id }} className={classes.root}>
-        <div
-          role="button"
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-          className={classNames(classes.icon, {
-            [classes.iconSelected]: open
-          })}
-          onClick={handleClick}
-        >
-          {icon}
-        </div>
-        <Popper
-          disablePortal={disablePortal}
-          open={open}
-          anchorEl={anchorEl}
-          placement={bottom}
-          popperOptions={{}}
-          style={{ zIndex: theme.zIndex.tooltip }}
-        >
+    <div {...id && { id }} className={classes.root}>
+      <IconButton
+        {...id && { id: `${id}-icon-button` }}
+        buttonRef={anchorRef}
+        aria-controls={open ? `${id}-dropdown-menu` : undefined}
+        aria-haspopup="true"
+        onClick={handleToggle}
+        className={classNames(classes.icon, {
+          [classes.iconSelected]: open
+        })}
+        onKeyDown={(event) => {
+          handleToggle(event)
+          event.preventDefault()
+        }}
+      >
+        {icon}
+      </IconButton>
+      <Popper
+        disablePortal={disablePortal}
+        open={open}
+        anchorEl={anchorRef.current}
+        placement={bottom}
+        popperOptions={{}}
+        style={{ zIndex: theme.zIndex.tooltip }}
+      >
+        <ClickAwayListener onClickAway={handleClose}>
           <div className={classes.menuList}>
             <List
+              {...id && { id: `${id}-dropdown-menu` }}
               values={dataList}
               selectable={false}
               onClick={onClick}
               condensed
             />
           </div>
-        </Popper>
-      </div>
-    </ClickAwayListener>
+        </ClickAwayListener>
+      </Popper>
+    </div>
   );
 };
 
