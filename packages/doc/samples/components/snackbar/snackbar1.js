@@ -48,6 +48,7 @@ class SimpleSnackbar extends React.Component {
           customIcon={customIcon}
           showIcon={showIcon}
           action={action}
+          offset={60}
         />
       </div>
     );
@@ -56,16 +57,10 @@ class SimpleSnackbar extends React.Component {
 
 export default (
   <div>
-    <div>
-      <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />
-    </div>
+    <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />
     <p />
-    <div>
-      <SimpleSnackbar label="This is a success message." variant="success" showIcon />
-    </div>
+    <SimpleSnackbar label="This is a success." variant="success" showIcon />
     <p />
-    <div>
-      <SimpleSnackbar label="This is an error message." variant="error" showIcon />
-    </div>
+    <SimpleSnackbar label="This is an error." variant="error" showIcon />
   </div>
 );

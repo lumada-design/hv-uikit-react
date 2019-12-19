@@ -43,22 +43,12 @@ function HvBannerContentWrapper({
   content,
   ...other
 }) {
-  let icon = null;
-
-  // inject the correct classes to the icon
-  if (customIcon) {
-    icon = React.cloneElement(customIcon, { className: classes.iconVariant });
-  } else if (showIcon) {
-    icon = React.cloneElement(
-      severityIcon(mapSeverityToVariant(variant), theme),
-      {
-        className: classes.iconVariant
-      }
-    );
-  }
+  const icon =
+    customIcon ||
+    (showIcon && severityIcon(mapSeverityToVariant(variant), theme));
 
   let effectiveActionsPosition = actionsPosition;
-  if(actionsPosition === "auto") {
+  if (actionsPosition === "auto") {
     // default to inline
     // this might try to be more inteligent in the future,
     // taking into account the content lenght, available space,

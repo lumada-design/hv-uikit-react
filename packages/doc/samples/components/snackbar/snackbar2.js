@@ -5,12 +5,9 @@ import Button from "@hv/uikit-react-core/dist/Button";
 import Info from "@hv/uikit-react-icons/dist/Generic/Info";
 
 const styles = {
-  rootS: {
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      margin: "0 auto"
-    }
+  root: {
+    width: "32px",
+    height: "32px"
   }
 };
 
@@ -65,6 +62,7 @@ class SimpleSnackbar extends React.Component {
           customIcon={customIcon}
           showIcon={showIcon}
           action={action}
+          offset={60}
         />
       </div>
     );

@@ -20,11 +20,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import uniqueId from "lodash/uniqueId";
+import capitalize from "lodash/capitalize";
 import HvBannerContentWrapper from "./BannerWrapper";
-
-// TODO: review to use makeStyles during the Material 4 upgrade as 4988d7987a4fecf6bb33d539d476885d95acb8f8
-
-const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
 
 /**
  * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
@@ -83,17 +80,17 @@ const HvBanner = props => {
 
   // deprecated properties fallbacks (start):
   let effectiveActions = actions;
-  if(actionsOnMessage != null) {
+  if (actionsOnMessage != null) {
     effectiveActions = actionsOnMessage;
-  } else if(action != null) {
+  } else if (action != null) {
     effectiveActions = action;
   }
 
   let effectiveActionsPosition = actionsPosition;
-  if(actionsPosition === "auto") {
-    if(actionsOnMessage != null) {
+  if (actionsPosition === "auto") {
+    if (actionsOnMessage != null) {
       effectiveActionsPosition = "inline";
-    } else if(action != null) {
+    } else if (action != null) {
       effectiveActionsPosition = "bottom-right";
     }
   }
@@ -101,10 +98,9 @@ const HvBanner = props => {
 
   return (
     <Snackbar
-      {...offset && {
-        style:
-          anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
-      }}
+      {...(offset && {
+        style: anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
+      })}
       className={className}
       id={bannerId}
       classes={bannerClasses}
@@ -244,7 +240,7 @@ HvBanner.propTypes = {
    */
   actionsOnMessage: deprecatedPropType(
     PropTypes.node,
-    "Instead use the actions property together with actionsPosition=\"inline\""
+    'Instead use the actions property together with actionsPosition="inline"'
   )
 };
 

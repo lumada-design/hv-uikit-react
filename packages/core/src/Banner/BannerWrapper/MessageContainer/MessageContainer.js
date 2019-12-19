@@ -48,15 +48,21 @@ const MessageContainer = ({
 
   return (
     <>
-      {icon}
+      {icon && <div className={classes.iconContainer}>{icon}</div>}
       <HvTypography
-        {...(id && {id: `${id}-message-text`})}
+        variant="normalText"
+        {...(id && { id: `${id}-message-text` })}
         className={classes.message}
       >
         {message}
       </HvTypography>
-      {( renderedAction &&
-        <div {...(id && {id: `${id}-message-actions`})} className={classes.actionMessageContainer}>{renderedAction}</div>
+      {renderedAction && (
+        <div
+          {...(id && { id: `${id}-message-actions` })}
+          className={classes.actionMessageContainer}
+        >
+          {renderedAction}
+        </div>
       )}
     </>
   );
