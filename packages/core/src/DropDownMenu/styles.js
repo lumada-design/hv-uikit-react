@@ -29,6 +29,9 @@ const styles = theme => ({
       cursor: "pointer",
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
+    "&:focus": {
+      outline: "5px auto rgba(0, 150, 255, 1)"
+    },
     borderRadius: 0,
     display: "flex",
     alignItems: "center",
