@@ -18,13 +18,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import HvButton from "../../Button";
 
-const Actions = ({ id, classes, onCancel, onApply, cancelLabel, applyLabel }) => (
+const Actions = ({
+  id,
+  classes,
+  onCancel,
+  onApply,
+  cancelLabel,
+  applyLabel
+}) => (
   <div id={id} className={classes.root}>
-    <HvButton id={`${id}-cancel`} className={classes.button} onClick={onCancel} category="ghost">
-      {cancelLabel}
-    </HvButton>
-    <HvButton id={`${id}-apply`} className={classes.button} onClick={onApply} category="ghost">
+    <HvButton
+      id={`${id}-apply`}
+      className={classes.button}
+      onClick={onApply}
+      category="ghost"
+    >
       {applyLabel}
+    </HvButton>
+    <HvButton
+      id={`${id}-cancel`}
+      className={classes.button}
+      onClick={onCancel}
+      category="ghost"
+    >
+      {cancelLabel}
     </HvButton>
   </div>
 );

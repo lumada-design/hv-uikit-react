@@ -51,8 +51,8 @@ const labels = {
   title: "some label",
   select: "some select",
   selectAll: "some select all",
-  cancelLabel: "L-cancel",
-  applyLabel: "L-apply",
+  cancelLabel: "Cancel",
+  applyLabel: "Apply",
   multiSelectionAction: "multi",
   multiSelectionConjunction: "and-l"
 };
