@@ -53,7 +53,7 @@ describe("DropDownMenu", () => {
     }
   ];
 
-  describe("component", () => {
+  describe("component without portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
@@ -85,14 +85,14 @@ describe("DropDownMenu", () => {
     });
 
     it("opens on Enter", () => {
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Enter", () => {
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER });
       expect(wrapper.find(Popper).props().open).toBe(true);
@@ -102,14 +102,14 @@ describe("DropDownMenu", () => {
     });
 
     it("opens on Space", () => {
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Space", () => {
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE });
       expect(wrapper.find(Popper).props().open).toBe(true);
@@ -119,7 +119,89 @@ describe("DropDownMenu", () => {
     });
 
     it("opens and closes mixing mouse click, Enter, and Space", () => {
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find("button");
+
+      button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("click");
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+  });
+
+  describe("component with portal", () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <HvProvider>
+          <DropDownMenu
+            dataList={menuOptions}
+            icon={<div />}
+            disablePortal={false}
+          />
+        </HvProvider>
+      );
+    });
+
+    it("is rendered correctly and behaves as expected", () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it("opens on click", () => {
+      const button = wrapper.find("div");
+      button.at(1).simulate("click");
+
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it("closes on double click", () => {
+      const button = wrapper.find("div");
+      button.at(0).simulate("click");
+      button.at(0).simulate("click");
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it("opens on Enter", () => {
+      const button = wrapper.find("button");
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+    });
+
+    it("closes on double Enter", () => {
+      const button = wrapper.find("button");
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: ENTER });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+
+    it("opens on Space", () => {
+      const button = wrapper.find("button");
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+    });
+
+    it("closes on double Space", () => {
+      const button = wrapper.find("button");
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(true);
+
+      button.simulate("keydown", { key: SPACE });
+      expect(wrapper.find(Popper).props().open).toBe(false);
+    });
+
+    it("opens and closes mixing mouse click, Enter, and Space", () => {
+      const button = wrapper.find("button");
 
       button.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(true);

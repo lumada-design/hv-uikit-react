@@ -20,6 +20,7 @@ export default (
       icon={<MoreVert boxStyles={{ width: "32px", height: "32px" }} />}
       dataList={menuOptions}
       onClick={e => alert(e.label)}
+      disablePortal={false}
     />
   </div>
 );

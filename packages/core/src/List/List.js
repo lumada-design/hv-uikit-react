@@ -19,7 +19,7 @@ import PropTypes from "prop-types";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";
@@ -46,13 +46,10 @@ const DEFAULT_LABELS = {
 };
 
 class List extends React.Component {
-
   constructor(props) {
     super(props);
 
-    const {
-      id
-    } = props;
+    const { id } = props;
 
     this.state = {
       internalId: id || uniqueId("hv-list-"),
@@ -79,10 +76,10 @@ class List extends React.Component {
   handleSelect(evt, item) {
     if (!item.path) evt.preventDefault();
     if (item.disabled) return;
-    
+
     const { list, labels } = this.state;
     const { onChange, onClick } = this.props;
-    
+
     const parsedList = parseList(list, item, this.props);
     const parsedState = parseState(parsedList, labels);
 
@@ -96,7 +93,12 @@ class List extends React.Component {
     const { list, labels, anySelectableSelected } = this.state;
     const { onChange } = this.props;
 
-    const parsedList = parseList(list, null, this.props, !anySelectableSelected);
+    const parsedList = parseList(
+      list,
+      null,
+      this.props,
+      !anySelectableSelected
+    );
     const parsedState = parseState(parsedList, labels);
 
     this.setState({ ...parsedState });
@@ -140,16 +142,13 @@ class List extends React.Component {
               [classes.selected]: item.selected && !useSelector,
               [classes.condensed]: condensed,
               [classes.selector]: useSelector,
-              [classes.disabled]: item.disabled,
+              [classes.disabled]: item.disabled
             }
           ])}
         >
-          {!useSelector && 
-            (
-              (item.leftIcon && this.renderLeftIcon(item)) ||
-              (item.iconCallback && this.renderLeftIcon(item))
-            )
-          }
+          {!useSelector &&
+            ((item.leftIcon && this.renderLeftIcon(item)) ||
+              (item.iconCallback && this.renderLeftIcon(item)))}
 
           {multiSelect
             ? this.renderMultiSelectItem(item, itemId)
@@ -229,8 +228,9 @@ class List extends React.Component {
           classes.truncate,
           {
             [classes.selected]: item.selected,
-            [classes.labelIconLeftPadding]: (item.leftIcon || item.iconCallback),
-            [classes.noIconLeftPadding]: !(item.leftIcon || item.iconCallback) && hasLeftIcons
+            [classes.labelIconLeftPadding]: item.leftIcon || item.iconCallback,
+            [classes.noIconLeftPadding]:
+              !(item.leftIcon || item.iconCallback) && hasLeftIcons
           }
         ])}
       >
@@ -252,9 +252,14 @@ class List extends React.Component {
       ? theme.hv.palette.atmosphere.atmo1
       : theme.hv.palette.accent.acce1;
 
-    const deprecatedIcon = !isNil(item.leftIcon) ? item.leftIcon({ color: ["none", iconColor] }) : undefined;
+    const deprecatedIcon = !isNil(item.leftIcon)
+      ? item.leftIcon({ color: ["none", iconColor] })
+      : undefined;
     const newIcon = !isNil(item.iconCallback)
-      ? item.iconCallback({ isSelected: item.selected, isDisabled: item.disabled })
+      ? item.iconCallback({
+          isSelected: item.selected,
+          isDisabled: item.disabled
+        })
       : undefined;
     const icon = !isNil(deprecatedIcon) ? deprecatedIcon : newIcon;
 
