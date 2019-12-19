@@ -20,12 +20,10 @@ import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import HvProvider from "../../Provider";
-import HvButton from "../../Button";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
 import DropdownWithStyles from "../index";
 import Dropdown from "../Dropdown";
 import List from "../List/List";
-import Actions from "../Actions/Actions";
 import Typography from "../../Typography";
 
 const mockData = [
@@ -244,8 +242,8 @@ describe("<Dropdown />", () => {
       instance = dropdownComponent.instance();
 
       dropdownComponent
-        .find(Actions)
-        .find(HvButton)
+        .find('Actions')
+        .find('HvButton')
         .at(1)
         .simulate("click", {
           preventDefault() {}
