@@ -140,3 +140,16 @@ verify list items
     [Arguments]    ${locator}    ${items}
     ${list_items}      Get List Items    ${locator}
     Should Be Equal    ${list_items}     ${items}
+
+clean input
+    [Arguments]       ${locator}
+    Run Keyword If    '${BROWSER.lower()}'=='ie'    Press Keys    ${locator}    CTRL+A+DELETE    #IE11 vs chrome keyboards case incompatible
+    ...               ELSE                          Press Keys    ${locator}    CTRL+a+DELETE
+
+force input
+    [Arguments]        ${locator}    ${string}
+    [Documentation]
+    ...                Cleans the input locator and sets with the string value.
+    ...
+    Clean input        ${locator}
+    Input Text         ${locator}    ${string}
