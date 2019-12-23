@@ -156,7 +156,7 @@ const Chart = ({
         <div className={classes.titleContainer}>
           {title && <Typography variant="mTitle">{title}</Typography>}
           <div className={classes.subtitle}>
-            {subtitle && <Typography variant="infoText">{subtitle}</Typography>}
+            {subtitle && <Typography variant="sText">{subtitle}</Typography>}
           </div>
         </div>
         <div
