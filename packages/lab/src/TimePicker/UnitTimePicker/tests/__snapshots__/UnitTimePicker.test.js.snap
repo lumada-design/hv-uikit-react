@@ -9435,6 +9435,7 @@ body {
 }
 .HvInput-input-109::placeholder {
   color: #999999;
+  opacity: 1;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -9620,6 +9621,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   Object {
                     "display": "none",
@@ -10086,6 +10088,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   ".HvInput-inputDisabled-110": Object {
                     "cursor": "not-allowed",
@@ -11112,6 +11115,7 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
+                    "opacity": 1,
                   },
                   ".HvInput-inputRoot-105:hover": Object {
                     "background": "#FFFFFF",
@@ -11193,6 +11197,7 @@ input:-webkit-autofill {
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
+                      "opacity": 1,
                     },
                     "color": "#414141",
                     "fontSize": "14px",
