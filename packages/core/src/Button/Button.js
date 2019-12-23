@@ -71,6 +71,7 @@ const HvButton = props => {
     type,
     colorType,
     category,
+    startIcon,
     ...other
   } = props;
 
@@ -96,6 +97,7 @@ const HvButton = props => {
       type={type}
       {...other}
     >
+      {startIcon && <div className={classes.startIcon}>{startIcon}</div>}
       {children}
     </Button>
   );
@@ -228,7 +230,11 @@ HvButton.propTypes = {
     /**
      * Styles applied to the inspireRed secondary ghost button when it is disabled.
      */
-    inspireRedGhostSecondaryDisabled: PropTypes.string
+    inspireRedGhostSecondaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the icon on the left.
+     */
+    startIcon: PropTypes.string
   }).isRequired,
   /**
    * The content inside the button.
@@ -241,7 +247,11 @@ HvButton.propTypes = {
   /**
    * The function executed when the button is pressed.
    */
-  onClick: PropTypes.instanceOf(Function)
+  onClick: PropTypes.instanceOf(Function),
+  /**
+   * The icon to be rendered before the children.
+   */
+  startIcon: PropTypes.node
 };
 
 HvButton.defaultProps = {
@@ -251,7 +261,8 @@ HvButton.defaultProps = {
   colorType: undefined,
   category: "primary",
   disabled: false,
-  onClick: () => {}
+  onClick: () => {},
+  startIcon: null
 };
 
 export default HvButton;
