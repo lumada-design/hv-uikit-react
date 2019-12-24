@@ -22,7 +22,9 @@ const styles = theme => ({
     zIndex: 100
   },
   title: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${
+      theme.hv.spacing.xs
+    }px ${theme.hv.spacing.sm}px`,
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
   },
   valuesContainer: {
@@ -38,7 +40,7 @@ const styles = theme => ({
   },
   color: {
     width: `${theme.hv.spacing.xs}px`,
-    height: theme.hv.typography.vizText.lineHeight
+    height: `${theme.hv.spacing.xs}px`
   },
   separator: {
     width: `${theme.hv.spacing.xs}px`
