@@ -583,7 +583,7 @@ class Table extends React.Component {
             {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
                 <HvTypography
-                  variant="normalText"
+                  variant="sText"
                   id={`${internalId}-subtitle`}
                 >
                   {subtitleText || labels.subtitleText}
