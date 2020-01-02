@@ -228,7 +228,7 @@ describe("DropDownMenu", () => {
         </HvProvider>
       );
 
-      const button = wrapper.find('div[role="button"]');
+      const button = wrapper.find('button');
 
       button.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(true);

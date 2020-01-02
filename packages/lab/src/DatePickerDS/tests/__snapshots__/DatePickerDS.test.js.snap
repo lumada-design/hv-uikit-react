@@ -7203,7 +7203,6 @@ body {
               "snackbar": 1400,
               "tooltip": 1500,
             },
-
           } => Object {
             "refs": 1,
             "sheet": StyleSheet {
@@ -9315,6 +9314,7 @@ body {
             "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1281",
           }
         }
+        disablePortal={true}
         endValue="2019-01-10"
         horizontalPlacement="left"
         labels={
@@ -11250,7 +11250,7 @@ body {
           </div>
           <Popper
             anchorEl={null}
-            disablePortal={false}
+            disablePortal={true}
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -11261,7 +11261,7 @@ body {
             }
             style={
               Object {
-                "zIndex": "0",
+                "zIndex": "1",
               }
             }
             transition={false}
