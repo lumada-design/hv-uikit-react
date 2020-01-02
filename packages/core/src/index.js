@@ -39,6 +39,7 @@ export { default as HvSwitch } from "./Switch";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export { default as HvAssetInventory } from "./AssetInventory";
+export { default as HvDatePicker } from "./DatePicker";
 
 // theme
 export { default as hvTheme } from "./theme";
