@@ -29,7 +29,7 @@ const MultipleActionsWithMediaButtons = ({classes}) => (
       Update
     </HvButton>
     <HvButton category="ghost" className={classes.smallButton}>
-      <MoreOptionsIcon />
+      <MoreOptionsIcon aria-label="more options"/>
     </HvButton>
   </>
 );
@@ -60,6 +60,7 @@ export default (
     <HvCard variant="error">
       <CustomMedia mediaPath={leaf} mediaHeight={160} />
       <HvCardFooter
+        defaultCardAriaLabel="Composed card"
         actions={<CustomActions />}
         isSelectable
         onChange={event => console.log(`my value is ${event.target.value}`)}

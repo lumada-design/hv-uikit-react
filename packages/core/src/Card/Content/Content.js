@@ -18,25 +18,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import CardContent from "@material-ui/core/CardContent";
+import uniqueId from "lodash/uniqueId";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
+const DEFAULT_ID = "hv-content";
 /**
  * The content container.
  *
  * @param {Object} { classes, className, innerCardContent, ...other }
  */
 const Content = ({
+  id,
   classes,
   className,
   innerCardContent,
   needsBorder,
+  onClickAction,
   ...others
 }) => (
   <CardContent
-    className={classNames(
-      classes.content,
-      className
-    )}
+    id={id || uniqueId(DEFAULT_ID)}
+    className={classNames(classes.content, className)}
+    onClick={onClickAction}
     {...others}
   >
     {innerCardContent}
@@ -44,6 +47,10 @@ const Content = ({
 );
 
 Content.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * Class names to be applied.
    */
@@ -70,13 +77,19 @@ Content.propTypes = {
    * @deprecated
    */
   // eslint-disable-next-line react/no-unused-prop-types
-  needsBorder: deprecatedPropType(PropTypes.bool)
+  needsBorder: deprecatedPropType(PropTypes.bool),
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClickAction: PropTypes.func
 };
 
 Content.defaultProps = {
   className: "",
+  id: undefined,
   innerCardContent: undefined,
-  needsBorder: undefined
+  needsBorder: undefined,
+  onClickAction: () => {}
 };
 
 export default Content;

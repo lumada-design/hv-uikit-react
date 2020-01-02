@@ -39,7 +39,7 @@ const MultipleActionsWithMediaButtons = ({classes}) => (
       Update
     </HvButton>
     <MoreOptionsIconButton category="link">
-      <MoreOptionsIcon />
+      <MoreOptionsIcon aria-label="more options" />
     </MoreOptionsIconButton>
   </>
 );
@@ -74,6 +74,7 @@ export default (
       <FooterWithStyles
         actions={<MultipleActionsWithMediaButtonsWithStyles />}
         isSelectable
+        defaultCardAriaLabel="Composed card"
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
       <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />

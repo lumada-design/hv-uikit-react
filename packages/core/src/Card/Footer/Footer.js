@@ -44,6 +44,9 @@ const FooterActions = ({
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
       category="ghost"
+      aria-label={action.checkboxAriaLabel}
+      aria-labelledby={action.checkboxAriaLabelledBy}
+      aria-describedby={action.checkboxAriaDescribedBy}
     >
       {(action.icon && action.icon()) ||
         (action.iconCallback && action.iconCallback())}
@@ -104,6 +107,9 @@ const FooterActions = ({
 const Footer = ({
   classes,
   id,
+  checkboxAriaLabel,
+  checkboxAriaLabelledBy,
+  checkboxAriaDescribedBy,
   className,
   actions,
   actionsCallback,
@@ -118,7 +124,10 @@ const Footer = ({
   actionItemWidth,
   ...other
 }) => (
-  <CardActions className={classNames(classes.root, className)} {...other}>
+  <CardActions 
+    className={classNames(classes.root, className)} 
+    {...other}
+  >
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
@@ -127,6 +136,11 @@ const Footer = ({
           label={checkboxLabel}
           checked={checkboxSelected}
           indeterminate={checkboxIndeterminate}
+          checkboxProps={{
+            "aria-label": checkboxAriaLabel,
+            "aria-labelledby": checkboxAriaLabelledBy,
+            "aria-describedby": checkboxAriaDescribedBy,
+          }}
         />
       </div>
     )}
@@ -177,6 +191,18 @@ Footer.propTypes = {
    * Component identifier.
    */
   id: PropTypes.string,
+  /** 
+   *  Used to define a string that labels the checkbox element.
+   */
+  checkboxAriaLabel: PropTypes.string,
+  /** 
+   *  Establishes relationships between the checkbox and their label(s), and its value should be one or more element IDs.
+   */
+  checkboxAriaLabelledBy: PropTypes.string,
+  /** 
+   *  Used to indicate the IDs of the elements that describe the checkbox.
+   */
+  checkboxAriaDescribedBy: PropTypes.string,
   /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon}´
@@ -188,7 +214,10 @@ Footer.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
-        iconCallback: PropTypes.func
+        iconCallback: PropTypes.func,
+        checkboxAriaLabel: PropTypes.string,
+        checkboxAriaLabelledBy: PropTypes.string,
+        checkboxAriaDescribedBy: PropTypes.string,
       })
     )
   ]),
@@ -233,13 +262,16 @@ Footer.propTypes = {
   /**
    *  Width applicable to the action container, to handle an issue Safari has when using css flex:
    *  It resizes descendant divs, unless a width is forced
-   *     */
+   */
   actionItemWidth: PropTypes.number
 };
 
 Footer.defaultProps = {
   className: "",
   id: "",
+  checkboxAriaLabel: undefined,
+  checkboxAriaLabelledBy: undefined,
+  checkboxAriaDescribedBy: undefined,
   isSelectable: false,
   onChange: () => {},
   checkboxValue: "",

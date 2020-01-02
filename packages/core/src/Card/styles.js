@@ -18,9 +18,13 @@ import _ from "lodash";
 
 const styles = theme => {
   const semantics = _.mapValues(theme.hv.palette.semantic, value => ({
-    "&::before": {
-      background: value
-    }
+      position: "absolute",
+      backgroundColor: value,
+      width: "100%",
+      height: "2px",
+      top: -1,
+      right: 0,
+      zIndex: 1
   }));
 
   return {
@@ -30,11 +34,26 @@ const styles = theme => {
         content: "''",
         height: 2,
         width: "100%",
-        display: "block",
-        background: theme.hv.palette.atmosphere.atmo6
+        display: "block"
       }
     },
+    sema0 : {
+      position: "absolute",
+      backgroundColor: theme.hv.palette.atmosphere.atmo6,
+      width: "100%",
+      height: "2px",
+      top: -1,
+      right: 0,
+      zIndex: 1
+    },
     ...semantics,
+    semanticSelected: {
+      height: "4px",
+    },
+    semanticContainer: {
+      width: "100%",
+      position: "relative",
+    },
     selectable: {
       cursor: "pointer",
       "&:hover": {

@@ -131,7 +131,7 @@ const MultipleActionsWithMediaButtons = ({ classes }) => (
       <Upload className={classes.box} />
       Update
     </HvButton>
-    <HvButton className={classes.smallButton} category="ghost">
+    <HvButton className={classes.smallButton} category="ghost" aria-label="more options">
       <MoreOptionsIcon />
     </HvButton>
   </>
@@ -172,6 +172,8 @@ export default (
       checkboxValue="value"
       mediaPath={leaf}
       mediaHeight={160}
+      mediaTitle={"leafy leaf"}
+      medialAriaLabel="leafy leaf"
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>
