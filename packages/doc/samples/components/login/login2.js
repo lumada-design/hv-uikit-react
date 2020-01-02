@@ -28,7 +28,7 @@ const labels = {
   emailLabel: "Email label",
   emailPlaceholder: "Email placeholder",
   cancelButton: "Cancel",
-  recoverButton: "Recover l",
+  recoverButton: "Recover label",
   recoveringMessage: "Recovering label",
   incorrectCredentialsMessage: "Some Error!"
 };

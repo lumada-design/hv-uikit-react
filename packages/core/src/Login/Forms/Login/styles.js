@@ -17,18 +17,18 @@
 const styles = theme => ({
   root: {
     minWidth: "250px",
-    width:"300px",
-    padding: "30px 0px 0px 0px",
+    width: "300px",
+    padding: `${theme.hv.spacing.sm}px 0px 0px 0px`,
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop:50
+    marginTop: 50
   },
   title: {
     display: "flex",
     position: "relative",
     left: "auto",
     zIndex: 1,
-    margin: `60px 0 ${theme.hv.spacing.sm}px`,
+    marginBottom: `${theme.hv.spacing.xs}px`,
     overflow: "auto"
   },
   h3: {
@@ -36,8 +36,8 @@ const styles = theme => ({
   },
   inputUser: {
     position: "relative",
-    paddingBottom: 19,
-    marginTop: 22
+    paddingBottom: `${theme.hv.spacing.md}px`,
+    marginTop: 10
   },
   inputPassword: {},
   button: {
@@ -46,14 +46,14 @@ const styles = theme => ({
     position: "absolute",
     right: 0,
     top: 0,
-    textTransform:"none"
+    textTransform: "none"
   },
   buttonsContainer: {
     position: "relative",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "52px"
+    marginTop: `${theme.hv.spacing.lg}px`
   },
   buttonsContainerWithRemember: {
     position: "relative",
@@ -65,18 +65,15 @@ const styles = theme => ({
     width: `${theme.hv.spacing.sm}px`
   },
   forgotCredentials: {
-    marginTop: "40px",
+    marginTop: `${theme.hv.spacing.sm}px`,
     display: "flex",
     justifyContent: "center"
   },
   checkBoxTypography: {
-    ...theme.hv.typography.infoText
+    ...theme.hv.typography.normalText
   },
-  sentenceCase:{
+  sentenceCase: {
     textTransform: `full-size-kana`
-  },
-  linkButtonTypography: {
-    fontSize: theme.hv.typography.infoText.fontSize
   },
   showMessage: {
     backgroundColor: theme.hv.palette.semantic.sema9,
@@ -94,11 +91,10 @@ const styles = theme => ({
     paddingRight: `${theme.hv.spacing.xs}px`,
     paddingLeft: `${theme.hv.spacing.xs}px`,
     whiteSpace: "pre-wrap",
-    "& $p":{
+    "& $p": {
       ...theme.hv.typography.normalText,
-      color: theme.hv.palette.base.base2,
+      color: theme.hv.palette.base.base2
     }
-
   },
   icon: {
     margin: `0 ${theme.hv.spacing.xs}px`,

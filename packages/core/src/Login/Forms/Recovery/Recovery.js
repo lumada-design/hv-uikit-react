@@ -105,7 +105,9 @@ class Recovery extends React.Component {
               message={messageAfterRecover}
             />
           ) : (
-            <HvTypography variant="normalText" className={classes.instructions}>{messageToRecover}</HvTypography>
+            <HvTypography variant="normalText" className={classes.instructions}>
+              {messageToRecover}
+            </HvTypography>
           )}
         </div>
 
@@ -134,6 +136,7 @@ class Recovery extends React.Component {
             className={classes.submitButton}
             type="submit"
             category="primary"
+            disabled={isRecovering}
           >
             {isRecovering ? recoveringMessage : recoverButton}
           </HvButton>
@@ -141,7 +144,7 @@ class Recovery extends React.Component {
             className={classes.cancelButton}
             type="submit"
             onClick={onClick}
-            category="secondary"
+            category="ghost"
           >
             {cancelButton}
           </HvButton>
@@ -155,9 +158,54 @@ Recovery.displayName = "recoveryForm";
 
 Recovery.propTypes = {
   /**
-   * the classes object to be applied into the root object.
+   * The classes object to be applied into the root object.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the title.
+     */
+    title: PropTypes.string,
+    /**
+     * Styles applied to the recovery message.
+     */
+    instructions: PropTypes.string,
+    /**
+     * Styles applied to the input.
+     */
+    input: PropTypes.string,
+    /**
+     * Styles applied to the cancel button.
+     */
+    cancelButton: PropTypes.string,
+    /**
+     * Styles applied to the submit button.
+     */
+    submitButton: PropTypes.string,
+    /**
+     * Styles applied to the button container.
+     */
+    buttonsContainer: PropTypes.string,
+    /**
+     * Styles applied to the button container error.
+     */
+    buttonsContainerError: PropTypes.string,
+    /**
+     * Styles applied to the message ok.
+     */
+    showOkMessage: PropTypes.string,
+    /**
+     * Styles applied to the icon error.
+     */
+    iconError: PropTypes.string,
+    /**
+     * Styles applied to the message container.
+     */
+    messageContainer: PropTypes.string
+  }).isRequired,
   /**
    * the function invoked for the recover action. The function must throw an exception if the request wasn't successful.
    */
