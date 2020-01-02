@@ -44,7 +44,7 @@ Use input to change date with enter
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1970
+    Force input                               ${simpleInput}                        01/02/1970
     Press Keys                                ${simpleInput}                        RETURN
     Element Should Not Be Visible             ${openCalendar}
     Click Element                             DatePicker
@@ -57,7 +57,7 @@ Use input to change date with click outside
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1970
+    Force input                               ${simpleInput}                        01/02/1970
     Click Element                             ${outside}
     Element Should Not Be Visible             ${openCalendar}
     Click Element                             DatePicker
@@ -120,7 +120,7 @@ Use input to change date with click outside in locale pt-PT
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1970
+    Force input                               ${simpleInput}                        01/02/1970
     Click Element                             ${outside}
     Element Should Not Be Visible             ${openCalendar}
     Click Element                             DatePicker
@@ -133,7 +133,7 @@ Use input and maintain date formatting with enter
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1975
+    Force input                               ${simpleInput}                        01/02/1975
     Press Keys                                ${simpleInput}                        RETURN
     Element Attribute Value Should Be         ${simpleInput}                        value         01/02/1975
 
@@ -143,7 +143,7 @@ Use input and change date formatting with click outside input
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1975
+    Force input                               ${simpleInput}                        01/02/1975
     Click element                             ${openCalendar}
     Element Attribute Value Should Be         ${simpleInput}                        value         2 Jan, 1975
 
@@ -179,7 +179,7 @@ Don't change date with input and clicking enter when actions mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1975
+    Force input                               ${simpleInput}                        01/02/1975
     Press Keys                                ${simpleInput}                        RETURN
     Click Element                             ${outside}
     Click Element                             DatePicker
@@ -192,7 +192,7 @@ Don't change date with input, clicking enter and cancel when actions mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1975
+    Force input                               ${simpleInput}                        01/02/1975
     Press Keys                                ${simpleInput}                        RETURN
     Click Element                             ${cancelButton}
     Click Element                             DatePicker
@@ -218,7 +218,7 @@ Change date with input, clicking enter and cancel when actions mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendar}                       10s
-    Input Text                                ${simpleInput}                        01/02/1975
+    Force input                               ${simpleInput}                        01/02/1975
     Press Keys                                ${simpleInput}                        RETURN
     Click Element                             ${applyButton}
     Click Element                             DatePicker
@@ -261,10 +261,10 @@ Change range date with inputs
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${startInput}                         01/02/2019
+    Force input                               ${startInput}                         01/02/2019
     Press Keys                                ${startInput}                         RETURN
     Element Attribute Value Should Be         ${startInput}                         value         01/02/2019
-    Input Text                                ${endInput}                           01/10/2019
+    Force input                               ${endInput}                           01/10/2019
     Press Keys                                ${endInput}                           RETURN
     Element Attribute Value Should Be         ${endInput}                           value         01/10/2019
 
@@ -274,7 +274,7 @@ Adapte range date by setting end date before start with inputs
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${endInput}                           01/02/2019
+    Force input                               ${endInput}                           01/02/2019
     Press Keys                                ${endInput}                           RETURN
     Element Attribute Value Should Be         ${endInput}                           value         01/02/2019
     Element Attribute Value Should Be         ${startInput}                         value         2 Jan, 2019
@@ -311,7 +311,7 @@ Don't change date with start input and clicking enter when range mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${startInput}                         01/02/1975
+    Force input                               ${startInput}                         01/02/1975
     Press Keys                                ${startInput}                         RETURN
     Click Element                             ${outside}
     Click Element                             DatePicker
@@ -324,7 +324,7 @@ Don't change date with start input, clicking enter and cancel when range mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${startInput}                         01/02/1975
+    Force input                               ${startInput}                         01/02/1975
     Press Keys                                ${startInput}                         RETURN
     Click Element                             ${cancelButton}
     Click Element                             DatePicker
@@ -362,7 +362,7 @@ Don't change date with end input and clicking enter when range mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${endInput}                           01/02/1975
+    Force input                               ${endInput}                           01/02/1975
     Press Keys                                ${endInput}                           RETURN
     Click Element                             ${outside}
     Click Element                             DatePicker
@@ -375,9 +375,11 @@ Don't change date with end input, clicking enter and cancel when range mode
     Wait Until Element Is Visible             DatePicker                            10s
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
-    Input Text                                ${endInput}                           01/02/1975
+    Force input                               ${endInput}                           01/02/1975
     Press Keys                                ${endInput}                           RETURN
     Click Element                             ${cancelButton}
     Click Element                             DatePicker
     Wait Until Element Is Visible             ${openCalendarRange}                  10s
     Element Attribute Value Should Be         ${endInput}                           value         10 Jun, 2019
+
+    
