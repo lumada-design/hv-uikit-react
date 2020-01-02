@@ -24,16 +24,16 @@ click on button Add on card
 
 click on button ... Delete on 9. Automatic action creation from list
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
-    Wait Until Element Is Enabled    css:div[role='button']      10s
-    Click Element                    css:div[role='button'][class|='DropDownMenu-icon']
+    Wait Until Element Is Enabled    css:button[class*='DropDownMenu']      10s
+    Click Element                    css:button[class*='DropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='listbox']       2s
     Click Element                    //p[text()='Delete']
     Alert Should Be Present          You have pressed Delete
 
 unable click on preview and upload button
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
-    Wait Until Element Is Enabled    css:div[role='button']    10s
-    Click Element                    css:div[role='button'][class|='DropDownMenu-icon']
+    Wait Until Element Is Enabled    css:button[class*='DropDownMenu']    10s
+    Click Element                    css:button[class*='DropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='listbox']     2s
     Element Should Be Visible        //li[contains(@class,'List-disabled') and contains(.,'Preview')]
     Element Should Be Visible        //li[contains(@class,'List-disabled') and contains(.,'Upload')]

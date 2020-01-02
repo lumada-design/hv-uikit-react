@@ -44,6 +44,7 @@ export default (
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}
       actionItemWidth={110}
+      id='card'
     />
   </div>
 );

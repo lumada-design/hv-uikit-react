@@ -37,5 +37,5 @@ const data = [
 ];
 
 export default (
-  <HvBreadCrumb listRoute={data} useRouter={false} maxVisible={2} />
+  <HvBreadCrumb listRoute={data} useRouter={false} maxVisible={2} id='breadcrumb'/>
 );
