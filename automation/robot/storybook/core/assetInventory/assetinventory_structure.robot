@@ -151,7 +151,6 @@ Maintain selection between search's
     Wait Until Element Is Visible      hv-assetinventory                     10s
     Checkbox Should Not Be Selected    ${firstCheckbox}
     Select Checkbox                    ${firstCheckbox}
-    Handle Alert
     Input Text                         ${searchBox}                          trac
     Wait Until Element Is Visible      ${cardView}                           2s
     Click Button                       css:button[title='Clear the text']
@@ -163,7 +162,6 @@ Maintain selection between pages
     Wait Until Element Is Visible      hv-assetinventory    10s
     Checkbox Should Not Be Selected    ${firstCheckbox}
     Select Checkbox                    ${firstCheckbox}
-    Handle Alert
     Click Button                       ${nextPage}
     Wait Until Element Is Visible      ${prevPage}          2s
     Click Button                       ${prevPage}
