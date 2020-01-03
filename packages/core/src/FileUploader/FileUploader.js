@@ -36,6 +36,7 @@ const DEFAULT_LABELS = {
 const FileUploader = ({
   labels,
   fileList,
+  multiple,
   maxFileSize,
   acceptedFiles,
   onFilesAdded,
@@ -44,6 +45,7 @@ const FileUploader = ({
   <>
     <DropZone
       labels={labels}
+      multiple={multiple}
       acceptedFiles={acceptedFiles}
       maxFileSize={maxFileSize}
       onFilesAdded={onFilesAdded}
@@ -126,6 +128,10 @@ FileUploader.propTypes = {
     })
   ).isRequired,
   /**
+   * Whether the Dropzone should accept multiple files at once.
+   */
+  multiple: PropTypes.bool,
+  /**
    * Max upload size
    * */
   maxFileSize: PropTypes.number,
@@ -145,6 +151,7 @@ FileUploader.propTypes = {
 
 FileUploader.defaultProps = {
   labels: DEFAULT_LABELS,
+  multiple: true,
   maxFileSize: Infinity,
   acceptedFiles: [],
   onFilesAdded: () => {},

@@ -54,6 +54,7 @@ const Sample = () => {
 
   return (
     <FileUploader
+      multiple={false}
       fileList={list}
       onFilesAdded={files => {
         const newFiles = filterNewFiles(files, list);

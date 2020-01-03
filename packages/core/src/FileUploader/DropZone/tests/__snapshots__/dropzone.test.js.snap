@@ -11935,6 +11935,7 @@ body {
           }
         }
         maxFileSize={1}
+        multiple={true}
         onDragEnter={[MockFunction]}
         onDragLeave={[MockFunction]}
         onDropCapture={[MockFunction]}

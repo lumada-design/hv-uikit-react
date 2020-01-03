@@ -26,6 +26,7 @@ import { convertUnits } from "../utils";
 const DropZone = ({
   classes,
   labels,
+  multiple,
   acceptedFiles,
   maxFileSize,
   onFilesAdded
@@ -128,7 +129,7 @@ const DropZone = ({
             tabIndex={-1}
             className={classes.inputArea}
             type="file"
-            multiple
+            multiple={multiple}
             onClick={() => {
               inputRef.current.value = null;
             }}
@@ -185,6 +186,10 @@ DropZone.propTypes = {
    */
   labels: PropTypes.instanceOf(Object).isRequired,
   /**
+   * Whether the Dropzone should accept multiple files at once.
+   */
+  multiple: PropTypes.bool,
+  /**
    * Files extensions accepted for upload.
    */
   acceptedFiles: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -199,6 +204,7 @@ DropZone.propTypes = {
 };
 
 DropZone.defaultProps = {
+  multiple: true,
   onFilesAdded: () => {}
 };
 
