@@ -14,12 +14,34 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
 
-export default function Hitachi(props) {
+const Hitachi = props => {
   return (
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 125 50" style={{enableBackground: 'new 0 0 125 50'}} xmlSpace="preserve" width={125} height={50} {...props}>
-      <style type="text/css" dangerouslySetInnerHTML={{__html: "\n\t.st0{fill:#161616;}\n\t.st1{fill:#ED1B34;}\n" }} />
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 125 50"
+      style={{ enableBackground: "new 0 0 125 50" }}
+      xmlSpace="preserve"
+      width={125}
+      height={50}
+      {...props}
+    >
+      <style
+        type="text/css"
+        dangerouslySetInnerHTML={{
+          __html:
+            "\n\t.st0{fill:" +
+            props.theme.hv.palette.accent.acce1 +
+            ";}\n\t.st1{fill:#ED1B34;}\n"
+        }}
+      />
       <g>
         <g>
           <g>
@@ -32,19 +54,34 @@ export default function Hitachi(props) {
                       d="M96.4,7.5c0,0,0,6.8,0,6.8h9.1c0,0,0-6.8,0-6.8c0,0,4.4,0,4.5,0c0,0,0,16.9,0,16.9c0,0-4.5,0-4.5,0
                     								c0,0,0-7.4,0-7.4c0,0-9.1,0-9.1,0c0,0,0,7.4,0,7.4h-4.5c0,0,0-16.9,0-16.9H96.4z"
                     />
-                    <path className="st0" d="M53.8,7.5c0,0,0,2.9,0,2.9H47v14h-4.5v-14h-6.9c0,0,0-2.9,0-2.9C35.7,7.5,53.8,7.5,53.8,7.5z" />
+                    <path
+                      className="st0"
+                      d="M53.8,7.5c0,0,0,2.9,0,2.9H47v14h-4.5v-14h-6.9c0,0,0-2.9,0-2.9C35.7,7.5,53.8,7.5,53.8,7.5z"
+                    />
                     <path
                       className="st0"
                       d="M71.3,24.4c0,0-5,0-5,0c0,0-1.5-3.6-1.5-3.6h-8.4c0,0-1.4,3.6-1.5,3.6c0,0-5,0-5,0l7.9-16.9
                     								c0,0,5.5,0,5.5,0L71.3,24.4z M60.6,10.4l-3.1,7.7h6.2L60.6,10.4"
                     />
-                    <rect x="113.4" y="7.5" className="st0" width="4.5" height="16.9" />
+                    <rect
+                      x="113.4"
+                      y="7.5"
+                      className="st0"
+                      width="4.5"
+                      height="16.9"
+                    />
                     <path
                       className="st0"
                       d="M12.5,7.5c0,0,0,6.8,0,6.8h9c0,0,0-6.8,0-6.8c0,0,4.4,0,4.5,0c0,0,0,16.9,0,16.9c0,0-4.5,0-4.5,0
                     								c0,0,0-7.4,0-7.4c0,0-9,0-9,0c0,0,0,7.4,0,7.4H8c0,0,0-16.9,0-16.9H12.5z"
                     />
-                    <rect x="29.6" y="7.5" className="st0" width="4.5" height="16.9" />
+                    <rect
+                      x="29.6"
+                      y="7.5"
+                      className="st0"
+                      width="4.5"
+                      height="16.9"
+                    />
                     <path
                       className="st0"
                       d="M71.1,19.7c-0.4-1.1-0.6-2.3-0.6-3.6c0-1.8,0.3-3.5,1.2-4.9c0.9-1.5,2.2-2.6,3.8-3.2
@@ -61,7 +98,10 @@ export default function Hitachi(props) {
           </g>
         </g>
         <g>
-          <path className="st0" d="M4,29.2l-4,0.4v0.6l0.1,0c1.6,0.2,1.6,0.2,1.6,1.3v8.4h2.4V29.1L4,29.2z" />
+          <path
+            className="st0"
+            d="M4,29.2l-4,0.4v0.6l0.1,0c1.6,0.2,1.6,0.2,1.6,1.3v8.4h2.4V29.1L4,29.2z"
+          />
           <path
             className="st0"
             d="M12.5,32.3c-1.5,0-2.4,1-2.8,1.6c0-0.5,0-1.6,0-1.6l-0.2,0l-3.2,0.5v0.6h0.1c1,0,1.2,0.2,1.2,1.2v5.2h2V36
@@ -80,7 +120,10 @@ export default function Hitachi(props) {
           			c0,1.9-0.5,2.8-1.5,2.8c-1.3,0-1.6-1.2-1.6-2.3V36C27.1,35.2,27.2,33.4,28.7,33.4z"
           />
           <g>
-            <path className="st0" d="M33.8,32.8v0.6l0.1,0c1,0,1.2,0.2,1.2,1.2v5.2h2v-7.5l-0.2,0L33.8,32.8z" />
+            <path
+              className="st0"
+              d="M33.8,32.8v0.6l0.1,0c1,0,1.2,0.2,1.2,1.2v5.2h2v-7.5l-0.2,0L33.8,32.8z"
+            />
             <path
               className="st0"
               d="M36.2,31.4c0.7,0,1.3-0.5,1.3-1.1c0-0.6-0.6-1.1-1.3-1.1c-0.7,0-1.2,0.5-1.2,1.1
@@ -140,8 +183,15 @@ export default function Hitachi(props) {
           d="M116.6,34.9l2.1-2.4h-2.1l-2,2.3l-1.7-2.3h-3.1v0.6l0.1,0c1.1,0.1,1.3,0.3,1.9,1.1l1.3,1.7l-2.1,2.4h2.1
         		l0.9-1.1l2,2.6h2.4l-3.8-5H116.6z"
         />
-        <polygon className="st1" points="120.7,30.2 118.6,30.2 121.1,27.2 123.3,27.2 	" />
+        <polygon
+          className="st1"
+          points="120.7,30.2 118.6,30.2 121.1,27.2 123.3,27.2 	"
+        />
       </g>
     </svg>
   );
-}
+};
+
+export default withStyles(null, { withTheme: true })(props => (
+  <Hitachi theme={props.theme} style={{ width: "72px" }} />
+));

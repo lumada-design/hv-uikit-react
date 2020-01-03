@@ -15,8 +15,9 @@
  */
 
 const styles = () => ({
-  shadowPadding:{
-    padding:"0 10px",
+  shadowPadding: {
+    margin: "0 10px",
+    boxShadow: "0 0 0 #fff, 0px 6px 12px rgba(65,65,65,.12);"
   },
   navButton: {
     zIndex: "3",
@@ -26,13 +27,6 @@ const styles = () => ({
   },
   verticalNavigationSeparation: {
     marginTop: "5px"
-  },
-  verticalNavigationshield: {
-    width: "100%",
-    height: "100%",
-    top: "0",
-    left: "320px",
-    position: "absolute"
   },
   verticalNavigationContainer: {
     zIndex: "7"

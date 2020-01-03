@@ -3,9 +3,8 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
-import HitachiLogo from "./resources/hitachi";
+import Hitachi from "./resources/hitachi";
 
 const styles = theme => ({
   box: {
@@ -25,14 +24,10 @@ const getClasses = ({ classes, isSelected }) =>
 const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
   <UserIcon className={getClasses(props)} />
 ));
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(props => (
-  <SettingIcon className={getClasses(props)} />
-));
 const StyledHelpIcon = withStyles(styles, { withTheme: true })(props => (
   <HelpIcon className={getClasses(props)} />
 ));
 
-const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -53,18 +48,6 @@ const actionValues = [
       />
     ),
     onVerticalClick: () => console.log("Profile"),
-    path: "route3"
-  },
-  {
-    label: "Settings",
-    iconCallback: state => <StyledSettingIcon {...state} />,
-    horizontalItemAction: (
-      <StyledSettingIcon
-        style={{ cursor: "pointer" }}
-        onClick={() => console.log("Settings")}
-      />
-    ),
-    onVerticalClick: () => console.log("Settings"),
     path: "route3"
   },
   {
