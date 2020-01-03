@@ -7,17 +7,13 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 
 *** Variables ***
-${cardsSelector}        //*[starts-with(@id, 'Card')]
 ${openCalendar}         DatePicker-calendar
-${openCalendarRange}    DatePicker-calendar-start
 ${simpleInput}          DatePicker-calendar-header-input
-${startInput}           DatePicker-calendar-start-header-input
-${endInput}             DatePicker-calendar-end-header-input
 ${navigationMonth}      DatePicker-calendar-navigation-month
 ${navigationYear}       DatePicker-calendar-navigation-year
 ${cancelButton}         DatePicker-action-cancel
 ${applyButton}          DatePicker-action-apply
-${outside}              //div[starts-with(@class,'Component-header-')]
+${outside}              css:body
 
 
 *** Test Cases ***
@@ -84,7 +80,6 @@ Change month by using the arrows icons
 
 
 Change month using the month screen
-    [Tags]    TTT
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker

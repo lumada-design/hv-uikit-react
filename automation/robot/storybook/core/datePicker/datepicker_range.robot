@@ -7,17 +7,12 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 
 *** Variables ***
-${cardsSelector}        //*[starts-with(@id, 'Card')]
 ${openCalendar}         DatePicker-calendar
 ${openCalendarRange}    DatePicker-calendar-start
-${simpleInput}          DatePicker-calendar-header-input
 ${startInput}           DatePicker-calendar-start-header-input
 ${endInput}             DatePicker-calendar-end-header-input
-${navigationMonth}      DatePicker-calendar-navigation-month
-${navigationYear}       DatePicker-calendar-navigation-year
 ${cancelButton}         DatePicker-action-cancel
-${applyButton}          DatePicker-action-apply
-${outside}              //div[starts-with(@class,'Component-header-')]
+${outside}              css:body
 
 
 *** Test Cases ***
@@ -76,6 +71,7 @@ Adapte range date by setting end date before start with inputs
 
 
 Don't change date with clicks in start date when range mode
+    [Tags]    issue-chrome
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible        DatePicker                            10s
     Click Element                        DatePicker
@@ -102,6 +98,7 @@ Don't change date with clicking in a start date and clicking cancel when range m
 
 
 Don't change date with start input and clicking enter when range mode
+    [Tags]    issue-chrome
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible        DatePicker                            10s
     Click Element                        DatePicker
@@ -127,6 +124,7 @@ Don't change date with start input, clicking enter and cancel when range mode
     Element Attribute Value Should Be    ${startInput}                         value         5 Jun, 2019
 
 Don't change date with clicks in end date when range mode
+    [Tags]    issue-chrome
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible        DatePicker                            10s
     Click Element                        DatePicker
@@ -153,6 +151,7 @@ Don't change date with clicking in a end date and clicking cancel when range mod
 
 
 Don't change date with end input and clicking enter when range mode
+    [Tags]    issue-chrome    
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible        DatePicker                            10s
     Click Element                        DatePicker
@@ -176,5 +175,3 @@ Don't change date with end input, clicking enter and cancel when range mode
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${openCalendarRange}                  4s
     Element Attribute Value Should Be    ${endInput}                           value         10 Jun, 2019
-
-
