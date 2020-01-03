@@ -31,8 +31,7 @@ samples.smoke = (
   <>
 <Grid container>
   <Grid item xl={2}>
-    {" "}
-    Default{" "}
+    Default
   </Grid>
   <Grid item xl={2}>
     <Switch id="defaultLabels" />
@@ -50,8 +49,7 @@ samples.smoke = (
 
 <Grid container>
   <Grid item xl={2}>
-    {" "}
-    Unchecked{" "}
+    Unchecked
   </Grid>
   <Grid item xl={2}>
     <Switch checked={false} id="defaultLabelsUnc" />
@@ -63,51 +61,69 @@ samples.smoke = (
     <Switch checked={false} disabled={false} labels={labels} id="customLabelsUnc" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={false} disabled={false} showLabels={false} displayIconChecked={true} id="checkmarkUnc" />
+    <Switch checked={false} disabled={false} showLabels={false} displayIconChecked id="checkmarkUnc" />
   </Grid>
 </Grid>
 
 <Grid container>
   <Grid item xl={2}>
-    {" "}
-    Disabled Checked{" "}
+    Disabled Checked
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={true} disabled={true} id="defaultLabelsDC" />
+    <Switch checked disabled id="defaultLabelsDC" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={true} disabled={true} showLabels={false} id="noLabelsDC" />
+    <Switch checked disabled showLabels={false} id="noLabelsDC" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={true} disabled={true} labels={labels} id="customLabelsDC" />
+    <Switch checked disabled labels={labels} id="customLabelsDC" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={true} disabled={true} showLabels={false} displayIconChecked={true} id="checkmarkDC" />
+    <Switch checked disabled showLabels={false} displayIconChecked id="checkmarkDC" />
   </Grid>
 </Grid>
 
 <Grid container>
   <Grid item xl={2}>
-    {" "}
-    Disabled{" "}
+    Disabled
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={false} disabled={true} id="defaultLabelsDis" />
+    <Switch checked={false} disabled id="defaultLabelsDis" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={false} disabled={true} showLabels={false} id="noLabelsDis" />
+    <Switch checked={false} disabled showLabels={false} id="noLabelsDis" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={false} disabled={true} labels={labels} id="customLabelsDis" />
+    <Switch checked={false} disabled labels={labels} id="customLabelsDis" />
   </Grid>
   <Grid item xl={2}>
-    <Switch checked={false} disabled={true} showLabels={false} displayIconChecked={true} id="checkmarkDis" />
+    <Switch checked={false} disabled showLabels={false} displayIconChecked id="checkmarkDis" />
   </Grid>
 </Grid>
 </>
 );
 
-// create CoreTextArea for each sample
+samples.toggleOff = (
+  <>
+<Grid container>
+  <Grid item xl={2}>
+    <Switch id="defaultLabels" />
+  </Grid>
+</Grid>
+</>
+);
+
+samples.toggleOn = (
+  <>
+<Grid container>
+  <Grid item xl={2}>
+    <Switch checked={false} disabled={false} labels={labels} id="customLabelsUnc" />
+  </Grid>
+</Grid>
+</>
+);
+
+// create page for each sample
 Object.keys(samples).forEach(key =>
   storiesOf("CoreToggle", module).add(key, () => (
     <Grid container>

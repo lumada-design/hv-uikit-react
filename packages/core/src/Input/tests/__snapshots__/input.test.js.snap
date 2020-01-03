@@ -5157,6 +5157,7 @@ body {
 }
 .HvInput-input-450::placeholder {
   color: #999999;
+  opacity: 1;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -5342,6 +5343,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   Object {
                     "display": "none",
@@ -5808,6 +5810,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   ".HvInput-inputDisabled-451": Object {
                     "cursor": "not-allowed",
@@ -6834,6 +6837,7 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
+                    "opacity": 1,
                   },
                   ".HvInput-inputRoot-446:hover": Object {
                     "background": "#FFFFFF",
@@ -6915,6 +6919,7 @@ input:-webkit-autofill {
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
+                      "opacity": 1,
                     },
                     "color": "#414141",
                     "fontSize": "14px",
@@ -24624,6 +24629,7 @@ body {
 }
 .HvInput-input-598::placeholder {
   color: #999999;
+  opacity: 1;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -24809,6 +24815,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   Object {
                     "display": "none",
@@ -25275,6 +25282,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   ".HvInput-inputDisabled-599": Object {
                     "cursor": "not-allowed",
@@ -26301,6 +26309,7 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
+                    "opacity": 1,
                   },
                   ".HvInput-inputRoot-594:hover": Object {
                     "background": "#FFFFFF",
@@ -26382,6 +26391,7 @@ input:-webkit-autofill {
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
+                      "opacity": 1,
                     },
                     "color": "#414141",
                     "fontSize": "14px",
@@ -44105,6 +44115,7 @@ body {
 }
 .HvInput-input-80::placeholder {
   color: #999999;
+  opacity: 1;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -44290,6 +44301,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   Object {
                     "display": "none",
@@ -44756,6 +44768,7 @@ input:-webkit-autofill {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
+                    "opacity": "1",
                   },
                   ".HvInput-inputDisabled-81": Object {
                     "cursor": "not-allowed",
@@ -45782,6 +45795,7 @@ input:-webkit-autofill {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "20px",
+                    "opacity": 1,
                   },
                   ".HvInput-inputRoot-76:hover": Object {
                     "background": "#FFFFFF",
@@ -45863,6 +45877,7 @@ input:-webkit-autofill {
                       "fontWeight": "400",
                       "letterSpacing": "0.02em",
                       "lineHeight": "20px",
+                      "opacity": 1,
                     },
                     "color": "#414141",
                     "fontSize": "14px",

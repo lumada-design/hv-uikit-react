@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     display: "flex",
     position: "absolute",
     left: "50%",
-    top: "50%",
-    transform: "translate(-50%,-75%)",
+    top: "54px",
+    transform: "translate(-50%,0)",
     transition: "all .3s ease",
     zIndex: 1,
     pointerEvents: "none",
-    padding: `${theme.hv.spacing.sm}px`
+    padding: "32px"
   },
   noTextMessage: {
     lineHeight: "32px"

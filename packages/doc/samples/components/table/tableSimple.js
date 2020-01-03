@@ -235,8 +235,8 @@ class Wrapper extends React.Component {
     const { pageSize, sorted, titleText, subtitleText } = this.state;
 
     const labels = {
-      titleText: "This is The Title",
-      subtitleText: "This is The Subtitle"
+      titleText: "This is a Title",
+      subtitleText: "This is a Subtitle"
     }
 
     return (

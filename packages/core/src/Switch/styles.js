@@ -137,9 +137,9 @@ const styles = theme => ({
     border:`1px solid ${theme.hv.palette.accent.acce1}`,
     borderRadius:"50%",
     "& div":{
-      position:"absolute",
-      top:-10,
-      left:2
+      position: "relative",
+      top: "-1px",
+      left: "-1px"
     }
   }
 });

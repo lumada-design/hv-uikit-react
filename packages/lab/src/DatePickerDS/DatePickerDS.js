@@ -20,7 +20,7 @@ import uniqueId from "lodash/uniqueId";
 
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
-import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar.S";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 
 import Popper from "./Popper";

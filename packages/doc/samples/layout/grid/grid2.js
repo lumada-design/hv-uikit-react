@@ -28,7 +28,6 @@ const Box = ({ text }) => (
 
 const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
   const findBreakpoint = () =>
-
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
       const matches = useMediaQuery(theme.breakpoints.only(key));
 
@@ -46,10 +45,10 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
           <HvGrid item xs={4} sm={8} md={8} lg={12} xl={12}>
             <Box text={"xs={4} sm={8} md={8} lg={12} xl={12}"} />
           </HvGrid>
-          <HvGrid item xs={4} sm={8} md={4} lg={6} xl={6}>
+          <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
             <Box text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
           </HvGrid>
-          <HvGrid item xs={4} sm={8} md={4} lg={6} xl={6}>
+          <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
             <Box text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>

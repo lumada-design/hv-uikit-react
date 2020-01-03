@@ -30,35 +30,25 @@ const styles = theme => ({
   default: {
     backgroundColor: theme.hv.palette.semantic.sema7
   },
-  iconVariant: {
-    paddingLeft: `${theme.hv.spacing.xs}px`,
-    paddingTop: "5px",
-    maxWidth: "32px",
-    maxHeight: "32px",
-    minWidth: "32px",
-    minHeight: "32px",
-    display: "table-cell",
-    verticalAlign: "middle"
-  },
   message: {
     padding: 0
   },
   messageSpan: {
     display: "table",
-    minHeight: "32px"
+    minHeight: "32px",
+    "& > *": {
+      display: "table-cell",
+      verticalAlign: "middle"
+    }
   },
   messageText: {
     ...theme.hv.typography.normalText,
     padding: `0 ${theme.hv.spacing.xs}px`,
     color: theme.hv.palette.base.base2,
     fontFamily: theme.hv.typography.fontFamily,
-    display: "table-cell",
-    verticalAlign: "middle",
     maxHeight: "72px"
   },
   action: {
-    display: "table-cell",
-    verticalAlign: "middle",
     textAlign: "right"
   }
 });

@@ -9,7 +9,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
   >
     View
   </HvButton>
-  <WithStyles(WithStyles(DropDownMenu))
+  <WithStyles(DropDownMenu)
     dataList={
       Array [
         Object {
@@ -37,7 +37,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 
 exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 <div>
-  <WithStyles(WithStyles(DropDownMenu))
+  <WithStyles(DropDownMenu)
     dataList={
       Array [
         Object {
@@ -85,7 +85,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   >
     Delete
   </HvButton>
-  <WithStyles(WithStyles(DropDownMenu))
+  <WithStyles(DropDownMenu)
     dataList={
       Array [
         Object {

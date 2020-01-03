@@ -34,6 +34,6 @@ const ListWrapper = withStyles(styles, { withTheme: true })(
 
 export default (
   <ListWrapper>
-    <List values={data} selectDefault hasTooltips useContainer />
+    <List values={data} selectDefault hasTooltips />
   </ListWrapper>
 );

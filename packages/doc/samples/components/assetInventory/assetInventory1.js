@@ -11,7 +11,6 @@ import ListView, {
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-
 import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
 import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
@@ -23,15 +22,10 @@ import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
 import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
 
+const boxStyles = { width: "30px", height: "30px" };
 const styles = () => ({
   box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      display: "block",
-      margin: "0 auto",
-    }
+    ...boxStyles
   }
 });
 
@@ -63,6 +57,23 @@ const DeleteIcon = withStyles(styles, { withTheme: true })(
   }
 );
 
+const getStatus = statusNumber => {
+  switch (statusNumber) {
+    case 1:
+      return { Icon: Level1, sema: "sema10" };
+    case 2:
+      return { Icon: Level2, sema: "sema11" };
+    case 3:
+      return { Icon: Level3, sema: "sema12" };
+    case 4:
+      return { Icon: Level4, sema: "sema13" };
+    case 5:
+      return { Icon: Level5, sema: "sema14" };
+    default:
+      return { Icon: null, sema: "sema1" };
+  }
+};
+
 //----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
   content: {
@@ -82,7 +93,7 @@ const kpiStyles = theme => ({
   timestamp: {
     paddingRight: `${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
   },
   container: {
     marginLeft: "-15px"
@@ -101,34 +112,30 @@ const KpiTimeHorizon = score => ({
 
 /* eslint react/prop-types: 0 */
 const Content = ({ classes, values }) => (
-  <>
-    <Grid container className={classes.container}>
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="infoText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="infoText">
-            {values.event.schedule}
-          </HvTypography>
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={KpiProbability(values.probability)} />
-          <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
-        </div>
-      </Grid>
-
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
+  <Grid container className={classes.container}>
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvTypography className={classes.timestamp} variant="sText">
+          {values.event.timestamp}
         </HvTypography>
-      </Grid>
+        <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+      </div>
     </Grid>
-  </>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <div className={classes.kpis}>
+        <HvKpi labels={KpiProbability(values.probability)} />
+        <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
+      </div>
+    </Grid>
+
+    <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+      <HvTypography variant="labelText">Related assets</HvTypography>
+      <HvTypography variant="normalText" className={classes.text}>
+        {values.relatedAssets}
+      </HvTypography>
+    </Grid>
+  </Grid>
 );
 
 const ContentWithStyles = withStyles(kpiStyles, {
@@ -136,106 +143,18 @@ const ContentWithStyles = withStyles(kpiStyles, {
 })(Content);
 
 const cardRenderer = (data, viewConfiguration, metadata) => {
-  const status = {
-    Icon: null,
-    sema: "sema1"
-  };
-  switch (data.status) {
-    default:
-    case 1:
-      status.Icon = (
-        <Level1
-          semantic="sema10"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
-      status.sema = "sema10";
-      break;
-    case 2:
-      status.Icon = (
-        <Level2
-          semantic="sema11"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
-      status.sema = "sema11";
-      break;
-    case 3:
-      status.Icon = (
-        <Level3
-          semantic="sema12"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
-      status.sema = "sema12";
-      break;
-    case 4:
-      status.Icon = (
-        <Level4
-          semantic="sema13"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
-      status.sema = "sema13";
-      break;
-    case 5:
-      status.Icon = (
-        <Level5
-          semantic="sema14"
-          boxStyles={{
-            paddingTop: "3px",
-            width: "30px",
-            height: "30px"
-          }}
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      );
-      status.sema = "sema14";
-      break;
-  }
+  const { Icon, sema } = getStatus(data.status);
+  const StyledIcon = <Icon semantic={sema} boxStyles={boxStyles} />;
 
   return (
     <HvCard
-      icon={status.Icon}
+      id={"Card_" + data.id}
+      icon={StyledIcon}
       headerTitle={data.headerTitle}
-      innerCardContent={<ContentWithStyles values={data} icon={status.Icon} />}
-      semantic={status.sema}
+      innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
+      semantic={sema}
       checkboxValue={data.id}
+      checkboxSelected={data.checkboxSelected}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
       actions={viewConfiguration.actions}
@@ -251,7 +170,10 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id}>
+    <HvListViewRow
+      checkboxValue={value.id}
+      checkboxSelected={value.checkboxSelected}
+    >
       <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>
@@ -261,10 +183,10 @@ const Row = ({ classes, status, value, id }) => {
           <HvTypography variant="highlightText">
             {value.event.description}
           </HvTypography>
-          <HvTypography className={classes.timestamp} variant="infoText">
+          <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
-          <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+          <HvTypography style={{ paddingTop: "2px" }} variant="sText">
             {value.event.schedule}
           </HvTypography>
         </div>
@@ -289,64 +211,34 @@ const stylesRow = theme => ({
   timestamp: {
     padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo5}`
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
   },
   icon: {
     display: "block",
-    paddingLeft: "3px"
+    margin: `0 ${theme.hv.spacing.xs}px`
   }
 });
 
 const StyledRow = withStyles(stylesRow, { withTheme: true })(Row);
 
-const rowRenderer = (value, index, viewConfiguration, metadata) => {
-  const status = {
-    Icon: null,
-    sema: "sema1"
-  };
-  switch (value.status) {
-    default:
-    case 1:
-      status.Icon = Level1;
-      status.sema = "sema10";
-      break;
-    case 2:
-      status.Icon = Level2;
-      status.sema = "sema11";
-      break;
-    case 3:
-      status.Icon = Level3;
-      status.sema = "sema12";
-      break;
-    case 4:
-      status.Icon = Level4;
-      status.sema = "sema13";
-      break;
-    case 5:
-      status.Icon = Level5;
-      status.sema = "sema14";
-      break;
-  }
-
-  return (
-    <StyledRow
-      status={status}
-      value={value}
-      id={value.id + index}
-      key={value.id + index}
-    />
-  );
-};
+const rowRenderer = (value, index, viewConfiguration, metadata) => (
+  <StyledRow
+    status={getStatus(value.status)}
+    value={value}
+    id={value.id + index}
+    key={value.id + index}
+  />
+);
 
 //--------------------------- Values ---------------------------------
 
 const compressorData = id => {
   return {
-    headerTitle: "Risk of downtime " + (id + 1),
+    headerTitle: id + " Risk of downtime " + (id + 1),
     id: "id_" + id,
     status: 5,
     event: {
-      description: "Risk of downtime on Truck 12",
+      description: "Risk of downtime on Truck " + id,
       timestamp: "2 minutes ago",
       schedule: "fix now"
     },
@@ -359,11 +251,11 @@ const compressorData = id => {
 
 const machineData = id => {
   return {
-    headerTitle: "Track severe " + (id + 1),
+    headerTitle: id + " Track severe " + (id + 1),
     id: "id_" + id,
     status: 2,
     event: {
-      description: "Track severe breakdown",
+      description: "Track " + id + " severe breakdown",
       timestamp: "2 hours ago",
       schedule: "fix 3rd shift"
     },
@@ -454,18 +346,23 @@ const configuration = {
 
 export default (
   <AssetInventory
+    id="hv-assetinventory"
     values={values()}
     configuration={configuration}
-    onSelection={event => alert(event.target.value)}
+    onSelection={event => console.log(event.target.value)}
     isSelectable
     actions={myActions}
     maxVisibleActions={3}
     actionsCallback={(id, action) =>
-      alert("You have pressed card " + id + " with action " + action.label)
+      console.log(`You have pressed card ${id} with action ${action.label}`)
     }
+    hasPagination
+    pageSizeOptions={[2, 4, 6, 8, 10]}
+    pageSize={4}
+    selectedView={"listView"}
   >
     <CardView
-      id="card"
+      id="cardView"
       icon={<Cards />}
       renderer={cardRenderer}
       viewConfiguration={{
@@ -479,18 +376,16 @@ export default (
       }}
     />
     <ListView
-      id="list"
+      id="listView"
       icon={<List />}
       renderer={rowRenderer}
       viewConfiguration={{
         columnConfiguration: [
           {
-            title: "Status",
             style: {
-              paddingLeft: "8px",
-              minWidth: "52px"
+              width: 1
             },
-            align: "left"
+            align: "center"
           },
           {
             title: "Event",

@@ -22,6 +22,7 @@ import ReactTable from "react-table";
 import HvProvider from "../../Provider";
 import HvTableWithStyles from "../index";
 import HvTable from "../Table";
+import HvPagination from "../Pagination";
 import DropDownMenu from "../../DropDownMenu";
 import theme from "../../theme";
 
@@ -132,18 +133,17 @@ describe("Hv Table", () => {
             classes={{}}
             theme={theme}
             columns={[]}
-            data={[]}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
             pageSize={5}
           />
         </HvProvider>
       );
 
       const pageSize = wrapper.find("select");
-
       expect(pageSize.props().value).toBe(5);
     });
 
-    it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
+    it("and if 'data' is empty, don't render pagination", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -156,27 +156,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const pageSize = wrapper.find("select");
-
-      expect(pageSize.props().value).toBe(5);
-    });
-
-    it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            theme={theme}
-            columns={[]}
-            data={[]}
-            pageSize={5}
-          />
-        </HvProvider>
-      );
-
-      const pageSize = wrapper.find("select");
-
-      expect(pageSize.props().value).toBe(5);
+      expect(wrapper.find(HvPagination).exists()).toBe(false);
     });
 
     it("should mark the sorted column ", () => {

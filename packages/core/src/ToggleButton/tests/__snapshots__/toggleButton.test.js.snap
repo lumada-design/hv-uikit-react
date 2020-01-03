@@ -6588,11 +6588,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "rootL": "Unlock-rootL-7",
-                "rootM": "Unlock-rootM-6",
-                "rootS": "Unlock-rootS-5",
-                "rootXL": "Unlock-rootXL-8",
-                "rootXs": "Unlock-rootXs-4",
+                "root": "Unlock-root-4",
+                "rootL": "Unlock-rootL-8",
+                "rootM": "Unlock-rootM-7",
+                "rootS": "Unlock-rootS-6",
+                "rootXs": "Unlock-rootXs-5",
               },
               "deployed": true,
               "linked": false,
@@ -6600,11 +6600,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Unlock",
                 "classes": Object {
-                  "rootL": "Unlock-rootL-7",
-                  "rootM": "Unlock-rootM-6",
-                  "rootS": "Unlock-rootS-5",
-                  "rootXL": "Unlock-rootXL-8",
-                  "rootXs": "Unlock-rootXs-4",
+                  "root": "Unlock-root-4",
+                  "rootL": "Unlock-rootL-8",
+                  "rootM": "Unlock-rootM-7",
+                  "rootS": "Unlock-rootS-6",
+                  "rootXs": "Unlock-rootXs-5",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7092,25 +7092,27 @@ body {
                   data-meta="Unlock"
                 >
                   
-.Unlock-rootXs-4 {
+.Unlock-root-4 {
+  display: flex;
+}
+.Unlock-root-4 svg {
+  margin: auto;
+}
+.Unlock-rootXs-5 {
   width: 12px;
   height: 12px;
 }
-.Unlock-rootS-5 {
+.Unlock-rootS-6 {
   width: 16px;
   height: 16px;
 }
-.Unlock-rootM-6 {
+.Unlock-rootM-7 {
   width: 32px;
   height: 32px;
 }
-.Unlock-rootL-7 {
+.Unlock-rootL-8 {
   width: 96px;
   height: 96px;
-}
-.Unlock-rootXL-8 {
-  width: 128px;
-  height: 128px;
 }
 
                 </style>,
@@ -7125,14 +7127,20 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "rootL": "Unlock-rootL-7",
-                  "rootM": "Unlock-rootM-6",
-                  "rootS": "Unlock-rootS-5",
-                  "rootXL": "Unlock-rootXL-8",
-                  "rootXs": "Unlock-rootXs-4",
+                  "root": "Unlock-root-4",
+                  "rootL": "Unlock-rootL-8",
+                  "rootM": "Unlock-rootM-7",
+                  "rootS": "Unlock-rootS-6",
+                  "rootXs": "Unlock-rootXs-5",
                 },
                 "index": Array [
                   Object {
+                    "display": "flex",
+                  },
+                  Object {
+                    "margin": "auto",
+                  },
+                  Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -7147,32 +7155,33 @@ body {
                   Object {
                     "height": "96px",
                     "width": "96px",
-                  },
-                  Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                 ],
                 "map": Object {
-                  ".Unlock-rootL-7": Object {
+                  ".Unlock-root-4": Object {
+                    "display": "flex",
+                  },
+                  ".Unlock-root-4 svg": Object {
+                    "margin": "auto",
+                  },
+                  ".Unlock-rootL-8": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Unlock-rootM-6": Object {
+                  ".Unlock-rootM-7": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Unlock-rootS-5": Object {
+                  ".Unlock-rootS-6": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Unlock-rootXL-8": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  ".Unlock-rootXs-4": Object {
+                  ".Unlock-rootXs-5": Object {
                     "height": "12px",
                     "width": "12px",
+                  },
+                  "root": Object {
+                    "display": "flex",
                   },
                   "rootL": Object {
                     "height": "96px",
@@ -7186,10 +7195,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
                   "rootXs": Object {
                     "height": "12px",
                     "width": "12px",
@@ -7199,11 +7204,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Unlock",
                   "classes": Object {
-                    "rootL": "Unlock-rootL-7",
-                    "rootM": "Unlock-rootM-6",
-                    "rootS": "Unlock-rootS-5",
-                    "rootXL": "Unlock-rootXL-8",
-                    "rootXs": "Unlock-rootXs-4",
+                    "root": "Unlock-root-4",
+                    "rootL": "Unlock-rootL-8",
+                    "rootM": "Unlock-rootM-7",
+                    "rootS": "Unlock-rootS-6",
+                    "rootXs": "Unlock-rootXs-5",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7686,6 +7691,15 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".Unlock-root-4 svg": Object {
+                    "margin": "auto",
+                  },
+                  "root": Object {
+                    "& svg": Object {
+                      "margin": "auto",
+                    },
+                    "display": "flex",
+                  },
                   "rootL": Object {
                     "height": "96px",
                     "width": "96px",
@@ -7697,10 +7711,6 @@ body {
                   "rootS": Object {
                     "height": "16px",
                     "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                   "rootXs": Object {
                     "height": "12px",
@@ -9617,16 +9627,13 @@ body {
               className="ToggleButton-icon-2"
               classes={
                 Object {
-                  "rootL": "Unlock-rootL-7",
-                  "rootM": "Unlock-rootM-6",
-                  "rootS": "Unlock-rootS-5",
-                  "rootXL": "Unlock-rootXL-8",
-                  "rootXs": "Unlock-rootXs-4",
+                  "root": "Unlock-root-4",
+                  "rootL": "Unlock-rootL-8",
+                  "rootM": "Unlock-rootM-7",
+                  "rootS": "Unlock-rootS-6",
+                  "rootXs": "Unlock-rootXs-5",
                 }
               }
-              color={null}
-              height={null}
-              iconSize="S"
               theme={
                 Object {
                   "breakpoints": Object {
@@ -10556,15 +10563,13 @@ body {
                   },
                 }
               }
-              viewbox="0 0 16 16 "
-              width={null}
             >
               <div
-                className="ToggleButton-icon-2 Unlock-rootS-5"
+                className="ToggleButton-icon-2 Unlock-root-4 Unlock-rootS-6"
               >
                 <svg
                   height="16px"
-                  viewBox="0 0 16 16 "
+                  viewBox="0 0 16 16"
                   width="16px"
                   xmlns="http://www.w3.org/2000/svg"
                 >

@@ -29,13 +29,12 @@ navigate to submenu and then close
     Wait Until Page Does Not Contain    Analytics                                 2s
 
 navigate to submenu clicking on item label
-    [Tags]    bug    831
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreheader--header1
-    Wait Until Element Is Enabled    css:div[class|='Main-navButton']     7s
+    Wait Until Element Is Enabled    css:div[class|='Main-navButton']    7s
     Click Element                    css:div[class|='Main-navButton']
-    Wait Until Element Is Enabled    //p[text()='Analytics']              2s
+    Wait Until Element Is Enabled    //p[text()='Analytics']             2s
     Click Element                    //p[text()='Analytics']
-    Run Keyword And Expect Error     Text 'Model Effectiveness' did not appear in 2 seconds.    Wait Until Page Contains    Model Effectiveness    2s
+    Wait Until Page Contains         Model Effectiveness                 2s
 
 navigate back from submenu clicking on title label
     navigate back from submenu clicking on    css:div[class|='Title-titleContainer']>p

@@ -24,15 +24,17 @@ const styles = theme => ({
   message: {
     display: "flex",
     alignItems: "center",
-    padding: `${theme.hv.spacing.xs}px 0`
+    padding: `${theme.hv.spacing.xs}px 0`,
+    paddingLeft: `${theme.hv.spacing.sm}px`
   },
   action: {
     padding: `${theme.spacing.xs}px`,
+    marginRight: 0,
     flex: "0 0 auto",
     placeSelf: "stretch"
   },
   baseVariant: {
-    padding: `0 ${theme.hv.spacing.xs}px`
+    padding: 0
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8
@@ -42,14 +44,6 @@ const styles = theme => ({
   },
   default: {
     backgroundColor: theme.hv.palette.semantic.sema7
-  },
-  iconVariant: {
-    paddingLeft: `${theme.hv.spacing.xs}px`,
-    maxWidth: "32px",
-    maxHeight: "32px",
-    minWidth: "32px",
-    minHeight: "32px",
-    alignSelf: "auto"
   },
   outContainer: {
     width: "100%",

@@ -17,14 +17,11 @@ const menuOptions = [
 export default (
   <div style={{ display: "flex", justifyContent: "center" }}>
     <DropDownMenu
-      icon={
-        <MoreVert
-          boxStyles={{ width: "30px", padding: "7px" }}
-          style={{ display: "block" }}
-        />
-      }
+      id="dropMenu"
+      icon={<MoreVert boxStyles={{ width: "32px", height: "32px" }} />}
       dataList={menuOptions}
       onClick={e => alert(e.label)}
+      disablePortal={false}
     />
   </div>
 );

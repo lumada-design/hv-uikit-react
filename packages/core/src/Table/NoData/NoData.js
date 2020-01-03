@@ -18,29 +18,20 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
-
-import HvTypography from "../../Typography";
+import HvEmptyState from "../../EmptyState";
 
 const styles = {
-  rootS: {
+  root: {
     width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
+    height: "32px"
   }
 };
 
 const StyledFail = withStyles(styles, { withTheme: true })(Fail);
 
-const NoData = ({ classes, noDataMessage }) => (
+const NoData = ({ classes, noDataMessage = " No data to display." }) => (
   <div className={classes.root}>
-    <StyledFail />
-    <HvTypography variant="normalText" className={classes.noTextMessage}>
-      {noDataMessage || " No data to display"}
-    </HvTypography>
+    <HvEmptyState message={noDataMessage} icon={<StyledFail />} />
   </div>
 );
 

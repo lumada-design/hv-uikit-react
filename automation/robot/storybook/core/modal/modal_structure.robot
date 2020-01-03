@@ -43,9 +43,9 @@ all buttons are clickable
 
 it is possible insert text in modal input
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coremodal--modal3
-    Wait Until Element Is Enabled               //button[contains(.,'Inputs')]    7s
+    Wait Until Element Is Enabled               css:button    7s
     Click Button                                Inputs
     Input Text                                  css:input[type='text']            it is possible insert text on a modal
-    Click Button                                Switch anyway
+    Click Button                                Apply
     Click Button                                Cancel
     Wait Until Page Does Not Contain Element    css:div[role='dialog']            2s

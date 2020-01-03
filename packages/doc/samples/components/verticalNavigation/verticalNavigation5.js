@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
 import RawUserIcon from "@hv/uikit-react-icons/dist/Generic/User";
 import RawCalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
@@ -10,596 +11,493 @@ import RawSettings from "@hv/uikit-react-icons/dist/Generic/Settings";
 import RawHelp from "@hv/uikit-react-icons/dist/Generic/Help";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = () => ({
+const styles = theme => ({
   box: {
-    padding: "6px",
-    width: "30px",
-    height: "30px"
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
+    }
   }
 });
 
-const UserIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const getClasses = ({ classes, isSelected }) =>
+  classNames(classes.box, isSelected && classes.selected);
 
-    return <RawUserIcon className={classes.box} color={color} />;
-  }
-);
+const UserIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawUserIcon className={getClasses(props)} />
+));
 
-const CalendarIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const CalendarIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawCalendarIcon className={getClasses(props)} />
+));
 
-    return <RawCalendarIcon className={classes.box} color={color} />;
-  }
-);
+const LineChartIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawLineChartIcon className={getClasses(props)} />
+));
 
-const LineChartIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const PlaneIcon = withStyles(styles, { withTheme: true })(props => (
+  <RawPlaneIcon className={getClasses(props)} />
+));
 
-    return <RawLineChartIcon className={classes.box} color={color} />;
-  }
-);
+const MachineS = withStyles(styles, { withTheme: true })(props => (
+  <RawMachineS className={getClasses(props)} />
+));
 
-const PlaneIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
+const Components = withStyles(styles, { withTheme: true })(props => (
+  <RawComponents className={getClasses(props)} />
+));
 
-    return <RawPlaneIcon className={classes.box} color={color} />;
-  }
-);
+const Settings = withStyles(styles, { withTheme: true })(props => (
+  <RawSettings className={getClasses(props)} />
+));
 
-const MachineS = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawMachineS className={classes.box} color={color} />;
-  }
-);
-
-const Components = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawComponents className={classes.box} color={color} />;
-  }
-);
-
-const Settings = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawSettings className={classes.box} color={color} />;
-  }
-);
-
-const Help = withStyles(styles, { withTheme: true })(
-  ({ classes, theme, selected }) => {
-    const color = selected ? [theme.hv.palette.atmosphere.atmo1] : undefined;
-
-    return <RawHelp className={classes.box} color={color} />;
-  }
-);
+const Help = withStyles(styles, { withTheme: true })(props => (
+  <RawHelp className={getClasses(props)} />
+));
 
 const data = {
   showSearch: true,
   data: [
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS121",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS122",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: false,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-243",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-245",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-246",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-247",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-248",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-249",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-250",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-251",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-252",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-253",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-254",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-255",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-256",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-257",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-258",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-259",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-260",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           },
           {
             label: "Variant Y-261",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-262",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS140",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS145",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <UserIcon /> : <UserIcon selected />,
+      iconCallback: state => <UserIcon {...state} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <CalendarIcon /> : <CalendarIcon selected />
+      iconCallback: state => <CalendarIcon {...state} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <LineChartIcon /> : <LineChartIcon selected />,
+      iconCallback: state => <LineChartIcon {...state} />,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) =>
-        !isSelected ? <PlaneIcon /> : <PlaneIcon selected />,
+      iconCallback: state => <PlaneIcon {...state} />,
       showNavIcon: true,
       subData: {
         showSearch: true,
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />,
+            iconCallback: state => <Components {...state} />,
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) =>
-                    !isSelected ? <MachineS /> : <MachineS selected />
+                  iconCallback: state => <MachineS {...state} />
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) =>
-              !isSelected ? <Components /> : <Components selected />
+            iconCallback: state => <Components {...state} />
           }
         ]
       }
@@ -610,20 +508,17 @@ const data = {
 const actionValues = [
   {
     label: "Profile",
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <UserIcon /> : <UserIcon selected />,
+    iconCallback: state => <UserIcon {...state} />,
     path: "route3"
   },
   {
     label: "Settings",
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <Settings /> : <Settings selected />,
+    iconCallback: state => <Settings {...state} />,
     path: "route3"
   },
   {
     label: "Help",
-    iconCallback: ({ isSelected }) =>
-      !isSelected ? <Help /> : <Help selected />,
+    iconCallback: state => <Help {...state} />,
     path: "route3"
   }
 ];

@@ -22,10 +22,20 @@ import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
 
-const Rows = ({ renderer, values, viewConfiguration, metadata }) =>
-  values.map((value, index) =>
-    renderer(value, index, viewConfiguration, metadata)
-  );
+const Rows = ({
+  renderer,
+  values,
+  selectedValues,
+  viewConfiguration,
+  metadata
+}) =>
+  values.map((value, index) => {
+    // eslint-disable-next-line no-param-reassign
+    value.checkboxSelected =
+      selectedValues && selectedValues.includes(value.id);
+
+    return renderer(value, index, viewConfiguration, metadata);
+  });
 
 const ListView = ({
   className,
@@ -35,6 +45,7 @@ const ListView = ({
   classes,
   renderer,
   values,
+  selectedValues,
   cellSpacing,
   metadata,
   ...other
@@ -49,7 +60,8 @@ const ListView = ({
       >
         {!isNil(viewConfiguration) &&
           !isNil(viewConfiguration.columnConfiguration) &&
-          viewConfiguration.columnConfiguration.length > 0 && (
+          viewConfiguration.columnConfiguration.length > 0 &&
+          values.length > 0 && (
             <thead className={classes.tableHead}>
               <ListViewHeaderRow viewConfiguration={viewConfiguration} />
             </thead>
@@ -60,6 +72,7 @@ const ListView = ({
               classes={classes}
               renderer={renderer}
               values={values}
+              selectedValues={selectedValues}
               metadata={metadata}
               viewConfiguration={viewConfiguration}
             />
@@ -129,6 +142,10 @@ ListView.propTypes = {
    */
   values: PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired,
   /**
+   * Selected values.
+   */
+  selectedValues: PropTypes.arrayOf(PropTypes.string),
+  /**
    * The spacing between the cells correspond to the usual htlm table attribute
    */
   cellSpacing: PropTypes.string,
@@ -154,7 +171,8 @@ ListView.defaultProps = {
   viewConfiguration: null,
   className: "",
   id: "",
-  metadata: undefined
+  metadata: undefined,
+  selectedValues: null
 };
 
 export default ListView;

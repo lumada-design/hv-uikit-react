@@ -313,7 +313,7 @@ HvLogin.propTypes = {
    * Will be overridden by any error messages.
    */
   customMessage: PropTypes.shape({
-    text: PropTypes.string,
+    text: PropTypes.string
   }),
   /**
    * Recovery title.
@@ -382,8 +382,8 @@ HvLogin.defaultProps = {
   titleComponent: null,
   allowRecover: true,
   allowRememberMe: true,
-  okRecoveryIcon: <Success />,
-  errorLoginIcon: <Fail />,
+  okRecoveryIcon: <Success semantic="sema1" />,
+  errorLoginIcon: <Fail semantic="sema4" />,
   labels: {
     titleText: "Welcome",
     recoveryTitle: "Recover Credentials",

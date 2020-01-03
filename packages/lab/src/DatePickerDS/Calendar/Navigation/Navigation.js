@@ -18,12 +18,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import DropLeftIcon from "@hv/uikit-react-icons/dist/DropLeft.XS";
-import DropRightIcon from "@hv/uikit-react-icons/dist/DropRight.XS";
+import DropLeftIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
+import DropRightIcon from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 
 const Navigation = ({
   classes,
-  theme,
   onNavigatePrevious,
   onNavigateNext,
   onTextClick,
@@ -35,12 +34,6 @@ const Navigation = ({
     <DropLeftIcon
       className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
       onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
-      color={[
-        "none",
-        isPreviousEnabled
-          ? theme.hv.palette.accent.acce1
-          : theme.hv.palette.atmosphere.atmo6
-      ]}
     />
 
     <div
@@ -58,12 +51,6 @@ const Navigation = ({
     <DropRightIcon
       className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
       onClick={isNextEnabled ? onNavigateNext : undefined}
-      color={[
-        "none",
-        isNextEnabled
-          ? theme.hv.palette.accent.acce1
-          : theme.hv.palette.atmosphere.atmo6
-      ]}
     />
   </div>
 );

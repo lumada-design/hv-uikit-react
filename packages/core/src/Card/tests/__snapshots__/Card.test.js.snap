@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999961,
+            "index": -99999999962,
           },
           "themingEnabled": true,
         } => Map {
@@ -4977,7 +4977,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999961,
+                "index": -99999999962,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5172,7 +5172,7 @@ body {
   cursor: pointer;
 }
 .Main-selectable-21:hover {
-  outline: 1px solid #DEDEDE;
+  outline: 1px solid #BCBCBC;
 }
 .Main-selected-22 {
   outline: 1px solid #414141;
@@ -5307,7 +5307,7 @@ body {
                     "cursor": "pointer",
                   },
                   Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   Object {
                     "outline": "1px solid #414141",
@@ -5331,7 +5331,7 @@ body {
                     "cursor": "pointer",
                   },
                   ".Main-selectable-21:hover": Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   ".Main-selected-22": Object {
                     "outline": "1px solid #414141",
@@ -5833,7 +5833,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999961,
+                  "index": -99999999962,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -5960,7 +5960,7 @@ body {
                     "width": "100%",
                   },
                   ".Main-selectable-21:hover": Object {
-                    "outline": "1px solid #DEDEDE",
+                    "outline": "1px solid #BCBCBC",
                   },
                   ".Main-selected-22:hover": Object {
                     "outline": "1px solid #414141",
@@ -6034,7 +6034,7 @@ body {
                   },
                   "selectable": Object {
                     "&:hover": Object {
-                      "outline": "1px solid #DEDEDE",
+                      "outline": "1px solid #BCBCBC",
                     },
                     "cursor": "pointer",
                   },
@@ -12036,7 +12036,7 @@ body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   line-height: 16px;
   font-weight: 400;
-  padding-top: 10px;
+  padding-top: 20px;
   letter-spacing: 0.02em;
 }
 .Header-action-55 {
@@ -12097,7 +12097,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   Object {
                     "margin-right": "0px",
@@ -12131,7 +12131,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   ".Header-title-52": Object {
                     "color": "#414141",
@@ -12171,7 +12171,7 @@ body {
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
-                    "padding-top": "10px",
+                    "padding-top": "20px",
                   },
                   "title": Object {
                     "color": "#414141",
@@ -12709,7 +12709,7 @@ body {
                     "fontWeight": "400",
                     "letterSpacing": "0.02em",
                     "lineHeight": "16px",
-                    "paddingTop": "10px",
+                    "paddingTop": "20px",
                   },
                   "title": Object {
                     "color": "#414141",
@@ -18130,7 +18130,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999962,
+            "index": -99999999963,
           },
           "themingEnabled": true,
         } => Map {
@@ -19439,7 +19439,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999962,
+                "index": -99999999963,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -19988,7 +19988,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999962,
+                  "index": -99999999963,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -20126,7 +20126,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999963,
+            "index": -99999999964,
           },
           "themingEnabled": false,
         } => Map {
@@ -21435,7 +21435,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999963,
+                "index": -99999999964,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -21984,7 +21984,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999963,
+                  "index": -99999999964,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -26104,7 +26104,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999964,
+            "index": -99999999965,
           },
           "themingEnabled": true,
         } => Map {
@@ -27419,7 +27419,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999964,
+                "index": -99999999965,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -27559,13 +27559,13 @@ body {
 .Component-actionContainer-110 {
   display: flex;
 }
-.Component-box-111 {
-  width: 30px;
-  padding: 7px;
-}
-.Component-box-111&gt;svg {
-  margin: auto;
+.Component-actionContainer-110&gt;*:nth-child(2) {
   display: block;
+  margin-left: 10px;
+}
+.Component-box-111 {
+  width: 32px;
+  height: 32px;
 }
 
                 </style>,
@@ -27604,25 +27604,25 @@ body {
                     "display": "flex",
                   },
                   Object {
-                    "padding": "7px",
-                    "width": "30px",
+                    "display": "block",
+                    "margin-left": "10px",
                   },
                   Object {
-                    "display": "block",
-                    "margin": "auto",
+                    "height": "32px",
+                    "width": "32px",
                   },
                 ],
                 "map": Object {
                   ".Component-actionContainer-110": Object {
                     "display": "flex",
                   },
-                  ".Component-box-111": Object {
-                    "padding": "7px",
-                    "width": "30px",
-                  },
-                  ".Component-box-111>svg": Object {
+                  ".Component-actionContainer-110>*:nth-child(2)": Object {
                     "display": "block",
-                    "margin": "auto",
+                    "margin-left": "10px",
+                  },
+                  ".Component-box-111": Object {
+                    "height": "32px",
+                    "width": "32px",
                   },
                   ".Component-leftContainer-108": Object {
                     "align-self": "flex-start",
@@ -27641,8 +27641,8 @@ body {
                     "display": "flex",
                   },
                   "box": Object {
-                    "padding": "7px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                   "leftContainer": Object {
                     "align-self": "flex-start",
@@ -28030,7 +28030,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999964,
+                  "index": -99999999965,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],
@@ -28149,20 +28149,20 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Component-box-111>svg": Object {
+                  ".Component-actionContainer-110>*:nth-child(2)": Object {
                     "display": "block",
-                    "margin": "auto",
+                    "marginLeft": "10px",
                   },
                   "actionContainer": Object {
+                    "&>*:nth-child(2)": Object {
+                      "display": "block",
+                      "marginLeft": "10px",
+                    },
                     "display": "flex",
                   },
                   "box": Object {
-                    "&>svg": Object {
-                      "display": "block",
-                      "margin": "auto",
-                    },
-                    "padding": "7px",
-                    "width": "30px",
+                    "height": "32px",
+                    "width": "32px",
                   },
                   "leftContainer": Object {
                     "alignSelf": "flex-start",
@@ -45074,11 +45074,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "rootL": "Checkbox-rootL-152",
-                "rootM": "Checkbox-rootM-151",
-                "rootS": "Checkbox-rootS-150",
-                "rootXL": "Checkbox-rootXL-153",
-                "rootXs": "Checkbox-rootXs-149",
+                "root": "Checkbox-root-149",
+                "rootL": "Checkbox-rootL-153",
+                "rootM": "Checkbox-rootM-152",
+                "rootS": "Checkbox-rootS-151",
+                "rootXs": "Checkbox-rootXs-150",
               },
               "deployed": true,
               "linked": false,
@@ -45086,11 +45086,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Checkbox",
                 "classes": Object {
-                  "rootL": "Checkbox-rootL-152",
-                  "rootM": "Checkbox-rootM-151",
-                  "rootS": "Checkbox-rootS-150",
-                  "rootXL": "Checkbox-rootXL-153",
-                  "rootXs": "Checkbox-rootXs-149",
+                  "root": "Checkbox-root-149",
+                  "rootL": "Checkbox-rootL-153",
+                  "rootM": "Checkbox-rootM-152",
+                  "rootS": "Checkbox-rootS-151",
+                  "rootXs": "Checkbox-rootXs-150",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -45578,25 +45578,27 @@ body {
                   data-meta="Checkbox"
                 >
                   
-.Checkbox-rootXs-149 {
+.Checkbox-root-149 {
+  display: flex;
+}
+.Checkbox-root-149 svg {
+  margin: auto;
+}
+.Checkbox-rootXs-150 {
   width: 12px;
   height: 12px;
 }
-.Checkbox-rootS-150 {
+.Checkbox-rootS-151 {
   width: 16px;
   height: 16px;
 }
-.Checkbox-rootM-151 {
+.Checkbox-rootM-152 {
   width: 32px;
   height: 32px;
 }
-.Checkbox-rootL-152 {
+.Checkbox-rootL-153 {
   width: 96px;
   height: 96px;
-}
-.Checkbox-rootXL-153 {
-  width: 128px;
-  height: 128px;
 }
 
                 </style>,
@@ -45611,14 +45613,20 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "rootL": "Checkbox-rootL-152",
-                  "rootM": "Checkbox-rootM-151",
-                  "rootS": "Checkbox-rootS-150",
-                  "rootXL": "Checkbox-rootXL-153",
-                  "rootXs": "Checkbox-rootXs-149",
+                  "root": "Checkbox-root-149",
+                  "rootL": "Checkbox-rootL-153",
+                  "rootM": "Checkbox-rootM-152",
+                  "rootS": "Checkbox-rootS-151",
+                  "rootXs": "Checkbox-rootXs-150",
                 },
                 "index": Array [
                   Object {
+                    "display": "flex",
+                  },
+                  Object {
+                    "margin": "auto",
+                  },
+                  Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -45633,32 +45641,33 @@ body {
                   Object {
                     "height": "96px",
                     "width": "96px",
-                  },
-                  Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                 ],
                 "map": Object {
-                  ".Checkbox-rootL-152": Object {
+                  ".Checkbox-root-149": Object {
+                    "display": "flex",
+                  },
+                  ".Checkbox-root-149 svg": Object {
+                    "margin": "auto",
+                  },
+                  ".Checkbox-rootL-153": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Checkbox-rootM-151": Object {
+                  ".Checkbox-rootM-152": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Checkbox-rootS-150": Object {
+                  ".Checkbox-rootS-151": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Checkbox-rootXL-153": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
-                  ".Checkbox-rootXs-149": Object {
+                  ".Checkbox-rootXs-150": Object {
                     "height": "12px",
                     "width": "12px",
+                  },
+                  "root": Object {
+                    "display": "flex",
                   },
                   "rootL": Object {
                     "height": "96px",
@@ -45672,10 +45681,6 @@ body {
                     "height": "16px",
                     "width": "16px",
                   },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
-                  },
                   "rootXs": Object {
                     "height": "12px",
                     "width": "12px",
@@ -45685,11 +45690,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Checkbox",
                   "classes": Object {
-                    "rootL": "Checkbox-rootL-152",
-                    "rootM": "Checkbox-rootM-151",
-                    "rootS": "Checkbox-rootS-150",
-                    "rootXL": "Checkbox-rootXL-153",
-                    "rootXs": "Checkbox-rootXs-149",
+                    "root": "Checkbox-root-149",
+                    "rootL": "Checkbox-rootL-153",
+                    "rootM": "Checkbox-rootM-152",
+                    "rootS": "Checkbox-rootS-151",
+                    "rootXs": "Checkbox-rootXs-150",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -46172,6 +46177,15 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
+                  ".Checkbox-root-149 svg": Object {
+                    "margin": "auto",
+                  },
+                  "root": Object {
+                    "& svg": Object {
+                      "margin": "auto",
+                    },
+                    "display": "flex",
+                  },
                   "rootL": Object {
                     "height": "96px",
                     "width": "96px",
@@ -46183,10 +46197,6 @@ body {
                   "rootS": Object {
                     "height": "16px",
                     "width": "16px",
-                  },
-                  "rootXL": Object {
-                    "height": "128px",
-                    "width": "128px",
                   },
                   "rootXs": Object {
                     "height": "12px",
@@ -64790,16 +64800,13 @@ body {
                                                                       className="HvCheckbox-box-123"
                                                                       classes={
                                                                         Object {
-                                                                          "rootL": "Checkbox-rootL-152",
-                                                                          "rootM": "Checkbox-rootM-151",
-                                                                          "rootS": "Checkbox-rootS-150",
-                                                                          "rootXL": "Checkbox-rootXL-153",
-                                                                          "rootXs": "Checkbox-rootXs-149",
+                                                                          "root": "Checkbox-root-149",
+                                                                          "rootL": "Checkbox-rootL-153",
+                                                                          "rootM": "Checkbox-rootM-152",
+                                                                          "rootS": "Checkbox-rootS-151",
+                                                                          "rootXs": "Checkbox-rootXs-150",
                                                                         }
                                                                       }
-                                                                      color={null}
-                                                                      height={null}
-                                                                      iconSize="S"
                                                                       theme={
                                                                         Object {
                                                                           "breakpoints": Object {
@@ -65729,15 +65736,13 @@ body {
                                                                           },
                                                                         }
                                                                       }
-                                                                      viewbox="0 0 16 16 "
-                                                                      width={null}
                                                                     >
                                                                       <div
-                                                                        className="HvCheckbox-box-123 Checkbox-rootS-150"
+                                                                        className="HvCheckbox-box-123 Checkbox-root-149 Checkbox-rootS-151"
                                                                       >
                                                                         <svg
                                                                           height="16px"
-                                                                          viewBox="0 0 16 16 "
+                                                                          viewBox="0 0 16 16"
                                                                           width="16px"
                                                                           xmlns="http://www.w3.org/2000/svg"
                                                                         >

@@ -234,8 +234,8 @@ class Wrapper extends React.Component {
     const { pageSize, sorted, titleText, subtitleText } = this.state;
 
     const labels = {
-      titleText: "This is The Title",
-      subtitleText: "This is The Subtitle"
+      titleText: "This is a Title",
+      subtitleText: "This is a Subtitle"
     }
 
     return (
@@ -252,15 +252,21 @@ class Wrapper extends React.Component {
         secondaryActions={[
           {
             label: "Share",
-            action: () => {}
+            action: (data) => {
+              alert(`Sharing ${JSON.stringify(data)}`)
+            }
           },
           {
             label: "Hide",
-            action: () => {}
+            action: (data) => {
+              alert(`Hiding ${JSON.stringify(data)}`)
+            }
           },
           {
             label: "Remove",
-            action: () => {}
+            action: (data) => {
+              alert(`Removing ${JSON.stringify(data)}`)
+            }
           }
         ]}
       />

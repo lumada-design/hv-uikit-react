@@ -98,12 +98,20 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
  * @returns {*}
  * @constructor
  */
-const Search = ({ id, searchBoxLabels, onFilter, values, metadata }) => {
+const Search = ({
+  id,
+  searchBoxLabels,
+  searchString,
+  onFilter,
+  onSearch,
+  values,
+  metadata
+}) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
   const handler = value => {
     const filteredResults = searchOperation(value, values, searchableCriteria);
-    onFilter(filteredResults);
+    onFilter(filteredResults, value);
     return value;
   };
 
@@ -111,7 +119,8 @@ const Search = ({ id, searchBoxLabels, onFilter, values, metadata }) => {
     <SearchBox
       id={`search_${id}`}
       labels={searchBoxLabels}
-      onChange={handler}
+      value={searchString}
+      onChange={onSearch || handler}
     />
   );
 };
@@ -153,11 +162,20 @@ Search.propTypes = {
   /**
    * Callback function returning the filtered data.
    */
-  onFilter: PropTypes.func.isRequired
+  onFilter: PropTypes.func.isRequired,
+  /**
+   * onSearch callback.
+   */
+  onSearch: PropTypes.func,
+  /**
+   * Search string
+   */
+  searchString: PropTypes.string.isRequired
 };
 
 Search.defaultProps = {
-  id: undefined
+  id: undefined,
+  onSearch: null
 };
 
 export default Search;

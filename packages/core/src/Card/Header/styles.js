@@ -32,7 +32,7 @@ const styles = theme => ({
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.sText,
-    paddingTop: `${theme.hv.spacing.xs}px`
+    paddingTop: `${theme.hv.spacing.sm}px`
   },
   action: {
     position: "absolute",

@@ -21,13 +21,7 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const buttonsDefinitions = [
-  {
-    id: "map",
-    value: "map",
-    icon: <Map />,
-    selected: true,
-    enforced: true
-  },
+  { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
   { id: "satellite", value: "Satellite", icon: <LocationPin /> },
   { id: "map1", value: "Chart", icon: <Map />, selected: true },
   { id: "satellite1", value: "Place", icon: <LocationPin /> }

@@ -42,11 +42,12 @@ const renderActions = (
       className={classes.button}
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
-      category="ghostSecondary"
+      category="ghost"
       id={id}
       key={id}
     >
-      {(action.icon && action.icon()) || (action.iconCallback && action.iconCallback())}
+      {(action.icon && action.icon()) ||
+        (action.iconCallback && action.iconCallback())}
       {action.label}
     </HvButton>
   );
@@ -60,7 +61,9 @@ const renderActions = (
         placement="left"
         disablePortal={false}
         onClick={action => actionsCallback(id, action)}
-        dataList={acts.slice(1).map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
+        dataList={acts
+          .slice(1)
+          .map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
       />
     </div>
   );
@@ -160,6 +163,7 @@ const row = (
       key={id}
       className={classNames(className, classes.root, {
         [classes.selectable]: renderSelectCell,
+        [classes.selected]: checkboxSelected,
         [classes.notSelectable]: !renderSelectCell
       })}
       {...other}

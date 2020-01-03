@@ -1,20 +1,25 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HitachiLogo from "./resources/hitachi";
 
-const styles = {
-  rootS: {
-    width: "30px",
-    height: "30px",
-    "&>svg": {
-      margin: "7px"
+const styles = theme => ({
+  box: {
+    width: "32px",
+    height: "32px"
+  },
+  selected: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo1
     }
   }
-};
+});
 
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(SettingIcon);
+const StyledSettingIcon = withStyles(styles, { withTheme: true })(({ classes, isSelected }) => (
+  <SettingIcon className={classNames(classes.box, isSelected && classes.selected)} />
+));
 
 const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
@@ -31,7 +36,7 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      path: "/",
+      path: "/"
     },
     {
       label: "Events",
@@ -59,9 +64,14 @@ const navigationData = {
 const actionValues = [
   {
     label: "Settings",
-    iconCallback: (state) => <StyledSettingIcon {...state}/>,
-    horizontalItemAction:<StyledSettingIcon style={{cursor: "pointer"}} onClick={() => alert("Settings")}/>,
-    onVerticalClick: () => alert("Settings"),
+    iconCallback: state => <StyledSettingIcon {...state} />,
+    horizontalItemAction: (
+      <StyledSettingIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Settings")}
+      />
+    ),
+    onVerticalClick: () => console.log("Settings"),
     path: "route3"
   }
 ];
@@ -74,14 +84,13 @@ const SimpleHeaderController = ({
   actionValues,
   responsivenessConfig
 }) => {
-
   const handleSelection = (index, subIndex) => {
     setSelected([index, subIndex]);
-  }
+  };
 
   const handleKeyDown = (index, subIndex, event) => {
-    if(!isKeypress(event, KeyboardCodes.Enter)) {
-      return
+    if (!isKeypress(event, KeyboardCodes.Enter)) {
+      return;
     }
     handleSelection(index, subIndex);
   };

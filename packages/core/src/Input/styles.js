@@ -71,7 +71,8 @@ const styles = theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     "&::placeholder": {
-      ...theme.hv.typography.placeholderText
+      ...theme.hv.typography.placeholderText,
+      opacity: 1
     },
     "&::-ms-clear": {
       display: "none"

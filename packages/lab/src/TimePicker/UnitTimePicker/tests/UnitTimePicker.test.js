@@ -17,8 +17,8 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import AddTimeIcon from "@hv/uikit-react-icons/dist/DropUp.XS";
-import SubtractTimeIcon from "@hv/uikit-react-icons/dist/DropDown.XS";
+import AddTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
+import SubtractTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 import UnitTimePickerWithStyles from "../index";
 import UnitTimePicker from "../UnitTimePicker";
@@ -122,9 +122,13 @@ describe("UnitTimePicker", () => {
   });
 
   it("handleAddTime - should update the currentValue to the minimum possible value when it reaches the maximum", () => {
-    unitTimePickerComponent.setState({ currentValue: TimePickerUnits.MINUTE.max });
+    unitTimePickerComponent.setState({
+      currentValue: TimePickerUnits.MINUTE.max
+    });
     unitTimePickerInstance.handleAddTime();
-    expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.min);
+    expect(unitTimePickerInstance.state.currentValue).toBe(
+      TimePickerUnits.MINUTE.min
+    );
   });
 
   it("handleSubtractTime - should update the currentValue in the state by subtracting 1", () => {
@@ -133,9 +137,13 @@ describe("UnitTimePicker", () => {
   });
 
   it("handleSubtractTime - should update the currentValue to the minimum possible value when it reaches the maximum", () => {
-    unitTimePickerComponent.setState({ currentValue: TimePickerUnits.MINUTE.min });
+    unitTimePickerComponent.setState({
+      currentValue: TimePickerUnits.MINUTE.min
+    });
     unitTimePickerInstance.handleSubtractTime();
-    expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.max);
+    expect(unitTimePickerInstance.state.currentValue).toBe(
+      TimePickerUnits.MINUTE.max
+    );
   });
 
   it("renderTimeUnit - should return the state currentValue if isFocused", () => {
@@ -155,5 +163,4 @@ describe("UnitTimePicker", () => {
     expect(wrapper.find(HvInput)).toHaveLength(1);
     expect(wrapper.find(SubtractTimeIcon)).toHaveLength(1);
   });
-
 });

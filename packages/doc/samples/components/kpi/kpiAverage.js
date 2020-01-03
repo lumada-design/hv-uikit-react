@@ -17,7 +17,7 @@ const averageComparisonVisualAverage = () => (
   <div
     style={{
       position: "relative",
-      top:"1px"
+      top: "1px"
     }}
   >
     <div
@@ -45,12 +45,13 @@ const averageComparisonVisualAverage = () => (
 );
 
 const iconStyles = {
-    width: "30px",
-    height: "30px",
-    paddingTop: "3px"
-}
+  width: "30px",
+  height: "30px"
+};
 
-const StyledFailureIcon = () => <Success semantic="sema1" boxStyles={iconStyles} style={{display: "block", margin: "auto"}}/>;
+const StyledFailureIcon = withStyles(iconStyles, {
+  withTheme: true
+})(() => <Success semantic="sema1" />);
 
 const icon = () => <StyledFailureIcon />;
 
