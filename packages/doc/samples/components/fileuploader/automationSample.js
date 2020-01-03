@@ -25,6 +25,7 @@ const filterNewFiles = (files, list) => {
 
 const files = [
   {
+    id: "uploaded-file-1",
     name: "file 1.png",
     size: 141,
     progress: 41,
@@ -32,6 +33,7 @@ const files = [
     type: "image/png"
   },
   {
+    id: "uploaded-file-2",
     name: "file 2.png",
     size: 875,
     progress: 456,
@@ -39,6 +41,7 @@ const files = [
     type: "image/png"
   },
   {
+    id: "uploaded-file-3",
     name: "file 3.png",
     size: 1075,
     progress: 41,
@@ -47,6 +50,7 @@ const files = [
     errorMessage:"The file exceeds the maximum upload size"
   },
   {
+    id: "uploaded-file-4",
     name: "A very very very long file name.png",
     size: 1075,
     progress: 1075,
@@ -56,35 +60,48 @@ const files = [
   }
 ];
 
-const simulateUpload = (files, setList, times = 0) => {
-  const list = files.map(file => {
-    const hasUploaded = file.status === "success";
-    const hasFailed = file.status === "fail";
+const uploadHandlers = {};
 
-    const progress = file.size * times || null;
-    const status = hasFailed
-      ? "fail"
-      : file.size != progress
-      ? "progress"
-      : "success";
+function clearUploadSimulationHandler(file) {
+  clearInterval(uploadHandlers[file.id]);
+  delete uploadHandlers[file.id];
+}
 
-    file.progress = hasUploaded ? file.size : progress;
-    file.status = hasUploaded ? "success" : status;
+const simulateUpload = (file, setList) => {
+  const uploadSpeed = 20000; // bits per second
 
-    return file;
-  });
+  file.progress = Math.min(file.progress + (uploadSpeed / 4), file.size);
 
-  setList(list);
+  if(file.size == file.progress) {
+    file.status = "success";
 
-  if (times < 1)
-    setTimeout(() => {
-      simulateUpload(files, setList, Number(times.toFixed(1)) + 0.1);
+    clearUploadSimulationHandler(file);
+  }
+
+  setList(previousList => [...previousList]);
+};
+
+function addFile(newFile, setList) {
+  const hasFailed = newFile.status === "fail";
+
+  if(!hasFailed) {
+    newFile.status = "progress";
+    newFile.progress = 0;
+
+    uploadHandlers[newFile.id] = setInterval(() => {
+      simulateUpload(newFile, setList);
     }, 250);
-};
+  }
 
-const removeFromList = (list, fileToRemove) => {
-  return list.filter(file => file.name !== fileToRemove.name);
-};
+  setList(previousList => [newFile, ...previousList]);
+}
+
+const removeFile = (fileToRemove, setList) => {
+  clearInterval(uploadHandlers[fileToRemove.id]);
+  delete uploadHandlers[fileToRemove.id];
+
+  setList(previousList => previousList.filter(file => file.id !== fileToRemove.id));
+}
 
 const Sample = () => {
   const [list, setList] = useState(files);
@@ -92,17 +109,19 @@ const Sample = () => {
   return (
     <FileUploader
       id="automationfileuploader1"
-      fileList={list}
-      onFilesAdded={files => {
-        const newFiles = filterNewFiles(files, list);
-        simulateUpload([...newFiles, ...list], setList);
-      }}
-      onFileRemoved={file => {
-        const newList = removeFromList(list, file);
-        setList(newList);
-      }}
+
       acceptedFiles={["jpg", "jpeg", "png"]}
       maxFileSize={2 * 1000 ** 2}
+
+      fileList={list}
+
+      onFilesAdded={newFiles => {
+        newFiles.forEach(newFile => addFile(newFile, setList));
+      }}
+
+      onFileRemoved={removedFile => {
+        removeFile(removedFile, setList);
+      }}
     />
   );
 };
