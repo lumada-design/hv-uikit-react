@@ -31228,6 +31228,7 @@ body {
           }
         }
         maxFileSize={12}
+        multiple={true}
         onFileRemoved={[MockFunction]}
         onFilesAdded={[MockFunction]}
         theme={
@@ -32180,6 +32181,7 @@ body {
             }
           }
           maxFileSize={12}
+          multiple={true}
           onFilesAdded={[MockFunction]}
         >
           <DropZone
@@ -32217,6 +32219,7 @@ body {
               }
             }
             maxFileSize={12}
+            multiple={true}
             onFilesAdded={[MockFunction]}
             theme={
               Object {
