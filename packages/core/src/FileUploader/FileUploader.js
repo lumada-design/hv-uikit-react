@@ -30,7 +30,7 @@ const DEFAULT_LABELS = {
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",
   removeFileButtonLabel: "Remove File",
-  inputElementLabel: "Dropzone Input Element",
+  inputElementLabel: "Dropzone Input Element"
 };
 
 const FileUploader = ({
@@ -145,7 +145,7 @@ FileUploader.propTypes = {
 
 FileUploader.defaultProps = {
   labels: DEFAULT_LABELS,
-  maxFileSize: 5 * 1000 ** 2,
+  maxFileSize: Infinity,
   acceptedFiles: [],
   onFilesAdded: () => {},
   onFileRemoved: () => {}
