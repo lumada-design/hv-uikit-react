@@ -118,7 +118,7 @@ class Header extends React.Component {
         showValue
       );
 
-      if (!prevValue.isSame(value, "date") || shouldCloseCalendar) {
+      if (!prevValue.isSame(momentDate, "date") || shouldCloseCalendar) {
         this.setState({
           isInvalid: false,
           showValue: newShowValue,
