@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import uniqueId from "lodash/uniqueId";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
 
@@ -29,11 +30,11 @@ const DEFAULT_LABELS = {
   dropFiles: "Drop files here",
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel: "Remove File",
-  inputElementLabel: "Dropzone Input Element"
+  removeFileButtonLabel: "Remove File"
 };
 
 const FileUploader = ({
+  id,
   labels,
   fileList,
   multiple,
@@ -41,25 +42,35 @@ const FileUploader = ({
   acceptedFiles,
   onFilesAdded,
   onFileRemoved
-}) => (
-  <>
-    <DropZone
-      labels={labels}
-      multiple={multiple}
-      acceptedFiles={acceptedFiles}
-      maxFileSize={maxFileSize}
-      onFilesAdded={onFilesAdded}
-    />
-    <FileList
-      list={fileList}
-      progressConjunctionLabel={labels.progressConjunction}
-      onFileRemoved={onFileRemoved}
-      removeFileButtonLabel={labels.removeFileButtonLabel}
-    />
-  </>
-);
+}) => {
+  const [fileUploaderId] = useState(id || uniqueId("hv-fileuploader-"));
+
+  return (
+    <>
+      <DropZone
+        id={`${fileUploaderId}-dropzone`}
+        labels={labels}
+        multiple={multiple}
+        acceptedFiles={acceptedFiles}
+        maxFileSize={maxFileSize}
+        onFilesAdded={onFilesAdded}
+      />
+      <FileList
+        id={`${fileUploaderId}-filelist`}
+        list={fileList}
+        progressConjunctionLabel={labels.progressConjunction}
+        onFileRemoved={onFileRemoved}
+        removeFileButtonLabel={labels.removeFileButtonLabel}
+      />
+    </>
+  );
+};
 
 FileUploader.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * An object containing all the labels.
    *
@@ -98,11 +109,7 @@ FileUploader.propTypes = {
     /**
      * Value of aria-label to apply to remove file button in filelist
      * */
-    removeFileButtonLabel: PropTypes.string,
-    /**
-     * Value of label associated with dropzone input
-     * */
-    inputElementLabel: PropTypes.string
+    removeFileButtonLabel: PropTypes.string
   }),
   /**
    * The files to upload.
@@ -150,6 +157,7 @@ FileUploader.propTypes = {
 };
 
 FileUploader.defaultProps = {
+  id: null,
   labels: DEFAULT_LABELS,
   multiple: true,
   maxFileSize: Infinity,

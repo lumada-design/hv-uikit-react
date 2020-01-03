@@ -8,8 +8,8 @@ Force Tags        smoke
 
 *** Variables ***
 ${file_location}         ${CURDIR}\\sample.txt
-${dropZone-inputArea}    css:div[role=button]
-${fileLine}              //ul[contains(@id,'file-list')]/li
+${dropZone-inputArea}    automationfileuploader1-dropzone-button
+${fileLine}              //ul[contains(@id,'fileuploader1-filelist')]/li
 
 *** Test Cases ***
 dropZone is clickable

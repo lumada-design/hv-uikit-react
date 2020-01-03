@@ -26899,6 +26899,7 @@ body {
             "list": "FileList-list-1",
           }
         }
+        id={null}
         list={
           Array [
             Object {
@@ -27854,11 +27855,9 @@ body {
       >
         <ul
           className="FileList-list-1"
-          id="file-list-1"
+          id="hv-filelist-1"
         >
-          <li
-            key="file-2"
-          >
+          <li>
             <WithStyles(File)
               data={
                 Object {
@@ -27871,6 +27870,7 @@ body {
                   "webkitRelativePath": "",
                 }
               }
+              id="hv-filelist-1-undefined"
               onFileRemoved={[Function]}
             >
               <File
@@ -27897,6 +27897,7 @@ body {
                     "webkitRelativePath": "",
                   }
                 }
+                id="hv-filelist-1-undefined"
                 onFileRemoved={[Function]}
                 theme={
                   Object {
@@ -33622,7 +33623,7 @@ body {
                 <HvButton
                   category="ghost"
                   className="File-removeButton-6"
-                  id="hv-button-4"
+                  id="hv-filelist-1-undefined-remove-button"
                   onClick={[Function]}
                 >
                   <HvButton
@@ -33645,7 +33646,7 @@ body {
                       }
                     }
                     disabled={false}
-                    id="hv-button-4"
+                    id="hv-filelist-1-undefined-remove-button"
                     onClick={[Function]}
                     startIcon={null}
                     theme={
@@ -34592,7 +34593,7 @@ body {
                       color="primary"
                       disableRipple={true}
                       disabled={false}
-                      id="hv-button-4"
+                      id="hv-filelist-1-undefined-remove-button"
                       onClick={[Function]}
                       theme={
                         Object {
@@ -35563,7 +35564,7 @@ body {
                         disableRipple={true}
                         disabled={false}
                         fullWidth={false}
-                        id="hv-button-4"
+                        id="hv-filelist-1-undefined-remove-button"
                         mini={false}
                         onClick={[Function]}
                         size="medium"
@@ -36506,7 +36507,7 @@ body {
                           disabled={false}
                           focusRipple={true}
                           focusVisibleClassName="MuiButton-focusVisible-71"
-                          id="hv-button-4"
+                          id="hv-filelist-1-undefined-remove-button"
                           onClick={[Function]}
                           theme={
                             Object {
@@ -37455,7 +37456,7 @@ body {
                             disabled={false}
                             focusRipple={true}
                             focusVisibleClassName="MuiButton-focusVisible-71"
-                            id="hv-button-4"
+                            id="hv-filelist-1-undefined-remove-button"
                             onClick={[Function]}
                             tabIndex="0"
                             theme={
@@ -38392,7 +38393,7 @@ body {
                             <button
                               className="MuiButtonBase-root-78 MuiButton-root-52 HvButton-root-40 MuiButton-text-54 MuiButton-textPrimary-55 HvButton-ghost-45 MuiButton-flat-57 MuiButton-flatPrimary-58 File-removeButton-6"
                               disabled={false}
-                              id="hv-button-4"
+                              id="hv-filelist-1-undefined-remove-button"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onContextMenu={[Function]}
@@ -40315,9 +40316,7 @@ body {
               </File>
             </WithStyles(File)>
           </li>
-          <li
-            key="file-3"
-          >
+          <li>
             <WithStyles(File)
               data={
                 Object {
@@ -40330,6 +40329,7 @@ body {
                   "webkitRelativePath": "",
                 }
               }
+              id="hv-filelist-1-undefined"
               onFileRemoved={[Function]}
             >
               <File
@@ -40356,6 +40356,7 @@ body {
                     "webkitRelativePath": "",
                   }
                 }
+                id="hv-filelist-1-undefined"
                 onFileRemoved={[Function]}
                 theme={
                   Object {
@@ -46081,7 +46082,7 @@ body {
                 <HvButton
                   category="ghost"
                   className="File-removeButton-6"
-                  id="hv-button-5"
+                  id="hv-filelist-1-undefined-remove-button"
                   onClick={[Function]}
                 >
                   <HvButton
@@ -46104,7 +46105,7 @@ body {
                       }
                     }
                     disabled={false}
-                    id="hv-button-5"
+                    id="hv-filelist-1-undefined-remove-button"
                     onClick={[Function]}
                     startIcon={null}
                     theme={
@@ -47051,7 +47052,7 @@ body {
                       color="primary"
                       disableRipple={true}
                       disabled={false}
-                      id="hv-button-5"
+                      id="hv-filelist-1-undefined-remove-button"
                       onClick={[Function]}
                       theme={
                         Object {
@@ -48022,7 +48023,7 @@ body {
                         disableRipple={true}
                         disabled={false}
                         fullWidth={false}
-                        id="hv-button-5"
+                        id="hv-filelist-1-undefined-remove-button"
                         mini={false}
                         onClick={[Function]}
                         size="medium"
@@ -48965,7 +48966,7 @@ body {
                           disabled={false}
                           focusRipple={true}
                           focusVisibleClassName="MuiButton-focusVisible-71"
-                          id="hv-button-5"
+                          id="hv-filelist-1-undefined-remove-button"
                           onClick={[Function]}
                           theme={
                             Object {
@@ -49914,7 +49915,7 @@ body {
                             disabled={false}
                             focusRipple={true}
                             focusVisibleClassName="MuiButton-focusVisible-71"
-                            id="hv-button-5"
+                            id="hv-filelist-1-undefined-remove-button"
                             onClick={[Function]}
                             tabIndex="0"
                             theme={
@@ -50851,7 +50852,7 @@ body {
                             <button
                               className="MuiButtonBase-root-78 MuiButton-root-52 HvButton-root-40 MuiButton-text-54 MuiButton-textPrimary-55 HvButton-ghost-45 MuiButton-flat-57 MuiButton-flatPrimary-58 File-removeButton-6"
                               disabled={false}
-                              id="hv-button-5"
+                              id="hv-filelist-1-undefined-remove-button"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onContextMenu={[Function]}

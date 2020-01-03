@@ -91,6 +91,7 @@ const Sample = () => {
 
   return (
     <FileUploader
+      id="automationfileuploader1"
       fileList={list}
       onFilesAdded={files => {
         const newFiles = filterNewFiles(files, list);

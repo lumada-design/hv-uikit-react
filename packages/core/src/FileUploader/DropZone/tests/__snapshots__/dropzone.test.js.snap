@@ -4563,17 +4563,16 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "dragAction": "DropZone-dragAction-44",
-                "dragText": "DropZone-dragText-50",
-                "dropArea": "DropZone-dropArea-46",
-                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-49",
-                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-48",
-                "dropzoneContainer": "DropZone-dropzoneContainer-43",
-                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-47",
-                "inputArea": "DropZone-inputArea-45",
-                "inputLabelInfo": "DropZone-inputLabelInfo-52",
-                "root": "DropZone-root-42",
-                "selectFilesText": "DropZone-selectFilesText-51",
+                "dragAction": "DropZone-dragAction-43",
+                "dragText": "DropZone-dragText-49",
+                "dropArea": "DropZone-dropArea-45",
+                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-48",
+                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-47",
+                "dropzoneContainer": "DropZone-dropzoneContainer-42",
+                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-46",
+                "inputArea": "DropZone-inputArea-44",
+                "root": "DropZone-root-41",
+                "selectFilesText": "DropZone-selectFilesText-50",
               },
               "deployed": true,
               "linked": false,
@@ -4581,17 +4580,16 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "DropZone",
                 "classes": Object {
-                  "dragAction": "DropZone-dragAction-44",
-                  "dragText": "DropZone-dragText-50",
-                  "dropArea": "DropZone-dropArea-46",
-                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-49",
-                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-48",
-                  "dropzoneContainer": "DropZone-dropzoneContainer-43",
-                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-47",
-                  "inputArea": "DropZone-inputArea-45",
-                  "inputLabelInfo": "DropZone-inputLabelInfo-52",
-                  "root": "DropZone-root-42",
-                  "selectFilesText": "DropZone-selectFilesText-51",
+                  "dragAction": "DropZone-dragAction-43",
+                  "dragText": "DropZone-dragText-49",
+                  "dropArea": "DropZone-dropArea-45",
+                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-48",
+                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-47",
+                  "dropzoneContainer": "DropZone-dropzoneContainer-42",
+                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-46",
+                  "inputArea": "DropZone-inputArea-44",
+                  "root": "DropZone-root-41",
+                  "selectFilesText": "DropZone-selectFilesText-50",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5079,7 +5077,7 @@ body {
                   data-meta="DropZone"
                 >
                   
-.DropZone-dropzoneContainer-43 {
+.DropZone-dropzoneContainer-42 {
   width: 100%;
   border: 1px dotted #BCBCBC;
   cursor: pointer;
@@ -5087,65 +5085,59 @@ body {
   position: relative;
   background: #F9F9F9;
 }
-.DropZone-dropzoneContainer-43:hover {
+.DropZone-dropzoneContainer-42:hover {
   border: 1px dotted #414141;
   background: #FFFFFF;
 }
-.DropZone-dragAction-44 {
+.DropZone-dragAction-43 {
   border: 1px dotted #414141;
   background: #FFFFFF;
 }
-.DropZone-inputArea-45 {
+.DropZone-inputArea-44 {
   width: 100%;
   height: 100%;
   cursor: pointer;
   opacity: 0;
   position: absolute;
 }
-.DropZone-dropArea-46 {
+.DropZone-dropArea-45 {
   margin: 30px auto;
   display: flex;
   min-height: 40px;
 }
-.DropZone-dropzoneLabelsGroup-47 {
+.DropZone-dropzoneLabelsGroup-46 {
   display: flex;
   margin-bottom: 5px;
 }
-.DropZone-dropzoneLabelsGroup-47 p:nth-child(1) {
+.DropZone-dropzoneLabelsGroup-46 label:nth-child(1) {
   margin-right: 20px;
 }
-.DropZone-dropzoneLabelsGroup-47 p:nth-child(3) {
+.DropZone-dropzoneLabelsGroup-46 p:nth-child(3) {
   margin-left: auto;
   margin-right: 20px;
 }
-.DropZone-dropzoneAreaLabels-48 {
+.DropZone-dropzoneAreaLabels-47 {
   width: 115px;
   margin: auto;
   display: flex;
 }
-.DropZone-dropzoneAreaIcon-49 {
+.DropZone-dropzoneAreaIcon-48 {
   margin: auto;
   margin-right: 20px;
 }
-.DropZone-dragText-50 {
+.DropZone-dragText-49 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.DropZone-selectFilesText-51 {
+.DropZone-selectFilesText-50 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
-}
-.DropZone-inputLabelInfo-52 {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
 }
 
                 </style>,
@@ -5160,17 +5152,16 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "dragAction": "DropZone-dragAction-44",
-                  "dragText": "DropZone-dragText-50",
-                  "dropArea": "DropZone-dropArea-46",
-                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-49",
-                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-48",
-                  "dropzoneContainer": "DropZone-dropzoneContainer-43",
-                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-47",
-                  "inputArea": "DropZone-inputArea-45",
-                  "inputLabelInfo": "DropZone-inputLabelInfo-52",
-                  "root": "DropZone-root-42",
-                  "selectFilesText": "DropZone-selectFilesText-51",
+                  "dragAction": "DropZone-dragAction-43",
+                  "dragText": "DropZone-dragText-49",
+                  "dropArea": "DropZone-dropArea-45",
+                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-48",
+                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-47",
+                  "dropzoneContainer": "DropZone-dropzoneContainer-42",
+                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-46",
+                  "inputArea": "DropZone-inputArea-44",
+                  "root": "DropZone-root-41",
+                  "selectFilesText": "DropZone-selectFilesText-50",
                 },
                 "index": Array [
                   Object {},
@@ -5236,40 +5227,34 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  Object {
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
                 ],
                 "map": Object {
-                  ".DropZone-dragAction-44": Object {
+                  ".DropZone-dragAction-43": Object {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dragText-50": Object {
+                  ".DropZone-dragText-49": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".DropZone-dropArea-46": Object {
+                  ".DropZone-dropArea-45": Object {
                     "display": "flex",
                     "margin": "30px auto",
                     "min-height": "40px",
                   },
-                  ".DropZone-dropzoneAreaIcon-49": Object {
+                  ".DropZone-dropzoneAreaIcon-48": Object {
                     "margin": "auto",
                     "margin-right": "20px",
                   },
-                  ".DropZone-dropzoneAreaLabels-48": Object {
+                  ".DropZone-dropzoneAreaLabels-47": Object {
                     "display": "flex",
                     "margin": "auto",
                     "width": "115px",
                   },
-                  ".DropZone-dropzoneContainer-43": Object {
+                  ".DropZone-dropzoneContainer-42": Object {
                     "background": "#F9F9F9",
                     "border": "1px dotted #BCBCBC",
                     "cursor": "pointer",
@@ -5277,36 +5262,30 @@ body {
                     "position": "relative",
                     "width": "100%",
                   },
-                  ".DropZone-dropzoneContainer-43:hover": Object {
+                  ".DropZone-dropzoneContainer-42:hover": Object {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dropzoneLabelsGroup-47": Object {
+                  ".DropZone-dropzoneLabelsGroup-46": Object {
                     "display": "flex",
                     "margin-bottom": "5px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-47 p:nth-child(1)": Object {
+                  ".DropZone-dropzoneLabelsGroup-46 label:nth-child(1)": Object {
                     "margin-right": "20px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-47 p:nth-child(3)": Object {
+                  ".DropZone-dropzoneLabelsGroup-46 p:nth-child(3)": Object {
                     "margin-left": "auto",
                     "margin-right": "20px",
                   },
-                  ".DropZone-inputArea-45": Object {
+                  ".DropZone-inputArea-44": Object {
                     "cursor": "pointer",
                     "height": "100%",
                     "opacity": 0,
                     "position": "absolute",
                     "width": "100%",
                   },
-                  ".DropZone-inputLabelInfo-52": Object {
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
-                  ".DropZone-root-42": Object {},
-                  ".DropZone-selectFilesText-51": Object {
+                  ".DropZone-root-41": Object {},
+                  ".DropZone-selectFilesText-50": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -5357,12 +5336,6 @@ body {
                     "position": "absolute",
                     "width": "100%",
                   },
-                  "inputLabelInfo": Object {
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
                   "root": Object {},
                   "selectFilesText": Object {
                     "color": "#414141",
@@ -5376,17 +5349,16 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "DropZone",
                   "classes": Object {
-                    "dragAction": "DropZone-dragAction-44",
-                    "dragText": "DropZone-dragText-50",
-                    "dropArea": "DropZone-dropArea-46",
-                    "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-49",
-                    "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-48",
-                    "dropzoneContainer": "DropZone-dropzoneContainer-43",
-                    "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-47",
-                    "inputArea": "DropZone-inputArea-45",
-                    "inputLabelInfo": "DropZone-inputLabelInfo-52",
-                    "root": "DropZone-root-42",
-                    "selectFilesText": "DropZone-selectFilesText-51",
+                    "dragAction": "DropZone-dragAction-43",
+                    "dragText": "DropZone-dragText-49",
+                    "dropArea": "DropZone-dropArea-45",
+                    "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-48",
+                    "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-47",
+                    "dropzoneContainer": "DropZone-dropzoneContainer-42",
+                    "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-46",
+                    "inputArea": "DropZone-inputArea-44",
+                    "root": "DropZone-root-41",
+                    "selectFilesText": "DropZone-selectFilesText-50",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5869,14 +5841,14 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".DropZone-dropzoneContainer-43:hover": Object {
+                  ".DropZone-dropzoneContainer-42:hover": Object {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dropzoneLabelsGroup-47 p:nth-child(1)": Object {
+                  ".DropZone-dropzoneLabelsGroup-46 label:nth-child(1)": Object {
                     "marginRight": "20px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-47 p:nth-child(3)": Object {
+                  ".DropZone-dropzoneLabelsGroup-46 p:nth-child(3)": Object {
                     "marginLeft": "auto",
                     "marginRight": "20px",
                   },
@@ -5918,7 +5890,7 @@ body {
                     "width": "100%",
                   },
                   "dropzoneLabelsGroup": Object {
-                    "& p:nth-child(1)": Object {
+                    "& label:nth-child(1)": Object {
                       "marginRight": "20px",
                     },
                     "& p:nth-child(3)": Object {
@@ -5930,12 +5902,6 @@ body {
                   },
                   "inputArea": Object {
                     "cursor": "pointer",
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
-                  "inputLabelInfo": Object {
                     "height": "100%",
                     "opacity": 0,
                     "position": "absolute",
@@ -6894,31 +6860,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-55",
-                "4xlTitle": "Typography-4xlTitle-54",
-                "5xlTitle": "Typography-5xlTitle-53",
-                "baseFontFamily": "Typography-baseFontFamily-76",
-                "disabledButtonText": "Typography-disabledButtonText-67",
-                "disabledText": "Typography-disabledText-74",
-                "highlightText": "Typography-highlightText-63",
-                "infoText": "Typography-infoText-72",
-                "inlineLink": "Typography-inlineLink-66",
-                "lTitle": "Typography-lTitle-58",
-                "labelText": "Typography-labelText-71",
-                "mTitle": "Typography-mTitle-59",
-                "margin": "Typography-margin-77",
-                "normalText": "Typography-normalText-64",
-                "placeholderText": "Typography-placeholderText-68",
-                "sLink": "Typography-sLink-73",
-                "sText": "Typography-sText-70",
-                "sTitle": "Typography-sTitle-60",
-                "selectedNavText": "Typography-selectedNavText-69",
-                "selectedText": "Typography-selectedText-65",
-                "vizText": "Typography-vizText-75",
-                "xlTitle": "Typography-xlTitle-57",
-                "xsTitle": "Typography-xsTitle-61",
-                "xxlTitle": "Typography-xxlTitle-56",
-                "xxsTitle": "Typography-xxsTitle-62",
+                "3xlTitle": "Typography-3xlTitle-53",
+                "4xlTitle": "Typography-4xlTitle-52",
+                "5xlTitle": "Typography-5xlTitle-51",
+                "baseFontFamily": "Typography-baseFontFamily-74",
+                "disabledButtonText": "Typography-disabledButtonText-65",
+                "disabledText": "Typography-disabledText-72",
+                "highlightText": "Typography-highlightText-61",
+                "infoText": "Typography-infoText-70",
+                "inlineLink": "Typography-inlineLink-64",
+                "lTitle": "Typography-lTitle-56",
+                "labelText": "Typography-labelText-69",
+                "mTitle": "Typography-mTitle-57",
+                "margin": "Typography-margin-75",
+                "normalText": "Typography-normalText-62",
+                "placeholderText": "Typography-placeholderText-66",
+                "sLink": "Typography-sLink-71",
+                "sText": "Typography-sText-68",
+                "sTitle": "Typography-sTitle-58",
+                "selectedNavText": "Typography-selectedNavText-67",
+                "selectedText": "Typography-selectedText-63",
+                "vizText": "Typography-vizText-73",
+                "xlTitle": "Typography-xlTitle-55",
+                "xsTitle": "Typography-xsTitle-59",
+                "xxlTitle": "Typography-xxlTitle-54",
+                "xxsTitle": "Typography-xxsTitle-60",
               },
               "deployed": true,
               "linked": false,
@@ -6926,31 +6892,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Typography",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-55",
-                  "4xlTitle": "Typography-4xlTitle-54",
-                  "5xlTitle": "Typography-5xlTitle-53",
-                  "baseFontFamily": "Typography-baseFontFamily-76",
-                  "disabledButtonText": "Typography-disabledButtonText-67",
-                  "disabledText": "Typography-disabledText-74",
-                  "highlightText": "Typography-highlightText-63",
-                  "infoText": "Typography-infoText-72",
-                  "inlineLink": "Typography-inlineLink-66",
-                  "lTitle": "Typography-lTitle-58",
-                  "labelText": "Typography-labelText-71",
-                  "mTitle": "Typography-mTitle-59",
-                  "margin": "Typography-margin-77",
-                  "normalText": "Typography-normalText-64",
-                  "placeholderText": "Typography-placeholderText-68",
-                  "sLink": "Typography-sLink-73",
-                  "sText": "Typography-sText-70",
-                  "sTitle": "Typography-sTitle-60",
-                  "selectedNavText": "Typography-selectedNavText-69",
-                  "selectedText": "Typography-selectedText-65",
-                  "vizText": "Typography-vizText-75",
-                  "xlTitle": "Typography-xlTitle-57",
-                  "xsTitle": "Typography-xsTitle-61",
-                  "xxlTitle": "Typography-xxlTitle-56",
-                  "xxsTitle": "Typography-xxsTitle-62",
+                  "3xlTitle": "Typography-3xlTitle-53",
+                  "4xlTitle": "Typography-4xlTitle-52",
+                  "5xlTitle": "Typography-5xlTitle-51",
+                  "baseFontFamily": "Typography-baseFontFamily-74",
+                  "disabledButtonText": "Typography-disabledButtonText-65",
+                  "disabledText": "Typography-disabledText-72",
+                  "highlightText": "Typography-highlightText-61",
+                  "infoText": "Typography-infoText-70",
+                  "inlineLink": "Typography-inlineLink-64",
+                  "lTitle": "Typography-lTitle-56",
+                  "labelText": "Typography-labelText-69",
+                  "mTitle": "Typography-mTitle-57",
+                  "margin": "Typography-margin-75",
+                  "normalText": "Typography-normalText-62",
+                  "placeholderText": "Typography-placeholderText-66",
+                  "sLink": "Typography-sLink-71",
+                  "sText": "Typography-sText-68",
+                  "sTitle": "Typography-sTitle-58",
+                  "selectedNavText": "Typography-selectedNavText-67",
+                  "selectedText": "Typography-selectedText-63",
+                  "vizText": "Typography-vizText-73",
+                  "xlTitle": "Typography-xlTitle-55",
+                  "xsTitle": "Typography-xsTitle-59",
+                  "xxlTitle": "Typography-xxlTitle-54",
+                  "xxsTitle": "Typography-xxsTitle-60",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7438,91 +7404,91 @@ body {
                   data-meta="Typography"
                 >
                   
-.Typography-5xlTitle-53 {
+.Typography-5xlTitle-51 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-54 {
+.Typography-4xlTitle-52 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-55 {
+.Typography-3xlTitle-53 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-56 {
+.Typography-xxlTitle-54 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-57 {
+.Typography-xlTitle-55 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-58 {
+.Typography-lTitle-56 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-59 {
+.Typography-mTitle-57 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-60 {
+.Typography-sTitle-58 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-61 {
+.Typography-xsTitle-59 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-62 {
+.Typography-xxsTitle-60 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-63 {
+.Typography-highlightText-61 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-64 {
+.Typography-normalText-62 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedText-65 {
+.Typography-selectedText-63 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -7530,80 +7496,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-66 {
+.Typography-inlineLink-64 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-67 {
+.Typography-disabledButtonText-65 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-placeholderText-68 {
+.Typography-placeholderText-66 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedNavText-69 {
+.Typography-selectedNavText-67 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sText-70 {
+.Typography-sText-68 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-71 {
+.Typography-labelText-69 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-72 {
+.Typography-infoText-70 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-73 {
+.Typography-sLink-71 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-74 {
+.Typography-disabledText-72 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-75 {
+.Typography-vizText-73 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-76 {
+.Typography-baseFontFamily-74 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-77 {
+.Typography-margin-75 {
   margin: 0;
 }
 
@@ -7619,31 +7585,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-55",
-                  "4xlTitle": "Typography-4xlTitle-54",
-                  "5xlTitle": "Typography-5xlTitle-53",
-                  "baseFontFamily": "Typography-baseFontFamily-76",
-                  "disabledButtonText": "Typography-disabledButtonText-67",
-                  "disabledText": "Typography-disabledText-74",
-                  "highlightText": "Typography-highlightText-63",
-                  "infoText": "Typography-infoText-72",
-                  "inlineLink": "Typography-inlineLink-66",
-                  "lTitle": "Typography-lTitle-58",
-                  "labelText": "Typography-labelText-71",
-                  "mTitle": "Typography-mTitle-59",
-                  "margin": "Typography-margin-77",
-                  "normalText": "Typography-normalText-64",
-                  "placeholderText": "Typography-placeholderText-68",
-                  "sLink": "Typography-sLink-73",
-                  "sText": "Typography-sText-70",
-                  "sTitle": "Typography-sTitle-60",
-                  "selectedNavText": "Typography-selectedNavText-69",
-                  "selectedText": "Typography-selectedText-65",
-                  "vizText": "Typography-vizText-75",
-                  "xlTitle": "Typography-xlTitle-57",
-                  "xsTitle": "Typography-xsTitle-61",
-                  "xxlTitle": "Typography-xxlTitle-56",
-                  "xxsTitle": "Typography-xxsTitle-62",
+                  "3xlTitle": "Typography-3xlTitle-53",
+                  "4xlTitle": "Typography-4xlTitle-52",
+                  "5xlTitle": "Typography-5xlTitle-51",
+                  "baseFontFamily": "Typography-baseFontFamily-74",
+                  "disabledButtonText": "Typography-disabledButtonText-65",
+                  "disabledText": "Typography-disabledText-72",
+                  "highlightText": "Typography-highlightText-61",
+                  "infoText": "Typography-infoText-70",
+                  "inlineLink": "Typography-inlineLink-64",
+                  "lTitle": "Typography-lTitle-56",
+                  "labelText": "Typography-labelText-69",
+                  "mTitle": "Typography-mTitle-57",
+                  "margin": "Typography-margin-75",
+                  "normalText": "Typography-normalText-62",
+                  "placeholderText": "Typography-placeholderText-66",
+                  "sLink": "Typography-sLink-71",
+                  "sText": "Typography-sText-68",
+                  "sTitle": "Typography-sTitle-58",
+                  "selectedNavText": "Typography-selectedNavText-67",
+                  "selectedText": "Typography-selectedText-63",
+                  "vizText": "Typography-vizText-73",
+                  "xlTitle": "Typography-xlTitle-55",
+                  "xsTitle": "Typography-xsTitle-59",
+                  "xxlTitle": "Typography-xxlTitle-54",
+                  "xxsTitle": "Typography-xxsTitle-60",
                 },
                 "index": Array [
                   Object {
@@ -7816,132 +7782,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-55": Object {
+                  ".Typography-3xlTitle-53": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-54": Object {
+                  ".Typography-4xlTitle-52": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-53": Object {
+                  ".Typography-5xlTitle-51": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-76": Object {
+                  ".Typography-baseFontFamily-74": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-67": Object {
+                  ".Typography-disabledButtonText-65": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-74": Object {
+                  ".Typography-disabledText-72": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-63": Object {
+                  ".Typography-highlightText-61": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-72": Object {
+                  ".Typography-infoText-70": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-66": Object {
+                  ".Typography-inlineLink-64": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-58": Object {
+                  ".Typography-lTitle-56": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-71": Object {
+                  ".Typography-labelText-69": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-59": Object {
+                  ".Typography-mTitle-57": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-77": Object {
+                  ".Typography-margin-75": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-64": Object {
+                  ".Typography-normalText-62": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-placeholderText-68": Object {
+                  ".Typography-placeholderText-66": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-73": Object {
+                  ".Typography-sLink-71": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sText-70": Object {
+                  ".Typography-sText-68": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-60": Object {
+                  ".Typography-sTitle-58": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-selectedNavText-69": Object {
+                  ".Typography-selectedNavText-67": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-selectedText-65": Object {
+                  ".Typography-selectedText-63": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -7949,35 +7915,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-vizText-75": Object {
+                  ".Typography-vizText-73": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-57": Object {
+                  ".Typography-xlTitle-55": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-61": Object {
+                  ".Typography-xsTitle-59": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-56": Object {
+                  ".Typography-xxlTitle-54": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-62": Object {
+                  ".Typography-xxsTitle-60": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -8157,31 +8123,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Typography",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-55",
-                    "4xlTitle": "Typography-4xlTitle-54",
-                    "5xlTitle": "Typography-5xlTitle-53",
-                    "baseFontFamily": "Typography-baseFontFamily-76",
-                    "disabledButtonText": "Typography-disabledButtonText-67",
-                    "disabledText": "Typography-disabledText-74",
-                    "highlightText": "Typography-highlightText-63",
-                    "infoText": "Typography-infoText-72",
-                    "inlineLink": "Typography-inlineLink-66",
-                    "lTitle": "Typography-lTitle-58",
-                    "labelText": "Typography-labelText-71",
-                    "mTitle": "Typography-mTitle-59",
-                    "margin": "Typography-margin-77",
-                    "normalText": "Typography-normalText-64",
-                    "placeholderText": "Typography-placeholderText-68",
-                    "sLink": "Typography-sLink-73",
-                    "sText": "Typography-sText-70",
-                    "sTitle": "Typography-sTitle-60",
-                    "selectedNavText": "Typography-selectedNavText-69",
-                    "selectedText": "Typography-selectedText-65",
-                    "vizText": "Typography-vizText-75",
-                    "xlTitle": "Typography-xlTitle-57",
-                    "xsTitle": "Typography-xsTitle-61",
-                    "xxlTitle": "Typography-xxlTitle-56",
-                    "xxsTitle": "Typography-xxsTitle-62",
+                    "3xlTitle": "Typography-3xlTitle-53",
+                    "4xlTitle": "Typography-4xlTitle-52",
+                    "5xlTitle": "Typography-5xlTitle-51",
+                    "baseFontFamily": "Typography-baseFontFamily-74",
+                    "disabledButtonText": "Typography-disabledButtonText-65",
+                    "disabledText": "Typography-disabledText-72",
+                    "highlightText": "Typography-highlightText-61",
+                    "infoText": "Typography-infoText-70",
+                    "inlineLink": "Typography-inlineLink-64",
+                    "lTitle": "Typography-lTitle-56",
+                    "labelText": "Typography-labelText-69",
+                    "mTitle": "Typography-mTitle-57",
+                    "margin": "Typography-margin-75",
+                    "normalText": "Typography-normalText-62",
+                    "placeholderText": "Typography-placeholderText-66",
+                    "sLink": "Typography-sLink-71",
+                    "sText": "Typography-sText-68",
+                    "sTitle": "Typography-sTitle-58",
+                    "selectedNavText": "Typography-selectedNavText-67",
+                    "selectedText": "Typography-selectedText-63",
+                    "vizText": "Typography-vizText-73",
+                    "xlTitle": "Typography-xlTitle-55",
+                    "xsTitle": "Typography-xsTitle-59",
+                    "xxlTitle": "Typography-xxlTitle-54",
+                    "xxsTitle": "Typography-xxsTitle-60",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -9782,11 +9748,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "root": "Doc-root-78",
-                "rootL": "Doc-rootL-82",
-                "rootM": "Doc-rootM-81",
-                "rootS": "Doc-rootS-80",
-                "rootXs": "Doc-rootXs-79",
+                "root": "Doc-root-76",
+                "rootL": "Doc-rootL-80",
+                "rootM": "Doc-rootM-79",
+                "rootS": "Doc-rootS-78",
+                "rootXs": "Doc-rootXs-77",
               },
               "deployed": true,
               "linked": false,
@@ -9794,11 +9760,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Doc",
                 "classes": Object {
-                  "root": "Doc-root-78",
-                  "rootL": "Doc-rootL-82",
-                  "rootM": "Doc-rootM-81",
-                  "rootS": "Doc-rootS-80",
-                  "rootXs": "Doc-rootXs-79",
+                  "root": "Doc-root-76",
+                  "rootL": "Doc-rootL-80",
+                  "rootM": "Doc-rootM-79",
+                  "rootS": "Doc-rootS-78",
+                  "rootXs": "Doc-rootXs-77",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -10286,25 +10252,25 @@ body {
                   data-meta="Doc"
                 >
                   
-.Doc-root-78 {
+.Doc-root-76 {
   display: flex;
 }
-.Doc-root-78 svg {
+.Doc-root-76 svg {
   margin: auto;
 }
-.Doc-rootXs-79 {
+.Doc-rootXs-77 {
   width: 12px;
   height: 12px;
 }
-.Doc-rootS-80 {
+.Doc-rootS-78 {
   width: 16px;
   height: 16px;
 }
-.Doc-rootM-81 {
+.Doc-rootM-79 {
   width: 32px;
   height: 32px;
 }
-.Doc-rootL-82 {
+.Doc-rootL-80 {
   width: 96px;
   height: 96px;
 }
@@ -10321,11 +10287,11 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "root": "Doc-root-78",
-                  "rootL": "Doc-rootL-82",
-                  "rootM": "Doc-rootM-81",
-                  "rootS": "Doc-rootS-80",
-                  "rootXs": "Doc-rootXs-79",
+                  "root": "Doc-root-76",
+                  "rootL": "Doc-rootL-80",
+                  "rootM": "Doc-rootM-79",
+                  "rootS": "Doc-rootS-78",
+                  "rootXs": "Doc-rootXs-77",
                 },
                 "index": Array [
                   Object {
@@ -10352,25 +10318,25 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Doc-root-78": Object {
+                  ".Doc-root-76": Object {
                     "display": "flex",
                   },
-                  ".Doc-root-78 svg": Object {
+                  ".Doc-root-76 svg": Object {
                     "margin": "auto",
                   },
-                  ".Doc-rootL-82": Object {
+                  ".Doc-rootL-80": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Doc-rootM-81": Object {
+                  ".Doc-rootM-79": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Doc-rootS-80": Object {
+                  ".Doc-rootS-78": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Doc-rootXs-79": Object {
+                  ".Doc-rootXs-77": Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -10398,11 +10364,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Doc",
                   "classes": Object {
-                    "root": "Doc-root-78",
-                    "rootL": "Doc-rootL-82",
-                    "rootM": "Doc-rootM-81",
-                    "rootS": "Doc-rootS-80",
-                    "rootXs": "Doc-rootXs-79",
+                    "root": "Doc-root-76",
+                    "rootL": "Doc-rootL-80",
+                    "rootM": "Doc-rootM-79",
+                    "rootS": "Doc-rootS-78",
+                    "rootXs": "Doc-rootXs-77",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10885,7 +10851,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Doc-root-78 svg": Object {
+                  ".Doc-root-76 svg": Object {
                     "margin": "auto",
                   },
                   "root": Object {
@@ -11894,17 +11860,16 @@ body {
         acceptedFiles={Array []}
         classes={
           Object {
-            "dragAction": "DropZone-dragAction-44",
-            "dragText": "DropZone-dragText-50",
-            "dropArea": "DropZone-dropArea-46",
-            "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-49",
-            "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-48",
-            "dropzoneContainer": "DropZone-dropzoneContainer-43",
-            "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-47",
-            "inputArea": "DropZone-inputArea-45",
-            "inputLabelInfo": "DropZone-inputLabelInfo-52",
-            "root": "DropZone-root-42",
-            "selectFilesText": "DropZone-selectFilesText-51",
+            "dragAction": "DropZone-dragAction-43",
+            "dragText": "DropZone-dragText-49",
+            "dropArea": "DropZone-dropArea-45",
+            "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-48",
+            "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-47",
+            "dropzoneContainer": "DropZone-dropzoneContainer-42",
+            "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-46",
+            "inputArea": "DropZone-inputArea-44",
+            "root": "DropZone-root-41",
+            "selectFilesText": "DropZone-selectFilesText-50",
           }
         }
         fileList={
@@ -11921,6 +11886,7 @@ body {
             },
           ]
         }
+        id={null}
         labels={
           Object {
             "dragText": "Drag and drop or ",
@@ -12873,43 +12839,48 @@ body {
       >
         <div
           aria-label="File Dropzone"
-          className="DropZone-dropzoneLabelsGroup-47"
-          id="drop-zone-2"
+          className="DropZone-dropzoneLabelsGroup-46"
+          id="hv-filedropzone-2"
         >
           <WithStyles(Typography)
+            component="label"
+            htmlFor="hv-filedropzone-2-input-file"
+            id="hv-filedropzone-2-input-file-label"
             variant="labelText"
           >
             <Typography
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-55",
-                  "4xlTitle": "Typography-4xlTitle-54",
-                  "5xlTitle": "Typography-5xlTitle-53",
-                  "baseFontFamily": "Typography-baseFontFamily-76",
-                  "disabledButtonText": "Typography-disabledButtonText-67",
-                  "disabledText": "Typography-disabledText-74",
-                  "highlightText": "Typography-highlightText-63",
-                  "infoText": "Typography-infoText-72",
-                  "inlineLink": "Typography-inlineLink-66",
-                  "lTitle": "Typography-lTitle-58",
-                  "labelText": "Typography-labelText-71",
-                  "mTitle": "Typography-mTitle-59",
-                  "margin": "Typography-margin-77",
-                  "normalText": "Typography-normalText-64",
-                  "placeholderText": "Typography-placeholderText-68",
-                  "sLink": "Typography-sLink-73",
-                  "sText": "Typography-sText-70",
-                  "sTitle": "Typography-sTitle-60",
-                  "selectedNavText": "Typography-selectedNavText-69",
-                  "selectedText": "Typography-selectedText-65",
-                  "vizText": "Typography-vizText-75",
-                  "xlTitle": "Typography-xlTitle-57",
-                  "xsTitle": "Typography-xsTitle-61",
-                  "xxlTitle": "Typography-xxlTitle-56",
-                  "xxsTitle": "Typography-xxsTitle-62",
+                  "3xlTitle": "Typography-3xlTitle-53",
+                  "4xlTitle": "Typography-4xlTitle-52",
+                  "5xlTitle": "Typography-5xlTitle-51",
+                  "baseFontFamily": "Typography-baseFontFamily-74",
+                  "disabledButtonText": "Typography-disabledButtonText-65",
+                  "disabledText": "Typography-disabledText-72",
+                  "highlightText": "Typography-highlightText-61",
+                  "infoText": "Typography-infoText-70",
+                  "inlineLink": "Typography-inlineLink-64",
+                  "lTitle": "Typography-lTitle-56",
+                  "labelText": "Typography-labelText-69",
+                  "mTitle": "Typography-mTitle-57",
+                  "margin": "Typography-margin-75",
+                  "normalText": "Typography-normalText-62",
+                  "placeholderText": "Typography-placeholderText-66",
+                  "sLink": "Typography-sLink-71",
+                  "sText": "Typography-sText-68",
+                  "sTitle": "Typography-sTitle-58",
+                  "selectedNavText": "Typography-selectedNavText-67",
+                  "selectedText": "Typography-selectedText-63",
+                  "vizText": "Typography-vizText-73",
+                  "xlTitle": "Typography-xlTitle-55",
+                  "xsTitle": "Typography-xsTitle-59",
+                  "xxlTitle": "Typography-xxlTitle-54",
+                  "xxsTitle": "Typography-xxsTitle-60",
                 }
               }
-              component={null}
+              component="label"
+              htmlFor="hv-filedropzone-2-input-file"
+              id="hv-filedropzone-2-input-file-label"
               paragraph={false}
               theme={
                 Object {
@@ -13842,8 +13813,10 @@ body {
               }
               variant="labelText"
             >
-              <p
-                className="Typography-labelText-71 Typography-baseFontFamily-76 Typography-margin-77"
+              <label
+                className="Typography-labelText-69 Typography-baseFontFamily-74 Typography-margin-75"
+                htmlFor="hv-filedropzone-2-input-file"
+                id="hv-filedropzone-2-input-file-label"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -14782,31 +14755,31 @@ body {
             <Typography
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-55",
-                  "4xlTitle": "Typography-4xlTitle-54",
-                  "5xlTitle": "Typography-5xlTitle-53",
-                  "baseFontFamily": "Typography-baseFontFamily-76",
-                  "disabledButtonText": "Typography-disabledButtonText-67",
-                  "disabledText": "Typography-disabledText-74",
-                  "highlightText": "Typography-highlightText-63",
-                  "infoText": "Typography-infoText-72",
-                  "inlineLink": "Typography-inlineLink-66",
-                  "lTitle": "Typography-lTitle-58",
-                  "labelText": "Typography-labelText-71",
-                  "mTitle": "Typography-mTitle-59",
-                  "margin": "Typography-margin-77",
-                  "normalText": "Typography-normalText-64",
-                  "placeholderText": "Typography-placeholderText-68",
-                  "sLink": "Typography-sLink-73",
-                  "sText": "Typography-sText-70",
-                  "sTitle": "Typography-sTitle-60",
-                  "selectedNavText": "Typography-selectedNavText-69",
-                  "selectedText": "Typography-selectedText-65",
-                  "vizText": "Typography-vizText-75",
-                  "xlTitle": "Typography-xlTitle-57",
-                  "xsTitle": "Typography-xsTitle-61",
-                  "xxlTitle": "Typography-xxlTitle-56",
-                  "xxsTitle": "Typography-xxsTitle-62",
+                  "3xlTitle": "Typography-3xlTitle-53",
+                  "4xlTitle": "Typography-4xlTitle-52",
+                  "5xlTitle": "Typography-5xlTitle-51",
+                  "baseFontFamily": "Typography-baseFontFamily-74",
+                  "disabledButtonText": "Typography-disabledButtonText-65",
+                  "disabledText": "Typography-disabledText-72",
+                  "highlightText": "Typography-highlightText-61",
+                  "infoText": "Typography-infoText-70",
+                  "inlineLink": "Typography-inlineLink-64",
+                  "lTitle": "Typography-lTitle-56",
+                  "labelText": "Typography-labelText-69",
+                  "mTitle": "Typography-mTitle-57",
+                  "margin": "Typography-margin-75",
+                  "normalText": "Typography-normalText-62",
+                  "placeholderText": "Typography-placeholderText-66",
+                  "sLink": "Typography-sLink-71",
+                  "sText": "Typography-sText-68",
+                  "sTitle": "Typography-sTitle-58",
+                  "selectedNavText": "Typography-selectedNavText-67",
+                  "selectedText": "Typography-selectedText-63",
+                  "vizText": "Typography-vizText-73",
+                  "xlTitle": "Typography-xlTitle-55",
+                  "xsTitle": "Typography-xsTitle-59",
+                  "xxlTitle": "Typography-xxlTitle-54",
+                  "xxsTitle": "Typography-xxsTitle-60",
                 }
               }
               component={null}
@@ -15743,7 +15716,7 @@ body {
               variant="infoText"
             >
               <p
-                className="Typography-infoText-72 Typography-baseFontFamily-76 Typography-margin-77"
+                className="Typography-infoText-70 Typography-baseFontFamily-74 Typography-margin-75"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -16680,7 +16653,8 @@ body {
           </WithStyles(Typography)>
         </div>
         <div
-          className="DropZone-dropzoneContainer-43"
+          className="DropZone-dropzoneContainer-42"
+          id="hv-filedropzone-2-button"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -16690,37 +16664,31 @@ body {
           role="button"
           tabIndex={0}
         >
-          <label
-            className="DropZone-inputLabelInfo-52"
-            htmlFor="dropzone-input-element"
-            id="input-label"
-          >
-            <input
-              className="DropZone-inputArea-45"
-              id="dropzone-input-element"
-              multiple={true}
-              onChange={[Function]}
-              onClick={[Function]}
-              tabIndex={-1}
-              type="file"
-            />
-          </label>
+          <input
+            className="DropZone-inputArea-44"
+            id="hv-filedropzone-2-input-file"
+            multiple={true}
+            onChange={[Function]}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="file"
+          />
           <div
-            className="DropZone-dropArea-46"
+            className="DropZone-dropArea-45"
           >
             <WithStyles(Doc)
-              className="DropZone-dropzoneAreaIcon-49"
+              className="DropZone-dropzoneAreaIcon-48"
               iconSize="M"
             >
               <Doc
-                className="DropZone-dropzoneAreaIcon-49"
+                className="DropZone-dropzoneAreaIcon-48"
                 classes={
                   Object {
-                    "root": "Doc-root-78",
-                    "rootL": "Doc-rootL-82",
-                    "rootM": "Doc-rootM-81",
-                    "rootS": "Doc-rootS-80",
-                    "rootXs": "Doc-rootXs-79",
+                    "root": "Doc-root-76",
+                    "rootL": "Doc-rootL-80",
+                    "rootM": "Doc-rootM-79",
+                    "rootS": "Doc-rootS-78",
+                    "rootXs": "Doc-rootXs-77",
                   }
                 }
                 iconSize="M"
@@ -17655,7 +17623,7 @@ body {
                 }
               >
                 <div
-                  className="DropZone-dropzoneAreaIcon-49 Doc-root-78 Doc-rootM-81"
+                  className="DropZone-dropzoneAreaIcon-48 Doc-root-76 Doc-rootM-79"
                 >
                   <svg
                     height="32px"
@@ -17673,37 +17641,37 @@ body {
               </Doc>
             </WithStyles(Doc)>
             <div
-              className="DropZone-dropzoneAreaLabels-48"
+              className="DropZone-dropzoneAreaLabels-47"
             >
               <WithStyles(Typography)>
                 <Typography
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-55",
-                      "4xlTitle": "Typography-4xlTitle-54",
-                      "5xlTitle": "Typography-5xlTitle-53",
-                      "baseFontFamily": "Typography-baseFontFamily-76",
-                      "disabledButtonText": "Typography-disabledButtonText-67",
-                      "disabledText": "Typography-disabledText-74",
-                      "highlightText": "Typography-highlightText-63",
-                      "infoText": "Typography-infoText-72",
-                      "inlineLink": "Typography-inlineLink-66",
-                      "lTitle": "Typography-lTitle-58",
-                      "labelText": "Typography-labelText-71",
-                      "mTitle": "Typography-mTitle-59",
-                      "margin": "Typography-margin-77",
-                      "normalText": "Typography-normalText-64",
-                      "placeholderText": "Typography-placeholderText-68",
-                      "sLink": "Typography-sLink-73",
-                      "sText": "Typography-sText-70",
-                      "sTitle": "Typography-sTitle-60",
-                      "selectedNavText": "Typography-selectedNavText-69",
-                      "selectedText": "Typography-selectedText-65",
-                      "vizText": "Typography-vizText-75",
-                      "xlTitle": "Typography-xlTitle-57",
-                      "xsTitle": "Typography-xsTitle-61",
-                      "xxlTitle": "Typography-xxlTitle-56",
-                      "xxsTitle": "Typography-xxsTitle-62",
+                      "3xlTitle": "Typography-3xlTitle-53",
+                      "4xlTitle": "Typography-4xlTitle-52",
+                      "5xlTitle": "Typography-5xlTitle-51",
+                      "baseFontFamily": "Typography-baseFontFamily-74",
+                      "disabledButtonText": "Typography-disabledButtonText-65",
+                      "disabledText": "Typography-disabledText-72",
+                      "highlightText": "Typography-highlightText-61",
+                      "infoText": "Typography-infoText-70",
+                      "inlineLink": "Typography-inlineLink-64",
+                      "lTitle": "Typography-lTitle-56",
+                      "labelText": "Typography-labelText-69",
+                      "mTitle": "Typography-mTitle-57",
+                      "margin": "Typography-margin-75",
+                      "normalText": "Typography-normalText-62",
+                      "placeholderText": "Typography-placeholderText-66",
+                      "sLink": "Typography-sLink-71",
+                      "sText": "Typography-sText-68",
+                      "sTitle": "Typography-sTitle-58",
+                      "selectedNavText": "Typography-selectedNavText-67",
+                      "selectedText": "Typography-selectedText-63",
+                      "vizText": "Typography-vizText-73",
+                      "xlTitle": "Typography-xlTitle-55",
+                      "xsTitle": "Typography-xsTitle-59",
+                      "xxlTitle": "Typography-xxlTitle-54",
+                      "xxsTitle": "Typography-xxsTitle-60",
                     }
                   }
                   component={null}
@@ -18640,7 +18608,7 @@ body {
                   variant="normalText"
                 >
                   <p
-                    className="Typography-normalText-64 Typography-baseFontFamily-76 Typography-margin-77"
+                    className="Typography-normalText-62 Typography-baseFontFamily-74 Typography-margin-75"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -19572,7 +19540,7 @@ body {
                     }
                   >
                     <span
-                      className="DropZone-selectFilesText-51"
+                      className="DropZone-selectFilesText-50"
                     >
                        undefined
                     </span>

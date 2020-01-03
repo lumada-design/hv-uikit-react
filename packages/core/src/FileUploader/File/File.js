@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import uniqueId from "lodash/uniqueId";
@@ -69,6 +69,7 @@ const getProgressBarWith = ({ size, progress }) => {
 };
 
 const File = ({
+  id,
   theme,
   classes,
   data,
@@ -76,6 +77,8 @@ const File = ({
   onFileRemoved,
   removeFileButtonLabel
 }) => {
+  const [fileId] = useState(id || uniqueId("hv-file-"));
+
   const hasError = data.status === "fail";
   const inProgress = data.status === "progress";
   const progressText = getProgressText(classes, data, progressConjunctionLabel);
@@ -101,7 +104,7 @@ const File = ({
       <span className={classes.progressText}>{progressText}</span>
 
       <Button
-        id={uniqueId("hv-button-")}
+        id={`${fileId}-remove-button`}
         aria-label={removeFileButtonLabel}
         className={classes.removeButton}
         category="ghost"
@@ -114,6 +117,10 @@ const File = ({
 };
 
 File.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * The theme passed by the provider.
    */
@@ -138,6 +145,10 @@ File.propTypes = {
    * Value of aria-label to apply to remove file button in filelist
    * */
   removeFileButtonLabel: PropTypes.string.isRequired
+};
+
+File.defaultProps = {
+  id: null
 };
 
 export default File;

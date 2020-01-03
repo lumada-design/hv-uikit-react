@@ -24,6 +24,7 @@ import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 
 const DropZone = ({
+  id,
   classes,
   labels,
   multiple,
@@ -31,6 +32,8 @@ const DropZone = ({
   maxFileSize,
   onFilesAdded
 }) => {
+  const [fileDropZoneId] = useState(id || uniqueId("hv-filedropzone-"));
+
   const [dragState, setDrag] = useState(false);
 
   const leaveDropArea = () => {
@@ -60,6 +63,8 @@ const DropZone = ({
         newFile.status = "fail";
       }
 
+      newFile.id = uniqueId("uploaded-file-data-");
+
       newFiles.push(newFile);
     });
 
@@ -73,11 +78,19 @@ const DropZone = ({
   return (
     <>
       <div
-        id={uniqueId("drop-zone-")}
+        id={fileDropZoneId}
         className={classes.dropzoneLabelsGroup}
         aria-label="File Dropzone"
       >
-        <HvTypography variant="labelText">{labels.dropzone}</HvTypography>
+        <HvTypography
+          variant="labelText"
+          component="label"
+          id={`${fileDropZoneId}-input-file-label`}
+          htmlFor={`${fileDropZoneId}-input-file`}
+        >
+          {labels.dropzone}
+        </HvTypography>
+
         <HvTypography variant="infoText">
           {`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
         </HvTypography>
@@ -94,6 +107,7 @@ const DropZone = ({
       </div>
 
       <div
+        id={`${fileDropZoneId}-button`}
         className={classnames(classes.dropzoneContainer, {
           [classes.dragAction]: dragState
         })}
@@ -122,23 +136,21 @@ const DropZone = ({
           }
         }}
       >
-        <label id="input-label" htmlFor="dropzone-input-element" className={classes.inputLabelInfo}>
-          {labels.inputElementLabel}
-          <input
-            id="dropzone-input-element"
-            tabIndex={-1}
-            className={classes.inputArea}
-            type="file"
-            multiple={multiple}
-            onClick={() => {
-              inputRef.current.value = null;
-            }}
-            onChange={() => {
-              onChangeHandler(inputRef.current.files);
-            }}
-            ref={inputRef}
-          />
-        </label>
+        <input
+          id={`${fileDropZoneId}-input-file`}
+          tabIndex={-1}
+          className={classes.inputArea}
+          type="file"
+          multiple={multiple}
+          onClick={() => {
+            inputRef.current.value = null;
+          }}
+          onChange={() => {
+            onChangeHandler(inputRef.current.files);
+          }}
+          ref={inputRef}
+        />
+
         <div className={classes.dropArea}>
           {dragState ? (
             <>
@@ -168,6 +180,10 @@ const DropZone = ({
 };
 
 DropZone.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -204,6 +220,7 @@ DropZone.propTypes = {
 };
 
 DropZone.defaultProps = {
+  id: null,
   multiple: true,
   onFilesAdded: () => {}
 };
