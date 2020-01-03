@@ -101,8 +101,7 @@ const Sample = () => {
         setList(newList);
       }}
       acceptedFiles={["jpg", "jpeg", "png"]}
-      fileUnit="kb"
-      maxFileSize={2000}
+      maxFileSize={2 * 1000 ** 2}
     />
   );
 };

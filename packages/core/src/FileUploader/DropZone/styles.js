@@ -19,7 +19,6 @@ const styles = theme => ({
   dropzoneContainer: {
     position: "relative",
     width: "100%",
-    height: "100%",
     display: "flex",
     border: `1px dotted ${theme.hv.palette.atmosphere.atmo6}`,
     cursor: "pointer",
