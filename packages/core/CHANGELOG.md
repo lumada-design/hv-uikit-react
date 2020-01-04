@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.15.0...@hv/uikit-react-core@1.16.0) (2020-01-04)
+
+
+### Bug Fixes
+
+* **assetinventory:** samples and listview actions. [#825](https://github.com/pentaho/hv-uikit-react/issues/825) ([3d2c154](https://github.com/pentaho/hv-uikit-react/commit/3d2c154))
+* **banner:** left icon/text spacing. [#903](https://github.com/pentaho/hv-uikit-react/issues/903) ([8ddb70d](https://github.com/pentaho/hv-uikit-react/commit/8ddb70d))
+* **card:** spacing on subheader and actions' icons. [#825](https://github.com/pentaho/hv-uikit-react/issues/825) ([93c180b](https://github.com/pentaho/hv-uikit-react/commit/93c180b))
+* **chart:** update chart to follow DS. [#899](https://github.com/pentaho/hv-uikit-react/issues/899) ([10e92af](https://github.com/pentaho/hv-uikit-react/commit/10e92af))
+* **dropdown:** adjust component to ds requirements. [#896](https://github.com/pentaho/hv-uikit-react/issues/896) ([2865a34](https://github.com/pentaho/hv-uikit-react/commit/2865a34))
+* **dropdown-menu:** fix click when portal is on and accessibility. [#945](https://github.com/pentaho/hv-uikit-react/issues/945) ([ebeb605](https://github.com/pentaho/hv-uikit-react/commit/ebeb605))
+* **header:** hamburger visible without navigation data. [#756](https://github.com/pentaho/hv-uikit-react/issues/756) ([c56c59a](https://github.com/pentaho/hv-uikit-react/commit/c56c59a))
+* **header:** sample data correction. [#831](https://github.com/pentaho/hv-uikit-react/issues/831) ([d0ecf46](https://github.com/pentaho/hv-uikit-react/commit/d0ecf46))
+* **input:** full opacity of placeholder text. [#894](https://github.com/pentaho/hv-uikit-react/issues/894) ([#954](https://github.com/pentaho/hv-uikit-react/issues/954)) ([d99ecf7](https://github.com/pentaho/hv-uikit-react/commit/d99ecf7))
+* **modal:** sizing and alignment. [#887](https://github.com/pentaho/hv-uikit-react/issues/887) ([7b466e3](https://github.com/pentaho/hv-uikit-react/commit/7b466e3))
+* **snackbar:** offset positioning and icon. [#923](https://github.com/pentaho/hv-uikit-react/issues/923) [#903](https://github.com/pentaho/hv-uikit-react/issues/903) ([fb0a32c](https://github.com/pentaho/hv-uikit-react/commit/fb0a32c))
+* **table:** add secondaryActions on click and row as argument. [#946](https://github.com/pentaho/hv-uikit-react/issues/946) ([801f6f6](https://github.com/pentaho/hv-uikit-react/commit/801f6f6))
+* **table:** correction on sample. [#899](https://github.com/pentaho/hv-uikit-react/issues/899) ([0531487](https://github.com/pentaho/hv-uikit-react/commit/0531487))
+* **table:** fix fixed columns by adding overflow-y only for IE11. [#910](https://github.com/pentaho/hv-uikit-react/issues/910) ([6e669f4](https://github.com/pentaho/hv-uikit-react/commit/6e669f4))
+* **table:** remove pagination in empty table. [#826](https://github.com/pentaho/hv-uikit-react/issues/826) ([5084915](https://github.com/pentaho/hv-uikit-react/commit/5084915))
+* **tooltip:** propTypes and samples. [#930](https://github.com/pentaho/hv-uikit-react/issues/930) ([88d42e9](https://github.com/pentaho/hv-uikit-react/commit/88d42e9))
+
+
+### Features
+
+* **assetinventory:** add automation tests. [#686](https://github.com/pentaho/hv-uikit-react/issues/686) ([0b91ede](https://github.com/pentaho/hv-uikit-react/commit/0b91ede))
+* **assetinventory:** add pagination. [#686](https://github.com/pentaho/hv-uikit-react/issues/686) ([26a6e8c](https://github.com/pentaho/hv-uikit-react/commit/26a6e8c))
+* **assetinventory:** listview selection styles. [#825](https://github.com/pentaho/hv-uikit-react/issues/825) ([90b0a4f](https://github.com/pentaho/hv-uikit-react/commit/90b0a4f))
+* **button:** add variant with icon. [#895](https://github.com/pentaho/hv-uikit-react/issues/895) ([921bcd7](https://github.com/pentaho/hv-uikit-react/commit/921bcd7))
+* **datepicker:** promote datepicker to core. [#63](https://github.com/pentaho/hv-uikit-react/issues/63) ([f1b77ac](https://github.com/pentaho/hv-uikit-react/commit/f1b77ac))
+* **datepicker:** promote datepicker to core. [#63](https://github.com/pentaho/hv-uikit-react/issues/63) ([94e7787](https://github.com/pentaho/hv-uikit-react/commit/94e7787))
+* **emptystate:** apply DS specification guidelines. [#61](https://github.com/pentaho/hv-uikit-react/issues/61) ([067c16c](https://github.com/pentaho/hv-uikit-react/commit/067c16c))
+* **emptystate:** promote component from Lab to Core. [#61](https://github.com/pentaho/hv-uikit-react/issues/61) ([b5c7611](https://github.com/pentaho/hv-uikit-react/commit/b5c7611))
+* **fileuploader:** implement component as per ds. [#433](https://github.com/pentaho/hv-uikit-react/issues/433) ([def4482](https://github.com/pentaho/hv-uikit-react/commit/def4482))
+* **icons:** remove deprecated icons from storybook. [#870](https://github.com/pentaho/hv-uikit-react/issues/870) ([c269d01](https://github.com/pentaho/hv-uikit-react/commit/c269d01))
+
+
+
+
+
 # [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.14.0...@hv/uikit-react-core@1.15.0) (2019-12-16)
 
 

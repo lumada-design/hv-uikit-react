@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.7.3...@hv/uikit-react-automation-storybook@1.8.0) (2020-01-04)
+
+
+### Features
+
+* **assetinventory:** add automation tests. [#686](https://github.com/pentaho/hv-uikit-react/issues/686) ([0b91ede](https://github.com/pentaho/hv-uikit-react/commit/0b91ede))
+* **button:** add variant with icon. [#895](https://github.com/pentaho/hv-uikit-react/issues/895) ([921bcd7](https://github.com/pentaho/hv-uikit-react/commit/921bcd7))
+* **datepicker:** promote datepicker to core. [#63](https://github.com/pentaho/hv-uikit-react/issues/63) ([94e7787](https://github.com/pentaho/hv-uikit-react/commit/94e7787))
+* **fileuploader:** implement component as per ds. [#433](https://github.com/pentaho/hv-uikit-react/issues/433) ([def4482](https://github.com/pentaho/hv-uikit-react/commit/def4482))
+
+
+
+
+
 ## [1.7.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.7.2...@hv/uikit-react-automation-storybook@1.7.3) (2019-12-16)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook

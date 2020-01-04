@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.5.2...@hv/uikit-react-icons@1.6.0) (2020-01-04)
+
+
+### Features
+
+* **icons:** remove deprecated icons from storybook. [#870](https://github.com/pentaho/hv-uikit-react/issues/870) ([c269d01](https://github.com/pentaho/hv-uikit-react/commit/c269d01))
+
+
+
+
+
 ## [1.5.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.5.1...@hv/uikit-react-icons@1.5.2) (2019-12-04)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

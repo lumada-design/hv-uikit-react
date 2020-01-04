@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.14.1...@hv/uikit-react-doc@1.15.0) (2020-01-04)
+
+
+### Bug Fixes
+
+* **assetinventory:** samples and listview actions. [#825](https://github.com/pentaho/hv-uikit-react/issues/825) ([3d2c154](https://github.com/pentaho/hv-uikit-react/commit/3d2c154))
+* **banner:** left icon/text spacing. [#903](https://github.com/pentaho/hv-uikit-react/issues/903) ([8ddb70d](https://github.com/pentaho/hv-uikit-react/commit/8ddb70d))
+* **dropdown:** adjust component to ds requirements. [#896](https://github.com/pentaho/hv-uikit-react/issues/896) ([2865a34](https://github.com/pentaho/hv-uikit-react/commit/2865a34))
+* **dropdown-menu:** fix click when portal is on and accessibility. [#945](https://github.com/pentaho/hv-uikit-react/issues/945) ([ebeb605](https://github.com/pentaho/hv-uikit-react/commit/ebeb605))
+* **grid:** sample 2 correction. [#932](https://github.com/pentaho/hv-uikit-react/issues/932) ([9fd6167](https://github.com/pentaho/hv-uikit-react/commit/9fd6167))
+* **header:** sample data correction. [#831](https://github.com/pentaho/hv-uikit-react/issues/831) ([d0ecf46](https://github.com/pentaho/hv-uikit-react/commit/d0ecf46))
+* **modal:** sizing and alignment. [#887](https://github.com/pentaho/hv-uikit-react/issues/887) ([7b466e3](https://github.com/pentaho/hv-uikit-react/commit/7b466e3))
+* **snackbar:** offset positioning and icon. [#923](https://github.com/pentaho/hv-uikit-react/issues/923) [#903](https://github.com/pentaho/hv-uikit-react/issues/903) ([fb0a32c](https://github.com/pentaho/hv-uikit-react/commit/fb0a32c))
+* **table:** add secondaryActions on click and row as argument. [#946](https://github.com/pentaho/hv-uikit-react/issues/946) ([801f6f6](https://github.com/pentaho/hv-uikit-react/commit/801f6f6))
+* **table:** correction on sample. [#899](https://github.com/pentaho/hv-uikit-react/issues/899) ([0531487](https://github.com/pentaho/hv-uikit-react/commit/0531487))
+* **tooltip:** propTypes and samples. [#930](https://github.com/pentaho/hv-uikit-react/issues/930) ([88d42e9](https://github.com/pentaho/hv-uikit-react/commit/88d42e9))
+
+
+### Features
+
+* **assetinventory:** add automation tests. [#686](https://github.com/pentaho/hv-uikit-react/issues/686) ([0b91ede](https://github.com/pentaho/hv-uikit-react/commit/0b91ede))
+* **assetinventory:** add pagination. [#686](https://github.com/pentaho/hv-uikit-react/issues/686) ([26a6e8c](https://github.com/pentaho/hv-uikit-react/commit/26a6e8c))
+* **assetinventory:** listview selection styles. [#825](https://github.com/pentaho/hv-uikit-react/issues/825) ([90b0a4f](https://github.com/pentaho/hv-uikit-react/commit/90b0a4f))
+* **button:** add variant with icon. [#895](https://github.com/pentaho/hv-uikit-react/issues/895) ([921bcd7](https://github.com/pentaho/hv-uikit-react/commit/921bcd7))
+* **datepicker:** promote datepicker to core. [#63](https://github.com/pentaho/hv-uikit-react/issues/63) ([94e7787](https://github.com/pentaho/hv-uikit-react/commit/94e7787))
+* **emptystate:** apply DS specification guidelines. [#61](https://github.com/pentaho/hv-uikit-react/issues/61) ([067c16c](https://github.com/pentaho/hv-uikit-react/commit/067c16c))
+* **emptystate:** promote component from Lab to Core. [#61](https://github.com/pentaho/hv-uikit-react/issues/61) ([b5c7611](https://github.com/pentaho/hv-uikit-react/commit/b5c7611))
+* **fileuploader:** implement component as per ds. [#433](https://github.com/pentaho/hv-uikit-react/issues/433) ([def4482](https://github.com/pentaho/hv-uikit-react/commit/def4482))
+* **icons:** remove deprecated icons from storybook. [#870](https://github.com/pentaho/hv-uikit-react/issues/870) ([c269d01](https://github.com/pentaho/hv-uikit-react/commit/c269d01))
+
+
+
+
+
 ## [1.14.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.14.0...@hv/uikit-react-doc@1.14.1) (2019-12-16)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
