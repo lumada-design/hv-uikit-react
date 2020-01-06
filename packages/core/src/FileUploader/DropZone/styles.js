@@ -47,7 +47,7 @@ const styles = theme => ({
   dropzoneLabelsGroup: {
     display: "flex",
     marginBottom: 5,
-    "& p:nth-child(1)": {
+    "& label:nth-child(1)": {
       marginRight: `${theme.hv.spacing.sm}px`
     },
     "& p:nth-child(3)": {
@@ -69,12 +69,6 @@ const styles = theme => ({
   },
   selectFilesText: {
     ...theme.hv.typography.highlightText
-  },
-  inputLabelInfo: {
-    position: "absolute",
-    opacity: 0,
-    width:"100%",
-    height:"100%"
   }
 });
 

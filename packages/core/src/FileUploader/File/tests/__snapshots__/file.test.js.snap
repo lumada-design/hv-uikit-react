@@ -24900,6 +24900,7 @@ body {
             "status": "success",
           }
         }
+        id={null}
         labels={
           Object {
             "dragText": "Drag and drop or ",
@@ -32540,7 +32541,7 @@ body {
         <HvButton
           category="ghost"
           className="File-removeButton-89"
-          id="hv-button-2"
+          id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <HvButton
@@ -32563,7 +32564,7 @@ body {
               }
             }
             disabled={false}
-            id="hv-button-2"
+            id="hv-file-2-remove-button"
             onClick={[Function]}
             startIcon={null}
             theme={
@@ -33510,7 +33511,7 @@ body {
               color="primary"
               disableRipple={true}
               disabled={false}
-              id="hv-button-2"
+              id="hv-file-2-remove-button"
               onClick={[Function]}
               theme={
                 Object {
@@ -34481,7 +34482,7 @@ body {
                 disableRipple={true}
                 disabled={false}
                 fullWidth={false}
-                id="hv-button-2"
+                id="hv-file-2-remove-button"
                 mini={false}
                 onClick={[Function]}
                 size="medium"
@@ -35424,7 +35425,7 @@ body {
                   disabled={false}
                   focusRipple={true}
                   focusVisibleClassName="MuiButton-focusVisible-154"
-                  id="hv-button-2"
+                  id="hv-file-2-remove-button"
                   onClick={[Function]}
                   theme={
                     Object {
@@ -36373,7 +36374,7 @@ body {
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="MuiButton-focusVisible-154"
-                    id="hv-button-2"
+                    id="hv-file-2-remove-button"
                     onClick={[Function]}
                     tabIndex="0"
                     theme={
@@ -37310,7 +37311,7 @@ body {
                     <button
                       className="MuiButtonBase-root-161 MuiButton-root-135 HvButton-root-123 MuiButton-text-137 MuiButton-textPrimary-138 HvButton-ghost-128 MuiButton-flat-140 MuiButton-flatPrimary-141 File-removeButton-89"
                       disabled={false}
-                      id="hv-button-2"
+                      id="hv-file-2-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
@@ -64136,6 +64137,7 @@ body {
             "status": "success",
           }
         }
+        id={null}
         labels={
           Object {
             "dragText": "Drag and drop or ",
@@ -71776,7 +71778,7 @@ body {
         <HvButton
           category="ghost"
           className="File-removeButton-89"
-          id="hv-button-2"
+          id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <HvButton
@@ -71799,7 +71801,7 @@ body {
               }
             }
             disabled={false}
-            id="hv-button-2"
+            id="hv-file-2-remove-button"
             onClick={[Function]}
             startIcon={null}
             theme={
@@ -72746,7 +72748,7 @@ body {
               color="primary"
               disableRipple={true}
               disabled={false}
-              id="hv-button-2"
+              id="hv-file-2-remove-button"
               onClick={[Function]}
               theme={
                 Object {
@@ -73717,7 +73719,7 @@ body {
                 disableRipple={true}
                 disabled={false}
                 fullWidth={false}
-                id="hv-button-2"
+                id="hv-file-2-remove-button"
                 mini={false}
                 onClick={[Function]}
                 size="medium"
@@ -74660,7 +74662,7 @@ body {
                   disabled={false}
                   focusRipple={true}
                   focusVisibleClassName="MuiButton-focusVisible-154"
-                  id="hv-button-2"
+                  id="hv-file-2-remove-button"
                   onClick={[Function]}
                   theme={
                     Object {
@@ -75609,7 +75611,7 @@ body {
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="MuiButton-focusVisible-154"
-                    id="hv-button-2"
+                    id="hv-file-2-remove-button"
                     onClick={[Function]}
                     tabIndex="0"
                     theme={
@@ -76546,7 +76548,7 @@ body {
                     <button
                       className="MuiButtonBase-root-161 MuiButton-root-135 HvButton-root-123 MuiButton-text-137 MuiButton-textPrimary-138 HvButton-ghost-128 MuiButton-flat-140 MuiButton-flatPrimary-141 File-removeButton-89"
                       disabled={false}
-                      id="hv-button-2"
+                      id="hv-file-2-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
