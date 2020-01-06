@@ -24,11 +24,14 @@ import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 
 const DropZone = ({
+  theme,
   classes,
   labels,
   acceptedFiles,
   maxFileSize,
-  onFilesAdded
+  onFilesAdded,
+  disabled,
+  multiple
 }) => {
   const [dragState, setDrag] = useState(false);
 
@@ -94,26 +97,33 @@ const DropZone = ({
 
       <div
         className={classnames(classes.dropzoneContainer, {
-          [classes.dragAction]: dragState
+          [classes.dragAction]: dragState,
+          [classes.dropzoneContainerDisabled]: disabled
         })}
         role="button"
         tabIndex={0}
         onDragEnter={event => {
-          enterDropArea();
-          event.stopPropagation();
-          event.preventDefault();
+          if(!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
         }}
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
         onDragOver={event => {
-          enterDropArea();
-          event.stopPropagation();
-          event.preventDefault();
+          if(!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
         }}
         onDrop={event => {
-          event.stopPropagation();
-          event.preventDefault();
-          onChangeHandler(event.dataTransfer.files);
+          if(!disabled) {
+            event.stopPropagation();
+            event.preventDefault();
+            onChangeHandler(event.dataTransfer.files);
+          }
         }}
         onKeyDown={e => {
           if (isKeypress(e, KeyboardCodes.Enter) || isKeypress(e, 32)) {
@@ -121,37 +131,53 @@ const DropZone = ({
           }
         }}
       >
-        <label id="input-label" htmlFor="dropzone-input-element" className={classes.inputLabelInfo}>
+        <label
+          id="input-label"
+          htmlFor="dropzone-input-element"
+          className={classes.inputLabelInfo}
+        >
           {labels.inputElementLabel}
           <input
             id="dropzone-input-element"
             tabIndex={-1}
             className={classes.inputArea}
             type="file"
-            multiple
+            multiple={multiple}
             onClick={() => {
               inputRef.current.value = null;
             }}
             onChange={() => {
-              onChangeHandler(inputRef.current.files);
+              if(!disabled) {
+                onChangeHandler(inputRef.current.files);
+              }
             }}
             ref={inputRef}
+            disabled={disabled}
+            title={!disabled ? `${labels.drag}\xa0${labels.selectFiles}` : ""}
           />
         </label>
         <div className={classes.dropArea}>
           {dragState ? (
             <>
               <div className={classes.dropzoneAreaLabels}>
-                <HvTypography className={classes.drag}>
+                <HvTypography className={classes.dragText}>
                   {labels.dropFiles}
                 </HvTypography>
               </div>
             </>
           ) : (
             <>
-              <Doc iconSize="M" className={classes.dropzoneAreaIcon} />
+              <Doc
+                iconSize="M"
+                className={classes.dropzoneAreaIcon}
+                color={[
+                  disabled
+                    ? theme.hv.palette.atmosphere.atmo6
+                    : theme.hv.palette.base.base2
+                ]}
+              />
               <div className={classes.dropzoneAreaLabels}>
-                <HvTypography className={classes.drag}>
+                <HvTypography className={classes.dragText}>
                   {labels.drag}
                   <span className={classes.selectFilesText}>
                     {`\xa0${labels.selectFiles}`}
@@ -167,6 +193,10 @@ const DropZone = ({
 };
 
 DropZone.propTypes = {
+  /**
+   * The theme injected through with styles
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -195,7 +225,18 @@ DropZone.propTypes = {
   /**
    * Function responsible for processing files added to the drop zone.
    */
-  onFilesAdded: PropTypes.func
+  onFilesAdded: PropTypes.func,
+  /**
+   * The properties to be applied to the input
+   */
+  /**
+   * If the input is disabled or not
+   */
+  disabled: PropTypes.bool.isRequired,
+  /**
+   * If the upload allow multiple files to be selected
+   */
+  multiple: PropTypes.bool.isRequired
 };
 
 DropZone.defaultProps = {

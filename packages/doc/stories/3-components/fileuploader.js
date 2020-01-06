@@ -27,6 +27,11 @@ storiesOf("Components", module).add("FileUploader", () => <FileUploader />, {
       title: "Basic",
       description: "Sample usage of FileUploader",
       src: "components/fileuploader/sample.js"
+    },
+    {
+      title: "With single file upload",
+      description: "A file uploader which permits the upload of a single file",
+      src: "components/fileuploader/single.js"
     }
   ]
 });

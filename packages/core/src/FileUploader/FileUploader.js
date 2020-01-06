@@ -30,7 +30,7 @@ const DEFAULT_LABELS = {
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",
   removeFileButtonLabel: "Remove File",
-  inputElementLabel: "Dropzone Input Element",
+  inputElementLabel: "Dropzone Input Element"
 };
 
 const FileUploader = ({
@@ -39,7 +39,9 @@ const FileUploader = ({
   maxFileSize,
   acceptedFiles,
   onFilesAdded,
-  onFileRemoved
+  onFileRemoved,
+  multiple,
+  disabled
 }) => (
   <>
     <DropZone
@@ -47,6 +49,8 @@ const FileUploader = ({
       acceptedFiles={acceptedFiles}
       maxFileSize={maxFileSize}
       onFilesAdded={onFilesAdded}
+      multiple={multiple}
+      disabled={disabled}
     />
     <FileList
       list={fileList}
@@ -140,7 +144,18 @@ FileUploader.propTypes = {
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved: PropTypes.func
+  onFileRemoved: PropTypes.func,
+  /**
+   * The properties to be applied to the input
+   */
+  /**
+   * If the input is disabled or not
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If the upload allow multiple files to be selected
+   */
+  multiple: PropTypes.bool
 };
 
 FileUploader.defaultProps = {
@@ -148,7 +163,9 @@ FileUploader.defaultProps = {
   maxFileSize: 5 * 1000 ** 2,
   acceptedFiles: [],
   onFilesAdded: () => {},
-  onFileRemoved: () => {}
+  onFileRemoved: () => {},
+  disabled: false,
+  multiple: true
 };
 
 export default FileUploader;
