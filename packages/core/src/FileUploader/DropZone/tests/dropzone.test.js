@@ -82,6 +82,15 @@ describe("Dropzone withStyles", () => {
   it("should render correctly", () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("should render correctly when disabled", () => {
+    wrapper = setupComponent({
+      ...compProps,
+      disabled: true,
+      multiple: false
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 /*
 describe("Dropzone file handling", () => {

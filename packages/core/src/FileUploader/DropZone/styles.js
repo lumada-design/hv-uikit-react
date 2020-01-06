@@ -28,6 +28,24 @@ const styles = theme => ({
       border: `1px dotted ${theme.hv.palette.accent.acce1}`
     }
   },
+  dropzoneContainerDisabled: {
+    "&$dropzoneContainer": {
+      background: `${theme.hv.palette.atmosphere.atmo4}`,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      cursor: "not-allowed",
+      "&:hover": {
+        background: `${theme.hv.palette.atmosphere.atmo4}`,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        cursor: "not-allowed"
+      }
+    },
+    "& $dragText": {
+      color: theme.hv.palette.atmosphere.atmo6
+    },
+    "& $selectFilesText": {
+      color: theme.hv.palette.atmosphere.atmo6
+    }
+  },
   dragAction: {
     background: `${theme.hv.palette.atmosphere.atmo1}`,
     border: `1px dotted ${theme.hv.palette.accent.acce1}`
@@ -37,7 +55,10 @@ const styles = theme => ({
     width: "100%",
     position: "absolute",
     height: "100%",
-    cursor: "pointer"
+    cursor: "pointer",
+    "&:disabled": {
+      cursor: "not-allowed"
+    }
   },
   dropArea: {
     display: "flex",
