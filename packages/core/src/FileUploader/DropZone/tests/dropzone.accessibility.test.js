@@ -81,4 +81,15 @@ describe("DropzoneA11Y", () => {
 
     expect(results).toHaveNoViolations();
   });
+
+  it("with disabled and single", async () => {
+    wrapper = setupComponent({
+      ...compProps,
+      disabled: true,
+      multiple: false
+    });
+    const results = await axe(wrapper.getDOMNode()[1]);
+
+    expect(results).toHaveNoViolations();
+  })
 });

@@ -38,6 +38,7 @@ const FileUploader = ({
   labels,
   fileList,
   multiple,
+  disabled,
   maxFileSize,
   acceptedFiles,
   onFilesAdded,
@@ -51,6 +52,7 @@ const FileUploader = ({
         id={`${fileUploaderId}-dropzone`}
         labels={labels}
         multiple={multiple}
+        disabled={disabled}
         acceptedFiles={acceptedFiles}
         maxFileSize={maxFileSize}
         onFilesAdded={onFilesAdded}
@@ -139,6 +141,10 @@ FileUploader.propTypes = {
    */
   multiple: PropTypes.bool,
   /**
+   * If the input is disabled or not
+   */
+  disabled: PropTypes.bool,
+  /**
    * Max upload size
    * */
   maxFileSize: PropTypes.number,
@@ -160,6 +166,7 @@ FileUploader.defaultProps = {
   id: null,
   labels: DEFAULT_LABELS,
   multiple: true,
+  disabled: false,
   maxFileSize: Infinity,
   acceptedFiles: [],
   onFilesAdded: () => {},

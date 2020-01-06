@@ -25,9 +25,11 @@ import { convertUnits } from "../utils";
 
 const DropZone = ({
   id,
+  theme,
   classes,
   labels,
   multiple,
+  disabled,
   acceptedFiles,
   maxFileSize,
   onFilesAdded
@@ -109,26 +111,33 @@ const DropZone = ({
       <div
         id={`${fileDropZoneId}-button`}
         className={classnames(classes.dropzoneContainer, {
-          [classes.dragAction]: dragState
+          [classes.dragAction]: dragState,
+          [classes.dropzoneContainerDisabled]: disabled
         })}
         role="button"
         tabIndex={0}
         onDragEnter={event => {
-          enterDropArea();
-          event.stopPropagation();
-          event.preventDefault();
+          if(!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
         }}
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
         onDragOver={event => {
-          enterDropArea();
-          event.stopPropagation();
-          event.preventDefault();
+          if(!disabled) {
+            enterDropArea();
+            event.stopPropagation();
+            event.preventDefault();
+          }
         }}
         onDrop={event => {
-          event.stopPropagation();
-          event.preventDefault();
-          onChangeHandler(event.dataTransfer.files);
+          if(!disabled) {
+            event.stopPropagation();
+            event.preventDefault();
+            onChangeHandler(event.dataTransfer.files);
+          }
         }}
         onKeyDown={e => {
           if (isKeypress(e, KeyboardCodes.Enter) || isKeypress(e, 32)) {
@@ -142,11 +151,15 @@ const DropZone = ({
           className={classes.inputArea}
           type="file"
           multiple={multiple}
+          disabled={disabled}
+          title={!disabled ? `${labels.drag}\xa0${labels.selectFiles}` : ""}
           onClick={() => {
             inputRef.current.value = null;
           }}
           onChange={() => {
-            onChangeHandler(inputRef.current.files);
+            if(!disabled) {
+              onChangeHandler(inputRef.current.files);
+            }
           }}
           ref={inputRef}
         />
@@ -155,16 +168,24 @@ const DropZone = ({
           {dragState ? (
             <>
               <div className={classes.dropzoneAreaLabels}>
-                <HvTypography className={classes.drag}>
+                <HvTypography className={classes.dragText}>
                   {labels.dropFiles}
                 </HvTypography>
               </div>
             </>
           ) : (
             <>
-              <Doc iconSize="M" className={classes.dropzoneAreaIcon} />
+              <Doc
+                iconSize="M"
+                className={classes.dropzoneAreaIcon}
+                color={[
+                  disabled
+                    ? theme.hv.palette.atmosphere.atmo6
+                    : theme.hv.palette.base.base2
+                ]}
+              />
               <div className={classes.dropzoneAreaLabels}>
-                <HvTypography className={classes.drag}>
+                <HvTypography className={classes.dragText}>
                   {labels.drag}
                   <span className={classes.selectFilesText}>
                     {`\xa0${labels.selectFiles}`}
@@ -184,6 +205,10 @@ DropZone.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * The theme injected through with styles
+   */
+  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -206,6 +231,10 @@ DropZone.propTypes = {
    */
   multiple: PropTypes.bool,
   /**
+   * If the input is disabled or not
+   */
+  disabled: PropTypes.bool,
+  /**
    * Files extensions accepted for upload.
    */
   acceptedFiles: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -222,6 +251,7 @@ DropZone.propTypes = {
 DropZone.defaultProps = {
   id: null,
   multiple: true,
+  disabled: false,
   onFilesAdded: () => {}
 };
 
