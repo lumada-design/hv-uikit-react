@@ -6515,17 +6515,17 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "dragAction": "DropZone-dragAction-101",
-                "dragText": "DropZone-dragText-107",
-                "dropArea": "DropZone-dropArea-103",
-                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-106",
-                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-105",
+                "dragAction": "DropZone-dragAction-102",
+                "dragText": "DropZone-dragText-108",
+                "dropArea": "DropZone-dropArea-104",
+                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-107",
+                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-106",
                 "dropzoneContainer": "DropZone-dropzoneContainer-100",
-                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-104",
-                "inputArea": "DropZone-inputArea-102",
-                "inputLabelInfo": "DropZone-inputLabelInfo-109",
+                "dropzoneContainerDisabled": "DropZone-dropzoneContainerDisabled-101",
+                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-105",
+                "inputArea": "DropZone-inputArea-103",
                 "root": "DropZone-root-99",
-                "selectFilesText": "DropZone-selectFilesText-108",
+                "selectFilesText": "DropZone-selectFilesText-109",
               },
               "deployed": true,
               "linked": false,
@@ -6533,17 +6533,17 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "DropZone",
                 "classes": Object {
-                  "dragAction": "DropZone-dragAction-101",
-                  "dragText": "DropZone-dragText-107",
-                  "dropArea": "DropZone-dropArea-103",
-                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-106",
-                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-105",
+                  "dragAction": "DropZone-dragAction-102",
+                  "dragText": "DropZone-dragText-108",
+                  "dropArea": "DropZone-dropArea-104",
+                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-107",
+                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-106",
                   "dropzoneContainer": "DropZone-dropzoneContainer-100",
-                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-104",
-                  "inputArea": "DropZone-inputArea-102",
-                  "inputLabelInfo": "DropZone-inputLabelInfo-109",
+                  "dropzoneContainerDisabled": "DropZone-dropzoneContainerDisabled-101",
+                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-105",
+                  "inputArea": "DropZone-inputArea-103",
                   "root": "DropZone-root-99",
-                  "selectFilesText": "DropZone-selectFilesText-108",
+                  "selectFilesText": "DropZone-selectFilesText-109",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7033,7 +7033,6 @@ body {
                   
 .DropZone-dropzoneContainer-100 {
   width: 100%;
-  height: 100%;
   border: 1px dotted #BCBCBC;
   cursor: pointer;
   display: flex;
@@ -7044,61 +7043,74 @@ body {
   border: 1px dotted #414141;
   background: #FFFFFF;
 }
-.DropZone-dragAction-101 {
+.DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100 {
+  border: 1px solid #BCBCBC;
+  cursor: not-allowed;
+  background: #F0F0F0;
+}
+.DropZone-dropzoneContainerDisabled-101 .DropZone-dragText-108 {
+  color: #BCBCBC;
+}
+.DropZone-dropzoneContainerDisabled-101 .DropZone-selectFilesText-109 {
+  color: #BCBCBC;
+}
+.DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100:hover {
+  border: 1px solid #BCBCBC;
+  cursor: not-allowed;
+  background: #F0F0F0;
+}
+.DropZone-dragAction-102 {
   border: 1px dotted #414141;
   background: #FFFFFF;
 }
-.DropZone-inputArea-102 {
+.DropZone-inputArea-103 {
   width: 100%;
   height: 100%;
   cursor: pointer;
   opacity: 0;
   position: absolute;
 }
-.DropZone-dropArea-103 {
+.DropZone-inputArea-103:disabled {
+  cursor: not-allowed;
+}
+.DropZone-dropArea-104 {
   margin: 30px auto;
   display: flex;
   min-height: 40px;
 }
-.DropZone-dropzoneLabelsGroup-104 {
+.DropZone-dropzoneLabelsGroup-105 {
   display: flex;
   margin-bottom: 5px;
 }
-.DropZone-dropzoneLabelsGroup-104 p:nth-child(1) {
+.DropZone-dropzoneLabelsGroup-105 label:nth-child(1) {
   margin-right: 20px;
 }
-.DropZone-dropzoneLabelsGroup-104 p:nth-child(3) {
+.DropZone-dropzoneLabelsGroup-105 p:nth-child(3) {
   margin-left: auto;
   margin-right: 20px;
 }
-.DropZone-dropzoneAreaLabels-105 {
+.DropZone-dropzoneAreaLabels-106 {
   width: 115px;
   margin: auto;
   display: flex;
 }
-.DropZone-dropzoneAreaIcon-106 {
+.DropZone-dropzoneAreaIcon-107 {
   margin: auto;
   margin-right: 20px;
 }
-.DropZone-dragText-107 {
+.DropZone-dragText-108 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.DropZone-selectFilesText-108 {
+.DropZone-selectFilesText-109 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
-}
-.DropZone-inputLabelInfo-109 {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
 }
 
                 </style>,
@@ -7113,17 +7125,17 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "dragAction": "DropZone-dragAction-101",
-                  "dragText": "DropZone-dragText-107",
-                  "dropArea": "DropZone-dropArea-103",
-                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-106",
-                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-105",
+                  "dragAction": "DropZone-dragAction-102",
+                  "dragText": "DropZone-dragText-108",
+                  "dropArea": "DropZone-dropArea-104",
+                  "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-107",
+                  "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-106",
                   "dropzoneContainer": "DropZone-dropzoneContainer-100",
-                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-104",
-                  "inputArea": "DropZone-inputArea-102",
-                  "inputLabelInfo": "DropZone-inputLabelInfo-109",
+                  "dropzoneContainerDisabled": "DropZone-dropzoneContainerDisabled-101",
+                  "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-105",
+                  "inputArea": "DropZone-inputArea-103",
                   "root": "DropZone-root-99",
-                  "selectFilesText": "DropZone-selectFilesText-108",
+                  "selectFilesText": "DropZone-selectFilesText-109",
                 },
                 "index": Array [
                   Object {},
@@ -7132,13 +7144,29 @@ body {
                     "border": "1px dotted #BCBCBC",
                     "cursor": "pointer",
                     "display": "flex",
-                    "height": "100%",
                     "position": "relative",
                     "width": "100%",
                   },
                   Object {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
+                  },
+                  Object {},
+                  Object {
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
+                  },
+                  Object {
+                    "color": "#BCBCBC",
+                  },
+                  Object {
+                    "color": "#BCBCBC",
+                  },
+                  Object {
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
                   },
                   Object {
                     "background": "#FFFFFF",
@@ -7150,6 +7178,9 @@ body {
                     "opacity": 0,
                     "position": "absolute",
                     "width": "100%",
+                  },
+                  Object {
+                    "cursor": "not-allowed",
                   },
                   Object {
                     "display": "flex",
@@ -7190,35 +7221,29 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  Object {
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
                 ],
                 "map": Object {
-                  ".DropZone-dragAction-101": Object {
+                  ".DropZone-dragAction-102": Object {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dragText-107": Object {
+                  ".DropZone-dragText-108": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".DropZone-dropArea-103": Object {
+                  ".DropZone-dropArea-104": Object {
                     "display": "flex",
                     "margin": "30px auto",
                     "min-height": "40px",
                   },
-                  ".DropZone-dropzoneAreaIcon-106": Object {
+                  ".DropZone-dropzoneAreaIcon-107": Object {
                     "margin": "auto",
                     "margin-right": "20px",
                   },
-                  ".DropZone-dropzoneAreaLabels-105": Object {
+                  ".DropZone-dropzoneAreaLabels-106": Object {
                     "display": "flex",
                     "margin": "auto",
                     "width": "115px",
@@ -7228,7 +7253,6 @@ body {
                     "border": "1px dotted #BCBCBC",
                     "cursor": "pointer",
                     "display": "flex",
-                    "height": "100%",
                     "position": "relative",
                     "width": "100%",
                   },
@@ -7236,32 +7260,46 @@ body {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dropzoneLabelsGroup-104": Object {
+                  ".DropZone-dropzoneContainerDisabled-101": Object {},
+                  ".DropZone-dropzoneContainerDisabled-101 .DropZone-dragText-108": Object {
+                    "color": "#BCBCBC",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101 .DropZone-selectFilesText-109": Object {
+                    "color": "#BCBCBC",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100": Object {
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100:hover": Object {
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
+                  },
+                  ".DropZone-dropzoneLabelsGroup-105": Object {
                     "display": "flex",
                     "margin-bottom": "5px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-104 p:nth-child(1)": Object {
+                  ".DropZone-dropzoneLabelsGroup-105 label:nth-child(1)": Object {
                     "margin-right": "20px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-104 p:nth-child(3)": Object {
+                  ".DropZone-dropzoneLabelsGroup-105 p:nth-child(3)": Object {
                     "margin-left": "auto",
                     "margin-right": "20px",
                   },
-                  ".DropZone-inputArea-102": Object {
+                  ".DropZone-inputArea-103": Object {
                     "cursor": "pointer",
                     "height": "100%",
                     "opacity": 0,
                     "position": "absolute",
                     "width": "100%",
                   },
-                  ".DropZone-inputLabelInfo-109": Object {
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
+                  ".DropZone-inputArea-103:disabled": Object {
+                    "cursor": "not-allowed",
                   },
                   ".DropZone-root-99": Object {},
-                  ".DropZone-selectFilesText-108": Object {
+                  ".DropZone-selectFilesText-109": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
@@ -7298,22 +7336,16 @@ body {
                     "border": "1px dotted #BCBCBC",
                     "cursor": "pointer",
                     "display": "flex",
-                    "height": "100%",
                     "position": "relative",
                     "width": "100%",
                   },
+                  "dropzoneContainerDisabled": Object {},
                   "dropzoneLabelsGroup": Object {
                     "display": "flex",
                     "margin-bottom": "5px",
                   },
                   "inputArea": Object {
                     "cursor": "pointer",
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
-                  "inputLabelInfo": Object {
                     "height": "100%",
                     "opacity": 0,
                     "position": "absolute",
@@ -7332,17 +7364,17 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "DropZone",
                   "classes": Object {
-                    "dragAction": "DropZone-dragAction-101",
-                    "dragText": "DropZone-dragText-107",
-                    "dropArea": "DropZone-dropArea-103",
-                    "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-106",
-                    "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-105",
+                    "dragAction": "DropZone-dragAction-102",
+                    "dragText": "DropZone-dragText-108",
+                    "dropArea": "DropZone-dropArea-104",
+                    "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-107",
+                    "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-106",
                     "dropzoneContainer": "DropZone-dropzoneContainer-100",
-                    "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-104",
-                    "inputArea": "DropZone-inputArea-102",
-                    "inputLabelInfo": "DropZone-inputLabelInfo-109",
+                    "dropzoneContainerDisabled": "DropZone-dropzoneContainerDisabled-101",
+                    "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-105",
+                    "inputArea": "DropZone-inputArea-103",
                     "root": "DropZone-root-99",
-                    "selectFilesText": "DropZone-selectFilesText-108",
+                    "selectFilesText": "DropZone-selectFilesText-109",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7829,12 +7861,36 @@ body {
                     "background": "#FFFFFF",
                     "border": "1px dotted #414141",
                   },
-                  ".DropZone-dropzoneLabelsGroup-104 p:nth-child(1)": Object {
+                  ".DropZone-dropzoneContainerDisabled-101 .DropZone-dragText-108": Object {
+                    "color": "#BCBCBC",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101 .DropZone-selectFilesText-109": Object {
+                    "color": "#BCBCBC",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100": Object {
+                    "&:hover": Object {
+                      "background": "#F0F0F0",
+                      "border": "1px solid #BCBCBC",
+                      "cursor": "not-allowed",
+                    },
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
+                  },
+                  ".DropZone-dropzoneContainerDisabled-101.DropZone-dropzoneContainer-100:hover": Object {
+                    "background": "#F0F0F0",
+                    "border": "1px solid #BCBCBC",
+                    "cursor": "not-allowed",
+                  },
+                  ".DropZone-dropzoneLabelsGroup-105 label:nth-child(1)": Object {
                     "marginRight": "20px",
                   },
-                  ".DropZone-dropzoneLabelsGroup-104 p:nth-child(3)": Object {
+                  ".DropZone-dropzoneLabelsGroup-105 p:nth-child(3)": Object {
                     "marginLeft": "auto",
                     "marginRight": "20px",
+                  },
+                  ".DropZone-inputArea-103:disabled": Object {
+                    "cursor": "not-allowed",
                   },
                   "dragAction": Object {
                     "background": "#FFFFFF",
@@ -7870,12 +7926,29 @@ body {
                     "border": "1px dotted #BCBCBC",
                     "cursor": "pointer",
                     "display": "flex",
-                    "height": "100%",
                     "position": "relative",
                     "width": "100%",
                   },
+                  "dropzoneContainerDisabled": Object {
+                    "& $dragText": Object {
+                      "color": "#BCBCBC",
+                    },
+                    "& $selectFilesText": Object {
+                      "color": "#BCBCBC",
+                    },
+                    "&$dropzoneContainer": Object {
+                      "&:hover": Object {
+                        "background": "#F0F0F0",
+                        "border": "1px solid #BCBCBC",
+                        "cursor": "not-allowed",
+                      },
+                      "background": "#F0F0F0",
+                      "border": "1px solid #BCBCBC",
+                      "cursor": "not-allowed",
+                    },
+                  },
                   "dropzoneLabelsGroup": Object {
-                    "& p:nth-child(1)": Object {
+                    "& label:nth-child(1)": Object {
                       "marginRight": "20px",
                     },
                     "& p:nth-child(3)": Object {
@@ -7886,13 +7959,10 @@ body {
                     "marginBottom": 5,
                   },
                   "inputArea": Object {
+                    "&:disabled": Object {
+                      "cursor": "not-allowed",
+                    },
                     "cursor": "pointer",
-                    "height": "100%",
-                    "opacity": 0,
-                    "position": "absolute",
-                    "width": "100%",
-                  },
-                  "inputLabelInfo": Object {
                     "height": "100%",
                     "opacity": 0,
                     "position": "absolute",
@@ -31205,6 +31275,7 @@ body {
             "root": "FileUploader-root-98",
           }
         }
+        disabled={false}
         fileList={
           Array [
             Object {
@@ -31219,6 +31290,7 @@ body {
             },
           ]
         }
+        id={null}
         labels={
           Object {
             "dragText": "Drag and drop or ",
@@ -31233,6 +31305,7 @@ body {
           }
         }
         maxFileSize={12}
+        multiple={true}
         onFileRemoved={[MockFunction]}
         onFilesAdded={[MockFunction]}
         theme={
@@ -32171,6 +32244,8 @@ body {
               "jpeg",
             ]
           }
+          disabled={false}
+          id="hv-fileuploader-2-dropzone"
           labels={
             Object {
               "dragText": "Drag and drop or ",
@@ -32185,6 +32260,7 @@ body {
             }
           }
           maxFileSize={12}
+          multiple={true}
           onFilesAdded={[MockFunction]}
         >
           <DropZone
@@ -32195,19 +32271,21 @@ body {
             }
             classes={
               Object {
-                "dragAction": "DropZone-dragAction-101",
-                "dragText": "DropZone-dragText-107",
-                "dropArea": "DropZone-dropArea-103",
-                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-106",
-                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-105",
+                "dragAction": "DropZone-dragAction-102",
+                "dragText": "DropZone-dragText-108",
+                "dropArea": "DropZone-dropArea-104",
+                "dropzoneAreaIcon": "DropZone-dropzoneAreaIcon-107",
+                "dropzoneAreaLabels": "DropZone-dropzoneAreaLabels-106",
                 "dropzoneContainer": "DropZone-dropzoneContainer-100",
-                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-104",
-                "inputArea": "DropZone-inputArea-102",
-                "inputLabelInfo": "DropZone-inputLabelInfo-109",
+                "dropzoneContainerDisabled": "DropZone-dropzoneContainerDisabled-101",
+                "dropzoneLabelsGroup": "DropZone-dropzoneLabelsGroup-105",
+                "inputArea": "DropZone-inputArea-103",
                 "root": "DropZone-root-99",
-                "selectFilesText": "DropZone-selectFilesText-108",
+                "selectFilesText": "DropZone-selectFilesText-109",
               }
             }
+            disabled={false}
+            id="hv-fileuploader-2-dropzone"
             labels={
               Object {
                 "dragText": "Drag and drop or ",
@@ -32222,6 +32300,7 @@ body {
               }
             }
             maxFileSize={12}
+            multiple={true}
             onFilesAdded={[MockFunction]}
             theme={
               Object {
@@ -33155,10 +33234,13 @@ body {
           >
             <div
               aria-label="File Dropzone"
-              className="DropZone-dropzoneLabelsGroup-104"
-              id="drop-zone-7"
+              className="DropZone-dropzoneLabelsGroup-105"
+              id="hv-fileuploader-2-dropzone"
             >
               <WithStyles(Typography)
+                component="label"
+                htmlFor="hv-fileuploader-2-dropzone-input-file"
+                id="hv-fileuploader-2-dropzone-input-file-label"
                 variant="labelText"
               >
                 <Typography
@@ -33191,7 +33273,9 @@ body {
                       "xxsTitle": "Typography-xxsTitle-119",
                     }
                   }
-                  component={null}
+                  component="label"
+                  htmlFor="hv-fileuploader-2-dropzone-input-file"
+                  id="hv-fileuploader-2-dropzone-input-file-label"
                   paragraph={false}
                   theme={
                     Object {
@@ -34124,8 +34208,10 @@ body {
                   }
                   variant="labelText"
                 >
-                  <p
+                  <label
                     className="Typography-labelText-128 Typography-baseFontFamily-133 Typography-margin-134"
+                    htmlFor="hv-fileuploader-2-dropzone-input-file"
+                    id="hv-fileuploader-2-dropzone-input-file-label"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -40765,6 +40851,7 @@ body {
             </div>
             <div
               className="DropZone-dropzoneContainer-100"
+              id="hv-fileuploader-2-dropzone-button"
               onDragEnter={[Function]}
               onDragLeave={[Function]}
               onDragOver={[Function]}
@@ -40774,30 +40861,31 @@ body {
               role="button"
               tabIndex={0}
             >
-              <label
-                className="DropZone-inputLabelInfo-109"
-                htmlFor="dropzone-input-element"
-                id="input-label"
-              >
-                <input
-                  className="DropZone-inputArea-102"
-                  id="dropzone-input-element"
-                  multiple={true}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="file"
-                />
-              </label>
+              <input
+                className="DropZone-inputArea-103"
+                disabled={false}
+                id="hv-fileuploader-2-dropzone-input-file"
+                multiple={true}
+                onChange={[Function]}
+                onClick={[Function]}
+                tabIndex={-1}
+                title="undefined undefined"
+                type="file"
+              />
               <div
-                className="DropZone-dropArea-103"
+                className="DropZone-dropArea-104"
               >
                 <WithStyles(Doc)
-                  className="DropZone-dropzoneAreaIcon-106"
+                  className="DropZone-dropzoneAreaIcon-107"
+                  color={
+                    Array [
+                      "#414141",
+                    ]
+                  }
                   iconSize="M"
                 >
                   <Doc
-                    className="DropZone-dropzoneAreaIcon-106"
+                    className="DropZone-dropzoneAreaIcon-107"
                     classes={
                       Object {
                         "root": "Doc-root-135",
@@ -40806,6 +40894,11 @@ body {
                         "rootS": "Doc-rootS-137",
                         "rootXs": "Doc-rootXs-136",
                       }
+                    }
+                    color={
+                      Array [
+                        "#414141",
+                      ]
                     }
                     iconSize="M"
                     theme={
@@ -41739,7 +41832,7 @@ body {
                     }
                   >
                     <div
-                      className="DropZone-dropzoneAreaIcon-106 Doc-root-135 Doc-rootM-138"
+                      className="DropZone-dropzoneAreaIcon-107 Doc-root-135 Doc-rootM-138"
                     >
                       <svg
                         height="32px"
@@ -41757,10 +41850,13 @@ body {
                   </Doc>
                 </WithStyles(Doc)>
                 <div
-                  className="DropZone-dropzoneAreaLabels-105"
+                  className="DropZone-dropzoneAreaLabels-106"
                 >
-                  <WithStyles(Typography)>
+                  <WithStyles(Typography)
+                    className="DropZone-dragText-108"
+                  >
                     <Typography
+                      className="DropZone-dragText-108"
                       classes={
                         Object {
                           "3xlTitle": "Typography-3xlTitle-112",
@@ -42724,7 +42820,7 @@ body {
                       variant="normalText"
                     >
                       <p
-                        className="Typography-normalText-121 Typography-baseFontFamily-133 Typography-margin-134"
+                        className="Typography-normalText-121 Typography-baseFontFamily-133 Typography-margin-134 DropZone-dragText-108"
                         theme={
                           Object {
                             "breakpoints": Object {
@@ -43656,7 +43752,7 @@ body {
                         }
                       >
                         <span
-                          className="DropZone-selectFilesText-108"
+                          className="DropZone-selectFilesText-109"
                         >
                            undefined
                         </span>
@@ -43669,6 +43765,7 @@ body {
           </DropZone>
         </WithStyles(DropZone)>
         <WithStyles(FileList)
+          id="hv-fileuploader-2-filelist"
           list={
             Array [
               Object {
@@ -43693,6 +43790,7 @@ body {
                 "list": "FileList-list-140",
               }
             }
+            id="hv-fileuploader-2-filelist"
             list={
               Array [
                 Object {
@@ -44642,11 +44740,9 @@ body {
           >
             <ul
               className="FileList-list-140"
-              id="file-list-8"
+              id="hv-fileuploader-2-filelist"
             >
-              <li
-                key="file-9"
-              >
+              <li>
                 <WithStyles(File)
                   data={
                     Object {
@@ -44655,6 +44751,7 @@ body {
                       "type": "image/png",
                     }
                   }
+                  id="hv-fileuploader-2-filelist-undefined"
                   onFileRemoved={[MockFunction]}
                   progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
@@ -44679,6 +44776,7 @@ body {
                         "type": "image/png",
                       }
                     }
+                    id="hv-fileuploader-2-filelist-undefined"
                     onFileRemoved={[MockFunction]}
                     progressConjunctionLabel="of"
                     removeFileButtonLabel="Remove File"
@@ -49429,7 +49527,7 @@ body {
                       aria-label="Remove File"
                       category="ghost"
                       className="File-removeButton-145"
-                      id="hv-button-11"
+                      id="hv-fileuploader-2-filelist-undefined-remove-button"
                       onClick={[Function]}
                     >
                       <HvButton
@@ -49453,7 +49551,7 @@ body {
                           }
                         }
                         disabled={false}
-                        id="hv-button-11"
+                        id="hv-fileuploader-2-filelist-undefined-remove-button"
                         onClick={[Function]}
                         startIcon={null}
                         theme={
@@ -50401,7 +50499,7 @@ body {
                           color="primary"
                           disableRipple={true}
                           disabled={false}
-                          id="hv-button-11"
+                          id="hv-fileuploader-2-filelist-undefined-remove-button"
                           onClick={[Function]}
                           theme={
                             Object {
@@ -51373,7 +51471,7 @@ body {
                             disableRipple={true}
                             disabled={false}
                             fullWidth={false}
-                            id="hv-button-11"
+                            id="hv-fileuploader-2-filelist-undefined-remove-button"
                             mini={false}
                             onClick={[Function]}
                             size="medium"
@@ -52317,7 +52415,7 @@ body {
                               disabled={false}
                               focusRipple={true}
                               focusVisibleClassName="MuiButton-focusVisible-180"
-                              id="hv-button-11"
+                              id="hv-fileuploader-2-filelist-undefined-remove-button"
                               onClick={[Function]}
                               theme={
                                 Object {
@@ -53267,7 +53365,7 @@ body {
                                 disabled={false}
                                 focusRipple={true}
                                 focusVisibleClassName="MuiButton-focusVisible-180"
-                                id="hv-button-11"
+                                id="hv-fileuploader-2-filelist-undefined-remove-button"
                                 onClick={[Function]}
                                 tabIndex="0"
                                 theme={
@@ -54205,7 +54303,7 @@ body {
                                   aria-label="Remove File"
                                   className="MuiButtonBase-root-187 MuiButton-root-161 HvButton-root-149 MuiButton-text-163 MuiButton-textPrimary-164 HvButton-ghost-154 MuiButton-flat-166 MuiButton-flatPrimary-167 File-removeButton-145"
                                   disabled={false}
-                                  id="hv-button-11"
+                                  id="hv-fileuploader-2-filelist-undefined-remove-button"
                                   onBlur={[Function]}
                                   onClick={[Function]}
                                   onContextMenu={[Function]}
@@ -56128,9 +56226,7 @@ body {
                   </File>
                 </WithStyles(File)>
               </li>
-              <li
-                key="file-10"
-              >
+              <li>
                 <WithStyles(File)
                   data={
                     Object {
@@ -56139,6 +56235,7 @@ body {
                       "type": "image/png",
                     }
                   }
+                  id="hv-fileuploader-2-filelist-undefined"
                   onFileRemoved={[MockFunction]}
                   progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
@@ -56163,6 +56260,7 @@ body {
                         "type": "image/png",
                       }
                     }
+                    id="hv-fileuploader-2-filelist-undefined"
                     onFileRemoved={[MockFunction]}
                     progressConjunctionLabel="of"
                     removeFileButtonLabel="Remove File"
@@ -60913,7 +61011,7 @@ body {
                       aria-label="Remove File"
                       category="ghost"
                       className="File-removeButton-145"
-                      id="hv-button-12"
+                      id="hv-fileuploader-2-filelist-undefined-remove-button"
                       onClick={[Function]}
                     >
                       <HvButton
@@ -60937,7 +61035,7 @@ body {
                           }
                         }
                         disabled={false}
-                        id="hv-button-12"
+                        id="hv-fileuploader-2-filelist-undefined-remove-button"
                         onClick={[Function]}
                         startIcon={null}
                         theme={
@@ -61885,7 +61983,7 @@ body {
                           color="primary"
                           disableRipple={true}
                           disabled={false}
-                          id="hv-button-12"
+                          id="hv-fileuploader-2-filelist-undefined-remove-button"
                           onClick={[Function]}
                           theme={
                             Object {
@@ -62857,7 +62955,7 @@ body {
                             disableRipple={true}
                             disabled={false}
                             fullWidth={false}
-                            id="hv-button-12"
+                            id="hv-fileuploader-2-filelist-undefined-remove-button"
                             mini={false}
                             onClick={[Function]}
                             size="medium"
@@ -63801,7 +63899,7 @@ body {
                               disabled={false}
                               focusRipple={true}
                               focusVisibleClassName="MuiButton-focusVisible-180"
-                              id="hv-button-12"
+                              id="hv-fileuploader-2-filelist-undefined-remove-button"
                               onClick={[Function]}
                               theme={
                                 Object {
@@ -64751,7 +64849,7 @@ body {
                                 disabled={false}
                                 focusRipple={true}
                                 focusVisibleClassName="MuiButton-focusVisible-180"
-                                id="hv-button-12"
+                                id="hv-fileuploader-2-filelist-undefined-remove-button"
                                 onClick={[Function]}
                                 tabIndex="0"
                                 theme={
@@ -65689,7 +65787,7 @@ body {
                                   aria-label="Remove File"
                                   className="MuiButtonBase-root-187 MuiButton-root-161 HvButton-root-149 MuiButton-text-163 MuiButton-textPrimary-164 HvButton-ghost-154 MuiButton-flat-166 MuiButton-flatPrimary-167 File-removeButton-145"
                                   disabled={false}
-                                  id="hv-button-12"
+                                  id="hv-fileuploader-2-filelist-undefined-remove-button"
                                   onBlur={[Function]}
                                   onClick={[Function]}
                                   onContextMenu={[Function]}

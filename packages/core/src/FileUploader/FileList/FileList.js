@@ -14,38 +14,46 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import File from "../File";
 
 const FileList = ({
+  id,
   classes,
   list,
   progressConjunctionLabel,
   removeFileButtonLabel,
   onFileRemoved
 }) => {
+  const [fileListId] = useState(id || uniqueId("hv-filelist-"));
+
   const hasFiles = list.length > 0;
+
   return (
     hasFiles && (
-      <ul id={uniqueId("file-list-")} className={classes.list}>
+      <ul id={fileListId} className={classes.list}>
         {list.map(data => (
-          <li key={uniqueId("file-")}>
+          <li key={data.id}>
             <File
+              id={`${fileListId}-${data.id}`}
               data={data}
               onFileRemoved={onFileRemoved}
               progressConjunctionLabel={progressConjunctionLabel}
               removeFileButtonLabel={removeFileButtonLabel}
             />
-          </li>
-        ))}
+          </li>))}
       </ul>
     )
   );
 };
 
 FileList.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -69,6 +77,7 @@ FileList.propTypes = {
 };
 
 FileList.defaultProps = {
+  id: null,
   list: [],
   onFileRemoved: () => {}
 };

@@ -53,9 +53,9 @@ class AssetInventory extends React.Component {
     const innerPageSize = pageSize || pageSizeOptions[0];
     const viewValues = this.getPaginationData(values, innerPageSize, page);
     const selectedViewId =
-      selectedView || Array.isArray(children)
+      selectedView || (Array.isArray(children)
         ? children[0].props.id
-        : children.props.id;
+        : children.props.id);
     this.state = {
       internalId: id || uniqueId("hv-assetinventory-"),
       selectedView: selectedViewId,
