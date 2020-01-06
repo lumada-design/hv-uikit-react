@@ -359,7 +359,7 @@ export default (
     hasPagination
     pageSizeOptions={[2, 4, 6, 8, 10]}
     pageSize={4}
-    selectedView={"listView"}
+    selectedView={"cardView"}
   >
     <CardView
       id="cardView"
