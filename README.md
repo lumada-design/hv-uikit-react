@@ -1,7 +1,7 @@
 ## HV UIkit - React
 #### React components for the Hitachi Vantara Design System.
 
-![alt text](https://img.shields.io/badge/node-11.10.0-brightgreen.svg)
+![alt text](https://img.shields.io/badge/node-12.14-brightgreen.svg)
 ![alt text](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
 ![alt text](https://img.shields.io/badge/core--coverage-80%25-green.svg)
