@@ -3,9 +3,6 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
-import ActionsPopover from "./ActionsPopover";
-import ActionsList from "./ActionsList";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
@@ -28,9 +25,6 @@ const getClasses = ({ classes, isSelected }) =>
 
 const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
   <UserIcon className={getClasses(props)} />
-));
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(props => (
-  <SettingIcon className={getClasses(props)} />
 ));
 const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
   <CalendarIcon className={getClasses(props)} />
@@ -100,18 +94,6 @@ const actionValues = [
       />
     ),
     onVerticalClick: () => console.log("Profile"),
-    path: "route3"
-  },
-  {
-    label: "Settings",
-    iconCallback: state => <StyledSettingIcon {...state} />,
-    horizontalItemAction: (
-      <StyledSettingIcon
-        style={{ cursor: "pointer" }}
-        onClick={() => console.log("Settings")}
-      />
-    ),
-    onVerticalClick: () => console.log("Settings"),
     path: "route3"
   },
   {
@@ -194,13 +176,6 @@ export default (
       userData={userData}
       // Responsiveness Settings
       responsivenessConfig={responsivenessConfig}
-      // Actions
-      itemActions={[
-        <SettingIcon />,
-        <ActionsPopover>
-          <ActionsList eventId="id" dismiss={() => {}} />
-        </ActionsPopover>
-      ]}
     />
   </div>
 );

@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
 import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
-import HitachiLogo from "./resources/hitachi";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import {isKeypress, KeyboardCodes} from "@hv/uikit-common-utils/dist";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+import Hitachi from "./resources/hitachi";
 
 const styles = theme => ({
   box: {
@@ -35,17 +34,13 @@ const StyledHelpIcon = withStyles(styles, { withTheme: true })(props => (
 const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
   <PlaneIcon className={getClasses(props)} />
 ));
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(props => (
-  <SettingIcon className={getClasses(props)} />
-));
+
 const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
   <CalendarIcon className={getClasses(props)} />
 ));
 const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
   <LineChartIcon className={getClasses(props)} />
 ));
-
-const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -109,21 +104,24 @@ const actionValues = [
   {
     label: "Profile",
     iconCallback: state => <StyledUserIcon {...state} />,
-    horizontalItemAction: <StyledUserIcon style={{ cursor: "pointer" }} onClick={() => console.log("Profile")} />,
+    horizontalItemAction: (
+      <StyledUserIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Profile")}
+      />
+    ),
     onVerticalClick: () => console.log("Profile"),
-    path: "route3"
-  },
-  {
-    label: "Settings",
-    iconCallback: state => <StyledSettingIcon {...state} />,
-    horizontalItemAction: <StyledSettingIcon style={{ cursor: "pointer" }} onClick={() => console.log("Settings")} />,
-    onVerticalClick: () => console.log("Settings"),
     path: "route3"
   },
   {
     label: "Help",
     iconCallback: state => <StyledHelpIcon {...state} />,
-    horizontalItemAction: <StyledHelpIcon style={{ cursor: "pointer" }} onClick={() => console.log("Help")} />,
+    horizontalItemAction: (
+      <StyledHelpIcon
+        style={{ cursor: "pointer" }}
+        onClick={() => console.log("Help")}
+      />
+    ),
     onVerticalClick: () => console.log("Help"),
     path: "route3"
   }

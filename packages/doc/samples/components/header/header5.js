@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import HitachiLogo from "./resources/hitachi";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
+import Hitachi from "./resources/hitachi";
 
 const styles = theme => ({
   box: {
@@ -23,20 +23,18 @@ const styles = theme => ({
 const getClasses = ({ classes, isSelected }) =>
   classNames(classes.box, isSelected && classes.selected);
 
-const StyledUserIcon = withStyles(styles, { withTheme: true })(props => 
+const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
   <UserIcon className={getClasses(props)} />
-);
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => 
+));
+const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
   <CalendarIcon className={getClasses(props)} />
-);
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => 
+));
+const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
   <LineChartIcon className={getClasses(props)} />
-);
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => 
+));
+const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
   <PlaneIcon className={getClasses(props)} />
-);
-
-const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
+));
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -51,38 +49,38 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      iconCallback: (state) => <StyledUserIcon {...state}/>,
+      iconCallback: state => <StyledUserIcon {...state} />,
       path: "/"
     },
     {
       label: "Events",
-      iconCallback: (state) => <StyledCalendarIcon {...state}/>,
+      iconCallback: state => <StyledCalendarIcon {...state} />,
       path: "/events"
     },
     {
       label: "Work orders",
       path: "/work",
-      iconCallback: (state) => <StyledCalendarIcon {...state}/>
+      iconCallback: state => <StyledCalendarIcon {...state} />
     },
     {
       label: "Asset",
-      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
+      iconCallback: state => <StyledPlaneIcon {...state} />,
       path: "/asset"
     },
     {
       label: "Analytics",
-      iconCallback: (state) => <StyledLineChartIcon {...state}/>,
+      iconCallback: state => <StyledLineChartIcon {...state} />,
       showNavIcon: true,
       subData: {
         data: [
           {
             label: "Model Effectiveness",
-            iconCallback: (state) => <StyledUserIcon {...state}/>,
+            iconCallback: state => <StyledUserIcon {...state} />,
             path: "/meffectiveness"
           },
           {
             label: "Trend Analysis",
-            iconCallback: (state) => <StyledCalendarIcon {...state}/>,
+            iconCallback: state => <StyledCalendarIcon {...state} />,
             path: "/tAnalysis"
           }
         ]
@@ -90,12 +88,11 @@ const navigationData = {
     },
     {
       label: "Resources",
-      iconCallback: (state) => <StyledPlaneIcon {...state}/>,
+      iconCallback: state => <StyledPlaneIcon {...state} />,
       path: "/Resources"
     }
   ]
 };
-
 
 const SimpleHeaderController = ({
   position,
@@ -109,11 +106,11 @@ const SimpleHeaderController = ({
 
   const handleSelection = (index, subIndex) => {
     setSelected([index, subIndex]);
-  }
+  };
 
   const handleKeyDown = (index, subIndex, event) => {
-    if(!isKeypress(event, KeyboardCodes.Enter)) {
-      return
+    if (!isKeypress(event, KeyboardCodes.Enter)) {
+      return;
     }
     handleSelection(index, subIndex);
   };
