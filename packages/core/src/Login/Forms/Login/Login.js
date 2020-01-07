@@ -145,11 +145,12 @@ class Login extends React.Component {
     } = this.props;
     const { isLogging, loginError } = this.state;
 
-    const customMessageElement = ( !loginError && customMessage != null ) ?
-      (<MessageElement
-        showMessage={classes.showCustomMessage}
-        message={customMessage}
-      />
+    const customMessageElement =
+      !loginError && customMessage != null ? (
+        <MessageElement
+          showMessage={classes.showCustomMessage}
+          message={customMessage}
+        />
       ) : null;
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
@@ -169,7 +170,9 @@ class Login extends React.Component {
               showMessage={classes.showMessage}
               message={incorrectCredentialsMessage}
             />
-          ) : customMessageElement }
+          ) : (
+            customMessageElement
+          )}
         </div>
 
         <div className={classes.inputUser}>
@@ -217,7 +220,7 @@ class Login extends React.Component {
             type="submit"
             category="primary"
             className={classNames(classes.button, classes.sentenceCase)}
-            disabled={isLoading}
+            disabled={isLoading || isLogging}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}
           </HvButton>
@@ -239,31 +242,96 @@ Login.displayName = "loginForm";
 
 Login.propTypes = {
   /**
-   * the classes object to be applied into the root object.
+   * The classes object to be applied into the root object.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the title.
+     */
+    title: PropTypes.string,
+    /**
+     * Styles applied to the h3.
+     */
+    h3: PropTypes.string,
+    /**
+     * Styles applied to the user input.
+     */
+    inputUser: PropTypes.string,
+    /**
+     * Styles applied to the password input.
+     */
+    inputPassword: PropTypes.string,
+    /**
+     * Styles applied to the button.
+     */
+    button: PropTypes.string,
+    /**
+     * Styles applied to the button container.
+     */
+    buttonsContainer: PropTypes.string,
+    /**
+     * Styles applied to the button container when with remember.
+     */
+    buttonsContainerWithRemember: PropTypes.string,
+    /**
+     * Styles applied to the separator.
+     */
+    separator: PropTypes.string,
+    /**
+     * Styles applied to the forgot credentials.
+     */
+    forgotCredentials: PropTypes.string,
+    /**
+     * Styles applied to the typography of the checkbox.
+     */
+    checkBoxTypography: PropTypes.string,
+    /**
+     * Styles to apply sentence case.
+     */
+    sentenceCase: PropTypes.string,
+    /**
+     * Styles applied to the message.
+     */
+    showMessage: PropTypes.string,
+    /**
+     * Styles applied to the custom message.
+     */
+    showCustomMessage: PropTypes.string,
+    /**
+     * Styles applied to the icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the error message container.
+     */
+    errorMessageContainer: PropTypes.string
+  }).isRequired,
   /**
-   * the function invoked for the login action
+   * The function invoked for the login action
    */
   login: PropTypes.func.isRequired,
   /**
-   * the welcome message
+   * The welcome message
    */
   titleText: PropTypes.string,
   /**
-   * the url for the logo in the welcome message.
+   * The url for the logo in the welcome message.
    */
   logo: PropTypes.string,
   /**
-   * a component to replace the welcome message
+   * A component to replace the welcome message
    */
   titleComponent: PropTypes.node,
   /**
-   * the component should have the recovery capability
+   * The component should have the recovery capability
    */
   allowRecover: PropTypes.bool,
   /**
-   * the component should have remember me capability.
+   * The component should have remember me capability.
    */
   allowRememberMe: PropTypes.bool,
   /**
@@ -275,11 +343,11 @@ Login.propTypes = {
    */
   errorLoginIcon: PropTypes.element,
   /**
-   * label for the login button.
+   * Label for the login button.
    */
   loginButtonLabel: PropTypes.string.isRequired,
   /**
-   * label for the login button while loggin.
+   * Label for the login button while loggin.
    */
   loginButtonMessage: PropTypes.string.isRequired,
   /**

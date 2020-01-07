@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import HvTypography from "../../../../Typography";
 
 /**
@@ -30,7 +31,6 @@ import HvTypography from "../../../../Typography";
  */
 const Title = ({ classes, logo, titleText, titleComponent }) => {
   let logoComponent = null;
-  let span = null;
 
   if (titleComponent !== null) {
     return <div className={classes.logoContainer}>{titleComponent}</div>;
@@ -40,13 +40,17 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
     logoComponent = (
       <img src={logo} className={classes.logoImage} alt="Company logo" />
     );
-    span = <span className={classes.separator} />;
   }
   return (
     <div className={classes.logoContainer}>
       {logoComponent}
-      {span}
-      <HvTypography variant="mTitle" className={classes.root}>
+
+      <HvTypography
+        variant="mTitle"
+        className={classNames(classes.root, {
+          [classes.titleNoLogoComponent]: !logoComponent
+        })}
+      >
         {titleText}
       </HvTypography>
     </div>
@@ -55,19 +59,36 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
 
 Title.propTypes = {
   /**
-   * the classes object to be applied into the root object.
+   * The classes object to be applied into the root object.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    logoContainer: PropTypes.string,
+    /**
+     * Styles applied to the component logo image.
+     */
+    logoImage: PropTypes.string,
+    /**
+     * Styles applied to the component when no logo component is passed.
+     */
+    titleNoLogoComponent: PropTypes.string,
+    /**
+     * Styles applied to the separator.
+     */
+    separator: PropTypes.string
+  }).isRequired,
   /**
-   * the welcome message
+   * The welcome message
    */
   titleText: PropTypes.string,
   /**
-   * the url for the logo in the welcome message.
+   * The url for the logo in the welcome message.
    */
   logo: PropTypes.string,
   /**
-   * a component to replace the welcome message
+   * A component to replace the welcome message
    */
   titleComponent: PropTypes.node
 };

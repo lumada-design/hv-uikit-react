@@ -29,11 +29,11 @@ storiesOf("Components", module).add("Login", () => <HvLogin />, {
       src: "components/login/login1"
     },
     {
-      title: "2. unsuccessful requests",
+      title: "2. Unsuccessful requests",
       src: "components/login/login2"
     },
     {
-      title: "3. without Forgot Your Credentials and Remember me",
+      title: "3. Without Forgot Your Credentials and Remember me",
       src: "components/login/login3"
     },
     {
@@ -47,6 +47,10 @@ storiesOf("Components", module).add("Login", () => <HvLogin />, {
     {
       title: "6. Custom initial message",
       src: "components/login/login6"
+    },
+    {
+      title: "7. Tenant brand",
+      src: "components/login/login7"
     }
   ]
 });

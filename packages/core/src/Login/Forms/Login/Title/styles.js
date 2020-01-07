@@ -17,15 +17,19 @@
 const styles = () => ({
   logoContainer: {
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     width: "100%"
   },
   logoImage: {
-    height: 28
+    maxHeight: "80px"
+  },
+  titleNoLogoComponent: {
+    marginTop: "80px"
   },
   separator: {
-    width: 15
+    height: "15px"
   }
 });
 

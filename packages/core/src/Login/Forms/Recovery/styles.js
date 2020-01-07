@@ -28,7 +28,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     zIndex: 1,
-    marginTop: `${theme.hv.spacing.lg}px`,
+    marginTop: "100px",
     justifyContent: "center"
   },
   instructions: {
