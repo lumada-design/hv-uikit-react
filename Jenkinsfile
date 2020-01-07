@@ -126,38 +126,35 @@ pipeline {
                 }
             }
         }
-        stage('Publish') {
-            parallel {
-                stage('Publish Documentation') {
-                    when {
-                         expression {  !params.skipPublishDoc && !env.CHANGE_ID }
-                    }
-                    steps {
-                        withNPM(npmrcConfig: 'hv-ui-nprc') {
-                            withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
-                                sshagent (credentials: ['github-buildguy']) {
-                                    sh "npm run publish-documentation"
-                                }
-                            }
+        
+        stage('Publish Packages') {
+            when {
+                branch 'master'
+                expression {  !params.skipPublish && !env.CHANGE_ID }
+            }
+            steps {
+                withNPM(npmrcConfig: 'hv-ui-nprc') {
+                    withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
+                        sshagent (credentials: ['github-buildguy']) {
+                            sh "git checkout ${env.BRANCH_NAME}"
+                            sh 'cp .npmrc ~/.npmrc'
+                            sh 'git status'
+                            sh "npm run publish-${params.publishType}"
                         }
                     }
                 }
-                
-                stage('Publish Packages') {
-                    when {
-                        branch 'master'
-                        expression {  !params.skipPublish && !env.CHANGE_ID }
-                    }
-                    steps {
-                        withNPM(npmrcConfig: 'hv-ui-nprc') {
-                            withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
-                                sshagent (credentials: ['github-buildguy']) {
-                                    sh "git checkout ${env.BRANCH_NAME}"
-                                    sh 'cp .npmrc ~/.npmrc'
-                                    sh 'git status'
-                                    sh "npm run publish-${params.publishType}"
-                                }
-                            }
+            }
+        }
+
+        stage('Publish Documentation') {
+            when {
+                 expression {  !params.skipPublishDoc && !env.CHANGE_ID }
+            }
+            steps {
+                withNPM(npmrcConfig: 'hv-ui-nprc') {
+                    withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
+                        sshagent (credentials: ['github-buildguy']) {
+                            sh "npm run publish-documentation"
                         }
                     }
                 }
