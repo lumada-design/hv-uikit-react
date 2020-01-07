@@ -4,7 +4,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.5:1. Recommendation:  change text colour to #6d6d6d.",
-        "context": "<p class=\"Typography-normalText-171 Typography-baseFontFamily-183 Typography-margin-184 Dropdown-selection-154 Dropdown-truncate-159 Dropdown-selectionDisabled-155\" theme=\"[object Object]\">Selected 3 of 12</p>",
+        "context": "<p class=\"Typography-normalText-172 Typography-baseFontFamily-184 Typography-margin-185 Dropdown-selection-155 Dropdown-truncate-160 Dropdown-selectionDisabled-156\" theme=\"[object Object]\">Selected 3 of 12</p>",
         "selector": "#dropdown9-header > p",
         "runner": "htmlcs",
         "runnerExtras": {}
