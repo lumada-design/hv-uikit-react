@@ -86,14 +86,14 @@ pipeline {
                             def port = "9002"
                             def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
                             waitUntilServerUp(URL)
-                            def (REFSPEC, BRANCH_STRING) = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
+                            def REFSPEC = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
                             echo "[INFO] REFSPEC: " + REFSPEC
 
                             def jobResultAccessibility =
                                             build job: 'ui-kit/automation/storybook-core-accessibility', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
                                                 string(name: 'REFSPEC', value: REFSPEC),
-                                                string(name: 'BRANCH_STRING', value: BRANCH_STRING)
+                                                string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
                                             ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB storybook-core-accessibility RESULT: " + jobResultAccessibility.getCurrentResult()
@@ -102,7 +102,7 @@ pipeline {
                                             build job: 'ui-kit/automation/storybook-core-tests', parameters: [
                                                 string(name: 'STORYBOOK_URL', value: URL),
                                                 string(name: 'REFSPEC', value: REFSPEC),
-                                                string(name: 'BRANCH_STRING', value: BRANCH_STRING)
+                                                string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
                                             ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
@@ -215,13 +215,10 @@ void waitUntilServerUp(String url) {
 
 def getRefspec(String changeId, String branch) {
   def refspec = ''
-  def branchString = ''
   if (changeId) {
     refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
-    branchString = branch
   } else {
     refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
-    branchString = "*/" + branch
   }
-  return [refspec, branchString]
+  return refspec
 }
