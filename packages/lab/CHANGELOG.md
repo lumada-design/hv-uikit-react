@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.14.0...@hv/uikit-react-lab@1.15.0) (2020-01-08)
+
+
+### Features
+
+* **types:** type definitions initial version [#533](https://github.com/pentaho/hv-uikit-react/issues/533) ([770dee9](https://github.com/pentaho/hv-uikit-react/commit/770dee9))
+
+
+
+
+
+# [1.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.13.1...@hv/uikit-react-lab@1.14.0) (2020-01-04)
+
+
+### Bug Fixes
+
+* **input:** full opacity of placeholder text. [#894](https://github.com/pentaho/hv-uikit-react/issues/894) ([#954](https://github.com/pentaho/hv-uikit-react/issues/954)) ([d99ecf7](https://github.com/pentaho/hv-uikit-react/commit/d99ecf7))
+
+
+### Features
+
+* **button:** add variant with icon. [#895](https://github.com/pentaho/hv-uikit-react/issues/895) ([921bcd7](https://github.com/pentaho/hv-uikit-react/commit/921bcd7))
+* **icons:** remove deprecated icons from storybook. [#870](https://github.com/pentaho/hv-uikit-react/issues/870) ([c269d01](https://github.com/pentaho/hv-uikit-react/commit/c269d01))
+
+
+
+
+
 ## [1.13.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.13.0...@hv/uikit-react-lab@1.13.1) (2019-12-16)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
