@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.6.0...@hv/uikit-react-icons@1.7.0) (2020-01-08)
+
+
+### Features
+
+* **types:** type definitions initial version [#533](https://github.com/pentaho/hv-uikit-react/issues/533) ([770dee9](https://github.com/pentaho/hv-uikit-react/commit/770dee9))
+
+
+
+
+
 # [1.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.5.2...@hv/uikit-react-icons@1.6.0) (2020-01-04)
 
 

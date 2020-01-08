@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.15.0...@hv/uikit-react-doc@1.16.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* **assetinventory:** selectedView prop being ignored. [#982](https://github.com/pentaho/hv-uikit-react/issues/982) ([#983](https://github.com/pentaho/hv-uikit-react/issues/983)) ([9ff4b98](https://github.com/pentaho/hv-uikit-react/commit/9ff4b98))
+* **fileuploader:** apply unique IDs [#969](https://github.com/pentaho/hv-uikit-react/issues/969) ([ac0e05c](https://github.com/pentaho/hv-uikit-react/commit/ac0e05c))
+* **fileuploader:** fix rendering glitches [#968](https://github.com/pentaho/hv-uikit-react/issues/968) ([0a0bb45](https://github.com/pentaho/hv-uikit-react/commit/0a0bb45))
+* **fileuploader:** size with Grid and sample. [#966](https://github.com/pentaho/hv-uikit-react/issues/966) ([f213d46](https://github.com/pentaho/hv-uikit-react/commit/f213d46))
+
+
+### Features
+
+* **fileuploader:** add disabled state. [#970](https://github.com/pentaho/hv-uikit-react/issues/970) ([e84440e](https://github.com/pentaho/hv-uikit-react/commit/e84440e))
+* **fileuploader:** add input multiple prop. [#971](https://github.com/pentaho/hv-uikit-react/issues/971) ([437c9f2](https://github.com/pentaho/hv-uikit-react/commit/437c9f2))
+
+
+
+
+
 # [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.14.1...@hv/uikit-react-doc@1.15.0) (2020-01-04)
 
 
