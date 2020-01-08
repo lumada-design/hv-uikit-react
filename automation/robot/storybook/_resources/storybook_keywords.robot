@@ -153,3 +153,11 @@ force input
     ...
     Clean input        ${locator}
     Input Text         ${locator}    ${string}
+
+set focus and press keys
+    [Arguments]    ${locator}    ${keys}
+    [Documentation]    
+    ...   work around for react consider as a human action, otherwise using 'press keys' directly will be reverted by react  
+    ...    
+    Set Focus To Element    ${locator}
+    Press Keys              none          ${keys}
