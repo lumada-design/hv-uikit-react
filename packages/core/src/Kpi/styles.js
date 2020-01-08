@@ -35,7 +35,7 @@ const styles = theme => ({
     display: "inline-flex",
     minHeight: "16px",
     alignItems: "flex-end",
-    marginTop: "5px",
+    marginTop: `${theme.hv.spacing.xs}px`,
     marginBottom: `${theme.hv.spacing.xs}px`
   },
   indicatorUnit: {
@@ -43,11 +43,18 @@ const styles = theme => ({
     paddingBottom: "3px"
   },
   indicatorText: {},
+  comparisonComposition: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center"
+  },
   spacingToTheRight: {
     marginRight: `${theme.hv.spacing.xs}px`
   },
-  comparisons: {
-    float: "left"
+  trendLine: {
+    float: "right"
   }
 });
 

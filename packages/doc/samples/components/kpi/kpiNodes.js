@@ -6,4 +6,13 @@ const labels = {
   indicator: "34 677"
 };
 
-export default <HvKpi labels={labels} />;
+const kpiContainer = {
+  minWidth: "190px",
+  padding: "20px"
+}
+
+export default (
+  <div style={kpiContainer}>
+    <HvKpi labels={labels} />
+  </div>
+);
