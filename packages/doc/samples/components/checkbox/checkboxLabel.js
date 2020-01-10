@@ -1,4 +1,4 @@
 import React from "react";
-import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
+import { HvCheckBox } from "@hv/uikit-react-core/dist/Selectors";
 
-export default <HvCheckBox label="label" />;
+export default <HvCheckBox id="checkLabel" label="Label" />;

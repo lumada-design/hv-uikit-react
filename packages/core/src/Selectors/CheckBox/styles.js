@@ -32,7 +32,10 @@ const styles = theme => ({
     outline: "none !important"
   },
   labelTypography: {
-    ...theme.hv.typography.normalText
+    ...theme.hv.typography.normalText,
+    "&$labelDisabled": {
+      ...theme.hv.typography.placeholderText
+    }
   },
   labelDisabled: {
     backgroundColor: "transparent",
@@ -52,18 +55,8 @@ const styles = theme => ({
     padding: "1px"
   },
   icon: {
-    width: "16px",
-    height: "16px",
-    backgroundSize: "16px 16px"
-  },
-  box: {
     width: "30px",
-    height: "30px",
-    padding: "7px",
-    "& svg": {
-      display: "block", 
-      margin: "auto" 
-    }
+    height: "30px"
   }
 });
 
