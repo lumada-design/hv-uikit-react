@@ -1,193 +1,255 @@
-pipeline {
-    agent { label 'non-master' }
-    tools {nodejs "node-js-12.14-auto"}
-    options {
-        timestamps ()
-        timeout(time: 140, unit: 'MINUTES')
-        disableConcurrentBuilds()
-    }
+properties([
+    parameters([
+        booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.'),
+        booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.'),
+        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.'),
+        booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.'),
+        booleanParam(name: 'skipPublishDoc', defaultValue: true, description: 'when true, skip publish documentation.'),
+        choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.'),
+        choice(choices: ['#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel publish the build result.', name: 'ci_channel'),
+        choice(choices: ['#ui-kit', '#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel announce a release.', name: 'release_channel')
+    ])
+])
 
-    parameters {
-        booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.')
-        booleanParam(name: 'skipBuild', defaultValue: false, description: 'when true, skip build.')
-        booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.')
-        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.')
-        booleanParam(name: 'skipPublishDoc', defaultValue: true, description: 'when true, skip publish documentation.')
-        booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.')
-        choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.')
-        choice(choices: ['#ui-kit-eng-ci', '#ui-kit'], description: 'What channel to send notification.', name: 'channel')
-    }
+node('non-master') {
+    def releases_branch = 'master'
 
-    stages {
-        stage('Build') {
-            when {
-                expression { !params.skipBuild }
-            }
-            steps {
-                withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    sh 'npm ci --silent'
-                    sh 'npm run bootstrap'
+    def commitMessage = null
+    def commitTimestamp = null
+
+    try {
+        // Because each command (sh) is being run with docker exec we need to cd
+        // on each command, otherwise the default $PWD is the jenkins workspace
+        def uikit_folder = '/home/node/hv-uikit-react'
+
+        def image
+
+        stage('Checkout') {
+            tryStep ({
+                checkout scm
+            })
+        }
+
+        stage('Build image') {
+            tryStep ({
+                docker.withRegistry('nexus.pentaho.org:8000') {
+                    image = docker.build("hv-uikit-react:${env.BUILD_TAG}", '-f build/Dockerfile .')
+                }
+            })
+        }
+
+        def test_stages = [:]
+
+        test_stages["lint"] = {
+            stage('Lint') {
+                if(!params.skipLint) {
+                    tryStep ({
+                        image.inside(containerRunOptions('uikit_lint')) {
+                            sh label: 'npm run lint', script: """
+                                #! /bin/sh -
+                                cd ${uikit_folder}
+                                npm run lint
+                            """
+                        }
+                    }, "UNSTABLE")
+                } else {
+                    echo '[INFO] Lint skipped'
                 }
             }
         }
-        stage('Lint') {
-            when {
-                expression { !params.skipLint }
-            }
-            steps {
-                withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    script {
-                        def RESULT_LINT = sh returnStatus: true, script: 'npm run lint'
-                        if ( RESULT_LINT != 0 ) {
-                            currentBuild.result = 'UNSTABLE'
+
+        test_stages["jest"] = {
+            stage('Tests (jest)') {
+                if(!params.skipJavascriptTest) {
+                    tryStep ({
+                        image.inside(containerRunOptions('uikit_jest')) {
+                            sh label: 'npm run test', script: """
+                                #! /bin/sh -
+                                cd ${uikit_folder}
+                                npm run test
+                            """
+
+                            sh label: 'cp **/junit.xml', script: """
+                                #! /bin/sh -
+                                cp ${uikit_folder}/packages/core/junit.xml ./packages/core/junit.xml
+                                cp ${uikit_folder}/packages/lab/junit.xml ./packages/lab/junit.xml
+                            """
                         }
-                    }
+                    }, "UNSTABLE")
+
+                    junit '**/junit.xml'
+                } else {
+                    echo '[INFO] JavaScript (jest) tests skipped'
                 }
             }
         }
-        stage('Tests') {
-            parallel {
-                stage('Tests Javascript') {
-                    when {
-                        expression { !params.skipJavascriptTest }
-                    }
-                    steps {
-                        withNPM(npmrcConfig: 'hv-ui-nprc') {
-                            script {
-                                def RESULT_TESTS = sh returnStatus: true, script: 'npm run test'
-                                if ( RESULT_TESTS != 0 ) {
-                                    currentBuild.result = 'UNSTABLE'
-                                }
-                            }
-                            junit '**/junit.xml'
-                        }
-                    }
-                }
 
-                stage('Tests Automation') {
-                    agent {
-                      label 'robotframework-unix'
-                    }
-                    when {
-                        beforeAgent true
-                        anyOf {
-                            changeRequest target: 'master'
-                            branch 'master'
-                            expression { !params.skipAutomationTest }
-                        }
-                    }
-                    steps {
-                        script {
-                            withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                sh 'npm ci --silent'
-                                sh 'npm run bootstrap'
-                                sh 'npm run automation &'
-                            }
-                            def port = "9002"
-                            def URL = 'http://' + sh(script: 'hostname -I', returnStdout: true).split(' ')[0] + ":" + port
+        test_stages["robot"] = {
+            stage('Tests (robot)') {
+                if(!params.skipAutomationTest) {
+                    def hostname = sh(script: 'hostname -I', returnStdout: true).split(' ')[0]
+                    def automation_storybook_port = '9002'
+
+                    image.withRun("${containerRunOptions('uikit_automation_storybook')} -p ${automation_storybook_port}:${automation_storybook_port}", 'npm run automation') { container ->
+                        tryStep ({
+                            // TODO: Scripts not permitted to use method [...]Container port. Administrators can decide whether to approve or reject this signature.
+                            // Without this we can only run one container at a time
+                            // def URL = "http://${hostname}:${container.port(automation_storybook_port)}"
+                            def URL = "http://${hostname}:${automation_storybook_port}"
+
                             waitUntilServerUp(URL)
+
                             def REFSPEC = getRefspec(env.CHANGE_ID, env.BRANCH_NAME)
                             echo "[INFO] REFSPEC: " + REFSPEC
 
                             def jobResultAccessibility =
-                                            build job: 'ui-kit/automation/storybook-core-accessibility', parameters: [
-                                                string(name: 'STORYBOOK_URL', value: URL),
-                                                string(name: 'REFSPEC', value: REFSPEC),
-                                                string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
-                                            ], propagate: true, wait: true
+                                build job: 'ui-kit/automation/storybook-core-accessibility', parameters: [
+                                    string(name: 'STORYBOOK_URL', value: URL),
+                                    string(name: 'REFSPEC', value: REFSPEC),
+                                    string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
+                                ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB storybook-core-accessibility RESULT: " + jobResultAccessibility.getCurrentResult()
 
                             def jobResult =
-                                            build job: 'ui-kit/automation/storybook-core-tests', parameters: [
-                                                string(name: 'STORYBOOK_URL', value: URL),
-                                                string(name: 'REFSPEC', value: REFSPEC),
-                                                string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
-                                            ], propagate: true, wait: true
+                                build job: 'ui-kit/automation/storybook-core-tests', parameters: [
+                                    string(name: 'STORYBOOK_URL', value: URL),
+                                    string(name: 'REFSPEC', value: REFSPEC),
+                                    string(name: 'BRANCH_STRING', value: env.BRANCH_NAME)
+                                ], propagate: true, wait: true
 
-                            echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()                             
-                            
-                        }
+                            echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()
+                        }, "UNSTABLE")
                     }
-                    post {
-                        failure {
-                            echo ("This build is unstable. Please check the automation tests.")
-                            script {
-                                currentBuild.result = "UNSTABLE"
+                } else {
+                    echo '[INFO] Cross-browser (robot) tests skipped'
+                }
+            }
+        }
+
+        test_stages.failFast = true
+
+        parallel test_stages
+
+        def currentResult = currentBuild.currentResult
+        if (currentResult != 'UNSTABLE' && currentResult != 'FAILURE') {
+            if(env.BRANCH_NAME == releases_branch && !env.CHANGE_ID) {
+                tryStep ({
+                    // publish to npm repo
+                    image.inside(containerRunOptions('uikit_publish_packages')) {
+                        withCredentials([
+                            string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
+                            sshUserPrivateKey(credentialsId: 'ssh-buildguy-github', usernameVariable: 'GIT_USERNAME', keyFileVariable: 'GIT_KEY')
+                        ]) {
+                            withEnv([
+                                "GIT_AUTHOR_NAME=$GIT_USERNAME",
+                                "GIT_COMMITTER_NAME=$GIT_USERNAME",
+                                "GIT_AUTHOR_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
+                            ]) {
+                                stage('Publish Packages') {
+                                    if(!params.skipPublish) {
+                                        withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                            sh label: 'npm run publish-x', script: """
+                                                #! /bin/sh -
+
+                                                # copy the npm configuration
+                                                cp .npmrc ${uikit_folder}/../.npmrc
+                                                cp .npmrc ${uikit_folder}/.npmrc
+
+                                                # copy the git repository
+                                                cp -R ./.git ${uikit_folder}/.git
+
+                                                cd ${uikit_folder}
+
+                                                # restore the files we didn't include in the docker image
+                                                git checkout ${env.BRANCH_NAME}
+                                                git reset --hard
+
+                                                npm run publish-${params.publishType} -- --no-git-reset
+                                            """
+
+                                            commitMessage = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%B HEAD
+                                            """).trim()
+
+                                            commitTimestamp = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%ct HEAD
+                                            """).trim()
+                                        }
+                                    } else {
+                                        echo '[INFO] Packages publishing skipped'
+                                    }
+                                }
+
+                                stage('Publish Documentation') {
+                                    if(!params.skipPublishDoc) {
+                                        sh label: 'npm run publish-documentation', script: """
+                                            #! /bin/sh -
+
+                                            cd ${uikit_folder}
+                                            npm run build -- --scope @hv/uikit-react-doc
+                                            npm run publish-documentation --  --ci
+                                        """
+                                    } else {
+                                        echo '[INFO] Documentation (storybook) publishing skipped'
+                                    }
+                                }
                             }
                         }
-
-                      always {
-                        script {
-                            sh 'pkill -f node'
-                        }
-                      }
+                    }
+                })
+            } else {
+                stage('Publish Packages') {
+                    if(!params.skipPublish) {
+                        echo '[INFO] Not publishing non-release packages'
+                    } else {
+                        echo '[INFO] Packages publishing skipped'
                     }
                 }
-            }
-        }
-        
-        stage('Publish Packages') {
-            when {
-                branch 'master'
-                expression {  !params.skipPublish && !env.CHANGE_ID }
-            }
-            steps {
-                withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
-                        sshagent (credentials: ['github-buildguy']) {
-                            sh "git checkout ${env.BRANCH_NAME}"
-                            sh 'cp .npmrc ~/.npmrc'
-                            sh 'git status'
-                            sh "npm run publish-${params.publishType}"
-                        }
+
+                stage('Publish Documentation') {
+                    if(!params.skipPublishDoc) {
+                        // TODO: publish storybook for PR review
+                        echo '[INFO] Not publishing non-release documentation'
+                    } else {
+                        echo '[INFO] Documentation (storybook) publishing skipped'
                     }
                 }
             }
         }
 
-        stage('Publish Documentation') {
-            when {
-                 expression {  !params.skipPublishDoc && !env.CHANGE_ID }
-            }
-            steps {
-                withNPM(npmrcConfig: 'hv-ui-nprc') {
-                    withCredentials([string(credentialsId: 'github-api-token', variable: 'GH_TOKEN')]) {
-                        sshagent (credentials: ['github-buildguy']) {
-                            sh "npm run publish-documentation"
-                        }
-                    }
-                }
-            }
-        }
-    }
+        currentBuild.result == 'SUCCESS'
+    } finally {
+        def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
 
-    post {
-        always {
-            script {
-                def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
-                if ( currentBuild.currentResult == "SUCCESS" ) {
-                    slackSend channel: "#ui-kit-eng-ci", color: "good", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was successful"
-                    if ( env.BRANCH_NAME == "master" ) {
-                        def commitMessage = sh(returnStdout: true, script: 'git show -s --format=%B HEAD').trim()
-                        def commitTimestamp = sh(returnStdout: true, script: 'git show -s --format=%ct HEAD').trim()
+        def ci_slack_channel = "${params.ci_channel}"
+        def releases_slack_channel = "${params.release_channel}"
 
-                        if ( commitMessage.startsWith("chore") ) {
-                            def dateNow = (currentBuild.startTimeInMillis / 1000) as long
-                            def dateCommit = commitTimestamp as long
-                            def difference = dateNow - dateCommit
-                            if( ((difference % 3600) % 60) < 30 ) {
-                                def slackMessage = "*ui-kit new artifacts are available and documentation is updated*\n${commitMessage.replace('chore(release): publish', '')}\nFor more details about the changes please check the CHANGELOG in ${githubReleasesURL}\n"
-                                slackSend channel: "#ui-kit", color: "good", message: slackMessage
-                            }
-                        }
+        def currentResult = currentBuild.currentResult
+
+        if (currentResult == 'UNSTABLE') {
+            slackSend channel: ci_slack_channel, color: "warning", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} is unstable"
+        } else if (currentResult == 'FAILURE') {
+            slackSend channel: ci_slack_channel, color: "danger", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} failed!"
+        } else if (currentResult == 'SUCCESS') {
+            slackSend channel: ci_slack_channel, color: "good", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} was successful"
+
+            if ( env.BRANCH_NAME == releases_branch ) {
+                if ( commitMessage != null && commitMessage.startsWith("chore") ) {
+                    def dateNow = (currentBuild.startTimeInMillis / 1000) as long
+                    def dateCommit = commitTimestamp as long
+                    def difference = dateNow - dateCommit
+
+                    if( ((difference % 3600) % 60) < 30 ) {
+                        def slackMessage = "*ui-kit new artifacts are available and documentation is updated*\n${commitMessage.replace('chore(release): publish', '')}\nFor more details about the changes please check the CHANGELOG in ${githubReleasesURL}\n"
+                        slackSend channel: releases_slack_channel, color: "good", message: slackMessage
                     }
-                }
-                else if( currentBuild.currentResult == "UNSTABLE" ) {
-                    slackSend channel: "${params.channel}", color: "warning", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} was unstable"
-                }
-                else {
-                    slackSend channel: "${params.channel}", color: "danger", message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} failed!"
                 }
             }
         }
@@ -196,26 +258,42 @@ pipeline {
 
 // ================== FUNCTIONS =================================================
 
+def containerRunOptions(String name) {
+    def user = 'node'
+
+    return "-u=${user} --name=${name}_${env.BUILD_TAG}"
+}
+
 void waitUntilServerUp(String url) {
-  script {
-    sleep(time: 45, unit: "SECONDS") // time to start docker machine
+    echo "[INFO] Waiting for ${url}"
+
     timeout(time: 5, unit: 'MINUTES') {
-      waitUntil {
-        script {
-          def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
-          return (r == 0)
+        waitUntil {
+            def r = sh(script: "wget -q ${url} -O /dev/null", returnStatus: true)
+            return (r == 0)
         }
-      }
     }
-  }
 }
 
 def getRefspec(String changeId, String branch) {
-  def refspec = ''
-  if (changeId) {
-    refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
-  } else {
-    refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
-  }
-  return refspec
+    def refspec = ''
+    if (changeId) {
+        refspec = "+refs/pull/" + changeId + "/head:refs/remotes/origin/PR-" + changeId
+    } else {
+        refspec = "+refs/heads/" + branch + ":refs/remotes/origin/" + branch
+    }
+
+    return refspec
+}
+
+def tryStep(Closure block, String resultIfFail = null) {
+    try {
+        block()
+    } catch (Throwable t) {
+        currentBuild.result = resultIfFail != null ? resultIfFail : 'FAILURE'
+
+        if(currentBuild.result == 'FAILURE') {
+            throw t
+        }
+    }
 }

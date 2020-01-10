@@ -18,7 +18,6 @@
     "build:types": "node ./src/typeGen/main.js --input dist --output dist/@types",
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
-    "postpublish": "npm run clean",
     "link": "npm link",
     "update-uikit-common": "npm update @hv/uikit-common-icons"
   },
