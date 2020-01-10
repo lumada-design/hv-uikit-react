@@ -324,7 +324,6 @@ class ServerSideAssetInventory extends React.Component {
         onSelection={event => console.log(event.target.value)}
         isSelectable
         actions={myActions}
-        maxVisibleActions={3}
         actionsCallback={(id, action) =>
           console.log(`You have pressed card ${id} with action ${action.label}`)
         }
