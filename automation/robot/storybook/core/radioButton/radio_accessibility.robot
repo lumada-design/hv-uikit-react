@@ -5,9 +5,10 @@ Test Template    pa11y should not find errors
 Force Tags       pa11y
 
 *** Variables ***
-${pa11y_script}    pa11y --runner htmlcs --runner axe --standard WCAG2AA --root-element "div[class|='Component-content']" ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--
+${pa11yScript}    pa11y --runner htmlcs --runner axe
+...                --standard WCAG2AA
+...                --root-element "div[class|='Component-content']"
+...                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--
 
 *** Test Cases ***
-storybook sample radiobuttonlabel against standard       ${pa11y_script}radiobuttonlabel
-storybook sample radiobuttononchange against standard    ${pa11y_script}radiobuttononchange
-storybook sample radiobuttonstate against standard       ${pa11y_script}radiobuttonstate
+radio button with state management against WCAG2AA standard       ${pa11yScript}radiobuttonstate
