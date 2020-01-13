@@ -168,6 +168,7 @@ class List extends React.Component {
         id={`${itemId}-selector`}
         label={item.label}
         checked={item.selected}
+        disabled={item.disabled}
         onChange={evt => this.handleSelect(evt, item)}
         classes={{
           container: classes.selectorContainer,
@@ -187,6 +188,7 @@ class List extends React.Component {
         id={`${itemId}-selector`}
         label={item.label}
         checked={item.selected}
+        disabled={item.disabled}
         classes={{
           container: classes.selectorContainer,
           labelTypography: classes.truncate
@@ -228,6 +230,7 @@ class List extends React.Component {
           classes.truncate,
           {
             [classes.selected]: item.selected,
+            [classes.textDisabled]: item.disabled,
             [classes.labelIconLeftPadding]: item.leftIcon || item.iconCallback,
             [classes.noIconLeftPadding]:
               !(item.leftIcon || item.iconCallback) && hasLeftIcons
