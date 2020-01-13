@@ -32,7 +32,7 @@ const styles = theme => ({
     paddingBottom: 0
   },
   listItemRoot: {
-    height: 32,
+    minHeight: 32,
     background: "none",
     marginBottom: "8px",
     "&:last-child": {
