@@ -19,12 +19,15 @@
 import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
+import { axe, toHaveNoViolations } from "jest-axe";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
 import DropdownWithStyles from "../index";
 import Dropdown from "../Dropdown";
 import List from "../List/List";
 import Typography from "../../Typography";
+
+expect.extend(toHaveNoViolations);
 
 const mockData = [
   {
@@ -123,7 +126,7 @@ describe("<Dropdown />", () => {
 
       dropdownComponent = wrapper.find(Dropdown);
       instance = dropdownComponent.instance();
-      instance.handleToggle({ stopPropagation: jest.fn() });
+      instance.handleToggle();
 
       expect(instance.state.isOpen).toBe(true);
     });
@@ -242,14 +245,34 @@ describe("<Dropdown />", () => {
       instance = dropdownComponent.instance();
 
       dropdownComponent
-        .find('Actions')
-        .find('HvButton')
+        .find("Actions")
+        .find("HvButton")
         .at(1)
         .simulate("click", {
           preventDefault() {}
         });
 
       expect(onChangeMock).toBeCalled();
+    });
+  });
+
+  describe("Dropdown A11Y", () => {
+    const onChangeMock = jest.fn();
+
+    it("with title", async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropdownWithStyles
+            values={mockData}
+            onChange={onChangeMock}
+            labels={{ title: "title" }}
+            expanded
+          />
+        </HvProvider>
+      );
+
+      const results = await axe(wrapper.getDOMNode()[1]);
+      expect(results).toHaveNoViolations();
     });
   });
 });

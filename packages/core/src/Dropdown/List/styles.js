@@ -16,25 +16,24 @@
 
 const styles = theme => ({
   rootList: {
-    maxWidth: 310,
-    minWidth: 310
+    width: 310
   },
   listContainer: {
     overflow: "auto",
     maxHeight: 270,
-    paddingLeft: "20px",
+    paddingLeft: `${theme.hv.spacing.sm}px`,
     marginRight: "2px",
     paddingRight: "18px",
-    paddingBottom: "20px"
+    paddingBottom: `${theme.hv.spacing.sm}px`
   },
   searchContainer: {
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    paddingBottom: "10px"
+    paddingLeft: `${theme.hv.spacing.sm}px`,
+    paddingRight: `${theme.hv.spacing.sm}px`,
+    paddingBottom: `${theme.hv.spacing.xs}px`
   },
   selectAllContainer: {
-    paddingLeft: "20px",
-    paddingRight: "20px",
+    paddingLeft: `${theme.hv.spacing.sm}px`,
+    paddingRight: `${theme.hv.spacing.sm}px`,
     width: "100%"
   },
   selectAll: {
@@ -55,13 +54,13 @@ const styles = theme => ({
   },
   listBorderUp: {
     display: "block",
-    height: "10px",
+    height: `${theme.hv.spacing.xs}px`,
     boxShadow: " 0px -5px 5px -4px rgba(65,65,65,.12)"
   },
 
   listBorderDown: {
     display: "block",
-    height: "20px",
+    height: `${theme.hv.spacing.sm}px`,
     marginTop: "12px",
     boxShadow: `0 0 0 ${
       theme.hv.palette.atmosphere.atmo1

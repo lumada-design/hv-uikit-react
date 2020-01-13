@@ -1,24 +1,25 @@
 *** Setting ***
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Library           SeleniumLibrary
-Resource          ../../_resources/storybook_keywords.robot
-Variables         ../../_resources/storybook_variables.yaml
-Variables         variables.yaml
-Default Tags      smoke
+Suite Setup                       open storybook
+Suite Teardown                    Close Browser
+Library                           SeleniumLibrary
+Resource                          ../../_resources/storybook_keywords.robot
+Variables                         ../../_resources/storybook_variables.yaml
+Variables                         variables.yaml
+Default Tags                      smoke
 
 
 *** Variables ***
-${startDay1}         xpath:(//p[text()=1])[1]
-${startDay20}        xpath:(//p[text()=20])[1]
-${endDay18}          xpath:(//p[text()=18])[2]
-${endDay1}           xpath:(//p[text()=1])[3]
-${labelInputDate}    css:input[placeholder='Select a range']
+${startDay1}                      xpath:(//p[text()=1])[1]
+${startDay20}                     xpath:(//p[text()=20])[1]
+${endDay18}                       xpath:(//p[text()=18])[2]
+${endDay1}                        xpath:(//p[text()=1])[3]
+${labelInputDate}                 css:input[placeholder='Select a range']
 
 
 *** Test Cases ***
 Verify default dates
-    [Tags]    issue-ie
+    #Problem with the IE driver that indicates that the button isn't displayed.
+    [Tags]                                      issue-ie
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun, 2019 - 10 Jun, 2019
@@ -50,7 +51,8 @@ Change range dates with clicks
     Element Attribute Value Should Be           ${startInput}        value         20 Jun, 2019
 
 Change range dates with inputs
-    [Tags]    issue-ie    
+    #Problem with the IE driver that indicates that the button isn't displayed.
+    [Tags]                                      issue-ie             
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker

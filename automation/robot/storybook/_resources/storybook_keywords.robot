@@ -185,3 +185,8 @@ set focus and press keys
     ...    
     Set Focus To Element    ${locator}
     Press Keys              none          ${keys}
+
+wait until element attribute value contain
+    [Arguments]    ${locator}    ${attribute}    ${expected}
+    [Documentation]    retry 3 times every second until keyword succeed    
+    Wait Until Keyword Succeeds    3    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected} 

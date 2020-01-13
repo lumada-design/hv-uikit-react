@@ -131,7 +131,7 @@ class List extends React.Component {
       selectable,
       condensed
     } = this.props;
-    const { internalId } = this.state;
+    const { internalId, selection, anySelected } = this.state;
 
     const itemId = `${internalId}-item-${i}`;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -143,7 +143,7 @@ class List extends React.Component {
         disabled={item.disabled}
         strategy={selectable ? "listbox" : "menubar"}
         configuration={{
-          tabIndex: i === 0 ? 0 : -1
+          tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
         }}
       >
         <li

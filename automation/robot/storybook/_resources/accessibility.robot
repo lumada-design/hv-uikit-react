@@ -14,7 +14,7 @@ files should be equal
     @{args}                        Set Variable           diff           --ignore-blank-lines    --ignore-space-at-eol    --ignore-cr-at-eol    --no-index      --word-diff
     ${gitResult}=                  Run Process            git            @{args}                ${AfilePath}             ${BfilePath}          timeout=120s
     Should Be Empty                ${gitResult.stdout}
-    Should Be Equal As Integers    ${gitResult.rc}        0              ${gitResult.stderr}
+    Should Be Equal As Integers    ${gitResult.rc}        0       ${gitResult.stderr}
 
 pa11y result should be equal as file
     [Arguments]    ${pa11yScript}    ${expectedFile}
