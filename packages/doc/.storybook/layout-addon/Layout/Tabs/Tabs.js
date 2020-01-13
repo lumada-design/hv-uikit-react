@@ -15,6 +15,7 @@
  */
 
 import React from "react";
+import { basename } from "path";
 import PropTypes from "prop-types";
 import MUITabs from "@material-ui/core/Tabs";
 import MUITab from "@material-ui/core/Tab";
@@ -62,25 +63,17 @@ class Tabs extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      parameters,
-      propsMetaData,
-      descriptionMetadata,
-      theme
-    } = this.props;
+    const { classes, parameters, propsMetaData, theme } = this.props;
     const { value } = this.state;
 
-    let showAccessibility;
-    const showCssTab = !isNil(propsMetaData) && !isNil(propsMetaData.classes);
-
+    let accessPage = null;
     try {
-      showAccessibility = require(`../../../../pages/components/${
-        parameters.title
-      }/accessibility.md`);
-    } catch (error) {
-      showAccessibility = false;
-    }
+      const folder = basename(parameters.fileName, ".js").toLowerCase();
+      accessPage = require(`../../../../pages/components/${folder}/accessibility.md`);
+    } catch (error) {}
+
+    const showCssTab = !isNil(propsMetaData) && !isNil(propsMetaData.classes);
+    const showAccessibilityTab = !isNil(accessPage);
 
     return (
       <div className={classes.root}>
@@ -106,7 +99,7 @@ class Tabs extends React.Component {
               label="CSS"
             />
           )}
-          {showAccessibility && (
+          {showAccessibilityTab && (
             <MUITab
               disableRipple
               classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
@@ -118,12 +111,7 @@ class Tabs extends React.Component {
           {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
-          {value === 3 && (
-            <Accessibility
-              descriptionMetadata={descriptionMetadata}
-              componentName={parameters.title}
-            />
-          )}
+          {value === 3 && <Accessibility pageData={accessPage.default} />}
         </div>
       </div>
     );
