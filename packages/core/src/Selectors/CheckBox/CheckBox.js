@@ -53,16 +53,15 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
  * @returns {Object} - an Object with the selected icons.
  */
 const prepareIcon = ({ classes, theme, disabled }) => {
-  const iconClasses = classNames(classes.icon);
   const color = disabled
     ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
     : null;
 
   return {
-    emptyIcon: <CheckBoxIcon color={color} className={iconClasses} />,
-    checkedIcon: <CheckBoxCheckedIcon color={color} className={iconClasses} />,
+    emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
+    checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
     indeterminateIcon: (
-      <CheckBoxPartialIcon color={color} className={iconClasses} />
+      <CheckBoxPartialIcon color={color} className={classes.icon} />
     )
   };
 };
@@ -83,7 +82,6 @@ const HvCheckbox = props => {
     propsIcon,
     checkboxProps,
     propsLabel,
-    theme,
     ...other
   } = props;
   const materialPrimaryColor = "primary";
@@ -187,22 +185,6 @@ HvCheckbox.propTypes = {
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
-    /**
-     * Styles applied to the icon when not selected.
-     */
-    iconEmpty: PropTypes.string,
-    /**
-     * Styles applied to the icon when selected.
-     */
-    iconFull: PropTypes.string,
-    /**
-     * Styles applied to the icon when disable.
-     */
-    iconDisabled: PropTypes.string,
-    /**
-     * Styles applied to the icon when indeterminate.
-     */
-    iconIndeterminate: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.
