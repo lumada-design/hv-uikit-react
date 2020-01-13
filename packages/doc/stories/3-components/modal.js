@@ -33,7 +33,7 @@ storiesOf("Components/Modal", module).add("Modal", () => <HvModal />, {
     {
       title: "2. with custom icon",
       description:
-        "The standard icon can be replaced by a custom or just removed.",
+        "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button",
       src: "components/modal/modal2"
     },
     {

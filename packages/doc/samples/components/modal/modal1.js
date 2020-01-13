@@ -26,7 +26,11 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
 
   return (
     <div>
-      <HvButton style={btnStyle} onClick={() => setOpen(true)}>
+      <HvButton
+        id={buttonMessage}
+        style={btnStyle}
+        onClick={() => setOpen(true)}
+      >
         {buttonMessage}
       </HvButton>
       <HvModal
@@ -45,8 +49,8 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton category="ghost">Switch anyway</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="switchAnyway" category="ghost">Switch anyway</HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvModalActions>

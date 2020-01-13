@@ -19,16 +19,38 @@ exports[`Modal Component allows external props to be added 1`] = `
   className=""
   disableBackdropClick={true}
   disableEscapeKeyDown={true}
+  id={
+    Array [
+      "hv-modal-5",
+      [Function],
+    ]
+  }
   onClose={[Function]}
   open={true}
 >
-  <HvButton
-    category="ghost"
-    onClick={[Function]}
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "initialFocus": undefined,
+      }
+    }
+    paused={false}
   >
-    <WithStyles(Close) />
-  </HvButton>
-  Modal Content
+    <div>
+      <HvButton
+        category="ghost"
+        id="hv-modal-5,function () { [native code] }-close"
+        onClick={[Function]}
+      >
+        <WithStyles(Close) />
+      </HvButton>
+      Modal Content
+    </div>
+  </FocusTrap>
 </WithStyles(Dialog)>
 `;
 
@@ -49,17 +71,39 @@ exports[`Modal Component allows external styles to be added 1`] = `
     }
   }
   className="testClassRoot"
+  id={
+    Array [
+      "hv-modal-7",
+      [Function],
+    ]
+  }
   onClose={[Function]}
   open={true}
 >
-  <HvButton
-    category="ghost"
-    className="testClassCloseButton"
-    onClick={[Function]}
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "initialFocus": undefined,
+      }
+    }
+    paused={false}
   >
-    <WithStyles(Close) />
-  </HvButton>
-  Modal Content
+    <div>
+      <HvButton
+        category="ghost"
+        className="testClassCloseButton"
+        id="hv-modal-7,function () { [native code] }-close"
+        onClick={[Function]}
+      >
+        <WithStyles(Close) />
+      </HvButton>
+      Modal Content
+    </div>
+  </FocusTrap>
 </WithStyles(Dialog)>
 `;
 
@@ -80,16 +124,38 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     }
   }
   className=""
+  id={
+    Array [
+      "hv-modal-8",
+      [Function],
+    ]
+  }
   onClose={[Function]}
   open={true}
 >
-  <HvButton
-    category="ghost"
-    onClick={[Function]}
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "initialFocus": undefined,
+      }
+    }
+    paused={false}
   >
-    <WithStyles(Close) />
-  </HvButton>
-  Modal Content
+    <div>
+      <HvButton
+        category="ghost"
+        id="hv-modal-8,function () { [native code] }-close"
+        onClick={[Function]}
+      >
+        <WithStyles(Close) />
+      </HvButton>
+      Modal Content
+    </div>
+  </FocusTrap>
 </WithStyles(Dialog)>
 `;
 
@@ -110,16 +176,38 @@ exports[`Modal Component should render correctly if closed 1`] = `
     }
   }
   className=""
+  id={
+    Array [
+      "hv-modal-3",
+      [Function],
+    ]
+  }
   onClose={[Function]}
   open={false}
 >
-  <HvButton
-    category="ghost"
-    onClick={[Function]}
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "initialFocus": undefined,
+      }
+    }
+    paused={false}
   >
-    <WithStyles(Close) />
-  </HvButton>
-  Modal Content
+    <div>
+      <HvButton
+        category="ghost"
+        id="hv-modal-3,function () { [native code] }-close"
+        onClick={[Function]}
+      >
+        <WithStyles(Close) />
+      </HvButton>
+      Modal Content
+    </div>
+  </FocusTrap>
 </WithStyles(Dialog)>
 `;
 
@@ -140,16 +228,38 @@ exports[`Modal Component should render correctly if opened 1`] = `
     }
   }
   className=""
+  id={
+    Array [
+      "hv-modal-1",
+      [Function],
+    ]
+  }
   onClose={[Function]}
   open={true}
 >
-  <HvButton
-    category="ghost"
-    onClick={[Function]}
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+        "escapeDeactivates": false,
+        "initialFocus": undefined,
+      }
+    }
+    paused={false}
   >
-    <WithStyles(Close) />
-  </HvButton>
-  Modal Content
+    <div>
+      <HvButton
+        category="ghost"
+        id="hv-modal-1,function () { [native code] }-close"
+        onClick={[Function]}
+      >
+        <WithStyles(Close) />
+      </HvButton>
+      Modal Content
+    </div>
+  </FocusTrap>
 </WithStyles(Dialog)>
 `;
 

@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-
+import FocusTrap from "focus-trap-react";
+import uniqueId from "lodash/uniqueId";
 import Dialog from "@material-ui/core/Dialog";
 
 import Close from "@hv/uikit-react-icons/dist/Generic/Close";
@@ -34,41 +35,75 @@ import Button from "../Button";
  * @returns {*}
  * @constructor
  */
-const Main = ({ classes, className, id, children, open, onClose, ...others }) => (
-  <Dialog
-    className={classNames(classes.root, className)}
-    id={id}
-    open={open}
-    PaperProps={{
-      classes: {
-        root: classes.paper
-      }
-    }}
-    BackdropProps={{
-      classes: {
-        root: classes.background
-      }
-    }}
-    onClose={(event, reason) => onClose(event, reason)}
-    {...others}
-  >
-    <Button
-      className={classes.closeButton}
-      category="ghost"
-      onClick={event => onClose(event)}
-    >
-      <Close className={classes.iconContainer} />
-    </Button>
-    {children}
-  </Dialog>
-);
+const Main = ({
+  classes,
+  className,
+  id,
+  children,
+  open,
+  onClose,
+  firstFocusable,
+  ...others
+}) => {
+  const [internalId] = useState(id || uniqueId("hv-modal-"));
 
+  const initialFocus =
+    firstFocusable
+      ? () => {
+          if (!document.getElementById(firstFocusable)) {
+            console.warn(`firstFocusable element ${firstFocusable} not found.`);
+            return null;
+          }
+          return document.getElementById(firstFocusable);
+        }
+      : undefined;
+
+  return (
+    <Dialog
+      className={classNames(classes.root, className)}
+      id={internalId}
+      open={open}
+      PaperProps={{
+        classes: {
+          root: classes.paper
+        }
+      }}
+      BackdropProps={{
+        classes: {
+          root: classes.background
+        }
+      }}
+      onClose={(event, reason) => onClose(event, reason)}
+      {...others}
+    >
+      <FocusTrap
+        focusTrapOptions={{
+          escapeDeactivates: false,
+          clickOutsideDeactivates: true,
+          initialFocus
+        }}
+      >
+        <div>
+          <Button
+            id={`${internalId}-close`}
+            className={classes.closeButton}
+            category="ghost"
+            onClick={event => onClose(event)}
+          >
+            <Close className={classes.iconContainer} />
+          </Button>
+          {children}
+        </div>
+      </FocusTrap>
+    </Dialog>
+  );
+};
 Main.propTypes = {
   /**
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
@@ -100,12 +135,17 @@ Main.propTypes = {
   /**
    * Function executed on close.
    */
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  /**
+   * Element id that should be focus when the modal opens.
+   */
+  firstFocusable: PropTypes.string
 };
 
 Main.defaultProps = {
   className: "",
-  id: undefined
+  id: undefined,
+  firstFocusable: undefined
 };
 
 export default Main;
