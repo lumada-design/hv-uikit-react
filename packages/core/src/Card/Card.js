@@ -94,6 +94,7 @@ const Main = ({
       {innerCardContent && <Content innerCardContent={innerCardContent} />}
       {footerExist && (
         <Footer
+          disableActionSpacing // disableSpacing Mui v4
           checkboxValue={checkboxValue}
           actions={actions}
           id={id}

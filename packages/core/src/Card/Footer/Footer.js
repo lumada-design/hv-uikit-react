@@ -17,73 +17,10 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
-import take from "lodash/take";
-import takeRight from "lodash/takeRight";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckBox from "../../Selectors/CheckBox";
-import HvButton from "../../Button";
-import DropDownMenu from "../../DropDownMenu";
-
-const FooterActions = ({
-  actions,
-  id,
-  actionsCallback,
-  classes,
-  maxVisibleActions,
-  actionItemWidth
-}) => {
-  if (!Array.isArray(actions)) {
-    return React.isValidElement(actions) ? actions : null;
-  }
-
-  const renderButton = (action, key = "") => (
-    <HvButton
-      key={key}
-      disabled={action.disabled}
-      onClick={() => actionsCallback(id, action)}
-      category="ghost"
-    >
-      {(action.icon && action.icon()) ||
-        (action.iconCallback && action.iconCallback())}
-      {action.label}
-    </HvButton>
-  );
-
-  const renderActionsGrid = (acts, actWidth) => {
-    const actsSliceLeft = take(acts, maxVisibleActions);
-    const actsSliceRight = takeRight(acts, acts.length - maxVisibleActions);
-
-    return (
-      <div
-        className={classes.actionContainer}
-        style={actWidth !== undefined ? { width: `${actWidth}px` } : undefined}
-      >
-        {actsSliceLeft.map((action, idx) =>
-          renderButton(action, `${id}-${idx}-action-${action.id}`)
-        )}
-        <DropDownMenu
-          icon={<MoreVert className={classes.box} />}
-          placement="left"
-          onClick={action => actionsCallback(id, action)}
-          dataList={actsSliceRight.map(action => ({
-            ...action,
-            iconCallback: action.iconCallback,
-            icon: action.icon
-          }))}
-          keepOpened={false}
-        />
-      </div>
-    );
-  };
-
-  return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions, actionItemWidth)
-    : actions.map((action, idx) =>
-        renderButton(action, `${id}-${idx}-action-${action.id}`)
-      );
-};
+import Actions from "../../Actions";
 
 /**
  * The footer container contains the actions of the cards also
@@ -139,9 +76,8 @@ const Footer = ({
         ]
       }
     >
-      <FooterActions
+      <Actions
         id={checkboxValue || id}
-        classes={classes}
         actions={actions}
         maxVisibleActions={maxVisibleActions}
         actionItemWidth={actionItemWidth}

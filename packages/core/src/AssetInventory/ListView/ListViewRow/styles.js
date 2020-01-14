@@ -60,13 +60,6 @@ const styles = theme => ({
       top: 0,
       left: 0
     }
-  },
-  actionGrid: {
-    display: "flex"
-  },
-  box: {
-    width: "32px",
-    height: "32px"
   }
 });
 

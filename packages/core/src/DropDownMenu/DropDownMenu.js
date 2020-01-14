@@ -72,9 +72,9 @@ const DropDownMenu = ({
   }, [open]);
 
   return (
-    <div {...id && { id }} className={classes.root}>
+    <div {...(id && { id })} className={classes.root}>
       <IconButton
-        {...id && { id: `${id}-icon-button` }}
+        {...(id && { id: `${id}-icon-button` })}
         buttonRef={anchorRef}
         aria-controls={open ? `${id}-dropdown-menu` : undefined}
         aria-haspopup="true"
@@ -82,9 +82,9 @@ const DropDownMenu = ({
         className={classNames(classes.icon, {
           [classes.iconSelected]: open
         })}
-        onKeyDown={(event) => {
-          handleToggle(event)
-          event.preventDefault()
+        onKeyDown={event => {
+          handleToggle(event);
+          event.preventDefault();
         }}
       >
         {icon}
@@ -100,7 +100,7 @@ const DropDownMenu = ({
         <ClickAwayListener onClickAway={handleClose}>
           <div className={classes.menuList}>
             <List
-              {...id && { id: `${id}-dropdown-menu` }}
+              {...(id && { id: `${id}-dropdown-menu` })}
               values={dataList}
               selectable={false}
               onClick={item => {
@@ -187,7 +187,7 @@ DropDownMenu.propTypes = {
 DropDownMenu.defaultProps = {
   id: undefined,
   placement: "left",
-  disablePortal: true,
+  disablePortal: false,
   onClick: null,
   keepOpened: true
 };

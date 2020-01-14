@@ -40,9 +40,6 @@ const styles = theme => ({
   iconContainer: {
     width: "32px",
     height: "32px"
-  },
-  separator: {
-    paddingLeft: `${theme.spacing.xs}px`
   }
 });
 
