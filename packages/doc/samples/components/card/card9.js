@@ -25,10 +25,10 @@ const StyledUploadIcon = withStyles(styles, { withTheme: true })(({classes}) => 
 const StyledDeleteIcon = withStyles(styles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
 
 const myActions = [
-  { id: "post", label: "Add", icon: () => <StyledAddIcon />, disabled: false },
-  { id: "get", label: "Preview", icon: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Upload", icon: () => <StyledUploadIcon />, disabled: true },
-  { id: "delete", label: "Delete", icon: ()=> <StyledDeleteIcon />, disabled: false }
+  { id: "post", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: false },
+  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
+  { id: "put", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: true },
+  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
 ];
 
 export default (

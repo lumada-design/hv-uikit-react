@@ -18,25 +18,61 @@ import _ from "lodash";
 
 const styles = theme => {
   const semantics = _.mapValues(theme.hv.palette.semantic, value => ({
-    "&::before": {
-      background: value
-    }
+      position: "absolute",
+      backgroundColor: value,
+      width: "100%",
+      height: "2px",
+      top: -1,
+      right: 0,
+      zIndex: 1
   }));
 
   return {
     root: {
       boxSizing: "content-box",
-      "&::before": {
-        content: "''",
-        height: 2,
-        width: "100%",
-        display: "block",
-        background: theme.hv.palette.atmosphere.atmo6
-      }
+      position: "relative"
+    },
+    sema0 : {
+      position: "absolute",
+      backgroundColor: theme.hv.palette.atmosphere.atmo6,
+      width: "100%",
+      height: "2px",
+      top: -1,
+      right: 0,
+      zIndex: 1
     },
     ...semantics,
+    semanticSelected: {
+      height: "4px",
+    },
+    semanticContainer: {
+      width: "100%",
+      position: "relative",
+    },
+    cardOutLine: {
+      width: "98%",
+      height: "98%",
+      position: "absolute",
+      zIndex: "1",
+      border: `2px solid Highlight`,
+      top: 0,
+      left: "0.5%",
+      backgroundColor: "transparent",
+      display: "none"
+    },
+    upperAreaReference: {
+      position: "relative",
+     // "&:focus-within > div > div": {
+       // display: "block"
+     // }
+    },
+    upperArea: {
+     // outline: "none"
+    },
+    upperAreaSelectable: {
+      cursor: "pointer"
+    },
     selectable: {
-      cursor: "pointer",
       "&:hover": {
         outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
       }
