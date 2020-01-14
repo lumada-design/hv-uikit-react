@@ -58,5 +58,12 @@ const labels = {
 };
 
 export default (
-  <HvDropdown id="dropdown2" expanded values={data} multiSelect showSearch labels={labels} className="bananas"/>
+  <HvDropdown
+    id="dropdown2"
+    expanded
+    values={data}
+    multiSelect
+    showSearch
+    labels={labels}
+  />
 );

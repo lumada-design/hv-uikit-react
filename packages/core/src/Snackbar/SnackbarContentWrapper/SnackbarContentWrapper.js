@@ -19,25 +19,7 @@ import PropTypes, { oneOfType } from "prop-types";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
-import HvButton from "../../Button";
-
-const renderAction = (action, actionsCallback, id) => {
-  if (React.isValidElement(action)) {
-    return action;
-  }
-
-  return (
-    <HvButton
-      disabled={action.disabled}
-      onClick={() => actionsCallback(id, action)}
-      category="semantic"
-    >
-      {(action.icon && action.icon()) ||
-        (action.iconCallback && action.iconCallback())}
-      {action.label}
-    </HvButton>
-  );
-};
+import Actions from "../../Actions";
 
 const HvSnackbarContentWrapper = ({
   id,
@@ -51,6 +33,7 @@ const HvSnackbarContentWrapper = ({
   ...other
 }) => {
   const icon = customIcon || (showIcon && variantIcon(variant));
+  const innerAction = React.isValidElement(action) ? action : [action];
 
   return (
     <SnackbarContent
@@ -72,7 +55,11 @@ const HvSnackbarContentWrapper = ({
           />
           {action && (
             <div {...(id && { id: `${id}-action` })} className={classes.action}>
-              {action && renderAction(action, actionCallback, id)}
+              <Actions
+                category="semantic"
+                actions={innerAction}
+                actionsCallback={actionCallback}
+              />
             </div>
           )}
         </div>

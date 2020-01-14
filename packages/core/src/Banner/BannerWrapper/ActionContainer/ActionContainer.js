@@ -19,7 +19,7 @@
 import React from "react";
 import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import PropTypes, { oneOfType } from "prop-types";
-import renderAction from "../ActionRender/ActionRender";
+import Actions from "../../../Actions";
 
 /**
  * Container for the actions. This actions include:
@@ -37,32 +37,33 @@ const ActionContainer = ({
   onClose,
   action,
   actionCallback
-}) => {
-  let renderedAction;
-  if (action)
-    renderedAction = renderAction(action, actionCallback, id);
-
-  return (
-    <div className={classes.actionContainer}>
-      <div
-        className={classes.closeAction}
-        role="button"
-        onClick={onClose}
-        tabIndex={0}
-        onKeyDown={onClose}
-      >
-        <Close
-          iconSize="XS"
-          className={classes.iconContainer}
-          color={[theme.hv.palette.base.base2]}
+}) => (
+  <div className={classes.actionContainer}>
+    <div
+      className={classes.closeAction}
+      role="button"
+      onClick={onClose}
+      tabIndex={0}
+      onKeyDown={onClose}
+    >
+      <Close
+        iconSize="XS"
+        className={classes.iconContainer}
+        color={[theme.hv.palette.base.base2]}
+      />
+    </div>
+    {action && (
+      <div className={classes.actionsInnerContainer}>
+        <Actions
+          id={id}
+          category="semantic"
+          actions={action}
+          actionsCallback={actionCallback}
         />
       </div>
-      {(renderedAction &&
-        <div className={classes.actionsInnerContainer}>{renderedAction}</div>
-      )}
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 ActionContainer.propTypes = {
   /**

@@ -20,6 +20,7 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import Footer from "../Footer";
+import Actions from "../../../Actions";
 
 const myActions = [
   {
@@ -51,7 +52,7 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.dive().find("FooterActions").dive()).toMatchSnapshot();
+    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
 
     wrapper = shallow(
       <Footer
@@ -63,7 +64,7 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.dive().find("FooterActions").dive()).toMatchSnapshot();
+    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
 
     wrapper = shallow(
       <Footer
@@ -75,6 +76,6 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.dive().find("FooterActions").dive()).toMatchSnapshot();
+    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
   });
 });
