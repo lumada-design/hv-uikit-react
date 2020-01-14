@@ -1,2 +1,2 @@
-import * as HvFooter from "./@types/HvFooter"
-import * as HvSlider from "./@types/HvSlider"
+import "./@types/HvFooter"
+import "./@types/HvSlider"
