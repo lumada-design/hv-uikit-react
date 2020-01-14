@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
@@ -49,56 +49,21 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
 /**
  * Chooses the correct icon to used based on the disable value.
  *
- * @param {Boolean} disabled - `true` if the disabled icon is required.
+ * @param {Object} props - HvCheckbox props.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = (classes, checked, disabled, theme) => {
+const prepareIcon = ({ classes, theme, disabled }) => {
+  const color = disabled
+    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
+    : null;
 
-  const disabledIcon = (
-    <CheckBoxIcon
-      className={classes.box}
-      color={[
-        theme.hv.palette.atmosphere.atmo4,
-        theme.hv.palette.atmosphere.atmo6
-      ]}
-    />
-  );
-
-  const disabledCheckedIcon = (
-    <CheckBoxCheckedIcon
-      className={classes.box}
-      color={[
-        theme.hv.palette.atmosphere.atmo4,
-        theme.hv.palette.atmosphere.atmo6
-      ]}
-    />
-  );
-
-  const disabledPartialIcon = (
-    <CheckBoxPartialIcon
-      className={classes.box}
-      color={[
-        theme.hv.palette.atmosphere.atmo4,
-        theme.hv.palette.atmosphere.atmo6
-      ]}
-    />
-  );
-
-  const icons = {
-    emptyIcon: disabledIcon,
-    checkedIcon: disabledCheckedIcon,
-    indeterminate: disabledPartialIcon
+  return {
+    emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
+    checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
+    indeterminateIcon: (
+      <CheckBoxPartialIcon color={color} className={classes.icon} />
+    )
   };
-
-  if (disabled) {
-    return icons;
-  }
-
-  icons.emptyIcon = <CheckBoxIcon className={classes.box} />;
-  icons.checkedIcon = <CheckBoxCheckedIcon className={classes.box} />;
-  icons.indeterminateIcon = <CheckBoxPartialIcon className={classes.box} />;
-
-  return icons;
 };
 
 const HvCheckbox = props => {
@@ -117,11 +82,10 @@ const HvCheckbox = props => {
     propsIcon,
     checkboxProps,
     propsLabel,
-    theme
+    ...other
   } = props;
-
   const materialPrimaryColor = "primary";
-  const icons = prepareIcon(classes, checked, disabled, theme,);
+  const icons = prepareIcon(props);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
   const [internalId] = useState(id || uniqueId("hv-checkbox-"));
@@ -171,6 +135,7 @@ const HvCheckbox = props => {
           indeterminate={indeterminate}
           {...checkboxProps}
           {...propsLabel}
+          {...other}
         />
       }
       {...formControlLabelProps}
@@ -220,22 +185,6 @@ HvCheckbox.propTypes = {
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
-    /**
-     * Styles applied to the icon when not selected.
-     */
-    iconEmpty: PropTypes.string,
-    /**
-     * Styles applied to the icon when selected.
-     */
-    iconFull: PropTypes.string,
-    /**
-     * Styles applied to the icon when disable.
-     */
-    iconDisable: PropTypes.string,
-    /**
-     * Styles applied to the icon when indeterminate.
-     */
-    iconIndeterminate: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.
