@@ -5,7 +5,7 @@
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
         "runner": "htmlcs",
         "runnerExtras": {},
-        "selector": "#hv-checkbox-4 > span:nth-child(2)",
+        "selector": "#checkState4 > span:nth-child(2)",
         "type": "error",
         "typeCode": 1
     },
@@ -15,7 +15,7 @@
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
         "runner": "htmlcs",
         "runnerExtras": {},
-        "selector": "#hv-checkbox-5 > span:nth-child(2)",
+        "selector": "#checkState5 > span:nth-child(2)",
         "type": "error",
         "typeCode": 1
     },
@@ -25,7 +25,7 @@
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
         "runner": "htmlcs",
         "runnerExtras": {},
-        "selector": "#hv-checkbox-6 > span:nth-child(2)",
+        "selector": "#checkState6 > span:nth-child(2)",
         "type": "error",
         "typeCode": 1
     }

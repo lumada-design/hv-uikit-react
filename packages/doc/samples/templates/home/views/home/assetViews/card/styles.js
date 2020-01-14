@@ -32,7 +32,7 @@ const styles = theme => ({
   timestamp: {
     paddingRight: `${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo1}`
+    borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
   },
   container: {
     marginLeft: "-15px"
