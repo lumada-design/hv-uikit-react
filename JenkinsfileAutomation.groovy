@@ -15,11 +15,10 @@ pipeline {
             steps {
                 build job: "ui-kit/react/alpha", parameters: [
                     booleanParam(name: 'skipLint', value: false),
-                    booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: true),
                     booleanParam(name: 'skipAutomationTest', value: false),
-                    booleanParam(name: 'skipPublishDoc', value: true),
-                    booleanParam(name: 'skipPublish', value: true)
+                    booleanParam(name: 'skipPublish', value: true),
+                    booleanParam(name: 'skipPublishDoc', value: true)
                 ]
             }
         }
