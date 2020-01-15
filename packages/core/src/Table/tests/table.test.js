@@ -411,42 +411,83 @@ describe("Hv Table", () => {
       instance.onFetchDataInternal(instance.state);
       expect(fetchDataMock).toHaveBeenCalled();
     });
-  });
 
-  it("should render extra column for secondary actions", () => {
-    const classesToApply = {
-      alphaNumeric: "alphaNumeric-random",
-      numeric: "numeric-random",
-      secondaryAction: "secondaryAction-random"
-    };
-    const columns = [
-      { id: 1, Header: "column 1", desc: false },
-      { id: 2, Header: "column 2" },
-      { id: 3, Header: "column 3" }
-    ];
-    wrapper = mount(
-      <HvProvider>
-        <HvTable
-          classes={classesToApply}
-          columns={columns}
-          data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-          pageSize={5}
-          secondaryActions={[
-            {
-              label: "label 1",
-              action: () => {}
-            },
-            {
-              label: "label 2",
-              action: () => {}
-            }
-          ]}
-        />
-      </HvProvider>
-    );
+    it("should render extra column for secondary actions", () => {
+      const classesToApply = {
+        alphaNumeric: "alphaNumeric-random",
+        numeric: "numeric-random",
+        secondaryAction: "secondaryAction-random"
+      };
+      const columns = [
+        { id: 1, Header: "column 1", desc: false },
+        { id: 2, Header: "column 2" },
+        { id: 3, Header: "column 3" }
+      ];
+      wrapper = mount(
+        <HvProvider>
+          <HvTable
+            classes={classesToApply}
+            columns={columns}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
+            pageSize={5}
+            secondaryActions={[
+              {
+                label: "label 1",
+                action: () => {}
+              },
+              {
+                label: "label 2",
+                action: () => {}
+              }
+            ]}
+          />
+        </HvProvider>
+      );
 
-    expect(columns.length).toEqual(4);
-    const dropdowns = wrapper.find(DropDownMenu);
-    expect(dropdowns.length).toEqual(3);
+      expect(columns.length).toEqual(4);
+      const dropdowns = wrapper.find(DropDownMenu);
+      expect(dropdowns.length).toEqual(3);
+    });
+
+    it("should not render secondary actions when noActions set", () => {
+      const classesToApply = {
+        alphaNumeric: "alphaNumeric-random",
+        numeric: "numeric-random",
+        secondaryAction: "secondaryAction-random"
+      };
+      const columns = [
+        { id: 1, Header: "column 1", desc: false },
+        { id: 2, Header: "column 2" },
+        { id: 3, Header: "column 3" }
+      ];
+      wrapper = mount(
+        <HvProvider>
+          <HvTable
+            classes={classesToApply}
+            columns={columns}
+            data={[
+              { t1: "test1" },
+              { t1: "test2" },
+              { t1: "test3", noActions: true }
+            ]}
+            pageSize={5}
+            secondaryActions={[
+              {
+                label: "label 1",
+                action: () => {}
+              },
+              {
+                label: "label 2",
+                action: () => {}
+              }
+            ]}
+          />
+        </HvProvider>
+      );
+
+      expect(columns.length).toEqual(4);
+      const dropdowns = wrapper.find(DropDownMenu);
+      expect(dropdowns.length).toEqual(2);
+    });
   });
 });
