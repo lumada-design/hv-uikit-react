@@ -24,7 +24,7 @@ import RadioButtonOnChange from "../../../../packages/doc/samples/components/rad
 import RadioButtonOnChangeDisabled from "../../../../packages/doc/samples/components/radioButton/radioButtonOnChangeDisabled";
 import RadioButtonSimple from "../../../../packages/doc/samples/components/radioButton/radioButtonSimple";
 import RadioButtonState from "../../../../packages/doc/samples/components/radioButton/radioButtonState";
-import RadioButtonCheckedDisabled from "../custom/radioButtonCheckedDisabled";
+import RadioButtonCheckedDisabled from "../../../../packages/doc/samples/components/radioButton/radioButtonCheckedDisabled";
 
 // sample scenarios
 const samples = {};
