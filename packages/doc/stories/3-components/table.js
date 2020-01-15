@@ -62,7 +62,7 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
     {
       title: "7. With both checkbox and secondary actions",
       description:
-        "each row has a checkbox column and a dropdown menu with clickable actions",
+        "each row has a checkbox column and a dropdown menu with clickable actions. The secondary actions can be conditional.",
       src: "components/table/tableSecondary"
     },
     {
