@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.17.0...@hv/uikit-react-core@1.18.0) (2020-01-16)
+
+
+### Features
+
+* **typescript:** add index.d.ts to export the type definitions. [#533](https://github.com/pentaho/hv-uikit-react/issues/533)  ([8a4fc1e](https://github.com/pentaho/hv-uikit-react/commit/8a4fc1e))
+
+
+
+
+
 # [1.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.16.0...@hv/uikit-react-core@1.17.0) (2020-01-08)
 
 

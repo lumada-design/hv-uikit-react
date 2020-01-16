@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.15.0...@hv/uikit-react-lab@1.16.0) (2020-01-16)
+
+
+### Bug Fixes
+
+* **NavigationAnchors:** List items overlapping on long content. [#964](https://github.com/pentaho/hv-uikit-react/issues/964) ([460b19f](https://github.com/pentaho/hv-uikit-react/commit/460b19f))
+
+
+### Features
+
+* **typescript:** add index.d.ts to export the type definitions. [#533](https://github.com/pentaho/hv-uikit-react/issues/533)  ([8a4fc1e](https://github.com/pentaho/hv-uikit-react/commit/8a4fc1e))
+
+
+
+
+
 # [1.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.14.0...@hv/uikit-react-lab@1.15.0) (2020-01-08)
 
 
