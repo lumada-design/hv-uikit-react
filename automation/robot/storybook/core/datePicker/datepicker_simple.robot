@@ -24,7 +24,7 @@ Verify default date
     Element Attribute Value Should Be    ${input}                    value         1 Jan, 1970
 
 When delete date the default date is replaced
-    [Tags]    issue-ie    
+    [Tags]    issue-ie    issue-firefox
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970

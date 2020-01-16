@@ -19,7 +19,7 @@ Verify current date as default value
     Element Attribute Value Should Be    ${input}       value         ${day}/${month}/${year}
 
 When delete date is replaced with current date
-    [Tags]    issue-ie
+    [Tags]    issue-ie    issue-firefox
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
     Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker

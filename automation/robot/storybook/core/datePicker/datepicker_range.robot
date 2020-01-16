@@ -28,7 +28,7 @@ Verify default dates
     Element Attribute Value Should Be           ${endInput}          value         10 Jun, 2019
 
 When delete date the default date is replaced
-    [Tags]    issue-ie    
+    [Tags]    issue-ie    issue-firefox    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun, 2019 - 10 Jun, 2019
@@ -94,6 +94,7 @@ Select start date forward to the end date with inputs
     Element Attribute Value Should Be           ${endInput}          value         3 Jan, 2022
 
 Don't change dates with clicks in start date
+    [Tags]    issue-chrome
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -106,6 +107,7 @@ Don't change dates with clicks in start date
     Element Attribute Value Should Be           ${startInput}        value         5 Jun, 2019
 
 Don't change dates with clicks in end date
+    [Tags]    issue-chrome
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -142,6 +144,7 @@ Don't change dates with clicking in a end date and clicking cancel
     Element Attribute Value Should Be           ${endInput}          value         10 Jun, 2019
 
 Don't change dates with start input and clicking enter
+    [Tags]    issue-chrome    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -155,6 +158,7 @@ Don't change dates with start input and clicking enter
     Element Attribute Value Should Be           ${startInput}        value         5 Jun, 2019
 
 Don't change dates with end input and clicking enter
+    [Tags]    issue-chrome    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
