@@ -24,6 +24,10 @@ node('non-master') {
 
         def image
 
+        def is_master = env.BRANCH_NAME == releases_branch && !env.CHANGE_ID
+        // failing tests in master are a critical FAILURE
+        def failing_tests_result = is_master ? "FAILURE" : "UNSTABLE"
+
         stage('Checkout') {
             tryStep ({
                 checkout scm
@@ -51,8 +55,9 @@ node('non-master') {
                                 npm run lint
                             """
                         }
-                    }, "UNSTABLE")
+                    }, failing_tests_result)
                 } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] Lint skipped'
                 }
             }
@@ -75,10 +80,11 @@ node('non-master') {
                                 cp ${uikit_folder}/packages/lab/junit.xml ./packages/lab/junit.xml
                             """
                         }
-                    }, "UNSTABLE")
+                    }, failing_tests_result)
 
                     junit '**/junit.xml'
                 } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] JavaScript (jest) tests skipped'
                 }
             }
@@ -119,9 +125,10 @@ node('non-master') {
                                 ], propagate: true, wait: true
 
                             echo "[INFO] BUILD JOB RESULT: " + jobResult.getCurrentResult()
-                        }, "UNSTABLE")
+                        }, failing_tests_result)
                     }
                 } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] Cross-browser (robot) tests skipped'
                 }
             }
@@ -131,100 +138,100 @@ node('non-master') {
 
         parallel test_stages
 
-        def currentResult = currentBuild.currentResult
-        if (currentResult != 'UNSTABLE' && currentResult != 'FAILURE') {
-            if(env.BRANCH_NAME == releases_branch && !env.CHANGE_ID) {
-                tryStep ({
-                    // publish to npm repo
-                    image.inside(containerRunOptions('uikit_publish_packages')) {
-                        withCredentials([
-                            string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
-                            sshUserPrivateKey(credentialsId: 'ssh-buildguy-github', usernameVariable: 'GIT_USERNAME', keyFileVariable: 'GIT_KEY')
+        if(is_master) {
+            tryStep ({
+                // publish to npm repo
+                image.inside(containerRunOptions('uikit_publish_packages')) {
+                    withCredentials([
+                        string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
+                        sshUserPrivateKey(credentialsId: 'ssh-buildguy-github', usernameVariable: 'GIT_USERNAME', keyFileVariable: 'GIT_KEY')
+                    ]) {
+                        withEnv([
+                            "GIT_AUTHOR_NAME=$GIT_USERNAME",
+                            "GIT_COMMITTER_NAME=$GIT_USERNAME",
+                            "GIT_AUTHOR_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                            "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                            "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
                         ]) {
-                            withEnv([
-                                "GIT_AUTHOR_NAME=$GIT_USERNAME",
-                                "GIT_COMMITTER_NAME=$GIT_USERNAME",
-                                "GIT_AUTHOR_EMAIL=$GIT_USERNAME@hitachivantara.com",
-                                "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
-                                "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
-                            ]) {
-                                stage('Publish Packages') {
-                                    if(!params.skipPublish) {
-                                        withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                            sh label: 'npm run publish-x', script: """
-                                                #! /bin/sh -
-
-                                                # copy the npm configuration
-                                                cp .npmrc ${uikit_folder}/../.npmrc
-                                                cp .npmrc ${uikit_folder}/.npmrc
-
-                                                # copy the git repository
-                                                cp -R ./.git ${uikit_folder}/.git
-
-                                                cd ${uikit_folder}
-
-                                                # restore the files we didn't include in the docker image
-                                                git checkout ${env.BRANCH_NAME}
-                                                git reset --hard
-
-                                                npm run publish-${params.publishType} -- --no-git-reset
-                                            """
-
-                                            commitMessage = sh(returnStdout: true, script: """
-                                                #! /bin/sh -
-                                                cd ${uikit_folder}
-                                                git show -s --format=%B HEAD
-                                            """).trim()
-
-                                            commitTimestamp = sh(returnStdout: true, script: """
-                                                #! /bin/sh -
-                                                cd ${uikit_folder}
-                                                git show -s --format=%ct HEAD
-                                            """).trim()
-                                        }
-                                    } else {
-                                        echo '[INFO] Packages publishing skipped'
-                                    }
-                                }
-
-                                stage('Publish Documentation') {
-                                    if(!params.skipPublishDoc) {
-                                        sh label: 'npm run publish-documentation', script: """
+                            stage('Publish Packages') {
+                                if(!params.skipPublish) {
+                                    withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                        sh label: 'npm run publish-x', script: """
                                             #! /bin/sh -
 
+                                            # copy the npm configuration
+                                            cp .npmrc ${uikit_folder}/../.npmrc
+                                            cp .npmrc ${uikit_folder}/.npmrc
+
+                                            # copy the git repository
+                                            cp -R ./.git ${uikit_folder}/.git
+
                                             cd ${uikit_folder}
-                                            npm run build -- --scope @hv/uikit-react-doc
-                                            npm run publish-documentation --  --ci
+
+                                            # restore the files we didn't include in the docker image
+                                            git checkout ${env.BRANCH_NAME}
+                                            git reset --hard
+
+                                            npm run publish-${params.publishType} -- --no-git-reset
                                         """
-                                    } else {
-                                        echo '[INFO] Documentation (storybook) publishing skipped'
+
+                                        commitMessage = sh(returnStdout: true, script: """
+                                            #! /bin/sh -
+                                            cd ${uikit_folder}
+                                            git show -s --format=%B HEAD
+                                        """).trim()
+
+                                        commitTimestamp = sh(returnStdout: true, script: """
+                                            #! /bin/sh -
+                                            cd ${uikit_folder}
+                                            git show -s --format=%ct HEAD
+                                        """).trim()
                                     }
+                                } else {
+                                    echo '[INFO] Packages publishing skipped'
+                                }
+                            }
+
+                            stage('Publish Documentation') {
+                                if(!params.skipPublishDoc) {
+                                    sh label: 'npm run publish-documentation', script: """
+                                        #! /bin/sh -
+
+                                        cd ${uikit_folder}
+                                        npm run build -- --scope @hv/uikit-react-doc
+                                        npm run publish-documentation --  --ci
+                                    """
+                                } else {
+                                    echo '[INFO] Documentation (storybook) publishing skipped'
                                 }
                             }
                         }
                     }
-                })
-            } else {
-                stage('Publish Packages') {
-                    if(!params.skipPublish) {
-                        echo '[INFO] Not publishing non-release packages'
-                    } else {
-                        echo '[INFO] Packages publishing skipped'
-                    }
                 }
+            })
+        } else {
+            stage('Publish Packages') {
+                if(!params.skipPublish) {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] Not publishing non-release packages'
+                } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] Packages publishing skipped'
+                }
+            }
 
-                stage('Publish Documentation') {
-                    if(!params.skipPublishDoc) {
-                        // TODO: publish storybook for PR review
-                        echo '[INFO] Not publishing non-release documentation'
-                    } else {
-                        echo '[INFO] Documentation (storybook) publishing skipped'
-                    }
+            stage('Publish Documentation') {
+                if(!params.skipPublishDoc) {
+                    // TODO: publish storybook for PR review
+
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] Not publishing non-release documentation'
+                } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] Documentation (storybook) publishing skipped'
                 }
             }
         }
-
-        currentBuild.result == 'SUCCESS'
     } finally {
         def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
 
