@@ -43,20 +43,20 @@ const Main = ({
   open,
   onClose,
   firstFocusable,
+  buttonTitle,
   ...others
 }) => {
   const [internalId] = useState(id || uniqueId("hv-modal-"));
 
-  const initialFocus =
-    firstFocusable
-      ? () => {
-          if (!document.getElementById(firstFocusable)) {
-            console.warn(`firstFocusable element ${firstFocusable} not found.`);
-            return null;
-          }
-          return document.getElementById(firstFocusable);
+  const initialFocus = firstFocusable
+    ? () => {
+        if (!document.getElementById(firstFocusable)) {
+          console.warn(`firstFocusable element ${firstFocusable} not found.`);
+          return null;
         }
-      : undefined;
+        return document.getElementById(firstFocusable);
+      }
+    : undefined;
 
   return (
     <Dialog
@@ -83,12 +83,13 @@ const Main = ({
           initialFocus
         }}
       >
-        <div>
+        <div aria-modal>
           <Button
             id={`${internalId}-close`}
             className={classes.closeButton}
             category="ghost"
             onClick={event => onClose(event)}
+            title={buttonTitle}
           >
             <Close className={classes.iconContainer} />
           </Button>
@@ -139,13 +140,18 @@ Main.propTypes = {
   /**
    * Element id that should be focus when the modal opens.
    */
-  firstFocusable: PropTypes.string
+  firstFocusable: PropTypes.string,
+  /**
+   * Title for the button close.
+   */
+  buttonTitle: PropTypes.string
 };
 
 Main.defaultProps = {
   className: "",
   id: undefined,
-  firstFocusable: undefined
+  firstFocusable: undefined,
+  buttonTitle: "Close"
 };
 
 export default Main;

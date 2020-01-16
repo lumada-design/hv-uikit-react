@@ -19,12 +19,7 @@ exports[`Modal Component allows external props to be added 1`] = `
   className=""
   disableBackdropClick={true}
   disableEscapeKeyDown={true}
-  id={
-    Array [
-      "hv-modal-5",
-      [Function],
-    ]
-  }
+  id="hv-modal-5"
   onClose={[Function]}
   open={true}
 >
@@ -40,11 +35,14 @@ exports[`Modal Component allows external props to be added 1`] = `
     }
     paused={false}
   >
-    <div>
+    <div
+      aria-modal={true}
+    >
       <HvButton
         category="ghost"
-        id="hv-modal-5,function () { [native code] }-close"
+        id="hv-modal-5-close"
         onClick={[Function]}
+        title="Close"
       >
         <WithStyles(Close) />
       </HvButton>
@@ -71,12 +69,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
     }
   }
   className="testClassRoot"
-  id={
-    Array [
-      "hv-modal-7",
-      [Function],
-    ]
-  }
+  id="hv-modal-7"
   onClose={[Function]}
   open={true}
 >
@@ -92,12 +85,15 @@ exports[`Modal Component allows external styles to be added 1`] = `
     }
     paused={false}
   >
-    <div>
+    <div
+      aria-modal={true}
+    >
       <HvButton
         category="ghost"
         className="testClassCloseButton"
-        id="hv-modal-7,function () { [native code] }-close"
+        id="hv-modal-7-close"
         onClick={[Function]}
+        title="Close"
       >
         <WithStyles(Close) />
       </HvButton>
@@ -124,12 +120,7 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     }
   }
   className=""
-  id={
-    Array [
-      "hv-modal-8",
-      [Function],
-    ]
-  }
+  id="hv-modal-8"
   onClose={[Function]}
   open={true}
 >
@@ -145,11 +136,14 @@ exports[`Modal Component onClose should be called when close button is clicked 1
     }
     paused={false}
   >
-    <div>
+    <div
+      aria-modal={true}
+    >
       <HvButton
         category="ghost"
-        id="hv-modal-8,function () { [native code] }-close"
+        id="hv-modal-8-close"
         onClick={[Function]}
+        title="Close"
       >
         <WithStyles(Close) />
       </HvButton>
@@ -176,12 +170,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
     }
   }
   className=""
-  id={
-    Array [
-      "hv-modal-3",
-      [Function],
-    ]
-  }
+  id="hv-modal-3"
   onClose={[Function]}
   open={false}
 >
@@ -197,11 +186,14 @@ exports[`Modal Component should render correctly if closed 1`] = `
     }
     paused={false}
   >
-    <div>
+    <div
+      aria-modal={true}
+    >
       <HvButton
         category="ghost"
-        id="hv-modal-3,function () { [native code] }-close"
+        id="hv-modal-3-close"
         onClick={[Function]}
+        title="Close"
       >
         <WithStyles(Close) />
       </HvButton>
@@ -228,12 +220,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
     }
   }
   className=""
-  id={
-    Array [
-      "hv-modal-1",
-      [Function],
-    ]
-  }
+  id="hv-modal-1"
   onClose={[Function]}
   open={true}
 >
@@ -249,11 +236,14 @@ exports[`Modal Component should render correctly if opened 1`] = `
     }
     paused={false}
   >
-    <div>
+    <div
+      aria-modal={true}
+    >
       <HvButton
         category="ghost"
-        id="hv-modal-1,function () { [native code] }-close"
+        id="hv-modal-1-close"
         onClick={[Function]}
+        title="Close"
       >
         <WithStyles(Close) />
       </HvButton>
