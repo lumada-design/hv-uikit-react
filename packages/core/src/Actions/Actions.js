@@ -41,6 +41,9 @@ const Actions = ({
       className={classes.button}
       disabled={action.disabled}
       onClick={() => actionsCallback(id, action)}
+      aria-label={action.ariaLabel}
+      aria-labelledby={action.ariaLabelledBy}
+      aria-describedby={action.ariaDescribedBy}
     >
       {(action.iconCallback && action.iconCallback()) ||
         (action.icon && action.icon())}
@@ -68,6 +71,7 @@ const Actions = ({
             icon: action.icon
           }))}
           keepOpened={false}
+          disablePortal={false}
         />
       </div>
     );
@@ -128,7 +132,10 @@ Actions.propTypes = {
         label: PropTypes.string.isRequired,
         icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
         iconCallback: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        ariaLabel: PropTypes.string,
+        ariaLabelledBy: PropTypes.string,
+        ariaDescribedBy: PropTypes.string,
       })
     )
   ]),

@@ -36,6 +36,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         },
       ]
     }
+    disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
         className="Actions-dropDownMenuIcon-4"
@@ -81,6 +82,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         },
       ]
     }
+    disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
         className="Actions-dropDownMenuIcon-4"
@@ -132,6 +134,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         },
       ]
     }
+    disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
         className="Actions-dropDownMenuIcon-4"

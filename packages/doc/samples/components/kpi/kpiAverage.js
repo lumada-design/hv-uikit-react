@@ -2,7 +2,7 @@ import React from "react";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Success from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconArrowUp from "./assets/arrow-green-up.svg";
+import ArrowUp from "@hv/uikit-react-icons/dist/Generic/UpXS";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {
@@ -20,17 +20,13 @@ const averageComparisonVisualAverage = () => (
       top: "1px"
     }}
   >
-    <div
+    <ArrowUp
       style={{
-        color: "#008000",
         position: "absolute",
-        width: "32px",
-        height: "32px",
-        top: "4px",
-        left: "-3px",
-        background: `url(${IconArrowUp}) no-repeat`
+        top: "16px",
+        left: "-1px"
       }}
-      color="#008000"
+      semantic="sema1"
     />
     <HvTypography
       style={{
@@ -49,6 +45,11 @@ const iconStyles = {
   height: "30px"
 };
 
+const kpiContainer = {
+  minWidth: "190px",
+  padding: "20px"
+}
+
 const StyledFailureIcon = withStyles(iconStyles, {
   withTheme: true
 })(() => <Success semantic="sema1" />);
@@ -56,9 +57,11 @@ const StyledFailureIcon = withStyles(iconStyles, {
 const icon = () => <StyledFailureIcon />;
 
 export default (
-  <HvKpi
-    labels={labels}
-    visualIndicator={icon()}
-    visualComparison={averageComparisonVisualAverage()}
-  />
+  <div style={kpiContainer}>
+    <HvKpi
+      labels={labels}
+      visualIndicator={icon()}
+      visualComparison={averageComparisonVisualAverage()}
+    />
+  </div>
 );

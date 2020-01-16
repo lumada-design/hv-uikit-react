@@ -30,14 +30,23 @@ const Media = ({
   mediaPath,
   mediaTitle,
   mediaHeight,
+  mediaAriaLabel,
+  mediaAriaLabelledBy,
+  mediaAriaDescribedBy,
+  onClickAction,
   ...other
 }) => (
   <div className={classNames(classes.mediaContainer, className)}>
     <CardMedia
       className={classes.media}
+      role="img"
       image={mediaPath}
       style={mediaHeight ? { height: `${mediaHeight}px` } : undefined}
       title={mediaTitle}
+      aria-label={mediaAriaLabel}
+      aria-labelledby={mediaAriaLabelledBy}
+      aria-describedby={mediaAriaDescribedBy}
+      onClick={onClickAction}
       {...other}
     />
   </div>
@@ -48,6 +57,18 @@ Media.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /** 
+   *  Used to define a string that labels the current element.
+   */
+  mediaAriaLabel: PropTypes.string,
+  /** 
+   *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
+   */
+  mediaAriaLabelledBy: PropTypes.string,
+  /** 
+   *  Used to indicate the IDs of the elements that describe the object.
+   */
+  mediaAriaDescribedBy: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -72,14 +93,22 @@ Media.propTypes = {
   /**
    *  The height necessary to adjust the media container to the image.
    */
-  mediaHeight: PropTypes.number
+  mediaHeight: PropTypes.number,
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClickAction: PropTypes.func,
 };
 
 Media.defaultProps = {
   className: "",
+  mediaAriaLabel: undefined,
+  mediaAriaLabelledBy: undefined,
+  mediaAriaDescribedBy: undefined,
   mediaTitle: "",
   mediaPath: "",
-  mediaHeight: undefined
+  mediaHeight: undefined,
+  onClickAction: () => {}
 };
 
 export default Media;

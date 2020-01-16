@@ -17,27 +17,19 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import Card1 from "../../../../packages/doc/samples/components/card/card1";
-import Card2 from "../../../../packages/doc/samples/components/card/card2";
-import Card3 from "../../../../packages/doc/samples/components/card/card3";
-import Card4 from "../../../../packages/doc/samples/components/card/card4";
-import Card5 from "../../../../packages/doc/samples/components/card/card5";
-import Card6 from "../../../../packages/doc/samples/components/card/card6";
-import Card7 from "../../../../packages/doc/samples/components/card/card7";
-import Card8 from "../../../../packages/doc/samples/components/card/card8";
+import Selectable from "../../../../packages/doc/samples/components/card/card10";
+import NoSelectable from "../../../../packages/doc/samples/components/card/card2";
 import Card9 from "../../../../packages/doc/samples/components/card/card9";
+import ActionsNoSelectable from "../custom/actionsNoSelectable";
+import ActionsSelectable from "../custom/actionsSelectable";
 
 // sample scenarios
 const samples = {};
-samples.Card1 = Card1;
-samples.Card2 = Card2;
-samples.Card3 = Card3;
-samples.Card4 = Card4;
-samples.Card5 = Card5;
-samples.Card6 = Card6;
-samples.Card7 = Card7;
-samples.Card8 = Card8;
 samples.Card9 = Card9;
+samples.Selectable = Selectable;
+samples.No_Selectable = NoSelectable;
+samples.Actions_Selectable = ActionsSelectable;
+samples.Actions_No_Selectable = ActionsNoSelectable;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

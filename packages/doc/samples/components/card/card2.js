@@ -2,8 +2,9 @@ import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import FailureIcon from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
 import Upload from "@hv/uikit-react-icons/dist/Generic/Upload";
-import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
+import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
+import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import leaf from "./resources/leaf.png";
@@ -13,12 +14,6 @@ const configuration = {
   title: "Leaves Appear wilted and scorched",
   subtitleLeft: "Just now",
   subtitleRight: "L20"
-};
-
-const subtitleLeftStyle = {
-  borderRight: "1px solid #dedede",
-  paddingRight: "10px",
-  marginRight: "10px"
 };
 
 const strings = {
@@ -102,45 +97,6 @@ const MultipleActionsWithMediaWithStyles = withStyles(
   }
 )(MultipleActionsWithMedia);
 
-const ActionStyles = theme => ({
-  button: {
-    color: theme.palette.grey.inspire,
-    "& span": {
-      color: theme.palette.grey.inspire
-    }
-  },
-  smallButton: {
-    width: "32px",
-    minWidth: "32px",
-    padding: 0,
-    color: theme.palette.grey.inspire,
-    "& span": {
-      color: theme.palette.grey.inspire
-    }
-  },
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-});
-
-const MultipleActionsWithMediaButtons = ({ classes }) => (
-  <>
-    <HvButton className={classes.button} category="ghost">
-      <Upload className={classes.box} />
-      Update
-    </HvButton>
-    <HvButton className={classes.smallButton} category="ghost">
-      <MoreOptionsIcon />
-    </HvButton>
-  </>
-);
-
-const MultipleActionsWithMediaButtonsWithStyle = withStyles(ActionStyles, {
-  withTheme: true
-})(MultipleActionsWithMediaButtons);
-
 const iconStyles = {
   width: "30px",
   height: "30px"
@@ -154,24 +110,66 @@ const StyledFailureIcon = () => (
   />
 );
 
+const SubHeader = ({ classes }) => {
+  return (
+    <div>
+      <span className={classes.subtitleLeft} >{configuration.subtitleLeft}</span>
+      <span>{configuration.subtitleRight}</span>
+    </div>
+  )
+}
+
+const SubHeaderStyle = theme => ({
+  subtitleLeft: {
+    borderRight: `1px solid ${theme.hv.palette.accent.acce1}`,
+    paddingRight: "10px",
+    marginRight: "10px"
+  }
+});
+
+const styles = () => ({
+  box: {
+    padding: "7px",
+    width: "30px",
+    height: "30px"
+  }
+})
+
+const StyledSubheader = withStyles(SubHeaderStyle, {
+  withTheme: true
+})(SubHeader);
+
+const StyledUploadIcon = withStyles(styles, { withTheme: true })(({classes}) => <Upload className={classes.box} />);
+const StyledPreviewIcon = withStyles(styles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
+const StyledAddIcon = withStyles(styles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
+const StyledDeleteIcon = withStyles(styles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
+
+const myActions = [
+  { id: "post", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: false },
+  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
+  { id: "put", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: true },
+  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+];
+
 export default (
   <div style={{ width: "360px" }}>
     <HvCard
       icon={<StyledFailureIcon />}
       headerTitle={configuration.title}
       subheader={
-        <div>
-          <span style={subtitleLeftStyle}>{configuration.subtitleLeft}</span>
-          <span>{configuration.subtitleRight}</span>
-        </div>
+        <StyledSubheader />
       }
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
-      actions={<MultipleActionsWithMediaButtonsWithStyle />}
+      actions={myActions}
+      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
+      actionsAlignment="left"
       semantic="sema4"
       isSelectable
       checkboxValue="value"
       mediaPath={leaf}
       mediaHeight={160}
+      mediaTitle="leafy leaf"
+      mediaAriaLabel="leafy leaf"
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

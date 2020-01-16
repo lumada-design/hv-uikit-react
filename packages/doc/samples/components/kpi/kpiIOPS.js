@@ -2,7 +2,9 @@ import React from "react";
 import Chart from "react-google-charts";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import IconArrowDown from "./assets/arrow-red-down.svg";
+import Average from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
+import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {
   title: "Total IOPS",
@@ -18,17 +20,13 @@ const IopsComparisonVisualAverage = () => (
       position: "relative"
     }}
   >
-    <div
+    <ArrowDown
       style={{
-        color: "#008000",
         position: "absolute",
-        width: "32px",
-        height: "32px",
-        top: "4px",
-        left: "-3px",
-        background: `url(${IconArrowDown}) no-repeat`
+        top: "16px",
+        left: "-1px"
       }}
-      color="#008000"
+      semantic="sema4"
     />
     <HvTypography
       style={{
@@ -42,13 +40,14 @@ const IopsComparisonVisualAverage = () => (
   </div>
 );
 
-const invalidIcon = () => 
+const trend = () => 
 <div 
   style={{
     width: "32px",
     height: "32px",
     position: "relative",
     left: "-8px",
+    top: "10px",
     pointerEvents:"none"
 }}>
   <Chart
@@ -88,10 +87,29 @@ const invalidIcon = () =>
   />
 </div>;
 
+const iconStyles = {
+  width: "30px",
+  height: "30px"
+};
+
+const kpiContainer = {
+  minWidth: "190px",
+  padding: "20px"
+}
+
+const StyledFailureIcon = withStyles(iconStyles, {
+  withTheme: true
+})(() => <Average semantic="sema4" />);
+
+const icon = () => <StyledFailureIcon />;
+
 export default (
-  <HvKpi
-    labels={labels}
-    visualIndicator={invalidIcon()}
-    visualComparison={IopsComparisonVisualAverage()}
-  />
+  <div style={kpiContainer}>
+    <HvKpi
+      labels={labels}
+      visualIndicator={icon()}
+      trendIndicator={trend()}
+      visualComparison={IopsComparisonVisualAverage()}
+    />
+  </div>
 );

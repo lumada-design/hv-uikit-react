@@ -18,12 +18,16 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes, { oneOfType } from "prop-types";
 import isNil from "lodash/isNil";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import uniqueId from "lodash/uniqueId";
 import Card from "@material-ui/core/Card";
+import Focus from "../Focus";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 import Media from "./Media";
 
+const DEFAULT_ID_PREFIX = "hv-card-";
 /**
  * Main Card container that layouts the subcomponents if there are children, the children are rendered instead.
  *
@@ -54,6 +58,9 @@ const Main = ({
   classes,
   className,
   id,
+  defaultCardAriaLabel,
+  defaultCardAriaLabelledBy,
+  defaultCardAriaDescribedBy,
   children,
   icon,
   headerTitle,
@@ -70,34 +77,126 @@ const Main = ({
   checkboxLabel,
   checkboxSelected,
   checkboxIndeterminate,
+  checkboxAriaLabel,
+  checkboxAriaLabelledBy,
+  checkboxAriaDescribedBy,
   theme,
   mediaPath,
   mediaTitle,
   mediaHeight,
+  mediaAriaLabel,
+  mediaAriaLabelledBy,
+  mediaAriaDescribedBy,
+  onClickAction,
+  noHeader,
+  noFooter,
+  selectOnClickAction,
   actionItemWidth,
   ...other
 }) => {
   const [selected, setSelected] = useState(checkboxSelected);
 
-  const footerExist = actions || isSelectable;
+  const footerExist = (actions || isSelectable) && !noFooter;
+  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
+  const defaultFooterId = `${internalId}-footer`;
+  const defaultHeaderId = `${internalId}-header`;
+  const defaultContentId = `${internalId}-content`;
+  const defaultMediaId = `${internalId}-media`;
+  
+  const isFunction = value => typeof value === "function";
+
+  const clickActionHandler = evt => {
+    if (isSelectable && selectOnClickAction) {
+      onChange(evt);
+      setSelected(!selected);
+    }
+    if(isFunction(onClickAction)) onClickAction(evt, !selected);
+  };
+
+  const getRole = (fSelectable, fselectOnClickAction) => {
+    if (!isFunction(onClickAction)) {
+      if (!fSelectable || !fselectOnClickAction) {
+        return undefined;
+      }
+    }
+    if (fSelectable) {
+      return "checkbox";
+    }
+    return "button";
+  };
+
+  const KeyUpHandler = evt => {
+    if (
+      (isKeypress(evt, KeyboardCodes.Enter) && getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
+      isKeypress(evt, KeyboardCodes.SpaceBar)
+    ) {
+      if (isSelectable && selectOnClickAction) {
+        onChange(evt);
+        setSelected(!selected);
+      }
+      if(isFunction(onClickAction)) onClickAction(evt, !selected);
+    }
+  };
+
+  const cardButtonProps = {
+    id: `${internalId}-upper-area`,
+    role: getRole(isSelectable, selectOnClickAction),
+    tabIndex: getRole(isSelectable, selectOnClickAction)
+      ? "0"
+      : undefined,
+    onClick: clickActionHandler,
+    onKeyUp: KeyUpHandler,
+    "aria-label": defaultCardAriaLabel,
+    "aria-labelledby": defaultCardAriaLabelledBy,
+    "aria-describedby": defaultCardAriaDescribedBy,
+    "aria-checked": isSelectable ? selected : undefined
+  };
 
   const defaultContent = (
     <>
-      <Header icon={icon} headerTitle={headerTitle} subheader={subheader} />
-      {!isNil(mediaPath) && mediaPath.length > 0 && (
-        <Media
-          mediaPath={mediaPath}
-          mediaTitle={mediaTitle}
-          mediaHeight={mediaHeight}
-        />
-      )}
-      {innerCardContent && <Content innerCardContent={innerCardContent} />}
+      <Focus useFalseFocus>
+        <div
+          className={classNames(classes.upperArea, {
+            [classes.upperAreaSelectable]: cardButtonProps.tabIndex
+          })}
+          {...cardButtonProps}
+        >
+          {!noHeader && (
+            <Header
+              id={defaultHeaderId}
+              icon={icon}
+              headerTitle={headerTitle}
+              subheader={subheader}
+              aria-label={defaultCardAriaLabel || headerTitle}
+              aria-labelledby={defaultCardAriaLabelledBy}
+              aria-describedby={defaultCardAriaDescribedBy}
+            />
+          )}
+          {!isNil(mediaPath) && mediaPath.length > 0 && (
+            <Media
+              id={defaultMediaId}
+              mediaPath={mediaPath}
+              mediaTitle={mediaTitle}
+              mediaHeight={mediaHeight}
+              aria-label={mediaAriaLabel || headerTitle}
+              aria-labelledby={mediaAriaLabelledBy}
+              aria-describedby={mediaAriaDescribedBy}
+            />
+          )}
+          {innerCardContent && (
+            <Content
+              id={defaultContentId}
+              innerCardContent={innerCardContent}
+            />
+          )}
+        </div>
+      </Focus>
       {footerExist && (
         <Footer
           disableActionSpacing // disableSpacing Mui v4
           checkboxValue={checkboxValue}
           actions={actions}
-          id={id}
+          id={defaultFooterId}
           actionsCallback={actionsCallback}
           maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}
@@ -106,8 +205,11 @@ const Main = ({
             setSelected(event.target.checked);
             onChange(event);
           }}
+          checkboxAriaLabel={checkboxAriaLabel}
+          checkboxAriaLabelledBy={checkboxAriaLabelledBy || defaultHeaderId}
+          checkboxAriaDescribedBy={checkboxAriaDescribedBy || defaultHeaderId}
           checkboxLabel={checkboxLabel}
-          checkboxSelected={checkboxSelected}
+          checkboxSelected={selected}
           checkboxIndeterminate={checkboxIndeterminate}
           actionItemWidth={actionItemWidth}
         />
@@ -116,17 +218,30 @@ const Main = ({
   );
 
   return (
-    <Card
-      className={classNames(classes.root, classes.borderTop, className, {
-        [classes.selectable]: isSelectable,
-        [classes.selected]: selected,
-        [classes[semantic]]: semantic
-      })}
-      id={id}
-      {...other}
-    >
-      {children || defaultContent}
-    </Card>
+    <>
+      <div className={classes.semanticContainer}>
+        <div
+          className={classNames({
+            [classes[semantic]]: semantic,
+            [classes.semanticSelected]: selected
+          })}
+        />
+      </div>
+      <Card
+        className={classNames(classes.root, classes.borderTop, className, {
+          [classes.selectable]: isSelectable,
+          [classes.rootSelected]: selected,
+          [classes.selected]: selected
+        })}
+        aria-label={defaultCardAriaLabel}
+        aria-labelledby={defaultCardAriaLabelledBy}
+        aria-describedby={defaultCardAriaDescribedBy}
+        id={internalId}
+        {...other}
+      >
+        {children || defaultContent}
+      </Card>
+    </>
   );
 };
 
@@ -139,6 +254,18 @@ Main.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   *  Used to define a string that labels the current element.
+   */
+  defaultCardAriaLabel: PropTypes.string,
+  /**
+   *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
+   */
+  defaultCardAriaLabelledBy: PropTypes.string,
+  /**
+   *  Used to indicate the IDs of the elements that describe the object.
+   */
+  defaultCardAriaDescribedBy: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -203,9 +330,22 @@ Main.propTypes = {
    */
   mediaHeight: PropTypes.number,
   /**
+   *  Used to define a string that labels the media element.
+   */
+  mediaAriaLabel: PropTypes.string,
+  /**
+   *  Establishes relationships between the media and it's label(s), its value should be one or more element IDs.
+   */
+  mediaAriaLabelledBy: PropTypes.string,
+  /**
+   *  Used to indicate the IDs of the elements that describe the media element.
+   */
+  mediaAriaDescribedBy: PropTypes.string,
+  /**
    *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
    */
   semantic: PropTypes.oneOf([
+    "sema0",
     "sema1",
     "sema2",
     "sema3",
@@ -226,6 +366,24 @@ Main.propTypes = {
     "sema18",
     "sema19"
   ]),
+  /**
+   *  The function that will be executed when the upper part of the card is clicked.
+   *  only works for the default card.
+   */
+  onClickAction: PropTypes.func,
+  /**
+   *  Removes the header for the default card.
+   */
+  noHeader: PropTypes.bool,
+  /**
+   *  Removes the footer for the default card.
+   */
+  noFooter: PropTypes.bool,
+  /**
+   *  allows selecting on click action.
+   *  only works for the default card.
+   */
+  selectOnClickAction: PropTypes.bool,
   /**
    *  The function that will be executed when the card is selected.
    */
@@ -253,6 +411,18 @@ Main.propTypes = {
    */
   checkboxIndeterminate: PropTypes.bool,
   /**
+   *  Used to define a string that labels the checkbox element.
+   */
+  checkboxAriaLabel: PropTypes.string,
+  /**
+   *  Establishes relationships between checkbox and it's label(s), its value should be one or more element IDs.
+   */
+  checkboxAriaLabelledBy: PropTypes.string,
+  /**
+   *  Used to indicate the IDs of the elements that describe the checkbox.
+   */
+  checkboxAriaDescribedBy: PropTypes.string,
+  /**
    * The theme passed by the provider.
    */
   theme: PropTypes.instanceOf(Object),
@@ -270,24 +440,37 @@ Main.propTypes = {
 Main.defaultProps = {
   className: "",
   id: undefined,
+  defaultCardAriaLabel: undefined,
+  defaultCardAriaLabelledBy: undefined,
+  defaultCardAriaDescribedBy: undefined,
   headerTitle: undefined,
-  semantic: null,
+  semantic: "sema0",
   isSelectable: false,
   children: undefined,
   icon: undefined,
   subheader: undefined,
   innerCardContent: undefined,
   onChange: () => {},
+  onClickAction: null,
+  selectOnClickAction: false,
+  noHeader: false,
+  noFooter: false,
   actions: null,
   actionsCallback: () => {},
   actionsAlignment: "left",
   mediaHeight: undefined,
   mediaPath: "",
   mediaTitle: "",
+  mediaAriaLabel: undefined,
+  mediaAriaLabelledBy: undefined,
+  mediaAriaDescribedBy: undefined,
   checkboxValue: "",
   checkboxLabel: "",
-  checkboxSelected: undefined,
+  checkboxSelected: false,
   checkboxIndeterminate: undefined,
+  checkboxAriaLabel: undefined,
+  checkboxAriaLabelledBy: undefined,
+  checkboxAriaDescribedBy: undefined,
   theme: null,
   maxVisibleActions: 1,
   actionItemWidth: undefined

@@ -34,12 +34,12 @@ const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
 
 const MultipleActionsWithMediaButtons = ({classes}) => (
   <>
-    <HvButton category="link">
+    <HvButton category="primary">
       <Icon className={classes.box} />
       Update
     </HvButton>
-    <MoreOptionsIconButton category="link">
-      <MoreOptionsIcon />
+    <MoreOptionsIconButton category="primary">
+      <MoreOptionsIcon aria-label="more options" />
     </MoreOptionsIconButton>
   </>
 );
@@ -74,6 +74,7 @@ export default (
       <FooterWithStyles
         actions={<MultipleActionsWithMediaButtonsWithStyles />}
         isSelectable
+        checkboxAriaLabel="Composed card"
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
       <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />
