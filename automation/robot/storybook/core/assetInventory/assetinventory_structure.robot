@@ -7,8 +7,8 @@ Suite Teardown    Close Browser
 Default Tags      smoke
 
 *** Variables ***
-${cardsSelector}      //*[starts-with(@id, 'Card')]
-${firstCardHeader}    (${cardsSelector})[1]//span[contains(@class,'Header-titleShort')]
+${cardsSelector}      css:div[id*='Card_id'][class*='MuiCard-root']
+${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${dropdownHeader}     sort_hv-assetinventory-header
 ${sortTitleDesc}      sort_hv-assetinventory-values-list-item-1
 ${nextPage}           hv-assetinventory-nextPage-button
@@ -16,7 +16,7 @@ ${prevPage}           hv-assetinventory-previousPage-button
 ${pageSizeChange}     css:select[id|='hv-assetinventory-pageSize']
 ${firstCheckbox}      css:input[value='id_0']
 ${searchBox}          css:input[type='text']
-${cardView}           css:div[id='cardView']
+${cardView}           cardView
 
 
 *** Test Cases ***
@@ -56,14 +56,11 @@ Filter and then sort
 Change from cardView to listView
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
     Wait Until Element Is Visible    hv-assetinventory                  10s
-    Element Should Be Visible        ${cardView}
+    Element Should not Be Visible    css:table[id=listView]>tbody>tr
     Verify element count             ${cardsSelector}                   4
     Click Button                     listView
-    Wait Until Element Is Visible    css:table[id='listView']           2s
-    Element Should Be Visible        css:table[id='listView']
-    Element Should Not Be Visible    ${cardView}
+    Wait Until Element Is Visible    css:table[id=listView]             5s
     Verify element count             css:table[id=listView]>tbody>tr    4
-
 
 Using pagination to navigate through 3 pages
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
@@ -99,7 +96,6 @@ Using navigation with filtered results
     Element Text Should Be           ${firstCardHeader}    1 Track severe 2
 
 Sort when in page two
-    [Tags]    TTT
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
     Wait Until Element Is Visible    hv-assetinventory     10s
     Click Button                     ${nextPage}
