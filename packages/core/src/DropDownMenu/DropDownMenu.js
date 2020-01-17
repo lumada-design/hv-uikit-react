@@ -19,6 +19,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import IconButton from "@material-ui/core/IconButton";
+import FocusTrap from "focus-trap-react";
+import uniqueId from "lodash/uniqueId";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import Popper from "../utils/Popper";
 import List from "../List";
 
@@ -45,6 +48,7 @@ const DropDownMenu = ({
   keepOpened
 }) => {
   const [open, setOpen] = useState(false);
+  const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
@@ -57,7 +61,6 @@ const DropDownMenu = ({
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-
     setOpen(false);
   };
 
@@ -67,25 +70,42 @@ const DropDownMenu = ({
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
-
     prevOpen.current = open;
   }, [open]);
 
+  /**
+   * If the ESCAPE key is pressed the close handler must beSpace called.
+   *Space
+   * @param evt
+   */
+  const handleKeyDown = evt => {
+    if (isKeypress(evt, KeyboardCodes.Esc)) {
+      handleClose(evt);
+    }
+  };
+
+  const handleKeyboardToggle = event => {
+    if (
+        isKeypress(event, KeyboardCodes.SpaceBar) ||
+        isKeypress(event, KeyboardCodes.Enter)
+    ) {
+      handleToggle(event);
+      event.preventDefault();
+    }
+  };
+
   return (
-    <div {...(id && { id })} className={classes.root}>
+    <div id={internalId} className={classes.root}>
       <IconButton
-        {...(id && { id: `${id}-icon-button` })}
+        id={`${internalId}-icon-button`}
         buttonRef={anchorRef}
-        aria-controls={open ? `${id}-dropdown-menu` : undefined}
+        aria-controls={open ? `${internalId}-list` : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
+        onKeyDown={handleKeyboardToggle}
         className={classNames(classes.icon, {
           [classes.iconSelected]: open
         })}
-        onKeyDown={event => {
-          handleToggle(event);
-          event.preventDefault();
-        }}
       >
         {icon}
       </IconButton>
@@ -98,20 +118,31 @@ const DropDownMenu = ({
         style={{ zIndex: theme.zIndex.tooltip }}
       >
         <ClickAwayListener onClickAway={handleClose}>
-          <div className={classes.menuList}>
-            <List
-              {...(id && { id: `${id}-dropdown-menu` })}
-              values={dataList}
-              selectable={false}
-              onClick={item => {
-                if (!keepOpened) {
-                  setOpen(false);
-                }
-                onClick(item);
-              }}
-              condensed
-            />
-          </div>
+          <FocusTrap
+            createOptions={{
+              escapeDeactivates: false,
+              allowOutsideClick: true,
+              fallbackFocus: document.getElementById(
+                `${internalId}-icon-button`
+              )
+            }}
+          >
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            <div className={classes.menuList} onKeyDown={handleKeyDown}>
+              <List
+                id={`${internalId}-list`}
+                values={dataList}
+                selectable={false}
+                onClick={item => {
+                  if (!keepOpened) {
+                    setOpen(false);
+                  }
+                  onClick(item);
+                }}
+                condensed
+              />
+            </div>
+          </FocusTrap>
         </ClickAwayListener>
       </Popper>
     </div>

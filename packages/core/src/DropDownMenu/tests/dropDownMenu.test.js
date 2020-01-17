@@ -87,34 +87,34 @@ describe("DropDownMenu", () => {
     it("opens on Enter", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
 
@@ -124,10 +124,10 @@ describe("DropDownMenu", () => {
       button.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(false);
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
       button.simulate("click");
@@ -169,34 +169,34 @@ describe("DropDownMenu", () => {
     it("opens on Enter", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
 
@@ -206,10 +206,10 @@ describe("DropDownMenu", () => {
       button.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      button.simulate("keydown", { key: ENTER });
+      button.simulate("keydown", { key: ENTER, keyCode: 13 });
       expect(wrapper.find(Popper).props().open).toBe(false);
 
-      button.simulate("keydown", { key: SPACE });
+      button.simulate("keydown", { key: SPACE, keyCode: 32 });
       expect(wrapper.find(Popper).props().open).toBe(true);
 
       button.simulate("click");
@@ -224,6 +224,7 @@ describe("DropDownMenu", () => {
             icon={<div />}
             keepOpened={false}
             onClick={() => {}}
+            id="test"
           />
         </HvProvider>
       );
@@ -233,7 +234,7 @@ describe("DropDownMenu", () => {
       button.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(true);
 
-      const option = wrapper.find('li[id="hv-list-8-item-0"]');
+      const option = wrapper.find('li[id="test-list-item-0"]');
       option.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
