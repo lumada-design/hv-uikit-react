@@ -19,59 +19,10 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvCheckbox from "../../../Selectors/CheckBox";
-import HvButton from "../../../Button";
-import DropDownMenu from "../../../DropDownMenu";
+import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
-
-const renderActions = (
-  id,
-  actions,
-  actionsCallback,
-  classes,
-  maxVisibleActions
-) => {
-  if (!Array.isArray(actions)) {
-    return React.isValidElement(actions) ? actions : null;
-  }
-
-  const renderButton = action => (
-    <HvButton
-      className={classes.button}
-      disabled={action.disabled}
-      onClick={() => actionsCallback(id, action)}
-      category="ghost"
-      id={id}
-      key={id}
-    >
-      {(action.icon && action.icon()) ||
-        (action.iconCallback && action.iconCallback())}
-      {action.label}
-    </HvButton>
-  );
-
-  const renderActionsGrid = acts => (
-    <div className={classes.actionGrid}>
-      {renderButton(acts[0])}
-      <DropDownMenu
-        className={classes.button}
-        icon={<MoreVert className={classes.box} />}
-        placement="left"
-        disablePortal={false}
-        onClick={action => actionsCallback(id, action)}
-        dataList={acts
-          .slice(1)
-          .map(a => ({ ...a, iconCallback: a.iconCallback, icon: a.icon }))}
-      />
-    </div>
-  );
-
-  return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions)
-    : actions.map(a => renderButton(a));
-};
 
 const selectCell = (
   classes,
@@ -104,13 +55,12 @@ const actionsCell = (classes, id, viewConfiguration) => (
     id={`action${id}`}
     key={`action${id}`}
   >
-    {renderActions(
-      id,
-      viewConfiguration.actions,
-      viewConfiguration.actionsCallback,
-      classes,
-      viewConfiguration.maxVisibleActions
-    )}
+    <Actions
+      id={id}
+      actions={viewConfiguration.actions}
+      actionsCallback={viewConfiguration.actionsCallback}
+      maxVisibleActions={viewConfiguration.maxVisibleActions}
+    />
   </Cell>
 );
 

@@ -32,7 +32,10 @@ const styles = theme => ({
     outline: "none !important"
   },
   labelTypography: {
-    ...theme.hv.typography.normalText
+    ...theme.hv.typography.normalText,
+    "&$labelDisabled": {
+      ...theme.hv.typography.placeholderText
+    }
   },
   labelDisabled: {
     backgroundColor: "transparent",
@@ -49,21 +52,11 @@ const styles = theme => ({
     paddingLeft: "8px"
   },
   checkBox: {
-    padding: "1px"
+    padding: 0
   },
   icon: {
-    width: "16px",
-    height: "16px",
-    backgroundSize: "16px 16px"
-  },
-  box: {
-    width: "30px",
-    height: "30px",
-    padding: "7px",
-    "& svg": {
-      display: "block", 
-      margin: "auto" 
-    }
+    width: "32px",
+    height: "32px"
   }
 });
 

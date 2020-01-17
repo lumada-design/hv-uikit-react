@@ -18,28 +18,10 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
-class Accessibility extends React.Component {
-  state = {
-    content: ""
-  }
-
-  async componentDidMount() {
-    const { componentName } = this.props;
-
-    let documentPage = await require(`../../../../pages/components/${ componentName }/accessibility.md`);
-    this.setState({
-      content: documentPage.default
-    })
-  }
-
-  render() {
-    return   (
-      <>
-        <ReactMarkdown source={ this.state.content } />
-    
-      </>
-    ); 
-  }
-}
+const Accessibility = ({ pageData }) => (
+  <HvTypography component="div">
+    <ReactMarkdown source={pageData} />
+  </HvTypography>
+);
 
 export default Accessibility;

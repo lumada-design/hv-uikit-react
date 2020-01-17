@@ -2,7 +2,7 @@ import React from "react";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Success from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
-import IconArrowUp from "./assets/arrow-green-up.svg";
+import ArrowUp from "@hv/uikit-react-icons/dist/Generic/UpXS";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {
@@ -19,17 +19,13 @@ const throughputComparisonVisual = () => (
       position: "relative"
     }}
   >
-    <div
+    <ArrowUp
       style={{
-        color: "#008000",
         position: "absolute",
-        width: "32px",
-        height: "32px",
-        top: "4px",
-        left: "-3px",
-        background: `url(${IconArrowUp}) no-repeat`
+        top: "16px",
+        left: "-1px"
       }}
-      color="#008000"
+      semantic="sema1"
     />
     <HvTypography
       style={{
@@ -54,10 +50,17 @@ const StyledFailureIcon = withStyles(iconStyles, {
 
 const icon = () => <StyledFailureIcon />;
 
+const kpiContainer = {
+  minWidth: "190px",
+  padding: "20px"
+}
+
 export default (
-  <HvKpi
-    labels={labels}
-    visualIndicator={icon()}
-    visualComparison={throughputComparisonVisual()}
-  />
+  <div style={kpiContainer}>
+    <HvKpi
+      labels={labels}
+      visualIndicator={icon()}
+      visualComparison={throughputComparisonVisual()}
+    />
+  </div>
 );

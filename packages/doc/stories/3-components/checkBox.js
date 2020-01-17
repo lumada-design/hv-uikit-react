@@ -16,7 +16,7 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
+import { HvCheckBox } from "@hv/uikit-react-core/dist/Selectors";
 
 storiesOf("Components/Selection mechanisms", module).add("Checkbox", () => <HvCheckBox />, {
   title: "Checkbox selector",

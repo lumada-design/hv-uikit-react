@@ -49,7 +49,6 @@ const Home = ({ classes }) => {
         values={getData()}
         configuration={assetInventoryConfiguration}
         actions={myActions}
-        maxVisibleActions={3}
         actionsCallback={control}
       >
         <CardView id="card" icon={<Cards />} renderer={cardRenderer} />

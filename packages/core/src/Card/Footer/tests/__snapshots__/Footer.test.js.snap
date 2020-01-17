@@ -1,15 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer should render the actions and the dropdown accordingly 1`] = `
-<div>
+<div
+  className="Actions-actionContainer-2"
+>
   <HvButton
     category="ghost"
+    className="Actions-button-1"
+    id="-0-action-view"
     key="-0-action-view"
     onClick={[Function]}
   >
     View
   </HvButton>
   <WithStyles(DropDownMenu)
+    classes={
+      Object {
+        "root": "Actions-dropDownMenu-3",
+      }
+    }
     dataList={
       Array [
         Object {
@@ -27,7 +36,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         },
       ]
     }
-    icon={<WithStyles(MoreOptionsVertical) />}
+    disablePortal={false}
+    icon={
+      <WithStyles(MoreOptionsVertical)
+        className="Actions-dropDownMenuIcon-4"
+      />
+    }
     keepOpened={false}
     onClick={[Function]}
     placement="left"
@@ -36,8 +50,15 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 `;
 
 exports[`Footer should render the actions and the dropdown accordingly 2`] = `
-<div>
+<div
+  className="Actions-actionContainer-2"
+>
   <WithStyles(DropDownMenu)
+    classes={
+      Object {
+        "root": "Actions-dropDownMenu-3",
+      }
+    }
     dataList={
       Array [
         Object {
@@ -61,7 +82,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         },
       ]
     }
-    icon={<WithStyles(MoreOptionsVertical) />}
+    disablePortal={false}
+    icon={
+      <WithStyles(MoreOptionsVertical)
+        className="Actions-dropDownMenuIcon-4"
+      />
+    }
     keepOpened={false}
     onClick={[Function]}
     placement="left"
@@ -70,9 +96,13 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 `;
 
 exports[`Footer should render the actions and the dropdown accordingly 3`] = `
-<div>
+<div
+  className="Actions-actionContainer-2"
+>
   <HvButton
     category="ghost"
+    className="Actions-button-1"
+    id="-0-action-view"
     key="-0-action-view"
     onClick={[Function]}
   >
@@ -80,12 +110,19 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   </HvButton>
   <HvButton
     category="ghost"
+    className="Actions-button-1"
+    id="-1-action-delete"
     key="-1-action-delete"
     onClick={[Function]}
   >
     Delete
   </HvButton>
   <WithStyles(DropDownMenu)
+    classes={
+      Object {
+        "root": "Actions-dropDownMenu-3",
+      }
+    }
     dataList={
       Array [
         Object {
@@ -97,7 +134,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         },
       ]
     }
-    icon={<WithStyles(MoreOptionsVertical) />}
+    disablePortal={false}
+    icon={
+      <WithStyles(MoreOptionsVertical)
+        className="Actions-dropDownMenuIcon-4"
+      />
+    }
     keepOpened={false}
     onClick={[Function]}
     placement="left"

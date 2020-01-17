@@ -299,7 +299,10 @@ class Table extends React.Component {
     if (initiallyLoaded) {
       let cursor = `${page * pageSize}`;
 
-	  if (sortedFromState[0].id !== sorted[0].id || sortedFromState[0].desc !== sorted[0].desc) {
+      if (
+        sortedFromState[0].id !== sorted[0].id ||
+        sortedFromState[0].desc !== sorted[0].desc
+      ) {
         cursor = "0";
       }
 
@@ -518,17 +521,18 @@ class Table extends React.Component {
         cellType: "alpha-numeric",
         width: 31,
         sortable: false,
-        Cell: props => (
-          <DropDownMenu
-            id={`${this.computeRowElementId(props)}-secondaryActions`}
-            disablePortal={false}
-            icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
-            dataList={secondaryActions}
-            onClick={event => {
-              event.action(props.original)
-            }}
-          />
-        )
+        Cell: props =>
+          props.original.noActions ? null : (
+            <DropDownMenu
+              id={`${this.computeRowElementId(props)}-secondaryActions`}
+              disablePortal={false}
+              icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
+              dataList={secondaryActions}
+              onClick={event => {
+                event.action(props.original);
+              }}
+            />
+          )
       });
     }
 
@@ -582,10 +586,7 @@ class Table extends React.Component {
             </div>
             {(subtitleText || labels.subtitleText) && (
               <div className={classes.subtitle}>
-                <HvTypography
-                  variant="sText"
-                  id={`${internalId}-subtitle`}
-                >
+                <HvTypography variant="sText" id={`${internalId}-subtitle`}>
                   {subtitleText || labels.subtitleText}
                 </HvTypography>
               </div>

@@ -36,7 +36,7 @@ const Content = ({ classes, value, icon }) => (
   <>
     <Grid container>
       <HvKpi
-        kpiTextConfiguration={ThroughputKpiTextConfiguration(value)}
+        labels={ThroughputKpiTextConfiguration(value)}
         visualIndicator={icon}
       />
     </Grid>

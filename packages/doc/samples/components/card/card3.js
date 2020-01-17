@@ -120,12 +120,10 @@ const MultipleActionsButtons = ({ classes }) => (
   </>
 );
 
-const MultipleActionsButtonsWithStyle = withStyles(
-  MultipleActionsButtonsStyles,
-  {
-    withTheme: true
-  }
-)(MultipleActionsButtons);
+const myActions = [
+  { id: "view", label: "View", disabled: false },
+  { id: "share", label: "Share", disabled: false }
+];
 
 export default (
   <div style={{ width: "360px" }}>
@@ -133,9 +131,10 @@ export default (
       headerTitle={configurationNoMedia.title}
       subheader={configurationNoMedia.subtitle}
       innerCardContent={<MultipleActionsWithStyle />}
-      actions={<MultipleActionsButtonsWithStyle />}
+      actions={myActions}
       actionsAlignment="right"
       checkboxValue="value"
+      maxVisibleActions={2}
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import HvCheckBox from "@hv/uikit-react-core/dist/Selectors/CheckBox";
+import { HvCheckBox } from "@hv/uikit-react-core/dist/Selectors";
 
 export default (
   <HvCheckBox
-    label="click me!"
+    label="Click me!"
     value="A"
-    onChange={event => alert(`my value is ${event.target.value}`)}
+    onChange={event => console.log(`my value is ${event.target.value}`)}
     disabled
   />
 );

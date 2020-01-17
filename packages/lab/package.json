@@ -25,7 +25,6 @@
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
     "prepare": "npm run build",
-    "postpublish": "npm run clean",
     "link": "npm link",
     "update-uikit-common": "npm update @hv/uikit-common-themes"
   },

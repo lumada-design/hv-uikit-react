@@ -62,6 +62,21 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
       title: "9. Automatic action creation from list",
       src: "components/card/card9",
       description: "Card actions can be created automatically if an array is provided. The actions will collapse into a DropDownMenu if the limit of visible actions is surpassed.",
-    }
+    },
+    {
+      title: "10. Whole card selectable with click action",
+      src: "components/card/card10",
+      description: "Showcasing the ability to select anywhere in the content and click action",
+    },
+    {
+      title: "11. Selectable card without footer",
+      src: "components/card/card11",
+      description: "Showcasing the ability to select a card without foooter",
+    },
+    {
+      title: "12. Whole card selectable with click action that does not select",
+      src: "components/card/card12",
+      description: "Showcasing the ability to have a click action without selecting",
+    },
   ]
 });

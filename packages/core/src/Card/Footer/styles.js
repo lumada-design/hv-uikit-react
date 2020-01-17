@@ -27,17 +27,6 @@ const styles = theme => ({
   rightContainer: {
     alignSelf: "flex-end",
     marginLeft: "auto"
-  },
-  actionContainer: {
-    display: "flex",
-    "&>*:nth-child(2)": {
-      display: "block",
-      marginLeft: `${theme.hv.spacing.xs}px`
-    }
-  },
-  box: {
-    width: "32px",
-    height: "32px"
   }
 });
 
