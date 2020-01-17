@@ -13,8 +13,8 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "start-storybook -p 9001 --quiet",
-    "build": "npx cross-env build-storybook -o dist --quiet",
+    "doc": "start-storybook -p 9001 -c .storybook -p --quiet",
+    "build": "build-storybook -c .storybook -o dist --quiet",
     "clean": "npx del-cli dist"
   },
   "peerDependencies": {
