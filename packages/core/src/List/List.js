@@ -128,23 +128,21 @@ class List extends React.Component {
 
     const itemId = `${internalId}-item-${i}`;
 
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
-      <Focus key={i} focusOnClick={false}>
+      <Focus key={i} enabled={!item.disabled && i === 0}>
         <li
           id={itemId}
           role="option"
           aria-selected={item.selected}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
-          className={classNames([
-            classes.listItem,
-            {
-              [classes.selected]: item.selected && !useSelector,
-              [classes.condensed]: condensed,
-              [classes.selector]: useSelector,
-              [classes.disabled]: item.disabled
-            }
-          ])}
+          className={classNames(classes.listItem, {
+            [classes.selected]: item.selected && !useSelector,
+            [classes.condensed]: condensed,
+            [classes.selector]: useSelector,
+            [classes.disabled]: item.disabled
+          })}
         >
           {!useSelector &&
             ((item.leftIcon && this.renderLeftIcon(item)) ||
@@ -225,17 +223,13 @@ class List extends React.Component {
     return (
       <HvTypography
         variant={item.selected ? "selectedText" : "normalText"}
-        className={classNames([
-          classes.label,
-          classes.truncate,
-          {
-            [classes.selected]: item.selected,
-            [classes.textDisabled]: item.disabled,
-            [classes.labelIconLeftPadding]: item.leftIcon || item.iconCallback,
-            [classes.noIconLeftPadding]:
-              !(item.leftIcon || item.iconCallback) && hasLeftIcons
-          }
-        ])}
+        className={classNames(classes.label, classes.truncate, {
+          [classes.selected]: item.selected,
+          [classes.textDisabled]: item.disabled,
+          [classes.labelIconLeftPadding]: item.leftIcon || item.iconCallback,
+          [classes.noIconLeftPadding]:
+            !(item.leftIcon || item.iconCallback) && hasLeftIcons
+        })}
       >
         {item.label}
       </HvTypography>

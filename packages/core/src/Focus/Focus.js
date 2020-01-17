@@ -17,124 +17,145 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import {
+  KeyboardCodes,
+  isKeypress as isKey
+} from "@hv/uikit-common-utils/dist";
+import ConditionalWrapper from "../utils/ConditionalWrapper";
 
+/* eslint-disable no-param-reassign */
 const Focus = props => {
-  const { classes, children, focusOnClick, useArrows, useFalseFocus } = props;
-  const [childFocus, setChildFocus] = useState(null);
-  const [childFocusType, setChildFocusType] = useState(null);
+  const {
+    classes,
+    children,
+    enabled,
+    focusOnClick,
+    strategy,
+    useArrows,
+    useFalseFocus
+  } = props;
   const [showFocus, setShowFocus] = useState(null);
+  const [childFocus, setChildFocus] = useState(null);
+  const [hasRunConfig, setHasRunConfig] = useState(false);
 
-  const config = () => el => {
-    if (Array.isArray(children)) {
-      // eslint-disable-next-line no-param-reassign
-      if (el) el.tabIndex = 0;
-      // check if elem has any focusable child
-      const focusableChildren =
-        (el &&
-          el.querySelectorAll("input, button, select, textarea, a[href]")) ||
-        [];
+  const setTabIndex = (el, tabIndex) => {
+    if (childFocus) {
+      el.tabIndex = -1;
+      childFocus.tabIndex = tabIndex;
+    } else {
+      el.tabIndex = tabIndex;
+    }
+  };
 
-      if (focusableChildren.length) {
-        setChildFocus(focusableChildren[0]);
-        setChildFocusType(focusableChildren[0].nodeName);
+  const setFocusTo = el => {
+    el.focus();
+  };
 
-        // eslint-disable-next-line no-param-reassign
-        el.tabIndex = -1;
-      }
+  const config = el => {
+    if (!el || hasRunConfig) return;
+    if (strategy === "card") {
+      setChildFocus(children);
+      return;
     }
 
-    setChildFocus(children);
-    setChildFocusType("");
+    const focusableChildren =
+      el.querySelectorAll("input, button, select, textarea, a[href]") || [];
+
+    if (focusableChildren.length) {
+      focusableChildren.forEach(child => setTabIndex(child, -1));
+      setChildFocus(focusableChildren[0]);
+    }
+
+    setTabIndex(el, enabled ? 0 : -1);
+    setHasRunConfig(true);
+  };
+
+  const clearTabSiblings = el => {
+    const siblings = el.parentElement.children;
+    siblings.forEach(sibling => setTabIndex(sibling, -1));
+    setTabIndex(el, 0);
   };
 
   const onFocus = evt => {
-    if(!useFalseFocus) evt.currentTarget.classList.add(classes.focused);
+    if (!useFalseFocus) evt.currentTarget.classList.add(classes.focused);
     setShowFocus(true);
     // give focus to child element if any focusable
+
     if (childFocus && childFocus.focus) childFocus.focus();
+    clearTabSiblings(evt.currentTarget);
   };
 
   const onBlur = evt => {
     setShowFocus(false);
-    if(!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
+    if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
   };
 
   const onMouseDown = evt => {
     evt.preventDefault();
-    evt.currentTarget.focus();
+    setFocusTo(evt.currentTarget);
+    setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
     if (!focusOnClick) {
-      if(!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
+      if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
       setShowFocus(false);
     }
   };
 
   const onKeyDown = evt => {
-    const childFocusIsInput = childFocusType === "INPUT";
+    const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
+    const { SpaceBar, ArrowUp, ArrowDown, Enter } = KeyboardCodes;
 
-    if (
-      evt.keyCode === 13 || // enter
-      !useArrows
-    ) {
+    // TODO: review side effects
+    if (isKey(evt, SpaceBar) || isKey(evt, ArrowUp) || isKey(evt, ArrowDown)) {
+      evt.preventDefault();
+    }
+
+    if (isKey(evt, Enter) || isKey(evt, SpaceBar) || !useArrows) {
       // trigger click on enter unless child focus is input
-      if (!childFocusIsInput && evt.keyCode === 13) evt.currentTarget.click();
+      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar)) {
+        evt.currentTarget.click();
+      }
       return;
     }
 
-    const nextSibling = evt.currentTarget.nextElementSibling;
-    const prevSibling = evt.currentTarget.previousElementSibling;
+    const {
+      parentElement: { firstElementChild, lastElementChild },
+      previousElementSibling,
+      nextElementSibling
+    } = evt.currentTarget;
 
     switch (evt.keyCode) {
-      // arrow up
-      case 38:
-        if (prevSibling) prevSibling.focus();
+      case ArrowUp:
+        setFocusTo(previousElementSibling || lastElementChild);
+        setTabIndex(evt.currentTarget, -1);
         break;
-      // arrow down
-      case 40:
-        if (nextSibling) nextSibling.focus();
+      case ArrowDown:
+        setFocusTo(nextElementSibling || firstElementChild);
+        setTabIndex(evt.currentTarget, -1);
         break;
       default:
     }
   };
 
-  const cloneChildren = childrenToClone => {
-    if (Array.isArray(childrenToClone)) {
-      return React.Children.map(childrenToClone, child =>
-        React.cloneElement(child, {
-          className: classNames([child.props.className, classes.focusDisabled]),
-          ref: config(),
-          onFocus,
-          onBlur,
-          onMouseDown,
-          onKeyDown
-        })
-      );
-    }
-    return React.cloneElement(childrenToClone, {
-      className: classNames([
-        childrenToClone.props.className,
-        classes.focusDisabled
-      ]),
-      ref: config(),
-      onFocus,
-      onBlur,
-      onMouseDown,
-      onKeyDown
-    });
-  };
+  const focusWrapper = childrenToWrap => (
+    <div className={classes.externalReference}>
+      {childrenToWrap}
+      {showFocus && <div className={classes.falseFocus} />}
+    </div>
+  );
 
-  const focusWrapper = childrenToWrap => {
-    if (!useFalseFocus) return cloneChildren(childrenToWrap);
-
-    return (
-      <div className={classes.externalReference}>
-        {cloneChildren(childrenToWrap)}
-        {showFocus && <div className={classes.falseFocus} />}
-      </div>
-    );
-  };
-
-  return <>{focusWrapper(children)}</>;
+  return (
+    <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
+      {React.cloneElement(children, {
+        className: classNames(children.props.className, classes.focusDisabled),
+        ref: config,
+        onFocus,
+        onBlur,
+        onMouseDown,
+        onKeyDown
+      })}
+    </ConditionalWrapper>
+  );
 };
 
 Focus.propTypes = {
@@ -152,9 +173,19 @@ Focus.propTypes = {
     focused: PropTypes.string
   }).isRequired,
   /**
+   * Whether the focus is enabled.
+   */
+  enabled: PropTypes.bool,
+  /**
+   *
    * Child node to set the focus.
    */
   children: PropTypes.node.isRequired,
+  /**
+   *
+   * Focus and navigatino strategy to be used.
+   */
+  strategy: PropTypes.oneOf("list", "card"),
   /**
    * Show focus when click element.
    */
@@ -164,15 +195,17 @@ Focus.propTypes = {
    */
   useArrows: PropTypes.bool,
   /**
-  * Uses an absolute positioned div as a focus.
-  */
+   * Uses an absolute positioned div as a focus.
+   */
   useFalseFocus: PropTypes.bool
 };
 
 Focus.defaultProps = {
   focusOnClick: false,
   useArrows: true,
-  useFalseFocus: false
+  useFalseFocus: false,
+  strategy: "list",
+  enabled: true
 };
 
 export default Focus;
