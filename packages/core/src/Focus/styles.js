@@ -50,7 +50,8 @@ const styles = () => ({
     },
     top: 0,
     left: "0.5%",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    pointerEvents: "none"
   }
 });
 
