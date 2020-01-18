@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.16.1...@hv/uikit-react-doc@1.17.0) (2020-01-18)
+
+
+### Bug Fixes
+
+* **checkbox:** css icon classes. [#995](https://github.com/pentaho/hv-uikit-react/issues/995) ([8a782fd](https://github.com/pentaho/hv-uikit-react/commit/8a782fd8551bd5ec791d8c78e59bcef540cfc3fe))
+* **header:** update header to DS guidelines. [#881](https://github.com/pentaho/hv-uikit-react/issues/881) ([1e14b19](https://github.com/pentaho/hv-uikit-react/commit/1e14b199d24de113a10102709fc6ae0e1a4d1099))
+* **login:** fix spacing and styling. [#898](https://github.com/pentaho/hv-uikit-react/issues/898) ([b1b999a](https://github.com/pentaho/hv-uikit-react/commit/b1b999ada3c8aa9246dce0aa6a205a8dd6f9d799))
+
+
+### Features
+
+* **card:** align card pattern according to DS v1.2.1 [#922](https://github.com/pentaho/hv-uikit-react/issues/922) ([80daedf](https://github.com/pentaho/hv-uikit-react/commit/80daedf52fd823f9787e8e9418a2116b1c9e43b8))
+* **checkbox:** review accessibility. [#842](https://github.com/pentaho/hv-uikit-react/issues/842) ([8ea72d6](https://github.com/pentaho/hv-uikit-react/commit/8ea72d6ce659b5c242c80be12bdaa3f9f5631dc2))
+* **kpi:** align pattern according to DSv1.2.1. [#923](https://github.com/pentaho/hv-uikit-react/issues/923) ([4ec7d6e](https://github.com/pentaho/hv-uikit-react/commit/4ec7d6e1dbb99c50bb5213f04116a71fa160b618))
+* **radiobutton:** add accessibility tests. [#843](https://github.com/pentaho/hv-uikit-react/issues/843) ([2024b12](https://github.com/pentaho/hv-uikit-react/commit/2024b12538ee09b4c3f091bbe88e203f5c6612c3))
+* **table:** disable secondary actions conditionally. [#1020](https://github.com/pentaho/hv-uikit-react/issues/1020) ([b22b75f](https://github.com/pentaho/hv-uikit-react/commit/b22b75f15f8f40d5fc1c1764b8945f8553631802))
+
+
+
+
+
 ## [1.16.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.16.0...@hv/uikit-react-doc@1.16.1) (2020-01-16)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
