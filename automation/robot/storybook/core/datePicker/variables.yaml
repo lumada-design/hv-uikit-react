@@ -1,5 +1,5 @@
 calendar:           DatePicker-calendar
-calendarRange:      DatePicker-calendar-start
+calendarRange:      css:div[id$='calendar-start']
 input:              DatePicker-calendar-header-input
 endInput:           DatePicker-calendar-end-header-input
 startInput:         DatePicker-calendar-start-header-input

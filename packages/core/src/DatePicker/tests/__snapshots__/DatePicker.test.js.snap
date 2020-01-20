@@ -9491,6 +9491,7 @@ body {
         }
         disablePortal={true}
         endValue="2019-01-10"
+        escapeWithReference={true}
         horizontalPlacement="left"
         labels={
           Object {
@@ -11432,6 +11433,14 @@ body {
           <Popper
             anchorEl={null}
             disablePortal={true}
+            id="hv-datepicker-30-tooltip"
+            modifiers={
+              Object {
+                "preventOverflow": Object {
+                  "escapeWithReference": true,
+                },
+              }
+            }
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -20944,6 +20953,7 @@ body {
         }
         disablePortal={true}
         endValue=""
+        escapeWithReference={true}
         horizontalPlacement="left"
         labels={
           Object {
@@ -22885,6 +22895,14 @@ body {
           <Popper
             anchorEl={null}
             disablePortal={true}
+            id="hv-datepicker-14-tooltip"
+            modifiers={
+              Object {
+                "preventOverflow": Object {
+                  "escapeWithReference": true,
+                },
+              }
+            }
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -35295,6 +35313,7 @@ body {
         }
         disablePortal={true}
         endValue=""
+        escapeWithReference={true}
         horizontalPlacement="left"
         id="testingDatePicker"
         labels={
@@ -39138,6 +39157,14 @@ body {
           <Popper
             anchorEl={null}
             disablePortal={true}
+            id="testingDatePicker-tooltip"
+            modifiers={
+              Object {
+                "preventOverflow": Object {
+                  "escapeWithReference": true,
+                },
+              }
+            }
             open={false}
             placement="bottom-start"
             popperOptions={
@@ -48646,6 +48673,7 @@ body {
         }
         disablePortal={true}
         endValue=""
+        escapeWithReference={true}
         horizontalPlacement="left"
         labels={
           Object {
@@ -50587,6 +50615,14 @@ body {
           <Popper
             anchorEl={null}
             disablePortal={true}
+            id="hv-datepicker-2-tooltip"
+            modifiers={
+              Object {
+                "preventOverflow": Object {
+                  "escapeWithReference": true,
+                },
+              }
+            }
             open={false}
             placement="bottom-start"
             popperOptions={

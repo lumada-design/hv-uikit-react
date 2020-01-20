@@ -596,16 +596,18 @@ class HvDatePicker extends React.Component {
       theme,
       rangeMode,
       horizontalPlacement,
-      disablePortal
+      disablePortal,
+      escapeWithReference
     } = this.props;
 
-    const { calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
+    const { internalId, calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
 
     const RenderCalendar = rangeMode
       ? this.renderRangeCalendars()
       : this.renderSingleCalendar();
     return (
       <Popper
+        id={`${internalId}-tooltip`}
         open={calendarOpen}
         placement={
           horizontalPlacement === "left" ? "bottom-start" : "bottom-end"
@@ -615,6 +617,12 @@ class HvDatePicker extends React.Component {
         popperOptions={{
           onCreate: this.createCalendarPlacement,
           onUpdate: this.updateCalendarPlacement
+        }}
+        modifiers={{
+          preventOverflow: {
+            // Follows the anchor element outside of the boundaries.
+            escapeWithReference
+          }
         }}
         style={{
           zIndex: `${calendarFlipped ? theme.zIndex.tooltip : 1}`
@@ -732,7 +740,11 @@ HvDatePicker.propTypes = {
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
-  disablePortal: PropTypes.bool
+  disablePortal: PropTypes.bool,
+  /**
+   * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
+   */
+  escapeWithReference: PropTypes.bool
 };
 
 HvDatePicker.defaultProps = {
@@ -753,7 +765,8 @@ HvDatePicker.defaultProps = {
   locale: DEFAULT_LOCALE,
   showActions: false,
   onChange: undefined,
-  disablePortal: true
+  disablePortal: true,
+  escapeWithReference: true
 };
 
 export default HvDatePicker;
