@@ -92,7 +92,7 @@ node('non-master') {
 
         test_stages["robot"] = {
             stage('Tests (robot)') {
-                if(!params.skipAutomationTest) {
+                if(!params.skipAutomationTest || env.CHANGE_TARGET == releases_branch) {
                     def hostname = sh(script: 'hostname -I', returnStdout: true).split(' ')[0]
                     def automation_storybook_port = '9002'
 
