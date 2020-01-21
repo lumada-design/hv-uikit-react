@@ -18,9 +18,13 @@ import React from "react";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
+import { axe, toHaveNoViolations } from "jest-axe";
+
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
 import Popper from "../../utils/Popper";
+
+expect.extend(toHaveNoViolations);
 
 jest.mock(
   "popper.js",
@@ -229,14 +233,60 @@ describe("DropDownMenu", () => {
         </HvProvider>
       );
 
-      const button = wrapper.find('button');
+      const button = wrapper.find("button");
 
       button.simulate("click");
+
       expect(wrapper.find(Popper).props().open).toBe(true);
 
       const option = wrapper.find('li[id="test-list-item-0"]');
       option.simulate("click");
       expect(wrapper.find(Popper).props().open).toBe(false);
     });
+  });
+
+  describe("DropdowmMenuA11Y", () => {
+    it("closed", async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropDownMenu
+            dataList={menuOptions}
+            icon={<div />}
+            keepOpened={false}
+            onClick={() => {}}
+            id="test"
+            aria-label="test"
+          />
+        </HvProvider>
+      );
+
+      const results = await axe(wrapper.getDOMNode()[1]);
+
+      expect(results).toHaveNoViolations();
+    });
+
+    // it("open", async () => {
+    //   wrapper = mount(
+    //     <HvProvider>
+    //       <DropDownMenu
+    //         dataList={menuOptions}
+    //         icon={<div />}
+    //         keepOpened={false}
+    //         onClick={() => {}}
+    //         id="test"
+    //         aria-label="test"
+    //         disablePortal
+    //       />
+    //     </HvProvider>
+    //   );
+    //
+    //   const button = wrapper.find("button");
+    //
+    //   button.simulate("click");
+    //
+    //   const results = await axe(wrapper.getDOMNode()[1]);
+    //
+    //   expect(results).toHaveNoViolations();
+    // });
   });
 });

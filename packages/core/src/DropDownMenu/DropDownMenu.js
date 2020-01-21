@@ -22,8 +22,32 @@ import IconButton from "@material-ui/core/IconButton";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Popper from "../utils/Popper";
 import List from "../List";
+
+/**
+ * Auxiliary function to find adjacent nodes to focus.
+ *
+ * @param nodeId
+ * @returns {{prevFocus: *, nextFocus: *}}
+ */
+const getPrevNextFocus = nodeId => {
+  const nodes =
+    document.querySelectorAll("input, button, select, textarea, a[href]") || [];
+
+  const nbNodes = nodes.length;
+  let index = 0;
+  for (; index < nbNodes; index += 1) {
+    if (nodes[index].id === nodeId) {
+      break;
+    }
+  }
+  return {
+    nextFocus: nodes[index + 1 > nbNodes - 1 ? 0 : index + 1],
+    prevFocus: nodes[index - 1 < 0 ? nbNodes - 1 : index - 1]
+  };
+};
 
 /**
  * Dropdown component with a menu.
@@ -43,13 +67,16 @@ const DropDownMenu = ({
   placement,
   dataList,
   id,
+  disabled,
   disablePortal,
   onClick,
-  keepOpened
+  keepOpened,
+  ...others
 }) => {
   const [open, setOpen] = useState(false);
   const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
+  const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
@@ -82,17 +109,29 @@ const DropDownMenu = ({
     if (isKeypress(evt, KeyboardCodes.Esc)) {
       handleClose(evt);
     }
+    if (isKeypress(evt, KeyboardCodes.Tab)) {
+      const node = evt.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
+      handleToggle();
+      if (node) setTimeout(() => node.focus(), 0);
+    }
   };
 
   const handleKeyboardToggle = event => {
     if (
-        isKeypress(event, KeyboardCodes.SpaceBar) ||
-        isKeypress(event, KeyboardCodes.Enter)
+      isKeypress(event, KeyboardCodes.SpaceBar) ||
+      isKeypress(event, KeyboardCodes.Enter)
     ) {
       handleToggle(event);
       event.preventDefault();
     }
   };
+
+  const IconRender = icon || (
+    <MoreVert
+      boxStyles={{ width: "32px", height: "32px" }}
+      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : undefined]}
+    />
+  );
 
   return (
     <div id={internalId} className={classes.root}>
@@ -101,13 +140,16 @@ const DropDownMenu = ({
         buttonRef={anchorRef}
         aria-controls={open ? `${internalId}-list` : undefined}
         aria-haspopup="true"
+        aria-expanded={open ? true : undefined}
         onClick={handleToggle}
         onKeyDown={handleKeyboardToggle}
         className={classNames(classes.icon, {
           [classes.iconSelected]: open
         })}
+        disabled={disabled}
+        {...others}
       >
-        {icon}
+        {IconRender}
       </IconButton>
       <Popper
         disablePortal={disablePortal}
@@ -163,6 +205,10 @@ DropDownMenu.propTypes = {
    */
   classes: PropTypes.shape({
     /**
+     * Styles applied to the root of the component.
+     */
+    root: PropTypes.string,
+    /**
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
@@ -178,7 +224,7 @@ DropDownMenu.propTypes = {
   /**
    * Icon.
    */
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.element,
   /**
    * A list containing the elements to be rendered.
    *
@@ -212,7 +258,11 @@ DropDownMenu.propTypes = {
   /**
    * Keep the Dropdown Menu opened after clicking one option
    */
-  keepOpened: PropTypes.bool
+  keepOpened: PropTypes.bool,
+  /**
+   * Defines if the component is disabled.
+   */
+  disabled: PropTypes.bool
 };
 
 DropDownMenu.defaultProps = {
@@ -220,7 +270,9 @@ DropDownMenu.defaultProps = {
   placement: "left",
   disablePortal: false,
   onClick: null,
-  keepOpened: true
+  keepOpened: true,
+  disabled: false,
+  icon: undefined
 };
 
 export default DropDownMenu;

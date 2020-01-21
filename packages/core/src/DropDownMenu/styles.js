@@ -34,6 +34,14 @@ const styles = theme => ({
     "&:focus": {
       ...outlineStyles
     },
+    "&:disabled": {
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    },
+    "&$disabled&:hover": {
+      cursor: "not-allowed",
+      pointerEvents: "auto"
+    },
     borderRadius: 0,
     display: "flex",
     alignItems: "center",

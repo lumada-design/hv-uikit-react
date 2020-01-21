@@ -1,5 +1,6 @@
 import React from "react";
 import DropDownMenu from "@hv/uikit-react-core/dist/DropDownMenu";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 
 const menuOptions = [
   {
@@ -16,9 +17,12 @@ const menuOptions = [
 export default (
   <div style={{ display: "flex", justifyContent: "center" }}>
     <DropDownMenu
+      id="dropMenu"
       dataList={menuOptions}
-      placement="right"
-      aria-label="dropdownMenu-2"
+      onClick={e => alert(e.label)}
+      disablePortal={false}
+      aria-label="dropdownMenu-4"
+      disabled
     />
   </div>
 );
