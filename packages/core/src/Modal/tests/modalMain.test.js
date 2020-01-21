@@ -18,7 +18,7 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-
+import { axe, toHaveNoViolations } from "jest-axe";
 import Backdrop from "@material-ui/core/Backdrop";
 
 import HvProvider from "../../Provider";
@@ -26,6 +26,8 @@ import Button from "../../Button";
 
 import ModalWithStyles from "../index";
 import Modal from "../Modal";
+
+expect.extend(toHaveNoViolations);
 
 describe("Modal withStyles", () => {
   let wrapper;
@@ -122,5 +124,18 @@ describe("Modal Component", () => {
     const backdrop = wrapper.find(Backdrop);
     backdrop.at(0).simulate("click");
     expect(onCloseMock).toHaveBeenCalled();
+  });
+
+  it("default state", async () => {
+    wrapper = mount(
+      <HvProvider>
+        <ModalWithStyles open={open} onClose={onCloseMock}>
+          Modal Content
+        </ModalWithStyles>
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.getDOMNode()[1]);
+    expect(results).toHaveNoViolations();
   });
 });
