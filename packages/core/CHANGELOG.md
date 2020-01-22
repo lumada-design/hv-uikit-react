@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.19.0...@hv/uikit-react-core@1.20.0) (2020-01-22)
+
+
+### Features
+
+* **datepicker:** add new properties to popper. [#1036](https://github.com/pentaho/hv-uikit-react/issues/1036) ([1aad3c5](https://github.com/pentaho/hv-uikit-react/commit/1aad3c565a3185ba4e5ac59eda117490c3d52188))
+
+
+
+
+
 # [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.18.0...@hv/uikit-react-core@1.19.0) (2020-01-18)
 
 
