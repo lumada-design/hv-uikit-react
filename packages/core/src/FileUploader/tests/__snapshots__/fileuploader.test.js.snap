@@ -41835,6 +41835,7 @@ body {
                       className="DropZone-dropzoneAreaIcon-107 Doc-root-135 Doc-rootM-138"
                     >
                       <svg
+                        focusable={false}
                         height="32px"
                         viewBox="0 0 16 16"
                         width="32px"
@@ -56201,6 +56202,7 @@ body {
                                           className="File-iconContainer-147 Close-root-190 Close-rootXs-191"
                                         >
                                           <svg
+                                            focusable={false}
                                             height="12px"
                                             viewBox="0 0 16 16"
                                             width="12px"
@@ -67685,6 +67687,7 @@ body {
                                           className="File-iconContainer-147 Close-root-190 Close-rootXs-191"
                                         >
                                           <svg
+                                            focusable={false}
                                             height="12px"
                                             viewBox="0 0 16 16"
                                             width="12px"

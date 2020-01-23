@@ -9733,6 +9733,7 @@ body {
                   className="InputAdornment-adornmentIconBox-3 CloseXS-root-4 CloseXS-rootXs-5"
                 >
                   <svg
+                    focusable={false}
                     height="12px"
                     viewBox="0 0 12 12"
                     width="12px"

@@ -125,7 +125,7 @@ const ${componentName} = ({
 
   return (
     <div className={clx} style={boxStyles} {...other}>
-      ${svgOutput.replace("{...other}", "style={style}")}
+      ${svgOutput.replace("{...other}", "style={style} focusable={false}")}
     </div>
   );
 };

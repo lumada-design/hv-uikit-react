@@ -17749,6 +17749,7 @@ body {
                   className="DropZone-dropzoneAreaIcon-50 Doc-root-78 Doc-rootM-81"
                 >
                   <svg
+                    focusable={false}
                     height="32px"
                     viewBox="0 0 16 16"
                     width="32px"
@@ -37433,6 +37434,7 @@ body {
                   className="DropZone-dropzoneAreaIcon-132 Doc-root-160 Doc-rootM-163"
                 >
                   <svg
+                    focusable={false}
                     height="32px"
                     viewBox="0 0 16 16"
                     width="32px"

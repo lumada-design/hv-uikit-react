@@ -26807,6 +26807,7 @@ body {
               className="File-icon-88 Success-root-93 Success-rootS-95"
             >
               <svg
+                focusable={false}
                 height="16px"
                 viewBox="0 0 16 16"
                 width="16px"
@@ -39209,6 +39210,7 @@ body {
                               className="File-iconContainer-91 Close-root-164 Close-rootXs-165"
                             >
                               <svg
+                                focusable={false}
                                 height="12px"
                                 viewBox="0 0 16 16"
                                 width="12px"
@@ -66044,6 +66046,7 @@ body {
               className="File-icon-88 Success-root-93 Success-rootS-95"
             >
               <svg
+                focusable={false}
                 height="16px"
                 viewBox="0 0 16 16"
                 width="16px"
@@ -78446,6 +78449,7 @@ body {
                               className="File-iconContainer-91 Close-root-164 Close-rootXs-165"
                             >
                               <svg
+                                focusable={false}
                                 height="12px"
                                 viewBox="0 0 16 16"
                                 width="12px"
