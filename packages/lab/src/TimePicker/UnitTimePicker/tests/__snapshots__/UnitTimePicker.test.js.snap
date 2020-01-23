@@ -9407,11 +9407,14 @@ body {
   border-color: #BCBCBC;
 }
 .HvInput-inputRootFocused-113 {
-  outline: 5px auto rgba(0, 150, 255, 1);
   background: #FFFFFF;
   border-style: solid;
   border-width:  0 0 1px 0;
   border-color: #414141;
+  outline-color: Highlight;
+  outline-style: auto;
+  outline-width: 4px;
+  outline-offset: -2px;
 }
 .HvInput-inputRootFocused-113:hover {
   background: #FFFFFF;
@@ -9607,7 +9610,10 @@ input:-webkit-autofill {
                     "border-color": "#414141",
                     "border-style": "solid",
                     "border-width": " 0 0 1px 0",
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   Object {
                     "background": "#FFFFFF",
@@ -10163,7 +10169,10 @@ input:-webkit-autofill {
                     "border-color": "#414141",
                     "border-style": "solid",
                     "border-width": " 0 0 1px 0",
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   ".HvInput-inputRootFocused-113 .HvInput-iconClear-127": Object {
                     "visibility": "visible",
@@ -10603,7 +10612,10 @@ input:-webkit-autofill {
                     "border-color": "#414141",
                     "border-style": "solid",
                     "border-width": " 0 0 1px 0",
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   "inputRootInvalid": Object {
                     "border-color": "#FF5252",
@@ -11328,7 +11340,10 @@ input:-webkit-autofill {
                     "borderColor": "#414141",
                     "borderStyle": "solid",
                     "borderWidth": " 0 0 1px 0",
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outlineColor": "Highlight",
+                    "outlineOffset": -2,
+                    "outlineStyle": "auto",
+                    "outlineWidth": 4,
                   },
                   "inputRootInvalid": Object {
                     "&:hover": Object {
@@ -34700,6 +34715,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-144 .MuiInputBase-input-153
                                         className="HvInput-icon-126 CloseXS-root-160 CloseXS-rootXs-161"
                                       >
                                         <svg
+                                          focusable={false}
                                           height="12px"
                                           viewBox="0 0 12 12"
                                           width="12px"

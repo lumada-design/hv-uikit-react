@@ -5124,7 +5124,10 @@ body {
   background-color: #F0F0F0;
 }
 .Pagination-pageSizeOptionsSelect-311:focus {
-  outline: 5px auto rgba(0, 150, 255, 1);
+  outline-color: Highlight;
+  outline-style: auto;
+  outline-width: 4px;
+  outline-offset: -2px;
 }
 .Pagination-pageNavigator-312 {
   height: 32px;
@@ -5182,7 +5185,10 @@ body {
   background-color: #F0F0F0;
 }
 .Pagination-iconContainer-318:focus {
-  outline: 5px auto rgba(0, 150, 255, 1);
+  outline-color: Highlight;
+  outline-style: auto;
+  outline-width: 4px;
+  outline-offset: -2px;
 }
 .Pagination-icon-319 {
   width: 32px;
@@ -5271,7 +5277,10 @@ body {
                     "cursor": "pointer",
                   },
                   Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   Object {
                     "align-items": "stretch",
@@ -5329,7 +5338,10 @@ body {
                     "background-color": "#F0F0F0",
                   },
                   Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   Object {
                     "align-items": "center",
@@ -5364,7 +5376,10 @@ body {
                     "padding": 0,
                   },
                   ".Pagination-iconContainer-318:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   ".Pagination-iconContainer-318:hover": Object {
                     "background-color": "#F0F0F0",
@@ -5447,7 +5462,10 @@ body {
                     "display": "none",
                   },
                   ".Pagination-pageSizeOptionsSelect-311:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   ".Pagination-pageSizeOptionsSelect-311:hover:enabled": Object {
                     "background-color": "#F0F0F0",
@@ -6061,7 +6079,10 @@ body {
                     "margin": "0 auto",
                   },
                   ".Pagination-iconContainer-318:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outlineColor": "Highlight",
+                    "outlineOffset": -2,
+                    "outlineStyle": "auto",
+                    "outlineWidth": 4,
                   },
                   ".Pagination-iconContainer-318:hover": Object {
                     "backgroundColor": "#F0F0F0",
@@ -6083,7 +6104,10 @@ body {
                     "display": "none",
                   },
                   ".Pagination-pageSizeOptionsSelect-311:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outlineColor": "Highlight",
+                    "outlineOffset": -2,
+                    "outlineStyle": "auto",
+                    "outlineWidth": 4,
                   },
                   ".Pagination-pageSizeOptionsSelect-311:hover:enabled": Object {
                     "backgroundColor": "#F0F0F0",
@@ -6100,7 +6124,10 @@ body {
                   },
                   "iconContainer": Object {
                     "&:focus": Object {
-                      "outline": "5px auto rgba(0, 150, 255, 1)",
+                      "outlineColor": "Highlight",
+                      "outlineOffset": -2,
+                      "outlineStyle": "auto",
+                      "outlineWidth": 4,
                     },
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
@@ -6168,7 +6195,10 @@ body {
                       "display": "none",
                     },
                     "&:focus": Object {
-                      "outline": "5px auto rgba(0, 150, 255, 1)",
+                      "outlineColor": "Highlight",
+                      "outlineOffset": -2,
+                      "outlineStyle": "auto",
+                      "outlineWidth": 4,
                     },
                     "&:hover:enabled": Object {
                       "backgroundColor": "#F0F0F0",

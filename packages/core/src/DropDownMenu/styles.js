@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
     display: "contents"
@@ -30,7 +32,7 @@ const styles = theme => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:focus": {
-      outline: "5px auto rgba(0, 150, 255, 1)"
+      ...outlineStyles
     },
     borderRadius: 0,
     display: "flex",
