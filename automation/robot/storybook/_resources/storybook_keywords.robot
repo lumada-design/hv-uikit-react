@@ -78,15 +78,14 @@ get css property value
 open storybook
     [Arguments]        ${url}=${STORYBOOK_URL}    ${browser}=${BROWSER}
     [Documentation]
-    ...                Open the choosen browser on the storybook url provided
-    ...
+    ...                Open the choosen browser on the storybook url provided with options: \n
+    ...                 - *window-size=1920,1080;  start-maximized;  headless*
     ...                Arguments:
     ...                - url         (string)    url address of storybook (by default is assuming variable ${STORYBOOK_URL})
     ...                - browser     (string)    the desired browser ( by defautl is assuming variable ${BROWSER} )
     ...
-    Open Browser               ${url}    ${browser}
-    Maximize Browser Window
-
+    Open Browser    ${url}    ${browser}    options=add_argument("--window-size=1920,1080"); add_argument("--start-maximized"); add_argument("--headless")
+    
 verify css element properties
     [Arguments]        ${locator}    ${css}
     [Documentation]
