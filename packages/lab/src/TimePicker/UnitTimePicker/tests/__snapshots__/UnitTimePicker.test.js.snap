@@ -24557,6 +24557,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                 onClick={[Function]}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"
@@ -34475,6 +34476,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-137 .MuiInputBase-input-146
                 onClick={[Function]}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"

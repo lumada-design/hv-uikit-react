@@ -10568,6 +10568,7 @@ body {
                 className="ToggleButton-icon-2 Unlock-root-4 Unlock-rootS-6"
               >
                 <svg
+                  focusable={false}
                   height="16px"
                   viewBox="0 0 16 16"
                   width="16px"

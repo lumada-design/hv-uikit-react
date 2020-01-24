@@ -29718,6 +29718,7 @@ body {
                   className="Pagination-selectDownIcon-318 DropDownXS-root-344 DropDownXS-rootXs-345"
                 >
                   <svg
+                    focusable={false}
                     height="12px"
                     viewBox="0 0 12 12"
                     width="12px"
@@ -32662,6 +32663,7 @@ body {
                               className="Pagination-icon-317 Start-root-358 Start-rootS-360"
                             >
                               <svg
+                                focusable={false}
                                 height="16px"
                                 viewBox="0 0 16 16"
                                 width="16px"
@@ -33705,6 +33707,7 @@ body {
                               className="Pagination-icon-317 Backwards-root-363 Backwards-rootS-365"
                             >
                               <svg
+                                focusable={false}
                                 height="16px"
                                 viewBox="0 0 16 16"
                                 width="16px"
@@ -40464,6 +40467,7 @@ body {
                               className="Pagination-icon-317 Forwards-root-368 Forwards-rootS-370"
                             >
                               <svg
+                                focusable={false}
                                 height="16px"
                                 viewBox="0 0 16 16"
                                 width="16px"
@@ -41507,6 +41511,7 @@ body {
                               className="Pagination-icon-317 End-root-373 End-rootS-375"
                             >
                               <svg
+                                focusable={false}
                                 height="16px"
                                 viewBox="0 0 16 16"
                                 width="16px"
