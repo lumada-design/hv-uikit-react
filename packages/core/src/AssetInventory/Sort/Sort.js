@@ -114,7 +114,8 @@ const Sort = ({
   selected,
   onSelection,
   metadata,
-  onSortChange
+  onSortChange,
+  disablePortal
 }) => {
   const innerSortValues = data => {
     onSelection(sortValues(data), data.id);
@@ -128,6 +129,7 @@ const Sort = ({
       onChange={onSortChange || innerSortValues}
       selectDefault={false}
       singleSelectionToggle={false}
+      disablePortal={disablePortal}
     />
   );
 };
@@ -169,12 +171,17 @@ Sort.propTypes = {
   /**
    * Selected id
    */
-  selected: PropTypes.string.isRequired
+  selected: PropTypes.string.isRequired,
+  /**
+   * Disable portal on the dropdown
+   */
+  disablePortal: PropTypes.bool
 };
 
 Sort.defaultProps = {
   id: undefined,
-  onSortChange: null
+  onSortChange: null,
+  disablePortal: false
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
