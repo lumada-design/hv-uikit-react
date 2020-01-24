@@ -21,16 +21,15 @@ import isNil from "lodash/isNil";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import Unsuccess from "@hv/uikit-react-icons/dist/Generic/Fail";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 
 import validationStates from "./validationStates";
 
 function onKeyDownClear(e, handleClear) {
-  const EnterKeyCode = 13;
-
-  if (e.keyCode === EnterKeyCode) {
+  if (isKeypress(e, KeyboardCodes.Enter)) {
     handleClear();
   }
-};
+}
 
 const InputAdornment = ({
   inputId,
@@ -43,32 +42,35 @@ const InputAdornment = ({
   clearButtonLabel
 }) => (
   <div className={classes.adornmentsBox} aria-hidden="true">
-    {showValidationIcon &&
-      validationState === validationStates.valid && <Success semantic="sema1" className={classNames(classes.adornmentIconBox, classes.icon)} aria-hidden="true" />}
-    {showValidationIcon &&
-      validationState === validationStates.invalid && <Unsuccess semantic="sema4" className={classNames(classes.adornmentIconBox, classes.icon)} aria-hidden="true" />}
+    {showValidationIcon && validationState === validationStates.valid && (
+      <Success semantic="sema1" className={classes.icon} aria-hidden="true" />
+    )}
+    {showValidationIcon && validationState === validationStates.invalid && (
+      <Unsuccess semantic="sema4" className={classes.icon} aria-hidden="true" />
+    )}
 
-    {showClear &&
-      validationState === validationStates.filled &&
-      <button 
+    {showClear && (
+      <button
         type="button"
-        {...(inputId && {
-          "aria-controls": inputId
-        })}
-        tabIndex="-1"
+        aria-controls={inputId || undefined}
         aria-label={clearButtonLabel}
         title={clearButtonLabel}
         className={classNames(classes.adornmentButton, classes.iconClear)}
         onMouseDown={handleClear}
-        onKeyDown={(e) => onKeyDownClear(e, handleClear)}
+        onKeyDown={e => onKeyDownClear(e, handleClear)}
         aria-hidden="true"
       >
-        <Close className={classNames(classes.adornmentIconBox, classes.icon)} />
+        <Close className={classes.icon} />
       </button>
-    }
+    )}
 
     {!isNil(customFixedIcon) && (
-      <>{React.cloneElement(customFixedIcon, {className: classNames(classes.adornmentIconBox, classes.icon, customFixedIcon.props.className), "aria-hidden": true})}</>
+      <>
+        {React.cloneElement(customFixedIcon, {
+          className: classNames(classes.icon, customFixedIcon.props.className),
+          "aria-hidden": true
+        })}
+      </>
     )}
   </div>
 );
@@ -83,10 +85,6 @@ InputAdornment.propTypes = {
    * A Jss Object used to override or extend the component styles.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
 
   /**
    * If `true` the validation icon is shown, if `false` it is not
@@ -120,8 +118,6 @@ InputAdornment.propTypes = {
 
 InputAdornment.defaultProps = {
   inputId: null,
-
-  theme: null,
 
   showValidationIcon: true,
   validationState: validationStates.empty,
