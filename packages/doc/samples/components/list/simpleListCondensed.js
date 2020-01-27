@@ -28,12 +28,20 @@ const styles = theme => ({
   }
 });
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const ListWrapper = withStyles(styles, {
+  withTheme: true
+})(({ classes, children }) => (
+  <div className={classes.wrapper}>{children}</div>
+));
+
+// Passing the aria-label to the component is necessary in order for the component
+// to meet accessibility requirements
+const ariaProps = {
+  "aria-label": "Simple Condensed List Title"
+};
 
 export default (
   <ListWrapper>
-    <List values={data} selectable={false} condensed />
+    <List values={data} selectable={false} condensed listProps={ariaProps} />
   </ListWrapper>
 );

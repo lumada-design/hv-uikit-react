@@ -1,0 +1,11 @@
+list:               css:ul[role='listbox']
+menu:               css:ul[role='menubar']
+item1:              hv-list-1-item-0
+item2:              hv-list-1-item-1
+item3:              hv-list-1-item-2
+item4:              hv-list-1-item-3
+item5:              hv-list-1-item-4
+selectedItems:      css:li[aria-selected='true']
+headerItem:         hv-checkbox-2
+headerItemLabel:    css:#hv-checkbox-2>span[class*='MuiFormControlLabel']
+iconChecked:        css:div[class*='CheckboxCheck']

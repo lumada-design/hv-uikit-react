@@ -17,19 +17,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import {
-  KeyboardCodes,
-  isKeypress as isKey
-} from "@hv/uikit-common-utils/dist";
+import isNil from "lodash/isNil";
+import { KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
+import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
+import isBrowser from "../utils/browser";
 
 /* eslint-disable no-param-reassign */
 const Focus = props => {
   const {
     classes,
     children,
-    enabled,
+    configuration,
+    selected,
+    disabled,
+    rootRef,
     focusOnClick,
+    focusDisabled,
     strategy,
     useArrows,
     useFalseFocus
@@ -38,42 +42,53 @@ const Focus = props => {
   const [childFocus, setChildFocus] = useState(null);
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
-  const setTabIndex = (el, tabIndex) => {
-    if (childFocus) {
+  const getFocuses = () =>
+    rootRef &&
+    rootRef.current &&
+    Array.from(rootRef.current.getElementsByClassName(classes.root));
+
+  const setTabIndex = (el, tabIndex = 0) => {
+    const elChildFocus = getFocusableChildren(el)[0];
+    if (elChildFocus) {
       el.tabIndex = -1;
-      childFocus.tabIndex = tabIndex;
+      elChildFocus.tabIndex = tabIndex;
     } else {
       el.tabIndex = tabIndex;
     }
   };
 
-  const setFocusTo = el => {
-    el.focus();
+  const setSelectedTabIndex = () => {
+    const focuses = getFocuses();
+    const firstSelected = focuses.find(focus =>
+      focus.classList.contains(classes.selected)
+    );
+
+    if (!firstSelected) return;
+    focuses.forEach(focus => setTabIndex(focus, -1));
+    setTabIndex(firstSelected, 0);
+  };
+
+  const clearTabSiblings = el => {
+    getFocuses().forEach(focus => setTabIndex(focus, -1));
+    setTabIndex(el, 0);
   };
 
   const config = el => {
+    const { tabIndex } = configuration;
     if (!el || hasRunConfig) return;
     if (strategy === "card") {
       setChildFocus(children);
       return;
     }
 
-    const focusableChildren =
-      el.querySelectorAll("input, button, select, textarea, a[href]") || [];
-
+    const focusableChildren = getFocusableChildren(el);
     if (focusableChildren.length) {
       focusableChildren.forEach(child => setTabIndex(child, -1));
       setChildFocus(focusableChildren[0]);
     }
 
-    setTabIndex(el, enabled ? 0 : -1);
+    if (!isNil(tabIndex)) setTabIndex(el, tabIndex);
     setHasRunConfig(true);
-  };
-
-  const clearTabSiblings = el => {
-    const siblings = el.parentElement.children;
-    siblings.forEach(sibling => setTabIndex(sibling, -1));
-    setTabIndex(el, 0);
   };
 
   const onFocus = evt => {
@@ -88,6 +103,12 @@ const Focus = props => {
   const onBlur = evt => {
     setShowFocus(false);
     if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
+
+    setTimeout(() => {
+      if (!rootRef.current.contains(document.activeElement)) {
+        setSelectedTabIndex();
+      }
+    }, 10);
   };
 
   const onMouseDown = evt => {
@@ -103,14 +124,14 @@ const Focus = props => {
 
   const onKeyDown = evt => {
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
-    const { SpaceBar, ArrowUp, ArrowDown, Enter } = KeyboardCodes;
+    const { SpaceBar, ArrowUp, ArrowDown, Enter, Home, End } = KeyboardCodes;
 
-    // TODO: review side effects
-    if (isKey(evt, SpaceBar) || isKey(evt, ArrowUp) || isKey(evt, ArrowDown)) {
+    if (isOneOfKeys(evt, [SpaceBar, ArrowUp, ArrowDown, Home, End])) {
       evt.preventDefault();
+      evt.stopPropagation();
     }
 
-    if (isKey(evt, Enter) || isKey(evt, SpaceBar) || !useArrows) {
+    if (isOneOfKeys(evt, [Enter, SpaceBar]) || !useArrows) {
       // trigger click on enter unless child focus is input
       if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar)) {
         evt.currentTarget.click();
@@ -118,23 +139,42 @@ const Focus = props => {
       return;
     }
 
-    const {
-      parentElement: { firstElementChild, lastElementChild },
-      previousElementSibling,
-      nextElementSibling
-    } = evt.currentTarget;
+    const isDisabledFocusable = strategy === "menubar";
+    const focusesList = getFocuses().filter(
+      el => isDisabledFocusable || !el.classList.contains(classes.disabled)
+    );
+    const currentFocus = focusesList.indexOf(evt.currentTarget);
+
+    const focuses = {
+      first: focusesList[0],
+      last: focusesList[focusesList.length - 1],
+      previous: focusesList[currentFocus - 1],
+      next: focusesList[currentFocus + 1]
+    };
 
     switch (evt.keyCode) {
       case ArrowUp:
-        setFocusTo(previousElementSibling || lastElementChild);
+        setFocusTo(focuses.previous || focuses.last);
         setTabIndex(evt.currentTarget, -1);
         break;
       case ArrowDown:
-        setFocusTo(nextElementSibling || firstElementChild);
+        setFocusTo(focuses.next || focuses.first);
+        setTabIndex(evt.currentTarget, -1);
+        break;
+      case Home:
+        setFocusTo(focuses.first);
+        setTabIndex(evt.currentTarget, -1);
+        break;
+      case End:
+        setFocusTo(focuses.last);
         setTabIndex(evt.currentTarget, -1);
         break;
       default:
     }
+  };
+
+  const onKeyUp = evt => {
+    if (isBrowser("firefox")) evt.preventDefault();
   };
 
   const focusWrapper = childrenToWrap => (
@@ -147,12 +187,18 @@ const Focus = props => {
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
-        className: classNames(children.props.className, classes.focusDisabled),
+        className: classNames(children.props.className, classes.root, {
+          [classes.selected]: selected,
+          [classes.disabled]: disabled,
+          [classes.focusDisabled]: focusDisabled
+        }),
         ref: config,
         onFocus,
         onBlur,
         onMouseDown,
-        onKeyDown
+        onKeyDown,
+        onKeyUp,
+        selected
       })}
     </ConditionalWrapper>
   );
@@ -173,23 +219,40 @@ Focus.propTypes = {
     focused: PropTypes.string
   }).isRequired,
   /**
-   * Whether the focus is enabled.
+   * The reference to the root element to hold all Focus' context.
    */
-  enabled: PropTypes.bool,
+  rootRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any })
+  ]),
   /**
-   *
+   * Extra configuration for the child element.
+   */
+  configuration: PropTypes.instanceOf(Object),
+  /**
+   * Whether the focus is selected.
+   */
+  selected: PropTypes.bool,
+  /**
+   * Whether the focus is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Child node to set the focus.
    */
   children: PropTypes.node.isRequired,
   /**
-   *
-   * Focus and navigatino strategy to be used.
+   * Focus and navigation strategy to be used.
    */
-  strategy: PropTypes.oneOf("list", "card"),
+  strategy: PropTypes.oneOf(["listbox", "menubar", "card"]),
   /**
    * Show focus when click element.
    */
   focusOnClick: PropTypes.bool,
+  /**
+   * Show focus when click element.
+   */
+  focusDisabled: PropTypes.bool,
   /**
    * Use up/ down keyboard arrows to control focus.
    */
@@ -201,11 +264,15 @@ Focus.propTypes = {
 };
 
 Focus.defaultProps = {
+  rootRef: undefined,
   focusOnClick: false,
+  focusDisabled: true,
   useArrows: true,
   useFalseFocus: false,
-  strategy: "list",
-  enabled: true
+  strategy: "listbox",
+  configuration: {},
+  selected: false,
+  disabled: false
 };
 
 export default Focus;

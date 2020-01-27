@@ -55,6 +55,7 @@ class List extends React.Component {
       internalId: id || uniqueId("hv-list-"),
       ...DEFAULT_STATE
     };
+    this.listRef = React.createRef();
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -123,18 +124,32 @@ class List extends React.Component {
   };
 
   renderListItem = (item, i) => {
-    const { classes, multiSelect, useSelector, condensed } = this.props;
+    const {
+      classes,
+      multiSelect,
+      useSelector,
+      selectable,
+      condensed
+    } = this.props;
     const { internalId } = this.state;
 
     const itemId = `${internalId}-item-${i}`;
-
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
-      <Focus key={i} enabled={!item.disabled && i === 0}>
+      <Focus
+        key={i}
+        rootRef={this.listRef}
+        selected={item.selected}
+        disabled={item.disabled}
+        strategy={selectable ? "listbox" : "menubar"}
+        configuration={{
+          tabIndex: i === 0 ? 0 : -1
+        }}
+      >
         <li
           id={itemId}
-          role="option"
-          aria-selected={item.selected}
+          role={selectable ? "option" : "menuitem"}
+          aria-selected={item.selected || undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
           className={classNames(classes.listItem, {
@@ -264,21 +279,34 @@ class List extends React.Component {
   };
 
   render() {
-    const { classes, multiSelect, useSelector, showSelectAll } = this.props;
+    const {
+      classes,
+      multiSelect,
+      useSelector,
+      showSelectAll,
+      selectable,
+      listProps
+    } = this.props;
     const { list, internalId } = this.state;
 
     return (
-      <>
+      <div ref={this.listRef}>
         {multiSelect && useSelector && showSelectAll && this.renderSelectAll()}
 
         {list && (
-          <ul id={internalId} className={classes.root} role="listbox">
+          <ul
+            id={internalId}
+            className={classes.root}
+            role={selectable ? "listbox" : "menubar"}
+            aria-multiselectable={multiSelect || undefined}
+            {...listProps}
+          >
             {list.map(
               (item, i) => !item.isHidden && this.renderListItem(item, i)
             )}
           </ul>
         )}
-      </>
+      </div>
     );
   }
 }
@@ -419,7 +447,11 @@ List.propTypes = {
   /**
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */
-  hasTooltips: PropTypes.bool
+  hasTooltips: PropTypes.bool,
+  /**
+   * Properties passed to the ul element.
+   */
+  listProps: PropTypes.instanceOf(Object)
 };
 
 List.defaultProps = {
@@ -435,7 +467,8 @@ List.defaultProps = {
   singleSelectionToggle: true,
   condensed: false,
   onChange() {},
-  onClick() {}
+  onClick() {},
+  listProps: undefined
 };
 
 export default List;
