@@ -11,7 +11,7 @@ files should be equal
     ...     - space at end of line
     ...     - cr at end of file
     ...
-    @{args}                        Set Variable           diff           --ignore-blank-line    --ignore-space-at-eol    --ignore-cr-at-eol    --no-index      --word-diff
+    @{args}                        Set Variable           diff           --ignore-blank-lines    --ignore-space-at-eol    --ignore-cr-at-eol    --no-index      --word-diff
     ${gitResult}=                  Run Process            git            @{args}                ${AfilePath}             ${BfilePath}          timeout=120s
     Should Be Empty                ${gitResult.stdout}
     Should Be Equal As Integers    ${gitResult.rc}        0              ${gitResult.stderr}
@@ -26,11 +26,12 @@ pa11y result should be equal as file
      ...   Run pa11y script and then compared saved results file with a given file. \n
      ...   Fails if files don't are compared/exists or if files don't are equivalent.
      ...
-    ${pa11yResult}=          Run Process               ${pa11yScript}      stdout=${expectedFile}Delete    shell=True    timeout=120s
+    ${pa11yResult}=          Run Process              ${pa11yScript}                               stdout=${expectedFile}Delete    shell=True    timeout=120s
     Should Be Empty          ${pa11yResult.stderr}
-    ${prettyJson}=           Run Process               python -m json.tool ${expectedFile}Delete    stdout=${expectedFile}2    shell=True    timeout=120s
-    files should be equal    ${expectedFile}        ${expectedFile}2
+    ${prettyJson}=           Run Process              python -m json.tool ${expectedFile}Delete    stdout=${expectedFile}2         shell=True    timeout=120s
+    files should be equal    ${expectedFile}          ${expectedFile}2
     Remove File              ${expectedFile}Delete
+    Remove File              ${expectedFile}2
 
 pa11y should not find errors
     [Arguments]    ${pa11yScript}

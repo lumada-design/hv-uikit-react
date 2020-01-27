@@ -51,6 +51,7 @@ const Main = ({
   const initialFocus = firstFocusable
     ? () => {
         if (!document.getElementById(firstFocusable)) {
+          // eslint-disable-next-line no-console
           console.warn(`firstFocusable element ${firstFocusable} not found.`);
           return null;
         }

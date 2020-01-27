@@ -39,12 +39,20 @@ const styles = theme => ({
   }
 });
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const ListWrapper = withStyles(styles, {
+  withTheme: true
+})(({ classes, children }) => (
+  <div className={classes.wrapper}>{children}</div>
+));
+
+// Passing the aria-label to the component is necessary in order for the component
+// to meet accessibility requirements
+const ariaProps = {
+  "aria-label": "Multi Selection List with Selectors Title"
+};
 
 export default (
   <ListWrapper>
-    <List values={data} multiSelect={true} useSelector />
+    <List values={data} multiSelect={true} useSelector listProps={ariaProps} />
   </ListWrapper>
 );

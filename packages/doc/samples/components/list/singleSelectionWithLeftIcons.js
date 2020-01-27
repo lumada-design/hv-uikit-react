@@ -22,11 +22,19 @@ const styles = theme => ({
     "& svg *.color0": {
       fill: theme.hv.palette.atmosphere.atmo1
     }
+  },
+  disabled: {
+    "& svg *.color0": {
+      fill: theme.hv.palette.atmosphere.atmo7
+    },
   }
 });
 
-const getClasses = ({ classes, isSelected }) =>
-  classNames(classes.box, isSelected && classes.selected);
+const getClasses = ({ classes, isSelected, isDisabled }) =>
+  classNames(classes.box, {
+    [classes.selected]: isSelected,
+    [classes.disabled]: isDisabled
+  });
 
 const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
   <PlaneIcon className={getClasses(props)} />
@@ -68,7 +76,7 @@ const data = [
     label: "Advanced server DS530",
     selected: false,
     disabled: true,
-    iconCallback: () => <StyledPlaneIcon disabled />
+    iconCallback: state => <StyledPlaneIcon {...state} />
   },
   {
     label: "Advanced server DS555",
@@ -81,8 +89,15 @@ const ListWrapper = withStyles(styles, { withTheme: true })(
   ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
 );
 
+// Passing the aria-label to the component is necessary in order for the component
+// to meet accessibility requirements
+const ariaProps = {
+  "aria-label": "Single Selection List with Left Icons Title"
+};
+
 export default (
-  <ListWrapper>
-    <List values={data} selectDefault />
-  </ListWrapper>
+    <ListWrapper>
+      <List values={data} selectDefault listProps={ariaProps} />
+    </ListWrapper>
 );
+

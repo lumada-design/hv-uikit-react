@@ -50,8 +50,8 @@ const styles = theme => ({
     height: "32px",
     listStyleType: "none",
     cursor: "pointer",
-    "&:not($disabled):not($selected):hover": hover(theme),
-    "&:not($disabled):not($selector):hover:active": hoverActive(theme),
+     "&:not($disabled):not($selected):hover": hover(theme),
+     "&:not($disabled):not($selector):hover:active": hoverActive(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
     },

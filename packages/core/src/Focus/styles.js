@@ -24,6 +24,9 @@ export const outlineStyles = {
 };
 
 const styles = () => ({
+  root: {},
+  selected: {},
+  disabled: {},
   focusDisabled: {
     outline: "none",
     "& *:focus": {

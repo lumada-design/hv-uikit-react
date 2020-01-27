@@ -39,6 +39,23 @@ compare images
     Run Keyword If                round(${val},2)<1                     fail                                        The images do not match
     [Return]                      round(${output},2)
 
+element attribute value should contain
+    [Arguments]       ${locator}               ${attribute}    ${expected}
+    ${value}          Get Element Attribute    ${locator}      ${attribute}
+    Should Contain    ${value}                 ${expected}     ignore_case=True
+
+element attribute value should not contain
+    [Arguments]           ${locator}               ${attribute}    ${expected}
+    ${value}              Get Element Attribute    ${locator}      ${attribute}
+    Should Not Contain    ${value}                 ${expected}     ignore_case=True
+
+wait until element attribute value does not contain
+    [Arguments]    ${locator}    ${attribute}    ${expected}    ${retry_interval}
+    [Documentation]
+    ...    necessary for (and just for) ie synchronization
+    ...
+    Wait Until Keyword Succeeds    3    ${retry_interval}    element attribute value should not contain    ${locator}    ${attribute}    ${expected}
+
 get constanct css property value
     [Arguments]        ${locator}    ${property}
     [Documentation]
@@ -86,6 +103,13 @@ open storybook
     ...
     Open Browser               ${url}    ${browser}
     Maximize Browser Window
+
+verify element background-color change on mouse over
+    [Arguments]    ${locator}
+    Mouse Over    css:body
+    ${value}                       get constanct css property value    ${locator}    background-color
+    mouse over                     ${locator}
+    Wait Until Keyword Succeeds    5                                   500ms         verify css element property has different value    ${locator}    background-color    ${value}
 
 verify css element properties
     [Arguments]        ${locator}    ${css}
