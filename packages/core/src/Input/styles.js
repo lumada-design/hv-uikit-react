@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   container: {
     minWidth: "150px",
@@ -53,7 +55,7 @@ const styles = theme => ({
     borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
-    outline: "5px auto rgba(0, 150, 255, 1)",
+    ...outlineStyles,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: "0 0 1px 0",

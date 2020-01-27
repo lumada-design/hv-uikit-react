@@ -5095,7 +5095,10 @@ body {
   letter-spacing: 0.02em;
 }
 .HvButton-root-42:focus {
-  outline: 5px auto rgba(0, 150, 255, 1);
+  outline-color: Highlight;
+  outline-style: auto;
+  outline-width: 4px;
+  outline-offset: -2px;
 }
 .HvButton-primary-43 {
   color: #FFFFFF;
@@ -5319,7 +5322,10 @@ body {
                   Object {},
                   Object {},
                   Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   Object {
                     "background-color": "#146BD2",
@@ -5620,7 +5626,10 @@ body {
                   },
                   ".HvButton-root-42:active": Object {},
                   ".HvButton-root-42:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outline-color": "Highlight",
+                    "outline-offset": "-2px",
+                    "outline-style": "auto",
+                    "outline-width": "4px",
                   },
                   ".HvButton-root-42:hover, .HvButton-root-42:focus": Object {},
                   ".HvButton-secondary-45": Object {
@@ -6339,7 +6348,10 @@ body {
                   },
                   ".HvButton-root-42:active": Object {},
                   ".HvButton-root-42:focus": Object {
-                    "outline": "5px auto rgba(0, 150, 255, 1)",
+                    "outlineColor": "Highlight",
+                    "outlineOffset": -2,
+                    "outlineStyle": "auto",
+                    "outlineWidth": 4,
                   },
                   ".HvButton-root-42:hover, .HvButton-root-42:focus": Object {},
                   ".HvButton-secondary-45 svg .color0": Object {
@@ -6504,7 +6516,10 @@ body {
                   "root": Object {
                     "&:active": Object {},
                     "&:focus": Object {
-                      "outline": "5px auto rgba(0, 150, 255, 1)",
+                      "outlineColor": "Highlight",
+                      "outlineOffset": -2,
+                      "outlineStyle": "auto",
+                      "outlineWidth": 4,
                     },
                     "&:hover,&:focus": Object {},
                     "color": "#414141",
