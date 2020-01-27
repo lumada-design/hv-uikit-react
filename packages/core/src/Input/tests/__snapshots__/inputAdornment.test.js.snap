@@ -4564,8 +4564,8 @@ body {
               "attached": true,
               "classes": Object {
                 "adornmentButton": "InputAdornment-adornmentButton-2",
-                "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
                 "adornmentsBox": "InputAdornment-adornmentsBox-1",
+                "icon": "InputAdornment-icon-3",
               },
               "deployed": true,
               "linked": false,
@@ -4574,8 +4574,8 @@ body {
                 "classNamePrefix": "InputAdornment",
                 "classes": Object {
                   "adornmentButton": "InputAdornment-adornmentButton-2",
-                  "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
                   "adornmentsBox": "InputAdornment-adornmentsBox-1",
+                  "icon": "InputAdornment-icon-3",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5076,12 +5076,12 @@ body {
   padding: 0;
   background-color: transparent;
 }
-.InputAdornment-adornmentIconBox-3 {
+.InputAdornment-icon-3 {
   width: 10px;
   height: 10px;
   position: relative;
 }
-.InputAdornment-adornmentIconBox-3 svg {
+.InputAdornment-icon-3 svg {
   top: 0;
   left: 0;
   right: 0;
@@ -5103,8 +5103,8 @@ body {
               "rules": RuleList {
                 "classes": Object {
                   "adornmentButton": "InputAdornment-adornmentButton-2",
-                  "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
                   "adornmentsBox": "InputAdornment-adornmentsBox-1",
+                  "icon": "InputAdornment-icon-3",
                 },
                 "index": Array [
                   Object {
@@ -5142,24 +5142,24 @@ body {
                     "margin": 0,
                     "padding": 0,
                   },
-                  ".InputAdornment-adornmentIconBox-3": Object {
+                  ".InputAdornment-adornmentsBox-1": Object {
+                    "display": "flex",
+                    "flex-direction": "row",
+                    "height": "30px",
+                    "justify-content": "center",
+                  },
+                  ".InputAdornment-icon-3": Object {
                     "height": "10px",
                     "position": "relative",
                     "width": "10px",
                   },
-                  ".InputAdornment-adornmentIconBox-3 svg": Object {
+                  ".InputAdornment-icon-3 svg": Object {
                     "bottom": 0,
                     "left": 0,
                     "margin": "auto",
                     "position": "absolute",
                     "right": 0,
                     "top": 0,
-                  },
-                  ".InputAdornment-adornmentsBox-1": Object {
-                    "display": "flex",
-                    "flex-direction": "row",
-                    "height": "30px",
-                    "justify-content": "center",
                   },
                   "adornmentButton": Object {
                     "background-color": "transparent",
@@ -5168,16 +5168,16 @@ body {
                     "margin": 0,
                     "padding": 0,
                   },
-                  "adornmentIconBox": Object {
-                    "height": "10px",
-                    "position": "relative",
-                    "width": "10px",
-                  },
                   "adornmentsBox": Object {
                     "display": "flex",
                     "flex-direction": "row",
                     "height": "30px",
                     "justify-content": "center",
+                  },
+                  "icon": Object {
+                    "height": "10px",
+                    "position": "relative",
+                    "width": "10px",
                   },
                 },
                 "options": Object {
@@ -5185,8 +5185,8 @@ body {
                   "classNamePrefix": "InputAdornment",
                   "classes": Object {
                     "adornmentButton": "InputAdornment-adornmentButton-2",
-                    "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
                     "adornmentsBox": "InputAdornment-adornmentsBox-1",
+                    "icon": "InputAdornment-icon-3",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5669,7 +5669,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".InputAdornment-adornmentIconBox-3 svg": Object {
+                  ".InputAdornment-icon-3 svg": Object {
                     "bottom": 0,
                     "left": 0,
                     "margin": "auto",
@@ -5684,7 +5684,13 @@ body {
                     "margin": 0,
                     "padding": 0,
                   },
-                  "adornmentIconBox": Object {
+                  "adornmentsBox": Object {
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "height": 30,
+                    "justifyContent": "center",
+                  },
+                  "icon": Object {
                     "& svg": Object {
                       "bottom": 0,
                       "left": 0,
@@ -5696,12 +5702,6 @@ body {
                     "height": "10px",
                     "position": "relative",
                     "width": "10px",
-                  },
-                  "adornmentsBox": Object {
-                    "display": "flex",
-                    "flexDirection": "row",
-                    "height": 30,
-                    "justifyContent": "center",
                   },
                 },
                 "update": [Function],
@@ -8744,8 +8744,8 @@ body {
         classes={
           Object {
             "adornmentButton": "InputAdornment-adornmentButton-2",
-            "adornmentIconBox": "InputAdornment-adornmentIconBox-3",
             "adornmentsBox": "InputAdornment-adornmentsBox-1",
+            "icon": "InputAdornment-icon-3",
           }
         }
         clearButtonLabel="Clear the text"
@@ -8781,15 +8781,14 @@ body {
             className="InputAdornment-adornmentButton-2"
             onKeyDown={[Function]}
             onMouseDown={[MockFunction]}
-            tabIndex="-1"
             title="Clear the text"
             type="button"
           >
             <WithStyles(CloseXS)
-              className="InputAdornment-adornmentIconBox-3"
+              className="InputAdornment-icon-3"
             >
               <CloseXS
-                className="InputAdornment-adornmentIconBox-3"
+                className="InputAdornment-icon-3"
                 classes={
                   Object {
                     "root": "CloseXS-root-4",
@@ -9730,7 +9729,7 @@ body {
                 }
               >
                 <div
-                  className="InputAdornment-adornmentIconBox-3 CloseXS-root-4 CloseXS-rootXs-5"
+                  className="InputAdornment-icon-3 CloseXS-root-4 CloseXS-rootXs-5"
                 >
                   <svg
                     focusable={false}

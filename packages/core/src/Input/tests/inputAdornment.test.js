@@ -55,7 +55,7 @@ describe("InputAdornment", () => {
       margin: 0,
       cursor: "pointer"
     },
-    adornmentIconBox: {
+    icon: {
       width: `${theme.hv.spacing.md}px`,
       height: `${theme.hv.spacing.md}px`,
       position: "relative",
