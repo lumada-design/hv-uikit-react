@@ -5,55 +5,63 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke keyboard
-Documentation     just tests of iterating on List element with keyboards
+Default Tags      smoke    keyboard
+Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
 *** Test Cases ***
-single selection list select a item by pressing ENTER
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item5}    aria-selected    ${None}
-    Set Focus To Element                          ${item5}
-    Press Keys                                    ${None}     ENTER
-    Element Attribute Value Should Be             ${item5}    aria-selected    true
+select an option when pressing ENTER on it (single selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Set Focus To Element                 ${option5}
+    Press Keys                           ${None}       ENTER
+    Element Attribute Value Should Be    ${option5}    aria-selected    true
 
-single selection list unselect a item by pressing ENTER
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item3}    aria-selected    true
-    Set Focus To Element                          ${item3}
-    Press Keys                                    ${None}     ENTER
-    Element Attribute Value Should Be             ${item3}    aria-selected    ${None}
+unselect an option when pressing ENTER on selected option (single selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option3}    aria-selected    true
+    Set Focus To Element                 ${option3}
+    Press Keys                           ${None}       ENTER
+    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
 
-single selection list can select item by pressing SPACE
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item5}    aria-selected    ${None}
-    Set Focus To Element                          ${item5}
-    Press Keys                                    ${None}     SPACE
-    Element Attribute Value Should Be             ${item5}    aria-selected   true
+select an option when pressing SPACE on it (single selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Set Focus To Element                 ${option5}
+    Press Keys                           ${None}       SPACE
+    Element Attribute Value Should Be    ${option5}    aria-selected    true
 
-multiple selection list select a item by pressing SPACE
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item5}    aria-selected    ${None}
-    Set Focus To Element                          ${item5}
-    Press Keys                                    ${None}     SPACE
-    Element Attribute Value Should Be             ${item5}    aria-selected    true
+unselect an option when pressing SPACE on selected option (single selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option3}    aria-selected    true
+    Set Focus To Element                 ${option3}
+    Press Keys                           ${None}       SPACE
+    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
 
-multiple selection list unselect a item by pressing SPACE
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item3}    aria-selected    true
-    Set Focus To Element                          ${item3}
-    Press Keys                                    ${None}     SPACE
-    Element Attribute Value Should Be             ${item3}    aria-selected    ${None}
+select an option when pressing SPACE on it (multiple selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Set Focus To Element                 ${option5}
+    Press Keys                           ${None}       SPACE
+    Element Attribute Value Should Be    ${option5}    aria-selected    true
 
-multiple selection list can not select item by pressing ENTER
-    Go To                                         ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible                 ${list}     10s
-    Element Attribute Value Should Be             ${item5}    aria-selected    ${None}
-    Set Focus To Element                          ${item5}
-    Press Keys                                    ${None}     ENTER
-    Element Attribute Value Should Be             ${item5}    aria-selected    ${None}
+unselect an option when pressing SPACE on selected option (multiple selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option3}    aria-selected    true
+    Set Focus To Element                 ${option3}
+    Press Keys                           ${None}       SPACE
+    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
+
+don't selected option when pressing ENTER on it (multiple selection)
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible        ${list}       10s
+    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Set Focus To Element                 ${option5}
+    Press Keys                           ${None}       ENTER
+    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}

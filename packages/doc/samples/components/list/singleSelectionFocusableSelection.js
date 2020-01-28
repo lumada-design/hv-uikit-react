@@ -10,7 +10,8 @@ const data = [
     label: "Edit"
   },
   {
-    label: "Remove"
+    label: "Remove",
+    selected: true
   },
   {
     label: "Delete"
