@@ -4,7 +4,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p class=\"Typography-infoText-202 Typography-baseFontFamily-206 Typography-margin-207 HvTextArea-inline-158 HvTextArea-separator-159 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">/</p>",
+        "context": "<p class=\"Typography-infoText-203 Typography-baseFontFamily-207 Typography-margin-208 HvTextArea-inline-158 HvTextArea-separator-159 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">/</p>",
         "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(2)",
         "runner": "htmlcs",
         "runnerExtras": {}
@@ -14,7 +14,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p class=\"Typography-infoText-202 Typography-baseFontFamily-206 Typography-margin-207 HvTextArea-inline-158 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">10</p>",
+        "context": "<p class=\"Typography-infoText-203 Typography-baseFontFamily-207 Typography-margin-208 HvTextArea-inline-158 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">10</p>",
         "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(3)",
         "runner": "htmlcs",
         "runnerExtras": {}
@@ -24,7 +24,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI)",
-        "context": "<p class=\"Typography-infoText-202 Typography-baseFontFamily-206 Typography-margin-207 HvTextArea-inline-158 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">10</p>",
+        "context": "<p class=\"Typography-infoText-203 Typography-baseFontFamily-207 Typography-margin-208 HvTextArea-inline-158 HvTextArea-maxCharacter-161\" theme=\"[object Object]\">10</p>",
         "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(3)",
         "runner": "axe",
         "runnerExtras": {
