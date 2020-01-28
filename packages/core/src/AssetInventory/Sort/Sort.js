@@ -178,7 +178,7 @@ Sort.defaultProps = {
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.metadata === nextProps.metadata;
+  prevProps.metadata === nextProps.metadata && prevProps.selected === nextProps.selected;
 
 export default memo(Sort, arePropsEqual);
 export { sortOperationSetup, sortValues };

@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
@@ -52,40 +52,15 @@ const getLabelStyles = (classes, labelPosition, label) => {
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const getIcons = (classes, disabled, theme) => {
-  const disabledIcon = (
-    <RadioButtonUnSelected
-      className={classes.box}
-      color={[
-        theme.hv.palette.atmosphere.atmo4,
-        theme.hv.palette.atmosphere.atmo6
-      ]}
-    />
-  );
+const getIcons = ({ classes, disabled, theme }) => {
+  const color = disabled
+    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
+    : null;
 
-  const disabledRadioButtonSelected = (
-    <RadioButtonSelected
-      className={classes.box}
-      color={[
-        theme.hv.palette.atmosphere.atmo4,
-        theme.hv.palette.atmosphere.atmo6
-      ]}
-    />
-  );
-
-  const icons = {
-    emptyIcon: disabledIcon,
-    checkedIcon: disabledRadioButtonSelected
+  return {
+    emptyIcon: <RadioButtonUnSelected color={color} className={classes.icon} />,
+    checkedIcon: <RadioButtonSelected color={color} className={classes.icon} />
   };
-
-  if (disabled) {
-    return icons;
-  }
-
-  icons.emptyIcon = <RadioButtonUnSelected className={classes.box} />;
-  icons.checkedIcon = <RadioButtonSelected className={classes.box} />;
-
-  return icons;
 };
 
 const HvRadio = props => {
@@ -102,11 +77,10 @@ const HvRadio = props => {
     formControlLabelProps,
     propsLabel,
     radioProps,
-    propsIcons,
-    theme
+    propsIcons
   } = props;
 
-  const icons = getIcons(classes, disabled, theme);
+  const icons = getIcons(props);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const materialPrimaryColor = "primary";
   const [isFocusDisabled, disableFocus] = useState(false);
@@ -202,19 +176,7 @@ HvRadio.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string,
-    /**
-     * Styles applied to the icon when not selected.
-     */
-    iconEmpty: PropTypes.string,
-    /**
-     * Styles applied to the icon when selected.
-     */
-    iconFull: PropTypes.string,
-    /**
-     * Styles applied to the icon when disable.
-     */
-    iconDisable: PropTypes.string
+    icon: PropTypes.string
   }).isRequired,
   /**
    * If `true` the Radio button is disabled and the onChange function will not be called.

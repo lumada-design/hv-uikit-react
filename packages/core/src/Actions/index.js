@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  separator: {
-    paddingLeft: `${theme.spacing.xs}px`
-  }
-});
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import Actions from "./Actions";
 
-export default styles;
+export default withStyles(styles, { withTheme: true })(Actions);

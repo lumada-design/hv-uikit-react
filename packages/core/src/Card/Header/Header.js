@@ -17,9 +17,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import uniqueId from "lodash/uniqueId";
 import CardHeader from "@material-ui/core/CardHeader";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
+const DEFAULT_ID = "hv-header";
 /**
  * The header container that possesses three slots:
  * - icon
@@ -28,14 +30,18 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
  *
  * @param {*} { classes, headerTitle, subheader, icon }
  */
-const Header = ({
-  classes,
-  className,
-  headerTitle,
-  subheader,
-  icon
+const Header = ({ 
+  classes, 
+  className, 
+  headerTitle, 
+  subheader, 
+  icon, 
+  id,
+  onClickAction,
+  ...other
 }) => (
   <CardHeader
+    id={id || uniqueId(DEFAULT_ID)}
     title={headerTitle}
     className={classNames(classes.root, className)}
     subheader={subheader}
@@ -46,10 +52,16 @@ const Header = ({
       action: classes.action,
       content: classes.content
     }}
+    onClick={onClickAction}
+    {...other}
   />
 );
 
 Header.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * Class names to be applied.
    */
@@ -100,14 +112,20 @@ Header.propTypes = {
   /**
    *  The renderable content inside the icon slot of the header.
    */
-  icon: PropTypes.node
+  icon: PropTypes.node,
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClickAction: PropTypes.func
 };
 
 Header.defaultProps = {
   className: "",
+  id: undefined,
   needsBorder: undefined,
   icon: null,
-  subheader: undefined
+  subheader: undefined,
+  onClickAction: () => {}
 };
 
 export default Header;

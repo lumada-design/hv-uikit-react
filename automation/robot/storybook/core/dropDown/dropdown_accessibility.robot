@@ -10,7 +10,8 @@ ${pa11y_script}    pa11y  --reporter json --runner htmlcs --runner axe --standar
 storybook sample dropdown disabled against WCAG2AA standard
     [Documentation]
     ...    = ATTENTION! =
-    ...    the *error* expected it's to ignore as "Design System Team" feedback https://github.com/pentaho/hv-uikit-react/issues/775
+    ...    the expected *error* is ignored as per "Design System Team" feedback
+    ...    https://github.com/pentaho/hv-uikit-react/issues/775#issuecomment-557167364
     ...    ---
     pa11y result should be equal as file    ${pa11y_script}dropdown9    ${CURDIR}/WCAG2AA_dropdown9.json
 

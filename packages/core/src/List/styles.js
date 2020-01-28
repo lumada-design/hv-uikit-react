@@ -37,21 +37,6 @@ const hoverActive = theme => ({
   }
 });
 
-const disabled = theme => ({
-  cursor: "not-allowed",
-  background: "transparent !important",
-  "& *": {
-    cursor: "not-allowed",
-    background: "transparent !important",
-  },
-  "& svg *.color1": {
-    fill: theme.hv.palette.atmosphere.atmo7,
-  },
-  "& p, & span": {
-    ...theme.hv.typography.disabledButtonText,
-  },
-});
-
 const styles = theme => ({
   root: {
     display: "block",
@@ -69,11 +54,12 @@ const styles = theme => ({
     "&:not($disabled):not($selector):hover:active": hoverActive(theme),
     "&:not(:last-child)": {
       marginBottom: "8px"
+    },
+    "&$condensed": {
+      marginBottom: 0
     }
   },
-  condensed: {
-    marginBottom: "0 !important"
-  },
+  condensed: {},
   selector: {},
   selectorContainer: {
     width: "100%"
@@ -84,7 +70,15 @@ const styles = theme => ({
       ...theme.hv.typography.highlightText
     }
   },
-  disabled: disabled(theme),
+  disabled: {
+    cursor: "not-allowed",
+    "& *": {
+      cursor: "not-allowed"
+    }
+  },
+  textDisabled: {
+    ...theme.hv.typography.placeholderText
+  },
   label: {
     padding: `0 ${theme.hv.spacing.xs}px`
   },
@@ -100,14 +94,9 @@ const styles = theme => ({
     whiteSpace: "nowrap"
   },
   box: {
-    width: "30px",
-    height: "30px",
-    padding: "9px",
-    marginLeft: "auto",
-    "& svg": {
-      display: "block",
-      margin: "auto"
-    }
+    width: "32px",
+    height: "32px",
+    marginLeft: "auto"
   }
 });
 

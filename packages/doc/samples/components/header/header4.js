@@ -1,27 +1,8 @@
 import React, { useState } from "react";
-import classNames from "classnames";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
-import SettingIcon from "@hv/uikit-react-icons/dist/Generic/Settings";
-import HitachiLogo from "./resources/hitachi";
+import Hitachi from "./resources/hitachi";
 
-const styles = theme => ({
-  box: {
-    width: "32px",
-    height: "32px"
-  },
-  selected: {
-    "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo1
-    }
-  }
-});
 
-const StyledSettingIcon = withStyles(styles, { withTheme: true })(({ classes, isSelected }) => (
-  <SettingIcon className={classNames(classes.box, isSelected && classes.selected)} />
-));
-
-const Hitachi = () => <HitachiLogo style={{ width: "72px" }} />;
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -60,21 +41,6 @@ const navigationData = {
     }
   ]
 };
-
-const actionValues = [
-  {
-    label: "Settings",
-    iconCallback: state => <StyledSettingIcon {...state} />,
-    horizontalItemAction: (
-      <StyledSettingIcon
-        style={{ cursor: "pointer" }}
-        onClick={() => console.log("Settings")}
-      />
-    ),
-    onVerticalClick: () => console.log("Settings"),
-    path: "route3"
-  }
-];
 
 const SimpleHeaderController = ({
   position,
@@ -129,8 +95,6 @@ export default (
       useRouter
       // Responsiveness Settings
       responsivenessConfig={responsivenessConfig}
-      // Actions
-      actionValues={actionValues}
     />
   </div>
 );

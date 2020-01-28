@@ -24,6 +24,7 @@ import RadioButtonOnChange from "../../../../packages/doc/samples/components/rad
 import RadioButtonOnChangeDisabled from "../../../../packages/doc/samples/components/radioButton/radioButtonOnChangeDisabled";
 import RadioButtonSimple from "../../../../packages/doc/samples/components/radioButton/radioButtonSimple";
 import RadioButtonState from "../../../../packages/doc/samples/components/radioButton/radioButtonState";
+import RadioButtonCheckedDisabled from "../../../../packages/doc/samples/components/radioButton/radioButtonCheckedDisabled";
 
 // sample scenarios
 const samples = {};
@@ -34,6 +35,7 @@ samples.RadioButtonOnChange = RadioButtonOnChange;
 samples.RadioButtonOnChangeDisabled = RadioButtonOnChangeDisabled;
 samples.RadioButtonSimple = RadioButtonSimple;
 samples.RadioButtonState = RadioButtonState;
+samples.RadioButtonCheckedDisabled = RadioButtonCheckedDisabled;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

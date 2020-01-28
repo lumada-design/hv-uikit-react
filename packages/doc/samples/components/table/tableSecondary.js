@@ -103,7 +103,8 @@ const data = [
     riskScore: "98",
     severity: "Critical",
     priority: "Critical",
-    link: { displayText: "Asset 1", url: "blablabla" }
+    link: { displayText: "Asset 1", url: "blablabla" },
+    noActions: true
   },
   {
     id: 4,
@@ -125,7 +126,8 @@ const data = [
     riskScore: "98",
     severity: "Major",
     priority: "High",
-    link: { displayText: "Asset 1", url: "blablabla" }
+    link: { displayText: "Asset 1", url: "blablabla" },
+    noActions: true
   },
   {
     id: 2,
@@ -147,7 +149,8 @@ const data = [
     riskScore: "98",
     severity: "Critical",
     priority: "Critical",
-    link: { displayText: "Asset 1", url: "blablabla" }
+    link: { displayText: "Asset 1", url: "blablabla" },
+    noActions: true
   }
 ];
 

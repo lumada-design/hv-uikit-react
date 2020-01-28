@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-icons",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -18,7 +18,6 @@
     "build:types": "node ./src/typeGen/main.js --input dist --output dist/@types; cp ./src/typeGen/index.d.ts dist",
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
-    "postpublish": "npm run clean",
     "link": "npm link",
     "update-uikit-common": "npm update @hv/uikit-common-icons"
   },

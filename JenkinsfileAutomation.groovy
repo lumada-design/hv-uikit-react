@@ -1,12 +1,12 @@
 pipeline {
     agent { label 'non-master' }
-    tools {nodejs "node-js-11.10-auto"}
+    tools {nodejs "node-js-12.14-auto"}
     triggers {
         cron('@midnight')
     }
     options {
         timestamps ()
-        timeout(time: 145, unit: 'MINUTES')
+        timeout(time: 180, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
 
@@ -15,11 +15,10 @@ pipeline {
             steps {
                 build job: "ui-kit/react/alpha", parameters: [
                     booleanParam(name: 'skipLint', value: false),
-                    booleanParam(name: 'skipBuild', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: true),
                     booleanParam(name: 'skipAutomationTest', value: false),
-                    booleanParam(name: 'skipPublishDoc', value: true),
-                    booleanParam(name: 'skipPublish', value: true)
+                    booleanParam(name: 'skipPublish', value: true),
+                    booleanParam(name: 'skipPublishDoc', value: true)
                 ]
             }
         }

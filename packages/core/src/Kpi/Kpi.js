@@ -29,8 +29,10 @@ const HvKpi = props => {
     labels,
     visualIndicator,
     visualComparison,
+    trendIndicator,
     indicatorUnitTextVariant,
-    indicatorTextVariant
+    indicatorTextVariant,
+    ...other
   } = props;
 
   const definedLabels = kpiTextConfiguration || labels;
@@ -39,7 +41,7 @@ const HvKpi = props => {
     typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <div id={id} className={classNames(classes.kpiContainer, className)}>
+    <div id={id} className={classNames(classes.kpiContainer, className)} {...other}>
       <div>
         <HvTypography variant="highlightText">
           {definedLabels.title}
@@ -73,19 +75,35 @@ const HvKpi = props => {
         </HvTypography>
       </div>
       {visualComparison != null && (
-        <div className={classes.comparisonContainer}>
-          <InternalVisualComparison
-            className={classNames(
-              classes.comparisons,
-              classes.spacingToTheRight
-            )}
-            variant="highlightText"
-          >
-            {visualComparison}
-          </InternalVisualComparison>
-          <HvTypography className={classes.comparisons} variant="vizText">
-            {definedLabels.comparisonIndicatorInfo}
-          </HvTypography>
+        <div className={classes.comparisonComposition}>
+          {trendIndicator != null && (
+            <div
+              className={classNames(
+                classes.trendLine,
+                classes.spacingToTheRight
+              )}
+            >
+              {trendIndicator}
+            </div>
+          )}
+          <div>
+            <div className={classes.comparisonContainer}>
+              <InternalVisualComparison
+                className={classNames(
+                  classes.comparisons,
+                  classes.spacingToTheRight
+                )}
+                variant="highlightText"
+              >
+                {visualComparison}
+              </InternalVisualComparison>
+            </div>
+            <div className={classes.comparisonContainer}>
+              <HvTypography className={classes.comparisons} variant="vizText">
+                {definedLabels.comparisonIndicatorInfo}
+              </HvTypography>
+            </div>
+          </div>
         </div>
       )}
     </div>
@@ -141,6 +159,10 @@ HvKpi.propTypes = {
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
    */
+  trendIndicator: PropTypes.node,
+  /**
+   * An Element that will be rendered to the left of the kpi indicator text.
+   */
   visualIndicator: PropTypes.node,
   /**
    * An Element that will be rendered below the kpi indicator text.
@@ -190,12 +212,13 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sText", "infoText"])
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle","sText", "infoText"])
 };
 
 HvKpi.defaultProps = {
   className: "",
   id: undefined,
+  trendIndicator: null,
   visualIndicator: null,
   visualComparison: null,
   labels: {
@@ -205,7 +228,7 @@ HvKpi.defaultProps = {
     comparisonIndicatorInfo: ""
   },
   indicatorTextVariant: "lTitle",
-  indicatorUnitTextVariant: "sText",
+  indicatorUnitTextVariant: "sTitle",
   kpiTextConfiguration: undefined
 };
 

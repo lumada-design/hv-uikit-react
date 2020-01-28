@@ -121,7 +121,6 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  maxVisibleActions: 3,
   actionsCallback: (id, action) =>
     alert("You have pressed card " + id + " with action " + action.label)
 };

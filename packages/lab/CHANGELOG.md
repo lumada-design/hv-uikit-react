@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.0...@hv/uikit-react-lab@1.17.1) (2020-01-22)
+
+**Note:** Version bump only for package @hv/uikit-react-lab
+
+
+
+
+
+# [1.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.16.0...@hv/uikit-react-lab@1.17.0) (2020-01-18)
+
+
+### Bug Fixes
+
+* **checkbox:** css icon classes. [#995](https://github.com/pentaho/hv-uikit-react/issues/995) ([8a782fd](https://github.com/pentaho/hv-uikit-react/commit/8a782fd8551bd5ec791d8c78e59bcef540cfc3fe))
+
+
+### Features
+
+* **footer:** allow customization on right label message [#987](https://github.com/pentaho/hv-uikit-react/issues/987) ([1197277](https://github.com/pentaho/hv-uikit-react/commit/119727773db594f93fc9c602ffb156ef7fa2e184))
+
+
+
+
+
 # [1.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.15.0...@hv/uikit-react-lab@1.16.0) (2020-01-16)
 
 

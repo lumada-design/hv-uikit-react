@@ -93,7 +93,7 @@ const kpiStyles = theme => ({
   timestamp: {
     paddingRight: `${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+    borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
   },
   container: {
     marginLeft: "-15px"
@@ -211,7 +211,7 @@ const stylesRow = theme => ({
   timestamp: {
     padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+    borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
     display: "block",
@@ -352,7 +352,6 @@ export default (
     onSelection={event => console.log(event.target.value)}
     isSelectable
     actions={myActions}
-    maxVisibleActions={3}
     actionsCallback={(id, action) =>
       console.log(`You have pressed card ${id} with action ${action.label}`)
     }

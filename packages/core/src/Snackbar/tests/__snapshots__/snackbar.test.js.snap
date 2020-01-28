@@ -3628,7 +3628,7 @@ body {
         Object {
           "create": [Function],
           "options": Object {
-            "index": -99999999894,
+            "index": -99999999879,
           },
           "themingEnabled": true,
         } => Map {
@@ -4945,7 +4945,7 @@ body {
                 },
                 "flip": false,
                 "generateClassName": [Function],
-                "index": -99999999894,
+                "index": -99999999879,
                 "insertionPoint": undefined,
                 "jss": Jss {
                   "generateClassName": [Function],
@@ -5554,7 +5554,7 @@ body {
                   },
                   "flip": false,
                   "generateClassName": [Function],
-                  "index": -99999999894,
+                  "index": -99999999879,
                   "insertionPoint": undefined,
                   "jss": Jss {
                     "generateClassName": [Function],

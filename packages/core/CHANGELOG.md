@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.19.0...@hv/uikit-react-core@1.20.0) (2020-01-22)
+
+
+### Features
+
+* **datepicker:** add new properties to popper. [#1036](https://github.com/pentaho/hv-uikit-react/issues/1036) ([1aad3c5](https://github.com/pentaho/hv-uikit-react/commit/1aad3c565a3185ba4e5ac59eda117490c3d52188))
+
+
+
+
+
+# [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.18.0...@hv/uikit-react-core@1.19.0) (2020-01-18)
+
+
+### Bug Fixes
+
+* **checkbox:** css icon classes. [#995](https://github.com/pentaho/hv-uikit-react/issues/995) ([8a782fd](https://github.com/pentaho/hv-uikit-react/commit/8a782fd8551bd5ec791d8c78e59bcef540cfc3fe))
+* **dropdownmenu:** portal safari spacing. [#900](https://github.com/pentaho/hv-uikit-react/issues/900) ([019d0c2](https://github.com/pentaho/hv-uikit-react/commit/019d0c2b6c018d60f7097dc364ea244db3805ec4))
+* **emptystate:** export index. [#61](https://github.com/pentaho/hv-uikit-react/issues/61) ([351e41a](https://github.com/pentaho/hv-uikit-react/commit/351e41aff59701cd2b0101f8627c89b5111a1810))
+* **header:** update header to DS guidelines. [#881](https://github.com/pentaho/hv-uikit-react/issues/881) ([1e14b19](https://github.com/pentaho/hv-uikit-react/commit/1e14b199d24de113a10102709fc6ae0e1a4d1099))
+* **list:** disabled radio/checkbox color. [#805](https://github.com/pentaho/hv-uikit-react/issues/805) ([a64fe26](https://github.com/pentaho/hv-uikit-react/commit/a64fe2696dde9caed10cdd28ab39df922582e9b6))
+* **login:** fix spacing and styling. [#898](https://github.com/pentaho/hv-uikit-react/issues/898) ([b1b999a](https://github.com/pentaho/hv-uikit-react/commit/b1b999ada3c8aa9246dce0aa6a205a8dd6f9d799))
+
+
+### Features
+
+* **card:** align card pattern according to DS v1.2.1 [#922](https://github.com/pentaho/hv-uikit-react/issues/922) ([80daedf](https://github.com/pentaho/hv-uikit-react/commit/80daedf52fd823f9787e8e9418a2116b1c9e43b8))
+* **checkbox:** review accessibility. [#842](https://github.com/pentaho/hv-uikit-react/issues/842) ([8ea72d6](https://github.com/pentaho/hv-uikit-react/commit/8ea72d6ce659b5c242c80be12bdaa3f9f5631dc2))
+* **kpi:** align pattern according to DSv1.2.1. [#923](https://github.com/pentaho/hv-uikit-react/issues/923) ([4ec7d6e](https://github.com/pentaho/hv-uikit-react/commit/4ec7d6e1dbb99c50bb5213f04116a71fa160b618))
+* **radiobutton:** add accessibility tests. [#843](https://github.com/pentaho/hv-uikit-react/issues/843) ([2024b12](https://github.com/pentaho/hv-uikit-react/commit/2024b12538ee09b4c3f091bbe88e203f5c6612c3))
+* **table:** disable secondary actions conditionally. [#1020](https://github.com/pentaho/hv-uikit-react/issues/1020) ([b22b75f](https://github.com/pentaho/hv-uikit-react/commit/b22b75f15f8f40d5fc1c1764b8945f8553631802))
+
+
+
+
+
 # [1.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.17.0...@hv/uikit-react-core@1.18.0) (2020-01-16)
 
 

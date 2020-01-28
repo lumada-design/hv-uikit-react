@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@hv/uikit-react-core": "latest",
-    "@hv/uikit-react-lab": "latest",
+    "@hv/uikit-react-core": "^1.16.0",
+    "@hv/uikit-react-lab": "^1.14.0",
     "@material-ui/core": "^3.5.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

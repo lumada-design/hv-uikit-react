@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import HvTypography from "../../../Typography";
-import renderAction from "../ActionRender/ActionRender";
+import Actions from "../../../Actions";
 
 /**
  * Container for the message of the banner. This message may include:
@@ -36,37 +36,29 @@ const MessageContainer = ({
   actionsOnMessage,
   actionsOnMessageCallback,
   message
-}) => {
-  let renderedAction;
-
-  if (actionsOnMessage)
-    renderedAction = renderAction(
-      actionsOnMessage,
-      actionsOnMessageCallback,
-      id
-    );
-
-  return (
-    <>
-      {icon && <div className={classes.iconContainer}>{icon}</div>}
-      <HvTypography
-        variant="normalText"
-        {...(id && { id: `${id}-message-text` })}
-        className={classes.message}
+}) => (
+  <>
+    {icon && <div className={classes.iconContainer}>{icon}</div>}
+    <HvTypography
+      variant="normalText"
+      {...(id && { id: `${id}-message-text` })}
+      className={classes.message}
+    >
+      {message}
+    </HvTypography>
+    {actionsOnMessage && (
+      <div
+        {...(id && { id: `${id}-message-actions` })}
+        className={classes.actionMessageContainer}
       >
-        {message}
-      </HvTypography>
-      {renderedAction && (
-        <div
-          {...(id && { id: `${id}-message-actions` })}
-          className={classes.actionMessageContainer}
-        >
-          {renderedAction}
-        </div>
-      )}
-    </>
-  );
-};
+        <Actions
+          actions={actionsOnMessage}
+          actionsCallback={actionsOnMessageCallback}
+        />
+      </div>
+    )}
+  </>
+);
 
 MessageContainer.propTypes = {
   /**

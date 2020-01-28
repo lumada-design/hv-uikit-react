@@ -7,15 +7,6 @@ Suite Teardown    Close Browser
 Force Tags        smoke
 
 *** Test Cases ***
-select and unselect a checkbox on card
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=corecard--card9
-    Wait Until Element Is Enabled      css:input[type='checkbox']    10s
-    Checkbox Should Not Be Selected    css:input[type='checkbox']
-    Select Checkbox                    css:input[type='checkbox']
-    Checkbox Should Be Selected        css:input[type='checkbox']
-    Unselect Checkbox                  css:input[type='checkbox']
-    Checkbox Should Not Be Selected    css:input[type='checkbox']
-
 click on button Add on card
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
     Wait Until Element Is Enabled    css:button                10s

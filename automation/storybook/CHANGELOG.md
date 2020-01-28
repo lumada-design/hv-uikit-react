@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.3...@hv/uikit-react-automation-storybook@1.8.4) (2020-01-22)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
+## [1.8.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.2...@hv/uikit-react-automation-storybook@1.8.3) (2020-01-18)
+
+
+### Bug Fixes
+
+* **checkbox:** css icon classes. [#995](https://github.com/pentaho/hv-uikit-react/issues/995) ([8a782fd](https://github.com/pentaho/hv-uikit-react/commit/8a782fd8551bd5ec791d8c78e59bcef540cfc3fe))
+
+
+
+
+
 ## [1.8.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.1...@hv/uikit-react-automation-storybook@1.8.2) (2020-01-16)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook
