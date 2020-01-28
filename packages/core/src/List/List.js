@@ -150,7 +150,7 @@ class List extends React.Component {
           id={itemId}
           role={selectable ? "option" : "menuitem"}
           aria-disabled={item.disabled || undefined}
-          aria-selected={item.selected || undefined}
+          aria-selected={multiSelect || item.selected ? item.selected : undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
           className={classNames(classes.listItem, {
