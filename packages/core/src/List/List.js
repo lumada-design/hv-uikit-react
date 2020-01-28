@@ -141,7 +141,7 @@ class List extends React.Component {
         rootRef={this.listRef}
         selected={item.selected}
         disabled={item.disabled}
-        strategy={selectable ? "listbox" : "menubar"}
+        strategy={selectable ? "listbox" : "menu"}
         configuration={{
           tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
         }}
@@ -149,6 +149,7 @@ class List extends React.Component {
         <li
           id={itemId}
           role={selectable ? "option" : "menuitem"}
+          aria-disabled={item.disabled || undefined}
           aria-selected={item.selected || undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
@@ -297,7 +298,7 @@ class List extends React.Component {
           <ul
             id={internalId}
             className={classes.root}
-            role={selectable ? "listbox" : "menubar"}
+            role={selectable ? "listbox" : "menu"}
             aria-multiselectable={multiSelect || undefined}
             {...listProps}
           >

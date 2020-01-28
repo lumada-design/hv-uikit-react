@@ -139,7 +139,7 @@ const Focus = props => {
       return;
     }
 
-    const isDisabledFocusable = strategy === "menubar";
+    const isDisabledFocusable = strategy === "menu";
     const focusesList = getFocuses().filter(
       el => isDisabledFocusable || !el.classList.contains(classes.disabled)
     );
@@ -244,7 +244,7 @@ Focus.propTypes = {
   /**
    * Focus and navigation strategy to be used.
    */
-  strategy: PropTypes.oneOf(["listbox", "menubar", "card"]),
+  strategy: PropTypes.oneOf(["list", "menu", "card"]),
   /**
    * Show focus when click element.
    */
@@ -269,7 +269,7 @@ Focus.defaultProps = {
   focusDisabled: true,
   useArrows: true,
   useFalseFocus: false,
-  strategy: "listbox",
+  strategy: "list",
   configuration: {},
   selected: false,
   disabled: false
