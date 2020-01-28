@@ -1,5 +1,5 @@
 list:               css:ul[role='listbox']
-menu:               css:ul[role='menubar']
+menu:               css:ul[role='menu']
 item1:              hv-list-1-item-0
 item2:              hv-list-1-item-1
 item3:              hv-list-1-item-2

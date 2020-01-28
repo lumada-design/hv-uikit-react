@@ -131,7 +131,7 @@ class List extends React.Component {
       selectable,
       condensed
     } = this.props;
-    const { internalId } = this.state;
+    const { internalId, selection, anySelected } = this.state;
 
     const itemId = `${internalId}-item-${i}`;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -141,14 +141,15 @@ class List extends React.Component {
         rootRef={this.listRef}
         selected={item.selected}
         disabled={item.disabled}
-        strategy={selectable ? "listbox" : "menubar"}
+        strategy={selectable ? "listbox" : "menu"}
         configuration={{
-          tabIndex: i === 0 ? 0 : -1
+          tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
         }}
       >
         <li
           id={itemId}
           role={selectable ? "option" : "menuitem"}
+          aria-disabled={item.disabled || undefined}
           aria-selected={item.selected || undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
@@ -297,7 +298,7 @@ class List extends React.Component {
           <ul
             id={internalId}
             className={classes.root}
-            role={selectable ? "listbox" : "menubar"}
+            role={selectable ? "listbox" : "menu"}
             aria-multiselectable={multiSelect || undefined}
             {...listProps}
           >
