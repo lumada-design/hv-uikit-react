@@ -54,7 +54,14 @@ wait until element attribute value does not contain
     [Documentation]
     ...    necessary for (and just for) ie synchronization
     ...
-    Wait Until Keyword Succeeds    3    ${retry_interval}    element attribute value should not contain    ${locator}    ${attribute}    ${expected}
+    Wait Until Keyword Succeeds    5    ${retry_interval}    element attribute value should not contain    ${locator}    ${attribute}    ${expected}
+
+wait until element attribute value does contain
+    [Arguments]    ${locator}    ${attribute}    ${expected}    ${retry_interval}
+    [Documentation]
+    ...    necessary for (and just for) ie synchronization
+    ...
+    Wait Until Keyword Succeeds    5    ${retry_interval}    element attribute value should contain    ${locator}    ${attribute}    ${expected}
 
 get constanct css property value
     [Arguments]        ${locator}    ${property}

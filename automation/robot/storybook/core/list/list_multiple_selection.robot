@@ -6,35 +6,20 @@ Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
 Default Tags      smoke
-Documentation     just for lists with multiple selection
-
-*** Keywords ***
-item should be checked
-    [Arguments]                          ${locatorId}
-    Element Attribute Value Should Be    ${locatorId}     aria-selected         true
-    Element Attribute Value Should Be    css:#${locatorId} input    data-indeterminate    false
-    Page Should Contain Element          css:#${locatorId} div[class*='CheckboxCheck']    #checked icon
-
-item should not be checked
-    [Arguments]                          ${locatorId}
-    Element Attribute Value Should Be    ${locatorId}    aria-selected         ${None}
-    Element Attribute Value Should Be    css:#${locatorId} input   data-indeterminate    false
-    Page Should Contain Element          css:#${locatorId} div[class*='Checkbox-root']    #checked icon    
+Documentation     options selections just for lists with multiple selection
 
 
 *** Test Cases ***
-unable select a disabled item
+unable to select a disabled option when click on it
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-item-disabled
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
-    item should not be checked             ${item4}
-    Run Keyword And Continue On Failure    Click Element          ${item4}
-    item should not be checked             ${item4}
+    Run Keyword And Continue On Failure    Click Element          ${option4}
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
 
-Select all items by clicking all
+select all options when clicking in header option 'all'
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
@@ -45,20 +30,20 @@ Select all items by clicking all
     Page Should Contain Element            ${iconChecked}         limit=6
     Element Text Should Be                 ${headerItemLabel}     5 of 5
 
-Select all items by clicking one by one
+show 'all' in header option when is selected all options one by one
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
-    Click Element                          ${item1}
-    Click Element                          ${item2}
-    Click Element                          ${item4}
-    Click Element                          ${item5}
+    Click Element                          ${option1}
+    Click Element                          ${option2}
+    Click Element                          ${option4}
+    Click Element                          ${option5}
     Page Should Contain Element            ${selectedItems}       limit=5
     Page Should Contain Element            ${iconChecked}         limit=6
     Element Text Should Be                 ${headerItemLabel}     5 of 5
 
-unselect all items
+remove list indeterminate state when click in header option 'all' and list is in indeterminate state
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
@@ -67,30 +52,19 @@ unselect all items
     Page Should Not Contain Element        ${iconChecked}
     Element Text Should Be                 ${headerItemLabel}     All
 
-unselect items one by one
+remove list indeterminate state when unselect the unique selected option
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
-    Click Element                          ${item3}
+    Click Element                          ${option3}
     Page Should Not Contain Element        ${selectedItems}
     Page Should Not Contain Element        ${iconChecked}
     Element Text Should Be                 ${headerItemLabel}     All
+    Element Attribute Value Should Be      ${headerItem}          data-indeterminate      ${None}    
 
-verify a indeterminate selection
+verify list indeterminate state when one option is selected
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Element Attribute Value Should Be      ${headerItem}-input    data-indeterminate      true
-    Page Should Contain Element            css:#${headerItem} div[class*='CheckboxPartial']    #indeterminate icon
-
-unselect a indeterminate selection
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible          ${list}                10s
-    Page Should Contain Element            ${selectedItems}       limit=1
-    Click Element                          ${item3}
-    Page Should Not Contain Element        ${selectedItems}
-    Page Should Not Contain Element        ${iconChecked}
-    Element Attribute Value Should Be      ${headerItem}          data-indeterminate      ${None}
-    Element Text Should Be                 ${headerItemLabel}     All
-
 
