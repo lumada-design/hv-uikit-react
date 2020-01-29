@@ -231,11 +231,12 @@ class Table extends React.Component {
    * @returns {Object}
    */
   getServerSizeProps = () => {
-    const { paginationServerSide } = this.props;
+    const { paginationServerSide, page } = this.props;
 
     return {
       ...(paginationServerSide && { manual: true }),
-      ...(paginationServerSide && { onFetchData: this.onFetchDataInternal })
+      ...(paginationServerSide && { onFetchData: this.onFetchDataInternal }),
+      ...(paginationServerSide && { page })
     };
   };
 
@@ -763,6 +764,10 @@ Table.propTypes = {
    */
   pageSize: PropTypes.number,
   /**
+   * Specify the current page number when using a server side pagination
+   */
+  page: PropTypes.number,
+  /**
    * Callback to notify when the page size changes
    */
   onPageSizeChange: PropTypes.func,
@@ -834,6 +839,7 @@ Table.defaultProps = {
   showPagination: true,
   onPageChange: () => {},
   showPageSize: true,
+  page: undefined,
   pageSize: undefined,
   onPageSizeChange: () => {},
   paginationServerSide: false,
