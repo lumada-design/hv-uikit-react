@@ -126,3 +126,5 @@ Change year by using the arrows icons
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Element Attribute Value Should Be    ${input}                    value         9 Jan, 1971
+
+    

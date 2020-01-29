@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.8.0...@hv/uikit-react-icons@1.8.1) (2020-01-18)
+
+
+### Bug Fixes
+
+* **checkbox:** css icon classes. [#995](https://github.com/pentaho/hv-uikit-react/issues/995) ([8a782fd](https://github.com/pentaho/hv-uikit-react/commit/8a782fd8551bd5ec791d8c78e59bcef540cfc3fe))
+
+
+
+
+
 # [1.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.7.0...@hv/uikit-react-icons@1.8.0) (2020-01-16)
 
 
