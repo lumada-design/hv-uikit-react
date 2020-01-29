@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.20.0...@hv/uikit-react-core@1.20.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* **assetinventory:** correctly set selected sort option. [#1009](https://github.com/pentaho/hv-uikit-react/issues/1009) ([4d22733](https://github.com/pentaho/hv-uikit-react/commit/4d22733e9384b82def08638b1eb380f43488fc29))
+
+
+
+
+
 # [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.19.0...@hv/uikit-react-core@1.20.0) (2020-01-22)
 
 
