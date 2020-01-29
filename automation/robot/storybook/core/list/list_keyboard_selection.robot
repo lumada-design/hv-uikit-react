@@ -45,7 +45,7 @@ unselect an option when pressing SPACE on selected option (single selection)
 select an option when pressing SPACE on it (multiple selection)
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible        ${list}       10s
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Element Attribute Value Should Be    ${option5}    aria-selected    false
     Set Focus To Element                 ${option5}
     Press Keys                           ${None}       SPACE
     Element Attribute Value Should Be    ${option5}    aria-selected    true
@@ -56,12 +56,12 @@ unselect an option when pressing SPACE on selected option (multiple selection)
     Element Attribute Value Should Be    ${option3}    aria-selected    true
     Set Focus To Element                 ${option3}
     Press Keys                           ${None}       SPACE
-    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
+    Element Attribute Value Should Be    ${option3}    aria-selected    false
 
 don't selected option when pressing ENTER on it (multiple selection)
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible        ${list}       10s
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Element Attribute Value Should Be    ${option5}    aria-selected    false
     Set Focus To Element                 ${option5}
     Press Keys                           ${None}       ENTER
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
+    Element Attribute Value Should Be    ${option5}    aria-selected    false
