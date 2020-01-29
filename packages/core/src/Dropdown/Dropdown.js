@@ -106,7 +106,7 @@ class Dropdown extends React.Component {
   handleToggle(evt) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
-    if (evt) {
+    if (evt && !isKeypress(evt, KeyboardCodes.Tab)) {
       evt.stopPropagation();
       evt.preventDefault();
     }
