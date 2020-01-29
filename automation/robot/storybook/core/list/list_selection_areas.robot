@@ -12,16 +12,15 @@ Documentation      select a option clicking in different parts of option element
 
 *** Keywords ***
 select an option by locator 
-    [Arguments]    ${sample}    ${option}    ${locator}
+    [Arguments]    ${sample}    ${option}    ${locator}     ${value}
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--${sample}
     Wait Until Element Is Visible        ${list}       10s
-    Element Attribute Value Should Be    ${option}       aria-selected    ${None}
+    Element Attribute Value Should Be    ${option}       aria-selected    ${value}
     Click Element                        ${locator}
     Element Attribute Value Should Be    ${option}       aria-selected    true
-    
 
-*** Test Cases ***                       sample                       option        locator
-single select clicking on icon           single-selection             ${option1}    css:#${option1} div
-single select clicking on label          single-selection             ${option1}    css:#${option1} p
-single select clicking on radiobutton    list-radiobutton-selector    ${option3}    css:#${option3} input
-single select clicking on checkbox       multiselection-all           ${option5}    css:#${option5} input
+*** Test Cases ***                       sample                       option        locator                 value
+single select clicking on icon           single-selection             ${option1}    css:#${option1} div     ${None}
+single select clicking on label          single-selection             ${option1}    css:#${option1} p       ${None}
+single select clicking on radiobutton    list-radiobutton-selector    ${option3}    css:#${option3} input   ${None}
+multi select clicking on checkbox        multiselection-all           ${option5}    css:#${option5} input   false

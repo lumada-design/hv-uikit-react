@@ -134,6 +134,7 @@ class List extends React.Component {
     const { internalId, selection, anySelected } = this.state;
 
     const itemId = `${internalId}-item-${i}`;
+    const selected = item.selected || false;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
       <Focus
@@ -150,7 +151,7 @@ class List extends React.Component {
           id={itemId}
           role={selectable ? "option" : "menuitem"}
           aria-disabled={item.disabled || undefined}
-          aria-selected={multiSelect || item.selected ? item.selected : undefined}
+          aria-selected={multiSelect || selected ? selected : undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
           className={classNames(classes.listItem, {

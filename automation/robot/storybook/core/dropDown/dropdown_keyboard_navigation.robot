@@ -41,12 +41,12 @@ Cancel dropdown selection with escape
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
     Wait Until Element Is Enabled        ${dropdown}        10s
     Click Element                        ${dropdown}
-    Element Attribute Value Should Be    ${item1}           aria-selected    ${None}
+    Element Attribute Value Should Be    ${item1}           aria-selected    false
     Click Element                        ${item1}
     Element Attribute Value Should Be    ${item1}           aria-selected    true
     set focus and press keys             ${dropdown}        ESCAPE
     Click Element                        ${dropdown}
-    Element Attribute Value Should Be    ${item1}           aria-selected     ${None}
+    Element Attribute Value Should Be    ${item1}           aria-selected     false
 
 Focus on input when open dropdown with input
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
