@@ -71,9 +71,10 @@ const DropDownMenu = ({
   disablePortal,
   onClick,
   keepOpened,
+  expanded,
   ...others
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(expanded && !disabled);
   const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
@@ -91,15 +92,6 @@ const DropDownMenu = ({
     setOpen(false);
   };
 
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-    prevOpen.current = open;
-  }, [open]);
-
   /**
    * If the ESCAPE key is pressed the close handler must beSpace called.
    *Space
@@ -111,17 +103,20 @@ const DropDownMenu = ({
     }
     if (isKeypress(evt, KeyboardCodes.Tab)) {
       const node = evt.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
-      handleToggle();
       if (node) setTimeout(() => node.focus(), 0);
+      handleToggle();
     }
+    evt.preventDefault();
   };
 
   const handleKeyboardToggle = event => {
     if (
       isKeypress(event, KeyboardCodes.SpaceBar) ||
-      isKeypress(event, KeyboardCodes.Enter)
+      isKeypress(event, KeyboardCodes.Enter) ||
+      (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
+      (isKeypress(event, KeyboardCodes.ArrowUp) && open)
     ) {
-      handleToggle(event);
+      handleToggle();
       event.preventDefault();
     }
   };
@@ -262,7 +257,11 @@ DropDownMenu.propTypes = {
   /**
    * Defines if the component is disabled.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * If true it should be displayed open.
+   */
+  expanded: PropTypes.bool
 };
 
 DropDownMenu.defaultProps = {
@@ -272,7 +271,8 @@ DropDownMenu.defaultProps = {
   onClick: null,
   keepOpened: true,
   disabled: false,
-  icon: undefined
+  icon: undefined,
+  expanded: false
 };
 
 export default DropDownMenu;

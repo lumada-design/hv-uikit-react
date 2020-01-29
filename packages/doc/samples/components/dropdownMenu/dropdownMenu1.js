@@ -21,6 +21,7 @@ export default (
       onClick={e => alert(e.label)}
       disablePortal={false}
       aria-label="dropdownMenu-1"
+    keepOpened={false}
     />
   </div>
 );

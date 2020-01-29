@@ -265,28 +265,28 @@ describe("DropDownMenu", () => {
       expect(results).toHaveNoViolations();
     });
 
-    // it("open", async () => {
-    //   wrapper = mount(
-    //     <HvProvider>
-    //       <DropDownMenu
-    //         dataList={menuOptions}
-    //         icon={<div />}
-    //         keepOpened={false}
-    //         onClick={() => {}}
-    //         id="test"
-    //         aria-label="test"
-    //         disablePortal
-    //       />
-    //     </HvProvider>
-    //   );
-    //
-    //   const button = wrapper.find("button");
-    //
-    //   button.simulate("click");
-    //
-    //   const results = await axe(wrapper.getDOMNode()[1]);
-    //
-    //   expect(results).toHaveNoViolations();
-    // });
+    it("open", async () => {
+      wrapper = mount(
+        <HvProvider>
+          <DropDownMenu
+            dataList={menuOptions}
+            icon={<div />}
+            keepOpened={false}
+            onClick={() => {}}
+            id="test"
+            aria-label="test"
+            disablePortal
+          />
+        </HvProvider>
+      );
+
+      const button = wrapper.find("button");
+
+      button.simulate("click");
+
+      const results = await axe(wrapper.getDOMNode()[1]);
+
+      expect(results).toHaveNoViolations();
+    });
   });
 });

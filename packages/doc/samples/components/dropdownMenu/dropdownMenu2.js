@@ -19,6 +19,7 @@ export default (
       dataList={menuOptions}
       placement="right"
       aria-label="dropdownMenu-2"
+      onClick={e => console.log(e.label)}
     />
   </div>
 );

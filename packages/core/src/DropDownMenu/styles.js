@@ -23,7 +23,6 @@ const styles = theme => ({
   icon: {
     height: "32px",
     width: "32px",
-
     position: "relative",
     boxSizing: "content-box",
     padding: 0,
@@ -35,10 +34,6 @@ const styles = theme => ({
       ...outlineStyles
     },
     "&:disabled": {
-      cursor: "not-allowed",
-      pointerEvents: "auto"
-    },
-    "&$disabled&:hover": {
       cursor: "not-allowed",
       pointerEvents: "auto"
     },
