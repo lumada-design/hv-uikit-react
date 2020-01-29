@@ -19,8 +19,35 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import IconButton from "@material-ui/core/IconButton";
+import FocusTrap from "focus-trap-react";
+import uniqueId from "lodash/uniqueId";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Popper from "../utils/Popper";
 import List from "../List";
+
+/**
+ * Auxiliary function to find adjacent nodes to focus.
+ *
+ * @param nodeId
+ * @returns {{prevFocus: *, nextFocus: *}}
+ */
+const getPrevNextFocus = nodeId => {
+  const nodes =
+    document.querySelectorAll("input, button, select, textarea, a[href]") || [];
+
+  const nbNodes = nodes.length;
+  let index = 0;
+  for (; index < nbNodes; index += 1) {
+    if (nodes[index].id === nodeId) {
+      break;
+    }
+  }
+  return {
+    nextFocus: nodes[index + 1 > nbNodes - 1 ? 0 : index + 1],
+    prevFocus: nodes[index - 1 < 0 ? nbNodes - 1 : index - 1]
+  };
+};
 
 /**
  * Dropdown component with a menu.
@@ -40,12 +67,17 @@ const DropDownMenu = ({
   placement,
   dataList,
   id,
+  disabled,
   disablePortal,
   onClick,
-  keepOpened
+  keepOpened,
+  expanded,
+  ...others
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(expanded && !disabled);
+  const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
+  const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
@@ -57,37 +89,62 @@ const DropDownMenu = ({
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-
     setOpen(false);
   };
 
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
+  /**
+   * If the ESCAPE key is pressed the close handler must beSpace called.
+   *Space
+   * @param evt
+   */
+  const handleKeyDown = evt => {
+    if (isKeypress(evt, KeyboardCodes.Esc)) {
+      handleClose(evt);
     }
+    if (isKeypress(evt, KeyboardCodes.Tab)) {
+      const node = evt.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
+      if (node) setTimeout(() => node.focus(), 0);
+      handleToggle();
+    }
+    evt.preventDefault();
+  };
 
-    prevOpen.current = open;
-  }, [open]);
+  const handleKeyboardToggle = event => {
+    if (
+      isKeypress(event, KeyboardCodes.SpaceBar) ||
+      isKeypress(event, KeyboardCodes.Enter) ||
+      (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
+      (isKeypress(event, KeyboardCodes.ArrowUp) && open)
+    ) {
+      handleToggle();
+      event.preventDefault();
+    }
+  };
+
+  const IconRender = icon || (
+    <MoreVert
+      boxStyles={{ width: "32px", height: "32px" }}
+      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : undefined]}
+    />
+  );
 
   return (
-    <div {...(id && { id })} className={classes.root}>
+    <div id={internalId} className={classes.root}>
       <IconButton
-        {...(id && { id: `${id}-icon-button` })}
+        id={`${internalId}-icon-button`}
         buttonRef={anchorRef}
-        aria-controls={open ? `${id}-dropdown-menu` : undefined}
+        aria-controls={open ? `${internalId}-list` : undefined}
         aria-haspopup="true"
+        aria-expanded={open ? true : undefined}
         onClick={handleToggle}
+        onKeyDown={handleKeyboardToggle}
         className={classNames(classes.icon, {
           [classes.iconSelected]: open
         })}
-        onKeyDown={event => {
-          handleToggle(event);
-          event.preventDefault();
-        }}
+        disabled={disabled}
+        {...others}
       >
-        {icon}
+        {IconRender}
       </IconButton>
       <Popper
         disablePortal={disablePortal}
@@ -98,20 +155,31 @@ const DropDownMenu = ({
         style={{ zIndex: theme.zIndex.tooltip }}
       >
         <ClickAwayListener onClickAway={handleClose}>
-          <div className={classes.menuList}>
-            <List
-              {...(id && { id: `${id}-dropdown-menu` })}
-              values={dataList}
-              selectable={false}
-              onClick={item => {
-                if (!keepOpened) {
-                  setOpen(false);
-                }
-                onClick(item);
-              }}
-              condensed
-            />
-          </div>
+          <FocusTrap
+            createOptions={{
+              escapeDeactivates: false,
+              allowOutsideClick: true,
+              fallbackFocus: document.getElementById(
+                `${internalId}-icon-button`
+              )
+            }}
+          >
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            <div className={classes.menuList} onKeyDown={handleKeyDown}>
+              <List
+                id={`${internalId}-list`}
+                values={dataList}
+                selectable={false}
+                onClick={item => {
+                  if (!keepOpened) {
+                    setOpen(false);
+                  }
+                  onClick(item);
+                }}
+                condensed
+              />
+            </div>
+          </FocusTrap>
         </ClickAwayListener>
       </Popper>
     </div>
@@ -132,6 +200,10 @@ DropDownMenu.propTypes = {
    */
   classes: PropTypes.shape({
     /**
+     * Styles applied to the root of the component.
+     */
+    root: PropTypes.string,
+    /**
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
@@ -147,7 +219,7 @@ DropDownMenu.propTypes = {
   /**
    * Icon.
    */
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.element,
   /**
    * A list containing the elements to be rendered.
    *
@@ -181,7 +253,15 @@ DropDownMenu.propTypes = {
   /**
    * Keep the Dropdown Menu opened after clicking one option
    */
-  keepOpened: PropTypes.bool
+  keepOpened: PropTypes.bool,
+  /**
+   * Defines if the component is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If true it should be displayed open.
+   */
+  expanded: PropTypes.bool
 };
 
 DropDownMenu.defaultProps = {
@@ -189,7 +269,10 @@ DropDownMenu.defaultProps = {
   placement: "left",
   disablePortal: false,
   onClick: null,
-  keepOpened: true
+  keepOpened: true,
+  disabled: false,
+  icon: undefined,
+  expanded: false
 };
 
 export default DropDownMenu;
