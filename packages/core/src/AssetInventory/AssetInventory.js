@@ -256,7 +256,7 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSort = () => {
-    const { labels, configuration, classes, onSortChange } = this.props;
+    const { labels, configuration, classes, onSortChange, disablePortal } = this.props;
     const { internalId, selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy
@@ -270,6 +270,7 @@ class AssetInventory extends React.Component {
           selected={selectedSort}
           onSelection={this.onSort}
           onSortChange={onSortChange}
+          disablePortal={disablePortal}
         />
       </div>
     );
@@ -720,7 +721,11 @@ AssetInventory.propTypes = {
   /**
    * Visual indicator of the search string used.
    */
-  searchString: PropTypes.string
+  searchString: PropTypes.string,
+  /**
+   * Disable portal on the Sort dropdown
+   */
+  disablePortal: PropTypes.bool
 };
 
 AssetInventory.defaultProps = {
@@ -753,7 +758,8 @@ AssetInventory.defaultProps = {
   onSortChange: null,
   onViewChange: () => {},
   sortOptionId: null,
-  searchString: null
+  searchString: null,
+  disablePortal: false
 };
 
 export default AssetInventory;
