@@ -74,17 +74,20 @@ get css property value
     ${css}=         Wait Until Keyword Succeeds    5         400ms                    Get WebElement       ${locator}
     ${prop_val}=    Call Method                    ${css}    value_of_css_property    ${property}
     [Return]        ${prop_val}
-
+  
 open storybook
     [Arguments]        ${url}=${STORYBOOK_URL}    ${browser}=${BROWSER}
     [Documentation]
-    ...                Open the choosen browser on the storybook url provided with options: \n
-    ...                 - *window-size=1920,1080;  start-maximized;  headless*
-    ...                Arguments:
-    ...                - url         (string)    url address of storybook (by default is assuming variable ${STORYBOOK_URL})
-    ...                - browser     (string)    the desired browser ( by defautl is assuming variable ${BROWSER} )
+    ...                 | Arguments: | Description         | Default Value                              |
+    ...                 | url        | page address        | as set on global variable ${STORYBOOK_URL} | 
+    ...                 | browser    | ie, chrome, firefox | as set on global variable ${BROWSER}       | 
     ...
-    Open Browser    ${url}    ${browser}    options=add_argument("--window-size=1920,1080"); add_argument("--start-maximized"); add_argument("--headless")
+    ...                launch *'browser'* on *'url'* with below capabilities: \n
+    ...                 - *window-size=1920,1080;  start-maximized;  headless* 
+    ...
+    ${options}                 Set Variable    add_argument("--window-size=1920,1080"); add_argument("--start-maximized"); add_argument("--headless")
+    Open Browser               ${url}          ${browser}    options=${options}
+    Maximize Browser Window    #necessary because ie doesn't recognize the capability --start-maximized 
     
 verify css element properties
     [Arguments]        ${locator}    ${css}
