@@ -185,7 +185,7 @@ Focus.propTypes = {
    *
    * Focus and navigatino strategy to be used.
    */
-  strategy: PropTypes.oneOf("list", "card"),
+  strategy: PropTypes.oneOf(["list", "card"]),
   /**
    * Show focus when click element.
    */
