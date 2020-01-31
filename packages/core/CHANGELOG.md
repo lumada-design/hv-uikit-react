@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.20.1...@hv/uikit-react-core@1.21.0) (2020-01-31)
+
+
+### Bug Fixes
+
+* **assetinventory:** disable portal. [#1052](https://github.com/pentaho/hv-uikit-react/issues/1052) ([425655d](https://github.com/pentaho/hv-uikit-react/commit/425655d3e3c6d1bb916bfcf6de974d6e08dc84de))
+
+
+### Features
+
+* **table:** add the page as prop type for the Table component [#1054](https://github.com/pentaho/hv-uikit-react/issues/1054) ([a7432f9](https://github.com/pentaho/hv-uikit-react/commit/a7432f948409c2be546cdd8b7d556e2abf729284))
+
+
+
+
+
 ## [1.20.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.20.0...@hv/uikit-react-core@1.20.1) (2020-01-29)
 
 
