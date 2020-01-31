@@ -1,4 +1,5 @@
 import "./@types/HvBanner"
+import "./@types/HvBreadCrumb"
 import "./@types/HvButton"
 import "./@types/HvCheckBox"
 import "./@types/HvHeader"
