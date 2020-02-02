@@ -1,5 +1,5 @@
 declare module '@hv/uikit-react-core/dist' {
-  export class HvBreadCrumb extends React.Component<HvBreadCrumbProps, any> {}
+  export class HvBreadcrumb extends React.Component<HvBreadCrumbProps, any> {}
 
   export interface BreadCrumbPathElement {
     label: string
