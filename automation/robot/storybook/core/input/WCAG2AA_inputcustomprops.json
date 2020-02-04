@@ -4,7 +4,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p id=\"hv-input-1-description\" class=\"Typography-infoText-188 Typography-baseFontFamily-192 Typography-margin-193 HvInput-infoText-162\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
+        "context": "<p id=\"hv-input-1-description\" class=\"Typography-infoText-189 Typography-baseFontFamily-193 Typography-margin-194 HvInput-infoText-162\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
         "selector": "#hv-input-1-description",
         "runner": "htmlcs",
         "runnerExtras": {}
@@ -14,7 +14,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI)",
-        "context": "<p id=\"hv-input-1-description\" class=\"Typography-infoText-188 Typography-baseFontFamily-192 Typography-margin-193 HvInput-infoText-162\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
+        "context": "<p id=\"hv-input-1-description\" class=\"Typography-infoText-189 Typography-baseFontFamily-193 Typography-margin-194 HvInput-infoText-162\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
         "selector": "#hv-input-1-description",
         "runner": "axe",
         "runnerExtras": {

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
     display: "contents"
@@ -21,7 +23,6 @@ const styles = theme => ({
   icon: {
     height: "32px",
     width: "32px",
-
     position: "relative",
     boxSizing: "content-box",
     padding: 0,
@@ -30,7 +31,11 @@ const styles = theme => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:focus": {
-      outline: "5px auto rgba(0, 150, 255, 1)"
+      ...outlineStyles
+    },
+    "&:disabled": {
+      cursor: "not-allowed",
+      pointerEvents: "auto"
     },
     borderRadius: 0,
     display: "flex",

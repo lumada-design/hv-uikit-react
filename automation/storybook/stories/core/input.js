@@ -34,27 +34,29 @@ import InputSimpleDisable from "../../../../packages/doc/samples/components/inpu
 import InputSimpleWithIconInfo from "../../../../packages/doc/samples/components/input/inputSimpleWithIconInfo";
 import InputSuggestions from "../../../../packages/doc/samples/components/input/inputSuggestions";
 import InputUncontrolledValue from "../../../../packages/doc/samples/components/input/inputUncontrolledValue";
+import InputControlled from "../../../../packages/doc/samples/components/input/inputControlled";
 
 // sample scenarios
-const samples = {};
-
-samples.InputCustomProps = InputCustomProps;
-samples.InputCustomValidation = InputCustomValidation;
-samples.InputDefaultValue = InputDefaultValue;
-samples.InputEmail = InputEmail;
-samples.InputEvents = InputEvents;
-samples.InputInitialState = InputInitialState;
-samples.InputLeftIcon = InputLeftIcon;
-samples.InputMax = InputMax;
-samples.InputMaxNumeric = InputMaxNumeric;
-samples.InputNoValidation = InputNoValidation;
-samples.InputPassword = InputPassword;
-samples.InputRequiredMaxNumeric = InputRequiredMaxNumeric;
-samples.InputSimple = InputSimple;
-samples.InputSimpleDisable = InputSimpleDisable;
-samples.InputSimpleWithIconInfo = InputSimpleWithIconInfo;
-samples.InputSuggestions= InputSuggestions;
-samples.InputUncontrolledValue= InputUncontrolledValue;
+const samples = {
+  InputCustomProps,
+  InputCustomValidation,
+  InputDefaultValue,
+  InputEmail,
+  InputEvents,
+  InputInitialState,
+  InputLeftIcon,
+  InputMax,
+  InputMaxNumeric,
+  InputNoValidation,
+  InputPassword,
+  InputRequiredMaxNumeric,
+  InputSimple,
+  InputSimpleDisable,
+  InputSimpleWithIconInfo,
+  InputSuggestions,
+  InputUncontrolledValue,
+  InputControlled
+};
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

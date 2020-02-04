@@ -1,0 +1,8 @@
+dropdown:        css:div[role='combobox']
+searchInput:     css:div[class*='input']
+dropedDiv:       css:div[role][id*='values']
+item1:           css:div[role][id*='values'] li:nth-of-type(1)
+item4:           css:div[role][id*='values'] li:nth-of-type(4)
+selectAll:       css:label[id*='select-all']>span:nth-of-type(1)
+buttonApply:     css:button[id*='apply']
+buttonCancel:    css:button[id*='cancel']

@@ -50,12 +50,12 @@ Bootstrap the packages in the current repo. Installs all their dependencies and 
 npm run bootstrap
 ```
 
-#### dev mode
+#### doc
 
-It will run all packages and startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
+It will startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
 
 ```bash
-npm run dev
+npm run doc
 ```
 
 #### documentation

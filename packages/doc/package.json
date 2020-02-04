@@ -13,8 +13,8 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "start-storybook -p 9001 --quiet",
-    "build": "npx cross-env build-storybook -o dist --quiet",
+    "doc": "start-storybook -p 9001 -c .storybook -p --quiet",
+    "build": "build-storybook -c .storybook -o dist --quiet",
     "clean": "npx del-cli dist"
   },
   "peerDependencies": {
@@ -28,6 +28,7 @@
     "@hv/uikit-react-lab": "^1.17.3",
     "@material-ui/core": "^3.9.3",
     "classnames": "^2.2.6",
+    "detect-browser": "^4.8.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",

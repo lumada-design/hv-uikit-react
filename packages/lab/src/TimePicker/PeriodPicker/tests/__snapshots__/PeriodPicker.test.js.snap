@@ -15594,6 +15594,7 @@ body {
                 onClick={[Function]}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"
@@ -18463,6 +18464,7 @@ body {
                 onClick={[Function]}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"

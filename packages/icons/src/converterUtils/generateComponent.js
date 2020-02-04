@@ -76,7 +76,7 @@ const sizeSelector = (iconSize, iconHeight, iconWidth) => {
 };
 
 const sizeClass = (classes, iconSize) => {
-  switch(iconSize) {
+  switch (iconSize) {
     case "XS":
       return classes.rootXs;
     default:
@@ -104,7 +104,8 @@ const ${componentName} = ({
   style,
   ...other
 }) => {
-  let colorArray = color;
+  const flatColors = Object.assign({}, ...Object.values(theme.hv.palette));
+  let colorArray = Array.isArray(color) && color.map(c => flatColors[c] || c);
 
   if (!colorArray || colorArray.length < 1) {
     colorArray = [${palette}];
@@ -124,7 +125,7 @@ const ${componentName} = ({
 
   return (
     <div className={clx} style={boxStyles} {...other}>
-      ${svgOutput.replace("{...other}", "style={style}")}
+      ${svgOutput.replace("{...other}", "style={style} focusable={false}")}
     </div>
   );
 };

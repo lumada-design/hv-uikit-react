@@ -19,6 +19,8 @@ import {
   fade
 } from "@material-ui/core/styles/colorManipulator";
 
+import { outlineStyles } from "../Focus/styles";
+
 const useColor = color => ({
   color,
   "& svg .color0": {
@@ -37,7 +39,7 @@ const styles = theme => {
       "&:hover,&:focus": {},
       "&:active": {},
       "&:focus": {
-        outline: "5px auto rgba(0, 150, 255, 1)"
+        ...outlineStyles
       },
       minWidth: "70px",
       padding: `0 ${theme.hv.spacing.xs}px`,
