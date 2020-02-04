@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import withStyles from "@material-ui/core/styles/withStyles";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
@@ -25,7 +25,7 @@ import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import HvTypography from "../Typography";
 import List from "./List";
-import { getSelectionLabel, getSelected } from "./utils";
+import { getSelected, getSelectionLabel } from "./utils";
 
 const DEFAULT_LABELS = {
   select: "Select...",
@@ -60,13 +60,12 @@ const StyledArrowUp = withStyles(styles, { withTheme: true })(ArrowUp);
 const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
 
 class Dropdown extends React.Component {
-
   constructor(props) {
     super(props);
 
-    const {
-      id
-    } = props;
+    this.ref = React.createRef();
+
+    const { id } = props;
 
     this.state = {
       internalId: id || uniqueId("hv-dropdown-"),
@@ -107,10 +106,20 @@ class Dropdown extends React.Component {
   handleToggle(evt) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
-    if (evt) evt.stopPropagation();
-
+    if (evt && !isKeypress(evt, KeyboardCodes.Tab)) {
+      evt.stopPropagation();
+      evt.preventDefault();
+    }
     // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
-    if (disabled || isKeypress(evt, KeyboardCodes.Enter) === false) return;
+    if (
+      disabled ||
+      (isKeypress(evt, KeyboardCodes.Enter) === false &&
+        isKeypress(evt, KeyboardCodes.Esc) === false &&
+        isKeypress(evt, KeyboardCodes.ArrowDown) === false) ||
+      (isKeypress(evt, KeyboardCodes.Esc) && !isOpen) ||
+      (isKeypress(evt, KeyboardCodes.ArrowDown) && isOpen)
+    )
+      return;
 
     const anchor = evt ? evt.currentTarget : null;
 
@@ -132,30 +141,63 @@ class Dropdown extends React.Component {
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
     const { multiSelect, onChange } = this.props;
     const { labels } = this.state;
-    const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
     const selected = getSelected(selection);
 
-    if (commitChanges) this.setState({ selectionLabel });
+    if (commitChanges) {
+      const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
+      this.setState({ selectionLabel });
+    }
     if (toggle) this.handleToggle();
     if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
   }
 
   renderLabel() {
+    const { internalId } = this.state;
     const { classes, label, labels } = this.props;
-    return <div className={classes.label}>{labels.title || label}</div>;
+    return (
+      // eslint-disable-next-line jsx-a11y/label-has-for
+      <label
+        id={`${internalId}-label`}
+        className={classes.label}
+        htmlFor={`${internalId}-header`}
+      >
+        {labels.title || label}
+      </label>
+    );
   }
 
   renderHeader() {
-    const { classes, disabled, theme } = this.props;
-    const { isOpen, selectionLabel, internalId } = this.state;
+    const {
+      classes,
+      disabled,
+      theme,
+      label,
+      values,
+      id,
+      labels: propLabels,
+      multiSelect,
+      showSearch,
+      expanded,
+      onChange,
+      notifyChangesOnFirstRender,
+      selectDefault,
+      disablePortal,
+      hasTooltips,
+      singleSelectionToggle,
+      ...others
+    } = this.props;
 
-    const color = disabled
-      ? [theme.hv.palette.atmosphere.atmo7]
-      : undefined;
+    const { isOpen, labels, selectionLabel, internalId } = this.state;
+
+    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
 
     return (
       <div
         id={`${internalId}-header`}
+        aria-expanded={isOpen}
+        aria-labelledby={
+          labels.title || label ? `${internalId}-label` : undefined
+        }
         className={classNames([
           classes.header,
           {
@@ -164,8 +206,12 @@ class Dropdown extends React.Component {
         ])}
         onKeyDown={evt => this.handleToggle(evt)}
         onClick={evt => this.handleToggle(evt)}
-        role="button"
+        role="combobox"
+        aria-controls={isOpen ? `${internalId}-values` : undefined}
+        aria-owns={isOpen ? `${internalId}-values` : undefined}
+        ref={this.ref}
         tabIndex={0}
+        {...others}
       >
         <HvTypography
           variant="normalText"
@@ -182,7 +228,11 @@ class Dropdown extends React.Component {
         {isOpen ? (
           <StyledArrowUp iconSize="XS" className={classes.arrow} />
         ) : (
-          <StyledArrowDown iconSize="XS" className={classes.arrow} color={color} />
+          <StyledArrowDown
+            iconSize="XS"
+            className={classes.arrow}
+            color={color}
+          />
         )}
       </div>
     );
@@ -296,25 +346,17 @@ Dropdown.propTypes = {
      */
     headerDisabled: PropTypes.string,
     /**
-     * Styles applied to the list.
-     */
-    list: PropTypes.string,
-    /**
-     * Styles applied when the list is closed.
-     */
-    listClosed: PropTypes.string,
-    /**
-     * Styles applied when the list is open.
-     */
-    open: PropTypes.string,
-    /**
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
     /**
      * Styles applied for truncating the list elements.
      */
-    truncate: PropTypes.string
+    truncate: PropTypes.string,
+    /**
+     * Styles applied when the selection is disabled.
+     */
+    selectionDisabled: PropTypes.string
   }).isRequired,
   /**
    * Label to display
@@ -369,7 +411,8 @@ Dropdown.propTypes = {
   /**
    * An object containing all the labels for the dropdown.
    *
-   * - select: The default when there are no options avaible.
+   * - title: Label title for the dropdown.
+   * - select: The default when there are no options available.
    * - selectAll: The label used for the All checkbox action.
    * - cancelLabel: The label used for the cancel button.
    * - applyLabel: The label used for the apply button.
@@ -406,7 +449,7 @@ Dropdown.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle:PropTypes.bool
+  singleSelectionToggle: PropTypes.bool
 };
 
 Dropdown.defaultProps = {
@@ -425,7 +468,7 @@ Dropdown.defaultProps = {
   theme: null,
   disablePortal: false,
   hasTooltips: false,
-  singleSelectionToggle: true,
+  singleSelectionToggle: true
 };
 
 export default Dropdown;

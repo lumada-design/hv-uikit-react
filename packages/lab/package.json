@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-lab",
-  "version": "1.17.2",
+  "version": "1.17.3",
   "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -14,16 +14,16 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "npm-run-all clean -p dev:*",
-    "dev:watch": "watch \"npm run build\" src",
-    "build": "npm-run-all clean build:*",
-    "build:copy": "copyfiles -f src/index.js dist && mv dist/index.js dist/index.es.js",
-    "build:babel": "npx babel src -d dist --source-maps --copy-files",
-    "build:clean": "npx del-cli dist/**/tests",
+    "dev": "npm-run-all clean copy babel:watch",
+    "build": "npm-run-all clean copy babel:build test:clean",
+    "babel:watch": "npx babel src -d dist --source-maps --copy-files --watch",
+    "babel:build": "npx babel src -d dist --source-maps --copy-files",
+    "copy": "copyfiles -f src/index.js dist && mv dist/index.js dist/index.es.js",
     "clean": "npx del-cli dist",
     "test": "jest -c config/jest-config.js --coverage",
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
+    "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
     "update-uikit-common": "npm update @hv/uikit-common-themes"
@@ -33,7 +33,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-react-core": "^1.20.1",
+    "@hv/uikit-react-core": "^1.21.0",
     "@hv/uikit-react-icons": "^1.8.1",
     "@material-ui/core": "^3.9.3",
     "classnames": "^2.2.6",

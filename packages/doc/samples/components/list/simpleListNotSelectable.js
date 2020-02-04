@@ -4,7 +4,8 @@ import List from "@hv/uikit-react-core/dist/List";
 
 const data = [
   {
-    label: "Share"
+    label: "Share",
+    disabled: true
   },
   {
     label: "Edit"
@@ -34,8 +35,15 @@ const ListWrapper = withStyles(styles, { withTheme: true })(
   ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
 );
 
+// Passing the aria-label to the component is necessary in order for the component
+// to meet accessibility requirements
+const ariaProps = {
+  "aria-label": "Simple Non Selectable List Title"
+};
+
 export default (
-  <ListWrapper>
-    <List values={data} selectable={false} />
-  </ListWrapper>
+    <ListWrapper>
+      <List values={data} selectable={false} listProps={ariaProps} />
+    </ListWrapper>
 );
+

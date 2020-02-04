@@ -15649,6 +15649,7 @@ body {
                 tabIndex={0}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"
@@ -18533,6 +18534,7 @@ body {
                 tabIndex={0}
               >
                 <svg
+                  focusable={false}
                   height="12px"
                   viewBox="0 0 12 12"
                   width="12px"

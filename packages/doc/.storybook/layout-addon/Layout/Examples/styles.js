@@ -14,6 +14,17 @@
  * limitations under the License.
  */
 
+import { detect } from "detect-browser";
+
+const { name: browser } = detect();
+
+export const outlineStyles = {
+  outlineColor: "Highlight",
+  outlineStyle: ["ie", "edge"].includes(browser) ? "solid" : "auto",
+  outlineWidth: 4,
+  outlineOffset: -2
+};
+
 const styles = theme => ({
   root: {
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
@@ -39,16 +50,16 @@ const styles = theme => ({
     padding: 0,
     borderRadius: "0",
     "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:focus": {
-      outline: "5px auto rgba(0, 150, 255, 1)"
+      ...outlineStyles
     }
   },
   iconStyles: {
     width: "30px",
     height: "30px"
-  },
+  }
 });
 
 export default styles;

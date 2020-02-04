@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   container: {
     minWidth: "150px",
@@ -31,6 +33,11 @@ const styles = theme => ({
       borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
       background: theme.hv.palette.atmosphere.atmo1
+    },
+    "&:hover, &:focus-within": {
+      "& $iconClear": {
+        visibility: "visible"
+      }
     }
   },
   inputRootDisabled: {
@@ -48,13 +55,14 @@ const styles = theme => ({
     borderWidth: " 0 0 1px 0",
     borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
-    outline: "5px auto rgba(0, 150, 255, 1)",
+    ...outlineStyles,
     "&:hover": {
       borderStyle: "solid",
-      borderWidth: " 0 0 1px 0",
+      borderWidth: "0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
       background: theme.hv.palette.atmosphere.atmo1
-    }
+    },
+    "& $iconClear": { visibility: "visible" }
   },
   inputRootInvalid: {
     borderColor: theme.hv.palette.semantic.sema4,
@@ -99,11 +107,11 @@ const styles = theme => ({
   infoIconContainer: {
     height: "32px",
     width: "32px",
-    display:"flex",
-    justifyContent:"center",
-    '& div': {
-      alignSelf:"center",
-      marginTop:-2
+    display: "flex",
+    justifyContent: "center",
+    "& div": {
+      alignSelf: "center",
+      marginTop: -2
     }
   },
   infoText: {
@@ -118,7 +126,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "row",
     height: 30,
-    justifyContent:"center"
+    justifyContent: "center"
   },
   adornmentButton: {
     backgroundColor: "transparent",
@@ -127,7 +135,7 @@ const styles = theme => ({
     margin: 0,
     cursor: "pointer"
   },
-  adornmentIconBox: {
+  icon: {
     width: `${theme.hv.spacing.md}px`,
     height: `${theme.hv.spacing.md}px`,
     position: "relative",
@@ -138,7 +146,13 @@ const styles = theme => ({
       left: 0,
       right: 0,
       margin: "auto"
-  }
+    }
+  },
+  iconClear: {
+    visibility: "hidden",
+    "&:focus": {
+      visibility: "visible"
+    }
   },
 
   suggestionsContainer: {
@@ -155,9 +169,7 @@ const styles = theme => ({
   },
   "@global": {
     "input:-webkit-autofill": {
-      "-webkit-box-shadow": `0 0 0px 1000px ${
-        theme.hv.palette.atmosphere.atmo1
-      } inset`,
+      "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
       "-webkit-text-fill-color": theme.hv.typography.normalText.color
     }
   }

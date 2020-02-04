@@ -48,5 +48,6 @@ export default (
     multiSelect={false}
     showSearch
     notifyChangesOnFirstRender
+    aria-label="title"
   />
 );

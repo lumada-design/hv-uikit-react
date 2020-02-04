@@ -1,46 +1,14 @@
-import React, {useState} from "react";
-import classNames from "classnames";
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { useState } from "react";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
 import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
-import {isKeypress, KeyboardCodes} from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import Hitachi from "./resources/hitachi";
 
-const styles = theme => ({
-  box: {
-    width: "32px",
-    height: "32px"
-  },
-  selected: {
-    "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo1
-    }
-  }
-});
-
-const getClasses = ({ classes, isSelected }) =>
-  classNames(classes.box, isSelected && classes.selected);
-
-const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
-  <UserIcon className={getClasses(props)} />
-));
-const StyledHelpIcon = withStyles(styles, { withTheme: true })(props => (
-  <HelpIcon className={getClasses(props)} />
-));
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
-  <PlaneIcon className={getClasses(props)} />
-));
-
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
-  <CalendarIcon className={getClasses(props)} />
-));
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
-  <LineChartIcon className={getClasses(props)} />
-));
+const iconBox = { width: 32, height: 32 };
 
 const responsivenessConfig = {
   showHbMenus: "md",
@@ -55,38 +23,55 @@ const navigationData = {
   data: [
     {
       label: "Overview",
-      iconCallback: state => <StyledUserIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      ),
       path: "/"
     },
     {
       label: "Events",
-      iconCallback: state => <StyledCalendarIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <CalendarIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      ),
       path: "/events"
     },
     {
       label: "Work orders",
       path: "/work",
-      iconCallback: state => <StyledCalendarIcon {...state} />
+      iconCallback: ({ isSelected }) => (
+        <CalendarIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      )
     },
     {
       label: "Asset",
-      iconCallback: state => <StyledPlaneIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <PlaneIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      ),
       path: "/asset"
     },
     {
       label: "Analytics",
-      iconCallback: state => <StyledLineChartIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <LineChartIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      ),
       showNavIcon: true,
       subData: {
         data: [
           {
             label: "Model Effectiveness",
-            iconCallback: state => <StyledUserIcon {...state} />,
+            iconCallback: ({ isSelected }) => (
+              <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+            ),
             path: "/meffectiveness"
           },
           {
             label: "Trend analysis",
-            iconCallback: state => <StyledCalendarIcon {...state} />,
+            iconCallback: ({ isSelected }) => (
+              <CalendarIcon
+                boxStyles={iconBox}
+                color={[isSelected && "atmo1"]}
+              />
+            ),
             path: "/tAnalysis"
           }
         ]
@@ -94,7 +79,9 @@ const navigationData = {
     },
     {
       label: "Resources",
-      iconCallback: state => <StyledPlaneIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <PlaneIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+      ),
       path: "/Resources"
     }
   ]
@@ -103,10 +90,13 @@ const navigationData = {
 const actionValues = [
   {
     label: "Profile",
-    iconCallback: state => <StyledUserIcon {...state} />,
+    iconCallback: ({ isSelected }) => (
+      <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+    ),
     horizontalItemAction: (
-      <StyledUserIcon
+      <UserIcon
         style={{ cursor: "pointer" }}
+        boxStyles={iconBox}
         onClick={() => console.log("Profile")}
       />
     ),
@@ -115,10 +105,13 @@ const actionValues = [
   },
   {
     label: "Help",
-    iconCallback: state => <StyledHelpIcon {...state} />,
+    iconCallback: ({ isSelected }) => (
+      <HelpIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
+    ),
     horizontalItemAction: (
-      <StyledHelpIcon
+      <HelpIcon
         style={{ cursor: "pointer" }}
+        boxStyles={iconBox}
         onClick={() => console.log("Help")}
       />
     ),

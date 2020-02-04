@@ -34,8 +34,15 @@ const ListWrapper = withStyles(styles, { withTheme: true })(
   ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
 );
 
+// Passing the aria-label to the component is necessary in order for the component
+// to meet accessibility requirements
+const ariaProps = {
+  "aria-label": "Simple List with Navicons Title"
+};
+
 export default (
-  <ListWrapper>
-    <List values={data} selectable={false} />
-  </ListWrapper>
+    <ListWrapper>
+      <List values={data} selectable={false} listProps={ariaProps} Ω />
+    </ListWrapper>
 );
+

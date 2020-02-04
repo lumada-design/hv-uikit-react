@@ -19,7 +19,9 @@ import PropTypes from "prop-types";
 import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
+import FocusTrap from "focus-trap-react";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
 import Actions from "../Actions";
@@ -226,7 +228,7 @@ const List = ({
     setSearchStr("");
     updateSelectAll(prevList);
     const toggle = isNil(e) ? true : e.target.id !== "header";
-    sendOnChange(prevList, true, toggle, false);
+    sendOnChange(null, false, toggle, false);
   };
 
   /**
@@ -238,6 +240,17 @@ const List = ({
     setList(list);
     setSearchStr("");
     sendOnChange(list, true, true, true);
+  };
+
+  /**
+   * If the ESCAPE key is pressed the cancel handler must be called.
+   *
+   * @param evt
+   */
+  const handleKeyDown = evt => {
+    if (isKeypress(evt, KeyboardCodes.Esc)) {
+      handleCancel(evt);
+    }
   };
 
   /**
@@ -279,6 +292,53 @@ const List = ({
 
   const showList = !isNil(values);
 
+  const renderInnerRender = () => (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className={classNames([
+        classes.list,
+        classes.listClosed,
+        {
+          [classes.listOpenDown]: isOpen && !positionUp,
+          [classes.listOpenUp]: isOpen && positionUp
+        }
+      ])}
+      onKeyDown={handleKeyDown}
+    >
+      {!positionUp && <div className={classes.listBorderDown} />}
+
+      <div
+        className={classNames(classes.rootList, {
+          [classes.marginTop]: positionUp && showList
+        })}
+      >
+        {showSearch && renderSearch()}
+        {showList && multiSelect && renderSelectAll()}
+        <div className={classes.listContainer}>
+          {showList && (
+            <InnerList
+              id={`${id}-list`}
+              values={list}
+              multiSelect={multiSelect}
+              useSelector={multiSelect}
+              showSelectAll={false}
+              onChange={onSelection}
+              labels={newLabels}
+              selectDefault={selectDefault}
+              hasTooltips={hasTooltips}
+              selectable
+              condensed
+              singleSelectionToggle={singleSelectionToggle}
+            />
+          )}
+        </div>
+      </div>
+      {showList && multiSelect ? renderActions() : null}
+
+      {positionUp && <div className={classes.listBorderUp} />}
+    </div>
+  );
+
   return (
     <Popper
       id={id}
@@ -293,47 +353,11 @@ const List = ({
       style={{ zIndex: theme.zIndex.tooltip }}
     >
       <ClickAwayListener onClickAway={e => handleCancel(e)}>
-        <div
-          className={classNames([
-            classes.list,
-            classes.listClosed,
-            {
-              [classes.listOpenDown]: isOpen && !positionUp,
-              [classes.listOpenUp]: isOpen && positionUp
-            }
-          ])}
-        >
-          {!positionUp && <div className={classes.listBorderDown} />}
-
-          <div
-            className={classNames(classes.rootList, {
-              [classes.marginTop]: positionUp && showList
-            })}
-          >
-            {showSearch && renderSearch()}
-            {showList && multiSelect && renderSelectAll()}
-            <div className={classes.listContainer}>
-              {showList && (
-                <InnerList
-                  id={`${id}-list`}
-                  values={list}
-                  multiSelect={multiSelect}
-                  useSelector={multiSelect}
-                  showSelectAll={false}
-                  onChange={onSelection}
-                  labels={newLabels}
-                  selectDefault={selectDefault}
-                  hasTooltips={hasTooltips}
-                  condensed
-                  singleSelectionToggle={singleSelectionToggle}
-                />
-              )}
-            </div>
-          </div>
-          {showList && multiSelect ? renderActions() : null}
-
-          {positionUp && <div className={classes.listBorderUp} />}
-        </div>
+        {showList ? (
+          <FocusTrap>{renderInnerRender()}</FocusTrap>
+        ) : (
+          renderInnerRender()
+        )}
       </ClickAwayListener>
     </Popper>
   );
