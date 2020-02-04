@@ -109,6 +109,7 @@ open storybook
     ...                - browser     (string)    the desired browser ( by defautl is assuming variable ${BROWSER} )
     ...
     Open Browser    ${url}    ${browser}    options=add_argument("--window-size=1920,1080"); add_argument("--start-maximized"); add_argument("--headless")
+    Maximize Browser Window
 
 verify element background-color change on mouse over
     [Arguments]    ${locator}
