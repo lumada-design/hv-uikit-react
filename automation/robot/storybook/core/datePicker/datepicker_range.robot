@@ -5,7 +5,7 @@ Library                           SeleniumLibrary
 Resource                          ../../_resources/storybook_keywords.robot
 Variables                         ../../_resources/storybook_variables.yaml
 Variables                         variables.yaml
-Default Tags                      smoke    bug-ie-webdriver
+Force Tags                        smoke    bug-ie-webdriver
 
 
 *** Variables ***
@@ -19,7 +19,6 @@ ${labelInputDate}                 css:input[placeholder='Select a range']
 *** Test Cases ***
 Verify default dates
     #Problem with the IE driver that indicates that the button isn't displayed.
-    [Tags]                                      issue-ie
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun, 2019 - 10 Jun, 2019
@@ -29,7 +28,7 @@ Verify default dates
     Element Attribute Value Should Be           ${endInput}          value         10 Jun, 2019
 
 When delete date the default date is replaced
-    [Tags]    issue-ie    issue-firefox    
+    [Tags]    bug-firefox-webdriver    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun, 2019 - 10 Jun, 2019
@@ -51,8 +50,7 @@ Change range dates with clicks
     Element Attribute Value Should Be           ${startInput}        value         20 Jun, 2019
 
 Change range dates with inputs
-    #Problem with the IE driver that indicates that the button isn't displayed.
-    [Tags]                                      issue-ie             
+    #Problem with the IE driver that indicates that the button isn't displayed.       
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -96,7 +94,7 @@ Select start date forward to the end date with inputs
     Element Attribute Value Should Be           ${endInput}          value         3 Jan, 2022
 
 Don't change dates with clicks in start date
-    [Tags]    issue-chrome
+    [Tags]    bug-chrome-webdriver
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -109,7 +107,7 @@ Don't change dates with clicks in start date
     Element Attribute Value Should Be           ${startInput}        value         5 Jun, 2019
 
 Don't change dates with clicks in end date
-    [Tags]    issue-chrome
+    [Tags]    bug-chrome-webdriver
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -146,7 +144,7 @@ Don't change dates with clicking in a end date and clicking cancel
     Element Attribute Value Should Be           ${endInput}          value         10 Jun, 2019
 
 Don't change dates with start input and clicking enter
-    [Tags]    issue-chrome    
+    [Tags]    bug-chrome-webdriver    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
@@ -160,7 +158,7 @@ Don't change dates with start input and clicking enter
     Element Attribute Value Should Be           ${startInput}        value         5 Jun, 2019
 
 Don't change dates with end input and clicking enter
-    [Tags]    issue-chrome    
+    [Tags]    bug-chrome-webdriver    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
     Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker

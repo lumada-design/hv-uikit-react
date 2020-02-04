@@ -4,7 +4,7 @@ Resource          _resources/button_keywords.robot
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Template     verify button attribute value
-Default Tags      smoke
+Force Tags        smoke
 
 *** Keywords ***
 verify button attribute value

@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
 Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
-Default Tags      smoke    bug-ie-webdriver
+Force Tags        smoke    bug-ie-webdriver
 
 
 *** Variables ***
@@ -33,7 +33,6 @@ Maintain input date format clicking inside calendar
     Element Attribute Value Should Be    ${input}             value         2 Jan, 1975
 
 Change date with clicks and apply
-    [Tags]    issue-ie
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
     Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker

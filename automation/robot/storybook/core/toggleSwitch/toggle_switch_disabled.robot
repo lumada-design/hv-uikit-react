@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook toggle page
 Suite Teardown    Close Browser
 Test Template     Test no toggle state transition when disabled
-Default Tags      smoke
+Force Tags        smoke
 
 *** Keywords ***
 Test no toggle state transition when disabled

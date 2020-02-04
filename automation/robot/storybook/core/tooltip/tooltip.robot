@@ -5,9 +5,13 @@ Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
 Force Tags        smoke
+
+
 *** Variables ***
 ${tooltipPlaceholder}    //p[contains(.,'Hover here')]
 ${tooltip}               css:div[id|='mui-tooltip']
+
+
 *** Test Cases ***
 tooltip is triggered when mouse hover item
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2

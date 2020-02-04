@@ -5,7 +5,7 @@ Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke    wai-aria-practices
+Force Tags        smoke    wai-aria-practices
 
 
 *** Keywords ***

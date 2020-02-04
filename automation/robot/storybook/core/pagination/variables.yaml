@@ -1,0 +1,6 @@
+input:        css:input
+select:       css:select
+first:        css:button div[class*='Start'] 
+previous:     css:button div[class*='Backwards']  
+next:         css:button div[class*='Forwards']  
+last:         css:button div[class*='End']   

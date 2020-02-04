@@ -5,9 +5,10 @@ Library           SeleniumLibrary
 Suite Setup       open storybook toggle page
 Suite Teardown    Close Browser
 Test Template     Test toggle switch property check state transition
-Force Tags        smoke   issue
+Force Tags        smoke    bug-jenkins
 Documentation
-...    TC fails just when executed via jenkins, otherwise run test manually or via locally they always pass. (This problems are being mitigate)
+...               bug-jenkins label:
+...               TC fails just when executed via jenkins, otherwise run test manually or via locally they always pass.
 
 *** Keywords ***
 Test toggle switch property check state transition

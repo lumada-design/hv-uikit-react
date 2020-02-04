@@ -1,22 +1,11 @@
 *** Setting ***
 Variables         ../../_resources/storybook_variables.yaml
+Variables         variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke
-
-*** Variables ***
-${cardsSelector}      css:div[id*='Card_id'][class*='MuiCard-root']
-${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
-${dropdownHeader}     sort_hv-assetinventory-header
-${sortTitleDesc}      sort_hv-assetinventory-values-list-item-1
-${nextPage}           hv-assetinventory-nextPage-button
-${prevPage}           hv-assetinventory-previousPage-button
-${pageSizeChange}     css:select[id|='hv-assetinventory-pageSize']
-${firstCheckbox}      css:input[value='id_0']
-${searchBox}          css:input[type='text']
-${cardView}           cardView
+Force Tags        smoke
 
 
 *** Test Cases ***

@@ -6,7 +6,7 @@ Library            SeleniumLibrary
 Suite Setup        open storybook
 Suite Teardown     Close Browser
 Test Template      select an option by locator
-Default Tags       smoke
+Force Tags         smoke
 Documentation      select a option clicking in different parts of option element (icon, label, input ...)
 
 

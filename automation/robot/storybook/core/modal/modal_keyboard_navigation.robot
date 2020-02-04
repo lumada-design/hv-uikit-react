@@ -1,10 +1,10 @@
 *** Setting ***
-Variables                         ../../_resources/storybook_variables.yaml
-Resource                          ../../_resources/storybook_keywords.robot
-Library                           SeleniumLibrary
-Suite Setup                       open storybook
-Suite Teardown                    Close Browser
-Force Tags                        smoke
+Variables         ../../_resources/storybook_variables.yaml
+Resource          ../../_resources/storybook_keywords.robot
+Library           SeleniumLibrary
+Suite Setup       open storybook
+Suite Teardown    Close Browser
+Force Tags        smoke    keyboard
 
 *** Test Cases ***
 First element is focused

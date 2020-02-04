@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
 Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
-Default Tags      smoke    bug-ie-webdriver
+Force Tags        smoke    bug-ie-webdriver
 
 
 *** Variables ***
@@ -15,7 +15,6 @@ ${labelInputDate}    css:input[placeholder='Select a date']
 
 *** Test Cases ***
 Verify default date
-    [Tags]    issue-ie    
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
@@ -24,7 +23,7 @@ Verify default date
     Element Attribute Value Should Be    ${input}                    value         1 Jan, 1970
 
 When delete date the default date is replaced
-    [Tags]    issue-ie    issue-firefox
+    [Tags]    bug-firefox-webdriver
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
@@ -35,7 +34,6 @@ When delete date the default date is replaced
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
 
 When insert invalid date the default date is replaced
-    [Tags]    issue-ie    
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970

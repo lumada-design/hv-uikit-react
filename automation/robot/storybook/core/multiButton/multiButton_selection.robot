@@ -4,7 +4,7 @@ Variables          ../../_resources/storybook_variables.yaml
 Resource           ../../_resources/storybook_keywords.robot
 Suite Setup        open storybook
 Suite Teardown     Close Browser
-Default Tags       smoke
+Force Tags         smoke
 
 *** Variables ***
 ${storybook_iframe}    ${STORYBOOK_URL}/iframe.html?id=coremultibutton--
