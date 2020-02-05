@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.21.0...@hv/uikit-react-core@1.22.0) (2020-02-05)
+
+
+### Bug Fixes
+
+* **dropdownmenu:** unable to leave with Tab navigation. [#1004](https://github.com/pentaho/hv-uikit-react/issues/1004) ([3ece2cb](https://github.com/pentaho/hv-uikit-react/commit/3ece2cb96e2165f488fed99d858e5d6c35b6e48f))
+* **focus:** edge/ie outline. [#1048](https://github.com/pentaho/hv-uikit-react/issues/1048) ([f015970](https://github.com/pentaho/hv-uikit-react/commit/f01597017f8bca22d27d6ef7f6afb619e85dd859))
+* **icons:** svg tabstop in IE/Edge. [#1011](https://github.com/pentaho/hv-uikit-react/issues/1011) ([f9c5200](https://github.com/pentaho/hv-uikit-react/commit/f9c52002a2a96f51822f1dc77501066e541ed12e))
+* **input:** clear button not showing. [#809](https://github.com/pentaho/hv-uikit-react/issues/809) ([371b70a](https://github.com/pentaho/hv-uikit-react/commit/371b70a6ae7ed54d2fc018f8df35e8eea9f0f42f))
+* **list:** accessibility review. [#841](https://github.com/pentaho/hv-uikit-react/issues/841) ([85b68da](https://github.com/pentaho/hv-uikit-react/commit/85b68da1b2213c4237f22bac48512deb7d79fcee))
+* **list:** aria corrections. [#841](https://github.com/pentaho/hv-uikit-react/issues/841) ([a66ebb5](https://github.com/pentaho/hv-uikit-react/commit/a66ebb5c3504e184442f8a95f5e8037c8d9bb2cf))
+* **list:** aria corrections. [#841](https://github.com/pentaho/hv-uikit-react/issues/841) ([cb26477](https://github.com/pentaho/hv-uikit-react/commit/cb26477e07b06ff15a1f2b970ca57c4cbf35ad15))
+* **modal:** added axe unit tests. [#1007](https://github.com/pentaho/hv-uikit-react/issues/1007) ([777b695](https://github.com/pentaho/hv-uikit-react/commit/777b6957992e6e896e9ae0e0c3073a2851598206))
+* **modal:** focus is lost with Tab navigation. [#1007](https://github.com/pentaho/hv-uikit-react/issues/1007) ([e8e0aef](https://github.com/pentaho/hv-uikit-react/commit/e8e0aef04716cca7e862dc19fcbc033e5b192541))
+
+
+### Features
+
+* **dropdown:** add accessibility. [#249](https://github.com/pentaho/hv-uikit-react/issues/249) ([8e19909](https://github.com/pentaho/hv-uikit-react/commit/8e199091fd82c277c8e61fcc704837ce3701b736))
+* **dropdownmenu:** review accessibility. [#1022](https://github.com/pentaho/hv-uikit-react/issues/1022) ([a6d6902](https://github.com/pentaho/hv-uikit-react/commit/a6d69029eed5c6dba8eadea34549d32b79a0b168))
+
+
+
+
+
 # [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.20.1...@hv/uikit-react-core@1.21.0) (2020-01-31)
 
 

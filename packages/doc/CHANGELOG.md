@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.17.3...@hv/uikit-react-doc@1.18.0) (2020-02-05)
+
+
+### Bug Fixes
+
+* **focus:** edge/ie outline. [#1048](https://github.com/pentaho/hv-uikit-react/issues/1048) ([f015970](https://github.com/pentaho/hv-uikit-react/commit/f01597017f8bca22d27d6ef7f6afb619e85dd859))
+* **icons:** svg tabstop in IE/Edge. [#1011](https://github.com/pentaho/hv-uikit-react/issues/1011) ([f9c5200](https://github.com/pentaho/hv-uikit-react/commit/f9c52002a2a96f51822f1dc77501066e541ed12e))
+* **input:** clear button not showing. [#809](https://github.com/pentaho/hv-uikit-react/issues/809) ([371b70a](https://github.com/pentaho/hv-uikit-react/commit/371b70a6ae7ed54d2fc018f8df35e8eea9f0f42f))
+* **list:** accessibility review. [#841](https://github.com/pentaho/hv-uikit-react/issues/841) ([85b68da](https://github.com/pentaho/hv-uikit-react/commit/85b68da1b2213c4237f22bac48512deb7d79fcee))
+* **modal:** focus is lost with Tab navigation. [#1007](https://github.com/pentaho/hv-uikit-react/issues/1007) ([e8e0aef](https://github.com/pentaho/hv-uikit-react/commit/e8e0aef04716cca7e862dc19fcbc033e5b192541))
+
+
+### Features
+
+* **doc:** update reference table of supported components. [#1050](https://github.com/pentaho/hv-uikit-react/issues/1050) ([f460196](https://github.com/pentaho/hv-uikit-react/commit/f4601964133845dedead0b1ad127e34b26644a25))
+* **dropdown:** add accessibility. [#249](https://github.com/pentaho/hv-uikit-react/issues/249) ([8e19909](https://github.com/pentaho/hv-uikit-react/commit/8e199091fd82c277c8e61fcc704837ce3701b736))
+* **dropdownmenu:** review accessibility. [#1022](https://github.com/pentaho/hv-uikit-react/issues/1022) ([a6d6902](https://github.com/pentaho/hv-uikit-react/commit/a6d69029eed5c6dba8eadea34549d32b79a0b168))
+* **icons:** add color from palette names ([2a21741](https://github.com/pentaho/hv-uikit-react/commit/2a2174100f806e74353cbd9ed01545be09a17c80))
+
+
+
+
+
 ## [1.17.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.17.2...@hv/uikit-react-doc@1.17.3) (2020-01-31)
 
 **Note:** Version bump only for package @hv/uikit-react-doc

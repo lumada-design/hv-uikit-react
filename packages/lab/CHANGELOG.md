@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.3...@hv/uikit-react-lab@1.17.4) (2020-02-05)
+
+
+### Bug Fixes
+
+* **focus:** edge/ie outline. [#1048](https://github.com/pentaho/hv-uikit-react/issues/1048) ([f015970](https://github.com/pentaho/hv-uikit-react/commit/f01597017f8bca22d27d6ef7f6afb619e85dd859))
+* **icons:** svg tabstop in IE/Edge. [#1011](https://github.com/pentaho/hv-uikit-react/issues/1011) ([f9c5200](https://github.com/pentaho/hv-uikit-react/commit/f9c52002a2a96f51822f1dc77501066e541ed12e))
+* **input:** clear button not showing. [#809](https://github.com/pentaho/hv-uikit-react/issues/809) ([371b70a](https://github.com/pentaho/hv-uikit-react/commit/371b70a6ae7ed54d2fc018f8df35e8eea9f0f42f))
+
+
+
+
+
 ## [1.17.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.2...@hv/uikit-react-lab@1.17.3) (2020-01-31)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

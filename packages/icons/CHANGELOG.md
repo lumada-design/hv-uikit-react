@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.8.1...@hv/uikit-react-icons@1.9.0) (2020-02-05)
+
+
+### Bug Fixes
+
+* **icons:** svg tabstop in IE/Edge. [#1011](https://github.com/pentaho/hv-uikit-react/issues/1011) ([f9c5200](https://github.com/pentaho/hv-uikit-react/commit/f9c52002a2a96f51822f1dc77501066e541ed12e))
+
+
+### Features
+
+* **icons:** add color from palette names ([2a21741](https://github.com/pentaho/hv-uikit-react/commit/2a2174100f806e74353cbd9ed01545be09a17c80))
+
+
+
+
+
 ## [1.8.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.8.0...@hv/uikit-react-icons@1.8.1) (2020-01-18)
 
 
