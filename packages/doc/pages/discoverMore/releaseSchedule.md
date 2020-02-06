@@ -17,4 +17,8 @@ The release number will be automatically calculated, based on the commits pushed
 
 We know releasing something every sprint, mainly when working on a major, might not be possible. But even for those, we commit to release an preview build (alpha, beta or rc) for those who want to try it. 
 
-Our release changelogs are available in the [github releases section](https://github.com/pentaho/hv-uikit-react/releases), our documentation deployed on every build in https://pentaho.github.io/hv-uikit-react/ and we will publish the changelogs of each release in the [#uikit](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) Hitachi Vantara Engineering channel
+Every release changelogs will be available in the [github releases section](https://github.com/pentaho/hv-uikit-react/releases) and our [documentation](https://pentaho.github.io/hv-uikit-react/) updated.
+
+Majors are going to be released in a 12 month window at max, and may include breaking changes. We wil always announce it 2 or 3 months ahead, so teams consuming uikit can properly plan. 
+
+Along with this information, we will always provide preview builds whenever we feel we have a good subset of things for teams to try out. And as always, feedback is very very welcome.    

@@ -1,11 +1,32 @@
-## HV UIkit - React
+<h1 align="center">HV UIKIT - React</h1>
+
 #### React components for the Hitachi Vantara Design System.
+
+<div align="center">
 
 ![alt text](https://img.shields.io/badge/node-12.14-brightgreen.svg)
 ![alt text](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
 ![alt text](https://img.shields.io/badge/core--coverage-80%25-green.svg)
 ![alt text](https://img.shields.io/badge/lab--coverage-68%25-orange.svg)
+
+</div>
+
+<div style="background: #cccccc">
+
+## Next Major Release (Early Second Quarter 2020)
+We are actively planning and starting to work on the next major release. This development will happen in the branch called `next` and we will provide builds as soon as possible. 
+For more information about the schedule please check the Release Schedule section under Discover More. 
+
+#### These are features planned for the next release:
+- upgrade our main dependency Material UI to its latest version 4.x.
+- api cleanup, removing deprecated properties of our components.
+- remove deprecated components (core and lab).
+- better support for Typescript.
+
+If you want to keep up to date with the progress on these topics, please feel free to check the [2.0.0 Milestone](https://github.com/pentaho/hv-uikit-react/milestone/13).
+
+</div>
 
 #### npm registry
 Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
@@ -80,4 +101,20 @@ We provide some [examples](https://github.com/pentaho/hv-uikit-react/tree/alpha/
 ## License
 This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/alpha/LICENSE.md).
 
+## Team
+An overview of the founding team and core contributors to Hitachi Vantara UI-KIT.
 
+UI-KIT is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄 
+
+- Diogo Mariano ([@diogofscmariano](https://github.com/diogofscmariano))
+- Tiago Santos ([@tiago-ssantos](https://github.com/tiago-ssantos))
+- Francisco Guilherme ([@francisco-guilherme](https://github.com/frncisco-guilherme))
+- Elio Freitas ([@eliofreitas](https://github.com/eliofreitas))
+- João Gonçalves ([@JoaoEnesGoncalves](https://github.com/JoaoEnesGoncalves))
+- Bruno Henriques ([@zettca](https://github.com/zettca))
+- Nelson Antunes ([@nantunes](https://github.com/nantunes))
+- Júlio Costa ([@jsccosta](https://github.com/jsccosta))
+
+Get involved with our development by opening an issue or submitting a pull request. Read the contributing guidelines for information on how we develop.
+
+Join and support the project!
