@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.22.0...@hv/uikit-react-core@1.23.0) (2020-02-06)
+
+
+### Features
+
+* **typescript:** type definition for HvBreadCrumb ([#1072](https://github.com/pentaho/hv-uikit-react/issues/1072)) ([04c46e0](https://github.com/pentaho/hv-uikit-react/commit/04c46e0e76282c6f9d5e4b5a66004296469318df))
+
+
+
+
+
 # [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.21.0...@hv/uikit-react-core@1.22.0) (2020-02-05)
 
 
