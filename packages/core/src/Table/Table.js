@@ -174,7 +174,7 @@ class Table extends React.Component {
       item => item.id === id || item.accessor === id
     );
     if (
-      (columnDef.length && (_.isNil(columnDef[0].sortable) && sortable)) ||
+      (columnDef.length && _.isNil(columnDef[0].sortable) && sortable) ||
       columnDef[0].sortable
     ) {
       return <Sort />;
@@ -299,10 +299,10 @@ class Table extends React.Component {
 
     if (initiallyLoaded) {
       let cursor = `${page * pageSize}`;
-
       if (
-        sortedFromState[0].id !== sorted[0].id ||
-        sortedFromState[0].desc !== sorted[0].desc
+        sortedFromState.length > 0 &&
+        (sortedFromState[0].id !== sorted[0].id ||
+          sortedFromState[0].desc !== sorted[0].desc)
       ) {
         cursor = "0";
       }
