@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.7...@hv/uikit-react-automation-storybook@1.8.8) (2020-02-06)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
+## [1.8.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.6...@hv/uikit-react-automation-storybook@1.8.7) (2020-02-05)
+
+
+### Bug Fixes
+
+* **input:** clear button not showing. [#809](https://github.com/pentaho/hv-uikit-react/issues/809) ([371b70a](https://github.com/pentaho/hv-uikit-react/commit/371b70a6ae7ed54d2fc018f8df35e8eea9f0f42f))
+* **list:** accessibility review. [#841](https://github.com/pentaho/hv-uikit-react/issues/841) ([85b68da](https://github.com/pentaho/hv-uikit-react/commit/85b68da1b2213c4237f22bac48512deb7d79fcee))
+
+
+
+
+
+## [1.8.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.5...@hv/uikit-react-automation-storybook@1.8.6) (2020-01-31)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
 ## [1.8.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.4...@hv/uikit-react-automation-storybook@1.8.5) (2020-01-29)
 
 **Note:** Version bump only for package @hv/uikit-react-automation-storybook
