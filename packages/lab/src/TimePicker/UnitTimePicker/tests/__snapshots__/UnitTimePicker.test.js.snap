@@ -9506,21 +9506,9 @@ body {
 .HvInput-icon-126 {
   width: 30px;
   height: 30px;
-  position: relative;
-}
-.HvInput-icon-126 svg {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
 }
 .HvInput-iconClear-127 {
   visibility: hidden;
-}
-.HvInput-iconClear-127:focus {
-  visibility: visible;
 }
 .HvInput-suggestionsContainer-128 {
   top: -1px;
@@ -9704,22 +9692,10 @@ input:-webkit-autofill {
                   },
                   Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
                     "visibility": "hidden",
-                  },
-                  Object {
-                    "visibility": "visible",
                   },
                   Object {
                     "position": "relative",
@@ -10078,22 +10054,10 @@ input:-webkit-autofill {
                   },
                   ".HvInput-icon-126": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
-                  },
-                  ".HvInput-icon-126 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
                   },
                   ".HvInput-iconClear-127": Object {
                     "visibility": "hidden",
-                  },
-                  ".HvInput-iconClear-127:focus": Object {
-                    "visibility": "visible",
                   },
                   ".HvInput-infoIconContainer-121": Object {
                     "display": "flex",
@@ -10562,7 +10526,6 @@ input:-webkit-autofill {
                   },
                   "icon": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   "iconClear": Object {
@@ -11157,17 +11120,6 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvInput-icon-126 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  ".HvInput-iconClear-127:focus": Object {
-                    "visibility": "visible",
-                  },
                   ".HvInput-infoIconContainer-121 div": Object {
                     "alignSelf": "center",
                     "marginTop": -2,
@@ -11238,22 +11190,10 @@ input:-webkit-autofill {
                     "minWidth": "150px",
                   },
                   "icon": Object {
-                    "& svg": Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    "height": "30px",
-                    "position": "relative",
-                    "width": "30px",
+                    "height": 30,
+                    "width": 30,
                   },
                   "iconClear": Object {
-                    "&:focus": Object {
-                      "visibility": "visible",
-                    },
                     "visibility": "hidden",
                   },
                   "infoIconContainer": Object {
@@ -33759,11 +33699,11 @@ label[data-shrink=false] + .MuiInputBase-formControl-144 .MuiInputBase-input-153
                               >
                                 <button
                                   aria-controls="hv-input-2-input"
-                                  aria-hidden="true"
                                   aria-label="Clear the text"
                                   className="HvInput-adornmentButton-125 HvInput-iconClear-127"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
+                                  tabIndex={-1}
                                   title="Clear the text"
                                   type="button"
                                 >

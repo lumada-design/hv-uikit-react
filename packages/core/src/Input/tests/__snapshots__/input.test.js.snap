@@ -5228,21 +5228,9 @@ body {
 .HvInput-icon-467 {
   width: 30px;
   height: 30px;
-  position: relative;
-}
-.HvInput-icon-467 svg {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
 }
 .HvInput-iconClear-468 {
   visibility: hidden;
-}
-.HvInput-iconClear-468:focus {
-  visibility: visible;
 }
 .HvInput-suggestionsContainer-469 {
   top: -1px;
@@ -5426,22 +5414,10 @@ input:-webkit-autofill {
                   },
                   Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
                     "visibility": "hidden",
-                  },
-                  Object {
-                    "visibility": "visible",
                   },
                   Object {
                     "position": "relative",
@@ -5800,22 +5776,10 @@ input:-webkit-autofill {
                   },
                   ".HvInput-icon-467": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
-                  },
-                  ".HvInput-icon-467 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
                   },
                   ".HvInput-iconClear-468": Object {
                     "visibility": "hidden",
-                  },
-                  ".HvInput-iconClear-468:focus": Object {
-                    "visibility": "visible",
                   },
                   ".HvInput-infoIconContainer-462": Object {
                     "display": "flex",
@@ -6284,7 +6248,6 @@ input:-webkit-autofill {
                   },
                   "icon": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   "iconClear": Object {
@@ -6879,17 +6842,6 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvInput-icon-467 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  ".HvInput-iconClear-468:focus": Object {
-                    "visibility": "visible",
-                  },
                   ".HvInput-infoIconContainer-462 div": Object {
                     "alignSelf": "center",
                     "marginTop": -2,
@@ -6960,22 +6912,10 @@ input:-webkit-autofill {
                     "minWidth": "150px",
                   },
                   "icon": Object {
-                    "& svg": Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    "height": "30px",
-                    "position": "relative",
-                    "width": "30px",
+                    "height": 30,
+                    "width": 30,
                   },
                   "iconClear": Object {
-                    "&:focus": Object {
-                      "visibility": "visible",
-                    },
                     "visibility": "hidden",
                   },
                   "infoIconContainer": Object {
@@ -24795,21 +24735,9 @@ body {
 .HvInput-icon-617 {
   width: 30px;
   height: 30px;
-  position: relative;
-}
-.HvInput-icon-617 svg {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
 }
 .HvInput-iconClear-618 {
   visibility: hidden;
-}
-.HvInput-iconClear-618:focus {
-  visibility: visible;
 }
 .HvInput-suggestionsContainer-619 {
   top: -1px;
@@ -24993,22 +24921,10 @@ input:-webkit-autofill {
                   },
                   Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
                     "visibility": "hidden",
-                  },
-                  Object {
-                    "visibility": "visible",
                   },
                   Object {
                     "position": "relative",
@@ -25367,22 +25283,10 @@ input:-webkit-autofill {
                   },
                   ".HvInput-icon-617": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
-                  },
-                  ".HvInput-icon-617 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
                   },
                   ".HvInput-iconClear-618": Object {
                     "visibility": "hidden",
-                  },
-                  ".HvInput-iconClear-618:focus": Object {
-                    "visibility": "visible",
                   },
                   ".HvInput-infoIconContainer-612": Object {
                     "display": "flex",
@@ -25851,7 +25755,6 @@ input:-webkit-autofill {
                   },
                   "icon": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   "iconClear": Object {
@@ -26446,17 +26349,6 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvInput-icon-617 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  ".HvInput-iconClear-618:focus": Object {
-                    "visibility": "visible",
-                  },
                   ".HvInput-infoIconContainer-612 div": Object {
                     "alignSelf": "center",
                     "marginTop": -2,
@@ -26527,22 +26419,10 @@ input:-webkit-autofill {
                     "minWidth": "150px",
                   },
                   "icon": Object {
-                    "& svg": Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    "height": "30px",
-                    "position": "relative",
-                    "width": "30px",
+                    "height": 30,
+                    "width": 30,
                   },
                   "iconClear": Object {
-                    "&:focus": Object {
-                      "visibility": "visible",
-                    },
                     "visibility": "hidden",
                   },
                   "infoIconContainer": Object {
@@ -44376,21 +44256,9 @@ body {
 .HvInput-icon-92 {
   width: 30px;
   height: 30px;
-  position: relative;
-}
-.HvInput-icon-92 svg {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
 }
 .HvInput-iconClear-93 {
   visibility: hidden;
-}
-.HvInput-iconClear-93:focus {
-  visibility: visible;
 }
 .HvInput-suggestionsContainer-94 {
   top: -1px;
@@ -44574,22 +44442,10 @@ input:-webkit-autofill {
                   },
                   Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
                     "visibility": "hidden",
-                  },
-                  Object {
-                    "visibility": "visible",
                   },
                   Object {
                     "position": "relative",
@@ -44948,22 +44804,10 @@ input:-webkit-autofill {
                   },
                   ".HvInput-icon-92": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
-                  },
-                  ".HvInput-icon-92 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
                   },
                   ".HvInput-iconClear-93": Object {
                     "visibility": "hidden",
-                  },
-                  ".HvInput-iconClear-93:focus": Object {
-                    "visibility": "visible",
                   },
                   ".HvInput-infoIconContainer-87": Object {
                     "display": "flex",
@@ -45432,7 +45276,6 @@ input:-webkit-autofill {
                   },
                   "icon": Object {
                     "height": "30px",
-                    "position": "relative",
                     "width": "30px",
                   },
                   "iconClear": Object {
@@ -46027,17 +45870,6 @@ input:-webkit-autofill {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".HvInput-icon-92 svg": Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "margin": "auto",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  ".HvInput-iconClear-93:focus": Object {
-                    "visibility": "visible",
-                  },
                   ".HvInput-infoIconContainer-87 div": Object {
                     "alignSelf": "center",
                     "marginTop": -2,
@@ -46108,22 +45940,10 @@ input:-webkit-autofill {
                     "minWidth": "150px",
                   },
                   "icon": Object {
-                    "& svg": Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    "height": "30px",
-                    "position": "relative",
-                    "width": "30px",
+                    "height": 30,
+                    "width": 30,
                   },
                   "iconClear": Object {
-                    "&:focus": Object {
-                      "visibility": "visible",
-                    },
                     "visibility": "hidden",
                   },
                   "infoIconContainer": Object {
