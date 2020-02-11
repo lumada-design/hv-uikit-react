@@ -136,23 +136,11 @@ const styles = theme => ({
     cursor: "pointer"
   },
   icon: {
-    width: `${theme.hv.spacing.md}px`,
-    height: `${theme.hv.spacing.md}px`,
-    position: "relative",
-    "& svg": {
-      position: "absolute",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      margin: "auto"
-    }
+    width: 30,
+    height: 30
   },
   iconClear: {
-    visibility: "hidden",
-    "&:focus": {
-      visibility: "visible"
-    }
+    visibility: "hidden"
   },
 
   suggestionsContainer: {
