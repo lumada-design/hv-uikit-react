@@ -49,3 +49,5 @@ eslint.xml
 .npmrc
 .idea
 *.iml
+.history
+.vscode
