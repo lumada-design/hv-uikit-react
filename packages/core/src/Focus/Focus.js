@@ -46,7 +46,6 @@ const Focus = props => {
     rootRef.current
       ? Array.from(rootRef.current.getElementsByClassName(classes.root))
       : [];
-
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
     if (elChildFocus) {
@@ -121,7 +120,6 @@ const Focus = props => {
   const onBlur = evt => {
     setShowFocus(false);
     if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
-
     onBlurStrategy(evt);
   };
 
@@ -157,6 +155,7 @@ const Focus = props => {
     const focusesList = getFocuses().filter(
       el => isDisabledFocusable || !el.classList.contains(classes.disabled)
     );
+
     const currentFocus = focusesList.indexOf(evt.currentTarget);
 
     const focuses = {

@@ -19,10 +19,12 @@
 
 const styles = theme => ({
   root: {
-    width: 52,
-    display: "flex"
+    display: "flex",
+    cursor: "pointer"
   },
-
+  switchRoot: {
+    width: 52,
+  },
   switchBase: {
     width: 52,
     height: `${theme.hv.spacing.sm}px`,
