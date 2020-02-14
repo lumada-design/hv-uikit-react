@@ -17,7 +17,6 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import classNames from "classnames";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import CardActions from "@material-ui/core/CardActions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Actions from "../../Actions";
@@ -58,10 +57,7 @@ const Footer = ({
   actionItemWidth,
   ...other
 }) => (
-  <CardActions 
-    className={classNames(classes.root, className)} 
-    {...other}
-  >
+  <CardActions className={classNames(classes.root, className)} {...other}>
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
@@ -73,7 +69,7 @@ const Footer = ({
           checkboxProps={{
             "aria-label": checkboxAriaLabel,
             "aria-labelledby": checkboxAriaLabelledBy,
-            "aria-describedby": checkboxAriaDescribedBy,
+            "aria-describedby": checkboxAriaDescribedBy
           }}
         />
       </div>
@@ -124,15 +120,15 @@ Footer.propTypes = {
    * Component identifier.
    */
   id: PropTypes.string,
-  /** 
+  /**
    *  Used to define a string that labels the checkbox element.
    */
   checkboxAriaLabel: PropTypes.string,
-  /** 
+  /**
    *  Establishes relationships between the checkbox and their label(s), and its value should be one or more element IDs.
    */
   checkboxAriaLabelledBy: PropTypes.string,
-  /** 
+  /**
    *  Used to indicate the IDs of the elements that describe the checkbox.
    */
   checkboxAriaDescribedBy: PropTypes.string,
@@ -146,12 +142,11 @@ Footer.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
         iconCallback: PropTypes.func,
         disabled: PropTypes.bool,
         ariaLabel: PropTypes.string,
         ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string,
+        ariaDescribedBy: PropTypes.string
       })
     )
   ]),

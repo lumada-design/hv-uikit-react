@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import uniqueId from "lodash/uniqueId";
 import CardHeader from "@material-ui/core/CardHeader";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 const DEFAULT_ID = "hv-header";
 /**
@@ -30,12 +29,12 @@ const DEFAULT_ID = "hv-header";
  *
  * @param {*} { classes, headerTitle, subheader, icon }
  */
-const Header = ({ 
-  classes, 
-  className, 
-  headerTitle, 
-  subheader, 
-  icon, 
+const Header = ({
+  classes,
+  className,
+  headerTitle,
+  subheader,
+  icon,
   id,
   onClickAction,
   ...other
@@ -104,12 +103,6 @@ Header.propTypes = {
    */
   subheader: PropTypes.node,
   /**
-   * If the Header requires a bottom border
-   * @deprecated
-   */
-  // eslint-disable-next-line react/no-unused-prop-types
-  needsBorder: deprecatedPropType(PropTypes.bool),
-  /**
    *  The renderable content inside the icon slot of the header.
    */
   icon: PropTypes.node,
@@ -122,7 +115,6 @@ Header.propTypes = {
 Header.defaultProps = {
   className: "",
   id: undefined,
-  needsBorder: undefined,
   icon: null,
   subheader: undefined,
   onClickAction: () => {}

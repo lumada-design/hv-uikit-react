@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import CardContent from "@material-ui/core/CardContent";
 import uniqueId from "lodash/uniqueId";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 const DEFAULT_ID = "hv-content";
 /**
@@ -32,7 +31,6 @@ const Content = ({
   classes,
   className,
   innerCardContent,
-  needsBorder,
   onClickAction,
   ...others
 }) => (
@@ -73,12 +71,6 @@ Content.propTypes = {
    */
   innerCardContent: PropTypes.node,
   /**
-   * If the content requires a bottom border
-   * @deprecated
-   */
-  // eslint-disable-next-line react/no-unused-prop-types
-  needsBorder: deprecatedPropType(PropTypes.bool),
-  /**
    *  The function that will be executed when this section is clicked.
    */
   onClickAction: PropTypes.func
@@ -88,7 +80,6 @@ Content.defaultProps = {
   className: "",
   id: undefined,
   innerCardContent: undefined,
-  needsBorder: undefined,
   onClickAction: () => {}
 };
 
