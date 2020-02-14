@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,7 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "../withDeprecate";
-import styles from "./styles";
-import Header from "./Header";
+import { useState } from "react";
+import uniqueId from "lodash/uniqueId";
 
-export default withStyles(styles, { withTheme: true })(
-  withDeprecate(
-    Header,
-    "This component is deprecated. Please use the new Header component."
-  )
-);
-
-// export non-deprecated component for tests
-const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
-
-export { HeaderWithStyles };
+export default (id, idPrefix) => useState(id || uniqueId(idPrefix))[0];

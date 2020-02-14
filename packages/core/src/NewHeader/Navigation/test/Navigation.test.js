@@ -14,19 +14,30 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "../withDeprecate";
-import styles from "./styles";
-import Header from "./Header";
+import React from "react";
+import { mount } from "enzyme";
 
-export default withStyles(styles, { withTheme: true })(
-  withDeprecate(
-    Header,
-    "This component is deprecated. Please use the new Header component."
-  )
-);
+import HvProvider from "../../../Provider";
+import Navigation from "../index";
 
-// export non-deprecated component for tests
-const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
+window.matchMedia = jest.fn().mockImplementation(query => ({
+  matches: true,
+  media: query,
+  onchange: null,
+  addListener: jest.fn(),
+  removeListener: jest.fn()
+}));
 
-export { HeaderWithStyles };
+describe("Navigation withStyles", () => {
+  let wrapper;
+
+  it("should be able to render", () => {
+    wrapper = mount(
+      <HvProvider>
+        <Navigation data={[{ id: "someId", label: "someLabel" }]} />
+      </HvProvider>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+});

@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "../withDeprecate";
-import styles from "./styles";
-import Header from "./Header";
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import NewHeader1 from "../../../../packages/doc/samples/components/newHeader/header1";
 
-export default withStyles(styles, { withTheme: true })(
-  withDeprecate(
-    Header,
-    "This component is deprecated. Please use the new Header component."
-  )
+
+// sample scenarios
+const samples = {};
+samples.two_levels = NewHeader1;
+
+
+// create CoreTextArea for each sample
+Object.keys(samples).forEach(key =>
+  storiesOf("Core_NewHeader", module).add(key, () => (
+    <>
+        {samples[key]}
+    </>
+  ))
 );
-
-// export non-deprecated component for tests
-const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
-
-export { HeaderWithStyles };

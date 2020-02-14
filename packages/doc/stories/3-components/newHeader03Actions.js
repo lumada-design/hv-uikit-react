@@ -14,19 +14,16 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "../withDeprecate";
-import styles from "./styles";
-import Header from "./Header";
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import HvHeaderActions from "@hv/uikit-react-core/dist/NewHeader/Actions";
 
-export default withStyles(styles, { withTheme: true })(
-  withDeprecate(
-    Header,
-    "This component is deprecated. Please use the new Header component."
-  )
+storiesOf("Components/Navigation System/Horizontal Navigation", module).add(
+  "Actions",
+  () => <HvHeaderActions />,
+  {
+    title: "Actions",
+      description: "Component of the header, responsible for presenting actions content.",
+    usage: "import HvHeaderActions from '@hv/uikit-react-core/dist/NewHeader/Actions'"
+  }
 );
-
-// export non-deprecated component for tests
-const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
-
-export { HeaderWithStyles };

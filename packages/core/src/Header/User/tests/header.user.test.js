@@ -68,7 +68,7 @@ describe("User withStyles", () => {
       <HvProvider>
         <UserWithStyles labels={{}} userData={{ name: "UserName", role: "UserRole" }} />
       </HvProvider>
-    ).find("Typography");
+    ).find("p");
 
     expect(typographies.length).toBe(2);
   });
@@ -78,7 +78,7 @@ describe("User withStyles", () => {
       <HvProvider>
         <UserWithStyles labels={{}} userData={{ name: "UserName" }} />
       </HvProvider>
-    ).find("Typography");
+    ).find("p");
 
     expect(typographies.length).toBe(1);
   });
@@ -88,7 +88,7 @@ describe("User withStyles", () => {
       <HvProvider>
         <UserWithStyles labels={{}} userData={{ role: "UserRole" }} />
       </HvProvider>
-    ).find("Typography");
+    ).find("p");
 
     expect(typographies.length).toBe(1);
   });
