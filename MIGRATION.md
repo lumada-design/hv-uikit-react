@@ -22,5 +22,6 @@ With our first major release several components where reviewed in order to remov
         - Footer    
             - actions.icon replaced by iconCallback
     - Dropdown
-        - label replaced by labels.title
-        
+        - label replaced by labels.title.
+    - KPI
+        - kpiTextConfiguration replaced by labels.
