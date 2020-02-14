@@ -7,7 +7,7 @@
       "registry": "https://nexus.pentaho.org/repository/public-npm-release/"
     },
     "version": {
-      "allowBranch": ["master", "alpha"],
+      "allowBranch": ["master", "alpha", "next"],
       "message": "chore(release): publish",
       "conventionalCommits": true,
       "createRelease": "github"
