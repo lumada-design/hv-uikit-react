@@ -17,8 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import materialConfigurationFactory from "./materialConfigurarionFactory";
+import getMaterialConfiguration from "./materialConfigurarion";
 
 /**
  * Hitachi Vantara Design System compliant Button allows 4 categories
@@ -68,18 +67,12 @@ const HvButton = props => {
     children,
     disabled,
     onClick,
-    type,
-    colorType,
     category,
     startIcon,
     ...other
   } = props;
 
-  const buttonConfiguration = materialConfigurationFactory(
-    classes,
-    category,
-    colorType
-  );
+  const buttonConfiguration = getMaterialConfiguration(classes, category);
   const onClickHandler = event => {
     if (!disabled) onClick(event);
   };
@@ -94,7 +87,6 @@ const HvButton = props => {
       disabled={disabled}
       disableRipple
       onClick={onClickHandler}
-      type={type}
       {...other}
     >
       {startIcon && <div className={classes.startIcon}>{startIcon}</div>}
@@ -105,36 +97,7 @@ const HvButton = props => {
 
 HvButton.propTypes = {
   /**
-   * Type of button to use.
-   *  - Accepted values:
-   *    --"submit",
-   *    --"reset",
-   *    --"button"
-   * @deprecated
-   */
-  type: PropTypes.oneOf(["submit", "reset", "button"]),
-  /**
-   * Type of color of HvButton to use.
-   *  - Accepted values:
-   *    --"primary",
-   *    --"secondary",
-   *    --"link"
-   *  - note: the buttonType object should be used to set this value.
-   * @deprecated
-   */
-  colorType: deprecatedPropType(
-    PropTypes.oneOf(["primary", "secondary", "link"]),
-    "Instead use the category property"
-  ),
-  /**
    * Category of button to use.
-   *  - Accepted values:
-   *    --"primary",
-   *    --"secondary",
-   *    --"ghost"
-   *    --"ghostSecondary",
-   *     "semantic"
-   *  - note: the buttonType object should be used to set this value.
    */
   category: PropTypes.oneOf([
     "primary",
@@ -200,38 +163,6 @@ HvButton.propTypes = {
      */
     semanticDisabled: PropTypes.string,
     /**
-     * Styles applied to the inspireRed primary button.
-     */
-    inspireRedPrimary: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed primary button when it is disabled.
-     */
-    inspireRedPrimaryDisabled: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed secondary button.
-     */
-    inspireRedSecondary: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed secondary button when it is disabled.
-     */
-    inspireRedSecondaryDisabled: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed ghost button.
-     */
-    inspireRedGhost: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed ghost button when it is disabled.
-     */
-    inspireRedGhostDisabled: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed secondary ghost  button.
-     */
-    inspireRedGhostSecondary: PropTypes.string,
-    /**
-     * Styles applied to the inspireRed secondary ghost button when it is disabled.
-     */
-    inspireRedGhostSecondaryDisabled: PropTypes.string,
-    /**
      * Styles applied to the icon on the left.
      */
     startIcon: PropTypes.string
@@ -257,8 +188,6 @@ HvButton.propTypes = {
 HvButton.defaultProps = {
   className: "",
   id: undefined,
-  type: undefined,
-  colorType: undefined,
   category: "primary",
   disabled: false,
   onClick: () => {},
