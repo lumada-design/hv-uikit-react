@@ -24,14 +24,56 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import withDeprecate from "../withDeprecate";
-import styles from "./styles";
-import VerticalNavigation from "./VerticalNavigation";
+const styles = theme => ({
+  root: {
+    display: "flex",
+    marginTop: "5px",
+    marginBottom: "0px"
+  },
+  fixed: {
+    position: "fixed",
+    zIndex: theme.zIndex.drawer,
+    top: "50px",
+    bottom: 0
+  },
+  relative: {
+    position: "relative",
+    "&$withAnchorBar": {
+      height: "100%"
+    }
+  },
+  absolute: {
+    position: "absolute"
+  },
+  static: {
+    position: "static"
+  },
+  withAnchorBar: {
+    height: "100%"
+  },
+  verticalContainer: {
+    display: "flex",
+    zIndex: 20
+  },
+  anchorBar: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    width: "52px",
+    height: "100%",
+    overflow: "hidden",
+    padding: `${theme.hv.spacing.xs}px`
+  },
+  button: {
+    marginTop: `${theme.hv.spacing.xs}px`
+  },
+  separator: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    width: "3px"
+  },
+  contentContainer: {
+    height: "100%",
+    overflow: "auto",
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
+  }
+});
 
-export default withStyles(styles, { withTheme: true })(
-  withDeprecate(
-    VerticalNavigation,
-    "This component is deprecated. Please use the new Vertical Navigation component."
-  )
-);
+export default styles;

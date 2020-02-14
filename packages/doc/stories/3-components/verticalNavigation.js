@@ -17,12 +17,13 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-storiesOf("Components/Navigation System", module).add(
+storiesOf("Components/Deprecated", module).add(
   "Vertical Navigation",
   () => <HvVerticalNavigation />,
   {
-    title: "Vertical Navigation",
+    title: "(Deprecated) Vertical Navigation",
     description:
+      "<br><strong>This component is deprecated. Please use the new Vertical Navigation component described in the Navigation System folder.</strong><br><br>" +
       "Vertical navigation is a menu that displays the options to navigate through the app’s content. \n" +
       "In a vertical menu the items are links displayed as a table of contents for easy scanning with the \n" +
       "ability to scroll down the list.",
