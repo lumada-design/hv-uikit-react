@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import uniqueId from "lodash/uniqueId";
 import withStyles from "@material-ui/core/styles/withStyles";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
@@ -153,7 +152,7 @@ class Dropdown extends React.Component {
 
   renderLabel() {
     const { internalId } = this.state;
-    const { classes, label, labels } = this.props;
+    const { classes, labels } = this.props;
     return (
       // eslint-disable-next-line jsx-a11y/label-has-for
       <label
@@ -161,7 +160,7 @@ class Dropdown extends React.Component {
         className={classes.label}
         htmlFor={`${internalId}-header`}
       >
-        {labels.title || label}
+        {labels.title}
       </label>
     );
   }
@@ -171,7 +170,6 @@ class Dropdown extends React.Component {
       classes,
       disabled,
       theme,
-      label,
       values,
       id,
       labels: propLabels,
@@ -195,9 +193,7 @@ class Dropdown extends React.Component {
       <div
         id={`${internalId}-header`}
         aria-expanded={isOpen}
-        aria-labelledby={
-          labels.title || label ? `${internalId}-label` : undefined
-        }
+        aria-labelledby={labels.title ? `${internalId}-label` : undefined}
         className={classNames([
           classes.header,
           {
@@ -272,12 +268,12 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    const { classes, className, label, labels, disabled } = this.props;
+    const { classes, className, labels, disabled } = this.props;
     const { isOpen, internalId } = this.state;
 
     return (
       <>
-        {label || labels.title ? this.renderLabel() : null}
+        {labels.title ? this.renderLabel() : null}
         <div
           id={internalId}
           ref={el => {
@@ -358,14 +354,6 @@ Dropdown.propTypes = {
      */
     selectionDisabled: PropTypes.string
   }).isRequired,
-  /**
-   * Label to display
-   * @deprecated Instead use the labels property
-   */
-  label: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the labels title property"
-  ),
   /**
    * The list to be rendered by the dropdown.
    */
@@ -455,7 +443,6 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   className: "",
   id: undefined,
-  label: undefined,
   values: null,
   multiSelect: false,
   showSearch: false,
