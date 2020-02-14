@@ -1,5 +1,29 @@
 declare module '@hv/uikit-react-icons/dist' {
   class IconBase extends React.Component<IconBaseProps> { }
+
+  export type Semantic =
+    | 'sema1'
+    | 'sema2'
+    | 'sema3'
+    | 'sema4'
+    | 'sema5'
+    | 'sema6'
+    | 'sema7'
+    | 'sema8'
+    | 'sema9'
+    | 'sema10'
+    | 'sema11'
+    | 'sema12'
+    | 'sema13'
+    | 'sema14'
+    | 'sema15'
+    | 'sema16'
+    | 'sema17'
+    | 'sema18'
+    | 'sema19'
+
+  export type IconSize = 'XS' | 'S' | 'M' | 'L' | 'XL'
+
   interface IconBaseProps extends React.HTMLAttributes<IconBase> {
     /**
      * A Jss Object used to override or extend the styles applied.
@@ -55,12 +79,12 @@ declare module '@hv/uikit-react-icons/dist' {
     /**
      * Sets one of the standard sizes of the icons
      */
-    iconSize?: 'XS' | 'S' | 'M' | 'L' | 'XL'
+    iconSize?: IconSize
 
     /**
      * Sets one of the standard semantic palette colors of the icon
      */
-    semantic?: 'sema1' | 'sema2' | 'sema3' | 'sema4' | 'sema5' | 'sema6' | 'sema7' | 'sema8' | 'sema9' | 'sema10' | 'sema11' | 'sema12' | 'sema13' | 'sema14' | 'sema15' | 'sema16' | 'sema17' | 'sema18' | 'sema19'
+    semantic?: Semantic
 
     /**
      * Inverts the background-foreground on semantic icons
