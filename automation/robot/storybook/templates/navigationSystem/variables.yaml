@@ -1,0 +1,18 @@
+horizontalActions:         css:div[id^=hv-actions]
+horizontalBrand:           css:div[id^=hv-brand]
+horizontalBurger:          css:#hv-header-1>button
+horizontalItems:           css:[id^=hv-menubar] li
+horizontalItem1:           css:li[class*=menubarItem]:nth-child(1)
+horizontalItem2:           css:li[class*=menubarItem]:nth-child(2)
+horizontalItem3:           css:li[class*=menubarItem]:nth-child(3)
+horizontalItem4:           css:li[class*=menubarItem]:nth-child(4)
+verticalItemsLevel1:       css:nav[id^=hv-verticalnavigation]>ul>li
+verticalItemsLevel2:       css:nav[id^=hv-verticalnavigation]>ul>li>ul>li
+verticalItemsLevel3:       css:nav[id^=hv-verticalnavigation]>ul>li>ul>li>ul>li
+verticalItem2.3.2:         css:nav>ul>li:nth-child(2)>ul>li:nth-child(3)>ul>li:nth-child(2)
+verticalItems:             css:nav[id^=hv-verticalnavigation]>ul
+verticalSelectedItem:      css:???
+verticalActions:           css:div[id^=hv-verticalnavigation-actions]
+verticalBurger:            css:button[id*=hamburger-button]
+verticalAnchorBar:         css:div[class^=VerticalContainer-anchorBar]
+horizontalSelectedItem:    css:???

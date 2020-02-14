@@ -14,10 +14,19 @@
  * limitations under the License.
  */
 
-const styles = () => ({
-  root: {
-    width: "72px"
-  }
-});
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Header1Vertical2 from "../../../../packages/doc/samples/templates/navigation";
 
-export default styles;
+// sample scenarios
+const samples = {
+  Header1Vertical2: <Header1Vertical2 />
+};
+
+Object.keys(samples).forEach(key =>
+  storiesOf("template.NavigationSystem", module).add(key, () => (
+    <>
+    {samples[key]}
+    </>
+  ))
+);

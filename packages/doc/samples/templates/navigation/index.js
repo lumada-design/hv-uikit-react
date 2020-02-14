@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import Hitachi from "./hitachi-logo.svg";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+import NavigationTemplate from "./Navigation";
 
-const HitachiLogo = ({ classes }) => <Hitachi className={classes.root} />;
-
-export default HitachiLogo;
+export default withStyles(styles, { withTheme: true })(NavigationTemplate);

@@ -1,9 +1,7 @@
 import React from "react";
 import { Play, Stop } from "@hv/uikit-react-icons/dist/Generic";
-import Badge from "@hv/uikit-react-core/dist/Badge";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
 
-export const headerConfiguration = [
+export const navigationData = [
   {
     id: "01",
     label: "System",

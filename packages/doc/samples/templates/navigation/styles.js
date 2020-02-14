@@ -14,30 +14,11 @@
  * limitations under the License.
  */
 
-import React from "react";
-import Header from "./Header";
+const styles = theme => ({
+  root: {
+    height: "100vh",
+    backgroundColor: theme.hv.palette.atmosphere.atmo2
+  }
+});
 
-const withLayout = (
-  Component,
-  Notification,
-  hasHeader = true,
-  hasNotification = true
-) => () => {
-  return (
-    <div>
-      {hasHeader && <Header />}
-      <div style={{ padding: "80px 15px 0 15px" }}>
-        {hasNotification ? (
-          <>
-            <Notification />
-            <Component />
-          </>
-        ) : (
-          <Component />
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default withLayout;
+export default styles;

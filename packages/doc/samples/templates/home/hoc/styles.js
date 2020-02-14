@@ -14,8 +14,25 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import HitachiLogo from "./HitachiLogo";
+const styles = theme => ({
+  section: {
+    paddingTop: "50px",
+    display: "flex"
+  },
+  navSection: {
+    flexShrink: 0,
+    width: "320px"
+  },
+  verticalOpenWithAnchor: {
+    width: "375px"
+  },
+  verticalCloseWithAnchor: {
+    width: "55px"
+  },
+  component: {
+    flexGrow: 1,
+    padding: "30px 15px 0 15px"
+  }
+});
 
-export default withStyles(styles, { withTheme: true })(HitachiLogo);
+export default styles;

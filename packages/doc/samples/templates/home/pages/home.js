@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import withLayout from "../components/withLayout";
+import withLayout from "../hoc/withLayout";
 import Home from "../views/home";
 import BannerController from "../notifications/Banner";
 
