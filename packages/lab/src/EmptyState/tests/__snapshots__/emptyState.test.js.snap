@@ -10,11 +10,15 @@ exports[`<EmptyState /> should render correctly 1`] = `
     </div>
     <div>
       <WithStyles(Typography)
+        component={null}
+        paragraph={false}
         variant="sTitle"
       >
         mockTitle
       </WithStyles(Typography)>
       <WithStyles(Typography)
+        component={null}
+        paragraph={false}
         variant="normalText"
       >
         mockMessage

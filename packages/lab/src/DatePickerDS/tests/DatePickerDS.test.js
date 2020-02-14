@@ -220,15 +220,6 @@ describe("<DatePickerDS /> with Single Calendar mode", () => {
     expect(wrapper.find(Calendar).length).toBe(0);
     expect(datePickerDSInstance.state.calendarOpen).toBe(false);
   });
-
-  it("should have the Calendar component with the same selected date as the received value property", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-    const calendarInstance = wrapper.find(Calendar).instance();
-
-    expect(calendarInstance.props.selectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-01")
-    );
-  });
 });
 
 describe("<DatePickerDS /> with Range Calendar mode", () => {

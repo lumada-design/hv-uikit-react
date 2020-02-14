@@ -124,6 +124,7 @@ describe("Switch input area hover", () => {
     <HvProvider>
       <Switch
         checked={false}
+        classes={{}}
         showLabels
         labels={{
           left: "Left",

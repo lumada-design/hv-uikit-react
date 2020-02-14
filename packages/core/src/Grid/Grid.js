@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
+import useWidth from "../utils/useWidth";
 
 const BREAKPOINT_GUTTERS = {
   xs: 15,
@@ -27,7 +28,7 @@ const BREAKPOINT_GUTTERS = {
   xl: 30
 };
 
-const Grid = React.forwardRef((props, ref) => {
+const HvGrid = props => {
   const {
     alignContent,
     alignItems,
@@ -49,11 +50,10 @@ const Grid = React.forwardRef((props, ref) => {
     // passed automatically withTheme
     // eslint-disable-next-line react/prop-types
     theme,
-    // passed automatically withWidth
-    // eslint-disable-next-line react/prop-types
-    width,
     ...other
   } = props;
+
+  const width = useWidth();
 
   const breakpointSpacing = !isNil(spacing)
     ? spacing
@@ -68,14 +68,14 @@ const Grid = React.forwardRef((props, ref) => {
       [classes[`spacing-xs-${String(breakpointSpacing)}`]]:
         container && breakpointSpacing !== 0,
       [classes[`direction-xs-${String(direction)}`]]:
-        direction !== Grid.defaultProps.direction,
-      [classes[`wrap-xs-${String(wrap)}`]]: wrap !== Grid.defaultProps.wrap,
+        direction !== HvGrid.defaultProps.direction,
+      [classes[`wrap-xs-${String(wrap)}`]]: wrap !== HvGrid.defaultProps.wrap,
       [classes[`align-items-xs-${String(alignItems)}`]]:
-        alignItems !== Grid.defaultProps.alignItems,
+        alignItems !== HvGrid.defaultProps.alignItems,
       [classes[`align-content-xs-${String(alignContent)}`]]:
-        alignContent !== Grid.defaultProps.alignContent,
+        alignContent !== HvGrid.defaultProps.alignContent,
       [classes[`justify-xs-${String(justify)}`]]:
-        justify !== Grid.defaultProps.justify,
+        justify !== HvGrid.defaultProps.justify,
       [classes[`grid-xs-${String(xs)}`]]: xs !== false,
       [classes[`grid-sm-${String(sm)}`]]: sm !== false,
       [classes[`grid-md-${String(md)}`]]: md !== false,
@@ -84,18 +84,12 @@ const Grid = React.forwardRef((props, ref) => {
     },
     classNameProp
   );
-  return <Component className={className} ref={ref} {...other} />;
-});
-
-if (process.env.NODE_ENV !== "production") {
-  // can't use named function expression since the function body references `Grid`
-  // which would point to the render function instead of the actual component
-  Grid.displayName = "ForwardRef(Grid)";
-}
+  return <Component className={className} {...other} />;
+};
 
 const gridSizes = ["auto", false, true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-Grid.propTypes = {
+HvGrid.propTypes = {
   /**
    * Defines the `align-content` style property.
    * It's applied for all screen sizes.
@@ -212,7 +206,7 @@ Grid.propTypes = {
   zeroMinWidth: PropTypes.bool
 };
 
-Grid.defaultProps = {
+HvGrid.defaultProps = {
   alignContent: "stretch",
   alignItems: "stretch",
   component: "div",
@@ -232,4 +226,4 @@ Grid.defaultProps = {
   children: undefined
 };
 
-export default Grid;
+export default HvGrid;
