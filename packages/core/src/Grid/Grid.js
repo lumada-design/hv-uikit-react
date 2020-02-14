@@ -76,26 +76,15 @@ const Grid = React.forwardRef((props, ref) => {
         alignContent !== Grid.defaultProps.alignContent,
       [classes[`justify-xs-${String(justify)}`]]:
         justify !== Grid.defaultProps.justify,
-      [classes[`grid-xs-${String(xs)}`]]: xs !== "false",
-      [classes[`grid-sm-${String(sm)}`]]: sm !== "false",
-      [classes[`grid-md-${String(md)}`]]: md !== "false",
-      [classes[`grid-lg-${String(lg)}`]]: lg !== "false",
-      [classes[`grid-xl-${String(xl)}`]]: xl !== "false"
+      [classes[`grid-xs-${String(xs)}`]]: xs !== false,
+      [classes[`grid-sm-${String(sm)}`]]: sm !== false,
+      [classes[`grid-md-${String(md)}`]]: md !== false,
+      [classes[`grid-lg-${String(lg)}`]]: lg !== false,
+      [classes[`grid-xl-${String(xl)}`]]: xl !== false
     },
     classNameProp
   );
-  return (
-    <Component
-      className={className}
-      ref={ref}
-      xs={container && !xs ? 4 : xs}
-      sm={container && !sm ? 8 : sm}
-      md={container && !md ? 12 : md}
-      lg={container && !lg ? 12 : lg}
-      xl={container && !xl ? 12 : xl}
-      {...other}
-    />
-  );
+  return <Component className={className} ref={ref} {...other} />;
 });
 
 if (process.env.NODE_ENV !== "production") {
@@ -103,6 +92,8 @@ if (process.env.NODE_ENV !== "production") {
   // which would point to the render function instead of the actual component
   Grid.displayName = "ForwardRef(Grid)";
 }
+
+const gridSizes = ["auto", false, true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 Grid.propTypes = {
   /**
@@ -182,107 +173,27 @@ Grid.propTypes = {
    * Defines the number of grids the component is going to use.
    * It's applied for all the screen sizes with the lowest priority.
    */
-  xs: PropTypes.oneOf([
-    "false",
-    "auto",
-    "true",
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ]),
+  xs: PropTypes.oneOf(gridSizes),
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `sm` breakpoint and wider screens if not overridden.
    */
-  sm: PropTypes.oneOf([
-    "false",
-    "auto",
-    "true",
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ]),
+  sm: PropTypes.oneOf(gridSizes),
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `md` breakpoint and wider screens if not overridden.
    */
-  md: PropTypes.oneOf([
-    "false",
-    "auto",
-    "true",
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ]),
+  md: PropTypes.oneOf(gridSizes),
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `lg` breakpoint and wider screens if not overridden.
    */
-  lg: PropTypes.oneOf([
-    "false",
-    "auto",
-    "true",
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ]),
+  lg: PropTypes.oneOf(gridSizes),
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `xl` breakpoint and wider screens.
    */
-  xl: PropTypes.oneOf([
-    "false",
-    "auto",
-    "true",
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ]),
+  xl: PropTypes.oneOf(gridSizes),
   /**
    * Defines the space between the type `item` component.
    * It can only be used on a type `container` component.
@@ -309,13 +220,13 @@ Grid.defaultProps = {
   direction: "row",
   item: false,
   justify: "flex-start",
-  lg: "false",
-  md: "false",
-  sm: "false",
+  lg: false,
+  md: false,
+  sm: false,
   spacing: undefined,
   wrap: "wrap",
-  xl: "false",
-  xs: "false",
+  xl: false,
+  xs: false,
   zeroMinWidth: false,
   className: undefined,
   children: undefined

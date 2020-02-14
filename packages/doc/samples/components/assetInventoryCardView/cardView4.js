@@ -29,38 +29,38 @@ const styles = theme => ({
   }
 });
 
-const Icon = withStyles(styles, { withTheme: true })(({classes}) => <RawIcon className={classes.box} />);
+const Icon = withStyles(styles, { withTheme: true })(({ classes }) => (
+  <RawIcon className={classes.box} />
+));
 
-const AddIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const AddIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawAddIcon className={classes.box} color={color} />)
+    return <RawAddIcon className={classes.box} color={color} />;
   }
 );
 
-const PreviewIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const PreviewIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawPreviewIcon className={classes.box} color={color} />)
+    return <RawPreviewIcon className={classes.box} color={color} />;
   }
 );
 
-
-const UploadIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const UploadIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawUploadIcon className={classes.box} color={color} />)
+    return <RawUploadIcon className={classes.box} color={color} />;
   }
 );
 
-const DeleteIcon = withStyles(styles, { withTheme: true }) (
-  ({classes, disabled, theme}) => {
+const DeleteIcon = withStyles(styles, { withTheme: true })(
+  ({ classes, disabled, theme }) => {
     const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return (<RawDeleteIcon className={classes.box} color={color} />)
+    return <RawDeleteIcon className={classes.box} color={color} />;
   }
 );
 //------------------ Render --------------------
-
 
 const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
 
@@ -104,17 +104,37 @@ const values = () => {
 
 //--------------- Configuration ----------------
 const myActions = [
-  { id: "post", label: "Add", iconCallback: () => <AddIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <PreviewIcon disabled />, disabled: true },
-  { id: "put", label: "Upload", iconCallback: () => <UploadIcon disabled />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: () => <DeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Add",
+    iconCallback: () => <AddIcon />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <PreviewIcon disabled />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Upload",
+    iconCallback: () => <UploadIcon disabled />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <DeleteIcon />,
+    disabled: false
+  }
 ];
 
 const viewConfiguration = {
   onSelection: event => console.log(event.target.value),
   breakpoints: {
-    xs: "false",
-    sm: "false",
+    xs: false,
+    sm: false,
     md: 4,
     lg: 3,
     xl: 3

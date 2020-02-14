@@ -94,7 +94,7 @@ HvTooltip.propTypes = {
      * Styles applied to the values wrapper.
      */
     valueWrapper: PropTypes.string
-  }),
+  }).isRequired,
   /**
    * Values to display in tooltip.
    */
@@ -134,7 +134,6 @@ HvTooltip.propTypes = {
 
 HvTooltip.defaultProps = {
   theme: null,
-  classes: {},
   open: null,
   enterDelay: 300,
   placement: "top",

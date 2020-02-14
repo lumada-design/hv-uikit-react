@@ -81,7 +81,6 @@ const HvCheckbox = props => {
     checkboxProps,
     ...other
   } = props;
-  const materialPrimaryColor = "primary";
   const icons = prepareIcon(props);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
@@ -122,7 +121,7 @@ const HvCheckbox = props => {
           icon={icons.emptyIcon}
           indeterminateIcon={icons.indeterminateIcon}
           checkedIcon={icons.checkedIcon}
-          color={materialPrimaryColor}
+          color="default"
           disabled={disabled}
           disableRipple
           onChange={onLocalChange}

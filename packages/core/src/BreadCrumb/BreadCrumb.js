@@ -181,8 +181,8 @@ const BreadCrumb = ({
           <LastPathElement label={elem.label} key={key} />
         ) : (
           <PathElement classes={classes} key={key}>
-            {typeof elem.type === "function" ? (
-              <>{elem}</>
+            {React.isValidElement(elem) ? (
+              elem
             ) : (
               <Page
                 key={key}

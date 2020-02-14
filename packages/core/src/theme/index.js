@@ -17,8 +17,9 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
 import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
-import muiAppBar from "./overrides/muiAppBar";
-import muiToolbar from "./overrides/muiToolbar";
+import muiAppBarOverrides from "./overrides/muiAppBar";
+import muiToolbarOverrides from "./overrides/muiToolbar";
+import muiIconButtonOverrides from "./overrides/muiIconButton";
 import createTypography from "./typography";
 import createPalette from "./palette";
 import createSpacing from "./spacing";
@@ -39,8 +40,6 @@ const hvTheme = uiKitTheme => {
   const themeSpacing = createSpacing(theme);
   const themePalette = createPalette(theme);
   const themeTypography = createTypography(themePalette, theme);
-  const muiAppBarOverride = muiAppBar(theme);
-  const muiToolbarOverride = muiToolbar(theme);
 
   return createMuiTheme({
     shadows: Array(25).fill("none"),
@@ -69,10 +68,13 @@ const hvTheme = uiKitTheme => {
     },
     overrides: {
       MuiAppBar: {
-        ...muiAppBarOverride
+        ...muiAppBarOverrides(theme)
       },
       MuiToolbar: {
-        ...muiToolbarOverride
+        ...muiToolbarOverrides(theme)
+      },
+      MuiIconButton: {
+        ...muiIconButtonOverrides(theme)
       }
     },
     hv: theme
