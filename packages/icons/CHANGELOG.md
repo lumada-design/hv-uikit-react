@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.9.0...@hv/uikit-react-icons@1.10.0) (2020-02-15)
+
+
+### Features
+
+* **typescript:** extract Semantic and IconSize as named types ([75803da](https://github.com/pentaho/hv-uikit-react/commit/75803da9f1c9bd46bb0053e4a98b9920ae36241c))
+
+
+
+
+
 # [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.8.1...@hv/uikit-react-icons@1.9.0) (2020-02-05)
 
 
