@@ -32,7 +32,8 @@ import Close from "@hv/uikit-react-icons/dist/Generic/Close";
 
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
 import HvVerticalNavigation from "../VerticalNavigation";
 
 import Brand from "./Brand";
@@ -68,7 +69,7 @@ const StyledClose = withStyles(styles, { withTheme: true })(Close);
  * @returns {*}
  * @constructor
  */
-const Main = ({
+const Header = ({
   theme,
   classes,
   className,
@@ -94,7 +95,6 @@ const Main = ({
   fixVerticalNavigation,
   actionValues
 }) => {
-  // ToDo - run prettier on code base
   const [showNav, toggleNav] = useState(false);
   const userExists = !(isNill(userData) && isNill(userIcon));
   const showHbMenu = useMediaQuery(
@@ -281,13 +281,12 @@ const Main = ({
   );
 };
 
-Main.propTypes = {
+Header.propTypes = {
   /**
    * The theme passed by the provider.
    */
   theme: PropTypes.instanceOf(Object),
   /**
-   * Class names to be applied.
    * Class names to be applied.
    */
   className: PropTypes.string,
@@ -472,7 +471,7 @@ Main.propTypes = {
   fixVerticalNavigation: PropTypes.bool
 };
 
-Main.defaultProps = {
+Header.defaultProps = {
   className: "",
   id: undefined,
   position: "fixed",
@@ -481,7 +480,7 @@ Main.defaultProps = {
   productText: undefined,
   productLogo: null,
   labels: {},
-  theme: {},
+  theme: null,
 
   navigationStructure: {
     showSearch: false,
@@ -532,4 +531,4 @@ Main.defaultProps = {
   fixVerticalNavigation: false
 };
 
-export default Main;
+export default Header;

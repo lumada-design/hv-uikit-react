@@ -18,7 +18,6 @@ import createTypography from "@material-ui/core/styles/createTypography";
 
 const typography = (palette, theme) =>
   createTypography(palette, {
-    useNextVariants: true,
     suppressDeprecationWarnings: true,
     fontFamily: theme.typography.fontFamily,
     h1: {
@@ -37,7 +36,7 @@ const typography = (palette, theme) =>
       ...theme.typography.normalText
     },
     body2: {
-      ...theme.typography.infoText
+      ...theme.typography.normalText
     },
     subtitle1: {
       ...theme.typography.highlightText

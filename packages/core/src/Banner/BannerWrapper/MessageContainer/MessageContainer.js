@@ -99,7 +99,7 @@ MessageContainer.propTypes = {
 
 MessageContainer.defaultProps = {
   id: null,
-  classes: "",
+  classes: null,
   icon: null,
   message: "",
   actionsOnMessage: undefined,

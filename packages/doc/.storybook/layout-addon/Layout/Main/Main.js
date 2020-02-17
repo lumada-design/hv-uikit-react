@@ -22,13 +22,10 @@ import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import find from "lodash/find";
-import classNames from "classnames";
 
 import corePackage from "../../../../../core/package";
 import labPackage from "../../../../../lab/package";
 import iconsPackage from "../../../../../icons/package";
-import core from "react-syntax-highlighter/dist/esm/languages/prism/core";
-import withStyles from "@material-ui/core/styles/withStyles";
 
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
@@ -64,22 +61,20 @@ const shouldShowHeader = kind => {
   return find(list, elem => kind.startsWith(elem));
 };
 
-
 const SimpleBanner = ({ compNameToUse }) => {
-
   const [open, setState] = useState(true);
 
-    return (
-      <div>
-        <HvBanner
-          open={open}
-          label={`This component is deprecated. Please use the ${compNameToUse} in the Core package`}
-          onClose={() => setState(false)}
-          variant="default"
-        />
-      </div>
-    );
-}
+  return (
+    <div>
+      <HvBanner
+        open={open}
+        label={`This component is deprecated. Please use the ${compNameToUse} in the Core package`}
+        onClose={() => setState(false)}
+        variant="default"
+      />
+    </div>
+  );
+};
 
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
@@ -119,9 +114,7 @@ const Main = ({ classes, children, context, config }) => {
           </span>
         </div>
         {isComponent && (
-          <Button category="primary" onClick={() => config.changeTheme()}>
-            Toggle theme
-          </Button>
+          <Button onClick={config.changeTheme}>Toggle theme</Button>
         )}
       </div>
       <div className={classes.contentWithHeader}>

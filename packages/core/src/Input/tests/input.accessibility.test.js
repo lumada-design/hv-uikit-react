@@ -19,15 +19,15 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { axe, toHaveNoViolations } from 'jest-axe';
+import { axe, toHaveNoViolations } from "jest-axe";
 
 import HvProvider from "../../Provider";
 import InputWithStyles from "../index";
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
-describe('InputA11Y', () => {
-  it('normal state', async () => {
+describe("InputA11Y", () => {
+  it("normal state", async () => {
     const labels = {
       placeholder: "Insert text",
       infoText: "Info",
@@ -47,7 +47,7 @@ describe('InputA11Y', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('disabled', async () => {
+  it("disabled", async () => {
     const labels = {
       placeholder: "Insert text",
       infoText: "Info",
@@ -67,7 +67,7 @@ describe('InputA11Y', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('filled', async () => {
+  it("filled", async () => {
     const labels = {
       placeholder: "Insert text",
       infoText: "Info",
@@ -78,7 +78,11 @@ describe('InputA11Y', () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} initialValue="Initial value" id="test" />
+        <InputWithStyles
+          labels={labels}
+          initialValue="Initial value"
+          id="test"
+        />
       </HvProvider>
     );
 
@@ -87,7 +91,7 @@ describe('InputA11Y', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('invalid', async () => {
+  it("invalid", async () => {
     const labels = {
       placeholder: "Insert text",
       infoText: "Info",
@@ -98,7 +102,12 @@ describe('InputA11Y', () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} initialValue="Initial value" validationState="invalid" id="test" />
+        <InputWithStyles
+          labels={labels}
+          initialValue="Initial value"
+          validationState="invalid"
+          id="test"
+        />
       </HvProvider>
     );
 
