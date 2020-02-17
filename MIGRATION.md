@@ -23,4 +23,6 @@ With our first major release several components where reviewed in order to remov
             - actions.icon replaced by iconCallback
     - Dropdown
         - label replaced by labels.title
-        
+    - Radio button
+        - **propsLabel** replaced by **formControlLabelProps**
+        - **propsIcon** replaced by **radioProps**
