@@ -170,12 +170,13 @@ Search.propTypes = {
   /**
    * Search string
    */
-  searchString: PropTypes.string.isRequired
+  searchString: PropTypes.string
 };
 
 Search.defaultProps = {
   id: undefined,
-  onSearch: null
+  onSearch: null,
+  searchString: undefined
 };
 
 export default Search;
