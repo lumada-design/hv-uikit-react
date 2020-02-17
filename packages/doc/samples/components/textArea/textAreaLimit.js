@@ -7,5 +7,5 @@ const labels = {
 };
 
 export default (
-  <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={10} />
+  <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />
 );
