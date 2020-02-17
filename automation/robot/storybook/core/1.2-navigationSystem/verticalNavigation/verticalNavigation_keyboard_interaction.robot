@@ -13,23 +13,28 @@ Documentation     Test Cases based on Design System Version 1.2.0
 
                 
 *** Test Cases ***
-tab: change focus to next item when press TAB on item
-    Click Element                    ${vnBurger}
-    Wait Until Element Is Visible    ${vNExpanded}     4s
-    set focus and press keys         ${vNExpanded}     TAB
-    Element Should Be Focused        ${vnItem1}>div
-    
-shift + tab: change focus to previous item when press SHIFT + TAB on item
-    Click Element                    ${vnBurger}
-    Wait Until Element Is Visible    ${vNExpanded}       4s
-    set focus and press keys         ${vNExpanded}     TAB    TAB
-    Element Should Be Focused        ${vnItem1.1}>div
-    Press Keys                       NONE                SHIFT+TAB
-    Element Should Be Focused        ${vnItem1}>div
+tab: change focus to next item and keep item selection when press TAB on item
+    Click Element                                  ${vnBurger}
+    Wait Until Element Is Visible                  ${vNExpanded}       4s
+    vertical navigation item should be selected    ${vnItem2.3.2}
+    set focus and press keys                       ${vNExpanded}       TAB    TAB
+    Element Should Be Focused                      ${vnItem1.1}>div
+    vertical navigation item should be selected    ${vnItem2.3.2}
+
+shift + tab: change focus to previous item and keep item selection when press SHIFT + TAB on item
+    Click Element                                  ${vnBurger}
+    Wait Until Element Is Visible                  ${vNExpanded}       4s
+    vertical navigation item should be selected    ${vnItem2.3.2}
+    set focus and press keys                       ${vNExpanded}       TAB          TAB
+    Element Should Be Focused                      ${vnItem1.1}>div
+    Press Keys                                     NONE                SHIFT+TAB
+    Element Should Be Focused                      ${vnItem1}>div
+    vertical navigation item should be selected    ${vnItem2.3.2}
 
 shift + tab: change focus to previous item when previous click an item and then press SHIFT + TAB on item
-    [Tags]    distinct
+    [Tags]    distinct    run-any-way
     [Documentation]   = Browsers Distinct behavior, not supported by UIKIT  = \n
+    ...                 *https://github.com/pentaho/hv-uikit-react/issues/1124*    
     ...                - *chrome* - focus the previous item
     ...                - *firefox* - focus the current item
     ...                - *ie* - focus last element on navigation

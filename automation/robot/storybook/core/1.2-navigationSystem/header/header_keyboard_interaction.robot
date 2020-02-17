@@ -13,25 +13,33 @@ Documentation    Test Cases based on Design System Version 1.2.0
 
 
 *** Test Cases ***
-tab: change focus to next item when is pressed TAB
-    Click Element                    ${hBrand}
-    verify element is not focused    ${hItem1}>div
-    Press Keys                       ${None}          TAB
-    Element Should Be Focused        ${hItem1}>div
-    
-shift + tab: change focus to previous item when is pressed SHIFT + TAB 
-    Click Element                    ${hBrand}
-    verify element is not focused    ${hItem1}>div
-    Press Keys                       ${None}          TAB
-    Element Should Be Focused        ${hItem1}>div
-    Press Keys                       ${None}          TAB
-    verify element is not focused    ${hItem1}>div
-    Press Keys                       ${None}          SHIFT+TAB
-    Element Should Be Focused        ${hItem1}>div
+tab: change focus to next item and keep item selection when is pressed TAB
+    header item should be selected    ${hItem3}
+    header item should be selected    ${hItem3.2}
+    Click Element                     ${hBrand}
+    verify element is not focused     ${hItem1}>div
+    Press Keys                        ${None}            TAB
+    Element Should Be Focused         ${hItem1}>div
+    Press Keys                        ${None}            TAB
+    Element Should Be Focused         ${hItem1.1}>div
+    header item should be selected    ${hItem3}
+    header item should be selected    ${hItem3.2}
+
+shift + tab: change focus to previous item and keep item selection when is pressed SHIFT + TAB
+    header item should be selected    ${hItem3}
+    header item should be selected    ${hItem3.2}
+    Click Element                     ${hBrand}
+    Press Keys                        ${None}            TAB          TAB
+    Element Should Be Focused         ${hItem1.1}>div
+    Press Keys                        ${None}            SHIFT+TAB
+    Element Should Be Focused         ${hItem1}>div
+    header item should be selected    ${hItem3}
+    header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item when is pressed SHIFT + TAB on previous clicked item
-    [Tags]    distinct
+    [Tags]    distinct    run-any-way
     [Documentation]   = Browsers Distinct behavior, not supported by UIKIT  = \n
+    ...               *https://github.com/pentaho/hv-uikit-react/issues/1124*
     ...                - *chrome* - focus the previous item
     ...                - *firefox* - focus the current item
     ...                - *ie* - focus last element on navigation
