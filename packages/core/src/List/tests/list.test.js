@@ -17,7 +17,7 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import {mount} from "enzyme";
 import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
@@ -54,7 +54,7 @@ const mockDataSingleSelectionWithIds = [
 const mockDataSingleSelectionWithIcons = [
   {
     label: "Value 1",
-    leftIcon: props => <LineChartIcon {...props} />
+    iconCallback: props => <LineChartIcon {...props} />
   },
   {
     label: "Value 2"

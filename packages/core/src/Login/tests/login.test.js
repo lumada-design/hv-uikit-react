@@ -69,9 +69,15 @@ describe("Login ", () => {
     const loginComponent = wrapper.find(LoginForm);
 
     expect(loginComponent.length).toBe(1);
-    expect(loginComponent.find('input[name="username"]').prop('disabled')).toBe(false);
-    expect(loginComponent.find('input[name="password"]').prop('disabled')).toBe(false);
-    expect(loginComponent.find('button[type="submit"]').prop('disabled')).toBe(false);
+    expect(loginComponent.find('input[name="username"]').prop("disabled")).toBe(
+      false
+    );
+    expect(loginComponent.find('input[name="password"]').prop("disabled")).toBe(
+      false
+    );
+    expect(loginComponent.find('button[type="submit"]').prop("disabled")).toBe(
+      false
+    );
   });
 
   it("shouldn't render the Recovery form", () => {
@@ -156,13 +162,10 @@ describe("Login ", () => {
   });
 
   it("should render initial custom message", () => {
-    const msg = { text: 'some message.' };
+    const msg = { text: "some message." };
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          customMessage={msg}
-        />
+        <LoginWithStyles login={loginMock} customMessage={msg} />
       </HvProvider>
     );
 

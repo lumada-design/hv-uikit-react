@@ -17,7 +17,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
@@ -75,9 +74,7 @@ const HvRadio = props => {
     label,
     labelPlacement,
     formControlLabelProps,
-    propsLabel,
-    radioProps,
-    propsIcons
+    radioProps
   } = props;
 
   const icons = getIcons(props);
@@ -127,11 +124,9 @@ const HvRadio = props => {
           value={value}
           checked={checked}
           {...radioProps}
-          {...propsIcons}
         />
       }
       {...formControlLabelProps}
-      {...propsLabel}
     />
   );
 };
@@ -212,23 +207,9 @@ HvRadio.propTypes = {
    */
   formControlLabelProps: PropTypes.instanceOf(Object),
   /**
-   * @deprecated Instead use the formControlLabelProps property
-   */
-  propsLabel: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the formControlLabelProps property"
-  ),
-  /**
    * Extra properties passed to the MUI Radio component.
    */
   radioProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the radioProps property
-   */
-  propsIcons: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the radioProps property"
-  ),
   /**
    * The theme passed by the provider.
    */
@@ -244,9 +225,7 @@ HvRadio.defaultProps = {
   disabled: false,
   onChange: () => {},
   formControlLabelProps: undefined,
-  propsLabel: undefined,
   radioProps: undefined,
-  propsIcons: undefined,
   labelPlacement: labelPositions.end,
   theme: null
 };
