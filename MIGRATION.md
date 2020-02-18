@@ -59,5 +59,7 @@ With our first major release several components where reviewed in order to remov
    - KPI
      - **kpiTextConfiguration** replaced by **labels**.
    - Radio button
-    - **propsLabel** replaced by **formControlLabelProps**
-    - **propsIcon** replaced by **radioProps**
+     - **propsLabel** replaced by **formControlLabelProps**
+     - **propsIcon** replaced by **radioProps**
+   - Snackbar
+     - **message** replaced by **label**
