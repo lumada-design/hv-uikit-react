@@ -34,6 +34,216 @@ import {
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
 
+export class NodeTreeNavigationUtils {
+  static getNextNode(isExpanded, nodeMap, nodeId, end = false) {
+    const node = nodeMap[nodeId];
+    const parent = nodeMap[node.parent];
+
+    if (!end) {
+      if (node.children && node.children.length > 0 && isExpanded(nodeId)) {
+        return node.children[0];
+      }
+    }
+
+    if (parent) {
+      const nodeIndex = parent.children.indexOf(nodeId);
+      const nextIndex = nodeIndex + 1;
+
+      if (parent.children.length > nextIndex) {
+        return parent.children[nextIndex];
+      }
+
+      if (node.parent !== -1) {
+        return NodeTreeNavigationUtils.getNextNode(
+          isExpanded,
+          nodeMap,
+          node.parent,
+          true
+        );
+      }
+    }
+
+    return null;
+  }
+
+  static getPreviousNode(isExpanded, nodeMap, nodeId) {
+    const node = nodeMap[nodeId];
+    const parent = nodeMap[node.parent];
+
+    if (parent) {
+      const nodeIndex = parent.children.indexOf(nodeId);
+
+      if (nodeIndex > 0) {
+        return NodeTreeNavigationUtils.getLastNode(
+          isExpanded,
+          nodeMap,
+          parent.children[nodeIndex - 1]
+        );
+      }
+
+      if (node.parent !== -1) {
+        return node.parent;
+      }
+    }
+
+    return null;
+  }
+
+  static getLastNode(isExpanded, nodeMap, nodeId = -1) {
+    const node = nodeMap[nodeId];
+    const open = nodeId === -1 || isExpanded(nodeId);
+    if (open && node.children && node.children.length > 0) {
+      return NodeTreeNavigationUtils.getLastNode(
+        isExpanded,
+        nodeMap,
+        node.children[node.children.length - 1]
+      );
+    }
+
+    return nodeId;
+  }
+
+  static getNodeByFirstCharacter(nodeMap, visibleNodes, nodeId, char) {
+    const lowercaseChar = char.toLowerCase();
+
+    let toFocus = null;
+    let useNext = false;
+    visibleNodes.forEach(nId => {
+      const node = nodeMap[nId];
+      const firstChar = node.label.substring(0, 1).toLowerCase();
+
+      if (
+        (!toFocus || useNext) &&
+        lowercaseChar === firstChar &&
+        nId !== nodeId
+      ) {
+        toFocus = nId;
+
+        useNext = false;
+      }
+
+      if (nId === nodeId) {
+        useNext = true;
+      }
+    });
+
+    if (toFocus) {
+      return toFocus;
+    }
+
+    return null;
+  }
+}
+
+export class NodeTreeExpandUtils {
+  static isExpanded(expanded, nodeId) {
+    return expanded.indexOf(nodeId) !== -1;
+  }
+
+  static toggle(expanded, nodeId) {
+    let newExpanded;
+    if (expanded.indexOf(nodeId) !== -1) {
+      newExpanded = expanded.filter(
+        expandedNodeId => expandedNodeId !== nodeId
+      );
+    } else {
+      newExpanded = [...expanded, nodeId];
+    }
+
+    return newExpanded;
+  }
+
+  static expandAllSiblings(expanded, nodeMap, nodeId) {
+    const node = nodeMap[nodeId];
+    const parent = nodeMap[node.parent];
+
+    const diff = parent.children
+      .filter(childNode => nodeMap[childNode].children != null)
+      .filter(
+        childNode => !NodeTreeExpandUtils.isExpanded(expanded, childNode)
+      );
+
+    if (diff.length > 0) {
+      return [...expanded, ...diff];
+    }
+
+    return expanded;
+  }
+
+  static getVisibleNodes(expanded, nodeMap, nodeId = -1) {
+    const toReturn = [];
+    if (nodeId !== -1) {
+      toReturn.push(nodeId);
+    }
+
+    const visibleChilds =
+      nodeId === -1 ||
+      expanded === true ||
+      NodeTreeExpandUtils.isExpanded(expanded, nodeId);
+
+    if (visibleChilds) {
+      const node = nodeMap[nodeId];
+
+      if (node && node.children) {
+        node.children.forEach(childId =>
+          toReturn.push(
+            ...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId)
+          )
+        );
+      }
+    }
+
+    return toReturn;
+  }
+}
+
+export class NodeTreeMapUtils {
+  static addNodeToNodeMap(nodeMap, nodeId, childrenIds, nodeData) {
+    const newMap = { ...nodeMap };
+
+    const currentMap = newMap[nodeId];
+    newMap[nodeId] = {
+      ...currentMap,
+      children: childrenIds,
+      ...nodeData
+    };
+    childrenIds.forEach(childId => {
+      const currentChildMap = newMap[childId];
+      // eslint-disable-next-line no-param-reassign
+      newMap[childId] = {
+        ...currentChildMap,
+        parent: nodeId
+      };
+    });
+
+    return newMap;
+  }
+
+  static removeNodeFromNodeMap(nodeMap, nodeId) {
+    const node = nodeMap[nodeId];
+    if (node) {
+      const newMap = { ...nodeMap };
+
+      if (node.parent) {
+        const parentNode = newMap[node.parent];
+        if (parentNode && parentNode.children) {
+          const parentChildren = parentNode.children.filter(c => c !== nodeId);
+          newMap[node.parent] = {
+            ...parentNode,
+            children: parentChildren
+          };
+        }
+      }
+
+      delete newMap[nodeId];
+
+      return newMap;
+    }
+
+    return nodeMap;
+  }
+}
+
 const TreeView = props => {
   const {
     id,
@@ -62,7 +272,7 @@ const TreeView = props => {
   const treeviewMode = mode === "treeview";
 
   const isExpanded = useCallback(
-    nodeId => !collapsible || expanded.indexOf(nodeId) !== -1,
+    nodeId => !collapsible || NodeTreeExpandUtils.isExpanded(expanded, nodeId),
     [collapsible, expanded]
   );
   const isTabbable = useCallback(
@@ -93,15 +303,30 @@ const TreeView = props => {
     [onChangeCallback]
   );
 
-  const getLastNode = useCallback(
-    nodeId => {
-      const map = nodeMap.current[nodeId];
-      if (isExpanded(nodeId) && map.children && map.children.length > 0) {
-        return getLastNode(map.children[map.children.length - 1]);
-      }
+  const getNextNode = useCallback(
+    nodeId =>
+      NodeTreeNavigationUtils.getNextNode(isExpanded, nodeMap.current, nodeId),
+    [isExpanded]
+  );
+  const getPreviousNode = useCallback(
+    nodeId =>
+      NodeTreeNavigationUtils.getPreviousNode(
+        isExpanded,
+        nodeMap.current,
+        nodeId
+      ),
+    [isExpanded]
+  );
+  const getFirstNode = useCallback(() => {
+    if (firstNode.current) {
+      return firstNode.current;
+    }
 
-      return nodeId;
-    },
+    return null;
+  }, []);
+  const getLastNode = useCallback(
+    (nodeId = -1) =>
+      NodeTreeNavigationUtils.getLastNode(isExpanded, nodeMap.current, nodeId),
     [isExpanded]
   );
 
@@ -119,57 +344,6 @@ const TreeView = props => {
       }
     },
     [treeviewMode]
-  );
-
-  const getNextNode = useCallback(
-    (nodeId, end) => {
-      const map = nodeMap.current[nodeId];
-      const parent = nodeMap.current[map.parent];
-
-      if (!end) {
-        if (map.children && map.children.length > 0 && isExpanded(nodeId)) {
-          return map.children[0];
-        }
-      }
-
-      if (parent) {
-        const nodeIndex = parent.children.indexOf(nodeId);
-        const nextIndex = nodeIndex + 1;
-
-        if (parent.children.length > nextIndex) {
-          return parent.children[nextIndex];
-        }
-
-        if (parent.nodeId !== -1) {
-          return getNextNode(parent.nodeId, true);
-        }
-      }
-
-      return null;
-    },
-    [isExpanded]
-  );
-
-  const getPreviousNode = useCallback(
-    nodeId => {
-      const map = nodeMap.current[nodeId];
-      const parent = nodeMap.current[map.parent];
-
-      if (parent) {
-        const nodeIndex = parent.children.indexOf(nodeId);
-
-        if (nodeIndex > 0) {
-          return getLastNode(parent.children[nodeIndex - 1]);
-        }
-
-        if (parent.nodeId !== -1) {
-          return parent.nodeId;
-        }
-      }
-
-      return null;
-    },
-    [getLastNode]
   );
 
   const focusNextNode = useCallback(
@@ -197,16 +371,16 @@ const TreeView = props => {
     [focus, getPreviousNode]
   );
   const focusFirstNode = useCallback(() => {
-    if (firstNode.current) {
-      focus(firstNode.current);
+    const fNode = getFirstNode();
+    if (fNode) {
+      focus(fNode);
       return true;
     }
 
     return false;
-  }, [focus]);
+  }, [focus, getFirstNode]);
   const focusLastNode = useCallback(() => {
-    const topLevelNodes = nodeMap.current[-1].children;
-    const lastNode = getLastNode(topLevelNodes[topLevelNodes.length - 1]);
+    const lastNode = getLastNode();
     if (lastNode) {
       focus(lastNode);
       return true;
@@ -222,34 +396,12 @@ const TreeView = props => {
         return false;
       }
 
-      let newExpanded;
-      if (expanded.indexOf(nodeId) !== -1) {
-        newExpanded = expanded.filter(
-          expandedNodeId => expandedNodeId !== nodeId
-        );
-
-        if (treeviewMode) {
-          setTabable(oldTabable => {
-            const map = nodeMap.current[oldTabable];
-            if (
-              oldTabable &&
-              (map && map.parent ? map.parent.nodeId : null) === nodeId
-            ) {
-              return nodeId;
-            }
-
-            return oldTabable;
-          });
-        }
-      } else {
-        newExpanded = [nodeId, ...expanded];
-      }
-
+      const newExpanded = NodeTreeExpandUtils.toggle(expanded, nodeId);
       setExpandedState(newExpanded);
 
       return true;
     },
-    [collapsible, expanded, treeviewMode]
+    [collapsible, expanded]
   );
 
   const expandAllSiblings = useCallback(
@@ -259,23 +411,16 @@ const TreeView = props => {
         return false;
       }
 
-      const map = nodeMap.current[nodeId];
-      const parent = nodeMap.current[map.parent];
-
-      let diff;
-      if (parent) {
-        diff = parent.children.filter(child => !isExpanded(child));
-      } else {
-        const topLevelNodes = nodeMap.current[-1].children;
-        diff = topLevelNodes.filter(node => !isExpanded(node));
-      }
-      const newExpanded = [...expanded, ...diff];
-
+      const newExpanded = NodeTreeExpandUtils.expandAllSiblings(
+        expanded,
+        nodeMap.current,
+        nodeId
+      );
       setExpandedState(newExpanded);
 
       return true;
     },
-    [collapsible, expanded, isExpanded]
+    [collapsible, expanded]
   );
 
   const handleLeftArrow = useCallback(
@@ -296,55 +441,17 @@ const TreeView = props => {
     [collapsible, focus, isExpanded, toggle]
   );
 
-  const getVisibleNodes = useCallback(
-    (nId = -1) => {
-      const toReturn = [];
-
-      const node = nodeMap.current[nId];
-
-      if (node && node.children) {
-        const visible = !node.parent || isExpanded(nId);
-        if (visible) {
-          if (node.parent) {
-            toReturn.push(nId);
-          }
-
-          node.children.forEach(cId => toReturn.push(...getVisibleNodes(cId)));
-        }
-      }
-
-      return toReturn;
-    },
-    [isExpanded]
-  );
-
   const setFocusByFirstCharacter = useCallback(
     (nodeId, char) => {
-      const lowercaseChar = char.toLowerCase();
-
-      const visibleNodes = getVisibleNodes();
-
-      let toFocus = null;
-      let useNext = false;
-      visibleNodes.forEach(nId => {
-        const node = nodeMap.current[nId];
-        const firstChar = node.label.substring(0, 1).toLowerCase();
-
-        if (
-          (!toFocus || useNext) &&
-          lowercaseChar === firstChar &&
-          nId !== nodeId
-        ) {
-          toFocus = nId;
-
-          useNext = false;
-        }
-
-        if (nId === nodeId) {
-          useNext = true;
-        }
-      });
-
+      const toFocus = NodeTreeNavigationUtils.getNodeByFirstCharacter(
+        nodeMap.current,
+        NodeTreeExpandUtils.getVisibleNodes(
+          collapsible ? expanded : true,
+          nodeMap.current
+        ),
+        nodeId,
+        char
+      );
       if (toFocus) {
         focus(toFocus);
         return true;
@@ -352,48 +459,26 @@ const TreeView = props => {
 
       return false;
     },
-    [focus, getVisibleNodes]
+    [collapsible, expanded, focus]
   );
 
   const addNodeToNodeMap = useCallback(
     (nodeId, childrenIds, nodePayloadRef, nodeActionableRef, label) => {
-      const currentMap = nodeMap.current[nodeId];
-      nodeMap.current[nodeId] = {
-        ...currentMap,
-        children: childrenIds,
+      nodeMap.current = NodeTreeMapUtils.addNodeToNodeMap(
+        nodeMap.current,
         nodeId,
-        nodePayloadRef,
-        nodeActionableRef,
-        label
-      };
-      childrenIds.forEach(childId => {
-        const currentChildMap = nodeMap.current[childId];
-        nodeMap.current[childId] = {
-          ...currentChildMap,
-          parent: nodeId,
-          id: childId
-        };
-      });
+        childrenIds,
+        { nodePayloadRef, nodeActionableRef, label }
+      );
     },
     []
   );
 
   const removeNodeFromNodeMap = useCallback(nodeId => {
-    const map = nodeMap.current[nodeId];
-    if (map) {
-      if (map.parent) {
-        const parentMap = nodeMap.current[map.parent];
-        if (parentMap && parentMap.children) {
-          const parentChildren = parentMap.children.filter(c => c !== nodeId);
-          nodeMap.current[map.parent] = {
-            ...parentMap,
-            children: parentChildren
-          };
-        }
-      }
-
-      delete nodeMap.current[nodeId];
-    }
+    nodeMap.current = NodeTreeMapUtils.removeNodeFromNodeMap(
+      nodeMap.current,
+      nodeId
+    );
   }, []);
 
   const previousChildIds = useRef([]);
@@ -506,9 +591,9 @@ TreeView.propTypes = {
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
   classes: PropTypes.shape({
-      /**
-       * Style applied to component.
-       */
+    /**
+     * Style applied to component.
+     */
     root: PropTypes.string
   }).isRequired,
   /**

@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Play } from "@hv/uikit-react-icons/dist/Generic";
+import Play from "@hv/uikit-react-icons/dist/Generic/Play";
 import HvProvider from "../../../Provider";
 
 import Navigation from "../index";
@@ -60,14 +60,6 @@ describe("<Navigation />", () => {
       ]
     }
   ];
-
-  beforeEach(async () => {
-    jest.useFakeTimers();
-  });
-
-  afterEach(async () => {
-    jest.useRealTimers();
-  });
 
   describe("navigation", () => {
 
