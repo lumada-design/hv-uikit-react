@@ -154,7 +154,7 @@ const Main = ({
 
   const defaultContent = (
     <>
-      <Focus useFalseFocus>
+      <Focus strategy="card" useFalseFocus>
         <div
           className={classNames(classes.upperArea, {
             [classes.upperAreaSelectable]: cardButtonProps.tabIndex
