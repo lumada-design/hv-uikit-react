@@ -12,8 +12,8 @@ With our first major release several components where reviewed in order to remov
 
 - Deprecated
   - Button
-    - type replaced by category.
-    - colorType replaced by category.
+    - **type** replaced by **category**.
+    - **colorType** replaced by **category**.
   - Card
     - Header
       - needsBorder (not in use).
@@ -58,3 +58,6 @@ With our first major release several components where reviewed in order to remov
        - Vertical Navigation 
    - KPI
      - **kpiTextConfiguration** replaced by **labels**.
+   - Radio button
+    - **propsLabel** replaced by **formControlLabelProps**
+    - **propsIcon** replaced by **radioProps**
