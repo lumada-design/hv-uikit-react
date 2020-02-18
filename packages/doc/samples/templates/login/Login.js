@@ -15,9 +15,9 @@ const LoginTemplate = ({ classes }) => (
     <Header id="header" companyLogo={<HitachiLogo />} label="App Name" />
     <div className={classes.root}>
       <Login
+        id="test"
         login={callSimulation}
         recovery={callSimulation}
-        id="test"
         allowRecover
       />
     </div>
