@@ -1,9 +1,57 @@
-import React, { useState } from "react";
+/*
+ * Copyright 2019 Hitachi Vantara Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import React from "react";
 import ToggleButton from "@hv/uikit-react-core/dist/ToggleButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const Eye = props => {
-  const { theme, className, ...other } = props;
+  const { theme, className, ...other } = props;  // eslint-disable-line react/prop-types
+
+  const eye = `
+  .cls-1 {\n        fill: none;\n      }\n
+  .cls-2 {\n        fill: ${theme.hv.palette.accent.acce1}; \n      }\n
+  .default > rect{\n\t fill: ${theme.hv.palette.accent.acce1} \n\t  }\n
+  .selected > rect{\n\t 
+      fill: none;\n
+      animation: dash_out .2s ease-in-out;\n
+    }\n\t  \n\t
+    .notSelected > rect{\n\t
+      fill: ${theme.hv.palette.accent.acce1};\n
+      animation: dash_in .2s ease-in-out;\n
+    }\n\n
+    @keyframes dash_in {\n
+       from {\n
+         width: 0;\n
+        }\n
+      to {\n
+          width: 19.8;\n
+       }\n
+    }\n\t \n\t
+    @keyframes dash_out {\n
+      from {\n
+        width: 19.8;\n\t\t
+        fill: ${theme.hv.palette.accent.acce1};\n\n
+      }\n
+      to {\n
+         width: 0;\n\t\t
+         fill: ${theme.hv.palette.accent.acce1};\n
+                }\n\t\t\n
+            }\n
+  `
 
   return (
     <svg
@@ -17,44 +65,8 @@ const Eye = props => {
     >
       <defs>
         <style
-          dangerouslySetInnerHTML={{
-            __html:
-              ".cls-1 {\n        fill: none;\n      }\n" +
-              "" +
-              ".cls-2 {\n        fill: "+ theme.hv.palette.accent.acce1 +"; \n      }\n" +
-              "" +
-              ".default > rect{\n\t " +
-              "   fill: "+ theme.hv.palette.accent.acce1 +"\n\t  }\n  " +
-              "" +
-              ".selected > rect{\n\t   " +
-              "    fill: none;\n     " +
-              "    animation: dash_out .2s ease-in-out;\n    " +
-              "  }\n\t  \n\t " +
-              " " +
-              ".notSelected > rect{\n\t  " +
-              "    fill: "+ theme.hv.palette.accent.acce1 +";\n      " +
-              "    animation: dash_in .2s ease-in-out;\n    " +
-              "  }\n\n    " +
-              " " +
-              " @keyframes dash_in {\n      " +
-              "  from {\n        " +
-              "    width: 0;\n      " +
-              "    }\n      " +
-              "  to {\n       " +
-              "   width: 19.8;\n   " +
-              "    }\n     " +
-              " }\n\t \n\t " +
-              "" +
-              "@keyframes dash_out {\n     " +
-              "   from {\n        " +
-              "     width: 19.8;\n\t\t  " +
-              "     fill: "+ theme.hv.palette.accent.acce1 +";\n\n       " +
-              "   }\n     " +
-              "   to {\n     " +
-              "     width: 0;\n\t\t" +
-              "     fill: "+ theme.hv.palette.accent.acce1 +";\n " +
-              "       }\n\t\t\n   " +
-              "   }\n    "
+          dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+            __html: eye
           }}
         />
       </defs>
@@ -63,7 +75,7 @@ const Eye = props => {
           id="fc623adc-be5e-469d-9072-f0580ca88767"
           className="cls-1"
           d="M8,2c4,0,8,6,8,6s-3.58,6-8,6S0,8,0,8,4,2,8,2Z"
-          transform="translate(0 -0.65)"Eye
+          transform="translate(0 -0.65)"
         />
         <g id="a15f14a7-dffe-4c64-9428-aba4924f7fde">
           <path

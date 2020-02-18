@@ -18,6 +18,9 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import classNames from "classnames";
+import uniqueId from "lodash/uniqueId";
+
+const DEFAULT_ID_PREFIX = "hv-toggle-button-";
 
 /**
  * Toggle Button.
@@ -43,7 +46,8 @@ const ToggleButton = ({
   selectedTitle,
   animated,
   onClick,
-  disabled
+  disabled,
+  ...other
 }) => {
   const [isSelected, setIsSelected] = useState(selected);
   const [classSvg, setClassSvg] = useState("default");
@@ -83,18 +87,21 @@ const ToggleButton = ({
     if (onClick) onClick(isSelected);
   };
 
+  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
+
   return (
     <div
-      id={id}
+      id={internalId}
       className={classNames(className, classes.root, {
         [classes.disabled]: disabled
       })}
-      role="checkbox"
-      aria-checked={isSelected}
+      role="button"
+      aria-pressed={isSelected}
       tabIndex={0}
       onClick={toggle}
       onKeyDown={toggle}
       title={title}
+      {...other}
     >
       <Icon className={classNames(classes.icon, { [classSvg]: animated })} />
     </div>
