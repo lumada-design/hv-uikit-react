@@ -25,29 +25,7 @@ import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Popper from "../utils/Popper";
 import List from "../List";
-
-/**
- * Auxiliary function to find adjacent nodes to focus.
- *
- * @param nodeId
- * @returns {{prevFocus: *, nextFocus: *}}
- */
-const getPrevNextFocus = nodeId => {
-  const nodes =
-    document.querySelectorAll("input, button, select, textarea, a[href]") || [];
-
-  const nbNodes = nodes.length;
-  let index = 0;
-  for (; index < nbNodes; index += 1) {
-    if (nodes[index].id === nodeId) {
-      break;
-    }
-  }
-  return {
-    nextFocus: nodes[index + 1 > nbNodes - 1 ? 0 : index + 1],
-    prevFocus: nodes[index - 1 < 0 ? nbNodes - 1 : index - 1]
-  };
-};
+import getPrevNextFocus from "../utils/focusableElementFinder";
 
 /**
  * Dropdown component with a menu.

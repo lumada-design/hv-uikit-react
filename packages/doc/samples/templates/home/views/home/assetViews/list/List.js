@@ -46,10 +46,10 @@ const Row = ({ classes, status, value, id }) => {
           <Typography variant="highlightText">
             {value.event.description}
           </Typography>
-          <Typography className={classes.timestamp} variant="infoText">
+          <Typography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </Typography>
-          <Typography className={classes.schedule} variant="infoText">
+          <Typography className={classes.schedule} variant="sText">
             {value.event.schedule}
           </Typography>
         </div>

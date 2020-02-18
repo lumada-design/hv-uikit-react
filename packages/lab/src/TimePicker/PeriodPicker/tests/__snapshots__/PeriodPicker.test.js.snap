@@ -8736,63 +8736,63 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Typography-3xlTitle-49",
-                "4xlTitle": "Typography-4xlTitle-48",
-                "5xlTitle": "Typography-5xlTitle-47",
-                "baseFontFamily": "Typography-baseFontFamily-70",
-                "disabledButtonText": "Typography-disabledButtonText-61",
-                "disabledText": "Typography-disabledText-68",
-                "highlightText": "Typography-highlightText-57",
-                "infoText": "Typography-infoText-66",
-                "inlineLink": "Typography-inlineLink-60",
-                "lTitle": "Typography-lTitle-52",
-                "labelText": "Typography-labelText-65",
-                "mTitle": "Typography-mTitle-53",
-                "margin": "Typography-margin-71",
-                "normalText": "Typography-normalText-58",
-                "placeholderText": "Typography-placeholderText-62",
-                "sLink": "Typography-sLink-67",
-                "sText": "Typography-sText-64",
-                "sTitle": "Typography-sTitle-54",
-                "selectedNavText": "Typography-selectedNavText-63",
-                "selectedText": "Typography-selectedText-59",
-                "vizText": "Typography-vizText-69",
-                "xlTitle": "Typography-xlTitle-51",
-                "xsTitle": "Typography-xsTitle-55",
-                "xxlTitle": "Typography-xxlTitle-50",
-                "xxsTitle": "Typography-xxsTitle-56",
+                "3xlTitle": "Component-3xlTitle-49",
+                "4xlTitle": "Component-4xlTitle-48",
+                "5xlTitle": "Component-5xlTitle-47",
+                "baseFontFamily": "Component-baseFontFamily-70",
+                "disabledButtonText": "Component-disabledButtonText-61",
+                "disabledText": "Component-disabledText-68",
+                "highlightText": "Component-highlightText-57",
+                "infoText": "Component-infoText-66",
+                "inlineLink": "Component-inlineLink-60",
+                "lTitle": "Component-lTitle-52",
+                "labelText": "Component-labelText-65",
+                "mTitle": "Component-mTitle-53",
+                "margin": "Component-margin-71",
+                "normalText": "Component-normalText-58",
+                "placeholderText": "Component-placeholderText-62",
+                "sLink": "Component-sLink-67",
+                "sText": "Component-sText-64",
+                "sTitle": "Component-sTitle-54",
+                "selectedNavText": "Component-selectedNavText-63",
+                "selectedText": "Component-selectedText-59",
+                "vizText": "Component-vizText-69",
+                "xlTitle": "Component-xlTitle-51",
+                "xsTitle": "Component-xsTitle-55",
+                "xxlTitle": "Component-xxlTitle-50",
+                "xxsTitle": "Component-xxsTitle-56",
               },
               "deployed": true,
               "linked": false,
               "options": Object {
                 "Renderer": [Function],
-                "classNamePrefix": "Typography",
+                "classNamePrefix": "Component",
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-49",
-                  "4xlTitle": "Typography-4xlTitle-48",
-                  "5xlTitle": "Typography-5xlTitle-47",
-                  "baseFontFamily": "Typography-baseFontFamily-70",
-                  "disabledButtonText": "Typography-disabledButtonText-61",
-                  "disabledText": "Typography-disabledText-68",
-                  "highlightText": "Typography-highlightText-57",
-                  "infoText": "Typography-infoText-66",
-                  "inlineLink": "Typography-inlineLink-60",
-                  "lTitle": "Typography-lTitle-52",
-                  "labelText": "Typography-labelText-65",
-                  "mTitle": "Typography-mTitle-53",
-                  "margin": "Typography-margin-71",
-                  "normalText": "Typography-normalText-58",
-                  "placeholderText": "Typography-placeholderText-62",
-                  "sLink": "Typography-sLink-67",
-                  "sText": "Typography-sText-64",
-                  "sTitle": "Typography-sTitle-54",
-                  "selectedNavText": "Typography-selectedNavText-63",
-                  "selectedText": "Typography-selectedText-59",
-                  "vizText": "Typography-vizText-69",
-                  "xlTitle": "Typography-xlTitle-51",
-                  "xsTitle": "Typography-xsTitle-55",
-                  "xxlTitle": "Typography-xxlTitle-50",
-                  "xxsTitle": "Typography-xxsTitle-56",
+                  "3xlTitle": "Component-3xlTitle-49",
+                  "4xlTitle": "Component-4xlTitle-48",
+                  "5xlTitle": "Component-5xlTitle-47",
+                  "baseFontFamily": "Component-baseFontFamily-70",
+                  "disabledButtonText": "Component-disabledButtonText-61",
+                  "disabledText": "Component-disabledText-68",
+                  "highlightText": "Component-highlightText-57",
+                  "infoText": "Component-infoText-66",
+                  "inlineLink": "Component-inlineLink-60",
+                  "lTitle": "Component-lTitle-52",
+                  "labelText": "Component-labelText-65",
+                  "mTitle": "Component-mTitle-53",
+                  "margin": "Component-margin-71",
+                  "normalText": "Component-normalText-58",
+                  "placeholderText": "Component-placeholderText-62",
+                  "sLink": "Component-sLink-67",
+                  "sText": "Component-sText-64",
+                  "sTitle": "Component-sTitle-54",
+                  "selectedNavText": "Component-selectedNavText-63",
+                  "selectedText": "Component-selectedText-59",
+                  "vizText": "Component-vizText-69",
+                  "xlTitle": "Component-xlTitle-51",
+                  "xsTitle": "Component-xsTitle-55",
+                  "xxlTitle": "Component-xxlTitle-50",
+                  "xxsTitle": "Component-xxsTitle-56",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -9269,7 +9269,7 @@ body {
                   "version": "9.8.7",
                 },
                 "link": false,
-                "meta": "Typography",
+                "meta": "Component",
                 "name": undefined,
                 "parent": [Circular],
                 "sheet": [Circular],
@@ -9277,94 +9277,94 @@ body {
               "renderer": DomRenderer {
                 "element": <style
                   data-jss=""
-                  data-meta="Typography"
+                  data-meta="Component"
                 >
                   
-.Typography-5xlTitle-47 {
+.Component-5xlTitle-47 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-4xlTitle-48 {
+.Component-4xlTitle-48 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-3xlTitle-49 {
+.Component-3xlTitle-49 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxlTitle-50 {
+.Component-xxlTitle-50 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xlTitle-51 {
+.Component-xlTitle-51 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-lTitle-52 {
+.Component-lTitle-52 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-mTitle-53 {
+.Component-mTitle-53 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sTitle-54 {
+.Component-sTitle-54 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-xsTitle-55 {
+.Component-xsTitle-55 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-xxsTitle-56 {
+.Component-xxsTitle-56 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-highlightText-57 {
+.Component-highlightText-57 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-normalText-58 {
+.Component-normalText-58 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedText-59 {
+.Component-selectedText-59 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -9372,80 +9372,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-inlineLink-60 {
+.Component-inlineLink-60 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-disabledButtonText-61 {
+.Component-disabledButtonText-61 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-placeholderText-62 {
+.Component-placeholderText-62 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-selectedNavText-63 {
+.Component-selectedNavText-63 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-sText-64 {
+.Component-sText-64 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-labelText-65 {
+.Component-labelText-65 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Typography-infoText-66 {
+.Component-infoText-66 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-sLink-67 {
+.Component-sLink-67 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-disabledText-68 {
+.Component-disabledText-68 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-vizText-69 {
+.Component-vizText-69 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Typography-baseFontFamily-70 {
+.Component-baseFontFamily-70 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Typography-margin-71 {
+.Component-margin-71 {
   margin: 0;
 }
 
@@ -9461,31 +9461,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Typography-3xlTitle-49",
-                  "4xlTitle": "Typography-4xlTitle-48",
-                  "5xlTitle": "Typography-5xlTitle-47",
-                  "baseFontFamily": "Typography-baseFontFamily-70",
-                  "disabledButtonText": "Typography-disabledButtonText-61",
-                  "disabledText": "Typography-disabledText-68",
-                  "highlightText": "Typography-highlightText-57",
-                  "infoText": "Typography-infoText-66",
-                  "inlineLink": "Typography-inlineLink-60",
-                  "lTitle": "Typography-lTitle-52",
-                  "labelText": "Typography-labelText-65",
-                  "mTitle": "Typography-mTitle-53",
-                  "margin": "Typography-margin-71",
-                  "normalText": "Typography-normalText-58",
-                  "placeholderText": "Typography-placeholderText-62",
-                  "sLink": "Typography-sLink-67",
-                  "sText": "Typography-sText-64",
-                  "sTitle": "Typography-sTitle-54",
-                  "selectedNavText": "Typography-selectedNavText-63",
-                  "selectedText": "Typography-selectedText-59",
-                  "vizText": "Typography-vizText-69",
-                  "xlTitle": "Typography-xlTitle-51",
-                  "xsTitle": "Typography-xsTitle-55",
-                  "xxlTitle": "Typography-xxlTitle-50",
-                  "xxsTitle": "Typography-xxsTitle-56",
+                  "3xlTitle": "Component-3xlTitle-49",
+                  "4xlTitle": "Component-4xlTitle-48",
+                  "5xlTitle": "Component-5xlTitle-47",
+                  "baseFontFamily": "Component-baseFontFamily-70",
+                  "disabledButtonText": "Component-disabledButtonText-61",
+                  "disabledText": "Component-disabledText-68",
+                  "highlightText": "Component-highlightText-57",
+                  "infoText": "Component-infoText-66",
+                  "inlineLink": "Component-inlineLink-60",
+                  "lTitle": "Component-lTitle-52",
+                  "labelText": "Component-labelText-65",
+                  "mTitle": "Component-mTitle-53",
+                  "margin": "Component-margin-71",
+                  "normalText": "Component-normalText-58",
+                  "placeholderText": "Component-placeholderText-62",
+                  "sLink": "Component-sLink-67",
+                  "sText": "Component-sText-64",
+                  "sTitle": "Component-sTitle-54",
+                  "selectedNavText": "Component-selectedNavText-63",
+                  "selectedText": "Component-selectedText-59",
+                  "vizText": "Component-vizText-69",
+                  "xlTitle": "Component-xlTitle-51",
+                  "xsTitle": "Component-xsTitle-55",
+                  "xxlTitle": "Component-xxlTitle-50",
+                  "xxsTitle": "Component-xxsTitle-56",
                 },
                 "index": Array [
                   Object {
@@ -9658,132 +9658,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Typography-3xlTitle-49": Object {
+                  ".Component-3xlTitle-49": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-4xlTitle-48": Object {
+                  ".Component-4xlTitle-48": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-5xlTitle-47": Object {
+                  ".Component-5xlTitle-47": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Typography-baseFontFamily-70": Object {
+                  ".Component-baseFontFamily-70": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Typography-disabledButtonText-61": Object {
+                  ".Component-disabledButtonText-61": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-disabledText-68": Object {
+                  ".Component-disabledText-68": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-highlightText-57": Object {
+                  ".Component-highlightText-57": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-infoText-66": Object {
+                  ".Component-infoText-66": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-inlineLink-60": Object {
+                  ".Component-inlineLink-60": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-lTitle-52": Object {
+                  ".Component-lTitle-52": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-labelText-65": Object {
+                  ".Component-labelText-65": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-mTitle-53": Object {
+                  ".Component-mTitle-53": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-margin-71": Object {
+                  ".Component-margin-71": Object {
                     "margin": 0,
                   },
-                  ".Typography-normalText-58": Object {
+                  ".Component-normalText-58": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-placeholderText-62": Object {
+                  ".Component-placeholderText-62": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-sLink-67": Object {
+                  ".Component-sLink-67": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sText-64": Object {
+                  ".Component-sText-64": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Typography-sTitle-54": Object {
+                  ".Component-sTitle-54": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Typography-selectedNavText-63": Object {
+                  ".Component-selectedNavText-63": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-selectedText-59": Object {
+                  ".Component-selectedText-59": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -9791,35 +9791,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Typography-vizText-69": Object {
+                  ".Component-vizText-69": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Typography-xlTitle-51": Object {
+                  ".Component-xlTitle-51": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Typography-xsTitle-55": Object {
+                  ".Component-xsTitle-55": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Typography-xxlTitle-50": Object {
+                  ".Component-xxlTitle-50": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Typography-xxsTitle-56": Object {
+                  ".Component-xxsTitle-56": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -9997,33 +9997,33 @@ body {
                 },
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Typography",
+                  "classNamePrefix": "Component",
                   "classes": Object {
-                    "3xlTitle": "Typography-3xlTitle-49",
-                    "4xlTitle": "Typography-4xlTitle-48",
-                    "5xlTitle": "Typography-5xlTitle-47",
-                    "baseFontFamily": "Typography-baseFontFamily-70",
-                    "disabledButtonText": "Typography-disabledButtonText-61",
-                    "disabledText": "Typography-disabledText-68",
-                    "highlightText": "Typography-highlightText-57",
-                    "infoText": "Typography-infoText-66",
-                    "inlineLink": "Typography-inlineLink-60",
-                    "lTitle": "Typography-lTitle-52",
-                    "labelText": "Typography-labelText-65",
-                    "mTitle": "Typography-mTitle-53",
-                    "margin": "Typography-margin-71",
-                    "normalText": "Typography-normalText-58",
-                    "placeholderText": "Typography-placeholderText-62",
-                    "sLink": "Typography-sLink-67",
-                    "sText": "Typography-sText-64",
-                    "sTitle": "Typography-sTitle-54",
-                    "selectedNavText": "Typography-selectedNavText-63",
-                    "selectedText": "Typography-selectedText-59",
-                    "vizText": "Typography-vizText-69",
-                    "xlTitle": "Typography-xlTitle-51",
-                    "xsTitle": "Typography-xsTitle-55",
-                    "xxlTitle": "Typography-xxlTitle-50",
-                    "xxsTitle": "Typography-xxsTitle-56",
+                    "3xlTitle": "Component-3xlTitle-49",
+                    "4xlTitle": "Component-4xlTitle-48",
+                    "5xlTitle": "Component-5xlTitle-47",
+                    "baseFontFamily": "Component-baseFontFamily-70",
+                    "disabledButtonText": "Component-disabledButtonText-61",
+                    "disabledText": "Component-disabledText-68",
+                    "highlightText": "Component-highlightText-57",
+                    "infoText": "Component-infoText-66",
+                    "inlineLink": "Component-inlineLink-60",
+                    "lTitle": "Component-lTitle-52",
+                    "labelText": "Component-labelText-65",
+                    "mTitle": "Component-mTitle-53",
+                    "margin": "Component-margin-71",
+                    "normalText": "Component-normalText-58",
+                    "placeholderText": "Component-placeholderText-62",
+                    "sLink": "Component-sLink-67",
+                    "sText": "Component-sText-64",
+                    "sTitle": "Component-sTitle-54",
+                    "selectedNavText": "Component-selectedNavText-63",
+                    "selectedText": "Component-selectedText-59",
+                    "vizText": "Component-vizText-69",
+                    "xlTitle": "Component-xlTitle-51",
+                    "xsTitle": "Component-xsTitle-55",
+                    "xxlTitle": "Component-xxlTitle-50",
+                    "xxsTitle": "Component-xxsTitle-56",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10500,7 +10500,7 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Typography",
+                  "meta": "Component",
                   "name": undefined,
                   "parent": [Circular],
                   "sheet": [Circular],
@@ -15609,39 +15609,39 @@ body {
               </div>
             </DropUpXS>
           </WithStyles(DropUpXS)>
-          <WithStyles(Typography)
+          <WithStyles(Component)
             className="PeriodPicker-periodText-40"
             variant="highlightText"
           >
-            <Typography
+            <ForwardRef
               className="PeriodPicker-periodText-40"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-49",
-                  "4xlTitle": "Typography-4xlTitle-48",
-                  "5xlTitle": "Typography-5xlTitle-47",
-                  "baseFontFamily": "Typography-baseFontFamily-70",
-                  "disabledButtonText": "Typography-disabledButtonText-61",
-                  "disabledText": "Typography-disabledText-68",
-                  "highlightText": "Typography-highlightText-57",
-                  "infoText": "Typography-infoText-66",
-                  "inlineLink": "Typography-inlineLink-60",
-                  "lTitle": "Typography-lTitle-52",
-                  "labelText": "Typography-labelText-65",
-                  "mTitle": "Typography-mTitle-53",
-                  "margin": "Typography-margin-71",
-                  "normalText": "Typography-normalText-58",
-                  "placeholderText": "Typography-placeholderText-62",
-                  "sLink": "Typography-sLink-67",
-                  "sText": "Typography-sText-64",
-                  "sTitle": "Typography-sTitle-54",
-                  "selectedNavText": "Typography-selectedNavText-63",
-                  "selectedText": "Typography-selectedText-59",
-                  "vizText": "Typography-vizText-69",
-                  "xlTitle": "Typography-xlTitle-51",
-                  "xsTitle": "Typography-xsTitle-55",
-                  "xxlTitle": "Typography-xxlTitle-50",
-                  "xxsTitle": "Typography-xxsTitle-56",
+                  "3xlTitle": "Component-3xlTitle-49",
+                  "4xlTitle": "Component-4xlTitle-48",
+                  "5xlTitle": "Component-5xlTitle-47",
+                  "baseFontFamily": "Component-baseFontFamily-70",
+                  "disabledButtonText": "Component-disabledButtonText-61",
+                  "disabledText": "Component-disabledText-68",
+                  "highlightText": "Component-highlightText-57",
+                  "infoText": "Component-infoText-66",
+                  "inlineLink": "Component-inlineLink-60",
+                  "lTitle": "Component-lTitle-52",
+                  "labelText": "Component-labelText-65",
+                  "mTitle": "Component-mTitle-53",
+                  "margin": "Component-margin-71",
+                  "normalText": "Component-normalText-58",
+                  "placeholderText": "Component-placeholderText-62",
+                  "sLink": "Component-sLink-67",
+                  "sText": "Component-sText-64",
+                  "sTitle": "Component-sTitle-54",
+                  "selectedNavText": "Component-selectedNavText-63",
+                  "selectedText": "Component-selectedText-59",
+                  "vizText": "Component-vizText-69",
+                  "xlTitle": "Component-xlTitle-51",
+                  "xsTitle": "Component-xsTitle-55",
+                  "xxlTitle": "Component-xxlTitle-50",
+                  "xxsTitle": "Component-xxsTitle-56",
                 }
               }
               component={null}
@@ -16578,7 +16578,7 @@ body {
               variant="highlightText"
             >
               <p
-                className="Typography-highlightText-57 Typography-baseFontFamily-70 Typography-margin-71 PeriodPicker-periodText-40"
+                className="Component-highlightText-57 Component-baseFontFamily-70 Component-margin-71 PeriodPicker-periodText-40"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -17511,8 +17511,8 @@ body {
               >
                 AM
               </p>
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(Component)>
           <WithStyles(DropDownXS)
             className="PeriodPicker-icon-41"
             onClick={[Function]}

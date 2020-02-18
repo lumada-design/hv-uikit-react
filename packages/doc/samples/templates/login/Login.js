@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "@hv/uikit-react-core/dist/Header";
+import Header, { HvHeaderBrand } from "@hv/uikit-react-core/dist/NewHeader";
 import Login from "@hv/uikit-react-core/dist/Login";
-import HitachiLogo from "../home/components/hitachiLogo";
+import HitachiLogo from "../home/components/HitachiLogo";
 
 const callSimulation = () =>
   new Promise(resolve => {
@@ -12,7 +12,9 @@ const callSimulation = () =>
 
 const LoginTemplate = ({ classes }) => (
   <div>
-    <Header id="header" companyLogo={<HitachiLogo />} label="App Name" />
+    <Header id="header">
+      <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
+    </Header>
     <div className={classes.root}>
       <Login
         login={callSimulation}

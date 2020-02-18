@@ -15,7 +15,18 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import withDeprecate from "../withDeprecate";
 import styles from "./styles";
 import Header from "./Header";
 
-export default withStyles(styles, { withTheme: true })(Header);
+export default withStyles(styles, { withTheme: true })(
+  withDeprecate(
+    Header,
+    "This component is deprecated. Please use the new Header component."
+  )
+);
+
+// export non-deprecated component for tests
+const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
+
+export { HeaderWithStyles };

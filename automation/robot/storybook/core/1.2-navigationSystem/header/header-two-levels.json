@@ -1,0 +1,17 @@
+[
+    {
+        "code": "list",
+        "type": "error",
+        "typeCode": 1,
+        "message": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements (https://dequeuniversity.com/rules/axe/3.4/list?application=axeAPI)",
+        "context": "<ul id=\"hv-menubar-7\" class=\"MenuBar-list-103\"><li id=\"hv-menuItem-8\" role=\"no...</ul>",
+        "selector": "#hv-menubar-7",
+        "runner": "axe",
+        "runnerExtras": {
+            "description": "Ensures that lists are structured correctly",
+            "impact": "serious",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/list?application=axeAPI"
+        }
+    }
+]

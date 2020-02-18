@@ -135,7 +135,7 @@ describe("FileUploader validations", () => {
     expect(
       uploadWrapper
         .find("File")
-        .find("Typography")
+        .find("p")
         .at(1)
         .text()
     ).toEqual("File type not allowed for upload");
@@ -163,7 +163,7 @@ describe("FileUploader validations", () => {
     expect(
       uploadWrapper
         .find("File")
-        .find("Typography")
+        .find("p")
         .at(1)
         .text()
     ).toEqual("The file exceeds the maximum upload size");

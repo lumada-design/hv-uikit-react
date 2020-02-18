@@ -25096,11 +25096,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     </button>
   }
   tooltipData={
-    <WithStyles(Typography)
+    <WithStyles(Component)
       variant="labelText"
     >
       Grid View
-    </WithStyles(Typography)>
+    </WithStyles(Component)>
   }
   useSingle={true}
 >
@@ -25121,11 +25121,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     open={null}
     placement="top"
     title={
-      <WithStyles(Typography)
+      <WithStyles(Component)
         variant="labelText"
       >
         Grid View
-      </WithStyles(Typography)>
+      </WithStyles(Component)>
     }
   >
     <Tooltip
@@ -25520,11 +25520,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         }
       }
       title={
-        <WithStyles(Typography)
+        <WithStyles(Component)
           variant="labelText"
         >
           Grid View
-        </WithStyles(Typography)>
+        </WithStyles(Component)>
       }
     >
       <RootRef

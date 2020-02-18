@@ -18,9 +18,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvHeader from "@hv/uikit-react-core/dist/Header";
 
-storiesOf("Components", module).add("Header", () => <HvHeader />, {
+storiesOf("Components/Deprecated", module).add("Header", () => <HvHeader />, {
   title: "Header",
   description:
+    "<br><strong>This component is deprecated. Please use the new Header component described in the Navigation System folder.</strong><br><br>" +
     "A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be close. Banners should be display at the top of the screen, below a top app bar.",
   usage: "import HvHeader from '@hv/uikit-react-core/dist/Header'",
   examples: [

@@ -201,14 +201,15 @@ const Navigation = ({
   onClick,
   onKeyDown
 }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const [reference, setSubMenuReference] = useState(null);
+
   if (!navigationData) {
     return <div className={classes.emptyContainer} />;
   }
 
   const selectedSuperIndex = getSuperIndex(selected);
   const SubIndex = getSubIndex(selected);
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const [reference, setSubMenuReference] = useState(null);
 
   const menu = mapNavigationData(
     classes,

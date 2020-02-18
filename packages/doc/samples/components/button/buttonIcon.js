@@ -9,19 +9,31 @@ import {
 } from "@hv/uikit-react-icons/dist/Generic";
 
 const buttonStyles = () => ({
-  root: { margin: "10px 20px" }
+  root: {
+    margin: "10px 20px"
+  }
 });
 
 const boxStyles = {
   width: 32,
-  height: 30
+  height: 32
 };
 
 const icon = <Download boxStyles={boxStyles} />;
-const Button = withStyles(buttonStyles, { withTheme: true })(HvButton);
+const Button = withStyles(buttonStyles)(HvButton);
 
 export default (
   <>
+    <Button category="icon">
+      <Play />
+    </Button>
+    <Button category="icon">
+      <Pause />
+    </Button>
+    <Button category="icon">
+      <Stop />
+    </Button>
+    <br />
     <Button startIcon={<Play boxStyles={boxStyles} />} category="ghost">
       Play
     </Button>
