@@ -20,7 +20,6 @@ import uniqueId from "lodash/uniqueId";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import classNames from "classnames";
@@ -79,9 +78,7 @@ const HvCheckbox = props => {
     label,
     labelPlacement,
     formControlLabelProps,
-    propsIcon,
     checkboxProps,
-    propsLabel,
     ...other
   } = props;
   const materialPrimaryColor = "primary";
@@ -134,12 +131,10 @@ const HvCheckbox = props => {
           checked={checked}
           indeterminate={indeterminate}
           {...checkboxProps}
-          {...propsLabel}
           {...other}
         />
       }
       {...formControlLabelProps}
-      {...propsIcon}
     />
   );
 };
@@ -161,6 +156,10 @@ HvCheckbox.propTypes = {
      * Styles applied to the component.
      */
     container: PropTypes.string,
+    /**
+     * Style applied when focus is disabled.
+     */
+    disableFocus: PropTypes.string,
     /**
      * Styles applied to the label typography.
      */
@@ -184,7 +183,7 @@ HvCheckbox.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string,
+    icon: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.
@@ -224,23 +223,9 @@ HvCheckbox.propTypes = {
    */
   formControlLabelProps: PropTypes.instanceOf(Object),
   /**
-   * @deprecated Instead use the formControlLabelProps property
-   */
-  propsIcon: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the formControlLabelProps property"
-  ),
-  /**
    * Extra properties passed to the MUI Checkbox component.
    */
   checkboxProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the checkboxProps property
-   */
-  propsLabel: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the checkboxProps property"
-  ),
   /**
    * The theme passed by the provider.
    */
@@ -257,9 +242,7 @@ HvCheckbox.defaultProps = {
   disabled: false,
   onChange: () => {},
   formControlLabelProps: undefined,
-  propsIcon: undefined,
   checkboxProps: undefined,
-  propsLabel: undefined,
   labelPlacement: "end",
   theme: null
 };
