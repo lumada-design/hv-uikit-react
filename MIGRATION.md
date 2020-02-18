@@ -28,3 +28,5 @@ With our first major release several components where reviewed in order to remov
         - Affects:
             - Dropdown Menu
             - Vertical Navigation 
+    - KPI
+        - kpiTextConfiguration replaced by labels.
