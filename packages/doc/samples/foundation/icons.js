@@ -27,10 +27,9 @@ const styles = theme => ({
 
 const dropdownSizes = [
   { id: "0", label: "XS" },
-  { id: "1", label: "S" },
+  { id: "1", label: "S", selected: true },
   { id: "2", label: "M" },
-  { id: "3", label: "L" },
-  { id: "4", label: "default", selected: true }
+  { id: "3", label: "L" }
 ];
 
 const dropdownLabels = {
