@@ -38,7 +38,7 @@ const styles = theme => ({
   root: {
     display: "block",
     background: theme.hv.palette.atmosphere.atmo1,
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: `0px`,
     margin: "0",
     listStyle: "none"
   },

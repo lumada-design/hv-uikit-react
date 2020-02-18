@@ -37,11 +37,15 @@ storiesOf("Components/Navigation System/Vertical Navigation", module).add(
     examples: [
       {
         title: "1. Vertical navigation system",
-        src: "components/newVerticalNavigation/verticalnavigation1.js"
+        src: "components/newVerticalNavigation/verticalNavigation1.js"
       },
       {
-        title: "2. Collapsable vertical navigation system",
-        src: "components/newVerticalNavigation/verticalnavigation2.js"
+        title: "2. Vertical navigation system without actions",
+        src: "components/newVerticalNavigation/verticalNavigation2.js"
+      },
+      {
+        title: "3. Collapsable vertical navigation system",
+        src: "components/newVerticalNavigation/verticalNavigation3.js"
       }
     ]
   }

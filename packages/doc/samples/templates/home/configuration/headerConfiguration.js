@@ -1,13 +1,11 @@
 import React from "react";
-import { Play, Stop } from "@hv/uikit-react-icons/dist/Generic";
-import Badge from "@hv/uikit-react-core/dist/Badge";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
+import { Operation, Tool } from "@hv/uikit-react-icons/dist/Generic";
 
 export const headerConfiguration = [
   {
     id: "01",
     label: "System",
-    icon: <Play />,
+    icon: <Tool />,
     onClick: () => console.log("01"),
     data: [
       {
@@ -44,7 +42,7 @@ export const headerConfiguration = [
   {
     id: "02",
     label: "Administration",
-    icon: <Stop />,
+    icon: <Operation />,
     onClick: () => console.log("02"),
     data: [
       {

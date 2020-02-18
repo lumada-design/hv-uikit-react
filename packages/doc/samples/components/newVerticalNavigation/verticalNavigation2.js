@@ -17,18 +17,24 @@
 import React from "react";
 
 import VerticalNavigation, {
-  Navigation,
+  Action,
   Actions,
-  Action
+  Navigation
 } from "@hv/uikit-react-core/dist/NewVerticalNavigation";
 
-import { Play, Stop } from "@hv/uikit-react-icons/dist/Generic";
+import {
+  LogOut,
+  Tool,
+  Operation,
+  Doc,
+  User
+} from "@hv/uikit-react-icons/dist/Generic";
 
 const navigationData = [
   {
     id: "01",
     label: "System",
-    icon: <Play />,
+    icon: <Tool />,
     data: [
       {
         id: "01-01",
@@ -58,7 +64,7 @@ const navigationData = [
   {
     id: "02",
     label: "Administration",
-    icon: <Stop />,
+    icon: <Operation />,
     data: [
       {
         id: "02-01",
@@ -94,40 +100,17 @@ function MyVerticalNavigation() {
   const [value, setValue] = React.useState("02-03-02");
 
   return (
-      <VerticalNavigation isCollapsable={false}>
-        <Navigation
-          label="Example 1 navigation"
-          selected={value}
-          onClick={(event, data) => {
-            console.log(data);
-            setValue(data.id);
-          }}
-          data={navigationData}
-        />
-
-        <Actions>
-          <Action
-            label="Action 1"
-            icon={<Play />}
-            onClick={(event, data) => {
-              console.log("Action 1", event);
-            }}
-          />
-          <Action
-            label="Action 2"
-            onClick={(event, data) => {
-              console.log("Action 2", event);
-            }}
-          />
-          <Action
-            label="Action 3"
-            icon={<Stop />}
-            onClick={(event, data) => {
-              console.log("Action 3", event);
-            }}
-          />
-        </Actions>
-      </VerticalNavigation>
+    <VerticalNavigation isCollapsable={false}>
+      <Navigation
+        label="Example 1 navigation"
+        selected={value}
+        onClick={(event, data) => {
+          console.log(data);
+          setValue(data.id);
+        }}
+        data={navigationData}
+      />
+    </VerticalNavigation>
   );
 }
 

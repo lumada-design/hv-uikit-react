@@ -16,8 +16,8 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Verticalnavigation1 from "../../../../packages/doc/samples/components/newVerticalNavigation/verticalnavigation1";
-import Verticalnavigation2 from "../../../../packages/doc/samples/components/newVerticalNavigation/verticalnavigation2";
+import Verticalnavigation1 from "../../../../packages/doc/samples/components/newVerticalNavigation/verticalNavigation1";
+import Verticalnavigation2 from "../../../../packages/doc/samples/components/newVerticalNavigation/verticalNavigation3";
 import verticalnavigationcloseOnExit from "../../../../packages/doc/samples/components/newVerticalNavigation/verticalnavigationcloseonexit";
 
 
