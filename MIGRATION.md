@@ -1,7 +1,8 @@
 # Migration
 
 - [Migration](#migration)
-  - [From version 1.x.x to 2.0.x](#from-version-1xx-to-20x) -[Deprecated API and components](#deprecated-api-and-components)
+  -[From version 1.x.x to 2.0.x](#from-version-1xx-to-20x) 
+  -[Deprecated API and components](#deprecated-api-and-components)
 
 ## From version 1.x.x to 2.0.x
 
@@ -36,3 +37,10 @@ With our first major release several components where reviewed in order to remov
     - **passwordPlaceHolder** replaced by **labels.passwordPlaceHolder**
     - **rememberMeLabel** replaced by **labels.rememberMeLabel**
     - **incorrectCredentialsMessage** replaced by **labels.incorrectCredentialsMessage**
+    - List
+        - **values.leftIcon** replaced by **values.iconCallback**
+        - Affects:
+            - Dropdown Menu
+            - Vertical Navigation 
+    - KPI
+        - **kpiTextConfiguration** replaced by **labels**.

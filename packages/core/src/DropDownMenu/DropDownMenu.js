@@ -226,7 +226,7 @@ DropDownMenu.propTypes = {
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
-   * - leftIcon: The icon node to be rendered on the left.
+   * - iconCallback: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
    */
   dataList: PropTypes.arrayOf(
@@ -234,7 +234,7 @@ DropDownMenu.propTypes = {
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
-      leftIcon: PropTypes.func,
+      iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool
     })
   ).isRequired,
