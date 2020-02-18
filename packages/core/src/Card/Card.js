@@ -102,7 +102,7 @@ const Main = ({
   const defaultHeaderId = `${internalId}-header`;
   const defaultContentId = `${internalId}-content`;
   const defaultMediaId = `${internalId}-media`;
-  
+
   const isFunction = value => typeof value === "function";
 
   const clickActionHandler = evt => {
@@ -110,7 +110,7 @@ const Main = ({
       onChange(evt);
       setSelected(!selected);
     }
-    if(isFunction(onClickAction)) onClickAction(evt, !selected);
+    if (isFunction(onClickAction)) onClickAction(evt, !selected);
   };
 
   const getRole = (fSelectable, fselectOnClickAction) => {
@@ -127,23 +127,22 @@ const Main = ({
 
   const KeyUpHandler = evt => {
     if (
-      (isKeypress(evt, KeyboardCodes.Enter) && getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
+      (isKeypress(evt, KeyboardCodes.Enter) &&
+        getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
       isKeypress(evt, KeyboardCodes.SpaceBar)
     ) {
       if (isSelectable && selectOnClickAction) {
         onChange(evt);
         setSelected(!selected);
       }
-      if(isFunction(onClickAction)) onClickAction(evt, !selected);
+      if (isFunction(onClickAction)) onClickAction(evt, !selected);
     }
   };
 
   const cardButtonProps = {
     id: `${internalId}-upper-area`,
     role: getRole(isSelectable, selectOnClickAction),
-    tabIndex: getRole(isSelectable, selectOnClickAction)
-      ? "0"
-      : undefined,
+    tabIndex: getRole(isSelectable, selectOnClickAction) ? "0" : undefined,
     onClick: clickActionHandler,
     onKeyUp: KeyUpHandler,
     "aria-label": defaultCardAriaLabel,
@@ -154,7 +153,7 @@ const Main = ({
 
   const defaultContent = (
     <>
-      <Focus useFalseFocus>
+      <Focus strategy="card" useFalseFocus>
         <div
           className={classNames(classes.upperArea, {
             [classes.upperAreaSelectable]: cardButtonProps.tabIndex
