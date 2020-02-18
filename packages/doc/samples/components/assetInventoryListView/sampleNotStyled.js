@@ -157,5 +157,9 @@ const rowRenderer = (value, index) => {
 };
 
 export default (
-  <AssetInventoryListView values={values} renderer={rowRenderer} />
+  <AssetInventoryListView
+    icon={<Level1 />}
+    values={values}
+    renderer={rowRenderer}
+  />
 );
