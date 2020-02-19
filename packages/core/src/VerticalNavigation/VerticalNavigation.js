@@ -16,7 +16,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
 import classNames from "classnames";
@@ -317,7 +316,6 @@ VerticalNavigation.propTypes = {
         label: PropTypes.string.isRequired,
         selected: PropTypes.bool,
         isHidden: PropTypes.bool,
-        leftIcon: deprecatedPropType(PropTypes.func),
         iconCallback: PropTypes.func,
         showNavIcon: PropTypes.bool,
         subData: PropTypes.obj,
@@ -335,7 +333,6 @@ VerticalNavigation.propTypes = {
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       isHidden: PropTypes.bool,
-      leftIcon: deprecatedPropType(PropTypes.func),
       iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       subData: PropTypes.object,

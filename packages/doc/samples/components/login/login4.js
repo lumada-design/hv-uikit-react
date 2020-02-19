@@ -18,7 +18,7 @@ const labels =
   recoveryPlaceholder: "Recovery placeholder",
   recoveryErrorMessage: "Error message",
   userNameInputLabel: "Username label",
-  userNamePlaceHolder: "Uplaceholder",
+  userNamePlaceHolder: "User placeholder",
   passwordInputLabel: "Password input label",
   passwordPlaceHolder: "Password placeholder",
   rememberMeLabel: "Remember me label",

@@ -91,7 +91,7 @@ const styles = theme => ({
     paddingRight: `${theme.hv.spacing.xs}px`,
     paddingLeft: `${theme.hv.spacing.xs}px`,
     whiteSpace: "pre-wrap",
-    "& $p": {
+    "& > p": {
       ...theme.hv.typography.normalText,
       color: theme.hv.palette.base.base2
     }

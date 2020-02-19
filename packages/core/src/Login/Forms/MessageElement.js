@@ -25,12 +25,14 @@ import HvTypography from "../../Typography";
  * @returns {*}
  * @constructor
  */
-function MessageElement( { iconElement, showMessage, icon, message }) {
+const MessageElement = ({ iconElement, showMessage, icon, message }) => {
 
-  const iconClone = iconElement != null ?
-    React.cloneElement(iconElement, {
-      className: icon
-    }) : null;
+  const iconClone =
+    iconElement != null
+      ? React.cloneElement(iconElement, {
+          className: icon
+        })
+      : null;
 
   return (
     <div className={showMessage}>
@@ -38,7 +40,7 @@ function MessageElement( { iconElement, showMessage, icon, message }) {
       <HvTypography variant="normalText">{message}</HvTypography>
     </div>
   );
-}
+};
 
 MessageElement.propTypes = {
   /**
@@ -62,6 +64,6 @@ MessageElement.propTypes = {
 MessageElement.defaultProps = {
   iconElement: null,
   icon: null
-}
+};
 
 export default MessageElement;
