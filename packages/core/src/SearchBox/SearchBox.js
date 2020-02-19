@@ -151,7 +151,7 @@ const HvSearchBox = props => {
         labels={labels}
         id={id}
         initialValue={initialValue}
-        inputValue={value}
+        value={value}
         suggestionListCallback={suggestionListCallback}
         suggestionSelectedCallback={suggestionSelectedCallback}
         customFixedIcon={lensIcon}

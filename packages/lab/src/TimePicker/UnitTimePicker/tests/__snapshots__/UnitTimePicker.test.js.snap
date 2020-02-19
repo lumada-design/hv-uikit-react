@@ -853,10 +853,8 @@ exports[`UnitTimePicker should render correctly 1`] = `
             disabled={false}
             externalWarningTextOverride={null}
             infoIcon={false}
-            initialValue=""
             inputProps={Object {}}
             inputRef={null}
-            inputValue={30}
             isRequired={false}
             labels={
               Object {
@@ -878,6 +876,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
             validationIconVisible={false}
             validationState="empty"
             validationType="none"
+            value={30}
           >
             <HvInput
               autoFocus={false}
@@ -911,10 +910,8 @@ exports[`UnitTimePicker should render correctly 1`] = `
               disabled={false}
               externalWarningTextOverride={null}
               infoIcon={false}
-              initialValue=""
               inputProps={Object {}}
               inputRef={null}
-              inputValue={30}
               isRequired={false}
               labels={
                 Object {
@@ -936,6 +933,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               validationIconVisible={false}
               validationState="empty"
               validationType="none"
+              value={30}
             >
               <div
                 className="HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106"
@@ -946,7 +944,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   className="HvInput-labelContainer-120"
                 />
                 <WithStyles(ForwardRef(Input))
-                  aria-describedby={null}
                   autoFocus={false}
                   className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
                   classes={
@@ -1002,7 +999,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     }
                   }
                   inputRef={null}
-                  inputValue={30}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -1011,7 +1007,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   value={30}
                 >
                   <ForwardRef(Input)
-                    aria-describedby={null}
                     autoFocus={false}
                     className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
                     classes={
@@ -1078,7 +1073,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       }
                     }
                     inputRef={null}
-                    inputValue={30}
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -1087,7 +1081,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     value={30}
                   >
                     <WithStyles(ForwardRef(InputBase))
-                      aria-describedby={null}
                       autoFocus={false}
                       className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
                       classes={
@@ -1155,7 +1148,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         }
                       }
                       inputRef={null}
-                      inputValue={30}
                       multiline={false}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -1165,7 +1157,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       value={30}
                     >
                       <ForwardRef(InputBase)
-                        aria-describedby={null}
                         autoFocus={false}
                         className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
                         classes={
@@ -1237,7 +1228,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           }
                         }
                         inputRef={null}
-                        inputValue={30}
                         multiline={false}
                         onBlur={[Function]}
                         onChange={[Function]}
@@ -1248,11 +1238,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       >
                         <div
                           className="MuiInputBase-root MuiInput-root HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102 MuiInputBase-adornedEnd"
-                          inputValue={30}
                           onClick={[Function]}
                         >
                           <input
-                            aria-describedby={null}
                             autoFocus={false}
                             className="MuiInputBase-input MuiInput-input HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101 MuiInputBase-inputAdornedEnd"
                             disabled={false}

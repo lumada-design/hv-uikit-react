@@ -785,7 +785,6 @@ exports[`Input should not have the validation section 1`] = `
       disabled={false}
       externalWarningTextOverride={null}
       infoIcon={false}
-      initialValue=""
       inputProps={Object {}}
       inputRef={null}
       isRequired={false}
@@ -849,7 +848,6 @@ exports[`Input should not have the validation section 1`] = `
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
-        initialValue=""
         inputProps={Object {}}
         inputRef={null}
         isRequired={false}
@@ -890,7 +888,6 @@ exports[`Input should not have the validation section 1`] = `
             className="HvInput-labelContainer-471"
           />
           <WithStyles(ForwardRef(Input))
-            aria-describedby={null}
             autoFocus={false}
             className="HvInput-inputRoot-464"
             classes={
@@ -917,10 +914,8 @@ exports[`Input should not have the validation section 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             type="text"
-            value=""
           >
             <ForwardRef(Input)
-              aria-describedby={null}
               autoFocus={false}
               className="HvInput-inputRoot-464"
               classes={
@@ -958,10 +953,8 @@ exports[`Input should not have the validation section 1`] = `
               onFocus={[Function]}
               onKeyDown={[Function]}
               type="text"
-              value=""
             >
               <WithStyles(ForwardRef(InputBase))
-                aria-describedby={null}
                 autoFocus={false}
                 className="HvInput-inputRoot-464"
                 classes={
@@ -1001,10 +994,8 @@ exports[`Input should not have the validation section 1`] = `
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 type="text"
-                value=""
               >
                 <ForwardRef(InputBase)
-                  aria-describedby={null}
                   autoFocus={false}
                   className="HvInput-inputRoot-464"
                   classes={
@@ -1048,14 +1039,12 @@ exports[`Input should not have the validation section 1`] = `
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
                 >
                   <div
                     className="MuiInputBase-root MuiInput-root HvInput-inputRoot-464"
                     onClick={[Function]}
                   >
                     <input
-                      aria-describedby={null}
                       autoFocus={false}
                       className="MuiInputBase-input MuiInput-input HvInput-input-468"
                       disabled={false}
@@ -1067,7 +1056,6 @@ exports[`Input should not have the validation section 1`] = `
                       onKeyDown={[Function]}
                       required={false}
                       type="text"
-                      value=""
                     />
                   </div>
                 </ForwardRef(InputBase)>
@@ -1942,7 +1930,6 @@ exports[`Input should pass other props to the child input component 1`] = `
       disabled={false}
       externalWarningTextOverride={null}
       infoIcon={false}
-      initialValue=""
       inputProps={
         Object {
           "maxLength": 250,
@@ -2010,7 +1997,6 @@ exports[`Input should pass other props to the child input component 1`] = `
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
-        initialValue=""
         inputProps={
           Object {
             "maxLength": 250,
@@ -2055,7 +2041,6 @@ exports[`Input should pass other props to the child input component 1`] = `
             className="HvInput-labelContainer-625"
           />
           <WithStyles(ForwardRef(Input))
-            aria-describedby={null}
             autoFocus={false}
             className="HvInput-inputRoot-618"
             classes={
@@ -2083,10 +2068,8 @@ exports[`Input should pass other props to the child input component 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             type="text"
-            value=""
           >
             <ForwardRef(Input)
-              aria-describedby={null}
               autoFocus={false}
               className="HvInput-inputRoot-618"
               classes={
@@ -2125,10 +2108,8 @@ exports[`Input should pass other props to the child input component 1`] = `
               onFocus={[Function]}
               onKeyDown={[Function]}
               type="text"
-              value=""
             >
               <WithStyles(ForwardRef(InputBase))
-                aria-describedby={null}
                 autoFocus={false}
                 className="HvInput-inputRoot-618"
                 classes={
@@ -2169,10 +2150,8 @@ exports[`Input should pass other props to the child input component 1`] = `
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 type="text"
-                value=""
               >
                 <ForwardRef(InputBase)
-                  aria-describedby={null}
                   autoFocus={false}
                   className="HvInput-inputRoot-618"
                   classes={
@@ -2217,14 +2196,12 @@ exports[`Input should pass other props to the child input component 1`] = `
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
                 >
                   <div
                     className="MuiInputBase-root MuiInput-root HvInput-inputRoot-618"
                     onClick={[Function]}
                   >
                     <input
-                      aria-describedby={null}
                       autoFocus={false}
                       className="MuiInputBase-input MuiInput-input HvInput-input-622"
                       disabled={false}
@@ -2237,7 +2214,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                       onKeyDown={[Function]}
                       required={false}
                       type="text"
-                      value=""
                     />
                   </div>
                 </ForwardRef(InputBase)>
@@ -3112,7 +3088,6 @@ exports[`Input should render correctly 1`] = `
       disabled={false}
       externalWarningTextOverride={null}
       infoIcon={false}
-      initialValue=""
       inputProps={Object {}}
       inputRef={null}
       isRequired={false}
@@ -3176,7 +3151,6 @@ exports[`Input should render correctly 1`] = `
         disabled={false}
         externalWarningTextOverride={null}
         infoIcon={false}
-        initialValue=""
         inputProps={Object {}}
         inputRef={null}
         isRequired={false}
@@ -3217,7 +3191,6 @@ exports[`Input should render correctly 1`] = `
             className="HvInput-labelContainer-86"
           />
           <WithStyles(ForwardRef(Input))
-            aria-describedby={null}
             autoFocus={false}
             className="HvInput-inputRoot-79"
             classes={
@@ -3244,10 +3217,8 @@ exports[`Input should render correctly 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             type="text"
-            value=""
           >
             <ForwardRef(Input)
-              aria-describedby={null}
               autoFocus={false}
               className="HvInput-inputRoot-79"
               classes={
@@ -3285,10 +3256,8 @@ exports[`Input should render correctly 1`] = `
               onFocus={[Function]}
               onKeyDown={[Function]}
               type="text"
-              value=""
             >
               <WithStyles(ForwardRef(InputBase))
-                aria-describedby={null}
                 autoFocus={false}
                 className="HvInput-inputRoot-79"
                 classes={
@@ -3328,10 +3297,8 @@ exports[`Input should render correctly 1`] = `
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 type="text"
-                value=""
               >
                 <ForwardRef(InputBase)
-                  aria-describedby={null}
                   autoFocus={false}
                   className="HvInput-inputRoot-79"
                   classes={
@@ -3375,14 +3342,12 @@ exports[`Input should render correctly 1`] = `
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
                 >
                   <div
                     className="MuiInputBase-root MuiInput-root HvInput-inputRoot-79"
                     onClick={[Function]}
                   >
                     <input
-                      aria-describedby={null}
                       autoFocus={false}
                       className="MuiInputBase-input MuiInput-input HvInput-input-83"
                       disabled={false}
@@ -3394,7 +3359,6 @@ exports[`Input should render correctly 1`] = `
                       onKeyDown={[Function]}
                       required={false}
                       type="text"
-                      value=""
                     />
                   </div>
                 </ForwardRef(InputBase)>

@@ -13,7 +13,7 @@ function WrapperComp() {
     <HvInput
       id="inputControlled"
       labels={labels}
-      inputValue={value}
+      value={value}
       onChange={value => setValue(value)}
     />
   );

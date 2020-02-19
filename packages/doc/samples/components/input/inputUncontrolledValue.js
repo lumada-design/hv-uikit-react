@@ -35,7 +35,7 @@ function WrapperComp() {
       <Button style={btnStyle} onClick={() => setValue("")}>
         Clear value
       </Button>
-      <HvInput labels={labels} inputValue={value} onChange={setterValue} />
+      <HvInput labels={labels} value={value} onChange={setterValue} />
     </>
   );
 }

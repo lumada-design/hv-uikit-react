@@ -19,7 +19,6 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import Input from "@material-ui/core/Input";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
 import { KeyboardCodes, isKeypress, isIE } from "@hv/uikit-common-utils/dist";
@@ -35,33 +34,20 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
 
-    const {
-      id,
-      validationState,
-      value,
-      initialValue,
-      inputTextConfiguration,
-      labels
-    } = props;
-
-    const definedLabels = inputTextConfiguration || labels;
-
-    const val = value || initialValue;
+    const { id, validationState, value, initialValue, labels } = props;
 
     this.state = {
       internalId: id || uniqueId("hv-input-"),
       validationState,
-      value: val,
+      value: value || initialValue,
       suggestionValues: null,
       warningText:
-        validationState === validationStates.invalid
-          ? definedLabels.warningText
-          : null
+        validationState === validationStates.invalid ? labels.warningText : null
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { inputValue: nextValue, validationState } = nextProps;
+    const { value: nextValue, validationState } = nextProps;
     const { value: oldValue } = prevState;
 
     if (nextValue !== undefined && nextValue !== oldValue) {
@@ -167,7 +153,7 @@ class HvInput extends React.Component {
    */
   onInputBlurHandler = () => {
     const { value } = this.state;
-    const { onBlur, inputTextConfiguration, labels, isRequired } = this.props;
+    const { onBlur, labels, isRequired } = this.props;
     const {
       validation,
       validationType,
@@ -175,15 +161,13 @@ class HvInput extends React.Component {
       maxCharQuantity
     } = this.props;
 
-    const definedLabels = inputTextConfiguration || labels;
-
     let validationState;
     let warningText = null;
 
     if (!value || value === "") {
       if (isRequired) {
         validationState = validationStates.invalid;
-        warningText = definedLabels.requiredWarningText;
+        warningText = labels.requiredWarningText;
       } else {
         validationState = validationStates.empty;
       }
@@ -201,12 +185,12 @@ class HvInput extends React.Component {
         validationState = validationStates.invalid;
 
         if (maxCharQuantity && value.length > maxCharQuantity) {
-          warningText = definedLabels.maxCharQuantityWarningText;
+          warningText = labels.maxCharQuantityWarningText;
         } else if (minCharQuantity && value.length < minCharQuantity) {
-          warningText = definedLabels.minCharQuantityWarningText;
+          warningText = labels.minCharQuantityWarningText;
         } else {
           // eslint-disable-next-line prefer-destructuring
-          warningText = definedLabels.warningText;
+          warningText = labels.warningText;
         }
       }
     }
@@ -287,7 +271,6 @@ class HvInput extends React.Component {
   render() {
     const {
       labels,
-      inputTextConfiguration,
       classes,
       className,
       id,
@@ -295,13 +278,10 @@ class HvInput extends React.Component {
       disabled,
       isRequired,
       infoIcon,
-      iconVisible,
       validationIconVisible,
       disableClear,
-      iconPosition,
       customFixedIcon,
       validationIconPosition,
-      validate,
       showInfo,
       validationType,
       validationState,
@@ -331,8 +311,6 @@ class HvInput extends React.Component {
       suggestionValues
     } = this.state;
 
-    const definedLabels = inputTextConfiguration || labels;
-
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
@@ -356,7 +334,7 @@ class HvInput extends React.Component {
       showValidationIcon,
       stateValidationState,
       showClear,
-      definedLabels.clearButtonLabel,
+      labels.clearButtonLabel,
       customFixedIcon
     );
 
@@ -370,7 +348,7 @@ class HvInput extends React.Component {
         onBlur={this.onContainerBlurHandler}
       >
         <div className={classes.labelContainer}>
-          {definedLabels.inputLabel && (
+          {labels.inputLabel && (
             <HvTypography
               variant="labelText"
               component="label"
@@ -380,15 +358,15 @@ class HvInput extends React.Component {
                 [classes.labelDisable]: disabled
               })}
             >
-              {definedLabels.inputLabel}
+              {labels.inputLabel}
               {isRequired && <span aria-hidden="true">*</span>}
             </HvTypography>
           )}
 
-          {showInfo && infoIcon && definedLabels.infoText && (
+          {showInfo && infoIcon && labels.infoText && (
             <div
               aria-hidden="true"
-              title={definedLabels.infoText}
+              title={labels.infoText}
               className={classes.infoIconContainer}
             >
               <InfoS />
@@ -399,9 +377,9 @@ class HvInput extends React.Component {
         <Input
           id={`${internalId}-input`}
           aria-describedby={
-            showInfo && definedLabels.infoText
+            showInfo && labels.infoText
               ? `${internalId}-description`
-              : null
+              : undefined
           }
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
@@ -409,9 +387,7 @@ class HvInput extends React.Component {
           onFocus={this.onFocusHandler}
           value={stateValue}
           disabled={disabled}
-          {...(definedLabels.placeholder && {
-            placeholder: definedLabels.placeholder
-          })}
+          placeholder={labels.placeholder || undefined}
           type={password ? "password" : "text"}
           classes={{
             input: classes.input,
@@ -433,16 +409,12 @@ class HvInput extends React.Component {
             ...inputProps
           }}
           inputRef={inputRef}
-          {...((iconPosition === "right" ||
-            (iconPosition === undefined &&
-              validationIconPosition === "right")) &&
-            (iconVisible || iconVisible === undefined) && {
-              endAdornment: adornment
-            })}
-          {...((iconPosition === "left" || validationIconPosition === "left") &&
-            (iconVisible || iconVisible === undefined) && {
-              startAdornment: adornment
-            })}
+          {...(validationIconPosition === "right" && {
+            endAdornment: adornment
+          })}
+          {...(validationIconPosition === "left" && {
+            startAdornment: adornment
+          })}
           {...others}
         />
 
@@ -459,7 +431,7 @@ class HvInput extends React.Component {
           </div>
         )}
 
-        {showInfo && definedLabels.infoText && (
+        {showInfo && labels.infoText && (
           <HvTypography
             id={`${internalId}-description`}
             variant="infoText"
@@ -471,7 +443,7 @@ class HvInput extends React.Component {
                   : "none"
             }}
           >
-            {definedLabels.infoText}
+            {labels.infoText}
           </HvTypography>
         )}
 
@@ -488,9 +460,7 @@ class HvInput extends React.Component {
           aria-controls={`${internalId}-input`}
           aria-atomic="true"
           aria-relevant="additions text"
-          aria-labelledby={
-            definedLabels.inputLabel ? `${internalId}-label` : null
-          }
+          aria-labelledby={labels.inputLabel ? `${internalId}-label` : null}
         >
           {stateValidationState === validationStates.invalid
             ? externalWarningTextOverride || warningText
@@ -589,30 +559,6 @@ HvInput.propTypes = {
    * - maxCharQuantityWarningText: the message that appears when there are too many characters.
    * - minCharQuantityWarningText: the message that appears when there are too few characters.
    * - requiredWarningText: the message that appears when the input is empty and required.
-   * @deprecated Instead use the labels property
-   */
-  inputTextConfiguration: deprecatedPropType(
-    PropTypes.shape({
-      inputLabel: PropTypes.string,
-      placeholder: PropTypes.string,
-      infoText: PropTypes.string,
-      warningText: PropTypes.string,
-      maxCharQuantityWarningText: PropTypes.string,
-      minCharQuantityWarningText: PropTypes.string,
-      requiredWarningText: PropTypes.string
-    }),
-    "Instead use the labels property"
-  ),
-  /**
-   * An Object containing the various text associated with the input.
-   *
-   * - inputLabel: the label on top of the input.
-   * - placeholder: the placeholder value of the input.
-   * - infoText: the default value of the info text below the input.
-   * - warningText: the value when a validation fails.
-   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * - minCharQuantityWarningText: the message that appears when there are too few characters.
-   * - requiredWarningText: the message that appears when the input is empty and required.
    * - clearButtonLabel: the label of the clear button.
    */
   labels: PropTypes.shape({
@@ -674,14 +620,6 @@ HvInput.propTypes = {
    */
   suggestionSelectedCallback: PropTypes.func,
   /**
-   * If `true` validation is shown, `false` otherwise.
-   *  * @deprecated Instead use the showInfo property
-   */
-  validate: deprecatedPropType(
-    PropTypes.bool,
-    "Instead use the showInfo property"
-  ),
-  /**
    * If `true` information label is shown, `false` otherwise.
    */
   showInfo: PropTypes.bool,
@@ -692,29 +630,19 @@ HvInput.propTypes = {
    */
   validation: PropTypes.func,
   /**
-   * The initial value of the input.
-   * @deprecated Instead use the initialValue property
+   * The value of the input, when controlled.
    */
-  value: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the initialValue property"
-  ),
+  value: PropTypes.string,
   /**
-   * The initial value of the input.
+   * The initial value of the input, when uncontrolled.
    */
   initialValue: PropTypes.string,
-  /**
-   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
-   * @deprecated will be replaced by value
-   */
-  inputValue: PropTypes.string,
   /**
    * If `true` it should autofocus.
    */
   autoFocus: PropTypes.bool,
   /**
    * The initial state of the input.
-   *
    * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
@@ -723,14 +651,6 @@ HvInput.propTypes = {
    */
   infoIcon: PropTypes.bool,
   /**
-   * If `true` the icon is visible, `false` otherwise
-   * @deprecated Instead use the validationIconVisible property
-   */
-  iconVisible: deprecatedPropType(
-    PropTypes.bool,
-    " Instead use the validationIconVisible property"
-  ),
-  /**
    * If `true` the validation icon is visible, `false` otherwise
    */
   validationIconVisible: PropTypes.bool,
@@ -738,14 +658,6 @@ HvInput.propTypes = {
    * If `true` the clear button is disabled if `false` is enable
    */
   disableClear: PropTypes.bool,
-  /**
-   * The icon position of the input. It is recommended to use the provided iconPositions object to set this value.
-   * @deprecated Instead use the validationIconPosition property
-   */
-  iconPosition: deprecatedPropType(
-    PropTypes.oneOf(["left", "right"]),
-    "Instead use the validationIconPosition property"
-  ),
   /**
    * The icon position of the input. It is recommended to use the provided validationIconPosition object to set this value.
    */
@@ -778,7 +690,6 @@ HvInput.defaultProps = {
   className: "",
   id: undefined,
   password: false,
-  inputTextConfiguration: undefined,
   labels: {
     inputLabel: "",
     placeholder: "",
@@ -793,20 +704,16 @@ HvInput.defaultProps = {
   inputRef: null,
   customFixedIcon: null,
   infoIcon: false,
-  iconVisible: undefined,
   validationIconVisible: true,
   disableClear: false,
-  iconPosition: undefined,
   validationIconPosition: "right",
-  validate: undefined,
   showInfo: true,
   validation: null,
   maxCharQuantity: null,
   minCharQuantity: null,
   validationType: "none",
   value: undefined,
-  initialValue: "",
-  inputValue: undefined,
+  initialValue: undefined,
   autoFocus: false,
   validationState: validationStates.empty,
   disabled: false,

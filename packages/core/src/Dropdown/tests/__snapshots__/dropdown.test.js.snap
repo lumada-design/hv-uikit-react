@@ -2563,7 +2563,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               className="HvInput-labelContainer-1017"
                                             />
                                             <WithStyles(ForwardRef(Input))
-                                              aria-describedby={null}
                                               autoFocus={false}
                                               className="HvInput-inputRoot-1010"
                                               classes={
@@ -2638,7 +2637,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               value=""
                                             >
                                               <ForwardRef(Input)
-                                                aria-describedby={null}
                                                 autoFocus={false}
                                                 className="HvInput-inputRoot-1010"
                                                 classes={
@@ -2724,7 +2722,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 value=""
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
-                                                  aria-describedby={null}
                                                   autoFocus={false}
                                                   className="HvInput-inputRoot-1010"
                                                   classes={
@@ -2812,7 +2809,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   value=""
                                                 >
                                                   <ForwardRef(InputBase)
-                                                    aria-describedby={null}
                                                     autoFocus={false}
                                                     className="HvInput-inputRoot-1010"
                                                     classes={
@@ -2908,7 +2904,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       onClick={[Function]}
                                                     >
                                                       <input
-                                                        aria-describedby={null}
                                                         aria-label="search"
                                                         autoFocus={false}
                                                         className="MuiInputBase-input MuiInput-input HvInput-input-1014 MuiInputBase-inputAdornedEnd"
@@ -10876,7 +10871,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               className="HvInput-labelContainer-64"
                                             />
                                             <WithStyles(ForwardRef(Input))
-                                              aria-describedby={null}
                                               autoFocus={false}
                                               className="HvInput-inputRoot-57"
                                               classes={
@@ -10951,7 +10945,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               value=""
                                             >
                                               <ForwardRef(Input)
-                                                aria-describedby={null}
                                                 autoFocus={false}
                                                 className="HvInput-inputRoot-57"
                                                 classes={
@@ -11037,7 +11030,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 value=""
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
-                                                  aria-describedby={null}
                                                   autoFocus={false}
                                                   className="HvInput-inputRoot-57"
                                                   classes={
@@ -11125,7 +11117,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   value=""
                                                 >
                                                   <ForwardRef(InputBase)
-                                                    aria-describedby={null}
                                                     autoFocus={false}
                                                     className="HvInput-inputRoot-57"
                                                     classes={
@@ -11221,7 +11212,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       onClick={[Function]}
                                                     >
                                                       <input
-                                                        aria-describedby={null}
                                                         aria-label="search"
                                                         autoFocus={false}
                                                         className="MuiInputBase-input MuiInput-input HvInput-input-61 MuiInputBase-inputAdornedEnd"

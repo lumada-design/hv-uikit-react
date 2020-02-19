@@ -164,7 +164,7 @@ class HvTextArea extends React.Component {
             id={id}
             labels={labels}
             initialValue={this.limitValue(val)}
-            inputValue={this.limitValue(value)}
+            value={this.limitValue(value)}
             onChange={this.onChangeHandler}
             multiline
             rows={rows}
@@ -334,7 +334,7 @@ HvTextArea.propTypes = {
    */
   resizable: PropTypes.bool,
   /**
-   * Auto-scroll: automatically scroll to the end on inputValue changes.
+   * Auto-scroll: automatically scroll to the end on value changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
   autoScroll: PropTypes.bool
