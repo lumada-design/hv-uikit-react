@@ -282,6 +282,7 @@ class Table extends React.Component {
           id={`${internalId}-select-${props.id}`}
           checked={isSelected(props.id, selection)}
           onChange={() => this.toggleSelection(props.id)}
+          onClick={event => event.stopPropagation()}
         />
       )
     };
@@ -529,8 +530,9 @@ class Table extends React.Component {
               disablePortal={false}
               icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
               dataList={secondaryActions}
-              onClick={event => {
-                event.action(props.original);
+              onClick={(item, event) => {
+                event.stopPropagation();
+                item.action(props.original);
               }}
             />
           )

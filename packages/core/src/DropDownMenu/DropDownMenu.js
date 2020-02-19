@@ -59,8 +59,9 @@ const DropDownMenu = ({
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
-  const handleToggle = () => {
+  const handleToggle = event => {
     setOpen(prevOpen => !prevOpen);
+    if (onClick) onClick(null, event);
   };
 
   const handleClose = event => {
@@ -73,18 +74,18 @@ const DropDownMenu = ({
   /**
    * If the ESCAPE key is pressed the close handler must beSpace called.
    *Space
-   * @param evt
+   * @param event
    */
-  const handleKeyDown = evt => {
-    if (isKeypress(evt, KeyboardCodes.Esc)) {
-      handleClose(evt);
+  const handleKeyDown = event => {
+    if (isKeypress(event, KeyboardCodes.Esc)) {
+      handleClose(event);
     }
-    if (isKeypress(evt, KeyboardCodes.Tab)) {
-      const node = evt.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
+    if (isKeypress(event, KeyboardCodes.Tab)) {
+      const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleToggle();
+      handleToggle(event);
     }
-    evt.preventDefault();
+    event.preventDefault();
   };
 
   const handleKeyboardToggle = event => {
@@ -94,7 +95,7 @@ const DropDownMenu = ({
       (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
       (isKeypress(event, KeyboardCodes.ArrowUp) && open)
     ) {
-      handleToggle();
+      handleToggle(event);
       event.preventDefault();
     }
   };
@@ -148,11 +149,9 @@ const DropDownMenu = ({
                 id={`${internalId}-list`}
                 values={dataList}
                 selectable={false}
-                onClick={item => {
-                  if (!keepOpened) {
-                    setOpen(false);
-                  }
-                  onClick(item);
+                onClick={(item, event) => {
+                  if (!keepOpened) setOpen(false);
+                  if (onClick) onClick(item, event);
                 }}
                 condensed
               />
