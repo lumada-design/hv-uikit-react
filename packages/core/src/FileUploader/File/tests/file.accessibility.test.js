@@ -38,15 +38,8 @@ const dataSuccess = {
 };
 
 const DEFAULT_LABELS = {
-  progressConjunction: "of",
-  dropzoneLabel: "My Label",
-  sizeWarningLabel: "Max. file size:",
-  dragText: "Drag and drop or ",
-  selectFilesText: "Select files",
-  dropFilesText: "Drop files here",
-  fileSizeError: "The file exceeds the maximum upload size",
-  fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel:"Remove File"
+  progressConjunctionLabel: "of",
+  removeFileButtonLabel: "Remove File"
 };
 
 describe("FileA11Y", () => {
@@ -57,14 +50,12 @@ describe("FileA11Y", () => {
           data={dataSuccess}
           onFilesAdded={() => {}}
           onFileRemoved={() => {}}
-          labels={DEFAULT_LABELS}
-          unit="mb"
+          {...DEFAULT_LABELS}
         />
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
-
+    const results = await axe(wrapper.html());
     expect(results).toHaveNoViolations();
   });
 });

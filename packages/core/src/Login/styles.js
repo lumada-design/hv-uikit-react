@@ -14,42 +14,26 @@
  * limitations under the License.
  */
 
-import {
-  convertHexToRGB,
-  fade
-} from "@material-ui/core/styles/colorManipulator";
+import { fade, hexToRgb } from "@material-ui/core/styles";
 
-const styles = theme => {
-  let convertedColor;
-
-  if (theme && theme.hv.palette.atmosphere.atmo2) {
-    convertedColor = fade(
-        convertHexToRGB(theme.hv.palette.atmosphere.atmo2),
-        1
-    );
+const styles = theme => ({
+  container: {
+    background: `0 / auto`,
+    justifyContent: "flex-end",
+    width: "100%",
+    height: "100%",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "bottom"
+  },
+  root: {},
+  rightContainer: {
+    background: fade(hexToRgb(theme.hv.palette.atmosphere.atmo2), 1),
+    position: "relative",
+    maxWidth: 500
+  },
+  panelPosition: {
+    position: "absolute"
   }
-
-  return {
-    container: {
-      background: `0 / auto`,
-      justifyContent: "flex-end",
-      width: "100%",
-      height: "100%",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "bottom",
-    },
-    root: {
-
-    },
-    rightContainer: {
-      background: convertedColor,
-      position:"relative",
-      maxWidth:500
-    },
-    panelPosition:{
-      position:"absolute"
-    }
-  };
-};
+});
 
 export default styles;

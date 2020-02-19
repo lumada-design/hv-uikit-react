@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-import {
-  convertHexToRGB,
-  fade
-} from "@material-ui/core/styles/colorManipulator";
+import { fade, hexToRgb } from "@material-ui/core/styles";
 
 const styles = theme => ({
   actionContainer: {
@@ -34,7 +31,7 @@ const styles = theme => ({
     alignSelf: "flex-end",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: fade(convertHexToRGB(theme.hv.palette.base.base1), 0.3)
+      backgroundColor: fade(hexToRgb(theme.hv.palette.base.base1), 0.3)
     }
   },
   iconContainer: {

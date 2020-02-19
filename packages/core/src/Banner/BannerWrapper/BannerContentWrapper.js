@@ -29,20 +29,21 @@ import ActionContainer from "./ActionContainer";
  * @returns {*}
  * @constructor
  */
-function HvBannerContentWrapper({
-  id,
-  classes,
-  showIcon,
-  customIcon,
-  variant,
-  onClose,
-  actions,
-  actionsCallback,
-  actionsPosition,
-  theme,
-  content,
-  ...other
-}) {
+const HvBannerContentWrapper = React.forwardRef((props, ref) => {
+  const {
+    id,
+    classes,
+    showIcon,
+    customIcon,
+    variant,
+    onClose,
+    actions,
+    actionsCallback,
+    actionsPosition,
+    theme,
+    content,
+    ...other
+  } = props;
   const icon =
     customIcon ||
     (showIcon && severityIcon(mapSeverityToVariant(variant), theme));
@@ -59,6 +60,7 @@ function HvBannerContentWrapper({
   return (
     <div className={classes.outContainer}>
       <SnackbarContent
+        ref={ref}
         id={id}
         classes={{
           root: classes.root,
@@ -91,7 +93,7 @@ function HvBannerContentWrapper({
       />
     </div>
   );
-}
+});
 
 HvBannerContentWrapper.propTypes = {
   /**
@@ -157,7 +159,7 @@ HvBannerContentWrapper.propTypes = {
 
 HvBannerContentWrapper.defaultProps = {
   id: null,
-  classes: "",
+  classes: null,
   content: "",
   showIcon: false,
   customIcon: null,

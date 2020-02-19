@@ -14,51 +14,33 @@
  * limitations under the License.
  */
 
-import {
-  convertHexToRGB,
-  fade
-} from "@material-ui/core/styles/colorManipulator";
+import { fade, hexToRgb } from "@material-ui/core/styles";
 
-const styles = theme => {
-  let convertedColor;
-  let dropShadowColor;
-  if (theme && theme.hv.palette.atmosphere.atmo5) {
-    convertedColor = fade(
-      convertHexToRGB(theme.hv.palette.atmosphere.atmo5),
-      0.8
-    );
-  }
-
-  if (theme && theme.hv.palette.accent.acce1) {
-    dropShadowColor = fade(
-      convertHexToRGB(theme.hv.palette.accent.acce1),
+const styles = theme => ({
+  background: {
+    background: fade(hexToRgb(theme.hv.palette.atmosphere.atmo5), 0.8)
+  },
+  paper: {
+    background: `${theme.hv.palette.atmosphere.atmo1}`,
+    padding: "0px",
+    overflow: "hidden",
+    filter: `drop-shadow(0px 2px 12px ${fade(
+      hexToRgb(theme.hv.palette.accent.acce1),
       0.12
-    );
+    )})`
+  },
+  closeButton: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+    padding: 0,
+    margin: `${theme.hv.spacing.xs}px`,
+    minWidth: "unset"
+  },
+  iconContainer: {
+    width: "32px",
+    height: "32px"
   }
-
-  return {
-    background: {
-      background: convertedColor
-    },
-    paper: {
-      background: `${theme.hv.palette.atmosphere.atmo1}`,
-      padding: "0px",
-      overflow: "hidden",
-      filter: `drop-shadow(0px 2px 12px ${dropShadowColor})`
-    },
-    closeButton: {
-      position: "absolute",
-      right: 0,
-      top: 0,
-      padding: 0,
-      margin: `${theme.hv.spacing.xs}px`,
-      minWidth: "unset"
-    },
-    iconContainer: {
-      width: "32px",
-      height: "32px"
-    }
-  };
-};
+});
 
 export default styles;

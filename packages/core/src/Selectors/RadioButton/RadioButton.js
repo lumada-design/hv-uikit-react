@@ -79,7 +79,6 @@ const HvRadio = props => {
 
   const icons = getIcons(props);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
-  const materialPrimaryColor = "primary";
   const [isFocusDisabled, disableFocus] = useState(false);
   const [internalId] = useState(id || uniqueId("hv-radiobutton-"));
 
@@ -116,7 +115,7 @@ const HvRadio = props => {
           className={classes.radio}
           icon={icons.emptyIcon}
           checkedIcon={icons.checkedIcon}
-          color={materialPrimaryColor}
+          color="default"
           disabled={disabled}
           disableRipple
           onChange={onLocalChange}

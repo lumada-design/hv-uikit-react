@@ -221,9 +221,9 @@ describe("<DatePicker /> with Single Calendar mode", () => {
 
   it("should have the Calendar component with the same selected date as the received value property", () => {
     wrapper.find(CalendarIcon).simulate("click");
-    const calendarInstance = wrapper.find(Calendar).instance();
+    const calendarInstance = wrapper.find(Calendar);
 
-    expect(calendarInstance.props.selectedDate).toEqual(
+    expect(calendarInstance.prop("selectedDate")).toEqual(
       convertISOStringDateToDate("2019-01-01")
     );
   });
@@ -523,7 +523,7 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should have the Typography component with the same text as the one passed on the `title` prop", () => {
     const typographyElement = wrapper.find(Typography);
-    expect(typographyElement.props().children).toBe(labels.title);
+    expect(typographyElement.prop("children")).toBe(labels.title);
   });
 
   it("should call the onChange callback if defined", () => {

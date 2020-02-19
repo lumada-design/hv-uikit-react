@@ -192,7 +192,7 @@ const Main = ({
       </Focus>
       {footerExist && (
         <Footer
-          disableActionSpacing // disableSpacing Mui v4
+          disableSpacing
           checkboxValue={checkboxValue}
           actions={actions}
           id={defaultFooterId}

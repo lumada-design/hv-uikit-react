@@ -20,8 +20,7 @@ import React from "react";
 import { mount } from "enzyme";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import TooltipWithStyles from "..";
-import Tooltip from "../Tooltip";
+import Tooltip from "..";
 import HvProvider from "../../Provider";
 import HvTypography from "../../Typography";
 import tooltipStyling from "../styles";
@@ -61,10 +60,14 @@ describe("Single Line Tooltip", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <Tooltip
-        tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}
-        tooltipAnchor={Anchor}
-      />
+      <HvProvider>
+        <Tooltip
+          tooltipData={
+            <HvTypography variant="labelText">Grid View</HvTypography>
+          }
+          tooltipAnchor={Anchor}
+        />
+      </HvProvider>
     );
   });
 
@@ -99,7 +102,7 @@ describe("Multi Line Tooltip - No Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TooltipWithStyles
+        <Tooltip
           tooltipData={<TooltipData />}
           tooltipAnchor={Anchor}
           useSingle={false}
@@ -138,7 +141,7 @@ describe("Multi Line Tooltip - With Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TooltipWithStyles
+        <Tooltip
           tooltipData={<TooltipData />}
           tooltipAnchor={Anchor}
           useSingle={false}

@@ -45,7 +45,7 @@ const ControlledPagination = () => {
         viewConfiguration={{
           onSelection: event => handleSelection(event.target.value),
           isSelectable: true,
-          breakpoints: { xs: "false", sm: "false", md: 4, lg: 3, xl: 3 }
+          breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 }
         }}
       />
       <p />

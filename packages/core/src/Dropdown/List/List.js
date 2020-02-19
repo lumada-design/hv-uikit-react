@@ -28,6 +28,7 @@ import Actions from "../Actions";
 import Popper from "../../utils/Popper";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
+import ConditionalWrapper from "../../utils/ConditionalWrapper";
 
 const List = ({
   id,
@@ -44,6 +45,7 @@ const List = ({
   disablePortal,
   isOpen,
   anchorEl,
+  listProps,
   singleSelectionToggle
 }) => {
   const [searchStr, setSearchStr] = useState();
@@ -180,7 +182,7 @@ const List = ({
         label={selectionLabel}
         onChange={() => handleSelectAll()}
         classes={{ container: classes.selection }}
-        className={classNames([classes.selectAll])}
+        className={classes.selectAll}
         indeterminate={anySelected && !allSelected}
         checked={allSelected}
       />
@@ -295,14 +297,10 @@ const List = ({
   const renderInnerRender = () => (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classNames([
-        classes.list,
-        classes.listClosed,
-        {
-          [classes.listOpenDown]: isOpen && !positionUp,
-          [classes.listOpenUp]: isOpen && positionUp
-        }
-      ])}
+      className={classNames(classes.list, classes.listClosed, {
+        [classes.listOpenDown]: isOpen && !positionUp,
+        [classes.listOpenUp]: isOpen && positionUp
+      })}
       onKeyDown={handleKeyDown}
     >
       {!positionUp && <div className={classes.listBorderDown} />}
@@ -326,6 +324,7 @@ const List = ({
               labels={newLabels}
               selectDefault={selectDefault}
               hasTooltips={hasTooltips}
+              listProps={listProps}
               selectable
               condensed
               singleSelectionToggle={singleSelectionToggle}
@@ -353,11 +352,12 @@ const List = ({
       style={{ zIndex: theme.zIndex.tooltip }}
     >
       <ClickAwayListener onClickAway={e => handleCancel(e)}>
-        {showList ? (
-          <FocusTrap>{renderInnerRender()}</FocusTrap>
-        ) : (
-          renderInnerRender()
-        )}
+        <ConditionalWrapper
+          condition={showList}
+          wrapper={c => <FocusTrap>{c}</FocusTrap>}
+        >
+          {renderInnerRender()}
+        </ConditionalWrapper>
       </ClickAwayListener>
     </Popper>
   );
@@ -427,7 +427,11 @@ List.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool.isRequired
+  singleSelectionToggle: PropTypes.bool.isRequired,
+  /**
+   * Properties passed to the ul element.
+   */
+  listProps: PropTypes.instanceOf(Object)
 };
 
 List.defaultProps = {
@@ -440,7 +444,8 @@ List.defaultProps = {
   hasTooltips: false,
   disablePortal: true,
   isOpen: false,
-  anchorEl: null
+  anchorEl: null,
+  listProps: {}
 };
 
 export default List;

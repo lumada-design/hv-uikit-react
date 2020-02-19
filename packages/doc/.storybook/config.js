@@ -15,8 +15,6 @@ const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
 
-let appTheme = "dawn";
-
 addParameters({
   options: {
     theme: create({
@@ -30,26 +28,25 @@ addParameters({
 
 addDecorator(withLayout());
 
-const App = ({ story, initialTheme }) => {
+const App = ({ story, initialTheme = "dawn" }) => {
   const [theme, setTheme] = useState(initialTheme);
 
   const switchTheme = () => {
-    let newTheme = theme === "dawn" ? "wicked" : "dawn";
+    const newTheme = theme === "dawn" ? "wicked" : "dawn";
     setTheme(newTheme);
-    appTheme = newTheme;
   };
 
   return (
     <HvProvider
       router={routerWrapper}
       uiKitTheme={theme}
-      changeTheme={() => switchTheme()}
+      changeTheme={switchTheme}
     >
       {story()}
     </HvProvider>
   );
 };
 
-addDecorator(story => <App story={story} initialTheme={appTheme} />);
+addDecorator(story => <App story={story} />);
 
 configure(loadStories, module);

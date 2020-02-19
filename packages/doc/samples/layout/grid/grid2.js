@@ -1,8 +1,7 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvGrid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, withTheme } from "@material-ui/core";
 
 const Box = ({ text }) => (
   <div
@@ -26,7 +25,7 @@ const Box = ({ text }) => (
   </div>
 );
 
-const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
+const GridExample = withTheme(({ theme }) => {
   const findBreakpoint = () =>
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
       const matches = useMediaQuery(theme.breakpoints.only(key));

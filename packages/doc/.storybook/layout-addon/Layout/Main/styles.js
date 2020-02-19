@@ -16,12 +16,11 @@
 
 const styles = theme => ({
   header: {
-    backgroundColor: theme.hv.palette.accent.acce0,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     ...theme.hv.typography.normalText,
     borderBottomColor: theme.hv.palette.atmosphere.atmo5,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
-    fontSize: 14,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -48,7 +47,7 @@ const styles = theme => ({
   },
   description: {
     ...theme.hv.typography.normalText,
-    marginBottom: 20,
+    marginBottom: theme.hv.spacing.sm,
     maxWidth: 900
   }
 });

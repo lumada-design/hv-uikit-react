@@ -92,50 +92,50 @@ describe("DropDownMenu", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens and closes mixing mouse click, Enter, and Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
   });
 
@@ -174,50 +174,50 @@ describe("DropDownMenu", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens and closes mixing mouse click, Enter, and Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("closes after selecting one option", () => {
@@ -237,11 +237,11 @@ describe("DropDownMenu", () => {
 
       button.simulate("click");
 
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       const option = wrapper.find('li[id="test-list-item-0"]');
       option.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
   });
 
@@ -260,7 +260,7 @@ describe("DropDownMenu", () => {
         </HvProvider>
       );
 
-      const results = await axe(wrapper.getDOMNode()[1]);
+      const results = await axe(wrapper.html());
 
       expect(results).toHaveNoViolations();
     });
@@ -284,7 +284,7 @@ describe("DropDownMenu", () => {
 
       button.simulate("click");
 
-      const results = await axe(wrapper.getDOMNode()[1]);
+      const results = await axe(wrapper.html());
 
       expect(results).toHaveNoViolations();
     });

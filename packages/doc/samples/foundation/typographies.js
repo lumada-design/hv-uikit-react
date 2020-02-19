@@ -32,11 +32,11 @@ const styles = theme => ({
     paddingBottom: "5px"
   },
   iconCode: {
-    marginLeft: "auto",
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
+    marginLeft: "auto"
+  },
+  icon: {
+    width: 32,
+    height: 32
   }
 });
 
@@ -49,13 +49,15 @@ const CodeButton = ({ classes, onClick }) => (
     aria-label="Delete"
     onClick={onClick}
   >
-    <Code />
+    <Code className={classes.icon} />
   </IconButton>
 );
 
 const Group = ({ classes, name, typography, theme }) => {
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
-  let nameTypography = `${name} ${theme.deprecated.typography[name] ? "(deprecated)" : ""}`;
+  let nameTypography = `${name} ${
+    theme.deprecated.typography[name] ? "(deprecated)" : ""
+  }`;
 
   return (
     <div className={classes.group}>
@@ -93,7 +95,7 @@ const Typographies = ({ classes, theme }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
-        .filter(item => !(Array.isArray(typography[item])))
+        .filter(item => !Array.isArray(typography[item]))
         .map((group, idx) => (
           <Group
             key={idx}

@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-import {
-  convertHexToRGB,
-  fade
-} from "@material-ui/core/styles/colorManipulator";
+import { fade, hexToRgb } from "@material-ui/core/styles";
 
 import { outlineStyles } from "../Focus/styles";
 
@@ -29,7 +26,7 @@ const useColor = color => ({
 });
 
 const styles = theme => {
-  const base1RGB = convertHexToRGB(theme.hv.palette.base.base1);
+  const base1RGB = hexToRgb(theme.hv.palette.base.base1);
   const convertedColor = fade(base1RGB, 0.3);
   const convertedColorDisabled = fade(base1RGB, 0.1);
 
@@ -42,7 +39,7 @@ const styles = theme => {
         ...outlineStyles
       },
       minWidth: "70px",
-      padding: `0 ${theme.hv.spacing.xs}px`,
+      padding: theme.spacing(0, "xs"),
       cursor: "pointer",
       height: "32px",
       minHeight: "32px",
