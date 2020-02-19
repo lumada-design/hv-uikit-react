@@ -15,7 +15,7 @@ enter: opens the menu and places focus on the first menu item
     Wait Until Page Contains Element             ${dropDownMenu}                              10s
     set focus and press keys                     ${dropDownMenu}                              ENTER
     Wait Until Element Is Visible                ${item1}                                     5s
-    item should be focused                       ${item1}
+    Element Should Be Focused                    ${item1}
 
 enter: activates the item and closes the menu
     Go To                                        ${STORYBOOK_URL}/${sampleKeepOpenedFalse}
@@ -31,7 +31,7 @@ space: opens the menu and places focus on the first menu item
     Wait Until Page Contains Element             ${dropDownMenu}                              10s
     set focus and press keys                     ${dropDownMenu}                              SPACE
     Wait Until Element Is Visible                ${item1}                                     5s
-    item should be focused                       ${item1}
+    Element Should Be Focused                    ${item1}
 
 down arrow: when focus is in a menu, moves focus to the next item
     Go To                                        ${STORYBOOK_URL}/${sampledDisabledItems}
@@ -40,9 +40,9 @@ down arrow: when focus is in a menu, moves focus to the next item
     Wait Until Element Is Visible                ${item1}                                     5s
     Element Should Be Focused                    ${item1}
     Press Keys                                   ${None}                                      ARROW_DOWN
-    item should be focused                       ${item2}
+    Element Should Be Focused                    ${item2}
     Press Keys                                   ${None}                                      ARROW_DOWN
-    item should be focused                       ${item3}
+    Element Should Be Focused                    ${item3}
 
 up arrow: when focus is in a menu, moves focus to the previous item
     Go To                                        ${STORYBOOK_URL}/${sampledDisabledItems}
@@ -50,9 +50,9 @@ up arrow: when focus is in a menu, moves focus to the previous item
     Click Element                                ${dropDownMenu}
     Wait Until Element Is Visible                ${item3}                                     5s
     set focus and press keys                     ${item3}                                     ARROW_UP
-    item should be focused                       ${item2}
+    Element Should Be Focused                    ${item2}
     Press Keys                                   ${None}                                      ARROW_UP
-    item should be focused                       ${item1}
+    Element Should Be Focused                    ${item1}
 
 home: moves focus to the first item in the current menu or menubar
     Go To                                        ${STORYBOOK_URL}/${sampledDisabledItems}
@@ -60,7 +60,7 @@ home: moves focus to the first item in the current menu or menubar
     Click Element                                ${dropDownMenu}
     Wait Until Element Is Visible                ${item3}                                     5s
     set focus and press keys                     ${item3}                                     HOME
-    item should be focused                       ${item1}
+    Element Should Be Focused                    ${item1}
 
 end: moves focus to the last item in the current menu or menubar
     Go To                                        ${STORYBOOK_URL}/${sampledDisabledItems}
@@ -68,7 +68,7 @@ end: moves focus to the last item in the current menu or menubar
     Click Element                                ${dropDownMenu}
     Wait Until Element Is Visible                ${item1}                                     5s
     set focus and press keys                     ${item1}                                     END
-    item should be focused                       ${item3}
+    Element Should Be Focused                    ${item3}
 
 escape: close the menu that contains focus and return focus to the element
     Go To                                        ${STORYBOOK_URL}/${sampleKeepOpenedFalse}
