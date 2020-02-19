@@ -171,7 +171,7 @@ Sort.propTypes = {
   /**
    * Selected id
    */
-  selected: PropTypes.string.isRequired,
+  selected: PropTypes.string,
   /**
    * Disable portal on the dropdown
    */
@@ -180,12 +180,14 @@ Sort.propTypes = {
 
 Sort.defaultProps = {
   id: undefined,
+  selected: undefined,
   onSortChange: null,
   disablePortal: false
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.metadata === nextProps.metadata && prevProps.selected === nextProps.selected;
+  prevProps.metadata === nextProps.metadata &&
+  prevProps.selected === nextProps.selected;
 
 export default memo(Sort, arePropsEqual);
 export { sortOperationSetup, sortValues };
