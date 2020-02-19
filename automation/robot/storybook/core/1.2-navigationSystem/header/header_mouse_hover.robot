@@ -21,6 +21,7 @@ change item background color when mouse hover item and then mouse out of item
     wait until css attribute contain        ${hItem1}>div          background-color      ${color}
 
 maintains item "mouse hover background color" when mouse hover on child items
+    [Tags]    bug-ie-webdriver
     ${color}                                get css property value    ${hItem1}>div      background-color
     Mouse Over                              ${hItem1}
     wait until css attribute not contain    ${hItem1}>div          background-color      ${color}

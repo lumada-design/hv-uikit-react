@@ -16,8 +16,8 @@ Documentation    Test Cases based on Design System Version 1.2.0
 tab: change focus to next item and keep item selection when is pressed TAB
     header item should be selected    ${hItem3}
     header item should be selected    ${hItem3.2}
-    Click Element                     ${hBrand}
     verify element is not focused     ${hItem1}>div
+    Click Element                     ${hBrand}
     Press Keys                        ${None}            TAB
     Element Should Be Focused         ${hItem1}>div
     Press Keys                        ${None}            TAB
