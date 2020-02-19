@@ -22,7 +22,6 @@ import { mount } from "enzyme";
 import HvProvider from "../../Provider";
 
 import SwitchWithStyles from "..";
-import Switch from "../Switch";
 
 let wrapper;
 
@@ -122,7 +121,7 @@ describe("Switch label click", () => {
 describe("Switch input area hover", () => {
   wrapper = mount(
     <HvProvider>
-      <Switch
+      <SwitchWithStyles
         checked={false}
         showLabels
         labels={{
