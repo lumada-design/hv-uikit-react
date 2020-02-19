@@ -215,6 +215,7 @@ const configuration = {
 
 export default (
   <AssetInventoryListView
+    icon={<Level1 />}
     values={values}
     renderer={rowRenderer}
     viewConfiguration={configuration}
