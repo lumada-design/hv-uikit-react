@@ -23,6 +23,10 @@ With our first major release several components where reviewed in order to remov
       - actions.icon replaced by iconCallback
   - Dropdown
     - label replaced by labels.title
+  - Text area
+    - **inputTextConfiguration** replaced by **labels**
+    - **value** replaced by **initialValue** (used just for initial values)
+    - **inputValue** replaced by **value**
   - Checkbox
     - **propsIcon** replaced by **formControlLabelProps**
     - **propsLabel  ** replaced by **checkboxProps**

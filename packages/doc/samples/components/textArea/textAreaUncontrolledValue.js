@@ -36,7 +36,7 @@ function WrapperComp() {
 
       <HvTextArea
         initialValue="Initial State"
-        inputValue={value}
+        value={value}
         rows={5}
         labels={labels}
         onChange={setterValue}

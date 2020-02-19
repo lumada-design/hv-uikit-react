@@ -46,14 +46,14 @@ function WrapperComp() {
 
       <Input
         style={inpStyle}
-        initialValue={String(maxChar)}
-        onChange={value => setMaxChar(value)}
+        initialValue={maxChar.toString()}
+        onChange={value => setMaxChar(parseInt(value))}
         labels={inputLabels}
       />
 
       <HvTextArea
         initialValue={"Initial State"}
-        inputValue={value}
+        value={value}
         rows={5}
         labels={labels}
         onChange={setterValue}
