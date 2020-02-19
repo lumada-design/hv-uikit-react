@@ -26,8 +26,6 @@ import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
@@ -40,10 +38,10 @@ import {
   setHeaderSortableClass
 } from "./columnUtils";
 import {
-  toggleAll,
   isIndeterminateStatus,
-  toggleSelection,
-  isSelected
+  isSelected,
+  toggleAll,
+  toggleSelection
 } from "./checkBoxUtils";
 
 import Pagination from "../Pagination";
@@ -174,7 +172,7 @@ class Table extends React.Component {
       item => item.id === id || item.accessor === id
     );
     if (
-      (columnDef.length && (_.isNil(columnDef[0].sortable) && sortable)) ||
+      (columnDef.length && _.isNil(columnDef[0].sortable) && sortable) ||
       columnDef[0].sortable
     ) {
       return <Sort />;
@@ -486,8 +484,6 @@ class Table extends React.Component {
       uniqClassName,
       columns,
       data,
-      titleText,
-      subtitleText,
       subElementTemplate,
       idForCheckbox,
       useRouter,
@@ -578,17 +574,17 @@ class Table extends React.Component {
         id={internalId}
         className={classNames(classes.tableContainer, className)}
       >
-        {(titleText || labels.titleText) && (
+        {labels.titleText && (
           <div className={classes.title}>
             <div>
               <HvTypography variant="mTitle" id={`${internalId}-title`}>
-                {titleText || labels.titleText}
+                {labels.titleText}
               </HvTypography>
             </div>
-            {(subtitleText || labels.subtitleText) && (
+            {labels.subtitleText && (
               <div className={classes.subtitle}>
                 <HvTypography variant="sText" id={`${internalId}-subtitle`}>
-                  {subtitleText || labels.subtitleText}
+                  {labels.subtitleText}
                 </HvTypography>
               </div>
             )}
@@ -717,16 +713,6 @@ Table.propTypes = {
     subtitleText: PropTypes.string
   }),
   /**
-   * Title of the table.
-   * @deprecated Instead use the labels property
-   */
-  titleText: deprecatedPropType(PropTypes.string),
-  /**
-   * Subtitle of the table.
-   * @deprecated Instead use the labels property
-   */
-  subtitleText: deprecatedPropType(PropTypes.string),
-  /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
    Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
    If the type is "link", in data use the structure {displayText: {text to display} ,url: {url} }.
@@ -830,8 +816,6 @@ Table.defaultProps = {
   className: "",
   uniqClassName: null,
   id: undefined,
-  titleText: undefined,
-  subtitleText: undefined,
   labels: {
     titleText: "",
     subtitleText: ""
