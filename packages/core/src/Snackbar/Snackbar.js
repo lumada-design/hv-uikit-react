@@ -17,7 +17,6 @@
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Slide from "@material-ui/core/Slide";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
@@ -50,7 +49,6 @@ const HvSnackbar = props => {
     open,
     onClose,
     label,
-    message,
     anchorOrigin,
     autoHideDuration,
     variant,
@@ -92,7 +90,7 @@ const HvSnackbar = props => {
     >
       <HvSnackBarContentWrapper
         id={`${snackbarId}-content`}
-        label={label || message}
+        label={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
@@ -203,14 +201,7 @@ HvSnackbar.propTypes = {
   /**
    * Custom offset from top/bottom of the page, in px.
    */
-  offset: PropTypes.number,
-
-  // deprecated:
-  /**
-   * The message to display.
-   * @deprecated Instead use the label property
-   */
-  message: deprecatedPropType(PropTypes.node)
+  offset: PropTypes.number
 };
 
 HvSnackbar.defaultProps = {
@@ -228,10 +219,7 @@ HvSnackbar.defaultProps = {
   variant: "default",
   transitionDuration: 300,
   transitionDirection: "left",
-  offset: undefined,
-
-  // deprecated:
-  message: undefined
+  offset: undefined
 };
 
 export default HvSnackbar;

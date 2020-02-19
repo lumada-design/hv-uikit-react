@@ -16,7 +16,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
@@ -161,9 +160,7 @@ class List extends React.Component {
             [classes.disabled]: item.disabled
           })}
         >
-          {!useSelector &&
-            ((item.leftIcon && this.renderLeftIcon(item)) ||
-              (item.iconCallback && this.renderLeftIcon(item)))}
+          {!useSelector && item.iconCallback && this.renderLeftIcon(item)}
 
           {multiSelect
             ? this.renderMultiSelectItem(item, itemId)
@@ -243,9 +240,8 @@ class List extends React.Component {
         className={classNames(classes.label, classes.truncate, {
           [classes.selected]: item.selected,
           [classes.textDisabled]: item.disabled,
-          [classes.labelIconLeftPadding]: item.leftIcon || item.iconCallback,
-          [classes.noIconLeftPadding]:
-            !(item.leftIcon || item.iconCallback) && hasLeftIcons
+          [classes.labelIconLeftPadding]: item.iconCallback,
+          [classes.noIconLeftPadding]: !item.iconCallback && hasLeftIcons
         })}
       >
         {item.label}
@@ -260,24 +256,14 @@ class List extends React.Component {
   };
 
   renderLeftIcon = item => {
-    const { theme } = this.props;
-
-    const iconColor = item.selected
-      ? theme.hv.palette.atmosphere.atmo1
-      : theme.hv.palette.accent.acce1;
-
-    const deprecatedIcon = !isNil(item.leftIcon)
-      ? item.leftIcon({ color: ["none", iconColor] })
-      : undefined;
     const newIcon = !isNil(item.iconCallback)
       ? item.iconCallback({
           isSelected: item.selected,
           isDisabled: item.disabled
         })
       : undefined;
-    const icon = !isNil(deprecatedIcon) ? deprecatedIcon : newIcon;
 
-    return icon;
+    return newIcon;
   };
 
   render() {
@@ -351,6 +337,18 @@ List.propTypes = {
      */
     selectAll: PropTypes.string,
     /**
+     * Style applied to the text of a disabled item.
+     */
+    textDisabled: PropTypes.string,
+    /**
+     * Style applied to the label of the checkbox.
+     */
+    label: PropTypes.string,
+    /**
+     * Style applied to the icon box.
+     */
+    box: PropTypes.string,
+    /**
      * Styles applied to the list item icon left padding
      */
     labelIconLeftPadding: PropTypes.string,
@@ -370,11 +368,12 @@ List.propTypes = {
   /**
    * A list containing the elements to be rendered.
    *
-   * - id: the id of the item.
+   * - id: The id of the item.
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
-   * - leftIcon: The icon node to be rendered on the left.
+   * - isHidden: Is item visible.
+   * - iconCallback: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
    * - params: The params to pass to the router.
@@ -387,7 +386,6 @@ List.propTypes = {
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       isHidden: PropTypes.bool,
-      leftIcon: deprecatedPropType(PropTypes.func),
       iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
