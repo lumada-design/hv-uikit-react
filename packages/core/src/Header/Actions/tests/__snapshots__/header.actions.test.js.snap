@@ -751,9 +751,9 @@ exports[`Actions withStyles should render correctly 1`] = `
       <Actions
         classes={
           Object {
-            "actionsContainer": "Actions-actionsContainer-4",
             "iconContainer": "Actions-iconContainer-6",
             "marginLeft": "Actions-marginLeft-5",
+            "root": "Actions-root-4",
           }
         }
         itemActions={
@@ -1490,7 +1490,7 @@ exports[`Actions withStyles should render correctly 1`] = `
         userExists={false}
       >
         <div
-          className="Actions-actionsContainer-4 Actions-marginLeft-5"
+          className="Actions-marginLeft-5"
         >
           <div
             className="Actions-iconContainer-6"

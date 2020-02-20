@@ -5435,29 +5435,29 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
       <HvDatePickerDS
         classes={
           Object {
-            "actionsContainer": "HvDatePickerDS-actionsContainer-1797",
-            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1801",
-            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1799",
-            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1800",
-            "borderTopNone": "HvDatePickerDS-borderTopNone-1798",
-            "calendarContainer": "HvDatePickerDS-calendarContainer-1788",
-            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1786",
-            "icon": "HvDatePickerDS-icon-1784",
-            "iconClear": "HvDatePickerDS-iconClear-1785",
-            "input": "HvDatePickerDS-input-1783",
-            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1779",
-            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1780",
-            "label": "HvDatePickerDS-label-1787",
-            "noBorderBottom": "HvDatePickerDS-noBorderBottom-1782",
-            "noBorderTop": "HvDatePickerDS-noBorderTop-1781",
-            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1791",
-            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1794",
-            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1795",
-            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1796",
-            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1792",
-            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1790",
-            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1793",
-            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1789",
+            "actionsContainer": "HvDatePickerDS-actionsContainer-1799",
+            "borderBottomDisplay": "HvDatePickerDS-borderBottomDisplay-1803",
+            "borderBottomNone": "HvDatePickerDS-borderBottomNone-1801",
+            "borderTopDisplay": "HvDatePickerDS-borderTopDisplay-1802",
+            "borderTopNone": "HvDatePickerDS-borderTopNone-1800",
+            "calendarContainer": "HvDatePickerDS-calendarContainer-1790",
+            "datePickerContainer": "HvDatePickerDS-datePickerContainer-1788",
+            "icon": "HvDatePickerDS-icon-1786",
+            "iconClear": "HvDatePickerDS-iconClear-1787",
+            "input": "HvDatePickerDS-input-1785",
+            "inputCalendarClosed": "HvDatePickerDS-inputCalendarClosed-1781",
+            "inputCalendarOpen": "HvDatePickerDS-inputCalendarOpen-1782",
+            "label": "HvDatePickerDS-label-1789",
+            "noBorderBottom": "HvDatePickerDS-noBorderBottom-1784",
+            "noBorderTop": "HvDatePickerDS-noBorderTop-1783",
+            "rangeCalendarsContainer": "HvDatePickerDS-rangeCalendarsContainer-1793",
+            "rangeCalendarsFooter": "HvDatePickerDS-rangeCalendarsFooter-1796",
+            "rangeFooterLeft": "HvDatePickerDS-rangeFooterLeft-1797",
+            "rangeFooterRight": "HvDatePickerDS-rangeFooterRight-1798",
+            "rangeLeftCalendarContainer": "HvDatePickerDS-rangeLeftCalendarContainer-1794",
+            "rangeMainContainer": "HvDatePickerDS-rangeMainContainer-1792",
+            "rangeRightCalendarContainer": "HvDatePickerDS-rangeRightCalendarContainer-1795",
+            "singleCalendarFooter": "HvDatePickerDS-singleCalendarFooter-1791",
           }
         }
         disablePortal={true}
@@ -6204,43 +6204,43 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
         value="2019-01-05"
       >
         <div
-          className="HvDatePickerDS-datePickerContainer-1786"
+          className="HvDatePickerDS-datePickerContainer-1788"
         >
-          <WithStyles(Typography)
-            className="HvDatePickerDS-label-1787"
+          <WithStyles(ForwardRef)
+            className="HvDatePickerDS-label-1789"
             component={null}
             paragraph={false}
             variant="labelText"
           >
-            <Typography
-              className="HvDatePickerDS-label-1787"
+            <ForwardRef
+              className="HvDatePickerDS-label-1789"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-1804",
-                  "4xlTitle": "Typography-4xlTitle-1803",
-                  "5xlTitle": "Typography-5xlTitle-1802",
-                  "baseFontFamily": "Typography-baseFontFamily-1825",
-                  "disabledButtonText": "Typography-disabledButtonText-1816",
-                  "disabledText": "Typography-disabledText-1823",
-                  "highlightText": "Typography-highlightText-1812",
-                  "infoText": "Typography-infoText-1821",
-                  "inlineLink": "Typography-inlineLink-1815",
-                  "lTitle": "Typography-lTitle-1807",
-                  "labelText": "Typography-labelText-1820",
-                  "mTitle": "Typography-mTitle-1808",
-                  "margin": "Typography-margin-1826",
-                  "normalText": "Typography-normalText-1813",
-                  "placeholderText": "Typography-placeholderText-1817",
-                  "sLink": "Typography-sLink-1822",
-                  "sText": "Typography-sText-1819",
-                  "sTitle": "Typography-sTitle-1809",
-                  "selectedNavText": "Typography-selectedNavText-1818",
-                  "selectedText": "Typography-selectedText-1814",
-                  "vizText": "Typography-vizText-1824",
-                  "xlTitle": "Typography-xlTitle-1806",
-                  "xsTitle": "Typography-xsTitle-1810",
-                  "xxlTitle": "Typography-xxlTitle-1805",
-                  "xxsTitle": "Typography-xxsTitle-1811",
+                  "3xlTitle": "ForwardRef-3xlTitle-1806",
+                  "4xlTitle": "ForwardRef-4xlTitle-1805",
+                  "5xlTitle": "ForwardRef-5xlTitle-1804",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-1827",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-1818",
+                  "disabledText": "ForwardRef-disabledText-1825",
+                  "highlightText": "ForwardRef-highlightText-1814",
+                  "infoText": "ForwardRef-infoText-1823",
+                  "inlineLink": "ForwardRef-inlineLink-1817",
+                  "lTitle": "ForwardRef-lTitle-1809",
+                  "labelText": "ForwardRef-labelText-1822",
+                  "mTitle": "ForwardRef-mTitle-1810",
+                  "margin": "ForwardRef-margin-1828",
+                  "normalText": "ForwardRef-normalText-1815",
+                  "placeholderText": "ForwardRef-placeholderText-1819",
+                  "sLink": "ForwardRef-sLink-1824",
+                  "sText": "ForwardRef-sText-1821",
+                  "sTitle": "ForwardRef-sTitle-1811",
+                  "selectedNavText": "ForwardRef-selectedNavText-1820",
+                  "selectedText": "ForwardRef-selectedText-1816",
+                  "vizText": "ForwardRef-vizText-1826",
+                  "xlTitle": "ForwardRef-xlTitle-1808",
+                  "xsTitle": "ForwardRef-xsTitle-1812",
+                  "xxlTitle": "ForwardRef-xxlTitle-1807",
+                  "xxsTitle": "ForwardRef-xxsTitle-1813",
                 }
               }
               component={null}
@@ -6973,7 +6973,7 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="Typography-labelText-1820 Typography-baseFontFamily-1825 Typography-margin-1826 HvDatePickerDS-label-1787"
+                className="ForwardRef-labelText-1822 ForwardRef-baseFontFamily-1827 ForwardRef-margin-1828 HvDatePickerDS-label-1789"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -7702,32 +7702,32 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
               >
                 TESTING LABEL
               </p>
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
           <div
-            className="HvDatePickerDS-inputCalendarClosed-1779"
+            className="HvDatePickerDS-inputCalendarClosed-1781"
           >
             <input
-              className="HvDatePickerDS-input-1783"
+              className="HvDatePickerDS-input-1785"
               placeholder="I'M THE PLACEHOLDER"
               readOnly={true}
               type="text"
               value="5 Jan, 2019"
             />
             <WithStyles(Calendar)
-              className="HvDatePickerDS-icon-1784"
+              className="HvDatePickerDS-icon-1786"
               id="testingDatePicker-icon"
               onClick={[Function]}
             >
               <Calendar
-                className="HvDatePickerDS-icon-1784"
+                className="HvDatePickerDS-icon-1786"
                 classes={
                   Object {
-                    "root": "Calendar-root-1827",
-                    "rootL": "Calendar-rootL-1831",
-                    "rootM": "Calendar-rootM-1830",
-                    "rootS": "Calendar-rootS-1829",
-                    "rootXs": "Calendar-rootXs-1828",
+                    "root": "Calendar-root-1829",
+                    "rootL": "Calendar-rootL-1833",
+                    "rootM": "Calendar-rootM-1832",
+                    "rootS": "Calendar-rootS-1831",
+                    "rootXs": "Calendar-rootXs-1830",
                   }
                 }
                 id="testingDatePicker-icon"
@@ -8459,7 +8459,7 @@ exports[`<DatePickerDS /> with custom properties should render correctly 1`] = `
                 }
               >
                 <div
-                  className="HvDatePickerDS-icon-1784 Calendar-root-1827 Calendar-rootS-1829"
+                  className="HvDatePickerDS-icon-1786 Calendar-root-1829 Calendar-rootS-1831"
                   id="testingDatePicker-icon"
                   onClick={[Function]}
                 >

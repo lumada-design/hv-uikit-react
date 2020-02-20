@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2019-2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ const defaultVariantMapping = {
  * @returns {*}
  * @constructor
  */
-const Typography = ({
+const Typography = React.forwardRef(({
   variant,
   classes,
   paragraph,
@@ -66,13 +66,14 @@ const Typography = ({
   id,
   children,
   ...other
-}) => {
+}, ref) => {
   const Component = component ||
     (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
   return (
     <Component
       id={id}
+      ref={ref}
       className={classNames(
         classes[variant],
         classes.baseFontFamily,
@@ -84,7 +85,7 @@ const Typography = ({
       {children}
     </Component>
   );
-};
+});
 
 Typography.propTypes = {
   /**

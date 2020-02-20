@@ -4,13 +4,13 @@ exports[`ModalContent Component allows external styles to be added 1`] = `
 <WithStyles(ForwardRef(DialogContent))
   className="testClassRoot undefined"
 >
-  <WithStyles(Typography)
+  <WithStyles(ForwardRef)
     component={null}
     paragraph={false}
     variant="normalText"
   >
     Modal Content
-  </WithStyles(Typography)>
+  </WithStyles(ForwardRef)>
 </WithStyles(ForwardRef(DialogContent))>
 `;
 
@@ -18,13 +18,13 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
 <WithStyles(ForwardRef(DialogContent))
   className="undefined"
 >
-  <WithStyles(Typography)
+  <WithStyles(ForwardRef)
     component={null}
     paragraph={false}
     variant="normalText"
   >
     Modal Content
-  </WithStyles(Typography)>
+  </WithStyles(ForwardRef)>
 </WithStyles(ForwardRef(DialogContent))>
 `;
 

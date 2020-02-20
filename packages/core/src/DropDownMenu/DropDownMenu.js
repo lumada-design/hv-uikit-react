@@ -25,29 +25,7 @@ import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Popper from "../utils/Popper";
 import List from "../List";
-
-/**
- * Auxiliary function to find adjacent nodes to focus.
- *
- * @param nodeId
- * @returns {{prevFocus: *, nextFocus: *}}
- */
-const getPrevNextFocus = nodeId => {
-  const nodes =
-    document.querySelectorAll("input, button, select, textarea, a[href]") || [];
-
-  const nbNodes = nodes.length;
-  let index = 0;
-  for (; index < nbNodes; index += 1) {
-    if (nodes[index].id === nodeId) {
-      break;
-    }
-  }
-  return {
-    nextFocus: nodes[index + 1 > nbNodes - 1 ? 0 : index + 1],
-    prevFocus: nodes[index - 1 < 0 ? nbNodes - 1 : index - 1]
-  };
-};
+import getPrevNextFocus from "../utils/focusableElementFinder";
 
 /**
  * Dropdown component with a menu.
@@ -81,8 +59,9 @@ const DropDownMenu = ({
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
-  const handleToggle = () => {
+  const handleToggle = event => {
     setOpen(prevOpen => !prevOpen);
+    if (onClick) onClick(null, event);
   };
 
   const handleClose = event => {
@@ -95,18 +74,18 @@ const DropDownMenu = ({
   /**
    * If the ESCAPE key is pressed the close handler must beSpace called.
    *Space
-   * @param evt
+   * @param event
    */
-  const handleKeyDown = evt => {
-    if (isKeypress(evt, KeyboardCodes.Esc)) {
-      handleClose(evt);
+  const handleKeyDown = event => {
+    if (isKeypress(event, KeyboardCodes.Esc)) {
+      handleClose(event);
     }
-    if (isKeypress(evt, KeyboardCodes.Tab)) {
-      const node = evt.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
+    if (isKeypress(event, KeyboardCodes.Tab)) {
+      const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleToggle();
+      handleToggle(event);
     }
-    evt.preventDefault();
+    event.preventDefault();
   };
 
   const handleKeyboardToggle = event => {
@@ -116,7 +95,7 @@ const DropDownMenu = ({
       (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
       (isKeypress(event, KeyboardCodes.ArrowUp) && open)
     ) {
-      handleToggle();
+      handleToggle(event);
       event.preventDefault();
     }
   };
@@ -170,11 +149,9 @@ const DropDownMenu = ({
                 id={`${internalId}-list`}
                 values={dataList}
                 selectable={false}
-                onClick={item => {
-                  if (!keepOpened) {
-                    setOpen(false);
-                  }
-                  onClick(item);
+                onClick={(item, event) => {
+                  if (!keepOpened) setOpen(false);
+                  if (onClick) onClick(item, event);
                 }}
                 condensed
               />

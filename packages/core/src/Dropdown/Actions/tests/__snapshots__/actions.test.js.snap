@@ -1499,18 +1499,19 @@ exports[`<Actions /> should render correctly 1`] = `
               className="Actions-button-1"
               classes={
                 Object {
-                  "ghost": "HvButton-ghost-7",
-                  "ghostDisabled": "HvButton-ghostDisabled-8",
-                  "ghostSecondary": "HvButton-ghostSecondary-9",
-                  "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-10",
-                  "primary": "HvButton-primary-3",
-                  "primaryDisabled": "HvButton-primaryDisabled-4",
+                  "ghost": "HvButton-ghost-8",
+                  "ghostDisabled": "HvButton-ghostDisabled-9",
+                  "ghostSecondary": "HvButton-ghostSecondary-10",
+                  "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-11",
+                  "primary": "HvButton-primary-4",
+                  "primaryDisabled": "HvButton-primaryDisabled-5",
                   "root": "HvButton-root-2",
-                  "secondary": "HvButton-secondary-5",
-                  "secondaryDisabled": "HvButton-secondaryDisabled-6",
-                  "semantic": "HvButton-semantic-11",
-                  "semanticDisabled": "HvButton-semanticDisabled-12",
-                  "startIcon": "HvButton-startIcon-13",
+                  "rootIcon": "HvButton-rootIcon-3",
+                  "secondary": "HvButton-secondary-6",
+                  "secondaryDisabled": "HvButton-secondaryDisabled-7",
+                  "semantic": "HvButton-semantic-12",
+                  "semanticDisabled": "HvButton-semanticDisabled-13",
+                  "startIcon": "HvButton-startIcon-14",
                 }
               }
               disabled={false}
@@ -2247,11 +2248,11 @@ exports[`<Actions /> should render correctly 1`] = `
                 className="Actions-button-1"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-3",
-                    "disabled": "HvButton-ghostDisabled-8",
-                    "outlinedPrimary": "HvButton-secondary-5",
+                    "containedPrimary": "HvButton-primary-4",
+                    "disabled": "HvButton-ghostDisabled-9",
+                    "outlinedPrimary": "HvButton-secondary-6",
                     "root": "HvButton-root-2",
-                    "textPrimary": "HvButton-ghost-7",
+                    "textPrimary": "HvButton-ghost-8",
                   }
                 }
                 color="primary"
@@ -2992,12 +2993,12 @@ exports[`<Actions /> should render correctly 1`] = `
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
                       "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary HvButton-primary-3",
+                      "containedPrimary": "MuiButton-containedPrimary HvButton-primary-4",
                       "containedSecondary": "MuiButton-containedSecondary",
                       "containedSizeLarge": "MuiButton-containedSizeLarge",
                       "containedSizeSmall": "MuiButton-containedSizeSmall",
                       "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled HvButton-ghostDisabled-8",
+                      "disabled": "Mui-disabled HvButton-ghostDisabled-9",
                       "endIcon": "MuiButton-endIcon",
                       "focusVisible": "Mui-focusVisible",
                       "fullWidth": "MuiButton-fullWidth",
@@ -3006,7 +3007,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "iconSizeSmall": "MuiButton-iconSizeSmall",
                       "label": "MuiButton-label",
                       "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-5",
+                      "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-6",
                       "outlinedSecondary": "MuiButton-outlinedSecondary",
                       "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                       "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
@@ -3015,7 +3016,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "sizeSmall": "MuiButton-sizeSmall",
                       "startIcon": "MuiButton-startIcon",
                       "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary HvButton-ghost-7",
+                      "textPrimary": "MuiButton-textPrimary HvButton-ghost-8",
                       "textSecondary": "MuiButton-textSecondary",
                       "textSizeLarge": "MuiButton-textSizeLarge",
                       "textSizeSmall": "MuiButton-textSizeSmall",
@@ -3754,7 +3755,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   variant="text"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                    className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                     component="button"
                     disableRipple={true}
                     disabled={false}
@@ -4490,7 +4491,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                      className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -5233,7 +5234,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                        className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                         disabled={false}
                         id="test-actions-apply"
                         onBlur={[Function]}
@@ -6001,18 +6002,19 @@ exports[`<Actions /> should render correctly 1`] = `
               className="Actions-button-1"
               classes={
                 Object {
-                  "ghost": "HvButton-ghost-7",
-                  "ghostDisabled": "HvButton-ghostDisabled-8",
-                  "ghostSecondary": "HvButton-ghostSecondary-9",
-                  "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-10",
-                  "primary": "HvButton-primary-3",
-                  "primaryDisabled": "HvButton-primaryDisabled-4",
+                  "ghost": "HvButton-ghost-8",
+                  "ghostDisabled": "HvButton-ghostDisabled-9",
+                  "ghostSecondary": "HvButton-ghostSecondary-10",
+                  "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-11",
+                  "primary": "HvButton-primary-4",
+                  "primaryDisabled": "HvButton-primaryDisabled-5",
                   "root": "HvButton-root-2",
-                  "secondary": "HvButton-secondary-5",
-                  "secondaryDisabled": "HvButton-secondaryDisabled-6",
-                  "semantic": "HvButton-semantic-11",
-                  "semanticDisabled": "HvButton-semanticDisabled-12",
-                  "startIcon": "HvButton-startIcon-13",
+                  "rootIcon": "HvButton-rootIcon-3",
+                  "secondary": "HvButton-secondary-6",
+                  "secondaryDisabled": "HvButton-secondaryDisabled-7",
+                  "semantic": "HvButton-semantic-12",
+                  "semanticDisabled": "HvButton-semanticDisabled-13",
+                  "startIcon": "HvButton-startIcon-14",
                 }
               }
               disabled={false}
@@ -6749,11 +6751,11 @@ exports[`<Actions /> should render correctly 1`] = `
                 className="Actions-button-1"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-3",
-                    "disabled": "HvButton-ghostDisabled-8",
-                    "outlinedPrimary": "HvButton-secondary-5",
+                    "containedPrimary": "HvButton-primary-4",
+                    "disabled": "HvButton-ghostDisabled-9",
+                    "outlinedPrimary": "HvButton-secondary-6",
                     "root": "HvButton-root-2",
-                    "textPrimary": "HvButton-ghost-7",
+                    "textPrimary": "HvButton-ghost-8",
                   }
                 }
                 color="primary"
@@ -7494,12 +7496,12 @@ exports[`<Actions /> should render correctly 1`] = `
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
                       "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary HvButton-primary-3",
+                      "containedPrimary": "MuiButton-containedPrimary HvButton-primary-4",
                       "containedSecondary": "MuiButton-containedSecondary",
                       "containedSizeLarge": "MuiButton-containedSizeLarge",
                       "containedSizeSmall": "MuiButton-containedSizeSmall",
                       "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled HvButton-ghostDisabled-8",
+                      "disabled": "Mui-disabled HvButton-ghostDisabled-9",
                       "endIcon": "MuiButton-endIcon",
                       "focusVisible": "Mui-focusVisible",
                       "fullWidth": "MuiButton-fullWidth",
@@ -7508,7 +7510,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "iconSizeSmall": "MuiButton-iconSizeSmall",
                       "label": "MuiButton-label",
                       "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-5",
+                      "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-6",
                       "outlinedSecondary": "MuiButton-outlinedSecondary",
                       "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                       "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
@@ -7517,7 +7519,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "sizeSmall": "MuiButton-sizeSmall",
                       "startIcon": "MuiButton-startIcon",
                       "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary HvButton-ghost-7",
+                      "textPrimary": "MuiButton-textPrimary HvButton-ghost-8",
                       "textSecondary": "MuiButton-textSecondary",
                       "textSizeLarge": "MuiButton-textSizeLarge",
                       "textSizeSmall": "MuiButton-textSizeSmall",
@@ -8256,7 +8258,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   variant="text"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                    className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                     component="button"
                     disableRipple={true}
                     disabled={false}
@@ -8992,7 +8994,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                      className="MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -9735,7 +9737,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-7"
+                        className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text Actions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                         disabled={false}
                         id="test-actions-cancel"
                         onBlur={[Function]}

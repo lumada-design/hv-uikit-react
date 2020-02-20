@@ -280,6 +280,7 @@ class Table extends React.Component {
           id={`${internalId}-select-${props.id}`}
           checked={isSelected(props.id, selection)}
           onChange={() => this.toggleSelection(props.id)}
+          onClick={event => event.stopPropagation()}
         />
       )
     };
@@ -297,10 +298,10 @@ class Table extends React.Component {
 
     if (initiallyLoaded) {
       let cursor = `${page * pageSize}`;
-
       if (
-        sortedFromState[0].id !== sorted[0].id ||
-        sortedFromState[0].desc !== sorted[0].desc
+        sortedFromState.length > 0 &&
+        (sortedFromState[0].id !== sorted[0].id ||
+          sortedFromState[0].desc !== sorted[0].desc)
       ) {
         cursor = "0";
       }
@@ -525,8 +526,9 @@ class Table extends React.Component {
               disablePortal={false}
               icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
               dataList={secondaryActions}
-              onClick={event => {
-                event.action(props.original);
+              onClick={(item, event) => {
+                event.stopPropagation();
+                item.action(props.original);
               }}
             />
           )

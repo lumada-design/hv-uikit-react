@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Button from "@material-ui/core/Button";
 import getMaterialConfiguration from "./materialConfigurarion";
 
@@ -79,7 +80,9 @@ const HvButton = props => {
 
   return (
     <Button
-      className={className}
+      className={classNames(className, {
+        [classes.rootIcon]: category === "icon"
+      })}
       id={id}
       classes={buttonConfiguration.classes}
       variant={buttonConfiguration.variant}
@@ -104,7 +107,8 @@ HvButton.propTypes = {
     "secondary",
     "ghost",
     "ghostSecondary",
-    "semantic"
+    "semantic",
+    "icon"
   ]),
   /**
    * Class names to be applied.
@@ -123,35 +127,39 @@ HvButton.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the primary primary button.
+     * Styles applied to the component root when category is icon.
+     */
+    rootIcon: PropTypes.string,
+    /**
+     * Styles applied to the primary button.
      */
     primary: PropTypes.string,
     /**
-     * Styles applied to the primary primary button when it is disabled.
+     * Styles applied to the primary button when it is disabled.
      */
     primaryDisabled: PropTypes.string,
     /**
-     * Styles applied to the primary secondary button.
+     * Styles applied to the secondary button.
      */
     secondary: PropTypes.string,
     /**
-     * Styles applied to the primary secondary button when it is disabled.
+     * Styles applied to the secondary button when it is disabled.
      */
     secondaryDisabled: PropTypes.string,
     /**
-     * Styles applied to the primary ghost button.
+     * Styles applied to the ghost button.
      */
     ghost: PropTypes.string,
     /**
-     * Styles applied to the primary ghost button when it is disabled.
+     * Styles applied to the ghost button when it is disabled.
      */
     ghostDisabled: PropTypes.string,
     /**
-     * Styles applied to the primary secondary ghost button.
+     * Styles applied to the secondary ghost button.
      */
     ghostSecondary: PropTypes.string,
     /**
-     * Styles applied to the primary secondary ghost button when it is disabled.
+     * Styles applied to the secondary ghost button when it is disabled.
      */
     ghostSecondaryDisabled: PropTypes.string,
     /**

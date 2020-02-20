@@ -801,7 +801,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
       autoScroll={false}
       className=""
       disabled={false}
-      initialValue=""
       labels={
         Object {
           "inputLabel": "",
@@ -815,7 +814,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
       onChange={[Function]}
       resizable={false}
       rows={1}
-      value=""
     />
   </ContextProvider>
 </ThemeProvider>

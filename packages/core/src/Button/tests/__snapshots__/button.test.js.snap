@@ -751,18 +751,19 @@ exports[`Button withStyles should render correctly 1`] = `
         className=""
         classes={
           Object {
-            "ghost": "HvButton-ghost-50",
-            "ghostDisabled": "HvButton-ghostDisabled-51",
-            "ghostSecondary": "HvButton-ghostSecondary-52",
-            "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-53",
-            "primary": "HvButton-primary-46",
-            "primaryDisabled": "HvButton-primaryDisabled-47",
-            "root": "HvButton-root-45",
-            "secondary": "HvButton-secondary-48",
-            "secondaryDisabled": "HvButton-secondaryDisabled-49",
-            "semantic": "HvButton-semantic-54",
-            "semanticDisabled": "HvButton-semanticDisabled-55",
-            "startIcon": "HvButton-startIcon-56",
+            "ghost": "HvButton-ghost-52",
+            "ghostDisabled": "HvButton-ghostDisabled-53",
+            "ghostSecondary": "HvButton-ghostSecondary-54",
+            "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-55",
+            "primary": "HvButton-primary-48",
+            "primaryDisabled": "HvButton-primaryDisabled-49",
+            "root": "HvButton-root-46",
+            "rootIcon": "HvButton-rootIcon-47",
+            "secondary": "HvButton-secondary-50",
+            "secondaryDisabled": "HvButton-secondaryDisabled-51",
+            "semantic": "HvButton-semantic-56",
+            "semanticDisabled": "HvButton-semanticDisabled-57",
+            "startIcon": "HvButton-startIcon-58",
           }
         }
         disabled={false}
@@ -1498,11 +1499,11 @@ exports[`Button withStyles should render correctly 1`] = `
           className=""
           classes={
             Object {
-              "containedPrimary": "HvButton-primary-46",
-              "disabled": "HvButton-primaryDisabled-47",
-              "outlinedPrimary": "HvButton-secondary-48",
-              "root": "HvButton-root-45",
-              "textPrimary": "HvButton-ghost-50",
+              "containedPrimary": "HvButton-primary-48",
+              "disabled": "HvButton-primaryDisabled-49",
+              "outlinedPrimary": "HvButton-secondary-50",
+              "root": "HvButton-root-46",
+              "textPrimary": "HvButton-ghost-52",
             }
           }
           color="primary"
@@ -2242,12 +2243,12 @@ exports[`Button withStyles should render correctly 1`] = `
               Object {
                 "colorInherit": "MuiButton-colorInherit",
                 "contained": "MuiButton-contained",
-                "containedPrimary": "MuiButton-containedPrimary HvButton-primary-46",
+                "containedPrimary": "MuiButton-containedPrimary HvButton-primary-48",
                 "containedSecondary": "MuiButton-containedSecondary",
                 "containedSizeLarge": "MuiButton-containedSizeLarge",
                 "containedSizeSmall": "MuiButton-containedSizeSmall",
                 "disableElevation": "MuiButton-disableElevation",
-                "disabled": "Mui-disabled HvButton-primaryDisabled-47",
+                "disabled": "Mui-disabled HvButton-primaryDisabled-49",
                 "endIcon": "MuiButton-endIcon",
                 "focusVisible": "Mui-focusVisible",
                 "fullWidth": "MuiButton-fullWidth",
@@ -2256,16 +2257,16 @@ exports[`Button withStyles should render correctly 1`] = `
                 "iconSizeSmall": "MuiButton-iconSizeSmall",
                 "label": "MuiButton-label",
                 "outlined": "MuiButton-outlined",
-                "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-48",
+                "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-50",
                 "outlinedSecondary": "MuiButton-outlinedSecondary",
                 "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                 "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                "root": "MuiButton-root HvButton-root-45",
+                "root": "MuiButton-root HvButton-root-46",
                 "sizeLarge": "MuiButton-sizeLarge",
                 "sizeSmall": "MuiButton-sizeSmall",
                 "startIcon": "MuiButton-startIcon",
                 "text": "MuiButton-text",
-                "textPrimary": "MuiButton-textPrimary HvButton-ghost-50",
+                "textPrimary": "MuiButton-textPrimary HvButton-ghost-52",
                 "textSecondary": "MuiButton-textSecondary",
                 "textSizeLarge": "MuiButton-textSizeLarge",
                 "textSizeSmall": "MuiButton-textSizeSmall",
@@ -3003,7 +3004,7 @@ exports[`Button withStyles should render correctly 1`] = `
             variant="contained"
           >
             <WithStyles(ForwardRef(ButtonBase))
-              className="MuiButton-root HvButton-root-45 MuiButton-contained MuiButton-containedPrimary HvButton-primary-46"
+              className="MuiButton-root HvButton-root-46 MuiButton-contained MuiButton-containedPrimary HvButton-primary-48"
               component="button"
               disableRipple={true}
               disabled={false}
@@ -3738,7 +3739,7 @@ exports[`Button withStyles should render correctly 1`] = `
               type="button"
             >
               <ForwardRef(ButtonBase)
-                className="MuiButton-root HvButton-root-45 MuiButton-contained MuiButton-containedPrimary HvButton-primary-46"
+                className="MuiButton-root HvButton-root-46 MuiButton-contained MuiButton-containedPrimary HvButton-primary-48"
                 classes={
                   Object {
                     "disabled": "Mui-disabled",
@@ -4480,7 +4481,7 @@ exports[`Button withStyles should render correctly 1`] = `
                 type="button"
               >
                 <button
-                  className="MuiButtonBase-root MuiButton-root HvButton-root-45 MuiButton-contained MuiButton-containedPrimary HvButton-primary-46"
+                  className="MuiButtonBase-root MuiButton-root HvButton-root-46 MuiButton-contained MuiButton-containedPrimary HvButton-primary-48"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}

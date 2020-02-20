@@ -43,10 +43,6 @@ storiesOf("Components/Selection mechanisms", module).add(
       {
         title: "4. Disabled in Left Position",
         src: "components/switch/sample4.js"
-      },
-      {
-        title: "5. with Auxiliary Checkmark",
-        src: "components/switch/sample5.js"
       }
     ]
   }

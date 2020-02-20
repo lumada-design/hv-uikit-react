@@ -1541,39 +1541,39 @@ exports[`Custom Pagination should render correctly 1`] = `
           <div
             className="Pagination-pageSizeOptions-323"
           >
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               component="span"
               paragraph={false}
               variant="sText"
             >
-              <Typography
+              <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-336",
-                    "4xlTitle": "Typography-4xlTitle-335",
-                    "5xlTitle": "Typography-5xlTitle-334",
-                    "baseFontFamily": "Typography-baseFontFamily-357",
-                    "disabledButtonText": "Typography-disabledButtonText-348",
-                    "disabledText": "Typography-disabledText-355",
-                    "highlightText": "Typography-highlightText-344",
-                    "infoText": "Typography-infoText-353",
-                    "inlineLink": "Typography-inlineLink-347",
-                    "lTitle": "Typography-lTitle-339",
-                    "labelText": "Typography-labelText-352",
-                    "mTitle": "Typography-mTitle-340",
-                    "margin": "Typography-margin-358",
-                    "normalText": "Typography-normalText-345",
-                    "placeholderText": "Typography-placeholderText-349",
-                    "sLink": "Typography-sLink-354",
-                    "sText": "Typography-sText-351",
-                    "sTitle": "Typography-sTitle-341",
-                    "selectedNavText": "Typography-selectedNavText-350",
-                    "selectedText": "Typography-selectedText-346",
-                    "vizText": "Typography-vizText-356",
-                    "xlTitle": "Typography-xlTitle-338",
-                    "xsTitle": "Typography-xsTitle-342",
-                    "xxlTitle": "Typography-xxlTitle-337",
-                    "xxsTitle": "Typography-xxsTitle-343",
+                    "3xlTitle": "ForwardRef-3xlTitle-336",
+                    "4xlTitle": "ForwardRef-4xlTitle-335",
+                    "5xlTitle": "ForwardRef-5xlTitle-334",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-357",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-348",
+                    "disabledText": "ForwardRef-disabledText-355",
+                    "highlightText": "ForwardRef-highlightText-344",
+                    "infoText": "ForwardRef-infoText-353",
+                    "inlineLink": "ForwardRef-inlineLink-347",
+                    "lTitle": "ForwardRef-lTitle-339",
+                    "labelText": "ForwardRef-labelText-352",
+                    "mTitle": "ForwardRef-mTitle-340",
+                    "margin": "ForwardRef-margin-358",
+                    "normalText": "ForwardRef-normalText-345",
+                    "placeholderText": "ForwardRef-placeholderText-349",
+                    "sLink": "ForwardRef-sLink-354",
+                    "sText": "ForwardRef-sText-351",
+                    "sTitle": "ForwardRef-sTitle-341",
+                    "selectedNavText": "ForwardRef-selectedNavText-350",
+                    "selectedText": "ForwardRef-selectedText-346",
+                    "vizText": "ForwardRef-vizText-356",
+                    "xlTitle": "ForwardRef-xlTitle-338",
+                    "xsTitle": "ForwardRef-xsTitle-342",
+                    "xxlTitle": "ForwardRef-xxlTitle-337",
+                    "xxsTitle": "ForwardRef-xxsTitle-343",
                   }
                 }
                 component="span"
@@ -2306,7 +2306,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="Typography-sText-351 Typography-baseFontFamily-357 Typography-margin-358"
+                  className="ForwardRef-sText-351 ForwardRef-baseFontFamily-357 ForwardRef-margin-358"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -3035,8 +3035,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   Show
                 </span>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <select
               aria-label="Select how many to display"
               className="Pagination-pageSizeOptionsSelect-324"
@@ -3817,39 +3817,39 @@ exports[`Custom Pagination should render correctly 1`] = `
                 </div>
               </DropDownXS>
             </WithStyles(DropDownXS)>
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               component="span"
               paragraph={false}
               variant="sText"
             >
-              <Typography
+              <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-336",
-                    "4xlTitle": "Typography-4xlTitle-335",
-                    "5xlTitle": "Typography-5xlTitle-334",
-                    "baseFontFamily": "Typography-baseFontFamily-357",
-                    "disabledButtonText": "Typography-disabledButtonText-348",
-                    "disabledText": "Typography-disabledText-355",
-                    "highlightText": "Typography-highlightText-344",
-                    "infoText": "Typography-infoText-353",
-                    "inlineLink": "Typography-inlineLink-347",
-                    "lTitle": "Typography-lTitle-339",
-                    "labelText": "Typography-labelText-352",
-                    "mTitle": "Typography-mTitle-340",
-                    "margin": "Typography-margin-358",
-                    "normalText": "Typography-normalText-345",
-                    "placeholderText": "Typography-placeholderText-349",
-                    "sLink": "Typography-sLink-354",
-                    "sText": "Typography-sText-351",
-                    "sTitle": "Typography-sTitle-341",
-                    "selectedNavText": "Typography-selectedNavText-350",
-                    "selectedText": "Typography-selectedText-346",
-                    "vizText": "Typography-vizText-356",
-                    "xlTitle": "Typography-xlTitle-338",
-                    "xsTitle": "Typography-xsTitle-342",
-                    "xxlTitle": "Typography-xxlTitle-337",
-                    "xxsTitle": "Typography-xxsTitle-343",
+                    "3xlTitle": "ForwardRef-3xlTitle-336",
+                    "4xlTitle": "ForwardRef-4xlTitle-335",
+                    "5xlTitle": "ForwardRef-5xlTitle-334",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-357",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-348",
+                    "disabledText": "ForwardRef-disabledText-355",
+                    "highlightText": "ForwardRef-highlightText-344",
+                    "infoText": "ForwardRef-infoText-353",
+                    "inlineLink": "ForwardRef-inlineLink-347",
+                    "lTitle": "ForwardRef-lTitle-339",
+                    "labelText": "ForwardRef-labelText-352",
+                    "mTitle": "ForwardRef-mTitle-340",
+                    "margin": "ForwardRef-margin-358",
+                    "normalText": "ForwardRef-normalText-345",
+                    "placeholderText": "ForwardRef-placeholderText-349",
+                    "sLink": "ForwardRef-sLink-354",
+                    "sText": "ForwardRef-sText-351",
+                    "sTitle": "ForwardRef-sTitle-341",
+                    "selectedNavText": "ForwardRef-selectedNavText-350",
+                    "selectedText": "ForwardRef-selectedText-346",
+                    "vizText": "ForwardRef-vizText-356",
+                    "xlTitle": "ForwardRef-xlTitle-338",
+                    "xsTitle": "ForwardRef-xsTitle-342",
+                    "xxlTitle": "ForwardRef-xxlTitle-337",
+                    "xxsTitle": "ForwardRef-xxsTitle-343",
                   }
                 }
                 component="span"
@@ -4582,7 +4582,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="Typography-sText-351 Typography-baseFontFamily-357 Typography-margin-358"
+                  className="ForwardRef-sText-351 ForwardRef-baseFontFamily-357 ForwardRef-margin-358"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -5311,8 +5311,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   rows
                 </span>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
           </div>
           <div
             className="Pagination-pageNavigator-325"
@@ -6996,39 +6996,39 @@ exports[`Custom Pagination should render correctly 1`] = `
             <div
               className="Pagination-pageInfo-326"
             >
-              <WithStyles(Typography)
+              <WithStyles(ForwardRef)
                 component="span"
                 paragraph={false}
                 variant="sText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-336",
-                      "4xlTitle": "Typography-4xlTitle-335",
-                      "5xlTitle": "Typography-5xlTitle-334",
-                      "baseFontFamily": "Typography-baseFontFamily-357",
-                      "disabledButtonText": "Typography-disabledButtonText-348",
-                      "disabledText": "Typography-disabledText-355",
-                      "highlightText": "Typography-highlightText-344",
-                      "infoText": "Typography-infoText-353",
-                      "inlineLink": "Typography-inlineLink-347",
-                      "lTitle": "Typography-lTitle-339",
-                      "labelText": "Typography-labelText-352",
-                      "mTitle": "Typography-mTitle-340",
-                      "margin": "Typography-margin-358",
-                      "normalText": "Typography-normalText-345",
-                      "placeholderText": "Typography-placeholderText-349",
-                      "sLink": "Typography-sLink-354",
-                      "sText": "Typography-sText-351",
-                      "sTitle": "Typography-sTitle-341",
-                      "selectedNavText": "Typography-selectedNavText-350",
-                      "selectedText": "Typography-selectedText-346",
-                      "vizText": "Typography-vizText-356",
-                      "xlTitle": "Typography-xlTitle-338",
-                      "xsTitle": "Typography-xsTitle-342",
-                      "xxlTitle": "Typography-xxlTitle-337",
-                      "xxsTitle": "Typography-xxsTitle-343",
+                      "3xlTitle": "ForwardRef-3xlTitle-336",
+                      "4xlTitle": "ForwardRef-4xlTitle-335",
+                      "5xlTitle": "ForwardRef-5xlTitle-334",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-357",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-348",
+                      "disabledText": "ForwardRef-disabledText-355",
+                      "highlightText": "ForwardRef-highlightText-344",
+                      "infoText": "ForwardRef-infoText-353",
+                      "inlineLink": "ForwardRef-inlineLink-347",
+                      "lTitle": "ForwardRef-lTitle-339",
+                      "labelText": "ForwardRef-labelText-352",
+                      "mTitle": "ForwardRef-mTitle-340",
+                      "margin": "ForwardRef-margin-358",
+                      "normalText": "ForwardRef-normalText-345",
+                      "placeholderText": "ForwardRef-placeholderText-349",
+                      "sLink": "ForwardRef-sLink-354",
+                      "sText": "ForwardRef-sText-351",
+                      "sTitle": "ForwardRef-sTitle-341",
+                      "selectedNavText": "ForwardRef-selectedNavText-350",
+                      "selectedText": "ForwardRef-selectedText-346",
+                      "vizText": "ForwardRef-vizText-356",
+                      "xlTitle": "ForwardRef-xlTitle-338",
+                      "xsTitle": "ForwardRef-xsTitle-342",
+                      "xxlTitle": "ForwardRef-xxlTitle-337",
+                      "xxsTitle": "ForwardRef-xxsTitle-343",
                     }
                   }
                   component="span"
@@ -7761,7 +7761,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="Typography-sText-351 Typography-baseFontFamily-357 Typography-margin-358"
+                    className="ForwardRef-sText-351 ForwardRef-baseFontFamily-357 ForwardRef-margin-358"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -8490,41 +8490,41 @@ exports[`Custom Pagination should render correctly 1`] = `
                   >
                     3
                   </span>
-                </Typography>
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)
                 component="span"
                 paragraph={false}
                 variant="sText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-336",
-                      "4xlTitle": "Typography-4xlTitle-335",
-                      "5xlTitle": "Typography-5xlTitle-334",
-                      "baseFontFamily": "Typography-baseFontFamily-357",
-                      "disabledButtonText": "Typography-disabledButtonText-348",
-                      "disabledText": "Typography-disabledText-355",
-                      "highlightText": "Typography-highlightText-344",
-                      "infoText": "Typography-infoText-353",
-                      "inlineLink": "Typography-inlineLink-347",
-                      "lTitle": "Typography-lTitle-339",
-                      "labelText": "Typography-labelText-352",
-                      "mTitle": "Typography-mTitle-340",
-                      "margin": "Typography-margin-358",
-                      "normalText": "Typography-normalText-345",
-                      "placeholderText": "Typography-placeholderText-349",
-                      "sLink": "Typography-sLink-354",
-                      "sText": "Typography-sText-351",
-                      "sTitle": "Typography-sTitle-341",
-                      "selectedNavText": "Typography-selectedNavText-350",
-                      "selectedText": "Typography-selectedText-346",
-                      "vizText": "Typography-vizText-356",
-                      "xlTitle": "Typography-xlTitle-338",
-                      "xsTitle": "Typography-xsTitle-342",
-                      "xxlTitle": "Typography-xxlTitle-337",
-                      "xxsTitle": "Typography-xxsTitle-343",
+                      "3xlTitle": "ForwardRef-3xlTitle-336",
+                      "4xlTitle": "ForwardRef-4xlTitle-335",
+                      "5xlTitle": "ForwardRef-5xlTitle-334",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-357",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-348",
+                      "disabledText": "ForwardRef-disabledText-355",
+                      "highlightText": "ForwardRef-highlightText-344",
+                      "infoText": "ForwardRef-infoText-353",
+                      "inlineLink": "ForwardRef-inlineLink-347",
+                      "lTitle": "ForwardRef-lTitle-339",
+                      "labelText": "ForwardRef-labelText-352",
+                      "mTitle": "ForwardRef-mTitle-340",
+                      "margin": "ForwardRef-margin-358",
+                      "normalText": "ForwardRef-normalText-345",
+                      "placeholderText": "ForwardRef-placeholderText-349",
+                      "sLink": "ForwardRef-sLink-354",
+                      "sText": "ForwardRef-sText-351",
+                      "sTitle": "ForwardRef-sTitle-341",
+                      "selectedNavText": "ForwardRef-selectedNavText-350",
+                      "selectedText": "ForwardRef-selectedText-346",
+                      "vizText": "ForwardRef-vizText-356",
+                      "xlTitle": "ForwardRef-xlTitle-338",
+                      "xsTitle": "ForwardRef-xsTitle-342",
+                      "xxlTitle": "ForwardRef-xxlTitle-337",
+                      "xxsTitle": "ForwardRef-xxsTitle-343",
                     }
                   }
                   component="span"
@@ -9257,7 +9257,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="Typography-sText-351 Typography-baseFontFamily-357 Typography-margin-358"
+                    className="ForwardRef-sText-351 ForwardRef-baseFontFamily-357 ForwardRef-margin-358"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -9986,42 +9986,42 @@ exports[`Custom Pagination should render correctly 1`] = `
                   >
                      of 
                   </span>
-                </Typography>
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)
                 component="span"
                 id="hv-pagination-4-totalPages"
                 paragraph={false}
                 variant="sText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-336",
-                      "4xlTitle": "Typography-4xlTitle-335",
-                      "5xlTitle": "Typography-5xlTitle-334",
-                      "baseFontFamily": "Typography-baseFontFamily-357",
-                      "disabledButtonText": "Typography-disabledButtonText-348",
-                      "disabledText": "Typography-disabledText-355",
-                      "highlightText": "Typography-highlightText-344",
-                      "infoText": "Typography-infoText-353",
-                      "inlineLink": "Typography-inlineLink-347",
-                      "lTitle": "Typography-lTitle-339",
-                      "labelText": "Typography-labelText-352",
-                      "mTitle": "Typography-mTitle-340",
-                      "margin": "Typography-margin-358",
-                      "normalText": "Typography-normalText-345",
-                      "placeholderText": "Typography-placeholderText-349",
-                      "sLink": "Typography-sLink-354",
-                      "sText": "Typography-sText-351",
-                      "sTitle": "Typography-sTitle-341",
-                      "selectedNavText": "Typography-selectedNavText-350",
-                      "selectedText": "Typography-selectedText-346",
-                      "vizText": "Typography-vizText-356",
-                      "xlTitle": "Typography-xlTitle-338",
-                      "xsTitle": "Typography-xsTitle-342",
-                      "xxlTitle": "Typography-xxlTitle-337",
-                      "xxsTitle": "Typography-xxsTitle-343",
+                      "3xlTitle": "ForwardRef-3xlTitle-336",
+                      "4xlTitle": "ForwardRef-4xlTitle-335",
+                      "5xlTitle": "ForwardRef-5xlTitle-334",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-357",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-348",
+                      "disabledText": "ForwardRef-disabledText-355",
+                      "highlightText": "ForwardRef-highlightText-344",
+                      "infoText": "ForwardRef-infoText-353",
+                      "inlineLink": "ForwardRef-inlineLink-347",
+                      "lTitle": "ForwardRef-lTitle-339",
+                      "labelText": "ForwardRef-labelText-352",
+                      "mTitle": "ForwardRef-mTitle-340",
+                      "margin": "ForwardRef-margin-358",
+                      "normalText": "ForwardRef-normalText-345",
+                      "placeholderText": "ForwardRef-placeholderText-349",
+                      "sLink": "ForwardRef-sLink-354",
+                      "sText": "ForwardRef-sText-351",
+                      "sTitle": "ForwardRef-sTitle-341",
+                      "selectedNavText": "ForwardRef-selectedNavText-350",
+                      "selectedText": "ForwardRef-selectedText-346",
+                      "vizText": "ForwardRef-vizText-356",
+                      "xlTitle": "ForwardRef-xlTitle-338",
+                      "xsTitle": "ForwardRef-xsTitle-342",
+                      "xxlTitle": "ForwardRef-xxlTitle-337",
+                      "xxsTitle": "ForwardRef-xxsTitle-343",
                     }
                   }
                   component="span"
@@ -10755,7 +10755,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="Typography-sText-351 Typography-baseFontFamily-357 Typography-margin-358"
+                    className="ForwardRef-sText-351 ForwardRef-baseFontFamily-357 ForwardRef-margin-358"
                     id="hv-pagination-4-totalPages"
                     theme={
                       Object {
@@ -11485,8 +11485,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                   >
                     4
                   </span>
-                </Typography>
-              </WithStyles(Typography)>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
             </div>
             <WithStyles(ForwardRef(IconButton))
               className="Pagination-iconContainer-331"

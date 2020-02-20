@@ -2344,41 +2344,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               className="DropZone-dropzoneLabelsGroup-76"
               id="hv-fileuploader-2-dropzone"
             >
-              <WithStyles(Typography)
+              <WithStyles(ForwardRef)
                 component="label"
                 htmlFor="hv-fileuploader-2-dropzone-input-file"
                 id="hv-fileuploader-2-dropzone-input-file-label"
                 paragraph={false}
                 variant="labelText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-83",
-                      "4xlTitle": "Typography-4xlTitle-82",
-                      "5xlTitle": "Typography-5xlTitle-81",
-                      "baseFontFamily": "Typography-baseFontFamily-104",
-                      "disabledButtonText": "Typography-disabledButtonText-95",
-                      "disabledText": "Typography-disabledText-102",
-                      "highlightText": "Typography-highlightText-91",
-                      "infoText": "Typography-infoText-100",
-                      "inlineLink": "Typography-inlineLink-94",
-                      "lTitle": "Typography-lTitle-86",
-                      "labelText": "Typography-labelText-99",
-                      "mTitle": "Typography-mTitle-87",
-                      "margin": "Typography-margin-105",
-                      "normalText": "Typography-normalText-92",
-                      "placeholderText": "Typography-placeholderText-96",
-                      "sLink": "Typography-sLink-101",
-                      "sText": "Typography-sText-98",
-                      "sTitle": "Typography-sTitle-88",
-                      "selectedNavText": "Typography-selectedNavText-97",
-                      "selectedText": "Typography-selectedText-93",
-                      "vizText": "Typography-vizText-103",
-                      "xlTitle": "Typography-xlTitle-85",
-                      "xsTitle": "Typography-xsTitle-89",
-                      "xxlTitle": "Typography-xxlTitle-84",
-                      "xxsTitle": "Typography-xxsTitle-90",
+                      "3xlTitle": "ForwardRef-3xlTitle-83",
+                      "4xlTitle": "ForwardRef-4xlTitle-82",
+                      "5xlTitle": "ForwardRef-5xlTitle-81",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                      "disabledText": "ForwardRef-disabledText-102",
+                      "highlightText": "ForwardRef-highlightText-91",
+                      "infoText": "ForwardRef-infoText-100",
+                      "inlineLink": "ForwardRef-inlineLink-94",
+                      "lTitle": "ForwardRef-lTitle-86",
+                      "labelText": "ForwardRef-labelText-99",
+                      "mTitle": "ForwardRef-mTitle-87",
+                      "margin": "ForwardRef-margin-105",
+                      "normalText": "ForwardRef-normalText-92",
+                      "placeholderText": "ForwardRef-placeholderText-96",
+                      "sLink": "ForwardRef-sLink-101",
+                      "sText": "ForwardRef-sText-98",
+                      "sTitle": "ForwardRef-sTitle-88",
+                      "selectedNavText": "ForwardRef-selectedNavText-97",
+                      "selectedText": "ForwardRef-selectedText-93",
+                      "vizText": "ForwardRef-vizText-103",
+                      "xlTitle": "ForwardRef-xlTitle-85",
+                      "xsTitle": "ForwardRef-xsTitle-89",
+                      "xxlTitle": "ForwardRef-xxlTitle-84",
+                      "xxsTitle": "ForwardRef-xxsTitle-90",
                     }
                   }
                   component="label"
@@ -3113,7 +3113,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="labelText"
                 >
                   <label
-                    className="Typography-labelText-99 Typography-baseFontFamily-104 Typography-margin-105"
+                    className="ForwardRef-labelText-99 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                     htmlFor="hv-fileuploader-2-dropzone-input-file"
                     id="hv-fileuploader-2-dropzone-input-file-label"
                     theme={
@@ -3842,41 +3842,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       }
                     }
                   />
-                </Typography>
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)
                 component={null}
                 paragraph={false}
                 variant="infoText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-83",
-                      "4xlTitle": "Typography-4xlTitle-82",
-                      "5xlTitle": "Typography-5xlTitle-81",
-                      "baseFontFamily": "Typography-baseFontFamily-104",
-                      "disabledButtonText": "Typography-disabledButtonText-95",
-                      "disabledText": "Typography-disabledText-102",
-                      "highlightText": "Typography-highlightText-91",
-                      "infoText": "Typography-infoText-100",
-                      "inlineLink": "Typography-inlineLink-94",
-                      "lTitle": "Typography-lTitle-86",
-                      "labelText": "Typography-labelText-99",
-                      "mTitle": "Typography-mTitle-87",
-                      "margin": "Typography-margin-105",
-                      "normalText": "Typography-normalText-92",
-                      "placeholderText": "Typography-placeholderText-96",
-                      "sLink": "Typography-sLink-101",
-                      "sText": "Typography-sText-98",
-                      "sTitle": "Typography-sTitle-88",
-                      "selectedNavText": "Typography-selectedNavText-97",
-                      "selectedText": "Typography-selectedText-93",
-                      "vizText": "Typography-vizText-103",
-                      "xlTitle": "Typography-xlTitle-85",
-                      "xsTitle": "Typography-xsTitle-89",
-                      "xxlTitle": "Typography-xxlTitle-84",
-                      "xxsTitle": "Typography-xxsTitle-90",
+                      "3xlTitle": "ForwardRef-3xlTitle-83",
+                      "4xlTitle": "ForwardRef-4xlTitle-82",
+                      "5xlTitle": "ForwardRef-5xlTitle-81",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                      "disabledText": "ForwardRef-disabledText-102",
+                      "highlightText": "ForwardRef-highlightText-91",
+                      "infoText": "ForwardRef-infoText-100",
+                      "inlineLink": "ForwardRef-inlineLink-94",
+                      "lTitle": "ForwardRef-lTitle-86",
+                      "labelText": "ForwardRef-labelText-99",
+                      "mTitle": "ForwardRef-mTitle-87",
+                      "margin": "ForwardRef-margin-105",
+                      "normalText": "ForwardRef-normalText-92",
+                      "placeholderText": "ForwardRef-placeholderText-96",
+                      "sLink": "ForwardRef-sLink-101",
+                      "sText": "ForwardRef-sText-98",
+                      "sTitle": "ForwardRef-sTitle-88",
+                      "selectedNavText": "ForwardRef-selectedNavText-97",
+                      "selectedText": "ForwardRef-selectedText-93",
+                      "vizText": "ForwardRef-vizText-103",
+                      "xlTitle": "ForwardRef-xlTitle-85",
+                      "xsTitle": "ForwardRef-xsTitle-89",
+                      "xxlTitle": "ForwardRef-xxlTitle-84",
+                      "xxsTitle": "ForwardRef-xxsTitle-90",
                     }
                   }
                   component={null}
@@ -4609,7 +4609,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="infoText"
                 >
                   <p
-                    className="Typography-infoText-100 Typography-baseFontFamily-104 Typography-margin-105"
+                    className="ForwardRef-infoText-100 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -5338,41 +5338,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   >
                     undefined 12.00B
                   </p>
-                </Typography>
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)
                 component={null}
                 paragraph={false}
                 variant="labelText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-83",
-                      "4xlTitle": "Typography-4xlTitle-82",
-                      "5xlTitle": "Typography-5xlTitle-81",
-                      "baseFontFamily": "Typography-baseFontFamily-104",
-                      "disabledButtonText": "Typography-disabledButtonText-95",
-                      "disabledText": "Typography-disabledText-102",
-                      "highlightText": "Typography-highlightText-91",
-                      "infoText": "Typography-infoText-100",
-                      "inlineLink": "Typography-inlineLink-94",
-                      "lTitle": "Typography-lTitle-86",
-                      "labelText": "Typography-labelText-99",
-                      "mTitle": "Typography-mTitle-87",
-                      "margin": "Typography-margin-105",
-                      "normalText": "Typography-normalText-92",
-                      "placeholderText": "Typography-placeholderText-96",
-                      "sLink": "Typography-sLink-101",
-                      "sText": "Typography-sText-98",
-                      "sTitle": "Typography-sTitle-88",
-                      "selectedNavText": "Typography-selectedNavText-97",
-                      "selectedText": "Typography-selectedText-93",
-                      "vizText": "Typography-vizText-103",
-                      "xlTitle": "Typography-xlTitle-85",
-                      "xsTitle": "Typography-xsTitle-89",
-                      "xxlTitle": "Typography-xxlTitle-84",
-                      "xxsTitle": "Typography-xxsTitle-90",
+                      "3xlTitle": "ForwardRef-3xlTitle-83",
+                      "4xlTitle": "ForwardRef-4xlTitle-82",
+                      "5xlTitle": "ForwardRef-5xlTitle-81",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                      "disabledText": "ForwardRef-disabledText-102",
+                      "highlightText": "ForwardRef-highlightText-91",
+                      "infoText": "ForwardRef-infoText-100",
+                      "inlineLink": "ForwardRef-inlineLink-94",
+                      "lTitle": "ForwardRef-lTitle-86",
+                      "labelText": "ForwardRef-labelText-99",
+                      "mTitle": "ForwardRef-mTitle-87",
+                      "margin": "ForwardRef-margin-105",
+                      "normalText": "ForwardRef-normalText-92",
+                      "placeholderText": "ForwardRef-placeholderText-96",
+                      "sLink": "ForwardRef-sLink-101",
+                      "sText": "ForwardRef-sText-98",
+                      "sTitle": "ForwardRef-sTitle-88",
+                      "selectedNavText": "ForwardRef-selectedNavText-97",
+                      "selectedText": "ForwardRef-selectedText-93",
+                      "vizText": "ForwardRef-vizText-103",
+                      "xlTitle": "ForwardRef-xlTitle-85",
+                      "xsTitle": "ForwardRef-xsTitle-89",
+                      "xxlTitle": "ForwardRef-xxlTitle-84",
+                      "xxsTitle": "ForwardRef-xxsTitle-90",
                     }
                   }
                   component={null}
@@ -6105,7 +6105,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="labelText"
                 >
                   <p
-                    className="Typography-labelText-99 Typography-baseFontFamily-104 Typography-margin-105"
+                    className="ForwardRef-labelText-99 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -6832,41 +6832,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       }
                     }
                   />
-                </Typography>
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)
                 component={null}
                 paragraph={false}
                 variant="infoText"
               >
-                <Typography
+                <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "Typography-3xlTitle-83",
-                      "4xlTitle": "Typography-4xlTitle-82",
-                      "5xlTitle": "Typography-5xlTitle-81",
-                      "baseFontFamily": "Typography-baseFontFamily-104",
-                      "disabledButtonText": "Typography-disabledButtonText-95",
-                      "disabledText": "Typography-disabledText-102",
-                      "highlightText": "Typography-highlightText-91",
-                      "infoText": "Typography-infoText-100",
-                      "inlineLink": "Typography-inlineLink-94",
-                      "lTitle": "Typography-lTitle-86",
-                      "labelText": "Typography-labelText-99",
-                      "mTitle": "Typography-mTitle-87",
-                      "margin": "Typography-margin-105",
-                      "normalText": "Typography-normalText-92",
-                      "placeholderText": "Typography-placeholderText-96",
-                      "sLink": "Typography-sLink-101",
-                      "sText": "Typography-sText-98",
-                      "sTitle": "Typography-sTitle-88",
-                      "selectedNavText": "Typography-selectedNavText-97",
-                      "selectedText": "Typography-selectedText-93",
-                      "vizText": "Typography-vizText-103",
-                      "xlTitle": "Typography-xlTitle-85",
-                      "xsTitle": "Typography-xsTitle-89",
-                      "xxlTitle": "Typography-xxlTitle-84",
-                      "xxsTitle": "Typography-xxsTitle-90",
+                      "3xlTitle": "ForwardRef-3xlTitle-83",
+                      "4xlTitle": "ForwardRef-4xlTitle-82",
+                      "5xlTitle": "ForwardRef-5xlTitle-81",
+                      "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                      "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                      "disabledText": "ForwardRef-disabledText-102",
+                      "highlightText": "ForwardRef-highlightText-91",
+                      "infoText": "ForwardRef-infoText-100",
+                      "inlineLink": "ForwardRef-inlineLink-94",
+                      "lTitle": "ForwardRef-lTitle-86",
+                      "labelText": "ForwardRef-labelText-99",
+                      "mTitle": "ForwardRef-mTitle-87",
+                      "margin": "ForwardRef-margin-105",
+                      "normalText": "ForwardRef-normalText-92",
+                      "placeholderText": "ForwardRef-placeholderText-96",
+                      "sLink": "ForwardRef-sLink-101",
+                      "sText": "ForwardRef-sText-98",
+                      "sTitle": "ForwardRef-sTitle-88",
+                      "selectedNavText": "ForwardRef-selectedNavText-97",
+                      "selectedText": "ForwardRef-selectedText-93",
+                      "vizText": "ForwardRef-vizText-103",
+                      "xlTitle": "ForwardRef-xlTitle-85",
+                      "xsTitle": "ForwardRef-xsTitle-89",
+                      "xxlTitle": "ForwardRef-xxlTitle-84",
+                      "xxsTitle": "ForwardRef-xxsTitle-90",
                     }
                   }
                   component={null}
@@ -7599,7 +7599,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="infoText"
                 >
                   <p
-                    className="Typography-infoText-100 Typography-baseFontFamily-104 Typography-margin-105"
+                    className="ForwardRef-infoText-100 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                     theme={
                       Object {
                         "breakpoints": Object {
@@ -8328,8 +8328,8 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   >
                     jpeg
                   </p>
-                </Typography>
-              </WithStyles(Typography)>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
             </div>
             <div
               className="DropZone-dropzoneContainer-71"
@@ -9131,41 +9131,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 <div
                   className="DropZone-dropzoneAreaLabels-77"
                 >
-                  <WithStyles(Typography)
+                  <WithStyles(ForwardRef)
                     className="DropZone-dragText-79"
                     component={null}
                     paragraph={false}
                     variant="normalText"
                   >
-                    <Typography
+                    <ForwardRef
                       className="DropZone-dragText-79"
                       classes={
                         Object {
-                          "3xlTitle": "Typography-3xlTitle-83",
-                          "4xlTitle": "Typography-4xlTitle-82",
-                          "5xlTitle": "Typography-5xlTitle-81",
-                          "baseFontFamily": "Typography-baseFontFamily-104",
-                          "disabledButtonText": "Typography-disabledButtonText-95",
-                          "disabledText": "Typography-disabledText-102",
-                          "highlightText": "Typography-highlightText-91",
-                          "infoText": "Typography-infoText-100",
-                          "inlineLink": "Typography-inlineLink-94",
-                          "lTitle": "Typography-lTitle-86",
-                          "labelText": "Typography-labelText-99",
-                          "mTitle": "Typography-mTitle-87",
-                          "margin": "Typography-margin-105",
-                          "normalText": "Typography-normalText-92",
-                          "placeholderText": "Typography-placeholderText-96",
-                          "sLink": "Typography-sLink-101",
-                          "sText": "Typography-sText-98",
-                          "sTitle": "Typography-sTitle-88",
-                          "selectedNavText": "Typography-selectedNavText-97",
-                          "selectedText": "Typography-selectedText-93",
-                          "vizText": "Typography-vizText-103",
-                          "xlTitle": "Typography-xlTitle-85",
-                          "xsTitle": "Typography-xsTitle-89",
-                          "xxlTitle": "Typography-xxlTitle-84",
-                          "xxsTitle": "Typography-xxsTitle-90",
+                          "3xlTitle": "ForwardRef-3xlTitle-83",
+                          "4xlTitle": "ForwardRef-4xlTitle-82",
+                          "5xlTitle": "ForwardRef-5xlTitle-81",
+                          "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                          "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                          "disabledText": "ForwardRef-disabledText-102",
+                          "highlightText": "ForwardRef-highlightText-91",
+                          "infoText": "ForwardRef-infoText-100",
+                          "inlineLink": "ForwardRef-inlineLink-94",
+                          "lTitle": "ForwardRef-lTitle-86",
+                          "labelText": "ForwardRef-labelText-99",
+                          "mTitle": "ForwardRef-mTitle-87",
+                          "margin": "ForwardRef-margin-105",
+                          "normalText": "ForwardRef-normalText-92",
+                          "placeholderText": "ForwardRef-placeholderText-96",
+                          "sLink": "ForwardRef-sLink-101",
+                          "sText": "ForwardRef-sText-98",
+                          "sTitle": "ForwardRef-sTitle-88",
+                          "selectedNavText": "ForwardRef-selectedNavText-97",
+                          "selectedText": "ForwardRef-selectedText-93",
+                          "vizText": "ForwardRef-vizText-103",
+                          "xlTitle": "ForwardRef-xlTitle-85",
+                          "xsTitle": "ForwardRef-xsTitle-89",
+                          "xxlTitle": "ForwardRef-xxlTitle-84",
+                          "xxsTitle": "ForwardRef-xxsTitle-90",
                         }
                       }
                       component={null}
@@ -9898,7 +9898,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       variant="normalText"
                     >
                       <p
-                        className="Typography-normalText-92 Typography-baseFontFamily-104 Typography-margin-105 DropZone-dragText-79"
+                        className="ForwardRef-normalText-92 ForwardRef-baseFontFamily-104 ForwardRef-margin-105 DropZone-dragText-79"
                         theme={
                           Object {
                             "breakpoints": Object {
@@ -10631,8 +10631,8 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                            undefined
                         </span>
                       </p>
-                    </Typography>
-                  </WithStyles(Typography)>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
                 </div>
               </div>
             </div>
@@ -12179,41 +12179,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <div
                       className="File-icon-115"
                     />
-                    <WithStyles(Typography)
+                    <WithStyles(ForwardRef)
                       className="File-textTruncation-119"
                       component={null}
                       paragraph={false}
                       variant="sText"
                     >
-                      <Typography
+                      <ForwardRef
                         className="File-textTruncation-119"
                         classes={
                           Object {
-                            "3xlTitle": "Typography-3xlTitle-83",
-                            "4xlTitle": "Typography-4xlTitle-82",
-                            "5xlTitle": "Typography-5xlTitle-81",
-                            "baseFontFamily": "Typography-baseFontFamily-104",
-                            "disabledButtonText": "Typography-disabledButtonText-95",
-                            "disabledText": "Typography-disabledText-102",
-                            "highlightText": "Typography-highlightText-91",
-                            "infoText": "Typography-infoText-100",
-                            "inlineLink": "Typography-inlineLink-94",
-                            "lTitle": "Typography-lTitle-86",
-                            "labelText": "Typography-labelText-99",
-                            "mTitle": "Typography-mTitle-87",
-                            "margin": "Typography-margin-105",
-                            "normalText": "Typography-normalText-92",
-                            "placeholderText": "Typography-placeholderText-96",
-                            "sLink": "Typography-sLink-101",
-                            "sText": "Typography-sText-98",
-                            "sTitle": "Typography-sTitle-88",
-                            "selectedNavText": "Typography-selectedNavText-97",
-                            "selectedText": "Typography-selectedText-93",
-                            "vizText": "Typography-vizText-103",
-                            "xlTitle": "Typography-xlTitle-85",
-                            "xsTitle": "Typography-xsTitle-89",
-                            "xxlTitle": "Typography-xxlTitle-84",
-                            "xxsTitle": "Typography-xxsTitle-90",
+                            "3xlTitle": "ForwardRef-3xlTitle-83",
+                            "4xlTitle": "ForwardRef-4xlTitle-82",
+                            "5xlTitle": "ForwardRef-5xlTitle-81",
+                            "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                            "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                            "disabledText": "ForwardRef-disabledText-102",
+                            "highlightText": "ForwardRef-highlightText-91",
+                            "infoText": "ForwardRef-infoText-100",
+                            "inlineLink": "ForwardRef-inlineLink-94",
+                            "lTitle": "ForwardRef-lTitle-86",
+                            "labelText": "ForwardRef-labelText-99",
+                            "mTitle": "ForwardRef-mTitle-87",
+                            "margin": "ForwardRef-margin-105",
+                            "normalText": "ForwardRef-normalText-92",
+                            "placeholderText": "ForwardRef-placeholderText-96",
+                            "sLink": "ForwardRef-sLink-101",
+                            "sText": "ForwardRef-sText-98",
+                            "sTitle": "ForwardRef-sTitle-88",
+                            "selectedNavText": "ForwardRef-selectedNavText-97",
+                            "selectedText": "ForwardRef-selectedText-93",
+                            "vizText": "ForwardRef-vizText-103",
+                            "xlTitle": "ForwardRef-xlTitle-85",
+                            "xsTitle": "ForwardRef-xsTitle-89",
+                            "xxlTitle": "ForwardRef-xxlTitle-84",
+                            "xxsTitle": "ForwardRef-xxsTitle-90",
                           }
                         }
                         component={null}
@@ -12946,7 +12946,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         variant="sText"
                       >
                         <p
-                          className="Typography-sText-98 Typography-baseFontFamily-104 Typography-margin-105 File-textTruncation-119"
+                          className="ForwardRef-sText-98 ForwardRef-baseFontFamily-104 ForwardRef-margin-105 File-textTruncation-119"
                           theme={
                             Object {
                               "breakpoints": Object {
@@ -13675,44 +13675,44 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
                         </p>
-                      </Typography>
-                    </WithStyles(Typography)>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                     <span
                       className="File-progressText-114"
                     >
-                      <WithStyles(Typography)
+                      <WithStyles(ForwardRef)
                         component={null}
                         paragraph={false}
                         variant="sText"
                       >
-                        <Typography
+                        <ForwardRef
                           classes={
                             Object {
-                              "3xlTitle": "Typography-3xlTitle-83",
-                              "4xlTitle": "Typography-4xlTitle-82",
-                              "5xlTitle": "Typography-5xlTitle-81",
-                              "baseFontFamily": "Typography-baseFontFamily-104",
-                              "disabledButtonText": "Typography-disabledButtonText-95",
-                              "disabledText": "Typography-disabledText-102",
-                              "highlightText": "Typography-highlightText-91",
-                              "infoText": "Typography-infoText-100",
-                              "inlineLink": "Typography-inlineLink-94",
-                              "lTitle": "Typography-lTitle-86",
-                              "labelText": "Typography-labelText-99",
-                              "mTitle": "Typography-mTitle-87",
-                              "margin": "Typography-margin-105",
-                              "normalText": "Typography-normalText-92",
-                              "placeholderText": "Typography-placeholderText-96",
-                              "sLink": "Typography-sLink-101",
-                              "sText": "Typography-sText-98",
-                              "sTitle": "Typography-sTitle-88",
-                              "selectedNavText": "Typography-selectedNavText-97",
-                              "selectedText": "Typography-selectedText-93",
-                              "vizText": "Typography-vizText-103",
-                              "xlTitle": "Typography-xlTitle-85",
-                              "xsTitle": "Typography-xsTitle-89",
-                              "xxlTitle": "Typography-xxlTitle-84",
-                              "xxsTitle": "Typography-xxsTitle-90",
+                              "3xlTitle": "ForwardRef-3xlTitle-83",
+                              "4xlTitle": "ForwardRef-4xlTitle-82",
+                              "5xlTitle": "ForwardRef-5xlTitle-81",
+                              "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                              "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                              "disabledText": "ForwardRef-disabledText-102",
+                              "highlightText": "ForwardRef-highlightText-91",
+                              "infoText": "ForwardRef-infoText-100",
+                              "inlineLink": "ForwardRef-inlineLink-94",
+                              "lTitle": "ForwardRef-lTitle-86",
+                              "labelText": "ForwardRef-labelText-99",
+                              "mTitle": "ForwardRef-mTitle-87",
+                              "margin": "ForwardRef-margin-105",
+                              "normalText": "ForwardRef-normalText-92",
+                              "placeholderText": "ForwardRef-placeholderText-96",
+                              "sLink": "ForwardRef-sLink-101",
+                              "sText": "ForwardRef-sText-98",
+                              "sTitle": "ForwardRef-sTitle-88",
+                              "selectedNavText": "ForwardRef-selectedNavText-97",
+                              "selectedText": "ForwardRef-selectedText-93",
+                              "vizText": "ForwardRef-vizText-103",
+                              "xlTitle": "ForwardRef-xlTitle-85",
+                              "xsTitle": "ForwardRef-xsTitle-89",
+                              "xxlTitle": "ForwardRef-xxlTitle-84",
+                              "xxsTitle": "ForwardRef-xxsTitle-90",
                             }
                           }
                           component={null}
@@ -14445,7 +14445,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           variant="sText"
                         >
                           <p
-                            className="Typography-sText-98 Typography-baseFontFamily-104 Typography-margin-105"
+                            className="ForwardRef-sText-98 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -15174,8 +15174,8 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           >
                              14.10MB
                           </p>
-                        </Typography>
-                      </WithStyles(Typography)>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
                     </span>
                     <WithStyles(ForwardRef(IconButton))
                       aria-label="Remove File"
@@ -16793,41 +16793,41 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <div
                       className="File-icon-115"
                     />
-                    <WithStyles(Typography)
+                    <WithStyles(ForwardRef)
                       className="File-textTruncation-119"
                       component={null}
                       paragraph={false}
                       variant="sText"
                     >
-                      <Typography
+                      <ForwardRef
                         className="File-textTruncation-119"
                         classes={
                           Object {
-                            "3xlTitle": "Typography-3xlTitle-83",
-                            "4xlTitle": "Typography-4xlTitle-82",
-                            "5xlTitle": "Typography-5xlTitle-81",
-                            "baseFontFamily": "Typography-baseFontFamily-104",
-                            "disabledButtonText": "Typography-disabledButtonText-95",
-                            "disabledText": "Typography-disabledText-102",
-                            "highlightText": "Typography-highlightText-91",
-                            "infoText": "Typography-infoText-100",
-                            "inlineLink": "Typography-inlineLink-94",
-                            "lTitle": "Typography-lTitle-86",
-                            "labelText": "Typography-labelText-99",
-                            "mTitle": "Typography-mTitle-87",
-                            "margin": "Typography-margin-105",
-                            "normalText": "Typography-normalText-92",
-                            "placeholderText": "Typography-placeholderText-96",
-                            "sLink": "Typography-sLink-101",
-                            "sText": "Typography-sText-98",
-                            "sTitle": "Typography-sTitle-88",
-                            "selectedNavText": "Typography-selectedNavText-97",
-                            "selectedText": "Typography-selectedText-93",
-                            "vizText": "Typography-vizText-103",
-                            "xlTitle": "Typography-xlTitle-85",
-                            "xsTitle": "Typography-xsTitle-89",
-                            "xxlTitle": "Typography-xxlTitle-84",
-                            "xxsTitle": "Typography-xxsTitle-90",
+                            "3xlTitle": "ForwardRef-3xlTitle-83",
+                            "4xlTitle": "ForwardRef-4xlTitle-82",
+                            "5xlTitle": "ForwardRef-5xlTitle-81",
+                            "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                            "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                            "disabledText": "ForwardRef-disabledText-102",
+                            "highlightText": "ForwardRef-highlightText-91",
+                            "infoText": "ForwardRef-infoText-100",
+                            "inlineLink": "ForwardRef-inlineLink-94",
+                            "lTitle": "ForwardRef-lTitle-86",
+                            "labelText": "ForwardRef-labelText-99",
+                            "mTitle": "ForwardRef-mTitle-87",
+                            "margin": "ForwardRef-margin-105",
+                            "normalText": "ForwardRef-normalText-92",
+                            "placeholderText": "ForwardRef-placeholderText-96",
+                            "sLink": "ForwardRef-sLink-101",
+                            "sText": "ForwardRef-sText-98",
+                            "sTitle": "ForwardRef-sTitle-88",
+                            "selectedNavText": "ForwardRef-selectedNavText-97",
+                            "selectedText": "ForwardRef-selectedText-93",
+                            "vizText": "ForwardRef-vizText-103",
+                            "xlTitle": "ForwardRef-xlTitle-85",
+                            "xsTitle": "ForwardRef-xsTitle-89",
+                            "xxlTitle": "ForwardRef-xxlTitle-84",
+                            "xxsTitle": "ForwardRef-xxsTitle-90",
                           }
                         }
                         component={null}
@@ -17560,7 +17560,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         variant="sText"
                       >
                         <p
-                          className="Typography-sText-98 Typography-baseFontFamily-104 Typography-margin-105 File-textTruncation-119"
+                          className="ForwardRef-sText-98 ForwardRef-baseFontFamily-104 ForwardRef-margin-105 File-textTruncation-119"
                           theme={
                             Object {
                               "breakpoints": Object {
@@ -18289,44 +18289,44 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
                         </p>
-                      </Typography>
-                    </WithStyles(Typography)>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                     <span
                       className="File-progressText-114"
                     >
-                      <WithStyles(Typography)
+                      <WithStyles(ForwardRef)
                         component={null}
                         paragraph={false}
                         variant="sText"
                       >
-                        <Typography
+                        <ForwardRef
                           classes={
                             Object {
-                              "3xlTitle": "Typography-3xlTitle-83",
-                              "4xlTitle": "Typography-4xlTitle-82",
-                              "5xlTitle": "Typography-5xlTitle-81",
-                              "baseFontFamily": "Typography-baseFontFamily-104",
-                              "disabledButtonText": "Typography-disabledButtonText-95",
-                              "disabledText": "Typography-disabledText-102",
-                              "highlightText": "Typography-highlightText-91",
-                              "infoText": "Typography-infoText-100",
-                              "inlineLink": "Typography-inlineLink-94",
-                              "lTitle": "Typography-lTitle-86",
-                              "labelText": "Typography-labelText-99",
-                              "mTitle": "Typography-mTitle-87",
-                              "margin": "Typography-margin-105",
-                              "normalText": "Typography-normalText-92",
-                              "placeholderText": "Typography-placeholderText-96",
-                              "sLink": "Typography-sLink-101",
-                              "sText": "Typography-sText-98",
-                              "sTitle": "Typography-sTitle-88",
-                              "selectedNavText": "Typography-selectedNavText-97",
-                              "selectedText": "Typography-selectedText-93",
-                              "vizText": "Typography-vizText-103",
-                              "xlTitle": "Typography-xlTitle-85",
-                              "xsTitle": "Typography-xsTitle-89",
-                              "xxlTitle": "Typography-xxlTitle-84",
-                              "xxsTitle": "Typography-xxsTitle-90",
+                              "3xlTitle": "ForwardRef-3xlTitle-83",
+                              "4xlTitle": "ForwardRef-4xlTitle-82",
+                              "5xlTitle": "ForwardRef-5xlTitle-81",
+                              "baseFontFamily": "ForwardRef-baseFontFamily-104",
+                              "disabledButtonText": "ForwardRef-disabledButtonText-95",
+                              "disabledText": "ForwardRef-disabledText-102",
+                              "highlightText": "ForwardRef-highlightText-91",
+                              "infoText": "ForwardRef-infoText-100",
+                              "inlineLink": "ForwardRef-inlineLink-94",
+                              "lTitle": "ForwardRef-lTitle-86",
+                              "labelText": "ForwardRef-labelText-99",
+                              "mTitle": "ForwardRef-mTitle-87",
+                              "margin": "ForwardRef-margin-105",
+                              "normalText": "ForwardRef-normalText-92",
+                              "placeholderText": "ForwardRef-placeholderText-96",
+                              "sLink": "ForwardRef-sLink-101",
+                              "sText": "ForwardRef-sText-98",
+                              "sTitle": "ForwardRef-sTitle-88",
+                              "selectedNavText": "ForwardRef-selectedNavText-97",
+                              "selectedText": "ForwardRef-selectedText-93",
+                              "vizText": "ForwardRef-vizText-103",
+                              "xlTitle": "ForwardRef-xlTitle-85",
+                              "xsTitle": "ForwardRef-xsTitle-89",
+                              "xxlTitle": "ForwardRef-xxlTitle-84",
+                              "xxsTitle": "ForwardRef-xxsTitle-90",
                             }
                           }
                           component={null}
@@ -19059,7 +19059,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           variant="sText"
                         >
                           <p
-                            className="Typography-sText-98 Typography-baseFontFamily-104 Typography-margin-105"
+                            className="ForwardRef-sText-98 ForwardRef-baseFontFamily-104 ForwardRef-margin-105"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -19788,8 +19788,8 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           >
                              875.00kB
                           </p>
-                        </Typography>
-                      </WithStyles(Typography)>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
                     </span>
                     <WithStyles(ForwardRef(IconButton))
                       aria-label="Remove File"

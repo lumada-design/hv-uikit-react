@@ -2244,41 +2244,41 @@ exports[`PeriodPicker should render correctly 1`] = `
               </div>
             </DropUpXS>
           </WithStyles(DropUpXS)>
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             className="PeriodPicker-periodText-40"
             component={null}
             paragraph={false}
             variant="highlightText"
           >
-            <Typography
+            <ForwardRef
               className="PeriodPicker-periodText-40"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-49",
-                  "4xlTitle": "Typography-4xlTitle-48",
-                  "5xlTitle": "Typography-5xlTitle-47",
-                  "baseFontFamily": "Typography-baseFontFamily-70",
-                  "disabledButtonText": "Typography-disabledButtonText-61",
-                  "disabledText": "Typography-disabledText-68",
-                  "highlightText": "Typography-highlightText-57",
-                  "infoText": "Typography-infoText-66",
-                  "inlineLink": "Typography-inlineLink-60",
-                  "lTitle": "Typography-lTitle-52",
-                  "labelText": "Typography-labelText-65",
-                  "mTitle": "Typography-mTitle-53",
-                  "margin": "Typography-margin-71",
-                  "normalText": "Typography-normalText-58",
-                  "placeholderText": "Typography-placeholderText-62",
-                  "sLink": "Typography-sLink-67",
-                  "sText": "Typography-sText-64",
-                  "sTitle": "Typography-sTitle-54",
-                  "selectedNavText": "Typography-selectedNavText-63",
-                  "selectedText": "Typography-selectedText-59",
-                  "vizText": "Typography-vizText-69",
-                  "xlTitle": "Typography-xlTitle-51",
-                  "xsTitle": "Typography-xsTitle-55",
-                  "xxlTitle": "Typography-xxlTitle-50",
-                  "xxsTitle": "Typography-xxsTitle-56",
+                  "3xlTitle": "ForwardRef-3xlTitle-49",
+                  "4xlTitle": "ForwardRef-4xlTitle-48",
+                  "5xlTitle": "ForwardRef-5xlTitle-47",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-70",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-61",
+                  "disabledText": "ForwardRef-disabledText-68",
+                  "highlightText": "ForwardRef-highlightText-57",
+                  "infoText": "ForwardRef-infoText-66",
+                  "inlineLink": "ForwardRef-inlineLink-60",
+                  "lTitle": "ForwardRef-lTitle-52",
+                  "labelText": "ForwardRef-labelText-65",
+                  "mTitle": "ForwardRef-mTitle-53",
+                  "margin": "ForwardRef-margin-71",
+                  "normalText": "ForwardRef-normalText-58",
+                  "placeholderText": "ForwardRef-placeholderText-62",
+                  "sLink": "ForwardRef-sLink-67",
+                  "sText": "ForwardRef-sText-64",
+                  "sTitle": "ForwardRef-sTitle-54",
+                  "selectedNavText": "ForwardRef-selectedNavText-63",
+                  "selectedText": "ForwardRef-selectedText-59",
+                  "vizText": "ForwardRef-vizText-69",
+                  "xlTitle": "ForwardRef-xlTitle-51",
+                  "xsTitle": "ForwardRef-xsTitle-55",
+                  "xxlTitle": "ForwardRef-xxlTitle-50",
+                  "xxsTitle": "ForwardRef-xxsTitle-56",
                 }
               }
               component={null}
@@ -3011,7 +3011,7 @@ exports[`PeriodPicker should render correctly 1`] = `
               variant="highlightText"
             >
               <p
-                className="Typography-highlightText-57 Typography-baseFontFamily-70 Typography-margin-71 PeriodPicker-periodText-40"
+                className="ForwardRef-highlightText-57 ForwardRef-baseFontFamily-70 ForwardRef-margin-71 PeriodPicker-periodText-40"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -3740,8 +3740,8 @@ exports[`PeriodPicker should render correctly 1`] = `
               >
                 AM
               </p>
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
           <WithStyles(DropDownXS)
             className="PeriodPicker-icon-41"
             onClick={[Function]}

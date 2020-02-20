@@ -2238,39 +2238,39 @@ exports[`Kpi withStyles should render correctly 1`] = `
           }
         >
           <div>
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               component={null}
               paragraph={false}
               variant="highlightText"
             >
-              <Typography
+              <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-46",
-                    "4xlTitle": "Typography-4xlTitle-45",
-                    "5xlTitle": "Typography-5xlTitle-44",
-                    "baseFontFamily": "Typography-baseFontFamily-67",
-                    "disabledButtonText": "Typography-disabledButtonText-58",
-                    "disabledText": "Typography-disabledText-65",
-                    "highlightText": "Typography-highlightText-54",
-                    "infoText": "Typography-infoText-63",
-                    "inlineLink": "Typography-inlineLink-57",
-                    "lTitle": "Typography-lTitle-49",
-                    "labelText": "Typography-labelText-62",
-                    "mTitle": "Typography-mTitle-50",
-                    "margin": "Typography-margin-68",
-                    "normalText": "Typography-normalText-55",
-                    "placeholderText": "Typography-placeholderText-59",
-                    "sLink": "Typography-sLink-64",
-                    "sText": "Typography-sText-61",
-                    "sTitle": "Typography-sTitle-51",
-                    "selectedNavText": "Typography-selectedNavText-60",
-                    "selectedText": "Typography-selectedText-56",
-                    "vizText": "Typography-vizText-66",
-                    "xlTitle": "Typography-xlTitle-48",
-                    "xsTitle": "Typography-xsTitle-52",
-                    "xxlTitle": "Typography-xxlTitle-47",
-                    "xxsTitle": "Typography-xxsTitle-53",
+                    "3xlTitle": "ForwardRef-3xlTitle-46",
+                    "4xlTitle": "ForwardRef-4xlTitle-45",
+                    "5xlTitle": "ForwardRef-5xlTitle-44",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-67",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-58",
+                    "disabledText": "ForwardRef-disabledText-65",
+                    "highlightText": "ForwardRef-highlightText-54",
+                    "infoText": "ForwardRef-infoText-63",
+                    "inlineLink": "ForwardRef-inlineLink-57",
+                    "lTitle": "ForwardRef-lTitle-49",
+                    "labelText": "ForwardRef-labelText-62",
+                    "mTitle": "ForwardRef-mTitle-50",
+                    "margin": "ForwardRef-margin-68",
+                    "normalText": "ForwardRef-normalText-55",
+                    "placeholderText": "ForwardRef-placeholderText-59",
+                    "sLink": "ForwardRef-sLink-64",
+                    "sText": "ForwardRef-sText-61",
+                    "sTitle": "ForwardRef-sTitle-51",
+                    "selectedNavText": "ForwardRef-selectedNavText-60",
+                    "selectedText": "ForwardRef-selectedText-56",
+                    "vizText": "ForwardRef-vizText-66",
+                    "xlTitle": "ForwardRef-xlTitle-48",
+                    "xsTitle": "ForwardRef-xsTitle-52",
+                    "xxlTitle": "ForwardRef-xxlTitle-47",
+                    "xxsTitle": "ForwardRef-xxsTitle-53",
                   }
                 }
                 component={null}
@@ -3003,7 +3003,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 variant="highlightText"
               >
                 <p
-                  className="Typography-highlightText-54 Typography-baseFontFamily-67 Typography-margin-68"
+                  className="ForwardRef-highlightText-54 ForwardRef-baseFontFamily-67 ForwardRef-margin-68"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -3732,47 +3732,47 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 >
                   Avg. service time
                 </p>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
           </div>
           <div
             className="HvKpi-indicatorsContainer-38"
           >
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               className="HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
               component={null}
               paragraph={false}
               variant="lTitle"
             >
-              <Typography
+              <ForwardRef
                 className="HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-46",
-                    "4xlTitle": "Typography-4xlTitle-45",
-                    "5xlTitle": "Typography-5xlTitle-44",
-                    "baseFontFamily": "Typography-baseFontFamily-67",
-                    "disabledButtonText": "Typography-disabledButtonText-58",
-                    "disabledText": "Typography-disabledText-65",
-                    "highlightText": "Typography-highlightText-54",
-                    "infoText": "Typography-infoText-63",
-                    "inlineLink": "Typography-inlineLink-57",
-                    "lTitle": "Typography-lTitle-49",
-                    "labelText": "Typography-labelText-62",
-                    "mTitle": "Typography-mTitle-50",
-                    "margin": "Typography-margin-68",
-                    "normalText": "Typography-normalText-55",
-                    "placeholderText": "Typography-placeholderText-59",
-                    "sLink": "Typography-sLink-64",
-                    "sText": "Typography-sText-61",
-                    "sTitle": "Typography-sTitle-51",
-                    "selectedNavText": "Typography-selectedNavText-60",
-                    "selectedText": "Typography-selectedText-56",
-                    "vizText": "Typography-vizText-66",
-                    "xlTitle": "Typography-xlTitle-48",
-                    "xsTitle": "Typography-xsTitle-52",
-                    "xxlTitle": "Typography-xxlTitle-47",
-                    "xxsTitle": "Typography-xxsTitle-53",
+                    "3xlTitle": "ForwardRef-3xlTitle-46",
+                    "4xlTitle": "ForwardRef-4xlTitle-45",
+                    "5xlTitle": "ForwardRef-5xlTitle-44",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-67",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-58",
+                    "disabledText": "ForwardRef-disabledText-65",
+                    "highlightText": "ForwardRef-highlightText-54",
+                    "infoText": "ForwardRef-infoText-63",
+                    "inlineLink": "ForwardRef-inlineLink-57",
+                    "lTitle": "ForwardRef-lTitle-49",
+                    "labelText": "ForwardRef-labelText-62",
+                    "mTitle": "ForwardRef-mTitle-50",
+                    "margin": "ForwardRef-margin-68",
+                    "normalText": "ForwardRef-normalText-55",
+                    "placeholderText": "ForwardRef-placeholderText-59",
+                    "sLink": "ForwardRef-sLink-64",
+                    "sText": "ForwardRef-sText-61",
+                    "sTitle": "ForwardRef-sTitle-51",
+                    "selectedNavText": "ForwardRef-selectedNavText-60",
+                    "selectedText": "ForwardRef-selectedText-56",
+                    "vizText": "ForwardRef-vizText-66",
+                    "xlTitle": "ForwardRef-xlTitle-48",
+                    "xsTitle": "ForwardRef-xsTitle-52",
+                    "xxlTitle": "ForwardRef-xxlTitle-47",
+                    "xxsTitle": "ForwardRef-xxsTitle-53",
                   }
                 }
                 component={null}
@@ -4505,7 +4505,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 variant="lTitle"
               >
                 <h2
-                  className="Typography-lTitle-49 Typography-baseFontFamily-67 Typography-margin-68 HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
+                  className="ForwardRef-lTitle-49 ForwardRef-baseFontFamily-67 ForwardRef-margin-68 HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -5234,43 +5234,43 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 >
                   8.85
                 </h2>
-              </Typography>
-            </WithStyles(Typography)>
-            <WithStyles(Typography)
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
               className="HvKpi-indicatorUnit-39"
               component={null}
               paragraph={false}
               variant="sTitle"
             >
-              <Typography
+              <ForwardRef
                 className="HvKpi-indicatorUnit-39"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-46",
-                    "4xlTitle": "Typography-4xlTitle-45",
-                    "5xlTitle": "Typography-5xlTitle-44",
-                    "baseFontFamily": "Typography-baseFontFamily-67",
-                    "disabledButtonText": "Typography-disabledButtonText-58",
-                    "disabledText": "Typography-disabledText-65",
-                    "highlightText": "Typography-highlightText-54",
-                    "infoText": "Typography-infoText-63",
-                    "inlineLink": "Typography-inlineLink-57",
-                    "lTitle": "Typography-lTitle-49",
-                    "labelText": "Typography-labelText-62",
-                    "mTitle": "Typography-mTitle-50",
-                    "margin": "Typography-margin-68",
-                    "normalText": "Typography-normalText-55",
-                    "placeholderText": "Typography-placeholderText-59",
-                    "sLink": "Typography-sLink-64",
-                    "sText": "Typography-sText-61",
-                    "sTitle": "Typography-sTitle-51",
-                    "selectedNavText": "Typography-selectedNavText-60",
-                    "selectedText": "Typography-selectedText-56",
-                    "vizText": "Typography-vizText-66",
-                    "xlTitle": "Typography-xlTitle-48",
-                    "xsTitle": "Typography-xsTitle-52",
-                    "xxlTitle": "Typography-xxlTitle-47",
-                    "xxsTitle": "Typography-xxsTitle-53",
+                    "3xlTitle": "ForwardRef-3xlTitle-46",
+                    "4xlTitle": "ForwardRef-4xlTitle-45",
+                    "5xlTitle": "ForwardRef-5xlTitle-44",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-67",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-58",
+                    "disabledText": "ForwardRef-disabledText-65",
+                    "highlightText": "ForwardRef-highlightText-54",
+                    "infoText": "ForwardRef-infoText-63",
+                    "inlineLink": "ForwardRef-inlineLink-57",
+                    "lTitle": "ForwardRef-lTitle-49",
+                    "labelText": "ForwardRef-labelText-62",
+                    "mTitle": "ForwardRef-mTitle-50",
+                    "margin": "ForwardRef-margin-68",
+                    "normalText": "ForwardRef-normalText-55",
+                    "placeholderText": "ForwardRef-placeholderText-59",
+                    "sLink": "ForwardRef-sLink-64",
+                    "sText": "ForwardRef-sText-61",
+                    "sTitle": "ForwardRef-sTitle-51",
+                    "selectedNavText": "ForwardRef-selectedNavText-60",
+                    "selectedText": "ForwardRef-selectedText-56",
+                    "vizText": "ForwardRef-vizText-66",
+                    "xlTitle": "ForwardRef-xlTitle-48",
+                    "xsTitle": "ForwardRef-xsTitle-52",
+                    "xxlTitle": "ForwardRef-xxlTitle-47",
+                    "xxsTitle": "ForwardRef-xxsTitle-53",
                   }
                 }
                 component={null}
@@ -6003,7 +6003,7 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 variant="sTitle"
               >
                 <h4
-                  className="Typography-sTitle-51 Typography-baseFontFamily-67 Typography-margin-68 HvKpi-indicatorUnit-39"
+                  className="ForwardRef-sTitle-51 ForwardRef-baseFontFamily-67 ForwardRef-margin-68 HvKpi-indicatorUnit-39"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -6732,8 +6732,8 @@ exports[`Kpi withStyles should render correctly 1`] = `
                 >
                   MS
                 </h4>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
           </div>
         </div>
       </HvKpi>

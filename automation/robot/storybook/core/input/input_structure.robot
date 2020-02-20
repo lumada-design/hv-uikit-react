@@ -6,14 +6,14 @@ Suite Setup       open storybook
 Suite Teardown    Close Browser
 Default Tags      smoke
 
-
 *** Variables ***
 ${input}          css:input[type=text]
-${inputClear}     css:button[aria-label='Clear the text']
+${inputClear}     css:button[class*="HvInput-iconClear"]
 ${label}          input-simple-sample-label
 ${description}    input-simple-sample-description
-${icon}           css:div[title='Please enter your first name']
-
+${iconInfo}       css:div[class*="HvInput-infoIconContainer"]
+${iconSuccess}    css:#test div[class*="Success-root"]
+${iconMap}        css:#test div[class*="Map-root"]
 
 *** Test Cases ***
 clean text when click on input clear button
@@ -57,5 +57,25 @@ show static labels when input with static labels is rendered
 show info icon when input with info icon is rendered
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsimplewithiconinfo
     Wait Until Element Is Enabled    ${input}    10s
-    Element Should Be Visible        ${icon}
+    Element Should Be Visible        ${iconInfo}
 
+show only custom icon when text empty
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsuggestions
+    Wait Until Element Is Enabled    ${input}    10s
+    Element Should Be Visible        ${iconMap}
+    Element Should Not Be Visible    ${iconSuccess}
+
+show only custom icon when text filled and focused
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsuggestions
+    Wait Until Element Is Enabled    ${input}    10s
+    Input Text                       ${input}    aaa
+    Element Should Be Visible        ${iconMap}
+    Element Should Not Be Visible    ${iconSuccess}
+
+show only validation icon when text filled and not focused
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsuggestions
+    Wait Until Element Is Enabled    ${input}    10s
+    Input Text                       ${input}    aaa
+    Click Element                    css:body
+    Element Should Be Visible        ${iconSuccess}
+    Element Should Not Be Visible    ${iconMap}

@@ -25,7 +25,13 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import withDeprecate from "../withDeprecate";
 import styles from "./styles";
 import VerticalNavigation from "./VerticalNavigation";
 
-export default withStyles(styles, { withTheme: true })(VerticalNavigation);
+export default withStyles(styles, { withTheme: true })(
+  withDeprecate(
+    VerticalNavigation,
+    "This component is deprecated. Please use the new Vertical Navigation component."
+  )
+);

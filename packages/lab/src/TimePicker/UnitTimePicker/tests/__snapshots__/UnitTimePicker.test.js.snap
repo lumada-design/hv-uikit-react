@@ -7063,11 +7063,11 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             >
                               <button
                                 aria-controls="hv-input-2-input"
-                                aria-hidden="true"
                                 aria-label="Clear the text"
                                 className="HvInput-adornmentButton-127 HvInput-iconClear-129"
                                 onKeyDown={[Function]}
                                 onMouseDown={[Function]}
+                                tabIndex={-1}
                                 title="Clear the text"
                                 type="button"
                               >
@@ -7838,7 +7838,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     </WithStyles(ForwardRef(InputBase))>
                   </ForwardRef(Input)>
                 </WithStyles(ForwardRef(Input))>
-                <WithStyles(Typography)
+                <WithStyles(ForwardRef)
                   aria-atomic="true"
                   aria-controls="hv-input-2-input"
                   aria-labelledby={null}
@@ -7854,7 +7854,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   }
                   variant="sText"
                 >
-                  <Typography
+                  <ForwardRef
                     aria-atomic="true"
                     aria-controls="hv-input-2-input"
                     aria-labelledby={null}
@@ -7863,31 +7863,31 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     className="HvInput-textWarning-125 HvInput-infoText-124"
                     classes={
                       Object {
-                        "3xlTitle": "Typography-3xlTitle-171",
-                        "4xlTitle": "Typography-4xlTitle-170",
-                        "5xlTitle": "Typography-5xlTitle-169",
-                        "baseFontFamily": "Typography-baseFontFamily-192",
-                        "disabledButtonText": "Typography-disabledButtonText-183",
-                        "disabledText": "Typography-disabledText-190",
-                        "highlightText": "Typography-highlightText-179",
-                        "infoText": "Typography-infoText-188",
-                        "inlineLink": "Typography-inlineLink-182",
-                        "lTitle": "Typography-lTitle-174",
-                        "labelText": "Typography-labelText-187",
-                        "mTitle": "Typography-mTitle-175",
-                        "margin": "Typography-margin-193",
-                        "normalText": "Typography-normalText-180",
-                        "placeholderText": "Typography-placeholderText-184",
-                        "sLink": "Typography-sLink-189",
-                        "sText": "Typography-sText-186",
-                        "sTitle": "Typography-sTitle-176",
-                        "selectedNavText": "Typography-selectedNavText-185",
-                        "selectedText": "Typography-selectedText-181",
-                        "vizText": "Typography-vizText-191",
-                        "xlTitle": "Typography-xlTitle-173",
-                        "xsTitle": "Typography-xsTitle-177",
-                        "xxlTitle": "Typography-xxlTitle-172",
-                        "xxsTitle": "Typography-xxsTitle-178",
+                        "3xlTitle": "ForwardRef-3xlTitle-171",
+                        "4xlTitle": "ForwardRef-4xlTitle-170",
+                        "5xlTitle": "ForwardRef-5xlTitle-169",
+                        "baseFontFamily": "ForwardRef-baseFontFamily-192",
+                        "disabledButtonText": "ForwardRef-disabledButtonText-183",
+                        "disabledText": "ForwardRef-disabledText-190",
+                        "highlightText": "ForwardRef-highlightText-179",
+                        "infoText": "ForwardRef-infoText-188",
+                        "inlineLink": "ForwardRef-inlineLink-182",
+                        "lTitle": "ForwardRef-lTitle-174",
+                        "labelText": "ForwardRef-labelText-187",
+                        "mTitle": "ForwardRef-mTitle-175",
+                        "margin": "ForwardRef-margin-193",
+                        "normalText": "ForwardRef-normalText-180",
+                        "placeholderText": "ForwardRef-placeholderText-184",
+                        "sLink": "ForwardRef-sLink-189",
+                        "sText": "ForwardRef-sText-186",
+                        "sTitle": "ForwardRef-sTitle-176",
+                        "selectedNavText": "ForwardRef-selectedNavText-185",
+                        "selectedText": "ForwardRef-selectedText-181",
+                        "vizText": "ForwardRef-vizText-191",
+                        "xlTitle": "ForwardRef-xlTitle-173",
+                        "xsTitle": "ForwardRef-xsTitle-177",
+                        "xxlTitle": "ForwardRef-xxlTitle-172",
+                        "xxsTitle": "ForwardRef-xxsTitle-178",
                       }
                     }
                     component={null}
@@ -8630,7 +8630,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       aria-labelledby={null}
                       aria-live="polite"
                       aria-relevant="additions text"
-                      className="Typography-sText-186 Typography-baseFontFamily-192 Typography-margin-193 HvInput-textWarning-125 HvInput-infoText-124"
+                      className="ForwardRef-sText-186 ForwardRef-baseFontFamily-192 ForwardRef-margin-193 HvInput-textWarning-125 HvInput-infoText-124"
                       style={
                         Object {
                           "display": "none",
@@ -9362,8 +9362,8 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         }
                       }
                     />
-                  </Typography>
-                </WithStyles(Typography)>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
               </div>
             </HvInput>
           </WithStyles(HvInput)>

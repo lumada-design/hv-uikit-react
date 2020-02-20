@@ -121,7 +121,6 @@ const Focus = props => {
   const onBlur = evt => {
     setShowFocus(false);
     if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
-
     onBlurStrategy(evt);
   };
 
@@ -157,6 +156,7 @@ const Focus = props => {
     const focusesList = getFocuses().filter(
       el => isDisabledFocusable || !el.classList.contains(classes.disabled)
     );
+
     const currentFocus = focusesList.indexOf(evt.currentTarget);
 
     const focuses = {

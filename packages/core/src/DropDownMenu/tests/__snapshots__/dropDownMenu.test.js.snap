@@ -5139,7 +5139,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="0"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 1
@@ -5152,7 +5152,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 2
@@ -5165,7 +5165,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 3
@@ -5195,7 +5195,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="0"
                             >
                               <p
-                                class="Typography-normalText-143 Typography-baseFontFamily-155 Typography-margin-156 List-label-120 List-truncate-123"
+                                class="ForwardRef-normalText-143 ForwardRef-baseFontFamily-155 ForwardRef-margin-156 List-label-120 List-truncate-123"
                                 theme="[object Object]"
                               >
                                 Label 1
@@ -5208,7 +5208,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-143 Typography-baseFontFamily-155 Typography-margin-156 List-label-120 List-truncate-123"
+                                class="ForwardRef-normalText-143 ForwardRef-baseFontFamily-155 ForwardRef-margin-156 List-label-120 List-truncate-123"
                                 theme="[object Object]"
                               >
                                 Label 2
@@ -5221,7 +5221,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-143 Typography-baseFontFamily-155 Typography-margin-156 List-label-120 List-truncate-123"
+                                class="ForwardRef-normalText-143 ForwardRef-baseFontFamily-155 ForwardRef-margin-156 List-label-120 List-truncate-123"
                                 theme="[object Object]"
                               >
                                 Label 3
@@ -5251,7 +5251,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="0"
                             >
                               <p
-                                class="Typography-normalText-267 Typography-baseFontFamily-279 Typography-margin-280 List-label-244 List-truncate-247"
+                                class="ForwardRef-normalText-267 ForwardRef-baseFontFamily-279 ForwardRef-margin-280 List-label-244 List-truncate-247"
                                 theme="[object Object]"
                               >
                                 Label 1
@@ -5264,7 +5264,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-267 Typography-baseFontFamily-279 Typography-margin-280 List-label-244 List-truncate-247"
+                                class="ForwardRef-normalText-267 ForwardRef-baseFontFamily-279 ForwardRef-margin-280 List-label-244 List-truncate-247"
                                 theme="[object Object]"
                               >
                                 Label 2
@@ -5277,7 +5277,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-267 Typography-baseFontFamily-279 Typography-margin-280 List-label-244 List-truncate-247"
+                                class="ForwardRef-normalText-267 ForwardRef-baseFontFamily-279 ForwardRef-margin-280 List-label-244 List-truncate-247"
                                 theme="[object Object]"
                               >
                                 Label 3
@@ -5307,7 +5307,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="0"
                             >
                               <p
-                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                 theme="[object Object]"
                               >
                                 Label 1
@@ -5320,7 +5320,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                 theme="[object Object]"
                               >
                                 Label 2
@@ -5333,7 +5333,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                 theme="[object Object]"
                               >
                                 Label 3
@@ -6214,7 +6214,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -6227,7 +6227,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -6240,7 +6240,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -6290,7 +6290,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -6303,7 +6303,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -6316,7 +6316,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -6348,41 +6348,41 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-492 List-truncate-495"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-492 List-truncate-495"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-506",
-                                                  "4xlTitle": "Typography-4xlTitle-505",
-                                                  "5xlTitle": "Typography-5xlTitle-504",
-                                                  "baseFontFamily": "Typography-baseFontFamily-527",
-                                                  "disabledButtonText": "Typography-disabledButtonText-518",
-                                                  "disabledText": "Typography-disabledText-525",
-                                                  "highlightText": "Typography-highlightText-514",
-                                                  "infoText": "Typography-infoText-523",
-                                                  "inlineLink": "Typography-inlineLink-517",
-                                                  "lTitle": "Typography-lTitle-509",
-                                                  "labelText": "Typography-labelText-522",
-                                                  "mTitle": "Typography-mTitle-510",
-                                                  "margin": "Typography-margin-528",
-                                                  "normalText": "Typography-normalText-515",
-                                                  "placeholderText": "Typography-placeholderText-519",
-                                                  "sLink": "Typography-sLink-524",
-                                                  "sText": "Typography-sText-521",
-                                                  "sTitle": "Typography-sTitle-511",
-                                                  "selectedNavText": "Typography-selectedNavText-520",
-                                                  "selectedText": "Typography-selectedText-516",
-                                                  "vizText": "Typography-vizText-526",
-                                                  "xlTitle": "Typography-xlTitle-508",
-                                                  "xsTitle": "Typography-xsTitle-512",
-                                                  "xxlTitle": "Typography-xxlTitle-507",
-                                                  "xxsTitle": "Typography-xxsTitle-513",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-506",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-505",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-504",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-527",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-518",
+                                                  "disabledText": "ForwardRef-disabledText-525",
+                                                  "highlightText": "ForwardRef-highlightText-514",
+                                                  "infoText": "ForwardRef-infoText-523",
+                                                  "inlineLink": "ForwardRef-inlineLink-517",
+                                                  "lTitle": "ForwardRef-lTitle-509",
+                                                  "labelText": "ForwardRef-labelText-522",
+                                                  "mTitle": "ForwardRef-mTitle-510",
+                                                  "margin": "ForwardRef-margin-528",
+                                                  "normalText": "ForwardRef-normalText-515",
+                                                  "placeholderText": "ForwardRef-placeholderText-519",
+                                                  "sLink": "ForwardRef-sLink-524",
+                                                  "sText": "ForwardRef-sText-521",
+                                                  "sTitle": "ForwardRef-sTitle-511",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-520",
+                                                  "selectedText": "ForwardRef-selectedText-516",
+                                                  "vizText": "ForwardRef-vizText-526",
+                                                  "xlTitle": "ForwardRef-xlTitle-508",
+                                                  "xsTitle": "ForwardRef-xsTitle-512",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-507",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-513",
                                                 }
                                               }
                                               component={null}
@@ -7115,7 +7115,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                className="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -7844,8 +7844,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               >
                                                 Label 1
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>
@@ -7876,7 +7876,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -7889,7 +7889,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -7902,7 +7902,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -7952,7 +7952,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -7965,7 +7965,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -7978,7 +7978,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -8010,41 +8010,41 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-492 List-truncate-495"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-492 List-truncate-495"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-506",
-                                                  "4xlTitle": "Typography-4xlTitle-505",
-                                                  "5xlTitle": "Typography-5xlTitle-504",
-                                                  "baseFontFamily": "Typography-baseFontFamily-527",
-                                                  "disabledButtonText": "Typography-disabledButtonText-518",
-                                                  "disabledText": "Typography-disabledText-525",
-                                                  "highlightText": "Typography-highlightText-514",
-                                                  "infoText": "Typography-infoText-523",
-                                                  "inlineLink": "Typography-inlineLink-517",
-                                                  "lTitle": "Typography-lTitle-509",
-                                                  "labelText": "Typography-labelText-522",
-                                                  "mTitle": "Typography-mTitle-510",
-                                                  "margin": "Typography-margin-528",
-                                                  "normalText": "Typography-normalText-515",
-                                                  "placeholderText": "Typography-placeholderText-519",
-                                                  "sLink": "Typography-sLink-524",
-                                                  "sText": "Typography-sText-521",
-                                                  "sTitle": "Typography-sTitle-511",
-                                                  "selectedNavText": "Typography-selectedNavText-520",
-                                                  "selectedText": "Typography-selectedText-516",
-                                                  "vizText": "Typography-vizText-526",
-                                                  "xlTitle": "Typography-xlTitle-508",
-                                                  "xsTitle": "Typography-xsTitle-512",
-                                                  "xxlTitle": "Typography-xxlTitle-507",
-                                                  "xxsTitle": "Typography-xxsTitle-513",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-506",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-505",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-504",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-527",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-518",
+                                                  "disabledText": "ForwardRef-disabledText-525",
+                                                  "highlightText": "ForwardRef-highlightText-514",
+                                                  "infoText": "ForwardRef-infoText-523",
+                                                  "inlineLink": "ForwardRef-inlineLink-517",
+                                                  "lTitle": "ForwardRef-lTitle-509",
+                                                  "labelText": "ForwardRef-labelText-522",
+                                                  "mTitle": "ForwardRef-mTitle-510",
+                                                  "margin": "ForwardRef-margin-528",
+                                                  "normalText": "ForwardRef-normalText-515",
+                                                  "placeholderText": "ForwardRef-placeholderText-519",
+                                                  "sLink": "ForwardRef-sLink-524",
+                                                  "sText": "ForwardRef-sText-521",
+                                                  "sTitle": "ForwardRef-sTitle-511",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-520",
+                                                  "selectedText": "ForwardRef-selectedText-516",
+                                                  "vizText": "ForwardRef-vizText-526",
+                                                  "xlTitle": "ForwardRef-xlTitle-508",
+                                                  "xsTitle": "ForwardRef-xsTitle-512",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-507",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-513",
                                                 }
                                               }
                                               component={null}
@@ -8777,7 +8777,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                className="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -9506,8 +9506,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               >
                                                 Label 2
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>
@@ -9538,7 +9538,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -9551,7 +9551,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -9564,7 +9564,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                              class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -9614,7 +9614,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -9627,7 +9627,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -9640,7 +9640,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                class="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -9672,41 +9672,41 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-492 List-truncate-495"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-492 List-truncate-495"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-506",
-                                                  "4xlTitle": "Typography-4xlTitle-505",
-                                                  "5xlTitle": "Typography-5xlTitle-504",
-                                                  "baseFontFamily": "Typography-baseFontFamily-527",
-                                                  "disabledButtonText": "Typography-disabledButtonText-518",
-                                                  "disabledText": "Typography-disabledText-525",
-                                                  "highlightText": "Typography-highlightText-514",
-                                                  "infoText": "Typography-infoText-523",
-                                                  "inlineLink": "Typography-inlineLink-517",
-                                                  "lTitle": "Typography-lTitle-509",
-                                                  "labelText": "Typography-labelText-522",
-                                                  "mTitle": "Typography-mTitle-510",
-                                                  "margin": "Typography-margin-528",
-                                                  "normalText": "Typography-normalText-515",
-                                                  "placeholderText": "Typography-placeholderText-519",
-                                                  "sLink": "Typography-sLink-524",
-                                                  "sText": "Typography-sText-521",
-                                                  "sTitle": "Typography-sTitle-511",
-                                                  "selectedNavText": "Typography-selectedNavText-520",
-                                                  "selectedText": "Typography-selectedText-516",
-                                                  "vizText": "Typography-vizText-526",
-                                                  "xlTitle": "Typography-xlTitle-508",
-                                                  "xsTitle": "Typography-xsTitle-512",
-                                                  "xxlTitle": "Typography-xxlTitle-507",
-                                                  "xxsTitle": "Typography-xxsTitle-513",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-506",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-505",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-504",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-527",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-518",
+                                                  "disabledText": "ForwardRef-disabledText-525",
+                                                  "highlightText": "ForwardRef-highlightText-514",
+                                                  "infoText": "ForwardRef-infoText-523",
+                                                  "inlineLink": "ForwardRef-inlineLink-517",
+                                                  "lTitle": "ForwardRef-lTitle-509",
+                                                  "labelText": "ForwardRef-labelText-522",
+                                                  "mTitle": "ForwardRef-mTitle-510",
+                                                  "margin": "ForwardRef-margin-528",
+                                                  "normalText": "ForwardRef-normalText-515",
+                                                  "placeholderText": "ForwardRef-placeholderText-519",
+                                                  "sLink": "ForwardRef-sLink-524",
+                                                  "sText": "ForwardRef-sText-521",
+                                                  "sTitle": "ForwardRef-sTitle-511",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-520",
+                                                  "selectedText": "ForwardRef-selectedText-516",
+                                                  "vizText": "ForwardRef-vizText-526",
+                                                  "xlTitle": "ForwardRef-xlTitle-508",
+                                                  "xsTitle": "ForwardRef-xsTitle-512",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-507",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-513",
                                                 }
                                               }
                                               component={null}
@@ -10439,7 +10439,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-515 Typography-baseFontFamily-527 Typography-margin-528 List-label-492 List-truncate-495"
+                                                className="ForwardRef-normalText-515 ForwardRef-baseFontFamily-527 ForwardRef-margin-528 List-label-492 List-truncate-495"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -11168,8 +11168,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               >
                                                 Label 3
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>
@@ -16338,7 +16338,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               tabindex="0"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 1
@@ -16351,7 +16351,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 2
@@ -16364,7 +16364,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               tabindex="-1"
                             >
                               <p
-                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                 theme="[object Object]"
                               >
                                 Label 3
@@ -17245,7 +17245,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -17258,7 +17258,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -17271,7 +17271,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -17321,7 +17321,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -17334,7 +17334,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -17347,7 +17347,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -17379,41 +17379,41 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-42 List-truncate-45"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-42 List-truncate-45"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-56",
-                                                  "4xlTitle": "Typography-4xlTitle-55",
-                                                  "5xlTitle": "Typography-5xlTitle-54",
-                                                  "baseFontFamily": "Typography-baseFontFamily-77",
-                                                  "disabledButtonText": "Typography-disabledButtonText-68",
-                                                  "disabledText": "Typography-disabledText-75",
-                                                  "highlightText": "Typography-highlightText-64",
-                                                  "infoText": "Typography-infoText-73",
-                                                  "inlineLink": "Typography-inlineLink-67",
-                                                  "lTitle": "Typography-lTitle-59",
-                                                  "labelText": "Typography-labelText-72",
-                                                  "mTitle": "Typography-mTitle-60",
-                                                  "margin": "Typography-margin-78",
-                                                  "normalText": "Typography-normalText-65",
-                                                  "placeholderText": "Typography-placeholderText-69",
-                                                  "sLink": "Typography-sLink-74",
-                                                  "sText": "Typography-sText-71",
-                                                  "sTitle": "Typography-sTitle-61",
-                                                  "selectedNavText": "Typography-selectedNavText-70",
-                                                  "selectedText": "Typography-selectedText-66",
-                                                  "vizText": "Typography-vizText-76",
-                                                  "xlTitle": "Typography-xlTitle-58",
-                                                  "xsTitle": "Typography-xsTitle-62",
-                                                  "xxlTitle": "Typography-xxlTitle-57",
-                                                  "xxsTitle": "Typography-xxsTitle-63",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-56",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-55",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-54",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-77",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-68",
+                                                  "disabledText": "ForwardRef-disabledText-75",
+                                                  "highlightText": "ForwardRef-highlightText-64",
+                                                  "infoText": "ForwardRef-infoText-73",
+                                                  "inlineLink": "ForwardRef-inlineLink-67",
+                                                  "lTitle": "ForwardRef-lTitle-59",
+                                                  "labelText": "ForwardRef-labelText-72",
+                                                  "mTitle": "ForwardRef-mTitle-60",
+                                                  "margin": "ForwardRef-margin-78",
+                                                  "normalText": "ForwardRef-normalText-65",
+                                                  "placeholderText": "ForwardRef-placeholderText-69",
+                                                  "sLink": "ForwardRef-sLink-74",
+                                                  "sText": "ForwardRef-sText-71",
+                                                  "sTitle": "ForwardRef-sTitle-61",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-70",
+                                                  "selectedText": "ForwardRef-selectedText-66",
+                                                  "vizText": "ForwardRef-vizText-76",
+                                                  "xlTitle": "ForwardRef-xlTitle-58",
+                                                  "xsTitle": "ForwardRef-xsTitle-62",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-57",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-63",
                                                 }
                                               }
                                               component={null}
@@ -18146,7 +18146,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                className="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -18875,8 +18875,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               >
                                                 Label 1
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>
@@ -18907,7 +18907,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -18920,7 +18920,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -18933,7 +18933,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -18983,7 +18983,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -18996,7 +18996,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -19009,7 +19009,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -19041,41 +19041,41 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-42 List-truncate-45"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-42 List-truncate-45"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-56",
-                                                  "4xlTitle": "Typography-4xlTitle-55",
-                                                  "5xlTitle": "Typography-5xlTitle-54",
-                                                  "baseFontFamily": "Typography-baseFontFamily-77",
-                                                  "disabledButtonText": "Typography-disabledButtonText-68",
-                                                  "disabledText": "Typography-disabledText-75",
-                                                  "highlightText": "Typography-highlightText-64",
-                                                  "infoText": "Typography-infoText-73",
-                                                  "inlineLink": "Typography-inlineLink-67",
-                                                  "lTitle": "Typography-lTitle-59",
-                                                  "labelText": "Typography-labelText-72",
-                                                  "mTitle": "Typography-mTitle-60",
-                                                  "margin": "Typography-margin-78",
-                                                  "normalText": "Typography-normalText-65",
-                                                  "placeholderText": "Typography-placeholderText-69",
-                                                  "sLink": "Typography-sLink-74",
-                                                  "sText": "Typography-sText-71",
-                                                  "sTitle": "Typography-sTitle-61",
-                                                  "selectedNavText": "Typography-selectedNavText-70",
-                                                  "selectedText": "Typography-selectedText-66",
-                                                  "vizText": "Typography-vizText-76",
-                                                  "xlTitle": "Typography-xlTitle-58",
-                                                  "xsTitle": "Typography-xsTitle-62",
-                                                  "xxlTitle": "Typography-xxlTitle-57",
-                                                  "xxsTitle": "Typography-xxsTitle-63",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-56",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-55",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-54",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-77",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-68",
+                                                  "disabledText": "ForwardRef-disabledText-75",
+                                                  "highlightText": "ForwardRef-highlightText-64",
+                                                  "infoText": "ForwardRef-infoText-73",
+                                                  "inlineLink": "ForwardRef-inlineLink-67",
+                                                  "lTitle": "ForwardRef-lTitle-59",
+                                                  "labelText": "ForwardRef-labelText-72",
+                                                  "mTitle": "ForwardRef-mTitle-60",
+                                                  "margin": "ForwardRef-margin-78",
+                                                  "normalText": "ForwardRef-normalText-65",
+                                                  "placeholderText": "ForwardRef-placeholderText-69",
+                                                  "sLink": "ForwardRef-sLink-74",
+                                                  "sText": "ForwardRef-sText-71",
+                                                  "sTitle": "ForwardRef-sTitle-61",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-70",
+                                                  "selectedText": "ForwardRef-selectedText-66",
+                                                  "vizText": "ForwardRef-vizText-76",
+                                                  "xlTitle": "ForwardRef-xlTitle-58",
+                                                  "xsTitle": "ForwardRef-xsTitle-62",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-57",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-63",
                                                 }
                                               }
                                               component={null}
@@ -19808,7 +19808,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                className="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -20537,8 +20537,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               >
                                                 Label 2
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>
@@ -20569,7 +20569,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="0"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 1
@@ -20582,7 +20582,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 2
@@ -20595,7 +20595,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             tabindex="-1"
                                           >
                                             <p
-                                              class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                              class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                               theme="[object Object]"
                                             >
                                               Label 3
@@ -20645,7 +20645,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 1
@@ -20658,7 +20658,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 2
@@ -20671,7 +20671,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                class="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme="[object Object]"
                                               >
                                                 Label 3
@@ -20703,41 +20703,41 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         selected={false}
                                       >
                                         <Text>
-                                          <WithStyles(Typography)
+                                          <WithStyles(ForwardRef)
                                             className="List-label-42 List-truncate-45"
                                             component={null}
                                             paragraph={false}
                                             variant="normalText"
                                           >
-                                            <Typography
+                                            <ForwardRef
                                               className="List-label-42 List-truncate-45"
                                               classes={
                                                 Object {
-                                                  "3xlTitle": "Typography-3xlTitle-56",
-                                                  "4xlTitle": "Typography-4xlTitle-55",
-                                                  "5xlTitle": "Typography-5xlTitle-54",
-                                                  "baseFontFamily": "Typography-baseFontFamily-77",
-                                                  "disabledButtonText": "Typography-disabledButtonText-68",
-                                                  "disabledText": "Typography-disabledText-75",
-                                                  "highlightText": "Typography-highlightText-64",
-                                                  "infoText": "Typography-infoText-73",
-                                                  "inlineLink": "Typography-inlineLink-67",
-                                                  "lTitle": "Typography-lTitle-59",
-                                                  "labelText": "Typography-labelText-72",
-                                                  "mTitle": "Typography-mTitle-60",
-                                                  "margin": "Typography-margin-78",
-                                                  "normalText": "Typography-normalText-65",
-                                                  "placeholderText": "Typography-placeholderText-69",
-                                                  "sLink": "Typography-sLink-74",
-                                                  "sText": "Typography-sText-71",
-                                                  "sTitle": "Typography-sTitle-61",
-                                                  "selectedNavText": "Typography-selectedNavText-70",
-                                                  "selectedText": "Typography-selectedText-66",
-                                                  "vizText": "Typography-vizText-76",
-                                                  "xlTitle": "Typography-xlTitle-58",
-                                                  "xsTitle": "Typography-xsTitle-62",
-                                                  "xxlTitle": "Typography-xxlTitle-57",
-                                                  "xxsTitle": "Typography-xxsTitle-63",
+                                                  "3xlTitle": "ForwardRef-3xlTitle-56",
+                                                  "4xlTitle": "ForwardRef-4xlTitle-55",
+                                                  "5xlTitle": "ForwardRef-5xlTitle-54",
+                                                  "baseFontFamily": "ForwardRef-baseFontFamily-77",
+                                                  "disabledButtonText": "ForwardRef-disabledButtonText-68",
+                                                  "disabledText": "ForwardRef-disabledText-75",
+                                                  "highlightText": "ForwardRef-highlightText-64",
+                                                  "infoText": "ForwardRef-infoText-73",
+                                                  "inlineLink": "ForwardRef-inlineLink-67",
+                                                  "lTitle": "ForwardRef-lTitle-59",
+                                                  "labelText": "ForwardRef-labelText-72",
+                                                  "mTitle": "ForwardRef-mTitle-60",
+                                                  "margin": "ForwardRef-margin-78",
+                                                  "normalText": "ForwardRef-normalText-65",
+                                                  "placeholderText": "ForwardRef-placeholderText-69",
+                                                  "sLink": "ForwardRef-sLink-74",
+                                                  "sText": "ForwardRef-sText-71",
+                                                  "sTitle": "ForwardRef-sTitle-61",
+                                                  "selectedNavText": "ForwardRef-selectedNavText-70",
+                                                  "selectedText": "ForwardRef-selectedText-66",
+                                                  "vizText": "ForwardRef-vizText-76",
+                                                  "xlTitle": "ForwardRef-xlTitle-58",
+                                                  "xsTitle": "ForwardRef-xsTitle-62",
+                                                  "xxlTitle": "ForwardRef-xxlTitle-57",
+                                                  "xxsTitle": "ForwardRef-xxsTitle-63",
                                                 }
                                               }
                                               component={null}
@@ -21470,7 +21470,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               variant="normalText"
                                             >
                                               <p
-                                                className="Typography-normalText-65 Typography-baseFontFamily-77 Typography-margin-78 List-label-42 List-truncate-45"
+                                                className="ForwardRef-normalText-65 ForwardRef-baseFontFamily-77 ForwardRef-margin-78 List-label-42 List-truncate-45"
                                                 theme={
                                                   Object {
                                                     "breakpoints": Object {
@@ -22199,8 +22199,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               >
                                                 Label 3
                                               </p>
-                                            </Typography>
-                                          </WithStyles(Typography)>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
                                         </Text>
                                       </li>
                                     </ConditionalWrapper>

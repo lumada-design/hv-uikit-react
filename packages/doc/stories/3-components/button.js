@@ -76,7 +76,7 @@ storiesOf("Components", module).add("Button", () => <HvButton />, {
     },
     {
       title: "11. Buttons with icons",
-      description: "Various Button configurations with left icons",
+      description: "Various Button configurations with icons and icons + text",
       src: "components/button/buttonIcon"
     }
   ]

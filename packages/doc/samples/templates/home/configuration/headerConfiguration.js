@@ -1,81 +1,96 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
-import Badge from "@hv/uikit-react-core/dist/Badge";
+import { Operation, Tool } from "@hv/uikit-react-icons/dist/Generic";
 
-const navigationData = {
-  showSearch: false,
-  data: [
-    {
-      label: "Overview",
-      path: "/"
-    },
-    {
-      label: "Events",
-      path: "/events"
-    },
-    {
-      label: "Work orders",
-      path: "/work"
-    },
-    {
-      label: "Asset",
-      path: "/asset"
-    },
-    {
-      label: "Analytics",
-      path: "/Analytics"
-    },
-    {
-      label: "Resources",
-      path: "/Resources"
-    }
-  ]
-};
-
-const boxStyles = {
-  width: "30px",
-  height: "30px",
-  display: "flex",
-  alignItems: "center"
-};
-
-const svgStyles = {
-  margin: "0 auto"
-};
-
-const actionValues = [
+export const headerConfiguration = [
   {
-    label: "Notifications",
-    horizontalItemAction: (
-      <Badge
-        count={88}
-        icon={
-          <Alert
-            boxStyles={boxStyles}
-            onClick={() => alert("Notification")}
-            style={svgStyles}
-          />
-        }
-      />
-    ),
-    path: "route3"
+    id: "01",
+    label: "System",
+    icon: <Tool />,
+    onClick: () => console.log("01"),
+    data: [
+      {
+        id: "01-01",
+        label: "SCPodF",
+        onClick: () => console.log("01-01"),
+        data: [
+          {
+            id: "01-01-01",
+            label: "Compute",
+            onClick: () => console.log("01-01-01"),
+            disabled: true
+          },
+          {
+            id: "01-01-02",
+            label: "Storage",
+            onClick: () => console.log("01-01-02")
+          },
+          {
+            id: "01-01-03",
+            label: "Ethernet",
+            onClick: () => console.log("01-01-03")
+          },
+          {
+            id: "01-01-04",
+            label: "Fiber Channel",
+            onClick: () => console.log("01-01-04"),
+            payload: { path: "/hello/world", params: { a: 2, b: "3" } }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "02",
+    label: "Administration",
+    icon: <Operation />,
+    onClick: () => console.log("02"),
+    data: [
+      {
+        id: "02-01",
+        label: "Rest API",
+        onClick: () => console.log("02-01")
+      },
+      {
+        id: "02-02",
+        label: "License",
+        onClick: () => console.log("02-02")
+      },
+      {
+        id: "02-03",
+        label: "Log Bundle",
+        onClick: () => console.log("02-03"),
+        data: [
+          {
+            id: "02-03-01",
+            label: "Rest API",
+            onClick: () => console.log("02-03-01")
+          },
+          {
+            id: "02-03-02",
+            label: "License",
+            onClick: () => console.log("02-03-02")
+          }
+        ]
+      },
+      {
+        id: "02-04",
+        label: "Log Bundle",
+        onClick: () => console.log("02-04")
+      }
+    ]
+  },
+  {
+    id: "03",
+    label: "Analytics",
+    data: [
+      {
+        id: "03-01",
+        label: "Model Effectiveness"
+      }
+    ]
+  },
+  {
+    id: "04",
+    label: "Summary"
   }
 ];
-
-export { navigationData, actionValues };

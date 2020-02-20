@@ -1542,41 +1542,41 @@ exports[`TimePicker should render correctly 1`] = `
           <div
             className="HvTimePicker-timePickerContainer-51"
           >
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               className="HvTimePicker-label-52"
               component={null}
               paragraph={false}
               variant="labelText"
             >
-              <Typography
+              <ForwardRef
                 className="HvTimePicker-label-52"
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-61",
-                    "4xlTitle": "Typography-4xlTitle-60",
-                    "5xlTitle": "Typography-5xlTitle-59",
-                    "baseFontFamily": "Typography-baseFontFamily-82",
-                    "disabledButtonText": "Typography-disabledButtonText-73",
-                    "disabledText": "Typography-disabledText-80",
-                    "highlightText": "Typography-highlightText-69",
-                    "infoText": "Typography-infoText-78",
-                    "inlineLink": "Typography-inlineLink-72",
-                    "lTitle": "Typography-lTitle-64",
-                    "labelText": "Typography-labelText-77",
-                    "mTitle": "Typography-mTitle-65",
-                    "margin": "Typography-margin-83",
-                    "normalText": "Typography-normalText-70",
-                    "placeholderText": "Typography-placeholderText-74",
-                    "sLink": "Typography-sLink-79",
-                    "sText": "Typography-sText-76",
-                    "sTitle": "Typography-sTitle-66",
-                    "selectedNavText": "Typography-selectedNavText-75",
-                    "selectedText": "Typography-selectedText-71",
-                    "vizText": "Typography-vizText-81",
-                    "xlTitle": "Typography-xlTitle-63",
-                    "xsTitle": "Typography-xsTitle-67",
-                    "xxlTitle": "Typography-xxlTitle-62",
-                    "xxsTitle": "Typography-xxsTitle-68",
+                    "3xlTitle": "ForwardRef-3xlTitle-61",
+                    "4xlTitle": "ForwardRef-4xlTitle-60",
+                    "5xlTitle": "ForwardRef-5xlTitle-59",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-82",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-73",
+                    "disabledText": "ForwardRef-disabledText-80",
+                    "highlightText": "ForwardRef-highlightText-69",
+                    "infoText": "ForwardRef-infoText-78",
+                    "inlineLink": "ForwardRef-inlineLink-72",
+                    "lTitle": "ForwardRef-lTitle-64",
+                    "labelText": "ForwardRef-labelText-77",
+                    "mTitle": "ForwardRef-mTitle-65",
+                    "margin": "ForwardRef-margin-83",
+                    "normalText": "ForwardRef-normalText-70",
+                    "placeholderText": "ForwardRef-placeholderText-74",
+                    "sLink": "ForwardRef-sLink-79",
+                    "sText": "ForwardRef-sText-76",
+                    "sTitle": "ForwardRef-sTitle-66",
+                    "selectedNavText": "ForwardRef-selectedNavText-75",
+                    "selectedText": "ForwardRef-selectedText-71",
+                    "vizText": "ForwardRef-vizText-81",
+                    "xlTitle": "ForwardRef-xlTitle-63",
+                    "xsTitle": "ForwardRef-xsTitle-67",
+                    "xxlTitle": "ForwardRef-xxlTitle-62",
+                    "xxsTitle": "ForwardRef-xxsTitle-68",
                   }
                 }
                 component={null}
@@ -2309,7 +2309,7 @@ exports[`TimePicker should render correctly 1`] = `
                 variant="labelText"
               >
                 <p
-                  className="Typography-labelText-77 Typography-baseFontFamily-82 Typography-margin-83 HvTimePicker-label-52"
+                  className="ForwardRef-labelText-77 ForwardRef-baseFontFamily-82 ForwardRef-margin-83 HvTimePicker-label-52"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -3038,8 +3038,8 @@ exports[`TimePicker should render correctly 1`] = `
                 >
                   mockTitle
                 </p>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <div
               className="HvTimePicker-inputContainer-49 HvTimePicker-inputPopperClosed-48"
             >

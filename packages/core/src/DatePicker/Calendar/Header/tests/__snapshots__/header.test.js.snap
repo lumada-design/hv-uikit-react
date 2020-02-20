@@ -1488,41 +1488,41 @@ exports[`<Header /> should render correctly 1`] = `
         }
         topText="Mock text for the top text"
       >
-        <WithStyles(Typography)
+        <WithStyles(ForwardRef)
           className="Header-rangeLabel-1"
           component={null}
           paragraph={false}
           variant="labelText"
         >
-          <Typography
+          <ForwardRef
             className="Header-rangeLabel-1"
             classes={
               Object {
-                "3xlTitle": "Typography-3xlTitle-9",
-                "4xlTitle": "Typography-4xlTitle-8",
-                "5xlTitle": "Typography-5xlTitle-7",
-                "baseFontFamily": "Typography-baseFontFamily-30",
-                "disabledButtonText": "Typography-disabledButtonText-21",
-                "disabledText": "Typography-disabledText-28",
-                "highlightText": "Typography-highlightText-17",
-                "infoText": "Typography-infoText-26",
-                "inlineLink": "Typography-inlineLink-20",
-                "lTitle": "Typography-lTitle-12",
-                "labelText": "Typography-labelText-25",
-                "mTitle": "Typography-mTitle-13",
-                "margin": "Typography-margin-31",
-                "normalText": "Typography-normalText-18",
-                "placeholderText": "Typography-placeholderText-22",
-                "sLink": "Typography-sLink-27",
-                "sText": "Typography-sText-24",
-                "sTitle": "Typography-sTitle-14",
-                "selectedNavText": "Typography-selectedNavText-23",
-                "selectedText": "Typography-selectedText-19",
-                "vizText": "Typography-vizText-29",
-                "xlTitle": "Typography-xlTitle-11",
-                "xsTitle": "Typography-xsTitle-15",
-                "xxlTitle": "Typography-xxlTitle-10",
-                "xxsTitle": "Typography-xxsTitle-16",
+                "3xlTitle": "ForwardRef-3xlTitle-9",
+                "4xlTitle": "ForwardRef-4xlTitle-8",
+                "5xlTitle": "ForwardRef-5xlTitle-7",
+                "baseFontFamily": "ForwardRef-baseFontFamily-30",
+                "disabledButtonText": "ForwardRef-disabledButtonText-21",
+                "disabledText": "ForwardRef-disabledText-28",
+                "highlightText": "ForwardRef-highlightText-17",
+                "infoText": "ForwardRef-infoText-26",
+                "inlineLink": "ForwardRef-inlineLink-20",
+                "lTitle": "ForwardRef-lTitle-12",
+                "labelText": "ForwardRef-labelText-25",
+                "mTitle": "ForwardRef-mTitle-13",
+                "margin": "ForwardRef-margin-31",
+                "normalText": "ForwardRef-normalText-18",
+                "placeholderText": "ForwardRef-placeholderText-22",
+                "sLink": "ForwardRef-sLink-27",
+                "sText": "ForwardRef-sText-24",
+                "sTitle": "ForwardRef-sTitle-14",
+                "selectedNavText": "ForwardRef-selectedNavText-23",
+                "selectedText": "ForwardRef-selectedText-19",
+                "vizText": "ForwardRef-vizText-29",
+                "xlTitle": "ForwardRef-xlTitle-11",
+                "xsTitle": "ForwardRef-xsTitle-15",
+                "xxlTitle": "ForwardRef-xxlTitle-10",
+                "xxsTitle": "ForwardRef-xxsTitle-16",
               }
             }
             component={null}
@@ -2255,7 +2255,7 @@ exports[`<Header /> should render correctly 1`] = `
             variant="labelText"
           >
             <p
-              className="Typography-labelText-25 Typography-baseFontFamily-30 Typography-margin-31 Header-rangeLabel-1"
+              className="ForwardRef-labelText-25 ForwardRef-baseFontFamily-30 ForwardRef-margin-31 Header-rangeLabel-1"
               theme={
                 Object {
                   "breakpoints": Object {
@@ -2984,8 +2984,8 @@ exports[`<Header /> should render correctly 1`] = `
             >
               Mock text for the top text
             </p>
-          </Typography>
-        </WithStyles(Typography)>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
         <div
           className="Header-background-2"
           id="default-header"
@@ -2993,39 +2993,39 @@ exports[`<Header /> should render correctly 1`] = `
           <div
             className="Header-headerDayOfWeek-3"
           >
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               component={null}
               paragraph={false}
               variant="normalText"
             >
-              <Typography
+              <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-9",
-                    "4xlTitle": "Typography-4xlTitle-8",
-                    "5xlTitle": "Typography-5xlTitle-7",
-                    "baseFontFamily": "Typography-baseFontFamily-30",
-                    "disabledButtonText": "Typography-disabledButtonText-21",
-                    "disabledText": "Typography-disabledText-28",
-                    "highlightText": "Typography-highlightText-17",
-                    "infoText": "Typography-infoText-26",
-                    "inlineLink": "Typography-inlineLink-20",
-                    "lTitle": "Typography-lTitle-12",
-                    "labelText": "Typography-labelText-25",
-                    "mTitle": "Typography-mTitle-13",
-                    "margin": "Typography-margin-31",
-                    "normalText": "Typography-normalText-18",
-                    "placeholderText": "Typography-placeholderText-22",
-                    "sLink": "Typography-sLink-27",
-                    "sText": "Typography-sText-24",
-                    "sTitle": "Typography-sTitle-14",
-                    "selectedNavText": "Typography-selectedNavText-23",
-                    "selectedText": "Typography-selectedText-19",
-                    "vizText": "Typography-vizText-29",
-                    "xlTitle": "Typography-xlTitle-11",
-                    "xsTitle": "Typography-xsTitle-15",
-                    "xxlTitle": "Typography-xxlTitle-10",
-                    "xxsTitle": "Typography-xxsTitle-16",
+                    "3xlTitle": "ForwardRef-3xlTitle-9",
+                    "4xlTitle": "ForwardRef-4xlTitle-8",
+                    "5xlTitle": "ForwardRef-5xlTitle-7",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-30",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-21",
+                    "disabledText": "ForwardRef-disabledText-28",
+                    "highlightText": "ForwardRef-highlightText-17",
+                    "infoText": "ForwardRef-infoText-26",
+                    "inlineLink": "ForwardRef-inlineLink-20",
+                    "lTitle": "ForwardRef-lTitle-12",
+                    "labelText": "ForwardRef-labelText-25",
+                    "mTitle": "ForwardRef-mTitle-13",
+                    "margin": "ForwardRef-margin-31",
+                    "normalText": "ForwardRef-normalText-18",
+                    "placeholderText": "ForwardRef-placeholderText-22",
+                    "sLink": "ForwardRef-sLink-27",
+                    "sText": "ForwardRef-sText-24",
+                    "sTitle": "ForwardRef-sTitle-14",
+                    "selectedNavText": "ForwardRef-selectedNavText-23",
+                    "selectedText": "ForwardRef-selectedText-19",
+                    "vizText": "ForwardRef-vizText-29",
+                    "xlTitle": "ForwardRef-xlTitle-11",
+                    "xsTitle": "ForwardRef-xsTitle-15",
+                    "xxlTitle": "ForwardRef-xxlTitle-10",
+                    "xxsTitle": "ForwardRef-xxsTitle-16",
                   }
                 }
                 component={null}
@@ -3758,7 +3758,7 @@ exports[`<Header /> should render correctly 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="Typography-normalText-18 Typography-baseFontFamily-30 Typography-margin-31"
+                  className="ForwardRef-normalText-18 ForwardRef-baseFontFamily-30 ForwardRef-margin-31"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -4487,8 +4487,8 @@ exports[`<Header /> should render correctly 1`] = `
                 >
                   Wed
                 </p>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
           </div>
           <div
             className="Header-headerDate-4"

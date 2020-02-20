@@ -1548,22 +1548,22 @@ exports[`<EmptyState /> with String title/message should render correctly 1`] = 
     </div>
     <div>
       <div>
-        <WithStyles(Typography)
+        <WithStyles(ForwardRef)
           component={null}
           paragraph={false}
           variant="sTitle"
         >
           mockTitle
-        </WithStyles(Typography)>
+        </WithStyles(ForwardRef)>
       </div>
       <div>
-        <WithStyles(Typography)
+        <WithStyles(ForwardRef)
           component={null}
           paragraph={false}
           variant="normalText"
         >
           mockMessage
-        </WithStyles(Typography)>
+        </WithStyles(ForwardRef)>
       </div>
     </div>
   </div>

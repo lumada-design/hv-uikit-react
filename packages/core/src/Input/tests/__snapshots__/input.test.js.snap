@@ -1762,7 +1762,7 @@ exports[`Input should not have the validation section 1`] = `
               </WithStyles(ForwardRef(InputBase))>
             </ForwardRef(Input)>
           </WithStyles(ForwardRef(Input))>
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             aria-atomic="true"
             aria-controls="hv-input-7-input"
             aria-labelledby={null}
@@ -1778,7 +1778,7 @@ exports[`Input should not have the validation section 1`] = `
             }
             variant="sText"
           >
-            <Typography
+            <ForwardRef
               aria-atomic="true"
               aria-controls="hv-input-7-input"
               aria-labelledby={null}
@@ -1787,31 +1787,31 @@ exports[`Input should not have the validation section 1`] = `
               className="HvInput-textWarning-476 HvInput-infoText-475"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-517",
-                  "4xlTitle": "Typography-4xlTitle-516",
-                  "5xlTitle": "Typography-5xlTitle-515",
-                  "baseFontFamily": "Typography-baseFontFamily-538",
-                  "disabledButtonText": "Typography-disabledButtonText-529",
-                  "disabledText": "Typography-disabledText-536",
-                  "highlightText": "Typography-highlightText-525",
-                  "infoText": "Typography-infoText-534",
-                  "inlineLink": "Typography-inlineLink-528",
-                  "lTitle": "Typography-lTitle-520",
-                  "labelText": "Typography-labelText-533",
-                  "mTitle": "Typography-mTitle-521",
-                  "margin": "Typography-margin-539",
-                  "normalText": "Typography-normalText-526",
-                  "placeholderText": "Typography-placeholderText-530",
-                  "sLink": "Typography-sLink-535",
-                  "sText": "Typography-sText-532",
-                  "sTitle": "Typography-sTitle-522",
-                  "selectedNavText": "Typography-selectedNavText-531",
-                  "selectedText": "Typography-selectedText-527",
-                  "vizText": "Typography-vizText-537",
-                  "xlTitle": "Typography-xlTitle-519",
-                  "xsTitle": "Typography-xsTitle-523",
-                  "xxlTitle": "Typography-xxlTitle-518",
-                  "xxsTitle": "Typography-xxsTitle-524",
+                  "3xlTitle": "ForwardRef-3xlTitle-517",
+                  "4xlTitle": "ForwardRef-4xlTitle-516",
+                  "5xlTitle": "ForwardRef-5xlTitle-515",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-538",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-529",
+                  "disabledText": "ForwardRef-disabledText-536",
+                  "highlightText": "ForwardRef-highlightText-525",
+                  "infoText": "ForwardRef-infoText-534",
+                  "inlineLink": "ForwardRef-inlineLink-528",
+                  "lTitle": "ForwardRef-lTitle-520",
+                  "labelText": "ForwardRef-labelText-533",
+                  "mTitle": "ForwardRef-mTitle-521",
+                  "margin": "ForwardRef-margin-539",
+                  "normalText": "ForwardRef-normalText-526",
+                  "placeholderText": "ForwardRef-placeholderText-530",
+                  "sLink": "ForwardRef-sLink-535",
+                  "sText": "ForwardRef-sText-532",
+                  "sTitle": "ForwardRef-sTitle-522",
+                  "selectedNavText": "ForwardRef-selectedNavText-531",
+                  "selectedText": "ForwardRef-selectedText-527",
+                  "vizText": "ForwardRef-vizText-537",
+                  "xlTitle": "ForwardRef-xlTitle-519",
+                  "xsTitle": "ForwardRef-xsTitle-523",
+                  "xxlTitle": "ForwardRef-xxlTitle-518",
+                  "xxsTitle": "ForwardRef-xxsTitle-524",
                 }
               }
               component={null}
@@ -2554,7 +2554,7 @@ exports[`Input should not have the validation section 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="Typography-sText-532 Typography-baseFontFamily-538 Typography-margin-539 HvInput-textWarning-476 HvInput-infoText-475"
+                className="ForwardRef-sText-532 ForwardRef-baseFontFamily-538 ForwardRef-margin-539 HvInput-textWarning-476 HvInput-infoText-475"
                 style={
                   Object {
                     "display": "none",
@@ -3286,8 +3286,8 @@ exports[`Input should not have the validation section 1`] = `
                   }
                 }
               />
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </div>
       </HvInput>
     </WithStyles(HvInput)>
@@ -5070,7 +5070,7 @@ exports[`Input should pass other props to the child input component 1`] = `
               </WithStyles(ForwardRef(InputBase))>
             </ForwardRef(Input)>
           </WithStyles(ForwardRef(Input))>
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             aria-atomic="true"
             aria-controls="hv-input-9-input"
             aria-labelledby={null}
@@ -5086,7 +5086,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             }
             variant="sText"
           >
-            <Typography
+            <ForwardRef
               aria-atomic="true"
               aria-controls="hv-input-9-input"
               aria-labelledby={null}
@@ -5095,31 +5095,31 @@ exports[`Input should pass other props to the child input component 1`] = `
               className="HvInput-textWarning-630 HvInput-infoText-629"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-671",
-                  "4xlTitle": "Typography-4xlTitle-670",
-                  "5xlTitle": "Typography-5xlTitle-669",
-                  "baseFontFamily": "Typography-baseFontFamily-692",
-                  "disabledButtonText": "Typography-disabledButtonText-683",
-                  "disabledText": "Typography-disabledText-690",
-                  "highlightText": "Typography-highlightText-679",
-                  "infoText": "Typography-infoText-688",
-                  "inlineLink": "Typography-inlineLink-682",
-                  "lTitle": "Typography-lTitle-674",
-                  "labelText": "Typography-labelText-687",
-                  "mTitle": "Typography-mTitle-675",
-                  "margin": "Typography-margin-693",
-                  "normalText": "Typography-normalText-680",
-                  "placeholderText": "Typography-placeholderText-684",
-                  "sLink": "Typography-sLink-689",
-                  "sText": "Typography-sText-686",
-                  "sTitle": "Typography-sTitle-676",
-                  "selectedNavText": "Typography-selectedNavText-685",
-                  "selectedText": "Typography-selectedText-681",
-                  "vizText": "Typography-vizText-691",
-                  "xlTitle": "Typography-xlTitle-673",
-                  "xsTitle": "Typography-xsTitle-677",
-                  "xxlTitle": "Typography-xxlTitle-672",
-                  "xxsTitle": "Typography-xxsTitle-678",
+                  "3xlTitle": "ForwardRef-3xlTitle-671",
+                  "4xlTitle": "ForwardRef-4xlTitle-670",
+                  "5xlTitle": "ForwardRef-5xlTitle-669",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-692",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-683",
+                  "disabledText": "ForwardRef-disabledText-690",
+                  "highlightText": "ForwardRef-highlightText-679",
+                  "infoText": "ForwardRef-infoText-688",
+                  "inlineLink": "ForwardRef-inlineLink-682",
+                  "lTitle": "ForwardRef-lTitle-674",
+                  "labelText": "ForwardRef-labelText-687",
+                  "mTitle": "ForwardRef-mTitle-675",
+                  "margin": "ForwardRef-margin-693",
+                  "normalText": "ForwardRef-normalText-680",
+                  "placeholderText": "ForwardRef-placeholderText-684",
+                  "sLink": "ForwardRef-sLink-689",
+                  "sText": "ForwardRef-sText-686",
+                  "sTitle": "ForwardRef-sTitle-676",
+                  "selectedNavText": "ForwardRef-selectedNavText-685",
+                  "selectedText": "ForwardRef-selectedText-681",
+                  "vizText": "ForwardRef-vizText-691",
+                  "xlTitle": "ForwardRef-xlTitle-673",
+                  "xsTitle": "ForwardRef-xsTitle-677",
+                  "xxlTitle": "ForwardRef-xxlTitle-672",
+                  "xxsTitle": "ForwardRef-xxsTitle-678",
                 }
               }
               component={null}
@@ -5862,7 +5862,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="Typography-sText-686 Typography-baseFontFamily-692 Typography-margin-693 HvInput-textWarning-630 HvInput-infoText-629"
+                className="ForwardRef-sText-686 ForwardRef-baseFontFamily-692 ForwardRef-margin-693 HvInput-textWarning-630 HvInput-infoText-629"
                 style={
                   Object {
                     "display": "none",
@@ -6594,8 +6594,8 @@ exports[`Input should pass other props to the child input component 1`] = `
                   }
                 }
               />
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </div>
       </HvInput>
     </WithStyles(HvInput)>
@@ -8365,7 +8365,7 @@ exports[`Input should render correctly 1`] = `
               </WithStyles(ForwardRef(InputBase))>
             </ForwardRef(Input)>
           </WithStyles(ForwardRef(Input))>
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             aria-atomic="true"
             aria-controls="hv-input-2-input"
             aria-labelledby={null}
@@ -8381,7 +8381,7 @@ exports[`Input should render correctly 1`] = `
             }
             variant="sText"
           >
-            <Typography
+            <ForwardRef
               aria-atomic="true"
               aria-controls="hv-input-2-input"
               aria-labelledby={null}
@@ -8390,31 +8390,31 @@ exports[`Input should render correctly 1`] = `
               className="HvInput-textWarning-91 HvInput-infoText-90"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-132",
-                  "4xlTitle": "Typography-4xlTitle-131",
-                  "5xlTitle": "Typography-5xlTitle-130",
-                  "baseFontFamily": "Typography-baseFontFamily-153",
-                  "disabledButtonText": "Typography-disabledButtonText-144",
-                  "disabledText": "Typography-disabledText-151",
-                  "highlightText": "Typography-highlightText-140",
-                  "infoText": "Typography-infoText-149",
-                  "inlineLink": "Typography-inlineLink-143",
-                  "lTitle": "Typography-lTitle-135",
-                  "labelText": "Typography-labelText-148",
-                  "mTitle": "Typography-mTitle-136",
-                  "margin": "Typography-margin-154",
-                  "normalText": "Typography-normalText-141",
-                  "placeholderText": "Typography-placeholderText-145",
-                  "sLink": "Typography-sLink-150",
-                  "sText": "Typography-sText-147",
-                  "sTitle": "Typography-sTitle-137",
-                  "selectedNavText": "Typography-selectedNavText-146",
-                  "selectedText": "Typography-selectedText-142",
-                  "vizText": "Typography-vizText-152",
-                  "xlTitle": "Typography-xlTitle-134",
-                  "xsTitle": "Typography-xsTitle-138",
-                  "xxlTitle": "Typography-xxlTitle-133",
-                  "xxsTitle": "Typography-xxsTitle-139",
+                  "3xlTitle": "ForwardRef-3xlTitle-132",
+                  "4xlTitle": "ForwardRef-4xlTitle-131",
+                  "5xlTitle": "ForwardRef-5xlTitle-130",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-153",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-144",
+                  "disabledText": "ForwardRef-disabledText-151",
+                  "highlightText": "ForwardRef-highlightText-140",
+                  "infoText": "ForwardRef-infoText-149",
+                  "inlineLink": "ForwardRef-inlineLink-143",
+                  "lTitle": "ForwardRef-lTitle-135",
+                  "labelText": "ForwardRef-labelText-148",
+                  "mTitle": "ForwardRef-mTitle-136",
+                  "margin": "ForwardRef-margin-154",
+                  "normalText": "ForwardRef-normalText-141",
+                  "placeholderText": "ForwardRef-placeholderText-145",
+                  "sLink": "ForwardRef-sLink-150",
+                  "sText": "ForwardRef-sText-147",
+                  "sTitle": "ForwardRef-sTitle-137",
+                  "selectedNavText": "ForwardRef-selectedNavText-146",
+                  "selectedText": "ForwardRef-selectedText-142",
+                  "vizText": "ForwardRef-vizText-152",
+                  "xlTitle": "ForwardRef-xlTitle-134",
+                  "xsTitle": "ForwardRef-xsTitle-138",
+                  "xxlTitle": "ForwardRef-xxlTitle-133",
+                  "xxsTitle": "ForwardRef-xxsTitle-139",
                 }
               }
               component={null}
@@ -9157,7 +9157,7 @@ exports[`Input should render correctly 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="Typography-sText-147 Typography-baseFontFamily-153 Typography-margin-154 HvInput-textWarning-91 HvInput-infoText-90"
+                className="ForwardRef-sText-147 ForwardRef-baseFontFamily-153 ForwardRef-margin-154 HvInput-textWarning-91 HvInput-infoText-90"
                 style={
                   Object {
                     "display": "none",
@@ -9889,8 +9889,8 @@ exports[`Input should render correctly 1`] = `
                   }
                 }
               />
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </div>
       </HvInput>
     </WithStyles(HvInput)>

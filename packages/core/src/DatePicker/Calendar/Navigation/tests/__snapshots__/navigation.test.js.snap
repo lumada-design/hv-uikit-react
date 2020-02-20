@@ -2270,39 +2270,39 @@ exports[`<Navigation /> should render correctly 1`] = `
             role="presentation"
             tabIndex={0}
           >
-            <WithStyles(Typography)
+            <WithStyles(ForwardRef)
               component={null}
               paragraph={false}
               variant="normalText"
             >
-              <Typography
+              <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "Typography-3xlTitle-13",
-                    "4xlTitle": "Typography-4xlTitle-12",
-                    "5xlTitle": "Typography-5xlTitle-11",
-                    "baseFontFamily": "Typography-baseFontFamily-34",
-                    "disabledButtonText": "Typography-disabledButtonText-25",
-                    "disabledText": "Typography-disabledText-32",
-                    "highlightText": "Typography-highlightText-21",
-                    "infoText": "Typography-infoText-30",
-                    "inlineLink": "Typography-inlineLink-24",
-                    "lTitle": "Typography-lTitle-16",
-                    "labelText": "Typography-labelText-29",
-                    "mTitle": "Typography-mTitle-17",
-                    "margin": "Typography-margin-35",
-                    "normalText": "Typography-normalText-22",
-                    "placeholderText": "Typography-placeholderText-26",
-                    "sLink": "Typography-sLink-31",
-                    "sText": "Typography-sText-28",
-                    "sTitle": "Typography-sTitle-18",
-                    "selectedNavText": "Typography-selectedNavText-27",
-                    "selectedText": "Typography-selectedText-23",
-                    "vizText": "Typography-vizText-33",
-                    "xlTitle": "Typography-xlTitle-15",
-                    "xsTitle": "Typography-xsTitle-19",
-                    "xxlTitle": "Typography-xxlTitle-14",
-                    "xxsTitle": "Typography-xxsTitle-20",
+                    "3xlTitle": "ForwardRef-3xlTitle-13",
+                    "4xlTitle": "ForwardRef-4xlTitle-12",
+                    "5xlTitle": "ForwardRef-5xlTitle-11",
+                    "baseFontFamily": "ForwardRef-baseFontFamily-34",
+                    "disabledButtonText": "ForwardRef-disabledButtonText-25",
+                    "disabledText": "ForwardRef-disabledText-32",
+                    "highlightText": "ForwardRef-highlightText-21",
+                    "infoText": "ForwardRef-infoText-30",
+                    "inlineLink": "ForwardRef-inlineLink-24",
+                    "lTitle": "ForwardRef-lTitle-16",
+                    "labelText": "ForwardRef-labelText-29",
+                    "mTitle": "ForwardRef-mTitle-17",
+                    "margin": "ForwardRef-margin-35",
+                    "normalText": "ForwardRef-normalText-22",
+                    "placeholderText": "ForwardRef-placeholderText-26",
+                    "sLink": "ForwardRef-sLink-31",
+                    "sText": "ForwardRef-sText-28",
+                    "sTitle": "ForwardRef-sTitle-18",
+                    "selectedNavText": "ForwardRef-selectedNavText-27",
+                    "selectedText": "ForwardRef-selectedText-23",
+                    "vizText": "ForwardRef-vizText-33",
+                    "xlTitle": "ForwardRef-xlTitle-15",
+                    "xsTitle": "ForwardRef-xsTitle-19",
+                    "xxlTitle": "ForwardRef-xxlTitle-14",
+                    "xxsTitle": "ForwardRef-xxsTitle-20",
                   }
                 }
                 component={null}
@@ -3035,7 +3035,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="Typography-normalText-22 Typography-baseFontFamily-34 Typography-margin-35"
+                  className="ForwardRef-normalText-22 ForwardRef-baseFontFamily-34 ForwardRef-margin-35"
                   theme={
                     Object {
                       "breakpoints": Object {
@@ -3764,8 +3764,8 @@ exports[`<Navigation /> should render correctly 1`] = `
                 >
                   Navigation text
                 </p>
-              </Typography>
-            </WithStyles(Typography)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
           </div>
           <WithStyles(DropRightXS)
             className="Navigation-icon-2"

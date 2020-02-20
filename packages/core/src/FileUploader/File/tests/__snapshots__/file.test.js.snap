@@ -2310,41 +2310,41 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             </div>
           </Success>
         </WithStyles(Success)>
-        <WithStyles(Typography)
+        <WithStyles(ForwardRef)
           className="File-textTruncation-63"
           component={null}
           paragraph={false}
           variant="sText"
         >
-          <Typography
+          <ForwardRef
             className="File-textTruncation-63"
             classes={
               Object {
-                "3xlTitle": "Typography-3xlTitle-71",
-                "4xlTitle": "Typography-4xlTitle-70",
-                "5xlTitle": "Typography-5xlTitle-69",
-                "baseFontFamily": "Typography-baseFontFamily-92",
-                "disabledButtonText": "Typography-disabledButtonText-83",
-                "disabledText": "Typography-disabledText-90",
-                "highlightText": "Typography-highlightText-79",
-                "infoText": "Typography-infoText-88",
-                "inlineLink": "Typography-inlineLink-82",
-                "lTitle": "Typography-lTitle-74",
-                "labelText": "Typography-labelText-87",
-                "mTitle": "Typography-mTitle-75",
-                "margin": "Typography-margin-93",
-                "normalText": "Typography-normalText-80",
-                "placeholderText": "Typography-placeholderText-84",
-                "sLink": "Typography-sLink-89",
-                "sText": "Typography-sText-86",
-                "sTitle": "Typography-sTitle-76",
-                "selectedNavText": "Typography-selectedNavText-85",
-                "selectedText": "Typography-selectedText-81",
-                "vizText": "Typography-vizText-91",
-                "xlTitle": "Typography-xlTitle-73",
-                "xsTitle": "Typography-xsTitle-77",
-                "xxlTitle": "Typography-xxlTitle-72",
-                "xxsTitle": "Typography-xxsTitle-78",
+                "3xlTitle": "ForwardRef-3xlTitle-71",
+                "4xlTitle": "ForwardRef-4xlTitle-70",
+                "5xlTitle": "ForwardRef-5xlTitle-69",
+                "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                "disabledText": "ForwardRef-disabledText-90",
+                "highlightText": "ForwardRef-highlightText-79",
+                "infoText": "ForwardRef-infoText-88",
+                "inlineLink": "ForwardRef-inlineLink-82",
+                "lTitle": "ForwardRef-lTitle-74",
+                "labelText": "ForwardRef-labelText-87",
+                "mTitle": "ForwardRef-mTitle-75",
+                "margin": "ForwardRef-margin-93",
+                "normalText": "ForwardRef-normalText-80",
+                "placeholderText": "ForwardRef-placeholderText-84",
+                "sLink": "ForwardRef-sLink-89",
+                "sText": "ForwardRef-sText-86",
+                "sTitle": "ForwardRef-sTitle-76",
+                "selectedNavText": "ForwardRef-selectedNavText-85",
+                "selectedText": "ForwardRef-selectedText-81",
+                "vizText": "ForwardRef-vizText-91",
+                "xlTitle": "ForwardRef-xlTitle-73",
+                "xsTitle": "ForwardRef-xsTitle-77",
+                "xxlTitle": "ForwardRef-xxlTitle-72",
+                "xxsTitle": "ForwardRef-xxsTitle-78",
               }
             }
             component={null}
@@ -3077,7 +3077,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             variant="sText"
           >
             <p
-              className="Typography-sText-86 Typography-baseFontFamily-92 Typography-margin-93 File-textTruncation-63"
+              className="ForwardRef-sText-86 ForwardRef-baseFontFamily-92 ForwardRef-margin-93 File-textTruncation-63"
               theme={
                 Object {
                   "breakpoints": Object {
@@ -3806,44 +3806,44 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             >
               somefile.png
             </p>
-          </Typography>
-        </WithStyles(Typography)>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
         <span
           className="File-progressText-58"
         >
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             component={null}
             paragraph={false}
             variant="labelText"
           >
-            <Typography
+            <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-71",
-                  "4xlTitle": "Typography-4xlTitle-70",
-                  "5xlTitle": "Typography-5xlTitle-69",
-                  "baseFontFamily": "Typography-baseFontFamily-92",
-                  "disabledButtonText": "Typography-disabledButtonText-83",
-                  "disabledText": "Typography-disabledText-90",
-                  "highlightText": "Typography-highlightText-79",
-                  "infoText": "Typography-infoText-88",
-                  "inlineLink": "Typography-inlineLink-82",
-                  "lTitle": "Typography-lTitle-74",
-                  "labelText": "Typography-labelText-87",
-                  "mTitle": "Typography-mTitle-75",
-                  "margin": "Typography-margin-93",
-                  "normalText": "Typography-normalText-80",
-                  "placeholderText": "Typography-placeholderText-84",
-                  "sLink": "Typography-sLink-89",
-                  "sText": "Typography-sText-86",
-                  "sTitle": "Typography-sTitle-76",
-                  "selectedNavText": "Typography-selectedNavText-85",
-                  "selectedText": "Typography-selectedText-81",
-                  "vizText": "Typography-vizText-91",
-                  "xlTitle": "Typography-xlTitle-73",
-                  "xsTitle": "Typography-xsTitle-77",
-                  "xxlTitle": "Typography-xxlTitle-72",
-                  "xxsTitle": "Typography-xxsTitle-78",
+                  "3xlTitle": "ForwardRef-3xlTitle-71",
+                  "4xlTitle": "ForwardRef-4xlTitle-70",
+                  "5xlTitle": "ForwardRef-5xlTitle-69",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                  "disabledText": "ForwardRef-disabledText-90",
+                  "highlightText": "ForwardRef-highlightText-79",
+                  "infoText": "ForwardRef-infoText-88",
+                  "inlineLink": "ForwardRef-inlineLink-82",
+                  "lTitle": "ForwardRef-lTitle-74",
+                  "labelText": "ForwardRef-labelText-87",
+                  "mTitle": "ForwardRef-mTitle-75",
+                  "margin": "ForwardRef-margin-93",
+                  "normalText": "ForwardRef-normalText-80",
+                  "placeholderText": "ForwardRef-placeholderText-84",
+                  "sLink": "ForwardRef-sLink-89",
+                  "sText": "ForwardRef-sText-86",
+                  "sTitle": "ForwardRef-sTitle-76",
+                  "selectedNavText": "ForwardRef-selectedNavText-85",
+                  "selectedText": "ForwardRef-selectedText-81",
+                  "vizText": "ForwardRef-vizText-91",
+                  "xlTitle": "ForwardRef-xlTitle-73",
+                  "xsTitle": "ForwardRef-xsTitle-77",
+                  "xxlTitle": "ForwardRef-xxlTitle-72",
+                  "xxsTitle": "ForwardRef-xxsTitle-78",
                 }
               }
               component={null}
@@ -4576,7 +4576,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="Typography-labelText-87 Typography-baseFontFamily-92 Typography-margin-93"
+                className="ForwardRef-labelText-87 ForwardRef-baseFontFamily-92 ForwardRef-margin-93"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -5305,41 +5305,41 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               >
                 25.00B undefined
               </p>
-            </Typography>
-          </WithStyles(Typography)>
-          <WithStyles(Typography)
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
+          <WithStyles(ForwardRef)
             component={null}
             paragraph={false}
             variant="sText"
           >
-            <Typography
+            <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-71",
-                  "4xlTitle": "Typography-4xlTitle-70",
-                  "5xlTitle": "Typography-5xlTitle-69",
-                  "baseFontFamily": "Typography-baseFontFamily-92",
-                  "disabledButtonText": "Typography-disabledButtonText-83",
-                  "disabledText": "Typography-disabledText-90",
-                  "highlightText": "Typography-highlightText-79",
-                  "infoText": "Typography-infoText-88",
-                  "inlineLink": "Typography-inlineLink-82",
-                  "lTitle": "Typography-lTitle-74",
-                  "labelText": "Typography-labelText-87",
-                  "mTitle": "Typography-mTitle-75",
-                  "margin": "Typography-margin-93",
-                  "normalText": "Typography-normalText-80",
-                  "placeholderText": "Typography-placeholderText-84",
-                  "sLink": "Typography-sLink-89",
-                  "sText": "Typography-sText-86",
-                  "sTitle": "Typography-sTitle-76",
-                  "selectedNavText": "Typography-selectedNavText-85",
-                  "selectedText": "Typography-selectedText-81",
-                  "vizText": "Typography-vizText-91",
-                  "xlTitle": "Typography-xlTitle-73",
-                  "xsTitle": "Typography-xsTitle-77",
-                  "xxlTitle": "Typography-xxlTitle-72",
-                  "xxsTitle": "Typography-xxsTitle-78",
+                  "3xlTitle": "ForwardRef-3xlTitle-71",
+                  "4xlTitle": "ForwardRef-4xlTitle-70",
+                  "5xlTitle": "ForwardRef-5xlTitle-69",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                  "disabledText": "ForwardRef-disabledText-90",
+                  "highlightText": "ForwardRef-highlightText-79",
+                  "infoText": "ForwardRef-infoText-88",
+                  "inlineLink": "ForwardRef-inlineLink-82",
+                  "lTitle": "ForwardRef-lTitle-74",
+                  "labelText": "ForwardRef-labelText-87",
+                  "mTitle": "ForwardRef-mTitle-75",
+                  "margin": "ForwardRef-margin-93",
+                  "normalText": "ForwardRef-normalText-80",
+                  "placeholderText": "ForwardRef-placeholderText-84",
+                  "sLink": "ForwardRef-sLink-89",
+                  "sText": "ForwardRef-sText-86",
+                  "sTitle": "ForwardRef-sTitle-76",
+                  "selectedNavText": "ForwardRef-selectedNavText-85",
+                  "selectedText": "ForwardRef-selectedText-81",
+                  "vizText": "ForwardRef-vizText-91",
+                  "xlTitle": "ForwardRef-xlTitle-73",
+                  "xsTitle": "ForwardRef-xsTitle-77",
+                  "xxlTitle": "ForwardRef-xxlTitle-72",
+                  "xxsTitle": "ForwardRef-xxsTitle-78",
                 }
               }
               component={null}
@@ -6072,7 +6072,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="Typography-sText-86 Typography-baseFontFamily-92 Typography-margin-93"
+                className="ForwardRef-sText-86 ForwardRef-baseFontFamily-92 ForwardRef-margin-93"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -6801,8 +6801,8 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               >
                  875.00B
               </p>
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </span>
         <WithStyles(ForwardRef(IconButton))
           category="ghost"
@@ -9961,41 +9961,41 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             </div>
           </Success>
         </WithStyles(Success)>
-        <WithStyles(Typography)
+        <WithStyles(ForwardRef)
           className="File-textTruncation-63"
           component={null}
           paragraph={false}
           variant="sText"
         >
-          <Typography
+          <ForwardRef
             className="File-textTruncation-63"
             classes={
               Object {
-                "3xlTitle": "Typography-3xlTitle-71",
-                "4xlTitle": "Typography-4xlTitle-70",
-                "5xlTitle": "Typography-5xlTitle-69",
-                "baseFontFamily": "Typography-baseFontFamily-92",
-                "disabledButtonText": "Typography-disabledButtonText-83",
-                "disabledText": "Typography-disabledText-90",
-                "highlightText": "Typography-highlightText-79",
-                "infoText": "Typography-infoText-88",
-                "inlineLink": "Typography-inlineLink-82",
-                "lTitle": "Typography-lTitle-74",
-                "labelText": "Typography-labelText-87",
-                "mTitle": "Typography-mTitle-75",
-                "margin": "Typography-margin-93",
-                "normalText": "Typography-normalText-80",
-                "placeholderText": "Typography-placeholderText-84",
-                "sLink": "Typography-sLink-89",
-                "sText": "Typography-sText-86",
-                "sTitle": "Typography-sTitle-76",
-                "selectedNavText": "Typography-selectedNavText-85",
-                "selectedText": "Typography-selectedText-81",
-                "vizText": "Typography-vizText-91",
-                "xlTitle": "Typography-xlTitle-73",
-                "xsTitle": "Typography-xsTitle-77",
-                "xxlTitle": "Typography-xxlTitle-72",
-                "xxsTitle": "Typography-xxsTitle-78",
+                "3xlTitle": "ForwardRef-3xlTitle-71",
+                "4xlTitle": "ForwardRef-4xlTitle-70",
+                "5xlTitle": "ForwardRef-5xlTitle-69",
+                "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                "disabledText": "ForwardRef-disabledText-90",
+                "highlightText": "ForwardRef-highlightText-79",
+                "infoText": "ForwardRef-infoText-88",
+                "inlineLink": "ForwardRef-inlineLink-82",
+                "lTitle": "ForwardRef-lTitle-74",
+                "labelText": "ForwardRef-labelText-87",
+                "mTitle": "ForwardRef-mTitle-75",
+                "margin": "ForwardRef-margin-93",
+                "normalText": "ForwardRef-normalText-80",
+                "placeholderText": "ForwardRef-placeholderText-84",
+                "sLink": "ForwardRef-sLink-89",
+                "sText": "ForwardRef-sText-86",
+                "sTitle": "ForwardRef-sTitle-76",
+                "selectedNavText": "ForwardRef-selectedNavText-85",
+                "selectedText": "ForwardRef-selectedText-81",
+                "vizText": "ForwardRef-vizText-91",
+                "xlTitle": "ForwardRef-xlTitle-73",
+                "xsTitle": "ForwardRef-xsTitle-77",
+                "xxlTitle": "ForwardRef-xxlTitle-72",
+                "xxsTitle": "ForwardRef-xxsTitle-78",
               }
             }
             component={null}
@@ -10728,7 +10728,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             variant="sText"
           >
             <p
-              className="Typography-sText-86 Typography-baseFontFamily-92 Typography-margin-93 File-textTruncation-63"
+              className="ForwardRef-sText-86 ForwardRef-baseFontFamily-92 ForwardRef-margin-93 File-textTruncation-63"
               theme={
                 Object {
                   "breakpoints": Object {
@@ -11457,44 +11457,44 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             >
               somefile.png
             </p>
-          </Typography>
-        </WithStyles(Typography)>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
         <span
           className="File-progressText-58"
         >
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             component={null}
             paragraph={false}
             variant="labelText"
           >
-            <Typography
+            <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-71",
-                  "4xlTitle": "Typography-4xlTitle-70",
-                  "5xlTitle": "Typography-5xlTitle-69",
-                  "baseFontFamily": "Typography-baseFontFamily-92",
-                  "disabledButtonText": "Typography-disabledButtonText-83",
-                  "disabledText": "Typography-disabledText-90",
-                  "highlightText": "Typography-highlightText-79",
-                  "infoText": "Typography-infoText-88",
-                  "inlineLink": "Typography-inlineLink-82",
-                  "lTitle": "Typography-lTitle-74",
-                  "labelText": "Typography-labelText-87",
-                  "mTitle": "Typography-mTitle-75",
-                  "margin": "Typography-margin-93",
-                  "normalText": "Typography-normalText-80",
-                  "placeholderText": "Typography-placeholderText-84",
-                  "sLink": "Typography-sLink-89",
-                  "sText": "Typography-sText-86",
-                  "sTitle": "Typography-sTitle-76",
-                  "selectedNavText": "Typography-selectedNavText-85",
-                  "selectedText": "Typography-selectedText-81",
-                  "vizText": "Typography-vizText-91",
-                  "xlTitle": "Typography-xlTitle-73",
-                  "xsTitle": "Typography-xsTitle-77",
-                  "xxlTitle": "Typography-xxlTitle-72",
-                  "xxsTitle": "Typography-xxsTitle-78",
+                  "3xlTitle": "ForwardRef-3xlTitle-71",
+                  "4xlTitle": "ForwardRef-4xlTitle-70",
+                  "5xlTitle": "ForwardRef-5xlTitle-69",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                  "disabledText": "ForwardRef-disabledText-90",
+                  "highlightText": "ForwardRef-highlightText-79",
+                  "infoText": "ForwardRef-infoText-88",
+                  "inlineLink": "ForwardRef-inlineLink-82",
+                  "lTitle": "ForwardRef-lTitle-74",
+                  "labelText": "ForwardRef-labelText-87",
+                  "mTitle": "ForwardRef-mTitle-75",
+                  "margin": "ForwardRef-margin-93",
+                  "normalText": "ForwardRef-normalText-80",
+                  "placeholderText": "ForwardRef-placeholderText-84",
+                  "sLink": "ForwardRef-sLink-89",
+                  "sText": "ForwardRef-sText-86",
+                  "sTitle": "ForwardRef-sTitle-76",
+                  "selectedNavText": "ForwardRef-selectedNavText-85",
+                  "selectedText": "ForwardRef-selectedText-81",
+                  "vizText": "ForwardRef-vizText-91",
+                  "xlTitle": "ForwardRef-xlTitle-73",
+                  "xsTitle": "ForwardRef-xsTitle-77",
+                  "xxlTitle": "ForwardRef-xxlTitle-72",
+                  "xxsTitle": "ForwardRef-xxsTitle-78",
                 }
               }
               component={null}
@@ -12227,7 +12227,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="Typography-labelText-87 Typography-baseFontFamily-92 Typography-margin-93"
+                className="ForwardRef-labelText-87 ForwardRef-baseFontFamily-92 ForwardRef-margin-93"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -12956,41 +12956,41 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               >
                 25.00B undefined
               </p>
-            </Typography>
-          </WithStyles(Typography)>
-          <WithStyles(Typography)
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
+          <WithStyles(ForwardRef)
             component={null}
             paragraph={false}
             variant="sText"
           >
-            <Typography
+            <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-71",
-                  "4xlTitle": "Typography-4xlTitle-70",
-                  "5xlTitle": "Typography-5xlTitle-69",
-                  "baseFontFamily": "Typography-baseFontFamily-92",
-                  "disabledButtonText": "Typography-disabledButtonText-83",
-                  "disabledText": "Typography-disabledText-90",
-                  "highlightText": "Typography-highlightText-79",
-                  "infoText": "Typography-infoText-88",
-                  "inlineLink": "Typography-inlineLink-82",
-                  "lTitle": "Typography-lTitle-74",
-                  "labelText": "Typography-labelText-87",
-                  "mTitle": "Typography-mTitle-75",
-                  "margin": "Typography-margin-93",
-                  "normalText": "Typography-normalText-80",
-                  "placeholderText": "Typography-placeholderText-84",
-                  "sLink": "Typography-sLink-89",
-                  "sText": "Typography-sText-86",
-                  "sTitle": "Typography-sTitle-76",
-                  "selectedNavText": "Typography-selectedNavText-85",
-                  "selectedText": "Typography-selectedText-81",
-                  "vizText": "Typography-vizText-91",
-                  "xlTitle": "Typography-xlTitle-73",
-                  "xsTitle": "Typography-xsTitle-77",
-                  "xxlTitle": "Typography-xxlTitle-72",
-                  "xxsTitle": "Typography-xxsTitle-78",
+                  "3xlTitle": "ForwardRef-3xlTitle-71",
+                  "4xlTitle": "ForwardRef-4xlTitle-70",
+                  "5xlTitle": "ForwardRef-5xlTitle-69",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-92",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-83",
+                  "disabledText": "ForwardRef-disabledText-90",
+                  "highlightText": "ForwardRef-highlightText-79",
+                  "infoText": "ForwardRef-infoText-88",
+                  "inlineLink": "ForwardRef-inlineLink-82",
+                  "lTitle": "ForwardRef-lTitle-74",
+                  "labelText": "ForwardRef-labelText-87",
+                  "mTitle": "ForwardRef-mTitle-75",
+                  "margin": "ForwardRef-margin-93",
+                  "normalText": "ForwardRef-normalText-80",
+                  "placeholderText": "ForwardRef-placeholderText-84",
+                  "sLink": "ForwardRef-sLink-89",
+                  "sText": "ForwardRef-sText-86",
+                  "sTitle": "ForwardRef-sTitle-76",
+                  "selectedNavText": "ForwardRef-selectedNavText-85",
+                  "selectedText": "ForwardRef-selectedText-81",
+                  "vizText": "ForwardRef-vizText-91",
+                  "xlTitle": "ForwardRef-xlTitle-73",
+                  "xsTitle": "ForwardRef-xsTitle-77",
+                  "xxlTitle": "ForwardRef-xxlTitle-72",
+                  "xxsTitle": "ForwardRef-xxsTitle-78",
                 }
               }
               component={null}
@@ -13723,7 +13723,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="Typography-sText-86 Typography-baseFontFamily-92 Typography-margin-93"
+                className="ForwardRef-sText-86 ForwardRef-baseFontFamily-92 ForwardRef-margin-93"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -14452,8 +14452,8 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               >
                  875.00B
               </p>
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </span>
         <WithStyles(ForwardRef(IconButton))
           category="ghost"

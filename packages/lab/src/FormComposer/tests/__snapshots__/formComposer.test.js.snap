@@ -1521,41 +1521,41 @@ exports[`FormComposer withStyles should render correctly 1`] = `
         <div
           className="HvFormComposer-root-32"
         >
-          <WithStyles(Typography)
+          <WithStyles(ForwardRef)
             className="HvFormComposer-title-36"
             component={null}
             paragraph={false}
             variant="xlTitle"
           >
-            <Typography
+            <ForwardRef
               className="HvFormComposer-title-36"
               classes={
                 Object {
-                  "3xlTitle": "Typography-3xlTitle-40",
-                  "4xlTitle": "Typography-4xlTitle-39",
-                  "5xlTitle": "Typography-5xlTitle-38",
-                  "baseFontFamily": "Typography-baseFontFamily-61",
-                  "disabledButtonText": "Typography-disabledButtonText-52",
-                  "disabledText": "Typography-disabledText-59",
-                  "highlightText": "Typography-highlightText-48",
-                  "infoText": "Typography-infoText-57",
-                  "inlineLink": "Typography-inlineLink-51",
-                  "lTitle": "Typography-lTitle-43",
-                  "labelText": "Typography-labelText-56",
-                  "mTitle": "Typography-mTitle-44",
-                  "margin": "Typography-margin-62",
-                  "normalText": "Typography-normalText-49",
-                  "placeholderText": "Typography-placeholderText-53",
-                  "sLink": "Typography-sLink-58",
-                  "sText": "Typography-sText-55",
-                  "sTitle": "Typography-sTitle-45",
-                  "selectedNavText": "Typography-selectedNavText-54",
-                  "selectedText": "Typography-selectedText-50",
-                  "vizText": "Typography-vizText-60",
-                  "xlTitle": "Typography-xlTitle-42",
-                  "xsTitle": "Typography-xsTitle-46",
-                  "xxlTitle": "Typography-xxlTitle-41",
-                  "xxsTitle": "Typography-xxsTitle-47",
+                  "3xlTitle": "ForwardRef-3xlTitle-40",
+                  "4xlTitle": "ForwardRef-4xlTitle-39",
+                  "5xlTitle": "ForwardRef-5xlTitle-38",
+                  "baseFontFamily": "ForwardRef-baseFontFamily-61",
+                  "disabledButtonText": "ForwardRef-disabledButtonText-52",
+                  "disabledText": "ForwardRef-disabledText-59",
+                  "highlightText": "ForwardRef-highlightText-48",
+                  "infoText": "ForwardRef-infoText-57",
+                  "inlineLink": "ForwardRef-inlineLink-51",
+                  "lTitle": "ForwardRef-lTitle-43",
+                  "labelText": "ForwardRef-labelText-56",
+                  "mTitle": "ForwardRef-mTitle-44",
+                  "margin": "ForwardRef-margin-62",
+                  "normalText": "ForwardRef-normalText-49",
+                  "placeholderText": "ForwardRef-placeholderText-53",
+                  "sLink": "ForwardRef-sLink-58",
+                  "sText": "ForwardRef-sText-55",
+                  "sTitle": "ForwardRef-sTitle-45",
+                  "selectedNavText": "ForwardRef-selectedNavText-54",
+                  "selectedText": "ForwardRef-selectedText-50",
+                  "vizText": "ForwardRef-vizText-60",
+                  "xlTitle": "ForwardRef-xlTitle-42",
+                  "xsTitle": "ForwardRef-xsTitle-46",
+                  "xxlTitle": "ForwardRef-xxlTitle-41",
+                  "xxsTitle": "ForwardRef-xxsTitle-47",
                 }
               }
               component={null}
@@ -2288,7 +2288,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               variant="xlTitle"
             >
               <h1
-                className="Typography-xlTitle-42 Typography-baseFontFamily-61 Typography-margin-62 HvFormComposer-title-36"
+                className="ForwardRef-xlTitle-42 ForwardRef-baseFontFamily-61 ForwardRef-margin-62 HvFormComposer-title-36"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -3015,8 +3015,8 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                   }
                 }
               />
-            </Typography>
-          </WithStyles(Typography)>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
           <div
             className="HvFormComposer-mainContainer-33"
           >
@@ -3026,40 +3026,40 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               <div
                 key="Group1"
               >
-                <WithStyles(Typography)
+                <WithStyles(ForwardRef)
                   component={null}
                   id="Group1"
                   paragraph={false}
                   variant="mTitle"
                 >
-                  <Typography
+                  <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "Typography-3xlTitle-40",
-                        "4xlTitle": "Typography-4xlTitle-39",
-                        "5xlTitle": "Typography-5xlTitle-38",
-                        "baseFontFamily": "Typography-baseFontFamily-61",
-                        "disabledButtonText": "Typography-disabledButtonText-52",
-                        "disabledText": "Typography-disabledText-59",
-                        "highlightText": "Typography-highlightText-48",
-                        "infoText": "Typography-infoText-57",
-                        "inlineLink": "Typography-inlineLink-51",
-                        "lTitle": "Typography-lTitle-43",
-                        "labelText": "Typography-labelText-56",
-                        "mTitle": "Typography-mTitle-44",
-                        "margin": "Typography-margin-62",
-                        "normalText": "Typography-normalText-49",
-                        "placeholderText": "Typography-placeholderText-53",
-                        "sLink": "Typography-sLink-58",
-                        "sText": "Typography-sText-55",
-                        "sTitle": "Typography-sTitle-45",
-                        "selectedNavText": "Typography-selectedNavText-54",
-                        "selectedText": "Typography-selectedText-50",
-                        "vizText": "Typography-vizText-60",
-                        "xlTitle": "Typography-xlTitle-42",
-                        "xsTitle": "Typography-xsTitle-46",
-                        "xxlTitle": "Typography-xxlTitle-41",
-                        "xxsTitle": "Typography-xxsTitle-47",
+                        "3xlTitle": "ForwardRef-3xlTitle-40",
+                        "4xlTitle": "ForwardRef-4xlTitle-39",
+                        "5xlTitle": "ForwardRef-5xlTitle-38",
+                        "baseFontFamily": "ForwardRef-baseFontFamily-61",
+                        "disabledButtonText": "ForwardRef-disabledButtonText-52",
+                        "disabledText": "ForwardRef-disabledText-59",
+                        "highlightText": "ForwardRef-highlightText-48",
+                        "infoText": "ForwardRef-infoText-57",
+                        "inlineLink": "ForwardRef-inlineLink-51",
+                        "lTitle": "ForwardRef-lTitle-43",
+                        "labelText": "ForwardRef-labelText-56",
+                        "mTitle": "ForwardRef-mTitle-44",
+                        "margin": "ForwardRef-margin-62",
+                        "normalText": "ForwardRef-normalText-49",
+                        "placeholderText": "ForwardRef-placeholderText-53",
+                        "sLink": "ForwardRef-sLink-58",
+                        "sText": "ForwardRef-sText-55",
+                        "sTitle": "ForwardRef-sTitle-45",
+                        "selectedNavText": "ForwardRef-selectedNavText-54",
+                        "selectedText": "ForwardRef-selectedText-50",
+                        "vizText": "ForwardRef-vizText-60",
+                        "xlTitle": "ForwardRef-xlTitle-42",
+                        "xsTitle": "ForwardRef-xsTitle-46",
+                        "xxlTitle": "ForwardRef-xxlTitle-41",
+                        "xxsTitle": "ForwardRef-xxsTitle-47",
                       }
                     }
                     component={null}
@@ -3793,7 +3793,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                     variant="mTitle"
                   >
                     <h3
-                      className="Typography-mTitle-44 Typography-baseFontFamily-61 Typography-margin-62"
+                      className="ForwardRef-mTitle-44 ForwardRef-baseFontFamily-61 ForwardRef-margin-62"
                       id="Group1"
                       theme={
                         Object {
@@ -4523,8 +4523,8 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                     >
                       Group1
                     </h3>
-                  </Typography>
-                </WithStyles(Typography)>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
                 <div
                   key="fc-Group1-0"
                 >

@@ -21,8 +21,6 @@ const styles = theme => ({
     display: "contents"
   },
   icon: {
-    height: "32px",
-    width: "32px",
     position: "relative",
     boxSizing: "content-box",
     padding: 0,

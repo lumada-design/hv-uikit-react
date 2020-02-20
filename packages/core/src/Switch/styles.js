@@ -33,7 +33,6 @@ const styles = theme => ({
     height: `${theme.hv.spacing.sm}px`,
     cursor: "pointer"
   },
-
   switchBase: {
     width: switchWidth,
     height: `${theme.hv.spacing.sm}px`,
