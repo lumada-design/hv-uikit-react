@@ -42,18 +42,6 @@ const dataSuccess = {
   fileStatus: "success"
 };
 
-const DEFAULT_LABELS = {
-  progressConjunction: "of",
-  dropzoneLabel: "My Label",
-  sizeWarningLabel: "Max. file size:",
-  dragText: "Drag and drop or ",
-  selectFilesText: "Select files",
-  dropFilesText: "Drop files here",
-  fileSizeError: "The file exceeds the maximum upload size",
-  fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel:"Remove File"
-};
-
 const onClickCallback = jest.fn();
 
 describe("File withStyles - Invalid File", () => {
@@ -63,7 +51,8 @@ describe("File withStyles - Invalid File", () => {
         data={dataFail}
         onFilesAdded={() => {}}
         onFileRemoved={() => {}}
-        labels={DEFAULT_LABELS}
+        progressConjunctionLabel="progressConjunctionLabel"
+        removeFileButtonLabel="progressConjunctionLabel"
       />
     </HvProvider>
   );
@@ -90,7 +79,8 @@ describe("File withStyles - Valid File", () => {
         unit="mb"
         onFilesAdded={() => {}}
         onFileRemoved={onClickCallback}
-        labels={DEFAULT_LABELS}
+        progressConjunctionLabel="progressConjunctionLabel"
+        removeFileButtonLabel="progressConjunctionLabel"
       />
     </HvProvider>
   );

@@ -27,6 +27,7 @@ let wrapper;
 
 const files = [
   {
+    id: "1",
     errorMessage: "File type not allowed for upload",
     status: "fail",
     lastModified: 1575566155192,
@@ -36,6 +37,7 @@ const files = [
     webkitRelativePath: ""
   },
   {
+    id: "2",
     errorMessage: "File type not allowed for upload",
     status: "fail",
     lastModified: 1575547399043,
@@ -50,7 +52,11 @@ describe("FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
-        <FileListWithStyles list={files} />
+        <FileListWithStyles
+          list={files}
+          progressConjunctionLabel="progressConjunctionLabel"
+          removeFileButtonLabel="removeFileButtonLabel"
+        />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();

@@ -40,11 +40,13 @@ const DEFAULT_LABELS = {
 
 const fileList = [
   {
+    id: "1",
     name: "Screenshot 2019-12-05 at 17.15.43.png",
     size: 14100000,
     type: "image/png"
   },
   {
+    id: "2",
     name: "Screenshot 2019-12-05 at 12.03.13.png",
     size: 875000,
     type: "image/png"
@@ -117,6 +119,7 @@ describe("FileUploader validations", () => {
     const faultyCompProps = {
       fileList: [
         {
+          id: "3",
           status: "fail",
           errorMessage: "File type not allowed for upload",
           name: "somefile.jpeg",
@@ -145,6 +148,7 @@ describe("FileUploader validations", () => {
     const faultyCompProps = {
       fileList: [
         {
+          id: "4",
           status: "fail",
           errorMessage: "The file exceeds the maximum upload size",
           name: "somefile.jpeg",
