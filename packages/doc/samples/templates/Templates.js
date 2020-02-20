@@ -8,6 +8,7 @@ import Card, {
 } from "@hv/uikit-react-core/dist/Card";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Grid from "@hv/uikit-react-core/dist/Grid";
+import login from "../../stories/5-templates/resources/login.png";
 
 /*
 This file is used to present a index of the existing templates in the Storybook. It doesn't represent a template 
@@ -26,10 +27,6 @@ const styles = () => ({
   },
   card: {
     maxWidth: "640px"
-  },
-  img: {
-    width: "100%",
-    height: "auto"
   }
 });
 
@@ -68,9 +65,11 @@ const Cards = ({ classes, containers }) =>
   containers.map((container, idx) => (
     <Grid item xs={4} sm={4} md={6} lg={4} xl={4} key={container.id}>
       <Card>
-        <CardMedia onClick={link(container.associatedStory)}>
-          <img src={container.img} className={classes.img} />
-        </CardMedia>
+        <CardMedia
+          onClick={link(container.associatedStory)}
+          mediaHeight={282}
+          mediaPath={container.img}
+        />
         <HvCardContent
           innerCardContent={
             <SingleContent classes={classes} labels={container.labels} />
