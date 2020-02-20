@@ -23,9 +23,8 @@ const styles = theme => ({
     whiteSpace: "nowrap"
   },
   box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
+    width: "32px",
+    height: "32px"
   }
 });
 
