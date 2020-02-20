@@ -131,8 +131,8 @@ class HvLogin extends React.Component {
         >
           <HvGrid
             item
-            xs="false"
-            sm="false"
+            xs={false}
+            sm={false}
             md={8}
             lg={8}
             xl={8}

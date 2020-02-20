@@ -4,6 +4,7 @@ exports[`TextArea Component should render correctly if opened 1`] = `
 <div>
   <div>
     <WithStyles(HvInput)
+      autoFocus={false}
       className=""
       classes={
         Object {
@@ -14,14 +15,19 @@ exports[`TextArea Component should render correctly if opened 1`] = `
           "inputRootFocused": undefined,
         }
       }
+      customFixedIcon={null}
       disableClear={true}
       disabled={false}
+      externalWarningTextOverride={null}
+      infoIcon={false}
       initialValue="test"
+      inputProps={Object {}}
       inputRef={
         Object {
           "current": null,
         }
       }
+      isRequired={false}
       labels={
         Object {
           "inputLabel": "",
@@ -32,19 +38,31 @@ exports[`TextArea Component should render correctly if opened 1`] = `
           "warningText": "",
         }
       }
+      maxCharQuantity={null}
+      minCharQuantity={null}
       multiline={true}
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      password={false}
       rows={4}
       showInfo={false}
+      suggestionListCallback={[Function]}
+      suggestionSelectedCallback={[Function]}
+      theme={null}
+      validation={null}
+      validationIconPosition="right"
       validationIconVisible={false}
+      validationState="empty"
+      validationType="none"
     />
   </div>
 </div>
 `;
 
 exports[`TextArea withStyles should render correctly 1`] = `
-<MuiThemeProviderOld
-  sheetsManager={Map {}}
+<ThemeProvider
   theme={
     Object {
       "breakpoints": Object {
@@ -398,6 +416,21 @@ exports[`TextArea withStyles should render correctly 1`] = `
             "borderTop": "4px solid #CC0000",
           },
         },
+        "MuiIconButton": Object {
+          "root": Object {
+            "&:focus": Object {
+              "outlineColor": "Highlight",
+              "outlineOffset": -2,
+              "outlineStyle": "auto",
+              "outlineWidth": 4,
+            },
+            "&:hover": Object {
+              "backgroundColor": "#F0F0F0",
+            },
+            "borderRadius": 0,
+            "padding": 0,
+          },
+        },
         "MuiToolbar": Object {
           "dense": Object {
             "minHeight": "46px",
@@ -420,12 +453,17 @@ exports[`TextArea withStyles should render correctly 1`] = `
       },
       "palette": Object {
         "action": Object {
+          "activatedOpaciy": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
-          "hover": "rgba(0, 0, 0, 0.08)",
-          "hoverOpacity": 0.08,
-          "selected": "rgba(0, 0, 0, 0.14)",
+          "disabledOpacity": 0.38,
+          "focus": "rgba(0, 0, 0, 0.12)",
+          "focusOpacity": 0.12,
+          "hover": "rgba(0, 0, 0, 0.04)",
+          "hoverOpacity": 0.04,
+          "selected": "rgba(0, 0, 0, 0.08)",
+          "selectedOpacity": 0.08,
         },
         "augmentColor": [Function],
         "background": Object {
@@ -461,6 +499,12 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "A400": "#303030",
           "A700": "#616161",
         },
+        "info": Object {
+          "contrastText": "#fff",
+          "dark": "#1976d2",
+          "light": "#64b5f6",
+          "main": "#2196f3",
+        },
         "primary": Object {
           "contrastText": "#fff",
           "dark": "rgb(14, 74, 147)",
@@ -473,6 +517,12 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "light": "#999999",
           "main": "#414141",
         },
+        "success": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "#388e3c",
+          "light": "#81c784",
+          "main": "#4caf50",
+        },
         "text": Object {
           "disabled": "#999999",
           "hint": "rgba(0, 0, 0, 0.38)",
@@ -481,6 +531,12 @@ exports[`TextArea withStyles should render correctly 1`] = `
         },
         "tonalOffset": 0.2,
         "type": "light",
+        "warning": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "#f57c00",
+          "light": "#ffb74d",
+          "main": "#ff9800",
+        },
       },
       "props": Object {
         "MuiButtonBase": Object {
@@ -520,14 +576,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
       "shape": Object {
         "borderRadius": 0,
       },
-      "spacing": Object {
-        "lg": "60",
-        "md": "30",
-        "sm": "20",
-        "unit": 8,
-        "xl": "90",
-        "xs": "10",
-      },
+      "spacing": [Function],
       "transitions": Object {
         "create": [Function],
         "duration": Object {
@@ -555,6 +604,15 @@ exports[`TextArea withStyles should render correctly 1`] = `
             "Arial",
             "Helvetica",
             "sans-serif",
+          ],
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "letterSpacing": "0.02em",
+          "lineHeight": "20px",
+        },
+        "body2": Object {
+          "color": "#414141",
+          "fontFamily": Array [
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -565,62 +623,9 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "letterSpacing": "0.02em",
           "lineHeight": "20px",
         },
-        "body1Next": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "1rem",
-          "fontWeight": 400,
-          "lineHeight": 1.5,
-        },
-        "body2": Object {
-          "color": "#999999",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "12px",
-          "fontWeight": "400",
-          "letterSpacing": "0.02em",
-          "lineHeight": "16px",
-        },
-        "body2Next": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "0.875rem",
-          "fontWeight": 400,
-          "lineHeight": 1.5,
-        },
         "button": Object {
           "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -632,30 +637,8 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "lineHeight": "20px",
           "textTransform": "uppercase",
         },
-        "buttonNext": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "0.875rem",
-          "fontWeight": 500,
-          "lineHeight": 1.75,
-          "textTransform": "uppercase",
-        },
         "caption": Object {
-          "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -664,91 +647,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "fontSize": "0.75rem",
           "fontWeight": 400,
           "lineHeight": 1.66,
-        },
-        "captionNext": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "0.75rem",
-          "fontWeight": 400,
-          "lineHeight": 1.66,
-        },
-        "display1": Object {
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "2.125rem",
-          "fontWeight": 400,
-          "lineHeight": "1.20588em",
-        },
-        "display2": Object {
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "2.8125rem",
-          "fontWeight": 400,
-          "lineHeight": "1.13333em",
-          "marginLeft": "-.02em",
-        },
-        "display3": Object {
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "3.5rem",
-          "fontWeight": 400,
-          "letterSpacing": "-.02em",
-          "lineHeight": "1.30357em",
-          "marginLeft": "-.02em",
-        },
-        "display4": Object {
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "7rem",
-          "fontWeight": 300,
-          "letterSpacing": "-.04em",
-          "lineHeight": "1.14286em",
-          "marginLeft": "-.04em",
         },
         "fontFamily": Array [
           "'Open Sans'",
@@ -757,16 +655,13 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "sans-serif",
         ],
         "fontSize": 14,
+        "fontWeightBold": 700,
         "fontWeightLight": 300,
         "fontWeightMedium": 500,
         "fontWeightRegular": 400,
         "h1": Object {
           "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -784,10 +679,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
             "Arial",
             "Helvetica",
             "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
           ],
           "fontSize": "32px",
           "fontWeight": "400",
@@ -797,10 +688,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
         "h3": Object {
           "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -818,10 +705,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
             "Arial",
             "Helvetica",
             "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
           ],
           "fontSize": "22px",
           "fontWeight": "400",
@@ -829,12 +712,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "lineHeight": "30px",
         },
         "h5": Object {
-          "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -842,15 +720,10 @@ exports[`TextArea withStyles should render correctly 1`] = `
           ],
           "fontSize": "1.5rem",
           "fontWeight": 400,
-          "lineHeight": 1.33,
+          "lineHeight": 1.334,
         },
         "h6": Object {
-          "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -860,29 +733,9 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "fontWeight": 500,
           "lineHeight": 1.6,
         },
-        "headline": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "1.5rem",
-          "fontWeight": 400,
-          "lineHeight": "1.35417em",
-        },
+        "htmlFontSize": 16,
         "overline": Object {
-          "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -895,29 +748,9 @@ exports[`TextArea withStyles should render correctly 1`] = `
         },
         "pxToRem": [Function],
         "round": [Function],
-        "subheading": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "1rem",
-          "fontWeight": 400,
-          "lineHeight": "1.5em",
-        },
         "subtitle1": Object {
           "color": "#414141",
           "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
             "'Open Sans'",
             "Arial",
             "Helvetica",
@@ -935,10 +768,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
             "Arial",
             "Helvetica",
             "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
           ],
           "fontSize": "12px",
           "fontWeight": "600",
@@ -946,23 +775,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
           "lineHeight": "16px",
         },
         "suppressDeprecationWarnings": true,
-        "title": Object {
-          "color": "#414141",
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
-          ],
-          "fontSize": "1.3125rem",
-          "fontWeight": 500,
-          "lineHeight": "1.16667em",
-        },
-        "useNextVariants": true,
       },
       "zIndex": Object {
         "appBar": 1100,
@@ -970,6 +782,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
     }
@@ -984,7 +797,24 @@ exports[`TextArea withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(HvTextArea) />
+    <WithStyles(HvTextArea)
+      autoScroll={false}
+      className=""
+      disabled={false}
+      labels={
+        Object {
+          "inputLabel": "",
+          "maxCharQuantityWarningText": "",
+          "minCharQuantityWarningText": "",
+          "placeholder": "",
+          "requiredWarningText": "",
+          "warningText": "",
+        }
+      }
+      onChange={[Function]}
+      resizable={false}
+      rows={1}
+    />
   </ContextProvider>
-</MuiThemeProviderOld>
+</ThemeProvider>
 `;

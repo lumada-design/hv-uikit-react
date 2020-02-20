@@ -21,4 +21,4 @@ CodeBlock.propTypes = {
 CodeBlock.defaultProps = {
   language: null
 };
-export default withTheme()(CodeBlock);
+export default withTheme(CodeBlock);

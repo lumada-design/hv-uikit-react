@@ -19,7 +19,6 @@
 import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
-import { axe, toHaveNoViolations } from "jest-axe";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
 import DropdownWithStyles from "../index";
@@ -27,33 +26,16 @@ import Dropdown from "../Dropdown";
 import List from "../List/List";
 import Typography from "../../Typography";
 
-expect.extend(toHaveNoViolations);
-
 const mockData = [
-  {
-    label: "Value 1"
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3"
-  }
+  { label: "Value 1" },
+  { label: "Value 2" },
+  { label: "Value 3" }
 ];
 
 const mockDataWithIds = [
-  {
-    id: "id-1",
-    label: "Value 1"
-  },
-  {
-    id: "id-2",
-    label: "Value 2"
-  },
-  {
-    id: "id-3",
-    label: "Value 3"
-  }
+  { id: "id-1", label: "Value 1" },
+  { id: "id-2", label: "Value 2" },
+  { id: "id-3", label: "Value 3" }
 ];
 
 describe("<Dropdown />", () => {
@@ -253,26 +235,6 @@ describe("<Dropdown />", () => {
         });
 
       expect(onChangeMock).toBeCalled();
-    });
-  });
-
-  describe("Dropdown A11Y", () => {
-    const onChangeMock = jest.fn();
-
-    it("with title", async () => {
-      wrapper = mount(
-        <HvProvider>
-          <DropdownWithStyles
-            values={mockData}
-            onChange={onChangeMock}
-            labels={{ title: "title" }}
-            expanded
-          />
-        </HvProvider>
-      );
-
-      const results = await axe(wrapper.getDOMNode()[1]);
-      expect(results).toHaveNoViolations();
     });
   });
 });

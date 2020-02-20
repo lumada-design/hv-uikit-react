@@ -4,7 +4,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.5:1. Recommendation:  change text colour to #6d6d6d.",
-        "context": "<p class=\"Typography-normalText-172 Typography-baseFontFamily-184 Typography-margin-185 Dropdown-selection-155 Dropdown-truncate-159 Dropdown-selectionDisabled-160\" theme=\"[object Object]\">Selected 3 of 12</p>",
+        "context": "<p class=\"Component-normalText-173 Component-baseFontFamily-185 Component-margin-186 Dropdown-selection-156 Dropdown-truncate-160 Dropdown-selectionDisabled-161\" theme=\"[object Object]\">Selected 3 of 12</p>",
         "selector": "#dropdown9-header > p",
         "runner": "htmlcs",
         "runnerExtras": {}
@@ -14,7 +14,7 @@
         "type": "error",
         "typeCode": 1,
         "message": "Certain ARIA roles must contain particular children (https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=axeAPI)",
-        "context": "<div id=\"dropdown9-header\" aria-expanded=\"false\" class=\"\" role=\"combobox\" tabindex=\"0\" aria-label=\"text\"><p class=\"Typography-normalText...</div>",
+        "context": "<div id=\"dropdown9-header\" aria-expanded=\"false\" class=\"\" role=\"combobox\" tabindex=\"0\" aria-label=\"text\"><p class=\"Component-normalText-...</div>",
         "selector": "#dropdown9-header",
         "runner": "axe",
         "runnerExtras": {

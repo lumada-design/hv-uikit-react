@@ -130,6 +130,8 @@ const CardView = ({
   );
 };
 
+const sizeProps = [true, false, "auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 CardView.propTypes = {
   /**
    * Class names to be applied.
@@ -209,91 +211,11 @@ CardView.propTypes = {
      * Grid component for possible values
      */
     breakpoints: PropTypes.shape({
-      xs: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      sm: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      md: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      lg: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      xl: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ])
+      xs: PropTypes.oneOf(sizeProps),
+      sm: PropTypes.oneOf(sizeProps),
+      md: PropTypes.oneOf(sizeProps),
+      lg: PropTypes.oneOf(sizeProps),
+      xl: PropTypes.oneOf(sizeProps)
     })
   })
 };
@@ -308,11 +230,11 @@ CardView.defaultProps = {
   viewConfiguration: {
     onSelection: null,
     breakpoints: {
-      xs: "false",
-      sm: "false",
-      md: "false",
-      lg: "false",
-      xl: "false"
+      xs: false,
+      sm: false,
+      md: false,
+      lg: false,
+      xl: false
     },
     actions: null
   }

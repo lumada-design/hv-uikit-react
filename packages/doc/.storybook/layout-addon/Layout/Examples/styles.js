@@ -46,19 +46,11 @@ const styles = theme => ({
     padding: "20px"
   },
   iconCode: {
-    marginLeft: "auto",
-    padding: 0,
-    borderRadius: "0",
-    "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
-    },
-    "&:focus": {
-      ...outlineStyles
-    }
+    marginLeft: "auto"
   },
   iconStyles: {
-    width: "30px",
-    height: "30px"
+    width: 32,
+    height: 32
   }
 });
 

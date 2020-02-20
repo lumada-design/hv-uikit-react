@@ -37,7 +37,7 @@ describe("InputA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.html());
 
     expect(results).toHaveNoViolations();
   });
@@ -49,7 +49,7 @@ describe("InputA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.html());
 
     expect(results).toHaveNoViolations();
   });
@@ -61,7 +61,7 @@ describe("InputA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.html());
 
     expect(results).toHaveNoViolations();
   });
@@ -73,7 +73,7 @@ describe("InputA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.html());
 
     expect(results).toHaveNoViolations();
   });

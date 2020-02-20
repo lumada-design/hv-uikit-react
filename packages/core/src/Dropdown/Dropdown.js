@@ -18,7 +18,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import uniqueId from "lodash/uniqueId";
-import withStyles from "@material-ui/core/styles/withStyles";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
@@ -42,21 +41,6 @@ const DEFAULT_STATE = {
   values: [],
   labels: DEFAULT_LABELS
 };
-
-const styles = {
-  rootXs: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
-  }
-};
-
-const StyledArrowUp = withStyles(styles, { withTheme: true })(ArrowUp);
-const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -192,43 +176,29 @@ class Dropdown extends React.Component {
     return (
       <div
         id={`${internalId}-header`}
-        aria-expanded={isOpen}
         aria-labelledby={labels.title ? `${internalId}-label` : undefined}
-        className={classNames([
-          classes.header,
-          {
-            [classes.headerDisabled]: disabled
-          }
-        ])}
+        className={classNames(classes.header, {
+          [classes.headerDisabled]: disabled
+        })}
         onKeyDown={evt => this.handleToggle(evt)}
         onClick={evt => this.handleToggle(evt)}
-        role="combobox"
-        aria-controls={isOpen ? `${internalId}-values` : undefined}
-        aria-owns={isOpen ? `${internalId}-values` : undefined}
+        role="textbox"
         ref={this.ref}
         tabIndex={0}
         {...others}
       >
         <HvTypography
           variant="normalText"
-          className={classNames([
-            classes.selection,
-            classes.truncate,
-            {
-              [classes.selectionDisabled]: disabled
-            }
-          ])}
+          className={classNames(classes.selection, classes.truncate, {
+            [classes.selectionDisabled]: disabled
+          })}
         >
           {selectionLabel}
         </HvTypography>
         {isOpen ? (
-          <StyledArrowUp iconSize="XS" className={classes.arrow} />
+          <ArrowUp iconSize="XS" className={classes.arrow} />
         ) : (
-          <StyledArrowDown
-            iconSize="XS"
-            className={classes.arrow}
-            color={color}
-          />
+          <ArrowDown iconSize="XS" className={classes.arrow} color={color} />
         )}
       </div>
     );
@@ -261,6 +231,9 @@ class Dropdown extends React.Component {
         hasTooltips={hasTooltips}
         disablePortal={disablePortal}
         isOpen={isOpen}
+        listProps={{
+          "aria-labelledby": labels.title ? `${internalId}-label` : undefined
+        }}
         anchorEl={anchorEl}
         singleSelectionToggle={singleSelectionToggle}
       />
@@ -276,17 +249,18 @@ class Dropdown extends React.Component {
         {labels.title ? this.renderLabel() : null}
         <div
           id={internalId}
+          role="combobox"
+          aria-expanded={isOpen}
+          aria-owns={isOpen ? `${internalId}-values` : undefined}
+          aria-controls={isOpen ? `${internalId}-values` : undefined}
+          aria-labelledby={labels.title ? `${internalId}-label` : undefined}
           ref={el => {
             this.node = el;
           }}
-          className={classNames([
-            classes.root,
-            {
-              [classes.rootDisabled]: disabled,
-              [classes.rootActive]: isOpen
-            },
-            className
-          ])}
+          className={classNames(classes.root, className, {
+            [classes.rootDisabled]: disabled,
+            [classes.rootActive]: isOpen
+          })}
         >
           {this.renderHeader()}
           {this.renderList()}

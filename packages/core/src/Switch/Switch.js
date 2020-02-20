@@ -16,14 +16,14 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import BaseSwitch from "@material-ui/core/Switch";
-
-import classnames from "classnames";
-import { filter } from "lodash";
-
+import SwitchBase from "@material-ui/core/Switch";
+import classNames from "classnames";
 import isNil from "lodash/isNil";
+import uniqueId from "lodash/uniqueId";
 import CheckMark from "@hv/uikit-react-icons/dist/Generic/Good";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
+import Focus from "../Focus";
 
 const Switch = props => {
   const {
@@ -36,162 +36,116 @@ const Switch = props => {
     showLabels,
     value,
     displayIconChecked,
-    theme
+    ...other
   } = props;
 
   const [clickState, setClicked] = useState(checked);
-
-  const handleLabelClick = event => {
-    const labelClassRegex = /labelDeselected/;
-    const labelIsDisabled = labelClassRegex.test(event.target.className);
-    // verify checked property and if true enable clicking on labels
-    if (!disabled && labelIsDisabled) {
-      const status = !clickState;
-      setClicked(status);
-      event.target.setAttribute("checked", status);
-      onChange(event);
-    }
-  };
-
-  const auxiliaryElemExtractor = (nodes, regexMarker) => {
-    const elem = filter(nodes, el => {
-      const rg = RegExp(regexMarker);
-      if (rg.test(el.className)) {
-        return el;
-      }
-      return null;
-    });
-
-    return elem[0];
-  };
-
-  const nodeIterator = (node, depth, descriptor) => {
-    let item = node;
-    for (let i = 1; i <= depth; i += 1) {
-      item = item.parentNode;
-    }
-
-    const htmlElems = auxiliaryElemExtractor(item.children, descriptor);
-
-    return htmlElems;
-  };
-
-  const extractHoverableElements = event => [
-    nodeIterator(event.target, 3, classes.bar),
-    nodeIterator(event.target, 1, classes.icon)
-  ];
-
-  const switchHoverIn = event => {
-    const hoverTargets = extractHoverableElements(event);
-
-    if (clickState) {
-      hoverTargets[0].classList.add(classes.checkedHoverClass);
-    } else {
-      hoverTargets[0].classList.add(classes.uncheckedHoverClass);
-      hoverTargets[1].classList.add(classes.uncheckedIconHoverClass);
-    }
-  };
-
-  const switchHoverOut = event => {
-    const hoverTargets = extractHoverableElements(event);
-    // clear out styling applied to border and icon
-    hoverTargets[0].classList.remove(classes.checkedHoverClass);
-    hoverTargets[0].classList.remove(classes.uncheckedHoverClass);
-
-    if (hoverTargets[1]) {
-      hoverTargets[1].classList.remove(classes.uncheckedIconHoverClass);
-    }
-  };
+  const DEFAULT_ID_PREFIX = "hv-switch-";
+  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
 
   const handleChange = event => {
     setClicked(event.target.checked);
-    switchHoverOut(event);
     onChange(event);
   };
 
-  const LeftLabel = () => (
-    <div
-      id={!isNil(id) ? `${id}_leftButton` : null}
-      role="button"
-      tabIndex={0}
-      onClick={handleLabelClick}
-      onKeyDown={() => {}}
-    >
+  const onKeyDownHandler = event => {
+    if (isKeypress(event, KeyboardCodes.SpaceBar)) {
+      const newState = !clickState;
+      setClicked(newState);
+      onChange(event, newState);
+    }
+  };
+
+  const onClickHandler = event => {
+    const newState = !clickState;
+    setClicked(newState);
+    onChange(event, newState);
+  };
+
+  const renderLabel = position => (
+    <div id={!isNil(id) ? `${id}_${position}Button` : undefined}>
       <HvTypography
-        className={classnames(
-          disabled
-            ? classes.disabledLabel
-            : {
-                [classes.labelSelected]: !clickState,
-                [classes.labelDeselected]: clickState
-              },
-          classes.labelLeftPositioning
-        )}
+        className={classNames(classes[`${position}Label`], {
+          [classes.disabledLabel]: disabled,
+          [classes.labelSelected]: !disabled && !clickState,
+          [classes.labelDeselected]: !disabled && clickState
+        })}
+        onClick={disabled ? undefined : onClickHandler}
+        aria-disabled={disabled}
       >
-        {labels.left}
+        {labels[position]}
       </HvTypography>
     </div>
   );
 
-  const RightLabel = () => (
-    <div
-      id={!isNil(id) ? `${id}_rightButton` : null}
-      role="button"
-      tabIndex={0}
-      onClick={handleLabelClick}
-      onKeyDown={() => {}}
-    >
-      <HvTypography
-        className={classnames(
-          disabled
-            ? classes.disabledLabel
-            : {
-                [classes.labelSelected]: clickState,
-                [classes.labelDeselected]: !clickState
-              },
-          classes.labelRightPositioning
-        )}
-      >
-        {labels.right}
-      </HvTypography>
-    </div>
+  const checkedIcon = (
+    <CheckMark iconSize="XS" className={classes.checkedIcon} />
   );
 
+  /*
   return (
     <div className={classes.root}>
-      {showLabels && <LeftLabel />}
-      <BaseSwitch
-        checked={clickState}
+      {showLabels && renderLabel("left")}
+      <Switch
+        checked={isChecked}
         onChange={handleChange}
         disabled={disabled}
         id={id}
         value={value}
-        inputProps={{
-          onMouseOver: event => switchHoverIn(event),
-          onMouseOut: event => switchHoverOut(event)
-        }}
         classes={{
-          root: classes.root,
+          root: classes.switch,
           switchBase: classes.switchBase,
           checked: classes.checked,
-          bar: classes.bar,
-          icon: classes.icon,
-          disabled: classes.disabled,
-          iconChecked: classes.iconChecked
+          track: classes.track,
+          thumb: classes.thumb,
+          disabled: classes.disabled
         }}
-        {...displayIconChecked && {
-          checkedIcon: (
-            <div className={classes.checkedIcon}>
-              <CheckMark
-                width={12}
-                height={12}
-                color={[theme.hv.palette.accent.acce1]}
-              />
-            </div>
-          )
-        }}
+        {...(displayIconChecked && { checkedIcon })}
       />
-      {showLabels && <RightLabel />}
+      {showLabels && renderLabel("right")}
+    </div>
+  );
+  */
+
+  return (
+    <div className={classes.root} id={`${internalId}_root`}>
+      {showLabels && renderLabel("left")}
+      <Focus strategy="card" useFalseFocus>
+        <div
+          className={classes.root}
+          onClick={disabled ? undefined : onClickHandler}
+          role="checkbox"
+          tabIndex="0"
+          aria-checked={clickState}
+          onKeyDown={disabled ? undefined : onKeyDownHandler}
+          aria-disabled={disabled}
+          id={internalId}
+          {...other}
+        >
+          <SwitchBase
+            tabIndex="-1"
+            checked={clickState}
+            onChange={handleChange}
+            disabled={disabled}
+            value={value}
+            inputProps={{
+              // dummy aria-label this component is not tabbable and it is just presentational.
+              // the accesibility test were always failing because of the missing aria label.
+              "aria-label": "base switch"
+            }}
+            classes={{
+              root: classes.switch,
+              switchBase: classes.switchBase,
+              checked: classes.checked,
+              track: classes.track,
+              thumb: classes.thumb,
+              disabled: classes.disabled
+            }}
+            {...(displayIconChecked && { checkedIcon })}
+          />
+        </div>
+      </Focus>
+      {showLabels && renderLabel("right")}
     </div>
   );
 };
@@ -214,18 +168,18 @@ Switch.propTypes = {
      */
     checked: PropTypes.string,
     /**
-     * Styles applied to the bar element.
+     * Styles applied to the track element.
      */
-    bar: PropTypes.string,
+    track: PropTypes.string,
     /**
-     * Styles used to create the icon passed to the internal SwitchBase component icon prop.
+     * Styles used to create the thumb passed to the internal SwitchBase component icon prop.
      */
-    icon: PropTypes.string,
+    thumb: PropTypes.string,
     /**
      * Styles applied to the internal SwitchBase component's disabled class.
      */
     disabled: PropTypes.string
-  }),
+  }).isRequired,
   /**
    * Denotes selection state of switch component.
    */
@@ -263,17 +217,10 @@ Switch.propTypes = {
   /**
    * Determine if custom icon in button should be displayed
    * */
-  displayIconChecked: PropTypes.bool,
-  /**
-   * Theming sheet used to style components
-   * In this case needed to style checkmark in toggle button
-   * */
-  theme: PropTypes.instanceOf(Object)
-
+  displayIconChecked: PropTypes.bool
 };
 
 Switch.defaultProps = {
-  classes: {},
   checked: true,
   disabled: false,
   onChange: () => {},
@@ -284,8 +231,7 @@ Switch.defaultProps = {
   id: undefined,
   value: "",
   showLabels: true,
-  displayIconChecked: false,
-  theme: undefined
+  displayIconChecked: false
 };
 
 export default Switch;

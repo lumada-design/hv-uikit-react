@@ -104,7 +104,7 @@ ActionContainer.propTypes = {
 
 ActionContainer.defaultProps = {
   id: null,
-  classes: "",
+  classes: null,
   action: undefined,
   actionCallback: () => {}
 };

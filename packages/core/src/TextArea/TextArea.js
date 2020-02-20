@@ -18,7 +18,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvTypography from "../Typography";
 import Input from "../Input";
 
@@ -32,17 +31,18 @@ import Input from "../Input";
 class HvTextArea extends React.Component {
   constructor(props) {
     super(props);
-    const { value, initialValue, autoScroll } = this.props;
-    const val = value || initialValue;
+    const { initialValue, autoScroll } = this.props;
+
     this.state = {
-      currentValueLength: val !== undefined ? this.limitValue(val).length : 0,
+      currentValueLength:
+        initialValue !== undefined ? this.limitValue(initialValue).length : 0,
       autoScrolling: autoScroll
     };
     this.textInputRef = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { inputValue: nextValue, maxCharQuantity } = nextProps;
+    const { value: nextValue, maxCharQuantity } = nextProps;
     const { currentValueLength: oldLength } = prevState;
 
     if (nextValue !== undefined) {
@@ -134,19 +134,17 @@ class HvTextArea extends React.Component {
       classes,
       className,
       id,
-      inputTextConfiguration,
       labels,
       maxCharQuantity,
       rows,
-      value,
       initialValue,
-      inputValue,
+      value,
       disabled,
       resizable
     } = this.props;
 
     const { currentValueLength } = this.state;
-    const val = value || initialValue;
+    const val = initialValue;
 
     return (
       <div>
@@ -164,9 +162,9 @@ class HvTextArea extends React.Component {
             }}
             className={className}
             id={id}
-            labels={inputTextConfiguration || labels}
+            labels={labels}
             initialValue={this.limitValue(val)}
-            inputValue={this.limitValue(inputValue)}
+            inputValue={this.limitValue(value)}
             onChange={this.onChangeHandler}
             multiline
             rows={rows}
@@ -295,29 +293,6 @@ HvTextArea.propTypes = {
    * -maxCharQuantityWarningText: the message that appears when there are too many characters.
    * -minCharQuantityWarningText: the message that appears when there are too few characters.
    * -requiredWarningText: the message that appears when the input is empty and required.
-   *  @deprecated Instead use the labels property
-   */
-  inputTextConfiguration: deprecatedPropType(
-    PropTypes.shape({
-      inputLabel: PropTypes.string,
-      placeholder: PropTypes.string,
-      infoText: PropTypes.string,
-      warningText: PropTypes.string,
-      maxCharQuantityWarningText: PropTypes.string,
-      minCharQuantityWarningText: PropTypes.string,
-      requiredWarningText: PropTypes.string
-    })
-  ),
-  /**
-   * An Object containing the various text associated with the text area.
-   *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
    */
   labels: PropTypes.shape({
     inputLabel: PropTypes.string,
@@ -338,19 +313,13 @@ HvTextArea.propTypes = {
    */
   rows: PropTypes.number,
   /**
-   * The initial value of the input.
-   * @deprecated will be replace by initialValue
+   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
    */
   value: PropTypes.string,
   /**
    * The initial value of the input.
    */
   initialValue: PropTypes.string,
-  /**
-   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
-   * @deprecated will be replaced by value
-   */
-  inputValue: PropTypes.string,
   /**
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.
@@ -374,7 +343,6 @@ HvTextArea.propTypes = {
 HvTextArea.defaultProps = {
   className: "",
   id: undefined,
-  inputTextConfiguration: undefined,
   labels: {
     inputLabel: "",
     placeholder: "",
@@ -385,9 +353,8 @@ HvTextArea.defaultProps = {
   },
   rows: 1,
   disabled: false,
-  value: "",
-  initialValue: "",
-  inputValue: undefined,
+  value: undefined,
+  initialValue: undefined,
   maxCharQuantity: undefined,
   onChange: value => value,
   autoScroll: false,

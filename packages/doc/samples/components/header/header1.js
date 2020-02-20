@@ -19,7 +19,7 @@ const responsivenessConfig = {
 };
 
 const navigationData = {
-  showSearch: false,
+  showSearch: true,
   data: [
     {
       label: "Overview",

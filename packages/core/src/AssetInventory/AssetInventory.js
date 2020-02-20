@@ -758,7 +758,7 @@ AssetInventory.defaultProps = {
   onSortChange: null,
   onViewChange: () => {},
   sortOptionId: null,
-  searchString: null,
+  searchString: undefined,
   disablePortal: false
 };
 

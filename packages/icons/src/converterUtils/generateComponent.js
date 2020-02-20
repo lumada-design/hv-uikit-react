@@ -33,7 +33,7 @@ module.exports = ({ svgOutput, componentName, colorArrayDefaultValues, defaultSi
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some(el => componentName.startsWith(el));
   const hasSpecialSize = /^Level(\d)/g.test(componentName);
-  const specialCaseXS = componentName.includes("XS");
+  const specialCaseXS = componentName.endsWith("XS");
   const calcSize = size => (hasSpecialSize ? size + 8 : size);
   const USE_DS_SPECS = false;
 

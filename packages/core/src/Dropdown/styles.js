@@ -61,20 +61,14 @@ const styles = theme => ({
     position: "absolute",
     pointerEvents: "none",
     top: 0,
-    right: 0
+    right: 0,
+    width: 30,
+    height: 30
   },
   headerDisabled: {
     "&:hover": {
       cursor: "not-allowed"
     }
-  },
-  icon: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    width: "32px",
-    height: "32px",
-    cursor: "pointer"
   },
   truncate: {
     display: "block",

@@ -7,9 +7,11 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
   <HvButton
     category="ghost"
     className="Actions-button-1"
+    disabled={false}
     id="-0-action-view"
     key="-0-action-view"
     onClick={[Function]}
+    startIcon={null}
   >
     View
   </HvButton>
@@ -37,8 +39,10 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       ]
     }
     disablePortal={false}
+    disabled={false}
+    expanded={false}
     icon={
-      <WithStyles(MoreOptionsVertical)
+      <ForwardRef(WithStyles)
         className="Actions-dropDownMenuIcon-4"
       />
     }
@@ -83,8 +87,10 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       ]
     }
     disablePortal={false}
+    disabled={false}
+    expanded={false}
     icon={
-      <WithStyles(MoreOptionsVertical)
+      <ForwardRef(WithStyles)
         className="Actions-dropDownMenuIcon-4"
       />
     }
@@ -102,18 +108,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   <HvButton
     category="ghost"
     className="Actions-button-1"
+    disabled={false}
     id="-0-action-view"
     key="-0-action-view"
     onClick={[Function]}
+    startIcon={null}
   >
     View
   </HvButton>
   <HvButton
     category="ghost"
     className="Actions-button-1"
+    disabled={false}
     id="-1-action-delete"
     key="-1-action-delete"
     onClick={[Function]}
+    startIcon={null}
   >
     Delete
   </HvButton>
@@ -135,8 +145,10 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       ]
     }
     disablePortal={false}
+    disabled={false}
+    expanded={false}
     icon={
-      <WithStyles(MoreOptionsVertical)
+      <ForwardRef(WithStyles)
         className="Actions-dropDownMenuIcon-4"
       />
     }

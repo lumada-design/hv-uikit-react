@@ -21,22 +21,24 @@ import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
 import Actions from "../../Actions";
 
-const HvSnackbarContentWrapper = ({
-  id,
-  classes,
-  label,
-  showIcon,
-  customIcon,
-  variant,
-  action,
-  actionCallback,
-  ...other
-}) => {
+const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
+  const {
+    id,
+    classes,
+    label,
+    showIcon,
+    customIcon,
+    variant,
+    action,
+    actionCallback,
+    ...other
+  } = props;
   const icon = customIcon || (showIcon && variantIcon(variant));
   const innerAction = React.isValidElement(action) ? action : [action];
 
   return (
     <SnackbarContent
+      ref={ref}
       id={id}
       classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
@@ -67,7 +69,7 @@ const HvSnackbarContentWrapper = ({
       {...other}
     />
   );
-};
+});
 
 HvSnackbarContentWrapper.propTypes = {
   /**

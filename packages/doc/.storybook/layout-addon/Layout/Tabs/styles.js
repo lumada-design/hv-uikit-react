@@ -29,7 +29,7 @@ const styles = theme => ({
   },
   tabRoot: {
     textTransform: "initial",
-    marginRight: theme.spacing.unit * 4,
+    marginRight: theme.spacing("sm"),
     "&:hover": {
       opacity: 1
     },

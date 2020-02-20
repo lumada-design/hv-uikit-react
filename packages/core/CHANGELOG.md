@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.23.0...@hv/uikit-react-core@2.0.0-next.0) (2020-02-14)
+# [1.24.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.23.1...@hv/uikit-react-core@1.24.0) (2020-02-20)
+
+
+### Bug Fixes
+
+* **focus:** ref and refactor strategy ([7648a46](https://github.com/pentaho/hv-uikit-react/commit/7648a46d5ce79f892be631f3d29ddadfbac4e63a))
+* **input:** icon order and visibility. [#1096](https://github.com/pentaho/hv-uikit-react/issues/1096) ([12c59fb](https://github.com/pentaho/hv-uikit-react/commit/12c59fb017b0d78e89d50b02d90b25e6a08660a5))
+* **table:** expand event is trigged anywhere in the row. [#1128](https://github.com/pentaho/hv-uikit-react/issues/1128) ([6170c43](https://github.com/pentaho/hv-uikit-react/commit/6170c43805c0c3eb187593a999a86b06f6141cf2))
+* **table:** Horizontal scrollbar appears when secondaryAction specified ([7f4533c](https://github.com/pentaho/hv-uikit-react/commit/7f4533c3e81b658abbb1bf877b685757ef876b59))
+* **table:** paging causes runtime error with server side as true. [#1039](https://github.com/pentaho/hv-uikit-react/issues/1039) ([ed92089](https://github.com/pentaho/hv-uikit-react/commit/ed9208911dc8c7bbf327c59ce12a54a21db093ab))
+
+
+### Features
+
+* **header:** new header according to DS 1.2.1 [#666](https://github.com/pentaho/hv-uikit-react/issues/666) ([f666449](https://github.com/pentaho/hv-uikit-react/commit/f666449c850de1a0ccd7f27127ee6f4f920f7e1c))
+* **togglebutton:** review accessibility. [#1081](https://github.com/pentaho/hv-uikit-react/issues/1081) ([9a20165](https://github.com/pentaho/hv-uikit-react/commit/9a20165f74831ab870864a9677c67cf9a119bf4b))
+* **toggleswitch:** review accessibility. [#1078](https://github.com/pentaho/hv-uikit-react/issues/1078) ([81589c0](https://github.com/pentaho/hv-uikit-react/commit/81589c05c62ac6e11b58d9db072449edcbc494fe))
+* **vertical navigation:** new vertical nav according to DS 1.2.1 [#642](https://github.com/pentaho/hv-uikit-react/issues/642) ([37c96b0](https://github.com/pentaho/hv-uikit-react/commit/37c96b048bf158b43ffef0e00ffd8b89911011b8))
+
+
+
+
+
+## [1.23.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.23.0...@hv/uikit-react-core@1.23.1) (2020-02-15)
 
 **Note:** Version bump only for package @hv/uikit-react-core
 

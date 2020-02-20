@@ -1,8 +1,7 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvGrid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, withTheme } from "@material-ui/core";
 
 const Box = ({ text }) => (
   <div
@@ -26,7 +25,7 @@ const Box = ({ text }) => (
   </div>
 );
 
-const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
+const GridExample = withTheme(({ theme }) => {
   const findBreakpoint = () =>
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
       const matches = useMediaQuery(theme.breakpoints.only(key));
@@ -41,8 +40,8 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
   return (
     <div>
       <HvTypography variant="xxsTitle">{title}</HvTypography>
-      <div style={{ border: "1px solid",backgroundColor: "#F9F9F9" }}>
-        <HvGrid container >
+      <div style={{ border: "1px solid", backgroundColor: "#F9F9F9" }}>
+        <HvGrid container>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
             <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
               <Box text={value.toString()} />

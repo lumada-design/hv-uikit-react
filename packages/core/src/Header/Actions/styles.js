@@ -15,7 +15,7 @@
  */
 
 const styles = theme => ({
-  actionsContainer: {
+  root: {
     display: "flex",
     height: "100%",
     alignItems: "center",

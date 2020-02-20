@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.1...@hv/uikit-react-doc@2.0.0-next.0) (2020-02-14)
+# [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.2...@hv/uikit-react-doc@1.19.0) (2020-02-20)
+
+
+### Bug Fixes
+
+* **input:** icon order and visibility. [#1096](https://github.com/pentaho/hv-uikit-react/issues/1096) ([12c59fb](https://github.com/pentaho/hv-uikit-react/commit/12c59fb017b0d78e89d50b02d90b25e6a08660a5))
+
+
+### Features
+
+* **header:** new header according to DS 1.2.1 [#666](https://github.com/pentaho/hv-uikit-react/issues/666) ([f666449](https://github.com/pentaho/hv-uikit-react/commit/f666449c850de1a0ccd7f27127ee6f4f920f7e1c))
+* **togglebutton:** review accessibility. [#1081](https://github.com/pentaho/hv-uikit-react/issues/1081) ([9a20165](https://github.com/pentaho/hv-uikit-react/commit/9a20165f74831ab870864a9677c67cf9a119bf4b))
+* **toggleswitch:** review accessibility. [#1078](https://github.com/pentaho/hv-uikit-react/issues/1078) ([81589c0](https://github.com/pentaho/hv-uikit-react/commit/81589c05c62ac6e11b58d9db072449edcbc494fe))
+* **vertical navigation:** new vertical nav according to DS 1.2.1 [#642](https://github.com/pentaho/hv-uikit-react/issues/642) ([37c96b0](https://github.com/pentaho/hv-uikit-react/commit/37c96b048bf158b43ffef0e00ffd8b89911011b8))
+
+
+
+
+
+## [1.18.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.1...@hv/uikit-react-doc@1.18.2) (2020-02-15)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
 

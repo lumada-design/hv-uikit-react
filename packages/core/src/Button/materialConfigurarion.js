@@ -36,7 +36,8 @@ const categoryValues = Object.freeze({
   secondary: "secondary",
   ghost: "ghost",
   ghostSecondary: "ghostSecondary",
-  semantic: "semantic"
+  semantic: "semantic",
+  icon: "icon"
 });
 
 /**

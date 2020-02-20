@@ -29,7 +29,7 @@ const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
 const MultipleActionsWithMediaButtons = ({ classes }) => (
   <>
     <HvButton category="ghost">
-      <Icon boxStyles={{width: "30px", height: "30px", padding: "7px" }} />
+      <Icon boxStyles={{ width: "30px", height: "30px", padding: "7px" }} />
       Update
     </HvButton>
     <HvButton category="ghost" className={classes.smallButton}>
@@ -94,8 +94,8 @@ const values = () => {
 const viewConfiguration = {
   onSelection: event => alert(event.target.value),
   breakpoints: {
-    xs: "false",
-    sm: "false",
+    xs: false,
+    sm: false,
     md: 4,
     lg: 3,
     xl: 3

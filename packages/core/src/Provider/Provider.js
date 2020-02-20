@@ -14,27 +14,17 @@
  * limitations under the License.
  */
 
-import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
+import set from "lodash/set";
+import merge from "lodash/merge";
+import isEmpty from "lodash/isEmpty";
+import cloneDeep from "lodash/cloneDeep";
 import diff from "deep-diff";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
-import createTypography from "@material-ui/core/styles/createTypography";
-import createPalette from "@material-ui/core/styles/createPalette";
+import { CssBaseline } from "@material-ui/core";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { ConfigProvider } from "../config/context";
 import { themeBuilder } from "../theme";
-
-const muiDefaultPalette = createPalette({});
-const muiDefaultTypography = createTypography(muiDefaultPalette, {
-  useNextVariants: true,
-  suppressDeprecationWarnings: true
-});
-
-const muiDefaultTheme = createMuiTheme({
-  palette: muiDefaultPalette,
-  typography: muiDefaultTypography
-});
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -44,20 +34,16 @@ const muiDefaultTheme = createMuiTheme({
  * @returns {Object} - A new modified material UI theme.
  */
 const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
-  const targetTheme = _.cloneDeep(InputTargetTheme);
-  const sourceTheme = _.cloneDeep(InputSourceTheme);
+  const muiDefaultTheme = createMuiTheme();
+  const targetTheme = cloneDeep(InputTargetTheme);
+  const sourceTheme = cloneDeep(InputSourceTheme);
   const deleteDifference = "D";
-  if (
-    !_.isNil(targetTheme) &&
-    !_.isNil(sourceTheme) &&
-    !_.isEmpty(targetTheme) &&
-    !_.isEmpty(sourceTheme)
-  ) {
+  if (!isEmpty(targetTheme) && !isEmpty(sourceTheme)) {
     diff.observableDiff(muiDefaultTheme, sourceTheme, difference => {
-      const partialCustomTheme = _.set({}, difference.path, difference.rhs);
+      const partialCustomTheme = set({}, difference.path, difference.rhs);
       if (difference.kind !== deleteDifference) {
         // Do not include the differences of type "delete"
-        _.merge(targetTheme, partialCustomTheme);
+        merge(targetTheme, partialCustomTheme);
       }
     });
     return targetTheme;
@@ -69,29 +55,30 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
   const pConfig = { router, changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
+  window.hvTheme = customTheme;
   return (
-    <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
+    <ThemeProvider theme={customTheme}>
       <CssBaseline />
       <ConfigProvider value={pConfig}>{children}</ConfigProvider>
-    </MuiThemeProvider>
+    </ThemeProvider>
   );
 };
 
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  /** 
-   * The material theme object that can be used to override the defaults 
+  /**
+   * The material theme object that can be used to override the defaults
    */
   theme: PropTypes.instanceOf(Object),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func,
-  /** 
+  /**
    * Configuration object for routing, exposes push and prefetch
    */
   router: PropTypes.instanceOf(Object)

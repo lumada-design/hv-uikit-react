@@ -16,12 +16,12 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import uniqueId from "lodash/uniqueId";
+import IconButton from "@material-ui/core/IconButton";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import HvTypography from "../../Typography";
-import Button from "../../Button";
 import { convertUnits } from "../utils";
 
 const getStatusIcon = (classes, theme, status) => {
@@ -103,7 +103,7 @@ const File = ({
 
       <span className={classes.progressText}>{progressText}</span>
 
-      <Button
+      <IconButton
         id={`${fileId}-remove-button`}
         aria-label={removeFileButtonLabel}
         className={classes.removeButton}
@@ -111,7 +111,7 @@ const File = ({
         onClick={() => onFileRemoved(data)}
       >
         <Close iconSize="XS" className={classes.iconContainer} />
-      </Button>
+      </IconButton>
     </>
   );
 };

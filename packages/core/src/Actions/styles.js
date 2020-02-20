@@ -17,7 +17,7 @@
 const styles = theme => ({
   button: {
     "&:not(:last-child)": {
-      marginRight: `${theme.spacing.xs}px`
+      marginRight: theme.spacing("xs")
     }
   },
   actionContainer: {

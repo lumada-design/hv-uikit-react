@@ -21,8 +21,6 @@ const styles = theme => ({
     display: "contents"
   },
   icon: {
-    height: "32px",
-    width: "32px",
     position: "relative",
     boxSizing: "content-box",
     padding: 0,
@@ -50,7 +48,7 @@ const styles = theme => ({
     }
   },
   menuList: {
-    padding: `${theme.spacing.sm}px`,
+    padding: theme.spacing("sm"),
     whiteSpace: "nowrap",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
     boxShadow: `0 2px 12px rgba(65,65,65,.12)`

@@ -161,8 +161,8 @@ const myActions = [
 const viewConfiguration = {
   onSelection: event => console.log(event.target.value),
   breakpoints: {
-    xs: "false",
-    sm: "false",
+    xs: false,
+    sm: false,
     md: 4,
     lg: 3,
     xl: 3

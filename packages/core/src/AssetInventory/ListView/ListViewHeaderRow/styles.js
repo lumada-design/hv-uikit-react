@@ -23,7 +23,7 @@ const styles = () => ({
     alignItems: "center",
     width: "100%",
     position: "relative",
-    "& $th": {
+    "& > th": {
       background:"transparent"
     },
   },

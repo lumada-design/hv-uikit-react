@@ -613,7 +613,7 @@ HvInput.propTypes = {
   /**
    * Allows passing a ref to the underlying input
    */
-  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  inputRef: PropTypes.shape({ current: PropTypes.any }),
   /**
    * If ´true´ the input is disabled.
    */

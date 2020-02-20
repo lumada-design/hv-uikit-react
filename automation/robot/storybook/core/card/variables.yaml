@@ -1,6 +1,6 @@
 header:         css:span[class*='Header-title']
 subHeader:      css:span[class*='Header-subheader']
-content:        css:div[class|='MuiCardContent-root']
+content:        css:div[class|='MuiCardContent']
 aboveFooter:    css:div[aria-checked]
-footer:         css:div[class*='MuiCardActions-root']
+footer:         css:div[class*='MuiCardActions']
 Checkbox:       css:input[type='checkbox']
