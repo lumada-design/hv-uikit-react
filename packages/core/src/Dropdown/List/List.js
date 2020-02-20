@@ -20,7 +20,7 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
 import FocusTrap from "focus-trap-react";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import { useTheme, ClickAwayListener } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
@@ -32,7 +32,6 @@ import ConditionalWrapper from "../../utils/ConditionalWrapper";
 
 const List = ({
   id,
-  theme,
   classes,
   values,
   multiSelect,
@@ -56,6 +55,7 @@ const List = ({
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
   const [selectionLabel, setSelectionLabel] = useState(labels.selectAll);
+  const theme = useTheme();
 
   const newLabels = {
     selectAll: labels.selectAll,
@@ -368,10 +368,6 @@ List.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string.isRequired,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the component styles.
    */

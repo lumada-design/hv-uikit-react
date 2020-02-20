@@ -24,13 +24,12 @@ import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 
-const getStatusIcon = (classes, theme, status) => {
-  const { sema1, sema4 } = theme.hv.palette.semantic;
+const getStatusIcon = (classes, status) => {
   switch (status) {
     case "success":
-      return <Success iconSize="S" className={classes.icon} color={[sema1]} />;
+      return <Success className={classes.icon} color="sema1" />;
     case "fail":
-      return <Fail iconSize="S" className={classes.icon} color={[sema4]} />;
+      return <Fail className={classes.icon} color="sema4" />;
     default:
       return <div className={classes.icon} />;
   }
@@ -70,7 +69,6 @@ const getProgressBarWith = ({ size, progress }) => {
 
 const File = ({
   id,
-  theme,
   classes,
   data,
   progressConjunctionLabel,
@@ -82,7 +80,7 @@ const File = ({
   const hasError = data.status === "fail";
   const inProgress = data.status === "progress";
   const progressText = getProgressText(classes, data, progressConjunctionLabel);
-  const statusIcon = getStatusIcon(classes, theme, data.status);
+  const statusIcon = getStatusIcon(classes, data.status);
 
   return (
     <>
@@ -121,10 +119,6 @@ File.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */

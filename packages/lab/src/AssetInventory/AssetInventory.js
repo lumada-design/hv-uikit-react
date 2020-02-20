@@ -54,7 +54,6 @@ export class HvAssetInventory extends Component {
 
   render() {
     const {
-      theme,
       classes,
       assetsTitle,
       searchComponent,
@@ -87,7 +86,7 @@ export class HvAssetInventory extends Component {
 
     const ViewModeButton = ({ id, children, view }) => (
       <div
-        {...id && { id }}
+        {...(id && { id })}
         role="presentation"
         onClick={() => this.changeViewMode(view)}
       >
@@ -114,13 +113,13 @@ export class HvAssetInventory extends Component {
               <Grid item className={classes.viewModeContainer}>
                 <div className={classes.iconsWrapper}>
                   <ViewModeButton
-                    {...listViewButtonId && { id: listViewButtonId }}
+                    {...(listViewButtonId && { id: listViewButtonId })}
                     view={HvAssetInventory.assetInventoryMode.LIST}
                   >
                     {viewModeViewButton}
                   </ViewModeButton>
                   <ViewModeButton
-                    {...cardViewButtonId && { id: cardViewButtonId }}
+                    {...(cardViewButtonId && { id: cardViewButtonId })}
                     view={HvAssetInventory.assetInventoryMode.CARDS}
                   >
                     {viewModeCardsButton}
@@ -209,10 +208,6 @@ HvAssetInventory.propTypes = {
    */
   listViewButtonId: PropTypes.string,
   /**
-   * JSS theme object.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    * A Jss Object used to override or extend the styles applied to the banner.
    */
   classes: PropTypes.shape({
@@ -254,7 +249,6 @@ HvAssetInventory.propTypes = {
 HvAssetInventory.defaultProps = {
   assetsTitle: undefined,
   initialViewMode: "CARDS",
-  theme: null,
   searchComponent: undefined,
   viewChangedHandler: undefined,
   listRenderComponent: undefined,

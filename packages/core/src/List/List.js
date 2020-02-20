@@ -301,10 +301,6 @@ class List extends React.Component {
 
 List.propTypes = {
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
-  /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.shape({

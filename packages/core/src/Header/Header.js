@@ -17,11 +17,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import withStyles from "@material-ui/core/styles/withStyles";
 import OutsideClickHandler from "react-outside-click-handler";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import { AppBar, Toolbar, useMediaQuery, useTheme } from "@material-ui/core";
 import isNill from "lodash/isNil";
 import isEqual from "lodash/isEqual";
 import isEmpty from "lodash/isEmpty";
@@ -32,24 +30,12 @@ import Close from "@hv/uikit-react-icons/dist/Generic/Close";
 
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-
 import HvVerticalNavigation from "../VerticalNavigation";
 
 import Brand from "./Brand";
 import Navigation from "./Navigation";
 import User from "./User";
 import Actions from "./Actions";
-
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
-};
-
-const StyledMenu = withStyles(styles, { withTheme: true })(Menu);
-const StyledClose = withStyles(styles, { withTheme: true })(Close);
 
 /**
  *
@@ -70,7 +56,6 @@ const StyledClose = withStyles(styles, { withTheme: true })(Close);
  * @constructor
  */
 const Header = ({
-  theme,
   classes,
   className,
   id,
@@ -97,6 +82,7 @@ const Header = ({
 }) => {
   const [showNav, toggleNav] = useState(false);
   const userExists = !(isNill(userData) && isNill(userIcon));
+  const theme = useTheme();
   const showHbMenu = useMediaQuery(
     theme.breakpoints.down(responsivenessConfig.showHbMenus)
   );
@@ -194,11 +180,7 @@ const Header = ({
               }}
               tabIndex={0}
             >
-              {showNav ? (
-                <StyledClose iconSize="S" />
-              ) : (
-                <StyledMenu iconSize="S" />
-              )}
+              {showNav ? <Close iconSize="S" /> : <Menu iconSize="S" />}
             </div>
           ) : (
             ""
@@ -282,10 +264,6 @@ const Header = ({
 };
 
 Header.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
   /**
    * Class names to be applied.
    */
@@ -480,7 +458,6 @@ Header.defaultProps = {
   productText: undefined,
   productLogo: null,
   labels: {},
-  theme: null,
 
   navigationStructure: {
     showSearch: false,

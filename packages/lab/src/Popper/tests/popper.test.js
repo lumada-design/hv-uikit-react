@@ -22,8 +22,6 @@ import Popper from "@material-ui/core/Popper";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Paper from "@material-ui/core/Paper";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Style from "../styles";
 import withPopper from "../withPopper";
 import Content from "../Content";
 
@@ -116,15 +114,9 @@ describe("Hv Popper", () => {
     });
 
     it("when given key-value pairs, they are displayed properly in the popper", () => {
-      const ContentSample = () => <Content open classes={{}} content={data} />;
-
-      const ContentWithStyle = withStyles(Style, { withTheme: true })(
-        ContentSample
-      );
-
       wrapper = mount(
         <HvProvider>
-          <ContentWithStyle open classes={{}} content={data} />
+          <Content open classes={{}} content={data} />
         </HvProvider>
       );
 

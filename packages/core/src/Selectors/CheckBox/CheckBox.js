@@ -51,10 +51,8 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
  * @param {Object} props - HvCheckbox props.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = ({ classes, theme, disabled }) => {
-  const color = disabled
-    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
-    : null;
+const prepareIcon = (classes, disabled) => {
+  const color = disabled ? ["atmo4", "atmo6"] : undefined;
 
   return {
     emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
@@ -81,7 +79,7 @@ const HvCheckbox = props => {
     checkboxProps,
     ...other
   } = props;
-  const icons = prepareIcon(props);
+  const icons = prepareIcon(classes, disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
   const [internalId] = useState(id || uniqueId("hv-checkbox-"));
@@ -224,11 +222,7 @@ HvCheckbox.propTypes = {
   /**
    * Extra properties passed to the MUI Checkbox component.
    */
-  checkboxProps: PropTypes.instanceOf(Object),
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  checkboxProps: PropTypes.instanceOf(Object)
 };
 
 HvCheckbox.defaultProps = {
@@ -242,8 +236,7 @@ HvCheckbox.defaultProps = {
   onChange: () => {},
   formControlLabelProps: undefined,
   checkboxProps: undefined,
-  labelPlacement: "end",
-  theme: null
+  labelPlacement: "end"
 };
 
 export default HvCheckbox;

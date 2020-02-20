@@ -206,7 +206,6 @@ describe("TextAreaA11Y", () => {
     );
 
     const results = await axe(wrapper.html());
-
     expect(results).toHaveNoViolations();
   });
 });

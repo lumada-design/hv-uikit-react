@@ -18,8 +18,7 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import Card from "@material-ui/core/Card";
-import Grid from "@material-ui/core/Grid";
+import { Card, Grid, useTheme } from "@material-ui/core";
 import LeftContent from "./LeftContent";
 import Content from "./Content";
 import RightContent from "./RightContent";
@@ -69,9 +68,9 @@ const ListItem = ({
   mediaTitle,
   mediaHeight,
   mediaWidth,
-  theme,
   ...other
 }) => {
+  const theme = useTheme();
   const footerExist = actions || isSelectable;
   // calculate grid item size (as more content the smaller the grid items sizes should be)
   const gridItemSize =
@@ -243,11 +242,7 @@ ListItem.propTypes = {
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  checkboxIndeterminate: PropTypes.bool
 };
 
 ListItem.defaultProps = {
@@ -267,8 +262,7 @@ ListItem.defaultProps = {
   checkboxValue: "",
   checkboxLabel: "",
   checkboxSelected: undefined,
-  checkboxIndeterminate: undefined,
-  theme: undefined
+  checkboxIndeterminate: undefined
 };
 
 export default ListItem;

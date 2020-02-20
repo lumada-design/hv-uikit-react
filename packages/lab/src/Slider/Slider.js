@@ -481,10 +481,6 @@ class HvSlider extends React.Component {
 
 HvSlider.propTypes = {
   /**
-   * The object created by material to apply to the component.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    * The values array to apply to the component
    */
   values: PropTypes.arrayOf(PropTypes.number),
@@ -637,8 +633,7 @@ HvSlider.defaultProps = {
   maxPointValue: 100,
   onBeforeChange: () => {},
   onChange: () => {},
-  onAfterChange: () => {},
-  theme: null
+  onAfterChange: () => {}
 };
 
 export default HvSlider;

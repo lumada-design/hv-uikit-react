@@ -47,9 +47,6 @@ const HvGrid = props => {
     xl,
     xs,
     zeroMinWidth,
-    // passed automatically withTheme
-    // eslint-disable-next-line react/prop-types
-    theme,
     ...other
   } = props;
 

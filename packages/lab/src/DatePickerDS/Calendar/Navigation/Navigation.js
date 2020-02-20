@@ -61,10 +61,6 @@ Navigation.propTypes = {
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**
-   * The object storing the theme.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
-  /**
    * A function to be executed whenever the navigate previous action is triggered.
    */
   onNavigatePrevious: PropTypes.func,
