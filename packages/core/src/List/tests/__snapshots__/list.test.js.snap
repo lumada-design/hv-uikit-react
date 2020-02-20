@@ -58090,9 +58090,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     role="option"
                     selected={false}
                   >
-                    <WithStyles(LineChart)
-                      isSelected={false}
-                    >
+                    <WithStyles(LineChart)>
                       <LineChart
                         classes={
                           Object {
@@ -58103,7 +58101,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                             "rootXs": "LineChart-rootXs-349",
                           }
                         }
-                        isSelected={false}
                         theme={
                           Object {
                             "breakpoints": Object {
@@ -58832,7 +58829,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <div
                           className="LineChart-root-348 LineChart-rootS-350"
-                          isSelected={false}
                         >
                           <svg
                             focusable={false}
