@@ -37,6 +37,7 @@ describe("<Navigation />", () => {
     wrapper = mount(
       <HvProvider>
         <NavigationWrapper
+          id="id1"
           onNavigatePrevious={onNavigatePreviousMock}
           onNavigateNext={onNavigateNextMock}
           onTextClick={onTextClickMock}

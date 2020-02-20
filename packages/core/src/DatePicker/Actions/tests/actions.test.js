@@ -37,6 +37,7 @@ describe("<Actions />", () => {
     wrapper = mount(
       <HvProvider>
         <ActionsWrapper
+          id="id"
           onCancel={onCancelMock()}
           onApply={onApplyMock()}
           labels={mockLabels}

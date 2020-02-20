@@ -778,6 +778,7 @@ exports[`<Navigation /> should render correctly 1`] = `
       />
     </WithStyles(CssBaseline)>
     <WithStyles(Navigation)
+      id="id1"
       isNextEnabled={true}
       isPreviousEnabled={true}
       navigationText="Navigation text"
@@ -795,6 +796,7 @@ exports[`<Navigation /> should render correctly 1`] = `
             "textWithoutHover": "HvDatePickerNavigation-textWithoutHover-5",
           }
         }
+        id="id1"
         isNextEnabled={true}
         isPreviousEnabled={true}
         navigationText="Navigation text"
@@ -807,7 +809,7 @@ exports[`<Navigation /> should render correctly 1`] = `
         >
           <WithStyles(DropLeftXS)
             className="HvDatePickerNavigation-icon-2"
-            id="undefined-left"
+            id="id1-left"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
             tabIndex={0}
@@ -823,14 +825,14 @@ exports[`<Navigation /> should render correctly 1`] = `
                   "rootXs": "HvIconDropLeftXS-rootXs-7",
                 }
               }
-              id="undefined-left"
+              id="id1-left"
               onClick={[MockFunction]}
               onKeyDown={[Function]}
               tabIndex={0}
             >
               <div
                 className="HvDatePickerNavigation-icon-2 HvIconDropLeftXS-root-6 HvIconDropLeftXS-rootXs-7"
-                id="undefined-left"
+                id="id1-left"
                 onClick={[MockFunction]}
                 onKeyDown={[Function]}
                 tabIndex={0}
@@ -853,6 +855,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           </WithStyles(DropLeftXS)>
           <div
             className="HvDatePickerNavigation-text-4"
+            id="id1"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
             role="presentation"
@@ -907,7 +910,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           </div>
           <WithStyles(DropRightXS)
             className="HvDatePickerNavigation-icon-2"
-            id="undefined-right"
+            id="id1-right"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
             tabIndex={0}
@@ -923,14 +926,14 @@ exports[`<Navigation /> should render correctly 1`] = `
                   "rootXs": "HvIconDropRightXS-rootXs-37",
                 }
               }
-              id="undefined-right"
+              id="id1-right"
               onClick={[MockFunction]}
               onKeyDown={[Function]}
               tabIndex={0}
             >
               <div
                 className="HvDatePickerNavigation-icon-2 HvIconDropRightXS-root-36 HvIconDropRightXS-rootXs-37"
-                id="undefined-right"
+                id="id1-right"
                 onClick={[MockFunction]}
                 onKeyDown={[Function]}
                 tabIndex={0}
