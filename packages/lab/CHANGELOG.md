@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.6...@hv/uikit-react-lab@1.18.0) (2020-02-20)
+
+
+### Bug Fixes
+
+* **input:** icon order and visibility. [#1096](https://github.com/pentaho/hv-uikit-react/issues/1096) ([12c59fb](https://github.com/pentaho/hv-uikit-react/commit/12c59fb017b0d78e89d50b02d90b25e6a08660a5))
+
+
+### Features
+
+* **vertical navigation:** new vertical nav according to DS 1.2.1 [#642](https://github.com/pentaho/hv-uikit-react/issues/642) ([37c96b0](https://github.com/pentaho/hv-uikit-react/commit/37c96b048bf158b43ffef0e00ffd8b89911011b8))
+
+
+
+
+
 ## [1.17.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.5...@hv/uikit-react-lab@1.17.6) (2020-02-15)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
