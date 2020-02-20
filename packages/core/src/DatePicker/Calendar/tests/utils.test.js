@@ -40,6 +40,9 @@ import {
   zeroPad
 } from "../utils";
 
+console.warn = jest.fn();
+console.error = jest.fn();
+
 describe("Calendar utils - zeroPad", () => {
   it("should return 01 when the input is 1 and the length is 2", () => {
     expect(zeroPad(1, 2)).toBe("01");

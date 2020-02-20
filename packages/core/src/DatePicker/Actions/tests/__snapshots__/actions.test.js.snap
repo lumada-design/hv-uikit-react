@@ -778,6 +778,7 @@ exports[`<Actions /> should render correctly 1`] = `
       />
     </WithStyles(CssBaseline)>
     <WithStyles(Actions)
+      id="id"
       labels={
         Object {
           "applyLabel": "Apply Mock",
@@ -793,6 +794,7 @@ exports[`<Actions /> should render correctly 1`] = `
             "button": "HvDatePickerActions-button-1",
           }
         }
+        id="id"
         labels={
           Object {
             "applyLabel": "Apply Mock",
@@ -807,7 +809,7 @@ exports[`<Actions /> should render correctly 1`] = `
             category="ghost"
             className="HvDatePickerActions-button-1"
             disabled={false}
-            id="undefined-apply"
+            id="id-apply"
             onClick={[Function]}
             startIcon={null}
           >
@@ -832,7 +834,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 }
               }
               disabled={false}
-              id="undefined-apply"
+              id="id-apply"
               onClick={[Function]}
               startIcon={null}
             >
@@ -850,7 +852,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 color="primary"
                 disableRipple={true}
                 disabled={false}
-                id="undefined-apply"
+                id="id-apply"
                 onClick={[Function]}
                 variant="text"
               >
@@ -892,7 +894,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  id="undefined-apply"
+                  id="id-apply"
                   onClick={[Function]}
                   variant="text"
                 >
@@ -903,7 +905,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="Mui-focusVisible"
-                    id="undefined-apply"
+                    id="id-apply"
                     onClick={[Function]}
                     type="button"
                   >
@@ -921,14 +923,14 @@ exports[`<Actions /> should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       focusVisibleClassName="Mui-focusVisible"
-                      id="undefined-apply"
+                      id="id-apply"
                       onClick={[Function]}
                       type="button"
                     >
                       <button
                         className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text HvDatePickerActions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                         disabled={false}
-                        id="undefined-apply"
+                        id="id-apply"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onDragLeave={[Function]}
@@ -960,7 +962,7 @@ exports[`<Actions /> should render correctly 1`] = `
             category="ghost"
             className="HvDatePickerActions-button-1"
             disabled={false}
-            id="undefined-cancel"
+            id="id-cancel"
             onClick={[Function]}
             startIcon={null}
           >
@@ -985,7 +987,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 }
               }
               disabled={false}
-              id="undefined-cancel"
+              id="id-cancel"
               onClick={[Function]}
               startIcon={null}
             >
@@ -1003,7 +1005,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 color="primary"
                 disableRipple={true}
                 disabled={false}
-                id="undefined-cancel"
+                id="id-cancel"
                 onClick={[Function]}
                 variant="text"
               >
@@ -1045,7 +1047,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  id="undefined-cancel"
+                  id="id-cancel"
                   onClick={[Function]}
                   variant="text"
                 >
@@ -1056,7 +1058,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="Mui-focusVisible"
-                    id="undefined-cancel"
+                    id="id-cancel"
                     onClick={[Function]}
                     type="button"
                   >
@@ -1074,14 +1076,14 @@ exports[`<Actions /> should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       focusVisibleClassName="Mui-focusVisible"
-                      id="undefined-cancel"
+                      id="id-cancel"
                       onClick={[Function]}
                       type="button"
                     >
                       <button
                         className="MuiButtonBase-root MuiButton-root HvButton-root-2 MuiButton-text HvDatePickerActions-button-1 MuiButton-textPrimary HvButton-ghost-8"
                         disabled={false}
-                        id="undefined-cancel"
+                        id="id-cancel"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onDragLeave={[Function]}
