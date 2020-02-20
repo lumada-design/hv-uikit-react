@@ -31,6 +31,8 @@ export { default as HvModal, HvModalTitle, HvModalContent, HvModalActions } from
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvSnackbar } from "./Snackbar";
 export { default as HvTable } from "./Table";
+export { default as HvTabs } from "./Tabs";
+export { default as HvTab } from "./Tab";
 export { default as HvTextArea } from "./TextArea";
 export { default as HvTypography } from "./Typography";
 export { default as HvGrid } from "./Grid";
