@@ -751,21 +751,10 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
         }
       }
       id={null}
-      labels={
-        Object {
-          "dragText": "Drag and drop or ",
-          "dropFilesText": "Drop files here",
-          "dropzoneLabel": "My Label",
-          "fileSizeError": "The file exceeds the maximum upload size",
-          "fileTypeError": "File type not allowed for upload",
-          "progressConjunction": "of",
-          "removeFileButtonLabel": "Remove File",
-          "selectFilesText": "Select files",
-          "sizeWarningLabel": "Max. file size:",
-        }
-      }
       onFileRemoved={[MockFunction]}
       onFilesAdded={[Function]}
+      progressConjunctionLabel="progressConjunctionLabel"
+      removeFileButtonLabel="progressConjunctionLabel"
       unit="mb"
     >
       <File
@@ -792,21 +781,10 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           }
         }
         id={null}
-        labels={
-          Object {
-            "dragText": "Drag and drop or ",
-            "dropFilesText": "Drop files here",
-            "dropzoneLabel": "My Label",
-            "fileSizeError": "The file exceeds the maximum upload size",
-            "fileTypeError": "File type not allowed for upload",
-            "progressConjunction": "of",
-            "removeFileButtonLabel": "Remove File",
-            "selectFilesText": "Select files",
-            "sizeWarningLabel": "Max. file size:",
-          }
-        }
         onFileRemoved={[MockFunction]}
         onFilesAdded={[Function]}
+        progressConjunctionLabel="progressConjunctionLabel"
+        removeFileButtonLabel="progressConjunctionLabel"
         theme={
           Object {
             "breakpoints": Object {
@@ -5303,7 +5281,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   }
                 }
               >
-                25.00B undefined
+                25.00B progressConjunctionLabel
               </p>
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -6805,12 +6783,14 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </span>
         <WithStyles(ForwardRef(IconButton))
+          aria-label="progressConjunctionLabel"
           category="ghost"
           className="File-removeButton-60"
           id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <ForwardRef(IconButton)
+            aria-label="progressConjunctionLabel"
             category="ghost"
             className="File-removeButton-60"
             classes={
@@ -6830,6 +6810,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             onClick={[Function]}
           >
             <WithStyles(ForwardRef(ButtonBase))
+              aria-label="progressConjunctionLabel"
               category="ghost"
               centerRipple={true}
               className="MuiIconButton-root File-removeButton-60"
@@ -6839,6 +6820,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               onClick={[Function]}
             >
               <ForwardRef(ButtonBase)
+                aria-label="progressConjunctionLabel"
                 category="ghost"
                 centerRipple={true}
                 className="MuiIconButton-root File-removeButton-60"
@@ -6856,6 +6838,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <button
+                  aria-label="progressConjunctionLabel"
                   category="ghost"
                   className="MuiButtonBase-root MuiIconButton-root File-removeButton-60"
                   disabled={false}
@@ -8402,21 +8385,10 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
         }
       }
       id={null}
-      labels={
-        Object {
-          "dragText": "Drag and drop or ",
-          "dropFilesText": "Drop files here",
-          "dropzoneLabel": "My Label",
-          "fileSizeError": "The file exceeds the maximum upload size",
-          "fileTypeError": "File type not allowed for upload",
-          "progressConjunction": "of",
-          "removeFileButtonLabel": "Remove File",
-          "selectFilesText": "Select files",
-          "sizeWarningLabel": "Max. file size:",
-        }
-      }
       onFileRemoved={[MockFunction]}
       onFilesAdded={[Function]}
+      progressConjunctionLabel="progressConjunctionLabel"
+      removeFileButtonLabel="progressConjunctionLabel"
       unit="mb"
     >
       <File
@@ -8443,21 +8415,10 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           }
         }
         id={null}
-        labels={
-          Object {
-            "dragText": "Drag and drop or ",
-            "dropFilesText": "Drop files here",
-            "dropzoneLabel": "My Label",
-            "fileSizeError": "The file exceeds the maximum upload size",
-            "fileTypeError": "File type not allowed for upload",
-            "progressConjunction": "of",
-            "removeFileButtonLabel": "Remove File",
-            "selectFilesText": "Select files",
-            "sizeWarningLabel": "Max. file size:",
-          }
-        }
         onFileRemoved={[MockFunction]}
         onFilesAdded={[Function]}
+        progressConjunctionLabel="progressConjunctionLabel"
+        removeFileButtonLabel="progressConjunctionLabel"
         theme={
           Object {
             "breakpoints": Object {
@@ -12954,7 +12915,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   }
                 }
               >
-                25.00B undefined
+                25.00B progressConjunctionLabel
               </p>
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -14456,12 +14417,14 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </span>
         <WithStyles(ForwardRef(IconButton))
+          aria-label="progressConjunctionLabel"
           category="ghost"
           className="File-removeButton-60"
           id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <ForwardRef(IconButton)
+            aria-label="progressConjunctionLabel"
             category="ghost"
             className="File-removeButton-60"
             classes={
@@ -14481,6 +14444,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             onClick={[Function]}
           >
             <WithStyles(ForwardRef(ButtonBase))
+              aria-label="progressConjunctionLabel"
               category="ghost"
               centerRipple={true}
               className="MuiIconButton-root File-removeButton-60"
@@ -14490,6 +14454,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               onClick={[Function]}
             >
               <ForwardRef(ButtonBase)
+                aria-label="progressConjunctionLabel"
                 category="ghost"
                 centerRipple={true}
                 className="MuiIconButton-root File-removeButton-60"
@@ -14507,6 +14472,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <button
+                  aria-label="progressConjunctionLabel"
                   category="ghost"
                   className="MuiButtonBase-root MuiIconButton-root File-removeButton-60"
                   disabled={false}

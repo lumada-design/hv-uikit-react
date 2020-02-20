@@ -745,6 +745,7 @@ exports[`FileList withStyles should render correctly 1`] = `
         Array [
           Object {
             "errorMessage": "File type not allowed for upload",
+            "id": "1",
             "lastModified": 1575566155192,
             "name": "Screenshot 2019-12-05 at 17.15.43.png",
             "size": 14106,
@@ -754,6 +755,7 @@ exports[`FileList withStyles should render correctly 1`] = `
           },
           Object {
             "errorMessage": "File type not allowed for upload",
+            "id": "2",
             "lastModified": 1575547399043,
             "name": "Screenshot 2019-12-05 at 12.03.13.png",
             "size": 875,
@@ -764,6 +766,8 @@ exports[`FileList withStyles should render correctly 1`] = `
         ]
       }
       onFileRemoved={[Function]}
+      progressConjunctionLabel="progressConjunctionLabel"
+      removeFileButtonLabel="removeFileButtonLabel"
     >
       <FileList
         classes={
@@ -776,6 +780,7 @@ exports[`FileList withStyles should render correctly 1`] = `
           Array [
             Object {
               "errorMessage": "File type not allowed for upload",
+              "id": "1",
               "lastModified": 1575566155192,
               "name": "Screenshot 2019-12-05 at 17.15.43.png",
               "size": 14106,
@@ -785,6 +790,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             },
             Object {
               "errorMessage": "File type not allowed for upload",
+              "id": "2",
               "lastModified": 1575547399043,
               "name": "Screenshot 2019-12-05 at 12.03.13.png",
               "size": 875,
@@ -795,6 +801,8 @@ exports[`FileList withStyles should render correctly 1`] = `
           ]
         }
         onFileRemoved={[Function]}
+        progressConjunctionLabel="progressConjunctionLabel"
+        removeFileButtonLabel="removeFileButtonLabel"
         theme={
           Object {
             "breakpoints": Object {
@@ -1525,11 +1533,14 @@ exports[`FileList withStyles should render correctly 1`] = `
           className="FileList-list-1"
           id="hv-filelist-1"
         >
-          <li>
+          <li
+            key="1"
+          >
             <WithStyles(File)
               data={
                 Object {
                   "errorMessage": "File type not allowed for upload",
+                  "id": "1",
                   "lastModified": 1575566155192,
                   "name": "Screenshot 2019-12-05 at 17.15.43.png",
                   "size": 14106,
@@ -1538,8 +1549,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                   "webkitRelativePath": "",
                 }
               }
-              id="hv-filelist-1-undefined"
+              id="hv-filelist-1-1"
               onFileRemoved={[Function]}
+              progressConjunctionLabel="progressConjunctionLabel"
+              removeFileButtonLabel="removeFileButtonLabel"
             >
               <File
                 classes={
@@ -1557,6 +1570,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                 data={
                   Object {
                     "errorMessage": "File type not allowed for upload",
+                    "id": "1",
                     "lastModified": 1575566155192,
                     "name": "Screenshot 2019-12-05 at 17.15.43.png",
                     "size": 14106,
@@ -1565,8 +1579,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "webkitRelativePath": "",
                   }
                 }
-                id="hv-filelist-1-undefined"
+                id="hv-filelist-1-1"
                 onFileRemoved={[Function]}
+                progressConjunctionLabel="progressConjunctionLabel"
+                removeFileButtonLabel="removeFileButtonLabel"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -6070,12 +6086,14 @@ exports[`FileList withStyles should render correctly 1`] = `
                   </WithStyles(ForwardRef)>
                 </span>
                 <WithStyles(ForwardRef(IconButton))
+                  aria-label="removeFileButtonLabel"
                   category="ghost"
                   className="File-removeButton-6"
-                  id="hv-filelist-1-undefined-remove-button"
+                  id="hv-filelist-1-1-remove-button"
                   onClick={[Function]}
                 >
                   <ForwardRef(IconButton)
+                    aria-label="removeFileButtonLabel"
                     category="ghost"
                     className="File-removeButton-6"
                     classes={
@@ -6091,19 +6109,21 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "sizeSmall": "MuiIconButton-sizeSmall",
                       }
                     }
-                    id="hv-filelist-1-undefined-remove-button"
+                    id="hv-filelist-1-1-remove-button"
                     onClick={[Function]}
                   >
                     <WithStyles(ForwardRef(ButtonBase))
+                      aria-label="removeFileButtonLabel"
                       category="ghost"
                       centerRipple={true}
                       className="MuiIconButton-root File-removeButton-6"
                       disabled={false}
                       focusRipple={true}
-                      id="hv-filelist-1-undefined-remove-button"
+                      id="hv-filelist-1-1-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(ButtonBase)
+                        aria-label="removeFileButtonLabel"
                         category="ghost"
                         centerRipple={true}
                         className="MuiIconButton-root File-removeButton-6"
@@ -6117,14 +6137,15 @@ exports[`FileList withStyles should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        id="hv-filelist-1-undefined-remove-button"
+                        id="hv-filelist-1-1-remove-button"
                         onClick={[Function]}
                       >
                         <button
+                          aria-label="removeFileButtonLabel"
                           category="ghost"
                           className="MuiButtonBase-root MuiIconButton-root File-removeButton-6"
                           disabled={false}
-                          id="hv-filelist-1-undefined-remove-button"
+                          id="hv-filelist-1-1-remove-button"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onDragLeave={[Function]}
@@ -6913,11 +6934,14 @@ exports[`FileList withStyles should render correctly 1`] = `
               </File>
             </WithStyles(File)>
           </li>
-          <li>
+          <li
+            key="2"
+          >
             <WithStyles(File)
               data={
                 Object {
                   "errorMessage": "File type not allowed for upload",
+                  "id": "2",
                   "lastModified": 1575547399043,
                   "name": "Screenshot 2019-12-05 at 12.03.13.png",
                   "size": 875,
@@ -6926,8 +6950,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                   "webkitRelativePath": "",
                 }
               }
-              id="hv-filelist-1-undefined"
+              id="hv-filelist-1-2"
               onFileRemoved={[Function]}
+              progressConjunctionLabel="progressConjunctionLabel"
+              removeFileButtonLabel="removeFileButtonLabel"
             >
               <File
                 classes={
@@ -6945,6 +6971,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                 data={
                   Object {
                     "errorMessage": "File type not allowed for upload",
+                    "id": "2",
                     "lastModified": 1575547399043,
                     "name": "Screenshot 2019-12-05 at 12.03.13.png",
                     "size": 875,
@@ -6953,8 +6980,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "webkitRelativePath": "",
                   }
                 }
-                id="hv-filelist-1-undefined"
+                id="hv-filelist-1-2"
                 onFileRemoved={[Function]}
+                progressConjunctionLabel="progressConjunctionLabel"
+                removeFileButtonLabel="removeFileButtonLabel"
                 theme={
                   Object {
                     "breakpoints": Object {
@@ -11458,12 +11487,14 @@ exports[`FileList withStyles should render correctly 1`] = `
                   </WithStyles(ForwardRef)>
                 </span>
                 <WithStyles(ForwardRef(IconButton))
+                  aria-label="removeFileButtonLabel"
                   category="ghost"
                   className="File-removeButton-6"
-                  id="hv-filelist-1-undefined-remove-button"
+                  id="hv-filelist-1-2-remove-button"
                   onClick={[Function]}
                 >
                   <ForwardRef(IconButton)
+                    aria-label="removeFileButtonLabel"
                     category="ghost"
                     className="File-removeButton-6"
                     classes={
@@ -11479,19 +11510,21 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "sizeSmall": "MuiIconButton-sizeSmall",
                       }
                     }
-                    id="hv-filelist-1-undefined-remove-button"
+                    id="hv-filelist-1-2-remove-button"
                     onClick={[Function]}
                   >
                     <WithStyles(ForwardRef(ButtonBase))
+                      aria-label="removeFileButtonLabel"
                       category="ghost"
                       centerRipple={true}
                       className="MuiIconButton-root File-removeButton-6"
                       disabled={false}
                       focusRipple={true}
-                      id="hv-filelist-1-undefined-remove-button"
+                      id="hv-filelist-1-2-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(ButtonBase)
+                        aria-label="removeFileButtonLabel"
                         category="ghost"
                         centerRipple={true}
                         className="MuiIconButton-root File-removeButton-6"
@@ -11505,14 +11538,15 @@ exports[`FileList withStyles should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        id="hv-filelist-1-undefined-remove-button"
+                        id="hv-filelist-1-2-remove-button"
                         onClick={[Function]}
                       >
                         <button
+                          aria-label="removeFileButtonLabel"
                           category="ghost"
                           className="MuiButtonBase-root MuiIconButton-root File-removeButton-6"
                           disabled={false}
-                          id="hv-filelist-1-undefined-remove-button"
+                          id="hv-filelist-1-2-remove-button"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onDragLeave={[Function]}

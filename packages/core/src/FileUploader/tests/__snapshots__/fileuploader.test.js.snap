@@ -749,11 +749,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
       fileList={
         Array [
           Object {
+            "id": "1",
             "name": "Screenshot 2019-12-05 at 17.15.43.png",
             "size": 14100000,
             "type": "image/png",
           },
           Object {
+            "id": "2",
             "name": "Screenshot 2019-12-05 at 12.03.13.png",
             "size": 875000,
             "type": "image/png",
@@ -794,11 +796,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
         fileList={
           Array [
             Object {
+              "id": "1",
               "name": "Screenshot 2019-12-05 at 17.15.43.png",
               "size": 14100000,
               "type": "image/png",
             },
             Object {
+              "id": "2",
               "name": "Screenshot 2019-12-05 at 12.03.13.png",
               "size": 875000,
               "type": "image/png",
@@ -10643,11 +10647,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           list={
             Array [
               Object {
+                "id": "1",
                 "name": "Screenshot 2019-12-05 at 17.15.43.png",
                 "size": 14100000,
                 "type": "image/png",
               },
               Object {
+                "id": "2",
                 "name": "Screenshot 2019-12-05 at 12.03.13.png",
                 "size": 875000,
                 "type": "image/png",
@@ -10668,11 +10674,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             list={
               Array [
                 Object {
+                  "id": "1",
                   "name": "Screenshot 2019-12-05 at 17.15.43.png",
                   "size": 14100000,
                   "type": "image/png",
                 },
                 Object {
+                  "id": "2",
                   "name": "Screenshot 2019-12-05 at 12.03.13.png",
                   "size": 875000,
                   "type": "image/png",
@@ -11412,16 +11420,19 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               className="FileList-list-111"
               id="hv-fileuploader-2-filelist"
             >
-              <li>
+              <li
+                key="1"
+              >
                 <WithStyles(File)
                   data={
                     Object {
+                      "id": "1",
                       "name": "Screenshot 2019-12-05 at 17.15.43.png",
                       "size": 14100000,
                       "type": "image/png",
                     }
                   }
-                  id="hv-fileuploader-2-filelist-undefined"
+                  id="hv-fileuploader-2-filelist-1"
                   onFileRemoved={[MockFunction]}
                   progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
@@ -11441,12 +11452,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                     data={
                       Object {
+                        "id": "1",
                         "name": "Screenshot 2019-12-05 at 17.15.43.png",
                         "size": 14100000,
                         "type": "image/png",
                       }
                     }
-                    id="hv-fileuploader-2-filelist-undefined"
+                    id="hv-fileuploader-2-filelist-1"
                     onFileRemoved={[MockFunction]}
                     progressConjunctionLabel="of"
                     removeFileButtonLabel="Remove File"
@@ -15181,7 +15193,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       aria-label="Remove File"
                       category="ghost"
                       className="File-removeButton-116"
-                      id="hv-fileuploader-2-filelist-undefined-remove-button"
+                      id="hv-fileuploader-2-filelist-1-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(IconButton)
@@ -15201,7 +15213,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "sizeSmall": "MuiIconButton-sizeSmall",
                           }
                         }
-                        id="hv-fileuploader-2-filelist-undefined-remove-button"
+                        id="hv-fileuploader-2-filelist-1-remove-button"
                         onClick={[Function]}
                       >
                         <WithStyles(ForwardRef(ButtonBase))
@@ -15211,7 +15223,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           className="MuiIconButton-root File-removeButton-116"
                           disabled={false}
                           focusRipple={true}
-                          id="hv-fileuploader-2-filelist-undefined-remove-button"
+                          id="hv-fileuploader-2-filelist-1-remove-button"
                           onClick={[Function]}
                         >
                           <ForwardRef(ButtonBase)
@@ -15229,7 +15241,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            id="hv-fileuploader-2-filelist-undefined-remove-button"
+                            id="hv-fileuploader-2-filelist-1-remove-button"
                             onClick={[Function]}
                           >
                             <button
@@ -15237,7 +15249,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               category="ghost"
                               className="MuiButtonBase-root MuiIconButton-root File-removeButton-116"
                               disabled={false}
-                              id="hv-fileuploader-2-filelist-undefined-remove-button"
+                              id="hv-fileuploader-2-filelist-1-remove-button"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onDragLeave={[Function]}
@@ -16026,16 +16038,19 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   </File>
                 </WithStyles(File)>
               </li>
-              <li>
+              <li
+                key="2"
+              >
                 <WithStyles(File)
                   data={
                     Object {
+                      "id": "2",
                       "name": "Screenshot 2019-12-05 at 12.03.13.png",
                       "size": 875000,
                       "type": "image/png",
                     }
                   }
-                  id="hv-fileuploader-2-filelist-undefined"
+                  id="hv-fileuploader-2-filelist-2"
                   onFileRemoved={[MockFunction]}
                   progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
@@ -16055,12 +16070,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                     data={
                       Object {
+                        "id": "2",
                         "name": "Screenshot 2019-12-05 at 12.03.13.png",
                         "size": 875000,
                         "type": "image/png",
                       }
                     }
-                    id="hv-fileuploader-2-filelist-undefined"
+                    id="hv-fileuploader-2-filelist-2"
                     onFileRemoved={[MockFunction]}
                     progressConjunctionLabel="of"
                     removeFileButtonLabel="Remove File"
@@ -19795,7 +19811,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       aria-label="Remove File"
                       category="ghost"
                       className="File-removeButton-116"
-                      id="hv-fileuploader-2-filelist-undefined-remove-button"
+                      id="hv-fileuploader-2-filelist-2-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(IconButton)
@@ -19815,7 +19831,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "sizeSmall": "MuiIconButton-sizeSmall",
                           }
                         }
-                        id="hv-fileuploader-2-filelist-undefined-remove-button"
+                        id="hv-fileuploader-2-filelist-2-remove-button"
                         onClick={[Function]}
                       >
                         <WithStyles(ForwardRef(ButtonBase))
@@ -19825,7 +19841,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           className="MuiIconButton-root File-removeButton-116"
                           disabled={false}
                           focusRipple={true}
-                          id="hv-fileuploader-2-filelist-undefined-remove-button"
+                          id="hv-fileuploader-2-filelist-2-remove-button"
                           onClick={[Function]}
                         >
                           <ForwardRef(ButtonBase)
@@ -19843,7 +19859,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            id="hv-fileuploader-2-filelist-undefined-remove-button"
+                            id="hv-fileuploader-2-filelist-2-remove-button"
                             onClick={[Function]}
                           >
                             <button
@@ -19851,7 +19867,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               category="ghost"
                               className="MuiButtonBase-root MuiIconButton-root File-removeButton-116"
                               disabled={false}
-                              id="hv-fileuploader-2-filelist-undefined-remove-button"
+                              id="hv-fileuploader-2-filelist-2-remove-button"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onDragLeave={[Function]}
