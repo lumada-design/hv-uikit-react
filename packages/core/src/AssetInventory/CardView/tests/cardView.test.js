@@ -16,11 +16,10 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
+import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
 import HvProvider from "../../../Provider";
 import CardView from "../index";
 import Card from "../../../Card";
-import CustomMedia from "../../../Card/Media";
-import CardFooter from "../../../Card/Footer";
 
 describe("CardView", () => {
   let wrapper;
@@ -63,7 +62,7 @@ describe("CardView", () => {
   it("should render correctly with default render", () => {
     wrapper = mount(
       <HvProvider>
-        <CardView values={data} />
+        <CardView icon={<Menu />} values={data} />
       </HvProvider>
     );
     const cards = wrapper.find(Card);
@@ -72,22 +71,15 @@ describe("CardView", () => {
   });
 
   it("should render correctly with custom render", () => {
-    const renderer = (id, mediaPath, isSelectable, checkboxValue, onChange) => (
+    const renderer = value => (
       <div style={{ width: "500px" }}>
-        <Card id={id}>
-          <CustomMedia mediaPath={mediaPath} mediaHeight={160} />
-          <CardFooter
-            isSelectable={isSelectable}
-            onChange={onChange}
-            checkboxValue={checkboxValue}
-          />
-        </Card>
+        <Card id={value.id} headerTitle={value.headerTitle} />
       </div>
     );
 
     wrapper = mount(
       <HvProvider>
-        <CardView values={data} renderer={renderer} />
+        <CardView id="id1" icon={<Menu />} values={data} renderer={renderer} />
       </HvProvider>
     );
     const cards = wrapper.find(Card);
