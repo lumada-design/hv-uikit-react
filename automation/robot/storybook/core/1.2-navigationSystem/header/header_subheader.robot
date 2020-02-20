@@ -15,8 +15,9 @@ Documentation     Test Cases based on Design System Version 1.2.0
 *** Comments ***
 dev implementation keep items always visible and enabled although human eye it is not visible.
 Because of that the below test cases just can be validated on image recognition tests
- - closes/hide subheader when mouse hover out of child item 
- - closes/hide subheader when a child item is selected and mouse hover item that has not child items
+- closes/hide subheader when mouse hover out of child item 
+- closes/hide subheader when a child item is selected and mouse hover item that has not child items
+
 
 *** Test Cases ***
 maintains subheader opened and seleleted when user click on actions buttons 

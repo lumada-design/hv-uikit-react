@@ -14,8 +14,8 @@ Documentation     Test Cases based on Design System Version 1.2.0
 
 *** Comments ***
 complementary test cases:
- - Test Suite "verticalNavigation_keyboard_interaction.robot" 
-  - Test Case "escape: close vertical navigation menu when ESCAPE is pressed"
+- Test Suite "verticalNavigation_keyboard_interaction.robot" 
+- Test Case "escape: close vertical navigation menu when ESCAPE is pressed"
 
 
 *** Test Cases ***
