@@ -211,25 +211,24 @@ const countries = [
 ];
 
 const suggestionHandler = value => {
-  if (typeof value === "string" && value !== "") {
-    const foundCountries = countries.filter(country =>
-      country.toUpperCase().startsWith(value.toUpperCase())
-    );
+  if (typeof value !== "string" || isEmpty(value)) return null;
+  const foundCountries = countries.filter(country =>
+    country.toUpperCase().startsWith(value.toUpperCase())
+  );
 
-    if (isEmpty(foundCountries)) return null;
+  if (isEmpty(foundCountries)) return null;
 
-    return foundCountries.map((country, idx) => {
-      return { id: idx, label: country };
-    });
-  } else {
-    return null;
-  }
+  return foundCountries.map((country, idx) => ({
+    id: `c_${idx}`,
+    label: country
+  }));
 };
 
 export default (
   <HvInput
     labels={labels}
     id="test"
+    validation={value => value.includes("a")}
     suggestionListCallback={suggestionHandler}
     suggestionSelectedCallback={item => console.log(item.label + " selected")}
     customFixedIcon={<Map />}

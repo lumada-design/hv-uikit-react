@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import withLayout from "../components/withLayout";
+import withLayout from "../hoc/withLayout";
 import Detail from "../views/detail";
 import SnackbarController from "../notifications/Snackbar";
 
-export default withLayout(Detail, SnackbarController);
+export default withLayout(Detail, SnackbarController, false);

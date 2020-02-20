@@ -8776,11 +8776,11 @@ body {
           className="InputAdornment-adornmentsBox-1"
         >
           <button
-            aria-hidden="true"
             aria-label="Clear the text"
             className="InputAdornment-adornmentButton-2"
             onKeyDown={[Function]}
             onMouseDown={[MockFunction]}
+            tabIndex={-1}
             title="Clear the text"
             type="button"
           >

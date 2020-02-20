@@ -37,7 +37,8 @@ const categoryValues = Object.freeze({
   secondary: "secondary",
   ghost: "ghost",
   ghostSecondary: "ghostSecondary",
-  semantic: "semantic"
+  semantic: "semantic",
+  icon: "icon"
 });
 
 const variantValues = Object.freeze({
@@ -143,7 +144,15 @@ const getMaterialConfiguration = (classes, category) => {
           textPrimary: classes.semantic,
           disabled: classes.semanticDisabled
         }
-      }
+      };
+    case categoryValues.icon:
+      return {
+        ...materialText,
+        classes: {
+          ...styling,
+          disabled: classes.ghostDisabled
+        }
+      };
   }
 };
 

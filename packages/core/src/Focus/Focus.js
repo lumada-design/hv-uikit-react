@@ -43,10 +43,9 @@ const Focus = props => {
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef &&
-    rootRef.current &&
-    Array.from(rootRef.current.getElementsByClassName(classes.root));
-
+    rootRef.current
+      ? Array.from(rootRef.current.getElementsByClassName(classes.root))
+      : [];
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
     if (elChildFocus) {
@@ -73,6 +72,24 @@ const Focus = props => {
     setTabIndex(el, 0);
   };
 
+  const onFocusStrategy = evt => {
+    if (strategy === "listbox") {
+      clearTabSiblings(evt.currentTarget);
+    }
+  };
+
+  const onBlurStrategy = () => {
+    if (
+      strategy === "listbox" &&
+      rootRef.current &&
+      !rootRef.current.contains(document.activeElement)
+    ) {
+      setTimeout(() => {
+        setSelectedTabIndex();
+      }, 10);
+    }
+  };
+
   const config = el => {
     const { tabIndex } = configuration;
     if (!el || hasRunConfig) return;
@@ -97,18 +114,13 @@ const Focus = props => {
     // give focus to child element if any focusable
 
     if (childFocus && childFocus.focus) childFocus.focus();
-    clearTabSiblings(evt.currentTarget);
+    onFocusStrategy(evt);
   };
 
   const onBlur = evt => {
     setShowFocus(false);
     if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
-
-    setTimeout(() => {
-      if (!rootRef.current.contains(document.activeElement)) {
-        setSelectedTabIndex();
-      }
-    }, 10);
+    onBlurStrategy(evt);
   };
 
   const onMouseDown = evt => {
@@ -143,6 +155,7 @@ const Focus = props => {
     const focusesList = getFocuses().filter(
       el => isDisabledFocusable || !el.classList.contains(classes.disabled)
     );
+
     const currentFocus = focusesList.indexOf(evt.currentTarget);
 
     const focuses = {
@@ -244,7 +257,7 @@ Focus.propTypes = {
   /**
    * Focus and navigation strategy to be used.
    */
-  strategy: PropTypes.oneOf(["list", "menu", "card"]),
+  strategy: PropTypes.oneOf(["listbox", "menu", "card"]),
   /**
    * Show focus when click element.
    */
@@ -264,12 +277,12 @@ Focus.propTypes = {
 };
 
 Focus.defaultProps = {
-  rootRef: undefined,
+  rootRef: {},
   focusOnClick: false,
   focusDisabled: true,
   useArrows: true,
   useFalseFocus: false,
-  strategy: "list",
+  strategy: "listbox",
   configuration: {},
   selected: false,
   disabled: false

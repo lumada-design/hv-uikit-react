@@ -86,7 +86,7 @@ class List extends React.Component {
 
     this.setState({ ...parsedState });
 
-    onClick(item);
+    onClick(item, evt);
     onChange(parsedList);
   }
 

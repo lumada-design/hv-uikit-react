@@ -49,6 +49,12 @@ element attribute value should not contain
     ${value}              Get Element Attribute    ${locator}      ${attribute}
     Should Not Contain    ${value}                 ${expected}     ignore_case=True
 
+go to url and wait until element is visible
+    [Arguments]    ${page}    ${locator}    ${seconds}
+    [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible 
+    Go To                            ${page}
+    Wait Until Element Is Visible    ${locator}    10s
+
 wait until element attribute value does not contain
     [Arguments]    ${locator}    ${attribute}    ${expected}    ${retry_interval}
     [Documentation]
@@ -113,6 +119,7 @@ open storybook
 
 verify element background-color change on mouse over
     [Arguments]    ${locator}
+    [Documentation]    mouse over element and verify background-color change
     Mouse Over    css:body
     ${value}                       get constanct css property value    ${locator}    background-color
     mouse over                     ${locator}
@@ -186,14 +193,34 @@ force input
     Input Text         ${locator}    ${string}
 
 set focus and press keys
-    [Arguments]    ${locator}    ${keys}
+    [Arguments]    ${locator}    @{keys}
     [Documentation]    
     ...   work around for react consider as a human action, otherwise using 'press keys' directly will be reverted by react  
     ...    
     Set Focus To Element    ${locator}
-    Press Keys              none          ${keys}
+    Press Keys              none          @{keys}
 
 wait until element attribute value contain
     [Arguments]    ${locator}    ${attribute}    ${expected}
     [Documentation]    retry 3 times every second until keyword succeed    
     Wait Until Keyword Succeeds    3    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected} 
+
+wait until element attribute contain
+    [Arguments]    ${locator}    ${attribute}    ${expected}
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
+    Wait Until Keyword Succeeds    5x    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected} 
+
+wait until element attribute not contain
+    [Arguments]    ${locator}    ${attribute}    ${unexpected}
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
+    Wait Until Keyword Succeeds    5x    1s    element attribute value should not contain    ${locator}    ${attribute}    ${unexpected}
+    
+wait until css attribute contain
+    [Arguments]    ${locator}    ${property}    ${value}
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization    
+    Wait Until Keyword Succeeds    5x    1s    verify css element property value    ${locator}    ${property}    ${value}
+    
+wait until css attribute not contain
+    [Arguments]    ${locator}    ${property}    ${value}
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization    
+    Wait Until Keyword Succeeds    5x    1s    verify css element property has different value    ${locator}    ${property}    ${value}

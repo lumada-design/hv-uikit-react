@@ -17,7 +17,6 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import isNil from "lodash/isNil";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import Unsuccess from "@hv/uikit-react-icons/dist/Generic/Fail";
@@ -40,40 +39,43 @@ const InputAdornment = ({
   handleClear,
   showClear,
   clearButtonLabel
-}) => (
-  <div className={classes.adornmentsBox} aria-hidden="true">
-    {showValidationIcon && validationState === validationStates.valid && (
-      <Success semantic="sema1" className={classes.icon} aria-hidden="true" />
-    )}
-    {showValidationIcon && validationState === validationStates.invalid && (
-      <Unsuccess semantic="sema4" className={classes.icon} aria-hidden="true" />
-    )}
+}) => {
+  const renderValidationIcon = state => {
+    switch (state) {
+      case validationStates.valid:
+        return <Success semantic="sema1" className={classes.icon} />;
+      case validationStates.invalid:
+        return <Unsuccess semantic="sema4" className={classes.icon} />;
+      default:
+        return null;
+    }
+  };
 
-    {showClear && (
-      <button
-        type="button"
-        aria-controls={inputId || undefined}
-        aria-label={clearButtonLabel}
-        title={clearButtonLabel}
-        className={classNames(classes.adornmentButton, classes.iconClear)}
-        onMouseDown={handleClear}
-        onKeyDown={e => onKeyDownClear(e, handleClear)}
-        aria-hidden="true"
-      >
-        <Close className={classes.icon} />
-      </button>
-    )}
+  return (
+    <div className={classes.adornmentsBox} aria-hidden="true">
+      {showClear && (
+        <button
+          type="button"
+          tabIndex={-1}
+          aria-controls={inputId || undefined}
+          aria-label={clearButtonLabel}
+          title={clearButtonLabel}
+          className={classNames(classes.adornmentButton, classes.iconClear)}
+          onMouseDown={handleClear}
+          onKeyDown={e => onKeyDownClear(e, handleClear)}
+        >
+          <Close className={classes.icon} />
+        </button>
+      )}
 
-    {!isNil(customFixedIcon) && (
-      <>
-        {React.cloneElement(customFixedIcon, {
-          className: classNames(classes.icon, customFixedIcon.props.className),
-          "aria-hidden": true
-        })}
-      </>
-    )}
-  </div>
-);
+      {(showValidationIcon && renderValidationIcon(validationState)) ||
+        (customFixedIcon &&
+          React.cloneElement(customFixedIcon, {
+            className: classNames(classes.icon, customFixedIcon.props.className)
+          }))}
+    </div>
+  );
+};
 
 InputAdornment.propTypes = {
   /**

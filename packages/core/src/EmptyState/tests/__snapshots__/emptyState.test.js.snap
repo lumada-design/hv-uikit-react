@@ -9536,18 +9536,18 @@ exports[`<EmptyState /> with String title/message should render correctly 1`] = 
     </div>
     <div>
       <div>
-        <WithStyles(Typography)
+        <WithStyles(Component)
           variant="sTitle"
         >
           mockTitle
-        </WithStyles(Typography)>
+        </WithStyles(Component)>
       </div>
       <div>
-        <WithStyles(Typography)
+        <WithStyles(Component)
           variant="normalText"
         >
           mockMessage
-        </WithStyles(Typography)>
+        </WithStyles(Component)>
       </div>
     </div>
   </div>

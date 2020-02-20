@@ -4563,9 +4563,9 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "actionsContainer": "Actions-actionsContainer-4",
                 "iconContainer": "Actions-iconContainer-6",
                 "marginLeft": "Actions-marginLeft-5",
+                "root": "Actions-root-4",
               },
               "deployed": true,
               "linked": false,
@@ -4573,9 +4573,9 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Actions",
                 "classes": Object {
-                  "actionsContainer": "Actions-actionsContainer-4",
                   "iconContainer": "Actions-iconContainer-6",
                   "marginLeft": "Actions-marginLeft-5",
+                  "root": "Actions-root-4",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -5063,7 +5063,7 @@ body {
                   data-meta="Actions"
                 >
                   
-.Actions-actionsContainer-4 {
+.Actions-root-4 {
   height: 100%;
   display: flex;
   z-index: 2;
@@ -5095,9 +5095,9 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "actionsContainer": "Actions-actionsContainer-4",
                   "iconContainer": "Actions-iconContainer-6",
                   "marginLeft": "Actions-marginLeft-5",
+                  "root": "Actions-root-4",
                 },
                 "index": Array [
                   Object {
@@ -5121,13 +5121,6 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Actions-actionsContainer-4": Object {
-                    "align-items": "center",
-                    "display": "flex",
-                    "height": "100%",
-                    "margin-left": "auto",
-                    "z-index": "2",
-                  },
                   ".Actions-iconContainer-6": Object {
                     "display": "inherit",
                     "margin-left": "10px",
@@ -5140,7 +5133,7 @@ body {
                   ".Actions-marginLeft-5": Object {
                     "margin-left": "60px",
                   },
-                  "actionsContainer": Object {
+                  ".Actions-root-4": Object {
                     "align-items": "center",
                     "display": "flex",
                     "height": "100%",
@@ -5155,14 +5148,21 @@ body {
                   "marginLeft": Object {
                     "margin-left": "60px",
                   },
+                  "root": Object {
+                    "align-items": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "margin-left": "auto",
+                    "z-index": "2",
+                  },
                 },
                 "options": Object {
                   "Renderer": [Function],
                   "classNamePrefix": "Actions",
                   "classes": Object {
-                    "actionsContainer": "Actions-actionsContainer-4",
                     "iconContainer": "Actions-iconContainer-6",
                     "marginLeft": "Actions-marginLeft-5",
+                    "root": "Actions-root-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5649,13 +5649,6 @@ body {
                     "backgroundColor": "#F0F0F0",
                     "cursor": "pointer",
                   },
-                  "actionsContainer": Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                    "height": "100%",
-                    "marginLeft": "auto",
-                    "zIndex": 2,
-                  },
                   "iconContainer": Object {
                     "&:hover": Object {
                       "backgroundColor": "#F0F0F0",
@@ -5667,6 +5660,13 @@ body {
                   },
                   "marginLeft": Object {
                     "marginLeft": "60px",
+                  },
+                  "root": Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "marginLeft": "auto",
+                    "zIndex": 2,
                   },
                 },
                 "update": [Function],
@@ -6623,9 +6623,9 @@ body {
       <Actions
         classes={
           Object {
-            "actionsContainer": "Actions-actionsContainer-4",
             "iconContainer": "Actions-iconContainer-6",
             "marginLeft": "Actions-marginLeft-5",
+            "root": "Actions-root-4",
           }
         }
         itemActions={
@@ -7566,7 +7566,7 @@ body {
         userExists={false}
       >
         <div
-          className="Actions-actionsContainer-4 Actions-marginLeft-5"
+          className="Actions-marginLeft-5"
         >
           <div
             className="Actions-iconContainer-6"

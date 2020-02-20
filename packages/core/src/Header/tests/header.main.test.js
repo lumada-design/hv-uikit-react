@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import MainWithStyles from "../index";
+import { HeaderWithStyles } from "../index";
 import Main from "../Header";
 import HvProvider from "../../Provider";
 
@@ -35,7 +35,7 @@ describe("Header withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
-    wrapper = shallow(<MainWithStyles />);
+    wrapper = shallow(<HeaderWithStyles />);
   });
 
   it("should be defined", () => {
@@ -90,7 +90,7 @@ describe("Header withStyles", () => {
   
     wrapper = mount(
       <HvProvider>
-        <MainWithStyles
+        <HeaderWithStyles
           label="Maintenance Insights"
           // Navigation
           navigationStructure={navigationData}
