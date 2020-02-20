@@ -13,8 +13,8 @@ Documentation     Test Cases based on Design System Version 1.2.0
 
 
 *** Comments ***
- note1:  work around, keywords for sync will not work (dev implementation keep items always visible and enabled)
-         the click element fails with error 'other element will receive the click', so the solution was try until succeed
+note1: work around, keywords for sync will not work (dev implementation keep items always visible and enabled)
+The click element fails with error 'other element will receive the click', so the solution was try until succeed
 
 
 *** Test Cases ***   
