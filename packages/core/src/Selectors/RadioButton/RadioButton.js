@@ -51,10 +51,8 @@ const getLabelStyles = (classes, labelPosition, label) => {
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const getIcons = ({ classes, disabled, theme }) => {
-  const color = disabled
-    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
-    : null;
+const getIcons = (classes, disabled) => {
+  const color = disabled ? ["atmo4", "atmo6"] : undefined;
 
   return {
     emptyIcon: <RadioButtonUnSelected color={color} className={classes.icon} />,
@@ -77,7 +75,7 @@ const HvRadio = props => {
     radioProps
   } = props;
 
-  const icons = getIcons(props);
+  const icons = getIcons(classes, disabled);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
   const [internalId] = useState(id || uniqueId("hv-radiobutton-"));
@@ -208,11 +206,7 @@ HvRadio.propTypes = {
   /**
    * Extra properties passed to the MUI Radio component.
    */
-  radioProps: PropTypes.instanceOf(Object),
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  radioProps: PropTypes.instanceOf(Object)
 };
 
 HvRadio.defaultProps = {
@@ -225,8 +219,7 @@ HvRadio.defaultProps = {
   onChange: () => {},
   formControlLabelProps: undefined,
   radioProps: undefined,
-  labelPlacement: labelPositions.end,
-  theme: null
+  labelPlacement: labelPositions.end
 };
 
 export default HvRadio;

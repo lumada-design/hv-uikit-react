@@ -40,13 +40,11 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     actions,
     actionsCallback,
     actionsPosition,
-    theme,
     content,
     ...other
   } = props;
   const icon =
-    customIcon ||
-    (showIcon && severityIcon(mapSeverityToVariant(variant), theme));
+    customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
 
   let effectiveActionsPosition = actionsPosition;
   if (actionsPosition === "auto") {
@@ -146,15 +144,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * The position property of the header.
    */
-  actionsPosition: PropTypes.PropTypes.oneOf([
-    "auto",
-    "inline",
-    "bottom-right"
-  ]),
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"])
 };
 
 HvBannerContentWrapper.defaultProps = {
@@ -165,8 +155,7 @@ HvBannerContentWrapper.defaultProps = {
   customIcon: null,
   actions: null,
   actionsCallback: () => {},
-  actionsPosition: "auto",
-  theme: undefined
+  actionsPosition: "auto"
 };
 
 export default HvBannerContentWrapper;

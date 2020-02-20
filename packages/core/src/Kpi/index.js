@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Kpi from "./Kpi";
 
-export default withStyles(styles, { withTheme: true })(Kpi);
+export default withStyles(styles, { name: "HvKpi" })(Kpi);

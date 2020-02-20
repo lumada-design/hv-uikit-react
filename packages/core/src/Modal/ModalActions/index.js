@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import ModalActions from "./ModalActions";
 
-export default withStyles(styles, { withTheme: true })(ModalActions);
+export default withStyles(styles, { name: "HvModalActions" })(ModalActions);

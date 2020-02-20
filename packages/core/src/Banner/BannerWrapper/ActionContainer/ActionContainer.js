@@ -30,14 +30,7 @@ import Actions from "../../../Actions";
  * @returns {*}
  * @constructor
  */
-const ActionContainer = ({
-  id,
-  theme,
-  classes,
-  onClose,
-  action,
-  actionCallback
-}) => (
+const ActionContainer = ({ id, classes, onClose, action, actionCallback }) => (
   <div className={classes.actionContainer}>
     <div
       className={classes.closeAction}
@@ -46,11 +39,7 @@ const ActionContainer = ({
       tabIndex={0}
       onKeyDown={onClose}
     >
-      <Close
-        iconSize="XS"
-        className={classes.iconContainer}
-        color={[theme.hv.palette.base.base2]}
-      />
+      <Close iconSize="XS" className={classes.iconContainer} color="base2" />
     </div>
     {action && (
       <div className={classes.actionsInnerContainer}>
@@ -70,10 +59,6 @@ ActionContainer.propTypes = {
    * Identifier.
    */
   id: PropTypes.string,
-  /*
-   * An object containing the palette color specificactions.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the button.
    */

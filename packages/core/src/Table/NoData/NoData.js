@@ -16,22 +16,12 @@
 
 /* eslint-disable */
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 import HvEmptyState from "../../EmptyState";
 
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
-};
-
-const StyledFail = withStyles(styles, { withTheme: true })(Fail);
-
 const NoData = ({ classes, noDataMessage = " No data to display." }) => (
   <div className={classes.root}>
-    <HvEmptyState message={noDataMessage} icon={<StyledFail />} />
+    <HvEmptyState message={noDataMessage} icon={<Fail />} />
   </div>
 );
 

@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Title from "./Title";
 
-export default withStyles(styles, { withTheme: true })(Title);
+export default withStyles(styles, { name: "HvLoginTitle" })(Title);

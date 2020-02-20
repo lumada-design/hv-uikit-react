@@ -23,7 +23,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Tooltip from "..";
 import HvProvider from "../../Provider";
 import HvTypography from "../../Typography";
-import tooltipStyling from "../styles";
+import styles from "../styles";
 
 const createTooltipData = data => {
   // eslint-disable-next-line react/prop-types
@@ -44,9 +44,7 @@ const createTooltipData = data => {
     </div>
   );
 
-  return withStyles(tooltipStyling, {
-    withTheme: true
-  })(TooltipContent);
+  return withStyles(styles)(TooltipContent);
 };
 
 const Anchor = (

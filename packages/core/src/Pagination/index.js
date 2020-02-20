@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Pagination from "./Pagination";
 
-export default withStyles(styles, { withTheme: true })(Pagination);
+export default withStyles(styles, { name: "HvPagination" })(Pagination);

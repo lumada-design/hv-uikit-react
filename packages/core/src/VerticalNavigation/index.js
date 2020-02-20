@@ -29,7 +29,7 @@ import withDeprecate from "../withDeprecate";
 import styles from "./styles";
 import VerticalNavigation from "./VerticalNavigation";
 
-export default withStyles(styles, { withTheme: true })(
+export default withStyles(styles, { name: "HvVerticalNavigation" })(
   withDeprecate(
     VerticalNavigation,
     "This component is deprecated. Please use the new Vertical Navigation component."

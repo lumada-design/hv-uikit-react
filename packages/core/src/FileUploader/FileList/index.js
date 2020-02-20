@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import FileList from "./FileList";
 
-export default withStyles(styles, { withTheme: true })(FileList);
+export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);

@@ -16,6 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import HvLogin from "./Login";
+import Login from "./Login";
 
-export default withStyles(styles, { withTheme: true })(HvLogin);
+export default withStyles(styles, { name: "HvLogin" })(Login);

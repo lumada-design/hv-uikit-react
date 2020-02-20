@@ -80,7 +80,6 @@ const Main = ({
   checkboxAriaLabel,
   checkboxAriaLabelledBy,
   checkboxAriaDescribedBy,
-  theme,
   mediaPath,
   mediaTitle,
   mediaHeight,
@@ -422,10 +421,6 @@ Main.propTypes = {
    */
   checkboxAriaDescribedBy: PropTypes.string,
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions: PropTypes.number,
@@ -470,7 +465,6 @@ Main.defaultProps = {
   checkboxAriaLabel: undefined,
   checkboxAriaLabelledBy: undefined,
   checkboxAriaDescribedBy: undefined,
-  theme: null,
   maxVisibleActions: 1,
   actionItemWidth: undefined
 };

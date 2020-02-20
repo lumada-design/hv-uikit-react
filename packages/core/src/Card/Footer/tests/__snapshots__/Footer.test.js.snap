@@ -2,11 +2,11 @@
 
 exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
-  <HvButton
+  <WithStyles(HvButton)
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     disabled={false}
     id="-0-action-view"
     key="-0-action-view"
@@ -14,11 +14,11 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     startIcon={null}
   >
     View
-  </HvButton>
+  </WithStyles(HvButton)>
   <WithStyles(DropDownMenu)
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -43,7 +43,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     expanded={false}
     icon={
       <ForwardRef(WithStyles)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}
@@ -55,12 +55,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 
 exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
   <WithStyles(DropDownMenu)
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -91,7 +91,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
     expanded={false}
     icon={
       <ForwardRef(WithStyles)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}
@@ -103,11 +103,11 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 
 exports[`Footer should render the actions and the dropdown accordingly 3`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
-  <HvButton
+  <WithStyles(HvButton)
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     disabled={false}
     id="-0-action-view"
     key="-0-action-view"
@@ -115,10 +115,10 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     startIcon={null}
   >
     View
-  </HvButton>
-  <HvButton
+  </WithStyles(HvButton)>
+  <WithStyles(HvButton)
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     disabled={false}
     id="-1-action-delete"
     key="-1-action-delete"
@@ -126,11 +126,11 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     startIcon={null}
   >
     Delete
-  </HvButton>
+  </WithStyles(HvButton)>
   <WithStyles(DropDownMenu)
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -149,7 +149,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     expanded={false}
     icon={
       <ForwardRef(WithStyles)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}

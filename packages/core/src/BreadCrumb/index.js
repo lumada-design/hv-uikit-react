@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import BreadCrumb from "./BreadCrumb";
 
-export default withStyles(styles, { withTheme: true })(BreadCrumb);
+export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

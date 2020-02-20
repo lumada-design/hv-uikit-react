@@ -15,22 +15,10 @@
  */
 
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Level0 from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
 import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
 import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
 import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
-
-const styles = () => ({
-  rootM: {
-    padding: "4px"
-  }
-});
-
-const StyledLevel0 = withStyles(styles, { withTheme: true })(Level0);
-const StyledLevel3 = withStyles(styles, { withTheme: true })(Level3);
-const StyledLevel4 = withStyles(styles, { withTheme: true })(Level4);
-const StyledLevel5 = withStyles(styles, { withTheme: true })(Level5);
 
 /**
  * Icon mapping.
@@ -38,10 +26,10 @@ const StyledLevel5 = withStyles(styles, { withTheme: true })(Level5);
  * @type {Readonly<{success: *, warning: *, error: *, info: *}>}
  */
 export const variantIcon = Object.freeze({
-  success: () => <StyledLevel0 iconSize="M" semantic="sema1" />,
-  warning: () => <StyledLevel4 iconSize="M" semantic="sema5" />,
-  error: () => <StyledLevel5 iconSize="M" semantic="sema6" />,
-  info: () => <StyledLevel3 iconSize="M" semantic="sema4"  />
+  success: () => <Level0 iconSize="M" semantic="sema1" />,
+  warning: () => <Level4 iconSize="M" semantic="sema5" />,
+  error: () => <Level5 iconSize="M" semantic="sema6" />,
+  info: () => <Level3 iconSize="M" semantic="sema4" />
 });
 
 export const severityIcon = (severity, theme) => {

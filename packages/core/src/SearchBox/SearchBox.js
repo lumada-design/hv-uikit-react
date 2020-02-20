@@ -56,32 +56,29 @@ const onKeyDownHandler = (handlers, event, value) => {
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
  *
- *  @param theme - array with the callbacks to use
  *  @param disabled - contains the onKeyDown event
  */
-const changeIconColor = (theme, disabled) =>
+const changeIconColor = disabled =>
   disabled ? (
     <SearchIcon
-      color={[theme.hv.palette.atmosphere.atmo7]}
+      color="atmo7"
       boxStyles={{
         width: "30px",
-        height: "30px",
-        padding: "7px"
+        height: "30px"
       }}
     />
   ) : (
     <SearchIcon
       boxStyles={{
         width: "30px",
-        height: "30px",
-        padding: "7px"
+        height: "30px"
       }}
     />
   );
 
-const iconStateHandler = (value, theme, disabled, setIcon, classes) => {
+const iconStateHandler = (value, disabled, setIcon) => {
   if (isNil(value) || value === "") {
-    setIcon(changeIconColor(theme, disabled, classes));
+    setIcon(changeIconColor(disabled));
   } else {
     setIcon(undefined);
   }
@@ -90,38 +87,38 @@ const iconStateHandler = (value, theme, disabled, setIcon, classes) => {
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
  *
- *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param contextValues - array with the callback to use the disabled flag.
  *  @param value - the value inside the input.
  */
 const onChangeHandler = (contextValues, value) => {
-  const [onChange, theme, disabled, setIcon, classes] = contextValues;
+  const [onChange, disabled, setIcon] = contextValues;
   let newValue = value;
   newValue = onChange(newValue);
-  iconStateHandler(value, theme, disabled, setIcon, classes);
+  iconStateHandler(value, disabled, setIcon);
   return newValue;
 };
 
 /**
  *  Clears the lens icon.
  *
- *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param contextValues - array with the callback to use the disabled flag.
  *  @param value - the value inside the input.
  */
 const onFocusHandler = (contextValues, value) => {
-  const [onFocus, theme, disabled, setIcon, classes] = contextValues;
-  iconStateHandler(value, theme, disabled, setIcon, classes);
+  const [onFocus, disabled, setIcon] = contextValues;
+  iconStateHandler(value, disabled, setIcon);
   onFocus(value);
 };
 
 /**
  *  Puts the lens icon back in place.
  *
- *  @param contextValues - array with the callback to use the theme and the disabled flag.
+ *  @param contextValues - array with the callback to use the disabled flag.
  *  @param value - the value inside the input.
  */
 const onBlurHandler = (contextValues, value) => {
-  const [onBlur, theme, disabled, setIcon, classes] = contextValues;
-  setIcon(changeIconColor(theme, disabled, classes));
+  const [onBlur, disabled, setIcon] = contextValues;
+  setIcon(changeIconColor(disabled));
   onBlur(value);
 };
 
@@ -129,7 +126,6 @@ const HvSearchBox = props => {
   const {
     classes,
     id,
-    theme,
     className,
     labels,
     initialValue,
@@ -146,9 +142,7 @@ const HvSearchBox = props => {
     ariaLabel
   } = props;
 
-  const [lensIcon, setIcon] = useState(
-    changeIconColor(theme, disabled, classes)
-  );
+  const [lensIcon, setIcon] = useState(changeIconColor(disabled));
 
   return (
     <>
@@ -161,27 +155,9 @@ const HvSearchBox = props => {
         suggestionListCallback={suggestionListCallback}
         suggestionSelectedCallback={suggestionSelectedCallback}
         customFixedIcon={lensIcon}
-        onChange={partial(onChangeHandler, [
-          onChange,
-          theme,
-          disabled,
-          setIcon,
-          classes
-        ])}
-        onBlur={partial(onBlurHandler, [
-          onBlur,
-          theme,
-          disabled,
-          setIcon,
-          classes
-        ])}
-        onFocus={partial(onFocusHandler, [
-          onFocus,
-          theme,
-          disabled,
-          setIcon,
-          classes
-        ])}
+        onChange={partial(onChangeHandler, [onChange, disabled, setIcon])}
+        onBlur={partial(onBlurHandler, [onBlur, disabled, setIcon])}
+        onFocus={partial(onFocusHandler, [onFocus, disabled, setIcon])}
         onKeyDown={partial(onKeyDownHandler, [onKeyDown, onSubmit])}
         autoFocus={autoFocus}
         disabled={disabled}
@@ -198,10 +174,6 @@ HvSearchBox.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied to the search box.
    */
@@ -286,7 +258,6 @@ HvSearchBox.defaultProps = {
   value: undefined,
   initialValue: "",
   className: "",
-  theme: null,
   id: "",
   labels: {
     inputLabel: "",

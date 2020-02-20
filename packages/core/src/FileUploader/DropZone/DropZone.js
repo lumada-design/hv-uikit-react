@@ -25,7 +25,6 @@ import { convertUnits } from "../utils";
 
 const DropZone = ({
   id,
-  theme,
   classes,
   labels,
   multiple,
@@ -117,7 +116,7 @@ const DropZone = ({
         role="button"
         tabIndex={0}
         onDragEnter={event => {
-          if(!disabled) {
+          if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
@@ -126,14 +125,14 @@ const DropZone = ({
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
         onDragOver={event => {
-          if(!disabled) {
+          if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
           }
         }}
         onDrop={event => {
-          if(!disabled) {
+          if (!disabled) {
             event.stopPropagation();
             event.preventDefault();
             onChangeHandler(event.dataTransfer.files);
@@ -157,7 +156,7 @@ const DropZone = ({
             inputRef.current.value = null;
           }}
           onChange={() => {
-            if(!disabled) {
+            if (!disabled) {
               onChangeHandler(inputRef.current.files);
             }
           }}
@@ -178,11 +177,7 @@ const DropZone = ({
               <Doc
                 iconSize="M"
                 className={classes.dropzoneAreaIcon}
-                color={[
-                  disabled
-                    ? theme.hv.palette.atmosphere.atmo6
-                    : theme.hv.palette.base.base2
-                ]}
+                color={disabled ? "atmo6" : "base2"}
               />
               <div className={classes.dropzoneAreaLabels}>
                 <HvTypography className={classes.dragText}>
@@ -205,10 +200,6 @@ DropZone.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
-  /**
-   * The theme injected through with styles
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */

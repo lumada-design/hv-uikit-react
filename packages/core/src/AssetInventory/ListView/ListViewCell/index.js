@@ -16,6 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import AssetInventoryListView from "./ListViewCell";
+import ListViewCell from "./ListViewCell";
 
-export default withStyles(styles, { withTheme: true })(AssetInventoryListView);
+export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);

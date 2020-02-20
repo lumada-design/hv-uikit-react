@@ -124,7 +124,7 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
       const params = {
         svgOutput: output,
         componentName: processedFileToWrite,
-        colorArrayDefaultValues: colorObject.colorText,
+        colors: colorObject.colorText,
         defaultSizes: sizeObject
       };
 

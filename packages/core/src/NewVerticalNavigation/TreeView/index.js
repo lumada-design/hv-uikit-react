@@ -20,7 +20,11 @@ import styles from "./styles";
 import RawTreeView from "./TreeView";
 import RawTreeViewItem from "./TreeViewItem";
 
-const TreeViewItem = withStyles(styles, { withTheme: true })(RawTreeViewItem);
+const TreeViewItem = withStyles(styles, {
+  name: "HvVerticalNavigationreeViewItem"
+})(RawTreeViewItem);
 export { TreeViewItem };
 
-export default withStyles(styles, { withTheme: true })(RawTreeView);
+export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(
+  RawTreeView
+);

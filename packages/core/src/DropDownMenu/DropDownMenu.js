@@ -17,8 +17,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import IconButton from "@material-ui/core/IconButton";
+import { ClickAwayListener, IconButton, useTheme } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
@@ -39,7 +38,6 @@ import getPrevNextFocus from "../utils/focusableElementFinder";
  * @constructor
  */
 const DropDownMenu = ({
-  theme,
   icon,
   classes,
   placement,
@@ -56,6 +54,7 @@ const DropDownMenu = ({
   const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
+  const theme = useTheme();
 
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
@@ -103,7 +102,7 @@ const DropDownMenu = ({
   const IconRender = icon || (
     <MoreVert
       boxStyles={{ width: "32px", height: "32px" }}
-      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : undefined]}
+      color={disabled ? "atmo7" : undefined}
     />
   );
 
@@ -164,10 +163,6 @@ const DropDownMenu = ({
 };
 
 DropDownMenu.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Id to be applied to the root node.
    */

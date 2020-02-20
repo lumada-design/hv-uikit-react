@@ -46,7 +46,7 @@ describe("InputAdornment", () => {
       display: "flex",
       flexDirection: "row",
       height: 30,
-      justifyContent:"center"
+      justifyContent: "center"
     },
     adornmentButton: {
       backgroundColor: "transparent",
@@ -68,7 +68,7 @@ describe("InputAdornment", () => {
         margin: "auto"
       }
     }
-  }, {withTheme: true})(InputAdornment);
+  })(InputAdornment);
 
   beforeEach(async () => {
     handleClearMock.mockClear();
@@ -90,12 +90,12 @@ describe("InputAdornment", () => {
   });
 
   it("should call handleClear when mouseDown on the clear button", () => {
-    wrapper.find('button').simulate("mousedown");
+    wrapper.find("button").simulate("mousedown");
     expect(handleClearMock).toHaveBeenCalled();
   });
 
   it("should call handleClear when keydown", () => {
-    wrapper.find('button').simulate("keydown", {keyCode: 13});
+    wrapper.find("button").simulate("keydown", { keyCode: 13 });
     expect(handleClearMock).toHaveBeenCalled();
   });
 
@@ -111,7 +111,7 @@ describe("InputAdornment", () => {
       </HvProvider>
     );
 
-    wrapper.find(StyledInputAdornment).simulate("keydown", {keyCode: 13});
+    wrapper.find(StyledInputAdornment).simulate("keydown", { keyCode: 13 });
     wrapper.find(StyledInputAdornment).simulate("mousedown");
 
     expect(handleClearMock).not.toHaveBeenCalled();

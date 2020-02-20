@@ -28,4 +28,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import ToggleButton from "./ToggleButton";
 
-export default withStyles(styles, { withTheme: true })(ToggleButton);
+export default withStyles(styles, { name: "HvToggleButton" })(ToggleButton);

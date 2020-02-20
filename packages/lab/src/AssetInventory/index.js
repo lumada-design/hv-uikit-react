@@ -20,6 +20,6 @@ import styles from "./styles";
 import AssetInventory from "./AssetInventory";
 
 export default withDeprecate(
-  withStyles(styles, { withTheme: true })(AssetInventory),
+  withStyles(styles)(AssetInventory),
   "This component is deprecated. Please use the Asset Inventory Component in the Core Package"
 );

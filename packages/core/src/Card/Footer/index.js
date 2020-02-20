@@ -19,4 +19,4 @@ import styles from "./styles";
 import Footer from "./Footer";
 import withConfig from "../../config/withConfig";
 
-export default withStyles(styles, { withTheme: true })(withConfig(Footer));
+export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));

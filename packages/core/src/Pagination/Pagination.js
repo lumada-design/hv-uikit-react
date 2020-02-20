@@ -32,7 +32,6 @@ import HvTypography from "../Typography";
 import HvInput from "../Input";
 
 const Pagination = ({
-  theme,
   classes,
   className,
   id,
@@ -75,8 +74,6 @@ const Pagination = ({
     }
   }, [page, pageSize]);
 
-  const disabledColors = [theme.hv.palette.atmosphere.atmo7];
-
   return (
     <div id={internalId} className={classnames(className, classes.root)}>
       <div className={classes.pageSizeOptions}>
@@ -115,7 +112,7 @@ const Pagination = ({
         >
           <ArrowFirst
             className={classes.icon}
-            color={!canPrevious ? disabledColors : null}
+            color={!canPrevious ? "atmo7" : undefined}
           />
         </IconButton>
         <IconButton
@@ -126,7 +123,7 @@ const Pagination = ({
         >
           <ArrowLeft
             className={classes.icon}
-            color={!canPrevious ? disabledColors : null}
+            color={!canPrevious ? "atmo7" : undefined}
           />
         </IconButton>
         <div className={classes.pageInfo}>
@@ -175,7 +172,7 @@ const Pagination = ({
         >
           <ArrowRight
             className={classes.icon}
-            color={!canNext ? disabledColors : null}
+            color={!canNext ? "atmo7" : undefined}
           />
         </IconButton>
         <IconButton
@@ -186,7 +183,7 @@ const Pagination = ({
         >
           <ArrowLast
             className={classes.icon}
-            color={!canNext ? disabledColors : null}
+            color={!canNext ? "atmo7" : undefined}
           />
         </IconButton>
       </div>
@@ -195,10 +192,6 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A JSS Object used to override or extend the styles applied.
    */

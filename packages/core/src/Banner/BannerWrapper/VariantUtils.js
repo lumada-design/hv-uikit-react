@@ -15,23 +15,12 @@
  */
 
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
 
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
-};
-
-const StyledSuccess = withStyles(styles)(Success);
-const StyledError = withStyles(styles)(Error);
-
 export const variantIcon = Object.freeze({
-  success: () => <StyledSuccess iconSize="S" semantic="sema1" />,
-  error: () => <StyledError iconSize="S" semantic="sema4" />
+  success: () => <Success iconSize="S" semantic="sema1" />,
+  error: () => <Error iconSize="S" semantic="sema4" />
 });
 
 export const severityIcon = (severity, theme) => {

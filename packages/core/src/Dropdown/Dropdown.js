@@ -153,7 +153,6 @@ class Dropdown extends React.Component {
     const {
       classes,
       disabled,
-      theme,
       values,
       id,
       labels: propLabels,
@@ -171,7 +170,7 @@ class Dropdown extends React.Component {
 
     const { isOpen, labels, selectionLabel, internalId } = this.state;
 
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    const color = disabled ? "atmo7" : undefined;
 
     return (
       <div
@@ -396,10 +395,6 @@ Dropdown.propTypes = {
    */
   selectDefault: PropTypes.bool,
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
@@ -426,7 +421,6 @@ Dropdown.defaultProps = {
   notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true,
-  theme: null,
   disablePortal: false,
   hasTooltips: false,
   singleSelectionToggle: true

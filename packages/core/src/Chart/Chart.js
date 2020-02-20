@@ -18,6 +18,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
+import { useTheme } from "@material-ui/core";
 import Tooltip from "./Tooltip";
 import {
   setLayout,
@@ -75,7 +76,6 @@ const propsLayoutSetter = (
  */
 const Chart = ({
   classes,
-  theme,
   title,
   subtitle,
   data,
@@ -89,6 +89,7 @@ const Chart = ({
   const [isHover, setIsHover] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [dataTooltip, setDataTooltip] = useState();
+  const theme = useTheme();
 
   // Check if the barchart is horizontal or vertical.
   const isHorizontal = !isNil(data[0].orientation)
@@ -183,10 +184,6 @@ Chart.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.instanceOf(Object),
-  /**
-   * Theme.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * Title of the chart.
    */

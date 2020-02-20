@@ -107,4 +107,4 @@ Loading.defaultProps = {
   classes: {}
 };
 
-export default withStyles(styles, { withTheme: true })(Loading);
+export default withStyles(styles, { name: "HvLoading" })(Loading);

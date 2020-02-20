@@ -229,7 +229,7 @@ describe("<Dropdown />", () => {
       dropdownComponent
         .find("Actions")
         .find("HvButton")
-        .at(1)
+        .at(0)
         .simulate("click", {
           preventDefault() {}
         });

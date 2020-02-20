@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Media from "./Media";
 
-export default withStyles(styles, { withTheme: true })(Media);
+export default withStyles(styles, { name: "HvListViewMedia" })(Media);

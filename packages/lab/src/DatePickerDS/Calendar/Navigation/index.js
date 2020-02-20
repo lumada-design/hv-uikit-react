@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Navigation from "./Navigation";
 
-export default withStyles(styles, { withTheme: true })(Navigation);
+export default withStyles(styles, { name: "HvDatePickerDSNavigation" })(
+  Navigation
+);
