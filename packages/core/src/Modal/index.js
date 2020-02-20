@@ -21,6 +21,9 @@ import ModalTitle from "./ModalTitle";
 import ModalContent from "./ModalContent";
 import ModalActions from "./ModalActions";
 
-
-export default withStyles(styles, { withTheme: true })(Modal);
-export { ModalTitle as HvModalTitle , ModalContent as HvModalContent, ModalActions as HvModalActions};
+export default withStyles(styles, { name: "HvModal" })(Modal);
+export {
+  ModalTitle as HvModalTitle,
+  ModalContent as HvModalContent,
+  ModalActions as HvModalActions
+};

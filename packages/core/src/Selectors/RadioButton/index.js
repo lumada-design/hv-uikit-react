@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import RadioButton from "./RadioButton";
 
-export default withStyles(styles, { withTheme: true })(RadioButton);
+export default withStyles(styles, { name: "HvRadioButton" })(RadioButton);

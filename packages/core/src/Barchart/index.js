@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Barchart from "./Barchart";
 
-export default withStyles(styles, { withTheme: true })(Barchart);
+export default withStyles(styles, { name: "HvBarchart" })(Barchart);

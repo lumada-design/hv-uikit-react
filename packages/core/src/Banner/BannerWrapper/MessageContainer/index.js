@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import MessageContainer from "./MessageContainer";
 
-export default withStyles(styles, { withTheme: true })(MessageContainer);
+export default withStyles(styles, { name: "HvMessageContainer" })(
+  MessageContainer
+);

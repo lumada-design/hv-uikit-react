@@ -19,7 +19,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "../../Pagination/styles";
 import Pagination from "../../Pagination";
 
-export default withStyles(styles, { withTheme: true })(props => (
+export default withStyles(styles, { name: "HvTablePagination" })(props => (
   <Pagination
     {...props}
     rowsSelectorText={props.labels.labelRowsSelector}

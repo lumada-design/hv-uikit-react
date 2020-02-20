@@ -20,6 +20,6 @@ import styles from "./styles";
 import SearchBox from "./SearchBox";
 
 export default withDeprecate(
-  withStyles(styles, { withTheme: true })(SearchBox),
+  withStyles(styles)(SearchBox),
   "This component is deprecated. Please use the Tooltip Component in the Core Package"
 );

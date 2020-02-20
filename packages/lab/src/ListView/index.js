@@ -25,6 +25,6 @@ export { default as HvListItemContent } from "./Content";
 export { default as HvListItemMedia } from "./Media";
 
 export default withDeprecate(
-  withStyles(styles, { withTheme: true })(ListItem),
+  withStyles(styles)(ListItem),
   "This component is deprecated. Please use the List View Component in the Core Package"
 );

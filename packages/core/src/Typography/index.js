@@ -28,4 +28,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Typography from "./Typography";
 
-export default withStyles(styles, { withTheme: true })(Typography);
+export default withStyles(styles, { name: "HvTypography" })(Typography);

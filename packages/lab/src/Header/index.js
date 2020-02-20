@@ -20,6 +20,6 @@ import styles from "./styles";
 import Header from "./Header";
 
 export default withDeprecate(
-  withStyles(styles, { withTheme: true })(Header),
+  withStyles(styles)(Header),
   "This component is deprecated. Please use the Header Component in the Core Package"
 );

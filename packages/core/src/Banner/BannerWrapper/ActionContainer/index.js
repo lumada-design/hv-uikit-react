@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import ActionContainer from "./ActionContainer";
 
-export default withStyles(styles, { withTheme: true })(ActionContainer);
+export default withStyles(styles, { name: "HvActionContainer" })(
+  ActionContainer
+);

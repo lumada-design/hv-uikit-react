@@ -16,6 +16,6 @@
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
-import HvGrid from "./Grid";
+import Grid from "./Grid";
 
-export default withStyles(styles, { withTheme: true })(HvGrid);
+export default withStyles(styles, { name: "HvGrid" })(Grid);

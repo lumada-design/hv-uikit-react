@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import SnackbarContentWrapper from "./SnackbarContentWrapper";
 
-export default withStyles(styles, { withTheme: true })(SnackbarContentWrapper);
+export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(
+  SnackbarContentWrapper
+);

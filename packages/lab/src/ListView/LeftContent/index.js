@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import LeftContent from "./LeftContent";
 
-export default withStyles(styles, { withTheme: true })(LeftContent);
+export default withStyles(styles, { name: "HvListViewLeftContent" })(
+  LeftContent
+);
