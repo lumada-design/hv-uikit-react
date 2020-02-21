@@ -36,6 +36,9 @@ const getPropsMetadata = children => {
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { title, description, designSystemLink } = parameters;
+  
+  if (parameters.options.noAddon) return children;
+
   return (
     <>
       <div className={classNames([classes.header])}>

@@ -62,15 +62,15 @@ const NavigationTemplate = ({ theme }) => {
       <HvHeaderActions>
         {isMdUp && (
           <>
-            <HvButton category="icon" onClick={handleClick}>
+            <HvButton category="icon" onClick={handleClick} aria-label="settings">
               <Settings boxStyles={boxStyles} />
             </HvButton>
-            <HvButton category="icon" onClick={handleClick}>
+            <HvButton category="icon" onClick={handleClick} aria-label="profile">
               <User boxStyles={boxStyles} />
             </HvButton>
           </>
         )}
-        <HvButton category="icon" onClick={handleClick}>
+        <HvButton category="icon" onClick={handleClick} aria-label="alert">
           <HvBadge count={1} icon={<Alert boxStyles={boxStyles} />} />
         </HvButton>
       </HvHeaderActions>

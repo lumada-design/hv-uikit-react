@@ -224,3 +224,6 @@ wait until css attribute not contain
     [Arguments]    ${locator}    ${property}    ${value}
     [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization    
     Wait Until Keyword Succeeds    5x    1s    verify css element property has different value    ${locator}    ${property}    ${value}
+
+restore default windows size 1920 1080
+    Set Window Size    1920    1080    True

@@ -9,10 +9,11 @@ horizontalItem4:           css:li[class*=menubarItem]:nth-child(4)
 verticalItemsLevel1:       css:nav[id^=hv-verticalnavigation]>ul>li
 verticalItemsLevel2:       css:nav[id^=hv-verticalnavigation]>ul>li>ul>li
 verticalItemsLevel3:       css:nav[id^=hv-verticalnavigation]>ul>li>ul>li>ul>li
+verticalItem2:             css:nav>ul>li:nth-child(2)>div
 verticalItem2.3.2:         css:nav>ul>li:nth-child(2)>ul>li:nth-child(3)>ul>li:nth-child(2)
 verticalItems:             css:nav[id^=hv-verticalnavigation]>ul
-verticalSelectedItem:      css:???
+verticalItem4:             css:nav>ul>li:nth-child(4)
 verticalActions:           css:div[id^=hv-verticalnavigation-actions]
 verticalBurger:            css:button[id*=hamburger-button]
 verticalAnchorBar:         css:div[class^=VerticalContainer-anchorBar]
-horizontalSelectedItem:    css:???
+verticalText:              "System\nSCPodF\nCompute\nStorage\nEthernet\nFiber Channel\nAdministration\nRest API\nLicense\nLog Bundle\nRest API\nLicense\nLog Bundle\nAnalytics\nModel Effectiveness\nSummary"
