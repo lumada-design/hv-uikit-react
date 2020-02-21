@@ -152,7 +152,7 @@ class UnitTimePicker extends React.Component {
               [classes.unitTimeInputRootInvalid]: !isValid
             })
           }}
-          inputValue={this.renderTimeUnit()}
+          value={this.renderTimeUnit()}
           onChange={this.handleCurrentValueChange}
           onFocus={this.handleFocusChange}
           onBlur={this.handleFocusChange}

@@ -139,7 +139,7 @@ const Pagination = ({
                 }}
                 onChange={val => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
-                inputValue={`${statePage === "" ? "" : Number(statePage) + 1}`}
+                value={`${statePage === "" ? "" : Number(statePage) + 1}`}
                 onBlur={applyPage}
                 onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
                 validationIconVisible={false}

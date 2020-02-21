@@ -98,14 +98,14 @@ describe("TextArea Component", () => {
 
   //--------------------------
 
-  const getInputInstance = (defaultProps, inputValue) => {
+  const getInputInstance = (defaultProps, value) => {
     wrapper = mount(
       React.createElement(
         props => (
           <HvProvider>
             <TextAreaWithStyles
               classes={{}}
-              value={props.inputValue}
+              value={props.value}
               rows={4}
               initialValue={props.value}
               onChange={props.onChangeMock}
@@ -116,24 +116,24 @@ describe("TextArea Component", () => {
         defaultProps
       )
     );
-    wrapper.setProps({ inputValue });
+    wrapper.setProps({ value });
     wrapper.update();
     const inputInstance = wrapper.find(TextArea).instance();
     return inputInstance;
   };
 
-  it("should save the current value length on change of inputValue", () => {
-    const inputValue = "four";
-    const onChangeMock = jest.fn(() => inputValue);
+  it("should save the current value length on change of value", () => {
+    const value = "four";
+    const onChangeMock = jest.fn(() => value);
     const defaultProps = {
       initialValue: "example",
       onChange: onChangeMock
     };
-    const instance = getInputInstance(defaultProps, inputValue);
+    const instance = getInputInstance(defaultProps, value);
     expect(instance.state.currentValueLength).toBe(4);
   });
 
-  it("should limit the current value length on change of inputValue", () => {
+  it("should limit the current value length on change of value", () => {
     const defaultProps = {
       initialValue: "four",
       maxCharQuantity: 5
