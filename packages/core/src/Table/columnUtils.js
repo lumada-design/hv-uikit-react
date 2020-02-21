@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 
 import AngleDown from "@hv/uikit-react-icons/dist/Generic/Down";
@@ -45,7 +45,7 @@ const markSorted = (column, colSortedSelected) => {
   }
 
   if (column.id === colSortedSelected[0].id) {
-    columnSorted = classNames(columnSorted, "sorted");
+    columnSorted = clsx(columnSorted, "sorted");
   }
 
   if (!isNil(colSortedSelected) && column.id !== colSortedSelected[0].id) {
@@ -85,10 +85,10 @@ const setColumnAlignment = (cellType, classes) => {
   let classToApply;
   switch (cellType) {
     case "alpha-numeric":
-      classToApply = classNames(classes.alphaNumeric, "alphaNumeric");
+      classToApply = clsx(classes.alphaNumeric, "alphaNumeric");
       break;
     case "link":
-      classToApply = classNames(classes.alphaNumeric, "link");
+      classToApply = clsx(classes.alphaNumeric, "link");
       break;
     case "numeric":
       classToApply = classes.numeric;
@@ -108,7 +108,7 @@ const setColumnAlignment = (cellType, classes) => {
  */
 const setHeaderSortableClass = (sortableProp, existingClassNames) => {
   if (!isNil(sortableProp) && sortableProp) {
-    return classNames(existingClassNames, "sortable");
+    return clsx(existingClassNames, "sortable");
   }
   return existingClassNames;
 };
@@ -124,18 +124,28 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
 const createExpanderButton = (columns, subElementTemplate, classes) => {
   const newColumns = columns;
   if (subElementTemplate) {
-    newColumns[0].className = classNames(newColumns[0].className, classes.expand);
+    newColumns[0].className = clsx(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
     newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        <div className={classNames(classes.iconContainer)}>
-          {isExpanded
-            ? (<AngleUp className={classes.separatorContainer} width="10px" height="10px" />)
-            : (<AngleDown className={classes.separatorContainer} width="10px" height="10px" />)}
+        <div className={clsx(classes.iconContainer)}>
+          {isExpanded ? (
+            <AngleUp
+              className={classes.separatorContainer}
+              width="10px"
+              height="10px"
+            />
+          ) : (
+            <AngleDown
+              className={classes.separatorContainer}
+              width="10px"
+              height="10px"
+            />
+          )}
         </div>
 
         <div
-          className={classNames({
+          className={clsx({
             [classes.textContainer]: rest.column.cellType === "alpha-numeric",
             [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
@@ -173,26 +183,26 @@ const appendClassnames = (
   // set the cell content alignment
   const cellTypeClass = setColumnAlignment(col.cellType, classes);
 
-  col.className = classNames(columnSorted, cellTypeClass);
+  col.className = clsx(columnSorted, cellTypeClass);
 
   // setting the className for the column with the expander
   if (col.expander) {
-    col.className = classNames(col.className, "firstExpandable");
+    col.className = clsx(col.className, "firstExpandable");
   }
 
   if ((isNil(column.sortable) && tableSortable) || column.sortable) {
-    col.className = classNames(col.className, "sortable");
+    col.className = clsx(col.className, "sortable");
   }
 
   // checkbox column
   if (col.id === "_selector") {
     const headerClassNames = col.headerClassName;
-    col.headerClassName = classNames("checkBox", headerClassNames);
-    col.className = classNames(col.className, "checkBox");
+    col.headerClassName = clsx("checkBox", headerClassNames);
+    col.className = clsx(col.className, "checkBox");
   } else if (col.id === "secondaryActions") {
     const headerClassNames = col.headerClassName;
-    col.headerClassName = classNames("secondaryAction", headerClassNames);
-    col.className = classNames(col.className, "secondaryAction");
+    col.headerClassName = clsx("secondaryAction", headerClassNames);
+    col.className = clsx(col.className, "secondaryAction");
   }
   // If the cell isn't checkbox and wasn't overwritten a text container should be introduced to the cell
   else if (!col.Cell) {

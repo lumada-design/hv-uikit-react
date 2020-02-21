@@ -18,7 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import uniqueId from "lodash/uniqueId";
-import classNames from "classnames";
+import clsx from "clsx";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
@@ -272,9 +272,7 @@ class Table extends React.Component {
 
     return {
       selectWidth: 32,
-      SelectAllInputComponent: () => (
-        <div className={classNames(classes.checkBox)} />
-      ),
+      SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
       SelectInputComponent: props => (
         <HvCheckBox
           id={`${internalId}-select-${props.id}`}
@@ -334,7 +332,7 @@ class Table extends React.Component {
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
-          : classNames(classes.theadTh, "secondaryAction")
+          : clsx(classes.theadTh, "secondaryAction")
     };
   };
 
@@ -347,7 +345,7 @@ class Table extends React.Component {
     const { classes, data } = this.props;
 
     return {
-      className: classNames(classes.tbody, {
+      className: clsx(classes.tbody, {
         [classes.tBodyEmpty]: data.length === 0
       })
     };
@@ -378,7 +376,7 @@ class Table extends React.Component {
             expanded: { [rowInfo.viewIndex]: !expanded[rowInfo.viewIndex] }
           });
         },
-        className: classNames(classes.tr, classes.pointer)
+        className: clsx(classes.tr, classes.pointer)
       };
     }
 
@@ -387,7 +385,7 @@ class Table extends React.Component {
     if (rowId && selection.includes(rowId)) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, "selected")
+        className: clsx(classes.tr, "selected")
       };
     }
 
@@ -572,10 +570,7 @@ class Table extends React.Component {
     const sanitizedData = this.sanitizedData();
 
     return (
-      <div
-        id={internalId}
-        className={classNames(classes.tableContainer, className)}
-      >
+      <div id={internalId} className={clsx(classes.tableContainer, className)}>
         {labels.titleText && (
           <div className={classes.title}>
             <div>

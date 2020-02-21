@@ -18,7 +18,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
+import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
 import { useTheme, ClickAwayListener, Popper } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
@@ -296,7 +296,7 @@ const List = ({
   const renderInnerRender = () => (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classNames(classes.list, classes.listClosed, {
+      className={clsx(classes.list, classes.listClosed, {
         [classes.listOpenDown]: isOpen && !positionUp,
         [classes.listOpenUp]: isOpen && positionUp
       })}
@@ -305,7 +305,7 @@ const List = ({
       {!positionUp && <div className={classes.listBorderDown} />}
 
       <div
-        className={classNames(classes.rootList, {
+        className={clsx(classes.rootList, {
           [classes.marginTop]: positionUp && showList
         })}
       >

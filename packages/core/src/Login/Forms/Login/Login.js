@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
@@ -204,7 +204,7 @@ class Login extends React.Component {
         </div>
 
         <div
-          className={classNames({
+          className={clsx({
             [classes.buttonsContainerWithRemember]: allowRememberMe,
             [classes.buttonsContainer]: !allowRememberMe
           })}
@@ -219,7 +219,7 @@ class Login extends React.Component {
           <HvButton
             type="submit"
             category="primary"
-            className={classNames(classes.button, classes.sentenceCase)}
+            className={clsx(classes.button, classes.sentenceCase)}
             disabled={isLoading || isLogging}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}

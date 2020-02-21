@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogContent from "@material-ui/core/DialogContent";
-import classNames from "classnames";
+import clsx from "clsx";
 import HvTypography from "../../Typography";
 
 /**
@@ -34,13 +34,9 @@ const ModalContent = ({ classes, className, children }) => {
 
   return (
     <MuiDialogContent
-      className={classNames(
-        classes.root,
-        {
-          [classes.textContent]: isString
-        },
-        className
-      )}
+      className={clsx(className, classes.root, {
+        [classes.textContent]: isString
+      })}
     >
       {!isString && children}
       {isString && <HvTypography variant="normalText">{children}</HvTypography>}

@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
+import clsx from "clsx";
 import HvTypography from "../Typography";
 import Input from "../Input";
 
@@ -152,7 +152,7 @@ class HvTextArea extends React.Component {
           <Input
             classes={{
               container: classes.container,
-              input: classNames(classes.input, {
+              input: clsx(classes.input, {
                 [classes.resize]: !disabled && resizable,
                 [classes.defaultWith]: !resizable
               }),
@@ -177,7 +177,7 @@ class HvTextArea extends React.Component {
           {maxCharQuantity ? (
             <div className={classes.characterCounter}>
               <HvTypography
-                className={classNames(classes.inline, {
+                className={clsx(classes.inline, {
                   [classes.currentCounter]: !disabled,
                   [classes.disabled]: disabled
                 })}
@@ -186,7 +186,7 @@ class HvTextArea extends React.Component {
                 {currentValueLength}
               </HvTypography>
               <HvTypography
-                className={classNames(classes.inline, classes.separator, {
+                className={clsx(classes.inline, classes.separator, {
                   [classes.maxCharacter]: !disabled,
                   [classes.disabled]: disabled
                 })}
@@ -195,7 +195,7 @@ class HvTextArea extends React.Component {
                 /
               </HvTypography>
               <HvTypography
-                className={classNames(classes.inline, {
+                className={clsx(classes.inline, {
                   [classes.maxCharacter]: !disabled,
                   [classes.disabled]: disabled
                 })}

@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import HvTypography from "../../../Typography";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
@@ -127,10 +127,10 @@ class Recovery extends React.Component {
         </div>
 
         <div
-          className={classNames(
-            { [classes.buttonsContainer]: recoverStatus !== "error" },
-            { [classes.buttonsContainerError]: recoverStatus === "error" }
-          )}
+          className={clsx({
+            [classes.buttonsContainer]: recoverStatus !== "error",
+            [classes.buttonsContainerError]: recoverStatus === "error"
+          })}
         >
           <HvButton
             className={classes.submitButton}

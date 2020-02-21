@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 import CardHeader from "@material-ui/core/CardHeader";
 
@@ -42,7 +42,7 @@ const Header = ({
   <CardHeader
     id={id || uniqueId(DEFAULT_ID)}
     title={headerTitle}
-    className={classNames(classes.root, className)}
+    className={clsx(classes.root, className)}
     subheader={subheader}
     action={icon}
     classes={{

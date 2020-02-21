@@ -24,7 +24,7 @@ import React, {
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import classNames from "classnames";
+import clsx from "clsx";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
 import Button from "../../Button";
@@ -101,16 +101,18 @@ const VerticalContainer = ({
    */
   const handlerKeyContainer = useCallback(
     event => {
-      if(closeOnExit) {
+      if (closeOnExit) {
         if (
           isKeypress(event, KeyboardCodes.Tab) &&
           !isNil(event.target) &&
-          !isNil(focusableList.current) && !isNil(focusableList.current.first)
+          !isNil(focusableList.current) &&
+          !isNil(focusableList.current.first)
         ) {
           if (
             (event.shiftKey &&
               event.target.id === focusableList.current.first.id) ||
-            (!event.shiftKey && event.target.id === focusableList.current.last.id)
+            (!event.shiftKey &&
+              event.target.id === focusableList.current.last.id)
           ) {
             toggleOpen(false);
           }
@@ -176,17 +178,13 @@ const VerticalContainer = ({
 
   return (
     <div
-      className={classNames([
-        classes.root,
-        {
-          [classes.withAnchorBar]: isAnchorBarVisible,
-          [classes.static]: position === "static",
-          [classes.relative]: position === "relative",
-          [classes.fixed]: position === "fixed",
-          [classes.absolute]: position === "absolute"
-        },
-        className
-      ])}
+      className={clsx(className, classes.root, {
+        [classes.withAnchorBar]: isAnchorBarVisible,
+        [classes.static]: position === "static",
+        [classes.relative]: position === "relative",
+        [classes.fixed]: position === "fixed",
+        [classes.absolute]: position === "absolute"
+      })}
     >
       <ClickAwayListener onClickAway={() => closeOnExit && toggleOpen(false)}>
         <div id={`${internalId}`} className={classes.verticalContainer}>
@@ -260,12 +258,7 @@ VerticalContainer.propTypes = {
   /**
    * Position of the component.
    */
-  position: PropTypes.oneOf([
-    "static",
-    "relative",
-    "fixed",
-    "absolute"
-  ]),
+  position: PropTypes.oneOf(["static", "relative", "fixed", "absolute"]),
 
   /**
    * Defines if a anchor bar is visible,

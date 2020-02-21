@@ -15,7 +15,7 @@
  */
 
 import React, { useContext } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
@@ -60,11 +60,9 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       id={uniqueId}
       key={item.label}
       role="none"
-      className={classNames(
-        classes.root,
-        classes[`${type}Item`],
-        isSelected ? classes.selectedItem : undefined
-      )}
+      className={clsx(classes.root, classes[`${type}Item`], {
+        [classes.selectedItem]: isSelected
+      })}
     >
       <div
         role="button"

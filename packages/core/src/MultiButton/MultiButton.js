@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import { map, filter } from "lodash";
 import HvButton from "../Button";
 
@@ -120,9 +120,7 @@ class MultiButton extends React.Component {
         btnStruct = (
           <>
             {button.icon}
-            <div
-              className={classNames(classes.labelText, classes.labelPadding)}
-            >
+            <div className={clsx(classes.labelText, classes.labelPadding)}>
               {button.value}
             </div>
           </>
@@ -139,16 +137,11 @@ class MultiButton extends React.Component {
           key={`btnkey_${idx + 1}`}
           id={button.id}
           onClick={e => this.handleClick(e, idx)}
-          className={classNames(
-            classes.btnBase,
-            classes.btnSecondary,
-            {
-              [classes.iconWidth]: type === "icon",
-              [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
-              [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
-            },
-            className
-          )}
+          className={clsx(className, classes.btnBase, classes.btnSecondary, {
+            [classes.iconWidth]: type === "icon",
+            [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
+            [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
+          })}
           category={button.selected ? "secondary" : "ghost"}
         >
           {generateBtnContents(type, button)}
@@ -158,7 +151,7 @@ class MultiButton extends React.Component {
 
     return (
       <div
-        className={classNames(classes.root, {
+        className={clsx(classes.root, {
           [classes.rootVertical]: vertical
         })}
       >

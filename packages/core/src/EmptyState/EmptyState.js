@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import isString from "lodash/isString";
 import PropTypes from "prop-types";
 import HvTypography from "../Typography";
@@ -39,7 +39,7 @@ const HvEmptyState = ({
 }) => (
   <div className={classes.root}>
     <div
-      className={classNames(classes.container, {
+      className={clsx(classes.container, {
         [classes.containerMessageOnly]: message && !title && !action
       })}
     >

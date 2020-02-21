@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
@@ -176,7 +176,7 @@ class Dropdown extends React.Component {
       <div
         id={`${internalId}-header`}
         aria-labelledby={labels.title ? `${internalId}-label` : undefined}
-        className={classNames(classes.header, {
+        className={clsx(classes.header, {
           [classes.headerDisabled]: disabled
         })}
         onKeyDown={evt => this.handleToggle(evt)}
@@ -188,7 +188,7 @@ class Dropdown extends React.Component {
       >
         <HvTypography
           variant="normalText"
-          className={classNames(classes.selection, classes.truncate, {
+          className={clsx(classes.selection, classes.truncate, {
             [classes.selectionDisabled]: disabled
           })}
         >
@@ -256,7 +256,7 @@ class Dropdown extends React.Component {
           ref={el => {
             this.node = el;
           }}
-          className={classNames(classes.root, className, {
+          className={clsx(classes.root, className, {
             [classes.rootDisabled]: disabled,
             [classes.rootActive]: isOpen
           })}

@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import {
   ClickAwayListener,
   IconButton,
@@ -120,7 +120,7 @@ const DropDownMenu = ({
         aria-expanded={open ? true : undefined}
         onClick={handleToggle}
         onKeyDown={handleKeyboardToggle}
-        className={classNames(classes.icon, {
+        className={clsx(classes.icon, {
           [classes.iconSelected]: open
         })}
         disabled={disabled}

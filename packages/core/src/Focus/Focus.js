@@ -16,7 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
@@ -201,7 +201,7 @@ const Focus = props => {
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
-        className: classNames(children.props.className, classes.root, {
+        className: clsx(children.props.className, classes.root, {
           [classes.selected]: selected,
           [classes.disabled]: disabled,
           [classes.focusDisabled]: focusDisabled

@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
@@ -60,7 +60,7 @@ const InputAdornment = ({
           aria-controls={inputId || undefined}
           aria-label={clearButtonLabel}
           title={clearButtonLabel}
-          className={classNames(classes.adornmentButton, classes.iconClear)}
+          className={clsx(classes.adornmentButton, classes.iconClear)}
           onMouseDown={handleClear}
           onKeyDown={e => onKeyDownClear(e, handleClear)}
         >
@@ -71,7 +71,7 @@ const InputAdornment = ({
       {(showValidationIcon && renderValidationIcon(validationState)) ||
         (customFixedIcon &&
           React.cloneElement(customFixedIcon, {
-            className: classNames(classes.icon, customFixedIcon.props.className)
+            className: clsx(classes.icon, customFixedIcon.props.className)
           }))}
     </div>
   );

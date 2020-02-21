@@ -17,7 +17,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import classNames from "classnames";
+import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 
 const DEFAULT_ID_PREFIX = "hv-toggle-button-";
@@ -92,7 +92,7 @@ const ToggleButton = ({
   return (
     <div
       id={internalId}
-      className={classNames(className, classes.root, {
+      className={clsx(className, classes.root, {
         [classes.disabled]: disabled
       })}
       role="button"
@@ -103,7 +103,7 @@ const ToggleButton = ({
       title={title}
       {...other}
     >
-      <Icon className={classNames(classes.icon, { [classSvg]: animated })} />
+      <Icon className={clsx(classes.icon, { [classSvg]: animated })} />
     </div>
   );
 };

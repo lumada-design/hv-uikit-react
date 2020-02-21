@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
@@ -115,7 +115,7 @@ class List extends React.Component {
         label={selectionLabel}
         onChange={() => this.handleSelectAll()}
         classes={{ container: classes.selectorContainer }}
-        className={classNames([classes.selectAll])}
+        className={clsx([classes.selectAll])}
         indeterminate={!allSelected && anySelected}
         checked={allSelected}
       />
@@ -153,7 +153,7 @@ class List extends React.Component {
           aria-selected={multiSelect || selected ? selected : undefined}
           onClick={evt => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
-          className={classNames(classes.listItem, {
+          className={clsx(classes.listItem, {
             [classes.selected]: item.selected && !useSelector,
             [classes.condensed]: condensed,
             [classes.selector]: useSelector,
@@ -237,7 +237,7 @@ class List extends React.Component {
     return (
       <HvTypography
         variant={item.selected ? "selectedText" : "normalText"}
-        className={classNames(classes.label, classes.truncate, {
+        className={clsx(classes.label, classes.truncate, {
           [classes.selected]: item.selected,
           [classes.textDisabled]: item.disabled,
           [classes.labelIconLeftPadding]: item.iconCallback,

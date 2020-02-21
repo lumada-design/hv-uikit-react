@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classnames from "classnames";
+import clsx from "clsx";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
@@ -53,7 +53,7 @@ const ListView = ({
   <Grid container justify="center" alignContent="stretch">
     <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
       <table
-        className={classnames(className, classes.root)}
+        className={clsx(className, classes.root)}
         cellSpacing={cellSpacing}
         id={id}
         {...other}

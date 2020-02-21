@@ -33,7 +33,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import classNames from "classnames";
+import clsx from "clsx";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
 
@@ -188,7 +188,7 @@ class Header extends React.Component {
         )}
         <div
           id={`${id}-header`}
-          className={classNames(classes.background, {
+          className={clsx(classes.background, {
             [classes.invalid]: isInvalid
           })}
         >

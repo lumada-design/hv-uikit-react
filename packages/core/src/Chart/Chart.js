@@ -17,7 +17,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
+import clsx from "clsx";
 import { useTheme } from "@material-ui/core";
 import Tooltip from "./Tooltip";
 import {
@@ -161,7 +161,7 @@ const Chart = ({
           </div>
         </div>
         <div
-          className={classNames({ [classes.paddingTop]: title })}
+          className={clsx({ [classes.paddingTop]: title })}
           onMouseMove={e => onMouseMove(e)}
         >
           <Plot

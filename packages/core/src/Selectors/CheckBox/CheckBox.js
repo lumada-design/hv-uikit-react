@@ -22,7 +22,7 @@ import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxChec
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import classNames from "classnames";
+import clsx from "clsx";
 import labelPositions from "../labelPositions";
 
 /**
@@ -37,9 +37,9 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
     switch (labelPosition) {
       default:
       case labelPositions.end:
-        return classNames(classes.container, classes.labelEnd);
+        return clsx(classes.container, classes.labelEnd);
       case labelPositions.start:
-        return classNames(classes.container, classes.labelStart);
+        return clsx(classes.container, classes.labelStart);
     }
   }
   return classes.container;
@@ -104,7 +104,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, className, {
+      className={clsx(labelClass, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       id={internalId}

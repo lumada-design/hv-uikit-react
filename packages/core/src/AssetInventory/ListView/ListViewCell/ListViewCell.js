@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 
@@ -44,7 +44,7 @@ const cell = (
       : undefined;
   return (
     <td
-      className={classNames(className, classes.root, {
+      className={clsx(className, classes.root, {
         [classes.semanticBar]: semantic,
         [classes[semantic]]: semantic
       })}

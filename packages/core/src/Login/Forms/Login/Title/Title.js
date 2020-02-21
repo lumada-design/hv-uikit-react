@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import HvTypography from "../../../../Typography";
 
 /**
@@ -47,7 +47,7 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
 
       <HvTypography
         variant="mTitle"
-        className={classNames(classes.root, {
+        className={clsx(classes.root, {
           [classes.titleNoLogoComponent]: !logoComponent
         })}
       >

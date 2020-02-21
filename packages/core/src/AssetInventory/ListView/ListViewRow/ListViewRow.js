@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
 import HvCheckbox from "../../../Selectors/CheckBox";
@@ -111,7 +111,7 @@ const row = (
     <tr
       id={id}
       key={id}
-      className={classNames(className, classes.root, {
+      className={clsx(className, classes.root, {
         [classes.selectable]: renderSelectCell,
         [classes.selected]: checkboxSelected,
         [classes.notSelectable]: !renderSelectCell

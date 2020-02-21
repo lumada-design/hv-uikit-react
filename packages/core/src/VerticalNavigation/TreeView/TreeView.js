@@ -22,7 +22,7 @@ import React, {
   useCallback
 } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import useUniqueId from "../../useUniqueId";
 
@@ -568,7 +568,7 @@ const TreeView = props => {
         <ul
           id={internalId}
           role={treeviewMode ? "tree" : undefined}
-          className={classNames(classes.root, className)}
+          className={clsx(classes.root, className)}
           {...other}
         >
           {children}

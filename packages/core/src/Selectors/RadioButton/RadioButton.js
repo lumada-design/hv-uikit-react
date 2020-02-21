@@ -21,7 +21,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
 import Radio from "@material-ui/core/Radio";
-import classNames from "classnames";
+import clsx from "clsx";
 import labelPositions from "../labelPositions";
 
 /**
@@ -36,9 +36,9 @@ const getLabelStyles = (classes, labelPosition, label) => {
     switch (labelPosition) {
       default:
       case labelPositions.end:
-        return classNames(classes.container, classes.labelEnd);
+        return clsx(classes.container, classes.labelEnd);
       case labelPositions.start:
-        return classNames(classes.container, classes.labelStart);
+        return clsx(classes.container, classes.labelStart);
     }
   }
   return classes.container;
@@ -100,7 +100,7 @@ const HvRadio = props => {
       label={label}
       labelPlacement={labelPlacement}
       id={internalId}
-      className={classNames(labelStyles, className, {
+      className={clsx(labelStyles, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       classes={{

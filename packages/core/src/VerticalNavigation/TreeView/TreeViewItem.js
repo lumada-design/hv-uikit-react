@@ -21,7 +21,7 @@ import React, {
   useEffect,
   useCallback
 } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import useUniqueId from "../../useUniqueId";
@@ -342,7 +342,7 @@ const TreeViewItem = props => {
     <li
       ref={listItemRef}
       id={internalId}
-      className={classNames(classes.node, className, {
+      className={clsx(classes.node, className, {
         [classes.disabled]: disabled,
         [classes.collapsed]: expandable && !expanded,
         [classes.expanded]: expandable && expanded,

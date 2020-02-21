@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import Input from "@hv/uikit-react-core/dist/Input";
 import AddTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
 import SubtractTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
@@ -148,7 +148,7 @@ class UnitTimePicker extends React.Component {
           classes={{
             input: classes.unitTimeInput,
             container: classes.inputContainer,
-            inputRoot: classNames(classes.unitTimeInputRoot, {
+            inputRoot: clsx(classes.unitTimeInputRoot, {
               [classes.unitTimeInputRootInvalid]: !isValid
             })
           }}

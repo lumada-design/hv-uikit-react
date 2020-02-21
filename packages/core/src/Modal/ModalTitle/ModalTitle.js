@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import classNames from "classnames";
+import clsx from "clsx";
 import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 
@@ -55,13 +55,13 @@ const ModalTitle = ({
 
   return (
     <MuiDialogTitle
-      className={classNames(classes.root, className)}
+      className={clsx(classes.root, className)}
       disableTypography
       {...others}
     >
       <div className={classes.messageContainer}>
         {icon}
-        <div className={classNames({ [classes.textWithIcon]: icon })}>
+        <div className={clsx({ [classes.textWithIcon]: icon })}>
           {!isString && children}
           {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>

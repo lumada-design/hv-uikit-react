@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
@@ -65,7 +65,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
           message: classes.message,
           action: classes.action
         }}
-        className={classNames(classes[variant], classes.baseVariant)}
+        className={clsx(classes[variant], classes.baseVariant)}
         message={
           <MessageContainer
             id={id}

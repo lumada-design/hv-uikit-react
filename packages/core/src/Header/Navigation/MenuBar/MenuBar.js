@@ -15,7 +15,7 @@
  */
 
 import React, { useContext } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import useUniqueId from "../../../useUniqueId";
 import { FocusContext } from "../utils/FocusContext";
@@ -38,16 +38,14 @@ const MenuBar = ({ classes, id, data, onClick, type }) => {
 
   return (
     <div
-      className={classNames(
-        classes.root,
-        classes[`${type}`],
-        isMenu ? classes.hidden : undefined,
-        isActive ? classes.active : undefined
-      )}
+      className={clsx(classes.root, classes[`${type}`], {
+        [classes.hidden]: isMenu,
+        [classes.active]: isActive
+      })}
     >
       <ul
         id={uniqueId}
-        className={classNames(classes.list)}
+        className={classes.list}
         onMouseOver={handleMouseOver}
         onFocus={() => {}}
       >

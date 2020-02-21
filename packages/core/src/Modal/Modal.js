@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
@@ -61,7 +61,7 @@ const Main = ({
 
   return (
     <Dialog
-      className={classNames(classes.root, className)}
+      className={clsx(classes.root, className)}
       id={internalId}
       open={open}
       PaperProps={{

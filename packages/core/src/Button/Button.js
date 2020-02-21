@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import Button from "@material-ui/core/Button";
 import getMaterialConfiguration from "./materialConfigurarion";
 
@@ -80,7 +80,7 @@ const HvButton = props => {
 
   return (
     <Button
-      className={classNames(className, {
+      className={clsx(className, {
         [classes.rootIcon]: category === "icon"
       })}
       id={id}

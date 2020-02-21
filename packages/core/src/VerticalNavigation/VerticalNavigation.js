@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import useUniqueId from "../useUniqueId";
 import VerticalContainer from "./VerticalContainer";
 
@@ -47,7 +47,7 @@ const VerticalNavigation = props => {
     >
       <div
         id={internalId}
-        className={classNames(classes.root, {
+        className={clsx(classes.root, {
           [classes.noCollapsable]: !isCollapsable
         })}
       >

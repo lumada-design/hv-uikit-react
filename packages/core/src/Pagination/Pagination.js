@@ -16,7 +16,7 @@
 
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 import IconButton from "@material-ui/core/IconButton";
 import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
@@ -75,7 +75,7 @@ const Pagination = ({
   }, [page, pageSize]);
 
   return (
-    <div id={internalId} className={classnames(className, classes.root)}>
+    <div id={internalId} className={clsx(className, classes.root)}>
       <div className={classes.pageSizeOptions}>
         {showPageSizeOptions && (
           <>

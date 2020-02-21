@@ -16,7 +16,7 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import moment from "moment/moment";
 
 export default class Notification extends Component {
@@ -47,26 +47,16 @@ export default class Notification extends Component {
     } = this.props;
 
     return (
-      <div className={classNames([classes.root, { [classes.read]: isRead }])}>
+      <div className={clsx(classes.root, { [classes.read]: isRead })}>
         <div className={classes.iconContainer}>{icon}</div>
         <div>
-          <div
-            className={classNames([classes.title, { [classes.read]: isRead }])}
-          >
+          <div className={clsx(classes.title, { [classes.read]: isRead })}>
             {title}
           </div>
           <div
-            className={classNames([
-              classes.timeContainer,
-              { [classes.read]: isRead }
-            ])}
+            className={clsx(classes.timeContainer, { [classes.read]: isRead })}
           >
-            <div
-              className={classNames([
-                classes.bullet,
-                { [classes.hide]: isRead }
-              ])}
-            />
+            <div className={clsx(classes.bullet, { [classes.hide]: isRead })} />
             <div className={classes.time}>{this.getTime()}</div>
           </div>
         </div>

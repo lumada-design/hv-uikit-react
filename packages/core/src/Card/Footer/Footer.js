@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import CardActions from "@material-ui/core/CardActions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Actions from "../../Actions";
@@ -57,7 +57,7 @@ const Footer = ({
   actionItemWidth,
   ...other
 }) => (
-  <CardActions className={classNames(classes.root, className)} {...other}>
+  <CardActions className={clsx(classes.root, className)} {...other}>
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox

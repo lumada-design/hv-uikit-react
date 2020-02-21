@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes, { oneOfType } from "prop-types";
 import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
@@ -154,7 +154,7 @@ const Main = ({
     <>
       <Focus strategy="card" useFalseFocus>
         <div
-          className={classNames(classes.upperArea, {
+          className={clsx(classes.upperArea, {
             [classes.upperAreaSelectable]: cardButtonProps.tabIndex
           })}
           {...cardButtonProps}
@@ -219,14 +219,14 @@ const Main = ({
     <>
       <div className={classes.semanticContainer}>
         <div
-          className={classNames({
+          className={clsx({
             [classes[semantic]]: semantic,
             [classes.semanticSelected]: selected
           })}
         />
       </div>
       <Card
-        className={classNames(classes.root, classes.borderTop, className, {
+        className={clsx(classes.root, classes.borderTop, className, {
           [classes.selectable]: isSelectable,
           [classes.rootSelected]: selected,
           [classes.selected]: selected

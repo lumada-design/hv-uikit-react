@@ -16,7 +16,7 @@
 
 import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 
@@ -53,7 +53,7 @@ const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
       component="div"
       variant="normalText"
       role="button"
-      className={classNames(classes.action, { [classes.noIcon]: !icon })}
+      className={clsx(classes.action, { [classes.noIcon]: !icon })}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={onClick}

@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import CardContent from "@material-ui/core/CardContent";
 import uniqueId from "lodash/uniqueId";
 
@@ -36,7 +36,7 @@ const Content = ({
 }) => (
   <CardContent
     id={id || uniqueId(DEFAULT_ID)}
-    className={classNames(classes.content, className)}
+    className={clsx(classes.content, className)}
     onClick={onClickAction}
     {...others}
   >
