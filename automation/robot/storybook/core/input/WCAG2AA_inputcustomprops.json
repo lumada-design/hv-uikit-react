@@ -13,7 +13,7 @@
         "code": "color-contrast",
         "type": "error",
         "typeCode": 1,
-        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI)",
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.5/color-contrast?application=axeAPI)",
         "context": "<p id=\"hv-input-1-description\" class=\"Component-infoText-190 Component-baseFontFamily-194 Component-margin-195 HvInput-infoText-163\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
         "selector": "#hv-input-1-description",
         "runner": "axe",
@@ -21,7 +21,7 @@
             "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
             "impact": "serious",
             "help": "Elements must have sufficient color contrast",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/color-contrast?application=axeAPI"
         }
     }
 ]

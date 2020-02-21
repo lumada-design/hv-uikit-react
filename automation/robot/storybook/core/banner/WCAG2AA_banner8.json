@@ -73,7 +73,7 @@
         "code": "button-name",
         "type": "error",
         "typeCode": 1,
-        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
+        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI)",
         "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
         "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > div",
         "runner": "axe",
@@ -81,14 +81,14 @@
             "description": "Ensures buttons have discernible text",
             "impact": "critical",
             "help": "Buttons must have discernible text",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI"
         }
     },
     {
         "code": "duplicate-id-active",
         "type": "error",
         "typeCode": 1,
-        "message": "IDs of active elements must be unique (https://dequeuniversity.com/rules/axe/3.4/duplicate-id-active?application=axeAPI)",
+        "message": "IDs of active elements must be unique (https://dequeuniversity.com/rules/axe/3.5/duplicate-id-active?application=axeAPI)",
         "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-text-24 MuiButton-textPrimary-25 HvButton-semantic-19 MuiButton-flat-27 MuiButton-flatPrimary-28 Actions-button-261\" tabindex=\"0\" type=\"button\" id=\"null-0-action-action1...",
         "selector": "#null-0-action-action1",
         "runner": "axe",
@@ -96,7 +96,7 @@
             "description": "Ensures every id attribute value of active elements is unique",
             "impact": "serious",
             "help": "IDs of active elements must be unique",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/duplicate-id-active?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/duplicate-id-active?application=axeAPI"
         }
     }
 ]

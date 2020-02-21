@@ -13,7 +13,7 @@
         "code": "aria-required-children",
         "type": "error",
         "typeCode": 1,
-        "message": "Certain ARIA roles must contain particular children (https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=axeAPI)",
+        "message": "Certain ARIA roles must contain particular children (https://dequeuniversity.com/rules/axe/3.5/aria-required-children?application=axeAPI)",
         "context": "<div id=\"dropdown9-header\" aria-expanded=\"false\" class=\"\" role=\"combobox\" tabindex=\"0\" aria-label=\"text\"><p class=\"Component-normalText-...</div>",
         "selector": "#dropdown9-header",
         "runner": "axe",
@@ -21,7 +21,7 @@
             "description": "Ensures elements with an ARIA role that require child roles contain them",
             "impact": "critical",
             "help": "Certain ARIA roles must contain particular children",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/aria-required-children?application=axeAPI"
         }
     }
 ]
