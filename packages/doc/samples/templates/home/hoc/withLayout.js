@@ -41,7 +41,7 @@ const findLeaf = item => {
 
 const findFirstChildByParentId = (data = [], id) => {
   const parent = findById(data, id);
-  return parent && parent.data && findLeaf(parent.data[0]).id;
+  return (parent && parent.data && findLeaf(parent.data[0]).id) || id;
 };
 
 const navigationDepth = arr =>
@@ -90,6 +90,8 @@ const withLayout = (
     };
 
     const onVerticalSelection = id => {
+      const horizontalSelection = id.split("-");
+      if (horizontalSelection) setHeaderSelection(horizontalSelection[0]);
       setVerticalSelection(id);
     };
 
