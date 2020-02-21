@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,60 +16,41 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import isNil from "lodash/isNil";
+import useUniqueId from "../../useUniqueId";
 
-/**
- * Action container. The component receives (itemAction) an array of components to be render.
- * The recommended number of components is 3. Above that, the actions should be a dropdown component
- * with the remaining actions.
- *
- * @param classes
- * @param userExists
- * @param itemActions
- * @returns {*}
- * @constructor
- */
-const Actions = ({ classes, userExists, itemActions }) => {
-  let nItemActions = itemActions;
-  if (isNil(nItemActions)) {
-    nItemActions = [];
-  }
+const Actions = ({ classes, id, children }) => {
+  const uniqueId = useUniqueId(id, "hv-actions-");
+
   return (
-    <div
-      className={classNames(classes.actionsContainer, {
-        [classes.marginLeft]: !userExists
-      })}
-    >
-      {nItemActions.map((child, i) => {
-        const key = `action_${i}`;
-        return (
-          <div className={classes.iconContainer} key={key}>
-            {child}
-          </div>
-        );
-      })}
+    <div id={uniqueId} className={classes.root}>
+      {children}
     </div>
   );
 };
+
 Actions.propTypes = {
   /**
-   * A Jss Object used to override or extend the component styles.
+   * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string
+  }).isRequired,
   /**
-   * Checks if the user container exist, to create a separation.
+   * Id to be applied to the root node.
    */
-  userExists: PropTypes.bool,
+  id: PropTypes.string,
   /**
-   * Array with the components to be render.
+   * Node to be rendered.
    */
-  itemActions: PropTypes.arrayOf(PropTypes.element)
+  children: PropTypes.node
 };
 
 Actions.defaultProps = {
-  itemActions: [],
-  userExists: false
+  id: undefined,
+  children: null
 };
 
 export default Actions;

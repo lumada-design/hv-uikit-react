@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    width: "320px",
-    "& > :only-child": {
-      padding: `${theme.hv.spacing.sm}px`
-    },
-    "& > :not(:first-child)": {
-      borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-      padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`
-    },
-    "& > :first-child:not(:last-child)": {
-      padding: `${theme.hv.spacing.sm}px  ${theme.hv.spacing.sm}px  ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px `
-    }
-  }
-});
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Actions from "@hv/uikit-react-core/dist/VerticalNavigation/Actions";
 
-export default styles;
+storiesOf("Components/Navigation System/Vertical Navigation", module).add(
+  "Actions",
+  () => <Actions />,
+  {
+    title: "Actions",
+    description:
+      "Component of the vertical navigation, acting as a container for action content.",
+    usage:
+      "import Actions from '@hv/uikit-react-core/dist/VerticalNavigation/Actions'"
+  }
+);

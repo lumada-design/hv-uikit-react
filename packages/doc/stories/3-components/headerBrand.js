@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Hitachi Vantara Corporation
+ * Copyright 2019 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    display: "flex",
-    alignItems: "center",
-    marginLeft: "auto",
-    "& > *": {
-      marginLeft: `${theme.hv.spacing.xs}px`
-    }
-  }
-});
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import HvHeaderBrand from "@hv/uikit-react-core/dist/Header/Brand";
 
-export default styles;
+storiesOf("Components/Navigation System/Horizontal Navigation", module).add(
+  "Brand",
+  () => <HvHeaderBrand />,
+  {
+    title: "Brand",
+    description: "Component of the header, responsible for presenting brand content.",
+    usage:
+      "import HvHeaderBrand from '@hv/uikit-react-core/dist/Header/Brand'"
+  }
+);

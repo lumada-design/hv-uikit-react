@@ -1,181 +1,135 @@
+/*
+ * Copyright 2020 Hitachi Vantara Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import React, { useState } from "react";
-import HvHeader from "@hv/uikit-react-core/dist/Header";
-import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import HelpIcon from "@hv/uikit-react-icons/dist/Generic/Help";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
-import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
-import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
-import Hitachi from "./resources/hitachi";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { withTheme } from "@material-ui/core/styles";
+import HvHeader, {
+  HvHeaderBrand,
+  HvHeaderActions,
+  HvHeaderNavigation
+} from "@hv/uikit-react-core/dist/Header";
+import HvButton from "@hv/uikit-react-core/dist/Button";
+import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
+import User from "@hv/uikit-react-icons/dist/Generic/User";
+import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
+import HitachiLogo from "./assets/HitachiLogo";
 
-const iconBox = { width: 32, height: 32 };
-
-const responsivenessConfig = {
-  showHbMenus: "md",
-  showNavigation: "lg",
-  showUser: "md",
-  showActions: "md",
-  centerAlignElement: "xs"
+const boxStyles = {
+  width: 32,
+  height: 32
 };
 
-const navigationData = {
-  showSearch: true,
-  data: [
-    {
-      label: "Overview",
-      iconCallback: ({ isSelected }) => (
-        <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      ),
-      path: "/"
-    },
-    {
-      label: "Events",
-      iconCallback: ({ isSelected }) => (
-        <CalendarIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      ),
-      path: "/events"
-    },
-    {
-      label: "Work orders",
-      path: "/work",
-      iconCallback: ({ isSelected }) => (
-        <CalendarIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      )
-    },
-    {
-      label: "Asset",
-      iconCallback: ({ isSelected }) => (
-        <PlaneIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      ),
-      path: "/asset"
-    },
-    {
-      label: "Analytics",
-      iconCallback: ({ isSelected }) => (
-        <LineChartIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      ),
-      showNavIcon: true,
-      subData: {
-        data: [
-          {
-            label: "Model Effectiveness",
-            iconCallback: ({ isSelected }) => (
-              <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-            ),
-            path: "/meffectiveness"
-          },
-          {
-            label: "Trend analysis",
-            iconCallback: ({ isSelected }) => (
-              <CalendarIcon
-                boxStyles={iconBox}
-                color={[isSelected && "atmo1"]}
-              />
-            ),
-            path: "/tAnalysis"
-          }
-        ]
-      }
-    },
-    {
-      label: "Resources",
-      iconCallback: ({ isSelected }) => (
-        <PlaneIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-      ),
-      path: "/Resources"
-    }
-  ]
-};
-
-const actionValues = [
+const navigationData = [
   {
-    label: "Profile",
-    iconCallback: ({ isSelected }) => (
-      <UserIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-    ),
-    horizontalItemAction: (
-      <UserIcon
-        style={{ cursor: "pointer" }}
-        boxStyles={iconBox}
-        onClick={() => console.log("Profile")}
-      />
-    ),
-    onVerticalClick: () => console.log("Profile"),
-    path: "route3"
+    id: "1",
+    label: "Overview",
+    data: [
+      {
+        id: "1-1",
+        label: "Model Effectiveness 1"
+      },
+      {
+        id: "1-2",
+        label: "Trend Analysis 1-2"
+      }
+    ]
   },
   {
-    label: "Help",
-    iconCallback: ({ isSelected }) => (
-      <HelpIcon boxStyles={iconBox} color={[isSelected && "atmo1"]} />
-    ),
-    horizontalItemAction: (
-      <HelpIcon
-        style={{ cursor: "pointer" }}
-        boxStyles={iconBox}
-        onClick={() => console.log("Help")}
-      />
-    ),
-    onVerticalClick: () => console.log("Help"),
-    path: "route3"
+    id: "2",
+    label: "Events"
+  },
+  {
+    id: "3",
+    label: "Work Orders",
+    data: [
+      {
+        id: "3-1",
+        label: "Model Effectiveness 3-1"
+      },
+      {
+        id: "3-2",
+        label: "Trend Analysis 3-2"
+      }
+    ]
+  },
+  {
+    id: "4",
+    label: "Asset"
+  },
+  {
+    id: "5",
+    label: "Analytics",
+    data: [
+      {
+        id: "5-1",
+        label: "Model Effectiveness 5-1"
+      },
+      {
+        id: "5-2",
+        label: "Trend Analysis 5-2"
+      }
+    ]
   }
 ];
 
-const SimpleHeaderController = ({
-  position,
-  navigationData,
-  companyLogo,
-  productLogo,
-  label,
-  responsivenessConfig
-}) => {
-  const handleSelection = (index, subIndex) => {
-    setSelected([index, subIndex]);
-  };
+const HeaderSample = withTheme(({ theme }) => {
+  const [selected, setSelected] = useState("3-2");
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
-  const handleKeyDown = (index, subIndex, event) => {
-    if (!isKeypress(event, KeyboardCodes.Enter)) return;
-    handleSelection(index, subIndex);
+  const handleChange = (e, selectedItem) => {
+    setSelected(selectedItem.id);
   };
-
-  const [selected, setSelected] = useState([0, -1]);
 
   return (
-    <HvHeader
-      id="test"
-      position={position}
-      // Brand
-      companyLogo={companyLogo}
-      productLogo={productLogo}
-      label={label}
-      // Navigation
-      navigationStructure={navigationData}
-      useRouter
-      selected={selected}
-      onNavigationClick={handleSelection}
-      onNavigationKeyDown={handleKeyDown}
-      // Responsiveness Settings
-      responsivenessConfig={responsivenessConfig}
-      // Actions
-      actionValues={actionValues}
-    />
+    <HvHeader position="relative">
+      {!isMdUp && (
+        <HvButton category="icon" onClick={() => console.log("menu")}>
+          <Menu />
+        </HvButton>
+      )}
+      <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
+      {isMdUp && (
+        <HvHeaderNavigation
+          data={navigationData}
+          selected={selected}
+          onClick={handleChange}
+        />
+      )}
+      <HvHeaderActions>
+        <HvButton
+          category="icon"
+          onClick={() => console.log("alerts")}
+          aria-label="Open Notifications panel"
+        >
+          <HvBadge count={1} icon={<Alert boxStyles={boxStyles} />} />
+        </HvButton>
+        {isMdUp && (
+          <HvButton
+            category="icon"
+            onClick={() => console.log("user")}
+            aria-label="Open User panel"
+          >
+            <User boxStyles={boxStyles} />
+          </HvButton>
+        )}
+      </HvHeaderActions>
+    </HvHeader>
   );
-};
+});
 
-export default (
-  <div style={{ overflowX: "auto", overflowY: "hidden", height: 600 }}>
-    <SimpleHeaderController
-      position="static"
-      // Brand
-      companyLogo={<Hitachi />}
-      label="Maintenance Insights"
-      // Navigation
-      navigationData={navigationData}
-      selected={0}
-      useRouter
-      // Responsiveness Settings
-      responsivenessConfig={responsivenessConfig}
-      // Actions
-      actionValues={actionValues}
-    />
-  </div>
-);
+export default <div style={{ height: 100 }}>{<HeaderSample />}</div>;

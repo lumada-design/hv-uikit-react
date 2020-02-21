@@ -1,3 +1,19 @@
+/*
+ * Copyright 2020 Hitachi Vantara Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import React, { useState } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -12,24 +28,26 @@ import VerticalNavigation, {
   Navigation,
   Actions,
   Action
-} from "@hv/uikit-react-core/dist/NewVerticalNavigation";
+} from "@hv/uikit-react-core/dist/VerticalNavigation";
 import HvHeader, {
   HvHeaderBrand,
   HvHeaderActions,
   HvHeaderNavigation
-} from "@hv/uikit-react-core/dist/NewHeader";
+} from "@hv/uikit-react-core/dist/Header";
 import HitachiLogo from "../home/components/HitachiLogo";
 import { navigationData } from "./data";
 
 const boxStyles = { width: 32, height: 32 };
 
 const findById = (data = [], id) => {
+  // eslint-disable-next-line no-restricted-syntax
   for (const el of data) {
     if (el.id === id) return el;
 
     const child = findById(el.data, id);
     if (child) return child;
   }
+  return undefined;
 };
 
 const navigationDepth = arr =>
@@ -37,6 +55,7 @@ const navigationDepth = arr =>
     ? 1 + Math.max(...arr.map(el => navigationDepth(el.data)))
     : 0;
 
+// eslint-disable-next-line react/prop-types
 const NavigationTemplate = ({ theme }) => {
   const [selection, setSelection] = useState("01");
   const [expanded, setExpanded] = useState(false);

@@ -15,8 +15,8 @@
 | [Checkbox](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Selectors/CheckBox)               |         1.2.1         |
 | [Radio button](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Selectors/RadioButton)        |         1.2.1         |
 | [Dropdown](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Dropdown)                         |         1.2.1         |
-| [Header](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/NewHeader)                          |         1.2.1         |
-| [Vertical Navigation](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/NewVerticalNavigation) |         1.2.1         |
+| [Header](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Header)                          |         1.2.1         |
+| [Vertical Navigation](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/VerticalNavigation) |         1.2.1         |
 | [Input](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Input)                               |         1.2.1         |
 | [List](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/List)                                 |         1.2.1         |
 | [Login](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Login)                               |         1.2.1         |

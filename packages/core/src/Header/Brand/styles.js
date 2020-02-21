@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,47 +15,21 @@
  */
 
 const styles = theme => ({
-  brandContainer: {
-    position: "relative",
-    display: "inherit",
+  root: {
+    display: "flex",
     alignItems: "center",
-    height: "100%",
-    marginRight: `${theme.hv.spacing.lg}px`,
-    zIndex:2
-  },
-
-  centerBrandContainer: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center"
-  },
-  iconContainer: {
-    display: "inherit",
-    maxHeight: "46px"
-  },
-  companyLogoTextContainer: {
-    height: "46px",
-    display: "flex",
-    alignItems: "center"
+    [theme.breakpoints.down("sm")]: {
+      position: "absolute",
+      left: "50%",
+      transform: "translate(-50%, 0)"
+    }
   },
   separator: {
-    width: `${theme.hv.spacing.xs}px`,
+    width: 1,
     height: `${theme.hv.spacing.sm}px`,
-    borderRight: `1px solid ${theme.hv.palette.accent.acce1}`
-  },
-  separatorPadding: {
-    width: `${theme.hv.spacing.xs}px`
-  },
-  separatorBox: {
-    display: "flex"
-  },
-  productLogoTextContainer: {
-    height: "46px",
-    display: "flex",
-    alignItems: "center",
-    whiteSpace: "nowrap"
-  },
-  paddingTextLeft: { paddingLeft: `${theme.hv.spacing.xs}px` }
+    margin: `0 ${theme.hv.spacing.xs}px`,
+    backgroundColor: theme.hv.palette.accent.acce1
+  }
 });
 
 export default styles;

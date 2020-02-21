@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-const styles = theme => ({
-  root: {
-    width: "320px",
-    "& > :only-child": {
-      padding: `${theme.hv.spacing.sm}px`
-    },
-    "& > :not(:first-child)": {
-      borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-      padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`
-    },
-    "& > :first-child:not(:last-child)": {
-      padding: `${theme.hv.spacing.sm}px  ${theme.hv.spacing.sm}px  ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px `
-    }
-  }
-});
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Navigation from "@hv/uikit-react-core/dist/VerticalNavigation/Navigation";
 
-export default styles;
+storiesOf("Components/Navigation System/Vertical Navigation", module).add(
+  "Navigation",
+  () => <Navigation />,
+  {
+    title: "2. Navigation",
+    description:
+      "Component of the vertical navigation, responsible for presenting navigation content.",
+    usage:
+      "import Navigation from '@hv/uikit-react-core/dist/VerticalNavigation/Navigation'"
+  }
+);
