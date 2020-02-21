@@ -23,7 +23,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import { ClickAwayListener, withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
@@ -32,6 +32,8 @@ import Button from "../../Button";
 import useUniqueId from "../../useUniqueId";
 
 import { getFirstAndLastFocus } from "../../utils/focusableElementFinder";
+
+import styles from "./styles";
 
 /**
  * Vertical Container.
@@ -297,4 +299,6 @@ VerticalContainer.defaultProps = {
   closeOnExit: true
 };
 
-export default VerticalContainer;
+export default withStyles(styles, {
+  name: "HvVerticalNavigationVerticalContainer"
+})(VerticalContainer);

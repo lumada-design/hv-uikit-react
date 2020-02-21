@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Input from "./Input";
-
-export default withStyles(styles, { name: "HvInput" })(Input);
+export { default } from "./Input";

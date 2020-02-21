@@ -18,10 +18,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import DropLeftIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
 import DropRightIcon from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import HvTypography from "../../../Typography";
+import styles from "./styles";
 
 const Navigation = ({
   id,
@@ -133,4 +135,6 @@ Navigation.defaultProps = {
   isNextEnabled: true
 };
 
-export default Navigation;
+export default withStyles(styles, { name: "HvDatePickerNavigation" })(
+  Navigation
+);

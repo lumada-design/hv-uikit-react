@@ -24,8 +24,4 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import TextArea from "./TextArea";
-
-export default withStyles(styles, { name: "HvTextArea" })(TextArea);
+export { default } from "./TextArea";

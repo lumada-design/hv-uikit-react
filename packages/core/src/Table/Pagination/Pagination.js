@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Hitachi Vantara Corporation
+ * Copyright 2019 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-export { default } from "./VerticalNavigation";
+/* eslint-disable */
 
-export { default as Navigation } from "./Navigation";
+import React from "react";
+import Pagination from "../../Pagination";
 
-export { default as TreeView } from "./TreeView";
-export * from "./TreeView";
-
-export { default as Actions } from "./Actions";
-export * from "./Actions";
+export default props => (
+  <Pagination
+    {...props}
+    rowsSelectorText={props.labels.labelRowsSelector}
+    ofText={props.labels.labelOf}
+  />
+);

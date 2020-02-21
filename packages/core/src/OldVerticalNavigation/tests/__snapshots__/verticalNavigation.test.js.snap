@@ -774,7 +774,10 @@ exports[`VerticalNavigation withStyles should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(DeprecatedComponent)
+    <WithStyles(VerticalNavigation)
+      actionValues={null}
+      className=""
+      noAnimation={false}
       values={
         Object {
           "data": Array [

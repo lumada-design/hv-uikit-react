@@ -15,21 +15,22 @@
  */
 
 import React, { useState } from "react";
-import clsx from "clsx";
 import PropTypes, { oneOfType } from "prop-types";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import uniqueId from "lodash/uniqueId";
-import Card from "@material-ui/core/Card";
+import { Card, withStyles } from "@material-ui/core";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import Focus from "../Focus";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 import Media from "./Media";
+import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-card-";
 /**
- * Main Card container that layouts the subcomponents if there are children, the children are rendered instead.
+ * Card container that layouts the subcomponents if there are children, the children are rendered instead.
  *
  * @param {Object} {
  *   classes,
@@ -54,7 +55,7 @@ const DEFAULT_ID_PREFIX = "hv-card-";
  * }
  * @returns
  */
-const Main = ({
+const HvCard = ({
   classes,
   className,
   id,
@@ -243,7 +244,7 @@ const Main = ({
   );
 };
 
-Main.propTypes = {
+HvCard.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -431,7 +432,7 @@ Main.propTypes = {
   actionItemWidth: PropTypes.number
 };
 
-Main.defaultProps = {
+HvCard.defaultProps = {
   className: "",
   id: undefined,
   defaultCardAriaLabel: undefined,
@@ -469,4 +470,4 @@ Main.defaultProps = {
   actionItemWidth: undefined
 };
 
-export default Main;
+export default withStyles(styles, { name: "HvCard" })(HvCard);

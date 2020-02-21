@@ -17,10 +17,11 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
-import SnackbarContent from "@material-ui/core/SnackbarContent";
+import { SnackbarContent, withStyles } from "@material-ui/core";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
+import styles from "./styles";
 
 /**
  * Container of banner.
@@ -158,4 +159,6 @@ HvBannerContentWrapper.defaultProps = {
   actionsPosition: "auto"
 };
 
-export default HvBannerContentWrapper;
+export default withStyles(styles, { name: "HvBannerContentWrapper" })(
+  HvBannerContentWrapper
+);

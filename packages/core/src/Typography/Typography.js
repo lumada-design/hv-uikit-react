@@ -17,6 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 /**
  * Mapping of typography with HTML elements.
@@ -158,4 +160,4 @@ Typography.defaultProps = {
   children: ""
 };
 
-export default Typography;
+export default withStyles(styles, { name: "HvTypography" })(Typography);

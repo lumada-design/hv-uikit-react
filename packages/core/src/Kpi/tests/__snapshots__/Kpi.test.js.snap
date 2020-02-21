@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Kpi withStyles should render correctly 1`] = `
+exports[`Kpi should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
   router={null}

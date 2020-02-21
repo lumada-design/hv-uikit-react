@@ -16,10 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import clsx from "clsx";
+import { DialogTitle, withStyles } from "@material-ui/core";
 import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import styles from "./styles";
 
 /**
  * Title component of the modal.
@@ -54,7 +55,7 @@ const ModalTitle = ({
   }
 
   return (
-    <MuiDialogTitle
+    <DialogTitle
       className={clsx(classes.root, className)}
       disableTypography
       {...others}
@@ -66,7 +67,7 @@ const ModalTitle = ({
           {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>
       </div>
-    </MuiDialogTitle>
+    </DialogTitle>
   );
 };
 
@@ -121,4 +122,4 @@ ModalTitle.defaultProps = {
   showIcon: true
 };
 
-export default ModalTitle;
+export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

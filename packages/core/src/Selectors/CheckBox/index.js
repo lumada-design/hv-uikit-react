@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import CheckBox from "./CheckBox";
-
-export default withStyles(styles, { name: "HvCheckBox" })(CheckBox);
+export { default } from "./CheckBox";

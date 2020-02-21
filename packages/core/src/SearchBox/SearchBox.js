@@ -24,9 +24,11 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import partial from "lodash/partial";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
 import HvInput from "../Input";
+import styles from "./styles";
 
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
@@ -275,4 +277,4 @@ HvSearchBox.defaultProps = {
   ariaLabel: "search"
 };
 
-export default HvSearchBox;
+export default withStyles(styles, { name: "HvSearchBox" })(HvSearchBox);

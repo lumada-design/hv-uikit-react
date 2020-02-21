@@ -18,10 +18,12 @@
 import React from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
 import HvTypography from "../../Typography";
+import styles from "./styles";
 
 /**
  *
@@ -103,4 +105,4 @@ const Header = React.memo(
   }
 );
 
-export default Header;
+export default withStyles(styles, { name: "HvTableHeader" })(Header);

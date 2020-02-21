@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import { fade, hexToRgb } from "@material-ui/core/styles";
-
+import { fade, hexToRgb } from "@material-ui/core";
 import { outlineStyles } from "../Focus/styles";
 
 const setColor = color => ({

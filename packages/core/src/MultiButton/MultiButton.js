@@ -18,7 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { map, filter } from "lodash";
+import { withStyles } from "@material-ui/core";
 import HvButton from "../Button";
+import styles from "./styles";
 
 class MultiButton extends React.Component {
   constructor(props) {
@@ -241,4 +243,4 @@ MultiButton.defaultProps = {
   maxSelection: null
 };
 
-export default MultiButton;
+export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);

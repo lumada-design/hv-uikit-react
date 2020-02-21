@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Navigation from "./Navigation";
-
-export default withStyles(styles, { name: "HvHeaderNavigation" })(Navigation);
+export { default } from "./Navigation";

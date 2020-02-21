@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { fade, hexToRgb } from "@material-ui/core/styles";
+import { fade, hexToRgb } from "@material-ui/core";
 
 export const boxShadow = color => ({
   boxShadow: `0 0 0 ${color}, 0 6px 12px ${fade(hexToRgb(color), 0.12)}`

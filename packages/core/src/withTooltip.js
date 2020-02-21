@@ -15,7 +15,7 @@
  */
 
 import React, { useState } from "react";
-import Tooltip from "@material-ui/core/Tooltip";
+import { Tooltip } from "@material-ui/core";
 
 const withTooltip = (Component, label = "") => props => {
   const [showTooltip, setShowTooltip] = useState(false);

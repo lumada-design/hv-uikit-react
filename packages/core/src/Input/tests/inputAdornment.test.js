@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@material-ui/core";
 import InputAdornment from "../InputAdornment";
 import validationStates from "../validationStates";
 import HvProvider from "../../Provider";

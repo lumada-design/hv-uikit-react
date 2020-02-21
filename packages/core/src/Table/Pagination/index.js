@@ -14,15 +14,4 @@
  * limitations under the License.
  */
 
-import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "../../Pagination/styles";
-import Pagination from "../../Pagination";
-
-export default withStyles(styles, { name: "HvTablePagination" })(props => (
-  <Pagination
-    {...props}
-    rowsSelectorText={props.labels.labelRowsSelector}
-    ofText={props.labels.labelOf}
-  />
-));
+export { default } from "./Pagination";

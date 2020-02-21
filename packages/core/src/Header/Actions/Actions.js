@@ -16,7 +16,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
+import styles from "./styles";
 
 const Actions = ({ classes, id, children }) => {
   const uniqueId = useUniqueId(id, "hv-actions-");
@@ -53,4 +55,4 @@ Actions.defaultProps = {
   children: null
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvHeaderActions" })(Actions);

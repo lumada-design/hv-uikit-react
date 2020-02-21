@@ -17,9 +17,8 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
-import ActionsWrapper from "../index";
-import Actions from "../Actions";
 import HvButton from "../../../Button";
+import Actions from "..";
 
 describe("<Actions />", () => {
   let wrapper;
@@ -30,7 +29,7 @@ describe("<Actions />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ActionsWrapper id="test-actions" onCancel={onCancelMock()} onApply={onApplyMock()} />
+        <Actions id="acts" onCancel={onCancelMock()} onApply={onApplyMock()} />
       </HvProvider>
     );
   });

@@ -20,8 +20,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import last from "lodash/last";
 import HvProvider from "../../Provider";
-import VerticalNavigationWithStyles from "../index";
-import VerticalNavigation from "../VerticalNavigation";
+import VerticalNavigation from "..";
 
 describe("VerticalNavigation withStyles", () => {
   let wrapper;
@@ -40,7 +39,7 @@ describe("VerticalNavigation withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <VerticalNavigationWithStyles values={data} />
+        <VerticalNavigation values={data} />
       </HvProvider>
     );
   });
@@ -56,11 +55,11 @@ describe("VerticalNavigation withStyles", () => {
   it("should render the Grid component", () => {
     wrapper = mount(
       <HvProvider>
-        <VerticalNavigationWithStyles values={data} />
+        <VerticalNavigation values={data} />
       </HvProvider>
     );
 
-    const VerticalNavigationComponent = wrapper.find(VerticalNavigation);
+    const VerticalNavigationComponent = wrapper.find("VerticalNavigation");
     expect(VerticalNavigationComponent.length).toBe(1);
   });
 });
@@ -92,7 +91,7 @@ describe("VerticalNavigation Component", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <VerticalNavigationWithStyles values={data} />
+        <VerticalNavigation values={data} />
       </HvProvider>
     );
   });
@@ -102,11 +101,11 @@ describe("VerticalNavigation Component", () => {
 
     wrapper = mount(
       <HvProvider>
-        <VerticalNavigationWithStyles values={data} onClick={onChangeMock} />
+        <VerticalNavigation values={data} onClick={onChangeMock} />
       </HvProvider>
     );
 
-    const verticalNavigationComponent = wrapper.find(VerticalNavigation);
+    const verticalNavigationComponent = wrapper.find("VerticalNavigation");
 
     instance = verticalNavigationComponent.instance();
 
@@ -116,7 +115,7 @@ describe("VerticalNavigation Component", () => {
   });
 
   it("should navigate to sub-levels", () => {
-    const verticalNavigationComponent = wrapper.find(VerticalNavigation);
+    const verticalNavigationComponent = wrapper.find("VerticalNavigation");
 
     instance = verticalNavigationComponent.instance();
 
@@ -129,7 +128,7 @@ describe("VerticalNavigation Component", () => {
   });
 
   it("should navigate to return levels", () => {
-    const verticalNavigationComponent = wrapper.find(VerticalNavigation);
+    const verticalNavigationComponent = wrapper.find("VerticalNavigation");
 
     instance = verticalNavigationComponent.instance();
 
@@ -147,7 +146,7 @@ describe("VerticalNavigation Component", () => {
   });
 
   it("should search", () => {
-    const verticalNavigationComponent = wrapper.find(VerticalNavigation);
+    const verticalNavigationComponent = wrapper.find("VerticalNavigation");
 
     instance = verticalNavigationComponent.instance();
 

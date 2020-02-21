@@ -46,21 +46,21 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     category="ghost"
     classes={
       Object {
-        "actionContainer": "HvActions-actionContainer-4",
-        "button": "HvActions-button-3",
-        "dropDownMenu": "HvActions-dropDownMenu-5",
-        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-6",
+        "actionContainer": "HvActions-actionContainer-7",
+        "button": "HvActions-button-6",
+        "dropDownMenu": "HvActions-dropDownMenu-8",
+        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-9",
       }
     }
     id=""
     maxVisibleActions={1}
   >
     <div
-      className="HvActions-actionContainer-4"
+      className="HvActions-actionContainer-7"
     >
       <WithStyles(HvButton)
         category="ghost"
-        className="HvActions-button-3"
+        className="HvActions-button-6"
         disabled={false}
         id="-0-action-view"
         key="-0-action-view"
@@ -69,22 +69,22 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       >
         <HvButton
           category="ghost"
-          className="HvActions-button-3"
+          className="HvActions-button-6"
           classes={
             Object {
-              "ghost": "HvButton-ghost-13",
-              "ghostDisabled": "HvButton-ghostDisabled-14",
-              "ghostSecondary": "HvButton-ghostSecondary-15",
-              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-16",
-              "primary": "HvButton-primary-9",
-              "primaryDisabled": "HvButton-primaryDisabled-10",
-              "root": "HvButton-root-7",
-              "rootIcon": "HvButton-rootIcon-8",
-              "secondary": "HvButton-secondary-11",
-              "secondaryDisabled": "HvButton-secondaryDisabled-12",
-              "semantic": "HvButton-semantic-17",
-              "semanticDisabled": "HvButton-semanticDisabled-18",
-              "startIcon": "HvButton-startIcon-19",
+              "ghost": "HvButton-ghost-16",
+              "ghostDisabled": "HvButton-ghostDisabled-17",
+              "ghostSecondary": "HvButton-ghostSecondary-18",
+              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-19",
+              "primary": "HvButton-primary-12",
+              "primaryDisabled": "HvButton-primaryDisabled-13",
+              "root": "HvButton-root-10",
+              "rootIcon": "HvButton-rootIcon-11",
+              "secondary": "HvButton-secondary-14",
+              "secondaryDisabled": "HvButton-secondaryDisabled-15",
+              "semantic": "HvButton-semantic-20",
+              "semanticDisabled": "HvButton-semanticDisabled-21",
+              "startIcon": "HvButton-startIcon-22",
             }
           }
           disabled={false}
@@ -93,14 +93,14 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button-3"
+            className="HvActions-button-6"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-9",
-                "disabled": "HvButton-ghostDisabled-14",
-                "outlinedPrimary": "HvButton-secondary-11",
-                "root": "HvButton-root-7",
-                "textPrimary": "HvButton-ghost-13",
+                "containedPrimary": "HvButton-primary-12",
+                "disabled": "HvButton-ghostDisabled-17",
+                "outlinedPrimary": "HvButton-secondary-14",
+                "root": "HvButton-root-10",
+                "textPrimary": "HvButton-ghost-16",
               }
             }
             color="primary"
@@ -111,17 +111,17 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button-3"
+              className="HvActions-button-6"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
                   "contained": "MuiButton-contained",
-                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-9",
+                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-12",
                   "containedSecondary": "MuiButton-containedSecondary",
                   "containedSizeLarge": "MuiButton-containedSizeLarge",
                   "containedSizeSmall": "MuiButton-containedSizeSmall",
                   "disableElevation": "MuiButton-disableElevation",
-                  "disabled": "Mui-disabled HvButton-ghostDisabled-14",
+                  "disabled": "Mui-disabled HvButton-ghostDisabled-17",
                   "endIcon": "MuiButton-endIcon",
                   "focusVisible": "Mui-focusVisible",
                   "fullWidth": "MuiButton-fullWidth",
@@ -130,16 +130,16 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   "iconSizeSmall": "MuiButton-iconSizeSmall",
                   "label": "MuiButton-label",
                   "outlined": "MuiButton-outlined",
-                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-11",
+                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-14",
                   "outlinedSecondary": "MuiButton-outlinedSecondary",
                   "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                   "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                  "root": "MuiButton-root HvButton-root-7",
+                  "root": "MuiButton-root HvButton-root-10",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
                   "startIcon": "MuiButton-startIcon",
                   "text": "MuiButton-text",
-                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-13",
+                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-16",
                   "textSecondary": "MuiButton-textSecondary",
                   "textSizeLarge": "MuiButton-textSizeLarge",
                   "textSizeSmall": "MuiButton-textSizeSmall",
@@ -153,7 +153,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root-7 MuiButton-text HvActions-button-3 MuiButton-textPrimary HvButton-ghost-13"
+                className="MuiButton-root HvButton-root-10 MuiButton-text HvActions-button-6 MuiButton-textPrimary HvButton-ghost-16"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -164,7 +164,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root-7 MuiButton-text HvActions-button-3 MuiButton-textPrimary HvButton-ghost-13"
+                  className="MuiButton-root HvButton-root-10 MuiButton-text HvActions-button-6 MuiButton-textPrimary HvButton-ghost-16"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -182,7 +182,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root-7 MuiButton-text HvActions-button-3 MuiButton-textPrimary HvButton-ghost-13"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root-10 MuiButton-text HvActions-button-6 MuiButton-textPrimary HvButton-ghost-16"
                     disabled={false}
                     id="-0-action-view"
                     onBlur={[Function]}
@@ -215,7 +215,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       <WithStyles(DropDownMenu)
         classes={
           Object {
-            "root": "HvActions-dropDownMenu-5",
+            "root": "HvActions-dropDownMenu-8",
           }
         }
         dataList={
@@ -240,7 +240,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         expanded={false}
         icon={
           <ForwardRef(WithStyles)
-            className="HvActions-dropDownMenuIcon-6"
+            className="HvActions-dropDownMenuIcon-9"
           />
         }
         keepOpened={false}
@@ -250,10 +250,10 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         <DropDownMenu
           classes={
             Object {
-              "icon": "HvDropDownMenu-icon-53",
-              "iconSelected": "HvDropDownMenu-iconSelected-54",
-              "menuList": "HvDropDownMenu-menuList-55",
-              "root": "HvDropDownMenu-root-52 HvActions-dropDownMenu-5",
+              "icon": "HvDropDownMenu-icon-56",
+              "iconSelected": "HvDropDownMenu-iconSelected-57",
+              "menuList": "HvDropDownMenu-menuList-58",
+              "root": "HvDropDownMenu-root-55 HvActions-dropDownMenu-8",
             }
           }
           dataList={
@@ -278,7 +278,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           expanded={false}
           icon={
             <ForwardRef(WithStyles)
-              className="HvActions-dropDownMenuIcon-6"
+              className="HvActions-dropDownMenuIcon-9"
             />
           }
           keepOpened={false}
@@ -286,7 +286,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           placement="left"
         >
           <div
-            className="HvDropDownMenu-root-52 HvActions-dropDownMenu-5"
+            className="HvDropDownMenu-root-55 HvActions-dropDownMenu-8"
             id="hv-dropdown-menu1"
           >
             <WithStyles(ForwardRef(IconButton))
@@ -295,7 +295,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-53"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                     id="hv-dropdown-menu1-icon-button"
                     tabindex="0"
                     type="button"
@@ -304,7 +304,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       class="MuiIconButton-label"
                     >
                       <div
-                        class="HvActions-dropDownMenuIcon-6 HvIconMoreOptionsVertical-root-65 HvIconMoreOptionsVertical-rootS-67"
+                        class="HvActions-dropDownMenuIcon-9 HvIconMoreOptionsVertical-root-68 HvIconMoreOptionsVertical-rootS-70"
                       >
                         <svg
                           focusable="false"
@@ -324,7 +324,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-53"
+              className="HvDropDownMenu-icon-56"
               disabled={false}
               id="hv-dropdown-menu1-icon-button"
               onClick={[Function]}
@@ -336,7 +336,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-53"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                       id="hv-dropdown-menu1-icon-button"
                       tabindex="0"
                       type="button"
@@ -345,7 +345,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                         class="MuiIconButton-label"
                       >
                         <div
-                          class="HvActions-dropDownMenuIcon-6 HvIconMoreOptionsVertical-root-65 HvIconMoreOptionsVertical-rootS-67"
+                          class="HvActions-dropDownMenuIcon-9 HvIconMoreOptionsVertical-root-68 HvIconMoreOptionsVertical-rootS-70"
                         >
                           <svg
                             focusable="false"
@@ -365,7 +365,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     </button>,
                   }
                 }
-                className="HvDropDownMenu-icon-53"
+                className="HvDropDownMenu-icon-56"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -390,7 +390,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-53"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                         id="hv-dropdown-menu1-icon-button"
                         tabindex="0"
                         type="button"
@@ -399,7 +399,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                           class="MuiIconButton-label"
                         >
                           <div
-                            class="HvActions-dropDownMenuIcon-6 HvIconMoreOptionsVertical-root-65 HvIconMoreOptionsVertical-rootS-67"
+                            class="HvActions-dropDownMenuIcon-9 HvIconMoreOptionsVertical-root-68 HvIconMoreOptionsVertical-rootS-70"
                           >
                             <svg
                               focusable="false"
@@ -420,7 +420,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-53"
+                  className="MuiIconButton-root HvDropDownMenu-icon-56"
                   disabled={false}
                   focusRipple={true}
                   id="hv-dropdown-menu1-icon-button"
@@ -433,7 +433,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       Object {
                         "current": <button
                           aria-haspopup="true"
-                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-53"
+                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                           id="hv-dropdown-menu1-icon-button"
                           tabindex="0"
                           type="button"
@@ -442,7 +442,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                             class="MuiIconButton-label"
                           >
                             <div
-                              class="HvActions-dropDownMenuIcon-6 HvIconMoreOptionsVertical-root-65 HvIconMoreOptionsVertical-rootS-67"
+                              class="HvActions-dropDownMenuIcon-9 HvIconMoreOptionsVertical-root-68 HvIconMoreOptionsVertical-rootS-70"
                             >
                               <svg
                                 focusable="false"
@@ -463,7 +463,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       }
                     }
                     centerRipple={true}
-                    className="MuiIconButton-root HvDropDownMenu-icon-53"
+                    className="MuiIconButton-root HvDropDownMenu-icon-56"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -480,7 +480,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   >
                     <button
                       aria-haspopup="true"
-                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-53"
+                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                       disabled={false}
                       id="hv-dropdown-menu1-icon-button"
                       onBlur={[Function]}
@@ -502,22 +502,22 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(MoreOptionsVertical)
-                          className="HvActions-dropDownMenuIcon-6"
+                          className="HvActions-dropDownMenuIcon-9"
                         >
                           <MoreOptionsVertical
-                            className="HvActions-dropDownMenuIcon-6"
+                            className="HvActions-dropDownMenuIcon-9"
                             classes={
                               Object {
-                                "root": "HvIconMoreOptionsVertical-root-65",
-                                "rootL": "HvIconMoreOptionsVertical-rootL-69",
-                                "rootM": "HvIconMoreOptionsVertical-rootM-68",
-                                "rootS": "HvIconMoreOptionsVertical-rootS-67",
-                                "rootXs": "HvIconMoreOptionsVertical-rootXs-66",
+                                "root": "HvIconMoreOptionsVertical-root-68",
+                                "rootL": "HvIconMoreOptionsVertical-rootL-72",
+                                "rootM": "HvIconMoreOptionsVertical-rootM-71",
+                                "rootS": "HvIconMoreOptionsVertical-rootS-70",
+                                "rootXs": "HvIconMoreOptionsVertical-rootXs-69",
                               }
                             }
                           >
                             <div
-                              className="HvActions-dropDownMenuIcon-6 HvIconMoreOptionsVertical-root-65 HvIconMoreOptionsVertical-rootS-67"
+                              className="HvActions-dropDownMenuIcon-9 HvIconMoreOptionsVertical-root-68 HvIconMoreOptionsVertical-rootS-70"
                             >
                               <svg
                                 focusable={false}
@@ -607,22 +607,22 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
     category="ghost"
     classes={
       Object {
-        "actionContainer": "HvActions-actionContainer-73",
-        "button": "HvActions-button-72",
-        "dropDownMenu": "HvActions-dropDownMenu-74",
-        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-75",
+        "actionContainer": "HvActions-actionContainer-79",
+        "button": "HvActions-button-78",
+        "dropDownMenu": "HvActions-dropDownMenu-80",
+        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-81",
       }
     }
     id=""
     maxVisibleActions={0}
   >
     <div
-      className="HvActions-actionContainer-73"
+      className="HvActions-actionContainer-79"
     >
       <WithStyles(DropDownMenu)
         classes={
           Object {
-            "root": "HvActions-dropDownMenu-74",
+            "root": "HvActions-dropDownMenu-80",
           }
         }
         dataList={
@@ -653,7 +653,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         expanded={false}
         icon={
           <ForwardRef(WithStyles)
-            className="HvActions-dropDownMenuIcon-75"
+            className="HvActions-dropDownMenuIcon-81"
           />
         }
         keepOpened={false}
@@ -663,10 +663,10 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         <DropDownMenu
           classes={
             Object {
-              "icon": "HvDropDownMenu-icon-77",
-              "iconSelected": "HvDropDownMenu-iconSelected-78",
-              "menuList": "HvDropDownMenu-menuList-79",
-              "root": "HvDropDownMenu-root-76 HvActions-dropDownMenu-74",
+              "icon": "HvDropDownMenu-icon-83",
+              "iconSelected": "HvDropDownMenu-iconSelected-84",
+              "menuList": "HvDropDownMenu-menuList-85",
+              "root": "HvDropDownMenu-root-82 HvActions-dropDownMenu-80",
             }
           }
           dataList={
@@ -697,7 +697,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           expanded={false}
           icon={
             <ForwardRef(WithStyles)
-              className="HvActions-dropDownMenuIcon-75"
+              className="HvActions-dropDownMenuIcon-81"
             />
           }
           keepOpened={false}
@@ -705,7 +705,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           placement="left"
         >
           <div
-            className="HvDropDownMenu-root-76 HvActions-dropDownMenu-74"
+            className="HvDropDownMenu-root-82 HvActions-dropDownMenu-80"
             id="hv-dropdown-menu2"
           >
             <WithStyles(ForwardRef(IconButton))
@@ -714,7 +714,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-77"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                     id="hv-dropdown-menu2-icon-button"
                     tabindex="0"
                     type="button"
@@ -723,7 +723,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       class="MuiIconButton-label"
                     >
                       <div
-                        class="HvActions-dropDownMenuIcon-75 HvIconMoreOptionsVertical-root-92 HvIconMoreOptionsVertical-rootS-94"
+                        class="HvActions-dropDownMenuIcon-81 HvIconMoreOptionsVertical-root-98 HvIconMoreOptionsVertical-rootS-100"
                       >
                         <svg
                           focusable="false"
@@ -743,7 +743,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-77"
+              className="HvDropDownMenu-icon-83"
               disabled={false}
               id="hv-dropdown-menu2-icon-button"
               onClick={[Function]}
@@ -755,7 +755,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-77"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                       id="hv-dropdown-menu2-icon-button"
                       tabindex="0"
                       type="button"
@@ -764,7 +764,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                         class="MuiIconButton-label"
                       >
                         <div
-                          class="HvActions-dropDownMenuIcon-75 HvIconMoreOptionsVertical-root-92 HvIconMoreOptionsVertical-rootS-94"
+                          class="HvActions-dropDownMenuIcon-81 HvIconMoreOptionsVertical-root-98 HvIconMoreOptionsVertical-rootS-100"
                         >
                           <svg
                             focusable="false"
@@ -784,7 +784,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     </button>,
                   }
                 }
-                className="HvDropDownMenu-icon-77"
+                className="HvDropDownMenu-icon-83"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -809,7 +809,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-77"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                         id="hv-dropdown-menu2-icon-button"
                         tabindex="0"
                         type="button"
@@ -818,7 +818,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                           class="MuiIconButton-label"
                         >
                           <div
-                            class="HvActions-dropDownMenuIcon-75 HvIconMoreOptionsVertical-root-92 HvIconMoreOptionsVertical-rootS-94"
+                            class="HvActions-dropDownMenuIcon-81 HvIconMoreOptionsVertical-root-98 HvIconMoreOptionsVertical-rootS-100"
                           >
                             <svg
                               focusable="false"
@@ -839,7 +839,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-77"
+                  className="MuiIconButton-root HvDropDownMenu-icon-83"
                   disabled={false}
                   focusRipple={true}
                   id="hv-dropdown-menu2-icon-button"
@@ -852,7 +852,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       Object {
                         "current": <button
                           aria-haspopup="true"
-                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-77"
+                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                           id="hv-dropdown-menu2-icon-button"
                           tabindex="0"
                           type="button"
@@ -861,7 +861,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                             class="MuiIconButton-label"
                           >
                             <div
-                              class="HvActions-dropDownMenuIcon-75 HvIconMoreOptionsVertical-root-92 HvIconMoreOptionsVertical-rootS-94"
+                              class="HvActions-dropDownMenuIcon-81 HvIconMoreOptionsVertical-root-98 HvIconMoreOptionsVertical-rootS-100"
                             >
                               <svg
                                 focusable="false"
@@ -882,7 +882,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       }
                     }
                     centerRipple={true}
-                    className="MuiIconButton-root HvDropDownMenu-icon-77"
+                    className="MuiIconButton-root HvDropDownMenu-icon-83"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -899,7 +899,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   >
                     <button
                       aria-haspopup="true"
-                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-77"
+                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                       disabled={false}
                       id="hv-dropdown-menu2-icon-button"
                       onBlur={[Function]}
@@ -921,22 +921,22 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(MoreOptionsVertical)
-                          className="HvActions-dropDownMenuIcon-75"
+                          className="HvActions-dropDownMenuIcon-81"
                         >
                           <MoreOptionsVertical
-                            className="HvActions-dropDownMenuIcon-75"
+                            className="HvActions-dropDownMenuIcon-81"
                             classes={
                               Object {
-                                "root": "HvIconMoreOptionsVertical-root-92",
-                                "rootL": "HvIconMoreOptionsVertical-rootL-96",
-                                "rootM": "HvIconMoreOptionsVertical-rootM-95",
-                                "rootS": "HvIconMoreOptionsVertical-rootS-94",
-                                "rootXs": "HvIconMoreOptionsVertical-rootXs-93",
+                                "root": "HvIconMoreOptionsVertical-root-98",
+                                "rootL": "HvIconMoreOptionsVertical-rootL-102",
+                                "rootM": "HvIconMoreOptionsVertical-rootM-101",
+                                "rootS": "HvIconMoreOptionsVertical-rootS-100",
+                                "rootXs": "HvIconMoreOptionsVertical-rootXs-99",
                               }
                             }
                           >
                             <div
-                              className="HvActions-dropDownMenuIcon-75 HvIconMoreOptionsVertical-root-92 HvIconMoreOptionsVertical-rootS-94"
+                              className="HvActions-dropDownMenuIcon-81 HvIconMoreOptionsVertical-root-98 HvIconMoreOptionsVertical-rootS-100"
                             >
                               <svg
                                 focusable={false}
@@ -1026,21 +1026,21 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     category="ghost"
     classes={
       Object {
-        "actionContainer": "HvActions-actionContainer-100",
-        "button": "HvActions-button-99",
-        "dropDownMenu": "HvActions-dropDownMenu-101",
-        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-102",
+        "actionContainer": "HvActions-actionContainer-109",
+        "button": "HvActions-button-108",
+        "dropDownMenu": "HvActions-dropDownMenu-110",
+        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-111",
       }
     }
     id=""
     maxVisibleActions={2}
   >
     <div
-      className="HvActions-actionContainer-100"
+      className="HvActions-actionContainer-109"
     >
       <WithStyles(HvButton)
         category="ghost"
-        className="HvActions-button-99"
+        className="HvActions-button-108"
         disabled={false}
         id="-0-action-view"
         key="-0-action-view"
@@ -1049,22 +1049,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       >
         <HvButton
           category="ghost"
-          className="HvActions-button-99"
+          className="HvActions-button-108"
           classes={
             Object {
-              "ghost": "HvButton-ghost-109",
-              "ghostDisabled": "HvButton-ghostDisabled-110",
-              "ghostSecondary": "HvButton-ghostSecondary-111",
-              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-112",
-              "primary": "HvButton-primary-105",
-              "primaryDisabled": "HvButton-primaryDisabled-106",
-              "root": "HvButton-root-103",
-              "rootIcon": "HvButton-rootIcon-104",
-              "secondary": "HvButton-secondary-107",
-              "secondaryDisabled": "HvButton-secondaryDisabled-108",
-              "semantic": "HvButton-semantic-113",
-              "semanticDisabled": "HvButton-semanticDisabled-114",
-              "startIcon": "HvButton-startIcon-115",
+              "ghost": "HvButton-ghost-118",
+              "ghostDisabled": "HvButton-ghostDisabled-119",
+              "ghostSecondary": "HvButton-ghostSecondary-120",
+              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-121",
+              "primary": "HvButton-primary-114",
+              "primaryDisabled": "HvButton-primaryDisabled-115",
+              "root": "HvButton-root-112",
+              "rootIcon": "HvButton-rootIcon-113",
+              "secondary": "HvButton-secondary-116",
+              "secondaryDisabled": "HvButton-secondaryDisabled-117",
+              "semantic": "HvButton-semantic-122",
+              "semanticDisabled": "HvButton-semanticDisabled-123",
+              "startIcon": "HvButton-startIcon-124",
             }
           }
           disabled={false}
@@ -1073,14 +1073,14 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button-99"
+            className="HvActions-button-108"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-105",
-                "disabled": "HvButton-ghostDisabled-110",
-                "outlinedPrimary": "HvButton-secondary-107",
-                "root": "HvButton-root-103",
-                "textPrimary": "HvButton-ghost-109",
+                "containedPrimary": "HvButton-primary-114",
+                "disabled": "HvButton-ghostDisabled-119",
+                "outlinedPrimary": "HvButton-secondary-116",
+                "root": "HvButton-root-112",
+                "textPrimary": "HvButton-ghost-118",
               }
             }
             color="primary"
@@ -1091,17 +1091,17 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button-99"
+              className="HvActions-button-108"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
                   "contained": "MuiButton-contained",
-                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-105",
+                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-114",
                   "containedSecondary": "MuiButton-containedSecondary",
                   "containedSizeLarge": "MuiButton-containedSizeLarge",
                   "containedSizeSmall": "MuiButton-containedSizeSmall",
                   "disableElevation": "MuiButton-disableElevation",
-                  "disabled": "Mui-disabled HvButton-ghostDisabled-110",
+                  "disabled": "Mui-disabled HvButton-ghostDisabled-119",
                   "endIcon": "MuiButton-endIcon",
                   "focusVisible": "Mui-focusVisible",
                   "fullWidth": "MuiButton-fullWidth",
@@ -1110,16 +1110,16 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   "iconSizeSmall": "MuiButton-iconSizeSmall",
                   "label": "MuiButton-label",
                   "outlined": "MuiButton-outlined",
-                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-107",
+                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-116",
                   "outlinedSecondary": "MuiButton-outlinedSecondary",
                   "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                   "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                  "root": "MuiButton-root HvButton-root-103",
+                  "root": "MuiButton-root HvButton-root-112",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
                   "startIcon": "MuiButton-startIcon",
                   "text": "MuiButton-text",
-                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-109",
+                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-118",
                   "textSecondary": "MuiButton-textSecondary",
                   "textSizeLarge": "MuiButton-textSizeLarge",
                   "textSizeSmall": "MuiButton-textSizeSmall",
@@ -1133,7 +1133,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                className="MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -1144,7 +1144,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                  className="MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -1162,7 +1162,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                     disabled={false}
                     id="-0-action-view"
                     onBlur={[Function]}
@@ -1194,7 +1194,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       </WithStyles(HvButton)>
       <WithStyles(HvButton)
         category="ghost"
-        className="HvActions-button-99"
+        className="HvActions-button-108"
         disabled={false}
         id="-1-action-delete"
         key="-1-action-delete"
@@ -1203,22 +1203,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       >
         <HvButton
           category="ghost"
-          className="HvActions-button-99"
+          className="HvActions-button-108"
           classes={
             Object {
-              "ghost": "HvButton-ghost-109",
-              "ghostDisabled": "HvButton-ghostDisabled-110",
-              "ghostSecondary": "HvButton-ghostSecondary-111",
-              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-112",
-              "primary": "HvButton-primary-105",
-              "primaryDisabled": "HvButton-primaryDisabled-106",
-              "root": "HvButton-root-103",
-              "rootIcon": "HvButton-rootIcon-104",
-              "secondary": "HvButton-secondary-107",
-              "secondaryDisabled": "HvButton-secondaryDisabled-108",
-              "semantic": "HvButton-semantic-113",
-              "semanticDisabled": "HvButton-semanticDisabled-114",
-              "startIcon": "HvButton-startIcon-115",
+              "ghost": "HvButton-ghost-118",
+              "ghostDisabled": "HvButton-ghostDisabled-119",
+              "ghostSecondary": "HvButton-ghostSecondary-120",
+              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled-121",
+              "primary": "HvButton-primary-114",
+              "primaryDisabled": "HvButton-primaryDisabled-115",
+              "root": "HvButton-root-112",
+              "rootIcon": "HvButton-rootIcon-113",
+              "secondary": "HvButton-secondary-116",
+              "secondaryDisabled": "HvButton-secondaryDisabled-117",
+              "semantic": "HvButton-semantic-122",
+              "semanticDisabled": "HvButton-semanticDisabled-123",
+              "startIcon": "HvButton-startIcon-124",
             }
           }
           disabled={false}
@@ -1227,14 +1227,14 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button-99"
+            className="HvActions-button-108"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-105",
-                "disabled": "HvButton-ghostDisabled-110",
-                "outlinedPrimary": "HvButton-secondary-107",
-                "root": "HvButton-root-103",
-                "textPrimary": "HvButton-ghost-109",
+                "containedPrimary": "HvButton-primary-114",
+                "disabled": "HvButton-ghostDisabled-119",
+                "outlinedPrimary": "HvButton-secondary-116",
+                "root": "HvButton-root-112",
+                "textPrimary": "HvButton-ghost-118",
               }
             }
             color="primary"
@@ -1245,17 +1245,17 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button-99"
+              className="HvActions-button-108"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
                   "contained": "MuiButton-contained",
-                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-105",
+                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary-114",
                   "containedSecondary": "MuiButton-containedSecondary",
                   "containedSizeLarge": "MuiButton-containedSizeLarge",
                   "containedSizeSmall": "MuiButton-containedSizeSmall",
                   "disableElevation": "MuiButton-disableElevation",
-                  "disabled": "Mui-disabled HvButton-ghostDisabled-110",
+                  "disabled": "Mui-disabled HvButton-ghostDisabled-119",
                   "endIcon": "MuiButton-endIcon",
                   "focusVisible": "Mui-focusVisible",
                   "fullWidth": "MuiButton-fullWidth",
@@ -1264,16 +1264,16 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   "iconSizeSmall": "MuiButton-iconSizeSmall",
                   "label": "MuiButton-label",
                   "outlined": "MuiButton-outlined",
-                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-107",
+                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary-116",
                   "outlinedSecondary": "MuiButton-outlinedSecondary",
                   "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
                   "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                  "root": "MuiButton-root HvButton-root-103",
+                  "root": "MuiButton-root HvButton-root-112",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
                   "startIcon": "MuiButton-startIcon",
                   "text": "MuiButton-text",
-                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-109",
+                  "textPrimary": "MuiButton-textPrimary HvButton-ghost-118",
                   "textSecondary": "MuiButton-textSecondary",
                   "textSizeLarge": "MuiButton-textSizeLarge",
                   "textSizeSmall": "MuiButton-textSizeSmall",
@@ -1287,7 +1287,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                className="MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -1298,7 +1298,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                  className="MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -1316,7 +1316,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root-103 MuiButton-text HvActions-button-99 MuiButton-textPrimary HvButton-ghost-109"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root-112 MuiButton-text HvActions-button-108 MuiButton-textPrimary HvButton-ghost-118"
                     disabled={false}
                     id="-1-action-delete"
                     onBlur={[Function]}
@@ -1349,7 +1349,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       <WithStyles(DropDownMenu)
         classes={
           Object {
-            "root": "HvActions-dropDownMenu-101",
+            "root": "HvActions-dropDownMenu-110",
           }
         }
         dataList={
@@ -1368,7 +1368,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         expanded={false}
         icon={
           <ForwardRef(WithStyles)
-            className="HvActions-dropDownMenuIcon-102"
+            className="HvActions-dropDownMenuIcon-111"
           />
         }
         keepOpened={false}
@@ -1378,10 +1378,10 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         <DropDownMenu
           classes={
             Object {
-              "icon": "HvDropDownMenu-icon-149",
-              "iconSelected": "HvDropDownMenu-iconSelected-150",
-              "menuList": "HvDropDownMenu-menuList-151",
-              "root": "HvDropDownMenu-root-148 HvActions-dropDownMenu-101",
+              "icon": "HvDropDownMenu-icon-158",
+              "iconSelected": "HvDropDownMenu-iconSelected-159",
+              "menuList": "HvDropDownMenu-menuList-160",
+              "root": "HvDropDownMenu-root-157 HvActions-dropDownMenu-110",
             }
           }
           dataList={
@@ -1400,7 +1400,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           expanded={false}
           icon={
             <ForwardRef(WithStyles)
-              className="HvActions-dropDownMenuIcon-102"
+              className="HvActions-dropDownMenuIcon-111"
             />
           }
           keepOpened={false}
@@ -1408,7 +1408,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           placement="left"
         >
           <div
-            className="HvDropDownMenu-root-148 HvActions-dropDownMenu-101"
+            className="HvDropDownMenu-root-157 HvActions-dropDownMenu-110"
             id="hv-dropdown-menu3"
           >
             <WithStyles(ForwardRef(IconButton))
@@ -1417,7 +1417,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-149"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                     id="hv-dropdown-menu3-icon-button"
                     tabindex="0"
                     type="button"
@@ -1426,7 +1426,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       class="MuiIconButton-label"
                     >
                       <div
-                        class="HvActions-dropDownMenuIcon-102 HvIconMoreOptionsVertical-root-161 HvIconMoreOptionsVertical-rootS-163"
+                        class="HvActions-dropDownMenuIcon-111 HvIconMoreOptionsVertical-root-170 HvIconMoreOptionsVertical-rootS-172"
                       >
                         <svg
                           focusable="false"
@@ -1446,7 +1446,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-149"
+              className="HvDropDownMenu-icon-158"
               disabled={false}
               id="hv-dropdown-menu3-icon-button"
               onClick={[Function]}
@@ -1458,7 +1458,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-149"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                       id="hv-dropdown-menu3-icon-button"
                       tabindex="0"
                       type="button"
@@ -1467,7 +1467,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                         class="MuiIconButton-label"
                       >
                         <div
-                          class="HvActions-dropDownMenuIcon-102 HvIconMoreOptionsVertical-root-161 HvIconMoreOptionsVertical-rootS-163"
+                          class="HvActions-dropDownMenuIcon-111 HvIconMoreOptionsVertical-root-170 HvIconMoreOptionsVertical-rootS-172"
                         >
                           <svg
                             focusable="false"
@@ -1487,7 +1487,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     </button>,
                   }
                 }
-                className="HvDropDownMenu-icon-149"
+                className="HvDropDownMenu-icon-158"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1512,7 +1512,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-149"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                         id="hv-dropdown-menu3-icon-button"
                         tabindex="0"
                         type="button"
@@ -1521,7 +1521,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                           class="MuiIconButton-label"
                         >
                           <div
-                            class="HvActions-dropDownMenuIcon-102 HvIconMoreOptionsVertical-root-161 HvIconMoreOptionsVertical-rootS-163"
+                            class="HvActions-dropDownMenuIcon-111 HvIconMoreOptionsVertical-root-170 HvIconMoreOptionsVertical-rootS-172"
                           >
                             <svg
                               focusable="false"
@@ -1542,7 +1542,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-149"
+                  className="MuiIconButton-root HvDropDownMenu-icon-158"
                   disabled={false}
                   focusRipple={true}
                   id="hv-dropdown-menu3-icon-button"
@@ -1555,7 +1555,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       Object {
                         "current": <button
                           aria-haspopup="true"
-                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-149"
+                          class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                           id="hv-dropdown-menu3-icon-button"
                           tabindex="0"
                           type="button"
@@ -1564,7 +1564,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                             class="MuiIconButton-label"
                           >
                             <div
-                              class="HvActions-dropDownMenuIcon-102 HvIconMoreOptionsVertical-root-161 HvIconMoreOptionsVertical-rootS-163"
+                              class="HvActions-dropDownMenuIcon-111 HvIconMoreOptionsVertical-root-170 HvIconMoreOptionsVertical-rootS-172"
                             >
                               <svg
                                 focusable="false"
@@ -1585,7 +1585,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       }
                     }
                     centerRipple={true}
-                    className="MuiIconButton-root HvDropDownMenu-icon-149"
+                    className="MuiIconButton-root HvDropDownMenu-icon-158"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -1602,7 +1602,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   >
                     <button
                       aria-haspopup="true"
-                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-149"
+                      className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                       disabled={false}
                       id="hv-dropdown-menu3-icon-button"
                       onBlur={[Function]}
@@ -1624,22 +1624,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(MoreOptionsVertical)
-                          className="HvActions-dropDownMenuIcon-102"
+                          className="HvActions-dropDownMenuIcon-111"
                         >
                           <MoreOptionsVertical
-                            className="HvActions-dropDownMenuIcon-102"
+                            className="HvActions-dropDownMenuIcon-111"
                             classes={
                               Object {
-                                "root": "HvIconMoreOptionsVertical-root-161",
-                                "rootL": "HvIconMoreOptionsVertical-rootL-165",
-                                "rootM": "HvIconMoreOptionsVertical-rootM-164",
-                                "rootS": "HvIconMoreOptionsVertical-rootS-163",
-                                "rootXs": "HvIconMoreOptionsVertical-rootXs-162",
+                                "root": "HvIconMoreOptionsVertical-root-170",
+                                "rootL": "HvIconMoreOptionsVertical-rootL-174",
+                                "rootM": "HvIconMoreOptionsVertical-rootM-173",
+                                "rootS": "HvIconMoreOptionsVertical-rootS-172",
+                                "rootXs": "HvIconMoreOptionsVertical-rootXs-171",
                               }
                             }
                           >
                             <div
-                              className="HvActions-dropDownMenuIcon-102 HvIconMoreOptionsVertical-root-161 HvIconMoreOptionsVertical-rootS-163"
+                              className="HvActions-dropDownMenuIcon-111 HvIconMoreOptionsVertical-root-170 HvIconMoreOptionsVertical-rootS-172"
                             >
                               <svg
                                 focusable={false}

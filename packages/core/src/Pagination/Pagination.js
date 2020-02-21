@@ -18,7 +18,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import IconButton from "@material-ui/core/IconButton";
+import { IconButton, withStyles } from "@material-ui/core";
 import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
 import ArrowLeft from "@hv/uikit-react-icons/dist/Generic/Backwards";
@@ -30,6 +30,7 @@ import {
 } from "@hv/uikit-common-utils/dist/KeyboardUtils";
 import HvTypography from "../Typography";
 import HvInput from "../Input";
+import styles from "./styles";
 
 const Pagination = ({
   classes,
@@ -328,4 +329,4 @@ Pagination.defaultProps = {
   }
 };
 
-export default Pagination;
+export default withStyles(styles, { name: "HvPagination" })(Pagination);

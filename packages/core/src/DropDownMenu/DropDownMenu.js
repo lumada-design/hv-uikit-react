@@ -21,7 +21,8 @@ import {
   ClickAwayListener,
   IconButton,
   Popper,
-  useTheme
+  useTheme,
+  withStyles
 } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
@@ -29,6 +30,7 @@ import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
+import styles from "./styles";
 
 /**
  * Dropdown component with a menu.
@@ -251,4 +253,4 @@ DropDownMenu.defaultProps = {
   expanded: false
 };
 
-export default DropDownMenu;
+export default withStyles(styles, { name: "HvDropDownMenu" })(DropDownMenu);

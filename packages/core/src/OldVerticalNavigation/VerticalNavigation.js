@@ -19,10 +19,12 @@ import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import { isIE } from "@hv/uikit-common-utils/dist";
 import Title from "./Title";
 import SearchBox from "../SearchBox";
 import List from "../List";
+import styles from "./styles";
 
 const ANIMATION_DURATION = 200;
 
@@ -363,4 +365,6 @@ VerticalNavigation.defaultProps = {
   noAnimation: false
 };
 
-export default VerticalNavigation;
+export default withStyles(styles, { name: "HvVerticalNavigation" })(
+  VerticalNavigation
+);

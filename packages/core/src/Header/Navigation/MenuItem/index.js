@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import MenuItem from "./MenuItem";
-
-export default withStyles(styles, { name: "HvHeaderMenuItem" })(MenuItem);
+export { default } from "./MenuItem";

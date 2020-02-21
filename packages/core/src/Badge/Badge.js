@@ -17,7 +17,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Typography from "../Typography";
+import styles from "./styles";
 
 const Badge = props => {
   const {
@@ -110,4 +112,4 @@ Badge.defaultProps = {
   textVariant: null
 };
 
-export default Badge;
+export default withStyles(styles, { name: "HvBadge" })(Badge);

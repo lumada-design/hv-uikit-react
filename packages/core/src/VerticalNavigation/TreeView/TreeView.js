@@ -23,7 +23,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
 
 import {
@@ -33,6 +33,8 @@ import {
 
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
+
+import styles from "./styles";
 
 export class NodeTreeNavigationUtils {
   static getNextNode(isExpanded, nodeMap, nodeId, end = false) {
@@ -627,17 +629,14 @@ TreeView.propTypes = {
 TreeView.defaultProps = {
   id: undefined,
   className: "",
-
   mode: "treeview",
-
   selectable: true,
   selected: null,
-
   collapsible: false,
-
   onChange: null,
-
   children: null
 };
 
-export default TreeView;
+export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(
+  TreeView
+);

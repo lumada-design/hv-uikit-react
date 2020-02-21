@@ -14,10 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import { styles } from "./styles";
-import withConfig from "../config/withConfig";
-
-import Table from "./Table";
-
-export default withStyles(styles, { name: "HvTable" })(withConfig(Table));
+export { default } from "./Table";

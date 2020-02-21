@@ -19,9 +19,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import KpiWithStyles from "../index";
-import Kpi from "../Kpi";
 import HvProvider from "../../Provider";
+import Kpi from "..";
 
 const labels = {
   title: "Avg. service time",
@@ -30,13 +29,13 @@ const labels = {
   comparisonIndicatorInfo: "vs last 24h."
 };
 
-describe("Kpi withStyles", () => {
+describe("Kpi", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <KpiWithStyles labels={labels} />
+        <Kpi labels={labels} />
       </HvProvider>
     );
   });

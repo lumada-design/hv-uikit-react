@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import CardView from "./CardView";
-
-export default withStyles(styles, { name: "HvCardView" })(CardView);
+export { default } from "./CardView";

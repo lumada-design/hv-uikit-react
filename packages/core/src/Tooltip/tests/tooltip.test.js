@@ -18,7 +18,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@material-ui/core";
 
 import Tooltip from "..";
 import HvProvider from "../../Provider";

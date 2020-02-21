@@ -24,8 +24,7 @@ import Navigation from "../Navigation";
 import { VIEW_MODE } from "../enums";
 import { makeUTCDate } from "../utils";
 
-import CalendarWithStyles from "../index";
-import Calendar from "../Calendar";
+import Calendar from "..";
 
 describe("<Calendar /> with minimum configuration", () => {
   let wrapper;
@@ -36,10 +35,10 @@ describe("<Calendar /> with minimum configuration", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <CalendarWithStyles id="default" selectedDate={selectedDate} />
+        <Calendar id="default" selectedDate={selectedDate} />
       </HvProvider>
     );
-    calendarComponent = wrapper.find(Calendar);
+    calendarComponent = wrapper.find("Calendar");
     calendarInstance = calendarComponent.instance();
   });
 
@@ -90,7 +89,7 @@ describe("<Calendar /> with configurations", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <CalendarWithStyles
+        <Calendar
           id="default"
           selectedDate={selectedDate}
           locale="en-US"

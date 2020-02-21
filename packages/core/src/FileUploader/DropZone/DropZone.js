@@ -16,12 +16,14 @@
 
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import Doc from "@hv/uikit-react-icons/dist/Generic/Doc";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
+import styles from "./styles";
 
 const DropZone = ({
   id,
@@ -246,4 +248,4 @@ DropZone.defaultProps = {
   onFilesAdded: () => {}
 };
 
-export default DropZone;
+export default withStyles(styles, { name: "HvFileUploaderDropZone" })(DropZone);

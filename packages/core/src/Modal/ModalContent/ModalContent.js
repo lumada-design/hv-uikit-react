@@ -16,9 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import MuiDialogContent from "@material-ui/core/DialogContent";
+import { DialogContent, withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import HvTypography from "../../Typography";
+import styles from "./styles";
 
 /**
  * Message container. The passed children is render in this container, creating
@@ -33,14 +34,14 @@ const ModalContent = ({ classes, className, children }) => {
   const isString = typeof children === "string";
 
   return (
-    <MuiDialogContent
+    <DialogContent
       className={clsx(className, classes.root, {
         [classes.textContent]: isString
       })}
     >
       {!isString && children}
       {isString && <HvTypography variant="normalText">{children}</HvTypography>}
-    </MuiDialogContent>
+    </DialogContent>
   );
 };
 ModalContent.propTypes = {
@@ -71,4 +72,4 @@ ModalContent.defaultProps = {
   className: ""
 };
 
-export default ModalContent;
+export default withStyles(styles, { name: "HvModalContent" })(ModalContent);

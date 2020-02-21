@@ -21,8 +21,7 @@ import merge from "lodash/merge";
 import isEmpty from "lodash/isEmpty";
 import cloneDeep from "lodash/cloneDeep";
 import diff from "deep-diff";
-import { CssBaseline } from "@material-ui/core";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { CssBaseline, ThemeProvider, createMuiTheme } from "@material-ui/core";
 import { ConfigProvider } from "../config/context";
 import { themeBuilder } from "../theme";
 

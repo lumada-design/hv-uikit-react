@@ -17,7 +17,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
+import styles from "./styles";
 
 const HvKpi = props => {
   const {
@@ -196,4 +198,4 @@ HvKpi.defaultProps = {
   indicatorUnitTextVariant: "sTitle"
 };
 
-export default HvKpi;
+export default withStyles(styles, { name: "HvKpi" })(HvKpi);

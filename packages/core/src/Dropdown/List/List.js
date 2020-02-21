@@ -20,7 +20,12 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
-import { useTheme, ClickAwayListener, Popper } from "@material-ui/core";
+import {
+  ClickAwayListener,
+  Popper,
+  useTheme,
+  withStyles
+} from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
@@ -28,6 +33,7 @@ import Actions from "../Actions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
 import ConditionalWrapper from "../../utils/ConditionalWrapper";
+import styles from "./styles";
 
 const List = ({
   id,
@@ -443,4 +449,4 @@ List.defaultProps = {
   listProps: {}
 };
 
-export default List;
+export default withStyles(styles, { name: "HvDropdownList" })(List);

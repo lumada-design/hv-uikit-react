@@ -18,7 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
+import styles from "./styles";
 
 const cell = (
   classes,
@@ -152,4 +154,4 @@ ListViewCell.defaultProps = {
   className: ""
 };
 
-export default ListViewCell;
+export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);

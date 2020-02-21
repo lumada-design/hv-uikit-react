@@ -16,11 +16,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
 import { FocusProvider } from "./utils/FocusContext";
 import SelectionContext from "./utils/SelectionContext";
 import useSelectionPath from "./utils/useSelectionPath";
 import MenuBar from "./MenuBar";
+import styles from "./styles";
 
 const Navigation = ({ classes, id, data, selected, onClick }) => {
   const uniqueId = useUniqueId(id, "hv-navigation-");
@@ -85,4 +87,4 @@ Navigation.defaultProps = {
   onClick: () => {}
 };
 
-export default Navigation;
+export default withStyles(styles, { name: "HvHeaderNavigation" })(Navigation);

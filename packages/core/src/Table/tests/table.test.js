@@ -20,11 +20,9 @@ import React from "react";
 import { mount } from "enzyme";
 import ReactTable from "react-table";
 import HvProvider from "../../Provider";
-import HvTableWithStyles from "../index";
-import HvTable from "../Table";
 import HvPagination from "../Pagination";
 import DropDownMenu from "../../DropDownMenu";
-import theme from "../../theme";
+import HvTable from "..";
 
 describe("Hv Table", () => {
   let wrapper;
@@ -33,11 +31,9 @@ describe("Hv Table", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <HvTableWithStyles
-            classes={{}}
+          <HvTable
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
           />
         </HvProvider>
       );
@@ -76,10 +72,8 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
           />
         </HvProvider>
       );
@@ -92,8 +86,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[
               { id: 1, Header: "column 1" },
               { id: 2, Header: "column 2" },
@@ -114,8 +106,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
@@ -130,8 +120,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
             pageSize={5}
@@ -146,13 +134,7 @@ describe("Hv Table", () => {
     it("and if 'data' is empty, don't render pagination", () => {
       wrapper = mount(
         <HvProvider>
-          <HvTable
-            classes={{}}
-            theme={theme}
-            columns={[]}
-            data={[]}
-            pageSize={5}
-          />
+          <HvTable columns={[]} data={[]} pageSize={5} />
         </HvProvider>
       );
 
@@ -172,7 +154,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.setState({ sorted: [column[0]] });
       instance.getTheadThProps("state", "rowInfo", column[0]);
       expect(column[0].className).toContain("sorted");
@@ -195,7 +177,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.setState({ sorted: [column[0]] });
       instance.getTheadThProps("state", "rowInfo", column[0]);
       expect(column[0].className).toContain(classesToApply.alphaNumeric);
@@ -225,7 +207,7 @@ describe("Hv Table", () => {
         className: "something"
       };
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.onSortChange([column[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
     });
@@ -246,7 +228,7 @@ describe("Hv Table", () => {
         className: "something"
       };
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.onSortChange([column[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
       const sortedIcon = instance.getSortedComponent(1);
@@ -274,7 +256,7 @@ describe("Hv Table", () => {
         className: "something"
       };
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.onSortChange([columns[0]], internalColumnRepresentation);
       expect(internalColumnRepresentation.className).toBe("sorted");
       const sortedIcon = instance.getSortedComponent(1);
@@ -300,7 +282,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.toggleAll();
       expect(instance.state.selectAll).toBe(true);
     });
@@ -319,7 +301,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.toggleSelection(column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
@@ -338,7 +320,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.toggleSelection(column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
       instance.toggleSelection(column[0].id);
@@ -360,7 +342,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.toggleSelection(column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
@@ -385,7 +367,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       const row = instance.getTrProps("state", rowInfo);
       expect(row.onClick).toBeInstanceOf(Function);
     });
@@ -406,7 +388,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.state.initiallyLoaded = true;
       instance.onFetchDataInternal(instance.state);
       expect(fetchDataMock).toHaveBeenCalled();

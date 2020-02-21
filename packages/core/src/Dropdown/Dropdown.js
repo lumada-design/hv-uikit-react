@@ -18,12 +18,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
 import HvTypography from "../Typography";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
+import styles from "./styles";
 
 const DEFAULT_LABELS = {
   select: "Select...",
@@ -426,4 +428,4 @@ Dropdown.defaultProps = {
   singleSelectionToggle: true
 };
 
-export default Dropdown;
+export default withStyles(styles, { name: "HvDropdown" })(Dropdown);

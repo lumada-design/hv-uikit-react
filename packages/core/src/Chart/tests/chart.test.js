@@ -20,10 +20,9 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import ChartWithStyles from "../index";
-import Chart from "../Chart";
+import Chart from "..";
 import Plot from "../Plot";
-import Tooltip from "../Tooltip/index";
+import Tooltip from "../Tooltip";
 import SingleTooltip from "../Tooltip/SingleTooltip";
 import MultiTooltip from "../Tooltip/MultiTooltip";
 
@@ -45,7 +44,7 @@ describe("Chart withStyles", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
   });
@@ -61,7 +60,7 @@ describe("Chart withStyles", () => {
   it("should render the Chart", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
     const chart = wrapper.find(Chart);
@@ -71,7 +70,7 @@ describe("Chart withStyles", () => {
   it("should render the Plot", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
     const plot = wrapper.find(Plot);
@@ -81,7 +80,7 @@ describe("Chart withStyles", () => {
   it("should render a title", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} title="This is a title" />
+        <Chart data={data} layout={layout} title="This is a title" />
       </HvProvider>
     );
     const title = wrapper.find("h3");
@@ -91,7 +90,7 @@ describe("Chart withStyles", () => {
   it("should render a subtitle", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles
+        <Chart
           data={data}
           layout={layout}
           title="This is a title"

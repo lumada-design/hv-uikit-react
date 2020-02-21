@@ -19,10 +19,10 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
-import Dialog from "@material-ui/core/Dialog";
-
+import { Dialog, withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/Generic/Close";
 import Button from "../Button";
+import styles from "./styles";
 
 /**
  * Modal component.
@@ -35,7 +35,7 @@ import Button from "../Button";
  * @returns {*}
  * @constructor
  */
-const Main = ({
+const Modal = ({
   classes,
   className,
   id,
@@ -100,7 +100,7 @@ const Main = ({
     </Dialog>
   );
 };
-Main.propTypes = {
+Modal.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -148,11 +148,11 @@ Main.propTypes = {
   buttonTitle: PropTypes.string
 };
 
-Main.defaultProps = {
+Modal.defaultProps = {
   className: "",
   id: undefined,
   firstFocusable: undefined,
   buttonTitle: "Close"
 };
 
-export default Main;
+export default withStyles(styles, { name: "HvModal" })(Modal);

@@ -20,7 +20,7 @@ import React from "react";
 import { mount } from "enzyme";
 import { axe, toHaveNoViolations } from "jest-axe";
 import HvProvider from "../../Provider";
-import DropdownWithStyles from "../index";
+import Dropdown from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -37,7 +37,7 @@ describe("Dropdown A11Y", () => {
   it("with title", async () => {
     wrapper = mount(
       <HvProvider>
-        <DropdownWithStyles
+        <Dropdown
           disablePortal
           values={mockData}
           onChange={onChangeMock}

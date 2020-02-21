@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import MenuBar from "./MenuBar";
-
-export default withStyles(styles, { name: "HvHeaderMenuBar" })(MenuBar);
+export { default } from "./MenuBar";

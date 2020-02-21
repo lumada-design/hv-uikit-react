@@ -18,7 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import useWidth from "../utils/useWidth";
+import styles from "./styles";
 
 const BREAKPOINT_GUTTERS = {
   xs: 15,
@@ -219,4 +221,4 @@ HvGrid.defaultProps = {
   children: undefined
 };
 
-export default HvGrid;
+export default withStyles(styles, { name: "HvGrid" })(HvGrid);

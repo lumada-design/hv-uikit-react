@@ -18,8 +18,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import Input from "../Input";
+import styles from "./styles";
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
@@ -361,4 +363,4 @@ HvTextArea.defaultProps = {
   resizable: false
 };
 
-export default HvTextArea;
+export default withStyles(styles, { name: "HvTextArea" })(HvTextArea);

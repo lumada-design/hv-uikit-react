@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core";
 import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
 import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
 import muiAppBarOverrides from "./overrides/muiAppBar";

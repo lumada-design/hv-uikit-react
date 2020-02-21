@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import ModalActions from "./ModalActions";
-
-export default withStyles(styles, { name: "HvModalActions" })(ModalActions);
+export { default } from "./ModalActions";

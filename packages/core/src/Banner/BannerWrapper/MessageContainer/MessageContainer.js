@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
 import Actions from "../../../Actions";
+import styles from "./styles";
 
 /**
  * Container for the message of the banner. This message may include:
@@ -106,4 +108,6 @@ MessageContainer.defaultProps = {
   actionsOnMessageCallback: () => {}
 };
 
-export default MessageContainer;
+export default withStyles(styles, { name: "HvMessageContainer" })(
+  MessageContainer
+);

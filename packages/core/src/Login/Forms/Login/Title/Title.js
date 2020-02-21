@@ -17,7 +17,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../../Typography";
+import styles from "./styles";
 
 /**
  * Builds the title component. This component can be render by the props:
@@ -99,4 +101,4 @@ Title.defaultProps = {
   titleComponent: null
 };
 
-export default Title;
+export default withStyles(styles, { name: "HvLoginTitle" })(Title);

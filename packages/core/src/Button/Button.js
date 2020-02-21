@@ -17,8 +17,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import Button from "@material-ui/core/Button";
+import { Button, withStyles } from "@material-ui/core";
 import getMaterialConfiguration from "./materialConfigurarion";
+import styles from "./styles";
 
 /**
  * Hitachi Vantara Design System compliant Button allows 4 categories
@@ -202,4 +203,4 @@ HvButton.defaultProps = {
   startIcon: null
 };
 
-export default HvButton;
+export default withStyles(styles, { name: "HvButton" })(HvButton);

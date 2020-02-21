@@ -16,8 +16,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
+import styles from "./styles";
 
 const Actions = ({ theme, classes, id, children, ...others }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-actions-");
@@ -59,4 +60,6 @@ Actions.defaultProps = {
   children: undefined
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvVerticalNavigationActions" })(
+  Actions
+);

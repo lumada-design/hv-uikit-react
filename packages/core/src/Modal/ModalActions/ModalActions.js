@@ -16,7 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import MuiDialogActions from "@material-ui/core/DialogActions";
+import { DialogActions, withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 /**
  * Actions of the modal.
@@ -27,8 +28,8 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
  * @returns {*}
  * @constructor
  */
-const ModalActions = ({ classes, className, children, ...others }) => (
-  <MuiDialogActions
+const HvModalActions = ({ classes, className, children, ...others }) => (
+  <DialogActions
     classes={{
       root: classes.root,
       action: classes.action
@@ -37,10 +38,10 @@ const ModalActions = ({ classes, className, children, ...others }) => (
     {...others}
   >
     {children}
-  </MuiDialogActions>
+  </DialogActions>
 );
 
-ModalActions.propTypes = {
+HvModalActions.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -64,8 +65,8 @@ ModalActions.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-ModalActions.defaultProps = {
+HvModalActions.defaultProps = {
   className: ""
 };
 
-export default ModalActions;
+export default withStyles(styles, { name: "HvModalActions" })(HvModalActions);

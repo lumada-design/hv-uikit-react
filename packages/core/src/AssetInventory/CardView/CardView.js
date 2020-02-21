@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
+import styles from "./styles";
 
 /**
  * Definition of which render should be used.
@@ -240,4 +242,4 @@ CardView.defaultProps = {
   }
 };
 
-export default CardView;
+export default withStyles(styles, { name: "HvCardView" })(CardView);

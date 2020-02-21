@@ -17,7 +17,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import CardMedia from "@material-ui/core/CardMedia";
+import { CardMedia, withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 /**
  * The media container.
@@ -111,4 +112,4 @@ Media.defaultProps = {
   onClickAction: () => {}
 };
 
-export default Media;
+export default withStyles(styles, { name: "HvCardMedia" })(Media);

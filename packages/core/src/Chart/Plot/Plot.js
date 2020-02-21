@@ -19,6 +19,8 @@ import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
 import equals from "lodash/isEqual";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 /**
  * Plotly plot.
@@ -107,4 +109,6 @@ const arePropsEqual = (prevProps, nextProps) =>
   equals(prevProps.data, nextProps.data) &&
   equals(prevProps.layout, nextProps.layout);
 
-export default memo(Plot, arePropsEqual);
+export default withStyles(styles, { name: "HvChartPlot" })(
+  memo(Plot, arePropsEqual)
+);

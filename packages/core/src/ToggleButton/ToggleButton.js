@@ -16,9 +16,11 @@
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-toggle-button-";
 
@@ -180,4 +182,4 @@ ToggleButton.defaultProps = {
   disabled: false
 };
 
-export default ToggleButton;
+export default withStyles(styles, { name: "HvToggleButton" })(ToggleButton);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { fade, hexToRgb } from "@material-ui/core/styles";
+import { fade, hexToRgb } from "@material-ui/core";
 
 const styles = theme => ({
   background: {

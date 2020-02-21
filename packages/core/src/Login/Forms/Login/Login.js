@@ -17,11 +17,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
 import MessageElement from "../MessageElement";
+import styles from "./styles";
 
 /**
  * Error link button element.
@@ -400,4 +402,4 @@ Login.defaultProps = {
   customMessage: null
 };
 
-export default Login;
+export default withStyles(styles, { name: "HvLoginLogin" })(Login);

@@ -17,13 +17,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
+import clsx from "clsx";
+import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import clsx from "clsx";
 import labelPositions from "../labelPositions";
+import styles from "./styles";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -239,4 +239,4 @@ HvCheckbox.defaultProps = {
   labelPlacement: "end"
 };
 
-export default HvCheckbox;
+export default withStyles(styles, { name: "HvCheckBox" })(HvCheckbox);

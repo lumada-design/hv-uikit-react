@@ -14,17 +14,5 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-
-import Actions from "./Actions";
-import RawAction from "./Action";
-
-const Action = withStyles(styles, { name: "HvVerticalNavigationAction" })(
-  RawAction
-);
-export { Action };
-
-export default withStyles(styles, { name: "HvVerticalNavigationActions" })(
-  Actions
-);
+export { default } from "./Actions";
+export { default as Action } from "./Action";

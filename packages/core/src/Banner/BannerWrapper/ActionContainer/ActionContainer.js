@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-/*  TODO: Review accessibility */
-
 import React from "react";
-import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import PropTypes, { oneOfType } from "prop-types";
+import { withStyles } from "@material-ui/core";
+import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
 import Actions from "../../../Actions";
+import styles from "./styles";
 
 /**
  * Container for the actions. This actions include:
@@ -94,4 +94,6 @@ ActionContainer.defaultProps = {
   actionCallback: () => {}
 };
 
-export default ActionContainer;
+export default withStyles(styles, { name: "HvActionContainer" })(
+  ActionContainer
+);

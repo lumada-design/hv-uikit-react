@@ -17,12 +17,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import clsx from "clsx";
+import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
-import Radio from "@material-ui/core/Radio";
-import clsx from "clsx";
 import labelPositions from "../labelPositions";
+import styles from "./styles";
 
 /**
  * Returns the correct label styles to be applied based on label position.
@@ -222,4 +222,4 @@ HvRadio.defaultProps = {
   labelPlacement: labelPositions.end
 };
 
-export default HvRadio;
+export default withStyles(styles, { name: "HvRadioButton" })(HvRadio);

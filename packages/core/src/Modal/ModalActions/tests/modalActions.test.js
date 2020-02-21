@@ -20,9 +20,7 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import HvProvider from "../../../Provider";
-
-import ModalActionsWithStyles from "../index";
-import ModalActions from "../ModalActions";
+import ModalActions from "..";
 
 describe("ModalActions withStyles", () => {
   let wrapper;
@@ -30,7 +28,7 @@ describe("ModalActions withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <ModalActionsWithStyles>Modal Content</ModalActionsWithStyles>
+        <ModalActions>Modal Content</ModalActions>
       </HvProvider>
     );
   });
@@ -45,9 +43,9 @@ describe("ModalActions Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <ModalActions classes={{}}>
-        Modal Content
-      </ModalActions>
+      <HvProvider>
+        <ModalActions>Modal Content</ModalActions>
+      </HvProvider>
     );
   });
 
@@ -57,26 +55,25 @@ describe("ModalActions Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <ModalActions
-        classes={{}}
-        disableActionSpacing
-      >
-        Modal Content
-      </ModalActions>
+      <HvProvider>
+        <ModalActions disableActionSpacing>Modal Content</ModalActions>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <ModalActions
-        classes={{
-          root: "testClassRoot",
-          action: "testClassAction"
-        }}
-      >
-        Modal Content
-      </ModalActions>
+      <HvProvider>
+        <ModalActions
+          classes={{
+            root: "testClassRoot",
+            action: "testClassAction"
+          }}
+        >
+          Modal Content
+        </ModalActions>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });

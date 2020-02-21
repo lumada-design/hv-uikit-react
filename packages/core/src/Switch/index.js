@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Switch from "./Switch";
-
-export default withStyles(styles, { name: "HvSwitch" })(Switch);
+export { default } from "./Switch";

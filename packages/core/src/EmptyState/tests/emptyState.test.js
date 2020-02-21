@@ -19,8 +19,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import HvProvider from "../../Provider";
-import EmptyState from "../EmptyState";
-import StyledEmptyState from "../index";
+import EmptyState from "..";
 
 const mockClasses = {};
 const mockTitle = "mockTitle";
@@ -32,12 +31,14 @@ describe("<EmptyState /> with String title/message", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <EmptyState
-        classes={mockClasses}
-        title={mockTitle}
-        message={mockMessage}
-        icon={mockIcon}
-      />
+      <HvProvider>
+        <EmptyState
+          classes={mockClasses}
+          title={mockTitle}
+          message={mockMessage}
+          icon={mockIcon}
+        />
+      </HvProvider>
     );
   });
 
@@ -59,7 +60,7 @@ describe("<EmptyState /> with Element title/message/action", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <StyledEmptyState
+        <EmptyState
           title={<MockTitle />}
           message={<MockMessage />}
           action={<MockAction />}

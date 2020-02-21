@@ -18,7 +18,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import CardHeader from "@material-ui/core/CardHeader";
+import { CardHeader, withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 const DEFAULT_ID = "hv-header";
 /**
@@ -120,4 +121,4 @@ Header.defaultProps = {
   onClickAction: () => {}
 };
 
-export default Header;
+export default withStyles(styles, { name: "HvCardHeader" })(Header);

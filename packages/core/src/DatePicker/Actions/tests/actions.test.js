@@ -19,8 +19,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import HvButton from "../../../Button";
 
-import ActionsWrapper from "../index";
-import Actions from "../Actions";
+import Actions from "..";
 
 describe("<Actions />", () => {
   let wrapper;
@@ -36,7 +35,7 @@ describe("<Actions />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ActionsWrapper
+        <Actions
           id="id"
           onCancel={onCancelMock()}
           onApply={onApplyMock()}

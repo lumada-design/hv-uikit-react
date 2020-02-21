@@ -21,9 +21,7 @@ import { mount, shallow } from "enzyme";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import HvProvider from "../../Provider";
-
-import TextAreaWithStyles from "../index";
-import TextArea from "../TextArea";
+import TextArea from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -33,7 +31,7 @@ describe("TextArea withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <TextAreaWithStyles />
+        <TextArea />
       </HvProvider>
     );
   });
@@ -48,7 +46,9 @@ describe("TextArea Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <TextArea classes={{}} rows={4} initialValue="test" onChange={() => {}} />
+      <HvProvider>
+        <TextArea rows={4} initialValue="test" onChange={() => {}} />
+      </HvProvider>
     );
   });
 
@@ -61,8 +61,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles
-          classes={{}}
+        <TextArea
           rows={4}
           initialValue="test"
           onChange={onChangeMock}
@@ -70,7 +69,7 @@ describe("TextArea Component", () => {
         />
       </HvProvider>
     );
-    const instance = wrapperMount.find(TextArea).instance();
+    const instance = wrapperMount.find("HvTextArea").instance();
     instance.onChangeHandler(value);
     expect(onChangeMock).toHaveBeenCalled();
     expect(instance.state.currentValueLength).toBe(5);
@@ -81,8 +80,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles
-          classes={{}}
+        <TextArea
           rows={4}
           initialValue="test"
           onChange={onChangeMock}
@@ -90,7 +88,7 @@ describe("TextArea Component", () => {
         />
       </HvProvider>
     );
-    const instance = wrapperMount.find(TextArea).instance();
+    const instance = wrapperMount.find("HvTextArea").instance();
     instance.onChangeHandler(value);
     expect(onChangeMock).toHaveBeenCalled();
     expect(instance.state.currentValueLength).toBe(5);
@@ -103,8 +101,7 @@ describe("TextArea Component", () => {
       React.createElement(
         props => (
           <HvProvider>
-            <TextAreaWithStyles
-              classes={{}}
+            <TextArea
               value={props.value}
               rows={4}
               initialValue={props.value}
@@ -118,7 +115,7 @@ describe("TextArea Component", () => {
     );
     wrapper.setProps({ value });
     wrapper.update();
-    const inputInstance = wrapper.find(TextArea).instance();
+    const inputInstance = wrapper.find("HvTextArea").instance();
     return inputInstance;
   };
 
@@ -145,10 +142,10 @@ describe("TextArea Component", () => {
   it("should scroll down on update when autoScroll", () => {
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles classes={{}} value="test" autoScroll />
+        <TextArea classes={{}} value="test" autoScroll />
       </HvProvider>
     );
-    const instance = wrapperMount.find(TextArea).instance();
+    const instance = wrapperMount.find("HvTextArea").instance();
     const inputElement = wrapperMount.find("textarea").getDOMNode();
 
     expect(instance.state.autoScrolling).toBe(true);
@@ -165,10 +162,10 @@ describe("TextArea Component", () => {
   it("should stop and resume autoScrolling on scroll", () => {
     const wrapperMount = mount(
       <HvProvider>
-        <TextAreaWithStyles classes={{}} value="test" autoScroll />
+        <TextArea classes={{}} value="test" autoScroll />
       </HvProvider>
     );
-    const instance = wrapperMount.find(TextArea).instance();
+    const instance = wrapperMount.find("HvTextArea").instance();
     const inputElement = wrapperMount.find("textarea").getDOMNode();
     expect(instance.state.autoScrolling).toBe(true);
     Object.defineProperty(inputElement, "scrollHeight", { value: 30 });
@@ -194,7 +191,7 @@ describe("TextAreaA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <TextAreaWithStyles
+        <TextArea
           labels={labels}
           classes={{}}
           rows={4}

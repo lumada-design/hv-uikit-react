@@ -777,7 +777,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
         classes={Object {}}
       />
     </WithStyles(CssBaseline)>
-    <WithStyles(Main)
+    <WithStyles(HvCard)
       actions="actions"
       actionsAlignment="left"
       actionsCallback={[Function]}
@@ -800,7 +800,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
       semantic="sema0"
       subheader="subtitle"
     >
-      <Main
+      <HvCard
         actions="actions"
         actionsAlignment="left"
         actionsCallback={[Function]}
@@ -1913,8 +1913,8 @@ exports[`Card withStyles should be able to render with every property defined 1`
             </WithStyles(ForwardRef(Paper))>
           </ForwardRef(Card)>
         </WithStyles(ForwardRef(Card))>
-      </Main>
-    </WithStyles(Main)>
+      </HvCard>
+    </WithStyles(HvCard)>
   </ThemeProvider>
 </HvProvider>
 `;

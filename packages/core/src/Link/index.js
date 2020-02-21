@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Link from "./Link";
-
-export default withStyles(styles, { name: "HvLink" })(Link);
+export { default } from "./Link";

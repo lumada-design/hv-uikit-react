@@ -19,6 +19,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
 import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";
@@ -27,6 +28,7 @@ import HvTypography from "../Typography";
 import withTooltip from "../withTooltip";
 import HvLink from "../Link";
 import Focus from "../Focus";
+import styles from "./styles";
 
 const DEFAULT_STATE = {
   list: [],
@@ -467,4 +469,4 @@ List.defaultProps = {
   listProps: undefined
 };
 
-export default List;
+export default withStyles(styles, { name: "HvList" })(List);

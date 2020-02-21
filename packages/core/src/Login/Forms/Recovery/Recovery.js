@@ -17,10 +17,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
 import MessageElement from "../MessageElement";
+import styles from "./styles";
 
 /**
  * The recovery password form.
@@ -260,4 +262,4 @@ Recovery.defaultProps = {
   okRecoveryIcon: null
 };
 
-export default Recovery;
+export default withStyles(styles, { name: "HvLoginRecovery" })(Recovery);
