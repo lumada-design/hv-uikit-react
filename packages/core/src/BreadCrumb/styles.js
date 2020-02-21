@@ -41,6 +41,9 @@ const styles = theme => ({
   separatorContainer: {
     width: "32px",
     height: "32px"
+  },
+  orderedList: {
+    display: "flex"
   }
 });
 
