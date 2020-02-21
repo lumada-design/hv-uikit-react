@@ -887,7 +887,6 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
             }
           }
           enterDelay={300}
-          open={null}
           placement="top"
           title={<ForwardRef(WithStyles) />}
         >
@@ -927,7 +926,6 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
               }
             }
             enterDelay={300}
-            open={null}
             placement="top"
             title={<ForwardRef(WithStyles) />}
           >
@@ -958,7 +956,7 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
               }
               className="MuiTooltip-popper HvTooltip-popper-92"
               id={null}
-              open={null}
+              open={false}
               placement="top"
               popperOptions={
                 Object {
@@ -1867,7 +1865,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             }
           }
           enterDelay={300}
-          open={null}
           placement="top"
           title={<ForwardRef(WithStyles) />}
         >
@@ -1907,7 +1904,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               }
             }
             enterDelay={300}
-            open={null}
             placement="top"
             title={<ForwardRef(WithStyles) />}
           >
@@ -1938,7 +1934,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               }
               className="MuiTooltip-popper HvTooltip-popper-158"
               id={null}
-              open={null}
+              open={false}
               placement="top"
               popperOptions={
                 Object {
@@ -2863,7 +2859,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             }
           }
           enterDelay={300}
-          open={null}
           placement="top"
           title={
             <ForwardRef(WithStyles)
@@ -2911,7 +2906,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               }
             }
             enterDelay={300}
-            open={null}
             placement="top"
             title={
               <ForwardRef(WithStyles)
@@ -2950,7 +2944,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               }
               className="MuiTooltip-popper HvTooltip-popper-26"
               id={null}
-              open={null}
+              open={false}
               placement="top"
               popperOptions={
                 Object {

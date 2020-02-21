@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import Fade from "@material-ui/core/Fade";
+import isNil from "lodash/isNil";
 
 const HvTooltip = ({
   classes,
@@ -32,7 +33,7 @@ const HvTooltip = ({
   ...others
 }) => (
   <Tooltip
-    open={open}
+    open={(!isNil(open) && open) || undefined}
     enterDelay={enterDelay}
     placement={placement}
     TransitionComponent={TransitionComponent}
