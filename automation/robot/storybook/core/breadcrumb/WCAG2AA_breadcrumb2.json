@@ -13,7 +13,7 @@
         "code": "button-name",
         "type": "error",
         "typeCode": 1,
-        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
+        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI)",
         "context": "<button class=\"MuiButtonBase-root-48 MuiIconButton-root-191 DropDownMenu-icon-188\" tabindex=\"0\" type=\"button\" id=\"hv-dropdown-menu1-icon-button\" aria-haspopup=\"true\"><span class=\"MuiIconButton-labe...</button>",
         "selector": "#hv-dropdown-menu1-icon-button",
         "runner": "axe",
@@ -21,7 +21,7 @@
             "description": "Ensures buttons have discernible text",
             "impact": "critical",
             "help": "Buttons must have discernible text",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI"
         }
     }
 ]

@@ -13,7 +13,7 @@
         "code": "aria-required-children",
         "type": "error",
         "typeCode": 1,
-        "message": "Certain ARIA roles must contain particular children (https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=axeAPI)",
+        "message": "Certain ARIA roles must contain particular children (https://dequeuniversity.com/rules/axe/3.5/aria-required-children?application=axeAPI)",
         "context": "<div id=\"dropdown9-header\" aria-expanded=\"false\" class=\"\" role=\"combobox\" tabindex=\"0\" aria-label=\"text\"><p class=\"Component-normalText-...</div>",
         "selector": "#dropdown9-header",
         "runner": "axe",
@@ -21,7 +21,22 @@
             "description": "Ensures elements with an ARIA role that require child roles contain them",
             "impact": "critical",
             "help": "Certain ARIA roles must contain particular children",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=axeAPI"
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/aria-required-children?application=axeAPI"
+        }
+    },
+    {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.5/color-contrast?application=axeAPI)",
+        "context": "<p class=\"Component-normalText-173 Component-baseFontFamily-185 Component-margin-186 Dropdown-selection-156 Dropdown-truncate-160 Dropdown-selectionDisabled-161\" theme=\"[object Object]\">Selected 3 of 12</p>",
+        "selector": "#dropdown9-header > p",
+        "runner": "axe",
+        "runnerExtras": {
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "impact": "serious",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/color-contrast?application=axeAPI"
         }
     }
 ]
