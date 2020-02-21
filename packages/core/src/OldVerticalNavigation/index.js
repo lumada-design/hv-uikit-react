@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Hitachi Vantara Corporation
+ * Copyright 2019 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
+/**
+ * Copyright (c) 2018 Hitachi Vantara Corporation.
+ *
+ *  The copyright to the computer software herein is the property of
+ *  Hitachi Vantara Corporation. The software may be used and/or copied only
+ *  with the written permission of Hitachi Vantara Corporation or in accordance
+ *  with the terms and conditions stipulated in the agreement/contract
+ *  under which the software has been supplied.
+ */
+
 import withStyles from "@material-ui/core/styles/withStyles";
+import withDeprecate from "../withDeprecate";
 import styles from "./styles";
 import VerticalNavigation from "./VerticalNavigation";
 
-export { default as Navigation } from "./Navigation";
-
-export { default as TreeView } from "./TreeView";
-export * from "./TreeView";
-
-export { default as Actions } from "./Actions";
-export * from "./Actions";
-
 export default withStyles(styles, { name: "HvVerticalNavigation" })(
-  VerticalNavigation
+  withDeprecate(
+    VerticalNavigation,
+    "This component is deprecated. Please use the new Vertical Navigation component."
+  )
 );
