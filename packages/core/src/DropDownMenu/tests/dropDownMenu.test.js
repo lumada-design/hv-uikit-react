@@ -19,10 +19,9 @@ import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import { axe, toHaveNoViolations } from "jest-axe";
-
+import Popper from "@material-ui/core/Popper";
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
-import Popper from "../../utils/Popper";
 
 expect.extend(toHaveNoViolations);
 

@@ -1048,7 +1048,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                 ]
               }
             >
-              <Popper
+              <ForwardRef(Popper)
                 anchorEl={null}
                 disablePortal={false}
                 id="test-dropdown-values"
@@ -1065,11 +1065,9 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                     "zIndex": 1500,
                   }
                 }
-                transition={false}
               >
                 <ForwardRef(Portal)
                   disablePortal={false}
-                  onRendered={[Function]}
                 >
                   <Portal
                     containerInfo={
@@ -1077,7 +1075,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-1-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-51 HvDropdownList-listClosed-52 HvDropdownList-listOpenDown-53"
@@ -1205,7 +1203,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-2-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-184 HvDropdownList-listClosed-185 HvDropdownList-listOpenDown-186"
@@ -1333,7 +1331,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-3-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-317 HvDropdownList-listClosed-318 HvDropdownList-listOpenDown-319"
@@ -1461,7 +1459,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-4-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-450 HvDropdownList-listClosed-451 HvDropdownList-listOpenDown-452"
@@ -1589,7 +1587,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-5-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-583 HvDropdownList-listClosed-584 HvDropdownList-listOpenDown-585"
@@ -1717,7 +1715,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-6-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-716 HvDropdownList-listClosed-717 HvDropdownList-listOpenDown-718"
@@ -1845,7 +1843,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-7-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-854 HvDropdownList-listClosed-855 HvDropdownList-listOpenDown-856"
@@ -1910,7 +1908,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="hv-dropdown-8-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-929 HvDropdownList-listClosed-930 HvDropdownList-listOpenDown-931"
@@ -1975,7 +1973,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                         <div
                           id="test-dropdown-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-1004 HvDropdownList-listClosed-1005 HvDropdownList-listOpenDown-1006"
@@ -2331,6 +2329,9 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                       role="tooltip"
                       style={
                         Object {
+                          "left": 0,
+                          "position": "fixed",
+                          "top": 0,
                           "zIndex": 1500,
                         }
                       }
@@ -6737,7 +6738,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                     </div>
                   </Portal>
                 </ForwardRef(Portal)>
-              </Popper>
+              </ForwardRef(Popper)>
             </List>
           </WithStyles(List)>
         </div>
@@ -7793,7 +7794,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                 ]
               }
             >
-              <Popper
+              <ForwardRef(Popper)
                 anchorEl={null}
                 disablePortal={false}
                 id="hv-dropdown-7-values"
@@ -7810,11 +7811,9 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                     "zIndex": 1500,
                   }
                 }
-                transition={false}
               >
                 <ForwardRef(Portal)
                   disablePortal={false}
-                  onRendered={[Function]}
                 >
                   <Portal
                     containerInfo={
@@ -7822,7 +7821,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-1-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-51 HvDropdownList-listClosed-52 HvDropdownList-listOpenDown-53"
@@ -7950,7 +7949,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-2-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-184 HvDropdownList-listClosed-185 HvDropdownList-listOpenDown-186"
@@ -8078,7 +8077,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-3-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-317 HvDropdownList-listClosed-318 HvDropdownList-listOpenDown-319"
@@ -8206,7 +8205,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-4-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-450 HvDropdownList-listClosed-451 HvDropdownList-listOpenDown-452"
@@ -8334,7 +8333,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-5-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-583 HvDropdownList-listClosed-584 HvDropdownList-listOpenDown-585"
@@ -8462,7 +8461,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-6-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-716 HvDropdownList-listClosed-717 HvDropdownList-listOpenDown-718"
@@ -8590,7 +8589,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                         <div
                           id="hv-dropdown-7-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-854 HvDropdownList-listClosed-855 HvDropdownList-listOpenDown-856"
@@ -8660,6 +8659,9 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                       role="tooltip"
                       style={
                         Object {
+                          "left": 0,
+                          "position": "fixed",
+                          "top": 0,
                           "zIndex": 1500,
                         }
                       }
@@ -9421,7 +9423,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                     </div>
                   </Portal>
                 </ForwardRef(Portal)>
-              </Popper>
+              </ForwardRef(Popper)>
             </List>
           </WithStyles(List)>
         </div>
@@ -10477,7 +10479,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                 ]
               }
             >
-              <Popper
+              <ForwardRef(Popper)
                 anchorEl={null}
                 disablePortal={false}
                 id="hv-dropdown-1-values"
@@ -10494,11 +10496,9 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                     "zIndex": 1500,
                   }
                 }
-                transition={false}
               >
                 <ForwardRef(Portal)
                   disablePortal={false}
-                  onRendered={[Function]}
                 >
                   <Portal
                     containerInfo={
@@ -10506,7 +10506,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                         <div
                           id="hv-dropdown-1-values"
                           role="tooltip"
-                          style="z-index: 1500;"
+                          style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                         >
                           <div
                             class="HvDropdownList-list-51 HvDropdownList-listClosed-52 HvDropdownList-listOpenDown-53"
@@ -10639,6 +10639,9 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                       role="tooltip"
                       style={
                         Object {
+                          "left": 0,
+                          "position": "fixed",
+                          "top": 0,
                           "zIndex": 1500,
                         }
                       }
@@ -12160,7 +12163,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                     </div>
                   </Portal>
                 </ForwardRef(Portal)>
-              </Popper>
+              </ForwardRef(Popper)>
             </List>
           </WithStyles(List)>
         </div>

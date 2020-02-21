@@ -18,12 +18,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import { ClickAwayListener, Popper } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import classNames from "classnames";
 import Typography from "../Typography";
-import Popper from "../utils/Popper";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
 
@@ -600,7 +599,12 @@ class HvDatePicker extends React.Component {
       escapeWithReference
     } = this.props;
 
-    const { internalId, calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
+    const {
+      internalId,
+      calendarOpen,
+      calendarAnchorElement,
+      calendarFlipped
+    } = this.state;
 
     const RenderCalendar = rangeMode
       ? this.renderRangeCalendars()

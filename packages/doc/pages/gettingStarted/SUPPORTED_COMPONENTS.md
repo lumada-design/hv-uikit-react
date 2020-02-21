@@ -35,15 +35,9 @@
 
 | Components                                                                                                     | Design System Version |
 | -------------------------------------------------------------------------------------------------------------- | :-------------------: |
-| [Asset Inventory](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/AssetInventory)       |           -           |
-| [List View](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/ListView)                   |           -           |
-| [DatePicker](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/DatePicker)                |           -           |
-| [DatePickerDS](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/DatePickerDS)            |           -           |
-| [Empty State](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/EmptyState)               |           -           |
 | [Footer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Footer)                        |           -           |
 | [FormComposer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/FormComposer)            |           -           |
 | [Navigation Anchors](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/NavigationAnchors) |           -           |
-| [Popper](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Popper)                        |           -           |
 | [Search box](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/SearchBox)                 |           -           |
 | [Slider](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Slider)                        |           -           |
 | [Toggle Switch](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Switch)                 |           -           |

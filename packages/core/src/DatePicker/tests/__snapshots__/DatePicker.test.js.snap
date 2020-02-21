@@ -1678,7 +1678,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               </Calendar>
             </WithStyles(Calendar)>
           </div>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={true}
             id="hv-datepicker-30-tooltip"
@@ -1702,7 +1702,6 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "zIndex": "1",
               }
             }
-            transition={false}
           />
         </div>
       </HvDatePicker>
@@ -3389,7 +3388,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               </Calendar>
             </WithStyles(Calendar)>
           </div>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={true}
             id="hv-datepicker-14-tooltip"
@@ -3413,7 +3412,6 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "zIndex": "1",
               }
             }
-            transition={false}
           />
         </div>
       </HvDatePicker>
@@ -5145,7 +5143,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               </Calendar>
             </WithStyles(Calendar)>
           </div>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={true}
             id="testingDatePicker-tooltip"
@@ -5169,7 +5167,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "zIndex": "1",
               }
             }
-            transition={false}
           />
         </div>
       </HvDatePicker>
@@ -6856,7 +6853,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               </Calendar>
             </WithStyles(Calendar)>
           </div>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={true}
             id="hv-datepicker-2-tooltip"
@@ -6880,7 +6877,6 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "zIndex": "1",
               }
             }
-            transition={false}
           />
         </div>
       </HvDatePicker>
