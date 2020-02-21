@@ -141,7 +141,7 @@ ToggleButton.propTypes = {
   /**
    * Icon for when not selected.
    */
-  notSelectedIcon: PropTypes.func.isRequired,
+  notSelectedIcon: PropTypes.instanceOf(Object).isRequired,
   /**
    * Description for not selected.
    */
@@ -149,7 +149,7 @@ ToggleButton.propTypes = {
   /**
    * Icon for when selected.
    */
-  selectedIcon: PropTypes.func,
+  selectedIcon: PropTypes.instanceOf(Object),
   /**
    * Description for selected.
    */

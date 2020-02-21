@@ -16,10 +16,11 @@
 
 import React from "react";
 import ToggleButton from "@hv/uikit-react-core/dist/ToggleButton";
-import withStyles from "@material-ui/core/styles/withStyles";
+import useTheme from "@material-ui/core/styles/useTheme";
 
 const Eye = props => {
-  const { theme, className, ...other } = props;  // eslint-disable-line react/prop-types
+  const { className, ...other } = props; // eslint-disable-line react/prop-types
+  const theme = useTheme();
 
   const eye = `
   .cls-1 {\n        fill: none;\n      }\n
@@ -51,7 +52,7 @@ const Eye = props => {
          fill: ${theme.hv.palette.accent.acce1};\n
                 }\n\t\t\n
             }\n
-  `
+  `;
 
   return (
     <svg
@@ -65,7 +66,8 @@ const Eye = props => {
     >
       <defs>
         <style
-          dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+          dangerouslySetInnerHTML={{
+            // eslint-disable-line react/no-danger
             __html: eye
           }}
         />
@@ -104,23 +106,9 @@ const Eye = props => {
   );
 };
 
-const styles = () => ({
-  rootS: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
-  }
-});
-
-const StyledLock = withStyles(styles, { withTheme: true })(Eye);
-
 export default (
   <ToggleButton
-    notSelectedIcon={StyledLock}
+    notSelectedIcon={Eye}
     notSelectedTitle="Don't Show"
     selectedTitle="Show"
     animated

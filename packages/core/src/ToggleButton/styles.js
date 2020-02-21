@@ -29,7 +29,6 @@ const styles = theme => ({
     display: "inline-flex"
   },
   icon: {
-    display: "inline-table",
     "&:hover": {
       cursor: "pointer",
       backgroundColor: theme.hv.palette.atmosphere.atmo4

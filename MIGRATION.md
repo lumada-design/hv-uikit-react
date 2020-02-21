@@ -16,13 +16,13 @@ With our first major release several components where reviewed in order to remov
     - **colorType** replaced by **category**.
   - Card
     - Header
-      - needsBorder (not in use).
+      - **needsBorder** (not in use).
     - Content
-      - needsBorder (not in use).
+      - **needsBorder** (not in use).
     - Footer
-      - actions.icon replaced by iconCallback
+      - **actions.icon** replaced by **iconCallback**
   - Dropdown
-    - label replaced by labels.title
+    - **label** replaced by **labels.title**
   - Text area
     - **inputTextConfiguration** replaced by **labels**
     - **value** replaced by **initialValue** (used just for initial values)
@@ -76,3 +76,8 @@ With our first major release several components where reviewed in order to remov
     - **iconVisible** replaced by **validationIconVisible**
     - **iconPosition** replaced by **validationIconPosition**
     - **inputTextConfiguration** replaced by **labels**
+
+
+Changes:
+   - Toggle Button
+      - Removed display inline-table from icon 

@@ -68,7 +68,7 @@ describe("ToggleButton withStyles", () => {
         />
       </HvProvider>
     );
-    const divs = wrapper.find("div")
+    const divs = wrapper.find("div");
     divs.at(0).simulate("click");
 
     expect(onClickMock.mock.calls.length).toBe(1);
@@ -93,7 +93,7 @@ describe("ToggleButton withStyles", () => {
       </HvProvider>
     );
 
-    const divs = wrapper.find("div")
+    const divs = wrapper.find("div");
     divs.at(0).simulate("click");
 
     let selectIcon = wrapper.find(Unlock);
