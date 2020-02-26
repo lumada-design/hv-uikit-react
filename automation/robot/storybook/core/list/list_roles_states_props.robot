@@ -5,7 +5,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke    wai-aria-practices
+Force Tags        smoke    wai-aria-practices
 Documentation     https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
 ...    
 ...    doc parts not applied by UIKIT team: \n

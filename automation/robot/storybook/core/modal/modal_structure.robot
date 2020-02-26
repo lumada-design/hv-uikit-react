@@ -1,14 +1,15 @@
 *** Setting ***
-Variables                            ../../_resources/storybook_variables.yaml
-Resource                             ../../_resources/storybook_keywords.robot
-Library                              SeleniumLibrary
-Suite Setup                          open storybook
-Suite Teardown                       Close Browser
-Force Tags                           smoke
+Variables         ../../_resources/storybook_variables.yaml
+Resource          ../../_resources/storybook_keywords.robot
+Library           SeleniumLibrary
+Suite Setup       open storybook
+Suite Teardown    Close Browser
+Force Tags        smoke
+
 
 *** Test Cases ***
 close modal on header cross
-    [Tags]                                      issue-ie
+    [Tags]    bug-ie-webdriver
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
     Wait Until Element Is Enabled               //button[contains(.,'Success')]          7s
     Click Button                                Success
@@ -33,7 +34,7 @@ close modal clicking out
     Wait Until Page Does Not Contain Element    css:div[role='dialog']                   10s
 
 all buttons are clickable
-    [Tags]                                      issue-ie
+    [Tags]    bug-ie-webdriver
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=coremodal--modal2
     Wait Until Element Is Enabled               //button[contains(.,'Custom icon')]      7s
     Click Button                                Custom icon
