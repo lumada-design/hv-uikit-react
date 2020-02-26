@@ -988,7 +988,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={false}
             open={false}
@@ -999,7 +999,6 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                 "zIndex": 1500,
               }
             }
-            transition={false}
           />
         </div>
       </DropDownMenu>
@@ -1996,7 +1995,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={false}
             open={false}
@@ -2007,7 +2006,6 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                 "zIndex": 1500,
               }
             }
-            transition={false}
           />
         </div>
       </DropDownMenu>
@@ -3022,7 +3020,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={
               <button
                 aria-controls="hv-dropdown-menu2-list"
@@ -3049,18 +3047,17 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                 "zIndex": 1500,
               }
             }
-            transition={false}
           >
             <ForwardRef(Portal)
               disablePortal={false}
-              onRendered={[Function]}
             >
               <Portal
                 containerInfo={
                   <body>
                     <div
                       role="tooltip"
-                      style="z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-end"
                     >
                       <div
                         class="HvDropDownMenu-menuList-20"
@@ -3113,7 +3110,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-end"
                     >
                       <div
                         class="HvDropDownMenu-menuList-98"
@@ -3166,7 +3164,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-end"
                     >
                       <div
                         class="HvDropDownMenu-menuList-222"
@@ -3219,7 +3218,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="z-index: 1500;"
+                      style="position: absolute; top: 0px; left: 0px; z-index: 1500;"
+                      x-placement="bottom-end"
                     >
                       <div
                         class="HvDropDownMenu-menuList-470"
@@ -3277,6 +3277,9 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   role="tooltip"
                   style={
                     Object {
+                      "left": 0,
+                      "position": "fixed",
+                      "top": 0,
                       "zIndex": 1500,
                     }
                   }
@@ -4019,7 +4022,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                 </div>
               </Portal>
             </ForwardRef(Portal)>
-          </Popper>
+          </ForwardRef(Popper)>
         </div>
       </DropDownMenu>
     </WithStyles(DropDownMenu)>
@@ -5017,7 +5020,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={false}
             open={false}
@@ -5028,7 +5031,6 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                 "zIndex": 1500,
               }
             }
-            transition={false}
           />
         </div>
       </DropDownMenu>
@@ -6027,7 +6029,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={null}
             disablePortal={false}
             open={false}
@@ -6038,7 +6040,6 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                 "zIndex": 1500,
               }
             }
-            transition={false}
           />
         </div>
       </DropDownMenu>
@@ -7055,7 +7056,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
-          <Popper
+          <ForwardRef(Popper)
             anchorEl={
               <button
                 aria-controls="dropdownMenu-list"
@@ -7082,18 +7083,17 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                 "zIndex": 1500,
               }
             }
-            transition={false}
           >
             <ForwardRef(Portal)
               disablePortal={false}
-              onRendered={[Function]}
             >
               <Portal
                 containerInfo={
                   <body>
                     <div
                       role="tooltip"
-                      style="z-index: 1500;"
+                      style="position: absolute; top: 0px; left: 0px; z-index: 1500;"
+                      x-placement="bottom-end"
                     >
                       <div
                         class="HvDropDownMenu-menuList-20"
@@ -7151,6 +7151,9 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   role="tooltip"
                   style={
                     Object {
+                      "left": 0,
+                      "position": "fixed",
+                      "top": 0,
                       "zIndex": 1500,
                     }
                   }
@@ -7893,7 +7896,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                 </div>
               </Portal>
             </ForwardRef(Portal)>
-          </Popper>
+          </ForwardRef(Popper)>
         </div>
       </DropDownMenu>
     </WithStyles(DropDownMenu)>

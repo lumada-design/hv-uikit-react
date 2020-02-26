@@ -20,7 +20,7 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import classNames from "classnames";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import TimeIcon from "@hv/uikit-react-icons/dist/Generic/Time";
-import Popper from "../DatePickerDS/Popper";
+import Popper from "@material-ui/core/Popper";
 import UnitTimePicker from "./UnitTimePicker";
 import { TimePickerUnits, TimeFormat } from "./enums";
 import { getPeriodForDate } from "./timePickerUtils";

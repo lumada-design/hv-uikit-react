@@ -17,12 +17,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { ClickAwayListener, IconButton, useTheme } from "@material-ui/core";
+import {
+  ClickAwayListener,
+  IconButton,
+  Popper,
+  useTheme
+} from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
-import Popper from "../utils/Popper";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
 
