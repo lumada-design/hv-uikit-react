@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Template     Test button state transition between default-hover-default
-Default Tags      smoke
+Force Tags        smoke
 
 *** Keywords ***
 Test button state transition between default-hover-default
