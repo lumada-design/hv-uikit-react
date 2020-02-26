@@ -44,6 +44,7 @@ describe("Footer", () => {
   it("should render the actions and the dropdown accordingly", () => {
     wrapper = shallow(
       <Footer
+        id="footer1"
         classes={{}}
         maxVisibleActions={1}
         actions={myActions}
@@ -52,10 +53,16 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+        .dive()
+        .dive()
+    ).toMatchSnapshot();
 
     wrapper = shallow(
       <Footer
+        id="footer2"
         classes={{}}
         maxVisibleActions={0}
         actions={myActions}
@@ -64,10 +71,16 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+        .dive()
+        .dive()
+    ).toMatchSnapshot();
 
     wrapper = shallow(
       <Footer
+        id="footer3"
         classes={{}}
         maxVisibleActions={2}
         actions={myActions}
@@ -76,6 +89,11 @@ describe("Footer", () => {
       />
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+        .dive()
+        .dive()
+    ).toMatchSnapshot();
   });
 });

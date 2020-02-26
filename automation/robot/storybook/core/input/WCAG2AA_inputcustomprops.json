@@ -1,27 +1,8 @@
 [
     {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p id=\"hv-input-1-description\" class=\"Component-infoText-190 Component-baseFontFamily-194 Component-margin-195 HvInput-infoText-163\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
-        "selector": "#hv-input-1-description",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"
     },
     {
-        "code": "color-contrast",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI)",
-        "context": "<p id=\"hv-input-1-description\" class=\"Component-infoText-190 Component-baseFontFamily-194 Component-margin-195 HvInput-infoText-163\" theme=\"[object Object]\" style=\"display: block;\">Try to write more than 25 chara...</p>",
-        "selector": "#hv-input-1-description",
-        "runner": "axe",
-        "runnerExtras": {
-            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
-            "impact": "serious",
-            "help": "Elements must have sufficient color contrast",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI"
-        }
+        "code": "color-contrast"
     }
 ]
