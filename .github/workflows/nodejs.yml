@@ -16,7 +16,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1.1.0
       with:
-        version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node-version }}
         registry-url: https://nexus.pentaho.org/repository/group-npm/
     - run: npm ci
     - run: npm run bootstrap
