@@ -30,7 +30,7 @@ const palette = theme => createPalette({
     disabled: theme.palette.atmosphere.atmo7
   },
   background: {
-    default: theme.palette.atmosphere.atmo2
+    default: theme.palette.atmosphere.atmo3
   }
 });
 
