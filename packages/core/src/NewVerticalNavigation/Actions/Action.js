@@ -43,8 +43,12 @@ const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
   );
 
   const renderedIcon = useMemo(
-    () => icon && React.cloneElement(icon, { className: classes.box }),
-    [classes.box, icon]
+    () =>
+      icon &&
+      React.cloneElement(icon, {
+        boxStyles: { width: "32px", height: "32px" }
+      }),
+    [icon]
   );
 
   return (
@@ -78,10 +82,6 @@ Action.propTypes = {
      * Style applied to the component.
      */
     action: PropTypes.string,
-    /**
-     * Style applied to the box of the icon.
-     */
-    box: PropTypes.string,
     /**
      * Style applied when no icon is present.
      */
