@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         registry-url: https://nexus.pentaho.org/repository/group-npm/
-        scope: hv
+        scope: @hv
     - run: npm ci
     - run: npm run bootstrap
     - run: npm run test
