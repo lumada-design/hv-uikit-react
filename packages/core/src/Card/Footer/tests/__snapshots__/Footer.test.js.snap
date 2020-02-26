@@ -7,13 +7,14 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
   <HvButton
     category="ghost"
     className="Actions-button-1"
-    id="-0-action-view"
-    key="-0-action-view"
+    id="footer1-0-action-view"
+    key="footer1-0-action-view"
     onClick={[Function]}
   >
     View
   </HvButton>
   <WithStyles(DropDownMenu)
+    aria-label="footer1-more-actions"
     classes={
       Object {
         "root": "Actions-dropDownMenu-3",
@@ -54,6 +55,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
   className="Actions-actionContainer-2"
 >
   <WithStyles(DropDownMenu)
+    aria-label="footer2-more-actions"
     classes={
       Object {
         "root": "Actions-dropDownMenu-3",
@@ -102,8 +104,8 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   <HvButton
     category="ghost"
     className="Actions-button-1"
-    id="-0-action-view"
-    key="-0-action-view"
+    id="footer3-0-action-view"
+    key="footer3-0-action-view"
     onClick={[Function]}
   >
     View
@@ -111,13 +113,14 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   <HvButton
     category="ghost"
     className="Actions-button-1"
-    id="-1-action-delete"
-    key="-1-action-delete"
+    id="footer3-1-action-delete"
+    key="footer3-1-action-delete"
     onClick={[Function]}
   >
     Delete
   </HvButton>
   <WithStyles(DropDownMenu)
+    aria-label="footer3-more-actions"
     classes={
       Object {
         "root": "Actions-dropDownMenu-3",
