@@ -16,28 +16,17 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Grid from "@hv/uikit-react-core/dist/Grid";
-import VerticalNavigation1 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation1";
-import VerticalNavigation2 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation2";
-import VerticalNavigation3 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation3";
-import VerticalNavigation4 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation4";
-import VerticalNavigation5 from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation5";
+import Verticalnavigation1 from "../../../../packages/doc/samples/components/VerticalNavigation/verticalNavigation1";
+import Verticalnavigation2 from "../../../../packages/doc/samples/components/VerticalNavigation/verticalNavigation3";
+import verticalnavigationcloseOnExit from "../../../../packages/doc/samples/components/VerticalNavigation/verticalnavigationcloseonexit";
 
 // sample scenarios
 const samples = {};
-samples.VerticalNavigation1 = VerticalNavigation1;
-samples.VerticalNavigation2 = VerticalNavigation2;
-samples.VerticalNavigation3 = VerticalNavigation3;
-samples.VerticalNavigation4 = VerticalNavigation4;
-samples.VerticalNavigation5 = VerticalNavigation5;
+samples.static = Verticalnavigation1;
+samples.collapsable = Verticalnavigation2;
+samples.closeOnExit = verticalnavigationcloseOnExit;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreVerticalNavigation", module).add(key, () => (
-    <Grid container>
-      <Grid item xl>
-        {samples[key]}
-      </Grid>
-    </Grid>
-  ))
+  storiesOf("Core_New_Vertical_navigation", module).add(key, () => samples[key])
 );

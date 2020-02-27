@@ -16,27 +16,13 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Grid from "@hv/uikit-react-core/dist/Grid";
-import Header1 from "../../../../packages/doc/samples/components/header/header1";
-import Header2 from "../../../../packages/doc/samples/components/header/header2";
-import Header3 from "../../../../packages/doc/samples/components/header/header3";
-import Header4 from "../../../../packages/doc/samples/components/header/header4";
-import Header5 from "../../../../packages/doc/samples/components/header/header5";
+import NewHeader1 from "../../../../packages/doc/samples/components/header/header1";
 
 // sample scenarios
 const samples = {};
-
-samples.Header1 = Header1;
-samples.Header2 = Header2;
-samples.Header3 = Header3;
-samples.Header4 = Header4;
-samples.Header5 = Header5;
+samples.two_levels = NewHeader1;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("CoreHeader", module).add(key, () => (
-    <>
-        {samples[key]}
-    </>
-  ))
+  storiesOf("Core_NewHeader", module).add(key, () => <>{samples[key]}</>)
 );
