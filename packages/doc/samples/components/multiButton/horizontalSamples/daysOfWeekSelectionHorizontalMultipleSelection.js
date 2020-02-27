@@ -17,9 +17,6 @@
 import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
-
 const buttonsDefinitions = [
   { id: "monday", value: "M", selected: true },
   { id: "tuesday", value: "T" },

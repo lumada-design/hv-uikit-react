@@ -17,8 +17,9 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
+import HvProvider from "../../../Provider";
 import Footer from "../Footer";
 import Actions from "../../../Actions";
 
@@ -42,40 +43,55 @@ describe("Footer", () => {
   let wrapper;
 
   it("should render the actions and the dropdown accordingly", () => {
-    wrapper = shallow(
-      <Footer
-        classes={{}}
-        maxVisibleActions={1}
-        actions={myActions}
-        isSelectable={false}
-        onChange={() => {}}
-      />
+    wrapper = mount(
+      <HvProvider>
+        <Footer
+          classes={{}}
+          maxVisibleActions={1}
+          actions={myActions}
+          isSelectable={false}
+          onChange={() => {}}
+        />
+      </HvProvider>
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+    ).toMatchSnapshot();
 
-    wrapper = shallow(
-      <Footer
-        classes={{}}
-        maxVisibleActions={0}
-        actions={myActions}
-        isSelectable={false}
-        onChange={() => {}}
-      />
+    wrapper = mount(
+      <HvProvider>
+        <Footer
+          classes={{}}
+          maxVisibleActions={0}
+          actions={myActions}
+          isSelectable={false}
+          onChange={() => {}}
+        />
+      </HvProvider>
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+    ).toMatchSnapshot();
 
-    wrapper = shallow(
-      <Footer
-        classes={{}}
-        maxVisibleActions={2}
-        actions={myActions}
-        isSelectable={false}
-        onChange={() => {}}
-      />
+    wrapper = mount(
+      <HvProvider>
+        <Footer
+          classes={{}}
+          maxVisibleActions={2}
+          actions={myActions}
+          isSelectable={false}
+          onChange={() => {}}
+        />
+      </HvProvider>
     );
 
-    expect(wrapper.find(Actions).dive().dive()).toMatchSnapshot();
+    expect(
+      wrapper
+        .find(Actions)
+    ).toMatchSnapshot();
   });
 });
