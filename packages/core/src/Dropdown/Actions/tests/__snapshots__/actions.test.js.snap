@@ -805,7 +805,6 @@ exports[`<Actions /> should render correctly 1`] = `
             disabled={false}
             id="acts-apply"
             onClick={[Function]}
-            startIcon={null}
           >
             <HvButton
               category="ghost"
@@ -830,7 +829,6 @@ exports[`<Actions /> should render correctly 1`] = `
               disabled={false}
               id="acts-apply"
               onClick={[Function]}
-              startIcon={null}
             >
               <WithStyles(ForwardRef(Button))
                 className="HvDropdownActions-button-1"
@@ -840,6 +838,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     "disabled": "HvButton-ghostDisabled-9",
                     "outlinedPrimary": "HvButton-secondary-6",
                     "root": "HvButton-root-2",
+                    "startIcon": "HvButton-startIcon-14",
                     "textPrimary": "HvButton-ghost-8",
                   }
                 }
@@ -877,7 +876,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "root": "MuiButton-root HvButton-root-2",
                       "sizeLarge": "MuiButton-sizeLarge",
                       "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
+                      "startIcon": "MuiButton-startIcon HvButton-startIcon-14",
                       "text": "MuiButton-text",
                       "textPrimary": "MuiButton-textPrimary HvButton-ghost-8",
                       "textSecondary": "MuiButton-textSecondary",
@@ -958,7 +957,6 @@ exports[`<Actions /> should render correctly 1`] = `
             disabled={false}
             id="acts-cancel"
             onClick={[Function]}
-            startIcon={null}
           >
             <HvButton
               category="ghost"
@@ -983,7 +981,6 @@ exports[`<Actions /> should render correctly 1`] = `
               disabled={false}
               id="acts-cancel"
               onClick={[Function]}
-              startIcon={null}
             >
               <WithStyles(ForwardRef(Button))
                 className="HvDropdownActions-button-1"
@@ -993,6 +990,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     "disabled": "HvButton-ghostDisabled-9",
                     "outlinedPrimary": "HvButton-secondary-6",
                     "root": "HvButton-root-2",
+                    "startIcon": "HvButton-startIcon-14",
                     "textPrimary": "HvButton-ghost-8",
                   }
                 }
@@ -1030,7 +1028,7 @@ exports[`<Actions /> should render correctly 1`] = `
                       "root": "MuiButton-root HvButton-root-2",
                       "sizeLarge": "MuiButton-sizeLarge",
                       "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
+                      "startIcon": "MuiButton-startIcon HvButton-startIcon-14",
                       "text": "MuiButton-text",
                       "textPrimary": "MuiButton-textPrimary HvButton-ghost-8",
                       "textSecondary": "MuiButton-textSecondary",

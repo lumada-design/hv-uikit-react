@@ -65,7 +65,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         id="-0-action-view"
         key="-0-action-view"
         onClick={[Function]}
-        startIcon={null}
       >
         <HvButton
           category="ghost"
@@ -90,7 +89,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           disabled={false}
           id="-0-action-view"
           onClick={[Function]}
-          startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
             className="HvActions-button-6"
@@ -100,6 +98,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 "disabled": "HvButton-ghostDisabled-17",
                 "outlinedPrimary": "HvButton-secondary-14",
                 "root": "HvButton-root-10",
+                "startIcon": "HvButton-startIcon-22",
                 "textPrimary": "HvButton-ghost-16",
               }
             }
@@ -137,7 +136,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   "root": "MuiButton-root HvButton-root-10",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
-                  "startIcon": "MuiButton-startIcon",
+                  "startIcon": "MuiButton-startIcon HvButton-startIcon-22",
                   "text": "MuiButton-text",
                   "textPrimary": "MuiButton-textPrimary HvButton-ghost-16",
                   "textSecondary": "MuiButton-textSecondary",
@@ -1045,7 +1044,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         id="-0-action-view"
         key="-0-action-view"
         onClick={[Function]}
-        startIcon={null}
       >
         <HvButton
           category="ghost"
@@ -1070,7 +1068,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           disabled={false}
           id="-0-action-view"
           onClick={[Function]}
-          startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
             className="HvActions-button-108"
@@ -1080,6 +1077,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 "disabled": "HvButton-ghostDisabled-119",
                 "outlinedPrimary": "HvButton-secondary-116",
                 "root": "HvButton-root-112",
+                "startIcon": "HvButton-startIcon-124",
                 "textPrimary": "HvButton-ghost-118",
               }
             }
@@ -1117,7 +1115,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   "root": "MuiButton-root HvButton-root-112",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
-                  "startIcon": "MuiButton-startIcon",
+                  "startIcon": "MuiButton-startIcon HvButton-startIcon-124",
                   "text": "MuiButton-text",
                   "textPrimary": "MuiButton-textPrimary HvButton-ghost-118",
                   "textSecondary": "MuiButton-textSecondary",
@@ -1199,7 +1197,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         id="-1-action-delete"
         key="-1-action-delete"
         onClick={[Function]}
-        startIcon={null}
       >
         <HvButton
           category="ghost"
@@ -1224,7 +1221,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           disabled={false}
           id="-1-action-delete"
           onClick={[Function]}
-          startIcon={null}
         >
           <WithStyles(ForwardRef(Button))
             className="HvActions-button-108"
@@ -1234,6 +1230,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 "disabled": "HvButton-ghostDisabled-119",
                 "outlinedPrimary": "HvButton-secondary-116",
                 "root": "HvButton-root-112",
+                "startIcon": "HvButton-startIcon-124",
                 "textPrimary": "HvButton-ghost-118",
               }
             }
@@ -1271,7 +1268,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   "root": "MuiButton-root HvButton-root-112",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
-                  "startIcon": "MuiButton-startIcon",
+                  "startIcon": "MuiButton-startIcon HvButton-startIcon-124",
                   "text": "MuiButton-text",
                   "textPrimary": "MuiButton-textPrimary HvButton-ghost-118",
                   "textSecondary": "MuiButton-textSecondary",
