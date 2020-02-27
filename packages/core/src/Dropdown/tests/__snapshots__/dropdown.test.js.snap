@@ -403,7 +403,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -7151,7 +7151,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -9836,7 +9836,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",

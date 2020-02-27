@@ -403,7 +403,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -1627,7 +1627,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -2851,7 +2851,7 @@ exports[`Switch label click label can be clicked 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -4075,7 +4075,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -5299,7 +5299,7 @@ exports[`Switch with no label display but with custom label configuration should
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -6523,7 +6523,7 @@ exports[`Switch withStyles should render correctly 1`] = `
           "acce2h": "#4389DB",
           "acce3": "#CC0000",
           "action": Object {
-            "activatedOpaciy": 0.12,
+            "activatedOpacity": 0.12,
             "active": "rgba(0, 0, 0, 0.54)",
             "disabled": "rgba(0, 0, 0, 0.26)",
             "disabledBackground": "rgba(0, 0, 0, 0.12)",

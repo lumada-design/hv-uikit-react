@@ -541,7 +541,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 </WithStyles(ForwardRef(ButtonBase))>
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
-            <Popper
+            <ForwardRef(Popper)
               anchorEl={null}
               disablePortal={false}
               open={false}
@@ -552,7 +552,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   "zIndex": 1500,
                 }
               }
-              transition={false}
             />
           </div>
         </DropDownMenu>
@@ -961,7 +960,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 </WithStyles(ForwardRef(ButtonBase))>
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
-            <Popper
+            <ForwardRef(Popper)
               anchorEl={null}
               disablePortal={false}
               open={false}
@@ -972,7 +971,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   "zIndex": 1500,
                 }
               }
-              transition={false}
             />
           </div>
         </DropDownMenu>
@@ -1665,7 +1663,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 </WithStyles(ForwardRef(ButtonBase))>
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
-            <Popper
+            <ForwardRef(Popper)
               anchorEl={null}
               disablePortal={false}
               open={false}
@@ -1676,7 +1674,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   "zIndex": 1500,
                 }
               }
-              transition={false}
             />
           </div>
         </DropDownMenu>
