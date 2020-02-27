@@ -290,8 +290,12 @@ const TreeViewItem = props => {
   }, [treeviewMode, tabbable]);
 
   const renderedIcon = useMemo(
-    () => icon && React.cloneElement(icon, { className: classes.box }),
-    [classes.box, icon]
+    () =>
+      icon &&
+      React.cloneElement(icon, {
+        boxStyles: { width: "32px", height: "32px" }
+      }),
+    [icon]
   );
 
   const renderedContent = useMemo(
@@ -379,10 +383,6 @@ TreeViewItem.propTypes = {
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
   classes: PropTypes.shape({
-    /**
-     * Style applied to the box of the icon.
-     */
-    box: PropTypes.string,
     /**
      * Style applied to the content.
      */

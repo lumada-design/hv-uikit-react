@@ -400,7 +400,7 @@ exports[`Input should not have the validation section 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -1450,7 +1450,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -1603,7 +1603,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2144,7 +2144,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2279,7 +2279,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2426,7 +2426,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2967,7 +2967,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3102,7 +3102,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3609,7 +3609,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -4015,7 +4015,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -7440,7 +7440,7 @@ input:-webkit-autofill {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -10309,7 +10309,7 @@ label + .MuiInput-formControl-472 {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -12901,7 +12901,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -15785,7 +15785,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -16781,7 +16781,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -18009,7 +18009,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -18952,7 +18952,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-485 .MuiInputBase-input-494
                       },
                       "augmentColor": [Function],
                       "background": Object {
-                        "default": "#F9F9F9",
+                        "default": "#F5F5F5",
                         "paper": "#fff",
                       },
                       "common": Object {
@@ -19907,7 +19907,7 @@ exports[`Input should pass other props to the child input component 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -20957,7 +20957,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -21110,7 +21110,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -21651,7 +21651,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -21786,7 +21786,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -21933,7 +21933,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -22474,7 +22474,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -22609,7 +22609,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -23116,7 +23116,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -23522,7 +23522,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -26947,7 +26947,7 @@ input:-webkit-autofill {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -29816,7 +29816,7 @@ label + .MuiInput-formControl-622 {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -32408,7 +32408,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-635 .MuiInputBase-input-644
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -35292,7 +35292,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-635 .MuiInputBase-input-644
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -36296,7 +36296,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-635 .MuiInputBase-input-644
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -37530,7 +37530,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-635 .MuiInputBase-input-644
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -38473,7 +38473,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-635 .MuiInputBase-input-644
                       },
                       "augmentColor": [Function],
                       "background": Object {
-                        "default": "#F9F9F9",
+                        "default": "#F5F5F5",
                         "paper": "#fff",
                       },
                       "common": Object {
@@ -39428,7 +39428,7 @@ exports[`Input should render correctly 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -40478,7 +40478,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -40631,7 +40631,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -41172,7 +41172,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -41307,7 +41307,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -41454,7 +41454,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -41995,7 +41995,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -42130,7 +42130,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -42637,7 +42637,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -43043,7 +43043,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -46468,7 +46468,7 @@ input:-webkit-autofill {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -49337,7 +49337,7 @@ label + .MuiInput-formControl-97 {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -51929,7 +51929,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -54813,7 +54813,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -55807,7 +55807,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -57035,7 +57035,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -57978,7 +57978,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-110 .MuiInputBase-input-119
                       },
                       "augmentColor": [Function],
                       "background": Object {
-                        "default": "#F9F9F9",
+                        "default": "#F5F5F5",
                         "paper": "#fff",
                       },
                       "common": Object {

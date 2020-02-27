@@ -400,7 +400,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -1450,7 +1450,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -1603,7 +1603,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2144,7 +2144,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2279,7 +2279,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2426,7 +2426,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2967,7 +2967,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3102,7 +3102,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3609,7 +3609,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -4015,7 +4015,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -5967,7 +5967,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -6515,7 +6515,6 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "box": "TreeView-box-15",
                 "collapsed": "TreeView-collapsed-8",
                 "content": "TreeView-content-14",
                 "disabled": "TreeView-disabled-5",
@@ -6536,7 +6535,6 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "TreeView",
                 "classes": Object {
-                  "box": "TreeView-box-15",
                   "collapsed": "TreeView-collapsed-8",
                   "content": "TreeView-content-14",
                   "disabled": "TreeView-disabled-5",
@@ -7122,10 +7120,6 @@ body {
 .TreeView-selected-10&gt;.TreeView-content-14 svg *.color0 {
   fill: #FFFFFF;
 }
-.TreeView-box-15 {
-  width: 32px;
-  height: 32px;
-}
 
                 </style>,
                 "getKey": [Function],
@@ -7139,7 +7133,6 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "box": "TreeView-box-15",
                   "collapsed": "TreeView-collapsed-8",
                   "content": "TreeView-content-14",
                   "disabled": "TreeView-disabled-5",
@@ -7251,16 +7244,8 @@ body {
                   Object {
                     "fill": "#FFFFFF",
                   },
-                  Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                 ],
                 "map": Object {
-                  ".TreeView-box-15": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   ".TreeView-collapsed-8": Object {},
                   ".TreeView-collapsed-8>.TreeView-group-3": Object {
                     "display": "none",
@@ -7357,10 +7342,6 @@ body {
                   ":not(.TreeView-disabled-5):not(.TreeView-selected-10)>.TreeView-content-14:hover *": Object {
                     "background": "#F0F0F0",
                   },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   "collapsed": Object {},
                   "content": Object {
                     "align-items": "center",
@@ -7399,7 +7380,6 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "TreeView",
                   "classes": Object {
-                    "box": "TreeView-box-15",
                     "collapsed": "TreeView-collapsed-8",
                     "content": "TreeView-content-14",
                     "disabled": "TreeView-disabled-5",
@@ -7974,10 +7954,6 @@ body {
                   ":not(.TreeView-disabled-5):not(.TreeView-selected-10)>.TreeView-content-14:hover *": Object {
                     "background": "#F0F0F0",
                   },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   "collapsed": Object {
                     "&>$group": Object {
                       "display": "none",
@@ -8473,7 +8449,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -9021,20 +8997,19 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "box": "TreeViewItem-box-29",
-                "collapsed": "TreeViewItem-collapsed-22",
-                "content": "TreeViewItem-content-28",
-                "disabled": "TreeViewItem-disabled-19",
-                "expanded": "TreeViewItem-expanded-23",
-                "group": "TreeViewItem-group-17",
-                "noIcon": "TreeViewItem-noIcon-26",
-                "node": "TreeViewItem-node-18",
-                "root": "TreeViewItem-root-16",
-                "selectable": "TreeViewItem-selectable-20",
-                "selected": "TreeViewItem-selected-24",
-                "unselectable": "TreeViewItem-unselectable-21",
-                "unselected": "TreeViewItem-unselected-25",
-                "withIcon": "TreeViewItem-withIcon-27",
+                "collapsed": "TreeViewItem-collapsed-21",
+                "content": "TreeViewItem-content-27",
+                "disabled": "TreeViewItem-disabled-18",
+                "expanded": "TreeViewItem-expanded-22",
+                "group": "TreeViewItem-group-16",
+                "noIcon": "TreeViewItem-noIcon-25",
+                "node": "TreeViewItem-node-17",
+                "root": "TreeViewItem-root-15",
+                "selectable": "TreeViewItem-selectable-19",
+                "selected": "TreeViewItem-selected-23",
+                "unselectable": "TreeViewItem-unselectable-20",
+                "unselected": "TreeViewItem-unselected-24",
+                "withIcon": "TreeViewItem-withIcon-26",
               },
               "deployed": true,
               "linked": false,
@@ -9042,20 +9017,19 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "TreeViewItem",
                 "classes": Object {
-                  "box": "TreeViewItem-box-29",
-                  "collapsed": "TreeViewItem-collapsed-22",
-                  "content": "TreeViewItem-content-28",
-                  "disabled": "TreeViewItem-disabled-19",
-                  "expanded": "TreeViewItem-expanded-23",
-                  "group": "TreeViewItem-group-17",
-                  "noIcon": "TreeViewItem-noIcon-26",
-                  "node": "TreeViewItem-node-18",
-                  "root": "TreeViewItem-root-16",
-                  "selectable": "TreeViewItem-selectable-20",
-                  "selected": "TreeViewItem-selected-24",
-                  "unselectable": "TreeViewItem-unselectable-21",
-                  "unselected": "TreeViewItem-unselected-25",
-                  "withIcon": "TreeViewItem-withIcon-27",
+                  "collapsed": "TreeViewItem-collapsed-21",
+                  "content": "TreeViewItem-content-27",
+                  "disabled": "TreeViewItem-disabled-18",
+                  "expanded": "TreeViewItem-expanded-22",
+                  "group": "TreeViewItem-group-16",
+                  "noIcon": "TreeViewItem-noIcon-25",
+                  "node": "TreeViewItem-node-17",
+                  "root": "TreeViewItem-root-15",
+                  "selectable": "TreeViewItem-selectable-19",
+                  "selected": "TreeViewItem-selected-23",
+                  "unselectable": "TreeViewItem-unselectable-20",
+                  "unselected": "TreeViewItem-unselected-24",
+                  "withIcon": "TreeViewItem-withIcon-26",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -9543,49 +9517,49 @@ body {
                   data-meta="TreeViewItem"
                 >
                   
-.TreeViewItem-root-16 {
+.TreeViewItem-root-15 {
   margin: 0;
   display: block;
   padding: 0px;
   background: #FFFFFF;
   list-style: none;
 }
-.TreeViewItem-group-17 {
+.TreeViewItem-group-16 {
   margin: 8px 0 0 0;
   padding: 0;
 }
-.TreeViewItem-node-18 {
+.TreeViewItem-node-17 {
   list-style: none;
   min-height: 32px;
 }
-.TreeViewItem-node-18:not(:last-child) {
+.TreeViewItem-node-17:not(:last-child) {
   margin-bottom: 8px;
 }
-.TreeViewItem-node-18[data-hasicon]&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17[data-hasicon]&gt;.TreeViewItem-content-27 {
   padding-left: 0px;
 }
-.TreeViewItem-node-18:not([data-hasicon])&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17:not([data-hasicon])&gt;.TreeViewItem-content-27 {
   padding-left: 10px;
 }
-.TreeViewItem-node-18[data-hasicon]&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17[data-hasicon]&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-content-27 {
   padding-left: 52px;
 }
-.TreeViewItem-node-18:not([data-hasicon])&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17:not([data-hasicon])&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-content-27 {
   padding-left: 30px;
 }
-.TreeViewItem-node-18[data-hasicon]&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17[data-hasicon]&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-content-27 {
   padding-left: 72px;
 }
-.TreeViewItem-node-18:not([data-hasicon])&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-group-17&gt;.TreeViewItem-node-18&gt;.TreeViewItem-content-28 {
+.TreeViewItem-node-17:not([data-hasicon])&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-group-16&gt;.TreeViewItem-node-17&gt;.TreeViewItem-content-27 {
   padding-left: 50px;
 }
-.TreeViewItem-collapsed-22&gt;.TreeViewItem-group-17 {
+.TreeViewItem-collapsed-21&gt;.TreeViewItem-group-16 {
   display: none;
 }
-.TreeViewItem-expanded-23&gt;.TreeViewItem-group-17 {
+.TreeViewItem-expanded-22&gt;.TreeViewItem-group-16 {
   display: block;
 }
-.TreeViewItem-content-28 {
+.TreeViewItem-content-27 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -9593,44 +9567,40 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.TreeViewItem-selected-24&gt;.TreeViewItem-content-28 {
+.TreeViewItem-selected-23&gt;.TreeViewItem-content-27 {
   color: #FFFFFF;
   background: #414141;
 }
-:not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)&gt;.TreeViewItem-content-28:hover {
+:not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)&gt;.TreeViewItem-content-27:hover {
   background: #F0F0F0;
 }
-:not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)&gt;.TreeViewItem-content-28:focus {
+:not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)&gt;.TreeViewItem-content-27:focus {
   background: #F0F0F0;
 }
-.TreeViewItem-content-28[disabled], .TreeViewItem-content-28:active {
+.TreeViewItem-content-27[disabled], .TreeViewItem-content-27:active {
   outline: none;
 }
-.TreeViewItem-content-28 * {
+.TreeViewItem-content-27 * {
   cursor: pointer;
 }
-.TreeViewItem-disabled-19&gt;.TreeViewItem-content-28 {
+.TreeViewItem-disabled-18&gt;.TreeViewItem-content-27 {
   cursor: not-allowed;
 }
-.TreeViewItem-disabled-19&gt;.TreeViewItem-content-28 * {
+.TreeViewItem-disabled-18&gt;.TreeViewItem-content-27 * {
   cursor: not-allowed;
 }
-:not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)&gt;.TreeViewItem-content-28:focus * {
+:not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)&gt;.TreeViewItem-content-27:focus * {
   background: #F0F0F0;
 }
-:not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)&gt;.TreeViewItem-content-28:hover * {
+:not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)&gt;.TreeViewItem-content-27:hover * {
   background: #F0F0F0;
 }
-.TreeViewItem-selected-24&gt;.TreeViewItem-content-28 * {
+.TreeViewItem-selected-23&gt;.TreeViewItem-content-27 * {
   color: #FFFFFF;
   background: #414141;
 }
-.TreeViewItem-selected-24&gt;.TreeViewItem-content-28 svg *.color0 {
+.TreeViewItem-selected-23&gt;.TreeViewItem-content-27 svg *.color0 {
   fill: #FFFFFF;
-}
-.TreeViewItem-box-29 {
-  width: 32px;
-  height: 32px;
 }
 
                 </style>,
@@ -9645,20 +9615,19 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "box": "TreeViewItem-box-29",
-                  "collapsed": "TreeViewItem-collapsed-22",
-                  "content": "TreeViewItem-content-28",
-                  "disabled": "TreeViewItem-disabled-19",
-                  "expanded": "TreeViewItem-expanded-23",
-                  "group": "TreeViewItem-group-17",
-                  "noIcon": "TreeViewItem-noIcon-26",
-                  "node": "TreeViewItem-node-18",
-                  "root": "TreeViewItem-root-16",
-                  "selectable": "TreeViewItem-selectable-20",
-                  "selected": "TreeViewItem-selected-24",
-                  "unselectable": "TreeViewItem-unselectable-21",
-                  "unselected": "TreeViewItem-unselected-25",
-                  "withIcon": "TreeViewItem-withIcon-27",
+                  "collapsed": "TreeViewItem-collapsed-21",
+                  "content": "TreeViewItem-content-27",
+                  "disabled": "TreeViewItem-disabled-18",
+                  "expanded": "TreeViewItem-expanded-22",
+                  "group": "TreeViewItem-group-16",
+                  "noIcon": "TreeViewItem-noIcon-25",
+                  "node": "TreeViewItem-node-17",
+                  "root": "TreeViewItem-root-15",
+                  "selectable": "TreeViewItem-selectable-19",
+                  "selected": "TreeViewItem-selected-23",
+                  "unselectable": "TreeViewItem-unselectable-20",
+                  "unselected": "TreeViewItem-unselected-24",
+                  "withIcon": "TreeViewItem-withIcon-26",
                 },
                 "index": Array [
                   Object {
@@ -9757,21 +9726,13 @@ body {
                   Object {
                     "fill": "#FFFFFF",
                   },
-                  Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                 ],
                 "map": Object {
-                  ".TreeViewItem-box-29": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  ".TreeViewItem-collapsed-22": Object {},
-                  ".TreeViewItem-collapsed-22>.TreeViewItem-group-17": Object {
+                  ".TreeViewItem-collapsed-21": Object {},
+                  ".TreeViewItem-collapsed-21>.TreeViewItem-group-16": Object {
                     "display": "none",
                   },
-                  ".TreeViewItem-content-28": Object {
+                  ".TreeViewItem-content-27": Object {
                     "align-items": "center",
                     "color": undefined,
                     "cursor": "pointer",
@@ -9780,92 +9741,88 @@ body {
                     "justify-content": "flex-start",
                     "width": "100%",
                   },
-                  ".TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-content-27 *": Object {
                     "cursor": "pointer",
                   },
-                  ".TreeViewItem-content-28[disabled], .TreeViewItem-content-28:active": Object {
+                  ".TreeViewItem-content-27[disabled], .TreeViewItem-content-27:active": Object {
                     "outline": "none",
                   },
-                  ".TreeViewItem-disabled-19": Object {},
-                  ".TreeViewItem-disabled-19>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-disabled-18": Object {},
+                  ".TreeViewItem-disabled-18>.TreeViewItem-content-27": Object {
                     "cursor": "not-allowed",
                   },
-                  ".TreeViewItem-disabled-19>.TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-disabled-18>.TreeViewItem-content-27 *": Object {
                     "cursor": "not-allowed",
                   },
-                  ".TreeViewItem-expanded-23": Object {},
-                  ".TreeViewItem-expanded-23>.TreeViewItem-group-17": Object {
+                  ".TreeViewItem-expanded-22": Object {},
+                  ".TreeViewItem-expanded-22>.TreeViewItem-group-16": Object {
                     "display": "block",
                   },
-                  ".TreeViewItem-group-17": Object {
+                  ".TreeViewItem-group-16": Object {
                     "margin": "8px 0 0 0",
                     "padding": 0,
                   },
-                  ".TreeViewItem-noIcon-26": Object {},
-                  ".TreeViewItem-node-18": Object {
+                  ".TreeViewItem-noIcon-25": Object {},
+                  ".TreeViewItem-node-17": Object {
                     "list-style": "none",
                     "min-height": "32px",
                   },
-                  ".TreeViewItem-node-18:not(:last-child)": Object {
+                  ".TreeViewItem-node-17:not(:last-child)": Object {
                     "margin-bottom": "8px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-content-27": Object {
                     "padding-left": "10px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "padding-left": "30px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "padding-left": "50px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-content-27": Object {
                     "padding-left": "0px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "padding-left": "52px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "padding-left": "72px",
                   },
-                  ".TreeViewItem-root-16": Object {
+                  ".TreeViewItem-root-15": Object {
                     "background": "#FFFFFF",
                     "display": "block",
                     "list-style": "none",
                     "margin": "0",
                     "padding": "0px",
                   },
-                  ".TreeViewItem-selectable-20": Object {},
-                  ".TreeViewItem-selected-24": Object {},
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-selectable-19": Object {},
+                  ".TreeViewItem-selected-23": Object {},
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27": Object {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27 *": Object {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28 svg *.color0": Object {
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27 svg *.color0": Object {
                     "fill": "#FFFFFF",
                   },
-                  ".TreeViewItem-unselectable-21": Object {},
-                  ".TreeViewItem-unselected-25": Object {},
-                  ".TreeViewItem-withIcon-27": Object {},
-                  ":not(.TreeViewItem-disabled-19).TreeViewItem-selected-24>.TreeViewItem-content-28:hover": Object {},
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:focus": Object {
+                  ".TreeViewItem-unselectable-20": Object {},
+                  ".TreeViewItem-unselected-24": Object {},
+                  ".TreeViewItem-withIcon-26": Object {},
+                  ":not(.TreeViewItem-disabled-18).TreeViewItem-selected-23>.TreeViewItem-content-27:hover": Object {},
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:focus": Object {
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:focus *": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:focus *": Object {
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:hover": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:hover": Object {
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:hover *": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:hover *": Object {
                     "background": "#F0F0F0",
-                  },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
                   },
                   "collapsed": Object {},
                   "content": Object {
@@ -9905,20 +9862,19 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "TreeViewItem",
                   "classes": Object {
-                    "box": "TreeViewItem-box-29",
-                    "collapsed": "TreeViewItem-collapsed-22",
-                    "content": "TreeViewItem-content-28",
-                    "disabled": "TreeViewItem-disabled-19",
-                    "expanded": "TreeViewItem-expanded-23",
-                    "group": "TreeViewItem-group-17",
-                    "noIcon": "TreeViewItem-noIcon-26",
-                    "node": "TreeViewItem-node-18",
-                    "root": "TreeViewItem-root-16",
-                    "selectable": "TreeViewItem-selectable-20",
-                    "selected": "TreeViewItem-selected-24",
-                    "unselectable": "TreeViewItem-unselectable-21",
-                    "unselected": "TreeViewItem-unselected-25",
-                    "withIcon": "TreeViewItem-withIcon-27",
+                    "collapsed": "TreeViewItem-collapsed-21",
+                    "content": "TreeViewItem-content-27",
+                    "disabled": "TreeViewItem-disabled-18",
+                    "expanded": "TreeViewItem-expanded-22",
+                    "group": "TreeViewItem-group-16",
+                    "noIcon": "TreeViewItem-noIcon-25",
+                    "node": "TreeViewItem-node-17",
+                    "root": "TreeViewItem-root-15",
+                    "selectable": "TreeViewItem-selectable-19",
+                    "selected": "TreeViewItem-selected-23",
+                    "unselectable": "TreeViewItem-unselectable-20",
+                    "unselected": "TreeViewItem-unselected-24",
+                    "withIcon": "TreeViewItem-withIcon-26",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10401,49 +10357,49 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".TreeViewItem-collapsed-22>.TreeViewItem-group-17": Object {
+                  ".TreeViewItem-collapsed-21>.TreeViewItem-group-16": Object {
                     "display": "none",
                   },
-                  ".TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-content-27 *": Object {
                     "cursor": "pointer",
                   },
-                  ".TreeViewItem-content-28[disabled], .TreeViewItem-content-28:active": Object {
+                  ".TreeViewItem-content-27[disabled], .TreeViewItem-content-27:active": Object {
                     "outline": "none",
                   },
-                  ".TreeViewItem-disabled-19>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-disabled-18>.TreeViewItem-content-27": Object {
                     "& *": Object {
                       "cursor": "not-allowed",
                     },
                     "cursor": "not-allowed",
                   },
-                  ".TreeViewItem-disabled-19>.TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-disabled-18>.TreeViewItem-content-27 *": Object {
                     "cursor": "not-allowed",
                   },
-                  ".TreeViewItem-expanded-23>.TreeViewItem-group-17": Object {
+                  ".TreeViewItem-expanded-22>.TreeViewItem-group-16": Object {
                     "display": "block",
                   },
-                  ".TreeViewItem-node-18:not(:last-child)": Object {
+                  ".TreeViewItem-node-17:not(:last-child)": Object {
                     "marginBottom": "8px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-content-27": Object {
                     "paddingLeft": "10px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "paddingLeft": "30px",
                   },
-                  ".TreeViewItem-node-18:not([data-hasicon])>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17:not([data-hasicon])>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "paddingLeft": "50px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-content-27": Object {
                     "paddingLeft": "0px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "paddingLeft": "52px",
                   },
-                  ".TreeViewItem-node-18[data-hasicon]>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-group-17>.TreeViewItem-node-18>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-node-17[data-hasicon]>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-group-16>.TreeViewItem-node-17>.TreeViewItem-content-27": Object {
                     "paddingLeft": "72px",
                   },
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28": Object {
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27": Object {
                     "& *": Object {
                       "background": "#414141",
                       "color": "#FFFFFF",
@@ -10454,35 +10410,31 @@ body {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28 *": Object {
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27 *": Object {
                     "background": "#414141",
                     "color": "#FFFFFF",
                   },
-                  ".TreeViewItem-selected-24>.TreeViewItem-content-28 svg *.color0": Object {
+                  ".TreeViewItem-selected-23>.TreeViewItem-content-27 svg *.color0": Object {
                     "fill": "#FFFFFF",
                   },
-                  ":not(.TreeViewItem-disabled-19).TreeViewItem-selected-24>.TreeViewItem-content-28:hover": Object {},
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:focus": Object {
+                  ":not(.TreeViewItem-disabled-18).TreeViewItem-selected-23>.TreeViewItem-content-27:hover": Object {},
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:focus": Object {
                     "& *": Object {
                       "background": "#F0F0F0",
                     },
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:focus *": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:focus *": Object {
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:hover": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:hover": Object {
                     "& *": Object {
                       "background": "#F0F0F0",
                     },
                     "background": "#F0F0F0",
                   },
-                  ":not(.TreeViewItem-disabled-19):not(.TreeViewItem-selected-24)>.TreeViewItem-content-28:hover *": Object {
+                  ":not(.TreeViewItem-disabled-18):not(.TreeViewItem-selected-23)>.TreeViewItem-content-27:hover *": Object {
                     "background": "#F0F0F0",
-                  },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
                   },
                   "collapsed": Object {
                     "&>$group": Object {
@@ -10979,7 +10931,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -11527,31 +11479,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Component-3xlTitle-32",
-                "4xlTitle": "Component-4xlTitle-31",
-                "5xlTitle": "Component-5xlTitle-30",
-                "baseFontFamily": "Component-baseFontFamily-53",
-                "disabledButtonText": "Component-disabledButtonText-44",
-                "disabledText": "Component-disabledText-51",
-                "highlightText": "Component-highlightText-40",
-                "infoText": "Component-infoText-49",
-                "inlineLink": "Component-inlineLink-43",
-                "lTitle": "Component-lTitle-35",
-                "labelText": "Component-labelText-48",
-                "mTitle": "Component-mTitle-36",
-                "margin": "Component-margin-54",
-                "normalText": "Component-normalText-41",
-                "placeholderText": "Component-placeholderText-45",
-                "sLink": "Component-sLink-50",
-                "sText": "Component-sText-47",
-                "sTitle": "Component-sTitle-37",
-                "selectedNavText": "Component-selectedNavText-46",
-                "selectedText": "Component-selectedText-42",
-                "vizText": "Component-vizText-52",
-                "xlTitle": "Component-xlTitle-34",
-                "xsTitle": "Component-xsTitle-38",
-                "xxlTitle": "Component-xxlTitle-33",
-                "xxsTitle": "Component-xxsTitle-39",
+                "3xlTitle": "Component-3xlTitle-30",
+                "4xlTitle": "Component-4xlTitle-29",
+                "5xlTitle": "Component-5xlTitle-28",
+                "baseFontFamily": "Component-baseFontFamily-51",
+                "disabledButtonText": "Component-disabledButtonText-42",
+                "disabledText": "Component-disabledText-49",
+                "highlightText": "Component-highlightText-38",
+                "infoText": "Component-infoText-47",
+                "inlineLink": "Component-inlineLink-41",
+                "lTitle": "Component-lTitle-33",
+                "labelText": "Component-labelText-46",
+                "mTitle": "Component-mTitle-34",
+                "margin": "Component-margin-52",
+                "normalText": "Component-normalText-39",
+                "placeholderText": "Component-placeholderText-43",
+                "sLink": "Component-sLink-48",
+                "sText": "Component-sText-45",
+                "sTitle": "Component-sTitle-35",
+                "selectedNavText": "Component-selectedNavText-44",
+                "selectedText": "Component-selectedText-40",
+                "vizText": "Component-vizText-50",
+                "xlTitle": "Component-xlTitle-32",
+                "xsTitle": "Component-xsTitle-36",
+                "xxlTitle": "Component-xxlTitle-31",
+                "xxsTitle": "Component-xxsTitle-37",
               },
               "deployed": true,
               "linked": false,
@@ -11559,31 +11511,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Component",
                 "classes": Object {
-                  "3xlTitle": "Component-3xlTitle-32",
-                  "4xlTitle": "Component-4xlTitle-31",
-                  "5xlTitle": "Component-5xlTitle-30",
-                  "baseFontFamily": "Component-baseFontFamily-53",
-                  "disabledButtonText": "Component-disabledButtonText-44",
-                  "disabledText": "Component-disabledText-51",
-                  "highlightText": "Component-highlightText-40",
-                  "infoText": "Component-infoText-49",
-                  "inlineLink": "Component-inlineLink-43",
-                  "lTitle": "Component-lTitle-35",
-                  "labelText": "Component-labelText-48",
-                  "mTitle": "Component-mTitle-36",
-                  "margin": "Component-margin-54",
-                  "normalText": "Component-normalText-41",
-                  "placeholderText": "Component-placeholderText-45",
-                  "sLink": "Component-sLink-50",
-                  "sText": "Component-sText-47",
-                  "sTitle": "Component-sTitle-37",
-                  "selectedNavText": "Component-selectedNavText-46",
-                  "selectedText": "Component-selectedText-42",
-                  "vizText": "Component-vizText-52",
-                  "xlTitle": "Component-xlTitle-34",
-                  "xsTitle": "Component-xsTitle-38",
-                  "xxlTitle": "Component-xxlTitle-33",
-                  "xxsTitle": "Component-xxsTitle-39",
+                  "3xlTitle": "Component-3xlTitle-30",
+                  "4xlTitle": "Component-4xlTitle-29",
+                  "5xlTitle": "Component-5xlTitle-28",
+                  "baseFontFamily": "Component-baseFontFamily-51",
+                  "disabledButtonText": "Component-disabledButtonText-42",
+                  "disabledText": "Component-disabledText-49",
+                  "highlightText": "Component-highlightText-38",
+                  "infoText": "Component-infoText-47",
+                  "inlineLink": "Component-inlineLink-41",
+                  "lTitle": "Component-lTitle-33",
+                  "labelText": "Component-labelText-46",
+                  "mTitle": "Component-mTitle-34",
+                  "margin": "Component-margin-52",
+                  "normalText": "Component-normalText-39",
+                  "placeholderText": "Component-placeholderText-43",
+                  "sLink": "Component-sLink-48",
+                  "sText": "Component-sText-45",
+                  "sTitle": "Component-sTitle-35",
+                  "selectedNavText": "Component-selectedNavText-44",
+                  "selectedText": "Component-selectedText-40",
+                  "vizText": "Component-vizText-50",
+                  "xlTitle": "Component-xlTitle-32",
+                  "xsTitle": "Component-xsTitle-36",
+                  "xxlTitle": "Component-xxlTitle-31",
+                  "xxsTitle": "Component-xxsTitle-37",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -12071,91 +12023,91 @@ body {
                   data-meta="Component"
                 >
                   
-.Component-5xlTitle-30 {
+.Component-5xlTitle-28 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-4xlTitle-31 {
+.Component-4xlTitle-29 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-3xlTitle-32 {
+.Component-3xlTitle-30 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-xxlTitle-33 {
+.Component-xxlTitle-31 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-xlTitle-34 {
+.Component-xlTitle-32 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-lTitle-35 {
+.Component-lTitle-33 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-mTitle-36 {
+.Component-mTitle-34 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-sTitle-37 {
+.Component-sTitle-35 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-xsTitle-38 {
+.Component-xsTitle-36 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-xxsTitle-39 {
+.Component-xxsTitle-37 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-highlightText-40 {
+.Component-highlightText-38 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-normalText-41 {
+.Component-normalText-39 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-selectedText-42 {
+.Component-selectedText-40 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -12163,80 +12115,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-inlineLink-43 {
+.Component-inlineLink-41 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-disabledButtonText-44 {
+.Component-disabledButtonText-42 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-placeholderText-45 {
+.Component-placeholderText-43 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-selectedNavText-46 {
+.Component-selectedNavText-44 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-sText-47 {
+.Component-sText-45 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-labelText-48 {
+.Component-labelText-46 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-infoText-49 {
+.Component-infoText-47 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-sLink-50 {
+.Component-sLink-48 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-disabledText-51 {
+.Component-disabledText-49 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-vizText-52 {
+.Component-vizText-50 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-baseFontFamily-53 {
+.Component-baseFontFamily-51 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Component-margin-54 {
+.Component-margin-52 {
   margin: 0;
 }
 
@@ -12252,31 +12204,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Component-3xlTitle-32",
-                  "4xlTitle": "Component-4xlTitle-31",
-                  "5xlTitle": "Component-5xlTitle-30",
-                  "baseFontFamily": "Component-baseFontFamily-53",
-                  "disabledButtonText": "Component-disabledButtonText-44",
-                  "disabledText": "Component-disabledText-51",
-                  "highlightText": "Component-highlightText-40",
-                  "infoText": "Component-infoText-49",
-                  "inlineLink": "Component-inlineLink-43",
-                  "lTitle": "Component-lTitle-35",
-                  "labelText": "Component-labelText-48",
-                  "mTitle": "Component-mTitle-36",
-                  "margin": "Component-margin-54",
-                  "normalText": "Component-normalText-41",
-                  "placeholderText": "Component-placeholderText-45",
-                  "sLink": "Component-sLink-50",
-                  "sText": "Component-sText-47",
-                  "sTitle": "Component-sTitle-37",
-                  "selectedNavText": "Component-selectedNavText-46",
-                  "selectedText": "Component-selectedText-42",
-                  "vizText": "Component-vizText-52",
-                  "xlTitle": "Component-xlTitle-34",
-                  "xsTitle": "Component-xsTitle-38",
-                  "xxlTitle": "Component-xxlTitle-33",
-                  "xxsTitle": "Component-xxsTitle-39",
+                  "3xlTitle": "Component-3xlTitle-30",
+                  "4xlTitle": "Component-4xlTitle-29",
+                  "5xlTitle": "Component-5xlTitle-28",
+                  "baseFontFamily": "Component-baseFontFamily-51",
+                  "disabledButtonText": "Component-disabledButtonText-42",
+                  "disabledText": "Component-disabledText-49",
+                  "highlightText": "Component-highlightText-38",
+                  "infoText": "Component-infoText-47",
+                  "inlineLink": "Component-inlineLink-41",
+                  "lTitle": "Component-lTitle-33",
+                  "labelText": "Component-labelText-46",
+                  "mTitle": "Component-mTitle-34",
+                  "margin": "Component-margin-52",
+                  "normalText": "Component-normalText-39",
+                  "placeholderText": "Component-placeholderText-43",
+                  "sLink": "Component-sLink-48",
+                  "sText": "Component-sText-45",
+                  "sTitle": "Component-sTitle-35",
+                  "selectedNavText": "Component-selectedNavText-44",
+                  "selectedText": "Component-selectedText-40",
+                  "vizText": "Component-vizText-50",
+                  "xlTitle": "Component-xlTitle-32",
+                  "xsTitle": "Component-xsTitle-36",
+                  "xxlTitle": "Component-xxlTitle-31",
+                  "xxsTitle": "Component-xxsTitle-37",
                 },
                 "index": Array [
                   Object {
@@ -12449,132 +12401,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Component-3xlTitle-32": Object {
+                  ".Component-3xlTitle-30": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Component-4xlTitle-31": Object {
+                  ".Component-4xlTitle-29": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Component-5xlTitle-30": Object {
+                  ".Component-5xlTitle-28": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Component-baseFontFamily-53": Object {
+                  ".Component-baseFontFamily-51": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Component-disabledButtonText-44": Object {
+                  ".Component-disabledButtonText-42": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-disabledText-51": Object {
+                  ".Component-disabledText-49": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-highlightText-40": Object {
+                  ".Component-highlightText-38": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-infoText-49": Object {
+                  ".Component-infoText-47": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-inlineLink-43": Object {
+                  ".Component-inlineLink-41": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-lTitle-35": Object {
+                  ".Component-lTitle-33": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Component-labelText-48": Object {
+                  ".Component-labelText-46": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-mTitle-36": Object {
+                  ".Component-mTitle-34": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Component-margin-54": Object {
+                  ".Component-margin-52": Object {
                     "margin": 0,
                   },
-                  ".Component-normalText-41": Object {
+                  ".Component-normalText-39": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-placeholderText-45": Object {
+                  ".Component-placeholderText-43": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-sLink-50": Object {
+                  ".Component-sLink-48": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-sText-47": Object {
+                  ".Component-sText-45": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-sTitle-37": Object {
+                  ".Component-sTitle-35": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Component-selectedNavText-46": Object {
+                  ".Component-selectedNavText-44": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-selectedText-42": Object {
+                  ".Component-selectedText-40": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -12582,35 +12534,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-vizText-52": Object {
+                  ".Component-vizText-50": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Component-xlTitle-34": Object {
+                  ".Component-xlTitle-32": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Component-xsTitle-38": Object {
+                  ".Component-xsTitle-36": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Component-xxlTitle-33": Object {
+                  ".Component-xxlTitle-31": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Component-xxsTitle-39": Object {
+                  ".Component-xxsTitle-37": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -12790,31 +12742,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Component",
                   "classes": Object {
-                    "3xlTitle": "Component-3xlTitle-32",
-                    "4xlTitle": "Component-4xlTitle-31",
-                    "5xlTitle": "Component-5xlTitle-30",
-                    "baseFontFamily": "Component-baseFontFamily-53",
-                    "disabledButtonText": "Component-disabledButtonText-44",
-                    "disabledText": "Component-disabledText-51",
-                    "highlightText": "Component-highlightText-40",
-                    "infoText": "Component-infoText-49",
-                    "inlineLink": "Component-inlineLink-43",
-                    "lTitle": "Component-lTitle-35",
-                    "labelText": "Component-labelText-48",
-                    "mTitle": "Component-mTitle-36",
-                    "margin": "Component-margin-54",
-                    "normalText": "Component-normalText-41",
-                    "placeholderText": "Component-placeholderText-45",
-                    "sLink": "Component-sLink-50",
-                    "sText": "Component-sText-47",
-                    "sTitle": "Component-sTitle-37",
-                    "selectedNavText": "Component-selectedNavText-46",
-                    "selectedText": "Component-selectedText-42",
-                    "vizText": "Component-vizText-52",
-                    "xlTitle": "Component-xlTitle-34",
-                    "xsTitle": "Component-xsTitle-38",
-                    "xxlTitle": "Component-xxlTitle-33",
-                    "xxsTitle": "Component-xxsTitle-39",
+                    "3xlTitle": "Component-3xlTitle-30",
+                    "4xlTitle": "Component-4xlTitle-29",
+                    "5xlTitle": "Component-5xlTitle-28",
+                    "baseFontFamily": "Component-baseFontFamily-51",
+                    "disabledButtonText": "Component-disabledButtonText-42",
+                    "disabledText": "Component-disabledText-49",
+                    "highlightText": "Component-highlightText-38",
+                    "infoText": "Component-infoText-47",
+                    "inlineLink": "Component-inlineLink-41",
+                    "lTitle": "Component-lTitle-33",
+                    "labelText": "Component-labelText-46",
+                    "mTitle": "Component-mTitle-34",
+                    "margin": "Component-margin-52",
+                    "normalText": "Component-normalText-39",
+                    "placeholderText": "Component-placeholderText-43",
+                    "sLink": "Component-sLink-48",
+                    "sText": "Component-sText-45",
+                    "sTitle": "Component-sTitle-35",
+                    "selectedNavText": "Component-selectedNavText-44",
+                    "selectedText": "Component-selectedText-40",
+                    "vizText": "Component-vizText-50",
+                    "xlTitle": "Component-xlTitle-32",
+                    "xsTitle": "Component-xsTitle-36",
+                    "xxlTitle": "Component-xxlTitle-31",
+                    "xxsTitle": "Component-xxsTitle-37",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -13867,7 +13819,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -14415,11 +14367,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "root": "Play-root-55",
-                "rootL": "Play-rootL-59",
-                "rootM": "Play-rootM-58",
-                "rootS": "Play-rootS-57",
-                "rootXs": "Play-rootXs-56",
+                "root": "Play-root-53",
+                "rootL": "Play-rootL-57",
+                "rootM": "Play-rootM-56",
+                "rootS": "Play-rootS-55",
+                "rootXs": "Play-rootXs-54",
               },
               "deployed": true,
               "linked": false,
@@ -14427,11 +14379,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Play",
                 "classes": Object {
-                  "root": "Play-root-55",
-                  "rootL": "Play-rootL-59",
-                  "rootM": "Play-rootM-58",
-                  "rootS": "Play-rootS-57",
-                  "rootXs": "Play-rootXs-56",
+                  "root": "Play-root-53",
+                  "rootL": "Play-rootL-57",
+                  "rootM": "Play-rootM-56",
+                  "rootS": "Play-rootS-55",
+                  "rootXs": "Play-rootXs-54",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -14919,25 +14871,25 @@ body {
                   data-meta="Play"
                 >
                   
-.Play-root-55 {
+.Play-root-53 {
   display: flex;
 }
-.Play-root-55 svg {
+.Play-root-53 svg {
   margin: auto;
 }
-.Play-rootXs-56 {
+.Play-rootXs-54 {
   width: 12px;
   height: 12px;
 }
-.Play-rootS-57 {
+.Play-rootS-55 {
   width: 16px;
   height: 16px;
 }
-.Play-rootM-58 {
+.Play-rootM-56 {
   width: 32px;
   height: 32px;
 }
-.Play-rootL-59 {
+.Play-rootL-57 {
   width: 96px;
   height: 96px;
 }
@@ -14954,11 +14906,11 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "root": "Play-root-55",
-                  "rootL": "Play-rootL-59",
-                  "rootM": "Play-rootM-58",
-                  "rootS": "Play-rootS-57",
-                  "rootXs": "Play-rootXs-56",
+                  "root": "Play-root-53",
+                  "rootL": "Play-rootL-57",
+                  "rootM": "Play-rootM-56",
+                  "rootS": "Play-rootS-55",
+                  "rootXs": "Play-rootXs-54",
                 },
                 "index": Array [
                   Object {
@@ -14985,25 +14937,25 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Play-root-55": Object {
+                  ".Play-root-53": Object {
                     "display": "flex",
                   },
-                  ".Play-root-55 svg": Object {
+                  ".Play-root-53 svg": Object {
                     "margin": "auto",
                   },
-                  ".Play-rootL-59": Object {
+                  ".Play-rootL-57": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Play-rootM-58": Object {
+                  ".Play-rootM-56": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Play-rootS-57": Object {
+                  ".Play-rootS-55": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Play-rootXs-56": Object {
+                  ".Play-rootXs-54": Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -15031,11 +14983,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Play",
                   "classes": Object {
-                    "root": "Play-root-55",
-                    "rootL": "Play-rootL-59",
-                    "rootM": "Play-rootM-58",
-                    "rootS": "Play-rootS-57",
-                    "rootXs": "Play-rootXs-56",
+                    "root": "Play-root-53",
+                    "rootL": "Play-rootL-57",
+                    "rootM": "Play-rootM-56",
+                    "rootS": "Play-rootS-55",
+                    "rootXs": "Play-rootXs-54",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -15518,7 +15470,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Play-root-55 svg": Object {
+                  ".Play-root-53 svg": Object {
                     "margin": "auto",
                   },
                   "root": Object {
@@ -15936,7 +15888,7 @@ body {
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -16966,7 +16918,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -17528,7 +17480,6 @@ body {
               className=""
               classes={
                 Object {
-                  "box": "TreeView-box-15",
                   "collapsed": "TreeView-collapsed-8",
                   "content": "TreeView-content-14",
                   "disabled": "TreeView-disabled-5",
@@ -17934,7 +17885,7 @@ body {
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -18532,20 +18483,19 @@ body {
                     className=""
                     classes={
                       Object {
-                        "box": "TreeViewItem-box-29",
-                        "collapsed": "TreeViewItem-collapsed-22",
-                        "content": "TreeViewItem-content-28",
-                        "disabled": "TreeViewItem-disabled-19",
-                        "expanded": "TreeViewItem-expanded-23",
-                        "group": "TreeViewItem-group-17",
-                        "noIcon": "TreeViewItem-noIcon-26",
-                        "node": "TreeViewItem-node-18",
-                        "root": "TreeViewItem-root-16",
-                        "selectable": "TreeViewItem-selectable-20",
-                        "selected": "TreeViewItem-selected-24",
-                        "unselectable": "TreeViewItem-unselectable-21",
-                        "unselected": "TreeViewItem-unselected-25",
-                        "withIcon": "TreeViewItem-withIcon-27",
+                        "collapsed": "TreeViewItem-collapsed-21",
+                        "content": "TreeViewItem-content-27",
+                        "disabled": "TreeViewItem-disabled-18",
+                        "expanded": "TreeViewItem-expanded-22",
+                        "group": "TreeViewItem-group-16",
+                        "noIcon": "TreeViewItem-noIcon-25",
+                        "node": "TreeViewItem-node-17",
+                        "root": "TreeViewItem-root-15",
+                        "selectable": "TreeViewItem-selectable-19",
+                        "selected": "TreeViewItem-selected-23",
+                        "unselectable": "TreeViewItem-unselectable-20",
+                        "unselected": "TreeViewItem-unselected-24",
+                        "withIcon": "TreeViewItem-withIcon-26",
                       }
                     }
                     collapseIcon={null}
@@ -18978,7 +18928,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -19525,25 +19475,26 @@ body {
                     }
                   >
                     <li
-                      className="TreeViewItem-node-18 TreeViewItem-selectable-20 TreeViewItem-unselected-25"
+                      className="TreeViewItem-node-17 TreeViewItem-selectable-19 TreeViewItem-unselected-24"
                       data-hasicon={true}
                       id="hv-verticalnavigation-treeviewitem2"
                     >
                       <WithStyles(Component)
-                        className="TreeViewItem-content-28"
+                        className="TreeViewItem-content-27"
                         component="div"
                         id="hv-verticalnavigation-treeviewitem2-button"
                         innerRef={
                           Object {
                             "current": <div
-                              class="Component-normalText-41 Component-baseFontFamily-53 Component-margin-54 TreeViewItem-content-28"
+                              class="Component-normalText-39 Component-baseFontFamily-51 Component-margin-52 TreeViewItem-content-27"
                               id="hv-verticalnavigation-treeviewitem2-button"
                               role="button"
                               tabindex="0"
                               theme="[object Object]"
                             >
                               <div
-                                class="TreeViewItem-box-29 Play-root-55 Play-rootS-57"
+                                class="Play-root-53 Play-rootS-55"
+                                style="width: 32px; height: 32px;"
                               >
                                 <svg
                                   focusable="false"
@@ -19570,34 +19521,34 @@ body {
                         variant="normalText"
                       >
                         <ForwardRef
-                          className="TreeViewItem-content-28"
+                          className="TreeViewItem-content-27"
                           classes={
                             Object {
-                              "3xlTitle": "Component-3xlTitle-32",
-                              "4xlTitle": "Component-4xlTitle-31",
-                              "5xlTitle": "Component-5xlTitle-30",
-                              "baseFontFamily": "Component-baseFontFamily-53",
-                              "disabledButtonText": "Component-disabledButtonText-44",
-                              "disabledText": "Component-disabledText-51",
-                              "highlightText": "Component-highlightText-40",
-                              "infoText": "Component-infoText-49",
-                              "inlineLink": "Component-inlineLink-43",
-                              "lTitle": "Component-lTitle-35",
-                              "labelText": "Component-labelText-48",
-                              "mTitle": "Component-mTitle-36",
-                              "margin": "Component-margin-54",
-                              "normalText": "Component-normalText-41",
-                              "placeholderText": "Component-placeholderText-45",
-                              "sLink": "Component-sLink-50",
-                              "sText": "Component-sText-47",
-                              "sTitle": "Component-sTitle-37",
-                              "selectedNavText": "Component-selectedNavText-46",
-                              "selectedText": "Component-selectedText-42",
-                              "vizText": "Component-vizText-52",
-                              "xlTitle": "Component-xlTitle-34",
-                              "xsTitle": "Component-xsTitle-38",
-                              "xxlTitle": "Component-xxlTitle-33",
-                              "xxsTitle": "Component-xxsTitle-39",
+                              "3xlTitle": "Component-3xlTitle-30",
+                              "4xlTitle": "Component-4xlTitle-29",
+                              "5xlTitle": "Component-5xlTitle-28",
+                              "baseFontFamily": "Component-baseFontFamily-51",
+                              "disabledButtonText": "Component-disabledButtonText-42",
+                              "disabledText": "Component-disabledText-49",
+                              "highlightText": "Component-highlightText-38",
+                              "infoText": "Component-infoText-47",
+                              "inlineLink": "Component-inlineLink-41",
+                              "lTitle": "Component-lTitle-33",
+                              "labelText": "Component-labelText-46",
+                              "mTitle": "Component-mTitle-34",
+                              "margin": "Component-margin-52",
+                              "normalText": "Component-normalText-39",
+                              "placeholderText": "Component-placeholderText-43",
+                              "sLink": "Component-sLink-48",
+                              "sText": "Component-sText-45",
+                              "sTitle": "Component-sTitle-35",
+                              "selectedNavText": "Component-selectedNavText-44",
+                              "selectedText": "Component-selectedText-40",
+                              "vizText": "Component-vizText-50",
+                              "xlTitle": "Component-xlTitle-32",
+                              "xsTitle": "Component-xsTitle-36",
+                              "xxlTitle": "Component-xxlTitle-31",
+                              "xxsTitle": "Component-xxsTitle-37",
                             }
                           }
                           component="div"
@@ -19991,7 +19942,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -20539,7 +20490,7 @@ body {
                           variant="normalText"
                         >
                           <div
-                            className="Component-normalText-41 Component-baseFontFamily-53 Component-margin-54 TreeViewItem-content-28"
+                            className="Component-normalText-39 Component-baseFontFamily-51 Component-margin-52 TreeViewItem-content-27"
                             id="hv-verticalnavigation-treeviewitem2-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -20929,7 +20880,7 @@ body {
                                   },
                                   "augmentColor": [Function],
                                   "background": Object {
-                                    "default": "#F9F9F9",
+                                    "default": "#F5F5F5",
                                     "paper": "#fff",
                                   },
                                   "common": Object {
@@ -21476,17 +21427,27 @@ body {
                             }
                           >
                             <WithStyles(Play)
-                              className="TreeViewItem-box-29"
+                              boxStyles={
+                                Object {
+                                  "height": "32px",
+                                  "width": "32px",
+                                }
+                              }
                             >
                               <Play
-                                className="TreeViewItem-box-29"
+                                boxStyles={
+                                  Object {
+                                    "height": "32px",
+                                    "width": "32px",
+                                  }
+                                }
                                 classes={
                                   Object {
-                                    "root": "Play-root-55",
-                                    "rootL": "Play-rootL-59",
-                                    "rootM": "Play-rootM-58",
-                                    "rootS": "Play-rootS-57",
-                                    "rootXs": "Play-rootXs-56",
+                                    "root": "Play-root-53",
+                                    "rootL": "Play-rootL-57",
+                                    "rootM": "Play-rootM-56",
+                                    "rootS": "Play-rootS-55",
+                                    "rootXs": "Play-rootXs-54",
                                   }
                                 }
                                 theme={
@@ -21873,7 +21834,7 @@ body {
                                       },
                                       "augmentColor": [Function],
                                       "background": Object {
-                                        "default": "#F9F9F9",
+                                        "default": "#F5F5F5",
                                         "paper": "#fff",
                                       },
                                       "common": Object {
@@ -22420,7 +22381,13 @@ body {
                                 }
                               >
                                 <div
-                                  className="TreeViewItem-box-29 Play-root-55 Play-rootS-57"
+                                  className="Play-root-53 Play-rootS-55"
+                                  style={
+                                    Object {
+                                      "height": "32px",
+                                      "width": "32px",
+                                    }
+                                  }
                                 >
                                   <svg
                                     focusable={false}

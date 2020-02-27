@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
 Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
-Default Tags      smoke    bug-ie-webdriver
+Force Tags        smoke    bug-ie-webdriver
 
 
 *** Test Cases ***
@@ -19,7 +19,7 @@ Verify current date as default value
     Element Attribute Value Should Be    ${input}       value         ${day}/${month}/${year}
 
 When delete date is replaced with current date
-    [Tags]    issue-ie    issue-firefox
+    [Tags]    bug-firefox-webdriver
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
     Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker
@@ -35,7 +35,6 @@ When delete date is replaced with current date
     Element Attribute Value Should Be    ${input}       value         ${day}/${month}/${year}
 
 Change date in locale pt-PT
-    [Tags]    issue-ie
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
     Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker

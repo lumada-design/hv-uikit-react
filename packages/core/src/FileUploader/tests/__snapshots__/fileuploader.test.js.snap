@@ -400,7 +400,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -1450,7 +1450,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -1603,7 +1603,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2144,7 +2144,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2279,7 +2279,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2426,7 +2426,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2967,7 +2967,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3102,7 +3102,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3609,7 +3609,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -4015,7 +4015,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -5967,7 +5967,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -8373,7 +8373,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -11261,7 +11261,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -13334,7 +13334,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -15354,7 +15354,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -17519,7 +17519,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -20613,7 +20613,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -26626,7 +26626,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -28724,7 +28724,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -30793,7 +30793,7 @@ body {
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -31809,7 +31809,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -32803,7 +32803,7 @@ body {
                   },
                   "augmentColor": [Function],
                   "background": Object {
-                    "default": "#F9F9F9",
+                    "default": "#F5F5F5",
                     "paper": "#fff",
                   },
                   "common": Object {
@@ -33778,7 +33778,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -34713,7 +34713,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -35680,7 +35680,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -36613,7 +36613,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -37582,7 +37582,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -38515,7 +38515,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -39482,7 +39482,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -40415,7 +40415,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -41402,7 +41402,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -42390,7 +42390,7 @@ body {
                             },
                             "augmentColor": [Function],
                             "background": Object {
-                              "default": "#F9F9F9",
+                              "default": "#F5F5F5",
                               "paper": "#fff",
                             },
                             "common": Object {
@@ -43323,7 +43323,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -44310,7 +44310,7 @@ body {
                   },
                   "augmentColor": [Function],
                   "background": Object {
-                    "default": "#F9F9F9",
+                    "default": "#F5F5F5",
                     "paper": "#fff",
                   },
                   "common": Object {
@@ -45282,7 +45282,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -46252,7 +46252,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -47185,7 +47185,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -48157,7 +48157,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -49090,7 +49090,7 @@ body {
                                   },
                                   "augmentColor": [Function],
                                   "background": Object {
-                                    "default": "#F9F9F9",
+                                    "default": "#F5F5F5",
                                     "paper": "#fff",
                                   },
                                   "common": Object {
@@ -50057,7 +50057,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -51004,7 +51004,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -51978,7 +51978,7 @@ body {
                                   },
                                   "augmentColor": [Function],
                                   "background": Object {
-                                    "default": "#F9F9F9",
+                                    "default": "#F5F5F5",
                                     "paper": "#fff",
                                   },
                                   "common": Object {
@@ -52920,7 +52920,7 @@ body {
                                     },
                                     "augmentColor": [Function],
                                     "background": Object {
-                                      "default": "#F9F9F9",
+                                      "default": "#F5F5F5",
                                       "paper": "#fff",
                                     },
                                     "common": Object {
@@ -53871,7 +53871,7 @@ body {
                                       },
                                       "augmentColor": [Function],
                                       "background": Object {
-                                        "default": "#F9F9F9",
+                                        "default": "#F5F5F5",
                                         "paper": "#fff",
                                       },
                                       "common": Object {
@@ -54820,7 +54820,7 @@ body {
                                         },
                                         "augmentColor": [Function],
                                         "background": Object {
-                                          "default": "#F9F9F9",
+                                          "default": "#F5F5F5",
                                           "paper": "#fff",
                                         },
                                         "common": Object {
@@ -55770,7 +55770,7 @@ body {
                                               },
                                               "augmentColor": [Function],
                                               "background": Object {
-                                                "default": "#F9F9F9",
+                                                "default": "#F5F5F5",
                                                 "paper": "#fff",
                                               },
                                               "common": Object {
@@ -56768,7 +56768,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -57738,7 +57738,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -58671,7 +58671,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -59643,7 +59643,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -60576,7 +60576,7 @@ body {
                                   },
                                   "augmentColor": [Function],
                                   "background": Object {
-                                    "default": "#F9F9F9",
+                                    "default": "#F5F5F5",
                                     "paper": "#fff",
                                   },
                                   "common": Object {
@@ -61543,7 +61543,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -62490,7 +62490,7 @@ body {
                                 },
                                 "augmentColor": [Function],
                                 "background": Object {
-                                  "default": "#F9F9F9",
+                                  "default": "#F5F5F5",
                                   "paper": "#fff",
                                 },
                                 "common": Object {
@@ -63464,7 +63464,7 @@ body {
                                   },
                                   "augmentColor": [Function],
                                   "background": Object {
-                                    "default": "#F9F9F9",
+                                    "default": "#F5F5F5",
                                     "paper": "#fff",
                                   },
                                   "common": Object {
@@ -64406,7 +64406,7 @@ body {
                                     },
                                     "augmentColor": [Function],
                                     "background": Object {
-                                      "default": "#F9F9F9",
+                                      "default": "#F5F5F5",
                                       "paper": "#fff",
                                     },
                                     "common": Object {
@@ -65357,7 +65357,7 @@ body {
                                       },
                                       "augmentColor": [Function],
                                       "background": Object {
-                                        "default": "#F9F9F9",
+                                        "default": "#F5F5F5",
                                         "paper": "#fff",
                                       },
                                       "common": Object {
@@ -66306,7 +66306,7 @@ body {
                                         },
                                         "augmentColor": [Function],
                                         "background": Object {
-                                          "default": "#F9F9F9",
+                                          "default": "#F5F5F5",
                                           "paper": "#fff",
                                         },
                                         "common": Object {
@@ -67256,7 +67256,7 @@ body {
                                               },
                                               "augmentColor": [Function],
                                               "background": Object {
-                                                "default": "#F9F9F9",
+                                                "default": "#F5F5F5",
                                                 "paper": "#fff",
                                               },
                                               "common": Object {

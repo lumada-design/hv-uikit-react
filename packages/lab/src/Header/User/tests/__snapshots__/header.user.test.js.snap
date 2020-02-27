@@ -387,7 +387,7 @@ exports[`User withStyles should render User component with Props 1`] = `
         },
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "common": Object {
@@ -1342,7 +1342,7 @@ exports[`User withStyles should render correctly 1`] = `
         },
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "common": Object {

@@ -1,102 +1,29 @@
 [
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > div",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(6) > div > div:nth-child(2) > div > div:nth-child(1)",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(8) > div > div:nth-child(2) > div > div:nth-child(1)",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Duplicate id attribute value \"null-0-action-action1\" found on the web page.",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-text-24 MuiButton-textPrimary-25 HvButton-semantic-19 MuiButton-flat-27 MuiButton-flatPrimary-28 Actions-button-261\" tabindex=\"0\" type=\"button\" id=\"null-0-action-action1...",
-        "selector": "#null-0-action-action1",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Duplicate id attribute value \"null-1-action-action2\" found on the web page.",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-text-24 MuiButton-textPrimary-25 HvButton-semantic-19 MuiButton-flat-27 MuiButton-flatPrimary-28 Actions-button-261\" tabindex=\"0\" type=\"button\" id=\"null-1-action-action2...",
-        "selector": "#null-1-action-action2",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(10) > div > div:nth-child(2) > div > div",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has role of \"button\" but does not have a name available to an accessibility API. Valid names are: element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(12) > div > div:nth-child(2) > div > div",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
     },
     {
-        "code": "button-name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI)",
-        "context": "<div class=\"ActionContainer-closeAction-267\" role=\"button\" tabindex=\"0\"><div class=\"ActionContainer-ico...</div>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > div",
-        "runner": "axe",
-        "runnerExtras": {
-            "description": "Ensures buttons have discernible text",
-            "impact": "critical",
-            "help": "Buttons must have discernible text",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI"
-        }
+        "code": "button-name"
     },
     {
-        "code": "duplicate-id-active",
-        "type": "error",
-        "typeCode": 1,
-        "message": "IDs of active elements must be unique (https://dequeuniversity.com/rules/axe/3.5/duplicate-id-active?application=axeAPI)",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-text-24 MuiButton-textPrimary-25 HvButton-semantic-19 MuiButton-flat-27 MuiButton-flatPrimary-28 Actions-button-261\" tabindex=\"0\" type=\"button\" id=\"null-0-action-action1...",
-        "selector": "#null-0-action-action1",
-        "runner": "axe",
-        "runnerExtras": {
-            "description": "Ensures every id attribute value of active elements is unique",
-            "impact": "serious",
-            "help": "IDs of active elements must be unique",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/duplicate-id-active?application=axeAPI"
-        }
+        "code": "duplicate-id-active"
     }
 ]

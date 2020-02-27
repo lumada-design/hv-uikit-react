@@ -16,15 +16,20 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Header1Vertical2 from "../../../../packages/doc/samples/templates/navigation";
+import Home from "../../../../packages/doc/samples/templates/home/pages/home";
 
 // sample scenarios
 const samples = {
-  Header1Vertical2: <Header1Vertical2 />
+  NavigationSystem: <Home />
 };
 
 Object.keys(samples).forEach(key =>
-  storiesOf("template.NavigationSystem", module).add(key, () => (
+  storiesOf("template.", module).addParameters({
+    options: {
+      isToolshown: false,
+      noAddon: true
+    }
+  }).add(key, () => (
     <>
     {samples[key]}
     </>

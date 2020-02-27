@@ -400,7 +400,7 @@ exports[`Actions should be able to render 1`] = `
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -1450,7 +1450,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
 }
 @media print {
   body {
@@ -1603,7 +1603,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2144,7 +2144,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2279,7 +2279,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -2426,7 +2426,7 @@ body {
                           "box-sizing": "inherit",
                         },
                         Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         ConditionalRule {
@@ -2967,7 +2967,7 @@ body {
                           "type": "conditional",
                         },
                         "body": Object {
-                          "background-color": "#F9F9F9",
+                          "background-color": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3102,7 +3102,7 @@ body {
                           "@media print": Object {
                             "backgroundColor": "#fff",
                           },
-                          "backgroundColor": "#F9F9F9",
+                          "backgroundColor": "#F5F5F5",
                           "margin": 0,
                         },
                         "html": Object {
@@ -3609,7 +3609,7 @@ body {
                       "@media print": Object {
                         "backgroundColor": "#fff",
                       },
-                      "backgroundColor": "#F9F9F9",
+                      "backgroundColor": "#F5F5F5",
                       "margin": 0,
                     },
                     "html": Object {
@@ -4015,7 +4015,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -4564,7 +4564,6 @@ body {
               "attached": true,
               "classes": Object {
                 "action": "Actions-action-2",
-                "box": "Actions-box-4",
                 "noIcon": "Actions-noIcon-3",
                 "root": "Actions-root-1",
               },
@@ -4575,7 +4574,6 @@ body {
                 "classNamePrefix": "Actions",
                 "classes": Object {
                   "action": "Actions-action-2",
-                  "box": "Actions-box-4",
                   "noIcon": "Actions-noIcon-3",
                   "root": "Actions-root-1",
                 },
@@ -5092,10 +5090,6 @@ body {
 .Actions-noIcon-3 {
   padding-left: 10px;
 }
-.Actions-box-4 {
-  width: 32px;
-  height: 32px;
-}
 
                 </style>,
                 "getKey": [Function],
@@ -5110,7 +5104,6 @@ body {
               "rules": RuleList {
                 "classes": Object {
                   "action": "Actions-action-2",
-                  "box": "Actions-box-4",
                   "noIcon": "Actions-noIcon-3",
                   "root": "Actions-root-1",
                 },
@@ -5143,10 +5136,6 @@ body {
                   Object {
                     "padding-left": "10px",
                   },
-                  Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                 ],
                 "map": Object {
                   ".Actions-action-2": Object {
@@ -5167,10 +5156,6 @@ body {
                   ".Actions-action-2:hover *": Object {
                     "background": "#F0F0F0",
                   },
-                  ".Actions-box-4": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   ".Actions-noIcon-3": Object {
                     "padding-left": "10px",
                   },
@@ -5190,10 +5175,6 @@ body {
                     "justify-content": "flex-start",
                     "width": "100%",
                   },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   "noIcon": Object {
                     "padding-left": "10px",
                   },
@@ -5207,7 +5188,6 @@ body {
                   "classNamePrefix": "Actions",
                   "classes": Object {
                     "action": "Actions-action-2",
-                    "box": "Actions-box-4",
                     "noIcon": "Actions-noIcon-3",
                     "root": "Actions-root-1",
                   },
@@ -5725,10 +5705,6 @@ body {
                     "justifyContent": "flex-start",
                     "width": "100%",
                   },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                   "noIcon": Object {
                     "paddingLeft": "10px",
                   },
@@ -6136,7 +6112,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -6684,10 +6660,9 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "action": "Action-action-6",
-                "box": "Action-box-8",
-                "noIcon": "Action-noIcon-7",
-                "root": "Action-root-5",
+                "action": "Action-action-5",
+                "noIcon": "Action-noIcon-6",
+                "root": "Action-root-4",
               },
               "deployed": true,
               "linked": false,
@@ -6695,10 +6670,9 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Action",
                 "classes": Object {
-                  "action": "Action-action-6",
-                  "box": "Action-box-8",
-                  "noIcon": "Action-noIcon-7",
-                  "root": "Action-root-5",
+                  "action": "Action-action-5",
+                  "noIcon": "Action-noIcon-6",
+                  "root": "Action-root-4",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -7186,14 +7160,14 @@ body {
                   data-meta="Action"
                 >
                   
-.Action-root-5 {
+.Action-root-4 {
   display: block;
   background: #FFFFFF;
 }
-.Action-root-5 :not(:last-child) {
+.Action-root-4 :not(:last-child) {
   margin-bottom: 8px;
 }
-.Action-action-6 {
+.Action-action-5 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -7201,21 +7175,17 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.Action-action-6:hover {
+.Action-action-5:hover {
   background: #F0F0F0;
 }
-.Action-action-6 * {
+.Action-action-5 * {
   cursor: pointer;
 }
-.Action-action-6:hover * {
+.Action-action-5:hover * {
   background: #F0F0F0;
 }
-.Action-noIcon-7 {
+.Action-noIcon-6 {
   padding-left: 10px;
-}
-.Action-box-8 {
-  width: 32px;
-  height: 32px;
 }
 
                 </style>,
@@ -7230,10 +7200,9 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "action": "Action-action-6",
-                  "box": "Action-box-8",
-                  "noIcon": "Action-noIcon-7",
-                  "root": "Action-root-5",
+                  "action": "Action-action-5",
+                  "noIcon": "Action-noIcon-6",
+                  "root": "Action-root-4",
                 },
                 "index": Array [
                   Object {
@@ -7264,13 +7233,9 @@ body {
                   Object {
                     "padding-left": "10px",
                   },
-                  Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
                 ],
                 "map": Object {
-                  ".Action-action-6": Object {
+                  ".Action-action-5": Object {
                     "align-items": "center",
                     "color": undefined,
                     "cursor": "pointer",
@@ -7279,27 +7244,23 @@ body {
                     "justify-content": "flex-start",
                     "width": "100%",
                   },
-                  ".Action-action-6 *": Object {
+                  ".Action-action-5 *": Object {
                     "cursor": "pointer",
                   },
-                  ".Action-action-6:hover": Object {
+                  ".Action-action-5:hover": Object {
                     "background": "#F0F0F0",
                   },
-                  ".Action-action-6:hover *": Object {
+                  ".Action-action-5:hover *": Object {
                     "background": "#F0F0F0",
                   },
-                  ".Action-box-8": Object {
-                    "height": "32px",
-                    "width": "32px",
-                  },
-                  ".Action-noIcon-7": Object {
+                  ".Action-noIcon-6": Object {
                     "padding-left": "10px",
                   },
-                  ".Action-root-5": Object {
+                  ".Action-root-4": Object {
                     "background": "#FFFFFF",
                     "display": "block",
                   },
-                  ".Action-root-5 :not(:last-child)": Object {
+                  ".Action-root-4 :not(:last-child)": Object {
                     "margin-bottom": "8px",
                   },
                   "action": Object {
@@ -7310,10 +7271,6 @@ body {
                     "height": "32px",
                     "justify-content": "flex-start",
                     "width": "100%",
-                  },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
                   },
                   "noIcon": Object {
                     "padding-left": "10px",
@@ -7327,10 +7284,9 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Action",
                   "classes": Object {
-                    "action": "Action-action-6",
-                    "box": "Action-box-8",
-                    "noIcon": "Action-noIcon-7",
-                    "root": "Action-root-5",
+                    "action": "Action-action-5",
+                    "noIcon": "Action-noIcon-6",
+                    "root": "Action-root-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7813,19 +7769,19 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Action-action-6 *": Object {
+                  ".Action-action-5 *": Object {
                     "cursor": "pointer",
                   },
-                  ".Action-action-6:hover": Object {
+                  ".Action-action-5:hover": Object {
                     "& *": Object {
                       "background": "#F0F0F0",
                     },
                     "background": "#F0F0F0",
                   },
-                  ".Action-action-6:hover *": Object {
+                  ".Action-action-5:hover *": Object {
                     "background": "#F0F0F0",
                   },
-                  ".Action-root-5 :not(:last-child)": Object {
+                  ".Action-root-4 :not(:last-child)": Object {
                     "marginBottom": "8px",
                   },
                   "action": Object {
@@ -7845,10 +7801,6 @@ body {
                     "height": "32px",
                     "justifyContent": "flex-start",
                     "width": "100%",
-                  },
-                  "box": Object {
-                    "height": "32px",
-                    "width": "32px",
                   },
                   "noIcon": Object {
                     "paddingLeft": "10px",
@@ -8257,7 +8209,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -8805,31 +8757,31 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "3xlTitle": "Component-3xlTitle-11",
-                "4xlTitle": "Component-4xlTitle-10",
-                "5xlTitle": "Component-5xlTitle-9",
-                "baseFontFamily": "Component-baseFontFamily-32",
-                "disabledButtonText": "Component-disabledButtonText-23",
-                "disabledText": "Component-disabledText-30",
-                "highlightText": "Component-highlightText-19",
-                "infoText": "Component-infoText-28",
-                "inlineLink": "Component-inlineLink-22",
-                "lTitle": "Component-lTitle-14",
-                "labelText": "Component-labelText-27",
-                "mTitle": "Component-mTitle-15",
-                "margin": "Component-margin-33",
-                "normalText": "Component-normalText-20",
-                "placeholderText": "Component-placeholderText-24",
-                "sLink": "Component-sLink-29",
-                "sText": "Component-sText-26",
-                "sTitle": "Component-sTitle-16",
-                "selectedNavText": "Component-selectedNavText-25",
-                "selectedText": "Component-selectedText-21",
-                "vizText": "Component-vizText-31",
-                "xlTitle": "Component-xlTitle-13",
-                "xsTitle": "Component-xsTitle-17",
-                "xxlTitle": "Component-xxlTitle-12",
-                "xxsTitle": "Component-xxsTitle-18",
+                "3xlTitle": "Component-3xlTitle-9",
+                "4xlTitle": "Component-4xlTitle-8",
+                "5xlTitle": "Component-5xlTitle-7",
+                "baseFontFamily": "Component-baseFontFamily-30",
+                "disabledButtonText": "Component-disabledButtonText-21",
+                "disabledText": "Component-disabledText-28",
+                "highlightText": "Component-highlightText-17",
+                "infoText": "Component-infoText-26",
+                "inlineLink": "Component-inlineLink-20",
+                "lTitle": "Component-lTitle-12",
+                "labelText": "Component-labelText-25",
+                "mTitle": "Component-mTitle-13",
+                "margin": "Component-margin-31",
+                "normalText": "Component-normalText-18",
+                "placeholderText": "Component-placeholderText-22",
+                "sLink": "Component-sLink-27",
+                "sText": "Component-sText-24",
+                "sTitle": "Component-sTitle-14",
+                "selectedNavText": "Component-selectedNavText-23",
+                "selectedText": "Component-selectedText-19",
+                "vizText": "Component-vizText-29",
+                "xlTitle": "Component-xlTitle-11",
+                "xsTitle": "Component-xsTitle-15",
+                "xxlTitle": "Component-xxlTitle-10",
+                "xxsTitle": "Component-xxsTitle-16",
               },
               "deployed": true,
               "linked": false,
@@ -8837,31 +8789,31 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Component",
                 "classes": Object {
-                  "3xlTitle": "Component-3xlTitle-11",
-                  "4xlTitle": "Component-4xlTitle-10",
-                  "5xlTitle": "Component-5xlTitle-9",
-                  "baseFontFamily": "Component-baseFontFamily-32",
-                  "disabledButtonText": "Component-disabledButtonText-23",
-                  "disabledText": "Component-disabledText-30",
-                  "highlightText": "Component-highlightText-19",
-                  "infoText": "Component-infoText-28",
-                  "inlineLink": "Component-inlineLink-22",
-                  "lTitle": "Component-lTitle-14",
-                  "labelText": "Component-labelText-27",
-                  "mTitle": "Component-mTitle-15",
-                  "margin": "Component-margin-33",
-                  "normalText": "Component-normalText-20",
-                  "placeholderText": "Component-placeholderText-24",
-                  "sLink": "Component-sLink-29",
-                  "sText": "Component-sText-26",
-                  "sTitle": "Component-sTitle-16",
-                  "selectedNavText": "Component-selectedNavText-25",
-                  "selectedText": "Component-selectedText-21",
-                  "vizText": "Component-vizText-31",
-                  "xlTitle": "Component-xlTitle-13",
-                  "xsTitle": "Component-xsTitle-17",
-                  "xxlTitle": "Component-xxlTitle-12",
-                  "xxsTitle": "Component-xxsTitle-18",
+                  "3xlTitle": "Component-3xlTitle-9",
+                  "4xlTitle": "Component-4xlTitle-8",
+                  "5xlTitle": "Component-5xlTitle-7",
+                  "baseFontFamily": "Component-baseFontFamily-30",
+                  "disabledButtonText": "Component-disabledButtonText-21",
+                  "disabledText": "Component-disabledText-28",
+                  "highlightText": "Component-highlightText-17",
+                  "infoText": "Component-infoText-26",
+                  "inlineLink": "Component-inlineLink-20",
+                  "lTitle": "Component-lTitle-12",
+                  "labelText": "Component-labelText-25",
+                  "mTitle": "Component-mTitle-13",
+                  "margin": "Component-margin-31",
+                  "normalText": "Component-normalText-18",
+                  "placeholderText": "Component-placeholderText-22",
+                  "sLink": "Component-sLink-27",
+                  "sText": "Component-sText-24",
+                  "sTitle": "Component-sTitle-14",
+                  "selectedNavText": "Component-selectedNavText-23",
+                  "selectedText": "Component-selectedText-19",
+                  "vizText": "Component-vizText-29",
+                  "xlTitle": "Component-xlTitle-11",
+                  "xsTitle": "Component-xsTitle-15",
+                  "xxlTitle": "Component-xxlTitle-10",
+                  "xxsTitle": "Component-xxsTitle-16",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -9349,91 +9301,91 @@ body {
                   data-meta="Component"
                 >
                   
-.Component-5xlTitle-9 {
+.Component-5xlTitle-7 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-4xlTitle-10 {
+.Component-4xlTitle-8 {
   color: #414141;
   font-size: 52px;
   line-height: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-3xlTitle-11 {
+.Component-3xlTitle-9 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-xxlTitle-12 {
+.Component-xxlTitle-10 {
   color: #414141;
   font-size: 42px;
   line-height: 52px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-xlTitle-13 {
+.Component-xlTitle-11 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-lTitle-14 {
+.Component-lTitle-12 {
   color: #414141;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-mTitle-15 {
+.Component-mTitle-13 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-sTitle-16 {
+.Component-sTitle-14 {
   color: #414141;
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-xsTitle-17 {
+.Component-xsTitle-15 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-xxsTitle-18 {
+.Component-xxsTitle-16 {
   color: #414141;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-highlightText-19 {
+.Component-highlightText-17 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-normalText-20 {
+.Component-normalText-18 {
   color: #414141;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-selectedText-21 {
+.Component-selectedText-19 {
   color: #F9F9F9;
   font-size: 14px;
   background: #414141;
@@ -9441,80 +9393,80 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-inlineLink-22 {
+.Component-inlineLink-20 {
   color: #146BD2;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-disabledButtonText-23 {
+.Component-disabledButtonText-21 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-placeholderText-24 {
+.Component-placeholderText-22 {
   color: #999999;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-selectedNavText-25 {
+.Component-selectedNavText-23 {
   color: #CC0000;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-sText-26 {
+.Component-sText-24 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-labelText-27 {
+.Component-labelText-25 {
   color: #414141;
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.Component-infoText-28 {
+.Component-infoText-26 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-sLink-29 {
+.Component-sLink-27 {
   color: #146BD2;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-disabledText-30 {
+.Component-disabledText-28 {
   color: #999999;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-vizText-31 {
+.Component-vizText-29 {
   color: #414141;
   font-size: 10px;
   line-height: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-.Component-baseFontFamily-32 {
+.Component-baseFontFamily-30 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.Component-margin-33 {
+.Component-margin-31 {
   margin: 0;
 }
 
@@ -9530,31 +9482,31 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "3xlTitle": "Component-3xlTitle-11",
-                  "4xlTitle": "Component-4xlTitle-10",
-                  "5xlTitle": "Component-5xlTitle-9",
-                  "baseFontFamily": "Component-baseFontFamily-32",
-                  "disabledButtonText": "Component-disabledButtonText-23",
-                  "disabledText": "Component-disabledText-30",
-                  "highlightText": "Component-highlightText-19",
-                  "infoText": "Component-infoText-28",
-                  "inlineLink": "Component-inlineLink-22",
-                  "lTitle": "Component-lTitle-14",
-                  "labelText": "Component-labelText-27",
-                  "mTitle": "Component-mTitle-15",
-                  "margin": "Component-margin-33",
-                  "normalText": "Component-normalText-20",
-                  "placeholderText": "Component-placeholderText-24",
-                  "sLink": "Component-sLink-29",
-                  "sText": "Component-sText-26",
-                  "sTitle": "Component-sTitle-16",
-                  "selectedNavText": "Component-selectedNavText-25",
-                  "selectedText": "Component-selectedText-21",
-                  "vizText": "Component-vizText-31",
-                  "xlTitle": "Component-xlTitle-13",
-                  "xsTitle": "Component-xsTitle-17",
-                  "xxlTitle": "Component-xxlTitle-12",
-                  "xxsTitle": "Component-xxsTitle-18",
+                  "3xlTitle": "Component-3xlTitle-9",
+                  "4xlTitle": "Component-4xlTitle-8",
+                  "5xlTitle": "Component-5xlTitle-7",
+                  "baseFontFamily": "Component-baseFontFamily-30",
+                  "disabledButtonText": "Component-disabledButtonText-21",
+                  "disabledText": "Component-disabledText-28",
+                  "highlightText": "Component-highlightText-17",
+                  "infoText": "Component-infoText-26",
+                  "inlineLink": "Component-inlineLink-20",
+                  "lTitle": "Component-lTitle-12",
+                  "labelText": "Component-labelText-25",
+                  "mTitle": "Component-mTitle-13",
+                  "margin": "Component-margin-31",
+                  "normalText": "Component-normalText-18",
+                  "placeholderText": "Component-placeholderText-22",
+                  "sLink": "Component-sLink-27",
+                  "sText": "Component-sText-24",
+                  "sTitle": "Component-sTitle-14",
+                  "selectedNavText": "Component-selectedNavText-23",
+                  "selectedText": "Component-selectedText-19",
+                  "vizText": "Component-vizText-29",
+                  "xlTitle": "Component-xlTitle-11",
+                  "xsTitle": "Component-xsTitle-15",
+                  "xxlTitle": "Component-xxlTitle-10",
+                  "xxsTitle": "Component-xxsTitle-16",
                 },
                 "index": Array [
                   Object {
@@ -9727,132 +9679,132 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Component-3xlTitle-11": Object {
+                  ".Component-3xlTitle-9": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Component-4xlTitle-10": Object {
+                  ".Component-4xlTitle-8": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Component-5xlTitle-9": Object {
+                  ".Component-5xlTitle-7": Object {
                     "color": "#414141",
                     "font-size": "52px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "60px",
                   },
-                  ".Component-baseFontFamily-32": Object {
+                  ".Component-baseFontFamily-30": Object {
                     "font-family": "'Open Sans', Arial, Helvetica, sans-serif",
                   },
-                  ".Component-disabledButtonText-23": Object {
+                  ".Component-disabledButtonText-21": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-disabledText-30": Object {
+                  ".Component-disabledText-28": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-highlightText-19": Object {
+                  ".Component-highlightText-17": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-infoText-28": Object {
+                  ".Component-infoText-26": Object {
                     "color": "#999999",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-inlineLink-22": Object {
+                  ".Component-inlineLink-20": Object {
                     "color": "#146BD2",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-lTitle-14": Object {
+                  ".Component-lTitle-12": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Component-labelText-27": Object {
+                  ".Component-labelText-25": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-mTitle-15": Object {
+                  ".Component-mTitle-13": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Component-margin-33": Object {
+                  ".Component-margin-31": Object {
                     "margin": 0,
                   },
-                  ".Component-normalText-20": Object {
+                  ".Component-normalText-18": Object {
                     "color": "#414141",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-placeholderText-24": Object {
+                  ".Component-placeholderText-22": Object {
                     "color": "#999999",
                     "font-size": "14px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-sLink-29": Object {
+                  ".Component-sLink-27": Object {
                     "color": "#146BD2",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-sText-26": Object {
+                  ".Component-sText-24": Object {
                     "color": "#414141",
                     "font-size": "12px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "16px",
                   },
-                  ".Component-sTitle-16": Object {
+                  ".Component-sTitle-14": Object {
                     "color": "#414141",
                     "font-size": "22px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "30px",
                   },
-                  ".Component-selectedNavText-25": Object {
+                  ".Component-selectedNavText-23": Object {
                     "color": "#CC0000",
                     "font-size": "14px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-selectedText-21": Object {
+                  ".Component-selectedText-19": Object {
                     "background": "#414141",
                     "color": "#F9F9F9",
                     "font-size": "14px",
@@ -9860,35 +9812,35 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                   },
-                  ".Component-vizText-31": Object {
+                  ".Component-vizText-29": Object {
                     "color": "#414141",
                     "font-size": "10px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "15px",
                   },
-                  ".Component-xlTitle-13": Object {
+                  ".Component-xlTitle-11": Object {
                     "color": "#414141",
                     "font-size": "32px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "40px",
                   },
-                  ".Component-xsTitle-17": Object {
+                  ".Component-xsTitle-15": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "600",
                     "letter-spacing": "0.02em",
                     "line-height": "28px",
                   },
-                  ".Component-xxlTitle-12": Object {
+                  ".Component-xxlTitle-10": Object {
                     "color": "#414141",
                     "font-size": "42px",
                     "font-weight": "400",
                     "letter-spacing": "0.02em",
                     "line-height": "52px",
                   },
-                  ".Component-xxsTitle-18": Object {
+                  ".Component-xxsTitle-16": Object {
                     "color": "#414141",
                     "font-size": "18px",
                     "font-weight": "400",
@@ -10068,31 +10020,31 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Component",
                   "classes": Object {
-                    "3xlTitle": "Component-3xlTitle-11",
-                    "4xlTitle": "Component-4xlTitle-10",
-                    "5xlTitle": "Component-5xlTitle-9",
-                    "baseFontFamily": "Component-baseFontFamily-32",
-                    "disabledButtonText": "Component-disabledButtonText-23",
-                    "disabledText": "Component-disabledText-30",
-                    "highlightText": "Component-highlightText-19",
-                    "infoText": "Component-infoText-28",
-                    "inlineLink": "Component-inlineLink-22",
-                    "lTitle": "Component-lTitle-14",
-                    "labelText": "Component-labelText-27",
-                    "mTitle": "Component-mTitle-15",
-                    "margin": "Component-margin-33",
-                    "normalText": "Component-normalText-20",
-                    "placeholderText": "Component-placeholderText-24",
-                    "sLink": "Component-sLink-29",
-                    "sText": "Component-sText-26",
-                    "sTitle": "Component-sTitle-16",
-                    "selectedNavText": "Component-selectedNavText-25",
-                    "selectedText": "Component-selectedText-21",
-                    "vizText": "Component-vizText-31",
-                    "xlTitle": "Component-xlTitle-13",
-                    "xsTitle": "Component-xsTitle-17",
-                    "xxlTitle": "Component-xxlTitle-12",
-                    "xxsTitle": "Component-xxsTitle-18",
+                    "3xlTitle": "Component-3xlTitle-9",
+                    "4xlTitle": "Component-4xlTitle-8",
+                    "5xlTitle": "Component-5xlTitle-7",
+                    "baseFontFamily": "Component-baseFontFamily-30",
+                    "disabledButtonText": "Component-disabledButtonText-21",
+                    "disabledText": "Component-disabledText-28",
+                    "highlightText": "Component-highlightText-17",
+                    "infoText": "Component-infoText-26",
+                    "inlineLink": "Component-inlineLink-20",
+                    "lTitle": "Component-lTitle-12",
+                    "labelText": "Component-labelText-25",
+                    "mTitle": "Component-mTitle-13",
+                    "margin": "Component-margin-31",
+                    "normalText": "Component-normalText-18",
+                    "placeholderText": "Component-placeholderText-22",
+                    "sLink": "Component-sLink-27",
+                    "sText": "Component-sText-24",
+                    "sTitle": "Component-sTitle-14",
+                    "selectedNavText": "Component-selectedNavText-23",
+                    "selectedText": "Component-selectedText-19",
+                    "vizText": "Component-vizText-29",
+                    "xlTitle": "Component-xlTitle-11",
+                    "xsTitle": "Component-xsTitle-15",
+                    "xxlTitle": "Component-xxlTitle-10",
+                    "xxsTitle": "Component-xxsTitle-16",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -11145,7 +11097,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -11693,11 +11645,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "root": "Play-root-34",
-                "rootL": "Play-rootL-38",
-                "rootM": "Play-rootM-37",
-                "rootS": "Play-rootS-36",
-                "rootXs": "Play-rootXs-35",
+                "root": "Play-root-32",
+                "rootL": "Play-rootL-36",
+                "rootM": "Play-rootM-35",
+                "rootS": "Play-rootS-34",
+                "rootXs": "Play-rootXs-33",
               },
               "deployed": true,
               "linked": false,
@@ -11705,11 +11657,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Play",
                 "classes": Object {
-                  "root": "Play-root-34",
-                  "rootL": "Play-rootL-38",
-                  "rootM": "Play-rootM-37",
-                  "rootS": "Play-rootS-36",
-                  "rootXs": "Play-rootXs-35",
+                  "root": "Play-root-32",
+                  "rootL": "Play-rootL-36",
+                  "rootM": "Play-rootM-35",
+                  "rootS": "Play-rootS-34",
+                  "rootXs": "Play-rootXs-33",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -12197,25 +12149,25 @@ body {
                   data-meta="Play"
                 >
                   
-.Play-root-34 {
+.Play-root-32 {
   display: flex;
 }
-.Play-root-34 svg {
+.Play-root-32 svg {
   margin: auto;
 }
-.Play-rootXs-35 {
+.Play-rootXs-33 {
   width: 12px;
   height: 12px;
 }
-.Play-rootS-36 {
+.Play-rootS-34 {
   width: 16px;
   height: 16px;
 }
-.Play-rootM-37 {
+.Play-rootM-35 {
   width: 32px;
   height: 32px;
 }
-.Play-rootL-38 {
+.Play-rootL-36 {
   width: 96px;
   height: 96px;
 }
@@ -12232,11 +12184,11 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "root": "Play-root-34",
-                  "rootL": "Play-rootL-38",
-                  "rootM": "Play-rootM-37",
-                  "rootS": "Play-rootS-36",
-                  "rootXs": "Play-rootXs-35",
+                  "root": "Play-root-32",
+                  "rootL": "Play-rootL-36",
+                  "rootM": "Play-rootM-35",
+                  "rootS": "Play-rootS-34",
+                  "rootXs": "Play-rootXs-33",
                 },
                 "index": Array [
                   Object {
@@ -12263,25 +12215,25 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Play-root-34": Object {
+                  ".Play-root-32": Object {
                     "display": "flex",
                   },
-                  ".Play-root-34 svg": Object {
+                  ".Play-root-32 svg": Object {
                     "margin": "auto",
                   },
-                  ".Play-rootL-38": Object {
+                  ".Play-rootL-36": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Play-rootM-37": Object {
+                  ".Play-rootM-35": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Play-rootS-36": Object {
+                  ".Play-rootS-34": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Play-rootXs-35": Object {
+                  ".Play-rootXs-33": Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -12309,11 +12261,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Play",
                   "classes": Object {
-                    "root": "Play-root-34",
-                    "rootL": "Play-rootL-38",
-                    "rootM": "Play-rootM-37",
-                    "rootS": "Play-rootS-36",
-                    "rootXs": "Play-rootXs-35",
+                    "root": "Play-root-32",
+                    "rootL": "Play-rootL-36",
+                    "rootM": "Play-rootM-35",
+                    "rootS": "Play-rootS-34",
+                    "rootXs": "Play-rootXs-33",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -12796,7 +12748,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Play-root-34 svg": Object {
+                  ".Play-root-32 svg": Object {
                     "margin": "auto",
                   },
                   "root": Object {
@@ -13218,7 +13170,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -13766,11 +13718,11 @@ body {
             "sheet": StyleSheet {
               "attached": true,
               "classes": Object {
-                "root": "Stop-root-39",
-                "rootL": "Stop-rootL-43",
-                "rootM": "Stop-rootM-42",
-                "rootS": "Stop-rootS-41",
-                "rootXs": "Stop-rootXs-40",
+                "root": "Stop-root-37",
+                "rootL": "Stop-rootL-41",
+                "rootM": "Stop-rootM-40",
+                "rootS": "Stop-rootS-39",
+                "rootXs": "Stop-rootXs-38",
               },
               "deployed": true,
               "linked": false,
@@ -13778,11 +13730,11 @@ body {
                 "Renderer": [Function],
                 "classNamePrefix": "Stop",
                 "classes": Object {
-                  "root": "Stop-root-39",
-                  "rootL": "Stop-rootL-43",
-                  "rootM": "Stop-rootM-42",
-                  "rootS": "Stop-rootS-41",
-                  "rootXs": "Stop-rootXs-40",
+                  "root": "Stop-root-37",
+                  "rootL": "Stop-rootL-41",
+                  "rootM": "Stop-rootM-40",
+                  "rootS": "Stop-rootS-39",
+                  "rootXs": "Stop-rootXs-38",
                 },
                 "defaultTheme": Object {
                   "breakpoints": Object {
@@ -14270,25 +14222,25 @@ body {
                   data-meta="Stop"
                 >
                   
-.Stop-root-39 {
+.Stop-root-37 {
   display: flex;
 }
-.Stop-root-39 svg {
+.Stop-root-37 svg {
   margin: auto;
 }
-.Stop-rootXs-40 {
+.Stop-rootXs-38 {
   width: 12px;
   height: 12px;
 }
-.Stop-rootS-41 {
+.Stop-rootS-39 {
   width: 16px;
   height: 16px;
 }
-.Stop-rootM-42 {
+.Stop-rootM-40 {
   width: 32px;
   height: 32px;
 }
-.Stop-rootL-43 {
+.Stop-rootL-41 {
   width: 96px;
   height: 96px;
 }
@@ -14305,11 +14257,11 @@ body {
               },
               "rules": RuleList {
                 "classes": Object {
-                  "root": "Stop-root-39",
-                  "rootL": "Stop-rootL-43",
-                  "rootM": "Stop-rootM-42",
-                  "rootS": "Stop-rootS-41",
-                  "rootXs": "Stop-rootXs-40",
+                  "root": "Stop-root-37",
+                  "rootL": "Stop-rootL-41",
+                  "rootM": "Stop-rootM-40",
+                  "rootS": "Stop-rootS-39",
+                  "rootXs": "Stop-rootXs-38",
                 },
                 "index": Array [
                   Object {
@@ -14336,25 +14288,25 @@ body {
                   },
                 ],
                 "map": Object {
-                  ".Stop-root-39": Object {
+                  ".Stop-root-37": Object {
                     "display": "flex",
                   },
-                  ".Stop-root-39 svg": Object {
+                  ".Stop-root-37 svg": Object {
                     "margin": "auto",
                   },
-                  ".Stop-rootL-43": Object {
+                  ".Stop-rootL-41": Object {
                     "height": "96px",
                     "width": "96px",
                   },
-                  ".Stop-rootM-42": Object {
+                  ".Stop-rootM-40": Object {
                     "height": "32px",
                     "width": "32px",
                   },
-                  ".Stop-rootS-41": Object {
+                  ".Stop-rootS-39": Object {
                     "height": "16px",
                     "width": "16px",
                   },
-                  ".Stop-rootXs-40": Object {
+                  ".Stop-rootXs-38": Object {
                     "height": "12px",
                     "width": "12px",
                   },
@@ -14382,11 +14334,11 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Stop",
                   "classes": Object {
-                    "root": "Stop-root-39",
-                    "rootL": "Stop-rootL-43",
-                    "rootM": "Stop-rootM-42",
-                    "rootS": "Stop-rootS-41",
-                    "rootXs": "Stop-rootXs-40",
+                    "root": "Stop-root-37",
+                    "rootL": "Stop-rootL-41",
+                    "rootM": "Stop-rootM-40",
+                    "rootS": "Stop-rootS-39",
+                    "rootXs": "Stop-rootXs-38",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -14869,7 +14821,7 @@ body {
                   "sheet": [Circular],
                 },
                 "raw": Object {
-                  ".Stop-root-39 svg": Object {
+                  ".Stop-root-37 svg": Object {
                     "margin": "auto",
                   },
                   "root": Object {
@@ -15287,7 +15239,7 @@ body {
           },
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "common": Object {
@@ -15843,7 +15795,6 @@ body {
         classes={
           Object {
             "action": "Actions-action-2",
-            "box": "Actions-box-4",
             "noIcon": "Actions-noIcon-3",
             "root": "Actions-root-1",
           }
@@ -16232,7 +16183,7 @@ body {
               },
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "common": Object {
@@ -16789,10 +16740,9 @@ body {
             <Action
               classes={
                 Object {
-                  "action": "Action-action-6",
-                  "box": "Action-box-8",
-                  "noIcon": "Action-noIcon-7",
-                  "root": "Action-root-5",
+                  "action": "Action-action-5",
+                  "noIcon": "Action-noIcon-6",
+                  "root": "Action-root-4",
                 }
               }
               icon={<WithStyles(Play) />}
@@ -17181,7 +17131,7 @@ body {
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -17728,7 +17678,7 @@ body {
               }
             >
               <WithStyles(Component)
-                className="Action-action-6"
+                className="Action-action-5"
                 component="div"
                 id="hv-verticalnavigation-action-2-button"
                 onKeyDown={[Function]}
@@ -17737,34 +17687,34 @@ body {
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-action-6"
+                  className="Action-action-5"
                   classes={
                     Object {
-                      "3xlTitle": "Component-3xlTitle-11",
-                      "4xlTitle": "Component-4xlTitle-10",
-                      "5xlTitle": "Component-5xlTitle-9",
-                      "baseFontFamily": "Component-baseFontFamily-32",
-                      "disabledButtonText": "Component-disabledButtonText-23",
-                      "disabledText": "Component-disabledText-30",
-                      "highlightText": "Component-highlightText-19",
-                      "infoText": "Component-infoText-28",
-                      "inlineLink": "Component-inlineLink-22",
-                      "lTitle": "Component-lTitle-14",
-                      "labelText": "Component-labelText-27",
-                      "mTitle": "Component-mTitle-15",
-                      "margin": "Component-margin-33",
-                      "normalText": "Component-normalText-20",
-                      "placeholderText": "Component-placeholderText-24",
-                      "sLink": "Component-sLink-29",
-                      "sText": "Component-sText-26",
-                      "sTitle": "Component-sTitle-16",
-                      "selectedNavText": "Component-selectedNavText-25",
-                      "selectedText": "Component-selectedText-21",
-                      "vizText": "Component-vizText-31",
-                      "xlTitle": "Component-xlTitle-13",
-                      "xsTitle": "Component-xsTitle-17",
-                      "xxlTitle": "Component-xxlTitle-12",
-                      "xxsTitle": "Component-xxsTitle-18",
+                      "3xlTitle": "Component-3xlTitle-9",
+                      "4xlTitle": "Component-4xlTitle-8",
+                      "5xlTitle": "Component-5xlTitle-7",
+                      "baseFontFamily": "Component-baseFontFamily-30",
+                      "disabledButtonText": "Component-disabledButtonText-21",
+                      "disabledText": "Component-disabledText-28",
+                      "highlightText": "Component-highlightText-17",
+                      "infoText": "Component-infoText-26",
+                      "inlineLink": "Component-inlineLink-20",
+                      "lTitle": "Component-lTitle-12",
+                      "labelText": "Component-labelText-25",
+                      "mTitle": "Component-mTitle-13",
+                      "margin": "Component-margin-31",
+                      "normalText": "Component-normalText-18",
+                      "placeholderText": "Component-placeholderText-22",
+                      "sLink": "Component-sLink-27",
+                      "sText": "Component-sText-24",
+                      "sTitle": "Component-sTitle-14",
+                      "selectedNavText": "Component-selectedNavText-23",
+                      "selectedText": "Component-selectedText-19",
+                      "vizText": "Component-vizText-29",
+                      "xlTitle": "Component-xlTitle-11",
+                      "xsTitle": "Component-xsTitle-15",
+                      "xxlTitle": "Component-xxlTitle-10",
+                      "xxsTitle": "Component-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -18157,7 +18107,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -18705,7 +18655,7 @@ body {
                   variant="normalText"
                 >
                   <div
-                    className="Component-normalText-20 Component-baseFontFamily-32 Component-margin-33 Action-action-6"
+                    className="Component-normalText-18 Component-baseFontFamily-30 Component-margin-31 Action-action-5"
                     id="hv-verticalnavigation-action-2-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -19094,7 +19044,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -19641,17 +19591,27 @@ body {
                     }
                   >
                     <WithStyles(Play)
-                      className="Action-box-8"
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
                     >
                       <Play
-                        className="Action-box-8"
+                        boxStyles={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
                         classes={
                           Object {
-                            "root": "Play-root-34",
-                            "rootL": "Play-rootL-38",
-                            "rootM": "Play-rootM-37",
-                            "rootS": "Play-rootS-36",
-                            "rootXs": "Play-rootXs-35",
+                            "root": "Play-root-32",
+                            "rootL": "Play-rootL-36",
+                            "rootM": "Play-rootM-35",
+                            "rootS": "Play-rootS-34",
+                            "rootXs": "Play-rootXs-33",
                           }
                         }
                         theme={
@@ -20038,7 +19998,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -20585,7 +20545,13 @@ body {
                         }
                       >
                         <div
-                          className="Action-box-8 Play-root-34 Play-rootS-36"
+                          className="Play-root-32 Play-rootS-34"
+                          style={
+                            Object {
+                              "height": "32px",
+                              "width": "32px",
+                            }
+                          }
                         >
                           <svg
                             focusable={false}
@@ -20615,10 +20581,9 @@ body {
             <Action
               classes={
                 Object {
-                  "action": "Action-action-6",
-                  "box": "Action-box-8",
-                  "noIcon": "Action-noIcon-7",
-                  "root": "Action-root-5",
+                  "action": "Action-action-5",
+                  "noIcon": "Action-noIcon-6",
+                  "root": "Action-root-4",
                 }
               }
               label="Action 2"
@@ -21006,7 +20971,7 @@ body {
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -21553,7 +21518,7 @@ body {
               }
             >
               <WithStyles(Component)
-                className="Action-action-6 Action-noIcon-7"
+                className="Action-action-5 Action-noIcon-6"
                 component="div"
                 id="hv-verticalnavigation-action-3-button"
                 onKeyDown={[Function]}
@@ -21562,34 +21527,34 @@ body {
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-action-6 Action-noIcon-7"
+                  className="Action-action-5 Action-noIcon-6"
                   classes={
                     Object {
-                      "3xlTitle": "Component-3xlTitle-11",
-                      "4xlTitle": "Component-4xlTitle-10",
-                      "5xlTitle": "Component-5xlTitle-9",
-                      "baseFontFamily": "Component-baseFontFamily-32",
-                      "disabledButtonText": "Component-disabledButtonText-23",
-                      "disabledText": "Component-disabledText-30",
-                      "highlightText": "Component-highlightText-19",
-                      "infoText": "Component-infoText-28",
-                      "inlineLink": "Component-inlineLink-22",
-                      "lTitle": "Component-lTitle-14",
-                      "labelText": "Component-labelText-27",
-                      "mTitle": "Component-mTitle-15",
-                      "margin": "Component-margin-33",
-                      "normalText": "Component-normalText-20",
-                      "placeholderText": "Component-placeholderText-24",
-                      "sLink": "Component-sLink-29",
-                      "sText": "Component-sText-26",
-                      "sTitle": "Component-sTitle-16",
-                      "selectedNavText": "Component-selectedNavText-25",
-                      "selectedText": "Component-selectedText-21",
-                      "vizText": "Component-vizText-31",
-                      "xlTitle": "Component-xlTitle-13",
-                      "xsTitle": "Component-xsTitle-17",
-                      "xxlTitle": "Component-xxlTitle-12",
-                      "xxsTitle": "Component-xxsTitle-18",
+                      "3xlTitle": "Component-3xlTitle-9",
+                      "4xlTitle": "Component-4xlTitle-8",
+                      "5xlTitle": "Component-5xlTitle-7",
+                      "baseFontFamily": "Component-baseFontFamily-30",
+                      "disabledButtonText": "Component-disabledButtonText-21",
+                      "disabledText": "Component-disabledText-28",
+                      "highlightText": "Component-highlightText-17",
+                      "infoText": "Component-infoText-26",
+                      "inlineLink": "Component-inlineLink-20",
+                      "lTitle": "Component-lTitle-12",
+                      "labelText": "Component-labelText-25",
+                      "mTitle": "Component-mTitle-13",
+                      "margin": "Component-margin-31",
+                      "normalText": "Component-normalText-18",
+                      "placeholderText": "Component-placeholderText-22",
+                      "sLink": "Component-sLink-27",
+                      "sText": "Component-sText-24",
+                      "sTitle": "Component-sTitle-14",
+                      "selectedNavText": "Component-selectedNavText-23",
+                      "selectedText": "Component-selectedText-19",
+                      "vizText": "Component-vizText-29",
+                      "xlTitle": "Component-xlTitle-11",
+                      "xsTitle": "Component-xsTitle-15",
+                      "xxlTitle": "Component-xxlTitle-10",
+                      "xxsTitle": "Component-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -21982,7 +21947,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -22530,7 +22495,7 @@ body {
                   variant="normalText"
                 >
                   <div
-                    className="Component-normalText-20 Component-baseFontFamily-32 Component-margin-33 Action-action-6 Action-noIcon-7"
+                    className="Component-normalText-18 Component-baseFontFamily-30 Component-margin-31 Action-action-5 Action-noIcon-6"
                     id="hv-verticalnavigation-action-3-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -22919,7 +22884,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -23478,10 +23443,9 @@ body {
             <Action
               classes={
                 Object {
-                  "action": "Action-action-6",
-                  "box": "Action-box-8",
-                  "noIcon": "Action-noIcon-7",
-                  "root": "Action-root-5",
+                  "action": "Action-action-5",
+                  "noIcon": "Action-noIcon-6",
+                  "root": "Action-root-4",
                 }
               }
               icon={<WithStyles(Stop) />}
@@ -23870,7 +23834,7 @@ body {
                     },
                     "augmentColor": [Function],
                     "background": Object {
-                      "default": "#F9F9F9",
+                      "default": "#F5F5F5",
                       "paper": "#fff",
                     },
                     "common": Object {
@@ -24417,7 +24381,7 @@ body {
               }
             >
               <WithStyles(Component)
-                className="Action-action-6"
+                className="Action-action-5"
                 component="div"
                 id="hv-verticalnavigation-action-4-button"
                 onKeyDown={[Function]}
@@ -24426,34 +24390,34 @@ body {
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-action-6"
+                  className="Action-action-5"
                   classes={
                     Object {
-                      "3xlTitle": "Component-3xlTitle-11",
-                      "4xlTitle": "Component-4xlTitle-10",
-                      "5xlTitle": "Component-5xlTitle-9",
-                      "baseFontFamily": "Component-baseFontFamily-32",
-                      "disabledButtonText": "Component-disabledButtonText-23",
-                      "disabledText": "Component-disabledText-30",
-                      "highlightText": "Component-highlightText-19",
-                      "infoText": "Component-infoText-28",
-                      "inlineLink": "Component-inlineLink-22",
-                      "lTitle": "Component-lTitle-14",
-                      "labelText": "Component-labelText-27",
-                      "mTitle": "Component-mTitle-15",
-                      "margin": "Component-margin-33",
-                      "normalText": "Component-normalText-20",
-                      "placeholderText": "Component-placeholderText-24",
-                      "sLink": "Component-sLink-29",
-                      "sText": "Component-sText-26",
-                      "sTitle": "Component-sTitle-16",
-                      "selectedNavText": "Component-selectedNavText-25",
-                      "selectedText": "Component-selectedText-21",
-                      "vizText": "Component-vizText-31",
-                      "xlTitle": "Component-xlTitle-13",
-                      "xsTitle": "Component-xsTitle-17",
-                      "xxlTitle": "Component-xxlTitle-12",
-                      "xxsTitle": "Component-xxsTitle-18",
+                      "3xlTitle": "Component-3xlTitle-9",
+                      "4xlTitle": "Component-4xlTitle-8",
+                      "5xlTitle": "Component-5xlTitle-7",
+                      "baseFontFamily": "Component-baseFontFamily-30",
+                      "disabledButtonText": "Component-disabledButtonText-21",
+                      "disabledText": "Component-disabledText-28",
+                      "highlightText": "Component-highlightText-17",
+                      "infoText": "Component-infoText-26",
+                      "inlineLink": "Component-inlineLink-20",
+                      "lTitle": "Component-lTitle-12",
+                      "labelText": "Component-labelText-25",
+                      "mTitle": "Component-mTitle-13",
+                      "margin": "Component-margin-31",
+                      "normalText": "Component-normalText-18",
+                      "placeholderText": "Component-placeholderText-22",
+                      "sLink": "Component-sLink-27",
+                      "sText": "Component-sText-24",
+                      "sTitle": "Component-sTitle-14",
+                      "selectedNavText": "Component-selectedNavText-23",
+                      "selectedText": "Component-selectedText-19",
+                      "vizText": "Component-vizText-29",
+                      "xlTitle": "Component-xlTitle-11",
+                      "xsTitle": "Component-xsTitle-15",
+                      "xxlTitle": "Component-xxlTitle-10",
+                      "xxsTitle": "Component-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -24846,7 +24810,7 @@ body {
                         },
                         "augmentColor": [Function],
                         "background": Object {
-                          "default": "#F9F9F9",
+                          "default": "#F5F5F5",
                           "paper": "#fff",
                         },
                         "common": Object {
@@ -25394,7 +25358,7 @@ body {
                   variant="normalText"
                 >
                   <div
-                    className="Component-normalText-20 Component-baseFontFamily-32 Component-margin-33 Action-action-6"
+                    className="Component-normalText-18 Component-baseFontFamily-30 Component-margin-31 Action-action-5"
                     id="hv-verticalnavigation-action-4-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -25783,7 +25747,7 @@ body {
                           },
                           "augmentColor": [Function],
                           "background": Object {
-                            "default": "#F9F9F9",
+                            "default": "#F5F5F5",
                             "paper": "#fff",
                           },
                           "common": Object {
@@ -26330,17 +26294,27 @@ body {
                     }
                   >
                     <WithStyles(Stop)
-                      className="Action-box-8"
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
                     >
                       <Stop
-                        className="Action-box-8"
+                        boxStyles={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
                         classes={
                           Object {
-                            "root": "Stop-root-39",
-                            "rootL": "Stop-rootL-43",
-                            "rootM": "Stop-rootM-42",
-                            "rootS": "Stop-rootS-41",
-                            "rootXs": "Stop-rootXs-40",
+                            "root": "Stop-root-37",
+                            "rootL": "Stop-rootL-41",
+                            "rootM": "Stop-rootM-40",
+                            "rootS": "Stop-rootS-39",
+                            "rootXs": "Stop-rootXs-38",
                           }
                         }
                         theme={
@@ -26727,7 +26701,7 @@ body {
                               },
                               "augmentColor": [Function],
                               "background": Object {
-                                "default": "#F9F9F9",
+                                "default": "#F5F5F5",
                                 "paper": "#fff",
                               },
                               "common": Object {
@@ -27274,7 +27248,13 @@ body {
                         }
                       >
                         <div
-                          className="Action-box-8 Stop-root-39 Stop-rootS-41"
+                          className="Stop-root-37 Stop-rootS-39"
+                          style={
+                            Object {
+                              "height": "32px",
+                              "width": "32px",
+                            }
+                          }
                         >
                           <svg
                             focusable={false}
