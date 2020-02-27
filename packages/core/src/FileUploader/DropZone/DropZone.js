@@ -181,7 +181,7 @@ const DropZone = ({
                 color={[
                   disabled
                     ? theme.hv.palette.atmosphere.atmo6
-                    : theme.hv.palette.base.base2
+                    : theme.hv.palette.accent.acce1
                 ]}
               />
               <div className={classes.dropzoneAreaLabels}>
