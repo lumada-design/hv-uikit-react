@@ -16,12 +16,13 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import {
   ClickAwayListener,
   IconButton,
   Popper,
-  useTheme
+  useTheme,
+  withStyles
 } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
@@ -29,6 +30,7 @@ import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
+import styles from "./styles";
 
 /**
  * Dropdown component with a menu.
@@ -120,7 +122,7 @@ const DropDownMenu = ({
         aria-expanded={open ? true : undefined}
         onClick={handleToggle}
         onKeyDown={handleKeyboardToggle}
-        className={classNames(classes.icon, {
+        className={clsx(classes.icon, {
           [classes.iconSelected]: open
         })}
         disabled={disabled}
@@ -251,4 +253,4 @@ DropDownMenu.defaultProps = {
   expanded: false
 };
 
-export default DropDownMenu;
+export default withStyles(styles, { name: "HvDropDownMenu" })(DropDownMenu);

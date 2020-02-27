@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Linechart from "./Linechart";
-
-export default withStyles(styles, { name: "HvLinechart" })(Linechart);
+export { default } from "./Linechart";

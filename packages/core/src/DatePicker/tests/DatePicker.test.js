@@ -43,7 +43,7 @@ describe("<DatePicker /> with minimum configuration", () => {
         <DatePickerWithStyles />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -132,7 +132,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -246,7 +246,7 @@ describe("<DatePicker /> with simple Calendar with actions ", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -305,7 +305,7 @@ describe("<DatePicker /> with range Calendar with actions ", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -365,7 +365,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -466,7 +466,7 @@ describe("<DatePicker /> with custom properties", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -533,7 +533,7 @@ describe("<DatePicker /> with custom properties", () => {
         <DatePickerWithStyles onChange={handleOnchange} />
       </HvProvider>
     );
-    DatePickerInstance = wrapper.find(DatePicker).instance();
+    DatePickerInstance = wrapper.find("HvDatePicker").instance();
     DatePickerInstance.setSingleDate(convertISOStringDateToDate("2018-11-10"));
     expect(handleOnchange.mock.calls.length).toBe(1);
   });

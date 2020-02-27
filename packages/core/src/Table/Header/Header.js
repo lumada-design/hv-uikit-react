@@ -16,12 +16,14 @@
 
 /* eslint-disable */
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
 import HvTypography from "../../Typography";
+import styles from "./styles";
 
 /**
  *
@@ -37,9 +39,11 @@ const getSortedComponent = (id, columnSortable, sort, classes) => {
   const sortInfo = sort.filter(item => item.id === id);
 
   if (sortInfo.length) {
-    return sortInfo[0].desc === true
-      ? <SortDesc className={classes.box} />
-      : <SortAsc className={classes.box} />;
+    return sortInfo[0].desc === true ? (
+      <SortDesc className={classes.box} />
+    ) : (
+      <SortAsc className={classes.box} />
+    );
   }
 
   if (columnSortable) {
@@ -60,11 +64,15 @@ const Header = React.memo(
     const columnSortable = (isNil(sortable) && tableSortable) || sortable;
 
     return (
-      <div className={classNames(classes.headerContainer)}>
+      <div className={clsx(classes.headerContainer)}>
         {columnSortable && (
           <div
-            id={id != null ? `${tableInternalId}-column-${id}-sort-button` : undefined}
-            className={classNames(classes.rtSortIcon, {
+            id={
+              id != null
+                ? `${tableInternalId}-column-${id}-sort-button`
+                : undefined
+            }
+            className={clsx(classes.rtSortIcon, {
               [classes.rtSortIconNumeric]: cellType === "numeric"
             })}
           >
@@ -73,15 +81,17 @@ const Header = React.memo(
         )}
         {/* Setter of the styles for the header */}
         <div
-          className={classNames(classes.headerTextContainer, {
+          className={clsx(classes.headerTextContainer, {
             [classes.headerSortable]: columnSortable,
             [classes.headerNotSortable]: !columnSortable
           })}
         >
           <HvTypography
-            id={id != null ? `${tableInternalId}-column-${id}-label` : undefined}
+            id={
+              id != null ? `${tableInternalId}-column-${id}-label` : undefined
+            }
             variant="highlightText"
-            className={classNames(classes.headerProps, {
+            className={clsx(classes.headerProps, {
               [classes.headerAlphaNumeric]:
                 cellType === "alpha-numeric" || cellType === "link",
               [classes.headerNumeric]: cellType === "numeric"
@@ -95,4 +105,4 @@ const Header = React.memo(
   }
 );
 
-export default Header;
+export default withStyles(styles, { name: "HvTableHeader" })(Header);

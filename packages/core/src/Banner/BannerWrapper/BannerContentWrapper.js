@@ -16,11 +16,12 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import classNames from "classnames";
-import SnackbarContent from "@material-ui/core/SnackbarContent";
+import clsx from "clsx";
+import { SnackbarContent, withStyles } from "@material-ui/core";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
+import styles from "./styles";
 
 /**
  * Container of banner.
@@ -65,7 +66,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
           message: classes.message,
           action: classes.action
         }}
-        className={classNames(classes[variant], classes.baseVariant)}
+        className={clsx(classes[variant], classes.baseVariant)}
         message={
           <MessageContainer
             id={id}
@@ -158,4 +159,6 @@ HvBannerContentWrapper.defaultProps = {
   actionsPosition: "auto"
 };
 
-export default HvBannerContentWrapper;
+export default withStyles(styles, { name: "HvBannerContentWrapper" })(
+  HvBannerContentWrapper
+);

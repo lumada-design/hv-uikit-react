@@ -15,10 +15,12 @@
  */
 
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import isString from "lodash/isString";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
+import styles from "./styles";
 
 const renderNode = (className, node, variant) => (
   <div className={className}>
@@ -30,7 +32,7 @@ const renderNode = (className, node, variant) => (
   </div>
 );
 
-const HvEmptyState = ({
+const EmptyState = ({
   classes,
   title = null,
   message = null,
@@ -39,7 +41,7 @@ const HvEmptyState = ({
 }) => (
   <div className={classes.root}>
     <div
-      className={classNames(classes.container, {
+      className={clsx(classes.container, {
         [classes.containerMessageOnly]: message && !title && !action
       })}
     >
@@ -53,7 +55,7 @@ const HvEmptyState = ({
   </div>
 );
 
-HvEmptyState.propTypes = {
+EmptyState.propTypes = {
   /* eslint-disable react/require-default-props */
   /**
    * A Jss Object used to override or extend the styles applied to the empty state component.
@@ -110,4 +112,4 @@ HvEmptyState.propTypes = {
   icon: PropTypes.element.isRequired
 };
 
-export default HvEmptyState;
+export default withStyles(styles, { name: "HvEmptyState" })(EmptyState);

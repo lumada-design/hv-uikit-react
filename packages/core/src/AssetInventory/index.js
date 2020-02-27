@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import AssetInventory from "./AssetInventory";
-
-export default withStyles(styles, { name: "HvAssetInventory" })(AssetInventory);
+export { default } from "./AssetInventory";

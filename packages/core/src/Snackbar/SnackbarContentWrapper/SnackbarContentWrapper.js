@@ -16,10 +16,11 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import SnackbarContent from "@material-ui/core/SnackbarContent";
+import { SnackbarContent, withStyles } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
 import Actions from "../../Actions";
+import styles from "./styles";
 
 const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
   const {
@@ -123,4 +124,6 @@ HvSnackbarContentWrapper.defaultProps = {
   actionCallback: () => {}
 };
 
-export default HvSnackbarContentWrapper;
+export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(
+  HvSnackbarContentWrapper
+);

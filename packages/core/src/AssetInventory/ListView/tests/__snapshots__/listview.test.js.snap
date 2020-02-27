@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AssetInventoryListView withStyles should render correctly 1`] = `
+exports[`AssetInventoryListView should render correctly 1`] = `
 <ThemeProvider
   theme={
     Object {

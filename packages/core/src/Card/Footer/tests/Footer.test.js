@@ -20,8 +20,8 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import Footer from "../Footer";
 import Actions from "../../../Actions";
+import Footer from "..";
 
 const myActions = [
   {
@@ -45,53 +45,26 @@ describe("Footer", () => {
   it("should render the actions and the dropdown accordingly", () => {
     wrapper = mount(
       <HvProvider>
-        <Footer
-          classes={{}}
-          maxVisibleActions={1}
-          actions={myActions}
-          isSelectable={false}
-          onChange={() => {}}
-        />
+        <Footer maxVisibleActions={1} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 
-    expect(
-      wrapper
-        .find(Actions)
-    ).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
 
     wrapper = mount(
       <HvProvider>
-        <Footer
-          classes={{}}
-          maxVisibleActions={0}
-          actions={myActions}
-          isSelectable={false}
-          onChange={() => {}}
-        />
+        <Footer maxVisibleActions={0} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 
-    expect(
-      wrapper
-        .find(Actions)
-    ).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
 
     wrapper = mount(
       <HvProvider>
-        <Footer
-          classes={{}}
-          maxVisibleActions={2}
-          actions={myActions}
-          isSelectable={false}
-          onChange={() => {}}
-        />
+        <Footer maxVisibleActions={2} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 
-    expect(
-      wrapper
-        .find(Actions)
-    ).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
   });
 });

@@ -45,10 +45,7 @@ module.exports = ({ config, mode }) => {
                   "@hv/uikit-react-icons/dist": path.resolve(
                     __dirname,
                     "../../icons/bin"
-                  ),
-                  "@material-ui/core": path.resolve(
-                    __dirname,
-                    "../node_modules/@material-ui/core")
+                  )
                 }
               }
             ]

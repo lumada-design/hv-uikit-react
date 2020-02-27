@@ -16,7 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Separator from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import MoreOptions from "@hv/uikit-react-icons/dist/Generic/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
@@ -24,6 +25,7 @@ import isNil from "lodash/isNil";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";
+import styles from "./styles";
 
 /**
  * Removes the extension of the label.
@@ -173,7 +175,7 @@ const BreadCrumb = ({
   const lastIndex = breadcrumbPath.length - 1;
 
   return (
-    <div id={id} className={classNames(classes.root, className)}>
+    <div id={id} className={clsx(classes.root, className)}>
       {listPath.map((elem, index) => {
         const key = `key_${index}`;
 
@@ -255,4 +257,4 @@ BreadCrumb.defaultProps = {
   url: null
 };
 
-export default BreadCrumb;
+export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

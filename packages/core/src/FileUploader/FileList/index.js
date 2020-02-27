@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import FileList from "./FileList";
-
-export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);
+export { default } from "./FileList";

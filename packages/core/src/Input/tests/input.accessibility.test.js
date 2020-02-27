@@ -22,7 +22,7 @@ import { mount } from "enzyme";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import HvProvider from "../../Provider";
-import InputWithStyles from "../index";
+import Input from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -38,7 +38,7 @@ describe("InputA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} id="test" />
+        <Input labels={labels} id="test" />
       </HvProvider>
     );
 
@@ -58,7 +58,7 @@ describe("InputA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} disabled />
+        <Input labels={labels} disabled />
       </HvProvider>
     );
 
@@ -78,11 +78,7 @@ describe("InputA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles
-          labels={labels}
-          initialValue="Initial value"
-          id="test"
-        />
+        <Input labels={labels} initialValue="Initial value" id="test" />
       </HvProvider>
     );
 
@@ -102,7 +98,7 @@ describe("InputA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           labels={labels}
           initialValue="Initial value"
           validationState="invalid"

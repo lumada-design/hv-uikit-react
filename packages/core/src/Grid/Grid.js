@@ -16,9 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import useWidth from "../utils/useWidth";
+import styles from "./styles";
 
 const BREAKPOINT_GUTTERS = {
   xs: 15,
@@ -56,31 +58,27 @@ const HvGrid = props => {
     ? spacing
     : BREAKPOINT_GUTTERS[width];
 
-  const className = classNames(
-    classes.root,
-    {
-      [classes.container]: container,
-      [classes.item]: item,
-      [classes.zeroMinWidth]: zeroMinWidth,
-      [classes[`spacing-xs-${String(breakpointSpacing)}`]]:
-        container && breakpointSpacing !== 0,
-      [classes[`direction-xs-${String(direction)}`]]:
-        direction !== HvGrid.defaultProps.direction,
-      [classes[`wrap-xs-${String(wrap)}`]]: wrap !== HvGrid.defaultProps.wrap,
-      [classes[`align-items-xs-${String(alignItems)}`]]:
-        alignItems !== HvGrid.defaultProps.alignItems,
-      [classes[`align-content-xs-${String(alignContent)}`]]:
-        alignContent !== HvGrid.defaultProps.alignContent,
-      [classes[`justify-xs-${String(justify)}`]]:
-        justify !== HvGrid.defaultProps.justify,
-      [classes[`grid-xs-${String(xs)}`]]: xs !== false,
-      [classes[`grid-sm-${String(sm)}`]]: sm !== false,
-      [classes[`grid-md-${String(md)}`]]: md !== false,
-      [classes[`grid-lg-${String(lg)}`]]: lg !== false,
-      [classes[`grid-xl-${String(xl)}`]]: xl !== false
-    },
-    classNameProp
-  );
+  const className = clsx(classes.root, classNameProp, {
+    [classes.container]: container,
+    [classes.item]: item,
+    [classes.zeroMinWidth]: zeroMinWidth,
+    [classes[`spacing-xs-${String(breakpointSpacing)}`]]:
+      container && breakpointSpacing !== 0,
+    [classes[`direction-xs-${String(direction)}`]]:
+      direction !== HvGrid.defaultProps.direction,
+    [classes[`wrap-xs-${String(wrap)}`]]: wrap !== HvGrid.defaultProps.wrap,
+    [classes[`align-items-xs-${String(alignItems)}`]]:
+      alignItems !== HvGrid.defaultProps.alignItems,
+    [classes[`align-content-xs-${String(alignContent)}`]]:
+      alignContent !== HvGrid.defaultProps.alignContent,
+    [classes[`justify-xs-${String(justify)}`]]:
+      justify !== HvGrid.defaultProps.justify,
+    [classes[`grid-xs-${String(xs)}`]]: xs !== false,
+    [classes[`grid-sm-${String(sm)}`]]: sm !== false,
+    [classes[`grid-md-${String(md)}`]]: md !== false,
+    [classes[`grid-lg-${String(lg)}`]]: lg !== false,
+    [classes[`grid-xl-${String(xl)}`]]: xl !== false
+  });
   return <Component className={className} {...other} />;
 };
 
@@ -223,4 +221,4 @@ HvGrid.defaultProps = {
   children: undefined
 };
 
-export default HvGrid;
+export default withStyles(styles, { name: "HvGrid" })(HvGrid);

@@ -15,14 +15,16 @@
  */
 
 import React, { useContext } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
 import useUniqueId from "../../../useUniqueId";
 import SelectionContext from "../utils/SelectionContext";
 import { FocusContext } from "../utils/FocusContext";
 import MenuBar from "../MenuBar";
+import styles from "./styles";
 
 const MenuItem = ({ classes, id, item, type, onClick }) => {
   const uniqueId = useUniqueId(id, "hv-menuItem-");
@@ -60,11 +62,9 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       id={uniqueId}
       key={item.label}
       role="none"
-      className={classNames(
-        classes.root,
-        classes[`${type}Item`],
-        isSelected ? classes.selectedItem : undefined
-      )}
+      className={clsx(classes.root, classes[`${type}Item`], {
+        [classes.selectedItem]: isSelected
+      })}
     >
       <div
         role="button"
@@ -123,4 +123,4 @@ MenuItem.defaultProps = {
   onClick: () => {}
 };
 
-export default MenuItem;
+export default withStyles(styles, { name: "HvHeaderMenuItem" })(MenuItem);

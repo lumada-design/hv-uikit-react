@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import EmptyState from "./EmptyState";
-
-export default withStyles(styles, { name: "HvEmptyState" })(EmptyState);
+export { default } from "./EmptyState";

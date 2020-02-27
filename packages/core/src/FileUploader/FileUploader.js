@@ -17,8 +17,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
+import styles from "./styles";
 
 const DEFAULT_LABELS = {
   dropzone: "Label",
@@ -173,4 +175,4 @@ FileUploader.defaultProps = {
   onFileRemoved: () => {}
 };
 
-export default FileUploader;
+export default withStyles(styles, { name: "HvFileUploader" })(FileUploader);

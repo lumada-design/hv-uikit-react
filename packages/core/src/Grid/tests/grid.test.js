@@ -18,15 +18,18 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-import GridWithStyles from "../index";
-import Grid from "../Grid";
+import Grid from "..";
 
-window.matchMedia = jest.fn(() => ({ matches: false, addListener: jest.fn(), removeListener: jest.fn() }));
+window.matchMedia = jest.fn(() => ({
+  matches: false,
+  addListener: jest.fn(),
+  removeListener: jest.fn()
+}));
 
 describe("Grid withStyles", () => {
   const wrapper = mount(
     <HvProvider>
-      <GridWithStyles />
+      <Grid />
     </HvProvider>
   );
 

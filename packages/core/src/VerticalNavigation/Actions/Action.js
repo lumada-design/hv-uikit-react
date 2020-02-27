@@ -16,13 +16,12 @@
 
 import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
-
 import useUniqueId from "../../useUniqueId";
-
 import HvTypography from "../../Typography";
+import styles from "./styles";
 
 const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-action-");
@@ -53,7 +52,7 @@ const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
       component="div"
       variant="normalText"
       role="button"
-      className={classNames(classes.action, { [classes.noIcon]: !icon })}
+      className={clsx(classes.action, { [classes.noIcon]: !icon })}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={onClick}
@@ -113,4 +112,6 @@ Action.defaultProps = {
   onClick: undefined
 };
 
-export default Action;
+export default withStyles(styles, { name: "HvVerticalNavigationAction" })(
+  Action
+);

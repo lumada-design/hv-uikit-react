@@ -21,11 +21,10 @@ import React from "react";
 import { mount } from "enzyme";
 import Download from "@hv/uikit-react-icons/dist/Generic/Download";
 import HvProvider from "../../Provider";
-import ButtonWithStyles from "../index";
-import HvButton from "../Button";
 import materialButtonConfiguration from "../materialButtonConfiguration";
+import HvButton from "..";
 
-describe("Button withStyles", () => {
+describe("Button", () => {
   let wrapper;
 
   const getMaterialButtonProps = ParentElement =>
@@ -36,7 +35,7 @@ describe("Button withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ButtonWithStyles>Click!</ButtonWithStyles>
+        <HvButton>Click!</HvButton>
       </HvProvider>
     );
   });
@@ -57,7 +56,7 @@ describe("Button withStyles", () => {
   it("should correctly map the primary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="primary">Click!</ButtonWithStyles>
+        <HvButton category="primary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
 
@@ -72,7 +71,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
+        <HvButton category="secondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -86,7 +85,7 @@ describe("Button withStyles", () => {
   it("should correctly map the link type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghost">Click!</ButtonWithStyles>
+        <HvButton category="ghost">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -100,7 +99,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary category to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
+        <HvButton category="secondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -114,7 +113,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghost">Click!</ButtonWithStyles>
+        <HvButton category="ghost">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -128,7 +127,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghostSecondary">Click!</ButtonWithStyles>
+        <HvButton category="ghostSecondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -146,9 +145,9 @@ describe("Button with Icon", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="primary" startIcon={<Download />}>
+        <HvButton category="primary" startIcon={<Download />}>
           Click!
-        </ButtonWithStyles>
+        </HvButton>
       </HvProvider>
     );
   });

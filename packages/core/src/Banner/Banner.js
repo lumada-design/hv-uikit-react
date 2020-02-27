@@ -16,12 +16,11 @@
 
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import Snackbar from "@material-ui/core/Snackbar";
-import Slide from "@material-ui/core/Slide";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
 import HvBannerContentWrapper from "./BannerWrapper";
+import styles from "./styles";
 
 /**
  * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
@@ -48,12 +47,7 @@ const HvBanner = props => {
     actionsCallback,
     actionsPosition,
     label,
-    offset,
-
-    // deprecated:
-    message,
-    action,
-    actionsOnMessage
+    offset
   } = props;
 
   const anchorOriginOffset = offset && {
@@ -78,24 +72,6 @@ const HvBanner = props => {
   };
   bannerClasses.root = open ? classes.root : classes.rootClosed;
 
-  // deprecated properties fallbacks (start):
-  let effectiveActions = actions;
-  if (actionsOnMessage != null) {
-    effectiveActions = actionsOnMessage;
-  } else if (action != null) {
-    effectiveActions = action;
-  }
-
-  let effectiveActionsPosition = actionsPosition;
-  if (actionsPosition === "auto") {
-    if (actionsOnMessage != null) {
-      effectiveActionsPosition = "inline";
-    } else if (action != null) {
-      effectiveActionsPosition = "bottom-right";
-    }
-  }
-  // deprecated properties fallbacks (end)
-
   return (
     <Snackbar
       {...(offset && {
@@ -111,13 +87,13 @@ const HvBanner = props => {
     >
       <HvBannerContentWrapper
         id={`${bannerId}-content`}
-        content={message || label}
+        content={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
-        actions={effectiveActions}
+        actions={actions}
         actionsCallback={actionsCallback}
-        actionsPosition={effectiveActionsPosition}
+        actionsPosition={actionsPosition}
         onClose={onClose}
       />
     </Snackbar>
@@ -215,33 +191,7 @@ HvBanner.propTypes = {
   /**
    * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
-  offset: PropTypes.number,
-
-  // deprecated:
-  /**
-   * The message to display.
-   * @deprecated. Instead use the label property
-   */
-  message: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the label property"
-  ),
-  /**
-   * Actions to display on the right side.
-   * @deprecated. Instead use the actions property
-   */
-  action: deprecatedPropType(
-    PropTypes.node,
-    "Instead use the actions property"
-  ),
-  /**
-   * Actions to display on message.
-   * @deprecated. Instead use the actions property together with actionsPosition="inline"
-   */
-  actionsOnMessage: deprecatedPropType(
-    PropTypes.node,
-    'Instead use the actions property together with actionsPosition="inline"'
-  )
+  offset: PropTypes.number
 };
 
 HvBanner.defaultProps = {
@@ -257,12 +207,7 @@ HvBanner.defaultProps = {
   variant: "default",
   transitionDuration: 300,
   transitionDirection: "down",
-  offset: 60,
-
-  // deprecated:
-  message: undefined,
-  action: undefined,
-  actionsOnMessage: undefined
+  offset: 60
 };
 
-export default HvBanner;
+export default withStyles(styles, { name: "HvBanner" })(HvBanner);

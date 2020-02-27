@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import ListViewRow from "./ListViewRow";
-
-export default withStyles(styles, { name: "HvListViewRow" })(ListViewRow);
+export { default } from "./ListViewRow";

@@ -19,15 +19,14 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Pagination from "../Pagination";
-import PaginationWithStyles from "../index";
 import HvProvider from "../../Provider";
-import HvInput from "../../Input/Input";
+import HvInput from "../../Input";
+import Pagination from "..";
 
 describe("Default Pagination", () => {
   const wrapper = mount(
     <HvProvider>
-      <PaginationWithStyles pages={1} />
+      <Pagination pages={1} />
     </HvProvider>
   );
 
@@ -54,7 +53,7 @@ describe("Default Pagination", () => {
 describe("Pagination without pageJump Input", () => {
   const wrapper = mount(
     <HvProvider>
-      <PaginationWithStyles showPageJump={false} />
+      <Pagination showPageJump={false} />
     </HvProvider>
   );
 
@@ -67,7 +66,7 @@ describe("Pagination without pageJump Input", () => {
 describe("Pagination without pageSize select", () => {
   const wrapper = mount(
     <HvProvider>
-      <PaginationWithStyles showPageSizeOptions={false} />
+      <Pagination showPageSizeOptions={false} />
     </HvProvider>
   );
 
@@ -80,7 +79,7 @@ describe("Pagination without pageSize select", () => {
 describe("Custom Pagination", () => {
   const wrapper = mount(
     <HvProvider>
-      <PaginationWithStyles
+      <Pagination
         pages={4}
         page={2}
         showPageSizeOptions

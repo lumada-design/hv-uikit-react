@@ -18,7 +18,7 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
 import { ConfigProvider } from "../../config/context";
 import HvProvider from "../Provider";
 
@@ -41,9 +41,7 @@ describe("Provider", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider theme={mockOverriden} router={mockRouter}>
-        {" "}
         Mock
-        {" "}
       </HvProvider>
     );
   });

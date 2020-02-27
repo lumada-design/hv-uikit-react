@@ -14,17 +14,5 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-
-import RawTreeView from "./TreeView";
-import RawTreeViewItem from "./TreeViewItem";
-
-const TreeViewItem = withStyles(styles, {
-  name: "HvVerticalNavigationreeViewItem"
-})(RawTreeViewItem);
-export { TreeViewItem };
-
-export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(
-  RawTreeView
-);
+export { default } from "./TreeView";
+export { default as TreeViewItem } from "./TreeViewItem";

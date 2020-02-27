@@ -18,13 +18,10 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Backdrop from "@material-ui/core/Backdrop";
+import { Backdrop } from "@material-ui/core";
 
 import HvProvider from "../../Provider";
-import Button from "../../Button";
-
-import ModalWithStyles from "../index";
-import Modal from "../Modal";
+import Modal from "..";
 
 describe("Modal withStyles", () => {
   let wrapper;
@@ -32,7 +29,7 @@ describe("Modal withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <ModalWithStyles>Modal Content</ModalWithStyles>
+        <Modal>Modal Content</Modal>
       </HvProvider>
     );
   });
@@ -49,9 +46,11 @@ describe("Modal Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <Modal classes={{}} open={open} onClose={onCloseMock}>
-        Modal Content
-      </Modal>
+      <HvProvider>
+        <Modal open={open} onClose={onCloseMock}>
+          Modal Content
+        </Modal>
+      </HvProvider>
     );
     onCloseMock.mockClear();
   });
@@ -62,50 +61,47 @@ describe("Modal Component", () => {
 
   it("should render correctly if closed", () => {
     wrapper = shallow(
-      <Modal classes={{}} open={false} onClose={onCloseMock}>
-        Modal Content
-      </Modal>
+      <HvProvider>
+        <Modal open={false} onClose={onCloseMock}>
+          Modal Content
+        </Modal>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <Modal
-        classes={{}}
-        open={open}
-        onClose={onCloseMock}
-        disableBackdropClick
-        disableEscapeKeyDown
-      >
-        Modal Content
-      </Modal>
+      <HvProvider>
+        <Modal
+          open={open}
+          onClose={onCloseMock}
+          disableBackdropClick
+          disableEscapeKeyDown
+        >
+          Modal Content
+        </Modal>
+      </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <Modal
-        classes={{
-          root: "testClassRoot",
-          paper: "testClassPaper",
-          background: "testClassBackground",
-          closeButton: "testClassCloseButton"
-        }}
-        open={open}
-        onClose={onCloseMock}
-      >
-        Modal Content
-      </Modal>
+      <HvProvider>
+        <Modal
+          classes={{
+            root: "testClassRoot",
+            paper: "testClassPaper",
+            background: "testClassBackground",
+            closeButton: "testClassCloseButton"
+          }}
+          open={open}
+        >
+          Modal Content
+        </Modal>
+      </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("onClose should be called when close button is clicked", () => {
-    const button = wrapper.find(Button);
-    button.at(0).simulate("click");
-    expect(onCloseMock).toHaveBeenCalled();
     expect(wrapper).toMatchSnapshot();
   });
 

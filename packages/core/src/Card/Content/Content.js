@@ -16,9 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import CardContent from "@material-ui/core/CardContent";
+import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
+import { CardContent, withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 const DEFAULT_ID = "hv-content";
 /**
@@ -36,7 +37,7 @@ const Content = ({
 }) => (
   <CardContent
     id={id || uniqueId(DEFAULT_ID)}
-    className={classNames(classes.content, className)}
+    className={clsx(classes.content, className)}
     onClick={onClickAction}
     {...others}
   >
@@ -83,4 +84,4 @@ Content.defaultProps = {
   onClickAction: () => {}
 };
 
-export default Content;
+export default withStyles(styles, { name: "HvCardContent" })(Content);

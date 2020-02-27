@@ -14,9 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Footer from "./Footer";
-import withConfig from "../../config/withConfig";
-
-export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));
+export { default } from "./Footer";

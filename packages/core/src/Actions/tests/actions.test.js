@@ -27,7 +27,7 @@ import {
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";
 import HvDropDownMenu from "../../DropDownMenu";
-import ActionsWithStyles from "../index";
+import Actions from "..";
 
 const actions = [
   { id: "post", label: "Add", iconCallback: () => <Add />, disabled: true },
@@ -43,7 +43,7 @@ describe("Actions with array", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <ActionsWithStyles
+        <Actions
           actions={actions}
           maxVisibleActions={2}
           actionsCallback={actionsCallbackMock}
@@ -91,7 +91,7 @@ describe("Actions with custom actions", () => {
     const label = "Test";
     wrapper = mount(
       <HvProvider>
-        <ActionsWithStyles actions={<HvButton>{label}</HvButton>} />
+        <Actions actions={<HvButton>{label}</HvButton>} />
       </HvProvider>
     );
 

@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -139,12 +139,12 @@ class NavigationAnchors extends React.Component {
 
     return (
       <Drawer
-        className={classNames(classes.drawer, classes.dense)}
+        className={clsx(classes.drawer, classes.dense)}
         variant="persistent"
         anchor="left"
         open
         classes={{
-          paper: classNames(classes.drawerPaper, {
+          paper: clsx(classes.drawerPaper, {
             [classes.drawerPaperPositionInherit]: !floating
           })
         }}
@@ -172,7 +172,7 @@ class NavigationAnchors extends React.Component {
             >
               <ListItemText
                 classes={{
-                  primary: classNames({
+                  primary: clsx({
                     [classes.listItemTextSelected]: selectedIndex === index
                   }),
                   dense: classes.listItemTextDense

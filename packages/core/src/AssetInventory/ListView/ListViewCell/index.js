@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import ListViewCell from "./ListViewCell";
-
-export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);
+export { default } from "./ListViewCell";

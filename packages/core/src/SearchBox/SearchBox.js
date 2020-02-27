@@ -21,12 +21,14 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import partial from "lodash/partial";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
 import HvInput from "../Input";
+import styles from "./styles";
 
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
@@ -147,7 +149,7 @@ const HvSearchBox = props => {
   return (
     <>
       <HvInput
-        className={classNames(className, classes.root)}
+        className={clsx(className, classes.root)}
         labels={labels}
         id={id}
         initialValue={initialValue}
@@ -275,4 +277,4 @@ HvSearchBox.defaultProps = {
   ariaLabel: "search"
 };
 
-export default HvSearchBox;
+export default withStyles(styles, { name: "HvSearchBox" })(HvSearchBox);

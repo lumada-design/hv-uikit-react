@@ -16,7 +16,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 /**
  * Mapping of typography with HTML elements.
@@ -57,35 +59,40 @@ const defaultVariantMapping = {
  * @returns {*}
  * @constructor
  */
-const Typography = React.forwardRef(({
-  variant,
-  classes,
-  paragraph,
-  className,
-  component,
-  id,
-  children,
-  ...other
-}, ref) => {
-  const Component = component ||
-    (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
+const Typography = React.forwardRef(
+  (
+    {
+      variant,
+      classes,
+      paragraph,
+      className,
+      component,
+      id,
+      children,
+      ...other
+    },
+    ref
+  ) => {
+    const Component =
+      component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
-  return (
-    <Component
-      id={id}
-      ref={ref}
-      className={classNames(
-        classes[variant],
-        classes.baseFontFamily,
-        classes.margin,
-        className
-      )}
-      {...other}
-    >
-      {children}
-    </Component>
-  );
-});
+    return (
+      <Component
+        id={id}
+        ref={ref}
+        className={clsx(
+          classes[variant],
+          classes.baseFontFamily,
+          classes.margin,
+          className
+        )}
+        {...other}
+      >
+        {children}
+      </Component>
+    );
+  }
+);
 
 Typography.propTypes = {
   /**
@@ -153,4 +160,4 @@ Typography.defaultProps = {
   children: ""
 };
 
-export default Typography;
+export default withStyles(styles, { name: "HvTypography" })(Typography);

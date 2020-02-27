@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Calendar from "./Calendar";
-
-export default withStyles(styles, { name: "HvDatePickerCalendar" })(Calendar);
+export { default } from "./Calendar";

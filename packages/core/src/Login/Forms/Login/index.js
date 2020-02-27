@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Login from "./Login";
-
-export default withStyles(styles, { name: "HvLoginLogin" })(Login);
+export { default } from "./Login";

@@ -18,13 +18,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
-import { ClickAwayListener, Popper } from "@material-ui/core";
+import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
-import classNames from "classnames";
+import clsx from "clsx";
 import Typography from "../Typography";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
+import styles from "./styles";
 
 import {
   convertISOStringDateToDate,
@@ -636,26 +637,19 @@ class HvDatePicker extends React.Component {
           <div>
             {!calendarFlipped && (
               <div
-                className={classNames(
-                  classes.popperRoot,
-                  classes.listBorderDown
-                )}
+                className={clsx(classes.popperRoot, classes.listBorderDown)}
               />
             )}
             <div
-              className={classNames(classes.popperRoot, [
-                {
-                  [classes.calendarOpenDown]: calendarOpen && !calendarFlipped,
-                  [classes.calendarOpenUp]: calendarOpen && calendarFlipped
-                }
-              ])}
+              className={clsx(classes.popperRoot, {
+                [classes.calendarOpenDown]: calendarOpen && !calendarFlipped,
+                [classes.calendarOpenUp]: calendarOpen && calendarFlipped
+              })}
             >
               {RenderCalendar}
             </div>
             {calendarFlipped && (
-              <div
-                className={classNames(classes.popperRoot, classes.listBorderUp)}
-              />
+              <div className={clsx(classes.popperRoot, classes.listBorderUp)} />
             )}
           </div>
         </ClickAwayListener>
@@ -773,4 +767,6 @@ HvDatePicker.defaultProps = {
   escapeWithReference: true
 };
 
-export default HvDatePicker;
+export default withStyles(styles, { name: "HvDatePicker", withTheme: true })(
+  HvDatePicker
+);

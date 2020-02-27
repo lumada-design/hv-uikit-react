@@ -16,10 +16,11 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
+import styles from "./styles";
 
 const Actions = ({
   classes,
@@ -45,8 +46,7 @@ const Actions = ({
       aria-labelledby={action.ariaLabelledBy}
       aria-describedby={action.ariaDescribedBy}
     >
-      {(action.iconCallback && action.iconCallback()) ||
-        (action.icon && action.icon())}
+      {action.iconCallback && action.iconCallback()}
       {action.label}
     </HvButton>
   );
@@ -130,12 +130,11 @@ Actions.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
         iconCallback: PropTypes.func,
         disabled: PropTypes.bool,
         ariaLabel: PropTypes.string,
         ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string,
+        ariaDescribedBy: PropTypes.string
       })
     )
   ]),
@@ -157,4 +156,4 @@ Actions.defaultProps = {
   maxVisibleActions: Infinity
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvActions" })(Actions);

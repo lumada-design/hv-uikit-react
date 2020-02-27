@@ -16,9 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import _ from "lodash";
+import clsx from "clsx";
+import map from "lodash/map";
+import each from "lodash/each";
+import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
-import classNames from "classnames";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 import checkboxHOC from "react-table/lib/hoc/selectTable";
@@ -26,6 +28,7 @@ import checkboxHOC from "react-table/lib/hoc/selectTable";
 import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
+import { withStyles } from "@material-ui/core";
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
@@ -43,14 +46,14 @@ import {
   toggleAll,
   toggleSelection
 } from "./checkBoxUtils";
-
 import Pagination from "../Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
-import { tableStyleOverrides } from "./styles";
+import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
+import withConfig from "../config/withConfig";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
@@ -124,9 +127,9 @@ class Table extends React.Component {
     const { data } = this.props;
     const newData = [];
     let newEntry = {};
-    _.map(data, entry => {
+    map(data, entry => {
       newEntry = {};
-      _.each(entry, (val, key) => {
+      each(entry, (val, key) => {
         newEntry[key] = val === null ? `\u2014` : val;
       });
       newData.push(newEntry);
@@ -172,7 +175,7 @@ class Table extends React.Component {
       item => item.id === id || item.accessor === id
     );
     if (
-      (columnDef.length && _.isNil(columnDef[0].sortable) && sortable) ||
+      (columnDef.length && isNil(columnDef[0].sortable) && sortable) ||
       columnDef[0].sortable
     ) {
       return <Sort />;
@@ -272,9 +275,7 @@ class Table extends React.Component {
 
     return {
       selectWidth: 32,
-      SelectAllInputComponent: () => (
-        <div className={classNames(classes.checkBox)} />
-      ),
+      SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
       SelectInputComponent: props => (
         <HvCheckBox
           id={`${internalId}-select-${props.id}`}
@@ -321,7 +322,7 @@ class Table extends React.Component {
   getTheadThProps = (state, rowInfo, column) => {
     const { classes, sortable } = this.props;
     const { sorted, internalId } = this.state;
-    let isSortable = sortable && (_.isNil(column.sortable) || column.sortable);
+    let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
       isSortable = null;
@@ -334,7 +335,7 @@ class Table extends React.Component {
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
-          : classNames(classes.theadTh, "secondaryAction")
+          : clsx(classes.theadTh, "secondaryAction")
     };
   };
 
@@ -347,7 +348,7 @@ class Table extends React.Component {
     const { classes, data } = this.props;
 
     return {
-      className: classNames(classes.tbody, {
+      className: clsx(classes.tbody, {
         [classes.tBodyEmpty]: data.length === 0
       })
     };
@@ -378,7 +379,7 @@ class Table extends React.Component {
             expanded: { [rowInfo.viewIndex]: !expanded[rowInfo.viewIndex] }
           });
         },
-        className: classNames(classes.tr, classes.pointer)
+        className: clsx(classes.tr, classes.pointer)
       };
     }
 
@@ -387,7 +388,7 @@ class Table extends React.Component {
     if (rowId && selection.includes(rowId)) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, "selected")
+        className: clsx(classes.tr, "selected")
       };
     }
 
@@ -572,10 +573,7 @@ class Table extends React.Component {
     const sanitizedData = this.sanitizedData();
 
     return (
-      <div
-        id={internalId}
-        className={classNames(classes.tableContainer, className)}
-      >
+      <div id={internalId} className={clsx(classes.tableContainer, className)}>
         {labels.titleText && (
           <div className={classes.title}>
             <div>
@@ -842,4 +840,4 @@ Table.defaultProps = {
   secondaryActions: null
 };
 
-export default Table;
+export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

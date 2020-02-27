@@ -16,10 +16,12 @@
 
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import classNames from "classnames";
-import CardActions from "@material-ui/core/CardActions";
+import clsx from "clsx";
+import { CardActions, withStyles } from "@material-ui/core";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Actions from "../../Actions";
+import withConfig from "../../config/withConfig";
+import styles from "./styles";
 
 /**
  * The footer container contains the actions of the cards also
@@ -57,7 +59,7 @@ const Footer = ({
   actionItemWidth,
   ...other
 }) => (
-  <CardActions className={classNames(classes.root, className)} {...other}>
+  <CardActions className={clsx(classes.root, className)} {...other}>
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
@@ -214,4 +216,4 @@ Footer.defaultProps = {
   actionItemWidth: undefined
 };
 
-export default Footer;
+export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));

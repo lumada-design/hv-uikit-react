@@ -20,9 +20,7 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import HvProvider from "../../../Provider";
-
-import ModalTitleWithStyles from "../index";
-import ModalTitle from "../ModalTitle";
+import ModalTitle from "..";
 
 describe("ModalContent withStyles", () => {
   let wrapper;
@@ -30,7 +28,7 @@ describe("ModalContent withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <ModalTitleWithStyles>Modal Content</ModalTitleWithStyles>
+        <ModalTitle>Modal Content</ModalTitle>
       </HvProvider>
     );
   });
@@ -46,38 +44,12 @@ describe("ModalTitle Component", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <ModalTitle classes={{}}>Modal Content</ModalTitle>
+        <ModalTitle>Modal Content</ModalTitle>
       </HvProvider>
     );
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("allows external props to be added", () => {
-    wrapper = shallow(
-      <HvProvider>
-        <ModalTitle classes={{}} disableTypography>
-          Modal Title
-        </ModalTitle>
-      </HvProvider>
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("allows external styles to be added", () => {
-    wrapper = shallow(
-      <HvProvider>
-        <ModalTitle
-          classes={{
-            root: "testClassRoot"
-          }}
-        >
-          Modal Content
-        </ModalTitle>
-      </HvProvider>
-    );
     expect(wrapper).toMatchSnapshot();
   });
 });

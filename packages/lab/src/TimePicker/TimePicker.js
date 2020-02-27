@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import classNames from "classnames";
+import clsx from "clsx";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import TimeIcon from "@hv/uikit-react-icons/dist/Generic/Time";
 import Popper from "@material-ui/core/Popper";
@@ -243,7 +243,7 @@ class HvTimePicker extends React.Component {
       <>
         {labels && labels.title && this.renderLabel()}
         <div
-          className={classNames(classes.inputContainer, {
+          className={clsx(classes.inputContainer, {
             [classes.inputPopperOpenedBelow]: timePopperOpen && isPopperBelow,
             [classes.inputPopperOpenedAbove]: timePopperOpen && !isPopperBelow,
             [classes.inputPopperClosed]: !timePopperOpen
@@ -280,7 +280,7 @@ class HvTimePicker extends React.Component {
 
     return (
       <Popper
-        className={classNames(classes.popper, {
+        className={clsx(classes.popper, {
           [classes.popperBelow]: isPopperBelow,
           [classes.popperAbove]: !isPopperBelow
         })}

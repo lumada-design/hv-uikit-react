@@ -18,11 +18,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import { isIE } from "@hv/uikit-common-utils/dist";
 import Title from "./Title";
 import SearchBox from "../SearchBox";
 import List from "../List";
+import styles from "./styles";
 
 const ANIMATION_DURATION = 200;
 
@@ -214,7 +216,7 @@ class VerticalNavigation extends React.Component {
               </div>
             )}
             <div
-              className={classNames(classes.scrollContainer, {
+              className={clsx(classes.scrollContainer, {
                 [classes.withSearch]: showSearchBox && isFirstLevel,
                 [classes.withTitle]: !showSearchBox && currentTitle,
                 [classes.withTitleAndSearch]: showSearchBox && currentTitle
@@ -230,7 +232,7 @@ class VerticalNavigation extends React.Component {
         )}
         {isFirstLevel && actionValues && (
           <div
-            className={classNames(classes.actionContainer, {
+            className={clsx(classes.actionContainer, {
               [classes.soloActionContainer]: !noValues
             })}
           >
@@ -250,7 +252,7 @@ class VerticalNavigation extends React.Component {
     const { classes, className } = this.props;
 
     return (
-      <div className={classNames([classes.verticalContainer, className])}>
+      <div className={clsx(classes.verticalContainer, className)}>
         {showAnimation && (
           <Fade right mirror={mirror} when={show} duration={ANIMATION_DURATION}>
             {this.renderVerticalNavigation()}
@@ -363,4 +365,6 @@ VerticalNavigation.defaultProps = {
   noAnimation: false
 };
 
-export default VerticalNavigation;
+export default withStyles(styles, { name: "HvVerticalNavigation" })(
+  VerticalNavigation
+);

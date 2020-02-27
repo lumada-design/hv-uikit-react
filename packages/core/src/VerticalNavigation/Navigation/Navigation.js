@@ -16,10 +16,10 @@
 
 import React, { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
-
 import TreeView, { TreeViewItem } from "../TreeView";
+import styles from "./styles";
 
 const createListHierarchy = items =>
   items.map(item => {
@@ -128,4 +128,6 @@ Navigation.defaultProps = {
   onClick: () => {}
 };
 
-export default Navigation;
+export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(
+  Navigation
+);

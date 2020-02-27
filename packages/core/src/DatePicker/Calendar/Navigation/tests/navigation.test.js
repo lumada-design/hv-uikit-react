@@ -20,8 +20,7 @@ import HvDropLeftIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
 import HvDropRightIcon from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import HvProvider from "../../../../Provider";
 
-import NavigationWrapper from "../index";
-import Navigation from "../Navigation";
+import Navigation from "..";
 
 describe("<Navigation />", () => {
   let wrapper;
@@ -36,7 +35,7 @@ describe("<Navigation />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <NavigationWrapper
+        <Navigation
           id="id1"
           onNavigatePrevious={onNavigatePreviousMock}
           onNavigateNext={onNavigateNextMock}

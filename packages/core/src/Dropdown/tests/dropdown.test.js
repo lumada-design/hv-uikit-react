@@ -21,10 +21,9 @@ import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
-import DropdownWithStyles from "../index";
-import Dropdown from "../Dropdown";
-import List from "../List/List";
 import Typography from "../../Typography";
+import List from "../List";
+import Dropdown from "..";
 
 const mockData = [
   { label: "Value 1" },
@@ -54,7 +53,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
             values={mockData}
             onChange={onChangeMock}
             showSearch
@@ -79,7 +78,7 @@ describe("<Dropdown />", () => {
       onChangeMock.mockReset();
       mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
             values={mockData}
             onChange={onChangeMock}
             notifyChangesOnFirstRender
@@ -96,7 +95,7 @@ describe("<Dropdown />", () => {
       act(() => {
         wrapper = mount(
           <HvProvider>
-            <DropdownWithStyles
+            <Dropdown
               values={mockData}
               onChange={onChangeMock}
               showSearch
@@ -106,7 +105,7 @@ describe("<Dropdown />", () => {
         );
       });
 
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("Dropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle();
 
@@ -118,11 +117,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
-            values={mockData}
-            selectDefault={false}
-            expanded
-          />
+          <Dropdown values={mockData} selectDefault={false} expanded />
         </HvProvider>
       );
     });
@@ -144,7 +139,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
             id="test-dropdown"
             values={mockData}
             multiSelect
@@ -161,7 +156,7 @@ describe("<Dropdown />", () => {
     });
 
     it("<Dropdown /> handleToggle should do nothing if disabled", () => {
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("Dropdown");
       instance = dropdownComponent.instance();
 
       instance.handleToggle();
@@ -170,7 +165,7 @@ describe("<Dropdown />", () => {
     });
 
     it("handleToggle should be triggered when header is clicked", () => {
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("Dropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
 
@@ -188,7 +183,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
             multiSelect
             values={mockDataWithIds}
             onChange={onChangeMock}

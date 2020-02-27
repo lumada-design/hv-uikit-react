@@ -16,15 +16,15 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
-
 import HvGrid from "../Grid";
-
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
 import defaultBackImage from "./resources/bg.svg";
+import styles from "./styles";
 
 /**
  * Main container for the Login component.
@@ -138,7 +138,7 @@ class HvLogin extends React.Component {
             xl={8}
             className={classes.panelPosition}
           >
-            <div id={id} className={classNames(classes.root, className)} />
+            <div id={id} className={clsx(classes.root, className)} />
           </HvGrid>
           <HvGrid
             item
@@ -324,4 +324,4 @@ HvLogin.defaultProps = {
   formClasses: null
 };
 
-export default HvLogin;
+export default withStyles(styles, { name: "HvLogin" })(HvLogin);

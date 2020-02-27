@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Plot from "./Plot";
-
-export default withStyles(styles, { name: "HvChartPlot" })(Plot);
+export { default } from "./Plot";

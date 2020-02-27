@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../Typography";
 import useUniqueId from "../../useUniqueId";
+import styles from "./styles";
 
 const Brand = ({ classes, id, logo, name }) => {
   const uniqueId = useUniqueId(id, "hv-brand-");
@@ -65,4 +67,4 @@ Brand.defaultProps = {
   name: null
 };
 
-export default Brand;
+export default withStyles(styles, { name: "HvHeaderBrand" })(Brand);

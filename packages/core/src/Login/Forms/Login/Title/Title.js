@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../../Typography";
+import styles from "./styles";
 
 /**
  * Builds the title component. This component can be render by the props:
@@ -47,7 +49,7 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
 
       <HvTypography
         variant="mTitle"
-        className={classNames(classes.root, {
+        className={clsx(classes.root, {
           [classes.titleNoLogoComponent]: !logoComponent
         })}
       >
@@ -99,4 +101,4 @@ Title.defaultProps = {
   titleComponent: null
 };
 
-export default Title;
+export default withStyles(styles, { name: "HvLoginTitle" })(Title);

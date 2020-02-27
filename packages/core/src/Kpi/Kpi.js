@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
+import styles from "./styles";
 
 const HvKpi = props => {
   const {
@@ -37,18 +39,14 @@ const HvKpi = props => {
     typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <div
-      id={id}
-      className={classNames(classes.kpiContainer, className)}
-      {...other}
-    >
+    <div id={id} className={clsx(classes.kpiContainer, className)} {...other}>
       <div>
         <HvTypography variant="highlightText">{labels.title}</HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
           <div
-            className={classNames(
+            className={clsx(
               classes.visualIndicatorContainer,
               classes.spacingToTheRight
             )}
@@ -57,10 +55,7 @@ const HvKpi = props => {
           </div>
         )}
         <HvTypography
-          className={classNames(
-            classes.spacingToTheRight,
-            classes.indicatorText
-          )}
+          className={clsx(classes.spacingToTheRight, classes.indicatorText)}
           variant={indicatorTextVariant}
         >
           {labels.indicator}
@@ -75,22 +70,14 @@ const HvKpi = props => {
       {visualComparison != null && (
         <div className={classes.comparisonComposition}>
           {trendIndicator != null && (
-            <div
-              className={classNames(
-                classes.trendLine,
-                classes.spacingToTheRight
-              )}
-            >
+            <div className={clsx(classes.trendLine, classes.spacingToTheRight)}>
               {trendIndicator}
             </div>
           )}
           <div>
             <div className={classes.comparisonContainer}>
               <InternalVisualComparison
-                className={classNames(
-                  classes.comparisons,
-                  classes.spacingToTheRight
-                )}
+                className={clsx(classes.comparisons, classes.spacingToTheRight)}
                 variant="highlightText"
               >
                 {visualComparison}
@@ -211,4 +198,4 @@ HvKpi.defaultProps = {
   indicatorUnitTextVariant: "sTitle"
 };
 
-export default HvKpi;
+export default withStyles(styles, { name: "HvKpi" })(HvKpi);

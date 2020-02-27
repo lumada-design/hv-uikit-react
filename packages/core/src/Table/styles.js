@@ -332,4 +332,5 @@ const styles = theme => ({
   }
 });
 
+export default styles;
 export { styles, tableStyleOverrides };

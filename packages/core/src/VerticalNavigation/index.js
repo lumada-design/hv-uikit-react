@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import VerticalNavigation from "./VerticalNavigation";
+export { default } from "./VerticalNavigation";
 
 export { default as Navigation } from "./Navigation";
 
@@ -25,7 +23,3 @@ export * from "./TreeView";
 
 export { default as Actions } from "./Actions";
 export * from "./Actions";
-
-export default withStyles(styles, { name: "HvVerticalNavigation" })(
-  VerticalNavigation
-);

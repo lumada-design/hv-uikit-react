@@ -16,16 +16,17 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SwitchBase from "@material-ui/core/Switch";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
+import { Switch, withStyles } from "@material-ui/core";
 import CheckMark from "@hv/uikit-react-icons/dist/Generic/Good";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
+import styles from "./styles";
 
-const Switch = props => {
+const HvSwitch = props => {
   const {
     classes,
     checked,
@@ -65,7 +66,7 @@ const Switch = props => {
   const renderLabel = position => (
     <div id={!isNil(id) ? `${id}_${position}Button` : undefined}>
       <HvTypography
-        className={classNames(classes[`${position}Label`], {
+        className={clsx(classes[`${position}Label`], {
           [classes.disabledLabel]: disabled,
           [classes.labelSelected]: !disabled && !clickState,
           [classes.labelDeselected]: !disabled && clickState
@@ -122,7 +123,7 @@ const Switch = props => {
           id={internalId}
           {...other}
         >
-          <SwitchBase
+          <Switch
             tabIndex="-1"
             checked={clickState}
             onChange={handleChange}
@@ -150,7 +151,7 @@ const Switch = props => {
   );
 };
 
-Switch.propTypes = {
+HvSwitch.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -220,7 +221,7 @@ Switch.propTypes = {
   displayIconChecked: PropTypes.bool
 };
 
-Switch.defaultProps = {
+HvSwitch.defaultProps = {
   checked: true,
   disabled: false,
   onChange: () => {},
@@ -234,4 +235,4 @@ Switch.defaultProps = {
   displayIconChecked: false
 };
 
-export default Switch;
+export default withStyles(styles, { name: "HvSwitch" })(HvSwitch);

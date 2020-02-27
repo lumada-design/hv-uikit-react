@@ -19,14 +19,13 @@
 // import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
-import LoginWithStyles from "../index";
 import HvProvider from "../../Provider";
-import HvLogin from "../Login";
 import LoginForm from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
 import HvButton from "../../Button";
 import Title from "../Forms/Login/Title/Title";
 import MessageElement from "../Forms/MessageElement";
+import Login from "..";
 
 describe("Login ", () => {
   let loginMock;
@@ -40,11 +39,7 @@ describe("Login ", () => {
     recoverMock = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          recovery={recoverMock}
-          allowRecover
-        />
+        <Login login={loginMock} recovery={recoverMock} allowRecover />
       </HvProvider>
     );
   });
@@ -54,7 +49,7 @@ describe("Login ", () => {
   });
 
   it("should render the Login component", () => {
-    const loginComponent = wrapper.find(HvLogin);
+    const loginComponent = wrapper.find(Login);
 
     expect(loginComponent.length).toBe(1);
   });
@@ -128,7 +123,7 @@ describe("Login ", () => {
 
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
+        <Login
           login={loginMock}
           recovery={recoverMock}
           titleComponent={<TitleComponentProp />}
@@ -144,16 +139,13 @@ describe("Login ", () => {
   it("it should render a logo in the title", () => {
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          recovery={recoverMock}
-          logo="/test)"
-        />
+        <Login login={loginMock} recovery={recoverMock} logo="/test)" />
       </HvProvider>
     );
 
     const foundTitleComponent = wrapper2
       .find(Title)
+      .children()
       .children()
       .children()
       .first();
@@ -165,7 +157,7 @@ describe("Login ", () => {
     const msg = { text: "some message." };
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles login={loginMock} customMessage={msg} />
+        <Login login={loginMock} customMessage={msg} />
       </HvProvider>
     );
 

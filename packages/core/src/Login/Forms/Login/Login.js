@@ -16,12 +16,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
 import MessageElement from "../MessageElement";
+import styles from "./styles";
 
 /**
  * Error link button element.
@@ -204,7 +206,7 @@ class Login extends React.Component {
         </div>
 
         <div
-          className={classNames({
+          className={clsx({
             [classes.buttonsContainerWithRemember]: allowRememberMe,
             [classes.buttonsContainer]: !allowRememberMe
           })}
@@ -219,7 +221,7 @@ class Login extends React.Component {
           <HvButton
             type="submit"
             category="primary"
-            className={classNames(classes.button, classes.sentenceCase)}
+            className={clsx(classes.button, classes.sentenceCase)}
             disabled={isLoading || isLogging}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}
@@ -400,4 +402,4 @@ Login.defaultProps = {
   customMessage: null
 };
 
-export default Login;
+export default withStyles(styles, { name: "HvLoginLogin" })(Login);

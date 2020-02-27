@@ -17,8 +17,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
-import { useTheme } from "@material-ui/core";
+import clsx from "clsx";
+import { useTheme, withStyles } from "@material-ui/core";
 import Tooltip from "./Tooltip";
 import {
   setLayout,
@@ -26,9 +26,9 @@ import {
   setXaxis,
   setYaxis
 } from "./chartPlotlyOverrides";
-import styleCreator from "./styles";
 import Typography from "../Typography";
 import Plot from "./Plot";
+import styles from "./styles";
 
 /**
  * Setter of default layout properties.
@@ -44,20 +44,20 @@ const propsLayoutSetter = (
   xAxisTitle,
   yAxisTitle
 ) => {
-  const styles = styleCreator(theme);
+  const layoutStyles = styles(theme);
   const layout = inputLayout === undefined ? {} : inputLayout;
 
   // Layout
-  setLayout(layout, styles);
+  setLayout(layout, layoutStyles);
 
   // Legend
-  setLegend(layout, styles);
+  setLegend(layout, layoutStyles);
 
   // Xaxis
-  setXaxis(layout, styles, xAxisTitle, isHorizontal);
+  setXaxis(layout, layoutStyles, xAxisTitle, isHorizontal);
 
   // Yaxis
-  setYaxis(layout, styles, yAxisTitle, isHorizontal);
+  setYaxis(layout, layoutStyles, yAxisTitle, isHorizontal);
 
   return layout;
 };
@@ -161,7 +161,7 @@ const Chart = ({
           </div>
         </div>
         <div
-          className={classNames({ [classes.paddingTop]: title })}
+          className={clsx({ [classes.paddingTop]: title })}
           onMouseMove={e => onMouseMove(e)}
         >
           <Plot
@@ -233,4 +233,4 @@ Chart.defaultProps = {
   yAxisTitle: null
 };
 
-export default Chart;
+export default withStyles(styles, { name: "HvChart" })(Chart);

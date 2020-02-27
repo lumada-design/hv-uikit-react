@@ -16,7 +16,9 @@
 
 import React, { memo } from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import Typography from "../../../Typography";
+import styles from "./styles";
 
 /**
  * Tooltip with color representation.
@@ -121,4 +123,6 @@ MultiTooltip.propTypes = {
 const arePropsEqual = (prevProps, nextProps) =>
   prevProps.data === nextProps.data;
 
-export default memo(MultiTooltip, arePropsEqual);
+export default withStyles(styles, { name: "HvChartMultiTooltip" })(
+  memo(MultiTooltip, arePropsEqual)
+);

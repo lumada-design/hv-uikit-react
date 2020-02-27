@@ -16,7 +16,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../useUniqueId";
+import styles from "./styles";
 
 const Header = ({ id, classes, position, children }) => {
   const uniqueId = useUniqueId(id, "hv-header-");
@@ -69,4 +71,4 @@ Header.defaultProps = {
   position: "fixed"
 };
 
-export default Header;
+export default withStyles(styles, { name: "HvHeader" })(Header);

@@ -21,11 +21,10 @@ import React, {
   useEffect,
   useCallback
 } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
-
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
-
 import HvTypography from "../../Typography";
 
 import {
@@ -35,6 +34,8 @@ import {
 
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
+
+import styles from "./styles";
 
 const isPrintableCharacter = str => str && str.length === 1 && str.match(/\S/);
 
@@ -342,7 +343,7 @@ const TreeViewItem = props => {
     <li
       ref={listItemRef}
       id={internalId}
-      className={classNames(classes.node, className, {
+      className={clsx(classes.node, className, {
         [classes.disabled]: disabled,
         [classes.collapsed]: expandable && !expanded,
         [classes.expanded]: expandable && expanded,
@@ -476,4 +477,6 @@ TreeViewItem.defaultProps = {
   children: null
 };
 
-export default TreeViewItem;
+export default withStyles(styles, {
+  name: "HvVerticalNavigationreeViewItem"
+})(TreeViewItem);

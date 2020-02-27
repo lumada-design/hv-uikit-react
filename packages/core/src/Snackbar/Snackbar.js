@@ -16,11 +16,11 @@
 
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import Snackbar from "@material-ui/core/Snackbar";
-import Slide from "@material-ui/core/Slide";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
+import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
+import styles from "./styles";
 
 const transLeft = props => <Slide {...props} direction="left" />;
 const transRight = props => <Slide {...props} direction="right" />;
@@ -222,4 +222,4 @@ HvSnackbar.defaultProps = {
   offset: undefined
 };
 
-export default HvSnackbar;
+export default withStyles(styles, { name: "HvSnackbar" })(HvSnackbar);

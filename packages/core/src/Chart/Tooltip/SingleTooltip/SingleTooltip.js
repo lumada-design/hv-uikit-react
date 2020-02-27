@@ -16,7 +16,9 @@
 
 import React, { memo } from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import Typography from "../../../Typography";
+import styles from "./styles";
 
 /**
  * Tooltip for the cases with a single group.
@@ -66,4 +68,6 @@ SingleTooltip.propTypes = {
 const arePropsEqual = (prevProps, nextProps) =>
   prevProps.title === nextProps.title && prevProps.value === nextProps.value;
 
-export default memo(SingleTooltip, arePropsEqual);
+export default withStyles(styles, { name: "HvChartSingleTooltip" })(
+  memo(SingleTooltip, arePropsEqual)
+);

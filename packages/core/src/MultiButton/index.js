@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import MultiButton from "./MultiButton";
-
-export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);
+export { default } from "./MultiButton";

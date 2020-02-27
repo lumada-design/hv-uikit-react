@@ -16,15 +16,26 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Typography from "../Typography";
+import styles from "./styles";
 
 const Badge = props => {
-  const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
+  const {
+    classes,
+    showCount,
+    count,
+    maxCount,
+    icon,
+    text,
+    textVariant
+  } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
-  const Component = icon || text && <Typography variant={textVariant}>{text}</Typography>;
+  const Component =
+    icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
-  const badgeClasses = classNames(classes.badgePosition, {
+  const badgeClasses = clsx(classes.badgePosition, {
     [classes.badge]: count > 0,
     [classes.showCount]: showCount,
     [classes.badgeIcon]: icon,
@@ -101,4 +112,4 @@ Badge.defaultProps = {
   textVariant: null
 };
 
-export default Badge;
+export default withStyles(styles, { name: "HvBadge" })(Badge);

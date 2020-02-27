@@ -16,12 +16,14 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import { KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
 import isBrowser from "../utils/browser";
+import styles from "./styles";
 
 /* eslint-disable no-param-reassign */
 const Focus = props => {
@@ -201,7 +203,7 @@ const Focus = props => {
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
-        className: classNames(children.props.className, classes.root, {
+        className: clsx(children.props.className, classes.root, {
           [classes.selected]: selected,
           [classes.disabled]: disabled,
           [classes.focusDisabled]: focusDisabled
@@ -289,4 +291,4 @@ Focus.defaultProps = {
   disabled: false
 };
 
-export default Focus;
+export default withStyles(styles)(Focus);

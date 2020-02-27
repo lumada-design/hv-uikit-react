@@ -20,8 +20,7 @@ import React from "react";
 import { mount } from "enzyme";
 import { axe, toHaveNoViolations } from "jest-axe";
 import HvProvider from "../../Provider";
-
-import ModalWithStyles from "../index";
+import Modal from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -33,9 +32,9 @@ describe("ModalA11Y", () => {
   it("default state", async () => {
     wrapper = mount(
       <HvProvider>
-        <ModalWithStyles open={open} onClose={onCloseMock}>
+        <Modal open={open} onClose={onCloseMock}>
           Modal Content
-        </ModalWithStyles>
+        </Modal>
       </HvProvider>
     );
 

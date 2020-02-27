@@ -33,9 +33,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
+import styles from "./styles";
 
 const format = date => date.format("D MMM, YYYY");
 
@@ -188,7 +190,7 @@ class Header extends React.Component {
         )}
         <div
           id={`${id}-header`}
-          className={classNames(classes.background, {
+          className={clsx(classes.background, {
             [classes.invalid]: isInvalid
           })}
         >
@@ -245,4 +247,4 @@ Header.defaultProps = {
   topText: null
 };
 
-export default Header;
+export default withStyles(styles, { name: "HvDatePickerHeader" })(Header);

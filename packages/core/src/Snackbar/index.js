@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Snackbar from "./Snackbar";
-
-export default withStyles(styles, { name: "HvSnackbar" })(Snackbar);
+export { default } from "./Snackbar";

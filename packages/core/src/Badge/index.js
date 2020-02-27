@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Badge from "./Badge";
-
-export default withStyles(styles, { name: "HvBadge" })(Badge);
+export { default } from "./Badge";

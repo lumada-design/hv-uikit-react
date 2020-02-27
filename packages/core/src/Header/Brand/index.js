@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Brand from "./Brand";
-
-export default withStyles(styles, { name: "HvHeaderBrand" })(Brand);
+export { default } from "./Brand";

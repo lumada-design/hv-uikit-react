@@ -16,9 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
+import styles from "./styles";
 
 const HeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
@@ -31,7 +33,7 @@ const HeaderCells = (classes, columnConfiguration) =>
 
     return (
       <th
-        className={classNames(classes.headCell, {
+        className={clsx(classes.headCell, {
           [classes[configuration.spacing]]: configuration.spacing
         })}
         style={{ ...configuration.style }}
@@ -56,7 +58,7 @@ const ListViewHeaderRow = ({
 
   return (
     <tr
-      className={classNames(className, classes.root, {
+      className={clsx(className, classes.root, {
         [classes.selectable]: viewConfiguration.isSelectable,
         [classes.notSelectable]: !viewConfiguration.isSelectable
       })}
@@ -104,4 +106,6 @@ ListViewHeaderRow.defaultProps = {
   viewConfiguration: null
 };
 
-export default ListViewHeaderRow;
+export default withStyles(styles, { name: "HvListViewHeaderRow" })(
+  ListViewHeaderRow
+);

@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Banner from "./Banner";
-
-export default withStyles(styles, { name: "HvBanner" })(Banner);
+export { default } from "./Banner";

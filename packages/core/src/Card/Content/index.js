@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Content from "./Content";
-
-export default withStyles(styles, { name: "HvCardContent" })(Content);
+export { default } from "./Content";

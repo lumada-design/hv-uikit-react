@@ -16,7 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isEmpty from "lodash/isEmpty";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
@@ -32,15 +32,15 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 const Loading = ({ classes, size, position, text }) => {
   return (
     <div
-      className={classNames(classes.loading, {
+      className={clsx(classes.loading, {
         [classes.centerPosition]: position === "center",
         [classes.inlinePosition]: position === "inline"
       })}
     >
       <div>
-        <div className={classNames(classes.loadingBar, size)} />
-        <div className={classNames(classes.loadingBar, size)} />
-        <div className={classNames(classes.loadingBar, size)} />
+        <div className={clsx(classes.loadingBar, size)} />
+        <div className={clsx(classes.loadingBar, size)} />
+        <div className={clsx(classes.loadingBar, size)} />
       </div>
       {!isEmpty(text) ? (
         <div className={classes.loadingText}>

@@ -20,9 +20,8 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import LinechartWithStyles from "../index";
-import Linechart from "../Linechart";
-import {setData} from "../lineChartPlotlyOverrides";
+import { setData } from "../lineChartPlotlyOverrides";
+import Linechart from "..";
 
 describe("Linechart withStyles", () => {
   let wrapper;
@@ -39,7 +38,7 @@ describe("Linechart withStyles", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <LinechartWithStyles data={data} layout={layout} />
+        <Linechart data={data} layout={layout} />
       </HvProvider>
     );
   });
@@ -55,7 +54,7 @@ describe("Linechart withStyles", () => {
   it("should render the Linechart", () => {
     wrapper = mount(
       <HvProvider>
-        <LinechartWithStyles data={data} layout={layout} />
+        <Linechart data={data} layout={layout} />
       </HvProvider>
     );
     const linechart = wrapper.find(Linechart);

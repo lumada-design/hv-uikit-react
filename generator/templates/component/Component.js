@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 const Component = ({ classes }) => {
   return <div className={classes.root}>Sample Component</div>;
@@ -33,4 +35,4 @@ Component.propTypes = {
   }).isRequired
 };
 
-export default Component;
+export default withStyles(styles)(Component);

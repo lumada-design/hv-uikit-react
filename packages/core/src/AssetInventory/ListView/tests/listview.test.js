@@ -20,16 +20,16 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import AssetInventoryListViewWithStyles from "../index";
+import AssetInventoryListView from "..";
 
-describe("AssetInventoryListView withStyles", () => {
+describe("AssetInventoryListView", () => {
   let wrapper;
 
   it("should be defined", () => {
     wrapper = shallow(
       <HvProvider>
-        <AssetInventoryListViewWithStyles />
-      </HvProvider>  
+        <AssetInventoryListView />
+      </HvProvider>
     );
     expect(wrapper).toBeDefined();
   });

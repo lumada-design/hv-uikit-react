@@ -14,8 +14,4 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import RadioButton from "./RadioButton";
-
-export default withStyles(styles, { name: "HvRadioButton" })(RadioButton);
+export { default } from "./RadioButton";

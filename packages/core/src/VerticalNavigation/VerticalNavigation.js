@@ -16,9 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import useUniqueId from "../useUniqueId";
 import VerticalContainer from "./VerticalContainer";
+import styles from "./styles";
 
 const VerticalNavigation = props => {
   const {
@@ -47,7 +49,7 @@ const VerticalNavigation = props => {
     >
       <div
         id={internalId}
-        className={classNames(classes.root, {
+        className={clsx(classes.root, {
           [classes.noCollapsable]: !isCollapsable
         })}
       >
@@ -107,4 +109,6 @@ VerticalNavigation.defaultProps = {
   closeOnExit: false
 };
 
-export default VerticalNavigation;
+export default withStyles(styles, { name: "HvVerticalNavigation" })(
+  VerticalNavigation
+);

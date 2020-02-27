@@ -19,7 +19,7 @@ import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import { axe, toHaveNoViolations } from "jest-axe";
-import Popper from "@material-ui/core/Popper";
+import { Popper } from "@material-ui/core";
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
 

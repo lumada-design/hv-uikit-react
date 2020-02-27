@@ -14,21 +14,15 @@
  * limitations under the License.
  */
 
+/* eslint-disable */
+
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import NewHeader1 from "../../../../packages/doc/samples/components/newHeader/header1";
+import Pagination from "../../Pagination";
 
-
-// sample scenarios
-const samples = {};
-samples.two_levels = NewHeader1;
-
-
-// create CoreTextArea for each sample
-Object.keys(samples).forEach(key =>
-  storiesOf("Core_NewHeader", module).add(key, () => (
-    <>
-        {samples[key]}
-    </>
-  ))
+export default props => (
+  <Pagination
+    {...props}
+    rowsSelectorText={props.labels.labelRowsSelector}
+    ofText={props.labels.labelOf}
+  />
 );

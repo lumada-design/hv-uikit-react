@@ -17,12 +17,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import clsx from "clsx";
+import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
-import Radio from "@material-ui/core/Radio";
-import classNames from "classnames";
 import labelPositions from "../labelPositions";
+import styles from "./styles";
 
 /**
  * Returns the correct label styles to be applied based on label position.
@@ -36,9 +36,9 @@ const getLabelStyles = (classes, labelPosition, label) => {
     switch (labelPosition) {
       default:
       case labelPositions.end:
-        return classNames(classes.container, classes.labelEnd);
+        return clsx(classes.container, classes.labelEnd);
       case labelPositions.start:
-        return classNames(classes.container, classes.labelStart);
+        return clsx(classes.container, classes.labelStart);
     }
   }
   return classes.container;
@@ -100,7 +100,7 @@ const HvRadio = props => {
       label={label}
       labelPlacement={labelPlacement}
       id={internalId}
-      className={classNames(labelStyles, className, {
+      className={clsx(labelStyles, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       classes={{
@@ -222,4 +222,4 @@ HvRadio.defaultProps = {
   labelPlacement: labelPositions.end
 };
 
-export default HvRadio;
+export default withStyles(styles, { name: "HvRadioButton" })(HvRadio);

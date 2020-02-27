@@ -21,12 +21,11 @@ import { mount } from "enzyme";
 
 import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
 import MapS from "@hv/uikit-react-icons/dist/Generic/Map";
-import InputWithStyles from "../index";
-import Input from "../Input";
 import validationStates from "../validationStates";
 import validationTypes from "../validationTypes";
 import iconPositions from "../iconPositions";
 import HvProvider from "../../Provider";
+import Input from "..";
 
 const labels = {
   inputLabel: "inputLabel",
@@ -47,14 +46,13 @@ const testState = (warningText, state, value, instance) => {
 describe("Input", () => {
   let wrapper;
 
-  const getInputProps = ParentElement =>
-    ParentElement.find(InputWithStyles).props();
-  const getInput = ParentElement => ParentElement.find(Input).instance();
+  const getInputProps = ParentElement => ParentElement.find("HvInput").props();
+  const getInput = ParentElement => ParentElement.find("HvInput").instance();
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles />
+        <Input />
       </HvProvider>
     );
   });
@@ -68,14 +66,14 @@ describe("Input", () => {
   });
 
   it("should render the Input component", () => {
-    const inputComponent = wrapper.find(Input);
+    const inputComponent = wrapper.find("HvInput");
     expect(inputComponent.length).toBe(1);
   });
 
   it("should disable the Input component", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles disabled />
+        <Input disabled />
       </HvProvider>
     );
     expect(getInputProps(wrapper).disabled).toBe(true);
@@ -84,7 +82,7 @@ describe("Input", () => {
   it("should not have the validation section", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles showInfo={false} />
+        <Input showInfo={false} />
       </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
@@ -93,7 +91,7 @@ describe("Input", () => {
   it("should pass other props to the child input component", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           inputProps={{
             maxLength: 250
           }}
@@ -107,7 +105,7 @@ describe("Input", () => {
     const inputText = "test";
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           validationState={validationStates.valid}
           labels={labels}
           initialValue={inputText}
@@ -122,7 +120,7 @@ describe("Input", () => {
     const inputText = "test";
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           validationState={validationStates.invalid}
           labels={labels}
           initialValue={inputText}
@@ -145,7 +143,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={inputText}
           onFocus={onFocus}
           labels={labels}
@@ -165,11 +163,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
-          initialValue={inputText}
-          onFocus={onFocus}
-          labels={labels}
-        />
+        <Input initialValue={inputText} onFocus={onFocus} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -186,7 +180,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -209,7 +203,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -234,7 +228,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           suggestionListCallback={suggestionHandler}
           onChange={onChange}
@@ -253,7 +247,7 @@ describe("Input", () => {
     const suggestionSelected = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           labels={labels}
           suggestionSelectedCallback={suggestionSelected}
         />
@@ -273,7 +267,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -306,7 +300,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -340,7 +334,7 @@ describe("Input", () => {
     const validate = () => false;
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -369,7 +363,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -404,7 +398,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -440,7 +434,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -476,7 +470,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles
+        <Input
           initialValue={defaultInputText}
           onChange={onChange}
           labels={labels}
@@ -501,7 +495,7 @@ describe("Input", () => {
     const defaultInputText = "test1";
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles initialValue={defaultInputText} labels={labels} />
+        <Input initialValue={defaultInputText} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -514,7 +508,7 @@ describe("Input", () => {
       React.createElement(
         props => (
           <HvProvider>
-            <InputWithStyles value={props.value} labels={labels} />
+            <Input value={props.value} labels={labels} />
           </HvProvider>
         ),
         defaultProps
@@ -539,7 +533,7 @@ describe("Input", () => {
   it("should show the info icon and the info label", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles infoIcon labels={labels} />
+        <Input infoIcon labels={labels} />
       </HvProvider>
     );
     const inputComponent = wrapper.find(InfoS);
@@ -551,7 +545,7 @@ describe("Input", () => {
   it("should show the custom map icon and the info label", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} customFixedIcon={<MapS />} />
+        <Input labels={labels} customFixedIcon={<MapS />} />
       </HvProvider>
     );
     const inputComponent = wrapper.find(MapS);
@@ -563,7 +557,7 @@ describe("Input", () => {
   it("should show the info label and not the info icon", () => {
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles labels={labels} />
+        <Input labels={labels} />
       </HvProvider>
     );
     const iconInfo = wrapper.find(InfoS);
@@ -588,11 +582,11 @@ describe("Input", () => {
 
     wrapper = mount(
       <HvProvider>
-        <InputWithStyles {...defaultProps} labels={labels} />
+        <Input {...defaultProps} labels={labels} />
       </HvProvider>
     );
 
-    const inputComponent = wrapper.find(Input).instance();
+    const inputComponent = wrapper.find("HvInput").instance();
 
     expect(inputComponent.state.validationState).toBe(validationStates.invalid);
     expect(inputComponent.state.value).toBe(undefined);
