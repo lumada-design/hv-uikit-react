@@ -5,7 +5,7 @@ Library                           SeleniumLibrary
 Resource                          ../../_resources/storybook_keywords.robot
 Variables                         ../../_resources/storybook_variables.yaml
 Variables                         variables.yaml
-Default Tags                      smoke    bug-ie-webdriver
+Force Tags                        smoke    bug-ie-webdriver
 
 
 *** Variables ***
