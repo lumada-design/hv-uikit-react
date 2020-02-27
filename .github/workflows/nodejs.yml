@@ -4,8 +4,8 @@ on: [push]
 
 jobs:
   build:
-    runs-on: [self-hosted, linux]
-    #runs-on: ubuntu-latest
+    #runs-on: [self-hosted, linux]
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -19,9 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: https://nexus.pentaho.org/repository/group-npm/
         scope: hv
-    - run: >-
-          npm ci
-          npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
+        always-auth: true
+    - run: npm ci
     - run: npm run bootstrap
     - run: npm run test
       env:
