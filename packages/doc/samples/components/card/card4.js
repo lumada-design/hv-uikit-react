@@ -120,7 +120,6 @@ export default (
       headerTitle={configurationNoMedia.title}
       subheader={configurationNoMedia.subtitle}
       innerCardContent={<MultipleActionsWithStyle />}
-      variant="none"
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />

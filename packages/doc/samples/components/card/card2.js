@@ -113,11 +113,11 @@ const StyledFailureIcon = () => (
 const SubHeader = ({ classes }) => {
   return (
     <div>
-      <span className={classes.subtitleLeft} >{configuration.subtitleLeft}</span>
+      <span className={classes.subtitleLeft}>{configuration.subtitleLeft}</span>
       <span>{configuration.subtitleRight}</span>
     </div>
-  )
-}
+  );
+};
 
 const SubHeaderStyle = theme => ({
   subtitleLeft: {
@@ -127,28 +127,30 @@ const SubHeaderStyle = theme => ({
   }
 });
 
-const styles = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
-
 const StyledSubheader = withStyles(SubHeaderStyle, {
   withTheme: true
 })(SubHeader);
 
-const StyledUploadIcon = withStyles(styles, { withTheme: true })(({classes}) => <Upload className={classes.box} />);
-const StyledPreviewIcon = withStyles(styles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
-const StyledAddIcon = withStyles(styles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
-const StyledDeleteIcon = withStyles(styles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
-
 const myActions = [
-  { id: "post", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Upload",
+    iconCallback: () => <Upload />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <PreviewIcon />,
+    disabled: true
+  },
+  { id: "put", label: "Add", iconCallback: () => <AddIcon />, disabled: true },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <DeleteIcon />,
+    disabled: false
+  }
 ];
 
 export default (
@@ -156,12 +158,10 @@ export default (
     <HvCard
       icon={<StyledFailureIcon />}
       headerTitle={configuration.title}
-      subheader={
-        <StyledSubheader />
-      }
+      subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={myActions}
-      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
+      actionsCallback={(id, a) =>{ debugger;alert("You have pressed " + a.label);}}
       actionsAlignment="left"
       semantic="sema4"
       isSelectable

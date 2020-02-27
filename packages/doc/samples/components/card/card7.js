@@ -29,23 +29,51 @@ const iconStyles = () => ({
     width: "30px",
     height: "30px"
   }
-})
+});
 
-const StyledUploadIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <Upload className={classes.box} />);
-const StyledPreviewIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
-const StyledAddIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
-const StyledDeleteIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
+const StyledUploadIcon = withStyles(iconStyles, {
+  withTheme: true
+})(({ classes }) => <Upload className={classes.box} />);
+const StyledPreviewIcon = withStyles(iconStyles, {
+  withTheme: true
+})(({ classes }) => <PreviewIcon className={classes.box} />);
+const StyledAddIcon = withStyles(iconStyles, {
+  withTheme: true
+})(({ classes }) => <AddIcon className={classes.box} />);
+const StyledDeleteIcon = withStyles(iconStyles, {
+  withTheme: true
+})(({ classes }) => <DeleteIcon className={classes.box} />);
 
 const myActions = [
-  { id: "post", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Upload",
+    iconCallback: () => <StyledUploadIcon />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <StyledPreviewIcon />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Add",
+    iconCallback: () => <StyledAddIcon />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <StyledDeleteIcon />,
+    disabled: false
+  }
 ];
 
 export default (
   <div style={{ width: "500px" }}>
-    <HvCard variant="error">
+    <HvCard>
       <CustomMedia mediaPath={leaf} mediaHeight={160} />
       <HvCardFooter
         checkboxAriaLabel="Composed card"

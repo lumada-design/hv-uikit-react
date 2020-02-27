@@ -32,7 +32,7 @@ const HvModalActions = ({ classes, className, children, ...others }) => (
   <DialogActions
     classes={{
       root: classes.root,
-      action: classes.action
+      spacing: classes.spacing
     }}
     className={className}
     {...others}
@@ -54,10 +54,6 @@ HvModalActions.propTypes = {
      * Style applied to the root of the component (container for the actions).
      */
     root: PropTypes.string,
-    /**
-     * Style applied to each child action.
-     */
-    action: PropTypes.string
   }).isRequired,
   /**
    * Actions of the modal.
