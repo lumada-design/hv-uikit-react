@@ -21,8 +21,9 @@ jobs:
         registry-url: https://nexus.pentaho.org/repository/group-npm/
         scope: hv
         always-auth: false
-    - run: npm ci
-    - run: npm run bootstrap
-    - run: npm run test
-      env:
-        CI: true
+    - run: npm config list
+    #- run: npm ci
+    #- run: npm run bootstrap
+    #- run: npm run test
+    #  env:
+    #    CI: true
