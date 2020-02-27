@@ -397,7 +397,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         "acce2h": "#4389DB",
         "acce3": "#CC0000",
         "action": Object {
-          "activatedOpaciy": 0.12,
+          "activatedOpacity": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -1183,7 +1183,7 @@ exports[`ModalTitle Component allows external props to be added 1`] = `
         "acce2h": "#4389DB",
         "acce3": "#CC0000",
         "action": Object {
-          "activatedOpaciy": 0.12,
+          "activatedOpacity": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -1971,7 +1971,7 @@ exports[`ModalTitle Component allows external styles to be added 1`] = `
         "acce2h": "#4389DB",
         "acce3": "#CC0000",
         "action": Object {
-          "activatedOpaciy": 0.12,
+          "activatedOpacity": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
@@ -2762,7 +2762,7 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
         "acce2h": "#4389DB",
         "acce3": "#CC0000",
         "action": Object {
-          "activatedOpaciy": 0.12,
+          "activatedOpacity": 0.12,
           "active": "rgba(0, 0, 0, 0.54)",
           "disabled": "rgba(0, 0, 0, 0.26)",
           "disabledBackground": "rgba(0, 0, 0, 0.12)",
