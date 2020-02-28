@@ -5,40 +5,6 @@ Library      Collections
 Variables    storybook_variables.yaml
 
 *** Keywords ***
-apply storybook theme
-    [Arguments]        ${theme}=default
-    [Documentation]
-    ...                Change storybook as argument theme that can be "dawn" or "wicked"
-    ...                if the actual theme is as argument theme don't will do nothing
-    ...
-    ...                themes assumptions:
-    ...                - recognize as wicked theme when "change theme" button color is rgb(204, 204, 204)
-    ...    
-    ${button}                      Set Variable                       //button[.='Change theme']
-    ${color}                       get css property value             ${button}                        color
-    ${actual_theme}=               Set Variable If                    '204, 204, 204' in '${color}'    wicked     dawn
-    Return From Keyword If         '${actual_theme}' == '${theme}'
-    Click Button                   ${button}
-    Wait Until Keyword Succeeds    5    1s    verify css element property has different value    ${button}    color    ${color}
-
-compare images
-    [Arguments]    ${baseImage}    ${locator}    ${tagName}    ${tolerance}
-    [Documentation]
-    ...                Compare the baseline image with a captured image of element locator
-    ...                Arguments:
-    ...                - baseImage    (string)     path to base image       ex: (${dir}/default_ie.png)
-    ...                - locator      (string)     web locator o element
-    ...                - tagName      (string)     captured image name, it is suggested the format theme_state_locator_browser.png
-    ...                - tolerance    (decimal)    % value to tolerate      ex: (0.01 = 1%, max value 1 = 100%)
-    ...    
-    Create Directory              ${OUTPUTDIR}/results/${SUITE NAME}/${TEST NAME}
-    ${path}                       Set Variable                          ${SUITE NAME}/${TEST NAME}/${tagName}
-    Capture Element Screenshot    ${locator}                            actual/${path}
-    ${rc}                         ${output} =                           Run And Return Rc And Output                compare -metric NCC "${baseImage}" "${OUTPUTDIR}/actual/${path}" "${OUTPUTDIR}/results/${path}"
-    ${val}                        Evaluate                              round(${output},2) + float(${tolerance})
-    Run Keyword If                round(${val},2)<1                     fail                                        The images do not match
-    [Return]                      round(${output},2)
-
 element attribute value should contain
     [Arguments]       ${locator}               ${attribute}    ${expected}
     ${value}          Get Element Attribute    ${locator}      ${attribute}
@@ -54,20 +20,6 @@ go to url and wait until element is visible
     [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible 
     Go To                            ${page}
     Wait Until Element Is Visible    ${locator}    10s
-
-wait until element attribute value does not contain
-    [Arguments]    ${locator}    ${attribute}    ${expected}    ${retry_interval}
-    [Documentation]
-    ...    necessary for (and just for) ie synchronization
-    ...
-    Wait Until Keyword Succeeds    5    ${retry_interval}    element attribute value should not contain    ${locator}    ${attribute}    ${expected}
-
-wait until element attribute value does contain
-    [Arguments]    ${locator}    ${attribute}    ${expected}    ${retry_interval}
-    [Documentation]
-    ...    necessary for (and just for) ie synchronization
-    ...
-    Wait Until Keyword Succeeds    5    ${retry_interval}    element attribute value should contain    ${locator}    ${attribute}    ${expected}
 
 get constanct css property value
     [Arguments]        ${locator}    ${property}
@@ -125,24 +77,6 @@ verify element background-color change on mouse over
     mouse over                     ${locator}
     Wait Until Keyword Succeeds    5                                   500ms         verify css element property has different value    ${locator}    background-color    ${value}
    
-verify css element properties
-    [Arguments]        ${locator}    ${css}
-    [Documentation]
-    ...                Compare all css properties of a dictionary against a web element
-    ...
-    ...                Arguments:
-    ...                - locator     (string)        any Selenium Library supported locator xpath/css/id etc.
-    ...                - css         (dictionary)    dictionary with css property and value
-    ...
-    ...                Returns       (string)        returns Fail if CSS property is different
-    ...
-    ${keys}                         Get Dictionary Keys    ${css}
-    &{dict}=                        Create Dictionary
-    FOR                             ${i}                   IN                        @{keys}
-    \                               ${value}=              get css property value    ${locator}       ${i}
-    \                               Set To Dictionary      ${dict}                   ${i}=${value}
-    Dictionaries Should Be Equal    ${css}                 ${dict}                   error message: the CSS Properties ${dict} don't match as expected ${css}
-
 verify css element property value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}    get constanct css property value    ${locator}    ${property}
@@ -153,31 +87,10 @@ verify css element property has different value
     ${current_value}       get constanct css property value    ${locator}    ${property}
     Should Not Be Equal    ${current_value}                    ${value}      error message: the css element property should have different value of "${value}"
 
-verify element count
-    [Arguments]    ${locator}    ${counts}
-    [Documentation]    
-    ...   | Arguments: | Description | Default Value |
-    ...   | locator | supported selenium Library locators |
-    ...   | counts | (integer) of expected counts |
-    ...          
-    ${got_counts}      Get Element Count     ${locator}
-    ${counts}          Convert To Integer    ${counts}
-    Should Be Equal    ${got_counts}         ${counts}
-
 verify element is not focused
     [Arguments]        ${locator}
     ${value}           Run Keyword And Return Status    Element Should Be Focused    ${locator}
     Should Be Equal    ${value}                         ${False}                     error message: The element is focused
-
-verify element property has different value
-    [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}       Get Element Attribute    ${locator}    ${property}
-    Should Not Be Equal    ${current_value}         ${value}      error message: the element property shouln't have same value
-
-verify list items
-    [Arguments]    ${locator}    ${items}
-    ${list_items}      Get List Items    ${locator}
-    Should Be Equal    ${list_items}     ${items}
 
 clean input
     [Arguments]       ${locator}
@@ -199,11 +112,6 @@ set focus and press keys
     ...    
     Set Focus To Element    ${locator}
     Press Keys              none          @{keys}
-
-wait until element attribute value contain
-    [Arguments]    ${locator}    ${attribute}    ${expected}
-    [Documentation]    retry 3 times every second until keyword succeed    
-    Wait Until Keyword Succeeds    3    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected} 
 
 wait until element attribute contain
     [Arguments]    ${locator}    ${attribute}    ${expected}

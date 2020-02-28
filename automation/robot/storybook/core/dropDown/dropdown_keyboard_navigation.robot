@@ -51,19 +51,19 @@ Focus on input when open dropdown with input
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
     Wait Until Element Is Enabled        ${dropdown}        10s
     set focus and press keys             ${dropdown}        RETURN
-    wait until element attribute value contain    ${searchInput}     class            focused
+    wait until element attribute contain    ${searchInput}     class            focused
 
 Focus on Select All when open dropdown without input
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown5
     Wait Until Element Is Enabled        ${dropdown}        10s
     set focus and press keys             ${dropdown}        RETURN
-    wait until element attribute value contain    ${selectAll}       class            focusVisible
+    wait until element attribute contain    ${selectAll}       class            focusVisible
 
 Focus on first element when open simple dropdown
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown7
     Wait Until Element Is Enabled        ${dropdown}        10s
     set focus and press keys             ${dropdown}        RETURN
-    wait until element attribute value contain    ${item1}           class            focused
+    wait until element attribute contain    ${item1}           class            focused
 
 Focus on apply button with tab on last item
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
@@ -71,7 +71,7 @@ Focus on apply button with tab on last item
     Click Element                        ${dropdown}
     Wait Until Element Is Visible        ${item4}           2s
     set focus and press keys             ${item4}           TAB
-    wait until element attribute value contain    ${buttonApply}     class            focusVisible
+    wait until element attribute contain    ${buttonApply}     class            focusVisible
 
 Focus on cancel button with tab on apply button
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
@@ -79,4 +79,4 @@ Focus on cancel button with tab on apply button
     Click Element                        ${dropdown}
     Wait Until Element Is Visible        ${item4}           2s
     set focus and press keys             ${buttonApply}     TAB
-    wait until element attribute value contain    ${buttonCancel}    class            focusVisible
+    wait until element attribute contain    ${buttonCancel}    class            focusVisible
