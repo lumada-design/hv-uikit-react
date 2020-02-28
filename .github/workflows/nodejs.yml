@@ -4,9 +4,8 @@ on: [push]
 
 jobs:
   build:
-    #runs-on: [self-hosted, linux]
-    
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
+    #runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -21,7 +20,6 @@ jobs:
         registry-url: https://nexus.pentaho.org/repository/group-npm/
         scope: hv
     - run: npm config list
-    - run: cp /home/runner/work/_temp/.npmrc ~/.npmrc
     - run: npm i
     - run: npm run bootstrap
     #- run: npm run test
