@@ -153,7 +153,7 @@ samples.smoke = (
           disabled
           classes=""
           startIcon={CautionS}
-          onclick={() => myAlert("incorrect")}
+          onClick={() => myAlert("incorrect")}
         >
           all properties
         </HvButton>

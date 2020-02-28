@@ -58,7 +58,7 @@ const CustomSample = () => {
       subheader={toggleB ? "Compressor" : "onChange()"}
       id="cardId"
       innerCardContent={<SingleContent classes={styles}/>}
-      ariaLabel={"Asset Avatar L90 press enter or space to use this card main action"}
+      aria-label={"Asset Avatar L90 press enter or space to use this card main action"}
       onClickAction={()=>{setToggleA(!toggleA)}}
       onChange={()=>{setToggleB(!toggleB)}}
       isSelectable
