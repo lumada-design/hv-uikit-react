@@ -6427,7 +6427,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         disabled={false}
                                         id="test-dropdown-values-actions-apply"
                                         onClick={[Function]}
-                                        startIcon={null}
                                       >
                                         <HvButton
                                           category="ghost"
@@ -6452,7 +6451,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           disabled={false}
                                           id="test-dropdown-values-actions-apply"
                                           onClick={[Function]}
-                                          startIcon={null}
                                         >
                                           <WithStyles(ForwardRef(Button))
                                             className="HvDropdownActions-button-1158"
@@ -6462,6 +6460,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "disabled": "HvButton-ghostDisabled-1166",
                                                 "outlinedPrimary": "HvButton-secondary-1163",
                                                 "root": "HvButton-root-1159",
+                                                "startIcon": "HvButton-startIcon-1171",
                                                 "textPrimary": "HvButton-ghost-1165",
                                               }
                                             }
@@ -6499,7 +6498,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   "root": "MuiButton-root HvButton-root-1159",
                                                   "sizeLarge": "MuiButton-sizeLarge",
                                                   "sizeSmall": "MuiButton-sizeSmall",
-                                                  "startIcon": "MuiButton-startIcon",
+                                                  "startIcon": "MuiButton-startIcon HvButton-startIcon-1171",
                                                   "text": "MuiButton-text",
                                                   "textPrimary": "MuiButton-textPrimary HvButton-ghost-1165",
                                                   "textSecondary": "MuiButton-textSecondary",
@@ -6580,7 +6579,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         disabled={false}
                                         id="test-dropdown-values-actions-cancel"
                                         onClick={[Function]}
-                                        startIcon={null}
                                       >
                                         <HvButton
                                           category="ghost"
@@ -6605,7 +6603,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           disabled={false}
                                           id="test-dropdown-values-actions-cancel"
                                           onClick={[Function]}
-                                          startIcon={null}
                                         >
                                           <WithStyles(ForwardRef(Button))
                                             className="HvDropdownActions-button-1158"
@@ -6615,6 +6612,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "disabled": "HvButton-ghostDisabled-1166",
                                                 "outlinedPrimary": "HvButton-secondary-1163",
                                                 "root": "HvButton-root-1159",
+                                                "startIcon": "HvButton-startIcon-1171",
                                                 "textPrimary": "HvButton-ghost-1165",
                                               }
                                             }
@@ -6652,7 +6650,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   "root": "MuiButton-root HvButton-root-1159",
                                                   "sizeLarge": "MuiButton-sizeLarge",
                                                   "sizeSmall": "MuiButton-sizeSmall",
-                                                  "startIcon": "MuiButton-startIcon",
+                                                  "startIcon": "MuiButton-startIcon HvButton-startIcon-1171",
                                                   "text": "MuiButton-text",
                                                   "textPrimary": "MuiButton-textPrimary HvButton-ghost-1165",
                                                   "textSecondary": "MuiButton-textSecondary",

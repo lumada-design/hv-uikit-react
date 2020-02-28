@@ -782,7 +782,6 @@ exports[`Button should render correctly 1`] = `
       className=""
       disabled={false}
       onClick={[Function]}
-      startIcon={null}
     >
       <HvButton
         category="primary"
@@ -806,7 +805,6 @@ exports[`Button should render correctly 1`] = `
         }
         disabled={false}
         onClick={[Function]}
-        startIcon={null}
       >
         <WithStyles(ForwardRef(Button))
           className=""
@@ -816,6 +814,7 @@ exports[`Button should render correctly 1`] = `
               "disabled": "HvButton-primaryDisabled-49",
               "outlinedPrimary": "HvButton-secondary-50",
               "root": "HvButton-root-46",
+              "startIcon": "HvButton-startIcon-58",
               "textPrimary": "HvButton-ghost-52",
             }
           }
@@ -852,7 +851,7 @@ exports[`Button should render correctly 1`] = `
                 "root": "MuiButton-root HvButton-root-46",
                 "sizeLarge": "MuiButton-sizeLarge",
                 "sizeSmall": "MuiButton-sizeSmall",
-                "startIcon": "MuiButton-startIcon",
+                "startIcon": "MuiButton-startIcon HvButton-startIcon-58",
                 "text": "MuiButton-text",
                 "textPrimary": "MuiButton-textPrimary HvButton-ghost-52",
                 "textSecondary": "MuiButton-textSecondary",

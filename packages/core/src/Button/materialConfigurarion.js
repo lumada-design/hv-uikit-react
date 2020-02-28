@@ -53,7 +53,8 @@ const getMaterialConfiguration = (classes, category) => {
     containedPrimary: classes.primary,
     outlinedPrimary: classes.secondary,
     textPrimary: classes.ghost,
-    disabled: classes.primaryDisabled
+    disabled: classes.primaryDisabled,
+    startIcon: classes.startIcon
   };
 
   switch (category) {
@@ -61,7 +62,9 @@ const getMaterialConfiguration = (classes, category) => {
     case categoryValues.primary:
       return {
         ...materialContained,
-        classes: styling
+        classes: {
+          ...styling
+        }
       };
     case categoryValues.secondary:
       return {
@@ -95,6 +98,14 @@ const getMaterialConfiguration = (classes, category) => {
           ...styling,
           textPrimary: classes.semantic,
           disabled: classes.semanticDisabled
+        }
+      };
+    case categoryValues.icon:
+      return {
+        ...materialText,
+        classes: {
+          ...styling,
+          disabled: classes.ghostDisabled
         }
       };
   }

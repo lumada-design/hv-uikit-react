@@ -46,15 +46,10 @@ const styles = theme => {
     },
     rootIcon: {
       padding: 0,
-      textTransform: "none",
-      "&:hover,&:focus": {},
-      "&:active": {},
-      "&:focus": {
-        ...outlineStyles
-      },
-      cursor: "pointer",
-      minHeight: "32px",
-      minWidth: "32px",
+      height: "unset",
+      width: "unset",
+      minHeight: "unset",
+      minWidth: "unset",
       ...theme.hv.typography.highlightText
     },
     primary: {
@@ -204,7 +199,8 @@ const styles = theme => {
       cursor: "not-allowed"
     },
     startIcon: {
-      marginLeft: "-8px"
+      marginLeft: -8,
+      marginRight: 0
     }
   };
 };
