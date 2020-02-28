@@ -20,7 +20,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: https://nexus.pentaho.org/repository/group-npm/
         scope: hv
-    - run: npm config list
+    - run: npm config ls -l
     - run: cat /home/runner/work/_temp/.npmrc
     #- run: npm ci
     #- run: npm run bootstrap
