@@ -17,10 +17,10 @@ jobs:
       uses: actions/setup-node@v1.4.0
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: https://nexus.pentaho.org/repository/group-npm/
-        scope: hv
-    - run: npm config list
-    - run: npm i
+    - run: |
+        npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
+        npm config list
+    - run: npm ci
     - run: npm run bootstrap
     #- run: npm run test
     #  env:
