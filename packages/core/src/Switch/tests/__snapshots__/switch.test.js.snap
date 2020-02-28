@@ -424,7 +424,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1648,7 +1648,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -2872,7 +2872,7 @@ exports[`Switch label click label can be clicked 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -4096,7 +4096,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -5320,7 +5320,7 @@ exports[`Switch with no label display but with custom label configuration should
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -6544,7 +6544,7 @@ exports[`Switch withStyles should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",

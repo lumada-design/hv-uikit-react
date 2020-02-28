@@ -424,7 +424,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1431,7 +1431,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -2438,7 +2438,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -4450,7 +4450,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -5459,7 +5459,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -6468,7 +6468,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",

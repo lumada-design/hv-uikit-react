@@ -163,7 +163,7 @@ const DropZone = ({
               <Doc
                 iconSize="M"
                 className={classes.dropzoneAreaIcon}
-                color={disabled ? "atmo6" : "base2"}
+                color={disabled ? "atmo6" : "acce1"}
               />
               <div className={classes.dropzoneAreaLabels}>
                 <HvTypography className={classes.dragText}>

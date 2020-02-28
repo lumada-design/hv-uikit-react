@@ -34,10 +34,6 @@ const styles = theme => ({
   },
   noIcon: {
     paddingLeft: `${theme.hv.spacing.xs}px`
-  },
-  box: {
-    width: "32px",
-    height: "32px"
   }
 });
 

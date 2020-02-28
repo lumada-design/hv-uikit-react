@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.5...@hv/uikit-react-lab@2.0.0-next.0) (2020-02-14)
+## [1.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.0...@hv/uikit-react-lab@1.18.1) (2020-02-28)
+
+
+### Bug Fixes
+
+* **templates:** alignment and colors. [#1174](https://github.com/pentaho/hv-uikit-react/issues/1174) ([024138e](https://github.com/pentaho/hv-uikit-react/commit/024138e8c163d9d80dbc463ff448c431e3a7152e))
+
+
+
+
+
 # [1.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.6...@hv/uikit-react-lab@1.18.0) (2020-02-20)
 
 

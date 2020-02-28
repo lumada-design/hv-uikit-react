@@ -57,6 +57,9 @@ const Footer = ({
             "aria-labelledby": checkboxAriaLabelledBy,
             "aria-describedby": checkboxAriaDescribedBy
           }}
+          inputProps={{
+            "aria-label": "card-checkbox-input",
+          }}
         />
       </div>
     )}

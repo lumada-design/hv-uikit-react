@@ -424,7 +424,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1399,6 +1399,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                   checked={false}
                                   className=""
                                   disabled={false}
+                                  inputProps={
+                                    Object {
+                                      "aria-label": "card-checkbox-input",
+                                    }
+                                  }
                                   label=""
                                   labelPlacement="end"
                                   onChange={[Function]}
@@ -1427,6 +1432,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                       }
                                     }
                                     disabled={false}
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "card-checkbox-input",
+                                      }
+                                    }
                                     label=""
                                     labelPlacement="end"
                                     onChange={[Function]}
@@ -1464,6 +1474,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                             <ForwardRef(WithStyles)
                                               className="HvCheckBox-icon-129"
                                             />
+                                          }
+                                          inputProps={
+                                            Object {
+                                              "aria-label": "card-checkbox-input",
+                                            }
                                           }
                                           onBlur={[Function]}
                                           onChange={[Function]}
@@ -1512,6 +1527,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 className="HvCheckBox-icon-129"
                                               />
                                             }
+                                            inputProps={
+                                              Object {
+                                                "aria-label": "card-checkbox-input",
+                                              }
+                                            }
                                             onBlur={[Function]}
                                             onChange={[Function]}
                                             value="value"
@@ -1549,6 +1569,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                               <ForwardRef(WithStyles)
                                                 className="HvCheckBox-icon-129"
                                               />
+                                            }
+                                            inputProps={
+                                              Object {
+                                                "aria-label": "card-checkbox-input",
+                                              }
                                             }
                                             onBlur={[Function]}
                                             onChange={[Function]}
@@ -1588,6 +1613,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   className="HvCheckBox-icon-129"
                                                 />
                                               }
+                                              inputProps={
+                                                Object {
+                                                  "aria-label": "card-checkbox-input",
+                                                }
+                                              }
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               value="value"
@@ -1622,6 +1652,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 id="hv-checkbox-2-input"
                                                 inputProps={
                                                   Object {
+                                                    "aria-label": "card-checkbox-input",
                                                     "data-indeterminate": false,
                                                   }
                                                 }
@@ -1661,6 +1692,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   id="hv-checkbox-2-input"
                                                   inputProps={
                                                     Object {
+                                                      "aria-label": "card-checkbox-input",
                                                       "data-indeterminate": false,
                                                     }
                                                   }
@@ -1761,6 +1793,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                               className="MuiIconButton-label"
                                                             >
                                                               <input
+                                                                aria-label="card-checkbox-input"
                                                                 checked={false}
                                                                 className="PrivateSwitchBase-input-145"
                                                                 data-indeterminate={false}

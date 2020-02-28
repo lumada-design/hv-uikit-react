@@ -5,6 +5,7 @@ export default (
   <HvBreadCrumb
     url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
     useRouter={false}
-    id='breadcrumb4'
+    id="breadcrumb4"
+    aria-label="Breadcrumb"
   />
 );

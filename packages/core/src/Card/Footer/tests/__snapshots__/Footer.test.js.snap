@@ -212,6 +212,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         </HvButton>
       </WithStyles(HvButton)>
       <WithStyles(DropDownMenu)
+        aria-label="-more-actions"
         classes={
           Object {
             "root": "HvActions-dropDownMenu-8",
@@ -247,6 +248,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         placement="left"
       >
         <DropDownMenu
+          aria-label="-more-actions"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon-56",
@@ -290,10 +292,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           >
             <WithStyles(ForwardRef(IconButton))
               aria-haspopup="true"
+              aria-label="-more-actions"
               buttonRef={
                 Object {
                   "current": <button
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                     id="hv-dropdown-menu1-icon-button"
                     tabindex="0"
@@ -331,10 +335,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             >
               <ForwardRef(IconButton)
                 aria-haspopup="true"
+                aria-label="-more-actions"
                 buttonRef={
                   Object {
                     "current": <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                       id="hv-dropdown-menu1-icon-button"
                       tabindex="0"
@@ -385,10 +391,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   aria-haspopup="true"
+                  aria-label="-more-actions"
                   buttonRef={
                     Object {
                       "current": <button
                         aria-haspopup="true"
+                        aria-label="-more-actions"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                         id="hv-dropdown-menu1-icon-button"
                         tabindex="0"
@@ -428,10 +436,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 >
                   <ForwardRef(ButtonBase)
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     buttonRef={
                       Object {
                         "current": <button
                           aria-haspopup="true"
+                          aria-label="-more-actions"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                           id="hv-dropdown-menu1-icon-button"
                           tabindex="0"
@@ -479,6 +489,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   >
                     <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-56"
                       disabled={false}
                       id="hv-dropdown-menu1-icon-button"
@@ -619,6 +630,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       className="HvActions-actionContainer-79"
     >
       <WithStyles(DropDownMenu)
+        aria-label="-more-actions"
         classes={
           Object {
             "root": "HvActions-dropDownMenu-80",
@@ -660,6 +672,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         placement="left"
       >
         <DropDownMenu
+          aria-label="-more-actions"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon-83",
@@ -709,10 +722,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           >
             <WithStyles(ForwardRef(IconButton))
               aria-haspopup="true"
+              aria-label="-more-actions"
               buttonRef={
                 Object {
                   "current": <button
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                     id="hv-dropdown-menu2-icon-button"
                     tabindex="0"
@@ -750,10 +765,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
             >
               <ForwardRef(IconButton)
                 aria-haspopup="true"
+                aria-label="-more-actions"
                 buttonRef={
                   Object {
                     "current": <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                       id="hv-dropdown-menu2-icon-button"
                       tabindex="0"
@@ -804,10 +821,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   aria-haspopup="true"
+                  aria-label="-more-actions"
                   buttonRef={
                     Object {
                       "current": <button
                         aria-haspopup="true"
+                        aria-label="-more-actions"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                         id="hv-dropdown-menu2-icon-button"
                         tabindex="0"
@@ -847,10 +866,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 >
                   <ForwardRef(ButtonBase)
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     buttonRef={
                       Object {
                         "current": <button
                           aria-haspopup="true"
+                          aria-label="-more-actions"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                           id="hv-dropdown-menu2-icon-button"
                           tabindex="0"
@@ -898,6 +919,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   >
                     <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-83"
                       disabled={false}
                       id="hv-dropdown-menu2-icon-button"
@@ -1344,6 +1366,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         </HvButton>
       </WithStyles(HvButton)>
       <WithStyles(DropDownMenu)
+        aria-label="-more-actions"
         classes={
           Object {
             "root": "HvActions-dropDownMenu-110",
@@ -1373,6 +1396,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         placement="left"
       >
         <DropDownMenu
+          aria-label="-more-actions"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon-158",
@@ -1410,10 +1434,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           >
             <WithStyles(ForwardRef(IconButton))
               aria-haspopup="true"
+              aria-label="-more-actions"
               buttonRef={
                 Object {
                   "current": <button
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                     id="hv-dropdown-menu3-icon-button"
                     tabindex="0"
@@ -1451,10 +1477,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             >
               <ForwardRef(IconButton)
                 aria-haspopup="true"
+                aria-label="-more-actions"
                 buttonRef={
                   Object {
                     "current": <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                       id="hv-dropdown-menu3-icon-button"
                       tabindex="0"
@@ -1505,10 +1533,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   aria-haspopup="true"
+                  aria-label="-more-actions"
                   buttonRef={
                     Object {
                       "current": <button
                         aria-haspopup="true"
+                        aria-label="-more-actions"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                         id="hv-dropdown-menu3-icon-button"
                         tabindex="0"
@@ -1548,10 +1578,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 >
                   <ForwardRef(ButtonBase)
                     aria-haspopup="true"
+                    aria-label="-more-actions"
                     buttonRef={
                       Object {
                         "current": <button
                           aria-haspopup="true"
+                          aria-label="-more-actions"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                           id="hv-dropdown-menu3-icon-button"
                           tabindex="0"
@@ -1599,6 +1631,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   >
                     <button
                       aria-haspopup="true"
+                      aria-label="-more-actions"
                       className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-158"
                       disabled={false}
                       id="hv-dropdown-menu3-icon-button"

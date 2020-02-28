@@ -6,6 +6,7 @@ import Separator from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import MoreOptions from "@hv/uikit-react-icons/dist/Generic/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
+import uniqueId from "lodash/uniqueId";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";
@@ -27,13 +28,16 @@ const removeExtension = label =>
  * @returns {*}
  * @constructor
  */
-const LastPathElement = ({ label }) => (
-  <HvTypography variant="sText">
-    {startCase(removeExtension(label))}
-  </HvTypography>
+const LastPathElement = ({ classes, label }) => (
+  <li className={classes.centerContainer}>
+    <HvTypography variant="sText">
+      {startCase(removeExtension(label))}
+    </HvTypography>
+  </li>
 );
 
 LastPathElement.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
   label: PropTypes.string.isRequired
 };
 
@@ -75,12 +79,12 @@ Page.propTypes = {
  * @constructor
  */
 const PathElement = ({ classes, children }) => (
-  <div className={classes.centerContainer}>
+  <li className={classes.centerContainer}>
     {children}
-    <div className={classes.separator}>
+    <div className={classes.separator} aria-hidden>
       <Separator className={classes.separatorContainer} />
     </div>
-  </div>
+  </li>
 );
 
 PathElement.propTypes = {
@@ -103,7 +107,12 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
   listRoute.splice(
     1,
     nbrElemToSubMenu,
-    <HvDropDownMenu icon={<MoreOptions />} dataList={subMenuList} />
+    <HvDropDownMenu
+      style={{ width: 32, height: 32 }}
+      icon={<MoreOptions />}
+      dataList={subMenuList}
+      aria-label="dropdownMenu"
+    />
   );
 
   return listRoute;
@@ -126,10 +135,13 @@ const BreadCrumb = ({
   useRouter,
   listRoute,
   maxVisible,
-  url
+  url,
+  ...other
 }) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
+
+  const internalId = id || uniqueId("hv-breadcrumb-");
 
   // build the listPath object list
   if (!isNil(url)) {
@@ -159,28 +171,30 @@ const BreadCrumb = ({
   const lastIndex = breadcrumbPath.length - 1;
 
   return (
-    <div id={id} className={clsx(classes.root, className)}>
-      {listPath.map((elem, index) => {
-        const key = `key_${index}`;
+    <nav id={internalId} className={clsx(classes.root, className)} {...other}>
+      <ol className={classes.orderedList}>
+        {listPath.map((elem, index) => {
+          const key = `key_${index}`;
 
-        return index === lastIndex ? (
-          <LastPathElement label={elem.label} key={key} />
-        ) : (
-          <PathElement classes={classes} key={key}>
-            {React.isValidElement(elem) ? (
-              elem
-            ) : (
-              <Page
-                key={key}
-                useRouter={useRouter}
-                elem={elem}
-                classes={classes}
-              />
-            )}
-          </PathElement>
-        );
-      })}
-    </div>
+          return index === lastIndex ? (
+            <LastPathElement classes={classes} label={elem.label} key={key} />
+          ) : (
+            <PathElement classes={classes} key={key}>
+              {React.isValidElement(elem) ? (
+                elem
+              ) : (
+                <Page
+                  key={key}
+                  useRouter={useRouter}
+                  elem={elem}
+                  classes={classes}
+                />
+              )}
+            </PathElement>
+          );
+        })}
+      </ol>
+    </nav>
   );
 };
 BreadCrumb.propTypes = {

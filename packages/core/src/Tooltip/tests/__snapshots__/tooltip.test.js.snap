@@ -424,7 +424,7 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1402,7 +1402,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -2380,7 +2380,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",

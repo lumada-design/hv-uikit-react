@@ -424,7 +424,7 @@ exports[`TimePicker should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",

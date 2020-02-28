@@ -1,37 +1,11 @@
 [
     {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p class=\"Component-infoText-204 Component-baseFontFamily-208 Component-margin-209 HvTextArea-inline-159 HvTextArea-separator-160 HvTextArea-maxCharacter-162\" theme=\"[object Object]\">/</p>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(2)",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"
     },
     {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.71:1. Recommendation:  change text colour to #737373.",
-        "context": "<p class=\"Component-infoText-204 Component-baseFontFamily-208 Component-margin-209 HvTextArea-inline-159 HvTextArea-maxCharacter-162\" theme=\"[object Object]\">10</p>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(3)",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"
     },
     {
-        "code": "color-contrast",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI)",
-        "context": "<p class=\"Component-infoText-204 Component-baseFontFamily-208 Component-margin-209 HvTextArea-inline-159 HvTextArea-maxCharacter-162\" theme=\"[object Object]\">10</p>",
-        "selector": "#root > div:nth-child(2) > div > div > div > div > div:nth-child(2) > p:nth-child(3)",
-        "runner": "axe",
-        "runnerExtras": {
-            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
-            "impact": "serious",
-            "help": "Elements must have sufficient color contrast",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=axeAPI"
-        }
+        "code": "color-contrast"
     }
 ]

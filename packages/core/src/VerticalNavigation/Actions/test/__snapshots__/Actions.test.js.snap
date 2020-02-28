@@ -424,7 +424,7 @@ exports[`Actions should be able to render 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -782,7 +782,6 @@ exports[`Actions should be able to render 1`] = `
         classes={
           Object {
             "action": "HvVerticalNavigationActions-action-2",
-            "box": "HvVerticalNavigationActions-box-4",
             "noIcon": "HvVerticalNavigationActions-noIcon-3",
             "root": "HvVerticalNavigationActions-root-1",
           }
@@ -799,17 +798,16 @@ exports[`Actions should be able to render 1`] = `
             <Action
               classes={
                 Object {
-                  "action": "HvVerticalNavigationAction-action-6",
-                  "box": "HvVerticalNavigationAction-box-8",
-                  "noIcon": "HvVerticalNavigationAction-noIcon-7",
-                  "root": "HvVerticalNavigationAction-root-5",
+                  "action": "HvVerticalNavigationAction-action-5",
+                  "noIcon": "HvVerticalNavigationAction-noIcon-6",
+                  "root": "HvVerticalNavigationAction-root-4",
                 }
               }
               icon={<ForwardRef(WithStyles) />}
               label="Action 1"
             >
               <WithStyles(ForwardRef)
-                className="HvVerticalNavigationAction-action-6"
+                className="HvVerticalNavigationAction-action-5"
                 component="div"
                 id="hv-verticalnavigation-action-2-button"
                 onKeyDown={[Function]}
@@ -819,34 +817,34 @@ exports[`Actions should be able to render 1`] = `
                 variant="normalText"
               >
                 <ForwardRef
-                  className="HvVerticalNavigationAction-action-6"
+                  className="HvVerticalNavigationAction-action-5"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-11",
-                      "4xlTitle": "HvTypography-4xlTitle-10",
-                      "5xlTitle": "HvTypography-5xlTitle-9",
-                      "baseFontFamily": "HvTypography-baseFontFamily-32",
-                      "disabledButtonText": "HvTypography-disabledButtonText-23",
-                      "disabledText": "HvTypography-disabledText-30",
-                      "highlightText": "HvTypography-highlightText-19",
-                      "infoText": "HvTypography-infoText-28",
-                      "inlineLink": "HvTypography-inlineLink-22",
-                      "lTitle": "HvTypography-lTitle-14",
-                      "labelText": "HvTypography-labelText-27",
-                      "mTitle": "HvTypography-mTitle-15",
-                      "margin": "HvTypography-margin-33",
-                      "normalText": "HvTypography-normalText-20",
-                      "placeholderText": "HvTypography-placeholderText-24",
-                      "sLink": "HvTypography-sLink-29",
-                      "sText": "HvTypography-sText-26",
-                      "sTitle": "HvTypography-sTitle-16",
-                      "selectedNavText": "HvTypography-selectedNavText-25",
-                      "selectedText": "HvTypography-selectedText-21",
-                      "vizText": "HvTypography-vizText-31",
-                      "xlTitle": "HvTypography-xlTitle-13",
-                      "xsTitle": "HvTypography-xsTitle-17",
-                      "xxlTitle": "HvTypography-xxlTitle-12",
-                      "xxsTitle": "HvTypography-xxsTitle-18",
+                      "3xlTitle": "HvTypography-3xlTitle-9",
+                      "4xlTitle": "HvTypography-4xlTitle-8",
+                      "5xlTitle": "HvTypography-5xlTitle-7",
+                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "disabledButtonText": "HvTypography-disabledButtonText-21",
+                      "disabledText": "HvTypography-disabledText-28",
+                      "highlightText": "HvTypography-highlightText-17",
+                      "infoText": "HvTypography-infoText-26",
+                      "inlineLink": "HvTypography-inlineLink-20",
+                      "lTitle": "HvTypography-lTitle-12",
+                      "labelText": "HvTypography-labelText-25",
+                      "mTitle": "HvTypography-mTitle-13",
+                      "margin": "HvTypography-margin-31",
+                      "normalText": "HvTypography-normalText-18",
+                      "placeholderText": "HvTypography-placeholderText-22",
+                      "sLink": "HvTypography-sLink-27",
+                      "sText": "HvTypography-sText-24",
+                      "sTitle": "HvTypography-sTitle-14",
+                      "selectedNavText": "HvTypography-selectedNavText-23",
+                      "selectedText": "HvTypography-selectedText-19",
+                      "vizText": "HvTypography-vizText-29",
+                      "xlTitle": "HvTypography-xlTitle-11",
+                      "xsTitle": "HvTypography-xsTitle-15",
+                      "xxlTitle": "HvTypography-xxlTitle-10",
+                      "xxsTitle": "HvTypography-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -858,29 +856,45 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-20 HvTypography-baseFontFamily-32 HvTypography-margin-33 HvVerticalNavigationAction-action-6"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5"
                     id="hv-verticalnavigation-action-2-button"
                     onKeyDown={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <WithStyles(Play)
-                      className="HvVerticalNavigationAction-box-8"
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
                     >
                       <Play
-                        className="HvVerticalNavigationAction-box-8"
+                        boxStyles={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
                         classes={
                           Object {
-                            "root": "HvIconPlay-root-34",
-                            "rootL": "HvIconPlay-rootL-38",
-                            "rootM": "HvIconPlay-rootM-37",
-                            "rootS": "HvIconPlay-rootS-36",
-                            "rootXs": "HvIconPlay-rootXs-35",
+                            "root": "HvIconPlay-root-32",
+                            "rootL": "HvIconPlay-rootL-36",
+                            "rootM": "HvIconPlay-rootM-35",
+                            "rootS": "HvIconPlay-rootS-34",
+                            "rootXs": "HvIconPlay-rootXs-33",
                           }
                         }
                       >
                         <div
-                          className="HvVerticalNavigationAction-box-8 HvIconPlay-root-34 HvIconPlay-rootS-36"
+                          className="HvIconPlay-root-32 HvIconPlay-rootS-34"
+                          style={
+                            Object {
+                              "height": "32px",
+                              "width": "32px",
+                            }
+                          }
                         >
                           <svg
                             focusable={false}
@@ -910,16 +924,15 @@ exports[`Actions should be able to render 1`] = `
             <Action
               classes={
                 Object {
-                  "action": "HvVerticalNavigationAction-action-6",
-                  "box": "HvVerticalNavigationAction-box-8",
-                  "noIcon": "HvVerticalNavigationAction-noIcon-7",
-                  "root": "HvVerticalNavigationAction-root-5",
+                  "action": "HvVerticalNavigationAction-action-5",
+                  "noIcon": "HvVerticalNavigationAction-noIcon-6",
+                  "root": "HvVerticalNavigationAction-root-4",
                 }
               }
               label="Action 2"
             >
               <WithStyles(ForwardRef)
-                className="HvVerticalNavigationAction-action-6 HvVerticalNavigationAction-noIcon-7"
+                className="HvVerticalNavigationAction-action-5 HvVerticalNavigationAction-noIcon-6"
                 component="div"
                 id="hv-verticalnavigation-action-3-button"
                 onKeyDown={[Function]}
@@ -929,34 +942,34 @@ exports[`Actions should be able to render 1`] = `
                 variant="normalText"
               >
                 <ForwardRef
-                  className="HvVerticalNavigationAction-action-6 HvVerticalNavigationAction-noIcon-7"
+                  className="HvVerticalNavigationAction-action-5 HvVerticalNavigationAction-noIcon-6"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-11",
-                      "4xlTitle": "HvTypography-4xlTitle-10",
-                      "5xlTitle": "HvTypography-5xlTitle-9",
-                      "baseFontFamily": "HvTypography-baseFontFamily-32",
-                      "disabledButtonText": "HvTypography-disabledButtonText-23",
-                      "disabledText": "HvTypography-disabledText-30",
-                      "highlightText": "HvTypography-highlightText-19",
-                      "infoText": "HvTypography-infoText-28",
-                      "inlineLink": "HvTypography-inlineLink-22",
-                      "lTitle": "HvTypography-lTitle-14",
-                      "labelText": "HvTypography-labelText-27",
-                      "mTitle": "HvTypography-mTitle-15",
-                      "margin": "HvTypography-margin-33",
-                      "normalText": "HvTypography-normalText-20",
-                      "placeholderText": "HvTypography-placeholderText-24",
-                      "sLink": "HvTypography-sLink-29",
-                      "sText": "HvTypography-sText-26",
-                      "sTitle": "HvTypography-sTitle-16",
-                      "selectedNavText": "HvTypography-selectedNavText-25",
-                      "selectedText": "HvTypography-selectedText-21",
-                      "vizText": "HvTypography-vizText-31",
-                      "xlTitle": "HvTypography-xlTitle-13",
-                      "xsTitle": "HvTypography-xsTitle-17",
-                      "xxlTitle": "HvTypography-xxlTitle-12",
-                      "xxsTitle": "HvTypography-xxsTitle-18",
+                      "3xlTitle": "HvTypography-3xlTitle-9",
+                      "4xlTitle": "HvTypography-4xlTitle-8",
+                      "5xlTitle": "HvTypography-5xlTitle-7",
+                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "disabledButtonText": "HvTypography-disabledButtonText-21",
+                      "disabledText": "HvTypography-disabledText-28",
+                      "highlightText": "HvTypography-highlightText-17",
+                      "infoText": "HvTypography-infoText-26",
+                      "inlineLink": "HvTypography-inlineLink-20",
+                      "lTitle": "HvTypography-lTitle-12",
+                      "labelText": "HvTypography-labelText-25",
+                      "mTitle": "HvTypography-mTitle-13",
+                      "margin": "HvTypography-margin-31",
+                      "normalText": "HvTypography-normalText-18",
+                      "placeholderText": "HvTypography-placeholderText-22",
+                      "sLink": "HvTypography-sLink-27",
+                      "sText": "HvTypography-sText-24",
+                      "sTitle": "HvTypography-sTitle-14",
+                      "selectedNavText": "HvTypography-selectedNavText-23",
+                      "selectedText": "HvTypography-selectedText-19",
+                      "vizText": "HvTypography-vizText-29",
+                      "xlTitle": "HvTypography-xlTitle-11",
+                      "xsTitle": "HvTypography-xsTitle-15",
+                      "xxlTitle": "HvTypography-xxlTitle-10",
+                      "xxsTitle": "HvTypography-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -968,7 +981,7 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-20 HvTypography-baseFontFamily-32 HvTypography-margin-33 HvVerticalNavigationAction-action-6 HvVerticalNavigationAction-noIcon-7"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5 HvVerticalNavigationAction-noIcon-6"
                     id="hv-verticalnavigation-action-3-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -987,17 +1000,16 @@ exports[`Actions should be able to render 1`] = `
             <Action
               classes={
                 Object {
-                  "action": "HvVerticalNavigationAction-action-6",
-                  "box": "HvVerticalNavigationAction-box-8",
-                  "noIcon": "HvVerticalNavigationAction-noIcon-7",
-                  "root": "HvVerticalNavigationAction-root-5",
+                  "action": "HvVerticalNavigationAction-action-5",
+                  "noIcon": "HvVerticalNavigationAction-noIcon-6",
+                  "root": "HvVerticalNavigationAction-root-4",
                 }
               }
               icon={<ForwardRef(WithStyles) />}
               label="Action 3"
             >
               <WithStyles(ForwardRef)
-                className="HvVerticalNavigationAction-action-6"
+                className="HvVerticalNavigationAction-action-5"
                 component="div"
                 id="hv-verticalnavigation-action-4-button"
                 onKeyDown={[Function]}
@@ -1007,34 +1019,34 @@ exports[`Actions should be able to render 1`] = `
                 variant="normalText"
               >
                 <ForwardRef
-                  className="HvVerticalNavigationAction-action-6"
+                  className="HvVerticalNavigationAction-action-5"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-11",
-                      "4xlTitle": "HvTypography-4xlTitle-10",
-                      "5xlTitle": "HvTypography-5xlTitle-9",
-                      "baseFontFamily": "HvTypography-baseFontFamily-32",
-                      "disabledButtonText": "HvTypography-disabledButtonText-23",
-                      "disabledText": "HvTypography-disabledText-30",
-                      "highlightText": "HvTypography-highlightText-19",
-                      "infoText": "HvTypography-infoText-28",
-                      "inlineLink": "HvTypography-inlineLink-22",
-                      "lTitle": "HvTypography-lTitle-14",
-                      "labelText": "HvTypography-labelText-27",
-                      "mTitle": "HvTypography-mTitle-15",
-                      "margin": "HvTypography-margin-33",
-                      "normalText": "HvTypography-normalText-20",
-                      "placeholderText": "HvTypography-placeholderText-24",
-                      "sLink": "HvTypography-sLink-29",
-                      "sText": "HvTypography-sText-26",
-                      "sTitle": "HvTypography-sTitle-16",
-                      "selectedNavText": "HvTypography-selectedNavText-25",
-                      "selectedText": "HvTypography-selectedText-21",
-                      "vizText": "HvTypography-vizText-31",
-                      "xlTitle": "HvTypography-xlTitle-13",
-                      "xsTitle": "HvTypography-xsTitle-17",
-                      "xxlTitle": "HvTypography-xxlTitle-12",
-                      "xxsTitle": "HvTypography-xxsTitle-18",
+                      "3xlTitle": "HvTypography-3xlTitle-9",
+                      "4xlTitle": "HvTypography-4xlTitle-8",
+                      "5xlTitle": "HvTypography-5xlTitle-7",
+                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "disabledButtonText": "HvTypography-disabledButtonText-21",
+                      "disabledText": "HvTypography-disabledText-28",
+                      "highlightText": "HvTypography-highlightText-17",
+                      "infoText": "HvTypography-infoText-26",
+                      "inlineLink": "HvTypography-inlineLink-20",
+                      "lTitle": "HvTypography-lTitle-12",
+                      "labelText": "HvTypography-labelText-25",
+                      "mTitle": "HvTypography-mTitle-13",
+                      "margin": "HvTypography-margin-31",
+                      "normalText": "HvTypography-normalText-18",
+                      "placeholderText": "HvTypography-placeholderText-22",
+                      "sLink": "HvTypography-sLink-27",
+                      "sText": "HvTypography-sText-24",
+                      "sTitle": "HvTypography-sTitle-14",
+                      "selectedNavText": "HvTypography-selectedNavText-23",
+                      "selectedText": "HvTypography-selectedText-19",
+                      "vizText": "HvTypography-vizText-29",
+                      "xlTitle": "HvTypography-xlTitle-11",
+                      "xsTitle": "HvTypography-xsTitle-15",
+                      "xxlTitle": "HvTypography-xxlTitle-10",
+                      "xxsTitle": "HvTypography-xxsTitle-16",
                     }
                   }
                   component="div"
@@ -1046,29 +1058,45 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-20 HvTypography-baseFontFamily-32 HvTypography-margin-33 HvVerticalNavigationAction-action-6"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5"
                     id="hv-verticalnavigation-action-4-button"
                     onKeyDown={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <WithStyles(Stop)
-                      className="HvVerticalNavigationAction-box-8"
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
                     >
                       <Stop
-                        className="HvVerticalNavigationAction-box-8"
+                        boxStyles={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
                         classes={
                           Object {
-                            "root": "HvIconStop-root-39",
-                            "rootL": "HvIconStop-rootL-43",
-                            "rootM": "HvIconStop-rootM-42",
-                            "rootS": "HvIconStop-rootS-41",
-                            "rootXs": "HvIconStop-rootXs-40",
+                            "root": "HvIconStop-root-37",
+                            "rootL": "HvIconStop-rootL-41",
+                            "rootM": "HvIconStop-rootM-40",
+                            "rootS": "HvIconStop-rootS-39",
+                            "rootXs": "HvIconStop-rootXs-38",
                           }
                         }
                       >
                         <div
-                          className="HvVerticalNavigationAction-box-8 HvIconStop-root-39 HvIconStop-rootS-41"
+                          className="HvIconStop-root-37 HvIconStop-rootS-39"
+                          style={
+                            Object {
+                              "height": "32px",
+                              "width": "32px",
+                            }
+                          }
                         >
                           <svg
                             focusable={false}

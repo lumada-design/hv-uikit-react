@@ -424,7 +424,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -893,7 +893,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
               className=""
               classes={
                 Object {
-                  "box": "HvVerticalNavigationTreeView-box-15",
                   "collapsed": "HvVerticalNavigationTreeView-collapsed-8",
                   "content": "HvVerticalNavigationTreeView-content-14",
                   "disabled": "HvVerticalNavigationTreeView-disabled-5",
@@ -974,20 +973,19 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     className=""
                     classes={
                       Object {
-                        "box": "HvVerticalNavigationreeViewItem-box-29",
-                        "collapsed": "HvVerticalNavigationreeViewItem-collapsed-22",
-                        "content": "HvVerticalNavigationreeViewItem-content-28",
-                        "disabled": "HvVerticalNavigationreeViewItem-disabled-19",
-                        "expanded": "HvVerticalNavigationreeViewItem-expanded-23",
-                        "group": "HvVerticalNavigationreeViewItem-group-17",
-                        "noIcon": "HvVerticalNavigationreeViewItem-noIcon-26",
-                        "node": "HvVerticalNavigationreeViewItem-node-18",
-                        "root": "HvVerticalNavigationreeViewItem-root-16",
-                        "selectable": "HvVerticalNavigationreeViewItem-selectable-20",
-                        "selected": "HvVerticalNavigationreeViewItem-selected-24",
-                        "unselectable": "HvVerticalNavigationreeViewItem-unselectable-21",
-                        "unselected": "HvVerticalNavigationreeViewItem-unselected-25",
-                        "withIcon": "HvVerticalNavigationreeViewItem-withIcon-27",
+                        "collapsed": "HvVerticalNavigationreeViewItem-collapsed-21",
+                        "content": "HvVerticalNavigationreeViewItem-content-27",
+                        "disabled": "HvVerticalNavigationreeViewItem-disabled-18",
+                        "expanded": "HvVerticalNavigationreeViewItem-expanded-22",
+                        "group": "HvVerticalNavigationreeViewItem-group-16",
+                        "noIcon": "HvVerticalNavigationreeViewItem-noIcon-25",
+                        "node": "HvVerticalNavigationreeViewItem-node-17",
+                        "root": "HvVerticalNavigationreeViewItem-root-15",
+                        "selectable": "HvVerticalNavigationreeViewItem-selectable-19",
+                        "selected": "HvVerticalNavigationreeViewItem-selected-23",
+                        "unselectable": "HvVerticalNavigationreeViewItem-unselectable-20",
+                        "unselected": "HvVerticalNavigationreeViewItem-unselected-24",
+                        "withIcon": "HvVerticalNavigationreeViewItem-withIcon-26",
                       }
                     }
                     collapseIcon={null}
@@ -1038,24 +1036,25 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     selectable={null}
                   >
                     <li
-                      className="HvVerticalNavigationreeViewItem-node-18 HvVerticalNavigationreeViewItem-selectable-20 HvVerticalNavigationreeViewItem-unselected-25"
+                      className="HvVerticalNavigationreeViewItem-node-17 HvVerticalNavigationreeViewItem-selectable-19 HvVerticalNavigationreeViewItem-unselected-24"
                       data-hasicon={true}
                       id="hv-verticalnavigation-treeviewitem2"
                     >
                       <WithStyles(ForwardRef)
-                        className="HvVerticalNavigationreeViewItem-content-28"
+                        className="HvVerticalNavigationreeViewItem-content-27"
                         component="div"
                         id="hv-verticalnavigation-treeviewitem2-button"
                         innerRef={
                           Object {
                             "current": <div
-                              class="HvTypography-normalText-41 HvTypography-baseFontFamily-53 HvTypography-margin-54 HvVerticalNavigationreeViewItem-content-28"
+                              class="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationreeViewItem-content-27"
                               id="hv-verticalnavigation-treeviewitem2-button"
                               role="button"
                               tabindex="0"
                             >
                               <div
-                                class="HvVerticalNavigationreeViewItem-box-29 HvIconPlay-root-55 HvIconPlay-rootS-57"
+                                class="HvIconPlay-root-53 HvIconPlay-rootS-55"
+                                style="width: 32px; height: 32px;"
                               >
                                 <svg
                                   focusable="false"
@@ -1083,34 +1082,34 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         variant="normalText"
                       >
                         <ForwardRef
-                          className="HvVerticalNavigationreeViewItem-content-28"
+                          className="HvVerticalNavigationreeViewItem-content-27"
                           classes={
                             Object {
-                              "3xlTitle": "HvTypography-3xlTitle-32",
-                              "4xlTitle": "HvTypography-4xlTitle-31",
-                              "5xlTitle": "HvTypography-5xlTitle-30",
-                              "baseFontFamily": "HvTypography-baseFontFamily-53",
-                              "disabledButtonText": "HvTypography-disabledButtonText-44",
-                              "disabledText": "HvTypography-disabledText-51",
-                              "highlightText": "HvTypography-highlightText-40",
-                              "infoText": "HvTypography-infoText-49",
-                              "inlineLink": "HvTypography-inlineLink-43",
-                              "lTitle": "HvTypography-lTitle-35",
-                              "labelText": "HvTypography-labelText-48",
-                              "mTitle": "HvTypography-mTitle-36",
-                              "margin": "HvTypography-margin-54",
-                              "normalText": "HvTypography-normalText-41",
-                              "placeholderText": "HvTypography-placeholderText-45",
-                              "sLink": "HvTypography-sLink-50",
-                              "sText": "HvTypography-sText-47",
-                              "sTitle": "HvTypography-sTitle-37",
-                              "selectedNavText": "HvTypography-selectedNavText-46",
-                              "selectedText": "HvTypography-selectedText-42",
-                              "vizText": "HvTypography-vizText-52",
-                              "xlTitle": "HvTypography-xlTitle-34",
-                              "xsTitle": "HvTypography-xsTitle-38",
-                              "xxlTitle": "HvTypography-xxlTitle-33",
-                              "xxsTitle": "HvTypography-xxsTitle-39",
+                              "3xlTitle": "HvTypography-3xlTitle-30",
+                              "4xlTitle": "HvTypography-4xlTitle-29",
+                              "5xlTitle": "HvTypography-5xlTitle-28",
+                              "baseFontFamily": "HvTypography-baseFontFamily-51",
+                              "disabledButtonText": "HvTypography-disabledButtonText-42",
+                              "disabledText": "HvTypography-disabledText-49",
+                              "highlightText": "HvTypography-highlightText-38",
+                              "infoText": "HvTypography-infoText-47",
+                              "inlineLink": "HvTypography-inlineLink-41",
+                              "lTitle": "HvTypography-lTitle-33",
+                              "labelText": "HvTypography-labelText-46",
+                              "mTitle": "HvTypography-mTitle-34",
+                              "margin": "HvTypography-margin-52",
+                              "normalText": "HvTypography-normalText-39",
+                              "placeholderText": "HvTypography-placeholderText-43",
+                              "sLink": "HvTypography-sLink-48",
+                              "sText": "HvTypography-sText-45",
+                              "sTitle": "HvTypography-sTitle-35",
+                              "selectedNavText": "HvTypography-selectedNavText-44",
+                              "selectedText": "HvTypography-selectedText-40",
+                              "vizText": "HvTypography-vizText-50",
+                              "xlTitle": "HvTypography-xlTitle-32",
+                              "xsTitle": "HvTypography-xsTitle-36",
+                              "xxlTitle": "HvTypography-xxlTitle-31",
+                              "xxsTitle": "HvTypography-xxsTitle-37",
                             }
                           }
                           component="div"
@@ -1123,7 +1122,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           variant="normalText"
                         >
                           <div
-                            className="HvTypography-normalText-41 HvTypography-baseFontFamily-53 HvTypography-margin-54 HvVerticalNavigationreeViewItem-content-28"
+                            className="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationreeViewItem-content-27"
                             id="hv-verticalnavigation-treeviewitem2-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -1131,22 +1130,38 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                             tabIndex={0}
                           >
                             <WithStyles(Play)
-                              className="HvVerticalNavigationreeViewItem-box-29"
+                              boxStyles={
+                                Object {
+                                  "height": "32px",
+                                  "width": "32px",
+                                }
+                              }
                             >
                               <Play
-                                className="HvVerticalNavigationreeViewItem-box-29"
+                                boxStyles={
+                                  Object {
+                                    "height": "32px",
+                                    "width": "32px",
+                                  }
+                                }
                                 classes={
                                   Object {
-                                    "root": "HvIconPlay-root-55",
-                                    "rootL": "HvIconPlay-rootL-59",
-                                    "rootM": "HvIconPlay-rootM-58",
-                                    "rootS": "HvIconPlay-rootS-57",
-                                    "rootXs": "HvIconPlay-rootXs-56",
+                                    "root": "HvIconPlay-root-53",
+                                    "rootL": "HvIconPlay-rootL-57",
+                                    "rootM": "HvIconPlay-rootM-56",
+                                    "rootS": "HvIconPlay-rootS-55",
+                                    "rootXs": "HvIconPlay-rootXs-54",
                                   }
                                 }
                               >
                                 <div
-                                  className="HvVerticalNavigationreeViewItem-box-29 HvIconPlay-root-55 HvIconPlay-rootS-57"
+                                  className="HvIconPlay-root-53 HvIconPlay-rootS-55"
+                                  style={
+                                    Object {
+                                      "height": "32px",
+                                      "width": "32px",
+                                    }
+                                  }
                                 >
                                   <svg
                                     focusable={false}

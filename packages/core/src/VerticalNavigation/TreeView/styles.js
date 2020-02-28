@@ -118,10 +118,6 @@ const styles = theme => ({
         cursor: "not-allowed"
       }
     }
-  },
-  box: {
-    width: "32px",
-    height: "32px"
   }
 });
 

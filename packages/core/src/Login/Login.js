@@ -110,7 +110,8 @@ class HvLogin extends React.Component {
           className={classes.container}
           style={{
             backgroundImage: `url(${backgroundLoginImg})`,
-            backgroundSize: `${backgroundImageSize}`
+            backgroundSize: `${backgroundImageSize}`,
+            margin: 0
           }}
         >
           <HvGrid

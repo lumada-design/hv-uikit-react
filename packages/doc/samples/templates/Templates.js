@@ -27,6 +27,9 @@ const styles = () => ({
   },
   card: {
     maxWidth: "640px"
+  },
+  sema0: {
+    backgroundColor: "transparent"
   }
 });
 
@@ -64,12 +67,10 @@ const link = linkT => linkTo(linkT[0], linkT[1]);
 const Cards = ({ classes, containers }) =>
   containers.map((container, idx) => (
     <Grid item xs={4} sm={4} md={6} lg={4} xl={4} key={container.id}>
-      <Card>
-        <CardMedia
-          onClick={link(container.associatedStory)}
-          mediaHeight={282}
-          mediaPath={container.img}
-        />
+      <Card classes={{ sema0: classes.sema0 }}>
+        <CardMedia onClick={link(container.associatedStory)}>
+          <img src={container.img} className={classes.img} />
+        </CardMedia>
         <HvCardContent
           innerCardContent={
             <SingleContent classes={classes} labels={container.labels} />

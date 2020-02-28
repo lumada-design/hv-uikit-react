@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.1...@hv/uikit-react-doc@2.0.0-next.0) (2020-02-14)
+# [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.19.0...@hv/uikit-react-doc@1.20.0) (2020-02-28)
+
+
+### Bug Fixes
+
+* **breadcrumb:** accessibility review. [#1082](https://github.com/pentaho/hv-uikit-react/issues/1082) ([5d94d79](https://github.com/pentaho/hv-uikit-react/commit/5d94d79951b37f12b16226c9afa2b33fd7d1acb2))
+* **template:** navigation selection in different breakpoints. [#1167](https://github.com/pentaho/hv-uikit-react/issues/1167) ([87b5a46](https://github.com/pentaho/hv-uikit-react/commit/87b5a468c6ad8e45d1dce12079899edfc1a5ea41))
+* **templates:** alignment and colors. [#1174](https://github.com/pentaho/hv-uikit-react/issues/1174) ([024138e](https://github.com/pentaho/hv-uikit-react/commit/024138e8c163d9d80dbc463ff448c431e3a7152e))
+
+
+### Features
+
+* **tabs:** implement the component according to 1.2.1 DS version. [#245](https://github.com/pentaho/hv-uikit-react/issues/245) ([d7d5653](https://github.com/pentaho/hv-uikit-react/commit/d7d5653a52e230fa2f0d871468fa4c06947e42c9))
+
+
+
+
+
 # [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.2...@hv/uikit-react-doc@1.19.0) (2020-02-20)
 
 

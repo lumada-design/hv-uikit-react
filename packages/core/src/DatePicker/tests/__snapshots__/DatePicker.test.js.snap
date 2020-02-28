@@ -424,7 +424,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1265,7 +1265,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               "atmo7": "#999999",
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "base1": "#FFFFFF",
@@ -2134,7 +2134,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -2975,7 +2975,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               "atmo7": "#999999",
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "base1": "#FFFFFF",
@@ -3844,7 +3844,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -4683,7 +4683,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               "atmo7": "#999999",
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "base1": "#FFFFFF",
@@ -5599,7 +5599,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -6440,7 +6440,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               "atmo7": "#999999",
               "augmentColor": [Function],
               "background": Object {
-                "default": "#F9F9F9",
+                "default": "#F5F5F5",
                 "paper": "#fff",
               },
               "base1": "#FFFFFF",

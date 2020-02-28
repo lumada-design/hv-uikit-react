@@ -424,7 +424,7 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -790,6 +790,7 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
           Object {
             "centerContainer": "HvBreadCrumb-centerContainer-2",
             "link": "HvBreadCrumb-link-3",
+            "orderedList": "HvBreadCrumb-orderedList-6",
             "root": "HvBreadCrumb-root-1",
             "separator": "HvBreadCrumb-separator-4",
             "separatorContainer": "HvBreadCrumb-separatorContainer-5",
@@ -800,9 +801,14 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
         url={null}
         useRouter={false}
       >
-        <div
+        <nav
           className="HvBreadCrumb-root-1"
-        />
+          id="hv-breadcrumb-1"
+        >
+          <ol
+            className="HvBreadCrumb-orderedList-6"
+          />
+        </nav>
       </BreadCrumb>
     </WithStyles(BreadCrumb)>
   </ThemeProvider>

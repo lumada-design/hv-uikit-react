@@ -30,6 +30,7 @@
 | [File Uploader](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/FileUploader)                |         1.2.1         |
 | [Multi Button](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/MultiButton)                  |         1.2.1         |
 | [Pagination](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Pagination)                     |         1.2.1         |
+| [Tabs](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Tabs)                          |         1.2.1         |
 
 # Lab
 

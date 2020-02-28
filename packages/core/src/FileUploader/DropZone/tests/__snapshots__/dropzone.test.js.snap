@@ -424,7 +424,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",
@@ -1000,7 +1000,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           >
             <WithStyles(Doc)
               className="HvFileUploaderDropZone-dropzoneAreaIcon-50"
-              color="base2"
+              color="acce1"
               iconSize="M"
             >
               <Doc
@@ -1014,7 +1014,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                     "rootXs": "HvIconDoc-rootXs-79",
                   }
                 }
-                color="base2"
+                color="acce1"
                 iconSize="M"
               >
                 <div
@@ -1524,7 +1524,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           "atmo7": "#999999",
           "augmentColor": [Function],
           "background": Object {
-            "default": "#F9F9F9",
+            "default": "#F5F5F5",
             "paper": "#fff",
           },
           "base1": "#FFFFFF",

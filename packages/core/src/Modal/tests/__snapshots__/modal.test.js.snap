@@ -418,7 +418,7 @@ exports[`Modal Component allows external props to be added 1`] = `
         "atmo7": "#999999",
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "base1": "#FFFFFF",
@@ -1206,7 +1206,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
         "atmo7": "#999999",
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "base1": "#FFFFFF",
@@ -1999,7 +1999,7 @@ exports[`Modal Component should render correctly if closed 1`] = `
         "atmo7": "#999999",
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "base1": "#FFFFFF",
@@ -2785,7 +2785,7 @@ exports[`Modal Component should render correctly if opened 1`] = `
         "atmo7": "#999999",
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "base1": "#FFFFFF",
@@ -3571,7 +3571,7 @@ exports[`Modal withStyles should render correctly 1`] = `
         "atmo7": "#999999",
         "augmentColor": [Function],
         "background": Object {
-          "default": "#F9F9F9",
+          "default": "#F5F5F5",
           "paper": "#fff",
         },
         "base1": "#FFFFFF",

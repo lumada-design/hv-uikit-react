@@ -16,22 +16,28 @@ const data = [
   },
   {
     label: "Label 4",
-    path: "route2"
+    path: "route4"
   },
   {
     label: "Label 5",
-    path: "route3"
+    path: "route5"
   },
   {
     label: "Label 6",
-    path: "route2"
+    path: "route6"
   },
   {
     label: "Label 7",
-    path: "route3"
+    path: "route7"
   }
 ];
 
 export default (
-  <HvBreadCrumb listRoute={data} useRouter={false} maxVisible={5}  id='breadcrumb2' />
+  <HvBreadCrumb
+    listRoute={data}
+    useRouter={false}
+    maxVisible={5}
+    id="breadcrumb2"
+    aria-label="Breadcrumb"
+  />
 );

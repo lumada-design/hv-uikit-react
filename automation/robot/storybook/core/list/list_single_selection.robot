@@ -5,7 +5,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke
+Force Tags        smoke
 Documentation     options selections just for lists with single selection
 
 

@@ -4,7 +4,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Default Tags      smoke
+Force Tags        smoke
 
 *** Variables ***
 ${input}                    checkLabel-input

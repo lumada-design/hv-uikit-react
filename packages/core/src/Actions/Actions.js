@@ -54,6 +54,7 @@ const Actions = ({
             iconCallback: action.iconCallback,
             icon: action.icon
           }))}
+          aria-label={`${id}-more-actions`}
           keepOpened={false}
           disablePortal={false}
         />

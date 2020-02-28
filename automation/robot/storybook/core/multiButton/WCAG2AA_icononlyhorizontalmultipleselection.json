@@ -1,37 +1,11 @@
 [
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-outlined-30 MuiButton-outlinedPrimary-31 HvButton-secondary-13 MultiButton-btnBase-154 MultiButton-btnSecondary-156 MultiButton-iconWidth-152 MultiButton-isSelected-157\"...",
-        "selector": "#map",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name"
     },
     {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-text-24 MuiButton-textPrimary-25 HvButton-ghost-15 MuiButton-flat-27 MuiButton-flatPrimary-28 MultiButton-btnBase-154 MultiButton-btnSecondary-156 MultiButton-iconWidth-...",
-        "selector": "#location",
-        "runner": "htmlcs",
-        "runnerExtras": {}
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name"
     },
     {
-        "code": "button-name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI)",
-        "context": "<button class=\"MuiButtonBase-root-48 MuiButton-root-22 HvButton-root-9 MuiButton-outlined-30 MuiButton-outlinedPrimary-31 HvButton-secondary-13 MultiButton-btnBase-154 MultiButton-btnSecondary-156 MultiButton-iconWidth-152 MultiButton-isSelected-157\"...",
-        "selector": "#map",
-        "runner": "axe",
-        "runnerExtras": {
-            "description": "Ensures buttons have discernible text",
-            "impact": "critical",
-            "help": "Buttons must have discernible text",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=axeAPI"
-        }
+        "code": "button-name"
     }
 ]
