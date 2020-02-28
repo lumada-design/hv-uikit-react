@@ -4,31 +4,37 @@ import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
 import UploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
 import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
 import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
-import withStyles from "@material-ui/core/styles/withStyles";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",
   subtitle: "QTFCR27520007"
 };
 
-const styles = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
-
-const StyledAddIcon = withStyles(styles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
-const StyledPreviewIcon = withStyles(styles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
-const StyledUploadIcon = withStyles(styles, { withTheme: true })(({classes}) => <UploadIcon className={classes.box} />);
-const StyledDeleteIcon = withStyles(styles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
-
 const myActions = [
-  { id: "post", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Add",
+    iconCallback: () => <AddIcon />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <PreviewIcon />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Upload",
+    iconCallback: () => <UploadIcon />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <DeleteIcon />,
+    disabled: false
+  }
 ];
 
 export default (
@@ -43,7 +49,7 @@ export default (
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}
       actionItemWidth={110}
-      id='card'
+      id="card"
     />
   </div>
 );

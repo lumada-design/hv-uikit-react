@@ -103,11 +103,7 @@ const iconStyles = {
 };
 
 const StyledFailureIcon = () => (
-  <FailureIcon
-    semantic="sema4"
-    boxStyles={iconStyles}
-    style={{ display: "block", margin: "auto" }}
-  />
+  <FailureIcon semantic="sema4" boxStyles={iconStyles} />
 );
 
 const SubHeader = ({ classes }) => {
@@ -144,7 +140,12 @@ const myActions = [
     iconCallback: () => <PreviewIcon />,
     disabled: true
   },
-  { id: "put", label: "Add", iconCallback: () => <AddIcon />, disabled: true },
+  {
+    id: "put",
+    label: "Add",
+    iconCallback: () => <AddIcon />,
+    disabled: true
+  },
   {
     id: "delete",
     label: "Delete",
@@ -161,7 +162,7 @@ export default (
       subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={myActions}
-      actionsCallback={(id, a) =>{ debugger;alert("You have pressed " + a.label);}}
+      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
       actionsAlignment="left"
       semantic="sema4"
       isSelectable

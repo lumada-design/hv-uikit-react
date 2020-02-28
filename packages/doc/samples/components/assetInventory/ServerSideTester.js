@@ -129,7 +129,6 @@ const doSearch = (search, size) => {
  */
 const doSort = (type, size, page) => {
   const sortFunc = type === "asc" ? sortAsc : sortDesc;
-  debugger;
   values = values.filter(searchFilter).sort(sortFunc);
 
   return getSlicePage(values, size, page);
