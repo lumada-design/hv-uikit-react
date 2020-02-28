@@ -57,7 +57,7 @@ const CustomSample = () => {
         headerTitle={toggleA ? "Asset Avatar L90" : "onClickAction()"}
         subheader={toggleB ? "Compressor" : "onChange()"}
         id="cardId"
-        ariaLabel={"Asset Avatar L90 press enter or space to select this card"}
+        aria-label={"Asset Avatar L90 press enter or space to select this card"}
         innerCardContent={<SingleContent classes={styles}/>}
         onClickAction={()=>{setToggleA(!toggleA)}}
         onChange={()=>{setToggleB(!toggleB)}}
