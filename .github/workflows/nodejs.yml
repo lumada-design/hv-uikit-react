@@ -22,6 +22,6 @@ jobs:
         npm config list
     - run: npm ci
     - run: npm run bootstrap
-    #- run: npm run test
-    #  env:
-    #    CI: true
+    - run: npm run test
+      env:
+        CI: true
