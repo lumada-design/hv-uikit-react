@@ -40,12 +40,10 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
-    "popper.js": "^1.15.0",
     "prop-types": "^15.7.2",
     "rc-slider": "^8.6.3",
     "rc-tooltip": "^3.7.3",
     "react-day-picker": "^7.3.0",
-    "react-jss": "^8.6.1",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
