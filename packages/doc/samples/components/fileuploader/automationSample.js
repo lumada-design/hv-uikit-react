@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import FileUploader from "@hv/uikit-react-core/dist/FileUploader";
 
@@ -29,7 +13,7 @@ const files = [
     name: "file 1.png",
     size: 141,
     progress: 41,
-    status:"success",
+    status: "success",
     type: "image/png"
   },
   {
@@ -37,7 +21,7 @@ const files = [
     name: "file 2.png",
     size: 875,
     progress: 456,
-    status:"progress",
+    status: "progress",
     type: "image/png"
   },
   {
@@ -45,18 +29,18 @@ const files = [
     name: "file 3.png",
     size: 1075,
     progress: 41,
-    status:"fail",
+    status: "fail",
     type: "image/png",
-    errorMessage:"The file exceeds the maximum upload size"
+    errorMessage: "The file exceeds the maximum upload size"
   },
   {
     id: "uploaded-file-4",
     name: "A very very very long file name.png",
     size: 1075,
     progress: 1075,
-    status:"fail",
+    status: "fail",
     type: "image/png",
-    errorMessage:"File type not allowed for upload"
+    errorMessage: "File type not allowed for upload"
   }
 ];
 
@@ -70,9 +54,9 @@ function clearUploadSimulationHandler(file) {
 const simulateUpload = (file, setList) => {
   const uploadSpeed = 20000; // bits per second
 
-  file.progress = Math.min(file.progress + (uploadSpeed / 4), file.size);
+  file.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
 
-  if(file.size == file.progress) {
+  if (file.size == file.progress) {
     file.status = "success";
 
     clearUploadSimulationHandler(file);
@@ -84,7 +68,7 @@ const simulateUpload = (file, setList) => {
 function addFile(newFile, setList) {
   const hasFailed = newFile.status === "fail";
 
-  if(!hasFailed) {
+  if (!hasFailed) {
     newFile.status = "progress";
     newFile.progress = 0;
 
@@ -100,8 +84,10 @@ const removeFile = (fileToRemove, setList) => {
   clearInterval(uploadHandlers[fileToRemove.id]);
   delete uploadHandlers[fileToRemove.id];
 
-  setList(previousList => previousList.filter(file => file.id !== fileToRemove.id));
-}
+  setList(previousList =>
+    previousList.filter(file => file.id !== fileToRemove.id)
+  );
+};
 
 const Sample = () => {
   const [list, setList] = useState(files);
@@ -109,16 +95,12 @@ const Sample = () => {
   return (
     <FileUploader
       id="automationfileuploader1"
-
       acceptedFiles={["jpg", "jpeg", "png"]}
       maxFileSize={2 * 1000 ** 2}
-
       fileList={list}
-
       onFilesAdded={newFiles => {
         newFiles.forEach(newFile => addFile(newFile, setList));
       }}
-
       onFileRemoved={removedFile => {
         removeFile(removedFile, setList);
       }}

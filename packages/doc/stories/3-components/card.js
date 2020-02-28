@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
@@ -61,22 +45,25 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
     {
       title: "9. Automatic action creation from list",
       src: "components/card/card9",
-      description: "Card actions can be created automatically if an array is provided. The actions will collapse into a DropDownMenu if the limit of visible actions is surpassed.",
+      description:
+        "Card actions can be created automatically if an array is provided. The actions will collapse into a DropDownMenu if the limit of visible actions is surpassed."
     },
     {
       title: "10. Whole card selectable with click action",
       src: "components/card/card10",
-      description: "Showcasing the ability to select anywhere in the content and click action",
+      description:
+        "Showcasing the ability to select anywhere in the content and click action"
     },
     {
       title: "11. Selectable card without footer",
       src: "components/card/card11",
-      description: "Showcasing the ability to select a card without foooter",
+      description: "Showcasing the ability to select a card without foooter"
     },
     {
       title: "12. Whole card selectable with click action that does not select",
       src: "components/card/card12",
-      description: "Showcasing the ability to have a click action without selecting",
-    },
+      description:
+        "Showcasing the ability to have a click action without selecting"
+    }
   ]
 });
