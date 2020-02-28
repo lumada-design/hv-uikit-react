@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvEmptyState from "@hv/uikit-react-core/dist/EmptyState";
-import BarChart from "@hv/uikit-react-icons/dist/Generic/BarChart";
+import BarChart from "@hv/uikit-react-icons/dist/BarChart";
 
 const styles = theme => ({
   root: {

@@ -13,10 +13,10 @@ import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
-import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
-import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import SortAsc from "@hv/uikit-react-icons/dist/SortAscendingXS";
+import SortDesc from "@hv/uikit-react-icons/dist/SortDescendingXS";
+import Sort from "@hv/uikit-react-icons/dist/SortXS";
+import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import {

@@ -1,5 +1,5 @@
 import React from "react";
-import CheckboxCheck from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
+import CheckboxCheck from "@hv/uikit-react-icons/dist/CheckboxCheck";
 import withStyles from "@material-ui/core/styles/withStyles";
 import classnames from "classnames";
 

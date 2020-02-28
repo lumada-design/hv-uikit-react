@@ -11,7 +11,7 @@ import {
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
 import styles from "./styles";

@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvEmptyState from "@hv/uikit-react-core/dist/EmptyState";
-import Ghost from "@hv/uikit-react-icons/dist/Generic/Ghost";
+import Ghost from "@hv/uikit-react-icons/dist/Ghost";
 
 const styles = theme => ({
   root: {

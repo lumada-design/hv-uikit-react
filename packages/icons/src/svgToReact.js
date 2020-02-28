@@ -5,7 +5,7 @@ const chalk = require("chalk"); // commandline styles
 const rimraf = require("rimraf");
 const fs = require("fs"); // file system
 const recursive = require("recursive-readdir");
-const yargs = require("yargs"); // argumen reader
+const yargs = require("yargs"); // argument reader
 const path = require("path"); // utilities for working with file and directory
 const HTMLtoJSX = require("htmltojsx"); // converter from html to jsx
 const jsdom = require("jsdom-no-contextify");
@@ -17,7 +17,6 @@ const content = require("./lang/en");
 const createComponentName = require("./fileSystemUtils/createComponentName");
 const formatSVG = require("./converterUtils/formatSVG");
 const generateComponent = require("./converterUtils/generateComponent");
-const generateOldComponent = require("./converterUtils/generateOldComponent");
 const printErrors = require("./logUtils/output").printErrors;
 const removeStyle = require("./converterUtils/removeStyle");
 const colorExtractor = require("./colorUtils/colorExtractor");
@@ -25,10 +24,10 @@ const fillColorReplacer = require("./colorUtils/fillColorReplacer");
 const sizeExtractor = require("./sizeUtils/sizeExtractor");
 const sizeReplacer = require("./sizeUtils/sizeReplacer");
 
-const writeFile = (processedSVG, fileName, themeName) => {
+const writeFile = (processedSVG, fileName) => {
   const componentOutputFolder = outputPath
-    ? path.resolve(process.cwd(), outputPath, themeName || "")
-    : path.resolve(process.cwd(), themeName || "");
+    ? path.resolve(process.cwd(), outputPath)
+    : path.resolve(process.cwd());
 
   fs.mkdirSync(componentOutputFolder, { recursive: true });
 
@@ -48,12 +47,14 @@ const writeFile = (processedSVG, fileName, themeName) => {
 
   fs.appendFile(
     path.resolve(componentOutputFolder, `index.js`),
-    `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`,
+    `export { default as ${fileName
+      .split(".")
+      .join("")} } from "./${fileName}";\n`,
     () => {}
   );
 };
 
-const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, specialCaseXS = false) => {
+const runUtil = (fileToRead, fileToWrite) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
       printErrors(err);
@@ -78,7 +79,9 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
       let defaultWidth = "50px";
       let defaultHeight = "50px";
       if (body.firstChild.hasAttribute("viewBox")) {
-        const [minX, minY, width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
+        const [minX, minY, width, height] = body.firstChild
+          .getAttribute("viewBox")
+          .split(/[,\s]+/);
         defaultWidth = width;
         defaultHeight = height;
       }
@@ -105,8 +108,8 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
       // operator. We will sub those back in manually now
       output = output.replace(/:props:/g, "{...other}");
 
-      const sizeObject = sizeExtractor(output, useGeneric);
-      output = sizeReplacer(output, sizeObject, useGeneric);
+      const sizeObject = sizeExtractor(output);
+      output = sizeReplacer(output, sizeObject);
 
       const colorObject = colorExtractor(output);
       output = fillColorReplacer(output, colorObject);
@@ -128,8 +131,8 @@ const runUtil = (fileToRead, fileToWrite, themeName, useGeneric = false, special
         defaultSizes: sizeObject
       };
 
-      output = useGeneric ? generateComponent(params) : generateOldComponent(params);
-      writeFile(output, fileToWrite, themeName);
+      output = generateComponent(params);
+      writeFile(output, fileToWrite);
     });
   });
 };
@@ -140,23 +143,14 @@ const runUtilForAllInDir = () => {
       return console.log(err);
     } // GEt out early if not found
     files.forEach((file, i) => {
-      let useGeneric = false;
-      let themeName = path.relative(`${process.cwd()}/${inputPath}`, file).split(path.sep)[0];
-      if (!(themeName.endsWith("Theme") || themeName.endsWith("Generic"))) {
-        themeName = null;
-      }
 
       const extention = path.extname(file); // extract extensions
       const fileName = path.basename(file); // extract file name extensions
 
-      if (themeName === "Generic") {
-        useGeneric = true;
-      }
-
       if (extention === ".svg") {
         // variable instantiated up top
         const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName, themeName, useGeneric);
+        runUtil(file, componentName);
       }
     });
   });

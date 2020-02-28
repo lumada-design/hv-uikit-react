@@ -8,8 +8,8 @@ import HvCard, {
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Icon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import Icon from "@hv/uikit-react-icons/dist/Upload";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 
 const styles = theme => ({
   mediaContainer: {

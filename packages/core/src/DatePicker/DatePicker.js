@@ -4,7 +4,7 @@ import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
 import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
 import clsx from "clsx";
 import Typography from "../Typography";
 import Calendar from "./Calendar";

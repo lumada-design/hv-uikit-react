@@ -4,11 +4,11 @@ import Grid from "@hv/uikit-react-core/dist/Grid";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Kpi from "@hv/uikit-react-core/dist/Kpi";
 import Card from "@hv/uikit-react-core/dist/Card";
-import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import Level1 from "@hv/uikit-react-icons/dist/Level1";
+import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
+import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Level5";
 import styles from "./styles";
 
 const KpiProbability = score => ({

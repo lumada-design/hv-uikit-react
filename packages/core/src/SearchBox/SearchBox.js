@@ -10,7 +10,7 @@ import partial from "lodash/partial";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
+import SearchIcon from "@hv/uikit-react-icons/dist/Search";
 import HvInput from "../Input";
 import styles from "./styles";
 

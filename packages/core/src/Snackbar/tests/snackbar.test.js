@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import "jest-canvas-mock";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 
-import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
+import AddIcon from "@hv/uikit-react-icons/dist/Add";
 import Snackbar from "../Snackbar";
 import SnackBarWithStyles from "../index";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";

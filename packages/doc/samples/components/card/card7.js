@@ -1,12 +1,9 @@
 import React from "react";
-import HvCard, {
-  HvCardFooter,
-  HvCardMedia
-} from "@hv/uikit-react-core/dist/Card";
-import Upload from "@hv/uikit-react-icons/dist/Generic/Upload";
-import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import HvCard from "@hv/uikit-react-core/dist/Card";
+import Upload from "@hv/uikit-react-icons/dist/Upload";
+import AddIcon from "@hv/uikit-react-icons/dist/Add";
+import DeleteIcon from "@hv/uikit-react-icons/dist/Delete";
+import PreviewIcon from "@hv/uikit-react-icons/dist/Preview";
 import withStyles from "@material-ui/core/styles/withStyles";
 import leaf from "./resources/leaf.png";
 

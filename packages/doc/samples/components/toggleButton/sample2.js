@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "@hv/uikit-react-core/dist/Button";
 import ToggleButton from "@hv/uikit-react-core/dist/ToggleButton";
-import Lock from "@hv/uikit-react-icons/dist/Generic/Lock";
-import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+import Lock from "@hv/uikit-react-icons/dist/Lock";
+import Unlock from "@hv/uikit-react-icons/dist/Unlock";
 
 const ToggleButtonControl = () => {
   const [select, setSelect] = useState(true);

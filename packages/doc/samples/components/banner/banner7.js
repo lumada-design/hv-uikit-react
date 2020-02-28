@@ -1,5 +1,5 @@
 import React from "react";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import Info from "@hv/uikit-react-icons/dist/Info";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
 import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";

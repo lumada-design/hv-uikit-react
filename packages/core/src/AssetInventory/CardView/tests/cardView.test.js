@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
+import Menu from "@hv/uikit-react-icons/dist/Menu";
 import HvProvider from "../../../Provider";
 import CardView from "../index";
 import Card from "../../../Card";

@@ -12,7 +12,7 @@ import {
   Operation,
   Tool,
   User
-} from "@hv/uikit-react-icons/dist/Generic";
+} from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {

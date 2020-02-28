@@ -2,8 +2,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Play from "@hv/uikit-react-icons/dist/Generic/Play";
-import Stop from "@hv/uikit-react-icons/dist/Generic/Stop";
+import Play from "@hv/uikit-react-icons/dist/Play";
+import Stop from "@hv/uikit-react-icons/dist/Stop";
 import HvProvider from "../../../Provider";
 
 import TreeView, { TreeViewItem } from "../index";

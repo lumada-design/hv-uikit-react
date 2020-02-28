@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
-import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
+import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected";
+import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
 

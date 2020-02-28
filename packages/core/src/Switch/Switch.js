@@ -4,7 +4,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import { Switch, withStyles } from "@material-ui/core";
-import CheckMark from "@hv/uikit-react-icons/dist/Generic/Good";
+import CheckMark from "@hv/uikit-react-icons/dist/Good";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import Focus from "../Focus";

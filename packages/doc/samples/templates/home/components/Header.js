@@ -5,7 +5,7 @@ import {
   Menu,
   Settings,
   User
-} from "@hv/uikit-react-icons/dist/Generic";
+} from "@hv/uikit-react-icons/dist";
 import { HvBadge, HvButton } from "@hv/uikit-react-core/dist";
 import HvHeader, {
   HvHeaderActions,

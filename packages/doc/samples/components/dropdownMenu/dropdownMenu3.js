@@ -1,9 +1,9 @@
 import React from "react";
 import DropDownMenu from "@hv/uikit-react-core/dist/DropDownMenu";
 import withStyles from "@material-ui/core/styles/withStyles";
-import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
-import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
+import UserIcon from "@hv/uikit-react-icons/dist/User";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
+import PlaneIcon from "@hv/uikit-react-icons/dist/Plane";
 
 const styles = () => ({
   box: {

@@ -1,8 +1,8 @@
 import React from "react";
-import Level0 from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import Level0 from "@hv/uikit-react-icons/dist/Level0.Good";
+import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Level5";
 
 /**
  * Icon mapping.

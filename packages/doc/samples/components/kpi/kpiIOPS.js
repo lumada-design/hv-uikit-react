@@ -2,8 +2,8 @@ import React from "react";
 import Chart from "react-google-charts";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Average from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
+import Average from "@hv/uikit-react-icons/dist/Level2.Average";
+import ArrowDown from "@hv/uikit-react-icons/dist/BottomXS";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {

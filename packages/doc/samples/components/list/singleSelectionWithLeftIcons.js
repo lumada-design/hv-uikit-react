@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 import List from "@hv/uikit-react-core/dist/List";
-import UserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
-import PlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
-import MachineIcon from "@hv/uikit-react-icons/dist/Generic/Machine";
-import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+import UserIcon from "@hv/uikit-react-icons/dist/User";
+import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
+import PlaneIcon from "@hv/uikit-react-icons/dist/Plane";
+import MachineIcon from "@hv/uikit-react-icons/dist/Machine";
+import LineChartIcon from "@hv/uikit-react-icons/dist/LineChart";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({

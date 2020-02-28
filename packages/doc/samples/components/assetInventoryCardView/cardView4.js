@@ -7,11 +7,11 @@ import HvCard, {
   HvCardFooter,
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import RawIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import RawUploadIcon from "@hv/uikit-react-icons/dist/Upload";
+import RawAddIcon from "@hv/uikit-react-icons/dist/Add";
+import RawPreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import RawDeleteIcon from "@hv/uikit-react-icons/dist/Delete";
+import RawIcon from "@hv/uikit-react-icons/dist/Tool";
 
 const iconStyles = () => ({
   box: {

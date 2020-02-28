@@ -4,7 +4,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
-import DropRight from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
+import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";
 import HvRadioButton from "../Selectors/RadioButton";

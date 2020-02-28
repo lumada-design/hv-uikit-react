@@ -1,7 +1,7 @@
 import React from "react";
 import isEmpty from "lodash/isEmpty";
 import HvInput from "@hv/uikit-react-core/dist/Input";
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
+import Map from "@hv/uikit-react-icons/dist/Map";
 
 const labels = {
   placeholder: "Country",

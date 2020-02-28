@@ -4,7 +4,10 @@ import VerticalNavigation, {
   Navigation
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-import { Tool, Operation } from "@hv/uikit-react-icons/dist/Generic";
+import {
+  Tool,
+  Operation,
+} from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {

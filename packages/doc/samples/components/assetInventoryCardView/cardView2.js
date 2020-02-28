@@ -3,11 +3,11 @@ import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import compressor from "../card/resources/compressor.png";
 import leaf from "../card/resources/leaf.png";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import RawIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import RawUploadIcon from "@hv/uikit-react-icons/dist/Upload";
+import RawAddIcon from "@hv/uikit-react-icons/dist/Add";
+import RawPreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import RawDeleteIcon from "@hv/uikit-react-icons/dist/Delete";
+import RawIcon from "@hv/uikit-react-icons/dist/Tool";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({

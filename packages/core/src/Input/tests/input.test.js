@@ -3,8 +3,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
-import MapS from "@hv/uikit-react-icons/dist/Generic/Map";
+import InfoS from "@hv/uikit-react-icons/dist/Info";
+import MapS from "@hv/uikit-react-icons/dist/Map";
 import validationStates from "../validationStates";
 import validationTypes from "../validationTypes";
 import iconPositions from "../iconPositions";

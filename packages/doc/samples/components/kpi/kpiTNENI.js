@@ -3,7 +3,7 @@ import Chart from "react-google-charts";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
+import ArrowDown from "@hv/uikit-react-icons/dist/BottomXS";
 
 const labels = {
   title: "Total number of events",

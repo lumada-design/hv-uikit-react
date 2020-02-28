@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@hv/uikit-react-core/dist/Typography";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import Info from "@hv/uikit-react-icons/dist/Info";
 import withStyles from "@material-ui/core/styles/withStyles";
 import SnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
 
