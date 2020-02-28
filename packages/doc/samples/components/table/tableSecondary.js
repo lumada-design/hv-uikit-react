@@ -239,7 +239,7 @@ class Wrapper extends React.Component {
     const labels = {
       titleText: "This is a Title",
       subtitleText: "This is a Subtitle"
-    }
+    };
 
     return (
       <HvTable
@@ -255,23 +255,24 @@ class Wrapper extends React.Component {
         secondaryActions={[
           {
             label: "Share",
-            action: (data) => {
-              alert(`Sharing ${JSON.stringify(data)}`)
+            action: data => {
+              alert(`Sharing ${JSON.stringify(data)}`);
             }
           },
           {
             label: "Hide",
-            action: (data) => {
-              alert(`Hiding ${JSON.stringify(data)}`)
+            action: data => {
+              alert(`Hiding ${JSON.stringify(data)}`);
             }
           },
           {
             label: "Remove",
-            action: (data) => {
-              alert(`Removing ${JSON.stringify(data)}`)
+            action: data => {
+              alert(`Removing ${JSON.stringify(data)}`);
             }
           }
         ]}
+        rowCount={data.length}
       />
     );
   }

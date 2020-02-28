@@ -21,6 +21,7 @@ import isNil from "lodash/isNil";
 import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
+import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../Typography";
 
 /**
@@ -33,13 +34,13 @@ import HvTypography from "../../Typography";
  * @param classes - a JSS object that contains the classes to apply
  * @returns {*} - 'false' if the column doesn't exist.
  */
-const getSortedComponent = (id, columnSortable, sort, classes) => {
-  const sortInfo = sort.filter(item => item.id === id);
-
-  if (sortInfo.length) {
-    return sortInfo[0].desc === true
-      ? <SortDesc className={classes.box} />
-      : <SortAsc className={classes.box} />;
+const getSortedComponent = (sortType, columnSortable, classes) => {
+  if (sortType) {
+    return sortType === "descending" ? (
+      <SortDesc className={classes.box} />
+    ) : (
+      <SortAsc className={classes.box} />
+    );
   }
 
   if (columnSortable) {
@@ -49,26 +50,61 @@ const getSortedComponent = (id, columnSortable, sort, classes) => {
   return false;
 };
 
+const getSortType = (id, sort) => {
+  const sortInfo = sort.filter(item => item.id === id);
+  if (sortInfo.length) {
+    return sortInfo[0].desc === true ? "descending" : "ascending";
+  }
+
+  return undefined;
+};
+
+const onKeyHandler = (event, id, onSortChange, currentSortedState) => {
+  if (
+    isKeypress(event, KeyboardCodes.Enter) ||
+    isKeypress(event, KeyboardCodes.SpaceBar)
+  ) {
+    event.preventDefault();
+    // The table only supports one sorted column
+    const newState = [...currentSortedState];
+    newState[0].id = id;
+    newState[0].desc = !newState[0].desc;
+    onSortChange(newState);
+  }
+};
+
 const Header = React.memo(
-  ({
-    tableInternalId,
-    classes,
-    column: { id, sortable, cellType, headerText },
-    tableSortable,
-    sort
-  }) => {
+  ({ tableInternalId, classes, column, tableSortable, sort, onSortChange }) => {
+    const { id, sortable, cellType, headerText } = column;
+
     const columnSortable = (isNil(sortable) && tableSortable) || sortable;
+
+    const sortType = getSortType(id, sort);
+
+    const sortElem = getSortedComponent(sortType, columnSortable, classes);
 
     return (
       <div className={classNames(classes.headerContainer)}>
         {columnSortable && (
           <div
-            id={id != null ? `${tableInternalId}-column-${id}-sort-button` : undefined}
+            id={
+              id != null
+                ? `${tableInternalId}-column-${id}-sort-button`
+                : undefined
+            }
             className={classNames(classes.rtSortIcon, {
               [classes.rtSortIconNumeric]: cellType === "numeric"
             })}
+            aria-label={
+              id != null
+                ? `${tableInternalId}-column-${id}-sort-button`
+                : undefined
+            }
+            role="button"
+            tabIndex="0"
+            onKeyDown={event => onKeyHandler(event, id, onSortChange, sort)}
           >
-            {getSortedComponent(id, columnSortable, sort, classes)}
+            {sortElem}
           </div>
         )}
         {/* Setter of the styles for the header */}
@@ -79,7 +115,9 @@ const Header = React.memo(
           })}
         >
           <HvTypography
-            id={id != null ? `${tableInternalId}-column-${id}-label` : undefined}
+            id={
+              id != null ? `${tableInternalId}-column-${id}-label` : undefined
+            }
             variant="highlightText"
             className={classNames(classes.headerProps, {
               [classes.headerAlphaNumeric]:

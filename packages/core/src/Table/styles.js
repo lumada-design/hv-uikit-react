@@ -112,6 +112,7 @@ const styles = theme => ({
               visibility: "visible"
             },
             "&:hover": {
+              // hover in table header
               background: theme.hv.palette.atmosphere.atmo4
             }
           }
@@ -132,6 +133,7 @@ const styles = theme => ({
           }
         },
         "& $td": {
+          background: theme.hv.palette.atmosphere.atmo2,
           border: "1px solid transparent",
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
@@ -173,9 +175,6 @@ const styles = theme => ({
         },
         "& .firstExpandable": {
           paddingLeft: "0px"
-        },
-        "& $td.sorted": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo1
         },
         "& .checkBox": {
           minWidth: "31px",
