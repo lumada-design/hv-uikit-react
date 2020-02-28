@@ -1,44 +1,29 @@
 import React from "react";
-import HvCard, {
-  HvCardFooter,
-  HvCardHeader
-} from "@hv/uikit-react-core/dist/Card";
+import HvCard, {HvCardFooter, HvCardHeader} from "@hv/uikit-react-core/dist/Card";
 import Icon from "@hv/uikit-react-icons/dist/Generic/Upload";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const moreOptionsStyles = theme => ({
+const moreOptionsStyles = () => ({
   root: {
     width: "32px",
     minWidth: "32px",
-    padding: 0,
-    color: theme.palette.grey.inspire,
-    "& span": {
-      color: theme.palette.grey.inspire
-    }
+    padding: 0
   }
 });
-
-const stylesMediaButton = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
 
 const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
   withTheme: true
 })(HvButton);
 
-const MultipleActionsWithMediaButtons = ({classes}) => (
+const MultipleActionsWithMediaButtons = () => (
   <>
-    <HvButton category="primary">
-      <Icon className={classes.box} />
+    <HvButton>
+      <Icon />
       Update
     </HvButton>
-    <MoreOptionsIconButton category="primary">
+    <MoreOptionsIconButton>
       <MoreOptionsIcon aria-label="more options" />
     </MoreOptionsIconButton>
   </>
@@ -64,15 +49,11 @@ const FooterWithStyles = withStyles(footerStyles, {
   withTheme: true
 })(HvCardFooter);
 
-const MultipleActionsWithMediaButtonsWithStyles = withStyles(stylesMediaButton, {
-  withTheme: true
-})(MultipleActionsWithMediaButtons);
-
 export default (
   <div style={{ width: "500px" }}>
     <HvCard>
       <FooterWithStyles
-        actions={<MultipleActionsWithMediaButtonsWithStyles />}
+        actions={<MultipleActionsWithMediaButtons />}
         isSelectable
         checkboxAriaLabel="Composed card"
         onChange={event => console.log(`my value is ${event.target.value}`)}

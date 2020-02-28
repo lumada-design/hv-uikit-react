@@ -181,22 +181,22 @@ export default (
       content={
         <HvModalContent>
           <InputWithStyles
-            inputTextConfiguration={{
+            labels={{
               placeholder: "Enter text",
               inputLabel: "Title"
             }}
             fullWidth
-            validate={false}
+            showInfo={false}
           />
           <TextAreaWithStyles
             disabled
             id="outlined-with-placeholder"
-            inputTextConfiguration={{
+            labels={{
               placeholder: "Enter work Order Description",
               inputLabel: "Description"
             }}
             multiline
-            rows="3"
+            rows={3}
             value="This is an example"
           />
         </HvModalContent>

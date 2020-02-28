@@ -81,3 +81,6 @@ With our first major release several components where reviewed in order to remov
 Changes:
    - Toggle Button
       - Removed display inline-table from icon 
+   - Modal Action
+      - Css class **action** changed with **spacing**.
+   

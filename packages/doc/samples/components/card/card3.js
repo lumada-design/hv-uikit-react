@@ -1,6 +1,5 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -99,26 +98,6 @@ const MultipleActions = ({ classes }) => {
 const MultipleActionsWithStyle = withStyles(MultipleActionsStyles, {
   withTheme: true
 })(MultipleActions);
-
-const MultipleActionsButtonsStyles = theme => ({
-  button: {
-    color: theme.palette.grey.inspire,
-    "& span": {
-      color: theme.palette.grey.inspire
-    }
-  }
-});
-
-const MultipleActionsButtons = ({ classes }) => (
-  <>
-    <HvButton className={classes.button} category="ghost">
-      View
-    </HvButton>
-    <HvButton className={classes.button} category="ghost">
-      Share
-    </HvButton>
-  </>
-);
 
 const myActions = [
   { id: "view", label: "View", disabled: false },

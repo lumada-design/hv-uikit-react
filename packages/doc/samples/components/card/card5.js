@@ -10,7 +10,6 @@ export default (
   <div style={{ width: "500px" }}>
     <HvCard
       headerTitle={configurationNoMedia.title}
-      variant="none"
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />

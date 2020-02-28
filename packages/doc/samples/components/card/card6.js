@@ -59,49 +59,21 @@ const ContentWithStyles = withStyles(kpiStyles, {
   withTheme: true
 })(Content);
 
-const iconStyles = {
-  paddingTop: "7px",
-  width: "30px",
-  height: "30px"
-};
-
-const StyledIcon = () => (
-  <Icon boxStyles={iconStyles} style={{ display: "block", margin: "auto" }} />
-);
-
 const levelStyles = {
   width: "30px"
 };
 
-const StyledLevel1 = () => (
-  <Level1
-    boxStyles={levelStyles}
-    semantic="sema2"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
+const StyledLevel1 = () => <Level1 boxStyles={levelStyles} semantic="sema2" />;
 
-const StyledLevel2 = () => (
-  <Level2
-    boxStyles={levelStyles}
-    semantic="sema3"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
+const StyledLevel2 = () => <Level2 boxStyles={levelStyles} semantic="sema3" />;
 
-const StyledLevel3 = () => (
-  <Level3
-    boxStyles={levelStyles}
-    semantic="sema4"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
+const StyledLevel3 = () => <Level3 boxStyles={levelStyles} semantic="sema4" />;
 
 export default (
   <Grid container>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Icon />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
           <ContentWithStyles
@@ -117,7 +89,7 @@ export default (
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Icon />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
           <ContentWithStyles
@@ -133,7 +105,7 @@ export default (
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Icon />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
           <ContentWithStyles
