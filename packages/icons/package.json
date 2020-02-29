@@ -19,7 +19,8 @@
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
     "link": "npm link",
-    "update-uikit-common": "npm update @hv/uikit-common-icons"
+    "update-uikit-common": "npm update @hv/uikit-common-icons",
+    "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
   },
   "peerDependencies": {
     "react": "^16.8.6",
