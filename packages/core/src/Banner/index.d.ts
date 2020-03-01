@@ -1,5 +1,14 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvBanner extends React.Component<HvBannerProps, any> {}
+declare module '@hv/uikit-react-core/dist/Banner' {
+  class HvBanner extends React.Component<HvBannerProps, any> {}
+
+  export default HvBanner
+
+  export interface BannerAction {
+    id: string
+    label: string
+    icon?: (...args: any[]) => any
+    disabled?: boolean
+  }
 
   export interface HvBannerProps extends React.HTMLAttributes<HvBanner> {
     /**
@@ -23,23 +32,17 @@ declare module '@hv/uikit-react-core/dist' {
     /**
      *  If true, Snackbar is open.
      */
-    open: boolean
+    open?: boolean
 
     /**
      * Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway.
      */
-    onClose: (...args: any[]) => any
+    onClose?: (...args: any[]) => any
 
     /**
      * The message to display.
      */
     label?: string
-
-    /**
-     * The message to display.
-     * @deprecated. Instead use the label property
-     */
-    message?: string
 
     /**
      *  The anchor of the Snackbar.
@@ -64,12 +67,17 @@ declare module '@hv/uikit-react-core/dist' {
     /**
      * Actions to display on the right side.
      */
-    action?: React.ReactNode
+    actions?: React.ReactNode | BannerAction[]
 
     /**
-     * Actions to display on message.
+     *  The callback function ran when an action is triggered, receiving ´action´ as param
      */
-    actionsOnMessage?: React.ReactNode
+    actionsCallback?: (...args: any[]) => any
+
+    /**
+     * The position property of the header.
+     */
+    actionsPosition?: 'auto' | 'inline' | 'bottom-right'
 
     /**
      * How much the transition animation last in milliseconds, if 0 no animation is played.
@@ -80,5 +88,29 @@ declare module '@hv/uikit-react-core/dist' {
      * Direction of slide transition.
      */
     transitionDirection?: 'up' | 'down' | 'left' | 'right'
+
+    /**
+     * Offset from top/bottom of the page, in px. Defaults to 60px.
+     */
+    offset?: number
+
+    // deprecated:
+    /**
+     * The message to display.
+     * @deprecated. Instead use the label property
+     */
+    message?: string
+
+    /**
+     * Actions to display on the right side.
+     * @deprecated. Instead use the actions property
+     */
+    action?: React.ReactNode
+
+    /**
+     * Actions to display on message.
+     * @deprecated. Instead use the actions property together with actionsPosition="inline"
+     */
+    actionsOnMessage?: React.ReactNode
   }
 }

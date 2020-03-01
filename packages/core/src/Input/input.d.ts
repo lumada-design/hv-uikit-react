@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvInput extends React.Component<HvInputProps, any> {}
+declare module '@hv/uikit-react-core/dist/Input' {
+  import React from 'react'
+  
+  class HvInput extends React.Component<HvInputProps, any> {}
+
+  export default HvInput
 
   export interface InputTextConfiguration {
     inputLabel?: string

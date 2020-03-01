@@ -1,5 +1,9 @@
-declare module "@hv/uikit-react-core/dist" {
-  export class HvTab extends React.Component<HvTabProps, any> {}
+declare module "@hv/uikit-react-core/dist/Tab" {
+  import React from 'react'
+  
+  class HvTab extends React.Component<HvTabProps, any> {}
+
+  export default HvTab
 
   export interface HvTabProps extends React.HTMLAttributes<HvTab> {
     /**

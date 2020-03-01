@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvSearchBox extends React.Component<HvSearchBoxProps, any> {}
+declare module '@hv/uikit-react-core/dist/SearchBox' {
+  import React from 'react'
+  
+  class HvSearchBox extends React.Component<HvSearchBoxProps, any> {}
+
+  export default HvSearchBox
 
   export interface SearchBoxLabel {
     inputLabel?: string
@@ -19,7 +23,7 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Styles applied to searchbox root.
        */
-      root: string
+      root?: string
     }
 
     /**
