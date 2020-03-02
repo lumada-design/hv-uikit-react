@@ -785,10 +785,9 @@ exports[`Tab withStyles should render correctly 1`] = `
       <HvTab
         classes={
           Object {
-            "disabled": "HvTab-disabled-4",
-            "labelContainer": "HvTab-labelContainer-2",
+            "disabled": "HvTab-disabled-3",
             "root": "HvTab-root-1",
-            "selected": "HvTab-selected-3",
+            "selected": "HvTab-selected-2",
           }
         }
         disabled={false}
@@ -798,10 +797,9 @@ exports[`Tab withStyles should render correctly 1`] = `
         <WithStyles(ForwardRef(Tab))
           classes={
             Object {
-              "disabled": "HvTab-disabled-4",
-              "labelContainer": "HvTab-labelContainer-2",
+              "disabled": "HvTab-disabled-3",
               "root": "HvTab-root-1",
-              "selected": "HvTab-selected-3",
+              "selected": "HvTab-selected-2",
             }
           }
           disableRipple={true}
@@ -813,12 +811,11 @@ exports[`Tab withStyles should render correctly 1`] = `
           <ForwardRef(Tab)
             classes={
               Object {
-                "disabled": "Mui-disabled HvTab-disabled-4",
+                "disabled": "Mui-disabled HvTab-disabled-3",
                 "fullWidth": "MuiTab-fullWidth",
-                "labelContainer": "undefined HvTab-labelContainer-2",
                 "labelIcon": "MuiTab-labelIcon",
                 "root": "MuiTab-root HvTab-root-1",
-                "selected": "Mui-selected HvTab-selected-3",
+                "selected": "Mui-selected HvTab-selected-2",
                 "textColorInherit": "MuiTab-textColorInherit",
                 "textColorPrimary": "MuiTab-textColorPrimary",
                 "textColorSecondary": "MuiTab-textColorSecondary",

@@ -8,7 +8,6 @@ const HvTab = ({ classes, ...others }) => (
     classes={{
       root: classes.root,
       selected: classes.selected,
-      labelContainer: classes.labelContainer,
       disabled: classes.disabled
     }}
     disableRipple

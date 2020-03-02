@@ -1,18 +1,22 @@
-const styles = () => ({
-  root: {
-    display: "flex",
-    position: "absolute",
-    left: "50%",
-    top: "54px",
-    transform: "translate(-50%,0)",
-    transition: "all .3s ease",
-    zIndex: 1,
-    pointerEvents: "none",
-    padding: "32px"
-  },
-  noTextMessage: {
-    lineHeight: "32px"
-  }
-});
+import { createStyles, makeStyles } from "@material-ui/core";
 
-export default styles;
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      display: "flex",
+      position: "absolute",
+      left: "50%",
+      top: "54px",
+      transform: "translate(-50%,0)",
+      transition: "all .3s ease",
+      zIndex: 1,
+      pointerEvents: "none",
+      padding: "32px"
+    },
+    noTextMessage: {
+      lineHeight: "32px"
+    }
+  })
+);
+
+export default useStyles;

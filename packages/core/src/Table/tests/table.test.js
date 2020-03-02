@@ -8,11 +8,18 @@ import HvPagination from "../Pagination";
 import DropDownMenu from "../../DropDownMenu";
 import HvTable from "..";
 
+/* eslint-disable no-console */
+
 describe("Hv Table", () => {
   let wrapper;
 
+  const originalWarn = console.warn;
+
   describe("index", () => {
     beforeEach(async () => {
+      // Expected warning "Please update the following components: ReactTable"
+      console.warn = jest.fn();
+
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -21,6 +28,8 @@ describe("Hv Table", () => {
           />
         </HvProvider>
       );
+
+      console.warn = originalWarn;
     });
 
     it("should be defined", () => {
@@ -381,8 +390,7 @@ describe("Hv Table", () => {
     it("should render extra column for secondary actions", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random",
-        secondaryAction: "secondaryAction-random"
+        numeric: "numeric-random"
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },
@@ -418,8 +426,7 @@ describe("Hv Table", () => {
     it("should not render secondary actions when noActions set", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random",
-        secondaryAction: "secondaryAction-random"
+        numeric: "numeric-random"
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },

@@ -861,10 +861,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-38",
-                          "labelContainer": "HvTab-labelContainer-36",
+                          "disabled": "HvTab-disabled-37",
                           "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-37",
+                          "selected": "HvTab-selected-36",
                         }
                       }
                       disabled={false}
@@ -879,10 +878,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(Tab))
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-38",
-                            "labelContainer": "HvTab-labelContainer-36",
+                            "disabled": "HvTab-disabled-37",
                             "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-37",
+                            "selected": "HvTab-selected-36",
                           }
                         }
                         disableRipple={true}
@@ -899,12 +897,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         <ForwardRef(Tab)
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-38",
+                              "disabled": "Mui-disabled HvTab-disabled-37",
                               "fullWidth": "MuiTab-fullWidth",
-                              "labelContainer": "undefined HvTab-labelContainer-36",
                               "labelIcon": "MuiTab-labelIcon",
                               "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-37",
+                              "selected": "Mui-selected HvTab-selected-36",
                               "textColorInherit": "MuiTab-textColorInherit",
                               "textColorPrimary": "MuiTab-textColorPrimary",
                               "textColorSecondary": "MuiTab-textColorSecondary",
@@ -996,10 +993,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-38",
-                          "labelContainer": "HvTab-labelContainer-36",
+                          "disabled": "HvTab-disabled-37",
                           "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-37",
+                          "selected": "HvTab-selected-36",
                         }
                       }
                       disabled={false}
@@ -1014,10 +1010,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(Tab))
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-38",
-                            "labelContainer": "HvTab-labelContainer-36",
+                            "disabled": "HvTab-disabled-37",
                             "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-37",
+                            "selected": "HvTab-selected-36",
                           }
                         }
                         disableRipple={true}
@@ -1034,12 +1029,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         <ForwardRef(Tab)
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-38",
+                              "disabled": "Mui-disabled HvTab-disabled-37",
                               "fullWidth": "MuiTab-fullWidth",
-                              "labelContainer": "undefined HvTab-labelContainer-36",
                               "labelIcon": "MuiTab-labelIcon",
                               "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-37",
+                              "selected": "Mui-selected HvTab-selected-36",
                               "textColorInherit": "MuiTab-textColorInherit",
                               "textColorPrimary": "MuiTab-textColorPrimary",
                               "textColorSecondary": "MuiTab-textColorSecondary",
@@ -1060,7 +1054,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         >
                           <WithStyles(ForwardRef(ButtonBase))
                             aria-selected={true}
-                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-37"
+                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
@@ -1070,7 +1064,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           >
                             <ForwardRef(ButtonBase)
                               aria-selected={true}
-                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-37"
+                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
                               classes={
                                 Object {
                                   "disabled": "Mui-disabled",
@@ -1087,7 +1081,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             >
                               <button
                                 aria-selected={true}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-37"
+                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
                                 disabled={false}
                                 onBlur={[Function]}
                                 onClick={[Function]}
@@ -1131,10 +1125,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-38",
-                          "labelContainer": "HvTab-labelContainer-36",
+                          "disabled": "HvTab-disabled-37",
                           "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-37",
+                          "selected": "HvTab-selected-36",
                         }
                       }
                       disabled={false}
@@ -1149,10 +1142,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(Tab))
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-38",
-                            "labelContainer": "HvTab-labelContainer-36",
+                            "disabled": "HvTab-disabled-37",
                             "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-37",
+                            "selected": "HvTab-selected-36",
                           }
                         }
                         disableRipple={true}
@@ -1169,12 +1161,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         <ForwardRef(Tab)
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-38",
+                              "disabled": "Mui-disabled HvTab-disabled-37",
                               "fullWidth": "MuiTab-fullWidth",
-                              "labelContainer": "undefined HvTab-labelContainer-36",
                               "labelIcon": "MuiTab-labelIcon",
                               "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-37",
+                              "selected": "Mui-selected HvTab-selected-36",
                               "textColorInherit": "MuiTab-textColorInherit",
                               "textColorPrimary": "MuiTab-textColorPrimary",
                               "textColorSecondary": "MuiTab-textColorSecondary",
@@ -1266,10 +1257,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-38",
-                          "labelContainer": "HvTab-labelContainer-36",
+                          "disabled": "HvTab-disabled-37",
                           "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-37",
+                          "selected": "HvTab-selected-36",
                         }
                       }
                       disabled={false}
@@ -1284,10 +1274,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(Tab))
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-38",
-                            "labelContainer": "HvTab-labelContainer-36",
+                            "disabled": "HvTab-disabled-37",
                             "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-37",
+                            "selected": "HvTab-selected-36",
                           }
                         }
                         disableRipple={true}
@@ -1304,12 +1293,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         <ForwardRef(Tab)
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-38",
+                              "disabled": "Mui-disabled HvTab-disabled-37",
                               "fullWidth": "MuiTab-fullWidth",
-                              "labelContainer": "undefined HvTab-labelContainer-36",
                               "labelIcon": "MuiTab-labelIcon",
                               "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-37",
+                              "selected": "Mui-selected HvTab-selected-36",
                               "textColorInherit": "MuiTab-textColorInherit",
                               "textColorPrimary": "MuiTab-textColorPrimary",
                               "textColorSecondary": "MuiTab-textColorSecondary",
@@ -1403,10 +1391,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     className="MuiTabs-indicator HvTabs-indicator-21"
                     classes={
                       Object {
-                        "colorPrimary": "PrivateTabIndicator-colorPrimary-53",
-                        "colorSecondary": "PrivateTabIndicator-colorSecondary-54",
-                        "root": "PrivateTabIndicator-root-52",
-                        "vertical": "PrivateTabIndicator-vertical-55",
+                        "colorPrimary": "PrivateTabIndicator-colorPrimary-52",
+                        "colorSecondary": "PrivateTabIndicator-colorSecondary-53",
+                        "root": "PrivateTabIndicator-root-51",
+                        "vertical": "PrivateTabIndicator-vertical-54",
                       }
                     }
                     color="secondary"
@@ -1419,7 +1407,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     }
                   >
                     <span
-                      className="PrivateTabIndicator-root-52 PrivateTabIndicator-colorSecondary-54 MuiTabs-indicator HvTabs-indicator-21"
+                      className="PrivateTabIndicator-root-51 PrivateTabIndicator-colorSecondary-53 MuiTabs-indicator HvTabs-indicator-21"
                       style={
                         Object {
                           "left": 0,

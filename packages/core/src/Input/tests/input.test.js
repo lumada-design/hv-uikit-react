@@ -11,6 +11,8 @@ import iconPositions from "../iconPositions";
 import HvProvider from "../../Provider";
 import Input from "..";
 
+/* eslint-disable no-console */
+
 const labels = {
   inputLabel: "inputLabel",
   placeholder: "placeholder",
@@ -228,6 +230,10 @@ describe("Input", () => {
   });
 
   it("should call the selected callback", () => {
+    const originalError = console.error;
+    // Hide console error: "A component is changing an uncontrolled input of type text to be controlled. "
+    console.error = jest.fn();
+
     const suggestionSelected = jest.fn();
     wrapper = mount(
       <HvProvider>
@@ -240,6 +246,8 @@ describe("Input", () => {
     const inputInstance = getInput(wrapper);
     inputInstance.suggestionSelectedHandler({ label: "test" });
     expect(suggestionSelected).toHaveBeenCalled();
+
+    console.error = originalError;
   });
 
   it("should showInfo numbers on blur", () => {
