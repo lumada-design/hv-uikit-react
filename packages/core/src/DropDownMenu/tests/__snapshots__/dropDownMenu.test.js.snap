@@ -3058,52 +3058,54 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       role="tooltip"
                       style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                     >
-                      <div
-                        class="HvDropDownMenu-menuList-20"
-                      >
-                        <div>
-                          <ul
-                            class="HvList-root-33"
-                            id="dropdownMenu-list"
-                            role="menu"
-                          >
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-0"
-                              role="menuitem"
-                              tabindex="0"
+                      <div>
+                        <div
+                          class="HvDropDownMenu-menuList-20"
+                        >
+                          <div>
+                            <ul
+                              class="HvList-root-33"
+                              id="dropdownMenu-list"
+                              role="menu"
                             >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-0"
+                                role="menuitem"
+                                tabindex="0"
                               >
-                                Label 1
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-1"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 1
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-1"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 2
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-2"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 2
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-2"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 3
-                              </p>
-                            </li>
-                          </ul>
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 3
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3111,52 +3113,54 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       role="tooltip"
                       style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                     >
-                      <div
-                        class="HvDropDownMenu-menuList-98"
-                      >
-                        <div>
-                          <ul
-                            class="HvList-root-111"
-                            id="dropdownMenu-list"
-                            role="menu"
-                          >
-                            <li
-                              class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
-                              id="dropdownMenu-list-item-0"
-                              role="menuitem"
-                              tabindex="0"
+                      <div>
+                        <div
+                          class="HvDropDownMenu-menuList-98"
+                        >
+                          <div>
+                            <ul
+                              class="HvList-root-111"
+                              id="dropdownMenu-list"
+                              role="menu"
                             >
-                              <p
-                                class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                              <li
+                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                id="dropdownMenu-list-item-0"
+                                role="menuitem"
+                                tabindex="0"
                               >
-                                Label 1
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
-                              id="dropdownMenu-list-item-1"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                <p
+                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                >
+                                  Label 1
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                id="dropdownMenu-list-item-1"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 2
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
-                              id="dropdownMenu-list-item-2"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                <p
+                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                >
+                                  Label 2
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                id="dropdownMenu-list-item-2"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 3
-                              </p>
-                            </li>
-                          </ul>
+                                <p
+                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                >
+                                  Label 3
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3164,52 +3168,54 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       role="tooltip"
                       style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                     >
-                      <div
-                        class="HvDropDownMenu-menuList-222"
-                      >
-                        <div>
-                          <ul
-                            class="HvList-root-235"
-                            id="dropdownMenu-list"
-                            role="menu"
-                          >
-                            <li
-                              class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
-                              id="dropdownMenu-list-item-0"
-                              role="menuitem"
-                              tabindex="0"
+                      <div>
+                        <div
+                          class="HvDropDownMenu-menuList-222"
+                        >
+                          <div>
+                            <ul
+                              class="HvList-root-235"
+                              id="dropdownMenu-list"
+                              role="menu"
                             >
-                              <p
-                                class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                              <li
+                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                id="dropdownMenu-list-item-0"
+                                role="menuitem"
+                                tabindex="0"
                               >
-                                Label 1
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
-                              id="dropdownMenu-list-item-1"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                <p
+                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                >
+                                  Label 1
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                id="dropdownMenu-list-item-1"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 2
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
-                              id="dropdownMenu-list-item-2"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                <p
+                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                >
+                                  Label 2
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                id="dropdownMenu-list-item-2"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 3
-                              </p>
-                            </li>
-                          </ul>
+                                <p
+                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                >
+                                  Label 3
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3217,52 +3223,54 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       role="tooltip"
                       style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                     >
-                      <div
-                        class="HvDropDownMenu-menuList-470"
-                      >
-                        <div>
-                          <ul
-                            class="HvList-root-483"
-                            id="hv-dropdown-menu2-list"
-                            role="menu"
-                          >
-                            <li
-                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                              id="hv-dropdown-menu2-list-item-0"
-                              role="menuitem"
-                              tabindex="0"
+                      <div>
+                        <div
+                          class="HvDropDownMenu-menuList-470"
+                        >
+                          <div>
+                            <ul
+                              class="HvList-root-483"
+                              id="hv-dropdown-menu2-list"
+                              role="menu"
                             >
-                              <p
-                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                              <li
+                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                id="hv-dropdown-menu2-list-item-0"
+                                role="menuitem"
+                                tabindex="0"
                               >
-                                Label 1
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                              id="hv-dropdown-menu2-list-item-1"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                <p
+                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                >
+                                  Label 1
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                id="hv-dropdown-menu2-list-item-1"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 2
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                              id="hv-dropdown-menu2-list-item-2"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                <p
+                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                >
+                                  Label 2
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                id="hv-dropdown-menu2-list-item-2"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 3
-                              </p>
-                            </li>
-                          </ul>
+                                <p
+                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                >
+                                  Label 3
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3280,78 +3288,31 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     }
                   }
                 >
-                  <ForwardRef(ClickAwayListener)
-                    onClickAway={[Function]}
+                  <OutsideClickHandler
+                    disabled={false}
+                    display="block"
+                    onOutsideClick={[Function]}
+                    useCapture={true}
                   >
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={true}
-                      createOptions={
-                        Object {
-                          "allowOutsideClick": true,
-                          "escapeDeactivates": false,
-                          "fallbackFocus": null,
+                    <div>
+                      <FocusTrap
+                        _createFocusTrap={[Function]}
+                        active={true}
+                        createOptions={
+                          Object {
+                            "allowOutsideClick": true,
+                            "escapeDeactivates": false,
+                            "fallbackFocus": null,
+                          }
                         }
-                      }
-                      focusTrapOptions={Object {}}
-                      paused={false}
-                    >
-                      <div
-                        className="HvDropDownMenu-menuList-470"
-                        onKeyDown={[Function]}
+                        focusTrapOptions={Object {}}
+                        paused={false}
                       >
-                        <WithStyles(List)
-                          condensed={true}
-                          hasTooltips={false}
-                          id="hv-dropdown-menu2-list"
-                          labels={
-                            Object {
-                              "selectAll": "All",
-                              "selectionConjunction": "of",
-                            }
-                          }
-                          multiSelect={false}
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          selectDefault={false}
-                          selectable={false}
-                          showSelectAll={false}
-                          singleSelectionToggle={true}
-                          useRouter={false}
-                          useSelector={false}
-                          values={
-                            Array [
-                              Object {
-                                "label": "Label 1",
-                              },
-                              Object {
-                                "label": "Label 2",
-                              },
-                              Object {
-                                "label": "Label 3",
-                              },
-                            ]
-                          }
+                        <div
+                          className="HvDropDownMenu-menuList-470"
+                          onKeyDown={[Function]}
                         >
-                          <List
-                            classes={
-                              Object {
-                                "box": "HvList-box-496",
-                                "condensed": "HvList-condensed-485",
-                                "disabled": "HvList-disabled-490",
-                                "label": "HvList-label-492",
-                                "labelIconLeftPadding": "HvList-labelIconLeftPadding-493",
-                                "listItem": "HvList-listItem-484",
-                                "noIconLeftPadding": "HvList-noIconLeftPadding-494",
-                                "root": "HvList-root-483",
-                                "selectAll": "HvList-selectAll-489",
-                                "selected": "HvList-selected-488",
-                                "selector": "HvList-selector-486",
-                                "selectorContainer": "HvList-selectorContainer-487",
-                                "textDisabled": "HvList-textDisabled-491",
-                                "truncate": "HvList-truncate-495",
-                              }
-                            }
+                          <WithStyles(List)
                             condensed={true}
                             hasTooltips={false}
                             id="hv-dropdown-menu2-list"
@@ -3384,87 +3345,64 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               ]
                             }
                           >
-                            <div>
-                              <ul
-                                className="HvList-root-483"
-                                id="hv-dropdown-menu2-list"
-                                role="menu"
-                              >
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": 0,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="0"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-483"
-                                          id="hv-dropdown-menu2-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
+                            <List
+                              classes={
+                                Object {
+                                  "box": "HvList-box-496",
+                                  "condensed": "HvList-condensed-485",
+                                  "disabled": "HvList-disabled-490",
+                                  "label": "HvList-label-492",
+                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding-493",
+                                  "listItem": "HvList-listItem-484",
+                                  "noIconLeftPadding": "HvList-noIconLeftPadding-494",
+                                  "root": "HvList-root-483",
+                                  "selectAll": "HvList-selectAll-489",
+                                  "selected": "HvList-selected-488",
+                                  "selector": "HvList-selector-486",
+                                  "selectorContainer": "HvList-selectorContainer-487",
+                                  "textDisabled": "HvList-textDisabled-491",
+                                  "truncate": "HvList-truncate-495",
+                                }
+                              }
+                              condensed={true}
+                              hasTooltips={false}
+                              id="hv-dropdown-menu2-list"
+                              labels={
+                                Object {
+                                  "selectAll": "All",
+                                  "selectionConjunction": "of",
+                                }
+                              }
+                              multiSelect={false}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              selectDefault={false}
+                              selectable={false}
+                              showSelectAll={false}
+                              singleSelectionToggle={true}
+                              useRouter={false}
+                              useSelector={false}
+                              values={
+                                Array [
+                                  Object {
+                                    "label": "Label 1",
+                                  },
+                                  Object {
+                                    "label": "Label 2",
+                                  },
+                                  Object {
+                                    "label": "Label 3",
+                                  },
+                                ]
+                              }
+                            >
+                              <div>
+                                <ul
+                                  className="HvList-root-483"
+                                  id="hv-dropdown-menu2-list"
+                                  role="menu"
                                 >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-499",
-                                        "externalReference": "Focus-externalReference-502",
-                                        "falseFocus": "Focus-falseFocus-503",
-                                        "focusDisabled": "Focus-focusDisabled-500",
-                                        "focused": "Focus-focused-501",
-                                        "root": "Focus-root-497",
-                                        "selected": "Focus-selected-498",
-                                      }
-                                    }
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": 0,
@@ -3473,6 +3411,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="0"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -3526,151 +3465,150 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-499",
+                                          "externalReference": "Focus-externalReference-502",
+                                          "falseFocus": "Focus-falseFocus-503",
+                                          "focusDisabled": "Focus-focusDisabled-500",
+                                          "focused": "Focus-focused-501",
+                                          "root": "Focus-root-497",
+                                          "selected": "Focus-selected-498",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": 0,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-483"
+                                              id="hv-dropdown-menu2-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                        id="hv-dropdown-menu2-list-item-0"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-492 HvList-truncate-495"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          id="hv-dropdown-menu2-list-item-0"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-492 HvList-truncate-495"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-506",
-                                                  "4xlTitle": "HvTypography-4xlTitle-505",
-                                                  "5xlTitle": "HvTypography-5xlTitle-504",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                  "disabledText": "HvTypography-disabledText-525",
-                                                  "highlightText": "HvTypography-highlightText-514",
-                                                  "infoText": "HvTypography-infoText-523",
-                                                  "inlineLink": "HvTypography-inlineLink-517",
-                                                  "lTitle": "HvTypography-lTitle-509",
-                                                  "labelText": "HvTypography-labelText-522",
-                                                  "mTitle": "HvTypography-mTitle-510",
-                                                  "margin": "HvTypography-margin-528",
-                                                  "normalText": "HvTypography-normalText-515",
-                                                  "placeholderText": "HvTypography-placeholderText-519",
-                                                  "sLink": "HvTypography-sLink-524",
-                                                  "sText": "HvTypography-sText-521",
-                                                  "sTitle": "HvTypography-sTitle-511",
-                                                  "selectedNavText": "HvTypography-selectedNavText-520",
-                                                  "selectedText": "HvTypography-selectedText-516",
-                                                  "vizText": "HvTypography-vizText-526",
-                                                  "xlTitle": "HvTypography-xlTitle-508",
-                                                  "xsTitle": "HvTypography-xsTitle-512",
-                                                  "xxlTitle": "HvTypography-xxlTitle-507",
-                                                  "xxsTitle": "HvTypography-xxsTitle-513",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                              <ForwardRef
+                                                className="HvList-label-492 HvList-truncate-495"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-506",
+                                                    "4xlTitle": "HvTypography-4xlTitle-505",
+                                                    "5xlTitle": "HvTypography-5xlTitle-504",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
+                                                    "disabledText": "HvTypography-disabledText-525",
+                                                    "highlightText": "HvTypography-highlightText-514",
+                                                    "infoText": "HvTypography-infoText-523",
+                                                    "inlineLink": "HvTypography-inlineLink-517",
+                                                    "lTitle": "HvTypography-lTitle-509",
+                                                    "labelText": "HvTypography-labelText-522",
+                                                    "mTitle": "HvTypography-mTitle-510",
+                                                    "margin": "HvTypography-margin-528",
+                                                    "normalText": "HvTypography-normalText-515",
+                                                    "placeholderText": "HvTypography-placeholderText-519",
+                                                    "sLink": "HvTypography-sLink-524",
+                                                    "sText": "HvTypography-sText-521",
+                                                    "sTitle": "HvTypography-sTitle-511",
+                                                    "selectedNavText": "HvTypography-selectedNavText-520",
+                                                    "selectedText": "HvTypography-selectedText-516",
+                                                    "vizText": "HvTypography-vizText-526",
+                                                    "xlTitle": "HvTypography-xlTitle-508",
+                                                    "xsTitle": "HvTypography-xsTitle-512",
+                                                    "xxlTitle": "HvTypography-xxlTitle-507",
+                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 1
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": -1,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="1"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-483"
-                                          id="hv-dropdown-menu2-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
-                                >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-499",
-                                        "externalReference": "Focus-externalReference-502",
-                                        "falseFocus": "Focus-falseFocus-503",
-                                        "focusDisabled": "Focus-focusDisabled-500",
-                                        "focused": "Focus-focused-501",
-                                        "root": "Focus-root-497",
-                                        "selected": "Focus-selected-498",
-                                      }
-                                    }
+                                                <p
+                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -3679,6 +3617,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="1"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -3732,151 +3671,150 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-499",
+                                          "externalReference": "Focus-externalReference-502",
+                                          "falseFocus": "Focus-falseFocus-503",
+                                          "focusDisabled": "Focus-focusDisabled-500",
+                                          "focused": "Focus-focused-501",
+                                          "root": "Focus-root-497",
+                                          "selected": "Focus-selected-498",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": -1,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-483"
+                                              id="hv-dropdown-menu2-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                        id="hv-dropdown-menu2-list-item-1"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-492 HvList-truncate-495"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          id="hv-dropdown-menu2-list-item-1"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-492 HvList-truncate-495"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-506",
-                                                  "4xlTitle": "HvTypography-4xlTitle-505",
-                                                  "5xlTitle": "HvTypography-5xlTitle-504",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                  "disabledText": "HvTypography-disabledText-525",
-                                                  "highlightText": "HvTypography-highlightText-514",
-                                                  "infoText": "HvTypography-infoText-523",
-                                                  "inlineLink": "HvTypography-inlineLink-517",
-                                                  "lTitle": "HvTypography-lTitle-509",
-                                                  "labelText": "HvTypography-labelText-522",
-                                                  "mTitle": "HvTypography-mTitle-510",
-                                                  "margin": "HvTypography-margin-528",
-                                                  "normalText": "HvTypography-normalText-515",
-                                                  "placeholderText": "HvTypography-placeholderText-519",
-                                                  "sLink": "HvTypography-sLink-524",
-                                                  "sText": "HvTypography-sText-521",
-                                                  "sTitle": "HvTypography-sTitle-511",
-                                                  "selectedNavText": "HvTypography-selectedNavText-520",
-                                                  "selectedText": "HvTypography-selectedText-516",
-                                                  "vizText": "HvTypography-vizText-526",
-                                                  "xlTitle": "HvTypography-xlTitle-508",
-                                                  "xsTitle": "HvTypography-xsTitle-512",
-                                                  "xxlTitle": "HvTypography-xxlTitle-507",
-                                                  "xxsTitle": "HvTypography-xxsTitle-513",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                              <ForwardRef
+                                                className="HvList-label-492 HvList-truncate-495"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-506",
+                                                    "4xlTitle": "HvTypography-4xlTitle-505",
+                                                    "5xlTitle": "HvTypography-5xlTitle-504",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
+                                                    "disabledText": "HvTypography-disabledText-525",
+                                                    "highlightText": "HvTypography-highlightText-514",
+                                                    "infoText": "HvTypography-infoText-523",
+                                                    "inlineLink": "HvTypography-inlineLink-517",
+                                                    "lTitle": "HvTypography-lTitle-509",
+                                                    "labelText": "HvTypography-labelText-522",
+                                                    "mTitle": "HvTypography-mTitle-510",
+                                                    "margin": "HvTypography-margin-528",
+                                                    "normalText": "HvTypography-normalText-515",
+                                                    "placeholderText": "HvTypography-placeholderText-519",
+                                                    "sLink": "HvTypography-sLink-524",
+                                                    "sText": "HvTypography-sText-521",
+                                                    "sTitle": "HvTypography-sTitle-511",
+                                                    "selectedNavText": "HvTypography-selectedNavText-520",
+                                                    "selectedText": "HvTypography-selectedText-516",
+                                                    "vizText": "HvTypography-vizText-526",
+                                                    "xlTitle": "HvTypography-xlTitle-508",
+                                                    "xsTitle": "HvTypography-xsTitle-512",
+                                                    "xxlTitle": "HvTypography-xxlTitle-507",
+                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 2
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": -1,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="2"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-483"
-                                          id="hv-dropdown-menu2-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                            id="hv-dropdown-menu2-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
-                                >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-499",
-                                        "externalReference": "Focus-externalReference-502",
-                                        "falseFocus": "Focus-falseFocus-503",
-                                        "focusDisabled": "Focus-focusDisabled-500",
-                                        "focused": "Focus-focused-501",
-                                        "root": "Focus-root-497",
-                                        "selected": "Focus-selected-498",
-                                      }
-                                    }
+                                                <p
+                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -3885,6 +3823,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="2"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -3938,83 +3877,157 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-499",
+                                          "externalReference": "Focus-externalReference-502",
+                                          "falseFocus": "Focus-falseFocus-503",
+                                          "focusDisabled": "Focus-focusDisabled-500",
+                                          "focused": "Focus-focused-501",
+                                          "root": "Focus-root-497",
+                                          "selected": "Focus-selected-498",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": -1,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-483"
+                                              id="hv-dropdown-menu2-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                id="hv-dropdown-menu2-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
-                                        id="hv-dropdown-menu2-list-item-2"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-492 HvList-truncate-495"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          id="hv-dropdown-menu2-list-item-2"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-492 HvList-truncate-495"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-506",
-                                                  "4xlTitle": "HvTypography-4xlTitle-505",
-                                                  "5xlTitle": "HvTypography-5xlTitle-504",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                  "disabledText": "HvTypography-disabledText-525",
-                                                  "highlightText": "HvTypography-highlightText-514",
-                                                  "infoText": "HvTypography-infoText-523",
-                                                  "inlineLink": "HvTypography-inlineLink-517",
-                                                  "lTitle": "HvTypography-lTitle-509",
-                                                  "labelText": "HvTypography-labelText-522",
-                                                  "mTitle": "HvTypography-mTitle-510",
-                                                  "margin": "HvTypography-margin-528",
-                                                  "normalText": "HvTypography-normalText-515",
-                                                  "placeholderText": "HvTypography-placeholderText-519",
-                                                  "sLink": "HvTypography-sLink-524",
-                                                  "sText": "HvTypography-sText-521",
-                                                  "sTitle": "HvTypography-sTitle-511",
-                                                  "selectedNavText": "HvTypography-selectedNavText-520",
-                                                  "selectedText": "HvTypography-selectedText-516",
-                                                  "vizText": "HvTypography-vizText-526",
-                                                  "xlTitle": "HvTypography-xlTitle-508",
-                                                  "xsTitle": "HvTypography-xsTitle-512",
-                                                  "xxlTitle": "HvTypography-xxlTitle-507",
-                                                  "xxsTitle": "HvTypography-xxsTitle-513",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                              <ForwardRef
+                                                className="HvList-label-492 HvList-truncate-495"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-506",
+                                                    "4xlTitle": "HvTypography-4xlTitle-505",
+                                                    "5xlTitle": "HvTypography-5xlTitle-504",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
+                                                    "disabledText": "HvTypography-disabledText-525",
+                                                    "highlightText": "HvTypography-highlightText-514",
+                                                    "infoText": "HvTypography-infoText-523",
+                                                    "inlineLink": "HvTypography-inlineLink-517",
+                                                    "lTitle": "HvTypography-lTitle-509",
+                                                    "labelText": "HvTypography-labelText-522",
+                                                    "mTitle": "HvTypography-mTitle-510",
+                                                    "margin": "HvTypography-margin-528",
+                                                    "normalText": "HvTypography-normalText-515",
+                                                    "placeholderText": "HvTypography-placeholderText-519",
+                                                    "sLink": "HvTypography-sLink-524",
+                                                    "sText": "HvTypography-sText-521",
+                                                    "sTitle": "HvTypography-sTitle-511",
+                                                    "selectedNavText": "HvTypography-selectedNavText-520",
+                                                    "selectedText": "HvTypography-selectedText-516",
+                                                    "vizText": "HvTypography-vizText-526",
+                                                    "xlTitle": "HvTypography-xlTitle-508",
+                                                    "xsTitle": "HvTypography-xsTitle-512",
+                                                    "xxlTitle": "HvTypography-xxlTitle-507",
+                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 3
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                              </ul>
-                            </div>
-                          </List>
-                        </WithStyles(List)>
-                      </div>
-                    </FocusTrap>
-                  </ForwardRef(ClickAwayListener)>
+                                                <p
+                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                </ul>
+                              </div>
+                            </List>
+                          </WithStyles(List)>
+                        </div>
+                      </FocusTrap>
+                    </div>
+                  </OutsideClickHandler>
                 </div>
               </Portal>
             </ForwardRef(Portal)>
@@ -7090,52 +7103,54 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                       role="tooltip"
                       style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
                     >
-                      <div
-                        class="HvDropDownMenu-menuList-20"
-                      >
-                        <div>
-                          <ul
-                            class="HvList-root-33"
-                            id="dropdownMenu-list"
-                            role="menu"
-                          >
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-0"
-                              role="menuitem"
-                              tabindex="0"
+                      <div>
+                        <div
+                          class="HvDropDownMenu-menuList-20"
+                        >
+                          <div>
+                            <ul
+                              class="HvList-root-33"
+                              id="dropdownMenu-list"
+                              role="menu"
                             >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-0"
+                                role="menuitem"
+                                tabindex="0"
                               >
-                                Label 1
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-1"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 1
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-1"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 2
-                              </p>
-                            </li>
-                            <li
-                              class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                              id="dropdownMenu-list-item-2"
-                              role="menuitem"
-                              tabindex="-1"
-                            >
-                              <p
-                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 2
+                                </p>
+                              </li>
+                              <li
+                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                id="dropdownMenu-list-item-2"
+                                role="menuitem"
+                                tabindex="-1"
                               >
-                                Label 3
-                              </p>
-                            </li>
-                          </ul>
+                                <p
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                >
+                                  Label 3
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -7153,78 +7168,31 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                     }
                   }
                 >
-                  <ForwardRef(ClickAwayListener)
-                    onClickAway={[Function]}
+                  <OutsideClickHandler
+                    disabled={false}
+                    display="block"
+                    onOutsideClick={[Function]}
+                    useCapture={true}
                   >
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={true}
-                      createOptions={
-                        Object {
-                          "allowOutsideClick": true,
-                          "escapeDeactivates": false,
-                          "fallbackFocus": null,
+                    <div>
+                      <FocusTrap
+                        _createFocusTrap={[Function]}
+                        active={true}
+                        createOptions={
+                          Object {
+                            "allowOutsideClick": true,
+                            "escapeDeactivates": false,
+                            "fallbackFocus": null,
+                          }
                         }
-                      }
-                      focusTrapOptions={Object {}}
-                      paused={false}
-                    >
-                      <div
-                        className="HvDropDownMenu-menuList-20"
-                        onKeyDown={[Function]}
+                        focusTrapOptions={Object {}}
+                        paused={false}
                       >
-                        <WithStyles(List)
-                          condensed={true}
-                          hasTooltips={false}
-                          id="dropdownMenu-list"
-                          labels={
-                            Object {
-                              "selectAll": "All",
-                              "selectionConjunction": "of",
-                            }
-                          }
-                          multiSelect={false}
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          selectDefault={false}
-                          selectable={false}
-                          showSelectAll={false}
-                          singleSelectionToggle={true}
-                          useRouter={false}
-                          useSelector={false}
-                          values={
-                            Array [
-                              Object {
-                                "label": "Label 1",
-                              },
-                              Object {
-                                "label": "Label 2",
-                              },
-                              Object {
-                                "label": "Label 3",
-                              },
-                            ]
-                          }
+                        <div
+                          className="HvDropDownMenu-menuList-20"
+                          onKeyDown={[Function]}
                         >
-                          <List
-                            classes={
-                              Object {
-                                "box": "HvList-box-46",
-                                "condensed": "HvList-condensed-35",
-                                "disabled": "HvList-disabled-40",
-                                "label": "HvList-label-42",
-                                "labelIconLeftPadding": "HvList-labelIconLeftPadding-43",
-                                "listItem": "HvList-listItem-34",
-                                "noIconLeftPadding": "HvList-noIconLeftPadding-44",
-                                "root": "HvList-root-33",
-                                "selectAll": "HvList-selectAll-39",
-                                "selected": "HvList-selected-38",
-                                "selector": "HvList-selector-36",
-                                "selectorContainer": "HvList-selectorContainer-37",
-                                "textDisabled": "HvList-textDisabled-41",
-                                "truncate": "HvList-truncate-45",
-                              }
-                            }
+                          <WithStyles(List)
                             condensed={true}
                             hasTooltips={false}
                             id="dropdownMenu-list"
@@ -7257,87 +7225,64 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               ]
                             }
                           >
-                            <div>
-                              <ul
-                                className="HvList-root-33"
-                                id="dropdownMenu-list"
-                                role="menu"
-                              >
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": 0,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="0"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-33"
-                                          id="dropdownMenu-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
+                            <List
+                              classes={
+                                Object {
+                                  "box": "HvList-box-46",
+                                  "condensed": "HvList-condensed-35",
+                                  "disabled": "HvList-disabled-40",
+                                  "label": "HvList-label-42",
+                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding-43",
+                                  "listItem": "HvList-listItem-34",
+                                  "noIconLeftPadding": "HvList-noIconLeftPadding-44",
+                                  "root": "HvList-root-33",
+                                  "selectAll": "HvList-selectAll-39",
+                                  "selected": "HvList-selected-38",
+                                  "selector": "HvList-selector-36",
+                                  "selectorContainer": "HvList-selectorContainer-37",
+                                  "textDisabled": "HvList-textDisabled-41",
+                                  "truncate": "HvList-truncate-45",
+                                }
+                              }
+                              condensed={true}
+                              hasTooltips={false}
+                              id="dropdownMenu-list"
+                              labels={
+                                Object {
+                                  "selectAll": "All",
+                                  "selectionConjunction": "of",
+                                }
+                              }
+                              multiSelect={false}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              selectDefault={false}
+                              selectable={false}
+                              showSelectAll={false}
+                              singleSelectionToggle={true}
+                              useRouter={false}
+                              useSelector={false}
+                              values={
+                                Array [
+                                  Object {
+                                    "label": "Label 1",
+                                  },
+                                  Object {
+                                    "label": "Label 2",
+                                  },
+                                  Object {
+                                    "label": "Label 3",
+                                  },
+                                ]
+                              }
+                            >
+                              <div>
+                                <ul
+                                  className="HvList-root-33"
+                                  id="dropdownMenu-list"
+                                  role="menu"
                                 >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-49",
-                                        "externalReference": "Focus-externalReference-52",
-                                        "falseFocus": "Focus-falseFocus-53",
-                                        "focusDisabled": "Focus-focusDisabled-50",
-                                        "focused": "Focus-focused-51",
-                                        "root": "Focus-root-47",
-                                        "selected": "Focus-selected-48",
-                                      }
-                                    }
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": 0,
@@ -7346,6 +7291,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="0"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -7399,151 +7345,150 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-49",
+                                          "externalReference": "Focus-externalReference-52",
+                                          "falseFocus": "Focus-falseFocus-53",
+                                          "focusDisabled": "Focus-focusDisabled-50",
+                                          "focused": "Focus-focused-51",
+                                          "root": "Focus-root-47",
+                                          "selected": "Focus-selected-48",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": 0,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-33"
+                                              id="dropdownMenu-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                        id="dropdownMenu-list-item-0"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-42 HvList-truncate-45"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                          id="dropdownMenu-list-item-0"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-56",
-                                                  "4xlTitle": "HvTypography-4xlTitle-55",
-                                                  "5xlTitle": "HvTypography-5xlTitle-54",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-77",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                  "disabledText": "HvTypography-disabledText-75",
-                                                  "highlightText": "HvTypography-highlightText-64",
-                                                  "infoText": "HvTypography-infoText-73",
-                                                  "inlineLink": "HvTypography-inlineLink-67",
-                                                  "lTitle": "HvTypography-lTitle-59",
-                                                  "labelText": "HvTypography-labelText-72",
-                                                  "mTitle": "HvTypography-mTitle-60",
-                                                  "margin": "HvTypography-margin-78",
-                                                  "normalText": "HvTypography-normalText-65",
-                                                  "placeholderText": "HvTypography-placeholderText-69",
-                                                  "sLink": "HvTypography-sLink-74",
-                                                  "sText": "HvTypography-sText-71",
-                                                  "sTitle": "HvTypography-sTitle-61",
-                                                  "selectedNavText": "HvTypography-selectedNavText-70",
-                                                  "selectedText": "HvTypography-selectedText-66",
-                                                  "vizText": "HvTypography-vizText-76",
-                                                  "xlTitle": "HvTypography-xlTitle-58",
-                                                  "xsTitle": "HvTypography-xsTitle-62",
-                                                  "xxlTitle": "HvTypography-xxlTitle-57",
-                                                  "xxsTitle": "HvTypography-xxsTitle-63",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                              <ForwardRef
+                                                className="HvList-label-42 HvList-truncate-45"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-56",
+                                                    "4xlTitle": "HvTypography-4xlTitle-55",
+                                                    "5xlTitle": "HvTypography-5xlTitle-54",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-68",
+                                                    "disabledText": "HvTypography-disabledText-75",
+                                                    "highlightText": "HvTypography-highlightText-64",
+                                                    "infoText": "HvTypography-infoText-73",
+                                                    "inlineLink": "HvTypography-inlineLink-67",
+                                                    "lTitle": "HvTypography-lTitle-59",
+                                                    "labelText": "HvTypography-labelText-72",
+                                                    "mTitle": "HvTypography-mTitle-60",
+                                                    "margin": "HvTypography-margin-78",
+                                                    "normalText": "HvTypography-normalText-65",
+                                                    "placeholderText": "HvTypography-placeholderText-69",
+                                                    "sLink": "HvTypography-sLink-74",
+                                                    "sText": "HvTypography-sText-71",
+                                                    "sTitle": "HvTypography-sTitle-61",
+                                                    "selectedNavText": "HvTypography-selectedNavText-70",
+                                                    "selectedText": "HvTypography-selectedText-66",
+                                                    "vizText": "HvTypography-vizText-76",
+                                                    "xlTitle": "HvTypography-xlTitle-58",
+                                                    "xsTitle": "HvTypography-xsTitle-62",
+                                                    "xxlTitle": "HvTypography-xxlTitle-57",
+                                                    "xxsTitle": "HvTypography-xxsTitle-63",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 1
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": -1,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="1"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-33"
-                                          id="dropdownMenu-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
-                                >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-49",
-                                        "externalReference": "Focus-externalReference-52",
-                                        "falseFocus": "Focus-falseFocus-53",
-                                        "focusDisabled": "Focus-focusDisabled-50",
-                                        "focused": "Focus-focused-51",
-                                        "root": "Focus-root-47",
-                                        "selected": "Focus-selected-48",
-                                      }
-                                    }
+                                                <p
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -7552,6 +7497,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="1"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -7605,151 +7551,150 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-49",
+                                          "externalReference": "Focus-externalReference-52",
+                                          "falseFocus": "Focus-falseFocus-53",
+                                          "focusDisabled": "Focus-focusDisabled-50",
+                                          "focused": "Focus-focused-51",
+                                          "root": "Focus-root-47",
+                                          "selected": "Focus-selected-48",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": -1,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-33"
+                                              id="dropdownMenu-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                        id="dropdownMenu-list-item-1"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-42 HvList-truncate-45"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                          id="dropdownMenu-list-item-1"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-56",
-                                                  "4xlTitle": "HvTypography-4xlTitle-55",
-                                                  "5xlTitle": "HvTypography-5xlTitle-54",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-77",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                  "disabledText": "HvTypography-disabledText-75",
-                                                  "highlightText": "HvTypography-highlightText-64",
-                                                  "infoText": "HvTypography-infoText-73",
-                                                  "inlineLink": "HvTypography-inlineLink-67",
-                                                  "lTitle": "HvTypography-lTitle-59",
-                                                  "labelText": "HvTypography-labelText-72",
-                                                  "mTitle": "HvTypography-mTitle-60",
-                                                  "margin": "HvTypography-margin-78",
-                                                  "normalText": "HvTypography-normalText-65",
-                                                  "placeholderText": "HvTypography-placeholderText-69",
-                                                  "sLink": "HvTypography-sLink-74",
-                                                  "sText": "HvTypography-sText-71",
-                                                  "sTitle": "HvTypography-sTitle-61",
-                                                  "selectedNavText": "HvTypography-selectedNavText-70",
-                                                  "selectedText": "HvTypography-selectedText-66",
-                                                  "vizText": "HvTypography-vizText-76",
-                                                  "xlTitle": "HvTypography-xlTitle-58",
-                                                  "xsTitle": "HvTypography-xsTitle-62",
-                                                  "xxlTitle": "HvTypography-xxlTitle-57",
-                                                  "xxsTitle": "HvTypography-xxsTitle-63",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                              <ForwardRef
+                                                className="HvList-label-42 HvList-truncate-45"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-56",
+                                                    "4xlTitle": "HvTypography-4xlTitle-55",
+                                                    "5xlTitle": "HvTypography-5xlTitle-54",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-68",
+                                                    "disabledText": "HvTypography-disabledText-75",
+                                                    "highlightText": "HvTypography-highlightText-64",
+                                                    "infoText": "HvTypography-infoText-73",
+                                                    "inlineLink": "HvTypography-inlineLink-67",
+                                                    "lTitle": "HvTypography-lTitle-59",
+                                                    "labelText": "HvTypography-labelText-72",
+                                                    "mTitle": "HvTypography-mTitle-60",
+                                                    "margin": "HvTypography-margin-78",
+                                                    "normalText": "HvTypography-normalText-65",
+                                                    "placeholderText": "HvTypography-placeholderText-69",
+                                                    "sLink": "HvTypography-sLink-74",
+                                                    "sText": "HvTypography-sText-71",
+                                                    "sTitle": "HvTypography-sTitle-61",
+                                                    "selectedNavText": "HvTypography-selectedNavText-70",
+                                                    "selectedText": "HvTypography-selectedText-66",
+                                                    "vizText": "HvTypography-vizText-76",
+                                                    "xlTitle": "HvTypography-xlTitle-58",
+                                                    "xsTitle": "HvTypography-xsTitle-62",
+                                                    "xxlTitle": "HvTypography-xxlTitle-57",
+                                                    "xxsTitle": "HvTypography-xxsTitle-63",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 2
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                                <WithStyles(Focus)
-                                  configuration={
-                                    Object {
-                                      "tabIndex": -1,
-                                    }
-                                  }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
-                                  key="2"
-                                  rootRef={
-                                    Object {
-                                      "current": <div>
-                                        <ul
-                                          class="HvList-root-33"
-                                          id="dropdownMenu-list"
-                                          role="menu"
-                                        >
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-0"
-                                            role="menuitem"
-                                            tabindex="0"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 1
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-1"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 2
-                                            </p>
-                                          </li>
-                                          <li
-                                            class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                            id="dropdownMenu-list-item-2"
-                                            role="menuitem"
-                                            tabindex="-1"
-                                          >
-                                            <p
-                                              class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
-                                            >
-                                              Label 3
-                                            </p>
-                                          </li>
-                                        </ul>
-                                      </div>,
-                                    }
-                                  }
-                                  selected={false}
-                                  strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
-                                >
-                                  <Focus
-                                    classes={
-                                      Object {
-                                        "disabled": "Focus-disabled-49",
-                                        "externalReference": "Focus-externalReference-52",
-                                        "falseFocus": "Focus-falseFocus-53",
-                                        "focusDisabled": "Focus-focusDisabled-50",
-                                        "focused": "Focus-focused-51",
-                                        "root": "Focus-root-47",
-                                        "selected": "Focus-selected-48",
-                                      }
-                                    }
+                                                <p
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                  <WithStyles(Focus)
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -7758,6 +7703,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    key="2"
                                     rootRef={
                                       Object {
                                         "current": <div>
@@ -7811,83 +7757,157 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     useArrows={true}
                                     useFalseFocus={false}
                                   >
-                                    <ConditionalWrapper
-                                      condition={false}
-                                      wrapper={[Function]}
+                                    <Focus
+                                      classes={
+                                        Object {
+                                          "disabled": "Focus-disabled-49",
+                                          "externalReference": "Focus-externalReference-52",
+                                          "falseFocus": "Focus-falseFocus-53",
+                                          "focusDisabled": "Focus-focusDisabled-50",
+                                          "focused": "Focus-focused-51",
+                                          "root": "Focus-root-47",
+                                          "selected": "Focus-selected-48",
+                                        }
+                                      }
+                                      configuration={
+                                        Object {
+                                          "tabIndex": -1,
+                                        }
+                                      }
+                                      disabled={false}
+                                      focusDisabled={true}
+                                      focusOnClick={false}
+                                      rootRef={
+                                        Object {
+                                          "current": <div>
+                                            <ul
+                                              class="HvList-root-33"
+                                              id="dropdownMenu-list"
+                                              role="menu"
+                                            >
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-0"
+                                                role="menuitem"
+                                                tabindex="0"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 1
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-1"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 2
+                                                </p>
+                                              </li>
+                                              <li
+                                                class="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                                id="dropdownMenu-list-item-2"
+                                                role="menuitem"
+                                                tabindex="-1"
+                                              >
+                                                <p
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </li>
+                                            </ul>
+                                          </div>,
+                                        }
+                                      }
+                                      selected={false}
+                                      strategy="menu"
+                                      useArrows={true}
+                                      useFalseFocus={false}
                                     >
-                                      <li
-                                        className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
-                                        id="dropdownMenu-list-item-2"
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        role="menuitem"
-                                        selected={false}
+                                      <ConditionalWrapper
+                                        condition={false}
+                                        wrapper={[Function]}
                                       >
-                                        <Text>
-                                          <WithStyles(ForwardRef)
-                                            className="HvList-label-42 HvList-truncate-45"
-                                            component={null}
-                                            paragraph={false}
-                                            variant="normalText"
-                                          >
-                                            <ForwardRef
+                                        <li
+                                          className="HvList-listItem-34 HvList-condensed-35 Focus-root-47 Focus-focusDisabled-50"
+                                          id="dropdownMenu-list-item-2"
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          role="menuitem"
+                                          selected={false}
+                                        >
+                                          <Text>
+                                            <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle-56",
-                                                  "4xlTitle": "HvTypography-4xlTitle-55",
-                                                  "5xlTitle": "HvTypography-5xlTitle-54",
-                                                  "baseFontFamily": "HvTypography-baseFontFamily-77",
-                                                  "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                  "disabledText": "HvTypography-disabledText-75",
-                                                  "highlightText": "HvTypography-highlightText-64",
-                                                  "infoText": "HvTypography-infoText-73",
-                                                  "inlineLink": "HvTypography-inlineLink-67",
-                                                  "lTitle": "HvTypography-lTitle-59",
-                                                  "labelText": "HvTypography-labelText-72",
-                                                  "mTitle": "HvTypography-mTitle-60",
-                                                  "margin": "HvTypography-margin-78",
-                                                  "normalText": "HvTypography-normalText-65",
-                                                  "placeholderText": "HvTypography-placeholderText-69",
-                                                  "sLink": "HvTypography-sLink-74",
-                                                  "sText": "HvTypography-sText-71",
-                                                  "sTitle": "HvTypography-sTitle-61",
-                                                  "selectedNavText": "HvTypography-selectedNavText-70",
-                                                  "selectedText": "HvTypography-selectedText-66",
-                                                  "vizText": "HvTypography-vizText-76",
-                                                  "xlTitle": "HvTypography-xlTitle-58",
-                                                  "xsTitle": "HvTypography-xsTitle-62",
-                                                  "xxlTitle": "HvTypography-xxlTitle-57",
-                                                  "xxsTitle": "HvTypography-xxsTitle-63",
-                                                }
-                                              }
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
-                                              <p
-                                                className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                              <ForwardRef
+                                                className="HvList-label-42 HvList-truncate-45"
+                                                classes={
+                                                  Object {
+                                                    "3xlTitle": "HvTypography-3xlTitle-56",
+                                                    "4xlTitle": "HvTypography-4xlTitle-55",
+                                                    "5xlTitle": "HvTypography-5xlTitle-54",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-68",
+                                                    "disabledText": "HvTypography-disabledText-75",
+                                                    "highlightText": "HvTypography-highlightText-64",
+                                                    "infoText": "HvTypography-infoText-73",
+                                                    "inlineLink": "HvTypography-inlineLink-67",
+                                                    "lTitle": "HvTypography-lTitle-59",
+                                                    "labelText": "HvTypography-labelText-72",
+                                                    "mTitle": "HvTypography-mTitle-60",
+                                                    "margin": "HvTypography-margin-78",
+                                                    "normalText": "HvTypography-normalText-65",
+                                                    "placeholderText": "HvTypography-placeholderText-69",
+                                                    "sLink": "HvTypography-sLink-74",
+                                                    "sText": "HvTypography-sText-71",
+                                                    "sTitle": "HvTypography-sTitle-61",
+                                                    "selectedNavText": "HvTypography-selectedNavText-70",
+                                                    "selectedText": "HvTypography-selectedText-66",
+                                                    "vizText": "HvTypography-vizText-76",
+                                                    "xlTitle": "HvTypography-xlTitle-58",
+                                                    "xsTitle": "HvTypography-xsTitle-62",
+                                                    "xxlTitle": "HvTypography-xxlTitle-57",
+                                                    "xxsTitle": "HvTypography-xxsTitle-63",
+                                                  }
+                                                }
+                                                component={null}
+                                                paragraph={false}
+                                                variant="normalText"
                                               >
-                                                Label 3
-                                              </p>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </Text>
-                                      </li>
-                                    </ConditionalWrapper>
-                                  </Focus>
-                                </WithStyles(Focus)>
-                              </ul>
-                            </div>
-                          </List>
-                        </WithStyles(List)>
-                      </div>
-                    </FocusTrap>
-                  </ForwardRef(ClickAwayListener)>
+                                                <p
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                >
+                                                  Label 3
+                                                </p>
+                                              </ForwardRef>
+                                            </WithStyles(ForwardRef)>
+                                          </Text>
+                                        </li>
+                                      </ConditionalWrapper>
+                                    </Focus>
+                                  </WithStyles(Focus)>
+                                </ul>
+                              </div>
+                            </List>
+                          </WithStyles(List)>
+                        </div>
+                      </FocusTrap>
+                    </div>
+                  </OutsideClickHandler>
                 </div>
               </Portal>
             </ForwardRef(Portal)>

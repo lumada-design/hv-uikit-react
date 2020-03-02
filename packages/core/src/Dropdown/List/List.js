@@ -4,12 +4,8 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
-import {
-  ClickAwayListener,
-  Popper,
-  useTheme,
-  withStyles
-} from "@material-ui/core";
+import { Popper, useTheme, withStyles } from "@material-ui/core";
+import OutsideClickHandler from "react-outside-click-handler";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
@@ -283,7 +279,7 @@ const List = ({
 
   const showList = !isNil(values);
 
-  const renderInnerRender = () => (
+  const renderInnerList = () => (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={clsx(classes.list, classes.listClosed, {
@@ -340,14 +336,14 @@ const List = ({
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
     >
-      <ClickAwayListener onClickAway={e => handleCancel(e)}>
+      <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
         <ConditionalWrapper
           condition={showList}
           wrapper={c => <FocusTrap>{c}</FocusTrap>}
         >
-          {renderInnerRender()}
+          {renderInnerList()}
         </ConditionalWrapper>
-      </ClickAwayListener>
+      </OutsideClickHandler>
     </Popper>
   );
 };
