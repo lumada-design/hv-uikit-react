@@ -21,12 +21,12 @@ import Map from "@hv/uikit-react-icons/dist/Generic/Map";
 import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
 
 const buttonsDefinitions = [
-  { id: "map", icon: <Map />, selected: true },
-  { id: "location", icon: <LocationPin /> },
-  { id: "map1", icon: <Map /> },
-  { id: "location1", icon: <LocationPin /> },
-  { id: "map2", icon: <Map /> },
-  { id: "location2", icon: <LocationPin /> }
+  { id: "map", icon: <Map />, selected: true, buttonProps: {'aria-label': "map"} },
+  { id: "location", icon: <LocationPin />, buttonProps: {'aria-label': "location"} },
+  { id: "map1", icon: <Map />, buttonProps: {'aria-label': "map1"}},
+  { id: "location1", icon: <LocationPin />, buttonProps: {'aria-label': "location1"} },
+  { id: "map2", icon: <Map />, buttonProps: {'aria-label': "map2"} },
+  { id: "location2", icon: <LocationPin />, buttonProps: {'aria-label': "location2"} }
 ];
 
 export default (
