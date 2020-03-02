@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import {
-  ClickAwayListener,
-  IconButton,
-  Popper,
-  useTheme,
-  withStyles
-} from "@material-ui/core";
+import { IconButton, Popper, useTheme, withStyles } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
+import OutsideClickHandler from "react-outside-click-handler";
 import uniqueId from "lodash/uniqueId";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
@@ -122,7 +117,7 @@ const DropDownMenu = ({
         popperOptions={{}}
         style={{ zIndex: theme.zIndex.tooltip }}
       >
-        <ClickAwayListener onClickAway={handleClose}>
+        <OutsideClickHandler onOutsideClick={handleClose}>
           <FocusTrap
             createOptions={{
               escapeDeactivates: false,
@@ -146,7 +141,7 @@ const DropDownMenu = ({
               />
             </div>
           </FocusTrap>
-        </ClickAwayListener>
+        </OutsideClickHandler>
       </Popper>
     </div>
   );
