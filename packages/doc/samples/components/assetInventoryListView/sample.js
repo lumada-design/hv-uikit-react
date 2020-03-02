@@ -5,11 +5,13 @@ import AssetInventoryListView, {
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Level1 from "@hv/uikit-react-icons/dist/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Level5";
+import {
+  Level1,
+  Level2Average,
+  Level3Bad,
+  Level4,
+  Level5
+} from "@hv/uikit-react-icons/dist";
 
 const values = [
   {
@@ -95,12 +97,11 @@ const styles = theme => ({
     borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
-    display: "block",
     paddingLeft: "3px"
   }
 });
 
-const StyledRow = withStyles(styles, { withTheme: true })(Row);
+const StyledRow = withStyles(styles)(Row);
 
 const rowRenderer = (value, index) => {
   const status = {
@@ -114,11 +115,11 @@ const rowRenderer = (value, index) => {
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = Level2;
+      status.Icon = Level2Average;
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = Level3;
+      status.Icon = Level3Bad;
       status.sema = "sema12";
       break;
     case 4:

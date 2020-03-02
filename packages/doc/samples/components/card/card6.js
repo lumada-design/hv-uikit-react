@@ -1,10 +1,12 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Tool";
-import Level1 from "@hv/uikit-react-icons/dist/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
+import {
+  Tool,
+  Level1,
+  Level2Average,
+  Level3Bad
+} from "@hv/uikit-react-icons/dist";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
@@ -55,31 +57,16 @@ const Content = ({ classes, value, icon }) => (
   </>
 );
 
-const ContentWithStyles = withStyles(kpiStyles, {
-  withTheme: true
-})(Content);
-
-const levelStyles = {
-  width: "30px"
-};
-
-const StyledLevel1 = () => <Level1 boxStyles={levelStyles} semantic="sema2" />;
-
-const StyledLevel2 = () => <Level2 boxStyles={levelStyles} semantic="sema3" />;
-
-const StyledLevel3 = () => <Level3 boxStyles={levelStyles} semantic="sema4" />;
+const ContentWithStyles = withStyles(kpiStyles)(Content);
 
 export default (
   <Grid container>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<Icon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
-          <ContentWithStyles
-            value="85"
-            icon={<StyledLevel1 semantic="sema2" iconSize="S" />}
-          />
+          <ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />
         }
         semantic="sema2"
         isSelectable
@@ -89,12 +76,12 @@ export default (
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<Icon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
           <ContentWithStyles
             value="45"
-            icon={<StyledLevel2 semantic="sema3" iconSize="S" />}
+            icon={<Level2Average semantic="sema3" />}
           />
         }
         semantic="sema3"
@@ -105,13 +92,10 @@ export default (
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<Icon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
-          <ContentWithStyles
-            value="19"
-            icon={<StyledLevel3 semantic="sema4" iconSize="S" />}
-          />
+          <ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />
         }
         semantic="sema4"
         isSelectable

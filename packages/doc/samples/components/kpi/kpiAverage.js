@@ -1,9 +1,9 @@
 import React from "react";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import Success from "@hv/uikit-react-icons/dist/Level0.Good";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import ArrowUp from "@hv/uikit-react-icons/dist/UpXS";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import {
+  Level0Good as Success,
+  UpXS as ArrowUp
+} from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Avg. service time",
@@ -13,55 +13,26 @@ const labels = {
   comparisonIndicator: "10%"
 };
 
-const averageComparisonVisualAverage = () => (
-  <div
-    style={{
-      position: "relative",
-      top: "1px"
-    }}
-  >
-    <ArrowUp
-      style={{
-        position: "absolute",
-        top: "16px",
-        left: "-1px"
-      }}
-      semantic="sema1"
-    />
-    <HvTypography
-      style={{
-        position: "relative",
-        paddingLeft: "16px"
-      }}
-      variant="highlightText"
-    >
+const KpiVisualAverage = () => (
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <ArrowUp boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
+    <HvTypography component="span" variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
 );
 
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
-
-const StyledFailureIcon = withStyles(iconStyles, {
-  withTheme: true
-})(() => <Success semantic="sema1" />);
-
-const icon = () => <StyledFailureIcon />;
+};
 
 export default (
   <div style={kpiContainer}>
     <HvKpi
       labels={labels}
-      visualIndicator={icon()}
-      visualComparison={averageComparisonVisualAverage()}
+      visualIndicator={<Success semantic="sema1" />}
+      visualComparison={<KpiVisualAverage />}
     />
   </div>
 );

@@ -1,93 +1,60 @@
 import React from "react";
-import classNames from "classnames";
 import List from "@hv/uikit-react-core/dist/List";
-import UserIcon from "@hv/uikit-react-icons/dist/User";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
-import PlaneIcon from "@hv/uikit-react-icons/dist/Plane";
-import MachineIcon from "@hv/uikit-react-icons/dist/Machine";
-import LineChartIcon from "@hv/uikit-react-icons/dist/LineChart";
+import {
+  Calendar,
+  LineChart,
+  Machine,
+  Plane,
+  User
+} from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({
-  box: {
-    width: "32px",
-    height: "32px"
-  },
   wrapper: {
     width: 240,
     padding: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
-  },
-  selected: {
-    "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo1
-    }
-  },
-  disabled: {
-    "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo7
-    },
   }
 });
 
-const getClasses = ({ classes, isSelected, isDisabled }) =>
-  classNames(classes.box, {
-    [classes.selected]: isSelected,
-    [classes.disabled]: isDisabled
-  });
-
-const StyledPlaneIcon = withStyles(styles, { withTheme: true })(props => (
-  <PlaneIcon className={getClasses(props)} />
-));
-
-const StyledUserIcon = withStyles(styles, { withTheme: true })(props => (
-  <UserIcon className={getClasses(props)} />
-));
-
-const StyledCalendarIcon = withStyles(styles, { withTheme: true })(props => (
-  <CalendarIcon className={getClasses(props)} />
-));
-
-const StyledMachineIcon = withStyles(styles, { withTheme: true })(props => (
-  <MachineIcon className={getClasses(props)} />
-));
-
-const StyledLineChartIcon = withStyles(styles, { withTheme: true })(props => (
-  <LineChartIcon className={getClasses(props)} />
-));
+const getColors = ({ isSelected, isDisabled }) => {
+  if (isSelected) return "atmo1";
+  else if (isDisabled) return "atmo7";
+  else undefined;
+};
 
 const data = [
   {
     label: "Advanced server DS120",
     selected: false,
-    iconCallback: state => <StyledUserIcon {...state} />
+    iconCallback: state => <User color={getColors(state)} />
   },
   {
     label: "Advanced server DS122",
     selected: false,
-    iconCallback: state => <StyledCalendarIcon {...state} />
+    iconCallback: state => <Calendar color={getColors(state)} />
   },
   {
     label: "Advanced server DS250",
     selected: true,
-    iconCallback: state => <StyledMachineIcon {...state} />
+    iconCallback: state => <Machine color={getColors(state)} />
   },
   {
     label: "Advanced server DS530",
     selected: false,
     disabled: true,
-    iconCallback: state => <StyledPlaneIcon {...state} />
+    iconCallback: state => <Plane color={getColors(state)} />
   },
   {
     label: "Advanced server DS555",
     selected: false,
-    iconCallback: state => <StyledLineChartIcon {...state} />
+    iconCallback: state => <LineChart color={getColors(state)} />
   }
 ];
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const ListWrapper = withStyles(styles)(({ classes, children }) => (
+  <div className={classes.wrapper}>{children}</div>
+));
 
 // Passing the aria-label to the component is necessary in order for the component
 // to meet accessibility requirements
@@ -96,8 +63,7 @@ const ariaProps = {
 };
 
 export default (
-    <ListWrapper>
-      <List values={data} selectDefault listProps={ariaProps} />
-    </ListWrapper>
+  <ListWrapper>
+    <List values={data} selectDefault listProps={ariaProps} />
+  </ListWrapper>
 );
-

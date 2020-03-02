@@ -8,8 +8,7 @@ import HvCard, {
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Icon from "@hv/uikit-react-icons/dist/Upload";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { Upload, MoreOptionsVertical } from "@hv/uikit-react-icons/dist";
 
 const styles = theme => ({
   mediaContainer: {
@@ -24,16 +23,16 @@ const styles = theme => ({
   }
 });
 
-const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
+const CustomMedia = withStyles(styles)(HvCardMedia);
 
 const MultipleActionsWithMediaButtons = ({ classes }) => (
   <>
     <HvButton category="ghost">
-      <Icon boxStyles={{ width: "30px", height: "30px", padding: "7px" }} />
+      <Upload />
       Update
     </HvButton>
     <HvButton category="ghost" className={classes.smallButton}>
-      <MoreOptionsIcon />
+      <MoreOptionsVertical />
     </HvButton>
   </>
 );
@@ -50,9 +49,9 @@ const multipleActionsWithMediaButtonsStyle = theme => ({
   }
 });
 
-const CustomActions = withStyles(multipleActionsWithMediaButtonsStyle, {
-  withTheme: true
-})(MultipleActionsWithMediaButtons);
+const CustomActions = withStyles(multipleActionsWithMediaButtonsStyle)(
+  MultipleActionsWithMediaButtons
+);
 
 const renderer = (value, viewConfiguration) => (
   <HvCard id={value.id}>

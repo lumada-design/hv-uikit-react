@@ -3,32 +3,19 @@ import HvCard, {
   HvCardFooter,
   HvCardHeader
 } from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Upload";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { Upload, MoreOptionsVertical } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
-
-const moreOptionsStyles = () => ({
-  root: {
-    width: "32px",
-    minWidth: "32px",
-    padding: 0
-  }
-});
-
-const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
-  withTheme: true
-})(HvButton);
 
 const MultipleActionsWithMediaButtons = () => (
   <>
-    <HvButton>
-      <Icon />
+    <HvButton category="ghost">
+      <Upload />
       Update
     </HvButton>
-    <MoreOptionsIconButton>
-      <MoreOptionsIcon aria-label="more options" />
-    </MoreOptionsIconButton>
+    <HvButton category="icon">
+      <MoreOptionsVertical aria-label="more options" />
+    </HvButton>
   </>
 );
 

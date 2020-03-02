@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import Button from "@hv/uikit-react-core/dist/Button";
-
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
-
-import Map from "@hv/uikit-react-icons/dist/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/LocationPin";
+import { LocationPin, Map } from "@hv/uikit-react-icons/dist";
 
 const btnStyle = {
   width: "120px",
@@ -29,10 +26,16 @@ function WrapperComp() {
 
   return (
     <>
-      <Button style={btnStyle} onClick={() => setValue(initialButtonsDefinitions)}>
+      <Button
+        style={btnStyle}
+        onClick={() => setValue(initialButtonsDefinitions)}
+      >
         Initial Props
       </Button>
-      <Button style={btnStyle} onClick={() => setValue(finalButtonsDefinitions)}>
+      <Button
+        style={btnStyle}
+        onClick={() => setValue(finalButtonsDefinitions)}
+      >
         New Props
       </Button>
       <div style={{ width: "400px" }}>

@@ -1,9 +1,6 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import AddIcon from "@hv/uikit-react-icons/dist/Add";
-import UploadIcon from "@hv/uikit-react-icons/dist/Upload";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import { Add, Delete, Preview, Upload } from "@hv/uikit-react-icons/dist";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",
@@ -14,25 +11,25 @@ const myActions = [
   {
     id: "post",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add />,
     disabled: false
   },
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon />,
+    iconCallback: () => <Preview color="atmo7" />,
     disabled: true
   },
   {
     id: "put",
     label: "Upload",
-    iconCallback: () => <UploadIcon />,
+    iconCallback: () => <Upload color="atmo7" />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];

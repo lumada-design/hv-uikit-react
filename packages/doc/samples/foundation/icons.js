@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import * as genericIconComponentList from "@hv/uikit-react-icons/dist/index";
+import * as genericIconComponentList from "@hv/uikit-react-icons/dist";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-const styles = theme => ({
+const styles = () => ({
   groupContainer: {
     paddingBottom: "30px"
   },

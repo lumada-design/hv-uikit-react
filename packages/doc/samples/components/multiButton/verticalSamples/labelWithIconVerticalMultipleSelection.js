@@ -1,8 +1,6 @@
 import React from "react";
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
-
-import Map from "@hv/uikit-react-icons/dist/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/LocationPin";
+import { LocationPin, Map } from "@hv/uikit-react-icons/dist";
 
 const buttonsDefinitions = [
   { id: "map", value: "Map", icon: <Map />, selected: true },

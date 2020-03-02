@@ -4,7 +4,7 @@ import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Collapse from "@material-ui/core/Collapse";
-import Code from "@hv/uikit-react-icons/dist/Code";
+import { Code } from "@hv/uikit-react-icons/dist";
 import IconButton from "@material-ui/core/IconButton";
 
 const styles = theme => ({

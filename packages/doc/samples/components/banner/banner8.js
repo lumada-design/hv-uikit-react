@@ -1,5 +1,5 @@
 import React from "react";
-import Info from "@hv/uikit-react-icons/dist/Info";
+import { Info } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
 import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";
@@ -7,13 +7,6 @@ import Typography from "@hv/uikit-react-core/dist/Typography";
 import Button from "@hv/uikit-react-core/dist/Button";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
-
-const boxStyles = {
-  width: "32px",
-  height: "32px"
-};
-
-const CustomIcon = <Info boxStyles={boxStyles} color={["#414141"]} />;
 
 const ActionButton = () => <Button category="semantic">Action</Button>;
 

@@ -2,7 +2,7 @@ import React from "react";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Good from "@hv/uikit-react-icons/dist/Level0.Good";
+import { Level0Good as Good } from "@hv/uikit-react-icons/dist";
 import Linechart from "@hv/uikit-react-core/dist/Linechart";
 import Barchart from "@hv/uikit-react-core/dist/Barchart";
 import Table from "./table/Table";

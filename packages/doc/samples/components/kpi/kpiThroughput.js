@@ -1,9 +1,9 @@
 import React from "react";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Success from "@hv/uikit-react-icons/dist/Level0.Good";
-import ArrowUp from "@hv/uikit-react-icons/dist/UpXS";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import {
+  Level0Good as Success,
+  UpXS as ArrowUp
+} from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Total throughput",
@@ -13,54 +13,26 @@ const labels = {
   comparisonIndicator: "60%"
 };
 
-const throughputComparisonVisual = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <ArrowUp
-      style={{
-        position: "absolute",
-        top: "16px",
-        left: "-1px"
-      }}
-      semantic="sema1"
-    />
-    <HvTypography
-      style={{
-        position: "relative",
-        paddingLeft: "16px"
-      }}
-      variant="highlightText"
-    >
+const ThroughputComparisonVisual = () => (
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <ArrowUp boxStyles={{ width: "20px", height: "20px" }} semantic="sema1" />
+    <HvTypography component="span" variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
 );
 
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
-const StyledFailureIcon = withStyles(iconStyles, {
-  withTheme: true
-})(() => <Success semantic="sema1" />);
-
-const icon = () => <StyledFailureIcon />;
-
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
+};
 
 export default (
   <div style={kpiContainer}>
     <HvKpi
       labels={labels}
-      visualIndicator={icon()}
-      visualComparison={throughputComparisonVisual()}
+      visualIndicator={<Success semantic="sema1" />}
+      visualComparison={<ThroughputComparisonVisual />}
     />
   </div>
 );

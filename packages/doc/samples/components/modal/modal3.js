@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Success";
+import { Success } from "@hv/uikit-react-icons/dist";
 import {
   HvModal,
   HvModalTitle,
@@ -53,11 +53,6 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       </HvModal>
     </div>
   );
-};
-
-const iconWrapper = (Icon, sema, props) => {
-  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
-  return () => <GeneratedIcon semantic={sema} {...props} />;
 };
 
 const getColumns = () => [
@@ -146,22 +141,16 @@ const contentStyles = () => ({
   }
 });
 
-const InputWithStyles = withStyles(styles, { withTheme: true })(Input);
-const TextAreaWithStyles = withStyles(textAreaStyles, { withTheme: true })(
-  TextArea
-);
-const ModalWithStyles = withStyles(contentStyles, { withTheme: true })(
-  SimpleModal
-);
+const InputWithStyles = withStyles(styles)(Input);
+const TextAreaWithStyles = withStyles(textAreaStyles)(TextArea);
+const ModalWithStyles = withStyles(contentStyles)(SimpleModal);
 
 export default (
   <div style={containerStyle}>
     <ModalWithStyles
       buttonMessage="Table"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Success, "sema1", generalIconProps)()}
-        >
+        <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
           <div>
             <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
             <HvTypography variant="normalText">HDI</HvTypography>

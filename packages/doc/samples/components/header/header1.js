@@ -8,15 +8,8 @@ import HvHeader, {
 } from "@hv/uikit-react-core/dist/Header";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
-import Alert from "@hv/uikit-react-icons/dist/Alert";
-import User from "@hv/uikit-react-icons/dist/User";
-import Menu from "@hv/uikit-react-icons/dist/Menu";
+import { Alert, Menu, User } from "@hv/uikit-react-icons/dist";
 import HitachiLogo from "./assets/HitachiLogo";
-
-const boxStyles = {
-  width: 32,
-  height: 32
-};
 
 const navigationData = [
   {
@@ -100,7 +93,7 @@ const HeaderSample = withTheme(({ theme }) => {
           onClick={() => console.log("alerts")}
           aria-label="Open Notifications panel"
         >
-          <HvBadge count={1} icon={<Alert boxStyles={boxStyles} />} />
+          <HvBadge count={1} icon={<Alert />} />
         </HvButton>
         {isMdUp && (
           <HvButton
@@ -108,7 +101,7 @@ const HeaderSample = withTheme(({ theme }) => {
             onClick={() => console.log("user")}
             aria-label="Open User panel"
           >
-            <User boxStyles={boxStyles} />
+            <User />
           </HvButton>
         )}
       </HvHeaderActions>

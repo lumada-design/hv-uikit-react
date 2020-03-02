@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import HvNotificationPanel from "@hv/uikit-react-lab/dist/NotificationPanel";
-
-import Alert from "@hv/uikit-react-icons/dist/Alert";
-import Close from "@hv/uikit-react-icons/dist/Close";
-import Level5 from "@hv/uikit-react-icons/dist/Level5";
+import { Alert, Close, Level5 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = {
@@ -25,7 +22,7 @@ class SimpleNotificationPanel extends Component {
     const { classes } = this.props;
 
     const npProps = {
-      icon: <Alert iconSize="S" />,
+      icon: <Alert />,
       open: true,
       classes: {
         panel: classes.panel,
@@ -41,7 +38,7 @@ class SimpleNotificationPanel extends Component {
           title: "Test",
           isRead: false,
           date: new Date(),
-          icon: <Level5 iconSize="S" semantic="sema6" />
+          icon: <Level5 semantic="sema6" />
         },
         {
           id: "2",
@@ -61,9 +58,9 @@ class SimpleNotificationPanel extends Component {
   }
 }
 
-const SimpleNotificationPanelWithStyles = withStyles(styles, {
-  withTheme: true
-})(SimpleNotificationPanel);
+const SimpleNotificationPanelWithStyles = withStyles(styles)(
+  SimpleNotificationPanel
+);
 
 export default (
   <div

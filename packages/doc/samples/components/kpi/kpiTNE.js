@@ -1,11 +1,10 @@
 import React from "react";
 import Chart from "react-google-charts";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import HvCard from "@hv/uikit-react-core/dist/Card";
-import Average from "@hv/uikit-react-icons/dist/Level2.Average";
-import ArrowDown from "@hv/uikit-react-icons/dist/BottomXS";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { HvCard, HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import {
+  Level2Average as Average,
+  BottomXS as ArrowDown
+} from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Total number of events",
@@ -16,32 +15,15 @@ const labels = {
 };
 
 const IopsComparisonVisualAverage = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <ArrowDown
-      style={{
-        position: "absolute",
-        top: "16px",
-        left: "-1px"
-      }}
-      semantic="sema4"
-    />
-    <HvTypography
-      style={{
-        position: "relative",
-        paddingLeft: "16px"
-      }}
-      variant="highlightText"
-    >
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <ArrowDown boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
+    <HvTypography component="span" variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
 );
 
-const trend = () => (
+const TrendIndicator = () => (
   <div
     style={{
       width: "32px",
@@ -90,28 +72,17 @@ const trend = () => (
   </div>
 );
 
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
 const kpiContainer = {
   paddingTop: "20px"
 };
-
-const StyledFailureIcon = withStyles(iconStyles, {
-  withTheme: true
-})(() => <Average semantic="sema4" />);
-
-const icon = () => <StyledFailureIcon />;
 
 const KpiT = () => (
   <div style={kpiContainer}>
     <HvKpi
       labels={labels}
-      visualIndicator={icon()}
-      trendIndicator={trend()}
-      visualComparison={IopsComparisonVisualAverage()}
+      visualIndicator={<Average semantic="sema4" />}
+      trendIndicator={<TrendIndicator />}
+      visualComparison={<IopsComparisonVisualAverage />}
     />
   </div>
 );

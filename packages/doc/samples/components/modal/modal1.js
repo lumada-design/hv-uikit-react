@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Success";
-import Warning from "@hv/uikit-react-icons/dist/Caution";
-import Fail from "@hv/uikit-react-icons/dist/Fail";
+import { Caution, Fail, Success } from "@hv/uikit-react-icons/dist";
 import {
   HvModal,
   HvModalActions,
   HvModalContent,
   HvModalTitle
 } from "@hv/uikit-react-core/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
 
 const containerStyle = {
   display: "flex"
@@ -49,7 +46,9 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">Switch anyway</HvButton>
+          <HvButton id="switchAnyway" category="ghost">
+            Switch anyway
+          </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
@@ -59,21 +58,12 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   );
 };
 
-const iconWrapper = (Icon, sema, props) => {
-  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
-  return () => <GeneratedIcon semantic={sema} {...props} />;
-};
-
-const generalIconProps = { iconSize: "M" };
-
 export default (
   <div style={containerStyle}>
     <SimpleModal
       buttonMessage="Success"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Success, "sema1", generalIconProps)()}
-        >
+        <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
           Are you sure?
         </HvModalTitle>
       }
@@ -82,9 +72,7 @@ export default (
     <SimpleModal
       buttonMessage="Warning"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Warning, "sema3", generalIconProps)()}
-        >
+        <HvModalTitle customIcon={<Caution semantic="sema3" iconSize="M" />}>
           Are you sure?
         </HvModalTitle>
       }
@@ -93,9 +81,7 @@ export default (
     <SimpleModal
       buttonMessage="Error"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Fail, "sema4", generalIconProps)()}
-        >
+        <HvModalTitle customIcon={<Fail semantic="sema4" iconSize="M" />}>
           Are you sure?
         </HvModalTitle>
       }
