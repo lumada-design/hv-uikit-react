@@ -30,7 +30,7 @@ import {
   toggleAll,
   toggleSelection
 } from "./checkBoxUtils";
-import Pagination from "../Pagination";
+import Pagination from "./Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
 import { styles, tableStyleOverrides } from "./styles";

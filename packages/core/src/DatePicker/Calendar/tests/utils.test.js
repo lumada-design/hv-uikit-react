@@ -24,8 +24,7 @@ import {
   zeroPad
 } from "../utils";
 
-console.warn = jest.fn();
-console.error = jest.fn();
+/* eslint-disable no-console */
 
 describe("Calendar utils - zeroPad", () => {
   it("should return 01 when the input is 1 and the length is 2", () => {
@@ -147,20 +146,30 @@ describe("Calendar utils - isDate", () => {
 });
 
 describe("Calendar utils - isDateInValidRange", () => {
+  const originalWarn = console.warn;
+
   it("should return `true` if the date is 2019-01-01", () => {
     expect(isDateInValidRange(convertISOStringDateToDate("2019-01-01"))).toBe(
       true
     );
   });
   it("should return `false` if the value received is 0999-01-01", () => {
+    // Expected warning  "The received date is invalid: 0999-01-01"
+    console.warn = jest.fn();
+
     expect(isDateInValidRange(convertISOStringDateToDate("0999-01-01"))).toBe(
       false
     );
+    console.warn = originalWarn;
   });
   it("should return `false` if the value received is 10999-01-01", () => {
+    // Expected warning  "The received date is invalid: 0999-01-01"
+    console.warn = jest.fn();
+
     expect(isDateInValidRange(convertISOStringDateToDate("10999-01-01"))).toBe(
       false
     );
+    console.warn = originalWarn;
   });
 });
 
@@ -346,7 +355,14 @@ describe("Calendar utils - isValidLocale", () => {
     expect(isValidLocale("en-US")).toBe(true);
   });
   it("should return false for a locale with the incorrect format `something wrong`", () => {
+    const originalError = console.error;
+
+    // Waiting error "Invalid locale: something wrong"
+    console.error = jest.fn();
+
     expect(isValidLocale("something wrong")).toBe(false);
+
+    console.error = originalError;
   });
 });
 

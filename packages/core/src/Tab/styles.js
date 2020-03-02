@@ -1,6 +1,7 @@
 const styles = theme => ({
   root: {
     minWidth: 70,
+    padding: "16px 20px",
     textTransform: "none",
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
@@ -18,9 +19,6 @@ const styles = theme => ({
       }
     },
     opacity: 1
-  },
-  labelContainer: {
-    padding: "16px 20px"
   },
   selected: {
     ...theme.hv.typography.highlightText,

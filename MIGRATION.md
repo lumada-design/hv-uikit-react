@@ -83,4 +83,5 @@ Changes:
       - Removed display inline-table from icon 
    - Modal Action
       - Css class **action** changed with **spacing**.
-   
+   - Tabs
+      - Css class **labelContainer** passed to the **root**
