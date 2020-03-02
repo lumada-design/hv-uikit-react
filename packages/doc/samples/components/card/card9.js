@@ -1,9 +1,9 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import UploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import AddIcon from "@hv/uikit-react-icons/dist/Add";
+import UploadIcon from "@hv/uikit-react-icons/dist/Upload";
+import DeleteIcon from "@hv/uikit-react-icons/dist/Delete";
+import PreviewIcon from "@hv/uikit-react-icons/dist/Preview";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",

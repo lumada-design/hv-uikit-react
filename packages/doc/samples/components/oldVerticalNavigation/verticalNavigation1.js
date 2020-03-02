@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from "classnames";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
-import RawUserIcon from "@hv/uikit-react-icons/dist/Generic/User";
-import RawCalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
-import RawPlaneIcon from "@hv/uikit-react-icons/dist/Generic/Plane";
-import RawLineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+import RawUserIcon from "@hv/uikit-react-icons/dist/User";
+import RawCalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
+import RawPlaneIcon from "@hv/uikit-react-icons/dist/Plane";
+import RawLineChartIcon from "@hv/uikit-react-icons/dist/LineChart";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({

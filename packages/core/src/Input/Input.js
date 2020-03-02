@@ -4,7 +4,7 @@ import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
-import InfoS from "@hv/uikit-react-icons/dist/Generic/Info";
+import InfoS from "@hv/uikit-react-icons/dist/Info";
 import { KeyboardCodes, isKeypress, isIE } from "@hv/uikit-common-utils/dist";
 import InputAdornment from "./InputAdornment";
 import HvTypography from "../Typography";

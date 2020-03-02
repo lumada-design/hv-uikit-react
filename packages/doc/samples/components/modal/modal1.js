@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import Warning from "@hv/uikit-react-icons/dist/Generic/Caution";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Success from "@hv/uikit-react-icons/dist/Success";
+import Warning from "@hv/uikit-react-icons/dist/Caution";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
 import {
   HvModal,
   HvModalActions,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
+import Success from "@hv/uikit-react-icons/dist/Success";
 import {
   HvModal,
   HvModalTitle,

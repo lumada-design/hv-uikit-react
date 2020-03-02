@@ -1,6 +1,6 @@
 import React from "react";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import Error from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Success from "@hv/uikit-react-icons/dist/Success";
+import Error from "@hv/uikit-react-icons/dist/Fail";
 
 export const variantIcon = Object.freeze({
   success: () => <Success iconSize="S" semantic="sema1" />,

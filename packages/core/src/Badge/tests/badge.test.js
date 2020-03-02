@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
+import Alert from "@hv/uikit-react-icons/dist/Alert";
 import HvProvider from "../../Provider";
 import Typography from "../../Typography";
 import Badge from "../index";

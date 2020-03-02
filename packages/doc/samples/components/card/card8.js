@@ -1,8 +1,11 @@
 import React from "react";
-import HvCard, {HvCardFooter, HvCardHeader} from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Generic/Upload";
+import HvCard, {
+  HvCardFooter,
+  HvCardHeader
+} from "@hv/uikit-react-core/dist/Card";
+import Icon from "@hv/uikit-react-icons/dist/Upload";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import MoreOptionsIcon from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const moreOptionsStyles = () => ({

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import HvNotificationPanel from "@hv/uikit-react-lab/dist/NotificationPanel";
 
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
-import Close from "@hv/uikit-react-icons/dist/Generic/Close";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import Alert from "@hv/uikit-react-icons/dist/Alert";
+import Close from "@hv/uikit-react-icons/dist/Close";
+import Level5 from "@hv/uikit-react-icons/dist/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = {

@@ -1,7 +1,7 @@
 import React from "react";
 import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
-import Cards from "@hv/uikit-react-icons/dist/Generic/Cards";
-import List from "@hv/uikit-react-icons/dist/Generic/List";
+import Cards from "@hv/uikit-react-icons/dist/Cards";
+import List from "@hv/uikit-react-icons/dist/List";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import ListView, {
@@ -11,15 +11,15 @@ import ListView, {
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import RawUploadIcon from "@hv/uikit-react-icons/dist/Upload";
+import RawAddIcon from "@hv/uikit-react-icons/dist/Add";
+import RawPreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import RawDeleteIcon from "@hv/uikit-react-icons/dist/Delete";
+import Level1 from "@hv/uikit-react-icons/dist/Level1";
+import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
+import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
+import Level4 from "@hv/uikit-react-icons/dist/Level4";
+import Level5 from "@hv/uikit-react-icons/dist/Level5";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const boxStyles = { width: "30px", height: "30px" };

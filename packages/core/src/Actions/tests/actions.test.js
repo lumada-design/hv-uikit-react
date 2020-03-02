@@ -6,7 +6,7 @@ import {
   Upload,
   Delete,
   Preview
-} from "@hv/uikit-react-icons/dist/Generic";
+} from "@hv/uikit-react-icons/dist";
 
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";

@@ -2,7 +2,7 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import Info from "@hv/uikit-react-icons/dist/Info";
 
 const styles = {
   root: {

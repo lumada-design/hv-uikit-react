@@ -1,7 +1,7 @@
 import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import Info from "@hv/uikit-react-icons/dist/Info";
 
 const boxStyles = {
   width: "32px",

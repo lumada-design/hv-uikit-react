@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
 import HvEmptyState from "../../EmptyState";
 import styles from "./styles";
 

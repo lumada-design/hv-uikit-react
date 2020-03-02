@@ -6,7 +6,7 @@ import {
   Play,
   Pause,
   Stop
-} from "@hv/uikit-react-icons/dist/Generic";
+} from "@hv/uikit-react-icons/dist";
 
 const buttonStyles = () => ({
   root: {

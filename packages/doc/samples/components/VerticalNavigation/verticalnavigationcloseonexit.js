@@ -6,7 +6,7 @@ import VerticalNavigation, {
   Action
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-import { Play, Stop } from "@hv/uikit-react-icons/dist/Generic";
+import { Play, Stop } from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {

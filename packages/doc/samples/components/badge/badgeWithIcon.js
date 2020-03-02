@@ -1,6 +1,6 @@
 import React from "react";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
+import Alert from "@hv/uikit-react-icons/dist/Alert";
 
 const exampleStyles = {
   display: "flex",

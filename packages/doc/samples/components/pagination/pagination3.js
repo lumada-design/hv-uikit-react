@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import Pagination from "@hv/uikit-react-core/dist/Pagination";
-import ToolIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import ToolIcon from "@hv/uikit-react-icons/dist/Tool";
 import compressorImage from "../card/resources/compressor.png";
 import leafImage from "../card/resources/leaf.png";
 

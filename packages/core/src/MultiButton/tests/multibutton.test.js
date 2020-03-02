@@ -3,8 +3,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
+import Map from "@hv/uikit-react-icons/dist/Map";
+import LocationPin from "@hv/uikit-react-icons/dist/LocationPin";
 import HvProvider from "../../Provider";
 import MultiButton from "..";
 

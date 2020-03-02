@@ -8,9 +8,9 @@ import HvHeader, {
 } from "@hv/uikit-react-core/dist/Header";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
-import User from "@hv/uikit-react-icons/dist/Generic/User";
-import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
+import Alert from "@hv/uikit-react-icons/dist/Alert";
+import User from "@hv/uikit-react-icons/dist/User";
+import Menu from "@hv/uikit-react-icons/dist/Menu";
 import HitachiLogo from "./assets/HitachiLogo";
 
 const boxStyles = {

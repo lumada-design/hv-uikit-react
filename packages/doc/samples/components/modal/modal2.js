@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+import Unlock from "@hv/uikit-react-icons/dist/Unlock";
 
 import {
   HvModal,

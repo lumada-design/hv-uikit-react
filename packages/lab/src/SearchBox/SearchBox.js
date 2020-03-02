@@ -6,8 +6,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SearchIcon from "@hv/uikit-react-icons/dist/Generic/Search";
-import CloseIcon from "@hv/uikit-react-icons/dist/Generic/Close";
+import SearchIcon from "@hv/uikit-react-icons/dist/Search";
+import CloseIcon from "@hv/uikit-react-icons/dist/Close";
 
 class HvSearchBox extends React.Component {
   constructor(props) {

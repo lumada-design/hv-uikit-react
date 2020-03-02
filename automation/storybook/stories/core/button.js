@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import Caution from "@hv/uikit-react-icons/dist/Generic/Caution";
+import Caution from "@hv/uikit-react-icons/dist/Caution";
 
 const samples = {};
 const myAlert = msg => alert(msg); /* eslint-disable-line no-alert */

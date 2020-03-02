@@ -1,6 +1,6 @@
 import React from "react";
 import DropDownMenu from "@hv/uikit-react-core/dist/DropDownMenu";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 
 const menuOptions = [
   {

@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import Close from "@hv/uikit-react-icons/dist/Generic/CloseXS";
-import Unsuccess from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Success from "@hv/uikit-react-icons/dist/Success";
+import Close from "@hv/uikit-react-icons/dist/CloseXS";
+import Unsuccess from "@hv/uikit-react-icons/dist/Fail";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 
 import validationStates from "./validationStates";

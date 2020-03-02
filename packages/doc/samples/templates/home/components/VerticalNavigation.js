@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Settings, User } from "@hv/uikit-react-icons/dist/Generic";
+import { Settings, User } from "@hv/uikit-react-icons/dist";
 import VerticalNavigation, {
   Action,
   Actions,

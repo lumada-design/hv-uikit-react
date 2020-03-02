@@ -2,8 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 
-import AngleDown from "@hv/uikit-react-icons/dist/Generic/Down";
-import AngleUp from "@hv/uikit-react-icons/dist/Generic/Up";
+import AngleDown from "@hv/uikit-react-icons/dist/Down";
+import AngleUp from "@hv/uikit-react-icons/dist/Up";
 
 import { buildLink } from "./addins";
 

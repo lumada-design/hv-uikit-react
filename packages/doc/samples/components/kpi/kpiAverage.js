@@ -1,8 +1,8 @@
 import React from "react";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import Success from "@hv/uikit-react-icons/dist/Generic/Level0.Good";
+import Success from "@hv/uikit-react-icons/dist/Level0.Good";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import ArrowUp from "@hv/uikit-react-icons/dist/Generic/UpXS";
+import ArrowUp from "@hv/uikit-react-icons/dist/UpXS";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {

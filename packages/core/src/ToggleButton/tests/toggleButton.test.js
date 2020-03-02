@@ -2,8 +2,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Lock from "@hv/uikit-react-icons/dist/Generic/Lock";
-import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+import Lock from "@hv/uikit-react-icons/dist/Lock";
+import Unlock from "@hv/uikit-react-icons/dist/Unlock";
 import HvProvider from "../../Provider";
 import ToggleButton from "../index";
 

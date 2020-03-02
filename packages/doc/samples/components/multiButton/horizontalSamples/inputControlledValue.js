@@ -3,8 +3,8 @@ import Button from "@hv/uikit-react-core/dist/Button";
 
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
 
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
+import Map from "@hv/uikit-react-icons/dist/Map";
+import LocationPin from "@hv/uikit-react-icons/dist/LocationPin";
 
 const btnStyle = {
   width: "120px",

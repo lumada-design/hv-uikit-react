@@ -4,7 +4,7 @@ import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
-import Doc from "@hv/uikit-react-icons/dist/Generic/Doc";
+import Doc from "@hv/uikit-react-icons/dist/Doc";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 import styles from "./styles";

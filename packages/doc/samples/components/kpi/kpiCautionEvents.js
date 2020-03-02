@@ -3,8 +3,8 @@ import Chart from "react-google-charts";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
+import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
+import ArrowDown from "@hv/uikit-react-icons/dist/BottomXS";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const labels = {

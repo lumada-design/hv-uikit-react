@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
-import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
-import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
+import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
+import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck";
+import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvEmptyState from "@hv/uikit-react-core/dist/EmptyState";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
 
 const styles = () => ({
   root: {

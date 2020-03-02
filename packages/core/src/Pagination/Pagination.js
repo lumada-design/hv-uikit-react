@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 import { IconButton, withStyles } from "@material-ui/core";
-import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
-import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
-import ArrowLeft from "@hv/uikit-react-icons/dist/Generic/Backwards";
-import ArrowRight from "@hv/uikit-react-icons/dist/Generic/Forwards";
-import ArrowLast from "@hv/uikit-react-icons/dist/Generic/End";
+import Down from "@hv/uikit-react-icons/dist/DropDownXS";
+import ArrowFirst from "@hv/uikit-react-icons/dist/Start";
+import ArrowLeft from "@hv/uikit-react-icons/dist/Backwards";
+import ArrowRight from "@hv/uikit-react-icons/dist/Forwards";
+import ArrowLast from "@hv/uikit-react-icons/dist/End";
 import {
   KeyboardCodes as Codes,
   isKeypress
