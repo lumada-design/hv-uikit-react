@@ -26,7 +26,8 @@
     "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
-    "update-uikit-common": "npm update @hv/uikit-common-themes @hv/uikit-common-utils"
+    "update-uikit-common": "npm update @hv/uikit-common-themes @hv/uikit-common-utils",
+    "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
   },
   "peerDependencies": {
     "react": "^16.8.6",

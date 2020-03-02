@@ -44,6 +44,25 @@ node('non-master') {
 
         def test_stages = [:]
 
+        test_stages["license-check"] = {
+            stage('License check') {
+                if(!params.skipLint) {
+                    tryStep ({
+                        image.inside(containerRunOptions('uikit_license_check')) {
+                            sh label: 'npm run license-check', script: """
+                                #! /bin/sh -
+                                cd ${uikit_folder}
+                                npm run license-check
+                            """
+                        }
+                    }, failing_tests_result)
+                } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] License check skipped'
+                }
+            }
+        }
+
         test_stages["lint"] = {
             stage('Lint') {
                 if(!params.skipLint) {
