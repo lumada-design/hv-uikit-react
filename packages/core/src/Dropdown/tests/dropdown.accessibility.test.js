@@ -8,6 +8,8 @@ import Dropdown from "..";
 
 expect.extend(toHaveNoViolations);
 
+/* eslint-disable no-console */
+
 const mockData = [
   { label: "Value 1" },
   { label: "Value 2" },
@@ -19,6 +21,11 @@ describe("Dropdown A11Y", () => {
   const onChangeMock = jest.fn();
 
   it("with title", async () => {
+    // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
+    // In real cases this value is filled if the dropdown is expanded.
+    const originalError = console.error;
+    console.error = jest.fn();
+
     wrapper = mount(
       <HvProvider>
         <Dropdown
@@ -33,5 +40,7 @@ describe("Dropdown A11Y", () => {
 
     const results = await axe(wrapper.html());
     expect(results).toHaveNoViolations();
+
+    console.error = originalError;
   });
 });

@@ -512,6 +512,13 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should call the onChange callback if defined", () => {
     const handleOnchange = jest.fn();
+
+    // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
+    // In real cases this value is filled if the dropdown is expanded.
+    const originalError = console.error;
+    // eslint-disable-next-line no-console
+    console.error = jest.fn();
+
     wrapper = mount(
       <HvProvider>
         <DatePickerWithStyles onChange={handleOnchange} />
@@ -520,6 +527,9 @@ describe("<DatePicker /> with custom properties", () => {
     DatePickerInstance = wrapper.find("HvDatePicker").instance();
     DatePickerInstance.setSingleDate(convertISOStringDateToDate("2018-11-10"));
     expect(handleOnchange.mock.calls.length).toBe(1);
+
+    // eslint-disable-next-line no-console
+    console.error = originalError;
   });
 
   it("should close the calendar and keep the same date when the `handleCalendarClickAway` is triggered", () => {
