@@ -31,13 +31,8 @@ const footerStyles = () => ({
   }
 });
 
-const HeaderWithStyles = withStyles(headerStyles, {
-  withTheme: true
-})(HvCardHeader);
-
-const FooterWithStyles = withStyles(footerStyles, {
-  withTheme: true
-})(HvCardFooter);
+const HeaderWithStyles = withStyles(headerStyles)(HvCardHeader);
+const FooterWithStyles = withStyles(footerStyles)(HvCardFooter);
 
 export default (
   <div style={{ width: "500px" }}>

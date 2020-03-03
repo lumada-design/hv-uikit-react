@@ -6,6 +6,7 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import { Code } from "@hv/uikit-react-icons/dist";
 import IconButton from "@material-ui/core/IconButton";
+import { useTheme } from "@material-ui/core";
 
 const styles = theme => ({
   group: {
@@ -53,20 +54,17 @@ const CodeButton = ({ classes, onClick }) => (
   </IconButton>
 );
 
-const Group = ({ classes, name, typography, theme }) => {
+const Group = ({ classes, name, typography }) => {
+  const theme = useTheme();
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
-  let nameTypography = `${name} ${
-    theme.deprecated.typography[name] ? "(deprecated)" : ""
-  }`;
+
+  const toggleSnippet = () => setSnippetIsOpen(!snippetIsOpen);
 
   return (
     <div className={classes.group}>
       <div className={classes.container}>
-        <HvTypography variant="mTitle">{nameTypography}</HvTypography>
-        <CodeButton
-          classes={classes}
-          onClick={() => setSnippetIsOpen(!snippetIsOpen)}
-        />
+        <HvTypography variant="mTitle">{name}</HvTypography>
+        <CodeButton classes={classes} onClick={toggleSnippet} />
       </div>
       <div className={classes.sentenceContainer}>
         <HvTypography variant={name}>{text}</HvTypography>
@@ -88,7 +86,8 @@ const Group = ({ classes, name, typography, theme }) => {
   );
 };
 
-const Typographies = ({ classes, theme }) => {
+const Typographies = ({ classes }) => {
+  const theme = useTheme();
   const { typography } = theme.hv;
   const keys = Object.keys(typography);
 
@@ -102,11 +101,10 @@ const Typographies = ({ classes, theme }) => {
             classes={classes}
             name={group}
             typography={typography[group]}
-            theme={theme.hv}
           />
         ))}
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Typographies);
+export default withStyles(styles)(Typographies);

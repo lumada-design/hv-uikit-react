@@ -28,13 +28,6 @@ const styles = theme => ({
   component: {
     backgroundColor: theme.hv.palette.atmosphere.atmo3,
     padding: "20px"
-  },
-  iconCode: {
-    marginLeft: "auto"
-  },
-  iconStyles: {
-    width: 32,
-    height: 32
   }
 });
 

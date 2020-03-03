@@ -105,9 +105,7 @@ const Content = ({ classes, values }) => (
   </Grid>
 );
 
-const ContentWithStyles = withStyles(kpiStyles, {
-  withTheme: true
-})(Content);
+const ContentWithStyles = withStyles(kpiStyles)(Content);
 
 const cardRenderer = (data, viewConfiguration, metadata) => {
   const { Icon, sema } = getStatus(data.status);

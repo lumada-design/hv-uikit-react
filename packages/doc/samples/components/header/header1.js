@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { withTheme } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import HvHeader, {
   HvHeaderBrand,
   HvHeaderActions,
@@ -64,7 +64,8 @@ const navigationData = [
   }
 ];
 
-const HeaderSample = withTheme(({ theme }) => {
+const HeaderSample = () => {
+  const theme = useTheme();
   const [selected, setSelected] = useState("3-2");
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -107,6 +108,6 @@ const HeaderSample = withTheme(({ theme }) => {
       </HvHeaderActions>
     </HvHeader>
   );
-});
+};
 
 export default <div style={{ height: 100 }}>{<HeaderSample />}</div>;

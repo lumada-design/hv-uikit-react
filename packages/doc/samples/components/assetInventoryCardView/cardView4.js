@@ -24,7 +24,7 @@ const styles = theme => ({
 
 //------------------ Render --------------------
 
-const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
+const CustomMedia = withStyles(styles)(HvCardMedia);
 
 const renderer = (value, viewConfiguration) => (
   <HvCard id={value.id}>

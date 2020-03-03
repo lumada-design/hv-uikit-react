@@ -184,7 +184,7 @@ const stylesRow = theme => ({
   }
 });
 
-const StyledRow = withStyles(stylesRow, { withTheme: true })(Row);
+const StyledRow = withStyles(stylesRow)(Row);
 
 const rowRenderer = (value, index, viewConfiguration, metadata) => (
   <StyledRow
