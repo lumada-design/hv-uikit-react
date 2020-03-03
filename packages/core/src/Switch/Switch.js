@@ -67,31 +67,6 @@ const HvSwitch = props => {
     <CheckMark iconSize="XS" className={classes.checkedIcon} />
   );
 
-  /*
-  return (
-    <div className={classes.root}>
-      {showLabels && renderLabel("left")}
-      <Switch
-        checked={isChecked}
-        onChange={handleChange}
-        disabled={disabled}
-        id={id}
-        value={value}
-        classes={{
-          root: classes.switch,
-          switchBase: classes.switchBase,
-          checked: classes.checked,
-          track: classes.track,
-          thumb: classes.thumb,
-          disabled: classes.disabled
-        }}
-        {...(displayIconChecked && { checkedIcon })}
-      />
-      {showLabels && renderLabel("right")}
-    </div>
-  );
-  */
-
   return (
     <div className={classes.root} id={`${internalId}_root`}>
       {showLabels && renderLabel("left")}
@@ -145,9 +120,29 @@ HvSwitch.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied to the internal Switch component's root class.
+     */
+    switch: PropTypes.string,
+    /**
      * Styles applied to the internal SwitchBase component's root class.
      */
     switchBase: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are disabled.
+     */
+    disabledLabel: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are selected.
+     */
+    labelSelected: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are disabled.
+     */
+    labelDeselected: PropTypes.string,
+    /**
+     * Styles applied to the checked icon.
+     */
+    checkedIcon: PropTypes.string,
     /**
      * Pseudo-class applied to the internal SwitchBase component's checked class.
      */

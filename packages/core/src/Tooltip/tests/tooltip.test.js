@@ -2,34 +2,22 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { withStyles } from "@material-ui/core";
-
 import Tooltip from "..";
 import HvProvider from "../../Provider";
 import HvTypography from "../../Typography";
-import styles from "../styles";
 
-const createTooltipData = data => {
-  // eslint-disable-next-line react/prop-types
-  const TooltipContent = ({ classes }) => (
-    <div>
-      <div className={classes.title}>
-        <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+const createTooltipData = data => (
+  <div>
+    <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+    {data.elements.map(element => (
+      <div key={element.name}>
+        <HvTypography variant="labelText">{element.name}</HvTypography>
+        <div />
+        <HvTypography variant="sText">{element.value}</HvTypography>
       </div>
-      <div className={classes.valueWrapper}>
-        {data.elements.map(element => (
-          <div key={element.name} className={classes.values}>
-            <HvTypography variant="labelText">{element.name}</HvTypography>
-            <div className={classes.separator} />
-            <HvTypography variant="sText">{element.value}</HvTypography>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  return withStyles(styles)(TooltipContent);
-};
+    ))}
+  </div>
+);
 
 const Anchor = (
   <button id="testChild" type="submit">
@@ -79,13 +67,13 @@ describe("Multi Line Tooltip - No Header", () => {
     ]
   };
 
-  const TooltipData = createTooltipData(data);
+  const tooltipData = createTooltipData(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
         <Tooltip
-          tooltipData={<TooltipData />}
+          tooltipData={tooltipData}
           tooltipAnchor={Anchor}
           useSingle={false}
         />
@@ -97,7 +85,7 @@ describe("Multi Line Tooltip - No Header", () => {
     expect(wrapper).toBeDefined();
   });
 
-  it("should render mmultiple line tooltip correctly", () => {
+  it("should render multiple line tooltip correctly", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -118,13 +106,13 @@ describe("Multi Line Tooltip - With Header", () => {
     ]
   };
 
-  const TooltipData = createTooltipData(data);
+  const tooltipData = createTooltipData(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
         <Tooltip
-          tooltipData={<TooltipData />}
+          tooltipData={tooltipData}
           tooltipAnchor={Anchor}
           useSingle={false}
         />

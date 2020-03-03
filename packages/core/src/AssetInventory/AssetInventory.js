@@ -570,7 +570,19 @@ AssetInventory.propTypes = {
     /**
      * Styles applied to the view container.
      */
-    viewContainer: PropTypes.string
+    viewContainer: PropTypes.string,
+    /**
+     * Styles applied to the search box container.
+     */
+    searchBoxContainer: PropTypes.string,
+    /**
+     * Styles applied to the sort container.
+     */
+    sortContainer: PropTypes.string,
+    /**
+     * Styles applied to the pagination component.
+     */
+    pagination: PropTypes.string
   }).isRequired,
   /**
    * Views components.

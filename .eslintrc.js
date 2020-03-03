@@ -10,7 +10,12 @@ module.exports = {
     ],
     "no-underscore-dangle": ["error", { allow: ["_offset"] }],
     "react-hooks/rules-of-hooks": "warn",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": "off",
+
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
+    "react/jsx-curly-newline": "off"
   },
   env: {
     browser: true,

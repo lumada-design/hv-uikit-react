@@ -79,7 +79,15 @@ ListViewHeaderRow.propTypes = {
     /**
      * Styles applied to the assetinventorylistview root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied the header when selectable.
+     */
+    selectable: PropTypes.string,
+    /**
+     * Styles applied the header when not selectable.
+     */
+    notSelectable: PropTypes.string
   }).isRequired
 };
 

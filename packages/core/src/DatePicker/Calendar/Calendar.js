@@ -238,9 +238,9 @@ class Calendar extends React.Component {
           <Navigation
             id={`${id}-navigation-month`}
             navigationText={monthName}
-            onNavigatePrevious={() =>
-              this.navigateTo(NAV_OPTIONS.PREVIOUS_MONTH)
-            }
+            onNavigatePrevious={() => {
+              this.navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
+            }}
             onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_MONTH)}
             onTextClick={() => this.setState({ viewMode: VIEW_MODE.MONTHLY })}
             className={classes.navigationMonth}

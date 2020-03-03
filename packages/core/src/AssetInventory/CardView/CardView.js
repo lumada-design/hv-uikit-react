@@ -131,7 +131,10 @@ CardView.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
-    gridContainer: PropTypes.string
+    /**
+     * Styles applied to the root.
+     */
+    root: PropTypes.string
   }).isRequired,
   /**
    * Icon used in the multi button in the assert inventory.

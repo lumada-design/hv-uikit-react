@@ -115,7 +115,15 @@ ListView.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied to the table header.
+     */
+    tableHead: PropTypes.string,
+    /**
+     * Styles applied to the table body.
+     */
+    tableBody: PropTypes.string
   }).isRequired,
   /**
    * The function that will be used to render the list,

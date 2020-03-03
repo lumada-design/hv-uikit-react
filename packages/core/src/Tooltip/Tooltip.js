@@ -23,7 +23,7 @@ const HvTooltip = ({
     TransitionComponent={TransitionComponent}
     TransitionProps={TransitionProps}
     classes={{
-      tooltip: useSingle ? classes.tooltip : classes.multitooltip,
+      tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
       popper: classes.popper
     }}
     title={tooltipData}
@@ -43,9 +43,17 @@ HvTooltip.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the tooltip class
+     * Styles applied to the tooltip class when it is single
      *  */
     tooltip: PropTypes.string,
+    /**
+     * Styles applied to the tooltip class when it is multi
+     *  */
+    tooltipMulti: PropTypes.string,
+    /**
+     * Styles applied to the popper component
+     *  */
+    popper: PropTypes.string,
     /**
      * Styles applied to the title.
      */

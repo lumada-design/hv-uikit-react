@@ -18,7 +18,7 @@ const styles = theme => ({
       color: theme.hv.palette.accent.acce1
     }
   },
-  multitooltip: {
+  tooltipMulti: {
     maxWidth: 532,
     padding: 0,
     display: "flex",

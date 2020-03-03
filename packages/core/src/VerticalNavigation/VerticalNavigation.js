@@ -55,7 +55,11 @@ VerticalNavigation.propTypes = {
     /**
      * Style applied to the root of the component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Style applied to the root of the component when it not collapsable.
+     */
+    noCollapsable: PropTypes.string
   }).isRequired,
   /**
    * Sets if the navigation should have a button to hide itself.
