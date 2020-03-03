@@ -1,10 +1,12 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Level3.Bad";
-import Upload from "@hv/uikit-react-icons/dist/Upload";
-import AddIcon from "@hv/uikit-react-icons/dist/Add";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import {
+  Add,
+  Upload,
+  Delete,
+  Preview,
+  Level3Bad as FailureIcon
+} from "@hv/uikit-react-icons/dist";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import leaf from "./resources/leaf.png";
@@ -27,7 +29,7 @@ const strings = {
   cellDContent: "30-60 days"
 };
 
-const MultipleActionsWithMediaStyles = theme => ({
+const mediaStyles = theme => ({
   content: {
     padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
   },
@@ -90,30 +92,16 @@ const MultipleActionsWithMedia = ({ classes }) => {
   );
 };
 
-const MultipleActionsWithMediaWithStyles = withStyles(
-  MultipleActionsWithMediaStyles,
-  {
-    withTheme: true
-  }
-)(MultipleActionsWithMedia);
-
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
-const StyledFailureIcon = () => (
-  <FailureIcon semantic="sema4" boxStyles={iconStyles} />
+const MultipleActionsWithMediaWithStyles = withStyles(mediaStyles)(
+  MultipleActionsWithMedia
 );
 
-const SubHeader = ({ classes }) => {
-  return (
-    <div>
-      <span className={classes.subtitleLeft}>{configuration.subtitleLeft}</span>
-      <span>{configuration.subtitleRight}</span>
-    </div>
-  );
-};
+const SubHeader = ({ classes }) => (
+  <div>
+    <span className={classes.subtitleLeft}>{configuration.subtitleLeft}</span>
+    <span>{configuration.subtitleRight}</span>
+  </div>
+);
 
 const SubHeaderStyle = theme => ({
   subtitleLeft: {
@@ -123,9 +111,7 @@ const SubHeaderStyle = theme => ({
   }
 });
 
-const StyledSubheader = withStyles(SubHeaderStyle, {
-  withTheme: true
-})(SubHeader);
+const StyledSubheader = withStyles(SubHeaderStyle)(SubHeader);
 
 const myActions = [
   {
@@ -137,19 +123,19 @@ const myActions = [
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon />,
+    iconCallback: () => <Preview color="atmo7" />,
     disabled: true
   },
   {
     id: "put",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add color="atmo7" />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];
@@ -157,7 +143,7 @@ const myActions = [
 export default (
   <div style={{ width: "360px" }}>
     <HvCard
-      icon={<StyledFailureIcon />}
+      icon={<FailureIcon semantic="sema4" />}
       headerTitle={configuration.title}
       subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}

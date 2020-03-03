@@ -1,108 +1,89 @@
 import React from "react";
-import classNames from "classnames";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
-import RawUserIcon from "@hv/uikit-react-icons/dist/User";
-import RawCalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
-import RawPlaneIcon from "@hv/uikit-react-icons/dist/Plane";
-import RawLineChartIcon from "@hv/uikit-react-icons/dist/LineChart";
-import RawMachineS from "@hv/uikit-react-icons/dist/Machine";
-import RawComponents from "@hv/uikit-react-icons/dist/Components";
-import withStyles from "@material-ui/core/styles/withStyles";
-
-const styles = theme => ({
-  box: {
-    width: "32px",
-    height: "32px"
-  },
-  selected: {
-    "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo1
-    }
-  }
-});
-
-const getClasses = ({ classes, isSelected }) =>
-  classNames(classes.box, isSelected && classes.selected);
-
-const UserIcon = withStyles(styles, { withTheme: true })(props => (
-  <RawUserIcon className={getClasses(props)} />
-));
-
-const CalendarIcon = withStyles(styles, { withTheme: true })(props => (
-  <RawCalendarIcon className={getClasses(props)} />
-));
-
-const LineChartIcon = withStyles(styles, { withTheme: true })(props => (
-  <RawLineChartIcon className={getClasses(props)} />
-));
-
-const PlaneIcon = withStyles(styles, { withTheme: true })(props => (
-  <RawPlaneIcon className={getClasses(props)} />
-));
-
-const MachineS = withStyles(styles, { withTheme: true })(props => (
-  <RawMachineS className={getClasses(props)} />
-));
-
-const Components = withStyles(styles, { withTheme: true })(props => (
-  <RawComponents className={getClasses(props)} />
-));
+import {
+  Calendar,
+  Components,
+  LineChart,
+  Machine,
+  Plane,
+  User
+} from "@hv/uikit-react-icons/dist";
 
 const data = {
   data: [
     {
       label: "Advanced server DS120",
-      iconCallback: state => <UserIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <User color={isSelected ? "atmo1" : undefined} />
+      ),
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: state => <CalendarIcon {...state} />
+      iconCallback: ({ isSelected }) => (
+        <Calendar color={isSelected ? "atmo1" : undefined} />
+      )
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: state => <LineChartIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <LineChart color={isSelected ? "atmo1" : undefined} />
+      ),
       subData: {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: state => <Components {...state} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: state => <Components {...state} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
     },
     {
       label: "Advanced server DS530",
-      iconCallback: state => <PlaneIcon {...state} />,
+      iconCallback: ({ isSelected }) => (
+        <Plane color={isSelected ? "atmo1" : undefined} />
+      ),
       showNavIcon: true,
       subData: {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: state => <Components {...state} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: state => <MachineS {...state} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: state => <MachineS {...state} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: state => <Components {...state} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }

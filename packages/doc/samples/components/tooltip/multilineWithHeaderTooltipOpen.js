@@ -43,9 +43,7 @@ const TooltipContent = ({ classes }) => (
   </div>
 );
 
-const TooltipContentWithStyles = withStyles(tooltipStyling, {
-  withTheme: true
-})(TooltipContent);
+const TooltipContentWithStyles = withStyles(tooltipStyling)(TooltipContent);
 
 const TooltipControl = (
   <HvTypography tabIndex="0" variant="normalText">

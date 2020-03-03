@@ -1,17 +1,8 @@
 import React from "react";
 import Typography from "@hv/uikit-react-core/dist/Typography";
-import Info from "@hv/uikit-react-icons/dist/Info";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { Info } from "@hv/uikit-react-icons/dist";
 import SnackbarContentWrapper from "@hv/uikit-react-core/dist/Snackbar/SnackbarContentWrapper";
 
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
-};
-
-const StyledInfo = withStyles(styles, { withTheme: true })(Info);
 const actionComponent = {
   id: "post",
   label: "Action",
@@ -51,25 +42,25 @@ export default (
     <SnackbarContentWrapper
       label="This is a snackbar."
       variant="default"
-      customIcon={<StyledInfo iconSize="S" color={["#414141"]} />}
+      customIcon={<Info color="base2" />}
     />
     <p />
     <SnackbarContentWrapper
       label="Ellentesque habitant morbi tristique senectus et netus et malesuada ac turpis egestas."
       variant="default"
-      customIcon={<StyledInfo iconSize="S" color={["#414141"]} />}
+      customIcon={<Info color="base2" />}
     />
     <p />
     <SnackbarContentWrapper
       label="This is a success message."
       variant="success"
-      customIcon={<StyledInfo iconSize="S" color={["#414141"]} />}
+      customIcon={<Info color="base2" />}
     />
     <p />
     <SnackbarContentWrapper
       label="This is an error message."
       variant="error"
-      customIcon={<StyledInfo iconSize="S" color={["#414141"]} />}
+      customIcon={<Info color="base2" />}
     />
   </div>
 );

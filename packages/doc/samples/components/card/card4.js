@@ -95,9 +95,9 @@ const MultipleActions = ({ classes }) => {
   );
 };
 
-const MultipleActionsWithStyle = withStyles(MultipleActionsStyles, {
-  withTheme: true
-})(MultipleActions);
+const MultipleActionsWithStyle = withStyles(MultipleActionsStyles)(
+  MultipleActions
+);
 
 export default (
   <div style={{ width: "500px" }}>

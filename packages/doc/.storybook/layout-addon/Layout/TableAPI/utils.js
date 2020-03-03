@@ -81,20 +81,20 @@ const parseType = (type, classes) => {
       typeValue = type.value;
       break;
     case "enum":
-      Type = withStyles(styles, { withTheme: true })(Enum);
+      Type = withStyles(styles)(Enum);
       typeValue = <Type array={type.value} />;
       break;
     case "arrayOf":
       if (type.value.name === "shape") {
-        Type = withStyles(styles, { withTheme: true })(ListOfShape);
+        Type = withStyles(styles)(ListOfShape);
         typeValue = <Type obj={type.value} />;
       } else {
-        Type = withStyles(styles, { withTheme: true })(List);
+        Type = withStyles(styles)(List);
         typeValue = <Type>{type.value.name}</Type>;
       }
       break;
     case "shape":
-      Type = withStyles(styles, { withTheme: true })(Shape);
+      Type = withStyles(styles)(Shape);
       typeValue = <Type obj={type.value} />;
       break;
     default:

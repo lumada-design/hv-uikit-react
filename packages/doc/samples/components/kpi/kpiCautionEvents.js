@@ -1,11 +1,7 @@
 import React from "react";
 import Chart from "react-google-charts";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import HvCard from "@hv/uikit-react-core/dist/Card";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
-import ArrowDown from "@hv/uikit-react-icons/dist/BottomXS";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { HvCard, HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import { Level3Bad } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Caution events",
@@ -16,23 +12,14 @@ const labels = {
 };
 
 const IopsComparisonVisualAverage = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <HvTypography
-      style={{
-        position: "relative",
-      }}
-      variant="highlightText"
-    >
+  <div style={{ position: "relative" }}>
+    <HvTypography style={{ position: "relative" }} variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
 );
 
-const trend = () => (
+const TrendIndicator = () => (
   <div
     style={{
       width: "32px",
@@ -81,28 +68,17 @@ const trend = () => (
   </div>
 );
 
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
 const kpiContainer = {
   paddingTop: "20px"
 };
-
-const StyledFailureIcon = withStyles(iconStyles, {
-  withTheme: true
-})(() => <Level3 semantic="sema13" />);
-
-const icon = () => <StyledFailureIcon />;
 
 const KpiT = () => (
   <div style={kpiContainer}>
     <HvKpi
       labels={labels}
-      visualIndicator={icon()}
-      trendIndicator={trend()}
-      visualComparison={IopsComparisonVisualAverage()}
+      visualIndicator={<Level3Bad semantic="sema13" />}
+      trendIndicator={<TrendIndicator />}
+      visualComparison={<IopsComparisonVisualAverage />}
     />
   </div>
 );

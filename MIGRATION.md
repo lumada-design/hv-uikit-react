@@ -1,9 +1,10 @@
 # Migration
 
 - [Migration](#migration)
-   - [From version 1.x.x to 2.0.x](#from-version-1xx-to-20x)
-     - [Deprecated API and components](#deprecated-api-and-components)
-     - [Changes](#changes)
+  - [From version 1.x.x to 2.0.x](#from-version-1xx-to-20x)
+    - [Deprecated API and components](#deprecated-api-and-components)
+    - [Changes](#changes)
+    - [Docs](#docs)
 
 ## From version 1.x.x to 2.0.x
 
@@ -78,14 +79,15 @@ With our first major release several components where reviewed in order to remov
     - **iconPosition** replaced by **validationIconPosition**
     - **inputTextConfiguration** replaced by **labels**
 
+### Changes
 
-### Changes ### 
-   - Icons
-      - Removed all deprecated icons, now the path to use the generics should be: `@hv/uikit-react-icons/dist/<icon_name>`
-      - Added the icons index to the module for allowing the ES6 import usage (destructuring). 
-   - Toggle Button
-      - Removed display inline-table from icon 
-   - Modal Action
-      - Css class **action** changed with **spacing**.
-   - Tabs
-      - Css class **labelContainer** passed to the **root**
+- Icons
+  - Removed all deprecated icons, now the path to use the generics should be: `@hv/uikit-react-icons/dist/<icon_name>`
+  - Added the icons index to the module for allowing the ES6 import usage (destructuring).
+  - Icon box dimensions are now according to Design System specifications.
+- Toggle Button
+  - Removed display inline-table from icon
+- Modal Action
+  - Css class **action** changed with **spacing**.
+- Tabs
+  - Css class **labelContainer** passed to the **root**

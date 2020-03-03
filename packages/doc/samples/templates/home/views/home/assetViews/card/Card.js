@@ -4,11 +4,13 @@ import Grid from "@hv/uikit-react-core/dist/Grid";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Kpi from "@hv/uikit-react-core/dist/Kpi";
 import Card from "@hv/uikit-react-core/dist/Card";
-import Level1 from "@hv/uikit-react-icons/dist/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Level5";
+import {
+  Level1,
+  Level2Average,
+  Level3Bad,
+  Level4,
+  Level5
+} from "@hv/uikit-react-icons/dist";
 import styles from "./styles";
 
 const KpiProbability = score => ({
@@ -51,9 +53,7 @@ const Content = ({ classes, values }) => (
   </>
 );
 
-const ContentWithStyles = withStyles(styles, {
-  withTheme: true
-})(Content);
+const ContentWithStyles = withStyles(styles)(Content);
 
 /**
  * Render passed to the CardView.
@@ -73,11 +73,11 @@ const cardRenderer = (data, viewConfiguration) => {
       status.sema = "sema10";
       break;
     case probability < 40:
-      status.Icon = <Level2 semantic="sema11" />;
+      status.Icon = <Level2Average semantic="sema11" />;
       status.sema = "sema11";
       break;
     case probability < 60:
-      status.Icon = <Level3 semantic="sema12" />;
+      status.Icon = <Level3Bad semantic="sema12" />;
       status.sema = "sema12";
       break;
     case probability < 80:

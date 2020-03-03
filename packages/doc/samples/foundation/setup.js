@@ -65,4 +65,4 @@ const Setup = ({ classes, config }) => (
   </>
 );
 
-export default withStyles(styles, { withTheme: true })(Setup);
+export default withStyles(styles)(Setup);

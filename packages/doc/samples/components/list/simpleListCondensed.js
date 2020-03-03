@@ -28,9 +28,7 @@ const styles = theme => ({
   }
 });
 
-const ListWrapper = withStyles(styles, {
-  withTheme: true
-})(({ classes, children }) => (
+const ListWrapper = withStyles(styles)(({ classes, children }) => (
   <div className={classes.wrapper}>{children}</div>
 ));
 

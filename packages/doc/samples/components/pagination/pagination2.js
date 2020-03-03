@@ -21,9 +21,9 @@ const styles = theme => ({
   }
 });
 
-const Container = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.root}>{children}</div>
-);
+const Container = withStyles(styles)(({ classes, children }) => (
+  <div className={classes.root}>{children}</div>
+));
 
 const ControlledPagination = () => {
   const [page, setPage] = useState(0);

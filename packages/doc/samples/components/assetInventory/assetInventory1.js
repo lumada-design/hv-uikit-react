@@ -1,7 +1,5 @@
 import React from "react";
 import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
-import Cards from "@hv/uikit-react-icons/dist/Cards";
-import List from "@hv/uikit-react-icons/dist/List";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import ListView, {
@@ -11,60 +9,29 @@ import ListView, {
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Delete";
-import Level1 from "@hv/uikit-react-icons/dist/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Level5";
+import {
+  Add,
+  Cards,
+  Delete,
+  Level1,
+  Level2Average,
+  Level3Bad,
+  Level4,
+  Level5,
+  List,
+  Preview,
+  Upload
+} from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
-
-const boxStyles = { width: "30px", height: "30px" };
-const styles = () => ({
-  box: {
-    ...boxStyles
-  }
-});
-
-const AddIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawAddIcon className={classes.box} color={color} />;
-  }
-);
-
-const PreviewIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawPreviewIcon className={classes.box} color={color} />;
-  }
-);
-
-const UploadIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawUploadIcon className={classes.box} color={color} />;
-  }
-);
-
-const DeleteIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawDeleteIcon className={classes.box} color={color} />;
-  }
-);
 
 const getStatus = statusNumber => {
   switch (statusNumber) {
     case 1:
       return { Icon: Level1, sema: "sema10" };
     case 2:
-      return { Icon: Level2, sema: "sema11" };
+      return { Icon: Level2Average, sema: "sema11" };
     case 3:
-      return { Icon: Level3, sema: "sema12" };
+      return { Icon: Level3Bad, sema: "sema12" };
     case 4:
       return { Icon: Level4, sema: "sema13" };
     case 5:
@@ -138,13 +105,11 @@ const Content = ({ classes, values }) => (
   </Grid>
 );
 
-const ContentWithStyles = withStyles(kpiStyles, {
-  withTheme: true
-})(Content);
+const ContentWithStyles = withStyles(kpiStyles)(Content);
 
 const cardRenderer = (data, viewConfiguration, metadata) => {
   const { Icon, sema } = getStatus(data.status);
-  const StyledIcon = <Icon semantic={sema} boxStyles={boxStyles} />;
+  const StyledIcon = <Icon semantic={sema} />;
 
   return (
     <HvCard
@@ -214,12 +179,11 @@ const stylesRow = theme => ({
     borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
-    display: "block",
     margin: `0 ${theme.hv.spacing.xs}px`
   }
 });
 
-const StyledRow = withStyles(stylesRow, { withTheme: true })(Row);
+const StyledRow = withStyles(stylesRow)(Row);
 
 const rowRenderer = (value, index, viewConfiguration, metadata) => (
   <StyledRow
@@ -279,25 +243,25 @@ const myActions = [
   {
     id: "post",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add />,
     disabled: false
   },
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon disabled />,
+    iconCallback: () => <Preview color="atmo7" />,
     disabled: true
   },
   {
     id: "put",
     label: "Upload",
-    iconCallback: () => <UploadIcon disabled />,
+    iconCallback: () => <Upload color="atmo7" />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];

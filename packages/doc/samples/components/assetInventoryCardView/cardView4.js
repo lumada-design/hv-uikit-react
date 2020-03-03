@@ -7,18 +7,7 @@ import HvCard, {
   HvCardFooter,
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Delete";
-import RawIcon from "@hv/uikit-react-icons/dist/Tool";
-
-const iconStyles = () => ({
-  box: {
-    width: "32px",
-    height: "32px"
-  }
-});
+import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
 
 const styles = theme => ({
   mediaContainer: {
@@ -33,28 +22,9 @@ const styles = theme => ({
   }
 });
 
-
-const renderIcon = (Icon, disabled) =>
-  withStyles(iconStyles, {
-    withTheme: true
-  })(({ classes, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <Icon className={classes.box} color={color} />;
-  });
-
-const Icon = renderIcon(RawIcon, false);
-
-const AddIcon = renderIcon(RawAddIcon, false);
-
-const PreviewIcon = renderIcon(RawPreviewIcon, true);
-
-const UploadIcon = renderIcon(RawUploadIcon, true);
-
-const DeleteIcon = renderIcon(RawDeleteIcon, false);
-
 //------------------ Render --------------------
 
-const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
+const CustomMedia = withStyles(styles)(HvCardMedia);
 
 const renderer = (value, viewConfiguration) => (
   <HvCard id={value.id}>
@@ -99,25 +69,25 @@ const myActions = [
   {
     id: "post",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add />,
     disabled: false
   },
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon />,
+    iconCallback: () => <Preview color="atmo7" />,
     disabled: true
   },
   {
     id: "put",
     label: "Upload",
-    iconCallback: () => <UploadIcon />,
+    iconCallback: () => <Upload color="atmo7" />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];

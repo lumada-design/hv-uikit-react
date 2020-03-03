@@ -1,20 +1,6 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import HvEmptyState from "@hv/uikit-react-core/dist/EmptyState";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import Ghost from "@hv/uikit-react-icons/dist/Ghost";
-
-const styles = theme => ({
-  root: {
-    width: "112px",
-    height: "112px",
-    "& svg .color0": {
-      fill: theme.hv.palette.atmosphere.atmo7
-    }
-  }
-});
-
-const StyledGhost = withStyles(styles, { withTheme: true })(Ghost);
+import { HvEmptyState, HvTypography } from "@hv/uikit-react-core/dist";
+import { Ghost } from "@hv/uikit-react-icons/dist";
 
 const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
 const CustomAction = (
@@ -31,6 +17,6 @@ export default (
     title="This page can't be displayed"
     message={CustomMessage}
     action={CustomAction}
-    icon={<StyledGhost iconSize="L" />}
+    icon={<Ghost iconSize="L" color="atmo7" />}
   />
 );

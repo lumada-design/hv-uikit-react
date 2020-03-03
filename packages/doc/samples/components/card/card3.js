@@ -95,9 +95,9 @@ const MultipleActions = ({ classes }) => {
   );
 };
 
-const MultipleActionsWithStyle = withStyles(MultipleActionsStyles, {
-  withTheme: true
-})(MultipleActions);
+const MultipleActionsWithStyle = withStyles(MultipleActionsStyles)(
+  MultipleActions
+);
 
 const myActions = [
   { id: "view", label: "View", disabled: false },

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import * as genericIconComponentList from "@hv/uikit-react-icons/dist/index";
+import * as genericIconComponentList from "@hv/uikit-react-icons/dist";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-const styles = theme => ({
+const styles = () => ({
   groupContainer: {
     paddingBottom: "30px"
   },
@@ -94,7 +94,7 @@ const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
   </div>
 );
 
-const Icons = ({ classes, theme }) => {
+const Icons = ({ classes }) => {
   const [iconSize, setIconSize] = useState({
     id: 2,
     label: "M",
@@ -112,14 +112,9 @@ const Icons = ({ classes, theme }) => {
           notifyChangesOnFirstRender
         />
       </div>
-      <Group
-        groupLabel={"Generic"}
-        classes={classes}
-        theme={theme}
-        iconSize={iconSize}
-      />
+      <Group groupLabel={"Generic"} classes={classes} iconSize={iconSize} />
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Icons);
+export default withStyles(styles)(Icons);

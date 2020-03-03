@@ -1,17 +1,7 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
-import Info from "@hv/uikit-react-icons/dist/Info";
-
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
-};
-
-const StyledInfo = withStyles(styles, { withTheme: true })(Info);
+import { Info } from "@hv/uikit-react-icons/dist";
 
 class SimpleSnackbar extends React.Component {
   state = {
@@ -74,6 +64,6 @@ export default (
     id="snackbar2"
     label="This is a snackbar with a custom icon."
     variant="default"
-    customIcon={<StyledInfo iconSize="S" />}
+    customIcon={<Info />}
   />
 );

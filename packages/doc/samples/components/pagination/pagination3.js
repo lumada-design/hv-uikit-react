@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import Pagination from "@hv/uikit-react-core/dist/Pagination";
-import ToolIcon from "@hv/uikit-react-icons/dist/Tool";
+import { Tool } from "@hv/uikit-react-icons/dist";
 import compressorImage from "../card/resources/compressor.png";
 import leafImage from "../card/resources/leaf.png";
 
@@ -40,7 +40,7 @@ const ControlledPagination = () => {
   return (
     <>
       <CardView
-        icon={<ToolIcon />}
+        icon={<Tool />}
         values={pageData}
         viewConfiguration={{
           onSelection: event => handleSelection(event.target.value),

@@ -1,24 +1,24 @@
 import React from "react";
 import { basename } from "path";
 import PropTypes from "prop-types";
-import MUITabs from "@material-ui/core/Tabs";
-import MUITab from "@material-ui/core/Tab";
 import isNil from "lodash/isNil";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Tab as MUITab, Tabs as MUITabs, useTheme } from "@material-ui/core";
 import TableAPI from "../TableAPI";
 import TableCSS from "../TableCSS";
 import Accessibility from "../Accessibility";
 
-const TabUsage = ({ parameters, theme }) => {
+const TabUsage = ({ parameters }) => {
   const { usage } = parameters;
+  const theme = useTheme();
 
   return (
     <SyntaxHighlighter
       language="javascript"
       style={theme.type === "dark" ? darcula : prism}
       customStyle={{
-        backgroundColor: theme.palette.atmosphere.atmo3,
+        backgroundColor: theme.palette.atmo3,
         margin: 0,
         borderRadius: 0,
         fontSize: 14
@@ -92,7 +92,7 @@ class Tabs extends React.Component {
           )}
         </MUITabs>
         <div className={classes.props}>
-          {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
+          {value === 0 && <TabUsage parameters={parameters} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
           {value === 3 && <Accessibility pageData={accessPage.default} />}

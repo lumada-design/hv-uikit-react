@@ -30,9 +30,7 @@ const styles = theme => ({
   }
 });
 
-const ListWrapper = withStyles(styles, {
-  withTheme: true
-})(({ classes, children }) => (
+const ListWrapper = withStyles(styles)(({ classes, children }) => (
   <div className={classes.wrapper}>{children}</div>
 ));
 
@@ -44,7 +42,9 @@ const ariaProps = {
 
 export default (
   <>
-    <button id="anchorButton" tabIndex={0}>Anchor</button>
+    <button id="anchorButton" tabIndex={0}>
+      Anchor
+    </button>
     <ListWrapper>
       <List values={data} selectDefault hasTooltips listProps={ariaProps} />
     </ListWrapper>

@@ -1,9 +1,9 @@
 import React from "react";
-import HvCard from "@hv/uikit-react-core/dist/Card";
-import Upload from "@hv/uikit-react-icons/dist/Upload";
-import AddIcon from "@hv/uikit-react-icons/dist/Add";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Preview";
+import HvCard, {
+  HvCardFooter,
+  HvCardMedia
+} from "@hv/uikit-react-core/dist/Card";
+import { Add, Delete, Preview, Upload } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 import leaf from "./resources/leaf.png";
 
@@ -20,7 +20,7 @@ const styles = theme => ({
   }
 });
 
-const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
+const CustomMedia = withStyles(styles)(HvCardMedia);
 
 const myActions = [
   {
@@ -32,19 +32,19 @@ const myActions = [
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon />,
+    iconCallback: () => <Preview />,
     disabled: true
   },
   {
     id: "put",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];

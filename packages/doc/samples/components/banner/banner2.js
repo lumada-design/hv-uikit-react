@@ -1,12 +1,7 @@
 import React from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
-import Info from "@hv/uikit-react-icons/dist/Info";
-
-const boxStyles = {
-  width: "32px",
-  height: "32px"
-};
+import { Info } from "@hv/uikit-react-icons/dist";
 
 class SimpleBanner extends React.Component {
   state = {
@@ -63,6 +58,6 @@ export default (
   <SimpleBanner
     label="This is a default banner."
     variant="default"
-    customIcon={<Info boxStyles={boxStyles} />}
+    customIcon={<Info />}
   />
 );
