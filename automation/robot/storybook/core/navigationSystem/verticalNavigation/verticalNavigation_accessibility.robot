@@ -10,7 +10,7 @@ ${pa11yScript}    pa11y
 ...               --runner htmlcs --runner axe
 ...               --standard WCAG2AA
 ...               --root-element "div[class|='Component-content']"
-...               ${STORYBOOK_URL}/iframe.html?id=core-new-vertical-navigation--
+...               ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--
 
 
 *** Test Cases ***

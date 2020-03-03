@@ -1,5 +1,5 @@
 import React from "react";
-import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
+import HvVerticalNavigation from "@hv/uikit-react-core/dist/OldVerticalNavigation";
 import { Calendar, LineChart, Plane, User } from "@hv/uikit-react-icons/dist";
 
 const data = {

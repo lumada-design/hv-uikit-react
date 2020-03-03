@@ -8,7 +8,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 navigate between levels
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=coreoldverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled       css:ul[role='listbox']               7s
     Click Element                       //li[contains(.,'Advanced server DS530')]
     Wait Until Element Is Enabled       //li[contains(.,'Variant X-333')]    2s
@@ -24,7 +24,7 @@ navigate between levels
     Wait Until Keyword Succeeds         3    1s    Page Should Contain Element    (//ul[@role='listbox'])[1]/li    limit=4
 
 search on first level
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreoldverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    css:ul[role='listbox']             7s
     Click Element                    //li[contains(.,'Advanced server DS530')]
     Wait Until Element Is Enabled    css:input[placeholder='Search']    2s
@@ -33,7 +33,7 @@ search on first level
     Wait Until Keyword Succeeds      3                                  1     Element Text Should Be    css:ul[role='listbox']>li          Variant X-335
 
 search on 2nd level
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreoldverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    css:ul[role='listbox']               7s
     Click Element                    //li[contains(.,'Advanced server DS530')]
     Wait Until Element Is Enabled    //li[contains(.,'Variant X-333')]    2s
@@ -44,6 +44,6 @@ search on 2nd level
     Wait Until Keyword Succeeds      3                                    1     Element Text Should Be    css:ul[role='listbox']>li          Component HS-921
 
 select action values settings Profile Help
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreoldverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    (//ul[@role='listbox'])[2]    7s
     Element Text Should Be           (//ul[@role='listbox'])[2]    Profile\nSettings\nHelp
