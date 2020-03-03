@@ -35,6 +35,12 @@ describe("<Dropdown />", () => {
     const onChangeMock = jest.fn();
 
     beforeEach(async () => {
+      // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
+      // In real cases this value is filled if the dropdown is expanded.
+      const originalError = console.error;
+      // eslint-disable-next-line no-console
+      console.error = jest.fn();
+
       wrapper = mount(
         <HvProvider>
           <Dropdown
@@ -46,6 +52,9 @@ describe("<Dropdown />", () => {
           />
         </HvProvider>
       );
+
+      // eslint-disable-next-line no-console
+      console.error = originalError;
     });
 
     it("should render correctly", () => {
