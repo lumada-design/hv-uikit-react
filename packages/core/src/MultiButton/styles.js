@@ -6,18 +6,17 @@ const styles = theme => ({
     transition: "none",
     boxShadow: `-1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, -1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}`
   },
-  iconWidth: {
-    minWidth: "32px !important"
-  },
-  labelPadding: {
-    marginLeft: 8
-  },
-  btnBase: {
+  button: {
+    width: "100%",
     minWidth: 32,
     maxWidth: 200,
     padding: 0,
     border: "none",
     transition: "none",
+    flex: "1 0 0px",
+    "&:hover": {
+      border: "none !important"
+    },
     "&:focus": {
       zIndex: 1
     },
@@ -29,12 +28,6 @@ const styles = theme => ({
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     overflow: "hidden"
-  },
-  btnSecondary: {
-    flex: "1 0 0px",
-    "&:hover": {
-      border: "none !important"
-    }
   },
   isSelected: {
     zIndex: 1,
@@ -52,8 +45,13 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo4
     }
   },
+  icon: {
+    width: "unset",
+    height: "unset",
+    marginRight: 8
+  },
   // vertical button display Styling
-  rootVertical: {
+  vertical: {
     flexDirection: "column",
     height: "auto",
     btnSecondary: {
