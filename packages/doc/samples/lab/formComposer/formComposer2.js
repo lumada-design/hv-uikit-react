@@ -5,7 +5,6 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-
 const inputTextConfiguration = {
   inputLabel: "Default",
   placeholder: "Placeholder value",
@@ -37,7 +36,7 @@ const inputStyles = theme => ({
   }
 });
 
-const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+const CustomInput = withStyles(inputStyles)(HvInput);
 
 const groups = [
   {
@@ -65,8 +64,20 @@ const groups = [
   {
     title: "Group 2 - Dropdown",
     children: [
-      <HvDropdown name="dropdown1" values={data} multiSelect showSearch label="Dropdown 1" />,
-      <HvDropdown name="dropdown2" values={data} multiSelect showSearch label="Dropdown 2" />
+      <HvDropdown
+        name="dropdown1"
+        values={data}
+        multiSelect
+        showSearch
+        label="Dropdown 1"
+      />,
+      <HvDropdown
+        name="dropdown2"
+        values={data}
+        multiSelect
+        showSearch
+        label="Dropdown 2"
+      />
     ]
   }
 ];
@@ -77,7 +88,7 @@ const buttonStyles = theme => ({
   }
 });
 
-const CustomButton = withStyles(buttonStyles, { withTheme: true })(HvButton);
+const CustomButton = withStyles(buttonStyles)(HvButton);
 
 const footerContent = [
   <CustomButton

@@ -1,18 +1,12 @@
 import React, { useContext } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import {
-  Alert,
-  Menu,
-  Settings,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
+import { Alert, Menu, Settings, User } from "@hv/uikit-react-icons/dist";
 import { HvBadge, HvButton } from "@hv/uikit-react-core/dist";
 import HvHeader, {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation
 } from "@hv/uikit-react-core/dist/Header";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HitachiLogo from "./HitachiLogo";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
@@ -20,7 +14,8 @@ import NavContext from "../hoc/NavContext";
 const boxStyles = { width: 32, height: 32 };
 
 // eslint-disable-next-line react/prop-types
-const NavigationTemplate = ({ theme }) => {
+const NavigationTemplate = () => {
+  const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
@@ -63,10 +58,18 @@ const NavigationTemplate = ({ theme }) => {
       <HvHeaderActions>
         {isMdUp && (
           <>
-            <HvButton category="icon" onClick={handleClick} aria-label="settings">
+            <HvButton
+              category="icon"
+              onClick={handleClick}
+              aria-label="settings"
+            >
               <Settings boxStyles={boxStyles} />
             </HvButton>
-            <HvButton category="icon" onClick={handleClick} aria-label="profile">
+            <HvButton
+              category="icon"
+              onClick={handleClick}
+              aria-label="profile"
+            >
               <User boxStyles={boxStyles} />
             </HvButton>
           </>
@@ -79,4 +82,4 @@ const NavigationTemplate = ({ theme }) => {
   );
 };
 
-export default withStyles(styles, { withTheme: true })(NavigationTemplate);
+export default withStyles(styles)(NavigationTemplate);

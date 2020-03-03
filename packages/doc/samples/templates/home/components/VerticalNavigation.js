@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
 import { Settings, User } from "@hv/uikit-react-icons/dist";
 import VerticalNavigation, {
   Action,
   Actions,
   Navigation
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
-import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
 
 // eslint-disable-next-line react/prop-types
-const NavigationTemplate = ({ theme, hasAnchor }) => {
+const NavigationTemplate = ({ hasAnchor }) => {
+  const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   const {
@@ -52,4 +52,4 @@ const NavigationTemplate = ({ theme, hasAnchor }) => {
   );
 };
 
-export default withStyles(styles, { withTheme: true })(NavigationTemplate);
+export default withStyles(styles)(NavigationTemplate);

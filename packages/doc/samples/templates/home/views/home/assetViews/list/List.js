@@ -56,7 +56,7 @@ const Row = ({ classes, status, value, id }) => {
   );
 };
 
-const StyledRow = withStyles(styles, { withTheme: true })(Row);
+const StyledRow = withStyles(styles)(Row);
 
 /**
  * Row render passed to the ListView.
