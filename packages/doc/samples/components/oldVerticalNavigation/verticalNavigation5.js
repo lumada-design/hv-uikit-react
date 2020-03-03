@@ -1,5 +1,5 @@
 import React from "react";
-import HvVerticalNavigation from "@hv/uikit-react-core/dist/VerticalNavigation";
+import HvVerticalNavigation from "@hv/uikit-react-core/dist/OldVerticalNavigation";
 import {
   Calendar,
   Components,

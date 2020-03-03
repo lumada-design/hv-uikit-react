@@ -19,7 +19,7 @@ hAction1:          css:[id^=hv-actions]>button:nth-child(1)
 hAction2:          css:[id^=hv-actions]>button:nth-child(2)
 vNavigation:       css:nav
 vNExpanded:        hv-verticalnavigation1-container-container
-vnAnchorBar:       css:div[class^=VerticalContainer-anchorBar]
+vnAnchorBar:       css:div[class*=VerticalContainer-anchorBar]
 vnBurger:          css:button[id*=hamburger-button]
 vnItems:           css:nav>ul>li
 vnItem1:           css:nav>ul>li:nth-child(1)
@@ -39,7 +39,7 @@ vnItem2.3Items:    css:nav>ul>li:nth-child(2)>ul>li:nth-child(3)>ul>li
 vnItem2.3.1:       css:nav>ul>li:nth-child(2)>ul>li:nth-child(3)>ul>li:nth-child(1)
 vnItem2.3.2:       css:nav>ul>li:nth-child(2)>ul>li:nth-child(3)>ul>li:nth-child(2)
 vnItem2.4:         css:nav>ul>li:nth-child(2)>ul>li:nth-child(4)
-vnActions:         css:div[class^=Actions-root]
-vnAction1:         css:div[class^=Actions-root]>div:nth-child(1)
-vnAction2:         css:div[class^=Actions-root]>div:nth-child(2)
-vnAction3:         css:div[class^=Actions-root]>div:nth-child(3)
+vnActions:         css:div[class*=Actions-root]
+vnAction1:         css:div[class*=Actions-root]>div:nth-child(1)
+vnAction2:         css:div[class*=Actions-root]>div:nth-child(2)
+vnAction3:         css:div[class*=Actions-root]>div:nth-child(3)

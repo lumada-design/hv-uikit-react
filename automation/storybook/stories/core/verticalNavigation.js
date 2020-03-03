@@ -1,16 +1,12 @@
-import React from "react";
 import { storiesOf } from "@storybook/react";
-import Verticalnavigation1 from "../../../../packages/doc/samples/components/VerticalNavigation/verticalNavigation1";
-import Verticalnavigation2 from "../../../../packages/doc/samples/components/VerticalNavigation/verticalNavigation3";
-import verticalnavigationcloseOnExit from "../../../../packages/doc/samples/components/VerticalNavigation/verticalnavigationcloseonexit";
+import Static from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation1";
+import Collapsable from "../../../../packages/doc/samples/components/verticalNavigation/verticalNavigation3";
+import CloseOnExit from "../../../../packages/doc/samples/components/verticalNavigation/verticalnavigationcloseonexit";
 
 // sample scenarios
-const samples = {};
-samples.static = Verticalnavigation1;
-samples.collapsable = Verticalnavigation2;
-samples.closeOnExit = verticalnavigationcloseOnExit;
+const samples = { Static, Collapsable, CloseOnExit };
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>
-  storiesOf("Core_New_Vertical_navigation", module).add(key, () => samples[key])
+  storiesOf("CoreVerticalNavigation", module).add(key, () => samples[key])
 );
