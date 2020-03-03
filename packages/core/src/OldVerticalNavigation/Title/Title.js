@@ -21,7 +21,7 @@ const Title = ({ title, classes, onClick }) => (
     onKeyDown={e => onKeyDownHandler(e, onClick)}
   >
     <div className={classes.navIcon}>
-      <NavIcon iconSize="XS" className={classes.box} />
+      <NavIcon iconSize="XS" />
     </div>
     <Typography className={classes.typography} variant="highlightText">
       {title}
