@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, Popper, useTheme, withStyles } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import OutsideClickHandler from "react-outside-click-handler";
 import uniqueId from "lodash/uniqueId";
+import isNil from "lodash/isNil";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import List from "../List";
@@ -31,28 +32,44 @@ const DropDownMenu = ({
   disabled,
   disablePortal,
   onClick,
+  onToggleOpen,
   keepOpened,
   expanded,
   ...others
 }) => {
+  const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
   const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
   const theme = useTheme();
 
+  useEffect(() => {
+    if (didMountRef.current) {
+      if (onToggleOpen) {
+        onToggleOpen(open);
+      }
+    } else didMountRef.current = true;
+  }, [open]);
+
+  useEffect(() => {
+    if (expanded !== open) {
+      setOpen(expanded && !disabled);
+    }
+  }, [expanded, disabled]);
+
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
-  const handleToggle = event => {
-    setOpen(prevOpen => !prevOpen);
-    if (onClick) onClick(null, event);
+  const handleToggle = (event, status = null) => {
+    if (isNil(status) && status) setOpen(status);
+    else setOpen(prevOpen => !prevOpen);
   };
 
   const handleClose = event => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-    setOpen(false);
+    handleToggle(event, false);
   };
 
   /**
@@ -134,7 +151,7 @@ const DropDownMenu = ({
                 values={dataList}
                 selectable={false}
                 onClick={(item, event) => {
-                  if (!keepOpened) setOpen(false);
+                  if (!keepOpened) handleToggle(event, false);
                   if (onClick) onClick(item, event);
                 }}
                 condensed
@@ -204,6 +221,10 @@ DropDownMenu.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
+   * Function executed on toggle of the dropdown. Should receive the open status.
+   */
+  onToggleOpen: PropTypes.func,
+  /**
    * Function executed in each onClick. Should received the clicked element.
    */
   onClick: PropTypes.func,
@@ -225,6 +246,7 @@ DropDownMenu.defaultProps = {
   id: undefined,
   placement: "left",
   disablePortal: false,
+  onToggleOpen: null,
   onClick: null,
   keepOpened: true,
   disabled: false,
