@@ -3539,6 +3539,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     </Checkbox>
                                                                   </WithStyles(Checkbox)>
                                                                 </span>
+                                                                <NoSsr />
                                                               </span>
                                                             </ForwardRef(ButtonBase)>
                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -4535,6 +4536,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -5430,6 +5432,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -6325,6 +6328,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -6588,6 +6592,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         Apply
                                                       </span>
+                                                      <NoSsr />
                                                     </button>
                                                   </ForwardRef(ButtonBase)>
                                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -6740,6 +6745,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         Cancel
                                                       </span>
+                                                      <NoSsr />
                                                     </button>
                                                   </ForwardRef(ButtonBase)>
                                                 </WithStyles(ForwardRef(ButtonBase))>

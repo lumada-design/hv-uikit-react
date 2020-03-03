@@ -972,6 +972,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                 >
                                   Clickable Tab
                                 </span>
+                                <NoSsr />
                               </button>
                             </ForwardRef(ButtonBase)>
                           </WithStyles(ForwardRef(ButtonBase))>
@@ -1104,6 +1105,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                 >
                                   Clickable Tab
                                 </span>
+                                <NoSsr />
                               </button>
                             </ForwardRef(ButtonBase)>
                           </WithStyles(ForwardRef(ButtonBase))>
@@ -1236,6 +1238,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                 >
                                   Clickable Tab
                                 </span>
+                                <NoSsr />
                               </button>
                             </ForwardRef(ButtonBase)>
                           </WithStyles(ForwardRef(ButtonBase))>
@@ -1368,6 +1371,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                 >
                                   Clickable Tab
                                 </span>
+                                <NoSsr />
                               </button>
                             </ForwardRef(ButtonBase)>
                           </WithStyles(ForwardRef(ButtonBase))>

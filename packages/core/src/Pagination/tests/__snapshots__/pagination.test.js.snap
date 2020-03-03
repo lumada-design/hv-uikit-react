@@ -1111,6 +1111,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           </Start>
                         </WithStyles(Start)>
                       </span>
+                      <NoSsr />
                     </button>
                   </ForwardRef(ButtonBase)>
                 </WithStyles(ForwardRef(ButtonBase))>
@@ -1222,6 +1223,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           </Backwards>
                         </WithStyles(Backwards)>
                       </span>
+                      <NoSsr />
                     </button>
                   </ForwardRef(ButtonBase)>
                 </WithStyles(ForwardRef(ButtonBase))>
@@ -1478,6 +1480,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           </Forwards>
                         </WithStyles(Forwards)>
                       </span>
+                      <NoSsr />
                     </button>
                   </ForwardRef(ButtonBase)>
                 </WithStyles(ForwardRef(ButtonBase))>
@@ -1589,6 +1592,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           </End>
                         </WithStyles(End)>
                       </span>
+                      <NoSsr />
                     </button>
                   </ForwardRef(ButtonBase)>
                 </WithStyles(ForwardRef(ButtonBase))>

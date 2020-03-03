@@ -983,6 +983,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -1990,6 +1991,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -3015,6 +3017,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -5024,6 +5027,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -6033,6 +6037,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -7060,6 +7065,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                     >
                       <div />
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>

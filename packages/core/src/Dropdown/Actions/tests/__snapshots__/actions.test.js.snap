@@ -944,6 +944,7 @@ exports[`<Actions /> should render correctly 1`] = `
                         >
                           Apply
                         </span>
+                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>
@@ -1096,6 +1097,7 @@ exports[`<Actions /> should render correctly 1`] = `
                         >
                           Cancel
                         </span>
+                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>

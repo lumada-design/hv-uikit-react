@@ -1223,6 +1223,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       </Menu>
                                     </WithStyles(Menu)>
                                   </span>
+                                  <NoSsr />
                                 </button>
                               </ForwardRef(ButtonBase)>
                             </WithStyles(ForwardRef(ButtonBase))>
@@ -2465,6 +2466,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       </Menu>
                                     </WithStyles(Menu)>
                                   </span>
+                                  <NoSsr />
                                 </button>
                               </ForwardRef(ButtonBase)>
                             </WithStyles(ForwardRef(ButtonBase))>

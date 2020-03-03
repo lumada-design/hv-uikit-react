@@ -1846,6 +1846,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                                 </Checkbox>
                                                               </WithStyles(Checkbox)>
                                                             </span>
+                                                            <NoSsr />
                                                           </span>
                                                         </ForwardRef(ButtonBase)>
                                                       </WithStyles(ForwardRef(ButtonBase))>

@@ -3105,6 +3105,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                           </CheckboxPartial>
                                         </WithStyles(CheckboxPartial)>
                                       </span>
+                                      <NoSsr />
                                     </span>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -4116,6 +4117,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                     </CheckboxCheck>
                                                   </WithStyles(CheckboxCheck)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -5125,6 +5127,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                     </Checkbox>
                                                   </WithStyles(Checkbox)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -6134,6 +6137,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                     </CheckboxCheck>
                                                   </WithStyles(CheckboxCheck)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -11115,6 +11119,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     </RadioButtonSelected>
                                                   </WithStyles(RadioButtonSelected)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -11952,6 +11957,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     </RadioButtonUnselected>
                                                   </WithStyles(RadioButtonUnselected)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -12789,6 +12795,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     </RadioButtonUnselected>
                                                   </WithStyles(RadioButtonUnselected)>
                                                 </span>
+                                                <NoSsr />
                                               </span>
                                             </ForwardRef(ButtonBase)>
                                           </WithStyles(ForwardRef(ButtonBase))>

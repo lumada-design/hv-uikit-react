@@ -950,6 +950,7 @@ exports[`<Actions /> should render correctly 1`] = `
                         >
                           Apply Mock
                         </span>
+                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>
@@ -1102,6 +1103,7 @@ exports[`<Actions /> should render correctly 1`] = `
                         >
                           Cancel Mock
                         </span>
+                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>

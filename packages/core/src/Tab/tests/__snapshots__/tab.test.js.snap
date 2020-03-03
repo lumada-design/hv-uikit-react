@@ -878,6 +878,7 @@ exports[`Tab withStyles should render correctly 1`] = `
                   >
                     Clickable Tab
                   </span>
+                  <NoSsr />
                 </button>
               </ForwardRef(ButtonBase)>
             </WithStyles(ForwardRef(ButtonBase))>
