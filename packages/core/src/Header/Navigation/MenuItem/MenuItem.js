@@ -90,7 +90,13 @@ MenuItem.propTypes = {
    */
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired
+      })
+    )
   }).isRequired,
   /**
    * Callback triggered when item is clicked.

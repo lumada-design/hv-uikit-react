@@ -103,7 +103,15 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component comparison.
      */
+    comparisons: PropTypes.string,
+    /**
+     * Styles applied to the component comparison container.
+     */
     comparisonContainer: PropTypes.string,
+    /**
+     * Styles applied to the component comparison composition wrapper.
+     */
+    comparisonComposition: PropTypes.string,
     /**
      * Styles applied to the component indicators.
      */

@@ -327,7 +327,7 @@ class HvInput extends React.Component {
         ref={node => {
           this.node = node;
         }}
-        className={clsx(classes.container, className)}
+        className={clsx(classes.root, className)}
         id={internalId}
         onBlur={this.onContainerBlurHandler}
       >
@@ -339,7 +339,7 @@ class HvInput extends React.Component {
               id={`${internalId}-label`}
               htmlFor={`${internalId}-input`}
               className={clsx(classes.label, {
-                [classes.labelDisable]: disabled
+                [classes.labelDisabled]: disabled
               })}
             >
               {labels.inputLabel}
@@ -469,9 +469,9 @@ HvInput.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the container of the input.
+     * Styles applied to the root container of the input.
      */
-    container: PropTypes.string,
+    root: PropTypes.string,
     /**
      * Styles applied to input root which is comprising of everything but the labels and descriptions.
      */
@@ -480,6 +480,10 @@ HvInput.propTypes = {
      * Styles applied to input root when it is disabled.
      */
     inputRootDisabled: PropTypes.string,
+    /**
+     * Styles applied to input root when it is invalid.
+     */
+    inputRootInvalid: PropTypes.string,
     /**
      * Styles applied to input root when it is focused.
      */
@@ -493,6 +497,14 @@ HvInput.propTypes = {
      */
     inputDisabled: PropTypes.string,
     /**
+     * Styles applied to the container of the suggestions list.
+     */
+    suggestionsContainer: PropTypes.string,
+    /**
+     * Styles applied to the suggestions list.
+     */
+    suggestionList: PropTypes.string,
+    /**
      * Styles applied to input html element when it is multiline mode.
      */
     multiLine: PropTypes.string,
@@ -501,6 +513,10 @@ HvInput.propTypes = {
      */
     label: PropTypes.string,
     /**
+     * Styles applied to the label element when it is disabled.
+     */
+    labelDisabled: PropTypes.string,
+    /**
      * Styles applied to the container of the labels elements.
      */
     labelContainer: PropTypes.string,
@@ -508,6 +524,10 @@ HvInput.propTypes = {
      * Styles applied to the icon information container.
      */
     infoIconContainer: PropTypes.string,
+    /**
+     * Styles applied to the icon information text.
+     */
+    infoText: PropTypes.string,
     /**
      * Styles applied to the description.
      */

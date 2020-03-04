@@ -60,7 +60,23 @@ Badge.propTypes = {
     /**
      * Styles applied to the component badge when count greater than 9.
      */
-    badgeTwoDigits: PropTypes.string
+    badgeTwoDigits: PropTypes.string,
+    /**
+     * Styles applied to the component when shows count.
+     */
+    showCount: PropTypes.string,
+    /**
+     * Styles applied to the component badge icon.
+     */
+    badgeIcon: PropTypes.string,
+    /**
+     * Styles applied to the component when count has one digit.
+     */
+    badgeOneDigit: PropTypes.string,
+    /**
+     * Styles applied to the component badge container.
+     */
+    badgeContainer: PropTypes.string,
   }).isRequired,
   /**
    * Count is the number of unread notifications

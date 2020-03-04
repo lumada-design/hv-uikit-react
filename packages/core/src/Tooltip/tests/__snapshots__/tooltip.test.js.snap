@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip correctly 1`] = `
+exports[`Multi Line Tooltip - No Header should render multiple line tooltip correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
   router={null}
@@ -808,7 +808,85 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
           Hello World
         </button>
       }
-      tooltipData={<ForwardRef(WithStyles) />}
+      tooltipData={
+        <div>
+          <ForwardRef(WithStyles)
+            component={null}
+            paragraph={false}
+            variant="labelText"
+          >
+            
+          </ForwardRef(WithStyles)>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Status
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              Open
+            </ForwardRef(WithStyles)>
+          </div>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Date
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              12/08/2018
+            </ForwardRef(WithStyles)>
+          </div>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Assignee
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              Management
+            </ForwardRef(WithStyles)>
+          </div>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Approval
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              Not yet requested
+            </ForwardRef(WithStyles)>
+          </div>
+        </div>
+      }
       useSingle={false}
     >
       <HvTooltip
@@ -834,13 +912,13 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
         classes={
           Object {
             "color": "HvTooltip-color-96",
-            "multitooltip": "HvTooltip-multitooltip-91",
             "popper": "HvTooltip-popper-92",
             "root": "HvTooltip-root-89",
             "separator": "HvTooltip-separator-97",
             "separatorColor": "HvTooltip-separatorColor-98",
             "title": "HvTooltip-title-93",
             "tooltip": "HvTooltip-tooltip-90",
+            "tooltipMulti": "HvTooltip-tooltipMulti-91",
             "valueWrapper": "HvTooltip-valueWrapper-99",
             "values": "HvTooltip-values-95",
             "valuesContainer": "HvTooltip-valuesContainer-94",
@@ -857,7 +935,85 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
             Hello World
           </button>
         }
-        tooltipData={<ForwardRef(WithStyles) />}
+        tooltipData={
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              
+            </ForwardRef(WithStyles)>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Status
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                Open
+              </ForwardRef(WithStyles)>
+            </div>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Date
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                12/08/2018
+              </ForwardRef(WithStyles)>
+            </div>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Assignee
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                Management
+              </ForwardRef(WithStyles)>
+            </div>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Approval
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                Not yet requested
+              </ForwardRef(WithStyles)>
+            </div>
+          </div>
+        }
         useSingle={false}
       >
         <WithStyles(ForwardRef(Tooltip))
@@ -883,12 +1039,90 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
           classes={
             Object {
               "popper": "HvTooltip-popper-92",
-              "tooltip": "HvTooltip-multitooltip-91",
+              "tooltip": "HvTooltip-tooltipMulti-91",
             }
           }
           enterDelay={300}
           placement="top"
-          title={<ForwardRef(WithStyles) />}
+          title={
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                
+              </ForwardRef(WithStyles)>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Status
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  Open
+                </ForwardRef(WithStyles)>
+              </div>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Date
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  12/08/2018
+                </ForwardRef(WithStyles)>
+              </div>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Assignee
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  Management
+                </ForwardRef(WithStyles)>
+              </div>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Approval
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  Not yet requested
+                </ForwardRef(WithStyles)>
+              </div>
+            </div>
+          }
         >
           <ForwardRef(Tooltip)
             TransitionComponent={
@@ -916,7 +1150,7 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
                 "popper": "MuiTooltip-popper HvTooltip-popper-92",
                 "popperArrow": "MuiTooltip-popperArrow",
                 "popperInteractive": "MuiTooltip-popperInteractive",
-                "tooltip": "MuiTooltip-tooltip HvTooltip-multitooltip-91",
+                "tooltip": "MuiTooltip-tooltip HvTooltip-tooltipMulti-91",
                 "tooltipArrow": "MuiTooltip-tooltipArrow",
                 "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                 "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
@@ -927,7 +1161,85 @@ exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip cor
             }
             enterDelay={300}
             placement="top"
-            title={<ForwardRef(WithStyles) />}
+            title={
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  
+                </ForwardRef(WithStyles)>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Status
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    Open
+                  </ForwardRef(WithStyles)>
+                </div>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Date
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    12/08/2018
+                  </ForwardRef(WithStyles)>
+                </div>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Assignee
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    Management
+                  </ForwardRef(WithStyles)>
+                </div>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Approval
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    Not yet requested
+                  </ForwardRef(WithStyles)>
+                </div>
+              </div>
+            }
           >
             <button
               aria-describedby={null}
@@ -1786,7 +2098,51 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           Hello World
         </button>
       }
-      tooltipData={<ForwardRef(WithStyles) />}
+      tooltipData={
+        <div>
+          <ForwardRef(WithStyles)
+            component={null}
+            paragraph={false}
+            variant="labelText"
+          >
+            January
+          </ForwardRef(WithStyles)>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Sales
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              52,000 units
+            </ForwardRef(WithStyles)>
+          </div>
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              Profit
+            </ForwardRef(WithStyles)>
+            <div />
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="sText"
+            >
+              50%
+            </ForwardRef(WithStyles)>
+          </div>
+        </div>
+      }
       useSingle={false}
     >
       <HvTooltip
@@ -1812,13 +2168,13 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         classes={
           Object {
             "color": "HvTooltip-color-162",
-            "multitooltip": "HvTooltip-multitooltip-157",
             "popper": "HvTooltip-popper-158",
             "root": "HvTooltip-root-155",
             "separator": "HvTooltip-separator-163",
             "separatorColor": "HvTooltip-separatorColor-164",
             "title": "HvTooltip-title-159",
             "tooltip": "HvTooltip-tooltip-156",
+            "tooltipMulti": "HvTooltip-tooltipMulti-157",
             "valueWrapper": "HvTooltip-valueWrapper-165",
             "values": "HvTooltip-values-161",
             "valuesContainer": "HvTooltip-valuesContainer-160",
@@ -1835,7 +2191,51 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             Hello World
           </button>
         }
-        tooltipData={<ForwardRef(WithStyles) />}
+        tooltipData={
+          <div>
+            <ForwardRef(WithStyles)
+              component={null}
+              paragraph={false}
+              variant="labelText"
+            >
+              January
+            </ForwardRef(WithStyles)>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Sales
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                52,000 units
+              </ForwardRef(WithStyles)>
+            </div>
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                Profit
+              </ForwardRef(WithStyles)>
+              <div />
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="sText"
+              >
+                50%
+              </ForwardRef(WithStyles)>
+            </div>
+          </div>
+        }
         useSingle={false}
       >
         <WithStyles(ForwardRef(Tooltip))
@@ -1861,12 +2261,56 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           classes={
             Object {
               "popper": "HvTooltip-popper-158",
-              "tooltip": "HvTooltip-multitooltip-157",
+              "tooltip": "HvTooltip-tooltipMulti-157",
             }
           }
           enterDelay={300}
           placement="top"
-          title={<ForwardRef(WithStyles) />}
+          title={
+            <div>
+              <ForwardRef(WithStyles)
+                component={null}
+                paragraph={false}
+                variant="labelText"
+              >
+                January
+              </ForwardRef(WithStyles)>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Sales
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  52,000 units
+                </ForwardRef(WithStyles)>
+              </div>
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  Profit
+                </ForwardRef(WithStyles)>
+                <div />
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="sText"
+                >
+                  50%
+                </ForwardRef(WithStyles)>
+              </div>
+            </div>
+          }
         >
           <ForwardRef(Tooltip)
             TransitionComponent={
@@ -1894,7 +2338,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                 "popper": "MuiTooltip-popper HvTooltip-popper-158",
                 "popperArrow": "MuiTooltip-popperArrow",
                 "popperInteractive": "MuiTooltip-popperInteractive",
-                "tooltip": "MuiTooltip-tooltip HvTooltip-multitooltip-157",
+                "tooltip": "MuiTooltip-tooltip HvTooltip-tooltipMulti-157",
                 "tooltipArrow": "MuiTooltip-tooltipArrow",
                 "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                 "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
@@ -1905,7 +2349,51 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             }
             enterDelay={300}
             placement="top"
-            title={<ForwardRef(WithStyles) />}
+            title={
+              <div>
+                <ForwardRef(WithStyles)
+                  component={null}
+                  paragraph={false}
+                  variant="labelText"
+                >
+                  January
+                </ForwardRef(WithStyles)>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Sales
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    52,000 units
+                  </ForwardRef(WithStyles)>
+                </div>
+                <div>
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="labelText"
+                  >
+                    Profit
+                  </ForwardRef(WithStyles)>
+                  <div />
+                  <ForwardRef(WithStyles)
+                    component={null}
+                    paragraph={false}
+                    variant="sText"
+                  >
+                    50%
+                  </ForwardRef(WithStyles)>
+                </div>
+              </div>
+            }
           >
             <button
               aria-describedby={null}
@@ -2798,13 +3286,13 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         classes={
           Object {
             "color": "HvTooltip-color-30",
-            "multitooltip": "HvTooltip-multitooltip-25",
             "popper": "HvTooltip-popper-26",
             "root": "HvTooltip-root-23",
             "separator": "HvTooltip-separator-31",
             "separatorColor": "HvTooltip-separatorColor-32",
             "title": "HvTooltip-title-27",
             "tooltip": "HvTooltip-tooltip-24",
+            "tooltipMulti": "HvTooltip-tooltipMulti-25",
             "valueWrapper": "HvTooltip-valueWrapper-33",
             "values": "HvTooltip-values-29",
             "valuesContainer": "HvTooltip-valuesContainer-28",

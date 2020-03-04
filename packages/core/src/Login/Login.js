@@ -160,6 +160,10 @@ HvLogin.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied to the component container class.
+     */
+    container: PropTypes.string,
+    /**
      * Styles applied to the right container.
      */
     rightContainer: PropTypes.string,

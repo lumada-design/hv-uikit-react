@@ -46,12 +46,6 @@ const styles = theme => {
     },
     upperAreaReference: {
       position: "relative"
-      // "&:focus-within > div > div": {
-      // display: "block"
-      // }
-    },
-    upperArea: {
-      // outline: "none"
     },
     upperAreaSelectable: {
       cursor: "pointer"

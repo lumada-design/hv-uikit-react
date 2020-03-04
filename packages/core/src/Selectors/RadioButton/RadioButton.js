@@ -150,6 +150,10 @@ HvRadio.propTypes = {
      */
     radio: PropTypes.string,
     /**
+     * Styles applied to the focus when it is disabled.
+     */
+    disableFocus: PropTypes.string,
+    /**
      * Styles applied to the icon.
      */
     icon: PropTypes.string

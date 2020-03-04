@@ -1143,6 +1143,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -2367,6 +2368,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -3591,6 +3593,7 @@ exports[`Switch label click label can be clicked 1`] = `
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -4815,6 +4818,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -6039,6 +6043,7 @@ exports[`Switch with no label display but with custom label configuration should
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -7263,6 +7268,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                                             className="MuiSwitch-thumb HvSwitch-thumb-272"
                                           />
                                         </span>
+                                        <NoSsr />
                                       </span>
                                     </ForwardRef(ButtonBase)>
                                   </WithStyles(ForwardRef(ButtonBase))>

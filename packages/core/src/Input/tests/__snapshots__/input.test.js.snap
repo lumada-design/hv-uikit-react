@@ -836,7 +836,7 @@ exports[`Input should not have the validation section 1`] = `
             "inputRootInvalid": "HvInput-inputRootInvalid-467",
             "label": "HvInput-label-472",
             "labelContainer": "HvInput-labelContainer-471",
-            "labelDisable": "HvInput-labelDisable-473",
+            "labelDisabled": "HvInput-labelDisabled-473",
             "multiLine": "HvInput-multiLine-470",
             "suggestionList": "HvInput-suggestionList-482",
             "suggestionsContainer": "HvInput-suggestionsContainer-481",
@@ -880,7 +880,7 @@ exports[`Input should not have the validation section 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-container-463"
+          className=""
           id="hv-input-7"
           onBlur={[Function]}
         >
@@ -1985,7 +1985,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             "inputRootInvalid": "HvInput-inputRootInvalid-621",
             "label": "HvInput-label-626",
             "labelContainer": "HvInput-labelContainer-625",
-            "labelDisable": "HvInput-labelDisable-627",
+            "labelDisabled": "HvInput-labelDisabled-627",
             "multiLine": "HvInput-multiLine-624",
             "suggestionList": "HvInput-suggestionList-636",
             "suggestionsContainer": "HvInput-suggestionsContainer-635",
@@ -2033,7 +2033,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-container-617"
+          className=""
           id="hv-input-9"
           onBlur={[Function]}
         >
@@ -3139,7 +3139,7 @@ exports[`Input should render correctly 1`] = `
             "inputRootInvalid": "HvInput-inputRootInvalid-82",
             "label": "HvInput-label-87",
             "labelContainer": "HvInput-labelContainer-86",
-            "labelDisable": "HvInput-labelDisable-88",
+            "labelDisabled": "HvInput-labelDisabled-88",
             "multiLine": "HvInput-multiLine-85",
             "suggestionList": "HvInput-suggestionList-97",
             "suggestionsContainer": "HvInput-suggestionsContainer-96",
@@ -3183,7 +3183,7 @@ exports[`Input should render correctly 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-container-78"
+          className=""
           id="hv-input-2"
           onBlur={[Function]}
         >

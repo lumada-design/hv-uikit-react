@@ -10,28 +10,6 @@ import MessageElement from "../MessageElement";
 import styles from "./styles";
 
 /**
- * Error link button element.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
-// eslint-disable-next-line react/prop-types
-function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
-  return (
-    <div className={classes.forgotCredentials}>
-      <HvButton
-        category="ghost"
-        onClick={onClick}
-        className={classes.sentenceCase}
-      >
-        {forgotYourCredentialMessage}
-      </HvButton>
-    </div>
-  );
-}
-
-/**
  * Login main form.
  */
 class Login extends React.Component {
@@ -213,11 +191,15 @@ class Login extends React.Component {
         </div>
 
         {allowRecover ? (
-          <RecoveryLinkButton
-            onClick={onClick}
-            classes={classes}
-            forgotYourCredentialMessage={forgotYourCredentialMessage}
-          />
+          <div className={classes.forgotCredentials}>
+            <HvButton
+              category="ghost"
+              onClick={onClick}
+              className={classes.sentenceCase}
+            >
+              {forgotYourCredentialMessage}
+            </HvButton>
+          </div>
         ) : null}
       </form>
     );

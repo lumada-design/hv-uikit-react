@@ -139,7 +139,7 @@ const HvCard = ({
     <>
       <Focus strategy="card" useFalseFocus>
         <div
-          className={clsx(classes.upperArea, {
+          className={clsx({
             [classes.upperAreaSelectable]: cardButtonProps.tabIndex
           })}
           {...cardButtonProps}
@@ -254,9 +254,37 @@ HvCard.propTypes = {
    */
   classes: PropTypes.shape({
     /**
+     * Style applied to the root.
+     */
+    root: PropTypes.string,
+    /**
+     * Style applied to the root when component is selected.
+     */
+    rootSelected: PropTypes.string,
+    /**
      * Style applied to the border top.
      */
-    borderTop: PropTypes.string
+    borderTop: PropTypes.string,
+    /**
+     * Style applied to the upper area when the component is selectable.
+     */
+    upperAreaSelectable: PropTypes.string,
+    /**
+     * Style applied to the container of the semantic bar on top.
+     */
+    semanticContainer: PropTypes.string,
+    /**
+     * Style applied to the container of the semantic bar on top when the component is selectable.
+     */
+    semanticSelected: PropTypes.string,
+    /**
+     * Style applied to the component when it is selectable.
+     */
+    selectable: PropTypes.string,
+    /**
+     * Style applied to the component when it is selected.
+     */
+    selected: PropTypes.string
   }).isRequired,
   /**
    * The content inside the card.

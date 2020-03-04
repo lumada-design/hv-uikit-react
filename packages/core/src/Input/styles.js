@@ -85,7 +85,7 @@ const styles = theme => ({
     paddingBottom: "8px",
     display: "block"
   },
-  labelDisable: {
+  labelDisabled: {
     color: theme.hv.palette.atmosphere.atmo7
   },
   infoIconContainer: {

@@ -85,63 +85,42 @@ class MultiButton extends React.Component {
     onChange(newState);
   }
 
+  renderButton(button, idx) {
+    const { className, classes, type } = this.props;
+    const { checkedItems } = this.state;
+    const isSelected = checkedItems.indexOf(button.id) !== -1;
+
+    const icon =
+      button.icon &&
+      React.cloneElement(button.icon, { className: classes.icon });
+
+    return (
+      <HvButton
+        key={`btnkey_${idx + 1}`}
+        id={button.id}
+        onClick={e => this.handleClick(e, idx)}
+        className={clsx(className, classes.button, {
+          [classes.isSelected]: isSelected,
+          [classes.isUnselected]: !isSelected
+        })}
+        category={button.selected ? "secondary" : "ghost"}
+      >
+        {type !== "text" && icon}
+        <div className={classes.labelText}>{button.value}</div>
+      </HvButton>
+    );
+  }
+
   render() {
-    const { className, classes, vertical, type, buttons } = this.props;
-
-    /**
-     * Generate button content elements to render the component itself
-     */
-
-    const generateBtnContents = (btnType, button) => {
-      let btnStruct;
-      if (btnType === "icon") {
-        btnStruct = <>{button.icon}</>;
-      } else if (btnType === "text") {
-        btnStruct = (
-          <>
-            <div className={classes.labelText}>{button.value}</div>
-          </>
-        );
-      } else {
-        btnStruct = (
-          <>
-            {button.icon}
-            <div className={clsx(classes.labelText, classes.labelPadding)}>
-              {button.value}
-            </div>
-          </>
-        );
-      }
-
-      return btnStruct;
-    };
-
-    const buttonList = buttons.map((button, idx) => {
-      const { checkedItems } = this.state;
-      return (
-        <HvButton
-          key={`btnkey_${idx + 1}`}
-          id={button.id}
-          onClick={e => this.handleClick(e, idx)}
-          className={clsx(className, classes.btnBase, classes.btnSecondary, {
-            [classes.iconWidth]: type === "icon",
-            [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
-            [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
-          })}
-          category={button.selected ? "secondary" : "ghost"}
-        >
-          {generateBtnContents(type, button)}
-        </HvButton>
-      );
-    });
+    const { classes, vertical, buttons } = this.props;
 
     return (
       <div
         className={clsx(classes.root, {
-          [classes.rootVertical]: vertical
+          [classes.vertical]: vertical
         })}
       >
-        {buttonList}
+        {buttons.map((button, idx) => this.renderButton(button, idx))}
       </div>
     );
   }
@@ -159,7 +138,31 @@ MultiButton.propTypes = {
     /**
      * Styles applied to the multibutton root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied to the multibutton when it's vertical.
+     */
+    vertical: PropTypes.string,
+    /**
+     * Styles applied to the button label.
+     */
+    labelText: PropTypes.string,
+    /**
+     * Styles applied to the each button.
+     */
+    button: PropTypes.string,
+    /**
+     * Styles applied to the each button's icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the button when it's selected.
+     */
+    isSelected: PropTypes.string,
+    /**
+     * Styles applied to the button when it's not selected.
+     */
+    isUnselected: PropTypes.string
   }).isRequired,
   /**
    * If the multibutton is to be displayed vertically.

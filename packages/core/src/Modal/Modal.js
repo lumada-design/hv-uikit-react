@@ -76,7 +76,7 @@ const Modal = ({
             onClick={event => onClose(event)}
             title={buttonTitle}
           >
-            <Close className={classes.iconContainer} />
+            <Close />
           </Button>
           {children}
         </div>
@@ -97,6 +97,10 @@ Modal.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component.
+     */
+    root: PropTypes.string,
     /**
      * Style applied to the background (outside) of the component.
      */

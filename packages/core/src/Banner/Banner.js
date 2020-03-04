@@ -102,6 +102,10 @@ HvBanner.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied to the component root class when the component is closed.
+     */
+    rootClosed: PropTypes.string,
+    /**
      * Styles applied to the component when define as top.
      */
     anchorOriginTopCenter: PropTypes.string,

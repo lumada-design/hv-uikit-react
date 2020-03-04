@@ -1091,7 +1091,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvInput-container-56 HvSearchBox-root-55"
+                                    class="HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -1221,7 +1221,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-176"
                                 >
                                   <div
-                                    class="HvInput-container-189 HvSearchBox-root-188"
+                                    class="HvSearchBox-root-188"
                                     id="hv-dropdown-2-values-search"
                                   >
                                     <div
@@ -1351,7 +1351,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-309"
                                 >
                                   <div
-                                    class="HvInput-container-322 HvSearchBox-root-321"
+                                    class="HvSearchBox-root-321"
                                     id="hv-dropdown-3-values-search"
                                   >
                                     <div
@@ -1481,7 +1481,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-442"
                                 >
                                   <div
-                                    class="HvInput-container-455 HvSearchBox-root-454"
+                                    class="HvSearchBox-root-454"
                                     id="hv-dropdown-4-values-search"
                                   >
                                     <div
@@ -1611,7 +1611,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-575"
                                 >
                                   <div
-                                    class="HvInput-container-588 HvSearchBox-root-587"
+                                    class="HvSearchBox-root-587"
                                     id="hv-dropdown-5-values-search"
                                   >
                                     <div
@@ -1741,7 +1741,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-708"
                                 >
                                   <div
-                                    class="HvInput-container-726 HvSearchBox-root-725"
+                                    class="HvSearchBox-root-725"
                                     id="hv-dropdown-6-values-search"
                                   >
                                     <div
@@ -2005,7 +2005,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-996"
                                 >
                                   <div
-                                    class="HvInput-container-1009 HvSearchBox-root-1008"
+                                    class="HvSearchBox-root-1008"
                                     id="test-dropdown-values-search"
                                   >
                                     <div
@@ -2525,7 +2525,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                 "label": "HvInput-label-1018",
                                                 "labelContainer": "HvInput-labelContainer-1017",
-                                                "labelDisable": "HvInput-labelDisable-1019",
+                                                "labelDisabled": "HvInput-labelDisabled-1019",
                                                 "multiLine": "HvInput-multiLine-1016",
                                                 "suggestionList": "HvInput-suggestionList-1028",
                                                 "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -2578,7 +2578,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                             validationType="none"
                                           >
                                             <div
-                                              className="HvInput-container-1009 HvSearchBox-root-1008"
+                                              className="HvSearchBox-root-1008"
                                               id="test-dropdown-values-search"
                                               onBlur={[Function]}
                                             >
@@ -2616,7 +2616,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                         "label": "HvInput-label-1018",
                                                         "labelContainer": "HvInput-labelContainer-1017",
-                                                        "labelDisable": "HvInput-labelDisable-1019",
+                                                        "labelDisabled": "HvInput-labelDisabled-1019",
                                                         "multiLine": "HvInput-multiLine-1016",
                                                         "suggestionList": "HvInput-suggestionList-1028",
                                                         "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -2701,7 +2701,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                           "label": "HvInput-label-1018",
                                                           "labelContainer": "HvInput-labelContainer-1017",
-                                                          "labelDisable": "HvInput-labelDisable-1019",
+                                                          "labelDisabled": "HvInput-labelDisabled-1019",
                                                           "multiLine": "HvInput-multiLine-1016",
                                                           "suggestionList": "HvInput-suggestionList-1028",
                                                           "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -2785,7 +2785,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                             "label": "HvInput-label-1018",
                                                             "labelContainer": "HvInput-labelContainer-1017",
-                                                            "labelDisable": "HvInput-labelDisable-1019",
+                                                            "labelDisabled": "HvInput-labelDisabled-1019",
                                                             "multiLine": "HvInput-multiLine-1016",
                                                             "suggestionList": "HvInput-suggestionList-1028",
                                                             "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -2876,7 +2876,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                               "label": "HvInput-label-1018",
                                                               "labelContainer": "HvInput-labelContainer-1017",
-                                                              "labelDisable": "HvInput-labelDisable-1019",
+                                                              "labelDisabled": "HvInput-labelDisabled-1019",
                                                               "multiLine": "HvInput-multiLine-1016",
                                                               "suggestionList": "HvInput-suggestionList-1028",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -2960,7 +2960,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "inputRootInvalid": "HvInput-inputRootInvalid-1013",
                                                               "label": "HvInput-label-1018",
                                                               "labelContainer": "HvInput-labelContainer-1017",
-                                                              "labelDisable": "HvInput-labelDisable-1019",
+                                                              "labelDisabled": "HvInput-labelDisabled-1019",
                                                               "multiLine": "HvInput-multiLine-1016",
                                                               "suggestionList": "HvInput-suggestionList-1028",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-1027",
@@ -3539,6 +3539,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     </Checkbox>
                                                                   </WithStyles(Checkbox)>
                                                                 </span>
+                                                                <NoSsr />
                                                               </span>
                                                             </ForwardRef(ButtonBase)>
                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -4535,6 +4536,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -5430,6 +5432,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -6325,6 +6328,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                     </Checkbox>
                                                                                   </WithStyles(Checkbox)>
                                                                                 </span>
+                                                                                <NoSsr />
                                                                               </span>
                                                                             </ForwardRef(ButtonBase)>
                                                                           </WithStyles(ForwardRef(ButtonBase))>
@@ -6588,6 +6592,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         Apply
                                                       </span>
+                                                      <NoSsr />
                                                     </button>
                                                   </ForwardRef(ButtonBase)>
                                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -6740,6 +6745,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         Cancel
                                                       </span>
+                                                      <NoSsr />
                                                     </button>
                                                   </ForwardRef(ButtonBase)>
                                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -7858,7 +7864,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvInput-container-56 HvSearchBox-root-55"
+                                    class="HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -7988,7 +7994,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-176"
                                 >
                                   <div
-                                    class="HvInput-container-189 HvSearchBox-root-188"
+                                    class="HvSearchBox-root-188"
                                     id="hv-dropdown-2-values-search"
                                   >
                                     <div
@@ -8118,7 +8124,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-309"
                                 >
                                   <div
-                                    class="HvInput-container-322 HvSearchBox-root-321"
+                                    class="HvSearchBox-root-321"
                                     id="hv-dropdown-3-values-search"
                                   >
                                     <div
@@ -8248,7 +8254,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-442"
                                 >
                                   <div
-                                    class="HvInput-container-455 HvSearchBox-root-454"
+                                    class="HvSearchBox-root-454"
                                     id="hv-dropdown-4-values-search"
                                   >
                                     <div
@@ -8378,7 +8384,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-575"
                                 >
                                   <div
-                                    class="HvInput-container-588 HvSearchBox-root-587"
+                                    class="HvSearchBox-root-587"
                                     id="hv-dropdown-5-values-search"
                                   >
                                     <div
@@ -8508,7 +8514,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-708"
                                 >
                                   <div
-                                    class="HvInput-container-726 HvSearchBox-root-725"
+                                    class="HvSearchBox-root-725"
                                     id="hv-dropdown-6-values-search"
                                   >
                                     <div
@@ -10562,7 +10568,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvInput-container-56 HvSearchBox-root-55"
+                                    class="HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -10859,7 +10865,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                 "label": "HvInput-label-65",
                                                 "labelContainer": "HvInput-labelContainer-64",
-                                                "labelDisable": "HvInput-labelDisable-66",
+                                                "labelDisabled": "HvInput-labelDisabled-66",
                                                 "multiLine": "HvInput-multiLine-63",
                                                 "suggestionList": "HvInput-suggestionList-75",
                                                 "suggestionsContainer": "HvInput-suggestionsContainer-74",
@@ -10912,7 +10918,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                             validationType="none"
                                           >
                                             <div
-                                              className="HvInput-container-56 HvSearchBox-root-55"
+                                              className="HvSearchBox-root-55"
                                               id="hv-dropdown-1-values-search"
                                               onBlur={[Function]}
                                             >
@@ -10950,7 +10956,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                         "label": "HvInput-label-65",
                                                         "labelContainer": "HvInput-labelContainer-64",
-                                                        "labelDisable": "HvInput-labelDisable-66",
+                                                        "labelDisabled": "HvInput-labelDisabled-66",
                                                         "multiLine": "HvInput-multiLine-63",
                                                         "suggestionList": "HvInput-suggestionList-75",
                                                         "suggestionsContainer": "HvInput-suggestionsContainer-74",
@@ -11035,7 +11041,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                           "label": "HvInput-label-65",
                                                           "labelContainer": "HvInput-labelContainer-64",
-                                                          "labelDisable": "HvInput-labelDisable-66",
+                                                          "labelDisabled": "HvInput-labelDisabled-66",
                                                           "multiLine": "HvInput-multiLine-63",
                                                           "suggestionList": "HvInput-suggestionList-75",
                                                           "suggestionsContainer": "HvInput-suggestionsContainer-74",
@@ -11119,7 +11125,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                             "label": "HvInput-label-65",
                                                             "labelContainer": "HvInput-labelContainer-64",
-                                                            "labelDisable": "HvInput-labelDisable-66",
+                                                            "labelDisabled": "HvInput-labelDisabled-66",
                                                             "multiLine": "HvInput-multiLine-63",
                                                             "suggestionList": "HvInput-suggestionList-75",
                                                             "suggestionsContainer": "HvInput-suggestionsContainer-74",
@@ -11210,7 +11216,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                               "label": "HvInput-label-65",
                                                               "labelContainer": "HvInput-labelContainer-64",
-                                                              "labelDisable": "HvInput-labelDisable-66",
+                                                              "labelDisabled": "HvInput-labelDisabled-66",
                                                               "multiLine": "HvInput-multiLine-63",
                                                               "suggestionList": "HvInput-suggestionList-75",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-74",
@@ -11294,7 +11300,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "inputRootInvalid": "HvInput-inputRootInvalid-60",
                                                               "label": "HvInput-label-65",
                                                               "labelContainer": "HvInput-labelContainer-64",
-                                                              "labelDisable": "HvInput-labelDisable-66",
+                                                              "labelDisabled": "HvInput-labelDisabled-66",
                                                               "multiLine": "HvInput-multiLine-63",
                                                               "suggestionList": "HvInput-suggestionList-75",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-74",

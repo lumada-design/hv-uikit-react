@@ -50,7 +50,7 @@ const ReactTableCheckbox = checkboxHOC(ReactTable);
  *
  * The type is defined by the existence of the properties:
  *  - subElementTemplate: Creates a table with expander;
- *  - idForCheckbox: Creates a table with checkboxs;
+ *  - idForCheckbox: Creates a table with checkboxes;
  *  - None: Creates a simple table.
  *
  *   Just one of this properties should be set (or none) has it isn't possible to have a table with
@@ -415,7 +415,7 @@ class Table extends React.Component {
   };
 
   /**
-   * Selects all the avaible rows on the page.
+   * Selects all the available rows on the page.
    */
   toggleAll = () => {
     const { idForCheckbox, onSelection } = this.props;
@@ -687,7 +687,40 @@ Table.propTypes = {
     /**
      * Styles applied to the component columns.
      */
-    firstWithNumeric: PropTypes.string
+    firstWithNumeric: PropTypes.string,
+
+    /**
+     * Styles applied to the component table header row.
+     */
+    theadTh: PropTypes.string,
+    /**
+     * Styles applied to the component table body.
+     */
+    tbody: PropTypes.string,
+    /**
+     * Styles applied to the component table body when empty.
+     */
+    tBodyEmpty: PropTypes.string,
+    /**
+     * Styles applied to the component table cell.
+     */
+    td: PropTypes.string,
+    /**
+     * Styles applied to the component table container.
+     */
+    tableContainer: PropTypes.string,
+    /**
+     * Styles applied to the component checkbox.
+     */
+    checkBox: PropTypes.string,
+    /**
+     * Styles applied to the component checkbox row.
+     */
+    checkBoxRow: PropTypes.string,
+    /**
+     * Styles applied to the component checkbox text.
+     */
+    checkBoxText: PropTypes.string
   }).isRequired,
   /**
    * The labels inside the table.
@@ -793,7 +826,12 @@ Table.propTypes = {
       label: PropTypes.string,
       action: PropTypes.func
     })
-  )
+  ),
+  // eslint-disable-next-line react/require-default-props
+  column: PropTypes.shape({
+    id: PropTypes.string,
+    sortable: PropTypes.bool
+  })
 };
 
 Table.defaultProps = {
@@ -821,7 +859,7 @@ Table.defaultProps = {
   useRouter: false,
   selections: undefined,
   onSelection: () => {},
-  secondaryActions: null
+  secondaryActions: null,
 };
 
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

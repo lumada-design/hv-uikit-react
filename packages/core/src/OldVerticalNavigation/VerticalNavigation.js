@@ -292,7 +292,11 @@ VerticalNavigation.propTypes = {
     /**
      *  Styles applied to the action container.
      */
-    actionContainer: PropTypes.string
+    actionContainer: PropTypes.string,
+    /**
+     *  Styles applied to the action container when it is empty
+     */
+    soloActionContainer: PropTypes.string
   }).isRequired,
   values: PropTypes.shape({
     showSearch: PropTypes.bool,

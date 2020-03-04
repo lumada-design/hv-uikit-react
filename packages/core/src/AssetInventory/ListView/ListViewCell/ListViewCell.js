@@ -65,8 +65,7 @@ const ListViewCell = ({
         columnIndex,
         semantic,
         other
-      )
-    }
+      )}
   </ListViewContextConsumer>
 );
 

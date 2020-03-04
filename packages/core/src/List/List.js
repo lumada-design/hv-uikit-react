@@ -307,6 +307,10 @@ List.propTypes = {
      */
     disabled: PropTypes.string,
     /**
+     * Styles applied to the list item selector, when it is enabled.
+     */
+    selector: PropTypes.string,
+    /**
      * Styles applied to the list item selector container.
      */
     selectorContainer: PropTypes.string,

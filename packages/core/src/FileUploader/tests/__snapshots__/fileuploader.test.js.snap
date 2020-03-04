@@ -827,7 +827,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
         }
         classes={
           Object {
-            "root": "HvFileUploader-root-69",
+            "root": "HvFileUploader-root-67",
           }
         }
         disabled={false}
@@ -899,17 +899,16 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             }
             classes={
               Object {
-                "dragAction": "HvFileUploaderDropZone-dragAction-73",
-                "dragText": "HvFileUploaderDropZone-dragText-79",
-                "dropArea": "HvFileUploaderDropZone-dropArea-75",
-                "dropzoneAreaIcon": "HvFileUploaderDropZone-dropzoneAreaIcon-78",
-                "dropzoneAreaLabels": "HvFileUploaderDropZone-dropzoneAreaLabels-77",
-                "dropzoneContainer": "HvFileUploaderDropZone-dropzoneContainer-71",
-                "dropzoneContainerDisabled": "HvFileUploaderDropZone-dropzoneContainerDisabled-72",
-                "dropzoneLabelsGroup": "HvFileUploaderDropZone-dropzoneLabelsGroup-76",
-                "inputArea": "HvFileUploaderDropZone-inputArea-74",
-                "root": "HvFileUploaderDropZone-root-70",
-                "selectFilesText": "HvFileUploaderDropZone-selectFilesText-80",
+                "dragAction": "HvFileUploaderDropZone-dragAction-70",
+                "dragText": "HvFileUploaderDropZone-dragText-76",
+                "dropArea": "HvFileUploaderDropZone-dropArea-72",
+                "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon-75",
+                "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels-74",
+                "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer-68",
+                "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled-69",
+                "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup-73",
+                "inputArea": "HvFileUploaderDropZone-inputArea-71",
+                "selectFilesText": "HvFileUploaderDropZone-selectFilesText-77",
               }
             }
             disabled={false}
@@ -933,7 +932,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           >
             <div
               aria-label="File Dropzone"
-              className="HvFileUploaderDropZone-dropzoneLabelsGroup-76"
+              className="HvFileUploaderDropZone-dropZoneLabelsGroup-73"
               id="hv-fileuploader-2-dropzone"
             >
               <WithStyles(ForwardRef)
@@ -946,31 +945,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-83",
-                      "4xlTitle": "HvTypography-4xlTitle-82",
-                      "5xlTitle": "HvTypography-5xlTitle-81",
-                      "baseFontFamily": "HvTypography-baseFontFamily-104",
-                      "disabledButtonText": "HvTypography-disabledButtonText-95",
-                      "disabledText": "HvTypography-disabledText-102",
-                      "highlightText": "HvTypography-highlightText-91",
-                      "infoText": "HvTypography-infoText-100",
-                      "inlineLink": "HvTypography-inlineLink-94",
-                      "lTitle": "HvTypography-lTitle-86",
-                      "labelText": "HvTypography-labelText-99",
-                      "mTitle": "HvTypography-mTitle-87",
-                      "margin": "HvTypography-margin-105",
-                      "normalText": "HvTypography-normalText-92",
-                      "placeholderText": "HvTypography-placeholderText-96",
-                      "sLink": "HvTypography-sLink-101",
-                      "sText": "HvTypography-sText-98",
-                      "sTitle": "HvTypography-sTitle-88",
-                      "selectedNavText": "HvTypography-selectedNavText-97",
-                      "selectedText": "HvTypography-selectedText-93",
-                      "vizText": "HvTypography-vizText-103",
-                      "xlTitle": "HvTypography-xlTitle-85",
-                      "xsTitle": "HvTypography-xsTitle-89",
-                      "xxlTitle": "HvTypography-xxlTitle-84",
-                      "xxsTitle": "HvTypography-xxsTitle-90",
+                      "3xlTitle": "HvTypography-3xlTitle-80",
+                      "4xlTitle": "HvTypography-4xlTitle-79",
+                      "5xlTitle": "HvTypography-5xlTitle-78",
+                      "baseFontFamily": "HvTypography-baseFontFamily-101",
+                      "disabledButtonText": "HvTypography-disabledButtonText-92",
+                      "disabledText": "HvTypography-disabledText-99",
+                      "highlightText": "HvTypography-highlightText-88",
+                      "infoText": "HvTypography-infoText-97",
+                      "inlineLink": "HvTypography-inlineLink-91",
+                      "lTitle": "HvTypography-lTitle-83",
+                      "labelText": "HvTypography-labelText-96",
+                      "mTitle": "HvTypography-mTitle-84",
+                      "margin": "HvTypography-margin-102",
+                      "normalText": "HvTypography-normalText-89",
+                      "placeholderText": "HvTypography-placeholderText-93",
+                      "sLink": "HvTypography-sLink-98",
+                      "sText": "HvTypography-sText-95",
+                      "sTitle": "HvTypography-sTitle-85",
+                      "selectedNavText": "HvTypography-selectedNavText-94",
+                      "selectedText": "HvTypography-selectedText-90",
+                      "vizText": "HvTypography-vizText-100",
+                      "xlTitle": "HvTypography-xlTitle-82",
+                      "xsTitle": "HvTypography-xsTitle-86",
+                      "xxlTitle": "HvTypography-xxlTitle-81",
+                      "xxsTitle": "HvTypography-xxsTitle-87",
                     }
                   }
                   component="label"
@@ -980,7 +979,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="labelText"
                 >
                   <label
-                    className="HvTypography-labelText-99 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                    className="HvTypography-labelText-96 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                     htmlFor="hv-fileuploader-2-dropzone-input-file"
                     id="hv-fileuploader-2-dropzone-input-file-label"
                   />
@@ -994,31 +993,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-83",
-                      "4xlTitle": "HvTypography-4xlTitle-82",
-                      "5xlTitle": "HvTypography-5xlTitle-81",
-                      "baseFontFamily": "HvTypography-baseFontFamily-104",
-                      "disabledButtonText": "HvTypography-disabledButtonText-95",
-                      "disabledText": "HvTypography-disabledText-102",
-                      "highlightText": "HvTypography-highlightText-91",
-                      "infoText": "HvTypography-infoText-100",
-                      "inlineLink": "HvTypography-inlineLink-94",
-                      "lTitle": "HvTypography-lTitle-86",
-                      "labelText": "HvTypography-labelText-99",
-                      "mTitle": "HvTypography-mTitle-87",
-                      "margin": "HvTypography-margin-105",
-                      "normalText": "HvTypography-normalText-92",
-                      "placeholderText": "HvTypography-placeholderText-96",
-                      "sLink": "HvTypography-sLink-101",
-                      "sText": "HvTypography-sText-98",
-                      "sTitle": "HvTypography-sTitle-88",
-                      "selectedNavText": "HvTypography-selectedNavText-97",
-                      "selectedText": "HvTypography-selectedText-93",
-                      "vizText": "HvTypography-vizText-103",
-                      "xlTitle": "HvTypography-xlTitle-85",
-                      "xsTitle": "HvTypography-xsTitle-89",
-                      "xxlTitle": "HvTypography-xxlTitle-84",
-                      "xxsTitle": "HvTypography-xxsTitle-90",
+                      "3xlTitle": "HvTypography-3xlTitle-80",
+                      "4xlTitle": "HvTypography-4xlTitle-79",
+                      "5xlTitle": "HvTypography-5xlTitle-78",
+                      "baseFontFamily": "HvTypography-baseFontFamily-101",
+                      "disabledButtonText": "HvTypography-disabledButtonText-92",
+                      "disabledText": "HvTypography-disabledText-99",
+                      "highlightText": "HvTypography-highlightText-88",
+                      "infoText": "HvTypography-infoText-97",
+                      "inlineLink": "HvTypography-inlineLink-91",
+                      "lTitle": "HvTypography-lTitle-83",
+                      "labelText": "HvTypography-labelText-96",
+                      "mTitle": "HvTypography-mTitle-84",
+                      "margin": "HvTypography-margin-102",
+                      "normalText": "HvTypography-normalText-89",
+                      "placeholderText": "HvTypography-placeholderText-93",
+                      "sLink": "HvTypography-sLink-98",
+                      "sText": "HvTypography-sText-95",
+                      "sTitle": "HvTypography-sTitle-85",
+                      "selectedNavText": "HvTypography-selectedNavText-94",
+                      "selectedText": "HvTypography-selectedText-90",
+                      "vizText": "HvTypography-vizText-100",
+                      "xlTitle": "HvTypography-xlTitle-82",
+                      "xsTitle": "HvTypography-xsTitle-86",
+                      "xxlTitle": "HvTypography-xxlTitle-81",
+                      "xxsTitle": "HvTypography-xxsTitle-87",
                     }
                   }
                   component={null}
@@ -1026,7 +1025,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="infoText"
                 >
                   <p
-                    className="HvTypography-infoText-100 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                    className="HvTypography-infoText-97 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                   >
                     undefined 12.00B
                   </p>
@@ -1040,31 +1039,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-83",
-                      "4xlTitle": "HvTypography-4xlTitle-82",
-                      "5xlTitle": "HvTypography-5xlTitle-81",
-                      "baseFontFamily": "HvTypography-baseFontFamily-104",
-                      "disabledButtonText": "HvTypography-disabledButtonText-95",
-                      "disabledText": "HvTypography-disabledText-102",
-                      "highlightText": "HvTypography-highlightText-91",
-                      "infoText": "HvTypography-infoText-100",
-                      "inlineLink": "HvTypography-inlineLink-94",
-                      "lTitle": "HvTypography-lTitle-86",
-                      "labelText": "HvTypography-labelText-99",
-                      "mTitle": "HvTypography-mTitle-87",
-                      "margin": "HvTypography-margin-105",
-                      "normalText": "HvTypography-normalText-92",
-                      "placeholderText": "HvTypography-placeholderText-96",
-                      "sLink": "HvTypography-sLink-101",
-                      "sText": "HvTypography-sText-98",
-                      "sTitle": "HvTypography-sTitle-88",
-                      "selectedNavText": "HvTypography-selectedNavText-97",
-                      "selectedText": "HvTypography-selectedText-93",
-                      "vizText": "HvTypography-vizText-103",
-                      "xlTitle": "HvTypography-xlTitle-85",
-                      "xsTitle": "HvTypography-xsTitle-89",
-                      "xxlTitle": "HvTypography-xxlTitle-84",
-                      "xxsTitle": "HvTypography-xxsTitle-90",
+                      "3xlTitle": "HvTypography-3xlTitle-80",
+                      "4xlTitle": "HvTypography-4xlTitle-79",
+                      "5xlTitle": "HvTypography-5xlTitle-78",
+                      "baseFontFamily": "HvTypography-baseFontFamily-101",
+                      "disabledButtonText": "HvTypography-disabledButtonText-92",
+                      "disabledText": "HvTypography-disabledText-99",
+                      "highlightText": "HvTypography-highlightText-88",
+                      "infoText": "HvTypography-infoText-97",
+                      "inlineLink": "HvTypography-inlineLink-91",
+                      "lTitle": "HvTypography-lTitle-83",
+                      "labelText": "HvTypography-labelText-96",
+                      "mTitle": "HvTypography-mTitle-84",
+                      "margin": "HvTypography-margin-102",
+                      "normalText": "HvTypography-normalText-89",
+                      "placeholderText": "HvTypography-placeholderText-93",
+                      "sLink": "HvTypography-sLink-98",
+                      "sText": "HvTypography-sText-95",
+                      "sTitle": "HvTypography-sTitle-85",
+                      "selectedNavText": "HvTypography-selectedNavText-94",
+                      "selectedText": "HvTypography-selectedText-90",
+                      "vizText": "HvTypography-vizText-100",
+                      "xlTitle": "HvTypography-xlTitle-82",
+                      "xsTitle": "HvTypography-xsTitle-86",
+                      "xxlTitle": "HvTypography-xxlTitle-81",
+                      "xxsTitle": "HvTypography-xxsTitle-87",
                     }
                   }
                   component={null}
@@ -1072,7 +1071,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="labelText"
                 >
                   <p
-                    className="HvTypography-labelText-99 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                    className="HvTypography-labelText-96 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                   />
                 </ForwardRef>
               </WithStyles(ForwardRef)>
@@ -1084,31 +1083,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-83",
-                      "4xlTitle": "HvTypography-4xlTitle-82",
-                      "5xlTitle": "HvTypography-5xlTitle-81",
-                      "baseFontFamily": "HvTypography-baseFontFamily-104",
-                      "disabledButtonText": "HvTypography-disabledButtonText-95",
-                      "disabledText": "HvTypography-disabledText-102",
-                      "highlightText": "HvTypography-highlightText-91",
-                      "infoText": "HvTypography-infoText-100",
-                      "inlineLink": "HvTypography-inlineLink-94",
-                      "lTitle": "HvTypography-lTitle-86",
-                      "labelText": "HvTypography-labelText-99",
-                      "mTitle": "HvTypography-mTitle-87",
-                      "margin": "HvTypography-margin-105",
-                      "normalText": "HvTypography-normalText-92",
-                      "placeholderText": "HvTypography-placeholderText-96",
-                      "sLink": "HvTypography-sLink-101",
-                      "sText": "HvTypography-sText-98",
-                      "sTitle": "HvTypography-sTitle-88",
-                      "selectedNavText": "HvTypography-selectedNavText-97",
-                      "selectedText": "HvTypography-selectedText-93",
-                      "vizText": "HvTypography-vizText-103",
-                      "xlTitle": "HvTypography-xlTitle-85",
-                      "xsTitle": "HvTypography-xsTitle-89",
-                      "xxlTitle": "HvTypography-xxlTitle-84",
-                      "xxsTitle": "HvTypography-xxsTitle-90",
+                      "3xlTitle": "HvTypography-3xlTitle-80",
+                      "4xlTitle": "HvTypography-4xlTitle-79",
+                      "5xlTitle": "HvTypography-5xlTitle-78",
+                      "baseFontFamily": "HvTypography-baseFontFamily-101",
+                      "disabledButtonText": "HvTypography-disabledButtonText-92",
+                      "disabledText": "HvTypography-disabledText-99",
+                      "highlightText": "HvTypography-highlightText-88",
+                      "infoText": "HvTypography-infoText-97",
+                      "inlineLink": "HvTypography-inlineLink-91",
+                      "lTitle": "HvTypography-lTitle-83",
+                      "labelText": "HvTypography-labelText-96",
+                      "mTitle": "HvTypography-mTitle-84",
+                      "margin": "HvTypography-margin-102",
+                      "normalText": "HvTypography-normalText-89",
+                      "placeholderText": "HvTypography-placeholderText-93",
+                      "sLink": "HvTypography-sLink-98",
+                      "sText": "HvTypography-sText-95",
+                      "sTitle": "HvTypography-sTitle-85",
+                      "selectedNavText": "HvTypography-selectedNavText-94",
+                      "selectedText": "HvTypography-selectedText-90",
+                      "vizText": "HvTypography-vizText-100",
+                      "xlTitle": "HvTypography-xlTitle-82",
+                      "xsTitle": "HvTypography-xsTitle-86",
+                      "xxlTitle": "HvTypography-xxlTitle-81",
+                      "xxsTitle": "HvTypography-xxsTitle-87",
                     }
                   }
                   component={null}
@@ -1116,7 +1115,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   variant="infoText"
                 >
                   <p
-                    className="HvTypography-infoText-100 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                    className="HvTypography-infoText-97 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                   >
                     jpeg
                   </p>
@@ -1124,7 +1123,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               </WithStyles(ForwardRef)>
             </div>
             <div
-              className="HvFileUploaderDropZone-dropzoneContainer-71"
+              className="HvFileUploaderDropZone-dropZoneContainer-68"
               id="hv-fileuploader-2-dropzone-button"
               onDragEnter={[Function]}
               onDragLeave={[Function]}
@@ -1136,7 +1135,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               tabIndex={0}
             >
               <input
-                className="HvFileUploaderDropZone-inputArea-74"
+                className="HvFileUploaderDropZone-inputArea-71"
                 disabled={false}
                 id="hv-fileuploader-2-dropzone-input-file"
                 multiple={true}
@@ -1147,29 +1146,29 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 type="file"
               />
               <div
-                className="HvFileUploaderDropZone-dropArea-75"
+                className="HvFileUploaderDropZone-dropArea-72"
               >
                 <WithStyles(Doc)
-                  className="HvFileUploaderDropZone-dropzoneAreaIcon-78"
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon-75"
                   color="acce1"
                   iconSize="M"
                 >
                   <Doc
-                    className="HvFileUploaderDropZone-dropzoneAreaIcon-78"
+                    className="HvFileUploaderDropZone-dropZoneAreaIcon-75"
                     classes={
                       Object {
-                        "root": "HvIconDoc-root-106",
-                        "rootL": "HvIconDoc-rootL-110",
-                        "rootM": "HvIconDoc-rootM-109",
-                        "rootS": "HvIconDoc-rootS-108",
-                        "rootXs": "HvIconDoc-rootXs-107",
+                        "root": "HvIconDoc-root-103",
+                        "rootL": "HvIconDoc-rootL-107",
+                        "rootM": "HvIconDoc-rootM-106",
+                        "rootS": "HvIconDoc-rootS-105",
+                        "rootXs": "HvIconDoc-rootXs-104",
                       }
                     }
                     color="acce1"
                     iconSize="M"
                   >
                     <div
-                      className="HvFileUploaderDropZone-dropzoneAreaIcon-78 HvIconDoc-root-106 HvIconDoc-rootM-109"
+                      className="HvFileUploaderDropZone-dropZoneAreaIcon-75 HvIconDoc-root-103 HvIconDoc-rootM-106"
                     >
                       <svg
                         focusable={false}
@@ -1188,43 +1187,43 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   </Doc>
                 </WithStyles(Doc)>
                 <div
-                  className="HvFileUploaderDropZone-dropzoneAreaLabels-77"
+                  className="HvFileUploaderDropZone-dropZoneAreaLabels-74"
                 >
                   <WithStyles(ForwardRef)
-                    className="HvFileUploaderDropZone-dragText-79"
+                    className="HvFileUploaderDropZone-dragText-76"
                     component={null}
                     paragraph={false}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="HvFileUploaderDropZone-dragText-79"
+                      className="HvFileUploaderDropZone-dragText-76"
                       classes={
                         Object {
-                          "3xlTitle": "HvTypography-3xlTitle-83",
-                          "4xlTitle": "HvTypography-4xlTitle-82",
-                          "5xlTitle": "HvTypography-5xlTitle-81",
-                          "baseFontFamily": "HvTypography-baseFontFamily-104",
-                          "disabledButtonText": "HvTypography-disabledButtonText-95",
-                          "disabledText": "HvTypography-disabledText-102",
-                          "highlightText": "HvTypography-highlightText-91",
-                          "infoText": "HvTypography-infoText-100",
-                          "inlineLink": "HvTypography-inlineLink-94",
-                          "lTitle": "HvTypography-lTitle-86",
-                          "labelText": "HvTypography-labelText-99",
-                          "mTitle": "HvTypography-mTitle-87",
-                          "margin": "HvTypography-margin-105",
-                          "normalText": "HvTypography-normalText-92",
-                          "placeholderText": "HvTypography-placeholderText-96",
-                          "sLink": "HvTypography-sLink-101",
-                          "sText": "HvTypography-sText-98",
-                          "sTitle": "HvTypography-sTitle-88",
-                          "selectedNavText": "HvTypography-selectedNavText-97",
-                          "selectedText": "HvTypography-selectedText-93",
-                          "vizText": "HvTypography-vizText-103",
-                          "xlTitle": "HvTypography-xlTitle-85",
-                          "xsTitle": "HvTypography-xsTitle-89",
-                          "xxlTitle": "HvTypography-xxlTitle-84",
-                          "xxsTitle": "HvTypography-xxsTitle-90",
+                          "3xlTitle": "HvTypography-3xlTitle-80",
+                          "4xlTitle": "HvTypography-4xlTitle-79",
+                          "5xlTitle": "HvTypography-5xlTitle-78",
+                          "baseFontFamily": "HvTypography-baseFontFamily-101",
+                          "disabledButtonText": "HvTypography-disabledButtonText-92",
+                          "disabledText": "HvTypography-disabledText-99",
+                          "highlightText": "HvTypography-highlightText-88",
+                          "infoText": "HvTypography-infoText-97",
+                          "inlineLink": "HvTypography-inlineLink-91",
+                          "lTitle": "HvTypography-lTitle-83",
+                          "labelText": "HvTypography-labelText-96",
+                          "mTitle": "HvTypography-mTitle-84",
+                          "margin": "HvTypography-margin-102",
+                          "normalText": "HvTypography-normalText-89",
+                          "placeholderText": "HvTypography-placeholderText-93",
+                          "sLink": "HvTypography-sLink-98",
+                          "sText": "HvTypography-sText-95",
+                          "sTitle": "HvTypography-sTitle-85",
+                          "selectedNavText": "HvTypography-selectedNavText-94",
+                          "selectedText": "HvTypography-selectedText-90",
+                          "vizText": "HvTypography-vizText-100",
+                          "xlTitle": "HvTypography-xlTitle-82",
+                          "xsTitle": "HvTypography-xsTitle-86",
+                          "xxlTitle": "HvTypography-xxlTitle-81",
+                          "xxsTitle": "HvTypography-xxsTitle-87",
                         }
                       }
                       component={null}
@@ -1232,10 +1231,10 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       variant="normalText"
                     >
                       <p
-                        className="HvTypography-normalText-92 HvTypography-baseFontFamily-104 HvTypography-margin-105 HvFileUploaderDropZone-dragText-79"
+                        className="HvTypography-normalText-89 HvTypography-baseFontFamily-101 HvTypography-margin-102 HvFileUploaderDropZone-dragText-76"
                       >
                         <span
-                          className="HvFileUploaderDropZone-selectFilesText-80"
+                          className="HvFileUploaderDropZone-selectFilesText-77"
                         >
                            undefined
                         </span>
@@ -1272,7 +1271,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           <FileList
             classes={
               Object {
-                "list": "HvFileUploaderFileList-list-111",
+                "list": "HvFileUploaderFileList-list-108",
               }
             }
             id="hv-fileuploader-2-filelist"
@@ -1297,7 +1296,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             removeFileButtonLabel="Remove File"
           >
             <ul
-              className="HvFileUploaderFileList-list-111"
+              className="HvFileUploaderFileList-list-108"
               id="hv-fileuploader-2-filelist"
             >
               <li
@@ -1320,14 +1319,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   <File
                     classes={
                       Object {
-                        "fail": "HvFileUploaderFile-fail-117",
-                        "icon": "HvFileUploaderFile-icon-115",
-                        "iconContainer": "HvFileUploaderFile-iconContainer-118",
-                        "progressText": "HvFileUploaderFile-progressText-114",
-                        "progressbar": "HvFileUploaderFile-progressbar-113",
-                        "progressbarBack": "HvFileUploaderFile-progressbarBack-112",
-                        "removeButton": "HvFileUploaderFile-removeButton-116",
-                        "textTruncation": "HvFileUploaderFile-textTruncation-119",
+                        "fail": "HvFileUploaderFile-fail-114",
+                        "icon": "HvFileUploaderFile-icon-112",
+                        "nameText": "HvFileUploaderFile-nameText-115",
+                        "progressTextContainer": "HvFileUploaderFile-progressTextContainer-111",
+                        "progressbar": "HvFileUploaderFile-progressbar-110",
+                        "progressbarBack": "HvFileUploaderFile-progressbarBack-109",
+                        "removeButton": "HvFileUploaderFile-removeButton-113",
                       }
                     }
                     data={
@@ -1344,43 +1342,43 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     removeFileButtonLabel="Remove File"
                   >
                     <div
-                      className="HvFileUploaderFile-icon-115"
+                      className="HvFileUploaderFile-icon-112"
                     />
                     <WithStyles(ForwardRef)
-                      className="HvFileUploaderFile-textTruncation-119"
+                      className="HvFileUploaderFile-nameText-115"
                       component={null}
                       paragraph={false}
                       variant="sText"
                     >
                       <ForwardRef
-                        className="HvFileUploaderFile-textTruncation-119"
+                        className="HvFileUploaderFile-nameText-115"
                         classes={
                           Object {
-                            "3xlTitle": "HvTypography-3xlTitle-83",
-                            "4xlTitle": "HvTypography-4xlTitle-82",
-                            "5xlTitle": "HvTypography-5xlTitle-81",
-                            "baseFontFamily": "HvTypography-baseFontFamily-104",
-                            "disabledButtonText": "HvTypography-disabledButtonText-95",
-                            "disabledText": "HvTypography-disabledText-102",
-                            "highlightText": "HvTypography-highlightText-91",
-                            "infoText": "HvTypography-infoText-100",
-                            "inlineLink": "HvTypography-inlineLink-94",
-                            "lTitle": "HvTypography-lTitle-86",
-                            "labelText": "HvTypography-labelText-99",
-                            "mTitle": "HvTypography-mTitle-87",
-                            "margin": "HvTypography-margin-105",
-                            "normalText": "HvTypography-normalText-92",
-                            "placeholderText": "HvTypography-placeholderText-96",
-                            "sLink": "HvTypography-sLink-101",
-                            "sText": "HvTypography-sText-98",
-                            "sTitle": "HvTypography-sTitle-88",
-                            "selectedNavText": "HvTypography-selectedNavText-97",
-                            "selectedText": "HvTypography-selectedText-93",
-                            "vizText": "HvTypography-vizText-103",
-                            "xlTitle": "HvTypography-xlTitle-85",
-                            "xsTitle": "HvTypography-xsTitle-89",
-                            "xxlTitle": "HvTypography-xxlTitle-84",
-                            "xxsTitle": "HvTypography-xxsTitle-90",
+                            "3xlTitle": "HvTypography-3xlTitle-80",
+                            "4xlTitle": "HvTypography-4xlTitle-79",
+                            "5xlTitle": "HvTypography-5xlTitle-78",
+                            "baseFontFamily": "HvTypography-baseFontFamily-101",
+                            "disabledButtonText": "HvTypography-disabledButtonText-92",
+                            "disabledText": "HvTypography-disabledText-99",
+                            "highlightText": "HvTypography-highlightText-88",
+                            "infoText": "HvTypography-infoText-97",
+                            "inlineLink": "HvTypography-inlineLink-91",
+                            "lTitle": "HvTypography-lTitle-83",
+                            "labelText": "HvTypography-labelText-96",
+                            "mTitle": "HvTypography-mTitle-84",
+                            "margin": "HvTypography-margin-102",
+                            "normalText": "HvTypography-normalText-89",
+                            "placeholderText": "HvTypography-placeholderText-93",
+                            "sLink": "HvTypography-sLink-98",
+                            "sText": "HvTypography-sText-95",
+                            "sTitle": "HvTypography-sTitle-85",
+                            "selectedNavText": "HvTypography-selectedNavText-94",
+                            "selectedText": "HvTypography-selectedText-90",
+                            "vizText": "HvTypography-vizText-100",
+                            "xlTitle": "HvTypography-xlTitle-82",
+                            "xsTitle": "HvTypography-xsTitle-86",
+                            "xxlTitle": "HvTypography-xxlTitle-81",
+                            "xxsTitle": "HvTypography-xxsTitle-87",
                           }
                         }
                         component={null}
@@ -1388,14 +1386,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         variant="sText"
                       >
                         <p
-                          className="HvTypography-sText-98 HvTypography-baseFontFamily-104 HvTypography-margin-105 HvFileUploaderFile-textTruncation-119"
+                          className="HvTypography-sText-95 HvTypography-baseFontFamily-101 HvTypography-margin-102 HvFileUploaderFile-nameText-115"
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
-                      className="HvFileUploaderFile-progressText-114"
+                      className="HvFileUploaderFile-progressTextContainer-111"
                     >
                       <WithStyles(ForwardRef)
                         component={null}
@@ -1405,31 +1403,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         <ForwardRef
                           classes={
                             Object {
-                              "3xlTitle": "HvTypography-3xlTitle-83",
-                              "4xlTitle": "HvTypography-4xlTitle-82",
-                              "5xlTitle": "HvTypography-5xlTitle-81",
-                              "baseFontFamily": "HvTypography-baseFontFamily-104",
-                              "disabledButtonText": "HvTypography-disabledButtonText-95",
-                              "disabledText": "HvTypography-disabledText-102",
-                              "highlightText": "HvTypography-highlightText-91",
-                              "infoText": "HvTypography-infoText-100",
-                              "inlineLink": "HvTypography-inlineLink-94",
-                              "lTitle": "HvTypography-lTitle-86",
-                              "labelText": "HvTypography-labelText-99",
-                              "mTitle": "HvTypography-mTitle-87",
-                              "margin": "HvTypography-margin-105",
-                              "normalText": "HvTypography-normalText-92",
-                              "placeholderText": "HvTypography-placeholderText-96",
-                              "sLink": "HvTypography-sLink-101",
-                              "sText": "HvTypography-sText-98",
-                              "sTitle": "HvTypography-sTitle-88",
-                              "selectedNavText": "HvTypography-selectedNavText-97",
-                              "selectedText": "HvTypography-selectedText-93",
-                              "vizText": "HvTypography-vizText-103",
-                              "xlTitle": "HvTypography-xlTitle-85",
-                              "xsTitle": "HvTypography-xsTitle-89",
-                              "xxlTitle": "HvTypography-xxlTitle-84",
-                              "xxsTitle": "HvTypography-xxsTitle-90",
+                              "3xlTitle": "HvTypography-3xlTitle-80",
+                              "4xlTitle": "HvTypography-4xlTitle-79",
+                              "5xlTitle": "HvTypography-5xlTitle-78",
+                              "baseFontFamily": "HvTypography-baseFontFamily-101",
+                              "disabledButtonText": "HvTypography-disabledButtonText-92",
+                              "disabledText": "HvTypography-disabledText-99",
+                              "highlightText": "HvTypography-highlightText-88",
+                              "infoText": "HvTypography-infoText-97",
+                              "inlineLink": "HvTypography-inlineLink-91",
+                              "lTitle": "HvTypography-lTitle-83",
+                              "labelText": "HvTypography-labelText-96",
+                              "mTitle": "HvTypography-mTitle-84",
+                              "margin": "HvTypography-margin-102",
+                              "normalText": "HvTypography-normalText-89",
+                              "placeholderText": "HvTypography-placeholderText-93",
+                              "sLink": "HvTypography-sLink-98",
+                              "sText": "HvTypography-sText-95",
+                              "sTitle": "HvTypography-sTitle-85",
+                              "selectedNavText": "HvTypography-selectedNavText-94",
+                              "selectedText": "HvTypography-selectedText-90",
+                              "vizText": "HvTypography-vizText-100",
+                              "xlTitle": "HvTypography-xlTitle-82",
+                              "xsTitle": "HvTypography-xsTitle-86",
+                              "xxlTitle": "HvTypography-xxlTitle-81",
+                              "xxsTitle": "HvTypography-xxsTitle-87",
                             }
                           }
                           component={null}
@@ -1437,7 +1435,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           variant="sText"
                         >
                           <p
-                            className="HvTypography-sText-98 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                            className="HvTypography-sText-95 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                           >
                              14.10MB
                           </p>
@@ -1447,14 +1445,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <WithStyles(ForwardRef(IconButton))
                       aria-label="Remove File"
                       category="ghost"
-                      className="HvFileUploaderFile-removeButton-116"
+                      className="HvFileUploaderFile-removeButton-113"
                       id="hv-fileuploader-2-filelist-1-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(IconButton)
                         aria-label="Remove File"
                         category="ghost"
-                        className="HvFileUploaderFile-removeButton-116"
+                        className="HvFileUploaderFile-removeButton-113"
                         classes={
                           Object {
                             "colorInherit": "MuiIconButton-colorInherit",
@@ -1475,7 +1473,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           aria-label="Remove File"
                           category="ghost"
                           centerRipple={true}
-                          className="MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                          className="MuiIconButton-root HvFileUploaderFile-removeButton-113"
                           disabled={false}
                           focusRipple={true}
                           id="hv-fileuploader-2-filelist-1-remove-button"
@@ -1485,7 +1483,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             aria-label="Remove File"
                             category="ghost"
                             centerRipple={true}
-                            className="MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                            className="MuiIconButton-root HvFileUploaderFile-removeButton-113"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -1502,7 +1500,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             <button
                               aria-label="Remove File"
                               category="ghost"
-                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-113"
                               disabled={false}
                               id="hv-fileuploader-2-filelist-1-remove-button"
                               onBlur={[Function]}
@@ -1524,24 +1522,22 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                 className="MuiIconButton-label"
                               >
                                 <WithStyles(Close)
-                                  className="HvFileUploaderFile-iconContainer-118"
                                   iconSize="XS"
                                 >
                                   <Close
-                                    className="HvFileUploaderFile-iconContainer-118"
                                     classes={
                                       Object {
-                                        "root": "HvIconClose-root-132",
-                                        "rootL": "HvIconClose-rootL-136",
-                                        "rootM": "HvIconClose-rootM-135",
-                                        "rootS": "HvIconClose-rootS-134",
-                                        "rootXs": "HvIconClose-rootXs-133",
+                                        "root": "HvIconClose-root-128",
+                                        "rootL": "HvIconClose-rootL-132",
+                                        "rootM": "HvIconClose-rootM-131",
+                                        "rootS": "HvIconClose-rootS-130",
+                                        "rootXs": "HvIconClose-rootXs-129",
                                       }
                                     }
                                     iconSize="XS"
                                   >
                                     <div
-                                      className="HvFileUploaderFile-iconContainer-118 HvIconClose-root-132 HvIconClose-rootXs-133"
+                                      className="HvIconClose-root-128 HvIconClose-rootXs-129"
                                     >
                                       <svg
                                         focusable={false}
@@ -1560,6 +1556,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                   </Close>
                                 </WithStyles(Close)>
                               </span>
+                              <NoSsr />
                             </button>
                           </ForwardRef(ButtonBase)>
                         </WithStyles(ForwardRef(ButtonBase))>
@@ -1588,14 +1585,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   <File
                     classes={
                       Object {
-                        "fail": "HvFileUploaderFile-fail-117",
-                        "icon": "HvFileUploaderFile-icon-115",
-                        "iconContainer": "HvFileUploaderFile-iconContainer-118",
-                        "progressText": "HvFileUploaderFile-progressText-114",
-                        "progressbar": "HvFileUploaderFile-progressbar-113",
-                        "progressbarBack": "HvFileUploaderFile-progressbarBack-112",
-                        "removeButton": "HvFileUploaderFile-removeButton-116",
-                        "textTruncation": "HvFileUploaderFile-textTruncation-119",
+                        "fail": "HvFileUploaderFile-fail-114",
+                        "icon": "HvFileUploaderFile-icon-112",
+                        "nameText": "HvFileUploaderFile-nameText-115",
+                        "progressTextContainer": "HvFileUploaderFile-progressTextContainer-111",
+                        "progressbar": "HvFileUploaderFile-progressbar-110",
+                        "progressbarBack": "HvFileUploaderFile-progressbarBack-109",
+                        "removeButton": "HvFileUploaderFile-removeButton-113",
                       }
                     }
                     data={
@@ -1612,43 +1608,43 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     removeFileButtonLabel="Remove File"
                   >
                     <div
-                      className="HvFileUploaderFile-icon-115"
+                      className="HvFileUploaderFile-icon-112"
                     />
                     <WithStyles(ForwardRef)
-                      className="HvFileUploaderFile-textTruncation-119"
+                      className="HvFileUploaderFile-nameText-115"
                       component={null}
                       paragraph={false}
                       variant="sText"
                     >
                       <ForwardRef
-                        className="HvFileUploaderFile-textTruncation-119"
+                        className="HvFileUploaderFile-nameText-115"
                         classes={
                           Object {
-                            "3xlTitle": "HvTypography-3xlTitle-83",
-                            "4xlTitle": "HvTypography-4xlTitle-82",
-                            "5xlTitle": "HvTypography-5xlTitle-81",
-                            "baseFontFamily": "HvTypography-baseFontFamily-104",
-                            "disabledButtonText": "HvTypography-disabledButtonText-95",
-                            "disabledText": "HvTypography-disabledText-102",
-                            "highlightText": "HvTypography-highlightText-91",
-                            "infoText": "HvTypography-infoText-100",
-                            "inlineLink": "HvTypography-inlineLink-94",
-                            "lTitle": "HvTypography-lTitle-86",
-                            "labelText": "HvTypography-labelText-99",
-                            "mTitle": "HvTypography-mTitle-87",
-                            "margin": "HvTypography-margin-105",
-                            "normalText": "HvTypography-normalText-92",
-                            "placeholderText": "HvTypography-placeholderText-96",
-                            "sLink": "HvTypography-sLink-101",
-                            "sText": "HvTypography-sText-98",
-                            "sTitle": "HvTypography-sTitle-88",
-                            "selectedNavText": "HvTypography-selectedNavText-97",
-                            "selectedText": "HvTypography-selectedText-93",
-                            "vizText": "HvTypography-vizText-103",
-                            "xlTitle": "HvTypography-xlTitle-85",
-                            "xsTitle": "HvTypography-xsTitle-89",
-                            "xxlTitle": "HvTypography-xxlTitle-84",
-                            "xxsTitle": "HvTypography-xxsTitle-90",
+                            "3xlTitle": "HvTypography-3xlTitle-80",
+                            "4xlTitle": "HvTypography-4xlTitle-79",
+                            "5xlTitle": "HvTypography-5xlTitle-78",
+                            "baseFontFamily": "HvTypography-baseFontFamily-101",
+                            "disabledButtonText": "HvTypography-disabledButtonText-92",
+                            "disabledText": "HvTypography-disabledText-99",
+                            "highlightText": "HvTypography-highlightText-88",
+                            "infoText": "HvTypography-infoText-97",
+                            "inlineLink": "HvTypography-inlineLink-91",
+                            "lTitle": "HvTypography-lTitle-83",
+                            "labelText": "HvTypography-labelText-96",
+                            "mTitle": "HvTypography-mTitle-84",
+                            "margin": "HvTypography-margin-102",
+                            "normalText": "HvTypography-normalText-89",
+                            "placeholderText": "HvTypography-placeholderText-93",
+                            "sLink": "HvTypography-sLink-98",
+                            "sText": "HvTypography-sText-95",
+                            "sTitle": "HvTypography-sTitle-85",
+                            "selectedNavText": "HvTypography-selectedNavText-94",
+                            "selectedText": "HvTypography-selectedText-90",
+                            "vizText": "HvTypography-vizText-100",
+                            "xlTitle": "HvTypography-xlTitle-82",
+                            "xsTitle": "HvTypography-xsTitle-86",
+                            "xxlTitle": "HvTypography-xxlTitle-81",
+                            "xxsTitle": "HvTypography-xxsTitle-87",
                           }
                         }
                         component={null}
@@ -1656,14 +1652,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         variant="sText"
                       >
                         <p
-                          className="HvTypography-sText-98 HvTypography-baseFontFamily-104 HvTypography-margin-105 HvFileUploaderFile-textTruncation-119"
+                          className="HvTypography-sText-95 HvTypography-baseFontFamily-101 HvTypography-margin-102 HvFileUploaderFile-nameText-115"
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
-                      className="HvFileUploaderFile-progressText-114"
+                      className="HvFileUploaderFile-progressTextContainer-111"
                     >
                       <WithStyles(ForwardRef)
                         component={null}
@@ -1673,31 +1669,31 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         <ForwardRef
                           classes={
                             Object {
-                              "3xlTitle": "HvTypography-3xlTitle-83",
-                              "4xlTitle": "HvTypography-4xlTitle-82",
-                              "5xlTitle": "HvTypography-5xlTitle-81",
-                              "baseFontFamily": "HvTypography-baseFontFamily-104",
-                              "disabledButtonText": "HvTypography-disabledButtonText-95",
-                              "disabledText": "HvTypography-disabledText-102",
-                              "highlightText": "HvTypography-highlightText-91",
-                              "infoText": "HvTypography-infoText-100",
-                              "inlineLink": "HvTypography-inlineLink-94",
-                              "lTitle": "HvTypography-lTitle-86",
-                              "labelText": "HvTypography-labelText-99",
-                              "mTitle": "HvTypography-mTitle-87",
-                              "margin": "HvTypography-margin-105",
-                              "normalText": "HvTypography-normalText-92",
-                              "placeholderText": "HvTypography-placeholderText-96",
-                              "sLink": "HvTypography-sLink-101",
-                              "sText": "HvTypography-sText-98",
-                              "sTitle": "HvTypography-sTitle-88",
-                              "selectedNavText": "HvTypography-selectedNavText-97",
-                              "selectedText": "HvTypography-selectedText-93",
-                              "vizText": "HvTypography-vizText-103",
-                              "xlTitle": "HvTypography-xlTitle-85",
-                              "xsTitle": "HvTypography-xsTitle-89",
-                              "xxlTitle": "HvTypography-xxlTitle-84",
-                              "xxsTitle": "HvTypography-xxsTitle-90",
+                              "3xlTitle": "HvTypography-3xlTitle-80",
+                              "4xlTitle": "HvTypography-4xlTitle-79",
+                              "5xlTitle": "HvTypography-5xlTitle-78",
+                              "baseFontFamily": "HvTypography-baseFontFamily-101",
+                              "disabledButtonText": "HvTypography-disabledButtonText-92",
+                              "disabledText": "HvTypography-disabledText-99",
+                              "highlightText": "HvTypography-highlightText-88",
+                              "infoText": "HvTypography-infoText-97",
+                              "inlineLink": "HvTypography-inlineLink-91",
+                              "lTitle": "HvTypography-lTitle-83",
+                              "labelText": "HvTypography-labelText-96",
+                              "mTitle": "HvTypography-mTitle-84",
+                              "margin": "HvTypography-margin-102",
+                              "normalText": "HvTypography-normalText-89",
+                              "placeholderText": "HvTypography-placeholderText-93",
+                              "sLink": "HvTypography-sLink-98",
+                              "sText": "HvTypography-sText-95",
+                              "sTitle": "HvTypography-sTitle-85",
+                              "selectedNavText": "HvTypography-selectedNavText-94",
+                              "selectedText": "HvTypography-selectedText-90",
+                              "vizText": "HvTypography-vizText-100",
+                              "xlTitle": "HvTypography-xlTitle-82",
+                              "xsTitle": "HvTypography-xsTitle-86",
+                              "xxlTitle": "HvTypography-xxlTitle-81",
+                              "xxsTitle": "HvTypography-xxsTitle-87",
                             }
                           }
                           component={null}
@@ -1705,7 +1701,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           variant="sText"
                         >
                           <p
-                            className="HvTypography-sText-98 HvTypography-baseFontFamily-104 HvTypography-margin-105"
+                            className="HvTypography-sText-95 HvTypography-baseFontFamily-101 HvTypography-margin-102"
                           >
                              875.00kB
                           </p>
@@ -1715,14 +1711,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <WithStyles(ForwardRef(IconButton))
                       aria-label="Remove File"
                       category="ghost"
-                      className="HvFileUploaderFile-removeButton-116"
+                      className="HvFileUploaderFile-removeButton-113"
                       id="hv-fileuploader-2-filelist-2-remove-button"
                       onClick={[Function]}
                     >
                       <ForwardRef(IconButton)
                         aria-label="Remove File"
                         category="ghost"
-                        className="HvFileUploaderFile-removeButton-116"
+                        className="HvFileUploaderFile-removeButton-113"
                         classes={
                           Object {
                             "colorInherit": "MuiIconButton-colorInherit",
@@ -1743,7 +1739,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           aria-label="Remove File"
                           category="ghost"
                           centerRipple={true}
-                          className="MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                          className="MuiIconButton-root HvFileUploaderFile-removeButton-113"
                           disabled={false}
                           focusRipple={true}
                           id="hv-fileuploader-2-filelist-2-remove-button"
@@ -1753,7 +1749,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             aria-label="Remove File"
                             category="ghost"
                             centerRipple={true}
-                            className="MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                            className="MuiIconButton-root HvFileUploaderFile-removeButton-113"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -1770,7 +1766,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             <button
                               aria-label="Remove File"
                               category="ghost"
-                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-116"
+                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-113"
                               disabled={false}
                               id="hv-fileuploader-2-filelist-2-remove-button"
                               onBlur={[Function]}
@@ -1792,24 +1788,22 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                 className="MuiIconButton-label"
                               >
                                 <WithStyles(Close)
-                                  className="HvFileUploaderFile-iconContainer-118"
                                   iconSize="XS"
                                 >
                                   <Close
-                                    className="HvFileUploaderFile-iconContainer-118"
                                     classes={
                                       Object {
-                                        "root": "HvIconClose-root-132",
-                                        "rootL": "HvIconClose-rootL-136",
-                                        "rootM": "HvIconClose-rootM-135",
-                                        "rootS": "HvIconClose-rootS-134",
-                                        "rootXs": "HvIconClose-rootXs-133",
+                                        "root": "HvIconClose-root-128",
+                                        "rootL": "HvIconClose-rootL-132",
+                                        "rootM": "HvIconClose-rootM-131",
+                                        "rootS": "HvIconClose-rootS-130",
+                                        "rootXs": "HvIconClose-rootXs-129",
                                       }
                                     }
                                     iconSize="XS"
                                   >
                                     <div
-                                      className="HvFileUploaderFile-iconContainer-118 HvIconClose-root-132 HvIconClose-rootXs-133"
+                                      className="HvIconClose-root-128 HvIconClose-rootXs-129"
                                     >
                                       <svg
                                         focusable={false}
@@ -1828,6 +1822,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                   </Close>
                                 </WithStyles(Close)>
                               </span>
+                              <NoSsr />
                             </button>
                           </ForwardRef(ButtonBase)>
                         </WithStyles(ForwardRef(ButtonBase))>

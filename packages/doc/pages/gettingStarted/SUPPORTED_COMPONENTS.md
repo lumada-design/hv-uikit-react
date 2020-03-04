@@ -39,7 +39,6 @@
 | [Footer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Footer)                        |           -           |
 | [FormComposer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/FormComposer)            |           -           |
 | [Navigation Anchors](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/NavigationAnchors) |           -           |
-| [Search box](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/SearchBox)                 |           -           |
 | [Slider](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Slider)                        |           -           |
 | [Toggle Switch](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Switch)                 |           -           |
 

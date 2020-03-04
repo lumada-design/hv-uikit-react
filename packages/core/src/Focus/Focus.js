@@ -210,6 +210,26 @@ Focus.propTypes = {
    */
   classes: PropTypes.shape({
     /**
+     * Styles applied to the root.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied when component is selected.
+     */
+    selected: PropTypes.string,
+    /**
+     * Styles applied when component is disabled.
+     */
+    disabled: PropTypes.string,
+    /**
+     * Styles applied to external reference.
+     */
+    externalReference: PropTypes.string,
+    /**
+     * Styles applied when using the false focus.
+     */
+    falseFocus: PropTypes.string,
+    /**
      * Styles applied when focus disabled.
      */
     focusDisabled: PropTypes.string,

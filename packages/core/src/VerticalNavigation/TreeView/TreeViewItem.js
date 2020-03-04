@@ -331,7 +331,7 @@ const TreeViewItem = props => {
     <li
       ref={listItemRef}
       id={internalId}
-      className={clsx(classes.node, className, {
+      className={clsx(classes.root, className, {
         [classes.disabled]: disabled,
         [classes.collapsed]: expandable && !expanded,
         [classes.expanded]: expandable && expanded,
@@ -368,6 +368,10 @@ TreeViewItem.propTypes = {
    * A Jss Object used to override or extend the styles applied to the Radio button.
    */
   classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component.
+     */
+    root: PropTypes.string,
     /**
      * Style applied to the content.
      */
@@ -462,5 +466,5 @@ TreeViewItem.defaultProps = {
 };
 
 export default withStyles(styles, {
-  name: "HvVerticalNavigationreeViewItem"
+  name: "HvVerticalNavigationTreeViewItem"
 })(TreeViewItem);

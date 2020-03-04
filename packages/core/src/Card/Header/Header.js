@@ -67,6 +67,10 @@ Header.propTypes = {
      */
     title: PropTypes.string,
     /**
+     * Styles applied to the tittle Typography element when icon is present.
+     */
+    titleShort: PropTypes.string,
+    /**
      * Styles applied to the subheader Typography element.
      */
     subheader: PropTypes.string,

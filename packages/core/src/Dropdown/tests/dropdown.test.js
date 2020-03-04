@@ -37,6 +37,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
       // In real cases this value is filled if the dropdown is expanded.
+      // eslint-disable-next-line no-console
       const originalError = console.error;
       // eslint-disable-next-line no-console
       console.error = jest.fn();

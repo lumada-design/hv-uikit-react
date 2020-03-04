@@ -85,7 +85,7 @@ MultiTooltip.propTypes = {
     /**
      * Values of tooltip
      */
-    element: PropTypes.arrayOf(
+    elements: PropTypes.arrayOf(
       PropTypes.shape({
         /**
          * Color (in hex).
@@ -98,7 +98,7 @@ MultiTooltip.propTypes = {
         /**
          * Value.
          */
-        value: PropTypes.string
+        value: PropTypes.number
       })
     )
   }).isRequired
