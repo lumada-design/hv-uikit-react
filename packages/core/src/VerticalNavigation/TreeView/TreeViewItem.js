@@ -331,7 +331,7 @@ const TreeViewItem = props => {
     <li
       ref={listItemRef}
       id={internalId}
-      className={clsx(classes.root, className, {
+      className={clsx(classes.node, className, {
         [classes.disabled]: disabled,
         [classes.collapsed]: expandable && !expanded,
         [classes.expanded]: expandable && expanded,
@@ -371,7 +371,7 @@ TreeViewItem.propTypes = {
     /**
      * Style applied to the root of the component.
      */
-    root: PropTypes.string,
+    node: PropTypes.string,
     /**
      * Style applied to the content.
      */

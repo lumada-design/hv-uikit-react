@@ -104,6 +104,3 @@ With our first major release several components where reviewed in order to remov
   - Css class **upperArea** remove
 - Tooltip
   - Renamed `multitooltip` class to `tooltipMulti`.
-- TreeViewItem
-  - Renamed `node` class to `root`.
-
