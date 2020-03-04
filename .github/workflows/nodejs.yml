@@ -1,6 +1,6 @@
 name: Node.js CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -17,13 +17,20 @@ jobs:
       uses: actions/setup-node@v1.4.0
       with:
         node-version: ${{ matrix.node-version }}
-    - run: |
+    - name: npm config and install
+      run: |
         npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
         npm config list
-    - run: npm ci
-    #- run: npm run bootstrap
-    #- run: npm run test
+        npm ci
+        
+    - name: npm bootstrap and test
+      if: github.event == 'push'
+      run: |
+        npm run bootstrap
+        npm run test
+      
     - name: Jest Code Coverage Report
+      if: github.event == 'pull_request'
       uses: ziishaned/jest-reporter-action@0.1.1
       with:
         # Github token
