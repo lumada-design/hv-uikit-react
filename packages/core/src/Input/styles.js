@@ -1,7 +1,7 @@
 import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => ({
-  container: {
+  root: {
     minWidth: "150px",
     maxWidth: "610px"
   },

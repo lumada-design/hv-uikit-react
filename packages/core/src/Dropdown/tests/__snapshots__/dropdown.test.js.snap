@@ -1091,7 +1091,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvSearchBox-root-55"
+                                    class="HvInput-root-56 HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -1221,7 +1221,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-176"
                                 >
                                   <div
-                                    class="HvSearchBox-root-188"
+                                    class="HvInput-root-189 HvSearchBox-root-188"
                                     id="hv-dropdown-2-values-search"
                                   >
                                     <div
@@ -1351,7 +1351,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-309"
                                 >
                                   <div
-                                    class="HvSearchBox-root-321"
+                                    class="HvInput-root-322 HvSearchBox-root-321"
                                     id="hv-dropdown-3-values-search"
                                   >
                                     <div
@@ -1481,7 +1481,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-442"
                                 >
                                   <div
-                                    class="HvSearchBox-root-454"
+                                    class="HvInput-root-455 HvSearchBox-root-454"
                                     id="hv-dropdown-4-values-search"
                                   >
                                     <div
@@ -1611,7 +1611,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-575"
                                 >
                                   <div
-                                    class="HvSearchBox-root-587"
+                                    class="HvInput-root-588 HvSearchBox-root-587"
                                     id="hv-dropdown-5-values-search"
                                   >
                                     <div
@@ -1741,7 +1741,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-708"
                                 >
                                   <div
-                                    class="HvSearchBox-root-725"
+                                    class="HvInput-root-726 HvSearchBox-root-725"
                                     id="hv-dropdown-6-values-search"
                                   >
                                     <div
@@ -2005,7 +2005,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   class="HvDropdownList-searchContainer-996"
                                 >
                                   <div
-                                    class="HvSearchBox-root-1008"
+                                    class="HvInput-root-1009 HvSearchBox-root-1008"
                                     id="test-dropdown-values-search"
                                   >
                                     <div
@@ -2512,7 +2512,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               Object {
                                                 "adornmentButton": "HvInput-adornmentButton-1024",
                                                 "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                "container": "HvInput-container-1009",
                                                 "icon": "HvInput-icon-1025",
                                                 "iconClear": "HvInput-iconClear-1026",
                                                 "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2527,6 +2526,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "labelContainer": "HvInput-labelContainer-1017",
                                                 "labelDisabled": "HvInput-labelDisabled-1019",
                                                 "multiLine": "HvInput-multiLine-1016",
+                                                "root": "HvInput-root-1009",
                                                 "suggestionList": "HvInput-suggestionList-1028",
                                                 "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                 "textWarning": "HvInput-textWarning-1022",
@@ -2578,7 +2578,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                             validationType="none"
                                           >
                                             <div
-                                              className="HvSearchBox-root-1008"
+                                              className="HvInput-root-1009 HvSearchBox-root-1008"
                                               id="test-dropdown-values-search"
                                               onBlur={[Function]}
                                             >
@@ -2603,7 +2603,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       Object {
                                                         "adornmentButton": "HvInput-adornmentButton-1024",
                                                         "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                        "container": "HvInput-container-1009",
                                                         "icon": "HvInput-icon-1025",
                                                         "iconClear": "HvInput-iconClear-1026",
                                                         "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2618,6 +2617,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         "labelContainer": "HvInput-labelContainer-1017",
                                                         "labelDisabled": "HvInput-labelDisabled-1019",
                                                         "multiLine": "HvInput-multiLine-1016",
+                                                        "root": "HvInput-root-1009",
                                                         "suggestionList": "HvInput-suggestionList-1028",
                                                         "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                         "textWarning": "HvInput-textWarning-1022",
@@ -2688,7 +2688,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         Object {
                                                           "adornmentButton": "HvInput-adornmentButton-1024",
                                                           "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                          "container": "HvInput-container-1009",
                                                           "icon": "HvInput-icon-1025",
                                                           "iconClear": "HvInput-iconClear-1026",
                                                           "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2703,6 +2702,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           "labelContainer": "HvInput-labelContainer-1017",
                                                           "labelDisabled": "HvInput-labelDisabled-1019",
                                                           "multiLine": "HvInput-multiLine-1016",
+                                                          "root": "HvInput-root-1009",
                                                           "suggestionList": "HvInput-suggestionList-1028",
                                                           "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                           "textWarning": "HvInput-textWarning-1022",
@@ -2772,7 +2772,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           Object {
                                                             "adornmentButton": "HvInput-adornmentButton-1024",
                                                             "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                            "container": "HvInput-container-1009",
                                                             "icon": "HvInput-icon-1025",
                                                             "iconClear": "HvInput-iconClear-1026",
                                                             "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2787,6 +2786,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             "labelContainer": "HvInput-labelContainer-1017",
                                                             "labelDisabled": "HvInput-labelDisabled-1019",
                                                             "multiLine": "HvInput-multiLine-1016",
+                                                            "root": "HvInput-root-1009",
                                                             "suggestionList": "HvInput-suggestionList-1028",
                                                             "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                             "textWarning": "HvInput-textWarning-1022",
@@ -2863,7 +2863,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             Object {
                                                               "adornmentButton": "HvInput-adornmentButton-1024",
                                                               "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                              "container": "HvInput-container-1009",
                                                               "icon": "HvInput-icon-1025",
                                                               "iconClear": "HvInput-iconClear-1026",
                                                               "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2878,6 +2877,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "labelContainer": "HvInput-labelContainer-1017",
                                                               "labelDisabled": "HvInput-labelDisabled-1019",
                                                               "multiLine": "HvInput-multiLine-1016",
+                                                              "root": "HvInput-root-1009",
                                                               "suggestionList": "HvInput-suggestionList-1028",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                               "textWarning": "HvInput-textWarning-1022",
@@ -2947,7 +2947,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             Object {
                                                               "adornmentButton": "HvInput-adornmentButton-1024",
                                                               "adornmentsBox": "HvInput-adornmentsBox-1023",
-                                                              "container": "HvInput-container-1009",
                                                               "icon": "HvInput-icon-1025",
                                                               "iconClear": "HvInput-iconClear-1026",
                                                               "infoIconContainer": "HvInput-infoIconContainer-1020",
@@ -2962,6 +2961,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "labelContainer": "HvInput-labelContainer-1017",
                                                               "labelDisabled": "HvInput-labelDisabled-1019",
                                                               "multiLine": "HvInput-multiLine-1016",
+                                                              "root": "HvInput-root-1009",
                                                               "suggestionList": "HvInput-suggestionList-1028",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-1027",
                                                               "textWarning": "HvInput-textWarning-1022",
@@ -7864,7 +7864,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvSearchBox-root-55"
+                                    class="HvInput-root-56 HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -7994,7 +7994,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-176"
                                 >
                                   <div
-                                    class="HvSearchBox-root-188"
+                                    class="HvInput-root-189 HvSearchBox-root-188"
                                     id="hv-dropdown-2-values-search"
                                   >
                                     <div
@@ -8124,7 +8124,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-309"
                                 >
                                   <div
-                                    class="HvSearchBox-root-321"
+                                    class="HvInput-root-322 HvSearchBox-root-321"
                                     id="hv-dropdown-3-values-search"
                                   >
                                     <div
@@ -8254,7 +8254,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-442"
                                 >
                                   <div
-                                    class="HvSearchBox-root-454"
+                                    class="HvInput-root-455 HvSearchBox-root-454"
                                     id="hv-dropdown-4-values-search"
                                   >
                                     <div
@@ -8384,7 +8384,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-575"
                                 >
                                   <div
-                                    class="HvSearchBox-root-587"
+                                    class="HvInput-root-588 HvSearchBox-root-587"
                                     id="hv-dropdown-5-values-search"
                                   >
                                     <div
@@ -8514,7 +8514,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   class="HvDropdownList-searchContainer-708"
                                 >
                                   <div
-                                    class="HvSearchBox-root-725"
+                                    class="HvInput-root-726 HvSearchBox-root-725"
                                     id="hv-dropdown-6-values-search"
                                   >
                                     <div
@@ -10568,7 +10568,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                   class="HvDropdownList-searchContainer-43"
                                 >
                                   <div
-                                    class="HvSearchBox-root-55"
+                                    class="HvInput-root-56 HvSearchBox-root-55"
                                     id="hv-dropdown-1-values-search"
                                   >
                                     <div
@@ -10852,7 +10852,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               Object {
                                                 "adornmentButton": "HvInput-adornmentButton-71",
                                                 "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                "container": "HvInput-container-56",
                                                 "icon": "HvInput-icon-72",
                                                 "iconClear": "HvInput-iconClear-73",
                                                 "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -10867,6 +10866,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 "labelContainer": "HvInput-labelContainer-64",
                                                 "labelDisabled": "HvInput-labelDisabled-66",
                                                 "multiLine": "HvInput-multiLine-63",
+                                                "root": "HvInput-root-56",
                                                 "suggestionList": "HvInput-suggestionList-75",
                                                 "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                 "textWarning": "HvInput-textWarning-69",
@@ -10918,7 +10918,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                             validationType="none"
                                           >
                                             <div
-                                              className="HvSearchBox-root-55"
+                                              className="HvInput-root-56 HvSearchBox-root-55"
                                               id="hv-dropdown-1-values-search"
                                               onBlur={[Function]}
                                             >
@@ -10943,7 +10943,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       Object {
                                                         "adornmentButton": "HvInput-adornmentButton-71",
                                                         "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                        "container": "HvInput-container-56",
                                                         "icon": "HvInput-icon-72",
                                                         "iconClear": "HvInput-iconClear-73",
                                                         "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -10958,6 +10957,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         "labelContainer": "HvInput-labelContainer-64",
                                                         "labelDisabled": "HvInput-labelDisabled-66",
                                                         "multiLine": "HvInput-multiLine-63",
+                                                        "root": "HvInput-root-56",
                                                         "suggestionList": "HvInput-suggestionList-75",
                                                         "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                         "textWarning": "HvInput-textWarning-69",
@@ -11028,7 +11028,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         Object {
                                                           "adornmentButton": "HvInput-adornmentButton-71",
                                                           "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                          "container": "HvInput-container-56",
                                                           "icon": "HvInput-icon-72",
                                                           "iconClear": "HvInput-iconClear-73",
                                                           "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -11043,6 +11042,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           "labelContainer": "HvInput-labelContainer-64",
                                                           "labelDisabled": "HvInput-labelDisabled-66",
                                                           "multiLine": "HvInput-multiLine-63",
+                                                          "root": "HvInput-root-56",
                                                           "suggestionList": "HvInput-suggestionList-75",
                                                           "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                           "textWarning": "HvInput-textWarning-69",
@@ -11112,7 +11112,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           Object {
                                                             "adornmentButton": "HvInput-adornmentButton-71",
                                                             "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                            "container": "HvInput-container-56",
                                                             "icon": "HvInput-icon-72",
                                                             "iconClear": "HvInput-iconClear-73",
                                                             "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -11127,6 +11126,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             "labelContainer": "HvInput-labelContainer-64",
                                                             "labelDisabled": "HvInput-labelDisabled-66",
                                                             "multiLine": "HvInput-multiLine-63",
+                                                            "root": "HvInput-root-56",
                                                             "suggestionList": "HvInput-suggestionList-75",
                                                             "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                             "textWarning": "HvInput-textWarning-69",
@@ -11203,7 +11203,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             Object {
                                                               "adornmentButton": "HvInput-adornmentButton-71",
                                                               "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                              "container": "HvInput-container-56",
                                                               "icon": "HvInput-icon-72",
                                                               "iconClear": "HvInput-iconClear-73",
                                                               "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -11218,6 +11217,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "labelContainer": "HvInput-labelContainer-64",
                                                               "labelDisabled": "HvInput-labelDisabled-66",
                                                               "multiLine": "HvInput-multiLine-63",
+                                                              "root": "HvInput-root-56",
                                                               "suggestionList": "HvInput-suggestionList-75",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                               "textWarning": "HvInput-textWarning-69",
@@ -11287,7 +11287,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             Object {
                                                               "adornmentButton": "HvInput-adornmentButton-71",
                                                               "adornmentsBox": "HvInput-adornmentsBox-70",
-                                                              "container": "HvInput-container-56",
                                                               "icon": "HvInput-icon-72",
                                                               "iconClear": "HvInput-iconClear-73",
                                                               "infoIconContainer": "HvInput-infoIconContainer-67",
@@ -11302,6 +11301,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "labelContainer": "HvInput-labelContainer-64",
                                                               "labelDisabled": "HvInput-labelDisabled-66",
                                                               "multiLine": "HvInput-multiLine-63",
+                                                              "root": "HvInput-root-56",
                                                               "suggestionList": "HvInput-suggestionList-75",
                                                               "suggestionsContainer": "HvInput-suggestionsContainer-74",
                                                               "textWarning": "HvInput-textWarning-69",

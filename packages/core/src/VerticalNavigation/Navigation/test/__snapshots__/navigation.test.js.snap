@@ -1036,7 +1036,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     selectable={null}
                   >
                     <li
-                      className="HvVerticalNavigationTreeViewItem-root-15 HvVerticalNavigationTreeViewItem-selectable-19 HvVerticalNavigationTreeViewItem-unselected-24"
+                      className="HvVerticalNavigationTreeViewItem-node-17 HvVerticalNavigationTreeViewItem-selectable-19 HvVerticalNavigationTreeViewItem-unselected-24"
                       data-hasicon={true}
                       id="hv-verticalnavigation-treeviewitem2"
                     >

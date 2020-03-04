@@ -856,7 +856,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem2"
               >
@@ -1048,7 +1048,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                         id="hv-verticalnavigation-treeviewitem3"
                       >
                         <WithStyles(ForwardRef)
@@ -1172,7 +1172,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             >
                               <li
                                 aria-disabled={true}
-                                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-disabled-17"
+                                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-disabled-17"
                                 id="hv-verticalnavigation-treeviewitem4"
                               >
                                 <WithStyles(ForwardRef)
@@ -1295,7 +1295,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               selectable={null}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-selected-22"
+                                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-selected-22"
                                 id="hv-verticalnavigation-treeviewitem5"
                               >
                                 <WithStyles(ForwardRef)
@@ -1422,7 +1422,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               selectable={false}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-unselectable-19"
+                                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-unselectable-19"
                                 id="hv-verticalnavigation-treeviewitem6"
                               >
                                 <WithStyles(ForwardRef)
@@ -1561,7 +1561,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               selectable={null}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                                 id="hv-verticalnavigation-treeviewitem7"
                               >
                                 <WithStyles(ForwardRef)
@@ -1692,7 +1692,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem8"
               >
@@ -1884,7 +1884,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                         id="hv-verticalnavigation-treeviewitem9"
                       >
                         <WithStyles(ForwardRef)
@@ -2007,7 +2007,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                         id="hv-verticalnavigation-treeviewitem10"
                       >
                         <WithStyles(ForwardRef)
@@ -2130,7 +2130,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-14 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
                         id="hv-verticalnavigation-treeviewitem11"
                       >
                         <WithStyles(ForwardRef)
@@ -3079,7 +3079,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem24"
                 role="treeitem"
@@ -3273,7 +3273,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                         id="hv-verticalnavigation-treeviewitem25"
                         role="treeitem"
                       >
@@ -3399,7 +3399,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             >
                               <li
                                 aria-disabled={true}
-                                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-disabled-139"
+                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-disabled-139"
                                 id="hv-verticalnavigation-treeviewitem26"
                                 role="treeitem"
                               >
@@ -3524,7 +3524,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             >
                               <li
                                 aria-selected={true}
-                                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-selected-144"
+                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-selected-144"
                                 id="hv-verticalnavigation-treeviewitem27"
                                 role="treeitem"
                               >
@@ -3648,7 +3648,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               selectable={false}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-unselectable-141"
+                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-unselectable-141"
                                 id="hv-verticalnavigation-treeviewitem28"
                                 role="treeitem"
                               >
@@ -3788,7 +3788,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               selectable={null}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                                 id="hv-verticalnavigation-treeviewitem29"
                                 role="treeitem"
                               >
@@ -3920,7 +3920,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem30"
                 role="treeitem"
@@ -4114,7 +4114,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                         id="hv-verticalnavigation-treeviewitem31"
                         role="treeitem"
                       >
@@ -4238,7 +4238,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                         id="hv-verticalnavigation-treeviewitem32"
                         role="treeitem"
                       >
@@ -4362,7 +4362,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-root-136 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
                         id="hv-verticalnavigation-treeviewitem33"
                         role="treeitem"
                       >

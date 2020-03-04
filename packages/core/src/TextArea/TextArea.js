@@ -137,7 +137,7 @@ class HvTextArea extends React.Component {
         <div className={classes.textAreaContainer}>
           <Input
             classes={{
-              container: classes.container,
+              root: classes.container,
               input: clsx(classes.input, {
                 [classes.resize]: !disabled && resizable,
                 [classes.defaultWith]: !resizable

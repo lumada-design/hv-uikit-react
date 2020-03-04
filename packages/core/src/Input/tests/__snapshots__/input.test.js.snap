@@ -823,7 +823,6 @@ exports[`Input should not have the validation section 1`] = `
           Object {
             "adornmentButton": "HvInput-adornmentButton-478",
             "adornmentsBox": "HvInput-adornmentsBox-477",
-            "container": "HvInput-container-463",
             "icon": "HvInput-icon-479",
             "iconClear": "HvInput-iconClear-480",
             "infoIconContainer": "HvInput-infoIconContainer-474",
@@ -838,6 +837,7 @@ exports[`Input should not have the validation section 1`] = `
             "labelContainer": "HvInput-labelContainer-471",
             "labelDisabled": "HvInput-labelDisabled-473",
             "multiLine": "HvInput-multiLine-470",
+            "root": "HvInput-root-463",
             "suggestionList": "HvInput-suggestionList-482",
             "suggestionsContainer": "HvInput-suggestionsContainer-481",
             "textWarning": "HvInput-textWarning-476",
@@ -880,7 +880,7 @@ exports[`Input should not have the validation section 1`] = `
         validationType="none"
       >
         <div
-          className=""
+          className="HvInput-root-463"
           id="hv-input-7"
           onBlur={[Function]}
         >
@@ -1972,7 +1972,6 @@ exports[`Input should pass other props to the child input component 1`] = `
           Object {
             "adornmentButton": "HvInput-adornmentButton-632",
             "adornmentsBox": "HvInput-adornmentsBox-631",
-            "container": "HvInput-container-617",
             "icon": "HvInput-icon-633",
             "iconClear": "HvInput-iconClear-634",
             "infoIconContainer": "HvInput-infoIconContainer-628",
@@ -1987,6 +1986,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             "labelContainer": "HvInput-labelContainer-625",
             "labelDisabled": "HvInput-labelDisabled-627",
             "multiLine": "HvInput-multiLine-624",
+            "root": "HvInput-root-617",
             "suggestionList": "HvInput-suggestionList-636",
             "suggestionsContainer": "HvInput-suggestionsContainer-635",
             "textWarning": "HvInput-textWarning-630",
@@ -2033,7 +2033,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         validationType="none"
       >
         <div
-          className=""
+          className="HvInput-root-617"
           id="hv-input-9"
           onBlur={[Function]}
         >
@@ -3126,7 +3126,6 @@ exports[`Input should render correctly 1`] = `
           Object {
             "adornmentButton": "HvInput-adornmentButton-93",
             "adornmentsBox": "HvInput-adornmentsBox-92",
-            "container": "HvInput-container-78",
             "icon": "HvInput-icon-94",
             "iconClear": "HvInput-iconClear-95",
             "infoIconContainer": "HvInput-infoIconContainer-89",
@@ -3141,6 +3140,7 @@ exports[`Input should render correctly 1`] = `
             "labelContainer": "HvInput-labelContainer-86",
             "labelDisabled": "HvInput-labelDisabled-88",
             "multiLine": "HvInput-multiLine-85",
+            "root": "HvInput-root-78",
             "suggestionList": "HvInput-suggestionList-97",
             "suggestionsContainer": "HvInput-suggestionsContainer-96",
             "textWarning": "HvInput-textWarning-91",
@@ -3183,7 +3183,7 @@ exports[`Input should render correctly 1`] = `
         validationType="none"
       >
         <div
-          className=""
+          className="HvInput-root-78"
           id="hv-input-2"
           onBlur={[Function]}
         >

@@ -843,9 +843,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
             className=""
             classes={
               Object {
-                "container": "HvTimePickerUnitTimePicker-inputContainer-106",
                 "input": "HvTimePickerUnitTimePicker-unitTimeInput-101",
                 "inputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
+                "root": "HvTimePickerUnitTimePicker-inputContainer-106",
               }
             }
             customFixedIcon={null}
@@ -885,7 +885,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 Object {
                   "adornmentButton": "HvInput-adornmentButton-127",
                   "adornmentsBox": "HvInput-adornmentsBox-126",
-                  "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                   "icon": "HvInput-icon-128",
                   "iconClear": "HvInput-iconClear-129",
                   "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -900,6 +899,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   "labelContainer": "HvInput-labelContainer-120",
                   "labelDisabled": "HvInput-labelDisabled-122",
                   "multiLine": "HvInput-multiLine-119",
+                  "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                   "suggestionList": "HvInput-suggestionList-131",
                   "suggestionsContainer": "HvInput-suggestionsContainer-130",
                   "textWarning": "HvInput-textWarning-125",
@@ -936,7 +936,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               value={30}
             >
               <div
-                className=""
+                className="HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106"
                 id="hv-input-2"
                 onBlur={[Function]}
               >
@@ -961,7 +961,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         Object {
                           "adornmentButton": "HvInput-adornmentButton-127",
                           "adornmentsBox": "HvInput-adornmentsBox-126",
-                          "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                           "icon": "HvInput-icon-128",
                           "iconClear": "HvInput-iconClear-129",
                           "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -976,6 +975,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           "labelContainer": "HvInput-labelContainer-120",
                           "labelDisabled": "HvInput-labelDisabled-122",
                           "multiLine": "HvInput-multiLine-119",
+                          "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                           "suggestionList": "HvInput-suggestionList-131",
                           "suggestionsContainer": "HvInput-suggestionsContainer-130",
                           "textWarning": "HvInput-textWarning-125",
@@ -1035,7 +1035,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           Object {
                             "adornmentButton": "HvInput-adornmentButton-127",
                             "adornmentsBox": "HvInput-adornmentsBox-126",
-                            "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                             "icon": "HvInput-icon-128",
                             "iconClear": "HvInput-iconClear-129",
                             "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -1050,6 +1049,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             "labelContainer": "HvInput-labelContainer-120",
                             "labelDisabled": "HvInput-labelDisabled-122",
                             "multiLine": "HvInput-multiLine-119",
+                            "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                             "suggestionList": "HvInput-suggestionList-131",
                             "suggestionsContainer": "HvInput-suggestionsContainer-130",
                             "textWarning": "HvInput-textWarning-125",
@@ -1108,7 +1108,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             Object {
                               "adornmentButton": "HvInput-adornmentButton-127",
                               "adornmentsBox": "HvInput-adornmentsBox-126",
-                              "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                               "icon": "HvInput-icon-128",
                               "iconClear": "HvInput-iconClear-129",
                               "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -1123,6 +1122,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "labelContainer": "HvInput-labelContainer-120",
                               "labelDisabled": "HvInput-labelDisabled-122",
                               "multiLine": "HvInput-multiLine-119",
+                              "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                               "suggestionList": "HvInput-suggestionList-131",
                               "suggestionsContainer": "HvInput-suggestionsContainer-130",
                               "textWarning": "HvInput-textWarning-125",
@@ -1188,7 +1188,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               Object {
                                 "adornmentButton": "HvInput-adornmentButton-127",
                                 "adornmentsBox": "HvInput-adornmentsBox-126",
-                                "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                                 "icon": "HvInput-icon-128",
                                 "iconClear": "HvInput-iconClear-129",
                                 "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -1203,6 +1202,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "labelContainer": "HvInput-labelContainer-120",
                                 "labelDisabled": "HvInput-labelDisabled-122",
                                 "multiLine": "HvInput-multiLine-119",
+                                "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                                 "suggestionList": "HvInput-suggestionList-131",
                                 "suggestionsContainer": "HvInput-suggestionsContainer-130",
                                 "textWarning": "HvInput-textWarning-125",
@@ -1259,7 +1259,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               Object {
                                 "adornmentButton": "HvInput-adornmentButton-127",
                                 "adornmentsBox": "HvInput-adornmentsBox-126",
-                                "container": "HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106",
                                 "icon": "HvInput-icon-128",
                                 "iconClear": "HvInput-iconClear-129",
                                 "infoIconContainer": "HvInput-infoIconContainer-123",
@@ -1274,6 +1273,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "labelContainer": "HvInput-labelContainer-120",
                                 "labelDisabled": "HvInput-labelDisabled-122",
                                 "multiLine": "HvInput-multiLine-119",
+                                "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
                                 "suggestionList": "HvInput-suggestionList-131",
                                 "suggestionsContainer": "HvInput-suggestionsContainer-130",
                                 "textWarning": "HvInput-textWarning-125",

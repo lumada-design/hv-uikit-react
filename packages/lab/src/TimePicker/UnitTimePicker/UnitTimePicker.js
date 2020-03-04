@@ -131,7 +131,7 @@ class UnitTimePicker extends React.Component {
           className={classes.unitTime}
           classes={{
             input: classes.unitTimeInput,
-            container: classes.inputContainer,
+            root: classes.inputContainer,
             inputRoot: clsx(classes.unitTimeInputRoot, {
               [classes.unitTimeInputRootInvalid]: !isValid
             })

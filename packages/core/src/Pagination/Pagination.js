@@ -118,9 +118,9 @@ const Pagination = ({
                 id={`${internalId}-currentPage`}
                 labels={computedLabels}
                 classes={{
+                  root: classes.pageSizeInputContainer,
                   input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot,
-                  container: classes.pageSizeInputContainer
+                  inputRoot: classes.pageSizeInputRoot
                 }}
                 onChange={val => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
