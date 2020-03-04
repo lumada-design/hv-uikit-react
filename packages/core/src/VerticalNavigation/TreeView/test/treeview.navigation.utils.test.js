@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { NodeTreeNavigationUtils } from "../TreeView";
+import { NodeTreeNavigationUtils } from "../utils";
 
 describe("NodeTreeNavigationUtils", () => {
   const nodeMap = {

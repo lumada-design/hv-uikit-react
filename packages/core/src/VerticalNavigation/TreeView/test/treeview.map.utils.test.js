@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { NodeTreeMapUtils } from "../TreeView";
+import { NodeTreeMapUtils } from "../utils";
 
 describe("NodeTreeMapUtils", () => {
   let nodeMap;

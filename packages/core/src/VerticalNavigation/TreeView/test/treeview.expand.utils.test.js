@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { NodeTreeExpandUtils } from "../TreeView";
+import { NodeTreeExpandUtils } from "../utils";
 
 describe("NodeTreeExpandUtils", () => {
   const nodeMap = {
