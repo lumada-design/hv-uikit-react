@@ -19,19 +19,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm config and install
       run: |
-        echo ${{github.event}}
+        echo ${{github.event_name}}
         npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
         npm config list
         npm ci
         
     - name: npm bootstrap and test
-      if: github.event == 'push'
+      if: github.event_name == 'push'
       run: |
         npm run bootstrap
         npm run test
       
     - name: Jest Code Coverage Report
-      if: github.event == 'pull_request'
+      if: github.event_name == 'pull_request'
       uses: ziishaned/jest-reporter-action@0.1.1
       with:
         # Github token
