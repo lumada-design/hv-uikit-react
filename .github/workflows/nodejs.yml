@@ -19,6 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm config and install
       run: |
+        echo ${{github.event}}
         npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
         npm config list
         npm ci
