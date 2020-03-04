@@ -8,7 +8,6 @@ import Card, {
 } from "@hv/uikit-react-core/dist/Card";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Grid from "@hv/uikit-react-core/dist/Grid";
-import login from "../../stories/5-templates/resources/login.png";
 
 /*
 This file is used to present a index of the existing templates in the Storybook. It doesn't represent a template 
@@ -42,7 +41,7 @@ const mediaStyle = theme => ({
   }
 });
 
-const CardMedia = withStyles(mediaStyle, { withTheme: true })(HvCardMedia);
+const CardMedia = withStyles(mediaStyle)(HvCardMedia);
 
 const SingleContent = ({ classes, labels }) => (
   <>
@@ -102,4 +101,4 @@ const Templates = ({ classes, containers, description }) => (
     </Grid>
   </div>
 );
-export default withStyles(styles, { withTheme: true })(Templates);
+export default withStyles(styles)(Templates);

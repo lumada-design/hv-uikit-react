@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 import {
   Alert,
   BarChart,
@@ -40,7 +40,8 @@ const navigationDepth = arr =>
     : 0;
 
 // eslint-disable-next-line react/prop-types
-const NavigationTemplate = ({ theme }) => {
+const NavigationTemplate = () => {
+  const theme = useTheme();
   const [selection, setSelection] = useState("01");
   const [expanded, setExpanded] = useState(false);
   const [page, setPage] = useState(navigationData[0]);

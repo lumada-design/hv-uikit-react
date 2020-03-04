@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-const About = ({ classes, config }) => (
+const About = ({ classes }) => (
   <>
     <div className={classes.title}>About lab</div>
     <div className={classes.block1}>
@@ -40,4 +40,4 @@ const About = ({ classes, config }) => (
   </>
 );
 
-export default withStyles(styles, { withTheme: true })(About);
+export default withStyles(styles)(About);

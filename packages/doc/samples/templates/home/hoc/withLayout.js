@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
-import withStyles from "@material-ui/core/styles/withStyles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
 import classNames from "classnames";
 import isEmpty from "lodash/isEmpty";
 import Header from "../components/Header";
@@ -48,8 +46,9 @@ const withLayout = (
   hasAnchor = true,
   hasHeader = true,
   hasNotification = true
-) => {
-  const withLayout = ({ classes, theme }) => {
+) =>
+  withStyles(styles)(({ classes }) => {
+    const theme = useTheme();
     const [isOpen, setIsOpen] = useState(!hasAnchor);
     const [headerSelection, setHeaderSelection] = useState("01");
     const [verticalSelection, setVerticalSelection] = useState("01-01-01");
@@ -121,8 +120,6 @@ const withLayout = (
         </NavContext.Provider>
       </>
     );
-  };
-  return withStyles(styles, { withTheme: true })(withLayout);
-};
+  });
 
 export default withLayout;

@@ -5,7 +5,6 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 
-
 const inputTextConfiguration = {
   inputLabel: "Default",
   placeholder: "Placeholder value",
@@ -18,7 +17,7 @@ const inputStyles = theme => ({
   }
 });
 
-const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+const CustomInput = withStyles(inputStyles)(HvInput);
 
 const groups = [
   {
@@ -147,7 +146,7 @@ const buttonStyles = theme => ({
   }
 });
 
-const CustomButton = withStyles(buttonStyles, { withTheme: true })(HvButton);
+const CustomButton = withStyles(buttonStyles)(HvButton);
 
 const footerContent = [
   <CustomButton
