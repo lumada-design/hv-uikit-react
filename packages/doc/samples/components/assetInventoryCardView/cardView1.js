@@ -1,6 +1,6 @@
 import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
-import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
+import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 import compressor from "../card/resources/compressor.png";
 import leaf from "../card/resources/leaf.png";
 
@@ -91,7 +91,7 @@ export default (
   <div>
     <CardView
       id="id1"
-      icon={<Icon />}
+      icon={<Tool />}
       values={values()}
       viewConfiguration={viewConfiguration}
     />
