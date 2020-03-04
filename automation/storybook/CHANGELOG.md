@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.10.0...@hv/uikit-react-automation-storybook@2.0.0-next.1) (2020-03-04)
+
+
+### Bug Fixes
+
+* **material:** fixing error of palette not found ([#1177](https://github.com/pentaho/hv-uikit-react/issues/1177)) ([3eca230](https://github.com/pentaho/hv-uikit-react/commit/3eca230b1873a1133406d4f4cae2da304ddf74ef))
+
+
+### Features
+
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+
+
+
+
+
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.8...@hv/uikit-react-automation-storybook@2.0.0-next.0) (2020-02-14)
 # [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.9.0...@hv/uikit-react-automation-storybook@1.10.0) (2020-02-28)
 

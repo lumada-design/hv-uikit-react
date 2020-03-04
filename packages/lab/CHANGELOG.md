@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.1...@hv/uikit-react-lab@2.0.0-next.1) (2020-03-04)
+
+
+### Bug Fixes
+
+* **material:** fix test with material not found ([4c004ac](https://github.com/pentaho/hv-uikit-react/commit/4c004ac20ece5936a22269a07d64340322a6e19a))
+* **material4:** tests. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([40f4bed](https://github.com/pentaho/hv-uikit-react/commit/40f4bedc090a7a1392d1eb2ac9441fd5adffe3d9))
+
+
+### Features
+
+* **deprecations:** remove deprecated lab components. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([410cf5b](https://github.com/pentaho/hv-uikit-react/commit/410cf5be65e72d201d08235e5f93ee2f46af68e0))
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **input:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([178d84e](https://github.com/pentaho/hv-uikit-react/commit/178d84e0a1fe70f48e39257ed43166f3662c2cb7))
+* **list:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([daca806](https://github.com/pentaho/hv-uikit-react/commit/daca806da382c9bc81139207d3ba4fd30d4d7ae1))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **theme:** rename components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([1995ab0](https://github.com/pentaho/hv-uikit-react/commit/1995ab01c7dc7c78cb55a6726acae4f0d7effd56))
+
+
+
+
+
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.5...@hv/uikit-react-lab@2.0.0-next.0) (2020-02-14)
 ## [1.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.0...@hv/uikit-react-lab@1.18.1) (2020-02-28)
 
