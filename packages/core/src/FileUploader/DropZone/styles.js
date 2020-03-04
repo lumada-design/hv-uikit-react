@@ -1,6 +1,5 @@
 const styles = theme => ({
-  root: {},
-  dropzoneContainer: {
+  dropZoneContainer: {
     position: "relative",
     width: "100%",
     display: "flex",
@@ -12,8 +11,8 @@ const styles = theme => ({
       border: `1px dotted ${theme.hv.palette.accent.acce1}`
     }
   },
-  dropzoneContainerDisabled: {
-    "&$dropzoneContainer": {
+  dropZoneContainerDisabled: {
+    "&$dropZoneContainer": {
       background: `${theme.hv.palette.atmosphere.atmo4}`,
       border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
       cursor: "not-allowed",
@@ -49,7 +48,7 @@ const styles = theme => ({
     margin: `${theme.hv.spacing.md}px auto`,
     minHeight: 40
   },
-  dropzoneLabelsGroup: {
+  dropZoneLabelsGroup: {
     display: "flex",
     marginBottom: 5,
     "& label:nth-child(1)": {
@@ -60,12 +59,12 @@ const styles = theme => ({
       marginLeft: "auto"
     }
   },
-  dropzoneAreaLabels: {
+  dropZoneAreaLabels: {
     display: "flex",
     width: 115,
     margin: "auto"
   },
-  dropzoneAreaIcon: {
+  dropZoneAreaIcon: {
     margin: "auto",
     marginRight: `${theme.hv.spacing.sm}px`
   },

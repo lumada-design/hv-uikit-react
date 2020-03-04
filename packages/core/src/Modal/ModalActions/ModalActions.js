@@ -38,6 +38,10 @@ HvModalActions.propTypes = {
      * Style applied to the root of the component (container for the actions).
      */
     root: PropTypes.string,
+    /**
+     * Style applied to the root of the component if disableSpacing is off.
+     */
+    spacing: PropTypes.string
   }).isRequired,
   /**
    * Actions of the modal.

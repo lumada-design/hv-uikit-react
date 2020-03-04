@@ -221,7 +221,11 @@ BreadCrumb.propTypes = {
     /**
      *  Styles applied to the separator.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
+    /**
+     *  Styles applied to the list.
+     */
+    orderedList: PropTypes.string
   }).isRequired,
   /**
    * Should use the router.

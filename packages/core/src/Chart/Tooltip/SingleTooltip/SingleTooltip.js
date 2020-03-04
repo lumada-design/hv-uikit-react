@@ -33,7 +33,7 @@ SingleTooltip.propTypes = {
     /**
      * Styles applied to the root class.
      */
-    rootTooltip: PropTypes.string,
+    root: PropTypes.string,
     /**
      * Styles applied to the separator between title and value.
      */

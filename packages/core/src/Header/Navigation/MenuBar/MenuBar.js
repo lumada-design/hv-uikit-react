@@ -48,12 +48,30 @@ MenuBar.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to the root.
+     */
     root: PropTypes.string,
+    /**
+     * Styles applied to the menu bar.
+     */
     menubar: PropTypes.string,
+    /**
+     * Styles applied to the menu.
+     */
     menu: PropTypes.string,
+    /**
+     * Styles applied when in menu mode.
+     */
     hidden: PropTypes.string,
+    /**
+     * Styles applied when active.
+     */
     active: PropTypes.string,
-    wrapper: PropTypes.string
+    /**
+     * Styles applied to the list.
+     */
+    list: PropTypes.string
   }).isRequired,
   /**
    * Id to be applied to the root node.

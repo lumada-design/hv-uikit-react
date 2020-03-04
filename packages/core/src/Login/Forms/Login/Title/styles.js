@@ -1,5 +1,5 @@
 const styles = () => ({
-  logoContainer: {
+  root: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

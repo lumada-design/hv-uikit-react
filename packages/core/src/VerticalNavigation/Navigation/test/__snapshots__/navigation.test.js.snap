@@ -973,19 +973,19 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     className=""
                     classes={
                       Object {
-                        "collapsed": "HvVerticalNavigationreeViewItem-collapsed-21",
-                        "content": "HvVerticalNavigationreeViewItem-content-27",
-                        "disabled": "HvVerticalNavigationreeViewItem-disabled-18",
-                        "expanded": "HvVerticalNavigationreeViewItem-expanded-22",
-                        "group": "HvVerticalNavigationreeViewItem-group-16",
-                        "noIcon": "HvVerticalNavigationreeViewItem-noIcon-25",
-                        "node": "HvVerticalNavigationreeViewItem-node-17",
-                        "root": "HvVerticalNavigationreeViewItem-root-15",
-                        "selectable": "HvVerticalNavigationreeViewItem-selectable-19",
-                        "selected": "HvVerticalNavigationreeViewItem-selected-23",
-                        "unselectable": "HvVerticalNavigationreeViewItem-unselectable-20",
-                        "unselected": "HvVerticalNavigationreeViewItem-unselected-24",
-                        "withIcon": "HvVerticalNavigationreeViewItem-withIcon-26",
+                        "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-21",
+                        "content": "HvVerticalNavigationTreeViewItem-content-27",
+                        "disabled": "HvVerticalNavigationTreeViewItem-disabled-18",
+                        "expanded": "HvVerticalNavigationTreeViewItem-expanded-22",
+                        "group": "HvVerticalNavigationTreeViewItem-group-16",
+                        "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-25",
+                        "node": "HvVerticalNavigationTreeViewItem-node-17",
+                        "root": "HvVerticalNavigationTreeViewItem-root-15",
+                        "selectable": "HvVerticalNavigationTreeViewItem-selectable-19",
+                        "selected": "HvVerticalNavigationTreeViewItem-selected-23",
+                        "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-20",
+                        "unselected": "HvVerticalNavigationTreeViewItem-unselected-24",
+                        "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-26",
                       }
                     }
                     collapseIcon={null}
@@ -1036,18 +1036,18 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     selectable={null}
                   >
                     <li
-                      className="HvVerticalNavigationreeViewItem-node-17 HvVerticalNavigationreeViewItem-selectable-19 HvVerticalNavigationreeViewItem-unselected-24"
+                      className="HvVerticalNavigationTreeViewItem-root-15 HvVerticalNavigationTreeViewItem-selectable-19 HvVerticalNavigationTreeViewItem-unselected-24"
                       data-hasicon={true}
                       id="hv-verticalnavigation-treeviewitem2"
                     >
                       <WithStyles(ForwardRef)
-                        className="HvVerticalNavigationreeViewItem-content-27"
+                        className="HvVerticalNavigationTreeViewItem-content-27"
                         component="div"
                         id="hv-verticalnavigation-treeviewitem2-button"
                         innerRef={
                           Object {
                             "current": <div
-                              class="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationreeViewItem-content-27"
+                              class="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationTreeViewItem-content-27"
                               id="hv-verticalnavigation-treeviewitem2-button"
                               role="button"
                               tabindex="0"
@@ -1082,7 +1082,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         variant="normalText"
                       >
                         <ForwardRef
-                          className="HvVerticalNavigationreeViewItem-content-27"
+                          className="HvVerticalNavigationTreeViewItem-content-27"
                           classes={
                             Object {
                               "3xlTitle": "HvTypography-3xlTitle-30",
@@ -1122,7 +1122,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           variant="normalText"
                         >
                           <div
-                            className="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationreeViewItem-content-27"
+                            className="HvTypography-normalText-39 HvTypography-baseFontFamily-51 HvTypography-margin-52 HvVerticalNavigationTreeViewItem-content-27"
                             id="hv-verticalnavigation-treeviewitem2-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}

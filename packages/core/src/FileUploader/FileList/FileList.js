@@ -48,7 +48,7 @@ FileList.propTypes = {
   /**
    * The files to upload.
    */
-  list: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape({})),
   /**
    * Callback fired when file is removed from list.
    */

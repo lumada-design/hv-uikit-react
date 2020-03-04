@@ -798,14 +798,13 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
       <File
         classes={
           Object {
-            "fail": "HvFileUploaderFile-fail-61",
-            "icon": "HvFileUploaderFile-icon-59",
-            "iconContainer": "HvFileUploaderFile-iconContainer-62",
-            "progressText": "HvFileUploaderFile-progressText-58",
-            "progressbar": "HvFileUploaderFile-progressbar-57",
-            "progressbarBack": "HvFileUploaderFile-progressbarBack-56",
-            "removeButton": "HvFileUploaderFile-removeButton-60",
-            "textTruncation": "HvFileUploaderFile-textTruncation-63",
+            "fail": "HvFileUploaderFile-fail-60",
+            "icon": "HvFileUploaderFile-icon-58",
+            "nameText": "HvFileUploaderFile-nameText-61",
+            "progressTextContainer": "HvFileUploaderFile-progressTextContainer-57",
+            "progressbar": "HvFileUploaderFile-progressbar-56",
+            "progressbarBack": "HvFileUploaderFile-progressbarBack-55",
+            "removeButton": "HvFileUploaderFile-removeButton-59",
           }
         }
         data={
@@ -826,24 +825,24 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
         unit="mb"
       >
         <WithStyles(Success)
-          className="HvFileUploaderFile-icon-59"
+          className="HvFileUploaderFile-icon-58"
           color="sema1"
         >
           <Success
-            className="HvFileUploaderFile-icon-59"
+            className="HvFileUploaderFile-icon-58"
             classes={
               Object {
-                "root": "HvIconSuccess-root-64",
-                "rootL": "HvIconSuccess-rootL-68",
-                "rootM": "HvIconSuccess-rootM-67",
-                "rootS": "HvIconSuccess-rootS-66",
-                "rootXs": "HvIconSuccess-rootXs-65",
+                "root": "HvIconSuccess-root-62",
+                "rootL": "HvIconSuccess-rootL-66",
+                "rootM": "HvIconSuccess-rootM-65",
+                "rootS": "HvIconSuccess-rootS-64",
+                "rootXs": "HvIconSuccess-rootXs-63",
               }
             }
             color="sema1"
           >
             <div
-              className="HvFileUploaderFile-icon-59 HvIconSuccess-root-64 HvIconSuccess-rootS-66"
+              className="HvFileUploaderFile-icon-58 HvIconSuccess-root-62 HvIconSuccess-rootS-64"
             >
               <svg
                 focusable={false}
@@ -867,40 +866,40 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           </Success>
         </WithStyles(Success)>
         <WithStyles(ForwardRef)
-          className="HvFileUploaderFile-textTruncation-63"
+          className="HvFileUploaderFile-nameText-61"
           component={null}
           paragraph={false}
           variant="sText"
         >
           <ForwardRef
-            className="HvFileUploaderFile-textTruncation-63"
+            className="HvFileUploaderFile-nameText-61"
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle-71",
-                "4xlTitle": "HvTypography-4xlTitle-70",
-                "5xlTitle": "HvTypography-5xlTitle-69",
-                "baseFontFamily": "HvTypography-baseFontFamily-92",
-                "disabledButtonText": "HvTypography-disabledButtonText-83",
-                "disabledText": "HvTypography-disabledText-90",
-                "highlightText": "HvTypography-highlightText-79",
-                "infoText": "HvTypography-infoText-88",
-                "inlineLink": "HvTypography-inlineLink-82",
-                "lTitle": "HvTypography-lTitle-74",
-                "labelText": "HvTypography-labelText-87",
-                "mTitle": "HvTypography-mTitle-75",
-                "margin": "HvTypography-margin-93",
-                "normalText": "HvTypography-normalText-80",
-                "placeholderText": "HvTypography-placeholderText-84",
-                "sLink": "HvTypography-sLink-89",
-                "sText": "HvTypography-sText-86",
-                "sTitle": "HvTypography-sTitle-76",
-                "selectedNavText": "HvTypography-selectedNavText-85",
-                "selectedText": "HvTypography-selectedText-81",
-                "vizText": "HvTypography-vizText-91",
-                "xlTitle": "HvTypography-xlTitle-73",
-                "xsTitle": "HvTypography-xsTitle-77",
-                "xxlTitle": "HvTypography-xxlTitle-72",
-                "xxsTitle": "HvTypography-xxsTitle-78",
+                "3xlTitle": "HvTypography-3xlTitle-69",
+                "4xlTitle": "HvTypography-4xlTitle-68",
+                "5xlTitle": "HvTypography-5xlTitle-67",
+                "baseFontFamily": "HvTypography-baseFontFamily-90",
+                "disabledButtonText": "HvTypography-disabledButtonText-81",
+                "disabledText": "HvTypography-disabledText-88",
+                "highlightText": "HvTypography-highlightText-77",
+                "infoText": "HvTypography-infoText-86",
+                "inlineLink": "HvTypography-inlineLink-80",
+                "lTitle": "HvTypography-lTitle-72",
+                "labelText": "HvTypography-labelText-85",
+                "mTitle": "HvTypography-mTitle-73",
+                "margin": "HvTypography-margin-91",
+                "normalText": "HvTypography-normalText-78",
+                "placeholderText": "HvTypography-placeholderText-82",
+                "sLink": "HvTypography-sLink-87",
+                "sText": "HvTypography-sText-84",
+                "sTitle": "HvTypography-sTitle-74",
+                "selectedNavText": "HvTypography-selectedNavText-83",
+                "selectedText": "HvTypography-selectedText-79",
+                "vizText": "HvTypography-vizText-89",
+                "xlTitle": "HvTypography-xlTitle-71",
+                "xsTitle": "HvTypography-xsTitle-75",
+                "xxlTitle": "HvTypography-xxlTitle-70",
+                "xxsTitle": "HvTypography-xxsTitle-76",
               }
             }
             component={null}
@@ -908,14 +907,14 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             variant="sText"
           >
             <p
-              className="HvTypography-sText-86 HvTypography-baseFontFamily-92 HvTypography-margin-93 HvFileUploaderFile-textTruncation-63"
+              className="HvTypography-sText-84 HvTypography-baseFontFamily-90 HvTypography-margin-91 HvFileUploaderFile-nameText-61"
             >
               somefile.png
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
         <span
-          className="HvFileUploaderFile-progressText-58"
+          className="HvFileUploaderFile-progressTextContainer-57"
         >
           <WithStyles(ForwardRef)
             component={null}
@@ -925,31 +924,31 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-71",
-                  "4xlTitle": "HvTypography-4xlTitle-70",
-                  "5xlTitle": "HvTypography-5xlTitle-69",
-                  "baseFontFamily": "HvTypography-baseFontFamily-92",
-                  "disabledButtonText": "HvTypography-disabledButtonText-83",
-                  "disabledText": "HvTypography-disabledText-90",
-                  "highlightText": "HvTypography-highlightText-79",
-                  "infoText": "HvTypography-infoText-88",
-                  "inlineLink": "HvTypography-inlineLink-82",
-                  "lTitle": "HvTypography-lTitle-74",
-                  "labelText": "HvTypography-labelText-87",
-                  "mTitle": "HvTypography-mTitle-75",
-                  "margin": "HvTypography-margin-93",
-                  "normalText": "HvTypography-normalText-80",
-                  "placeholderText": "HvTypography-placeholderText-84",
-                  "sLink": "HvTypography-sLink-89",
-                  "sText": "HvTypography-sText-86",
-                  "sTitle": "HvTypography-sTitle-76",
-                  "selectedNavText": "HvTypography-selectedNavText-85",
-                  "selectedText": "HvTypography-selectedText-81",
-                  "vizText": "HvTypography-vizText-91",
-                  "xlTitle": "HvTypography-xlTitle-73",
-                  "xsTitle": "HvTypography-xsTitle-77",
-                  "xxlTitle": "HvTypography-xxlTitle-72",
-                  "xxsTitle": "HvTypography-xxsTitle-78",
+                  "3xlTitle": "HvTypography-3xlTitle-69",
+                  "4xlTitle": "HvTypography-4xlTitle-68",
+                  "5xlTitle": "HvTypography-5xlTitle-67",
+                  "baseFontFamily": "HvTypography-baseFontFamily-90",
+                  "disabledButtonText": "HvTypography-disabledButtonText-81",
+                  "disabledText": "HvTypography-disabledText-88",
+                  "highlightText": "HvTypography-highlightText-77",
+                  "infoText": "HvTypography-infoText-86",
+                  "inlineLink": "HvTypography-inlineLink-80",
+                  "lTitle": "HvTypography-lTitle-72",
+                  "labelText": "HvTypography-labelText-85",
+                  "mTitle": "HvTypography-mTitle-73",
+                  "margin": "HvTypography-margin-91",
+                  "normalText": "HvTypography-normalText-78",
+                  "placeholderText": "HvTypography-placeholderText-82",
+                  "sLink": "HvTypography-sLink-87",
+                  "sText": "HvTypography-sText-84",
+                  "sTitle": "HvTypography-sTitle-74",
+                  "selectedNavText": "HvTypography-selectedNavText-83",
+                  "selectedText": "HvTypography-selectedText-79",
+                  "vizText": "HvTypography-vizText-89",
+                  "xlTitle": "HvTypography-xlTitle-71",
+                  "xsTitle": "HvTypography-xsTitle-75",
+                  "xxlTitle": "HvTypography-xxlTitle-70",
+                  "xxsTitle": "HvTypography-xxsTitle-76",
                 }
               }
               component={null}
@@ -957,7 +956,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="HvTypography-labelText-87 HvTypography-baseFontFamily-92 HvTypography-margin-93"
+                className="HvTypography-labelText-85 HvTypography-baseFontFamily-90 HvTypography-margin-91"
               >
                 25.00B progressConjunctionLabel
               </p>
@@ -971,31 +970,31 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-71",
-                  "4xlTitle": "HvTypography-4xlTitle-70",
-                  "5xlTitle": "HvTypography-5xlTitle-69",
-                  "baseFontFamily": "HvTypography-baseFontFamily-92",
-                  "disabledButtonText": "HvTypography-disabledButtonText-83",
-                  "disabledText": "HvTypography-disabledText-90",
-                  "highlightText": "HvTypography-highlightText-79",
-                  "infoText": "HvTypography-infoText-88",
-                  "inlineLink": "HvTypography-inlineLink-82",
-                  "lTitle": "HvTypography-lTitle-74",
-                  "labelText": "HvTypography-labelText-87",
-                  "mTitle": "HvTypography-mTitle-75",
-                  "margin": "HvTypography-margin-93",
-                  "normalText": "HvTypography-normalText-80",
-                  "placeholderText": "HvTypography-placeholderText-84",
-                  "sLink": "HvTypography-sLink-89",
-                  "sText": "HvTypography-sText-86",
-                  "sTitle": "HvTypography-sTitle-76",
-                  "selectedNavText": "HvTypography-selectedNavText-85",
-                  "selectedText": "HvTypography-selectedText-81",
-                  "vizText": "HvTypography-vizText-91",
-                  "xlTitle": "HvTypography-xlTitle-73",
-                  "xsTitle": "HvTypography-xsTitle-77",
-                  "xxlTitle": "HvTypography-xxlTitle-72",
-                  "xxsTitle": "HvTypography-xxsTitle-78",
+                  "3xlTitle": "HvTypography-3xlTitle-69",
+                  "4xlTitle": "HvTypography-4xlTitle-68",
+                  "5xlTitle": "HvTypography-5xlTitle-67",
+                  "baseFontFamily": "HvTypography-baseFontFamily-90",
+                  "disabledButtonText": "HvTypography-disabledButtonText-81",
+                  "disabledText": "HvTypography-disabledText-88",
+                  "highlightText": "HvTypography-highlightText-77",
+                  "infoText": "HvTypography-infoText-86",
+                  "inlineLink": "HvTypography-inlineLink-80",
+                  "lTitle": "HvTypography-lTitle-72",
+                  "labelText": "HvTypography-labelText-85",
+                  "mTitle": "HvTypography-mTitle-73",
+                  "margin": "HvTypography-margin-91",
+                  "normalText": "HvTypography-normalText-78",
+                  "placeholderText": "HvTypography-placeholderText-82",
+                  "sLink": "HvTypography-sLink-87",
+                  "sText": "HvTypography-sText-84",
+                  "sTitle": "HvTypography-sTitle-74",
+                  "selectedNavText": "HvTypography-selectedNavText-83",
+                  "selectedText": "HvTypography-selectedText-79",
+                  "vizText": "HvTypography-vizText-89",
+                  "xlTitle": "HvTypography-xlTitle-71",
+                  "xsTitle": "HvTypography-xsTitle-75",
+                  "xxlTitle": "HvTypography-xxlTitle-70",
+                  "xxsTitle": "HvTypography-xxsTitle-76",
                 }
               }
               component={null}
@@ -1003,7 +1002,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="HvTypography-sText-86 HvTypography-baseFontFamily-92 HvTypography-margin-93"
+                className="HvTypography-sText-84 HvTypography-baseFontFamily-90 HvTypography-margin-91"
               >
                  875.00B
               </p>
@@ -1013,14 +1012,14 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
         <WithStyles(ForwardRef(IconButton))
           aria-label="progressConjunctionLabel"
           category="ghost"
-          className="HvFileUploaderFile-removeButton-60"
+          className="HvFileUploaderFile-removeButton-59"
           id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <ForwardRef(IconButton)
             aria-label="progressConjunctionLabel"
             category="ghost"
-            className="HvFileUploaderFile-removeButton-60"
+            className="HvFileUploaderFile-removeButton-59"
             classes={
               Object {
                 "colorInherit": "MuiIconButton-colorInherit",
@@ -1041,7 +1040,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               aria-label="progressConjunctionLabel"
               category="ghost"
               centerRipple={true}
-              className="MuiIconButton-root HvFileUploaderFile-removeButton-60"
+              className="MuiIconButton-root HvFileUploaderFile-removeButton-59"
               disabled={false}
               focusRipple={true}
               id="hv-file-2-remove-button"
@@ -1051,7 +1050,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 aria-label="progressConjunctionLabel"
                 category="ghost"
                 centerRipple={true}
-                className="MuiIconButton-root HvFileUploaderFile-removeButton-60"
+                className="MuiIconButton-root HvFileUploaderFile-removeButton-59"
                 classes={
                   Object {
                     "disabled": "Mui-disabled",
@@ -1068,7 +1067,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 <button
                   aria-label="progressConjunctionLabel"
                   category="ghost"
-                  className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-60"
+                  className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-59"
                   disabled={false}
                   id="hv-file-2-remove-button"
                   onBlur={[Function]}
@@ -1090,24 +1089,22 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     className="MuiIconButton-label"
                   >
                     <WithStyles(Close)
-                      className="HvFileUploaderFile-iconContainer-62"
                       iconSize="XS"
                     >
                       <Close
-                        className="HvFileUploaderFile-iconContainer-62"
                         classes={
                           Object {
-                            "root": "HvIconClose-root-106",
-                            "rootL": "HvIconClose-rootL-110",
-                            "rootM": "HvIconClose-rootM-109",
-                            "rootS": "HvIconClose-rootS-108",
-                            "rootXs": "HvIconClose-rootXs-107",
+                            "root": "HvIconClose-root-104",
+                            "rootL": "HvIconClose-rootL-108",
+                            "rootM": "HvIconClose-rootM-107",
+                            "rootS": "HvIconClose-rootS-106",
+                            "rootXs": "HvIconClose-rootXs-105",
                           }
                         }
                         iconSize="XS"
                       >
                         <div
-                          className="HvFileUploaderFile-iconContainer-62 HvIconClose-root-106 HvIconClose-rootXs-107"
+                          className="HvIconClose-root-104 HvIconClose-rootXs-105"
                         >
                           <svg
                             focusable={false}
@@ -1936,14 +1933,13 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
       <File
         classes={
           Object {
-            "fail": "HvFileUploaderFile-fail-61",
-            "icon": "HvFileUploaderFile-icon-59",
-            "iconContainer": "HvFileUploaderFile-iconContainer-62",
-            "progressText": "HvFileUploaderFile-progressText-58",
-            "progressbar": "HvFileUploaderFile-progressbar-57",
-            "progressbarBack": "HvFileUploaderFile-progressbarBack-56",
-            "removeButton": "HvFileUploaderFile-removeButton-60",
-            "textTruncation": "HvFileUploaderFile-textTruncation-63",
+            "fail": "HvFileUploaderFile-fail-60",
+            "icon": "HvFileUploaderFile-icon-58",
+            "nameText": "HvFileUploaderFile-nameText-61",
+            "progressTextContainer": "HvFileUploaderFile-progressTextContainer-57",
+            "progressbar": "HvFileUploaderFile-progressbar-56",
+            "progressbarBack": "HvFileUploaderFile-progressbarBack-55",
+            "removeButton": "HvFileUploaderFile-removeButton-59",
           }
         }
         data={
@@ -1964,24 +1960,24 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
         unit="mb"
       >
         <WithStyles(Success)
-          className="HvFileUploaderFile-icon-59"
+          className="HvFileUploaderFile-icon-58"
           color="sema1"
         >
           <Success
-            className="HvFileUploaderFile-icon-59"
+            className="HvFileUploaderFile-icon-58"
             classes={
               Object {
-                "root": "HvIconSuccess-root-64",
-                "rootL": "HvIconSuccess-rootL-68",
-                "rootM": "HvIconSuccess-rootM-67",
-                "rootS": "HvIconSuccess-rootS-66",
-                "rootXs": "HvIconSuccess-rootXs-65",
+                "root": "HvIconSuccess-root-62",
+                "rootL": "HvIconSuccess-rootL-66",
+                "rootM": "HvIconSuccess-rootM-65",
+                "rootS": "HvIconSuccess-rootS-64",
+                "rootXs": "HvIconSuccess-rootXs-63",
               }
             }
             color="sema1"
           >
             <div
-              className="HvFileUploaderFile-icon-59 HvIconSuccess-root-64 HvIconSuccess-rootS-66"
+              className="HvFileUploaderFile-icon-58 HvIconSuccess-root-62 HvIconSuccess-rootS-64"
             >
               <svg
                 focusable={false}
@@ -2005,40 +2001,40 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           </Success>
         </WithStyles(Success)>
         <WithStyles(ForwardRef)
-          className="HvFileUploaderFile-textTruncation-63"
+          className="HvFileUploaderFile-nameText-61"
           component={null}
           paragraph={false}
           variant="sText"
         >
           <ForwardRef
-            className="HvFileUploaderFile-textTruncation-63"
+            className="HvFileUploaderFile-nameText-61"
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle-71",
-                "4xlTitle": "HvTypography-4xlTitle-70",
-                "5xlTitle": "HvTypography-5xlTitle-69",
-                "baseFontFamily": "HvTypography-baseFontFamily-92",
-                "disabledButtonText": "HvTypography-disabledButtonText-83",
-                "disabledText": "HvTypography-disabledText-90",
-                "highlightText": "HvTypography-highlightText-79",
-                "infoText": "HvTypography-infoText-88",
-                "inlineLink": "HvTypography-inlineLink-82",
-                "lTitle": "HvTypography-lTitle-74",
-                "labelText": "HvTypography-labelText-87",
-                "mTitle": "HvTypography-mTitle-75",
-                "margin": "HvTypography-margin-93",
-                "normalText": "HvTypography-normalText-80",
-                "placeholderText": "HvTypography-placeholderText-84",
-                "sLink": "HvTypography-sLink-89",
-                "sText": "HvTypography-sText-86",
-                "sTitle": "HvTypography-sTitle-76",
-                "selectedNavText": "HvTypography-selectedNavText-85",
-                "selectedText": "HvTypography-selectedText-81",
-                "vizText": "HvTypography-vizText-91",
-                "xlTitle": "HvTypography-xlTitle-73",
-                "xsTitle": "HvTypography-xsTitle-77",
-                "xxlTitle": "HvTypography-xxlTitle-72",
-                "xxsTitle": "HvTypography-xxsTitle-78",
+                "3xlTitle": "HvTypography-3xlTitle-69",
+                "4xlTitle": "HvTypography-4xlTitle-68",
+                "5xlTitle": "HvTypography-5xlTitle-67",
+                "baseFontFamily": "HvTypography-baseFontFamily-90",
+                "disabledButtonText": "HvTypography-disabledButtonText-81",
+                "disabledText": "HvTypography-disabledText-88",
+                "highlightText": "HvTypography-highlightText-77",
+                "infoText": "HvTypography-infoText-86",
+                "inlineLink": "HvTypography-inlineLink-80",
+                "lTitle": "HvTypography-lTitle-72",
+                "labelText": "HvTypography-labelText-85",
+                "mTitle": "HvTypography-mTitle-73",
+                "margin": "HvTypography-margin-91",
+                "normalText": "HvTypography-normalText-78",
+                "placeholderText": "HvTypography-placeholderText-82",
+                "sLink": "HvTypography-sLink-87",
+                "sText": "HvTypography-sText-84",
+                "sTitle": "HvTypography-sTitle-74",
+                "selectedNavText": "HvTypography-selectedNavText-83",
+                "selectedText": "HvTypography-selectedText-79",
+                "vizText": "HvTypography-vizText-89",
+                "xlTitle": "HvTypography-xlTitle-71",
+                "xsTitle": "HvTypography-xsTitle-75",
+                "xxlTitle": "HvTypography-xxlTitle-70",
+                "xxsTitle": "HvTypography-xxsTitle-76",
               }
             }
             component={null}
@@ -2046,14 +2042,14 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             variant="sText"
           >
             <p
-              className="HvTypography-sText-86 HvTypography-baseFontFamily-92 HvTypography-margin-93 HvFileUploaderFile-textTruncation-63"
+              className="HvTypography-sText-84 HvTypography-baseFontFamily-90 HvTypography-margin-91 HvFileUploaderFile-nameText-61"
             >
               somefile.png
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
         <span
-          className="HvFileUploaderFile-progressText-58"
+          className="HvFileUploaderFile-progressTextContainer-57"
         >
           <WithStyles(ForwardRef)
             component={null}
@@ -2063,31 +2059,31 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-71",
-                  "4xlTitle": "HvTypography-4xlTitle-70",
-                  "5xlTitle": "HvTypography-5xlTitle-69",
-                  "baseFontFamily": "HvTypography-baseFontFamily-92",
-                  "disabledButtonText": "HvTypography-disabledButtonText-83",
-                  "disabledText": "HvTypography-disabledText-90",
-                  "highlightText": "HvTypography-highlightText-79",
-                  "infoText": "HvTypography-infoText-88",
-                  "inlineLink": "HvTypography-inlineLink-82",
-                  "lTitle": "HvTypography-lTitle-74",
-                  "labelText": "HvTypography-labelText-87",
-                  "mTitle": "HvTypography-mTitle-75",
-                  "margin": "HvTypography-margin-93",
-                  "normalText": "HvTypography-normalText-80",
-                  "placeholderText": "HvTypography-placeholderText-84",
-                  "sLink": "HvTypography-sLink-89",
-                  "sText": "HvTypography-sText-86",
-                  "sTitle": "HvTypography-sTitle-76",
-                  "selectedNavText": "HvTypography-selectedNavText-85",
-                  "selectedText": "HvTypography-selectedText-81",
-                  "vizText": "HvTypography-vizText-91",
-                  "xlTitle": "HvTypography-xlTitle-73",
-                  "xsTitle": "HvTypography-xsTitle-77",
-                  "xxlTitle": "HvTypography-xxlTitle-72",
-                  "xxsTitle": "HvTypography-xxsTitle-78",
+                  "3xlTitle": "HvTypography-3xlTitle-69",
+                  "4xlTitle": "HvTypography-4xlTitle-68",
+                  "5xlTitle": "HvTypography-5xlTitle-67",
+                  "baseFontFamily": "HvTypography-baseFontFamily-90",
+                  "disabledButtonText": "HvTypography-disabledButtonText-81",
+                  "disabledText": "HvTypography-disabledText-88",
+                  "highlightText": "HvTypography-highlightText-77",
+                  "infoText": "HvTypography-infoText-86",
+                  "inlineLink": "HvTypography-inlineLink-80",
+                  "lTitle": "HvTypography-lTitle-72",
+                  "labelText": "HvTypography-labelText-85",
+                  "mTitle": "HvTypography-mTitle-73",
+                  "margin": "HvTypography-margin-91",
+                  "normalText": "HvTypography-normalText-78",
+                  "placeholderText": "HvTypography-placeholderText-82",
+                  "sLink": "HvTypography-sLink-87",
+                  "sText": "HvTypography-sText-84",
+                  "sTitle": "HvTypography-sTitle-74",
+                  "selectedNavText": "HvTypography-selectedNavText-83",
+                  "selectedText": "HvTypography-selectedText-79",
+                  "vizText": "HvTypography-vizText-89",
+                  "xlTitle": "HvTypography-xlTitle-71",
+                  "xsTitle": "HvTypography-xsTitle-75",
+                  "xxlTitle": "HvTypography-xxlTitle-70",
+                  "xxsTitle": "HvTypography-xxsTitle-76",
                 }
               }
               component={null}
@@ -2095,7 +2091,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="HvTypography-labelText-87 HvTypography-baseFontFamily-92 HvTypography-margin-93"
+                className="HvTypography-labelText-85 HvTypography-baseFontFamily-90 HvTypography-margin-91"
               >
                 25.00B progressConjunctionLabel
               </p>
@@ -2109,31 +2105,31 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-71",
-                  "4xlTitle": "HvTypography-4xlTitle-70",
-                  "5xlTitle": "HvTypography-5xlTitle-69",
-                  "baseFontFamily": "HvTypography-baseFontFamily-92",
-                  "disabledButtonText": "HvTypography-disabledButtonText-83",
-                  "disabledText": "HvTypography-disabledText-90",
-                  "highlightText": "HvTypography-highlightText-79",
-                  "infoText": "HvTypography-infoText-88",
-                  "inlineLink": "HvTypography-inlineLink-82",
-                  "lTitle": "HvTypography-lTitle-74",
-                  "labelText": "HvTypography-labelText-87",
-                  "mTitle": "HvTypography-mTitle-75",
-                  "margin": "HvTypography-margin-93",
-                  "normalText": "HvTypography-normalText-80",
-                  "placeholderText": "HvTypography-placeholderText-84",
-                  "sLink": "HvTypography-sLink-89",
-                  "sText": "HvTypography-sText-86",
-                  "sTitle": "HvTypography-sTitle-76",
-                  "selectedNavText": "HvTypography-selectedNavText-85",
-                  "selectedText": "HvTypography-selectedText-81",
-                  "vizText": "HvTypography-vizText-91",
-                  "xlTitle": "HvTypography-xlTitle-73",
-                  "xsTitle": "HvTypography-xsTitle-77",
-                  "xxlTitle": "HvTypography-xxlTitle-72",
-                  "xxsTitle": "HvTypography-xxsTitle-78",
+                  "3xlTitle": "HvTypography-3xlTitle-69",
+                  "4xlTitle": "HvTypography-4xlTitle-68",
+                  "5xlTitle": "HvTypography-5xlTitle-67",
+                  "baseFontFamily": "HvTypography-baseFontFamily-90",
+                  "disabledButtonText": "HvTypography-disabledButtonText-81",
+                  "disabledText": "HvTypography-disabledText-88",
+                  "highlightText": "HvTypography-highlightText-77",
+                  "infoText": "HvTypography-infoText-86",
+                  "inlineLink": "HvTypography-inlineLink-80",
+                  "lTitle": "HvTypography-lTitle-72",
+                  "labelText": "HvTypography-labelText-85",
+                  "mTitle": "HvTypography-mTitle-73",
+                  "margin": "HvTypography-margin-91",
+                  "normalText": "HvTypography-normalText-78",
+                  "placeholderText": "HvTypography-placeholderText-82",
+                  "sLink": "HvTypography-sLink-87",
+                  "sText": "HvTypography-sText-84",
+                  "sTitle": "HvTypography-sTitle-74",
+                  "selectedNavText": "HvTypography-selectedNavText-83",
+                  "selectedText": "HvTypography-selectedText-79",
+                  "vizText": "HvTypography-vizText-89",
+                  "xlTitle": "HvTypography-xlTitle-71",
+                  "xsTitle": "HvTypography-xsTitle-75",
+                  "xxlTitle": "HvTypography-xxlTitle-70",
+                  "xxsTitle": "HvTypography-xxsTitle-76",
                 }
               }
               component={null}
@@ -2141,7 +2137,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="HvTypography-sText-86 HvTypography-baseFontFamily-92 HvTypography-margin-93"
+                className="HvTypography-sText-84 HvTypography-baseFontFamily-90 HvTypography-margin-91"
               >
                  875.00B
               </p>
@@ -2151,14 +2147,14 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
         <WithStyles(ForwardRef(IconButton))
           aria-label="progressConjunctionLabel"
           category="ghost"
-          className="HvFileUploaderFile-removeButton-60"
+          className="HvFileUploaderFile-removeButton-59"
           id="hv-file-2-remove-button"
           onClick={[Function]}
         >
           <ForwardRef(IconButton)
             aria-label="progressConjunctionLabel"
             category="ghost"
-            className="HvFileUploaderFile-removeButton-60"
+            className="HvFileUploaderFile-removeButton-59"
             classes={
               Object {
                 "colorInherit": "MuiIconButton-colorInherit",
@@ -2179,7 +2175,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               aria-label="progressConjunctionLabel"
               category="ghost"
               centerRipple={true}
-              className="MuiIconButton-root HvFileUploaderFile-removeButton-60"
+              className="MuiIconButton-root HvFileUploaderFile-removeButton-59"
               disabled={false}
               focusRipple={true}
               id="hv-file-2-remove-button"
@@ -2189,7 +2185,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 aria-label="progressConjunctionLabel"
                 category="ghost"
                 centerRipple={true}
-                className="MuiIconButton-root HvFileUploaderFile-removeButton-60"
+                className="MuiIconButton-root HvFileUploaderFile-removeButton-59"
                 classes={
                   Object {
                     "disabled": "Mui-disabled",
@@ -2206,7 +2202,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 <button
                   aria-label="progressConjunctionLabel"
                   category="ghost"
-                  className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-60"
+                  className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton-59"
                   disabled={false}
                   id="hv-file-2-remove-button"
                   onBlur={[Function]}
@@ -2228,24 +2224,22 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     className="MuiIconButton-label"
                   >
                     <WithStyles(Close)
-                      className="HvFileUploaderFile-iconContainer-62"
                       iconSize="XS"
                     >
                       <Close
-                        className="HvFileUploaderFile-iconContainer-62"
                         classes={
                           Object {
-                            "root": "HvIconClose-root-106",
-                            "rootL": "HvIconClose-rootL-110",
-                            "rootM": "HvIconClose-rootM-109",
-                            "rootS": "HvIconClose-rootS-108",
-                            "rootXs": "HvIconClose-rootXs-107",
+                            "root": "HvIconClose-root-104",
+                            "rootL": "HvIconClose-rootL-108",
+                            "rootM": "HvIconClose-rootM-107",
+                            "rootS": "HvIconClose-rootS-106",
+                            "rootXs": "HvIconClose-rootXs-105",
                           }
                         }
                         iconSize="XS"
                       >
                         <div
-                          className="HvFileUploaderFile-iconContainer-62 HvIconClose-root-106 HvIconClose-rootXs-107"
+                          className="HvIconClose-root-104 HvIconClose-rootXs-105"
                         >
                           <svg
                             focusable={false}

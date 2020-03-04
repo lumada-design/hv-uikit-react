@@ -11,7 +11,6 @@ import styles from "./styles";
  *
  * @param classes
  * @param data
- * @param layoutclasses
  * @param onHover
  * @param onUnHover
  * @returns {*}
@@ -36,9 +35,9 @@ const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot }) => {
   /**
    * Call in the first render.
    */
-  if (afterPlot) {
-    useLayoutEffect(afterPlotInternal, []);
-  }
+  useLayoutEffect(() => {
+    if (afterPlot) afterPlotInternal();
+  }, []);
 
   return (
     <div ref={ref}>

@@ -65,7 +65,7 @@ MainToolTip.propTypes = {
     /**
      * Values of the tooltip.
      */
-    element: PropTypes.arrayOf(
+    elements: PropTypes.arrayOf(
       PropTypes.shape({
         /**
          * Color of the bar.
@@ -78,7 +78,7 @@ MainToolTip.propTypes = {
         /**
          * Value.
          */
-        value: PropTypes.string
+        value: PropTypes.number
       })
     )
   }).isRequired,

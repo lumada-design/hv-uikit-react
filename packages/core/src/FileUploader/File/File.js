@@ -80,11 +80,11 @@ const File = ({
 
       {statusIcon}
 
-      <HvTypography className={classes.textTruncation} variant="sText">
+      <HvTypography className={classes.nameText} variant="sText">
         {data.name}
       </HvTypography>
 
-      <span className={classes.progressText}>{progressText}</span>
+      <span className={classes.progressTextContainer}>{progressText}</span>
 
       <IconButton
         id={`${fileId}-remove-button`}
@@ -93,7 +93,7 @@ const File = ({
         category="ghost"
         onClick={() => onFileRemoved(data)}
       >
-        <Close iconSize="XS" className={classes.iconContainer} />
+        <Close iconSize="XS" />
       </IconButton>
     </>
   );
@@ -107,11 +107,41 @@ File.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
-  classes: PropTypes.shape({}).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the progress bar.
+     */
+    progressbar: PropTypes.string,
+    /**
+     * Style applied to the progress bar background.
+     */
+    progressbarBack: PropTypes.string,
+    /**
+     * Style applied to the file name.
+     */
+    nameText: PropTypes.string,
+    /**
+     * Style applied to the container of the progress bar.
+     */
+    progressTextContainer: PropTypes.string,
+    /**
+     * Style applied to the remove button.
+     */
+    removeButton: PropTypes.string
+  }).isRequired,
   /**
    * File information to be displayed
    */
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    /**
+     * The file name.
+     */
+    name: PropTypes.string,
+    /**
+     * The upload status.
+     */
+    status: PropTypes.oneOf(["progress", "success", "fail"])
+  }).isRequired,
   /**
    * Callback fired when file is removed from list.
    */

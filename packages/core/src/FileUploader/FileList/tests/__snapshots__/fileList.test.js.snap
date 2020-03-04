@@ -872,12 +872,11 @@ exports[`FileList withStyles should render correctly 1`] = `
                   Object {
                     "fail": "HvFileUploaderFile-fail-7",
                     "icon": "HvFileUploaderFile-icon-5",
-                    "iconContainer": "HvFileUploaderFile-iconContainer-8",
-                    "progressText": "HvFileUploaderFile-progressText-4",
+                    "nameText": "HvFileUploaderFile-nameText-8",
+                    "progressTextContainer": "HvFileUploaderFile-progressTextContainer-4",
                     "progressbar": "HvFileUploaderFile-progressbar-3",
                     "progressbarBack": "HvFileUploaderFile-progressbarBack-2",
                     "removeButton": "HvFileUploaderFile-removeButton-6",
-                    "textTruncation": "HvFileUploaderFile-textTruncation-9",
                   }
                 }
                 data={
@@ -905,17 +904,17 @@ exports[`FileList withStyles should render correctly 1`] = `
                     className="HvFileUploaderFile-icon-5"
                     classes={
                       Object {
-                        "root": "HvIconFail-root-10",
-                        "rootL": "HvIconFail-rootL-14",
-                        "rootM": "HvIconFail-rootM-13",
-                        "rootS": "HvIconFail-rootS-12",
-                        "rootXs": "HvIconFail-rootXs-11",
+                        "root": "HvIconFail-root-9",
+                        "rootL": "HvIconFail-rootL-13",
+                        "rootM": "HvIconFail-rootM-12",
+                        "rootS": "HvIconFail-rootS-11",
+                        "rootXs": "HvIconFail-rootXs-10",
                       }
                     }
                     color="sema4"
                   >
                     <div
-                      className="HvFileUploaderFile-icon-5 HvIconFail-root-10 HvIconFail-rootS-12"
+                      className="HvFileUploaderFile-icon-5 HvIconFail-root-9 HvIconFail-rootS-11"
                     >
                       <svg
                         focusable={false}
@@ -939,40 +938,40 @@ exports[`FileList withStyles should render correctly 1`] = `
                   </Fail>
                 </WithStyles(Fail)>
                 <WithStyles(ForwardRef)
-                  className="HvFileUploaderFile-textTruncation-9"
+                  className="HvFileUploaderFile-nameText-8"
                   component={null}
                   paragraph={false}
                   variant="sText"
                 >
                   <ForwardRef
-                    className="HvFileUploaderFile-textTruncation-9"
+                    className="HvFileUploaderFile-nameText-8"
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-17",
-                        "4xlTitle": "HvTypography-4xlTitle-16",
-                        "5xlTitle": "HvTypography-5xlTitle-15",
-                        "baseFontFamily": "HvTypography-baseFontFamily-38",
-                        "disabledButtonText": "HvTypography-disabledButtonText-29",
-                        "disabledText": "HvTypography-disabledText-36",
-                        "highlightText": "HvTypography-highlightText-25",
-                        "infoText": "HvTypography-infoText-34",
-                        "inlineLink": "HvTypography-inlineLink-28",
-                        "lTitle": "HvTypography-lTitle-20",
-                        "labelText": "HvTypography-labelText-33",
-                        "mTitle": "HvTypography-mTitle-21",
-                        "margin": "HvTypography-margin-39",
-                        "normalText": "HvTypography-normalText-26",
-                        "placeholderText": "HvTypography-placeholderText-30",
-                        "sLink": "HvTypography-sLink-35",
-                        "sText": "HvTypography-sText-32",
-                        "sTitle": "HvTypography-sTitle-22",
-                        "selectedNavText": "HvTypography-selectedNavText-31",
-                        "selectedText": "HvTypography-selectedText-27",
-                        "vizText": "HvTypography-vizText-37",
-                        "xlTitle": "HvTypography-xlTitle-19",
-                        "xsTitle": "HvTypography-xsTitle-23",
-                        "xxlTitle": "HvTypography-xxlTitle-18",
-                        "xxsTitle": "HvTypography-xxsTitle-24",
+                        "3xlTitle": "HvTypography-3xlTitle-16",
+                        "4xlTitle": "HvTypography-4xlTitle-15",
+                        "5xlTitle": "HvTypography-5xlTitle-14",
+                        "baseFontFamily": "HvTypography-baseFontFamily-37",
+                        "disabledButtonText": "HvTypography-disabledButtonText-28",
+                        "disabledText": "HvTypography-disabledText-35",
+                        "highlightText": "HvTypography-highlightText-24",
+                        "infoText": "HvTypography-infoText-33",
+                        "inlineLink": "HvTypography-inlineLink-27",
+                        "lTitle": "HvTypography-lTitle-19",
+                        "labelText": "HvTypography-labelText-32",
+                        "mTitle": "HvTypography-mTitle-20",
+                        "margin": "HvTypography-margin-38",
+                        "normalText": "HvTypography-normalText-25",
+                        "placeholderText": "HvTypography-placeholderText-29",
+                        "sLink": "HvTypography-sLink-34",
+                        "sText": "HvTypography-sText-31",
+                        "sTitle": "HvTypography-sTitle-21",
+                        "selectedNavText": "HvTypography-selectedNavText-30",
+                        "selectedText": "HvTypography-selectedText-26",
+                        "vizText": "HvTypography-vizText-36",
+                        "xlTitle": "HvTypography-xlTitle-18",
+                        "xsTitle": "HvTypography-xsTitle-22",
+                        "xxlTitle": "HvTypography-xxlTitle-17",
+                        "xxsTitle": "HvTypography-xxsTitle-23",
                       }
                     }
                     component={null}
@@ -980,14 +979,14 @@ exports[`FileList withStyles should render correctly 1`] = `
                     variant="sText"
                   >
                     <p
-                      className="HvTypography-sText-32 HvTypography-baseFontFamily-38 HvTypography-margin-39 HvFileUploaderFile-textTruncation-9"
+                      className="HvTypography-sText-31 HvTypography-baseFontFamily-37 HvTypography-margin-38 HvFileUploaderFile-nameText-8"
                     >
                       Screenshot 2019-12-05 at 17.15.43.png
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <span
-                  className="HvFileUploaderFile-progressText-4"
+                  className="HvFileUploaderFile-progressTextContainer-4"
                 >
                   <WithStyles(ForwardRef)
                     className="HvFileUploaderFile-fail-7"
@@ -999,31 +998,31 @@ exports[`FileList withStyles should render correctly 1`] = `
                       className="HvFileUploaderFile-fail-7"
                       classes={
                         Object {
-                          "3xlTitle": "HvTypography-3xlTitle-17",
-                          "4xlTitle": "HvTypography-4xlTitle-16",
-                          "5xlTitle": "HvTypography-5xlTitle-15",
-                          "baseFontFamily": "HvTypography-baseFontFamily-38",
-                          "disabledButtonText": "HvTypography-disabledButtonText-29",
-                          "disabledText": "HvTypography-disabledText-36",
-                          "highlightText": "HvTypography-highlightText-25",
-                          "infoText": "HvTypography-infoText-34",
-                          "inlineLink": "HvTypography-inlineLink-28",
-                          "lTitle": "HvTypography-lTitle-20",
-                          "labelText": "HvTypography-labelText-33",
-                          "mTitle": "HvTypography-mTitle-21",
-                          "margin": "HvTypography-margin-39",
-                          "normalText": "HvTypography-normalText-26",
-                          "placeholderText": "HvTypography-placeholderText-30",
-                          "sLink": "HvTypography-sLink-35",
-                          "sText": "HvTypography-sText-32",
-                          "sTitle": "HvTypography-sTitle-22",
-                          "selectedNavText": "HvTypography-selectedNavText-31",
-                          "selectedText": "HvTypography-selectedText-27",
-                          "vizText": "HvTypography-vizText-37",
-                          "xlTitle": "HvTypography-xlTitle-19",
-                          "xsTitle": "HvTypography-xsTitle-23",
-                          "xxlTitle": "HvTypography-xxlTitle-18",
-                          "xxsTitle": "HvTypography-xxsTitle-24",
+                          "3xlTitle": "HvTypography-3xlTitle-16",
+                          "4xlTitle": "HvTypography-4xlTitle-15",
+                          "5xlTitle": "HvTypography-5xlTitle-14",
+                          "baseFontFamily": "HvTypography-baseFontFamily-37",
+                          "disabledButtonText": "HvTypography-disabledButtonText-28",
+                          "disabledText": "HvTypography-disabledText-35",
+                          "highlightText": "HvTypography-highlightText-24",
+                          "infoText": "HvTypography-infoText-33",
+                          "inlineLink": "HvTypography-inlineLink-27",
+                          "lTitle": "HvTypography-lTitle-19",
+                          "labelText": "HvTypography-labelText-32",
+                          "mTitle": "HvTypography-mTitle-20",
+                          "margin": "HvTypography-margin-38",
+                          "normalText": "HvTypography-normalText-25",
+                          "placeholderText": "HvTypography-placeholderText-29",
+                          "sLink": "HvTypography-sLink-34",
+                          "sText": "HvTypography-sText-31",
+                          "sTitle": "HvTypography-sTitle-21",
+                          "selectedNavText": "HvTypography-selectedNavText-30",
+                          "selectedText": "HvTypography-selectedText-26",
+                          "vizText": "HvTypography-vizText-36",
+                          "xlTitle": "HvTypography-xlTitle-18",
+                          "xsTitle": "HvTypography-xsTitle-22",
+                          "xxlTitle": "HvTypography-xxlTitle-17",
+                          "xxsTitle": "HvTypography-xxsTitle-23",
                         }
                       }
                       component={null}
@@ -1031,7 +1030,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       variant="sText"
                     >
                       <p
-                        className="HvTypography-sText-32 HvTypography-baseFontFamily-38 HvTypography-margin-39 HvFileUploaderFile-fail-7"
+                        className="HvTypography-sText-31 HvTypography-baseFontFamily-37 HvTypography-margin-38 HvFileUploaderFile-fail-7"
                       >
                         File type not allowed for upload
                       </p>
@@ -1118,24 +1117,22 @@ exports[`FileList withStyles should render correctly 1`] = `
                             className="MuiIconButton-label"
                           >
                             <WithStyles(Close)
-                              className="HvFileUploaderFile-iconContainer-8"
                               iconSize="XS"
                             >
                               <Close
-                                className="HvFileUploaderFile-iconContainer-8"
                                 classes={
                                   Object {
-                                    "root": "HvIconClose-root-52",
-                                    "rootL": "HvIconClose-rootL-56",
-                                    "rootM": "HvIconClose-rootM-55",
-                                    "rootS": "HvIconClose-rootS-54",
-                                    "rootXs": "HvIconClose-rootXs-53",
+                                    "root": "HvIconClose-root-51",
+                                    "rootL": "HvIconClose-rootL-55",
+                                    "rootM": "HvIconClose-rootM-54",
+                                    "rootS": "HvIconClose-rootS-53",
+                                    "rootXs": "HvIconClose-rootXs-52",
                                   }
                                 }
                                 iconSize="XS"
                               >
                                 <div
-                                  className="HvFileUploaderFile-iconContainer-8 HvIconClose-root-52 HvIconClose-rootXs-53"
+                                  className="HvIconClose-root-51 HvIconClose-rootXs-52"
                                 >
                                   <svg
                                     focusable={false}
@@ -1189,12 +1186,11 @@ exports[`FileList withStyles should render correctly 1`] = `
                   Object {
                     "fail": "HvFileUploaderFile-fail-7",
                     "icon": "HvFileUploaderFile-icon-5",
-                    "iconContainer": "HvFileUploaderFile-iconContainer-8",
-                    "progressText": "HvFileUploaderFile-progressText-4",
+                    "nameText": "HvFileUploaderFile-nameText-8",
+                    "progressTextContainer": "HvFileUploaderFile-progressTextContainer-4",
                     "progressbar": "HvFileUploaderFile-progressbar-3",
                     "progressbarBack": "HvFileUploaderFile-progressbarBack-2",
                     "removeButton": "HvFileUploaderFile-removeButton-6",
-                    "textTruncation": "HvFileUploaderFile-textTruncation-9",
                   }
                 }
                 data={
@@ -1222,17 +1218,17 @@ exports[`FileList withStyles should render correctly 1`] = `
                     className="HvFileUploaderFile-icon-5"
                     classes={
                       Object {
-                        "root": "HvIconFail-root-10",
-                        "rootL": "HvIconFail-rootL-14",
-                        "rootM": "HvIconFail-rootM-13",
-                        "rootS": "HvIconFail-rootS-12",
-                        "rootXs": "HvIconFail-rootXs-11",
+                        "root": "HvIconFail-root-9",
+                        "rootL": "HvIconFail-rootL-13",
+                        "rootM": "HvIconFail-rootM-12",
+                        "rootS": "HvIconFail-rootS-11",
+                        "rootXs": "HvIconFail-rootXs-10",
                       }
                     }
                     color="sema4"
                   >
                     <div
-                      className="HvFileUploaderFile-icon-5 HvIconFail-root-10 HvIconFail-rootS-12"
+                      className="HvFileUploaderFile-icon-5 HvIconFail-root-9 HvIconFail-rootS-11"
                     >
                       <svg
                         focusable={false}
@@ -1256,40 +1252,40 @@ exports[`FileList withStyles should render correctly 1`] = `
                   </Fail>
                 </WithStyles(Fail)>
                 <WithStyles(ForwardRef)
-                  className="HvFileUploaderFile-textTruncation-9"
+                  className="HvFileUploaderFile-nameText-8"
                   component={null}
                   paragraph={false}
                   variant="sText"
                 >
                   <ForwardRef
-                    className="HvFileUploaderFile-textTruncation-9"
+                    className="HvFileUploaderFile-nameText-8"
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-17",
-                        "4xlTitle": "HvTypography-4xlTitle-16",
-                        "5xlTitle": "HvTypography-5xlTitle-15",
-                        "baseFontFamily": "HvTypography-baseFontFamily-38",
-                        "disabledButtonText": "HvTypography-disabledButtonText-29",
-                        "disabledText": "HvTypography-disabledText-36",
-                        "highlightText": "HvTypography-highlightText-25",
-                        "infoText": "HvTypography-infoText-34",
-                        "inlineLink": "HvTypography-inlineLink-28",
-                        "lTitle": "HvTypography-lTitle-20",
-                        "labelText": "HvTypography-labelText-33",
-                        "mTitle": "HvTypography-mTitle-21",
-                        "margin": "HvTypography-margin-39",
-                        "normalText": "HvTypography-normalText-26",
-                        "placeholderText": "HvTypography-placeholderText-30",
-                        "sLink": "HvTypography-sLink-35",
-                        "sText": "HvTypography-sText-32",
-                        "sTitle": "HvTypography-sTitle-22",
-                        "selectedNavText": "HvTypography-selectedNavText-31",
-                        "selectedText": "HvTypography-selectedText-27",
-                        "vizText": "HvTypography-vizText-37",
-                        "xlTitle": "HvTypography-xlTitle-19",
-                        "xsTitle": "HvTypography-xsTitle-23",
-                        "xxlTitle": "HvTypography-xxlTitle-18",
-                        "xxsTitle": "HvTypography-xxsTitle-24",
+                        "3xlTitle": "HvTypography-3xlTitle-16",
+                        "4xlTitle": "HvTypography-4xlTitle-15",
+                        "5xlTitle": "HvTypography-5xlTitle-14",
+                        "baseFontFamily": "HvTypography-baseFontFamily-37",
+                        "disabledButtonText": "HvTypography-disabledButtonText-28",
+                        "disabledText": "HvTypography-disabledText-35",
+                        "highlightText": "HvTypography-highlightText-24",
+                        "infoText": "HvTypography-infoText-33",
+                        "inlineLink": "HvTypography-inlineLink-27",
+                        "lTitle": "HvTypography-lTitle-19",
+                        "labelText": "HvTypography-labelText-32",
+                        "mTitle": "HvTypography-mTitle-20",
+                        "margin": "HvTypography-margin-38",
+                        "normalText": "HvTypography-normalText-25",
+                        "placeholderText": "HvTypography-placeholderText-29",
+                        "sLink": "HvTypography-sLink-34",
+                        "sText": "HvTypography-sText-31",
+                        "sTitle": "HvTypography-sTitle-21",
+                        "selectedNavText": "HvTypography-selectedNavText-30",
+                        "selectedText": "HvTypography-selectedText-26",
+                        "vizText": "HvTypography-vizText-36",
+                        "xlTitle": "HvTypography-xlTitle-18",
+                        "xsTitle": "HvTypography-xsTitle-22",
+                        "xxlTitle": "HvTypography-xxlTitle-17",
+                        "xxsTitle": "HvTypography-xxsTitle-23",
                       }
                     }
                     component={null}
@@ -1297,14 +1293,14 @@ exports[`FileList withStyles should render correctly 1`] = `
                     variant="sText"
                   >
                     <p
-                      className="HvTypography-sText-32 HvTypography-baseFontFamily-38 HvTypography-margin-39 HvFileUploaderFile-textTruncation-9"
+                      className="HvTypography-sText-31 HvTypography-baseFontFamily-37 HvTypography-margin-38 HvFileUploaderFile-nameText-8"
                     >
                       Screenshot 2019-12-05 at 12.03.13.png
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <span
-                  className="HvFileUploaderFile-progressText-4"
+                  className="HvFileUploaderFile-progressTextContainer-4"
                 >
                   <WithStyles(ForwardRef)
                     className="HvFileUploaderFile-fail-7"
@@ -1316,31 +1312,31 @@ exports[`FileList withStyles should render correctly 1`] = `
                       className="HvFileUploaderFile-fail-7"
                       classes={
                         Object {
-                          "3xlTitle": "HvTypography-3xlTitle-17",
-                          "4xlTitle": "HvTypography-4xlTitle-16",
-                          "5xlTitle": "HvTypography-5xlTitle-15",
-                          "baseFontFamily": "HvTypography-baseFontFamily-38",
-                          "disabledButtonText": "HvTypography-disabledButtonText-29",
-                          "disabledText": "HvTypography-disabledText-36",
-                          "highlightText": "HvTypography-highlightText-25",
-                          "infoText": "HvTypography-infoText-34",
-                          "inlineLink": "HvTypography-inlineLink-28",
-                          "lTitle": "HvTypography-lTitle-20",
-                          "labelText": "HvTypography-labelText-33",
-                          "mTitle": "HvTypography-mTitle-21",
-                          "margin": "HvTypography-margin-39",
-                          "normalText": "HvTypography-normalText-26",
-                          "placeholderText": "HvTypography-placeholderText-30",
-                          "sLink": "HvTypography-sLink-35",
-                          "sText": "HvTypography-sText-32",
-                          "sTitle": "HvTypography-sTitle-22",
-                          "selectedNavText": "HvTypography-selectedNavText-31",
-                          "selectedText": "HvTypography-selectedText-27",
-                          "vizText": "HvTypography-vizText-37",
-                          "xlTitle": "HvTypography-xlTitle-19",
-                          "xsTitle": "HvTypography-xsTitle-23",
-                          "xxlTitle": "HvTypography-xxlTitle-18",
-                          "xxsTitle": "HvTypography-xxsTitle-24",
+                          "3xlTitle": "HvTypography-3xlTitle-16",
+                          "4xlTitle": "HvTypography-4xlTitle-15",
+                          "5xlTitle": "HvTypography-5xlTitle-14",
+                          "baseFontFamily": "HvTypography-baseFontFamily-37",
+                          "disabledButtonText": "HvTypography-disabledButtonText-28",
+                          "disabledText": "HvTypography-disabledText-35",
+                          "highlightText": "HvTypography-highlightText-24",
+                          "infoText": "HvTypography-infoText-33",
+                          "inlineLink": "HvTypography-inlineLink-27",
+                          "lTitle": "HvTypography-lTitle-19",
+                          "labelText": "HvTypography-labelText-32",
+                          "mTitle": "HvTypography-mTitle-20",
+                          "margin": "HvTypography-margin-38",
+                          "normalText": "HvTypography-normalText-25",
+                          "placeholderText": "HvTypography-placeholderText-29",
+                          "sLink": "HvTypography-sLink-34",
+                          "sText": "HvTypography-sText-31",
+                          "sTitle": "HvTypography-sTitle-21",
+                          "selectedNavText": "HvTypography-selectedNavText-30",
+                          "selectedText": "HvTypography-selectedText-26",
+                          "vizText": "HvTypography-vizText-36",
+                          "xlTitle": "HvTypography-xlTitle-18",
+                          "xsTitle": "HvTypography-xsTitle-22",
+                          "xxlTitle": "HvTypography-xxlTitle-17",
+                          "xxsTitle": "HvTypography-xxsTitle-23",
                         }
                       }
                       component={null}
@@ -1348,7 +1344,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       variant="sText"
                     >
                       <p
-                        className="HvTypography-sText-32 HvTypography-baseFontFamily-38 HvTypography-margin-39 HvFileUploaderFile-fail-7"
+                        className="HvTypography-sText-31 HvTypography-baseFontFamily-37 HvTypography-margin-38 HvFileUploaderFile-fail-7"
                       >
                         File type not allowed for upload
                       </p>
@@ -1435,24 +1431,22 @@ exports[`FileList withStyles should render correctly 1`] = `
                             className="MuiIconButton-label"
                           >
                             <WithStyles(Close)
-                              className="HvFileUploaderFile-iconContainer-8"
                               iconSize="XS"
                             >
                               <Close
-                                className="HvFileUploaderFile-iconContainer-8"
                                 classes={
                                   Object {
-                                    "root": "HvIconClose-root-52",
-                                    "rootL": "HvIconClose-rootL-56",
-                                    "rootM": "HvIconClose-rootM-55",
-                                    "rootS": "HvIconClose-rootS-54",
-                                    "rootXs": "HvIconClose-rootXs-53",
+                                    "root": "HvIconClose-root-51",
+                                    "rootL": "HvIconClose-rootL-55",
+                                    "rootM": "HvIconClose-rootM-54",
+                                    "rootS": "HvIconClose-rootS-53",
+                                    "rootXs": "HvIconClose-rootXs-52",
                                   }
                                 }
                                 iconSize="XS"
                               >
                                 <div
-                                  className="HvFileUploaderFile-iconContainer-8 HvIconClose-root-52 HvIconClose-rootXs-53"
+                                  className="HvIconClose-root-51 HvIconClose-rootXs-52"
                                 >
                                   <svg
                                     focusable={false}

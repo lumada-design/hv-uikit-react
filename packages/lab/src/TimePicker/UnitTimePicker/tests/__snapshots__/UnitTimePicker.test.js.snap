@@ -898,7 +898,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   "inputRootInvalid": "HvInput-inputRootInvalid-116",
                   "label": "HvInput-label-121",
                   "labelContainer": "HvInput-labelContainer-120",
-                  "labelDisable": "HvInput-labelDisable-122",
+                  "labelDisabled": "HvInput-labelDisabled-122",
                   "multiLine": "HvInput-multiLine-119",
                   "suggestionList": "HvInput-suggestionList-131",
                   "suggestionsContainer": "HvInput-suggestionsContainer-130",
@@ -936,7 +936,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               value={30}
             >
               <div
-                className="HvInput-container-112 HvTimePickerUnitTimePicker-inputContainer-106"
+                className=""
                 id="hv-input-2"
                 onBlur={[Function]}
               >
@@ -974,7 +974,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           "inputRootInvalid": "HvInput-inputRootInvalid-116",
                           "label": "HvInput-label-121",
                           "labelContainer": "HvInput-labelContainer-120",
-                          "labelDisable": "HvInput-labelDisable-122",
+                          "labelDisabled": "HvInput-labelDisabled-122",
                           "multiLine": "HvInput-multiLine-119",
                           "suggestionList": "HvInput-suggestionList-131",
                           "suggestionsContainer": "HvInput-suggestionsContainer-130",
@@ -1048,7 +1048,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             "inputRootInvalid": "HvInput-inputRootInvalid-116",
                             "label": "HvInput-label-121",
                             "labelContainer": "HvInput-labelContainer-120",
-                            "labelDisable": "HvInput-labelDisable-122",
+                            "labelDisabled": "HvInput-labelDisabled-122",
                             "multiLine": "HvInput-multiLine-119",
                             "suggestionList": "HvInput-suggestionList-131",
                             "suggestionsContainer": "HvInput-suggestionsContainer-130",
@@ -1121,7 +1121,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "inputRootInvalid": "HvInput-inputRootInvalid-116",
                               "label": "HvInput-label-121",
                               "labelContainer": "HvInput-labelContainer-120",
-                              "labelDisable": "HvInput-labelDisable-122",
+                              "labelDisabled": "HvInput-labelDisabled-122",
                               "multiLine": "HvInput-multiLine-119",
                               "suggestionList": "HvInput-suggestionList-131",
                               "suggestionsContainer": "HvInput-suggestionsContainer-130",
@@ -1201,7 +1201,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "inputRootInvalid": "HvInput-inputRootInvalid-116",
                                 "label": "HvInput-label-121",
                                 "labelContainer": "HvInput-labelContainer-120",
-                                "labelDisable": "HvInput-labelDisable-122",
+                                "labelDisabled": "HvInput-labelDisabled-122",
                                 "multiLine": "HvInput-multiLine-119",
                                 "suggestionList": "HvInput-suggestionList-131",
                                 "suggestionsContainer": "HvInput-suggestionsContainer-130",
@@ -1272,7 +1272,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "inputRootInvalid": "HvInput-inputRootInvalid-116",
                                 "label": "HvInput-label-121",
                                 "labelContainer": "HvInput-labelContainer-120",
-                                "labelDisable": "HvInput-labelDisable-122",
+                                "labelDisabled": "HvInput-labelDisabled-122",
                                 "multiLine": "HvInput-multiLine-119",
                                 "suggestionList": "HvInput-suggestionList-131",
                                 "suggestionsContainer": "HvInput-suggestionsContainer-130",

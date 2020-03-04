@@ -66,7 +66,7 @@ const DropZone = ({
     <>
       <div
         id={fileDropZoneId}
-        className={classes.dropzoneLabelsGroup}
+        className={classes.dropZoneLabelsGroup}
         aria-label="File Dropzone"
       >
         <HvTypography
@@ -95,9 +95,9 @@ const DropZone = ({
 
       <div
         id={`${fileDropZoneId}-button`}
-        className={clsx(classes.dropzoneContainer, {
+        className={clsx(classes.dropZoneContainer, {
           [classes.dragAction]: dragState,
-          [classes.dropzoneContainerDisabled]: disabled
+          [classes.dropZoneContainerDisabled]: disabled
         })}
         role="button"
         tabIndex={0}
@@ -152,7 +152,7 @@ const DropZone = ({
         <div className={classes.dropArea}>
           {dragState ? (
             <>
-              <div className={classes.dropzoneAreaLabels}>
+              <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>
                   {labels.dropFiles}
                 </HvTypography>
@@ -162,10 +162,10 @@ const DropZone = ({
             <>
               <Doc
                 iconSize="M"
-                className={classes.dropzoneAreaIcon}
+                className={classes.dropZoneAreaIcon}
                 color={disabled ? "atmo6" : "acce1"}
               />
-              <div className={classes.dropzoneAreaLabels}>
+              <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>
                   {labels.drag}
                   <span className={classes.selectFilesText}>
@@ -191,13 +191,46 @@ DropZone.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the root element.
+     * Styles applied to the container element.
      */
-    root: PropTypes.string,
+    dropZoneContainer: PropTypes.string,
     /**
-     * Styles applied to the root element.
+     * Styles applied to the labels group.
      */
-    dropzoneContainer: PropTypes.string
+    dropZoneLabelsGroup: PropTypes.string,
+    /**
+     * Style applied when dragging.
+     */
+    dragAction: PropTypes.string,
+    /**
+     * Style applied when the component is disabled.
+     */
+    dropZoneContainerDisabled: PropTypes.string,
+    /**
+     * Style applied to the input area.
+     */
+    inputArea: PropTypes.string,
+    /**
+     * Style applied to the drop area.
+     */
+    dropArea: PropTypes.string,
+    /**
+     * Style applied to the labels area.
+     */
+    dropZoneAreaLabels: PropTypes.string,
+    /**
+     * Style applied to the icon area.
+     */
+    dropZoneAreaIcon: PropTypes.string,
+    /**
+     * Style applied to the typography when dragging.
+     */
+    dragText: PropTypes.string,
+    /**
+     * Style applied to the selected files.
+     */
+    selectFilesText: PropTypes.string
+
   }).isRequired,
   /**
    * Labels to present in Fileuploader.

@@ -57,7 +57,7 @@ const styles = theme => ({
     btnSecondary: {
       flex: "1 1 20px"
     },
-    "& $btnBase": {
+    "& $button": {
       width: "100%"
     },
     "& $isSelected": {

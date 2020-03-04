@@ -49,7 +49,7 @@ const ListViewHeaderRow = ({
       id={id}
       {...other}
     >
-      {viewConfiguration.isSelectable && <th />}
+      {viewConfiguration.isSelectable && <th aria-label="selectable" />}
       {HeaderCells(classes, columnConfiguration)}
     </tr>
   );

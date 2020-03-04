@@ -20,10 +20,6 @@ const styles = theme => ({
     padding: 0,
     margin: `${theme.hv.spacing.xs}px`,
     minWidth: "unset"
-  },
-  iconContainer: {
-    width: "32px",
-    height: "32px"
   }
 });
 

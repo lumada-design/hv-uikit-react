@@ -11,7 +11,7 @@ const styles = theme => ({
     width: "80%",
     border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
-  progressText: {
+  progressTextContainer: {
     display: "flex",
     justifyContent: "space-between",
     marginLeft: "auto"
@@ -28,11 +28,7 @@ const styles = theme => ({
   fail: {
     color: theme.hv.palette.semantic.sema4
   },
-  iconContainer: {
-    width: 32,
-    height: 32
-  },
-  textTruncation: {
+  nameText: {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis"

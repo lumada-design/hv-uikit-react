@@ -1104,6 +1104,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -1262,6 +1263,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -1420,6 +1422,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -4095,6 +4098,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -4253,6 +4257,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
@@ -4411,6 +4416,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </div>
                                         </ForwardRef(ListItemText)>
                                       </WithStyles(ForwardRef(ListItemText))>
+                                      <NoSsr />
                                     </div>
                                   </ForwardRef(ButtonBase)>
                                 </WithStyles(ForwardRef(ButtonBase))>
