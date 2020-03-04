@@ -3,7 +3,7 @@ import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import compressor from "../card/resources/compressor.png";
 import leaf from "../card/resources/leaf.png";
-import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
+import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 
 const styles = theme => ({
   content: {
@@ -137,7 +137,7 @@ export default (
   <div>
     <CardView
       id="id1"
-      icon={<Icon />}
+      icon={<Tool />}
       values={values()}
       viewConfiguration={viewConfiguration}
       innerCardContent={innerContentFunc}

@@ -7,7 +7,7 @@ import HvCard, {
   HvCardFooter,
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
-import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
+import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 
 const styles = theme => ({
   mediaContainer: {
@@ -110,7 +110,7 @@ const viewConfiguration = {
 export default (
   <CardView
     id="id1"
-    icon={<Icon />}
+    icon={<Tool />}
     viewConfiguration={viewConfiguration}
     values={values()}
     renderer={renderer}
