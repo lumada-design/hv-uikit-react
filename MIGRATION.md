@@ -100,6 +100,9 @@ With our first major release several components where reviewed in order to remov
   - Renamed `rootVertical` class to `vertical`.
 - Tabs
   - Css class **labelContainer** passed to the **root**
+- Dropdown Menu
+  - onClick callback was triggered not only on selection but also when opening the dropdown. A new specific callback **onToggleOpen** was created. 
+  This callback is triggered whenever the open state of the dropdown changes
 - Card
   - Css class **upperArea** remove
 - Tooltip

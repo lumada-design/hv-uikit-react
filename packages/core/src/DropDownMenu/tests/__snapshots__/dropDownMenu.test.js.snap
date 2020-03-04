@@ -797,6 +797,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
       icon={<div />}
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -827,6 +828,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         icon={<div />}
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div
@@ -1805,6 +1807,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
       icon={<div />}
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -1835,6 +1838,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         icon={<div />}
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div
@@ -2813,6 +2817,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
       icon={<div />}
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -2843,6 +2848,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
         icon={<div />}
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div
@@ -4840,6 +4846,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
       id="dropdownMenu"
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -4871,6 +4878,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         id="dropdownMenu"
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div
@@ -5850,6 +5858,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
       id="dropdownMenu"
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -5881,6 +5890,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
         id="dropdownMenu"
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div
@@ -6860,6 +6870,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
       id="dropdownMenu"
       keepOpened={true}
       onClick={null}
+      onToggleOpen={null}
       placement="left"
     >
       <DropDownMenu
@@ -6891,6 +6902,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
         id="dropdownMenu"
         keepOpened={true}
         onClick={null}
+        onToggleOpen={null}
         placement="left"
       >
         <div

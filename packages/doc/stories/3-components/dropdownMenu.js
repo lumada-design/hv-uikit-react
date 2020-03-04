@@ -25,6 +25,10 @@ storiesOf("Components", module).add("DropDownMenu", () => <DropDownMenu />, {
     {
       title: "4. Disabled",
       src: "components/dropdownMenu/dropdownMenu4"
+    },
+    {
+      title: "5. Controlled",
+      src: "components/dropdownMenu/dropdownMenu5"
     }
   ]
 });

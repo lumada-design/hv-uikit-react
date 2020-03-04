@@ -246,6 +246,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         }
         keepOpened={false}
         onClick={[Function]}
+        onToggleOpen={null}
         placement="left"
       >
         <DropDownMenu
@@ -285,6 +286,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           }
           keepOpened={false}
           onClick={[Function]}
+          onToggleOpen={null}
           placement="left"
         >
           <div
@@ -671,6 +673,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         }
         keepOpened={false}
         onClick={[Function]}
+        onToggleOpen={null}
         placement="left"
       >
         <DropDownMenu
@@ -716,6 +719,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           }
           keepOpened={false}
           onClick={[Function]}
+          onToggleOpen={null}
           placement="left"
         >
           <div
@@ -1398,6 +1402,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         }
         keepOpened={false}
         onClick={[Function]}
+        onToggleOpen={null}
         placement="left"
       >
         <DropDownMenu
@@ -1431,6 +1436,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           }
           keepOpened={false}
           onClick={[Function]}
+          onToggleOpen={null}
           placement="left"
         >
           <div
