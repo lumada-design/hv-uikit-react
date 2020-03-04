@@ -20,8 +20,13 @@ jobs:
     - run: |
         npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
         npm config list
-    #- run: npm ci
+    - run: npm ci
     #- run: npm run bootstrap
     #- run: npm run test
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.2
+    - name: Jest Code Coverage Report
+      uses: ziishaned/jest-reporter-action@0.1.1
+      with:
+        # Github token
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        # Specify a command to run the tests
+        test-command: npm run test
