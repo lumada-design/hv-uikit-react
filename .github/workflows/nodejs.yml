@@ -4,8 +4,8 @@ on: [push]
 
 jobs:
   build:
-    runs-on: [self-hosted, linux]
-    #runs-on: ubuntu-latest
+    #runs-on: [self-hosted, linux]
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -20,8 +20,8 @@ jobs:
     - run: |
         npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
         npm config list
-    - run: npm ci
-    - run: npm run bootstrap
-    - run: npm run test
-      env:
-        CI: true
+    #- run: npm ci
+    #- run: npm run bootstrap
+    #- run: npm run test
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.2
