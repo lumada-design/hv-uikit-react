@@ -38,3 +38,5 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         # Specify a command to run the tests
         test-command: npm run test
+    - name: Jest Snapshots
+      uses: gimenete/github-jest-snapshots@1.0
