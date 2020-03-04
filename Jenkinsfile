@@ -13,6 +13,7 @@ properties([
 
 node('non-master') {
     def releases_branch = 'master'
+    def next_branch = 'next'
 
     def commitMessage = null
     def commitTimestamp = null
@@ -25,6 +26,9 @@ node('non-master') {
         def image
 
         def is_master = env.BRANCH_NAME == releases_branch && !env.CHANGE_ID
+
+        def is_next = env.BRANCH_NAME == next_branch && !env.CHANGE_ID
+
         // failing tests in master are a critical FAILURE
         def failing_tests_result = is_master ? "FAILURE" : "UNSTABLE"
 
@@ -157,7 +161,7 @@ node('non-master') {
 
         parallel test_stages
 
-        if(is_master) {
+        if(is_master || is_next) {
             tryStep ({
                 // publish to npm repo
                 image.inside(containerRunOptions('uikit_publish_packages')) {
