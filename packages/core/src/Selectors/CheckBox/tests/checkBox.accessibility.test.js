@@ -3,7 +3,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { axe, toHaveNoViolations } from "jest-axe";
+import { toHaveNoViolations } from "jest-axe";
+import axe from "../../../../config/axe-config";
 
 import HvProvider from "../../../Provider";
 import CheckboxWithStyles from "../index";

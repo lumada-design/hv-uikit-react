@@ -2,7 +2,8 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { axe, toHaveNoViolations } from "jest-axe";
+import { toHaveNoViolations } from "jest-axe";
+import axe from "../../../../config/axe-config";
 import HvProvider from "../../../Provider";
 import VerticalContainerWithStyles from "../index";
 import VerticalContainer from "../VerticalContainer";

@@ -1,9 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
-
-import { axe, toHaveNoViolations } from "jest-axe";
 import { Popper } from "@material-ui/core";
+
+import { toHaveNoViolations } from "jest-axe";
+import axe from "../../../config/axe-config";
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
 
