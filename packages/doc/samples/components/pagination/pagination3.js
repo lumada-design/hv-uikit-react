@@ -13,8 +13,8 @@ const createData = num => {
   ];
 
   return [...Array(num).keys()].map(id => ({
-    id: "id_" + id,
-    headerTitle: "Asset Avatar " + (id + 1),
+    id: `id_${id}`,
+    headerTitle: `Asset Avatar ${id + 1}`,
     mediaHeight: 186,
     selected: false,
     ...variations[id % variations.length]
@@ -29,7 +29,7 @@ const ControlledPagination = () => {
   const numPages = Math.ceil(data.length / pageSize);
 
   const handleSelection = id => {
-    const el = data.find(el => el.id === id);
+    const el = data.find(element => element.id === id);
     el.selected = !el.selected;
     el.checkboxSelected = el.selected;
     setData(data);
@@ -56,8 +56,8 @@ const ControlledPagination = () => {
         canNext={page < numPages - 1}
         pageSize={pageSize}
         pageSizeOptions={pageSizeOptions}
-        onPageChange={page => setPage(page)}
-        onPageSizeChange={pageSize => setPageSize(pageSize)}
+        onPageChange={value => setPage(value)}
+        onPageSizeChange={value => setPageSize(value)}
         labels={{ pageSizeEntryName: "assets" }}
       />
     </>

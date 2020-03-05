@@ -2,9 +2,9 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import input from "../../pages/gettingStarted/INTRODUCTION.md";
 
-import corePackage from "../../../core/package";
-import labPackage from "../../../lab/package";
-import iconsPackage from "../../../icons/package";
+import corePackage from "../../../core/package.json";
+import labPackage from "../../../lab/package.json";
+import iconsPackage from "../../../icons/package.json";
 
 const Introduction = () => {
   const inputParsed = input

@@ -91,8 +91,9 @@ class MultiButton extends React.Component {
     const isSelected = checkedItems.indexOf(button.id) !== -1;
 
     const icon =
-      button.icon &&
-      React.cloneElement(button.icon, { className: classes.icon });
+      button.icon && type === "mixed"
+        ? React.cloneElement(button.icon, { className: classes.icon })
+        : button.icon;
 
     return (
       <HvButton

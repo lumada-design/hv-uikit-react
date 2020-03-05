@@ -3,14 +3,14 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 
 export default (
- <HvProvider>
+  <HvProvider>
     <HvButton
-    onClick={() => {
+      onClick={() => {
         alert("You clicked me");
-    }}
-    id="test"
+      }}
+      id="test"
     >
-    Button
+      Button
     </HvButton>
- </HvProvider>  
+  </HvProvider>
 );

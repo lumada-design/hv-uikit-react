@@ -12,7 +12,6 @@ export default (
     <DropDownMenu
       id="dpmKeepOpenedFalse"
       dataList={menuOptions}
-      //onClick={e => alert(e.label)}
       keepOpened={false}
     />
   </div>

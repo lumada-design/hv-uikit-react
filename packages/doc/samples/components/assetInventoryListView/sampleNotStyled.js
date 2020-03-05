@@ -57,11 +57,11 @@ const Row = ({ classes, status, value, id }) => {
 
   return (
     <HvListViewRow checkboxValue={value.id}>
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
           <HvTypography variant="highlightText">
             {value.event.description}
@@ -75,15 +75,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
         <HvTypography variant="normalText">{value.probability}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
         <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>

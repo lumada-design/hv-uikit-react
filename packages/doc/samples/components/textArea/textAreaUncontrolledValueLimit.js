@@ -27,9 +27,9 @@ function WrapperComp() {
   const [maxChar, setMaxChar] = useState(10);
 
   // to be possible to change the input value by user action
-  const setterValue = value => {
-    setValue(value);
-    return value;
+  const setterValue = newValue => {
+    setValue(newValue);
+    return newValue;
   };
 
   return (
@@ -47,12 +47,12 @@ function WrapperComp() {
       <Input
         style={inpStyle}
         initialValue={maxChar.toString()}
-        onChange={value => setMaxChar(parseInt(value))}
+        onChange={newValue => setMaxChar(Number(newValue))}
         labels={inputLabels}
       />
 
       <HvTextArea
-        initialValue={"Initial State"}
+        initialValue="Initial State"
         value={value}
         rows={5}
         labels={labels}

@@ -19,8 +19,8 @@ const styles = theme => ({
 
 const getColors = ({ isSelected, isDisabled }) => {
   if (isSelected) return "atmo1";
-  else if (isDisabled) return "atmo7";
-  else undefined;
+  if (isDisabled) return "atmo7";
+  return undefined;
 };
 
 const data = [

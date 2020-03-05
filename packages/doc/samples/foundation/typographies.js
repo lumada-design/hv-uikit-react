@@ -95,9 +95,9 @@ const Typographies = ({ classes }) => {
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
         .filter(item => !Array.isArray(typography[item]))
-        .map((group, idx) => (
+        .map((group) => (
           <Group
-            key={idx}
+            key={`group_${group}`}
             classes={classes}
             name={group}
             typography={typography[group]}

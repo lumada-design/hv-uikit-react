@@ -29,13 +29,14 @@ const GridExample = () => {
   const theme = useTheme();
   const findBreakpoint = () =>
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
       const matches = useMediaQuery(theme.breakpoints.only(key));
 
       return !output && matches ? key : output;
     }, null) || "xs";
 
-  let breakpoint = findBreakpoint();
-  let title = `breakpoint: ${breakpoint}`;
+  const breakpoint = findBreakpoint();
+  const title = `breakpoint: ${breakpoint}`;
 
   return (
     <div>

@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-const Setup = ({ classes, config }) => (
+const Setup = ({ classes }) => (
   <>
     <div className={classes.title}>Design System</div>
     <div className={classes.block1}>

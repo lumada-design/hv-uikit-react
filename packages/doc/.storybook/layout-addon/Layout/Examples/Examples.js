@@ -24,7 +24,6 @@ const Example = ({ classes, example }) => {
 
   let component, snippet;
   if (isPath) {
-      debugger;
     component = require(`../../../../samples/${src}`).default;
     snippet = require(`!!raw-loader!../../../../samples/${src}`);
   }

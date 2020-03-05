@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = () => ({
   root: {
     height: "100vh"
   }

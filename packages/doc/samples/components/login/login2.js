@@ -2,11 +2,8 @@ import React from "react";
 import HvLogin from "@hv/uikit-react-core/dist/Login";
 
 const callSimulationError = () =>
-  new Promise(resolve => {
-    throw "error";
-    setTimeout(() => {
-      resolve();
-    }, 2000);
+  new Promise(() => {
+    throw new Error("error");
   });
 
 const labels = {

@@ -41,7 +41,7 @@ export default (
       subheader={configurationNoMedia.subtitle}
       isSelectable
       actions={myActions}
-      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
+      actionsCallback={(id, a) => alert(`You have pressed ${a.label}`)}
       actionsAlignment="left"
       checkboxValue="value"
       onChange={event => console.log(`my value is ${event.target.value}`)}

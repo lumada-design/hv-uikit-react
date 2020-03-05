@@ -11,15 +11,17 @@ function clearUploadSimulationHandler(file) {
 const simulateUpload = (file, setList) => {
   const uploadSpeed = 20000; // bits per second
 
-  file.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
+  const newFile = file;
 
-  if (file.size == file.progress) {
-    file.status = "success";
+  newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
+
+  if (file.size === file.progress) {
+    newFile.status = "success";
 
     // other needed fields can be added, like the file URL in the server
     // where the file was uploaded, etc.
 
-    clearUploadSimulationHandler(file);
+    clearUploadSimulationHandler(newFile);
   }
 
   // the new state must always be a new list, so it must be cloned
@@ -27,8 +29,10 @@ const simulateUpload = (file, setList) => {
   setList(previousList => [...previousList]);
 };
 
-function addFile(newFile, setList) {
-  const hasFailed = newFile.status === "fail";
+function addFile(file, setList) {
+  const newFile = file;
+
+  const hasFailed = file.status === "fail";
 
   if (!hasFailed) {
     newFile.status = "progress";
@@ -40,7 +44,7 @@ function addFile(newFile, setList) {
   }
 
   // we're adding the new file to the top of the list
-  // dependending on the use case, we could also add to the botton,
+  // depending on the use case, we could also add to the bottom,
   // order them alphabetically, etc.
   setList(previousList => [newFile, ...previousList]);
 }

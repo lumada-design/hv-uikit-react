@@ -1,5 +1,6 @@
 import React from "react";
 // Used only in Storybook context.
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { linkTo } from "@storybook/addon-links";
 import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
 import Typography from "@hv/uikit-react-core/dist/Typography";

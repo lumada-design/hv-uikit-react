@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 
 import VerticalNavigation, {
-  Action,
+  Navigation,
   Actions,
-  Navigation
+  Action
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-import {
-  OpenBook,
-  LogOut,
-  Operation,
-  Tool,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { Play, Stop } from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {
     id: "01",
     label: "System",
-    icon: <Tool />,
+    icon: <Play />,
     data: [
       {
         id: "01-01",
@@ -26,7 +20,8 @@ const navigationData = [
         data: [
           {
             id: "01-01-01",
-            label: "Compute"
+            label: "Compute",
+            disabled: true
           },
           {
             id: "01-01-02",
@@ -39,7 +34,8 @@ const navigationData = [
           {
             id: "01-01-04",
             label: "Fiber Channel",
-            payload: { path: "/hello/world", params: { a: 2, b: "3" } }
+            path: "/hello/world",
+            params: { a: 2, b: "3" }
           }
         ]
       }
@@ -48,7 +44,7 @@ const navigationData = [
   {
     id: "02",
     label: "Administration",
-    icon: <Operation />,
+    icon: <Stop />,
     data: [
       {
         id: "02-01",
@@ -91,7 +87,8 @@ function MyVerticalNavigation() {
     <div style={sampleContainerStyle}>
       <VerticalNavigation
         navigationLabel="Example 2 navigation"
-        isCollapsable={true}
+        isCollapsable
+        closeOnExit
       >
         <Navigation
           label="Example 2 navigation"
@@ -105,23 +102,22 @@ function MyVerticalNavigation() {
 
         <Actions>
           <Action
-            label="User"
-            icon={<User />}
-            onClick={(event, data) => {
+            label="Action 1"
+            icon={<Play />}
+            onClick={event => {
               console.log("Action 1", event);
             }}
           />
           <Action
-            label="Documentation"
-            icon={<OpenBook />}
-            onClick={(event, data) => {
+            label="Action 2"
+            onClick={event => {
               console.log("Action 2", event);
             }}
           />
           <Action
-            label="Logout"
-            icon={<LogOut />}
-            onClick={(event, data) => {
+            label="Action 3"
+            icon={<Stop />}
+            onClick={event => {
               console.log("Action 3", event);
             }}
           />

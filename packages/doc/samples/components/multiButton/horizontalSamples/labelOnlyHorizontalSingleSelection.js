@@ -8,6 +8,6 @@ const buttonsDefinitions = [
 
 export default (
   <div style={{ width: "200px" }}>
-    <MultiButton buttons={buttonsDefinitions} type={"text"} />{" "}
+    <MultiButton buttons={buttonsDefinitions} type="text" />
   </div>
 );

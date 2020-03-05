@@ -4,8 +4,8 @@ import HvLogin from "@hv/uikit-react-core/dist/Login";
 const logo = require("./assets/Hitachi-logo.png");
 
 const callSimulation = () =>
-  new Promise(resolve => {
-    throw "Dummy Error";
+  new Promise(() => {
+    throw new Error("Dummy Error");
   });
 
 const labels = {

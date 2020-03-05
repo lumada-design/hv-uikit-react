@@ -2,7 +2,7 @@ import React from "react";
 import SearchBox from "@hv/uikit-react-core/dist/SearchBox";
 
 const suggestionHandler = value => {
-  let random = Math.random()
+  const random = Math.random()
     .toString(36)
     .substring(7);
   if (typeof value === "string" && value !== "") {
@@ -20,17 +20,16 @@ const suggestionHandler = value => {
         label: `${random} second suggestion`
       }
     ];
-  } else {
-    return null;
   }
+  return null;
 };
 
 export default (
   <SearchBox
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item => console.log(item.label + " selected")}
+    suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
     onChange={value => {
-      console.log(value + " submitted");
+      console.log(`${value} submitted`);
       return value;
     }}
   />

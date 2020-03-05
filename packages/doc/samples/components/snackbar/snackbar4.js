@@ -29,8 +29,7 @@ class SimpleSnackbar extends React.Component {
       anchorOrigin,
       action,
       actionCallback,
-      customIcon,
-      offset
+      customIcon
     } = this.props;
     const { open } = this.state;
     return (

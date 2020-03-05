@@ -28,12 +28,12 @@ const dataGenerator = id => {
     randomGenerator(10, 1) % 2 === 0 ? riskDownTime : severeBreakdown;
   return {
     headerTitle: data.headerTitle + (id + 1),
-    id: "id_" + id,
+    id: `id_${id}`,
     event: data.event,
     probability: risk,
-    timeHorizon: timeHorizon,
+    timeHorizon,
     relatedAssets: data.relatedAssets,
-    checkboxValue: "id_" + id
+    checkboxValue: `id_${id}`
   };
 };
 
@@ -43,8 +43,8 @@ const dataGenerator = id => {
  * @returns {[]}
  */
 const getData = () => {
-  let data = [];
-  for (let i = 0; i < 10; ++i) data.push(dataGenerator(i));
+  const data = [];
+  for (let i = 0; i < 10; i += 1) data.push(dataGenerator(i));
   return data;
 };
 

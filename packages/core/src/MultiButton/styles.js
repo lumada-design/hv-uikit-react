@@ -46,9 +46,7 @@ const styles = theme => ({
     }
   },
   icon: {
-    width: "unset",
-    height: "unset",
-    marginRight: 8
+    marginLeft: -8
   },
   // vertical button display Styling
   vertical: {

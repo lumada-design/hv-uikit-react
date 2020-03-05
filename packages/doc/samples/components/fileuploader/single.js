@@ -10,16 +10,16 @@ const simulateUpload = (files, setList, times = 0) => {
     const hasFailed = file.status === "fail";
 
     const progress = file.size * times || null;
-    const status = hasFailed
-      ? "fail"
-      : file.size != progress
-      ? "progress"
-      : "success";
 
-    file.progress = hasUploaded ? file.size : progress;
-    file.status = hasUploaded ? "success" : status;
+    let status;
 
-    return file;
+    if (hasFailed) status = "fail";
+    else status = file.size !== progress ? "progress" : "success";
+
+    return {
+      progress: hasUploaded ? file.size : progress,
+      status: hasUploaded ? "success" : status
+    };
   });
 
   setList(list);

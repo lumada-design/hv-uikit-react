@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import useTheme from "@material-ui/core/styles/useTheme";
 
 const Eye = props => {
-  const { color, className, ...other } = props;
+  const { className, ...other } = props;
+  const theme = useTheme();
 
+  /* eslint-disable react/no-danger */
   return (
     <svg
       id="previewOff"
@@ -17,8 +20,7 @@ const Eye = props => {
       <defs>
         <style
           dangerouslySetInnerHTML={{
-            __html:
-              ".cls-1 {\n        fill: none;\n      }\n\n      .cls-2 {\n        fill: #414141;\n      }\n\n\t  .default > rect{\n\t    fill: #414141\n\t  }\n\n      .selected > rect{\n\t    fill: none;\n        animation: dash_out .2s ease-in-out;\n      }\n\t  \n\t  .notSelected >      rect{\n\t    fill: #414141;\n        animation: dash_in .2s ease-in-out;\n      }\n\n      @keyframes dash_in {\n        from {\n          width: 0;\n          }\n        to {\n          width: 19.8;\n        }\n      }\n\t \n\t @keyframes dash_out {\n        from {\n          width: 19.8;\n\t\t  fill: #414141;\n\n          }\n        to {\n          width: 0;\n\t\t  fill: #414141;\n        }\n\t\t\n      }\n    "
+            __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .default > rect{ fill: ${theme.hv.palette.accent.acce1} } .selected > rect{ fill: none; animation: dash_out .2s ease-in-out; } .notSelected > rect{ fill: ${theme.hv.palette.accent.acce1}; animation: dash_in .2s ease-in-out; } @keyframes dash_in { from { width: 0; } to { width: 19.8; } } @keyframes dash_out { from { width: 19.8; fill: ${theme.hv.palette.accent.acce1}; } to { width: 0; fill: ${theme.hv.palette.accent.acce1}; } }`
           }}
         />
       </defs>

@@ -110,4 +110,4 @@ const HeaderSample = () => {
   );
 };
 
-export default <div style={{ height: 100 }}>{<HeaderSample />}</div>;
+export default <div style={{ height: 100 }}><HeaderSample /></div>;

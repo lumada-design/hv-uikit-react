@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import VerticalNavigation, {
   Action,
@@ -7,10 +7,10 @@ import VerticalNavigation, {
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
 import {
-  LogOut,
-  Tool,
-  Operation,
   OpenBook,
+  LogOut,
+  Operation,
+  Tool,
   User
 } from "@hv/uikit-react-icons/dist";
 
@@ -80,45 +80,51 @@ const navigationData = [
   }
 ];
 
+const sampleContainerStyle = {
+  height: "600px"
+};
+
 function MyVerticalNavigation() {
-  const [value, setValue] = React.useState("02-03-02");
+  const [value, setValue] = useState("02-03-02");
 
   return (
-    <VerticalNavigation isCollapsable={false}>
-      <Navigation
-        label="Example 1 navigation"
-        selected={value}
-        onClick={(event, data) => {
-          console.log(data);
-          setValue(data.id);
-        }}
-        data={navigationData}
-      />
+    <div style={sampleContainerStyle}>
+      <VerticalNavigation navigationLabel="Example 2 navigation" isCollapsable>
+        <Navigation
+          label="Example 2 navigation"
+          selected={value}
+          onClick={(event, data) => {
+            console.log(data);
+            setValue(data.id);
+          }}
+          data={navigationData}
+        />
 
-      <Actions>
-        <Action
-          label="User"
-          icon={<User />}
-          onClick={(event, data) => {
-            console.log("Action 1", event);
-          }}
-        />
-        <Action
-          label="Documentation"
-          icon={<OpenBook />}
-          onClick={(event, data) => {
-            console.log("Action 2", event);
-          }}
-        />
-        <Action
-          label="Logout"
-          icon={<LogOut />}
-          onClick={(event, data) => {
-            console.log("Action 3", event);
-          }}
-        />
-      </Actions>
-    </VerticalNavigation>
+        <Actions>
+          <Action
+            label="User"
+            icon={<User />}
+            onClick={event => {
+              console.log("Action 1", event);
+            }}
+          />
+          <Action
+            label="Documentation"
+            icon={<OpenBook />}
+            onClick={event => {
+              console.log("Action 2", event);
+            }}
+          />
+          <Action
+            label="Logout"
+            icon={<LogOut />}
+            onClick={event => {
+              console.log("Action 3", event);
+            }}
+          />
+        </Actions>
+      </VerticalNavigation>
+    </div>
   );
 }
 

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import FileUploader from "@hv/uikit-react-core/dist/FileUploader";
 
-const filterNewFiles = (files, list) => {
-  return files.filter(
-    file => !list.find(listFile => listFile.name === file.name)
-  );
-};
-
 const files = [
   {
     id: "uploaded-file-1",
@@ -52,20 +46,23 @@ function clearUploadSimulationHandler(file) {
 }
 
 const simulateUpload = (file, setList) => {
+  const newFile = file;
+
   const uploadSpeed = 20000; // bits per second
 
-  file.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
+  newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
 
-  if (file.size == file.progress) {
-    file.status = "success";
+  if (file.size === file.progress) {
+    newFile.status = "success";
 
-    clearUploadSimulationHandler(file);
+    clearUploadSimulationHandler(newFile);
   }
 
   setList(previousList => [...previousList]);
 };
 
-function addFile(newFile, setList) {
+function addFile(file, setList) {
+  const newFile = file;
   const hasFailed = newFile.status === "fail";
 
   if (!hasFailed) {

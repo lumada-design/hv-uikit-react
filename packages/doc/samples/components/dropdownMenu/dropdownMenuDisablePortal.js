@@ -12,8 +12,7 @@ export default (
     <DropDownMenu
       id="dpmDisablePortal"
       dataList={menuOptions}
-      //onClick={e => alert(e.label)}
-      disablePortal={true}
+      disablePortal
     />
   </div>
 );

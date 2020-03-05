@@ -57,11 +57,11 @@ const Row = ({ classes, status, value, id }) => {
 
   return (
     <HvListViewRow checkboxValue={value.id}>
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+      <HvListViewCell semantic={status.sema} id={`icon${  id}`} key={`icon${  id}`}>
         <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${  id}`} key={`description${  id}`}>
         <div style={{ display: "inline-flex" }}>
           <HvTypography variant="highlightText">
             {value.event.description}
@@ -75,15 +75,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
+      <HvListViewCell id={`probability${  id}`} key={`probability${  id}`}>
         <HvTypography variant="normalText">{value.probability}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
+      <HvListViewCell id={`timeHorizon${  id}`} key={`timeHorizon${  id}`}>
         <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${  id}`} key={`relatedAssets${  id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
@@ -144,7 +144,7 @@ const rowRenderer = (value, index) => {
 
 const configuration = {
   onSelection: event => {
-    alert("this " + event.target.value);
+    alert(`this ${  event.target.value}`);
   },
   isSelectable: true,
   columnConfiguration: [
@@ -188,7 +188,7 @@ const configuration = {
   ],
   actions: [{ id: "1", label: "Dismiss", disabled: false }],
   actionsCallback: (id, action) => {
-    alert("You have pressed" + id + "with action" + action.label);
+    alert(`You have pressed${  id  }with action${  action.label}`);
   }
 };
 

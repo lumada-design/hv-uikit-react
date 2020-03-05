@@ -19,7 +19,7 @@ const Row = ({ classes, status, value, id }) => {
 
   return (
     <HvListViewRow checkboxValue={value.id}>
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon
           semantic={status.sema}
           className={classes.icon}
@@ -27,7 +27,7 @@ const Row = ({ classes, status, value, id }) => {
         />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div className={classes.cellInline}>
           <Typography variant="highlightText">
             {value.event.description}
@@ -41,15 +41,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
-        <Typography variant="normalText">{value.probability}%</Typography>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
+        <Typography variant="normalText">{`${value.probability}%`}</Typography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
-        <Typography variant="normalText">{value.timeHorizon}h</Typography>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
+        <Typography variant="normalText">{`${value.timeHorizon}h`}</Typography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <Typography variant="normalText">{value.relatedAssets}</Typography>
       </HvListViewCell>
     </HvListViewRow>
@@ -67,7 +67,7 @@ const StyledRow = withStyles(styles)(Row);
  * @param metadata
  * @returns {*}
  */
-const rowRenderer = (value, index, viewConfiguration, metadata) => {
+const rowRenderer = (value, index) => {
   const status = {};
   const { probability } = value;
 

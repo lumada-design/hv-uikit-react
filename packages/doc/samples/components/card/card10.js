@@ -55,9 +55,11 @@ export default (
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
       id="test"
-      defaultCardAriaLabel={"Asset Avatar L90 press enter or space to select this card"}
-      innerCardContent={<SingleContent classes={styles}/>}
-      onClickAction={()=>{console.log("CLICK")}}
+      defaultCardAriaLabel="Asset Avatar L90 press enter or space to select this card"
+      innerCardContent={<SingleContent classes={styles} />}
+      onClickAction={() => {
+        console.log("CLICK");
+      }}
       isSelectable
       selectOnClickAction
       mediaPath={compressor}

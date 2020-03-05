@@ -2,15 +2,15 @@ import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import {
   Add,
-  Upload,
   Delete,
+  Level3Bad as FailureIcon,
   Preview,
-  Level3Bad as FailureIcon
+  Upload
 } from "@hv/uikit-react-icons/dist";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import leaf from "./resources/leaf.png";
 import withStyles from "@material-ui/core/styles/withStyles";
+import leaf from "./resources/leaf.png";
 
 const configuration = {
   title: "Leaves Appear wilted and scorched",
@@ -148,7 +148,7 @@ export default (
       subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={myActions}
-      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
+      actionsCallback={(id, a) => alert(`You have pressed ${a.label}`)}
       actionsAlignment="left"
       semantic="sema4"
       isSelectable

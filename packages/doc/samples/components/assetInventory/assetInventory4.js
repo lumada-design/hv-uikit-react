@@ -43,7 +43,7 @@ const getStatus = statusNumber => {
   }
 };
 
-//----------------------- CardView Render -----------------------------
+// ----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
   content: {
     padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
@@ -109,7 +109,7 @@ const Content = ({ classes, values }) => (
 
 const ContentWithStyles = withStyles(kpiStyles)(Content);
 
-const cardRenderer = (data, viewConfiguration, metadata) => {
+const cardRenderer = (data, viewConfiguration) => {
   const { Icon, sema } = getStatus(data.status);
   const StyledIcon = <Icon semantic={sema} />;
 
@@ -130,7 +130,7 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
   );
 };
 
-//----------------------- ListView Render -----------------------------
+// ----------------------- ListView Render -----------------------------
 
 const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
@@ -140,11 +140,11 @@ const Row = ({ classes, status, value, id }) => {
       checkboxValue={value.id}
       checkboxSelected={value.checkboxSelected}
     >
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
           <HvTypography variant="highlightText">
             {value.event.description}
@@ -158,15 +158,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
-        <HvTypography variant="normalText">{value.probability}%</HvTypography>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
+        <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
-        <HvTypography variant="normalText">{value.timeHorizon}h</HvTypography>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
+        <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
@@ -186,7 +186,7 @@ const stylesRow = theme => ({
 
 const StyledRow = withStyles(stylesRow)(Row);
 
-const rowRenderer = (value, index, viewConfiguration, metadata) => (
+const rowRenderer = (value, index) => (
   <StyledRow
     status={getStatus(value.status)}
     value={value}
@@ -195,7 +195,7 @@ const rowRenderer = (value, index, viewConfiguration, metadata) => (
   />
 );
 
-//----------------------- Configuration ------------------------------
+// ----------------------- Configuration ------------------------------
 
 const myActions = [
   {
@@ -257,14 +257,14 @@ class ServerSideAssetInventory extends React.Component {
 
   onPageChange = page => {
     this.setState(prevState => ({
-      page: page,
+      page,
       values: fetchData(prevState.pageSize, page)
     }));
   };
 
   onPageSizeChange = pageSize => {
     this.setState(prevState => ({
-      pageSize: pageSize,
+      pageSize,
       values: fetchData(pageSize, prevState.page)
     }));
   };
@@ -304,7 +304,7 @@ class ServerSideAssetInventory extends React.Component {
         onSearch={this.onSearch}
         // Sort
         onSortChange={this.onSort}
-        sortOptionId={"id1Asc"}
+        sortOptionId="id1Asc"
         searchString={searchString}
       >
         <CardView

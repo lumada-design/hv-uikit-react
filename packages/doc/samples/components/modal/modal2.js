@@ -30,9 +30,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         firstFocusable="switchAnyway"
       >
         {title}
-        {content ? (
-          content
-        ) : (
+        {content || (
           <HvModalContent>
             Switching to model view will clear all the fields in your
             visualization. You will need to re-select your fields.

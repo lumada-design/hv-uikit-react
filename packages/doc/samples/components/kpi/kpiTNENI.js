@@ -32,8 +32,8 @@ const trend = () => (
     }}
   >
     <Chart
-      width={"50px"}
-      height={"32px"}
+      width="50px"
+      height="32px"
       chartType="AreaChart"
       loader={<div>Loading Chart</div>}
       data={[

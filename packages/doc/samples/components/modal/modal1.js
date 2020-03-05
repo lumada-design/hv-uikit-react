@@ -37,9 +37,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         id="test"
       >
         {title}
-        {content ? (
-          content
-        ) : (
+        {content || (
           <HvModalContent>
             Switching to model view will clear all the fields in your
             visualization. You will need to re-select your fields.

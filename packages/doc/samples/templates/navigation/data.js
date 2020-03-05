@@ -1,7 +1,7 @@
 import React from "react";
 import { Play, Stop } from "@hv/uikit-react-icons/dist";
 
-export const navigationData = [
+const navigationData = [
   {
     id: "01",
     label: "System",
@@ -94,3 +94,5 @@ export const navigationData = [
     label: "Summary"
   }
 ];
+
+export default navigationData;

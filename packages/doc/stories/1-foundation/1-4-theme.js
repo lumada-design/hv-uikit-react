@@ -1,11 +1,11 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Theme from "../../samples/foundation/theme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import Theme from "../../samples/foundation/theme";
 
 storiesOf("Foundation/Theming", module)
   .add("Intro", () => <Theme />)
-  .add("Provider", () => <HvProvider></HvProvider>, {
+  .add("Provider", () => <HvProvider />, {
     title: "Provider",
     description:
       "a wrapper of material ui provider used to inject theme objects to the components inside",
