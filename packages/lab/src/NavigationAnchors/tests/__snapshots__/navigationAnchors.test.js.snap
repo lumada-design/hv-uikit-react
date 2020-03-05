@@ -524,7 +524,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
         "props": Object {
           "MuiButtonBase": Object {
             "disableRipple": true,
-            "disableTouchRipple": true,
           },
           "MuiInput": Object {
             "disableUnderline": true,
@@ -1003,7 +1002,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}
@@ -1163,7 +1161,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}
@@ -1323,7 +1320,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}
@@ -2716,7 +2712,6 @@ exports[`User withStyles should render correctly 1`] = `
       "props": Object {
         "MuiButtonBase": Object {
           "disableRipple": true,
-          "disableTouchRipple": true,
         },
         "MuiInput": Object {
           "disableUnderline": true,
@@ -3524,7 +3519,6 @@ exports[`User withStyles should render correctly with props 1`] = `
         "props": Object {
           "MuiButtonBase": Object {
             "disableRipple": true,
-            "disableTouchRipple": true,
           },
           "MuiInput": Object {
             "disableUnderline": true,
@@ -4002,7 +3996,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}
@@ -4162,7 +4155,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}
@@ -4322,7 +4314,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                     }
                                     component="div"
                                     disableRipple={true}
-                                    disableTouchRipple={true}
                                     disabled={false}
                                     focusVisibleClassName="Mui-focusVisible"
                                     onClick={[Function]}

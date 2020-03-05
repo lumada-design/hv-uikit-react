@@ -524,7 +524,6 @@ exports[`Slider  should render correctly 1`] = `
         "props": Object {
           "MuiButtonBase": Object {
             "disableRipple": true,
-            "disableTouchRipple": true,
           },
           "MuiInput": Object {
             "disableUnderline": true,
@@ -1404,7 +1403,6 @@ exports[`Slider  should render correctly 1`] = `
             "props": Object {
               "MuiButtonBase": Object {
                 "disableRipple": true,
-                "disableTouchRipple": true,
               },
               "MuiInput": Object {
                 "disableUnderline": true,
