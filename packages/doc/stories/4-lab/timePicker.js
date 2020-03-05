@@ -4,7 +4,7 @@ import TimePicker from "@hv/uikit-react-lab/dist/TimePicker";
 
 storiesOf("Lab", module).add(
   "TimePicker",
-  () => <TimePicker onValidate={"test"} />,
+  () => <TimePicker onValidate="test" />,
   {
     title: "TimePicker",
     description:

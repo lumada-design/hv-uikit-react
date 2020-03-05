@@ -42,7 +42,7 @@ const getStatus = statusNumber => {
   }
 };
 
-//----------------------- CardView Render -----------------------------
+// ----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
   content: {
     padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
@@ -108,7 +108,7 @@ const Content = ({ classes, values }) => (
 
 const ContentWithStyles = withStyles(kpiStyles)(Content);
 
-const cardRenderer = (value, viewConfiguration, metadata) => {
+const cardRenderer = (value, viewConfiguration) => {
   const { Icon, sema } = getStatus(value.status);
   const StyledIcon = <Icon semantic={sema} />;
 
@@ -128,18 +128,18 @@ const cardRenderer = (value, viewConfiguration, metadata) => {
   );
 };
 
-//----------------------- ListView Render -----------------------------
+// ----------------------- ListView Render -----------------------------
 
 const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
     <HvListViewRow checkboxValue={value.id}>
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
           <HvTypography variant="highlightText">
             {value.event.description}
@@ -153,15 +153,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
-        <HvTypography variant="normalText">{value.probability}%</HvTypography>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
+        <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
-        <HvTypography variant="normalText">{value.timeHorizon}h</HvTypography>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
+        <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
@@ -181,7 +181,7 @@ const stylesRow = theme => ({
 
 const StyledRow = withStyles(stylesRow)(Row);
 
-const rowRenderer = (value, index, viewConfiguration, metadata) => (
+const rowRenderer = (value, index) => (
   <StyledRow
     status={getStatus(value.status)}
     value={value}
@@ -190,23 +190,21 @@ const rowRenderer = (value, index, viewConfiguration, metadata) => (
   />
 );
 
-//-------------------------- TextRender --------------------------------
+// -------------------------- TextRender --------------------------------
 
 const TextRender = ({ id, values }) => (
   <div id={id}>
     <Grid container>
       {values.map(value => (
         <Grid item>
-          <HvTypography variant={"labelText"}> title</HvTypography>
-          <HvTypography variant={"normalText"}>
-            {value.headerTitle}
-          </HvTypography>
-          <HvTypography variant={"labelText"}> description</HvTypography>
-          <HvTypography variant={"normalText"}>
+          <HvTypography variant="labelText"> title</HvTypography>
+          <HvTypography variant="normalText">{value.headerTitle}</HvTypography>
+          <HvTypography variant="labelText"> description</HvTypography>
+          <HvTypography variant="normalText">
             {value.event.description}
           </HvTypography>
-          <HvTypography variant={"labelText"}> probability</HvTypography>
-          <HvTypography variant={"normalText"}>
+          <HvTypography variant="labelText"> probability</HvTypography>
+          <HvTypography variant="normalText">
             {value.event.probability}
           </HvTypography>
         </Grid>
@@ -215,50 +213,44 @@ const TextRender = ({ id, values }) => (
   </div>
 );
 
-//--------------------------- Values ---------------------------------
+// --------------------------- Values ---------------------------------
 
-const compressorData = id => {
-  return {
-    headerTitle: "Risk of downtime " + (id + 1),
-    id: "id_" + id,
-    status: 5,
-    event: {
-      description: "Risk of downtime on Truck 12",
-      timestamp: "2 minutes ago",
-      schedule: "fix now"
-    },
-    probability: "92",
-    timeHorizon: "8",
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: "id_" + id
-  };
-};
+const compressorData = id => ({
+  headerTitle: `${id} Risk of downtime ${id + 1}`,
+  id: `id_${id}`,
+  status: 5,
+  event: {
+    description: `Risk of downtime on Truck ${id}`,
+    timestamp: "2 minutes ago",
+    schedule: "fix now"
+  },
+  probability: 90 + id,
+  timeHorizon: 8 + id,
+  relatedAssets: "Track A, Zone 15 Brake",
+  checkboxValue: `id_${id}`
+});
 
-const machineData = id => {
-  return {
-    headerTitle: "Track severe " + (id + 1),
-    id: "id_" + id,
-    status: 1,
-    event: {
-      description: "Track severe breakdown",
-      timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
-    },
-    probability: "90",
-    timeHorizon: "20",
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: "id_" + id
-  };
-};
+const machineData = id => ({
+  headerTitle: `${id} Track severe ${id + 1}`,
+  id: `id_${id}`,
+  status: 2,
+  event: {
+    description: `Track ${id} severe breakdown`,
+    timestamp: "2 hours ago",
+    schedule: "fix 3rd shift"
+  },
+  probability: 90 + id,
+  timeHorizon: 8 + id,
+  relatedAssets: "Track B, Load 2 Brake",
+  checkboxValue: `id_${id}`
+});
 
-const values = () => {
-  let cards = [];
-  for (let i = 0; i < 10; ++i)
-    cards.push(i % 2 === 0 ? compressorData(i) : machineData(i));
-  return cards;
-};
+const values = (num = 10) =>
+  Array.from(Array(num).keys()).map(i =>
+    i % 2 === 0 ? compressorData(i) : machineData(i)
+  );
 
-//----------------------- Configuration ------------------------------
+// ----------------------- Configuration ------------------------------
 
 const myActions = [
   {

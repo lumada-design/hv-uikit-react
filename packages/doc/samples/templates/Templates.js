@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { linkTo } from "@storybook/addon-links";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Card, {
@@ -68,7 +69,7 @@ const Cards = ({ classes, containers }) =>
     <Grid item xs={4} sm={4} md={6} lg={4} xl={4} key={container.id}>
       <Card classes={{ sema0: classes.sema0 }}>
         <CardMedia onClick={link(container.associatedStory)}>
-          <img src={container.img} className={classes.img} />
+          <img src={container.img} alt="img" className={classes.img} />
         </CardMedia>
         <HvCardContent
           innerCardContent={
@@ -80,7 +81,7 @@ const Cards = ({ classes, containers }) =>
         <HvCardFooter
           actions={[
             {
-              id: "card" + idx,
+              id: `card${idx}`,
               label: "Source Code",
               sourceCode: container.sourceCodeUrl
             }

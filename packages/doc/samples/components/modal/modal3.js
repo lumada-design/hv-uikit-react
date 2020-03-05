@@ -13,8 +13,6 @@ import TextArea from "@hv/uikit-react-core/dist/TextArea";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Input from "@hv/uikit-react-core/dist/Input";
 
-const generalIconProps = { iconSize: "M" };
-
 const btnStyle = {
   width: "120px",
   height: "32px",
@@ -36,9 +34,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         id="test"
       >
         {title}
-        {content ? (
-          content
-        ) : (
+        {content || (
           <HvModalContent>
             Switching to model view will clear all the fields in your
             visualization. You will need to re-select your fields.

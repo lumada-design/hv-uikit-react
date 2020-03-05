@@ -39,7 +39,7 @@ function WrapperComp() {
         New Props
       </Button>
       <div style={{ width: "400px" }}>
-        <MultiButton buttons={value} type={"mixed"} multi />
+        <MultiButton buttons={value} type="mixed" multi />
       </div>
     </>
   );

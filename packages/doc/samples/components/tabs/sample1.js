@@ -11,9 +11,9 @@ function Sample1() {
 
   return (
     <HvTabs id="tabs" value={value} onChange={handleChange}>
-      <HvTab id="tabs-tab1" label="Clicable tab 1"></HvTab>
-      <HvTab id="tabs-tab2" label="Clicable tab 2"></HvTab>
-      <HvTab id="tabs-tab3" label="Clicable tab 3"></HvTab>
+      <HvTab id="tabs-tab1" label="Clickable tab 1" />
+      <HvTab id="tabs-tab2" label="Clickable tab 2" />
+      <HvTab id="tabs-tab3" label="Clickable tab 3" />
     </HvTabs>
   );
 }

@@ -3,9 +3,9 @@ import Tooltip from "@hv/uikit-react-core/dist/Tooltip";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 const styling = {
-  outerDiv: {
-    width: 100,
-    cursor: "pointer"
+  button: {
+    border: "none",
+    background: "transparent"
   },
   placeholder: {
     display: "flex",
@@ -16,9 +16,9 @@ const styling = {
 };
 
 const TooltipControl = (
-  <div tabIndex="0" style={styling.outerDiv}>
+  <button type="button" style={styling.button}>
     <HvTypography variant="normalText">Hover here</HvTypography>
-  </div>
+  </button>
 );
 
 const data = (

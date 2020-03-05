@@ -1,7 +1,7 @@
 import React from "react";
 import { Operation, Tool } from "@hv/uikit-react-icons/dist";
 
-export const headerConfiguration = [
+const headerConfiguration = [
   {
     id: "01",
     label: "System",
@@ -94,3 +94,5 @@ export const headerConfiguration = [
     label: "Summary"
   }
 ];
+
+export default headerConfiguration;

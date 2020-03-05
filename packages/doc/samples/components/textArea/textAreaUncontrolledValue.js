@@ -17,9 +17,9 @@ function WrapperComp() {
   const [value, setValue] = useState();
 
   // to be possible to change the input value by user action
-  const setterValue = value => {
-    setValue(value);
-    return value;
+  const setterValue = newValue => {
+    setValue(newValue);
+    return newValue;
   };
 
   return (

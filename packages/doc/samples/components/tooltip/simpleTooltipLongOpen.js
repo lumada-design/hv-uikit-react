@@ -16,6 +16,7 @@ const styling = {
 };
 
 const TooltipControl = (
+  // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
   <div tabIndex="0" style={styling.outerDiv}>
     <HvTypography variant="normalText">Tooltip open</HvTypography>
   </div>

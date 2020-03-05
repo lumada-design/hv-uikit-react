@@ -43,7 +43,7 @@ const ariaProps = {
 
 export default (
   <>
-    <button id="anchorButton" tabIndex={0}>
+    <button type="button" id="anchorButton" tabIndex={0}>
       Anchor
     </button>
     <ListWrapper>

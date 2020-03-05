@@ -1,9 +1,9 @@
 import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 import compressor from "../card/resources/compressor.png";
 import leaf from "../card/resources/leaf.png";
-import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 
 const styles = theme => ({
   content: {
@@ -19,7 +19,7 @@ const styles = theme => ({
   }
 });
 
-//---------------- InnerContent ----------------
+// ---------------- InnerContent ----------------
 
 const InnerContent = ({ classes, values }) => (
   <>
@@ -50,47 +50,42 @@ const innerContentFunc = values => (
   <InnerContent classes={styles} values={values} />
 );
 
-//-------------------- Data --------------------
-const compressorData = id => {
-  return {
-    headerTitle: "Asset Avatar " + (id + 1),
-    subheader: "Compressor",
-    id: "id_" + id,
-    mediaPath: compressor,
-    mediaHeight: 186,
-    semantic: "sema2",
-    checkboxValue: "id_" + id,
-    data: {
-      firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-      secondContent: "Jun 30, 2015 12:27:53 PM"
-    }
-  };
-};
+// -------------------- Data --------------------
 
-const leafData = id => {
-  return {
-    headerTitle: "Asset Avatar " + (id + 1),
-    subheader: "Machine",
-    id: "id_" + id,
-    mediaPath: leaf,
-    mediaHeight: 186,
-    semantic: "sema3",
-    checkboxValue: "id_" + id,
-    data: {
-      firstContent: "7cd4-2101cad3-1000-bdp95-d8c497176e7c",
-      secondContent: "Aug 30, 2017 12:27:53 PM"
-    }
-  };
-};
+const compressorData = id => ({
+  headerTitle: `Asset Avatar ${id + 1}`,
+  subheader: "Compressor",
+  id: `id_${id}`,
+  mediaPath: compressor,
+  mediaHeight: 186,
+  semantic: "sema2",
+  checkboxValue: `id_${id}`,
+  data: {
+    firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
+    secondContent: "Jun 30, 2015 12:27:53 PM"
+  }
+});
 
-const values = () => {
-  let cards = [];
-  for (let i = 0; i < 8; ++i)
-    cards.push(i % 2 === 0 ? compressorData(i) : leafData(i));
-  return cards;
-};
+const machineData = id => ({
+  headerTitle: `${id} Asset Avatar ${id + 1}`,
+  subheader: "Machine",
+  id: `id_${id}`,
+  mediaPath: leaf,
+  mediaHeight: 186,
+  semantic: "sema3",
+  checkboxValue: `id_${id}`,
+  data: {
+    firstContent: "7cd4-2101cad3-1000-bdp95-d8c497176e7c",
+    secondContent: "Aug 30, 2017 12:27:53 PM"
+  }
+});
 
-//--------------- Configuration ----------------
+const values = (num = 10) =>
+  Array.from(Array(num).keys()).map(i =>
+    i % 2 === 0 ? compressorData(i) : machineData(i)
+  );
+
+// --------------- Configuration ----------------
 const myActions = [
   {
     id: "post",
@@ -130,7 +125,7 @@ const viewConfiguration = {
   isSelectable: true,
   actions: myActions,
   actionsCallback: (id, action) =>
-    alert("You have pressed card " + id + " with action " + action.label)
+    alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (

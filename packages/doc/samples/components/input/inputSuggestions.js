@@ -230,7 +230,7 @@ export default (
     id="test"
     validation={value => value.includes("a")}
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item => console.log(item.label + " selected")}
+    suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
     customFixedIcon={<Map />}
   />
 );

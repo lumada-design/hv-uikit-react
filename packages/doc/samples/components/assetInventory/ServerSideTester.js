@@ -1,38 +1,34 @@
-//--------------------------- Values ---------------------------------
+// --------------------------- Values ---------------------------------
 
-const compressorData = id => {
-  return {
-    headerTitle: id + " Risk of downtime " + (id + 1),
-    id: "id_" + id,
-    status: 5,
-    event: {
-      description: "Risk of downtime on Truck " + id,
-      timestamp: "2 minutes ago",
-      schedule: "fix now"
-    },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: "id_" + id
-  };
-};
+const compressorData = id => ({
+  headerTitle: `${id} Risk of downtime ${id + 1}`,
+  id: `id_${id}`,
+  status: 5,
+  event: {
+    description: `Risk of downtime on Truck ${id}`,
+    timestamp: "2 minutes ago",
+    schedule: "fix now"
+  },
+  probability: 90 + id,
+  timeHorizon: 8 + id,
+  relatedAssets: "Track A, Zone 15 Brake",
+  checkboxValue: `id_${id}`
+});
 
-const machineData = id => {
-  return {
-    headerTitle: id + " Track severe " + (id + 1),
-    id: "id_" + id,
-    status: 2,
-    event: {
-      description: "Track " + id + " severe breakdown",
-      timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
-    },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: "id_" + id
-  };
-};
+const machineData = id => ({
+  headerTitle: `${id} Track severe ${id + 1}`,
+  id: `id_${id}`,
+  status: 2,
+  event: {
+    description: `Track ${id} severe breakdown`,
+    timestamp: "2 hours ago",
+    schedule: "fix 3rd shift"
+  },
+  probability: 90 + id,
+  timeHorizon: 8 + id,
+  relatedAssets: "Track B, Load 2 Brake",
+  checkboxValue: `id_${id}`
+});
 
 /**
  * Return the first word of a string in a number format.
@@ -40,7 +36,7 @@ const machineData = id => {
  * @param str
  * @returns {number}
  */
-const getHeaderNumber = str => parseInt(str.substr(0, str.indexOf(" ")));
+const getHeaderNumber = str => Number(str.substr(0, str.indexOf(" ")));
 
 /**
  * Sort ascending.
@@ -67,12 +63,10 @@ const sortDesc = (a, b) =>
  *
  * @returns {[]}
  */
-const valuesGenerator = () => {
-  let cards = [];
-  for (let i = 0; i < 50; ++i)
-    cards.push(i % 2 === 0 ? compressorData(i) : machineData(i));
-  return cards;
-};
+const valuesGenerator = (num = 50) =>
+  Array.from(Array(num).keys()).map(i =>
+    i % 2 === 0 ? compressorData(i) : machineData(i)
+  );
 
 let values = valuesGenerator();
 let searchString = "";
@@ -85,8 +79,8 @@ let searchString = "";
  * @param page
  * @returns {*}
  */
-const getSlicePage = (values, size, page) =>
-  values.slice(size * page, size * (page + 1));
+const getSlicePage = (values2, size, page) =>
+  values2.slice(size * page, size * (page + 1));
 
 /**
  * Filter function for the search.
@@ -141,7 +135,5 @@ const doSort = (type, size, page) => {
  * @returns {number}
  */
 const getPages = size => Math.ceil(values.filter(searchFilter).length / size);
-
-
 
 export { fetchData, getPages, doSearch, doSort };

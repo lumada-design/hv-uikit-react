@@ -87,7 +87,7 @@ const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
       </span>
     )}
     <div>
-      <HvTypography style={{ margin: "6px 0" }} variant={"infoText"}>
+      <HvTypography style={{ margin: "6px 0" }} variant="infoText">
         {name}
       </HvTypography>
     </div>
@@ -112,7 +112,7 @@ const Icons = ({ classes }) => {
           notifyChangesOnFirstRender
         />
       </div>
-      <Group groupLabel={"Generic"} classes={classes} iconSize={iconSize} />
+      <Group groupLabel="Generic" classes={classes} iconSize={iconSize} />
     </div>
   );
 };

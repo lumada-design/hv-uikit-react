@@ -47,7 +47,7 @@ export default (
   <ListWrapper>
     <List
       values={data}
-      multiSelect={true}
+      multiSelect
       showSelectAll
       useSelector
       listProps={ariaProps}

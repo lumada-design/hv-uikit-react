@@ -10,7 +10,8 @@ const labels = {
 
 export default (
   <HvInput
-    labels={labels} infoIcon
+    labels={labels}
+    infoIcon
     validation={value => value.includes("hello")}
   />
 );

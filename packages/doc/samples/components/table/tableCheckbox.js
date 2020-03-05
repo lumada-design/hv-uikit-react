@@ -232,7 +232,7 @@ class Wrapper extends React.Component {
   };
 
   render() {
-    const { pageSize, sorted, titleText, subtitleText } = this.state;
+    const { pageSize, sorted } = this.state;
 
     const labels = {
       titleText: "This is a Title",

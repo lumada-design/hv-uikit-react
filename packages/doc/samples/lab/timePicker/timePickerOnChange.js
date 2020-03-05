@@ -26,14 +26,17 @@ class TimePickerToExport extends React.Component {
     });
   };
 
-  render = () => (
-    <>
-      <div style={{ width: "200px" }}>
-        <TimePicker {...timeProps} onChange={this.updateTime} />
-      </div>
-      <div>{getFormattedTime(this.state.time)}</div>
-    </>
-  );
+  render = () => {
+    const { time } = this.state;
+    return (
+      <>
+        <div style={{ width: "200px" }}>
+          <TimePicker {...timeProps} onChange={this.updateTime} />
+        </div>
+        <div>{getFormattedTime(time)}</div>
+      </>
+    );
+  };
 }
 
 export default <TimePickerToExport />;

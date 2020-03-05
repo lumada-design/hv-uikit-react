@@ -19,7 +19,7 @@ export default (
   <div style={{ width: "1000px" }}>
     <MultiButton
       buttons={buttonsDefinitions}
-      type={"mixed"}
+      type="mixed"
       multi
       maxSelection={2}
     />

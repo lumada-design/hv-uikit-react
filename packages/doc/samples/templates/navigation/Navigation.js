@@ -9,22 +9,22 @@ import {
 } from "@hv/uikit-react-icons/dist";
 import { HvBadge, HvButton, HvEmptyState } from "@hv/uikit-react-core/dist";
 import VerticalNavigation, {
-  Navigation,
+  Action,
   Actions,
-  Action
+  Navigation
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 import HvHeader, {
-  HvHeaderBrand,
   HvHeaderActions,
+  HvHeaderBrand,
   HvHeaderNavigation
 } from "@hv/uikit-react-core/dist/Header";
 import HitachiLogo from "../home/components/HitachiLogo";
-import { navigationData } from "./data";
+import navigationData from "./data";
 
 const boxStyles = { width: 32, height: 32 };
 
 const findById = (data = [], id) => {
-  // eslint-disable-next-line no-restricted-syntax
+  /* eslint-disable */
   for (const el of data) {
     if (el.id === id) return el;
 

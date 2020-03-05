@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = () => ({
   section: {
     paddingTop: "50px",
     display: "flex"

@@ -11,12 +11,11 @@ function Sample2() {
 
   return (
     <HvTabs variant="fullWidth" value={value} onChange={handleChange}>
-      <HvTab label="Clicable tab"></HvTab>
-      <HvTab label="Clicable tab"></HvTab>
-      <HvTab label="Clicable tab"></HvTab>
+      <HvTab label="Clickable tab" />
+      <HvTab label="Clickable tab" />
+      <HvTab label="Clickable tab" />
     </HvTabs>
   );
 }
 
-
-export default <Sample2/>
+export default <Sample2 />;

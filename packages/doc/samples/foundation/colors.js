@@ -40,6 +40,7 @@ const Group = ({ classes, name, colors }) => {
       <div className={classes.groupName}>{name}</div>
       <div className={classes.colors}>
         {keys.map((color, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
           <div key={idx} className={classes.colorContainer}>
             <div className={classes.colorName}>{color}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
@@ -57,6 +58,7 @@ const Group = ({ classes, name, colors }) => {
 const ColorsGroup = ({ classes, keys, colors }) => (
   <div className={classes.colorGroup}>
     {keys.map((group, idx) => (
+      // eslint-disable-next-line react/no-array-index-key
       <Group key={idx} classes={classes} name={group} colors={colors[group]} />
     ))}
   </div>

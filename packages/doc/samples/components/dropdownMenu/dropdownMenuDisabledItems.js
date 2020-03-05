@@ -12,7 +12,6 @@ export default (
     <DropDownMenu
       id="dpmDisabledItems"
       dataList={menuOptions}
-      //onClick={e => alert(e.label)}
       aria-label="dropdownMenu-DisabledItems"
     />
   </div>

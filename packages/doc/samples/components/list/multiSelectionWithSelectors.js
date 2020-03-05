@@ -51,6 +51,6 @@ const ariaProps = {
 
 export default (
   <ListWrapper>
-    <List values={data} multiSelect={true} useSelector listProps={ariaProps} />
+    <List values={data} multiSelect useSelector listProps={ariaProps} />
   </ListWrapper>
 );

@@ -4,134 +4,132 @@ import HvTable from "@hv/uikit-react-core/dist/Table";
 
 const data = [
   {
-    "id": 1,
-    "dataCenter": "Bob Route",
-    "storageSegment": "Open systems",
-    "storageArray": 3,
-    "allocateVsCapability": 2.5,
-    "averageCompression": 1.62,
-    "totalIOPS": 18649,
-    "totalThroughput" : 1963.28,
-    "averageServiceTime": 1.20,
-    "averageReadTime": 1.83
+    id: 1,
+    dataCenter: "Bob Route",
+    storageSegment: "Open systems",
+    storageArray: 3,
+    allocateVsCapability: 2.5,
+    averageCompression: 1.62,
+    totalIOPS: 18649,
+    totalThroughput: 1963.28,
+    averageServiceTime: 1.2,
+    averageReadTime: 1.83
   },
   {
-    "id": 2,
-    "dataCenter": "Captain America Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2.5,
-    "averageCompression": 1.7,
-    "totalIOPS": 8652,
-    "totalThroughput" : 1013.01,
-    "averageServiceTime": 5.16,
-    "averageReadTime": 1.45
+    id: 2,
+    dataCenter: "Captain America Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2.5,
+    averageCompression: 1.7,
+    totalIOPS: 8652,
+    totalThroughput: 1013.01,
+    averageServiceTime: 5.16,
+    averageReadTime: 1.45
   },
   {
-    "id": 4,
-    "dataCenter": "Chris1",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 4,
+    dataCenter: "Chris1",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   },
   {
-    "id": 5,
-    "dataCenter": "Jeans Data Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 5,
+    dataCenter: "Jeans Data Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   },
   {
-    "id": 6,
-    "dataCenter": "Captain America Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 6,
+    dataCenter: "Captain America Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   },
   {
-    "id": 7,
-    "dataCenter": "Bob Route",
-    "storageSegment": "Open systems",
-    "storageArray": 3,
-    "allocateVsCapability": 2.5,
-    "averageCompression": 1.62,
-    "totalIOPS": 18649,
-    "totalThroughput" : 1963.28,
-    "averageServiceTime": 1.20,
-    "averageReadTime": 1.83
+    id: 7,
+    dataCenter: "Bob Route",
+    storageSegment: "Open systems",
+    storageArray: 3,
+    allocateVsCapability: 2.5,
+    averageCompression: 1.62,
+    totalIOPS: 18649,
+    totalThroughput: 1963.28,
+    averageServiceTime: 1.2,
+    averageReadTime: 1.83
   },
   {
-    "id": 8,
-    "dataCenter": "Captain America Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2.5,
-    "averageCompression": 1.7,
-    "totalIOPS": 8652,
-    "totalThroughput" : 1013.01,
-    "averageServiceTime": 5.16,
-    "averageReadTime": 1.45
+    id: 8,
+    dataCenter: "Captain America Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2.5,
+    averageCompression: 1.7,
+    totalIOPS: 8652,
+    totalThroughput: 1013.01,
+    averageServiceTime: 5.16,
+    averageReadTime: 1.45
   },
   {
-    "id": 9,
-    "dataCenter": "Chris1",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 9,
+    dataCenter: "Chris1",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   },
   {
-    "id": 10,
-    "dataCenter": "Jeans Data Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 10,
+    dataCenter: "Jeans Data Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   },
   {
-    "id": 11,
-    "dataCenter": "Captain America Route",
-    "storageSegment": "Tandem",
-    "storageArray": 3,
-    "allocateVsCapability": 2,
-    "averageCompression": 1.91,
-    "totalIOPS": 10459,
-    "totalThroughput" : 923.65,
-    "averageServiceTime": 1.38,
-    "averageReadTime": 1.05
+    id: 11,
+    dataCenter: "Captain America Route",
+    storageSegment: "Tandem",
+    storageArray: 3,
+    allocateVsCapability: 2,
+    averageCompression: 1.91,
+    totalIOPS: 10459,
+    totalThroughput: 923.65,
+    averageServiceTime: 1.38,
+    averageReadTime: 1.05
   }
 ];
 
 class Wrapper extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 5,
-      sorted: [{ id: "dataCenter", desc: true }],
+      sorted: [{ id: "dataCenter", desc: true }]
     };
   }
 
@@ -139,7 +137,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Data Center",
       accessor: "dataCenter",
-      cellType: "alpha-numeric",
+      cellType: "alpha-numeric"
     },
     {
       headerText: "Storage segment",
@@ -159,13 +157,17 @@ class Wrapper extends React.Component {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          [" ", Number(cellData.row._original.allocateVsCapability), "color:black"]
+          [
+            " ",
+            Number(cellData.row._original.allocateVsCapability),
+            "color:black"
+          ]
         ];
         return (
           <div style={{ display: "flex" }}>
             <div style={{ paddingRight: "5px", alignSelf: "center" }}>
               {cellData.row._original.allocateVsCapability}
-  /1 TB
+              /1 TB
             </div>
             <Chart
               width="80px"
@@ -189,7 +191,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Average compression rt",
       accessor: "averageCompression",
-      minWidth:150,
+      minWidth: 150,
       cellType: "numeric",
       Cell: cellData => `${cellData.row._original.averageCompression}:1`
     },
@@ -197,14 +199,15 @@ class Wrapper extends React.Component {
       headerText: "Total IOPS",
       accessor: "totalIOPS",
       cellType: "numeric",
-      Cell: cellData => cellData.row._original.totalIOPS.toLocaleString('en-US')
+      Cell: cellData => cellData.row._original.totalIOPS.toLocaleString("en-US")
     },
     {
       headerText: "Total throughput",
       accessor: "totalThroughput",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData => `${ cellData.row._original.totalThroughput.toLocaleString('en-US')} MB/s`
+      Cell: cellData =>
+        `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
     },
     {
       headerText: "Average service time",
@@ -262,38 +265,28 @@ class Wrapper extends React.Component {
         </tr>
       </table>
     </div>
-  )
-
-  onPageSizeChange = newPageSize => {
-    this.setState({
-      pageSize: newPageSize
-    });
-  };
+  );
 
   render() {
-    const {sorted, pageSize} = this.state;
+    const { sorted } = this.state;
 
     const labels = {
       titleText: "Storage arrays",
       subtitleText: "Click data centers or storage arrays to drill down"
-    }
+    };
 
-    return(
+    return (
       <HvTable
         data={data}
         columns={this.getColumns()}
         defaultPageSize={10}
         resizable={false}
-
         defaultSorted={sorted}
         labels={labels}
         subElementTemplate={this.subElementTemplate}
       />
-    )
+    );
   }
-
 }
 
-export default (
-  <Wrapper />
-);
+export default <Wrapper />;

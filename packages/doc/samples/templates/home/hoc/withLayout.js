@@ -6,15 +6,17 @@ import Header from "../components/Header";
 import VerticalNavigation from "../components/VerticalNavigation";
 import styles from "./styles";
 import NavContext from "./NavContext";
-import { headerConfiguration } from "../configuration/headerConfiguration";
+import headerConfiguration from "../configuration/headerConfiguration";
 
 const findById = (data = [], id) => {
-  for (const el of data) {
+  for (let i = 0; i < data.length; i += 1) {
+    const el = data[i];
     if (el.id === id) return el;
 
     const child = findById(el.data, id);
     if (child) return child;
   }
+  return null;
 };
 
 const findLeaf = item => {

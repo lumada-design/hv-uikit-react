@@ -4,7 +4,7 @@ import HvDatePicker from "@hv/uikit-react-core/dist/DatePicker";
 
 storiesOf("Components", module).add(
   "DatePicker",
-  () => <HvDatePicker onValidate={"test"} />,
+  () => <HvDatePicker onValidate="test" />,
   {
     title: "DatePicker",
     description:

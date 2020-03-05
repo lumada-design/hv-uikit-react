@@ -8,6 +8,6 @@ const buttonsDefinitions = [
 
 export default (
   <div style={{ width: "100px" }}>
-    <MultiButton buttons={buttonsDefinitions} type={"text"} vertical />
+    <MultiButton buttons={buttonsDefinitions} type="text" vertical />
   </div>
 );

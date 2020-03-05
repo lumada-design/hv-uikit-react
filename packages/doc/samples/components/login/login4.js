@@ -44,8 +44,8 @@ export default (
     <HvLogin
       login={callSimulation}
       recovery={callSimulation}
-      allowRecover={true}
-      allowRememberMe={true}
+      allowRecover
+      allowRememberMe
       labels={labels}
     />
   </div>

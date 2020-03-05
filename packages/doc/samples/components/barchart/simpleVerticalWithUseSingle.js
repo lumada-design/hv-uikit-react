@@ -22,14 +22,13 @@ const layout = {
   }
 };
 
-
 export default (
   <div>
     <Barchart
       title="Simple Vertical Bar Chart"
       subtitle="Sales performance (YTD)"
       data={data}
-      tooltipType={"single"}
+      tooltipType="single"
       xAxisTitle="Thousands of Dollars ($)"
       yAxisTitle="Axis description"
       layout={layout}

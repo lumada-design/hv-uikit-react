@@ -93,7 +93,7 @@ const CustomButton = withStyles(buttonStyles)(HvButton);
 const footerContent = [
   <CustomButton
     colorType="secondary"
-    onClick={componentValues => {
+    onClick={() => {
       console.log("ACTION CANCELLED!!!!!!");
     }}
   >
