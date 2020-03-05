@@ -524,6 +524,7 @@ exports[`PeriodPicker should render correctly 1`] = `
         "props": Object {
           "MuiButtonBase": Object {
             "disableRipple": true,
+            "disableTouchRipple": true,
           },
           "MuiInput": Object {
             "disableUnderline": true,
