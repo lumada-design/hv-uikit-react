@@ -46,7 +46,7 @@ const Example = ({ classes, example }) => {
         <Collapse in={snippetIsOpen}>
           <SyntaxHighlighter
             language="jsx"
-            style={theme.type === "dark" ? darcula : prism}
+            style={theme.hv.type === "dark" ? darcula : prism}
             customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
           >
             {isPath ? snippet : example.snippet}
