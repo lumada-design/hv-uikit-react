@@ -22,7 +22,7 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.accent.acce1,
 
     "&.regular": {
-      animation: "loading-regular 1s ease-in-out infinite",
+      animation: "$loading-regular 1s ease-in-out infinite",
       width: "4px",
       height: "14px",
       margin: "3px",
@@ -39,7 +39,7 @@ const styles = theme => ({
     },
 
     "&.small": {
-      animation: "loading-small 1s ease-in-out infinite",
+      animation: "$loading-small 1s ease-in-out infinite",
       width: "2px",
       height: "10px",
       margin: "4px 2px 2px 2px",
