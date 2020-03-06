@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvTable extends React.Component<HvTableProps, any> {}
+declare module '@hv/uikit-react-core/dist/Table' {
+  import React from 'react'
+  
+  class HvTable extends React.Component<HvTableProps, any> {}
+
+  export default HvTable
 
   export interface TableLabel {
     titleText?: string

@@ -1,11 +1,15 @@
-declare module '@hv/uikit-react-lab/dist' {
-  export class HvSlider extends React.Component<HvSliderProps, any> {}
+declare module '@hv/uikit-react-lab/dist/Slider' {
+  import React from 'react'
+
+  class HvSlider extends React.Component<HvSliderProps, any> {}
+
+  export default HvSlider
 
   export interface KnobProperty {
     color?: string
     defaultValue?: number
-    hidden?: bool
-    fixed?: bool
+    hidden?: boolean
+    fixed?: boolean
     hoverColor?: string
     trackColor?: string
     dragColor?: string
@@ -16,6 +20,7 @@ declare module '@hv/uikit-react-lab/dist' {
     label?: string
   }
 
+  // @ts-ignore
   export interface HvSliderProps extends React.HTMLAttributes<HvSlider> {
     /**
      * The object created by material to apply to the component.

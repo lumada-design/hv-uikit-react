@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvHeader extends React.Component<HvHeaderProps, any> {}
+declare module '@hv/uikit-react-core/dist/Header' {
+  import React from 'react'
+  
+  class HvHeader extends React.Component<HvHeaderProps, any> {}
+
+  export default HvHeader
 
   export interface NavigationStructure {
     showSearch?: boolean

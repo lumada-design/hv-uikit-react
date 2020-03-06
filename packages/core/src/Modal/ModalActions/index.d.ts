@@ -1,8 +1,12 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvModalActions extends React.Component<
+declare module '@hv/uikit-react-core/dist/Modal/ModalActions' {
+  import React from 'react'
+
+  class HvModalActions extends React.Component<
     HvModalActionsProps,
     any
   > {}
+
+  export default HvModalActions
 
   export interface HvModalActionsProps
     extends React.HTMLAttributes<HvModalActions> {

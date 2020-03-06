@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvButton extends React.Component<HvButtonProps, any> {}
+declare module '@hv/uikit-react-core/dist/Button' {
+  import React from 'react'
+
+  class HvButton extends React.Component<HvButtonProps, any> {}
+
+  export default HvButton
 
   export interface HvButtonProps extends React.HTMLAttributes<HvButton> {
     /**
@@ -32,80 +36,117 @@ declare module '@hv/uikit-react-core/dist' {
      *    --"ghostSecondary"
      *  - note: the buttonType object should be used to set this value.
      */
-    category?: 'primary' | 'secondary' | 'ghost' | 'ghostSecondary'
+    category?: 'primary' | 'secondary' | 'ghost' | 'ghostSecondary' | 'semantic' | 'icon'
 
     /**
      * A Jss Object used to override or extend the styles applied.
      */
     classes?: {
+      
       /**
        * Styles applied to the component root class.
        */
       root?: string
+
       /**
-       * Styles applied to the primary primary button.
+       * Styles applied to the component root when category is icon.
+       */
+      rootIcon?: string
+
+      /**
+       * Styles applied to the primary button.
        */
       primary?: string
+
       /**
-       * Styles applied to the primary primary button when it is disabled.
+       * Styles applied to the primary button when it is disabled.
        */
       primaryDisabled?: string
+
       /**
-       * Styles applied to the primary secondary button.
+       * Styles applied to the secondary button.
        */
       secondary?: string
+
       /**
-       * Styles applied to the primary secondary button when it is disabled.
+       * Styles applied to the secondary button when it is disabled.
        */
       secondaryDisabled?: string
+
       /**
-       * Styles applied to the primary ghost button.
+       * Styles applied to the ghost button.
        */
       ghost?: string
+
       /**
-       * Styles applied to the primary ghost button when it is disabled.
+       * Styles applied to the ghost button when it is disabled.
        */
       ghostDisabled?: string
+
       /**
-       * Styles applied to the primary secondary ghost  button.
+       * Styles applied to the secondary ghost button.
        */
       ghostSecondary?: string
+
       /**
-       * Styles applied to the primary secondary ghost button when it is disabled.
+       * Styles applied to the secondary ghost button when it is disabled.
        */
       ghostSecondaryDisabled?: string
+
+      /**
+       * Styles applied to the semantic button.
+       */
+      semantic?: string
+
+      /**
+       * Styles applied to the semantic button when it is disabled.
+       */
+      semanticDisabled?: string
+
       /**
        * Styles applied to the inspireRed primary button.
        */
       inspireRedPrimary?: string
+
       /**
        * Styles applied to the inspireRed primary button when it is disabled.
        */
       inspireRedPrimaryDisabled?: string
+
       /**
        * Styles applied to the inspireRed secondary button.
        */
       inspireRedSecondary?: string
+
       /**
        * Styles applied to the inspireRed secondary button when it is disabled.
        */
       inspireRedSecondaryDisabled?: string
+
       /**
        * Styles applied to the inspireRed ghost button.
        */
       inspireRedGhost?: string
+
       /**
        * Styles applied to the inspireRed ghost button when it is disabled.
        */
       inspireRedGhostDisabled?: string
+
       /**
        * Styles applied to the inspireRed secondary ghost  button.
        */
       inspireRedGhostSecondary?: string
+
       /**
        * Styles applied to the inspireRed secondary ghost button when it is disabled.
        */
       inspireRedGhostSecondaryDisabled?: string
+
+      /**
+       * Styles applied to the icon on the left.
+       */
+      startIcon?: string
     }
 
     /**
@@ -117,5 +158,10 @@ declare module '@hv/uikit-react-core/dist' {
      * The function executed when the button is pressed.
      */
     onClick?: (...args: any[]) => any
+
+    /**
+     * The icon to be rendered before the children.
+     */
+    startIcon?: React.ReactNode
   }
 }

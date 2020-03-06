@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvKpi extends React.Component<HvKpiProps, any> {}
+declare module '@hv/uikit-react-core/dist/Kpi' {
+  import React from 'react'
+  
+  class HvKpi extends React.Component<HvKpiProps, any> {}
+
+  export default HvKpi
 
   export interface KpiTextConfiguration {
     title?: string
