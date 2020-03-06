@@ -13,7 +13,9 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "automation": "npx lerna run automation --stream",
+    "automation": "npm run automation:run",
+    "automation:run": "npx lerna run automation:run --stream",
+    "automation:package": "npx lerna run automation:package --stream",
     "clean": "npm-run-all clean:*",
     "clean:package_clean": "npx lerna run clean --parallel",
     "clean:lerna": "npx lerna clean --yes ",

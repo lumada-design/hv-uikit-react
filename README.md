@@ -9,6 +9,7 @@
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
 ![alt text](https://img.shields.io/badge/core--coverage-80%25-green.svg)
 ![alt text](https://img.shields.io/badge/lab--coverage-68%25-orange.svg)
+![alt text](https://github.com/pentaho/hv-uikit-react/workflows/Continuous%20Integration/badge.svg?branch=alpha)
 
 </div>
 
