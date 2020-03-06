@@ -16,7 +16,7 @@ const TabUsage = ({ parameters }) => {
   return (
     <SyntaxHighlighter
       language="javascript"
-      style={theme.type === "dark" ? darcula : prism}
+      style={theme.hv.type === "dark" ? darcula : prism}
       customStyle={{
         backgroundColor: theme.palette.atmo3,
         margin: 0,

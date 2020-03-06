@@ -72,7 +72,7 @@ const Group = ({ classes, name, typography }) => {
       <Collapse in={snippetIsOpen}>
         <SyntaxHighlighter
           language="css"
-          style={theme.type === "dark" ? darcula : prism}
+          style={theme.hv.type === "dark" ? darcula : prism}
           customStyle={{
             margin: 0,
             borderRadius: 0,
