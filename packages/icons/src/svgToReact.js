@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 // Vendor includes
-const chalk = require("chalk"); // commandline styles
-const rimraf = require("rimraf");
 const fs = require("fs"); // file system
 const recursive = require("recursive-readdir");
 const yargs = require("yargs"); // argument reader
@@ -17,12 +15,13 @@ const content = require("./lang/en");
 const createComponentName = require("./fileSystemUtils/createComponentName");
 const formatSVG = require("./converterUtils/formatSVG");
 const generateComponent = require("./converterUtils/generateComponent");
-const printErrors = require("./logUtils/output").printErrors;
 const removeStyle = require("./converterUtils/removeStyle");
 const colorExtractor = require("./colorUtils/colorExtractor");
 const fillColorReplacer = require("./colorUtils/fillColorReplacer");
 const sizeExtractor = require("./sizeUtils/sizeExtractor");
 const sizeReplacer = require("./sizeUtils/sizeReplacer");
+
+const printErrors = console.warn;
 
 const writeFile = (processedSVG, fileName) => {
   const componentOutputFolder = outputPath
@@ -31,7 +30,7 @@ const writeFile = (processedSVG, fileName) => {
 
   fs.mkdirSync(componentOutputFolder, { recursive: true });
 
-  let file = path.resolve(componentOutputFolder, `${fileName}.js`);
+  const file = path.resolve(componentOutputFolder, `${fileName}.js`);
 
   fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
     if (err) {
@@ -142,8 +141,7 @@ const runUtilForAllInDir = () => {
     if (err) {
       return console.log(err);
     } // GEt out early if not found
-    files.forEach((file, i) => {
-
+    files.forEach(file => {
       const extention = path.extname(file); // extract extensions
       const fileName = path.basename(file); // extract file name extensions
 
@@ -169,8 +167,7 @@ const firstArg = args._[0];
 const newFileName = args._[1] || "MyComponent";
 const outputPath = args.output;
 const inputPath = args.input;
-const rmStyle = args.rmStyle;
-const format = args.format;
+const { rmStyle, format } = args;
 
 // Bootstrap base variables
 const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
