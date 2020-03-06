@@ -14,11 +14,11 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "build": "npm-run-all clean convert copy build:*",
+    "build": "npm-run-all clean convert build:* copy",
     "build:babel": "npx babel bin -d dist --source-maps --copy-files",
     "build:types": "node ./src/typeGen/main.js --input dist --output dist/@types; cp ./src/typeGen/index.d.ts dist",
     "convert": "node ./src/svgToReact.js dir --input node_modules/@hv/uikit-common-icons/dist/Generic --output bin --force",
-    "copy": "copyfiles -f bin/index.js dist && mv dist/index.js dist/index.es.js",
+    "copy": "npx cp -f bin/index.js dist/index.es.js",
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
     "link": "npm link",
@@ -44,20 +44,19 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "chalk": "^2.4.2",
-    "copyfiles": "^2.2.0",
-    "del-cli": "^1.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "cash-cp": "^0.2.0",
+    "del-cli": "^3.0.0",
     "htmltojsx": "^0.3.0",
     "jsdom-no-contextify": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "npx": "^10.2.0",
     "prop-types": "^15.7.2",
     "recursive-readdir": "^2.2.2",
-    "rimraf": "^2.6.3",
-    "yargs": "^13.2.2"
+    "rimraf": "^3.0.2",
+    "yargs": "^15.1.0"
   },
   "files": [
     "dist"
