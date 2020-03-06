@@ -13,7 +13,9 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "automation": "start-storybook -p 9002 --quiet"
+    "automation": "npm run automation:run",
+    "automation:run": "start-storybook -p 9002 --quiet",
+    "automation:package": "build-storybook -c .storybook -o dist --quiet"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.8.0",

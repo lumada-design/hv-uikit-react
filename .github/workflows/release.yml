@@ -1,0 +1,40 @@
+name: Release
+# need to review event that will trigger this, and a way to pass the release type
+on: repository_dispatch
+
+env:
+  RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
+  PUBLISH_REGISTRY: http://svdrvrh8bs1.pentaho.net:8081/artifactory/api/npm/npm-local/
+
+jobs:
+  # Need to remove the nexus reference in the lerna.json file for this to work
+  Publish:
+    runs-on: self-hosted
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bootstrap
+        run: |
+          npm config set registry ${RESOLVE_REGISTRY}
+          npm ci
+          npm run bootstrap
+
+      - name: Publish Setup
+        run: |
+          npm config set registry ${PUBLISH_REGISTRY}
+          npm config set _auth ${{ secrets.PUBLISH_AUTH }}
+          npm config set email ${{ secrets.PUBLISH_EMAIL }}
+          npm config set always-auth true
+
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@users.noreply.github.com"
+
+      - name: Publish
+        run: npm run publish-prerelease -- --no-git-reset
