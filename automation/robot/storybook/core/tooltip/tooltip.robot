@@ -30,8 +30,6 @@ tooltip is triggered when item is focused
     Element Should Not Be Visible        ${tooltip}
     Press Keys                           css:button               TAB
     Wait Until Element Is Visible        ${tooltip}               5s
-    Press Keys                           ${tooltip}               TAB
-    Wait Until Element Is Not Visible    ${tooltip}               2s
 
 tooltip is dismissed when is removed the item focus
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2

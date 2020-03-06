@@ -42,4 +42,4 @@ change state when toggle button is focused and is pressed SPACE
 
 
 *** Variables *** 
-${toggleButton}     css:[class^=ToggleButton-root][role=button]
+${toggleButton}     css:[id*=toggle-button]
