@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.1...@hv/uikit-react-lab@1.19.0) (2020-03-07)
+
+
+### Features
+
+* **typescript:** support new component and restructure files ([e51b411](https://github.com/pentaho/hv-uikit-react/commit/e51b411962a1cc10a80fbc1f0d42cbc379618ef0))
+
+
+
+
+
 ## [1.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.0...@hv/uikit-react-lab@1.18.1) (2020-02-28)
 
 
