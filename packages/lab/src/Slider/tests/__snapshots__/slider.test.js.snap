@@ -15414,7 +15414,6 @@ body {
               "zIndex": "-3",
             }
           }
-          reverse={false}
           step={1}
           tabIndex={Array []}
           trackStyle={
@@ -15487,7 +15486,6 @@ body {
               key="1"
               length={10}
               offset={10}
-              reverse={false}
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -15506,7 +15504,6 @@ body {
                     "height": "3px",
                     "left": "10%",
                     "marginTop": "-1px",
-                    "right": "auto",
                     "width": "10%",
                     "zIndex": "-1",
                   }
@@ -15519,7 +15516,6 @@ body {
               key="2"
               length={10}
               offset={20}
-              reverse={false}
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -15538,7 +15534,6 @@ body {
                     "height": "3px",
                     "left": "20%",
                     "marginTop": "-1px",
-                    "right": "auto",
                     "width": "10%",
                     "zIndex": "-1",
                   }
@@ -15551,7 +15546,6 @@ body {
               key="3"
               length={10}
               offset={30}
-              reverse={false}
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -15570,7 +15564,6 @@ body {
                     "height": "3px",
                     "left": "30%",
                     "marginTop": "-1px",
-                    "right": "auto",
                     "width": "10%",
                     "zIndex": "-1",
                   }
@@ -15583,7 +15576,6 @@ body {
               key="4"
               length={60}
               offset={40}
-              reverse={false}
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -15602,7 +15594,6 @@ body {
                     "height": "3px",
                     "left": "40%",
                     "marginTop": "-1px",
-                    "right": "auto",
                     "width": "60%",
                     "zIndex": "-1",
                   }
@@ -17353,7 +17344,6 @@ body {
               max={100}
               min={0}
               prefixCls="rc-slider"
-              reverse={false}
               step={1}
               upperBound={100}
               vertical={false}
@@ -19663,7 +19653,6 @@ body {
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   prefixCls="rc-slider"
-                  reverse={false}
                   style={
                     Object {
                       "backgroundColor": "#72cccb",
@@ -19685,7 +19674,6 @@ body {
                     className="rc-slider-handle rc-slider-handle-1"
                     onBlur={[Function]}
                     onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     role="slider"
@@ -19696,8 +19684,6 @@ body {
                         "boxShadow": "none",
                         "height": "16px",
                         "left": "10%",
-                        "right": "auto",
-                        "transform": "translateX(-50%)",
                         "width": "16px",
                       }
                     }
@@ -20007,7 +19993,6 @@ body {
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   prefixCls="rc-slider"
-                  reverse={false}
                   style={
                     Object {
                       "backgroundColor": "#f9dc37",
@@ -20029,7 +20014,6 @@ body {
                     className="rc-slider-handle rc-slider-handle-2"
                     onBlur={[Function]}
                     onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     role="slider"
@@ -20040,8 +20024,6 @@ body {
                         "boxShadow": "none",
                         "height": "16px",
                         "left": "20%",
-                        "right": "auto",
-                        "transform": "translateX(-50%)",
                         "width": "16px",
                       }
                     }
@@ -20351,7 +20333,6 @@ body {
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   prefixCls="rc-slider"
-                  reverse={false}
                   style={
                     Object {
                       "backgroundColor": "#ff9100",
@@ -20373,7 +20354,6 @@ body {
                     className="rc-slider-handle rc-slider-handle-3"
                     onBlur={[Function]}
                     onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     role="slider"
@@ -20384,8 +20364,6 @@ body {
                         "boxShadow": "none",
                         "height": "16px",
                         "left": "30%",
-                        "right": "auto",
-                        "transform": "translateX(-50%)",
                         "width": "16px",
                       }
                     }
@@ -20695,7 +20673,6 @@ body {
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   prefixCls="rc-slider"
-                  reverse={false}
                   style={
                     Object {
                       "backgroundColor": "#cc0000",
@@ -20717,7 +20694,6 @@ body {
                     className="rc-slider-handle rc-slider-handle-4"
                     onBlur={[Function]}
                     onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     role="slider"
@@ -20728,8 +20704,6 @@ body {
                         "boxShadow": "none",
                         "height": "16px",
                         "left": "40%",
-                        "right": "auto",
-                        "transform": "translateX(-50%)",
                         "width": "16px",
                       }
                     }
@@ -21039,7 +21013,6 @@ body {
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
                   prefixCls="rc-slider"
-                  reverse={false}
                   style={
                     Object {
                       "backgroundColor": "#cc0000",
@@ -21067,7 +21040,6 @@ body {
                     className="rc-slider-handle rc-slider-handle-5"
                     onBlur={[Function]}
                     onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     role="slider"
@@ -21082,9 +21054,7 @@ body {
                         "left": "100%",
                         "marginLeft": "-1px",
                         "marginTop": "0px",
-                        "right": "auto",
                         "touchAction": "none",
-                        "transform": "translateX(-50%)",
                         "width": "2px",
                       }
                     }
@@ -22842,7 +22812,6 @@ body {
               max={100}
               min={0}
               onClickLabel={[Function]}
-              reverse={false}
               upperBound={100}
               vertical={false}
             >
@@ -22868,9 +22837,9 @@ body {
                       "left": "0%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -22895,9 +22864,9 @@ body {
                       "left": "1%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -22922,9 +22891,9 @@ body {
                       "left": "2%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -22949,9 +22918,9 @@ body {
                       "left": "3%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -22976,9 +22945,9 @@ body {
                       "left": "4%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23003,9 +22972,9 @@ body {
                       "left": "5%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23030,9 +22999,9 @@ body {
                       "left": "6%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23057,9 +23026,9 @@ body {
                       "left": "7.000000000000001%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23084,9 +23053,9 @@ body {
                       "left": "8%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23111,9 +23080,9 @@ body {
                       "left": "9%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23138,9 +23107,9 @@ body {
                       "left": "10%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23165,9 +23134,9 @@ body {
                       "left": "11%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23192,9 +23161,9 @@ body {
                       "left": "12%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23219,9 +23188,9 @@ body {
                       "left": "13%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23246,9 +23215,9 @@ body {
                       "left": "14.000000000000002%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23273,9 +23242,9 @@ body {
                       "left": "15%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23300,9 +23269,9 @@ body {
                       "left": "16%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23327,9 +23296,9 @@ body {
                       "left": "17%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23354,9 +23323,9 @@ body {
                       "left": "18%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23381,9 +23350,9 @@ body {
                       "left": "19%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23408,9 +23377,9 @@ body {
                       "left": "20%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23435,9 +23404,9 @@ body {
                       "left": "21%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23462,9 +23431,9 @@ body {
                       "left": "22%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23489,9 +23458,9 @@ body {
                       "left": "23%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23516,9 +23485,9 @@ body {
                       "left": "24%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23543,9 +23512,9 @@ body {
                       "left": "25%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23570,9 +23539,9 @@ body {
                       "left": "26%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23597,9 +23566,9 @@ body {
                       "left": "27%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23624,9 +23593,9 @@ body {
                       "left": "28.000000000000004%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23651,9 +23620,9 @@ body {
                       "left": "28.999999999999996%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23678,9 +23647,9 @@ body {
                       "left": "30%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23705,9 +23674,9 @@ body {
                       "left": "31%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23732,9 +23701,9 @@ body {
                       "left": "32%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23759,9 +23728,9 @@ body {
                       "left": "33%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23786,9 +23755,9 @@ body {
                       "left": "34%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23813,9 +23782,9 @@ body {
                       "left": "35%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23840,9 +23809,9 @@ body {
                       "left": "36%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23867,9 +23836,9 @@ body {
                       "left": "37%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23894,9 +23863,9 @@ body {
                       "left": "38%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23921,9 +23890,9 @@ body {
                       "left": "39%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23948,9 +23917,9 @@ body {
                       "left": "40%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -23975,9 +23944,9 @@ body {
                       "left": "41%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24002,9 +23971,9 @@ body {
                       "left": "42%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24029,9 +23998,9 @@ body {
                       "left": "43%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24056,9 +24025,9 @@ body {
                       "left": "44%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24083,9 +24052,9 @@ body {
                       "left": "45%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24110,9 +24079,9 @@ body {
                       "left": "46%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24137,9 +24106,9 @@ body {
                       "left": "47%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24164,9 +24133,9 @@ body {
                       "left": "48%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24191,9 +24160,9 @@ body {
                       "left": "49%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24218,9 +24187,9 @@ body {
                       "left": "50%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24245,9 +24214,9 @@ body {
                       "left": "51%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24272,9 +24241,9 @@ body {
                       "left": "52%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24299,9 +24268,9 @@ body {
                       "left": "53%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24326,9 +24295,9 @@ body {
                       "left": "54%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24353,9 +24322,9 @@ body {
                       "left": "55.00000000000001%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24380,9 +24349,9 @@ body {
                       "left": "56.00000000000001%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24407,9 +24376,9 @@ body {
                       "left": "56.99999999999999%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24434,9 +24403,9 @@ body {
                       "left": "57.99999999999999%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24461,9 +24430,9 @@ body {
                       "left": "59%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24488,9 +24457,9 @@ body {
                       "left": "60%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24515,9 +24484,9 @@ body {
                       "left": "61%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24542,9 +24511,9 @@ body {
                       "left": "62%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24569,9 +24538,9 @@ body {
                       "left": "63%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24596,9 +24565,9 @@ body {
                       "left": "64%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24623,9 +24592,9 @@ body {
                       "left": "65%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24650,9 +24619,9 @@ body {
                       "left": "66%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24677,9 +24646,9 @@ body {
                       "left": "67%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24704,9 +24673,9 @@ body {
                       "left": "68%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24731,9 +24700,9 @@ body {
                       "left": "69%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24758,9 +24727,9 @@ body {
                       "left": "70%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24785,9 +24754,9 @@ body {
                       "left": "71%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24812,9 +24781,9 @@ body {
                       "left": "72%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24839,9 +24808,9 @@ body {
                       "left": "73%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24866,9 +24835,9 @@ body {
                       "left": "74%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24893,9 +24862,9 @@ body {
                       "left": "75%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24920,9 +24889,9 @@ body {
                       "left": "76%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24947,9 +24916,9 @@ body {
                       "left": "77%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -24974,9 +24943,9 @@ body {
                       "left": "78%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25001,9 +24970,9 @@ body {
                       "left": "79%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25028,9 +24997,9 @@ body {
                       "left": "80%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25055,9 +25024,9 @@ body {
                       "left": "81%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25082,9 +25051,9 @@ body {
                       "left": "82%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25109,9 +25078,9 @@ body {
                       "left": "83%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25136,9 +25105,9 @@ body {
                       "left": "84%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25163,9 +25132,9 @@ body {
                       "left": "85%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25190,9 +25159,9 @@ body {
                       "left": "86%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25217,9 +25186,9 @@ body {
                       "left": "87%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25244,9 +25213,9 @@ body {
                       "left": "88%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25271,9 +25240,9 @@ body {
                       "left": "89%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25298,9 +25267,9 @@ body {
                       "left": "90%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25325,9 +25294,9 @@ body {
                       "left": "91%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25352,9 +25321,9 @@ body {
                       "left": "92%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25379,9 +25348,9 @@ body {
                       "left": "93%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25406,9 +25375,9 @@ body {
                       "left": "94%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25433,9 +25402,9 @@ body {
                       "left": "95%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25460,9 +25429,9 @@ body {
                       "left": "96%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25487,9 +25456,9 @@ body {
                       "left": "97%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25514,9 +25483,9 @@ body {
                       "left": "98%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25541,9 +25510,9 @@ body {
                       "left": "99%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
@@ -25568,9 +25537,9 @@ body {
                       "left": "100%",
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "msTransform": "translateX(-50%)",
+                      "marginLeft": "-0.45%",
                       "top": "-2px",
-                      "transform": "translateX(-50%)",
+                      "width": "0.9%",
                     }
                   }
                 >
