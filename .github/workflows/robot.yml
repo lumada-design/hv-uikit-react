@@ -1,5 +1,10 @@
-name: Continuous Integration
-on: [push, pull_request]
+name: Robot
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily at 03:00
+  pull_request:
+    branches:
+      - master
 
 env:
   RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
@@ -17,7 +22,7 @@ jobs:
 
       - name: Install
         run: |
-          npm config set registry ${RESOLVE_REGISTRY}
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -39,7 +44,6 @@ jobs:
           path: automation/storybook/dist
 
   Robot:
-    if: github.event_name == 'pull_request' && github.base_ref == 'master'
     needs: Build
     runs-on: [self-hosted, Windows]
     strategy:
@@ -75,7 +79,7 @@ jobs:
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
