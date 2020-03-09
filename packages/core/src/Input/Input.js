@@ -17,7 +17,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from "lodash/uniqueId";
 import Input from "@material-ui/core/Input";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
@@ -51,20 +51,34 @@ class HvInput extends React.Component {
     this.state = {
       internalId: id || uniqueId("hv-input-"),
       validationState,
+      currentValidationStateProps: validationState,
       value: val,
       suggestionValues: null,
-      warningText: validationState === validationStates.invalid ? definedLabels.warningText : null
+      warningText:
+        validationState === validationStates.invalid
+          ? definedLabels.warningText
+          : null
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { inputValue: nextValue, validationState } = nextProps;
-    const { value: oldValue } = prevState;
+    const {
+      value: oldValue,
+      currentValidationStateProps: validationStateProp
+    } = prevState;
 
-    if (nextValue !== undefined && nextValue !== oldValue) {
+    if (
+      (nextValue !== undefined && nextValue !== oldValue) ||
+      (validationState !== undefined && validationState !== validationStateProp)
+    ) {
       return {
         value: nextValue,
-        validationState
+        validationState,
+        currentValidationStateProps:
+          validationState !== validationStateProp
+            ? validationStateProp
+            : validationState
       };
     }
     return null;
@@ -82,7 +96,7 @@ class HvInput extends React.Component {
         value && value !== ""
           ? validationStates.filled
           : validationStates.empty,
-        warningText,
+      warningText,
       value
     });
   };
@@ -271,17 +285,13 @@ class HvInput extends React.Component {
     return (
       <InputAdornment
         inputId={inputId}
-
         classes={classes}
         theme={theme}
-
         showValidationIcon={showValidationIcon}
         validationState={stateValidationState}
-
         showClear={showClear}
         handleClear={() => this.handleClear()}
         clearButtonLabel={clearButtonLabel}
-
         customFixedIcon={customFixedIcon}
       />
     );
@@ -341,15 +351,19 @@ class HvInput extends React.Component {
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
-    const showValidationIcon = !disabled && validationIconVisible && showInfo &&
+    const showValidationIcon =
+      !disabled &&
+      validationIconVisible &&
+      showInfo &&
       (stateValidationState === validationStates.invalid ||
-        (validationType !== validationTypes.none ||
-          maxCharQuantity !== null ||
-          minCharQuantity !== null ||
-          validation !== null));
+        validationType !== validationTypes.none ||
+        maxCharQuantity !== null ||
+        minCharQuantity !== null ||
+        validation !== null);
 
     // show the clear button only if the input is enabled, disableClear is false and the input is not empty
-    const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
+    const showClear =
+      !disabled && !disableClear && stateValue != null && stateValue !== "";
 
     const adornment = this.getInputAdornment(
       `${internalId}-input`,
@@ -383,14 +397,16 @@ class HvInput extends React.Component {
               })}
             >
               {definedLabels.inputLabel}
-              {isRequired &&
-                <span aria-hidden="true">*</span>
-              }
+              {isRequired && <span aria-hidden="true">*</span>}
             </HvTypography>
           )}
 
           {showInfo && infoIcon && definedLabels.infoText && (
-            <div aria-hidden="true" title={definedLabels.infoText} className={classes.infoIconContainer}>
+            <div
+              aria-hidden="true"
+              title={definedLabels.infoText}
+              className={classes.infoIconContainer}
+            >
               <InfoS />
             </div>
           )}
@@ -398,7 +414,11 @@ class HvInput extends React.Component {
 
         <Input
           id={`${internalId}-input`}
-          aria-describedby={showInfo && definedLabels.infoText ? `${internalId}-description` : null}
+          aria-describedby={
+            showInfo && definedLabels.infoText
+              ? `${internalId}-description`
+              : null
+          }
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
           onBlur={this.onInputBlurHandler}
@@ -406,7 +426,7 @@ class HvInput extends React.Component {
           value={stateValue}
           disabled={disabled}
           {...(definedLabels.placeholder && {
-            "placeholder": definedLabels.placeholder
+            placeholder: definedLabels.placeholder
           })}
           type={password ? "password" : "text"}
           classes={{
@@ -422,22 +442,23 @@ class HvInput extends React.Component {
           })}
           onChange={this.onChangeHandler}
           inputProps={{
-            "required": isRequired,
+            required: isRequired,
             "aria-required": isRequired || undefined,
-            "aria-invalid": stateValidationState === validationStates.invalid  || undefined,
+            "aria-invalid":
+              stateValidationState === validationStates.invalid || undefined,
             ...inputProps
           }}
           inputRef={inputRef}
-          {...(iconPosition === "right" ||
+          {...((iconPosition === "right" ||
             (iconPosition === undefined &&
               validationIconPosition === "right")) &&
             (iconVisible || iconVisible === undefined) && {
               endAdornment: adornment
-            }}
-          {...(iconPosition === "left" || validationIconPosition === "left") &&
+            })}
+          {...((iconPosition === "left" || validationIconPosition === "left") &&
             (iconVisible || iconVisible === undefined) && {
               startAdornment: adornment
-            }}
+            })}
           {...others}
         />
 
@@ -459,7 +480,12 @@ class HvInput extends React.Component {
             id={`${internalId}-description`}
             variant="infoText"
             className={classNames(classes.infoText)}
-            style={{display: !infoIcon && stateValidationState !== validationStates.invalid ? 'block' : 'none' }}
+            style={{
+              display:
+                !infoIcon && stateValidationState !== validationStates.invalid
+                  ? "block"
+                  : "none"
+            }}
           >
             {definedLabels.infoText}
           </HvTypography>
@@ -468,14 +494,23 @@ class HvInput extends React.Component {
         <HvTypography
           variant="sText"
           className={classNames(classes.textWarning, classes.infoText)}
-          style={{display: stateValidationState === validationStates.invalid ? 'block' : 'none' }}
+          style={{
+            display:
+              stateValidationState === validationStates.invalid
+                ? "block"
+                : "none"
+          }}
           aria-live="polite"
           aria-controls={`${internalId}-input`}
           aria-atomic="true"
           aria-relevant="additions text"
-          aria-labelledby={definedLabels.inputLabel ? `${internalId}-label` : null}
+          aria-labelledby={
+            definedLabels.inputLabel ? `${internalId}-label` : null
+          }
         >
-          {stateValidationState === validationStates.invalid ? externalWarningTextOverride || warningText : ""}
+          {stateValidationState === validationStates.invalid
+            ? externalWarningTextOverride || warningText
+            : ""}
         </HvTypography>
       </div>
     );
