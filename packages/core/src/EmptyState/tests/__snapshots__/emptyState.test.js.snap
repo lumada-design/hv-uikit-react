@@ -5112,8 +5112,7 @@ body {
   }
 }
 .HvEmptyState-titleContainer-14 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 5px 0;
 }
 @media (min-width:0px) and (max-width:599.95px) {
   .HvEmptyState-titleContainer-14 {
@@ -5121,7 +5120,7 @@ body {
   }
 }
 .HvEmptyState-actionContainer-16 {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .HvEmptyState-actionContainer-16 a {
   color: #146BD2;
@@ -6061,8 +6060,7 @@ body {
                     "type": "conditional",
                   },
                   Object {
-                    "margin-bottom": "10px",
-                    "margin-top": "10px",
+                    "margin": "5px 0",
                   },
                   ConditionalRule {
                     "isProcessed": true,
@@ -6358,7 +6356,7 @@ body {
                   },
                   Object {},
                   Object {
-                    "margin-top": "30px",
+                    "margin-top": "20px",
                   },
                   Object {
                     "color": "#146BD2",
@@ -6371,7 +6369,7 @@ body {
                 ],
                 "map": Object {
                   ".HvEmptyState-actionContainer-16": Object {
-                    "margin-top": "30px",
+                    "margin-top": "20px",
                   },
                   ".HvEmptyState-actionContainer-16 a": Object {
                     "color": "#146BD2",
@@ -6405,8 +6403,7 @@ body {
                     "overflow": "hidden",
                   },
                   ".HvEmptyState-titleContainer-14": Object {
-                    "margin-bottom": "10px",
-                    "margin-top": "10px",
+                    "margin": "5px 0",
                   },
                   "@media (min-width:0px) and (max-width:599.95px)": ConditionalRule {
                     "isProcessed": true,
@@ -6993,7 +6990,7 @@ body {
                     "type": "conditional",
                   },
                   "actionContainer": Object {
-                    "margin-top": "30px",
+                    "margin-top": "20px",
                   },
                   "container": Object {
                     "display": "flex",
@@ -7016,8 +7013,7 @@ body {
                     "overflow": "hidden",
                   },
                   "titleContainer": Object {
-                    "margin-bottom": "10px",
-                    "margin-top": "10px",
+                    "margin": "5px 0",
                   },
                 },
                 "options": Object {
@@ -7536,7 +7532,7 @@ body {
                       "lineHeight": "20px",
                       "textDecoration": "none",
                     },
-                    "marginTop": "30px",
+                    "marginTop": "20px",
                   },
                   "container": Object {
                     "@media (min-width:0px) and (max-width:599.95px)": Object {
@@ -7576,8 +7572,7 @@ body {
                     "@media (min-width:0px) and (max-width:599.95px)": Object {
                       "marginTop": "20px",
                     },
-                    "marginBottom": "10px",
-                    "marginTop": "10px",
+                    "margin": "5px 0",
                   },
                 },
                 "update": [Function],
