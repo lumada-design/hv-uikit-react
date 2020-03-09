@@ -784,36 +784,36 @@ exports[`PeriodPicker should render correctly 1`] = `
       <PeriodPicker
         classes={
           Object {
-            "icon": "HvTimePickerPeriodPicker-icon-41",
-            "periodContainer": "HvTimePickerPeriodPicker-periodContainer-39",
-            "periodText": "HvTimePickerPeriodPicker-periodText-40",
+            "icon": "HvTimePickerPeriodPicker-icon-40",
+            "periodContainer": "HvTimePickerPeriodPicker-periodContainer-38",
+            "periodText": "HvTimePickerPeriodPicker-periodText-39",
           }
         }
         onChangePeriod={[MockFunction]}
         period="AM"
       >
         <div
-          className="HvTimePickerPeriodPicker-periodContainer-39"
+          className="HvTimePickerPeriodPicker-periodContainer-38"
         >
           <WithStyles(DropUpXS)
-            className="HvTimePickerPeriodPicker-icon-41"
+            className="HvTimePickerPeriodPicker-icon-40"
             onClick={[Function]}
           >
             <DropUpXS
-              className="HvTimePickerPeriodPicker-icon-41"
+              className="HvTimePickerPeriodPicker-icon-40"
               classes={
                 Object {
-                  "root": "HvIconDropUpXS-root-42",
-                  "rootL": "HvIconDropUpXS-rootL-46",
-                  "rootM": "HvIconDropUpXS-rootM-45",
-                  "rootS": "HvIconDropUpXS-rootS-44",
-                  "rootXs": "HvIconDropUpXS-rootXs-43",
+                  "root": "HvIconDropUpXS-root-41",
+                  "rootL": "HvIconDropUpXS-rootL-45",
+                  "rootM": "HvIconDropUpXS-rootM-44",
+                  "rootS": "HvIconDropUpXS-rootS-43",
+                  "rootXs": "HvIconDropUpXS-rootXs-42",
                 }
               }
               onClick={[Function]}
             >
               <div
-                className="HvTimePickerPeriodPicker-icon-41 HvIconDropUpXS-root-42 HvIconDropUpXS-rootXs-43"
+                className="HvTimePickerPeriodPicker-icon-40 HvIconDropUpXS-root-41 HvIconDropUpXS-rootXs-42"
                 onClick={[Function]}
               >
                 <svg
@@ -833,40 +833,39 @@ exports[`PeriodPicker should render correctly 1`] = `
             </DropUpXS>
           </WithStyles(DropUpXS)>
           <WithStyles(ForwardRef)
-            className="HvTimePickerPeriodPicker-periodText-40"
+            className="HvTimePickerPeriodPicker-periodText-39"
             component={null}
             paragraph={false}
             variant="highlightText"
           >
             <ForwardRef
-              className="HvTimePickerPeriodPicker-periodText-40"
+              className="HvTimePickerPeriodPicker-periodText-39"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-49",
-                  "4xlTitle": "HvTypography-4xlTitle-48",
-                  "5xlTitle": "HvTypography-5xlTitle-47",
-                  "baseFontFamily": "HvTypography-baseFontFamily-70",
-                  "disabledButtonText": "HvTypography-disabledButtonText-61",
-                  "disabledText": "HvTypography-disabledText-68",
-                  "highlightText": "HvTypography-highlightText-57",
-                  "infoText": "HvTypography-infoText-66",
-                  "inlineLink": "HvTypography-inlineLink-60",
-                  "lTitle": "HvTypography-lTitle-52",
-                  "labelText": "HvTypography-labelText-65",
-                  "mTitle": "HvTypography-mTitle-53",
-                  "margin": "HvTypography-margin-71",
-                  "normalText": "HvTypography-normalText-58",
-                  "placeholderText": "HvTypography-placeholderText-62",
-                  "sLink": "HvTypography-sLink-67",
-                  "sText": "HvTypography-sText-64",
-                  "sTitle": "HvTypography-sTitle-54",
-                  "selectedNavText": "HvTypography-selectedNavText-63",
-                  "selectedText": "HvTypography-selectedText-59",
-                  "vizText": "HvTypography-vizText-69",
-                  "xlTitle": "HvTypography-xlTitle-51",
-                  "xsTitle": "HvTypography-xsTitle-55",
-                  "xxlTitle": "HvTypography-xxlTitle-50",
-                  "xxsTitle": "HvTypography-xxsTitle-56",
+                  "3xlTitle": "HvTypography-3xlTitle-48",
+                  "4xlTitle": "HvTypography-4xlTitle-47",
+                  "5xlTitle": "HvTypography-5xlTitle-46",
+                  "baseFontFamily": "HvTypography-baseFontFamily-68",
+                  "disabledButtonText": "HvTypography-disabledButtonText-60",
+                  "highlightText": "HvTypography-highlightText-56",
+                  "infoText": "HvTypography-infoText-65",
+                  "inlineLink": "HvTypography-inlineLink-59",
+                  "lTitle": "HvTypography-lTitle-51",
+                  "labelText": "HvTypography-labelText-64",
+                  "mTitle": "HvTypography-mTitle-52",
+                  "margin": "HvTypography-margin-69",
+                  "normalText": "HvTypography-normalText-57",
+                  "placeholderText": "HvTypography-placeholderText-61",
+                  "sLink": "HvTypography-sLink-66",
+                  "sText": "HvTypography-sText-63",
+                  "sTitle": "HvTypography-sTitle-53",
+                  "selectedNavText": "HvTypography-selectedNavText-62",
+                  "selectedText": "HvTypography-selectedText-58",
+                  "vizText": "HvTypography-vizText-67",
+                  "xlTitle": "HvTypography-xlTitle-50",
+                  "xsTitle": "HvTypography-xsTitle-54",
+                  "xxlTitle": "HvTypography-xxlTitle-49",
+                  "xxsTitle": "HvTypography-xxsTitle-55",
                 }
               }
               component={null}
@@ -874,31 +873,31 @@ exports[`PeriodPicker should render correctly 1`] = `
               variant="highlightText"
             >
               <p
-                className="HvTypography-highlightText-57 HvTypography-baseFontFamily-70 HvTypography-margin-71 HvTimePickerPeriodPicker-periodText-40"
+                className="HvTypography-highlightText-56 HvTypography-baseFontFamily-68 HvTypography-margin-69 HvTimePickerPeriodPicker-periodText-39"
               >
                 AM
               </p>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(DropDownXS)
-            className="HvTimePickerPeriodPicker-icon-41"
+            className="HvTimePickerPeriodPicker-icon-40"
             onClick={[Function]}
           >
             <DropDownXS
-              className="HvTimePickerPeriodPicker-icon-41"
+              className="HvTimePickerPeriodPicker-icon-40"
               classes={
                 Object {
-                  "root": "HvIconDropDownXS-root-72",
-                  "rootL": "HvIconDropDownXS-rootL-76",
-                  "rootM": "HvIconDropDownXS-rootM-75",
-                  "rootS": "HvIconDropDownXS-rootS-74",
-                  "rootXs": "HvIconDropDownXS-rootXs-73",
+                  "root": "HvIconDropDownXS-root-70",
+                  "rootL": "HvIconDropDownXS-rootL-74",
+                  "rootM": "HvIconDropDownXS-rootM-73",
+                  "rootS": "HvIconDropDownXS-rootS-72",
+                  "rootXs": "HvIconDropDownXS-rootXs-71",
                 }
               }
               onClick={[Function]}
             >
               <div
-                className="HvTimePickerPeriodPicker-icon-41 HvIconDropDownXS-root-72 HvIconDropDownXS-rootXs-73"
+                className="HvTimePickerPeriodPicker-icon-40 HvIconDropDownXS-root-70 HvIconDropDownXS-rootXs-71"
                 onClick={[Function]}
               >
                 <svg

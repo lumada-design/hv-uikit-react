@@ -4,19 +4,6 @@ import HvLink from "@hv/uikit-react-core/dist/Link";
 import withConfig from "@hv/uikit-react-core/dist/config/withConfig";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-const getPropsMetadata = children => {
-  const nodes = React.Children.map(children, element => {
-    if (!React.isValidElement(element)) return;
-    return element;
-  });
-
-  const metadata = nodes[0].type.Naked
-    ? nodes[0].type.Naked.__docgenInfo.props
-    : nodes[0].type.__docgenInfo.props;
-
-  return metadata;
-};
-
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
   const { title, description, designSystemLink } = parameters;
@@ -29,7 +16,7 @@ const Main = ({ classes, children, context, config }) => {
         <div>
           {kind} - <span className={classes.name}>{story}</span>
         </div>
-        <Button colorType="secondary" onClick={() => config.changeTheme()}>
+        <Button category="secondary" onClick={() => config.changeTheme()}>
           Change theme
         </Button>
       </div>

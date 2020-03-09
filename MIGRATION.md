@@ -79,6 +79,12 @@ With our first major release several components where reviewed in order to remov
 
 ### Changes
 
+- Packages
+
+  - Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to this repository.
+  - Package `@hv/uikit-common-icons` integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/`.
+  - Package `@hv/uikit-common-utils` integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
+
 - Icons
   - Removed all deprecated icons, now the path to use the generics should be: `@hv/uikit-react-icons/dist/<icon_name>`
   - Added the icons index to the module for allowing the ES6 import usage (destructuring).
@@ -101,8 +107,8 @@ With our first major release several components where reviewed in order to remov
 - Tabs
   - Css class **labelContainer** passed to the **root**
 - Dropdown Menu
-  - onClick callback was triggered not only on selection but also when opening the dropdown. A new specific callback **onToggleOpen** was created. 
-  This callback is triggered whenever the open state of the dropdown changes
+  - onClick callback was triggered not only on selection but also when opening the dropdown. A new specific callback **onToggleOpen** was created.
+    This callback is triggered whenever the open state of the dropdown changes
 - Card
   - Css class **upperArea** remove
 - Tooltip

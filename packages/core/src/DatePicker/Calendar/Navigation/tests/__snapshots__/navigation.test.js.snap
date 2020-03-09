@@ -872,16 +872,15 @@ exports[`<Navigation /> should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle-13",
                     "4xlTitle": "HvTypography-4xlTitle-12",
                     "5xlTitle": "HvTypography-5xlTitle-11",
-                    "baseFontFamily": "HvTypography-baseFontFamily-34",
+                    "baseFontFamily": "HvTypography-baseFontFamily-33",
                     "disabledButtonText": "HvTypography-disabledButtonText-25",
-                    "disabledText": "HvTypography-disabledText-32",
                     "highlightText": "HvTypography-highlightText-21",
                     "infoText": "HvTypography-infoText-30",
                     "inlineLink": "HvTypography-inlineLink-24",
                     "lTitle": "HvTypography-lTitle-16",
                     "labelText": "HvTypography-labelText-29",
                     "mTitle": "HvTypography-mTitle-17",
-                    "margin": "HvTypography-margin-35",
+                    "margin": "HvTypography-margin-34",
                     "normalText": "HvTypography-normalText-22",
                     "placeholderText": "HvTypography-placeholderText-26",
                     "sLink": "HvTypography-sLink-31",
@@ -889,7 +888,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                     "sTitle": "HvTypography-sTitle-18",
                     "selectedNavText": "HvTypography-selectedNavText-27",
                     "selectedText": "HvTypography-selectedText-23",
-                    "vizText": "HvTypography-vizText-33",
+                    "vizText": "HvTypography-vizText-32",
                     "xlTitle": "HvTypography-xlTitle-15",
                     "xsTitle": "HvTypography-xsTitle-19",
                     "xxlTitle": "HvTypography-xxlTitle-14",
@@ -901,7 +900,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="HvTypography-normalText-22 HvTypography-baseFontFamily-34 HvTypography-margin-35"
+                  className="HvTypography-normalText-22 HvTypography-baseFontFamily-33 HvTypography-margin-34"
                 >
                   Navigation text
                 </p>
@@ -919,11 +918,11 @@ exports[`<Navigation /> should render correctly 1`] = `
               className="HvDatePickerNavigation-icon-2"
               classes={
                 Object {
-                  "root": "HvIconDropRightXS-root-36",
-                  "rootL": "HvIconDropRightXS-rootL-40",
-                  "rootM": "HvIconDropRightXS-rootM-39",
-                  "rootS": "HvIconDropRightXS-rootS-38",
-                  "rootXs": "HvIconDropRightXS-rootXs-37",
+                  "root": "HvIconDropRightXS-root-35",
+                  "rootL": "HvIconDropRightXS-rootL-39",
+                  "rootM": "HvIconDropRightXS-rootM-38",
+                  "rootS": "HvIconDropRightXS-rootS-37",
+                  "rootXs": "HvIconDropRightXS-rootXs-36",
                 }
               }
               id="id1-right"
@@ -932,7 +931,7 @@ exports[`<Navigation /> should render correctly 1`] = `
               tabIndex={0}
             >
               <div
-                className="HvDatePickerNavigation-icon-2 HvIconDropRightXS-root-36 HvIconDropRightXS-rootXs-37"
+                className="HvDatePickerNavigation-icon-2 HvIconDropRightXS-root-35 HvIconDropRightXS-rootXs-36"
                 id="id1-right"
                 onClick={[MockFunction]}
                 onKeyDown={[Function]}

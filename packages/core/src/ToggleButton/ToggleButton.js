@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-toggle-button-";

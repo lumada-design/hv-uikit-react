@@ -6,7 +6,7 @@ import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
 import { Popper, useTheme, withStyles } from "@material-ui/core";
 import OutsideClickHandler from "react-outside-click-handler";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
 import Actions from "../Actions";

@@ -821,26 +821,26 @@ exports[`Input should not have the validation section 1`] = `
         className=""
         classes={
           Object {
-            "adornmentButton": "HvInput-adornmentButton-478",
-            "adornmentsBox": "HvInput-adornmentsBox-477",
-            "icon": "HvInput-icon-479",
-            "iconClear": "HvInput-iconClear-480",
-            "infoIconContainer": "HvInput-infoIconContainer-474",
-            "infoText": "HvInput-infoText-475",
-            "input": "HvInput-input-468",
-            "inputDisabled": "HvInput-inputDisabled-469",
-            "inputRoot": "HvInput-inputRoot-464",
-            "inputRootDisabled": "HvInput-inputRootDisabled-465",
-            "inputRootFocused": "HvInput-inputRootFocused-466",
-            "inputRootInvalid": "HvInput-inputRootInvalid-467",
-            "label": "HvInput-label-472",
-            "labelContainer": "HvInput-labelContainer-471",
-            "labelDisabled": "HvInput-labelDisabled-473",
-            "multiLine": "HvInput-multiLine-470",
-            "root": "HvInput-root-463",
-            "suggestionList": "HvInput-suggestionList-482",
-            "suggestionsContainer": "HvInput-suggestionsContainer-481",
-            "textWarning": "HvInput-textWarning-476",
+            "adornmentButton": "HvInput-adornmentButton-472",
+            "adornmentsBox": "HvInput-adornmentsBox-471",
+            "icon": "HvInput-icon-473",
+            "iconClear": "HvInput-iconClear-474",
+            "infoIconContainer": "HvInput-infoIconContainer-468",
+            "infoText": "HvInput-infoText-469",
+            "input": "HvInput-input-462",
+            "inputDisabled": "HvInput-inputDisabled-463",
+            "inputRoot": "HvInput-inputRoot-458",
+            "inputRootDisabled": "HvInput-inputRootDisabled-459",
+            "inputRootFocused": "HvInput-inputRootFocused-460",
+            "inputRootInvalid": "HvInput-inputRootInvalid-461",
+            "label": "HvInput-label-466",
+            "labelContainer": "HvInput-labelContainer-465",
+            "labelDisabled": "HvInput-labelDisabled-467",
+            "multiLine": "HvInput-multiLine-464",
+            "root": "HvInput-root-457",
+            "suggestionList": "HvInput-suggestionList-476",
+            "suggestionsContainer": "HvInput-suggestionsContainer-475",
+            "textWarning": "HvInput-textWarning-470",
           }
         }
         customFixedIcon={null}
@@ -880,22 +880,22 @@ exports[`Input should not have the validation section 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-root-463"
+          className="HvInput-root-457"
           id="hv-input-7"
           onBlur={[Function]}
         >
           <div
-            className="HvInput-labelContainer-471"
+            className="HvInput-labelContainer-465"
           />
           <WithStyles(ForwardRef(Input))
             autoFocus={false}
-            className="HvInput-inputRoot-464"
+            className="HvInput-inputRoot-458"
             classes={
               Object {
-                "disabled": "HvInput-inputDisabled-469",
-                "focused": "HvInput-inputRootFocused-466",
-                "input": "HvInput-input-468",
-                "multiline": "HvInput-multiLine-470",
+                "disabled": "HvInput-inputDisabled-463",
+                "focused": "HvInput-inputRootFocused-460",
+                "input": "HvInput-input-462",
+                "multiline": "HvInput-multiLine-464",
               }
             }
             disabled={false}
@@ -917,21 +917,21 @@ exports[`Input should not have the validation section 1`] = `
           >
             <ForwardRef(Input)
               autoFocus={false}
-              className="HvInput-inputRoot-464"
+              className="HvInput-inputRoot-458"
               classes={
                 Object {
                   "colorSecondary": "MuiInput-colorSecondary",
-                  "disabled": "Mui-disabled HvInput-inputDisabled-469",
+                  "disabled": "Mui-disabled HvInput-inputDisabled-463",
                   "error": "Mui-error",
-                  "focused": "Mui-focused HvInput-inputRootFocused-466",
+                  "focused": "Mui-focused HvInput-inputRootFocused-460",
                   "formControl": "MuiInput-formControl",
                   "fullWidth": "MuiInput-fullWidth",
-                  "input": "MuiInput-input HvInput-input-468",
+                  "input": "MuiInput-input HvInput-input-462",
                   "inputMarginDense": "MuiInput-inputMarginDense",
                   "inputMultiline": "MuiInput-inputMultiline",
                   "inputTypeSearch": "MuiInput-inputTypeSearch",
                   "marginDense": "MuiInput-marginDense",
-                  "multiline": "MuiInput-multiline HvInput-multiLine-470",
+                  "multiline": "MuiInput-multiline HvInput-multiLine-464",
                   "root": "MuiInput-root",
                   "underline": "MuiInput-underline",
                 }
@@ -956,21 +956,21 @@ exports[`Input should not have the validation section 1`] = `
             >
               <WithStyles(ForwardRef(InputBase))
                 autoFocus={false}
-                className="HvInput-inputRoot-464"
+                className="HvInput-inputRoot-458"
                 classes={
                   Object {
                     "colorSecondary": "MuiInput-colorSecondary",
-                    "disabled": "Mui-disabled HvInput-inputDisabled-469",
+                    "disabled": "Mui-disabled HvInput-inputDisabled-463",
                     "error": "Mui-error",
-                    "focused": "Mui-focused HvInput-inputRootFocused-466",
+                    "focused": "Mui-focused HvInput-inputRootFocused-460",
                     "formControl": "MuiInput-formControl",
                     "fullWidth": "MuiInput-fullWidth",
-                    "input": "MuiInput-input HvInput-input-468",
+                    "input": "MuiInput-input HvInput-input-462",
                     "inputMarginDense": "MuiInput-inputMarginDense",
                     "inputMultiline": "MuiInput-inputMultiline",
                     "inputTypeSearch": "MuiInput-inputTypeSearch",
                     "marginDense": "MuiInput-marginDense",
-                    "multiline": "MuiInput-multiline HvInput-multiLine-470",
+                    "multiline": "MuiInput-multiline HvInput-multiLine-464",
                     "root": "MuiInput-root",
                     "underline": null,
                   }
@@ -997,18 +997,18 @@ exports[`Input should not have the validation section 1`] = `
               >
                 <ForwardRef(InputBase)
                   autoFocus={false}
-                  className="HvInput-inputRoot-464"
+                  className="HvInput-inputRoot-458"
                   classes={
                     Object {
                       "adornedEnd": "MuiInputBase-adornedEnd",
                       "adornedStart": "MuiInputBase-adornedStart",
                       "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-469",
+                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-463",
                       "error": "Mui-error Mui-error",
-                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-466",
+                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-460",
                       "formControl": "MuiInputBase-formControl MuiInput-formControl",
                       "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                      "input": "MuiInputBase-input MuiInput-input HvInput-input-468",
+                      "input": "MuiInputBase-input MuiInput-input HvInput-input-462",
                       "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
                       "inputAdornedStart": "MuiInputBase-inputAdornedStart",
                       "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
@@ -1016,7 +1016,7 @@ exports[`Input should not have the validation section 1`] = `
                       "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
                       "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                       "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-470",
+                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-464",
                       "root": "MuiInputBase-root MuiInput-root",
                     }
                   }
@@ -1041,12 +1041,12 @@ exports[`Input should not have the validation section 1`] = `
                   type="text"
                 >
                   <div
-                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-464"
+                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-458"
                     onClick={[Function]}
                   >
                     <input
                       autoFocus={false}
-                      className="MuiInputBase-input MuiInput-input HvInput-input-468"
+                      className="MuiInputBase-input MuiInput-input HvInput-input-462"
                       disabled={false}
                       id="hv-input-7-input"
                       onAnimationStart={[Function]}
@@ -1068,7 +1068,7 @@ exports[`Input should not have the validation section 1`] = `
             aria-labelledby={null}
             aria-live="polite"
             aria-relevant="additions text"
-            className="HvInput-textWarning-476 HvInput-infoText-475"
+            className="HvInput-textWarning-470 HvInput-infoText-469"
             component={null}
             paragraph={false}
             style={
@@ -1084,34 +1084,33 @@ exports[`Input should not have the validation section 1`] = `
               aria-labelledby={null}
               aria-live="polite"
               aria-relevant="additions text"
-              className="HvInput-textWarning-476 HvInput-infoText-475"
+              className="HvInput-textWarning-470 HvInput-infoText-469"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-517",
-                  "4xlTitle": "HvTypography-4xlTitle-516",
-                  "5xlTitle": "HvTypography-5xlTitle-515",
-                  "baseFontFamily": "HvTypography-baseFontFamily-538",
-                  "disabledButtonText": "HvTypography-disabledButtonText-529",
-                  "disabledText": "HvTypography-disabledText-536",
-                  "highlightText": "HvTypography-highlightText-525",
-                  "infoText": "HvTypography-infoText-534",
-                  "inlineLink": "HvTypography-inlineLink-528",
-                  "lTitle": "HvTypography-lTitle-520",
-                  "labelText": "HvTypography-labelText-533",
-                  "mTitle": "HvTypography-mTitle-521",
-                  "margin": "HvTypography-margin-539",
-                  "normalText": "HvTypography-normalText-526",
-                  "placeholderText": "HvTypography-placeholderText-530",
-                  "sLink": "HvTypography-sLink-535",
-                  "sText": "HvTypography-sText-532",
-                  "sTitle": "HvTypography-sTitle-522",
-                  "selectedNavText": "HvTypography-selectedNavText-531",
-                  "selectedText": "HvTypography-selectedText-527",
-                  "vizText": "HvTypography-vizText-537",
-                  "xlTitle": "HvTypography-xlTitle-519",
-                  "xsTitle": "HvTypography-xsTitle-523",
-                  "xxlTitle": "HvTypography-xxlTitle-518",
-                  "xxsTitle": "HvTypography-xxsTitle-524",
+                  "3xlTitle": "HvTypography-3xlTitle-511",
+                  "4xlTitle": "HvTypography-4xlTitle-510",
+                  "5xlTitle": "HvTypography-5xlTitle-509",
+                  "baseFontFamily": "HvTypography-baseFontFamily-531",
+                  "disabledButtonText": "HvTypography-disabledButtonText-523",
+                  "highlightText": "HvTypography-highlightText-519",
+                  "infoText": "HvTypography-infoText-528",
+                  "inlineLink": "HvTypography-inlineLink-522",
+                  "lTitle": "HvTypography-lTitle-514",
+                  "labelText": "HvTypography-labelText-527",
+                  "mTitle": "HvTypography-mTitle-515",
+                  "margin": "HvTypography-margin-532",
+                  "normalText": "HvTypography-normalText-520",
+                  "placeholderText": "HvTypography-placeholderText-524",
+                  "sLink": "HvTypography-sLink-529",
+                  "sText": "HvTypography-sText-526",
+                  "sTitle": "HvTypography-sTitle-516",
+                  "selectedNavText": "HvTypography-selectedNavText-525",
+                  "selectedText": "HvTypography-selectedText-521",
+                  "vizText": "HvTypography-vizText-530",
+                  "xlTitle": "HvTypography-xlTitle-513",
+                  "xsTitle": "HvTypography-xsTitle-517",
+                  "xxlTitle": "HvTypography-xxlTitle-512",
+                  "xxsTitle": "HvTypography-xxsTitle-518",
                 }
               }
               component={null}
@@ -1129,7 +1128,7 @@ exports[`Input should not have the validation section 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="HvTypography-sText-532 HvTypography-baseFontFamily-538 HvTypography-margin-539 HvInput-textWarning-476 HvInput-infoText-475"
+                className="HvTypography-sText-526 HvTypography-baseFontFamily-531 HvTypography-margin-532 HvInput-textWarning-470 HvInput-infoText-469"
                 style={
                   Object {
                     "display": "none",
@@ -1970,26 +1969,26 @@ exports[`Input should pass other props to the child input component 1`] = `
         className=""
         classes={
           Object {
-            "adornmentButton": "HvInput-adornmentButton-632",
-            "adornmentsBox": "HvInput-adornmentsBox-631",
-            "icon": "HvInput-icon-633",
-            "iconClear": "HvInput-iconClear-634",
-            "infoIconContainer": "HvInput-infoIconContainer-628",
-            "infoText": "HvInput-infoText-629",
-            "input": "HvInput-input-622",
-            "inputDisabled": "HvInput-inputDisabled-623",
-            "inputRoot": "HvInput-inputRoot-618",
-            "inputRootDisabled": "HvInput-inputRootDisabled-619",
-            "inputRootFocused": "HvInput-inputRootFocused-620",
-            "inputRootInvalid": "HvInput-inputRootInvalid-621",
-            "label": "HvInput-label-626",
-            "labelContainer": "HvInput-labelContainer-625",
-            "labelDisabled": "HvInput-labelDisabled-627",
-            "multiLine": "HvInput-multiLine-624",
-            "root": "HvInput-root-617",
-            "suggestionList": "HvInput-suggestionList-636",
-            "suggestionsContainer": "HvInput-suggestionsContainer-635",
-            "textWarning": "HvInput-textWarning-630",
+            "adornmentButton": "HvInput-adornmentButton-624",
+            "adornmentsBox": "HvInput-adornmentsBox-623",
+            "icon": "HvInput-icon-625",
+            "iconClear": "HvInput-iconClear-626",
+            "infoIconContainer": "HvInput-infoIconContainer-620",
+            "infoText": "HvInput-infoText-621",
+            "input": "HvInput-input-614",
+            "inputDisabled": "HvInput-inputDisabled-615",
+            "inputRoot": "HvInput-inputRoot-610",
+            "inputRootDisabled": "HvInput-inputRootDisabled-611",
+            "inputRootFocused": "HvInput-inputRootFocused-612",
+            "inputRootInvalid": "HvInput-inputRootInvalid-613",
+            "label": "HvInput-label-618",
+            "labelContainer": "HvInput-labelContainer-617",
+            "labelDisabled": "HvInput-labelDisabled-619",
+            "multiLine": "HvInput-multiLine-616",
+            "root": "HvInput-root-609",
+            "suggestionList": "HvInput-suggestionList-628",
+            "suggestionsContainer": "HvInput-suggestionsContainer-627",
+            "textWarning": "HvInput-textWarning-622",
           }
         }
         customFixedIcon={null}
@@ -2033,22 +2032,22 @@ exports[`Input should pass other props to the child input component 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-root-617"
+          className="HvInput-root-609"
           id="hv-input-9"
           onBlur={[Function]}
         >
           <div
-            className="HvInput-labelContainer-625"
+            className="HvInput-labelContainer-617"
           />
           <WithStyles(ForwardRef(Input))
             autoFocus={false}
-            className="HvInput-inputRoot-618"
+            className="HvInput-inputRoot-610"
             classes={
               Object {
-                "disabled": "HvInput-inputDisabled-623",
-                "focused": "HvInput-inputRootFocused-620",
-                "input": "HvInput-input-622",
-                "multiline": "HvInput-multiLine-624",
+                "disabled": "HvInput-inputDisabled-615",
+                "focused": "HvInput-inputRootFocused-612",
+                "input": "HvInput-input-614",
+                "multiline": "HvInput-multiLine-616",
               }
             }
             disabled={false}
@@ -2071,21 +2070,21 @@ exports[`Input should pass other props to the child input component 1`] = `
           >
             <ForwardRef(Input)
               autoFocus={false}
-              className="HvInput-inputRoot-618"
+              className="HvInput-inputRoot-610"
               classes={
                 Object {
                   "colorSecondary": "MuiInput-colorSecondary",
-                  "disabled": "Mui-disabled HvInput-inputDisabled-623",
+                  "disabled": "Mui-disabled HvInput-inputDisabled-615",
                   "error": "Mui-error",
-                  "focused": "Mui-focused HvInput-inputRootFocused-620",
+                  "focused": "Mui-focused HvInput-inputRootFocused-612",
                   "formControl": "MuiInput-formControl",
                   "fullWidth": "MuiInput-fullWidth",
-                  "input": "MuiInput-input HvInput-input-622",
+                  "input": "MuiInput-input HvInput-input-614",
                   "inputMarginDense": "MuiInput-inputMarginDense",
                   "inputMultiline": "MuiInput-inputMultiline",
                   "inputTypeSearch": "MuiInput-inputTypeSearch",
                   "marginDense": "MuiInput-marginDense",
-                  "multiline": "MuiInput-multiline HvInput-multiLine-624",
+                  "multiline": "MuiInput-multiline HvInput-multiLine-616",
                   "root": "MuiInput-root",
                   "underline": "MuiInput-underline",
                 }
@@ -2111,21 +2110,21 @@ exports[`Input should pass other props to the child input component 1`] = `
             >
               <WithStyles(ForwardRef(InputBase))
                 autoFocus={false}
-                className="HvInput-inputRoot-618"
+                className="HvInput-inputRoot-610"
                 classes={
                   Object {
                     "colorSecondary": "MuiInput-colorSecondary",
-                    "disabled": "Mui-disabled HvInput-inputDisabled-623",
+                    "disabled": "Mui-disabled HvInput-inputDisabled-615",
                     "error": "Mui-error",
-                    "focused": "Mui-focused HvInput-inputRootFocused-620",
+                    "focused": "Mui-focused HvInput-inputRootFocused-612",
                     "formControl": "MuiInput-formControl",
                     "fullWidth": "MuiInput-fullWidth",
-                    "input": "MuiInput-input HvInput-input-622",
+                    "input": "MuiInput-input HvInput-input-614",
                     "inputMarginDense": "MuiInput-inputMarginDense",
                     "inputMultiline": "MuiInput-inputMultiline",
                     "inputTypeSearch": "MuiInput-inputTypeSearch",
                     "marginDense": "MuiInput-marginDense",
-                    "multiline": "MuiInput-multiline HvInput-multiLine-624",
+                    "multiline": "MuiInput-multiline HvInput-multiLine-616",
                     "root": "MuiInput-root",
                     "underline": null,
                   }
@@ -2153,18 +2152,18 @@ exports[`Input should pass other props to the child input component 1`] = `
               >
                 <ForwardRef(InputBase)
                   autoFocus={false}
-                  className="HvInput-inputRoot-618"
+                  className="HvInput-inputRoot-610"
                   classes={
                     Object {
                       "adornedEnd": "MuiInputBase-adornedEnd",
                       "adornedStart": "MuiInputBase-adornedStart",
                       "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-623",
+                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-615",
                       "error": "Mui-error Mui-error",
-                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-620",
+                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-612",
                       "formControl": "MuiInputBase-formControl MuiInput-formControl",
                       "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                      "input": "MuiInputBase-input MuiInput-input HvInput-input-622",
+                      "input": "MuiInputBase-input MuiInput-input HvInput-input-614",
                       "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
                       "inputAdornedStart": "MuiInputBase-inputAdornedStart",
                       "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
@@ -2172,7 +2171,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                       "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
                       "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                       "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-624",
+                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-616",
                       "root": "MuiInputBase-root MuiInput-root",
                     }
                   }
@@ -2198,12 +2197,12 @@ exports[`Input should pass other props to the child input component 1`] = `
                   type="text"
                 >
                   <div
-                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-618"
+                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-610"
                     onClick={[Function]}
                   >
                     <input
                       autoFocus={false}
-                      className="MuiInputBase-input MuiInput-input HvInput-input-622"
+                      className="MuiInputBase-input MuiInput-input HvInput-input-614"
                       disabled={false}
                       id="hv-input-9-input"
                       maxLength={250}
@@ -2226,7 +2225,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             aria-labelledby={null}
             aria-live="polite"
             aria-relevant="additions text"
-            className="HvInput-textWarning-630 HvInput-infoText-629"
+            className="HvInput-textWarning-622 HvInput-infoText-621"
             component={null}
             paragraph={false}
             style={
@@ -2242,34 +2241,33 @@ exports[`Input should pass other props to the child input component 1`] = `
               aria-labelledby={null}
               aria-live="polite"
               aria-relevant="additions text"
-              className="HvInput-textWarning-630 HvInput-infoText-629"
+              className="HvInput-textWarning-622 HvInput-infoText-621"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-671",
-                  "4xlTitle": "HvTypography-4xlTitle-670",
-                  "5xlTitle": "HvTypography-5xlTitle-669",
-                  "baseFontFamily": "HvTypography-baseFontFamily-692",
-                  "disabledButtonText": "HvTypography-disabledButtonText-683",
-                  "disabledText": "HvTypography-disabledText-690",
-                  "highlightText": "HvTypography-highlightText-679",
-                  "infoText": "HvTypography-infoText-688",
-                  "inlineLink": "HvTypography-inlineLink-682",
-                  "lTitle": "HvTypography-lTitle-674",
-                  "labelText": "HvTypography-labelText-687",
-                  "mTitle": "HvTypography-mTitle-675",
-                  "margin": "HvTypography-margin-693",
-                  "normalText": "HvTypography-normalText-680",
-                  "placeholderText": "HvTypography-placeholderText-684",
-                  "sLink": "HvTypography-sLink-689",
-                  "sText": "HvTypography-sText-686",
-                  "sTitle": "HvTypography-sTitle-676",
-                  "selectedNavText": "HvTypography-selectedNavText-685",
-                  "selectedText": "HvTypography-selectedText-681",
-                  "vizText": "HvTypography-vizText-691",
-                  "xlTitle": "HvTypography-xlTitle-673",
-                  "xsTitle": "HvTypography-xsTitle-677",
-                  "xxlTitle": "HvTypography-xxlTitle-672",
-                  "xxsTitle": "HvTypography-xxsTitle-678",
+                  "3xlTitle": "HvTypography-3xlTitle-663",
+                  "4xlTitle": "HvTypography-4xlTitle-662",
+                  "5xlTitle": "HvTypography-5xlTitle-661",
+                  "baseFontFamily": "HvTypography-baseFontFamily-683",
+                  "disabledButtonText": "HvTypography-disabledButtonText-675",
+                  "highlightText": "HvTypography-highlightText-671",
+                  "infoText": "HvTypography-infoText-680",
+                  "inlineLink": "HvTypography-inlineLink-674",
+                  "lTitle": "HvTypography-lTitle-666",
+                  "labelText": "HvTypography-labelText-679",
+                  "mTitle": "HvTypography-mTitle-667",
+                  "margin": "HvTypography-margin-684",
+                  "normalText": "HvTypography-normalText-672",
+                  "placeholderText": "HvTypography-placeholderText-676",
+                  "sLink": "HvTypography-sLink-681",
+                  "sText": "HvTypography-sText-678",
+                  "sTitle": "HvTypography-sTitle-668",
+                  "selectedNavText": "HvTypography-selectedNavText-677",
+                  "selectedText": "HvTypography-selectedText-673",
+                  "vizText": "HvTypography-vizText-682",
+                  "xlTitle": "HvTypography-xlTitle-665",
+                  "xsTitle": "HvTypography-xsTitle-669",
+                  "xxlTitle": "HvTypography-xxlTitle-664",
+                  "xxsTitle": "HvTypography-xxsTitle-670",
                 }
               }
               component={null}
@@ -2287,7 +2285,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="HvTypography-sText-686 HvTypography-baseFontFamily-692 HvTypography-margin-693 HvInput-textWarning-630 HvInput-infoText-629"
+                className="HvTypography-sText-678 HvTypography-baseFontFamily-683 HvTypography-margin-684 HvInput-textWarning-622 HvInput-infoText-621"
                 style={
                   Object {
                     "display": "none",
@@ -3124,26 +3122,26 @@ exports[`Input should render correctly 1`] = `
         className=""
         classes={
           Object {
-            "adornmentButton": "HvInput-adornmentButton-93",
-            "adornmentsBox": "HvInput-adornmentsBox-92",
-            "icon": "HvInput-icon-94",
-            "iconClear": "HvInput-iconClear-95",
-            "infoIconContainer": "HvInput-infoIconContainer-89",
-            "infoText": "HvInput-infoText-90",
-            "input": "HvInput-input-83",
-            "inputDisabled": "HvInput-inputDisabled-84",
-            "inputRoot": "HvInput-inputRoot-79",
-            "inputRootDisabled": "HvInput-inputRootDisabled-80",
-            "inputRootFocused": "HvInput-inputRootFocused-81",
-            "inputRootInvalid": "HvInput-inputRootInvalid-82",
-            "label": "HvInput-label-87",
-            "labelContainer": "HvInput-labelContainer-86",
-            "labelDisabled": "HvInput-labelDisabled-88",
-            "multiLine": "HvInput-multiLine-85",
-            "root": "HvInput-root-78",
-            "suggestionList": "HvInput-suggestionList-97",
-            "suggestionsContainer": "HvInput-suggestionsContainer-96",
-            "textWarning": "HvInput-textWarning-91",
+            "adornmentButton": "HvInput-adornmentButton-92",
+            "adornmentsBox": "HvInput-adornmentsBox-91",
+            "icon": "HvInput-icon-93",
+            "iconClear": "HvInput-iconClear-94",
+            "infoIconContainer": "HvInput-infoIconContainer-88",
+            "infoText": "HvInput-infoText-89",
+            "input": "HvInput-input-82",
+            "inputDisabled": "HvInput-inputDisabled-83",
+            "inputRoot": "HvInput-inputRoot-78",
+            "inputRootDisabled": "HvInput-inputRootDisabled-79",
+            "inputRootFocused": "HvInput-inputRootFocused-80",
+            "inputRootInvalid": "HvInput-inputRootInvalid-81",
+            "label": "HvInput-label-86",
+            "labelContainer": "HvInput-labelContainer-85",
+            "labelDisabled": "HvInput-labelDisabled-87",
+            "multiLine": "HvInput-multiLine-84",
+            "root": "HvInput-root-77",
+            "suggestionList": "HvInput-suggestionList-96",
+            "suggestionsContainer": "HvInput-suggestionsContainer-95",
+            "textWarning": "HvInput-textWarning-90",
           }
         }
         customFixedIcon={null}
@@ -3183,22 +3181,22 @@ exports[`Input should render correctly 1`] = `
         validationType="none"
       >
         <div
-          className="HvInput-root-78"
+          className="HvInput-root-77"
           id="hv-input-2"
           onBlur={[Function]}
         >
           <div
-            className="HvInput-labelContainer-86"
+            className="HvInput-labelContainer-85"
           />
           <WithStyles(ForwardRef(Input))
             autoFocus={false}
-            className="HvInput-inputRoot-79"
+            className="HvInput-inputRoot-78"
             classes={
               Object {
-                "disabled": "HvInput-inputDisabled-84",
-                "focused": "HvInput-inputRootFocused-81",
-                "input": "HvInput-input-83",
-                "multiline": "HvInput-multiLine-85",
+                "disabled": "HvInput-inputDisabled-83",
+                "focused": "HvInput-inputRootFocused-80",
+                "input": "HvInput-input-82",
+                "multiline": "HvInput-multiLine-84",
               }
             }
             disabled={false}
@@ -3220,21 +3218,21 @@ exports[`Input should render correctly 1`] = `
           >
             <ForwardRef(Input)
               autoFocus={false}
-              className="HvInput-inputRoot-79"
+              className="HvInput-inputRoot-78"
               classes={
                 Object {
                   "colorSecondary": "MuiInput-colorSecondary",
-                  "disabled": "Mui-disabled HvInput-inputDisabled-84",
+                  "disabled": "Mui-disabled HvInput-inputDisabled-83",
                   "error": "Mui-error",
-                  "focused": "Mui-focused HvInput-inputRootFocused-81",
+                  "focused": "Mui-focused HvInput-inputRootFocused-80",
                   "formControl": "MuiInput-formControl",
                   "fullWidth": "MuiInput-fullWidth",
-                  "input": "MuiInput-input HvInput-input-83",
+                  "input": "MuiInput-input HvInput-input-82",
                   "inputMarginDense": "MuiInput-inputMarginDense",
                   "inputMultiline": "MuiInput-inputMultiline",
                   "inputTypeSearch": "MuiInput-inputTypeSearch",
                   "marginDense": "MuiInput-marginDense",
-                  "multiline": "MuiInput-multiline HvInput-multiLine-85",
+                  "multiline": "MuiInput-multiline HvInput-multiLine-84",
                   "root": "MuiInput-root",
                   "underline": "MuiInput-underline",
                 }
@@ -3259,21 +3257,21 @@ exports[`Input should render correctly 1`] = `
             >
               <WithStyles(ForwardRef(InputBase))
                 autoFocus={false}
-                className="HvInput-inputRoot-79"
+                className="HvInput-inputRoot-78"
                 classes={
                   Object {
                     "colorSecondary": "MuiInput-colorSecondary",
-                    "disabled": "Mui-disabled HvInput-inputDisabled-84",
+                    "disabled": "Mui-disabled HvInput-inputDisabled-83",
                     "error": "Mui-error",
-                    "focused": "Mui-focused HvInput-inputRootFocused-81",
+                    "focused": "Mui-focused HvInput-inputRootFocused-80",
                     "formControl": "MuiInput-formControl",
                     "fullWidth": "MuiInput-fullWidth",
-                    "input": "MuiInput-input HvInput-input-83",
+                    "input": "MuiInput-input HvInput-input-82",
                     "inputMarginDense": "MuiInput-inputMarginDense",
                     "inputMultiline": "MuiInput-inputMultiline",
                     "inputTypeSearch": "MuiInput-inputTypeSearch",
                     "marginDense": "MuiInput-marginDense",
-                    "multiline": "MuiInput-multiline HvInput-multiLine-85",
+                    "multiline": "MuiInput-multiline HvInput-multiLine-84",
                     "root": "MuiInput-root",
                     "underline": null,
                   }
@@ -3300,18 +3298,18 @@ exports[`Input should render correctly 1`] = `
               >
                 <ForwardRef(InputBase)
                   autoFocus={false}
-                  className="HvInput-inputRoot-79"
+                  className="HvInput-inputRoot-78"
                   classes={
                     Object {
                       "adornedEnd": "MuiInputBase-adornedEnd",
                       "adornedStart": "MuiInputBase-adornedStart",
                       "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-84",
+                      "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-83",
                       "error": "Mui-error Mui-error",
-                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-81",
+                      "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-80",
                       "formControl": "MuiInputBase-formControl MuiInput-formControl",
                       "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                      "input": "MuiInputBase-input MuiInput-input HvInput-input-83",
+                      "input": "MuiInputBase-input MuiInput-input HvInput-input-82",
                       "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
                       "inputAdornedStart": "MuiInputBase-inputAdornedStart",
                       "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
@@ -3319,7 +3317,7 @@ exports[`Input should render correctly 1`] = `
                       "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
                       "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                       "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-85",
+                      "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-84",
                       "root": "MuiInputBase-root MuiInput-root",
                     }
                   }
@@ -3344,12 +3342,12 @@ exports[`Input should render correctly 1`] = `
                   type="text"
                 >
                   <div
-                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-79"
+                    className="MuiInputBase-root MuiInput-root HvInput-inputRoot-78"
                     onClick={[Function]}
                   >
                     <input
                       autoFocus={false}
-                      className="MuiInputBase-input MuiInput-input HvInput-input-83"
+                      className="MuiInputBase-input MuiInput-input HvInput-input-82"
                       disabled={false}
                       id="hv-input-2-input"
                       onAnimationStart={[Function]}
@@ -3371,7 +3369,7 @@ exports[`Input should render correctly 1`] = `
             aria-labelledby={null}
             aria-live="polite"
             aria-relevant="additions text"
-            className="HvInput-textWarning-91 HvInput-infoText-90"
+            className="HvInput-textWarning-90 HvInput-infoText-89"
             component={null}
             paragraph={false}
             style={
@@ -3387,34 +3385,33 @@ exports[`Input should render correctly 1`] = `
               aria-labelledby={null}
               aria-live="polite"
               aria-relevant="additions text"
-              className="HvInput-textWarning-91 HvInput-infoText-90"
+              className="HvInput-textWarning-90 HvInput-infoText-89"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-132",
-                  "4xlTitle": "HvTypography-4xlTitle-131",
-                  "5xlTitle": "HvTypography-5xlTitle-130",
-                  "baseFontFamily": "HvTypography-baseFontFamily-153",
-                  "disabledButtonText": "HvTypography-disabledButtonText-144",
-                  "disabledText": "HvTypography-disabledText-151",
-                  "highlightText": "HvTypography-highlightText-140",
-                  "infoText": "HvTypography-infoText-149",
-                  "inlineLink": "HvTypography-inlineLink-143",
-                  "lTitle": "HvTypography-lTitle-135",
-                  "labelText": "HvTypography-labelText-148",
-                  "mTitle": "HvTypography-mTitle-136",
-                  "margin": "HvTypography-margin-154",
-                  "normalText": "HvTypography-normalText-141",
-                  "placeholderText": "HvTypography-placeholderText-145",
-                  "sLink": "HvTypography-sLink-150",
-                  "sText": "HvTypography-sText-147",
-                  "sTitle": "HvTypography-sTitle-137",
-                  "selectedNavText": "HvTypography-selectedNavText-146",
-                  "selectedText": "HvTypography-selectedText-142",
-                  "vizText": "HvTypography-vizText-152",
-                  "xlTitle": "HvTypography-xlTitle-134",
-                  "xsTitle": "HvTypography-xsTitle-138",
-                  "xxlTitle": "HvTypography-xxlTitle-133",
-                  "xxsTitle": "HvTypography-xxsTitle-139",
+                  "3xlTitle": "HvTypography-3xlTitle-131",
+                  "4xlTitle": "HvTypography-4xlTitle-130",
+                  "5xlTitle": "HvTypography-5xlTitle-129",
+                  "baseFontFamily": "HvTypography-baseFontFamily-151",
+                  "disabledButtonText": "HvTypography-disabledButtonText-143",
+                  "highlightText": "HvTypography-highlightText-139",
+                  "infoText": "HvTypography-infoText-148",
+                  "inlineLink": "HvTypography-inlineLink-142",
+                  "lTitle": "HvTypography-lTitle-134",
+                  "labelText": "HvTypography-labelText-147",
+                  "mTitle": "HvTypography-mTitle-135",
+                  "margin": "HvTypography-margin-152",
+                  "normalText": "HvTypography-normalText-140",
+                  "placeholderText": "HvTypography-placeholderText-144",
+                  "sLink": "HvTypography-sLink-149",
+                  "sText": "HvTypography-sText-146",
+                  "sTitle": "HvTypography-sTitle-136",
+                  "selectedNavText": "HvTypography-selectedNavText-145",
+                  "selectedText": "HvTypography-selectedText-141",
+                  "vizText": "HvTypography-vizText-150",
+                  "xlTitle": "HvTypography-xlTitle-133",
+                  "xsTitle": "HvTypography-xsTitle-137",
+                  "xxlTitle": "HvTypography-xxlTitle-132",
+                  "xxsTitle": "HvTypography-xxsTitle-138",
                 }
               }
               component={null}
@@ -3432,7 +3429,7 @@ exports[`Input should render correctly 1`] = `
                 aria-labelledby={null}
                 aria-live="polite"
                 aria-relevant="additions text"
-                className="HvTypography-sText-147 HvTypography-baseFontFamily-153 HvTypography-margin-154 HvInput-textWarning-91 HvInput-infoText-90"
+                className="HvTypography-sText-146 HvTypography-baseFontFamily-151 HvTypography-margin-152 HvInput-textWarning-90 HvInput-infoText-89"
                 style={
                   Object {
                     "display": "none",

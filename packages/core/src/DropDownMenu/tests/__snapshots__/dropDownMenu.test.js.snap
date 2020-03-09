@@ -803,10 +803,10 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
       <DropDownMenu
         classes={
           Object {
-            "icon": "HvDropDownMenu-icon-530",
-            "iconSelected": "HvDropDownMenu-iconSelected-531",
-            "menuList": "HvDropDownMenu-menuList-532",
-            "root": "HvDropDownMenu-root-529",
+            "icon": "HvDropDownMenu-icon-522",
+            "iconSelected": "HvDropDownMenu-iconSelected-523",
+            "menuList": "HvDropDownMenu-menuList-524",
+            "root": "HvDropDownMenu-root-521",
           }
         }
         dataList={
@@ -832,7 +832,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         placement="left"
       >
         <div
-          className="HvDropDownMenu-root-529"
+          className="HvDropDownMenu-root-521"
           id="hv-dropdown-menu4"
         >
           <WithStyles(ForwardRef(IconButton))
@@ -841,7 +841,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
               Object {
                 "current": <button
                   aria-haspopup="true"
-                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-530"
+                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-522"
                   id="hv-dropdown-menu4-icon-button"
                   tabindex="0"
                   type="button"
@@ -854,7 +854,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                 </button>,
               }
             }
-            className="HvDropDownMenu-icon-530"
+            className="HvDropDownMenu-icon-522"
             disabled={false}
             id="hv-dropdown-menu4-icon-button"
             onClick={[Function]}
@@ -866,7 +866,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-530"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-522"
                     id="hv-dropdown-menu4-icon-button"
                     tabindex="0"
                     type="button"
@@ -879,7 +879,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-530"
+              className="HvDropDownMenu-icon-522"
               classes={
                 Object {
                   "colorInherit": "MuiIconButton-colorInherit",
@@ -904,7 +904,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-530"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-522"
                       id="hv-dropdown-menu4-icon-button"
                       tabindex="0"
                       type="button"
@@ -918,7 +918,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                   }
                 }
                 centerRipple={true}
-                className="MuiIconButton-root HvDropDownMenu-icon-530"
+                className="MuiIconButton-root HvDropDownMenu-icon-522"
                 disabled={false}
                 focusRipple={true}
                 id="hv-dropdown-menu4-icon-button"
@@ -931,7 +931,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-530"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-522"
                         id="hv-dropdown-menu4-icon-button"
                         tabindex="0"
                         type="button"
@@ -945,7 +945,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-530"
+                  className="MuiIconButton-root HvDropDownMenu-icon-522"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -962,7 +962,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                 >
                   <button
                     aria-haspopup="true"
-                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-530"
+                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-522"
                     disabled={false}
                     id="hv-dropdown-menu4-icon-button"
                     onBlur={[Function]}
@@ -1813,10 +1813,10 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
       <DropDownMenu
         classes={
           Object {
-            "icon": "HvDropDownMenu-icon-452",
-            "iconSelected": "HvDropDownMenu-iconSelected-453",
-            "menuList": "HvDropDownMenu-menuList-454",
-            "root": "HvDropDownMenu-root-451",
+            "icon": "HvDropDownMenu-icon-445",
+            "iconSelected": "HvDropDownMenu-iconSelected-446",
+            "menuList": "HvDropDownMenu-menuList-447",
+            "root": "HvDropDownMenu-root-444",
           }
         }
         dataList={
@@ -1842,7 +1842,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         placement="left"
       >
         <div
-          className="HvDropDownMenu-root-451"
+          className="HvDropDownMenu-root-444"
           id="hv-dropdown-menu1"
         >
           <WithStyles(ForwardRef(IconButton))
@@ -1851,7 +1851,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
               Object {
                 "current": <button
                   aria-haspopup="true"
-                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-452"
+                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-445"
                   id="hv-dropdown-menu1-icon-button"
                   tabindex="0"
                   type="button"
@@ -1864,7 +1864,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                 </button>,
               }
             }
-            className="HvDropDownMenu-icon-452"
+            className="HvDropDownMenu-icon-445"
             disabled={false}
             id="hv-dropdown-menu1-icon-button"
             onClick={[Function]}
@@ -1876,7 +1876,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-452"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-445"
                     id="hv-dropdown-menu1-icon-button"
                     tabindex="0"
                     type="button"
@@ -1889,7 +1889,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-452"
+              className="HvDropDownMenu-icon-445"
               classes={
                 Object {
                   "colorInherit": "MuiIconButton-colorInherit",
@@ -1914,7 +1914,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-452"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-445"
                       id="hv-dropdown-menu1-icon-button"
                       tabindex="0"
                       type="button"
@@ -1928,7 +1928,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                   }
                 }
                 centerRipple={true}
-                className="MuiIconButton-root HvDropDownMenu-icon-452"
+                className="MuiIconButton-root HvDropDownMenu-icon-445"
                 disabled={false}
                 focusRipple={true}
                 id="hv-dropdown-menu1-icon-button"
@@ -1941,7 +1941,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-452"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-445"
                         id="hv-dropdown-menu1-icon-button"
                         tabindex="0"
                         type="button"
@@ -1955,7 +1955,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-452"
+                  className="MuiIconButton-root HvDropDownMenu-icon-445"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -1972,7 +1972,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                 >
                   <button
                     aria-haspopup="true"
-                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-452"
+                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-445"
                     disabled={false}
                     id="hv-dropdown-menu1-icon-button"
                     onBlur={[Function]}
@@ -2823,10 +2823,10 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
       <DropDownMenu
         classes={
           Object {
-            "icon": "HvDropDownMenu-icon-468",
-            "iconSelected": "HvDropDownMenu-iconSelected-469",
-            "menuList": "HvDropDownMenu-menuList-470",
-            "root": "HvDropDownMenu-root-467",
+            "icon": "HvDropDownMenu-icon-461",
+            "iconSelected": "HvDropDownMenu-iconSelected-462",
+            "menuList": "HvDropDownMenu-menuList-463",
+            "root": "HvDropDownMenu-root-460",
           }
         }
         dataList={
@@ -2852,7 +2852,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
         placement="left"
       >
         <div
-          className="HvDropDownMenu-root-467"
+          className="HvDropDownMenu-root-460"
           id="hv-dropdown-menu2"
         >
           <WithStyles(ForwardRef(IconButton))
@@ -2865,7 +2865,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   aria-controls="hv-dropdown-menu2-list"
                   aria-expanded="true"
                   aria-haspopup="true"
-                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                   id="hv-dropdown-menu2-icon-button"
                   tabindex="0"
                   type="button"
@@ -2878,7 +2878,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                 </button>,
               }
             }
-            className="HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+            className="HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
             disabled={false}
             id="hv-dropdown-menu2-icon-button"
             onClick={[Function]}
@@ -2894,7 +2894,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     aria-controls="hv-dropdown-menu2-list"
                     aria-expanded="true"
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                     id="hv-dropdown-menu2-icon-button"
                     tabindex="0"
                     type="button"
@@ -2907,7 +2907,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+              className="HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
               classes={
                 Object {
                   "colorInherit": "MuiIconButton-colorInherit",
@@ -2936,7 +2936,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       aria-controls="hv-dropdown-menu2-list"
                       aria-expanded="true"
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                       id="hv-dropdown-menu2-icon-button"
                       tabindex="0"
                       type="button"
@@ -2950,7 +2950,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   }
                 }
                 centerRipple={true}
-                className="MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                className="MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                 disabled={false}
                 focusRipple={true}
                 id="hv-dropdown-menu2-icon-button"
@@ -2967,7 +2967,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                         aria-controls="hv-dropdown-menu2-list"
                         aria-expanded="true"
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                         id="hv-dropdown-menu2-icon-button"
                         tabindex="0"
                         type="button"
@@ -2981,7 +2981,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                  className="MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -3000,7 +3000,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     aria-controls="hv-dropdown-menu2-list"
                     aria-expanded={true}
                     aria-haspopup="true"
-                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                     disabled={false}
                     id="hv-dropdown-menu2-icon-button"
                     onBlur={[Function]}
@@ -3035,7 +3035,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                 aria-controls="hv-dropdown-menu2-list"
                 aria-expanded="true"
                 aria-haspopup="true"
-                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-468 HvDropDownMenu-iconSelected-469"
+                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-461 HvDropDownMenu-iconSelected-462"
                 id="hv-dropdown-menu2-icon-button"
                 tabindex="0"
                 type="button"
@@ -3084,7 +3084,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                 tabindex="0"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 1
                                 </p>
@@ -3096,7 +3096,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 2
                                 </p>
@@ -3108,7 +3108,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 3
                                 </p>
@@ -3124,46 +3124,46 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     >
                       <div>
                         <div
-                          class="HvDropDownMenu-menuList-98"
+                          class="HvDropDownMenu-menuList-97"
                         >
                           <div>
                             <ul
-                              class="HvList-root-111"
+                              class="HvList-root-110"
                               id="dropdownMenu-list"
                               role="menu"
                             >
                               <li
-                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                class="HvList-listItem-111 HvList-condensed-112 Focus-root-124 Focus-focusDisabled-127"
                                 id="dropdownMenu-list-item-0"
                                 role="menuitem"
                                 tabindex="0"
                               >
                                 <p
-                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                  class="HvTypography-normalText-142 HvTypography-baseFontFamily-153 HvTypography-margin-154 HvList-label-119 HvList-truncate-122"
                                 >
                                   Label 1
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                class="HvList-listItem-111 HvList-condensed-112 Focus-root-124 Focus-focusDisabled-127"
                                 id="dropdownMenu-list-item-1"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                  class="HvTypography-normalText-142 HvTypography-baseFontFamily-153 HvTypography-margin-154 HvList-label-119 HvList-truncate-122"
                                 >
                                   Label 2
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-112 HvList-condensed-113 Focus-root-125 Focus-focusDisabled-128"
+                                class="HvList-listItem-111 HvList-condensed-112 Focus-root-124 Focus-focusDisabled-127"
                                 id="dropdownMenu-list-item-2"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-143 HvTypography-baseFontFamily-155 HvTypography-margin-156 HvList-label-120 HvList-truncate-123"
+                                  class="HvTypography-normalText-142 HvTypography-baseFontFamily-153 HvTypography-margin-154 HvList-label-119 HvList-truncate-122"
                                 >
                                   Label 3
                                 </p>
@@ -3179,46 +3179,46 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     >
                       <div>
                         <div
-                          class="HvDropDownMenu-menuList-222"
+                          class="HvDropDownMenu-menuList-219"
                         >
                           <div>
                             <ul
-                              class="HvList-root-235"
+                              class="HvList-root-232"
                               id="dropdownMenu-list"
                               role="menu"
                             >
                               <li
-                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                class="HvList-listItem-233 HvList-condensed-234 Focus-root-246 Focus-focusDisabled-249"
                                 id="dropdownMenu-list-item-0"
                                 role="menuitem"
                                 tabindex="0"
                               >
                                 <p
-                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                  class="HvTypography-normalText-264 HvTypography-baseFontFamily-275 HvTypography-margin-276 HvList-label-241 HvList-truncate-244"
                                 >
                                   Label 1
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                class="HvList-listItem-233 HvList-condensed-234 Focus-root-246 Focus-focusDisabled-249"
                                 id="dropdownMenu-list-item-1"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                  class="HvTypography-normalText-264 HvTypography-baseFontFamily-275 HvTypography-margin-276 HvList-label-241 HvList-truncate-244"
                                 >
                                   Label 2
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-236 HvList-condensed-237 Focus-root-249 Focus-focusDisabled-252"
+                                class="HvList-listItem-233 HvList-condensed-234 Focus-root-246 Focus-focusDisabled-249"
                                 id="dropdownMenu-list-item-2"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-267 HvTypography-baseFontFamily-279 HvTypography-margin-280 HvList-label-244 HvList-truncate-247"
+                                  class="HvTypography-normalText-264 HvTypography-baseFontFamily-275 HvTypography-margin-276 HvList-label-241 HvList-truncate-244"
                                 >
                                   Label 3
                                 </p>
@@ -3234,46 +3234,46 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     >
                       <div>
                         <div
-                          class="HvDropDownMenu-menuList-470"
+                          class="HvDropDownMenu-menuList-463"
                         >
                           <div>
                             <ul
-                              class="HvList-root-483"
+                              class="HvList-root-476"
                               id="hv-dropdown-menu2-list"
                               role="menu"
                             >
                               <li
-                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                 id="hv-dropdown-menu2-list-item-0"
                                 role="menuitem"
                                 tabindex="0"
                               >
                                 <p
-                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                 >
                                   Label 1
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                 id="hv-dropdown-menu2-list-item-1"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                 >
                                   Label 2
                                 </p>
                               </li>
                               <li
-                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                 id="hv-dropdown-menu2-list-item-2"
                                 role="menuitem"
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                 >
                                   Label 3
                                 </p>
@@ -3318,7 +3318,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                         paused={false}
                       >
                         <div
-                          className="HvDropDownMenu-menuList-470"
+                          className="HvDropDownMenu-menuList-463"
                           onKeyDown={[Function]}
                         >
                           <WithStyles(List)
@@ -3357,20 +3357,20 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             <List
                               classes={
                                 Object {
-                                  "box": "HvList-box-496",
-                                  "condensed": "HvList-condensed-485",
-                                  "disabled": "HvList-disabled-490",
-                                  "label": "HvList-label-492",
-                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding-493",
-                                  "listItem": "HvList-listItem-484",
-                                  "noIconLeftPadding": "HvList-noIconLeftPadding-494",
-                                  "root": "HvList-root-483",
-                                  "selectAll": "HvList-selectAll-489",
-                                  "selected": "HvList-selected-488",
-                                  "selector": "HvList-selector-486",
-                                  "selectorContainer": "HvList-selectorContainer-487",
-                                  "textDisabled": "HvList-textDisabled-491",
-                                  "truncate": "HvList-truncate-495",
+                                  "box": "HvList-box-489",
+                                  "condensed": "HvList-condensed-478",
+                                  "disabled": "HvList-disabled-483",
+                                  "label": "HvList-label-485",
+                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding-486",
+                                  "listItem": "HvList-listItem-477",
+                                  "noIconLeftPadding": "HvList-noIconLeftPadding-487",
+                                  "root": "HvList-root-476",
+                                  "selectAll": "HvList-selectAll-482",
+                                  "selected": "HvList-selected-481",
+                                  "selector": "HvList-selector-479",
+                                  "selectorContainer": "HvList-selectorContainer-480",
+                                  "textDisabled": "HvList-textDisabled-484",
+                                  "truncate": "HvList-truncate-488",
                                 }
                               }
                               condensed={true}
@@ -3407,7 +3407,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             >
                               <div>
                                 <ul
-                                  className="HvList-root-483"
+                                  className="HvList-root-476"
                                   id="hv-dropdown-menu2-list"
                                   role="menu"
                                 >
@@ -3425,42 +3425,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       Object {
                                         "current": <div>
                                           <ul
-                                            class="HvList-root-483"
+                                            class="HvList-root-476"
                                             id="hv-dropdown-menu2-list"
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 1
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 2
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 3
                                               </p>
@@ -3477,13 +3477,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     <Focus
                                       classes={
                                         Object {
-                                          "disabled": "Focus-disabled-499",
-                                          "externalReference": "Focus-externalReference-502",
-                                          "falseFocus": "Focus-falseFocus-503",
-                                          "focusDisabled": "Focus-focusDisabled-500",
-                                          "focused": "Focus-focused-501",
-                                          "root": "Focus-root-497",
-                                          "selected": "Focus-selected-498",
+                                          "disabled": "Focus-disabled-492",
+                                          "externalReference": "Focus-externalReference-495",
+                                          "falseFocus": "Focus-falseFocus-496",
+                                          "focusDisabled": "Focus-focusDisabled-493",
+                                          "focused": "Focus-focused-494",
+                                          "root": "Focus-root-490",
+                                          "selected": "Focus-selected-491",
                                         }
                                       }
                                       configuration={
@@ -3498,42 +3498,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         Object {
                                           "current": <div>
                                             <ul
-                                              class="HvList-root-483"
+                                              class="HvList-root-476"
                                               id="hv-dropdown-menu2-list"
                                               role="menu"
                                             >
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-0"
                                                 role="menuitem"
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 1
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-1"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 2
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-2"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 3
                                                 </p>
@@ -3552,7 +3552,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         wrapper={[Function]}
                                       >
                                         <li
-                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          className="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                           id="hv-dropdown-menu2-list-item-0"
                                           onBlur={[Function]}
                                           onClick={[Function]}
@@ -3565,40 +3565,39 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         >
                                           <Text>
                                             <WithStyles(ForwardRef)
-                                              className="HvList-label-492 HvList-truncate-495"
+                                              className="HvList-label-485 HvList-truncate-488"
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
-                                                className="HvList-label-492 HvList-truncate-495"
+                                                className="HvList-label-485 HvList-truncate-488"
                                                 classes={
                                                   Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle-506",
-                                                    "4xlTitle": "HvTypography-4xlTitle-505",
-                                                    "5xlTitle": "HvTypography-5xlTitle-504",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                    "disabledText": "HvTypography-disabledText-525",
-                                                    "highlightText": "HvTypography-highlightText-514",
-                                                    "infoText": "HvTypography-infoText-523",
-                                                    "inlineLink": "HvTypography-inlineLink-517",
-                                                    "lTitle": "HvTypography-lTitle-509",
-                                                    "labelText": "HvTypography-labelText-522",
-                                                    "mTitle": "HvTypography-mTitle-510",
-                                                    "margin": "HvTypography-margin-528",
-                                                    "normalText": "HvTypography-normalText-515",
-                                                    "placeholderText": "HvTypography-placeholderText-519",
-                                                    "sLink": "HvTypography-sLink-524",
-                                                    "sText": "HvTypography-sText-521",
-                                                    "sTitle": "HvTypography-sTitle-511",
-                                                    "selectedNavText": "HvTypography-selectedNavText-520",
-                                                    "selectedText": "HvTypography-selectedText-516",
-                                                    "vizText": "HvTypography-vizText-526",
-                                                    "xlTitle": "HvTypography-xlTitle-508",
-                                                    "xsTitle": "HvTypography-xsTitle-512",
-                                                    "xxlTitle": "HvTypography-xxlTitle-507",
-                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                    "3xlTitle": "HvTypography-3xlTitle-499",
+                                                    "4xlTitle": "HvTypography-4xlTitle-498",
+                                                    "5xlTitle": "HvTypography-5xlTitle-497",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-519",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-511",
+                                                    "highlightText": "HvTypography-highlightText-507",
+                                                    "infoText": "HvTypography-infoText-516",
+                                                    "inlineLink": "HvTypography-inlineLink-510",
+                                                    "lTitle": "HvTypography-lTitle-502",
+                                                    "labelText": "HvTypography-labelText-515",
+                                                    "mTitle": "HvTypography-mTitle-503",
+                                                    "margin": "HvTypography-margin-520",
+                                                    "normalText": "HvTypography-normalText-508",
+                                                    "placeholderText": "HvTypography-placeholderText-512",
+                                                    "sLink": "HvTypography-sLink-517",
+                                                    "sText": "HvTypography-sText-514",
+                                                    "sTitle": "HvTypography-sTitle-504",
+                                                    "selectedNavText": "HvTypography-selectedNavText-513",
+                                                    "selectedText": "HvTypography-selectedText-509",
+                                                    "vizText": "HvTypography-vizText-518",
+                                                    "xlTitle": "HvTypography-xlTitle-501",
+                                                    "xsTitle": "HvTypography-xsTitle-505",
+                                                    "xxlTitle": "HvTypography-xxlTitle-500",
+                                                    "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
                                                 component={null}
@@ -3606,7 +3605,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  className="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 1
                                                 </p>
@@ -3631,42 +3630,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       Object {
                                         "current": <div>
                                           <ul
-                                            class="HvList-root-483"
+                                            class="HvList-root-476"
                                             id="hv-dropdown-menu2-list"
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 1
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 2
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 3
                                               </p>
@@ -3683,13 +3682,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     <Focus
                                       classes={
                                         Object {
-                                          "disabled": "Focus-disabled-499",
-                                          "externalReference": "Focus-externalReference-502",
-                                          "falseFocus": "Focus-falseFocus-503",
-                                          "focusDisabled": "Focus-focusDisabled-500",
-                                          "focused": "Focus-focused-501",
-                                          "root": "Focus-root-497",
-                                          "selected": "Focus-selected-498",
+                                          "disabled": "Focus-disabled-492",
+                                          "externalReference": "Focus-externalReference-495",
+                                          "falseFocus": "Focus-falseFocus-496",
+                                          "focusDisabled": "Focus-focusDisabled-493",
+                                          "focused": "Focus-focused-494",
+                                          "root": "Focus-root-490",
+                                          "selected": "Focus-selected-491",
                                         }
                                       }
                                       configuration={
@@ -3704,42 +3703,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         Object {
                                           "current": <div>
                                             <ul
-                                              class="HvList-root-483"
+                                              class="HvList-root-476"
                                               id="hv-dropdown-menu2-list"
                                               role="menu"
                                             >
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-0"
                                                 role="menuitem"
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 1
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-1"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 2
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-2"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 3
                                                 </p>
@@ -3758,7 +3757,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         wrapper={[Function]}
                                       >
                                         <li
-                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          className="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                           id="hv-dropdown-menu2-list-item-1"
                                           onBlur={[Function]}
                                           onClick={[Function]}
@@ -3771,40 +3770,39 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         >
                                           <Text>
                                             <WithStyles(ForwardRef)
-                                              className="HvList-label-492 HvList-truncate-495"
+                                              className="HvList-label-485 HvList-truncate-488"
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
-                                                className="HvList-label-492 HvList-truncate-495"
+                                                className="HvList-label-485 HvList-truncate-488"
                                                 classes={
                                                   Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle-506",
-                                                    "4xlTitle": "HvTypography-4xlTitle-505",
-                                                    "5xlTitle": "HvTypography-5xlTitle-504",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                    "disabledText": "HvTypography-disabledText-525",
-                                                    "highlightText": "HvTypography-highlightText-514",
-                                                    "infoText": "HvTypography-infoText-523",
-                                                    "inlineLink": "HvTypography-inlineLink-517",
-                                                    "lTitle": "HvTypography-lTitle-509",
-                                                    "labelText": "HvTypography-labelText-522",
-                                                    "mTitle": "HvTypography-mTitle-510",
-                                                    "margin": "HvTypography-margin-528",
-                                                    "normalText": "HvTypography-normalText-515",
-                                                    "placeholderText": "HvTypography-placeholderText-519",
-                                                    "sLink": "HvTypography-sLink-524",
-                                                    "sText": "HvTypography-sText-521",
-                                                    "sTitle": "HvTypography-sTitle-511",
-                                                    "selectedNavText": "HvTypography-selectedNavText-520",
-                                                    "selectedText": "HvTypography-selectedText-516",
-                                                    "vizText": "HvTypography-vizText-526",
-                                                    "xlTitle": "HvTypography-xlTitle-508",
-                                                    "xsTitle": "HvTypography-xsTitle-512",
-                                                    "xxlTitle": "HvTypography-xxlTitle-507",
-                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                    "3xlTitle": "HvTypography-3xlTitle-499",
+                                                    "4xlTitle": "HvTypography-4xlTitle-498",
+                                                    "5xlTitle": "HvTypography-5xlTitle-497",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-519",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-511",
+                                                    "highlightText": "HvTypography-highlightText-507",
+                                                    "infoText": "HvTypography-infoText-516",
+                                                    "inlineLink": "HvTypography-inlineLink-510",
+                                                    "lTitle": "HvTypography-lTitle-502",
+                                                    "labelText": "HvTypography-labelText-515",
+                                                    "mTitle": "HvTypography-mTitle-503",
+                                                    "margin": "HvTypography-margin-520",
+                                                    "normalText": "HvTypography-normalText-508",
+                                                    "placeholderText": "HvTypography-placeholderText-512",
+                                                    "sLink": "HvTypography-sLink-517",
+                                                    "sText": "HvTypography-sText-514",
+                                                    "sTitle": "HvTypography-sTitle-504",
+                                                    "selectedNavText": "HvTypography-selectedNavText-513",
+                                                    "selectedText": "HvTypography-selectedText-509",
+                                                    "vizText": "HvTypography-vizText-518",
+                                                    "xlTitle": "HvTypography-xlTitle-501",
+                                                    "xsTitle": "HvTypography-xsTitle-505",
+                                                    "xxlTitle": "HvTypography-xxlTitle-500",
+                                                    "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
                                                 component={null}
@@ -3812,7 +3810,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  className="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 2
                                                 </p>
@@ -3837,42 +3835,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       Object {
                                         "current": <div>
                                           <ul
-                                            class="HvList-root-483"
+                                            class="HvList-root-476"
                                             id="hv-dropdown-menu2-list"
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 1
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 2
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                              class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                               id="hv-dropdown-menu2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                               >
                                                 Label 3
                                               </p>
@@ -3889,13 +3887,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     <Focus
                                       classes={
                                         Object {
-                                          "disabled": "Focus-disabled-499",
-                                          "externalReference": "Focus-externalReference-502",
-                                          "falseFocus": "Focus-falseFocus-503",
-                                          "focusDisabled": "Focus-focusDisabled-500",
-                                          "focused": "Focus-focused-501",
-                                          "root": "Focus-root-497",
-                                          "selected": "Focus-selected-498",
+                                          "disabled": "Focus-disabled-492",
+                                          "externalReference": "Focus-externalReference-495",
+                                          "falseFocus": "Focus-falseFocus-496",
+                                          "focusDisabled": "Focus-focusDisabled-493",
+                                          "focused": "Focus-focused-494",
+                                          "root": "Focus-root-490",
+                                          "selected": "Focus-selected-491",
                                         }
                                       }
                                       configuration={
@@ -3910,42 +3908,42 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         Object {
                                           "current": <div>
                                             <ul
-                                              class="HvList-root-483"
+                                              class="HvList-root-476"
                                               id="hv-dropdown-menu2-list"
                                               role="menu"
                                             >
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-0"
                                                 role="menuitem"
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 1
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-1"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 2
                                                 </p>
                                               </li>
                                               <li
-                                                class="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                                class="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                                 id="hv-dropdown-menu2-list-item-2"
                                                 role="menuitem"
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  class="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 3
                                                 </p>
@@ -3964,7 +3962,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         wrapper={[Function]}
                                       >
                                         <li
-                                          className="HvList-listItem-484 HvList-condensed-485 Focus-root-497 Focus-focusDisabled-500"
+                                          className="HvList-listItem-477 HvList-condensed-478 Focus-root-490 Focus-focusDisabled-493"
                                           id="hv-dropdown-menu2-list-item-2"
                                           onBlur={[Function]}
                                           onClick={[Function]}
@@ -3977,40 +3975,39 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         >
                                           <Text>
                                             <WithStyles(ForwardRef)
-                                              className="HvList-label-492 HvList-truncate-495"
+                                              className="HvList-label-485 HvList-truncate-488"
                                               component={null}
                                               paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
-                                                className="HvList-label-492 HvList-truncate-495"
+                                                className="HvList-label-485 HvList-truncate-488"
                                                 classes={
                                                   Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle-506",
-                                                    "4xlTitle": "HvTypography-4xlTitle-505",
-                                                    "5xlTitle": "HvTypography-5xlTitle-504",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-527",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText-518",
-                                                    "disabledText": "HvTypography-disabledText-525",
-                                                    "highlightText": "HvTypography-highlightText-514",
-                                                    "infoText": "HvTypography-infoText-523",
-                                                    "inlineLink": "HvTypography-inlineLink-517",
-                                                    "lTitle": "HvTypography-lTitle-509",
-                                                    "labelText": "HvTypography-labelText-522",
-                                                    "mTitle": "HvTypography-mTitle-510",
-                                                    "margin": "HvTypography-margin-528",
-                                                    "normalText": "HvTypography-normalText-515",
-                                                    "placeholderText": "HvTypography-placeholderText-519",
-                                                    "sLink": "HvTypography-sLink-524",
-                                                    "sText": "HvTypography-sText-521",
-                                                    "sTitle": "HvTypography-sTitle-511",
-                                                    "selectedNavText": "HvTypography-selectedNavText-520",
-                                                    "selectedText": "HvTypography-selectedText-516",
-                                                    "vizText": "HvTypography-vizText-526",
-                                                    "xlTitle": "HvTypography-xlTitle-508",
-                                                    "xsTitle": "HvTypography-xsTitle-512",
-                                                    "xxlTitle": "HvTypography-xxlTitle-507",
-                                                    "xxsTitle": "HvTypography-xxsTitle-513",
+                                                    "3xlTitle": "HvTypography-3xlTitle-499",
+                                                    "4xlTitle": "HvTypography-4xlTitle-498",
+                                                    "5xlTitle": "HvTypography-5xlTitle-497",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-519",
+                                                    "disabledButtonText": "HvTypography-disabledButtonText-511",
+                                                    "highlightText": "HvTypography-highlightText-507",
+                                                    "infoText": "HvTypography-infoText-516",
+                                                    "inlineLink": "HvTypography-inlineLink-510",
+                                                    "lTitle": "HvTypography-lTitle-502",
+                                                    "labelText": "HvTypography-labelText-515",
+                                                    "mTitle": "HvTypography-mTitle-503",
+                                                    "margin": "HvTypography-margin-520",
+                                                    "normalText": "HvTypography-normalText-508",
+                                                    "placeholderText": "HvTypography-placeholderText-512",
+                                                    "sLink": "HvTypography-sLink-517",
+                                                    "sText": "HvTypography-sText-514",
+                                                    "sTitle": "HvTypography-sTitle-504",
+                                                    "selectedNavText": "HvTypography-selectedNavText-513",
+                                                    "selectedText": "HvTypography-selectedText-509",
+                                                    "vizText": "HvTypography-vizText-518",
+                                                    "xlTitle": "HvTypography-xlTitle-501",
+                                                    "xsTitle": "HvTypography-xsTitle-505",
+                                                    "xxlTitle": "HvTypography-xxlTitle-500",
+                                                    "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
                                                 component={null}
@@ -4018,7 +4015,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-515 HvTypography-baseFontFamily-527 HvTypography-margin-528 HvList-label-492 HvList-truncate-495"
+                                                  className="HvTypography-normalText-508 HvTypography-baseFontFamily-519 HvTypography-margin-520 HvList-label-485 HvList-truncate-488"
                                                 >
                                                   Label 3
                                                 </p>
@@ -4852,10 +4849,10 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
       <DropDownMenu
         classes={
           Object {
-            "icon": "HvDropDownMenu-icon-80",
-            "iconSelected": "HvDropDownMenu-iconSelected-81",
-            "menuList": "HvDropDownMenu-menuList-82",
-            "root": "HvDropDownMenu-root-79",
+            "icon": "HvDropDownMenu-icon-79",
+            "iconSelected": "HvDropDownMenu-iconSelected-80",
+            "menuList": "HvDropDownMenu-menuList-81",
+            "root": "HvDropDownMenu-root-78",
           }
         }
         dataList={
@@ -4882,7 +4879,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         placement="left"
       >
         <div
-          className="HvDropDownMenu-root-79"
+          className="HvDropDownMenu-root-78"
           id="dropdownMenu"
         >
           <WithStyles(ForwardRef(IconButton))
@@ -4891,7 +4888,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
               Object {
                 "current": <button
                   aria-haspopup="true"
-                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-80"
+                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-79"
                   id="dropdownMenu-icon-button"
                   tabindex="0"
                   type="button"
@@ -4904,7 +4901,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                 </button>,
               }
             }
-            className="HvDropDownMenu-icon-80"
+            className="HvDropDownMenu-icon-79"
             disabled={false}
             id="dropdownMenu-icon-button"
             onClick={[Function]}
@@ -4916,7 +4913,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                 Object {
                   "current": <button
                     aria-haspopup="true"
-                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-80"
+                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-79"
                     id="dropdownMenu-icon-button"
                     tabindex="0"
                     type="button"
@@ -4929,7 +4926,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                   </button>,
                 }
               }
-              className="HvDropDownMenu-icon-80"
+              className="HvDropDownMenu-icon-79"
               classes={
                 Object {
                   "colorInherit": "MuiIconButton-colorInherit",
@@ -4954,7 +4951,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                   Object {
                     "current": <button
                       aria-haspopup="true"
-                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-80"
+                      class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-79"
                       id="dropdownMenu-icon-button"
                       tabindex="0"
                       type="button"
@@ -4968,7 +4965,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                   }
                 }
                 centerRipple={true}
-                className="MuiIconButton-root HvDropDownMenu-icon-80"
+                className="MuiIconButton-root HvDropDownMenu-icon-79"
                 disabled={false}
                 focusRipple={true}
                 id="dropdownMenu-icon-button"
@@ -4981,7 +4978,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                     Object {
                       "current": <button
                         aria-haspopup="true"
-                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-80"
+                        class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-79"
                         id="dropdownMenu-icon-button"
                         tabindex="0"
                         type="button"
@@ -4995,7 +4992,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                     }
                   }
                   centerRipple={true}
-                  className="MuiIconButton-root HvDropDownMenu-icon-80"
+                  className="MuiIconButton-root HvDropDownMenu-icon-79"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -5012,7 +5009,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                 >
                   <button
                     aria-haspopup="true"
-                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-80"
+                    className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon-79"
                     disabled={false}
                     id="dropdownMenu-icon-button"
                     onBlur={[Function]}
@@ -7138,7 +7135,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                 tabindex="0"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 1
                                 </p>
@@ -7150,7 +7147,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 2
                                 </p>
@@ -7162,7 +7159,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                 tabindex="-1"
                               >
                                 <p
-                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                 >
                                   Label 3
                                 </p>
@@ -7325,7 +7322,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 1
                                               </p>
@@ -7337,7 +7334,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 2
                                               </p>
@@ -7349,7 +7346,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 3
                                               </p>
@@ -7398,7 +7395,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 1
                                                 </p>
@@ -7410,7 +7407,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 2
                                                 </p>
@@ -7422,7 +7419,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 3
                                                 </p>
@@ -7466,16 +7463,15 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "3xlTitle": "HvTypography-3xlTitle-56",
                                                     "4xlTitle": "HvTypography-4xlTitle-55",
                                                     "5xlTitle": "HvTypography-5xlTitle-54",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-76",
                                                     "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                    "disabledText": "HvTypography-disabledText-75",
                                                     "highlightText": "HvTypography-highlightText-64",
                                                     "infoText": "HvTypography-infoText-73",
                                                     "inlineLink": "HvTypography-inlineLink-67",
                                                     "lTitle": "HvTypography-lTitle-59",
                                                     "labelText": "HvTypography-labelText-72",
                                                     "mTitle": "HvTypography-mTitle-60",
-                                                    "margin": "HvTypography-margin-78",
+                                                    "margin": "HvTypography-margin-77",
                                                     "normalText": "HvTypography-normalText-65",
                                                     "placeholderText": "HvTypography-placeholderText-69",
                                                     "sLink": "HvTypography-sLink-74",
@@ -7483,7 +7479,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "sTitle": "HvTypography-sTitle-61",
                                                     "selectedNavText": "HvTypography-selectedNavText-70",
                                                     "selectedText": "HvTypography-selectedText-66",
-                                                    "vizText": "HvTypography-vizText-76",
+                                                    "vizText": "HvTypography-vizText-75",
                                                     "xlTitle": "HvTypography-xlTitle-58",
                                                     "xsTitle": "HvTypography-xsTitle-62",
                                                     "xxlTitle": "HvTypography-xxlTitle-57",
@@ -7495,7 +7491,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 1
                                                 </p>
@@ -7531,7 +7527,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 1
                                               </p>
@@ -7543,7 +7539,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 2
                                               </p>
@@ -7555,7 +7551,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 3
                                               </p>
@@ -7604,7 +7600,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 1
                                                 </p>
@@ -7616,7 +7612,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 2
                                                 </p>
@@ -7628,7 +7624,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 3
                                                 </p>
@@ -7672,16 +7668,15 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "3xlTitle": "HvTypography-3xlTitle-56",
                                                     "4xlTitle": "HvTypography-4xlTitle-55",
                                                     "5xlTitle": "HvTypography-5xlTitle-54",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-76",
                                                     "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                    "disabledText": "HvTypography-disabledText-75",
                                                     "highlightText": "HvTypography-highlightText-64",
                                                     "infoText": "HvTypography-infoText-73",
                                                     "inlineLink": "HvTypography-inlineLink-67",
                                                     "lTitle": "HvTypography-lTitle-59",
                                                     "labelText": "HvTypography-labelText-72",
                                                     "mTitle": "HvTypography-mTitle-60",
-                                                    "margin": "HvTypography-margin-78",
+                                                    "margin": "HvTypography-margin-77",
                                                     "normalText": "HvTypography-normalText-65",
                                                     "placeholderText": "HvTypography-placeholderText-69",
                                                     "sLink": "HvTypography-sLink-74",
@@ -7689,7 +7684,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "sTitle": "HvTypography-sTitle-61",
                                                     "selectedNavText": "HvTypography-selectedNavText-70",
                                                     "selectedText": "HvTypography-selectedText-66",
-                                                    "vizText": "HvTypography-vizText-76",
+                                                    "vizText": "HvTypography-vizText-75",
                                                     "xlTitle": "HvTypography-xlTitle-58",
                                                     "xsTitle": "HvTypography-xsTitle-62",
                                                     "xxlTitle": "HvTypography-xxlTitle-57",
@@ -7701,7 +7696,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 2
                                                 </p>
@@ -7737,7 +7732,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="0"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 1
                                               </p>
@@ -7749,7 +7744,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 2
                                               </p>
@@ -7761,7 +7756,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               tabindex="-1"
                                             >
                                               <p
-                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                               >
                                                 Label 3
                                               </p>
@@ -7810,7 +7805,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="0"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 1
                                                 </p>
@@ -7822,7 +7817,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 2
                                                 </p>
@@ -7834,7 +7829,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 tabindex="-1"
                                               >
                                                 <p
-                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  class="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 3
                                                 </p>
@@ -7878,16 +7873,15 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "3xlTitle": "HvTypography-3xlTitle-56",
                                                     "4xlTitle": "HvTypography-4xlTitle-55",
                                                     "5xlTitle": "HvTypography-5xlTitle-54",
-                                                    "baseFontFamily": "HvTypography-baseFontFamily-77",
+                                                    "baseFontFamily": "HvTypography-baseFontFamily-76",
                                                     "disabledButtonText": "HvTypography-disabledButtonText-68",
-                                                    "disabledText": "HvTypography-disabledText-75",
                                                     "highlightText": "HvTypography-highlightText-64",
                                                     "infoText": "HvTypography-infoText-73",
                                                     "inlineLink": "HvTypography-inlineLink-67",
                                                     "lTitle": "HvTypography-lTitle-59",
                                                     "labelText": "HvTypography-labelText-72",
                                                     "mTitle": "HvTypography-mTitle-60",
-                                                    "margin": "HvTypography-margin-78",
+                                                    "margin": "HvTypography-margin-77",
                                                     "normalText": "HvTypography-normalText-65",
                                                     "placeholderText": "HvTypography-placeholderText-69",
                                                     "sLink": "HvTypography-sLink-74",
@@ -7895,7 +7889,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "sTitle": "HvTypography-sTitle-61",
                                                     "selectedNavText": "HvTypography-selectedNavText-70",
                                                     "selectedText": "HvTypography-selectedText-66",
-                                                    "vizText": "HvTypography-vizText-76",
+                                                    "vizText": "HvTypography-vizText-75",
                                                     "xlTitle": "HvTypography-xlTitle-58",
                                                     "xsTitle": "HvTypography-xsTitle-62",
                                                     "xxlTitle": "HvTypography-xxlTitle-57",
@@ -7907,7 +7901,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 variant="normalText"
                                               >
                                                 <p
-                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-77 HvTypography-margin-78 HvList-label-42 HvList-truncate-45"
+                                                  className="HvTypography-normalText-65 HvTypography-baseFontFamily-76 HvTypography-margin-77 HvList-label-42 HvList-truncate-45"
                                                 >
                                                   Label 3
                                                 </p>

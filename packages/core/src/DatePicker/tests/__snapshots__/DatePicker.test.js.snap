@@ -801,34 +801,34 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
       <HvDatePicker
         classes={
           Object {
-            "actionsContainer": "HvDatePicker-actionsContainer-2000",
-            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-2004",
-            "borderBottomNone": "HvDatePicker-borderBottomNone-2002",
-            "borderTopDisplay": "HvDatePicker-borderTopDisplay-2003",
-            "borderTopNone": "HvDatePicker-borderTopNone-2001",
-            "calendarContainer": "HvDatePicker-calendarContainer-1991",
-            "calendarOpenDown": "HvDatePicker-calendarOpenDown-2008",
-            "calendarOpenUp": "HvDatePicker-calendarOpenUp-2009",
-            "datePickerContainer": "HvDatePicker-datePickerContainer-1989",
-            "icon": "HvDatePicker-icon-1987",
-            "iconClear": "HvDatePicker-iconClear-1988",
-            "input": "HvDatePicker-input-1986",
-            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-1982",
-            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-1983",
-            "label": "HvDatePicker-label-1990",
-            "listBorderDown": "HvDatePicker-listBorderDown-2006",
-            "listBorderUp": "HvDatePicker-listBorderUp-2007",
-            "noBorderBottom": "HvDatePicker-noBorderBottom-1985",
-            "noBorderTop": "HvDatePicker-noBorderTop-1984",
-            "popperRoot": "HvDatePicker-popperRoot-2005",
-            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-1994",
-            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-1997",
-            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-1998",
-            "rangeFooterRight": "HvDatePicker-rangeFooterRight-1999",
-            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-1995",
-            "rangeMainContainer": "HvDatePicker-rangeMainContainer-1993",
-            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-1996",
-            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-1992",
+            "actionsContainer": "HvDatePicker-actionsContainer-1986",
+            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-1990",
+            "borderBottomNone": "HvDatePicker-borderBottomNone-1988",
+            "borderTopDisplay": "HvDatePicker-borderTopDisplay-1989",
+            "borderTopNone": "HvDatePicker-borderTopNone-1987",
+            "calendarContainer": "HvDatePicker-calendarContainer-1977",
+            "calendarOpenDown": "HvDatePicker-calendarOpenDown-1994",
+            "calendarOpenUp": "HvDatePicker-calendarOpenUp-1995",
+            "datePickerContainer": "HvDatePicker-datePickerContainer-1975",
+            "icon": "HvDatePicker-icon-1973",
+            "iconClear": "HvDatePicker-iconClear-1974",
+            "input": "HvDatePicker-input-1972",
+            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-1968",
+            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-1969",
+            "label": "HvDatePicker-label-1976",
+            "listBorderDown": "HvDatePicker-listBorderDown-1992",
+            "listBorderUp": "HvDatePicker-listBorderUp-1993",
+            "noBorderBottom": "HvDatePicker-noBorderBottom-1971",
+            "noBorderTop": "HvDatePicker-noBorderTop-1970",
+            "popperRoot": "HvDatePicker-popperRoot-1991",
+            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-1980",
+            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-1983",
+            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-1984",
+            "rangeFooterRight": "HvDatePicker-rangeFooterRight-1985",
+            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-1981",
+            "rangeMainContainer": "HvDatePicker-rangeMainContainer-1979",
+            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-1982",
+            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-1978",
           }
         }
         disablePortal={true}
@@ -1615,11 +1615,11 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
         value=""
       >
         <div
-          className="HvDatePicker-datePickerContainer-1989"
+          className="HvDatePicker-datePickerContainer-1975"
         >
           <div
             aria-label="Date input"
-            className="HvDatePicker-inputCalendarClosed-1982"
+            className="HvDatePicker-inputCalendarClosed-1968"
             id="hv-datepicker-30"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -1627,7 +1627,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
             tabIndex={0}
           >
             <input
-              className="HvDatePicker-input-1986"
+              className="HvDatePicker-input-1972"
               placeholder="Select a date"
               readOnly={true}
               tabIndex={-1}
@@ -1635,24 +1635,24 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               value="5 Jan, 2019 - 10 Jan, 2019"
             />
             <WithStyles(Calendar)
-              className="HvDatePicker-icon-1987"
+              className="HvDatePicker-icon-1973"
               tabIndex={-1}
             >
               <Calendar
-                className="HvDatePicker-icon-1987"
+                className="HvDatePicker-icon-1973"
                 classes={
                   Object {
-                    "root": "HvIconCalendar-root-2010",
-                    "rootL": "HvIconCalendar-rootL-2014",
-                    "rootM": "HvIconCalendar-rootM-2013",
-                    "rootS": "HvIconCalendar-rootS-2012",
-                    "rootXs": "HvIconCalendar-rootXs-2011",
+                    "root": "HvIconCalendar-root-1996",
+                    "rootL": "HvIconCalendar-rootL-2000",
+                    "rootM": "HvIconCalendar-rootM-1999",
+                    "rootS": "HvIconCalendar-rootS-1998",
+                    "rootXs": "HvIconCalendar-rootXs-1997",
                   }
                 }
                 tabIndex={-1}
               >
                 <div
-                  className="HvDatePicker-icon-1987 HvIconCalendar-root-2010 HvIconCalendar-rootS-2012"
+                  className="HvDatePicker-icon-1973 HvIconCalendar-root-1996 HvIconCalendar-rootS-1998"
                   tabIndex={-1}
                 >
                   <svg
@@ -2511,34 +2511,34 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
       <HvDatePicker
         classes={
           Object {
-            "actionsContainer": "HvDatePicker-actionsContainer-688",
-            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-692",
-            "borderBottomNone": "HvDatePicker-borderBottomNone-690",
-            "borderTopDisplay": "HvDatePicker-borderTopDisplay-691",
-            "borderTopNone": "HvDatePicker-borderTopNone-689",
-            "calendarContainer": "HvDatePicker-calendarContainer-679",
-            "calendarOpenDown": "HvDatePicker-calendarOpenDown-696",
-            "calendarOpenUp": "HvDatePicker-calendarOpenUp-697",
-            "datePickerContainer": "HvDatePicker-datePickerContainer-677",
-            "icon": "HvDatePicker-icon-675",
-            "iconClear": "HvDatePicker-iconClear-676",
-            "input": "HvDatePicker-input-674",
-            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-670",
-            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-671",
-            "label": "HvDatePicker-label-678",
-            "listBorderDown": "HvDatePicker-listBorderDown-694",
-            "listBorderUp": "HvDatePicker-listBorderUp-695",
-            "noBorderBottom": "HvDatePicker-noBorderBottom-673",
-            "noBorderTop": "HvDatePicker-noBorderTop-672",
-            "popperRoot": "HvDatePicker-popperRoot-693",
-            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-682",
-            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-685",
-            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-686",
-            "rangeFooterRight": "HvDatePicker-rangeFooterRight-687",
-            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-683",
-            "rangeMainContainer": "HvDatePicker-rangeMainContainer-681",
-            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-684",
-            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-680",
+            "actionsContainer": "HvDatePicker-actionsContainer-684",
+            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-688",
+            "borderBottomNone": "HvDatePicker-borderBottomNone-686",
+            "borderTopDisplay": "HvDatePicker-borderTopDisplay-687",
+            "borderTopNone": "HvDatePicker-borderTopNone-685",
+            "calendarContainer": "HvDatePicker-calendarContainer-675",
+            "calendarOpenDown": "HvDatePicker-calendarOpenDown-692",
+            "calendarOpenUp": "HvDatePicker-calendarOpenUp-693",
+            "datePickerContainer": "HvDatePicker-datePickerContainer-673",
+            "icon": "HvDatePicker-icon-671",
+            "iconClear": "HvDatePicker-iconClear-672",
+            "input": "HvDatePicker-input-670",
+            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-666",
+            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-667",
+            "label": "HvDatePicker-label-674",
+            "listBorderDown": "HvDatePicker-listBorderDown-690",
+            "listBorderUp": "HvDatePicker-listBorderUp-691",
+            "noBorderBottom": "HvDatePicker-noBorderBottom-669",
+            "noBorderTop": "HvDatePicker-noBorderTop-668",
+            "popperRoot": "HvDatePicker-popperRoot-689",
+            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-678",
+            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-681",
+            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-682",
+            "rangeFooterRight": "HvDatePicker-rangeFooterRight-683",
+            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-679",
+            "rangeMainContainer": "HvDatePicker-rangeMainContainer-677",
+            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-680",
+            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-676",
           }
         }
         disablePortal={true}
@@ -3325,11 +3325,11 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         value="2019-01-01"
       >
         <div
-          className="HvDatePicker-datePickerContainer-677"
+          className="HvDatePicker-datePickerContainer-673"
         >
           <div
             aria-label="Date input"
-            className="HvDatePicker-inputCalendarClosed-670"
+            className="HvDatePicker-inputCalendarClosed-666"
             id="hv-datepicker-14"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -3337,7 +3337,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             tabIndex={0}
           >
             <input
-              className="HvDatePicker-input-674"
+              className="HvDatePicker-input-670"
               placeholder="Select a date"
               readOnly={true}
               tabIndex={-1}
@@ -3345,24 +3345,24 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               value="1 Jan, 2019"
             />
             <WithStyles(Calendar)
-              className="HvDatePicker-icon-675"
+              className="HvDatePicker-icon-671"
               tabIndex={-1}
             >
               <Calendar
-                className="HvDatePicker-icon-675"
+                className="HvDatePicker-icon-671"
                 classes={
                   Object {
-                    "root": "HvIconCalendar-root-698",
-                    "rootL": "HvIconCalendar-rootL-702",
-                    "rootM": "HvIconCalendar-rootM-701",
-                    "rootS": "HvIconCalendar-rootS-700",
-                    "rootXs": "HvIconCalendar-rootXs-699",
+                    "root": "HvIconCalendar-root-694",
+                    "rootL": "HvIconCalendar-rootL-698",
+                    "rootM": "HvIconCalendar-rootM-697",
+                    "rootS": "HvIconCalendar-rootS-696",
+                    "rootXs": "HvIconCalendar-rootXs-695",
                   }
                 }
                 tabIndex={-1}
               >
                 <div
-                  className="HvDatePicker-icon-675 HvIconCalendar-root-698 HvIconCalendar-rootS-700"
+                  className="HvDatePicker-icon-671 HvIconCalendar-root-694 HvIconCalendar-rootS-696"
                   tabIndex={-1}
                 >
                   <svg
@@ -4220,34 +4220,34 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
       <HvDatePicker
         classes={
           Object {
-            "actionsContainer": "HvDatePicker-actionsContainer-2666",
-            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-2670",
-            "borderBottomNone": "HvDatePicker-borderBottomNone-2668",
-            "borderTopDisplay": "HvDatePicker-borderTopDisplay-2669",
-            "borderTopNone": "HvDatePicker-borderTopNone-2667",
-            "calendarContainer": "HvDatePicker-calendarContainer-2657",
-            "calendarOpenDown": "HvDatePicker-calendarOpenDown-2674",
-            "calendarOpenUp": "HvDatePicker-calendarOpenUp-2675",
-            "datePickerContainer": "HvDatePicker-datePickerContainer-2655",
-            "icon": "HvDatePicker-icon-2653",
-            "iconClear": "HvDatePicker-iconClear-2654",
-            "input": "HvDatePicker-input-2652",
-            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-2648",
-            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-2649",
-            "label": "HvDatePicker-label-2656",
-            "listBorderDown": "HvDatePicker-listBorderDown-2672",
-            "listBorderUp": "HvDatePicker-listBorderUp-2673",
-            "noBorderBottom": "HvDatePicker-noBorderBottom-2651",
-            "noBorderTop": "HvDatePicker-noBorderTop-2650",
-            "popperRoot": "HvDatePicker-popperRoot-2671",
-            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-2660",
-            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-2663",
-            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-2664",
-            "rangeFooterRight": "HvDatePicker-rangeFooterRight-2665",
-            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-2661",
-            "rangeMainContainer": "HvDatePicker-rangeMainContainer-2659",
-            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-2662",
-            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-2658",
+            "actionsContainer": "HvDatePicker-actionsContainer-2649",
+            "borderBottomDisplay": "HvDatePicker-borderBottomDisplay-2653",
+            "borderBottomNone": "HvDatePicker-borderBottomNone-2651",
+            "borderTopDisplay": "HvDatePicker-borderTopDisplay-2652",
+            "borderTopNone": "HvDatePicker-borderTopNone-2650",
+            "calendarContainer": "HvDatePicker-calendarContainer-2640",
+            "calendarOpenDown": "HvDatePicker-calendarOpenDown-2657",
+            "calendarOpenUp": "HvDatePicker-calendarOpenUp-2658",
+            "datePickerContainer": "HvDatePicker-datePickerContainer-2638",
+            "icon": "HvDatePicker-icon-2636",
+            "iconClear": "HvDatePicker-iconClear-2637",
+            "input": "HvDatePicker-input-2635",
+            "inputCalendarClosed": "HvDatePicker-inputCalendarClosed-2631",
+            "inputCalendarOpen": "HvDatePicker-inputCalendarOpen-2632",
+            "label": "HvDatePicker-label-2639",
+            "listBorderDown": "HvDatePicker-listBorderDown-2655",
+            "listBorderUp": "HvDatePicker-listBorderUp-2656",
+            "noBorderBottom": "HvDatePicker-noBorderBottom-2634",
+            "noBorderTop": "HvDatePicker-noBorderTop-2633",
+            "popperRoot": "HvDatePicker-popperRoot-2654",
+            "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer-2643",
+            "rangeCalendarsFooter": "HvDatePicker-rangeCalendarsFooter-2646",
+            "rangeFooterLeft": "HvDatePicker-rangeFooterLeft-2647",
+            "rangeFooterRight": "HvDatePicker-rangeFooterRight-2648",
+            "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer-2644",
+            "rangeMainContainer": "HvDatePicker-rangeMainContainer-2642",
+            "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer-2645",
+            "singleCalendarFooter": "HvDatePicker-singleCalendarFooter-2641",
           }
         }
         disablePortal={true}
@@ -5033,43 +5033,42 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         value="2019-01-05"
       >
         <div
-          className="HvDatePicker-datePickerContainer-2655"
+          className="HvDatePicker-datePickerContainer-2638"
         >
           <WithStyles(ForwardRef)
-            className="HvDatePicker-label-2656"
+            className="HvDatePicker-label-2639"
             component={null}
             paragraph={false}
             variant="labelText"
           >
             <ForwardRef
-              className="HvDatePicker-label-2656"
+              className="HvDatePicker-label-2639"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-2678",
-                  "4xlTitle": "HvTypography-4xlTitle-2677",
-                  "5xlTitle": "HvTypography-5xlTitle-2676",
-                  "baseFontFamily": "HvTypography-baseFontFamily-2699",
-                  "disabledButtonText": "HvTypography-disabledButtonText-2690",
-                  "disabledText": "HvTypography-disabledText-2697",
-                  "highlightText": "HvTypography-highlightText-2686",
-                  "infoText": "HvTypography-infoText-2695",
-                  "inlineLink": "HvTypography-inlineLink-2689",
-                  "lTitle": "HvTypography-lTitle-2681",
-                  "labelText": "HvTypography-labelText-2694",
-                  "mTitle": "HvTypography-mTitle-2682",
-                  "margin": "HvTypography-margin-2700",
-                  "normalText": "HvTypography-normalText-2687",
-                  "placeholderText": "HvTypography-placeholderText-2691",
-                  "sLink": "HvTypography-sLink-2696",
-                  "sText": "HvTypography-sText-2693",
-                  "sTitle": "HvTypography-sTitle-2683",
-                  "selectedNavText": "HvTypography-selectedNavText-2692",
-                  "selectedText": "HvTypography-selectedText-2688",
-                  "vizText": "HvTypography-vizText-2698",
-                  "xlTitle": "HvTypography-xlTitle-2680",
-                  "xsTitle": "HvTypography-xsTitle-2684",
-                  "xxlTitle": "HvTypography-xxlTitle-2679",
-                  "xxsTitle": "HvTypography-xxsTitle-2685",
+                  "3xlTitle": "HvTypography-3xlTitle-2661",
+                  "4xlTitle": "HvTypography-4xlTitle-2660",
+                  "5xlTitle": "HvTypography-5xlTitle-2659",
+                  "baseFontFamily": "HvTypography-baseFontFamily-2681",
+                  "disabledButtonText": "HvTypography-disabledButtonText-2673",
+                  "highlightText": "HvTypography-highlightText-2669",
+                  "infoText": "HvTypography-infoText-2678",
+                  "inlineLink": "HvTypography-inlineLink-2672",
+                  "lTitle": "HvTypography-lTitle-2664",
+                  "labelText": "HvTypography-labelText-2677",
+                  "mTitle": "HvTypography-mTitle-2665",
+                  "margin": "HvTypography-margin-2682",
+                  "normalText": "HvTypography-normalText-2670",
+                  "placeholderText": "HvTypography-placeholderText-2674",
+                  "sLink": "HvTypography-sLink-2679",
+                  "sText": "HvTypography-sText-2676",
+                  "sTitle": "HvTypography-sTitle-2666",
+                  "selectedNavText": "HvTypography-selectedNavText-2675",
+                  "selectedText": "HvTypography-selectedText-2671",
+                  "vizText": "HvTypography-vizText-2680",
+                  "xlTitle": "HvTypography-xlTitle-2663",
+                  "xsTitle": "HvTypography-xsTitle-2667",
+                  "xxlTitle": "HvTypography-xxlTitle-2662",
+                  "xxsTitle": "HvTypography-xxsTitle-2668",
                 }
               }
               component={null}
@@ -5077,14 +5076,14 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="HvTypography-labelText-2694 HvTypography-baseFontFamily-2699 HvTypography-margin-2700 HvDatePicker-label-2656"
+                className="HvTypography-labelText-2677 HvTypography-baseFontFamily-2681 HvTypography-margin-2682 HvDatePicker-label-2639"
               >
                 TESTING LABEL
               </p>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <div
-            className="HvDatePicker-inputCalendarClosed-2648"
+            className="HvDatePicker-inputCalendarClosed-2631"
             id="testingDatePicker"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -5092,7 +5091,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             tabIndex={0}
           >
             <input
-              className="HvDatePicker-input-2652"
+              className="HvDatePicker-input-2635"
               placeholder="I'M THE PLACEHOLDER"
               readOnly={true}
               tabIndex={-1}
@@ -5100,24 +5099,24 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               value="5 Jan, 2019"
             />
             <WithStyles(Calendar)
-              className="HvDatePicker-icon-2653"
+              className="HvDatePicker-icon-2636"
               tabIndex={-1}
             >
               <Calendar
-                className="HvDatePicker-icon-2653"
+                className="HvDatePicker-icon-2636"
                 classes={
                   Object {
-                    "root": "HvIconCalendar-root-2701",
-                    "rootL": "HvIconCalendar-rootL-2705",
-                    "rootM": "HvIconCalendar-rootM-2704",
-                    "rootS": "HvIconCalendar-rootS-2703",
-                    "rootXs": "HvIconCalendar-rootXs-2702",
+                    "root": "HvIconCalendar-root-2683",
+                    "rootL": "HvIconCalendar-rootL-2687",
+                    "rootM": "HvIconCalendar-rootM-2686",
+                    "rootS": "HvIconCalendar-rootS-2685",
+                    "rootXs": "HvIconCalendar-rootXs-2684",
                   }
                 }
                 tabIndex={-1}
               >
                 <div
-                  className="HvDatePicker-icon-2653 HvIconCalendar-root-2701 HvIconCalendar-rootS-2703"
+                  className="HvDatePicker-icon-2636 HvIconCalendar-root-2683 HvIconCalendar-rootS-2685"
                   tabIndex={-1}
                 >
                   <svg

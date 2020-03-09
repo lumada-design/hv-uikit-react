@@ -823,16 +823,15 @@ exports[`Actions should be able to render 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle-9",
                       "4xlTitle": "HvTypography-4xlTitle-8",
                       "5xlTitle": "HvTypography-5xlTitle-7",
-                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "baseFontFamily": "HvTypography-baseFontFamily-29",
                       "disabledButtonText": "HvTypography-disabledButtonText-21",
-                      "disabledText": "HvTypography-disabledText-28",
                       "highlightText": "HvTypography-highlightText-17",
                       "infoText": "HvTypography-infoText-26",
                       "inlineLink": "HvTypography-inlineLink-20",
                       "lTitle": "HvTypography-lTitle-12",
                       "labelText": "HvTypography-labelText-25",
                       "mTitle": "HvTypography-mTitle-13",
-                      "margin": "HvTypography-margin-31",
+                      "margin": "HvTypography-margin-30",
                       "normalText": "HvTypography-normalText-18",
                       "placeholderText": "HvTypography-placeholderText-22",
                       "sLink": "HvTypography-sLink-27",
@@ -840,7 +839,7 @@ exports[`Actions should be able to render 1`] = `
                       "sTitle": "HvTypography-sTitle-14",
                       "selectedNavText": "HvTypography-selectedNavText-23",
                       "selectedText": "HvTypography-selectedText-19",
-                      "vizText": "HvTypography-vizText-29",
+                      "vizText": "HvTypography-vizText-28",
                       "xlTitle": "HvTypography-xlTitle-11",
                       "xsTitle": "HvTypography-xsTitle-15",
                       "xxlTitle": "HvTypography-xxlTitle-10",
@@ -856,7 +855,7 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-29 HvTypography-margin-30 HvVerticalNavigationAction-action-5"
                     id="hv-verticalnavigation-action-2-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -879,16 +878,16 @@ exports[`Actions should be able to render 1`] = `
                         }
                         classes={
                           Object {
-                            "root": "HvIconPlay-root-32",
-                            "rootL": "HvIconPlay-rootL-36",
-                            "rootM": "HvIconPlay-rootM-35",
-                            "rootS": "HvIconPlay-rootS-34",
-                            "rootXs": "HvIconPlay-rootXs-33",
+                            "root": "HvIconPlay-root-31",
+                            "rootL": "HvIconPlay-rootL-35",
+                            "rootM": "HvIconPlay-rootM-34",
+                            "rootS": "HvIconPlay-rootS-33",
+                            "rootXs": "HvIconPlay-rootXs-32",
                           }
                         }
                       >
                         <div
-                          className="HvIconPlay-root-32 HvIconPlay-rootS-34"
+                          className="HvIconPlay-root-31 HvIconPlay-rootS-33"
                           style={
                             Object {
                               "height": "32px",
@@ -948,16 +947,15 @@ exports[`Actions should be able to render 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle-9",
                       "4xlTitle": "HvTypography-4xlTitle-8",
                       "5xlTitle": "HvTypography-5xlTitle-7",
-                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "baseFontFamily": "HvTypography-baseFontFamily-29",
                       "disabledButtonText": "HvTypography-disabledButtonText-21",
-                      "disabledText": "HvTypography-disabledText-28",
                       "highlightText": "HvTypography-highlightText-17",
                       "infoText": "HvTypography-infoText-26",
                       "inlineLink": "HvTypography-inlineLink-20",
                       "lTitle": "HvTypography-lTitle-12",
                       "labelText": "HvTypography-labelText-25",
                       "mTitle": "HvTypography-mTitle-13",
-                      "margin": "HvTypography-margin-31",
+                      "margin": "HvTypography-margin-30",
                       "normalText": "HvTypography-normalText-18",
                       "placeholderText": "HvTypography-placeholderText-22",
                       "sLink": "HvTypography-sLink-27",
@@ -965,7 +963,7 @@ exports[`Actions should be able to render 1`] = `
                       "sTitle": "HvTypography-sTitle-14",
                       "selectedNavText": "HvTypography-selectedNavText-23",
                       "selectedText": "HvTypography-selectedText-19",
-                      "vizText": "HvTypography-vizText-29",
+                      "vizText": "HvTypography-vizText-28",
                       "xlTitle": "HvTypography-xlTitle-11",
                       "xsTitle": "HvTypography-xsTitle-15",
                       "xxlTitle": "HvTypography-xxlTitle-10",
@@ -981,7 +979,7 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5 HvVerticalNavigationAction-noIcon-6"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-29 HvTypography-margin-30 HvVerticalNavigationAction-action-5 HvVerticalNavigationAction-noIcon-6"
                     id="hv-verticalnavigation-action-3-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -1025,16 +1023,15 @@ exports[`Actions should be able to render 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle-9",
                       "4xlTitle": "HvTypography-4xlTitle-8",
                       "5xlTitle": "HvTypography-5xlTitle-7",
-                      "baseFontFamily": "HvTypography-baseFontFamily-30",
+                      "baseFontFamily": "HvTypography-baseFontFamily-29",
                       "disabledButtonText": "HvTypography-disabledButtonText-21",
-                      "disabledText": "HvTypography-disabledText-28",
                       "highlightText": "HvTypography-highlightText-17",
                       "infoText": "HvTypography-infoText-26",
                       "inlineLink": "HvTypography-inlineLink-20",
                       "lTitle": "HvTypography-lTitle-12",
                       "labelText": "HvTypography-labelText-25",
                       "mTitle": "HvTypography-mTitle-13",
-                      "margin": "HvTypography-margin-31",
+                      "margin": "HvTypography-margin-30",
                       "normalText": "HvTypography-normalText-18",
                       "placeholderText": "HvTypography-placeholderText-22",
                       "sLink": "HvTypography-sLink-27",
@@ -1042,7 +1039,7 @@ exports[`Actions should be able to render 1`] = `
                       "sTitle": "HvTypography-sTitle-14",
                       "selectedNavText": "HvTypography-selectedNavText-23",
                       "selectedText": "HvTypography-selectedText-19",
-                      "vizText": "HvTypography-vizText-29",
+                      "vizText": "HvTypography-vizText-28",
                       "xlTitle": "HvTypography-xlTitle-11",
                       "xsTitle": "HvTypography-xsTitle-15",
                       "xxlTitle": "HvTypography-xxlTitle-10",
@@ -1058,7 +1055,7 @@ exports[`Actions should be able to render 1`] = `
                   variant="normalText"
                 >
                   <div
-                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvVerticalNavigationAction-action-5"
+                    className="HvTypography-normalText-18 HvTypography-baseFontFamily-29 HvTypography-margin-30 HvVerticalNavigationAction-action-5"
                     id="hv-verticalnavigation-action-4-button"
                     onKeyDown={[Function]}
                     role="button"
@@ -1081,16 +1078,16 @@ exports[`Actions should be able to render 1`] = `
                         }
                         classes={
                           Object {
-                            "root": "HvIconStop-root-37",
-                            "rootL": "HvIconStop-rootL-41",
-                            "rootM": "HvIconStop-rootM-40",
-                            "rootS": "HvIconStop-rootS-39",
-                            "rootXs": "HvIconStop-rootXs-38",
+                            "root": "HvIconStop-root-36",
+                            "rootL": "HvIconStop-rootL-40",
+                            "rootM": "HvIconStop-rootM-39",
+                            "rootS": "HvIconStop-rootS-38",
+                            "rootXs": "HvIconStop-rootXs-37",
                           }
                         }
                       >
                         <div
-                          className="HvIconStop-root-37 HvIconStop-rootS-39"
+                          className="HvIconStop-root-36 HvIconStop-rootS-38"
                           style={
                             Object {
                               "height": "32px",

@@ -8,10 +8,7 @@ import ArrowFirst from "@hv/uikit-react-icons/dist/Start";
 import ArrowLeft from "@hv/uikit-react-icons/dist/Backwards";
 import ArrowRight from "@hv/uikit-react-icons/dist/Forwards";
 import ArrowLast from "@hv/uikit-react-icons/dist/End";
-import {
-  KeyboardCodes as Codes,
-  isKeypress
-} from "@hv/uikit-common-utils/dist/KeyboardUtils";
+import { KeyboardCodes as Codes, isKeypress } from "../utils/KeyboardUtils";
 import HvTypography from "../Typography";
 import HvInput from "../Input";
 import styles from "./styles";

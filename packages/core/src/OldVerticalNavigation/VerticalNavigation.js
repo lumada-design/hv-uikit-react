@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isIE } from "@hv/uikit-common-utils/dist";
+import isBrowser from "../utils/browser";
 import Title from "./Title";
 import SearchBox from "../SearchBox";
 import List from "../List";
@@ -48,7 +48,7 @@ class VerticalNavigation extends React.Component {
       /**
        * Should use animation.If browser is IE, don't use animation.
        */
-      showAnimation: isIE() ? false : !noAnimation
+      showAnimation: isBrowser("ie") ? false : !noAnimation
     };
   }
 

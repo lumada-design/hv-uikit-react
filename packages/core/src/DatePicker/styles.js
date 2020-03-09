@@ -43,8 +43,7 @@ const styles = theme => ({
     },
     "&::placeholder": {
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.normalText,
-      color: theme.hv.typography.disabledText.color
+      ...theme.hv.typography.placeholderText
     }
   },
   icon: {

@@ -25,7 +25,6 @@
     "doc": "npx lerna run doc --stream",
     "test": "npx lerna run test --parallel",
     "link": "npx lerna run link",
-    "update-uikit-common": "npx lerna run update-uikit-common && npx lerna link",
     "generate": "node generator/index.js",
     "publish-": "npx lerna publish --yes",
     "publish-prerelease": "npx lerna publish prerelease --yes",
