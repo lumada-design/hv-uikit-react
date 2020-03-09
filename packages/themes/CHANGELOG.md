@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.0.0-next.1 (2020-03-09)
+
+**Note:** Version bump only for package @hv/uikit-common-themes
+
+
+
+
+
 # [2.0.0-next.0](https://github.com/pentaho/hv-uikit-common/compare/@hv/uikit-common-themes@1.5.1...@hv/uikit-common-themes@2.0.0-next.0) (2020-02-14)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
