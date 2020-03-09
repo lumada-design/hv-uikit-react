@@ -18,8 +18,7 @@ const styles = theme => ({
       outline: "none"
     },
     "&::placeholder": {
-      ...theme.hv.typography.normalText,
-      color: theme.hv.typography.disabledText.color
+      ...theme.hv.typography.placeholderText
     }
   },
   inputPopperOpenedBelow: {

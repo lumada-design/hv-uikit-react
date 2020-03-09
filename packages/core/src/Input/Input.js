@@ -5,7 +5,8 @@ import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
 import InfoS from "@hv/uikit-react-icons/dist/Info";
-import { KeyboardCodes, isKeypress, isIE } from "@hv/uikit-common-utils/dist";
+import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
+import isBrowser from "../utils/browser";
 import InputAdornment from "./InputAdornment";
 import HvTypography from "../Typography";
 import HvList from "../List";
@@ -216,7 +217,7 @@ class HvInput extends React.Component {
   onContainerBlurHandler = event => {
     if (isNil(event.relatedTarget)) {
       // workaround because IE 11
-      if (isIE()) {
+      if (isBrowser("ie")) {
         setTimeout(this.suggestionClearHandler, 100);
       } else {
         this.suggestionClearHandler();

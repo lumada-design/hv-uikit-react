@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "../../../utils/KeyboardUtils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 

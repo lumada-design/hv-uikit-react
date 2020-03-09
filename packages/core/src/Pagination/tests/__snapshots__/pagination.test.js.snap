@@ -810,18 +810,18 @@ exports[`Custom Pagination should render correctly 1`] = `
         className=""
         classes={
           Object {
-            "icon": "HvPagination-icon-332",
-            "iconContainer": "HvPagination-iconContainer-331",
-            "pageInfo": "HvPagination-pageInfo-326",
-            "pageJump": "HvPagination-pageJump-327",
-            "pageNavigator": "HvPagination-pageNavigator-325",
-            "pageSizeInput": "HvPagination-pageSizeInput-328",
-            "pageSizeInputContainer": "HvPagination-pageSizeInputContainer-330",
-            "pageSizeInputRoot": "HvPagination-pageSizeInputRoot-329",
-            "pageSizeOptions": "HvPagination-pageSizeOptions-323",
-            "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect-324",
-            "root": "HvPagination-root-322",
-            "selectDownIcon": "HvPagination-selectDownIcon-333",
+            "icon": "HvPagination-icon-329",
+            "iconContainer": "HvPagination-iconContainer-328",
+            "pageInfo": "HvPagination-pageInfo-323",
+            "pageJump": "HvPagination-pageJump-324",
+            "pageNavigator": "HvPagination-pageNavigator-322",
+            "pageSizeInput": "HvPagination-pageSizeInput-325",
+            "pageSizeInputContainer": "HvPagination-pageSizeInputContainer-327",
+            "pageSizeInputRoot": "HvPagination-pageSizeInputRoot-326",
+            "pageSizeOptions": "HvPagination-pageSizeOptions-320",
+            "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect-321",
+            "root": "HvPagination-root-319",
+            "selectDownIcon": "HvPagination-selectDownIcon-330",
           }
         }
         labels={
@@ -848,11 +848,11 @@ exports[`Custom Pagination should render correctly 1`] = `
         showPageSizeOptions={true}
       >
         <div
-          className="HvPagination-root-322"
+          className="HvPagination-root-319"
           id="hv-pagination-4"
         >
           <div
-            className="HvPagination-pageSizeOptions-323"
+            className="HvPagination-pageSizeOptions-320"
           >
             <WithStyles(ForwardRef)
               component="span"
@@ -862,31 +862,30 @@ exports[`Custom Pagination should render correctly 1`] = `
               <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-336",
-                    "4xlTitle": "HvTypography-4xlTitle-335",
-                    "5xlTitle": "HvTypography-5xlTitle-334",
-                    "baseFontFamily": "HvTypography-baseFontFamily-357",
-                    "disabledButtonText": "HvTypography-disabledButtonText-348",
-                    "disabledText": "HvTypography-disabledText-355",
-                    "highlightText": "HvTypography-highlightText-344",
-                    "infoText": "HvTypography-infoText-353",
-                    "inlineLink": "HvTypography-inlineLink-347",
-                    "lTitle": "HvTypography-lTitle-339",
-                    "labelText": "HvTypography-labelText-352",
-                    "mTitle": "HvTypography-mTitle-340",
-                    "margin": "HvTypography-margin-358",
-                    "normalText": "HvTypography-normalText-345",
-                    "placeholderText": "HvTypography-placeholderText-349",
-                    "sLink": "HvTypography-sLink-354",
-                    "sText": "HvTypography-sText-351",
-                    "sTitle": "HvTypography-sTitle-341",
-                    "selectedNavText": "HvTypography-selectedNavText-350",
-                    "selectedText": "HvTypography-selectedText-346",
-                    "vizText": "HvTypography-vizText-356",
-                    "xlTitle": "HvTypography-xlTitle-338",
-                    "xsTitle": "HvTypography-xsTitle-342",
-                    "xxlTitle": "HvTypography-xxlTitle-337",
-                    "xxsTitle": "HvTypography-xxsTitle-343",
+                    "3xlTitle": "HvTypography-3xlTitle-333",
+                    "4xlTitle": "HvTypography-4xlTitle-332",
+                    "5xlTitle": "HvTypography-5xlTitle-331",
+                    "baseFontFamily": "HvTypography-baseFontFamily-353",
+                    "disabledButtonText": "HvTypography-disabledButtonText-345",
+                    "highlightText": "HvTypography-highlightText-341",
+                    "infoText": "HvTypography-infoText-350",
+                    "inlineLink": "HvTypography-inlineLink-344",
+                    "lTitle": "HvTypography-lTitle-336",
+                    "labelText": "HvTypography-labelText-349",
+                    "mTitle": "HvTypography-mTitle-337",
+                    "margin": "HvTypography-margin-354",
+                    "normalText": "HvTypography-normalText-342",
+                    "placeholderText": "HvTypography-placeholderText-346",
+                    "sLink": "HvTypography-sLink-351",
+                    "sText": "HvTypography-sText-348",
+                    "sTitle": "HvTypography-sTitle-338",
+                    "selectedNavText": "HvTypography-selectedNavText-347",
+                    "selectedText": "HvTypography-selectedText-343",
+                    "vizText": "HvTypography-vizText-352",
+                    "xlTitle": "HvTypography-xlTitle-335",
+                    "xsTitle": "HvTypography-xsTitle-339",
+                    "xxlTitle": "HvTypography-xxlTitle-334",
+                    "xxsTitle": "HvTypography-xxsTitle-340",
                   }
                 }
                 component="span"
@@ -894,7 +893,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="HvTypography-sText-351 HvTypography-baseFontFamily-357 HvTypography-margin-358"
+                  className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
                 >
                   Show
                 </span>
@@ -902,7 +901,7 @@ exports[`Custom Pagination should render correctly 1`] = `
             </WithStyles(ForwardRef)>
             <select
               aria-label="Select how many to display"
-              className="HvPagination-pageSizeOptionsSelect-324"
+              className="HvPagination-pageSizeOptionsSelect-321"
               disabled={false}
               id="hv-pagination-4-pageSize"
               onChange={[Function]}
@@ -922,22 +921,22 @@ exports[`Custom Pagination should render correctly 1`] = `
               </option>
             </select>
             <WithStyles(DropDownXS)
-              className="HvPagination-selectDownIcon-333"
+              className="HvPagination-selectDownIcon-330"
             >
               <DropDownXS
-                className="HvPagination-selectDownIcon-333"
+                className="HvPagination-selectDownIcon-330"
                 classes={
                   Object {
-                    "root": "HvIconDropDownXS-root-359",
-                    "rootL": "HvIconDropDownXS-rootL-363",
-                    "rootM": "HvIconDropDownXS-rootM-362",
-                    "rootS": "HvIconDropDownXS-rootS-361",
-                    "rootXs": "HvIconDropDownXS-rootXs-360",
+                    "root": "HvIconDropDownXS-root-355",
+                    "rootL": "HvIconDropDownXS-rootL-359",
+                    "rootM": "HvIconDropDownXS-rootM-358",
+                    "rootS": "HvIconDropDownXS-rootS-357",
+                    "rootXs": "HvIconDropDownXS-rootXs-356",
                   }
                 }
               >
                 <div
-                  className="HvPagination-selectDownIcon-333 HvIconDropDownXS-root-359 HvIconDropDownXS-rootXs-360"
+                  className="HvPagination-selectDownIcon-330 HvIconDropDownXS-root-355 HvIconDropDownXS-rootXs-356"
                 >
                   <svg
                     focusable={false}
@@ -963,31 +962,30 @@ exports[`Custom Pagination should render correctly 1`] = `
               <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-336",
-                    "4xlTitle": "HvTypography-4xlTitle-335",
-                    "5xlTitle": "HvTypography-5xlTitle-334",
-                    "baseFontFamily": "HvTypography-baseFontFamily-357",
-                    "disabledButtonText": "HvTypography-disabledButtonText-348",
-                    "disabledText": "HvTypography-disabledText-355",
-                    "highlightText": "HvTypography-highlightText-344",
-                    "infoText": "HvTypography-infoText-353",
-                    "inlineLink": "HvTypography-inlineLink-347",
-                    "lTitle": "HvTypography-lTitle-339",
-                    "labelText": "HvTypography-labelText-352",
-                    "mTitle": "HvTypography-mTitle-340",
-                    "margin": "HvTypography-margin-358",
-                    "normalText": "HvTypography-normalText-345",
-                    "placeholderText": "HvTypography-placeholderText-349",
-                    "sLink": "HvTypography-sLink-354",
-                    "sText": "HvTypography-sText-351",
-                    "sTitle": "HvTypography-sTitle-341",
-                    "selectedNavText": "HvTypography-selectedNavText-350",
-                    "selectedText": "HvTypography-selectedText-346",
-                    "vizText": "HvTypography-vizText-356",
-                    "xlTitle": "HvTypography-xlTitle-338",
-                    "xsTitle": "HvTypography-xsTitle-342",
-                    "xxlTitle": "HvTypography-xxlTitle-337",
-                    "xxsTitle": "HvTypography-xxsTitle-343",
+                    "3xlTitle": "HvTypography-3xlTitle-333",
+                    "4xlTitle": "HvTypography-4xlTitle-332",
+                    "5xlTitle": "HvTypography-5xlTitle-331",
+                    "baseFontFamily": "HvTypography-baseFontFamily-353",
+                    "disabledButtonText": "HvTypography-disabledButtonText-345",
+                    "highlightText": "HvTypography-highlightText-341",
+                    "infoText": "HvTypography-infoText-350",
+                    "inlineLink": "HvTypography-inlineLink-344",
+                    "lTitle": "HvTypography-lTitle-336",
+                    "labelText": "HvTypography-labelText-349",
+                    "mTitle": "HvTypography-mTitle-337",
+                    "margin": "HvTypography-margin-354",
+                    "normalText": "HvTypography-normalText-342",
+                    "placeholderText": "HvTypography-placeholderText-346",
+                    "sLink": "HvTypography-sLink-351",
+                    "sText": "HvTypography-sText-348",
+                    "sTitle": "HvTypography-sTitle-338",
+                    "selectedNavText": "HvTypography-selectedNavText-347",
+                    "selectedText": "HvTypography-selectedText-343",
+                    "vizText": "HvTypography-vizText-352",
+                    "xlTitle": "HvTypography-xlTitle-335",
+                    "xsTitle": "HvTypography-xsTitle-339",
+                    "xxlTitle": "HvTypography-xxlTitle-334",
+                    "xxsTitle": "HvTypography-xxsTitle-340",
                   }
                 }
                 component="span"
@@ -995,7 +993,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="HvTypography-sText-351 HvTypography-baseFontFamily-357 HvTypography-margin-358"
+                  className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
                 >
                   rows
                 </span>
@@ -1003,16 +1001,16 @@ exports[`Custom Pagination should render correctly 1`] = `
             </WithStyles(ForwardRef)>
           </div>
           <div
-            className="HvPagination-pageNavigator-325"
+            className="HvPagination-pageNavigator-322"
           >
             <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-331"
+              className="HvPagination-iconContainer-328"
               disabled={false}
               id="hv-pagination-4-firstPage-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-331"
+                className="HvPagination-iconContainer-328"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1032,7 +1030,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-331"
+                  className="MuiIconButton-root HvPagination-iconContainer-328"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-firstPage-button"
@@ -1040,7 +1038,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   <ForwardRef(ButtonBase)
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-331"
+                    className="MuiIconButton-root HvPagination-iconContainer-328"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -1055,7 +1053,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-331"
+                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
                       disabled={false}
                       id="hv-pagination-4-firstPage-button"
                       onBlur={[Function]}
@@ -1077,22 +1075,22 @@ exports[`Custom Pagination should render correctly 1`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(Start)
-                          className="HvPagination-icon-332"
+                          className="HvPagination-icon-329"
                         >
                           <Start
-                            className="HvPagination-icon-332"
+                            className="HvPagination-icon-329"
                             classes={
                               Object {
-                                "root": "HvIconStart-root-376",
-                                "rootL": "HvIconStart-rootL-380",
-                                "rootM": "HvIconStart-rootM-379",
-                                "rootS": "HvIconStart-rootS-378",
-                                "rootXs": "HvIconStart-rootXs-377",
+                                "root": "HvIconStart-root-372",
+                                "rootL": "HvIconStart-rootL-376",
+                                "rootM": "HvIconStart-rootM-375",
+                                "rootS": "HvIconStart-rootS-374",
+                                "rootXs": "HvIconStart-rootXs-373",
                               }
                             }
                           >
                             <div
-                              className="HvPagination-icon-332 HvIconStart-root-376 HvIconStart-rootS-378"
+                              className="HvPagination-icon-329 HvIconStart-root-372 HvIconStart-rootS-374"
                             >
                               <svg
                                 focusable={false}
@@ -1118,13 +1116,13 @@ exports[`Custom Pagination should render correctly 1`] = `
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
             <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-331"
+              className="HvPagination-iconContainer-328"
               disabled={false}
               id="hv-pagination-4-previousPage-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-331"
+                className="HvPagination-iconContainer-328"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1144,7 +1142,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-331"
+                  className="MuiIconButton-root HvPagination-iconContainer-328"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-previousPage-button"
@@ -1152,7 +1150,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   <ForwardRef(ButtonBase)
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-331"
+                    className="MuiIconButton-root HvPagination-iconContainer-328"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -1167,7 +1165,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-331"
+                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
                       disabled={false}
                       id="hv-pagination-4-previousPage-button"
                       onBlur={[Function]}
@@ -1189,22 +1187,22 @@ exports[`Custom Pagination should render correctly 1`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(Backwards)
-                          className="HvPagination-icon-332"
+                          className="HvPagination-icon-329"
                         >
                           <Backwards
-                            className="HvPagination-icon-332"
+                            className="HvPagination-icon-329"
                             classes={
                               Object {
-                                "root": "HvIconBackwards-root-381",
-                                "rootL": "HvIconBackwards-rootL-385",
-                                "rootM": "HvIconBackwards-rootM-384",
-                                "rootS": "HvIconBackwards-rootS-383",
-                                "rootXs": "HvIconBackwards-rootXs-382",
+                                "root": "HvIconBackwards-root-377",
+                                "rootL": "HvIconBackwards-rootL-381",
+                                "rootM": "HvIconBackwards-rootM-380",
+                                "rootS": "HvIconBackwards-rootS-379",
+                                "rootXs": "HvIconBackwards-rootXs-378",
                               }
                             }
                           >
                             <div
-                              className="HvPagination-icon-332 HvIconBackwards-root-381 HvIconBackwards-rootS-383"
+                              className="HvPagination-icon-329 HvIconBackwards-root-377 HvIconBackwards-rootS-379"
                             >
                               <svg
                                 focusable={false}
@@ -1230,7 +1228,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
             <div
-              className="HvPagination-pageInfo-326"
+              className="HvPagination-pageInfo-323"
             >
               <WithStyles(ForwardRef)
                 component="span"
@@ -1240,31 +1238,30 @@ exports[`Custom Pagination should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-336",
-                      "4xlTitle": "HvTypography-4xlTitle-335",
-                      "5xlTitle": "HvTypography-5xlTitle-334",
-                      "baseFontFamily": "HvTypography-baseFontFamily-357",
-                      "disabledButtonText": "HvTypography-disabledButtonText-348",
-                      "disabledText": "HvTypography-disabledText-355",
-                      "highlightText": "HvTypography-highlightText-344",
-                      "infoText": "HvTypography-infoText-353",
-                      "inlineLink": "HvTypography-inlineLink-347",
-                      "lTitle": "HvTypography-lTitle-339",
-                      "labelText": "HvTypography-labelText-352",
-                      "mTitle": "HvTypography-mTitle-340",
-                      "margin": "HvTypography-margin-358",
-                      "normalText": "HvTypography-normalText-345",
-                      "placeholderText": "HvTypography-placeholderText-349",
-                      "sLink": "HvTypography-sLink-354",
-                      "sText": "HvTypography-sText-351",
-                      "sTitle": "HvTypography-sTitle-341",
-                      "selectedNavText": "HvTypography-selectedNavText-350",
-                      "selectedText": "HvTypography-selectedText-346",
-                      "vizText": "HvTypography-vizText-356",
-                      "xlTitle": "HvTypography-xlTitle-338",
-                      "xsTitle": "HvTypography-xsTitle-342",
-                      "xxlTitle": "HvTypography-xxlTitle-337",
-                      "xxsTitle": "HvTypography-xxsTitle-343",
+                      "3xlTitle": "HvTypography-3xlTitle-333",
+                      "4xlTitle": "HvTypography-4xlTitle-332",
+                      "5xlTitle": "HvTypography-5xlTitle-331",
+                      "baseFontFamily": "HvTypography-baseFontFamily-353",
+                      "disabledButtonText": "HvTypography-disabledButtonText-345",
+                      "highlightText": "HvTypography-highlightText-341",
+                      "infoText": "HvTypography-infoText-350",
+                      "inlineLink": "HvTypography-inlineLink-344",
+                      "lTitle": "HvTypography-lTitle-336",
+                      "labelText": "HvTypography-labelText-349",
+                      "mTitle": "HvTypography-mTitle-337",
+                      "margin": "HvTypography-margin-354",
+                      "normalText": "HvTypography-normalText-342",
+                      "placeholderText": "HvTypography-placeholderText-346",
+                      "sLink": "HvTypography-sLink-351",
+                      "sText": "HvTypography-sText-348",
+                      "sTitle": "HvTypography-sTitle-338",
+                      "selectedNavText": "HvTypography-selectedNavText-347",
+                      "selectedText": "HvTypography-selectedText-343",
+                      "vizText": "HvTypography-vizText-352",
+                      "xlTitle": "HvTypography-xlTitle-335",
+                      "xsTitle": "HvTypography-xsTitle-339",
+                      "xxlTitle": "HvTypography-xxlTitle-334",
+                      "xxsTitle": "HvTypography-xxsTitle-340",
                     }
                   }
                   component="span"
@@ -1272,7 +1269,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="HvTypography-sText-351 HvTypography-baseFontFamily-357 HvTypography-margin-358"
+                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
                   >
                     3
                   </span>
@@ -1286,31 +1283,30 @@ exports[`Custom Pagination should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-336",
-                      "4xlTitle": "HvTypography-4xlTitle-335",
-                      "5xlTitle": "HvTypography-5xlTitle-334",
-                      "baseFontFamily": "HvTypography-baseFontFamily-357",
-                      "disabledButtonText": "HvTypography-disabledButtonText-348",
-                      "disabledText": "HvTypography-disabledText-355",
-                      "highlightText": "HvTypography-highlightText-344",
-                      "infoText": "HvTypography-infoText-353",
-                      "inlineLink": "HvTypography-inlineLink-347",
-                      "lTitle": "HvTypography-lTitle-339",
-                      "labelText": "HvTypography-labelText-352",
-                      "mTitle": "HvTypography-mTitle-340",
-                      "margin": "HvTypography-margin-358",
-                      "normalText": "HvTypography-normalText-345",
-                      "placeholderText": "HvTypography-placeholderText-349",
-                      "sLink": "HvTypography-sLink-354",
-                      "sText": "HvTypography-sText-351",
-                      "sTitle": "HvTypography-sTitle-341",
-                      "selectedNavText": "HvTypography-selectedNavText-350",
-                      "selectedText": "HvTypography-selectedText-346",
-                      "vizText": "HvTypography-vizText-356",
-                      "xlTitle": "HvTypography-xlTitle-338",
-                      "xsTitle": "HvTypography-xsTitle-342",
-                      "xxlTitle": "HvTypography-xxlTitle-337",
-                      "xxsTitle": "HvTypography-xxsTitle-343",
+                      "3xlTitle": "HvTypography-3xlTitle-333",
+                      "4xlTitle": "HvTypography-4xlTitle-332",
+                      "5xlTitle": "HvTypography-5xlTitle-331",
+                      "baseFontFamily": "HvTypography-baseFontFamily-353",
+                      "disabledButtonText": "HvTypography-disabledButtonText-345",
+                      "highlightText": "HvTypography-highlightText-341",
+                      "infoText": "HvTypography-infoText-350",
+                      "inlineLink": "HvTypography-inlineLink-344",
+                      "lTitle": "HvTypography-lTitle-336",
+                      "labelText": "HvTypography-labelText-349",
+                      "mTitle": "HvTypography-mTitle-337",
+                      "margin": "HvTypography-margin-354",
+                      "normalText": "HvTypography-normalText-342",
+                      "placeholderText": "HvTypography-placeholderText-346",
+                      "sLink": "HvTypography-sLink-351",
+                      "sText": "HvTypography-sText-348",
+                      "sTitle": "HvTypography-sTitle-338",
+                      "selectedNavText": "HvTypography-selectedNavText-347",
+                      "selectedText": "HvTypography-selectedText-343",
+                      "vizText": "HvTypography-vizText-352",
+                      "xlTitle": "HvTypography-xlTitle-335",
+                      "xsTitle": "HvTypography-xsTitle-339",
+                      "xxlTitle": "HvTypography-xxlTitle-334",
+                      "xxsTitle": "HvTypography-xxsTitle-340",
                     }
                   }
                   component="span"
@@ -1318,7 +1314,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="HvTypography-sText-351 HvTypography-baseFontFamily-357 HvTypography-margin-358"
+                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
                   >
                      of 
                   </span>
@@ -1333,31 +1329,30 @@ exports[`Custom Pagination should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-336",
-                      "4xlTitle": "HvTypography-4xlTitle-335",
-                      "5xlTitle": "HvTypography-5xlTitle-334",
-                      "baseFontFamily": "HvTypography-baseFontFamily-357",
-                      "disabledButtonText": "HvTypography-disabledButtonText-348",
-                      "disabledText": "HvTypography-disabledText-355",
-                      "highlightText": "HvTypography-highlightText-344",
-                      "infoText": "HvTypography-infoText-353",
-                      "inlineLink": "HvTypography-inlineLink-347",
-                      "lTitle": "HvTypography-lTitle-339",
-                      "labelText": "HvTypography-labelText-352",
-                      "mTitle": "HvTypography-mTitle-340",
-                      "margin": "HvTypography-margin-358",
-                      "normalText": "HvTypography-normalText-345",
-                      "placeholderText": "HvTypography-placeholderText-349",
-                      "sLink": "HvTypography-sLink-354",
-                      "sText": "HvTypography-sText-351",
-                      "sTitle": "HvTypography-sTitle-341",
-                      "selectedNavText": "HvTypography-selectedNavText-350",
-                      "selectedText": "HvTypography-selectedText-346",
-                      "vizText": "HvTypography-vizText-356",
-                      "xlTitle": "HvTypography-xlTitle-338",
-                      "xsTitle": "HvTypography-xsTitle-342",
-                      "xxlTitle": "HvTypography-xxlTitle-337",
-                      "xxsTitle": "HvTypography-xxsTitle-343",
+                      "3xlTitle": "HvTypography-3xlTitle-333",
+                      "4xlTitle": "HvTypography-4xlTitle-332",
+                      "5xlTitle": "HvTypography-5xlTitle-331",
+                      "baseFontFamily": "HvTypography-baseFontFamily-353",
+                      "disabledButtonText": "HvTypography-disabledButtonText-345",
+                      "highlightText": "HvTypography-highlightText-341",
+                      "infoText": "HvTypography-infoText-350",
+                      "inlineLink": "HvTypography-inlineLink-344",
+                      "lTitle": "HvTypography-lTitle-336",
+                      "labelText": "HvTypography-labelText-349",
+                      "mTitle": "HvTypography-mTitle-337",
+                      "margin": "HvTypography-margin-354",
+                      "normalText": "HvTypography-normalText-342",
+                      "placeholderText": "HvTypography-placeholderText-346",
+                      "sLink": "HvTypography-sLink-351",
+                      "sText": "HvTypography-sText-348",
+                      "sTitle": "HvTypography-sTitle-338",
+                      "selectedNavText": "HvTypography-selectedNavText-347",
+                      "selectedText": "HvTypography-selectedText-343",
+                      "vizText": "HvTypography-vizText-352",
+                      "xlTitle": "HvTypography-xlTitle-335",
+                      "xsTitle": "HvTypography-xsTitle-339",
+                      "xxlTitle": "HvTypography-xxlTitle-334",
+                      "xxsTitle": "HvTypography-xxsTitle-340",
                     }
                   }
                   component="span"
@@ -1366,7 +1361,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   variant="sText"
                 >
                   <span
-                    className="HvTypography-sText-351 HvTypography-baseFontFamily-357 HvTypography-margin-358"
+                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
                     id="hv-pagination-4-totalPages"
                   >
                     4
@@ -1375,13 +1370,13 @@ exports[`Custom Pagination should render correctly 1`] = `
               </WithStyles(ForwardRef)>
             </div>
             <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-331"
+              className="HvPagination-iconContainer-328"
               disabled={false}
               id="hv-pagination-4-nextPage-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-331"
+                className="HvPagination-iconContainer-328"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1401,7 +1396,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-331"
+                  className="MuiIconButton-root HvPagination-iconContainer-328"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-nextPage-button"
@@ -1409,7 +1404,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   <ForwardRef(ButtonBase)
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-331"
+                    className="MuiIconButton-root HvPagination-iconContainer-328"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -1424,7 +1419,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-331"
+                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
                       disabled={false}
                       id="hv-pagination-4-nextPage-button"
                       onBlur={[Function]}
@@ -1446,22 +1441,22 @@ exports[`Custom Pagination should render correctly 1`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(Forwards)
-                          className="HvPagination-icon-332"
+                          className="HvPagination-icon-329"
                         >
                           <Forwards
-                            className="HvPagination-icon-332"
+                            className="HvPagination-icon-329"
                             classes={
                               Object {
-                                "root": "HvIconForwards-root-386",
-                                "rootL": "HvIconForwards-rootL-390",
-                                "rootM": "HvIconForwards-rootM-389",
-                                "rootS": "HvIconForwards-rootS-388",
-                                "rootXs": "HvIconForwards-rootXs-387",
+                                "root": "HvIconForwards-root-382",
+                                "rootL": "HvIconForwards-rootL-386",
+                                "rootM": "HvIconForwards-rootM-385",
+                                "rootS": "HvIconForwards-rootS-384",
+                                "rootXs": "HvIconForwards-rootXs-383",
                               }
                             }
                           >
                             <div
-                              className="HvPagination-icon-332 HvIconForwards-root-386 HvIconForwards-rootS-388"
+                              className="HvPagination-icon-329 HvIconForwards-root-382 HvIconForwards-rootS-384"
                             >
                               <svg
                                 focusable={false}
@@ -1487,13 +1482,13 @@ exports[`Custom Pagination should render correctly 1`] = `
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
             <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-331"
+              className="HvPagination-iconContainer-328"
               disabled={false}
               id="hv-pagination-4-lastPage-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-331"
+                className="HvPagination-iconContainer-328"
                 classes={
                   Object {
                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1513,7 +1508,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               >
                 <WithStyles(ForwardRef(ButtonBase))
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-331"
+                  className="MuiIconButton-root HvPagination-iconContainer-328"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-lastPage-button"
@@ -1521,7 +1516,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 >
                   <ForwardRef(ButtonBase)
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-331"
+                    className="MuiIconButton-root HvPagination-iconContainer-328"
                     classes={
                       Object {
                         "disabled": "Mui-disabled",
@@ -1536,7 +1531,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-331"
+                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
                       disabled={false}
                       id="hv-pagination-4-lastPage-button"
                       onBlur={[Function]}
@@ -1558,22 +1553,22 @@ exports[`Custom Pagination should render correctly 1`] = `
                         className="MuiIconButton-label"
                       >
                         <WithStyles(End)
-                          className="HvPagination-icon-332"
+                          className="HvPagination-icon-329"
                         >
                           <End
-                            className="HvPagination-icon-332"
+                            className="HvPagination-icon-329"
                             classes={
                               Object {
-                                "root": "HvIconEnd-root-391",
-                                "rootL": "HvIconEnd-rootL-395",
-                                "rootM": "HvIconEnd-rootM-394",
-                                "rootS": "HvIconEnd-rootS-393",
-                                "rootXs": "HvIconEnd-rootXs-392",
+                                "root": "HvIconEnd-root-387",
+                                "rootL": "HvIconEnd-rootL-391",
+                                "rootM": "HvIconEnd-rootM-390",
+                                "rootS": "HvIconEnd-rootS-389",
+                                "rootXs": "HvIconEnd-rootXs-388",
                               }
                             }
                           >
                             <div
-                              className="HvPagination-icon-332 HvIconEnd-root-391 HvIconEnd-rootS-393"
+                              className="HvPagination-icon-329 HvIconEnd-root-387 HvIconEnd-rootS-389"
                             >
                               <svg
                                 focusable={false}

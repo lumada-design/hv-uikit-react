@@ -3,7 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
 import withConfig from "../config/withConfig";
 import styles from "./styles";
 

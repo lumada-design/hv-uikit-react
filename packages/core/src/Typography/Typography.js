@@ -6,7 +6,7 @@ import styles from "./styles";
 
 /**
  * Mapping of typography with HTML elements.
- * @type {{infoText: string, xxsTitle: string, disabledButtonText: string, xsTitle: string, labelText: string, "5xlTitle": string, sTitle: string, xlTitle: string, highlightText: string, inlineLink: string, lTitle: string, normalText: string, "4xlTitle": string, "3xlTitle": string, sLink: string, xxlTitle: string, mTitle: string, disabledText: string, vizText: string}}
+ * @type {{infoText: string, xxsTitle: string, disabledButtonText: string, xsTitle: string, labelText: string, "5xlTitle": string, sTitle: string, xlTitle: string, highlightText: string, inlineLink: string, lTitle: string, normalText: string, "4xlTitle": string, "3xlTitle": string, sLink: string, xxlTitle: string, mTitle: string, vizText: string}}
  */
 const defaultVariantMapping = {
   "5xlTitle": "h1",
@@ -30,8 +30,7 @@ const defaultVariantMapping = {
   infoText: "p",
   sLink: "p",
   sText: "p",
-  vizText: "p",
-  disabledText: "p"
+  vizText: "p"
 };
 
 /**
@@ -130,8 +129,7 @@ Typography.propTypes = {
     "infoText",
     "sLink",
     "sText",
-    "vizText",
-    "disabledText"
+    "vizText"
   ])
 };
 

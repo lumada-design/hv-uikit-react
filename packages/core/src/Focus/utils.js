@@ -1,4 +1,4 @@
-import { isKeypress } from "@hv/uikit-common-utils/dist";
+import { isKeypress } from "../utils/KeyboardUtils";
 
 export const isKey = (evt, key) => isKeypress(evt, key);
 

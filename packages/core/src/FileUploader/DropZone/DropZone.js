@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import Doc from "@hv/uikit-react-icons/dist/Doc";
+import { KeyboardCodes, isKeypress } from "../../utils/KeyboardUtils";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 import styles from "./styles";
@@ -230,7 +230,6 @@ DropZone.propTypes = {
      * Style applied to the selected files.
      */
     selectFilesText: PropTypes.string
-
   }).isRequired,
   /**
    * Labels to present in Fileuploader.

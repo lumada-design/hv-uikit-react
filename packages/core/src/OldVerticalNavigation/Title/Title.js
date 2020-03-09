@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import NavIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
+import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
 import Typography from "../../Typography";
 import styles from "./styles";
 

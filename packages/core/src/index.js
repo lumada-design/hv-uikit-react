@@ -45,3 +45,6 @@ export { default as hvTheme } from "./theme";
 
 // provider
 export { default as HvProvider } from "./Provider";
+
+// utils
+export * from "./utils";

@@ -820,16 +820,16 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         acceptedFiles={Array []}
         classes={
           Object {
-            "dragAction": "HvFileUploaderDropZone-dragAction-43",
-            "dragText": "HvFileUploaderDropZone-dragText-49",
-            "dropArea": "HvFileUploaderDropZone-dropArea-45",
-            "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon-48",
-            "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels-47",
-            "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer-41",
-            "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled-42",
-            "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup-46",
-            "inputArea": "HvFileUploaderDropZone-inputArea-44",
-            "selectFilesText": "HvFileUploaderDropZone-selectFilesText-50",
+            "dragAction": "HvFileUploaderDropZone-dragAction-42",
+            "dragText": "HvFileUploaderDropZone-dragText-48",
+            "dropArea": "HvFileUploaderDropZone-dropArea-44",
+            "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon-47",
+            "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels-46",
+            "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer-40",
+            "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled-41",
+            "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup-45",
+            "inputArea": "HvFileUploaderDropZone-inputArea-43",
+            "selectFilesText": "HvFileUploaderDropZone-selectFilesText-49",
           }
         }
         disabled={false}
@@ -871,7 +871,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
       >
         <div
           aria-label="File Dropzone"
-          className="HvFileUploaderDropZone-dropZoneLabelsGroup-46"
+          className="HvFileUploaderDropZone-dropZoneLabelsGroup-45"
           id="hv-filedropzone-2"
         >
           <WithStyles(ForwardRef)
@@ -884,31 +884,30 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-53",
-                  "4xlTitle": "HvTypography-4xlTitle-52",
-                  "5xlTitle": "HvTypography-5xlTitle-51",
-                  "baseFontFamily": "HvTypography-baseFontFamily-74",
-                  "disabledButtonText": "HvTypography-disabledButtonText-65",
-                  "disabledText": "HvTypography-disabledText-72",
-                  "highlightText": "HvTypography-highlightText-61",
-                  "infoText": "HvTypography-infoText-70",
-                  "inlineLink": "HvTypography-inlineLink-64",
-                  "lTitle": "HvTypography-lTitle-56",
-                  "labelText": "HvTypography-labelText-69",
-                  "mTitle": "HvTypography-mTitle-57",
-                  "margin": "HvTypography-margin-75",
-                  "normalText": "HvTypography-normalText-62",
-                  "placeholderText": "HvTypography-placeholderText-66",
-                  "sLink": "HvTypography-sLink-71",
-                  "sText": "HvTypography-sText-68",
-                  "sTitle": "HvTypography-sTitle-58",
-                  "selectedNavText": "HvTypography-selectedNavText-67",
-                  "selectedText": "HvTypography-selectedText-63",
-                  "vizText": "HvTypography-vizText-73",
-                  "xlTitle": "HvTypography-xlTitle-55",
-                  "xsTitle": "HvTypography-xsTitle-59",
-                  "xxlTitle": "HvTypography-xxlTitle-54",
-                  "xxsTitle": "HvTypography-xxsTitle-60",
+                  "3xlTitle": "HvTypography-3xlTitle-52",
+                  "4xlTitle": "HvTypography-4xlTitle-51",
+                  "5xlTitle": "HvTypography-5xlTitle-50",
+                  "baseFontFamily": "HvTypography-baseFontFamily-72",
+                  "disabledButtonText": "HvTypography-disabledButtonText-64",
+                  "highlightText": "HvTypography-highlightText-60",
+                  "infoText": "HvTypography-infoText-69",
+                  "inlineLink": "HvTypography-inlineLink-63",
+                  "lTitle": "HvTypography-lTitle-55",
+                  "labelText": "HvTypography-labelText-68",
+                  "mTitle": "HvTypography-mTitle-56",
+                  "margin": "HvTypography-margin-73",
+                  "normalText": "HvTypography-normalText-61",
+                  "placeholderText": "HvTypography-placeholderText-65",
+                  "sLink": "HvTypography-sLink-70",
+                  "sText": "HvTypography-sText-67",
+                  "sTitle": "HvTypography-sTitle-57",
+                  "selectedNavText": "HvTypography-selectedNavText-66",
+                  "selectedText": "HvTypography-selectedText-62",
+                  "vizText": "HvTypography-vizText-71",
+                  "xlTitle": "HvTypography-xlTitle-54",
+                  "xsTitle": "HvTypography-xsTitle-58",
+                  "xxlTitle": "HvTypography-xxlTitle-53",
+                  "xxsTitle": "HvTypography-xxsTitle-59",
                 }
               }
               component="label"
@@ -918,7 +917,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               variant="labelText"
             >
               <label
-                className="HvTypography-labelText-69 HvTypography-baseFontFamily-74 HvTypography-margin-75"
+                className="HvTypography-labelText-68 HvTypography-baseFontFamily-72 HvTypography-margin-73"
                 htmlFor="hv-filedropzone-2-input-file"
                 id="hv-filedropzone-2-input-file-label"
               />
@@ -932,31 +931,30 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-53",
-                  "4xlTitle": "HvTypography-4xlTitle-52",
-                  "5xlTitle": "HvTypography-5xlTitle-51",
-                  "baseFontFamily": "HvTypography-baseFontFamily-74",
-                  "disabledButtonText": "HvTypography-disabledButtonText-65",
-                  "disabledText": "HvTypography-disabledText-72",
-                  "highlightText": "HvTypography-highlightText-61",
-                  "infoText": "HvTypography-infoText-70",
-                  "inlineLink": "HvTypography-inlineLink-64",
-                  "lTitle": "HvTypography-lTitle-56",
-                  "labelText": "HvTypography-labelText-69",
-                  "mTitle": "HvTypography-mTitle-57",
-                  "margin": "HvTypography-margin-75",
-                  "normalText": "HvTypography-normalText-62",
-                  "placeholderText": "HvTypography-placeholderText-66",
-                  "sLink": "HvTypography-sLink-71",
-                  "sText": "HvTypography-sText-68",
-                  "sTitle": "HvTypography-sTitle-58",
-                  "selectedNavText": "HvTypography-selectedNavText-67",
-                  "selectedText": "HvTypography-selectedText-63",
-                  "vizText": "HvTypography-vizText-73",
-                  "xlTitle": "HvTypography-xlTitle-55",
-                  "xsTitle": "HvTypography-xsTitle-59",
-                  "xxlTitle": "HvTypography-xxlTitle-54",
-                  "xxsTitle": "HvTypography-xxsTitle-60",
+                  "3xlTitle": "HvTypography-3xlTitle-52",
+                  "4xlTitle": "HvTypography-4xlTitle-51",
+                  "5xlTitle": "HvTypography-5xlTitle-50",
+                  "baseFontFamily": "HvTypography-baseFontFamily-72",
+                  "disabledButtonText": "HvTypography-disabledButtonText-64",
+                  "highlightText": "HvTypography-highlightText-60",
+                  "infoText": "HvTypography-infoText-69",
+                  "inlineLink": "HvTypography-inlineLink-63",
+                  "lTitle": "HvTypography-lTitle-55",
+                  "labelText": "HvTypography-labelText-68",
+                  "mTitle": "HvTypography-mTitle-56",
+                  "margin": "HvTypography-margin-73",
+                  "normalText": "HvTypography-normalText-61",
+                  "placeholderText": "HvTypography-placeholderText-65",
+                  "sLink": "HvTypography-sLink-70",
+                  "sText": "HvTypography-sText-67",
+                  "sTitle": "HvTypography-sTitle-57",
+                  "selectedNavText": "HvTypography-selectedNavText-66",
+                  "selectedText": "HvTypography-selectedText-62",
+                  "vizText": "HvTypography-vizText-71",
+                  "xlTitle": "HvTypography-xlTitle-54",
+                  "xsTitle": "HvTypography-xsTitle-58",
+                  "xxlTitle": "HvTypography-xxlTitle-53",
+                  "xxsTitle": "HvTypography-xxsTitle-59",
                 }
               }
               component={null}
@@ -964,7 +962,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               variant="infoText"
             >
               <p
-                className="HvTypography-infoText-70 HvTypography-baseFontFamily-74 HvTypography-margin-75"
+                className="HvTypography-infoText-69 HvTypography-baseFontFamily-72 HvTypography-margin-73"
               >
                 undefined 1.00B
               </p>
@@ -972,7 +970,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <div
-          className="HvFileUploaderDropZone-dropZoneContainer-41"
+          className="HvFileUploaderDropZone-dropZoneContainer-40"
           id="hv-filedropzone-2-button"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
@@ -984,7 +982,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           tabIndex={0}
         >
           <input
-            className="HvFileUploaderDropZone-inputArea-44"
+            className="HvFileUploaderDropZone-inputArea-43"
             disabled={false}
             id="hv-filedropzone-2-input-file"
             multiple={true}
@@ -995,29 +993,29 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             type="file"
           />
           <div
-            className="HvFileUploaderDropZone-dropArea-45"
+            className="HvFileUploaderDropZone-dropArea-44"
           >
             <WithStyles(Doc)
-              className="HvFileUploaderDropZone-dropZoneAreaIcon-48"
+              className="HvFileUploaderDropZone-dropZoneAreaIcon-47"
               color="acce1"
               iconSize="M"
             >
               <Doc
-                className="HvFileUploaderDropZone-dropZoneAreaIcon-48"
+                className="HvFileUploaderDropZone-dropZoneAreaIcon-47"
                 classes={
                   Object {
-                    "root": "HvIconDoc-root-76",
-                    "rootL": "HvIconDoc-rootL-80",
-                    "rootM": "HvIconDoc-rootM-79",
-                    "rootS": "HvIconDoc-rootS-78",
-                    "rootXs": "HvIconDoc-rootXs-77",
+                    "root": "HvIconDoc-root-74",
+                    "rootL": "HvIconDoc-rootL-78",
+                    "rootM": "HvIconDoc-rootM-77",
+                    "rootS": "HvIconDoc-rootS-76",
+                    "rootXs": "HvIconDoc-rootXs-75",
                   }
                 }
                 color="acce1"
                 iconSize="M"
               >
                 <div
-                  className="HvFileUploaderDropZone-dropZoneAreaIcon-48 HvIconDoc-root-76 HvIconDoc-rootM-79"
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon-47 HvIconDoc-root-74 HvIconDoc-rootM-77"
                 >
                   <svg
                     focusable={false}
@@ -1036,43 +1034,42 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               </Doc>
             </WithStyles(Doc)>
             <div
-              className="HvFileUploaderDropZone-dropZoneAreaLabels-47"
+              className="HvFileUploaderDropZone-dropZoneAreaLabels-46"
             >
               <WithStyles(ForwardRef)
-                className="HvFileUploaderDropZone-dragText-49"
+                className="HvFileUploaderDropZone-dragText-48"
                 component={null}
                 paragraph={false}
                 variant="normalText"
               >
                 <ForwardRef
-                  className="HvFileUploaderDropZone-dragText-49"
+                  className="HvFileUploaderDropZone-dragText-48"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-53",
-                      "4xlTitle": "HvTypography-4xlTitle-52",
-                      "5xlTitle": "HvTypography-5xlTitle-51",
-                      "baseFontFamily": "HvTypography-baseFontFamily-74",
-                      "disabledButtonText": "HvTypography-disabledButtonText-65",
-                      "disabledText": "HvTypography-disabledText-72",
-                      "highlightText": "HvTypography-highlightText-61",
-                      "infoText": "HvTypography-infoText-70",
-                      "inlineLink": "HvTypography-inlineLink-64",
-                      "lTitle": "HvTypography-lTitle-56",
-                      "labelText": "HvTypography-labelText-69",
-                      "mTitle": "HvTypography-mTitle-57",
-                      "margin": "HvTypography-margin-75",
-                      "normalText": "HvTypography-normalText-62",
-                      "placeholderText": "HvTypography-placeholderText-66",
-                      "sLink": "HvTypography-sLink-71",
-                      "sText": "HvTypography-sText-68",
-                      "sTitle": "HvTypography-sTitle-58",
-                      "selectedNavText": "HvTypography-selectedNavText-67",
-                      "selectedText": "HvTypography-selectedText-63",
-                      "vizText": "HvTypography-vizText-73",
-                      "xlTitle": "HvTypography-xlTitle-55",
-                      "xsTitle": "HvTypography-xsTitle-59",
-                      "xxlTitle": "HvTypography-xxlTitle-54",
-                      "xxsTitle": "HvTypography-xxsTitle-60",
+                      "3xlTitle": "HvTypography-3xlTitle-52",
+                      "4xlTitle": "HvTypography-4xlTitle-51",
+                      "5xlTitle": "HvTypography-5xlTitle-50",
+                      "baseFontFamily": "HvTypography-baseFontFamily-72",
+                      "disabledButtonText": "HvTypography-disabledButtonText-64",
+                      "highlightText": "HvTypography-highlightText-60",
+                      "infoText": "HvTypography-infoText-69",
+                      "inlineLink": "HvTypography-inlineLink-63",
+                      "lTitle": "HvTypography-lTitle-55",
+                      "labelText": "HvTypography-labelText-68",
+                      "mTitle": "HvTypography-mTitle-56",
+                      "margin": "HvTypography-margin-73",
+                      "normalText": "HvTypography-normalText-61",
+                      "placeholderText": "HvTypography-placeholderText-65",
+                      "sLink": "HvTypography-sLink-70",
+                      "sText": "HvTypography-sText-67",
+                      "sTitle": "HvTypography-sTitle-57",
+                      "selectedNavText": "HvTypography-selectedNavText-66",
+                      "selectedText": "HvTypography-selectedText-62",
+                      "vizText": "HvTypography-vizText-71",
+                      "xlTitle": "HvTypography-xlTitle-54",
+                      "xsTitle": "HvTypography-xsTitle-58",
+                      "xxlTitle": "HvTypography-xxlTitle-53",
+                      "xxsTitle": "HvTypography-xxsTitle-59",
                     }
                   }
                   component={null}
@@ -1080,10 +1077,10 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                   variant="normalText"
                 >
                   <p
-                    className="HvTypography-normalText-62 HvTypography-baseFontFamily-74 HvTypography-margin-75 HvFileUploaderDropZone-dragText-49"
+                    className="HvTypography-normalText-61 HvTypography-baseFontFamily-72 HvTypography-margin-73 HvFileUploaderDropZone-dragText-48"
                   >
                     <span
-                      className="HvFileUploaderDropZone-selectFilesText-50"
+                      className="HvFileUploaderDropZone-selectFilesText-49"
                     >
                        undefined
                     </span>
@@ -1919,16 +1916,16 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         acceptedFiles={Array []}
         classes={
           Object {
-            "dragAction": "HvFileUploaderDropZone-dragAction-123",
-            "dragText": "HvFileUploaderDropZone-dragText-129",
-            "dropArea": "HvFileUploaderDropZone-dropArea-125",
-            "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon-128",
-            "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels-127",
-            "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer-121",
-            "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled-122",
-            "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup-126",
-            "inputArea": "HvFileUploaderDropZone-inputArea-124",
-            "selectFilesText": "HvFileUploaderDropZone-selectFilesText-130",
+            "dragAction": "HvFileUploaderDropZone-dragAction-120",
+            "dragText": "HvFileUploaderDropZone-dragText-126",
+            "dropArea": "HvFileUploaderDropZone-dropArea-122",
+            "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon-125",
+            "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels-124",
+            "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer-118",
+            "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled-119",
+            "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup-123",
+            "inputArea": "HvFileUploaderDropZone-inputArea-121",
+            "selectFilesText": "HvFileUploaderDropZone-selectFilesText-127",
           }
         }
         disabled={true}
@@ -1970,7 +1967,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
       >
         <div
           aria-label="File Dropzone"
-          className="HvFileUploaderDropZone-dropZoneLabelsGroup-126"
+          className="HvFileUploaderDropZone-dropZoneLabelsGroup-123"
           id="hv-filedropzone-4"
         >
           <WithStyles(ForwardRef)
@@ -1983,31 +1980,30 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-133",
-                  "4xlTitle": "HvTypography-4xlTitle-132",
-                  "5xlTitle": "HvTypography-5xlTitle-131",
-                  "baseFontFamily": "HvTypography-baseFontFamily-154",
-                  "disabledButtonText": "HvTypography-disabledButtonText-145",
-                  "disabledText": "HvTypography-disabledText-152",
-                  "highlightText": "HvTypography-highlightText-141",
-                  "infoText": "HvTypography-infoText-150",
-                  "inlineLink": "HvTypography-inlineLink-144",
-                  "lTitle": "HvTypography-lTitle-136",
-                  "labelText": "HvTypography-labelText-149",
-                  "mTitle": "HvTypography-mTitle-137",
-                  "margin": "HvTypography-margin-155",
-                  "normalText": "HvTypography-normalText-142",
-                  "placeholderText": "HvTypography-placeholderText-146",
-                  "sLink": "HvTypography-sLink-151",
-                  "sText": "HvTypography-sText-148",
-                  "sTitle": "HvTypography-sTitle-138",
-                  "selectedNavText": "HvTypography-selectedNavText-147",
-                  "selectedText": "HvTypography-selectedText-143",
-                  "vizText": "HvTypography-vizText-153",
-                  "xlTitle": "HvTypography-xlTitle-135",
-                  "xsTitle": "HvTypography-xsTitle-139",
-                  "xxlTitle": "HvTypography-xxlTitle-134",
-                  "xxsTitle": "HvTypography-xxsTitle-140",
+                  "3xlTitle": "HvTypography-3xlTitle-130",
+                  "4xlTitle": "HvTypography-4xlTitle-129",
+                  "5xlTitle": "HvTypography-5xlTitle-128",
+                  "baseFontFamily": "HvTypography-baseFontFamily-150",
+                  "disabledButtonText": "HvTypography-disabledButtonText-142",
+                  "highlightText": "HvTypography-highlightText-138",
+                  "infoText": "HvTypography-infoText-147",
+                  "inlineLink": "HvTypography-inlineLink-141",
+                  "lTitle": "HvTypography-lTitle-133",
+                  "labelText": "HvTypography-labelText-146",
+                  "mTitle": "HvTypography-mTitle-134",
+                  "margin": "HvTypography-margin-151",
+                  "normalText": "HvTypography-normalText-139",
+                  "placeholderText": "HvTypography-placeholderText-143",
+                  "sLink": "HvTypography-sLink-148",
+                  "sText": "HvTypography-sText-145",
+                  "sTitle": "HvTypography-sTitle-135",
+                  "selectedNavText": "HvTypography-selectedNavText-144",
+                  "selectedText": "HvTypography-selectedText-140",
+                  "vizText": "HvTypography-vizText-149",
+                  "xlTitle": "HvTypography-xlTitle-132",
+                  "xsTitle": "HvTypography-xsTitle-136",
+                  "xxlTitle": "HvTypography-xxlTitle-131",
+                  "xxsTitle": "HvTypography-xxsTitle-137",
                 }
               }
               component="label"
@@ -2017,7 +2013,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               variant="labelText"
             >
               <label
-                className="HvTypography-labelText-149 HvTypography-baseFontFamily-154 HvTypography-margin-155"
+                className="HvTypography-labelText-146 HvTypography-baseFontFamily-150 HvTypography-margin-151"
                 htmlFor="hv-filedropzone-4-input-file"
                 id="hv-filedropzone-4-input-file-label"
               />
@@ -2031,31 +2027,30 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-133",
-                  "4xlTitle": "HvTypography-4xlTitle-132",
-                  "5xlTitle": "HvTypography-5xlTitle-131",
-                  "baseFontFamily": "HvTypography-baseFontFamily-154",
-                  "disabledButtonText": "HvTypography-disabledButtonText-145",
-                  "disabledText": "HvTypography-disabledText-152",
-                  "highlightText": "HvTypography-highlightText-141",
-                  "infoText": "HvTypography-infoText-150",
-                  "inlineLink": "HvTypography-inlineLink-144",
-                  "lTitle": "HvTypography-lTitle-136",
-                  "labelText": "HvTypography-labelText-149",
-                  "mTitle": "HvTypography-mTitle-137",
-                  "margin": "HvTypography-margin-155",
-                  "normalText": "HvTypography-normalText-142",
-                  "placeholderText": "HvTypography-placeholderText-146",
-                  "sLink": "HvTypography-sLink-151",
-                  "sText": "HvTypography-sText-148",
-                  "sTitle": "HvTypography-sTitle-138",
-                  "selectedNavText": "HvTypography-selectedNavText-147",
-                  "selectedText": "HvTypography-selectedText-143",
-                  "vizText": "HvTypography-vizText-153",
-                  "xlTitle": "HvTypography-xlTitle-135",
-                  "xsTitle": "HvTypography-xsTitle-139",
-                  "xxlTitle": "HvTypography-xxlTitle-134",
-                  "xxsTitle": "HvTypography-xxsTitle-140",
+                  "3xlTitle": "HvTypography-3xlTitle-130",
+                  "4xlTitle": "HvTypography-4xlTitle-129",
+                  "5xlTitle": "HvTypography-5xlTitle-128",
+                  "baseFontFamily": "HvTypography-baseFontFamily-150",
+                  "disabledButtonText": "HvTypography-disabledButtonText-142",
+                  "highlightText": "HvTypography-highlightText-138",
+                  "infoText": "HvTypography-infoText-147",
+                  "inlineLink": "HvTypography-inlineLink-141",
+                  "lTitle": "HvTypography-lTitle-133",
+                  "labelText": "HvTypography-labelText-146",
+                  "mTitle": "HvTypography-mTitle-134",
+                  "margin": "HvTypography-margin-151",
+                  "normalText": "HvTypography-normalText-139",
+                  "placeholderText": "HvTypography-placeholderText-143",
+                  "sLink": "HvTypography-sLink-148",
+                  "sText": "HvTypography-sText-145",
+                  "sTitle": "HvTypography-sTitle-135",
+                  "selectedNavText": "HvTypography-selectedNavText-144",
+                  "selectedText": "HvTypography-selectedText-140",
+                  "vizText": "HvTypography-vizText-149",
+                  "xlTitle": "HvTypography-xlTitle-132",
+                  "xsTitle": "HvTypography-xsTitle-136",
+                  "xxlTitle": "HvTypography-xxlTitle-131",
+                  "xxsTitle": "HvTypography-xxsTitle-137",
                 }
               }
               component={null}
@@ -2063,7 +2058,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               variant="infoText"
             >
               <p
-                className="HvTypography-infoText-150 HvTypography-baseFontFamily-154 HvTypography-margin-155"
+                className="HvTypography-infoText-147 HvTypography-baseFontFamily-150 HvTypography-margin-151"
               >
                 undefined 1.00B
               </p>
@@ -2071,7 +2066,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <div
-          className="HvFileUploaderDropZone-dropZoneContainer-121 HvFileUploaderDropZone-dropZoneContainerDisabled-122"
+          className="HvFileUploaderDropZone-dropZoneContainer-118 HvFileUploaderDropZone-dropZoneContainerDisabled-119"
           id="hv-filedropzone-4-button"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
@@ -2083,7 +2078,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           tabIndex={0}
         >
           <input
-            className="HvFileUploaderDropZone-inputArea-124"
+            className="HvFileUploaderDropZone-inputArea-121"
             disabled={true}
             id="hv-filedropzone-4-input-file"
             multiple={false}
@@ -2094,29 +2089,29 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             type="file"
           />
           <div
-            className="HvFileUploaderDropZone-dropArea-125"
+            className="HvFileUploaderDropZone-dropArea-122"
           >
             <WithStyles(Doc)
-              className="HvFileUploaderDropZone-dropZoneAreaIcon-128"
+              className="HvFileUploaderDropZone-dropZoneAreaIcon-125"
               color="atmo6"
               iconSize="M"
             >
               <Doc
-                className="HvFileUploaderDropZone-dropZoneAreaIcon-128"
+                className="HvFileUploaderDropZone-dropZoneAreaIcon-125"
                 classes={
                   Object {
-                    "root": "HvIconDoc-root-156",
-                    "rootL": "HvIconDoc-rootL-160",
-                    "rootM": "HvIconDoc-rootM-159",
-                    "rootS": "HvIconDoc-rootS-158",
-                    "rootXs": "HvIconDoc-rootXs-157",
+                    "root": "HvIconDoc-root-152",
+                    "rootL": "HvIconDoc-rootL-156",
+                    "rootM": "HvIconDoc-rootM-155",
+                    "rootS": "HvIconDoc-rootS-154",
+                    "rootXs": "HvIconDoc-rootXs-153",
                   }
                 }
                 color="atmo6"
                 iconSize="M"
               >
                 <div
-                  className="HvFileUploaderDropZone-dropZoneAreaIcon-128 HvIconDoc-root-156 HvIconDoc-rootM-159"
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon-125 HvIconDoc-root-152 HvIconDoc-rootM-155"
                 >
                   <svg
                     focusable={false}
@@ -2135,43 +2130,42 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               </Doc>
             </WithStyles(Doc)>
             <div
-              className="HvFileUploaderDropZone-dropZoneAreaLabels-127"
+              className="HvFileUploaderDropZone-dropZoneAreaLabels-124"
             >
               <WithStyles(ForwardRef)
-                className="HvFileUploaderDropZone-dragText-129"
+                className="HvFileUploaderDropZone-dragText-126"
                 component={null}
                 paragraph={false}
                 variant="normalText"
               >
                 <ForwardRef
-                  className="HvFileUploaderDropZone-dragText-129"
+                  className="HvFileUploaderDropZone-dragText-126"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-133",
-                      "4xlTitle": "HvTypography-4xlTitle-132",
-                      "5xlTitle": "HvTypography-5xlTitle-131",
-                      "baseFontFamily": "HvTypography-baseFontFamily-154",
-                      "disabledButtonText": "HvTypography-disabledButtonText-145",
-                      "disabledText": "HvTypography-disabledText-152",
-                      "highlightText": "HvTypography-highlightText-141",
-                      "infoText": "HvTypography-infoText-150",
-                      "inlineLink": "HvTypography-inlineLink-144",
-                      "lTitle": "HvTypography-lTitle-136",
-                      "labelText": "HvTypography-labelText-149",
-                      "mTitle": "HvTypography-mTitle-137",
-                      "margin": "HvTypography-margin-155",
-                      "normalText": "HvTypography-normalText-142",
-                      "placeholderText": "HvTypography-placeholderText-146",
-                      "sLink": "HvTypography-sLink-151",
-                      "sText": "HvTypography-sText-148",
-                      "sTitle": "HvTypography-sTitle-138",
-                      "selectedNavText": "HvTypography-selectedNavText-147",
-                      "selectedText": "HvTypography-selectedText-143",
-                      "vizText": "HvTypography-vizText-153",
-                      "xlTitle": "HvTypography-xlTitle-135",
-                      "xsTitle": "HvTypography-xsTitle-139",
-                      "xxlTitle": "HvTypography-xxlTitle-134",
-                      "xxsTitle": "HvTypography-xxsTitle-140",
+                      "3xlTitle": "HvTypography-3xlTitle-130",
+                      "4xlTitle": "HvTypography-4xlTitle-129",
+                      "5xlTitle": "HvTypography-5xlTitle-128",
+                      "baseFontFamily": "HvTypography-baseFontFamily-150",
+                      "disabledButtonText": "HvTypography-disabledButtonText-142",
+                      "highlightText": "HvTypography-highlightText-138",
+                      "infoText": "HvTypography-infoText-147",
+                      "inlineLink": "HvTypography-inlineLink-141",
+                      "lTitle": "HvTypography-lTitle-133",
+                      "labelText": "HvTypography-labelText-146",
+                      "mTitle": "HvTypography-mTitle-134",
+                      "margin": "HvTypography-margin-151",
+                      "normalText": "HvTypography-normalText-139",
+                      "placeholderText": "HvTypography-placeholderText-143",
+                      "sLink": "HvTypography-sLink-148",
+                      "sText": "HvTypography-sText-145",
+                      "sTitle": "HvTypography-sTitle-135",
+                      "selectedNavText": "HvTypography-selectedNavText-144",
+                      "selectedText": "HvTypography-selectedText-140",
+                      "vizText": "HvTypography-vizText-149",
+                      "xlTitle": "HvTypography-xlTitle-132",
+                      "xsTitle": "HvTypography-xsTitle-136",
+                      "xxlTitle": "HvTypography-xxlTitle-131",
+                      "xxsTitle": "HvTypography-xxsTitle-137",
                     }
                   }
                   component={null}
@@ -2179,10 +2173,10 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                   variant="normalText"
                 >
                   <p
-                    className="HvTypography-normalText-142 HvTypography-baseFontFamily-154 HvTypography-margin-155 HvFileUploaderDropZone-dragText-129"
+                    className="HvTypography-normalText-139 HvTypography-baseFontFamily-150 HvTypography-margin-151 HvFileUploaderDropZone-dragText-126"
                   >
                     <span
-                      className="HvFileUploaderDropZone-selectFilesText-130"
+                      className="HvFileUploaderDropZone-selectFilesText-127"
                     >
                        undefined
                     </span>

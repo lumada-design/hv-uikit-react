@@ -2,7 +2,6 @@
 
 This package provides the Hitachi Vantara's Design System icons packaged as a set of React components.
 
-
 ## Installation
 
 Install the package in your project directory with:
@@ -10,3 +9,7 @@ Install the package in your project directory with:
 ```sh
 npm install @hv/uikit-react-icons
 ```
+
+## Adding New Icons
+
+To add new icons, you should copy the `.svg` to the `assets` directory and execute `npm run build`.

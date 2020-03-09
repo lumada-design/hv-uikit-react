@@ -128,6 +128,7 @@ class UnitTimePicker extends React.Component {
       <div className={classes.unitTimeContainer}>
         <AddTimeIcon className={classes.addIcon} onClick={this.handleAddTime} />
         <Input
+          disableClear
           className={classes.unitTime}
           classes={{
             input: classes.unitTimeInput,

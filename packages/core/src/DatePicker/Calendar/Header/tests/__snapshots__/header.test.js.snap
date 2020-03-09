@@ -814,16 +814,15 @@ exports[`<Header /> should render correctly 1`] = `
                 "3xlTitle": "HvTypography-3xlTitle-9",
                 "4xlTitle": "HvTypography-4xlTitle-8",
                 "5xlTitle": "HvTypography-5xlTitle-7",
-                "baseFontFamily": "HvTypography-baseFontFamily-30",
+                "baseFontFamily": "HvTypography-baseFontFamily-29",
                 "disabledButtonText": "HvTypography-disabledButtonText-21",
-                "disabledText": "HvTypography-disabledText-28",
                 "highlightText": "HvTypography-highlightText-17",
                 "infoText": "HvTypography-infoText-26",
                 "inlineLink": "HvTypography-inlineLink-20",
                 "lTitle": "HvTypography-lTitle-12",
                 "labelText": "HvTypography-labelText-25",
                 "mTitle": "HvTypography-mTitle-13",
-                "margin": "HvTypography-margin-31",
+                "margin": "HvTypography-margin-30",
                 "normalText": "HvTypography-normalText-18",
                 "placeholderText": "HvTypography-placeholderText-22",
                 "sLink": "HvTypography-sLink-27",
@@ -831,7 +830,7 @@ exports[`<Header /> should render correctly 1`] = `
                 "sTitle": "HvTypography-sTitle-14",
                 "selectedNavText": "HvTypography-selectedNavText-23",
                 "selectedText": "HvTypography-selectedText-19",
-                "vizText": "HvTypography-vizText-29",
+                "vizText": "HvTypography-vizText-28",
                 "xlTitle": "HvTypography-xlTitle-11",
                 "xsTitle": "HvTypography-xsTitle-15",
                 "xxlTitle": "HvTypography-xxlTitle-10",
@@ -843,7 +842,7 @@ exports[`<Header /> should render correctly 1`] = `
             variant="labelText"
           >
             <p
-              className="HvTypography-labelText-25 HvTypography-baseFontFamily-30 HvTypography-margin-31 HvDatePickerHeader-rangeLabel-1"
+              className="HvTypography-labelText-25 HvTypography-baseFontFamily-29 HvTypography-margin-30 HvDatePickerHeader-rangeLabel-1"
             >
               Mock text for the top text
             </p>
@@ -867,16 +866,15 @@ exports[`<Header /> should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle-9",
                     "4xlTitle": "HvTypography-4xlTitle-8",
                     "5xlTitle": "HvTypography-5xlTitle-7",
-                    "baseFontFamily": "HvTypography-baseFontFamily-30",
+                    "baseFontFamily": "HvTypography-baseFontFamily-29",
                     "disabledButtonText": "HvTypography-disabledButtonText-21",
-                    "disabledText": "HvTypography-disabledText-28",
                     "highlightText": "HvTypography-highlightText-17",
                     "infoText": "HvTypography-infoText-26",
                     "inlineLink": "HvTypography-inlineLink-20",
                     "lTitle": "HvTypography-lTitle-12",
                     "labelText": "HvTypography-labelText-25",
                     "mTitle": "HvTypography-mTitle-13",
-                    "margin": "HvTypography-margin-31",
+                    "margin": "HvTypography-margin-30",
                     "normalText": "HvTypography-normalText-18",
                     "placeholderText": "HvTypography-placeholderText-22",
                     "sLink": "HvTypography-sLink-27",
@@ -884,7 +882,7 @@ exports[`<Header /> should render correctly 1`] = `
                     "sTitle": "HvTypography-sTitle-14",
                     "selectedNavText": "HvTypography-selectedNavText-23",
                     "selectedText": "HvTypography-selectedText-19",
-                    "vizText": "HvTypography-vizText-29",
+                    "vizText": "HvTypography-vizText-28",
                     "xlTitle": "HvTypography-xlTitle-11",
                     "xsTitle": "HvTypography-xsTitle-15",
                     "xxlTitle": "HvTypography-xxlTitle-10",
@@ -896,7 +894,7 @@ exports[`<Header /> should render correctly 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="HvTypography-normalText-18 HvTypography-baseFontFamily-30 HvTypography-margin-31"
+                  className="HvTypography-normalText-18 HvTypography-baseFontFamily-29 HvTypography-margin-30"
                 >
                   Wed
                 </p>

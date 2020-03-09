@@ -807,20 +807,20 @@ exports[`TimePicker should render correctly 1`] = `
       <HvTimePicker
         classes={
           Object {
-            "icon": "HvTimePicker-icon-50",
-            "input": "HvTimePicker-input-45",
-            "inputContainer": "HvTimePicker-inputContainer-49",
-            "inputPopperClosed": "HvTimePicker-inputPopperClosed-48",
-            "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-47",
-            "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-46",
-            "label": "HvTimePicker-label-52",
-            "periodContainer": "HvTimePicker-periodContainer-58",
-            "popper": "HvTimePicker-popper-54",
-            "popperAbove": "HvTimePicker-popperAbove-56",
-            "popperBelow": "HvTimePicker-popperBelow-55",
-            "separator": "HvTimePicker-separator-57",
-            "timePickerContainer": "HvTimePicker-timePickerContainer-51",
-            "timePopperContainer": "HvTimePicker-timePopperContainer-53",
+            "icon": "HvTimePicker-icon-49",
+            "input": "HvTimePicker-input-44",
+            "inputContainer": "HvTimePicker-inputContainer-48",
+            "inputPopperClosed": "HvTimePicker-inputPopperClosed-47",
+            "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove-46",
+            "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow-45",
+            "label": "HvTimePicker-label-51",
+            "periodContainer": "HvTimePicker-periodContainer-57",
+            "popper": "HvTimePicker-popper-53",
+            "popperAbove": "HvTimePicker-popperAbove-55",
+            "popperBelow": "HvTimePicker-popperBelow-54",
+            "separator": "HvTimePicker-separator-56",
+            "timePickerContainer": "HvTimePicker-timePickerContainer-50",
+            "timePopperContainer": "HvTimePicker-timePopperContainer-52",
           }
         }
         hours={10}
@@ -853,43 +853,42 @@ exports[`TimePicker should render correctly 1`] = `
           onClickAway={[Function]}
         >
           <div
-            className="HvTimePicker-timePickerContainer-51"
+            className="HvTimePicker-timePickerContainer-50"
           >
             <WithStyles(ForwardRef)
-              className="HvTimePicker-label-52"
+              className="HvTimePicker-label-51"
               component={null}
               paragraph={false}
               variant="labelText"
             >
               <ForwardRef
-                className="HvTimePicker-label-52"
+                className="HvTimePicker-label-51"
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-61",
-                    "4xlTitle": "HvTypography-4xlTitle-60",
-                    "5xlTitle": "HvTypography-5xlTitle-59",
-                    "baseFontFamily": "HvTypography-baseFontFamily-82",
-                    "disabledButtonText": "HvTypography-disabledButtonText-73",
-                    "disabledText": "HvTypography-disabledText-80",
-                    "highlightText": "HvTypography-highlightText-69",
-                    "infoText": "HvTypography-infoText-78",
-                    "inlineLink": "HvTypography-inlineLink-72",
-                    "lTitle": "HvTypography-lTitle-64",
-                    "labelText": "HvTypography-labelText-77",
-                    "mTitle": "HvTypography-mTitle-65",
-                    "margin": "HvTypography-margin-83",
-                    "normalText": "HvTypography-normalText-70",
-                    "placeholderText": "HvTypography-placeholderText-74",
-                    "sLink": "HvTypography-sLink-79",
-                    "sText": "HvTypography-sText-76",
-                    "sTitle": "HvTypography-sTitle-66",
-                    "selectedNavText": "HvTypography-selectedNavText-75",
-                    "selectedText": "HvTypography-selectedText-71",
-                    "vizText": "HvTypography-vizText-81",
-                    "xlTitle": "HvTypography-xlTitle-63",
-                    "xsTitle": "HvTypography-xsTitle-67",
-                    "xxlTitle": "HvTypography-xxlTitle-62",
-                    "xxsTitle": "HvTypography-xxsTitle-68",
+                    "3xlTitle": "HvTypography-3xlTitle-60",
+                    "4xlTitle": "HvTypography-4xlTitle-59",
+                    "5xlTitle": "HvTypography-5xlTitle-58",
+                    "baseFontFamily": "HvTypography-baseFontFamily-80",
+                    "disabledButtonText": "HvTypography-disabledButtonText-72",
+                    "highlightText": "HvTypography-highlightText-68",
+                    "infoText": "HvTypography-infoText-77",
+                    "inlineLink": "HvTypography-inlineLink-71",
+                    "lTitle": "HvTypography-lTitle-63",
+                    "labelText": "HvTypography-labelText-76",
+                    "mTitle": "HvTypography-mTitle-64",
+                    "margin": "HvTypography-margin-81",
+                    "normalText": "HvTypography-normalText-69",
+                    "placeholderText": "HvTypography-placeholderText-73",
+                    "sLink": "HvTypography-sLink-78",
+                    "sText": "HvTypography-sText-75",
+                    "sTitle": "HvTypography-sTitle-65",
+                    "selectedNavText": "HvTypography-selectedNavText-74",
+                    "selectedText": "HvTypography-selectedText-70",
+                    "vizText": "HvTypography-vizText-79",
+                    "xlTitle": "HvTypography-xlTitle-62",
+                    "xsTitle": "HvTypography-xsTitle-66",
+                    "xxlTitle": "HvTypography-xxlTitle-61",
+                    "xxsTitle": "HvTypography-xxsTitle-67",
                   }
                 }
                 component={null}
@@ -897,40 +896,40 @@ exports[`TimePicker should render correctly 1`] = `
                 variant="labelText"
               >
                 <p
-                  className="HvTypography-labelText-77 HvTypography-baseFontFamily-82 HvTypography-margin-83 HvTimePicker-label-52"
+                  className="HvTypography-labelText-76 HvTypography-baseFontFamily-80 HvTypography-margin-81 HvTimePicker-label-51"
                 >
                   mockTitle
                 </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <div
-              className="HvTimePicker-inputContainer-49 HvTimePicker-inputPopperClosed-48"
+              className="HvTimePicker-inputContainer-48 HvTimePicker-inputPopperClosed-47"
             >
               <input
-                className="HvTimePicker-input-45"
+                className="HvTimePicker-input-44"
                 readOnly={true}
                 type="text"
                 value="mockGetFormattedTime"
               />
               <WithStyles(Time)
-                className="HvTimePicker-icon-50"
+                className="HvTimePicker-icon-49"
                 onClick={[Function]}
               >
                 <Time
-                  className="HvTimePicker-icon-50"
+                  className="HvTimePicker-icon-49"
                   classes={
                     Object {
-                      "root": "HvIconTime-root-84",
-                      "rootL": "HvIconTime-rootL-88",
-                      "rootM": "HvIconTime-rootM-87",
-                      "rootS": "HvIconTime-rootS-86",
-                      "rootXs": "HvIconTime-rootXs-85",
+                      "root": "HvIconTime-root-82",
+                      "rootL": "HvIconTime-rootL-86",
+                      "rootM": "HvIconTime-rootM-85",
+                      "rootS": "HvIconTime-rootS-84",
+                      "rootXs": "HvIconTime-rootXs-83",
                     }
                   }
                   onClick={[Function]}
                 >
                   <div
-                    className="HvTimePicker-icon-50 HvIconTime-root-84 HvIconTime-rootS-86"
+                    className="HvTimePicker-icon-49 HvIconTime-root-82 HvIconTime-rootS-84"
                     onClick={[Function]}
                   >
                     <svg
@@ -942,7 +941,7 @@ exports[`TimePicker should render correctly 1`] = `
                     >
                       <path
                         className="color0"
-                        d="M8 15a7.023 7.023 0 1 0-4.943-2.057A6.953 6.953 0 0 0 8 15m0 1a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
+                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
                         fill="#414141"
                       />
                       <path
@@ -957,7 +956,7 @@ exports[`TimePicker should render correctly 1`] = `
             </div>
             <ForwardRef(Popper)
               anchorEl={null}
-              className="HvTimePicker-popper-54 HvTimePicker-popperBelow-55"
+              className="HvTimePicker-popper-53 HvTimePicker-popperBelow-54"
               disablePortal={true}
               open={false}
               placement="bottom-start"

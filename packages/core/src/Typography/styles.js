@@ -20,7 +20,6 @@ const styles = theme => ({
   labelText: theme.hv.typography.labelText,
   infoText: theme.hv.typography.infoText,
   sLink: theme.hv.typography.sLink,
-  disabledText: theme.hv.typography.disabledText,
   vizText: theme.hv.typography.vizText,
   baseFontFamily: {
     fontFamily: theme.hv.typography.fontFamily
